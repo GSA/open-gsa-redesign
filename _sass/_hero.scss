@@ -1,0 +1,31 @@
+.hero-unit {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  min-height: 32em;
+  position: relative;
+}
+.hero-content {
+  background-color: transparentize($text-color, .6);
+  bottom: 20px;
+  left: 50%;
+  margin-left: -30%;
+  padding-top: 20px;
+  position: absolute;
+  text-align: center;
+  width: 60%;
+}
+.hero-content h1 {
+  color: white;
+  font-size: 36px;
+  font-weight: 100;
+  line-height: 50px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: .3em;
+  padding-right: .3em;
+}
+.hero-content .usa-button {
+  font-size: 22px;
+  line-height: 30px;
+}

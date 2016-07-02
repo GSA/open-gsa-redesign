@@ -1,0 +1,72 @@
+# Site settings
+title: Open GSA
+description: Open source code, data and APIs from GSA.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://example.gov" # the base hostname & protocol for your site
+logo: /assets/img/logo-main.gif
+feature_image: /assets/img/feature-background.jpg
+
+colors:
+  background: '#ffffff'
+  button:
+    background: '#0071bc'
+    hover: '#3e94cf'
+    text: '#fff'
+  headers: '#205493'
+  text: '#212121'
+  projects:
+    accent: '#02bfe7'
+  banner:
+    background: '#112e51'
+    text: '#fff'
+    button:
+      background: '#dce4ef'
+      text: '#112e51'
+  footer:
+    background: '#323a45'
+    text: '#fff'
+
+analytics:
+  google:
+    code: 'UA-48605964-32' # Change this to your GSA analytics code
+  dap:
+    agency: GSA    # Change this to your agency
+    subagency: Digital Service # Change this to your agency
+
+defaults:
+ -
+  scope:
+    path: "" # an empty string here means all files in the project
+  values:
+    layout:
+      - home
+      - page
+      - "project-list"
+      - project
+
+forms:
+- type: newsletter
+  heading: Sign up to receive updates from our team
+  url: https://##
+  button: Subscribe
+  privacypolicy: Your privacy and security are important to us, we'll only share your information as described in the <a href="http://www.gsa.gov/portal/content/116609">GSA Privacy and Security Notice</a>
+  fields:
+    - type: email
+      name: entry.1440502332
+      label: Email Address
+    - type: hidden
+      name: fbzx
+      value: -7861934959779167198
+
+footer:
+  image: /assets/img/gsa-logo-dark.jpg
+  email:
+  twitter:
+    - USGSA
+  text: This site was built using <a href="https://federalist.18f.gov/" target="_blank">Federalist, from 18F</a>. # Change to a tag line for your agency
+
+# Build settings
+markdown: kramdown
+include:
+  - _navigation.json
+exclude: [node_modules, gulpifle.js, CONTRIBUTING.md, LICENSE.md, README.md]

@@ -1,0 +1,34 @@
+.project {
+  margin-bottom: 2em;
+  min-height: 300px;
+  padding: 1em;
+}
+
+.project--image {
+  background-size: cover;
+  display: block;
+  min-height: 75px;
+  width: 75px;
+}
+
+a.project--image,
+a.project--image:active,
+a.project--image:focus,
+a.project--image:hover,
+a.project--image:visited {
+  border: 0;
+}
+
+.project--description {
+  border-top: 3px solid $project-accent-color;
+  padding-top: .5em;
+}
+
+a .project--description span {
+  border-bottom: 0;
+  color: $text-color;
+}
+
+a:hover .project--description span {
+  border-bottom: 1px dotted;
+}

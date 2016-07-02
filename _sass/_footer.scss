@@ -1,0 +1,19 @@
+.usa-footer-secondary_section {
+  background-color: $footer-background-color;
+}
+footer p,
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6,
+footer a,
+footer a:hover,
+footer a:visited {
+  color: $footer-text-color;
+}
+
+.usa-footer-logo p {
+  font-size: .7em;
+}

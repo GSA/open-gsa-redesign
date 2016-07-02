@@ -1,0 +1,36 @@
+assigned:
+    -
+        text: Home
+        href: pages/home.md
+        permalink: /
+        show_in_menu: false
+        show_in_footer: false
+    -
+        text: About
+        href: pages/about.md
+        permalink: /about/
+        show_in_menu: true
+        show_in_footer: false
+    -
+        text: Work
+        href: pages/projects.md
+        permalink: /projects/
+        show_in_menu: true
+        show_in_footer: false
+        children:
+            -
+                text: 'Microloans for Farmers'
+                href: pages/projects/microloans-for-farmers.md
+                show_in_menu: false
+                show_in_footer: false
+            -
+                text: 'Reducing Summer Melt'
+                href: pages/projects/reducing-summer-melt.md
+                show_in_menu: false
+                show_in_footer: false
+    -
+        text: 'Project data'
+        href: _data/projects.yml
+        show_in_menu: false
+        show_in_footer: false
+unassigned: []

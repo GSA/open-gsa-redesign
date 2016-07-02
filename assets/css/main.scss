@@ -1,0 +1,66 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+// Our variables
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$background-color:         {{ site.colors.background }};
+$headers-color:            {{ site.colors.headers }};
+$text-color:               {{ site.colors.text }};
+$header-text-color:       {{ site.colors.headers }};
+$button-color:             {{ site.colors.button.background }};
+$button-hover-color:       {{ site.colors.button.hover }};
+$button-text-color:        {{ site.colors.button.text }};
+
+$project-accent-color:     {{ site.colors.projects.accent }};
+
+$banner-background-color: {{ site.colors.banner.background }};
+$banner-text-color:       {{ site.colors.banner.text }};
+$banner-button-color:     {{ site.colors.banner.button.background }};
+$banner-button-text-color:       {{ site.colors.banner.button.text }};
+
+$footer-background-color:  {{ site.colors.footer.background }};
+$footer-text-color:        {{ site.colors.footer.text }};
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "buttons",
+        "navbar",
+        "sidenav",
+        "home",
+        "hero",
+        "iframe",
+        "pages",
+        "projects",
+        "banners",
+        "footer"
+;

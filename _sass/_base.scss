@@ -1,0 +1,70 @@
+body,
+p, ul, ol, li, a  {
+  color: $text-color;
+}
+legend, label,
+h1, h2, h3, h4, h5, h6 {
+  color: $headers-color;
+}
+
+legend,
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 20px;
+  color: $header-text-color;
+}
+ul, li {
+  margin-bottom: 0;
+}
+main {
+  margin-bottom: 1em;
+}
+form {
+  max-width: 100%;
+}
+.usa-content > p,
+.usa-content > ul,
+.usa-content > ol,
+.usa-content > h1,
+.usa-content > h2,
+.usa-content > h3,
+.usa-content > h4,
+.usa-content > h5,
+.usa-content > h6 {
+  max-width: 62.5rem;
+}
+a:visited {
+  color: inherit;
+}
+
+div.skip-nav a {
+  position: absolute;
+  left: -10000;
+  top: 0;
+  width: 1px;
+  height: auto;
+  overflow: hidden;
+}
+div.skip-nav a:focus {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: auto;
+  height: auto;
+  z-index: 999999;
+  background-color: white;
+  padding-left: 2px;
+  padding-right: 2px;
+  overflow: visible;
+}
+#main:focus {
+  outline: none;
+}
+
+@media (min-width: 600px) {
+  .usa-width-one-whole.usa-content {
+    position: relative;
+    left: 50%;
+    max-width: 62.5rem;
+    margin-left: -31.25rem;
+  }
+}

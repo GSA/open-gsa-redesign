@@ -1,0 +1,32 @@
+<footer class="usa-footer usa-footer-medium usa-sans" role="contentinfo">
+
+  <div class="usa-footer-secondary_section">
+    <div class="usa-grid">
+      <div class="usa-footer-logo usa-width-one-half">
+        {% if site.footer.image %}
+          <img class="usa-footer-logo-img" src="{{ site.footer.image | prepend: site.baseurl }}" alt="Logo image">
+        {% endif %}
+        {% if site.footer.text %}
+          <p>{{ site.footer.text }}</p>
+        {% endif %}
+      </div>
+
+      <div class="usa-footer-contact-links usa-width-one-half">
+
+        <address>
+          {% if site.footer.name %}
+            <h3 class="usa-footer-contact-heading">{{ site.footer.name }}</h3>
+          {% endif %}
+          {% if site.footer.phonenumber %}
+            <p><a href="tel:{{ site.footer.phonenumber }}">{{ site.footer.phonenumber }}</a></p>
+          {% endif %}
+          <p><a href="mailto:{{ site.footer.email }}">{{ site.footer.email }}</a></p>
+          {% for twitter in site.footer.twitter %}
+          <a href="https://twitter.com/{{ twitter }}" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @{{ twitter }}</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          {% endfor %}
+        </address>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,16 @@
+{
+  "name": "federalist-modern-team-template-master",
+  "version": "1.0.0",
+  "description": "Jekyll template for Federalist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.5.2"
+  }
+}

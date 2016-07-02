@@ -1,0 +1,54 @@
+---
+layout: base
+---
+
+<section>
+  <div id="main" tabindex="-1" class="hero-unit" style="background-image: url('{{ page.hero-image | prepend: site.baseurl }}')">
+    <div class="usa-grid">
+      <div class="usa-width-whole hero-content">
+        <h1>{{ page.hero-text }}</h1>
+        <a class="usa-button" href="{{ page.hero-button-link | prepend: site.baseurl }}">{{ page.hero-button-text }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="usa-grid">
+    <h2>Work</h2>
+    {% include projects.html %}
+  </div>
+</section>
+
+{% if page.banner-heading %}
+<section class="banner tagline">
+  <div class="usa-grid">
+    <div class="usa-width-one-whole usa-end-row">
+      <h2>{{ page.banner-heading }}</h2>
+      {% if page.banner-text %}
+        <p>{{ page.banner-text }}</p>
+      {% endif %}
+      {% if page.banner-button-text %}
+      <div class="center-content">
+        <a href="{{ page.banner-button-link | prepend: site.baseurl }}" class="usa-button">{{ page.banner-button-text }}</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="content">
+  <div class="usa-grid">
+    <div class="usa-width-one-whole usa-end-row">
+      {{ content }}
+      <div class="center-content">
+        {% if page.content-button-link %}
+          <a href="{{ page.content-button-link | prepend: site.baseurl }}" class="usa-button">{{ page.content-button-text }}</a>
+        {% endif %}
+      </div>  
+    </div>
+  </div>
+</section>
+
+{% include contact.html %}
