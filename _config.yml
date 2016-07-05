@@ -2,7 +2,7 @@
 title: Open GSA
 description: Open source code, data and APIs from GSA.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://github.com/saracope/open-gsa" # the base hostname & protocol for your site
+url: "https://saracope.github.io/open-gsa/" # the base hostname & protocol for your site
 logo: /assets/img/logo-main.gif
 feature_image: /assets/img/feature-background.jpg
 
