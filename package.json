@@ -1,11 +1,15 @@
 {
-  "name": "federalist-modern-team-template-master",
+  "name": "open-gsa",
   "version": "1.0.0",
-  "description": "Jekyll template for Federalist",
+  "description": "Open GSA Jekyll template for Federalist",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/saracope/open-gsa.git"
+},
   "author": "",
   "license": "ISC",
   "devDependencies": {
