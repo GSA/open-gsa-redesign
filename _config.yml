@@ -59,11 +59,11 @@ forms:
       value: -7861934959779167198
 
 footer:
-  image: /assets/img/gsa-logo-dark.jpg
+  image: /assets/img/logos/gsa_wings_logo.png
   email:
   twitter:
     - USGSA
-  text: This site was built using <a href="https://federalist.18f.gov/" target="_blank">Federalist, from 18F</a>. # Change to a tag line for your agency
+  text:  # Change to a tag line for your agency
 
 # Build settings
 markdown: kramdown
