@@ -16,7 +16,7 @@
       <div id="logo">
         <a href="{{ site.baseurl }}/" accesskey="1" title="Home" aria-label="Home">
           {% if site.logo %}
-            <img src="{{ site.logo | prepend: site.baseurl }}" alt="{{ site.title }}">
+            <img class="header-logo" src="{{ site.logo | prepend: site.baseurl }}" alt="{{ site.title }}">
           {% else %}
             <h1 class="usa-header-title">{{ site.title }}</h1>
           {% endif %}
