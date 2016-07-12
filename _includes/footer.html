@@ -1,40 +1,5 @@
-<!-- <footer class="usa-footer usa-footer-big usa-sans" role="contentinfo">
 
-  <div class="usa-footer-secondary_section">
-    <div class="usa-grid">
-      <div class="usa-footer-logo usa-width-one-half">
-        {% if site.footer.image %}
-          <img src="{{ site.footer.image | prepend: site.baseurl }}" alt="Logo image">
-        {% endif %}
-        {% if site.footer.text %}
-          <p>{{ site.footer.text }}</p>
-        {% endif %}
-      </div>
-
-      <div class="usa-footer-contact-links usa-width-one-half">
-
-        <address>
-          {% if site.footer.name %}
-            <h3 class="usa-footer-contact-heading">{{ site.footer.name }}</h3>
-          {% endif %}
-          {% if site.footer.phonenumber %}
-            <p><a href="tel:{{ site.footer.phonenumber }}">{{ site.footer.phonenumber }}</a></p>
-          {% endif %}
-          <p><a href="mailto:{{ site.footer.email }}">{{ site.footer.email }}</a></p>
-          {% for twitter in site.footer.twitter %}
-          <a href="https://twitter.com/{{ twitter }}" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @{{ twitter }}</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-          {% endfor %}
-        </address>
-      </div>
-    </div>
-  </div>
-</footer> -->
-
-<footer class="usa-footer usa-footer-big" role="contentinfo">
-    <!-- <div class="usa-grid usa-footer-return-to-top">
-      <a href="#">Return to top</a>
-    </div> -->
+  <footer class="usa-footer usa-footer-big" role="contentinfo">
     <div class="usa-footer-primary-section">
       <div class="usa-grid-full">
         <nav class="usa-footer-nav usa-width-two-thirds">
@@ -89,15 +54,16 @@
 
     <div class="usa-footer-secondary_section usa-footer-big-secondary-section">
       <div class="usa-grid">
-        {% if site.footer.image %}
-          <img src="{{ site.footer.image | prepend: site.baseurl }}" alt="Logo image">
-        {% endif %}
-        {% if site.footer.text %}
-          <p>{{ site.footer.text }}</p>
-        {% endif %}
-      </div>
+        <div class="usa-footer-logo usa-width-one-half">
+          {% if site.footer.image %}
+            <img src="{{ site.footer.image | prepend: site.baseurl }}" alt="Logo image">
+          {% endif %}
+          {% if site.footer.text %}
+            <p>{{ site.footer.text }}</p>
+          {% endif %}
+        </div>
 
-        <!-- <div class="usa-footer-contact-links usa-width-one-half">
+        <div class="usa-footer-contact-links usa-width-one-half">
           <a class="usa-link-facebook" href="#">
             <span>Facebook</span>
           </a>
@@ -109,20 +75,12 @@
           </a>
           <a class="usa-link-rss" href="#">
             <span>RSS</span>
-          </a> -->
+          </a>
 
           <address>
-            {% if site.footer.name %}
-              <h3 class="usa-footer-contact-heading">{{ site.footer.name }}</h3>
-            {% endif %}
-            {% if site.footer.phonenumber %}
-              <p><a href="tel:{{ site.footer.phonenumber }}">{{ site.footer.phonenumber }}</a></p>
-            {% endif %}
-            <p><a href="mailto:{{ site.footer.email }}">{{ site.footer.email }}</a></p>
-            {% for twitter in site.footer.twitter %}
-            <a href="https://twitter.com/{{ twitter }}" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @{{ twitter }}</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            {% endfor %}
+            <h3 class="usa-footer-contact-heading">Agency Contact Center</h3>
+            <p>(800) CALL-GOVT</p>
+            <a href="mailto:info@agency.gov">info@agency.gov</a>
           </address>
         </div>
       </div>
