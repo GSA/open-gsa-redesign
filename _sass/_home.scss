@@ -1,3 +1,78 @@
 .center-content {
   text-align: center;
 }
+
+/* Function display (data, apis, code) */
+  .function {
+    display: flex;
+    justify-content: center;
+  }
+
+  section {
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+  }
+
+/* Icons */
+
+	.icon {
+		position: relative;
+		text-decoration: none;
+	}
+
+		.icon:before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-transform: none !important;
+		}
+
+		.icon > .label {
+			display: none;
+		}
+
+		.icon.featured {
+			position: relative;
+			display: inline-block;
+			background-color: #e31c3d;
+			width: 9em;
+			padding: 1.75em 0 0.75em 2em;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			margin: 0 0 4.5em 0;
+			cursor: default;
+		}
+
+			.icon.featured:before {
+				font-size: 4.5em;
+				line-height: 1em;
+				color: #fff;
+			}
+
+			.icon.featured:after {
+				content: '';
+				position: absolute;
+				bottom: -1.95em;
+				left: 0;
+				border-top: solid 2em #d52349;
+				border-left: solid 4.5em transparent;
+				border-right: solid 4.5em transparent;
+			}
+
+			.icon.featured.alt {
+				background-color: #323a45;
+			}
+
+				.icon.featured.alt:after {
+					border-top-color: #323a45;
+				}
+
+			.icon.featured.alt2 {
+				background-color: #aeb0b5;
+			}
+
+				.icon.featured.alt2:after {
+					border-top-color: #aeb0b5;
+				}
