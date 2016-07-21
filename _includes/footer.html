@@ -1,87 +1,42 @@
 
   <footer class="usa-footer usa-footer-big" role="contentinfo">
-    <div class="usa-footer-primary-section">
-      <div class="usa-grid-full">
-        <nav class="usa-footer-nav usa-width-two-thirds">
-          <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
-            <li class="usa-footer-primary-link">
-              <h4>Topic</h4>
-            </li>
-            <li><a href="#">Secondary link</a></li>
-            <li><a href="#">Secondary link</a></li>
-            <li><a href="#">Secondary link</a></li>
-            <li><a href="#">Secondary link</a></li>
-          </ul>
-          <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
-            <li class="usa-footer-primary-link">
-              <h4>Topic</h4>
-            </li>
-            <li><a href="#">Secondary link</a></li>
-            <li><a href="#">Secondary link</a></li>
-            <li><a href="#">Secondary link</a></li>
-            <li><a href="#">Secondary link</a></li>
-          </ul>
-          <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
-            <li class="usa-footer-primary-link">
-              <h4>Topic</h4>
-            </li>
-            <li><a href="#">Secondary link</a></li>
-            <li><a href="#">Secondary link</a></li>
-            <li><a href="#">Secondary link</a></li>
-            <li><a href="#">Secondary link</a></li>
-          </ul>
-          <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
-            <li class="usa-footer-primary-link">
-              <h4>Topic</h4>
-            </li>
-            <li><a href="#">Secondary link</a></li>
-            <li><a href="#">Secondary link</a></li>
-            <li><a href="#">Secondary link</a></li>
-            <li><a href="#">Secondary link</a></li>
-          </ul>
-        </nav>
-
-        <div class="usa-sign_up-block usa-width-one-third">
-          <h3 class="usa-sign_up-header">Sign up</h3>
-
-          <label class="" for="email" id="">Your email address</label>
-          <input id="email" name="email" type="email">
-
-          <button type="submit">Sign up</button>
-        </div>
-      </div>
-    </div>
-
     <div class="usa-footer-secondary_section usa-footer-big-secondary-section">
       <div class="usa-grid">
-        <div class="usa-footer-logo usa-width-one-half">
-          {% if site.footer.image %}
-            <img src="{{ site.footer.image | prepend: site.baseurl }}" alt="Logo image">
-          {% endif %}
-          {% if site.footer.text %}
-            <p>{{ site.footer.text }}</p>
-          {% endif %}
-        </div>
-
-        <div class="usa-footer-contact-links usa-width-one-half">
-          <a class="usa-link-facebook" href="#">
-            <span>Facebook</span>
-          </a>
-          <a class="usa-link-twitter" href="#">
-            <span>Twitter</span>
-          </a>
-          <a class="usa-link-youtube" href="#">
-            <span>YouTube</span>
-          </a>
-          <a class="usa-link-rss" href="#">
-            <span>RSS</span>
-          </a>
-
-          <address>
-            <h3 class="usa-footer-contact-heading">Agency Contact Center</h3>
-            <p>(800) CALL-GOVT</p>
-            <a href="mailto:info@agency.gov">info@agency.gov</a>
-          </address>
+        <div class="usa-grid-full">
+          <div class="usa-footer-logo usa-width-one-fourth">
+            <!-- {% if site.footer.text %}
+              <p>{{ site.footer.text }}</p> -->
+            {% if site.footer.image %}
+              <img src="{{ site.footer.image | prepend: site.baseurl }}" alt="Logo image">
+            {% endif %}
+            {% endif %}
+          </div>
+          <nav class="usa-footer-nav">
+            <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
+              <li class="usa-footer-primary-link">
+                <p>Work</p>
+              </li>
+              <li><a href="#">Secondary link</a></li>
+              <li><a href="#">Secondary link</a></li>
+              <li><a href="#">Secondary link</a></li>
+            </ul>
+            <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
+              <li class="usa-footer-primary-link">
+                <p>People</p>
+              </li>
+              <li><a href="#">Secondary link</a></li>
+              <li><a href="#">Secondary link</a></li>
+              <li><a href="#">Secondary link</a></li>
+            </ul>
+            <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
+              <li class="usa-footer-primary-link">
+                <p>Policies</p>
+              </li>
+              <li><a href="#">Secondary link</a></li>
+              <li><a href="#">Secondary link</a></li>
+              <li><a href="#">Secondary link</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>

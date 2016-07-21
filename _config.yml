@@ -23,8 +23,8 @@ colors:
       background: '#dce4ef'
       text: '#112e51'
   footer:
-    background: '#323a45'
-    text: '#212121'
+    background: '#5b616b'
+    text: '#fff'
 
 analytics:
   google:
@@ -63,7 +63,7 @@ footer:
   email:
   twitter:
     - USGSA
-  text:  # Change to a tag line for your agency
+  text:  BUILT BY # Change to a tag line for your agency
 
 # Build settings
 markdown: kramdown
