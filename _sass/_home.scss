@@ -58,7 +58,7 @@
 		}
 
 		.icon.featured {
-      position: relative;
+      			position: relative;
 			display: inline-block;
 			background-color: #e31c3d;
 			padding: 0 2em 1em 2em;
@@ -69,21 +69,21 @@
 		}
 
 			.icon.featured:before {
-        font-size: 5em;
+        			font-size: 5em;
 				line-height: 2em;
 				color: #fff;
 			}
 
 			.icon.featured:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 0;
-        border-bottom: 13px solid #fff;
-        border-left: 83px solid transparent;
-        border-right: 83px solid transparent;
+			        content: "";
+			        position: absolute;
+			        left: 0;
+			        bottom: 0;
+			        width: 0;
+			        height: 0;
+			        border-bottom: 13px solid #fff;
+			        border-left: 83px solid transparent;
+			        border-right: 83px solid transparent;
 			}
 
 			.icon.featured.alt {
@@ -101,29 +101,3 @@
 				.icon.featured.alt2:after {
 					border-top-color: #aeb0b5;
 				}
-
-        /* Flag */
-
-.flag {
-  width: 110px;
-  height: 56px;
-  padding-top: 15px;
-  position: relative;
-  background: red;
-  color: white;
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-align: center;
-  text-transform: uppercase;
-}
-.flag:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-bottom: 13px solid #eee;
-  border-left: 55px solid transparent;
-  border-right: 55px solid transparent;
-}
