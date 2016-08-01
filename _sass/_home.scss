@@ -2,7 +2,24 @@
   text-align: center;
 }
 
-/* Function display (data, apis, code) */
+/* Role display for personas */
+  .role {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 0 15vw;
+  }
+
+  .role-item {
+    background: teal;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 1em;
+    align-items: center;
+  }
+
+/* Functional display (data, apis, code) */
   .function {
       display: flex;
       justify-content: space-around;
@@ -40,7 +57,6 @@
 /* Icons */
 
 	.icon {
-		position: relative;
 		text-decoration: none;
 	}
 
@@ -57,24 +73,56 @@
 			display: none;
 		}
 
-		.icon.featured {
-      			position: relative;
+    // .circle:after {
+    //   content: "";
+    //   background: red;
+    //   border-radius: 50%;
+    //   position: absolute;
+    //   display: block;
+    //   left: 50%;
+    //   margin-left: -52px;
+    //   top: -36px;
+    //   width: 105px;
+    //   height: 105px;
+    // }
+
+    .circle {
+      background-color: #e31c3d;
+      padding: 0 2em 1em 2em;
+      border-radius: 50%;
+      position: absolute;
+      margin-top: -50px;
+      width: 105px;
+      height: 105px;
+    }
+
+      .circle:before {
+        font-size: 4em;
+        line-height: 2em;
+        color: #fff;
+        position: relative;
+        top: -20px;
+        right: 8px;
+      }
+
+
+		.flag {
+      position: relative;
 			display: inline-block;
 			background-color: #e31c3d;
 			padding: 0 2em 1em 2em;
 			border-top-left-radius: 5px;
 			border-top-right-radius: 5px;
 			margin: 0 0 4.5em 0;
-			cursor: default;
 		}
 
-			.icon.featured:before {
-        			font-size: 5em;
+			.flag:before {
+        font-size: 5em;
 				line-height: 2em;
 				color: #fff;
 			}
 
-			.icon.featured:after {
+			.flag:after {
 			        content: "";
 			        position: absolute;
 			        left: 0;
@@ -86,18 +134,18 @@
 			        border-right: 83px solid transparent;
 			}
 
-			.icon.featured.alt {
+			.flag.alt {
 				background-color: #323a45;
 			}
 
-				.icon.featured.alt:after {
+				.flag.alt:after {
 					border-top-color: #323a45;
 				}
 
-			.icon.featured.alt2 {
+			.flag.alt2 {
 				background-color: #aeb0b5;
 			}
 
-				.icon.featured.alt2:after {
+				.flag.alt2:after {
 					border-top-color: #aeb0b5;
 				}
