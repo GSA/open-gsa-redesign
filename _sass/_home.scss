@@ -7,11 +7,11 @@
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      margin: 0 15vw;
+      margin: 0 15vw 10vw;
   }
 
   .role-item {
-    background: teal;
+    background: #fff;
     display: flex;
     flex-direction: column;
     width: 25%;
@@ -37,6 +37,7 @@
     padding-top: 3.2rem;
     padding-bottom: 3.2rem;
   }
+
   .section-top {
     padding-top: 0;
   }
@@ -73,24 +74,11 @@
 			display: none;
 		}
 
-    // .circle:after {
-    //   content: "";
-    //   background: red;
-    //   border-radius: 50%;
-    //   position: absolute;
-    //   display: block;
-    //   left: 50%;
-    //   margin-left: -52px;
-    //   top: -36px;
-    //   width: 105px;
-    //   height: 105px;
-    // }
-
     .circle {
       background-color: #e31c3d;
       padding: 0 2em 1em 2em;
       border-radius: 50%;
-      position: absolute;
+      // position: absolute;
       margin-top: -50px;
       width: 105px;
       height: 105px;

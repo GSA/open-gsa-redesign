@@ -13,8 +13,24 @@
   margin-top: 75px;
 }
 
+.banner.roles {
+  background-color: #e4e2e0;
+}
+.banner.roles .usa-grid {
+  padding: 3rem;
+}
+.banner.roles p {
+  color: #323a45;
+  margin-bottom: 75px;
+}
+.banner.roles h2 {
+  color: #323a45;
+  margin-top: 75px;
+  text-align: center;
+}
+
 .banner.contact {
-  background-color: $banner-background-color;
+  background-color: #112e51;
 }
 .banner.contact form {
   padding-top: 2em;
@@ -26,7 +42,7 @@
 .banner.contact a,
 .banner.contact a:hover,
 .banner.contact a:visited {
-  color: $banner-text-color;
+  color: #fff;
 }
 
 .banner .usa-button,

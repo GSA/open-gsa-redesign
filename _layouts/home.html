@@ -13,30 +13,61 @@ layout: base
   </div>
 </section>
 
-<section class="banner">
+{% if page.banner-heading %}
+<section class="banner tagline">
+  <div class="usa-grid">
+    <div class="usa-width-one-whole usa-end-row">
+      <h2>{{ page.banner-heading }}</h2>
+      {% if page.banner-text %}
+        <p>{{ page.banner-text }}</p>
+      {% endif %}
+      {% if page.banner-button-text %}
+      <div class="center-content">
+        <a href="{{ page.banner-button-link | prepend: site.baseurl }}" class="usa-button">{{ page.banner-button-text }}</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="banner roles">
+  <div class="usa-grid">
+      <div class="usa-width-one-whole usa-end-row">
+  <h2>What describes you best?</h2>
+
+</div>
+</div>
   <div class="role">
     <div class="role-item">
       <i class="icon circle fa-user"></i>
       <h3>Role 1</h3>
-      <p>This is a descriptive paragraph.</p>
-      <div class="usa-button-block"><a href="#" class="usa-button  usa-button-outline">More details</a></div>
     </div>
     <div class="role-item">
       <i class="icon circle alt fa-user"></i>
       <h3>Role 2</h3>
-      <p>This is a descriptive paragraph.</p>
-      <div class="usa-button-block"><a href="#" class="usa-button  usa-button-outline">More details</a></div>
     </div>
     <div class="role-item">
       <i class="icon circle alt2 fa-user"></i>
       <h3>Role 3</h3>
-      <p>This is a descriptive paragraph.</p>
-      <div class="usa-button-block"><a href="#" class="usa-button  usa-button-outline">More details</a></div>
     </div>
   </div>
 </section>
 
-<section>
+<section class="content">
+  <div class="usa-grid">
+    <div class="usa-width-one-whole usa-end-row">
+      {{ content }}
+      <div class="center-content">
+        {% if page.content-button-link %}
+          <a href="{{ page.content-button-link | prepend: site.baseurl }}" class="usa-button">{{ page.content-button-text }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="banner functions">
   <div class="function">
     <div class="function-item">
       <i class="icon flag fa-bar-chart"></i>
@@ -67,35 +98,6 @@ layout: base
   </div>
 </section> -->
 
-{% if page.banner-heading %}
-<section class="banner tagline">
-  <div class="usa-grid">
-    <div class="usa-width-one-whole usa-end-row">
-      <h2>{{ page.banner-heading }}</h2>
-      {% if page.banner-text %}
-        <p>{{ page.banner-text }}</p>
-      {% endif %}
-      {% if page.banner-button-text %}
-      <div class="center-content">
-        <a href="{{ page.banner-button-link | prepend: site.baseurl }}" class="usa-button">{{ page.banner-button-text }}</a>
-      </div>
-      {% endif %}
-    </div>
-  </div>
-</section>
-{% endif %}
 
-<section class="content">
-  <div class="usa-grid">
-    <div class="usa-width-one-whole usa-end-row">
-      {{ content }}
-      <div class="center-content">
-        {% if page.content-button-link %}
-          <a href="{{ page.content-button-link | prepend: site.baseurl }}" class="usa-button">{{ page.content-button-text }}</a>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- {% include contact.html %} -->
+{% include contact.html %}

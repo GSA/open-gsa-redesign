@@ -17,15 +17,14 @@ colors:
   projects:
     accent: '#02bfe7'
   banner:
-    background: '#112e51'
-    text: '#fff'
+    background: '#fff'
+    text: '#112e51'
     button:
       background: '#dce4ef'
       text: '#112e51'
   footer:
     background: '#5b616b'
     text: '#fff'
-
 analytics:
   google:
     code: 'UA-48605964-32' # Change this to your GSA analytics code
