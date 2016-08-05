@@ -7,7 +7,17 @@ layout: base
     <div class="usa-grid">
       <div class="usa-width-whole hero-content">
         <h1>{{ page.hero-text }}</h1>
-        <a class="usa-button" href="{{ page.hero-button-link | prepend: site.baseurl }}">{{ page.hero-button-text }}</a>
+        <form class="goal-select">
+          <label for="goal">What would you like to do today?</label>
+          <select name="goal" id="goal">
+            <option value disabled selected>What would you like to do today?</option>
+            <option value="">Option 1</option>
+            <option value="">Option 2</option>
+            <option value="">Option 3</option>
+            <option value="">Option 4</option>
+          </select>
+        </form>
+        <!-- <a class="usa-button" href="{{ page.hero-button-link | prepend: site.baseurl }}">{{ page.hero-button-text }}</a> -->
       </div>
     </div>
   </div>

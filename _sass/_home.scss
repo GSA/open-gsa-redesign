@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+#goal {
+  margin: 0 auto;
+  margin-bottom: 2em;
+}
+
+.goal-select label {
+  visibility: hidden;
+}
+
 /* Role display for personas */
   .role {
       display: flex;
@@ -139,7 +148,7 @@
 				}
 
         .flag.alt3 {
-          background-color: ##112e51;
+          background-color: #112e51;
         }
         .flag.alt3:after {
           border-top-color: #112e51;
