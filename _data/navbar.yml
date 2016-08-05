@@ -6,28 +6,52 @@ assigned:
         show_in_menu: false
         show_in_footer: false
     -
-        text: About
-        href: pages/about.md
-        permalink: /about/
+        text: Discover Data
+        href: pages/data.md
+        permalink: /data/
         show_in_menu: true
         show_in_footer: false
     -
-        text: Work
-        href: pages/projects.md
-        permalink: /projects/
+        text: Explore APIs
+        href: pages/api.md
+        permalink: /api/
         show_in_menu: true
         show_in_footer: false
-        children:
-            -
-                text: 'Microloans for Farmers'
-                href: pages/projects/microloans-for-farmers.md
-                show_in_menu: false
-                show_in_footer: false
-            -
-                text: 'Reducing Summer Melt'
-                href: pages/projects/reducing-summer-melt.md
-                show_in_menu: false
-                show_in_footer: false
+    -
+        text: Code With Us
+        href: pages/code.md
+        permalink: /code/
+        show_in_menu: true
+        show_in_footer: false
+    -
+        text: Attend an Event
+        href: pages/events.md
+        permalink: /events/
+        show_in_menu: true
+        show_in_footer: false
+    -
+    #     text: About
+    #     href: pages/about.md
+    #     permalink: /about/
+    #     show_in_menu: true
+    #     show_in_footer: false
+    # -
+    #     text: Work
+    #     href: pages/projects.md
+    #     permalink: /projects/
+    #     show_in_menu: true
+    #     show_in_footer: false
+    #     children:
+    #         -
+    #             text: 'Microloans for Farmers'
+    #             href: pages/projects/microloans-for-farmers.md
+    #             show_in_menu: false
+    #             show_in_footer: false
+    #         -
+    #             text: 'Reducing Summer Melt'
+    #             href: pages/projects/reducing-summer-melt.md
+    #             show_in_menu: false
+    #             show_in_footer: false
     -
         text: 'Project data'
         href: _data/projects.yml
