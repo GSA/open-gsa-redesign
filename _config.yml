@@ -46,16 +46,13 @@ defaults:
 forms:
 - type: newsletter
   heading: Sign up to receive updates from our team
-  url: https://##
+  url: https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLSdTKaMGI8PGKdR7VjuRRMtvOiA-uiD5fqqsFoyN1g2SXoLTqQ/viewform
   button: Subscribe
   privacypolicy: Your privacy and security are important to us, we'll only share your information as described in the <a href="http://www.gsa.gov/portal/content/116609">GSA Privacy and Security Notice</a>
   fields:
     - type: email
-      name: entry.1440502332
+      name: entry.474991268
       label: Email Address
-    - type: hidden
-      name: fbzx
-      value: -7861934959779167198
 
 footer:
   image: /assets/img/logos/gsa_wings_logo.png
