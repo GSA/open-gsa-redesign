@@ -17,7 +17,7 @@ If you have any questions just [shoot us an email](mailto:sara.cope@gsa.gov).
 - Will update the WDS library when it publishes a change required by the guide. Otherwise will update bi-monthly.
 - The codebase will be visual regression tested when a suitable tool is found for 18F.
 - The Sass code will be linted with `scss-lint`
-  - The [18F CSS linting configuration](https://raw.githubusercontent.com/18F/frontend/18f-pages-staging/.scss-lint.yml) will be used. 
+  - The [18F CSS linting configuration](https://raw.githubusercontent.com/18F/frontend/18f-pages-staging/.scss-lint.yml) will be used.
   - If linting fails, it will also fail the tests, but not the build.
 - Will default to [semantic HTML5](http://www.w3schools.com/html/html5_semantic_elements.asp).
 
@@ -54,7 +54,7 @@ If you have any questions just [shoot us an email](mailto:sara.cope@gsa.gov).
 
 ## Where Contributions Go
 
-Submit contributions to https://github.com/saracope/open-gsa as pull requests to the `master` branch.
+Submit contributions to https://github.com/GSA/open-gsa-redesign as pull requests to the `master` branch.
 
 ## Public domain
 
@@ -65,4 +65,3 @@ the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/pub
 All contributions to this project will be released under the CC0
 dedication. By submitting a pull request, you are agreeing to comply
 with this waiver of copyright interest.
-

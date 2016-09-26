@@ -1,5 +1,3 @@
-[![Stories in Ready](https://badge.waffle.io/saracope/open-gsa.svg?label=ready&title=Ready)](http://waffle.io/saracope/open-gsa)
-
 # Open GSA Redesign
 
 Open.gsa.gov is the current developer portal for all GSA data, APIs, and code open to the public. This repo is where we will be managing development of the redesign of this portal.
