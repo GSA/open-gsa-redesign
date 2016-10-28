@@ -54,7 +54,7 @@ If you have any questions just [shoot us an email](mailto:sara.cope@gsa.gov).
 
 ## Where Contributions Go
 
-Submit contributions to https://github.com/GSA/open-gsa-redesign as pull requests to the `master` branch.
+Submit contributions to https://github.com/GSA/open-gsa-redesign as pull requests to the `dev` branch.
 
 ## Public domain
 
