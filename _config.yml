@@ -55,7 +55,8 @@ forms:
       label: Email Address
 
 footer:
-  image: /assets/img/logos/gsa_wings_logo.png
+  image: /assets/img/logos/gsads-logo.svg
+  image-alt: GSA Digital Service
   email:
   twitter:
     - USGSA

@@ -18,8 +18,18 @@ footer a:visited {
   color: #fff;
 }
 
-
+.usa-footer {
+  padding: 2em 0;
+}
 
 .usa-footer-logo p {
-  font-size: .7em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ddd;
+}
+
+.usa-footer-logo .logo {
+  width: auto;
+  height: 90px;
 }
