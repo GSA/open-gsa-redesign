@@ -178,22 +178,23 @@ Many of our APIs are themselves open sourced and we always [welcome feedback](ht
                         <h3 class="sidebar_list_item_head">
                                 <a href="https://github.com/GSA/openIAE">openIAE</a>
                             </h3>
+                            <p class="repo_description">IAE Transparency Space Documentation.</p>
                     </section>
                     <section class="repo">
                         <h3 class="sidebar_list_item_head">
                                 <a href="https://github.com/GSA/asis">asis</a>
                             </h3>
+                            <p class="repo_description">ASIS (Advanced Social Image Search) indexes Flickr and Instagram images and provides a search API across both indexes.</p>
                     </section>
                     <section class="repo">
                           <h3 class="sidebar_list_item_head">
                                 <a href="https://github.com/GSA/govt-urls">govt-urls</a>
                             </h3>
+                            <p class="repo_description">The code that runs the DigitalGov Search Non-.gov URLs API--a list of government URLs that don't end in .gov or .mil.</p>
                     </section>
-                    
-                    <a class="more-repos_view-all-link call-to-action__icon" href="https://github.com/gsa">
-                        View all GSA repositories 
-                    </a>
-
+                    <div>
+                    <a href="https://github.com/gsa">View all GSA repositories</a>
+                    </div>
 
 
 
