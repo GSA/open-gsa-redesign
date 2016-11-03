@@ -160,3 +160,40 @@ Many of our APIs are themselves open sourced and we always [welcome feedback](ht
             </section>
 
 
+### Hightlighted Repositories
+<section class="repos">
+                    <section class="repo">
+                        <h3 class="repo_name"><a href="https://github.com/GSA/data.gov">data.gov</a></h3>
+                        <p class="repo_description">The CKAN-based data catalog for the federal government.</p>
+                    </section>
+                    <section class="repo">
+                        <h3 class="repo_name"><a href="https://github.com/GSA/sam_api">sam_api</a></h3>
+                        <p class="repo_description">API access to the System for Award Management</p>
+                    </section>
+                    <section class="repo">
+                        <h3 class="repo_name"><a href="https://github.com/GSA/unclaimed_money">unclaimed_money</a></h3>
+                        <p class="repo_description">US Government unclaimed money metasearch tool.</p>
+                    </section>
+                    <section class="repo">
+                        <h3 class="sidebar_list_item_head">
+                                <a href="https://github.com/GSA/openIAE">openIAE</a>
+                            </h3>
+                    </section>
+                    <section class="repo">
+                        <h3 class="sidebar_list_item_head">
+                                <a href="https://github.com/GSA/asis">asis</a>
+                            </h3>
+                    </section>
+                    <section class="repo">
+                          <h3 class="sidebar_list_item_head">
+                                <a href="https://github.com/GSA/govt-urls">govt-urls</a>
+                            </h3>
+                    </section>
+                    
+                    <a class="more-repos_view-all-link call-to-action__icon" href="https://github.com/gsa">
+                        View all GSA repositories 
+                    </a>
+
+
+
+
