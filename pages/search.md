@@ -7,7 +7,7 @@ image: /assets/img/about.jpg
 
 ## Search
 
-<form class="usa-search" action="{{ site.baseurl }}{{ page.url }}" method="get">
+<form class="usa-search" action="{{ '/search' | prepend: site.baseurl }}" method="get">
   <div role="search">
     <label class="usa-sr-only" for="search-field">Search</label>
     <input id="search-field" type="search" name="search">
