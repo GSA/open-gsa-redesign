@@ -1,38 +1,39 @@
 <div class="skip-nav">
-  <a href="#main" class="skips">Skip to main content</a>
+    <a href="#main" class="skips">Skip to main content</a>
 </div>
 
-<header class="usa-site-header" role="banner">
-  <div class="usa-disclaimer">
-    <div class="usa-grid">
-      <span class="usa-disclaimer-official">This website is a work in progress as an official product of the United States Government
-        <img alt="US flag signifying that this is a United States Federal Government website" src="{{ '/assets/img/us_flag_small.png' | prepend: site.baseurl }}">
-      </span>
-     <!-- <span class="usa-disclaimer-stage">This site is currently in alpha. <a href="https://18f.gsa.gov/dashboard/stages/#alpha">Learn more.</a></span> -->
+<header class="usa-header usa-header-extended" role="banner">
+    <!-- Gov banner BEGIN -->
+    <div class="usa-banner">
+        <div class="usa-accordion">
+            <header class="usa-banner-header">
+                <div class="usa-grid usa-banner-inner">
+                    <img src="{{ site.baseurl }}/assets/uswds/img/favicons/favicon-57.png" alt="U.S. flag">
+                    <p>An official website of the United States government</p>
+                    <button class="usa-accordion-button usa-banner-button" aria-expanded="false" aria-controls="gov-banner">
+                      <span class="usa-banner-button-text">Here's how you know</span>
+                    </button>
+                </div>
+        </div>
     </div>
-  </div>
-  <nav class="usa-site-navbar">
-    <div class="usa-grid top-nav">
-      <div id="logo">
-        <a href="{{ site.baseurl }}/" accesskey="1" title="Home" aria-label="Home">
+                <nav class="usa-site-navbar">
+                    <div class="usa-grid top-nav">
+                        <div id="logo">
+                            <a href="{{ site.baseurl }}/" accesskey="1" title="Home" aria-label="Home">
           {% if site.logo %}
             <img class="header-logo" src="{{ site.logo | prepend: site.baseurl }}" alt="{{ site.title }}">
           {% else %}
             <h1 class="usa-header-title">{{ site.title }}</h1>
           {% endif %}
         </a>
-      </div>
-      <ul class="usa-nav-list usa-unstyled-list">
-        {% assign navs = site.data.navbar.assigned %}
-
-        {% for nav in navs %}
-          {% if nav.show_in_menu %}
-          <li class="usa-menu-item">
-            <a href="{{ nav.permalink | prepend: site.baseurl }}">{{ nav.text }}</a>
-          </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
-  </nav>
-</header>
+                        </div>
+                        <ul class="usa-nav-list usa-unstyled-list">
+                            {% assign navs = site.data.navbar.assigned %} {% for nav in navs %} {% if nav.show_in_menu %}
+                            <li class="usa-menu-item">
+                                <a href="{{ nav.permalink | prepend: site.baseurl }}">{{ nav.text }}</a>
+                            </li>
+                            {% endif %} {% endfor %}
+                        </ul>
+                    </div>
+                </nav>
+            </header>
