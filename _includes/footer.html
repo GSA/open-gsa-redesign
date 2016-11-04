@@ -1,40 +1,36 @@
-
-  <footer class="usa-footer usa-footer-big" role="contentinfo">
-    <div class="usa-footer-secondary_section usa-footer-big-secondary-section">
-      <div class="usa-grid">
-        <div class="usa-grid-full">
-          <div class="usa-footer-logo usa-width-one-fourth">
-            <!-- {% if site.footer.text %}
-              <p>{{ site.footer.text }}</p> -->
-            {% if site.footer.image %}
-              <img src="{{ site.footer.image | prepend: site.baseurl }}" alt="Logo image">
-            {% endif %}
-            {% endif %}
-          </div>
-          <nav class="usa-footer-nav">
-            <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
-              <li class="usa-footer-primary-link">
-                <p>Work</p>
-              </li>
-              <li><a href="{{ '/about' | prepend: site.baseurl }}">About Us</a></li>
-              <li><a href="#">Our Projects</a></li>
-            </ul>
-            <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
-              <li class="usa-footer-primary-link">
-                <p>People</p>
-              </li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Join Us</a></li>
-            </ul>
-            <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
-              <li class="usa-footer-primary-link">
-                <p>Policies</p>
-              </li>
-              <li><a href="#">Open Source</a></li>
-              <li><a href="#">Open Data</a></li>
-            </ul>
-          </nav>
+  <footer class="usa-footer usa-background-dark">
+    <div class="usa-grid">
+      <nav>
+        <div class="usa-width-one-fourth">
+          <h3>Work</h3>
+          <ul class="usa-unstyled-list">
+            <li><a href="{{ '/about' | prepend: site.baseurl }}">About us</a></li>
+            <li><a href="{{ '#' | prepend: site.baseurl }}">The team</a></li>
+            <li><a href="{{ '#' | prepend: site.baseurl }}">Join us</a></li>
+            <li><a href="{{ '#' | prepend: site.baseurl }}">Our projects</a></li>
+          </ul>
         </div>
-      </div>
+        <div class="usa-width-one-fourth">
+          <h3>Open Source</h3>
+          <ul class="usa-unstyled-list">
+            <li><a href="https://github.com/gsa/open-gsa-redesign">Edit this site</a></li>
+            <li><a href="https://github.com/gsa/open-gsa-redesign/issues">Submit feedback</a></li>
+          </ul>
+        </div>
+        <div class="usa-width-one-fourth">
+          <h3>Contact Us</h3>
+          <ul class="usa-unstyled-list">
+            <li><a href="{{ '#' | prepend: site.baseurl }}">Email us</a></li>
+          </li>
+        </div>
+        <div class="usa-footer-logo usa-width-one-fourth">
+          {% if site.footer.text %}
+            <p><small>{{ site.footer.text }}</small></p>
+          {% endif %}
+          {% if site.footer.image %}
+            <p><img src="{{ site.footer.image | prepend: site.baseurl }}" alt="{{ site.footer.image-alt }}" class="logo"></p>
+          {% endif %}
+        </div>
+      </nav>
     </div>
   </footer>
