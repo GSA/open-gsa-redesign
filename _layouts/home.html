@@ -11,10 +11,10 @@ layout: base
           <label for="goal">What would you like to do today?</label>
           <select name="goal" id="goal">
             <option value disabled selected>What would you like to do today?</option>
-            <option value="">Option 1</option>
-            <option value="">Option 2</option>
-            <option value="">Option 3</option>
-            <option value="">Option 4</option>
+            <option value="">Discover Agency datasets</option>
+            <option value="">Explore Restful APIs</option>
+            <option value="">Contribute to our Open Source code</option>
+            <option value="">Attend one of our events</option>
           </select>
         </form>
         <!-- <a class="usa-button" href="{{ page.hero-button-link | prepend: site.baseurl }}">{{ page.hero-button-text }}</a> -->
@@ -45,17 +45,17 @@ layout: base
   <div class="usa-grid">
       <div class="usa-width-one-whole usa-end-row">
   <h2>What describes you best?</h2>
+    </div>
+  </div>
 
-</div>
-</div>
   <div class="role">
     <div class="role-item">
       <i class="icon circle fa-user"></i>
-      <h3>Developer</h3>
+      <h3>Data consumer</h3>
     </div>
     <div class="role-item">
       <i class="icon circle alt fa-user"></i>
-      <h3>Data Consumer</h3>
+      <h3>Developer</h3>
     </div>
     <div class="role-item">
       <i class="icon circle alt2 fa-user"></i>
@@ -78,32 +78,56 @@ layout: base
 </section>
 
 <section class="banner functions">
-  <div class="function">
-    <div class="function-item">
+
+<div class="usa-grid" align="center">
+  <div class="usa-width-one-half">
       <i class="icon flag fa-bar-chart"></i>
       <h3>DATA</h3>
-      <p>This is a descriptive paragraph.</p>
-      <div class="usa-button-block"><a href="{{ '/data' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a></div>
-    </div>
-    <div class="function-item">
+      <p>Discover and download data from one of GSA's components.</p>
+      <div class="usa-button-block"><a href="{{ '/data' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
+      </div>
+  </div>
+  
+  <div class="usa-width-one-half">
       <i class="icon flag alt fa-gears"></i>
       <h3>APIs</h3>
-      <p>This is a descriptive paragraph.</p>
-      <div class="usa-button-block"><a href="{{ '/api' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a></div>
-    </div>
-    <div class="function-item">
+      <p>Explore and access GSA data via dynamic web services.</p>
+      <div class="usa-button-block"><a href="{{ '/api' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
+      </div>
+  </div>
+</div>
+
+</div>
+
+<br><br>
+
+<div class="usa-grid" align="center">
+<hr>
+</div>
+
+<br><br>
+
+<div class="usa-grid" align="center">
+
+  <div class="usa-width-one-half">
       <i class="icon flag alt2 fa-code"></i>
       <h3>CODE</h3>
-      <p>This is a descriptive paragraph.</p>
-      <div class="usa-button-block"><a href="{{ '/code' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a></div>
-    </div>
-    <div class="function-item">
+      <p>Contribute to our latest open source code projects.</p>
+      <div class="usa-button-block"><a href="{{ '/code' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
+      </div>
+  </div>
+  
+  <div class="usa-width-one-half">
       <i class="icon flag alt3 fa-calendar"></i>
       <h3>EVENTS</h3>
-      <p>This is a descriptive paragraph.</p>
-      <div class="usa-button-block"><a href="{{ '/events' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a></div>
-    </div>
+      <p>Attend one of our upcoming events where you can <br> collaborate with us.</p>
+      <div class="usa-button-block"><a href="{{ '/events' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
+      </div>
   </div>
+
+</div>
+</div>
+
 </section>
 
 
