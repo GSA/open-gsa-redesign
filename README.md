@@ -4,6 +4,8 @@ Open.gsa.gov is the current developer portal for all GSA data, APIs, and code op
 
 This particular site is made for use with the [Federalist](https://github.com/18f/federalist) in mind.
 
+See the [wiki](https://github.com/GSA/open-gsa-redesign/wiki) for more info related to this site including a product roadmap, personas, and guides.
+
 
 ### Public domain
 
