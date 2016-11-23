@@ -1,0 +1,11 @@
+name: 'open.gsa.gov Redesign'
+description: 'A fresh start for open.gsa.gov.'
+license: 'https://github.com/GSA/open-gsa-redesign/blob/dev/LICENSE.md'
+openSourceProject: 1
+governmentWideReuseProject: 1
+tags:
+    - data
+    - api
+    - developer
+contact:
+    email: cto@gsa.gov
