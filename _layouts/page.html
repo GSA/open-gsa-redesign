@@ -1,13 +1,14 @@
 ---
 layout: base
 ---
-
+{% if page.image %}
+  <div class="page--banner" style="background-image: url({{ page.image | prepend: site.baseurl }});"></div>
+{% endif %}
 <main class="usa-grid" id="main" tabindex="-1">
   <div class="usa-width-one-whole usa-content">
+    <section>
     <h1> {{ page.title }}</h1>
-    {% if page.image %}
-      <div class="page--banner" style="background-image: url({{ page.image | prepend: site.baseurl }});"></div>
-    {% endif %}
     {{ content }}
+  </section>
   </div>
 </main>
