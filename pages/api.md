@@ -9,7 +9,7 @@ image: /assets/img/about.jpg
 
 GSA's web services cover a range of important data and functionality. Software developers and researchers can use these resources to help people find useful government information.
 
-Many of our APIs are themselves open sourced and we always [welcome feedback](https://github.com/GSA/open-gsa-redesign/issues "Create an issue"). If you have any questions or ideas for how we can improve our APIs, don't hesitate to let us know.
+Many of our APIs are themselves open sourced and we always [welcome feedback](https://github.com/GSA/GSA-APIs/issues "Create an issue"). If you have any questions or ideas for how we can improve our APIs, don't hesitate to let us know.
 
 [Feedback](https://github.com/GSA/open-gsa-redesign/issues "Create an issue")    
 [View our developer terms of service](http://www.gsa.gov/portal/content/162631 "Developer terms of service")
