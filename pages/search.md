@@ -2,10 +2,7 @@
 layout: page
 title: Search
 permalink: /search/
-image: /assets/img/about.jpg
 ---
-
-## Search
 
 <form class="usa-search" action="{{ '/search' | prepend: site.baseurl }}" method="get">
   <div role="search">
@@ -22,5 +19,7 @@ image: /assets/img/about.jpg
 <script>
   var baseurl = "{{ site.baseurl }}";
 </script>
+
+
 <script src="{{ '/assets/js/lib/lunr.min.js' | prepend: site.baseurl  }}"></script>
 <script src="{{ '/assets/js/search.js' | prepend: site.baseurl  }}"></script>
