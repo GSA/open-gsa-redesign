@@ -16,7 +16,7 @@
                 </div>
         </div>
     </div>
-                <nav class="usa-site-navbar">
+    <nav class="usa-site-navbar responsive-fixed-nav">
                     <div class="usa-grid top-nav">
                         <div id="logo">
                             <a href="{{ site.baseurl }}/" accesskey="1" title="Home" aria-label="Home">
@@ -33,7 +33,10 @@
                                 <a href="{{ nav.permalink | prepend: site.baseurl }}">{{ nav.text }}</a>
                             </li>
                             {% endif %} {% endfor %}
+                            <i class="fa fa-search"></i>
                         </ul>
+
                     </div>
-                </nav>
-            </header>
+
+    </nav>
+</header>
