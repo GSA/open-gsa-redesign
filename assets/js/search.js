@@ -47,22 +47,34 @@
     var apis = [{
         "title": "API 1",
         "body": "blah blah blah api dog cat tech sooooo what",
-        "tags": [],
+        "tags": ['apis', 'dogs', 'hodor'],
         "url": "www.google.com",
-        "category": "cat 1"
+        "category": "data"
     }, {
         "title": "API 2",
         "body": "blah blah blah api dog cat tech sooooo what",
-        "tags": [],
+        "tags": ['apis', 'dogs', 'hodor'],
         "url": "www.google.com",
-        "category": "cat 1"
+        "category": "apis"
     }, {
         "title": "API 3",
         "body": "blah blah blah api dog cat tech sooooo what",
-        "tags": [],
+        "tags": ['apis', 'dogs', 'hodor'],
         "url": "www.google.com",
-        "category": "cat 1"
-    }];
+        "category": "code"
+      }, {
+          "title": "API 4",
+          "body": "blah blah blah api dog cat tech sooooo what",
+          "tags": ['articles', 'foo', 'bar'],
+          "url": "www.google.com",
+          "category": "articles"
+        }, {
+            "title": "API 5",
+            "body": "blah blah blah api dog cat tech sooooo what",
+            "tags": ['apis', 'dogs', 'hodor'],
+            "url": "www.google.com",
+            "category": "events"
+        }];
 
 
     for (var i in apis){
@@ -104,8 +116,8 @@
   }
 
   function displayResults(matches, pages, apis) {
-    console.log("MATCHES", matches);
-    console.log("PAGES", pages);
+    // console.log("MATCHES", matches);
+    // console.log("PAGES", pages);
 
 
     var $results = document.getElementById("search-results");
@@ -114,13 +126,47 @@
       for (var index in matches) {
 
         //apis matches are breaking... need to display api results and page results
-        console.log("THE SEARCH RESULT", pages[matches[index].ref]);
+        // console.log("THE SEARCH RESULT", pages[matches[index].ref]);
 
         var page = pages[matches[index].ref];
 
-        output += '<li><h3><a href="' + page.url + '">' + page.title + '</a></h3><p>' + page.body.substring(0, 200) + ' ...</p></li>';
+        if (page.category) {
+          // console.log(page.category);
+        }
+        var icon = '<i class="fa fa-bar-chart flag"></i>';
 
-        console.log(output);
+        switch (page.category) {
+          case 'data':
+            icon = '<i class="fa fa-bar-chart flag"></i>';
+            break;
+          case 'code':
+            icon = '<i class="fa fa-code flag alt2"></i>';
+            break;
+          case 'apis':
+            icon = '<i class="fa fa-cogs flag alt"></i>';
+            break;
+          case 'events':
+            icon = '<i class="fa fa-calendar flag alt3"></i>';
+            break;
+          case 'articles':
+            icon = '<i class="fa fa-file-text flag"></i>';
+            break;
+          default:
+            icon = '<i class="fa fa-bar-chart flag"></i>';
+
+        }
+
+        var title = '<h3>' + '<a href="' + page.url + '">' + page.title + '</a></h3>';
+        var copy = '<p>' + page.body.substring(0, 200) + ' ...</p>';
+        var outputTags = '';
+        //loop through tags and parse
+        for( var tag in page.tags ){
+          console.log('tag', page.tags[tag]);
+          outputTags  += '<span class="usa-label">' + page.tags[tag] + '</span>';
+        }
+
+        //final output for search
+        output += '<li class="result-item">' + '<div class="usa-grid"><div class="usa-width-one-third">' + icon + '</div>'+ '<div class="usa-width-two-thirds">' + title  + copy + outputTags + '</div></div>' +  '</li> <hr>';
       }
       output += "</ul>";
       $results.innerHTML = output;
