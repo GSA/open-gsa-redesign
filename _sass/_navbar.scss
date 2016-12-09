@@ -3,7 +3,13 @@
 }
 .usa-site-navbar {
   padding-top: 1rem;
+  background-color: #f1f1f1;
 }
+
+.usa-site-navbar .sub-menu{
+  background-color: #fff;
+}
+
 .usa-site-navbar .usa-grid {
   position: relative;
 }
@@ -77,4 +83,29 @@ li.usa-menu-item {
 }
 li.usa-menu-item:last-child {
   margin-right: 0;
+}
+
+.usa-grid,
+.usa-grid-full {
+    max-width: none;
+}
+
+ul.sub-menu-items {
+    right: 5%;
+    width: 90%;
+    text-align: center;
+}
+
+ul.usa-nav-list {
+    left: 10rem;
+}
+
+.search-container {
+    position: absolute;
+    right: 1rem;
+    top: -0.5rem;
+}
+
+.top-nav {
+    height: 60px;
 }
