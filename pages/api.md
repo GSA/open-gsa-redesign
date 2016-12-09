@@ -3,6 +3,7 @@ layout: page
 title: APIs
 permalink: /api/
 image: /assets/img/about.jpg
+category: api
 ---
 
 ## APIs and Developer Tools
@@ -195,6 +196,3 @@ Many of our APIs are themselves open sourced and we always [welcome feedback](ht
                     <div>
                     <a href="https://github.com/gsa">View all GSA repositories</a>
                     </div>
-
-
-

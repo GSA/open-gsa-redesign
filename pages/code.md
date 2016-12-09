@@ -3,6 +3,7 @@ layout: page
 title: Code
 permalink: /code/
 image: /assets/img/about.jpg
+category: code
 ---
 
 ## Open Data
