@@ -12,14 +12,14 @@
 /* ----------- Smartphones----------- */
 @media screen and (max-width : 699px) {
   .responsive-fixed-nav{
-    position: fixed;top: 0;left: 0;z-index: 9999;width: 100%;height: 30%;background-color: #ffffff;
+    position: fixed;top: 0;left: 0;z-index: 9999;width: 100%;height: inherit;background-color: #ffffff;
   }
 }
 
 /* ----------- Inbetween----------- */
 @media screen and (min-width : 700px) and (max-width : 1199px) {
   .responsive-fixed-nav{
-    position: fixed;top: 0;left: 0;z-index: 9999;width: 100%;height: 21%;background-color: #ffffff;
+    position: fixed;top: 0;left: 0;z-index: 9999;width: 100%;height: inherit;background-color: #ffffff;
   }
 }
 
@@ -27,6 +27,6 @@
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px)
 {
   .responsive-fixed-nav{
-    position: fixed;top: 0;left: 0;z-index: 9999;width: 100%;height: 13.5%;background-color: #ffffff;
+    position: fixed;top: 0;left: 0;z-index: 9999;width: 100%;height: inherit;background-color: #ffffff;
   }
 }
