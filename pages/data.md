@@ -3,6 +3,7 @@ layout: page
 title: Data
 permalink: /data/
 image: /assets/img/about.jpg
+category: data
 ---
 
 ## Open Data
