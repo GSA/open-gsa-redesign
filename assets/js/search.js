@@ -6,6 +6,7 @@
   }
 
   function initSearchPage() {
+
     var searchTerm = getSearchQuery();
     if (searchTerm) {
       var url = baseurl + "/api/v1/pages.json";
@@ -40,16 +41,28 @@
       this.ref("id");
       this.field("title", { boost: 10 });
       this.field("body");
+      this.field("category");
+      this.field("tags");
     });
+
+
+    for (var i in searchData){
+      pages.push(searchData[i]);
+    }
+
     for (var index in pages) {
       lunrIndex.add({
         id: index,
         title: pages[index].title,
-        body: pages[index].body
+        body: pages[index].body,
+        category: pages[index].category,
+        tags: pages[index].tags
       });
     }
+
     var matches = lunrIndex.search(searchTerm);
-    displayResults(matches, pages);
+
+    displayResults(matches, pages, searchData);
   }
 
   function getSearchQuery() {
@@ -65,18 +78,52 @@
     }
   }
 
-  function displayResults(matches, pages) {
+  function displayResults(matches, pages, searchData) {
+
     var $results = document.getElementById("search-results");
     if (matches.length > 0) {
       var output = '<ul class="usa-unstyled-list">';
       for (var index in matches) {
+
         var page = pages[matches[index].ref];
-        output += '<li><h3><a href="' + page.url + '">' + page.title + '</a></h3><p>' + page.body.substring(0, 200) + ' ...</p></li>';
+
+        var icon = '<i class="fa fa-bar-chart flag"></i>';
+
+        switch (page.category) {
+          case 'Data':
+            icon = '<i class="fa fa-bar-chart flag"></i>';
+            break;
+          case 'Code':
+            icon = '<i class="fa fa-code flag alt2"></i>';
+            break;
+          case 'APIs':
+            icon = '<i class="fa fa-cogs flag alt"></i>';
+            break;
+          case 'Events':
+            icon = '<i class="fa fa-calendar flag alt3"></i>';
+            break;
+          case 'Articles':
+            icon = '<i class="fa fa-file-text flag"></i>';
+            break;
+          default:
+            icon = '<i class="fa fa-bar-chart flag"></i>';
+        }
+
+        var title = '<h3>' + '<a href="' + page.url + '">' + page.title + '</a></h3>';
+        var copy = '<p>' + page.body.substring(0, 200) + ' ...</p>';
+        var outputTags = '';
+        //loop through tags and parse
+        for( var tag in page.tags ){
+          outputTags  += '<span class="usa-label">' + page.tags[tag] + '</span>';
+        }
+
+        //final output for search
+        output += '<li class="result-item">' + '<div class="usa-grid"><div class="usa-width-one-third">' + icon + '</div>'+ '<div class="usa-width-two-thirds">' + title  + copy + outputTags + '</div></div>' +  '</li> <hr>';
       }
       output += "</ul>";
       $results.innerHTML = output;
     } else {
-      $results.innerHTML = "<p>No results found.</p>";
+      $results.innerHTML = "<p>No results found. Try searching something like API, Data, or Code!</p>";
     }
   }
 
