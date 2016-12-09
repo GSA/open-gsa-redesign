@@ -86,19 +86,57 @@ layout: base
 
 <div class="usa-grid" align="center">
 
+   <!--
   <div class="usa-width-one-half">
-      <i class="icon flag alt2 fa-code"></i>
-      <h3>CODE</h3>
-      <p>Contribute to our latest open source code projects.</p>
-      <div class="usa-button-block"><a href="{{ '/code' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
+      <i class="icon flag fa-bar-chart"></i>
+      <h3>DATA</h3>
+      <p>Discover and download data from one of GSA's components.</p>
+      <div class="usa-button-block"><a href="{{ '/data' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
       </div>
   </div>
   
   <div class="usa-width-one-half">
-      <i class="icon flag alt3 fa-calendar"></i>
-      <h3>EVENTS</h3>
-      <p>Attend one of our upcoming events where you can <br> collaborate with us.</p>
-      <div class="usa-button-block"><a href="{{ '/events' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
+      <i class="icon flag alt fa-gears"></i>
+      <h3>APIs</h3>
+      <p>Explore and access GSA data via dynamic web services.</p>
+      <div class="usa-button-block"><a href="{{ '/api' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
+      </div>
+  </div>
+  -->
+  <style type="text/css">
+    .preview-card{
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        overflow: hidden;
+    }
+
+    .preview-card h4{
+        margin-top: 0px;
+        margin-bottom: 15px;
+    }
+
+    .preview-card:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        cursor: pointer;
+    }
+
+    .card-content{
+        padding: 15px;
+    }
+</style>
+  <div class="usa-width-one-whole">
+    <div class="usa-width-one-third">
+          {% include api-preview.html %}
+      </div>
+      <div class="usa-width-one-third">
+          {% include data-preview.html %}
+      </div>
+      <div class="usa-width-one-third">
+          {% include api-preview.html %}
       </div>
   </div>
 
