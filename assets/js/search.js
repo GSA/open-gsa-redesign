@@ -5,8 +5,6 @@
     baseurl = "";
   }
 
-  console.log("DATA", searchData);
-
   function initSearchPage() {
 
     var searchTerm = getSearchQuery();
@@ -40,7 +38,6 @@
   function search(pages, searchTerm) {
     document.getElementById("search-field").setAttribute("value", searchTerm);
     var lunrIndex = lunr(function () {
-      // console.log("THIS", this);
       this.ref("id");
       this.field("title", { boost: 10 });
       this.field("body");
@@ -54,7 +51,6 @@
     }
 
     for (var index in pages) {
-      console.log("page", pages[index]);
       lunrIndex.add({
         id: index,
         title: pages[index].title,
@@ -83,41 +79,34 @@
   }
 
   function displayResults(matches, pages, searchData) {
-    console.log("MATCHES", matches);
-    console.log("PAGES", pages);
-
 
     var $results = document.getElementById("search-results");
     if (matches.length > 0) {
       var output = '<ul class="usa-unstyled-list">';
       for (var index in matches) {
 
-        //apis matches are breaking... need to display api results and page results
-        // console.log("THE SEARCH RESULT", pages[matches[index].ref]);
-
         var page = pages[matches[index].ref];
 
         var icon = '<i class="fa fa-bar-chart flag"></i>';
 
         switch (page.category) {
-          case 'data':
+          case 'Data':
             icon = '<i class="fa fa-bar-chart flag"></i>';
             break;
-          case 'code':
+          case 'Code':
             icon = '<i class="fa fa-code flag alt2"></i>';
             break;
-          case 'apis':
+          case 'APIs':
             icon = '<i class="fa fa-cogs flag alt"></i>';
             break;
-          case 'events':
+          case 'Events':
             icon = '<i class="fa fa-calendar flag alt3"></i>';
             break;
-          case 'articles':
+          case 'Articles':
             icon = '<i class="fa fa-file-text flag"></i>';
             break;
           default:
             icon = '<i class="fa fa-bar-chart flag"></i>';
-
         }
 
         var title = '<h3>' + '<a href="' + page.url + '">' + page.title + '</a></h3>';
@@ -125,7 +114,6 @@
         var outputTags = '';
         //loop through tags and parse
         for( var tag in page.tags ){
-          console.log('tag', page.tags[tag]);
           outputTags  += '<span class="usa-label">' + page.tags[tag] + '</span>';
         }
 
