@@ -55,13 +55,13 @@
         "body": "blah blah blah api dog cat tech sooooo what",
         "tags": [],
         "url": "www.google.com",
-        "category": "cat 1"
+        "category": "cat 2"
     }, {
         "title": "API 3",
         "body": "blah blah blah api dog cat tech sooooo what",
         "tags": [],
         "url": "www.google.com",
-        "category": "cat 1"
+        "category": "cat 3"
     }];
 
 
