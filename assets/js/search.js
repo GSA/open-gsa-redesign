@@ -45,6 +45,7 @@
       this.field("title", { boost: 10 });
       this.field("body");
       this.field("category");
+      this.field("tags");
     });
 
     for (var i in searchData){
@@ -57,7 +58,8 @@
         id: index,
         title: pages[index].title,
         body: pages[index].body,
-        category: pages[index].category
+        category: pages[index].category,
+        tags: pages[index].tags
       });
     }
 
