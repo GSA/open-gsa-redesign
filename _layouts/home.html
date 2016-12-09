@@ -41,33 +41,10 @@ layout: base
 </section>
 {% endif %}
 
-<section class="banner roles">
-  <div class="usa-grid">
-      <div class="usa-width-one-whole usa-end-row">
-  <h2>What describes you best?</h2>
-    </div>
-  </div>
-
-  <div class="role">
-    <div class="role-item">
-      <i class="icon circle fa-user"></i>
-      <h3>Data consumer</h3>
-    </div>
-    <div class="role-item">
-      <i class="icon circle alt fa-user"></i>
-      <h3>Developer</h3>
-    </div>
-    <div class="role-item">
-      <i class="icon circle alt2 fa-user"></i>
-      <h3>Curious</h3>
-    </div>
-  </div>
-</section>
-
 <section class="content">
   <div class="usa-grid">
     <div class="usa-width-one-whole usa-end-row">
-      {{ content }}
+      <!-- {{ content }} -->
       <div class="center-content">
         {% if page.content-button-link %}
           <a href="{{ page.content-button-link | prepend: site.baseurl }}" class="usa-button">{{ page.content-button-text }}</a>
