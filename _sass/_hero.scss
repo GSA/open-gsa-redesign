@@ -8,12 +8,12 @@
 .hero-content {
   background-color: transparentize($text-color, .6);
   bottom: 20px;
-  left: 50%;
+  // left: 50%;
   margin-left: -30%;
   padding-top: 20px;
   position: absolute;
   text-align: center;
-  width: 60%;
+  width: 100%;
 }
 .hero-content h1 {
   color: white;
@@ -28,4 +28,5 @@
 .hero-content .usa-button {
   font-size: 22px;
   line-height: 30px;
+  margin: 0;
 }
