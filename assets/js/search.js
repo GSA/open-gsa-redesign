@@ -5,7 +5,10 @@
     baseurl = "";
   }
 
+  console.log("DATA", searchData);
+
   function initSearchPage() {
+
     var searchTerm = getSearchQuery();
     if (searchTerm) {
       var url = baseurl + "/api/v1/pages.json";
@@ -44,30 +47,29 @@
       this.field("category");
     });
 
-    var apis = [{
-        "title": "API 1",
-        "body": "blah blah blah api dog cat tech sooooo what",
-        "tags": [],
-        "url": "www.google.com",
-        "category": "cat 1"
-    }, {
-        "title": "API 2",
-        "body": "blah blah blah api dog cat tech sooooo what",
-        "tags": [],
-        "url": "www.google.com",
-        "category": "cat 2"
-    }, {
-        "title": "API 3",
-        "body": "blah blah blah api dog cat tech sooooo what",
-        "tags": [],
-        "url": "www.google.com",
-        "category": "cat 3"
-    }];
+    // var apis = [{
+    //     "title": "API 1",
+    //     "body": "blah blah blah api dog cat tech sooooo what",
+    //     "tags": [],
+    //     "url": "www.google.com",
+    //     "category": "cat 1"
+    // }, {
+    //     "title": "API 2",
+    //     "body": "blah blah blah api dog cat tech sooooo what",
+    //     "tags": [],
+    //     "url": "www.google.com",
+    //     "category": "cat 2"
+    // }, {
+    //     "title": "API 3",
+    //     "body": "blah blah blah api dog cat tech sooooo what",
+    //     "tags": [],
+    //     "url": "www.google.com",
+    //     "category": "cat 3"
+    // }];
 
 
-    for (var i in apis){
-      // console.log("api", apis[i]);
-      pages.push(apis[i]);
+    for (var i in searchData){
+      pages.push(searchData[i]);
     }
 
     for (var index in pages) {
@@ -79,15 +81,10 @@
         category: pages[index].category
       });
     }
-    // console.log("PAGES!!!!!", pages);
-
-
-
-    // console.log("LUNR", lunrIndex);
 
     var matches = lunrIndex.search(searchTerm);
 
-    displayResults(matches, pages, apis);
+    displayResults(matches, pages, searchData);
   }
 
   function getSearchQuery() {
@@ -103,7 +100,7 @@
     }
   }
 
-  function displayResults(matches, pages, apis) {
+  function displayResults(matches, pages, searchData) {
     console.log("MATCHES", matches);
     console.log("PAGES", pages);
 

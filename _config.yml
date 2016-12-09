@@ -66,4 +66,5 @@ footer:
 markdown: kramdown
 include:
   - _navigation.json
+  -_search.json
 exclude: [node_modules, gulpifle.js, CONTRIBUTING.md, LICENSE.md, README.md]
