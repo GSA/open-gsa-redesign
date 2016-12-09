@@ -47,27 +47,6 @@
       this.field("category");
     });
 
-    // var apis = [{
-    //     "title": "API 1",
-    //     "body": "blah blah blah api dog cat tech sooooo what",
-    //     "tags": [],
-    //     "url": "www.google.com",
-    //     "category": "cat 1"
-    // }, {
-    //     "title": "API 2",
-    //     "body": "blah blah blah api dog cat tech sooooo what",
-    //     "tags": [],
-    //     "url": "www.google.com",
-    //     "category": "cat 2"
-    // }, {
-    //     "title": "API 3",
-    //     "body": "blah blah blah api dog cat tech sooooo what",
-    //     "tags": [],
-    //     "url": "www.google.com",
-    //     "category": "cat 3"
-    // }];
-
-
     for (var i in searchData){
       pages.push(searchData[i]);
     }
@@ -122,7 +101,7 @@
       output += "</ul>";
       $results.innerHTML = output;
     } else {
-      $results.innerHTML = "<p>No results found.</p>";
+      $results.innerHTML = "<p>No results found. Try searching something like API, Data, or Code!</p>";
     }
   }
 
