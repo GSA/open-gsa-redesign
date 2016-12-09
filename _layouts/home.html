@@ -7,7 +7,18 @@ layout: base
     <div class="usa-grid">
       <div class="usa-width-whole hero-content">
         <h1>{{ page.hero-text }}</h1>
-        <form class="goal-select">
+          <form class="usa-search" action="{{ '/search' | prepend: site.baseurl }}" method="get" style="margin: 0 auto;
+width:300px;margin-bottom: 20px;">
+              <div role="search">
+                  <label class="usa-sr-only" for="search-field">Search</label>
+                  <input id="search-field" type="search" name="search" placeholder="What are you looking for today?">
+                  <button type="submit">
+                      <span class="usa-search-submit-text">Search</span>
+                  </button>
+              </div>
+          </form>
+
+        <!--<form class="goal-select">
           <label for="goal">What would you like to do today?</label>
           <select name="goal" id="goal">
             <option value disabled selected>What would you like to do today?</option>
@@ -16,7 +27,7 @@ layout: base
             <option value="">Contribute to our Open Source code</option>
             <option value="">Attend one of our events</option>
           </select>
-        </form>
+        </form>-->
         <!-- <a class="usa-button" href="{{ page.hero-button-link | prepend: site.baseurl }}">{{ page.hero-button-text }}</a> -->
       </div>
     </div>

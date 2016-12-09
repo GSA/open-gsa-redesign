@@ -5,7 +5,10 @@
     baseurl = "";
   }
 
+  console.log("DATA", searchData);
+
   function initSearchPage() {
+
     var searchTerm = getSearchQuery();
     if (searchTerm) {
       var url = baseurl + "/api/v1/pages.json";
@@ -42,44 +45,12 @@
       this.field("title", { boost: 10 });
       this.field("body");
       this.field("category");
+      this.field("tags");
     });
 
-    var apis = [{
-        "title": "API 1",
-        "body": "blah blah blah api dog cat tech sooooo what",
-        "tags": ['apis', 'dogs', 'hodor'],
-        "url": "www.google.com",
-        "category": "data"
-    }, {
-        "title": "API 2",
-        "body": "blah blah blah api dog cat tech sooooo what",
-        "tags": ['apis', 'dogs', 'hodor'],
-        "url": "www.google.com",
-        "category": "apis"
-    }, {
-        "title": "API 3",
-        "body": "blah blah blah api dog cat tech sooooo what",
-        "tags": ['apis', 'dogs', 'hodor'],
-        "url": "www.google.com",
-        "category": "code"
-      }, {
-          "title": "API 4",
-          "body": "blah blah blah api dog cat tech sooooo what",
-          "tags": ['articles', 'foo', 'bar'],
-          "url": "www.google.com",
-          "category": "articles"
-        }, {
-            "title": "API 5",
-            "body": "blah blah blah api dog cat tech sooooo what",
-            "tags": ['apis', 'dogs', 'hodor'],
-            "url": "www.google.com",
-            "category": "events"
-        }];
 
-
-    for (var i in apis){
-      // console.log("api", apis[i]);
-      pages.push(apis[i]);
+    for (var i in searchData){
+      pages.push(searchData[i]);
     }
 
     for (var index in pages) {
@@ -88,18 +59,14 @@
         id: index,
         title: pages[index].title,
         body: pages[index].body,
-        category: pages[index].category
+        category: pages[index].category,
+        tags: pages[index].tags
       });
     }
-    // console.log("PAGES!!!!!", pages);
-
-
-
-    // console.log("LUNR", lunrIndex);
 
     var matches = lunrIndex.search(searchTerm);
 
-    displayResults(matches, pages, apis);
+    displayResults(matches, pages, searchData);
   }
 
   function getSearchQuery() {
@@ -115,9 +82,9 @@
     }
   }
 
-  function displayResults(matches, pages, apis) {
-    // console.log("MATCHES", matches);
-    // console.log("PAGES", pages);
+  function displayResults(matches, pages, searchData) {
+    console.log("MATCHES", matches);
+    console.log("PAGES", pages);
 
 
     var $results = document.getElementById("search-results");
@@ -130,9 +97,6 @@
 
         var page = pages[matches[index].ref];
 
-        if (page.category) {
-          // console.log(page.category);
-        }
         var icon = '<i class="fa fa-bar-chart flag"></i>';
 
         switch (page.category) {
@@ -171,7 +135,7 @@
       output += "</ul>";
       $results.innerHTML = output;
     } else {
-      $results.innerHTML = "<p>No results found.</p>";
+      $results.innerHTML = "<p>No results found. Try searching something like API, Data, or Code!</p>";
     }
   }
 

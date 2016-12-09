@@ -3,7 +3,7 @@ layout: page
 title: APIs
 permalink: /api/
 image: /assets/img/about.jpg
-category: test2
+category: api
 ---
 
 ## APIs and Developer Tools

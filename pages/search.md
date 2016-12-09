@@ -18,6 +18,7 @@ permalink: /search/
 
 <script>
   var baseurl = "{{ site.baseurl }}";
+  var searchData = {{ site.data.search | jsonify }};
 </script>
 
 
