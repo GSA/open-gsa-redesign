@@ -68,3 +68,26 @@ div.skip-nav a:focus {
     margin-left: -31.25rem;
   }
 }
+
+/*Media Queries*/
+/* ----------- Smartphones----------- */
+@media (mix-width : 699px) {
+  .responsive-fixed-nav{
+    position: fixed;top: 0;left: 0;z-index: 9999;width: 100%;height: 30%;background-color: #ffffff;
+  }
+}
+
+/* ----------- Inbetween----------- */
+@media (min-width : 700px) and (max-width : 1199px) {
+  .responsive-fixed-nav{
+    position: fixed;top: 0;left: 0;z-index: 9999;width: 100%;height: 21%;background-color: #ffffff;
+  }
+}
+
+/* ----------- Laptops ----------- */
+@media (min-width: 1200px) and (max-device-width: 1600px)
+{
+  .responsive-fixed-nav{
+    position: fixed;top: 0;left: 0;z-index: 9999;width: 100%;height: 13.5%;background-color: #ffffff;
+  }
+}
