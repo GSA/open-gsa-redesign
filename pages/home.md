@@ -2,7 +2,7 @@
 layout: home
 permalink: /
 hero-image: /assets/img/feature-background.jpg
-hero-text: "Collaborate with us!"
+hero-text: "Unlock the power of government data"
 hero-button-text: Hey, me too!
 hero-button-link: /about/
 banner-heading: The mission of GSA is to deliver the best value in real estate, acquisition, and technology services to government and the American people.

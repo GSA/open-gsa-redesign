@@ -5,8 +5,8 @@
   min-height: 70vh;
   position: relative;
 }
-.hero-content {
-  background-color: transparentize($text-color, .6);
+.hero-search {
+  background-color: rgba(46, 133, 64, 0.7);
   bottom: 20px;
   left: 50%;
   margin-left: -30%;
@@ -15,17 +15,18 @@
   text-align: center;
   width: 60%;
 }
-.hero-content h1 {
+.hero-search h2 {
+  font-family: "Source Sans Pro";
   color: white;
-  font-size: 36px;
-  font-weight: 100;
-  line-height: 50px;
+  font-size: 50px;
+  font-weight: 400;
   margin-top: 0;
   margin-bottom: 0;
-  padding-left: .3em;
-  padding-right: .3em;
 }
-.hero-content .usa-button {
-  font-size: 22px;
-  line-height: 30px;
+
+.hero-search .usa-search.usa-search-big [type="search"], .hero-search .usa-search.usa-search-big .usa-search-input {
+  border-color: #ccc;
+  border-radius: 3px 0 0 3px;
+  max-width: 100%;
 }
+//From Doc Hoppers Frog Legs
