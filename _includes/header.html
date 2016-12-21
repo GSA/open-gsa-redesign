@@ -28,12 +28,13 @@
         </a>
                         </div>
                         <ul class="usa-nav-list usa-unstyled-list">
+                          <li class="usa-menu-item"><a href="{{ site.baseurl }}/search"> <i class="fa fa-search"></i> Search</a></li>
                             {% assign navs = site.data.navbar.assigned %} {% for nav in navs %} {% if nav.show_in_menu %}
                             <li class="usa-menu-item">
                                 <a href="{{ nav.permalink | prepend: site.baseurl }}">{{ nav.text }}</a>
                             </li>
                             {% endif %} {% endfor %}
-                            <a href="{{ site.baseurl }}/search"> <i class="fa fa-search"></i> </a></ul>
+                            </ul>
                         </ul>
 
                     </div>
