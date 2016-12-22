@@ -2,11 +2,10 @@
 layout: base
 ---
 
-<section class="section-top">
+<section class="section-top hero-section">
   <div id="main" tabindex="-1" class="hero-unit" style="background-image: url('{{ page.hero-image | prepend: site.baseurl }}')">
         <section class="hero-search">
 	<div class="usa-grid">
-
 
 <div class="usa-grid">
   <div class="usa-width-full">
@@ -49,14 +48,8 @@ width:300px;margin-bottom: 20px;">
     </div>
   </div>
 </section>
-
-<section class="usa-section usa-section-dark">
-  <div class="usa-grid">
-  </div>
-</section>
-
 {% if page.banner-heading %}
-<section class="banner tagline">
+<section class="usa-section usa-section-dark">
   <div class="usa-grid">
     <div class="usa-width-one-whole usa-end-row">
       <h2>{{ page.banner-heading }}</h2>
@@ -73,6 +66,47 @@ width:300px;margin-bottom: 20px;">
 </section>
 {% endif %}
 
+<section class="banner functions">
+
+<div class="usa-grid-full" align="center">
+  <div class="usa-width-one-third">
+      <i class="icon flag fa-bar-chart"></i>
+      <h3>DATA</h3>
+      <p>Discover and download data from one of GSA's components.</p>
+      <div class="usa-button-block"><a href="{{ '/data' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
+      </div>
+  </div>
+
+  <div class="usa-width-one-third">
+      <i class="icon flag alt fa-gears"></i>
+      <h3>APIs</h3>
+      <p>Explore and access GSA data via dynamic web services.</p>
+      <div class="usa-button-block"><a href="{{ '/api' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
+      </div>
+  </div>
+
+  <div class="usa-width-one-third">
+      <i class="icon flag alt2 fa-code"></i>
+      <h3>CODE</h3>
+      <p>Contribute to our latest open source code projects.</p>
+      <div class="usa-button-block"><a href="{{ '/code' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
+      </div>
+  </div>
+
+  <!-- <div class="usa-width-one-half">
+      <i class="icon flag alt3 fa-calendar"></i>
+      <h3>EVENTS</h3>
+      <p>Attend one of our upcoming events where you can <br> collaborate with us.</p>
+      <div class="usa-button-block"><a href="{{ '/events' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
+      </div>
+  </div> -->
+</div>
+</div>
+</section>
+
+
+
+<!--
 <section class="banner roles">
   <div class="usa-grid">
       <div class="usa-width-one-whole usa-end-row">
@@ -108,59 +142,8 @@ width:300px;margin-bottom: 20px;">
     </div>
   </div>
 </section>
+ -->
 
-<section class="banner functions">
-
-<div class="usa-grid" align="center">
-  <div class="usa-width-one-half">
-      <i class="icon flag fa-bar-chart"></i>
-      <h3>DATA</h3>
-      <p>Discover and download data from one of GSA's components.</p>
-      <div class="usa-button-block"><a href="{{ '/data' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
-      </div>
-  </div>
-
-  <div class="usa-width-one-half">
-      <i class="icon flag alt fa-gears"></i>
-      <h3>APIs</h3>
-      <p>Explore and access GSA data via dynamic web services.</p>
-      <div class="usa-button-block"><a href="{{ '/api' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
-      </div>
-  </div>
-</div>
-
-</div>
-
-<br><br>
-
-<div class="usa-grid" align="center">
-<hr>
-</div>
-
-<br><br>
-
-<div class="usa-grid" align="center">
-
-  <div class="usa-width-one-half">
-      <i class="icon flag alt2 fa-code"></i>
-      <h3>CODE</h3>
-      <p>Contribute to our latest open source code projects.</p>
-      <div class="usa-button-block"><a href="{{ '/code' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
-      </div>
-  </div>
-
-  <div class="usa-width-one-half">
-      <i class="icon flag alt3 fa-calendar"></i>
-      <h3>EVENTS</h3>
-      <p>Attend one of our upcoming events where you can <br> collaborate with us.</p>
-      <div class="usa-button-block"><a href="{{ '/events' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
-      </div>
-  </div>
-
-</div>
-</div>
-
-</section>
 
 
 <!-- <section>
