@@ -29,12 +29,19 @@
                         </div>
                         <ul class="usa-nav-list usa-unstyled-list">
                           <li class="usa-menu-item"><a href="{{ site.baseurl }}/search"> <i class="fa fa-search"></i> Search</a></li>
+                          <li class="usa-menu-item"><a href="https://catalog.data.gov/dataset?publisher=General%20Services%20Administration">Data</a></li>
+                          <li class="usa-menu-item"><a href="{{ '/api' | prepend: site.baseurl }}">APIs</a></li>
+                          <li class="usa-menu-item"><a href="https://gsa.github.io/GSAOpenSourcePolicy/">Code</a></li>
+                          <li class="usa-menu-item"><a href="{{ '/events' | prepend: site.baseurl }}">Events</a></li>
+                        </ul>
+                        <!-- <ul class="usa-nav-list usa-unstyled-list">
+                          <li class="usa-menu-item"><a href="{{ site.baseurl }}/search"> <i class="fa fa-search"></i> Search</a></li>
                             {% assign navs = site.data.navbar.assigned %} {% for nav in navs %} {% if nav.show_in_menu %}
                             <li class="usa-menu-item">
                                 <a href="{{ nav.permalink | prepend: site.baseurl }}">{{ nav.text }}</a>
                             </li>
                             {% endif %} {% endfor %}
-                            </ul>
+                            </ul> -->
                         </ul>
 
                     </div>
