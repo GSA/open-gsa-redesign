@@ -7,7 +7,7 @@ layout: base
         <section class="hero-search">
 	<div class="usa-grid">
 
-<div class="usa-grid">
+<!-- <div class="usa-grid">
   <div class="usa-width-full">
             <h2>{{ page.hero-text }}</h2>
     <form id="form-search" class="usa-search usa-search-big" action="/search">
@@ -20,7 +20,23 @@ layout: base
       </div>
     </form>
   </div>
+</div> -->
+<div class="usa-grid">
+<div class="usa-width-full">
+          <h2>{{ page.hero-text }}</h2>
+<form class="usa-search usa-search-big" action="{{ '/search' | prepend: site.baseurl }}" method="get">
+  <div role="search">
+    <label class="usa-sr-only" for="search-field">Search</label>
+    <input id="search-field" type="search" name="search">
+    <button type="submit">
+      <span class="usa-search-submit-text">Search</span>
+    </button>
+  </div>
+</form>
 </div>
+</div>
+
+
 
           <!-- <form class="usa-width-whole usa-search-big" action="{{ '/search' | prepend: site.baseurl }}" method="get" style="margin: 0 auto;
 width:300px;margin-bottom: 20px;">
