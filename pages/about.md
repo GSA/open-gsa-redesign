@@ -2,20 +2,18 @@
 layout: page
 title: About
 permalink: /about/
-image: /assets/img/about.jpg
+image: /assets/img/about-pattern.png
 category: test1
 ---
-
-## About GSA
-
-GSA provides workplaces by constructing, managing, and preserving government buildings and by leasing and managing commercial real estate. GSA's acquisition solutions offer private sector professional services, equipment, supplies, telecommunications, and information technology to government organizations and the military. GSA policies promote management best practices and efficient government operations.
 
 ### Mission
 
 The mission of GSA is to deliver the best value in real estate, acquisition, and technology services to government and the American people.
 
-### History
+### Be open
 
-GSA was established by President Harry Truman on July 1, 1949, to streamline the administrative work of the federal government.  GSA consolidated the National Archives Establishment, the Federal Works Agency and its Public Buildings Administration, the Bureau of Federal Supply and the Office of Contract Settlement, and the War Assets Administration into one federal agency tasked with administering supplies and providing workplaces for federal employees
+There are multiple OMB policies mandating agencies to be more “open” including Open Data/APIs and Open Source, GSA should demonstrate leadership across the government by being aggressive in a transition towards opening its information assets; this includes opening our code, data sets and APIs as a matter of public good. Good APIs will allow for an ecosystem of external and internal applications that will provide and support citizen and government reuse of data and functionality.
 
-HI, this my change.
+### What does be open mean?
+
+GSA is dedicated to open first policies involving data, APIs, and source code. This in compliance with OMB policies and also good modern technology and business practices. This approach facilitates a move to digital applications and infrastructure and provides opportunities for external agency and public involvement. One good example with public engagement is with GSA Hackathons where individuals compete for cash prizes while creating MVPs with open data.

@@ -1,154 +1,81 @@
----
-layout: base
----
+<!doctype html>
+<html lang="en">
 
-<section class="section-top">
-  <div id="main" tabindex="-1" class="hero-unit" style="background-image: url('{{ page.hero-image | prepend: site.baseurl }}')">
-    <div class="usa-grid">
-      <div class="usa-width-whole hero-content">
-        <h1>{{ page.hero-text }}</h1>
-          <form class="usa-width-whole usa-search" action="{{ '/search' | prepend: site.baseurl }}" method="get" style="margin: 0 auto;
-width:300px;margin-bottom: 20px;">
-              <div role="search">
-                  <label class="usa-sr-only" for="search-field">Search</label>
-                  <input id="search-field" type="search" name="search" placeholder="What are you looking for today?">
-                  <button type="submit">
-                      <span class="usa-search-submit-text">Search</span>
-                  </button>
-              </div>
-          </form>
+{% include head.html %}
 
-        <!--<form class="goal-select">
-          <label for="goal">What would you like to do today?</label>
-          <select name="goal" id="goal">
-            <option value disabled selected>What would you like to do today?</option>
-            <option value="">Discover Agency datasets</option>
-            <option value="">Explore Restful APIs</option>
-            <option value="">Contribute to our Open Source code</option>
-            <option value="">Attend one of our events</option>
-          </select>
-        </form>-->
-        <!-- <a class="usa-button" href="{{ page.hero-button-link | prepend: site.baseurl }}">{{ page.hero-button-text }}</a> -->
-      </div>
-    </div>
-  </div>
-</section>
+<body>
+    <div id="wrapper">
+        <div id="header">{% include header.html %}</div>
+        <div id="content">
+        <section class="section-top hero-section">
+            <div id="main" tabindex="-1" class="hero-unit" style="background-image: url('{{ page.hero-image | prepend: site.baseurl }}')">
+                <section class="hero-search">
+                        <div class="usa-grid">
+                            <div class="usa-width-full">
+                                <h2>{{ page.hero-text }}</h2>
+                                <form class="usa-search usa-search-big" action="{{ '/search' | prepend: site.baseurl }}" method="get">
+                                    <div role="search">
+                                        <label class="usa-sr-only" for="search-field">Search</label>
+                                        <input id="search-field" type="search" name="search">
+                                        <button type="submit">
+                                          <span class="usa-search-submit-text">Search</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                </section>
+                  </div>
+              </section>
+    {% if page.banner-heading %}
+    <section class="usa-section usa-section-dark">
+        <div class="usa-grid">
+            <div class="usa-width-one-whole usa-end-row">
+                <h2>{{ page.banner-heading }}</h2> {% if page.banner-text %}
+                <p>{{ page.banner-text }}</p>
+                {% endif %} {% if page.banner-button-text %}
+                <div class="center-content">
+                    <a href="{{ page.banner-button-link | prepend: site.baseurl }}" class="usa-button">{{ page.banner-button-text }}</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
 
-{% if page.banner-heading %}
-<section class="banner tagline">
-  <div class="usa-grid">
-    <div class="usa-width-one-whole usa-end-row">
-      <h2>{{ page.banner-heading }}</h2>
-      {% if page.banner-text %}
-        <p>{{ page.banner-text }}</p>
-      {% endif %}
-      {% if page.banner-button-text %}
-      <div class="center-content">
-        <a href="{{ page.banner-button-link | prepend: site.baseurl }}" class="usa-button">{{ page.banner-button-text }}</a>
-      </div>
-      {% endif %}
-    </div>
-  </div>
-</section>
-{% endif %}
+    <section class="banner functions">
 
-<section class="banner roles">
-  <div class="usa-grid">
-      <div class="usa-width-one-whole usa-end-row">
-  <h2>What describes you best?</h2>
-    </div>
-  </div>
+        <div class="usa-grid-full" align="center">
+            <div class="usa-width-one-third">
+                <i class="icon flag fa-bar-chart"></i>
+                <h3>DATA</h3>
+                <p>Discover and download data from one of GSA's components.</p>
+                <div class="usa-button-block"><a href="{{ '/data' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">Discover Data</a>
+                </div>
+            </div>
 
-  <div class="role">
-    <div class="role-item">
-      <i class="icon circle fa-user"></i>
-      <h3>Data consumer</h3>
-    </div>
-    <div class="role-item">
-      <i class="icon circle alt fa-user"></i>
-      <h3>Developer</h3>
-    </div>
-    <div class="role-item">
-      <i class="icon circle alt2 fa-user"></i>
-      <h3>Curious</h3>
-    </div>
-  </div>
-</section>
+            <div class="usa-width-one-third">
+                <i class="icon flag alt fa-gears"></i>
+                <h3>APIs</h3>
+                <p>Explore and access GSA data via dynamic web services.</p>
+                <div class="usa-button-block"><a href="{{ '/api' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">Explore APIs</a>
+                </div>
+            </div>
 
-<section class="content">
-  <div class="usa-grid">
-    <div class="usa-width-one-whole usa-end-row">
-      {{ content }}
-      <div class="center-content">
-        {% if page.content-button-link %}
-          <a href="{{ page.content-button-link | prepend: site.baseurl }}" class="usa-button">{{ page.content-button-text }}</a>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="banner functions">
-
-<div class="usa-grid" align="center">
-  <div class="usa-width-one-half">
-      <i class="icon flag fa-bar-chart"></i>
-      <h3>DATA</h3>
-      <p>Discover and download data from one of GSA's components.</p>
-      <div class="usa-button-block"><a href="{{ '/data' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
-      </div>
-  </div>
-  
-  <div class="usa-width-one-half">
-      <i class="icon flag alt fa-gears"></i>
-      <h3>APIs</h3>
-      <p>Explore and access GSA data via dynamic web services.</p>
-      <div class="usa-button-block"><a href="{{ '/api' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
-      </div>
-  </div>
+            <div class="usa-width-one-third">
+                <i class="icon flag alt2 fa-code"></i>
+                <h3>CODE</h3>
+                <p>Contribute to our latest open source code projects.</p>
+                <div class="usa-button-block"><a href="{{ '/code' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">Code with Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include contact.html %}
 </div>
+    <div id="footer">{% include footer.html %}</div>
+    {% include javascript.html %}
+    </div>
+</body>
 
-</div>
-
-<br><br>
-
-<div class="usa-grid" align="center">
-<hr>
-</div>
-
-<br><br>
-
-<div class="usa-grid" align="center">
-
-  <div class="usa-width-one-half">
-      <i class="icon flag alt2 fa-code"></i>
-      <h3>CODE</h3>
-      <p>Contribute to our latest open source code projects.</p>
-      <div class="usa-button-block"><a href="{{ '/code' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
-      </div>
-  </div>
-  
-  <div class="usa-width-one-half">
-      <i class="icon flag alt3 fa-calendar"></i>
-      <h3>EVENTS</h3>
-      <p>Attend one of our upcoming events where you can <br> collaborate with us.</p>
-      <div class="usa-button-block"><a href="{{ '/events' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">More details</a>
-      </div>
-  </div>
-
-</div>
-</div>
-
-</section>
-
-
-<!-- <section>
-  <div class="usa-grid">
-    <h2>Work</h2>
-    {% include projects.html %}
-  </div>
-</section> -->
-
-
-
-{% include contact.html %}
+</html>

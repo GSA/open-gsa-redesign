@@ -2,6 +2,7 @@
 layout: page
 title: Search
 permalink: /search/
+image: /assets/img/search-pattern.png
 ---
 
 <form class="usa-search" action="{{ '/search' | prepend: site.baseurl }}" method="get">

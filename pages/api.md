@@ -2,7 +2,7 @@
 layout: page
 title: APIs
 permalink: /api/
-image: /assets/img/about.jpg
+image: /assets/img/api-pattern.png
 category: api
 ---
 

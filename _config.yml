@@ -1,8 +1,8 @@
 # Site settings
-title: Open GSA
+title: GSA Open Technology
 description: Open source code, data and APIs from GSA.
 baseurl: "/open-gsa" # the subpath of your site, e.g. /blog/
-url: "https://saracope.github.io" # the base hostname & protocol for your site
+url: "https://github.com/GSA/open-gsa-redesign" # the base hostname & protocol for your site
 logo: /assets/img/gsa-logo-dark.jpg
 feature_image: /assets/img/feature-background.jpg
 

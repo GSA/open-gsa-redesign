@@ -6,25 +6,25 @@ assigned:
         show_in_menu: false
         show_in_footer: false
     -
-        text: Discover Data
+        text: Data
         href: pages/data.md
         permalink: /data/
         show_in_menu: true
         show_in_footer: false
     -
-        text: Explore APIs
+        text: APIs
         href: pages/api.md
         permalink: /api/
         show_in_menu: true
         show_in_footer: false
     -
-        text: Code With Us
+        text: Code
         href: pages/code.md
         permalink: /code/
         show_in_menu: true
         show_in_footer: false
     -
-        text: Attend an Event
+        text: Events
         href: pages/events.md
         permalink: /events/
         show_in_menu: true
