@@ -2,7 +2,7 @@
 layout: page
 title: Data
 permalink: /data/
-image: /assets/img/about.jpg
+image: /assets/img/data-pattern.png
 category: data
 ---
 
