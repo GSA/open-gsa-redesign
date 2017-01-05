@@ -46,7 +46,7 @@ defaults:
 forms:
 - type: newsletter
   heading: Sign up to receive updates from our team
-  url: https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLSdTKaMGI8PGKdR7VjuRRMtvOiA-uiD5fqqsFoyN1g2SXoLTqQ/viewform
+  url: https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLSdTKaMGI8PGKdR7VjuRRMtvOiA-uiD5fqqsFoyN1g2SXoLTqQ/formResponse
   button: Subscribe
   privacypolicy: Your privacy and security are important to us, we'll only share your information as described in the <a href="http://www.gsa.gov/portal/content/116609">GSA Privacy and Security Notice</a>
   fields:
