@@ -1,0 +1,36 @@
+<section class="banner contact">
+  <div class="usa-grid">
+  {% for form in site.forms %}
+    {% if form.type == 'feedback' %}
+      {% assign f = form %}
+    {% endif %}
+  {% endfor %}
+
+  <form id="contact" action="{{ f.url }}" method="POST">
+    <fieldset>
+      <legend>{{ f.heading }}</legend>
+      <div class="usa-width-one-half">
+        {% for field in f.fields %}
+          {% unless field.type == 'hidden' %}<label for="contact-{{ field.name }}">{{ field.label }}</label>{% endunless %}
+          <input id="contact-{{ field.name }}"
+            name="{{ field.name }}" type="{{ field.type }}"
+            {% if field.value %} value="{{ field.value }}" {% endif %}>
+        {% endfor %}
+        <div class="usa-input-buttons-inline">
+          <input type="submit" value="{{ f.button }}">
+        </div>
+      </div>
+      <div class="usa-width-one-half" style="margin-top: 3rem;">
+        {% if f.privacypolicy %}
+          <p>{{ f.privacypolicy }}</p>
+        {% else %}
+          <p></p>
+        {% endif %}
+      </div>
+
+
+    </fieldset>
+
+  </form>
+  </div>
+</section>
