@@ -54,6 +54,19 @@ forms:
       name: entry.474991268
       label: Email Address
 
+- type: feedback
+  heading: Any feedback?
+  url: https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLSdTKaMGI8PGKdR7VjuRRMtvOiA-uiD5fqqsFoyN1g2SXoLTqQ/viewform
+  button: Submit
+  privacypolicy: Your privacy and security are important to us, we'll only share your information as described in the <a href="http://www.gsa.gov/portal/content/116609">GSA Privacy and Security Notice</a>
+  fields:
+    - type: email
+      name: entry.474991268
+      label: Email Address
+    - type: comments
+      name: entry.474991268
+      label: Comments
+
 footer:
   image: /assets/img/logos/gsads-logo.svg
   image-alt: GSA Digital Service
