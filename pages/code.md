@@ -1,19 +1,12 @@
 ---
-layout: page
+layout: code
 title: Code
+banner-heading: GSA Code
+banner-text: We believe in being "open first" with working to realize 100% open source code across the Agency. While we may be a little ways away from being fully 100% open source, we take pride in being the government standard for open sourcing.  What we create is the people's code! Likewise, what we do should be transparent and available to the public. So please, explore some of our public data-innovate, create, and make sure to give us your feedback.
 permalink: /code/
-image: /assets/img/about.jpg
+image: /assets/img/data-pattern.png
 category: code
+banner-button-text: Explore
+banner-button-link: https://github.com/gsa
 ---
 
-## Open Data
-
-GSA provides workplaces by constructing, managing, and preserving government buildings and by leasing and managing commercial real estate. GSA's acquisition solutions offer private sector professional services, equipment, supplies, telecommunications, and information technology to government organizations and the military. GSA policies promote management best practices and efficient government operations.
-
-### Datasets
-
-The mission of GSA is to deliver the best value in real estate, acquisition, and technology services to government and the American people.
-
-### History
-
-GSA was established by President Harry Truman on July 1, 1949, to streamline the administrative work of the federal government.  GSA consolidated the National Archives Establishment, the Federal Works Agency and its Public Buildings Administration, the Bureau of Federal Supply and the Office of Contract Settlement, and the War Assets Administration into one federal agency tasked with administering supplies and providing workplaces for federal employees
