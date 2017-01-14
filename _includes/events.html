@@ -1,0 +1,15 @@
+{% for event in site.data.events %}
+  {% unless project.featured %}
+    {% assign third = forloop.index | modulo: 3 %}
+    {% if third == 1 %}
+    <div class="usa-width-one-third usa-end-row project">
+    {% else %}
+    <div class="usa-width-one-third project">
+    {% endif %}
+      <a href="{{ event.link | prepend: site.baseurl }}">
+        <span class="project--image" style="background-image: url({{ event.image | prepend: site.baseurl }});"></span>
+        <h3 class="project--description"><span>{{ event.description }}&nbsp;&gt;</span></h3>
+      </a>
+    </div>
+  {% endunless %}
+{% endfor %}
