@@ -126,3 +126,7 @@ article.card {
 		}
 	}
 }
+article.card-featured {
+	@extend .card;
+	width: 100%;
+}
