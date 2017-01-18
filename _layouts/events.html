@@ -19,9 +19,11 @@ layout: base
   </section>
   {% endif %}
 
-  <section class="banner functions">
-      <div class="usa-grid-full" align="center">
-        <h2>Featured Event</h2>
+        {% include featured-event.html %}
 
-{% include events.html %}
-</div>
+  <section>
+      <div class="usa-grid-full" align="center">
+        <h2>Past Events</h2>
+        {% include events.html %}
+      </div>
+  </section>

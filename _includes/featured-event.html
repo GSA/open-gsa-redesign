@@ -1,5 +1,9 @@
  {% for event in site.data.events %}
-   {% unless event.featured %}
+   {% if event.featured %}
+   <section>
+       <div class="usa-grid-full" align="center">
+         <h2>Featured Event</h2>
+
  {% assign third = forloop.index | modulo: 3 %}
  {% if third == 1 %}
  <div class="usa-width-one-third usa-end-row project">
@@ -19,6 +23,8 @@
         </div>
     </article>
 </div>
-  {% endunless %}
+  {% endif %}
 
 {% endfor %}
+</div>
+</section>

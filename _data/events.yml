@@ -1,14 +1,32 @@
-- title: Grace Hopper Day Hackathon - Dec 2016
+- title: Grace Hopper Day Hackathon 1
   date: December 10, 2016
-  description: A hackathon day honoring Grace Hopper on her 110th birthday.
+  location: Washington, DC
+  txt: A hackathon day honoring Grace Hopper on her 110th birthday.
   link: /projects/grace-hopper-hackathon
-  link-text: Event Details
-  image: /assets/img/project-icons/tractor.png
-- title: Reducing Summer Melt
-  description: Eight personalized text messages to low-income students resulted in a nearly 9% increase in college enrollment.
-  link: /projects/reducing-summer-melt/
-  image: /assets/img/project-icons/graduation.png
-- title: Servicemember TSP Enrollment
-  description: A single email to military Servicemembers nearly doubled the rate of enrollment for a savings plan.
-  link: /projects/tsp-enrollment/
-  image: /assets/img/project-icons/piggy-bank.png
+  image: /assets/img/WashingtonDC.jpg
+  featured: yes
+- title: Grace Hopper Day Hackathon 2
+  date: December 10, 2016
+  location: Washington, DC
+  txt: A hackathon day honoring Grace Hopper on her 110th birthday.
+  link: /projects/grace-hopper-hackathon
+  image: /assets/img/feature-background.jpg
+  featured:
+- title: Grace Hopper Day Hackathon 3
+  date: December 10, 2016
+  location: Washington, DC
+  txt: A hackathon day honoring Grace Hopper on her 110th birthday.
+  link: /projects/grace-hopper-hackathon
+  image: /assets/img/feature-background.jpg
+  featured:
+- title: Grace Hopper Day Hackathon 4
+  date: December 10, 2016
+  location: Washington, DC
+  txt: A hackathon day honoring Grace Hopper on her 110th birthday.
+  link: /projects/grace-hopper-hackathon
+  image: /assets/img/feature-background.jpg
+  featured:
+
+
+
+  #to feature an event (display above the Past Events) add the 'featured: yes' parameter to your event fields (no quotes)
