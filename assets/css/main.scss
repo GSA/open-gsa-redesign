@@ -52,8 +52,10 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+        "banners",
         "base",
         "buttons",
+        "events",
         "navbar",
         "sidenav",
         "home",
@@ -61,7 +63,6 @@ $on-laptop:        800px;
         "iframe",
         "pages",
         "projects",
-        "banners",
         "footer",
         "header",
         "search"
