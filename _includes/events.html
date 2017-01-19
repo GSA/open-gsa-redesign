@@ -1,10 +1,14 @@
- {% for event in site.data.events %} {% unless event.featured %} {% assign third = forloop.index | modulo: 3 %} {% if third == 1 %}
+ {% for event in site.data.events %}
+ {% unless event.featured %}
+ {% assign third = forloop.index | modulo: 3 %} {% if third == 1 %}
 <div class="usa-width-one-third usa-end-row project">
     {% else %}
     <div class="usa-width-one-third project">
         {% endif %}
         <article class="card">
-            <div class="thumb" style="background-image: url({{ event.image | prepend: site.baseurl }});"></div>
+            <a href={{ event.link | prepend: site.baseurl }}>
+              <div class="thumb" style="background-image: url({{ event.image | prepend: site.baseurl }});"></div>
+            </a>
             <div class="infos">
                 <h3 class="title">{{ event.title }}</h3>
                 <h4 class="date">{{ event.date }}</h4>

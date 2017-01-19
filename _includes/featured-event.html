@@ -2,10 +2,11 @@
 <section>
     <div class="usa-grid-full" align="center">
         <h2>Featured Event</h2>
-        <div class="usa-width-full">
-
+        <div class="usa-width-one-whole">
             <article class="card card-featured">
+              <a href={{ event.link | prepend: site.baseurl }}>
                 <div class="thumb" style="background-image: url({{ event.image | prepend: site.baseurl }});"></div>
+              </a>
                 <div class="infos">
                     <h3 class="title">{{ event.title }}</h3>
                     <h4 class="date">{{ event.date }}</h4>
