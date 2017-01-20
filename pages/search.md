@@ -4,17 +4,9 @@ title: Search
 permalink: /search/
 image: /assets/img/search-pattern.png
 ---
-
-<form class="usa-search" action="{{ '/search' | prepend: site.baseurl }}" method="get">
-  <div role="search">
-    <label class="usa-sr-only" for="search-field">Search</label>
-    <input id="search-field" type="search" name="search">
-    <button type="submit">
-      <span class="usa-search-submit-text">Search</span>
-    </button>
-  </div>
-</form>
-
+<section>
+  {% include search.html %}
+</section>
 <div id="search-results"></div>
 
 <script>
