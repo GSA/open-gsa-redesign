@@ -2,7 +2,7 @@
 layout: api
 title: APIs
 banner-heading: GSA APIs
-banner-text: We believe in sharing APIs with the public so that the information is available in a standardize and machine-readable format for public use.
+banner-text: GSA publishes Application Programming Interfaces (APIs) for many of our open datasets. This provides information to the public in a standardized and machine-readable format for public use.
 permalink: /api/
 image: /assets/img/api-pattern.png
 category: api
