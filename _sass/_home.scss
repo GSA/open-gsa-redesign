@@ -154,3 +154,13 @@
         .flag.alt3:after {
           border-top-color: #112e51;
         }
+
+//angled footer
+.footer-separator {
+  position: absolute;
+  margin-top: -60px;
+	width: 0;
+	height: 0;
+  border-top: 120px solid #112e51;
+  border-right: 100vw solid transparent;
+}
