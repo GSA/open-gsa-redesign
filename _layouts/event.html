@@ -11,85 +11,64 @@ layout: base
         </div>
     </div>
 </section>
-<!-- <div class="rsvp-bar">
-  <div class="rsvp--block"><em class="material-icons">event</em><strong>{{ page.date }}</strong></div>
-  <div class="rsvp--block">
-      <i class="material-icons">location_on</i><strong>{{ page.location }}</strong>
-  </div>
-  <div class="rsvp--block">
-      <i class="material-icons">account_balance</i><strong>{{ page.agency }}>/strong>
-  </div>
-</div>  -->
-<div class="usa-grid">
-    <nav role="navigation" class="usa-width-one-whole">
-        <div class="usa-nav-inner">
+<div class="usa-overlay"></div>
+<main class="usa-grid usa-section usa-content usa-layout-docs" id="main-content">
+  <aside class="usa-width-one-fourth usa-layout-docs-sidenav">
+    <ul class="usa-sidenav-list">
+      <li>
+        <a class="usa-current" href="javascript:void(0)">The Challenge</a>
+        <ul class="usa-sidenav-sub_list">
+          <li>
+            <a href="#howitworks">How it works</a>
+          </li>
+          <li>
+            <a href="#prizes">Prizes</a>
+          </li>
+          <li>
+            <a href="#schedule">Schedule</a>
+          </li>
+          <li>
+            <a href="#judges">Judges</a>
+          </li>
+          <li>
+            <a href="#faqs">FAQ</a>
+          </li>
+          <li>
+            <a href="#register">Register</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+  <div class="usa-width-three-fourths usa-layout-docs-main_content">
+    <p class="usa-font-lead">{{ page.intro }}</p>
+          <h2 id="challenge">The Challenge</h2>
+          <p class="usa-font-lead">{{ page.challenge }}</p>
+          <h2 id="howitworks">How It Works</h2>
+          <p class="usa-font-lead">{{ page.howitworks }}</p>
+          <h2 id="prizes">Prizes</h2>
+          <p class="usa-font-lead">{{ page.prizes }}</p>
+          <h2 id="schedule">Schedule</h2>
+          <p class="usa-font-lead">All times shown are local to the venue.</p>
+          <!-- For each time in site.data.schedule, display the time and activity -->
 
-            <ul class="usa-nav-primary usa-accordion">
-                <li>
-                    <a class="usa-nav-link" href="#rsvp"><span>Register</span></a>
-                </li>
-                <li>
-                    <a class="usa-nav-link" href="#challenge"><span>The Challenge</span></a>
-                </li>
-                <li>
-                    <a class="usa-nav-link" href="#howitworks"><span>How it works</span></a>
-                </li>
-                <li>
-                    <a class="usa-nav-link" href="#prizes"><span>Prizes</span></a>
-                </li>
-                <li>
-                    <a class="usa-nav-link" href="#schedule"><span>Schedule</span></a>
-                </li>
-                <li>
-                    <a class="usa-nav-link" href="#judges"><span>Judges</span></a>
-                </li>
-                <!--<li>
-                <a class="usa-nav-link" href="#rules"><span>Rules</span></a>
-            </li>
-            <li>
-                <a class="usa-nav-link" href="#policies"><span>Policies</span></a>
-            </li> -->
-                <li>
-                    <a class="usa-nav-link" href="#faqs"><span>FAQ</span></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
-<section class="usa-section">
-    <div class="usa-grid">
-        <p class="usa-font-lead">{{ page.intro }}</p>
-        <h2 id="challenge">The Challenge</h2>
-        <p class="usa-font-lead">{{ page.challenge }}</p>
-        <h2 id="howitworks">How It Works</h2>
-        <p class="usa-font-lead">{{ page.howitworks }}</p>
-        <h2 id="prizes">Prizes</h2>
-        <p class="usa-font-lead">{{ page.prizes }}</p>
-        <h2 id="schedule">Schedule</h2>
-        <p class="usa-font-lead">All times shown are local to the venue.</p>
-        <!-- For each time in site.data.schedule, display the time and activity -->
-
-        <table>
-            <thead>
-                <tr>
-                    <th scope="col">Time</th>
-                    <th scope="col">Activity</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for schedule in site.data.schedule %}
-                <tr>
-                    <th scope="row">{{ schedule.time }}</th>
-                    <td>{{ schedule.activity}}</td>
-                </tr>
-                  {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</section>
-<section class="usa-section usa-section-dark usa-graphic_list">
-    <div class="usa-grid">
-        <h2 id="judges">The Judges</h2>
+          <table>
+              <thead>
+                  <tr>
+                      <th scope="col">Time</th>
+                      <th scope="col">Activity</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for schedule in site.data.schedule %}
+                  <tr>
+                      <th scope="row">{{ schedule.time }}</th>
+                      <td>{{ schedule.activity}}</td>
+                  </tr>
+                    {% endfor %}
+              </tbody>
+          </table>
+          <h2 id="judges">The Judges</h2>
         <p class="usa-font-lead">We're excited to have an outstanding group of judges with experience both within government and private industry.</p>
         <div class="usa-grid usa-graphic_list-row">
             <div class="usa-media_block">
@@ -107,17 +86,7 @@ layout: base
                 </div>
             </div>
         </div>
-      </div>
-</section>
-<!-- <h2 id="judging-criteria">Judging Criteria</h2>
-<p class="usa-font-lead">This December, in honor of <a href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Hopper's Birthday</a>, GSA will be hosting a competition for all open source contributors to redesign the GSA Open website, open.gsa.gov. Open.gsa.gov is the current developer portal for all GSA data, APIs, and source code open to the public. This hackathon is hosted by GSA’s IT Digital Services team and will be held on Friday, December 9th, 2016.</p><p class="usa-font-lead">The goal of this redesign is to improve public engagement with GSA digital assets and increase understanding and awareness of agency open technology. GSA challenges developers and designers from industry, academia, and federal government to create solutions using the site product roadmap provided on the competition details webpage.</p> -->
-<section class="usa-section">
-    <div class="usa-grid">
-        <!-- <h2 id="rules">Rules</h2>
-        <p class="usa-font-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Curabitur ac sagittis neque, vel egestas est. Aenean elementum, erat at aliquet hendrerit, elit nisl posuere tortor, id suscipit diam dui sed nisi. Morbi sollicitudin massa vel tortor consequat, eget semper nisl fringilla. Maecenas at hendrerit odio. Sed in mi eu quam suscipit bibendum quis at orci. Pellentesque fermentum nisl purus, et iaculis lectus pharetra sit amet.</p>
-        <h2 id="policies">Policies</h2>
-        <p class="usa-font-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Curabitur ac sagittis neque, vel egestas est. Aenean elementum, erat at aliquet hendrerit, elit nisl posuere tortor, id suscipit diam dui sed nisi. Morbi sollicitudin massa vel tortor consequat, eget semper nisl fringilla. Maecenas at hendrerit odio. Sed in mi eu quam suscipit bibendum quis at orci. Pellentesque fermentum nisl purus, et iaculis lectus pharetra sit amet.</p> -->
-        <h2 id="faqs">FAQs</h2>
+        <h2 id="faqs">Frequently Asked Questions</h2>
         <ul class="usa-accordion">
             <li>
                 <button class="usa-accordion-button" aria-expanded="true" aria-controls="amendment-1">
@@ -171,5 +140,11 @@ layout: base
                 </div>
             </li>
         </ul>
-    </div>
-</section>
+        <h2 id="register">Join us!</h2>
+        <p class="usa-font-lead">Be sure to register if you think you can make it so we can add you to the security check-in list.</p>
+        <a class="usa-button usa-button-big usa-button-secondary" href={{ page.register }}>Register Now</a>
+  </div>
+</main>
+<div class="usa-grid usa-footer-return-to-top">
+  <a href="#">Return to top</a>
+</div>
