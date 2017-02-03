@@ -1,4 +1,4 @@
-.hero-unit {
+.hero-img {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -7,7 +7,7 @@
 }
 .hero-search {
   // background-color: rgba(46, 133, 64, 0.7);
-  bottom: 20px;
+  bottom: 25px;
   left: 50%;
   margin-left: -30%;
   padding-top: 20px;
@@ -28,4 +28,13 @@
   border-radius: 3px 0 0 3px;
   max-width: 100%;
 }
-//From Doc Hoppers Frog Legs
+
+//angled header
+.hero-separator {
+  position: absolute;
+  margin-top: -50px;
+	width: 0;
+	height: 0;
+  border-bottom: 100px solid #112e51;
+	border-left: 100vw solid transparent;
+}
