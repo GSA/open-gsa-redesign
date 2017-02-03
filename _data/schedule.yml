@@ -1,0 +1,20 @@
+- time: 8am
+  activity: Registration
+- time: 9am
+  activity: Opening remarks and event kickoff
+- time: 9-9:30am
+  activity: Skill identification and team formation
+- time: 9:30am-12pm
+  activity: Time to code!
+- time: 12p-1pm
+  activity: Self-directed lunch break (optional)
+- time: 1pm-2:30pm
+  activity: More coding!
+- time: 2:30pm
+  activity: Competition ends
+- time: 2:30pm-3pm
+  activity: Team presentations
+- time: 3pm-4pm
+  activity: Judge deliberations
+- time: 4pm-4:30pm
+  activity: Prizes awarded!
