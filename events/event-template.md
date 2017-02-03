@@ -1,12 +1,14 @@
 ---
 layout: event
-permalink: /events/test-event
+permalink: /events/event-template
 tags: event
 title: Grace Hopper Day Hackathon
 date: December 10, 2016
 location: Washington, DC
 txt: A hackathon day honoring Grace Hopper on her 110th birthday focused on women in tech
 link: /events/grace-hopper-hackathon
+gcal: http://google.com
+ical: http://google.com
 
 agency: GSA
 register: https://www.eventbrite.com/e/grace-hopper-day-hackathon-tickets-27668620589
