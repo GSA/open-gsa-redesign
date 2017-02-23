@@ -2,14 +2,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  min-height: 30vh;
+  min-height: 40vh;
   position: relative;
 }
 .hero-search {
   // background-color: rgba(46, 133, 64, 0.7);
-  bottom: 25px;
-  left: 50%;
-  margin-left: -30%;
+  bottom: 30%;
+  left: 20vw;
+  right: 20vw;
   padding-top: 20px;
   position: absolute;
   text-align: center;
@@ -17,6 +17,7 @@
 .hero-search h2 {
   font-family: "Source Sans Pro";
   color: white;
+  font-size: 5rem;
   font-size: 50px;
   font-weight: 400;
   margin-top: 0;
