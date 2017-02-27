@@ -17,13 +17,13 @@
     "build:jekyll": "jekyll build --config _config.yml",
     "build:js": "npm run eslint",
     "build:images": "npm run imagemin",
-    "build": "npm run clean && npm run build:js && npm run build:images && npm run build:jekyll",
+    "build:uswds": "cp-cli -d node_modules/uswds/dist/ assets/uswds",
+    "build": "npm run clean && npm run build:js && npm run build:images && npm run build:uswds && npm run build:jekyll",
     "watch:jekyll": "chokidar 'index.html' '_includes/*.html' '_layouts/*.html' '_posts/*' -c 'npm run build:jekyll && browser-sync reload'",
     "watch:css": "chokidar 'assets/css/*' -c 'npm run browser-sync reload'",
     "watch:js": "chokidar 'assets/js/*' -c 'npm run browser-sync reload'",
     "serve": "browser-sync start --https --server _site",
-    "start": "npm run build -s && parallelshell \"npm run serve -s\" \"npm run watch:jekyll -s\" \"npm run watch:css -s\" \"npm run watch:js -s\"",
-    "uswds": "cp-cli -d node_modules/uswds/dist/ assets/uswds"
+    "start": "npm run build -s && parallelshell \"npm run serve -s\" \"npm run watch:jekyll -s\" \"npm run watch:css -s\" \"npm run watch:js -s\""
   },
   "repository": {
     "type": "git",
