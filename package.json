@@ -44,7 +44,6 @@
   "homepage": "https://github.com/GSA/open-gsa-redesign/blob/dev/README.md",
   "devDependencies": {
     "@18f/stylelint-rules": "^2.0.0",
-    "autoprefixer": "^6.3.1",
     "browser-sync": "^2.11.1",
     "chokidar": "^1.6.1",
     "chokidar-cli": "^1.2.0",
