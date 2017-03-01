@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-image: /assets/img/about-pattern.png
+image: /assets/img/banner-blank.png
 category: test1
 ---
 

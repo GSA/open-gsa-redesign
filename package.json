@@ -8,7 +8,7 @@
     "eslint": "npm run eslint:dist",
     "clean:dist": "rm -rf _site",
     "clean": "npm run clean:dist",
-    "imagemin": "imagemin assets/img/* --out-dir=_site/assets/img/",
+    "imagemin": "imagemin assets/img/* --out-dir=./assets/img/",
     "test:html": "bundle exec htmlproofer _site --disable-external --allow-hash-href --empty-alt-ignore --url-ignore sara.cope@gsa.gov || exit 0",
     "test:html-local": "bundle exec htmlproofer _site --disable-external --allow-hash-href --empty-alt-ignore --url-ignore localhost:4000 || exit 0",
     "test:pagespeed": "psi http://cg-06ab120d-836f-49a2-bc22-9dfb1585c3c6.s3-website-us-gov-west-1.amazonaws.com/site/gsa/open-gsa-redesign/--strategy=mobile || exit 0",
@@ -51,17 +51,14 @@
     "eslint-config-google": "^0.3.0",
     "imagemin": "^5.2.2",
     "imagemin-cli": "^3.0.0",
+    "pa11y": "^4.6.0",
     "parallelshell": "^2.0.0",
     "postcss": "^5.2.15",
     "postcss-cli": "^2.6.0",
     "psi": "^2.0.4",
+    "uswds": "^1.0.0",
     "watch": "^0.17.1"
   },
   "dependencies": {
-    "critical": "^0.7.0",
-    "pa11y": "^4.6.0",
-    "parallelshell": "^2.0.0",
-    "psi": "^2.0.2",
-    "uswds": "^1.0.0"
   }
 }
