@@ -17,11 +17,19 @@
 .hero-search h2 {
   font-family: "Source Sans Pro";
   color: white;
-  font-size: 5rem;
-  font-size: 50px;
+  font-size: 2rem;
+  font-size: 20px;
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 0;
+  @media screen and (min-width: 600px){
+    font-size: 4rem;
+    font-size: 40px;
+  }
+  @media screen and (min-width: 1500px){
+    font-size: 5rem;
+    font-size: 50px;
+  }
 }
 
 .hero-search .usa-search.usa-search-big [type="search"], .hero-search .usa-search.usa-search-big .usa-search-input {
