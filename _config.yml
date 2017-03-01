@@ -64,14 +64,6 @@ forms:
       name: entry.474991268
       label: Comments
 
-footer:
-  image: /assets/img/logos/gsads-logo.svg
-  image-alt: GSA Digital Service
-  email:
-  twitter:
-    - USGSA
-  text:  BUILT BY # Change to a tag line for your agency
-
 # Build settings
 markdown: kramdown
 include:
