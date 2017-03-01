@@ -2,7 +2,7 @@
 layout: page
 title: GSA APIs
 permalink: /api_list/
-image: /assets/img/api-pattern.png
+image: /assets/img/banner-blank.png
 category: api
 ---
 
