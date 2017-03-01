@@ -60,5 +60,9 @@
     "watch": "^0.17.1"
   },
   "dependencies": {
+    "imagemin": "^5.2.2",
+    "imagemin-cli": "^3.0.0",
+    "parallelshell": "^2.0.0",
+    "uswds": "^1.0.0"
   }
 }
