@@ -47,8 +47,6 @@
     "chokidar-cli": "^1.2.0",
     "eslint": "^1.10.3",
     "eslint-config-google": "^0.3.0",
-    "imagemin": "^5.2.2",
-    "imagemin-cli": "^3.0.0",
     "pa11y": "^4.6.0",
     "parallelshell": "^2.0.0",
     "postcss": "^5.2.15",
