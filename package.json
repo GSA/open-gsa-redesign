@@ -8,7 +8,6 @@
     "eslint": "npm run eslint:dist",
     "clean:dist": "rm -rf _site",
     "clean": "npm run clean:dist",
-    "imagemin": "imagemin assets/img/* --out-dir=./assets/img/",
     "test:html": "bundle exec htmlproofer _site --disable-external --allow-hash-href --empty-alt-ignore --url-ignore sara.cope@gsa.gov || exit 0",
     "test:html-local": "bundle exec htmlproofer _site --disable-external --allow-hash-href --empty-alt-ignore --url-ignore localhost:4000 || exit 0",
     "test:pagespeed": "psi http://cg-06ab120d-836f-49a2-bc22-9dfb1585c3c6.s3-website-us-gov-west-1.amazonaws.com/site/gsa/open-gsa-redesign/--strategy=mobile || exit 0",
@@ -17,9 +16,8 @@
     "test:js": "npm run eslint",
     "test": "npm run test:html && npm run test:pagespeed && npm run test:accessibility && npm run test:js && npm run test:css",
     "build:jekyll": "jekyll build --config _config.yml",
-    "build:images": "npm run imagemin",
     "build:uswds": "cp -R node_modules/uswds/dist/ assets/uswds",
-    "build": "npm run clean  && npm run build:images && npm run build:uswds && npm run build:jekyll",
+    "build": "npm run clean && npm run build:uswds && npm run build:jekyll",
     "watch:jekyll": "chokidar 'index.html' '_includes/*.html' '_layouts/*.html' '_posts/*' -c 'npm run build:jekyll && browser-sync reload'",
     "watch:css": "chokidar 'assets/css/*' -c 'npm run browser-sync reload'",
     "watch:js": "chokidar 'assets/js/*' -c 'npm run browser-sync reload'",
@@ -60,8 +58,6 @@
     "watch": "^0.17.1"
   },
   "dependencies": {
-    "imagemin": "^5.2.2",
-    "imagemin-cli": "^3.0.0",
     "parallelshell": "^2.0.0",
     "uswds": "^1.0.0"
   }
