@@ -2,8 +2,12 @@
 layout: page
 title: About
 permalink: /about/
-image: /assets/img/banner-blank.png
 category: test1
+banner-heading: About
+banner-text:
+banner-button-text:
+banner-button-link:
+banner-button-title:
 ---
 
 ### Mission
