@@ -2,17 +2,14 @@
 layout: page
 title: GSA APIs
 permalink: /api_list/
-image: /assets/img/banner-blank.png
 category: api
+banner-heading: View GSA APIs
+banner-text: GSA's Application Programming Interfaces (APIs) cover a range of important data and functionality. Software developers and researchers can use these resources to help people find useful government information.
+banner-button-text:
+banner-button-link:
+banner-button-title:
 ---
-
-
-
-GSA's Application Programming Interfaces (APIs) cover a range of important data and functionality. Software developers and researchers can use these resources to help people find useful government information.
-
 Many of our APIs are themselves open sourced and we always [welcome feedback](https://github.com/GSA/GSA-APIs/issues "Create an issue"). If you have any questions or ideas for how we can improve our APIs, don't hesitate to let us know.
-
-
  <section class="featured-projects">
                 <ul class="wrap nav-list">
                 <li class="featured-project">
