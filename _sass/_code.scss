@@ -1,0 +1,23 @@
+.data-list {
+	margin-bottom: 10px;
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	box-shadow: 0 1px 4px rgba(#000, .3);
+	article {
+			padding: 20px;
+	}
+	p, a {
+		color: #212121;
+	}
+	a {
+		margin: 20px 0 10px 0;
+		padding: 20px 0;
+		letter-spacing: .5px;
+		text-transform: uppercase;
+	}
+	h3 {
+		border-bottom: 1px solid #ddd;
+	}
+}
