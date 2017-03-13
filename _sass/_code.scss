@@ -1,23 +1,51 @@
-.data-list {
-	margin-bottom: 10px;
+// Code data list styles
+
+$grey: #efefef;
+$green: #2e8540;
+$black: #000;
+
+$border-radius:3px;
+$box-shadow:0 1px 4px rgba($black, .3);
+
+
+article.code {
 	width: 100%;
-	background-color: #fff;
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	box-shadow: 0 1px 4px rgba(#000, .3);
-	article {
-			padding: 20px;
-	}
-	p, a {
+  text-align: left;
+	border-radius: $border-radius;
+  margin: 40px;
+  margin-bottom: 40px;
+	box-shadow: $box-shadow;
+  h3 {
+    font-family: Source Sans Pro;
+		color: #112e51;
+  }
+	p {
 		color: #212121;
 	}
-	a {
-		margin: 20px 0 10px 0;
-		padding: 20px 0;
-		letter-spacing: .5px;
-		text-transform: uppercase;
+  header, .content, footer {
+    padding: 1rem 2rem;
+    }
+  header {
+    background-color: $grey;
+  }
+  .content {
+    padding:14px 24px;
+		background-color: #fff;
+  }
+  .content:first-child {
+    margin-top: 1rem;
+  }
+	.title {
+    margin: 0;
+    font-size: 2.5rem;
 	}
-	h3 {
-		border-bottom: 1px solid #ddd;
+	.txt {
+		line-height: 1.5;
+	}
+  button a{
+    text-decoration: none;
+  }
+	footer {
+    background: $green;
 	}
 }
