@@ -919,7 +919,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Data.gov Dataset Visitor Metrics",
 			"description" : "The dataset provides metrics for the number of dataset views in catalog.data.gov broken down by month starting Jan 2014. There is a gap in the dataset for December 2016 due to a temporary halt in collection of metrics during infrastructure migration of the Data.gov site during that month.",
-			"modified" : "2016-12-01",
+			"modified" : "2017-03-06",
 			"accessLevel" : "public",
 			"identifier" : "GSA - 139375",
 			"dataQuality" : true,
@@ -2541,7 +2541,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Federal Business Opportunities Data",
 			"description" : "FedBizOpps is the single government point-of-entry for solicitations of any dollar amount and for required synopsis over $25,000, allowing commercial business suppliers and government buyers to post, search, monitor, and retrieve opportunities in federal government markets.  FBO now includes the functionality of the Federal Technical Data Solutions (FedTeDS) which allows agencies to securely disseminate sensitive acquisition-related technical data for solicitations to approved business partners. This dataset contains current active notices and is updated weekly.",
-			"modified" : "2016-03-02",
+			"modified" : "2016-03-13",
 			"accessLevel" : "public",
 			"identifier" : "GSA-4007",
 			"dataQuality" : true,
@@ -6969,7 +6969,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2017-03-02",
+			"modified" : "2017-03-13",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25251",
 			"dataQuality" : true,
@@ -6992,7 +6992,7 @@
 					"mediaType" : "text/csv",
 					"format" : "csv",
 					"title" : "data_gov_bldg_rexus",
-					"downloadURL" : "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/36d0b5a2-f0a5-4149-978c-0c4ffc1f1f5c/download/datagovbldgrexus.csv"
+					"downloadURL" : "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/ad0bbfb6-d27e-4453-8ed1-3b545cc121dc/download/datagovbldgrexus.csv"
 				}
 			],
 			"keyword" : ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -7002,7 +7002,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) (Lease)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2017-03-02",
+			"modified" : "2017-03-13",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25261",
 			"dataQuality" : true,
@@ -7025,7 +7025,7 @@
 					"mediaType" : "text/csv",
 					"format" : "csv",
 					"title" : "data_gov_lse_rexus",
-					"downloadURL" : "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/4ff8d574-afba-4479-8cbb-94793f42ed0a/download/datagovlserexus.csv"
+					"downloadURL" : "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/60cc6f7b-9af7-4af0-965b-41d6c00f7b89/download/datagovlserexus.csv"
 				}
 			],
 			"keyword" : ["building", "gsa", "owned", "property", "real estate", "real property"],
