@@ -1,27 +1,10 @@
-<!doctype html>
-<html lang="en">
+---
+layout: base
+---
+{% if page.banner-heading %}
+  {% include banner-header.html %}
+{% endif %}
 
-{% include head.html %}
-
-<body>
-    <div id="wrapper">
-        <div id="header">{% include header.html %}</div>
-        <div id="content">
-          {% if page.banner-heading %}
-          <section class="usa-section usa-section-dark">
-              <div class="usa-grid">
-                  <div class="usa-width-one-whole usa-end-row">
-                      <h2>{{ page.banner-heading }}</h2> {% if page.banner-text %}
-                      <p>{{ page.banner-text }}</p>
-                      {% endif %} {% if page.banner-button-text %}
-                      <div class="center-content">
-                          <a href="{{ page.banner-button-link}}" class="usa-button" title="View GSA open data on data.gov">{{ page.banner-button-text }}</a>
-                      </div>
-                      {% endif %}
-                  </div>
-              </div>
-          </section>
-          {% endif %}
     <section class="banner functions">
         <div class="usa-grid-full" align="center">
           <h2>Featured Datasets</h2>
@@ -53,11 +36,26 @@
             </div>
         </div>
     </section>
-    {% include feedback.html %}
-</div>
-    <div id="footer">{% include footer.html %}</div>
-    {% include javascript.html %}
-    </div>
-</body>
 
-</html>
+
+    <section class="usa-section usa-section-dark">
+        <div class="usa-grid-full">
+            <h2 style="text-align: center;">View GSA Datasets</h2> {% for data in site.data.data.dataset %}
+
+            <div class="usa-width-one-whole data-list">
+                <article class="data-listing">
+                    <header>
+                        <h3 class="title">{{ data.title }}</h3>
+                    </header>
+                    <div class="content">
+                        <p class="txt">
+                            {{ data.description }}
+                        </p>
+                        <button class="usa-button-gray"><a href="{{ data.downloadURL | prepend: site.baseurl }}">Download Dataset</a></button>
+                    </div>
+                    <footer class="usa-card-footer">
+                    </footer>
+                </article>
+                {% endfor %}
+            </div>
+    </section>
