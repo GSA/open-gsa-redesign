@@ -1,6 +1,9 @@
 ---
 layout: home
 permalink: /
+redirect_from:
+  - /developers/
+  - /developer/
 hero-image: /assets/img/feature-background.jpg
 hero-text: "Unlock the power of government data"
 hero-button-text: Hey, me too!
