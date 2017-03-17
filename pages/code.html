@@ -1,5 +1,13 @@
 ---
 layout: base
+title: Code
+permalink: /code/
+category: code
+banner-heading: GSA Code
+banner-text: We believe in being "open first" with working to realize 100% open source code across the Agency. While we may be a little ways away from being fully 100% open source, we take pride in being the government standard for open sourcing.  What we create is the people's code! Likewise, what we do should be transparent and available to the public. So please, explore some of our public data-innovate, create, and make sure to give us your feedback.
+banner-button-text: Explore GSA code on GitHub
+banner-button-link: https://github.com/gsa
+banner-button-title: View GSA open source code on GitHub.com
 ---
 {% if page.banner-heading %}
   {% include banner-header.html %}
@@ -37,17 +45,17 @@ layout: base
 
 <section class="usa-section usa-section-dark">
     <div class="usa-grid-full">
-        <h2 style="text-align: center;">View GSA Open Source Software Projects</h2> {% for code in site.data.code.projects %}
+        <h2 style="text-align: center;">Featured GSA Open Source Software Projects</h2> {% for code in site.data.code %}
         <div class="usa-width-one-whole data-list">
             <article class="data-listing">
                 <header>
-                    <h3 class="title">{{ code.name }}</h3>
+                    <h3 class="title">{{ code.title }}</h3>
                 </header>
                 <div class="content">
                     <p class="txt">
-                        {{ code.description }}
+                        {{ code.body }}
                     </p>
-                    <button class="usa-button-gray"><a href="{{ code.repository | prepend: site.baseurl }}">View Project</a></button>
+                    <button class="usa-button-gray"><a href="{{ code.url }}">View Project</a></button>
                 </div>
                 <footer class="usa-card-footer">
                 </footer>
@@ -55,3 +63,5 @@ layout: base
             {% endfor %}
         </div>
 </section>
+
+{% include feedback.html %}
