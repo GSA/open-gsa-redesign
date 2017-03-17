@@ -1,3 +1,22 @@
+- title: CIO Governance Board Membership List
+  body: Json file for CIO Governance Board Membership List.
+  url: http://www.gsa.gov/largedocs/governanceboards.json
+  tags:
+    - Board
+    - CIO
+    - Governance
+    - Membership
+  category: Data
+- title: Time to Hire
+  body: This dataset represents time taken to hire a GSA employee from the internal request to hire through the entry on duty of the of the selected individual.
+  url: https://inventory.data.gov/dataset/58fa1cd3-c1bf-4492-964d-f994b26a6cae/resource/f6d8dd83-3080-470f-b453-03f8ead0228f/download/time-to-hire-data-file.xlsx
+  tags:
+    - Employment
+    - Human Capital
+    - Jobs
+    - Time2Hire
+    - USAJobs
+  category: Data
 - title: Citizen Topics API
   body: This API lists the topics that we use to organize content on USA.gov
   tags:
@@ -19,13 +38,6 @@
   - data centers
   category: APIs
   url: http://www.usa.gov/About/developer-resources/corporation-contact-directory/index.shtml
-- title: Data.gov CKAN API
-  body: The government-wide data catalog available at Data.gov
-  tags:
-  - collaboration
-  - analysis
-  category: APIs
-  url: http://www.data.gov/developers/apis
 - title: DigitalGov Search API
   body: Provides DigitalGov Search customers their search results in JSON. Sign in
     with a .gov or .mil email is required
@@ -34,14 +46,6 @@
   - DOE
   category: APIs
   url: https://search.usa.gov/login
-- title: FBOpen
-  body: The FBOpen API provides an interface to allow easier access to a range of
-    business opportunities with the federal government
-  tags:
-  - Business
-  - Federal
-  category: APIs
-  url: http://18f.github.io/fbopen/
 - title: Grace Hopper Hackathon
   body: Join coders from across the region to improve public engagement with GSA digital
     assets and increase understanding and awareness of agency open technology.
