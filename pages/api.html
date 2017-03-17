@@ -1,10 +1,13 @@
 ---
 layout: base
 title: APIs
-banner-heading: GSA APIs
-banner-text: GSA publishes Application Programming Interfaces (APIs) for many of our open datasets. This provides information to the public in a standardized and machine-readable format for public use. These APIs cover a range of important data and functionality. Software developers and researchers can use these resources to help people find useful government information.
 permalink: /api/
 category: api
+banner-heading: GSA APIs
+banner-text: GSA publishes Application Programming Interfaces (APIs) for many of our open datasets. This provides information to the public in a standardized and machine-readable format for public use. These APIs cover a range of important data and functionality. Software developers and researchers can use these resources to help people find useful government information.
+banner-button-text: Explore GSA APIs on Data.gov
+banner-button-link: https://catalog.data.gov/organization/gsa-gov?q=api&sort=score+desc%2C+metadata_modified+desc&as_sfid=AAAAAAWlvqP78Cm909G74fthRX0GfKObjOhPJEnFHjlUDMnh0QIcfz2i6BuDqN5oPx-L24QYu-xQF7C0agEfNDxobeXWYzYzbwiC1GlXhrahdyjUxlkm2CX8GGKA94BWZ-zzN_8%3D&as_fid=f64caa522809bac644e59d953646e012f3eea853View
+banner-button-title: GSA APIs on Data.gov
 ---
 
 
@@ -45,7 +48,7 @@ category: api
 
     <section class="usa-section usa-section-dark">
         <div class="usa-grid-full">
-            <h2 style="text-align: center;">View GSA APIs</h2> {% for apis in site.data.api %}
+            <h2 style="text-align: center;">View Featured GSA APIs</h2> {% for apis in site.data.api %}
             <div class="usa-width-one-whole data-list">
                 <article class="data-listing">
                     <header>
@@ -63,3 +66,5 @@ category: api
                 {% endfor %}
             </div>
     </section>
+
+    {% include feedback.html %}
