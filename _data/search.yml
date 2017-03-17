@@ -53,29 +53,7 @@
   - Hackathons
   - DC
   category: Events
-  url: http://open.gsa.gov/grace-hopper-hackathon/
-- title: GSA Lab Share
-  body: Join other government agencies to share applications, code, and best practices.
-  tags:
-  - best practices
-  - GSA
-  category: Events
-  url: http://open.gsa.gov/grace-hopper-hackathon/
-- title: GSA Book Group
-  body: Discuss a book chosen by GSA CIO and meet co-workers
-  tags:
-  - GSA
-  - community
-  category: Events
-  url: http://open.gsa.gov/grace-hopper-hackathon/
-- title: Open Source Policy Forum
-  body: Collaborate with fellow government technology employees to improve GSA Open
-    Source Policy.
-  tags:
-  - open source
-  - federal
-  category: Events
-  url: http://open.gsa.gov/grace-hopper-hackathon/
+  url: https://open.gsa.gov/events/grace-hopper-hackathon/
 - title: Expenditures on Children by Families
   body: This dataset provides expenditures on Children by Families provides estimates
     of the cost of raising children from birth through age 17
