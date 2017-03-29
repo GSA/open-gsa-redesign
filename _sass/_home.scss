@@ -105,8 +105,10 @@
 
 
 		.flag {
+      display: inline-block;
       position: relative;
-			display: inline-block;
+			width: 160px;
+      text-align: center;
 			background-color: #2e8540;
 			padding: 0 2em 1em 2em;
 			border-top-left-radius: 5px;
