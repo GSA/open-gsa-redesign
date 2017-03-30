@@ -106,7 +106,7 @@
             icon = '<i class="fa fa-file-text flag"></i>';
             break;
           default:
-            icon = '<i class="fa fa-bar-chart flag"></i>';
+            icon = '<i class="fa fa-file-text flag"></i>';
         }
 
         var title = '<h3>' + '<a href="' + page.url + '">' + page.title + '</a></h3>';
