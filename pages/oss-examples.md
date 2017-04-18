@@ -8,7 +8,7 @@ banner-text: We believe in being "open first" with working to realize 100% open 
 sidenav: docs
 ---
 
-#### Examples
+### Examples
 
 <p dir="ltr">We have been focused on open source code for a while.</p>
 

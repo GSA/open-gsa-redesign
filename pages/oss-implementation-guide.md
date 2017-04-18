@@ -8,15 +8,15 @@ banner-text: We believe in being "open first" with working to realize 100% open 
 sidenav: docs
 ---
 
-## Implementation Guide
+### Implementation Guide
 
 If you are a GSA user that manages a source code repository, this guide will help you add your repository to the GSA source code inventory.
 
-### What is a source code repository?
+#### What is a source code repository?
 
 In this context, a *source code repository* is any place where source code is stored. This is often done in a version control system such as Git, Subversion, Mercurial, CVS, or Jazz SCM. The repository could be hosted on a public website or in internal agency systems.
 
-### Does your repository need to be added to the inventory?
+#### Does your repository need to be added to the inventory?
 
 We need to account for all source code at GSA, regardless of whether the project is open source or closed source. You must add your repository to the GSA inventory if:
 
@@ -29,17 +29,17 @@ When you submit your source code repository metadata to the inventory, the publi
 
 The only source code that should *not* be submitted to the inventory is code that is truly exploratory or disposable in nature, such as that written by a developer experimenting with a new language or library. If your repository only contains test code and does not serve as the foundation of a real app, tool, website, or other product, then do not include it in the GSA inventory.
 
-### How to add your source code repository to the inventory
+#### How to add your source code repository to the inventory
 
 If you have determined that your source code repository should be included in the inventory, how you submit it depends on where it is located: [GitHub](https://github.com/) or elsewhere.
 
-#### If your source code is on GitHub
+##### If your source code is on GitHub
 
 This specifically refers to projects that are under the [GSA organization on GitHub](https://github.com/GSA/).
 
 **If your code is on GitHub, you do not have to take any further action.** We automatically pull metadata from GitHub projects for the inventory. If you want to provide custom metadata for your project, see below.
 
-##### Custom Metadata
+###### Custom Metadata
 
 If you want to customize your project metadata, add a YAML or JSON metadata file to the root folder of your repository. This file should be named `.codeinventory.yml` or `.codeinventory.json`. It should contain metadata about your project. [We have a tool to help you generate a YAML or JSON file](https://gsa.github.io/codeinventory-metadata-generator/). Once you add this metadata file to your repository, we can automatically scan it to include your project in the GSA source code inventory. Leave the file in your repository and keep it updated. We will regularly pull the metadata from the file to refresh the GSA inventory. If you no longer want custom metadata and want us to automatically build metadata for you, just remove the file from your repository.
 
