@@ -8,12 +8,12 @@ banner-text: We believe in being "open first" with working to realize 100% open 
 sidenav: docs
 ---
 
-#### GSA Instructional Letter
+### GSA Instructional Letter
 11/3/2016
 
 ---
 
-**1. Purpose**
+#### **1. Purpose**
 The purpose of this Instructional Letter (IL) is to establish the General Services Administration’s (GSA) policy on open source software development and publication and to communicate responsibilities to the organization for compliance with Office of Management and Budget’s (OMB) open source policy.  Specifically, the IL includes the following:
 
 a.  A rationale for implementing open source code produced by/for the agency; and
@@ -22,17 +22,17 @@ b.  The incorporation of [M-16-21](https://www.whitehouse.gov/sites/default/file
 
 ---
 
-**2. Background**
+#### **2. Background**
 GSA is known for being forward-thinking with implementing new technologies.  As part of GSA IT’s technical vision, “Be Open,” GSA has taken an open-first approach to data, Application Programming Interfaces (APIs), and source code.  Specifically, GSA developed a workgroup with representation from multiple technology program offices to identify good processes for publishing open source code.  Around the same time, OMB published the Federal Source Code Policy, [M-16-21](https://www.whitehouse.gov/sites/default/files/omb/memoranda/2016/m_16_21.pdf), which highlighted the importance of creating an agency-wide process of releasing open source code.
 
 ---
 
-**3. Applicability**
+#### **3. Applicability**
 This IL applies to all Heads of Services and Staff Offices (HSSOs) and Regions.
 
 ---
 
-**4. Policy**
+#### **4. Policy**
 This IL requires GSA organizations to account for and publish their open source code in accordance with OMB [M-16-21](https://www.whitehouse.gov/sites/default/files/omb/memoranda/2016/m_16_21.pdf) including:
 
 a. Establish a new baseline of software development and acquisition that supports an open source approach as it promotes GSA IT’s vision goal of “Being Open;”
@@ -49,7 +49,7 @@ f. Include a metadata file in each project’s source code repository.  The meta
 
 ---
 
-**5. Responsibilities**
+#### **5. Responsibilities**
 GSA is responsible for the following:
 
 a. Establishing an internal policy that incorporates [M-16-21](https://www.whitehouse.gov/sites/default/files/omb/memoranda/2016/m_16_21.pdf) requirements by November 6, 2016 and publishing this policy on [www.gsa.gov/digitalstrategy](http://www.gsa.gov/digitalstrategy);
@@ -66,7 +66,7 @@ f. Publishing the inventory JSON on www.gsa.gov/code.json.
 
 ---
 
-**6. Signature**
+#### **6. Signature**
 	DAVID SHIVE
 	Chief Information Officer
 	Office of GSA IT
