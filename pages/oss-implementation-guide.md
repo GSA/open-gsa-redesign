@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: GSA Open Source Software (OSS) Policy | Implementation Guide
-permalink: /oss-implementation-guide
+permalink: /oss-implementation-guide/
 category: code
 banner-heading: GSA Open Source Software
 banner-text: We believe in being "open first" with working to realize 100% open source code across the Agency. While we may be a little ways away from being fully 100% open source, we take pride in being the government standard for open sourcing.  What we create is the people's code! Likewise, what we do should be transparent and available to the public. So please, explore some of our public data&mdash;innovate, create, and make sure to give us your feedback.
