@@ -1,10 +1,17 @@
-- title: Tech.gsa.gov
+- title: tech.gsa.gov
   body: An open source website built using Jekyll and hosted on Federalist where you can learn more about the CTO Office and technology at GSA.
   tags:
   - GSA
   - CTO
   category: Code
   url: https://github.com/GSA/cto-website
+- title: open.gsa.gov
+  body: An open source website built using Jekyll and hosted on Federalist offer GSA's open assets - data, APIs, and code.
+  tags:
+  - GSA
+  - CTO
+  category: Code
+  url: https://github.com/GSA/open-gsa-redesign
 - title: Data.gov
   body: 'Data.gov is an open data website that is based on two robust open source projects: CKAN and WordPress.
     The data catalog at catalog.data.gov is powered by CKAN, while the content seen
@@ -21,17 +28,14 @@
   contact:
     email: datagov@gsa.gov
   url: https://github.com/GSA/data.gov
-- title: i14y
-  body: A search engine for agencies' published content in real-time.
-  license: https://creativecommons.org/publicdomain/zero/1.0
-  openSourceProject: 1
-  governmentWideReuseProject: 1
+- title: analytics.usa.gov
+  body: An open source website displaying website analytics data from across all government websites.
   tags:
   - GSA
-  - DigitalGovSearch
-  - websites
-  - search
-  - indexing
-  contact:
-    email: search@support.digitalgov.gov
-  url: https://github.com/GSA/i14y
+  - CTO
+  - Analytics
+  url: https://github.com/18F/analytics.usa.gov
+
+
+
+
