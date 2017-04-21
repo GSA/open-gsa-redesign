@@ -4,7 +4,7 @@ title: GSA Open Source Software (OSS) Policy | Policy
 permalink: /oss-policy
 category: code
 banner-heading: GSA Open Source Software
-banner-text: We believe in being "open first" with working to realize 100% open source code across the Agency. While we may be a little ways away from being fully 100% open source, we take pride in being the government standard for open sourcing.  What we create is the people's code! Likewise, what we do should be transparent and available to the public. So please, explore some of our public data&mdash;innovate, create, and make sure to give us your feedback.
+banner-text: 
 sidenav: docs
 ---
 
@@ -39,7 +39,7 @@ a. Establish a new baseline of software development and acquisition that support
 
 b. Maintain a posture of being “open first” and requiring justification for new custom code that will not be opened;
 
-c. Utilize a publication process that is the responsibility of the organization releasing code.  (Note: The GSA Chief Technology Office (CTO) is leading an effort with Security and Acquisition IT Offices in developing an automated code scan and release process to be published on GSA’s open source policy [repository](https://github.com/GSA/GSAOpenSourcePolicy) with further instructions for use.);
+c. Utilize a publication process that is the responsibility of the organization releasing code.  (Note: The GSA Chief Technology Office (CTO) is leading an effort with Security and Acquisition IT Offices in developing an automated code scan and release process to be published on GSA’s open source policy repository with further instructions for use.);
 
 d. Release open source code through a public-facing software version control platform including code developed by GSA personnel and contractors;
 

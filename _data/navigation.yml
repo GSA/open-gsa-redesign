@@ -3,8 +3,6 @@ docs:
     href: /oss/
   - text: Policy
     href: /oss-policy/
-  - text: Inventory inclusion
-    href: /oss-implementation-guide/
-  - text: Implementation guidance
-    href: /oss-implementation-guide/
-
+  - text: Implementation
+    href: /oss-implementation/
+  
