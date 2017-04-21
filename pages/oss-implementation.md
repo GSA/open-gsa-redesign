@@ -1,16 +1,44 @@
 ---
 layout: docs
 title: GSA Open Source Software (OSS) Policy | Implementation Guide
-permalink: /oss-implementation-guide/
+permalink: /oss-implementation
 category: code
 banner-heading: GSA Open Source Software
-banner-text: We believe in being "open first" with working to realize 100% open source code across the Agency. While we may be a little ways away from being fully 100% open source, we take pride in being the government standard for open sourcing.  What we create is the people's code! Likewise, what we do should be transparent and available to the public. So please, explore some of our public data&mdash;innovate, create, and make sure to give us your feedback.
+banner-text:
 sidenav: docs
 ---
 
 ### Implementation Guide
 
-If you are a GSA user that manages a source code repository, this guide will help you add your repository to the GSA source code inventory.
+There are two parts of implementing the OSS policy at GSA.  
+
+1.) Inventorying all public repositories and adding them to the gsa.gov/code.json file.  
+2.) Turning closed source code (mostly legacy code) into open source code.  
+
+The initial policy speaks to new custom code being developed after August 2016, however, in the Agency's effort to being 100% open, we are looking to make all custom code developed by GSA employees and contracted partners to be open sourced.
+
+In evangelizing OSS at GSA a couple questions consistently arise:
+
+1.) Why are we releasing our code, is anyone going to use it?  
+2.) How do we release our code, who is going to scrub it for sensitive content?  
+3.) What about licensing, what types of licenses apply?  
+4.) What about security, are we going to open vulnerabilities?  
+
+Here are some general thoughts relating to these questions and the remaining will provide specific instructions for inventorying and publicly releasing code.
+
+1.) Who knows if anyone will really use the code.  Where this really helps for the government is with good code management and vendor turnover.  If the code is public, the federal project team can see the code on a regular basis and check for pragmatic prose.  As vendors transition, the code will be complete in one place and the trade-off of disks will be a thing of the past.  Finally, in moving to DevOps (including [12Factor.Net](https://12factor.net/) principles), we need to have one version of the *truth*.
+
+2.) The project team that releases the code is responsible for the code.  The GSA employees responsible for the project and vendors who are writing the custom code.  The CTO team is working on scripts ([here](https://github.com/GSA/codeinventory-github) and [here](https://github.com/GSA/codeinventory)) to help scrub the code and project teams should start moving towards [12Factor.net](https://12factor.net/) principles.
+
+3.) It will be up to the project team producing the code to determine the best license.  The team should consult legal and the CTO's office will assist.
+
+4.) The project team should be working with security on a regular basis to have the code scanned for vulnerabilities.  The team should also look at [12Factor.net](https://12factor.net/) on some ideas about moving configuration information and sensitive content out of code files.  Plus, the project team can use scripts developed by the CTO team.
+
+---
+
+### Inventory inclusion
+
+We should include all repositories with custom developed code in the code.json file.  This helps us to account for all code produced by GSA and provides metadata about the code.  Not only is this a requirement of the agency by OMB, it is beneficial to the public.
 
 #### What is a source code repository?
 
@@ -28,6 +56,8 @@ Additionally, even if your source code has not had any active development since 
 When you submit your source code repository metadata to the inventory, the public will see the metadata. If your code is closed source, this does not change the fact that your project is closed source, and it will remain closed source. The public will only see the metadata and not the source code.
 
 The only source code that should *not* be submitted to the inventory is code that is truly exploratory or disposable in nature, such as that written by a developer experimenting with a new language or library. If your repository only contains test code and does not serve as the foundation of a real app, tool, website, or other product, then do not include it in the GSA inventory.
+
+---
 
 #### How to add your source code repository to the inventory
 
