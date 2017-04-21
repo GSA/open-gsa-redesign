@@ -4,7 +4,7 @@ title: GSA Open Source Software (OSS) Policy | Implementation Guide
 permalink: /oss-implementation
 category: code
 banner-heading: GSA Open Source Software
-banner-text: 
+banner-text:
 sidenav: docs
 ---
 
@@ -17,7 +17,7 @@ There are two parts of implementing the OSS policy at GSA.
 
 The initial policy speaks to new custom code being developed after August 2016, however, in the Agency's effort to being 100% open, we are looking to make all custom code developed by GSA employees and contracted partners to be open sourced.
 
-In evangelizing OSS at GSA a couple questions consistenly arise:
+In evangelizing OSS at GSA a couple questions consistently arise:
 
 1.) Why are we releasing our code, is anyone going to use it?  
 2.) How do we release our code, who is going to scrub it for sensitive content?  

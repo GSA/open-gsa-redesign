@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: GSA Open Source Software (OSS) Policy | Policy
-permalink: /oss-policy
+permalink: /oss-policy/
 category: code
 banner-heading: GSA Open Source Software
 banner-text: 
