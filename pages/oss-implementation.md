@@ -6,6 +6,11 @@ category: code
 banner-heading: GSA Open Source Software
 banner-text:
 sidenav: docs
+subnav:
+  - text: Inventory
+    href: '#inventory-inclusion'
+  - text: How to Open Source
+    href: '#how-to-add-your-source-code-repository-to-the-inventory'
 ---
 
 ### Implementation Guide
