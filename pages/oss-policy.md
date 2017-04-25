@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: GSA Open Source Software (OSS) Policy | Policy
+title: Open Source Software (OSS) Policy | Policy
 permalink: /oss-policy/
 category: code
-banner-heading: GSA Open Source Software
+banner-heading: Open Source Software
 banner-text: 
 sidenav: docs
 ---
