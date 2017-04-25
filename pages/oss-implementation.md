@@ -141,10 +141,9 @@ Furthermore, the project team should be working with the IT security office to c
 As with all of these open sourcing tasks, one approach would be to work on open sourcing closed source code on a project by project basis.  This could be as an update is planned, as vendors transition, etc.  Eventually all projects would become open sourced.
 
 #### Start with moving to public repositories
-  - the GSA approved version control solution is Git/GitHub
-    - use the [GitHub GSA organization](https://github.com/GSA)
-  - may need to begin private until code is ready to move public
-  - work on this project by project - as an update occurs, as vendors transition, etc.
+Project teams should consider using moving to public repositories on GitHub.  GSA has an approved agency acount and teams should use the [GitHub GSA organization](https://github.com/GSA) to post code.  Teams can use private repositories but the cost money and the team would be responsible for any applicable costs associated with private repos.
+
+The team may need to work in private until the code is ready to move to the public repo.  This means that all code should be reviewed and scanned appropriately.  As mentioned previously, one logical approach is to do this on a project by project basis, meaning as an update/enhancement is planned or vendors transition.
 
 #### Licensing
   
@@ -154,4 +153,5 @@ This still needs to be vetted with GSA Legal but the assumption here is that we 
 
 #### Feedback
 
+Feedback is encouraged through this [site's GitHub repository issues page](https://github.com/GSA/open-gsa-redesign/issues).  In the title of the issue, denote that it is OSS related to call attention to it from the appropriate CTO team members.
 
