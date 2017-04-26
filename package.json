@@ -1,20 +1,62 @@
 {
   "name": "open-gsa",
   "version": "1.0.0",
-  "description": "Open GSA Jekyll template for Federalist",
+  "description": "GSA Open Technology",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "eslint:dist": "eslint assets/js/*.js || exit 0",
+    "eslint": "npm run eslint:dist",
+    "clean:dist": "rm -rf _site",
+    "clean": "npm run clean:dist",
+    "test:html": "bundle exec htmlproofer _site --disable-external --allow-hash-href --empty-alt-ignore --url-ignore sara.cope@gsa.gov || exit 0",
+    "test:html-local": "bundle exec htmlproofer _site --disable-external --allow-hash-href --empty-alt-ignore --url-ignore localhost:4000 || exit 0",
+    "test:pagespeed": "psi http://cg-06ab120d-836f-49a2-bc22-9dfb1585c3c6.s3-website-us-gov-west-1.amazonaws.com/site/gsa/open-gsa-redesign/--strategy=mobile || exit 0",
+    "test:accessibility": "pa11y http://cg-06ab120d-836f-49a2-bc22-9dfb1585c3c6.s3-website-us-gov-west-1.amazonaws.com/site/gsa/open-gsa-redesign/ || exit 0",
+    "test:css": "18f-stylelint-rules ./_sass/*.scss || exit 0",
+    "test:js": "npm run eslint",
+    "test": "npm run test:html && npm run test:pagespeed && npm run test:accessibility && npm run test:js && npm run test:css",
+    "build:jekyll": "jekyll build --config _config.yml",
+    "build:uswds": "cp -R node_modules/uswds/dist/ assets/uswds",
+    "build": "npm run clean && npm run build:uswds && npm run build:jekyll",
+    "watch:jekyll": "chokidar 'index.html' '_includes/*.html' '_layouts/*.html' '_posts/*' -c 'npm run build:jekyll && browser-sync reload'",
+    "watch:css": "chokidar 'assets/css/*' -c 'npm run browser-sync reload'",
+    "watch:js": "chokidar 'assets/js/*' -c 'npm run browser-sync reload'",
+    "serve": "browser-sync start --https --server _site",
+    "start": "npm run build -s && parallelshell \"npm run serve -s\" \"npm run watch:jekyll -s\" \"npm run watch:css -s\" \"npm run watch:js -s\""
   },
   "repository": {
-  "type": "git",
-  "url": "git+https://github.com/saracope/open-gsa.git"
-},
-  "author": "",
-  "license": "ISC",
+    "type": "git",
+    "url": "git+https://github.com/GSA/open-gsa-redesign/"
+  },
+  "author": "GSA Digital Service",
+  "contributors": [
+    "Sara Cope <sara.cope@gsa.gov>",
+    "Jeff Fredrickson <jeff.fredriskson@gsa.gov>",
+    "Joe Castle <joseph.castle@gsa.gov>",
+    "Ryan Day <ryan.day@gsa.gov>"
+  ],
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/GSA/open-gsa-redesign/issues"
+  },
+  "homepage": "https://github.com/GSA/open-gsa-redesign/blob/dev/README.md",
   "devDependencies": {
-    "browser-sync": "^2.13.0",
-    "gulp": "^3.9.1",
-    "gulp-shell": "^0.5.2"
+    "@18f/stylelint-rules": "^2.0.0",
+    "browser-sync": "^2.11.1",
+    "chokidar": "^1.6.1",
+    "chokidar-cli": "^1.2.0",
+    "eslint": "^1.10.3",
+    "eslint-config-google": "^0.3.0",
+    "pa11y": "^4.6.0",
+    "parallelshell": "^2.0.0",
+    "postcss": "^5.2.15",
+    "postcss-cli": "^2.6.0",
+    "psi": "^2.0.4",
+    "uswds": "^1.0.0",
+    "watch": "^0.17.1"
+  },
+  "dependencies": {
+    "parallelshell": "^2.0.0",
+    "uswds": "^1.0.0"
   }
 }

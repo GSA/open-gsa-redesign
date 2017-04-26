@@ -2,14 +2,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  min-height: 30vh;
+  min-height: 400px;
   position: relative;
 }
 .hero-search {
   // background-color: rgba(46, 133, 64, 0.7);
-  bottom: 25px;
-  left: 50%;
-  margin-left: -30%;
+  bottom: 30%;
+  left: 20vw;
+  right: 20vw;
   padding-top: 20px;
   position: absolute;
   text-align: center;
@@ -17,10 +17,19 @@
 .hero-search h2 {
   font-family: "Source Sans Pro";
   color: white;
-  font-size: 50px;
+  font-size: 2rem;
+  font-size: 20px;
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 0;
+  @media screen and (min-width: 600px){
+    font-size: 4rem;
+    font-size: 40px;
+  }
+  @media screen and (min-width: 1500px){
+    font-size: 5rem;
+    font-size: 50px;
+  }
 }
 
 .hero-search .usa-search.usa-search-big [type="search"], .hero-search .usa-search.usa-search-big .usa-search-input {

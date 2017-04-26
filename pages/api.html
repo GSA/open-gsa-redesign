@@ -1,0 +1,70 @@
+---
+layout: base
+title: APIs
+permalink: /api/
+category: api
+banner-heading: GSA APIs
+banner-text: GSA publishes Application Programming Interfaces (APIs) for many of our open datasets. This provides information to the public in a standardized and machine-readable format for public use. These APIs cover a range of important data and functionality. Software developers and researchers can use these resources to help people find useful government information.
+banner-button-text: Explore GSA APIs on Data.gov
+banner-button-link: https://catalog.data.gov/organization/gsa-gov?q=api&sort=score+desc%2C+metadata_modified+desc&as_sfid=AAAAAAWlvqP78Cm909G74fthRX0GfKObjOhPJEnFHjlUDMnh0QIcfz2i6BuDqN5oPx-L24QYu-xQF7C0agEfNDxobeXWYzYzbwiC1GlXhrahdyjUxlkm2CX8GGKA94BWZ-zzN_8%3D&as_fid=f64caa522809bac644e59d953646e012f3eea853View
+banner-button-title: GSA APIs on Data.gov
+---
+
+
+
+{% if page.banner-heading %}
+  {% include banner-header.html %}
+{% endif %}
+
+    <section class="banner functions">
+        <div class="usa-grid-full" align="center">
+          <h2>APIs and Developer Tools</h2>
+        </br>
+            <div class="usa-width-one-third">
+                <i class="icon flag fa-cubes"></i>
+                <h3>GSA API Standards</h3>
+                <p>GSA's recommended best practices, conventions, and standards for APIs. We encourage GSA development groups to check out these standards when developing APIs.</p>
+                <div class="usa-button-block"><a href="https://github.com/GSA/api-standards" class="usa-button  usa-button-outline">View</a>
+                </div>
+            </div>
+
+            <div class="usa-width-one-third">
+                <i class="icon flag alt2 fa-cogs"></i>
+                <h3>Api.Data.Gov</h3>
+                <p>Free API management service for federal agencies, making it easier for you to release and manage your APIs.</p>
+                <div class="usa-button-block"><a href="http://api.data.gov/about/" class="usa-button  usa-button-outline">View</a>
+                </div>
+            </div>
+
+            <div class="usa-width-one-third">
+                <i class="icon flag alt fa-life-ring"></i>
+                <h3>Support for GSA APIs</h3>
+                <p>If you have a question or issue related to a GSA API, you can post your issue here.</p>
+                <div class="usa-button-block"><a href="https://github.com/GSA/GSA-APIs/issues" class="usa-button  usa-button-outline">View</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="usa-section usa-section-dark">
+        <div class="usa-grid-full">
+            <h2 style="text-align: center;">Featured GSA APIs</h2> {% for apis in site.data.api-list %}
+            <div class="usa-width-one-whole data-list">
+                <article class="data-listing">
+                    <header>
+                        <h3 class="title">{{ apis.title }}</h3>
+                    </header>
+                    <div class="content">
+                        <p class="txt">
+                            {{ apis.description }}
+                        </p>
+                        <button class="usa-button-gray"><a href="{{ apis.url | prepend: site.baseurl }}">View Project</a></button>
+                    </div>
+                    <footer class="usa-card-footer">
+                    </footer>
+                </article>
+                {% endfor %}
+            </div>
+    </section>
+
+    {% include feedback.html %}

@@ -15,8 +15,8 @@
   {% if site.feature_image %}<meta name="twitter:image" content="{{ site.feature_image | prepend: site.baseurl | prepend: site.url }}">{% endif %}
   <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="google-site-verification" content="1mdRfaEaI19uCixYkGGmRsv2iA_si1n44fNtk4jzixQ" />
 
-  <link rel="stylesheet" href="{{ '/assets/css/google-fonts.css' | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ '/assets/uswds/css/uswds.css' | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl }}">
 
@@ -24,12 +24,10 @@
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
-  <script src="https://use.fontawesome.com/bc43477a9b.js"></script>
+
   <script>
     if (/^www\./.test(window.location.hostname)) {
       window.location = window.location.href.replace('www.', '');
     }
   </script>
-  <!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
-  <script async type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA&subagency=CTO&sitetopic=IT&sp=term&dclink=true&enhlink=true&cto=12" id="_fed_an_ua_tag"></script>
 </head>

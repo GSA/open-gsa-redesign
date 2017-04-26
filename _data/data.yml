@@ -1,0 +1,9 @@
+- title: Social Media Registry
+  body: The Social Media Registry is an official source of information about federal government social media accounts.
+  url: http://www.usa.gov/About/developer-resources/social-media-registry.shtml
+- title: Time to Hire
+  body: This dataset represents time taken to hire a GSA employee from the internal request to hire through the entry on duty of the of the selected individual.
+  url: https://inventory.data.gov/dataset/58fa1cd3-c1bf-4492-964d-f994b26a6cae/resource/f6d8dd83-3080-470f-b453-03f8ead0228f/download/time-to-hire-data-file.xlsx
+- title: CIO Governance Board Membership List
+  body: Json file for CIO Governance Board Membership List.
+  url: http://www.gsa.gov/largedocs/governanceboards.json

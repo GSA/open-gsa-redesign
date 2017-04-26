@@ -1,8 +1,12 @@
 ---
-layout: page
+layout: search
 title: Search
-permalink: /search/
-image: /assets/img/search-pattern.png
+banner-heading: Explore GSA Open Technology
+banner-text:
+hero-text: Enter a search term below.
+permalink: search.html
+image: /assets/img/data-pattern.png
+category: search
 ---
 <section>
   {% include search.html %}

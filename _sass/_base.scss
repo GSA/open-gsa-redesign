@@ -57,9 +57,15 @@ form {
 .usa-content > h6 {
   max-width: 62.5rem;
 }
-a:visited {
-  color: inherit;
-}
+a {
+  color: #0071bc; }
+  a:hover, a:active {
+    color: #205493; }
+  a:visited {
+    color: inherit; }
+  a:focus {
+    box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
+    outline: 0; }
 
 div.skip-nav a {
   position: absolute;

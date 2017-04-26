@@ -1,10 +1,17 @@
 # Site settings
 title: GSA Open Technology
 description: Open source code, data and APIs from GSA.
-baseurl: "/open-gsa" # the subpath of your site, e.g. /blog/
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://github.com/GSA/open-gsa-redesign" # the base hostname & protocol for your site
-logo: /assets/img/gsa-logo-dark.jpg
+logo: /assets/img/site-logo.png
 feature_image: /assets/img/feature-background.jpg
+
+gems:
+    - jekyll-autoprefixer
+
+autoprefixer:
+  browsers:
+  - last 3 versions
 
 colors:
   background: '#ffffff'
@@ -32,48 +39,35 @@ analytics:
     agency: GSA    # Change this to your agency
     subagency: Digital Service # Change this to your agency
 
-defaults:
- -
-  scope:
-    path: "" # an empty string here means all files in the project
-  values:
-    layout:
-      - home
-      - page
-      - "project-list"
-      - project
 
 forms:
+- type: feedback
+  heading: Any feedback?
+  url: https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLScjinSFePUvD6fljjFpTk0Q63MkLBnbdA7onscOSQI5sauSYg/formResponse
+  button: Submit
+  privacypolicy: Your privacy and security are important to us. We'll only share your information as described in the <a href="http://www.gsa.gov/portal/content/116609">GSA Privacy and Security Notice</a>.
+  fields:
+    - type: email
+      name: entry.2070146184
+      label: Email Address
+    - type: comments
+      name: entry.1756863949
+      label: Comments
+
 - type: newsletter
   heading: Sign up to receive updates from our team
   url: https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLSdTKaMGI8PGKdR7VjuRRMtvOiA-uiD5fqqsFoyN1g2SXoLTqQ/formResponse
   button: Subscribe
-  privacypolicy: Your privacy and security are important to us, we'll only share your information as described in the <a href="http://www.gsa.gov/portal/content/116609">GSA Privacy and Security Notice</a>
+  privacypolicy: Your privacy and security are important to us. We'll only share your information as described in the <a href="http://www.gsa.gov/portal/content/116609">GSA Privacy and Security Notice</a>
   fields:
     - type: email
       name: entry.474991268
       label: Email Address
 
-- type: feedback
-  heading: Any feedback?
-  url: https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLSdTKaMGI8PGKdR7VjuRRMtvOiA-uiD5fqqsFoyN1g2SXoLTqQ/viewform
-  button: Submit
-  privacypolicy: Your privacy and security are important to us, we'll only share your information as described in the <a href="http://www.gsa.gov/portal/content/116609">GSA Privacy and Security Notice</a>
-  fields:
-    - type: email
-      name: entry.474991268
-      label: Email Address
-    - type: comments
-      name: entry.474991268
-      label: Comments
 
 footer:
-  image: /assets/img/logos/gsads-logo.svg
-  image-alt: GSA Digital Service
-  email:
-  twitter:
-    - USGSA
-  text:  BUILT BY # Change to a tag line for your agency
+  image: /assets/img/gsa-logo-dark.jpg
+  image-alt: GSA
 
 # Build settings
 markdown: kramdown

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+    <div id="wrapper">
+        <div id="header">{% include header.html %}</div>
+        <div id="content">
+          {% if page.banner-heading %}
+          <section class="usa-section usa-section-dark">
+              <div class="usa-grid">
+                  <div class="usa-width-one-whole usa-end-row">
+                      <h2>{{ page.banner-heading }}</h2> {% if page.banner-text %}
+                      <p>{{ page.banner-text }}</p>
+                      {% endif %} {% if page.banner-button-text %}
+                      <div class="center-content">
+                          <a href="{{ page.banner-button-link}}" class="usa-button" title="View GSA open data on data.gov">{{ page.banner-button-text }}</a>
+                      </div>
+                      {% endif %}
+                  </div>
+              </div>
+          </section>
+          <section class="usa-section">
+            <div class="usa-grid">
+              <div class="usa-width-one-whole">
+                  {% if page.content %}
+                  {{ content }}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </section>
+          {% endif %}
+    <div id="footer">{% include footer.html %}</div>
+    {% include javascript.html %}
+    </div>
+</body>
+
+</html>

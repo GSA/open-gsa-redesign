@@ -1,0 +1,154 @@
+---
+layout: base
+---
+
+
+<section class="usa-hero">
+    <div class="usa-grid">
+        <div class="usa-hero-callout usa-section-dark">
+            <h2><span class="usa-hero-callout-alt">GSA Presents:</span> {{ page.title }}</h2>
+            <a class="usa-button usa-button-big usa-button-secondary" href={{ page.register }}>Register</a>
+        </div>
+    </div>
+</section>
+<div class="usa-overlay"></div>
+<main class="usa-grid usa-section usa-content usa-layout-docs" id="main-content">
+  <aside class="usa-width-one-fourth usa-layout-docs-sidenav">
+    <ul class="usa-sidenav-list">
+      <li>
+        <a class="usa-current" href="javascript:void(0)">The Challenge</a>
+        <ul class="usa-sidenav-sub_list">
+          <li>
+            <a href="#howitworks">How it works</a>
+          </li>
+          <li>
+            <a href="#prizes">Prizes</a>
+          </li>
+          <li>
+            <a href="#schedule">Schedule</a>
+          </li>
+          <li>
+            <a href="#judges">Judges</a>
+          </li>
+          <li>
+            <a href="#faqs">FAQ</a>
+          </li>
+          <li>
+            <a href="#register">Register</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+  <div class="usa-width-three-fourths usa-layout-docs-main_content">
+    <p class="usa-font-lead">{{ page.intro }}</p>
+          <h2 id="challenge">The Challenge</h2>
+          <p class="usa-font-lead">{{ page.challenge }}</p>
+          <h2 id="howitworks">How It Works</h2>
+          <p class="usa-font-lead">{{ page.howitworks }}</p>
+          <h2 id="prizes">Prizes</h2>
+          <p class="usa-font-lead">{{ page.prizes }}</p>
+          <h2 id="schedule">Schedule</h2>
+          <p class="usa-font-lead">All times shown are local to the venue.</p>
+          <!-- For each time in site.data.schedule, display the time and activity -->
+
+          <table>
+              <thead>
+                  <tr>
+                      <th scope="col">Time</th>
+                      <th scope="col">Activity</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for schedule in site.data.schedule %}
+                  <tr>
+                      <th scope="row">{{ schedule.time }}</th>
+                      <td>{{ schedule.activity}}</td>
+                  </tr>
+                    {% endfor %}
+              </tbody>
+          </table>
+          <h2 id="judges">The Judges</h2>
+        <p class="usa-font-lead">We're excited to have an outstanding group of judges with experience both within government and private industry.</p>
+        <div class="usa-grid usa-graphic_list-row">
+            <div class="usa-media_block">
+                <img class="usa-media_block-img" src="{{ page.judge1-image | prepend: site.baseurl }}" alt="{{page.judge1-image-alt}}">
+                <div class="usa-media_block-body">
+                    <h3>{{ page.judge1 }}</h3>
+                    <p>{{ page.judge1-bio }}</p>
+                </div>
+            </div>
+            <div class="usa-media_block">
+                <img class="usa-media_block-img" src="{{ page.judge2-image | prepend: site.baseurl }}" alt="{{page.judge2-image-alt}}">
+                <div class="usa-media_block-body">
+                    <h3>{{ page.judge2 }}</h3>
+                    <p>{{ page.judge2-bio }}</p>
+                </div>
+            </div>
+        </div>
+        <h2 id="faqs">Frequently Asked Questions</h2>
+        <ul class="usa-accordion">
+            <li>
+                <button class="usa-accordion-button" aria-expanded="true" aria-controls="amendment-1">
+                    Is any pre-event prep needed?
+                </button>
+                <div id="amendment-1" class="usa-accordion-content">
+                    <p>No prep work is required, but feel free to take a look at the Open GSA <a href="https://github.com/GSA/open-gsa-redesign">site</a> and <a href="https://github.com/GSA/open-gsa-redesign/wiki">wiki</a> to get a jump start on your project.</p>
+                </div>
+            </li>
+            <li>
+                <button class="usa-accordion-button" aria-controls="amendment-2">
+                    How do I get there?
+                </button>
+                <div id="amendment-2" class="usa-accordion-content">
+                    <p>The National Archives Building is located between Seventh and Ninth Streets, NW, with an entrance to the Innovation Hub on Pennsylvania Avenue.</p>
+                    <p><strong>Subway:</strong> In Washington, DC, take Metrorail's Yellow or Green lines to the Archives/Navy Memorial station. The Archives/Navy Memorial stop is across Pennsylvania Avenue from the Archives building.</p>
+                    <p>
+                        <strong>Bus: </strong> In Washington, DC, Metrobuses 30, 32, 34, 36, 53, A42, A46, A48, P1, P2, P4, P17, P19, and W13 stop at the National Archives on Pennsylvania Avenue.
+                    </p>
+                    <p>
+                        For more specific information on routes, fares, and timetables for Metrobus and Metrorail, please see the Washington Metropolitan Area Transit Authority or telephone Metro at 202-637-7000.</p>
+                    <p>
+                        <strong>Parking: </strong> No parking at the building is available. Several commercial parking lots are located nearby and metered curb parking may be available on nearby streets.</p>
+                </div>
+            </li>
+            <li>
+                <button class="usa-accordion-button" aria-controls="amendment-3">
+                    Do I have to come with a team?
+                </button>
+                <div id="amendment-3" class="usa-accordion-content">
+                    <p>
+                        No, you don't need to form a team before attending. We'll set aside time in the morning to help with team formation.</p>
+                </div>
+            </li>
+            <li>
+                <button class="usa-accordion-button" aria-controls="amendment-4">
+                    Will there be food available?
+                </button>
+                <div id="amendment-4" class="usa-accordion-content">
+                    <p>
+                        Many coffee shops and restaurants are located near the Innovation Hub, several are right across the street. Food is allowed in the Innovation Hub, so feel free to bring items with you or run out to lunch. </p>
+                </div>
+            </li>
+            <li>
+                <button class="usa-accordion-button" aria-controls="amendment-5">
+                    What if I don't know how to code?
+                </button>
+                <div id="amendment-5" class="usa-accordion-content">
+                    <p>
+                        If you are a designer or project manager, we still need your skills! There are many ways to contribute to a team, even if you're not a developer. Come out and show us what you got.</p>
+                </div>
+            </li>
+        </ul>
+
+        <h2 id="register">Join us!</h2>
+        <p class="usa-font-lead">Be sure to register if you think you can make it to be added to the security check-in list.</p>
+        <a class="usa-button usa-button-big usa-button-secondary" href={{ page.register }}>Register Now</a><br>
+        <a href="{{ page.gcal }}">Google calendar</a> | <a href="{{ page.ical }}">iCal</a>
+
+
+  </div>
+</main>
+<div class="usa-grid usa-footer-return-to-top">
+  <a href="#">Return to top</a>
+</div>

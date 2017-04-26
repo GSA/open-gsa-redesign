@@ -1,0 +1,94 @@
+---
+layout: base
+title: Data
+banner-heading: GSA Open Data
+banner-text: GSA provides a wide variety of data sets that can be freely used, re-used and redistributed by anyone. Opening this data increases public participation in government, creates opportunities for economic development, and informs decision making in both the private and public sectors.  So please, explore some of our public data&mdash;innovate, create, and make sure to give us your feedback.
+permalink: /data/
+image: /assets/img/data-pattern.png
+category: data
+banner-button-text: Explore GSA data on Data.gov
+banner-button-link: https://catalog.data.gov/organization/gsa-gov
+---
+
+{% if page.banner-heading %}
+  {% include banner-header.html %}
+{% endif %}
+
+    <section class="banner functions">
+        <div class="usa-grid-full" align="center">
+          <h2>Open Data Resources</h2>
+        </br>
+            <div class="usa-width-one-third">
+                <i class="icon flag fa-users"></i>
+                <h3>Federal Open Data Policy</h3>
+                <p>Policy that instructs agencies to manage their data as an asset from the start and, wherever possible, release it to the public in a way that makes it open, discoverable, and usable.</p>
+                <div class="usa-button-block"><a href="https://www.digitalgov.gov/open-data-policy-m-13-13/" class="usa-button  usa-button-outline">View</a>
+                </div>
+            </div>
+
+            <div class="usa-width-one-third">
+                <i class="icon flag alt fa-laptop"></i>
+                <h3>Open Data Publication Process</h3>
+                <p>This document is provided as an aid to learn what to do to get your GSA data released in the open.</p>
+                <div class="usa-button-block"><a href="{{ Open_Data_Publication_Process.docx | prepend: site.baseurl }}" class="usa-button  usa-button-outline">View</a>
+                </div>
+            </div>
+
+            <div class="usa-width-one-third">
+                <i class="icon flag alt2 fa-exchange"></i>
+                <h3>Project Open Data</h3>
+                <p>Project Open Data is an online, public repository with resources and tools intended to foster collaboration and promote the continual improvement of the Open Data Policy.</p>
+                <div class="usa-button-block"><a href="https://project-open-data.cio.gov/" class="usa-button  usa-button-outline">View</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="usa-section usa-section-dark">
+        <div class="usa-grid-full">
+            <h2 style="text-align: center;">Featured GSA Open Datasets</h2> {% for data in site.data.data %}
+            <div class="usa-width-one-whole data-list">
+                <article class="data-listing">
+                    <header>
+                        <h3 class="title">{{ data.title }}</h3>
+                    </header>
+                    <div class="content">
+                        <p class="txt">
+                            {{ data.body }}
+                        </p>
+                        <button class="usa-button-gray"><a href="{{ data.url }}">View Project</a></button>
+                    </div>
+                    <footer class="usa-card-footer">
+                    </footer>
+                </article>
+                {% endfor %}
+            </div>
+    </section>
+
+{% include feedback.html %}
+    <!-- <section class="usa-section usa-section-dark">
+        <div class="usa-grid-full">
+            <h2 style="text-align: center;">View GSA Datasets</h2>
+              {% for data in site.data.data.dataset %}
+              {% assign distribution = data.distribution | map: 'downlaodURL' %}
+              <div class="usa-width-one-whole data-list">
+                  <article class="data-listing">
+                      <header>
+                          <h3 class="title">{{ data.title }}</h3>
+                      </header>
+                      <div class="content">
+                          <p class="txt">
+                              {{ data.description }}
+                          </p>
+                          <button class="usa-button-gray"><a href="{{ distribution.downloadURL }}">Download Dataset</a></button>
+                          <p>DATASET: {{ data }}</p>
+                          <p>Some Data: {{ data.modified }}</p>
+                          <p>DISTRIBUTION: {{ distribution }}</p>
+                          <p>Ok, how about this? {{ distribution.downloadURL }}</p>
+                      </div>
+                      <footer class="usa-card-footer">
+                      </footer>
+                  </article>
+                  {% endfor %}
+            </div>
+    </section> -->

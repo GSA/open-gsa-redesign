@@ -1,0 +1,67 @@
+---
+layout: base
+title: Code
+permalink: /code/
+category: code
+banner-heading: GSA Code
+banner-text: We are creating the people's code! This includes working towards being 100% open source and taking an active government leadership role in open sourcing.  Please explore some of our public code&mdash;innovate, create, and make sure to give us your feedback.
+banner-button-text: Explore GSA code
+banner-button-link: https://github.com/gsa
+banner-button-title: View GSA open source code
+---
+{% if page.banner-heading %}
+  {% include banner-header.html %}
+{% endif %}
+
+<section>
+  <div class="usa-grid-full" align="center">
+      <h2>Getting to Open Source Software (OSS)</h2>
+
+      <div class="usa-width-one-third">
+          <i class="icon flag fa-users"></i>
+          <h3>M-16-21</h3>
+          <p>The White House policy telling federal agencies to account for code developed by the agency and publish at least 20% to the public.</p>
+          <div class="usa-button-block"><a href="https://sourcecode.cio.gov/" class="usa-button  usa-button-outline">View</a>
+          </div>
+      </div>
+
+      <div class="usa-width-one-third">
+          <i class="icon flag alt2 fa-exchange"></i>
+          <h3>GSA OSS Policy</h3>
+          <p>GSA created its own policy in response to M-16-21 with instructions for internal organizations producing code.</p>
+          <div class="usa-button-block"><a href="{{ '/oss' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">View</a>
+          </div>
+      </div>
+
+      <div class="usa-width-one-third">
+          <i class="icon flag alt fa-laptop"></i>
+          <h3>Implementation</h3>
+          <p>GSA has taken a lead in publishing OSS code and created open source implementation instructions.</p>
+          <div class="usa-button-block"><a href="{{ '/oss-implementation' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">View</a>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="usa-section usa-section-dark">
+    <div class="usa-grid-full">
+        <h2 style="text-align: center;">Featured GSA Open Source Software Projects</h2> {% for code in site.data.code %}
+        <div class="usa-width-one-whole data-list">
+            <article class="data-listing">
+                <header>
+                    <h3 class="title">{{ code.title }}</h3>
+                </header>
+                <div class="content">
+                    <p class="txt">
+                        {{ code.body }}
+                    </p>
+                    <button class="usa-button-gray"><a href="{{ code.url }}">View Project</a></button>
+                </div>
+                <footer class="usa-card-footer">
+                </footer>
+            </article>
+            {% endfor %}
+        </div>
+</section>
+
+{% include feedback.html %}
