@@ -20,20 +20,20 @@ There are two parts of implementing the OSS policy at GSA.
 1.) Inventorying all repositories (open and closed) and adding them to the gsa.gov/code.json file.  
 2.) Turning closed source code into open source code.  
 
-The initial policy speaks to new custom code being developed after August 2016, however, in the Agency's effort to being 100% open, we are looking to make all custom code developed by GSA employees and contracted partners to be open sourced.
+The initial policy speaks to new custom code being developed after August 2016. However, in the Agency's effort to become 100% open, we are looking to make all custom code developed by GSA employees and contracted partners to be open sourced.
 
-In evangelizing OSS at GSA a couple questions arise:
+In evangelizing OSS at GSA, several questions arise:
 
-1.) Why are we releasing our code, is anyone going to use it?  
-2.) How do we release our code, who is going to scrub it for sensitive content?  
-3.) What about licensing, what types of licenses apply?  
-4.) What about security, are we going to open ourselves vulnerabilities?  
+1.) Why are we releasing our code, and is anyone going to use it?  
+2.) How do we release our code, and who is going to scrub it for sensitive content?  
+3.) What about licensing, and what types of licenses apply?  
+4.) What about security, and are we going to open ourselves to vulnerabilities?  
 
-Here are some general thoughts relating to these questions and the remaining will provide specific instructions for inventorying and publicly releasing code.
+Here are some general thoughts relating to these questions and the remaining will provide specific instructions for inventorying and publicly releasing code:
 
-1.) Who knows if anyone will use the code.  Where this really helps for the government is with good code management and vendor turnover.  If the code is public, the federal project team can see the code on a regular basis and check for pragmatic prose.  As vendors transition, the code will be complete in one place and the handoff-off of disks or large zip files will be a thing of the past.  Finally, in moving to DevOps (including [12Factor.Net](https://12factor.net/) principles), we need to have one version of the *truth*.
+1.) Even if no one uses the code, open sourcing the code helps goverment to implement good code management and vendor turnover.  If the code is public, the federal project team can see the code on a regular basis and check for pragmatic prose.  As vendors transition, the code will be complete in one place and the handoff of disks or large zip files will be a thing of the past.  Finally, in moving to DevOps (including [12Factor.Net](https://12factor.net/) principles), we need to have one version of the *truth*.
 
-2.) The project team that releases the code is responsible for the code.  The GSA employees responsible for the project and vendors who are writing the custom code.  The CTO team is working on two scripts ([#1](https://github.com/GSA/codeinventory-github) and [#2](https://github.com/GSA/codeinventory)) to help scrub the code and project teams should start moving towards [12Factor.net](https://12factor.net/) principles.
+2.) The project team that releases the code is responsible for scrubbing for sensitive content.  This includes the GSA employees responsible for the project and vendors who are writing the custom code.  The CTO team is working on two scripts ([#1](https://github.com/GSA/codeinventory-github) and [#2](https://github.com/GSA/codeinventory)) to help scrub the code and project teams should start moving towards [12Factor.net](https://12factor.net/) principles.
 
 3.) It will be up to the project team producing the code to determine the best license.  The team should consult legal and the CTO's office will assist.
 
@@ -43,7 +43,7 @@ Here are some general thoughts relating to these questions and the remaining wil
 
 ### Inventory inclusion
 
-We are mandated to include all repositories with custom developed code in the code.json file (open and closed source code).  This helps us to account for all code produced by GSA and provides metadata about the code.  Not only is this a requirement of the agency by OMB, it is beneficial to the public.
+We are mandated to include all repositories with custom developed code in the code.json file (open and closed source code).  This helps us to account for all code produced by GSA and provides metadata about the code.  Not only is this a requirement of the agency by OMB, but it is beneficial to the public.
 
 #### What is a source code repository?
 
@@ -56,7 +56,7 @@ We need to account for all source code at GSA, regardless of whether the project
 * it contains source code, and
 * it has active development (i.e., creating or changing source code files) on or after August 9, 2016
 
-Additionally, even if your source code has not had any active development since August 9, 2016, it shouls still be includeed in the inventory.
+Additionally, even if your source code has not had any active development since August 9, 2016, it is recommended that it be included in the inventory.
 
 When you submit your source code repository metadata to the inventory, the public will see the metadata. If your code is closed source, this does not change the fact that your project is closed source, and it will remain closed source. The public will only see the metadata and not the source code.
 
@@ -66,7 +66,7 @@ The only source code that should *not* be submitted to the inventory is code tha
 
 #### How to add your source code repository to the inventory
 
-If you have determined that your source code repository should be included in the inventory, how you submit it depends on where it is located: [GitHub](https://github.com/) or elsewhere.
+If you have determined that your source code repository should be included in the inventory, the submission process depends on where it is located: [GitHub](https://github.com/) or elsewhere.
 
 ##### If your source code is on GitHub
 
@@ -127,7 +127,7 @@ If your source code is in a version control system other than the GSA organizati
 ### How to open source
 
 #### Modern code management practices
-You should begin with reading [12Factor](https://12factor.net/) principles for code management, particularly [#1](https://12factor.net/codebase) and [#3](https://12factor.net/config) for proper modern code management practices.  Questions around code base exposure commonly arise when out evangelizing OSS for the Agency.  This is telling that we are not considering modern code management.
+You should begin with reading [12Factor.net](https://12factor.net/) principles for code management, particularly [#1](https://12factor.net/codebase) and [#3](https://12factor.net/config) for proper modern code management practices.  Questions around code base exposure commonly arise when we are out evangelizing OSS for the Agency.  This suggests that we are not familiar with modern code management.
 
 Furthermore, the twelve factors are for consideration with modern DevOps practices for custom SaaS.  Each of our applications should be considered this way as we move away from large system type approaches, to scalable and manageable applications.
 
@@ -136,22 +136,22 @@ In particular, this approach supports one version of the *truth* in code and sup
 #### Scanning code for public release
 As good IT project management and development practice, project teams should be conducting regular code reviews.  This should be done in coordination with the contractor teams.  One easier way to do this is for all project members to be included in the VCS (Version Control System) and to schedule regular code reviews.  This should not be done at the end of a contract, rather should be done through every development/release cycle.
 
-Furthermore, the project team should be working with the IT security office to conduct regular code scans.  The CTO team works regularly with security and is creating two scripts ([#1](https://github.com/GSA/codeinventory-github) and [#2](https://github.com/GSA/codeinventory)) that project teams can use to scan their code.  These scans are different than thos done by IS as they are specific to the code to be released.  The scripts scan all files for sensitive content.
+Furthermore, the project team should be working with the IT security office to conduct regular code scans.  The CTO team works regularly with security and is creating two scripts ([#1](https://github.com/GSA/codeinventory-github) and [#2](https://github.com/GSA/codeinventory)) that project teams can use to scan their code.  These scans are different than those done by security, as they are specific to the code to be released.  The scripts scan all files for sensitive content.
 
 As with all of these open sourcing tasks, one approach would be to work on open sourcing closed source code on a project by project basis.  This could be as an update is planned, as vendors transition, etc.  Eventually all projects would become open sourced.
 
 #### Start with moving to public repositories
-Project teams should consider using moving to public repositories on GitHub.  GSA has an approved agency acount and teams should use the [GitHub GSA organization](https://github.com/GSA) to post code.  Teams can use private repositories but the cost money and the team would be responsible for any applicable costs associated with private repos.
+Project teams should consider using moving to public repositories on GitHub.  GSA has an approved agency acount and teams should use the [GitHub GSA organization](https://github.com/GSA) to post code.  Teams can use private repositories but they cost money and the team would be responsible for any applicable costs associated with those.
 
 The team may need to work in private until the code is ready to move to the public repo.  This means that all code should be reviewed and scanned appropriately.  As mentioned previously, one logical approach is to do this on a project by project basis, meaning as an update/enhancement is planned or vendors transition.
 
 #### Licensing
   
-This still needs to be vetted with GSA Legal but the assumption here is that we are releasing all of our custom code for others to see and contribute.  In most cases, this means that our code releases will fall under one of two licenses, MIT or GPL licenses.  Without representing GSA Legal or giving advice, it is suggested that you work with the CTO team as a conduit to GSA Legal on what is permissible for licensing.  
+This still needs to be vetted with GSA Legal but the assumption here is that we are releasing all of our custom code for others to see and contribute.  In most cases, this means that our code releases will fall under one of two licenses: MIT or GPL.  Without representing GSA Legal or giving advice, it is suggested that you work with the CTO team as a conduit to GSA Legal on what is permissible for licensing.  
 
 [Opensource.com](https://opensource.com/law/13/1/which-open-source-software-license-should-i-use) offers a good discussion on licensing.  But again, this is a topic that will be worked out over the next couple months for all GSA code.
 
 #### Feedback
 
-Feedback is encouraged through this [site's GitHub repository issues page](https://github.com/GSA/open-gsa-redesign/issues).  In the title of the issue, denote that it is OSS related to call attention to it from the appropriate CTO team members.
+Feedback is encouraged through this [site's GitHub repository issues page](https://github.com/GSA/open-gsa-redesign/issues).  In the title of the issue, denote that it is OSS related to call attention to it from the appropriate CTO team members.  To suggest multiple changes, you may also submit a pull request.
 

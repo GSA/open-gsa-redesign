@@ -24,7 +24,7 @@ You will need to have the following installed on your machine before following t
 2. Clone the repo you just forked.
 
 ### Running Jekyll
-The preferred method for running Jekyll is with `bundle exec`.
+The preferred method for running Jekyll is with `bundle exec jekyll serve`.
 
 
 ### Public domain
