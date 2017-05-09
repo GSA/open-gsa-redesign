@@ -919,7 +919,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Data.gov Dataset Visitor Metrics",
 			"description" : "The dataset provides metrics for the number of dataset views in catalog.data.gov broken down by month starting Jan 2014. There is a gap in the dataset for December 2016 due to a temporary halt in collection of metrics during infrastructure migration of the Data.gov site during that month.",
-			"modified" : "2017-03-06",
+			"modified" : "2017-05-03",
 			"accessLevel" : "public",
 			"identifier" : "GSA - 139375",
 			"dataQuality" : true,
@@ -1266,7 +1266,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "DCOI Strategic Plan",
 			"description" : "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly on or before September 30, 2016.",
-			"modified" : "2016-09-27",
+			"modified" : "2017-04-14",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2016-09-27-02",
 			"conformsTo" : "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
@@ -1286,9 +1286,15 @@
 					"mediaType" : "application/json",
 					"format" : "json",
 					"title" : "datacenteroptimizationstrategicplan",
-					"description" : "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly on or before September 30, 2016. Updated 12/8/2016.",
+					"description" : "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly on or before September 30, 2016. Updated 4/14/2017.",
 					"conformsTo" : "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
 					"downloadURL" : "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/b8d9e71b-963b-4398-8d37-04628e64871d/download/datacenteroptimizationstrategicplan.json"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/pdf",
+					"format" : "pdf",
+					"title" : "DCOI CIO Statement September 2016",
+					"downloadURL" : "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/c61e4b8a-4a4a-46b3-9d95-36d227bc28c3/download/gsa-dcoi-cio-signature2016-09-30.pdf"
 				}
 			],
 			"keyword" : ["DCOI", "DCOI strategic plan", "data center", "data center optimization", "fdcci", "strategic plan"],
@@ -1932,7 +1938,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "FAS Instructional Letters 2007-01 Procedures for Financial Responsibility",
 			"description" : "This IL sets forth procedures for financial responsibility. The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts. All ILs are current only as of the date posted and are subject to amendment, update, and supersession without further notice being posted on this site. Changes and revisions to regulatory or statutory guidance subsequent to the effective date of this IL may affect its relevancy and accurateness. The IL is provided for informational purposes only.",
-			"modified" : "2016-01-21",
+			"modified" : "2017-05-08",
 			"accessLevel" : "public",
 			"identifier" : "GSA-5180",
 			"dataQuality" : true,
@@ -1953,10 +1959,11 @@
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"mediaType" : "application/pdf",
-					"format" : "pdf",
-					"title" : "FAS Instructional Letters 2007-01 Procedures for Financial Responsibility",
-					"downloadURL" : "https://www.asap.gsa.gov/datagov/fas-il/IL-2007-01.pdf"
+					"mediaType" : "application/msword",
+					"format" : "DOC",
+					"title" : "FAS INSTRUCTIONAL LETTER 2007-01",
+					"description" : "The Multiple Award Schedule (MAS) Express Program: Expedited Procedures for Financial Responsibility Determination and Award.",
+					"downloadURL" : "https://inventory.data.gov/dataset/e6cca07d-5109-4a4f-aee4-6ee975d7f01a/resource/6c890d1c-4a9c-4dc1-a91c-6acc5f0ac3d4/download/fas-instructional-letter-2007-01.docx"
 				}
 			],
 			"keyword" : ["Acquisition", "Instructional Letters"],
@@ -1968,7 +1975,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "FAS Instructional Letters 2008-01 Transferring Contract Files",
 			"description" : "The purpose of this Instructional Letter (IL) is to outline steps to take when transferring contract files between Acquisition Centers within the Federal Acquisition Service (FAS). The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts. All ILs are current only as of the date posted and are subject to amendment, update, and supersession without further notice being posted on this site. Changes and revisions to regulatory or statutory guidance subsequent to the effective date of this IL may affect its relevancy and accurateness. The IL is provided for informational purposes only.",
-			"modified" : "2016-01-21",
+			"modified" : "2017-05-08",
 			"accessLevel" : "public",
 			"identifier" : "GSA-5179",
 			"dataQuality" : true,
@@ -1989,10 +1996,11 @@
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"mediaType" : "application/pdf",
-					"format" : "pdf",
-					"title" : "FAS Instructional Letters 2008-01 Transferring Contract Files",
-					"downloadURL" : "https://www.asap.gsa.gov/datagov/fas-il/IL-2008-01.pdf"
+					"mediaType" : "application/msword",
+					"format" : "doc",
+					"title" : "FAS Instructional Letter 2008-01",
+					"description" : "The Multiple Award Schedule (MAS) Contract Transfer Guideline: How to Manage the Contract File Transfer Process.",
+					"downloadURL" : "https://inventory.data.gov/dataset/06f99d73-fd4a-4d86-af29-77f2a52c00cd/resource/0fdcd3ae-7fa9-4460-b486-ca8aba8ac217/download/fas-instructional-letter-2008-01.docx"
 				}
 			],
 			"keyword" : ["Acquisition", "Instructional Letters"],
@@ -2004,7 +2012,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "FAS Instructional Letters 2008-02 Modification Receipt, Dates and Types",
 			"description" : "This acquisition process improvement will enhance both the quality of contract modification data and our ability to process contract modifications electronically. The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts. All ILs are current only as of the date posted and are subject to amendment, update, and supersession without further notice being posted on this site. Changes and revisions to regulatory or statutory guidance subsequent to the effective date of this IL may affect its relevancy and accurateness. The IL is provided for informational purposes only.",
-			"modified" : "2016-01-21",
+			"modified" : "2017-05-08",
 			"accessLevel" : "public",
 			"identifier" : "GSA-5134",
 			"dataQuality" : true,
@@ -2026,10 +2034,11 @@
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"mediaType" : "application/pdf",
-					"format" : "pdf",
-					"title" : "FAS Instructional Letters 2008-02 Modification Receipt, Dates and Types",
-					"downloadURL" : "https://www.asap.gsa.gov/datagov/fas-il/IL-2008-02.pdf"
+					"mediaType" : "application/msword",
+					"format" : "doc",
+					"title" : "FAS Instructional Letter 2008-02",
+					"description" : "Multiple Award Schedules (MAS) Program: Modification Receipt Dates and Types.",
+					"downloadURL" : "https://inventory.data.gov/dataset/5e038d47-8166-4e1c-af9d-c94dbff7c99b/resource/f341e53b-7e8e-40e5-857f-c94cb103332e/download/fas-instructional-letter-2008-02.docx"
 				}
 			],
 			"keyword" : ["Acquisition", "Instructional Letters"],
@@ -2203,46 +2212,9 @@
 			"theme" : ["Acquisition"]
 		}, {
 			"@type" : "dcat:Dataset",
-			"title" : "Federal Acquisition Service Instructional Letter 2008",
-			"description" : "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.  All ILs are current only as of the date posted and are subject to amendment, update, and supersession without further notice being posted on this site. Changes and revisions to regulatory or statutory guidance subsequent to the effective date of this IL may affect its relevancy and accurateness. The IL is provided for informational purposes only.",
-			"modified" : "2016-01-22",
-			"accessLevel" : "public",
-			"identifier" : "GSA-6366",
-			"dataQuality" : true,
-			"describedBy" : "https://www.asap.gsa.gov/datagov/fas-il/IL_01_data_dictionary.html",
-			"issued" : "2009-01-01",
-			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights" : "N/A",
-			"spatial" : "National",
-			"publisher" : {
-				"@type" : "org:Organization",
-				"name" : "General Services Administration"
-			},
-			"accrualPeriodicity" : "R/P1Y",
-			"isPartOf" : "GSA-2015-09-14-02",
-			"contactPoint" : {
-				"@type" : "vcard:Contact",
-				"fn" : "David W Orcutt",
-				"hasEmail" : "mailto:david.orcutt@gsa.gov"
-			},
-			"distribution" : [{
-					"@type" : "dcat:Distribution",
-					"mediaType" : "application/pdf",
-					"format" : "pdf",
-					"title" : "Federal Acquisition Service Instructional Letter 2008",
-					"downloadURL" : "https://gsa.my.salesforce.com/sfc/p/30000001G26s/a/30000000PzHq/1JsGKFb.YGjbNERNVH65sreW4F_gxVHmr4Nk3IgdmfA"
-				}
-			],
-			"keyword" : ["FAS", "Industrial Funding Fee", "Instructional Letters", "Interactive"],
-			"bureauCode" : ["023:00"],
-			"programCode" : ["023:007"],
-			"language" : ["en-us"],
-			"theme" : ["Acquisition"]
-		}, {
-			"@type" : "dcat:Dataset",
 			"title" : "Federal Acquisition Service Instructional Letter 2009-01 Applying the IFF to Sch",
 			"description" : "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.  All ILs are current only as of the date posted and are subject to amendment, update, and supersession without further notice being posted on this site. Changes and revisions to regulatory or statutory guidance subsequent to the effective date of this IL may affect its relevancy and accurateness. The IL is provided for informational purposes only.",
-			"modified" : "2016-01-22",
+			"modified" : "2017-05-08",
 			"accessLevel" : "public",
 			"identifier" : "GSA-4593",
 			"dataQuality" : true,
@@ -2264,11 +2236,11 @@
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"mediaType" : "application/pdf",
-					"format" : "pdf",
-					"title" : "FAS Instructional Letter 2009-01 Applying IFF to Schedule Pricing",
-					"description" : "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL" : "https://inventory.data.gov/dataset/c6b18dfe-afe0-459a-94a0-6441fdf948d1/resource/cca647c7-145a-4439-b00d-9caec26dedf9/download/fas-instructional-letter-200901.pdf"
+					"mediaType" : "application/msword",
+					"format" : "doc",
+					"title" : "FAS INSTRUCTIONAL LETTER 2009-01",
+					"description" : "Applying the Industrial Funding Fee (IFF) to Schedule Pricing.",
+					"downloadURL" : "https://inventory.data.gov/dataset/c6b18dfe-afe0-459a-94a0-6441fdf948d1/resource/caef4305-3eb6-41ce-b4f9-d16bfeffbf98/download/fas-instructional-letter-2009-01.docx"
 				}
 			],
 			"keyword" : ["Industrial Funding Fee"],
@@ -3086,7 +3058,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : ".Gov Domains API",
 			"description" : "This dataset offers the list of all .gov domains, including state, local, and tribal .gov domains. It does not include .mil domains, or other federal domains outside of .gov and .fed.us.",
-			"modified" : "2017-02-09",
+			"modified" : "2017-04-21",
 			"accessLevel" : "public",
 			"identifier" : "GSA-138675",
 			"dataQuality" : true,
@@ -3108,7 +3080,7 @@
 					"mediaType" : "text/csv",
 					"format" : "API",
 					"title" : "Full Domain Report",
-					"downloadURL" : "https://inventory.data.gov/dataset/b2c31002-8a5e-4cd0-85bd-6971934f4e59/resource/02706c7b-98e3-4267-8dd8-e3bb2d8c7ce3/download/fed-domainreport-02092018.csv"
+					"downloadURL" : "https://inventory.data.gov/dataset/b2c31002-8a5e-4cd0-85bd-6971934f4e59/resource/02706c7b-98e3-4267-8dd8-e3bb2d8c7ce3/download/fed-domains-04212017.csv"
 				}
 			],
 			"keyword" : [".gov domains"],
@@ -3155,7 +3127,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA Enterprise Data Inventory (EDI)",
 			"description" : "GSA Enterprise Data Inventory (EDI)",
-			"modified" : "2017-02-28",
+			"modified" : "2017-05-09",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-13-01",
 			"dataQuality" : true,
@@ -3177,8 +3149,8 @@
 					"@type" : "dcat:Distribution",
 					"mediaType" : "application/json",
 					"format" : "json",
-					"title" : "EDI JSON FILE",
-					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b9f0d03e-3ac4-4f38-a0a9-f80c0983d32d/download/edi-json-file-022817.js"
+					"title" : "EDI Json File 05/09/17",
+					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/79ea4412-1399-41c5-a5f9-f3b332bcb146/download/edi-json-file-050917.js"
 				}
 			],
 			"keyword" : ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -6867,6 +6839,41 @@
 			"theme" : ["Card Services Program"]
 		}, {
 			"@type" : "dcat:Dataset",
+			"title" : "Purchase Card Transactions - CBCA January - March 2017",
+			"description" : "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified" : "2017-05-04",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2017-05-04-01",
+			"dataQuality" : true,
+			"issued" : "2014-10-01",
+			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights" : "N/A",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "General Services Administration"
+			},
+			"accrualPeriodicity" : "R/P3M",
+			"isPartOf" : "GSA-2016-01-06-1",
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "James G Parks",
+				"hasEmail" : "mailto:greg.parks@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.ms-excel",
+					"format" : "xls",
+					"title" : "January - March 2017",
+					"downloadURL" : "https://inventory.data.gov/dataset/31ffade7-a9ee-448b-b1d6-84963835db22/resource/e84b68b1-cf6d-47d8-ae2d-6398d2a00ecf/download/january-march-2017-cbca-pc-transactions.xlsx"
+				}
+			],
+			"keyword" : ["BOCA", "Contract Board", "GSA SmartPay", "Purchase Card", "Transactions"],
+			"bureauCode" : ["023:00"],
+			"programCode" : ["023:010"],
+			"language" : ["en-us"],
+			"theme" : ["Card Services Program"]
+		}, {
+			"@type" : "dcat:Dataset",
 			"title" : "Purchase Card Transactions - OIG April June 2014",
 			"description" : "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
 			"modified" : "2016-01-05",
@@ -7003,7 +7010,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2017-04-06",
+			"modified" : "2017-05-03",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25251",
 			"dataQuality" : true,
@@ -7026,8 +7033,8 @@
 					"mediaType" : "text/csv",
 					"format" : "csv",
 					"title" : "data_gov_bldg_rexus",
-					"description" : "April 2017",
-					"downloadURL" : "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/d42dedab-88a6-4811-8c0a-810bafb26a7f/download/datagovbldgrexus.csv"
+					"description" : "May 2017",
+					"downloadURL" : "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/dec92432-1e0c-4c62-8c40-e8aee125a1d6/download/datagovbldgrexus.csv"
 				}
 			],
 			"keyword" : ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -7037,7 +7044,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) (Lease)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2017-04-06",
+			"modified" : "2017-05-03",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25261",
 			"dataQuality" : true,
@@ -7060,8 +7067,8 @@
 					"mediaType" : "text/csv",
 					"format" : "csv",
 					"title" : "data_gov_lse_rexus",
-					"description" : "April 2017",
-					"downloadURL" : "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/b0e2426b-4308-4ce3-80bf-57156172672f/download/datagovlserexus.csv"
+					"description" : "May 2017",
+					"downloadURL" : "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/82e5b099-2daa-4319-9b05-09d60ff03aa3/download/datagovlserexus.csv"
 				}
 			],
 			"keyword" : ["building", "gsa", "owned", "property", "real estate", "real property"],
