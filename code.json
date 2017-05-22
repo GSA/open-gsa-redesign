@@ -48,6 +48,21 @@
       ]
     },
     {
+      "name": "18f-capacity-planning",
+      "repository": "https://github.com/18F/18f-capacity-planning",
+      "description": "18f-capacity-planning",
+      "license": "https://github.com/18F/18f-capacity-planning/blob/master/LICENSE.md",
+      "organization": "18F",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "18f@gsa.gov"
+      },
+      "tags": [
+        "18F"
+      ]
+    },
+    {
       "name": "18f-cli",
       "repository": "https://github.com/18F/18f-cli",
       "description": "A command line utility to standardize common 18F actions",
@@ -408,6 +423,21 @@
       ]
     },
     {
+      "name": "acq-alaska-dhss-modernization",
+      "repository": "https://github.com/18F/acq-alaska-dhss-modernization",
+      "description": "A TTS Aqcuisitions consulting project with the Alaska Department of Health and Social Services",
+      "license": "https://github.com/18F/acq-alaska-dhss-modernization/blob/master/LICENSE.md",
+      "organization": "18F",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "18f@gsa.gov"
+      },
+      "tags": [
+        "18F"
+      ]
+    },
+    {
       "name": "acq-mo-medicaid-prototype-realtime-view",
       "repository": "https://github.com/18F/acq-mo-medicaid-prototype-realtime-view",
       "description": "Prototype for the state of Missouri realtime view of Medicaid payments, coverage, and eligibility",
@@ -423,9 +453,24 @@
       ]
     },
     {
+      "name": "acq-presentations",
+      "repository": "https://github.com/18F/acq-presentations",
+      "description": "A place to capture TTS acquisition presentations:  training, facilitation",
+      "license": null,
+      "organization": "18F",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "18f@gsa.gov"
+      },
+      "tags": [
+        "18F"
+      ]
+    },
+    {
       "name": "acq-stack-track-app",
       "repository": "https://github.com/18F/acq-stack-track-app",
-      "description": "a tool for requesting and tracking acquisitions for TTS \u003e$3500",
+      "description": "a tool for requesting and tracking acquisitions for TTS >$3500",
       "license": "https://github.com/18F/acq-stack-track-app/blob/develop/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
@@ -960,6 +1005,21 @@
       },
       "tags": [
         "GSA"
+      ]
+    },
+    {
+      "name": "angular-webapi-authentication-example",
+      "repository": "https://github.com/18F/angular-webapi-authentication-example",
+      "description": "AngularJS + ASP.NET Web API 2 - Basic HTTP Authentication Example",
+      "license": null,
+      "organization": "18F",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "18f@gsa.gov"
+      },
+      "tags": [
+        "18F"
       ]
     },
     {
@@ -1582,6 +1642,21 @@
       ]
     },
     {
+      "name": "BAW",
+      "repository": null,
+      "description": "BAW",
+      "license": null,
+      "organization": "GSA",
+      "openSourceProject": 0,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "github-admins@gsa.gov"
+      },
+      "tags": [
+        "GSA"
+      ]
+    },
+    {
       "name": "bayeshack-interior",
       "repository": "https://github.com/18F/bayeshack-interior",
       "description": "Starter kit for the Bayes Hack 2016 interior prompt http://bayeshack.org/interior.html",
@@ -1749,7 +1824,7 @@
     {
       "name": "bosh-log-forwarder-boshrelease",
       "repository": "https://github.com/18F/bosh-log-forwarder-boshrelease",
-      "description": "bosh-log-forwarder-boshrelease",
+      "description": "DEPRECATED",
       "license": null,
       "organization": "18F",
       "openSourceProject": 1,
@@ -1977,7 +2052,7 @@
     {
       "name": "brutus",
       "repository": "https://github.com/18F/brutus",
-      "description": "[HireEZ v2] Doing heavy lifting in the land of government hiring.",
+      "description": "DEPRECATED - Doing heavy lifting in the land of government hiring.",
       "license": "https://github.com/18F/brutus/blob/master/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
@@ -3040,6 +3115,21 @@
       ]
     },
     {
+      "name": "cg-billing",
+      "repository": "https://github.com/18F/cg-billing",
+      "description": "cg-billing",
+      "license": null,
+      "organization": "18F",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "18f@gsa.gov"
+      },
+      "tags": [
+        "18F"
+      ]
+    },
+    {
       "name": "cg-bootstrap-concourse-ami",
       "repository": "https://github.com/18F/cg-bootstrap-concourse-ami",
       "description": "A packer template and associated resources for creating an AMI that runs a standalone concourse installation suitable for bootstrapping more complex infrastructure",
@@ -3055,9 +3145,24 @@
       ]
     },
     {
+      "name": "cg-cert-check",
+      "repository": "https://github.com/18F/cg-cert-check",
+      "description": "Notify a slack channel when certificates in bosh manifests or used by ELBs are about to expire.",
+      "license": "https://github.com/18F/cg-cert-check/blob/master/LICENSE.md",
+      "organization": "18F",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "18f@gsa.gov"
+      },
+      "tags": [
+        "18F"
+      ]
+    },
+    {
       "name": "cg-cf-release",
       "repository": "https://github.com/18F/cg-cf-release",
-      "description": "18F Cloud Foundry Bosh Release for customizations",
+      "description": "[DEPRECATED] 18F Cloud Foundry Bosh Release for customizations",
       "license": "https://github.com/18F/cg-cf-release/blob/master/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
@@ -3177,7 +3282,7 @@
     {
       "name": "cg-deploy-abacus",
       "repository": "https://github.com/18F/cg-deploy-abacus",
-      "description": "cg-deploy-abacus",
+      "description": "[DEPRECATED]",
       "license": null,
       "organization": "18F",
       "openSourceProject": 1,
@@ -3717,7 +3822,7 @@
     {
       "name": "cg-logstash-output-s3-backport-release",
       "repository": "https://github.com/18F/cg-logstash-output-s3-backport-release",
-      "description": "A whole lot of boilerplate to apply a two-line patch",
+      "description": "[DEPRECATED] A whole lot of boilerplate to apply a two-line patch",
       "license": "https://github.com/18F/cg-logstash-output-s3-backport-release/blob/master/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
@@ -4212,7 +4317,7 @@
     {
       "name": "cg-uaa",
       "repository": "https://github.com/18F/cg-uaa",
-      "description": "CloudFoundry User Account and Authentication (UAA) Server",
+      "description": "DEPRECIATED / DO NOT USE. This repo contains an old version of UAA with known security vulnerabilities. Use the upstream version",
       "license": "https://github.com/18F/cg-uaa/blob/master/LICENSE",
       "organization": "18F",
       "openSourceProject": 1,
@@ -4814,6 +4919,21 @@
       "repository": "https://github.com/18F/clinical-trials",
       "description": "clinical-trials",
       "license": "https://github.com/18F/clinical-trials/blob/master/LICENSE.md",
+      "organization": "18F",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "18f@gsa.gov"
+      },
+      "tags": [
+        "18F"
+      ]
+    },
+    {
+      "name": "clinical-trials-prototype",
+      "repository": "https://github.com/18F/clinical-trials-prototype",
+      "description": "clinical-trials-prototype",
+      "license": null,
       "organization": "18F",
       "openSourceProject": 1,
       "governmentWideReuseProject": 1,
@@ -5533,6 +5653,21 @@
       ]
     },
     {
+      "name": "CorpIT-EnterpriseServiceBus",
+      "repository": null,
+      "description": "Contains source code of Enterprise Service Bus (ESB) maintained by ICSF.",
+      "license": null,
+      "organization": "GSA",
+      "openSourceProject": 0,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "github-admins@gsa.gov"
+      },
+      "tags": [
+        "GSA"
+      ]
+    },
+    {
       "name": "crime-data-api",
       "repository": "https://github.com/18F/crime-data-api",
       "description": "RESTful API service providing Uniform Crime Reporting (UCR) data for the United States",
@@ -5911,22 +6046,6 @@
       ]
     },
     {
-      "name": "CTO Website",
-      "repository": "https://github.com/GSA/cto-website",
-      "description": "Tech at GSA website",
-      "license": "https://github.com/GSA/cto-website/blob/dev/LICENSE.md",
-      "organization": "GSA",
-      "openSourceProject": 1,
-      "governmentWideReuseProject": 1,
-      "contact": {
-        "email": "cto@gsa.gov"
-      },
-      "tags": [
-        "jekyll",
-        "federalist"
-      ]
-    },
-    {
       "name": "custom-contact-forms",
       "repository": "https://github.com/GSA/custom-contact-forms",
       "description": "custom data.gov plugin",
@@ -6002,9 +6121,39 @@
       ]
     },
     {
+      "name": "d2d-pbs-odc",
+      "repository": null,
+      "description": "Repository for D2D PBS-ODC project.",
+      "license": null,
+      "organization": "GSA",
+      "openSourceProject": 0,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "github-admins@gsa.gov"
+      },
+      "tags": [
+        "GSA"
+      ]
+    },
+    {
       "name": "d2d-portal",
       "repository": null,
       "description": "Core files for D2D Portal",
+      "license": null,
+      "organization": "GSA",
+      "openSourceProject": 0,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "github-admins@gsa.gov"
+      },
+      "tags": [
+        "GSA"
+      ]
+    },
+    {
+      "name": "d2d_request_tool",
+      "repository": null,
+      "description": "Home for D2D Request Tool",
       "license": null,
       "organization": "GSA",
       "openSourceProject": 0,
@@ -6653,7 +6802,7 @@
     {
       "name": "depreciated-datagov-wp-deploy",
       "repository": "https://github.com/GSA/depreciated-datagov-wp-deploy",
-      "description": "DEPRECIATED Data.gov deployment scripts. Use this one instead -\u003e",
+      "description": "DEPRECIATED Data.gov deployment scripts. Use this one instead ->",
       "license": null,
       "organization": "GSA",
       "openSourceProject": 1,
@@ -6906,10 +7055,10 @@
       ]
     },
     {
-      "name": "digital.gov-resources",
-      "repository": "https://github.com/GSA/digital.gov-resources",
-      "description": "digital.gov-resources",
-      "license": "https://github.com/GSA/digital.gov-resources/blob/master/LICENSE.md",
+      "name": "digital.gov",
+      "repository": "https://github.com/GSA/digital.gov",
+      "description": "digital.gov",
+      "license": "https://github.com/GSA/digital.gov/blob/master/LICENSE.md",
       "organization": "GSA",
       "openSourceProject": 1,
       "governmentWideReuseProject": 1,
@@ -7143,7 +7292,7 @@
     {
       "name": "django-pg-fts",
       "repository": "https://github.com/18F/django-pg-fts",
-      "description": "Implementation PostgeSQL for Full Text Search for Django \u003e= 1.7",
+      "description": "Implementation PostgeSQL for Full Text Search for Django >= 1.7",
       "license": null,
       "organization": "18F",
       "openSourceProject": 1,
@@ -7205,6 +7354,21 @@
       "repository": "https://github.com/18F/django-rest-swagger",
       "description": "Swagger Documentation Generator for Django REST Framework",
       "license": "https://github.com/18F/django-rest-swagger/blob/master/LICENSE",
+      "organization": "18F",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "18f@gsa.gov"
+      },
+      "tags": [
+        "18F"
+      ]
+    },
+    {
+      "name": "django-uswds-forms",
+      "repository": "https://github.com/18F/django-uswds-forms",
+      "description": "Django Forms integration with the U.S. Web Design Standards",
+      "license": "https://github.com/18F/django-uswds-forms/blob/master/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
       "governmentWideReuseProject": 1,
@@ -7471,6 +7635,21 @@
       ]
     },
     {
+      "name": "dotgov-home",
+      "repository": null,
+      "description": "Potential new homepage for the DotGov program.",
+      "license": null,
+      "organization": "GSA",
+      "openSourceProject": 0,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "github-admins@gsa.gov"
+      },
+      "tags": [
+        "GSA"
+      ]
+    },
+    {
       "name": "dotgov-list-node",
       "repository": "https://github.com/18F/dotgov-list-node",
       "description": "Fetches and parses CSVs of US .gov domain names",
@@ -7483,6 +7662,21 @@
       },
       "tags": [
         "18F"
+      ]
+    },
+    {
+      "name": "dotgov-scanning",
+      "repository": "https://github.com/GSA/dotgov-scanning",
+      "description": "DotGov scanning tools. Mostly orchestrating 18f/domain-scan, which orchestrates other tools.",
+      "license": null,
+      "organization": "GSA",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "github-admins@gsa.gov"
+      },
+      "tags": [
+        "GSA"
       ]
     },
     {
@@ -7818,7 +8012,7 @@
     {
       "name": "elastalert",
       "repository": "https://github.com/GSA/elastalert",
-      "description": "Easy \u0026 Flexible Alerting With ElasticSearch",
+      "description": "Easy & Flexible Alerting With ElasticSearch",
       "license": null,
       "organization": "GSA",
       "openSourceProject": 1,
@@ -8757,7 +8951,7 @@
     {
       "name": "federalist-docker-build",
       "repository": "https://github.com/18F/federalist-docker-build",
-      "description": "A Docker image that runs Jekyll to build a site",
+      "description": "A container image that runs Jekyll to build a site",
       "license": "https://github.com/18F/federalist-docker-build/blob/master/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
@@ -9220,6 +9414,21 @@
       ]
     },
     {
+      "name": "ficam-scripts",
+      "repository": null,
+      "description": "This is a private repository for agencies to share scripts related to PKI, PKE, and the networks.  This repository is private, and some items will be migrated to a public repo after review. ",
+      "license": null,
+      "organization": "GSA",
+      "openSourceProject": 0,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "github-admins@gsa.gov"
+      },
+      "tags": [
+        "GSA"
+      ]
+    },
+    {
       "name": "file-locked-operation",
       "repository": "https://github.com/18F/file-locked-operation",
       "description": "A NodeJS package for file-locked operations",
@@ -9372,7 +9581,7 @@
     {
       "name": "foia-recommendations",
       "repository": "https://github.com/18F/foia-recommendations",
-      "description": "research and recommendations for FOIA improvement act \"portal\"",
+      "description": "National FOIA Site Research and Recommendations",
       "license": "https://github.com/18F/foia-recommendations/blob/master/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
@@ -9807,7 +10016,7 @@
     {
       "name": "generator-uswds",
       "repository": "https://github.com/18F/generator-uswds",
-      "description": "A Yeoman generator for the U.S. Draft Web Design Standards",
+      "description": "A Yeoman generator for the U.S. Web Design Standards",
       "license": "https://github.com/18F/generator-uswds/blob/master/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
@@ -9912,7 +10121,7 @@
     {
       "name": "github-issue-lifecycle",
       "repository": "https://github.com/18F/github-issue-lifecycle",
-      "description": "Serve data on lifecycle (open -\u003e milestones -\u003e close) of a repo's issues",
+      "description": "Serve data on lifecycle (open -> milestones -> close) of a repo's issues",
       "license": "https://github.com/18F/github-issue-lifecycle/blob/master/LICENSE",
       "organization": "18F",
       "openSourceProject": 1,
@@ -10514,6 +10723,21 @@
       ]
     },
     {
+      "name": "gsa.gov",
+      "repository": null,
+      "description": "gsa.gov drupal repository",
+      "license": "https://github.com/GSA/gsa.gov/blob/master/LICENSE.txt",
+      "organization": "GSA",
+      "openSourceProject": 0,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "github-admins@gsa.gov"
+      },
+      "tags": [
+        "GSA"
+      ]
+    },
+    {
       "name": "gsaAdvPseudoApi",
       "repository": "https://github.com/presidential-innovation-fellows/gsaAdvPseudoApi",
       "description": "API-stye veneer for GSA Advantage search",
@@ -10681,7 +10905,7 @@
     {
       "name": "hackathontrainingday",
       "repository": "https://github.com/18F/hackathontrainingday",
-      "description": "The 18F Women in Tech \u0026 Data Hackathon + Training Day November 7, 2014",
+      "description": "The 18F Women in Tech & Data Hackathon + Training Day November 7, 2014",
       "license": "https://github.com/18F/hackathontrainingday/blob/gh-pages/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
@@ -10826,6 +11050,21 @@
       },
       "tags": [
         "18F"
+      ]
+    },
+    {
+      "name": "hi",
+      "repository": "https://github.com/GSA/hi",
+      "description": "hi",
+      "license": null,
+      "organization": "GSA",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "github-admins@gsa.gov"
+      },
+      "tags": [
+        "GSA"
       ]
     },
     {
@@ -11363,6 +11602,21 @@
       ]
     },
     {
+      "name": "icam-fisma",
+      "repository": "https://github.com/GSA/icam-fisma",
+      "description": "A guide to collecting ICAM-related FISMA metrics.",
+      "license": null,
+      "organization": "GSA",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "github-admins@gsa.gov"
+      },
+      "tags": [
+        "GSA"
+      ]
+    },
+    {
       "name": "icpa_rm",
       "repository": null,
       "description": "RM internal Repo",
@@ -11592,6 +11846,21 @@
       "repository": "https://github.com/18F/identity-proofer-gem",
       "description": "delegate ID proofing to vendors",
       "license": "https://github.com/18F/identity-proofer-gem/blob/master/LICENSE.md",
+      "organization": "18F",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "18f@gsa.gov"
+      },
+      "tags": [
+        "18F"
+      ]
+    },
+    {
+      "name": "identity-site",
+      "repository": "https://github.com/18F/identity-site",
+      "description": "The login.gov site",
+      "license": "https://github.com/18F/identity-site/blob/master/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
       "governmentWideReuseProject": 1,
@@ -11888,6 +12157,21 @@
       ]
     },
     {
+      "name": "insite-privacy",
+      "repository": "https://github.com/18F/insite-privacy",
+      "description": "Working repository for collaboration with GSA Privacy Office",
+      "license": null,
+      "organization": "18F",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "18f@gsa.gov"
+      },
+      "tags": [
+        "18F"
+      ]
+    },
+    {
       "name": "install-dod-roots",
       "repository": "https://github.com/18F/install-dod-roots",
       "description": "Installs DOD root certificates into the macOS keychain",
@@ -11966,6 +12250,21 @@
       "name": "inventory-solr",
       "repository": "https://github.com/GSA/inventory-solr",
       "description": "SOLR Docker image for inventory.data.gov",
+      "license": null,
+      "organization": "GSA",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "github-admins@gsa.gov"
+      },
+      "tags": [
+        "GSA"
+      ]
+    },
+    {
+      "name": "ISE-Security-Benchmarks",
+      "repository": "https://github.com/GSA/ISE-Security-Benchmarks",
+      "description": "ISE-Security-Benchmarks",
       "license": null,
       "organization": "GSA",
       "openSourceProject": 1,
@@ -12102,6 +12401,21 @@
       "repository": "https://github.com/18F/jekyll-get",
       "description": "Jekyll plugin to download data from external JSON sources to use in generating a site",
       "license": "https://github.com/18F/jekyll-get/blob/master/LICENSE.md",
+      "organization": "18F",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "18f@gsa.gov"
+      },
+      "tags": [
+        "18F"
+      ]
+    },
+    {
+      "name": "jekyll-macos-services",
+      "repository": "https://github.com/18F/jekyll-macos-services",
+      "description": "Automator workflows to help manage Jekyll sites",
+      "license": null,
       "organization": "18F",
       "openSourceProject": 1,
       "governmentWideReuseProject": 1,
@@ -13544,7 +13858,7 @@
     {
       "name": "mysql_to_cloudwatch",
       "repository": "https://github.com/GSA/mysql_to_cloudwatch",
-      "description": "WORK IN PROGRESS: Grab logs from MySQL and sends them to CloudWatch Logs",
+      "description": "Grab logs from MySQL and send them to CloudWatch Logs",
       "license": "https://github.com/GSA/mysql_to_cloudwatch/blob/master/LICENSE.md",
       "organization": "GSA",
       "openSourceProject": 1,
@@ -14189,7 +14503,7 @@
     {
       "name": "omb-eregs",
       "repository": "https://github.com/18F/omb-eregs",
-      "description": "A tool to view and maintain White House Office of Management and Budget (OMB) policy requirements",
+      "description": "A tool to find, read, and maintain White House Office of Management and Budget (OMB) policy requirements",
       "license": "https://github.com/18F/omb-eregs/blob/master/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
@@ -16072,7 +16386,7 @@
     {
       "name": "pycel",
       "repository": "https://github.com/18F/pycel",
-      "description": "A library for compiling excel spreadsheets to python code \u0026 visualizing them as a graph",
+      "description": "A library for compiling excel spreadsheets to python code & visualizing them as a graph",
       "license": "https://github.com/18F/pycel/blob/master/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
@@ -16427,6 +16741,21 @@
       },
       "tags": [
         "18F"
+      ]
+    },
+    {
+      "name": "recruiter",
+      "repository": "https://github.com/GSA/recruiter",
+      "description": "Embeddable forms to recruit research participants. Sends results to a Google Sheet, deployed via Google Tag Manager.",
+      "license": "https://github.com/GSA/recruiter/blob/master/LICENSE.md",
+      "organization": "GSA",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "github-admins@gsa.gov"
+      },
+      "tags": [
+        "GSA"
       ]
     },
     {
@@ -17293,7 +17622,7 @@
     {
       "name": "sdg-indicators",
       "repository": "https://github.com/GSA/sdg-indicators",
-      "description": "sdg-indicators",
+      "description": "U.S. National Reporting Platform for the UN Sustainable Development Goals",
       "license": "https://github.com/GSA/sdg-indicators/blob/gh-pages/LICENSE",
       "organization": "GSA",
       "openSourceProject": 1,
@@ -17780,7 +18109,7 @@
     {
       "name": "site-inspector-docker",
       "repository": "https://github.com/18F/site-inspector-docker",
-      "description": "site technology and capability scanning made easy through site-inspector",
+      "description": "[DEPRECATED] site technology and capability scanning made easy through site-inspector",
       "license": "https://github.com/18F/site-inspector-docker/blob/master/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
@@ -18095,7 +18424,7 @@
     {
       "name": "sowcomposer",
       "repository": "https://github.com/presidential-innovation-fellows/sowcomposer",
-      "description": "SOW Composer by RFP-EZ. Email for live demo -\u003e rfpez@sba.gov",
+      "description": "SOW Composer by RFP-EZ. Email for live demo -> rfpez@sba.gov",
       "license": null,
       "organization": "PIF",
       "openSourceProject": 1,
@@ -18217,6 +18546,21 @@
       "repository": "https://github.com/18F/state-faq",
       "description": "[Deprecated] A site with frequently asked questions from 18F's state child welfare partners",
       "license": "https://github.com/18F/state-faq/blob/18f-pages-staging/LICENSE.md",
+      "organization": "18F",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "18f@gsa.gov"
+      },
+      "tags": [
+        "18F"
+      ]
+    },
+    {
+      "name": "State-TalentMAP",
+      "repository": "https://github.com/18F/State-TalentMAP",
+      "description": "A comprehensive research, bidding, and matching system to match Foreign Service employees with the right skills to available posts and positions.",
+      "license": "https://github.com/18F/State-TalentMAP/blob/master/LICENSE.md",
       "organization": "18F",
       "openSourceProject": 1,
       "governmentWideReuseProject": 1,
@@ -18408,6 +18752,21 @@
       ]
     },
     {
+      "name": "swid-prototype",
+      "repository": "https://github.com/18F/swid-prototype",
+      "description": "swid-prototype",
+      "license": "https://github.com/18F/swid-prototype/blob/master/LICENSE.md",
+      "organization": "18F",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "18f@gsa.gov"
+      },
+      "tags": [
+        "18F"
+      ]
+    },
+    {
       "name": "talent-reporting-product",
       "repository": "https://github.com/18F/talent-reporting-product",
       "description": "This repo is for the development of a talent oriented reporting solution.",
@@ -18480,6 +18839,21 @@
       },
       "tags": [
         "18F"
+      ]
+    },
+    {
+      "name": "Tech at GSA Website",
+      "repository": "https://github.com/GSA/cto-website",
+      "description": "Tech at GSA website",
+      "license": "https://github.com/GSA/cto-website/blob/dev/LICENSE.md",
+      "organization": "GSA",
+      "openSourceProject": 1,
+      "governmentWideReuseProject": 1,
+      "contact": {
+        "email": "cto@gsa.gov"
+      },
+      "tags": [
+        "GSA"
       ]
     },
     {
