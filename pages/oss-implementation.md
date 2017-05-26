@@ -125,33 +125,27 @@ If your source code is in a version control system other than the GSA organizati
 ---
 
 ### How to open source
+(Note: There is a GSA IT Workgroup with representatives from CTO, IS, Legal, IQ, IP, and ID developing further guidance on process and tools for open sourcing code at GSA.  The guidance will be updated and added here.)
 
 #### Modern code management practices
 You should begin with reading [12Factor.net](https://12factor.net/) principles for code management, particularly [#1](https://12factor.net/codebase) and [#3](https://12factor.net/config) for proper modern code management practices.  Questions around code base exposure commonly arise when we are out evangelizing OSS for the Agency.  This suggests that we are not familiar with modern code management.
 
-Furthermore, the twelve factors are for consideration with modern DevOps practices for custom SaaS.  Each of our applications should be considered this way as we move away from large system type approaches, to scalable and manageable applications.
-
-In particular, this approach supports one version of the *truth* in code and supports server/development environment management (in the cloud).  Furthermore, it supports vendor turnover as the code is being managed publicly and processes supporting modern DevOps practices.  This should allow a new vendor and GSA feds to smoothly transition new team members.
+Having open source code creates one version of the *truth* in code and supports server/development environment management (in the cloud).  Furthermore, it supports vendor turnover as the code is being managed publicly and processes supporting modern DevOps practices.  This should allow a new vendor and GSA feds to smoothly transition new team members.
 
 #### Scanning code for public release
-As good IT project management and development practice, project teams should be conducting regular code reviews.  This should be done in coordination with the contractor teams.  One easier way to do this is for all project members to be included in the VCS (Version Control System) and to schedule regular code reviews.  This should not be done at the end of a contract, rather should be done through every development/release cycle.
+As good IT project management and development practice, project teams should be conducting regular code reviews.  This should be done in coordination with the contractor teams.  One way to do this is for all project members to be included in the VCS (Version Control System) and to schedule regular code reviews.  This should not be done at the end of a contract or end of a build cycle, rather should be done through the development/release cycle.
 
-Furthermore, the project team should be working with the IT security office to conduct regular code scans.  The CTO team works regularly with security and is creating two scripts ([#1](https://github.com/GSA/codeinventory-github) and [#2](https://github.com/GSA/codeinventory)) that project teams can use to scan their code.  These scans are different than those done by security, as they are specific to the code to be released.  The scripts scan all files for sensitive content.
+Furthermore, the project team should be working with the IT security office to conduct regular code scans (this is both at the application and source code levels).  The CTO team works regularly with security and is creating two scripts ([#1](https://github.com/GSA/codeinventory-github) and [#2](https://github.com/GSA/codeinventory)) that project teams can use to scan their code.  These scans are different than those done by security, as they are specific to the code to be released.  The scripts scan all files for sensitive content.
 
 As with all of these open sourcing tasks, one approach would be to work on open sourcing closed source code on a project by project basis.  This could be as an update is planned, as vendors transition, etc.  Eventually all projects would become open sourced.
 
-#### Start with moving to public repositories
-Project teams should consider using moving to public repositories on GitHub.  GSA has an approved agency acount and teams should use the [GitHub GSA organization](https://github.com/GSA) to post code.  Teams can use private repositories but they cost money and the team would be responsible for any applicable costs associated with those.
-
-The team may need to work in private until the code is ready to move to the public repo.  This means that all code should be reviewed and scanned appropriately.  As mentioned previously, one logical approach is to do this on a project by project basis, meaning as an update/enhancement is planned or vendors transition.
+#### Start with moving to a VCS, private, and then public repositories
+Project teams should be using a GSA approved Version Control Solution (VCS) for all code management.  To get the code to a public release state (as determined by the project team), the teams should be conducting code reviews and scans in a private repository with the ultimate goal to make the code public on the [GitHub GSA organization](https://github.com/GSA).
 
 #### Licensing
-  
-This still needs to be vetted with GSA Legal but the assumption here is that we are releasing all of our custom code for others to see and contribute.  In most cases, this means that our code releases will fall under one of two licenses: MIT or GPL.  Without representing GSA Legal or giving advice, it is suggested that you work with the CTO team as a conduit to GSA Legal on what is permissible for licensing.  
 
-[Opensource.com](https://opensource.com/law/13/1/which-open-source-software-license-should-i-use) offers a good discussion on licensing.  But again, this is a topic that will be worked out over the next couple months for all GSA code.
+Licensing needs to be worked with GSA Legal and further guidance will be provided in the near future.  
 
 #### Feedback
 
 Feedback is encouraged through this [site's GitHub repository issues page](https://github.com/GSA/open-gsa-redesign/issues).  In the title of the issue, denote that it is OSS related to call attention to it from the appropriate CTO team members.  To suggest multiple changes, you may also submit a pull request.
-
