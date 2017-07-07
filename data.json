@@ -919,7 +919,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Data.gov Dataset Visitor Metrics",
 			"description" : "The dataset provides metrics for the number of dataset views in catalog.data.gov broken down by month starting Jan 2014. There is a gap in the dataset for December 2016 due to a temporary halt in collection of metrics during infrastructure migration of the Data.gov site during that month.",
-			"modified" : "2017-05-03",
+			"modified" : "2017-07-06",
 			"accessLevel" : "public",
 			"identifier" : "GSA - 139375",
 			"dataQuality" : true,
@@ -2989,6 +2989,35 @@
 			"theme" : ["Other"]
 		}, {
 			"@type" : "dcat:Dataset",
+			"title" : "GEAR API Metadata",
+			"description" : "The available API metadata from the GSA Enterprise Architecture Analytics and Reporting (GEAR) web application.",
+			"modified" : "2017-06-08",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2017-06-08-01",
+			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "GSA IT"
+			},
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "Chris Campbell",
+				"hasEmail" : "mailto:christopher.campbell@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/json",
+					"format" : "JSON",
+					"title" : "GEAR Metadata placeholder",
+					"description" : "This is just a placeholder for now. Data coming soon.",
+					"downloadURL" : "https://inventory.data.gov/dataset/7402f817-4297-4bb1-89d1-4b586bd89cd2/resource/71b180af-5f0d-4f04-9059-20e80e6816a1/download/gear-metadata.json"
+				}
+			],
+			"keyword" : ["Enterprise Architecture", "GEAR", "GEAR API", "GSA EA"],
+			"bureauCode" : ["023:00"],
+			"programCode" : ["023:000"]
+		}, {
+			"@type" : "dcat:Dataset",
 			"title" : "GobiernoUSA.gov Blog RSS feed",
 			"description" : "We help you find official U.S. government information and services in Spanish on the Internet.",
 			"modified" : "2016-01-07",
@@ -3127,7 +3156,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA Enterprise Data Inventory (EDI)",
 			"description" : "GSA Enterprise Data Inventory (EDI)",
-			"modified" : "2017-06-02",
+			"modified" : "2017-07-07",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-13-01",
 			"dataQuality" : true,
@@ -3149,9 +3178,9 @@
 					"@type" : "dcat:Distribution",
 					"mediaType" : "application/json",
 					"format" : "json",
-					"title" : "EDI JSON FILE 06 02 17",
-					"description" : "JUNE 2017",
-					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/7b80aa8f-9958-4411-9dd5-f05b5f580df5/download/edi-json-file-06-02-17.js"
+					"title" : "EDI JSON FILE",
+					"description" : "July 2017",
+					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/c55f0f91-37ef-4bf2-bb29-d24be4fd17c7/download/edi-json-file-07-07-17.js"
 				}
 			],
 			"keyword" : ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3229,7 +3258,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA FITARA Actions and Milestones",
 			"description" : "This JSON file represents GSA's FITARA Actions and Milestones submission to OMB.  This file abides by the OMB JSON schema found here: https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
-			"modified" : "2017-05-31",
+			"modified" : "2017-06-07",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2016-04-27-01",
 			"conformsTo" : "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
@@ -3247,7 +3276,7 @@
 					"@type" : "dcat:Distribution",
 					"mediaType" : "application/json",
 					"format" : "json",
-					"title" : "GSA FITARA Actions and Milestones 2016-11-30",
+					"title" : "GSA FITARA Actions and Milestones 2017-05-31",
 					"description" : "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the May 31, 2017, quarterly submission to OMB.\r\nOn September 30, 2016, five milestones were added as a result of the Data Center Optimization Initiative (DCOI) Strategic Plan requirements.",
 					"conformsTo" : "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
 					"downloadURL" : "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
@@ -3293,7 +3322,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA IT Policy Archive Zip",
 			"description" : "A compressed zip file containing all of GSA's public IT policy documents, posted publicly at gsa.gov]/digitalstrategy/policyarchive.zip and identified in the agency public data listing as “Agency IT Policy Archive”.",
-			"modified" : "2017-05-31",
+			"modified" : "2017-06-06",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2016-11-02-01",
 			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -3311,7 +3340,7 @@
 					"mediaType" : "application/zip",
 					"format" : "ZIP",
 					"title" : "GSA IT Policy Archive Zip",
-					"description" : "Last update: 2017-05-31",
+					"description" : "Last update: 2017-06-06",
 					"downloadURL" : "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
 				}
 			],
@@ -7045,7 +7074,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2017-06-02",
+			"modified" : "2017-07-07",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25251",
 			"dataQuality" : true,
@@ -7068,8 +7097,8 @@
 					"mediaType" : "text/csv",
 					"format" : "csv",
 					"title" : "data_gov_bldg_rexus",
-					"description" : "June 2017",
-					"downloadURL" : "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/a026a581-9b40-4ad1-8b19-457ff860ff9e/download/datagovbldgrexus.csv"
+					"description" : "July 2017",
+					"downloadURL" : "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/e86ecffc-a62b-4a5f-9a55-f89e07bf6e78/download/datagovbldgrexus.csv"
 				}
 			],
 			"keyword" : ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -7079,7 +7108,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) (Lease)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2017-06-02",
+			"modified" : "2017-07-07",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25261",
 			"dataQuality" : true,
@@ -7102,8 +7131,8 @@
 					"mediaType" : "text/csv",
 					"format" : "csv",
 					"title" : "data_gov_lse_rexus",
-					"description" : "June 2017",
-					"downloadURL" : "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/f6b49e62-c834-4e5d-9f0f-cb7cede3800c/download/datagovlserexus.csv"
+					"description" : "July 2017",
+					"downloadURL" : "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/a240b530-7317-4e94-bc67-f373783f6a11/download/datagovlserexus.csv"
 				}
 			],
 			"keyword" : ["building", "gsa", "owned", "property", "real estate", "real property"],
