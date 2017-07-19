@@ -3156,7 +3156,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA Enterprise Data Inventory (EDI)",
 			"description" : "GSA Enterprise Data Inventory (EDI)",
-			"modified" : "2017-07-07",
+			"modified" : "2017-07-19",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-13-01",
 			"dataQuality" : true,
@@ -3178,9 +3178,9 @@
 					"@type" : "dcat:Distribution",
 					"mediaType" : "application/json",
 					"format" : "json",
-					"title" : "EDI JSON FILE",
-					"description" : "July 2017",
-					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/c55f0f91-37ef-4bf2-bb29-d24be4fd17c7/download/edi-json-file-07-07-17.js"
+					"title" : "EDI JSON FILE 07/19/17",
+					"description" : "EDI JSON FILE",
+					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/69e7cb44-17ea-4016-bd90-7b7e5d310771/download/edi-json-file-07-19-17.js"
 				}
 			],
 			"keyword" : ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -6415,6 +6415,41 @@
 			"theme" : ["Card Services Program"]
 		}, {
 			"@type" : "dcat:Dataset",
+			"title" : "Purchase Card Transactions April - June 2017",
+			"description" : "Purchases made with the purchase card.  Files will be batched quarterly.",
+			"modified" : "2017-07-19",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2017-07-19-01",
+			"dataQuality" : true,
+			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights" : "N/A",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "General Services Administration"
+			},
+			"accrualPeriodicity" : "R/P3M",
+			"isPartOf" : "GSA-2016-01-05-01",
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "Nancy V Hexmoor",
+				"hasEmail" : "mailto:nancy.hexmoor@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "Apr-June 2017 PCard Transactions",
+					"description" : "3rd Quarter 2017 Purchase Card Transactions",
+					"downloadURL" : "https://inventory.data.gov/dataset/dc44a751-56b2-4a17-bfd0-450736a31b78/resource/71df3815-6453-4b7d-9f06-953be3ea1137/download/apr-june-2017-pcard-transactions.xlsx"
+				}
+			],
+			"keyword" : ["april", "june", "may", "purchase card", "transactions"],
+			"bureauCode" : ["023:00"],
+			"programCode" : ["023:010"],
+			"language" : ["en-us"],
+			"theme" : ["Card Services Program"]
+		}, {
+			"@type" : "dcat:Dataset",
 			"title" : "Purchase Card Transactions July - September 2016",
 			"description" : "Purchases made with the purchase card. Files will be batched quarterly.",
 			"modified" : "2016-10-19",
@@ -6929,6 +6964,42 @@
 					"format" : "xls",
 					"title" : "January - March 2017",
 					"downloadURL" : "https://inventory.data.gov/dataset/31ffade7-a9ee-448b-b1d6-84963835db22/resource/e84b68b1-cf6d-47d8-ae2d-6398d2a00ecf/download/january-march-2017-cbca-pc-transactions.xlsx"
+				}
+			],
+			"keyword" : ["BOCA", "Contract Board", "GSA SmartPay", "Purchase Card", "Transactions"],
+			"bureauCode" : ["023:00"],
+			"programCode" : ["023:010"],
+			"language" : ["en-us"],
+			"theme" : ["Card Services Program"]
+		}, {
+			"@type" : "dcat:Dataset",
+			"title" : "Purchase Card Transactions - CBCA April - June 2017",
+			"description" : "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified" : "2017-07-19",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2017-07-19-02",
+			"dataQuality" : true,
+			"issued" : "2014-10-01",
+			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights" : "N/A",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "General Services Administration"
+			},
+			"accrualPeriodicity" : "R/P3M",
+			"isPartOf" : "GSA-2016-01-06-1",
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "James G Parks",
+				"hasEmail" : "mailto:greg.parks@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "Apr - June 2017 CBCA PC Transactions",
+					"description" : "3rd Quarter 2017 CBCA Purchase Card Transactions",
+					"downloadURL" : "https://inventory.data.gov/dataset/62368477-9be2-4227-8674-06e23cd43e56/resource/54bfdba4-94bd-4e6a-8f2e-22245e9f4749/download/apr-june-2017-cbca-pc-transactions.xlsx"
 				}
 			],
 			"keyword" : ["BOCA", "Contract Board", "GSA SmartPay", "Purchase Card", "Transactions"],
