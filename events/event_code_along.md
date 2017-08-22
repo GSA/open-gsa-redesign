@@ -2,7 +2,7 @@
 layout: event
 permalink: /events/event-template
 tags: event
-title: Codealong
+title: Data Sceince Codealong
 date: October 10, 2017
 location: Washington, DC
 txt: description
