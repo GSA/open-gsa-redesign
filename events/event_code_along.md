@@ -1,6 +1,6 @@
 ---
-layout: event
-permalink: /events/event-template
+layout: base
+permalink: /events/event_code_along
 tags: event
 title: Data Sceince Code-along
 date: October 20, 2017
@@ -12,11 +12,15 @@ ical:
 
 agency: GSA
 register: 
-image: /assets/img/event-images/grace-hopper-event.jpg
+hero-image: /assets/img/event-images/CodeAlong_HeroImage.png
 
 
 intro: 
 
 ---
+<section class="section-top hero-section">
+    <div id="main" tabindex="-1" class="hero-img" style="background-image: url('{{ page.hero-image | prepend: site.baseurl }}')">
+    </div>
+</section>
 
 {% include save-the-date.html %}
