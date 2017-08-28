@@ -1,10 +1,17 @@
+- title: Data Science Code-along Day
+  date: October 20, 2017
+  location: Washington, DC
+  txt: A hands-on learning day focused on GSA data science practioners 
+  link: /events/event_code_along
+  image: /assets/img/event-images/CodeAlong_HeroImage-bluebg.png
+  featured: yes
 - title: Grace Hopper Day Hackathon
   date: December 10, 2016
   location: Washington, DC
   txt: A hackathon day honoring Grace Hopper on her 110th birthday focused on women in tech
   link: /events/grace-hopper-hackathon
   image: /assets/img/event-images/grace-hopper-event.jpg
-  featured: yes
+  featured:
 - title: Earth Day Hackathon
   date: April 22, 2016
   location: Washington, DC
