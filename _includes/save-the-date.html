@@ -1,4 +1,4 @@
-<section class="banner contact">
+<section class="banner">
   <div class="usa-grid">
   {% for form in site.forms %}
     {% if form.type == 'Save the Date' %}
@@ -10,6 +10,7 @@
     <fieldset>
       <legend>{{ f.heading }}</legend>
       <div class="usa-width-one-half">
+        <h3>Save the date!</h3>
         {% for field in f.fields %}
           {% unless field.type == 'hidden' %}<label for="contact-{{ field.name }}">{{ field.label }}</label>{% endunless %}
           <input id="contact-{{ field.name }}"
