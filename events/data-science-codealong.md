@@ -1,6 +1,6 @@
 ---
 layout: base
-permalink: /events/event_code_along
+permalink: /events/data-science-codealong
 tags: event
 title: Data Science Code-along
 date: October 20, 2017
