@@ -40,28 +40,25 @@ intro:
   <tr>
     <th colspan="2"></th>
     <th>Rm. 1425</th>
-    <th>Rm. 1425</th>
-    <th></th>
+    <th>Rm. 1420</th>
   </tr>
   <tr>
   <td><b>Registration</b></td>
     <td>8 - 9AM</td>
     <td></td>
     <td></td>
-    <td>Bullpen</td>
   </tr>
   <tr>
   <td><b>Session 1</b></td>
     <td>9- 10:30AM</td>
-    <td>Intro to R - contractor</td>
-    <td>Open source/version control - Jeff/Joe</td>
-    <td rowspan="5"></td>
+    <td>Intro to R - Raed Soliman</td>
+    <td>Open source/version control - Jeff Fredrickson/Joe Castle</td>
   </tr>
   <tr>
   <td><b>Session 2</b></td>
     <td>10:45 - 12:15PM</td>
-    <td>Intro to Phython - contractor</td>
-    <td>Intro to Tableau - Walter</td>
+    <td>Intro to Python - Raed Soliman</td>
+    <td>Intro to Tableau - Walter Mehra</td>
   </tr>
   <tr>
   <td><b>Lunch</b></td>
@@ -72,14 +69,14 @@ intro:
   <tr>
   <td><b>Session 3</b></td>
     <td>1- 2:30PM</td>
-    <td>Intro to Statistics - contractor</td>
+    <td>Intro to Statistics - Raed Soliman</td>
     <td>APIs - Ryan Day</td>
   </tr>
   <tr>
   <td><b>Session 4</b></td>
     <td>2:25 - 4:15PM</td>
-    <td>Data Viz - Paul T.</td>
-    <td>Intro to MicroStrategy - Walter</td>
+    <td>Data Viz - Paul Tsagaroulis</td>
+    <td>Intro to MicroStrategy - Walter Mehra</td>
   </tr>
 </table>
 {% include save-the-date.html %}
