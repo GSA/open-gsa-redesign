@@ -919,7 +919,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Data.gov Dataset Visitor Metrics",
 			"description" : "The dataset provides metrics for the number of dataset views in catalog.data.gov broken down by month starting Jan 2014. There is a gap in the dataset for December 2016 due to a temporary halt in collection of metrics during infrastructure migration of the Data.gov site during that month.",
-			"modified" : "2017-07-06",
+			"modified" : "2017-09-14",
 			"accessLevel" : "public",
 			"identifier" : "GSA - 139375",
 			"dataQuality" : true,
@@ -3156,7 +3156,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA Enterprise Data Inventory (EDI)",
 			"description" : "GSA Enterprise Data Inventory (EDI)",
-			"modified" : "2017-09-13",
+			"modified" : "2017-09-14",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-13-01",
 			"dataQuality" : true,
@@ -3179,8 +3179,8 @@
 					"mediaType" : "application/json",
 					"format" : "json",
 					"title" : "EDI JSON FILE 09 13 17",
-					"description" : "Updated EDI JSON file 09/13/17",
-					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-json-file-09-13-17.js"
+					"description" : "Updated EDI JSON file 09/14/17",
+					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-json-file-09-14-17.js"
 				}
 			],
 			"keyword" : ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5135,7 +5135,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Per Diem Reimbursement Rates",
 			"description" : "The dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 332 locations across the continental United States for Fiscal Year's 2018, 2017, 2016, 2015, 2014, 2013, and 2012 as well as the standard per diem rates for any locations not specifically listed.",
-			"modified" : "2016-09-13",
+			"modified" : "2016-09-14",
 			"accessLevel" : "public",
 			"identifier" : "GSA-31641",
 			"dataQuality" : true,
@@ -5155,11 +5155,11 @@
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format" : "xlsx",
+					"mediaType" : "text/csv",
+					"format" : "csv",
 					"title" : "Per Diem Reimbursement Rates",
 					"description" : "Updated through 2018",
-					"downloadURL" : "https://inventory.data.gov/dataset/ad729937-b245-4eec-a88d-b72eb36d8106/resource/8ea44bc4-22ba-4386-b84c-1494ab28964b/download/perdiemreimbursementrates.xlsx"
+					"downloadURL" : "https://inventory.data.gov/dataset/ad729937-b245-4eec-a88d-b72eb36d8106/resource/8ea44bc4-22ba-4386-b84c-1494ab28964b/download/perdiemreimbursementrates.csv"
 				}
 			],
 			"keyword" : ["federal per diem", "lodging", "m ie", "maximum per diem rates", "meals and incidental expenses", "per diem"],
@@ -7777,4 +7777,3 @@
 		}
 	]
 }
-
