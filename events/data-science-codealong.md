@@ -13,7 +13,7 @@ agency: GSA
 register: "https://docs.google.com/forms/d/e/1FAIpQLScauJiS66N6ASrnvGTRAz7JZe-BruZrLVPeHVRuj_w2o3-hQQ/viewform"
 hero-image: ../../assets/img/event-images/CodeAlong_HeroImage-bluebg.png
 intro: GSA is excited to announce a code-along event focused on creating more hands-on coders within GSA. Our featured theme is Data Science! There will be several training classes for GSA staff to take ranging from Python, R and Statistics to version control and data visualizations. Please note, this event is open to federal GSA staff only.
-howitworks: Start by registering using the link below. You will be asked to register for specific sessions so that we can adjust the room sizes if needed. Your name will then be submitted to the D2D team to have you added to the Data Science Virtual Desktop (DSVD). If you are taking the Python or R training, you will need to complete a prerequisite course on OLU. See the FAQ's below. On the day of the event, please bring a laptop so you can fully participate in the training. Registration will open at 8am. More info will be sent to registered students about 1 week prior to the event.
+howitworks: Start by registering using the link below. You will be asked to register for specific sessions so that we can adjust the room sizes if needed. Your name will then be submitted to the D2D team to have you added to the Data Science Virtual Desktop (DSVD). On the day of the event, please bring a laptop so you can fully participate in the training. Registration will open at 8am. More info will be sent to registered students about 1 week prior to the event.
 ---
 
 
@@ -86,13 +86,13 @@ howitworks: Start by registering using the link below. You will be asked to regi
   <tr>
   <th scope="row"><b>Session 1</b></th>
     <td>9- 10:30AM</td>
-    <td>Intro to R - Raed Soliman</td>
-    <td>Open source/version control - Jeff Fredrickson/Joe Castle</td>
+    <td>Intro to Data Science - Jonathan Joa</td>
+    <td>Getting Started with Open Source and Version Control - Jeff Fredrickson/Joe Castle</td>
   </tr>
   <tr>
   <th scope="row"><b>Session 2</b></th>
     <td>10:45 - 12:15PM</td>
-    <td>Intro to Python - Raed Soliman</td>
+    <td>Beginner Friendly Intro to R - Raed Soliman</td>
     <td>Intro to Tableau - Walter Mehra</td>
   </tr>
   <tr>
@@ -104,7 +104,7 @@ howitworks: Start by registering using the link below. You will be asked to regi
   <tr>
   <th scope="row"><b>Session 3</b></th>
     <td>1- 2:30PM</td>
-    <td>Intro to Statistics - Raed Soliman</td>
+    <td>Beginner Friendly Intro to Python - Raed Soliman</td>
     <td>APIs - Ryan Day</td>
   </tr>
   <tr>
@@ -124,10 +124,6 @@ howitworks: Start by registering using the link below. You will be asked to regi
         </button>
         <div id="amendment-1" class="usa-accordion-content">
             <p>Yes, you must get access to the Data Science Virtual Desktop (DSVD). If you have not received any info about this 1 week prior to the training, please reach out to sara.cope@gsa.gov.</p>
-            <p>If you are attending the Python training, you will need to complete the Python for Data Science - Introduction to Python for Data Science class on OLU as a prerequisite 1 week prior to the event. Search for 'sd_pyds_a01_it_enus' in the OLU system. Send your course completion certificate to sara.cope@gsa.gov.
-            </p>
-            <p>If you are attending the R training, you will need to complete the Fundamental Methods for Data Science in R class on OLU as a prerequisite 1 week prior to the event. Search for 'df_dsfd_a01_it_enus' in the OLU system.  Send your course completion certificate to sara.cope@gsa.gov.
-            </p>
         </div>
     </li>
     <li>
@@ -153,7 +149,7 @@ howitworks: Start by registering using the link below. You will be asked to regi
         </button>
         <div id="amendment-4" class="usa-accordion-content">
             <p>
-                Many coffee shops and restaurants are located near the office, several are right across the street. Feel free to bring items with you or run out to lunch. </p>
+                GSA will not be providing refreshments for this event. Many coffee shops and restaurants are located near the office, several are right across the street. Feel free to bring items with you or run out to lunch. </p>
         </div>
     </li>
 </ul>
