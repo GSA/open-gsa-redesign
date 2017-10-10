@@ -109,8 +109,8 @@ howitworks: Start by registering using the link below. You will be asked to regi
   </tr>
   <tr>
   <th scope="row"><b>Session 4</b></th>
-    <td>2:25 - 4:15PM</td>
-    <td>Data Viz - Paul Tsagaroulis</td>
+    <td>2:45 - 4:15PM</td>
+    <td>Data Viz - Paul Tsagaroulis &amp; Matt Albucher</td>
     <td>Intro to MicroStrategy - Walter Mehra</td>
   </tr>
 </table>
