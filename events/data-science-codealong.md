@@ -79,7 +79,7 @@ howitworks: Start by registering using the link below. You will be asked to regi
   </thead>
   <tr>
   <td><b>Registration</b></td>
-    <td>8 - 9AM</td>
+    <td>8:30 - 9AM</td>
     <td></td>
     <td></td>
   </tr>
