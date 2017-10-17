@@ -13,7 +13,7 @@ agency: GSA
 register: "https://docs.google.com/forms/d/e/1FAIpQLScauJiS66N6ASrnvGTRAz7JZe-BruZrLVPeHVRuj_w2o3-hQQ/viewform"
 hero-image: ../../assets/img/event-images/CodeAlong_HeroImage-bluebg.png
 intro: GSA is excited to announce a code-along event focused on creating more hands-on coders within GSA. Our featured theme is Data Science! There will be several training classes for GSA staff to take ranging from Python, R and API's to version control and data visualizations. Please note, this event is open to federal GSA staff only.
-howitworks: Start by registering using the link below. You will be asked to register for specific sessions so that we can adjust the room sizes if needed. Your name will then be submitted to the D2D team to have you added to the Data Science Virtual Desktop (DSVD). On the day of the event, please bring a laptop so you can fully participate in the training. Registration will open at 8am. More info will be sent to registered students about 1 week prior to the event.
+howitworks: Start by registering using the link below. You will be asked to register for specific sessions so that we can adjust the room sizes if needed. Your name will then be submitted to the D2D team to have you added to the Data Science Virtual Desktop (DSVD). On the day of the event, please bring a laptop so you can fully participate in the training. Registration will open at 8:30AM. More info will be sent to registered students prior to the event.
 ---
 
 
