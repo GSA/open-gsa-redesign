@@ -155,8 +155,8 @@ howitworks: Start by registering using the link below. You will be asked to regi
 </ul>
 
 <h2 id="register">Join us!</h2>
-<p class="usa-font-lead">Be sure to register early so we can get you set up with the proper software!</p>
-<a class="usa-button usa-button-big usa-button-secondary" href='{{ page.register }}'>Register Now</a><br>
+<p class="usa-font-lead">Registration is now closed!</p>
+<!-- <a class="usa-button usa-button-big usa-button-secondary" href='{{ page.register }}'>Register Now</a><br> -->
 <!-- <a href="{{ page.gcal }}">Google calendar</a> | <a href="{{ page.ical }}">iCal</a> -->
 
 
