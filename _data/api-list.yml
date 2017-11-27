@@ -1,4 +1,7 @@
-- title: Api.Data.Gov Admin API
+- title: Discovery API
+  description: The Discovery API drives the Discovery Market Research Tool. It contains information on the vendors that are part of the OASIS and OASIS Small Business contracting vehicles, such as their contracting history, their eligibility for contract awards, and their small business designations.
+  url: https://www.gsa.gov/acquisition/products-services/professional-services/oasis-and-oasis-small-business/oasis-discovery-market-research-tool/
+  - title: Api.Data.Gov Admin API
   description: api.data.gov is a free API management service for federal agencies. This API implements the API Umbrella Admin API.
   url: http://api.data.gov/developer/
 - title: Auctions API
