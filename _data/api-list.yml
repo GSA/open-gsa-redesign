@@ -1,3 +1,6 @@
+- title: Api.Data.Gov Admin API
+  description: api.data.gov is a free API management service for federal agencies. This API implements the API Umbrella Admin API.
+  url: http://api.data.gov/developer/
 - title: Discovery API
   description: The Discovery API drives the Discovery Market Research Tool. It contains information on the vendors that are part of the OASIS and OASIS Small Business contracting vehicles, such as their contracting history, their eligibility for contract awards, and their small business designations.
   url: https://www.gsa.gov/acquisition/products-services/professional-services/oasis-and-oasis-small-business/oasis-discovery-market-research-tool/
@@ -31,12 +34,18 @@
 - title: Federal Procurement Data System - FPDS API
   description: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
   url: https://www.fpds.gov/downloads/FPDS-Specifications-WebServices_Integration_Specifications_V1.4.doc
+- title: FOIA API
+  description: The FOIA Modernization API lists all agencies for whom a FOIA request can be submitted. It also includes components within those agencies that are large enough (and well known enough) to have their own FOIA system.
+  url: http://foia-hub.readthedocs.org/en/latest/api.html/
 - title: Go.USA.gov API
   description: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
   url: https://go.usa.gov/api
 - title: Government Jobs API
   description: This API returns job openings on USAJobs.gov that are open to the public and located in the United States.
   url: http://search.digitalgov.gov/developer/jobs.html
+- title: Hub API
+  description: The Hub API provides web services for the 18F Hub, a repository of team and project information (more details here).
+  url: https://18f.gsa.gov/hub/api/
 - title: Non-Gov URLs API
   description: This API allows you to tap into a list of all government URLs that don't end in .gov or .mil. URLs are searchable by keyword, state, or scope.
   url: https://search.digitalgov.gov/developer/govt-urls.html
