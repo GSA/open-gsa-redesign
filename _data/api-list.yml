@@ -16,6 +16,9 @@
 - title: DigitalGov Search API
   description: Provides DigitalGov Search customers their search results in JSON. Sign in with a .gov or .mil email is required.
   url: https://search.usa.gov/login
+- title: Digital Signature API
+  description: The vision of Digital Signature Solution (DSS) is to deploy a solution, which contributes to the Digital Government Strategy, enabling a truly digital and paperless GSA.
+  url: https://gsa.github.io/DSSAPIDocumentation/api-docs/
 - title: eMuseum API
   description: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
   url: http://gsa.github.io/eMuseum-API/
