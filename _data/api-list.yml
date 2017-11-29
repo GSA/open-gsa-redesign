@@ -39,7 +39,7 @@
   url: https://www.fpds.gov/downloads/FPDS-Specifications-WebServices_Integration_Specifications_V1.4.doc
 - title: FOIA API
   description: The FOIA Modernization API lists all agencies for whom a FOIA request can be submitted. It also includes components within those agencies that are large enough (and well known enough) to have their own FOIA system.
-  url: http://foia-hub.readthedocs.org/en/latest/api.html/
+  url: http://foia-hub.readthedocs.io/en/latest/api.html
 - title: Go.USA.gov API
   description: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
   url: https://go.usa.gov/api
