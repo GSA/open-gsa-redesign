@@ -4,9 +4,6 @@
 - title: Discovery API
   description: The Discovery API drives the Discovery Market Research Tool. It contains information on the vendors that are part of the OASIS and OASIS Small Business contracting vehicles, such as their contracting history, their eligibility for contract awards, and their small business designations.
   url: https://www.gsa.gov/acquisition/products-services/professional-services/oasis-and-oasis-small-business/oasis-discovery-market-research-tool/
-- title: Api.Data.Gov Admin API
-  description: api.data.gov is a free API management service for federal agencies. This API implements the API Umbrella Admin API.
-  url: http://api.data.gov/developer/
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: http://gsa.github.io/auctions_api/
@@ -46,9 +43,6 @@
 - title: Government Jobs API
   description: This API returns job openings on USAJobs.gov that are open to the public and located in the United States.
   url: http://search.digitalgov.gov/developer/jobs.html
-- title: Hub API
-  description: The Hub API provides web services for the 18F Hub, a repository of team and project information (more details here).
-  url: https://18f.gsa.gov/hub/api/
 - title: Non-Gov URLs API
   description: This API allows you to tap into a list of all government URLs that don't end in .gov or .mil. URLs are searchable by keyword, state, or scope.
   url: https://search.digitalgov.gov/developer/govt-urls.html
