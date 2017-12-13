@@ -703,21 +703,29 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Data.gov CKAN API",
 			"description" : "The data.gov catalog is powered by CKAN, a powerful open source data platform that includes a robust API.  Please be aware that data.gov and the data.gov CKAN API only contain metadata about datasets.  This metadata includes URLs and descriptions of datasets, but it does not include the actual data within each dataset.",
-			"modified" : "2015-11-09",
+			"modified" : "2017-11-02",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-09-02",
 			"dataQuality" : true,
-			"issued" : "2015-11-09",
+			"landingPage" : "https://www.data.gov/developers/harvesting",
 			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
 			"publisher" : {
 				"@type" : "org:Organization",
-				"name" : "General Services Administration"
+				"name" : "Data.gov",
+				"subOrganizationOf" : {
+					"@type" : "org:Organization",
+					"name" : "Technology Transformation Service",
+					"subOrganizationOf" : {
+						"@type" : "org:Organization",
+						"name" : "General Services Administration"
+					}
+				}
 			},
-			"accrualPeriodicity" : "R/PT1S",
+			"accrualPeriodicity" : "R/P1M",
 			"contactPoint" : {
 				"@type" : "vcard:Contact",
-				"fn" : "Cindy A Smith",
-				"hasEmail" : "mailto:cindya.smith@gsa.gov"
+				"fn" : "Hyon Kim",
+				"hasEmail" : "mailto:datagov@gsa.gov"
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
@@ -725,12 +733,19 @@
 					"format" : "API",
 					"title" : "Data.gov CKAN API",
 					"description" : "This metadata includes URLs and descriptions of datasets, but it does not include the actual data within each dataset."
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/gzip",
+					"format" : "JSON Lines",
+					"title" : "Government-wide open data metadata bulk download",
+					"description" : "This provides a bulk extract of all metadata stored in Data.gov for Federal datasets. The file is automatically generated monthly as an export from the CKAN API using the JSON Lines serialization format (jsonlines.org). This does not provide all metadata stored on Data.gov, only metadata for Federal datasets following the metadata guidelines described at http://www.digitalgov.gov/resources/how-to-get-your-open-data-on-data-gov/ \r\n\r\nThe compressed file is approximately 2.3GB.",
+					"downloadURL" : "https://filestore.data.gov/gsa/catalog/jsonl/dataset.jsonl.gz"
 				}
 			],
 			"keyword" : ["API", "CKAN", "DATA", "GOV"],
 			"bureauCode" : ["023:00"],
 			"programCode" : ["023:014"],
-			"language" : ["us-EN"],
+			"language" : ["us-en"],
 			"theme" : ["API"]
 		}, {
 			"@type" : "dcat:Dataset",
@@ -919,7 +934,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Data.gov Dataset Visitor Metrics",
 			"description" : "The dataset provides metrics for the number of dataset views in catalog.data.gov broken down by month starting Jan 2014. There is a gap in the dataset for December 2016 due to a temporary halt in collection of metrics during infrastructure migration of the Data.gov site during that month.",
-			"modified" : "2017-09-14",
+			"modified" : "2017-10-14",
 			"accessLevel" : "public",
 			"identifier" : "GSA - 139375",
 			"dataQuality" : true,
@@ -1266,7 +1281,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA DCOI Strategic Plan",
 			"description" : "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly.",
-			"modified" : "2017-08-18",
+			"modified" : "2017-11-30",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2016-09-27-02",
 			"conformsTo" : "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
@@ -1286,7 +1301,7 @@
 					"mediaType" : "application/json",
 					"format" : "json",
 					"title" : "datacenteroptimizationstrategicplan",
-					"description" : "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly on or before September 30, 2016. Updated 4/14/2017.",
+					"description" : "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 11/30/2017.",
 					"conformsTo" : "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
 					"downloadURL" : "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/b8d9e71b-963b-4398-8d37-04628e64871d/download/datacenteroptimizationstrategicplan.json"
 				}, {
@@ -2756,6 +2771,126 @@
 			"theme" : ["API"]
 		}, {
 			"@type" : "dcat:Dataset",
+			"title" : "Federal Real Property Profile Data for Civilian Agencies",
+			"description" : "An export of data from FRPP, a database of Federal Real Property Profile for Civilian Agencies.",
+			"modified" : "2017-12-13",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2017-12-06-01",
+			"dataQuality" : true,
+			"describedBy" : "https://www.gsa.gov/cdnstatic/FY_2016_FRPP_Data_Dictionary_Version_3___Oct_31__2016.pdf",
+			"describedByType" : "application/pdf",
+			"issued" : "2016-10-31",
+			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+			"spatial" : "US",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "Office of Government-wide Policy",
+				"subOrganizationOf" : {
+					"@type" : "org:Organization",
+					"name" : "General Services Administration"
+				}
+			},
+			"accrualPeriodicity" : "R/P1Y",
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "Chris Coneeney",
+				"hasEmail" : "mailto:chris.coneeney@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "text/csv",
+					"format" : "csv",
+					"title" : "FRPP Public Data Civilian Agencies",
+					"description" : "FRPP Public Data for Civilian Agencies",
+					"describedBy" : "https://www.gsa.gov/cdnstatic/FY_2016_FRPP_Data_Dictionary_Version_3___Oct_31__2016.pdf",
+					"describedByType" : "application/pdf",
+					"downloadURL" : "https://inventory.data.gov/dataset/509d3f36-464e-4e4c-a26b-8582605c254e/resource/37120970-e7cf-47e3-ba25-3f5a6b0f4c2f/download/frpp-public-data-civilian-agencies.csv"
+				}
+			],
+			"keyword" : ["FRPP", "Federal Real Property Profile", "GSA", "General Services Administration", "RTF", "building", "civilian", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
+			"bureauCode" : ["023:05"],
+			"programCode" : ["023:015"],
+			"language" : ["us-EN"]
+		}, {
+			"@type" : "dcat:Dataset",
+			"title" : "Federal Real Property Profile Data for Department of Defense",
+			"description" : "An export of data from FRPP, a database of Federal Real Property Profile for Department of Defense entities.",
+			"modified" : "2017-12-13",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2017-12-06-02",
+			"dataQuality" : true,
+			"describedBy" : "https://www.gsa.gov/cdnstatic/FY_2016_FRPP_Data_Dictionary_Version_3___Oct_31__2016.pdf",
+			"describedByType" : "application/pdf",
+			"issued" : "2016-10-31",
+			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+			"spatial" : "US",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "Office of Governmentwide Policy",
+				"subOrganizationOf" : {
+					"@type" : "org:Organization",
+					"name" : "General Services Administration"
+				}
+			},
+			"accrualPeriodicity" : "R/P1Y",
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "Chris Coneeney",
+				"hasEmail" : "mailto:chris.coneeney@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "text/csv",
+					"format" : "csv",
+					"title" : "DOD WHS Public FRPP Data FY 2016",
+					"description" : "An export of data from FRPP, a database of Federal Real Property Profile for Department of Defense entities.",
+					"describedBy" : "https://www.gsa.gov/cdnstatic/FY_2016_FRPP_Data_Dictionary_Version_3___Oct_31__2016.pdf",
+					"describedByType" : "application/pdf",
+					"downloadURL" : "https://inventory.data.gov/dataset/34552d8f-a545-475b-b10d-2765dfa9a08d/resource/d837264f-b84e-485b-8207-320b1f79f666/download/dod-whs-public-frpp-data-fy-2016.csv"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "text/csv",
+					"format" : "csv",
+					"title" : "Air Force Public FRPP Data FY  2016",
+					"description" : "An export of data from FRPP, a database of Federal Real Property Profile for Department of Defense entities.",
+					"describedBy" : "https://www.gsa.gov/cdnstatic/FY_2016_FRPP_Data_Dictionary_Version_3___Oct_31__2016.pdf",
+					"describedByType" : "application/pdf",
+					"downloadURL" : "https://inventory.data.gov/dataset/34552d8f-a545-475b-b10d-2765dfa9a08d/resource/743efacf-7067-4f14-8e77-f7eaf0a7f5ad/download/air-force-public-frpp-data-fy-2016.csv"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "text/csv",
+					"format" : "csv",
+					"title" : "ARMY Public FRPP Data FY 2016",
+					"description" : "An export of data from FRPP, a database of Federal Real Property Profile for Department of Defense entities.",
+					"describedBy" : "https://www.gsa.gov/cdnstatic/FY_2016_FRPP_Data_Dictionary_Version_3___Oct_31__2016.pdf",
+					"describedByType" : "application/pdf",
+					"downloadURL" : "https://inventory.data.gov/dataset/34552d8f-a545-475b-b10d-2765dfa9a08d/resource/b9cf95e9-b497-426b-9785-4b76df29f196/download/army-public-frpp-data-fy-2016.csv"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "text/csv",
+					"format" : "csv",
+					"title" : "NAVY Public FRPP Data FY 2016",
+					"description" : "An export of data from FRPP, a database of Federal Real Property Profile for Department of Defense entities.",
+					"describedBy" : "https://www.gsa.gov/cdnstatic/FY_2016_FRPP_Data_Dictionary_Version_3___Oct_31__2016.pdf",
+					"describedByType" : "application/pdf",
+					"downloadURL" : "https://inventory.data.gov/dataset/34552d8f-a545-475b-b10d-2765dfa9a08d/resource/b680b3ce-ff5e-4d91-91bf-e410defd997b/download/navy-public-frpp-data-fy-2016.csv"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "text/csv",
+					"format" : "csv",
+					"title" : "Corps of Engineers public FRPP data FY 2016",
+					"description" : "An export of data from FRPP, a database of Federal Real Property Profile for Department of Defense entities.",
+					"describedBy" : "https://www.gsa.gov/cdnstatic/FY_2016_FRPP_Data_Dictionary_Version_3___Oct_31__2016.pdf",
+					"describedByType" : "application/pdf",
+					"downloadURL" : "https://inventory.data.gov/dataset/34552d8f-a545-475b-b10d-2765dfa9a08d/resource/8bc79bf7-e6b5-49e1-ace5-a1324a58f7bf/download/corps-of-engineers-public-frpp-data-fy-2016.csv"
+				}
+			],
+			"keyword" : ["Air Force", "Army", "Corps of Engineers", "Department of Defense", "DoD", "FRPP", "Federal Real Property Profile", "GSA", "General Services Administration", "Navy", "RTF", "building", "land", "military", "office", "real property", "reduce the footprint", "structure", "warehouse"],
+			"bureauCode" : ["023:05"],
+			"programCode" : ["023:015"],
+			"language" : ["us-EN"]
+		}, {
+			"@type" : "dcat:Dataset",
 			"title" : "Federal Real Property Profile (FRPP)",
 			"description" : "The Federal Real Property Report includes summary data for the federal government's inventory of land, building, and structure assets around the world, as of September 30th each year.",
 			"modified" : "2016-05-10",
@@ -3118,6 +3253,81 @@
 			"theme" : ["API"]
 		}, {
 			"@type" : "dcat:Dataset",
+			"title" : "GSA Bureau IT Leadership Directory",
+			"description" : "Each agency is expected to post a JSON file for their Bureau IT Leadership Directory. Each dataset should include one record for each agency employee with the title of “chief information officer” or who performs the duties and responsibilities of a CIO but does not necessarily have the title of CIO.",
+			"modified" : "2017-12-05",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2017-12-05-01",
+			"conformsTo" : "https://management.cio.gov/schemaexamples/bureauITLeadershipSchema.json",
+			"issued" : "2017-12-05",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "General Services Administration"
+			},
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "Monica Fitzgerald",
+				"hasEmail" : "mailto:monica.fitzgerald@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/json",
+					"format" : "json",
+					"title" : "GSA Bureau IT Leadership Directory",
+					"description" : "Each agency is expected to post a JSON file for their Bureau IT Leadership Directory. Each dataset should include one record for each agency employee with the title of “chief information officer” or who performs the duties and responsibilities of a CIO but does not necessarily have the title of CIO.",
+					"conformsTo" : "https://management.cio.gov/schemaexamples/bureauITLeadershipSchema.json",
+					"describedBy" : "https://management.cio.gov/schemaexamples/bureauITLeadershipSchema.json",
+					"describedByType" : "application/json",
+					"downloadURL" : "https://inventory.data.gov/dataset/8d706970-ebc7-4f3c-85e6-7cfcce5a7f7c/resource/faa96364-9a09-4f24-a76c-b49834fe1c21/download/bureaudirectory.json"
+				}, {
+					"@type" : "dcat:Distribution",
+					"accessURL" : "http://gsa.gov/digitalstrategy/bureaudirectory.html",
+					"title" : "GSA Bureau IT Leadership Directory webpage"
+				}
+			],
+			"keyword" : ["CIO", "GSA", "GSA CIO", "IT Leadership", "IT Leadership Directory"],
+			"bureauCode" : ["023:00"],
+			"programCode" : ["023:000"]
+		}, {
+			"@type" : "dcat:Dataset",
+			"title" : "GSA CIO Governance Board Membership List",
+			"description" : "Each agency is expected to post a JSON file for their Bureau IT Leadership Directory to the following URL path:\r\n [agency.gov]/digitalstrategy/governanceboards.json. Include all governance boards the CIO is a member of. Agencies shall keep this list up to date at least annually beginning in April 2016.",
+			"modified" : "2017-12-05",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2017-12-05-02",
+			"conformsTo" : "https://management.cio.gov/schemaexamples/governanceBoardSchema.json",
+			"describedBy" : "https://management.cio.gov/schemaexamples/governanceBoardSchema.json",
+			"issued" : "2017-12-05",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "General Services Administration"
+			},
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "Monica Fitzgerald",
+				"hasEmail" : "mailto:monica.fitzgerald@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/json",
+					"format" : "json",
+					"title" : "GSA CIO Governance Board Membership List",
+					"description" : "Each agency is expected to post a JSON file for their Bureau IT Leadership Directory to the following URL path: [agency.gov]/digitalstrategy/governanceboards.json. Include all governance boards the CIO is a member of. Agencies shall keep this list up to date at least annually beginning in April 2016.",
+					"conformsTo" : "https://management.cio.gov/schemaexamples/governanceBoardSchema.json",
+					"describedBy" : "https://management.cio.gov/schemaexamples/governanceBoardSchema.json",
+					"describedByType" : "application/json",
+					"downloadURL" : "https://inventory.data.gov/dataset/f372bf37-fed7-45a1-b1c1-8fa394fdd343/resource/71b57749-03e6-4085-b66d-8df8d83e6215/download/governanceboards.json"
+				}, {
+					"@type" : "dcat:Distribution",
+					"accessURL" : "http://gsa.gov/digitalstrategy/governanceboards.html",
+					"title" : "GSA CIO Governance Board Membership List webpage"
+				}
+			],
+			"keyword" : ["CIO", "CIO Governance", "CIO Membership", "GSA", "Governance Board", "Governance Board Membership"],
+			"bureauCode" : ["023:00"],
+			"programCode" : ["023:000"]
+		}, {
+			"@type" : "dcat:Dataset",
 			"title" : "GSA eLibrary Schedules and Contracts",
 			"description" : "GSA eLibrary (formerly Schedules e-Library) is the online source for the latest contract award information for: GSA Schedules; Department of Veterans Affairs (VA) Schedules; and Technology Contracts, including Governmentwide Acquisition Contracts (GWACs), Network Services and Telecommunications Contracts, and Information Technology (IT) Schedule 70. This data contains all the current contracts under those contract vehicles and their respective schedule, special item number information.",
 			"modified" : "2017-01-05",
@@ -3156,7 +3366,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA Enterprise Data Inventory (EDI)",
 			"description" : "GSA Enterprise Data Inventory (EDI)",
-			"modified" : "2017-09-18",
+			"modified" : "2017-12-13",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-13-01",
 			"dataQuality" : true,
@@ -3179,8 +3389,8 @@
 					"mediaType" : "application/json",
 					"format" : "json",
 					"title" : "EDI JSON FILE",
-					"description" : "Updated 09/18/17",
-					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-json-file-09-17-17.js"
+					"description" : "Updated 12/13/17",
+					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-json-12-13-17.js"
 				}
 			],
 			"keyword" : ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3258,7 +3468,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA FITARA Actions and Milestones",
 			"description" : "This JSON file represents GSA's FITARA Actions and Milestones submission to OMB.  This file abides by the OMB JSON schema found here: https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
-			"modified" : "2017-08-18",
+			"modified" : "2017-11-30",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2016-04-27-01",
 			"conformsTo" : "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
@@ -3276,8 +3486,8 @@
 					"@type" : "dcat:Distribution",
 					"mediaType" : "application/json",
 					"format" : "json",
-					"title" : "GSA FITARA Actions and Milestones 2017-08-18",
-					"description" : "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the August 31, 2017, quarterly submission to OMB.\r\nOn September 30, 2016, five milestones were added as a result of the Data Center Optimization Initiative (DCOI) Strategic Plan requirements.",
+					"title" : "GSA FITARA Actions and Milestones 2017-11-30",
+					"description" : "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the November 30, 2017, quarterly submission to OMB.\r\nOn September 30, 2016, five milestones were added as a result of the Data Center Optimization Initiative (DCOI) Strategic Plan requirements.",
 					"conformsTo" : "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
 					"downloadURL" : "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
 				}
@@ -3289,7 +3499,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA IT Reform Cost Savings/Avoidance",
 			"description" : "GSA IT provides data related to Agency IT initiatives that save or avoid expenditures.  This data is provided as a requirement of OMB's Integrated Data Collection (IDC) and posted publicly as a requirement of the Federal Information Technology Acquisition Reform Act (FITARA) leglislation.",
-			"modified" : "2017-08-18",
+			"modified" : "2017-11-30",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-25-01",
 			"issued" : "2015-11-25",
@@ -3301,15 +3511,15 @@
 			"accrualPeriodicity" : "R/P3M",
 			"contactPoint" : {
 				"@type" : "vcard:Contact",
-				"fn" : "Jonah Hatfield",
-				"hasEmail" : "mailto:jonah.hatfield@gsa.gov"
+				"fn" : "Monica Fitzgerald",
+				"hasEmail" : "mailto:monica.fitzgerald@gsa.gov"
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
 					"mediaType" : "application/json",
 					"format" : "JSON",
 					"title" : "GSA IT Reform Cost Savings/Avoidance",
-					"description" : "GSA's August 2017 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description" : "GSA's November 2017 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo" : "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL" : "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -3322,7 +3532,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA IT Policy Archive Zip",
 			"description" : "A compressed zip file containing all of GSA's public IT policy documents, posted publicly at gsa.gov]/digitalstrategy/policyarchive.zip and identified in the agency public data listing as “Agency IT Policy Archive”.",
-			"modified" : "2017-08-08",
+			"modified" : "2017-10-26",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2016-11-02-01",
 			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -3340,8 +3550,8 @@
 					"mediaType" : "application/zip",
 					"format" : "ZIP",
 					"title" : "GSA IT Policy Archive Zip",
-					"description" : "Last update: 2017-08-08",
-					"downloadURL" : "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
+					"description" : "Last update: 2017-10-26",
+					"downloadURL" : "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/it-policy-archive-zip.zip"
 				}
 			],
 			"keyword" : ["Agency IT Policy Archive", "IT policy archive", "policy archive"],
@@ -3827,7 +4037,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Natural Gas Acquisition Program",
 			"description" : "The \"NGAP\" system is a web based application which serves NGAP GSA users for tracking information details for various natural gas supply chain elements like Agency, LDC, and Facility with their respective Point of Contacts information. In addition to this, it also maintains the Cost & Usage Data and Invoices for the Facilities under different account managers.",
-			"modified" : "2015-11-16",
+			"modified" : "2017-11-20",
 			"accessLevel" : "public",
 			"identifier" : "GSA-4308",
 			"dataQuality" : true,
@@ -3850,7 +4060,7 @@
 					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format" : "xlsx",
 					"title" : "Natural Gas Acquisition Program",
-					"downloadURL" : "http://www.gsa.gov/dg/pbs/DATA.gov_NGAP.xlsx"
+					"downloadURL" : "https://inventory.data.gov/dataset/3fbe4fc6-95fc-4ee4-bda7-06f985ae8276/resource/1866644f-22ca-4b4c-8e71-40983e91e2c8/download/ngap2017.xlsx"
 				}
 			],
 			"keyword" : ["Agency", "Cost", "Facility", "LCD", "Natural Gas", "Usage Data.", "Utilities"],
@@ -6417,8 +6627,8 @@
 		}, {
 			"@type" : "dcat:Dataset",
 			"title" : "Purchase Card Transactions January - March 2017",
-			"description" : "Purchases made with the purchase card.  Files will be batched quarterly.",
-			"modified" : "2017-04-13",
+			"description" : "2nd Quarter 2017 Purchase Card Transactions",
+			"modified" : "2017-11-20",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2017-04-13-01",
 			"dataQuality" : true,
@@ -6440,6 +6650,7 @@
 					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format" : "xlsx",
 					"title" : "Jan - Mar 2017 GSA PC Transactions",
+					"description" : "2nd Quarter 2017 Purchase Card Transactions",
 					"downloadURL" : "https://inventory.data.gov/dataset/b328789a-a070-446e-982a-a5b1a0984fa2/resource/c9858a44-dc63-49ef-903f-066651255330/download/jan---mar-2017-gsa-pc-transactions.xlsx"
 				}
 			],
@@ -6479,6 +6690,41 @@
 				}
 			],
 			"keyword" : ["april", "june", "may", "purchase card", "transactions"],
+			"bureauCode" : ["023:00"],
+			"programCode" : ["023:010"],
+			"language" : ["en-us"],
+			"theme" : ["Card Services Program"]
+		}, {
+			"@type" : "dcat:Dataset",
+			"title" : "Purchase Card Transactions July - September 2017",
+			"description" : "Purchases made with the purchase card.  Files will be batched quarterly.",
+			"modified" : "2017-11-20",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2017-11-20-01",
+			"dataQuality" : true,
+			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights" : "N/A",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "General Services Administration"
+			},
+			"accrualPeriodicity" : "R/P3M",
+			"isPartOf" : "GSA-2016-01-05-01",
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "Nancy V Hexmoor",
+				"hasEmail" : "mailto:nancy.hexmoor@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "July-Sept 2017 PC Transactions",
+					"description" : "4th Quarter 2017 Purchase Card Transactions",
+					"downloadURL" : "https://inventory.data.gov/dataset/6f4f5f6f-375a-4b0c-a9a5-45347f55bcf6/resource/92ef9f71-ef1d-4209-b2ed-8b676cf63f28/download/july-sept-2017-gsa--pc-transactions.xlsx"
+				}
+			],
+			"keyword" : ["August", "July", "September", "purchase card", "transactions"],
 			"bureauCode" : ["023:00"],
 			"programCode" : ["023:010"],
 			"language" : ["en-us"],
@@ -7044,6 +7290,42 @@
 			"theme" : ["Card Services Program"]
 		}, {
 			"@type" : "dcat:Dataset",
+			"title" : "Purchase Card Transactions - CBCA July - September 2017",
+			"description" : "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified" : "2017-11-20",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2017-11-20-02",
+			"dataQuality" : true,
+			"issued" : "2014-10-01",
+			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights" : "N/A",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "General Services Administration"
+			},
+			"accrualPeriodicity" : "R/P3M",
+			"isPartOf" : "GSA-2016-01-06-1",
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "James G Parks",
+				"hasEmail" : "mailto:greg.parks@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "July-Sept 2017 CBCA PC Transactions",
+					"description" : "4th Quarter CBCA PC Transactions",
+					"downloadURL" : "https://inventory.data.gov/dataset/97f6b205-7ece-43b6-994e-01aba5a349c1/resource/9b088149-85d7-4e73-a0b3-f1fb8cb563cf/download/july-sept-2017-cbca-pc-transactions.xlsx"
+				}
+			],
+			"keyword" : ["BOCA", "Contract Board", "GSA SmartPay", "Purchase Card", "Transactions", "august", "july", "september"],
+			"bureauCode" : ["023:00"],
+			"programCode" : ["023:010"],
+			"language" : ["en-us"],
+			"theme" : ["Card Services Program"]
+		}, {
+			"@type" : "dcat:Dataset",
 			"title" : "Purchase Card Transactions - OIG April June 2014",
 			"description" : "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
 			"modified" : "2016-01-05",
@@ -7180,7 +7462,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2017-10-04",
+			"modified" : "2017-12-01",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25251",
 			"dataQuality" : true,
@@ -7200,11 +7482,11 @@
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"mediaType" : "text/csv",
-					"format" : "csv",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
 					"title" : "data_gov_bldg_rexus",
-					"description" : "October Rexus file",
-					"downloadURL" : "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/63663b53-7cb6-4bea-bc4e-1e5897ef3158/download/datagovbldgrexus.csv"
+					"description" : "December Rexus file",
+					"downloadURL" : "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/63663b53-7cb6-4bea-bc4e-1e5897ef3158/download/datagovbldgrexus.xlsx"
 				}
 			],
 			"keyword" : ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -7214,7 +7496,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) (Lease)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2017-10-04",
+			"modified" : "2017-12-01",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25261",
 			"dataQuality" : true,
@@ -7234,11 +7516,11 @@
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"mediaType" : "text/csv",
-					"format" : "csv",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
 					"title" : "data_gov_lse_rexus",
-					"description" : "October Rexus file",
-					"downloadURL" : "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ae0d8c20-3c63-40c3-96da-24a24f507e79/download/datagovlserexus.csv"
+					"description" : "December Rexus file",
+					"downloadURL" : "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ae0d8c20-3c63-40c3-96da-24a24f507e79/download/datagovlserexus.xlsx"
 				}
 			],
 			"keyword" : ["building", "gsa", "owned", "property", "real estate", "real property"],
