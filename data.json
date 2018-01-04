@@ -3366,7 +3366,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA Enterprise Data Inventory (EDI)",
 			"description" : "GSA Enterprise Data Inventory (EDI)",
-			"modified" : "2017-12-14",
+			"modified" : "2018-01-03",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-13-01",
 			"dataQuality" : true,
@@ -3389,8 +3389,8 @@
 					"mediaType" : "application/json",
 					"format" : "json",
 					"title" : "EDI JSON FILE",
-					"description" : "Updated 12/14/17",
-					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-json-12-14-17.js"
+					"description" : "Updated 01/03/2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-json-file-01-03-18.js"
 				}
 			],
 			"keyword" : ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5166,6 +5166,41 @@
 					"title" : "TotRevFY17_3rdQtr",
 					"description" : "Networx Business Volume FY2017 3rd Quarter",
 					"downloadURL" : "https://inventory.data.gov/dataset/c402e751-1b90-4e15-afb5-192e2e0de521/resource/9db93cdc-88b7-4bb7-b837-c3c1005c1c30/download/totrevfy173rdqtr.xlsx"
+				}
+			],
+			"keyword" : ["Contract", "Networx Telecommunications", "Telecommunications"],
+			"bureauCode" : ["023:00"],
+			"programCode" : ["023:019"],
+			"language" : ["en-US"],
+			"theme" : ["Telecommunications Services"]
+		}, {
+			"@type" : "dcat:Dataset",
+			"title" : "Networx Business Volume FY2017 4th Quarter",
+			"description" : "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+			"modified" : "2017-01-03",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2018-01-03-01",
+			"dataQuality" : true,
+			"issued" : "2015-11-13",
+			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "General Services Administration"
+			},
+			"accrualPeriodicity" : "R/P3M",
+			"isPartOf" : "GSA-2015-08-27P",
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "Toni L Holloway",
+				"hasEmail" : "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "TotRevFY17_4thQtr",
+					"description" : "Networx Business Volume FY2017 4th Quarter",
+					"downloadURL" : "https://inventory.data.gov/dataset/db977dc9-1140-40b9-8a39-82be9aaab53c/resource/cb57834a-9a1f-4260-a6cd-88a6df576645/download/totrevfy174thqtr.xlsx"
 				}
 			],
 			"keyword" : ["Contract", "Networx Telecommunications", "Telecommunications"],
@@ -7462,7 +7497,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2017-12-01",
+			"modified" : "2017-01-03",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25251",
 			"dataQuality" : true,
@@ -7485,7 +7520,7 @@
 					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format" : "xlsx",
 					"title" : "data_gov_bldg_rexus",
-					"description" : "December Rexus file",
+					"description" : "January Rexus file",
 					"downloadURL" : "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/63663b53-7cb6-4bea-bc4e-1e5897ef3158/download/datagovbldgrexus.xlsx"
 				}
 			],
@@ -7496,7 +7531,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) (Lease)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2017-12-01",
+			"modified" : "2017-01-03",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25261",
 			"dataQuality" : true,
@@ -7519,7 +7554,7 @@
 					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format" : "xlsx",
 					"title" : "data_gov_lse_rexus",
-					"description" : "December Rexus file",
+					"description" : "January Rexus file",
 					"downloadURL" : "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ae0d8c20-3c63-40c3-96da-24a24f507e79/download/datagovlserexus.xlsx"
 				}
 			],
