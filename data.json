@@ -1317,8 +1317,8 @@
 			"programCode" : ["023:000"]
 		}, {
 			"@type" : "dcat:Dataset",
-			"title" : "DigitalGov Search API (formerly USASearch)",
-			"description" : "Provides DigitalGov Search customers their search results in JSON. Sign in with a .gov or .mil email is required.",
+			"title" : "Search.gov Results API (formerly DigitalGov Search or USASearch)",
+			"description" : "Provides Search.gov customers their search results in JSON. Sign in with a .gov or .mil email is required.",
 			"modified" : "2014-05-29",
 			"accessLevel" : "restricted public",
 			"identifier" : "GSA - 138681",
@@ -1332,17 +1332,17 @@
 			"accrualPeriodicity" : "R/PT1S",
 			"contactPoint" : {
 				"@type" : "vcard:Contact",
-				"fn" : "Ammie Nicole Farraj-Feijoo",
-				"hasEmail" : "mailto:ammie.farrajfeijoo@gsa.gov"
+				"fn" : "Dawn McCleskey",
+				"hasEmail" : "mailto:support@search.gov"
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
 					"accessURL" : "https://search.usa.gov/login",
 					"format" : "API",
-					"title" : "DigitalGov Search API (formerly USASearch)"
+					"title" : "Search.gov Results API (formerly DigitalGov Search or USASearch)"
 				}
 			],
-			"keyword" : ["API", "USASearch"],
+			"keyword" : ["API", "USASearch", "DigitalGov Search"],
 			"bureauCode" : ["023:00"],
 			"programCode" : ["023:019"],
 			"language" : ["en-us"],
@@ -3835,7 +3835,7 @@
 		}, {
 			"@type" : "dcat:Dataset",
 			"title" : "Jobs API",
-			"description" : "This Jobs API returns job openings across the federal government and includes all current openings posted on USAJobs.gov that are open to the public and located in the United States. It also includes some state and local government jobs.",
+			"description" : "This Jobs API returns job openings across the federal government and includes all current openings posted on USAJobs.gov that are open to the public and located in the United States.",
 			"modified" : "2013-05-01",
 			"accessLevel" : "public",
 			"identifier" : "GSA-30251",
@@ -3851,12 +3851,12 @@
 			"accrualPeriodicity" : "R/P1D",
 			"contactPoint" : {
 				"@type" : "vcard:Contact",
-				"fn" : "Ammie Nicole Farraj-Feijoo",
-				"hasEmail" : "mailto:ammie.farrajfeijoo@gsa.gov"
+				"fn" : "Dawn McCleskey",
+				"hasEmail" : "mailto:support@search.gov"
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"accessURL" : "http://usasearch.howto.gov/developer/jobs.html",
+					"accessURL" : "https://search.gov/developer/jobs.html",
 					"format" : "API",
 					"title" : "Jobs API"
 				}
@@ -7570,7 +7570,7 @@
 			"accessLevel" : "public",
 			"identifier" : "GSA-30261",
 			"dataQuality" : true,
-			"describedBy" : "http://usasearch.howto.gov/developer/recalls.html",
+			"describedBy" : "https://search.gov/developer/recalls.html",
 			"issued" : "2011-03-01",
 			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
 			"rights" : "N/A",
@@ -7582,12 +7582,12 @@
 			"accrualPeriodicity" : "R/P1D",
 			"contactPoint" : {
 				"@type" : "vcard:Contact",
-				"fn" : "Ammie Nicole Farraj-Feijoo",
-				"hasEmail" : "mailto:ammie.farrajfeijoo@gsa.gov"
+				"fn" : "Dawn McCleskey",
+				"hasEmail" : "mailto:support@search.gov"
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"accessURL" : "http://usasearch.howto.gov/developer/recalls.html",
+					"accessURL" : "https://search.gov/developer/recalls.html",
 					"format" : "API",
 					"title" : "Recalls API"
 				}
