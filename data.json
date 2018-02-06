@@ -1317,8 +1317,8 @@
 			"programCode" : ["023:000"]
 		}, {
 			"@type" : "dcat:Dataset",
-			"title" : "Search.gov Results API (formerly DigitalGov Search or USASearch)",
-			"description" : "Provides Search.gov customers their search results in JSON. Sign in with a .gov or .mil email is required.",
+			"title" : "DigitalGov Search API (formerly USASearch)",
+			"description" : "Provides DigitalGov Search customers their search results in JSON. Sign in with a .gov or .mil email is required.",
 			"modified" : "2014-05-29",
 			"accessLevel" : "restricted public",
 			"identifier" : "GSA - 138681",
@@ -1332,17 +1332,17 @@
 			"accrualPeriodicity" : "R/PT1S",
 			"contactPoint" : {
 				"@type" : "vcard:Contact",
-				"fn" : "Dawn McCleskey",
-				"hasEmail" : "mailto:support@search.gov"
+				"fn" : "Ammie Nicole Farraj-Feijoo",
+				"hasEmail" : "mailto:ammie.farrajfeijoo@gsa.gov"
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
 					"accessURL" : "https://search.usa.gov/login",
 					"format" : "API",
-					"title" : "Search.gov Results API (formerly DigitalGov Search or USASearch)"
+					"title" : "DigitalGov Search API (formerly USASearch)"
 				}
 			],
-			"keyword" : ["API", "USASearch", "DigitalGov Search"],
+			"keyword" : ["API", "USASearch"],
 			"bureauCode" : ["023:00"],
 			"programCode" : ["023:019"],
 			"language" : ["en-us"],
@@ -3366,7 +3366,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA Enterprise Data Inventory (EDI)",
 			"description" : "GSA Enterprise Data Inventory (EDI)",
-			"modified" : "2018-01-18",
+			"modified" : "2018-02-05",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-13-01",
 			"dataQuality" : true,
@@ -3389,8 +3389,8 @@
 					"mediaType" : "application/json",
 					"format" : "json",
 					"title" : "EDI JSON FILE",
-					"description" : "Updated 01/18/2018",
-					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-json-file-01-18-18.js"
+					"description" : "Updated 02/05/2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-02-05-18.js"
 				}
 			],
 			"keyword" : ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3835,7 +3835,7 @@
 		}, {
 			"@type" : "dcat:Dataset",
 			"title" : "Jobs API",
-			"description" : "This Jobs API returns job openings across the federal government and includes all current openings posted on USAJobs.gov that are open to the public and located in the United States.",
+			"description" : "This Jobs API returns job openings across the federal government and includes all current openings posted on USAJobs.gov that are open to the public and located in the United States. It also includes some state and local government jobs.",
 			"modified" : "2013-05-01",
 			"accessLevel" : "public",
 			"identifier" : "GSA-30251",
@@ -3851,12 +3851,12 @@
 			"accrualPeriodicity" : "R/P1D",
 			"contactPoint" : {
 				"@type" : "vcard:Contact",
-				"fn" : "Dawn McCleskey",
-				"hasEmail" : "mailto:support@search.gov"
+				"fn" : "Ammie Nicole Farraj-Feijoo",
+				"hasEmail" : "mailto:ammie.farrajfeijoo@gsa.gov"
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"accessURL" : "https://search.gov/developer/jobs.html",
+					"accessURL" : "http://usasearch.howto.gov/developer/jobs.html",
 					"format" : "API",
 					"title" : "Jobs API"
 				}
@@ -5177,7 +5177,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Networx Business Volume FY2017 4th Quarter",
 			"description" : "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified" : "2017-01-03",
+			"modified" : "2018-01-03",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2018-01-03-01",
 			"dataQuality" : true,
@@ -6766,6 +6766,41 @@
 			"theme" : ["Card Services Program"]
 		}, {
 			"@type" : "dcat:Dataset",
+			"title" : "Purchase Card Transactions October - December 2017",
+			"description" : "Purchases made with the purchase card.  Files will be batched quarterly.",
+			"modified" : "2018-02-05",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2018-02-05-01",
+			"dataQuality" : true,
+			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights" : "N/A",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "General Services Administration"
+			},
+			"accrualPeriodicity" : "R/P3M",
+			"isPartOf" : "GSA-2016-01-05-01",
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "Nancy V Hexmoor",
+				"hasEmail" : "mailto:nancy.hexmoor@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "Oct. - Dec. 2017 PC Transactions",
+					"description" : "Purchases made with the purchase card. Files will be batched quarterly.",
+					"downloadURL" : "https://inventory.data.gov/dataset/1be5fd2e-00b2-4983-af1f-114b3d25a2a7/resource/bbeb5995-d6c0-4728-b502-481e034364d8/download/oct-dec-2017-gsa-pc-transactions.xlsx"
+				}
+			],
+			"keyword" : ["december", "november", "october", "purchase card", "transactions"],
+			"bureauCode" : ["023:00"],
+			"programCode" : ["023:010"],
+			"language" : ["en-us"],
+			"theme" : ["Card Services Program"]
+		}, {
+			"@type" : "dcat:Dataset",
 			"title" : "Purchase Card Transactions July - September 2016",
 			"description" : "Purchases made with the purchase card. Files will be batched quarterly.",
 			"modified" : "2016-10-19",
@@ -7497,7 +7532,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2018-01-03",
+			"modified" : "2018-02-05",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25251",
 			"dataQuality" : true,
@@ -7517,11 +7552,11 @@
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format" : "xlsx",
+					"mediaType" : "text/csv",
+					"format" : "csv",
 					"title" : "data_gov_bldg_rexus",
-					"description" : "January Rexus file",
-					"downloadURL" : "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/63663b53-7cb6-4bea-bc4e-1e5897ef3158/download/datagovbldgrexus.xlsx"
+					"description" : "February Rexus file",
+					"downloadURL" : "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/63663b53-7cb6-4bea-bc4e-1e5897ef3158/download/datagovbldgrexus.csv"
 				}
 			],
 			"keyword" : ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -7531,7 +7566,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) (Lease)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2018-01-03",
+			"modified" : "2018-02-05",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25261",
 			"dataQuality" : true,
@@ -7551,11 +7586,11 @@
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format" : "xlsx",
+					"mediaType" : "text/csv",
+					"format" : "csv",
 					"title" : "data_gov_lse_rexus",
-					"description" : "January Rexus file",
-					"downloadURL" : "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ae0d8c20-3c63-40c3-96da-24a24f507e79/download/datagovlserexus.xlsx"
+					"description" : "February Rexus file",
+					"downloadURL" : "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ae0d8c20-3c63-40c3-96da-24a24f507e79/download/datagovlserexus.csv"
 				}
 			],
 			"keyword" : ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -7570,7 +7605,7 @@
 			"accessLevel" : "public",
 			"identifier" : "GSA-30261",
 			"dataQuality" : true,
-			"describedBy" : "https://search.gov/developer/recalls.html",
+			"describedBy" : "http://usasearch.howto.gov/developer/recalls.html",
 			"issued" : "2011-03-01",
 			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
 			"rights" : "N/A",
@@ -7582,12 +7617,12 @@
 			"accrualPeriodicity" : "R/P1D",
 			"contactPoint" : {
 				"@type" : "vcard:Contact",
-				"fn" : "Dawn McCleskey",
-				"hasEmail" : "mailto:support@search.gov"
+				"fn" : "Ammie Nicole Farraj-Feijoo",
+				"hasEmail" : "mailto:ammie.farrajfeijoo@gsa.gov"
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"accessURL" : "https://search.gov/developer/recalls.html",
+					"accessURL" : "http://usasearch.howto.gov/developer/recalls.html",
 					"format" : "API",
 					"title" : "Recalls API"
 				}
