@@ -1883,7 +1883,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Energy Usage Analysis System",
 			"description" : "The EUAS application is a web based system which serves Energy Center of Expertise, under the Office of Facilitates Management and Service Programs.  EUAS is used for tracking energy details for various energy sources namely electricity, natural gas, oil, chilled water, steam and renewable energy.",
-			"modified" : "2015-11-16",
+			"modified" : "2018-02-13",
 			"accessLevel" : "public",
 			"identifier" : "GSA-4305",
 			"dataQuality" : true,
@@ -1903,10 +1903,102 @@
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"mediaType" : "application/zip",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format" : "xlsx",
-					"title" : "Energy Usage Analysis System",
-					"downloadURL" : "http://www.gsa.gov/dg/EUAS.zip"
+					"title" : "ACCTMULT",
+					"description" : "EUAS - February 2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/40a8dc65-3892-4b90-bc3d-aed025dcbeac/download/acctmult.xlsx"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "AREA_FIELD_OFFICE",
+					"description" : "EUAS - February 2018 EUAS",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/90f89199-c3a4-4e8b-ad81-59cfe30a24ff/download/areafieldoffice.xlsx"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "BUILDING_UNITS",
+					"description" : "EUAS - February 2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/2995cc8e-ddb5-4316-9cf5-9507c0284517/download/buildingunits.xlsx"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "CBECS_DATA_OFFICE_SPACE",
+					"description" : "EUAS - February 2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/8304cbcd-81b4-4fd7-aeea-bb31f2edf901/download/cbecsdataofficespace.xlsx"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "DIST_COST_CENTER",
+					"description" : "EUAS - February 2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/29f55faf-6e9e-456d-96eb-56d301f99f0a/download/distcostcenter.xlsx"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "DISTRICT",
+					"description" : "EUAS - February 2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/a27d2bf6-fd39-4207-a1f9-864365136a4a/download/district.xlsx"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "ENERGY_UTILIZATION",
+					"description" : "EUAS - February 2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/6db225db-9984-476d-b6eb-dd52d1205737/download/energyutilization.csv"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "FYR_BUILDING",
+					"description" : "EUAS - February 2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/6ee0689e-08ad-4317-90ae-2f8d68af5c49/download/fyrbuilding.xlsx"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "REGIONAL_PMT_TARGET",
+					"description" : "EUAS - February 2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/2dec83d7-1528-4441-a236-333dad55319d/download/regionalpmttarget.xlsx"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "UNIT_CONVERSIONS",
+					"description" : "EUAS - February 2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/79cc4b4a-0e4a-4eef-bc47-f766c17da0ab/download/unitconversions.xlsx"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "VENDOR",
+					"description" : "EUAS - February 2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/472ac414-8de7-405c-b81a-4c7f33778989/download/vendor.xlsx"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "WEATHER_DATA",
+					"description" : "EUAS - February 2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/02c874ff-0af6-40ba-9669-9bb83b46f9a9/download/weatherdata.xlsx"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "WEATHER_STATION",
+					"description" : "EUAS - February 2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/6b2eebc2-9399-4ffc-ba80-72154f330f1a/download/weatherstation.xlsx"
+				}, {
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "FACILITY_BUILDINGS",
+					"description" : "EUAS - February 2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/b168c887-c8c7-4fa4-bb98-8603a38ca259/download/facilitybuildings.xlsx"
 				}
 			],
 			"keyword" : ["Analysis", "Chilled Water", "Energy Usage", "Utilities", "electricity", "natural gas", "oil", "steam and renewable energy"],
@@ -3242,9 +3334,9 @@
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
 					"mediaType" : "text/csv",
-					"format" : "API",
+					"format" : "CSV",
 					"title" : "Full Domain Report",
-					"downloadURL" : "https://inventory.data.gov/dataset/b2c31002-8a5e-4cd0-85bd-6971934f4e59/resource/02706c7b-98e3-4267-8dd8-e3bb2d8c7ce3/download/fed-domains-04212017.csv"
+					"downloadURL" : "https://raw.githubusercontent.com/GSA/data/master/dotgov-domains/current-full.csv"
 				}
 			],
 			"keyword" : [".gov domains"],
@@ -3292,7 +3384,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA CIO Governance Board Membership List",
 			"description" : "Each agency is expected to post a JSON file for their Bureau IT Leadership Directory to the following URL path:\r\n [agency.gov]/digitalstrategy/governanceboards.json. Include all governance boards the CIO is a member of. Agencies shall keep this list up to date at least annually beginning in April 2016.",
-			"modified" : "2017-12-05",
+			"modified" : "2018-02-09",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2017-12-05-02",
 			"conformsTo" : "https://management.cio.gov/schemaexamples/governanceBoardSchema.json",
@@ -3366,7 +3458,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA Enterprise Data Inventory (EDI)",
 			"description" : "GSA Enterprise Data Inventory (EDI)",
-			"modified" : "2018-02-05",
+			"modified" : "2018-02-13",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-13-01",
 			"dataQuality" : true,
@@ -3389,8 +3481,8 @@
 					"mediaType" : "application/json",
 					"format" : "json",
 					"title" : "EDI JSON FILE",
-					"description" : "Updated 02/05/2018",
-					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-02-05-18.js"
+					"description" : "Updated 02/13/2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-02-13-18.js"
 				}
 			],
 			"keyword" : ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3532,7 +3624,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA IT Policy Archive Zip",
 			"description" : "A compressed zip file containing all of GSA's public IT policy documents, posted publicly at gsa.gov]/digitalstrategy/policyarchive.zip and identified in the agency public data listing as “Agency IT Policy Archive”.",
-			"modified" : "2017-10-26",
+			"modified" : "2018-02-07",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2016-11-02-01",
 			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -3550,8 +3642,8 @@
 					"mediaType" : "application/zip",
 					"format" : "ZIP",
 					"title" : "GSA IT Policy Archive Zip",
-					"description" : "Last update: 2017-10-26",
-					"downloadURL" : "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/it-policy-archive-zip.zip"
+					"description" : "Last update: 2018-02-07",
+					"downloadURL" : "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/it-policy-archive-zip.zip.zip"
 				}
 			],
 			"keyword" : ["Agency IT Policy Archive", "IT policy archive", "policy archive"],
@@ -7390,6 +7482,42 @@
 				}
 			],
 			"keyword" : ["BOCA", "Contract Board", "GSA SmartPay", "Purchase Card", "Transactions", "august", "july", "september"],
+			"bureauCode" : ["023:00"],
+			"programCode" : ["023:010"],
+			"language" : ["en-us"],
+			"theme" : ["Card Services Program"]
+		}, {
+			"@type" : "dcat:Dataset",
+			"title" : "Purchase Card Transactions - CBCA October - December 2017",
+			"description" : "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified" : "2018-02-13",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2018-02-12-01",
+			"dataQuality" : true,
+			"issued" : "2014-10-01",
+			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights" : "N/A",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "General Services Administration"
+			},
+			"accrualPeriodicity" : "R/P3M",
+			"isPartOf" : "GSA-2016-01-06-1",
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "James G Parks",
+				"hasEmail" : "mailto:greg.parks@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "1st Quarter 2018 PC Transactions",
+					"description" : "1st Qtr 2018 PC Transactions",
+					"downloadURL" : "https://inventory.data.gov/dataset/aab28d23-e975-44e6-8ec2-4f38f68f504e/resource/56f32746-72ee-467b-a324-86ec1400c10c/download/oct-dec-2017-cbca-pc-transactions.xlsx"
+				}
+			],
+			"keyword" : ["BOCA", "Contract Board", "December", "GSA SmartPay", "November", "October", "Purchase Card", "Transactions"],
 			"bureauCode" : ["023:00"],
 			"programCode" : ["023:010"],
 			"language" : ["en-us"],
