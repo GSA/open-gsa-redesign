@@ -1281,7 +1281,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA DCOI Strategic Plan",
 			"description" : "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly.",
-			"modified" : "2017-11-30",
+			"modified" : "2018-02-28",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2016-09-27-02",
 			"conformsTo" : "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
@@ -1301,7 +1301,7 @@
 					"mediaType" : "application/json",
 					"format" : "json",
 					"title" : "datacenteroptimizationstrategicplan",
-					"description" : "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 11/30/2017.",
+					"description" : "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 2/28/2018.",
 					"conformsTo" : "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
 					"downloadURL" : "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/b8d9e71b-963b-4398-8d37-04628e64871d/download/datacenteroptimizationstrategicplan.json"
 				}, {
@@ -3347,7 +3347,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA Bureau IT Leadership Directory",
 			"description" : "Each agency is expected to post a JSON file for their Bureau IT Leadership Directory. Each dataset should include one record for each agency employee with the title of “chief information officer” or who performs the duties and responsibilities of a CIO but does not necessarily have the title of CIO.",
-			"modified" : "2017-12-05",
+			"modified" : "2018-02-28",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2017-12-05-01",
 			"conformsTo" : "https://management.cio.gov/schemaexamples/bureauITLeadershipSchema.json",
@@ -3458,7 +3458,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA Enterprise Data Inventory (EDI)",
 			"description" : "GSA Enterprise Data Inventory (EDI)",
-			"modified" : "2018-02-13",
+			"modified" : "2018-03-01",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-13-01",
 			"dataQuality" : true,
@@ -3481,8 +3481,8 @@
 					"mediaType" : "application/json",
 					"format" : "json",
 					"title" : "EDI JSON FILE",
-					"description" : "Updated 02/13/2018",
-					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-02-13-18.js"
+					"description" : "Updated 03/01/2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-json-030118.js"
 				}
 			],
 			"keyword" : ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3560,7 +3560,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA FITARA Actions and Milestones",
 			"description" : "This JSON file represents GSA's FITARA Actions and Milestones submission to OMB.  This file abides by the OMB JSON schema found here: https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
-			"modified" : "2017-11-30",
+			"modified" : "2018-02-28",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2016-04-27-01",
 			"conformsTo" : "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
@@ -3578,8 +3578,8 @@
 					"@type" : "dcat:Distribution",
 					"mediaType" : "application/json",
 					"format" : "json",
-					"title" : "GSA FITARA Actions and Milestones 2017-11-30",
-					"description" : "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the November 30, 2017, quarterly submission to OMB.\r\nOn September 30, 2016, five milestones were added as a result of the Data Center Optimization Initiative (DCOI) Strategic Plan requirements.",
+					"title" : "GSA FITARA Actions and Milestones 2018-02-28",
+					"description" : "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the February 28, 2018, quarterly submission to OMB.\r\nOn September 30, 2016, five milestones were added as a result of the Data Center Optimization Initiative (DCOI) Strategic Plan requirements.",
 					"conformsTo" : "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
 					"downloadURL" : "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
 				}
@@ -3591,7 +3591,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA IT Reform Cost Savings/Avoidance",
 			"description" : "GSA IT provides data related to Agency IT initiatives that save or avoid expenditures.  This data is provided as a requirement of OMB's Integrated Data Collection (IDC) and posted publicly as a requirement of the Federal Information Technology Acquisition Reform Act (FITARA) leglislation.",
-			"modified" : "2017-11-30",
+			"modified" : "2018-02-28",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-25-01",
 			"issued" : "2015-11-25",
@@ -3611,7 +3611,7 @@
 					"mediaType" : "application/json",
 					"format" : "JSON",
 					"title" : "GSA IT Reform Cost Savings/Avoidance",
-					"description" : "GSA's November 2017 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description" : "GSA's February 2018 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo" : "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL" : "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -7660,7 +7660,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2018-02-05",
+			"modified" : "2018-03-01",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25251",
 			"dataQuality" : true,
@@ -7683,7 +7683,7 @@
 					"mediaType" : "text/csv",
 					"format" : "csv",
 					"title" : "data_gov_bldg_rexus",
-					"description" : "February Rexus file",
+					"description" : "March Rexus file",
 					"downloadURL" : "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/63663b53-7cb6-4bea-bc4e-1e5897ef3158/download/datagovbldgrexus.csv"
 				}
 			],
@@ -7694,7 +7694,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Real Estate Across the United States (REXUS) (Lease)",
 			"description" : "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified" : "2018-02-05",
+			"modified" : "2018-03-01",
 			"accessLevel" : "public",
 			"identifier" : "GSA-25261",
 			"dataQuality" : true,
@@ -7717,7 +7717,7 @@
 					"mediaType" : "text/csv",
 					"format" : "csv",
 					"title" : "data_gov_lse_rexus",
-					"description" : "February Rexus file",
+					"description" : "March Rexus file",
 					"downloadURL" : "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ae0d8c20-3c63-40c3-96da-24a24f507e79/download/datagovlserexus.csv"
 				}
 			],
