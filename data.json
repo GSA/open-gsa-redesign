@@ -2865,7 +2865,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Federal Real Property Profile Data for Civilian Agencies",
 			"description" : "An export of data from FRPP, a database of Federal Real Property Profile for Civilian Agencies.",
-			"modified" : "2017-12-14",
+			"modified" : "2018-03-22",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2017-12-06-01",
 			"dataQuality" : true,
@@ -2892,11 +2892,11 @@
 					"@type" : "dcat:Distribution",
 					"mediaType" : "text/csv",
 					"format" : "csv",
-					"title" : "FY 2016 Civilian Agency Public FRPP Dataset 12142017",
-					"description" : "FY 2016 Civilian Agency Public FRPP Dataset 12142017",
+					"title" : "FY 2017 Civilian Agency Public FRPP",
+					"description" : "FY 2017 Civilian Agency Public FRPP",
 					"describedBy" : "https://www.gsa.gov/cdnstatic/FY_2016_FRPP_Data_Dictionary_Version_3___Oct_31__2016.pdf",
 					"describedByType" : "application/pdf",
-					"downloadURL" : "https://inventory.data.gov/dataset/509d3f36-464e-4e4c-a26b-8582605c254e/resource/37120970-e7cf-47e3-ba25-3f5a6b0f4c2f/download/fy-2016-civilian-agency-public-frpp-dataset-12142017.csv"
+					"downloadURL" : "https://inventory.data.gov/dataset/509d3f36-464e-4e4c-a26b-8582605c254e/resource/37120970-e7cf-47e3-ba25-3f5a6b0f4c2f/download/fy-2017-civilian-agency-public-frpp-data.csv"
 				}
 			],
 			"keyword" : ["FRPP", "Federal Real Property Profile", "GSA", "General Services Administration", "RTF", "building", "civilian", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -3458,7 +3458,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA Enterprise Data Inventory (EDI)",
 			"description" : "GSA Enterprise Data Inventory (EDI)",
-			"modified" : "2018-03-21",
+			"modified" : "2018-03-22",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-13-01",
 			"dataQuality" : true,
@@ -3481,8 +3481,8 @@
 					"mediaType" : "application/json",
 					"format" : "json",
 					"title" : "EDI JSON FILE",
-					"description" : "Updated 03/21/2018",
-					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-json-032118.js"
+					"description" : "Updated 03/22/2018",
+					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/487f8d7d-74eb-4de4-b692-989cc6ae1210/download/edi-json-032218.js"
 				}
 			],
 			"keyword" : ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5302,6 +5302,41 @@
 					"title" : "TotRevFY17_4thQtr",
 					"description" : "Networx Business Volume FY2017 4th Quarter",
 					"downloadURL" : "https://inventory.data.gov/dataset/db977dc9-1140-40b9-8a39-82be9aaab53c/resource/cb57834a-9a1f-4260-a6cd-88a6df576645/download/totrevfy174thqtr.xlsx"
+				}
+			],
+			"keyword" : ["Contract", "Networx Telecommunications", "Telecommunications"],
+			"bureauCode" : ["023:00"],
+			"programCode" : ["023:019"],
+			"language" : ["en-US"],
+			"theme" : ["Telecommunications Services"]
+		}, {
+			"@type" : "dcat:Dataset",
+			"title" : "Networx Business Volume FY2018 1st Quarter",
+			"description" : "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+			"modified" : "2018-03-22",
+			"accessLevel" : "public",
+			"identifier" : "GSA-2018-03-22-01",
+			"dataQuality" : true,
+			"issued" : "2015-11-13",
+			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+			"publisher" : {
+				"@type" : "org:Organization",
+				"name" : "General Services Administration"
+			},
+			"accrualPeriodicity" : "R/P3M",
+			"isPartOf" : "GSA-2015-08-27P",
+			"contactPoint" : {
+				"@type" : "vcard:Contact",
+				"fn" : "Toni L Holloway",
+				"hasEmail" : "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution" : [{
+					"@type" : "dcat:Distribution",
+					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format" : "xlsx",
+					"title" : "TotRevFY18_1stQtr",
+					"description" : "Networx Business Volume FY2018 1st Quarter",
+					"downloadURL" : "https://inventory.data.gov/dataset/18802746-dfaa-4db5-83a0-b9bf199aee94/resource/30fe93d5-91b5-40f2-8434-b782f18ca0d1/download/totrevfy181stqtr.xlsx"
 				}
 			],
 			"keyword" : ["Contract", "Networx Telecommunications", "Telecommunications"],
