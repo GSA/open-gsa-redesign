@@ -1300,15 +1300,16 @@
 					"@type" : "dcat:Distribution",
 					"mediaType" : "application/json",
 					"format" : "json",
-					"title" : "datacenteroptimizationstrategicplan",
-					"description" : "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 2/28/2018.",
+					"title" : "GSA DCOI Strategic Plan May 2018",
+					"description" : "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 5/8/2018 at 10:55 am Eastern",
 					"conformsTo" : "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
 					"downloadURL" : "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/b8d9e71b-963b-4398-8d37-04628e64871d/download/datacenteroptimizationstrategicplan.json"
 				}, {
 					"@type" : "dcat:Distribution",
 					"mediaType" : "application/pdf",
 					"format" : "pdf",
-					"title" : "DCOI CIO Statement September 2016",
+					"title" : "DCOI CIO Statement May 2018",
+					"description" : "May 1, 2018 - GSA has verified that our Strategic Plan is a valid JSON file, conforms to the schema on management.cio.gov/schema, and addresses all of the requirements for it specified in the DCOI. \r\n\r\nIt further confirms that this Strategic Plan has been posted publicly as requested in the template at [agency.gov]/digitalstrategy/datacenteroptimizationstrategicplan.json under the heading “Data Center Optimization Initiative Strategic Plans”.",
 					"downloadURL" : "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/c61e4b8a-4a4a-46b3-9d95-36d227bc28c3/download/gsa-dcoi-cio-signature.pdf"
 				}
 			],
@@ -3578,7 +3579,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA Enterprise Data Inventory (EDI)",
 			"description" : "GSA Enterprise Data Inventory (EDI)",
-			"modified" : "2018-05-01",
+			"modified" : "2018-05-08",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-13-01",
 			"dataQuality" : true,
@@ -3601,8 +3602,8 @@
 					"mediaType" : "application/json",
 					"format" : "JSON",
 					"title" : "EDI JSON",
-					"description" : "EDI JSON 05/01/18",
-					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-05-01-18.js"
+					"description" : "EDI JSON 05/08/18",
+					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-05-08-18.js"
 				}
 			],
 			"keyword" : ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3762,7 +3763,7 @@
 					"mediaType" : "application/zip",
 					"format" : "ZIP",
 					"title" : "GSA IT Policy Archive Zip",
-					"description" : "Last update: 2018-02-07",
+					"description" : "Last update: 2018-05-02",
 					"downloadURL" : "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
 				}
 			],
@@ -3908,7 +3909,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Inventory of Owned and Leased Properties (IOLP)",
 			"description" : "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified" : "2018-05-01",
+			"modified" : "2018-05-08",
 			"accessLevel" : "public",
 			"identifier" : "GSA-4495",
 			"dataQuality" : true,
@@ -8162,7 +8163,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Subcontracting Directory for Small Businesses",
 			"description" : "The GSA Subcontracting Directory list large Prime Contractors who, by law, are required to establish plans and goals for subcontracting with Small Business Firms.",
-			"modified" : "2018-04-11",
+			"modified" : "2018-05-08",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-10-26-01",
 			"dataQuality" : true,
@@ -8183,12 +8184,12 @@
 			},
 			"distribution" : [{
 					"@type" : "dcat:Distribution",
-					"mediaType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format" : "xlsx",
+					"mediaType" : "text/csv",
+					"format" : "csv",
 					"title" : "Subcontracting Directory - April 2018",
 					"describedBy" : "http://gsa.gov/subdirectory",
 					"describedByType" : "text/csv",
-					"downloadURL" : "https://inventory.data.gov/dataset/50bfccab-460c-4f18-9f17-28c4104e6d50/resource/6bee15c5-d9cb-412d-9523-ad8cf1e2801a/download/subkdirectoryapr52018.xlsx"
+					"downloadURL" : "https://inventory.data.gov/dataset/50bfccab-460c-4f18-9f17-28c4104e6d50/resource/6bee15c5-d9cb-412d-9523-ad8cf1e2801a/download/subkdirectoryapr52018.csv"
 				}
 			],
 			"keyword" : ["Prime Contractors", "Subcontracting", "Subcontracting Directory"],
