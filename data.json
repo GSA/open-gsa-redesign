@@ -3579,7 +3579,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "GSA Enterprise Data Inventory (EDI)",
 			"description" : "GSA Enterprise Data Inventory (EDI)",
-			"modified" : "2018-05-08",
+			"modified" : "2018-05-10",
 			"accessLevel" : "public",
 			"identifier" : "GSA-2015-11-13-01",
 			"dataQuality" : true,
@@ -3602,8 +3602,8 @@
 					"mediaType" : "application/json",
 					"format" : "JSON",
 					"title" : "EDI JSON",
-					"description" : "EDI JSON 05/08/18",
-					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-05-08-18.js"
+					"description" : "EDI JSON 05/10/18",
+					"downloadURL" : "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-05-10-18.js"
 				}
 			],
 			"keyword" : ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3909,7 +3909,7 @@
 			"@type" : "dcat:Dataset",
 			"title" : "Inventory of Owned and Leased Properties (IOLP)",
 			"description" : "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified" : "2018-05-08",
+			"modified" : "2018-05-10",
 			"accessLevel" : "public",
 			"identifier" : "GSA-4495",
 			"dataQuality" : true,
@@ -7925,41 +7925,6 @@
 			"bureauCode" : ["023:05"],
 			"programCode" : ["023:003"],
 			"theme" : ["Leases"]
-		}, {
-			"@type" : "dcat:Dataset",
-			"title" : "Recalls API",
-			"description" : "This Recalls API allows you to tap into a list of (1) drug and food safety recalls from the Food and Drug Administration, Food Safety and Inspection Service, and FoodSafety.gov; (2) car safety recalls from the National Highway Traffic Safety Administration; and (3) product safety recalls from the Consumer Product Safety Commission.",
-			"modified" : "2013-05-01",
-			"accessLevel" : "public",
-			"identifier" : "GSA-30261",
-			"dataQuality" : true,
-			"describedBy" : "http://usasearch.howto.gov/developer/recalls.html",
-			"issued" : "2011-03-01",
-			"license" : "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights" : "N/A",
-			"spatial" : "U.S.",
-			"publisher" : {
-				"@type" : "org:Organization",
-				"name" : "General Services Administration"
-			},
-			"accrualPeriodicity" : "R/P1D",
-			"contactPoint" : {
-				"@type" : "vcard:Contact",
-				"fn" : "Ammie Nicole Farraj-Feijoo",
-				"hasEmail" : "mailto:ammie.farrajfeijoo@gsa.gov"
-			},
-			"distribution" : [{
-					"@type" : "dcat:Distribution",
-					"accessURL" : "http://usasearch.howto.gov/developer/recalls.html",
-					"format" : "API",
-					"title" : "Recalls API"
-				}
-			],
-			"keyword" : ["CPSC", "FDA", "NHTSA", "USDA"],
-			"bureauCode" : ["023:10"],
-			"programCode" : ["023:009"],
-			"language" : ["en-us"],
-			"theme" : ["API"]
 		}, {
 			"@type" : "dcat:Dataset",
 			"title" : "Closed-Paid Vouchers in Concur Government Edition (CGE)",
