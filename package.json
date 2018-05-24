@@ -52,7 +52,7 @@
     "postcss": "^5.2.15",
     "postcss-cli": "^2.6.0",
     "psi": "^2.0.4",
-    "uswds": "^1.0.0",
+    "uswds": "^1.6.3",
     "watch": "^0.17.1"
   },
   "dependencies": {
