@@ -83,4 +83,14 @@ footer:
 markdown: kramdown
 include:
   - _navigation.json
-exclude: [node_modules, gulpifle.js, CONTRIBUTING.md, LICENSE.md, README.md]
+exclude: exclude:
+  - 'README.md'
+  - 'LICENSE.md'
+  - 'Rakefile'
+  - 'Gemfile'
+  - 'Gemfile.lock'
+  - 'package.json'
+  - 'node_modules'
+  - '_test'
+  - '.circleci'
+  - 'vendor'
