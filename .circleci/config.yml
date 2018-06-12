@@ -40,4 +40,4 @@ jobs:
       - run:
           name: run tests
           command: |
-            npm test
+            bundle exec rake test:ci
