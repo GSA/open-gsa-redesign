@@ -46,24 +46,25 @@ banner-button-link: https://catalog.data.gov/organization/gsa-gov
 
     <section class="usa-section usa-section-dark">
         <div class="usa-grid-full">
-            <h2 style="text-align: center;">Featured GSA Open Datasets</h2> {% for data in site.data.data %}
+            <h2 style="text-align: center;">Featured GSA Open Datasets</h2> 
             <div class="usa-width-one-whole data-list">
-                <article class="data-listing">
-                    <header>
-                        <h3 class="title">{{ data.title }}</h3>
-                    </header>
-                    <div class="content">
-                        <p class="txt">
-                            {{ data.body }}
-                        </p>
-                        <button class="usa-button-gray"><a href="{{ data.url }}">View Project</a></button>
-                    </div>
-                    <footer class="usa-card-footer">
-                    </footer>
-                </article>
-            </div>
+                {% for data in site.data.data %}
+                    <article class="data-listing">
+                        <header>
+                            <h3 class="title">{{ data.title }}</h3>
+                        </header>
+                        <div class="content">
+                            <p class="txt">
+                                {{ data.body }}
+                            </p>
+                            <button class="usa-button-gray"><a href="{{ data.url }}">View Project</a></button>
+                        </div>
+                        <footer class="usa-card-footer">
+                        </footer>
+                    </article>
                 {% endfor %}
             </div>
+        </div>
     </section>
 
 {% include feedback.html %}
