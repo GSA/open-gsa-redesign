@@ -4,3 +4,4 @@ _site
 .idea/
 npm-debug.log
 node_modules
+_test

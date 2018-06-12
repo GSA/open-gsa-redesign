@@ -47,7 +47,7 @@
   description: This API allows you to tap into a list of all government URLs that don't end in .gov or .mil. URLs are searchable by keyword, state, or scope.
   url: https://search.digitalgov.gov/developer/govt-urls.html
 - title: Per Diem API
-  description: This API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 392 locations across the continental United States for Fiscal Year 2013.
+  description: This API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&amp;IE) rates for 392 locations across the continental United States for Fiscal Year 2013.
   url: http://gsa.gov/portal/content/162379
 - title: Sustainable Facilities Tool API
   description: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
