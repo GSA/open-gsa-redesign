@@ -1,12 +1,12 @@
 ---
 layout: event
-permalink: /events/event-template
+permalink: 
 tags: event
 title: Insert title here
 date: December 10, 2016
 location: Washington, DC
 txt: description
-link: /events/event-link
+link: 
 gcal: http://google.com
 ical: http://google.com
 
