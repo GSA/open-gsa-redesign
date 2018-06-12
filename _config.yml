@@ -83,7 +83,7 @@ footer:
 markdown: kramdown
 include:
   - _navigation.json
-exclude: exclude:
+exclude:
   - 'README.md'
   - 'LICENSE.md'
   - 'Rakefile'
