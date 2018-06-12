@@ -8,10 +8,21 @@ permalink: search.html
 image: /assets/img/data-pattern.png
 category: search
 ---
-<section>
-  {% include search.html %}
+<section class="usa-section test-class">
+  <div class="usa-grid">
+    <div class="usa-width-one-whole">
+      {% include search.html %}
+    </div>
+  </div>
 </section>
-<div id="search-results"></div>
+
+<section>
+  <div class="usa-grid">
+    <div class="usa-width-one-whole">
+      <div id="search-results"></div>
+    </div>
+  </div>
+</section>
 
 <script>
   var baseurl = "{{ site.baseurl }}";
