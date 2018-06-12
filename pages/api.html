@@ -48,24 +48,24 @@ banner-button-title: GSA APIs on Data.gov
 
     <section class="usa-section usa-section-dark">
         <div class="usa-grid-full">
-            <h2 style="text-align: center;">Featured GSA APIs</h2> {% for apis in site.data.api-list %}
+            <h2 style="text-align: center;">Featured GSA APIs</h2> 
             <div class="usa-width-one-whole data-list">
-                <article class="data-listing">
-                    <header>
-                        <h3 class="title">{{ apis.title }}</h3>
-                    </header>
-                    <div class="content">
-                        <p class="txt">
-                            {{ apis.description }}
-                        </p>
-                        <button class="usa-button-gray"><a href="{{ apis.url | prepend: site.baseurl }}">View Project</a></button>
-                    </div>
-                    <footer class="usa-card-footer">
-                    </footer>
-                </article>
-            </div>
+                {% for apis in site.data.api-list %}
+                    <article class="data-listing">
+                        <header>
+                            <h3 class="title">{{ apis.title }}</h3>
+                        </header>
+                        <div class="content">
+                            <p class="txt">
+                                {{ apis.description }}
+                            </p>
+                            <button class="usa-button-gray"><a href="{{ apis.url | prepend: site.baseurl }}">View Project</a></button>
+                        </div>
+                        <footer class="usa-card-footer">
+                        </footer>
+                    </article>
                 {% endfor %}
-            
+            </div>
         </div>
     </section>
 
