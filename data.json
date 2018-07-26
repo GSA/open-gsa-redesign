@@ -3578,7 +3578,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2018-07-16",
+			"modified": "2018-07-26",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3601,8 +3601,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON  07/16/18",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-07-16-18.json"
+					"description": "EDI JSON  07/26/18",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-07-26-18.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3908,7 +3908,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
 			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2018-07-16",
+			"modified": "2018-07-26",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
@@ -6514,9 +6514,9 @@
 			"theme": ["API"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions July-September 2015",
+			"title": "GSA Purchase Card Transactions July-September 2015",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2016-01-05",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA - 138791",
 			"dataQuality": true,
@@ -6548,9 +6548,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions Parent",
+			"title": "GSA Purchase Card Transactions Parent",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2016-01-05",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-01",
 			"dataQuality": true,
@@ -6573,9 +6573,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions April - June 2015",
+			"title": "GSA Purchase Card Transactions April - June 2015",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2016-01-05",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-2",
 			"dataQuality": true,
@@ -6607,9 +6607,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions January - March 2015",
+			"title": "GSA Purchase Card Transactions January - March 2015",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2016-01-05",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-3",
 			"dataQuality": true,
@@ -6641,9 +6641,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions October - December 2014",
+			"title": "GSA Purchase Card Transactions October - December 2014",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2016-01-05",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-4",
 			"dataQuality": true,
@@ -6675,9 +6675,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions July - September 2014",
+			"title": "GSA Purchase Card Transactions July - September 2014",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2016-01-05",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-5",
 			"dataQuality": true,
@@ -6710,9 +6710,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions April - June 2014",
+			"title": "GSA Purchase Card Transactions April - June 2014",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2016-01-05",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-6",
 			"dataQuality": true,
@@ -6745,9 +6745,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions January - March 2014",
+			"title": "GSA Purchase Card Transactions January - March 2014",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2016-01-05",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-7",
 			"dataQuality": true,
@@ -6780,9 +6780,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions October - December 2013",
+			"title": "GSA Purchase Card Transactions October - December 2013",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2016-01-05",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-8",
 			"dataQuality": true,
@@ -6815,9 +6815,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions October - December 2015",
+			"title": "GSA Purchase Card Transactions October - December 2015",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2016-02-01",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-02-01",
 			"dataQuality": true,
@@ -6850,9 +6850,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions January - March 2016",
+			"title": "GSA Purchase Card Transactions January - March 2016",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2016-04-15",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-04-15-01",
 			"dataQuality": true,
@@ -6885,9 +6885,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions April - June 2016",
+			"title": "GSA Purchase Card Transactions April - June 2016",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2016-08-03",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-08-03-01",
 			"dataQuality": true,
@@ -6912,16 +6912,16 @@
 					"downloadURL": "https://inventory.data.gov/dataset/31b9e4bb-768f-4851-9e63-b8a9392143cb/resource/68c0a56e-12ff-4019-9752-2729bcad1c96/download/apr-jun-2016-pc-transactions.xlsx"
 				}
 			],
-			"keyword": ["january", "march", "purchase card", "transactions"],
+			"keyword": ["april", "june", "may", "purchase card", "transactions"],
 			"bureauCode": ["023:00"],
 			"programCode": ["023:010"],
 			"language": ["en-us"],
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions October - December 2016",
+			"title": "GSA Purchase Card Transactions October - December 2016",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2017-02-15",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-02-15-01",
 			"dataQuality": true,
@@ -6953,9 +6953,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions January - March 2017",
+			"title": "GSA Purchase Card Transactions January - March 2017",
 			"description": "2nd Quarter 2017 Purchase Card Transactions",
-			"modified": "2017-11-20",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-04-13-01",
 			"dataQuality": true,
@@ -6988,9 +6988,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions April - June 2017",
+			"title": "GSA Purchase Card Transactions April - June 2017",
 			"description": "Purchases made with the purchase card.  Files will be batched quarterly.",
-			"modified": "2017-07-19",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-07-19-01",
 			"dataQuality": true,
@@ -7023,9 +7023,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions July - September 2017",
+			"title": "GSA Purchase Card Transactions July - September 2017",
 			"description": "Purchases made with the purchase card.  Files will be batched quarterly.",
-			"modified": "2017-11-20",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-11-20-01",
 			"dataQuality": true,
@@ -7058,9 +7058,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions October - December 2017",
+			"title": "GSA Purchase Card Transactions October - December 2017",
 			"description": "Purchases made with the purchase card.  Files will be batched quarterly.",
-			"modified": "2018-02-05",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-02-05-01",
 			"dataQuality": true,
@@ -7093,9 +7093,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions January - March 2018",
+			"title": "GSA Purchase Card Transactions January - March 2018, 2nd Qtr",
 			"description": "Purchases made with the purchase card.  Files will be batched quarterly.  2nd Quarter 2018.",
-			"modified": "2018-05-01",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-05-01-01",
 			"dataQuality": true,
@@ -7128,9 +7128,44 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions July - September 2016",
+			"title": "GSA Purchase Card Transactions April - June, 2018 - 3rd Qtr",
+			"description": "Purchases made with the purchase card.  Files will be batched quarterly.",
+			"modified": "2018-07-26",
+			"accessLevel": "public",
+			"identifier": "GSA-2018-07-25-03",
+			"dataQuality": true,
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-05-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Nancy V Hexmoor",
+				"hasEmail": "mailto:nancy.hexmoor@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "Apr-Jun 2018 3rd Qtr GSA PC Transactions",
+					"description": "Apr-Jun 2018 3rd Qtr GSA PC Transactions",
+					"downloadURL": "https://inventory.data.gov/dataset/c00f6b6d-f5a6-439e-b0d3-32a33a7dca7a/resource/99d0b5b5-700e-4717-87f0-6b63d5852401/download/apr-jun-2018-3rd-qtr-gsa-pc-transactions.xlsx"
+				}
+			],
+			"keyword": ["april", "june", "may", "purchase card", "transactions"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "GSA Purchase Card Transactions July - September 2016",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2016-10-19",
+			"modified": "2018-07-25",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-10-19-01",
 			"dataQuality": true,
@@ -7747,9 +7782,81 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
-					"title": "1st Quarter 2018 PC Transactions",
-					"description": "1st Qtr 2018 PC Transactions",
+					"title": "1st Quarter 2018 CBCA PC Transactions",
+					"description": "1st Qtr 2018 CBCA PC Transactions",
 					"downloadURL": "https://inventory.data.gov/dataset/aab28d23-e975-44e6-8ec2-4f38f68f504e/resource/56f32746-72ee-467b-a324-86ec1400c10c/download/oct-dec-2017-cbca-pc-transactions.xlsx"
+				}
+			],
+			"keyword": ["BOCA", "Contract Board", "December", "GSA SmartPay", "November", "October", "Purchase Card", "Transactions"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Purchase Card Transactions - CBCA (Jan-Mar) 2018 2nd Qtr",
+			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified": "2018-07-25",
+			"accessLevel": "public",
+			"identifier": "GSA-2018-07-25-01",
+			"dataQuality": true,
+			"issued": "2014-10-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-06-1",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "James G Parks",
+				"hasEmail": "mailto:greg.parks@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "2018-2nd Qtr (Jan-Mar) CBCA PC Transactions",
+					"description": "2018-2nd Qtr (Jan-Mar) CBCA PC Transactions",
+					"downloadURL": "https://inventory.data.gov/dataset/9fe93891-4c58-4162-8ede-53741debfea8/resource/28fbfa57-10e3-4a57-80ed-48c6e46d12ff/download/2018-2nd-qtr-jan-mar-cbca-pc-transactions.xlsx"
+				}
+			],
+			"keyword": ["BOCA", "Contract Board", "December", "GSA SmartPay", "November", "October", "Purchase Card", "Transactions"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Purchase Card Transactions - CBCA (Apr-Jun) 2018 - 3rd Qtr",
+			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified": "2018-07-25",
+			"accessLevel": "public",
+			"identifier": "GSA-2018-07-25-02",
+			"dataQuality": true,
+			"issued": "2014-10-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-06-1",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "James G Parks",
+				"hasEmail": "mailto:greg.parks@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "2018-3rd Qtr (Apr-Jun) CBCA PC Transactions",
+					"description": "2018-3rd Qtr (Apr-Jun) CBCA PC Transactions",
+					"downloadURL": "https://inventory.data.gov/dataset/4287c550-54be-4da8-b226-c3772a02d0a5/resource/7b629dac-b409-480a-9246-dae8e17bb3ce/download/2018-3rd-qtr-apr-jun-cbca-pc-transactions.xlsx"
 				}
 			],
 			"keyword": ["BOCA", "Contract Board", "December", "GSA SmartPay", "November", "October", "Purchase Card", "Transactions"],
@@ -7895,7 +8002,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2018-06-01",
+			"modified": "2018-07-19",
 			"accessLevel": "public",
 			"identifier": "GSA-25251",
 			"dataQuality": true,
@@ -7918,7 +8025,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_bldg_rexus",
-					"description": "June - Building Rexus file",
+					"description": "July - Building Rexus file",
 					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/63663b53-7cb6-4bea-bc4e-1e5897ef3158/download/datagovbldgrexus.csv"
 				}
 			],
@@ -7929,7 +8036,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) (Lease)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2018-06-01",
+			"modified": "2018-07-19",
 			"accessLevel": "public",
 			"identifier": "GSA-25261",
 			"dataQuality": true,
@@ -7952,7 +8059,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus",
-					"description": "June - Lease Rexus file",
+					"description": "July - Lease Rexus file",
 					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ae0d8c20-3c63-40c3-96da-24a24f507e79/download/datagovlserexus.csv"
 				}
 			],
