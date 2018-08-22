@@ -3,7 +3,7 @@
   url: http://api.data.gov/developer/
 - title: Discovery API
   description: The Discovery API drives the Discovery Market Research Tool. It contains information on the vendors that are part of the OASIS and OASIS Small Business contracting vehicles, such as their contracting history, their eligibility for contract awards, and their small business designations.
-  url: https://www.gsa.gov/acquisition/products-services/professional-services/oasis-and-oasis-small-business/oasis-discovery-market-research-tool/
+  url: https://discovery.gsa.gov/api/
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: http://gsa.github.io/auctions_api/
