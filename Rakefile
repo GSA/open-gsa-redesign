@@ -12,25 +12,6 @@ task :build do
   sh "bundle exec jekyll build -q", verbose: false
 end
 
-desc "Deploy the site by merging a branch into master and pushing to origin"
-task :deploy, [:branch] do |task, args|
-  branch = args[:branch]
-  if branch.nil?
-    puts "You must specify a branch to deploy (e.g. 'rake deploy[dev]')"
-  else
-    sh <<-EOS, { verbose: false }
-      SOURCE_BRANCH=#{branch}
-      PROD_BRANCH=master
-      INITIAL_BRANCH=`git symbolic-ref --short HEAD`
-      git fetch -q origin $PROD_BRANCH
-      git checkout -q $PROD_BRANCH
-      echo "Merging branch '${SOURCE_BRANCH}' and pushing..."
-      git merge $SOURCE_BRANCH && git push origin $PROD_BRANCH
-      git checkout -q $INITIAL_BRANCH
-    EOS
-  end
-end
-
 namespace :test do
   desc "Run ESLint"
   task :eslint do
