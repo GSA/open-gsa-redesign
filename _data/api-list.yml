@@ -43,9 +43,6 @@
 - title: Government Jobs API
   description: This API returns job openings on USAJobs.gov that are open to the public and located in the United States.
   url: http://search.digitalgov.gov/developer/jobs.html
-- title: Non-Gov URLs API
-  description: This API allows you to tap into a list of all government URLs that don't end in .gov or .mil. URLs are searchable by keyword, state, or scope.
-  url: https://search.digitalgov.gov/developer/govt-urls.html
 - title: Per Diem API
   description: This API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&amp;IE) rates for 392 locations across the continental United States for Fiscal Year 2013.
   url: http://gsa.gov/portal/content/162379
@@ -56,5 +53,5 @@
   description: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
   url: http://gsa.github.io/sam_api/sam/
 - title: US Digital Registry API
-  description: The U.S. Digital Registry serves as the authoritative resource for agencies, citizens and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps and mobile websites, and help prevent exploitation from unofficial sources, phishing scams or malicious entities.
+  description: Contains listing from the U.S. Digital Media Registry, which serves as a crowdsource resource for agencies, citizens, and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps, and mobile websites. The accounts in the registry are independently updated by federal managers across the government who maintain individual agency accounts.
   url: https://usdigitalregistry.digitalgov.gov/
