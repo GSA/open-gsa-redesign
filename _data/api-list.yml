@@ -1,9 +1,6 @@
 - title: Api.Data.Gov Admin API
   description: api.data.gov is a free API management service for federal agencies. This API implements the API Umbrella Admin API.
   url: http://api.data.gov/developer/
-- title: Discovery API
-  description: The Discovery API drives the Discovery Market Research Tool. It contains information on the vendors that are part of the OASIS and OASIS Small Business contracting vehicles, such as their contracting history, their eligibility for contract awards, and their small business designations.
-  url: https://discovery.gsa.gov/api/
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: http://gsa.github.io/auctions_api/
@@ -19,6 +16,9 @@
 - title: Digital Signature API
   description: The vision of Digital Signature Solution (DSS) is to deploy a solution, which contributes to the Digital Government Strategy, enabling a truly digital and paperless GSA.
   url: https://gsa.github.io/DSSAPIDocumentation/api-docs/
+- title: Discovery API
+  description: The Discovery API drives the Discovery Market Research Tool. It contains information on the vendors that are part of the OASIS and OASIS Small Business contracting vehicles, such as their contracting history, their eligibility for contract awards, and their small business designations.
+  url: https://discovery.gsa.gov/api/
 - title: eMuseum API
   description: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
   url: http://gsa.github.io/eMuseum-API/
@@ -40,12 +40,9 @@
 - title: Go.USA.gov API
   description: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
   url: https://go.usa.gov/api
-- title: Government Jobs API
-  description: This API returns job openings on USAJobs.gov that are open to the public and located in the United States.
+- title: Government Jobs API (Deprecation planned)
+  description: This API returns job openings on USAJobs.gov that are open to the public and located in the United States. This API is planned to be deprecated.
   url: http://search.digitalgov.gov/developer/jobs.html
-- title: Non-Gov URLs API
-  description: This API allows you to tap into a list of all government URLs that don't end in .gov or .mil. URLs are searchable by keyword, state, or scope.
-  url: https://search.digitalgov.gov/developer/govt-urls.html
 - title: Per Diem API
   description: This API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&amp;IE) rates for 392 locations across the continental United States for Fiscal Year 2013.
   url: http://gsa.gov/portal/content/162379
@@ -56,5 +53,5 @@
   description: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
   url: http://gsa.github.io/sam_api/sam/
 - title: US Digital Registry API
-  description: The U.S. Digital Registry serves as the authoritative resource for agencies, citizens and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps and mobile websites, and help prevent exploitation from unofficial sources, phishing scams or malicious entities.
+  description: Contains listing from the U.S. Digital Media Registry, which serves as a crowdsource resource for agencies, citizens, and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps, and mobile websites. The accounts in the registry are independently updated by federal managers across the government who maintain individual agency accounts.
   url: https://usdigitalregistry.digitalgov.gov/
