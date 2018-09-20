@@ -40,8 +40,8 @@
 - title: Go.USA.gov API
   description: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
   url: https://go.usa.gov/api
-- title: Government Jobs API
-  description: This API returns job openings on USAJobs.gov that are open to the public and located in the United States.
+- title: Government Jobs API (Deprecation planned)
+  description: This API returns job openings on USAJobs.gov that are open to the public and located in the United States. This API is planned to be deprecated.
   url: http://search.digitalgov.gov/developer/jobs.html
 - title: Per Diem API
   description: This API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&amp;IE) rates for 392 locations across the continental United States for Fiscal Year 2013.
