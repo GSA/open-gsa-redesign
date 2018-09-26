@@ -213,7 +213,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Auctions API",
 			"description": "GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles. GSA Auctions’ online capabilities allow GSA to offer assets located across the country to any interested buyer, regardless of location.    Build your own tools using our API to access GSA Auctions listings.  The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data.  The output data will be in XML and JSON format. These files are downloadable.  The data in the API output file is live data.",
-			"modified": "2016-03-29",
+			"modified": "2018-09-24",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-09-01",
 			"dataQuality": true,
@@ -231,8 +231,8 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "text/html",
-					"format": "text/html",
+					"mediaType": "application/json",
+					"format": "json",
 					"title": "Auctions API",
 					"description": "GSA Auctions API is a public GET API. The Auction listings will be delivered to the user in two formats. One is JSON and the other one is XML. The auction listings delivered thru the API contains the auction listings from all the participating agencies.\r\n\r\nThe output data will be in XML and JSON format. These files are downloadable.  The data in the API output file is live data.",
 					"downloadURL": "http://gsa.github.io/auctions_api/"
@@ -440,38 +440,6 @@
 			"programCode": ["023:014"],
 			"language": ["en-us"],
 			"theme": ["Json File"]
-		}, {
-			"@type": "dcat:Dataset",
-			"title": "Citizen Topics API",
-			"description": "This API lists the topics that we use to organize content on USA.gov. You can access it via the /tags call to the Social Media Registry.",
-			"modified": "2014-05-29",
-			"accessLevel": "public",
-			"identifier": "GSA - 138670",
-			"dataQuality": true,
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "General Services Administration"
-			},
-			"accrualPeriodicity": "R/PT1S",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Justin Timothy Herman",
-				"hasEmail": "mailto:justin.herman@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"accessURL": "http://www.usa.gov/About/developer-resources/social-media-registry.shtml#tags",
-					"format": "API",
-					"title": "Citizen Topics API"
-				}
-			],
-			"keyword": ["API", "Citizen", "Citizen Topic"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:019"],
-			"language": ["en-us"],
-			"theme": ["API"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "City Pair Program (CSV)",
@@ -702,7 +670,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Data.gov CKAN API",
 			"description": "The data.gov catalog is powered by CKAN, a powerful open source data platform that includes a robust API.  Please be aware that data.gov and the data.gov CKAN API only contain metadata about datasets.  This metadata includes URLs and descriptions of datasets, but it does not include the actual data within each dataset.",
-			"modified": "2017-11-02",
+			"modified": "2018-09-24",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-09-02",
 			"dataQuality": true,
@@ -729,13 +697,13 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"accessURL": "http://www.data.gov/developers/apis",
-					"format": "API",
+					"format": "JSON",
 					"title": "Data.gov CKAN API",
 					"description": "This metadata includes URLs and descriptions of datasets, but it does not include the actual data within each dataset."
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/gzip",
-					"format": "JSON Lines",
+					"format": "JSON",
 					"title": "Government-wide open data metadata bulk download",
 					"description": "This provides a bulk extract of all metadata stored in Data.gov for Federal datasets. The file is automatically generated monthly as an export from the CKAN API using the JSON Lines serialization format (jsonlines.org). This does not provide all metadata stored on Data.gov, only metadata for Federal datasets following the metadata guidelines described at http://www.digitalgov.gov/resources/how-to-get-your-open-data-on-data-gov/ \r\n\r\nThe compressed file is approximately 2.3GB.",
 					"downloadURL": "https://filestore.data.gov/gsa/catalog/jsonl/dataset.jsonl.gz"
@@ -1850,7 +1818,7 @@
 			"@type": "dcat:Dataset",
 			"title": "eMuseum API",
 			"description": "This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.",
-			"modified": "2015-11-09",
+			"modified": "2018-09-24",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-05-18-3",
 			"dataQuality": true,
@@ -1870,11 +1838,11 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"accessURL": "http://gsa.github.io/eMuseum-API/basics.html",
-					"format": "API",
+					"format": "JSON",
 					"title": "eMuseum API"
 				}
 			],
-			"keyword": ["Fine Arts", "TMS", "eMuseum"],
+			"keyword": ["API", "Fine Arts", "TMS", "eMuseum"],
 			"bureauCode": ["023:30"],
 			"programCode": ["023:017"],
 			"language": ["en-us"],
@@ -3425,7 +3393,7 @@
 					"title": "Go.USA.gov URL Shortner API"
 				}
 			],
-			"keyword": ["Go.USA.gov URL shortener"],
+			"keyword": ["API", "Go.USA.gov URL shortener"],
 			"bureauCode": ["023:30"],
 			"programCode": ["023:019"],
 			"language": ["en-us"],
@@ -3578,7 +3546,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2018-09-18",
+			"modified": "2018-09-26",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3601,8 +3569,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON  09/18/18",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-09-18-18.json"
+					"description": "EDI JSON  09/26/18",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-09-26-18.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3908,7 +3876,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
 			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2018-09-18",
+			"modified": "2018-09-26",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
@@ -4149,38 +4117,6 @@
 			"keyword": ["API", "developers", "government", "web service"],
 			"bureauCode": ["023:00"],
 			"programCode": ["023:019"],
-			"language": ["en-us"],
-			"theme": ["API"]
-		}, {
-			"@type": "dcat:Dataset",
-			"title": "Mobile App Gallery API Documentation",
-			"description": "The App Gallery features mobile apps and websites from government agencies on a variety of platforms in English and Spanish.",
-			"modified": "2014-05-29",
-			"accessLevel": "public",
-			"identifier": "GSA - 138676",
-			"dataQuality": true,
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "General Services Administration"
-			},
-			"accrualPeriodicity": "R/PT1S",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Jacob A Parcell",
-				"hasEmail": "mailto:jacob.parcell@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"accessURL": "http://www.usa.gov/About/developer-resources/mobile-app-gallery/index.shtml",
-					"format": "API",
-					"title": "Mobile App Gallery API Documentation"
-				}
-			],
-			"keyword": ["API", "Mobile", "Mobilie App"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:008"],
 			"language": ["en-us"],
 			"theme": ["API"]
 		}, {
@@ -5741,8 +5677,8 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Per Diem API",
-			"description": "The API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 332 locations across the continental United States for Fiscal Year's 2018, 2017, 2016, 2015, 2014, 2013, and 2012 as well as the standard per diem rates for any locations not specifically listed.",
-			"modified": "2017-09-22",
+			"description": "The API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 332 locations across the continental United States for Fiscal Year's 2019, 2018, 2017, 2016, and 2015, as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2018-09-18",
 			"accessLevel": "public",
 			"identifier": "GSA-138679",
 			"dataQuality": true,
@@ -5766,7 +5702,7 @@
 					"accessURL": "http://gsa.gov/portal/content/162379",
 					"format": "API",
 					"title": "Per Diem API",
-					"description": "This API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 332 locations across the continental United States for Fiscal Year's 2018, 2017, 2016, 2015, 2014, 2013, and 2012 as well as the standard per diem rates for any locations not specifically listed.."
+					"description": "This API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 332 locations across the continental United States for Fiscal Year's 2019, 2018, 2017, 2016, and 2015, as well as the standard per diem rates for any locations not specifically listed."
 				}
 			],
 			"keyword": ["API", "Per Diem"],
@@ -6300,7 +6236,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Discovery Market Research API",
 			"description": "The GSA Discovery Market Research API.",
-			"modified": "2016-12-01",
+			"modified": "2018-09-24",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-03-03-04",
 			"dataQuality": true,
@@ -6323,7 +6259,7 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"accessURL": "https://discovery.gsa.gov/docs/",
-					"format": "API",
+					"format": "JSON",
 					"title": "Discovery Market Research API"
 				}
 			],
@@ -6336,7 +6272,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Contract-Awarded Labor Category API",
 			"description": "An API for searching awarded ceiling rates for labor categories.",
-			"modified": "2016-12-01",
+			"modified": "2018-09-24",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-03-03-05",
 			"dataQuality": true,
@@ -6359,7 +6295,7 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"accessURL": "https://github.com/18f/calc#api",
-					"format": "API",
+					"format": "json",
 					"title": "Contract-Awarded Labor Category API"
 				}
 			],
@@ -6476,42 +6412,6 @@
 				}
 			],
 			"keyword": ["18F", "acquisitions", "auction", "micropurchase"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:019"],
-			"language": ["en-US"],
-			"theme": ["API"]
-		}, {
-			"@type": "dcat:Dataset",
-			"title": "Tock Timecards API",
-			"description": "Weekly timecards for 18F and Presidential Innovation Fellows.",
-			"modified": "2016-12-01",
-			"accessLevel": "non-public",
-			"identifier": "GSA-2016-03-03-09",
-			"dataQuality": true,
-			"issued": "2015-07-08",
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "Technology Transformation Service",
-				"subOrganizationOf": {
-					"@type": "org:Organization",
-					"name": "General Services Administration"
-				}
-			},
-			"accrualPeriodicity": "R/P1W",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Patrick Bateman",
-				"hasEmail": "mailto:patrick.bateman@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"accessURL": "https://tock.18f.gov/api/timecards.json",
-					"format": "json",
-					"title": "18F Tock API"
-				}
-			],
-			"keyword": ["18F", "api", "timecards", "web service"],
 			"bureauCode": ["023:00"],
 			"programCode": ["023:019"],
 			"language": ["en-US"],
@@ -8271,38 +8171,6 @@
 			"theme": ["Acquisition"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Social Media Registry API",
-			"description": "The Social Media Registry is an official source of information about federal government social media accounts",
-			"modified": "2014-05-29",
-			"accessLevel": "public",
-			"identifier": "GSA - 138680",
-			"dataQuality": true,
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "General Services Administration"
-			},
-			"accrualPeriodicity": "R/PT1S",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Justin Timothy Herman",
-				"hasEmail": "mailto:justin.herman@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"accessURL": "http://www.usa.gov/About/developer-resources/social-media-registry.shtml",
-					"format": "API",
-					"title": "Social Media Registry API"
-				}
-			],
-			"keyword": ["API", "Social Media"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:019"],
-			"language": ["en-us"],
-			"theme": ["API"]
-		}, {
-			"@type": "dcat:Dataset",
 			"title": "Subcontracting Directory for Small Businesses",
 			"description": "The GSA Subcontracting Directory list large Prime Contractors who, by law, are required to establish plans and goals for subcontracting with Small Business Firms.",
 			"modified": "2018-05-08",
@@ -8343,7 +8211,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Sustainable Facilities Tool",
 			"description": "With the SFTool API, you can access a myriad of high performance building information. Pull the most up to date information about green products, services, and materials. Put sustainable strategies in the hands of your audience today. All of our API methods are HTTP GET and always return the latest data. Whether you’re looking to add sustainable building information to your website or blog, or looking for data to build an application, the SFTool API is here for you.Making API calls is very straightforward. There is a single base URI for each data category. By default, it will return all of the data for that category. By using any of our optional parameters, you can filter the data as you see fit. Signup for free to get the SFTool API key at  https://api.data.gov/signup/.",
-			"modified": "2015-11-09",
+			"modified": "2018-09-24",
 			"accessLevel": "public",
 			"identifier": "GSA-138568",
 			"dataQuality": true,
@@ -8367,7 +8235,7 @@
 					"title": "Sustainable Facilities Tool"
 				}
 			],
-			"keyword": ["SFTool", "Sustainable Facilities Tool"],
+			"keyword": ["API", "SFTool", "Sustainable Facilities Tool"],
 			"bureauCode": ["023:00"],
 			"programCode": ["023:009"],
 			"language": ["en-us"],
@@ -8376,7 +8244,7 @@
 			"@type": "dcat:Dataset",
 			"title": "System for Award Management (SAM) API",
 			"description": "The SAM API is a RESTful method of retrieving public information about the businesses, organizations, or individuals (referred to as entities) within the SAM entity regsitration data set. Public registration information can currently be retrieved on an entity-by-entity basis. In addition, the SAM Search API offers both a 'quick search' and 'advanced search' method.",
-			"modified": "2015-09-09",
+			"modified": "2018-09-24",
 			"accessLevel": "public",
 			"identifier": "GSA - 139633",
 			"dataQuality": true,
@@ -8403,7 +8271,7 @@
 					"describedByType": "text/html"
 				}
 			],
-			"keyword": ["Acquisition", "Award", "Contracts"],
+			"keyword": ["API", "Acquisition", "Award", "Contracts"],
 			"bureauCode": ["023:30"],
 			"programCode": ["023:012"],
 			"language": ["en-us"],
@@ -8558,7 +8426,7 @@
 					"title": "USA.gov and GobiernoUSA.gov Federal Agency Directory API"
 				}
 			],
-			"keyword": ["GobiernoUSA.gov", "USA.gov", "federal agencies", "government directory"],
+			"keyword": ["API", "GobiernoUSA.gov", "USA.gov", "federal agencies", "government directory"],
 			"bureauCode": ["023:10"],
 			"programCode": ["023:009"],
 			"language": ["en-us"],
