@@ -22,9 +22,6 @@
 - title: FedBizOpps Documentation
   description: This system supports Web Services for Federal buyers to post information to the database using their agency’s electronic procurement system.
   url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
-- title: Federal Agency Directory API Documentation
-  description: This API contains directory information about federal agencies, such as contact methods, in English and Spanish.
-  url: http://www.usa.gov/About/developer-resources/federal-agency-directory/index.shtml
 - title: Federal Procurement Data System - FAADS API
   description: SOAP and XML web services are used in the Federal Assistance module to provide interoperability with various federal assistance systems.
   url: https://www.fpds.gov/downloads/FAADS/FAADS-Specifications-WebServices_Integration_Specifications_V2.doc
