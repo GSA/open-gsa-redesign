@@ -11,7 +11,7 @@
   description: Provides DigitalGov Search customers their search results in JSON. Sign in with a .gov or .mil email is required.
   url: https://search.usa.gov/login
 - title: Digital Signature API
-  description: The vision of Digital Signature Solution (DSS) is to deploy a solution, which contributes to the Digital Government Strategy, enabling a truly digital and paperless GSA.
+  description: The vision of Digital Signature Solution (DSS) is to deploy a solution, which contributes to the Digital Government Strategy, enabling a truly digital and paperless GSA. (Non-Public API.)
   url: https://gsa.github.io/DSSAPIDocumentation/api-docs/
 - title: Discovery API
   description: The Discovery API drives the Discovery Market Research Tool. It contains information on the vendors that are part of the OASIS and OASIS Small Business contracting vehicles, such as their contracting history, their eligibility for contract awards, and their small business designations.
