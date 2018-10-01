@@ -22,12 +22,9 @@
 - title: FedBizOpps Web Services
   description: This system supports Web Services for Federal buyers to post information to the database using their agency’s electronic procurement system.
   url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
-- title: Federal Procurement Data System - FAADS API
-  description: SOAP and XML web services are used in the Federal Assistance module to provide interoperability with various federal assistance systems.
-  url: https://www.fpds.gov/downloads/FAADS/FAADS-Specifications-WebServices_Integration_Specifications_V2.doc
 - title: Federal Procurement Data System - FPDS API
   description: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
-  url: https://www.fpds.gov/downloads/FPDS-Specifications-WebServices_Integration_Specifications_V1.4.doc
+  url: https://www.fpds.gov/downloads/FPDS-Specifications-WebServices_Integration_Specifications_V1.5.doc
 - title: Go.USA.gov API
   description: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
   url: https://go.usa.gov/api
