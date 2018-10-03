@@ -278,38 +278,6 @@
 			"theme": ["Json file"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "BusinessUSA Resource Access API",
-			"description": "BusinessUSA connects businesses to government services and information. The API provides access to resource abstracts including programs, services, data, events, and more.",
-			"modified": "2014-05-29",
-			"accessLevel": "public",
-			"identifier": "GSA - 138669",
-			"dataQuality": true,
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "General Services Administration"
-			},
-			"accrualPeriodicity": "R/P1Y",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Joseph Castle",
-				"hasEmail": "mailto:joseph.castle@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"accessURL": "http://business.usa.gov/apis",
-					"format": "API",
-					"title": "BusinessUSA Resource Access API"
-				}
-			],
-			"keyword": ["API", "Business USA", "Resource"],
-			"bureauCode": ["023:30"],
-			"programCode": ["023:019"],
-			"language": ["en-us"],
-			"theme": ["API"]
-		}, {
-			"@type": "dcat:Dataset",
 			"title": "Capital Projects Application (CPA)",
 			"description": "Capital Projects application (CPA) provides users with the ability to maintain project related financial data for Budget Activity (BA) 51, 55, 64, 01, 02, 03, 04.  CPA maintains extensive project related data for single year and multiple year funded projects for these budget activities.  CPA maintains transaction details of the amount appropriated and obligated over the course of the project at the project level.  The information contained in CPA is used daily by field personnel and serves as the system of record when responding to Office of management and Budget (OMB) and Congress.  CPA interfaces with Business Information System (BIS) and performs daily downloads of obligation data for BA51, BA55, BA64, BA01, BA02, BA03, BA04, segmented by budget activity, region, and project status and type.  Accessible through the PBS Portal CPA data elements include Region, Projects Number, Project Name/Location, Status, Project Manager, Balance Amounts, and Authorization/Schedules for single and multiple year funds projects.",
 			"modified": "2015-09-10",
@@ -634,38 +602,6 @@
 			"programCode": ["023:010"],
 			"language": ["en-us"],
 			"theme": ["Travel and Transportation"]
-		}, {
-			"@type": "dcat:Dataset",
-			"title": "Corporate Consumer Contact API",
-			"description": "The data in the Corporate Consumer Contact API is based on the content you can find in the Corporate Consumer Contact listing in the Consumer Action Handbook (PDF). We gather this data manually, as it can sometimes be difficult for consumers to find out how they can contact a corporation. As this is a consumer focused dataset, corporations included in the API are corporations that directly interact with consumers.",
-			"modified": "2014-03-31",
-			"accessLevel": "public",
-			"identifier": "GSA - 139632",
-			"dataQuality": true,
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "General Services Administration"
-			},
-			"accrualPeriodicity": "R/P1Y",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Russell G O'Neill",
-				"hasEmail": "mailto:russell.oneill@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"accessURL": "http://www.usa.gov/About/developer-resources/corporation-contact-directory/index.shtml",
-					"format": "API",
-					"title": "Corporate Consumer Contact API"
-				}
-			],
-			"keyword": ["API", "Consumer", "Contact", "Corporate Consumer", "Corporate Contact"],
-			"bureauCode": ["023:10"],
-			"programCode": ["023:019"],
-			"language": ["en-us"],
-			"theme": ["API"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Data.gov CKAN API",
@@ -1817,8 +1753,8 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "eMuseum API",
-			"description": "This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.",
-			"modified": "2018-09-24",
+			"description": "This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.\r\n\r\nThis dataset replaces the dataset titled Fine Arts Database (FAD).",
+			"modified": "2018-10-03",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-05-18-3",
 			"dataQuality": true,
@@ -2765,39 +2701,6 @@
 			"theme": ["Acquisition"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Federal Procurement Data System - FAADS API",
-			"description": "The Federal Award Assistance Data System (FAADS) has been re-engineered as a real-time federal enterprise information system. Web services based on SOAP and XML, implemented using Java technologies, are used in Federal Assistance module to provide interoperability with various federal assistance systems.",
-			"modified": "2014-05-29",
-			"accessLevel": "public",
-			"identifier": "GSA - 138674",
-			"dataQuality": true,
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "General Services Administration"
-			},
-			"accrualPeriodicity": "R/PT1S",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Navin Nagaraj Vembar",
-				"hasEmail": "mailto:navin.vembar@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"mediaType": "application/msword",
-					"format": "API",
-					"title": "Federal Procurement Data System - FAADS API",
-					"downloadURL": "https://www.fpds.gov/downloads/FAADS/FAADS-Specifications-WebServices_Integration_Specifications_V2.doc"
-				}
-			],
-			"keyword": ["API", "FAADS"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:012"],
-			"language": ["en-us"],
-			"theme": ["API"]
-		}, {
-			"@type": "dcat:Dataset",
 			"title": "Federal Procurement Data System - FPDS API",
 			"description": "The Federal Procurement Data System (FPDS) Next Generation has been re-engineered as a real-time federal enterprise information system. Web services based on SOAP and XML, implemented using Java technologies, are used in FPDS-NG to provide interoperability with various federal procurement systems",
 			"modified": "2014-05-29",
@@ -3268,42 +3171,6 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Fine Arts Database (FAD)",
-			"description": "The Fine Arts Database records information on federally owned art in the control of the GSA; this includes the location, current condition and information on artists.",
-			"modified": "2015-11-16",
-			"accessLevel": "public",
-			"identifier": "GSA-4671",
-			"dataQuality": true,
-			"describedBy": "http://www.gsa.gov/dg/FineArts_data_dictionary.xls",
-			"issued": "2011-03-18",
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"spatial": "12 Regions within PBS",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "General Services Administration"
-			},
-			"accrualPeriodicity": "R/PT1S",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Sarah S Matin",
-				"hasEmail": "mailto:sarah.matin@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"mediaType": "csv/rar",
-					"format": "csv",
-					"title": "Fine Arts Database (FAD)",
-					"downloadURL": "http://www.gsa.gov/dg/data_gov_feed_FACIT.csv.rar"
-				}
-			],
-			"keyword": ["Art in Architecture", "WPA", "Works Progress Administration"],
-			"bureauCode": ["023:05"],
-			"programCode": ["023:003"],
-			"language": ["en-us"],
-			"theme": ["Other"]
-		}, {
-			"@type": "dcat:Dataset",
 			"title": "GEAR API Metadata",
 			"description": "The available API metadata from the GSA Enterprise Architecture Analytics and Reporting (GEAR) web application.",
 			"modified": "2017-06-08",
@@ -3369,7 +3236,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Go.USA.gov URL Shortner API",
 			"description": "The Go.USA.gov REST API allows you interact with Go.USA.gov by shortening URLs, previewing long urls, and getting the number of clicks to a Go.USA.gov URL..  An API key is required and available to any registered Go.USA.gov user.",
-			"modified": "2013-09-04",
+			"modified": "2018-09-26",
 			"accessLevel": "public",
 			"identifier": "GSA-2014-02-14-1",
 			"dataQuality": true,
@@ -3546,7 +3413,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2018-09-26",
+			"modified": "2018-10-03",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3569,8 +3436,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON  09/26/18",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-09-26-18.json"
+					"description": "EDI JSON 10/03/18",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-10-03-18.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -6306,47 +6173,6 @@
 			"theme": ["API"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "18F Public Team API",
-			"description": "An API for information on what 18F is working on.",
-			"modified": "2016-12-01",
-			"accessLevel": "public",
-			"identifier": "GSA-2016-03-03-06",
-			"dataQuality": true,
-			"describedBy": "https://team-api.18f.gov/public/api/",
-			"describedByType": "text/html",
-			"issued": "2015-10-12",
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "Technology Transformation Service",
-				"subOrganizationOf": {
-					"@type": "org:Organization",
-					"name": "General Services Administration"
-				}
-			},
-			"accrualPeriodicity": "irregular",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Amanda Robinson",
-				"hasEmail": "mailto:amanda.robinson@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"accessURL": "https://team-api.18f.gov/public/api/",
-					"format": "API",
-					"title": "18F Public Team API",
-					"description": "18F Team API",
-					"describedBy": "https://team-api.18f.gov/public/api/",
-					"describedByType": "text/html"
-				}
-			],
-			"keyword": ["18F", "documentation"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:019"],
-			"language": ["en-US"],
-			"theme": ["API"]
-		}, {
-			"@type": "dcat:Dataset",
 			"title": "18F Internal Team API",
 			"description": "An API for information on what 18F is working on.",
 			"modified": "2016-12-01",
@@ -6372,46 +6198,6 @@
 				"hasEmail": "mailto:amanda.robinson@gsa.gov"
 			},
 			"keyword": ["18F", "documentation"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:019"],
-			"language": ["en-US"],
-			"theme": ["API"]
-		}, {
-			"@type": "dcat:Dataset",
-			"title": "Micropurchase API",
-			"description": "An API for interacting with 18F's micropurchase auction service.",
-			"modified": "2016-12-01",
-			"accessLevel": "public",
-			"identifier": "GSA-2016-03-03-08",
-			"dataQuality": true,
-			"describedBy": "https://pages.18f.gov/micropurchase-api-docs/",
-			"describedByType": "text/html",
-			"issued": "2016-02-11",
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "Technology Transformation Service",
-				"subOrganizationOf": {
-					"@type": "org:Organization",
-					"name": "General Services Administration"
-				}
-			},
-			"accrualPeriodicity": "irregular",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Vladen Zvenyach",
-				"hasEmail": "mailto:vladen.zvenyach@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"accessURL": "https://micropurchase.18f.gov/",
-					"format": "API",
-					"title": "Micropurchase API",
-					"describedBy": "https://pages.18f.gov/micropurchase-api-docs/",
-					"describedByType": "text/html"
-				}
-			],
-			"keyword": ["18F", "acquisitions", "auction", "micropurchase"],
 			"bureauCode": ["023:00"],
 			"programCode": ["023:019"],
 			"language": ["en-US"],
@@ -7937,7 +7723,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2018-09-13",
+			"modified": "2018-10-03",
 			"accessLevel": "public",
 			"identifier": "GSA-25251",
 			"dataQuality": true,
@@ -7960,8 +7746,8 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_bldg_rexus",
-					"description": "September - Rexus Building file",
-					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/63663b53-7cb6-4bea-bc4e-1e5897ef3158/download/datagovbldgrexus.csv"
+					"description": "October - Rexus Building file",
+					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/63663b53-7cb6-4bea-bc4e-1e5897ef3158/download/datagovbldgrexus-1.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -7971,7 +7757,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) (Lease)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2018-09-13",
+			"modified": "2018-10-03",
 			"accessLevel": "public",
 			"identifier": "GSA-25261",
 			"dataQuality": true,
@@ -7994,8 +7780,8 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus",
-					"description": "September - Rexus Lease file",
-					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ae0d8c20-3c63-40c3-96da-24a24f507e79/download/datagovlserexus.csv"
+					"description": "October - Rexus Lease file",
+					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ae0d8c20-3c63-40c3-96da-24a24f507e79/download/datagovlserexus-1.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -8398,39 +8184,6 @@
 			"programCode": ["023:009"],
 			"language": ["en-us"],
 			"theme": ["People"]
-		}, {
-			"@type": "dcat:Dataset",
-			"title": "USA.gov and GobiernoUSA.gov Federal Agency Directory API",
-			"description": "Access federal agency directory records from USA.gov and GobiernoUSA.gov via a REST API that can return JSON, JSONP, and XML",
-			"modified": "2013-09-04",
-			"accessLevel": "public",
-			"identifier": "GSA-2014-02-14-5",
-			"dataQuality": true,
-			"describedBy": "http://www.usa.gov/About/developer-resources/federal-agency-directory/index.shtml",
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"spatial": "National",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "General Services Administration"
-			},
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Russell G O'Neill",
-				"hasEmail": "mailto:russell.oneill@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"accessURL": "http://www.usa.gov/About/developer-resources/federal-agency-directory/index.shtml",
-					"format": "API",
-					"title": "USA.gov and GobiernoUSA.gov Federal Agency Directory API"
-				}
-			],
-			"keyword": ["API", "GobiernoUSA.gov", "USA.gov", "federal agencies", "government directory"],
-			"bureauCode": ["023:10"],
-			"programCode": ["023:009"],
-			"language": ["en-us"],
-			"theme": ["API"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "USA.gov Blog RSS feed",
