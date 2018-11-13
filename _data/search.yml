@@ -17,35 +17,6 @@
     - Time2Hire
     - USAJobs
   category: Data
-- title: Citizen Topics API
-  body: This API lists the topics that we use to organize content on USA.gov
-  tags:
-  - social media
-  - collaboration
-  category: APIs
-  url: http://www.usa.gov/About/developer-resources/social-media-registry.shtml#tags
-- title: Corporate Consumer Contact Information
-  body: Based on the information collected for the Consumer Action Handbook
-  tags:
-  - federal
-  category: APIs
-  url: http://www.usa.gov/About/developer-resources/corporation-contact-directory/index.shtml
-- title: Data Center Consolidation API
-  body: Inventories and tracks the progress of efforts to consolidate US government
-    data centers
-  tags:
-  - projects
-  - data centers
-  category: APIs
-  url: http://www.usa.gov/About/developer-resources/corporation-contact-directory/index.shtml
-- title: DigitalGov Search API
-  body: Provides DigitalGov Search customers their search results in JSON. Sign in
-    with a .gov or .mil email is required
-  tags:
-  - EPA
-  - DOE
-  category: APIs
-  url: https://search.usa.gov/login
 - title: Expenditures on Children by Families
   body: This dataset provides expenditures on Children by Families provides estimates
     of the cost of raising children from birth through age 17
@@ -109,143 +80,6 @@
   - Military
   category: Articles
   url: https://github.com/blog/2282-operation-code-connecting-tech-and-veterans
-- title: Api.Data.Gov Admin API
-  body: api.data.gov is a free API management service for federal agencies. This API implements the API Umbrella Admin API.
-  tags:
-    - 18f
-    - Shared service
-    - Administration
-    - API
-  category: APIs
-  url: http://api.data.gov/developer/
-- title: Auctions API
-  body: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
-  tags:
-    - ADP
-    - Equipment
-    - Auction
-    - Sales
-  category: APIs
-  url: http://gsa.github.io/auctions_api/
-- title: Corporate Consumer Contact Information
-  body: Based on the information collected for the Consumer Action Handbook.
-  tags:
-    - API
-    - Consumer
-  category: APIs
-  url: http://www.usa.gov/About/developer-resources/corporation-contact-directory/index.shtml
-- title: Data.gov CKAN API
-  body: The government-wide data catalog available at Data.gov.
-  tags:
-    - API
-    - Data.gov
-    - CKAN
-  category: APIs
-  url: http://www.data.gov/developers/apis
-- title: DigitalGov Search API
-  body: Provides DigitalGov Search customers their search results in JSON. Sign in with a .gov or .mil email is required.
-  tags:
-    - USASearch
-    - API
-    - DigitalGov
-  category: APIs
-  url: https://search.usa.gov/login
-- title: eMuseum API
-  body: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
-  tags:
-    - API
-    - Fine arts
-    - TMS
-  category: APIs
-  url: http://gsa.github.io/eMuseum-API/
-- title: FedBizOpps Documentation
-  body: This system supports Web Services for Federal buyers to post information to the database using their agency’s electronic procurement system.
-  tags:
-    - API
-    - Federal buyers
-    - Procurement
-  category: APIs
-  url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
-- title: Federal Agency Directory API Documentation
-  body: This API contains directory information about federal agencies, such as contact methods, in English and Spanish.
-  tags:
-    - API
-    - GobiernoUSA.gov
-    - Usa.gov
-    - Agencies
-  category: APIs
-  url: http://www.usa.gov/About/developer-resources/federal-agency-directory/index.shtml
-- title: Federal Procurement Data System - FAADS API
-  body: SOAP and XML web services are used in the Federal Assistance module to provide interoperability with various federal assistance systems.
-  tags:
-    - API
-  category: APIs
-  url: https://www.fpds.gov/downloads/FAADS/FAADS-Specifications-WebServices_Integration_Specifications_V2.doc
-- title: Federal Procurement Data System - FPDS API
-  body: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
-  tags:
-    - API
-  category: APIs
-  url: https://www.fpds.gov/downloads/FPDS-Specifications-WebServices_Integration_Specifications_V1.4.doc
-- title: Go.USA.gov API
-  body: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
-  tags:
-    - API
-    - URL shortener
-    - Sharing
-  category: APIs
-  url: https://go.usa.gov/api
-- title: Government Jobs API
-  body: This API returns job openings on USAJobs.gov that are open to the public and located in the United States.
-  tags:
-    - API
-    - USAJobs
-    - Careers
-    - Positions
-  category: APIs
-  url: http://search.digitalgov.gov/developer/jobs.html
-- title: Non-Gov URLs API
-  body: This API allows you to tap into a list of all government URLs that don't end in .gov or .mil. URLs are searchable by keyword, state, or scope.
-  tags:
-    - API
-    - USASearch
-    - Websites
-  category: APIs
-  url: https://search.digitalgov.gov/developer/govt-urls.html
-- title: Per Diem API
-  body: This API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 392 locations across the continental United States for Fiscal Year 2013.
-  tags:
-    - API
-    - Travel
-    - Lodging
-    - M&IE
-  category: APIs
-  url: http://gsa.gov/portal/content/162379
-- title: Sustainable Facilities Tool API
-  body: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
-  tags:
-    - API
-    - SFTool
-  category: APIs
-  url: https://sftool.gov/developers
-- title: System for Award Management API
-  body: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management (SAM) data set.
-  tags:
-    - Acquisition
-    - Award
-    - Contracts
-  category: APIs
-  url: http://gsa.github.io/sam_api/sam/
-- title: US Digital Registry API
-  body: The U.S. Digital Registry serves as the authoritative resource for agencies, citizens and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps and mobile websites, and help prevent exploitation from unofficial sources, phishing scams or malicious entities.
-  tags:
-    - Social media
-    - Facebook
-    - Twitter
-    - Mobile
-    - Collaboration
-  category: APIs
-  url: https://usdigitalregistry.digitalgov.gov/
 - title: api.data.gov
   body: A hosted, shared-service that provides an API key, analytics, and proxy
     solution for government web services.
@@ -5306,18 +5140,6 @@
   contact:
     email: 18f@gsa.gov
   url: https://github.com/18F/caddy-boshrelease
-  category: Code
-- title: micropurchase-api-docs
-  body: "[DEPRECATED] Documentation for 18F's micro-purchase API are now at
-    https://micropurchase.18f.gov/api"
-  license: https://github.com/18F/micropurchase-api-docs/blob/18f-pages/LICENSE.md
-  openSourceProject: 1
-  governmentWideReuseProject: 1
-  tags:
-  - 18F
-  contact:
-    email: 18f@gsa.gov
-  url: https://github.com/18F/micropurchase-api-docs
   category: Code
 - title: about-yml-editor
   body: A proof of concept about.yml editor using json-editor as its base.
@@ -10579,33 +10401,6 @@
   contact:
     email: github-admins@gsa.gov
   url: https://github.com/GSA/benefits-mockup
-- title: recalls_api
-  body: Allows you to tap into a list of car, drug, food, and product safety
-    recalls. Recalls are searchable by keyword, issuing agency, date, UPC code, vehicle-specific
-    attributes, or any combination of these.
-  license: https://github.com/GSA/recalls_api/blob/master/LICENSE.md
-  openSourceProject: 1
-  governmentWideReuseProject: 1
-  tags:
-  - GSA
-  contact:
-    email: github-admins@gsa.gov
-  url: https://github.com/GSA/recalls_api
-- title: Jobs API
-  body: An API for searching the DigitalGov Search index of USAJobs postings.
-    Included in the index are jobs located in the U.S., and open to all public applicants.
-  license: https://creativecommons.org/publicdomain/zero/1.0
-  openSourceProject: 1
-  governmentWideReuseProject: 1
-  tags:
-  - GSA
-  - DigitalGovSearch
-  - search
-  - indexing
-  - jobs
-  contact:
-    email: search@support.digitalgov.gov
-  url: https://github.com/GSA/jobs_api
 - title: mygov-feedback-reporting
   body: mygov-feedback-reporting
   license:
@@ -13290,3 +13085,134 @@
   contact:
     email: github-admins@gsa.gov
   url: https://github.com/GSA/icpa_user_training
+- title: Acquisition Gateway API
+  body: The data for this API comes from the Acquisition Gateway, which is a workspace for acquisition professionals and federal buyers to connect with resources, tools and each other to improve acquisition government-wide.
+  url: https://hallways.cap.gsa.gov/docs/#/api
+  category: APIs
+- title: Analytics.usa.gov API
+  body: The data for this API comes from Analytics.usa.gov, which is a unified Google Analytics account for U.S. federal government agencies known as the Digital Analytics Program. This program helps government agencies understand how people find, access, and use government services online. The program does not track individuals, and anonymizes the IP addresses of visitors.
+  url: https://analytics.usa.gov/developer
+  category: APIs
+- title: Api.Data.Gov Admin API
+  body: api.data.gov is a free API management service for federal agencies. This API implements the API Umbrella Admin API.
+  url: https://api.data.gov/developer/
+  category: APIs
+  tags:
+    - 18f
+    - Shared service
+    - Administration
+    - API
+- title: Contract-Awarded Labor Category (CALC) API
+  body: CALC's API is used by CALC's front-end Data Explorer application to display labor rate data for awarded prices on GSA services schedules, and can also be accessed by any third-party application over the public internet. CALC (Contract Awarded Labor Category) tool searches awarded hourly rate prices on the eight GSA professional services schedules and returns comparable labor categories and prices based on search criteria and filters used.  
+  url: https://calc.gsa.gov/api/docs/#
+  category: APIs
+- title: Data.gov CKAN API
+  body: The government-wide data catalog available at Data.gov.
+  url: https://www.data.gov/developers/apis
+  category: APIs
+  tags:
+    - API
+    - Data.gov
+    - CKAN
+- title: Digital Signature API
+  body: The vision of Digital Signature Solution (DSS) is to deploy a solution, which contributes to the Digital Government Strategy, enabling a truly digital and paperless GSA. (Non-Public API.)
+  url: https://gsa.github.io/DSSAPIDocumentation/api-docs/
+  category: APIs
+- title: Discovery API
+  body: The Discovery API drives the Discovery Market Research Tool. It contains information on various GSA services contracts and the awarded vendors, such as their contracting history, their eligibility for contract awards, and their small business designations.
+  url: https://discovery.gsa.gov/api/
+  category: APIs
+- title: eMuseum API
+  body: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
+  url: https://gsa.github.io/eMuseum-API/
+  category: APIs
+  tags:
+    - API
+    - Fine arts
+    - TMS
+- title: FedBizOpps Web Services
+  body: This system supports Web Services for Federal buyers to post information to the database using their agency’s electronic procurement system.
+  url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
+  category: APIs
+- title: Federal Procurement Data System - FPDS API
+  body: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
+  url: https://www.fpds.gov/downloads/FPDS-Specifications-WebServices_Integration_Specifications_V1.5.doc
+  category: APIs
+- title: Go.USA.gov API
+  body: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
+  url: https://go.usa.gov/api
+  category: APIs
+  tags:
+    - API
+    - URL shortener
+    - Sharing
+- title: Government Jobs API (Deprecation planned)
+  body: This API returns job openings on USAJobs.gov that are open to the public and located in the United States. This API is planned to be deprecated.
+  url: https://search.gov/developer/jobs.html
+  category: APIs
+  tags:
+  - GSA
+  - DigitalGovSearch
+  - search
+  - indexing
+  - jobs
+- title: GSA.gov Content API
+  body: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last. 
+  url: https://www.gsa.gov/about-us/gsa-content-api
+  category: APIs
+- title: Per Diem API
+  body: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers. 
+  url: https://www.gsa.gov/technology/government-it-initiatives/digital-strategy/per-diem-apis/per-diem-api
+  category: APIs
+  tags:
+    - API
+    - Travel
+    - Lodging
+    - M&IE
+- title: Product Service Codes (PSC) API
+  body: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From Beta.sam.gov.
+  url: https://s3.amazonaws.com/falextracts/Documentation/PSC/PSC%20Public%20API%20Documentation.pdf 
+  category: APIs
+- title: Search.gov i14y API
+  body: For Search.gov customers. This API allows search.gov customers to send content directly from their content management system (CMS) into Search.gov for real-time indexing. 
+  url: https://search.gov/developer/i14y.html
+  category: APIs
+- title: Search.gov Search Results API
+  body: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application. 
+  url: https://search.gov/manual/search-results-api.html
+  category: APIs
+- title: Search.gov Type-ahead API
+  body: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms. 
+  url: https://search.gov/manual/search-results-api.html
+  category: APIs
+- title: Sustainable Facilities Tool API
+  body: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
+  url: https://sftool.gov/developers
+  category: APIs
+  tags:
+    - Acquisition
+    - Award
+    - Contracts
+- title: System for Award Management API
+  body: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
+  url: https://gsa.github.io/sam_api/sam/
+  category: APIs
+- title: U.S. Digital Registry API
+  body: Contains listing from the U.S. Digital Media Registry, which serves as a crowdsource resource for agencies, citizens, and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps, and mobile websites. The accounts in the registry are independently updated by federal managers across the government who maintain individual agency accounts.
+  url: https://usdigitalregistry.digitalgov.gov/
+  category: APIs
+  tags:
+    - Social media
+    - Facebook
+    - Twitter
+    - Mobile
+    - Collaboration
+- title: Auctions API
+  body: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
+  url: https://gsa.github.io/auctions_api/
+  category: APIs
+  tags:
+    - ADP
+    - Equipment
+    - Auction
+    - Sales
