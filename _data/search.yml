@@ -13183,7 +13183,7 @@
   category: APIs
 - title: Search.gov Type-ahead API
   body: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms. 
-  url: https://search.gov/manual/search-results-api.html
+  url: https://search.gov/manual/typeahead-api.html
   category: APIs
 - title: Sustainable Facilities Tool API
   body: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.

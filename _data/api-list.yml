@@ -54,7 +54,7 @@
   url: https://search.gov/manual/search-results-api.html
 - title: Search.gov Type-ahead API
   description: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms. 
-  url: https://search.gov/manual/search-results-api.html
+  url: https://search.gov/manual/typeahead-api.html
 - title: Sustainable Facilities Tool API
   description: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
   url: https://sftool.gov/developers
