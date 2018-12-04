@@ -1203,8 +1203,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA DCOI Strategic Plan May 2018",
-					"description": "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 6/5/2018 at 5:00 pm Eastern",
+					"title": "GSA DCOI Strategic Plan November 2018",
+					"description": "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 11/19/2018 at 8:52 pm Eastern",
 					"conformsTo": "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/b8d9e71b-963b-4398-8d37-04628e64871d/download/datacenteroptimizationstrategicplan.json"
 				}, {
@@ -3413,7 +3413,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2018-10-09",
+			"modified": "2018-12-04",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3436,8 +3436,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON 10/09/18",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-10-09-18.json"
+					"description": "EDI JSON 12/04/18",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-12-04-18.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3533,8 +3533,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA FITARA Actions and Milestones 2018-08-31",
-					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the August 31, 2018, quarterly submission to OMB.",
+					"title": "GSA FITARA Actions and Milestones 2018-11-30",
+					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the November 30, 2018, quarterly submission to OMB.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
 				}
@@ -3566,7 +3566,7 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "GSA IT Reform Cost Savings/Avoidance",
-					"description": "GSA's August 2018 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description": "GSA's November 2018 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -3597,7 +3597,7 @@
 					"mediaType": "application/zip",
 					"format": "ZIP",
 					"title": "GSA IT Policy Archive Zip",
-					"description": "Last update: 2018-05-02",
+					"description": "Last update: 2018-11-01",
 					"downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
 				}
 			],
@@ -3743,7 +3743,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
 			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2018-09-26",
+			"modified": "2018-12-04",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
@@ -3888,40 +3888,6 @@
 			"bureauCode": ["023:00"],
 			"programCode": ["023:008"],
 			"language": ["en-US"]
-		}, {
-			"@type": "dcat:Dataset",
-			"title": "Jobs API",
-			"description": "This Jobs API returns job openings across the federal government and includes all current openings posted on USAJobs.gov that are open to the public and located in the United States. It also includes some state and local government jobs.",
-			"modified": "2013-05-01",
-			"accessLevel": "public",
-			"identifier": "GSA-30251",
-			"dataQuality": true,
-			"issued": "2013-03-01",
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"spatial": "U.S.",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "General Services Administration"
-			},
-			"accrualPeriodicity": "R/P1D",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Ammie Nicole Farraj-Feijoo",
-				"hasEmail": "mailto:ammie.farrajfeijoo@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"accessURL": "http://usasearch.howto.gov/developer/jobs.html",
-					"format": "API",
-					"title": "Jobs API"
-				}
-			],
-			"keyword": ["job listings", "job openings", "position opening"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:014"],
-			"language": ["en-us"],
-			"theme": ["API"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "List of Government APIs",
@@ -4196,9 +4162,9 @@
 			"theme": ["Real Estate"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2011 1st Quarter",
+			"title": "Networx Business Volume Oct-Dec FY2011, 1st Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-5049",
 			"dataQuality": true,
@@ -4233,9 +4199,9 @@
 			"theme": ["Real Estate"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2011 2nd Quarter",
+			"title": "Networx Business Volume Jan-Mar FY2011, 2nd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-5195",
 			"dataQuality": true,
@@ -4270,9 +4236,9 @@
 			"theme": ["Real Estate"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2011 3rd Quarter",
+			"title": "Networx Business Volume Apr-June FY2011, 3rd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-6249",
 			"dataQuality": true,
@@ -4307,9 +4273,9 @@
 			"theme": ["Real Estate"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2011 4th Quarter",
+			"title": "Networx Business Volume July-Sept FY2011, 4th Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-6370",
 			"dataQuality": true,
@@ -4344,9 +4310,9 @@
 			"theme": ["Real Estate"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2012 1st Quarter",
+			"title": "Networx Business Volume Oct-Dec FY2012, 1st Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-6376",
 			"dataQuality": true,
@@ -4381,9 +4347,9 @@
 			"theme": ["Real Estate"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2012 2nd Quarter",
+			"title": "Networx Business Volume Jan-Mar FY2012, 2nd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-7421",
 			"dataQuality": true,
@@ -4418,9 +4384,9 @@
 			"theme": ["Real Estate"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2012 3rd Quarter",
+			"title": "Networx Business Volume Apr-June FY2012, 3rd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-9611",
 			"dataQuality": true,
@@ -4455,9 +4421,9 @@
 			"theme": ["Real Estate"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2012 4th Quarter",
+			"title": "Networx Business Volume July-Sept FY2012, 4th Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-25061",
 			"dataQuality": true,
@@ -4492,9 +4458,9 @@
 			"theme": ["Real Estate"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2013 1st Quarter",
+			"title": "Networx Business Volume Oct-Dec FY2013, 1st Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-25071",
 			"dataQuality": true,
@@ -4529,9 +4495,9 @@
 			"theme": ["Real Estate"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2013 2nd Quarter",
+			"title": "Networx Business Volume Jan-Mar FY2013, 2nd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-30771",
 			"dataQuality": true,
@@ -4566,9 +4532,9 @@
 			"theme": ["Real Estate"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2013 3rd Quarter",
+			"title": "Networx Business Volume Apr-June FY2013, 3rd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume by contractor, agency, contract vehicle and month for the centralized billing account. This represents the business volume of each government agency that has ordered telecommunications services from the Networx contract.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-02-26-1",
 			"dataQuality": true,
@@ -4601,9 +4567,9 @@
 			"theme": ["Procurement"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2013 4th Quarter",
+			"title": "Networx Business Volume July-Sept FY2013, 4th Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-02-26-2",
 			"dataQuality": false,
@@ -4642,9 +4608,9 @@
 			"programCode": ["023:019"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2014 1st Quarter",
+			"title": "Networx Business Volume Oct-Dec FY2014, 1st Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-02-26-3",
 			"dataQuality": false,
@@ -4684,9 +4650,9 @@
 			"programCode": ["023:019"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2014 2nd Quarter",
+			"title": "Networx Business Volume Jan-Mar FY2014, 2nd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-02-26-4",
 			"dataQuality": true,
@@ -4726,9 +4692,9 @@
 			"programCode": ["023:019"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2014 3rd Quarter",
+			"title": "Networx Business Volume Apr-June FY2014, 3rd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-02-26-5",
 			"dataQuality": false,
@@ -4767,9 +4733,9 @@
 			"programCode": ["023:019"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume  FY2014 4th Quarter",
+			"title": "Networx Business Volume Oct-Dec  FY2014, 4th Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-02-26-6",
 			"dataQuality": true,
@@ -4809,9 +4775,9 @@
 			"programCode": ["023:019"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume  FY2015 1st Quarter",
+			"title": "Networx Business Volume Oct-Dec  FY2015, 1st Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-03-02-2",
 			"dataQuality": true,
@@ -4850,9 +4816,9 @@
 			"programCode": ["023:019"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2015 2nd Quarter",
+			"title": "Networx Business Volume Jan-Mar FY2015, 2nd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-05-18-1",
 			"dataQuality": true,
@@ -4890,9 +4856,9 @@
 			"programCode": ["023:019"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2015 3rd Quarter",
+			"title": "Networx Business Volume Apr-June FY2015, 3rd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-05-09-09",
 			"dataQuality": true,
@@ -4925,9 +4891,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2015 4th Quarter",
+			"title": "Networx Business Volume July-Sept FY2015, 4th Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-16-01",
 			"dataQuality": true,
@@ -4960,9 +4926,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2016 1st Quarter",
+			"title": "Networx Business Volume Oct-Dec FY2016, 1st Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-02-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-02-19",
 			"dataQuality": true,
@@ -4995,9 +4961,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2016 2nd Quarter",
+			"title": "Networx Business Volume Jan-Mar FY2016, 2nd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-05-18",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-05-18-01",
 			"dataQuality": true,
@@ -5029,9 +4995,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2016 3rd Quarter",
+			"title": "Networx Business Volume Apr-June FY2016, 3rd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-05-18",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-08-22-01",
 			"dataQuality": true,
@@ -5063,9 +5029,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2016 4th Quarter",
+			"title": "Networx Business Volume July-Sept FY2016, 4th Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2016-05-18",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-11-29-01",
 			"dataQuality": true,
@@ -5097,9 +5063,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2017 1st Quarter",
+			"title": "Networx Business Volume FY2017, 1st Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2017-02-15",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-02-15-03",
 			"dataQuality": true,
@@ -5131,9 +5097,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2017 2nd Quarter",
+			"title": "Networx Business Volume FY2017, 2nd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2017-05-22",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-05-22-01",
 			"dataQuality": true,
@@ -5165,9 +5131,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2017 3rd Quarter",
+			"title": "Networx Business Volume FY2017, 3rd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2017-09-12",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-09-12-01",
 			"dataQuality": true,
@@ -5200,9 +5166,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2017 4th Quarter",
+			"title": "Networx Business Volume FY2017, 4th Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2018-01-03",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-01-03-01",
 			"dataQuality": true,
@@ -5235,9 +5201,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2018 1st Quarter",
+			"title": "Networx Business Volume FY2018, 1st Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2018-03-22",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-03-22-01",
 			"dataQuality": true,
@@ -5270,9 +5236,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2018 2nd Quarter",
+			"title": "Networx Business Volume FY2018, 2nd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2018-05-17",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-05-17-01",
 			"dataQuality": true,
@@ -5305,9 +5271,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2018 3rd Quarter",
+			"title": "Networx Business Volume FY2018, 3rd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
-			"modified": "2018-08-30",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-08-30-01",
 			"dataQuality": true,
@@ -5331,6 +5297,41 @@
 					"title": "TotRevFY18_3rd Qtr",
 					"description": "FY2018, 3rd Quarter",
 					"downloadURL": "https://inventory.data.gov/dataset/517f928e-eb8e-4455-99af-4184fc5dafa8/resource/87ae2980-5aca-471b-b5a3-57155b4be020/download/totrevfy183rdqtr.xlsx"
+				}
+			],
+			"keyword": ["Contract", "Networx Telecommunications", "Telecommunications"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:019"],
+			"language": ["en-US"],
+			"theme": ["Telecommunications Services"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2018, 4th Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+			"modified": "2018-11-15",
+			"accessLevel": "public",
+			"identifier": "GSA-2018-11-15-01",
+			"dataQuality": true,
+			"issued": "2015-11-13",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2015-08-27P",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni L Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "TotRevFY18_4thQtr",
+					"description": "FY2018, 4th Quarter",
+					"downloadURL": "https://inventory.data.gov/dataset/9cad9448-a1fa-4f80-a78b-fa7622265a94/resource/6eb17e16-f570-4fe2-8f0d-f51e0f1ad1cd/download/totrevfy184thqtr.xlsx"
 				}
 			],
 			"keyword": ["Contract", "Networx Telecommunications", "Telecommunications"],
@@ -5510,7 +5511,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Per Diem Reimbursement Rates",
 			"description": "The dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 332 locations across the continental United States for Fiscal Year's 2019, 2018, 2017, 2016, and 2015, as well as the standard per diem rates for any locations not specifically listed.",
-			"modified": "2018-08-30",
+			"modified": "2018-12-04",
 			"accessLevel": "public",
 			"identifier": "GSA-31641",
 			"dataQuality": true,
@@ -6235,9 +6236,9 @@
 			"theme": ["API"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions July-September 2015",
+			"title": "GSA Purchase Card Transactions July-Sept 2015, 4th Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA - 138791",
 			"dataQuality": true,
@@ -6294,9 +6295,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions April - June 2015",
+			"title": "GSA Purchase Card Transactions Apr-June 2015, 3rd Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-2",
 			"dataQuality": true,
@@ -6328,9 +6329,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions January - March 2015",
+			"title": "GSA Purchase Card Transactions Jan-Mar 2015, 2nd Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-3",
 			"dataQuality": true,
@@ -6362,9 +6363,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions October - December 2014",
+			"title": "GSA Purchase Card Transactions Oct-Dec 2014, 1st Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-4",
 			"dataQuality": true,
@@ -6396,9 +6397,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions July - September 2014",
+			"title": "GSA Purchase Card Transactions July-Sept 2014, 4th Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-5",
 			"dataQuality": true,
@@ -6431,9 +6432,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions April - June 2014",
+			"title": "GSA Purchase Card Transactions Apr-June 2014, 3rd Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-6",
 			"dataQuality": true,
@@ -6466,9 +6467,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions January - March 2014",
+			"title": "GSA Purchase Card Transactions Jan-Mar 2014, 2nd Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-7",
 			"dataQuality": true,
@@ -6501,9 +6502,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions October - December 2013",
+			"title": "GSA Purchase Card Transactions Oct-Dec 2013, 1st Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-8",
 			"dataQuality": true,
@@ -6536,9 +6537,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions October - December 2015",
+			"title": "GSA Purchase Card Transactions Oct-Dec 2015, 1st Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-02-01",
 			"dataQuality": true,
@@ -6571,9 +6572,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions January - March 2016",
+			"title": "GSA Purchase Card Transactions Jan-Mar 2016, 2nd Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-04-15-01",
 			"dataQuality": true,
@@ -6606,9 +6607,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions April - June 2016",
+			"title": "GSA Purchase Card Transactions Apr-June 2016, 3rd Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-08-03-01",
 			"dataQuality": true,
@@ -6640,9 +6641,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions October - December 2016",
+			"title": "GSA Purchase Card Transactions Oct-Dec 2016, 1st Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-02-15-01",
 			"dataQuality": true,
@@ -6674,9 +6675,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions January - March 2017",
+			"title": "GSA Purchase Card Transactions Jan-Mar 2017, 2nd Qtr",
 			"description": "2nd Quarter 2017 Purchase Card Transactions",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-04-13-01",
 			"dataQuality": true,
@@ -6709,9 +6710,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions April - June 2017",
+			"title": "GSA Purchase Card Transactions Apr-June 2017, 3rd Qtr",
 			"description": "Purchases made with the purchase card.  Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-07-19-01",
 			"dataQuality": true,
@@ -6744,9 +6745,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions July - September 2017",
+			"title": "GSA Purchase Card Transactions July-Sept 2017, 4th Qtr",
 			"description": "Purchases made with the purchase card.  Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-11-20-01",
 			"dataQuality": true,
@@ -6779,9 +6780,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions October - December 2017",
+			"title": "GSA Purchase Card Transactions Oct-Dec 2017, 1st Qtr",
 			"description": "Purchases made with the purchase card.  Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-02-05-01",
 			"dataQuality": true,
@@ -6814,9 +6815,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions January - March 2018, 2nd Qtr",
+			"title": "GSA Purchase Card Transactions Jan-Mar 2018, 2nd Qtr",
 			"description": "Purchases made with the purchase card.  Files will be batched quarterly.  2nd Quarter 2018.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-05-01-01",
 			"dataQuality": true,
@@ -6849,9 +6850,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions April - June, 2018 - 3rd Qtr",
+			"title": "GSA Purchase Card Transactions Apr-June 2018, 3rd Qtr",
 			"description": "Purchases made with the purchase card.  Files will be batched quarterly.",
-			"modified": "2018-07-26",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-07-25-03",
 			"dataQuality": true,
@@ -6884,9 +6885,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "GSA Purchase Card Transactions July - September 2016",
+			"title": "GSA Purchase Card Transactions July-Sept 2016, 4th Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-10-19-01",
 			"dataQuality": true,
@@ -6944,9 +6945,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA July September 2015",
+			"title": "Purchase Card Transactions - CBCA July-Sept 2015, 4th Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-02-15",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-2",
 			"dataQuality": true,
@@ -6980,9 +6981,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA  April  June 2015",
+			"title": "Purchase Card Transactions - CBCA  Apr-June 2015, 3rd Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-02-15",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-3",
 			"dataQuality": true,
@@ -7016,9 +7017,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA October - December  2015",
+			"title": "Purchase Card Transactions - CBCA Oct-Dec 2015, 1st Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-02-15",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-02-01-02",
 			"dataQuality": true,
@@ -7052,9 +7053,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA  January March 2015",
+			"title": "Purchase Card Transactions - CBCA  Jan-Mar 2015, 2nd Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-02-15",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-4",
 			"dataQuality": true,
@@ -7088,9 +7089,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA  October December 2014",
+			"title": "Purchase Card Transactions - CBCA  Oct-Dec 2014, 1st Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-02-15",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-5",
 			"dataQuality": true,
@@ -7124,9 +7125,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA  July September 2014",
+			"title": "Purchase Card Transactions - CBCA July-Sept 2014, 4th Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-02-15",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-6",
 			"dataQuality": true,
@@ -7160,9 +7161,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA  April June 2014",
+			"title": "Purchase Card Transactions - CBCA  Apr-June 2014, 3rd Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-02-15",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-7",
 			"dataQuality": true,
@@ -7196,9 +7197,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA  October December 2013",
+			"title": "Purchase Card Transactions - CBCA  Oct-Dec 2013, 1st Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-02-15",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-8",
 			"dataQuality": true,
@@ -7232,9 +7233,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA January-March 2016",
+			"title": "Purchase Card Transactions - CBCA Jan-Mar 2016, 2nd Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-02-15",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-04-28-01",
 			"dataQuality": true,
@@ -7267,9 +7268,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA April - June 2016",
+			"title": "Purchase Card Transactions - CBCA Apr-June 2016, 3rd Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-02-15",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-10-19-02",
 			"dataQuality": true,
@@ -7302,9 +7303,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA July - September 2016",
+			"title": "Purchase Card Transactions - CBCA July-Sept 2016, 4th Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-02-15",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-10-19-03",
 			"dataQuality": true,
@@ -7337,9 +7338,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA October - December 2016",
+			"title": "Purchase Card Transactions - CBCA Oct-Dec 2016, 1st Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2016-02-15",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-02-15-02",
 			"dataQuality": true,
@@ -7372,9 +7373,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA January - March 2017",
+			"title": "Purchase Card Transactions - CBCA Jan-Mar 2017, 2nd Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-05-04",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-05-04-01",
 			"dataQuality": true,
@@ -7407,9 +7408,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA April - June 2017",
+			"title": "Purchase Card Transactions - CBCA Apr-Jun 2017, 3rd Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-07-19",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-07-19-02",
 			"dataQuality": true,
@@ -7443,9 +7444,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA July - September 2017",
+			"title": "Purchase Card Transactions - CBCA July-Sept 2017, 4th Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2017-11-20",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-11-20-02",
 			"dataQuality": true,
@@ -7479,9 +7480,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA October - December 2017",
+			"title": "Purchase Card Transactions - CBCA Oct-Dec 2017, 1st Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2018-02-13",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-02-12-01",
 			"dataQuality": true,
@@ -7515,9 +7516,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA (Jan-Mar) 2018 2nd Qtr",
+			"title": "Purchase Card Transactions - CBCA Jan-Mar 2018, 2nd Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-07-25-01",
 			"dataQuality": true,
@@ -7551,9 +7552,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - CBCA (Apr-Jun) 2018 - 3rd Qtr",
+			"title": "Purchase Card Transactions - CBCA Apr-Jun 2018, 3rd Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-			"modified": "2018-07-25",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-07-25-02",
 			"dataQuality": true,
@@ -7580,16 +7581,52 @@
 					"downloadURL": "https://inventory.data.gov/dataset/4287c550-54be-4da8-b226-c3772a02d0a5/resource/7b629dac-b409-480a-9246-dae8e17bb3ce/download/2018-3rd-qtr-apr-jun-cbca-pc-transactions.xlsx"
 				}
 			],
-			"keyword": ["BOCA", "Contract Board", "December", "GSA SmartPay", "November", "October", "Purchase Card", "Transactions"],
+			"keyword": ["April", "BOCA", "Contract Board", "GSA SmartPay", "June", "May", "Purchase Card", "Transactions"],
 			"bureauCode": ["023:00"],
 			"programCode": ["023:010"],
 			"language": ["en-us"],
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - OIG April June 2014",
+			"title": "Purchase Card Transactions - CBCA July-Sept 2018, 4th Qtr",
+			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified": "2018-11-15",
+			"accessLevel": "public",
+			"identifier": "GSA-2018-11-15-02",
+			"dataQuality": true,
+			"issued": "2014-10-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-06-1",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "James G Parks",
+				"hasEmail": "mailto:greg.parks@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "4th Qtr (July-Sept) CBCA PC",
+					"description": "Purchase Card Transactions - CBCA 4th Qtr",
+					"downloadURL": "https://inventory.data.gov/dataset/314d7092-5be4-4ed4-a6a5-1b3a44c77098/resource/33108e0f-79bf-49ef-8562-4b2030a3f5eb/download/2018-4th-qtr-july-sept-cbca-pc-transactions.xlsx"
+				}
+			],
+			"keyword": ["August", "BOCA", "Contract Board", "GSA SmartPay", "July", "Purchase Card", "September", "Transactions"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Purchase Card Transactions - OIG Apr-June 2014, 3rd Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
-			"modified": "2016-01-05",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-10",
 			"dataQuality": true,
@@ -7649,9 +7686,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - OIG January March 2014",
+			"title": "Purchase Card Transactions - OIG Jan-Mar 2014, 2nd Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
-			"modified": "2016-01-05",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-11",
 			"dataQuality": true,
@@ -7685,9 +7722,9 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Purchase Card Transactions - OIG October December  2013",
+			"title": "Purchase Card Transactions - OIG Oct-Dec 2013, 1st Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
-			"modified": "2016-01-05",
+			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-12",
 			"dataQuality": true,
@@ -7723,7 +7760,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2018-10-03",
+			"modified": "2018-12-04",
 			"accessLevel": "public",
 			"identifier": "GSA-25251",
 			"dataQuality": true,
@@ -7746,8 +7783,8 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_bldg_rexus",
-					"description": "October - Rexus Building file",
-					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/63663b53-7cb6-4bea-bc4e-1e5897ef3158/download/datagovbldgrexus-1.csv"
+					"description": "December - Rexus Building file",
+					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/63663b53-7cb6-4bea-bc4e-1e5897ef3158/download/datagovbldgrexus.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -7757,7 +7794,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) (Lease)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2018-10-03",
+			"modified": "2018-12-04",
 			"accessLevel": "public",
 			"identifier": "GSA-25261",
 			"dataQuality": true,
@@ -7780,8 +7817,8 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus",
-					"description": "October - Rexus Lease file",
-					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ae0d8c20-3c63-40c3-96da-24a24f507e79/download/datagovlserexus-1.csv"
+					"description": "December - Rexus Lease file",
+					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ae0d8c20-3c63-40c3-96da-24a24f507e79/download/datagovlserexus.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
