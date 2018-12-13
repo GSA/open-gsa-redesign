@@ -1,12 +1,12 @@
 ## Welcome!
 
-We’re so glad you’re thinking about contributing to an 18F open source project! If you’re unsure about anything, just ask — or submit your issue or pull request anyway. The worst that can happen is we’ll politely ask you to change something. We appreciate all friendly contributions.
+We’re so glad you’re thinking about contributing to a Technology Transformation Services (TTS) open source project! If you’re unsure about anything, just ask — or submit your issue or pull request anyway. The worst that can happen is we’ll politely ask you to change something. We appreciate all friendly contributions.
 
-One of our goals is to ensure a welcoming environment for all contributors to our projects. Our staff follows the [18F Code of Conduct](https://18f.gsa.gov/code-of-conduct/), and all contributors should do the same.
+TTS is committed to building a safe, welcoming, harassment-free culture for everyone. We expect everyone on the TTS team and everyone within TTS spaces, including contributors to our projects, to follow the [TTS Code of Conduct](https://github.com/18F/code-of-conduct/blob/master/code-of-conduct.md).
 
 We encourage you to read this project’s CONTRIBUTING policy (you are here), its [LICENSE](LICENSE.md), [README](README.md) and its [Workflow](https://github.com/uswds/uswds/wiki/Workflow) process.
 
-If you have any questions or want to read more, check out the [18F Open Source Policy GitHub repository]( https://github.com/18f/open-source-policy), or just [shoot us an email](mailto:18f@gsa.gov).
+If you have any questions or want to read more, check out the [18F Open Source Policy GitHub repository]( https://github.com/18f/open-source-policy), or [send us an email](mailto:18f@gsa.gov).
 
 ## Guidelines
 
@@ -88,6 +88,21 @@ bin)/gulp` instead of `gulp`.)
 Note that running the tests also requires an installation of
 Chrome v59 or higher (v60 if you're on Windows).
 
+If you want to run a single test file, run `npm run mocha ${path/to/spec-file}`,
+substituting the actual path to the spec. Only javascript files can be executed by the `mocha` runner,
+and only those js files in the `spec` directory ending with a `.spec.js`.
+
+Alternatively, you can add an `.only` to a `describe` or `it` block (i.e. `describe.only('my spec')`)
+and run the `npm run test` command. Keep in mind that this will also run linters and aXe accessibility tests.
+
+To run all of the unit tests, run `npm run test:unit`.
+
+**For non-OSX users**:
+Before running the tests, if you are developing on a machine running an operating system other than OSX,
+you'll need to export a `CHROME_PATH` environment variable that points to Chrome's binary location. This ensures `chrome-launcher`
+can find a version of Chrome for our aXe visual acceptence tests. A table of the locations of the binary
+for each OS can [be found here](https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver#requirements).
+
 #### Visual regression testing
 
 The Design System comes with optional tooling for detecting visual regressions,
@@ -105,7 +120,7 @@ branch) to generate your golden screenshots.
 To generate the golden screenshots, run:
 
 ```
-node spec/visual-regression-tester.js test --updateGolden
+npm run test:visual:update
 ```
 
 Then, make any CSS refactorings (or switch to a branch that has them).
@@ -113,7 +128,7 @@ Then, make any CSS refactorings (or switch to a branch that has them).
 To compare the current state of your CSS to the golden screenshots, run:
 
 ```
-node spec/visual-regression-tester.js test
+npm run test:visual
 ```
 
 If the current screenshots don't match their golden counterparts, you will
