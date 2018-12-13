@@ -94,3 +94,8 @@ exclude:
   - '_test'
   - '.circleci'
   - 'vendor'
+
+collections:
+  apidocs:
+    output: true
+    layout: apidocs
