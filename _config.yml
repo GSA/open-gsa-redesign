@@ -98,4 +98,11 @@ exclude:
 collections:
   apidocs:
     output: true
-    layout: apidocs
+    permalink: /apidocs/:path/
+
+defaults:
+  -
+    scope:
+      type: apidocs
+    values:
+      layout: apidocs
