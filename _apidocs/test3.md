@@ -3,7 +3,7 @@ title: Ryan Test API
 banner-heading: Test API
 ---
 
-<link rel="stylesheet" type="text/css" href="/assets/swaggerui-dist/swagger-ui.css" >
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 
 
 ## Overview
@@ -20,8 +20,8 @@ In eget nibh consectetur, faucibus sapien et, finibus justo. Duis feugiat elit e
 
 <div id="swagger-ui"></div>
 
-<script src="/assets/swaggerui-dist/swagger-ui-bundle.js"> </script>
-<script src="/assets/swaggerui-dist/swagger-ui-standalone-preset.js"> </script>
+<script src="../../assets/swaggerui-dist/swagger-ui-bundle.js"> </script>
+<script src="../../assets/swaggerui-dist/swagger-ui-standalone-preset.js"> </script>
 <script>
 window.onload = function() {
 
