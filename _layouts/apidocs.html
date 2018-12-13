@@ -1,11 +1,17 @@
 ---
-layout: base
+layout: page
 ---
 
-<main class="usa-grid" id="main" tabindex="-1">
-  <section>
-    <h1>Test API Layout</h1>
-    {{ content }}
-  </section>
-  <div class="fixed-page-height"></div>
-</main>
+<aside class="usa-width-one-fourth" style="overflow: visible;">
+  <ul class="usa-sidenav-list">
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#api-calls">API Calls</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact-us">Contact Us</a></li>
+  </ul>
+</aside>
+
+<div class="usa-width-three-fourths">
+  {{ content }}
+</div>
