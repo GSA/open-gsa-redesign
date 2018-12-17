@@ -3413,7 +3413,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2018-12-04",
+			"modified": "2018-12-17",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3436,8 +3436,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON 12/04/18",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-12-04-18.json"
+					"description": "EDI JSON 12/17/18",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-12-17-18.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3743,7 +3743,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
 			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2018-12-04",
+			"modified": "2018-12-13",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
@@ -8103,7 +8103,7 @@
 			"@type": "dcat:Dataset",
 			"title": "System for Award Management (SAM) Public Extract - Exclusions",
 			"description": "This dataset contains a daily snapshot of active exclusion records entered by the U.S. Federal government identifying those parties excluded from receiving Federal contracts, certain subcontracts, and certain types of Federal financial and non-financial assistance and benefits. The data was formerly contained in the Excluded Parties List System (EPLS). In July 2012, EPLS was incorporated into the System for Award Management (SAM). SAM is now the electronic, web-based system that keeps its user community aware of administrative and statutory exclusions across the entire government, and individuals barred from entering the United States. Users must read the exclusion record completely to understand how it impacts the excluded party.",
-			"modified": "2015-11-19",
+			"modified": "2018-12-17",
 			"accessLevel": "public",
 			"identifier": "GSA-1626",
 			"dataQuality": true,
@@ -8131,7 +8131,7 @@
 					"description": "System implementing the functionalities of the legacy IAE applications: CCR, FedReg, ORCA, and EPLS.",
 					"describedBy": "https://www.sam.gov/sam/transcript/SAM_Exclusions_Extract_User_Guide.pdf",
 					"describedByType": "application/pdf",
-					"downloadURL": "https://www.sam.gov/public-extracts/SAM-Public/SAM_Exclusions_Public_Extract.ZIP"
+					"downloadURL": "https://www.sam.gov/SAM/extractfiledownload?role=WW&version=EPLSPUB&filename=SAM_Exclusions_Public_Extract.ZIP"
 				}
 			],
 			"keyword": ["Black List", "EPLS", "Ineligible Proceedings Completed", "Ineligible Proceedings Pending", "Prohibition Restriction", "SAM", "System for Award Management", "Voluntary Exclusion", "debarred list", "excluded parties list", "list of exclusions"],
@@ -8143,7 +8143,7 @@
 			"@type": "dcat:Dataset",
 			"title": "System for Award Management (SAM) Public Extract - Entity Registration",
 			"description": "This dataset contains the information available under the Freedom of Information Act (FOIA) for those entities registered to do business with the Federal government in the System for Award Management (SAM). It is updated monthly. Prior to July 2012, this dataset was called the Central Contractor Registration (CCR) FOIA Extract.",
-			"modified": "2012-07-29",
+			"modified": "2018-12-17",
 			"accessLevel": "public",
 			"identifier": "GSA-1422",
 			"dataQuality": true,
@@ -8170,7 +8170,7 @@
 					"description": "System implementing the functionalities of the legacy IAE applications; CCR, FedReg, ORCA, and EPLS.",
 					"describedBy": "https://sam.gov/sam/transcript/SAM%20Master%20Extract%20Mapping%20v5.1%20Public%20File%20Layout.xlsx",
 					"describedByType": "application/vnd.ms-excel",
-					"downloadURL": "https://www.sam.gov/SAMPortal/extractfiledownload?role=WW&version=SAM&filename=SAM_PUBLIC_MONTHLY_EXTRACT.ZIP"
+					"downloadURL": "https://www.sam.gov/SAM/extractfiledownload?role=WW&version=SAM&filename=SAM_PUBLIC_MONTHLY_EXTRACT.ZIP"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/zip",
@@ -8178,7 +8178,7 @@
 					"description": "System implementing the functionalities of the legacy IAE applications: CCR, FedReg, ORCA, and EPLS.",
 					"describedBy": "https://sam.gov/sam/transcript/SAM%20Master%20Extract%20Mapping%20v5.1%20Public%20File%20Layout.xlsx",
 					"describedByType": "application/vnd.ms-excel",
-					"downloadURL": "https://www.sam.gov/SAMPortal/extractfiledownload?role=SAM-PUBLIC-UTF8&version=SAM&filename=SAM_PUBLIC_UTF-8_MONTHLY_EXTRACT.ZIP"
+					"downloadURL": "https://www.sam.gov/SAM/extractfiledownload?role=SAM-PUBLIC-UTF8&version=SAM&filename=SAM_PUBLIC_UTF-8_MONTHLY_EXTRACT.ZIP"
 				}
 			],
 			"keyword": ["CCR", "Contractor", "DUNS number", "Entity", "Grantee", "Registrant", "Registration", "SAM", "System for Award Management", "Vendor"],
