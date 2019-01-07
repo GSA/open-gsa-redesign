@@ -26,3 +26,9 @@
     padding-left: 1.3em;
   }
 }
+
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky; 
+  top: 100px
+}
