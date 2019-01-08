@@ -1,0 +1,13 @@
+<section class="usa-section usa-section-dark" style="padding-top:1em; padding-bottom:1em;">
+    <div class="usa-grid">
+        <div class="usa-width-one-whole usa-end-row">
+            <h2>{{ page.banner-heading }}</h2> {% if page.banner-text %}
+            <p>{{ page.banner-text }}</p>
+            {% endif %} {% if page.banner-button-text %}
+            <div class="center-content">
+                <a href="{{ page.banner-button-link}}" class="usa-button" title="{{ page.banner-button-title }}">{{ page.banner-button-text }}</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,12 @@
+---
+layout: base
+---
+        {% if page.banner-heading %}
+          {% include narrow-header.html %}
+        {% endif %}
+        <main class="usa-grid" id="main" tabindex="-1" style="padding:0px;">
+          <div class="usa-grid" style="padding:0px;">
+            {{ content }}
+          </div>
+        <div class="fixed-page-height"></div>
+</main>
