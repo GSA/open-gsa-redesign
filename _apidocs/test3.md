@@ -24,7 +24,7 @@ In eget nibh consectetur, faucibus sapien et, finibus justo. Duis feugiat elit e
 
 
 {% include swagger-section-header.html %}
-    url: "https://gsa.github.io/prototype-city-pairs-api-documentation/api-docs/console/citypairs.json", 
+    url: "/api/test3/v1/openapi.yaml", 
 {% include swagger-section-footer.html %}
 
 
