@@ -22,35 +22,11 @@ Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
 
 In eget nibh consectetur, faucibus sapien et, finibus justo. Duis feugiat elit ex, non aliquet nisl cursus et. Morbi hendrerit est nec leo venenatis tempus. Vestibulum auctor auctor varius. Aenean lorem lacus, rutrum finibus nulla ac, tempor aliquet dolor. Donec egestas lectus ut augue posuere fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse nec turpis sed ipsum vestibulum aliquam nec eu nunc. Etiam ipsum orci, maximus et lorem nec, interdum dapibus sem. Sed nisl ex, scelerisque nec sodales at, finibus non dolor.
 
-<p><small><a href="#">Back to top</a></small></p>
 
-<div id="swagger-ui"></div>
+{% include swagger-section-header.html %}
+    url: "https://gsa.github.io/prototype-city-pairs-api-documentation/api-docs/console/citypairs.json", 
+{% include swagger-section-footer.html %}
 
-<script src="../../assets/swaggerui-dist/swagger-ui-bundle.js"> </script>
-<script src="../../assets/swaggerui-dist/swagger-ui-standalone-preset.js"> </script>
-<script>
-window.onload = function() {
-
-  // Build a system
-  const ui = SwaggerUIBundle({
-    url: "../test3/v1/openapi.yaml", 
-    dom_id: '#swagger-ui',
-    docExpansion: "full",
-    defaultModelsExpandDepth: 2,
-    deepLinking: true,
-    presets: [
-      SwaggerUIBundle.presets.apis,
-      SwaggerUIStandalonePreset
-    ],
-    plugins: [
-      SwaggerUIBundle.plugins.DownloadUrl
-    ],
-    layout: "StandaloneLayout"
-  })
-
-  window.ui = ui
-}
-</script>
 
 <p><small><a href="#">Back to top</a></small></p>
 
