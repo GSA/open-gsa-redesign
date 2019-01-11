@@ -106,3 +106,9 @@ defaults:
       type: apidocs
     values:
       layout: apidocs
+      toc: true
+
+toc:
+  min_level: 2
+  list_class: usa-sidenav-list
+  sublist_class: usa-sidenav-sub_list
