@@ -1,6 +1,6 @@
 - title: A Sample API
   description: This is a sample of an API that has doco on the site.
-  url: /api/test3/
+  url: test3/
 - title: Acquisition Gateway API
   description: The data for this API comes from the Acquisition Gateway, which is a workspace for acquisition professionals and federal buyers to connect with resources, tools and each other to improve acquisition government-wide.
   url: https://hallways.cap.gsa.gov/docs/#/api
