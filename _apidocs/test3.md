@@ -24,13 +24,13 @@ In eget nibh consectetur, faucibus sapien et, finibus justo. Duis feugiat elit e
 
 
 {% include swagger-section-header.html %}
-    url: "/api/test3/v1/openapi.yaml", 
+    url: "v1/openapi.yaml", 
 {% include swagger-section-footer.html %}
 
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Frequently Asked Questions
+## FAQ
 
 Integer velit ex, sollicitudin sed dolor vitae, consectetur cursus urna. Quisque lacus urna, vulputate non efficitur ut, ornare ac leo. Sed varius, lacus vitae mollis semper, magna lorem pretium erat, non maximus elit justo pretium dolor. Phasellus pellentesque bibendum turpis, eu venenatis eros facilisis sit amet. Pellentesque aliquet dolor ac metus luctus interdum. Vivamus est nibh, blandit non finibus id, tincidunt sed justo. Integer ullamcorper sapien neque, ut lobortis risus interdum ac. Aenean finibus, nibh vitae molestie viverra, nibh mi iaculis lacus, interdum dictum ipsum magna sit amet est. Phasellus vitae faucibus felis. Vivamus non molestie felis, at suscipit lectus. Phasellus ac pulvinar purus, luctus porta elit. Morbi a aliquet tellus. Vivamus mollis, ligula sed egestas euismod, elit lacus auctor dolor, sit amet facilisis purus eros ac augue.
 
