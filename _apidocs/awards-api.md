@@ -8,7 +8,7 @@ banner-heading: Awards API
 
 ## Overview
 
-This section should contain an overview of the data provided and the API purpose.
+This section should contain an overview of the data provided for the API purpose.
 
 <p><small><a href="#">Back to top</a></small></p>
 
