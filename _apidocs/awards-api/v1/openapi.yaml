@@ -1,0 +1,3463 @@
+openapi: 3.0.0
+info:
+  description: >-
+    These RESTFUL endpoints are to retrieve Awards data service detail
+    information
+  version: '1.0'
+  title: Awards Data Service API
+  license: {}
+tags:
+  - name: Awards Data Service
+    description: Awards Data service Operations
+  - name: basic-error-controller
+    description: Basic Error Controller
+paths:
+  /contractdata-api:
+    get:
+      tags:
+        - Awards Data Service
+      summary: Awards Details
+      operationId: getAwardsDataDetailsUsingGET
+      parameters:
+        - name: api_key
+          in: query
+          description: API KEY
+          required: true
+          schema:
+            type: string
+        - name: lastModifiedDate
+          in: query
+          description: 'Last modified date Range (max of 5 yrs range). Format: MM/dd/yyyy'
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: contractingAgencyId
+          in: query
+          description: Contracting Agency ID
+          required: false
+          schema:
+            type: string
+        - name: piid
+          in: query
+          description: Procurement Identifier
+          required: false
+          schema:
+            type: string
+        - name: referenceIdvPiid
+          in: query
+          description: >-
+            Referenced IDV PIID. This is required field. If no value passed,
+            default value is EMPTY string
+          required: false
+          schema:
+            type: string
+        - name: agencyId
+          in: query
+          description: Agency ID
+          required: false
+          schema:
+            type: string
+        - name: modificationNumber
+          in: query
+          description: Modification Number
+          required: false
+          schema:
+            type: string
+        - name: referenceAgencyId
+          in: query
+          description: Referenced IDV Agency ID
+          required: false
+          schema:
+            type: string
+        - name: dateSigned
+          in: query
+          description: 'Date Signed Range (Max of 5 years Range). Format: MM/dd/yyyy'
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: contractingOfficeId
+          in: query
+          description: Contracting Office ID
+          required: false
+          schema:
+            type: string
+        - name: vendorDuns
+          in: query
+          description: 9 digit Vendor DUNS
+          required: false
+          schema:
+            type: string
+        - name: naicsCode
+          in: query
+          description: 6 digit NAICS Code
+          required: false
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Page number for paginated results
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          description: Page size (default is 10)
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 10
+        - name: docType
+          in: query
+          description: Document Type
+          required: false
+          schema:
+            type: string
+        - name: piidAgencyName
+          in: query
+          description: The complete Agency Name
+          required: false
+          schema:
+            type: string
+        - name: transactionNumber
+          in: query
+          description: A valid complete Transaction Number
+          required: false
+          schema:
+            type: int32
+        - name: reasonForModification
+          in: query
+          description: A valid one character Code for Reason Modification
+          required: false
+          schema:
+            type: string
+        - name: reasonForModificationDesc
+          in: query
+          description: The complete value of Reason For Modification Description
+          required: false
+          schema:
+            type: string
+        - name: refIdvAgencyName
+          in: query
+          description: The complete name refIdvAgencyName
+          required: false
+          schema:
+            type: string
+        - name: referenceModificationNumber
+          in: query
+          description: A valid complete value of Reference Modification Number
+          required: false
+          schema:
+            type: string
+        - name: solicitationId
+          in: query
+          description: A valid complete value solicitationId
+          required: false
+          schema:
+            type: string
+        - name: version
+          in: query
+          description: A valid Document Version
+          required: false
+          schema:
+            type: string
+        - name: oldAgencyCode
+          in: query
+          description: A valid four character other AgencyID
+          required: false
+          schema:
+            type: string
+        - name: oldAgencyName
+          in: query
+          description: The complete other AgencyName
+          required: false
+          schema:
+            type: string
+        - name: oldPiid
+          in: query
+          description: A valid complete value of other PIID
+          required: false
+          schema:
+            type: string
+        - name: oldModificationNumber
+          in: query
+          description: A valid complete value of other Modification Number
+          required: false
+          schema:
+            type: string
+        - name: oldTransactionNumber
+          in: query
+          description: A valid complete value of other Transaction Number
+          required: false
+          schema:
+            type: int32
+        - name: oldIdvAgencyCode
+          in: query
+          description: A valid four character Other RferencedIDV AgencyID
+          required: false
+          schema:
+            type: string
+        - name: oldIdvAgencyName
+          in: query
+          description: The complete Other RferencedIDV AgencyName
+          required: false
+          schema:
+            type: string
+        - name: oldIdvPiid
+          in: query
+          description: A valid complete value other ReferencedIDV PIID
+          required: false
+          schema:
+            type: string
+        - name: oldIdvModificationNumber
+          in: query
+          description: A valid complete value other ReferencedIDV Modification Number
+          required: false
+          schema:
+            type: string
+        - name: effectiveDate
+          in: query
+          description: 'Effective Date. Format: MM/DD/YYYY'
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: currentCompletionDate
+          in: query
+          description: 'Completion Date. Format: MM/DD/YYYY'
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: ultimateCompletionDate
+          in: query
+          description: 'Estimated Ultimate Completion Date. Format:MM/DD/YYYY'
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: idvLastDate
+          in: query
+          description: 'last Date ToOrder. Format:MM/DD/YYYY'
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: fiscalYear
+          in: query
+          description: 'Fiscal Year. Format:YYYY'
+          required: false
+          schema:
+            type: string
+        - name: solicitationDate
+          in: query
+          description: 'solicitation Date. Format:MM/DD/YYYY'
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: dollarsObligated
+          in: query
+          description: Action Obligation
+          required: false
+          schema:
+            type: int32
+        - name: currentContractValue
+          in: query
+          description: Base And Excercised OptionsValue
+          required: false
+          schema:
+            type: int32
+        - name: ultimateContractValue
+          in: query
+          description: Base And AllOptionsValue
+          required: false
+          schema:
+            type: int32
+        - name: totalDollarsObligated
+          in: query
+          description: Total Action Obligation
+          required: false
+          schema:
+            type: int32
+        - name: totalCurrentContractValue
+          in: query
+          description: Total Base And Excercised OptionsValue
+          required: false
+          schema:
+            type: int32
+        - name: totalUltimateContractValue
+          in: query
+          description: Total Base And AllOptionsValue
+          required: false
+          schema:
+            type: int32
+        - name: feePaidForUseOfService
+          in: query
+          description: Fee Paid For Use Of IDV
+          required: false
+          schema:
+            type: int32
+        - name: nonGovernmentValue
+          in: query
+          description: Non Government Dollars
+          required: false
+          schema:
+            type: int32
+        - name: totalNonGovernmentValue
+          in: query
+          description: Total Non Government Dollars
+          required: false
+          schema:
+            type: int32
+        - name: departmentId
+          in: query
+          description: A Valid Four Character Value Of DepartmentId
+          required: false
+          schema:
+            type: string
+        - name: departmentName
+          in: query
+          description: The Complete Value Of DepartmentName
+          required: false
+          schema:
+            type: string
+        - name: contractingAgencyName
+          in: query
+          description: Contracting Office AgencyName
+          required: false
+          schema:
+            type: string
+        - name: contractingOfficeName
+          in: query
+          description: Contracting Office Name
+          required: false
+          schema:
+            type: string
+        - name: fundingAgencyCode
+          in: query
+          description: A Valid Four Character Value Of Funding Agency ID
+          required: false
+          schema:
+            type: string
+        - name: fundingAgencyName
+          in: query
+          description: Funding Agency Name
+          required: false
+          schema:
+            type: string
+        - name: fundingOfficeCode
+          in: query
+          description: A Valid Value Of Funding Office ID
+          required: false
+          schema:
+            type: string
+        - name: fundingOfficeName
+          in: query
+          description: Funding Office Name
+          required: false
+          schema:
+            type: string
+        - name: contractForForeignEntity
+          in: query
+          description: Foreign Funding Code
+          required: false
+          schema:
+            type: string
+        - name: foreignFundingDesc
+          in: query
+          description: Foreign Funding Description
+          required: false
+          schema:
+            type: string
+        - name: urlOfProgram
+          in: query
+          description: WebsiteURL
+          required: false
+          schema:
+            type: string
+        - name: whoCanUse
+          in: query
+          description: Who Can Use Short Description
+          required: false
+          schema:
+            type: string
+        - name: whoCanUseDesc
+          in: query
+          description: Who Can Use Large Description
+          required: false
+          schema:
+            type: string
+        - name: emailAddress
+          in: query
+          description: EmailAddress
+          required: false
+          schema:
+            type: string
+        - name: individualOrderCallLimit
+          in: query
+          description: Individual Order / Call Limit
+          required: false
+          schema:
+            type: int32
+        - name: typeOfFeeForUseOfService
+          in: query
+          description: Type Of Fee For Use Of Service
+          required: false
+          schema:
+            type: string
+        - name: fixedFeeValue
+          in: query
+          description: Fixed Fee Value
+          required: false
+          schema:
+            type: int32
+        - name: feeRangeLowerValue
+          in: query
+          description: Fee Range Lower Value
+          required: false
+          schema:
+            type: int32
+        - name: feeRangeUpperValue
+          in: query
+          description: Fee Range Upper Value
+          required: false
+          schema:
+            type: int32
+        - name: orderingProcedure
+          in: query
+          description: Ordering Procedure
+          required: false
+          schema:
+            type: string
+        - name: contractTypeDesc
+          in: query
+          description: Contract Action Type
+          required: false
+          schema:
+            type: string
+        - name: part8OrPart13
+          in: query
+          description: Part8 or Part13
+          required: false
+          schema:
+            type: string
+        - name: typeOfContractPricing
+          in: query
+          description: Type Of Contract Code
+          required: false
+          schema:
+            type: string
+        - name: tocpShortDescription
+          in: query
+          description: Type Of Contract Description
+          required: false
+          schema:
+            type: string
+        - name: majorProgramCode
+          in: query
+          description: Major Program Code
+          required: false
+          schema:
+            type: string
+        - name: nationalInterestCode
+          in: query
+          description: National Interest Action Code
+          required: false
+          schema:
+            type: string
+        - name: nationalInterestDescription
+          in: query
+          description: National Interest Action Description
+          required: false
+          schema:
+            type: string
+        - name: costOrPricingDataCode
+          in: query
+          description: Cost Or Pricing Data Code
+          required: false
+          schema:
+            type: string
+        - name: costOrPricingDataDesc
+          in: query
+          description: Cost Or Pricing Data Description
+          required: false
+          schema:
+            type: string
+        - name: costAcctStandards
+          in: query
+          description: Cost Accounting Standards Clause Code
+          required: false
+          schema:
+            type: string
+        - name: casClauseDesc
+          in: query
+          description: Cost Accounting Standards Clause Description
+          required: false
+          schema:
+            type: string
+        - name: descriptionOfRequirement
+          in: query
+          description: Description Of Contract Requirement
+          required: false
+          schema:
+            type: string
+        - name: gfeGfp
+          in: query
+          description: GFP Code
+          required: false
+          schema:
+            type: string
+        - name: gfeGfpDesc
+          in: query
+          description: gfp Description
+          required: false
+          schema:
+            type: string
+        - name: seaTransportationCode
+          in: query
+          description: Sea Transportation Code
+          required: false
+          schema:
+            type: string
+        - name: seaTransportationDesc
+          in: query
+          description: Sea Transportation Description
+          required: false
+          schema:
+            type: string
+        - name: undefinitizedAction
+          in: query
+          description: Undefinitized Action Code
+          required: false
+          schema:
+            type: string
+        - name: undefinitizedActionDesc
+          in: query
+          description: Undefinitized Action Description
+          required: false
+          schema:
+            type: string
+        - name: consolidatedContract
+          in: query
+          description: Consolidated Contract Code
+          required: false
+          schema:
+            type: string
+        - name: consolidatedContractDesc
+          in: query
+          description: Consolidated Contract Description
+          required: false
+          schema:
+            type: string
+        - name: performBasedServiceContract
+          in: query
+          description: Performance Based Service Acquisition Code
+          required: false
+          schema:
+            type: string
+        - name: pbscShortDescription
+          in: query
+          description: Performance Based Service Acquisition Description
+          required: false
+          schema:
+            type: string
+        - name: multiyearContract
+          in: query
+          description: Multi Year Contract Code
+          required: false
+          schema:
+            type: string
+        - name: multiyearContractDesc
+          in: query
+          description: Multi Year Contract Description
+          required: false
+          schema:
+            type: string
+        - name: agencyIdentifier
+          in: query
+          description: Treasury Account Symbol Agency Identifier
+          required: false
+          schema:
+            type: string
+        - name: mainAccountCode
+          in: query
+          description: Treasury Account Symbol Agency Main Account
+          required: false
+          schema:
+            type: string
+        - name: subAccountCode
+          in: query
+          description: Treasury Account Symbol Agency Sub Account
+          required: false
+          schema:
+            type: string
+        - name: initiative
+          in: query
+          description: Initiative
+          required: false
+          schema:
+            type: string
+        - name: idvPart8OrPart13
+          in: query
+          description: ReferencedIDV Part8 Or Part13
+          required: false
+          schema:
+            type: string
+        - name: idvMulOrSingleComp
+          in: query
+          description: ReferencedIDV Multiple Or Single
+          required: false
+          schema:
+            type: string
+        - name: idvContractType
+          in: query
+          description: ReferencedIDV Type Code
+          required: false
+          schema:
+            type: string
+        - name: idvTypeDescription
+          in: query
+          description: ReferencedIDV Type Description
+          required: false
+          schema:
+            type: string
+        - name: typeOfIdc
+          in: query
+          description: Type Of IDC Code
+          required: false
+          schema:
+            type: string
+        - name: typeOfIdcDesc
+          in: query
+          description: Type Of IDC Description
+          required: false
+          schema:
+            type: string
+        - name: multipleOrSingleAwardIdc
+          in: query
+          description: Multiple Or Single Award IDV
+          required: false
+          schema:
+            type: string
+        - name: programAcronym
+          in: query
+          description: Program Acronym
+          required: false
+          schema:
+            type: string
+        - name: contingencyOps
+          in: query
+          description: Contingency Humanitarian Peacekeeping Operation Code
+          required: false
+          schema:
+            type: string
+        - name: contingencyOpsDesc
+          in: query
+          description: Contingency Humanitarian Peacekeeping Operation Description
+          required: false
+          schema:
+            type: string
+        - name: contractFinancing
+          in: query
+          description: Contract Financing Code
+          required: false
+          schema:
+            type: string
+        - name: contractFinancingDesc
+          in: query
+          description: Contract Financing Description
+          required: false
+          schema:
+            type: string
+        - name: purchaseCardPaymentMethod
+          in: query
+          description: Purchase Card Payment Method Code
+          required: false
+          schema:
+            type: string
+        - name: pcardAsPaymentDesc
+          in: query
+          description: Purchase Card Payment Method Description
+          required: false
+          schema:
+            type: string
+        - name: numberOfActions
+          in: query
+          description: Number Of Actions
+          required: false
+          schema:
+            type: int32
+        - name: typeOfAgreement
+          in: query
+          description: Type Of Agreement
+          required: false
+          schema:
+            type: string
+        - name: ngcParticipation
+          in: query
+          description: Non Traditional Government Contractor Participation Code
+          required: false
+          schema:
+            type: string
+        - name: ngcParticipationDesc
+          in: query
+          description: Non Traditional Government Contractor Participation Description
+          required: false
+          schema:
+            type: string
+        - name: clingerCohenPlanCompliance
+          in: query
+          description: Clinger Cohen Act Code
+          required: false
+          schema:
+            type: string
+        - name: clingerCohenActDesc
+          in: query
+          description: Clinger Cohen Act Description
+          required: false
+          schema:
+            type: string
+        - name: walshHealeyAct
+          in: query
+          description: Walsh Healey Act Code
+          required: false
+          schema:
+            type: string
+        - name: walshHealeyActDesc
+          in: query
+          description: Walsh Healey Act Description
+          required: false
+          schema:
+            type: string
+        - name: serviceContractAct
+          in: query
+          description: Service Contract Act Code
+          required: false
+          schema:
+            type: string
+        - name: serviceContractActDesc
+          in: query
+          description: Service Contract Act Description
+          required: false
+          schema:
+            type: string
+        - name: davisBaconAct
+          in: query
+          description: Davis Bacon Act Code
+          required: false
+          schema:
+            type: string
+        - name: davisBaconActDesc
+          in: query
+          description: Davis Bacon Act Description
+          required: false
+          schema:
+            type: string
+        - name: contractingAuthority
+          in: query
+          description: Interagency Contracting Authority Code
+          required: false
+          schema:
+            type: string
+        - name: contractingAuthorityDesc
+          in: query
+          description: Contracting Authority Description
+          required: false
+          schema:
+            type: string
+        - name: otherStatutoryAuthority
+          in: query
+          description: Other Interagency Contracting Statutory Authority
+          required: false
+          schema:
+            type: string
+        - name: nasaStatutoryAuthority
+          in: query
+          description: Nasa Statutory Authority
+          required: false
+          schema:
+            type: string
+        - name: productOrServiceCode
+          in: query
+          description: Product Or Service Code
+          required: false
+          schema:
+            type: string
+        - name: productOrService
+          in: query
+          description: Product Or Service
+          required: false
+          schema:
+            type: string
+        - name: productOrServiceDescription
+          in: query
+          description: Product Or Service Description
+          required: false
+          schema:
+            type: string
+        - name: bundledContractException
+          in: query
+          description: Bundled Contract Code
+          required: false
+          schema:
+            type: string
+        - name: contractBundlingDesc
+          in: query
+          description: Bundled Contract Description
+          required: false
+          schema:
+            type: string
+        - name: claimantProgramCode
+          in: query
+          description: Claimant Program Code
+          required: false
+          schema:
+            type: string
+        - name: claimantProgramDescription
+          in: query
+          description: ' Claimant Program Description'
+          required: false
+          schema:
+            type: string
+        - name: naicsDesciption
+          in: query
+          description: Principal NAICS Description
+          required: false
+          schema:
+            type: string
+        - name: recoveredMaterialClauses
+          in: query
+          description: Recovered Materials/Sustainability Code
+          required: false
+          schema:
+            type: string
+        - name: recoveredMaterialClsDesc
+          in: query
+          description: Recovered Materials/Sustainability Description
+          required: false
+          schema:
+            type: string
+        - name: mfgOrganizationType
+          in: query
+          description: Domestic or Foreign Entity Code
+          required: false
+          schema:
+            type: string
+        - name: mfgOrganizationTypeDesc
+          in: query
+          description: Domestic or Foreign Entity Description
+          required: false
+          schema:
+            type: string
+        - name: systemEquipmentCode
+          in: query
+          description: DOD Acquisition Program Code
+          required: false
+          schema:
+            type: string
+        - name: systemEquipmentDesc
+          in: query
+          description: DOD Acquisition Program Description
+          required: false
+          schema:
+            type: string
+        - name: itCommercialItemCategory
+          in: query
+          description: InfoTech Commercial Item Category Code
+          required: false
+          schema:
+            type: string
+        - name: itCommercialItemCatDesc
+          in: query
+          description: InfoTech Commercial Item Category Description
+          required: false
+          schema:
+            type: string
+        - name: useOfEpaProducts
+          in: query
+          description: Use Of EPA Designated Code
+          required: false
+          schema:
+            type: string
+        - name: useOfEpaProductsDesc
+          in: query
+          description: Use Of EPA Designated Description
+          required: false
+          schema:
+            type: string
+        - name: countryCode
+          in: query
+          description: Country of Product or Service Origin Code
+          required: false
+          schema:
+            type: string
+        - name: awardCountryName
+          in: query
+          description: Country of Product or Service Origin Description
+          required: false
+          schema:
+            type: string
+        - name: placeOfManufacture
+          in: query
+          description: Place of Manufacture Code
+          required: false
+          schema:
+            type: string
+        - name: pomShortDescription
+          in: query
+          description: Place of Manufacture Description
+          required: false
+          schema:
+            type: string
+        - name: popLocationCode
+          in: query
+          description: Principal Place Of Performance Location Code
+          required: false
+          schema:
+            type: string
+        - name: popLocationName
+          in: query
+          description: Principal Place Of Performance Location Name
+          required: false
+          schema:
+            type: string
+        - name: popLocationStateCd
+          in: query
+          description: Principal Place Of Performance State Code
+          required: false
+          schema:
+            type: string
+        - name: popLocationStateName
+          in: query
+          description: Principal Place Of Performance State Name
+          required: false
+          schema:
+            type: string
+        - name: popCountryCode
+          in: query
+          description: Principal Place Of Performance Country Code
+          required: false
+          schema:
+            type: string
+        - name: popCountryName
+          in: query
+          description: Principal Place Of Performance Country Name
+          required: false
+          schema:
+            type: string
+        - name: popZipCode
+          in: query
+          description: Principal Place Of Performance Zip Code
+          required: false
+          schema:
+            type: string
+        - name: placeCongressionalDistrict
+          in: query
+          description: Principal Place Of Performance Congressional District
+          required: false
+          schema:
+            type: string
+        - name: extentCompeted
+          in: query
+          description: Extent Competed Code
+          required: false
+          schema:
+            type: string
+        - name: extentCompetedDescription
+          in: query
+          description: Extent Competed Description
+          required: false
+          schema:
+            type: string
+        - name: solicitationProcedures
+          in: query
+          description: Solicitation Procedures Code
+          required: false
+          schema:
+            type: string
+        - name: solicitationProcDescription
+          in: query
+          description: Solicitation Procedures Description
+          required: false
+          schema:
+            type: string
+        - name: typeOfSetAside
+          in: query
+          description: Type of Set Aside Code
+          required: false
+          schema:
+            type: string
+        - name: typeOfSetAsideDescription
+          in: query
+          description: Type of Set Aside Description
+          required: false
+          schema:
+            type: string
+        - name: evaluatedPreference
+          in: query
+          description: Evaluated Preference Code
+          required: false
+          schema:
+            type: string
+        - name: evaluatedPrefDescription
+          in: query
+          description: Evaluated Preference Description
+          required: false
+          schema:
+            type: string
+        - name: research
+          in: query
+          description: SBIR/STTR Code
+          required: false
+          schema:
+            type: string
+        - name: researchDescription
+          in: query
+          description: SBIR/STTR Description
+          required: false
+          schema:
+            type: string
+        - name: statryExptnToFairOprtnty
+          in: query
+          description: Fair Opportunity/Limited Sources Code
+          required: false
+          schema:
+            type: string
+        - name: fairOpportunityDescription
+          in: query
+          description: Fair Opportunity/Limited Sources Description
+          required: false
+          schema:
+            type: string
+        - name: reasonNotCompeted
+          in: query
+          description: Other Than Full And Open Competition Code
+          required: false
+          schema:
+            type: string
+        - name: reasonNotCompDescription
+          in: query
+          description: Other Than Full And Open Competition Description
+          required: false
+          schema:
+            type: string
+        - name: numberOfOffersReceived
+          in: query
+          description: Number Of Offers Received
+          required: false
+          schema:
+            type: string
+        - name: commercialItemAcquisition
+          in: query
+          description: Commercial Item Acquisition Procedures Code
+          required: false
+          schema:
+            type: string
+        - name: commercialItemAcquistnDesc
+          in: query
+          description: Commercial Item Acquisition Procedures Description
+          required: false
+          schema:
+            type: string
+        - name: simplifiedProceduresForCertainCommercialItems
+          in: query
+          description: Simplified Procedures For Certain Commercial Items
+          required: false
+          schema:
+            type: string
+        - name: simplifiedProceduresForCertainCommercialItemsDesc
+          in: query
+          description: Simplified Procedures For Certain CommercialItems Description
+          required: false
+          schema:
+            type: string
+        - name: sbcDemonstrationProgram
+          in: query
+          description: Small Business Competitiveness Demonstration Program
+          required: false
+          schema:
+            type: string
+        - name: a76Action
+          in: query
+          description: A76 Action Code
+          required: false
+          schema:
+            type: string
+        - name: a76Desc
+          in: query
+          description: A76 Action Description
+          required: false
+          schema:
+            type: string
+        - name: fedBizOpps
+          in: query
+          description: FedBizOpps Code
+          required: false
+          schema:
+            type: string
+        - name: fedBizOppsDesc
+          in: query
+          description: FedBizOpps Description
+          required: false
+          schema:
+            type: string
+        - name: localAreaSetAside
+          in: query
+          description: Local Area Set Aside Code
+          required: false
+          schema:
+            type: string
+        - name: lasaDescription
+          in: query
+          description: Local Area Set Aside Description
+          required: false
+          schema:
+            type: string
+        - name: preAwardSynopsisRequirement
+          in: query
+          description: Pre-Award Synopsis
+          required: false
+          schema:
+            type: string
+        - name: priceEvalDiff
+          in: query
+          description: Price Evaluation Percent Difference
+          required: false
+          schema:
+            type: int32
+        - name: synopsisWaiverException
+          in: query
+          description: Synopsis Waiver Exception
+          required: false
+          schema:
+            type: string
+        - name: alternativeAdvertising
+          in: query
+          description: Alternative Advertising
+          required: false
+          schema:
+            type: string
+        - name: subcontractPlan
+          in: query
+          description: Subcontract Plan Code
+          required: false
+          schema:
+            type: string
+        - name: subcontractPlanDesc
+          in: query
+          description: Subcontract Plan Description
+          required: false
+          schema:
+            type: string
+        - name: reasonNotSdb
+          in: query
+          description: Reason Not Awarded To Small Disadvantaged Business Code
+          required: false
+          schema:
+            type: string
+        - name: reasonNotSdbDesc
+          in: query
+          description: Reason Not Awarded To Small Disadvantaged Business Description
+          required: false
+          schema:
+            type: string
+        - name: reasonNotSb
+          in: query
+          description: Reason Not Awarded To Small Business Code
+          required: false
+          schema:
+            type: string
+        - name: reasonNotSbDesc
+          in: query
+          description: Reason Not Awarded To Small Business Description
+          required: false
+          schema:
+            type: string
+        - name: offerorsProposalNumber
+          in: query
+          description: Offeror's Proposal Number
+          required: false
+          schema:
+            type: string
+        - name: prNumber
+          in: query
+          description: PR Number
+          required: false
+          schema:
+            type: int32
+        - name: accessionNumber
+          in: query
+          description: Accession Number
+          required: false
+          schema:
+            type: string
+        - name: installationUnique
+          in: query
+          description: Installation Unique
+          required: false
+          schema:
+            type: string
+        - name: administratorCode
+          in: query
+          description: Administrative CO.
+          required: false
+          schema:
+            type: string
+        - name: contractingOfficerCode
+          in: query
+          description: Contracting Officer Code
+          required: false
+          schema:
+            type: string
+        - name: negotiatorCode
+          in: query
+          description: Buyer Code
+          required: false
+          schema:
+            type: string
+        - name: organizationCode
+          in: query
+          description: COR Organization Code
+          required: false
+          schema:
+            type: string
+        - name: cotrName
+          in: query
+          description: COR Name
+          required: false
+          schema:
+            type: string
+        - name: alternateCotrName
+          in: query
+          description: Alternate COR Name
+          required: false
+          schema:
+            type: string
+        - name: fundedThroughDate
+          in: query
+          description: Funded Through Date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: contractFundCode
+          in: query
+          description: Contract Fund Code
+          required: false
+          schema:
+            type: string
+        - name: mgmtReportingRequirements
+          in: query
+          description: Management Reporting Requirements
+          required: false
+          schema:
+            type: string
+        - name: acctngInstallationNumber
+          in: query
+          description: Accounting Installation
+          required: false
+          schema:
+            type: string
+        - name: fieldOfScienceOrEngg
+          in: query
+          description: Field Of Science or Engineering
+          required: false
+          schema:
+            type: string
+        - name: contractAdminsDelegated
+          in: query
+          description: Contract Administrations Delegated
+          required: false
+          schema:
+            type: string
+        - name: principalInvFirstName
+          in: query
+          description: Principal Investigator First Name
+          required: false
+          schema:
+            type: string
+        - name: principalInvMiddleInitial
+          in: query
+          description: Principal Investigator M.I
+          required: false
+          schema:
+            type: string
+        - name: principalInvLastName
+          in: query
+          description: Principal Investigator Last Name
+          required: false
+          schema:
+            type: string
+        - name: altPrincipalInvFirstName
+          in: query
+          description: Alternate Principal Investigator First Name
+          required: false
+          schema:
+            type: string
+        - name: altPrincipalInvMiInitial
+          in: query
+          description: Alternate Principal Investigator M.I
+          required: false
+          schema:
+            type: string
+        - name: altPrincipalInvLastName
+          in: query
+          description: Alternate Principal Investigator Last Name
+          required: false
+          schema:
+            type: string
+        - name: closeOutPr
+          in: query
+          description: Close Out PR
+          required: false
+          schema:
+            type: string
+        - name: advisoryAssistanceServices
+          in: query
+          description: Advisory/Assistance Services Contract
+          required: false
+          schema:
+            type: string
+        - name: supportServicesTypeContract
+          in: query
+          description: Support Services Type Contract
+          required: false
+          schema:
+            type: string
+        - name: newTechPatentRightsClause
+          in: query
+          description: New Technology or Patent Clause
+          required: false
+          schema:
+            type: string
+        - name: propertyFinancialReporting
+          in: query
+          description: Property Financial Reporting
+          required: false
+          schema:
+            type: string
+        - name: valueEngineeringClause
+          in: query
+          description: Value Engineering Clause
+          required: false
+          schema:
+            type: string
+        - name: securityCode
+          in: query
+          description: Security Code
+          required: false
+          schema:
+            type: string
+        - name: isPhysicallyComplete
+          in: query
+          description: Is Physically Complete
+          required: false
+          schema:
+            type: string
+        - name: physicalCompletionDate
+          in: query
+          description: Is Physically Complete
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: finalInvoicePaidDate
+          in: query
+          description: Final Invoice Paid Date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: solicitationIssueDate
+          in: query
+          description: Solicitation Issue Date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: cancellationDate
+          in: query
+          description: Cancellation Date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: destroyDate
+          in: query
+          description: Destroy Date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: preparedBy
+          in: query
+          description: Created By
+          required: false
+          schema:
+            type: string
+        - name: preparedDate
+          in: query
+          description: Created Date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: lastModifiedBy
+          in: query
+          description: Last Modified By
+          required: false
+          schema:
+            type: string
+        - name: approvedBy
+          in: query
+          description: Approved By
+          required: false
+          schema:
+            type: string
+        - name: approvedDate
+          in: query
+          description: Approved Date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: vendorName
+          in: query
+          description: Vendor Name
+          required: false
+          schema:
+            type: string
+        - name: vendorNameAlternate
+          in: query
+          description: 'Alternate Vendor Name '
+          required: false
+          schema:
+            type: string
+        - name: vendorLegalOrganizationName
+          in: query
+          description: Vendor Legal Organization Name
+          required: false
+          schema:
+            type: string
+        - name: doingBusinessAsName
+          in: query
+          description: Doing Business As Name
+          required: false
+          schema:
+            type: string
+        - name: alaskanNativeCorporation
+          in: query
+          description: Is Alaskan Native Corporation Owned Firm
+          required: false
+          schema:
+            type: string
+        - name: americanIndianOwned
+          in: query
+          description: 'Is American Indian Owned '
+          required: false
+          schema:
+            type: string
+        - name: indianTribe
+          in: query
+          description: Is Indian Tribe (Federally Recognized)
+          required: false
+          schema:
+            type: string
+        - name: nativeHawaiianOrganization
+          in: query
+          description: Is Native Hawaiian Organization Owned Firm
+          required: false
+          schema:
+            type: string
+        - name: triballyOwned
+          in: query
+          description: Is Tribally Owned Firm
+          required: false
+          schema:
+            type: string
+        - name: veteranOwned
+          in: query
+          description: Is Veteran Owned Business
+          required: false
+          schema:
+            type: string
+        - name: serviceDisabledVeteranOwned
+          in: query
+          description: Is Service Disabled Veteran Owned Business
+          required: false
+          schema:
+            type: string
+        - name: womenOwned
+          in: query
+          description: Is Woman Owned Business
+          required: false
+          schema:
+            type: string
+        - name: womenOwnedSmall
+          in: query
+          description: Is Women Owned Small Business
+          required: false
+          schema:
+            type: string
+        - name: econoDisadvWomenOwnedSmall
+          in: query
+          description: Is Economically Disadvantaged Women Owned Small Business
+          required: false
+          schema:
+            type: string
+        - name: jointVentureWomenOwnedSmall
+          in: query
+          description: Is Joint Venture Women Owned Small Business
+          required: false
+          schema:
+            type: string
+        - name: jointVentureEconoDisadvWomenOwnedSmall
+          in: query
+          description: >-
+            Is Joint Venture Economically Disadvantaged Women Owned Small
+            Business
+          required: false
+          schema:
+            type: string
+        - name: minorityOwned
+          in: query
+          description: Is Minority Owned Business
+          required: false
+          schema:
+            type: string
+        - name: subcontinentAsianAmericanOwned
+          in: query
+          description: Is Subcontinent Asian (Asian-Indian) American Owned
+          required: false
+          schema:
+            type: string
+        - name: asianPacificAmericanOwned
+          in: query
+          description: Is Asian-Pacific American Owned
+          required: false
+          schema:
+            type: string
+        - name: blackAmericanOwned
+          in: query
+          description: 'Is Black American Owned '
+          required: false
+          schema:
+            type: string
+        - name: hispanicAmericanOwned
+          in: query
+          description: Is Hispanic American Owned
+          required: false
+          schema:
+            type: string
+        - name: nativeAmericanOwned
+          in: query
+          description: Is Native American Owned
+          required: false
+          schema:
+            type: string
+        - name: otherMinorityOwned
+          in: query
+          description: Is Other Minority Owned
+          required: false
+          schema:
+            type: string
+        - name: verySmallBusiness
+          in: query
+          description: Is Very Small Business
+          required: false
+          schema:
+            type: string
+        - name: communityDevCorpOwned
+          in: query
+          description: Is Community Development Corporation Owned Firm
+          required: false
+          schema:
+            type: string
+        - name: laborSurplusArea
+          in: query
+          description: Is Labor Surplus Area Firm
+          required: false
+          schema:
+            type: string
+        - name: usFederalGovernment
+          in: query
+          description: 'Is U.S. Federal Government '
+          required: false
+          schema:
+            type: string
+        - name: federallyFundedR&DCorp
+          in: query
+          description: Is Federally Funded Research and Development Corp
+          required: false
+          schema:
+            type: string
+        - name: federalAgency
+          in: query
+          description: Is Federal Agency
+          required: false
+          schema:
+            type: string
+        - name: usStateGovernment
+          in: query
+          description: Is U.S. State Government
+          required: false
+          schema:
+            type: string
+        - name: usLocalGovernment
+          in: query
+          description: Is U.S. Local Government
+          required: false
+          schema:
+            type: string
+        - name: city
+          in: query
+          description: Is City U.S. Local Government
+          required: false
+          schema:
+            type: string
+        - name: county
+          in: query
+          description: Is County U.S. Local Government
+          required: false
+          schema:
+            type: string
+        - name: interMunicipal
+          in: query
+          description: Is Inter-Municipal U.S. Local Government
+          required: false
+          schema:
+            type: string
+        - name: localGovernmentOwned
+          in: query
+          description: Is Local Government Owned U.S. Local Government
+          required: false
+          schema:
+            type: string
+        - name: municipality
+          in: query
+          description: Is Municipality U.S. Local Government
+          required: false
+          schema:
+            type: string
+        - name: schoolDistrict
+          in: query
+          description: Is School District U.S. Local Government
+          required: false
+          schema:
+            type: string
+        - name: township
+          in: query
+          description: Is Township U.S. Local Government
+          required: false
+          schema:
+            type: string
+        - name: usTribalGovernment
+          in: query
+          description: Is U.S. Tribal Government
+          required: false
+          schema:
+            type: string
+        - name: foreignGovernment
+          in: query
+          description: Is Foreign Government
+          required: false
+          schema:
+            type: string
+        - name: corpEntityNotTaxExempt
+          in: query
+          description: Is Corporate Entity Not Tax Exempt
+          required: false
+          schema:
+            type: string
+        - name: corpEntityTaxExempt
+          in: query
+          description: Is Corporate Entity Tax Exempt
+          required: false
+          schema:
+            type: string
+        - name: partnershipOrLlp
+          in: query
+          description: Is Partnership or Limited Liability Partnership
+          required: false
+          schema:
+            type: string
+        - name: soleProprietorship
+          in: query
+          description: Is Sole Proprietorship
+          required: false
+          schema:
+            type: string
+        - name: smallAgriculturalCooperative
+          in: query
+          description: Is Small Agricultural Cooperative
+          required: false
+          schema:
+            type: string
+        - name: internationalOrganization
+          in: query
+          description: Is International Organization
+          required: false
+          schema:
+            type: string
+        - name: usGovernmentEntity
+          in: query
+          description: Is US Government Entity
+          required: false
+          schema:
+            type: string
+        - name: communityDevelopmentCorp
+          in: query
+          description: Is Community Development Corporation
+          required: false
+          schema:
+            type: string
+        - name: domesticShelter
+          in: query
+          description: Is Domestic Shelter
+          required: false
+          schema:
+            type: string
+        - name: educationalInstitution
+          in: query
+          description: Is Educational Institution
+          required: false
+          schema:
+            type: string
+        - name: foundation
+          in: query
+          description: Is Foundation
+          required: false
+          schema:
+            type: string
+        - name: hospital
+          in: query
+          description: Is Hospital
+          required: false
+          schema:
+            type: string
+        - name: manufacturerOfGoods
+          in: query
+          description: Is Manufacturer Of Goods
+          required: false
+          schema:
+            type: string
+        - name: veterinaryHospital
+          in: query
+          description: Is Veterinary Hospital
+          required: false
+          schema:
+            type: string
+        - name: hispanicServicingInstitution
+          in: query
+          description: Is Hispanic Servicing Institution
+          required: false
+          schema:
+            type: string
+        - name: contracts
+          in: query
+          description: Receives Contracts
+          required: false
+          schema:
+            type: string
+        - name: grants
+          in: query
+          description: Receives Grants
+          required: false
+          schema:
+            type: string
+        - name: contractsGrants
+          in: query
+          description: Receives Contracts and Grants
+          required: false
+          schema:
+            type: string
+        - name: airportAuthority
+          in: query
+          description: 'Is Airport Authority '
+          required: false
+          schema:
+            type: string
+        - name: councilOfGovernments
+          in: query
+          description: Is Council of Governments
+          required: false
+          schema:
+            type: string
+        - name: housingPublicOrTribal
+          in: query
+          description: Is Housing Authorities Public/Tribal
+          required: false
+          schema:
+            type: string
+        - name: interstateEntity
+          in: query
+          description: Is Interstate Entity
+          required: false
+          schema:
+            type: string
+        - name: planningCommission
+          in: query
+          description: Is Planning Commission
+          required: false
+          schema:
+            type: string
+        - name: portAuthority
+          in: query
+          description: Is Port Authority
+          required: false
+          schema:
+            type: string
+        - name: transitAuthority
+          in: query
+          description: Is Transit Authority
+          required: false
+          schema:
+            type: string
+        - name: subchapterSCorporation
+          in: query
+          description: Is Subchapter S Corporation
+          required: false
+          schema:
+            type: string
+        - name: limitedLiabilityCorporation
+          in: query
+          description: Is Limited Liability Corporation
+          required: false
+          schema:
+            type: string
+        - name: foreignOwnedAndLocated
+          in: query
+          description: Foreign Owned And Located
+          required: false
+          schema:
+            type: string
+        - name: forProfitOrganization
+          in: query
+          description: Is For Profit Organization
+          required: false
+          schema:
+            type: string
+        - name: nonprofitOrganization
+          in: query
+          description: Is Non Profit Organization
+          required: false
+          schema:
+            type: string
+        - name: otherNotForProfitOrganization
+          in: query
+          description: Is Other Not For Profit Organization
+          required: false
+          schema:
+            type: string
+        - name: shelteredWorkshop
+          in: query
+          description: Is Sheltered Workshop
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporation
+          in: query
+          description: State Of Incorporation
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporation
+          in: query
+          description: Country Of Incorporation
+          required: false
+          schema:
+            type: string
+        - name: organizationType
+          in: query
+          description: Organization Type
+          required: false
+          schema:
+            type: string
+        - name: 1862LandGrantCollege
+          in: query
+          description: Is 1862 Land Grant College
+          required: false
+          schema:
+            type: string
+        - name: 1890LandGrantCollege
+          in: query
+          description: Is 1890 Land Grant College
+          required: false
+          schema:
+            type: string
+        - name: 1994LandGrantCollege
+          in: query
+          description: Is 1994 LandGrant College
+          required: false
+          schema:
+            type: string
+        - name: historicBlackCollegeUniv
+          in: query
+          description: Is Historically Black College or University (HBCU)
+          required: false
+          schema:
+            type: string
+        - name: minorityInstitution
+          in: query
+          description: Is Minority Institutions
+          required: false
+          schema:
+            type: string
+        - name: privateUniversityOrCollege
+          in: query
+          description: Is Private University Or College
+          required: false
+          schema:
+            type: string
+        - name: schoolOfForestry
+          in: query
+          description: Is School of Forestry
+          required: false
+          schema:
+            type: string
+        - name: higherLearning
+          in: query
+          description: 'Is State Controlled Institution of Higher Learning '
+          required: false
+          schema:
+            type: string
+        - name: tribalCollege
+          in: query
+          description: Is Tribal College
+          required: false
+          schema:
+            type: string
+        - name: veterinaryCollege
+          in: query
+          description: Is Veterinary College
+          required: false
+          schema:
+            type: string
+        - name: alaskanNativeServicingInstitution
+          in: query
+          description: Is Alaskan Native Servicing Institution
+          required: false
+          schema:
+            type: string
+        - name: nativeHawaiianServicingInstitution
+          in: query
+          description: Is Native Hawaiian Servicing Institution
+          required: false
+          schema:
+            type: string
+        - name: dotCertifiedDisadvBusiness
+          in: query
+          description: 'Is DoT Certified Disadvantaged Business Enterprise '
+          required: false
+          schema:
+            type: string
+        - name: selfCertifiedSmallDisadvBusiness
+          in: query
+          description: Is Self-Certified Small Disadvantaged Business
+          required: false
+          schema:
+            type: string
+        - name: sbaCertifiedSmallDisadvBusiness
+          in: query
+          description: Is SBA Certified Small Disadvantaged Business
+          required: false
+          schema:
+            type: string
+        - name: sbaCertified8a
+          in: query
+          description: Is SBA Certified 8(a) Program Participant
+          required: false
+          schema:
+            type: string
+        - name: sbaCertifiedHubZone
+          in: query
+          description: Is SBA Certified Hub Zone firm
+          required: false
+          schema:
+            type: string
+        - name: sbaCertified8aJointVenture
+          in: query
+          description: 'Is SBA Certified 8(a) Joint Venture '
+          required: false
+          schema:
+            type: string
+        - name: vendorAddressLine1
+          in: query
+          description: Vendor Address Line1
+          required: false
+          schema:
+            type: string
+        - name: vendorAddressLine2
+          in: query
+          description: Vendor Address Line2
+          required: false
+          schema:
+            type: string
+        - name: vendorAddressLine3
+          in: query
+          description: Vendor Address Line3
+          required: false
+          schema:
+            type: string
+        - name: vendorCity
+          in: query
+          description: Vendor City
+          required: false
+          schema:
+            type: string
+        - name: vendorState
+          in: query
+          description: Vendor State
+          required: false
+          schema:
+            type: string
+        - name: vendorZipCode
+          in: query
+          description: Vendor ZipCode
+          required: false
+          schema:
+            type: string
+        - name: vendorCountryCode
+          in: query
+          description: Vendor Country Code
+          required: false
+          schema:
+            type: string
+        - name: vendorPhoneNumber
+          in: query
+          description: Vendor Phone Number
+          required: false
+          schema:
+            type: string
+        - name: vendorFaxNumber
+          in: query
+          description: Vendor Fax Number
+          required: false
+          schema:
+            type: string
+        - name: vendorCongressionalDistrict
+          in: query
+          description: Vendor Congressional District
+          required: false
+          schema:
+            type: string
+        - name: globalDunsNumber
+          in: query
+          description: Global Parent DUNS Number
+          required: false
+          schema:
+            type: string
+        - name: globalVendorName
+          in: query
+          description: Global Parent DUNS Name
+          required: false
+          schema:
+            type: string
+        - name: vendorRegistrationDate
+          in: query
+          description: Vendor Registration Date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: vendorRenewalDate
+          in: query
+          description: Vendor Renewal Date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: vendorDivisionName
+          in: query
+          description: Vendor Division Name
+          required: false
+          schema:
+            type: string
+        - name: vendorDivisionNumber
+          in: query
+          description: Vendor Division Number
+          required: false
+          schema:
+            type: string
+        - name: samExceptionCode
+          in: query
+          description: SAM Exception Code
+          required: false
+          schema:
+            type: string
+        - name: samExceptionDesc
+          in: query
+          description: Sam Exception Desc
+          required: false
+          schema:
+            type: string
+        - name: coBusSizeDeterminationCode
+          in: query
+          description: Contracting Officer's Business Size Selection Code
+          required: false
+          schema:
+            type: string
+        - name: includeSections
+          in: query
+          description: Include Sections Schema Filter
+          required: false
+          schema:
+            type: string
+        - name: excludeSections
+          in: query
+          description: Exclude Sections Schema Filter
+          required: false
+          schema:
+            type: string
+        - name: nasaSpecificElements
+          in: query
+          description: NasaSpecificElemets
+          required: false
+          schema:
+            type: string
+        - name: typeOfSetAsideSourceCode
+          in: query
+          description: Type of Set Aside Source Code
+          required: false
+          schema:
+            type: string
+        - name: typeOfSetAsideSourceDesc
+          in: query
+          description: Type of Set Aside Source Description
+          required: false
+          schema:
+            type: string
+        - name: idvTypeOfSetAsideCode
+          in: query
+          description: IDV Type of Set Aside Code
+          required: false
+          schema:
+            type: string
+        - name: idvTypeOfSetAsideDesc
+          in: query
+          description: IDV Type of Set Aside Description
+          required: false
+          schema:
+            type: string
+        - name: numberOfOffersSourceCode
+          in: query
+          description: Number of Offers Source Code
+          required: false
+          schema:
+            type: string
+        - name: numberOfOffersSourceDesc
+          in: query
+          description: Number of Offers Source Description
+          required: false
+          schema:
+            type: string
+        - name: idvNumberOfOffers
+          in: query
+          description: IDV Number of Offers
+          required: false
+          schema:
+            type: string
+        - name: closedBy
+          in: query
+          description: Closed By
+          required: false
+          schema:
+            type: string
+        - name: closedDate
+          in: query
+          description: Closed Date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: closedStatus
+          in: query
+          description: Closed Status
+          required: false
+          schema:
+            type: string
+        - name: nonFederalFundingAmount
+          in: query
+          description: Non FederalFundingAmount
+          required: false
+          schema:
+            type: string
+        - name: cfdaProgramIdentificationNumberCode
+          in: query
+          description: CFDA ProgramIdentification NumberCode
+          required: false
+          schema:
+            type: string
+        - name: cfdaProgramIdentificationNumberDesc
+          in: query
+          description: CFDA Program Identification Number Description
+          required: false
+          schema:
+            type: string
+        - name: totalEstimatedOrderValue
+          in: query
+          description: Total Estimated OrderValue
+          required: false
+          schema:
+            type: string
+        - name: inherentlyGovernmentalCode
+          in: query
+          description: Inherently Governmental Code
+          required: false
+          schema:
+            type: string
+        - name: inherentlyGovernmentalDesc
+          in: query
+          description: Inherently Governmental Description
+          required: false
+          schema:
+            type: string
+        - name: naicsSourceCode
+          in: query
+          description: NAICS Source Code
+          required: false
+          schema:
+            type: string
+        - name: naicsSourceDesc
+          in: query
+          description: NAICS Source Description
+          required: false
+          schema:
+            type: string
+        - name: idvNAICSCode
+          in: query
+          description: IDV NAICS Code
+          required: false
+          schema:
+            type: string
+        - name: idvNAICSDesc
+          in: query
+          description: IDV NAICS Description
+          required: false
+          schema:
+            type: string
+        - name: idvCoBusSizeDeterminationCode
+          in: query
+          description: IDV Contracting Officer Business Size Selection Code
+          required: false
+          schema:
+            type: string
+        - name: idvCoBusSizeDeterminationDesc
+          in: query
+          description: IDV Contracting Officer Business Size Selection Description
+          required: false
+          schema:
+            type: string
+        - name: idvCoBusSizeDeterminationSourceCode
+          in: query
+          description: IDV Contracting Officer Business Size Selection Source Code
+          required: false
+          schema:
+            type: string
+        - name: idvCoBusSizeDeterminationSourceDesc
+          in: query
+          description: IDV Contracting Officer Business Size Selection Source Description
+          required: false
+          schema:
+            type: string
+        - name: cageCode
+          in: query
+          description: Cage Code
+          required: false
+          schema:
+            type: string
+        - name: selfCertifiedHubZoneJointVenture
+          in: query
+          description: Self-Certified Hub Zone Joint Venture
+          required: false
+          schema:
+            type: string
+        - name: additionalReportingCode
+          in: query
+          description: Additional Reporting Code
+          required: false
+          schema:
+            type: string
+        - name: additionalReportingDesc
+          in: query
+          description: Additional Reporting Description
+          required: false
+          schema:
+            type: string
+        - name: awardOrIdvType
+          in: query
+          description: Award OR Idv type
+          required: false
+          schema:
+            type: string
+        - name: baseDollarsObligated
+          in: query
+          description: Base dollars obligated
+          required: false
+          schema:
+            type: string
+        - name: popCountyCode
+          in: query
+          description: Place of performance County Code
+          required: false
+          schema:
+            type: string
+        - name: popCountyName
+          in: query
+          description: Place of performance County name
+          required: false
+          schema:
+            type: string
+        - name: fundingDepartmentId
+          in: query
+          description: Funding department Id
+          required: false
+          schema:
+            type: string
+        - name: fundingDepartmentName
+          in: query
+          description: Funding department name
+          required: false
+          schema:
+            type: string
+        - name: vendorStateCode
+          in: query
+          description: Vendor state code
+          required: false
+          schema:
+            type: string
+        - name: vendorCountryName
+          in: query
+          description: Vendor country name
+          required: false
+          schema:
+            type: string
+        - name: filterName
+          in: query
+          description: filterName param for retrieving data
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/AwardsDataServiceResource'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+servers:
+  - url: //api-alpha.sam.gov/prodlike
+components:
+  schemas:
+    AwardsDataServiceResource:
+      type: object
+      properties:
+        totalRecords:
+          type: integer
+          format: int32
+        awardsData:
+          type: array
+          items:
+            $ref: '#/components/schemas/AwardsData'
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+    AwardsData:
+      type: object
+      properties:
+        documentInformation:
+          $ref: '#/components/schemas/DocumentInformation'
+        listOfOtherIDs:
+          $ref: '#/components/schemas/ListOfOtherIDs'
+        dates:
+          $ref: '#/components/schemas/DateInformation'
+        dollars:
+          $ref: '#/components/schemas/Dollars'
+        purchaserInformation:
+          $ref: '#/components/schemas/PurchaserInformation'
+        contractMarketingData:
+          $ref: '#/components/schemas/ContractMarketingData'
+        contractData:
+          $ref: '#/components/schemas/ContractData'
+        legislativeMandates:
+          $ref: '#/components/schemas/LegislativeMandates'
+        productOrServiceInformation:
+          $ref: '#/components/schemas/ProductOrServiceInformation'
+        vendorInformation:
+          $ref: '#/components/schemas/VendorInformation'
+        principalPlaceOfPerformance:
+          $ref: '#/components/schemas/PrincipalPlaceOfPerformance'
+        competitionInformation:
+          $ref: '#/components/schemas/CompetitionInformation'
+        preferenceProgramsInformation:
+          $ref: '#/components/schemas/PreferenceProgramsInformation'
+        nasaSpecificElementsInformation:
+          $ref: '#/components/schemas/NasaSpecificElementsInformation'
+        transactionInformation:
+          $ref: '#/components/schemas/TransactionInformation'
+    DocumentInformation:
+      type: object
+      properties:
+        awardOrIdvType:
+          type: string
+        awardOrIdv:
+          type: string
+        documentType:
+          type: string
+        agencyID:
+          type: string
+        agencyName:
+          type: string
+        piid:
+          type: string
+        modificationNumber:
+          type: string
+        transactionNumber:
+          type: integer
+          format: int64
+        reasonForModificationCode:
+          type: string
+        reasonForModificationDescription:
+          type: string
+        referencedIDVAgencyID:
+          type: string
+        referencedIDVAgencyName:
+          type: string
+        referencedIDVPIID:
+          type: string
+        referencedIDVModificationNumber:
+          type: string
+        solicitationID:
+          type: string
+        documentVersion:
+          type: string
+    ListOfOtherIDs:
+      type: object
+      properties:
+        otherAgencyID:
+          type: string
+        otherAgencyName:
+          type: string
+        otherPIID:
+          type: string
+        otherModificationNumber:
+          type: string
+        otherTransactionNumber:
+          type: integer
+          format: int64
+        otherReferencedIDVAgencyID:
+          type: string
+        otherReferencedIDVAgencyName:
+          type: string
+        otherReferencedIDVPIID:
+          type: string
+        otherReferencedIDVModificationNumber:
+          type: string
+    DateInformation:
+      type: object
+      properties:
+        dateSigned:
+          type: string
+          format: date-time
+        effectiveDate:
+          type: string
+          format: date-time
+        completionDate:
+          type: string
+          format: date-time
+        estimatedUltimateCompletionDate:
+          type: string
+          format: date-time
+        lastDateToOrder:
+          type: string
+          format: date-time
+        fiscalYear:
+          type: string
+        solicitationDate:
+          type: string
+          format: date-time
+    Dollars:
+      type: object
+      properties:
+        actionObligation:
+          type: number
+          format: double
+        baseDollarsObligated:
+          type: number
+          format: double
+        baseAndExercisedOptionsValue:
+          type: number
+          format: double
+        baseAndAllOptionsValue:
+          type: number
+          format: double
+        totalActionObligation:
+          type: number
+          format: double
+        totalBaseAndExercisedOptionsValue:
+          type: number
+          format: double
+        totalBaseAndAllOptionsValue:
+          type: number
+          format: double
+        feePaidForUseOfIDV:
+          type: number
+          format: double
+        nonGovernmentDollars:
+          type: number
+          format: double
+        totalNonGovernmentDollars:
+          type: number
+          format: double
+        totalEstimatedOrderValue:
+          type: number
+          format: double
+    PurchaserInformation:
+      type: object
+      properties:
+        departmentID:
+          type: string
+        departmentName:
+          type: string
+        contractingOfficeAgencyID:
+          type: string
+        contractingOfficeAgencyName:
+          type: string
+        contractingOfficeID:
+          type: string
+        contractingOfficeName:
+          type: string
+        fundingDepartmentId:
+          type: string
+        fundingDepartmentName:
+          type: string
+        fundingAgencyID:
+          type: string
+        fundingAgencyName:
+          type: string
+        fundingOfficeID:
+          type: string
+        fundingOfficeName:
+          type: string
+        foreignFundingCode:
+          type: string
+        foreignFundingDescription:
+          type: string
+    ContractMarketingData:
+      type: object
+      properties:
+        websiteURL:
+          type: string
+        whoCanUseShortDescription:
+          type: string
+        whoCanUseLongDescription:
+          type: string
+        emailAddress:
+          type: string
+        individualOrderCallLimit:
+          type: number
+          format: double
+        typeOfFeeForUseOfService:
+          type: string
+        fixedFeeValue:
+          type: number
+          format: double
+        feeRangeLowerValue:
+          type: number
+          format: double
+        feeRangeUpperValue:
+          type: number
+          format: double
+        orderingProcedure:
+          type: string
+    ContractData:
+      type: object
+      properties:
+        contractActionType:
+          type: string
+        part8OrPart13:
+          type: string
+        typeOfContractCode:
+          type: string
+        typeOfContractDescription:
+          type: string
+        majorProgramCode:
+          type: string
+        nationalInterestActionCode:
+          type: string
+        nationalInterestActionDescription:
+          type: string
+        costOrPricingDataCode:
+          type: string
+        costOrPricingDataDescription:
+          type: string
+        costAccountingStandardsClauseCode:
+          type: string
+        costAccountingStandardsClauseDescription:
+          type: string
+        descriptionOfContractRequirement:
+          type: string
+        inherentlyGovernmentalCode:
+          type: string
+        inherentlyGovernmentalDescription:
+          type: string
+        gfpCode:
+          type: string
+        gfpDescription:
+          type: string
+        seaTransportationCode:
+          type: string
+        seaTransportationDescription:
+          type: string
+        undefinitizedActionCode:
+          type: string
+        undefinitizedActionDescription:
+          type: string
+        consolidatedContractCode:
+          type: string
+        consolidatedContractDescription:
+          type: string
+        performanceBasedServiceAcquisitionCode:
+          type: string
+        performanceBasedServiceAcquisitionDescription:
+          type: string
+        multiyearContractCode:
+          type: string
+        multiyearContractDescription:
+          type: string
+        treasuryAccountSymbolAgencyIdentifier:
+          type: string
+        treasuryAccountSymbolMainAccount:
+          type: string
+        treasuryAccountSymbolSubAccount:
+          type: string
+        subLevelPrefixCode:
+          type: string
+        allocationTransferAgencyIdentifier:
+          type: string
+        beginningPeriodOfAvailability:
+          type: string
+        endingPeriodOfAvailability:
+          type: string
+        obligatedAmountTAS:
+          type: string
+        initiative:
+          type: string
+        referencedIDVPart8OrPart13:
+          type: string
+        referencedIDVMultipleOrSingle:
+          type: string
+        referencedIDVTypeCode:
+          type: string
+        referencedIDVTypeDescription:
+          type: string
+        typeOfIDCCode:
+          type: string
+        typeOfIDCDescription:
+          type: string
+        multipleOrSingleAwardIDV:
+          type: string
+        programAcronym:
+          type: string
+        contingencyHumanitarianPeacekeepingOperationCode:
+          type: string
+        contingencyHumanitarianPeacekeepingOperationDescription:
+          type: string
+        contractFinancingCode:
+          type: string
+        contractFinancingDescription:
+          type: string
+        purchaseCardPaymentMethodCode:
+          type: string
+        purchaseCardPaymentMethodDescription:
+          type: string
+        numberOfActions:
+          type: integer
+          format: int32
+        typeOfAgreement:
+          type: string
+        nontraditionalGovernmentContractorParticipationCode:
+          type: string
+        nontraditionalGovernmentContractorParticipationDescription:
+          type: string
+    LegislativeMandates:
+      type: object
+      properties:
+        clingerCohenActCode:
+          type: string
+        clingerCohenActDescription:
+          type: string
+        walshHealeyActCode:
+          type: string
+        walshHealeyActDescription:
+          type: string
+        serviceContractActCode:
+          type: string
+        serviceContractActDescription:
+          type: string
+        davisBaconActCode:
+          type: string
+        davisBaconActDescription:
+          type: string
+        additionalReportingCode:
+          type: string
+        additionalReportingDescription:
+          type: string
+        interagencyContractingAuthorityCode:
+          type: string
+        interagencyContractingAuthorityDescription:
+          type: string
+        otherInteragencyContractingStatutoryAuthority:
+          type: string
+    ProductOrServiceInformation:
+      type: object
+      properties:
+        productOrServiceCode:
+          type: string
+        productOrService:
+          type: string
+        productOrServiceDescription:
+          type: string
+        bundledContractCode:
+          type: string
+        bundledContractDescription:
+          type: string
+        claimantProgramCode:
+          type: string
+        claimantProgramDescription:
+          type: string
+        principalNAICSCode:
+          type: string
+        principalNAICSDescription:
+          type: string
+        naicsSourceCode:
+          type: string
+        naicsSourceDescription:
+          type: string
+        idvNAICSCode:
+          type: string
+        idvNAICSDescription:
+          type: string
+        recoveredMaterialsSustainabilityCode:
+          type: string
+        recoveredMaterialsSustainabilityDescription:
+          type: string
+        domesticOrForeignEntityCode:
+          type: string
+        domesticOrForeignEntityDescription:
+          type: string
+        dodAcquisitionProgramCode:
+          type: string
+        dodAcquisitionProgramDescription:
+          type: string
+        infoTechCommercialItemCategoryCode:
+          type: string
+        infoTechCommercialItemCategoryDescription:
+          type: string
+        useOfEPADesignatedCode:
+          type: string
+        useOfEPADesignatedDescription:
+          type: string
+        countryOfProductOrServiceOriginCode:
+          type: string
+        countryOfProductOrServiceOriginDescription:
+          type: string
+        placeOfManufactureCode:
+          type: string
+        placeOfManufactureDescription:
+          type: string
+    VendorInformation:
+      type: object
+      properties:
+        vendorHeader:
+          $ref: '#/components/schemas/VendorHeader'
+        vendorSocioEconomicIndicators:
+          $ref: '#/components/schemas/VendorSocioEconomicIndicators'
+        vendorBusinessTypes:
+          $ref: '#/components/schemas/VendorBusinessTypes'
+        vendorLineOfBusiness:
+          $ref: '#/components/schemas/VendorLineOfBusiness'
+        vendorRelationshipWithFederalGovernment:
+          $ref: '#/components/schemas/VendorRelationshipWithFederalGovernment'
+        vendorTypeOfGovernmentEntity:
+          $ref: '#/components/schemas/VendorTypeOfGovernmentEntity'
+        vendorOrganizationFactors:
+          $ref: '#/components/schemas/VendorOrganizationFactors'
+        vendorTypeOfEducationalEntity:
+          $ref: '#/components/schemas/VendorTypeOfEducationalEntity'
+        vendorCertifications:
+          $ref: '#/components/schemas/VendorCertifications'
+        vendorLocation:
+          $ref: '#/components/schemas/VendorLocation'
+        vendorDUNSInformation:
+          $ref: '#/components/schemas/VendorDUNSInformation'
+        vendorSamRegistrationDetails:
+          $ref: '#/components/schemas/VendorSamRegistrationDetails'
+        contractingOfficerBusinessSizeDetermination:
+          $ref: '#/components/schemas/ContractingOfficerBusinessSizeDetermination'
+    VendorHeader:
+      type: object
+      properties:
+        vendorName:
+          type: string
+        vendorAlternateName:
+          type: string
+        vendorLegalOrganizationName:
+          type: string
+        doingBusinessAsName:
+          type: string
+    VendorSocioEconomicIndicators:
+      type: object
+      properties:
+        isAlaskanNativeCorporationOwnedFirm:
+          type: string
+        isAmericanIndianOwned:
+          type: string
+        isIndianTribe:
+          type: string
+        isNativeHawaiianOrganizationOwnedFirm:
+          type: string
+        isTriballyOwnedFirm:
+          type: string
+        isVeteranOwnedBusiness:
+          type: string
+        isServiceDisabledVeteranOwnedBusiness:
+          type: string
+        isWomenOwnedBusiness:
+          type: string
+        isWomenOwnedSmallBusiness:
+          type: string
+        isEconomicallyDisadvantagedWomenOwnedSmallBusiness:
+          type: string
+        isJointVentureWomenOwnedSmallBusiness:
+          type: string
+        isJointVentureEconomicallyDisadvantagedWomenOwnedSmallBusiness:
+          type: string
+        isMinorityOwnedBusiness:
+          type: string
+        isSubcontinentAsianAmericanOwned:
+          type: string
+        isAsianPacificAmericanOwned:
+          type: string
+        isBlackAmericanOwned:
+          type: string
+        isHispanicAmericanOwned:
+          type: string
+        isNativeAmericanOwned:
+          type: string
+        isOtherMinorityOwned:
+          type: string
+        isVerySmallBusiness:
+          type: string
+    VendorBusinessTypes:
+      type: object
+      properties:
+        isCommunityDevelopmentCorporationOwnedFirm:
+          type: string
+        isLaborSurplusAreaFirm:
+          type: string
+        isUSFederalGovernment:
+          type: string
+        isFederallyFundedResearchAndDevelopmentCorporation:
+          type: string
+        isFederalAgency:
+          type: string
+        isUSStateGovernment:
+          type: string
+        isUSLocalGovernment:
+          type: string
+        isCityUSLocalGovernment:
+          type: string
+        isCountyUSLocalGovernment:
+          type: string
+        isInterMunicipalUSLocalGovernment:
+          type: string
+        isLocalGovernmentOwnedUSLocalGovernment:
+          type: string
+        isMunicipalityUSLocalGovernment:
+          type: string
+        isSchoolDistrictUSLocalGovernment:
+          type: string
+        isTownshipUSLocalGovernment:
+          type: string
+        isUSTribalGovernment:
+          type: string
+        isForeignGovernment:
+          type: string
+        isCorporateEntityNotTaxExempt:
+          type: string
+        isCorporateEntityTaxExempt:
+          type: string
+        isPartnershipOrLimitedLiabilityPartnership:
+          type: string
+        isSoleProprietorship:
+          type: string
+        isSmallAgriculturalCooperative:
+          type: string
+        isInternationalOrganization:
+          type: string
+        isUSGovernmentEntity:
+          type: string
+    VendorLineOfBusiness:
+      type: object
+      properties:
+        isCommunityDevelopmentCorporation:
+          type: string
+        isDomesticShelter:
+          type: string
+        isEducationalInstitution:
+          type: string
+        isFoundation:
+          type: string
+        isHospital:
+          type: string
+        isManufacturerOfGoods:
+          type: string
+        isVeterinaryHospital:
+          type: string
+        isHispanicServicingInstitution:
+          type: string
+    VendorRelationshipWithFederalGovernment:
+      type: object
+      properties:
+        receivesContracts:
+          type: string
+        receivesGrants:
+          type: string
+        receivesContractsAndGrants:
+          type: string
+    VendorTypeOfGovernmentEntity:
+      type: object
+      properties:
+        isAirportAuthority:
+          type: string
+        isCouncilOfGovernments:
+          type: string
+        isHousingAuthoritiesPublicTribal:
+          type: string
+        isInterstateEntity:
+          type: string
+        isPlanningCommission:
+          type: string
+        isPortAuthority:
+          type: string
+        isTransitAuthority:
+          type: string
+    VendorOrganizationFactors:
+      type: object
+      properties:
+        isSubchapterSCorporation:
+          type: string
+        isLimitedLiabilityCorporation:
+          type: string
+        isForeignOwned:
+          type: string
+        isForProfitOrganization:
+          type: string
+        isForNonProfitOrganization:
+          type: string
+        isOtherNotForProfitOrganization:
+          type: string
+        isShelteredWorkshop:
+          type: string
+        stateOfIncorporation:
+          type: string
+        countryOfIncorporation:
+          type: string
+        organizationType:
+          type: string
+    VendorTypeOfEducationalEntity:
+      type: object
+      properties:
+        is1862LandGrantCollege:
+          type: string
+        is1890LandGrantCollege:
+          type: string
+        is1994LandGrantCollege:
+          type: string
+        isHistoricallyBlackCollegeOrUniversity:
+          type: string
+        isMinorityInstitutions:
+          type: string
+        isPrivateUniversityOrCollege:
+          type: string
+        isSchoolOfForestry:
+          type: string
+        isStateControlledInstitutionOfHigherLearning:
+          type: string
+        isTribalCollege:
+          type: string
+        isVeterinaryCollege:
+          type: string
+        isAlaskanNativeServicingInstitution:
+          type: string
+        isNativeHawaiianServicingInstitution:
+          type: string
+    VendorCertifications:
+      type: object
+      properties:
+        isDOTCertifiedDisadvantagedBusinessEnterprise:
+          type: string
+        isSelfCertifiedSmallDisadvantagedBusiness:
+          type: string
+        isSelfCertifiedHubZoneJointVentureBusiness:
+          type: string
+        isSBACertifiedSmallDisadvantagedBusiness:
+          type: string
+        isSBACertified8aProgramParticipant:
+          type: string
+        isSBACertifiedHUBZoneFirm:
+          type: string
+        isSBACertified8aJointVenture:
+          type: string
+    VendorLocation:
+      type: object
+      properties:
+        streetAddress1:
+          type: string
+        streetAddress2:
+          type: string
+        streetAddress3:
+          type: string
+        city:
+          type: string
+        stateCode:
+          type: string
+        state:
+          type: string
+        zipCode:
+          type: string
+        countryCode:
+          type: string
+        countryName:
+          type: string
+        phoneNumber:
+          type: string
+        faxNumber:
+          type: string
+        congressionalDistrict:
+          type: string
+    VendorDUNSInformation:
+      type: object
+      properties:
+        cageCode:
+          type: string
+        dunsNumber:
+          type: string
+        parentDUNSNumber:
+          type: string
+        parentDUNSName:
+          type: string
+        domesticParentDUNSNumber:
+          type: string
+        domesticParentDUNSName:
+          type: string
+        globalParentDUNSNumber:
+          type: string
+        globalParentDUNSName:
+          type: string
+    VendorSamRegistrationDetails:
+      type: object
+      properties:
+        registrationDate:
+          type: string
+          format: date-time
+        renewalDate:
+          type: string
+          format: date-time
+        divisionName:
+          type: string
+        divisionNumberOrOfficeCode:
+          type: string
+        samExceptionCode:
+          type: string
+        samExceptionDescription:
+          type: string
+    ContractingOfficerBusinessSizeDetermination:
+      type: object
+      properties:
+        contractingOfficerBusinessSizeSelectionCode:
+          type: string
+        contractingOfficerBusinessSizeSelectionDescription:
+          type: string
+        idvContractingOfficerBusinessSizeDeterminationCode:
+          type: string
+        idvContractingOfficerBusinessSizeSelectionDescription:
+          type: string
+        idvContractingOfficerBusinessSizeDeterminationSourceCode:
+          type: string
+        idvContractingOfficerBusinessSizeDeterminationSourceDescription:
+          type: string
+    PrincipalPlaceOfPerformance:
+      type: object
+      properties:
+        principalPlaceOfPerformanceLocationCode:
+          type: string
+        principalPlaceOfPerformanceLocationName:
+          type: string
+        principalPlaceOfPerformanceStateCode:
+          type: string
+        principalPlaceOfPerformanceStateName:
+          type: string
+        principalPlaceOfPerformanceCountryCode:
+          type: string
+        principalPlaceOfPerformanceCountryName:
+          type: string
+        principalPlaceOfPerformanceZipCode:
+          type: string
+        principalPlaceOfPerformanceCountyCode:
+          type: string
+        principalPlaceOfPerformanceCountyDescription:
+          type: string
+        principalPlaceOfPerformanceCongressionalDistrict:
+          type: string
+    CompetitionInformation:
+      type: object
+      properties:
+        extentCompetedCode:
+          type: string
+        extentCompetedDescription:
+          type: string
+        solicitationProceduresCode:
+          type: string
+        solicitationProceduresDescription:
+          type: string
+        typeOfSetAsideCode:
+          type: string
+        typeOfSetAsideDescription:
+          type: string
+        typeOfSetAsideSourceCode:
+          type: string
+        typeOfSetAsideSourceDescription:
+          type: string
+        idvTypeOfSetAsideCode:
+          type: string
+        idvTypeOfSetAsideDescription:
+          type: string
+        evaluatedPreferenceCode:
+          type: string
+        evaluatedPreferenceDescription:
+          type: string
+        sbirSTTRCode:
+          type: string
+        sbirSTTRDescription:
+          type: string
+        fairOpportunityLimitedSourcesCode:
+          type: string
+        fairOpportunityLimitedSourcesDescription:
+          type: string
+        otherThanFullAndOpenCompetitionCode:
+          type: string
+        otherThanFullAndOpenCompetitionDescription:
+          type: string
+        numberOfOffersReceived:
+          type: integer
+          format: int32
+        numberOfOffersSourceCode:
+          type: string
+        numberOfOffersSourceDescription:
+          type: string
+        idvNumberOfOffers:
+          type: string
+        commercialItemAcquisitionProceduresCode:
+          type: string
+        commercialItemAcquisitionProceduresDescription:
+          type: string
+        simplifiedProceduresForCertainCommercialItemsCode:
+          type: string
+        simplifiedProceduresForCertainCommercialItemsDescription:
+          type: string
+        smallBusinessCompetitivenessDemonstrationProgram:
+          type: string
+        a76ActionCode:
+          type: string
+        a76ActionDescription:
+          type: string
+        fedBizOppsCode:
+          type: string
+        fedBizOppsDescription:
+          type: string
+        localAreaSetAsideCode:
+          type: string
+        localAreaSetAsideDescription:
+          type: string
+        preAwardSynopsis:
+          type: string
+        priceEvaluationPercentDifference:
+          type: integer
+          format: int64
+        synopsisWaiverException:
+          type: string
+        alternativeAdvertising:
+          type: string
+    PreferenceProgramsInformation:
+      type: object
+      properties:
+        subcontractPlanCode:
+          type: string
+        subcontractPlanDescription:
+          type: string
+        reasonNotAwardedToSmallDisadvantagedBusinessCode:
+          type: string
+        reasonNotAwardedToSmallDisadvantagedBusinessDescription:
+          type: string
+        reasonNotAwardedToSmallBusinessCode:
+          type: string
+        reasonNotAwardedToSmallBusinessDescription:
+          type: string
+    NasaSpecificElementsInformation:
+      type: object
+      properties:
+        offerorsProposalNumber:
+          type: string
+        thePRNumber:
+          type: integer
+          format: int64
+        accessionNumber:
+          type: string
+        installationUnique:
+          type: string
+        administratorCode:
+          type: string
+        contractingOfficerCode:
+          type: string
+        buyerCode:
+          type: string
+        organizationCode:
+          type: string
+        theCOTRName:
+          type: string
+        alternateCOTRName:
+          type: string
+        fundedThroughDate:
+          type: string
+          format: date-time
+        contractFundCode:
+          type: string
+        managementReportingRequirements:
+          type: string
+        accountingInstallation:
+          type: string
+        fieldOfScienceOrEngineering:
+          type: string
+        contractAdministrationsDelegated:
+          $ref: '#/components/schemas/ContractAdministrationsDelegated'
+        principalInvestigatorFirstName:
+          type: string
+        principalInvestigatorMI:
+          type: string
+        principalInvestigatorLastName:
+          type: string
+        alternatePrincipalInvestigatorFirstName:
+          type: string
+        alternatePrincipalInvestigatorMI:
+          type: string
+        alternatePrincipalInvestigatorLastName:
+          type: string
+        closeOutPR:
+          type: string
+        advisoryAssistanceServicesContract:
+          type: string
+        supportServicesTypeContract:
+          type: string
+        newTechnologyOrPatentClause:
+          type: string
+        propertyFinancialReporting:
+          type: string
+        valueEngineeringClause:
+          type: string
+        securityCode:
+          type: string
+        isPhysicallyComplete:
+          type: string
+        physicalCompletionDate:
+          type: string
+          format: date-time
+        finalInvoicePaidDate:
+          type: string
+          format: date-time
+        solicitationIssueDate:
+          type: string
+          format: date-time
+        cancellationDate:
+          type: string
+          format: date-time
+        destroyDate:
+          type: string
+          format: date-time
+        nonFederalFundingAmount:
+          type: number
+          format: double
+        cfdaProgramIdentificationNumberCode:
+          type: string
+        cfdaProgramIdentificationNumberDescription:
+          type: string
+        nasaStatutoryAuthority:
+          type: string
+    ContractAdministrationsDelegated:
+      type: object
+      properties:
+        blanketDelegation:
+          type: string
+        closeout:
+          type: string
+        consentToSubcontract:
+          type: string
+        costAccountingStandardsClauseCode:
+          type: string
+        engineeringOrProductSurveillance:
+          type: string
+        none:
+          type: string
+        other:
+          type: string
+        postAwardAudit:
+          type: string
+        propertyAdministration:
+          type: string
+        qualityAssurance:
+          type: string
+        security:
+          type: string
+        transportation:
+          type: string
+    TransactionInformation:
+      type: object
+      properties:
+        createdBy:
+          type: string
+        createdDate:
+          type: string
+          format: date-time
+        lastModifiedBy:
+          type: string
+        lastModifiedDate:
+          type: string
+          format: date-time
+        status:
+          type: string
+        approvedBy:
+          type: string
+        approvedDate:
+          type: string
+          format: date-time
+        closedBy:
+          type: string
+        closedDate:
+          type: string
+          format: date-time
+        closedStatus:
+          type: string
+    ModelAndView:
+      type: object
+      properties:
+        empty:
+          type: boolean
+        model:
+          type: object
+        modelMap:
+          type: object
+          additionalProperties:
+            type: object
+        reference:
+          type: boolean
+        status:
+          type: string
+          enum:
+            - '100'
+            - '101'
+            - '102'
+            - '103'
+            - '200'
+            - '201'
+            - '202'
+            - '203'
+            - '204'
+            - '205'
+            - '206'
+            - '207'
+            - '208'
+            - '226'
+            - '300'
+            - '301'
+            - '302'
+            - '302'
+            - '303'
+            - '304'
+            - '305'
+            - '307'
+            - '308'
+            - '400'
+            - '401'
+            - '402'
+            - '403'
+            - '404'
+            - '405'
+            - '406'
+            - '407'
+            - '408'
+            - '409'
+            - '410'
+            - '411'
+            - '412'
+            - '413'
+            - '413'
+            - '414'
+            - '414'
+            - '415'
+            - '416'
+            - '417'
+            - '418'
+            - '419'
+            - '420'
+            - '421'
+            - '422'
+            - '423'
+            - '424'
+            - '426'
+            - '428'
+            - '429'
+            - '431'
+            - '451'
+            - '500'
+            - '501'
+            - '502'
+            - '503'
+            - '504'
+            - '505'
+            - '506'
+            - '507'
+            - '508'
+            - '509'
+            - '510'
+            - '511'
+        view:
+          $ref: '#/components/schemas/View'
+        viewName:
+          type: string
+    View:
+      type: object
+      properties:
+        contentType:
+          type: string
+    Link:
+      type: object
+      properties:
+        href:
+          type: string
+        rel:
+          type: string
+        templated:
+          type: boolean
