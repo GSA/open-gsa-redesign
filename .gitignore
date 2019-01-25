@@ -5,3 +5,4 @@ _site
 npm-debug.log
 node_modules
 _test
+.jekyll-metadata
