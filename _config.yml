@@ -9,6 +9,10 @@ feature_image: /assets/img/feature-background.jpg
 gems:
     - jekyll-autoprefixer
 
+sass:
+  load_paths:
+    - assets/uswds/scss
+
 autoprefixer:
   browsers:
   - last 3 versions
