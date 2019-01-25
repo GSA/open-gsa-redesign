@@ -3,7 +3,7 @@ require "html-proofer"
 
 desc "Serve the site with live reload for development"
 task :serve do
-  sh "bundle exec jekyll liveserve", verbose: false
+  sh "bundle exec jekyll liveserve --incremental", verbose: false
 end
 
 desc "Build the site to the default Jekyll output directory"
