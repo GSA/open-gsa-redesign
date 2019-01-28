@@ -3,8 +3,6 @@ title: Sample API
 banner-heading: Sample API
 ---
 
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
-
 
 ## Overview
 
@@ -49,29 +47,29 @@ This API has two primary endpoints:
 
 | Name  | Description |
 | ---- | ----------- |
-| ID (integer, optional) | Generated unique identifier. | 
-| ITEM_NUM (string, optional) | Item number. | 
-| AWARD_YEAR (string, optional) | Award Year. | 
-| ORIGIN_AIRPORT_ABBREV (string, optional) | Origin Airport Abbreviation. | 
-| DESTINATION_AIRPORT_ABBREV (string, optional) | Destinatoin Airport Abbreviation. | 
-| ORIGIN_CITY_NAME (string, optional) | Original City Name. | 
-| ORIGIN_STATE (string, optional) | Origin State. | 
-| ORIGIN_COUNTRY (string, optional) | Origin Country. | 
-| DESTINATION_CITY_NAME (string, optional) | Destination City Name. | 
-| DESTINATION_STATE (string, optional) | Destination State. | 
-| DESTINATION_COUNTRY (string, optional) | Destination Country. | 
-| AIRLINE_ABBREV (string, optional) | Airline Abbreviation. | 
-| AWARDED_SERV (string, optional) | Awarded Serv. | 
-| PAX_COUNT (string, optional) | PAX Count. | 
-| YCA_FARE (integer, optional) | YCA Fare. | 
-| XCA_FARE (integer, optional) | XCA Fare. | 
-| BUSINESS_FARE (integer, optional) | Business Fare. | 
-| ORIGIN_AIRPORT_LOCATION (string, optional) | Origin Airport Location. | 
-| DESTINATION_AIRPORT_LOCATION (string, optional) | Destination Airport Location. | 
-| ORIGIN_CITY_STATE_AIRPORT (string, optional) | Origin City State Airport. | 
-| DESTINATION_CITY_STATE_AIRPORT (string, optional) | Destination City State Airport. | 
-| EFFECTIVE_DATE (string, optional) | Expiration Date. | 
-| EXPIRATION_DATE (string, optional) | Expiration Date. | 
+| ID (integer, optional) | Generated unique identifier. |
+| ITEM_NUM (string, optional) | Item number. |
+| AWARD_YEAR (string, optional) | Award Year. |
+| ORIGIN_AIRPORT_ABBREV (string, optional) | Origin Airport Abbreviation. |
+| DESTINATION_AIRPORT_ABBREV (string, optional) | Destinatoin Airport Abbreviation. |
+| ORIGIN_CITY_NAME (string, optional) | Original City Name. |
+| ORIGIN_STATE (string, optional) | Origin State. |
+| ORIGIN_COUNTRY (string, optional) | Origin Country. |
+| DESTINATION_CITY_NAME (string, optional) | Destination City Name. |
+| DESTINATION_STATE (string, optional) | Destination State. |
+| DESTINATION_COUNTRY (string, optional) | Destination Country. |
+| AIRLINE_ABBREV (string, optional) | Airline Abbreviation. |
+| AWARDED_SERV (string, optional) | Awarded Serv. |
+| PAX_COUNT (string, optional) | PAX Count. |
+| YCA_FARE (integer, optional) | YCA Fare. |
+| XCA_FARE (integer, optional) | XCA Fare. |
+| BUSINESS_FARE (integer, optional) | Business Fare. |
+| ORIGIN_AIRPORT_LOCATION (string, optional) | Origin Airport Location. |
+| DESTINATION_AIRPORT_LOCATION (string, optional) | Destination Airport Location. |
+| ORIGIN_CITY_STATE_AIRPORT (string, optional) | Origin City State Airport. |
+| DESTINATION_CITY_STATE_AIRPORT (string, optional) | Destination City State Airport. |
+| EFFECTIVE_DATE (string, optional) | Expiration Date. |
+| EXPIRATION_DATE (string, optional) | Expiration Date. |
 
 
 
@@ -90,7 +88,7 @@ This API has two primary endpoints:
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## OpenAPI Specification File 
+## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="v1/openapi.yaml">Open API specification file for the Sample API</a>
