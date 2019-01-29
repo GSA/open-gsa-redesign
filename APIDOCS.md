@@ -18,9 +18,14 @@ A live example of this is available here: https://open.gsa.gov/api/sample-api-ba
  
   Note: the navigation bar is generated from the headings in the markdown file, so those can be customized to meet your needs.
 
-4. When you are ready to publish in the API directory, submit a pull request to merge your branch with the `master` branch and @mention Ryan Day or Jeff Fredrickson from the CTO team.
+4. When you commit your changes to your repo in github, a preview will be available of the site (with your doco) at this URL:
+
+     https://federalist-proxy.app.cloud.gov/preview/gsa/open-gsa-redesign/[branch-name]/api/[apiname]/
+
+
+5. When you are ready to publish in the API directory, submit a pull request to merge your branch with the `master` branch and @mention Ryan Day or Jeff Fredrickson from the CTO team.
 
   At this point, you will see your API doco at: https://open.gsa.gov/api/apiname/
 
 
-5. The CTO team will merge your branch with master, publishing your doco. They will also update the /_data/api-list.yml, which will add your API to the directory page: https://open.gsa.gov/api/
+6. The CTO team will merge your branch with master, publishing your doco. They will also update the /_data/api-list.yml, which will add your API to the directory page: https://open.gsa.gov/api/
