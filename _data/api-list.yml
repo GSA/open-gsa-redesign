@@ -11,10 +11,10 @@
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: https://gsa.github.io/auctions_api/
 - title: Code.gov API
-  description: Provides information from Code.gov, which leverages the power of code sharing and collaboration to help the US Government cut down on duplicative software development and save millions of taxpayer dollars for the American people. 
+  description: Provides information from Code.gov, which leverages the power of code sharing and collaboration to help the US Government cut down on duplicative software development and save millions of taxpayer dollars for the American people.
   url: https://developers.code.gov
 - title: Contract-Awarded Labor Category (CALC) API
-  description: CALC's API is used by CALC's front-end Data Explorer application to display labor rate data for awarded prices on GSA services schedules, and can also be accessed by any third-party application over the public internet. CALC (Contract Awarded Labor Category) tool searches awarded hourly rate prices on the eight GSA professional services schedules and returns comparable labor categories and prices based on search criteria and filters used.  
+  description: CALC's API is used by CALC's front-end Data Explorer application to display labor rate data for awarded prices on GSA services schedules, and can also be accessed by any third-party application over the public internet. CALC (Contract Awarded Labor Category) tool searches awarded hourly rate prices on the eight GSA professional services schedules and returns comparable labor categories and prices based on search criteria and filters used.
   url: https://calc.gsa.gov/api/docs/#
 - title: Data.gov CKAN API
   description: The government-wide data catalog available at Data.gov.
@@ -41,22 +41,22 @@
   description: This API returns job openings on USAJobs.gov that are open to the public and located in the United States. This API is planned to be deprecated.
   url: https://search.gov/developer/jobs.html
 - title: GSA.gov Content API
-  description: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last. 
+  description: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last.
   url: https://www.gsa.gov/about-us/gsa-content-api
 - title: Per Diem API
-  description: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers. 
+  description: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers.
   url: https://www.gsa.gov/technology/government-it-initiatives/digital-strategy/per-diem-apis/per-diem-api
 - title: Product Service Codes (PSC) API
   description: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From Beta.sam.gov.
-  url: https://s3.amazonaws.com/falextracts/Documentation/PSC/PSC%20Public%20API%20Documentation.pdf 
+  url: https://s3.amazonaws.com/falextracts/Documentation/PSC/PSC%20Public%20API%20Documentation.pdf
 - title: Search.gov i14y API
-  description: For Search.gov customers. This API allows search.gov customers to send content directly from their content management system (CMS) into Search.gov for real-time indexing. 
+  description: For Search.gov customers. This API allows search.gov customers to send content directly from their content management system (CMS) into Search.gov for real-time indexing.
   url: https://search.gov/developer/i14y.html
 - title: Search.gov Search Results API
-  description: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application. 
+  description: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application.
   url: https://search.gov/manual/search-results-api.html
 - title: Search.gov Type-ahead API
-  description: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms. 
+  description: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms.
   url: https://search.gov/manual/typeahead-api.html
 - title: Sustainable Facilities Tool API
   description: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
