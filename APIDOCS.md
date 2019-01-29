@@ -2,6 +2,9 @@
 
 GSA teams can host their API documentation directly on this site if they prefer. 
 
+A live example of this is available here: https://open.gsa.gov/api/sample-api-basic/
+
+
 ## Steps to add API doco
 
 1. Contact cto@gsa.gov and ask for access to manage API docs, sharing your github ID. (Your GitHub ID will have to be in the GSA org.)
