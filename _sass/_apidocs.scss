@@ -1,0 +1,15 @@
+/* swagger specific formatting */
+@media (min-width: 600px) {
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+}
+.swagger-ui .topbar {
+  display: none !important;
+}
+
+section.swagger-ui, section .swagger-ui section {
+  padding: 0px;
+}
