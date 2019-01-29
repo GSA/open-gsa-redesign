@@ -1,0 +1,1132 @@
+{
+	"swagger": "2.0",
+	"info": {
+	  "description": "MicroService for GSA IAE Modernized Opportunity",
+	  "version": "0.1.0",
+	  "title": "GSA IAE Opportunity Modernization",
+	  "termsOfService": "https://beta.sam.gov",
+	  "contact": {
+		
+	  },
+	  "license": {
+		"url": "http://unlicense.org"
+	  }
+	},
+	"host": "localhost:8080",
+	"basePath": "/",
+	"tags": [
+	  {
+		"name": "opps-controller",
+		"description": "Opps Controller"
+	  },
+	  {
+		"name": "feature-controller",
+		"description": "Feature Controller"
+	  }
+	],
+	"paths": {
+	  "/feature/v1/hello": {
+		"get": {
+		  "tags": [
+			"feature-controller"
+		  ],
+		  "summary": "getText",
+		  "operationId": "getTextUsingGET",
+		  "consumes": [
+			"application/json"
+		  ],
+		  "produces": [
+			"application/json"
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "OK",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"401": {
+			  "description": "Unauthorized"
+			},
+			"403": {
+			  "description": "Forbidden"
+			},
+			"404": {
+			  "description": "Not Found"
+			}
+		  }
+		}
+	  },
+	  "/feature/v1/print": {
+		"get": {
+		  "tags": [
+			"feature-controller"
+		  ],
+		  "summary": "getPrintAll",
+		  "operationId": "getPrintAllUsingGET",
+		  "consumes": [
+			"application/json"
+		  ],
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "server",
+			  "in": "path",
+			  "description": "server name",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "app",
+			  "in": "path",
+			  "description": "application name",
+			  "required": true,
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "OK",
+			  "schema": {
+				"type": "array",
+				"items": {
+				  "$ref": "#/definitions/Feature"
+				}
+			  }
+			},
+			"401": {
+			  "description": "Unauthorized"
+			},
+			"403": {
+			  "description": "Forbidden"
+			},
+			"404": {
+			  "description": "Not Found"
+			}
+		  }
+		}
+	  },
+	  "/feature/v1/read/{key}": {
+		"get": {
+		  "tags": [
+			"feature-controller"
+		  ],
+		  "summary": "isEnabled",
+		  "operationId": "isEnabledUsingGET",
+		  "consumes": [
+			"application/json"
+		  ],
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "key",
+			  "in": "path",
+			  "description": "key",
+			  "required": true,
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "OK",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"401": {
+			  "description": "Unauthorized"
+			},
+			"403": {
+			  "description": "Forbidden"
+			},
+			"404": {
+			  "description": "Not Found"
+			}
+		  }
+		}
+	  },
+	  "/feature/v1/update": {
+		"post": {
+		  "tags": [
+			"feature-controller"
+		  ],
+		  "summary": "updateFeature",
+		  "operationId": "updateFeatureUsingPOST",
+		  "consumes": [
+			"application/json"
+		  ],
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "in": "body",
+			  "name": "feature",
+			  "description": "feature",
+			  "required": true,
+			  "schema": {
+				"$ref": "#/definitions/Feature"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "OK",
+			  "schema": {
+				"$ref": "#/definitions/Feature"
+			  }
+			},
+			"201": {
+			  "description": "Created"
+			},
+			"401": {
+			  "description": "Unauthorized"
+			},
+			"403": {
+			  "description": "Forbidden"
+			},
+			"404": {
+			  "description": "Not Found"
+			}
+		  }
+		}
+	  },
+	  "/opps/v1/api/create": {
+		"post": {
+		  "tags": [
+			"Opportunity"
+		  ],
+		  "summary": "Create contract opportunity",
+		  "description": "Create contract opportunity.",
+		  "operationId": "createOpportunityUsingPOST",
+		  "consumes": [
+			"application/json"
+		  ],
+		  "produces": [
+			"application/*"
+		  ],
+		  "parameters": [
+			{
+			  "name": "api_key",
+			  "in": "query",
+			  "description": "api_key",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "description": "Authorization",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "in": "body",
+			  "name": "requestJson",
+			  "description": "requestJson",
+			  "required": false,
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "OK",
+			  "schema": {
+				"type": "object"
+			  }
+			},
+			"201": {
+			  "description": "Created"
+			},
+			"400": {
+			  "description": "Bad Request",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"401": {
+			  "description": "Unauthorized",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"500": {
+			  "description": "Internal Server Error",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"501": {
+			  "description": "Not Implemented",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"403": {
+			  "description": "Forbidden",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"404": {
+			  "description": "Not Found"
+			}
+		  }
+		}
+	  },
+	  "/opps/v1/api/delete/{id}": {
+		"delete": {
+		  "tags": [
+			"Opportunity"
+		  ],
+		  "summary": "Delete contract opportunity",
+		  "description": "Delete contract opportunity.",
+		  "operationId": "deleteOpportunityUsingDELETE",
+		  "consumes": [
+			"application/json"
+		  ],
+		  "produces": [
+			"application/*"
+		  ],
+		  "parameters": [
+			{
+			  "name": "api_key",
+			  "in": "query",
+			  "description": "api_key",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "description": "Authorization",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "id",
+			  "in": "path",
+			  "description": "id",
+			  "required": true,
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "OK",
+			  "schema": {
+				"type": "object"
+			  }
+			},
+			"400": {
+			  "description": "Bad Request",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"401": {
+			  "description": "Unauthorized",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"500": {
+			  "description": "Internal Server Error",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"501": {
+			  "description": "Not Implemented",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"204": {
+			  "description": "No Content"
+			},
+			"403": {
+			  "description": "Forbidden",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"404": {
+			  "description": "Not Found"
+			}
+		  }
+		}
+	  },
+	  "/opps/v1/api/history/{id}": {
+		"get": {
+		  "tags": [
+			"Opportunity"
+		  ],
+		  "summary": "Get history of Opportunity",
+		  "operationId": "getOpportunityHistoryUsingGET",
+		  "consumes": [
+			"application/json"
+		  ],
+		  "produces": [
+			"*/*"
+		  ],
+		  "parameters": [
+			{
+			  "name": "api_key",
+			  "in": "query",
+			  "description": "api_key",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "description": "Authorization",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "id",
+			  "in": "path",
+			  "description": "id",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "postedFrom",
+			  "in": "query",
+			  "description": "postedFrom",
+			  "required": false,
+			  "type": "string",
+			  "format": "date-time"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "OK",
+			  "schema": {
+				"type": "object"
+			  }
+			},
+			"400": {
+			  "description": "Bad Request",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"401": {
+			  "description": "Unauthorized",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"500": {
+			  "description": "Internal Server Error",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"501": {
+			  "description": "Not Implemented",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"403": {
+			  "description": "Forbidden",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"404": {
+			  "description": "Not Found"
+			}
+		  }
+		}
+	  },
+	  "/opps/v1/api/publish/{id}": {
+		"post": {
+		  "tags": [
+			"Opportunity"
+		  ],
+		  "summary": "Publish contract opportunity",
+		  "description": "Publish contract opportunity.",
+		  "operationId": "publishOpportunityUsingPOST",
+		  "consumes": [
+			"application/json"
+		  ],
+		  "produces": [
+			"application/*"
+		  ],
+		  "parameters": [
+			{
+			  "name": "api_key",
+			  "in": "query",
+			  "description": "api_key",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "description": "Authorization",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "id",
+			  "in": "path",
+			  "description": "id",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "in": "body",
+			  "name": "requestJson",
+			  "description": "requestJson",
+			  "required": false,
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "OK",
+			  "schema": {
+				"type": "object"
+			  }
+			},
+			"201": {
+			  "description": "Created"
+			},
+			"400": {
+			  "description": "Bad Request",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"401": {
+			  "description": "Unauthorized",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"500": {
+			  "description": "Internal Server Error",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"501": {
+			  "description": "Not Implemented",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"403": {
+			  "description": "Forbidden",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"404": {
+			  "description": "Not Found"
+			}
+		  }
+		}
+	  },
+	  "/opps/v1/api/revise/{id}": {
+		"post": {
+		  "tags": [
+			"Opportunity"
+		  ],
+		  "summary": "Revise contract opportunity",
+		  "description": "Revise contract opportunity.",
+		  "operationId": "reviseOpportunityUsingPOST",
+		  "consumes": [
+			"application/json"
+		  ],
+		  "produces": [
+			"application/*"
+		  ],
+		  "parameters": [
+			{
+			  "name": "api_key",
+			  "in": "query",
+			  "description": "api_key",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "description": "Authorization",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "id",
+			  "in": "path",
+			  "description": "id",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "in": "body",
+			  "name": "requestJson",
+			  "description": "requestJson",
+			  "required": false,
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "OK",
+			  "schema": {
+				"type": "object"
+			  }
+			},
+			"201": {
+			  "description": "Created"
+			},
+			"400": {
+			  "description": "Bad Request",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"401": {
+			  "description": "Unauthorized",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"500": {
+			  "description": "Internal Server Error",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"501": {
+			  "description": "Not Implemented",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"403": {
+			  "description": "Forbidden",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"404": {
+			  "description": "Not Found"
+			}
+		  }
+		}
+	  },
+	  "/opps/v1/api/search": {
+		"get": {
+		  "tags": [
+			"Opportunity"
+		  ],
+		  "summary": "Get Opportunities",
+		  "description": "Get all opportunities.",
+		  "operationId": "getOpportunitiesUsingGET",
+		  "consumes": [
+			"application/json"
+		  ],
+		  "produces": [
+			"*/*"
+		  ],
+		  "parameters": [
+			{
+			  "name": "api_key",
+			  "in": "query",
+			  "description": "api_key",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "description": "Authorization",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "archivedFrom",
+			  "in": "query",
+			  "description": "archivedFrom",
+			  "required": false,
+			  "type": "string",
+			  "format": "date-time"
+			},
+			{
+			  "name": "archivedTo",
+			  "in": "query",
+			  "description": "archivedTo",
+			  "required": false,
+			  "type": "string",
+			  "format": "date-time"
+			},
+			{
+			  "name": "awardNumber",
+			  "in": "query",
+			  "description": "awardNumber",
+			  "required": false,
+			  "type": "string"
+			},
+			{
+			  "name": "cancelled",
+			  "in": "query",
+			  "description": "cancelled",
+			  "required": false,
+			  "type": "boolean",
+			  "default": false
+			},
+			{
+			  "name": "doNumber",
+			  "in": "query",
+			  "description": "doNumber",
+			  "required": false,
+			  "type": "string"
+			},
+			{
+			  "name": "facets",
+			  "in": "query",
+			  "description": "facets",
+			  "required": false,
+			  "type": "array",
+			  "items": {
+				"type": "string"
+			  },
+			  "collectionFormat": "multi"
+			},
+			{
+			  "name": "includeCount",
+			  "in": "query",
+			  "description": "includeCount",
+			  "required": false,
+			  "type": "boolean",
+			  "default": true
+			},
+			{
+			  "name": "keyword",
+			  "in": "query",
+			  "description": "keyword",
+			  "required": false,
+			  "type": "string"
+			},
+			{
+			  "name": "latest",
+			  "in": "query",
+			  "description": "latest",
+			  "required": false,
+			  "type": "boolean",
+			  "default": true
+			},
+			{
+			  "name": "links",
+			  "in": "query",
+			  "description": "links",
+			  "required": false,
+			  "type": "boolean",
+			  "default": true
+			},
+			{
+			  "name": "noticeIds",
+			  "in": "query",
+			  "description": "noticeIds",
+			  "required": false,
+			  "type": "array",
+			  "items": {
+				"type": "string"
+			  },
+			  "collectionFormat": "multi"
+			},
+			{
+			  "name": "noticeType",
+			  "in": "query",
+			  "description": "noticeType",
+			  "required": false,
+			  "type": "array",
+			  "items": {
+				"type": "string"
+			  },
+			  "collectionFormat": "multi"
+			},
+			{
+			  "name": "organizationId",
+			  "in": "query",
+			  "description": "organizationId",
+			  "required": false,
+			  "type": "array",
+			  "items": {
+				"type": "string"
+			  },
+			  "collectionFormat": "multi"
+			},
+			{
+			  "name": "page",
+			  "in": "query",
+			  "description": "page",
+			  "required": false,
+			  "type": "integer",
+			  "default": 0,
+			  "format": "int32"
+			},
+			{
+			  "name": "parentNotice",
+			  "in": "query",
+			  "description": "parentNotice",
+			  "required": false,
+			  "type": "array",
+			  "items": {
+				"type": "string"
+			  },
+			  "collectionFormat": "multi"
+			},
+			{
+			  "name": "postedFrom",
+			  "in": "query",
+			  "description": "postedFrom",
+			  "required": false,
+			  "type": "string",
+			  "format": "date-time"
+			},
+			{
+			  "name": "postedTo",
+			  "in": "query",
+			  "description": "postedTo",
+			  "required": false,
+			  "type": "string",
+			  "format": "date-time"
+			},
+			{
+			  "name": "relatedNotice",
+			  "in": "query",
+			  "description": "relatedNotice",
+			  "required": false,
+			  "type": "array",
+			  "items": {
+				"type": "string"
+			  },
+			  "collectionFormat": "multi"
+			},
+			{
+			  "name": "responseFrom",
+			  "in": "query",
+			  "description": "responseFrom",
+			  "required": false,
+			  "type": "string",
+			  "format": "date-time"
+			},
+			{
+			  "name": "responseTo",
+			  "in": "query",
+			  "description": "responseTo",
+			  "required": false,
+			  "type": "string",
+			  "format": "date-time"
+			},
+			{
+			  "name": "size",
+			  "in": "query",
+			  "description": "size",
+			  "required": false,
+			  "type": "integer",
+			  "default": 10,
+			  "format": "int32"
+			},
+			{
+			  "name": "solNumber",
+			  "in": "query",
+			  "description": "solNumber",
+			  "required": false,
+			  "type": "string"
+			},
+			{
+			  "name": "sortBy",
+			  "in": "query",
+			  "description": "sortBy",
+			  "required": false,
+			  "type": "string",
+			  "default": "-modifiedOn"
+			},
+			{
+			  "name": "status",
+			  "in": "query",
+			  "description": "status",
+			  "required": false,
+			  "type": "array",
+			  "items": {
+				"type": "string"
+			  },
+			  "collectionFormat": "multi"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "OK",
+			  "schema": {
+				"type": "object"
+			  }
+			},
+			"400": {
+			  "description": "Bad Request",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"401": {
+			  "description": "Unauthorized",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"500": {
+			  "description": "Internal Server Error",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"501": {
+			  "description": "Not Implemented",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"403": {
+			  "description": "Forbidden",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"404": {
+			  "description": "Not Found"
+			}
+		  },
+		  "security": [
+			{
+			  "Token-based Access": []
+			}
+		  ]
+		}
+	  },
+	  "/opps/v1/api/update/{id}": {
+		"patch": {
+		  "tags": [
+			"Opportunity"
+		  ],
+		  "summary": "Update Opportunity",
+		  "description": "Update contract opportunity.",
+		  "operationId": "updateOpportunityUsingPATCH",
+		  "consumes": [
+			"application/json"
+		  ],
+		  "produces": [
+			"application/*"
+		  ],
+		  "parameters": [
+			{
+			  "name": "api_key",
+			  "in": "query",
+			  "description": "api_key",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "description": "Authorization",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "id",
+			  "in": "path",
+			  "description": "id",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "in": "body",
+			  "name": "requestJson",
+			  "description": "requestJson",
+			  "required": false,
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "OK",
+			  "schema": {
+				"type": "object"
+			  }
+			},
+			"400": {
+			  "description": "Bad Request",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"401": {
+			  "description": "Unauthorized",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"500": {
+			  "description": "Internal Server Error",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"412": {
+			  "description": "Precondition Failed"
+			},
+			"501": {
+			  "description": "Not Implemented",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"204": {
+			  "description": "No Content"
+			},
+			"403": {
+			  "description": "Forbidden",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"404": {
+			  "description": "Not Found"
+			},
+			"428": {
+			  "description": "Precondition Required"
+			}
+		  }
+		}
+	  },
+	  "/opps/v1/api/{id}": {
+		"get": {
+		  "tags": [
+			"Opportunity"
+		  ],
+		  "summary": "Get contract opportunity",
+		  "description": "Get contract opportunity.",
+		  "operationId": "getOpportunityUsingGET",
+		  "consumes": [
+			"application/json"
+		  ],
+		  "produces": [
+			"*/*"
+		  ],
+		  "parameters": [
+			{
+			  "name": "api_key",
+			  "in": "query",
+			  "description": "api_key",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "description": "Authorization",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "id",
+			  "in": "path",
+			  "description": "id",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "latest",
+			  "in": "query",
+			  "description": "latest",
+			  "required": false,
+			  "type": "boolean",
+			  "default": false
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "OK",
+			  "schema": {
+				"type": "object"
+			  }
+			},
+			"400": {
+			  "description": "Bad Request",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"401": {
+			  "description": "Unauthorized",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"500": {
+			  "description": "Internal Server Error",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"501": {
+			  "description": "Not Implemented",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"403": {
+			  "description": "Forbidden",
+			  "schema": {
+				"type": "string"
+			  }
+			},
+			"404": {
+			  "description": "Not Found"
+			}
+		  },
+		  "security": [
+			{
+			  "Token-based Access": []
+			}
+		  ]
+		}
+	  }
+	},
+	"definitions": {
+	  "Feature": {
+		"type": "object",
+		"properties": {
+		  "featureKey": {
+			"type": "string"
+		  },
+		  "featureValue": {
+			"type": "boolean"
+		  }
+		}
+	  }
+	}
+  }
+  
