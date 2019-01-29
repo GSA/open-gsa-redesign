@@ -9,7 +9,7 @@ A live example of this is available here: https://open.gsa.gov/api/sample-api-ba
 
 1. Contact cto@gsa.gov and ask for access to manage API docs, sharing your github ID. (Your GitHub ID will have to be in the GSA org.)
 
-2. Create a branch of the site from the `master` branch. Naming convention for new branch: `apidocs-apiname-YYYYMMDD` (replace apiname with then name of your API without spaces)
+2. Create a branch of the site from the `master` branch. Naming convention for new branch: `apidocs-apiname-YYYYMMDD` (replace `apiname` with the name of your API without spaces)
 
 3. In the new branch:
 * Copy the file _apidocs/sample-api-basic.md to a file named _apidocs/apiname.md 
