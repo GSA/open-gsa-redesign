@@ -15,4 +15,7 @@ GSA teams can host their API documentation directly on this site if they prefer.
  
 4. When you are ready to publish in the API directory, submit a pull request to merge your branch with the `master` branch and @mention Ryan Day or Jeff Fredrickson from the CTO team.
 
-5. The CTO team will merge your branch with master, publishing your doco. They will also update the /_data/api-list.yml, which will add your API to the directory page.
+At this point, you will see your API doco at: https://open.gsa.gov/api/api-name/
+
+
+5. The CTO team will merge your branch with master, publishing your doco. They will also update the /_data/api-list.yml, which will add your API to the directory page: https://open.gsa.gov/api/
