@@ -24,8 +24,10 @@ You will need to have the following installed on your machine before following t
 2. Clone the repo you just forked.
 
 ### Running Jekyll
+
 The preferred method for running Jekyll is with `bundle exec jekyll serve`.
 
+Note that this method will rebuild the entire site every time you make a change to any file. If you want faster builds, you can use `bundle exec jekyll incrementalserve`, which comes with [some caveats](https://jekyllrb.com/docs/configuration/incremental-regeneration/), notably only changed files will be rebuilt. This means if you change a data file, HTML pages that use that data file won't be updated.
 
 ### Public domain
 
