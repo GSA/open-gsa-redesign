@@ -6,19 +6,21 @@ banner-heading: Opportunities API
 ## Overview
 
 The Public Opportunities API will facilitate users to utilize the Contract Opportunities REST API capability in the JSON format.
-
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started 
 
 ###	Authentication
 
-#### System Accounts
+#### System Account Authentication
+In order to utilize the Contract Opportunities REST API, the following is required:
+* Valid beta.SAM.GOV federal government system account with Read and Write permissions under Contract Opportunity domain.
 
-In order to utilize the Contract Opportunities REST API, a valid government System account must exist in the beta.SAM.gov system registered at the Office Location level in the hierarchy. To perform an operation, User account that is registered with beta.sam.gov should have either ‘Contracting Officer’ role or ‘Contracting Specialist’ role. 
-To perform an operation, System Account should have Read and Write permissions under Contract Opportunity Domain
- 
-__Note:__ To submit any opportunity for an office, user should provide office org key or AAC (procurement/non-procurement). 
+#### User Account Authorization
+In order to perform an Opportunity API operation, the following is required:
+* beta.SAM.GOV user account with either ‘Contracting Officer’ role or ‘Contracting Specialist’ role. <br/>
+**Note:** To submit any opportunity for an office, user should provide Federal Hierarchy (FH) Organization Id or Activity Address Code (AAC) (procurement/non-procurement). 
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -37,10 +39,8 @@ __Notice Data Type:__
 | __r__	            | Sources Sought                                |
 | __g__	            | Sale of Surplus Property                      |
 | __s__	            | Special Notice                                |
-| __f__	            | Foreign Government Standard                   |
 | __i__	            | Intent to Bundle Requirements (DoD- Funded)   |
 | __a__	            | Award Notice                                  |
-| __m__	            | Modification                                  |
 | __u__	            | Justification and Authorization               |
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -50,21 +50,28 @@ Several methods pertaining to submitting Contract Opportunities involve the Set-
 
 Refer below table for valid Set-Aside values:
 
-| Modern Set-Aside Values                                                            |
-| --------------------------------------------------------------------------------- |
-| Total Small Business Set-Aside (FAR 19.5)                                         |
-| Partial Small Business Set-Aside (FAR 19.5)                                       |
-| 8(a) Set-Aside (FAR 19.8)                                                         |
-| 8(a) Sole Source (FAR 19.8)                                                       |
-| Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13)               |
-| Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13)             |
-| Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)      |
-| Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14)    |
-| Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15)                   |
-| Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15)                 |
-| Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15)            |
-| Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15)          |
-| Local Area Set-Aside (FAR 26.2)                                                   |
+Code | SetAside Values 
+-----|-----------------
+1000 | FAR Set-Aside/Sole Source
+1000001 | Total Small Business Set-Aside (FAR 19.5)
+1000002 | Partial Small Business Set-Aside (FAR 19.5)
+1000003 | 8(a) Set-Aside (FAR 19.8)
+1000004 | 8(a) Sole Source (FAR 19.8)
+1000005 | Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13)
+1000006 | Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13)
+1000007 | Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)
+1000008 | Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14)
+1000009 | Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15)
+1000010 | Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15)
+1000011 | Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15)
+1000012 | Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15)
+1000013 | Local Area Set-Aside (FAR 26.2)
+2000 | Agency Specific Set-Aside/Sole Source (per FAR supplement)
+2000001 | Indian Economic Enterprise (IEE) Set-Aside (specific to Department of Interior)
+2000002 | Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior)
+2000003 | Buy Indian Set-Aside (specific to Department of Health and Human Services, Indian Health Services)
+2000004 | Veteran-Owned Small Business Set-Aside (specific to Department of Veterans Affairs)
+2000005 | Veteran-Owned Small Business Sole source (specific to Department of Veterans Affairs)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -87,7 +94,13 @@ far5 | FAR 6.302-5 - Authorized or required by statute
 far6 | FAR 6.302-6 - National security
 far7 | FAR 6.302-7 - Public interest
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## API Description
+
+<span style="color:red">Note: All notices except Special notices will be associated to organization at office level.
+Special notices can be associated to Organization at department, sub-tier, or office level.</span>
+
 
 ### Create Opportunity
 
@@ -104,9 +117,9 @@ Produces | Json
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | **Yes** | This header value accepts only Contracting officer or Contracting specialist’s email id
-api_key | query | String | **Yes** | System Account API Key with Read & Write permission
-Request Json | Body | Json | **Yes** | todo Refer Section 5.1 
+Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+api_key | query | String | Yes | System Account API Key with Read & Write permission
+Request Json | Body | Json | Yes | [Create_Update_Opportunity_Contract_Json](#create-update-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -473,10 +486,10 @@ Produces | Json
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | **Yes** | This header value accepts only Contracting officer or Contracting specialist’s email id
-api_key | query | String | **Yes** | System Account API Key with Read & Write permission
-id | query | String | **Yes** | Notice Id from create draft
-Request Json | Body | Json | **Yes** | <span style="color:red">**todo Refer Section 5.2**</span>
+Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+api_key | query | String | Yes | System Account API Key with Read & Write permission
+id | query | String | Yes | Notice Id from create draft
+Request Json | Body | Json | Yes | [Publish_Opportunity_Contract_Json](#publish-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -494,7 +507,7 @@ Individual business rules per field are listed across each of the fields in belo
 \# | Element Name | Required | Character Limit / Restrictions | Business Rules | Error Messages with respect to business rules (If any)
 ---|--------------|----------|--------------------------------|----------------|-------------------------------------------------------|
 1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting officer or Contracting Specialist email id <br/>1. If this field is empty<br/>2. If wrong email is given | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" <br/> 2. 500 - "Encountered error authenticating user."
-2 | Api_key | Yes |  | This field should not be empty and should have System Account api_key which has read and write permission. <br/> 1. If this field is empty<br/>2. If wrong api_key is given. | 1. 400 - Missing request header 'api_key' for method parameter of type String<br/>2. 401- Please provide valid Autherization Email & Api key
+2 | Api_key | Yes |  | This field should not be empty and should have System Account api_key which has read and write permission. <br/> 1. If this field is empty<br/>2. If wrong api_key is given. | 1. 400 - Missing request header 'api_key' for method parameter of type String<br/>2. 401- Please provide valid Authorization Email & Api key
 3 | Request Json | Yes |  | This field should not be empty and should have Request Json with mandatory values in it <br/>1. If Request Json is empty<br/> 2. If invalid Json is given | 1.400 -"Invalid request provided.", "error_details": ["$.reason: null found, string expected", "$.requestType: null found, string expected", "$.requestType: does not have a value in the enumeration [archive_request, unarchive_request, publish_request, update_publish_request, cancel_request, uncancel_request]"]<br/> 2. Error processing POST request" 
 4 | Award Number  | Yes | Only for ITB, Contract Award Number is a required field. <br/>Note: Contract Award Number is not a required field for any other notice types| If Contract Award Number is missing | 400 - "Invalid request provided." "error_details": [ "Award Details Section - Contract Award Number is a required field."]
 5 | Notice Id  | Yes | | If republish the same opportunity | 400 -"Invalid request provided.", "error_details": [ "Notice Id for the selected opportunity type already exists"]
@@ -523,10 +536,10 @@ Produces | Json
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | **Yes** | This header value accepts only Contracting officer or Contracting specialist’s email id
-api_key | query | String | **Yes** | System Account API Key with Read & Write permission
-id | query | String | **Yes** | Published Notice Id
-Request Json | Body | Json | **Yes** | todo : Refer Section 5.3
+Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+api_key | query | String | Yes | System Account API Key with Read & Write permission
+id | query | String | Yes | Published Notice Id
+Request Json | Body | Json | Yes | [Revise_Opportunity_Contract_Json](#revise-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -570,10 +583,10 @@ Produces | Json
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | **Yes** | This header value accepts only Contracting officer or Contracting specialist’s email id
-api_key | query | String | **Yes** | System Account API Key with Read & Write permission
-id | query | String | **Yes** | Revised Notice Id
-Request Json | Body | Json | **Yes** | todo : Refer Section 5.4
+Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+api_key | query | String | Yes | System Account API Key with Read & Write permission
+id | query | String | Yes | Revised Notice Id
+Request Json | Body | Json | Yes | [Create_Update_Opportunity_Contract_Json](#create-update-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -939,10 +952,10 @@ Produces | Json
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | **Yes** | This header value accepts only Contracting officer or Contracting specialist’s email id
-api_key | query | String | **Yes** | System Account API Key with Read & Write permission
-id | query | String | **Yes** | Notice Id
-postedFrom | Body | Json | **Yes** | Posted From - Date
+Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+api_key | query | String | Yes | System Account API Key with Read & Write permission
+id | query | String | Yes | Notice Id
+postedFrom | Body | Json | Yes | Posted From - Date
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1078,9 +1091,9 @@ Produces | Json
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | **Yes** | This header value accepts only Contracting officer or Contracting specialist’s email id
-api_key | query | String | **Yes** | System Account API Key with Read & Write permission
-id | query | String | **Yes** | Published Notice Id
+Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+api_key | query | String | Yes | System Account API Key with Read & Write permission
+id | query | String | Yes | Published Notice Id
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1122,20 +1135,19 @@ Produces | Json
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | **Yes** | This header value accepts only Contracting officer or Contracting specialist’s email id
-api_key | query | String | **Yes** | System Account API Key with Read & Write permission
+Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+api_key | query | String | Yes | System Account API Key with Read & Write permission
 archivedFrom | query | Date-time | No | Archive From Date and Time
 archivedTo | query | Date-time | No | Archive To Date and Time
 awardNumber | query | String | No | Award Number
 cancelled | query | Boolean | No |  True or False
 doNumber | query | String | No | Delivery Order number
-facets | query | Array[String] | No | 
 includeCount | query | Boolean | No | True or false
 keyword | query | String | No | Enter any keyword from the description
 latest | query | Boolean | No | True or false
 links | query | Boolean | No | Array Of links
 noticeIds | query | Array[String] | No | Unique ID found from getList call or ID’s for changes found in getNoticeData call.
-noticeType | query | Array[String] | No | Valid values: "p" - for Presolicitation, "k" - for Combined Synopsis/Solicitation, "r" - for Sources Sought, "g" - for Sale of Surplus Property, "s" - for Special Notice, "f" - for Foreign Government Standard, "i" - for Intent to Bundle Requirements (DoD- Funded), "a" - for Award Notice, "m" - for Modification, "u" - for Justification and Authorization
+noticeType | query | Array[String] | No | Valid values: "p" - for Presolicitation, "k" - for Combined Synopsis/Solicitation, "r" - for Sources Sought, "g" - for Sale of Surplus Property, "s" - for Special Notice, "i" - for Intent to Bundle Requirements (DoD- Funded), "a" - for Award Notice, "u" - for Justification and Authorization
 organizationId | query | Array[String] | No | FH Org Id/AAC code of the office where an opportunity is being submitted
 page | query | Integer | No | Page number
 parentNotice | query | Array[String] | No | ParentNotice Id
@@ -1155,7 +1167,7 @@ sortBy | query | String | No | Sort
 Response Element | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 data | Json | List of Opportunities are available in Json format | All the opportunities are listed out in the response
-type | String | Base Notice Type | Valid values: "p" - for Presolicitation, "k" - for Combined Synopsis/Solicitation, "r" - for Sources Sought, "g" - for Sale of Surplus Property, "s" - for Special Notice, "f" - for Foreign Government Standard, "i" - for Intent to Bundle Requirements (DoD- Funded), "a" - for Award Notice, "m" - for Modification, "u" - for Justification and Authorization
+type | String | Base Notice Type | Valid values: "p" - for Presolicitation, "k" - for Combined Synopsis/Solicitation, "r" - for Sources Sought, "g" - for Sale of Surplus Property, "s" - for Special Notice, "i" - for Intent to Bundle Requirements (DoD- Funded), "a" - for Award Notice, "u" - for Justification and Authorization
 solicitation Number | String |  | Solicitation Number
 title | String |  | Title of the Opportunity
 organizationId | String |  | FH Org Id/AAC code of the office where an opportunity is being submitted
@@ -1187,7 +1199,7 @@ placeOfPerformance.country.code | string |  | Pop Country Code
 placeOfPerformance.country.name | string |  | Pop Country name
 placeOfPerformance.zip | string |  | Pop Country zip
 archive | JSON |  | 
-archive.type | string | Auto15/auto30/mannwordual | Archive Type
+archive.type | string | Auto15/Auto30/manual | Archive Type
 archive.date | date |  | Archive Date
 permissions | JSON |  | 
 permissions.ivl | JSON |  | 
@@ -1421,10 +1433,10 @@ Produces | Json
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | **Yes** | This header value accepts only Contracting officer or Contracting specialist’s email id
-api_key | query | String | **Yes** | System Account API Key with Read & Write permission
-id | query | String | **Yes** | Notice Id
-latest | query | Boolean | **No** | True or False (default)
+Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+api_key | query | String | Yes | System Account API Key with Read & Write permission
+id | query | String | Yes | Notice Id
+latest | query | Boolean | No | True or False (default)
 
 #### Responses
 
@@ -1462,7 +1474,7 @@ placeOfPerformance.country.code | string |  | Pop Country Code
 placeOfPerformance.country.name | string |  | Pop Country name
 placeOfPerformance.zip | string |  | Pop Country zip
 archive | JSON |  | 
-archive.type | string | Auto15/auto30/mannwordual | Archive Type
+archive.type | string | Auto15/Auto30/manual | Archive Type
 archive.date | date |  | Archive Date
 permissions | JSON |  | 
 permissions.ivl | JSON |  | 
@@ -1521,7 +1533,7 @@ Individual business rules per field are listed across each of the fields in belo
 <summary>Modification response by notice Id</summary>
 <p>
 <code><pre>
-"type" : "m",
+"type" : "p",
         "award" : {
   "date": "",
   "amount": "number",
@@ -1692,6 +1704,110 @@ Individual business rules per field are listed across each of the fields in belo
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="v1/opportunities-api.json">Open API specification file for the Sample API</a>
+
+
+<p><small><a href="#">Back to top</a></small></p>
+
+## API Contract JSON
+
+### Create/Update Opportunity Contract JSON
+
+<span style="color:red">Note:  award.awardee.manual value should be “false” for any notice types except for ITB, JA and Award</span>
+
+<a id="create-update-json" href="v1/Create_Update_Opportunity_Contract_Json.txt">Create_Update_Opportunity_Contract_Json.txt</a>
+
+#### Create/Update Opportunity Contract JSON Field Description
+
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+data | JSON |  |  | 
+type | String | Base Notice Type | Yes | Valid values: "p" - for Presolicitation, "k" - for Combined Synopsis/Solicitation, "r" - for Sources Sought, "g" - for Sale of Surplus Property, "s" - for Special Notice, "i" - for Intent to Bundle Requirements (DoD- Funded), "a" - for Award Notice, "u" - for Justification and Authorization
+solicitation Number | String |  | Yes | Solicitation Number
+title | String |  |  | Title of the Opportunity
+organizationId | String |  |  | FH Org Id/AAC code of the office where an opportunity is being submitted
+classificationCode | String |  | No | Class-Code
+naics | JSON |  |  | 
+naics.code | String |  | No | NAICS Code
+naics.type | String | Primary  | Yes | NAICS type <br/>Note: ‘P’ must be in upper case
+flags | JSON |  |  | 
+flags.code | string | Recovery act | No | This is a recovery or Reinvestment Act Action
+flags.IsSelected | boolean | True/false | No | True or False
+pointOfContact | JSON |  |  | 
+pointOfContact.type | string | primary | Yes | Contact Type <br/>Note: ‘p’ must be in lower case
+pointOfContact.title | string |  | No | Contact title
+pointOfContact.fullname | string |  | No | Contact Full Name
+pointOfContact.email | string |  | No | Contact email
+pointOfContact.phone | string |  | No | Contact Phone
+pointOfContact.fax | string |  | No  | Contact Fax
+placeOfPerformance | JSON |  |  | 
+placeOfPerformance.streetAddess | string |  | No | Pop Address
+placeOfPerformance. streetAddess2 | string |  | No | Pop Address2
+placeOfPerformance.city | JSON |  | No | Pop City
+placeOfPerformance.city.code | string |  | No | Pop City code
+placeOfPerformance.city.name | string |  | No | Pop City name
+placeOfPerformance.city.state | JSON |  | No | Pop City state
+placeOfPerformance.city.state.code | string |  | No | Pop city state code
+placeOfPerformance.city.state.name | string |  | No | Pop city state name
+placeOfPerformance.country | JSON |  | No | Pop Country
+placeOfPerformance.country.code | string |  | No | Pop Country Code
+placeOfPerformance.country.name | string |  | No | Pop Country name
+placeOfPerformance.zip | string |  | No | Pop Country zip
+archive | JSON |  |  | 
+archive.type | string | Auto15/Auto30/manual | No | Archive Type
+archive.date | date |  | No | Archive Date
+permissions | JSON |  |  | 
+permissions.ivl | JSON |  |  | 
+permissions.ivl.create | boolean |  | No | permissions.ivl.create
+permissions.ivl.read | boolean |  | No | permissions.ivl.read
+permissions.ivl.update | boolean |  | No | permissions.ivl.update
+permissions.ivl.delete  | boolean |  | No | permissions.ivl.delete
+solicitation | JSON |  |  | 
+Solicitation.setAside | string |  | No | Solicitation setAside
+Solicitation.deadlines | JSON |  |  | 
+Solicitation.deadlines.response | Date | Yes (only for Combine, ITB, JA and award)  | No | Solicitation deadline date
+award | JSON |  |  | 
+award.date | date | Yes (only for ITB, JA and Award) | No | Award Date
+award.number | string | Yes (only for ITB, JA and Award) | No | Award Number
+award.deliverOrderNumber | string |  | No | Award Deliver Order Number
+award.amount | Number |  | No | Award Amount
+award.lineitemNumber | string |  | No | Award Line item Number
+award.awardee | JSON |  |  | 
+award.awardee.manual | string | Boolean True or false | Yes | Awardee
+award.awardee.name | string |  | No | Awardee name
+award.awardee.duns | string |  | No | Awardee Duns
+award.awardee.location | JSON |  |  | 
+award.awardee.location.streetAddress | string |  | No | Awardee Street address 1
+award.awardee.location.streetAddress2 | string |  | No | Awardee Street address 1
+award.awardee.location.city | string |  | No | Awardee city
+award.awardee.location.city.code | string |  | No | Awardee city code
+award.awardee.location.city.name | string |  | No | Awardee city name
+award.awardee.location.state | JSON |  |  | Awardee State
+award.awardee.location.state.code | string |  | No | Awardee State code
+award.awardee.location.state.name | string |  | No | Awardee State name
+award.awardee.location.country | JSON |  |  | Awardee Country
+award.awardee.location.country.code | string |  | No | Awardee Country code
+award.awardee.location.country.name | string |  | No | Awardee Country name
+award.awardee.location.zip | string |  | No | Awardee Country zip
+justificationAuthority | JSON |  |  | 
+justificationAuthority.<br/>modificationNumber | string |  | No | justificationAuthority modification number
+justificationAuthority.authority | string |  | No | justificationAuthority authority
+
+
+<p><small><a href="#">Back to top</a></small></p>
+
+### Publish Opportunity Contract JSON
+
+<span style="color:red">Note:Request type must be “publish_request”; Request reason is user inputted text string</span>
+
+<a id="publish-json" href="v1/Publish_Opportunity_Contract_Json.txt">Publish_Opportunity_Contract_Json.txt</a>
+
+<p><small><a href="#">Back to top</a></small></p>
+
+### Revise Opportunity Contract JSON
+
+<span style="color:red">Note: Request type must be “update_publish_request”; Request reason is user inputted text string</span>
+
+<a id="revise-json" href="v1/Revise_Opportunity_Contract_Json.txt">Revise_Opportunity_Contract_Json.txt</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
