@@ -18,7 +18,7 @@ In order to utilize the Contract Opportunities REST API, the following is requir
 
 #### User Account Authorization
 In order to perform an Opportunity API operation, the following is required:
-* beta.SAM.GOV user account with either ‘Contracting Officer’ role or ‘Contracting Specialist’ role. <br/>
+* beta.SAM.GOV user account with either ‘Contracting Officer’ role or Administrator role. <br/>
 **Note:** To submit any opportunity for an office, user should provide Federal Hierarchy (FH) Organization Id or Activity Address Code (AAC) (procurement/non-procurement). 
 
 
@@ -104,7 +104,7 @@ Special notices can be associated to Organization at department, sub-tier, or of
 
 ### Create Opportunity
 
-#### Endpoint Description
+Endpoint Description
 
 ------- | -------
 Request Type | POST
@@ -113,35 +113,35 @@ Summary | Create a new Opportunity
 Consumes | application/*
 Produces | Json
 
-#### Request Parameters
+Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+Authorization | Header |  String | Yes | This header value accepts only Contracting Officer or Administrator email id
 api_key | query | String | Yes | System Account API Key with Read & Write permission
 Request Json | Body | Json | Yes | [Create_Update_Opportunity_Contract_Json](#create-update-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Responses
+Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | String | Create draft Opportunity successful | return response is noticeid
 
-#### Validation Rules and Error messages
+Validation Rules and Error messages
 Individual business rules per field are listed across each of the fields in below table.  
 
 **_Note: 1. Through this service, users can create Draft Opportunity_**
 
 \# | Element Name | Required | Character Limit / Restrictions | Business Rules | Error Messages with respect to business rules (If any)
 ---|--------------|----------|--------------------------------|----------------|-------------------------------------------------------|
-1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting officer or Contracting Specialist email id <br/>If this field is empty	| 401- Please provide valid Authorization Email & Api key 
+1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting Officer or Administrator email id <br/>If this field is empty	| 401- Please provide valid Authorization Email & Api key 
 2 | Api_key | Yes |  | This field should not be empty and should have System Account api_key which has read and write permission. <br/> If this field is empty | 401- Please provide valid Authorization Email & Api key 
 3 | Request Json | Yes |  | This field should not be empty and should have Request Json with mandatory values in it <br/>1. If Request Json is empty<br/> 2. If invalid Json is given | 1. 400:["$.data: is missing but it is required"] <br/> 2. Error processing POST request" 
 4 | Naics type | Yes | primary | Naics type default value is primary which needs to be entered by the user <br/> 1. If Naics type is missing | 1. 400:["$.data.naics[0].type: does not have a value in the enumeration [Primary]"]
 
-#### Examples
+Examples
 
 <details>
 <summary>ITB Request Json Example</summary>
@@ -473,7 +473,7 @@ Individual business rules per field are listed across each of the fields in belo
 
 ### Publish Opportunity
 
-#### Endpoint Description
+Endpoint Description
 
 ------- | -------
 Request Type | POST
@@ -482,31 +482,31 @@ Summary | Publish a new Opportunity
 Consumes | application/*
 Produces | Json
 
-#### Request Parameters
+Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+Authorization | Header |  String | Yes | This header value accepts only Contracting Officer or Administrator email id
 api_key | query | String | Yes | System Account API Key with Read & Write permission
 id | query | String | Yes | Notice Id from create draft
 Request Json | Body | Json | Yes | [Publish_Opportunity_Contract_Json](#publish-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Responses
+Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 204 | String | Publish Opportunity successful | return response is no content
 
-#### Validation Rules and Error messages
+Validation Rules and Error messages
 Individual business rules per field are listed across each of the fields in below table.  
 
 **_Note: 1. Through this service, users can publish an Opportunity_**
 
 \# | Element Name | Required | Character Limit / Restrictions | Business Rules | Error Messages with respect to business rules (If any)
 ---|--------------|----------|--------------------------------|----------------|-------------------------------------------------------|
-1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting officer or Contracting Specialist email id <br/>1. If this field is empty<br/>2. If wrong email is given | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" <br/> 2. 500 - "Encountered error authenticating user."
+1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting Officer or Administrator email id <br/>1. If this field is empty<br/>2. If wrong email is given | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" <br/> 2. 500 - "Encountered error authenticating user."
 2 | Api_key | Yes |  | This field should not be empty and should have System Account api_key which has read and write permission. <br/> 1. If this field is empty<br/>2. If wrong api_key is given. | 1. 400 - Missing request header 'api_key' for method parameter of type String<br/>2. 401- Please provide valid Authorization Email & Api key
 3 | Request Json | Yes |  | This field should not be empty and should have Request Json with mandatory values in it <br/>1. If Request Json is empty<br/> 2. If invalid Json is given | 1.400 -"Invalid request provided.", "error_details": ["$.reason: null found, string expected", "$.requestType: null found, string expected", "$.requestType: does not have a value in the enumeration [archive_request, unarchive_request, publish_request, update_publish_request, cancel_request, uncancel_request]"]<br/> 2. Error processing POST request" 
 4 | Award Number  | Yes | Only for ITB, Contract Award Number is a required field. <br/>Note: Contract Award Number is not a required field for any other notice types| If Contract Award Number is missing | 400 - "Invalid request provided." "error_details": [ "Award Details Section - Contract Award Number is a required field."]
@@ -515,7 +515,7 @@ Individual business rules per field are listed across each of the fields in belo
 7 | Request Json | Yes (For the below Notice types AWARD, ITB, JA) | | Contract Award Date and Contract Award Number are required fields <br/> 1.If invalid Contract Award Date is given and missing Contract Award Number | 1. 400 - "Invalid request provided.","error_details":["Award Details Section - Contract Award Date provided is in an invalid format.","Award Details Section - Contract Award Number is a required field."]
 
 
-#### Examples
+Examples
 
 _NA_
 
@@ -523,7 +523,7 @@ _NA_
 
 ### Revise Opportunity
 
-#### Endpoint Description
+Endpoint Description
 
 ------- | -------
 Request Type | POST
@@ -532,37 +532,37 @@ Summary | Revise an existing Opportunity
 Consumes | application/*
 Produces | Json
 
-#### Request Parameters
+Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+Authorization | Header |  String | Yes | This header value accepts only Contracting Officer or Administrator email id
 api_key | query | String | Yes | System Account API Key with Read & Write permission
 id | query | String | Yes | Published Notice Id
 Request Json | Body | Json | Yes | [Revise_Opportunity_Contract_Json](#revise-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Responses
+Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | String | Revise an Opportunity is successful | return response is noticeid
 
-#### Validation Rules and Error messages
+Validation Rules and Error messages
 Individual business rules per field are listed across each of the fields in below table.  
 
 **_Note: 1. Through this service, users can Revise an Opportunity_**
 
 \# | Element Name | Required | Character Limit / Restrictions | Business Rules | Error Messages with respect to business rules (If any)
 ---|--------------|----------|--------------------------------|----------------|-------------------------------------------------------|
-1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting officer or Contracting Specialist email id | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" 
+1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting Officer or Administrator email id | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" 
 2 | Api_key | Yes |  | This field should not be empty and should have System Account api_key which has read and write permission. <br/> 1. If this field is empty | 1. Error code: 401 Please provide valid Authorization Email & Api key 
 3 | id| Yes |  | This field should not be empty, Valid notice id should be given <br/> 1. If this field is empty | 1. Please provide notice Id
 4 | Request Json | Yes |  | 1. If Request Json is missing <br/>2. If wrong Json request is given | 1. 400-error_details":["$.reason: null found, string expected","$.requestType: null found, string expected","$.requestType: does not have a value in the enumeration [archive_request, unarchive_request, publish_request, update_publish_request, cancel_request, uncancel_request]" <br/>2. 400 -"Opportunity cannot be updated."
 5 | id| Yes |  | System should not allow the revise more than once for the same notice id 1.If revised noticeid is being used for the revision | 400 - "Opportunity cannot be updated."
 
-#### Examples
+Examples
 
 _NA_
 
@@ -570,7 +570,7 @@ _NA_
 
 ### Update Opportunity
 
-#### Endpoint Description
+Endpoint Description
 
 ------- | -------
 Request Type | PATCH
@@ -579,36 +579,36 @@ Summary | Update an Opportunity
 Consumes | application/*
 Produces | Json
 
-#### Request Parameters
+Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+Authorization | Header |  String | Yes | This header value accepts only Contracting Officer or Administrator email id
 api_key | query | String | Yes | System Account API Key with Read & Write permission
 id | query | String | Yes | Revised Notice Id
 Request Json | Body | Json | Yes | [Create_Update_Opportunity_Contract_Json](#create-update-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Responses
+Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | String | Update an Opportunity is successful | return response is noticeid
 
-#### Validation Rules and Error messages
+Validation Rules and Error messages
 Individual business rules per field are listed across each of the fields in below table.  
 
 **_Note: 1. Through this service, users can Revise an Opportunity_**
 
 \# | Element Name | Required | Character Limit / Restrictions | Business Rules | Error Messages with respect to business rules (If any)
 ---|--------------|----------|--------------------------------|----------------|-------------------------------------------------------|
-1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting officer or Contracting Specialist email id <br/> 1. If this field is empty | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" 
+1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting Officer or Administrator email id <br/> 1. If this field is empty | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" 
 2 | Api_key | Yes |  | This field should not be empty and should have System Account api_key which has read and write permission. <br/> 1. If this field is empty | 1. Error code: 401 Please provide valid Authorization Email & Api key 
 3 | id| Yes |  | This field should not be empty, Valid notice id should be given <br/> 1. If this field is empty | 1. Please provide notice Id
 4 | Request Json | Yes |  | 1. If Request Json is missing <br/>2. If wrong Json request is given | 1.400- "$.data: is missing but it is required" <br/>2. 400 - "Opportunity cannot be updated."
 
-#### Examples
+Examples
 
 <details>
 <summary>ITB Request Json Example</summary>
@@ -939,7 +939,7 @@ Individual business rules per field are listed across each of the fields in belo
 
 ### History Opportunity
 
-#### Endpoint Description
+Endpoint Description
 
 ------- | -------
 Request Type | GET
@@ -948,18 +948,18 @@ Summary | History of an Opportunity
 Consumes | application/*
 Produces | Json
 
-#### Request Parameters
+Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+Authorization | Header |  String | Yes | This header value accepts only Contracting Officer or Administrator email id
 api_key | query | String | Yes | System Account API Key with Read & Write permission
 id | query | String | Yes | Notice Id
 postedFrom | Body | Json | Yes | Posted From - Date
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Responses
+Responses
 
 Response Element | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
@@ -987,18 +987,18 @@ _links.self.href | string | Array of links | Document Link
 _links.self.templated | boolean | True or false | Service will bring true or false
 
 
-#### Validation Rules and Error messages
+Validation Rules and Error messages
 Individual business rules per field are listed across each of the fields in below table.  
 
 **_Note: 1. Through this service, users can get history of an Opportunity_**
 
 \# | Element Name | Required | Character Limit / Restrictions | Business Rules | Error Messages with respect to business rules (If any)
 ---|--------------|----------|--------------------------------|----------------|-------------------------------------------------------|
-1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting officer or Contracting Specialist email id <br/> 1. If this field is empty | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" 
+1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting Officer or Administrator email id <br/> 1. If this field is empty | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" 
 2 | Api_key | Yes |  | This field should not be empty and should have System Account api_key which has read and write permission. <br/> 1. If this field is empty <br/> 2. If invalid api key provided<br/> 3. If api_key has no read permission | 1. Error code: 401 Please provide valid Authorization Email & Api key<br/>2.Error code: 401 Please provide valid Authorization Email & Api key<br/>3. Insufficient privileges to perform operation!
 3 | id| Yes |  | This field should not be empty, Valid notice id should be given <br/> 1. If this field is empty <br/> 2. If invalid notice id is given| 1. Please provide notice Id <br/> 2.404 - Error in getting opportunity
 
-#### Examples
+Examples
 
 <details>
 <summary>History Opportunity Example</summary>
@@ -1078,7 +1078,7 @@ Individual business rules per field are listed across each of the fields in belo
 
 ### Delete Opportunity
 
-#### Endpoint Description
+Endpoint Description
 
 ------- | -------
 Request Type | DELETE
@@ -1087,34 +1087,34 @@ Summary | Delete an Opportunity
 Consumes | application/*
 Produces | Json
 
-#### Request Parameters
+Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+Authorization | Header |  String | Yes | This header value accepts only Contracting Officer or Administrator email id
 api_key | query | String | Yes | System Account API Key with Read & Write permission
 id | query | String | Yes | Published Notice Id
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Responses
+Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | String | Opportunity is successfully deleted | return response is noticeid
 
-#### Validation Rules and Error messages
+Validation Rules and Error messages
 Individual business rules per field are listed across each of the fields in below table.  
 
 **_Note: 1. Through this service, users can Revise an Opportunity_**
 
 \# | Element Name | Required | Character Limit / Restrictions | Business Rules | Error Messages with respect to business rules (If any)
 ---|--------------|----------|--------------------------------|----------------|-------------------------------------------------------|
-1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting officer or Contracting Specialist email id | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" 
+1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting Officer or Administrator email id | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" 
 2 | Api_key | Yes |  | This field should not be empty and should have System Account api_key which has read and write permission. <br/> 1. If this field is empty | 1. Error code: 401 Please provide valid Authorization Email & Api key 
 3 | id| Yes |  | This field should not be empty, Valid notice id should be given <br/> 1. If this field is empty | 1. Error code: 401 Please provide notice id
 
-#### Examples
+Examples
 
 _NA_
 
@@ -1122,7 +1122,7 @@ _NA_
 
 ### Get List of Opportunity
 
-#### Endpoint Description
+Endpoint Description
 
 ------- | -------
 Request Type | GET
@@ -1131,11 +1131,11 @@ Summary | Get list of Opportunities
 Consumes | application/*
 Produces | Json
 
-#### Request Parameters
+Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+Authorization | Header |  String | Yes | This header value accepts only Contracting Officer or Administrator email id
 api_key | query | String | Yes | System Account API Key with Read & Write permission
 archivedFrom | query | Date-time | No | Archive From Date and Time
 archivedTo | query | Date-time | No | Archive To Date and Time
@@ -1162,7 +1162,7 @@ sortBy | query | String | No | Sort
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Responses
+Responses
 
 Response Element | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
@@ -1241,18 +1241,18 @@ justificationAuthority.authority | string |  | justificationAuthority authority
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Validation Rules and Error messages
+Validation Rules and Error messages
 Individual business rules per field are listed across each of the fields in below table.  
 
 **_Note: 1. Through this service, users can get list of Opportunities_**
 
 \# | Element Name | Required | Character Limit / Restrictions | Business Rules | Error Messages with respect to business rules (If any)
 ---|--------------|----------|--------------------------------|----------------|-------------------------------------------------------|
-1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting officer or Contracting Specialist email id <br/> 1. If this field is empty | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" 
+1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting Officer or Administrator email id <br/> 1. If this field is empty | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" 
 2 | Api_key | Yes |  | This field should not be empty and should have System Account api_key which has read and write permission. <br/> 1. If this field is empty <br/> 2. If invalid api key provided<br/> 3. If api_key has no read permission | 1. Error code: 401 Please provide valid Authorization Email & Api key<br/>2.Error code: 401 Please provide valid Authorization Email & Api key<br/>3. Insufficient privileges to perform operation!
 3 | id| Yes |  | This field should not be empty, Valid notice id should be given <br/> 1. If this field is empty <br/> 2. If invalid notice id is given| 1. Please provide notice Id <br/> 2.404 - Error in getting opportunity
 
-#### Examples
+Examples
 
 <details>
 <summary>PRESOL</summary>
@@ -1420,7 +1420,7 @@ Individual business rules per field are listed across each of the fields in belo
 
 ### Get Opportunity by Id
 
-#### Endpoint Description
+Endpoint Description
 
 ------- | -------
 Request Type | GET
@@ -1429,16 +1429,16 @@ Summary | Get Opportunity by Id
 Consumes | application/*
 Produces | Json
 
-#### Request Parameters
+Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  String | Yes | This header value accepts only Contracting officer or Contracting specialist’s email id
+Authorization | Header |  String | Yes | This header value accepts only Contracting Officer or Administrator email id
 api_key | query | String | Yes | System Account API Key with Read & Write permission
 id | query | String | Yes | Notice Id
 latest | query | Boolean | No | True or False (default)
 
-#### Responses
+Responses
 
 Response Element | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
@@ -1516,18 +1516,18 @@ justificationAuthority.authority | string |  | justificationAuthority authority
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Validation Rules and Error messages
+Validation Rules and Error messages
 Individual business rules per field are listed across each of the fields in below table.  
 
 **_Note: 1. Through this service, users can get history of an Opportunity_**
 
 \# | Element Name | Required | Character Limit / Restrictions | Business Rules | Error Messages with respect to business rules (If any)
 ---|--------------|----------|--------------------------------|----------------|-------------------------------------------------------|
-1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting officer or Contracting Specialist email id <br/> 1. If this field is empty | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" 
+1 | Authorization | Yes | Email id | This field should not be empty and also should have Contracting Officer or Administrator email id <br/> 1. If this field is empty | 1. 400 - "Missing request header 'Authorization' for method parameter of type String" 
 2 | Api_key | Yes |  | This field should not be empty and should have System Account api_key which has read and write permission. <br/> 1. If this field is empty <br/> 2. If invalid api key provided<br/> 3. If api_key has no read permission | 1. Error code: 401 Please provide valid Authorization Email & Api key<br/>2.Error code: 401 Please provide valid Authorization Email & Api key<br/>3. Insufficient privileges to perform operation!
 3 | id| Yes |  | This field should not be empty, Valid notice id should be given <br/> 1. If this field is empty <br/> 2. If invalid notice id is given| 1. Please provide notice Id <br/> 2.404 - Error in getting opportunity
 
-#### Examples
+Examples
 
 <details>
 <summary>Modification response by notice Id</summary>
@@ -1716,7 +1716,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 <a id="create-update-json" href="v1/Create_Update_Opportunity_Contract_Json.txt">Create_Update_Opportunity_Contract_Json.txt</a>
 
-#### Create/Update Opportunity Contract JSON Field Description
+Create/Update Opportunity Contract JSON Field Description
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
