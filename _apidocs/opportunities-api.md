@@ -18,9 +18,32 @@ In order to utilize the Contract Opportunities REST API, the following is requir
 
 #### User Account Authorization
 In order to perform an Opportunity API operation, the following is required:
-* beta.SAM.GOV user account with either ‘Contracting Officer’ role or Administrator role. <br/>
-**Note:** To submit any opportunity for an office, user should provide Federal Hierarchy (FH) Organization Id or Activity Address Code (AAC) (procurement/non-procurement). 
-
+* beta.SAM.GOV user account with either ‘Administrator’, ‘Contracting Officer’ role or ‘Contracting Specialist’ role. Permissions for operations by role are listed in the table below.<br/>
+**Note:** To submit any opportunity for an office, user should provide Federal Hierarchy (FH) Organization Id or Activity Address Code (AAC) (procurement/non-procurement).
+ 
+Operation    | Administrator <br/>(Contract Opportunities domain)| Contracting Officer | Contracting Specialist
+-------------|---------------|---------------------|------------------------------
+Create Opp   | Yes | Yes | Yes
+Publish Opp | Yes | Yes | No
+Revise Opp | Yes | Yes | Yes
+Update Opp | Yes | Yes | No
+Opp History | Yes | Yes | Yes
+Delete Opp | Yes | No | No
+Get List of Opp | Yes | Yes | Yes
+Get Opp by Id | Yes | Yes | Yes
+Cancel Opportunity | Yes | Yes | Yes
+UnCancel Opportunity | Yes | Yes | Yes
+Archive Opportunity | Yes | Yes | Yes
+Unarchive Opportunity | Yes | Yes | Yes
+Create Attachment | Yes | Yes | Yes
+Get Attachment | Yes | Yes | Yes
+Add IVL | Yes | Yes | Yes | 
+Get IVL | Yes | Yes | Yes
+Update IVL settings | Yes | Yes | Yes
+Delete vendor for opportunity | Yes | Yes | Yes
+Download attachment | Yes | Yes | Yes
+Update attachment | Yes | Yes | Yes
+Delete attachment | Yes | Yes | Yes
 
 <p><small><a href="#">Back to top</a></small></p>
 
