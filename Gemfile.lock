@@ -30,8 +30,10 @@ GEM
     ethon (0.10.1)
       ffi (>= 1.3.0)
     eventmachine (1.2.5)
+    eventmachine (1.2.5-x64-mingw32)
     execjs (2.7.0)
     ffi (1.9.25)
+    ffi (1.9.25-x64-mingw32)
     forwardable-extended (2.6.0)
     hawkins (2.0.5)
       em-websocket (~> 0.5)
@@ -81,6 +83,8 @@ GEM
     multi_json (1.12.2)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
+    nokogiri (1.8.4-x64-mingw32)
+      mini_portile2 (~> 2.3.0)
     parallel (1.10.0)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
@@ -101,6 +105,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   eslintrb
