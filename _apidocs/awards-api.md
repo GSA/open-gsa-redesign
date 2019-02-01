@@ -871,13 +871,13 @@ Same response as mentioned above applies.
     Both the Awards API and the Awards Extract API offer the following additional functionality:
     
     PSC and NAICS Aggregation:
-    Users can search by the PSC/NAICS Categories, Sub-Categories or the exact four character PSC or the six digit NAICS via the two <br>filters **productOrServiceCode** and **naicsCode**.<br>
+    Users can search by the PSC/NAICS Categories, Sub-Categories or the exact four character PSC or the six digit NAICS via the two filters **productOrServiceCode** and **naicsCode**.<br>
     Example:
     * productOrServiceCode=E* will retrieve records with PSC Codes like E1AB, E1GA, E1PZ, E1LZ, E1NE, E1NA, E163, E241, E294, E232.
     * naicsCode=92* will retrieve records with NAICS Codes like 921190, 922130, 922160, 923130, 924110, 928110.
     
     PIID Aggregation:
-    Users can search for an entire Award or IDV PIID family. Search Filters and the Response Header are explained below:
+    Users can search for an entire Award or IDV PIID family. Search Filters and the Response Header are explained below:<br>
     **Query String Parameters**
     * The mandatory filter, filterName=piidAggregation (piidAggregation is case sensitive).
     * The mandatory filter piid when filterName=piidAggregation.
@@ -922,7 +922,7 @@ Same response as mentioned above applies.
           K (FAR 52.223-4 & bio-based & environmentally preferable) or <br>
           L (FAR 52.223-4 & bio-based & energy efficient & environmentally preferable).<br>
     * Optional search filters as mentioned above can also be used in the search.
-    * Schema Filtering params as described in the above are not permitted in the Biobased search.      
+    * Schema Filtering params as described above are not permitted in the Biobased search.      
     
     **Expected Result** 
     
