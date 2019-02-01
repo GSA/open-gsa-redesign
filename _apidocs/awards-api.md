@@ -189,7 +189,7 @@ Generating the API Key:
 | contractingAuthority |  Interagency Contracting Authority Code. <br/>Example: 'X'. |
 | contractingAuthorityDesc |  Contracting Authority Description. <br/>Example: 'NOT APPLICABLE'. |
 | otherStatutoryAuthority |  Other Interagency Contracting Statutory Authority. <br/>Example: '41 USC 259'. |
-| nasaStatutoryAuthority |  Nasa Statutory Authority. <br/>Example: 'A'. |
+| nasaStatutoryAuthority |  NASA Statutory Authority. <br/>Example: 'A'. |
 | additionalReportingCode |  Additional Reporting Code. <br/>Example: 'NONE'. |         
 | additionalReportingDesc |  Additional Reporting Description. <br/>Example: 'NONE OF THE ABOVE'. |
 | productOrServiceCode |  Product Or Service Code. <br/>Example: '8940'. |
@@ -434,7 +434,7 @@ Generating the API Key:
 | selfCertifiedHubZoneJointVenture |  SelfCertified Hub Zone Joint Venture. <br/>Example: 'NO'. |         
 | vendorStateCode |  Vendor state code. <br/>Example: 'GA'. |
 | vendorCountry| Vendor country name . <br/>Example: 'UNITED STATES'. | 
-| cageCode |  Cage Code. <br/>Example: '00000'. |  
+| cageCode |  CAGE Code. <br/>Example: '00000'. |  
 | globalDunsNumber |  Global Parent DUNS Number. <br/>Example: '0000000000000'. |         
 | globalVendorName |  Global Parent DUNS Name. <br/>Example: 'XYZ COMPANY'. |
 | vendorRegistrationDate |  Vendor Registration Date Format:  MM/dd/yyyy. <br/>Example: '02/22/1999'. |
@@ -536,8 +536,8 @@ Generating the API Key:
 | descriptionOfContractRequirement (string, optional) | Description Of Contract Requirement  |
 | inherentlyGovernmentalCode (string, optional) | Inherently Governmental Code  |
 | inherentlyGovernmentalDescription (string, optional) | Inherently Governmental Description  |
-| gfpCode (string, optional) | GfpCode  |
-| gfpDescription (string, optional) | Gfp Description  |
+| gfpCode (string, optional) | GFP Code  |
+| gfpDescription (string, optional) | GFP Description  |
 | seaTransportationCode (string, optional) | Sea Transportation Code  |
 | seaTransportationDescription (string, optional) | Sea Transportation Description  |
 | undefinitizedActionCode  (string, optional) | Undefinitized Action Code  |
@@ -581,7 +581,7 @@ Generating the API Key:
 | serviceContractActCode  (string, optional) | Service Contract Act Code(Pre-V1.5)/ laborStandardsCode (V1.5)  |
 | serviceContractActDescription  (string, optional) | Service Contract Act Description(Pre-V1.5)/ laborStandardsDescription (V1.5)  |
 | davisBaconActCode  (string, optional) | DavisBacon Act Code(Pre-V1.5)/ constructionWageRateReqsCode (V1.5)  |
-| davisBaconActDescription  (string, optional) |DavisBacon Act Description(Pre-V1.5)/ constructionWageRateReqsDescription (V1.5).  |
+| davisBaconActDescription  (string, optional) | DavisBacon Act Description(Pre-V1.5)/ constructionWageRateReqsDescription (V1.5).  |
 | additionalReportingCode  (string, optional) | Additional Reporting Code  |
 | additionalReportingDescription  (string, optional) | Additional Reporting Description  |
 | interagencyContractingAuthorityCode  (string, optional) | Interagency Contracting Authority Code  |
@@ -717,17 +717,17 @@ Generating the API Key:
 | countryCode (string, optional) | Country Code  |
 | countryName  (string, optional) | Country Name  |
 | phoneNumber  (string, optional) | Phone Number  |
-| faxNumber  (string, optional) | FaxNumber  |
+| faxNumber  (string, optional) | Fax Number  |
 | congressionalDistrict  (string, optional) | Congressional District  |
-| cageCode  (string, optional) | CageCode  |
-| dunsNumber  (string, optional) | DunsNumber  |
+| cageCode  (string, optional) | CAGE Code  |
+| dunsNumber  (string, optional) | DUNS Number  |
 | globalParentDUNSNumber  (string, optional) | Global Parent DUNS Number  |
 | globalParentDUNSName  (string, optional) | Global Parent DUNS Name  |
 | registrationDate  (string, optional) | Registration Date  |
 | renewalDate (string, optional) | Renewal Date  |
 | divisionName  (string, optional) | Division Name  |
 | divisionNumberOrOfficeCode  (string, optional) | Division Number Or Office Code  |
-| samExceptionCode  (string, optional) | Sam Exception Code  |
+| samExceptionCode  (string, optional) | SAM Exception Code  |
 | samExceptionDescription  (string, optional) | Sam Exception Description  |
 | contractingOfficerBusinessSizeSelectionCode  (string, optional) | Contracting Officer Business Size Selection Code  |
 | contractingOfficerBusinessSizeSelectionDescription  (string, optional) | Contracting Officer Business Size Selection Description  |
