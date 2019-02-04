@@ -87,10 +87,10 @@ Generating the API Key:
 | oldPiid | A valid complete value of other PIID. <br/>Example: '0001'. |
 | oldModificationNumber | A valid complete value of other Modification Number. <br/>Example: '0'. |
 | oldTransactionNumber | A valid complete value of other Transaction Number.  Example: '123'. |
-| oldIdvAgencyCode | A valid four character Other RferencedIDV AgencyID. <br/>Example: '9700'. |
-| oldIdvAgencyName | The complete Other RferencedIDV AgencyName. <br/>Example: 'DEPT OF DEFENSE'. |
-| oldIdvPiid | A valid complete value other ReferencedIDV PIID. <br/>Example: '0001'. |
-| oldIdvModificationNumber | A valid complete value other ReferencedIDV Modification Number. <br/>Example: '0'. |
+| oldIdvAgencyCode | A valid four character Other Referenced IDV AgencyID. <br/>Example: '9700'. |
+| oldIdvAgencyName | The complete Other Referenced IDV AgencyName. <br/>Example: 'DEPT OF DEFENSE'. |
+| oldIdvPiid | A valid complete value other Referenced IDV PIID. <br/>Example: '0001'. |
+| oldIdvModificationNumber | A valid complete value other Referenced IDV Modification Number. <br/>Example: '0'. |
 | effectiveDate | Effective Date. Format: MM/DD/YYYY. <br/>Example: '09/12/1999'. |	 
 | currentCompletionDate | Completion Date. Format: MM/DD/YYYY. <br/>Example: '09/13/1999'. |
 | ultimateCompletionDate | Estimated Ultimate Completion Date. Format:MM/DD/YYYY. Example: '09/13/1999'. |
@@ -99,10 +99,10 @@ Generating the API Key:
 | solicitationDate | Solicitation Date. Format:MM/DD/YYYY. Example: '09/13/1999'. |
 | dollarsObligated | Action Obligation. <br/>Example: 512.11. |
 | baseDollarsObligated |  Base dollars obligated. <br/>Example: 512.11. |
-| currentContractValue | Base And Excercised OptionsValue. Example: 512.11. |
+| currentContractValue | Base And Exercised OptionsValue. Example: 512.11. |
 | ultimateContractValue | Base And AllOptionsValue. <br/>Example: 512.11. |
 | totalDollarsObligated | Total Action Obligation. <br/>Example: 512.11. |
-| totalCurrentContractValue | Total Base And Excercised OptionsValue. <br/>Example: 512.11. |
+| totalCurrentContractValue | Total Base And Exercised OptionsValue. <br/>Example: 512.11. |
 | totalUltimateContractValue | Total Base And AllOptionsValue. Example: 512.11 |
 | feePaidForUseOfService | Fee Paid For Use Of IDV. <br/>Example: 512.11. |
 | nonGovernmentValue | Non Government Dollars. Example: 512.11. |
@@ -123,7 +123,7 @@ Generating the API Key:
 | urlOfProgram | WebsiteURL. <br/>Example: 'WWW.GSAELIBRARY.GSA.GOV'. |
 | whoCanUse | Who Can Use Short Description. <br/>Example: 'ALL AGENCIES'. |
 | whoCanUseDesc | Who Can Use Large Description. <br/>Example: 'ALL FEDERAL GOVERNMENT AGENCIES MAY PLACE ORDERS AGAINST THE CONTRACT.'. |
-| emailAddress |EmailAddress. <br/>Example: 'test@gsa.gov'. |
+| emailAddress |Email Address. <br/>Example: 'test@gsa.gov'. |
 | individualOrderCallLimit | Individual Order / Call Limit. <br/>Example: '0.00'. |
 | typeOfFeeForUseOfService | Type Of Fee For Use Of Service. <br/>Example: 'FIX'. |
 | fixedFeeValue | Fixed Fee Value. Example: 10.0 |
@@ -145,7 +145,7 @@ Generating the API Key:
 | inherentlyGovernmentalCode |  Inherently Governmental Code. <br/>Example: 'OT'. |          
 | inherentlyGovernmentalDesc |  Inherently Governmental Description. <br/>Example: 'OTHER FUNCTIONS'. |         
 | gfeGfp | GFP Code. <br/>Example: 'N'. |
-| gfeGfpDesc | gfp Description. <br/>Example: 'TRANSACTION'. |
+| gfeGfpDesc | GFP Description. <br/>Example: 'TRANSACTION'. |
 | seaTransportationCode | Sea Transportation Code. <br/>Example: 'N'. |
 | seaTransportationDesc | Sea Transportation Description. <br/>Example: 'NO'. |
 | undefinitizedAction | Undefinitized Action Code. <br/>Example: 'X'. |
@@ -160,10 +160,10 @@ Generating the API Key:
 | mainAccountCode |  Treasury Account Symbol Agency Main Account. <br/>Example: '4930'. |
 | subAccountCode |  Treasury Account Symbol Agency Sub Account. <br/>Example: '001'. |
 | initiative |  Initiative. <br/>Example: 'AMERICAN RECOVERY AND REINVESTMENT ACT'. |
-| idvPart8OrPart13 |  ReferencedIDV Part8 Or Part13. <br/>Example: 'part8'. |
-| idvMulOrSingleComp |  ReferencedIDV Multiple Or Single. <br/>Example: 'S'. |  
-| idvContractType |  ReferencedIDV Type Code. <br/>Example: 'B'. |
-| idvTypeDescription |  ReferencedIDV Type Description. <br/>Example: 'IDC'. |
+| idvPart8OrPart13 |  Referenced IDV Part8 Or Part13. <br/>Example: 'part8'. |
+| idvMulOrSingleComp |  Referenced IDV Multiple Or Single. <br/>Example: 'S'. |  
+| idvContractType |  Referenced IDV Type Code. <br/>Example: 'B'. |
+| idvTypeDescription |  Referenced IDV Type Description. <br/>Example: 'IDC'. |
 | typeOfIdc |  Type Of IDC Code. <br/>Example: 'A'. |		
 | typeOfIdcDesc |  Type Of IDC Description. <br/>Example: 'INDEFINITE DELIVERY / REQUIREMENTS'. |
 | multipleOrSingleAwardIdc |  Multiple Or Single Award IDV. <br/>Example: 'MULTIPLE AWARD'. |
@@ -229,7 +229,7 @@ Generating the API Key:
 | popCountyName | Place of performance County name. <br/>Example: 'DISTRICT OF COLUMBIA'. |
 | placeCongressionalDistrict |  Principal Place Of Performance Congressional District. <br/>Example: '10'. |
 | extentCompeted |  Extent Competed Code. <br/>Example: 'A'. |
-| extentCompetedDescription |  Extent Competed Descriptiona. <br/>Example: 'FULL AND OPEN COMPETITION'. |
+| extentCompetedDescription |  Extent Competed Description. <br/>Example: 'FULL AND OPEN COMPETITION'. |
 | solicitationProcedures |  Solicitation Procedures Code. <br/>Example: 'NP'. |
 | solicitationProcDescription |  Solicitation Procedures Description. <br/>Example: 'NEGOTIATED PROPOSAL/QUOTE'. |
 | typeOfSetAside |  Type of Set Aside Code. <br/>Example: 'NONE'. |    
@@ -317,8 +317,8 @@ Generating the API Key:
 | solicitationIssueDate |  Solicitation Issue Date Format:  MM/dd/yyyy. <br/>Example: '02/22/1999'. |
 | cancellationDate |  Cancellation Date format Format:  MM/dd/yyyy. <br/>Example: '02/22/1999'. |
 | destroyDate |  Destroy Date format  Format:  MM/dd/yyyy. <br/>Example: '02/22/1999'. |
-| nonFederalFundingAmount |  Non FederalFundingAmount. <br/>Example: '0.00'. |          
-| cfdaProgramIdentificationNumberCode |  CFDA ProgramIdentification NumberCode. <br/>Example: '43.001'. |         
+| nonFederalFundingAmount |  Non Federal Funding Amount. <br/>Example: '0.00'. |          
+| cfdaProgramIdentificationNumberCode |  CFDA Program Identification Number Code. <br/>Example: '43.001'. |         
 | cfdaProgramIdentificationNumberDesc |  CFDA Program Identification Number Description. <br/>Example: 'SCIENCE-43.001'. |                            
 | preparedBy |  Created By. <br/>Example: 'ALEN'. |
 | preparedDate |  Created Date format Format:  MM/dd/yyyy. <br/>Example: '02/22/1999'.|
@@ -442,7 +442,7 @@ Generating the API Key:
 | vendorDivisionName |  Vendor Division Name. <br/>Example: 'MEDICAL OFFICE'. |      
 | vendorDivisionNumber |  Vendor Division Number. <br/>Example: '1'. |             
 | samExceptionCode |  SAM Exception Code. <br/>Example: '1'. |        
-| samExceptionDesc |  Sam Exception Desc. <br/>Example: 'GOVERNMENT-WIDE COMMERCIAL PURCHASE CARD'. |  
+| samExceptionDesc |  Sam Exception Description. <br/>Example: 'GOVERNMENT-WIDE COMMERCIAL PURCHASE CARD'. |  
 | coBusSizeDeterminationCode |  Contracting Officer's Business Size Selection Code. <br/>Example: 'O'. |    
 | coBusSizeDeterminationDesc |  Contracting Officer's Business Size Selection Description. <br/>Example: 'OTHER THAN SMALL BUSINESS'. |
 | idvCoBusSizeDeterminationCode |  IDV Contracting Officer Business Size Selection Code. |          
