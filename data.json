@@ -3377,7 +3377,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA eLibrary Schedules and Contracts",
 			"description": "GSA eLibrary (formerly Schedules e-Library) is the online source for the latest contract award information for: GSA Schedules; Department of Veterans Affairs (VA) Schedules; and Technology Contracts, including Governmentwide Acquisition Contracts (GWACs), Network Services and Telecommunications Contracts, and Information Technology (IT) Schedule 70. This data contains all the current contracts under those contract vehicles and their respective schedule, special item number information.",
-			"modified": "2017-03-21",
+			"modified": "2019-02-06",
 			"accessLevel": "public",
 			"identifier": "GSA-4001",
 			"dataQuality": true,
@@ -3401,7 +3401,8 @@
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
 					"title": "eLibrary_Schedule_Contracts",
-					"downloadURL": "https://inventory.data.gov/dataset/4fd4a79f-7fd6-4699-a77a-411bc7e980b9/resource/bfd33f01-4156-44a9-a680-d31dc42a857c/download/elibraryschedulecontracts.xlsx"
+					"description": "GSA eLibrary is the online source for the latest contract award information.",
+					"downloadURL": "https://inventory.data.gov/dataset/4fd4a79f-7fd6-4699-a77a-411bc7e980b9/resource/bfd33f01-4156-44a9-a680-d31dc42a857c/download/elibraryschedulecontracts20190205.xlsx"
 				}
 			],
 			"keyword": ["eLibrary GSA Schedule Contract"],
@@ -3413,7 +3414,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2019-02-05",
+			"modified": "2019-02-06",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3436,8 +3437,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON 02/05/19",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-02-05-19.json"
+					"description": "EDI JSON 02/06/19",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-02-06-19.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
