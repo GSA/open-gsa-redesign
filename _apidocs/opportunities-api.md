@@ -23,14 +23,14 @@ In order to perform an Opportunity API operation, the following is required:
  
 Operation    | Administrator <br/>(Contract Opportunities domain)| Contracting Officer | Contracting Specialist
 -------------|---------------|---------------------|------------------------------
-Create Opp   | Yes | Yes | Yes
-Publish Opp | Yes | Yes | No
-Revise Opp | Yes | Yes | Yes
-Update Opp | Yes | Yes | No
-Opp History | Yes | Yes | Yes
-Delete Opp | Yes | No | No
-Get List of Opp | Yes | Yes | Yes
-Get Opp by Id | Yes | Yes | Yes
+Create Opportunity   | Yes | Yes | Yes
+Publish Opportunity | Yes | Yes | No
+Revise Opportunity | Yes | Yes | Yes
+Update Opportunity | Yes | Yes | No
+Opportunity History | Yes | Yes | Yes
+Delete Opportunity | Yes | No | No
+Get List of Opportunity | Yes | Yes | Yes
+Get Opportunity by Id | Yes | Yes | Yes
 Cancel Opportunity | Yes | Yes | Yes
 UnCancel Opportunity | Yes | Yes | Yes
 Archive Opportunity | Yes | Yes | Yes
