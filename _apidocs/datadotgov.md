@@ -104,7 +104,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
 This API has one primary endpoints:
 
-**Endpoint 1:** https://api.gsa.gov/systems/datagov/3/action/package_list
+**Endpoint 1:** https://api.gsa.gov/systems/datagov/3/
 
 **Description**   CKAN Endpoint
 
