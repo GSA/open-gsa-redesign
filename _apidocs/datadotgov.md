@@ -17,8 +17,8 @@ Complete API documentation is available [from CKAN](https://docs.ckan.org/en/lat
 To begin using this API, you will need to register for an API Key. You can sign up for an API key below.  After registration, you will need to provide this API key in the `x-api-key` HTTP header with every API request.
 
 
-{% raw %}
-
+{% raw %}  
+  
 <div id="apidatagov_signup">Loading signup form...</div>
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -87,8 +87,8 @@ To begin using this API, you will need to register for an API Key. You can sign 
   })();
 </script>
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
-
-{% endraw %}
+  
+{% endraw %}  
 
 
 
