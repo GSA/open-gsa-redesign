@@ -32,12 +32,12 @@ Awards Extract API:
 ## Getting Started
  
 Awards API can be accessed from Beta or Alpha via the following end points:
-* https://api.sam.gov/prod/contractdata?api_key=<API Key>
-* https://api-alpha.sam.gov/prodlike/contractdata?api_key=<API Key>
+* https://api.sam.gov/prod/contractdata?api_key=< value >
+* https://api-alpha.sam.gov/prodlike/contractdata?api_key=< value >
 
 Awards Extract API can be accessed from Beta or Alpha via the following end points:
-* https://api.sam.gov/prod/contractdata-extract?api_key=<API Key>&format=<Format Type>&emailId=<a valid email address>
-* https://api-alpha.sam.gov/prodlike/contractdata?api_key=<API Key>& format=<Format Type>&emailId=<a valid email address>
+* https://api.sam.gov/prod/contractdata-extract?api_key=< value >&format=< Format Type >&emailId=< a valid email address >
+* https://api-alpha.sam.gov/prodlike/contractdata-extract?api_key=< value >& format=< Format Type >&emailId=< a valid email address >
 
 Generating the API Key:
 * Registered users can request for a public API on 'Account Details' page.
@@ -51,7 +51,7 @@ Generating the API Key:
 
 ### Awards API
 
-**Endpoint:** https://api.sam.gov/prod/contractdata?api_key=<value>&page=<value>&size=<value>
+**Endpoint:** https://api.sam.gov/prod/contractdata?api_key=< value >&page=< value >&size=< value >
 
 **Description** Restful endpoint to retrieve Awards data service detail information
 
@@ -851,7 +851,7 @@ Generating the API Key:
 
 ### Awards Extract API
 
-**Endpoint:** https://api.sam.gov/prod/contractdata-extract?api_key=<API Key>&format=<Format Type>&emailId=<a valid email address>
+**Endpoint:** https://api.sam.gov/prod/contractdata-extract?api_key=< value >&format=< Format Type >&emailId=< a valid email address >
 
 **Description**  Restful endpoint to retrieve Awards data service detail information in the form of csv or json format instead of paginated.
 
