@@ -1,0 +1,319 @@
+openapi: 3.0.0
+info:
+  description: These RESTFUL endpoints are to retrieve Entity detail information
+  version: "1.0"
+  title: Entities API
+  license:
+    {}
+tags:
+  - name: Entity Object View
+    description: Entity Operations
+paths:
+  "/msam/v1/entities/{dunsDunsPlus4}":
+    get:
+      tags:
+        - Entity Object View
+      summary: Entity View Details
+      operationId: getEntityInfoUsingGET
+      parameters:
+        - name: dunsDunsPlus4
+          in: path
+          description: It can contain just 9 digits duns OR combination of duns and duns+4
+            separated by '+'
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: API KEY
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/EntityInfoResource"
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+  "/msam/v1/entities/multiple/{duns}":
+    get:
+      tags:
+        - Multiple Entity Search
+      summary: Multiple Entity Search
+      operationId: getEntityInfoUsingGET
+      parameters:
+        - name: duns
+          in: path
+          description: It can contain just 9 digits duns separated by '+'
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: API KEY
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/EntityInfoResource"
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+servers:
+  - url: https://***REMOVED***/prodlike
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: api_key
+      in: query
+  schemas:
+    Address:
+      type: object
+      properties:
+        address1:
+          type: string
+        address2:
+          type: string
+        addressCity:
+          type: string
+        addressState:
+          type: string
+        addressZip:
+          type: string
+        addressZipPlus4:
+          type: string
+        country:
+          type: string
+    Exclusions:
+      type: object
+      properties:
+        exclusionDetailLink:
+          type: string
+        exclusionName:
+          type: string
+    EntityGeneralInfo:
+      type: object
+      properties:
+        dodaac:
+          type: string
+        duns:
+          type: string
+        exclusionStatusFlag:
+          type: string
+        expirationDate:
+          type: string
+          format: date-time
+        lastUpdateDate:
+          type: string
+          format: date-time
+        samAddress:
+          $ref: "#/components/schemas/Address"
+    GeographicalAreas:
+      type: object
+      properties:
+        county:
+          type: string
+        msa:
+          type: string
+        state:
+          type: string
+    EntityInfoResource:
+      type: object
+      properties:
+        entityInfo:
+          $ref: "#/components/schemas/EntityInfo"
+        links:
+          type: array
+          items:
+            $ref: "#/components/schemas/Link"
+    Assertions:
+      type: object
+      properties:
+        bondingFlag:
+          type: string
+        ediInformationFlag:
+          type: string
+        geographicalAreaServed:
+          type: array
+          items:
+            $ref: "#/components/schemas/GeographicalAreas"
+        naicsList:
+          type: array
+          items:
+            type: string
+        primaryNaics:
+          type: string
+        pscList:
+          type: array
+          items:
+            type: string
+        registryFlag:
+          type: string
+    RepsAndCerts:
+      type: object
+      properties:
+        linkForDFARSReport:
+          type: string
+        linkForFARReport:
+          type: string
+    CoreData:
+      type: object
+      properties:
+        activeDate:
+          type: string
+          format: date-time
+        businessStartDate:
+          type: string
+          format: date-time
+        businessType:
+          type: string
+        businessTypeCounter:
+          type: string
+        cageCode:
+          type: string
+        companyDivision:
+          type: string
+        congressionalDistrict:
+          type: string
+        corporateURL:
+          type: string
+        correspondenceFlag:
+          type: string
+        countryCode:
+          type: string
+        countryOfIncorporation:
+          type: string
+        creditCardUsage:
+          type: string
+        dbaName:
+          type: string
+        delinquentFedDebtFlag:
+          type: string
+        divisionNumber:
+          type: string
+        entityStructure:
+          type: string
+        entityType:
+          type: string
+        fiscalYearEndCloseDate:
+          type: string
+        generalInfo:
+          $ref: "#/components/schemas/EntityGeneralInfo"
+        highestOwnerPredecessorCageCode:
+          type: string
+        highestOwnerRecentPredecessorBusName:
+          type: string
+        immedOwnerPredecessorCageCode:
+          type: string
+        immedOwnerRecentPredecessorBusName:
+          type: string
+        legalBusinessName:
+          type: string
+        mailAddress:
+          $ref: "#/components/schemas/Address"
+        noPublicDisplayFlag:
+          type: string
+        organizationStructure:
+          type: string
+        profitStructure:
+          type: string
+        purposeOfRegistration:
+          type: string
+        recentPredecessorBusName:
+          type: string
+        recentPredecessorCageCode:
+          type: string
+        registrationDate:
+          type: string
+          format: date-time
+        secondRecentPredecessorBusName:
+          type: string
+        secondRecentPredecessorCageCode:
+          type: string
+        stateOfIncorporation:
+          type: string
+        stateProvision:
+          type: string
+        submissionDate:
+          type: string
+        thirdRecentPredecessorBusName:
+          type: string
+        thirdRecentPredecessorCageCode:
+          type: string
+        zip:
+          type: string
+        zipPlus4:
+          type: string
+    PointOfContact:
+      type: object
+      properties:
+        empty:
+          type: boolean
+        pocAddress:
+          $ref: "#/components/schemas/Address"
+        pocEmail:
+          type: string
+        pocFax:
+          type: string
+        pocFirstName:
+          type: string
+        pocLastName:
+          type: string
+        pocMiddleName:
+          type: string
+        pocNonUSPhone:
+          type: string
+        pocTitle:
+          type: string
+        pocType:
+          type: string
+        pocUSPhone:
+          type: string
+        pocUSPhoneExt:
+          type: string
+    EntityInfo:
+      type: object
+      properties:
+        assertions:
+          $ref: "#/components/schemas/Assertions"
+        coreData:
+          $ref: "#/components/schemas/CoreData"
+        exclusionsList:
+          type: array
+          items:
+            $ref: "#/components/schemas/Exclusions"
+        mandatoryPOCs:
+          type: array
+          items:
+            $ref: "#/components/schemas/PointOfContact"
+        optionalPOCs:
+          type: array
+          items:
+            $ref: "#/components/schemas/PointOfContact"
+        repsAndCerts:
+          $ref: "#/components/schemas/RepsAndCerts"
+    Link:
+      type: object
+      properties:
+        href:
+          type: string
+        rel:
+          type: string
+        templated:
+          type: boolean
