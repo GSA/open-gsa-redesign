@@ -7,9 +7,8 @@ banner-heading: Entity API
 
 
 ## Overview
-Entity Management API will allow users to request Entity Information based on various request parameters. 
-The response will be provided in the JSON format in the paginated manner. 
-
+The Entity Management API will allow users to request Public Entity Information based on various optional request parameters. 
+The response will be provided in the JSON format in a paginated manner
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -41,24 +40,23 @@ Generating the API Key:
 | activationDate | A single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&activationDate=02/12/1999' |
 | cageCode | The exact 5 character value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&cageCode=00000' |
 | dbaName | Partial or Complete value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&dbaName=ALLTEL' |
-| delinquentFederalDebtFlag | It can contain just Y or N or null.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&delinquentFederalDebtFlag=Y' |
-| disasterRegistry | It can contain just YES or NO or null.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&disasterRegistry=YES' |
-| dodaac | It can contain just 9 character value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&dodaac=025114695' |
-| duns  | It can contain just 9 digit value, a maximum of up to 100 values can be sent.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&duns=025114695' |
-| entityStructure  | It can contain just 2 character code or null.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&entityStructure=Z1' |
-| exclusionStatusFlag | It can contain just D or null.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&exclusionStatusFlag=D' |
+| delinquentFederalDebtFlag | Allows Y or N or null.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&delinquentFederalDebtFlag=Y' |
+| dodaac | Allows 9 character value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&dodaac=025114695' |
+| duns  | Allows 9 digit value, a maximum of up to 100 values can be sent.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&duns=025114695' |
+| entityStructure  | Allows 2 character code or null.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&entityStructure=Z1' |
+| exclusionStatusFlag | Allows D or null.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&exclusionStatusFlag=D' |
 | expirationDate | A single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&expirationDate=02/12/1999' |
-| legalBusinessName | It can contain just Partial or Complete value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&legalBusinessName=ALLTEL ' |
-| primaryNaics | It can contain just 6 digit NAICS, accepts multiple NAICS.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&primaryNaics=51331' |
-| purposeOfRegistration | It can contain just 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&purposeOfRegistration=Z2' |
+| legalBusinessName | Allows Partial or Complete value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&legalBusinessName=ALLTEL ' |
+| primaryNaics | Allows 6 digit NAICS, accepts multiple NAICS.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&primaryNaics=51331' |
+| purposeOfRegistration | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&purposeOfRegistration=Z2' |
 | registrationDate | A single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&registrationDate=02/12/1999' |
 | physicalAddressCity | City name.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samCity=Herndon' |
-| physicalAddressCongressionalDistrict | It can contain 2 characters.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samCongressionalDistrict=AR' |
-| physicalAddressCountryCode | It can contain just 3 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samCountryCode=USA' |
-| physicalAddressProvinceOrState  | It can contain just 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samProvinceOrState=AR' |
-| physicalAddressZipPostalCode | It can contain just 5 digit zip code.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samZipPostalCode=022011' |
-| samExtractCode  | It can contain just 1 character code (A or E).<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samExtractCode=A' |
-| includeSections | It can contain just values of section name (coreData, assertions, repsAndCerts, mandatoryPOCs, optionalPOCs).<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&includeSections=[coreData]' |
+| physicalAddressCongressionalDistrict | Allows 2 characters.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samCongressionalDistrict=AR' |
+| physicalAddressCountryCode | Allows 3 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samCountryCode=USA' |
+| physicalAddressProvinceOrState  | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samProvinceOrState=AR' |
+| physicalAddressZipPostalCode | Allows 5 digit zip code.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samZipPostalCode=022011' |
+| samExtractCode  | Allows 1 character code (A or E).<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samExtractCode=A' |
+| includeSections | Allows to filter data by sections, entityInformation, coreData, assertions, repsAndCerts and pointsOfContact.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&includeSections=entityInformation,coreData' |
 
 **Expected Result**
 
