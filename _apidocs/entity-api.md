@@ -37,266 +37,178 @@ Generating the API Key:
 
 | Parameter Name | Description |
 | ---- | ----------- |
-| activationDate | A single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&activationDate=02/12/1999' |
-| cageCode | Allows exact 5 character value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&cageCode=00000' |
-| dbaName | Allows Partial or Complete value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&dbaName=ALLTEL' |
-| delinquentFederalDebtFlag | Allows Y or N or null.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&delinquentFederalDebtFlag=Y' |
-| dodaac | Allows 9 character value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&dodaac=025114695' |
-| duns  | Allows 9 digit value, a maximum of up to 100 values can be sent.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&duns=025114695' |
-| entityStructure  | Allows 2 character code or null.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&entityStructure=Z1' |
-| exclusionStatusFlag | Allows D or null.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&exclusionStatusFlag=D' |
-| expirationDate | A single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&expirationDate=02/12/1999' |
-| legalBusinessName | Allows Partial or Complete value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&legalBusinessName=ALLTEL ' |
-| primaryNaics | Allows 6 digit NAICS, accepts multiple NAICS.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&primaryNaics=51331' |
-| purposeOfRegistration | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&purposeOfRegistration=Z2' |
-| registrationDate | A single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&registrationDate=02/12/1999' |
-| physicalAddressCity | City name.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samCity=Herndon' |
-| physicalAddressCongressionalDistrict | Allows 2 characters.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samCongressionalDistrict=AR' |
-| physicalAddressCountryCode | Allows 3 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samCountryCode=USA' |
-| physicalAddressProvinceOrState  | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samProvinceOrState=AR' |
-| physicalAddressZipPostalCode | Allows 5 digit zip code.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samZipPostalCode=022011' |
-| samExtractCode  | Allows 1 character code (A or E).<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&samExtractCode=A' |
-| includeSections | Allows to filter data by sections, entityInformation, coreData, assertions, repsAndCerts and pointsOfContact.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&includeSections=entityInformation,coreData' |
+| activationDate | A single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&activationDate=02/12/1999' |
+| cageCode | Allows exact 5 character value.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&cageCode=00000' |
+| dbaName | Allows Partial or Complete value.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&dbaName=ALLTEL' |
+| delinquentFederalDebtFlag | Allows Y or N or null.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&delinquentFederalDebtFlag=Y' |
+| dodaac | Allows 9 character value.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&dodaac=025114695' |
+| duns  | Allows 9 digit value, a maximum of up to 100 values can be sent.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&duns=025114695' |
+| entityStructure  | Allows 2 character code or null.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&entityStructure=Z1' |
+| exclusionStatusFlag | Allows D or null.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&exclusionStatusFlag=D' |
+| expirationDate | A single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&expirationDate=02/12/1999' |
+| legalBusinessName | Allows Partial or Complete value.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&legalBusinessName=ALLTEL ' |
+| primaryNaics | Allows 6 digit NAICS, accepts multiple NAICS.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&primaryNaics=51331' |
+| purposeOfRegistration | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&purposeOfRegistration=Z2' |
+| registrationDate | A single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&registrationDate=02/12/1999' |
+| physicalAddressCity | City name.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalCity=Herndon' |
+| physicalAddressCongressionalDistrict | Allows 2 characters.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalCongressionalDistrict=AR' |
+| physicalAddressCountryCode | Allows 3 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalCountryCode=USA' |
+| physicalAddressProvinceOrState  | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalProvinceOrState=AR' |
+| physicalAddressZipPostalCode | Allows 5 digit zip code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalZipPostalCode=022011' |
+| samExtractCode  | Allows 1 character code (A or E).<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalExtractCode=A' |
+| includeSections | Allows to filter data by sections, entityInformation, coreData, assertions, repsAndCerts and pointsOfContact.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&includeSections=entityInformation,coreData' |
 
 **Expected Result**
 
 | Name  | Description |
 | ---- | ----------- |
-| duns (string, optional) | DUNS | 
-| dunsPlus4 (string, optional) | DUNS Plus4  | 
-| cageCode (string, optional) | Cage Code | 
-| nCageCode (string, optional) | NCage Code  |
-| dodaac (string, optional) | DoDacc  |
-| legalBusinessName (string, optional) | Legal Business Name   |
-| dbaName (string, optional) | Dba Name   |
-| purposeOfRegistration (string, optional) | Purpose Of Registration   |
-| registrationStatus (string, optional) | Registration Status  | 
-| registrationDate (string, optional) | Registration Date  | 
-| lastUpdateDate (string, optional) | Last Update Date | 
-| expirationDate (string, optional) | Expiration Date  | 
-| activeDate (string, optional) | Active Date   |
-| noPublicDisplayFlag (string, optional) | No Public Display Flag   |
-| exclusionStatusFlag (string, optional) | Exclusion Status Flag   |
-| corporateURL (string, optional) | Corporate URL   |
-| companyDivisionName (string, optional) | Company Division Name  |
-| companyDivisionNumber (string, optional) | Company Division Number   
-| congressionalDistrict (string, optional) | Congressional District   |
-| zip (string, optional) | Zip   |
-| zipPlus4 (string, optional) | Zip Plus4  |
-| stateProvision (string, optional) | State Provision   |
-| countryCode (string, optional) | Country Code   |
-| businessStartDate (string, optional) | Business Start Date   |
-| submissionDate (string, optional) | Submission Date   |
-| fiscalYearEndCloseDate  (string, optional) | Fiscal Year End Close Date  |
-| correspondenceFlag (string, optional) | Correspondence Flag   |
-| address1 (string, optional) | Address 1  | 
-| address2 (string, optional) | Address 2  | 
-| city (string, optional) | City  | 
-| state (string, optional) | State  |
-| zip (string, optional) | Zip  |
-| zipPlus4 (string, optional) | Zip Plus4  |
-| country (string, optional) | Country  |
-| entityStructure (string, optional) | Entity Structure   |
-| entityType (string, optional) | Entity Type   |
-| profitStructure (string, optional) | Profit Structure   |
-| organizationStructure (string, optional) | Organization Structure   |
-| stateOfIncorporation (string, optional) | State Of Incorporation   |
-| countryOfIncorporation (string, optional) | Country Of Incorporation   |
-| businessTypes (list, optional) | List of Business Types  |
-| sbaBusinessTypeList (list, optional) | List of SBA Business Types  |
-| creditCardUsage (string, optional) | CreditCard Usage   |
-| delinquentFedDebtFlag (string, optional) | Delinquent Fed Debt Flag   |
-| primaryNaics (string, optional) | Primary NAICS   |
-| naicsList	 (list, optional) | NAICS List  |
-| naicsCode  (string, optional) | NAICS Code  |
-| sbaSmallBusiness	 (string, optional) | SBA Small Business  |
-| naicsException  (string, optional) | NAICS Exception  |
-| pscList (list, optional) | PSC List   |
-| ediInformationFlag (string, optional) | EDI Information Flag   |
-| disasterRegistryFlag (string, optional) | Disaster Registry Flag   |
-| bondingFlag (string, optional) | Bonding Flag   |
-| geographicalAreaServed (string, optional) | Geographical Area Served   |
-| fARResponses  (list, optional) | FAR Responses   |
-| provisionId  (string, optional) | Provision Id   |
-| answerType  (string, optional) | Answer Type   |
-| answerId  (string, optional) | Answer Id   |
-| answerText  (string, optional) | Answer Text   |
-| businessObjectType  (string, optional) | Business Object Type   |
-| businessObjectId  (string, optional) | Business Object Id   |
-| firstName  (string, optional) | First Name   |
-| title  (string, optional) | Title   |
-| section  (string, optional) | Section   |
-| status  (string, optional) | Status   |
-| organizationType  (string, optional) | Organization Type   |
-| endProductName  (string, optional) | End Product Name   |
-| endProductType  (string, optional) | End Product Type   |
-| endProductCountry  (string, optional) | End Product Country   |
-| placeOfManufacture  (string, optional) | Place Of Manufacture   |
-| fscCode  (string, optional) | FSC Code   |
-| environmentURL  (string, optional) | Environment URL   |
-| facilityStreetAddress1  (string, optional) | Facility Street Address 1  |
-| facilityStreetAddress2  (string, optional) | Facility Street Address 2  |
-| facilityCity  (string, optional) | Facility City  |
-| facilityPostalCode  (string, optional) | Facility Postal Code  |
-| facilityState  (string, optional) | Facility State  |
-| facilityCountry  (string, optional) | Facility Country  |
-| facilityOwner  (string, optional) | Facility Owner  |
-| facilityOwnerStreetAddress1  (string, optional) | Facility Owner Street Address 1  |
-| facilityOwnerStreetAddress2  (string, optional) | Facility Owner Street Address 2  |
-| facilityOwnerCity  (string, optional) | Facility Owner City  |
-| facilityOwnerPostalCode  (string, optional) | Facility Owner Postal Code  |
-| facilityOwnerState  (string, optional) | Facility Owner State  |
-| facilityOwnerCountry  (string, optional) | Facility Owner Country  |
-| immedOwnerLegalBusinessName (string, optional) | Immed Owner Legal Business Name    |
-| immedOwnerCageCode (string, optional) | Immed Owner Cage Code    |
-| highestOwnerLegalBusinessName  (string, optional) | Highest Owner Legal Business Name  |
-| highestOwnerCageCode  (string, optional) | Highest Owner  Cage Code  |
-| firstPredecessorLegalBusinessName  (string, optional) | First Predecessor Legal Business Name  |
-| firstPredecessorCageCode  (string, optional) | First Predecessor Cage Code  |
-| secondPredecessorLegalBusinessName  (string, optional) | Second Predecessor Legal Business Name  |
-| secondPredecessorCageCode  (string, optional) | Second Predecessor Cage Code  |
-| thirdPredecessorLegalBusinessName  (string, optional) | Third Predecessor Legal Business Name  |
-| thirdPredecessorCageCode  (string, optional) | Third Predecessor Cage Code  |
-| primaryNaics  (string, optional) | Primary NAICS  |
-| naicsCode  (string, optional) | NAICS Code  |
-| sbaSmallBusiness  (string, optional) | SBA Small Business  |
-| smallBusiness  (string, optional) | Small Business  |
-| veteranOwnedSmallBusiness  (string, optional) | Veteran Owned Small Business  |
-| serviceDisabledVetOwnedSmallBusiness  (string, optional) | Service Disabled Veteran Owned Small Business  |
-| womenOwnedSmallBusinessConcern  (string, optional) | Women Owned Small Business Concern  |
-| womenOwnedSmallBusiness  (string, optional) | Women Owned Small Business  |
-| economicallyDisadvWomenOwnedSmallBusiness  (string, optional) | Economically Disadvantage Women Owned Small Business  |
-| smallDisadvantagedBusinessConcern  (string, optional) | Small Disadvantaged Business Concern  |
-| sbaCertifiedSmallBusinessDisadvBusiness  (string, optional) | SBA Certified Small Business Disadvantage Business  |
-| sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted  (string, optional) | SBA Certified Small Business Disadvantage Business NotSubmitted  |
-| hubZoneSmallBusinessConcerm  (string, optional) | Hub Zone Small Business Concerm  |
-| blackAmerican  (string, optional) | Black American  |
-| hispanicAmerican  (string, optional) | Hispanic American  |
-| nativeAmerican  (string, optional) | Native American  |
-| asianPacificAmerican  (string, optional) | Asian Pacific American  |
-| subcontinentAsianIndianAmerican  (string, optional) | Sub continent Asian Indian American  |
-| historicallyBlackCollegeOrUniversity  (string, optional) | Historically Black College Or University  |
-| minorityInstitution  (string, optional) | Minority Institution  |
-| linkForFARReportPDF  (string, optional) | Link For FAR Report PDF  |
-| linkForFARReportHTML  (string, optional) | Link For FAR Report HTML  |
-| foreignGovernmentOwnershipFirstName  (string, optional) | Foreign Government Ownership First Name  |
-| foreignGovernmentOwnershipMiddleInitial  (string, optional) | Foreign Government Ownership Middle Initial  |
-| foreignGovernmentOwnershipLastName  (string, optional) | Foreign Government Ownership Last Name  |
-| foreignGovernmentOwnershipPhoneNum  (string, optional) | Foreign Government Ownership Phone Number  |
-| foreignGovernmentOwnershipPhoneExt  (string, optional) | Foreign Government Ownership Phone Ext  |
-| foreignGovernmentOwnershipInternationalNum  (string, optional) | Foreign Government Ownership International Number  |
-| foreignGovernmentControlCountry  (string, optional) | Foreign Government Control Country  |
-| foreignEndProductName  (string, optional) | Foreign End Product Name  |
-| foreignEndProductCountry  (string, optional) | Foreign End Product Country  |
-| linkForDFARSReportPDF  (string, optional) | Link For DFARS Report PDF  |
-| linkForDFARSReportHTML  (string, optional) | Link For DFARS Report HTML  |
-| middleInitial  (string, optional) | Middle Initial  |
-| lastName  (string, optional) | Last Name  |
-| title  (string, optional) | Title  |
-| companyName  (string, optional) | Company Name  |
-| companyEstablishedYear  (string, optional) | Company Established Year  |
-| companyDUNS  (string, optional) | Company DUNS  |
-| companyIsReference  (string, optional) | Company Is Reference  |
-| qualificationURLPDF  (string, optional) | Qualification URL PDF  |
-| qualificationURLHTML  (string, optional) | Qualification URL HTML  |
-| financialAssistanceResponse  (string, optional) | Financial Assistance Response  |
-| firstName  (string, optional) | Government Business POC First Name   |
-| middleInitial  (string, optional) | Government Business POC Middle Initial  |
-| lastName  (string, optional) | Government Business POC Last Name  |
-| title  (string, optional) | Government Business POC Title   |
-| USPhone  (string, optional) | Government Business POC US Phone  |
-| USPhoneExtension  (string, optional) | Government Business POC US Phone Extension  |
-| nonUSPhone  (string, optional) | Government Business POC NON US Phone  |
-| fax  (string, optional) | Government Business POC Fax  |
-| email  (string, optional) | Government Business POC Email  |
-| address1 (string, optional) | Government Business POC Address 1  | 
-| address2 (string, optional) | Government Business POC Address 2  | 
-| city (string, optional) | Government Business POC City  | 
-| state (string, optional) | Government Business POC State  |
-| zipCode (string, optional) | Government Business POC Zip  |
-| zipCodePlus4 (string, optional) | Government Business POC Zip Code Plus4  |
-| country (string, optional) | Government Business POC Country  |
-| firstName  (string, optional) | Electronic Business POC First Name   |
-| middleInitial  (string, optional) | Electronic Business POC Middle Initial  |
-| lastName  (string, optional) | Electronic Business POC Last Name  |
-| title  (string, optional) | Electronic Business POC Title   |
-| USPhone  (string, optional) | Electronic Business POC US Phone  |
-| USPhoneExtension  (string, optional) | Electronic Business POC US Phone Extension  |
-| nonUSPhone  (string, optional) | Electronic Business POC NON US Phone  |
-| fax  (string, optional) | Electronic Business POC Fax  |
-| email  (string, optional) | Electronic Business POC Email  |
-| address1 (string, optional) | Electronic Business POC Address 1  | 
-| address2 (string, optional) | Electronic Business POC Address 2  | 
-| city (string, optional) | Electronic Business POC City  | 
-| state (string, optional) | Electronic Business POC State  |
-| zipCode (string, optional) | Electronic Business POC Zip  |
-| zipCodePlus4 (string, optional) | Electronic Business POC Zip Code Plus4  |
-| country (string, optional) | Electronic Business POC Country  |
-| firstName  (string, optional) | Government Business Alternate POC First Name   |
-| middleInitial  (string, optional) | Government Business Alternate POC Middle Initial  |
-| lastName  (string, optional) | Government Business Alternate POC Last Name  |
-| title  (string, optional) | Government Business Alternate POC Title   |
-| USPhone  (string, optional) | Government Business Alternate POC US Phone  |
-| USPhoneExtension  (string, optional) | Government Business Alternate POC US Phone Extension  |
-| nonUSPhone  (string, optional) | Government Business Alternate POC NON US Phone  |
-| fax  (string, optional) | Government Business Alternate POC Fax  |
-| email  (string, optional) | Government Business Alternate POC Email  |
-| address1 (string, optional) | Government Business Alternate POC Address 1  | 
-| address2 (string, optional) | Government Business Alternate POC Address 2  | 
-| city (string, optional) | Government Business Alternate POC City  | 
-| state (string, optional) | Government Business Alternate POC State  |
-| zipCode (string, optional) | Government Business Alternate POC Zip  |
-| zipCodePlus4 (string, optional) | Government Business Alternate POC Zip Code Plus4  |
-| country (string, optional) | Government Business Alternate POC Country  |
-| firstName  (string, optional) | Electronic Business Alternate POC First Name   |
-| middleInitial  (string, optional) | Electronic Business Alternate POC Middle Initial  |
-| lastName  (string, optional) | Electronic Business Alternate POC Last Name  |
-| title  (string, optional) | Electronic Business Alternate POC Title   |
-| USPhone  (string, optional) | Electronic Business Alternate POC US Phone  |
-| USPhoneExtension  (string, optional) | Electronic Business Alternate POC US Phone Extension  |
-| nonUSPhone  (string, optional) | Electronic Business Alternate POC NON US Phone  |
-| fax  (string, optional) | Electronic Business Alternate POC Fax  |
-| email  (string, optional) | Electronic Business Alternate POC Email  |
-| address1 (string, optional) | Electronic Business Alternate POC Address 1  | 
-| address2 (string, optional) | Electronic Business Alternate POC Address 2  | 
-| city (string, optional) | Electronic Business Alternate POC City  | 
-| state (string, optional) | Electronic Business Alternate POC State  |
-| zipCode (string, optional) | Electronic Business Alternate POC Zip  |
-| zipCodePlus4 (string, optional) | Electronic Business Alternate POC Zip Code Plus4  |
-| country (string, optional) | Electronic Business Alternate POC Country  |
-| firstName  (string, optional) | Past Performance POC POC First Name   |
-| middleInitial  (string, optional) | Past Performance POC POC Middle Initial  |
-| lastName  (string, optional) | Past Performance POC POC Last Name  |
-| title  (string, optional) | Past Performance POC POC Title   |
-| USPhone  (string, optional) | Past Performance POC POC US Phone  |
-| USPhoneExtension  (string, optional) | Past Performance POC POC US Phone Extension  |
-| nonUSPhone  (string, optional) | Past Performance POC POC NON US Phone  |
-| fax  (string, optional) | Past Performance POC POC Fax  |
-| email  (string, optional) | Past Performance POC POC Email  |
-| address1 (string, optional) | Past Performance POC POC Address 1  | 
-| address2 (string, optional) | Past Performance POC POC Address 2  | 
-| city (string, optional) | Past Performance POC POC City  | 
-| state (string, optional) | Past Performance POC POC State  |
-| zipCode (string, optional) | Past Performance POC POC Zip  |
-| zipCodePlus4 (string, optional) | Past Performance POC POC Zip Code Plus4  |
-| country (string, optional) | Past Performance POC POC Country  |
-| firstName  (string, optional) | Past Performance  Alternate POC First Name   |
-| middleInitial  (string, optional) | Past Performance  Alternate POC Middle Initial  |
-| lastName  (string, optional) | Past Performance  Alternate POC Last Name  |
-| title  (string, optional) | Past Performance  Alternate POC Title   |
-| USPhone  (string, optional) | Past Performance  Alternate POC US Phone  |
-| USPhoneExtension  (string, optional) | Past Performance  Alternate POC US Phone Extension  |
-| nonUSPhone  (string, optional) | Past Performance  Alternate POC NON US Phone  |
-| fax  (string, optional) | Past Performance  Alternate POC Fax  |
-| email  (string, optional) | Past Performance  Alternate POC Email  |
-| address1 (string, optional) | Past Performance  Alternate POC Address 1  | 
-| address2 (string, optional) | Past Performance  Alternate POC Address 2  | 
-| city (string, optional) | Past Performance  Alternate POC City  | 
-| state (string, optional) | Past Performance  Alternate POC State  |
-| zipCode (string, optional) | Past Performance  Alternate POC Zip  |
-| zipCodePlus4 (string, optional) | Past Performance  Alternate POC Zip Code Plus4  |
-| country (string, optional) | Past Performance  Alternate POC Country  |
-
+| duns (string) | DUNS | 
+| dunsPlus4 (string) | DUNS Plus4  | 
+| cageCode (string) | CAGE Code | 
+| nCageCode (string) | NCAGE Code  |
+| dodaac (string) | DoDAAC  |
+| legalBusinessName (string) | Legal Business Name   |
+| dbaName (string) | Doing Business As Name   |
+| purposeOfRegistration (string) | Purpose of Registration   |
+| registrationStatus (string) | Registration Status  | 
+| registrationDate (string) | Registration Date  | 
+| lastUpdateDate (string) | Last Update Date | 
+| expirationDate (string) | Expiration Date  | 
+| activeDate (string) | Active Date   |
+| noPublicDisplayFlag (string) | No Public Display Flag   |
+| exclusionStatusFlag (string) | Exclusion Status Flag   |
+| corporateURL (string) | Corporate URL   |
+| companyDivisionName (string) | Company Division Name  |
+| companyDivisionNumber (string) | Company Division Number |
+| businessStartDate (string) | Business Start Date   |
+| submissionDate (string) | Submission Date   |
+| fiscalYearEndCloseDate  (string) | Fiscal Year End Close Date  |
+| correspondenceFlag (string) | Correspondence Flag   |
+| address1 (string) | Physical Address 1 and Mailing Address 1  | 
+| address2 (string) | Physical Address 2 and Mailing Address 2   | 
+| city (string) | Physical Address City and Mailing Address City  | 
+| state (string) | Physical Address State and Mailing Address State  |
+| zip (string) | Physical Address Zip and Mailing Address Zip  |
+| zipPlus4 (string) | Physical Address Zip Plus4 and Mailing Address Zip Plus4  |
+| country (string) | Physical Address Country and Mailing Address Country  |
+| congressionalDistrict (string) | Congressional District of Physical Address  |
+| entityStructure (string) | Entity Structure   |
+| entityType (string) | Entity Type   |
+| profitStructure (string) | Profit Structure   |
+| organizationStructure (string) | Organization Structure   |
+| stateOfIncorporation (string) | State Of Incorporation   |
+| countryOfIncorporation (string) | Country Of Incorporation   |
+| businessTypes (list) | List of Business Types with each of the Business Type codes  |
+| sbaBusinessTypeList (list) | List of SBA Business Types with each of the SBA Business Type codes, names and expiration date  |
+| creditCardUsage (string) | Credit Card Usage   |
+| delinquentFedDebtFlag (string) | Delinquent Federal Debt Flag   |
+| primaryNaics (string) | Primary NAICS   |
+| naicsList	 (list) | NAICS List with each of the NAICS codes, whether or not they are SBA small business and whether or not they are exceptions  |
+| pscList (list) | PSC List with each of the PSC codes   |
+| ediInformationFlag (string) | EDI Information Flag   |
+| disasterRegistryFlag (string) | Disaster Registry Flag   |
+| bondingFlag (string) | Bonding Flag   |
+| geographicalAreaServed (string) | Geographical Area Served with the list of States, Counties and Metropolitan Statistical Areas   |
+| fARResponses  (list) | FAR and DFAR Responses   |
+| provisionId  (string) | Provision Id for FAR and DFAR certifications and qualifications   |
+| answerType  (string) | Answer Type for FAR and DFAR certifications and qualifications   |
+| answerId  (string) | Answer Id for FAR and DFAR certifications and qualifications  |
+| answerText  (string) | Answer Text for FAR and DFAR certifications and qualifications   |
+| businessObjectType  (string) | Business Object Type for FAR and DFAR certifications, and qualifications   |
+| businessObjectId  (string) | Business Object Id for FAR and DFAR certifications, and qualifications   |
+| firstName  (string) | First Name for FAR certifications and qualifications   |
+| title  (string) | Title for FAR certifications and qualifications   |
+| section  (string) | Section for FAR and DFAR certifications, and qualifications   |
+| status  (string) | Status   |
+| organizationType  (string) | Organization Type   |
+| endProductName  (string) | End Product Name   |
+| endProductType  (string) | End Product Type   |
+| endProductCountry  (string) | End Product Country   |
+| placeOfManufacture  (string) | Place Of Manufacture   |
+| fscCode  (string) | FSC Code   |
+| environmentURL  (string) | Environment URL   |
+| facilityStreetAddress1  (string) | Facility Street Address 1  |
+| facilityStreetAddress2  (string) | Facility Street Address 2  |
+| facilityCity  (string) | Facility City  |
+| facilityPostalCode  (string) | Facility Postal Code  |
+| facilityState  (string) | Facility State  |
+| facilityCountry  (string) | Facility Country  |
+| facilityOwner  (string) | Facility Owner  |
+| facilityOwnerStreetAddress1  (string) | Facility Owner Street Address 1  |
+| facilityOwnerStreetAddress2  (string) | Facility Owner Street Address 2  |
+| facilityOwnerCity  (string) | Facility Owner City  |
+| facilityOwnerPostalCode  (string) | Facility Owner Postal Code  |
+| facilityOwnerState  (string) | Facility Owner State  |
+| facilityOwnerCountry  (string) | Facility Owner Country  |
+| immediateOwnerLegalBusinessName (string) | Immediate Owner Legal Business Name    |
+| immediateOwnerCageCode (string) | Immediate Owner Cage Code    |
+| highestOwnerLegalBusinessName  (string) | Highest Owner Legal Business Name  |
+| highestOwnerCageCode  (string) | Highest Owner  Cage Code  |
+| firstPredecessorLegalBusinessName  (string) | First Predecessor Legal Business Name  |
+| firstPredecessorCageCode  (string) | First Predecessor Cage Code  |
+| secondPredecessorLegalBusinessName  (string) | Second Predecessor Legal Business Name  |
+| secondPredecessorCageCode  (string) | Second Predecessor Cage Code  |
+| thirdPredecessorLegalBusinessName  (string) | Third Predecessor Legal Business Name  |
+| thirdPredecessorCageCode  (string) | Third Predecessor Cage Code  |
+| primaryNaics  (string) | Primary NAICS  |
+| naicsCode  (string) | NAICS Code  |
+| sbaSmallBusiness  (string) | SBA Small Business  |
+| smallBusiness  (string) | Small Business  |
+| veteranOwnedSmallBusiness  (string) | Veteran Owned Small Business  |
+| serviceDisabledVetOwnedSmallBusiness  (string) | Service Disabled Veteran Owned Small Business  |
+| womenOwnedSmallBusinessConcern  (string) | Women Owned Small Business Concern  |
+| womenOwnedSmallBusiness  (string) | Women Owned Small Business  |
+| economicallyDisadvWomenOwnedSmallBusiness  (string) | Economically Disadvantaged Women Owned Small Business  |
+| smallDisadvantagedBusinessConcern  (string) | Small Disadvantaged Business Concern  |
+| sbaCertifiedSmallBusinessDisadvBusiness  (string) | SBA Certified Small Disadvantaged Business  |
+| sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted  (string) | SBA Certified Small Disadvantaged Business not submitted  |
+| hubZoneSmallBusinessConcern  (string) | Hub Zone Small Business Concern  |
+| blackAmerican  (string) | Black American Owned Business  |
+| hispanicAmerican  (string) | Hispanic American Owned Business  |
+| nativeAmerican  (string) | Native American Owned Business  |
+| asianPacificAmerican  (string) | Asian Pacific American Owned Business   |
+| subcontinentAsianIndianAmerican  (string) | Subcontinent Asian Indian American Owned Business  |
+| historicallyBlackCollegeOrUniversity  (string) | Historically Black College Or University  |
+| minorityInstitution  (string) | Minority Institution  |
+| linkForFARReportPDF  (string) | Link For FAR Report PDF  |
+| linkForFARReportHTML  (string) | Link For FAR Report HTML  |
+| foreignGovernmentOwnershipFirstName  (string) | Foreign Government Ownership First Name  |
+| foreignGovernmentOwnershipMiddleInitial  (string) | Foreign Government Ownership Middle Initial  |
+| foreignGovernmentOwnershipLastName  (string) | Foreign Government Ownership Last Name  |
+| foreignGovernmentOwnershipPhoneNum  (string) | Foreign Government Ownership Phone Number  |
+| foreignGovernmentOwnershipPhoneExt  (string) | Foreign Government Ownership Phone Ext  |
+| foreignGovernmentOwnershipInternationalNum  (string) | Foreign Government Ownership International Number  |
+| foreignGovernmentControlCountry  (string) | Foreign Government Control Country  |
+| foreignEndProductName  (string) | Foreign End Product Name  |
+| foreignEndProductCountry  (string) | Foreign End Product Country  |
+| linkForDFARSReportPDF  (string) | Link For DFARS Report PDF  |
+| linkForDFARSReportHTML  (string) | Link For DFARS Report HTML  |
+| middleInitial  (string) | Middle Initial for qualifications |
+| lastName  (string) | Last Name for qualifications  |
+| title  (string) | Title for qualifications  |
+| companyName  (string) | Company Name for qualifications |
+| companyEstablishedYear  (string) | Company Established Year for qualifications |
+| companyDUNS  (string) | Company DUNS for qualifications |
+| companyIsReference  (string) | Company Is Reference for qualifications |
+| qualificationURLPDF  (string) | Qualification URL PDF  |
+| qualificationURLHTML  (string) | Qualification URL HTML  |
+| financialAssistanceResponse  (string) | Financial Assistance Response  |
+| firstName  (string) |  First Name for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
+| middleInitial  (string) |  Middle Initial for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
+| lastName  (string) |  Last Name for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
+| title  (string) |  Title for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
+| USPhone  (string) |  US Phone for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| USPhoneExtension  (string) |  US Phone Extension for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| nonUSPhone  (string) |  NON US Phone for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| fax  (string) |  Fax for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| email  (string) |  Email for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| address1 (string) |  Address 1 for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC | 
+| address2 (string) |  Address 2 for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC | 
+| city (string) |  City for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC | 
+| state (string) |  State for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| zipCode (string) |  Zip for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| zipCodePlus4 (string) |  Zip Code Plus4 for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| country (string) |  Country for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
 
 ## OpenAPI Specification File 
 
