@@ -50,12 +50,12 @@ Generating the API Key:
 | primaryNaics | Allows 6 digit NAICS, accepts multiple NAICS.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&primaryNaics=51331' |
 | purposeOfRegistration | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&purposeOfRegistration=Z2' |
 | registrationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&registrationDate=02/12/1999' |
-| physicalAddressCity | Allows a text.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalCity=Herndon' |
-| physicalAddressCongressionalDistrict | Allows 2 characters.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalCongressionalDistrict=AR' |
-| physicalAddressCountryCode | Allows 3 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalCountryCode=USA' |
-| physicalAddressProvinceOrState  | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalProvinceOrState=AR' |
-| physicalAddressZipPostalCode | Allows 5 digit zip code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalZipPostalCode=022011' |
-| samExtractCode  | Allows 1 character code (A or E).<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalExtractCode=A' |
+| physicalAddressCity | Allows a text.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalAddressCity=Herndon' |
+| physicalAddressCongressionalDistrict | Allows 2 characters.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalAddressCongressionalDistrict=AR' |
+| physicalAddressCountryCode | Allows 3 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalAddressCountryCode=USA' |
+| physicalAddressProvinceOrState  | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalAddressProvinceOrState=AR' |
+| physicalAddressZipPostalCode | Allows 5 digit zip code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalAddressZipPostalCode=022011' |
+| samExtractCode  | Allows 1 character code (A or E).<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&samExtractCode=A' |
 | includeSections | Allows to filter data by sections, entityInformation, coreData, assertions, repsAndCerts and pointsOfContact.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&includeSections=entityInformation,coreData' |
 
 **Expected Result**
