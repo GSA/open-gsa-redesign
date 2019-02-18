@@ -47,7 +47,7 @@ Generating the API Key:
 | exclusionStatusFlag | Allows D or null.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&exclusionStatusFlag=D' |
 | expirationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&expirationDate=02/12/1999' |
 | legalBusinessName | Allows Partial or Complete value.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&legalBusinessName=ALLTEL ' |
-| primaryNaics | Allows 6 digit NAICS, accepts multiple NAICS.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&primaryNaics=51331' |
+| primaryNaics | Allows 6 digit NAICS, accepts multiple NAICS.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&primaryNaics=513310' |
 | purposeOfRegistration | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&purposeOfRegistration=Z2' |
 | registrationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&registrationDate=02/12/1999' |
 | physicalAddressCity | Allows a text.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalAddressCity=Herndon' |
