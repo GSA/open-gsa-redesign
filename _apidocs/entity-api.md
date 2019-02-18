@@ -50,7 +50,7 @@ Generating the API Key:
 | primaryNaics | Allows 6 digit NAICS, accepts multiple NAICS.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&primaryNaics=51331' |
 | purposeOfRegistration | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&purposeOfRegistration=Z2' |
 | registrationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&registrationDate=02/12/1999' |
-| physicalAddressCity | City name.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalCity=Herndon' |
+| physicalAddressCity | Allows a text.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalCity=Herndon' |
 | physicalAddressCongressionalDistrict | Allows 2 characters.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalCongressionalDistrict=AR' |
 | physicalAddressCountryCode | Allows 3 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalCountryCode=USA' |
 | physicalAddressProvinceOrState  | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalProvinceOrState=AR' |
