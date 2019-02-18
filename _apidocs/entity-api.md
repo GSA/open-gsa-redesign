@@ -30,8 +30,6 @@ Generating the API Key:
 
 ## API Description
 
-### Entity API
-
 **Endpoint:** https://api.sam.gov/prod/entity-management?api_key=< value >
 
 **Description** Restful endpoint to retrieve Entity detail information
