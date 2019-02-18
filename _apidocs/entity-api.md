@@ -98,8 +98,8 @@ Generating the API Key:
 | organizationStructure (string) | Organization Structure   |
 | stateOfIncorporation (string) | State Of Incorporation   |
 | countryOfIncorporation (string) | Country Of Incorporation   |
-| businessTypes (list) | List of Business Types with each of the Business Type codes  |
-| sbaBusinessTypeList (list) | List of SBA Business Types with each of the SBA Business Type codes, names and expiration date  |
+| businessTypesList (list) | List of Business Types with each of the Business Type codes  |
+| sbaBusinessTypeList (list) | List of SBA Business Types with each of the SBA Business Type codes, names and expiration dates  |
 | creditCardUsage (string) | Credit Card Usage   |
 | delinquentFedDebtFlag (string) | Delinquent Federal Debt Flag   |
 | primaryNaics (string) | Primary NAICS   |
@@ -109,106 +109,107 @@ Generating the API Key:
 | disasterRegistryFlag (string) | Disaster Registry Flag   |
 | bondingFlag (string) | Bonding Flag   |
 | geographicalAreaServed (string) | Geographical Area Served with the list of States, Counties and Metropolitan Statistical Areas   |
-| fARResponses  (list) | FAR and DFAR Responses   |
-| provisionId  (string) | Provision Id for FAR and DFAR certifications and qualifications   |
-| answerType  (string) | Answer Type for FAR and DFAR certifications and qualifications   |
-| answerId  (string) | Answer Id for FAR and DFAR certifications and qualifications  |
-| answerText  (string) | Answer Text for FAR and DFAR certifications and qualifications   |
-| businessObjectType  (string) | Business Object Type for FAR and DFAR certifications, and qualifications   |
-| businessObjectId  (string) | Business Object Id for FAR and DFAR certifications, and qualifications   |
-| firstName  (string) | First Name for FAR certifications and qualifications   |
-| title  (string) | Title for FAR certifications and qualifications   |
-| section  (string) | Section for FAR and DFAR certifications, and qualifications   |
-| status  (string) | Status   |
-| organizationType  (string) | Organization Type   |
-| endProductName  (string) | End Product Name   |
-| endProductType  (string) | End Product Type   |
-| endProductCountry  (string) | End Product Country   |
-| placeOfManufacture  (string) | Place Of Manufacture   |
-| fscCode  (string) | FSC Code   |
-| environmentURL  (string) | Environment URL   |
-| facilityStreetAddress1  (string) | Facility Street Address 1  |
-| facilityStreetAddress2  (string) | Facility Street Address 2  |
-| facilityCity  (string) | Facility City  |
-| facilityPostalCode  (string) | Facility Postal Code  |
-| facilityState  (string) | Facility State  |
-| facilityCountry  (string) | Facility Country  |
-| facilityOwner  (string) | Facility Owner  |
-| facilityOwnerStreetAddress1  (string) | Facility Owner Street Address 1  |
-| facilityOwnerStreetAddress2  (string) | Facility Owner Street Address 2  |
-| facilityOwnerCity  (string) | Facility Owner City  |
-| facilityOwnerPostalCode  (string) | Facility Owner Postal Code  |
-| facilityOwnerState  (string) | Facility Owner State  |
-| facilityOwnerCountry  (string) | Facility Owner Country  |
+| fARResponses (list) | FAR Responses   |
+| dFARResponses  (list) | DFAR Responses   |
+| provisionId (string) | Provision Id for FAR and DFAR certifications and qualifications   |
+| answerType  string) | Answer Type for FAR and DFAR certifications and qualifications   |
+| answerId (string) | Answer Id for FAR and DFAR certifications and qualifications  |
+| answerText (string) | Answer Text for FAR and DFAR certifications and qualifications   |
+| businessObjectType (string) | Business Object Type for FAR and DFAR certifications, and qualifications   |
+| businessObjectId (string) | Business Object Id for FAR and DFAR certifications, and qualifications   |
+| firstName (string) | First Name for FAR certifications and qualifications   |
+| title (string) | Title for FAR certifications and qualifications   |
+| section (string) | Section for FAR and DFAR certifications, and qualifications   |
+| status (string) | Status   |
+| organizationType (string) | Organization Type   |
+| endProductName (string) | End Product Name   |
+| endProductType (string) | End Product Type   |
+| endProductCountry (string) | End Product Country   |
+| placeOfManufacture (string) | Place Of Manufacture   |
+| fscCode (string) | FSC Code   |
+| environmentURL (string) | Environment URL   |
+| facilityStreetAddress1 (string) | Facility Street Address 1  |
+| facilityStreetAddress2 (string) | Facility Street Address 2  |
+| facilityCity (string) | Facility City  |
+| facilityPostalCode (string) | Facility Postal Code  |
+| facilityState (string) | Facility State  |
+| facilityCountry (string) | Facility Country  |
+| facilityOwner (string) | Facility Owner  |
+| facilityOwnerStreetAddress1 (string) | Facility Owner Street Address 1  |
+| facilityOwnerStreetAddress2 (string) | Facility Owner Street Address 2  |
+| facilityOwnerCity (string) | Facility Owner City  |
+| facilityOwnerPostalCode (string) | Facility Owner Postal Code  |
+| facilityOwnerState (string) | Facility Owner State  |
+| facilityOwnerCountry (string) | Facility Owner Country  |
 | immediateOwnerLegalBusinessName (string) | Immediate Owner Legal Business Name    |
-| immediateOwnerCageCode (string) | Immediate Owner Cage Code    |
-| highestOwnerLegalBusinessName  (string) | Highest Owner Legal Business Name  |
-| highestOwnerCageCode  (string) | Highest Owner  Cage Code  |
-| firstPredecessorLegalBusinessName  (string) | First Predecessor Legal Business Name  |
-| firstPredecessorCageCode  (string) | First Predecessor Cage Code  |
-| secondPredecessorLegalBusinessName  (string) | Second Predecessor Legal Business Name  |
-| secondPredecessorCageCode  (string) | Second Predecessor Cage Code  |
-| thirdPredecessorLegalBusinessName  (string) | Third Predecessor Legal Business Name  |
-| thirdPredecessorCageCode  (string) | Third Predecessor Cage Code  |
-| primaryNaics  (string) | Primary NAICS  |
-| naicsCode  (string) | NAICS Code  |
-| sbaSmallBusiness  (string) | SBA Small Business  |
-| smallBusiness  (string) | Small Business  |
-| veteranOwnedSmallBusiness  (string) | Veteran Owned Small Business  |
-| serviceDisabledVetOwnedSmallBusiness  (string) | Service Disabled Veteran Owned Small Business  |
-| womenOwnedSmallBusinessConcern  (string) | Women Owned Small Business Concern  |
-| womenOwnedSmallBusiness  (string) | Women Owned Small Business  |
-| economicallyDisadvWomenOwnedSmallBusiness  (string) | Economically Disadvantaged Women Owned Small Business  |
-| smallDisadvantagedBusinessConcern  (string) | Small Disadvantaged Business Concern  |
-| sbaCertifiedSmallBusinessDisadvBusiness  (string) | SBA Certified Small Disadvantaged Business  |
-| sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted  (string) | SBA Certified Small Disadvantaged Business not submitted  |
-| hubZoneSmallBusinessConcern  (string) | Hub Zone Small Business Concern  |
-| blackAmerican  (string) | Black American Owned Business  |
-| hispanicAmerican  (string) | Hispanic American Owned Business  |
-| nativeAmerican  (string) | Native American Owned Business  |
-| asianPacificAmerican  (string) | Asian Pacific American Owned Business   |
-| subcontinentAsianIndianAmerican  (string) | Subcontinent Asian Indian American Owned Business  |
-| historicallyBlackCollegeOrUniversity  (string) | Historically Black College Or University  |
-| minorityInstitution  (string) | Minority Institution  |
-| linkForFARReportPDF  (string) | Link For FAR Report PDF  |
-| linkForFARReportHTML  (string) | Link For FAR Report HTML  |
-| foreignGovernmentOwnershipFirstName  (string) | Foreign Government Ownership First Name  |
-| foreignGovernmentOwnershipMiddleInitial  (string) | Foreign Government Ownership Middle Initial  |
-| foreignGovernmentOwnershipLastName  (string) | Foreign Government Ownership Last Name  |
-| foreignGovernmentOwnershipPhoneNum  (string) | Foreign Government Ownership Phone Number  |
-| foreignGovernmentOwnershipPhoneExt  (string) | Foreign Government Ownership Phone Ext  |
-| foreignGovernmentOwnershipInternationalNum  (string) | Foreign Government Ownership International Number  |
-| foreignGovernmentControlCountry  (string) | Foreign Government Control Country  |
-| foreignEndProductName  (string) | Foreign End Product Name  |
-| foreignEndProductCountry  (string) | Foreign End Product Country  |
-| linkForDFARSReportPDF  (string) | Link For DFARS Report PDF  |
-| linkForDFARSReportHTML  (string) | Link For DFARS Report HTML  |
-| middleInitial  (string) | Middle Initial for qualifications |
-| lastName  (string) | Last Name for qualifications  |
-| title  (string) | Title for qualifications  |
-| companyName  (string) | Company Name for qualifications |
-| companyEstablishedYear  (string) | Company Established Year for qualifications |
-| companyDUNS  (string) | Company DUNS for qualifications |
-| companyIsReference  (string) | Company Is Reference for qualifications |
-| qualificationURLPDF  (string) | Qualification URL PDF  |
-| qualificationURLHTML  (string) | Qualification URL HTML  |
-| financialAssistanceResponse  (string) | Financial Assistance Response  |
-| firstName  (string) |  First Name for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
-| middleInitial  (string) |  Middle Initial for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
-| lastName  (string) |  Last Name for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
-| title  (string) |  Title for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
-| USPhone  (string) |  US Phone for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| USPhoneExtension  (string) |  US Phone Extension for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| nonUSPhone  (string) |  NON US Phone for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| fax  (string) |  Fax for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| email  (string) |  Email for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| address1 (string) |  Address 1 for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC | 
-| address2 (string) |  Address 2 for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC | 
+| immediateOwnerCageCode (string) | Immediate Owner Cage Code    |
+| highestOwnerLegalBusinessName (string) | Highest Owner Legal Business Name  |
+| highestOwnerCageCode (string) | Highest Owner  Cage Code  |
+| firstPredecessorLegalBusinessName (string) | First Predecessor Legal Business Name  |
+| firstPredecessorCageCode (string) | First Predecessor Cage Code  |
+| secondPredecessorLegalBusinessName (string) | Second Predecessor Legal Business Name  |
+| secondPredecessorCageCode (string) | Second Predecessor Cage Code  |
+| thirdPredecessorLegalBusinessName (string) | Third Predecessor Legal Business Name  |
+| thirdPredecessorCageCode (string) | Third Predecessor Cage Code  |
+| primaryNaics (string) | Primary NAICS  |
+| naicsCode (string) | NAICS Code  |
+| sbaSmallBusiness (string) | SBA Small Business  |
+| smallBusiness (string) | Small Business  |
+| veteranOwnedSmallBusiness (string) | Veteran Owned Small Business  |
+| serviceDisabledVetOwnedSmallBusiness (string) | Service Disabled Veteran Owned Small Business  |
+| womenOwnedSmallBusinessConcern (string) | Women Owned Small Business Concern  |
+| womenOwnedSmallBusiness (string) | Women Owned Small Business  |
+| economicallyDisadvWomenOwnedSmallBusiness (string) | Economically Disadvantaged Women Owned Small Business  |
+| smallDisadvantagedBusinessConcern (string) | Small Disadvantaged Business Concern  |
+| sbaCertifiedSmallBusinessDisadvBusiness (string) | SBA Certified Small Disadvantaged Business  |
+| sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted (string) | SBA Certified Small Disadvantaged Business not submitted  |
+| hubZoneSmallBusinessConcern (string) | Hub Zone Small Business Concern  |
+| blackAmerican (string) | Black American Owned Business  |
+| hispanicAmerican (string) | Hispanic American Owned Business  |
+| nativeAmerican (string) | Native American Owned Business  |
+| asianPacificAmerican (string) | Asian Pacific American Owned Business   |
+| subcontinentAsianIndianAmerican (string) | Subcontinent Asian Indian American Owned Business  |
+| historicallyBlackCollegeOrUniversity (string) | Historically Black College Or University  |
+| minorityInstitution (string) | Minority Institution  |
+| linkForFARReportPDF (string) | Link For FAR Report PDF  |
+| linkForFARReportHTML (string) | Link For FAR Report HTML  |
+| foreignGovernmentOwnershipFirstName (string) | Foreign Government Ownership First Name  |
+| foreignGovernmentOwnershipMiddleInitial (string) | Foreign Government Ownership Middle Initial  |
+| foreignGovernmentOwnershipLastName (string) | Foreign Government Ownership Last Name  |
+| foreignGovernmentOwnershipPhoneNum (string) | Foreign Government Ownership Phone Number  |
+| foreignGovernmentOwnershipPhoneExt (string) | Foreign Government Ownership Phone Ext  |
+| foreignGovernmentOwnershipInternationalNum (string) | Foreign Government Ownership International Number  |
+| foreignGovernmentControlCountry (string) | Foreign Government Control Country  |
+| foreignEndProductName (string) | Foreign End Product Name  |
+| foreignEndProductCountry (string) | Foreign End Product Country  |
+| linkForDFARSReportPDF (string) | Link For DFARS Report PDF  |
+| linkForDFARSReportHTML (string) | Link For DFARS Report HTML  |
+| middleInitial (string) | Middle Initial for qualifications |
+| lastName (string) | Last Name for qualifications  |
+| title (string) | Title for qualifications  |
+| companyName (string) | Company Name for qualifications |
+| companyEstablishedYear (string) | Company Established Year for qualifications |
+| companyDUNS (string) | Company DUNS for qualifications |
+| companyIsReference (string) | Company Is Reference for qualifications |
+| qualificationURLPDF (string) | Qualification URL PDF  |
+| qualificationURLHTML (string) | Qualification URL HTML  |
+| financialAssistanceResponse (string) | Financial Assistance Response  |
+| firstName (string) |  First Name for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
+| middleInitial (string) |  Middle Initial for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
+| lastName (string) |  Last Name for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
+| title (string) |  Title for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
+| USPhone (string) |  US Phone for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| USPhoneExtension (string) |  US Phone Extension for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| nonUSPhone (string) |  NON US Phone for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| fax (string) |  Fax for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| email (string) |  Email for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| address1(string) |  Address 1 for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC | 
+| address2 (string) |  Address 2 for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC | 
 | city (string) |  City for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC | 
 | state (string) |  State for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
 | zipCode (string) |  Zip for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| zipCodePlus4 (string) |  Zip Code Plus4 for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| country (string) |  Country for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| zipCodePlus4 (string) |  Zip Code Plus4 for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| country (string) |  Country for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
 
 ## OpenAPI Specification File 
 
