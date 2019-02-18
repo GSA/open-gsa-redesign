@@ -54,7 +54,7 @@ Generating the API Key:
 | physicalAddressCongressionalDistrict | Allows 2 characters.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalAddressCongressionalDistrict=AR' |
 | physicalAddressCountryCode | Allows 3 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalAddressCountryCode=USA' |
 | physicalAddressProvinceOrState  | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalAddressProvinceOrState=AR' |
-| physicalAddressZipPostalCode | Allows 5 digit zip code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalAddressZipPostalCode=022011' |
+| physicalAddressZipPostalCode | Allows 5 digit zip code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalAddressZipPostalCode=02201' |
 | samExtractCode  | Allows 1 character code (A or E).<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&samExtractCode=A' |
 | includeSections | Allows to filter data by sections, entityInformation, coreData, assertions, repsAndCerts and pointsOfContact.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&includeSections=entityInformation,coreData' |
 
