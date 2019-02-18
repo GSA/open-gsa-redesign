@@ -38,8 +38,8 @@ Generating the API Key:
 | Parameter Name | Description |
 | ---- | ----------- |
 | activationDate | A single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&activationDate=02/12/1999' |
-| cageCode | The exact 5 character value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&cageCode=00000' |
-| dbaName | Partial or Complete value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&dbaName=ALLTEL' |
+| cageCode | Allows exact 5 character value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&cageCode=00000' |
+| dbaName | Allows Partial or Complete value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&dbaName=ALLTEL' |
 | delinquentFederalDebtFlag | Allows Y or N or null.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&delinquentFederalDebtFlag=Y' |
 | dodaac | Allows 9 character value.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&dodaac=025114695' |
 | duns  | Allows 9 digit value, a maximum of up to 100 values can be sent.<br><br> Example: 'https://api.sam.gov/prod/entity-extract?api_key=< value >&duns=025114695' |
