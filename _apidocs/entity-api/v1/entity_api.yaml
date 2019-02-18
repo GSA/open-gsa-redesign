@@ -1,319 +1,897 @@
 openapi: 3.0.0
 info:
-  description: These RESTFUL endpoints are to retrieve Entity detail information
+  description: Entity Management API to retrieve entity information via Request parameters
+    in the paginated manner
   version: "1.0"
-  title: Entities API
+  title: Entity Management Rest API
+  termsOfService: Terms of service
+  contact:
+    name: GSA
+    url: www.beta.sam.gov
+    email: reply@gsa.gov
   license:
-    {}
+    name: GSA
 tags:
-  - name: Entity Object View
-    description: Entity Operations
+  - name: entity-management-controller
+    description: Operations pertaining to Entity Management Data
 paths:
-  "/msam/v1/entities/{dunsDunsPlus4}":
+  /sam/v1/entity-management:
     get:
       tags:
-        - Entity Object View
-      summary: Entity View Details
-      operationId: getEntityInfoUsingGET
+        - entity-management-controller
+      summary: " get Entity Management Details"
+      operationId: getEntityManagementDataUsingGET
       parameters:
-        - name: dunsDunsPlus4
-          in: path
-          description: It can contain just 9 digits duns OR combination of duns and duns+4
-            separated by '+'
-          required: true
-          schema:
-            type: string
-        - name: api_key
+        - name: activationDate
           in: query
-          description: API KEY
-          required: true
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
           schema:
             type: string
-      responses:
-        "200":
-          description: OK
-          content:
-            application/hal+json:
-              schema:
-                $ref: "#/components/schemas/EntityInfoResource"
-        "401":
-          description: Unauthorized
-        "403":
-          description: Forbidden
-        "404":
-          description: Not Found
-  "/msam/v1/entities/multiple/{duns}":
-    get:
-      tags:
-        - Multiple Entity Search
-      summary: Multiple Entity Search
-      operationId: getEntityInfoUsingGET
-      parameters:
+        - name: cageCode
+          in: query
+          description: The exact 5 character value; a maximum of up to 100 values can be
+            sent
+          required: false
+          schema:
+            type: string
+        - name: dbaName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: delinquentFederalDebtFlag
+          in: query
+          description: Y or N or null
+          required: false
+          schema:
+            type: string
+        - name: disasterRegistry
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: dodaac
+          in: query
+          description: 9 character value
+          required: false
+          schema:
+            type: string
         - name: duns
-          in: path
-          description: It can contain just 9 digits duns separated by '+'
-          required: true
-          schema:
-            type: string
-        - name: api_key
           in: query
-          description: API KEY
-          required: true
+          description: 9 digit value; a maximum of up to 100 values can be sent
+          required: false
           schema:
             type: string
+        - name: entityStructure
+          in: query
+          description: 2 character code or null
+          required: false
+          schema:
+            type: string
+        - name: exclusionStatusFlag
+          in: query
+          description: D or null
+          required: false
+          schema:
+            type: string
+        - name: expirationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: legalBusinessName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: primaryNaics
+          in: query
+          description: 6 digit NAICS; accepts multiple NAICS
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistration
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: registrationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCity
+          in: query
+          description: City name
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCongressionalDistrict
+          in: query
+          description: 2 characters
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCountryCode
+          in: query
+          description: 3 character code
+          required: false
+          schema:
+            type: string
+        - name: samExtractCode
+          in: query
+          description: 1 character code (A or E)
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressProvinceOrState
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressZipPostalCode
+          in: query
+          description: 5 digit zip code
+          required: false
+          schema:
+            type: string
+        - name: includeSections
+          in: query
+          description: entityInformation, coreData, assertions, repsAndCerts,
+            mandatoryPOCs, optionalPOCs
+          required: false
+          schema:
+            type: string
+        - name: q
+          in: query
+          description: Q paramter for Search Operations
+          required: false
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: page
+          required: false
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: record limit per page
+          required: false
+          schema:
+            type: string
+        - name: requestParams
+          in: query
+          description: requestParams
+          required: true
+          schema:
+            type: ref
       responses:
         "200":
-          description: OK
+          description: Successfully retrieved list
           content:
             application/hal+json:
               schema:
-                $ref: "#/components/schemas/EntityInfoResource"
+                $ref: "#/components/schemas/EMResponse"
         "401":
-          description: Unauthorized
+          description: You are not authorized to view the resource
         "403":
-          description: Forbidden
+          description: Accessing the resource you were trying to reach is forbidden
         "404":
-          description: Not Found
+          description: The resource you were trying to reach is not found
 servers:
-  - url: https://***REMOVED***/prodlike
+  - url: //***REMOVED***/comp
 components:
-  securitySchemes:
-    api_key:
-      type: apiKey
-      name: api_key
-      in: query
   schemas:
-    Address:
+    BusinessInformation:
+      type: object
+      properties:
+        businessStartDate:
+          type: string
+        companyDivisionName:
+          type: string
+        companyDivisionNumber:
+          type: string
+        corporateURL:
+          type: string
+        correspondenceFlag:
+          type: string
+        fiscalYearEndCloseDate:
+          type: string
+        submissionDate:
+          type: string
+    FinancialAssistanceCertifications:
+      type: object
+      properties:
+        financialAssistanceResponse:
+          type: string
+    SBABusinessType:
+      type: object
+      properties:
+        sbaBusinessType:
+          type: string
+    Certifications:
+      type: object
+      properties:
+        dFARResponses:
+          type: array
+          items:
+            $ref: "#/components/schemas/DFARResponses"
+        fARResponses:
+          type: array
+          items:
+            $ref: "#/components/schemas/FARResponses"
+    FinancialInformation:
+      type: object
+      properties:
+        creditCardUsage:
+          type: string
+        delinquentFedDebtFlag:
+          type: string
+    BusinessType:
+      type: object
+      properties:
+        businessType:
+          type: string
+    DFARResponses:
+      type: object
+      properties:
+        listOfAnswers:
+          type: array
+          items:
+            $ref: "#/components/schemas/AnswersForDFAR"
+        listOfProvisions:
+          type: array
+          items:
+            $ref: "#/components/schemas/Provisions"
+    ElectronicBusinessPOC:
       type: object
       properties:
         address1:
           type: string
         address2:
           type: string
-        addressCity:
-          type: string
-        addressState:
-          type: string
-        addressZip:
-          type: string
-        addressZipPlus4:
+        city:
           type: string
         country:
           type: string
-    Exclusions:
+        email:
+          type: string
+        fax:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        middleInitial:
+          type: string
+        nonUSPhone:
+          type: string
+        stateOrProvince:
+          type: string
+        title:
+          type: string
+        usPhone:
+          type: string
+        usPhoneExtension:
+          type: string
+        zipCode:
+          type: string
+        zipCodePlus4:
+          type: string
+    NAICS:
       type: object
       properties:
-        exclusionDetailLink:
+        naicsCode:
           type: string
-        exclusionName:
+        naicsException:
           type: string
-    EntityGeneralInfo:
+        sbaSmallBusiness:
+          type: string
+    FARResponses:
       type: object
       properties:
-        dodaac:
-          type: string
-        duns:
-          type: string
-        exclusionStatusFlag:
-          type: string
-        expirationDate:
-          type: string
-          format: date-time
-        lastUpdateDate:
-          type: string
-          format: date-time
-        samAddress:
-          $ref: "#/components/schemas/Address"
-    GeographicalAreas:
-      type: object
-      properties:
-        county:
-          type: string
-        msa:
-          type: string
-        state:
-          type: string
-    EntityInfoResource:
-      type: object
-      properties:
-        entityInfo:
-          $ref: "#/components/schemas/EntityInfo"
-        links:
+        listOfAnswers:
           type: array
           items:
-            $ref: "#/components/schemas/Link"
-    Assertions:
+            $ref: "#/components/schemas/Answers"
+        listOfProvisions:
+          type: array
+          items:
+            $ref: "#/components/schemas/Provisions"
+    GoodsAndServices:
       type: object
       properties:
-        bondingFlag:
-          type: string
         ediInformationFlag:
           type: string
-        geographicalAreaServed:
-          type: array
-          items:
-            $ref: "#/components/schemas/GeographicalAreas"
         naicsList:
           type: array
           items:
-            type: string
+            $ref: "#/components/schemas/NAICS"
         primaryNaics:
           type: string
         pscList:
           type: array
           items:
-            type: string
-        registryFlag:
-          type: string
-    RepsAndCerts:
+            $ref: "#/components/schemas/PSC"
+    GeneralInformation:
       type: object
       properties:
-        linkForDFARSReport:
-          type: string
-        linkForFARReport:
-          type: string
-    CoreData:
-      type: object
-      properties:
-        activeDate:
-          type: string
-          format: date-time
-        businessStartDate:
-          type: string
-          format: date-time
-        businessType:
-          type: string
-        businessTypeCounter:
-          type: string
-        cageCode:
-          type: string
-        companyDivision:
-          type: string
-        congressionalDistrict:
-          type: string
-        corporateURL:
-          type: string
-        correspondenceFlag:
-          type: string
-        countryCode:
-          type: string
         countryOfIncorporation:
-          type: string
-        creditCardUsage:
-          type: string
-        dbaName:
-          type: string
-        delinquentFedDebtFlag:
-          type: string
-        divisionNumber:
           type: string
         entityStructure:
           type: string
         entityType:
           type: string
-        fiscalYearEndCloseDate:
-          type: string
-        generalInfo:
-          $ref: "#/components/schemas/EntityGeneralInfo"
-        highestOwnerPredecessorCageCode:
-          type: string
-        highestOwnerRecentPredecessorBusName:
-          type: string
-        immedOwnerPredecessorCageCode:
-          type: string
-        immedOwnerRecentPredecessorBusName:
-          type: string
-        legalBusinessName:
-          type: string
-        mailAddress:
-          $ref: "#/components/schemas/Address"
-        noPublicDisplayFlag:
-          type: string
         organizationStructure:
           type: string
         profitStructure:
           type: string
+        stateOfIncorporation:
+          type: string
+    ArchitectEngineerResponses:
+      type: object
+      properties:
+        listOfAnswers:
+          type: array
+          items:
+            $ref: "#/components/schemas/AnswersForArch"
+        listOfProvisions:
+          type: array
+          items:
+            $ref: "#/components/schemas/Provisions"
+    EntityInformation:
+      type: object
+      properties:
+        activationDate:
+          type: string
+        cageCode:
+          type: string
+        dbaName:
+          type: string
+        dodaac:
+          type: string
+        duns:
+          type: string
+        dunsPlus4:
+          type: string
+        exclusionStatusFlag:
+          type: string
+        expirationDate:
+          type: string
+        lastUpdateDate:
+          type: string
+        legalBusinessName:
+          type: string
+        nCageCode:
+          type: string
+        noPublicDisplayFlag:
+          type: string
         purposeOfRegistration:
-          type: string
-        recentPredecessorBusName:
-          type: string
-        recentPredecessorCageCode:
           type: string
         registrationDate:
           type: string
-          format: date-time
-        secondRecentPredecessorBusName:
+        registrationStatus:
           type: string
-        secondRecentPredecessorCageCode:
+    PSC:
+      type: object
+      properties:
+        pscCode:
           type: string
-        stateOfIncorporation:
+    PastPerformancePOC:
+      type: object
+      properties:
+        address1:
           type: string
-        stateProvision:
+        address2:
           type: string
-        submissionDate:
+        city:
           type: string
-        thirdRecentPredecessorBusName:
+        country:
           type: string
-        thirdRecentPredecessorCageCode:
+        email:
+          type: string
+        fax:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        middleInitial:
+          type: string
+        nonUSPhone:
+          type: string
+        stateOrProvince:
+          type: string
+        title:
+          type: string
+        usPhone:
+          type: string
+        usPhoneExtension:
+          type: string
+        zipCode:
+          type: string
+        zipCodePlus4:
+          type: string
+    Answers:
+      type: object
+      properties:
+        answerId:
+          type: string
+        answerText:
+          type: string
+        answerType:
+          type: string
+        asianPacificAmerican:
+          type: string
+        blackAmerican:
+          type: string
+        businessObjectId:
+          type: string
+        businessObjectType:
+          type: string
+        economicallyDisadvWomenOwnedSmallBusiness:
+          type: string
+        endProductCountry:
+          type: string
+        endProductName:
+          type: string
+        endProductType:
+          type: string
+        environmentURL:
+          type: string
+        facilityCity:
+          type: string
+        facilityCountry:
+          type: string
+        facilityOwner:
+          type: string
+        facilityOwnerCity:
+          type: string
+        facilityOwnerCountry:
+          type: string
+        facilityOwnerPostalCode:
+          type: string
+        facilityOwnerState:
+          type: string
+        facilityOwnerStreetAddress1:
+          type: string
+        facilityOwnerStreetAddress2:
+          type: string
+        facilityPostalCode:
+          type: string
+        facilityState:
+          type: string
+        facilityStreetAddress1:
+          type: string
+        facilityStreetAddress2:
+          type: string
+        firstName:
+          type: string
+        firstPredecessorCageCode:
+          type: string
+        firstPredecessorLegalBusinessName:
+          type: string
+        fscCode:
+          type: string
+        highestOwnerCageCode:
+          type: string
+        highestOwnerLegalBusinessName:
+          type: string
+        hispanicAmerican:
+          type: string
+        historicallyBlackCollegeOrUniversity:
+          type: string
+        hubZoneSmallBusinessConcerm:
+          type: string
+        immediateOwnerCageCode:
+          type: string
+        immediateOwnerLegalBusinessName:
+          type: string
+        linkForFARReportHTML:
+          type: string
+        linkForFARReportPDF:
+          type: string
+        minorityInstitution:
+          type: string
+        naicsCode:
+          type: string
+        nativeAmerican:
+          type: string
+        organizationType:
+          type: string
+        placeOfManufacture:
+          type: string
+        primaryNaics:
+          type: string
+        sbaCertifiedSmallBusinessDisadvBusiness:
+          type: string
+        sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted:
+          type: string
+        sbaSmallBusiness:
+          type: string
+        secondPredecessorCageCode:
+          type: string
+        secondPredecessorLegalBusinessName:
+          type: string
+        section:
+          type: string
+        serviceDisabledVetOwnedSmallBusiness:
+          type: string
+        smallBusiness:
+          type: string
+        smallDisadvantagedBusinessConcern:
+          type: string
+        status:
+          type: string
+        subcontinentAsianIndianAmerican:
+          type: string
+        thirdPredecessorCageCode:
+          type: string
+        thirdPredecessorLegalBusinessName:
+          type: string
+        title:
+          type: string
+        veteranOwnedSmallBusiness:
+          type: string
+        womenOwnedSmallBusiness:
+          type: string
+        womenOwnedSmallBusinessConcern:
+          type: string
+    GeographicalAreas:
+      type: object
+      properties:
+        geographicalAreaServedCounty:
+          type: string
+        geographicalAreaServedState:
+          type: string
+        geographicalAreaServedmetropolitanStatisticalArea:
+          type: string
+    MailingAddress:
+      type: object
+      properties:
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+        state:
           type: string
         zip:
           type: string
         zipPlus4:
           type: string
+    PhysicalAddress:
+      type: object
+      properties:
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        congressionalDistrict:
+          type: string
+        country:
+          type: string
+        state:
+          type: string
+        zip:
+          type: string
+        zipPlus4:
+          type: string
+    Assertions:
+      type: object
+      properties:
+        disasterReliefData:
+          $ref: "#/components/schemas/DisasterReliefData"
+        goodsAndServices:
+          $ref: "#/components/schemas/GoodsAndServices"
+    BusinessTypes:
+      type: object
+      properties:
+        businessTypeList:
+          type: array
+          items:
+            $ref: "#/components/schemas/BusinessType"
+        sbaBusinessTypeList:
+          type: array
+          items:
+            $ref: "#/components/schemas/SBABusinessType"
+    GovernmentBusinessAlternatePOC:
+      type: object
+      properties:
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+        email:
+          type: string
+        fax:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        middleInitial:
+          type: string
+        nonUSPhone:
+          type: string
+        stateOrProvince:
+          type: string
+        title:
+          type: string
+        usPhone:
+          type: string
+        usPhoneExtension:
+          type: string
+        zipCode:
+          type: string
+        zipCodePlus4:
+          type: string
+    PastPerformanceAlternatePOC:
+      type: object
+      properties:
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+        email:
+          type: string
+        fax:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        middleInitial:
+          type: string
+        nonUSPhone:
+          type: string
+        stateOrProvince:
+          type: string
+        title:
+          type: string
+        usPhone:
+          type: string
+        usPhoneExtension:
+          type: string
+        zipCode:
+          type: string
+        zipCodePlus4:
+          type: string
+    RepsAndCerts:
+      type: object
+      properties:
+        certifications:
+          $ref: "#/components/schemas/Certifications"
+        financialAssistanceCertifications:
+          $ref: "#/components/schemas/FinancialAssistanceCertifications"
+        qualifications:
+          $ref: "#/components/schemas/Qualifications"
+    DisasterReliefData:
+      type: object
+      properties:
+        bondingFlag:
+          type: string
+        disasterRegistryFlag:
+          type: string
+        geographicalAreaServed:
+          type: array
+          items:
+            $ref: "#/components/schemas/GeographicalAreas"
+    CoreData:
+      type: object
+      properties:
+        businessInformation:
+          $ref: "#/components/schemas/BusinessInformation"
+        businessTypes:
+          $ref: "#/components/schemas/BusinessTypes"
+        financialInformation:
+          $ref: "#/components/schemas/FinancialInformation"
+        generalInformation:
+          $ref: "#/components/schemas/GeneralInformation"
+        mailingAddress:
+          $ref: "#/components/schemas/MailingAddress"
+        physicalAddress:
+          $ref: "#/components/schemas/PhysicalAddress"
     PointOfContact:
       type: object
       properties:
-        empty:
-          type: boolean
-        pocAddress:
-          $ref: "#/components/schemas/Address"
-        pocEmail:
+        electronicBusinessAlternatePOC:
+          $ref: "#/components/schemas/ElectronicBusinessAlternatePOC"
+        electronicBusinessPOC:
+          $ref: "#/components/schemas/ElectronicBusinessPOC"
+        governmentBusinessAlternatePOC:
+          $ref: "#/components/schemas/GovernmentBusinessAlternatePOC"
+        governmentBusinessPOC:
+          $ref: "#/components/schemas/GovernmentBusinessPOC"
+        pastPerformanceAlternatePOC:
+          $ref: "#/components/schemas/PastPerformanceAlternatePOC"
+        pastPerformancePOC:
+          $ref: "#/components/schemas/PastPerformancePOC"
+    GovernmentBusinessPOC:
+      type: object
+      properties:
+        address1:
           type: string
-        pocFax:
+        address2:
           type: string
-        pocFirstName:
+        city:
           type: string
-        pocLastName:
+        country:
           type: string
-        pocMiddleName:
+        email:
           type: string
-        pocNonUSPhone:
+        fax:
           type: string
-        pocTitle:
+        firstName:
           type: string
-        pocType:
+        lastName:
           type: string
-        pocUSPhone:
+        middleInitial:
           type: string
-        pocUSPhoneExt:
+        nonUSPhone:
           type: string
-    EntityInfo:
+        stateOrProvince:
+          type: string
+        title:
+          type: string
+        usPhone:
+          type: string
+        usPhoneExtension:
+          type: string
+        zipCode:
+          type: string
+        zipCodePlus4:
+          type: string
+    EMResponse:
       type: object
       properties:
         assertions:
           $ref: "#/components/schemas/Assertions"
         coreData:
           $ref: "#/components/schemas/CoreData"
-        exclusionsList:
+        entityInformation:
+          $ref: "#/components/schemas/EntityInformation"
+        includeSections:
           type: array
           items:
-            $ref: "#/components/schemas/Exclusions"
-        mandatoryPOCs:
-          type: array
-          items:
-            $ref: "#/components/schemas/PointOfContact"
-        optionalPOCs:
-          type: array
-          items:
-            $ref: "#/components/schemas/PointOfContact"
+            type: string
+        pointsOfContact:
+          $ref: "#/components/schemas/PointOfContact"
         repsAndCerts:
           $ref: "#/components/schemas/RepsAndCerts"
-    Link:
+    ElectronicBusinessAlternatePOC:
       type: object
       properties:
-        href:
+        address1:
           type: string
-        rel:
+        address2:
           type: string
-        templated:
-          type: boolean
+        city:
+          type: string
+        country:
+          type: string
+        email:
+          type: string
+        fax:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        middleInitial:
+          type: string
+        nonUSPhone:
+          type: string
+        stateOrProvince:
+          type: string
+        title:
+          type: string
+        usPhone:
+          type: string
+        usPhoneExtension:
+          type: string
+        zipCode:
+          type: string
+        zipCodePlus4:
+          type: string
+    AnswersForArch:
+      type: object
+      properties:
+        answerId:
+          type: string
+        answerText:
+          type: string
+        answerType:
+          type: string
+        businessObjectId:
+          type: string
+        businessObjectType:
+          type: string
+        companyDUNS:
+          type: string
+        companyEstablishedYear:
+          type: string
+        companyIsReference:
+          type: string
+        companyName:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        middleInitial:
+          type: string
+        qualificationURLHTML:
+          type: string
+        qualificationURLPDF:
+          type: string
+        title:
+          type: string
+    AnswersForDFAR:
+      type: object
+      properties:
+        answerId:
+          type: string
+        answerText:
+          type: string
+        answerType:
+          type: string
+        businessObjectId:
+          type: string
+        businessObjectType:
+          type: string
+        foreignEndProductCountry:
+          type: string
+        foreignEndProductName:
+          type: string
+        foreignGovernmentControlCountry:
+          type: string
+        foreignGovernmentOwnershipFirstName:
+          type: string
+        foreignGovernmentOwnershipInternationalNum:
+          type: string
+        foreignGovernmentOwnershipLastName:
+          type: string
+        foreignGovernmentOwnershipMiddleInitial:
+          type: string
+        foreignGovernmentOwnershipPhoneExt:
+          type: string
+        foreignGovernmentOwnershipPhoneNum:
+          type: string
+        linkForDFARSReportHTML:
+          type: string
+        linkForDFARSReportPDF:
+          type: string
+        section:
+          type: string
+    Provisions:
+      type: object
+      properties:
+        provisionId:
+          type: string
+    Qualifications:
+      type: object
+      properties:
+        architectEngineerResponses:
+          $ref: "#/components/schemas/ArchitectEngineerResponses"
