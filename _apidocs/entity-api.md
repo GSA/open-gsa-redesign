@@ -8,7 +8,7 @@ banner-heading: Entity API
 
 ## Overview
 The Entity Management API will allow users to request Public Entity Information based on various optional request parameters. 
-The response will be provided in the JSON format in a paginated manner
+The response will be provided in the JSON format in a paginated manner.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -37,7 +37,7 @@ Generating the API Key:
 
 | Parameter Name | Description |
 | ---- | ----------- |
-| activationDate | A single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&activationDate=02/12/1999' |
+| activationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&activationDate=02/12/1999' |
 | cageCode | Allows exact 5 character value.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&cageCode=00000' |
 | dbaName | Allows Partial or Complete value.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&dbaName=ALLTEL' |
 | delinquentFederalDebtFlag | Allows Y or N or null.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&delinquentFederalDebtFlag=Y' |
@@ -45,11 +45,11 @@ Generating the API Key:
 | duns  | Allows 9 digit value, a maximum of up to 100 values can be sent.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&duns=025114695' |
 | entityStructure  | Allows 2 character code or null.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&entityStructure=Z1' |
 | exclusionStatusFlag | Allows D or null.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&exclusionStatusFlag=D' |
-| expirationDate | A single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&expirationDate=02/12/1999' |
+| expirationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&expirationDate=02/12/1999' |
 | legalBusinessName | Allows Partial or Complete value.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&legalBusinessName=ALLTEL ' |
 | primaryNaics | Allows 6 digit NAICS, accepts multiple NAICS.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&primaryNaics=51331' |
 | purposeOfRegistration | Allows 2 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&purposeOfRegistration=Z2' |
-| registrationDate | A single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&registrationDate=02/12/1999' |
+| registrationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&registrationDate=02/12/1999' |
 | physicalAddressCity | City name.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalCity=Herndon' |
 | physicalAddressCongressionalDistrict | Allows 2 characters.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalCongressionalDistrict=AR' |
 | physicalAddressCountryCode | Allows 3 character code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalCountryCode=USA' |
