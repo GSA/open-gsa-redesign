@@ -60,11 +60,13 @@ Generating the API Key:
 
 **Expected Result**
 
-| Name  | Description |
-| ---- | ----------- |
+API response consists of Sections, Sub-sections and Tags underneath each of the Sections or Sub-sections
+
+| Section/Sub-section/Tag | Description |
+| ---- |  ----------- |
 | **entityInformation** |
-| duns (string) | DUNS | 
-| dunsPlus4 (string) | DUNS Plus4  | 
+| duns(string) | DUNS |
+| dunsPlus4 (string) | DUNS Plus4  |
 | cageCode (string) | CAGE Code | 
 | nCageCode (string) | NCAGE Code  |
 | dodaac (string) | DoDAAC  |
@@ -78,8 +80,7 @@ Generating the API Key:
 | activeDate (string) | Active Date   |
 | noPublicDisplayFlag (string) | No Public Display Flag   |
 | exclusionStatusFlag (string) | Exclusion Status Flag   |
-| **coreData** |
-| **businessInformation** |
+| **coreData  --> businessInformation** |
 | corporateURL (string) | Corporate URL   |
 | companyDivisionName (string) | Company Division Name  |
 | companyDivisionNumber (string) | Company Division Number |
@@ -87,6 +88,7 @@ Generating the API Key:
 | submissionDate (string) | Submission Date   |
 | fiscalYearEndCloseDate  (string) | Fiscal Year End Close Date  |
 | correspondenceFlag (string) | Correspondence Flag   |
+| **coreData  --> physicalAddress, mailingAddress** |
 | address1 (string) | Physical Address 1 and Mailing Address 1  | 
 | address2 (string) | Physical Address 2 and Mailing Address 2   | 
 | city (string) | Physical Address City and Mailing Address City  | 
@@ -95,34 +97,50 @@ Generating the API Key:
 | zipPlus4 (string) | Physical Address Zip Plus4 and Mailing Address Zip Plus4  |
 | country (string) | Physical Address Country and Mailing Address Country  |
 | congressionalDistrict (string) | Congressional District of Physical Address  |
+| **coreData  --> generalInformation** |
 | entityStructure (string) | Entity Structure   |
 | entityType (string) | Entity Type   |
 | profitStructure (string) | Profit Structure   |
 | organizationStructure (string) | Organization Structure   |
 | stateOfIncorporation (string) | State Of Incorporation   |
 | countryOfIncorporation (string) | Country Of Incorporation   |
-| businessTypesList (list) | List of Business Types with each of the Business Type codes  |
-| sbaBusinessTypeList (list) | List of SBA Business Types with each of the SBA Business Type codes, names and expiration dates  |
+| **coreData  --> businessTypes  --> businessTypeList** |
+| businessType (string) | Business Type code  |
+| **coreData  --> businessTypes  --> sbaBusinessTypeList** |
+| sbaBusinessType (string) | SBA Business Type code  |
+| name (string) | SBA Business Type description  |
+| expirationDate (string) | SBA Business Type expiration date  |
+| **coreData  --> financialInformation** |
 | creditCardUsage (string) | Credit Card Usage   |
 | delinquentFedDebtFlag (string) | Delinquent Federal Debt Flag   |
-| primaryNaics (string) | Primary NAICS   |
-| naicsList	 (list) | NAICS List with each of the NAICS codes, whether or not they are SBA small business and whether or not they are exceptions  |
-| pscList (list) | PSC List with each of the PSC codes   |
+| **assertions  --> goodsAndServices** |
+| primaryNaics (string) | Primary NAICS  |
+| **assertions  --> goodsAndServices  --> naicsList** |
+| naicsCode	 (string) | NAICS Code  |
+| sbaSmallBusiness	 (string) | Whether or not the NAICS Code is indicated as an SBA small business  |
+| naicsException  (string) | Whether or not the NAICS Code is an exception  |
+| **assertions  --> goodsAndServices  --> pscList** |
+| pscCode	 (string) | PSC Code  |
+| **assertions  --> goodsAndServices** |
 | ediInformationFlag (string) | EDI Information Flag   |
+| **assertions  --> goodsAndServices  --> disasterReliefData** |
 | disasterRegistryFlag (string) | Disaster Registry Flag   |
 | bondingFlag (string) | Bonding Flag   |
-| geographicalAreaServed (string) | Geographical Area Served with the list of States, Counties and Metropolitan Statistical Areas   |
-| fARResponses (list) | FAR Responses   |
-| dFARResponses  (list) | DFAR Responses   |
-| provisionId (string) | Provision Id for FAR and DFAR certifications and qualifications   |
-| answerType  string) | Answer Type for FAR and DFAR certifications and qualifications   |
-| answerId (string) | Answer Id for FAR and DFAR certifications and qualifications  |
-| answerText (string) | Answer Text for FAR and DFAR certifications and qualifications   |
-| businessObjectType (string) | Business Object Type for FAR and DFAR certifications, and qualifications   |
-| businessObjectId (string) | Business Object Id for FAR and DFAR certifications, and qualifications   |
-| firstName (string) | First Name for FAR certifications and qualifications   |
-| title (string) | Title for FAR certifications and qualifications   |
-| section (string) | Section for FAR and DFAR certifications, and qualifications   |
+| **assertions  --> goodsAndServices  --> geographicalAreaServed** |
+| geographicalAreaServedState (string) | State code   |
+| geographicalAreaServedCounty (string) | County name   |
+| geographicalAreaServedmetropolitanStatisticalArea (string) | Metropolitan Statistical Area name   |
+| **repsAndCerts  --> certifications  --> fARResponses  --> listOfProvisions** |
+| provisionId (string) | Provision Id  |
+| **repsAndCerts  --> certifications  --> fARResponses  --> listOfAnswers** |
+| answerType (string) | Answer Type  |
+| answerId (string) | Answer Id |
+| answerText (string) | Answer Text  |
+| businessObjectType (string) | Business Object Type  |
+| businessObjectId (string) | Business Object Id  |
+| firstName (string) | First Name  |
+| title (string) | Title  |
+| section (string) | Section  |
 | status (string) | Status   |
 | organizationType (string) | Organization Type   |
 | endProductName (string) | End Product Name   |
@@ -176,43 +194,63 @@ Generating the API Key:
 | minorityInstitution (string) | Minority Institution  |
 | linkForFARReportPDF (string) | Link For FAR Report PDF  |
 | linkForFARReportHTML (string) | Link For FAR Report HTML  |
-| foreignGovernmentOwnershipFirstName (string) | Foreign Government Ownership First Name  |
-| foreignGovernmentOwnershipMiddleInitial (string) | Foreign Government Ownership Middle Initial  |
-| foreignGovernmentOwnershipLastName (string) | Foreign Government Ownership Last Name  |
-| foreignGovernmentOwnershipPhoneNum (string) | Foreign Government Ownership Phone Number  |
-| foreignGovernmentOwnershipPhoneExt (string) | Foreign Government Ownership Phone Ext  |
+| **repsAndCerts  --> certifications  --> dFARResponses  --> listOfProvisions** |
+| provisionId (string) | Provision Id  |
+| **repsAndCerts  --> certifications  --> dFARResponses  --> listOfAnswers** |
+| answerType (string) | Answer Type  |
+| answerId (string) | Answer Id |
+| answerText (string) | Answer Text  |
+| businessObjectType (string) | Business Object Type  |
+| businessObjectId (string) | Business Object Id  |
+| section (string) | Section  |
+| foreignGovernmentOwnershipFirstName  (string) | Foreign Government Ownership First Name  |
+| foreignGovernmentOwnershipMiddleInitial (string) | Foreign Government Ownership Middle Initial  |
+| foreignGovernmentOwnershipLastName  (string) | Foreign Government Ownership Last Name  |
+| foreignGovernmentOwnershipPhoneNum  (string) | Foreign Government Ownership Phone Number  |
+| foreignGovernmentOwnershipPhoneExt  (string) | Foreign Government Ownership Phone Ext  |
 | foreignGovernmentOwnershipInternationalNum (string) | Foreign Government Ownership International Number  |
 | foreignGovernmentControlCountry (string) | Foreign Government Control Country  |
-| foreignEndProductName (string) | Foreign End Product Name  |
+| foreignEndProductName (string) | Foreign End Product Name   |
 | foreignEndProductCountry (string) | Foreign End Product Country  |
 | linkForDFARSReportPDF (string) | Link For DFARS Report PDF  |
 | linkForDFARSReportHTML (string) | Link For DFARS Report HTML  |
-| middleInitial (string) | Middle Initial for qualifications |
-| lastName (string) | Last Name for qualifications  |
-| title (string) | Title for qualifications  |
-| companyName (string) | Company Name for qualifications |
-| companyEstablishedYear (string) | Company Established Year for qualifications |
-| companyDUNS (string) | Company DUNS for qualifications |
-| companyIsReference (string) | Company Is Reference for qualifications |
+| **repsAndCerts  --> qualifications  --> architectEngineerResponses  --> listOfProvisions** |
+| provisionId (string) | Provision Id  |
+| **repsAndCerts  --> qualifications  --> architectEngineerResponses  --> listOfAnswers** |
+| answerType (string) | Answer Type  |
+| answerId (string) | Answer Id |
+| answerText (string) | Answer Text  |
+| businessObjectType (string) | Business Object Type  |
+| businessObjectId (string) | Business Object Id  |
+| firstName (string) | First Name  |
+| middleInitial  (string) | Middle Initial  |
+| lastName (string) | Last Name  |
+| title  (string) | Title  |
+| companyName  (string) | Company Name  |
+| companyEstablishedYear  (string) | Company Established Year   |
+| companyDUNS (string) | Company DUNS |
+| companyIsReference (string) | Company Is Reference  |
 | qualificationURLPDF (string) | Qualification URL PDF  |
-| qualificationURLHTML (string) | Qualification URL HTML  |
+| qualificationURLHTML (string) | Foreign End Product Country  |
+| **repsAndCerts  --> financialAssistanceCertifications** |
 | financialAssistanceResponse (string) | Financial Assistance Response  |
-| firstName (string) |  First Name for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
-| middleInitial (string) |  Middle Initial for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
-| lastName (string) |  Last Name for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
-| title (string) |  Title for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC  |
-| USPhone (string) |  US Phone for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| USPhoneExtension (string) |  US Phone Extension for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| nonUSPhone (string) |  NON US Phone for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| fax (string) |  Fax for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| email (string) |  Email for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| address1(string) |  Address 1 for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC | 
-| address2 (string) |  Address 2 for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC | 
-| city (string) |  City for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC | 
-| state (string) |  State for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| zipCode (string) |  Zip for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| zipCodePlus4 (string) |  Zip Code Plus4 for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
-| country (string) |  Country for Government Business POC, Electronic Business POC, Government Business Alternate POC, Electronic Business Alternate POC, Past Performance POC and Past Performance Alternate POC |
+| **repsAndCerts  --> governmentBusinessPOC,<br> electronicBusinessPOC, governmentBusinessAlternatePOC,<br> electronicBusinessAlternatePOC, pastPerformancePOC,<br> pastPerformanceAlternatePOC** |
+| firstName (string) |  First Name |
+| middleInitial (string) |  Middle Initial |
+| lastName (string) |  Last Name | 
+| title (string) |  Title |
+| USPhone (string) |  US Phone |
+| USPhoneExtension (string) |  US Phone Extension |
+| nonUSPhone (string) |  NON US Phone |
+| fax (string) |  Fax |
+| email (string) |  Email |
+| address1(string) |  Address 1 | 
+| address2 (string) |  Address 2 | 
+| city (string) |  City | 
+| state (string) |  State |
+| zipCode (string) |  Zip |
+| zipCodePlus4 (string) |  Zip Code Plus4 |
+| country (string) |  Country |
 
 ## OpenAPI Specification File 
 
