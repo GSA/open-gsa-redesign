@@ -1,6 +1,6 @@
 ---
-title: Entity API
-banner-heading: Entity API
+title: Entity Management  API
+banner-heading: Entity Management API
 ---
 
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
