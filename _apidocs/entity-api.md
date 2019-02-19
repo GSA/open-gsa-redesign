@@ -62,6 +62,7 @@ Generating the API Key:
 
 | Name  | Description |
 | ---- | ----------- |
+| **entityInformation** |
 | duns (string) | DUNS | 
 | dunsPlus4 (string) | DUNS Plus4  | 
 | cageCode (string) | CAGE Code | 
@@ -77,6 +78,8 @@ Generating the API Key:
 | activeDate (string) | Active Date   |
 | noPublicDisplayFlag (string) | No Public Display Flag   |
 | exclusionStatusFlag (string) | Exclusion Status Flag   |
+| **coreData** |
+| **businessInformation** |
 | corporateURL (string) | Corporate URL   |
 | companyDivisionName (string) | Company Division Name  |
 | companyDivisionNumber (string) | Company Division Number |
