@@ -1,5 +1,4 @@
 {
-        "requestType": "publish_request",
-      
-  "reason": "Publish Opportunity" 
+  "requestType": "publish_request",
+  "reason": "Publish Opportunity"
 }
