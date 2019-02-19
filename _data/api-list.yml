@@ -4,7 +4,7 @@
 - title: Awards API
   description: API's to retrieve contract information from beta.sam.gov.
   url: awards-api/
-- title: Entity Information API
+- title: Entity Management API
   description: API's to retrieve Entity detail information from beta.sam.gov.
   url: entity-api/
 - title: Analytics.usa.gov API
