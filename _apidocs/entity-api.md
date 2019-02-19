@@ -207,7 +207,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | foreignGovernmentOwnershipMiddleInitial (string) | Foreign Government Ownership Middle Initial  |
 | foreignGovernmentOwnershipLastName  (string) | Foreign Government Ownership Last Name  |
 | foreignGovernmentOwnershipPhoneNum  (string) | Foreign Government Ownership Phone Number  |
-| foreignGovernmentOwnershipPhoneExt  (string) | Foreign Government Ownership Phone Ext  |
+| foreignGovernmentOwnershipPhoneExt  (string) | Foreign Government Ownership Phone Extension  |
 | foreignGovernmentOwnershipInternationalNum (string) | Foreign Government Ownership International Number  |
 | foreignGovernmentControlCountry (string) | Foreign Government Control Country  |
 | foreignEndProductName (string) | Foreign End Product Name   |
@@ -241,7 +241,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | title (string) |  Title |
 | USPhone (string) |  US Phone |
 | USPhoneExtension (string) |  US Phone Extension |
-| nonUSPhone (string) |  NON US Phone |
+| nonUSPhone (string) |  NON-US Phone |
 | fax (string) |  Fax |
 | email (string) |  Email |
 | address1(string) |  Address 1 | 
