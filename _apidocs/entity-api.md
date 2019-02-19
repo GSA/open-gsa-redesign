@@ -241,7 +241,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | title (string) |  Title |
 | USPhone (string) |  US Phone |
 | USPhoneExtension (string) |  US Phone Extension |
-| nonUSPhone (string) |  NON-US Phone |
+| nonUSPhone (string) |  Non-US Phone |
 | fax (string) |  Fax |
 | email (string) |  Email |
 | address1(string) |  Address 1 | 
