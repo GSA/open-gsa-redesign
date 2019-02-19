@@ -35,6 +35,6 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ## Contact Us
 
-* Reach out to the api.data.gov team at [api.data.gov@gsa.gov](api.data.gov@gsa.gov).  
+* Reach out to the api.data.gov team at [api.data.gov@gsa.gov](mailto:api.data.gov@gsa.gov).  
 
 <p><small><a href="#">Back to top</a></small></p>
