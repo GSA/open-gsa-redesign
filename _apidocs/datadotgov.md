@@ -88,15 +88,6 @@ To begin using this API, you will need to register for an API Key. You can sign 
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
-
-
-| HTTP Header Name | Description |
-| ---- | ----------- |
-| x-api-key | API key from api.data.gov.  For sample purposes, you can use `DEMO_KEY` as an API key. |
-
-
-
-
 <p><small><a href="#">Back to top</a></small></p>
 
 ## API Description
@@ -109,6 +100,14 @@ This API has one primary endpoint:
 **Description**   CKAN Endpoint
 
 Complete API documentation is available [from CKAN](https://docs.ckan.org/en/latest/api/index.html).
+
+
+
+
+| HTTP Header Name | Description |
+| ---- | ----------- |
+| x-api-key | API key from api.data.gov.  For sample purposes, you can use `DEMO_KEY` as an API key. |
+
 
 
 
