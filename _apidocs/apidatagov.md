@@ -26,6 +26,12 @@ For more details, refer to the [Admin API documentation found here](http://nrel.
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## OpenAPI Specification File
+
+You can view the full details of this API in the OpenAPI Specification file available here:
+<a href="https://api-umbrella.readthedocs.io/en/latest/_static/admin-api-swagger.yml">Open API specification file for the Sample API</a>
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
 
