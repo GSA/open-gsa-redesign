@@ -34,7 +34,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
     // This can be any API endpoint on your server, and you can use the
     // special {{api_key}} variable to automatically substitute in the API
     // key the user just signed up for.
-    exampleApiUrl: 'https://api.gsa.gov/systems/digital-registry/v1/agencies.json?api_key={{api_key}}&format=JSON',
+    exampleApiUrl: 'https://api.gsa.gov/systems/datagov/3/action/package_search?api_key={{api_key}}',
 
     // OPTIONAL: Provide extra content to display on the signup confirmation
     // page. This will be displayed below the user's API key and the example
@@ -110,14 +110,6 @@ This API has one primary endpoints:
 
 Complete API documentation is available [from CKAN](https://docs.ckan.org/en/latest/api/index.html).
 
-
-
-## OpenAPI Specification File
-
-You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/openapi.yaml">Open API specification file for the Sample API</a>
-
-<p><small><a href="#">Back to top</a></small></p>
 
 
 ## Contact Us
