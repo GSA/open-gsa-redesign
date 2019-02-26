@@ -4,9 +4,6 @@
 - title: Awards API
   description: API's to retrieve contract information from beta.sam.gov.
   url: awards-api/
-- title: Entity Management API
-  description: API's to retrieve Entity detail information from beta.sam.gov.
-  url: entity-api/
 - title: Analytics.usa.gov API
   description: The data for this API comes from Analytics.usa.gov, which is a unified Google Analytics account for U.S. federal government agencies known as the Digital Analytics Program. This program helps government agencies understand how people find, access, and use government services online. The program does not track individuals, and anonymizes the IP addresses of visitors.
   url: https://analytics.usa.gov/developer
@@ -34,6 +31,9 @@
 - title: eMuseum API
   description: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
   url: https://gsa.github.io/eMuseum-API/
+- title: Entity Management API
+  description: API's to retrieve Entity detail information from beta.sam.gov.
+  url: entity-api/
 - title: FedBizOpps Web Services
   description: This system supports Web Services for Federal buyers to post information to the database using their agency’s electronic procurement system.
   url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
