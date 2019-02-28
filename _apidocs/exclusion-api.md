@@ -107,7 +107,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | crossReferences --> crossReferencesList**   |
 | name (string) | Name  |
 | type (string) | Type  |
-| moreLocations () |  More Locations   |
+| moreLocations (list) |  More Locations   |
 | **vesselDetails** |
 | callSign (string) | Call Sign  |
 | type (string) | Type  |
