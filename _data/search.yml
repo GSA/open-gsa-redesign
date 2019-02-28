@@ -13114,10 +13114,6 @@
     - API
     - Data.gov
     - CKAN
-- title: Digital Signature API
-  body: The vision of Digital Signature Solution (DSS) is to deploy a solution, which contributes to the Digital Government Strategy, enabling a truly digital and paperless GSA. (Non-Public API.)
-  url: https://gsa.github.io/DSSAPIDocumentation/api-docs/
-  category: APIs
 - title: Discovery API
   body: The Discovery API drives the Discovery Market Research Tool. It contains information on various GSA services contracts and the awarded vendors, such as their contracting history, their eligibility for contract awards, and their small business designations.
   url: https://discovery.gsa.gov/api/
