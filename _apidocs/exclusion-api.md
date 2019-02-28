@@ -7,16 +7,19 @@ banner-heading: Exclusions API
 
 
 ## Overview
-The Exclusions will allow users to request Public Exclusion Information based on various optional request parameters. 
+The Exclusions API will allow users to request Public Exclusion Information based on various optional request parameters. 
 The response will be provided in the JSON format in a paginated manner.
+
+API also offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to 
+obtain the desired data.
 
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
 
 Exclusions API can be accessed from Beta or Alpha via the following end points:
-* https://api.sam.gov/prod/exclusions?api_key=< value >
-* https://api-alpha.sam.gov/prodlike/exclusions?api_key=< value >
+* https://api.sam.gov/prod/sam-exclusions?api_key=< value >
+* https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key=< value >
 
 Generating the API Key:
 * Registered users can request for a public API on 'Account Details' page.
@@ -28,7 +31,7 @@ Generating the API Key:
 
 ## API Description
 
-**Endpoint:** https://api.sam.gov/prod/exclusions?api_key=< value >
+**Endpoint:** https://api.sam.gov/prod/sam-exclusions?api_key=< value >
 
 **Description** Restful endpoint to retrieve Exclusion detail information
 
@@ -36,28 +39,26 @@ Generating the API Key:
 
 | Parameter Name | Description |
 | ---- | ----------- |
-| classification | Allows a string (Individual, Firm, Vessel, Special Entity Designation, null).<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&classification=Firm' |
-| exclusionName | Allows partial text or a complete text. <br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&exclusionName=SAM' |
-| exclusionType | Allows a string (IP, IC, PR, VE,  Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction, Voluntary Exclusion).<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&exclusionType=IP' |
-| exclusionProgram | Allows a string (RE, NP, PR, Reciprocal, Non-Procurement, Procurement).<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&exclusionProgram=Y' |
-| stateProvince | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&stateProvince=AR' |
-| country  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&country=USA' |
-| zipCode  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&zipCode=20171' |
-| duns | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&duns=D' |
-| excludingAgencyCode | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&excludingAgencyCode=' |
-| excludingAgencyName | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&excludingAgencyName=ALLTEL ' |
-| ctCode | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&ctCode=513310' |
-| activationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&activationDate=02/12/1999' |
-| creationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&creationDate=02/12/1999' |
-| deletionDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&deletionDate=02/12/1999' |
-| updateDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&updateDate=02/12/1999' |
-| terminationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&terminationDate=02/12/1999' |
-| terminationType  | Allows a string (Definite, Indefinite, null).<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&terminationType=Definite' |
-| cageCode | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&cageCode=0Y5L9' |
-| npi  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&npi=1053373266' |
-| ssn  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&ssn=XXXXXXXXX' |
-| tin  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&tin=XXXXX' |
-| includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'https://api.sam.gov/prod/exclusions?api_key=< value >&includeSections=exclusionOtherInformation,exclusionDetails' |
+| classification | Allows a string (Individual, Firm, Vessel, Special Entity Designation, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&classification=Firm' |
+| exclusionName | Allows partial text or a complete text. <br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&exclusionName=SAM' |
+| exclusionType | Allows a string (IP, IC, PR, VE,  Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction, Voluntary Exclusion).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&exclusionType=IP' |
+| exclusionProgram | Allows a string (RE, NP, PR, Reciprocal, Non-Procurement, Procurement).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&exclusionProgram=Y' |
+| stateProvince | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&stateProvince=AR' |
+| country  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&country=USA' |
+| zipCode  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&zipCode=20171' |
+| duns | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&duns=9725565' |
+| excludingAgencyCode | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&excludingAgencyCode=AF' |
+| excludingAgencyName | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&excludingAgencyName=FEDERAL' |
+| ctCode | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ctCode=ZZ' |
+| activationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&activationDate=02/12/1999' |
+| creationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&creationDate=02/12/1999' |
+| updateDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&updateDate=02/12/1999' |
+| terminationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&terminationDate=02/12/1999' |
+| cageCode | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&cageCode=0Y5L9' |
+| npi  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&npi=1053373266' |
+| ssn  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ssn=XXXXXXXXX' |
+| tin  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&tin=XXXXX' |
+| includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&includeSections=exclusionOtherInformation,exclusionDetails' |
 
 
 **Expected Result**
@@ -75,7 +76,6 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | **exclusionIdentification** |
 | duns (string) | DUNS  |
 | duns4 (string) | DUNS4   |
-| uIDType (string) | UDI Type   |
 | cageCode (string) | Cage Code  | 
 | npi (string) | NPI | 
 | prefix (string) | Prefix | 
@@ -83,7 +83,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | middleName (string) | Middle Name   |
 | lastName (string) | Last Name   |
 | suffix (string) | Suffix   |
-| companyName (string) | Company Name  |
+| name (string) | Company Name  |
 | **exclusionActions  --> listOfActions ** |
 | createDate (string) | Create Date   |
 | updateDate (string) | Update Date  |
