@@ -57,6 +57,7 @@ Generating the API Key:
 | physicalAddressZipPostalCode | Allows 5 digit zip code.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&physicalAddressZipPostalCode=02201' |
 | samExtractCode  | Allows 1 character code (A or E).<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&samExtractCode=A' |
 | includeSections | Allows to filter data by sections, entityInformation, coreData, assertions, repsAndCerts and pointsOfContact.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&includeSections=entityInformation,coreData' |
+| format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&format=csv' |
 
 **Expected Result**
 
