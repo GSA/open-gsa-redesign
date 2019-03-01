@@ -65,35 +65,38 @@ Generating the API Key:
 ### SAM Entity Extract API
 
 **Endpoint :**  https://api.sam.gov/prod/extracts/entity/public/daily/${file-name}?API_KEY={API_KEY_WITH_PUBLIC_ROLE}
+
 **Description :**  A static endpoint to retrieve public daily data
 
 **Endpoint :**  https://api.sam.gov/prod/extracts/entity/public/monthly/${file-name}?API_KEY={API_KEY_WITH_PUBLIC_ROLE}
+
 **Description :**  A static endpoint to retrieve public monthly data
 
 **Expected Result**<br>
-Click to view the full details of the data elements:
-<a href="v1/public_extract_layout.pdf">Public Extract Layout</a>
+Click to view the full details of the data elements: <a href="v1/public_extract_layout.pdf">Public Extract Layout</a>
 
 **Endpoint :**  https://api.sam.gov/prod/extracts/entity/fouo/daily/${file-name}?API_KEY={API_KEY_WITH_FOUO_ROLE}
+
 **Description :**  A static endpoint to retrieve FOUO daily data
 
 **Endpoint :**  https://api.sam.gov/prod/extracts/entity/fouo/monthly/${file-name}?API_KEY={API_KEY_WITH_FOUO_ROLE}
+
 **Description :**  A static endpoint to retrieve FOUO monthly data
 
 **Expected Result**<br>
-Click to view the full details of the data elements: 
-<a href="v1/fouo_extract_layout.pdf">FOUO Extract Layout</a>
+Click to view the full details of the data elements: <a href="v1/fouo_extract_layout.pdf">FOUO Extract Layout</a>
 
 
 **Endpoint :**  https://api.sam.gov/prod/extracts/entity/sensitive/daily/${file-name}?API_KEY={API_KEY_WITH_SENSITIVE_ROLE}
+
 **Description :**  A static endpoint to retrieve sensitive daily data
 
 **Endpoint :**  https://api.sam.gov/prod/extracts/entity/sensitive/monthly/${file-name}?API_KEY={API_KEY_WITH_SENSITIVE_ROLE}
+
 **Description :**  A static endpoint to retrieve sensitive monthly data
 
 **Expected Result**<br>
-Click to view the full details of the data elements:
-<a href="v1/sensitive_extract_layout.pdf">Sensitive Extract Layout</a>
+Click to view the full details of the data elements: <a href="v1/sensitive_extract_layout.pdf">Sensitive Extract Layout</a>
 
 
 ## HTTP Response Codes
