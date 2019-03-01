@@ -1,6 +1,6 @@
 ---
-title: Entity Management  API
-banner-heading: Entity Management API
+title: Entity Management Extracts API
+banner-heading: Entity Management Extracts API
 ---
 
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
@@ -39,7 +39,7 @@ acquisition related systems. Depending on the roles associated to that user ID e
 
 ## Getting Started
 
-SAM Entity Extract API can be accessed from prod via the following end points:
+Entity Management Extracts can be accessed from prod via the following end points:
 1. Public Endpoint:
    * https://api.sam.gov/prod/extracts/entity/public/daily/${file-name}?API_KEY={API_KEY_WITH_PUBLIC_ROLE}
    * https://api.sam.gov/prod/extracts/entity/public/monthly/${file-name}?API_KEY={API_KEY_WITH_PUBLIC_ROLE}

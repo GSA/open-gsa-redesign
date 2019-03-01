@@ -49,7 +49,7 @@
 - title: Product Service Codes (PSC) API
   description: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From Beta.sam.gov.
   url: https://s3.amazonaws.com/falextracts/Documentation/PSC/PSC%20Public%20API%20Documentation.pdf
-- title: SAM Entity Extract API
+- title: Entity Management Extracts API
   description: API to retrieve Entity Management Extracts from beta.sam.gov.
   url: sam-entity-extracts-api/
 - title: Search.gov i14y API
