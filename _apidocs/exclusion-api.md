@@ -84,7 +84,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | lastName (string) | Last Name   |
 | suffix (string) | Suffix   |
 | name (string) | Company Name  |
-| **exclusionActions  --> listOfActions ** |
+| **exclusionActions  --> listOfActions** |
 | createDate (string) | Create Date   |
 | updateDate (string) | Update Date  |
 | activateDate (string) | Activate Date |
@@ -103,7 +103,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | additionalComments (string) | Additional Comments  |
 | ctCode (string) | CT Code  |
 | dnbInvestigationStatus (string) | DNB Investigation Status    |
-| references --> referencesList**   |
+| **references --> referencesList**   |
 | name (string) | Name  |
 | type (string) | Type  |
 | moreLocations (list) |  More Locations   |
