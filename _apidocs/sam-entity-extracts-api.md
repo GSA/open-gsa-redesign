@@ -1,5 +1,5 @@
 ---
-title: Entity Management Extracts API
+title: SAM Entity Extracts API
 banner-heading: Entity Management Extracts API
 ---
 
@@ -62,7 +62,7 @@ Generating the API Key:
 
 ## API Description
 
-### SAM Entity Extract API
+### Entity Management Extracts API
 
 **Endpoint :**  https://api.sam.gov/prod/extracts/entity/public/daily/${file-name}?API_KEY={API_KEY_WITH_PUBLIC_ROLE}
 
