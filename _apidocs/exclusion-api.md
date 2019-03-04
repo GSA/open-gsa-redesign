@@ -59,7 +59,7 @@ Generating the API Key:
 | ssn  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ssn=XXXXXXXXX' |
 | tin  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&tin=XXXXX' |
 | includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&includeSections=exclusionOtherInformation,exclusionDetails' |
-
+| format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&format=csv' |
 
 **Expected Result**
 
