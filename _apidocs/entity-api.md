@@ -63,7 +63,7 @@ Generating the API Key:
 | stateOfIncorporation  | Allows 2 character code .<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&stateOfIncorporation=VA' |
 | countryOfIncorporation  | Allows 3 character code .<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&countryOfIncorporation=USA' |
 | naicsCode  | Allows 6 character code .<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&naicsCode=513310' |
-| naicsLimitedSB   | Allows 6 character code that is marked as Small Business by SBA looks at the sbaSmallBusiness column .<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&naicsLimitedSB=513310' |
+| naicsLimitedSB   | Allows 6 character code that is marked as Small Business .<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&naicsLimitedSB=513310' |
 | pscCode   | Allows 4 character code .<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&pscCode=0989' |
 | servedDisasterState   | Allows 2 character code .<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&servedDisasterState=VA' |
 | servedDisasterCounty   | Allows text .<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&servedDisasterCounty=FAIRFAX' |
