@@ -106,10 +106,7 @@ This API has six primary endpoints:
 
 **Description**  Rates by city/state/year
 
-**Example** https://api.gsa.gov/travel/perdiem/rates/city/Fairfax/state/VA/year/2019
-
-**Query String Parameters**
-
+**Example**  https://api.gsa.gov/travel/perdiem/rates/city/Fairfax/state/VA/year/2019
 
 **Expected Result**
 
@@ -130,7 +127,6 @@ This API has six primary endpoints:
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/state/VA/year/2019
 
-
 **Expected Result**
 
 | Name  | Description |
@@ -146,7 +142,7 @@ This API has six primary endpoints:
 
 **Endpoint 3:** https://api.gsa.gov/travel/perdiem/rates/zip/{zip}/year/{year}
 
-**Description**  Zip/Year
+**Description**  Rates by zip/year
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/zip/20171/year/2019
 
@@ -166,10 +162,9 @@ This API has six primary endpoints:
 
 **Endpoint 4:** https://api.gsa.gov/travel/perdiem/rates/conus/lodging/{year}
 
-**Description**  Conus/Lodging/year
+**Description**  Rates by Conus/Lodging/year
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/conus/lodging/2019
-
 
 **Expected Result**
 
@@ -186,7 +181,7 @@ This API has six primary endpoints:
 
 **Endpoint 5:** https://api.gsa.gov/travel/perdiem/rates/conus/zipcodes/{year}
 
-**Description**  Rates by Zipcodes/year by Destination
+**Description**  Rates by zip/year by destination
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/conus/zipcodes/2019
 
@@ -206,7 +201,7 @@ This API has six primary endpoints:
 
 **Endpoint 6:** https://api.gsa.gov/travel/perdiem/rates/conus/mie/{year}
 
-**Description**   Meals and Incidental Expense (M&IE) rates zipcodes in the co
+**Description**   Meals and Incidental Expense (M&IE) rates 
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/conus/mie/2019
 
