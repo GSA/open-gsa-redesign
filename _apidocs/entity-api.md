@@ -40,9 +40,10 @@ Generating the API Key:
 | activationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&activationDate=02/12/1999' |
 | cageCode | Allows exact 5 character value.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&cageCode=00000' |
 | dbaName | Allows Partial or Complete value.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&dbaName=ALLTEL' |
-| delinquentFederalDebtFlag | Allows Y or N or null.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&delinquentFederalDebtFlag=Y' |
+| debtSubjectToOffset| Allows Y or N or null.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&debtSubjectToOffset=Y' |
 | dodaac | Allows 9 character value.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&dodaac=025114695' |
-| duns  | Allows 9 digit value, a maximum of up to 100 values can be sent.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&duns=025114695' |
+| ueiDUNS| Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values can be sent.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&ueiDUNS=025114695' |
+| ueiSAMMI| Unique Entity Identifier SAMMI -Allows 9 digit value, a maximum of up to 100 values can be sent.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&ueiSAMMI=025114695' |
 | entityStructure  | Allows 2 character code or null.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&entityStructure=Z1' |
 | exclusionStatusFlag | Allows D or null.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&exclusionStatusFlag=D' |
 | expirationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/entity-management?api_key=< value >&expirationDate=02/12/1999' |
@@ -80,8 +81,9 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | Section/Sub-section/Tag | Description |
 | ---- |  ----------- |
 | **entityInformation** |
-| duns(string) | DUNS |
-| dunsPlus4 (string) | DUNS Plus4  |
+| ueiDUNS(string) | Unique Entity Identifier DUNS |
+| entityEFTIndicator(string) | Entity EFT Indicator|
+| ueiSAMMI(string) | Unique Entity Identifier SAMMI |
 | cageCode (string) | CAGE Code | 
 | nCageCode (string) | NCAGE Code  |
 | dodaac (string) | DoDAAC  |
@@ -95,6 +97,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | activeDate (string) | Active Date   |
 | noPublicDisplayFlag (string) | No Public Display Flag   |
 | exclusionStatusFlag (string) | Exclusion Status Flag   |
+| exclusionURL (string) | Active Exclusion URL    |
 | **coreData  --> businessInformation** |
 | corporateURL (string) | Corporate URL   |
 | companyDivisionName (string) | Company Division Name  |
@@ -127,7 +130,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | expirationDate (string) | SBA Business Type expiration date  |
 | **coreData  --> financialInformation** |
 | creditCardUsage (string) | Credit Card Usage   |
-| delinquentFedDebtFlag (string) | Delinquent Federal Debt Flag   |
+| debtSubjectToOffset (string) | Delinquent Federal Debt Flag   |
 | **assertions  --> goodsAndServices** |
 | primaryNaics (string) | Primary NAICS  |
 | **assertions  --> goodsAndServices  --> naicsList** |
@@ -281,7 +284,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages: <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * Duns can only be 9 digits. <br><br> * Duns Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections' are not permitted inside Query Param(q). <br><br>  * A maximum of 100 DUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. |
+| 400 | Application Level Error Messages: <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections' are not permitted inside Query Param(q). <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. |
 | 403 | API key is not correct or was not provided. |
 
 
