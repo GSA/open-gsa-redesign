@@ -93,7 +93,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
 ## Rate Limits
 
-The default rate limit is 1,000 hits per hour.  
+The default rate limit is 1,000 hits per hour.  If you need to request a rate limit change, please email us at [ocmweb@gsa.gov](mailto:ocmweb@gsa.gov)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -246,6 +246,6 @@ The API will return one of the following responses:
 
 ## Contact Us
 
-If you have questions or need help, [please file an issue here](https://github.com/gsa/gsa-apis/issues).  
+If you have questions or need help, please email us at [ocmweb@gsa.gov](mailto:ocmweb@gsa.gov) or file an issue in this [GitHub issue tracker](https://github.com/gsa/gsa-apis/issues).  
 
 <p><small><a href="#">Back to top</a></small></p>
