@@ -14,8 +14,6 @@ Use of this API is subject to [Terms of Service for GSA.gov's Developer Resource
 
 ## Getting Started
 
-
-
 To begin using this API, you will need to register for an API Key. You can sign up for an API key below.  After registration, you will need to provide this API key in the `x-api-key` HTTP header with every API request.
 
 
@@ -36,7 +34,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
     // This can be any API endpoint on your server, and you can use the
     // special {{api_key}} variable to automatically substitute in the API
     // key the user just signed up for.
-    exampleApiUrl: 'https://api.gsa.gov/travel/perdiem/rates/city/Fairfax/state/VA/year/2019?api_key={{api_key}}',
+    // exampleApiUrl: 'https://api.gsa.gov/travel/perdiem/rates/city/Fairfax/state/VA/year/2019?api_key={{api_key}}',
 
     // OPTIONAL: Provide extra content to display on the signup confirmation
     // page. This will be displayed below the user's API key and the example
@@ -93,6 +91,12 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## Rate Limits
+
+The default rate limit is 1,000 hits per hour.  
+
+<p><small><a href="#">Back to top</a></small></p>
+
 ## API Description
 
 
@@ -100,9 +104,9 @@ This API has eight primary endpoints:
 
 **Endpoint 1:** https://api.gsa.gov/travel/perdiem/rates/city/{city}/state/{ST}/year/{year}
 
-**Description**  City/state/year
+**Description**  Rates by city/state/year
 
-**Example** [https://api.gsa.gov/travel/perdiem/rates/city/Fairfax/state/VA/year/2019?api_key=DEMO_KEY](https://api.gsa.gov/travel/perdiem/rates/city/Fairfax/state/VA/year/2019?api_key=DEMO_KEY)
+**Example** https://api.gsa.gov/travel/perdiem/rates/city/Fairfax/state/VA/year/2019
 
 **Query String Parameters**
 
@@ -127,9 +131,9 @@ This API has eight primary endpoints:
 
 **Endpoint 2:** https://api.gsa.gov/travel/perdiem/rates/state/{ST}/year/{year}
 
-**Description**  State/year
+**Description**  Rates by state/year
 
-**Example** [https://api.gsa.gov/travel/perdiem/rates/state/VA/year/2019?api_key=DEMO_KEY](https://api.gsa.gov/travel/perdiem/rates/state/VA/year/2019?api_key=DEMO_KEY)
+**Example** https://api.gsa.gov/travel/perdiem/rates/state/VA/year/2019
 
 **Query String Parameters**
 
@@ -156,7 +160,7 @@ This API has eight primary endpoints:
 
 **Description**  Zip/Year
 
-**Example** [https://api.gsa.gov/travel/perdiem/rates/zip/20171/year/2019?api_key=DEMO_KEY](https://api.gsa.gov/travel/perdiem/rates/zip/20171/year/2019?api_key=DEMO_KEY)
+**Example** https://api.gsa.gov/travel/perdiem/rates/zip/20171/year/2019
 
 **Query String Parameters**
 
@@ -179,38 +183,11 @@ This API has eight primary endpoints:
 
 
 
-**Endpoint 4:** https://api.gsa.gov/travel/perdiem/rates/latestfy
-
-**Description**  Latest Fiscal Year
-
-**Example** [https://api.gsa.gov/travel/perdiem/rates/latestfy?api_key=DEMO_KEY](https://api.gsa.gov/travel/perdiem/rates/latestfy?api_key=DEMO_KEY)
-
-**Query String Parameters**
-
-| Parameter Name | Description |
-| ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
-
-**Expected Result**
-
-| Name  | Description |
-| ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-
-
-**Endpoint 5:** https://api.gsa.gov/travel/perdiem/rates/conus/lodging/{year}
+**Endpoint 4:** https://api.gsa.gov/travel/perdiem/rates/conus/lodging/{year}
 
 **Description**  Conus/Lodging/year
 
-**Example** [https://api.gsa.gov/travel/perdiem/rates/conus/lodging/2019?api_key=DEMO_KEY](https://api.gsa.gov/travel/perdiem/rates/conus/lodging/2019?api_key=DEMO_KEY)
+**Example** https://api.gsa.gov/travel/perdiem/rates/conus/lodging/2019
 
 **Query String Parameters**
 
@@ -233,38 +210,11 @@ This API has eight primary endpoints:
 
 
 
-**Endpoint 6:** https://api.gsa.gov/travel/perdiem/rates/conus/zipcodes/{year}
+**Endpoint 5:** https://api.gsa.gov/travel/perdiem/rates/conus/zipcodes/{year}
 
-**Description**  Conus/Zipcodes/year
+**Description**  Rates by Zipcodes/year by Destination
 
-**Example** [https://api.gsa.gov/travel/perdiem/rates/conus/zipcodes/2019?api_key=DEMO_KEY](https://api.gsa.gov/travel/perdiem/rates/conus/zipcodes/2019?api_key=DEMO_KEY)
-
-**Query String Parameters**
-
-| Parameter Name | Description |
-| ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
-
-**Expected Result**
-
-| Name  | Description |
-| ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-
-
-**Endpoint 7:** https://api.gsa.gov/travel/perdiem/rates/conus/mie/{year}
-
-**Description**  Conus/Zipcodes/M&IE
-
-**Example** [https://api.gsa.gov/travel/perdiem/rates/conus/mie/2019?api_key=DEMO_KEY](https://api.gsa.gov/travel/perdiem/rates/conus/mie/2019?api_key=DEMO_KEY)
+**Example** https://api.gsa.gov/travel/perdiem/rates/conus/zipcodes/2019
 
 **Query String Parameters**
 
@@ -286,11 +236,12 @@ This API has eight primary endpoints:
 |  |  |
 
 
-**Endpoint 8:** https://api.gsa.gov/travel/perdiem/rates/usps
 
-**Description**  USPS
+**Endpoint 6:** https://api.gsa.gov/travel/perdiem/rates/conus/mie/{year}
 
-**Example** [https://api.gsa.gov/travel/perdiem/rates/usps?api_key=DEMO_KEY](https://api.gsa.gov/travel/perdiem/rates/usps?api_key=DEMO_KEY)
+**Description**   Meals and Incidental Expense (M&IE) rates zipcodes in the co
+
+**Example** https://api.gsa.gov/travel/perdiem/rates/conus/mie/2019
 
 **Query String Parameters**
 
@@ -310,6 +261,7 @@ This API has eight primary endpoints:
 |  |  |
 |  |  |
 |  |  |
+
 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -343,6 +295,6 @@ The API will return one of the following responses:
 
 ## Contact Us
 
-
+If you have questions or need help, [please file an issue here](https://github.com/gsa/gsa-apis/issues).  
 
 <p><small><a href="#">Back to top</a></small></p>
