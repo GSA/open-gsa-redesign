@@ -100,24 +100,29 @@ The default rate limit is 1,000 hits per hour.  If you need to request a rate li
 ## API Description
 
 
-This API has six primary endpoints:
+This API has five primary endpoints:
 
 **Endpoint 1:** https://api.gsa.gov/travel/perdiem/rates/city/{city}/state/{ST}/year/{year}
 
 **Description**  Rates by city/state/year
 
-**Example**  https://api.gsa.gov/travel/perdiem/rates/city/Fairfax/state/VA/year/2019
+**Example**  https://api.gsa.gov/travel/perdiem/v2/rates/city/Fairfax/state/VA/year/2019
+
+**Query Parameters**
+
+| Name  | Description | Example |
+| ---- | ----------- | ----------- |
+| city | Destination city | 
+Fairfax |
+| state | Destination state | VA |
+| year | Fiscal year of travel.  Available back to 2010. | 2019 |
 
 **Expected Result**
 
 | Name  | Description |
 | ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+| meals | Meal rates per day, in dollars |
+| value | Lodging rates per day, in dollars |
 
 
 
@@ -127,17 +132,19 @@ This API has six primary endpoints:
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/state/VA/year/2019
 
+**Query Parameters**
+
+| Name  | Description | Example |
+| ---- | ----------- | ----------- |
+| state | Destination state | VA |
+| year | Fiscal year of travel.  Available back to 2010. | 2019 |
+
 **Expected Result**
 
 | Name  | Description |
 | ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
+| meals | Meal rates per day, in dollars |
+| value | Lodging rates per day, in dollars |
 
 
 **Endpoint 3:** https://api.gsa.gov/travel/perdiem/rates/zip/{zip}/year/{year}
@@ -146,76 +153,67 @@ This API has six primary endpoints:
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/zip/20171/year/2019
 
+**Query Parameters**
+
+| Name  | Description | Example |
+| ---- | ----------- | ----------- |
+| zip | Destination zip code | 
+20171 |
+| year | Fiscal year of travel.  Available back to 2010. | 2019 |
 
 **Expected Result**
 
 | Name  | Description |
 | ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+| meals | Meal rates per day, in dollars |
+| value | Lodging rates per day, in dollars |
 
 
 
 **Endpoint 4:** https://api.gsa.gov/travel/perdiem/rates/conus/lodging/{year}
 
-**Description**  Rates by Conus/Lodging/year
+**Description**  Lodging Rates for the Continental U.S. by Year
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/conus/lodging/2019
 
-**Expected Result**
+**Query Parameters**
 
-| Name  | Description |
-| ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-
-
-**Endpoint 5:** https://api.gsa.gov/travel/perdiem/rates/conus/zipcodes/{year}
-
-**Description**  Rates by zip/year by destination
-
-**Example** https://api.gsa.gov/travel/perdiem/rates/conus/zipcodes/2019
-
+| Name  | Description | Example |
+| ---- | ----------- | ----------- |
+| year | Fiscal year of travel.  Available back to 2010. | 2019 |
 
 **Expected Result**
 
 | Name  | Description |
 | ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+| meals | Meal rates per day, in dollars |
+| DID | Destination ID; a unique ID for the city and state pair |
 
 
 
-**Endpoint 6:** https://api.gsa.gov/travel/perdiem/rates/conus/mie/{year}
+**Endpoint 5:** https://api.gsa.gov/travel/perdiem/rates/conus/mie/{year}
 
 **Description**   Meals and Incidental Expense (M&IE) rates 
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/conus/mie/2019
 
+**Query Parameters**
+
+| Name  | Description | Example |
+| ---- | ----------- | ----------- |
+| year | Fiscal year of travel.  Available back to 2010. | 2019 |
+
 
 **Expected Result**
 
 | Name  | Description |
 | ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+| total |  |
+| breakfast |  |
+| lunch |  |
+| dinner |  |
+| incidental |  |
+| FirstLastDay |  |
 
 
 
