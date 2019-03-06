@@ -46,9 +46,10 @@ Generating the API Key:
 | stateProvince | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&stateProvince=AR' |
 | country  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&country=USA' |
 | zipCode  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&zipCode=20171' |
-| duns | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&duns=9725565' |
-| excludingAgencyCode | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&excludingAgencyCode=AF' |
-| excludingAgencyName | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&excludingAgencyName=FEDERAL' |
+| ueiDUNS | Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652, 047795005, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ueiDUNS=9725565' |
+| ueiSAMMI | Unique Entity Identifier SAMMI- 9 digit value (9725565, TF118652, 047795005, null) - Replacement for ueiDUNS").<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ueiSAMMI=9725565' |
+| excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&excludingAgencyCode=AF' |
+| excludingAgencyName | Allows a string (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&excludingAgencyName=FEDERAL' |
 | ctCode | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ctCode=ZZ' |
 | activationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&activationDate=02/12/1999' |
 | creationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&creationDate=02/12/1999' |
@@ -58,6 +59,8 @@ Generating the API Key:
 | npi  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&npi=1053373266' |
 | ssn  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ssn=XXXXXXXXX' |
 | tin  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&tin=XXXXX' |
+| page  | Page number.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&page=0' |
+| size  | Retrieves Records size per page.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&size=1' |
 | includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&includeSections=exclusionOtherInformation,exclusionDetails' |
 | format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&format=csv' |
 
@@ -74,8 +77,9 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | excludingAgencyCode (string) | Excluding Agency Code  |
 | excludingAgencyName (string) | Excluding Agency Name  |
 | **exclusionIdentification** |
-| duns (string) | DUNS  |
-| duns4 (string) | DUNS4   |
+| ueiDUNS (string) | Unique Entity Identifier DUNS  |
+| entityEFTIndicator (string) | Entity EFT Indicator   |
+| ueiSAMMI (string) | Unique Entity Identifier SAMMI   |
 | cageCode (string) | Cage Code  | 
 | npi (string) | NPI | 
 | prefix (string) | Prefix | 
