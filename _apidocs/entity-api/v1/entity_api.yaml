@@ -15,13 +15,19 @@ tags:
   - name: entity-management-controller
     description: Operations pertaining to Entity Management Data
 paths:
-  /sam/v1/entity-management:
+  /entity-management:
     get:
       tags:
         - entity-management-controller
       summary: " get Entity Management Details"
       operationId: getEntityManagementDataUsingGET
       parameters:
+        - name: api_key
+          in: query
+          description: API KEY
+          required: true
+          schema:
+            type: string
         - name: activationDate
           in: query
           description: A single Date or Date range in the format MM/DD/YYYY
@@ -41,14 +47,9 @@ paths:
           required: false
           schema:
             type: string
-        - name: delinquentFederalDebtFlag
+        - name: debtSubjectToOffset
           in: query
           description: Y or N or null
-          required: false
-          schema:
-            type: string
-        - name: disasterRegistry
-          in: query
           required: false
           schema:
             type: string
@@ -58,9 +59,17 @@ paths:
           required: false
           schema:
             type: string
-        - name: duns
+        - name: ueiDUNS
           in: query
-          description: 9 digit value; a maximum of up to 100 values can be sent
+          description: Unique Entity Identifier DUNS- 9 digit value; a maximum of up to 100
+            values can be sent
+          required: false
+          schema:
+            type: string
+        - name: ueiSAMMI
+          in: query
+          description: Unique Entity Identifier SAMMI- 9 digit value; a maximum of up to
+            100 values can be sent (This will replace ueiDUNS)
           required: false
           schema:
             type: string
@@ -142,10 +151,76 @@ paths:
           required: false
           schema:
             type: string
+        - name: businessType
+          in: query
+          description: 2 Character business typ codes
+          required: false
+          schema:
+            type: string
+        - name: entityType
+          in: query
+          description: 2 Character entity typ codes
+          required: false
+          schema:
+            type: string
+        - name: organizationStructure
+          in: query
+          description: 2 Character entity structure codes
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporation
+          in: query
+          description: 2 Character state code
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporation
+          in: query
+          description: 3 Character country code
+          required: false
+          schema:
+            type: string
+        - name: naicsCode
+          in: query
+          description: 6 Characters NAICS code
+          required: false
+          schema:
+            type: string
+        - name: naicsLimitedSB
+          in: query
+          description: 6 Characters NAICS code(with small business - Y)
+          required: false
+          schema:
+            type: string
+        - name: pscCode
+          in: query
+          description: 4 Characters PSC code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterState
+          in: query
+          description: Disaster relief served state, 2 character code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCounty
+          in: query
+          description: Disaster relief served county
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterMSA
+          in: query
+          description: Disaster relief served MSA
+          required: false
+          schema:
+            type: string
         - name: includeSections
           in: query
-          description: entityInformation, coreData, assertions, repsAndCerts,
-            mandatoryPOCs, optionalPOCs
+          description: Schema filtering param to filter sections, eg:entityInformation,
+            coreData, assertions, repsAndCerts, mandatoryPOCs, optionalPOCs
           required: false
           schema:
             type: string
@@ -167,12 +242,6 @@ paths:
           required: false
           schema:
             type: string
-        - name: requestParams
-          in: query
-          description: requestParams
-          required: true
-          schema:
-            type: ref
       responses:
         "200":
           description: Successfully retrieved list
@@ -193,19 +262,19 @@ components:
     BusinessInformation:
       type: object
       properties:
-        businessStartDate:
+        corporateURL:
           type: string
         companyDivisionName:
           type: string
         companyDivisionNumber:
           type: string
-        corporateURL:
-          type: string
-        correspondenceFlag:
+        businessStartDate:
           type: string
         fiscalYearEndCloseDate:
           type: string
         submissionDate:
+          type: string
+        correspondenceFlag:
           type: string
     FinancialAssistanceCertifications:
       type: object
@@ -217,23 +286,27 @@ components:
       properties:
         sbaBusinessType:
           type: string
+        name:
+          type: string
+        expirationDate:
+          type: string
     Certifications:
       type: object
       properties:
-        dFARResponses:
-          type: array
-          items:
-            $ref: "#/components/schemas/DFARResponses"
         fARResponses:
           type: array
           items:
             $ref: "#/components/schemas/FARResponses"
+        dFARResponses:
+          type: array
+          items:
+            $ref: "#/components/schemas/DFARResponses"
     FinancialInformation:
       type: object
       properties:
         creditCardUsage:
           type: string
-        delinquentFedDebtFlag:
+        debtSubjectToOffset:
           type: string
     BusinessType:
       type: object
@@ -243,38 +316,22 @@ components:
     DFARResponses:
       type: object
       properties:
-        listOfAnswers:
-          type: array
-          items:
-            $ref: "#/components/schemas/AnswersForDFAR"
         listOfProvisions:
           type: array
           items:
             $ref: "#/components/schemas/Provisions"
+        listOfAnswers:
+          type: array
+          items:
+            $ref: "#/components/schemas/AnswersForDFAR"
     ElectronicBusinessPOC:
       type: object
       properties:
-        address1:
-          type: string
-        address2:
-          type: string
-        city:
-          type: string
-        country:
-          type: string
-        email:
-          type: string
-        fax:
-          type: string
         firstName:
-          type: string
-        lastName:
           type: string
         middleInitial:
           type: string
-        nonUSPhone:
-          type: string
-        stateOrProvince:
+        lastName:
           type: string
         title:
           type: string
@@ -282,103 +339,123 @@ components:
           type: string
         usPhoneExtension:
           type: string
+        nonUSPhone:
+          type: string
+        fax:
+          type: string
+        email:
+          type: string
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        stateOrProvince:
+          type: string
         zipCode:
           type: string
         zipCodePlus4:
+          type: string
+        country:
           type: string
     NAICS:
       type: object
       properties:
         naicsCode:
           type: string
-        naicsException:
-          type: string
         sbaSmallBusiness:
+          type: string
+        naicsException:
           type: string
     FARResponses:
       type: object
       properties:
-        listOfAnswers:
-          type: array
-          items:
-            $ref: "#/components/schemas/Answers"
         listOfProvisions:
           type: array
           items:
             $ref: "#/components/schemas/Provisions"
+        listOfAnswers:
+          type: array
+          items:
+            $ref: "#/components/schemas/Answers"
     GoodsAndServices:
       type: object
       properties:
-        ediInformationFlag:
+        primaryNaics:
           type: string
         naicsList:
           type: array
           items:
             $ref: "#/components/schemas/NAICS"
-        primaryNaics:
-          type: string
         pscList:
           type: array
           items:
             $ref: "#/components/schemas/PSC"
+        ediInformationFlag:
+          type: string
     GeneralInformation:
       type: object
       properties:
-        countryOfIncorporation:
-          type: string
         entityStructure:
           type: string
         entityType:
           type: string
-        organizationStructure:
-          type: string
         profitStructure:
           type: string
+        organizationStructure:
+          type: string
         stateOfIncorporation:
+          type: string
+        countryOfIncorporation:
           type: string
     ArchitectEngineerResponses:
       type: object
       properties:
-        listOfAnswers:
-          type: array
-          items:
-            $ref: "#/components/schemas/AnswersForArch"
         listOfProvisions:
           type: array
           items:
             $ref: "#/components/schemas/Provisions"
+        listOfAnswers:
+          type: array
+          items:
+            $ref: "#/components/schemas/AnswersForArch"
     EntityInformation:
       type: object
       properties:
-        activationDate:
+        ueiDUNS:
+          type: string
+        entityEFTIndicator:
+          type: string
+        ueiSAMMI:
           type: string
         cageCode:
           type: string
-        dbaName:
+        nCageCode:
           type: string
         dodaac:
           type: string
-        duns:
-          type: string
-        dunsPlus4:
-          type: string
-        exclusionStatusFlag:
-          type: string
-        expirationDate:
-          type: string
-        lastUpdateDate:
-          type: string
         legalBusinessName:
           type: string
-        nCageCode:
-          type: string
-        noPublicDisplayFlag:
+        dbaName:
           type: string
         purposeOfRegistration:
           type: string
+        registrationStatus:
+          type: string
         registrationDate:
           type: string
-        registrationStatus:
+        lastUpdateDate:
+          type: string
+        expirationDate:
+          type: string
+        activationDate:
+          type: string
+        noPublicDisplayFlag:
+          type: string
+        exclusionStatusFlag:
+          type: string
+        exclusionURL:
           type: string
     PSC:
       type: object
@@ -388,27 +465,11 @@ components:
     PastPerformancePOC:
       type: object
       properties:
-        address1:
-          type: string
-        address2:
-          type: string
-        city:
-          type: string
-        country:
-          type: string
-        email:
-          type: string
-        fax:
-          type: string
         firstName:
-          type: string
-        lastName:
           type: string
         middleInitial:
           type: string
-        nonUSPhone:
-          type: string
-        stateOrProvince:
+        lastName:
           type: string
         title:
           type: string
@@ -416,9 +477,25 @@ components:
           type: string
         usPhoneExtension:
           type: string
+        nonUSPhone:
+          type: string
+        fax:
+          type: string
+        email:
+          type: string
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        stateOrProvince:
+          type: string
         zipCode:
           type: string
         zipCodePlus4:
+          type: string
+        country:
           type: string
     Answers:
       type: object
@@ -489,7 +566,7 @@ components:
           type: string
         historicallyBlackCollegeOrUniversity:
           type: string
-        hubZoneSmallBusinessConcerm:
+        hubZoneSmallBusinessConcern:
           type: string
         immediateOwnerCageCode:
           type: string
@@ -563,13 +640,13 @@ components:
           type: string
         city:
           type: string
-        country:
-          type: string
         state:
           type: string
         zip:
           type: string
         zipPlus4:
+          type: string
+        country:
           type: string
     PhysicalAddress:
       type: object
@@ -580,23 +657,23 @@ components:
           type: string
         city:
           type: string
-        congressionalDistrict:
-          type: string
-        country:
-          type: string
         state:
           type: string
         zip:
           type: string
         zipPlus4:
           type: string
+        country:
+          type: string
+        congressionalDistrict:
+          type: string
     Assertions:
       type: object
       properties:
-        disasterReliefData:
-          $ref: "#/components/schemas/DisasterReliefData"
         goodsAndServices:
           $ref: "#/components/schemas/GoodsAndServices"
+        disasterReliefData:
+          $ref: "#/components/schemas/DisasterReliefData"
     BusinessTypes:
       type: object
       properties:
@@ -611,27 +688,11 @@ components:
     GovernmentBusinessAlternatePOC:
       type: object
       properties:
-        address1:
-          type: string
-        address2:
-          type: string
-        city:
-          type: string
-        country:
-          type: string
-        email:
-          type: string
-        fax:
-          type: string
         firstName:
-          type: string
-        lastName:
           type: string
         middleInitial:
           type: string
-        nonUSPhone:
-          type: string
-        stateOrProvince:
+        lastName:
           type: string
         title:
           type: string
@@ -639,34 +700,34 @@ components:
           type: string
         usPhoneExtension:
           type: string
+        nonUSPhone:
+          type: string
+        fax:
+          type: string
+        email:
+          type: string
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        stateOrProvince:
+          type: string
         zipCode:
           type: string
         zipCodePlus4:
+          type: string
+        country:
           type: string
     PastPerformanceAlternatePOC:
       type: object
       properties:
-        address1:
-          type: string
-        address2:
-          type: string
-        city:
-          type: string
-        country:
-          type: string
-        email:
-          type: string
-        fax:
-          type: string
         firstName:
-          type: string
-        lastName:
           type: string
         middleInitial:
           type: string
-        nonUSPhone:
-          type: string
-        stateOrProvince:
+        lastName:
           type: string
         title:
           type: string
@@ -674,19 +735,35 @@ components:
           type: string
         usPhoneExtension:
           type: string
+        nonUSPhone:
+          type: string
+        fax:
+          type: string
+        email:
+          type: string
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        stateOrProvince:
+          type: string
         zipCode:
           type: string
         zipCodePlus4:
+          type: string
+        country:
           type: string
     RepsAndCerts:
       type: object
       properties:
         certifications:
           $ref: "#/components/schemas/Certifications"
-        financialAssistanceCertifications:
-          $ref: "#/components/schemas/FinancialAssistanceCertifications"
         qualifications:
           $ref: "#/components/schemas/Qualifications"
+        financialAssistanceCertifications:
+          $ref: "#/components/schemas/FinancialAssistanceCertifications"
     DisasterReliefData:
       type: object
       properties:
@@ -703,16 +780,16 @@ components:
       properties:
         businessInformation:
           $ref: "#/components/schemas/BusinessInformation"
+        physicalAddress:
+          $ref: "#/components/schemas/PhysicalAddress"
+        mailingAddress:
+          $ref: "#/components/schemas/MailingAddress"
+        generalInformation:
+          $ref: "#/components/schemas/GeneralInformation"
         businessTypes:
           $ref: "#/components/schemas/BusinessTypes"
         financialInformation:
           $ref: "#/components/schemas/FinancialInformation"
-        generalInformation:
-          $ref: "#/components/schemas/GeneralInformation"
-        mailingAddress:
-          $ref: "#/components/schemas/MailingAddress"
-        physicalAddress:
-          $ref: "#/components/schemas/PhysicalAddress"
     PointOfContact:
       type: object
       properties:
@@ -731,27 +808,11 @@ components:
     GovernmentBusinessPOC:
       type: object
       properties:
-        address1:
-          type: string
-        address2:
-          type: string
-        city:
-          type: string
-        country:
-          type: string
-        email:
-          type: string
-        fax:
-          type: string
         firstName:
-          type: string
-        lastName:
           type: string
         middleInitial:
           type: string
-        nonUSPhone:
-          type: string
-        stateOrProvince:
+        lastName:
           type: string
         title:
           type: string
@@ -759,51 +820,47 @@ components:
           type: string
         usPhoneExtension:
           type: string
+        nonUSPhone:
+          type: string
+        fax:
+          type: string
+        email:
+          type: string
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        stateOrProvince:
+          type: string
         zipCode:
           type: string
         zipCodePlus4:
+          type: string
+        country:
           type: string
     EMResponse:
       type: object
       properties:
-        assertions:
-          $ref: "#/components/schemas/Assertions"
-        coreData:
-          $ref: "#/components/schemas/CoreData"
         entityInformation:
           $ref: "#/components/schemas/EntityInformation"
-        includeSections:
-          type: array
-          items:
-            type: string
-        pointsOfContact:
-          $ref: "#/components/schemas/PointOfContact"
+        coreData:
+          $ref: "#/components/schemas/CoreData"
+        assertions:
+          $ref: "#/components/schemas/Assertions"
         repsAndCerts:
           $ref: "#/components/schemas/RepsAndCerts"
+        pointsOfContact:
+          $ref: "#/components/schemas/PointOfContact"
     ElectronicBusinessAlternatePOC:
       type: object
       properties:
-        address1:
-          type: string
-        address2:
-          type: string
-        city:
-          type: string
-        country:
-          type: string
-        email:
-          type: string
-        fax:
-          type: string
         firstName:
-          type: string
-        lastName:
           type: string
         middleInitial:
           type: string
-        nonUSPhone:
-          type: string
-        stateOrProvince:
+        lastName:
           type: string
         title:
           type: string
@@ -811,9 +868,25 @@ components:
           type: string
         usPhoneExtension:
           type: string
+        nonUSPhone:
+          type: string
+        fax:
+          type: string
+        email:
+          type: string
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        stateOrProvince:
+          type: string
         zipCode:
           type: string
         zipCodePlus4:
+          type: string
+        country:
           type: string
     AnswersForArch:
       type: object
