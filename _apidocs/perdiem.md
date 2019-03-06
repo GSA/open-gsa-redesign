@@ -100,7 +100,7 @@ The default rate limit is 1,000 hits per hour.
 ## API Description
 
 
-This API has eight primary endpoints:
+This API has six primary endpoints:
 
 **Endpoint 1:** https://api.gsa.gov/travel/perdiem/rates/city/{city}/state/{ST}/year/{year}
 
@@ -110,11 +110,6 @@ This API has eight primary endpoints:
 
 **Query String Parameters**
 
-| Parameter Name | Description |
-| ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
 
 **Expected Result**
 
@@ -135,13 +130,6 @@ This API has eight primary endpoints:
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/state/VA/year/2019
 
-**Query String Parameters**
-
-| Parameter Name | Description |
-| ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
 
 **Expected Result**
 
@@ -162,13 +150,6 @@ This API has eight primary endpoints:
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/zip/20171/year/2019
 
-**Query String Parameters**
-
-| Parameter Name | Description |
-| ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
 
 **Expected Result**
 
@@ -189,13 +170,6 @@ This API has eight primary endpoints:
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/conus/lodging/2019
 
-**Query String Parameters**
-
-| Parameter Name | Description |
-| ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
 
 **Expected Result**
 
@@ -216,13 +190,6 @@ This API has eight primary endpoints:
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/conus/zipcodes/2019
 
-**Query String Parameters**
-
-| Parameter Name | Description |
-| ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
 
 **Expected Result**
 
@@ -243,13 +210,6 @@ This API has eight primary endpoints:
 
 **Example** https://api.gsa.gov/travel/perdiem/rates/conus/mie/2019
 
-**Query String Parameters**
-
-| Parameter Name | Description |
-| ---- | ----------- |
-|  |  |
-|  |  |
-|  |  |
 
 **Expected Result**
 
@@ -268,11 +228,7 @@ This API has eight primary endpoints:
 
 ## About Per Diem Rates  
 
-GSA sets rates for geographic areas it determines called "primary destinations." Areas outside the primary destinations are covered by the same, nation-wide "standard rate." The Per Diem Rate database is organized by ZIP Code and fiscal year. Each row in the database corresponds to an individual ZIP code for a particular fiscal year. Each row contains 12 values for the hotel reimbursement for each of the 12 months in the Fiscal Year. The meals value applies to the entire year.
-
-If the ZIP code *is* in a primary destination, then the row also contains entries for the following: City (one or more cities most prominent in that area), County, State, and the "Destination ID." The DestinationID is an arbitrary value used internally to group ZIP codes. It is not typically presented to the general public.
-
-If the ZIP code *is not* in a primary destination, then the DestinationID is given as "0" (zero), the City value is "Standard Rate" and County is empty. The State is included along with the standard monthly hotel rates and the annual meal rate.
+GSA sets rates for geographic areas it determines called "primary destinations." Areas outside the primary destinations are covered by the same, nation-wide "standard rate." The Per Diem Rate database is organized by location and fiscal year. The meals value applies to the entire year.
 
 On the first and last days of a trip, the allowed meal reimbursement is 75% of the Per Diem Rate.
 
