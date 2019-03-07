@@ -112,8 +112,7 @@ This API has five primary endpoints:
 
 | Name  | Description | Example |
 | ---- | ----------- | ----------- |
-| city | Destination city | 
-Fairfax |
+| city | Destination city | Fairfax |
 | state | Destination state | VA |
 | year | Fiscal year of travel.  Available back to 2010. | 2019 |
 
@@ -157,8 +156,7 @@ Fairfax |
 
 | Name  | Description | Example |
 | ---- | ----------- | ----------- |
-| zip | Destination zip code | 
-20171 |
+| zip | Destination zip code | 20171 |
 | year | Fiscal year of travel.  Available back to 2010. | 2019 |
 
 **Expected Result**
