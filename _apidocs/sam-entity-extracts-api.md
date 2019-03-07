@@ -1,5 +1,5 @@
 ---
-title: SAM Entity Extracts API
+title: Entity Management Extracts API
 banner-heading: Entity Management Extracts API
 ---
 
