@@ -141,10 +141,10 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | pscCode	 (string) | PSC Code  |
 | **assertions  --> goodsAndServices** |
 | ediInformationFlag (string) | EDI Information Flag   |
-| **assertions  --> goodsAndServices  --> disasterReliefData** |
+| **assertions  --> disasterReliefData** |
 | disasterRegistryFlag (string) | Disaster Registry Flag   |
 | bondingFlag (string) | Bonding Flag   |
-| **assertions  --> goodsAndServices  --> geographicalAreaServed** |
+| **assertions  --> geographicalAreaServed** |
 | geographicalAreaServedState (string) | State code   |
 | geographicalAreaServedCounty (string) | County name   |
 | geographicalAreaServedmetropolitanStatisticalArea (string) | Metropolitan Statistical Area name   |
@@ -252,7 +252,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | qualificationURLHTML (string) | Foreign End Product Country  |
 | **repsAndCerts  --> financialAssistanceCertifications** |
 | financialAssistanceResponse (string) | Financial Assistance Response  |
-| **repsAndCerts  --> governmentBusinessPOC,<br> electronicBusinessPOC, governmentBusinessAlternatePOC,<br> electronicBusinessAlternatePOC, pastPerformancePOC,<br> pastPerformanceAlternatePOC** |
+| **pointOfContact --> governmentBusinessPOC,<br> electronicBusinessPOC, governmentBusinessAlternatePOC,<br> electronicBusinessAlternatePOC, pastPerformancePOC,<br> pastPerformanceAlternatePOC** |
 | firstName (string) |  First Name |
 | middleInitial (string) |  Middle Initial |
 | lastName (string) |  Last Name | 
