@@ -2034,9 +2034,9 @@ First Name</td>
 <td>string</td>
 <td>Country</td>
 </tr>
-</table><br>
+</table>
 
-</details>
+</details><br>
 </details>
 
 <details>
@@ -5181,9 +5181,9 @@ First Name</td>
 <td>string</td>
 <td>Country</td>
 </tr>
-</table><br>
+</table>
 
-</details>
+</details><br>
 
 </details>
 
@@ -5205,8 +5205,6 @@ First Name</td>
 <td><b>Expected Result</b> Same response as mentioned above applies.</td>
 </tr>
 </details>
-
-
 
 
 
@@ -8539,9 +8537,9 @@ First Name</td>
 <td>string</td>
 <td>Country</td>
 </tr>
-</table><br>
+</table>
 
-</details>
+</details><br>
 </details>
 
 <details>
