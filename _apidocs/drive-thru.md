@@ -1,12 +1,12 @@
 ---
-title: Drive-Thru API
-banner-heading: Drive Thru API
+title: Drive-thru API
+banner-heading: Drive-thru API
 ---
 
 
 ## Overview
 
-This is Agency API.
+This is Federal Agency Drive-thru API.
 
 <p><small><a href="#">Back to top</a></small></p>
 
