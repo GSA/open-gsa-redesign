@@ -104,9 +104,9 @@ This API has five primary endpoints:
 
 **Endpoint 1:** https://api.gsa.gov/travel/perdiem/v2/rates/city/{city}/state/{ST}/year/{year}
 
-**Description**  Rates by city/state/year
+**Description:**  Rates by city/state/year
 
-**Example**  https://api.gsa.gov/travel/perdiem/v2/rates/city/Fairfax/state/VA/year/2019
+**Example:**  https://api.gsa.gov/travel/perdiem/v2/rates/city/Fairfax/state/VA/year/2019
 
 **Query Parameters**
 
@@ -127,9 +127,9 @@ This API has five primary endpoints:
 
 **Endpoint 2:** https://api.gsa.gov/travel/perdiem/v2/rates/state/{ST}/year/{year}
 
-**Description**  Rates by state/year
+**Description:**  Rates by state/year
 
-**Example** https://api.gsa.gov/travel/perdiem/v2/rates/state/VA/year/2019
+**Example:** https://api.gsa.gov/travel/perdiem/v2/rates/state/VA/year/2019
 
 **Query Parameters**
 
@@ -148,9 +148,9 @@ This API has five primary endpoints:
 
 **Endpoint 3:** https://api.gsa.gov/travel/perdiem/v2/rates/zip/{zip}/year/{year}
 
-**Description**  Rates by zip/year
+**Description:**  Rates by zip/year
 
-**Example** https://api.gsa.gov/travel/perdiem/v2/rates/zip/20171/year/2019
+**Example:** https://api.gsa.gov/travel/perdiem/v2/rates/zip/20171/year/2019
 
 **Query Parameters**
 
@@ -170,9 +170,9 @@ This API has five primary endpoints:
 
 **Endpoint 4:** https://api.gsa.gov/travel/perdiem/v2/rates/conus/lodging/{year}
 
-**Description**  Lodging Rates for the Continental U.S. by Year
+**Description:**  Lodging Rates for the Continental U.S. by Year
 
-**Example** https://api.gsa.gov/travel/perdiem/v2/rates/conus/lodging/2019
+**Example:** https://api.gsa.gov/travel/perdiem/v2/rates/conus/lodging/2019
 
 **Query Parameters**
 
@@ -191,9 +191,9 @@ This API has five primary endpoints:
 
 **Endpoint 5:** https://api.gsa.gov/travel/perdiem/v2/rates/conus/mie/{year}
 
-**Description**   Meals and Incidental Expense (M&IE) rates 
+**Description:**   Meals and Incidental Expense (M&IE) rates 
 
-**Example** https://api.gsa.gov/travel/perdiem/v2/rates/conus/mie/2019
+**Example:** https://api.gsa.gov/travel/perdiem/v2/rates/conus/mie/2019
 
 **Query Parameters**
 
