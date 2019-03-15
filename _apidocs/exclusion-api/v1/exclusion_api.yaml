@@ -238,13 +238,13 @@ components:
     ExclusionIdentification:
       type: object
       properties:
-        cageCode:
+        ueiSAMMI:
           type: string
         ueiDUNS:
           type: string
         entityEFTIndicator:
           type: string
-        ueiSAMMI:
+        cageCode:
           type: string
         firstName:
           type: string
