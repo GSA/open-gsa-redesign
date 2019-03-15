@@ -77,9 +77,9 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | excludingAgencyCode (string) | Excluding Agency Code  |
 | excludingAgencyName (string) | Excluding Agency Name  |
 | **exclusionIdentification** |
+| ueiSAMMI (string) | Unique Entity Identifier SAMMI   |
 | ueiDUNS (string) | Unique Entity Identifier DUNS  |
 | entityEFTIndicator (string) | Entity EFT Indicator   |
-| ueiSAMMI (string) | Unique Entity Identifier SAMMI   |
 | cageCode (string) | Cage Code  | 
 | npi (string) | NPI | 
 | prefix (string) | Prefix | 
