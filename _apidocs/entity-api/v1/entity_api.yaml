@@ -73,9 +73,15 @@ paths:
           required: false
           schema:
             type: string
-        - name: entityStructure
+        - name: entityStructureCode
           in: query
           description: 2 character code or null
+          required: false
+          schema:
+            type: string
+        - name: entityStructureDesc
+          in: query
+          description: Description or null
           required: false
           schema:
             type: string
@@ -103,9 +109,15 @@ paths:
           required: false
           schema:
             type: string
-        - name: purposeOfRegistration
+        - name: purposeOfRegistrationCode
           in: query
           description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistrationDesc
+          in: query
+          description: Description or Null
           required: false
           schema:
             type: string
@@ -151,9 +163,27 @@ paths:
           required: false
           schema:
             type: string
-        - name: businessType
+        - name: businessTypeCode
           in: query
-          description: 2 Character business typ codes
+          description: 2 Character business typecodes
+          required: false
+          schema:
+            type: string
+        - name: businessTypeDesc
+          in: query
+          description: Description or null
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeCode
+          in: query
+          description: 2 Character business typecodes
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeDesc
+          in: query
+          description: Description or null
           required: false
           schema:
             type: string
@@ -169,21 +199,39 @@ paths:
           required: false
           schema:
             type: string
-        - name: stateOfIncorporation
+        - name: stateOfIncorporationCode
           in: query
           description: 2 Character state code
           required: false
           schema:
             type: string
-        - name: countryOfIncorporation
+        - name: stateOfIncorporationDesc
+          in: query
+          description: Description or null
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationCode
           in: query
           description: 3 Character country code
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationDesc
+          in: query
+          description: Description or null
           required: false
           schema:
             type: string
         - name: naicsCode
           in: query
           description: 6 Characters NAICS code
+          required: false
+          schema:
+            type: string
+        - name: naicsDesc
+          in: query
+          description: Description or null
           required: false
           schema:
             type: string
@@ -199,15 +247,33 @@ paths:
           required: false
           schema:
             type: string
-        - name: servedDisasterState
+        - name: pscDescription
+          in: query
+          description: Description or null
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterStateCode
           in: query
           description: Disaster relief served state, 2 character code
           required: false
           schema:
             type: string
-        - name: servedDisasterCounty
+        - name: servedDisasterStateName
+          in: query
+          description: Name or null
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyCode
           in: query
           description: Disaster relief served county
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyName
+          in: query
+          description: Name or null
           required: false
           schema:
             type: string
@@ -219,7 +285,7 @@ paths:
             type: string
         - name: includeSections
           in: query
-          description: Schema filtering param to filter sections, eg:entityInformation,
+          description: Schema filtering param to filter sections, eg:entityRegistration,
             coreData, assertions, repsAndCerts, mandatoryPOCs, optionalPOCs
           required: false
           schema:
@@ -262,13 +328,13 @@ components:
     BusinessInformation:
       type: object
       properties:
-        corporateURL:
+        entityURL:
           type: string
-        companyDivisionName:
+        entityDivisionName:
           type: string
-        companyDivisionNumber:
+        entityDivisionNumber:
           type: string
-        businessStartDate:
+        entityStartDate:
           type: string
         fiscalYearEndCloseDate:
           type: string
@@ -284,9 +350,9 @@ components:
     SBABusinessType:
       type: object
       properties:
-        sbaBusinessType:
+        sbaBusinessTypeCode:
           type: string
-        name:
+        sbaBusinessTypeDesc:
           type: string
         expirationDate:
           type: string
@@ -311,7 +377,9 @@ components:
     BusinessType:
       type: object
       properties:
-        businessType:
+        businessTypeCode:
+          type: string
+        businessTypeDesc:
           type: string
     DFARResponses:
       type: object
@@ -364,6 +432,8 @@ components:
       properties:
         naicsCode:
           type: string
+        naicsDescription:
+          type: string
         sbaSmallBusiness:
           type: string
         naicsException:
@@ -397,17 +467,29 @@ components:
     GeneralInformation:
       type: object
       properties:
-        entityStructure:
+        entityStructureCode:
           type: string
-        entityType:
+        entityStructureDesc:
           type: string
-        profitStructure:
+        entityTypeCode:
           type: string
-        organizationStructure:
+        entityTypeDesc:
           type: string
-        stateOfIncorporation:
+        profitStructureCode:
           type: string
-        countryOfIncorporation:
+        profitStructureDesc:
+          type: string
+        organizationStructureCode:
+          type: string
+        organizationStructureDesc:
+          type: string
+        stateOfIncorporationCode:
+          type: string
+        stateOfIncorporationDesc:
+          type: string
+        countryOfIncorporationCode:
+          type: string
+        countryOfIncorporationDesc:
           type: string
     ArchitectEngineerResponses:
       type: object
@@ -420,14 +502,14 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/AnswersForArch"
-    EntityInformation:
+    EntityRegistration:
       type: object
       properties:
+        ueiSAMMI:
+          type: string
         ueiDUNS:
           type: string
         entityEFTIndicator:
-          type: string
-        ueiSAMMI:
           type: string
         cageCode:
           type: string
@@ -461,6 +543,8 @@ components:
       type: object
       properties:
         pscCode:
+          type: string
+        pscDescription:
           type: string
     PastPerformancePOC:
       type: object
@@ -625,9 +709,13 @@ components:
     GeographicalAreas:
       type: object
       properties:
-        geographicalAreaServedCounty:
+        geographicalAreaServedCountyCode:
           type: string
-        geographicalAreaServedState:
+        geographicalAreaServedCountyName:
+          type: string
+        geographicalAreaServedStateCode:
+          type: string
+        geographicalAreaServedStateName:
           type: string
         geographicalAreaServedmetropolitanStatisticalArea:
           type: string
@@ -843,8 +931,8 @@ components:
     EMResponse:
       type: object
       properties:
-        entityInformation:
-          $ref: "#/components/schemas/EntityInformation"
+        entityRegistration:
+          $ref: "#/components/schemas/EntityRegistration"
         coreData:
           $ref: "#/components/schemas/CoreData"
         assertions:
