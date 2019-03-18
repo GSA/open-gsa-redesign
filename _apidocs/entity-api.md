@@ -129,7 +129,7 @@ Generating the API Key:
 
 <tr>
 <td>entityStructureDesc</td>
-<td>Description or null
+<td>Allows Description or null
 "Partnership or Limited Liability Partnership".
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
@@ -172,7 +172,7 @@ Generating the API Key:
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
-<td>Description IGT
+<td>Allows Description IGT
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&purposeOfRegistrationDesc=All Awards</td>
 </tr>
@@ -263,7 +263,7 @@ Generating the API Key:
 
 <tr>
 <td>stateOfIncorporationDesc</td>
-<td>Allows 2 character code.
+<td>Allows Name or null Virginia.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&stateOfIncorporationDesc=Virginia</td>
 </tr>
@@ -277,7 +277,7 @@ Generating the API Key:
 
 <tr>
 <td>countryOfIncorporationDesc</td>
-<td>Allows 3 character code.
+<td>Allows Name or null Unites States.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&countryOfIncorporationDesc=United States Of America</td>
 </tr>
@@ -326,7 +326,7 @@ Generating the API Key:
 
 <tr>
 <td>servedDisasterStateName</td>
-<td>Allows 2 character code.
+<td>Allows Name or null Virginia.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&servedDisasterStateName=Virginia</td>
 </tr>
@@ -335,12 +335,12 @@ Generating the API Key:
 <td>servedDisasterCountyCode</td>
 <td>Allows text.
 <br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterCountyCode=FAIRFAX</td>
+<br>api_key=< value >&servedDisasterCountyCode=12334</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
-<td>Allows text.
+<td>Allows Name or null Virginia.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&servedDisasterCountyName=FAIRFAX</td>
 </tr>
@@ -617,7 +617,7 @@ Generating the API Key:
 
 <tr>
 <td>entityStructureDesc</td>
-<td>Description or null
+<td>Allows Description or null
 "Partnership or Limited Liability Partnership".
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
@@ -2247,7 +2247,7 @@ First Name</td>
 
 <tr>
 <td>entityStructureDesc</td>
-<td>Description or null
+<td>Allows Description or null
 "Partnership or Limited Liability Partnership".
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
@@ -2290,7 +2290,7 @@ First Name</td>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
-<td>Description IGT
+<td>Allows Description IGT
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&purposeOfRegistrationDesc=All Awards</td>
 </tr>
@@ -2367,7 +2367,7 @@ First Name</td>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
-<td>Allows 2 character code.
+<td>Allows Name or null Virginia.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&stateOfIncorporationDesc=Virginia</td>
 </tr>
@@ -2381,7 +2381,7 @@ First Name</td>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
-<td>Allows 3 character code.
+<td>Allows Name or null Unites States.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&countryOfIncorporationDesc=United States Of America</td>
 </tr>
@@ -2430,7 +2430,7 @@ First Name</td>
 
 <tr>
 <td>servedDisasterStateName</td>
-<td>Allows 2 character code.
+<td>Allows Name or null Virginia.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&servedDisasterStateName=Virginia</td>
 </tr>
@@ -2439,12 +2439,12 @@ First Name</td>
 <td>servedDisasterCountyCode</td>
 <td>Allows text.
 <br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterCountyCode=FAIRFAX</td>
+<br>api_key=< value >&servedDisasterCountyCode=32324</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
-<td>Allows text.
+<td>Allows Name or null Virginia.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&servedDisasterCountyName=FAIRFAX</td>
 </tr>
@@ -5515,7 +5515,8 @@ First Name</td>
 
 <tr>
 <td>entityStructureDesc</td>
-<td>Allows 2 character code or null.
+<td>Allows Description or null
+"Partnership or Limited Liability Partnership".
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
 </tr>
@@ -5557,7 +5558,7 @@ First Name</td>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
-<td>Description IGT
+<td>Allows Description IGT
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&purposeOfRegistrationDesc=All Awards</td>
 </tr>
@@ -5648,7 +5649,7 @@ First Name</td>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
-<td>Allows 2 character code.
+<td>Allows Name or null Virginia.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&stateOfIncorporationDesc=Virginia</td>
 </tr>
@@ -5662,7 +5663,7 @@ First Name</td>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
-<td>Allows 3 character code.
+<td>Allows Name or null Unites States.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&countryOfIncorporationDesc=United States Of America</td>
 </tr>
@@ -5720,12 +5721,12 @@ First Name</td>
 <td>servedDisasterCountyCode</td>
 <td>Allows text.
 <br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterCountyCode=FAIRFAX</td>
+<br>api_key=< value >&servedDisasterCountyCode=763577</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
-<td>Allows text.
+<td>Allows Name or null Virginia.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&servedDisasterCountyName=FAIRFAX</td>
 </tr>
