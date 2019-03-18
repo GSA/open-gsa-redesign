@@ -235,7 +235,7 @@ Generating the API Key:
 
 <tr>
 <td>businessTypeDesc</td>
-<td>Complete Description or null DOT Certified DBE
+<td>Allows Complete Description or null DOT Certified DBE
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&businessTypeDesc=Woman Owned Business </td>
 </tr>
@@ -291,7 +291,7 @@ Generating the API Key:
 
 <tr>
 <td>naicsDesc</td>
-<td>Description or null "OTHER GENERAL GOVERNMENT SUPPORT"
+<td>Allows Description or null "OTHER GENERAL GOVERNMENT SUPPORT"
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&naicsDesc=Furniture Stores</td>
 </tr>
@@ -312,7 +312,7 @@ Generating the API Key:
 
 <tr>
 <td>pscDesc</td>
-<td>Complete Description or null "O-RING".
+<td>Allows Complete Description or null "O-RING".
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&pscDesc=Screws</td>
 </tr>
