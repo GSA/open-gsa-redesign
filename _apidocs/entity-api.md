@@ -2295,7 +2295,15 @@ First Name</td>
 <td>servedDisasterCounty</td>
 <td>Allows text.
 <br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&servedDisasterCounty=FAIRFAX</td>
+<br>api_key=< value >&servedDisasterCounty=1212</td>
+</tr>
+
+
+<tr>
+<td>taxpayerIdentificationNumber</td>
+<td>Allows text.
+<br>https://api.sam.gov/prod/entity-management/fouo?
+<br>api_key=< value >&taxpayerIdentificationNumber=XXXXXXXXX</td>
 </tr>
 
 <tr>
@@ -5442,7 +5450,14 @@ First Name</td>
 <td>servedDisasterCounty</td>
 <td>Allows text.
 <br>https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&servedDisasterCounty=FAIRFAX</td>
+<br>api_key=< value >&servedDisasterCounty=1234</td>
+</tr>
+
+<tr>
+<td>taxpayerIdentificationNumber</td>
+<td>Allows text.
+<br>https://api.sam.gov/prod/entity-management/fouo?
+<br>api_key=< value >&taxpayerIdentificationNumber=XXXXXXXXX</td>
 </tr>
 
 <tr>
