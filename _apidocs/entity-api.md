@@ -17,7 +17,8 @@ The Entity Management API will allow users to request Public Entity Information 
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
 
-Extract Endpoint:
+Additional  Features:
+Users can accomplish below functionality using format parameter
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
 * It returns asynchronous responses by sending file downloadable links in the browser and in the emails.
 * It returns data in the JSON or CSV format as selected by the user.
@@ -30,20 +31,14 @@ Extract Endpoint:
 Public Entity Details can be accessed from Beta or Alpha via the following end points:
    * https://api.sam.gov/prod/entity-management?api_key=< value >
    * https://api-alpha.sam.gov/prodlike/entity-management?api_key=< value >
-   * https://api.sam.gov/prod/entity-management/extract?api_key=< value >
-   * https://api-alpha.sam.gov/prodlike/entity-management/extract?api_key=< value ><br>
 
 FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
    * https://api.sam.gov/prod/entity-management/fouo?api_key=< value >
    * https://api-alpha.sam.gov/prodlike/entity-management/fouo?api_key=< value >
-   * https://api.sam.gov/prod/entity-management/extract/fouo?api_key=< value >
-   * https://api-alpha.sam.gov/prodlike/entity-management/extract/fouo?api_key=< value ><br>
 
 Sensitive Entity Details  can be accessed from Beta or Alpha via the following end points:
    * https://api.sam.gov/prod/entity-management/sensitive?api_key=< value >
    * https://api-alpha.sam.gov/prodlike/entity-management/sensitive?api_key=< value >  
-   * https://api.sam.gov/prod/entity-management/extract/sensitive?api_key=< value >
-   * https://api-alpha.sam.gov/prodlike/entity-management/extract/sensitive?api_key=< value >
 
 Generating the API Key:
 * Registered users can request for a public API on 'Account Details' page.
@@ -126,10 +121,17 @@ Generating the API Key:
 </tr>
 
 <tr>
-<td>entityStructure</td>
+<td>entityStructureCode</td>
 <td>Allows 2 character code or null.
 <br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&entityStructure=Z1</td>
+<br>api_key=< value >&entityStructureCode=Z1</td>
+</tr>
+
+<tr>
+<td>entityStructureDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
 </tr>
 
 <tr>
@@ -161,10 +163,17 @@ Generating the API Key:
 </tr>
 
 <tr>
-<td>purposeOfRegistration</td>
+<td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
 <br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&purposeOfRegistration=Z2</td>
+<br>api_key=< value >&purposeOfRegistrationCode=Z2</td>
+</tr>
+
+<tr>
+<td>purposeOfRegistrationDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&purposeOfRegistrationDesc=All Awards</td>
 </tr>
 
 <tr>
@@ -217,31 +226,59 @@ Generating the API Key:
 </tr>
 
 <tr>
-<td>businessType</td>
+<td>businessTypeCode</td>
 <td>Allows 2 character code.
 <br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&organizationStructure=2L</td>
+<br>api_key=< value >&businessTypeCode=2L</td>
 </tr>
 
 <tr>
-<td>organizationStructure</td>
-<td>Allows 2 character code.
+<td>businessTypeDesc</td>
+<td>Allows a text.
 <br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&organizationStructure=2L</td>
+<br>api_key=< value >&businessTypeDesc=Woman Owned Business </td>
 </tr>
 
 <tr>
-<td>stateOfIncorporation</td>
+<td>organizationStructureCode</td>
 <td>Allows 2 character code.
 <br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&stateOfIncorporation=VA</td>
+<br>api_key=< value >&organizationStructureCode=2L</td>
 </tr>
 
 <tr>
-<td>countryOfIncorporation</td>
+<td>organizationStructureDesc</td>
+<td>Allows 2 character code.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&organizationStructureDesc=Limited Liability Company</td>
+</tr>
+
+<tr>
+<td>stateOfIncorporationCode</td>
+<td>Allows 2 character code.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&stateOfIncorporationCode=VA</td>
+</tr>
+
+<tr>
+<td>stateOfIncorporationDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&stateOfIncorporationDesc=Virginia</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
 <br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&countryOfIncorporation=USA</td>
+<br>api_key=< value >&countryOfIncorporationCode=USA</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&countryOfIncorporationDesc=United States Of America</td>
 </tr>
 
 <tr>
@@ -249,6 +286,13 @@ Generating the API Key:
 <td>Allows 6 character code.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&naicsCode=513310</td>
+</tr>
+
+<tr>
+<td>naicsDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&naicsDesc=Furniture Stores</td>
 </tr>
 
 <tr>
@@ -266,17 +310,38 @@ Generating the API Key:
 </tr>
 
 <tr>
-<td>servedDisasterState</td>
-<td>Allows 2 character code.
+<td>pscDesc</td>
+<td>Allows a text.
 <br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterState=VA</td>
+<br>api_key=< value >&pscDesc=Screws</td>
 </tr>
 
 <tr>
-<td>servedDisasterCounty</td>
+<td>servedDisasterStateCode</td>
+<td>Allows 2 character code.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&servedDisasterStateCode=VA</td>
+</tr>
+
+<tr>
+<td>servedDisasterStateName</td>
+<td>Allows Name or null Virginia.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&servedDisasterStateName=Virginia</td>
+</tr>
+
+<tr>
+<td>servedDisasterCountyCode</td>
 <td>Allows text.
 <br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterCounty=FAIRFAX</td>
+<br>api_key=< value >&servedDisasterCountyCode=12334</td>
+</tr>
+
+<tr>
+<td>servedDisasterCountyName</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&servedDisasterCountyName=FAIRFAX</td>
 </tr>
 
 <tr>
@@ -287,17 +352,10 @@ Generating the API Key:
 </tr>
 
 <tr>
-<td>servedDisasterCounty</td>
-<td>Allows text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterCounty=FAIRFAX</td>
-</tr>
-
-<tr>
 <td>includeSections</td>
-<td>Allows to filter data by sections, entityInformation, coreData, assertions, repsAndCerts and pointsOfContact.
+<td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
 <br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&includeSections=entityInformation,coreData</td>
+<br>api_key=< value >&includeSections=entityRegistration,coreData</td>
 </tr>
 
 <tr>
@@ -306,6 +364,7 @@ Generating the API Key:
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&format=csv</td>
 </tr>
+
 </table>
 </details><br>
 
@@ -313,12 +372,18 @@ Generating the API Key:
 <td><b> Expected Result:</b></td>
 </tr>
 <details>
-<summary>entityInformation Section</summary>
+<summary>entityRegistration Section</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ueiSAMMI</td>
+<td>string</td>
+<td>Unique Entity Identifier SAMMI</td>
 </tr>
 
 <tr>
@@ -331,12 +396,6 @@ Generating the API Key:
 <td>entityEFTIndicator</td>
 <td>string</td>
 <td>Entity EFT Indicator</td>
-</tr>
-
-<tr>
-<td>ueiSAMMI</td>
-<td>string</td>
-<td>Unique Entity Identifier SAMMI</td>
 </tr>
 
 <tr>
@@ -370,9 +429,15 @@ Generating the API Key:
 </tr>
 
 <tr>
-<td>purposeOfRegistration </td>
+<td>purposeOfRegistrationCode </td>
 <td>string</td>
-<td>Purpose of Registration</td>
+<td>Purpose of Registration Code</td>
+</tr>
+
+<tr>
+<td>purposeOfRegistrationDesc</td>
+<td>string</td>
+<td>Purpose of Registration Description</td>
 </tr>
 
 <tr>
@@ -427,7 +492,7 @@ Generating the API Key:
 
 <details>
 <summary>coreData Section</summary><br>
-<summary>businessInformation Sub Section</summary>
+<summary>entityRegistration Sub Section</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -436,27 +501,27 @@ Generating the API Key:
 </tr>
 
 <tr>
-<td>corporateURL</td>
+<td>entityURL</td>
 <td>string</td>
-<td>Corporate URL</td>
+<td>Entity URL</td>
 </tr>
 
 <tr>
-<td>companyDivisionName</td>
+<td>entityDivisionName</td>
 <td>string</td>
-<td>Company Division Name</td>
+<td>Entity Division Name</td>
 </tr>
 
 <tr>
-<td>companyDivisionNumber</td>
+<td>entityDivisionNumber</td>
 <td>string</td>
-<td>Company Division Number</td>
+<td>Entity Division Number</td>
 </tr>
 
 <tr>
-<td>businessStartDate</td>
+<td>entityStartDate</td>
 <td>string</td>
-<td>Business Start Date</td>
+<td>Entity Start Date</td>
 </tr>
 
 <tr>
@@ -544,39 +609,78 @@ Generating the API Key:
 </tr>
 
 <tr>
-<td>entityStructure</td>
+<td>entityStructureCode</td>
 <td>string</td>
-<td>Entity Structure</td>
+<td>Entity Structure Code</td>
 </tr>
 
 <tr>
-<td>entityType</td>
+<td>entityStructureDesc</td>
+<td>Allows Description or null
+"Partnership or Limited Liability Partnership".
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
+</tr>
+
+
+<tr>
+<td>entityTypeCode</td>
 <td>string</td>
-<td>Entity Type</td>
+<td>Entity Type Code</td>
 </tr>
 
 <tr>
-<td>profitStructure</td>
+<td>entityTypeDesc</td>
 <td>string</td>
-<td>Profit Structure</td>
+<td>Entity Type Description</td>
 </tr>
 
 <tr>
-<td>organizationStructure</td>
+<td>profitStructureCode</td>
 <td>string</td>
-<td>Organization Structure</td>
+<td>Profit Structure Code</td>
 </tr>
 
 <tr>
-<td>stateOfIncorporation</td>
+<td>profitStructureDesc</td>
 <td>string</td>
-<td>State Of Incorporation</td>
+<td>Profit Structure Description</td>
 </tr>
 
 <tr>
-<td>countryOfIncorporation</td>
+<td>organizationStructureCode</td>
 <td>string</td>
-<td>Country Of Incorporation</td>
+<td>Organization Structure Code</td>
+</tr>
+
+<tr>
+<td>organizationStructureDesc</td>
+<td>string</td>
+<td>Organization Structure Description</td>
+</tr>
+
+<tr>
+<td>stateOfIncorporationCode</td>
+<td>string</td>
+<td>State Of Incorporation Code</td>
+</tr>
+
+<tr>
+<td>stateOfIncorporationDesc</td>
+<td>string</td>
+<td>State Of Incorporation Description</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationCode</td>
+<td>string</td>
+<td>Country Of Incorporation Code</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationDesc</td>
+<td>string</td>
+<td>Country Of Incorporation Description</td>
 </tr>
 </table>
 
@@ -602,9 +706,15 @@ Generating the API Key:
 </tr>
 
 <tr>
-<td>businessType</td>
+<td>businessTypeCode</td>
 <td>string</td>
-<td>Business Type</td>
+<td>Business Type Code</td>
+</tr>
+
+<tr>
+<td>businessTypeDesc</td>
+<td>string</td>
+<td>Business Type Description</td>
 </tr>
 </table>
 </details>
@@ -626,15 +736,15 @@ Generating the API Key:
 </tr>
 
 <tr>
-<td>sbaBusinessType</td>
+<td>sbaBusinessTypeCode</td>
 <td>string</td>
-<td>SBA Business Type</td>
+<td>SBA Business Type Code</td>
 </tr>
 
 <tr>
-<td>name</td>
+<td>sbaBusinessTypeDesc</td>
 <td>string</td>
-<td>Description</td>
+<td>SBA Business Type Description</td>
 </tr>
 
 <tr>
@@ -705,6 +815,12 @@ Generating the API Key:
 <td>naicsCode</td>
 <td>string</td>
 <td>NAICS Code</td>
+</tr>
+
+<tr>
+<td>naicsDescription</td>
+<td>string</td>
+<td>NAICS Description</td>
 </tr>
 
 <tr>
@@ -787,13 +903,25 @@ Generating the API Key:
 </tr>
 
 <tr>
-<td>geographicalAreaServedState</td>
+<td>geographicalAreaServedStateCode</td>
 <td>string</td>
 <td>State code</td>
 </tr>
 
 <tr>
-<td>geographicalAreaServedCounty</td>
+<td>geographicalAreaServedStateName</td>
+<td>string</td>
+<td>State code</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedCountyCode</td>
+<td>string</td>
+<td>County name</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedCountyName</td>
 <td>string</td>
 <td>County name</td>
 </tr>
@@ -2039,27 +2167,6 @@ First Name</td>
 </details><br>
 </details>
 
-<details>
-<summary><b>Public Entity Management Extract Endpoint</b></summary>
-<tr>
-<td><b>Endpoint:</b> https://api.sam.gov/prod/entity-management/extract?api_key=< value > </td>
-</tr><br>
-
-<tr>
-<td><b>Description:</b> Restful endpoint to retrieve Entity detail information in the form of csv or json format instead of paginated.</td>
-</tr><br>
-
-<tr>
-<td><b>Query String Parameters</b> Same parameters as mentioned above, excluding page and size, apply.</td>
-</tr><br>
-
-<tr>
-<td><b>Expected Result</b> Same response as mentioned above applies.</td>
-</tr>
-</details>
-
-
-
 
 
 ### FOUO Endpoints Information
@@ -2138,6 +2245,14 @@ First Name</td>
 </tr>
 
 <tr>
+<td>entityStructureDesc</td>
+<td>Allows a text.
+"Partnership or Limited Liability Partnership".
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
+</tr>
+
+<tr>
 <td>exclusionStatusFlag</td>
 <td>Allows D or null.
 <br>https://api.sam.gov/prod/entity-management/fouo?
@@ -2166,10 +2281,17 @@ First Name</td>
 </tr>
 
 <tr>
-<td>purposeOfRegistration</td>
+<td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
 <br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&purposeOfRegistration=Z2</td>
+<br>api_key=< value >&purposeOfRegistrationCode=Z2</td>
+</tr>
+
+<tr>
+<td>purposeOfRegistrationDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&purposeOfRegistrationDesc=All Awards</td>
 </tr>
 
 <tr>
@@ -2222,95 +2344,129 @@ First Name</td>
 </tr>
 
 <tr>
-<td>businessType</td>
+<td>organizationStructureCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&organizationStructure=2L</td>
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&organizationStructureCode=2L</td>
 </tr>
 
 <tr>
-<td>organizationStructure</td>
+<td>organizationStructureDesc</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&organizationStructure=2L</td>
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&organizationStructureDesc=Limited Liability Company</td>
 </tr>
 
 <tr>
-<td>stateOfIncorporation</td>
+<td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&stateOfIncorporation=VA</td>
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&stateOfIncorporationCode=VA</td>
 </tr>
 
 <tr>
-<td>countryOfIncorporation</td>
+<td>stateOfIncorporationDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&stateOfIncorporationDesc=Virginia</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&countryOfIncorporation=USA</td>
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&countryOfIncorporationCode=USA</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationDesc</td>
+<td>Allows Name or null Unites States.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&countryOfIncorporationDesc=United States Of America</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
-<br>https://api.sam.gov/prod/entity-management/fouo?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&naicsCode=513310</td>
+</tr>
+
+<tr>
+<td>naicsDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&naicsDesc=Furniture Stores</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows 6 character code.
-<br>https://api.sam.gov/prod/entity-management/fouo?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&naicsLimitedSB=513310</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
-<br>https://api.sam.gov/prod/entity-management/fouo?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&pscCode=0989</td>
 </tr>
 
 <tr>
-<td>servedDisasterState</td>
-<td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&servedDisasterState=VA</td>
+<td>pscDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&pscDesc=Screws</td>
 </tr>
 
 <tr>
-<td>servedDisasterCounty</td>
-<td>Allows text.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&servedDisasterCounty=FAIRFAX</td>
+<td>servedDisasterStateCode</td>
+<td>Allows 2 character code.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&servedDisasterStateCode=VA</td>
+</tr>
+
+<tr>
+<td>servedDisasterStateName</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&servedDisasterStateName=Virginia</td>
+</tr>
+
+<tr>
+<td>servedDisasterCountyCode</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&servedDisasterCountyCode=32324</td>
+</tr>
+
+<tr>
+<td>servedDisasterCountyName</td>
+<td>Allows Name or null Virginia.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&servedDisasterCountyName=FAIRFAX</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
-<td>Allows text.
-<br>https://api.sam.gov/prod/entity-management/fouo?
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&servedDisasterMSA=86800730</td>
 </tr>
 
 <tr>
-<td>servedDisasterCounty</td>
-<td>Allows text.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&servedDisasterCounty=1212</td>
-</tr>
-
-
-<tr>
 <td>taxpayerIdentificationNumber</td>
-<td>Allows text.
-<br>https://api.sam.gov/prod/entity-management/fouo?
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&taxpayerIdentificationNumber=XXXXXXXXX</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
-<td>Allows to filter data by sections, entityInformation, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&includeSections=entityInformation,coreData</td>
+<td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&includeSections=entityRegistration,coreData</td>
 </tr>
 
 <tr>
@@ -2326,12 +2482,18 @@ First Name</td>
 <td><b> Expected Result:</b></td>
 </tr>
 <details>
-<summary>entityInformation Section</summary>
+<summary>entityRegistration Section</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ueiSAMMI</td>
+<td>string</td>
+<td>Unique Entity Identifier SAMMI</td>
 </tr>
 
 <tr>
@@ -2344,12 +2506,6 @@ First Name</td>
 <td>entityEFTIndicator</td>
 <td>string</td>
 <td>Entity EFT Indicator</td>
-</tr>
-
-<tr>
-<td>ueiSAMMI</td>
-<td>string</td>
-<td>Unique Entity Identifier SAMMI</td>
 </tr>
 
 <tr>
@@ -2383,9 +2539,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>purposeOfRegistration </td>
+<td>purposeOfRegistrationCode </td>
 <td>string</td>
-<td>Purpose of Registration</td>
+<td>Purpose of Registration Code</td>
+</tr>
+
+<tr>
+<td>purposeOfRegistrationDesc</td>
+<td>string</td>
+<td>Purpose of Registration Description</td>
 </tr>
 
 <tr>
@@ -2463,9 +2625,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>dunsNumber</td>
+<td>ueiSAMMI</td>
 <td>string</td>
-<td>Duns Number</td>
+<td>Unique Entity Identifier SAMMI</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>string</td>
+<td>Unique Entity Identifier DUNSr</td>
 </tr>
 
 <tr>
@@ -2498,9 +2666,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>dunsNumber</td>
+<td>ueiSAMMI</td>
 <td>string</td>
-<td>Duns Number</td>
+<td>Unique Entity Identifier SAMMI</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>string</td>
+<td>Unique Entity Identifer Duns Number</td>
 </tr>
 
 <tr>
@@ -2739,7 +2913,7 @@ First Name</td>
 </tr>
 </table>
 
-<summary>businessInformation Sub Section</summary>
+<summary>entityRegistration Sub Section</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -2748,27 +2922,27 @@ First Name</td>
 </tr>
 
 <tr>
-<td>corporateURL</td>
+<td>entityURL</td>
 <td>string</td>
-<td>Corporate URL</td>
+<td>Entity URL</td>
 </tr>
 
 <tr>
-<td>companyDivisionName</td>
+<td>entityDivisionName</td>
 <td>string</td>
-<td>Company Division Name</td>
+<td>Entity Division Name</td>
 </tr>
 
 <tr>
-<td>companyDivisionNumber</td>
+<td>entityDivisionNumber</td>
 <td>string</td>
-<td>Company Division Number</td>
+<td>Entity Division Number</td>
 </tr>
 
 <tr>
-<td>businessStartDate</td>
+<td>entityStartDate</td>
 <td>string</td>
-<td>Business Start Date</td>
+<td>Entity Start Date</td>
 </tr>
 
 <tr>
@@ -2856,39 +3030,75 @@ First Name</td>
 </tr>
 
 <tr>
-<td>entityStructure</td>
+<td>entityStructureCode</td>
 <td>string</td>
-<td>Entity Structure</td>
+<td>Entity Structure Code</td>
 </tr>
 
 <tr>
-<td>entityType</td>
+<td>entityStructureDescription</td>
 <td>string</td>
-<td>Entity Type</td>
+<td>Entity Structure Description</td>
 </tr>
 
 <tr>
-<td>profitStructure</td>
+<td>entityTypeCode</td>
 <td>string</td>
-<td>Profit Structure</td>
+<td>Entity Type Code</td>
 </tr>
 
 <tr>
-<td>organizationStructure</td>
+<td>entityTypeDesc</td>
 <td>string</td>
-<td>Organization Structure</td>
+<td>Entity Type Description</td>
 </tr>
 
 <tr>
-<td>stateOfIncorporation</td>
+<td>profitStructureCode</td>
 <td>string</td>
-<td>State Of Incorporation</td>
+<td>Profit Structure Code</td>
 </tr>
 
 <tr>
-<td>countryOfIncorporation</td>
+<td>profitStructureDesc</td>
 <td>string</td>
-<td>Country Of Incorporation</td>
+<td>Profit Structure Description</td>
+</tr>
+
+<tr>
+<td>organizationStructureCode</td>
+<td>string</td>
+<td>Organization Structure Code</td>
+</tr>
+
+<tr>
+<td>organizationStructureDesc</td>
+<td>string</td>
+<td>Organization Structure Description</td>
+</tr>
+
+<tr>
+<td>stateOfIncorporationCode</td>
+<td>string</td>
+<td>State Of Incorporation Code</td>
+</tr>
+
+<tr>
+<td>stateOfIncorporationDesc</td>
+<td>string</td>
+<td>State Of Incorporation Description</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationCode</td>
+<td>string</td>
+<td>Country Of IncorporationCode</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationDesc</td>
+<td>string</td>
+<td>Country Of IncorporationDescription</td>
 </tr>
 </table>
 
@@ -2914,10 +3124,16 @@ First Name</td>
 </tr>
 
 <tr>
-<td>businessType</td>
+<td>businessTypeCode</td>
 <td>string</td>
-<td>Business Type</td>
+<td>Business Type Code</td>
 </tr>
+<tr>
+<td>businessTypeDescription</td>
+<td>string</td>
+<td>Business Type Description</td>
+</tr>
+
 </table>
 </details>
 </td>
@@ -2938,15 +3154,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>sbaBusinessType</td>
+<td>sbaBusinessTypeCode</td>
 <td>string</td>
-<td>SBA Business Type</td>
+<td>SBA Business Type Code</td>
 </tr>
 
 <tr>
-<td>name</td>
+<td>sbaBusinessTypeDesc</td>
 <td>string</td>
-<td>Description</td>
+<td>SBA Business Type Description</td>
 </tr>
 
 <tr>
@@ -3020,6 +3236,12 @@ First Name</td>
 </tr>
 
 <tr>
+<td>naicsDesc</td>
+<td>string</td>
+<td>NAICS Description</td>
+</tr>
+
+<tr>
 <td>sbaSmallBusiness</td>
 <td>string</td>
 <td>NAICS Code Whether or not the NAICS Code is indicated as an SBA small business </td>
@@ -3051,6 +3273,12 @@ First Name</td>
 <td>pscCode</td>
 <td>string</td>
 <td>PSC Code</td>
+</tr>
+
+<tr>
+<td>pscDesc</td>
+<td>string</td>
+<td>PSC Description</td>
 </tr>
 </table>
 </details>
@@ -3099,13 +3327,25 @@ First Name</td>
 </tr>
 
 <tr>
-<td>geographicalAreaServedState</td>
+<td>geographicalAreaServedStateCode</td>
 <td>string</td>
 <td>State code</td>
 </tr>
 
 <tr>
-<td>geographicalAreaServedCounty</td>
+<td>geographicalAreaServedStateName</td>
+<td>string</td>
+<td>State Name</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedCountyCode</td>
+<td>string</td>
+<td>County Code</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedCountyName</td>
 <td>string</td>
 <td>County name</td>
 </tr>
@@ -5195,26 +5435,6 @@ First Name</td>
 
 </details>
 
-<details>
-<summary><b>FOUO Entity Management Extract Endpoint</b></summary>
-<tr>
-<td><b>Endpoint:</b> https://api.sam.gov/prod/entity-management/extract/fouo?api_key=< value > </td>
-</tr><br>
-
-<tr>
-<td><b>Description:</b> Restful endpoint to retrieve Entity detail information in the form of csv or json format instead of paginated.</td>
-</tr><br>
-
-<tr>
-<td><b>Query String Parameters</b> Same parameters as mentioned above, excluding page and size, apply.</td>
-</tr><br>
-
-<tr>
-<td><b>Expected Result</b> Same response as mentioned above applies.</td>
-</tr>
-</details>
-
-
 
 ### Sensitive Endpoints Information
 
@@ -5286,191 +5506,256 @@ First Name</td>
 </tr>
 
 <tr>
-<td>entityStructure</td>
+<td>entityStructureCode</td>
 <td>Allows 2 character code or null.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&entityStructure=Z1</td>
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&entityStructureCode=Z1</td>
+</tr>
+
+<tr>
+<td>entityStructureDesc</td>
+<td>Allows Description or null
+"Partnership or Limited Liability Partnership".
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
 <td>Allows D or null.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&exclusionStatusFlag=D</td>
 </tr>
 
 <tr>
 <td>expirationDate</td>
 <td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&expirationDate=02/12/1999</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>Allows Partial or Complete value.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&legalBusinessName=ALLTEL</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&primaryNaics=513310</td>
 </tr>
 
 <tr>
-<td>purposeOfRegistration</td>
+<td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&purposeOfRegistration=Z2</td>
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&purposeOfRegistrationCode=Z2</td>
+</tr>
+
+<tr>
+<td>purposeOfRegistrationDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&purposeOfRegistrationDesc=All Awards</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&registrationDate=02/12/1999</td>
 </tr>
 
 <tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&physicalAddressCity=Herndon</td>
 </tr>
 
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
 <td>Allows 2 characters.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&physicalAddressCongressionalDistrict=AR</td>
 </tr>
 
 <tr>
 <td>physicalAddressCountryCode</td>
 <td>Allows 3 character code.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&physicalAddressCountryCode=USA</td>
 </tr>
 
 <tr>
 <td>physicalAddressProvinceOrState</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&physicalAddressProvinceOrState=AR</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
 <td>Allows 5 digit zip code.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&physicalAddressZipPostalCode=02201</td>
 </tr>
 
 <tr>
 <td>samExtractCode</td>
 <td>Allows 1 character code (A or E).
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&samExtractCode=A</td>
 </tr>
 
 <tr>
-<td>businessType</td>
+<td>businessTypeCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&organizationStructure=2L</td>
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&businessTypeCode=2L</td>
 </tr>
 
 <tr>
-<td>organizationStructure</td>
-<td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&organizationStructure=2L</td>
+<td>businessTypeDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&businessTypeDesc=Woman Owned Business </td>
 </tr>
 
 <tr>
-<td>stateOfIncorporation</td>
+<td>organizationStructureCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&stateOfIncorporation=VA</td>
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&organizationStructureCode=2L</td>
 </tr>
 
 <tr>
-<td>countryOfIncorporation</td>
+<td>organizationStructureDesc</td>
+<td>Allows 2 character code.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&organizationStructureDesc=Limited Liability Company</td>
+</tr>
+
+<tr>
+<td>stateOfIncorporationCode</td>
+<td>Allows 2 character code.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&stateOfIncorporationCode=VA</td>
+</tr>
+
+<tr>
+<td>stateOfIncorporationDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&stateOfIncorporationDesc=Virginia</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&countryOfIncorporation=USA</td>
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&countryOfIncorporationCode=USA</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&countryOfIncorporationDesc=United States Of America</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&naicsCode=513310</td>
+</tr>
+
+<tr>
+<td>naicsDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&naicsDesc=Furniture Stores</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows 6 character code.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&naicsLimitedSB=513310</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&pscCode=0989</td>
 </tr>
 
 <tr>
-<td>servedDisasterState</td>
-<td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&servedDisasterState=VA</td>
+<td>pscDesc</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&pscDesc=Screws</td>
 </tr>
 
 <tr>
-<td>servedDisasterCounty</td>
+<td>servedDisasterStateCode</td>
+<td>Allows 2 character code.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&servedDisasterStateCode=VA</td>
+</tr>
+
+<tr>
+<td>servedDisasterStateName</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&servedDisasterStateName=Virginia</td>
+</tr>
+
+<tr>
+<td>servedDisasterCountyCode</td>
 <td>Allows text.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&servedDisasterCounty=FAIRFAX</td>
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&servedDisasterCountyCode=763577</td>
+</tr>
+
+<tr>
+<td>servedDisasterCountyName</td>
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&servedDisasterCountyName=FAIRFAX</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
 <td>Allows text.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&servedDisasterMSA=86800730</td>
 </tr>
 
-<tr>
-<td>servedDisasterCounty</td>
-<td>Allows text.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&servedDisasterCounty=1234</td>
-</tr>
 
 <tr>
 <td>taxpayerIdentificationNumber</td>
-<td>Allows text.
-<br>https://api.sam.gov/prod/entity-management/fouo?
+<td>Allows a text.
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&taxpayerIdentificationNumber=XXXXXXXXX</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
-<td>Allows to filter data by sections, entityInformation, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&includeSections=entityInformation,coreData</td>
+<td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&includeSections=entityRegistration,coreData</td>
 </tr>
 
 <tr>
 <td>format</td>
 <td>Allows user to download different file formats(csv and json are allowable values).
-<br>https://api.sam.gov/prod/entity-management/sensitive?
+<br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&format=csv</td>
 </tr>
 </table>
@@ -5480,12 +5765,18 @@ First Name</td>
 <td><b> Expected Result:</b></td>
 </tr>
 <details>
-<summary>entityInformation Section</summary>
+<summary>entityRegistration Section</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ueiSAMMI</td>
+<td>string</td>
+<td>Unique Entity Identifier SAMMI</td>
 </tr>
 
 <tr>
@@ -5498,12 +5789,6 @@ First Name</td>
 <td>entityEFTIndicator</td>
 <td>string</td>
 <td>Entity EFT Indicator</td>
-</tr>
-
-<tr>
-<td>ueiSAMMI</td>
-<td>string</td>
-<td>Unique Entity Identifier SAMMI</td>
 </tr>
 
 <tr>
@@ -5899,7 +6184,7 @@ First Name</td>
 </tr>
 </table>
 
-<summary>businessInformation Sub Section</summary>
+<summary>entityRegistration Sub Section</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -5908,27 +6193,27 @@ First Name</td>
 </tr>
 
 <tr>
-<td>corporateURL</td>
+<td>entityURL</td>
 <td>string</td>
-<td>Corporate URL</td>
+<td>Entity URL</td>
 </tr>
 
 <tr>
-<td>companyDivisionName</td>
+<td>entityDivisionName</td>
 <td>string</td>
-<td>Company Division Name</td>
+<td>Entity Division Name</td>
 </tr>
 
 <tr>
-<td>companyDivisionNumber</td>
+<td>entityDivisionNumber</td>
 <td>string</td>
-<td>Company Division Number</td>
+<td>Entity Division Number</td>
 </tr>
 
 <tr>
-<td>businessStartDate</td>
+<td>entityStartDate</td>
 <td>string</td>
-<td>Business Start Date</td>
+<td>Entity Start Date</td>
 </tr>
 
 <tr>
@@ -6016,39 +6301,75 @@ First Name</td>
 </tr>
 
 <tr>
-<td>entityStructure</td>
+<td>entityStructureCode</td>
 <td>string</td>
-<td>Entity Structure</td>
+<td>Entity Structure Code</td>
 </tr>
 
 <tr>
-<td>entityType</td>
+<td>entityStructureDesc</td>
 <td>string</td>
-<td>Entity Type</td>
+<td>Entity Structure Desc</td>
 </tr>
 
 <tr>
-<td>profitStructure</td>
+<td>entityTypeCode</td>
 <td>string</td>
-<td>Profit Structure</td>
+<td>Entity Type Code</td>
 </tr>
 
 <tr>
-<td>organizationStructure</td>
+<td>entityTypeDesc</td>
 <td>string</td>
-<td>Organization Structure</td>
+<td>Entity Type Desc</td>
 </tr>
 
 <tr>
-<td>stateOfIncorporation</td>
+<td>profitStructureCode</td>
 <td>string</td>
-<td>State Of Incorporation</td>
+<td>Profit Structure Code</td>
 </tr>
 
 <tr>
-<td>countryOfIncorporation</td>
+<td>profitStructureDesc</td>
 <td>string</td>
-<td>Country Of Incorporation</td>
+<td>Profit Structure Desc</td>
+</tr>
+
+<tr>
+<td>organizationStructureCode</td>
+<td>string</td>
+<td>Organization StructureCode</td>
+</tr>
+
+<tr>
+<td>organizationStructureDesc</td>
+<td>string</td>
+<td>Organization StructureDesc</td>
+</tr>
+
+<tr>
+<td>stateOfIncorporationCode</td>
+<td>string</td>
+<td>State Of Incorporation Code</td>
+</tr>
+
+<tr>
+<td>stateOfIncorporationDesc</td>
+<td>string</td>
+<td>State Of Incorporation Desc</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationCode</td>
+<td>string</td>
+<td>Country Of Incorporation Code</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationDesc</td>
+<td>string</td>
+<td>Country Of Incorporation Desc</td>
 </tr>
 </table>
 
@@ -6074,9 +6395,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>businessType</td>
+<td>businessTypeCode</td>
 <td>string</td>
-<td>Business Type</td>
+<td>Business Type Code</td>
+</tr>
+
+<tr>
+<td>businessTypeDesc</td>
+<td>string</td>
+<td>Business Type Description</td>
 </tr>
 </table>
 </details>
@@ -6098,15 +6425,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>sbaBusinessType</td>
+<td>sbaBusinessTypeCode</td>
 <td>string</td>
-<td>SBA Business Type</td>
+<td>SBA Business Type Code</td>
 </tr>
 
 <tr>
-<td>name</td>
+<td>sbaBusinessTypeDescription</td>
 <td>string</td>
-<td>Description</td>
+<td>SBA Business Type Description</td>
 </tr>
 
 <tr>
@@ -6383,6 +6710,12 @@ First Name</td>
 </tr>
 
 <tr>
+<td>naicsDescription</td>
+<td>string</td>
+<td>NAICS Description</td>
+</tr>
+
+<tr>
 <td>sbaSmallBusiness</td>
 <td>string</td>
 <td>NAICS Code Whether or not the NAICS Code is indicated as an SBA small business </td>
@@ -6414,6 +6747,11 @@ First Name</td>
 <td>pscCode</td>
 <td>string</td>
 <td>PSC Code</td>
+</tr>
+<tr>
+<td>pscDesc</td>
+<td>string</td>
+<td>PSC Description</td>
 </tr>
 </table>
 </details>
@@ -6462,13 +6800,25 @@ First Name</td>
 </tr>
 
 <tr>
-<td>geographicalAreaServedState</td>
+<td>geographicalAreaServedStateCode</td>
 <td>string</td>
 <td>State code</td>
 </tr>
 
 <tr>
-<td>geographicalAreaServedCounty</td>
+<td>geographicalAreaServedStateName</td>
+<td>string</td>
+<td>State name</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedCountyCode</td>
+<td>string</td>
+<td>County code</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedCountyName</td>
 <td>string</td>
 <td>County name</td>
 </tr>
@@ -8556,27 +8906,6 @@ First Name</td>
 
 </details><br>
 </details>
-
-<details>
-<summary><b>Sensitive Entity Management Extract Endpoint</b></summary>
-<tr>
-<td><b>Endpoint:</b> https://api.sam.gov/prod/entity-management/extract/sensitive?api_key=< value > </td>
-</tr><br>
-
-<tr>
-<td><b>Description:</b> Restful endpoint to retrieve Entity detail information in the form of csv or json format instead of paginated.</td>
-</tr><br>
-
-<tr>
-<td><b>Query String Parameters</b> Same parameters as mentioned above, excluding page and size, apply.</td>
-</tr><br>
-
-<tr>
-<td><b>Expected Result</b> Same response as mentioned above applies.</td>
-</tr>
-</details>
-
-
 
 <p><small><a href="#">Back to top</a></small></p>
 
