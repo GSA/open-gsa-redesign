@@ -129,7 +129,8 @@ Generating the API Key:
 
 <tr>
 <td>entityStructureDesc</td>
-<td>Allows 2 character code or null.
+<td>Description or null
+"Partnership or Limited Liability Partnership".
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
 </tr>
@@ -171,7 +172,7 @@ Generating the API Key:
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
-<td>Allows 2 character code.
+<td>Description IGT
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&purposeOfRegistrationDesc=All Awards</td>
 </tr>
@@ -234,7 +235,7 @@ Generating the API Key:
 
 <tr>
 <td>businessTypeDesc</td>
-<td>Allows 2 character code.
+<td>Complete Description or null DOT Certified DBE
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&businessTypeDesc=Woman Owned Business </td>
 </tr>
@@ -290,7 +291,7 @@ Generating the API Key:
 
 <tr>
 <td>naicsDesc</td>
-<td>Allows 6 character code.
+<td>Description or null "OTHER GENERAL GOVERNMENT SUPPORT"
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&naicsDesc=Furniture Stores</td>
 </tr>
@@ -311,7 +312,7 @@ Generating the API Key:
 
 <tr>
 <td>pscDesc</td>
-<td>Allows 4 character code.
+<td>Complete Description or null "O-RING".
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&pscDesc=Screws</td>
 </tr>
@@ -616,9 +617,12 @@ Generating the API Key:
 
 <tr>
 <td>entityStructureDesc</td>
-<td>string</td>
-<td>Entity Structure Description</td>
+<td>Description or null
+"Partnership or Limited Liability Partnership".
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
 </tr>
+
 
 <tr>
 <td>entityTypeCode</td>
@@ -2243,7 +2247,8 @@ First Name</td>
 
 <tr>
 <td>entityStructureDesc</td>
-<td>Allows 2 character code or null.
+<td>Description or null
+"Partnership or Limited Liability Partnership".
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
 </tr>
@@ -2285,7 +2290,7 @@ First Name</td>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
-<td>Allows 2 character code.
+<td>Description IGT
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&purposeOfRegistrationDesc=All Awards</td>
 </tr>
@@ -2390,7 +2395,7 @@ First Name</td>
 
 <tr>
 <td>naicsDesc</td>
-<td>Allows 6 character code.
+<td>Description or null "OTHER GENERAL GOVERNMENT SUPPORT"
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&naicsDesc=Furniture Stores</td>
 </tr>
@@ -2411,7 +2416,7 @@ First Name</td>
 
 <tr>
 <td>pscDesc</td>
-<td>Allows 4 character code.
+<td>Complete Description or null "O-RING".
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&pscDesc=Screws</td>
 </tr>
@@ -2449,6 +2454,13 @@ First Name</td>
 <td>Allows text.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&servedDisasterMSA=86800730</td>
+</tr>
+
+<tr>
+<td>taxpayerIdentificationNumber</td>
+<td>Allows text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&taxpayerIdentificationNumber=XXXXXXXXX</td>
 </tr>
 
 <tr>
@@ -5545,7 +5557,7 @@ First Name</td>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
-<td>Allows 2 character code.
+<td>Description IGT
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&purposeOfRegistrationDesc=All Awards</td>
 </tr>
@@ -5608,7 +5620,7 @@ First Name</td>
 
 <tr>
 <td>businessTypeDesc</td>
-<td>Allows 2 character code.
+<td>Complete Description or null DOT Certified DBE
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&businessTypeDesc=Woman Owned Business </td>
 </tr>
@@ -5664,7 +5676,7 @@ First Name</td>
 
 <tr>
 <td>naicsDesc</td>
-<td>Allows 6 character code.
+<td>Description or null "OTHER GENERAL GOVERNMENT SUPPORT"
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&naicsDesc=Furniture Stores</td>
 </tr>
@@ -5685,7 +5697,7 @@ First Name</td>
 
 <tr>
 <td>pscDesc</td>
-<td>Allows 4 character code.
+<td>Complete Description or null "O-RING".
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&pscDesc=Screws</td>
 </tr>
@@ -5723,6 +5735,14 @@ First Name</td>
 <td>Allows text.
 <br>https://api.sam.gov/prod/entity-management?
 <br>api_key=< value >&servedDisasterMSA=86800730</td>
+</tr>
+
+
+<tr>
+<td>taxpayerIdentificationNumber</td>
+<td>Allows text.
+<br>https://api.sam.gov/prod/entity-management?
+<br>api_key=< value >&taxpayerIdentificationNumber=XXXXXXXXX</td>
 </tr>
 
 <tr>
