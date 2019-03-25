@@ -18,10 +18,10 @@ obtain the desired data.
 ## Getting Started
 
 Exclusions API can be accessed from Beta or Alpha via the following end points:
-* https://api.sam.gov/prod/sam-exclusions?api_key=< value >
-* https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key=< value >
+* Beta: https://api.sam.gov/prod/sam-exclusions?api_key=< value >
+* Alpha: https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key=< value >
 
-Generating the API Key:
+Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page.
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned. 
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page. 
@@ -47,7 +47,7 @@ Generating the API Key:
 | country  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&country=USA' |
 | zipCode  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&zipCode=20171' |
 | ueiDUNS | Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652, 047795005, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ueiDUNS=9725565' |
-| ueiSAMMI | Unique Entity Identifier SAMMI- 9 digit value (9725565, TF118652, 047795005, null) - Replacement for ueiDUNS").<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ueiSAMMI=9725565' |
+| ueiSAMMI | TBD |
 | excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&excludingAgencyCode=AF' |
 | excludingAgencyName | Allows a string (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&excludingAgencyName=FEDERAL' |
 | ctCode | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ctCode=ZZ' |
