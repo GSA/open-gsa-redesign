@@ -42,8 +42,8 @@ Sensitive Entity Details  can be accessed from Beta or Alpha via the following e
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page.
-* Users must enter their password on â€˜Account Detailsâ€™ page to view the API Key information. If an incorrect password is entered, an error will be returned. 
-* After the API Key is generated on â€˜Account Detailsâ€™ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page. 
+* Users must enter their password on Ã¢â‚¬ËœAccount DetailsÃ¢â‚¬â„¢ page to view the API Key information. If an incorrect password is entered, an error will be returned. 
+* After the API Key is generated on Ã¢â‚¬ËœAccount DetailsÃ¢â‚¬â„¢ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page. 
 * If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
 
 
@@ -397,37 +397,37 @@ Generating a personal API Key:
 </tr>
 
 <tr>
-<td>cageCodeÂ </td>
+<td>cageCodeÃ‚Â </td>
 <td>string</td>
 <td>CAGE Code</td>
 </tr>
 
 <tr>
-<td>nCageCodeÂ </td>
+<td>nCageCodeÃ‚Â </td>
 <td>string</td>
 <td>NCAGE Code</td>
 </tr>
 
 <tr>
-<td>dodaacÂ </td>
+<td>dodaacÃ‚Â </td>
 <td>string</td>
 <td>DoDAAC</td>
 </tr>
 
 <tr>
-<td>legalBusinessNameÂ </td>
+<td>legalBusinessNameÃ‚Â </td>
 <td>string</td>
 <td>Legal Business Name</td>
 </tr>
 
 <tr>
-<td>dbaNameÂ </td>
+<td>dbaNameÃ‚Â </td>
 <td>string</td>
 <td>Doing Business As Name</td>
 </tr>
 
 <tr>
-<td>purposeOfRegistrationCodeÂ </td>
+<td>purposeOfRegistrationCodeÃ‚Â </td>
 <td>string</td>
 <td>Purpose of Registration Code</td>
 </tr>
@@ -439,7 +439,7 @@ Generating a personal API Key:
 </tr>
 
 <tr>
-<td>registrationStatusÂ </td>
+<td>registrationStatusÃ‚Â </td>
 <td>string</td>
 <td>Registration Status</td>
 </tr>
@@ -507,13 +507,13 @@ Generating a personal API Key:
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
-<td>Entity DivisionÂ Name</td>
+<td>Entity DivisionÃ‚Â Name</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
-<td>Entity DivisionÂ Number</td>
+<td>Entity DivisionÃ‚Â Number</td>
 </tr>
 
 <tr>
@@ -550,7 +550,7 @@ Generating a personal API Key:
 </tr>
 
 <tr>
-<td>address1Â </td>
+<td>address1Ã‚Â </td>
 <td>string</td>
 <td>Physical Address 1 and Mailing Address 1</td>
 </tr>
@@ -562,7 +562,7 @@ Generating a personal API Key:
 </tr>
 
 <tr>
-<td>cityÂ </td>
+<td>cityÃ‚Â </td>
 <td>string</td>
 <td>Physical Address City and Mailing Address City</td>
 </tr>
@@ -853,6 +853,11 @@ Generating a personal API Key:
 <td>pscCode</td>
 <td>string</td>
 <td>PSC Code</td>
+</tr>
+<tr>
+<td>pscDesc</td>
+<td>string</td>
+<td>PSC Description</td>
 </tr>
 </table>
 </details>
@@ -2505,37 +2510,37 @@ First Name</td>
 </tr>
 
 <tr>
-<td>cageCodeÂ </td>
+<td>cageCodeÃ‚Â </td>
 <td>string</td>
 <td>CAGE Code</td>
 </tr>
 
 <tr>
-<td>nCageCodeÂ </td>
+<td>nCageCodeÃ‚Â </td>
 <td>string</td>
 <td>NCAGE Code</td>
 </tr>
 
 <tr>
-<td>dodaacÂ </td>
+<td>dodaacÃ‚Â </td>
 <td>string</td>
 <td>DoDAAC</td>
 </tr>
 
 <tr>
-<td>legalBusinessNameÂ </td>
+<td>legalBusinessNameÃ‚Â </td>
 <td>string</td>
 <td>Legal Business Name</td>
 </tr>
 
 <tr>
-<td>dbaNameÂ </td>
+<td>dbaNameÃ‚Â </td>
 <td>string</td>
 <td>Doing Business As Name</td>
 </tr>
 
 <tr>
-<td>purposeOfRegistrationCodeÂ </td>
+<td>purposeOfRegistrationCodeÃ‚Â </td>
 <td>string</td>
 <td>Purpose of Registration Code</td>
 </tr>
@@ -2547,7 +2552,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>registrationStatusÂ </td>
+<td>registrationStatusÃ‚Â </td>
 <td>string</td>
 <td>Registration Status</td>
 </tr>
@@ -2594,12 +2599,6 @@ First Name</td>
 <td>Active Exclusion URL</td>
 </tr>
 </table>
-</details>
-
-<details>
-<summary>parentEntity Section</summary><br>
-<summary>immediateParent Sub Section</summary>
-<summary>domesticParent Sub Section</summary>
 </details>
 
 <details>
@@ -2847,6 +2846,226 @@ First Name</td>
 </details>
 </td>
 </tr>
+
+<tr>
+<td>immediateParentEntity</td>
+<td>object</td>
+<td>
+<details>
+<summary>Immediate Parent Entity contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ueiSAMMI</td>
+<td>string</td>
+<td>Unique Entity Identifier SAMMI</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>string</td>
+<td>Unique Entity Identifier DUNS</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<div style="width: 20px">
+<td>physicalAddress, mailingAddress Sub Sections </td>
+<td>object</td>
+<td>
+<details>
+<summary>PhysicalAddress, mailingAddress contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>address1</td>
+<td>string</td>
+<td>Physical Address 1 and Mailing Address 1</td>
+</tr>
+
+<tr>
+<td>address2</td>
+<td>string</td>
+<td>Physical Address 2 and Mailing Address 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>Physical Address City and Mailing Address City</td>
+</tr>
+
+<tr>
+<td>state</td>
+<td>string</td>
+<td>Physical Address State and Mailing Address State</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Physical Address Zip and Mailing Address Zip</td>
+</tr>
+
+<tr>
+<td>zipPlus4</td>
+<td>string</td>
+<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Physical Address Country and Mailing Address Country</td>
+</tr>
+
+<tr>
+<td>congressionalDistrict</td>
+<td>string</td>
+<td>Congressional District of Physical Address</td>
+</tr>
+</table>
+</details>
+</td>
+</div>
+</tr>
+
+<tr>
+<td>phoneNumber</td>
+<td>string</td>
+<td>Phone Number</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>intermediateParentEntites</td>
+<td>object</td>
+<td>
+<details>
+<summary>Ultimate Domestic Parent</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ueiSAMMI</td>
+<td>string</td>
+<td>Unique Entity Identifier SAMMI</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>string</td>
+<td>Unique Entity Identifier DUNS</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<div style="width: 20px">
+<td>physicalAddress, mailingAddress Sub Sections </td>
+<td>object</td>
+<td>
+<details>
+<summary>PhysicalAddress, mailingAddress contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>address1</td>
+<td>string</td>
+<td>Physical Address 1 and Mailing Address 1</td>
+</tr>
+
+<tr>
+<td>address2</td>
+<td>string</td>
+<td>Physical Address 2 and Mailing Address 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>Physical Address City and Mailing Address City</td>
+</tr>
+
+<tr>
+<td>state</td>
+<td>string</td>
+<td>Physical Address State and Mailing Address State</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Physical Address Zip and Mailing Address Zip</td>
+</tr>
+
+<tr>
+<td>zipPlus4</td>
+<td>string</td>
+<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Physical Address Country and Mailing Address Country</td>
+</tr>
+
+<tr>
+<td>congressionalDistrict</td>
+<td>string</td>
+<td>Congressional District of Physical Address</td>
+</tr>
+</table>
+</details>
+</td>
+</div>
+</tr>
+
+<tr>
+<td>phoneNumber</td>
+<td>string</td>
+<td>Phone Number</td>
+</tr>
+
+
+</table>
+</details>
+</td>
+</tr>
+
 </table>
 
 <summary>federalHierarchy Sub Section</summary>
@@ -2932,13 +3151,13 @@ First Name</td>
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
-<td>Entity DivisionÂ Name</td>
+<td>Entity DivisionÃ‚Â Name</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
-<td>Entity DivisionÂ Number</td>
+<td>Entity DivisionÃ‚Â Number</td>
 </tr>
 
 <tr>
@@ -2975,7 +3194,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1Â </td>
+<td>address1Ã‚Â </td>
 <td>string</td>
 <td>Physical Address 1 and Mailing Address 1</td>
 </tr>
@@ -2987,7 +3206,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>cityÂ </td>
+<td>cityÃ‚Â </td>
 <td>string</td>
 <td>Physical Address City and Mailing Address City</td>
 </tr>
@@ -5792,43 +6011,43 @@ First Name</td>
 </tr>
 
 <tr>
-<td>cageCodeÂ </td>
+<td>cageCodeÃ‚Â </td>
 <td>string</td>
 <td>CAGE Code</td>
 </tr>
 
 <tr>
-<td>nCageCodeÂ </td>
+<td>nCageCodeÃ‚Â </td>
 <td>string</td>
 <td>NCAGE Code</td>
 </tr>
 
 <tr>
-<td>dodaacÂ </td>
+<td>dodaacÃ‚Â </td>
 <td>string</td>
 <td>DoDAAC</td>
 </tr>
 
 <tr>
-<td>legalBusinessNameÂ </td>
+<td>legalBusinessNameÃ‚Â </td>
 <td>string</td>
 <td>Legal Business Name</td>
 </tr>
 
 <tr>
-<td>dbaNameÂ </td>
+<td>dbaNameÃ‚Â </td>
 <td>string</td>
 <td>Doing Business As Name</td>
 </tr>
 
 <tr>
-<td>purposeOfRegistrationÂ </td>
+<td>purposeOfRegistrationÃ‚Â </td>
 <td>string</td>
 <td>Purpose of Registration</td>
 </tr>
 
 <tr>
-<td>registrationStatusÂ </td>
+<td>registrationStatusÃ‚Â </td>
 <td>string</td>
 <td>Registration Status</td>
 </tr>
@@ -6201,13 +6420,13 @@ First Name</td>
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
-<td>Entity DivisionÂ Name</td>
+<td>Entity DivisionÃ‚Â Name</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
-<td>Entity DivisionÂ Number</td>
+<td>Entity DivisionÃ‚Â Number</td>
 </tr>
 
 <tr>
@@ -6244,7 +6463,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1Â </td>
+<td>address1Ã‚Â </td>
 <td>string</td>
 <td>Physical Address 1 and Mailing Address 1</td>
 </tr>
@@ -6256,7 +6475,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>cityÂ </td>
+<td>cityÃ‚Â </td>
 <td>string</td>
 <td>Physical Address City and Mailing Address City</td>
 </tr>
@@ -8931,4 +9150,5 @@ The API will return one of the following responses:
 ## Contact Us
 
 <p><small><a href="#">Back to top</a></small></p>
+
 
