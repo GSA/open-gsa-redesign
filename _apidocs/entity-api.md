@@ -855,7 +855,7 @@ Generating a personal API Key:
 <td>PSC Code</td>
 </tr>
 <tr>
-<td>pscDesc</td>
+<td>pscDescription</td>
 <td>string</td>
 <td>PSC Description</td>
 </tr>
@@ -3497,7 +3497,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>pscDesc</td>
+<td>pscDescription</td>
 <td>string</td>
 <td>PSC Description</td>
 </tr>
@@ -6968,7 +6968,7 @@ First Name</td>
 <td>PSC Code</td>
 </tr>
 <tr>
-<td>pscDesc</td>
+<td>pscDescription</td>
 <td>string</td>
 <td>PSC Description</td>
 </tr>
