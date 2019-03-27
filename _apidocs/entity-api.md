@@ -42,10 +42,28 @@ Sensitive Entity Details  can be accessed from Beta or Alpha via the following e
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page.
-* Users must enter their password on Ã¢â‚¬ËœAccount DetailsÃ¢â‚¬â„¢ page to view the API Key information. If an incorrect password is entered, an error will be returned. 
-* After the API Key is generated on Ã¢â‚¬ËœAccount DetailsÃ¢â‚¬â„¢ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page. 
+* Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
+* After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page.
 * If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
 
+Generating a System Account API Key:
+* Users registered with a non-government email address and associated with an entity OR users registered with a government email address may request a system account for public data access.
+* If a user satisfies the above registration criteria they will be able to access the System Accounts widget from their Workspace page after logging in.
+* The user can then select “Go to System Accounts” from the widget and fill out the required sections.
+* The requested system account will then need to be approved.  After approval the user will be notified via email and they can also see the updated status in the System Account widget.
+* The user can select 'Go to System Accounts' again in the widget from their workspace and enter a new system account password.
+* After setting up the password the user will see a new section for retrieving a system account API Key.
+* The user must enter their password again to retrieve the key.
+* NOTE:  To obtain access to the FOUO/Sensitive Entity API data with a system account the user must be registered with a government email address.
+
+
+Utilizing the Entity API as an extract:
+* To utilize this API as an extract we have implemented an additional parameter called 'format.'
+* To retrieve entity data as a CSV the parameter '&format=csv' must be added to the request.
+* To retrieve entity data as a JSON the parameter '&format=json' must be added to the request.
+* Requests that contain this 'format' parameter will provide the user with a URL in the response.
+* In the response URL the phrase REPLACE_WITH_API_KEY must be deleted and replaced with a valid API key and sent in another request.  If the download is ready this will allow the user to retrieve the file.  If the download is not yet ready they will need to try again in some time to allow time for the file to be prepared.
+* The emailId parameter can be included with a valid email address if the user would like to be informed when the file is ready for download.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -397,37 +415,37 @@ Generating a personal API Key:
 </tr>
 
 <tr>
-<td>cageCodeÃ‚Â </td>
+<td>cageCode</td>
 <td>string</td>
 <td>CAGE Code</td>
 </tr>
 
 <tr>
-<td>nCageCodeÃ‚Â </td>
+<td>nCageCode</td>
 <td>string</td>
 <td>NCAGE Code</td>
 </tr>
 
 <tr>
-<td>dodaacÃ‚Â </td>
+<td>dodaac</td>
 <td>string</td>
 <td>DoDAAC</td>
 </tr>
 
 <tr>
-<td>legalBusinessNameÃ‚Â </td>
+<td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
 </tr>
 
 <tr>
-<td>dbaNameÃ‚Â </td>
+<td>dbaName</td>
 <td>string</td>
 <td>Doing Business As Name</td>
 </tr>
 
 <tr>
-<td>purposeOfRegistrationCodeÃ‚Â </td>
+<td>purposeOfRegistrationCode</td>
 <td>string</td>
 <td>Purpose of Registration Code</td>
 </tr>
@@ -439,7 +457,7 @@ Generating a personal API Key:
 </tr>
 
 <tr>
-<td>registrationStatusÃ‚Â </td>
+<td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
 </tr>
@@ -507,13 +525,13 @@ Generating a personal API Key:
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
-<td>Entity DivisionÃ‚Â Name</td>
+<td>Entity Division Name</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
-<td>Entity DivisionÃ‚Â Number</td>
+<td>Entity Division Number</td>
 </tr>
 
 <tr>
@@ -550,7 +568,7 @@ Generating a personal API Key:
 </tr>
 
 <tr>
-<td>address1Ã‚Â </td>
+<td>address1</td>
 <td>string</td>
 <td>Physical Address 1 and Mailing Address 1</td>
 </tr>
@@ -562,7 +580,7 @@ Generating a personal API Key:
 </tr>
 
 <tr>
-<td>cityÃ‚Â </td>
+<td>city</td>
 <td>string</td>
 <td>Physical Address City and Mailing Address City</td>
 </tr>
@@ -614,10 +632,8 @@ Generating a personal API Key:
 
 <tr>
 <td>entityStructureDesc</td>
-<td>Allows Description or null
-"Partnership or Limited Liability Partnership".
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<td>string</td>
+<td>Entity Structure Description</td>
 </tr>
 
 
@@ -2510,37 +2526,37 @@ First Name</td>
 </tr>
 
 <tr>
-<td>cageCodeÃ‚Â </td>
+<td>cageCode</td>
 <td>string</td>
 <td>CAGE Code</td>
 </tr>
 
 <tr>
-<td>nCageCodeÃ‚Â </td>
+<td>nCageCode</td>
 <td>string</td>
 <td>NCAGE Code</td>
 </tr>
 
 <tr>
-<td>dodaacÃ‚Â </td>
+<td>dodaac</td>
 <td>string</td>
 <td>DoDAAC</td>
 </tr>
 
 <tr>
-<td>legalBusinessNameÃ‚Â </td>
+<td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
 </tr>
 
 <tr>
-<td>dbaNameÃ‚Â </td>
+<td>dbaName</td>
 <td>string</td>
 <td>Doing Business As Name</td>
 </tr>
 
 <tr>
-<td>purposeOfRegistrationCodeÃ‚Â </td>
+<td>purposeOfRegistrationCode</td>
 <td>string</td>
 <td>Purpose of Registration Code</td>
 </tr>
@@ -2552,7 +2568,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>registrationStatusÃ‚Â </td>
+<td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
 </tr>
@@ -3151,13 +3167,13 @@ First Name</td>
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
-<td>Entity DivisionÃ‚Â Name</td>
+<td>Entity Division Name</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
-<td>Entity DivisionÃ‚Â Number</td>
+<td>Entity Division Number</td>
 </tr>
 
 <tr>
@@ -3194,7 +3210,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1Ã‚Â </td>
+<td>address1</td>
 <td>string</td>
 <td>Physical Address 1 and Mailing Address 1</td>
 </tr>
@@ -3206,7 +3222,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>cityÃ‚Â </td>
+<td>city</td>
 <td>string</td>
 <td>Physical Address City and Mailing Address City</td>
 </tr>
@@ -6011,43 +6027,43 @@ First Name</td>
 </tr>
 
 <tr>
-<td>cageCodeÃ‚Â </td>
+<td>cageCode</td>
 <td>string</td>
 <td>CAGE Code</td>
 </tr>
 
 <tr>
-<td>nCageCodeÃ‚Â </td>
+<td>nCageCode</td>
 <td>string</td>
 <td>NCAGE Code</td>
 </tr>
 
 <tr>
-<td>dodaacÃ‚Â </td>
+<td>dodaac</td>
 <td>string</td>
 <td>DoDAAC</td>
 </tr>
 
 <tr>
-<td>legalBusinessNameÃ‚Â </td>
+<td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
 </tr>
 
 <tr>
-<td>dbaNameÃ‚Â </td>
+<td>dbaName</td>
 <td>string</td>
 <td>Doing Business As Name</td>
 </tr>
 
 <tr>
-<td>purposeOfRegistrationÃ‚Â </td>
+<td>purposeOfRegistration</td>
 <td>string</td>
 <td>Purpose of Registration</td>
 </tr>
 
 <tr>
-<td>registrationStatusÃ‚Â </td>
+<td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
 </tr>
@@ -6420,13 +6436,13 @@ First Name</td>
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
-<td>Entity DivisionÃ‚Â Name</td>
+<td>Entity Division Name</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
-<td>Entity DivisionÃ‚Â Number</td>
+<td>Entity Division Number</td>
 </tr>
 
 <tr>
@@ -6463,7 +6479,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1Ã‚Â </td>
+<td>address1</td>
 <td>string</td>
 <td>Physical Address 1 and Mailing Address 1</td>
 </tr>
@@ -6475,7 +6491,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>cityÃ‚Â </td>
+<td>city</td>
 <td>string</td>
 <td>Physical Address City and Mailing Address City</td>
 </tr>
@@ -9150,5 +9166,8 @@ The API will return one of the following responses:
 ## Contact Us
 
 <p><small><a href="#">Back to top</a></small></p>
+
+
+
 
 
