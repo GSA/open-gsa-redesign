@@ -121,7 +121,7 @@ Utilizing the Entity API as an extract:
 <td>dodaac</td>
 <td>Allows 9 character value.
 <br>Example: https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&dodaac=025114695</td>
+<br>api_key=< value >&dodaac=DOD123456</td>
 </tr>
 
 <tr>
@@ -2241,7 +2241,7 @@ First Name</td>
 <td>dodaac</td>
 <td>Allows 9 character value.
 <br>Example: https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&dodaac=025114695</td>
+<br>api_key=< value >&dodaac=DOD123456</td>
 </tr>
 
 <tr>
@@ -5576,7 +5576,7 @@ First Name</td>
 <td>dodaac</td>
 <td>Allows 9 character value.
 <br>Example: https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&dodaac=025114695</td>
+<br>api_key=< value >&dodaac=DOD123456</td>
 </tr>
 
 <tr>
