@@ -132,8 +132,8 @@ Utilizing the Entity API as an extract:
 </tr>
 
 <tr>
-<td>ueiSAM</td>
-<td>TBD/td>
+<td>ueiSAMMI</td>
+<td>TBD</td>
 </tr>
 
 <tr>
@@ -381,13 +381,6 @@ Utilizing the Entity API as an extract:
 <br>api_key=< value >&format=csv</td>
 </tr>
 
-<tr>
-<td>emailId</td>
-<td>Allows user to get file download links to email. Email Id paramter should be provided in conjunction with format.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&format=csv7emailId=xxx@gsa.gov</td>
-</tr>
-
 </table>
 </details><br>
 
@@ -404,9 +397,9 @@ Utilizing the Entity API as an extract:
 </tr>
 
 <tr>
-<td>ueiSAM</td>
+<td>ueiSAMMI</td>
 <td>string</td>
-<td>Unique Entity Identifier SAM</td>
+<td>Unique Entity Identifier SAMMI</td>
 </tr>
 
 <tr>
@@ -599,13 +592,13 @@ Utilizing the Entity API as an extract:
 </tr>
 
 <tr>
-<td>zipCode</td>
+<td>zip</td>
 <td>string</td>
 <td>Physical Address Zip and Mailing Address Zip</td>
 </tr>
 
 <tr>
-<td>zipCodePlus4</td>
+<td>zipPlus4</td>
 <td>string</td>
 <td>Physical Address Zip Plus4 and Mailing Address Zip Plus4</td>
 </tr>
@@ -2257,7 +2250,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>ueiSAM</td>
+<td>ueiSAMMI</td>
 <td>TBD</td>
 </tr>
 
@@ -2515,9 +2508,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>ueiSAM</td>
+<td>ueiSAMMI</td>
 <td>string</td>
-<td>Unique Entity Identifier SAM</td>
+<td>Unique Entity Identifier SAMMI</td>
 </tr>
 
 <tr>
@@ -2732,9 +2725,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>ueiSAM</td>
+<td>ueiSAMMI</td>
 <td>string</td>
-<td>Unique Entity Identifier SAM</td>
+<td>Unique Entity Identifier SAMMI</td>
 </tr>
 
 <tr>
@@ -2788,13 +2781,13 @@ First Name</td>
 </tr>
 
 <tr>
-<td>zipCode</td>
+<td>zip</td>
 <td>string</td>
 <td>Physical Address Zip and Mailing Address Zip</td>
 </tr>
 
 <tr>
-<td>zipCodePlus4</td>
+<td>zipPlus4</td>
 <td>string</td>
 <td>Physical Address Zip Plus4 and Mailing Address Zip Plus4</td>
 </tr>
@@ -2841,9 +2834,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>ueiSAM</td>
+<td>ueiSAMMI</td>
 <td>string</td>
-<td>Unique Entity Identifier SAM</td>
+<td>Unique Entity Identifier SAMMI</td>
 </tr>
 
 <tr>
@@ -2897,13 +2890,13 @@ First Name</td>
 </tr>
 
 <tr>
-<td>zipCode</td>
+<td>zip</td>
 <td>string</td>
 <td>Physical Address Zip and Mailing Address Zip</td>
 </tr>
 
 <tr>
-<td>zipCodePlus4</td>
+<td>zipPlus4</td>
 <td>string</td>
 <td>Physical Address Zip Plus4 and Mailing Address Zip Plus4</td>
 </tr>
@@ -3089,13 +3082,13 @@ First Name</td>
 </tr>
 
 <tr>
-<td>zipCode</td>
+<td>zip</td>
 <td>string</td>
 <td>Physical Address Zip and Mailing Address Zip</td>
 </tr>
 
 <tr>
-<td>zipCodePlus4</td>
+<td>zipPlus4</td>
 <td>string</td>
 <td>Physical Address Zip Plus4 and Mailing Address Zip Plus4</td>
 </tr>
@@ -5591,7 +5584,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>ueiSAM</td>
+<td>ueiSAMMI</td>
 <td>TBD</td>
 </tr>
 
@@ -5864,9 +5857,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>ueiSAM</td>
+<td>ueiSAMMI</td>
 <td>string</td>
-<td>Unique Entity Identifier SAM</td>
+<td>Unique Entity Identifier SAMMI</td>
 </tr>
 
 <tr>
@@ -6358,13 +6351,13 @@ First Name</td>
 </tr>
 
 <tr>
-<td>zipCode</td>
+<td>zip</td>
 <td>string</td>
 <td>Physical Address Zip and Mailing Address Zip</td>
 </tr>
 
 <tr>
-<td>zipCodePlus4</td>
+<td>zipPlus4</td>
 <td>string</td>
 <td>Physical Address Zip Plus4 and Mailing Address Zip Plus4</td>
 </tr>
