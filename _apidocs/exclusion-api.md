@@ -48,7 +48,7 @@ Utilizing the Exclusion API as an extract:
 
 ## API Description
 
-**Endpoint:** https://api.sam.gov/prod/sam-exclusions?api_key=< value >
+**Beta Endpoint:** https://api.sam.gov/prod/sam-exclusions?api_key=< value >
 
 **Description** Restful endpoint to retrieve Exclusion detail information
 
