@@ -34,18 +34,20 @@ Delete Opportunity | Yes | No | No
 Get List of Opportunity | Yes | Yes | Yes
 Get Opportunity by ID | Yes | Yes | Yes
 Cancel Opportunity | Yes | Yes | Yes
-UnCancel Opportunity | Yes | Yes | Yes
+Uncancel Opportunity | Yes | Yes | Yes
 Archive Opportunity | Yes | Yes | Yes
 Unarchive Opportunity | Yes | Yes | Yes
 Create Attachment  | Yes | Yes | Yes
+Update Attachment | Yes | Yes | Yes
+Download Attachment | Yes | Yes | Yes
+Download Attachment Zip | Yes | Yes | Yes
+Delete Attachment | Yes | Yes | Yes
 Get Attachment | Yes | Yes | Yes
-Add IVL | Yes | Yes | Yes
 Get IVL | Yes | Yes | Yes
-Update IVL settings | Yes | Yes | Yes
-Delete vendor for opportunity | Yes | Yes | Yes
-Download attachment | Yes | Yes | Yes
-Update attachment | Yes | Yes | Yes
-Delete attachment | Yes | Yes | Yes
+IVL settings | Yes | Yes | Yes
+Delete Vendor | Yes | Yes | Yes
+Get IVL by DUNS | Yes | Yes | Yes
+
 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -122,10 +124,9 @@ far13	| FAR 13.5 - Simplified Procedures for One Source
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## API Description
+## Contract Opportunity API Request and Responses
 
-<span style="color:red">Note: All notices except Special notices will be associated to organization at office level.
-Special notices can be associated to Organization at department, sub-tier, or office level.</span>
+<span style="color:red">Note: All Opportunity notices types except Special notices will be associated to organization at office level. Special notices can be associated to Organization at department, sub-tier, or office level.</span>
 
 
 ### Create Opportunity
@@ -137,13 +138,13 @@ Endpoint Description
 **URL** | /opps/v1/api/create
 **Summary** | Create a new Draft Opportunity
 **Consumes** | application/json
-**Produces** | JSON
+**Produces** | NA
 
 Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized user ID
+Authorization | header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Create/Update Opportunity Contract JSON](#create-update-json)
 
@@ -153,7 +154,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-201 | string | Draft Opportunity successfully created | return response is Notice ID
+201 | string | Draft Opportunity successfully created | returns Opportunity ID in response header
 
 Examples
 
@@ -438,10 +439,10 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | POST
-**URL** | /opps/v1/api/publish/{id}
+**URL** | /opps/v1/api/publish/{opportunityId}
 **Summary** | Publish a Draft Opportunity
 **Consumes** | application/json
-**Produces** | JSON
+**Produces** | NA
 
 Request Parameters
 
@@ -449,7 +450,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-id | query | string | Yes | Notice ID
+opportunityId | query | string | Yes | Opportunity ID
 Request JSON | Body | JSON | Yes | [Refer Publish Opportunity Contract JSON](#publish-json)
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -458,7 +459,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-204 | string | Opportunity successfully published | return response is no content
+204 | string | Opportunity successfully published | returns Opporutnity ID in response header
 
 Examples
 
@@ -482,8 +483,8 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | POST
-**URL** | /opps/v1/api/revise/{id}
-**Summary** | Create a draft version of a notice for a Published notice.
+**URL** | /opps/v1/api/revise/{opportunityId}
+**Summary** | Create a draft version of an Opportunity for a Published Opportunity.
 **Consumes** | application/json
 **Produces** | JSON
 
@@ -493,7 +494,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-id | query | string | Yes | Published Notice Id
+opportunityId | query | string | Yes | Published Opportunity ID
 Request JSON | Body | JSON | Yes | [Refer Revise Opportunity Contract JSON](#revise-json)
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -502,7 +503,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-200 | string | Revise an Opportunity is successful | return response is notice ID
+200 | string | Revise an Opportunity is successful | return response is Opportunity ID
 
 Examples
 
@@ -526,7 +527,7 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | PATCH
-**URL** | /opps/v1/api/update/{id}
+**URL** | /opps/v1/api/update/{opportunityId}
 **Summary** | Update a Draft Opportunity
 **Consumes** | application/json
 **Produces** | JSON
@@ -537,7 +538,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-id | query | string | Yes | Revised Notice Id
+opportunityId | query | string | Yes | Opportunity ID
 Request JSON | Body | JSON | Yes | [Refer Create/Update Opportunity Contract JSON](#create-update-json)
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -546,7 +547,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-201 | string | Update an Opportunity is successful | return response is Notice ID
+201 | string | Update an Opportunity is successful | return response is Opportunity ID
 
 Examples
 
@@ -633,10 +634,10 @@ Examples
     },
     "permissions": {
       "IVL": {
-        "create": false,
-        "delete": false,
-        "read": false,
-        "update": false
+        "create": true,
+        "delete": true,
+        "read": true,
+        "update": true
       }
     },
     "solicitation": {
@@ -726,10 +727,10 @@ Examples
     },
     "permissions": {
       "IVL": {
-        "create": false,
-        "delete": false,
-        "read": false,
-        "update": false
+        "create": true,
+        "delete": true,
+        "read": true,
+        "update": true
       }
     },
     "solicitation": {
@@ -806,10 +807,10 @@ Examples
     ],
     "permissions": {
       "IVL": {
-        "create": false,
-        "delete": false,
-        "read": false,
-        "update": false
+        "create": true,
+        "delete": true,
+        "read": true,
+        "update": true
       }
     },
     "solicitation": {
@@ -841,7 +842,7 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | GET
-**URL** | /opps/v1/api/history/{id}
+**URL** | /opps/v1/api/history/{opportunityId}
 **Summary** | Get history of an Opportunity
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -852,7 +853,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-id | query | string | Yes | Notice Id
+opportunityId | query | string | Yes | Opportunity ID
 postedFrom | Body | JSON | No | Posted From - Date
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -866,22 +867,22 @@ HTTP Status Code | Response Type | Reason  | Description
 Response Element | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 history | JSON |  | 
-history.parent_notice_id | string |  | Parent Notice ID
-history.cancel_notice | boolean |  | Identify if the notice is cancelled or not
+history.parentOpportunityId | string |  | Parent Opportunity ID
+history.cancel_notice | boolean |  | Identify if the Opportunity is cancelled or not
 history.procurement_type | string |  | Notice Type
-history.archive_notice | boolean |  | Identify if the notice is archived or not
-history.request.type | string |  | Type of request on notice such as 'submit', 'cancel_request', 'archive_request' etc.
-history.action_type | string |  | Type of action performed on notice request such as 'publish', 'cancel','archive' etc.
+history.archive_notice | boolean |  | Identify if the Opportunity is archived or not
+history.request.type | string |  | Type of request on Opportunity such as 'submit', 'cancel_request', 'archive_request' etc.
+history.action_type | string |  | Type of action performed on Opportunity request such as 'publish', 'cancel','archive' etc.
 history.action_date | date |  | Date and time of the action type <br/>Example: 2019-02-01T17:12:00-5:00
 history.title | string |  | Opportunity title
 history.index | string |  | Version number of revision
-history.related_notice_id | string |  | Related Notice ID
-history.notice_id | string |  | Notice ID (System generated)
-history.deleted | string |  | Identify if the notice is deleted or not
-history.solicitation_number | string |  | Solicitation Number of a Notice (Notice ID in UI)
+history.relatedOpportunityId | string |  | Related Opportunity ID
+history.opportunityId | string |  | Opportunity ID (System generated)
+history.deleted | string |  | Identify if the Opportunity is deleted or not
+history.solicitation_number | string |  | Solicitation Number of a Notice (Opportunity ID in UI)
 history.revision_reason | string |  | Reason for revision
 history.posted_date | string |  | Posted date and time <br/>Example: 2019-01-04T14:00:00
-history.latest |  |  | Service will return all the opportunity but with latest=1
+history.latest |  |  | Service will return all the Opportunities but with latest=1
 
 Examples
 
@@ -893,7 +894,7 @@ Examples
   "content": {
     "history": [
       {
-        "parent_notice_id": "66544daa822c3c1667d927a70b7324f1",
+        "parentOpportunityId": "66544daa822c3c1667d927a70b7324f1",
         "cancel_notice": "0",
         "procurement_type": "p",
         "archive_notice": "0",
@@ -902,8 +903,8 @@ Examples
         "action_date": null,
         "index": "5",
         "title": "61 -- Loadbank",
-        "related_notice_id": null,
-        "notice_id": "9d8a8d2b0befa3b6b9683a689566d9c4",
+        "relatedOpportunityId": null,
+        "opportunityId": "9d8a8d2b0befa3b6b9683a689566d9c4",
         "deleted": "0",
         "solicitation_number": "FA8532-06-R-70739",
         "revision_reason": null,
@@ -911,7 +912,7 @@ Examples
         "latest": "1"
       },
       {
-        "parent_notice_id": "66544daa822c3c1667d927a70b7324f1",
+        "parentOpportunityId": "66544daa822c3c1667d927a70b7324f1",
         "cancel_notice": "0",
         "procurement_type": "p",
         "archive_notice": "0",
@@ -920,8 +921,8 @@ Examples
         "action_date": "2006-11-01T05:00:00+00",
         "index": "4",
         "title": "61 -- Loadbank",
-        "related_notice_id": null,
-        "notice_id": "1ef3f05d226c7cf877de3bcc285621aa",
+        "relatedOpportunityId": null,
+        "opportunityId": "1ef3f05d226c7cf877de3bcc285621aa",
         "deleted": "0",
         "solicitation_number": "FA8532-06-R-70739",
         "revision_reason": null,
@@ -929,7 +930,7 @@ Examples
         "latest": "0"
       },
       {
-        "parent_notice_id": "66544daa822c3c1667d927a70b7324f1",
+        "parentOpportunityId": "66544daa822c3c1667d927a70b7324f1",
         "cancel_notice": "0",
         "procurement_type": "p",
         "archive_notice": "0",
@@ -938,8 +939,8 @@ Examples
         "action_date": "2006-10-23T04:00:00+00",
         "index": "2",
         "title": "61 -- Loadbank",
-        "related_notice_id": null,
-        "notice_id": "0befa794b87fd0dc12a27ebc7c96c951",
+        "relatedOpportunityId": null,
+        "opportunityId": "0befa794b87fd0dc12a27ebc7c96c951",
         "deleted": "0",
         "solicitation_number": "FA8532-06-R-70739",
         "revision_reason": null,
@@ -947,7 +948,7 @@ Examples
         "latest": "0"
       },
       {
-        "parent_notice_id": "66544daa822c3c1667d927a70b7324f1",
+        "parentOpportunityId": "66544daa822c3c1667d927a70b7324f1",
         "cancel_notice": "0",
         "procurement_type": "p",
         "archive_notice": "0",
@@ -956,8 +957,8 @@ Examples
         "action_date": "2006-10-23T04:00:00+00",
         "index": "3",
         "title": "61 -- Loadbank",
-        "related_notice_id": null,
-        "notice_id": "3751f0b8e25f0ea478f0b1754fca93d2",
+        "relatedOpportunityId": null,
+        "opportunityId": "3751f0b8e25f0ea478f0b1754fca93d2",
         "deleted": "0",
         "solicitation_number": "FA8532-06-R-70739",
         "revision_reason": null,
@@ -965,7 +966,7 @@ Examples
         "latest": "0"
       },
       {
-        "parent_notice_id": null,
+        "parentOpportunityId": null,
         "cancel_notice": "0",
         "procurement_type": "p",
         "archive_notice": "0",
@@ -974,8 +975,8 @@ Examples
         "action_date": "2006-10-06T04:00:00+00",
         "index": "1",
         "title": "61 -- Loadbank",
-        "related_notice_id": null,
-        "notice_id": "66544daa822c3c1667d927a70b7324f1",
+        "relatedOpportunityId": null,
+        "opportunityId": "66544daa822c3c1667d927a70b7324f1",
         "deleted": "0",
         "solicitation_number": "FA8532-06-R-70739",
         "revision_reason": null,
@@ -997,10 +998,10 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /opps/v1/api/delete/{id}
+**URL** | /opps/v1/api/delete/{opportunityId}
 **Summary** |   Delete a Draft Opportunity
 **Consumes** | Request Parameters
-**Produces** | JSON
+**Produces** | NA
 
 Request Parameters
 
@@ -1008,7 +1009,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-id | query | string | Yes | Notice Id
+opportunityId | query | string | Yes | Opportunity ID
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1050,14 +1051,14 @@ includeCount | query | boolean | No | True or false
 keyword | query | string | No | Enter any keyword from the description
 latest | query | boolean | No | True or false
 links | query | boolean | No | Array Of links
-noticeIds | query | Array | No | Notice IDs (comma separated)
+opportunityIds | query | Array | No | Opportunity IDs (comma separated)
 noticeType | query | Array | No | See Notices Types table (comma separated)
-organizationId | query | Array | No | FH Org ID/AAC code of the office where an opportunity is being submitted (comma separated)
+organizationId | query | Array | No | FH Org ID/AAC code of the office where an Opportunity is being submitted (comma separated)
 page | query | integer | No | Page number 
-parentNotice | query | Array | No | Parent Notice ID (comma separated)
+parentNotice | query | Array | No | Parent Opportunity ID (comma separated)
 postedFrom | query | date-time | No | Posted From Date and time <br />Example: 2018-11-01 00:00:00
 postedTo | query | date-time | No | Posted To Date and time <br />Example: 2018-11-01 00:00:00
-relatedNotice | query | Array | No | Related Notice ID (comma separated)
+relatedNotice | query | Array | No | Related Opportunity ID (comma separated)
 responseFrom | query | date-time | No | ResponseFrom <br />Example: 2018-11-01 00:00:00
 responseTo | query | date-time | No | ResponseTo <br />Example: 2018-11-01 00:00:00
 size | query | integer | No | Size limit is 10 by default
@@ -1075,12 +1076,12 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Response Element | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-data | JSON |  | All the opportunities are listed out in the response
-id | string |  | Notice ID
+data | JSON |  | All the Opportunities are listed out in the response
+opportunityId | string |  | Opportunity ID
 data.type | string |  | See Notices Types table
 data.solicitationNumber | string |  | Solicitation Number
 data.title | string |  | Title of the Opportunity
-data.organizationId | string |  | FH Org Id/AAC code of the office where an opportunity is being submitted
+data.organizationId | string |  | FH Org Id/AAC code of the office where an Opportunity is being submitted
 data.classificationCode | string |  | Product Service Code (PSC)
 data.naics | JSON |  | 
 data.naics.code | string |  | NAICS Code
@@ -1154,12 +1155,12 @@ data.link.href | string |   | Website Address
 data.additionalReporting | string |   |  recovery_act or none
 description | JSON |   |  
 additionalInfo.sections JSON | JSON |   | 
-additionalInfo.sections.id | string |  | 
+additionalInfo.sections.opportunityId | string |  | 
 additionalInfo.sections.status | string |  | 
 parent  | JSON |  | 
-parent.id | string |  | Parent Notice ID
+parent.opportunityId | string |  | Parent Opportunity ID
 related  | JSON |  | 
-related.id | string |  | Related Notice ID
+related.opportunityId | string |  | Related Opportunity ID
 status  | JSON |  | 
 status.code | string |  | 1.status= active (published, unarchive and uncancelled records) <br />2.status=inactive (published, archive and uncancelled records)<br />3.status=draft (draft records)<br />4.status=published (published and unarchive)<br />5.status=active_cancelled(published, unarchive and cancelled records)<br />6.status=inactive_cancelled(published, archive and cancelled records)<br />7.status=archived(published and archived)
 status.value | string |  | Refer to status.code 
@@ -1289,7 +1290,7 @@ Examples
         "createdDate": "2019-02-19T21:18:20.669+0000",
         "modifiedBy": "reitestuser+aa@gsa.gov",
         "createdBy": "reitestuser+aa@gsa.gov",
-        "id": "f563391e2c8a4b7180a6cf49d6980723"
+        "opportunityId": "f563391e2c8a4b7180a6cf49d6980723"
       },
       {
         "data": {
@@ -1335,7 +1336,7 @@ Examples
         "createdDate": "2019-02-19T21:14:02.308+0000",
         "modifiedBy": "reitestuser+cs1@gsa.gov",
         "createdBy": "reitestuser+cs1@gsa.gov",
-        "id": "f687c5c4e4124c27a068c145d0a4a1f5"
+        "opportunityId": "f687c5c4e4124c27a068c145d0a4a1f5"
       },
       {
         "data": {
@@ -1439,7 +1440,7 @@ Examples
         "createdDate": "2019-02-19T20:16:31.728+0000",
         "modifiedBy": "reitestuser+aa@gsa.gov",
         "createdBy": "reitestuser+aa@gsa.gov",
-        "id": "530382634cc9401db875fd18c9831bda"
+        "opportunityId": "530382634cc9401db875fd18c9831bda"
       }
     ]
   },
@@ -1462,8 +1463,8 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | GET
-**URL** | /opps/v1/api/opportunities/{id}
-**Summary** | Get Opportunity by Notice ID
+**URL** | /opps/v1/api/opportunities/{opportunityId}
+**Summary** | Get Opportunity by Opportunity ID
 **Consumes** | Request Parameters
 **Produces** | JSON
 
@@ -1473,7 +1474,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-id | query | string | Yes | Notice ID
+opportunityId | query | string | Yes | Opportunity ID
 latest | query | boolean | No | default = true
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -1595,7 +1596,7 @@ Examples
       "body": "The Department of the Interior's Office of Surface Mining Reclamation and Enforcement intends to release"
     }
   ],
-  "id": "bac24bfdc52046ae90ff0ddfe818bfd4"
+  "opportunityId": "bac24bfdc52046ae90ff0ddfe818bfd4"
 }
 </pre></code>
 </p>
@@ -1609,7 +1610,7 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | POST
-**URL** | /opps/v1/api/cancel/{id}
+**URL** | /opps/v1/api/cancel/{opportunityId}
 **Summary** | Cancel a Published Opportunity
 **Consumes** | application/json
 **Produces** | JSON
@@ -1620,7 +1621,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-id | query | string | Yes | Notice ID
+opportunityId | query | string | Yes | Opportunity ID
 Request JSON | Body | JSON | Yes | Cancel Opportunity Contract JSON @todo
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -1629,7 +1630,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-204 | string | Opportunity successfully canceled | return response is Notice ID
+200 | string | Opportunity successfully canceled | return response is new Opportunity ID
 
 Examples
 
@@ -1656,7 +1657,7 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | POST
-**URL** | /opps/v1/api/uncancel/{id}
+**URL** | /opps/v1/api/uncancel/{opportunityId}
 **Summary** | Update status of a Canceled Opportunity to Published status
 **Consumes** | application/json
 **Produces** | JSON
@@ -1667,7 +1668,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-id | query | string | Yes | Notice ID
+opportunityId | query | string | Yes | Opportunity ID
 Request JSON | Body | JSON | Yes | Refer 5.5 Uncancel Opportunity Contract JSON
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -1676,12 +1677,12 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-204 | string | Opportunity successfully un canceled | NA
+200 | string | Opportunity successfully un canceled | return response is new Opportunity ID
 
 Examples
 
 <details>
-<summary>Uncancel Request (active notice):</summary>
+<summary>Uncancel Request (active Opportunity):</summary>
 <p>
 <code><pre>
 {
@@ -1696,7 +1697,7 @@ Examples
 </details>
 
 <details>
-<summary>Uncancel Request (inactive notice):</summary>
+<summary>Uncancel Request (inactive Opportunity):</summary>
 <p>
 <code><pre>
 {
@@ -1722,7 +1723,7 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | POST
-**URL** | /opps/v1/api/archive/{id}
+**URL** | /opps/v1/api/archive/{opportunityId}
 **Summary** | Archive a Published Opportunity
 **Consumes** | application/json
 **Produces** | JSON
@@ -1733,7 +1734,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-id | query | string | Yes | Notice ID 
+opportunityId | query | string | Yes | Opportunity ID 
 Request JSON | Body | JSON | Yes | Refer 5.6 Archive Opportunity Contract JSON
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -1742,7 +1743,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-204 | string | Opportunity successfully archived | return response is Notice ID
+200 | string | Opportunity successfully archived | return response is new Opportunity ID
 
 Examples
 
@@ -1766,7 +1767,7 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | POST
-**URL** | /opps/v1/api/unarchive/{id}
+**URL** | /opps/v1/api/unarchive/{opportunityId}
 **Summary** | Update status of a Archived Opportunity to Published status
 **Consumes** | application/json
 **Produces** | JSON
@@ -1777,7 +1778,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-id | query | string | Yes | Notice ID 
+opportunityId | query | string | Yes | Opportunity ID 
 Request JSON | Body | JSON | Yes | Refer 5.7 Unarchive Opportunity Contract JSON
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -1786,7 +1787,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-204 | string | Opportunity successfully unarchived | NA
+200 | string | Opportunity successfully unarchived | return response is new Opportunity ID
 
 Examples
 
@@ -1814,8 +1815,8 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | /opps/v1/api/{id}/attachments
-**Summary** | Create attachment/link to a draft notice
+**URL** | /opps/v1/api/{opportunityId}/attachments
+**Summary** | Create attachment/link to a draft Opportunity
 **Consumes** | application/json
 **Produces** | JSON
 
@@ -1825,7 +1826,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-id | query | string | Yes | Notice ID
+opportunityId | query | string | Yes | Opportunity ID
 Request JSON | Body | JSON | Yes | Refer 5.8 Create Attachment Contract JSON
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -1834,7 +1835,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-204 | string | Attachment successfully created | return response is Resource ID
+201 | string | Attachment successfully created | Resource ID returned
 
 Examples
 
@@ -1876,7 +1877,7 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | PATCH
-**URL** | /opps/v1/api/{noticeId}/attachments/{resourceId}
+**URL** | /opps/v1/api/{opportunityId}/attachments/{resourceId}
 **Summary** | Update an attachment metadata on a draft Opportunity
 **Consumes** | application/json
 **Produces** | JSON
@@ -1887,7 +1888,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-noticeId | query | string | Yes | Notice ID 
+opportunityId | query | string | Yes | Opportunity ID 
 resourceId | query | string | Yes | Attachment ID
 Request JSON | Body | JSON | Yes | Refer 5.9 Update Attachment Contract JSON
 
@@ -1897,7 +1898,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-201 | string | Attachment successfully updated | Resource ID returned
+200 | string | Attachment successfully updated | Resource ID returned
 
 Examples
 
@@ -1921,7 +1922,7 @@ Examples
 <p>
 <code><pre>
 {
-  "attType": "file",
+  "attType": "link",
   "userFileName": "updated beta.sam.gov url",
   "description": "description",
   "explicitAccess": "1",
@@ -1933,14 +1934,14 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Download Attachment
+### Download All Attachments (metadata)
 
 Endpoint Description
 
 ------- | -------
 **Request Type** | GET
-**URL** | /opps/v1/api/resources/files/{resourceId}/download
-**Summary** | Download the attachments for the resource
+**URL** | /opps/v1/api/attachments
+**Summary** | Download the all attachments metadata for an Opportunity
 **Consumes** | Request Parameters
 **Produces** | JSON
 
@@ -1950,7 +1951,9 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header | string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-resourceId | query | string | Yes | Resource ID
+opportunityId | query | string | Yes | Opportunity ID
+resourceId | query | string | YesNo | Resource ID
+excludeDeleted | query | boolean | No | True will exclude deleted 
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1958,12 +1961,16 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
+200 | string | NA | NA
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
 attachmentList | JSON |  | 
-attachmentList.noticeId | string |  | Notice ID
+attachmentList.opportunityId | string |  | Opportunity ID
 attachmentList.attachments | JSON |  | List of Attachments
 attachmentList.attachments.attachmentId | string |  | Attachment ID
 attachmentList.attachments.resourceId | string |  | Resource ID
-attachmentList.attachments.fileExists | string |  | Inidicates if file exists
+attachmentList.attachments.fileExists | string |  | Indicates if file exists
 attachmentList.attachments.name | string |  | Attachment Name
 attachmentList.attachments.type | string |  | Attachment Type
 attachmentList.attachments.postedDate | date |  | Date Attachment posted
@@ -1977,58 +1984,24 @@ attachmentList.attachments.deletedDate | date |  | Attachment Deleted Date
 attachmentList.attachments.deletedFlag | string |  | Inidicates if Attachment is deleted
 attachmentList.attachments.accessStatus | string |  | Attachment Access Status
 
-Examples 
+Examples
 
 <details>
-<summary>Response - Download Attachment</summary>
+<summary>Download All Attachments (metadata)</summary>
 <p>
 <code><pre>
 {
   "attachmentList": [
     {
-      "noticeId": "856ee3017fce452a8ae4ba5f56f077dc",
+      "opportunityId": "b5a1a6c066414660a47d6b2148dad4a4",
       "attachments": [
         {
-          "attachmentId": "41a3237978e544879c04bc54eadca37a",
-          "resourceId": "237c46eb6d84413188e9d903f9e17173",
+          "attachmentId": "1fdca327eae34df69fc247ce2e888bc3",
+          "resourceId": "3351879d57954487aa35d83ec0aadc63",
           "fileExists": "1",
-          "name": "Testing_1.txt",
+          "name": "Testing_octo.txt",
           "type": "file",
-          "postedDate": "",
-          "accessLevel": "public",
-          "exportControlled": "0",
-          "explicitAccess": "0",
-          "description": "description",
-          "mimeType": ".txt",
-          "size": 19,
-          "deletedDate": "",
-          "deletedFlag": "",
-          "accessStatus": "public"
-        },
-        {
-          "attachmentId": "f3039fd27a964209ba3ae8b472f4ec3e",
-          "resourceId": "ae603d2b8c64484ea721e71410f0e62e",
-          "fileExists": "1",
-          "name": "Testing_2.txt",
-          "type": "file",
-          "postedDate": "",
-          "accessLevel": "public",
-          "exportControlled": "0",
-          "explicitAccess": "0",
-          "description": "description",
-          "mimeType": ".txt",
-          "size": 19,
-          "deletedDate": "",
-          "deletedFlag": "",
-          "accessStatus": "public"
-        },
-        {
-          "attachmentId": "a85fe75326274e418f783a65b52c47b1",
-          "resourceId": "d50742c7bd4148dca358c415cb1a66be",
-          "fileExists": "1",
-          "name": "Testing_3.txt",
-          "type": "file",
-          "postedDate": "",
+          "postedDate": "2019-03-14T21:43:21.498+00:00",
           "accessLevel": "public",
           "exportControlled": "0",
           "explicitAccess": "0",
@@ -2047,15 +2020,48 @@ Examples
 </p>
 </details>
 
-<p><small><a href="#">Back to top</a></small></p>
-	
-### Download Attachments (Zip file)
+### Download Attachment
 
 Endpoint Description
 
 ------- | -------
 **Request Type** | GET
-**URL** | /opps/v1/api/{noticeId}/resources/download/zip
+**URL** | /opps/v1/api/resources/files/{resourceId}/download
+**Summary** | Download the attachment for the given Resource ID
+**Consumes** | Request Parameters
+**Produces** | file
+
+Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+Authorization | Header | string | Yes | Valid and authorized user ID
+api_key | query | string | Yes | Valid System Account API Key
+resourceId | query | string | Yes | Resource ID
+status | query | string | No | Active or Inactive
+token | query | string | No | 
+
+<p><small><a href="#">Back to top</a></small></p>
+
+Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+200 | string | File provided as response | NA
+
+Examples
+
+_NA_
+
+<p><small><a href="#">Back to top</a></small></p>
+	
+### Download Attachments as Zip
+
+Endpoint Description
+
+------- | -------
+**Request Type** | GET
+**URL** | /opps/v1/api/{opportunityId}/resources/download/zip
 **Summary** | Download attachments as zip file for Opportunity
 **Consumes** | Request Parameters
 **Produces** | Zip
@@ -2066,7 +2072,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header | string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-noticeId | query | string | Yes | Notice ID 
+opportunityId | query | string | Yes | Opportunity ID 
 
 Responses
 
@@ -2086,8 +2092,8 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /opps/v1/api/{noticeId}/attachments/{resourceId}
-**Summary** | Delete the attachments for the Resource ID and Notice ID.
+**URL** | /opps/v1/api/{opportunityId}/attachments/{resourceId}
+**Summary** | Delete the attachments for the Resource ID and Opportunity ID.
 **Consumes** | Request Parameters
 **Produces** | JSON
 
@@ -2097,7 +2103,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header | string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-noticeId | query | string | Yes | Notice ID 
+opportunityId | query | string | Yes | Opportunity ID 
 resourceId | query | string | Yes | Resource ID
 deleteAll | query | boolean | Yes | Delete attachment for all revisions (default = false)
 
@@ -2105,7 +2111,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-204 | string | Attachment successfully deleted | NA
+200 | string | Attachment successfully deleted | NA
 
 Examples
 
@@ -2119,8 +2125,8 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | GET
-**URL** | /opps/v1/api/{Id}/ivl
-**Summary** | Get IVL of the Notice ID
+**URL** | /opps/v1/api/{opportunityId}/ivl
+**Summary** | Get IVL of the Opportunity ID
 **Consumes** | Request Parameters
 **Produces** | JSON
 
@@ -2130,7 +2136,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-noticeId | query | string | Yes | Notice Id 
+opportunityId | query | string | Yes | Opportunity ID 
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2267,7 +2273,7 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /opps/v2/opportunities/{id}/ivl/{entityid}
+**URL** | /opps/v2/opportunities/{opportunityId}/ivl/{entityid}
 **Summary** | Delete Vendor from IVL for Opportunity ID
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -2278,7 +2284,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-id | query | string | Yes | Notice ID 
+opportunityId | query | string | Yes | Opportunity ID 
 entityid | query | string | Yes | DUNS number for the business entity
 
 Responses
@@ -2299,7 +2305,7 @@ Endpoint Description
 
 ------- | -------
 **Request Type** | GET
-**URL** | /opps/v1/api/{noticeId}/ivl/{duns}
+**URL** | /opps/v1/api/{opportunityId}/ivl/{duns}
 **Summary** | Get IVL by DUNS for Opportunity ID
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -2310,7 +2316,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-id | query | string | Yes | Notice ID 
+opportunityId | query | string | Yes | Opportunity ID 
 duns | query | string | Yes | DUNS Number
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -2412,16 +2418,16 @@ You can view the full details of this API in the OpenAPI Specification file avai
 Name | Data Type | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
 -----|-----------|----------------|--------------------------|-----------------------|------------
 type | string | See Notice Types table | Yes | Yes | Notice Type
-solicitation Number | string |  | Yes | Yes | Solicitation Number
+solicitationNumber | string |  | Yes | Yes | Solicitation Number
 title | string |  | No | Yes | Title of the Opportunity
-organizationId | string |  | No | Yes | FH Org Id/AAC code of the office where an opportunity is being submitted
+organizationId | string |  | No | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
 classificationCode | string |  | No | Yes (not required for type= r) | Product Service Code (PSC) 
 naics | JSON | NA | NA | NA | 
 naics.code | string |  | No | Yes | NAICS Code
 naics.type | string | P  | Yes | Yes | NAICS Type Note: 'P' must be in upper case
 flags | JSON | NA | NA | NA | 
 flags.code | string | Recovery act | No | No | This is a recovery or Reinvestment Act Action
-flags.IsSelected | boolean |  | No | No | 
+flags.IsSelected | boolean | default = True | No | No | 
 pointOfContact | JSON | NA | NA | NA | 
 pointOfContact.type | string | p | Yes | Yes | Contact Type Note: 'p' must be in lower case
 pointOfContact.title | string |  | No | No | Contact title
@@ -2452,10 +2458,10 @@ permissions.ivl.read | boolean |  | No | No | permissions.ivl.read
 permissions.ivl.update | boolean | Not In Use | Not In Use | Not In Use | Not In Use
 permissions.ivl.delete | boolean | Not In Use | Not In Use | Not In Use | Not In Use
 solicitation | JSON | NA | NA | NA | 
-solicitation.setAside | string | See Set-Aside values table | No | No | Solicitation setAside
+solicitation.setAside | string | See Set-Aside values table | No | No | setAside
 solicitation.deadlines | JSON | NA | NA | NA | 
-solicitation.<br/>deadlines.response | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes (for type=k,o)<br/>2) Yes (when archive.type=<br/>auto1) | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Solicitation Deadline Date
-solicitation.deadlines.<br/>responseresponseTz | string | America/<br/>New_York | No | No | Time Zone for <br/>Solicitation Deadline Date
+solicitation.<br/>deadlines.response | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes (for type=k,o)<br/>2) Yes (when archive.type=<br/>auto1) | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
+solicitation.deadlines.<br/>responseresponseTz | string | | No | No | Time Zone for <br/>Solicitation Deadline Date
 award | JSON | NA | NA | NA | 
 award.date | date | YYYY-MM-DD | Yes (only for type=<br/>i, u, a) | Yes (only for type=<br/>i, u, a) | Award Date
 award.number | string |  | Yes (only for type=i, u, a) | Yes (only for type=i, u, a) | Award Number
@@ -2586,6 +2592,32 @@ userFileName | string |  | Yes (if attType=file) | Name of file
 
 <p><small><a href="#">Back to top</a></small></p>
 
+### Update Attachment Contract JSON
+
+<a id="update-attachment-json" href="v1/Update_Attachment_Contract_Json.txt">Update_Attachment_Contract_Json.txt</a>
+
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+attType | string | link, file | Yes | Type of attachment, either link or file 
+description | string |  | No | Description of file or link
+link | string |  | Yes (if attType=link) | Resource link or URL
+packageAccessLevel | string | public,private(default public) | No | Type of access to file or link
+userFileName | string |  | Yes (if attType=file) | Name of file
+explicitAccess |  |  |  | 
+
+<p><small><a href="#">Back to top</a></small></p>
+
+### IVL Settings Contract JSON
+
+<a id="IVL-Settings-json" href="v1/IVL_Settings_Contract_Json.txt">IVL_Settings_Contract_Json.txt</a>
+
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+ivlCreate | string | forcedon, forcedoff | Yes | Indicates whether vendors can indicate interest in the organization’s Opportunities
+ivlView | string | forcedon, forcedoff | Yes | Indicates whether vendors can view other vendors interested in the organization’s Opportunities
+
+<p><small><a href="#">Back to top</a></small></p>
+
 ### Error Messages
 
 #### General Error Messages
@@ -2600,7 +2632,7 @@ Insufficient privileges to retrieve system account profile as the given organiza
 Error processing POST request | Invalid JSON format provided
 $.data: is missing but it is required | Request JSON is empty
 "$.requestType: does not have a value in the enumeration [archive_request, unarchive_request, publish_request, update_publish_request, cancel_request, uncancel_request]" ] | Request Type must be valid for operation
-Please provide notice id | Invalid notice ID provided
+Please provide Opportunity id | Invalid Opportunity ID provided
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2629,15 +2661,21 @@ Description | Description is required | Description is required | Publish
 IVL | This opportunity cannot be published. Interested Vendors List Add is a required field. | Interested Vendors List Add is a required | Publish
 NAICS Code | This opportunity cannot be published. NAICS provided did not match expected codes | NAICS Code is invalid | Create, Publish
 NAICS Type | $.data.naics[0].type: does not have a value in the enumeration [Primary] | NAICS Type is required | Create
-Notice ID | Notice IDfor the selected opportunity type already exists | Cannot publish an existing published record | Publish
-Notice ID | Opportunity cannot be updated. | Cannot revise and a previously revised Opportunity | Revise
-Notice ID | Notice IDis required | Notice ID is required | All
+Opportunity ID | Opportunity ID for the selected opportunity type already exists | Cannot publish an existing published record | Publish
+Opportunity ID | Opportunity cannot be updated. | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state | Revise
+Opportunity ID | Opportunity ID is required | Opportunity ID is required | All
 Opportunity Type | Opportunity type is required | Opportunity type is required | Create
 Organization ID| Contracting office is required | FH Org Id/AAC code is required | Publish
 Organization ID| Invalid OrganizationId provided | Invalid Organization ID| Create
 Point Of Contact Type | $.data.pointOfContact[0].type: does not have a value in the enumeration [primary, secondary, owner] | Point of Contact Type is required | Create
 Primary Contact Full Name | Primary Contact - Name is required | Point of Contact Full Name is required | Publish
 Title | Title is required | Title is required | Publish
+
+
+## Coming soon…
+* Get Attachment
+* Get Related Opportunities 
+* Check Solicitation Number Uniqueness
 
 ## FAQ
 
