@@ -2646,6 +2646,7 @@ First Name</td>
 <td>
 dnbMonitoring
 </td>
+<td>object</td>
 <td>
 <details>
 <summary>DNB Monitoring contains below fields</summary>
@@ -2729,6 +2730,7 @@ dnbMonitoring
 <td>
 samMonitoring
 </td>
+<td>object</td>
 <td>
 <details>
 <summary>SAM Monitoring contains below fields</summary>
