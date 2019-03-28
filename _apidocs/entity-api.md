@@ -10,19 +10,18 @@ banner-heading: Entity Management API
 The Entity Management API will allow users to request Public Entity Information based on various optional request parameters. 
 
 
-**Entity Management API:**
+**Key Features of the Entity Management API:**
 
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
 * It returns synchronous responses directly in the browser.
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
 
-Additional  Features:
-Users can accomplish below functionality using format parameter
+Additional Features of the Entity Management API: It can serve as an Extract API with the addition of "format" parameter in the request. Following are the key features of the Entity Management Extract API:
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
-* It returns asynchronous responses by sending file downloadable links in the browser and in the emails.
+* It returns asynchronous responses by sending file downloadable links in the browser and in the user emails.
 * It returns data in the JSON or CSV format as selected by the user.
-* It can return only the first 1,000,000 records.
+* It can return only the first 1,000,000 records.ds.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -58,12 +57,13 @@ Generating a System Account API Key:
 
 
 Utilizing the Entity API as an extract:
-* To utilize this API as an extract we have implemented an additional parameter called 'format.'
-* To retrieve entity data as a CSV the parameter '&format=csv' must be added to the request.
-* To retrieve entity data as a JSON the parameter '&format=json' must be added to the request.
-* Requests that contain this 'format' parameter will provide the user with a URL in the response.
-* In the response URL the phrase REPLACE_WITH_API_KEY must be deleted and replaced with a valid API key and sent in another request.  If the download is ready this will allow the user to retrieve the file.  If the download is not yet ready they will need to try again in some time to allow time for the file to be prepared.
-* The emailId parameter can be included with a valid email address if the user would like to be informed when the file is ready for download.
+* To utilize this API as an Extract an additional parameter called 'format' has been implemented.
+* To retrieve Entity data in a CSV format, the parameter '&format=csv' must be provided in the request.
+* To retrieve Entity data in a JSON format, the parameter '&format=json' must be provided in the request.
+* If the requests that contain the 'format' parameter are executed successfully, then they will provide the user with a file downloadable URL in the response.
+* In the file downloadable URL, the phrase REPLACE_WITH_API_KEY must be deleted and replaced with a valid API Key and sent as another request.
+* If the file is ready for download, then the users can retrieve it. If the file is not ready for download, then the users will need to try again in some time.
+* Users can also provide another parameter, "emailId" with a valid email address if they choose to receive the file downloadable link in their emails.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -406,7 +406,7 @@ Utilizing the Entity API as an extract:
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
-<td>Unique Entity Identifier SAMMI</td>
+<td>Unique Entity Identifier SAM</td>
 </tr>
 
 <tr>
@@ -510,7 +510,7 @@ Utilizing the Entity API as an extract:
 
 <details>
 <summary>coreData Section</summary><br>
-<summary>entityRegistration Sub Section</summary>
+<summary>entityInformation Sub Section</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -543,15 +543,15 @@ Utilizing the Entity API as an extract:
 </tr>
 
 <tr>
-<td>submissionDate</td>
-<td>string</td>
-<td>Submission Date</td>
-</tr>
-
-<tr>
 <td>fiscalYearEndCloseDate</td>
 <td>string</td>
 <td>Fiscal Year End Close Date</td>
+</tr>
+
+<tr>
+<td>submissionDate</td>
+<td>string</td>
+<td>Submission Date</td>
 </tr>
 
 <tr>
@@ -614,7 +614,7 @@ Utilizing the Entity API as an extract:
 <tr>
 <td>congressionalDistrict</td>
 <td>string</td>
-<td>Congressional District of Physical Address</td>
+<td>Physical Address Congressional District</td>
 </tr>
 </table>
 
@@ -799,7 +799,7 @@ Utilizing the Entity API as an extract:
 
 <details>
 <summary>assertions Section</summary><br>
-<summary>Goods And Services Sub Section</summary>
+<summary>goodsAndServices Sub Section</summary>
 
 <table>
 <tr>
@@ -842,7 +842,7 @@ Utilizing the Entity API as an extract:
 <tr>
 <td>sbaSmallBusiness</td>
 <td>string</td>
-<td>NAICS Code Whether or not the NAICS Code is indicated as an SBA small business </td>
+<td>Whether or not the NAICS Code is indicated as an SBA small business</td>
 </tr>
 
 <tr>
@@ -926,7 +926,7 @@ Utilizing the Entity API as an extract:
 <tr>
 <td>geographicalAreaServedStateCode</td>
 <td>string</td>
-<td>State code</td>
+<td>State name</td>
 </tr>
 
 <tr>
@@ -977,7 +977,7 @@ Utilizing the Entity API as an extract:
 <td>
 
 <details>
-<summary>FAR Responses can contains below fields</summary>
+<summary>FAR Responses contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -990,7 +990,7 @@ Utilizing the Entity API as an extract:
 <td>list</td>
 <td>
 <details>
-<summary>List of Provisions can contains below fields</summary><br>
+<summary>List of Provisions contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -1012,7 +1012,7 @@ Utilizing the Entity API as an extract:
 <td>list</td>
 <td>
 <details>
-<summary>List of Answers can contains below fields</summary><br>
+<summary>List of Answers contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -1392,7 +1392,7 @@ Utilizing the Entity API as an extract:
 <td>list</td>
 <td>
 <details>
-<summary>List of Provisions can contains below fields</summary><br>
+<summary>List of Provisions contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -1414,7 +1414,7 @@ Utilizing the Entity API as an extract:
 <td>list</td>
 <td>
 <details>
-<summary>List of Answers can contains below fields</summary><br>
+<summary>List of Answers contains below fields</summary><br>
 <table width="100">
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -2519,7 +2519,7 @@ First Name</td>
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
-<td>Unique Entity Identifier SAMMI</td>
+<td>Unique Entity Identifier SAM</td>
 </tr>
 
 <tr>
@@ -2622,7 +2622,7 @@ First Name</td>
 
 <details>
 <summary>core Data Section</summary><br>
-<summary>Entity Hierarchy Information</summary>
+<summary>entityHierarchyInformation Sub Section</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -2632,8 +2632,20 @@ First Name</td>
 
 
 <tr>
-<td>EVSMonitoring</td>
+<td>evsMonitoring</td>
 <td>object</td>
+<td>
+  
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+<tr>
+<td>
+dnbMonitoring
+</td>
 <td>
 <details>
 <summary>DNB Monitoring contains below fields</summary>
@@ -2713,6 +2725,93 @@ First Name</td>
 </details>
 </td>
 </tr>
+<tr>
+<td>
+samMonitoring
+</td>
+<td>
+details>
+<summary>SAM Monitoring contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>dbaName</td>
+<td>string</td>
+<td>DBA Name</td>
+</tr>
+
+<tr>
+<td>outOfBusinessFlag</td>
+<td>string</td>
+<td>Out Of Business Flag</td>
+</tr>
+
+<tr>
+<td>monitoringStatus</td>
+<td>string</td>
+<td>Monitoring Status</td>
+</tr>
+
+<tr>
+<td>lastUpdated</td>
+<td>string</td>
+<td>Last Updated</td>
+</tr>
+
+<tr>
+<td>address1</td>
+<td>string</td>
+<td>Address 1</td>
+</tr>
+
+<tr>
+<td>address2</td>
+<td>string</td>
+<td>Address 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>postalCode</td>
+<td>string</td>
+<td>Postal Code</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+</table>
+</details>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
 
 <tr>
 <td>immediateParentEntity</td>
@@ -2747,11 +2846,11 @@ First Name</td>
 
 <tr>
 <div style="width: 20px">
-<td>physicalAddress Sub Sections </td>
+<td>physicalAddress</td>
 <td>object</td>
 <td>
 <details>
-<summary>PhysicalAddress contains below fields</summary>
+<summary>physicalAddress contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -2804,7 +2903,7 @@ First Name</td>
 <tr>
 <td>congressionalDistrict</td>
 <td>string</td>
-<td>Congressional District of Physical Address</td>
+<td>Physical Address Congressional District</td>
 </tr>
 </table>
 </details>
@@ -2828,7 +2927,7 @@ First Name</td>
 <td>object</td>
 <td>
 <details>
-<summary>Ultimate Domestic Parent</summary>
+<summary>Ultimate Domestic Parent contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -2856,11 +2955,11 @@ First Name</td>
 
 <tr>
 <div style="width: 20px">
-<td>physicalAddress Sub Sections </td>
+<td>physicalAddress</td>
 <td>object</td>
 <td>
 <details>
-<summary>PhysicalAddress contains below fields</summary>
+<summary>physicalAddress contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -2913,7 +3012,7 @@ First Name</td>
 <tr>
 <td>congressionalDistrict</td>
 <td>string</td>
-<td>Congressional District of Physical Address</td>
+<td>Physical Address Congressional District</td>
 </tr>
 </table>
 </details>
@@ -3001,7 +3100,7 @@ First Name</td>
 </tr>
 </table>
 
-<summary>entityRegistration Sub Section</summary>
+<summary>entityInformation Sub Section</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3034,15 +3133,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>submissionDate</td>
-<td>string</td>
-<td>Submission Date</td>
-</tr>
-
-<tr>
 <td>fiscalYearEndCloseDate</td>
 <td>string</td>
 <td>Fiscal Year End Close Date</td>
+</tr>
+
+<tr>
+<td>submissionDate</td>
+<td>string</td>
+<td>Submission Date</td>
 </tr>
 
 <tr>
@@ -3105,7 +3204,7 @@ First Name</td>
 <tr>
 <td>congressionalDistrict</td>
 <td>string</td>
-<td>Congressional District of Physical Address</td>
+<td>Physical Address Congressional District</td>
 </tr>
 </table>
 
@@ -3332,7 +3431,7 @@ First Name</td>
 <tr>
 <td>sbaSmallBusiness</td>
 <td>string</td>
-<td>NAICS Code Whether or not the NAICS Code is indicated as an SBA small business </td>
+<td>Whether or not the NAICS Code is indicated as an SBA small business</td>
 </tr>
 
 <tr>
@@ -3423,7 +3522,7 @@ First Name</td>
 <tr>
 <td>geographicalAreaServedStateName</td>
 <td>string</td>
-<td>State Name</td>
+<td>State name</td>
 </tr>
 
 <tr>
@@ -3575,7 +3674,7 @@ First Name</td>
 <td>
 
 <details>
-<summary>FAR Responses can contains below fields</summary>
+<summary>FAR Responses contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3588,7 +3687,7 @@ First Name</td>
 <td>list</td>
 <td>
 <details>
-<summary>List of Provisions can contains below fields</summary><br>
+<summary>List of Provisions contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3610,7 +3709,7 @@ First Name</td>
 <td>list</td>
 <td>
 <details>
-<summary>List of Answers can contains below fields</summary><br>
+<summary>List of Answers contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3977,7 +4076,7 @@ First Name</td>
 <td>list</td>
 <td>
 <details>
-<summary>DFAR Responses can contains below fields</summary><br>
+<summary>DFAR Responses contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3990,7 +4089,7 @@ First Name</td>
 <td>list</td>
 <td>
 <details>
-<summary>List of Provisions can contains below fields</summary><br>
+<summary>List of Provisions contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -4012,7 +4111,7 @@ First Name</td>
 <td>list</td>
 <td>
 <details>
-<summary>List of Answers can contains below fields</summary><br>
+<summary>List of Answers contains below fields</summary><br>
 <table width="100">
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
