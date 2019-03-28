@@ -6,7 +6,6 @@ banner-heading: Opportunities API
 ## Overview
 
 This document will provide electronic users with the technical specifications required to utilize the beta.SAM.GOV Contract Opportunities REST API capability.
-<p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started 
 
@@ -22,6 +21,8 @@ In order to perform an Opportunity API operation, the following is required:
 
 To submit any opportunity notice type (except “Special Notice”) for an office, user should provide Federal Hierarchy (FH) Organization IDor Activity Address Code (AAC) (procurement/non-procurement). To submit Special Notice opportunity, user should provide Federal Hierarchy (FH) Organization IDof office, sub-tier or department or Activity Address Code (AAC) (procurement/non-procurement) or [other codes] for sub-tier and department. <br/>
 **Note:** Permissions marked "Yes" are may not be assigned by default and will require your user administrator to update.
+
+<p><small><a href="#">Back to top</a></small></p>
  
 Operation    | Administrator <br/>(Contract Opportunities domain)| Contracting Officer | Contracting Specialist
 -------------|---------------|---------------------|------------------------------
@@ -1622,7 +1623,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | Cancel Opportunity Contract JSON @todo
+Request JSON | Body | JSON | Yes | [Refer Cancel Opportunity Contract JSON](#cancel-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1669,7 +1670,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | Refer 5.5 Uncancel Opportunity Contract JSON
+Request JSON | Body | JSON | Yes | [Refer Uncancel Opportunity Contract JSON](#uncancel-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1735,7 +1736,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID 
-Request JSON | Body | JSON | Yes | Refer 5.6 Archive Opportunity Contract JSON
+Request JSON | Body | JSON | Yes | [Refer Archive Opportunity Contract JSON](#archive-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1779,7 +1780,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID 
-Request JSON | Body | JSON | Yes | Refer 5.7 Unarchive Opportunity Contract JSON
+Request JSON | Body | JSON | Yes | [Refer Unarchive Opportunity Contract JSON](#unarchive-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1827,7 +1828,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | Refer 5.8 Create Attachment Contract JSON
+Request JSON | Body | JSON | Yes | [Refer Create Attachment Contract JSON](#create-attachment-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1890,7 +1891,7 @@ Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID 
 resourceId | query | string | Yes | Attachment ID
-Request JSON | Body | JSON | Yes | Refer 5.9 Update Attachment Contract JSON
+Request JSON | Body | JSON | Yes | [Refer Update Attachment Contract JSON](#update-attachment-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2243,7 +2244,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 orgId | query | string | Yes | FH Org Id/AAC code of the organization 
-Request JSON | Body | JSON | Yes | Refer 5.10 IVL Settings Contract JSON
+Request JSON | Body | JSON | Yes | [Refer IVL Settings Contract JSON](#ivl-settings-json)
 
 Responses
 
@@ -2413,7 +2414,138 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ### Create/Update Opportunity Contract JSON
 
-<a id="create-update-json" href="v1/Create_Update_Opportunity_Contract_Json.txt">Create_Update_Opportunity_Contract_Json.txt</a>
+<div id="create-update-json">
+<details>
+<summary>Create_Update_Opportunity_Contract_Json</summary>
+<p>
+<code><pre>
+{
+  "data": {
+    "solicitationNumber": "string",
+    "title": "string",
+    "type": "string",
+    "classificationCode": "string",
+    "organizationId": "string",
+    "organizationLocationId": "string",
+    "naics": [
+      {
+        "code": [
+          "string"
+        ],
+        "type": "string"
+      }
+    ],
+    "pointOfContact": [
+      {
+        "additionalInfo": {
+          "content": "string"
+        },
+        "email": "string",
+        "fax": "string",
+        "fullName": "string",
+        "phone": "string",
+        "title": "string",
+        "type": "string"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "code": "string",
+        "name": "string"
+      },
+      "country": {
+        "code": "string",
+        "name": "string"
+      },
+      "state": {
+        "code": "string",
+        "name": "string"
+      },
+      "streetAddress": "string",
+      "streetAddress2": "string",
+      "zip": "string"
+    },
+    "award": {
+      "date": "date",
+      "number": "string",
+      "deliveryOrderNumber": "string",
+      "amount": "number",
+      "lineItemNumber": "integer",
+      "awardee": {
+        "manual": "flag",
+        "name": "string",
+        "duns": "string",
+        "location": {
+          "streetAddress": "string",
+          "streetAddress2": "string",
+          "city": {
+            "code": "string",
+            "name": "string"
+          },
+          "state": {
+            "code": "string",
+            "name": "string"
+          },
+          "zip": "string",
+          "country": {
+            "code": "string",
+            "name": "string"
+          }
+        }
+      },
+      "justificationAuthority": {
+        "modificationNumber": "string",
+        "authority": "dictionary"
+      },
+      "fairOpportunity": {
+        "authority": "string"
+      }
+    },
+    "permissions": {
+      "IVL": {
+        "create": false,
+        "delete": false,
+        "read": false,
+        "update": false
+      }
+    },
+    "solicitation": {
+      "setAside": "string",
+      "deadlines": {
+        "responseTz": "string",
+        "response": "date"
+      }
+    },
+    "archive": {
+      "date": "string",
+      "type": "auto15"
+    },
+    "flags": [
+      {
+        "code": "string",
+        "isSelected": true
+      }
+    ],
+    "link": {
+      "additionalInfo": {
+        "content": "string"
+      },
+      "href": "string"
+    },
+    "additionalReporting": [
+      "none"
+    ]
+  },
+  "description": [
+    {
+      "body": "string"
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+</div>
 
 Name | Data Type | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
 -----|-----------|----------------|--------------------------|-----------------------|------------
@@ -2500,7 +2632,19 @@ description.body | string |  | No | Yes | Description of notice
 
 ### Publish Opportunity Contract JSON
 
-<a id="publish-json" href="v1/Publish_Opportunity_Contract_Json.txt">Publish_Opportunity_Contract_Json.txt</a>
+<div id="publish-json" title="Click to view Publish Contract">
+<details>
+<summary>Publish_Opportunity_Contract_Json</summary>
+<p>
+<code><pre>
+{
+  "requestType": "publish_request",
+  "reason": "Publish Opportunity"
+}
+</pre></code>
+</p>
+</details>
+</div>
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -2511,7 +2655,19 @@ requestType | string | publish_request | Yes | Type of request
 
 ### Revise Opportunity Contract JSON
 
-<a id="revise-json" href="v1/Revise_Opportunity_Contract_Json.txt">Revise_Opportunity_Contract_Json.txt</a>
+<div id="revise-json" title="Click to view Revise Contract">
+<details>
+<summary>Revise_Opportunity_Contract_Json</summary>
+<p>
+<code><pre>
+{
+  "requestType": "update_publish_request",
+  "reason": "Revise Opportunity"
+}
+</pre></code>
+</p>
+</details>
+</div>
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -2522,7 +2678,16 @@ requestType | string | update_publish_request | Yes | Type of request
 
 ### Cancel Opportunity Contract JSON
 
-<a id="cancel-json" href="v1/Cancel_Opportunity_Contract_Json.txt">Cancel_Opportunity_Contract_Json.txt</a>
+<div id="cancel-json" title="Click to view Cancel Contract">
+<details>
+<summary>Cancel_Opportunity_Contract_Json</summary>
+<p>
+<code><pre>
+add cancel here....
+</pre></code>
+</p>
+</details>
+</div>
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -2534,7 +2699,16 @@ Description | string |  | Yes | Description for cancelation
 
 ### Uncancel Opportunity Contract JSON
 
-<a id="uncancel-json" href="v1/Uncancel_Opportunity_Contract_Json.txt">Uncancel_Opportunity_Contract_Json.txt</a>
+<div id="uncancel-json" title="Click to view Uncancel Contract">
+<details>
+<summary>Uncancel_Opportunity_Contract_Json</summary>
+<p>
+<code><pre>
+add Uncancel here....
+</pre></code>
+</p>
+</details>
+</div>
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -2552,7 +2726,16 @@ newContractAwardDate | date | YYYY-MM-DD | Yes (if type=a) | New Contract Award 
 
 ### Archive Opportunity Contract JSON
 
-<a id="archive-json" href="v1/Archive_Opportunity_Contract_Json.txt">Archive_Opportunity_Contract_Json.txt</a>
+<div id="archive-json" title="Click to view Archive Contract">
+<details>
+<summary>Archive_Opportunity_Contract_Json</summary>
+<p>
+<code><pre>
+add archive here....
+</pre></code>
+</p>
+</details>
+</div>
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -2563,7 +2746,16 @@ requestType | string | archive_request | Yes | Type of request
 
 ### Unarchive Opportunity Contract JSON
 
-<a id="unarchive-json" href="v1/Unarchive_Opportunity_Contract_Json.txt">Unarchive_Opportunity_Contract_Json.txt</a>
+<div id="unarchive-json" title="Click to view Unarchive Contract">
+<details>
+<summary>Unarchive_Opportunity_Contract_Json</summary>
+<p>
+<code><pre>
+add unarchive here....
+</pre></code>
+</p>
+</details>
+</div>
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -2579,7 +2771,16 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
 
 ### Create Attachment Contract JSON
 
-<a id="create-attachment-json" href="v1/Create_Attachment_Contract_Json.txt">Create_Attachment_Contract_Json.txt</a>
+<div id="create-attachment-json" title="Click to view Create Attachment Contract">
+<details>
+<summary>Create_Attachment_Contract_Json</summary>
+<p>
+<code><pre>
+add create attachment here....
+</pre></code>
+</p>
+</details>
+</div>
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -2594,7 +2795,16 @@ userFileName | string |  | Yes (if attType=file) | Name of file
 
 ### Update Attachment Contract JSON
 
-<a id="update-attachment-json" href="v1/Update_Attachment_Contract_Json.txt">Update_Attachment_Contract_Json.txt</a>
+<div id="update-attachment-json" title="Click to view Update Attachment Contract">
+<details>
+<summary>Update_Attachment_Contract_Json</summary>
+<p>
+<code><pre>
+add Update Attachment here....
+</pre></code>
+</p>
+</details>
+</div>
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -2609,7 +2819,16 @@ explicitAccess |  |  |  |
 
 ### IVL Settings Contract JSON
 
-<a id="IVL-Settings-json" href="v1/IVL_Settings_Contract_Json.txt">IVL_Settings_Contract_Json.txt</a>
+<div id="ivl-settings-json" title="Click to view IVL Settings Contract">
+<details>
+<summary>IVL_Settings_Contract_Json</summary>
+<p>
+<code><pre>
+add IVL Settings here....
+</pre></code>
+</p>
+</details>
+</div>
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
