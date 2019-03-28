@@ -133,7 +133,7 @@ Utilizing the Entity API as an extract:
 
 <tr>
 <td>ueiSAM</td>
-<td>Unique Entity Identifier SAM/td>
+<td>TBD/td>
 </tr>
 
 <tr>
@@ -2258,7 +2258,7 @@ First Name</td>
 
 <tr>
 <td>ueiSAM</td>
-<td>Unique Entity Identifier SAM</td>
+<td>TBD</td>
 </tr>
 
 <tr>
@@ -5592,7 +5592,7 @@ First Name</td>
 
 <tr>
 <td>ueiSAM</td>
-<td>Unique Entity Identifier SAM</td>
+<td>TBD</td>
 </tr>
 
 <tr>
