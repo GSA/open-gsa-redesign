@@ -66,10 +66,10 @@ paths:
           required: false
           schema:
             type: string
-        - name: ueiSAMMI
+        - name: ueiSAM
           in: query
-          description: Unique Entity Identifier SAMMI- 9 digit value; a maximum of up to
-            100 values can be sent (This will replace ueiDUNS)
+          description: Unique Entity Identifier SAM- 9 digit value; a maximum of up to
+            100 values can be sent
           required: false
           schema:
             type: string
@@ -308,6 +308,18 @@ paths:
           required: false
           schema:
             type: string
+        - name: format
+          in: query
+          description: Format paramter to get data as an extract file (Allowable values JSON and CSV)
+          required: false
+          schema:
+            type: string
+        - name: emailId
+          in: query
+          description: Email Id paramter to get file download link to user provided email address. Email Id parameter should go in conjunction with format
+          required: false
+          schema:
+            type: string
       responses:
         "200":
           description: Successfully retrieved list
@@ -505,7 +517,7 @@ components:
     EntityRegistration:
       type: object
       properties:
-        ueiSAMMI:
+        ueiSAM:
           type: string
         ueiDUNS:
           type: string
@@ -730,9 +742,9 @@ components:
           type: string
         state:
           type: string
-        zip:
+        zipCode:
           type: string
-        zipPlus4:
+        zipCodePlus4:
           type: string
         country:
           type: string
@@ -747,9 +759,9 @@ components:
           type: string
         state:
           type: string
-        zip:
+        zipCode:
           type: string
-        zipPlus4:
+        zipCodePlus4:
           type: string
         country:
           type: string
