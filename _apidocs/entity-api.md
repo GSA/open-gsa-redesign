@@ -2635,7 +2635,8 @@ First Name</td>
 <td>evsMonitoring</td>
 <td>object</td>
 <td>
-  
+<details>
+<summary>EVS Monitoring contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -2811,9 +2812,10 @@ samMonitoring
 </td>
 </tr>
 </table>
-
+</details>
 </td>
 </tr>
+
 
 <tr>
 <td>immediateParentEntity</td>
