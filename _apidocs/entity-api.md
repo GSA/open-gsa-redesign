@@ -2730,7 +2730,7 @@ dnbMonitoring
 samMonitoring
 </td>
 <td>
-details>
+<details>
 <summary>SAM Monitoring contains below fields</summary>
 <table>
 <tr>
