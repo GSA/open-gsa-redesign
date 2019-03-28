@@ -64,7 +64,7 @@ Utilizing the Exclusion API as an extract:
 | country  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&country=USA' |
 | zipCode  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&zipCode=20171' |
 | ueiDUNS | Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652, 047795005, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ueiDUNS=9725565' |
-| ueiSAMMI | TBD |
+| ueiSAM | TBD |
 | excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&excludingAgencyCode=AF' |
 | excludingAgencyName | Allows a string (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&excludingAgencyName=FEDERAL' |
 | ctCode | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ctCode=ZZ' |
@@ -94,44 +94,44 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | excludingAgencyCode (string) | Excluding Agency Code  |
 | excludingAgencyName (string) | Excluding Agency Name  |
 | **exclusionIdentification** |
-| ueiSAMMI (string) | Unique Entity Identifier SAMMI   |
-| ueiDUNS (string) | Unique Entity Identifier DUNS  |
-| entityEFTIndicator (string) | Entity EFT Indicator   |
+| ueiSAM (string) | Unique Entity Identifier SAMMI   |
+| ueiDUNS (string) | Unique Entity Identifier DUNS  |
+| entityEFTIndicator (string) | Entity EFT Indicator   |
 | cageCode (string) | Cage Code  | 
 | npi (string) | NPI | 
-| prefix (string) | Prefix | 
+| prefix (string) | Prefix | 
 | firstName (string) | First Name  | 
-| middleName (string) | Middle Name   |
-| lastName (string) | Last Name   |
-| suffix (string) | Suffix   |
+| middleName (string) | Middle Name   |
+| lastName (string) | Last Name   |
+| suffix (string) | Suffix   |
 | name (string) | Company Name  |
 | **exclusionActions  --> listOfActions** |
-| createDate (string) | Create Date   |
+| createDate (string) | Create Date   |
 | updateDate (string) | Update Date  |
 | activateDate (string) | Activate Date |
-| terminationDate (string) | Termination Date   |
-| terminationType(string) | Termination Type   |
-| recordStatus  (string) | Record Status  |
+| terminationDate (string) | Termination Date   |
+| terminationType(string) | Termination Type   |
+| recordStatus  (string) | Record Status  |
 | **exclusionAddress** |
-| address1 (string) | Address 1  | 
-| address2 (string) | Address 2  | 
-| addressCity (string) | Address City  | 
+| address1 (string) | Address 1  | 
+| address2 (string) | Address 2  | 
+| addressCity (string) | Address City  | 
 | addressState (string) | Address State |
 | addressProvince (string) | Address Province |
-| addressZipOrPostalCode (string) | Address Zip OR Postal Code  |
-| country (string) | Country  |
+| addressZipOrPostalCode (string) | Address Zip OR Postal Code  |
+| country (string) | Country  |
 | **exclusionOtherInformation** |
 | additionalComments (string) | Additional Comments  |
-| ctCode (string) | CT Code  |
-| dnbInvestigationStatus (string) | DNB Investigation Status    |
-| **references --> referencesList**   |
+| ctCode (string) | CT Code  |
+| dnbInvestigationStatus (string) | DNB Investigation Status    |
+| **references --> referencesList**   |
 | name (string) | Name  |
 | type (string) | Type  |
 | moreLocations (list) |  More Locations   |
 | **vesselDetails** |
 | callSign (string) | Call Sign  |
 | type (string) | Type  |
-| tonnage (string) | Tonnage  |
+| tonnage (string) | Tonnage  |
 | grt (string) | GRT  |
 | flag (string) | Flag  |
 | owner (string) | Owner |
@@ -160,4 +160,3 @@ The API will return one of the following responses:
 ## Contact Us
 
 <p><small><a href="#">Back to top</a></small></p>
-
