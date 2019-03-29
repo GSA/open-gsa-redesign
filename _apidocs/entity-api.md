@@ -21,7 +21,7 @@ The Entity Management API will allow users to request Public Entity Information 
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
 * It returns asynchronous responses by sending file downloadable links in the browser and in the user emails.
 * It returns data in the JSON or CSV format as selected by the user.
-* It can return only the first 1,000,000 records.ds.
+* It can return only the first 1,000,000 records.
 
 <p><small><a href="#">Back to top</a></small></p>
 
