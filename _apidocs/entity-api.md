@@ -70,9 +70,8 @@ Utilizing the Entity API as an extract:
 ## API Description
 
 ### Public Endpoints Information
+<summary><b>Public Entity Management Endpoint</b></summary><br>
 <details>
-<b>Public Entity Management Endpoint</b><br>
-
 <tr>
 <td><b>Endpoint:</b>  https://api.sam.gov/prod/entity-management?api_key=< value > </td>
 </tr><br>
