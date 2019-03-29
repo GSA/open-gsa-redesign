@@ -1537,20 +1537,62 @@ First Name</td>
 <td>Link For DFARS Report HTML</td>
 </tr>
 
-
-</table>
-</details>
-</td>
-</tr>
-
-
-
 </table>
 </details>
 </td>
 </tr>
 
 </table>
+</details>
+</td>
+</tr>
+
+</table>
+
+<summary>qualifications Sub Section</summary>
+
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+<tr>
+<td>architectEngineerResponses</td>
+<td>List</td>
+<td>
+<summary>Architecture Engineer Responses contains below fields</summary><br>
+<table width="100">
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+<td>listOfProvisions</td>
+<td>List</td>
+<td>
+<details>
+<summary>listOfProvisions contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+<tr>
+<td>provisionId</td>
+<td>String</td>
+<td>Provision Id</td>
+</tr>
+</table>
+</details>
+</td>
+<tr>
+</table>
+</td>
+</tr>
+</table>
+
 </details>
 
 <details>
@@ -5972,7 +6014,7 @@ First Name</td>
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
-<td>Unique Entity Identifier SAMMI</td>
+<td>Unique Entity Identifier SAM</td>
 </tr>
 
 <tr>
@@ -6069,7 +6111,7 @@ First Name</td>
 
 <details>
 <summary>core Data Section</summary><br>
-<summary>Entity Hierarchy Information</summary>
+<summary>entityHierarchyInformation</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -6078,7 +6120,21 @@ First Name</td>
 </tr>
 
 <tr>
-<td>EVSMonitoring</td>
+<td>evsMonitoring</td>
+<td>object</td>
+<td>
+<details>
+<summary>EVS Monitoring contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+<tr>
+<td>
+dnbMonitoring
+</td>
 <td>object</td>
 <td>
 <details>
@@ -6159,6 +6215,94 @@ First Name</td>
 </details>
 </td>
 </tr>
+<tr>
+<td>
+samMonitoring
+</td>
+<td>object</td>
+<td>
+<details>
+<summary>SAM Monitoring contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>dbaName</td>
+<td>string</td>
+<td>DBA Name</td>
+</tr>
+
+<tr>
+<td>outOfBusinessFlag</td>
+<td>string</td>
+<td>Out Of Business Flag</td>
+</tr>
+
+<tr>
+<td>monitoringStatus</td>
+<td>string</td>
+<td>Monitoring Status</td>
+</tr>
+
+<tr>
+<td>lastUpdated</td>
+<td>string</td>
+<td>Last Updated</td>
+</tr>
+
+<tr>
+<td>address1</td>
+<td>string</td>
+<td>Address 1</td>
+</tr>
+
+<tr>
+<td>address2</td>
+<td>string</td>
+<td>Address 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>postalCode</td>
+<td>string</td>
+<td>Postal Code</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+</table>
+</details>
+</td>
+</tr>
+</table>
+</details>
+</td>
+</tr>
 
 <tr>
 <td>immediateParentEntity</td>
@@ -6193,11 +6337,11 @@ First Name</td>
 
 <tr>
 <div style="width: 20px">
-<td>physicalAddress Sub Sections </td>
+<td>physicalAddress</td>
 <td>object</td>
 <td>
 <details>
-<summary>PhysicalAddress contains below fields</summary>
+<summary>physicalAddress contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -6250,7 +6394,7 @@ First Name</td>
 <tr>
 <td>congressionalDistrict</td>
 <td>string</td>
-<td>Congressional District of Physical Address</td>
+<td>Physical Address Congressional District</td>
 </tr>
 </table>
 </details>
@@ -6274,7 +6418,7 @@ First Name</td>
 <td>object</td>
 <td>
 <details>
-<summary>Ultimate Domestic Parent</summary>
+<summary>Ultimate Domestic Parent contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -6302,11 +6446,11 @@ First Name</td>
 
 <tr>
 <div style="width: 20px">
-<td>physicalAddress Sub Sections </td>
+<td>physicalAddress</td>
 <td>object</td>
 <td>
 <details>
-<summary>PhysicalAddress contains below fields</summary>
+<summary>physicalAddress contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -6359,7 +6503,7 @@ First Name</td>
 <tr>
 <td>congressionalDistrict</td>
 <td>string</td>
-<td>Congressional District of Physical Address</td>
+<td>Physical Address Congressional District</td>
 </tr>
 </table>
 </details>
@@ -6453,7 +6597,7 @@ First Name</td>
 </tr>
 </table>
 
-<summary>entityRegistration Sub Section</summary>
+<summary>entityInformation Sub Section</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -6486,15 +6630,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>submissionDate</td>
-<td>string</td>
-<td>Submission Date</td>
-</tr>
-
-<tr>
 <td>fiscalYearEndCloseDate</td>
 <td>string</td>
 <td>Fiscal Year End Close Date</td>
+</tr>
+
+<tr>
+<td>submissionDate</td>
+<td>string</td>
+<td>Submission Date</td>
 </tr>
 
 <tr>
@@ -6557,7 +6701,7 @@ First Name</td>
 <tr>
 <td>congressionalDistrict</td>
 <td>string</td>
-<td>Congressional District of Physical Address</td>
+<td>Physical Address Congressional District</td>
 </tr>
 </table>
 
@@ -6987,7 +7131,7 @@ First Name</td>
 <tr>
 <td>sbaSmallBusiness</td>
 <td>string</td>
-<td>NAICS Code Whether or not the NAICS Code is indicated as an SBA small business </td>
+<td>Whether or not the NAICS Code is indicated as an SBA small business</td>
 </tr>
 
 <tr>
@@ -7229,7 +7373,7 @@ First Name</td>
 <td>
 
 <details>
-<summary>FAR Responses can contains below fields</summary>
+<summary>FAR Responses contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7242,7 +7386,7 @@ First Name</td>
 <td>list</td>
 <td>
 <details>
-<summary>List of Provisions can contains below fields</summary><br>
+<summary>List of Provisions contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7264,7 +7408,7 @@ First Name</td>
 <td>list</td>
 <td>
 <details>
-<summary>List of Answers can contains below fields</summary><br>
+<summary>List of Answers contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7631,7 +7775,7 @@ First Name</td>
 <td>list</td>
 <td>
 <details>
-<summary>DFAR Responses can contains below fields</summary><br>
+<summary>DFAR Responses contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7644,7 +7788,7 @@ First Name</td>
 <td>list</td>
 <td>
 <details>
-<summary>List of Provisions can contains below fields</summary><br>
+<summary>List of Provisions contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7666,7 +7810,7 @@ First Name</td>
 <td>list</td>
 <td>
 <details>
-<summary>List of Answers can contains below fields</summary><br>
+<summary>List of Answers contains below fields</summary><br>
 <table width="100">
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
