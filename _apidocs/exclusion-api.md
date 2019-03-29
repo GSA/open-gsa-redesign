@@ -80,6 +80,7 @@ Utilizing the Exclusion API as an extract:
 | size  | Retrieves Records size per page.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&size=1' |
 | includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&includeSections=exclusionOtherInformation,exclusionDetails' |
 | format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&format=csv' |
+| emailId | User email Id for notification message .<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&emailId=test@gsa.gov' |
 
 **Expected Result**
 
