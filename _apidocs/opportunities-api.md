@@ -2639,7 +2639,7 @@ description.body | string |  | No | Yes | Description of notice
 <code><pre>
 {
   "requestType": "publish_request",
-  "reason": "Publish Opportunity"
+  "reason": ""
 }
 </pre></code>
 </p>
@@ -2662,7 +2662,7 @@ requestType | string | publish_request | Yes | Type of request
 <code><pre>
 {
   "requestType": "update_publish_request",
-  "reason": "Revise Opportunity"
+  "reason": ""
 }
 </pre></code>
 </p>
@@ -2683,7 +2683,13 @@ requestType | string | update_publish_request | Yes | Type of request
 <summary>Cancel_Opportunity_Contract_Json</summary>
 <p>
 <code><pre>
-add cancel here....
+{
+  "reason": "",
+  "requestType": "cancel_request",
+  "data": {
+    "description": ""
+  }
+}
 </pre></code>
 </p>
 </details>
@@ -2704,7 +2710,18 @@ Description | string |  | Yes | Description for cancelation
 <summary>Uncancel_Opportunity_Contract_Json</summary>
 <p>
 <code><pre>
-add Uncancel here....
+{
+  "reason": "",
+  "requestType": " uncancel_request ",
+  "data": {
+    "description": "",
+    "newArchiveDate": "",
+    "newArchiveType": "",
+    "newResponseDate": "",
+    "newResponseTz": "America/New_York",
+    "newContractAwardDate": ""
+  }
+}
 </pre></code>
 </p>
 </details>
@@ -2731,7 +2748,10 @@ newContractAwardDate | date | YYYY-MM-DD | Yes (if type=a) | New Contract Award 
 <summary>Archive_Opportunity_Contract_Json</summary>
 <p>
 <code><pre>
-add archive here....
+{
+  "reason": "",
+  "requestType": "archive_request"
+}
 </pre></code>
 </p>
 </details>
@@ -2751,7 +2771,16 @@ requestType | string | archive_request | Yes | Type of request
 <summary>Unarchive_Opportunity_Contract_Json</summary>
 <p>
 <code><pre>
-add unarchive here....
+{
+  "reason": "",
+  "requestType": " unarchive_request",
+  "data": {
+    "newArchiveDate": "",
+    "newArchiveType": "",
+    "newResponseDate": "",
+    "newResponseTz": "America/New_York"
+  }
+}
 </pre></code>
 </p>
 </details>
@@ -2773,10 +2802,121 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
 
 <div id="create-attachment-json" title="Click to view Create Attachment Contract">
 <details>
-<summary>Create_Attachment_Contract_Json</summary>
+<summary>Create_Attachment_Contract_Json - File</summary>
 <p>
 <code><pre>
-add create attachment here....
+{
+  "attType": "file",
+  "content": "",
+  "userFileName": "",
+  "description": "",
+  "packageAccessLevel": ""
+}
+</pre></code>
+</p>
+</details>
+<details>
+<summary>Create_Attachment_Contract_Json - Link</summary>
+<p>
+<code><pre>
+{
+  "attType": "link",
+  "link": "",
+  "description": "",
+  "packageAccessLevel": ""
+}
+</pre></code>
+</p>
+</details>
+<details>
+<summary>Valid_File_Types</summary>
+<p>
+<code><pre>
+.wmv
+.pdf
+.htm
+.exe
+.xml
+.csv
+.ps
+.eps
+.kmz
+.xpw
+.xpx
+.xlsb
+.xlsm
+.xltm
+.sst
+.stl
+.pps
+.ppt
+.pptm
+.mpp
+.pub
+.vsd
+.docm
+.dotm
+.xps
+.odp
+.ods
+.odt
+.xfd
+.xfdl
+.wlmp
+.wpd
+.z
+.js
+.swf
+.mht
+.webarchive
+.mp3
+.wav
+.wma
+.xyz
+.bmp
+.c4
+.dwg
+.zip
+.docx
+.xls
+.fp5
+.doc
+.pptx
+.xlsx
+.hta
+.ptm
+.accdb
+.mdb
+.wps
+.gif
+.rar
+.ai
+.rtf
+.jpeg
+.jpg
+.jpe 
+.png
+.tif
+.dgn
+.dxf
+.mdi
+.emf
+.ico
+.wmf
+.eml
+.dwf
+.dwfx
+.ics
+.css
+.html
+.txt
+.vcf
+.avi
+.mp4
+.mpg
+.vob
+.mov
+.flv
 </pre></code>
 </p>
 </details>
@@ -2800,7 +2940,13 @@ userFileName | string |  | Yes (if attType=file) | Name of file
 <summary>Update_Attachment_Contract_Json</summary>
 <p>
 <code><pre>
-add Update Attachment here....
+{
+  "attType": "User entered",
+  "userFileName": "User entered",
+  "explicitAccess": "1",
+  "description": "User entered",
+  "packageAccessLevel": "User entered"
+}
 </pre></code>
 </p>
 </details>
@@ -2824,7 +2970,10 @@ explicitAccess |  |  |  |
 <summary>IVL_Settings_Contract_Json</summary>
 <p>
 <code><pre>
-add IVL Settings here....
+{
+  "ivlCreate": "",
+  "ivlView": ""
+}
 </pre></code>
 </p>
 </details>
