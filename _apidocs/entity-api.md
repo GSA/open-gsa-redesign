@@ -1561,6 +1561,7 @@ First Name</td>
 <td>architectEngineerResponses</td>
 <td>List</td>
 <td>
+<details>
 <summary>Architecture Engineer Responses contains below fields</summary><br>
 <table width="100">
 <tr>
@@ -1589,6 +1590,7 @@ First Name</td>
 </td>
 <tr>
 </table>
+</details>
 </td>
 </tr>
 </table>
