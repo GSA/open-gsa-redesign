@@ -712,7 +712,7 @@ Utilizing the Entity API as an extract:
 <td>businessTypeList</td>
 <td>list</td>
 <td>
-<summary>Business Type List contains these fields</summary>
+<summary>businessTypeList contains these fields</summary>
 <details>
 <table>
 <tr>
@@ -742,7 +742,7 @@ Utilizing the Entity API as an extract:
 <td>sbaBusinessTypeList</td>
 <td>list</td>
 <td>
-<summary>SBA Business Type List contains these fields</summary>
+<summary>sbaBusinessTypeList contains these fields</summary>
 <details>
 <table>
 <tr>
@@ -819,7 +819,7 @@ Utilizing the Entity API as an extract:
 <td>list</td>
 <td>
 <details>
-<summary>NAICS List contains these fields</summary>
+<summary>naicsList contains these fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -860,7 +860,7 @@ Utilizing the Entity API as an extract:
 <td>List</td>
 <td>
 <details>
-<summary>PSC List contains these fields</summary>
+<summary>pscList contains these fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -977,7 +977,7 @@ Utilizing the Entity API as an extract:
 <td>
 
 <details>
-<summary>FAR Responses contains below fields</summary>
+<summary>fARResponses contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -990,7 +990,7 @@ Utilizing the Entity API as an extract:
 <td>list</td>
 <td>
 <details>
-<summary>List of Provisions contains below fields</summary><br>
+<summary>listOfProvisions contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -1012,7 +1012,7 @@ Utilizing the Entity API as an extract:
 <td>list</td>
 <td>
 <details>
-<summary>List of Answers contains below fields</summary><br>
+<summary>listOfAnswers contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -1379,7 +1379,7 @@ Utilizing the Entity API as an extract:
 <td>list</td>
 <td>
 <details>
-<summary>DFAR Responses can contains below fields</summary><br>
+<summary>dFARResponses can contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -1414,7 +1414,7 @@ Utilizing the Entity API as an extract:
 <td>list</td>
 <td>
 <details>
-<summary>List of Answers contains below fields</summary><br>
+<summary>listOfAnswers contains below fields</summary><br>
 <table width="100">
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -1562,7 +1562,7 @@ First Name</td>
 <td>List</td>
 <td>
 <details>
-<summary>Architecture Engineer Responses contains below fields</summary><br>
+<summary>architectEngineerResponses contains below fields</summary><br>
 <table width="100">
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -2769,7 +2769,7 @@ First Name</td>
 <td>object</td>
 <td>
 <details>
-<summary>Immediate Parent Entity contains below fields</summary>
+<summary>immediateParentEntity contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -2878,7 +2878,7 @@ First Name</td>
 <td>object</td>
 <td>
 <details>
-<summary>Ultimate Domestic Parent contains below fields</summary>
+<summary>ultimateDomesticParent contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -2998,7 +2998,7 @@ First Name</td>
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
-<td>Unique Entity Identifier SAMa</td>
+<td>Unique Entity Identifier SAM</td>
 </tr>
 
 <tr>
@@ -3095,7 +3095,7 @@ First Name</td>
 <td>object</td>
 <td>
 <details>
-<summary>EVS Monitoring contains below fields</summary>
+<summary>evsMonitoring contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3109,7 +3109,7 @@ dnbMonitoring
 <td>object</td>
 <td>
 <details>
-<summary>DNB Monitoring contains below fields</summary>
+<summary>dnbMonitoring contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3193,7 +3193,7 @@ samMonitoring
 <td>object</td>
 <td>
 <details>
-<summary>SAM Monitoring contains below fields</summary>
+<summary>samMonitoring contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3544,7 +3544,7 @@ samMonitoring
 <td>businessTypeList</td>
 <td>list</td>
 <td>
-<summary>Business Type List contains these fields</summary>
+<summary>businessTypeList contains these fields</summary>
 <details>
 <table>
 <tr>
@@ -3574,7 +3574,7 @@ samMonitoring
 <td>sbaBusinessTypeList</td>
 <td>list</td>
 <td>
-<summary>SBA Business Type List contains these fields</summary>
+<summary>sbaBusinessTypeList contains these fields</summary>
 <details>
 <table>
 <tr>
@@ -3651,7 +3651,7 @@ samMonitoring
 <td>list</td>
 <td>
 <details>
-<summary>NAICS List contains these fields</summary>
+<summary>naicsList contains these fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3692,7 +3692,7 @@ samMonitoring
 <td>List</td>
 <td>
 <details>
-<summary>PSC List contains these fields</summary>
+<summary>pscList contains these fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3917,7 +3917,7 @@ samMonitoring
 <td>
 
 <details>
-<summary>FAR Responses contains below fields</summary>
+<summary>fARResponses contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3930,7 +3930,7 @@ samMonitoring
 <td>list</td>
 <td>
 <details>
-<summary>List of Provisions contains below fields</summary><br>
+<summary>listOfProvisions contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3952,7 +3952,7 @@ samMonitoring
 <td>list</td>
 <td>
 <details>
-<summary>List of Answers contains below fields</summary><br>
+<summary>listOfAnswers contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -4319,7 +4319,7 @@ samMonitoring
 <td>list</td>
 <td>
 <details>
-<summary>DFAR Responses contains below fields</summary><br>
+<summary>dFARResponses contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -4332,7 +4332,7 @@ samMonitoring
 <td>list</td>
 <td>
 <details>
-<summary>List of Provisions contains below fields</summary><br>
+<summary>listOfProvisions contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -4354,7 +4354,7 @@ samMonitoring
 <td>list</td>
 <td>
 <details>
-<summary>List of Answers contains below fields</summary><br>
+<summary>listOfAnswers contains below fields</summary><br>
 <table width="100">
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -4505,7 +4505,7 @@ First Name</td>
 <td>List</td>
 <td>
 <details>
-<summary>Architecture Engineer Responses contains below fields</summary><br>
+<summary>architectEngineerResponses contains below fields</summary><br>
 <table width="100">
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -6458,7 +6458,7 @@ First Name</td>
 <td>object</td>
 <td>
 <details>
-<summary>Immediate Parent Entity contains below fields</summary>
+<summary>immediateParentEntity contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -6567,7 +6567,7 @@ First Name</td>
 <td>object</td>
 <td>
 <details>
-<summary>Ultimate Domestic Parent contains below fields</summary>
+<summary>ultimateDomesticParent contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -6687,7 +6687,7 @@ First Name</td>
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
-<td>Unique Entity Identifier SAMa</td>
+<td>Unique Entity Identifier SAM</td>
 </tr>
 
 <tr>
@@ -6784,7 +6784,7 @@ First Name</td>
 <td>object</td>
 <td>
 <details>
-<summary>EVS Monitoring contains below fields</summary>
+<summary>evsMonitoring contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -6798,7 +6798,7 @@ dnbMonitoring
 <td>object</td>
 <td>
 <details>
-<summary>DNB Monitoring contains below fields</summary>
+<summary>dnbMonitoring contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -6882,7 +6882,7 @@ samMonitoring
 <td>object</td>
 <td>
 <details>
-<summary>SAM Monitoring contains below fields</summary>
+<summary>samMonitoring contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7239,7 +7239,7 @@ samMonitoring
 <td>businessTypeList</td>
 <td>list</td>
 <td>
-<summary>Business Type List contains these fields</summary>
+<summary>businessTypeList contains these fields</summary>
 <details>
 <table>
 <tr>
@@ -7269,7 +7269,7 @@ samMonitoring
 <td>sbaBusinessTypeList</td>
 <td>list</td>
 <td>
-<summary>SBA Business Type List contains these fields</summary>
+<summary>sbaBusinessTypeList contains these fields</summary>
 <details>
 <table>
 <tr>
@@ -7327,7 +7327,7 @@ samMonitoring
 <td>object</td>
 <td>
 <details>
-<summary>Financial Account contains below fields</summary>
+<summary>financialAccount contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7549,7 +7549,7 @@ samMonitoring
 <td>list</td>
 <td>
 <details>
-<summary>NAICS List contains these fields</summary>
+<summary>naicsList contains these fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7590,7 +7590,7 @@ samMonitoring
 <td>List</td>
 <td>
 <details>
-<summary>PSC List contains these fields</summary>
+<summary>pscList contains these fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7814,7 +7814,7 @@ samMonitoring
 <td>
 
 <details>
-<summary>FAR Responses contains below fields</summary>
+<summary>fARResponses contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7827,7 +7827,7 @@ samMonitoring
 <td>list</td>
 <td>
 <details>
-<summary>List of Provisions contains below fields</summary><br>
+<summary>listOfProvisions contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7849,7 +7849,7 @@ samMonitoring
 <td>list</td>
 <td>
 <details>
-<summary>List of Answers contains below fields</summary><br>
+<summary>listOfAnswers contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -8216,7 +8216,7 @@ samMonitoring
 <td>list</td>
 <td>
 <details>
-<summary>DFAR Responses contains below fields</summary><br>
+<summary>dFARResponses contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -8229,7 +8229,7 @@ samMonitoring
 <td>list</td>
 <td>
 <details>
-<summary>List of Provisions contains below fields</summary><br>
+<summary>listOfProvisions contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -8251,7 +8251,7 @@ samMonitoring
 <td>list</td>
 <td>
 <details>
-<summary>List of Answers contains below fields</summary><br>
+<summary>listOfAnswers contains below fields</summary><br>
 <table width="100">
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -8402,7 +8402,7 @@ First Name</td>
 <td>List</td>
 <td>
 <details>
-<summary>Architecture Engineer Responses contains below fields</summary><br>
+<summary>architectEngineerResponses contains below fields</summary><br>
 <table width="100">
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
