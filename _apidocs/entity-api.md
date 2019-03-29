@@ -6578,7 +6578,7 @@ First Name</td>
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
-<td>Unique Entity Identifier SAMa</td>
+<td>Unique Entity Identifier SAM</td>
 </tr>
 
 <tr>
