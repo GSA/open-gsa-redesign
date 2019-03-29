@@ -10,8 +10,18 @@ banner-heading: Exclusions API
 The Exclusions API will allow users to request Public Exclusion Information based on various optional request parameters. 
 The response will be provided in the JSON format in a paginated manner.
 
-API also offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to 
-obtain the desired data.
+**Key Features of the Exclusion API:**
+* It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
+* It returns synchronous responses directly in the browser.
+* It returns ten records per page in the JSON format.
+* It can return only the first 10,000 records.
+
+**Additional Features of the Exclusion API:** It can serve as an Extract API with the addition of “format” parameter in the request. Following are the key features of the Exclusion Extract API:
+* It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
+* It returns asynchronous responses by sending file downloadable links in the browser and in the user emails.
+* It returns data in the JSON or CSV format as selected by the user.
+* It can return only the first 1,000,000 records.
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -37,12 +47,13 @@ Generating a System Account API Key:
 * The user must enter their password again to retrieve the key.
 
 Utilizing the Exclusion API as an extract:
-* To utilize this API as an extract we have implemented an additional parameter called 'format.'
-* To retrieve exclusion data as a CSV the parameter '&format=csv' must be added to the request.
-* To retrieve exclusion data as a JSON the parameter '&format=json' must be added to the request.
-* Requests that contain this 'format' parameter will provide the user with a URL in the response.
-* In the response URL the phrase REPLACE_WITH_API_KEY must be deleted and replaced with a valid API key and sent in another request.  If the download is ready this will allow the user to retrieve the file.  If the download is not yet ready they will need to try again in some time to allow time for the file to be prepared.
-* The emailId parameter can be included with a valid email address if the user would like to be informed when the file is ready for download.
+* To utilize this API as an Extract an additional parameter called ‘format’ has been implemented.
+* To retrieve Exclusion data in a CSV format, the parameter ‘&format=csv’ must be provided in the request.
+* To retrieve Exclusion data in a JSON format, the parameter ‘&format=json’ must be provided in the request.
+* If the requests that contain the ‘format’ parameter are executed successfully, then they will provide the user with a file downloadable URL in the response.
+* In the file downloadable URL, the phrase REPLACE_WITH_API_KEY must be deleted and replaced with a valid API Key and sent as another request.
+* If the file is ready for download, then the users can retrieve it. If the file is not ready for download, then the users will need to try again in some time.
+* Users can also provide another parameter, “emailId” with a valid email address if they choose to receive the file downloadable link in their emails.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -86,57 +97,57 @@ Utilizing the Exclusion API as an extract:
 
 API response consists of Sections, Sub-sections and Tags underneath each of the Sections or Sub-sections
 
-| Section/Sub-section/Tag | Description |
+| Section/Sub-section/Tag | Type | Description |
 | ---- |  ----------- |
 | **exclusionDetails** |
-| classificationType (string) | Classification Type |
-| exclusionType (string) | Exclusion Type  |
-| exclusionProgram (string) | Exclusion Program | 
-| excludingAgencyCode (string) | Excluding Agency Code  |
-| excludingAgencyName (string) | Excluding Agency Name  |
+| classificationType | string | Classification Type |
+| exclusionType | string | Exclusion Type  |
+| exclusionProgram | string | Exclusion Program | 
+| excludingAgencyCode | string | Excluding Agency Code  |
+| excludingAgencyName | string | Excluding Agency Name  |
 | **exclusionIdentification** |
-| ueiSAM (string) | Unique Entity Identifier SAM   |
-| ueiDUNS (string) | Unique Entity Identifier DUNS  |
-| entityEFTIndicator (string) | Entity EFT Indicator   |
-| cageCode (string) | Cage Code  | 
-| npi (string) | NPI | 
-| prefix (string) | Prefix | 
-| firstName (string) | First Name  | 
-| middleName (string) | Middle Name   |
-| lastName (string) | Last Name   |
-| suffix (string) | Suffix   |
-| name (string) | Company Name  |
+| ueiSAM | string | Unique Entity Identifier SAM   |
+| ueiDUNS | string | Unique Entity Identifier DUNS  |
+| entityEFTIndicator | string | Entity EFT Indicator   |
+| cageCode | string | CAGE Code  | 
+| npi | string| NPI | 
+| prefix | string | Prefix | 
+| firstName | string | First Name  | 
+| middleName | string | Middle Name   |
+| lastName | string | Last Name   |
+| suffix | string | Suffix   |
+| name | string | Company Name  |
 | **exclusionActions  --> listOfActions** |
-| createDate (string) | Create Date   |
-| updateDate (string) | Update Date  |
-| activateDate (string) | Activate Date |
-| terminationDate (string) | Termination Date   |
-| terminationType(string) | Termination Type   |
-| recordStatus  (string) | Record Status  |
+| createDate | string | Create Date   |
+| updateDate | string | Update Date  |
+| activateDate | string | Activate Date |
+| terminationDate | string | Termination Date   |
+| terminationType | string | Termination Type   |
+| recordStatus | string | Record Status  |
 | **exclusionAddress** |
-| address1 (string) | Address 1  | 
-| address2 (string) | Address 2  | 
-| addressCity (string) | Address City  | 
-| addressState (string) | Address State |
-| addressProvince (string) | Address Province |
-| addressZipOrPostalCode (string) | Address Zip OR Postal Code  |
-| country (string) | Country  |
+| address1 | string | Address 1  | 
+| address2 | string | Address 2  | 
+| city | string | Address City  | 
+| state | string | Address State |
+| province | string | Address Province |
+| zipCode | string | Address Zip OR Postal Code  |
+| country | string | Country  |
 | **exclusionOtherInformation** |
-| additionalComments (string) | Additional Comments  |
-| ctCode (string) | CT Code  |
-| dnbInvestigationStatus (string) | DNB Investigation Status    |
+| additionalComments | string | Additional Comments  |
+| ctCode | string | CT Code  |
+| dnbInvestigationStatus | string | DNB Investigation Status    |
 | **references --> referencesList**   |
-| name (string) | Name  |
-| type (string) | Type  |
-| moreLocations (list) |  More Locations   |
+| name | string | Name  |
+| type | string | Type  |
+| moreLocations | string |  More Locations   |
 | **vesselDetails** |
-| callSign (string) | Call Sign  |
-| type (string) | Type  |
-| tonnage (string) | Tonnage  |
-| grt (string) | GRT  |
-| flag (string) | Flag  |
-| owner (string) | Owner |
-| secondaryAddress (string) | Secondary Address  |
+| callSign | string | Call Sign  |
+| type | string | Type  |
+| tonnage | string | Tonnage  |
+| grt | string | GRT  |
+| flag | string | Flag  |
+| owner | string | Owner |
+| secondaryAddress | string | Secondary Address  |
 
 
 ## OpenAPI Specification File 
