@@ -1570,7 +1570,7 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
 <td>listOfProvisions</td>
-<td>List</td>
+<td>list</td>
 <td>
 <details>
 <summary>listOfProvisions contains below fields</summary>
@@ -1582,13 +1582,105 @@ First Name</td>
 </tr>
 <tr>
 <td>provisionId</td>
-<td>String</td>
+<td>string</td>
 <td>Provision Id</td>
 </tr>
 </table>
 </details>
 </td>
 <tr>
+<td>listOfAnswers</td>
+<td>list</td>
+<td>
+<details>
+<summary>listOfAnswers contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+<tr>
+<td>answerType</td>
+<td>string</td>
+<td>Answer Type</td>
+</tr>
+<tr>
+<td>answerId</td>
+<td>string</td>
+<td>Answer Id</td>
+</tr>
+<tr>
+<td>answerText</td>
+<td>string</td>
+<td>Answer Text</td>
+</tr>
+<tr>
+<td>businessObjectType</td>
+<td>string</td>
+<td>Business Object Type</td>
+</tr>
+<tr>
+<td>businessObjectId</td>
+<td>string</td>
+<td>Business Object Id</td>
+</tr>
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>companyName</td>
+<td>string</td>
+<td>Company Name</td>
+</tr>
+<tr>
+<td>companyEstablishedYear</td>
+<td>string</td>
+<td>Company Established Year</td>
+</tr>
+<tr>
+<td>companyDUNS</td>
+<td>string</td>
+<td>Company DUNS</td>
+</tr>
+<tr>
+<td>companyIsReference</td>
+<td>string</td>
+<td>Company Is Reference</td>
+</tr>
+<tr>
+<td>qualificationURLPDF</td>
+<td>string</td>
+<td>Qualification URL PDF</td>
+</tr>
+<tr>
+<td>qualificationURLHTML</td>
+<td>string</td>
+<td>Qualification URL HTML</td>
+</tr>
+  
+  
+</table>
+</details>
+</td>
+</tr>
 </table>
 </details>
 </td>
