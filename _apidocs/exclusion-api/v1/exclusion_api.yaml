@@ -79,10 +79,9 @@ paths:
           required: false
           schema:
             type: string
-        - name: ueiSAMMI
+        - name: ueiSAM
           in: query
-          description: Unique Entity Identifier SAMMI- 9 digit value (9725565, TF118652,
-            047795005, null) - Replacement for ueiDUNS
+          description: TBD
           required: false
           schema:
             type: string
@@ -183,6 +182,19 @@ paths:
           required: false
           schema:
             type: string
+        - name: format
+            in: query
+            description: Format
+            required: false
+            schema:
+              type: string
+        - name: emailID
+            in: query
+            description: Email ID
+            required: false
+            schema:
+              type: string
+
       responses:
         "200":
           description: Successfully retrieved list
