@@ -926,13 +926,13 @@ Utilizing the Entity API as an extract:
 <tr>
 <td>geographicalAreaServedStateCode</td>
 <td>string</td>
-<td>State name</td>
+<td>State code</td>
 </tr>
 
 <tr>
 <td>geographicalAreaServedStateName</td>
 <td>string</td>
-<td>State code</td>
+<td>State name</td>
 </tr>
 
 <tr>
@@ -2764,6 +2764,224 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
 
+<tr>
+<td>immediateParentEntity</td>
+<td>object</td>
+<td>
+<details>
+<summary>Immediate Parent Entity contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ueiSAM</td>
+<td>string</td>
+<td>Unique Entity Identifier SAM</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>string</td>
+<td>Unique Entity Identifier DUNS</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<div style="width: 20px">
+<td>physicalAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>physicalAddress contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>address1</td>
+<td>string</td>
+<td>Physical Address 1</td>
+</tr>
+
+<tr>
+<td>address2</td>
+<td>string</td>
+<td>Physical Address 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>Physical Address City</td>
+</tr>
+
+<tr>
+<td>state</td>
+<td>string</td>
+<td>Physical Address State</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Physical Address Zip</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Physical Address Zip Plus4</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Physical Address Country</td>
+</tr>
+
+<tr>
+<td>congressionalDistrict</td>
+<td>string</td>
+<td>Physical Address Congressional District</td>
+</tr>
+</table>
+</details>
+</td>
+</div>
+</tr>
+
+<tr>
+<td>phoneNumber</td>
+<td>string</td>
+<td>Phone Number</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>intermediateParentEntites</td>
+<td>object</td>
+<td>
+<details>
+<summary>Ultimate Domestic Parent contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ueiSAM</td>
+<td>string</td>
+<td>Unique Entity Identifier SAM</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>string</td>
+<td>Unique Entity Identifier DUNS</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<div style="width: 20px">
+<td>physicalAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>physicalAddress contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>address1</td>
+<td>string</td>
+<td>Physical Address 1</td>
+</tr>
+
+<tr>
+<td>address2</td>
+<td>string</td>
+<td>Physical Address 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>Physical Address City</td>
+</tr>
+
+<tr>
+<td>state</td>
+<td>string</td>
+<td>Physical Address State</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Physical Address Zip</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Physical Address Zip Plus4</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Physical Address Country</td>
+</tr>
+
+<tr>
+<td>congressionalDistrict</td>
+<td>string</td>
+<td>Physical Address Congressional District</td>
+</tr>
+</table>
+</details>
+</td>
+</div>
+</tr>
+
+<tr>
+<td>phoneNumber</td>
+<td>string</td>
+<td>Phone Number</td>
+</tr>
+
+
+</table>
+</details>
+</td>
+</tr>
 
 <tr>
 <td>evsMonitoring</td>
@@ -2945,226 +3163,6 @@ samMonitoring
 </details>
 </td>
 </tr>
-</table>
-</details>
-</td>
-</tr>
-
-
-<tr>
-<td>immediateParentEntity</td>
-<td>object</td>
-<td>
-<details>
-<summary>Immediate Parent Entity contains below fields</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>ueiSAM</td>
-<td>string</td>
-<td>Unique Entity Identifier SAM</td>
-</tr>
-
-<tr>
-<td>ueiDUNS</td>
-<td>string</td>
-<td>Unique Entity Identifier DUNS</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<div style="width: 20px">
-<td>physicalAddress</td>
-<td>object</td>
-<td>
-<details>
-<summary>physicalAddress contains below fields</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>address1</td>
-<td>string</td>
-<td>Physical Address 1</td>
-</tr>
-
-<tr>
-<td>address2</td>
-<td>string</td>
-<td>Physical Address 2</td>
-</tr>
-
-<tr>
-<td>city</td>
-<td>string</td>
-<td>Physical Address City</td>
-</tr>
-
-<tr>
-<td>state</td>
-<td>string</td>
-<td>Physical Address State</td>
-</tr>
-
-<tr>
-<td>zipCode</td>
-<td>string</td>
-<td>Physical Address Zip</td>
-</tr>
-
-<tr>
-<td>zipCodePlus4</td>
-<td>string</td>
-<td>Physical Address Zip Plus4</td>
-</tr>
-
-<tr>
-<td>country</td>
-<td>string</td>
-<td>Physical Address Country</td>
-</tr>
-
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
-</table>
-</details>
-</td>
-</div>
-</tr>
-
-<tr>
-<td>phoneNumber</td>
-<td>string</td>
-<td>Phone Number</td>
-</tr>
-
-</table>
-</details>
-</td>
-</tr>
-
-<tr>
-<td>intermediateParentEntites</td>
-<td>object</td>
-<td>
-<details>
-<summary>Ultimate Domestic Parent contains below fields</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>ueiSAM</td>
-<td>string</td>
-<td>Unique Entity Identifier SAMMI</td>
-</tr>
-
-<tr>
-<td>ueiDUNS</td>
-<td>string</td>
-<td>Unique Entity Identifier DUNS</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<div style="width: 20px">
-<td>physicalAddress</td>
-<td>object</td>
-<td>
-<details>
-<summary>physicalAddress contains below fields</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>address1</td>
-<td>string</td>
-<td>Physical Address 1</td>
-</tr>
-
-<tr>
-<td>address2</td>
-<td>string</td>
-<td>Physical Address 2</td>
-</tr>
-
-<tr>
-<td>city</td>
-<td>string</td>
-<td>Physical Address City</td>
-</tr>
-
-<tr>
-<td>state</td>
-<td>string</td>
-<td>Physical Address State</td>
-</tr>
-
-<tr>
-<td>zipCode</td>
-<td>string</td>
-<td>Physical Address Zip</td>
-</tr>
-
-<tr>
-<td>zipCodePlus4</td>
-<td>string</td>
-<td>Physical Address Zip Plus4</td>
-</tr>
-
-<tr>
-<td>country</td>
-<td>string</td>
-<td>Physical Address Country</td>
-</tr>
-
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
-</table>
-</details>
-</td>
-</div>
-</tr>
-
-<tr>
-<td>phoneNumber</td>
-<td>string</td>
-<td>Phone Number</td>
-</tr>
-
-
 </table>
 </details>
 </td>
@@ -5901,7 +5899,7 @@ First Name</td>
 ### Sensitive Endpoints Information
 
 <details>
-<summary><b>Sentive Entity Management Endpoint</b></summary><br>
+<summary><b>Sensitive Entity Management Endpoint</b></summary><br>
 <tr>
 <td><b>Endpoint:</b>  https://api.sam.gov/prod/entity-management/sensitive?api_key=< value > </td>
 </tr><br>
@@ -6349,6 +6347,332 @@ First Name</td>
 </tr>
 
 <tr>
+<td>immediateParentEntity</td>
+<td>object</td>
+<td>
+<details>
+<summary>Immediate Parent Entity contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ueiSAM</td>
+<td>string</td>
+<td>Unique Entity Identifier SAM</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>string</td>
+<td>Unique Entity Identifier DUNS</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<div style="width: 20px">
+<td>physicalAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>physicalAddress contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>address1</td>
+<td>string</td>
+<td>Physical Address 1</td>
+</tr>
+
+<tr>
+<td>address2</td>
+<td>string</td>
+<td>Physical Address 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>Physical Address City</td>
+</tr>
+
+<tr>
+<td>state</td>
+<td>string</td>
+<td>Physical Address State</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Physical Address Zip</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Physical Address Zip Plus4</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Physical Address Country</td>
+</tr>
+
+<tr>
+<td>congressionalDistrict</td>
+<td>string</td>
+<td>Physical Address Congressional District</td>
+</tr>
+</table>
+</details>
+</td>
+</div>
+</tr>
+
+<tr>
+<td>phoneNumber</td>
+<td>string</td>
+<td>Phone Number</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>intermediateParentEntites</td>
+<td>object</td>
+<td>
+<details>
+<summary>Ultimate Domestic Parent contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ueiSAM</td>
+<td>string</td>
+<td>Unique Entity Identifier SAMa</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>string</td>
+<td>Unique Entity Identifier DUNS</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<div style="width: 20px">
+<td>physicalAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>physicalAddress contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>address1</td>
+<td>string</td>
+<td>Physical Address 1</td>
+</tr>
+
+<tr>
+<td>address2</td>
+<td>string</td>
+<td>Physical Address 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>Physical Address City</td>
+</tr>
+
+<tr>
+<td>state</td>
+<td>string</td>
+<td>Physical Address State</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Physical Address Zip</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Physical Address Zip Plus4</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Physical Address Country</td>
+</tr>
+
+<tr>
+<td>congressionalDistrict</td>
+<td>string</td>
+<td>Physical Address Congressional District</td>
+</tr>
+</table>
+</details>
+</td>
+</div>
+</tr>
+
+<tr>
+<td>phoneNumber</td>
+<td>string</td>
+<td>Phone Number</td>
+</tr>
+
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>ultimateParentEntity</td>
+<td>object</td>
+<td>
+<details>
+<summary>ultimateParentEntity contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+<tr>
+<td>ueiSAM</td>
+<td>string</td>
+<td>Unique Entity Identifier SAMa</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>string</td>
+<td>Unique Entity Identifier DUNS</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<div style="width: 20px">
+<td>physicalAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>physicalAddress contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>address1</td>
+<td>string</td>
+<td>Physical Address 1</td>
+</tr>
+
+<tr>
+<td>address2</td>
+<td>string</td>
+<td>Physical Address 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>Physical Address City</td>
+</tr>
+
+<tr>
+<td>state</td>
+<td>string</td>
+<td>Physical Address State</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Physical Address Zip</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Physical Address Zip Plus4</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Physical Address Country</td>
+</tr>
+
+<tr>
+<td>congressionalDistrict</td>
+<td>string</td>
+<td>Physical Address Congressional District</td>
+</tr>
+</table>
+</details>
+</td>
+</div>
+</tr>
+
+<tr>
+<td>phoneNumber</td>
+<td>string</td>
+<td>Phone Number</td>
+</tr>
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
 <td>evsMonitoring</td>
 <td>object</td>
 <td>
@@ -6528,225 +6852,6 @@ samMonitoring
 </details>
 </td>
 </tr>
-</table>
-</details>
-</td>
-</tr>
-
-<tr>
-<td>immediateParentEntity</td>
-<td>object</td>
-<td>
-<details>
-<summary>Immediate Parent Entity contains below fields</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>ueiSAM</td>
-<td>string</td>
-<td>Unique Entity Identifier SAM</td>
-</tr>
-
-<tr>
-<td>ueiDUNS</td>
-<td>string</td>
-<td>Unique Entity Identifier DUNS</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<div style="width: 20px">
-<td>physicalAddress</td>
-<td>object</td>
-<td>
-<details>
-<summary>physicalAddress contains below fields</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>address1</td>
-<td>string</td>
-<td>Physical Address 1</td>
-</tr>
-
-<tr>
-<td>address2</td>
-<td>string</td>
-<td>Physical Address 2</td>
-</tr>
-
-<tr>
-<td>city</td>
-<td>string</td>
-<td>Physical Address City</td>
-</tr>
-
-<tr>
-<td>state</td>
-<td>string</td>
-<td>Physical Address State</td>
-</tr>
-
-<tr>
-<td>zipCode</td>
-<td>string</td>
-<td>Physical Address Zip</td>
-</tr>
-
-<tr>
-<td>zipCodePlus4</td>
-<td>string</td>
-<td>Physical Address Zip Plus4</td>
-</tr>
-
-<tr>
-<td>country</td>
-<td>string</td>
-<td>Physical Address Country</td>
-</tr>
-
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
-</table>
-</details>
-</td>
-</div>
-</tr>
-
-<tr>
-<td>phoneNumber</td>
-<td>string</td>
-<td>Phone Number</td>
-</tr>
-
-</table>
-</details>
-</td>
-</tr>
-
-<tr>
-<td>intermediateParentEntites</td>
-<td>object</td>
-<td>
-<details>
-<summary>Ultimate Domestic Parent contains below fields</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>ueiSAM</td>
-<td>string</td>
-<td>Unique Entity Identifier SAMMI</td>
-</tr>
-
-<tr>
-<td>ueiDUNS</td>
-<td>string</td>
-<td>Unique Entity Identifier DUNS</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<div style="width: 20px">
-<td>physicalAddress</td>
-<td>object</td>
-<td>
-<details>
-<summary>physicalAddress contains below fields</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>address1</td>
-<td>string</td>
-<td>Physical Address 1</td>
-</tr>
-
-<tr>
-<td>address2</td>
-<td>string</td>
-<td>Physical Address 2</td>
-</tr>
-
-<tr>
-<td>city</td>
-<td>string</td>
-<td>Physical Address City</td>
-</tr>
-
-<tr>
-<td>state</td>
-<td>string</td>
-<td>Physical Address State</td>
-</tr>
-
-<tr>
-<td>zipCode</td>
-<td>string</td>
-<td>Physical Address Zip</td>
-</tr>
-
-<tr>
-<td>zipCodePlus4</td>
-<td>string</td>
-<td>Physical Address Zip Plus4</td>
-</tr>
-
-<tr>
-<td>country</td>
-<td>string</td>
-<td>Physical Address Country</td>
-</tr>
-
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
-</table>
-</details>
-</td>
-</div>
-</tr>
-
-<tr>
-<td>phoneNumber</td>
-<td>string</td>
-<td>Phone Number</td>
-</tr>
-
-
 </table>
 </details>
 </td>
