@@ -95,7 +95,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | excludingAgencyCode (string) | Excluding Agency Code  |
 | excludingAgencyName (string) | Excluding Agency Name  |
 | **exclusionIdentification** |
-| ueiSAM (string) | Unique Entity Identifier SAMMI   |
+| ueiSAM (string) | Unique Entity Identifier SAM   |
 | ueiDUNS (string) | Unique Entity Identifier DUNS  |
 | entityEFTIndicator (string) | Entity EFT Indicator   |
 | cageCode (string) | Cage Code  | 
