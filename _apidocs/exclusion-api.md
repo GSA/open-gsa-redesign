@@ -98,7 +98,7 @@ Utilizing the Exclusion API as an extract:
 API response consists of Sections, Sub-sections and Tags underneath each of the Sections or Sub-sections
 
 | Section/Sub-section/Tag | Type | Description |
-| ---- |  ----------- |
+| ---- | ---- | ----------- |
 | **exclusionDetails** |
 | classificationType | string | Classification Type |
 | exclusionType | string | Exclusion Type  |
