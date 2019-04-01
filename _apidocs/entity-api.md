@@ -6,7 +6,6 @@ banner-heading: Entity Management API
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 
 This content is currently not Firefox compliant.  Please access via Chrome or Internet Explorer.
-
 ## Overview
 The Entity Management API will allow users to request Public Entity Information based on various optional request parameters. 
 
