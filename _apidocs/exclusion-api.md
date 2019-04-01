@@ -128,8 +128,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | address1 | string | Address 1  | 
 | address2 | string | Address 2  | 
 | city | string | Address City  | 
-| state | string | Address State |
-| province | string | Address Province |
+| stateProvince | string | Address State or Province |
 | zipCode | string | Address Zip OR Postal Code  |
 | country | string | Country  |
 | **exclusionOtherInformation** |
