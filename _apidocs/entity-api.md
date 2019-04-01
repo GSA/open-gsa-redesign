@@ -5,6 +5,7 @@ banner-heading: Entity Management API
 
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 
+This content is currently not Firefox compliant.  Please access via Chrome or Internet Explorer.
 
 ## Overview
 The Entity Management API will allow users to request Public Entity Information based on various optional request parameters. 
@@ -69,9 +70,11 @@ Utilizing the Entity API as an extract:
 
 ## API Description
 
+If you are using Chrome, subsections that can be expanded are denoted with an arrow.
+
 ### Public Endpoints Information
-<summary><b>Public Entity Management Endpoint</b></summary><br>
 <details>
+<summary><b>Public Entity Management Endpoint</b></summary><br>
 <tr>
 <td><b>Endpoint:</b>  https://api.sam.gov/prod/entity-management?api_key=< value > </td>
 </tr><br>
