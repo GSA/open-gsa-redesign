@@ -28,8 +28,8 @@
 - title: eMuseum API
   description: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
   url: https://gsa.github.io/eMuseum-API/
-- title: Exclusion API
-  description: API's to retrieve Exclusion detail information from beta.sam.gov..
+- title: Exclusion API (Coming Soon)
+  description: API to retrieve Exclusion detail information from beta.sam.gov using various searchable parameters.
   url: exclusion-api/
 - title: FedBizOpps Web Services
   description: This system supports Web Services for Federal buyers to post information to the database using their agency’s electronic procurement system.
