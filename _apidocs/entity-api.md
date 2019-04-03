@@ -9797,3 +9797,5 @@ The API will return one of the following responses:
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
+
+<p><small><a href="#">Back to top</a></small></p>
