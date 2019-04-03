@@ -27,7 +27,7 @@
 					"mediaType": "application/pdf",
 					"format": "pdf",
 					"title": "2015 GSA Common Baseline Implementation Plan and CIO Assignment Plan",
-					"description": "This is GSA's 2015 Common Baseline Implementation Plan and its CIO Assignment Plan per the requirements set forth in FITARA legislation. Updated April 2017.",
+					"description": "This is GSA's 2015 Common Baseline Implementation Plan and its CIO Assignment Plan per the requirements set forth in FITARA legislation. Updated April 2017. Last Major Change to version updated on March 4, 2019.",
 					"downloadURL": "https://inventory.data.gov/dataset/64c56cec-4b8f-44c7-ba69-090517f9f32e/resource/87e53999-aff1-4560-8bf0-42d9dc8e4a69/download/2015gsafitaraimplementationandcioassignmentplan.pdf"
 				}
 			],
@@ -1203,7 +1203,7 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA DCOI Strategic Plan November 2018",
+					"title": "GSA DCOI Strategic Plan February 2019",
 					"description": "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 11/19/2018 at 8:52 pm Eastern",
 					"conformsTo": "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/b8d9e71b-963b-4398-8d37-04628e64871d/download/datacenteroptimizationstrategicplan.json"
@@ -1211,8 +1211,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/pdf",
 					"format": "pdf",
-					"title": "DCOI CIO Statement May 2018",
-					"description": "May 1, 2018 - GSA has verified that our Strategic Plan is a valid JSON file, conforms to the schema on management.cio.gov/schema, and addresses all of the requirements for it specified in the DCOI. \r\n\r\nIt further confirms that this Strategic Plan has been posted publicly as requested in the template at [agency.gov]/digitalstrategy/datacenteroptimizationstrategicplan.json under the heading “Data Center Optimization Initiative Strategic Plans”.",
+					"title": "DCOI CIO Statement Feb 2019",
+					"description": "February 14, 2019 - GSA has verified that our Strategic Plan is a valid JSON file, conforms to the schema on management.cio.gov/schema, and addresses all of the requirements for it specified in the DCOI. \r\n\r\nIt further confirms that this Strategic Plan has been posted publicly as requested in the template at [agency.gov]/digitalstrategy/datacenteroptimizationstrategicplan.json under the heading “Data Center Optimization Initiative Strategic Plans”.",
 					"downloadURL": "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/c61e4b8a-4a4a-46b3-9d95-36d227bc28c3/download/gsa-dcoi-cio-signature.pdf"
 				}
 			],
@@ -2736,7 +2736,7 @@
 			"@type": "dcat:Dataset",
 			"title": "FY 2017 Federal Real Property Profile Data for Civilian Agencies",
 			"description": "An export of data from FRPP, a database of Federal Real Property Profile for Civilian Agencies.",
-			"modified": "2018-03-28",
+			"modified": "2019-03-07",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-12-06-01",
 			"dataQuality": true,
@@ -2767,7 +2767,7 @@
 					"description": "FY 2017 Civilian Agency Public FRPP",
 					"describedBy": "https://www.gsa.gov/cdnstatic/FY%202017%20FRPP%20DATA%20DICTIONARY%20V2_0.pdf",
 					"describedByType": "application/pdf",
-					"downloadURL": "https://inventory.data.gov/dataset/509d3f36-464e-4e4c-a26b-8582605c254e/resource/37120970-e7cf-47e3-ba25-3f5a6b0f4c2f/download/fy-2017-civilian-agency-public-frpp-data.csv"
+					"downloadURL": "https://inventory.data.gov/dataset/509d3f36-464e-4e4c-a26b-8582605c254e/resource/37120970-e7cf-47e3-ba25-3f5a6b0f4c2f/download/fy17-frpp-public-dataset-022719.csv"
 				}
 			],
 			"keyword": ["FRPP", "Federal Real Property Profile", "GSA", "General Services Administration", "RTF", "building", "civilian", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -3377,7 +3377,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA eLibrary Schedules and Contracts",
 			"description": "GSA eLibrary (formerly Schedules e-Library) is the online source for the latest contract award information for: GSA Schedules; Department of Veterans Affairs (VA) Schedules; and Technology Contracts, including Governmentwide Acquisition Contracts (GWACs), Network Services and Telecommunications Contracts, and Information Technology (IT) Schedule 70. This data contains all the current contracts under those contract vehicles and their respective schedule, special item number information.",
-			"modified": "2017-03-21",
+			"modified": "2019-02-06",
 			"accessLevel": "public",
 			"identifier": "GSA-4001",
 			"dataQuality": true,
@@ -3401,7 +3401,8 @@
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
 					"title": "eLibrary_Schedule_Contracts",
-					"downloadURL": "https://inventory.data.gov/dataset/4fd4a79f-7fd6-4699-a77a-411bc7e980b9/resource/bfd33f01-4156-44a9-a680-d31dc42a857c/download/elibraryschedulecontracts.xlsx"
+					"description": "GSA eLibrary is the online source for the latest contract award information.",
+					"downloadURL": "https://inventory.data.gov/dataset/4fd4a79f-7fd6-4699-a77a-411bc7e980b9/resource/bfd33f01-4156-44a9-a680-d31dc42a857c/download/elibraryschedulecontracts20190205.xlsx"
 				}
 			],
 			"keyword": ["eLibrary GSA Schedule Contract"],
@@ -3413,7 +3414,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2018-12-04",
+			"modified": "2019-04-03",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3436,8 +3437,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON 12/04/18",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-12-04-18.json"
+					"description": "EDI JSON 04/03/19",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-040319.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3533,8 +3534,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA FITARA Actions and Milestones 2018-11-30",
-					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the November 30, 2018, quarterly submission to OMB.",
+					"title": "GSA FITARA Actions and Milestones 2019-02-28",
+					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the February 28, 2019, quarterly submission to OMB.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
 				}
@@ -3566,7 +3567,7 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "GSA IT Reform Cost Savings/Avoidance",
-					"description": "GSA's November 2018 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description": "GSA's February 2019 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -3579,7 +3580,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA IT Policy Archive Zip",
 			"description": "A compressed zip file containing all of GSA's public IT policy documents, posted publicly at gsa.gov]/digitalstrategy/policyarchive.zip and identified in the agency public data listing as “Agency IT Policy Archive”.",
-			"modified": "2018-02-07",
+			"modified": "2019-01-30",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-11-02-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -3597,7 +3598,7 @@
 					"mediaType": "application/zip",
 					"format": "ZIP",
 					"title": "GSA IT Policy Archive Zip",
-					"description": "Last update: 2018-11-01",
+					"description": "Last update: 2019-01-30",
 					"downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
 				}
 			],
@@ -3743,7 +3744,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
 			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2018-12-04",
+			"modified": "2019-04-03",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
@@ -5341,6 +5342,74 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2019, 1st Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+			"modified": "2019-03-07",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-03-07-01",
+			"dataQuality": true,
+			"issued": "2015-11-13",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2015-08-27P",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni L Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "TotRevFY19_1stQtr",
+					"downloadURL": "https://inventory.data.gov/dataset/51584399-9733-4545-afa6-5ed6a39601c4/resource/91574aa6-8ef5-438f-9499-64fb23fc16f0/download/totrevfy191stqtr.xlsx"
+				}
+			],
+			"keyword": ["Contract", "Networx Telecommunications", "Telecommunications"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:019"],
+			"language": ["en-US"],
+			"theme": ["Telecommunications Services"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2018, 4th Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+			"modified": "2019-03-07",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-03-07-02",
+			"dataQuality": true,
+			"issued": "2015-11-13",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2015-08-27P",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni L Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "TotRevFY18_2ndQtr",
+					"downloadURL": "https://inventory.data.gov/dataset/805d6f88-4d12-4104-95b2-b93fb8c449f0/resource/fea5d106-7065-4dc4-8650-4de4cd010374/download/totrevfy184thqtr.xlsx"
+				}
+			],
+			"keyword": ["Contract", "Networx Telecommunications", "Telecommunications"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:019"],
+			"language": ["en-US"],
+			"theme": ["Telecommunications Services"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "New Construction and Repair and Alteration (R&A) Projects",
 			"description": "This map shows new construction and major R&A projects in federal buildings under GSA’s custody and control that are above the current prospectus threshold of $2.85 million. New construction and major R&A projects for two different fiscal years are displayed on the map. Projects for FY2014 were funded as part of the Consolidated Appropriations Act of 2014, and GSA will begin to execute these projects this year. Projects for FY2015 have been included in the President’s Budget request, but require approval and funding from Congress before the projects can begin.",
 			"modified": "2014-04-28",
@@ -6885,6 +6954,76 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "GSA Purchase Card Transactions Oct-Dec 2018, 1st Qtr - Citibank",
+			"description": "Purchases made with the purchase card.  Files will be batched quarterly.",
+			"modified": "2019-02-04",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-02-04-01",
+			"dataQuality": true,
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-05-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Nancy V Hexmoor",
+				"hasEmail": "mailto:nancy.hexmoor@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "GSA Purchase Card Transactions Oct-Dec 2018, 1st Qtr - Citibank",
+					"description": "There are 2 files for the 1st quarter - during the Smart Pay3 change we transitioned from Citibank to US Bank and this reporting period overlapped.",
+					"downloadURL": "https://inventory.data.gov/dataset/5d1a90a4-df2c-48f7-9941-3226f3c085bc/resource/486d2e07-23ba-4371-a7fd-b13b15be13e5/download/gsa-purchase-card-transactions-oct-dec-2018-1st-qtr-citibank.xlsx"
+				}
+			],
+			"keyword": ["december", "november", "october", "purchase card", "transactions"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "GSA Purchase Card Transactions Oct-Dec 2018, 1st Qtr - US Bank",
+			"description": "Purchases made with the purchase card.  Files will be batched quarterly.",
+			"modified": "2019-02-04",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-02-04-02",
+			"dataQuality": true,
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-05-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Nancy V Hexmoor",
+				"hasEmail": "mailto:nancy.hexmoor@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "GSA Purchase Card Transactions Oct-Dec 2018, 1st Qtr - US Bank",
+					"description": "There are 2 files for the 1st quarter - during the Smart Pay3 change we transitioned from Citibank to US Bank and this reporting period overlapped.",
+					"downloadURL": "https://inventory.data.gov/dataset/309f5ff6-3724-42da-b4ba-e14f97e0c48b/resource/43d4ec0b-f561-4c76-9109-b7b12b127557/download/gsa-purchase-card-transactions-oct-dec-2018-1st-qtr-us-bank.xlsx"
+				}
+			],
+			"keyword": ["december", "november", "october", "purchase card", "transactions"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "GSA Purchase Card Transactions July-Sept 2016, 4th Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
 			"modified": "2018-11-15",
@@ -7760,7 +7899,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2018-12-04",
+			"modified": "2019-04-03",
 			"accessLevel": "public",
 			"identifier": "GSA-25251",
 			"dataQuality": true,
@@ -7775,15 +7914,15 @@
 			"accrualPeriodicity": "R/P1M",
 			"contactPoint": {
 				"@type": "vcard:Contact",
-				"fn": "Steve Peters",
-				"hasEmail": "mailto:steve.peters@gsa.gov"
+				"fn": "Tom Uba",
+				"hasEmail": "mailto:tom.uba@gsa.gov"
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_bldg_rexus",
-					"description": "December - Rexus Building file",
+					"description": "April - Rexus Building file",
 					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/63663b53-7cb6-4bea-bc4e-1e5897ef3158/download/datagovbldgrexus.csv"
 				}
 			],
@@ -7794,7 +7933,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) (Lease)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2018-12-04",
+			"modified": "2019-04-03",
 			"accessLevel": "public",
 			"identifier": "GSA-25261",
 			"dataQuality": true,
@@ -7809,15 +7948,15 @@
 			"accrualPeriodicity": "R/P1M",
 			"contactPoint": {
 				"@type": "vcard:Contact",
-				"fn": "Steve Peters",
-				"hasEmail": "mailto:steve.peters@gsa.gov"
+				"fn": "Tom Uba",
+				"hasEmail": "mailto:tom.uba@gsa.gov"
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus",
-					"description": "December - Rexus Lease file",
+					"description": "April - Rexus Lease file",
 					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ae0d8c20-3c63-40c3-96da-24a24f507e79/download/datagovlserexus.csv"
 				}
 			],
@@ -8102,8 +8241,8 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "System for Award Management (SAM) Public Extract - Exclusions",
-			"description": "This dataset contains a daily snapshot of active exclusion records entered by the U.S. Federal government identifying those parties excluded from receiving Federal contracts, certain subcontracts, and certain types of Federal financial and non-financial assistance and benefits. The data was formerly contained in the Excluded Parties List System (EPLS). In July 2012, EPLS was incorporated into the System for Award Management (SAM). SAM is now the electronic, web-based system that keeps its user community aware of administrative and statutory exclusions across the entire government, and individuals barred from entering the United States. Users must read the exclusion record completely to understand how it impacts the excluded party.",
-			"modified": "2015-11-19",
+			"description": "This dataset contains a daily snapshot of active exclusion records entered by the U.S. Federal government identifying those parties excluded from receiving Federal contracts, certain subcontracts, and certain types of Federal financial and non-financial assistance and benefits. The data was formerly contained in the Excluded Parties List System (EPLS). In July 2012, EPLS was incorporated into the System for Award Management (SAM). SAM is now the electronic, web-based system that keeps its user community aware of administrative and statutory exclusions across the entire government, and individuals barred from entering the United States. Users must read the exclusion record completely to understand how it impacts the excluded party. \r\n\r\nNote - Here is the link for the SAM Functional Data Dictionary - https://www.sam.gov/SAM/transcript/SAM_Functional_Data_Dictionary.pdf",
+			"modified": "2018-12-18",
 			"accessLevel": "public",
 			"identifier": "GSA-1626",
 			"dataQuality": true,
@@ -8131,7 +8270,7 @@
 					"description": "System implementing the functionalities of the legacy IAE applications: CCR, FedReg, ORCA, and EPLS.",
 					"describedBy": "https://www.sam.gov/sam/transcript/SAM_Exclusions_Extract_User_Guide.pdf",
 					"describedByType": "application/pdf",
-					"downloadURL": "https://www.sam.gov/public-extracts/SAM-Public/SAM_Exclusions_Public_Extract.ZIP"
+					"downloadURL": "https://www.sam.gov/SAM/extractfiledownload?role=WW&version=EPLSPUB&filename=SAM_Exclusions_Public_Extract.ZIP"
 				}
 			],
 			"keyword": ["Black List", "EPLS", "Ineligible Proceedings Completed", "Ineligible Proceedings Pending", "Prohibition Restriction", "SAM", "System for Award Management", "Voluntary Exclusion", "debarred list", "excluded parties list", "list of exclusions"],
@@ -8143,11 +8282,11 @@
 			"@type": "dcat:Dataset",
 			"title": "System for Award Management (SAM) Public Extract - Entity Registration",
 			"description": "This dataset contains the information available under the Freedom of Information Act (FOIA) for those entities registered to do business with the Federal government in the System for Award Management (SAM). It is updated monthly. Prior to July 2012, this dataset was called the Central Contractor Registration (CCR) FOIA Extract.",
-			"modified": "2012-07-29",
+			"modified": "2018-12-18",
 			"accessLevel": "public",
 			"identifier": "GSA-1422",
 			"dataQuality": true,
-			"describedBy": "https://sam.gov/sam/transcript/SAM%20Master%20Extract%20Mapping%20v5.1%20Public%20File%20Layout.xlsx",
+			"describedBy": "https://www.sam.gov/SAM/transcript/SAM_Functional_Data_Dictionary.pdf",
 			"describedByType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 			"issued": "2010-01-14",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -8170,7 +8309,7 @@
 					"description": "System implementing the functionalities of the legacy IAE applications; CCR, FedReg, ORCA, and EPLS.",
 					"describedBy": "https://sam.gov/sam/transcript/SAM%20Master%20Extract%20Mapping%20v5.1%20Public%20File%20Layout.xlsx",
 					"describedByType": "application/vnd.ms-excel",
-					"downloadURL": "https://www.sam.gov/SAMPortal/extractfiledownload?role=WW&version=SAM&filename=SAM_PUBLIC_MONTHLY_EXTRACT.ZIP"
+					"downloadURL": "https://www.sam.gov/SAM/extractfiledownload?role=WW&version=SAM&filename=SAM_PUBLIC_MONTHLY_EXTRACT.ZIP"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/zip",
@@ -8178,7 +8317,7 @@
 					"description": "System implementing the functionalities of the legacy IAE applications: CCR, FedReg, ORCA, and EPLS.",
 					"describedBy": "https://sam.gov/sam/transcript/SAM%20Master%20Extract%20Mapping%20v5.1%20Public%20File%20Layout.xlsx",
 					"describedByType": "application/vnd.ms-excel",
-					"downloadURL": "https://www.sam.gov/SAMPortal/extractfiledownload?role=SAM-PUBLIC-UTF8&version=SAM&filename=SAM_PUBLIC_UTF-8_MONTHLY_EXTRACT.ZIP"
+					"downloadURL": "https://www.sam.gov/SAM/extractfiledownload?role=SAM-PUBLIC-UTF8&version=SAM&filename=SAM_PUBLIC_UTF-8_MONTHLY_EXTRACT.ZIP"
 				}
 			],
 			"keyword": ["CCR", "Contractor", "DUNS number", "Entity", "Grantee", "Registrant", "Registration", "SAM", "System for Award Management", "Vendor"],

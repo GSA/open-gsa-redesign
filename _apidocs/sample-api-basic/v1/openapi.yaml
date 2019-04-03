@@ -46,7 +46,7 @@ paths:
             format: string
             default: DEMO_KEY
       tags:
-        - ''
+        - airfares
       responses:
         '200':
           description: An array of airfares
@@ -85,7 +85,7 @@ paths:
             format: string
             default: DEMO_KEY
       tags:
-        - ''
+        - airfares
       responses:
         '200':
           description: An array of airfares
