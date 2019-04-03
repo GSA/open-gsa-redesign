@@ -7,6 +7,7 @@ banner-heading: Exclusions API
 
 
 ## Overview
+**Important Note:** The specifications on this page are for a soon to be released API.  Check back here or be in contact with IAE for the release date and testing sessions.<br/><br/>
 The Exclusions API will allow users to request Public Exclusion Information based on various optional request parameters. 
 The response will be provided in the JSON format in a paginated manner.
 
@@ -28,11 +29,11 @@ The response will be provided in the JSON format in a paginated manner.
 ## Getting Started
 
 Exclusions API can be accessed from Beta or Alpha via the following end points:
-* Beta: https://api.sam.gov/prod/sam-exclusions?api_key=< value >
-* Alpha: https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key=< value >
+* Beta: Coming soon
+* Alpha: Coming soon
 
 Generating a personal API Key:
-* Registered users can request for a public API on 'Account Details' page.
+* Registered users can request for a public API on 'Account Details' page. This page can be accessed here: [Account Details page on beta.sam.gov](https://beta.sam.gov/profile/details)
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned. 
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page. 
 * If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
@@ -59,7 +60,7 @@ Utilizing the Exclusion API as an extract:
 
 ## API Description
 
-**Beta Endpoint:** https://api.sam.gov/prod/sam-exclusions?api_key=< value >
+**Beta Endpoint:** Coming soon
 
 **Description** Restful endpoint to retrieve Exclusion detail information
 
@@ -67,31 +68,31 @@ Utilizing the Exclusion API as an extract:
 
 | Parameter Name | Description |
 | ---- | ----------- |
-| classification | Allows a string (Individual, Firm, Vessel, Special Entity Designation, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&classification=Firm' |
-| exclusionName | Allows partial text or a complete text. <br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&exclusionName=SAM' |
-| exclusionType | Allows a string (IP, IC, PR, VE,  Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction, Voluntary Exclusion).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&exclusionType=IP' |
-| exclusionProgram | Allows a string (RE, NP, PR, Reciprocal, Non-Procurement, Procurement).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&exclusionProgram=Y' |
-| stateProvince | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&stateProvince=AR' |
-| country  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&country=USA' |
-| zipCode  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&zipCode=20171' |
-| ueiDUNS | Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652, 047795005, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ueiDUNS=9725565' |
+| classification | Allows a string (Individual, Firm, Vessel, Special Entity Designation, null).<br><br> Example: 'classification=Firm' |
+| exclusionName | Allows partial text or a complete text. <br><br> Example: 'exclusionName=SAM' |
+| exclusionType | Allows a string (IP, IC, PR, VE,  Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction, Voluntary Exclusion).<br><br> Example: 'exclusionType=IP' |
+| exclusionProgram | Allows a string (RE, NP, PR, Reciprocal, Non-Procurement, Procurement).<br><br> Example: 'exclusionProgram=Y' |
+| stateProvince | Allows a string.<br><br> Example: 'stateProvince=AR' |
+| country  | Allows a string.<br><br> Example: 'country=USA' |
+| zipCode  | Allows a string.<br><br> Example: 'zipCode=20171' |
+| ueiDUNS | Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652, 047795005, null).<br><br> Example: 'ueiDUNS=9725565' |
 | ueiSAM | TBD |
-| excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&excludingAgencyCode=AF' |
-| excludingAgencyName | Allows a string (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null).<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&excludingAgencyName=FEDERAL' |
-| ctCode | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ctCode=ZZ' |
-| activationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&activationDate=02/12/1999' |
-| creationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&creationDate=02/12/1999' |
-| updateDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&updateDate=02/12/1999' |
-| terminationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&terminationDate=02/12/1999' |
-| cageCode | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&cageCode=0Y5L9' |
-| npi  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&npi=1053373266' |
-| ssn  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&ssn=XXXXXXXXX' |
-| tin  | Allows a string.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&tin=XXXXX' |
-| page  | Page number.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&page=0' |
-| size  | Retrieves Records size per page.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&size=1' |
-| includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&includeSections=exclusionOtherInformation,exclusionDetails' |
-| format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&format=csv' |
-| emailId | User email Id for notification message .<br><br> Example: 'https://api.sam.gov/prod/sam-exclusions?api_key=< value >&emailId=test@gsa.gov' |
+| excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> Example: 'excludingAgencyCode=AF' |
+| excludingAgencyName | Allows a string (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null).<br><br> Example: 'excludingAgencyName=FEDERAL' |
+| ctCode | Allows a string.<br><br> Example: 'ctCode=ZZ' |
+| activationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'activationDate=02/12/1999' |
+| creationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'creationDate=02/12/1999' |
+| updateDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'updateDate=02/12/1999' |
+| terminationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'terminationDate=02/12/1999' |
+| cageCode | Allows a string.<br><br> Example: 'cageCode=0Y5L9' |
+| npi  | Allows a string.<br><br> Example: 'npi=1053373266' |
+| ssn  | Allows a string.<br><br> Example: 'ssn=XXXXXXXXX' |
+| tin  | Allows a string.<br><br> Example: 'tin=XXXXX' |
+| page  | Page number.<br><br> Example: 'page=0' |
+| size  | Retrieves Records size per page.<br><br> Example: 'size=1' |
+| includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'includeSections=exclusionOtherInformation,exclusionDetails' |
+| format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'format=csv' |
+| emailId | User email Id for notification message .<br><br> Example: 'emailId=test@gsa.gov' |
 
 **Expected Result**
 
@@ -148,6 +149,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | owner | string | Owner |
 | secondaryAddress | string | Secondary Address  |
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## OpenAPI Specification File 
 
@@ -170,4 +172,5 @@ The API will return one of the following responses:
 
 ## Contact Us
 
+* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
 <p><small><a href="#">Back to top</a></small></p>
