@@ -7,7 +7,7 @@ banner-heading: Entity Management API
 
 This content is currently not Firefox compliant.  Please access via Chrome or Internet Explorer.
 ## Overview
-**Important Note:** The specifications on this page are for a soon to be released API.  Check back here or be in contact with IAE for the release date and testing sessions. 
+**Important Note:** The specifications on this page are for a soon to be released API.  Check back here or be in contact with IAE for the release date and testing sessions.<br/><br/>
 The Entity Management API will allow users to request Public Entity Information based on various optional request parameters. 
 
 
@@ -106,7 +106,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
-<br>Example: dbaName=ALLTEL'</td>
+<br>Example: dbaName=ALLTEL</td>
 </tr>
 
 <tr>
@@ -2319,7 +2319,7 @@ First Name</td>
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
-<br>Example: dbaName=ALLTEL'</td>
+<br>Example: dbaName=ALLTEL</td>
 </tr>
 
 <tr>
