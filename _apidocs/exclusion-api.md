@@ -3,9 +3,6 @@ title: Exclusions  API
 banner-heading: Exclusions API
 ---
 
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
-
-
 ## Overview
 **Important Note:** The specifications on this page are for a soon to be released API.  Check back here or be in contact with IAE for the release date and testing sessions.<br/><br/>
 The Exclusions API will allow users to request Public Exclusion Information based on various optional request parameters. 
