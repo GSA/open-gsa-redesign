@@ -7,6 +7,7 @@ banner-heading: Entity Management API
 
 This content is currently not Firefox compliant.  Please access via Chrome or Internet Explorer.
 ## Overview
+**Important Note:** The specifications on this page are for a soon to be released API.  Check back here or be in contact with IAE for the release date and testing sessions. 
 The Entity Management API will allow users to request Public Entity Information based on various optional request parameters. 
 
 
@@ -28,19 +29,19 @@ The Entity Management API will allow users to request Public Entity Information 
 ## Getting Started
 
 Public Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/prod/entity-management?api_key=< value >
-   * Alpha: https://api-alpha.sam.gov/prodlike/entity-management?api_key=< value >
+   * Beta: Coming soon
+   * Alpha: Coming soon
 
 FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/prod/entity-management/fouo?api_key=< value >
-   * Alpha: https://api-alpha.sam.gov/prodlike/entity-management/fouo?api_key=< value >
+   * Beta: Coming soon
+   * Alpha: Coming soon
 
 Sensitive Entity Details  can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/prod/entity-management/sensitive?api_key=< value >
-   * Alpha: https://api-alpha.sam.gov/prodlike/entity-management/sensitive?api_key=< value >  
+   * Beta: Coming soon
+   * Alpha: Coming soon  
 
 Generating a personal API Key:
-* Registered users can request for a public API on 'Account Details' page.
+* Registered users can request for a public API on 'Account Details' page. This page can be accessed here: [Account Details page on beta.sam.gov](https://beta.sam.gov/profile/details)
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page.
 * If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
@@ -75,7 +76,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <details>
 <summary><b>Public Entity Management Endpoint</b></summary><br>
 <tr>
-<td><b>Endpoint:</b>  https://api.sam.gov/prod/entity-management?api_key=< value > </td>
+<td><b>Endpoint:</b>  Coming soon </td>
 </tr><br>
 
 <tr>
@@ -93,43 +94,37 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <tr>
 <td>activationDate</td>
 <td>Allows a single Date or Date range.Format: MM/dd/yyyy.
-<br>Example: https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&activationDate=02/12/1999</td>
+<br>Example: activationDate=02/12/1999</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
-<br>Example: https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&cageCode=00000</td>
+<br>Example: cageCode=00000</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
-<br>Example: 'https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&dbaName=ALLTEL'</td>
+<br>Example: dbaName=ALLTEL'</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y or N or null.
-<br>Example: https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&debtSubjectToOffset=Y</td>
+<br>Example: debtSubjectToOffset=Y</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>Allows 9 character value.
-<br>Example: https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&dodaac=DOD123456</td>
+<br>Example: dodaac=DOD123456</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values can be sent.
-<br>Example: https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&ueiDUNS=025114695</td>
+<br>Example: ueiDUNS=025114695</td>
 </tr>
 
 <tr>
@@ -140,253 +135,218 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&entityStructureCode=Z1</td>
+<br>Example: entityStructureCode=Z1</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<br>entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<br>Example: entityStructureDesc=Sole Proprietorship</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
 <td>Allows D or null.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&exclusionStatusFlag=D</td>
+<br>Example: exclusionStatusFlag=D</td>
 </tr>
 
 <tr>
 <td>expirationDate</td>
 <td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&expirationDate=02/12/1999</td>
+<br>Example: expirationDate=02/12/1999</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>Allows Partial or Complete value.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&legalBusinessName=ALLTEL</td>
+<br>Example: legalBusinessName=ALLTEL</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&primaryNaics=513310</td>
+<br>Example: primaryNaics=513310</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&purposeOfRegistrationCode=Z2</td>
+<br>Example: purposeOfRegistrationCode=Z2</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&purposeOfRegistrationDesc=All Awards</td>
+<br>Example: purposeOfRegistrationDesc=All Awards</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&registrationDate=02/12/1999</td>
+<br>Example: registrationDate=02/12/1999</td>
 </tr>
 
 <tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&physicalAddressCity=Herndon</td>
+<br>Example: physicalAddressCity=Herndon</td>
 </tr>
 
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
 <td>Allows 2 characters.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&physicalAddressCongressionalDistrict=AR</td>
+<br>Example: physicalAddressCongressionalDistrict=AR</td>
 </tr>
 
 <tr>
 <td>physicalAddressCountryCode</td>
 <td>Allows 3 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&physicalAddressCountryCode=USA</td>
+<br>Example: physicalAddressCountryCode=USA</td>
 </tr>
 
 <tr>
 <td>physicalAddressProvinceOrState</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&physicalAddressProvinceOrState=AR</td>
+<br>Example: physicalAddressProvinceOrState=AR</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
 <td>Allows 5 digit zip code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&physicalAddressZipPostalCode=02201</td>
+<br>Example: physicalAddressZipPostalCode=02201</td>
 </tr>
 
 <tr>
 <td>samExtractCode</td>
 <td>Allows 1 character code (A or E).
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&samExtractCode=A</td>
+<br>Example: samExtractCode=A</td>
 </tr>
 
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&businessTypeCode=2L</td>
+<br>Example: businessTypeCode=2L</td>
 </tr>
 
 <tr>
 <td>businessTypeDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&businessTypeDesc=Woman Owned Business </td>
+<br>Example: businessTypeDesc=Woman Owned Business </td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&organizationStructureCode=2L</td>
+<br>Example: organizationStructureCode=2L</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&organizationStructureDesc=Limited Liability Company</td>
+<br>Example: organizationStructureDesc=Limited Liability Company</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&stateOfIncorporationCode=VA</td>
+<br>Example: stateOfIncorporationCode=VA</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&stateOfIncorporationDesc=Virginia</td>
+<br>Example: stateOfIncorporationDesc=Virginia</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&countryOfIncorporationCode=USA</td>
+<br>Example: countryOfIncorporationCode=USA</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&countryOfIncorporationDesc=United States Of America</td>
+<br>Example: countryOfIncorporationDesc=United States Of America</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&naicsCode=513310</td>
+<br>Example: naicsCode=513310</td>
 </tr>
 
 <tr>
 <td>naicsDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&naicsDesc=Furniture Stores</td>
+<br>Example: naicsDesc=Furniture Stores</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows 6 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&naicsLimitedSB=513310</td>
+<br>Example: naicsLimitedSB=513310</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&pscCode=0989</td>
+<br>Example: pscCode=0989</td>
 </tr>
 
 <tr>
 <td>pscDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&pscDesc=Screws</td>
+<br>Example: pscDesc=Screws</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterStateCode=VA</td>
+<br>Example: servedDisasterStateCode=VA</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateName</td>
 <td>Allows Name or null.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterStateName=Virginia</td>
+<br>Example: servedDisasterStateName=Virginia</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyCode</td>
 <td>Allows text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterCountyCode=12334</td>
+<br>Example: servedDisasterCountyCode=12334</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterCountyName=FAIRFAX</td>
+<br>Example: servedDisasterCountyName=FAIRFAX</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
 <td>Allows text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterMSA=86800730</td>
+<br>Example: servedDisasterMSA=86800730</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&includeSections=entityRegistration,coreData</td>
+<br>Example: includeSections=entityRegistration,coreData</td>
 </tr>
 
 <tr>
 <td>format</td>
 <td>Allows user to download different file formats(csv and json are allowable values).
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&format=csv</td>
+<br>Example: format=csv</td>
 </tr>
 
 <tr>
 <td>emailId</td>
 <td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&format=csv&emailId=emailId@gsa.gov</td>
+<br>Example: emailId=test@gsa.gov</td>
 </tr>
 
 </table>
@@ -2329,7 +2289,7 @@ First Name</td>
 <details>
 <summary><b>FOUO Entity Management Endpoint</b></summary><br>
 <tr>
-<td><b>Endpoint:</b>  https://api.sam.gov/prod/entity-management/fouo?api_key=< value > </td>
+<td><b>Endpoint:</b>  Coming soon </td>
 </tr><br>
 
 <tr>
@@ -2347,43 +2307,37 @@ First Name</td>
 <tr>
 <td>activationDate</td>
 <td>Allows a single Date or Date range.Format: MM/dd/yyyy.
-<br>Example: https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&activationDate=02/12/1999</td>
+<br>Example: activationDate=02/12/1999</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
-<br>Example: https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&cageCode=00000</td>
+<br>Example: cageCode=00000</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
-<br>Example: 'https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&dbaName=ALLTEL'</td>
+<br>Example: dbaName=ALLTEL'</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y or N or null.
-<br>Example: https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&debtSubjectToOffset=Y</td>
+<br>Example: debtSubjectToOffset=Y</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>Allows 9 character value.
-<br>Example: https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&dodaac=DOD123456</td>
+<br>Example: dodaac=DOD123456</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values can be sent.
-<br>Example: https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&ueiDUNS=025114695</td>
+<br>Example: ueiDUNS=025114695</td>
 </tr>
 
 <tr>
@@ -2394,247 +2348,211 @@ First Name</td>
 <tr>
 <td>entityStructure</td>
 <td>Allows 2 character code or null.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&entityStructure=Z1</td>
+<br>Example: entityStructure=Z1</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>Allows a text.
-"Partnership or Limited Liability Partnership".
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
 <td>Allows D or null.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&exclusionStatusFlag=D</td>
+<br>Example: exclusionStatusFlag=D</td>
 </tr>
 
 <tr>
 <td>expirationDate</td>
 <td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&expirationDate=02/12/1999</td>
+<br>Example: expirationDate=02/12/1999</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>Allows Partial or Complete value.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&legalBusinessName=ALLTEL</td>
+<br>Example: legalBusinessName=ALLTEL</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&primaryNaics=513310</td>
+<br>Example: primaryNaics=513310</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&purposeOfRegistrationCode=Z2</td>
+<br>Example: purposeOfRegistrationCode=Z2</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&purposeOfRegistrationDesc=All Awards</td>
+<br>Example: purposeOfRegistrationDesc=All Awards</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&registrationDate=02/12/1999</td>
+<br>Example: registrationDate=02/12/1999</td>
 </tr>
 
 <tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&physicalAddressCity=Herndon</td>
+<br>Example: physicalAddressCity=Herndon</td>
 </tr>
 
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
 <td>Allows 2 characters.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&physicalAddressCongressionalDistrict=AR</td>
+<br>Example: physicalAddressCongressionalDistrict=AR</td>
 </tr>
 
 <tr>
 <td>physicalAddressCountryCode</td>
 <td>Allows 3 character code.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&physicalAddressCountryCode=USA</td>
+<br>Example: physicalAddressCountryCode=USA</td>
 </tr>
 
 <tr>
 <td>physicalAddressProvinceOrState</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&physicalAddressProvinceOrState=AR</td>
+<br>Example: physicalAddressProvinceOrState=AR</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
 <td>Allows 5 digit zip code.
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&physicalAddressZipPostalCode=02201</td>
+<br>Example: physicalAddressZipPostalCode=02201</td>
 </tr>
 
 <tr>
 <td>samExtractCode</td>
 <td>Allows 1 character code (A or E).
-<br>https://api.sam.gov/prod/entity-management/fouo?
-<br>api_key=< value >&samExtractCode=A</td>
+<br>Example: samExtractCode=A</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&organizationStructureCode=2L</td>
+<br>Example: organizationStructureCode=2L</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&organizationStructureDesc=Limited Liability Company</td>
+<br>Example: organizationStructureDesc=Limited Liability Company</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&stateOfIncorporationCode=VA</td>
+<br>Example: stateOfIncorporationCode=VA</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&stateOfIncorporationDesc=Virginia</td>
+<br>Example: stateOfIncorporationDesc=Virginia</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&countryOfIncorporationCode=USA</td>
+<br>Example: countryOfIncorporationCode=USA</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows Name or null Unites States.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&countryOfIncorporationDesc=United States Of America</td>
+<br>Example: countryOfIncorporationDesc=United States Of America</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&naicsCode=513310</td>
+<br>Example: naicsCode=513310</td>
 </tr>
 
 <tr>
 <td>naicsDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&naicsDesc=Furniture Stores</td>
+<br>Example: naicsDesc=Furniture Stores</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows 6 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&naicsLimitedSB=513310</td>
+<br>Example: naicsLimitedSB=513310</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&pscCode=0989</td>
+<br>Example: pscCode=0989</td>
 </tr>
 
 <tr>
 <td>pscDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&pscDesc=Screws</td>
+<br>Example: pscDesc=Screws</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterStateCode=VA</td>
+<br>Example: servedDisasterStateCode=VA</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateName</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterStateName=Virginia</td>
+<br>Example: servedDisasterStateName=Virginia</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyCode</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterCountyCode=32324</td>
+<br>Example: servedDisasterCountyCode=32324</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
 <td>Allows Name or null Virginia.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterCountyName=FAIRFAX</td>
+<br>Example: servedDisasterCountyName=FAIRFAX</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterMSA=86800730</td>
+<br>Example: servedDisasterMSA=86800730</td>
 </tr>
 
 <tr>
 <td>taxpayerIdentificationNumber</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&taxpayerIdentificationNumber=XXXXXXXXX</td>
+<br>Example: taxpayerIdentificationNumber=XXXXXXXXX</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&includeSections=entityRegistration,coreData</td>
+<br>Example: includeSections=entityRegistration,coreData</td>
 </tr>
 
 <tr>
 <td>format</td>
 <td>Allows user to download different file formats(csv and json are allowable values).
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&format=csv</td>
+<br>Example: format=csv</td>
 </tr>
 
 <tr>
 <td>emailId</td>
 <td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&format=csv&emailId=emailId@gsa.gov</td>
+<br>Example: emailId=test@gsa.gov</td>
 </tr>
 </table>
 </details><br>
@@ -6009,7 +5927,7 @@ First Name</td>
 <details>
 <summary><b>Sensitive Entity Management Endpoint</b></summary><br>
 <tr>
-<td><b>Endpoint:</b>  https://api.sam.gov/prod/entity-management/sensitive?api_key=< value > </td>
+<td><b>Endpoint:</b>  Coming soon </td>
 </tr><br>
 
 <tr>
@@ -6027,43 +5945,37 @@ First Name</td>
 <tr>
 <td>activationDate</td>
 <td>Allows a single Date or Date range.Format: MM/dd/yyyy.
-<br>Example: https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&activationDate=02/12/1999</td>
+<br>Example: activationDate=02/12/1999</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
-<br>Example: https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&cageCode=00000</td>
+<br>Example: cageCode=00000</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
-<br>Example: 'https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&dbaName=ALLTEL'</td>
+<br>Example: dbaName=ALLTEL</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y or N or null.
-<br>Example: https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&debtSubjectToOffset=Y</td>
+<br>Example: debtSubjectToOffset=Y</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>Allows 9 character value.
-<br>Example: https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&dodaac=DOD123456</td>
+<br>Example: dodaac=DOD123456</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values can be sent.
-<br>Example: https://api.sam.gov/prod/entity-management/sensitive?
-<br>api_key=< value >&ueiDUNS=025114695</td>
+<br>Example: ueiDUNS=025114695</td>
 </tr>
 
 <tr>
@@ -6074,262 +5986,224 @@ First Name</td>
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&entityStructureCode=Z1</td>
+<br>Example: entityStructureCode=Z1</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>Allows Description or null
-"Partnership or Limited Liability Partnership".
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
 <td>Allows D or null.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&exclusionStatusFlag=D</td>
+<br>Example: exclusionStatusFlag=D</td>
 </tr>
 
 <tr>
 <td>expirationDate</td>
 <td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&expirationDate=02/12/1999</td>
+<br>Example: expirationDate=02/12/1999</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>Allows Partial or Complete value.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&legalBusinessName=ALLTEL</td>
+<br>Example: legalBusinessName=ALLTEL</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&primaryNaics=513310</td>
+<br>Example: primaryNaics=513310</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&purposeOfRegistrationCode=Z2</td>
+<br>Example: purposeOfRegistrationCode=Z2</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&purposeOfRegistrationDesc=All Awards</td>
+<br>Example: purposeOfRegistrationDesc=All Awards</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&registrationDate=02/12/1999</td>
+<br>Example: registrationDate=02/12/1999</td>
 </tr>
 
 <tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&physicalAddressCity=Herndon</td>
+<br>Example: physicalAddressCity=Herndon</td>
 </tr>
 
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
 <td>Allows 2 characters.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&physicalAddressCongressionalDistrict=AR</td>
+<br>Example: physicalAddressCongressionalDistrict=AR</td>
 </tr>
 
 <tr>
 <td>physicalAddressCountryCode</td>
 <td>Allows 3 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&physicalAddressCountryCode=USA</td>
+<br>Example: physicalAddressCountryCode=USA</td>
 </tr>
 
 <tr>
 <td>physicalAddressProvinceOrState</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&physicalAddressProvinceOrState=AR</td>
+<br>Example: physicalAddressProvinceOrState=AR</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
 <td>Allows 5 digit zip code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&physicalAddressZipPostalCode=02201</td>
+<br>Example: physicalAddressZipPostalCode=02201</td>
 </tr>
 
 <tr>
 <td>samExtractCode</td>
 <td>Allows 1 character code (A or E).
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&samExtractCode=A</td>
+<br>Example: samExtractCode=A</td>
 </tr>
 
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&businessTypeCode=2L</td>
+<br>Example: businessTypeCode=2L</td>
 </tr>
 
 <tr>
 <td>businessTypeDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&businessTypeDesc=Woman Owned Business </td>
+<br>Example: businessTypeDesc=Woman Owned Business </td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&organizationStructureCode=2L</td>
+<br>Example: organizationStructureCode=2L</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&organizationStructureDesc=Limited Liability Company</td>
+<br>Example: organizationStructureDesc=Limited Liability Company</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&stateOfIncorporationCode=VA</td>
+<br>Example: stateOfIncorporationCode=VA</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&stateOfIncorporationDesc=Virginia</td>
+<br>Example: stateOfIncorporationDesc=Virginia</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&countryOfIncorporationCode=USA</td>
+<br>Example: countryOfIncorporationCode=USA</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&countryOfIncorporationDesc=United States Of America</td>
+<br>Example: countryOfIncorporationDesc=United States Of America</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&naicsCode=513310</td>
+<br>Example: naicsCode=513310</td>
 </tr>
 
 <tr>
 <td>naicsDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&naicsDesc=Furniture Stores</td>
+<br>Example: naicsDesc=Furniture Stores</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows 6 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&naicsLimitedSB=513310</td>
+<br>Example: naicsLimitedSB=513310</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&pscCode=0989</td>
+<br>Example: pscCode=0989</td>
 </tr>
 
 <tr>
 <td>pscDesc</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&pscDesc=Screws</td>
+<br>Example: pscDesc=Screws</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateCode</td>
 <td>Allows 2 character code.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterStateCode=VA</td>
+<br>Example: servedDisasterStateCode=VA</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateName</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterStateName=Virginia</td>
+<br>Example: servedDisasterStateName=Virginia</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyCode</td>
 <td>Allows text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterCountyCode=763577</td>
+<br>Example: servedDisasterCountyCode=763577</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterCountyName=FAIRFAX</td>
+<br>Example: servedDisasterCountyName=FAIRFAX</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
 <td>Allows text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&servedDisasterMSA=86800730</td>
+<br>Example: servedDisasterMSA=86800730</td>
 </tr>
 
 
 <tr>
 <td>taxpayerIdentificationNumber</td>
 <td>Allows a text.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&taxpayerIdentificationNumber=XXXXXXXXX</td>
+<br>Example: taxpayerIdentificationNumber=XXXXXXXXX</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&includeSections=entityRegistration,coreData</td>
+<br>Example: includeSections=entityRegistration,coreData</td>
 </tr>
 
 <tr>
 <td>format</td>
 <td>Allows user to download different file formats(csv and json are allowable values).
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&format=csv</td>
+<br>Example: format=csv</td>
 </tr>
 
 <tr>
 <td>emailId</td>
 <td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>https://api.sam.gov/prod/entity-management?
-<br>api_key=< value >&format=csv&emailId=emailId@gsa.gov</td>
+<br>Example: emailId=test@gsa.gov</td>
 </tr>
 </table>
 </details><br>
@@ -9922,4 +9796,4 @@ The API will return one of the following responses:
 
 ## Contact Us
 
-<p><small><a href="#">Back to top</a></small></p>
+* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
