@@ -151,7 +151,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 ## OpenAPI Specification File 
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/exclusion_api.yaml">Open API specification file for the Exclusion API</a>
+<a href="v1/openapi.yaml">Open API specification file for the Exclusion API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
