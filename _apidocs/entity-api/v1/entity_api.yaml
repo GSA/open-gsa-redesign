@@ -8,14 +8,14 @@ info:
   contact:
     name: GSA
     url: www.beta.sam.gov
-    email: reply@gsa.gov
+    email: newsamtesting@gsa.gov
   license:
     name: GSA
 tags:
   - name: entity-management-controller
     description: Operations pertaining to Entity Management Data
 paths:
-  /entity-management:
+  Coming soon:
     get:
       tags:
         - entity-management-controller
@@ -334,7 +334,7 @@ paths:
         "404":
           description: The resource you were trying to reach is not found
 servers:
-  - url: //api-nonprod.prod-iae.bsp.gsa.gov/comp
+  - url: Coming soon
 components:
   schemas:
     BusinessInformation:
