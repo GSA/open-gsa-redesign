@@ -6,6 +6,14 @@ task :serve do
   sh "bundle exec jekyll liveserve", verbose: false
 end
 
+# This option may cause pages to not be rebuilt when an underlying data file
+# (e.g., _data/*.yml) changes. In most cases it's OK, but you may need to use
+# the 'serve' task instead if changing data files.
+desc "Serve the site with live reload for development (incremental builds)"
+task :incrementalserve do
+  sh "bundle exec jekyll liveserve --incremental", verbose: false
+end
+
 desc "Build the site to the default Jekyll output directory"
 task :build do
   puts "Building the website..."
