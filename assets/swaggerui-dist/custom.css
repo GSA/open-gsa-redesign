@@ -1,0 +1,8 @@
+span .opblock-summary-method, .btn.authorize, .topbar a, .info .title small pre, .parameter__in, .download-url-button {color: #000 !important}
+a.link {
+    color: #18559A;
+}
+/* this section is not accessible so removing it */
+button.authorization__btn {
+    display: none;
+}
