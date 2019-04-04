@@ -1,22 +1,33 @@
 ---
-title: Opportunities API
-banner-heading: Opportunities API
+title: Opportunities Management APIs
+banner-heading: Opportunities Management APIs
 ---
 
 ## Overview
 
-This document will provide electronic users with the technical specifications required to utilize the beta.SAM.GOV Contract Opportunities REST API capability.
+The Opportunities Management APIs will allow authorized users to submit and request Opportunities data.
+
+**Note:** The specifications on this page are for a soon to be released API.  Check back here or be in contact with IAE for the release date and testing session.
 
 ## Getting Started 
 
 ###	Authentication and Authorization
 
+#### Generating a System Account API Key
+* Users registered with a government email address and have appropriate Opportunities Domain role may request a system account for data access.
+* If a user satisfies the above registration criteria they will be able to access the System Accounts widget from their Workspace page after logging in.
+* The user can then select “Go to System Accounts” from the widget and fill out the required sections.
+* The requested system account will then need to be approved. After approval the user will be notified via email and they can also see the updated status in the System Account widget.
+* The user can select ‘Go to System Accounts’ again in the widget from their workspace and enter a new system account password.
+* After setting up the password the user will see a new section for retrieving a system account API Key.
+The user must enter their password again to retrieve the key.
+
 #### System Account Authentication
-In order to utilize the Contract Opportunities REST API, the following is required:
+In order to utilize the Contract Opportunities Management APIs, the following is required:
 * Valid beta.SAM.GOV federal government system account with Read and Write permissions under Contract Opportunity domain.
 
 #### User Account Authorization
-In order to perform an Opportunity API operation, the following is required:
+In order to perform an Opportunities Management APIs operation, the following is required:
 * beta.SAM.GOV user account with either 'Administrator', 'Contracting Officer' role or 'Contracting Specialist' role. Permissions for operations by role are listed in the table below.<br/>
 
 To submit any opportunity notice type (except “Special Notice”) for an office, user should provide Federal Hierarchy (FH) Organization IDor Activity Address Code (AAC) (procurement/non-procurement). To submit Special Notice opportunity, user should provide Federal Hierarchy (FH) Organization IDof office, sub-tier or department or Activity Address Code (AAC) (procurement/non-procurement) or [other codes] for sub-tier and department. <br/>
@@ -125,7 +136,7 @@ far13	| FAR 13.5 - Simplified Procedures for One Source
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Contract Opportunity API Request and Responses
+## Contract Opportunities Management APIs Request and Responses
 
 <span style="color:red">Note: All Opportunity notices types except Special notices will be associated to organization at office level. Special notices can be associated to Organization at department, sub-tier, or office level.</span>
 
@@ -3051,7 +3062,7 @@ Title | Title is required | Title is required | Publish
 
 ## Contact Us
 
-If you are unable to post an an issue in GitHub, email us at example@gsa.gov.
+* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
 
 <p><small><a href="#">Back to top</a></small></p>
 
