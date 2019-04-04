@@ -143,7 +143,7 @@ far13	| FAR 13.5 - Simplified Procedures for One Source
 
 ### Create Opportunity
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | POST
@@ -447,7 +447,7 @@ Examples
 
 ### Publish Opportunity
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | POST
@@ -491,7 +491,7 @@ Examples
 
 ### Revise Opportunity
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | POST
@@ -535,7 +535,7 @@ Examples
 
 ### Update Opportunity
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | PATCH
@@ -850,7 +850,7 @@ Examples
 
 ### Opportunity History
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | GET
@@ -1006,7 +1006,7 @@ Examples
 
 ### Delete Opportunity
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | DELETE
@@ -1039,7 +1039,7 @@ _NA_
 
 ### Get List of Opportunities
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | GET
@@ -1471,7 +1471,7 @@ Examples
 
 ### Get Opportunity by ID
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | GET
@@ -1618,7 +1618,7 @@ Examples
 
 ### Cancel Opportunity
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | POST
@@ -1665,7 +1665,7 @@ Examples
 
 ### Uncancel Opportunity 
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | POST
@@ -1731,7 +1731,7 @@ Examples
 
 ### Archive Opportunity
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | POST
@@ -1775,7 +1775,7 @@ Examples
 
 ### Unarchive Opportunity 
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | POST
@@ -1885,7 +1885,7 @@ Examples
 
 ### Update Attachment
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | PATCH
@@ -1948,7 +1948,7 @@ Examples
 
 ### Download All Attachments (metadata)
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | GET
@@ -2034,7 +2034,7 @@ Examples
 
 ### Download Attachment
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | GET
@@ -2069,7 +2069,7 @@ _NA_
 	
 ### Download Attachments as Zip
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | GET
@@ -2100,7 +2100,7 @@ N/A
 
 ### Delete Attachment
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | DELETE
@@ -2133,7 +2133,7 @@ N/A
 	
 ### Get IVL (Interested Vendor List)
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | GET
@@ -2239,7 +2239,7 @@ ivl": [
 
 ### IVL Settings
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | PUT
@@ -2281,7 +2281,7 @@ Examples
 
 ### Delete Vendor
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | DELETE
@@ -2313,7 +2313,7 @@ N/A
 
 ### Get IVL by DUNS
 
-Endpoint Description
+**Endpoint:** Coming soon
 
 ------- | -------
 **Request Type** | GET
