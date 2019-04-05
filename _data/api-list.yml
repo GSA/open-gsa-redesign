@@ -46,8 +46,8 @@
 - title: GSA.gov Content API
   description: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last.
   url: https://www.gsa.gov/about-us/gsa-content-api
-- title: Opportunities Management APIs (Coming Soon)
-  description: The Opportunities Management APIs will allow authorized users to submit and request Opportunities data.
+- title: Opportunity Management API (Coming Soon)
+  description: The Opportunity Management API will allow authorized users to submit and request Opportunities data.
   url: opportunities-api/
 - title: Per Diem API
   description: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers.
