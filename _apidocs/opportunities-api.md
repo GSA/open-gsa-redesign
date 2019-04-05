@@ -1,11 +1,11 @@
 ---
-title: Opportunities Management APIs
-banner-heading: Opportunities Management APIs
+title: Opportunity Management API
+banner-heading: Opportunity Management API
 ---
 
 ## Overview
 
-The Opportunities Management APIs will allow authorized users to submit and request Opportunities data.
+The Opportunity Management API will allow authorized users to submit and request Opportunities data.
 
 **Note:** The specifications on this page are for a soon to be released API.  Check back here or be in contact with IAE for the release date and testing session.
 
@@ -23,11 +23,11 @@ The Opportunities Management APIs will allow authorized users to submit and requ
 The user must enter their password again to retrieve the key.
 
 #### System Account Authentication
-In order to utilize the Contract Opportunities Management APIs, the following is required:
+In order to utilize the Contract Opportunity Management API, the following is required:
 * Valid beta.SAM.GOV federal government system account with Read and Write permissions under Contract Opportunity domain.
 
 #### User Account Authorization
-In order to perform an Opportunities Management APIs operation, the following is required:
+In order to perform an Opportunity Management API operation, the following is required:
 * beta.SAM.GOV user account with either 'Administrator', 'Contracting Officer' role or 'Contracting Specialist' role. Permissions for operations by role are listed in the table below.<br/>
 
 To submit any opportunity notice type (except “Special Notice”) for an office, user should provide Federal Hierarchy (FH) Organization IDor Activity Address Code (AAC) (procurement/non-procurement). To submit Special Notice opportunity, user should provide Federal Hierarchy (FH) Organization IDof office, sub-tier or department or Activity Address Code (AAC) (procurement/non-procurement) or [other codes] for sub-tier and department. <br/>
@@ -136,7 +136,7 @@ far13	| FAR 13.5 - Simplified Procedures for One Source
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Contract Opportunities Management APIs Request and Responses
+## Contract Opportunity Management API Request and Responses
 
 <span style="color:red">Note: All Opportunity notices types except Special notices will be associated to organization at office level. Special notices can be associated to Organization at department, sub-tier, or office level.</span>
 
