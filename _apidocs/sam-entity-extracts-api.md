@@ -42,10 +42,10 @@ acquisition related systems. Depending on the roles associated to that user ID e
 Entity Management Extracts can be accessed from prod via the following end points: Below endpoint can be used to download Entity and Exclusions Extracts.
 
 1. Public Endpoint:
-   * https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
+  * https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
 2. FOUO Endpoints:  
-   * https://api.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
+  * https://api.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
 3. Sensitive Endpoints:    
   * https://api.sam.gov/prod/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
