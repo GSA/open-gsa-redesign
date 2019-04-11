@@ -39,18 +39,16 @@ acquisition related systems. Depending on the roles associated to that user ID e
 
 ## Getting Started
 
-Entity Management Extracts can be accessed from prod via the following end points:
+Entity Management Extracts can be accessed from prod via the following end points: Below endpoint can be used to download Entity and Exclusions Extracts.
+
 1. Public Endpoint:
-   * https://api.sam.gov/prod/extracts/entity/public/daily/${file-name}?API_KEY={API_KEY_WITH_PUBLIC_ROLE}
-   * https://api.sam.gov/prod/extracts/entity/public/monthly/${file-name}?API_KEY={API_KEY_WITH_PUBLIC_ROLE}
+   * https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
 2. FOUO Endpoints:  
-   * https://api.sam.gov/prod/extracts/entity/fouo/daily/${file-name}?API_KEY={API_KEY_WITH_FOUO_ROLE}
-   * https://api.sam.gov/prod/extracts/entity/fouo/monthly/${file-name}?API_KEY={API_KEY_WITH_FOUO_ROLE}
+   * https://api.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
 3. Sensitive Endpoints:    
-   * https://api.sam.gov/prod/extracts/entity/sensitive/daily/${file-name}?API_KEY={API_KEY_WITH_SENSITIVE_ROLE}
-   * https://api.sam.gov/prod/extracts/entity/sensitive/monthly/${file-name}?API_KEY={API_KEY_WITH_SENSITIVE_ROLE}
+  * https://api.sam.gov/prod/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
 Generating the API Key:
 * Registered users can request for a public API on 'Account Details' page.
@@ -64,37 +62,72 @@ Generating the API Key:
 
 ### Entity Management Extracts API
 
-**Endpoint :**  https://api.sam.gov/prod/extracts/entity/public/daily/${file-name}?API_KEY={API_KEY_WITH_PUBLIC_ROLE}
+**Endpoint :**  https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
-**Description :**  A static endpoint to retrieve public daily data
+**Description :**  A static endpoint to retrieve public daily/monthly data
 
-**Endpoint :**  https://api.sam.gov/prod/extracts/entity/public/monthly/${file-name}?API_KEY={API_KEY_WITH_PUBLIC_ROLE}
+<b>Query String Parameters</b>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
 
-**Description :**  A static endpoint to retrieve public monthly data
+<tr>
+<td>fileName</td>
+<td>Allows users to provide extract file name (daily/monthly)
+<br>Example: fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
+</tr>
+
+</table>
+<br>
 
 **Expected Result**<br>
 Click to view the full details of the data elements: <a href="v1/public_extract_layout.pdf">Public Extract Layout</a>
 
-**Endpoint :**  https://api.sam.gov/prod/extracts/entity/fouo/daily/${file-name}?API_KEY={API_KEY_WITH_FOUO_ROLE}
+**Endpoint :** https://api.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
-**Description :**  A static endpoint to retrieve FOUO daily data
+**Description :**  A static endpoint to retrieve FOUO daily/monthly data
 
-**Endpoint :**  https://api.sam.gov/prod/extracts/entity/fouo/monthly/${file-name}?API_KEY={API_KEY_WITH_FOUO_ROLE}
+<b>Query String Parameters</b>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
 
-**Description :**  A static endpoint to retrieve FOUO monthly data
+<tr>
+<td>fileName</td>
+<td>Allows users to provide extract file name (daily/monthly)
+<br>Example: fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
+</tr>
+
+</table>
+<br>
 
 **Expected Result**<br>
 Click to view the full details of the data elements: <a href="v1/fouo_extract_layout.pdf">FOUO Extract Layout</a>
 
 
-**Endpoint :**  https://api.sam.gov/prod/extracts/entity/sensitive/daily/${file-name}?API_KEY={API_KEY_WITH_SENSITIVE_ROLE}
+**Endpoint :**  https://api.sam.gov/prod/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
-**Description :**  A static endpoint to retrieve sensitive daily data
+**Description :**  A static endpoint to retrieve sensitive daily/monthly data
 
-**Endpoint :**  https://api.sam.gov/prod/extracts/entity/sensitive/monthly/${file-name}?API_KEY={API_KEY_WITH_SENSITIVE_ROLE}
+<b>Query String Parameters</b>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
 
-**Description :**  A static endpoint to retrieve sensitive monthly data
+<tr>
+<td>fileName</td>
+<td>Allows users to provide extract file name (daily/monthly)
+<br>Example: fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
+</tr>
 
+</table>
+<br>
 **Expected Result**<br>
 Click to view the full details of the data elements: <a href="v1/sensitive_extract_layout.pdf">Sensitive Extract Layout</a>
 
