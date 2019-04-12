@@ -6,3 +6,9 @@ a.link {
 button.authorization__btn {
     display: none;
 }
+
+/* this link is not working so removing it */
+
+div.information-container a.link {
+    display:none;
+}

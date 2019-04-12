@@ -1,9 +1,8 @@
 openapi: 3.0.0
 info:
-  title: Prototype City Pairs API - TESTING HEADER
+  title: Prototype City Pairs API
   description: >-
-    Prototype project to demonstrate GSA API Standards and API Documentation
-    Template.
+    Prototype project for GSA API strategy.
   version: 0.0.0
 paths:
   /airfares:
@@ -38,7 +37,7 @@ paths:
             type: string
             format: string
       tags:
-        - endpoints
+        - name: Airfares
       responses:
         '200':
           description: An array of airfares
@@ -69,7 +68,7 @@ paths:
             type: integer
             format: int32
       tags:
-        - endpoints
+        - name: Airfares
       responses:
         '200':
           description: An array of airfares
