@@ -1,14 +1,32 @@
-span .opblock-summary-method, .btn.authorize, .topbar a, .info .title small pre, .parameter__in, .download-url-button {color: #000 !important}
+.swagger-ui span .opblock-summary-method, .btn.authorize, .topbar a, .info .title small pre, .parameter__in, .download-url-button {color: #000 !important}
 a.link {
     color: #18559A;
 }
 /* this section is not accessible so removing it */
-button.authorization__btn {
+.swagger-ui button.authorization__btn {
     display: none;
 }
 
 /* this link is not working so removing it */
 
-div.information-container a.link {
+.swagger-ui div.information-container a.link {
     display:none;
+}
+
+.swagger-ui .info {
+    margin-bottom: 0;
+}
+
+.swagger-ui h2 {
+    margin-top: .5em;
+}
+
+.swagger-ui h2 span {
+    color: black;
+    font-family: sans-serif;
+    font-size: large;
+}
+
+.swagger-ui .info .title {
+    font-size: x-large;
 }
