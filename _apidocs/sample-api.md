@@ -19,6 +19,13 @@ Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## OpenAPI Specification File
+
+You can view the full details of this API in the OpenAPI Specification file available here:
+<a href="v1/openapi.yaml">Open API specification file for the Sample API</a>
+
+<p><small><a href="#">Back to top</a></small></p>
+
 ## API Calls
 
 In eget nibh consectetur, faucibus sapien et, finibus justo. Duis feugiat elit ex, non aliquet nisl cursus et. Morbi hendrerit est nec leo venenatis tempus. Vestibulum auctor auctor varius. Aenean lorem lacus, rutrum finibus nulla ac, tempor aliquet dolor. Donec egestas lectus ut augue posuere fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse nec turpis sed ipsum vestibulum aliquam nec eu nunc. Etiam ipsum orci, maximus et lorem nec, interdum dapibus sem. Sed nisl ex, scelerisque nec sodales at, finibus non dolor.
