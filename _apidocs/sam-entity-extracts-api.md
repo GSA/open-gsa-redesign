@@ -1,6 +1,6 @@
 ---
-title: Entity Management Extracts API
-banner-heading: Entity Management Extracts API
+title: Entity Extracts Download API
+banner-heading: Entity Extracts Download API
 ---
 
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
@@ -12,7 +12,7 @@ Primarily these extracts are utilized system to system rather than via the front
 The systems accessing these extracts often include contract writing systems, government payment systems, and other 
 acquisition related systems. Depending on the roles associated to that user ID extracts can be classified into 3 types.
   
-1. **Entity Management Extracts Public Data Package :**
+1. **Entity Extracts Public Data Package :**
    * This is a public extract available both daily and monthly. 
    * It contains entity registration data publicly available under the Freedom of Information Act (FOIA) for those registered 
      in SAM.gov to do business with the Federal government.  
@@ -20,14 +20,14 @@ acquisition related systems. Depending on the roles associated to that user ID e
    * The monthly file contains a refresh for all active registrations and those that expired in the previous 6 months.
    * End user needs to create system account with public access roles and procure API_KEY to access these extracts 
 
-2. **Entity Management Extracts FOUO Data Package:**
+2. **Entity Extracts FOUO Data Package:**
    * This extract contains the same information as the Entity Management Public Extract with the addition of data elements 
      that are considered For Official Use Only (FOUO).  
    * The daily file contains entity registrations that were changed the previous day.  
    * The monthly file contains a refresh for all active registrations and those that expired in the previous 6 months.  
    * End user needs to create system account with FOUO access roles and procure API_KEY to access these extracts
 
-3. **Entity Management Extract Sensitive Data Package:**
+3. **Entity Extract Sensitive Data Package:**
    * This extract contains the same information as the Entity Management Public and FOUO Extracts with the addition of data 
      elements that are considered Sensitive.  
    * The daily file contains entity registrations that were changed the previous day.  
@@ -39,7 +39,7 @@ acquisition related systems. Depending on the roles associated to that user ID e
 
 ## Getting Started
 
-Entity Management Extracts can be accessed from prod via the following end points: Below endpoint can be used to download Entity and Exclusions Extracts.
+Entity Extracts can be accessed from prod via the following end points: Below endpoint can be used to download Entity Extracts.
 
 1. Public Endpoint:
   * https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
@@ -60,9 +60,9 @@ Generating the API Key:
 
 ## API Description
 
-### Entity Management Extracts API
+### Entity Extracts Download API
 
-**Entity Management Public Extract:**<br>
+**Entity Public Extract:**<br>
 
 **Alpha and Beta Endpoints :** <br>
 https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
@@ -86,7 +86,8 @@ https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_R
 **Expected Result**<br>
 Click to view the full details of the data elements: <a href="v1/public_extract_layout.pdf">Public Extract Layout</a>
 
-**Entity Management FOUO Extract:** <br>
+**Entity FOUO Extract:** <br>
+
 **Alpha and Beta Endpoints :** <br>
 https://api-alpha.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 https://api.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
@@ -109,7 +110,8 @@ https://api.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUB
 **Expected Result**<br>
 Click to view the full details of the data elements: <a href="v1/fouo_extract_layout.pdf">FOUO Extract Layout</a>
 
-**Entity Management Sensitive Extract:** <br>
+**Entity Sensitive Extract:** <br>
+
 **Alpha and Beta Endpoints :** <br>
 https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 https://api.sam.gov/prod/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
