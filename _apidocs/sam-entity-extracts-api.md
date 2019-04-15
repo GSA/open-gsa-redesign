@@ -130,7 +130,7 @@ https://api.sam.gov/prod/dataservices/v1/extracts/sensitive?api_key={API_KEY_WIT
 <tr>
 <td>fileName</td>
 <td>Allows users to provide extract daily and monthly file names.
-<br>Examples: fileName=SAM_SENSITIVE_MONTHLY_20190323.ZIP,fileName=SAM_SENSITIVE_DAILY_20190323.ZIP,fileName=SAM_FOUO_MONTHLY_20190323.ZIP, fileName=SAM_FOUO_DAILY_20190323.ZIP, fileName=SAM_PUBLIC_MONTHLY_20190323.ZIP, fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
+<br>Examples: fileName=SAM_SENSITIVE_MONTHLY_20190323.ZIP, fileName=SAM_SENSITIVE_DAILY_20190323.ZIP, fileName=SAM_FOUO_MONTHLY_20190323.ZIP, fileName=SAM_FOUO_DAILY_20190323.ZIP, fileName=SAM_PUBLIC_MONTHLY_20190323.ZIP, fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
 </tr>
 </table>
 
