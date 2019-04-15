@@ -62,10 +62,13 @@ Generating the API Key:
 
 ### Entity Management Extracts API
 
-**Endpoint :**  https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
+**Entity Management Public Extract:**<br>
 
-**Description :**  A static endpoint to retrieve public daily/monthly data
+**Alpha and Beta Endpoints :** <br>
+https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
+**Description :**  These are  static endpoints to retrieve public daily/monthly data
 <b>Query String Parameters</b>
 <table>
 <tr>
@@ -78,17 +81,17 @@ Generating the API Key:
 <td>Allows users to provide extract file name (daily/monthly)
 <br>Example: fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
 </tr>
-
 </table>
 <br>
-
 **Expected Result**<br>
 Click to view the full details of the data elements: <a href="v1/public_extract_layout.pdf">Public Extract Layout</a>
 
-**Endpoint :** https://api.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
+**Entity Management FOUO Extract:** <br>
+**Alpha and Beta Endpoints :** <br>
+https://api-alpha.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
+https://api.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
-**Description :**  A static endpoint to retrieve FOUO daily/monthly data
-
+**Description :**  These are  static endpoints to retrieve public daily/monthly data
 <b>Query String Parameters</b>
 <table>
 <tr>
@@ -101,17 +104,17 @@ Click to view the full details of the data elements: <a href="v1/public_extract_
 <td>Allows users to provide extract file name (daily/monthly)
 <br>Example: fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
 </tr>
-
 </table>
 <br>
-
 **Expected Result**<br>
 Click to view the full details of the data elements: <a href="v1/fouo_extract_layout.pdf">FOUO Extract Layout</a>
 
+**Entity Management Sensitive Extract:** <br>
+**Alpha and Beta Endpoints :** <br>
+https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
+https://api.sam.gov/prod/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
-**Endpoint :**  https://api.sam.gov/prod/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
-
-**Description :**  A static endpoint to retrieve sensitive daily/monthly data
+**Description :**  These are  static endpoints to retrieve public daily/monthly data
 
 <b>Query String Parameters</b>
 <table>
@@ -125,7 +128,6 @@ Click to view the full details of the data elements: <a href="v1/fouo_extract_la
 <td>Allows users to provide extract file name (daily/monthly)
 <br>Example: fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
 </tr>
-
 </table>
 <br>
 **Expected Result**<br>
