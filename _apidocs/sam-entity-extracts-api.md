@@ -68,7 +68,7 @@ Generating the API Key:
 https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
-**Description :**  These are  static endpoints to retrieve public daily/monthly data
+**Description :**  These are  static endpoints to retrieve public daily/monthly data <br>
 <b>Query String Parameters</b>
 <table>
 <tr>
@@ -91,7 +91,7 @@ Click to view the full details of the data elements: <a href="v1/public_extract_
 https://api-alpha.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 https://api.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
-**Description :**  These are  static endpoints to retrieve public daily/monthly data
+**Description :**  These are  static endpoints to retrieve public daily/monthly data <br>
 <b>Query String Parameters</b>
 <table>
 <tr>
@@ -114,8 +114,7 @@ Click to view the full details of the data elements: <a href="v1/fouo_extract_la
 https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 https://api.sam.gov/prod/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
-**Description :**  These are  static endpoints to retrieve public daily/monthly data
-
+**Description :**  These are  static endpoints to retrieve public daily/monthly data <br>
 <b>Query String Parameters</b>
 <table>
 <tr>
@@ -141,7 +140,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages: <br><br>  * You dont have valid permission to access this extracts. <br><br> * This file does not exist.  |
+| 400 | Application Level Error Messages: <br><br>  * You dont have valid permission to access this extracts. <br><br> * fileName cannot be null. <br><br> * The requested extract file doesn't exist.  <br><br> * The requested extract file download is not supported yet. |
 | 403 | API key is not correct or was not provided. |
 
 
