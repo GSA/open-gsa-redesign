@@ -68,18 +68,18 @@ Generating the API Key:
 https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
-**Description :**  These are  static endpoints to retrieve public daily/monthly data <br>
+**Description :**  These are  static endpoints to retrieve public monthly data <br>
+
 <b>Query String Parameters</b>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-
 <tr>
 <td>fileName</td>
-<td>Allows users to provide extract file name (daily/monthly)
-<br>Example: fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
+<td>Allows users to provide extract monthly file name 
+<br>Example: fileName=SAM_PUBLIC_MONTHLY_20190323.ZIP</td>
 </tr>
 </table>
 <br>
@@ -91,18 +91,18 @@ Click to view the full details of the data elements: <a href="v1/public_extract_
 https://api-alpha.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 https://api.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
-**Description :**  These are  static endpoints to retrieve public daily/monthly data <br>
+**Description :**  These are  static endpoints to retrieve public monthly data <br>
+
 <b>Query String Parameters</b>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-
 <tr>
 <td>fileName</td>
-<td>Allows users to provide extract file name (daily/monthly)
-<br>Example: fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
+<td>Allows users to provide extract monthly file name
+<br>Example: fileName=SAM_FOUO_MONTHLY_20190323.ZIP</td>
 </tr>
 </table>
 <br>
@@ -114,18 +114,18 @@ Click to view the full details of the data elements: <a href="v1/fouo_extract_la
 https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 https://api.sam.gov/prod/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
 
-**Description :**  These are  static endpoints to retrieve public daily/monthly data <br>
+**Description :**  These are  static endpoints to retrieve public monthly data <br>
+
 <b>Query String Parameters</b>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-
 <tr>
 <td>fileName</td>
-<td>Allows users to provide extract file name (daily/monthly)
-<br>Example: fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
+<td>Allows users to provide extract monthly file name
+<br>Example: fileName=SAM_SENSITIVE_MONTHLY_20190323.ZIP</td>
 </tr>
 </table>
 <br>
