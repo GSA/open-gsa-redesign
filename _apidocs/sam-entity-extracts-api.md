@@ -71,7 +71,7 @@ Generating the API Key:
 https://api.sam.gov/prodlike/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name} <br>
 https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}  <br>
 
-**Description :**  These are  static endpoints to retrieve public monthly data <br>
+**Description :**  These are  static endpoints to retrieve public monthly data. <br>
 
 <b>Query String Parameters</b>
 <table>
@@ -106,7 +106,7 @@ https://api.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_FOU
 <tr>
 <td>fileName</td>
 <td>Allows users to provide extract daily and monthly file names.
-<br>Examples: fileName=SAM_FOUO_MONTHLY_20190323.ZIP, fileName=SAM_FOUO_DAILY_20190323.ZIP,fileName=SAM_PUBLIC_MONTHLY_20190323.ZIP, fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
+<br>Examples: fileName=SAM_FOUO_MONTHLY_20190323.ZIP, fileName=SAM_FOUO_DAILY_20190323.ZIP, fileName=SAM_PUBLIC_MONTHLY_20190323.ZIP, fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
 </tr>
 </table>
 
@@ -129,8 +129,8 @@ https://api.sam.gov/prod/dataservices/v1/extracts/sensitive?api_key={API_KEY_WIT
 </tr>
 <tr>
 <td>fileName</td>
-<td>Allows users to provide extract monthly file name
-<br>Example: fileName=SAM_SENSITIVE_MONTHLY_20190323.ZIP,fileName=SAM_SENSITIVE_DAILY_20190323.ZIP,fileName=SAM_FOUO_MONTHLY_20190323.ZIP, fileName=SAM_FOUO_DAILY_20190323.ZIP, fileName=SAM_PUBLIC_MONTHLY_20190323.ZIP, fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
+<td>Allows users to provide extract daily and monthly file names.
+<br>Examples: fileName=SAM_SENSITIVE_MONTHLY_20190323.ZIP,fileName=SAM_SENSITIVE_DAILY_20190323.ZIP,fileName=SAM_FOUO_MONTHLY_20190323.ZIP, fileName=SAM_FOUO_DAILY_20190323.ZIP, fileName=SAM_PUBLIC_MONTHLY_20190323.ZIP, fileName=SAM_PUBLIC_DAILY_20190323.ZIP</td>
 </tr>
 </table>
 
