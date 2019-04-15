@@ -1,0 +1,352 @@
+openapi: 3.0.0
+info:
+  description: Exclusions API to retrieve exclusion information via Request parameters in
+    the paginated manner
+  version: "1.0"
+  title: Exclusions Rest API
+  termsOfService: Terms of service
+  contact:
+    name: GSA
+    url: www.beta.sam.gov
+    email: reply@gsa.gov
+  license:
+    name: GSA
+tags:
+  - name: exclusions-api-controller
+    description: Operations pertaining to Exclusions API
+paths:
+  Coming soon:
+    get:
+      tags:
+        - exclusions-api-controller
+      summary: " get Exclusions Details"
+      operationId: getExclusionsDataUsingGET
+      parameters:
+        - name: api_key
+          in: query
+          description: API KEY
+          required: true
+          schema:
+            type: string
+        - name: classification
+          in: query
+          description: A String (Individual, Firm, Vessel, Special Entity Designation, null)
+          required: false
+          schema:
+            type: string
+        - name: exclusionName
+          in: query
+          description: A partial text or a complete text
+          required: false
+          schema:
+            type: string
+        - name: exclusionType
+          in: query
+          description: A String (Ineligible (Proceedings Pending), Ineligible (Proceedings
+            Completed), Prohibition/Restriction, Voluntary Exclusion)
+          required: false
+          schema:
+            type: string
+        - name: exclusionProgram
+          in: query
+          description: A String (Reciprocal, Non-Procurement, Procurement)
+          required: false
+          schema:
+            type: string
+        - name: stateProvince
+          in: query
+          description: A String (NC, XX, null, 470105, YAMALO-NENETSKI OKR.)
+          required: false
+          schema:
+            type: string
+        - name: country
+          in: query
+          description: A String (USA, CAN, ARE, null)
+          required: false
+          schema:
+            type: string
+        - name: zipCode
+          in: query
+          description: A String (0, 41722, 21453935, 752435120, 75602-1112, null, C.P.
+            44890, oo957, TQ13 9SE, Zimbabwe, P.O. Box Beirut-Hamra)
+          required: false
+          schema:
+            type: string
+        - name: ueiDUNS
+          in: query
+          description: Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652,
+            047795005, null)
+          required: false
+          schema:
+            type: string
+        - name: ueiSAM
+          in: query
+          description: TBD
+          required: false
+          schema:
+            type: string
+        - name: excludingAgencyCode
+          in: query
+          description: A String (AF, DOJ, FEMA-IOD, null)
+          required: false
+          schema:
+            type: string
+        - name: excludingAgencyName
+          in: query
+          description: A String (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null)
+          required: false
+          schema:
+            type: string
+        - name: ctCode
+          in: query
+          description: A String (A, ZZ, XXX, 03-SDNTK-01, null)
+          required: false
+          schema:
+            type: string
+        - name: activationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: creationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: updateDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: terminationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: isActive
+          in: query
+          description: A String (Y, N)
+          required: false
+          schema:
+            type: string
+        - name: cageCode
+          in: query
+          description: A String (0Y5L9, null)
+          required: false
+          schema:
+            type: string
+        - name: npi
+          in: query
+          description: A String (1053373266, null)
+          required: false
+          schema:
+            type: string
+        - name: ssn
+          in: query
+          description: A String (XXXXXXXXX, null)
+          required: false
+          schema:
+            type: string
+        - name: tin
+          in: query
+          description: A String (XXXXXXXXX, null)
+          required: false
+          schema:
+            type: string
+        - name: q
+          in: query
+          description: Free text, All the above filters and their acceptable values can be
+            used
+          required: false
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Page number
+          required: false
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: Record size per page
+          required: false
+          schema:
+            type: string
+        - name: includeSections
+          in: query
+          description: Schema Filtering Paramter
+          required: false
+          schema:
+            type: string
+        - name: format
+            in: query
+            description: Format
+            required: false
+            schema:
+              type: string
+        - name: emailID
+            in: query
+            description: Email ID
+            required: false
+            schema:
+              type: string
+
+      responses:
+        "200":
+          description: Successfully retrieved list
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/ExclusionsResponse"
+        "401":
+          description: You are not authorized to view the resource
+        "403":
+          description: Accessing the resource you were trying to reach is forbidden
+        "404":
+          description: The resource you were trying to reach is not found
+servers:
+  - url: Coming soon
+components:
+  schemas:
+    CrossReferences:
+      type: object
+      properties:
+        crossReferencesList:
+          type: array
+          items:
+            $ref: "#/components/schemas/CrossReferencesList"
+    ExclusionOtherInformation:
+      type: object
+      properties:
+        additionalComments:
+          type: string
+        crossReferences:
+          $ref: "#/components/schemas/CrossReferences"
+        ctCode:
+          type: string
+        dnbInvestigationStatus:
+          type: string
+        moreLocations:
+          type: array
+          items:
+            type: string
+    ExclusionDetails:
+      type: object
+      properties:
+        classificationType:
+          type: string
+        excludingAgencyCode:
+          type: string
+        excludingAgencyName:
+          type: string
+        exclusionProgram:
+          type: string
+        exclusionType:
+          type: string
+    ExclusionIdentification:
+      type: object
+      properties:
+        ueiSAMMI:
+          type: string
+        ueiDUNS:
+          type: string
+        entityEFTIndicator:
+          type: string
+        cageCode:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        middleName:
+          type: string
+        npi:
+          type: string
+        prefix:
+          type: string
+        suffix:
+          type: string
+        yName:
+          type: string
+    ExclusionAddress:
+      type: object
+      properties:
+        address1:
+          type: string
+        address2:
+          type: string
+        addressCity:
+          type: string
+        addressStateProvince:
+          type: string
+        addressZipOrPostalCode:
+          type: string
+        addressZipPlus4:
+          type: string
+        country:
+          type: string
+    ExclusionActions:
+      type: object
+      properties:
+        listOfActions:
+          type: array
+          items:
+            $ref: "#/components/schemas/ListOfActions"
+    VesselDetails:
+      type: object
+      properties:
+        callSign:
+          type: string
+        flag:
+          type: string
+        grt:
+          type: string
+        owner:
+          type: string
+        secondaryAddress:
+          type: string
+        tonnage:
+          type: string
+        type:
+          type: string
+    CrossReferencesList:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+    ListOfActions:
+      type: object
+      properties:
+        activateDate:
+          type: string
+        createDate:
+          type: string
+        recordStatus:
+          type: string
+        terminationDate:
+          type: string
+        terminationType:
+          type: string
+        updateDate:
+          type: string
+    ExclusionsResponse:
+      type: object
+      properties:
+        exclusionDetails:
+          $ref: "#/components/schemas/ExclusionDetails"
+        exclusionIdentification:
+          $ref: "#/components/schemas/ExclusionIdentification"
+        exclusionActions:
+          $ref: "#/components/schemas/ExclusionActions"
+        exclusionAddress:
+          $ref: "#/components/schemas/ExclusionAddress"
+        exclusionOtherInformation:
+          $ref: "#/components/schemas/ExclusionOtherInformation"
+        vesselDetails:
+          $ref: "#/components/schemas/VesselDetails"
