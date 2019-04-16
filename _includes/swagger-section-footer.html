@@ -1,0 +1,17 @@
+    dom_id: '#swagger-ui',
+    docExpansion: "list",
+    defaultModelsExpandDepth: 1,
+    deepLinking: false,
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+
+  window.ui = ui
+}
+</script>
