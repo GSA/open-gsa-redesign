@@ -6,7 +6,7 @@
   url: https://analytics.usa.gov/developer
 - title: Api.Data.Gov Admin API
   description: api.data.gov is a free API management service for federal agencies. This API implements the API Umbrella Admin API.
-  url: https://api.data.gov/developer/
+  url: https://open.gsa.gov/api/apidatagov/
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: https://gsa.github.io/auctions_api/
@@ -25,6 +25,12 @@
 - title: eMuseum API
   description: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
   url: https://gsa.github.io/eMuseum-API/
+- title: Entity Management API (Coming Soon)
+  description: API to retrieve Entity detail information from beta.sam.gov using various searchable parameters.
+  url: entity-api/
+- title: Exclusion API (Coming Soon)
+  description: API to retrieve Exclusion detail information from beta.sam.gov using various searchable parameters.
+  url: exclusion-api/
 - title: FedBizOpps Web Services
   description: This system supports Web Services for Federal buyers to post information to the database using their agency’s electronic procurement system.
   url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
@@ -40,6 +46,9 @@
 - title: GSA.gov Content API
   description: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last.
   url: https://www.gsa.gov/about-us/gsa-content-api
+- title: Opportunity Management API (Coming Soon)
+  description: The Opportunity Management API will allow authorized users to submit and request Opportunities data.
+  url: opportunities-api/
 - title: Per Diem API
   description: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers.
   url: https://www.gsa.gov/technology/government-it-initiatives/digital-strategy/per-diem-apis/per-diem-api
