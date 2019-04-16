@@ -7,9 +7,9 @@ banner-heading: analytics.usa.gov API
 <!-- Alpha status alert -->
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
-     <h3 class="usa-alert-heading">
+     <strong>
        This project is in BETA
-     </h3>
+     </strong>
      <p class="usa-alert-text">
        This API is under active development, and breaking changes may be made without warning.
        Have feedback or questions? <a href="https://github.com/18F/analytics.usa.gov/issues">Please let us know</a>!
