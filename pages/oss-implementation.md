@@ -78,7 +78,7 @@ This specifically refers to projects that are under the [GSA organization on Git
 
 If you want to customize your project metadata, add a YAML or JSON metadata file to the root folder of your repository. This file should be named `.codeinventory.yml` or `.codeinventory.json`. It should contain metadata about your project. [We have a tool to help you generate a YAML or JSON file](https://gsa.github.io/codeinventory-metadata-generator/). Once you add this metadata file to your repository, we can automatically scan it to include your project in the GSA source code inventory. Leave the file in your repository and keep it updated. We will regularly pull the metadata from the file to refresh the GSA inventory. If you no longer want custom metadata and want us to automatically build metadata for you, just remove the file from your repository.
 
-Please see the [GSA CTO Website repository](https://github.com/GSA/cto-website/blob/dev/.codeinventory.yml) for an example of how to use a `.codeinventory.yml` file.
+Please see the [GSA CTO Website repository](https://github.com/GSA/cto-website/blob/master/.codeinventory.yml) for an example of how to use a `.codeinventory.yml` file.
 
 **Example YAML File (`.codeinventory.yml`)**
 
@@ -114,7 +114,7 @@ contact:
 }
 ```
 
-[Code.gov provides specifics on field values](https://code.gov/#/policy-guide/docs/compliance/inventory-code).
+[Code.gov provides specifics on field values](https://code.gov/about/compliance/inventory-code).
 
 #### If your source code is *not* on GitHub
 

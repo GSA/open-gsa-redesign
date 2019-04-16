@@ -27,7 +27,7 @@
 					"mediaType": "application/pdf",
 					"format": "pdf",
 					"title": "2015 GSA Common Baseline Implementation Plan and CIO Assignment Plan",
-					"description": "This is GSA's 2015 Common Baseline Implementation Plan and its CIO Assignment Plan per the requirements set forth in FITARA legislation. Updated April 2017.",
+					"description": "This is GSA's 2015 Common Baseline Implementation Plan and its CIO Assignment Plan per the requirements set forth in FITARA legislation. Updated April 2017. Last Major Change to version updated on March 4, 2019.",
 					"downloadURL": "https://inventory.data.gov/dataset/64c56cec-4b8f-44c7-ba69-090517f9f32e/resource/87e53999-aff1-4560-8bf0-42d9dc8e4a69/download/2015gsafitaraimplementationandcioassignmentplan.pdf"
 				}
 			],
@@ -1211,8 +1211,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/pdf",
 					"format": "pdf",
-					"title": "DCOI CIO Statement May 2018",
-					"description": "May 1, 2018 - GSA has verified that our Strategic Plan is a valid JSON file, conforms to the schema on management.cio.gov/schema, and addresses all of the requirements for it specified in the DCOI. \r\n\r\nIt further confirms that this Strategic Plan has been posted publicly as requested in the template at [agency.gov]/digitalstrategy/datacenteroptimizationstrategicplan.json under the heading “Data Center Optimization Initiative Strategic Plans”.",
+					"title": "DCOI CIO Statement Feb 2019",
+					"description": "February 14, 2019 - GSA has verified that our Strategic Plan is a valid JSON file, conforms to the schema on management.cio.gov/schema, and addresses all of the requirements for it specified in the DCOI. \r\n\r\nIt further confirms that this Strategic Plan has been posted publicly as requested in the template at [agency.gov]/digitalstrategy/datacenteroptimizationstrategicplan.json under the heading “Data Center Optimization Initiative Strategic Plans”.",
 					"downloadURL": "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/c61e4b8a-4a4a-46b3-9d95-36d227bc28c3/download/gsa-dcoi-cio-signature.pdf"
 				}
 			],
@@ -2736,7 +2736,7 @@
 			"@type": "dcat:Dataset",
 			"title": "FY 2017 Federal Real Property Profile Data for Civilian Agencies",
 			"description": "An export of data from FRPP, a database of Federal Real Property Profile for Civilian Agencies.",
-			"modified": "2018-03-28",
+			"modified": "2019-03-07",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-12-06-01",
 			"dataQuality": true,
@@ -2767,7 +2767,7 @@
 					"description": "FY 2017 Civilian Agency Public FRPP",
 					"describedBy": "https://www.gsa.gov/cdnstatic/FY%202017%20FRPP%20DATA%20DICTIONARY%20V2_0.pdf",
 					"describedByType": "application/pdf",
-					"downloadURL": "https://inventory.data.gov/dataset/509d3f36-464e-4e4c-a26b-8582605c254e/resource/37120970-e7cf-47e3-ba25-3f5a6b0f4c2f/download/fy-2017-civilian-agency-public-frpp-data.csv"
+					"downloadURL": "https://inventory.data.gov/dataset/509d3f36-464e-4e4c-a26b-8582605c254e/resource/37120970-e7cf-47e3-ba25-3f5a6b0f4c2f/download/fy17-frpp-public-dataset-022719.csv"
 				}
 			],
 			"keyword": ["FRPP", "Federal Real Property Profile", "GSA", "General Services Administration", "RTF", "building", "civilian", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -3414,7 +3414,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2019-02-06",
+			"modified": "2019-04-03",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3437,8 +3437,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON 02/06/19",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-02-06-19.json"
+					"description": "EDI JSON 04/03/19",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-040319.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3534,8 +3534,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA FITARA Actions and Milestones 2018-11-30",
-					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the November 30, 2018, quarterly submission to OMB.",
+					"title": "GSA FITARA Actions and Milestones 2019-02-28",
+					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the February 28, 2019, quarterly submission to OMB.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
 				}
@@ -3567,7 +3567,7 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "GSA IT Reform Cost Savings/Avoidance",
-					"description": "GSA's November 2018 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description": "GSA's February 2019 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -3744,7 +3744,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
 			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2019-02-04",
+			"modified": "2019-04-03",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
@@ -5333,6 +5333,74 @@
 					"title": "TotRevFY18_4thQtr",
 					"description": "FY2018, 4th Quarter",
 					"downloadURL": "https://inventory.data.gov/dataset/9cad9448-a1fa-4f80-a78b-fa7622265a94/resource/6eb17e16-f570-4fe2-8f0d-f51e0f1ad1cd/download/totrevfy184thqtr.xlsx"
+				}
+			],
+			"keyword": ["Contract", "Networx Telecommunications", "Telecommunications"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:019"],
+			"language": ["en-US"],
+			"theme": ["Telecommunications Services"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2019, 1st Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+			"modified": "2019-03-07",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-03-07-01",
+			"dataQuality": true,
+			"issued": "2015-11-13",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2015-08-27P",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni L Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "TotRevFY19_1stQtr",
+					"downloadURL": "https://inventory.data.gov/dataset/51584399-9733-4545-afa6-5ed6a39601c4/resource/91574aa6-8ef5-438f-9499-64fb23fc16f0/download/totrevfy191stqtr.xlsx"
+				}
+			],
+			"keyword": ["Contract", "Networx Telecommunications", "Telecommunications"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:019"],
+			"language": ["en-US"],
+			"theme": ["Telecommunications Services"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2018, 4th Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+			"modified": "2019-03-07",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-03-07-02",
+			"dataQuality": true,
+			"issued": "2015-11-13",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2015-08-27P",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni L Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "TotRevFY18_2ndQtr",
+					"downloadURL": "https://inventory.data.gov/dataset/805d6f88-4d12-4104-95b2-b93fb8c449f0/resource/fea5d106-7065-4dc4-8650-4de4cd010374/download/totrevfy184thqtr.xlsx"
 				}
 			],
 			"keyword": ["Contract", "Networx Telecommunications", "Telecommunications"],
@@ -7831,7 +7899,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2019-02-04",
+			"modified": "2019-04-03",
 			"accessLevel": "public",
 			"identifier": "GSA-25251",
 			"dataQuality": true,
@@ -7854,7 +7922,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_bldg_rexus",
-					"description": "February - Rexus Building file",
+					"description": "April - Rexus Building file",
 					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/63663b53-7cb6-4bea-bc4e-1e5897ef3158/download/datagovbldgrexus.csv"
 				}
 			],
@@ -7865,7 +7933,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) (Lease)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2019-02-04",
+			"modified": "2019-04-03",
 			"accessLevel": "public",
 			"identifier": "GSA-25261",
 			"dataQuality": true,
@@ -7888,7 +7956,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus",
-					"description": "February - Rexus Lease file",
+					"description": "April - Rexus Lease file",
 					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ae0d8c20-3c63-40c3-96da-24a24f507e79/download/datagovlserexus.csv"
 				}
 			],
