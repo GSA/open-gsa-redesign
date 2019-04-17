@@ -17,6 +17,7 @@ In the new branch:
 * Copy the file _apidocs/sample-api.md to a file named _apidocs/apiname.md 
 * Create a folder _apidocs/apiname/v1/ (or the correct version).
 * In this new folder, add the OpenAPI specification file, with the name openapi.yaml (if it is OpenAPI v.3) or openapi.json (if it is OpenAPI or Swagger v.2)
+* In the new apinamed.md file, modify the `url: "v1/openapi.yaml",` entry to match the name of your OpenAPI specification file.
 
 3B. If you do _not_ want to use the Swagger UI for interactive documentation
 In the new branch:
@@ -26,7 +27,7 @@ In the new branch:
  
   Note: the navigation bar is generated from the headings in the markdown file, so those can be customized to meet your needs.
 
-4. When you commit your changes to your repo in github, a preview will be available of the site (with your doco) at this URL:
+4. Edit the apiname.md file with all of the information about your API. When you commit your changes to your repo in github, a preview will be available of the site (with your doco) at this URL after 5 min or so for the preview to build:
 
      https://federalist-proxy.app.cloud.gov/preview/gsa/open-gsa-redesign/[branch-name]/api/[apiname]/
 
