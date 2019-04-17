@@ -42,7 +42,7 @@ You can also ask the CTO team to update the /_data/api-list.yml, which will add 
 
 If you already host your documentation on this site, and you'd like to add the Swagger UI, add this section following the section with the OpenAPI specification:
 
-`## API Calls
+```## API Calls
 
 [Insert descriptive text here]
 
@@ -52,4 +52,4 @@ If you already host your documentation on this site, and you'd like to add the S
 {% include swagger-section-footer.html %}
 
 
-<p><small><a href="#">Back to top</a></small></p>`
+<p><small><a href="#">Back to top</a></small></p>```
