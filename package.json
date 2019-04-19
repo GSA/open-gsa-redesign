@@ -38,14 +38,12 @@
     "eslint": "^1.10.3",
     "eslint-config-google": "^0.3.0",
     "pa11y": "^4.6.0",
-    "parallelshell": "^2.0.0",
     "postcss": "^5.2.15",
     "postcss-cli": "^2.6.0",
     "psi": "^2.0.4",
     "uswds": "^1.0.0"
   },
   "dependencies": {
-    "parallelshell": "^2.0.0",
     "uswds": "^1.0.0"
   }
 }
