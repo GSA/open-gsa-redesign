@@ -24,7 +24,7 @@
   "author": "GSA Digital Service",
   "contributors": [
     "Sara Cope <sara.cope@gsa.gov>",
-    "Jeff Fredrickson <jeff.fredriskson@gsa.gov>",
+    "Jeff Fredrickson <jeff.fredrickson@gsa.gov>",
     "Joe Castle <joseph.castle@gsa.gov>",
     "Ryan Day <ryan.day@gsa.gov>"
   ],
@@ -35,15 +35,13 @@
   "homepage": "https://github.com/GSA/open-gsa-redesign/blob/dev/README.md",
   "devDependencies": {
     "@18f/stylelint-rules": "^2.0.0",
-    "eslint": "^1.10.3",
-    "eslint-config-google": "^0.3.0",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.12.0",
     "pa11y": "^4.6.0",
     "postcss": "^5.2.15",
-    "postcss-cli": "^2.6.0",
-    "psi": "^2.0.4",
-    "uswds": "^1.0.0"
+    "postcss-cli": "^6.1.2",
+    "psi": "^3.1.0",
+    "uswds": "^1.6.12"
   },
-  "dependencies": {
-    "uswds": "^1.0.0"
-  }
+  "dependencies": {}
 }
