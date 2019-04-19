@@ -2,32 +2,34 @@
 
 (function(baseurl) {
   if (baseurl === undefined) {
-    baseurl = "";
+    baseurl = '';
   }
 
+  /**
+   * Initialize the search page content.
+   */
   function initSearchPage() {
-
-    var searchTerm = getSearchQuery();
+    const searchTerm = getSearchQuery();
     if (searchTerm) {
-      var url = baseurl + "/api/v1/pages.json";
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", url, true);
-      xhr.onload = function () {
+      const url = baseurl + '/api/v1/pages.json';
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.onload = function() {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
-            var pagesData = JSON.parse(xhr.responseText);
+            const pagesData = JSON.parse(xhr.responseText);
             search(pagesData.entries, searchTerm);
           } else {
-            var $results = document.getElementById("search-results");
-            var output = '<p>There was an error while searching. Please try again.</p>';
+            const $results = document.getElementById('search-results');
+            let output = '<p>There was an error while searching. Please try again.</p>';
             output += '<p>' + xhr.statusText + '</p>';
             $results.innerHTML = output;
           }
         }
       };
-      xhr.onerror = function () {
-        var $results = document.getElementById("search-results");
-        var output = '<p>There was an error while searching. Please try again.</p>';
+      xhr.onerror = function() {
+        const $results = document.getElementById('search-results');
+        let output = '<p>There was an error while searching. Please try again.</p>';
         output += '<p>' + xhr.statusText + '</p>';
         $results.innerHTML = output;
       };
@@ -36,21 +38,16 @@
   }
 
   function search(pages, searchTerm) {
-    document.getElementById("search-field").setAttribute("value", searchTerm);
-    var lunrIndex = lunr(function () {
-      this.ref("id");
-      this.field("title", { boost: 10 });
-      this.field("body");
-      this.field("category");
-      this.field("tags");
+    document.getElementById('search-field').setAttribute('value', searchTerm);
+    const lunrIndex = lunr(function() {
+      this.ref('id');
+      this.field('title', { boost: 10 });
+      this.field('body');
+      this.field('category');
+      this.field('tags');
     });
 
-
-    for (var i in searchData){
-      pages.push(searchData[i]);
-    }
-
-    for (var index in pages) {
+    for (let index in pages) {
       lunrIndex.add({
         id: index,
         title: pages[index].title,
@@ -60,34 +57,31 @@
       });
     }
 
-    var matches = lunrIndex.search(searchTerm);
+    const matches = lunrIndex.search(searchTerm);
 
-    displayResults(matches, pages, searchData);
+    displayResults(matches, pages);
   }
 
   function getSearchQuery() {
-    var rawParams = window.location.search.replace(/^\?/, "");
-    var params = rawParams.split("&");
-    for (var index in params) {
-      var keyValuePair = params[index].split("=");
-      var key = keyValuePair[0];
-      var value = keyValuePair[1];
-      if (key === "search") {
-        return decodeURIComponent(value.replace(/\+/g, " "));
+    const rawParams = window.location.search.replace(/^\?/, '');
+    const params = rawParams.split('&');
+    for (let index in params) {
+      const keyValuePair = params[index].split('=');
+      const key = keyValuePair[0];
+      const value = keyValuePair[1];
+      if (key === 'search') {
+        return decodeURIComponent(value.replace(/\+/g, ' '));
       }
     }
   }
 
-  function displayResults(matches, pages, searchData) {
-
-    var $results = document.getElementById("search-results");
+  function displayResults(matches, pages) {
+    const $results = document.getElementById('search-results');
     if (matches.length > 0) {
-      var output = '<ul class="usa-unstyled-list">';
-      for (var index in matches) {
-
-        var page = pages[matches[index].ref];
-
-        var icon = '<i class="fa fa-bar-chart flag"></i>';
+      let output = '<ul class="usa-unstyled-list">';
+      for (let index in matches) {
+        const page = pages[matches[index].ref];
+        let icon = '<i class="fa fa-bar-chart flag"></i>';
 
         switch (page.category) {
           case 'Data':
@@ -109,11 +103,11 @@
             icon = '<i class="fa fa-file-text flag"></i>';
         }
 
-        var title = '<h3>' + '<a href="' + page.url + '">' + page.title + '</a></h3>';
-        var copy = '<p>' + page.body.substring(0, 200) + ' ...</p>';
-        var outputTags = '';
+        const title = '<h3>' + '<a href="' + page.url + '">' + page.title + '</a></h3>';
+        const copy = '<p>' + page.body.substring(0, 200) + ' ...</p>';
+        let outputTags = '';
         //loop through tags and parse
-        for( var tag in page.tags ){
+        for(let tag in page.tags ){
           outputTags  += '<span class="usa-label">' + page.tags[tag] + '</span>';
         }
 
@@ -128,5 +122,4 @@
   }
 
   initSearchPage();
-
 })(window.baseurl);
