@@ -1,1 +1,6 @@
-extends: google
+extends: eslint:recommended
+env:
+  browser: true
+  es6: true
+rules:
+  max-len: "off"
