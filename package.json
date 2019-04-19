@@ -45,6 +45,7 @@
     "uswds": "^1.0.0"
   },
   "dependencies": {
+    "details-polyfill": "^1.1.0",
     "parallelshell": "^2.0.0",
     "uswds": "^1.0.0"
   }
