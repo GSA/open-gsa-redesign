@@ -2,7 +2,6 @@
   "name": "open-gsa",
   "version": "1.0.0",
   "description": "GSA Open Technology",
-  "main": "index.js",
   "scripts": {
     "eslint:dist": "eslint assets/js/*.js || exit 0",
     "eslint": "npm run eslint:dist",
@@ -10,7 +9,7 @@
     "clean": "npm run clean:dist",
     "test:html": "bundle exec htmlproofer _site --disable-external --allow-hash-href --url-ignore sara.cope@gsa.gov || exit 0",
     "test:html-local": "bundle exec htmlproofer _site --disable-external --allow-hash-href --url-ignore localhost:4000 || exit 0",
-    "test:pagespeed": "psi http://cg-06ab120d-836f-49a2-bc22-9dfb1585c3c6.s3-website-us-gov-west-1.amazonaws.com/site/gsa/open-gsa-redesign/--strategy=mobile || exit 0",
+    "test:pagespeed": "psi-v4 http://cg-06ab120d-836f-49a2-bc22-9dfb1585c3c6.s3-website-us-gov-west-1.amazonaws.com/site/gsa/open-gsa-redesign/ --strategy=mobile || exit 0",
     "test:accessibility": "pa11y http://cg-06ab120d-836f-49a2-bc22-9dfb1585c3c6.s3-website-us-gov-west-1.amazonaws.com/site/gsa/open-gsa-redesign/ || exit 0",
     "test:css": "18f-stylelint-rules ./_sass/*.scss || exit 0",
     "test:js": "npm run eslint",
@@ -24,7 +23,7 @@
   "author": "GSA Digital Service",
   "contributors": [
     "Sara Cope <sara.cope@gsa.gov>",
-    "Jeff Fredrickson <jeff.fredriskson@gsa.gov>",
+    "Jeff Fredrickson <jeff.fredrickson@gsa.gov>",
     "Joe Castle <joseph.castle@gsa.gov>",
     "Ryan Day <ryan.day@gsa.gov>"
   ],
@@ -35,18 +34,15 @@
   "homepage": "https://github.com/GSA/open-gsa-redesign/blob/dev/README.md",
   "devDependencies": {
     "@18f/stylelint-rules": "^2.0.0",
-    "eslint": "^1.10.3",
-    "eslint-config-google": "^0.3.0",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.12.0",
     "pa11y": "^4.6.0",
-    "parallelshell": "^2.0.0",
     "postcss": "^5.2.15",
-    "postcss-cli": "^2.6.0",
-    "psi": "^2.0.4",
-    "uswds": "^1.0.0"
+    "postcss-cli": "^6.1.2",
+    "psi-v4": "^4.0.1",
+    "uswds": "^1.6.12"
   },
   "dependencies": {
-    "details-polyfill": "^1.1.0",
-    "parallelshell": "^2.0.0",
-    "uswds": "^1.0.0"
+    "details-polyfill": "^1.1.0"
   }
 }
