@@ -107,8 +107,9 @@
         const copy = '<p>' + page.body.substring(0, 200) + ' ...</p>';
         let outputTags = '';
         //loop through tags and parse
-        for(let tag in page.tags ){
-          outputTags  += '<span class="usa-label">' + page.tags[tag] + '</span>';
+        const tags = Array.isArray(page.tags) ? page.tags : [page.tags];
+        for(let tag of tags ){
+          outputTags  += '<span class="usa-label">' + tag + '</span>';
         }
 
         //final output for search
