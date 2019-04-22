@@ -108,8 +108,8 @@
         let outputTags = '';
         //loop through tags and parse
         const tags = Array.isArray(page.tags) ? page.tags : [page.tags];
-        for(let tag of tags ){
-          outputTags  += '<span class="usa-label">' + tag + '</span>';
+        for (let tag of tags) {
+          outputTags += '<span class="usa-label">' + tag + '</span>';
         }
 
         //final output for search
