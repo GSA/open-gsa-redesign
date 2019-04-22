@@ -22,34 +22,36 @@
     const $results = document.getElementById('search-results');
     if (matches.length > 0) {
       let output = '<ul class="usa-unstyled-list">';
-      matches.forEach((match, index) => {
-        const page = pages[matches[index].ref];
-        let icon = '<i class="fa fa-bar-chart flag"></i>';
+      matches.forEach((match) => {
+        const page = pages[match.ref];
 
-        switch (page.category) {
-          case 'Data':
-            icon = '<i class="fa fa-bar-chart flag"></i>';
-            break;
-          case 'Code':
-            icon = '<i class="fa fa-code flag alt2"></i>';
-            break;
-          case 'APIs':
-            icon = '<i class="fa fa-cogs flag alt"></i>';
-            break;
-          case 'Events':
-            icon = '<i class="fa fa-calendar flag alt3"></i>';
-            break;
-          case 'Articles':
-            icon = '<i class="fa fa-file-text flag"></i>';
-            break;
-          default:
-            icon = '<i class="fa fa-file-text flag"></i>';
+        let icon = '<i class="fa fa-file-text flag"></i>';
+        if (page.meta.category) {
+          switch (page.meta.category.toLowerCase()) {
+            case 'data':
+              icon = '<i class="fa fa-bar-chart flag"></i>';
+              break;
+            case 'code':
+              icon = '<i class="fa fa-code flag alt2"></i>';
+              break;
+            case 'apis':
+              icon = '<i class="fa fa-cogs flag alt"></i>';
+              break;
+            case 'events':
+              icon = '<i class="fa fa-calendar flag alt3"></i>';
+              break;
+            case 'articles':
+              icon = '<i class="fa fa-file-text flag"></i>';
+              break;
+            default:
+              icon = '<i class="fa fa-file-text flag"></i>';
+          }
         }
 
         const title = `<h3><a href="${page.url}">${page.title}</a></h3>`;
         const copy = `<p>${page.body.substring(0, 200)} ...</p>`;
+
         let outputTags = '';
-        // loop through tags and parse
         const tags = Array.isArray(page.tags) ? page.tags : [page.tags];
         tags.forEach((tag) => {
           outputTags += `<span class="usa-label">${tag}</span>`;
