@@ -7,23 +7,27 @@ banner-heading: Extracts Download APIs
 
 
 ## Overview
+The Extracts Download API is permits SAM users with valid roles to download SAM extracts.<br>
+
 Legacy SAM offers extracts for Entity Management and Exclusions data.  The Entity Management extracts 
 contain entities (businesses and government agencies) in SAM and are primarily utilized by systems that
 comprise of the contract writing systems, government payment systems and other acquisition related 
-systems The Exclusions extract contains a list of all parties with a currently active exclusion in 
-SAM and may be used by contract writing systems, government payment systems, HR systems, or any party 
-wishing to check against a government debarment list.  GSA is in the process of modernizing some of the
-Legacy systems (Legacy SAM being one) and has made these Extracts available in Beta.SAM.gov.
-<br /><br />
+systems The Exclusions extract contains a list of all parties with a currently active exclusion in SAM
+and may be used by contract writing systems, government payment systems, HR systems, or any party 
+wishing to check against a government debarment list.  GSA is in the process of modernizing some of 
+the Legacy systems (Legacy SAM being one) and has made these Extracts available in Beta.SAM.gov.
+<br>
+
 Legacy SAM offers a data dump of all currently active Exclusions as a comma-separated value (CSV) file,
 published daily, 365 days per year.  This file maybe be used by contract writing systems, government 
 payment systems, HR systems, or any party wishing to check against a government debarment list.  The 
 Exclusions extract contains only publicly available data and may be used by anyone with a valid API 
 key from beta.sam.gov.
+
   
 1. **Entity Management Public Data Package:**
    * This extract contains entity registration data publicly available under the Freedom of Information Act (FOIA) for those registered in SAM.gov to do business with the Federal government.
-   * All entities and data elements are classified as public. 
+   * All entities and data elements are classified as public.
    * End user needs to create system account with public access roles and procure an API_KEY to access these extracts.
    * File naming convention:<br />
      Daily ASCII (Default): SAM_PUBLIC_DAILY_YYYYMMDD.ZIP<br />
@@ -67,20 +71,8 @@ key from beta.sam.gov.
 
 The Entity Management extracts are available using the following endpoints:
 
-1. Public Endpoints:
-  * https://api.sam.gov/prodlike/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
-  * https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
-
-2. FOUO Endpoints:  
-  * https://api.sam.gov/prodlike/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_FOUO_ROLE}&fileName=${file-name}
-  * https://api.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_FOUO_ROLE}&fileName=${file-name}
-
-
-3. Sensitive Endpoints:    
-  * https://api.sam.gov/prodlike/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_SENSITIVE_ROLE}&fileName=${file-name}
-  * https://api.sam.gov/prod/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_SENSITIVE_ROLE}&fileName=${file-name}
-
-The Exclusions extract is available at the following endpoint: https://api.sam.gov/prodlike/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}
+  * https://api.sam.gov/prodlike/dataservices/v1/extracts
+  * https://api.sam.gov/prod/dataservices/v1/extracts
 
 Generating the API Key:
 * Registered users can request for a public API on ‘Account Details’ page.
@@ -92,7 +84,7 @@ Generating the API Key:
 
 ## API Description
 
-### Entity Management Extracts Download API
+### Extracts Download API Parameters
 
 <b>Entity Management Extract Query String Parameters.</b>
 <table>
@@ -101,7 +93,7 @@ Generating the API Key:
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
 <tr>
-<td>api_key *</td>
+<td>api_key</td>
 <td>Required element to identify API users and validate role-based access<br />
 Example: df234124fgv8v23il4lk12l341kkl0124kc
 </td>
@@ -114,111 +106,119 @@ Example: fileName=SAM_PUBLIC_MONTHLY_20190323.ZIP
 </td>
 </tr>
 <tr>
+<td>fileType</td>
+<td>Allows users to specify the domain of the extract that they wish to download<br />
+The filetype parameter must be used if fileName is not specified.<br />
+Permitted values: ENTITY, EXCLUSION, SCR, BIO<br />
+</td>
+</tr>
+<tr>
 <td>sensitivity</td>
-<td>Allows users to provide the desired sensitivity level of the extract that they wish to download (assuming proper roles).<br />
+<td>Allows users to provide the desired sensitivity level of the extract that they wish to download, if they have proper roles<br />
 The sensitivity parameter must be used if fileName parameter is not used.<br />
+Default value: PUBLIC<br />
 Permitted values: PUBLIC, FOUO, SENSITIVE
 </td>
 </tr>
 <tr>
 <td>frequency</td>
 <td>Allows users to request either a DAILY or MONTHLY extract<br />
+Default value: MONTHLY<br />
 Permitted values: DAILY, MONTHLY
 </td>
 </tr>
 <tr>
 <td>charset</td>
 <td>Allows users to request either the ASCII or UTF-8 extract character-set<br />
-If charset is not specified, the default value shall be ASCII.<br />
+Default value: ASCII<br />
 Permitted values: ASCII, UTF8, UTF-8
 </td>
 </tr>
 <tr>
 <td>date</td>
 <td>Allows users to select a specific date of the file that they wish to download.<br />
-Format: YYYYMMDD for a specific date or YYYYMM to specify a year and month.
+Format: MM/DD/YYYY for a specific date of  MM/YYYY to specify a year and month (for MONTHLY files only)<br />
+Default value: Most recent date, depending on fileType<br />
+Examples: 04/19/2019; 11/15/2018; 03/2019
 </td>
 </tr>
 </table>
 
-The Entity Management Extracts Download API will require the api_key and either the fileName OR sensitivity parameter.  If the sensitivity parameter is selected, there are a number of parameters for the user to drill down and select the exact file to download.  
+The api_key parameter is required for identification and role-based access control.  After the api_key, there are query paths to download the correct file:<br>
 
-**Entity Public Extract:**<br>
+Option 1: Using the fileName only.  The fileName is an exact match parameter which can be used for any type of file.  If you use the fileName parameter, no other parameters are required and will be ignored if included.<br>
 
-**Alpha and Beta Endpoints :** <br>
-https://api.sam.gov/prodlike/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}<br />
-https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name}<br />
+Option 1: Using the fileName only.  The fileName is an exact match parameter which can be used for any type of file.  If you use the fileName parameter, no other parameters are required and will be ignored if included.<br>
 
-**Description :**  These are  static endpoints to retrieve public monthly data. <br>
+**Entity Management Public Data Package Sample API calls:**<br>
 
-**Expected Result**<br>
-Click to view the full details of the data elements: <a href="v1/public_extract_layout.pdf">Public Extract Layout</a>
+Monthly File, April 2019 (fileName):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileName=SAM_PUBLIC_MONTHLY_20190407.ZIP<br>
 
-**Entity FOUO Extract:** <br>
+Monthly File, April 2019 (parameter):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=PUBLIC&frequency=MONTHLY&date=04/2019<br>
 
-**Alpha and Beta Endpoints :** <br>
-https://api.sam.gov/prodlike/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_FOUO_ROLE}&fileName=${file-name} <br>
-https://api.sam.gov/prod/dataservices/v1/extracts/fouo?api_key={API_KEY_WITH_FOUO_ROLE}&fileName=${file-name} <br>
-
-**Description :**  These are static endpoints to retrieve public daily and monthly, FOUO daily and monthly data. <br>
-
-**Expected Result**<br>
-Click to view the full details of the data elements: <a href="v1/fouo_extract_layout.pdf">FOUO Extract Layout</a>
-
-**Entity Sensitive Extract:** <br>
-
-**Alpha and Beta Endpoints :** <br>
-https://api.sam.gov/prodlike/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_SENSITIVE_ROLE}&fileName=${file-name} <br>
-https://api.sam.gov/prod/dataservices/v1/extracts/sensitive?api_key={API_KEY_WITH_SENSITIVE_ROLE}&fileName=${file-name} <br>
-
-**Description :**  These are static endpoints to retrieve public daily and monthly, FOUO daily and monthly, Sensitive daily and monthly data. <br>
-
-**Expected Result**<br>
-Click to view the full details of the data elements: <a href="v1/sensitive_extract_layout.pdf">Sensitive Extract Layout</a>
-
-### Exclusions Extract Download API
-
-**Alpha and Beta Endpoints :** <br>
-https://api.sam.gov/prodlike/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name} 
-https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=${file-name} 
-
-<b>Optional Query String Parameters.</b>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-<tr>
-<td>api_key</td>
-<td>Required element to identify API users<br />
-Example: df234124fgv8v23il4lk12l341kkl0124kc
-</td>
-</tr>
-<tr>
-<td>fileName</td>
-<td>Allows users to provide extract name <br />
-Example: fileName=SAM_Exclusions_Public_Extract_19106.ZIP
-</td>
-</tr>
-<tr>
-<td>date</td>
-<td>Allows users to search for an extract by date<br />
-Format: YYYYMMDD<br />
-Example: date=20190416
-</td>
-</tr>
-</table>
-
-Of the 3 parameters, only the api_key is mandatory.  If you provide the api_key parameter, then the API shall default to the latest Exclusions extract file (SAM_Exclusions_Public_Extract.ZIP).<br />
-
-If you include fileName and/or date parameters, the API shall use those to find the Exclusions extract for that day.  You only need to provide one (fileName or date).<br />
-
-**Example API calls**<br>
-https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE} will download the latest Exclusions extract available.<br /><br />
-https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&fileName=SAM_Exclusions_Public_Extract_19106.ZIP will download the Exclusions extract for April 16, 2019.<br /><br />
-https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY_WITH_PUBLIC_ROLE}&date=20190416 will download the Exclusions extract for April 16, 2019.<br /><br />
+Monthly File (UTF-8), April 2019 (parameter):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=PUBLIC&frequency=MONTHLY&date=04/2019&charset=UTF8<br>
 
 **Expected Result:**<br>
+Click to view the full details of the data elements: Public Extract Layout<br>
+
+**Entity Management FOUO Data Package Sample API calls:**<br>
+
+Daily File, April 20, 2019 (fileName):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileName=SAM_FOUO_DAILY_20190420.ZIP<br>
+
+Daily File, April 20, 2019 (parameter):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=DAILY&date=04/20/2019<br>
+
+Daily File (UTF-8), April 20, 2019 (parameter):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=DAILY&date=04/20/2019&charset=UTF8<br>
+
+Monthly File, April 2019 (fileName):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileName=SAM_PUBLIC_MONTHLY_20190407.ZIP<br>
+
+Monthly File, April 2019 (parameter):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=MONTHLY&date=04/2019<br>
+
+Monthly File (UTF-8), April 2019 (parameter):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=MONTHLY&date=04/2019&charset=UTF8<br>
+
+**Expected Result**<br>
+Click to view the full details of the data elements: FOUO Extract Layout<br>
+
+**Entity Management Sensitive Data Package Sample API calls:****<br>
+
+Daily File, April 20, 2019 (fileName):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileName=SAM_SENSITIVE_DAILY_V2_20190420.ZIP<br>
+
+Daily File, April 20, 2019 (parameter):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/20/2019<br>
+
+Daily File (UTF-8), April 20, 2019 (parameter):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/20/2019&charset=UTF8<br>
+
+Monthly File, April 2019 (fileName): <br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileName=SAM_SENSITIVE_MONTHLY_V2_20190407.ZIP<br>
+
+Monthly File, April 2019 (parameter):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2019<br>
+
+Monthly File (UTF-8), April 2019 (parameter):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2019&charset=UTF8<br>
+
+**Expected Result**<br>
+Click to view the full details of the data elements: Sensitive Extract Layout<br>
+
+**Exclusions Public Data Package Sample API calls:**<br>
+
+Daily File, April 16, 2019 (fileName):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileName=SAM_Exclusions_Public_Extract_19106.ZIP<br>
+
+Daily File, April 16, 2019 (parameter):<br>
+https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=EXCLUSION&date=04/16/2019<br>
+
+**Expected Result**:
 The layout of the Exclusions extract is available here: [TBD]
 
 ## HTTP Response Codes
