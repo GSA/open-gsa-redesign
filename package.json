@@ -42,5 +42,7 @@
     "psi-v4": "^4.0.1",
     "uswds": "^1.6.12"
   },
-  "dependencies": {}
+  "dependencies": {
+    "details-polyfill": "^1.1.0"
+  }
 }
