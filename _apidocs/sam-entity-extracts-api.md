@@ -30,8 +30,6 @@ key from beta.sam.gov.
    * All entities and data elements are classified as public.
    * End user needs to create system account with public access roles and procure an API_KEY to access these extracts.
    * File naming convention:<br />
-     Daily ASCII (Default): SAM_PUBLIC_DAILY_YYYYMMDD.ZIP<br />
-	 Daily UTF-8: SAM_PUBLIC_UTF-8_DAILY_YYYYMMDD.ZIP<br />
 	 Monthly ASCII (Default): SAM_PUBLIC_MONTHLY_YYYYMMDD.ZIP<br />
 	 Monthly UTF-8 (Default): SAM_PUBLIC_UTF-8_MONTHLY_YYYYMMDD.ZIP<br />
 
@@ -43,7 +41,7 @@ key from beta.sam.gov.
    * Daily ASCII (Default): SAM_FOUO_DAILY_YYYYMMDD.ZIP<br />
 	 Daily UTF-8: SAM_FOUO_UTF-8_DAILY_YYYYMMDD.ZIP<br />
 	 Monthly ASCII (Default): SAM_FOUO_MONTHLY_YYYYMMDD.ZIP<br />
-	 Monthly UTF-8 (Default): SAM_FOUO_UTF-8_ MONTHLY_YYYYMMDD.ZIP<br />
+	 Monthly UTF-8 (Default): SAM_FOUO_UTF-8_MONTHLY_YYYYMMDD.ZIP<br />
 
 3. **Entity Management Extract Sensitive Data Package:**
    * This extract contains the same information as the Entity Management FOUO Data package with the addition of data elements which are classified as Sensitive.
@@ -53,7 +51,7 @@ key from beta.sam.gov.
    * Daily ASCII (Default): SAM_SENSITIVE_DAILY_V2_YYYYMMDD.ZIP<br />
      Daily UTF-8: SAM_SENSITIVE_UTF-8_DAILY_V2_YYYYMMDD.ZIP<br />
      Monthly ASCII (Default): SAM_SENSITIVE_MONTHLY_V2_YYYYMMDD.ZIP<br />
-     Monthly UTF-8 (Default): SAM_SENSITIVE_UTF-8_ MONTHLY_V2_YYYYMMDD.ZIP<br />
+     Monthly UTF-8 (Default): SAM_SENSITIVE_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
 
 
 4. **Exclusions Public Data Package:**
@@ -74,11 +72,21 @@ The Entity Management extracts are available using the following endpoints:
   * https://api.sam.gov/prodlike/dataservices/v1/extracts
   * https://api.sam.gov/prod/dataservices/v1/extracts
 
-Generating the API Key:
-* Registered users can request for a public API on ‘Account Details’ page.
+Generating a personal API Key:
+* Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on beta.sam.gov
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page.
 * If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
+
+Generating a System Account API Key:
+* Users registered with a non-government email address and associated with an entity OR users registered with a government email address may request a system account for public data access.
+* If a user satisfies the above registration criteria they will be able to access the System Accounts widget from their Workspace page after logging in.
+* The user can then select ‘Go to System Accounts’ from the widget and fill out the required sections.
+* The requested system account will then need to be approved. After approval the user will be notified via email and they can also see the updated status in the System Account widget.
+* The user can select ‘Go to System Accounts’ again in the widget from their workspace and enter a new system account password.
+* After setting up the password the user will see a new section for retrieving a system account API Key.
+* The user must enter their password again to retrieve the key.
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -148,7 +156,7 @@ The api_key parameter is required for identification and role-based access contr
 
 Option 1: Using the fileName only.  The fileName is an exact match parameter which can be used for any type of file.  If you use the fileName parameter, no other parameters are required and will be ignored if included.<br>
 
-Option 1: Using the fileName only.  The fileName is an exact match parameter which can be used for any type of file.  If you use the fileName parameter, no other parameters are required and will be ignored if included.<br>
+Option 2: Using fileType and other parameters.  If you choose not to use the fileName, you may specify the fileType along with other parameters to identify which extract you wish to download.<br>
 
 **Entity Management Public Data Package Sample API calls:**<br>
 
@@ -228,7 +236,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages: <br><br>  * Application Level Error Messages: * API_KEY does not have permission to download the file. <br />* Missing required parameters<br />* The requested extract file not found |
+| 400 | Application Level Error Messages: <br><br>  * Application Level Error Messages: * User does not have permission to download the file. <br />* Missing required parameters, fileName OR fileType<br />* The requested extract file not found<br/>* Invalid date format |
 | 403 | API key is not correct or was not provided. |
 
 
