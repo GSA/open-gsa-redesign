@@ -39,8 +39,6 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ## API Calls
 
-In eget nibh consectetur, faucibus sapien et, finibus justo. Duis feugiat elit ex, non aliquet nisl cursus et. Morbi hendrerit est nec leo venenatis tempus. Vestibulum auctor auctor varius. Aenean lorem lacus, rutrum finibus nulla ac, tempor aliquet dolor. Donec egestas lectus ut augue posuere fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse nec turpis sed ipsum vestibulum aliquam nec eu nunc. Etiam ipsum orci, maximus et lorem nec, interdum dapibus sem. Sed nisl ex, scelerisque nec sodales at, finibus non dolor.
-
 
 {% include swagger-section-header.html %}
     url: "v1/openapi.yaml", 
