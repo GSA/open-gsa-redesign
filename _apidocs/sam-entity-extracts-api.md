@@ -33,7 +33,7 @@ key from beta.sam.gov.
      Daily ASCII (Default): SAM_PUBLIC_DAILY_YYYYMMDD.ZIP<br />
 	 Daily UTF-8: SAM_PUBLIC_UTF-8_DAILY_YYYYMMDD.ZIP<br />
 	 Monthly ASCII (Default): SAM_PUBLIC_MONTHLY_YYYYMMDD.ZIP<br />
-	 Monthly UTF-8 (Default): SAM_PUBLIC_UTF-8_ MONTHLY_YYYYMMDD.ZIP<br />
+	 Monthly UTF-8 (Default): SAM_PUBLIC_UTF-8_MONTHLY_YYYYMMDD.ZIP<br />
 
 2. **Entity Management Extracts FOUO (For Official Use Only) Data Package:**
    * This extract contains the same information as the Entity Management Public Data Package, plus data elements which are classified as For Official Use Only (FOUO).
