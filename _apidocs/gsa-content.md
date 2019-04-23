@@ -121,9 +121,15 @@ This API has two primary endpoints:
 
 | Name  | Description |
 | ---- | ----------- |
-| ... | ... |
-| ... | ... |
-
+| title | The title of the content-item |
+| type | The content-type of the content-item |
+| body | A blob of text contained as the body of this content item |
+| created | A unix timestamp indicating when the content-item was created |
+| last_updated | A unix timestamp indicating when the content-item was last edited |
+| content_id | A numerical unique ID for this content item in this system |
+| author | The user who last modified this content-item |
+| owner | A numerical identifier that indicates who owns this content in this system. This is a reference to another items content_id |
+| owner | A numerical identifier that indicates who the POC is for this content in this system. This is a reference to another items content_id |
 
 
 **Endpoint 2:** https://api.gsa.gov/technology/gsa-content/v2/by-id/{id}
@@ -135,17 +141,17 @@ This API has two primary endpoints:
 
 **Query String Parameters**
 
-| Parameter Name | Description |
-| ---- | ----------- |
-| id integer | Unique Identifier |
-
-**Expected Result**
-
 | Name  | Description |
 | ---- | ----------- |
-| ... | ... |
-| ... | ... |
-
+| title | The title of the content-item |
+| type | The content-type of the content-item |
+| body | A blob of text contained as the body of this content item |
+| created | A unix timestamp indicating when the content-item was created |
+| last_updated | A unix timestamp indicating when the content-item was last edited |
+| content_id | A numerical unique ID for this content item in this system |
+| author | The user who last modified this content-item |
+| owner | A numerical identifier that indicates who owns this content in this system. This is a reference to another items content_id |
+| owner | A numerical identifier that indicates who the POC is for this content in this system. This is a reference to another items content_id |
 
 
 <p><small><a href="#">Back to top</a></small></p>
