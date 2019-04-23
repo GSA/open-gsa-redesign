@@ -236,7 +236,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages: <br><br>* User does not have permission to download the file. <br />* Missing required parameters, fileName OR fileType<br />* The requested extract file not found<br/>* Invalid date format |
+| 400 | Application Level Error Messages: <br>* User does not have permission to download the file. <br />* Missing required parameters, fileName OR fileType<br />* The requested extract file not found<br/>* Invalid date format |
 | 403 | API key is not correct or was not provided. |
 
 
