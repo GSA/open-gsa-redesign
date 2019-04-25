@@ -53,7 +53,8 @@ If you already host your documentation on this site, and you'd like to add the S
 {% include swagger-section-footer.html %}
 
 
-<p><small><a href="#">Back to top</a></small></p>```
+<p><small><a href="#">Back to top</a></small></p>
+```
 
 ## Adding swagger UI to your existing API documentation (no Try It Out functionality)
 
@@ -70,6 +71,7 @@ If you already host your documentation on this site, and you'd like to add the S
 {% include swagger-section-footer-disable-try-it-out.html %}
 
 
-<p><small><a href="#">Back to top</a></small></p>```
+<p><small><a href="#">Back to top</a></small></p>
+```
 
 
