@@ -1,132 +1,128 @@
 /* global lunr */
 
-(function(baseurl) {
-  if (baseurl === undefined) {
-    baseurl = "";
+(function () {
+  const actualBaseUrl = (window.baseurl === undefined) ? '' : window.baseurl;
+
+  function getSearchQuery() {
+    const rawParams = window.location.search.replace(/^\?/, '');
+    const params = rawParams.split('&');
+    let query = '';
+    params.forEach((param) => {
+      const keyValuePair = param.split('=');
+      const key = keyValuePair[0];
+      const value = keyValuePair[1];
+      if (key === 'search') {
+        query = decodeURIComponent(value.replace(/\+/g, ' '));
+      }
+    });
+    return query;
   }
 
-  function initSearchPage() {
+  function displayResults(matches, pages) {
+    const $results = document.getElementById('search-results');
+    if (matches.length > 0) {
+      let output = '<ul class="usa-unstyled-list">';
+      matches.forEach((match) => {
+        const page = pages[match.ref];
 
-    var searchTerm = getSearchQuery();
+        let icon = '<i class="fa fa-file-text flag"></i>';
+        if (page.meta.category) {
+          switch (page.meta.category.toLowerCase()) {
+            case 'data':
+              icon = '<i class="fa fa-bar-chart flag"></i>';
+              break;
+            case 'code':
+              icon = '<i class="fa fa-code flag alt2"></i>';
+              break;
+            case 'apis':
+              icon = '<i class="fa fa-cogs flag alt"></i>';
+              break;
+            case 'events':
+              icon = '<i class="fa fa-calendar flag alt3"></i>';
+              break;
+            case 'articles':
+              icon = '<i class="fa fa-file-text flag"></i>';
+              break;
+            default:
+              icon = '<i class="fa fa-file-text flag"></i>';
+          }
+        }
+
+        const title = `<h3><a href="${page.url}">${page.title}</a></h3>`;
+        const copy = `<p>${page.body.substring(0, 200)} ...</p>`;
+
+        let outputTags = '';
+        const tags = Array.isArray(page.tags) ? page.tags : [page.tags];
+        tags.forEach((tag) => {
+          outputTags += `<span class="usa-label">${tag}</span>`;
+        });
+
+        // final output for search
+        output += `<li class="result-item"><div class="usa-grid"><div class="usa-width-one-third">${icon}</div><div class="usa-width-two-thirds">${title} ${copy} ${outputTags}</div></div></li><hr>`;
+      });
+      output += '</ul>';
+      $results.innerHTML = output;
+    } else {
+      $results.innerHTML = '<p>No results found. Try searching something like API, Data, or Code!</p>';
+    }
+  }
+
+  function search(pages, searchTerm) {
+    document.getElementById('search-field').setAttribute('value', searchTerm);
+    const lunrIndex = lunr(function () {
+      this.ref('id');
+      this.field('title', { boost: 10 });
+      this.field('body');
+      this.field('category');
+      this.field('tags');
+    });
+
+    pages.forEach((page, index) => {
+      lunrIndex.add({
+        id: index,
+        title: page.title,
+        body: page.body,
+        category: page.category,
+        tags: page.tags,
+      });
+    });
+
+    const matches = lunrIndex.search(searchTerm);
+
+    displayResults(matches, pages);
+  }
+
+  /**
+   * Initialize the search page content.
+   */
+  function initSearchPage() {
+    const searchTerm = getSearchQuery();
     if (searchTerm) {
-      var url = baseurl + "/api/v1/pages.json";
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", url, true);
+      const url = `${actualBaseUrl}/api/v1/pages.json`;
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
       xhr.onload = function () {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
-            var pagesData = JSON.parse(xhr.responseText);
+            const pagesData = JSON.parse(xhr.responseText);
             search(pagesData.entries, searchTerm);
           } else {
-            var $results = document.getElementById("search-results");
-            var output = '<p>There was an error while searching. Please try again.</p>';
-            output += '<p>' + xhr.statusText + '</p>';
+            const $results = document.getElementById('search-results');
+            let output = '<p>There was an error while searching. Please try again.</p>';
+            output += `<p>${xhr.statusText}</p>`;
             $results.innerHTML = output;
           }
         }
       };
       xhr.onerror = function () {
-        var $results = document.getElementById("search-results");
-        var output = '<p>There was an error while searching. Please try again.</p>';
-        output += '<p>' + xhr.statusText + '</p>';
+        const $results = document.getElementById('search-results');
+        let output = '<p>There was an error while searching. Please try again.</p>';
+        output += `<p>${xhr.statusText}</p>`;
         $results.innerHTML = output;
       };
       xhr.send(null);
     }
   }
 
-  function search(pages, searchTerm) {
-    document.getElementById("search-field").setAttribute("value", searchTerm);
-    var lunrIndex = lunr(function () {
-      this.ref("id");
-      this.field("title", { boost: 10 });
-      this.field("body");
-      this.field("category");
-      this.field("tags");
-    });
-
-
-    for (var i in searchData){
-      pages.push(searchData[i]);
-    }
-
-    for (var index in pages) {
-      lunrIndex.add({
-        id: index,
-        title: pages[index].title,
-        body: pages[index].body,
-        category: pages[index].category,
-        tags: pages[index].tags
-      });
-    }
-
-    var matches = lunrIndex.search(searchTerm);
-
-    displayResults(matches, pages, searchData);
-  }
-
-  function getSearchQuery() {
-    var rawParams = window.location.search.replace(/^\?/, "");
-    var params = rawParams.split("&");
-    for (var index in params) {
-      var keyValuePair = params[index].split("=");
-      var key = keyValuePair[0];
-      var value = keyValuePair[1];
-      if (key === "search") {
-        return decodeURIComponent(value.replace(/\+/g, " "));
-      }
-    }
-  }
-
-  function displayResults(matches, pages, searchData) {
-
-    var $results = document.getElementById("search-results");
-    if (matches.length > 0) {
-      var output = '<ul class="usa-unstyled-list">';
-      for (var index in matches) {
-
-        var page = pages[matches[index].ref];
-
-        var icon = '<i class="fa fa-bar-chart flag"></i>';
-
-        switch (page.category) {
-          case 'Data':
-            icon = '<i class="fa fa-bar-chart flag"></i>';
-            break;
-          case 'Code':
-            icon = '<i class="fa fa-code flag alt2"></i>';
-            break;
-          case 'APIs':
-            icon = '<i class="fa fa-cogs flag alt"></i>';
-            break;
-          case 'Events':
-            icon = '<i class="fa fa-calendar flag alt3"></i>';
-            break;
-          case 'Articles':
-            icon = '<i class="fa fa-file-text flag"></i>';
-            break;
-          default:
-            icon = '<i class="fa fa-file-text flag"></i>';
-        }
-
-        var title = '<h3>' + '<a href="' + page.url + '">' + page.title + '</a></h3>';
-        var copy = '<p>' + page.body.substring(0, 200) + ' ...</p>';
-        var outputTags = '';
-        //loop through tags and parse
-        for( var tag in page.tags ){
-          outputTags  += '<span class="usa-label">' + page.tags[tag] + '</span>';
-        }
-
-        //final output for search
-        output += '<li class="result-item">' + '<div class="usa-grid"><div class="usa-width-one-third">' + icon + '</div>'+ '<div class="usa-width-two-thirds">' + title  + copy + outputTags + '</div></div>' +  '</li> <hr>';
-      }
-      output += "</ul>";
-      $results.innerHTML = output;
-    } else {
-      $results.innerHTML = "<p>No results found. Try searching something like API, Data, or Code!</p>";
-    }
-  }
-
   initSearchPage();
-
-})(window.baseurl);
+}());
