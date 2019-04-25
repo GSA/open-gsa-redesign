@@ -1,0 +1,21 @@
+<div id="swagger-ui"></div>
+
+<script src="../../assets/swaggerui-dist/swagger-ui-bundle.js"> </script>
+<script src="../../assets/swaggerui-dist/swagger-ui-standalone-preset.js"> </script>
+<script>
+const DisableTryItOutPlugin = function() {
+  return {
+    statePlugins: {
+      spec: {
+        wrapSelectors: {
+          allowTryItOutFor: () => () => false
+        }
+      }
+    }
+  }
+}</script>
+<script>
+window.onload = function() {
+
+  // Build a system
+  const ui = SwaggerUIBundle({
