@@ -66,6 +66,50 @@ Test Server Namespace: https://www.sam.gov
 Production Server Namespace: https://www.sam.gov
 
 ## Method Overview
+All methods available can be found in the WSDL and will be listed in this document. Methods will take different parameters ranging from basic types (string/integer/boolean/date and array of these types) or complex data types that are further comprised of these basic types and sometimes other complex data types.  
+Supported input content type formats are text/xml.
+Note: For all elements/parameters that are specified as type “date,” please supply date in YYYYMMDD (i.e. 20090428) format.
+
+### *Responses*
+Most methods will return data in the format of the PostingResponse complex type. This consists of two elements:
+* The first element is named ‘success’ and is a Boolean value. If the method successfully completed, this element will be true or 1.  If it is false, empty, or 0, then the method was not successful.
+* The second element is named ‘messages’ and is an array of strings. Mostly for error cases, this element will contain any relevant error messages (or sometimes success messages) that pertain to the web services method called.
+
+Posting Response Complex Type Definition
+
+Element Name | Type
+------- | -------
+success | boolean
+messages | string [] - array of strings
+
+**Note**: Some methods will have a different response value format due to the nature of the data being returned. These custom cases will be outlined below.
+
+### Set-Aside Values
+Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field.
+
+Refer below table for mapping between legacy SetAside Values to modern SetAside Value:
+
+Modern SetAside Values | Legacy SetAside values
+------- | -------
+Total Small Business Set-Aside (FAR 19.5)	| Total Small Business
+Partial Small Business Set-Aside (FAR 19.5) |	Partial Small Business
+8(a) Set-Aside (FAR 19.8)	| Competitive 8(a)
+8(a) Sole Source (FAR 19.8)	| Competitive 8(a)
+Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13) |	HUBZone
+Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13) |	HUBZone
+Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14) |	Service-Disabled Veteran-Owned Small Business
+Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14) |	Service-Disabled Veteran-Owned Small Business
+Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15) |	Women-Owned Small Business
+Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15) |	Women-Owned Small Business
+Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15) |	Economically Disadvantaged Women-Owned Small Business
+Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15) |	Economically Disadvantaged Women-Owned Small Business
+Local Area Set-Aside (FAR 26.2)	|
+
+
+
+
+
+
 
 ## FAQ
 
