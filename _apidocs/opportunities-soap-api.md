@@ -435,6 +435,31 @@ filedata | base64binary |	No | File Data | 100 MB
 desc | string |	No | Description | 255 characters
 
 
+### *Modification/Amendment (submitMod)*
+
+This method is used to submit a Modification/Amendment to any base notice.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## FAQ
