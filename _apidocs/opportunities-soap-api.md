@@ -938,12 +938,112 @@ filename |	string |	No |	File Name |	255 characters
 filedata |	base64binary |	No	| File Data |	100 MB
 desc	| string |	No	 | Description |	255 characters
 
+### *Document Packages (submitDocumentsAndLinksToNotice)*
 
+This method is used to attach document packages (non sensitive) to a notice modification.  This is similar to the EPSUPLOAD or DocumentUpload function currently found in the ftp/email electronic interface. The web service method now supports transmitting actual file data along with external links. Note: A base notice must already exist in the system.
 
+Input Parameter |	Type |	Description
+------- | ------ | -------
+Data | DocumentUpload  |	Complex type defined below
 
+Response:
 
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | PostingResponse | Complex type
 
+DocumentUpload Complex Type Definition:
 
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+Date|	Date|	No	|Posting Date	|YYYYMMDD
+solnbr	|String	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
+ntype	|String	|No|	Base Notice Type|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice
+uploadtype|	String|	No – May change in future|	Upload Type|	A for amendment, S for solicitation or any title for other; 255 characters
+respdate	|Date	|No	|Response Date|	YYYYMMDD
+links|	DocumentLin k[]|	No|	Array Of links	|
+files	|DocumentFile []|	No|	Array of files	|
+officeid	|String|	Yes|	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account|	20 characters
+
+DocumentLink Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url	|string	|No|	External URL|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc|	string|	No|	Description/Title	|255 characters
+
+DocumentFile Complex Type Definition
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+filename |	string |	No |	File Name |	255 characters
+filedata |	base64binary |	No	| File Data |	100 MB
+desc	| string |	No	 | Description |	255 characters
+
+### *Unarchive Notice (unarchiveNotice)*
+
+This method is used to unarchive a notice or stand-alone award. Note: Provide a Solicitation Number or an Award Number to unarchive the related opportunity.
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+Data | UnarchiveNotice  |	Complex type defined below
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | PostingResponse | Complex type
+
+UnarchiveNotice Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
+ntype	|string	|no	|Base Notice Type	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "ITB" - for Intent to Bundle Requirements (DoD- Funded)
+awdnbr	|string|	No|	Award #|	255 characters
+archdate	|date|	No|	New Archive Date|	YYYYMMDD
+
+### *Secure Document Package (attachSecureDocumentPackagesToNotice)*
+
+Details will be added in future.
+
+### *Non-FBO Solicitation (createNonFBOSolicitation)*
+
+Details will be added in future.
+
+### *Secure Document Packages (attachSecureDocumentPackagesToNonFBOSolicitation)*
+
+Details will be added in future.
+
+### *Remove Secure Document Package (removeSecureDocumentPackagesFromNonFBOSolicitation)*
+
+Details will be added in future.
+
+### *Non-FBO Solicitation Release (releaseNonFBOSolicitation)*
+
+Details will be added in future.
+
+### *Un-Release-Non-FBO-Solicitation (unreleaseNonFBOSolicitation)*
+
+Details will be added in future.
+
+### *Secure Technical Document Package (createSecureDocumentPackage)*
+
+Details will be added in future.
+
+### *Add Files to Secure Document Package (addFilesToSecureDocumentPackage)*
+
+Details will be added in future.
+
+### *Delete Files from Secure Document Package (deleteFilesFromSecureDocumentPackage)*
+
+Details will be added in future.
+
+### *Delete Secure Document Package (deleteSecureDocumentPackage)*
+
+Details will be added in future.
+
+## Methods Available To All Office Location Users 
 
 
 
