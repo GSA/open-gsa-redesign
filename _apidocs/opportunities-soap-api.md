@@ -577,6 +577,97 @@ filename |	string	| No |	File Name	| 255 characters
 filedata |	base64binary |	No |	File Data	| 100 MB
 desc	| string |	No |	Description |	255 characters
 
+### *Sources Sought Notice (submitSourcesSought)*
+
+This method is used to submit a Sources Sought Notice.
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+Data | SourcesSought |	Complex type defined below
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | PostingResponse | Complex type
+
+SourcesSought Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+date |	date |	No |	Posting Date |	YYYYMMDD
+zip	 | string |	No |	Zip Code |	5 digits
+classcod |	string |	No |	Class-Code |	Valid classification code (FAR, Section 5.207(g))
+naics	| string |	No |	NAICS Code |	Valid NAICS Code
+officeid |	string |	Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account	| 20 characters
+offadd	| string	 | No |	Office Address |	65535 characters
+subject |	string |	Yes |	Subject |	255 characters
+solnbr	| string |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
+respdate |	date |	No |	Response Date |	YYYYMMDD
+archdate |	date |	No |	Archive Date	| YYYYMMDD
+contact	| string	| Yes |	Contact Info	| 65535 characters Default value = Primary, Other types are: Secondary, Owner
+desc | string |	Yes |	Description |	65535 characters
+link |	GovURL – complex type |	No |	Government Link	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+email	| GovEmail – complex type |	No |	Government Email	| 128 characters
+links |	DocumentLink[] |	No |	Array Of links	|
+files |	DocumentFile[] |	No |	Array of files |
+setaside	| string |	No |	Set-aside |	See Set Aside Value Section
+popaddress |	string |	No |	Pop Add |	65535 characters
+popzip |	string	| No |	Pop Zip	| 5 digits
+popcountry |	string |	No |	Pop Country |	32 characters
+recovery_act |	boolean |	No	 | Recovery Act |	true or false
+
+GovURL Complex Type Definition: This field is not implemented
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url	 | string	| yes |	Website Address |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc |	string |	yes |	Description |	255 characters
+
+GovEmail Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+address	| string |	yes |	Email Address |	128 characters
+desc	| string |	yes |	Description |	255 characters
+
+DocumentLink Complex Type Definition: This field is not implemented
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url	| string	| No |	External URL	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc |	string	| No	| Description/Title |	255 characters
+
+DocumentFile Complex Type Definition: This field is not implemented
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+filename |	string |	No |	File Name |	255 characters
+filedata |	base64binary |	No	| File Data |	100 MB
+desc	| string |	No	 | Description |	255 characters
+
+### *Foreign Government Standard (submitForeignGovernment)*
+
+This service is now deprecated. Hence no longer available.
+
+### *Special Notice (submitSpecialNotice)*
+
+This method is used to submit a Special Notice.
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+Data | SpecialNotice |	Complex type defined below
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | PostingResponse | Complex type
+
+SpecialNotice Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
 
 
 
