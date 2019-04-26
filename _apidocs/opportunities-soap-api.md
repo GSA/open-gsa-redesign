@@ -668,6 +668,22 @@ SpecialNotice Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
+date	| Date |	No	| Posting Date |	YYYYMMDD
+zip |	String |	No	 | Zip Code |	5 digits
+classcod |	String	| No	| Class-Code | 	Valid classification code (FAR, Section 5.207(g))
+naics |	String |	No	| NAICS Code |	Valid NAICS Code  NAICS Reference
+officeid	| string |	Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account	 | 20 characters
+offadd |	String |	No |	Office Address	| 65535 characters
+subject | 	String |	Yes |	Subject |	255 characters
+solnbr	| String |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
+archdate |	Date |	No |	Archive Date |	YYYYMMDD
+contact |	String |	No	| Contact Info |	65535 characters
+desc |	String |	Yes |	Description |	65535 characters
+link	| GovURL – complex type	| No |	Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+email |	GovEmail – complex type |	No |	Government Email	| 128 characters
+links |	DocumentLink[] 	| No |	Array Of links |
+files	| DocumentFile[]	 | No	| Array of files	 |
+recovery_act |	Boolean |	No |	Recovery Act	| true or false
 
 
 
