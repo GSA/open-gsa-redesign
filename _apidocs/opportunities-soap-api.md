@@ -1043,7 +1043,29 @@ Details will be added in future.
 
 Details will be added in future.
 
-## Methods Available To All Office Location Users 
+## Methods Available To All Office Location Users
+
+### *getIVLList*
+
+This method is used to retrieve the Interested Vendors List (IVL) for a given solicitation.
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+Data | IVLListRequest  |	Complex type defined below
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | IVLListResponse | Complex type defined below
+
+IVLListRequest Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+solnbr	string	yes	Solicitation #
+ntype	string	no	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice,  “ITB” – for Intent to Bundle Requirements (DoD- Funded)
+
 
 
 
