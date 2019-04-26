@@ -685,10 +685,164 @@ links |	DocumentLink[] 	| No |	Array Of links |
 files	| DocumentFile[]	 | No	| Array of files	 |
 recovery_act |	Boolean |	No |	Recovery Act	| true or false
 
+GovURL Complex Type Definition:
 
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url	|string	|yes|	Website Address|	255 characters, consist of a restricted set of characters (see URL specification - RFC2396)
+desc|	string	|yes|	Description|	255 characters
 
+GovEmail Complex Type Definition:
 
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+address	|string|	yes|	Email Address	|128 characters
+desc	|string	|yes	|Description	|255 characters
 
+DocumentLink Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url	|string|	No	|External URL	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc	|string	|No	|Description/Title	|255 characters
+
+DocumentFile Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+filename |	string |	No |	File Name |	255 characters
+filedata |	base64binary |	No	| File Data |	100 MB
+desc	| string |	No	 | Description |	255 characters
+
+### *Sale of Surplus Property Notice (submitSaleOfSurplus)*
+
+This method is used to submit a Sale of Surplus Property Notice.
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+Data | SaleOfSurplus |	Complex type defined below
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | PostingResponse | Complex type
+
+SaleOfSurplus Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+date |	date|	No|	Posting Date|	YYYYMMDD
+zip|	string|	No|	Zip Code|	5 digits
+classcod|	string|	Yes	|Class-Code|	Valid classification code (FAR, Section 5.207(g))
+naics|	string|	No|	NAICS Code|	Valid NAICS Code  NAICS Reference
+officeid	|string	|Yes|	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
+offadd|	string|	No	|Office Address	|65535 characters
+subject|	string|	Yes|	Subject	|255 characters
+solnbr|	string	|Yes	|Sol #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
+archdate|	date|	No|	Archive Date|	YYYYMMDD
+contact|	string|	Yes|	Contact Info|	65535 characters
+desc|	string	|Yes|	Description	|65535 characters
+link	|GovURL – complex type|	No|	Government Link	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+email	|GovEmail – complex type	|No|	Government Email|	128 characters
+links|	DocumentLink[]|	No	|Array Of links	|
+files	|DocumentFile[]|	No	|Array of files	|
+recovery_act|	boolean	|No	|Recovery Act	|true or false
+
+GovURL Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url	|string	|yes	|Website Address	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc	|string	|yes	|Description	|255 characters
+
+GovEmail Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+address|	string|	yes|	Email Address	|128 characters
+desc	|string	|yes	|Description	|255 characters
+
+DocumentLink Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url|	string|	No|	External URL	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc	|string|	No|	Description/Title	|255 characters
+
+DocumentFile Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+filename |	string |	No |	File Name |	255 characters
+filedata |	base64binary |	No	| File Data |	100 MB
+desc	| string |	No	 | Description |	255 characters
+
+### *Intent to Bundle Requirements (DoD- Funded) (submitITB)*
+
+This method is used to submit an Intent to Bundle Requirements (DoD-Funded) Notice.
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+Data | ITB  |	Complex type defined below
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | PostingResponse | Complex type
+
+ITB Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+date	|Date	|No	|Posting Date	|YYYYMMDD
+zip	|String|	No|	Zip Code|	5 digits
+classcod|	String|	Yes|	Class-Code|	Valid classification code (FAR, Section 5.207(g))
+naics|	String|	No|	NAICS Code|	Valid NAICS Code
+officeid|	String|	Yes|	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account|	20 characters
+offadd|	String	|No|	Office Address|	65535 characters
+subject|	String|	Yes|	Subject	|255 characters
+solnbr	|String	|Yes|	Sol #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
+ntype	|string	|No|	Base Notice Type|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice
+awdnbr|	String	|Yes	|Award Number|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
+donbr|	String|	No	|Task/Delivery Order Number	|255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
+archdate	|Date	|No	|Archive Date|	YYYYMMDD
+contact|	String|	Yes|	Contact Info	|65535 characters; Default value = Primary, Other types are: Secondary, Owner
+desc	|String	|Yes	|Description|	65535 characters
+link|	GovURL|	No|	Government Link	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+links	|DocumentLink[]|	No|	Array Of links	|
+files|	DocumentFile[]	|No	|Array of files	|
+email	|GovEmail|	No|	Government Email|	128 characters
+recovery_act|	Boolean	|No	|Recovery Act	|true or false
+correction	|boolean	|No	|Correction of previous ITB|	true or false. If correcting a previously submitted itb notice, specify true and the system will lookup the itb by award number, delivery number and sol number if applicable.
+
+GovURL Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url	|string	|yes	|Website Address	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc	|string|	yes|	Description|	255 characters
+
+GovEmail Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+address	|string	|yes|	Email Address	|128 characters
+desc|	string|	yes	|Description|	255 characters
+
+DocumentLink Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url|	string|	No	|External URL|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc|	string|	No|	Description/Title	|255 characters
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+filename |	string |	No |	File Name |	255 characters
+filedata |	base64binary |	No	| File Data |	100 MB
+desc	| string |	No	 | Description |	255 characters
 
 
 
