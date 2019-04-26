@@ -12,17 +12,6 @@
   display: table;
   content: "";
 }
-#logo {
-  float: left;
-  max-width: 32rem;
-}
-#logo a {
-  border: none;
-}
-#logo h1 {
-  font-size: 3rem;
-  margin: 0;
-}
 .usa-nav-list a {
   border-bottom: 0;
   text-decoration: none;
@@ -44,6 +33,17 @@ li.usa-menu-item {
 .usa-menu-item:hover a {
   background-color: $button-color;
   color: $button-text-color;
+}
+#logo {
+  float: left;
+  max-width: 32rem;
+}
+#logo a {
+  border: none;
+}
+#logo h1 {
+  font-size: 3rem;
+  margin: 0;
 }
 @media (max-width: 600px) {
   .usa-site-navbar .usa-grid {
