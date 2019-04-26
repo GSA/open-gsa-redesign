@@ -84,7 +84,7 @@ messages | string [] - array of strings
 
 **Note**: Some methods will have a different response value format due to the nature of the data being returned. These custom cases will be outlined below.
 
-### Set-Aside Values
+### *Set-Aside Values*
 Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field.
 
 Refer below table for mapping between legacy SetAside Values to modern SetAside Value:
@@ -105,10 +105,10 @@ Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15) |	Economi
 Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15) |	Economically Disadvantaged Women-Owned Small Business
 Local Area Set-Aside (FAR 26.2)	|
 
-### Notice Types
+### *Notice Types*
 The web service API includes specific methods to submit each of the base notice types (i.e. presolicitation, combined/synopsis, award, etc.). You will find these outlined in the sections below.
 
-### Stauth Valid Values
+### *Stauth Valid Values*
 Below table captures stauth values to use while making requests as needed.
 
 Code | Description
@@ -128,7 +128,7 @@ far6 | FAR 6.302-6  - National security
 far7 | FAR 6.302-7 - Public interest
 
 ## Contracting Officer Method Details
-### Award Notice (submitAward)
+### *Award Notice (submitAward)*
 This method is used to submit an award notice.
 
 Input parameters:
@@ -204,7 +204,7 @@ desc |	string |	No |	Description |	255 characters
 explicit_access |	boolean |	No |	Explicit Access |
 export_controlled |	boolean	No |	Export Controlled |
 
-### Delete Notice/ Document Package (deleteNoticeOrDocumentPackage)
+### *Delete Notice/ Document Package (deleteNoticeOrDocumentPackage)*
 
 This method is used to permanently delete an entire notice or delete attachments across all versions of the notice. Modifications/Amendments are recommended instead of using this method. Specify the solicitation number or award number to delete a notice. To delete attachments, also specify the attachment deletetype.
 
@@ -234,7 +234,7 @@ awdnbr |  string | no | Award # |	255 characters
 deletetype |	string |	no |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachment. Defaults to “notice” if not provided
 deletemethod |	string | no | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
 
-### Archive Notice (ArchiveNotice)
+### *Archive Notice (ArchiveNotice)*
 
 This method is used to update the archive date on an existing notice.  If a past date is provided or no date provided at all, the notice will be immediately archived.
 
@@ -260,9 +260,42 @@ ntype |	string | no |	Base Notice Type | Valid values: "PRESOL" - for Presolicit
 archdate | date |	no | New Archive Date – If none provided, notice will archive immediately | YYYYMMDD
 officeid | string |	Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
 
-### Cancel Notice (CancelNotice)
+### *Cancel Notice (CancelNotice)*
 
+This method is used to post a cancellation notice to any base notice type already in the Opportunities system. Provide a Solicitation Number or an Award Number (for stand- alone awards) and other data outlined below for the cancellation notice.
 
+Input Parameters:
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+data |	CancelNotice | Complex type defined below
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+response | PostingResponse | Complex type
+
+CancelNotice Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+date | date |	No | Posting Date |	YYYYMMDD
+offadd | string |	No | Office Address |	65535 characters
+officeid | String | Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
+subject |	string | No |	Subject |	255 characters
+solnbr |string | Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
+ntype | string | No |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice,  "ITB" - for Intent to Bundle Requirements (DoD- Funded)
+awdnbr | string |	No | Award # |255 characters
+archdate | date |	No | Archive Date | YYYYMMDD
+contact | string | Yes | Contact Info | 65535 characters
+desc | string | Yes |	Cancellation Description | 65535 characters
+
+## Contracting Officer/Contracting Specialist Method Details
+
+### *Presolicitation (submitPresol)*
+
+This method is used to submit a Pre-solicitation Notice.
 
 
 
