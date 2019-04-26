@@ -1,7 +1,3 @@
-
-.usa-footer-secondary_section {
-  background-color: $footer-background-color;
-}
 footer p,
 footer h1,
 footer h2,
@@ -14,12 +10,9 @@ footer a:hover,
 footer a:visited {
   color: $footer-text-color;
 }
-.usa-footer-secondary_section a {
-  color: #fff;
-}
 
 .usa-footer {
-    padding: 1em;
+  padding: 1em;
   @media screen and (min-width: 1200px){
     padding: 3em 0;
     width:100%;

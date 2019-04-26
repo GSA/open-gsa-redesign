@@ -11,7 +11,7 @@
     "test:html-local": "bundle exec htmlproofer _site --disable-external --allow-hash-href --url-ignore localhost:4000 || exit 0",
     "test:pagespeed": "psi-v4 http://cg-06ab120d-836f-49a2-bc22-9dfb1585c3c6.s3-website-us-gov-west-1.amazonaws.com/site/gsa/open-gsa-redesign/ --strategy=mobile || exit 0",
     "test:accessibility": "pa11y http://cg-06ab120d-836f-49a2-bc22-9dfb1585c3c6.s3-website-us-gov-west-1.amazonaws.com/site/gsa/open-gsa-redesign/ || exit 0",
-    "test:css": "18f-stylelint-rules ./_sass/*.scss || exit 0",
+    "test:css": "stylelint ./_sass/*.scss || exit 0",
     "test:js": "npm run eslint",
     "test": "npm run test:html && npm run test:pagespeed && npm run test:accessibility && npm run test:js && npm run test:css",
     "build:uswds": "cp -R node_modules/uswds/dist/ assets/uswds"
@@ -33,7 +33,6 @@
   },
   "homepage": "https://github.com/GSA/open-gsa-redesign/blob/dev/README.md",
   "devDependencies": {
-    "@18f/stylelint-rules": "^2.0.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-google": "^0.12.0",
@@ -42,6 +41,9 @@
     "postcss": "^5.2.15",
     "postcss-cli": "^6.1.2",
     "psi-v4": "^4.0.1",
+    "stylelint": "^10.0.1",
+    "stylelint-config-recommended": "^2.2.0",
+    "stylelint-scss": "^3.6.0",
     "uswds": "^1.6.12"
   },
   "dependencies": {
