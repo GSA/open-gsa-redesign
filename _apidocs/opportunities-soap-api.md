@@ -1061,10 +1061,161 @@ Response | IVLListResponse | Complex type defined below
 
 IVLListRequest Complex Type Definition:
 
-Element Name | Type | Required | Description | Character Limit / Restrictions
------- | ------- | ------- | ------- | -------
-solnbr	string	yes	Solicitation #
-ntype	string	no	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice,  “ITB” – for Intent to Bundle Requirements (DoD- Funded)
+Element Name | Type | Required | Description
+------ | ------- | ------- | -------
+solnbr|	string|	yes|	Solicitation #
+ntype	|string	|no	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice,  “ITB” – for Intent to Bundle Requirements (DoD- Funded)
+
+IVLListResponse Complex Type Definition:
+
+Element Name | Type |  Description
+------ | ------- | -------
+success|	boolean	|Success flag
+data|	IVL[]|	Array of IVL Records
+messages|	string[]|	Array of any messages, usually used in error case.
+
+IVL Complex Type Definition:
+
+Element Name | Type |  Description
+------ | ------- | -------
+lname	|string	|Last Name
+fname	|string	|First Name
+email	|string	|Email
+phone	|string	|Phone
+contractor_name|	string|	Contractor Name
+dba_name|	string|	DBA Name
+duns|	string|	DUNS #
+cage_code	|string|	Cage Code
+address	|string	|Address
+bus_types|	string|	Business Types
+naics_codes|	string	|Naics Codes
+
+### *Authorized Parties List (getAuthorizedPartyList)*
+
+This method is used to retrieve the Authorized Party lists for an FBO Solicitation or a Non-FBO Solicitation. A third argument - ‘status’ - can be provided to retrieve pending Explicit Access requests, rejected requests, approved vendors, or all. Specify the first parameter to the web service method for FBO Solicitations and leave the second parameter blank. If retrieving lists for Non-FBO Solicitations, leave the first parameter blank and specify the second parameter. Valid options for status field: approved, rejected, pending, or leave blank for all.
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+Data | AuthorizedPartyListResponse  |	Complex type defined below
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | AuthorizedPartyListResponse | Complex type defined below
+
+AuthorizedPartyListRequest Complex Type Definition:
+
+Element Name | Type | Required | Description
+------ | ------- | ------- | -------
+solnbr|	string|	yes	|Solicitation #. Provide an empty string for this argument if using nonfbo_solnbr below
+ntype|	string|	no|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "FSTD" - for Foreign Government Standard, “ITB” – for Intent to Bundle Requirements (DoDFunded)
+nonfbo_solbr|	string|	no|	Non-fbo Solicitation #. Not supported for this method
+status| string	|no	|Valid Options: approved, pending, rejected, “empty value”. If empty, all status will be returned. Note, use “pending” to pull the pending explicit access requests.
+
+AuthorizedPartyListResponse Complex Type Definition:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+success |	boolean|	Success flag
+message	|string[]	|Array of any messages, usually used in error case
+data |	AuthorizedParty[]|	Array of Authorized party Records
+
+AuthorizedParty Complex Type Definition:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+type_of_request |	string|	Indicates if the id is a resource or a notice level request
+resource_name|	string|	Only populates if the type_of_request is a resource.
+id |	string|	Internal ID
+status|	string|	Status of record (approved, rejected, pending). Pending indicates an explicit access request.
+lname	|string|	Last Name
+fname|	string|	First Name
+email	|string	|Email
+phone	|string	|Phone
+contractor_name |string|	Contractor Name
+dba_name|	string|	DBA Name
+duns|	string|	DUNS #
+cage_code	|string|	Cage Code
+
+### *Approve Explicit Access Requests (approveExplicitAccessRequestByID)*
+
+This method is used to approve an Explicit Access request that is either in pending or rejected status. This method requires the internal ID which can be retrieved by first calling the getAuthorizedPartyList method. Specify an FBO Solicitation Number as the first argument.
+
+Input Parameters:
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+data	|ExplicitAccessRequest|	Complex type defined below
+
+IVLListRequest Complex Type Definition:
+
+Element Name | Type | Required | Description
+------ | ------- | ------- | -------
+solnbr|	string	|yes|	Solicitation #
+ntype	|string	|no|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice,  “ITB” – for Intent to Bundle Requirements (DoD- Funded)
+nonfbo_solbr	|string|	no|	Non-fbo Solicitation #.  Not supported for this method
+Id|	string|	yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.
+vendor|	VendorData|	no|	Complex type not used in this method
+reason	|string|	no|	rejection reason not used in this method
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | PostingResponse | Complex type
+
+### *Approve Explicit Access Requests (approveExplicitAccessRequestByVendorData)*
+
+Details will be added in future
+
+### *Reject Explicit Access Requests (rejectExplicitAccessRequestByID)*
+
+Details will be added in future
+
+### *Reject Explicit Access Requests (rejectExplicitAccessRequestByVendorData)*
+
+Details will be added in future
+
+### *Add Authorized Party (addAuthorizedParty)*
+
+This method is used to arbitrarily add vendor users to the Authorized Party list for a given FBO Solicitation. This method accepts an FBO Solicitation Number and a set of vendor data. The method attempts to lookup the vendor in the system based on the data provided and adds an Authorized Party record if the match is successful.  This method has been deprecated for Non-FBO Solicitation Number.
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+data	|ExplicitAccessRequest|	Complex type defined below
+
+ExplicitAccessRequest Complex Type Definition:
+
+Element Name | Type | Required | Description
+------ | ------- | ------- | -------
+solnbr|	string|	yes|	Solicitation #
+ntype	|string	|no	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice,  “ITB” – for Intent to Bundle Requirements (DoD- Funded)
+nonfbo_solbr|	string|	no	|Non-fbo Solicitation #.   Not supported for this method.
+Id	|string	|no	|Not used in this method
+vendor	|VendorData|	yes|	Complex type defined below
+reason	|string	|no	|rejection reason not used in this method
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | PostingResponse | Complex type
+
+VendorData Complex Type Definition:
+
+Element Name | Type |  Description
+------ | ------- | -------
+lname	|string	|Last Name
+fname|	string	|First Name
+email|	string	|Email
+contractor_name	|string	|Contractor Name
+duns|	string	|DUNS #
+cage_code|	string|	Cage Code
+
+
+
+
 
 
 
@@ -1077,5 +1228,11 @@ ntype	string	no	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Co
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
+
+## Change Log
+
+Date | Version | Description
+------|---------------|---------
+4/25/2019 | v1.0 | Base Version
 
 <p><small><a href="#">Back to top</a></small></p>
