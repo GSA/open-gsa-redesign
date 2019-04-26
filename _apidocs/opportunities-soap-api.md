@@ -105,6 +105,43 @@ Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15) |	Economi
 Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15) |	Economically Disadvantaged Women-Owned Small Business
 Local Area Set-Aside (FAR 26.2)	|
 
+### Notice Types
+The web service API includes specific methods to submit each of the base notice types (i.e. presolicitation, combined/synopsis, award, etc.). You will find these outlined in the sections below.
+
+### Stauth Valid Values
+Below table captures stauth values to use while making requests as needed.
+
+Code | Description
+------- | --------
+1 |	Urgency
+2	| Only One Source (except brand name)
+3 |	Follow-on Delivery Order Following Competitive Initial Order
+4 |	Minimum Guarantee
+5 |	Other Statutory Authority (e.g. 8a, etc.)
+brand |	FAR 6.302-1(c) - Brand name
+far1 | FAR 6.302-1 - Only one responsible source (except brand name)
+far2 | FAR 6.302-2 - Unusual and compelling urgency
+far3 | FAR 6.302-3 - Industrial mobilization; engineering, developmental or research capability; or expert services
+far4 | FAR 6.302-4 - International agreement
+far5 | FAR 6.302-5 - Authorized or required by statute
+far6 | FAR 6.302-6  - National security
+far7 | FAR 6.302-7 - Public interest
+
+## Contracting Officer Method Details
+### Award Notice (submitAward)
+This method is used to submit an award notice.
+
+Input parameters:
+
+Input Parameter | Type | Description
+------- | ------- | -------
+Data | Award | Complex type defined
+
+Response:
+
+Output Parameter | Type | Description
+------ | ------- | -------
+Response | PostingResponse | ComplexType 
 
 
 
