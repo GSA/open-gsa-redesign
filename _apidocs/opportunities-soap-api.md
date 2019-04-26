@@ -421,7 +421,7 @@ desc | string |	Yes |	Description |	255 characters
 
 DocumentLink Complex Type Definition: This field is not implemented
 
-lement Name | Type | Required | Description | Character Limit / Restrictions
+Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 url	| string | No |	External URL | 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
 desc | string |	No | Description/Title | 255 characters
@@ -439,9 +439,143 @@ desc | string |	No | Description | 255 characters
 
 This method is used to submit a Modification/Amendment to any base notice.
 
+Input Parameter |	Type |	Description
+------- | ------ | -------
+Data | Mod |	Complex type defined below
 
+Response:
 
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | PostingResponse | Complex type
 
+Mod Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+date | date |	No |	Posting Date |	YYYYMMDD
+zip |	string |	No |	Zip Code |	5 digits
+classcod |	string	 | Yes – For combined type, presol type, Sale of surplus, No – For test |	Class-Code	| Valid classification code (FAR, Section 5.207(g))
+naics | 	string |	Yes – For combined type, No – For rest | 	NAICS Code |	Valid NAICS Code  NAICS Reference
+officeid |	string	| Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
+offadd |	string	| no	| Office Address |	65535 characters
+subject	| string	| no |	Subject |	255 characters
+solnbr | string |	yes | 	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
+ntype |	string |	no |	Base Notice Type |	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice
+respdate |	date |	Yes – Combined, No – For rest |	Response Date |	YYYYMMDD
+archdate |	date |	no	| Archive Date |	YYYYMMDD
+contact |	string |	No – For Special notice, Yes – For rest |	Contact Info |	65535 characters
+desc |	string |	Yes	| Description |	65535 characters
+link	| GovURL – complex type |	no |	Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+email |	GovEmail – complex type |	no |	Government Email |	128 characters
+links |	DocumentLink[] |	no |	Array Of links |
+files |	DocumentFile[] |	no |	Array of files |
+setaside |	string |	no |	Set-aside |	See Set Aside Value Section for valid values
+popaddress |	string |	no	 | Pop Add |	65535 characters
+popzip	| string |	no	 | Pop Zip |	5 digits
+popcountry |	string |	no	 | Pop Country |	32 characters
+recovery_act |	boolean |	no |	Recovery Act |	true or false
+
+GovURL Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url	| string	| Yes |	Website Address |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc |	string |	Yes |	Description |	255 characters
+
+GovEmail Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+address	| string |	Yes |	Email Address	| 128 characters
+desc |	string |	Yes |	Description |	255 characters
+
+DocumentLink Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url | 	string	| No |	External URL |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc |	string |	No |	Description/Title |	255 characters
+
+DocumentFile Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+filename |	string	| No | 	File Name |	255 characters
+filedata |	base64binary |	No |	File Data	| 100 MB
+desc |	string |	No |	Description |	255 characters
+
+### *Justification and Authorization (J&A) Notice (submitJA)*
+
+This method is used to submit a J&A Notice.
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+Data | JA |	Complex type defined below
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | PostingResponse | Complex type
+
+JA Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+date | Date	| No |	Posting Date |	YYYYMMDD
+zip |	String |	No	| Zip Code |	5 digits
+classcod	| String |	Yes |	Class-Code |	Valid classification code
+naics	| String |	No – May change in future	| NAICS Code	| Valid NAICS Code  NAICS Reference
+offadd |	String	| No |	Office Address	| 65535 characters
+officeid |	String |	Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
+subject |	String |	Yes |	Subject |	255 characters
+solnbr	| String |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}. Note for statutory authority FAR 6.302- 1(c) - Brand name, this is required
+ntype	| string |	No	| Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice
+stauth	| String	| Yes |	Stat. Authority – Both foja & stauth values will be given under stauth in legacy |	Valid values: 1, 2, 3, 4, 5, brand, far1, far2, far3, far4, far5, far6, far7 Description of each of these stauth values is captured in section 4.4 Foja values are: Valid values: 'Urgency’, ‘Only One Source (except brand name)’, ‘Follow-on Delivery Order Following Competitive Initial Order’, ‘Minimum Guarantee’, ‘Other Statutory Authority’
+awdnbr |	String |	Yes |	Award Number |	255 characters
+modnbr |	String |	No |	Mod Number |	32 characters
+awdamt |	String |	No |	Award Amount |	64 characters
+awddate |	Date |	No – May change in future	| Award Date |	YYYYMMDD
+donbr	| String |	Yes |	Task/Delivery Order Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
+archdate |	Date |	No |	Archive Date |	YYYYMMDD
+contact |	String |	Yes | 	Contact Info |	65535 characters
+desc |	String |	No |	Description	| 65535 characters
+link |	GovURL |	No	| Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+links |	DocumentLink[]	| No |	Array Of links	|
+files |	DocumentFile[]	| No |	Array of files	|
+email |	GovEmail |	Yes | 	Government Email |	128 characters
+recovery_act |	Boolean |	No |	Recovery Act |	true or false;
+correction	| boolean |	No |	Correction of previous J&A |	true or false. If correcting a previously submitted j&a notice, specify true and the system will lookup the j&a by award number and sol number if applicable.
+
+GovURL Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url |	string |	yes |	Website Address	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc	| string	| yes |	Description |	255 characters
+
+GovEmail Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+address |	string	| yes |	Email Address	| 128 characters
+desc |	string |	yes |	Description |	255 characters
+
+DocumentLink Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url |	string	| No |	External URL	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc |	string |	No |	Description/Title |	255 characters
+
+DocumentFile Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+filename |	string	| No |	File Name	| 255 characters
+filedata |	base64binary |	No |	File Data	| 100 MB
+desc	| string |	No |	Description |	255 characters
 
 
 
