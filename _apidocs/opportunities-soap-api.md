@@ -141,9 +141,72 @@ Response:
 
 Output Parameter | Type | Description
 ------ | ------- | -------
-Response | PostingResponse | ComplexType 
+Response | PostingResponse | ComplexType
 
+Award Complex Type Definition:
 
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+date |	date |	No |	Posting Date |	YYYYMMDD
+zip |	string |	No |	Zip Code |	5 digits
+classcod |	string |	No |	Class-Code |	Valid classification code (FAR, Section 5.207(g))
+naics |	string |	No |	NAICS Code |	Valid NAICS Code NAICS Reference
+offadd |	string |	No |	Office Address |	65535 characters
+officeid |	string |	Yes |	Office id of the office where an opportunity is being submitted |	20 characters
+subject |	string |	Yes |	Subject |	255 characters
+solnbr |	string |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
+ntype	| string |	No |	Base Notice Type |	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “ITB” - for Intend to bundle
+awdnbr |	string |	 Yes |	Award Number |	255 characters
+awdamt |	string |	Yes |	Award Amount |	64 characters
+linenbr |	string |	No |	Line Number |	255 characters
+awddate |	date |	Yes |	Award Date |	YYYYMMDD
+archdate |	date |	No |	Archive Date |	YYYYMMDD
+awardee |	string |	Yes |	Awardee |	65535 characters
+awardee_duns |	string |	No |	Awardee DUNS |	9 digits with optional plus 4
+contact |	string |	Yes |	Contact Info |	65535 characters
+desc |	string |	No |	Description |	65535 characters
+link |	GovURL |	No |	Government Link	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+email |	GovEmail |	No |	Government Email |	128 characters
+links |	DocumentLink[] |	No |	Array Of links |
+files |	DocumentFile[] |	No |	Array of files |
+setaside |	string |	No |	Set Aside |	See Set Aside Value Section for valid values
+recovery_act |	boolean |	No |	Recovery Act |	true or false
+correction |	boolean |	No |	Correction of previous Award |	true or false. If correcting a previously submitted award notice, specify true and the system will lookup the award by award number and sol number if applicable.
+
+GovURL Complex Type Definition
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url |	string |	yes |	Website Address |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc |	string |	yes |	Description |	255 characters
+
+GovEmail Complex Type Definition
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+address | string |	Yes |	Email Address |	128 characters
+desc |	string |	Yes |	Description |	255 characters
+
+DocumentLink Complex Type Definition
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+url |	string |	No |	External URL |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+Desc |	string |	No |	Description/Title |	255 characters
+
+DocumentFile Complex Type Definition
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+filename |	string |	No |	File Name |	255 characters
+filedata |	base64binary |	No |	File Data |	100 MB
+desc |	string |	No |	Description |	255 characters
+explicit_access |	boolean |	No |	Explicit Access |
+export_controlled |	boolean	No |	Export Controlled |
+
+### Delete Notice/ Document Package (deleteNoticeOrDocumentPackage)
+
+This method is used to permanently delete an entire notice or delete attachments across all versions of the notice. Modifications/Amendments are recommended instead of using this method. Specify the solicitation number or award number to delete a notice. To delete attachments, also specify the attachment deletetype.
 
 
 
