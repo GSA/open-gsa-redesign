@@ -38,7 +38,7 @@ In the new branch:
 
 You can also ask the CTO team to update the /_data/api-list.yml, which will add your API to the directory page: https://open.gsa.gov/api/
 
-## Adding swagger UI to your existing API documentation
+## Adding swagger UI to your existing API documentation (with Try It Out functionality)
 
 If you already host your documentation on this site, and you'd like to add the Swagger UI, add this section following the section with the OpenAPI specification:
 
@@ -53,4 +53,25 @@ If you already host your documentation on this site, and you'd like to add the S
 {% include swagger-section-footer.html %}
 
 
-<p><small><a href="#">Back to top</a></small></p>```
+<p><small><a href="#">Back to top</a></small></p>
+```
+
+## Adding swagger UI to your existing API documentation (no Try It Out functionality)
+
+If you already host your documentation on this site, and you'd like to add the Swagger UI, add this section following the section with the OpenAPI specification:
+
+```
+## API Calls
+
+[Insert descriptive text here]
+
+
+{% swagger-section-header-disable-try-it-out.html %}
+    url: "v1/[Name of OpenAPI file]", 
+{% include swagger-section-footer-disable-try-it-out.html %}
+
+
+<p><small><a href="#">Back to top</a></small></p>
+```
+
+
