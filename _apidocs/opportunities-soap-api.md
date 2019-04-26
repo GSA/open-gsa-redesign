@@ -1213,6 +1213,218 @@ contractor_name	|string	|Contractor Name
 duns|	string	|DUNS #
 cage_code|	string|	Cage Code
 
+## Method Available for Data Export
+
+### *Get List of Notices (getList)*
+
+This method is used to retrieve a list of base notices. For each record returned, an internal identifier/unique key is provided that must be used in subsequent getNoticeData calls to get the complete notice data (and any of its changes or awards posted). The method will return a maximum of 1000 records and allows filtering the results by specifying the notice type, solicitation number, award number, posted date range and documents to search (active or archive).   For performance reasons, at least one filter must be provided.
+
+Input Parameters:
+
+Input Parameter	|Type	|Description
+-----|-----|-----
+data|	NoticeListRequest|	Complex type defined below
+
+NoticeListRequest Complex Type Definition:
+
+Element Name|	Type|	Required|	Description
+-----|-----|-----|-----
+notice_type	|string|	No|	Solicitation #.  Valid Values: PRESOL, COMBINE,  AWARD, JA, SRCSGT, SSALE, SNOTE, ITB.  Note:Searches for awardsj&as, itb’s and fairopps will return both standalone notices AND base notices that contain one of these type
+solnbr	|string	|No	|Solicitation #
+awdnbr	|string	|No	|Award #
+posted_from	|date|	No|	Posted From Date. YYYYMMDD.
+posted_to	|date|	|No	Posted To Date. YYYYMMDD
+documents_to_search	|string|	No|	Valid Values: ‘active’ or ‘archived’. Default is ALL if nothing provided.
+
+Response:
+
+Output Parameter|	Type|	Description
+-----|-----|-----
+response|	NoticeListResponse|	Complex type
+
+NoticeListResponse Complex Type Definition:
+
+Element Name | Type |  Description
+------ | ------- | -------
+success|	boolean	|False if something failed in the request.
+messages|	string[]	|Array of messages if application has any info about the call. Error Messages will be displayed when failures happened in the request. Eg : 401, 404 (Bad Request) etc.
+num_records_returned|	int	|Number of records returned for pagination requested or default pagination.
+total_num_records|	int|	Total Number of records that matched the search
+data|	NoticeListItem[]|	Array of complex type defined below.
+
+NoticeListItem Complex Type Definition:
+
+Element Name | Type |  Description
+------ | ------- | -------
+Notice_id	|string	|Unique Identifier for this notice
+base_type	|string	|Notice type of original/base posting. Note that this is equivalent to current_type.
+current_type	|string|	Current type of notice (i.e. if Presol becomes a solicitation or an award was posted)
+last_posted_date|	date|	Datetime of the last change made to the notice.
+subject	|string|	Notice subject
+solnbr	|string	|Solicitation Number
+awdnbr|	string	|Award Number
+archived|	boolean	|True or false
+
+### *Get Notice Data (getNoticeData)*
+
+This method is used to retrieve notice data and any changes/awards that were made. The notice_id from getList calls should be used in this call.   If document package data is requested, the total aggregate size for any request is 100MB. If a certain file pushes the total past this threshold, the data will not be returned for that file and any others encountered for the request; instead, links to the data will be provided and one can call the separate getFileData to cut down the size and to pull a specific document.
+
+Input Parameters:
+
+Input Parameter	|Type	|Description
+-----|-----|-----
+data|	NoticeDataRequest|	Complex type defined below
+
+NoticeDataRequest Complex Type Definition:
+
+Element Name|	Type|	Required|	Description
+-----|-----|-----|-----
+notice_id	|string	|Yes|	Unique ID found from getList call or ID’s for changes found in getNoticeData call.
+get_changes	|boolean|	No|	True or false. Pass in true to get the full notice history with all changes.
+get_changes_from_date	|date|	No|	If maintaining a sync of changes, can specify a date so that only changes that have occurred since provided date will be returned.
+get_file_data|	boolean|	No|	True or false. Pass in true and the method will return any file content stored in Contract Opportunities (attachment data will be retuned as Base64Encoding Format). If false, the meta details/links will still be provided.
+
+Response:
+
+Output Parameter|	Type|	Description
+-----|-----|-----
+response|	NoticeDataResponse|	Complex type
+
+NoticeDataResponse Complex Type Definition:
+
+Element Name | Type |  Description
+------ | ------- | -------
+success	|boolean|	False if something failed in the request.
+messages|	string[]|	Array of messages if application has any info about the call. Error Messages will be displayed when failures happened in the request. Eg : 401, 404 (Bad Request) etc.
+notice|	NoticeData|	Complex Type defined below
+
+NoticeData Complex Type Definition:
+
+Element Name | Type |  Description
+------ | ------- | -------
+id|	string|	Unique ID
+notice_type|	strin|g	Type of notice
+agency|	string|	Top level Agency
+office|	string|	Office
+location|	string|	Location
+date|	dateTime|	Posting Date
+zip|	string|	Zip Code
+classcod|	string|	Class-Code
+naics	|string|	NAICS Code
+offadd	|string	|Office Address
+subject	|string	|Subject
+solnbr|	string	|Sol #
+awdnbr|	string|	Award #
+donbr	|string	|Delivery/Task Order Number
+awdamt	|string	|Award Amount
+linenbr	|string	|Award Line Item Number
+awddate	|date|	Award Date
+stauth	|string|	J&A StatutoryAuthority
+foja|	String	|Justification Authority
+modnbr	|string	|J&A and FairOpp Contract Modification Number
+respdate	|date|	Response Date
+archdate|	date|	Archive Date
+awardee	|string|	Awardee
+awardee_duns	|string|	Awardee DUNS
+contact|	string|	Contact Info
+desc|	string|	Main Description
+link|	GovernmentURL	|Government Link
+email|	Government Email|	Government Email
+files	|DocumentPack ageData[]|	Array of package data if applicable
+setaside	|string	|Set-aside types
+popaddress	|string	|POP Address
+popzip	|string|	POP Zip
+popcountry|	string|	POP Country
+recovery_act	|boolean	|Recovery Act
+correction|	boolean	|Correction of previous notice for the following types: Award #, Delivery Order #) – Awards, J&A’s, Intent to Bundle Requirements (DoD-Funded), Fair Opportunity / Limited Source Justification.
+changes	|NoticeData[]	|This element will only be present on the base/original posting and will contain an array of changes (for any mods/awards/etc.). Each change uses the same complex type.
+
+DocumentPackageData Complex Type Definition:
+
+Element Name | Type |  Description
+------ | ------- | -------
+package_id	|string	|Unique ID
+label|	string|	Package label
+type|	string|	Type of package
+sensitive|	string|	Is the package marked as sensitive
+pr_number|	string	|Identifier for sensitive data
+project_number|	string|	Project number used for sensitive packages only
+nsn_mmac	|string|	Used for sensitive packages only
+part_number|	string|	Used for sensitive packages only
+nomenclature|	string|	Used for sensitive packages only
+export_controlled|	boolean	|true or false – used for sensitive packages only
+explicit_access	|boolean|	true or false – used for sensitive packages only
+is_cd_avail	|boolean|	true or false – used for sensitive packages only
+files	|DocumentFile Data[]|	Array of Document Files/Links as described below
+
+DocumentFileData Complex Type Definition:
+
+Element Name | Type |  Description
+------ | ------- | -------
+file_id	|string|	Unique ID
+filename|	string|	Filename – only used for files stored on notices
+filedata|	base64Binary|	File data – only used for files stored on notices
+link|	string|	Link to file – used for files not stored on notices
+desc|	string|	Description
+size_limit_error|	boolean	|This element will be true if its size or aggregate file data for the request exceeds the max return size.
+
+### *Get Document Package Data (getDocumentPackageData)*
+
+This service is now deprecated
+
+### *Get File Data (getFileData)*
+
+This method provides the ability to pull in file data for a single file of a document package. The primary use of this method is if a single file’s size exceeds the 100MB max– when using this method for a single file, the file limit check does not occur.
+
+Input Parameters:
+
+Input Parameter	|Type	|Description
+-----|-----|-----
+data|	FileDataRequest|	Complex type defined below
+
+FileDataRequest Complex Type Definition:
+
+Element Name|	Type|	Required|	Description
+-----|-----|-----|-----
+file_id	|string|	yes|	Unique ID of a file found from getNoticeData call  (i.e. file_id element)
+notice_id|	string|	Yes	|Unique Identifier for a notice
+
+Response:
+
+Output Parameter|	Type|	Description
+-----|-----|-----
+response|	FileDataResponse|	Complex type
+
+NoticeDataResponse Complex Type Definition:
+
+Element Name | Type |  Description
+------ | ------- | -------
+success	|boolean|	False if something failed in the request.
+messages|	string[]	|Array of messages if application has any info about the call
+file|	DocumentFileData	|Complex Type defined below
+
+DocumentFileData Complex Type Definition:
+
+Element Name | Type |  Description
+------ | ------- | -------
+file_id	|string|	Unique ID
+filename|	string	|Filename – only used for files stored on FBO
+notice_id	|string|	Unique identifier for a notice
+filedata|	base64Binary|	File data – only used for files stored on FBO
+link|	string	|Link to file – used for files not stored on FBO
+desc	|string|	Description
+size_limit_error|	boolean	|This element will be true if its size or aggregate file data for the request exceeds the max return size.
+
+## Examples
+
+Please note that variances may exist between SOAP requests generated by different XML tools and the samples below. The web service should still operate as expected as long as the syntax is CONSISTENT throughout the submission.
+
+
+
+
+
+
+
 
 
 
