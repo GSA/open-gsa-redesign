@@ -224,9 +224,43 @@ awdnbr | string | no | Award # |	255 characters
 deletetype |	string |	no |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachment. Defaults to “notice” if not provided
 deletemethod |	string | no | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
 
+DeleteNoticeOrDocumentPackage Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+solnbr |	string |	no |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
+ntype |	string |	no |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "ITB" - for Intent to Bundle Requirements (DoD- Funded)
+awdnbr |  string | no | Award # |	255 characters
+deletetype |	string |	no |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachment. Defaults to “notice” if not provided
+deletemethod |	string | no | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
+
 ### Archive Notice (ArchiveNotice)
 
 This method is used to update the archive date on an existing notice.  If a past date is provided or no date provided at all, the notice will be immediately archived.
+
+Input Parameters:
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+data | ArchiveNotice | Complex type defined below
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+response | PostingResponse | Complex type defined below
+
+ArchiveNotice Complex Type Definition:
+
+Element Name | Type | Required | Description | Character Limit / Restrictions
+------ | ------- | ------- | ------- | -------
+date |	date |	No |	Posting Date | YYYYMMDD
+solnbr | string |	Yes |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
+ntype |	string | no |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "ITB" - for Intent to Bundle Requirements (DoD- Funded)
+archdate | date |	no | New Archive Date – If none provided, notice will archive immediately | YYYYMMDD
+officeid | string |	Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
+
+### Cancel Notice (CancelNotice)
 
 
 
