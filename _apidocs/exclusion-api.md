@@ -4,7 +4,6 @@ banner-heading: Exclusions API
 ---
 
 ## Overview
-**Important Note:** The specifications on this page are for a soon to be released API.  Check back here or be in contact with IAE for the release date and testing sessions.<br/><br/>
 The Exclusions API will allow users to request Public Exclusion Information based on various optional request parameters. 
 The response will be provided in the JSON format in a paginated manner.
 
@@ -14,7 +13,7 @@ The response will be provided in the JSON format in a paginated manner.
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
 
-**Additional Features of the Exclusion API:** It can serve as an Extract API with the addition of “format” parameter in the request. Following are the key features of the Exclusion Extract API:
+**Additional Features of the Exclusion API:** Following are the key features of the Exclusion Extract API:
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
 
 
@@ -45,7 +44,7 @@ Generating a System Account API Key:
 
 ## API Description
 
-**Endpoint:** Coming soon
+**Alpha Endpoint:** https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key=<value> 
 
 **Description** Restful endpoint to retrieve Exclusion detail information
 
