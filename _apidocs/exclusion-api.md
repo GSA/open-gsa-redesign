@@ -44,7 +44,7 @@ Generating a System Account API Key:
 
 ## API Description
 
-**Alpha Endpoint:** https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key=<value> 
+**Alpha Endpoint:** https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key= < value > 
 
 **Description** Restful endpoint to retrieve Exclusion detail information
 
