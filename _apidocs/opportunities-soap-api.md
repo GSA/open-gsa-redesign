@@ -11,15 +11,6 @@ The Opportunity Management SOAP APIs will allow authorized users to submit and r
 
 ## Getting Started
 
-### Generating a System Account API Key
-* Users registered with a government email address and have appropriate Opportunities Domain role may request a system account for data access.
-* If a user satisfies the above registration criteria they will be able to access the System Accounts widget from their Workspace page after logging in.
-* The user can then select “Go to System Accounts” from the widget and fill out the required sections.
-* The requested system account will then need to be approved. After approval the user will be notified via email and they can also see the updated status in the System Account widget.
-* The user can select ‘Go to System Accounts’ again in the widget from their workspace and enter a new system account password.
-* After setting up the password the user will see a new section for retrieving a system account API Key.
-* The user must enter their password again to retrieve the key.
-
 ## Web Services Description Language (WSDL)
 To view the WSDL for all available methods and object definitions, refer below links:
 * Alpha WSDL Link: https://api-alpha.sam.gov/prodlike/ws/services.WSDL
