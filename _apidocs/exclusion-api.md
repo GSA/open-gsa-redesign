@@ -13,7 +13,7 @@ The response will be provided in the JSON format in a paginated manner.
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
 
-**Additional Features of the Exclusion API:** Following are the key features of the Exclusion Extract API:
+**Additional Features of the Exclusion API:** Following are the key features of the Exclusion API:
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
 
 
@@ -23,7 +23,7 @@ The response will be provided in the JSON format in a paginated manner.
 
 Exclusions API can be accessed from Beta or Alpha via the following end points:
 * Beta: Coming soon
-* Alpha: https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key=<value> 
+* Alpha: https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key= < value > 
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
