@@ -5,7 +5,6 @@ banner-heading: Entity Management API
 
 This content is currently not Firefox compliant.  Please access via Chrome or Internet Explorer.
 ## Overview
-**Important Note:** The specifications on this page are for a soon to be released API.  Check back here or be in contact with IAE for the release date and testing sessions.<br/><br/>
 The Entity Management API will allow users to request Public Entity Information based on various optional request parameters. 
 
 
@@ -16,7 +15,7 @@ The Entity Management API will allow users to request Public Entity Information 
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
 
-**Additional Features of the Entity Management API:** It can serve as an Extract API with the addition of "format" parameter in the request. Following are the key features of the Entity Management Extract API:
+**Additional Features of the Entity Management API:** Following are the key features of the Entity Management Extract API:
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
 
 <p><small><a href="#">Back to top</a></small></p>
