@@ -18,9 +18,6 @@ The Entity Management API will allow users to request Public Entity Information 
 
 **Additional Features of the Entity Management API:** It can serve as an Extract API with the addition of "format" parameter in the request. Following are the key features of the Entity Management Extract API:
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
-* It returns asynchronous responses by sending file downloadable links in the browser and in the user emails.
-* It returns data in the JSON or CSV format as selected by the user.
-* It can return only the first 1,000,000 records.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -28,7 +25,7 @@ The Entity Management API will allow users to request Public Entity Information 
 
 Public Entity Details can be accessed from Beta or Alpha via the following end points:
    * Beta: Coming soon
-   * Alpha: Coming soon
+   * Alpha: https://api-alpha.sam.gov/prodlike/entity-management?api_key=vMYr67xfJn4XaC4kjNCB3f5IQ9gSb2IyDegFHyS1
 
 FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
    * Beta: Coming soon
@@ -333,18 +330,6 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
 <br>Example: includeSections=entityRegistration,coreData</td>
-</tr>
-
-<tr>
-<td>format</td>
-<td>Allows user to download different file formats(csv and json are allowable values).
-<br>Example: format=csv</td>
-</tr>
-
-<tr>
-<td>emailId</td>
-<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov</td>
 </tr>
 
 </table>
@@ -2541,17 +2526,6 @@ First Name</td>
 <br>Example: includeSections=entityRegistration,coreData</td>
 </tr>
 
-<tr>
-<td>format</td>
-<td>Allows user to download different file formats(csv and json are allowable values).
-<br>Example: format=csv</td>
-</tr>
-
-<tr>
-<td>emailId</td>
-<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov</td>
-</tr>
 </table>
 </details><br>
 
@@ -6192,17 +6166,6 @@ First Name</td>
 <br>Example: includeSections=entityRegistration,coreData</td>
 </tr>
 
-<tr>
-<td>format</td>
-<td>Allows user to download different file formats(csv and json are allowable values).
-<br>Example: format=csv</td>
-</tr>
-
-<tr>
-<td>emailId</td>
-<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov</td>
-</tr>
 </table>
 </details><br>
 
@@ -9787,7 +9750,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. |
+| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameter: 'includeSections' is not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. |
 | 403 | API key is not correct or was not provided. |
 
 <p><small><a href="#">Back to top</a></small></p>
