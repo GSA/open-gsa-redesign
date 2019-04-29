@@ -1,34 +1,21 @@
 ---
-title: Extracts Download APIs
-banner-heading: Extracts Download APIs
+title: Entity/Exclusions Extracts Download APIs
+banner-heading: Entity/Exclusions Extracts Download APIs
 ---
 
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 
 
 ## Overview
-The Extracts Download API is permits SAM users with valid roles to download SAM extracts.<br>
+The Extracts Download API permits beta.SAM.gov users with valid roles to download entity and exclusions data extracts.<br>
 
-Legacy SAM offers extracts for Entity Management and Exclusions data.  The Entity Management extracts 
-contain entities (businesses and government agencies) in SAM and are primarily utilized by systems that
-comprise of the contract writing systems, government payment systems and other acquisition related 
-systems The Exclusions extract contains a list of all parties with a currently active exclusion in SAM
-and may be used by contract writing systems, government payment systems, HR systems, or any party 
-wishing to check against a government debarment list.  GSA is in the process of modernizing some of 
-the Legacy systems (Legacy SAM being one) and has made these Extracts available in Beta.SAM.gov.
-<br>
-
-Legacy SAM offers a data dump of all currently active Exclusions as a comma-separated value (CSV) file,
-published daily, 365 days per year.  This file maybe be used by contract writing systems, government 
-payment systems, HR systems, or any party wishing to check against a government debarment list.  The 
-Exclusions extract contains only publicly available data and may be used by anyone with a valid API 
-key from beta.sam.gov.
+The Entity Management extracts contain entities (businesses and government agencies) data from SAM.gov.  The Exclusions extract contains a list of all parties with a currently active exclusion in SAM.
 
   
 1. **Entity Management Public Data Package:**
    * This extract contains entity registration data publicly available under the Freedom of Information Act (FOIA) for those registered in SAM.gov to do business with the Federal government.
    * All entities and data elements are classified as public.
-   * End user needs to create system account with public access roles and procure an API_KEY to access these extracts.
+   * End user needs to create an account in beta.SAM.gov and procure an API_KEY to access these extracts.
    * File naming convention:<br />
 	 Monthly ASCII (Default): SAM_PUBLIC_MONTHLY_YYYYMMDD.ZIP<br />
 	 Monthly UTF-8 (Default): SAM_PUBLIC_UTF-8_MONTHLY_YYYYMMDD.ZIP<br />
@@ -57,7 +44,7 @@ key from beta.sam.gov.
 4. **Exclusions Public Data Package:**
    * This extract all active exclusions in SAM as a comma-separated value (CSV) file.
    * The Exclusions extract is a daily file, published 7 days per week.
-   * End user needs to create system account with public access roles and procure an API_KEY to access these extracts.
+   * End user needs to create an account in beta.SAM.gov and procure an API_KEY to access these extracts.
    * File Name: SAM_Exclusions_Public_Extract_YYDDD.ZIP (Julian Date)<br />
    		* April 16, 2019 is the 106th day of 2019.  Therefore, the Exclusions extract for April 16, 2019 would be SAM_Exclusions_Public_Extract_19106.ZIP.
 
