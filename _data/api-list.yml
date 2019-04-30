@@ -28,7 +28,8 @@
 - title: eMuseum API
   description: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
   url: https://gsa.github.io/eMuseum-API/
-- title: FedBizOpps Web Services
+- title: Entity/Exclusion Extract API (Coming Soon)
+- title: Entity and Exclusions Exctract API
   description: This system supports Web Services for Federal buyers to post information to the database using their agency’s electronic procurement system.
   url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
 - title: Federal Procurement Data System - FPDS API
