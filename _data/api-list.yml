@@ -18,7 +18,7 @@
   url: https://calc.gsa.gov/api/docs/#
 - title: Data.gov CKAN API
   description: The government-wide data catalog available at Data.gov.
-  url: https://www.data.gov/developers/apis
+  url: https://open.gsa.gov/api/datadotgov/
 - title: Discovery API
   description: The Discovery API drives the Discovery Market Research Tool. It contains information on various GSA services contracts and the awarded vendors, such as their contracting history, their eligibility for contract awards, and their small business designations.
   url: https://discovery.gsa.gov/api/
@@ -46,7 +46,7 @@
 - title: GSA.gov Content API
   description: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last.
   url: https://www.gsa.gov/about-us/gsa-content-api
-- title: Opportunity Management API (Coming Soon)
+- title: Opportunity Management API
   description: The Opportunity Management API will allow authorized users to submit and request Opportunities data.
   url: opportunities-api/
 - title: Per Diem API
