@@ -15,7 +15,7 @@ tags:
   - name: exclusions-api-controller
     description: Operations pertaining to Exclusions API
 paths:
-  Coming soon:
+  /sam-exclusions:
     get:
       tags:
         - exclusions-api-controller
@@ -209,7 +209,7 @@ paths:
         "404":
           description: The resource you were trying to reach is not found
 servers:
-  - url: Coming soon
+  - url: https://api-alpha.sam.gov/prodlike
 components:
   schemas:
     CrossReferences:
