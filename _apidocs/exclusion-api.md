@@ -13,10 +13,6 @@ The response will be provided in the JSON format in a paginated manner.
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
 
-**Additional Features of the Exclusion API:** Following are the key features of the Exclusion API:
-* It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
-
-
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
