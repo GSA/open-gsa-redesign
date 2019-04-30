@@ -148,7 +148,8 @@ Option 2: Using fileType and other parameters.  If you choose not to use the fil
 **Entity Management Public Data Package Sample API calls:**<br>
 
 Monthly File, April 2019 (fileName):<br>
-https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileName=SAM_PUBLIC_MONTHLY_20190407.ZIP<br>
+Coming soon
+<!--https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileName=SAM_PUBLIC_MONTHLY_20190407.ZIP<br>>
 
 Monthly File, April 2019 (parameter):<br>
 https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=PUBLIC&frequency=MONTHLY&date=04/2019<br>
