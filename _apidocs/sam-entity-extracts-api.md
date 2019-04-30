@@ -58,6 +58,7 @@ The Entity Management extracts are available using the following endpoints:
 
   * Alpha: Coming soon
   * Beta: Coming soon
+  
 Generating a personal API Key:
 * Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on beta.sam.gov
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
