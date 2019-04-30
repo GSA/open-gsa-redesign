@@ -216,6 +216,13 @@ https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=EXC
 **Expected Result**:
 The layout of the Exclusions extract is available here: [TBD]
 
+## OpenAPI Specification File 
+
+You can view the full details of this API's in the OpenAPI Specification file available here:<br>
+<a href="v1/openapi.yaml">Open API specification file for the Entity/Exclusions Extracts Download API</a>
+<
+<p><small><a href="#">Back to top</a></small></p>
+
 ## HTTP Response Codes
 
 The API will return one of the following responses:
