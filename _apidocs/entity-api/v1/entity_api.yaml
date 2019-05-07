@@ -15,7 +15,7 @@ tags:
   - name: entity-management-controller
     description: Operations pertaining to Entity Management Data
 paths:
-  Coming soon:
+   /entity-management:
     get:
       tags:
         - entity-management-controller
@@ -334,7 +334,7 @@ paths:
         "404":
           description: The resource you were trying to reach is not found
 servers:
-  - url: Coming soon
+  - url: https://api-alpha.sam.gov/prodlike
 components:
   schemas:
     BusinessInformation:
