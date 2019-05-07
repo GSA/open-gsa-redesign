@@ -1689,6 +1689,76 @@
 			"theme": ["Acquisition"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "e-Buy Awards for Fiscal Year 2017",
+			"description": "GSA e-Buy, is an electronic Request for Quote (RFQ) / Request for Proposal (RFP) system designed to allow government buyers to request information, find sources, and prepare RFQs/RFPs, online, for millions of services and products offered through GSA's Multiple Award Schedule (MAS) and GSA Technology Contracts. Government buyers can use eBuy to obtain quotes or proposals for services, large quantity purchases, big ticket items, and purchases with complex requirements. Buyers may use e-Buy to evaluate and accept the quotation that represents the best value. Buyers may then make award to any contractor whose quotation was accepted. The e-Buy Award dataset are the award data collected by e-Buy for a given fiscal year.",
+			"modified": "2019-04-29",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-04-29-01",
+			"dataQuality": true,
+			"issued": "2015-09-28",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P1Y",
+			"isPartOf": "GSA-2015-08-31",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Usha Gopal",
+				"hasEmail": "mailto:usha.gopal@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "e-Buy Awards FY 2017",
+					"downloadURL": "https://inventory.data.gov/dataset/451f368c-920f-42e3-b605-50efab064aaa/resource/e583fa3f-d108-4108-a216-32fd8fdd3eb1/download/ebuyfy17awards.xlsx"
+				}
+			],
+			"keyword": ["Awards", "Contracts", "Quote", "RFQ", "Schedules", "e-Buy", "procurement"],
+			"bureauCode": ["023:10"],
+			"programCode": ["023:007"],
+			"language": ["en-us"],
+			"theme": ["Acquisition"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "e-Buy Awards for Fiscal Year 2018",
+			"description": "GSA e-Buy, is an electronic Request for Quote (RFQ) / Request for Proposal (RFP) system designed to allow government buyers to request information, find sources, and prepare RFQs/RFPs, online, for millions of services and products offered through GSA's Multiple Award Schedule (MAS) and GSA Technology Contracts. Government buyers can use eBuy to obtain quotes or proposals for services, large quantity purchases, big ticket items, and purchases with complex requirements. Buyers may use e-Buy to evaluate and accept the quotation that represents the best value. Buyers may then make award to any contractor whose quotation was accepted. The e-Buy Award dataset are the award data collected by e-Buy for a given fiscal year.",
+			"modified": "2019-04-29",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-04-029-02",
+			"dataQuality": true,
+			"issued": "2015-09-28",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P1Y",
+			"isPartOf": "GSA-2015-08-31",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Usha Gopal",
+				"hasEmail": "mailto:usha.gopal@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "ebuyFY18Awards",
+					"downloadURL": "https://inventory.data.gov/dataset/a42deff7-0d0d-433e-ae16-985b4f2ac555/resource/6a9045f1-5f83-4c1f-8f70-8203ed07ce42/download/ebuyfy18awards.xlsx"
+				}
+			],
+			"keyword": ["Awards", "Contracts", "Quote", "RFQ", "Schedules", "e-Buy", "procurement"],
+			"bureauCode": ["023:10"],
+			"programCode": ["023:007"],
+			"language": ["en-us"],
+			"theme": ["Acquisition"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "e-Buy Awards Parent",
 			"description": "This is the Parent folder for GSA e-Buy Fiscal Year information, e-Buy is an electronic Request for Quote (RFQ) / Request for Proposal (RFP) system designed to allow government buyers to request information, find sources, and prepare RFQs/RFPs, online, for millions of services and products offered through GSA's Multiple Award Schedule (MAS) and GSA Technology Contracts.",
 			"modified": "2015-09-04",
@@ -2736,7 +2806,7 @@
 			"@type": "dcat:Dataset",
 			"title": "FY 2017 Federal Real Property Profile Data for Civilian Agencies",
 			"description": "An export of data from FRPP, a database of Federal Real Property Profile for Civilian Agencies.",
-			"modified": "2019-03-07",
+			"modified": "2019-04-29",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-12-06-01",
 			"dataQuality": true,
@@ -2761,10 +2831,10 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "text/csv",
-					"format": "csv",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
 					"title": "FY 2017 Civilian Agency Public FRPP",
-					"description": "FY 2017 Civilian Agency Public FRPP",
+					"description": "FY 2017 Civilian Agency Public FRPP - xlsx",
 					"describedBy": "https://www.gsa.gov/cdnstatic/FY%202017%20FRPP%20DATA%20DICTIONARY%20V2_0.pdf",
 					"describedByType": "application/pdf",
 					"downloadURL": "https://inventory.data.gov/dataset/509d3f36-464e-4e4c-a26b-8582605c254e/resource/37120970-e7cf-47e3-ba25-3f5a6b0f4c2f/download/fy17-frpp-public-dataset-022719.csv"
@@ -3414,7 +3484,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2019-04-03",
+			"modified": "2019-04-30",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3437,8 +3507,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON 04/03/19",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-040319.json"
+					"description": "EDI JSON 04/30/19",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-04-30-19.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3598,7 +3668,7 @@
 					"mediaType": "application/zip",
 					"format": "ZIP",
 					"title": "GSA IT Policy Archive Zip",
-					"description": "Last update: 2019-01-30",
+					"description": "Last update: 2019-04-23",
 					"downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
 				}
 			],
@@ -5605,6 +5675,13 @@
 					"title": "Per Diem Reimbursement Rates",
 					"description": "Updated through 2019",
 					"downloadURL": "https://inventory.data.gov/dataset/ad729937-b245-4eec-a88d-b72eb36d8106/resource/8ea44bc4-22ba-4386-b84c-1494ab28964b/download/perdiemreimbursementrates.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/json",
+					"format": "json",
+					"title": "Data dictionary",
+					"description": "Describes the field types for the Per Diem Reimbursement Rates dataset.",
+					"downloadURL": "https://inventory.data.gov/dataset/ad729937-b245-4eec-a88d-b72eb36d8106/resource/9088acfa-8893-4b4b-b25d-867a17f34513/download/datadictionary.json"
 				}
 			],
 			"keyword": ["federal per diem", "lodging", "m ie", "maximum per diem rates", "meals and incidental expenses", "per diem"],
