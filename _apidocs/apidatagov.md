@@ -40,7 +40,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 ## API Calls
 
 
-{% swagger-section-header-disable-try-it-out.html %}
+{% include swagger-section-header-disable-try-it-out.html %}
     url: "v1/openapi.yaml", 
 {% include swagger-section-footer-disable-try-it-out.html %}
 
