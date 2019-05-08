@@ -4,6 +4,9 @@ banner-heading: Api.Data.Gov Admin API
 ---
 
 
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
+
 ## Overview
 
 [api.data.gov](https://api.data.gov) is a free API management service for federal agencies. This API implements the API Umbrella Admin API.
@@ -26,10 +29,20 @@ For more details, refer to the [Admin API documentation found here](http://nrel.
 
 <p><small><a href="#">Back to top</a></small></p>
 
+
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="https://api-umbrella.readthedocs.io/en/latest/_static/admin-api-swagger.yml">Open API specification file for the Sample API</a>
+
+<p><small><a href="#">Back to top</a></small></p>
+
+## API Calls
+
+
+{% include swagger-section-header-disable-try-it-out.html %}
+    url: "v1/openapi.yaml", 
+{% include swagger-section-footer-disable-try-it-out.html %}
 
 <p><small><a href="#">Back to top</a></small></p>
 

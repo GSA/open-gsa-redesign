@@ -66,7 +66,7 @@ If you already host your documentation on this site, and you'd like to add the S
 [Insert descriptive text here]
 
 
-{% swagger-section-header-disable-try-it-out.html %}
+{% include swagger-section-header-disable-try-it-out.html %}
     url: "v1/[Name of OpenAPI file]", 
 {% include swagger-section-footer-disable-try-it-out.html %}
 
