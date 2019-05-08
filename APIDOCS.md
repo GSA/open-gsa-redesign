@@ -40,7 +40,15 @@ You can also ask the CTO team to update the /_data/api-list.yml, which will add 
 
 ## Adding swagger UI to your existing API documentation (with Try It Out functionality)
 
-If you already host your documentation on this site, and you'd like to add the Swagger UI, add this section following the section with the OpenAPI specification:
+If you already host your documentation on this site, and you'd like to add the Swagger UI, add this code above the first section:
+
+```
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
+```
+
+
+Next, add this section following the section with the OpenAPI specification:
 
 ```
 ## API Calls
@@ -58,7 +66,14 @@ If you already host your documentation on this site, and you'd like to add the S
 
 ## Adding swagger UI to your existing API documentation (no Try It Out functionality)
 
-If you already host your documentation on this site, and you'd like to add the Swagger UI, add this section following the section with the OpenAPI specification:
+If you already host your documentation on this site, and you'd like to add the Swagger UI, add this code above the first section:
+
+```
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
+```
+
+Next, this section following the section with the OpenAPI specification:
 
 ```
 ## API Calls
