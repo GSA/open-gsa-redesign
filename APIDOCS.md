@@ -81,7 +81,7 @@ Next, this section following the section with the OpenAPI specification:
 [Insert descriptive text here]
 
 
-{% swagger-section-header-disable-try-it-out.html %}
+{% include swagger-section-header-disable-try-it-out.html %}
     url: "v1/[Name of OpenAPI file]", 
 {% include swagger-section-footer-disable-try-it-out.html %}
 
