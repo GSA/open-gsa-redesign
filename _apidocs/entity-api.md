@@ -2,6 +2,8 @@
 title: Entity Management  API
 banner-heading: Entity Management API
 ---
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
 
 This content is currently not Firefox compliant.  Please access via Chrome or Internet Explorer.
 ## Overview
@@ -9725,6 +9727,16 @@ First Name</td>
 
 <p><small><a href="#">Back to top</a></small></p>
 
+
+## API Calls
+
+{% include swagger-section-header.html %}
+    url: "v1/entity_api.yaml", 
+{% include swagger-section-footer.html %}
+
+<p><small><a href="#">Back to top</a></small></p>
+
+
 ## OpenAPI Specification File 
 
 You can view the full details of this API in the OpenAPI Specification file available here:
@@ -9734,13 +9746,12 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ## HTTP Response Codes
 
-The API will return one of the following responses:
+The API will return below application level error messages
 
 | HTTP Response Code | Description |
 | ---- | ----------- |
-| 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameter: 'includeSections' is not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. |
-| 403 | API key is not correct or was not provided. |
+| 400 | You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameter: 'includeSections' is not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. |
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
