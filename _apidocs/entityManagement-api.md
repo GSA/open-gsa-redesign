@@ -315,6 +315,24 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
+<td>edi</td>
+<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
+<br>Example: emailId=test@gsa.gov</td>
+</tr>
+
+<tr>
+<td>emailId</td>
+<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
+<br>Example: emailId=test@gsa.gov</td>
+</tr>
+
+<tr>
+<td>emailId</td>
+<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
+<br>Example: emailId=test@gsa.gov</td>
+</tr>
+
+<tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
 <br>Example: includeSections=entityRegistration,coreData</td>
@@ -9728,7 +9746,7 @@ First Name</td>
 ## API Calls
 
 {% include swagger-section-header.html %}
-    url: "v1/entity_api.yaml", 
+    url: "v1/openapi.yaml", 
 {% include swagger-section-footer.html %}
 
 <p><small><a href="#">Back to top</a></small></p>
