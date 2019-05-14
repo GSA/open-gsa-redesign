@@ -2806,7 +2806,7 @@
 			"@type": "dcat:Dataset",
 			"title": "FY 2017 Federal Real Property Profile Data for Civilian Agencies",
 			"description": "An export of data from FRPP, a database of Federal Real Property Profile for Civilian Agencies.",
-			"modified": "2019-04-29",
+			"modified": "2019-05-08",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-12-06-01",
 			"dataQuality": true,
@@ -2833,11 +2833,11 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
-					"title": "FY 2017 Civilian Agency Public FRPP",
-					"description": "FY 2017 Civilian Agency Public FRPP - xlsx",
+					"title": "FRPP_Public_Dataset_FY17_042419",
+					"description": "FRPP_Public_Dataset_FY17_042419.xlsx",
 					"describedBy": "https://www.gsa.gov/cdnstatic/FY%202017%20FRPP%20DATA%20DICTIONARY%20V2_0.pdf",
 					"describedByType": "application/pdf",
-					"downloadURL": "https://inventory.data.gov/dataset/509d3f36-464e-4e4c-a26b-8582605c254e/resource/37120970-e7cf-47e3-ba25-3f5a6b0f4c2f/download/fy17-frpp-public-dataset-022719.csv"
+					"downloadURL": "https://inventory.data.gov/dataset/509d3f36-464e-4e4c-a26b-8582605c254e/resource/37120970-e7cf-47e3-ba25-3f5a6b0f4c2f/download/frpppublicdatasetfy1704242019.xlsx"
 				}
 			],
 			"keyword": ["FRPP", "Federal Real Property Profile", "GSA", "General Services Administration", "RTF", "building", "civilian", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -2848,7 +2848,7 @@
 			"@type": "dcat:Dataset",
 			"title": "FY 2016 Federal Real Property Profile Data for Civilian Agencies",
 			"description": "An export of data from FRPP, a database of Federal Real Property Profile for Civilian Agencies.",
-			"modified": "2018-03-28",
+			"modified": "2019-05-08",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-03-28-02",
 			"dataQuality": true,
@@ -2873,13 +2873,13 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "text/csv",
-					"format": "csv",
-					"title": "FY 2016 Civilian Agency Public FRPP",
-					"description": "An export of data from FRPP, a database of Federal Real Property Profile for Civilian Agencies",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "RP_FRPP_Public_Dataset_FY16_Final_05012019",
+					"description": "An export of data from FRPP, a database of Federal Real Property Profile for Civilian Agencies.",
 					"describedBy": "https://www.gsa.gov/cdnstatic/FY_2016_FRPP_Data_Dictionary_Version_3___Oct_31__2016.pdf",
 					"describedByType": "application/pdf",
-					"downloadURL": "https://inventory.data.gov/dataset/70667db2-37b0-4a16-adda-beb476e3bf18/resource/e394b6f0-1888-4ffe-9ab1-bab83d2a95d3/download/fy-2016-civilian-agency-public-frpp-dataset.csv"
+					"downloadURL": "https://inventory.data.gov/dataset/70667db2-37b0-4a16-adda-beb476e3bf18/resource/e394b6f0-1888-4ffe-9ab1-bab83d2a95d3/download/rpfrpppublicdatasetfy16final05012019.xlsx"
 				}
 			],
 			"keyword": ["FRPP", "Federal Real Property Profile", "GSA", "General Services Administration", "RTF", "building", "civilian", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -3484,7 +3484,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2019-04-30",
+			"modified": "2019-05-08",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3507,8 +3507,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON 04/30/19",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-04-30-19.json"
+					"description": "EDI JSON 05/08/19",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-050819.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
