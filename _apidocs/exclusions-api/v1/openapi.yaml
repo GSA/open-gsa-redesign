@@ -182,171 +182,19 @@ paths:
           required: false
           schema:
             type: string
-        - name: format
-            in: query
-            description: Format
-            required: false
-            schema:
-              type: string
-        - name: emailID
-            in: query
-            description: Email ID
-            required: false
-            schema:
-              type: string
 
       responses:
         "200":
           description: Successfully retrieved list
           content:
             application/hal+json:
-              schema:
-                $ref: "#/components/schemas/ExclusionsResponse"
+        "400":
+          description: Application Level Error Message.
         "401":
           description: You are not authorized to view the resource
         "403":
-          description: Accessing the resource you were trying to reach is forbidden
+          description: API key is not correct or was not provided
         "404":
           description: The resource you were trying to reach is not found
 servers:
   - url: https://api-alpha.sam.gov/prodlike
-components:
-  schemas:
-    CrossReferences:
-      type: object
-      properties:
-        crossReferencesList:
-          type: array
-          items:
-            $ref: "#/components/schemas/CrossReferencesList"
-    ExclusionOtherInformation:
-      type: object
-      properties:
-        additionalComments:
-          type: string
-        crossReferences:
-          $ref: "#/components/schemas/CrossReferences"
-        ctCode:
-          type: string
-        dnbInvestigationStatus:
-          type: string
-        moreLocations:
-          type: array
-          items:
-            type: string
-    ExclusionDetails:
-      type: object
-      properties:
-        classificationType:
-          type: string
-        excludingAgencyCode:
-          type: string
-        excludingAgencyName:
-          type: string
-        exclusionProgram:
-          type: string
-        exclusionType:
-          type: string
-    ExclusionIdentification:
-      type: object
-      properties:
-        ueiSAMMI:
-          type: string
-        ueiDUNS:
-          type: string
-        entityEFTIndicator:
-          type: string
-        cageCode:
-          type: string
-        firstName:
-          type: string
-        lastName:
-          type: string
-        middleName:
-          type: string
-        npi:
-          type: string
-        prefix:
-          type: string
-        suffix:
-          type: string
-        yName:
-          type: string
-    ExclusionAddress:
-      type: object
-      properties:
-        address1:
-          type: string
-        address2:
-          type: string
-        addressCity:
-          type: string
-        addressStateProvince:
-          type: string
-        addressZipOrPostalCode:
-          type: string
-        addressZipPlus4:
-          type: string
-        country:
-          type: string
-    ExclusionActions:
-      type: object
-      properties:
-        listOfActions:
-          type: array
-          items:
-            $ref: "#/components/schemas/ListOfActions"
-    VesselDetails:
-      type: object
-      properties:
-        callSign:
-          type: string
-        flag:
-          type: string
-        grt:
-          type: string
-        owner:
-          type: string
-        secondaryAddress:
-          type: string
-        tonnage:
-          type: string
-        type:
-          type: string
-    CrossReferencesList:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-    ListOfActions:
-      type: object
-      properties:
-        activateDate:
-          type: string
-        createDate:
-          type: string
-        recordStatus:
-          type: string
-        terminationDate:
-          type: string
-        terminationType:
-          type: string
-        updateDate:
-          type: string
-    ExclusionsResponse:
-      type: object
-      properties:
-        exclusionDetails:
-          $ref: "#/components/schemas/ExclusionDetails"
-        exclusionIdentification:
-          $ref: "#/components/schemas/ExclusionIdentification"
-        exclusionActions:
-          $ref: "#/components/schemas/ExclusionActions"
-        exclusionAddress:
-          $ref: "#/components/schemas/ExclusionAddress"
-        exclusionOtherInformation:
-          $ref: "#/components/schemas/ExclusionOtherInformation"
-        vesselDetails:
-          $ref: "#/components/schemas/VesselDetails"
