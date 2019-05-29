@@ -2,8 +2,6 @@
 title: Entity Management  API
 banner-heading: Entity Management API
 ---
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
 
 This content is currently not Firefox compliant.  Please access via Chrome or Internet Explorer.
 ## Overview
@@ -22,7 +20,7 @@ The Entity Management API will allow users to request Public Entity Information 
 ## Getting Started
 
 Public Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: Coming soon
+   * Beta: https://api.sam.gov/prod/entity-management?api_key= < value >
    * Alpha: https://api-alpha.sam.gov/prodlike/entity-management?api_key= < value >
 
 FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
@@ -59,7 +57,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <details>
 <summary><b>Public Entity Management Endpoint</b></summary><br>
 <tr>
-<td><b>Endpoint:</b>  Coming soon </td>
+<td><b>Endpoint:</b>  https://api.sam.gov/prod/entity-management?api_key= < value > </td>
 </tr><br>
 
 <tr>
@@ -76,8 +74,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 
 <tr>
 <td>activationDate</td>
-<td>Allows a single Date or Date range.Format: MM/dd/yyyy.
-<br>Example: activationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -136,8 +135,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 
 <tr>
 <td>expirationDate</td>
-<td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>Example: expirationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: expirationDate=01/01/2019, expirationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -166,8 +166,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 
 <tr>
 <td>registrationDate</td>
-<td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>Example: registrationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -312,24 +313,6 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>servedDisasterMSA</td>
 <td>Allows text.
 <br>Example: servedDisasterMSA=86800730</td>
-</tr>
-
-<tr>
-<td>edi</td>
-<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov</td>
-</tr>
-
-<tr>
-<td>emailId</td>
-<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov</td>
-</tr>
-
-<tr>
-<td>emailId</td>
-<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov</td>
 </tr>
 
 <tr>
@@ -9742,16 +9725,6 @@ First Name</td>
 
 <p><small><a href="#">Back to top</a></small></p>
 
-
-## API Calls
-
-{% include swagger-section-header.html %}
-    url: "v1/openapi.yaml", 
-{% include swagger-section-footer.html %}
-
-<p><small><a href="#">Back to top</a></small></p>
-
-
 ## OpenAPI Specification File 
 
 You can view the full details of this API in the OpenAPI Specification file available here:
@@ -9761,12 +9734,13 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ## HTTP Response Codes
 
-The API will return below application level error messages
+The API will return one of the following responses:
 
 | HTTP Response Code | Description |
 | ---- | ----------- |
-| 400 | * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameter: 'includeSections' is not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. |
-
+| 200 | Successful. Data will be returned in JSON format. |
+| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameter: 'includeSections' is not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. |
+| 403 | API key is not correct or was not provided. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
