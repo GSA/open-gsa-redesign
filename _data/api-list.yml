@@ -27,7 +27,7 @@
   url: https://gsa.github.io/eMuseum-API/
 - title: Entity Management API
   description: API to retrieve Entity detail information from beta.sam.gov using various searchable parameters.
-  url: entityManagement-api/
+  url: entity-api/
 - title: Exclusions API
   description: API to retrieve Exclusion detail information from beta.sam.gov using various searchable parameters.
   url: exclusions-api/
