@@ -2,8 +2,6 @@
 title: Exclusions  API
 banner-heading: Exclusions API
 ---
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
 
 ## Overview
 The Exclusions API will allow users to request Public Exclusion Information based on various optional request parameters. 
@@ -20,7 +18,7 @@ The response will be provided in the JSON format in a paginated manner.
 ## Getting Started
 
 Exclusions API can be accessed from Beta or Alpha via the following end points:
-* Beta: Coming soon
+* Beta: https://api.sam.gov/prod/sam-exclusions?api_key= < value > 
 * Alpha: https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key= < value > 
 
 Generating a personal API Key:
@@ -42,7 +40,7 @@ Generating a System Account API Key:
 
 ## API Description
 
-**Alpha Endpoint:** https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key= < value > 
+**Beta Endpoint:** https://api.sam.gov/prod/sam-exclusions?api_key= < value > 
 
 **Description** Restful endpoint to retrieve Exclusion detail information
 
@@ -62,10 +60,10 @@ Generating a System Account API Key:
 | excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> Example: 'excludingAgencyCode=AF' |
 | excludingAgencyName | Allows a string (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null).<br><br> Example: 'excludingAgencyName=FEDERAL' |
 | ctCode | Allows a string.<br><br> Example: 'ctCode=ZZ' |
-| activationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'activationDate=02/12/1999' |
-| creationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'creationDate=02/12/1999' |
-| updateDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'updateDate=02/12/1999' |
-| terminationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'terminationDate=02/12/1999' |
+| activationDate | Allows a single Date or Date range. Format: Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'activationDate=01/01/2019', 'activationDate=[01/01/2019,05/29/2019]' |
+| creationDate | Allows a single Date or Date range. Format: Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'creationDate=01/01/2019', 'creationDate=[01/01/2019,05/29/2019]' |
+| updateDate | Allows a single Date or Date range. Format: Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br>  Examples: 'updateDate=01/01/2019', 'updateDate=[01/01/2019,05/29/2019]'' |
+| terminationDate | Allows a single Date or Date range. Format: Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'terminationDate=01/01/2019', 'terminationDate=[01/01/2019,05/29/2019]' |
 | cageCode | Allows a string.<br><br> Example: 'cageCode=0Y5L9' |
 | npi  | Allows a string.<br><br> Example: 'npi=1053373266' |
 | ssn  | Allows a string.<br><br> Example: 'ssn=XXXXXXXXX' |
@@ -131,14 +129,6 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## API Calls
-
-{% include swagger-section-header.html %}
-    url: "v1/openapi.yaml", 
-{% include swagger-section-footer.html %}
-
-<p><small><a href="#">Back to top</a></small></p>
-
 ## OpenAPI Specification File 
 
 You can view the full details of this API in the OpenAPI Specification file available here:
@@ -148,12 +138,13 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ## HTTP Response Codes
 
-The API will return one of the following Application Level Error Messages:
+The API will return one of the following responses:
 
 | HTTP Response Code | Description |
 | ---- | ----------- |
-| 400 | * Date should be specified in the format: MM/dd/YYYY. <br><br> * Invalid Input Parameters. <br><br> * The parameter: 'exclusionName' or 'includeSections' is not permitted inside Query Param(q). <br><br> * The value null/empty is not valid for parameter ‘Query Param (q). <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed.|
-
+| 200 | Successful. Data will be returned in JSON format. |
+| 400 | Application Level Error Messages:<br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * Invalid Input Parameters. <br><br> * The parameter: 'exclusionName' or 'includeSections' is not permitted inside Query Param(q). <br><br> * The value null/empty is not valid for parameter ‘Query Param (q). <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed.|
+| 403 | API key is not correct or was not provided. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
