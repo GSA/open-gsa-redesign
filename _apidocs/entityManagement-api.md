@@ -2278,8 +2278,9 @@ First Name</td>
 
 <tr>
 <td>activationDate</td>
-<td>Allows a single Date or Date range.Format: MM/dd/yyyy.
-<br>Example: activationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -2337,8 +2338,9 @@ First Name</td>
 
 <tr>
 <td>expirationDate</td>
-<td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>Example: expirationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: expirationDate=01/01/2019, expirationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -2367,8 +2369,9 @@ First Name</td>
 
 <tr>
 <td>registrationDate</td>
-<td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>Example: registrationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -5905,8 +5908,9 @@ First Name</td>
 
 <tr>
 <td>activationDate</td>
-<td>Allows a single Date or Date range.Format: MM/dd/yyyy.
-<br>Example: activationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -5964,8 +5968,9 @@ First Name</td>
 
 <tr>
 <td>expirationDate</td>
-<td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>Example: expirationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: expirationDate=01/01/2019, expirationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -5994,8 +5999,9 @@ First Name</td>
 
 <tr>
 <td>registrationDate</td>
-<td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>Example: registrationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
