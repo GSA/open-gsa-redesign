@@ -9734,7 +9734,7 @@ First Name</td>
 ## OpenAPI Specification File 
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/entity_api.yaml">Open API specification file for the Entity Management API</a>
+<a href="v1/openapi.yaml">Open API specification file for the Entity Management API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
