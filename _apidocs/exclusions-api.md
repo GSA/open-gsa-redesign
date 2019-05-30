@@ -18,8 +18,8 @@ The response will be provided in the JSON format in a paginated manner.
 ## Getting Started
 
 Exclusions API can be accessed from Beta or Alpha via the following end points:
-* Beta: Coming soon
-* Alpha: https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key= < value > 
+* Beta: https://api.sam.gov/prod/sam-exclusions?api_key= < value > 
+* Alpha: https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key= < value >- This end point is valid until 05/31/2019, and a new end point will be provided soon.
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
@@ -40,7 +40,7 @@ Generating a System Account API Key:
 
 ## API Description
 
-**Alpha Endpoint:** https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key= < value > 
+**Beta Endpoint:** https://api.sam.gov/prod/sam-exclusions?api_key= < value > 
 
 **Description** Restful endpoint to retrieve Exclusion detail information
 
@@ -60,10 +60,10 @@ Generating a System Account API Key:
 | excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> Example: 'excludingAgencyCode=AF' |
 | excludingAgencyName | Allows a string (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null).<br><br> Example: 'excludingAgencyName=FEDERAL' |
 | ctCode | Allows a string.<br><br> Example: 'ctCode=ZZ' |
-| activationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'activationDate=02/12/1999' |
-| creationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'creationDate=02/12/1999' |
-| updateDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'updateDate=02/12/1999' |
-| terminationDate | Allows a single Date or Date range. Format: MM/dd/yyyy.<br><br> Example: 'terminationDate=02/12/1999' |
+| activationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'activationDate=01/01/2019', 'activationDate=[01/01/2019,05/29/2019]' |
+| creationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'creationDate=01/01/2019', 'creationDate=[01/01/2019,05/29/2019]' |
+| updateDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br>  Examples: 'updateDate=01/01/2019', 'updateDate=[01/01/2019,05/29/2019]'' |
+| terminationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'terminationDate=01/01/2019', 'terminationDate=[01/01/2019,05/29/2019]' |
 | cageCode | Allows a string.<br><br> Example: 'cageCode=0Y5L9' |
 | npi  | Allows a string.<br><br> Example: 'npi=1053373266' |
 | ssn  | Allows a string.<br><br> Example: 'ssn=XXXXXXXXX' |

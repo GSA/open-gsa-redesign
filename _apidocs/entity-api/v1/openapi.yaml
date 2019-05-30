@@ -334,7 +334,7 @@ paths:
         "404":
           description: The resource you were trying to reach is not found
 servers:
-  - url: https://api-alpha.sam.gov/prodlike
+  - url: https://api.sam.gov/prod
 components:
   schemas:
     BusinessInformation:
