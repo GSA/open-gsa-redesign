@@ -20,8 +20,8 @@ The Entity Management API will allow users to request Public Entity Information 
 ## Getting Started
 
 Public Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: Coming soon
-   * Alpha: https://api-alpha.sam.gov/prodlike/entity-management?api_key= < value >
+   * Beta: https://api.sam.gov/prod/entity-management?api_key= < value >
+   * Alpha: https://api-alpha.sam.gov/prodlike/entity-management?api_key= < value >- This end point is valid until 05/31/2019, and a new end point will be provided soon.
 
 FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
    * Beta: Coming soon
@@ -57,7 +57,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <details>
 <summary><b>Public Entity Management Endpoint</b></summary><br>
 <tr>
-<td><b>Endpoint:</b>  Coming soon </td>
+<td><b>Endpoint:</b>  https://api.sam.gov/prod/entity-management?api_key= < value > </td>
 </tr><br>
 
 <tr>
@@ -74,8 +74,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 
 <tr>
 <td>activationDate</td>
-<td>Allows a single Date or Date range.Format: MM/dd/yyyy.
-<br>Example: activationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -134,8 +135,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 
 <tr>
 <td>expirationDate</td>
-<td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>Example: expirationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: expirationDate=01/01/2019, expirationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -164,8 +166,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 
 <tr>
 <td>registrationDate</td>
-<td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>Example: registrationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -2275,8 +2278,9 @@ First Name</td>
 
 <tr>
 <td>activationDate</td>
-<td>Allows a single Date or Date range.Format: MM/dd/yyyy.
-<br>Example: activationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -2334,8 +2338,9 @@ First Name</td>
 
 <tr>
 <td>expirationDate</td>
-<td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>Example: expirationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: expirationDate=01/01/2019, expirationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -2364,8 +2369,9 @@ First Name</td>
 
 <tr>
 <td>registrationDate</td>
-<td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>Example: registrationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -5902,8 +5908,9 @@ First Name</td>
 
 <tr>
 <td>activationDate</td>
-<td>Allows a single Date or Date range.Format: MM/dd/yyyy.
-<br>Example: activationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -5961,8 +5968,9 @@ First Name</td>
 
 <tr>
 <td>expirationDate</td>
-<td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>Example: expirationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: expirationDate=01/01/2019, expirationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -5991,8 +5999,9 @@ First Name</td>
 
 <tr>
 <td>registrationDate</td>
-<td>Allows a single Date or Date range. Format: MM/dd/yyyy.
-<br>Example: registrationDate=02/12/1999</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -9725,7 +9734,7 @@ First Name</td>
 ## OpenAPI Specification File 
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/entity_api.yaml">Open API specification file for the Entity Management API</a>
+<a href="v1/openapi.yaml">Open API specification file for the Entity Management API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
