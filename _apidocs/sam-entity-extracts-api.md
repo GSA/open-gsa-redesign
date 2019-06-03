@@ -57,7 +57,7 @@ The Entity Management extracts contain entities (businesses and government agenc
 The Entity Management extracts are available using the following endpoints:
  
   * https://api.sam.gov/prodlike/dataservices/v1/extracts
-  * https://api.sam.gov/prod/dataservices/v1/extracts
+  * https://api.sam.gov/prod/dataservices/v1/extracts - This will be available on 06/10/2019.
   
 Generating a personal API Key:
 * Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on beta.sam.gov
@@ -237,5 +237,15 @@ The API will return one of the following responses:
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
+
+* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
+
+<p><small><a href="#">Back to top</a></small></p>
+
+## Change Log
+
+Date | Version | Description
+------|---------------|---------
+06/03/2019 | v 1.0 | Base Version
 
 <p><small><a href="#">Back to top</a></small></p>
