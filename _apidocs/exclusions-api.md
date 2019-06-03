@@ -25,7 +25,7 @@ The response will be provided in the JSON format in a paginated manner.
 ## Getting Started
 
 Exclusions API can be accessed from Beta or Alpha via the following end points:
-* Beta: https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key= < value >
+* Beta: https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key= < value > - This will be available on 06/10/2019
 * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v0.9/api/exclusions?api_key= < value >
 
 Generating a personal API Key:
@@ -55,10 +55,6 @@ Utilizing the Exclusion API as an extract:
 <p><small><a href="#">Back to top</a></small></p>
 
 ## API Description
-
-**Endpoint:** https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key= < value >
-
-**Description** Restful endpoint to retrieve Exclusion detail information
 
 **Query String Parameters**
 
@@ -169,4 +165,13 @@ The API will return one of the following responses:
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
+
+<p><small><a href="#">Back to top</a></small></p>
+
+## Change Log
+
+Date | Version | Description
+------|---------------|---------
+06/03/2019 | v0.9 | Base Version
+
 <p><small><a href="#">Back to top</a></small></p>
