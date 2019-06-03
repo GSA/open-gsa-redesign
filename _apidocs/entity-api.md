@@ -10092,7 +10092,7 @@ First Name</td>
 ## API Calls
 
 {% include swagger-section-header.html %}
-    url: "v1/entity_api.yaml", 
+    url: "v1/openapi.yaml", 
 {% include swagger-section-footer.html %}
 
 <p><small><a href="#">Back to top</a></small></p>
