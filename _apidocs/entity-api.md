@@ -28,11 +28,11 @@ The Entity Management API will allow users to request Public Entity Information 
 ## Getting Started
 
 Public Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value > 
+   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value > - This endpoint will be available on     06/10/2019.
    * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v0.9/api/entities?api_key= < value >
 
 FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value >
+   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value > - This endpoint will be available on     06/10/2019.
    * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v0.9/api/entities?api_key= < value >
 
 Sensitive Entity Details  can be accessed from Beta or Alpha via the following end points:
@@ -70,16 +70,7 @@ Utilizing the Entity API as an extract:
 
 If you are using Chrome, subsections that can be expanded are denoted with an arrow.
 
-### Public Endpoints Information
-<details>
-<summary><b>Public Entity Management Endpoint</b></summary><br>
-<tr>
-<td><b>Endpoint:</b>  https://api.sam.gov/prod/entity-information/v1/api/entities?api_key= < value > </td>
-</tr><br>
-
-<tr>
-<td><b>Description:</b> Restful endpoint to retrieve Entity detail information</td>
-</tr><br>
+### Public API Information
 
 <details>
 <summary><b>Query String Parameters</b></summary>
@@ -2332,16 +2323,7 @@ First Name</td>
 
 
 
-### FOUO Endpoints Information
-<details>
-<summary><b>FOUO Entity Management Endpoint</b></summary><br>
-<tr>
-<td><b>Endpoint:</b>  Coming soon </td>
-</tr><br>
-
-<tr>
-<td><b>Description:</b> Restful endpoint to retrieve Entity detail information with FOUO data</td>
-</tr><br>
+### FOUO API Information
 
 <details>
 <summary><b>Query String Parameters</b></summary>
@@ -6181,17 +6163,7 @@ First Name</td>
 </details>
 
 
-### Sensitive Endpoints Information
-
-<details>
-<summary><b>Sensitive Entity Management Endpoint</b></summary><br>
-<tr>
-<td><b>Endpoint:</b>  Coming soon </td>
-</tr><br>
-
-<tr>
-<td><b>Description:</b> Restful endpoint to retrieve Entity detail information with Sensitive data</td>
-</tr><br>
+### Sensitive API Information
 
 <details>
 <summary><b>Query String Parameters</b></summary>
@@ -10119,5 +10091,13 @@ The API will return one of the following responses:
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
+
+<p><small><a href="#">Back to top</a></small></p>
+
+## Change Log
+
+Date | Version | Description
+------|---------------|---------
+06/03/2019 | v0.9 | Base Version
 
 <p><small><a href="#">Back to top</a></small></p>
