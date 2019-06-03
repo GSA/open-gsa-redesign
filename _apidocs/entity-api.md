@@ -341,7 +341,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 </table>
-</details><br>
+</details>
 
 <tr>
 <td><b> Expected Result:</b></td>
@@ -2621,7 +2621,7 @@ First Name</td>
 </tr>
 
 </table>
-</details><br>
+</details>
 
 <tr>
 <td><b> Expected Result:</b></td>
@@ -6434,7 +6434,7 @@ First Name</td>
 <br>Example: emailId=test@gsa.gov</td>
 </tr>
 </table>
-</details><br>
+</details>
 
 <tr>
 <td><b> Expected Result:</b></td>
@@ -10075,9 +10075,7 @@ The API will return one of the following responses:
 
 | HTTP Response Code | Description |
 | ---- | ----------- |
-| 200 | Successful. Data will be returned in JSON format. |
 | 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. |
-| 403 | API key is not correct or was not provided. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
