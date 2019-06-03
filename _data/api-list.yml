@@ -52,6 +52,9 @@
 - title: Opportunity Management API
   description: The Opportunity Management API will allow authorized users to submit and request Opportunities data.
   url: opportunities-api/
+- title: Opportunity Management SOAP Web Services
+  description: The Opportunity Management SOAP Web Services will allow authorized users to submit and request Opportunities data using SOAP service.
+  url: https://open.gsa.gov/api/opportunities-soap-api/
 - title: Per Diem API
   description: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers.
   url: https://www.gsa.gov/technology/government-it-initiatives/digital-strategy/per-diem-apis/per-diem-api
