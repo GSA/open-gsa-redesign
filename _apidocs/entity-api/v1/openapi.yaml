@@ -17,7 +17,7 @@ tags:
   - name: exclusions-extract-controller
     description: Operations pertaining to Exclusions API
 paths:
-  /entity-information/v1/download/exclusions:
+  /entity-information/v0.9/download/exclusions:
     get:
       tags:
         - exclusions-extract-controller
@@ -47,7 +47,7 @@ paths:
           description: API key is not correct or was not provided
         "404":
           description: The resource you were trying to reach is not found
-  /entity-information/v1/api/exclusions:
+  /entity-information/v0.9/api/exclusions:
     get:
       tags:
         - exclusions-api-controller
@@ -226,7 +226,7 @@ paths:
           description: API key is not correct or was not provided
         "404":
           description: The resource you were trying to reach is not found
-  /entity-information/v1/api/exclusions/:
+  /entity-information/v0.9/api/exclusions/:
     get:
       tags:
         - exclusions-extract-controller
