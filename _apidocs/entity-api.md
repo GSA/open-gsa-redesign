@@ -2318,10 +2318,7 @@ First Name</td>
 </tr>
 </table>
 
-</details><br>
 </details>
-
-
 
 ### FOUO API Information
 
@@ -6158,10 +6155,7 @@ First Name</td>
 </tr>
 </table>
 
-</details><br>
-
 </details>
-
 
 ### Sensitive API Information
 
@@ -10056,7 +10050,6 @@ First Name</td>
 </tr>
 </table>
 
-</details><br>
 </details>
 
 <p><small><a href="#">Back to top</a></small></p>
