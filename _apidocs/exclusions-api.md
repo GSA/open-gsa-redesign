@@ -13,13 +13,20 @@ The response will be provided in the JSON format in a paginated manner.
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
 
+**Additional Features of the Exclusion API:** It can serve as an Extract API with the addition of “format” parameter in the request. Following are the key features of the Exclusion Extract API:
+* It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
+* It returns asynchronous responses by sending file downloadable links in the browser and in the user emails.
+* It returns data in the JSON or CSV format as selected by the user.
+* It can return only the first 1,000,000 records.
+
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
 
 Exclusions API can be accessed from Beta or Alpha via the following end points:
-* Beta: https://api.sam.gov/prod/sam-exclusions?api_key= < value > 
-* Alpha: https://api-alpha.sam.gov/prodlike/sam-exclusions?api_key= < value >- This end point is valid until 05/31/2019, and a new end point will be provided soon.
+* Beta: https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key= < value >
+* Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v0.9/api/exclusions?api_key= < value >
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
@@ -36,11 +43,20 @@ Generating a System Account API Key:
 * After setting up the password the user will see a new section for retrieving a system account API Key.
 * The user must enter their password again to retrieve the key.
 
+Utilizing the Exclusion API as an extract:
+* To utilize this API as an Extract an additional parameter called ‘format’ has been implemented.
+* To retrieve Exclusion data in a CSV format, the parameter ‘&format=csv’ must be provided in the request.
+* To retrieve Exclusion data in a JSON format, the parameter ‘&format=json’ must be provided in the request.
+* If the requests that contain the ‘format’ parameter are executed successfully, then they will provide the user with a file downloadable URL in the response.
+* In the file downloadable URL, the phrase REPLACE_WITH_API_KEY must be deleted and replaced with a valid API Key and sent as another request.
+* If the file is ready for download, then the users can retrieve it. If the file is not ready for download, then the users will need to try again in some time.
+* Users can also provide another parameter, “emailId” with a valid email address if they choose to receive the file downloadable link in their emails.
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ## API Description
 
-**Beta Endpoint:** https://api.sam.gov/prod/sam-exclusions?api_key= < value > 
+**Endpoint:** https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key= < value >
 
 **Description** Restful endpoint to retrieve Exclusion detail information
 
@@ -71,10 +87,12 @@ Generating a System Account API Key:
 | page  | Page number.<br><br> Example: 'page=0' |
 | size  | Retrieves Records size per page.<br><br> Example: 'size=1' |
 | includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'includeSections=exclusionOtherInformation,exclusionDetails' |
+| format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'format=csv' |
+| emailId | User email Id for notification message .<br><br> Example: 'emailId=test@gsa.gov' |
 
 **Expected Result**
 
-API response consists of Sections, Sub-sections and Tags underneath each of the Sections or Sub-sections
+API response consists of Sections, Sub-sections and Tags underneath each of the Sections or Sub-sections. There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.
 
 | Section/Sub-section/Tag | Type | Description |
 | ---- | ---- | ----------- |
@@ -143,7 +161,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages:<br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * Invalid Input Parameters. <br><br> * The parameter: 'exclusionName' or 'includeSections' is not permitted inside Query Param(q). <br><br> * The value null/empty is not valid for parameter ‘Query Param (q). <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed.|
+| 400 | Application Level Error Messages:<br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * Invalid Input Parameters. <br><br> * The parameter: 'emailId', 'format', 'exclusionName' or 'includeSections' is not permitted inside Query Param(q). <br><br> * The value null/empty is not valid for parameter ‘Query Param (q). <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br>  * The Parameter emailId must be provided in conjunction with the parameter format. <br><br>  * Extract File Generation is Still in Progress. <br><br> * Requested File is Expired and cannot be downloaded. <br><br> * Extract File Not Found and we are not able to process your request. |
 | 403 | API key is not correct or was not provided. |
 
 <p><small><a href="#">Back to top</a></small></p>
