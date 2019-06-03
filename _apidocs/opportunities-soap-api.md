@@ -1,6 +1,6 @@
 ---
-title: Opportunity Management SOAP APIs
-banner-heading: Opportunity Management SOAP APIs
+title: Opportunity Management SOAP Web Services
+banner-heading: Opportunity Management SOAP Web Services
 ---
 
 ## Overview
