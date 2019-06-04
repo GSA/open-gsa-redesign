@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   description: Exclusions API to retrieve exclusion information via Request parameters in
     the paginated manner
-  version: "1.0"
+  version: "0.9"
   title: Exclusions Rest API
   termsOfService: Terms of service
   contact:
