@@ -414,4 +414,4 @@ paths:
     "404":
       description: The resource you were trying to reach is not found
 servers:
-  - url: //***REMOVED***/prodlike
+  - url: //api-alpha.sam.gov/prodlike
