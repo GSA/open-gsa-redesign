@@ -2885,6 +2885,46 @@
 			"language": ["us-EN"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "FY 2018 Federal Real Property Profile Data for Civilian Agencies",
+			"description": "An XLSX export of data from FRPP, a database of Federal Real Property for Civilian Agencies.",
+			"modified": "2019-06-05",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-06-05-01",
+			"dataQuality": true,
+			"describedBy": "https://www.gsa.gov/cdnstatic/FY2018_FRPP_DATA_DICTIONARY_v2.pdf",
+			"describedByType": "application/pdf",
+			"issued": "2018-08-27",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"spatial": "US",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"accrualPeriodicity": "R/P1Y",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Chris Coneeney",
+				"hasEmail": "mailto:chris.coneeney@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.ms-excel",
+					"title": "FRPP_Public_Dataset_FY18_05_23_2019",
+					"describedBy": "https://www.gsa.gov/cdnstatic/FY2018_FRPP_DATA_DICTIONARY_v2.pdf",
+					"describedByType": "application/pdf",
+					"downloadURL": "https://inventory.data.gov/dataset/78b921cf-d865-44b6-84bc-9df85a5de642/resource/a7524f30-3048-4973-8f06-cf8a3119050b/download/frpppublicdatasetfy1805232019.xlsx"
+				}
+			],
+			"keyword": ["FRPP", "Federal Real Property Profile", "GSA", "General Services Administration", "RTF", "building", "civilian", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
+			"bureauCode": ["023:05"],
+			"programCode": ["023:015"],
+			"language": ["us-EN"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "FY 2016 Federal Real Property Profile Data for Department of Defense",
 			"description": "An export of data from FRPP, a database of Federal Real Property Profile for Department of Defense entities.",
 			"modified": "2017-03-27",
@@ -3481,7 +3521,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2019-05-08",
+			"modified": "2019-06-05",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
