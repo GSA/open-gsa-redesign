@@ -2,8 +2,8 @@
 title: Entity Management  API
 banner-heading: Entity Management API
 ---
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
+<!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >-->
+<!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
 
 This content is currently not Firefox compliant.  Please access via Chrome or Internet Explorer.
 ## Overview
@@ -10054,13 +10054,6 @@ First Name</td>
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## API Calls
-
-{% include swagger-section-header.html %}
-    url: "v1/openapi.yaml", 
-{% include swagger-section-footer.html %}
-
-<p><small><a href="#">Back to top</a></small></p>
 
 ## OpenAPI Specification File 
 
