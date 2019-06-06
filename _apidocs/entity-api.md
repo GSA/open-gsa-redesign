@@ -341,7 +341,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 </table>
-</details><br>
+</details>
 
 <tr>
 <td><b> Expected Result:</b></td>
@@ -2318,10 +2318,7 @@ First Name</td>
 </tr>
 </table>
 
-</details><br>
 </details>
-
-
 
 ### FOUO API Information
 
@@ -2624,7 +2621,7 @@ First Name</td>
 </tr>
 
 </table>
-</details><br>
+</details>
 
 <tr>
 <td><b> Expected Result:</b></td>
@@ -6158,10 +6155,7 @@ First Name</td>
 </tr>
 </table>
 
-</details><br>
-
 </details>
-
 
 ### Sensitive API Information
 
@@ -6440,7 +6434,7 @@ First Name</td>
 <br>Example: emailId=test@gsa.gov</td>
 </tr>
 </table>
-</details><br>
+</details>
 
 <tr>
 <td><b> Expected Result:</b></td>
@@ -10056,7 +10050,6 @@ First Name</td>
 </tr>
 </table>
 
-</details><br>
 </details>
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -10082,11 +10075,34 @@ The API will return one of the following responses:
 
 | HTTP Response Code | Description |
 | ---- | ----------- |
-| 200 | Successful. Data will be returned in JSON format. |
 | 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. |
-| 403 | API key is not correct or was not provided. |
 
 <p><small><a href="#">Back to top</a></small></p>
+
+## Explanation of the API using Examples
+Functionality of the Entity API has been explained with the following examples:
+
+**User requirement:** 
+To get only the entityRegistration, coreData and assertions sections for the Entity records whose entityStructureCode is 2J or 8H, 
+physicalAddressCountryCode is USA, countryOfIncorporationCode is USA, registrationDate is from 01/01/2018 to 04/23/2019, servedDisasterStateCode is  
+NE or LA or TX, cageCode is not null, dodaac is null, and primaryNaics is 812112 or 484121 or 336411.
+
+**API Request:**
+https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&q=((entityStructureCode=2J OR entityStructureCode=8H) 
+AND physicalAddressCountryCode=USA AND countryOfIncorporationCode=USA)&registrationDate=[01/01/2018,04/23/2019]&servedDisasterStateCode=[NE~LA~TX]&cageCode=!""
+&dodaac=""&primaryNaics=[812112~484121~336411]&includeSections=entityRegistration,coreData,assertions
+<br>OR<br>
+https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&entityStructureCode=[2J~8H]&physicalAddressCountryCode=USA
+&countryOfIncorporationCode=USA&registrationDate=[01/01/2018,04/23/2019]&servedDisasterStateCode=[NE~LA~TX]&cageCode=!""&dodaac=""&primaryNaics=[812112~484121~336411]
+&includeSections=entityRegistration,coreData,assertions
+
+**User requirement:**
+To get a CSV file of active Entity records that have a DBAN and that cater to GEOPHYSICAL SURVEYING AND MAPPING SERVICES.
+
+**API request:** 
+https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&samExtractCode=A&q=”GEOPHYSICAL SURVEYING AND MAPPING SERVICES”&dbaName=!””&format=CSV
+
+
 
 ## Contact Us
 
