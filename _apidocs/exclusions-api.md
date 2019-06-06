@@ -162,6 +162,26 @@ The API will return one of the following responses:
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## Explanation of the API using Examples
+Functionality of the Exclusion API has been explained with the following examples:
+
+**User requirement:** 
+To get Individual or Special Entity Designation Exclusion records that are based off of Korea, that are not excluded by DOJ and that contain CHONG anywhere in the response.
+
+**API request:** 
+https://api.sam.gov/prodlike/entity-information/v0.9/api/exclusions?api_key=<API Key>&classification=[Individual~Special Entity Designation]
+&excludingAgencyCode=!DOJ&country=KOR&q=CHONG
+
+**User requirement:** 
+To receive the JSON file downloadable link in the email for only exclusionDetails, exclusionIdentification and exclusionAddress sections of the Excluded 
+Firm records of type Ineligible (Proceedings Completed) or Prohibition/Restriction that are based off of Korea, China or Germany and that have a non-null ueiDUNS.
+
+**API request:**
+https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key=<API Key>&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm
+&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=JSON
+&emailId= < a valid email address >
+
+
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
