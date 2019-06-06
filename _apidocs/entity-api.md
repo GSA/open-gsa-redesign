@@ -10079,6 +10079,31 @@ The API will return one of the following responses:
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## Explanation of the API using Examples
+Functionality of the Entity API has been explained with the following examples:
+
+**User requirement:** 
+To get only the entityRegistration, coreData and assertions sections for the Entity records whose entityStructureCode is 2J or 8H, 
+physicalAddressCountryCode is USA, countryOfIncorporationCode is USA, registrationDate is from 01/01/2018 to 04/23/2019, servedDisasterStateCode is  
+NE or LA or TX, cageCode is not null, dodaac is null, and primaryNaics is 812112 or 484121 or 336411.
+
+**API Request:**
+https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&q=((entityStructureCode=2J OR entityStructureCode=8H) 
+AND physicalAddressCountryCode=USA AND countryOfIncorporationCode=USA)&registrationDate=[01/01/2018,04/23/2019]&servedDisasterStateCode=[NE~LA~TX]&cageCode=!""
+&dodaac=""&primaryNaics=[812112~484121~336411]&includeSections=entityRegistration,coreData,assertions
+<br>OR<br>
+https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&entityStructureCode=[2J~8H]&physicalAddressCountryCode=USA
+&countryOfIncorporationCode=USA&registrationDate=[01/01/2018,04/23/2019]&servedDisasterStateCode=[NE~LA~TX]&cageCode=!""&dodaac=""&primaryNaics=[812112~484121~336411]
+&includeSections=entityRegistration,coreData,assertions
+
+**User requirement:**
+To get a CSV file of active Entity records that have a DBAN and that cater to GEOPHYSICAL SURVEYING AND MAPPING SERVICES.
+
+**API request:** 
+https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&samExtractCode=A&q=”GEOPHYSICAL SURVEYING AND MAPPING SERVICES”&dbaName=!””&format=CSV
+
+
+
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
