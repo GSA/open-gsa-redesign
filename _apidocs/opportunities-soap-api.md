@@ -28,6 +28,8 @@ Refer to section 5 and 6 for role specific methods.
 
 ### Authentication Methods
 beta.SAM.gov Web Services supports SOAP header authentication. Configure your client to send a specific SOAP header with every method call which contains the authentication data. Below is the example of header included before the body:
+* Note: Username and email are case sensitive 
+
 ```
    <soapenv:Header>
       <AuthenticationData xsi:type="sam:AuthenticationData">
