@@ -525,15 +525,15 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1 and Mailing Address 1</td>
+<td>Physical Address Line 1 and Mailing Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2 and Mailing Address 2</td>
+<td>Physical Address Line 2 and Mailing Address Line 2</td>
 </tr>
 
 <tr>
@@ -543,9 +543,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State and Mailing Address State</td>
+<td>Physical Address State or Province and Mailing Address State or Province</td>
 </tr>
 
 <tr>
@@ -566,11 +566,19 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>Physical Address Country and Mailing Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
+</table>
+
+<table>		
+<tr>		
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>		
+<th style="background-color: #f1f1f1;"><b>Type</b></th>		
+<th style="background-color: #f1f1f1;"><b>Description</b></th>		
+</tr>		
+<tr>		
+<td>congressionalDistrict</td>		
+<td>string</td>		
+<td>Physical Address Congressional District</td>		
+</tr>		
 </table>
 
 <summary>generalInformation Sub Section</summary>
@@ -1751,15 +1759,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -1769,9 +1777,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -1856,15 +1864,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -1874,9 +1882,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -1961,15 +1969,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -1979,9 +1987,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -2066,15 +2074,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -2084,9 +2092,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -2171,15 +2179,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -2189,9 +2197,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -2276,15 +2284,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -2294,9 +2302,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -2744,6 +2752,18 @@ First Name</td>
 
 <details>
 <summary>core Data Section</summary><br>
+<table>		
+<tr>		
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>		
+<th style="background-color: #f1f1f1;"><b>Type</b></th>		
+<th style="background-color: #f1f1f1;"><b>Description</b></th>		
+</tr>		
+<tr>		
+<td>congressionalDistrict</td>		
+<td>string</td>		
+<td>Physical Address Congressional District</td>		
+</tr>		
+</table>
 <summary>entityHierarchyInformation Sub Section</summary>
 <table>
 <tr>
@@ -2798,15 +2818,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1</td>
+<td>Physical Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2</td>
+<td>Physical Address Line 2</td>
 </tr>
 
 <tr>
@@ -2816,9 +2836,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State</td>
+<td>Physical Address State or Province</td>
 </tr>
 
 <tr>
@@ -2839,12 +2859,8 @@ First Name</td>
 <td>Physical Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
 </table>
+
 </details>
 </td>
 </div>
@@ -2920,15 +2936,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1</td>
+<td>Physical Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2</td>
+<td>Physical Address Line 2</td>
 </tr>
 
 <tr>
@@ -2938,9 +2954,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State</td>
+<td>Physical Address State or Province</td>
 </tr>
 
 <tr>
@@ -2961,11 +2977,6 @@ First Name</td>
 <td>Physical Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
 </table>
 </details>
 </td>
@@ -3029,15 +3040,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1</td>
+<td>Physical Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2</td>
+<td>Physical Address Line 2</td>
 </tr>
 
 <tr>
@@ -3047,9 +3058,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State</td>
+<td>Physical Address State or Province</td>
 </tr>
 
 <tr>
@@ -3070,11 +3081,7 @@ First Name</td>
 <td>Physical Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
+
 </table>
 </details>
 </td>
@@ -3143,15 +3150,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1</td>
+<td>Physical Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2</td>
+<td>Physical Address Line 2</td>
 </tr>
 
 <tr>
@@ -3161,9 +3168,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State</td>
+<td>Physical Address State or Province</td>
 </tr>
 
 <tr>
@@ -3184,11 +3191,7 @@ First Name</td>
 <td>Physical Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
+
 </table>
 </details>
 </td>
@@ -3263,15 +3266,15 @@ dnbMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -3289,7 +3292,7 @@ dnbMonitoring
 <tr>
 <td>stateOrProvince</td>
 <td>string</td>
-<td>State Or Province</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -3348,15 +3351,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -3374,7 +3377,7 @@ samMonitoring
 <tr>
 <td>stateOrProvince</td>
 <td>string</td>
-<td>State Or Province</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -3499,15 +3502,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1 and Mailing Address 1</td>
+<td>Physical Address Line 1 and Mailing Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2 and Mailing Address 2</td>
+<td>Physical Address Line 2 and Mailing Address Line 2</td>
 </tr>
 
 <tr>
@@ -3517,9 +3520,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State and Mailing Address State</td>
+<td>Physical Address State or Province and Mailing Address State or Province</td>
 </tr>
 
 <tr>
@@ -3538,12 +3541,6 @@ samMonitoring
 <td>country</td>
 <td>string</td>
 <td>Physical Address Country and Mailing Address Country</td>
-</tr>
-
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
 </tr>
 </table>
 
@@ -4853,15 +4850,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -4871,9 +4868,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -4958,15 +4955,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -4976,9 +4973,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5063,15 +5060,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5081,9 +5078,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5168,15 +5165,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5186,9 +5183,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5273,15 +5270,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5291,9 +5288,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5378,15 +5375,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5396,9 +5393,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5483,15 +5480,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5501,9 +5498,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5588,15 +5585,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5606,9 +5603,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5693,15 +5690,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5711,9 +5708,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5798,15 +5795,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5816,9 +5813,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5903,15 +5900,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5921,9 +5918,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -6008,15 +6005,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -6026,9 +6023,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -6113,15 +6110,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -6131,9 +6128,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -6551,6 +6548,18 @@ First Name</td>
 
 <details>
 <summary>core Data Section</summary><br>
+<table>		
+<tr>		
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>		
+<th style="background-color: #f1f1f1;"><b>Type</b></th>		
+<th style="background-color: #f1f1f1;"><b>Description</b></th>		
+</tr>		
+<tr>		
+<td>congressionalDistrict</td>		
+<td>string</td>		
+<td>Physical Address Congressional District</td>		
+</tr>		
+</table>
 <summary>entityHierarchyInformation</summary>
 <table>
 <tr>
@@ -6605,15 +6614,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1</td>
+<td>Physical Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2</td>
+<td>Physical Address Line 2</td>
 </tr>
 
 <tr>
@@ -6623,9 +6632,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State</td>
+<td>Physical Address State or Province</td>
 </tr>
 
 <tr>
@@ -6646,12 +6655,8 @@ First Name</td>
 <td>Physical Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
 </table>
+
 </details>
 </td>
 </div>
@@ -6714,15 +6719,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1</td>
+<td>Physical Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2</td>
+<td>Physical Address Line 2</td>
 </tr>
 
 <tr>
@@ -6732,9 +6737,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State</td>
+<td>Physical Address State or Province</td>
 </tr>
 
 <tr>
@@ -6755,12 +6760,9 @@ First Name</td>
 <td>Physical Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
 </table>
+
+
 </details>
 </td>
 </div>
@@ -6823,15 +6825,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1</td>
+<td>Physical Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2</td>
+<td>Physical Address Line 2</td>
 </tr>
 
 <tr>
@@ -6841,9 +6843,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State</td>
+<td>Physical Address State or Province</td>
 </tr>
 
 <tr>
@@ -6864,12 +6866,9 @@ First Name</td>
 <td>Physical Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
 </table>
+
+
 </details>
 </td>
 </div>
@@ -6943,15 +6942,15 @@ dnbMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -6969,7 +6968,7 @@ dnbMonitoring
 <tr>
 <td>stateOrProvince</td>
 <td>string</td>
-<td>State Or Province</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -7027,15 +7026,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -7053,7 +7052,7 @@ samMonitoring
 <tr>
 <td>stateOrProvince</td>
 <td>string</td>
-<td>State Or Province</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -7204,15 +7203,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1 and Mailing Address 1</td>
+<td>Physical Address Line 1 and Mailing Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2 and Mailing Address 2</td>
+<td>Physical Address Line 2 and Mailing Address Line 2</td>
 </tr>
 
 <tr>
@@ -7222,9 +7221,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State and Mailing Address State</td>
+<td>Physical Address State or Province and Mailing Address State or Province</td>
 </tr>
 
 <tr>
@@ -7245,11 +7244,7 @@ samMonitoring
 <td>Physical Address Country and Mailing Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
+
 </table>
 
 <summary>generalInformation Sub Section</summary>
@@ -7586,14 +7581,14 @@ samMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address1</td>
+<td>Address Line 1</td>
 </tr>
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -7605,7 +7600,7 @@ samMonitoring
 <tr>
 <td>stateOrProvince</td>
 <td>string</td>
-<td>State Or Province</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -8748,15 +8743,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -8766,9 +8761,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -8853,15 +8848,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -8871,9 +8866,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -8958,15 +8953,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -8976,9 +8971,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9063,15 +9058,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9081,9 +9076,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9168,15 +9163,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9186,9 +9181,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9273,15 +9268,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9291,9 +9286,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9378,15 +9373,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9396,9 +9391,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9483,15 +9478,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9501,9 +9496,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9588,15 +9583,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9606,9 +9601,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9693,15 +9688,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9711,9 +9706,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9798,15 +9793,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9816,9 +9811,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9903,15 +9898,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9921,9 +9916,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -10008,15 +10003,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -10026,9 +10021,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
