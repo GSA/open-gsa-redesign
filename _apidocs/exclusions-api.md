@@ -118,11 +118,12 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | terminationType | string | Termination Type   |
 | recordStatus | string | Record Status  |
 | **exclusionAddress** |
-| address1 | string | Address 1  | 
-| address2 | string | Address 2  | 
+| addressLine1 | string | Address Line 1  | 
+| addressLine2 | string | Address Line 2  | 
 | city | string | Address City  | 
-| stateProvince | string | Address State or Province |
+| stateOrProvince | string | Address State or Province |
 | zipCode | string | Address Zip OR Postal Code  |
+| zipCodePlus4 | string | Address Zip Plus 4  |
 | country | string | Country  |
 | **exclusionOtherInformation** |
 | additionalComments | string | Additional Comments  |
@@ -157,7 +158,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages:<br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * Invalid Input Parameters. <br><br> * The parameter: 'emailId', 'format', 'exclusionName' or 'includeSections' is not permitted inside Query Param(q). <br><br> * The value null/empty is not valid for parameter ‘Query Param (q). <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br>  * The Parameter emailId must be provided in conjunction with the parameter format. <br><br>  * Extract File Generation is Still in Progress. <br><br> * Requested File is Expired and cannot be downloaded. <br><br> * Extract File Not Found and we are not able to process your request. |
+| 400 | Application Level Error Messages:<br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * Invalid Input Parameters. <br><br> * The parameter: 'emailId', 'format', 'exclusionName' or 'includeSections' is not permitted inside Query Param(q). <br><br> * The value null/empty is not valid for parameter ‘Query Param (q). <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br>  * The Parameter emailId must be provided in conjunction with the parameter format. <br><br>  * Extract File Generation is Still in Progress. <br><br> * Requested File is Expired and cannot be downloaded. <br><br> * Extract File Not Found and we are not able to process your request. <br><br>  * includeSections contains invalid value <value> |
 | 403 | API key is not correct or was not provided. |
 
 <p><small><a href="#">Back to top</a></small></p>
