@@ -3,8 +3,6 @@ title: Entity/Exclusions Extracts Download APIs
 banner-heading: Entity/Exclusions Extracts Download APIs
 ---
 
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
-
 
 ## Overview
 The Extracts Download API permits beta.SAM.gov users with valid roles to download entity and exclusions data extracts.<br>
@@ -39,6 +37,7 @@ The Entity Management extracts contain entities (businesses and government agenc
      Daily UTF-8: SAM_SENSITIVE_UTF-8_DAILY_V2_YYYYMMDD.ZIP<br />
      Monthly ASCII (Default): SAM_SENSITIVE_MONTHLY_V2_YYYYMMDD.ZIP<br />
      Monthly UTF-8 (Default): SAM_SENSITIVE_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
+   * This extract requires IP address whitelisting to download your file.  You will need to keep an up-to-date list of your IP addresses in your System Account.
 
 
 4. **Exclusions Public Data Package:**
@@ -57,7 +56,7 @@ The Entity Management extracts contain entities (businesses and government agenc
 The Entity Management extracts are available using the following endpoints:
  
   * https://api.sam.gov/prodlike/dataservices/v1/extracts
-  * https://api.sam.gov/prod/dataservices/v1/extracts - This will be available on 06/10/2019.
+  * https://api.sam.gov/prod/dataservices/v1/extracts
   
 Generating a personal API Key:
 * Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on beta.sam.gov
@@ -73,6 +72,7 @@ Generating a System Account API Key:
 * The user can select ‘Go to System Accounts’ again in the widget from their workspace and enter a new system account password.
 * After setting up the password the user will see a new section for retrieving a system account API Key.
 * The user must enter their password again to retrieve the key.
+* The user must maintain accurate IP addresses in their System Accounts, particularly if they are downloading the Entity Management Sensitive Data Package.
 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -237,8 +237,6 @@ The API will return one of the following responses:
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
-
-* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
 
 <p><small><a href="#">Back to top</a></small></p>
 
