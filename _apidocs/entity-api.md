@@ -28,11 +28,11 @@ The Entity Management API will allow users to request Public Entity Information 
 ## Getting Started
 
 Public Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value > - This endpoint will be available on     06/10/2019.
+   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value >
    * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v0.9/api/entities?api_key= < value >
 
 FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value > - This endpoint will be available on     06/10/2019.
+   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value > 
    * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v0.9/api/entities?api_key= < value >
 
 Sensitive Entity Details  can be accessed from Beta or Alpha via the following end points:
