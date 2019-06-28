@@ -913,9 +913,15 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>geographicalAreaServedmetropolitanStatisticalArea</td>
+<td>geographicalAreaServedmetropolitanStatisticalAreaCode</td>
 <td>string</td>
-<td>Metropolitan Statistical Area name</td>
+<td>Metropolitan Statistical Area Code</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedmetropolitanStatisticalAreaName</td>
+<td>string</td>
+<td>Metropolitan Statistical Area Name</td>
 </tr>
 </table>
 </details>
@@ -3912,9 +3918,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>geographicalAreaServedmetropolitanStatisticalArea</td>
+<td>geographicalAreaServedmetropolitanStatisticalAreaCode</td>
 <td>string</td>
-<td>Metropolitan Statistical Area name</td>
+<td>Metropolitan Statistical Area Code</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedmetropolitanStatisticalAreaName</td>
+<td>string</td>
+<td>Metropolitan Statistical Area Name</td>
 </tr>
 </table>
 </details>
@@ -7824,9 +7836,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>geographicalAreaServedmetropolitanStatisticalArea</td>
+<td>geographicalAreaServedmetropolitanStatisticalAreaCode</td>
 <td>string</td>
-<td>Metropolitan Statistical Area name</td>
+<td>Metropolitan Statistical Area Code</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedmetropolitanStatisticalAreaName</td>
+<td>string</td>
+<td>Metropolitan Statistical Area Name</td>
 </tr>
 </table>
 </details>
