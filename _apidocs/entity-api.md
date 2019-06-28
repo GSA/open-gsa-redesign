@@ -179,6 +179,13 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
+<td>updateDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
+</tr>
+
+<tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
 <br>Example: physicalAddressCity=Herndon</td>
@@ -906,15 +913,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>geographicalAreaServedmetropolitanStatisticalAreaCode</td>
+<td>geographicalAreaServedmetropolitanStatisticalArea</td>
 <td>string</td>
-<td>Metropolitan Statistical Area Code</td>
-</tr>
-
-<tr>
-<td>geographicalAreaServedmetropolitanStatisticalAreaName</td>
-<td>string</td>
-<td>Metropolitan Statistical Area Name</td>
+<td>Metropolitan Statistical Area name</td>
 </tr>
 </table>
 </details>
@@ -2443,6 +2444,13 @@ First Name</td>
 </tr>
 
 <tr>
+<td>updateDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
+</tr>
+
+<tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
 <br>Example: physicalAddressCity=Herndon</td>
@@ -3892,15 +3900,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>geographicalAreaServedmetropolitanStatisticalAreaCode</td>
+<td>geographicalAreaServedmetropolitanStatisticalArea</td>
 <td>string</td>
-<td>Metropolitan Statistical Area Code</td>
-</tr>
-
-<tr>
-<td>geographicalAreaServedmetropolitanStatisticalAreaName</td>
-<td>string</td>
-<td>Metropolitan Statistical Area Name</td>
+<td>Metropolitan Statistical Area name</td>
 </tr>
 </table>
 </details>
@@ -6275,6 +6277,13 @@ First Name</td>
 </tr>
 
 <tr>
+<td>updateDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
+</tr>
+
+<tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
 <br>Example: physicalAddressCity=Herndon</td>
@@ -7791,15 +7800,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>geographicalAreaServedmetropolitanStatisticalAreaCode</td>
+<td>geographicalAreaServedmetropolitanStatisticalArea</td>
 <td>string</td>
-<td>Metropolitan Statistical Area Code</td>
-</tr>
-
-<tr>
-<td>geographicalAreaServedmetropolitanStatisticalAreaName</td>
-<td>string</td>
-<td>Metropolitan Statistical Area Name</td>
+<td>Metropolitan Statistical Area name</td>
 </tr>
 </table>
 </details>
