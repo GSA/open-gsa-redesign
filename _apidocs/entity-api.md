@@ -1022,6 +1022,18 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
+<td>lastName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>hasSizeProtest</td>
+<td>string</td>
+<td>Has Size Protest</td>
+</tr>
+
+<tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
@@ -1275,31 +1287,31 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>blackAmerican</td>
+<td>blackAmericanOwned</td>
 <td>string</td>
 <td>Black American</td>
 </tr>
 
 <tr>
-<td>hispanicAmerican</td>
+<td>hispanicAmericanOwned</td>
 <td>string</td>
 <td>Hispanic American</td>
 </tr>
 
 <tr>
-<td>nativeAmerican</td>
+<td>nativeAmericanOwned</td>
 <td>string</td>
 <td>Native American</td>
 </tr>
 
 <tr>
-<td>asianPacificAmerican</td>
+<td>asianPacificAmericanOwned</td>
 <td>string</td>
 <td>Asian Pacific American</td>
 </tr>
 
 <tr>
-<td>subcontinentAsian<br>IndianAmerican</td>
+<td>subcontinentAsian<br>IndianAmericanOwned</td>
 <td>string</td>
 <td>Sub Continent <br>Asian Indian American</td>
 </tr>
@@ -4116,6 +4128,18 @@ samMonitoring
 </tr>
 
 <tr>
+<td>lastName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>hasSizeProtest</td>
+<td>string</td>
+<td>Has Size Protest</td>
+</tr>
+
+<tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
@@ -4369,31 +4393,31 @@ samMonitoring
 </tr>
 
 <tr>
-<td>blackAmerican</td>
+<td>blackAmericanOwned</td>
 <td>string</td>
 <td>Black American</td>
 </tr>
 
 <tr>
-<td>hispanicAmerican</td>
+<td>hispanicAmericanOwned</td>
 <td>string</td>
 <td>Hispanic American</td>
 </tr>
 
 <tr>
-<td>nativeAmerican</td>
+<td>nativeAmericanOwned</td>
 <td>string</td>
 <td>Native American</td>
 </tr>
 
 <tr>
-<td>asianPacificAmerican</td>
+<td>asianPacificAmericanOwned</td>
 <td>string</td>
 <td>Asian Pacific American</td>
 </tr>
 
 <tr>
-<td>subcontinentAsian<br>IndianAmerican</td>
+<td>subcontinentAsian<br>IndianAmericanOwned</td>
 <td>string</td>
 <td>Sub Continent <br>Asian Indian American</td>
 </tr>
@@ -8016,6 +8040,18 @@ samMonitoring
 </tr>
 
 <tr>
+<td>lastName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>hasSizeProtest</td>
+<td>string</td>
+<td>Has Size Protest</td>
+</tr>
+
+<tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
@@ -8269,31 +8305,31 @@ samMonitoring
 </tr>
 
 <tr>
-<td>blackAmerican</td>
+<td>blackAmericanOwned</td>
 <td>string</td>
 <td>Black American</td>
 </tr>
 
 <tr>
-<td>hispanicAmerican</td>
+<td>hispanicAmericanOwned</td>
 <td>string</td>
 <td>Hispanic American</td>
 </tr>
 
 <tr>
-<td>nativeAmerican</td>
+<td>nativeAmericanOwned</td>
 <td>string</td>
 <td>Native American</td>
 </tr>
 
 <tr>
-<td>asianPacificAmerican</td>
+<td>asianPacificAmericanOwned</td>
 <td>string</td>
 <td>Asian Pacific American</td>
 </tr>
 
 <tr>
-<td>subcontinentAsian<br>IndianAmerican</td>
+<td>subcontinentAsian<br>IndianAmericanOwned</td>
 <td>string</td>
 <td>Sub Continent <br>Asian Indian American</td>
 </tr>
