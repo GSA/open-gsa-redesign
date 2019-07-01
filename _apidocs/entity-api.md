@@ -4109,13 +4109,13 @@ samMonitoring
 <tr>
 <td>isaQualifier</td>
 <td>string</td>
-<td>Is a Qualifier</td>
+<td>ISA Qualifier</td>
 </tr>
 
 <tr>
 <td>isaIdentifier</td>
 <td>string</td>
-<td>Is a Identifier</td>
+<td>ISA Identifier</td>
 </tr>
 
 <tr>
@@ -6654,6 +6654,12 @@ First Name</td>
 <br>Example: taxpayerIdentificationNumber=01234</td>
 </tr>
 
+<tr>
+<td>sensitivity</td>
+<td>Allows a text, Determines Sensitivity Level of Data.
+<br>Example: sensitivity=public</td>
+</tr>
+
 </table>
 </details>
 
@@ -8152,13 +8158,13 @@ samMonitoring
 <tr>
 <td>isaQualifier</td>
 <td>string</td>
-<td>Is a Qualifier</td>
+<td>ISA Qualifier</td>
 </tr>
 
 <tr>
 <td>isaIdentifier</td>
 <td>string</td>
-<td>Is a Identifier</td>
+<td>ISA Identifier</td>
 </tr>
 
 <tr>
