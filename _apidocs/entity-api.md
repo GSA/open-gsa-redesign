@@ -734,9 +734,15 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>expirationDate</td>
+<td>certificationEntryDate</td>
 <td>string</td>
-<td>Expiration Date</td>
+<td>Certification Entry Date</td>
+</tr>
+
+<tr>
+<td>certificationExitDate</td>
+<td>string</td>
+<td>Certification Exit Date</td>
 </tr>
 
 </table>
@@ -926,6 +932,22 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </table>
 </details>
 </td>
+</tr>
+
+</table>
+
+<summary>ediInformation Sub Section</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ediInformationFlag</td>
+<td>string</td>
+<td>EDI Information Flag</td>
 </tr>
 
 </table>
@@ -2631,15 +2653,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>companySecurityLevel</td>
+<td>companySecurityLevelCode</td>
 <td>Allows 2 character code.
-<br>Example: companySecurityLevel=92</td>
+<br>Example: companySecurityLevelCode=92</td>
 </tr>
 
 <tr>
-<td>highestEmployeeSecurityLevel</td>
+<td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
-<br>Example: highestEmployeeSecurityLevel=90</td>
+<br>Example: highestEmployeeSecurityLevelCode=90</td>
 </tr>
 
 <tr>
@@ -2655,9 +2677,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>sensitivity</td>
-<td>Allows text, Determines Sensitivity Level of Data.
-<br>Example: sensitivity=fouo</td>
+<td>agencyBusinessPurposeCode</td>
+<td>Allows text, Determines Agency Business Purpose Code.
+<br>Example: agencyBusinessPurposeCode=1</td>
+</tr>
+
+<tr>
+<td>taxpayerIdentificationNumber</td>
+<td>Allows a text.
+<br>Example: taxpayerIdentificationNumber=XXXXXXXXX</td>
 </tr>
 
 </table>
@@ -3585,6 +3613,18 @@ samMonitoring
 </tr>
 
 <tr>
+<td>agencyBusinessPurposeCode</td>
+<td>string</td>
+<td>Agency Business Purpose Code</td>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeDesc</td>
+<td>string</td>
+<td>Agency Business Purpose Desc</td>
+</tr>
+
+<tr>
 <td>entityStructureCode</td>
 <td>string</td>
 <td>Entity Structure Code</td>
@@ -3657,15 +3697,27 @@ samMonitoring
 </tr>
 
 <tr>
-<td>companySecurityLevel</td>
+<td>companySecurityLevelCode</td>
 <td>string</td>
-<td>Company Security Level</td>
+<td>Company Security Level Code</td>
 </tr>
 
 <tr>
-<td>highestEmployeeSecurityLevel</td>
+<td>companySecurityLevelDesc</td>
 <td>string</td>
-<td>Highest Employee Security Level</td>
+<td>Company Security Level Description</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelCode</td>
+<td>string</td>
+<td>Highest Employee Security Level Code</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelDesc</td>
+<td>string</td>
+<td>Highest Employee Security Level Description</td>
 </tr>
 </table>
 
@@ -3733,9 +3785,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>expirationDate</td>
+<td>certificationEntryDate</td>
 <td>string</td>
-<td>Expiration Date</td>
+<td>Certification Entry Date</td>
+</tr>
+
+<tr>
+<td>certificationExitDate</td>
+<td>string</td>
+<td>Certification Exit Date</td>
 </tr>
 
 </table>
@@ -3880,6 +3938,37 @@ samMonitoring
 </tr>
 
 <tr>
+<td>bondingLevels</td>
+<td>list</td>
+<td>
+<details>
+<summary>Bonding Levels contains these fields</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Type of bonding level</td>
+</tr>
+
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Value of bonding level</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
 <td>geographicalAreaServed</td>
 <td>list</td>
 <td>
@@ -4009,6 +4098,12 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ediInformationFlag</td>
+<td>string</td>
+<td>EDI Information Flag</td>
 </tr>
 
 <tr>
@@ -6487,6 +6582,25 @@ First Name</td>
 <td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
 <br>Example: emailId=test@gsa.gov</td>
 </tr>
+
+<tr>
+<td>agencyBusinessPurposeCode</td>
+<td>Allows text, Determines Agency Business Purpose Code.
+<br>Example: agencyBusinessPurposeCode=1</td>
+</tr>
+
+<tr>
+<td>companySecurityLevelCode</td>
+<td>Allows 2 character code.
+<br>Example: companySecurityLevelCode=92</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelCode</td>
+<td>Allows 2 character code .
+<br>Example: highestEmployeeSecurityLevelCode=90</td>
+</tr>
+
 </table>
 </details>
 
@@ -7313,6 +7427,18 @@ samMonitoring
 </tr>
 
 <tr>
+<td>agencyBusinessPurposeCode</td>
+<td>string</td>
+<td>Agency Business Purpose Code</td>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeDesc</td>
+<td>string</td>
+<td>Agency Business Purpose Desc</td>
+</tr>
+
+<tr>
 <td>entityStructureCode</td>
 <td>string</td>
 <td>Entity Structure Code</td>
@@ -7383,6 +7509,29 @@ samMonitoring
 <td>string</td>
 <td>Country Of Incorporation Desc</td>
 </tr>
+<tr>
+<td>companySecurityLevelCode</td>
+<td>string</td>
+<td>Company Security Level Code</td>
+</tr>
+
+<tr>
+<td>companySecurityLevelDesc</td>
+<td>string</td>
+<td>Company Security Level Description</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelCode</td>
+<td>string</td>
+<td>Highest Employee Security Level Code</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelDesc</td>
+<td>string</td>
+<td>Highest Employee Security Level Description</td>
+</tr>
 </table>
 
 <summary>businessTypes Sub Section</summary>
@@ -7449,9 +7598,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>expirationDate</td>
+<td>certificationEntryDate</td>
 <td>string</td>
-<td>Expiration Date</td>
+<td>Certification Entry Date</td>
+</tr>
+
+<tr>
+<td>certificationExitDate</td>
+<td>string</td>
+<td>Certification Exit Date</td>
 </tr>
 
 </table>
@@ -7769,12 +7924,6 @@ samMonitoring
 </details>
 </td>
 </tr>
-
-<tr>
-<td>ediInformationFlag</td>
-<td>string</td>
-<td>EDI Information Flag</td>
-</tr>
 </table>
 
 <summary>disasterReliefData Sub Section</summary>
@@ -7793,6 +7942,12 @@ samMonitoring
 
 <tr>
 <td>bondingFlag</td>
+<td>string</td>
+<td>Bonding Flag</td>
+</tr>
+
+<tr>
+<td>bondingLevels</td>
 <td>string</td>
 <td>Bonding Flag</td>
 </tr>
@@ -7927,6 +8082,12 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ediInformationFlag</td>
+<td>string</td>
+<td>EDI Information Flag</td>
 </tr>
 
 <tr>
