@@ -302,13 +302,13 @@ paths:
           required: false
           schema:
             type: string
-        - name: companySecurityLevel
+        - name: companySecurityLevelCode
           in: query
           description: Company Security Level code
           required: false
           schema:
             type: string
-        - name: highestEmployeeSecurityLevel
+        - name: highestEmployeeSecurityLevelCode
           in: query
           description: Highest Employee Security Level Code
           required: false
@@ -330,6 +330,12 @@ paths:
         - name: sensitivity
           in: query
           description: Determines Sensitivity Level of Data
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeCode
+          in: query
+          description: Determines Agency Business Purpose Code
           required: false
           schema:
             type: string
@@ -656,13 +662,13 @@ paths:
           required: false
           schema:
             type: string
-        - name: companySecurityLevel
+        - name: companySecurityLevelCode
           in: query
           description: Company Security Level code
           required: false
           schema:
             type: string
-        - name: highestEmployeeSecurityLevel
+        - name: highestEmployeeSecurityLevelCode
           in: query
           description: Highest Employee Security Level Code
           required: false
@@ -684,6 +690,12 @@ paths:
         - name: sensitivity
           in: query
           description: Determines Sensitivity Level of Data
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeCode
+          in: query
+          description: Determines Agency Business Purpose Code
           required: false
           schema:
             type: string
