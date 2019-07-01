@@ -550,9 +550,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province and Mailing Address State or Province</td>
+<td>Physical Address State or Province Code and Mailing Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -568,9 +568,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country and Mailing Address Country</td>
+<td>Physical Address Country Code and Mailing Address Country Code</td>
 </tr>
 
 </table>
@@ -1802,9 +1802,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -1820,9 +1820,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -1907,9 +1907,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -1925,9 +1925,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -2012,9 +2012,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -2030,9 +2030,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -2117,9 +2117,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -2135,9 +2135,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -2222,9 +2222,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -2240,9 +2240,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -2327,9 +2327,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -2345,9 +2345,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -2868,9 +2868,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province</td>
+<td>Physical Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -2886,7 +2886,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -2986,9 +2986,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province</td>
+<td>Physical Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -3004,7 +3004,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -3090,9 +3090,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province</td>
+<td>Physical Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -3108,7 +3108,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -3200,9 +3200,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province</td>
+<td>Physical Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -3218,7 +3218,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -3322,15 +3322,15 @@ dnbMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 </details>
@@ -3407,15 +3407,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 </details>
@@ -3552,9 +3552,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province and Mailing Address State or Province</td>
+<td>Physical Address State or Province Code and Mailing Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -3570,9 +3570,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country and Mailing Address Country</td>
+<td>Physical Address Country Code and Mailing Address Country Code</td>
 </tr>
 </table>
 
@@ -4918,9 +4918,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -4936,9 +4936,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5023,9 +5023,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5041,9 +5041,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5128,9 +5128,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5146,9 +5146,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5233,9 +5233,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5251,9 +5251,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5338,9 +5338,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5356,9 +5356,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5443,9 +5443,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5461,9 +5461,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5548,9 +5548,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5566,9 +5566,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5653,9 +5653,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5671,9 +5671,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5758,9 +5758,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5776,9 +5776,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5863,9 +5863,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5881,9 +5881,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5968,9 +5968,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5986,9 +5986,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -6073,9 +6073,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -6091,9 +6091,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -6178,9 +6178,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -6196,9 +6196,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -6689,7 +6689,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
 <td>Physical Address State or Province</td>
 </tr>
@@ -6707,7 +6707,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -6794,7 +6794,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
 <td>Physical Address State or Province</td>
 </tr>
@@ -6812,7 +6812,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -6900,7 +6900,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
 <td>Physical Address State or Province</td>
 </tr>
@@ -6918,7 +6918,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -7023,15 +7023,15 @@ dnbMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 </details>
@@ -7107,15 +7107,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 </details>
@@ -7278,9 +7278,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province and Mailing Address State or Province</td>
+<td>Physical Address State or Province Code and Mailing Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -7296,9 +7296,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country and Mailing Address Country</td>
+<td>Physical Address Country Code and Mailing Address Country Code</td>
 </tr>
 
 
@@ -7655,9 +7655,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -7672,9 +7672,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 
 </table>
@@ -8836,9 +8836,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -8854,9 +8854,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -8941,9 +8941,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -8959,9 +8959,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9046,9 +9046,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9064,9 +9064,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9151,9 +9151,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9169,9 +9169,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9256,9 +9256,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9274,9 +9274,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9361,9 +9361,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9379,9 +9379,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9466,9 +9466,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9484,9 +9484,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9571,9 +9571,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9589,9 +9589,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9676,9 +9676,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9694,9 +9694,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9781,9 +9781,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9799,9 +9799,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9886,9 +9886,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9904,9 +9904,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9991,9 +9991,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -10009,9 +10009,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -10096,9 +10096,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -10114,9 +10114,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
