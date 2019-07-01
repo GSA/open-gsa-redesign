@@ -2623,12 +2623,6 @@ First Name</td>
 </tr>
 
 <tr>
-<td>taxpayerIdentificationNumber</td>
-<td>Allows a text.
-<br>Example: taxpayerIdentificationNumber=XXXXXXXXX</td>
-</tr>
-
-<tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
 <br>Example: includeSections=entityRegistration,coreData</td>
@@ -2683,9 +2677,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>taxpayerIdentificationNumber</td>
-<td>Allows a text.
-<br>Example: taxpayerIdentificationNumber=XXXXXXXXX</td>
+<td>sensitivity</td>
+<td>Allows a text, Determines Sensitivity Level of Data.
+<br>Example: sensitivity=public</td>
 </tr>
 
 </table>
@@ -6558,13 +6552,6 @@ First Name</td>
 <br>Example: servedDisasterMSA=86800730</td>
 </tr>
 
-
-<tr>
-<td>taxpayerIdentificationNumber</td>
-<td>Allows a text.
-<br>Example: taxpayerIdentificationNumber=XXXXXXXXX</td>
-</tr>
-
 <tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
@@ -6584,9 +6571,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>agencyBusinessPurposeCode</td>
-<td>Allows text, Determines Agency Business Purpose Code.
-<br>Example: agencyBusinessPurposeCode=1</td>
+<td>edi</td>
+<td>Allows text.
+<br>Example: edi=YES/NO</td>
 </tr>
 
 <tr>
@@ -6599,6 +6586,72 @@ First Name</td>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
 <br>Example: highestEmployeeSecurityLevelCode=90</td>
+</tr>
+
+<tr>
+<td>ultimateParentUEIDUNS</td>
+<td>Allows text.
+<br>Example: ultimateParentUEIDUNS=090123451</td>
+</tr>
+
+<tr>
+<td>ultimateParentUEISAM</td>
+<td>Allows text.
+<br>Example: ultimateParentUEISAM=090123451</td>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeCode</td>
+<td>Allows text, Determines Agency Business Purpose Code.
+<br>Example: agencyBusinessPurposeCode=1</td>
+</tr>
+
+<tr>
+<td>routingNumber</td>
+<td>Allows a text.
+<br>Example: routingNumber=0123456</td>
+</tr>
+
+<tr>
+<td>bankName</td>
+<td>Allows a text.
+<br>Example: bankName=TEST</td>
+</tr>
+
+<tr>
+<td>accountNumber</td>
+<td>Allows a text.
+<br>Example: accountNumber=012323456</td>
+</tr>
+
+<tr>
+<td>eftWaiverFlag</td>
+<td>Allows a text.
+<br>Example: eftWaiverFlag=Y</td>
+</tr>
+
+<tr>
+<td>agencyLocationCode</td>
+<td>Allows a text.
+<br>Example: agencyLocationCode=1</td>
+</tr>
+
+<tr>
+<td>disbursingOfficeSymbol</td>
+<td>Allows a text.
+<br>Example: disbursingOfficeSymbol=1093</td>
+</tr>
+
+<tr>
+<td>taxpayerName</td>
+<td>Allows a text.
+<br>Example: taxpayerName=test</td>
+</tr>
+
+<tr>
+<td>taxpayerIdentificationNumber</td>
+<td>Allows a text.
+<br>Example: taxpayerIdentificationNumber=01234</td>
 </tr>
 
 </table>
