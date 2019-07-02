@@ -5,7 +5,7 @@ banner-heading: Opportunity Management API
 
 ## Overview
 
-The Opportunity Management APIs will allow authorized users to submit and request Opportunities data.
+The Opportunity Management API will allow authorized users to submit and request Opportunities data.
 
 **Note:** The specifications on this page are for a soon to be released API.  Check back here or be in contact with IAE for the release date and testing session.
 
