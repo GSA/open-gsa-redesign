@@ -2,8 +2,8 @@
 title: Awards API
 banner-heading: Awards API
 ---
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
+<!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
 
 
 ## Overview
@@ -605,8 +605,8 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | typeOfIDCDescription  | string  | Type Of IDC Description  |
 | multipleOrSingleAwardIDV  | string  | Multiple Or Single Award IDV  |
 | programAcronym  | string  | Program Acronym  |
-| contingencyHumanitarianPeacekeepingOperationCode  | string  | Contingency Humanitarian Peace keeping Operation Code  |
-| contingencyHumanitarianPeacekeepingOperationDescription  | string  | Contingency Humanitarian Peace keeping Operation Description  |
+| contingencyHumanitarianPeacekeepingOperationCode  | string  | Contingency Humanitarian Peace keeping Operation Code(Pre-V1.5)/ emergencyAcquisitionCode(V1.5) |
+| contingencyHumanitarianPeacekeepingOperationDescription  | string  | Contingency Humanitarian Peace keeping Operation Description(Pre-V1.5)/ emergencyAcquisitionDescription(V1.5) |
 | contractFinancingCode  | string  | Contract Financing Code  |
 | contractFinancingDescription  | string  | Contract Financing Description  |
 | purchaseCardPaymentMethodCode  | string  | Purchase Card Payment Method Code  |
@@ -618,12 +618,12 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | **legislativeMandates** |
 | clingerCohenActCode  | string  | Clinger Cohen Act Code  |
 | clingerCohenActDescription  | string  | Clinger Cohen Act Description  |
-| walshHealeyActCode  | string  | Walsh Healey Act Code(Pre-V1.5)/ materialsSuppliesArticlesEquipCode (V1.5).  |
-| walshHealeyActDescription  | string  | Walsh Healey Act Description(Pre-V1.5)/ materialsSuppliesArticlesEquipDescription (V1.5).  |
-| serviceContractActCode  | string  | Service Contract Act Code(Pre-V1.5)/ laborStandardsCode (V1.5)  |
-| serviceContractActDescription  | string  | Service Contract Act Description(Pre-V1.5)/ laborStandardsDescription (V1.5)  |
-| davisBaconActCode  | string  | DavisBacon Act Code(Pre-V1.5)/ constructionWageRateReqsCode (V1.5)  |
-| davisBaconActDescription  | string  | DavisBacon Act Description(Pre-V1.5)/ constructionWageRateReqsDescription (V1.5).  |
+| walshHealeyActCode  | string  | Walsh Healey Act Code(Pre-V1.5)/ materialsSuppliesArticlesEquipCode(V1.5)  |
+| walshHealeyActDescription  | string  | Walsh Healey Act Description(Pre-V1.5)/ materialsSuppliesArticlesEquipDescription(V1.5)  |
+| serviceContractActCode  | string  | Service Contract Act Code(Pre-V1.5)/ laborStandardsCode(V1.5)  |
+| serviceContractActDescription  | string  | Service Contract Act Description(Pre-V1.5)/ laborStandardsDescription(V1.5)  |
+| davisBaconActCode  | string  | DavisBacon Act Code(Pre-V1.5)/ constructionWageRateReqsCode(V1.5)  |
+| davisBaconActDescription  | string  | DavisBacon Act Description(Pre-V1.5)/ constructionWageRateReqsDescription(V1.5) |
 | additionalReportingCode  | string  | Additional Reporting Code  |
 | additionalReportingDescription  | string  | Additional Reporting Description  |
 | interagencyContractingAuthorityCode  | string  | Interagency Contracting Authority Code  |
@@ -1155,14 +1155,6 @@ API response consists of two Sections and Tags underneath each of the Sections
     | closedDate | string  | Closed Date |
     | closedStatus | string  | Closed Status |
     
-<p><small><a href="#">Back to top</a></small></p>
-
-## API Calls
-
-{% include swagger-section-header.html %}
-    url: "v1/openapi.yaml", 
-{% include swagger-section-footer.html %}
-
 <p><small><a href="#">Back to top</a></small></p>
 
 ## OpenAPI Specification File 
