@@ -1172,12 +1172,18 @@ The API will return one of the following Application Level Error Messages:
 | ---- | ----------- |
 | 400 | Application Level Error Messages: <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * For date search, both FROM and TO should be provided (Only Applicable for Last Modified Date and Date Signed). <br><br>  * Date range between FROM and TO cannot exceed 5 years (Only Applicable for Last Modified Date). <br><br> * Invalid Input Parameters (Only Applicable for incorrect filter name). <br><br>  * The value null/empty is not valid for parameter Query Param (q). <br><br>  * The parameters: filterName, includeSections, excludeSections, or nasaSpecificElements are not permitted inside Query Param(q). <br><br> * Schema filtering param contains invalid value (Valid values for the Schema Filtering are includeSections, excludeSections, or nasaSpecificElements). <br><br>  * User entered values for includeSections, excludeSection should be specified in [] (Only Applicable if the value for the Schema Filtering params is not provided within []). <br><br>  * Please specify a valid value for nasaSpecificElements (Valid values are YES/NO). <br><br> * nasaSpecificElements can't be specified multiple times. <br><br>  * both excludeSections and includeSections can't be specified. <br><br>  * Please provide the filter piid in conjunction with filterName=piidAggregation. <br><br>  * Extract File Generation is Still in Progress. <br><br> * Requested File is Expired and cannot be downloaded. <br><br> * Extract File Not Found and we are not able to process your request. <br><br>  * The value null is not valid for parameter filterName. <br><br>  * The parameter filterName can only be sent once in the request URL. <br><br>  * The parameters: includeSections, excludeSections, or nasaSpecificElements are not permitted in conjunction with the parameter filterName. <br><br>  * The parameters: recoveredMaterialClauses and recoveredMaterialClsDesc are not permitted in conjunction with the value biobased for parameter filterName. <br><br>  * The parameters: closedStatus and modificationNumber are not permitted in conjunction with the value closeout for parameter filterName. <br><br>  * Only one PIID should be provided in the filter piid in conjunction with filterName=piidAggregation. <br><br>  * The parameters: emailId, format are not permitted inside Query Param(q).  | 
 
-
-
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
+
+<p><small><a href="#">Back to top</a></small></p>
+
+## Change Log
+
+Date | Version | Description
+------|---------------|---------
+07/02/2019 | v1 | Base Version
 
 <p><small><a href="#">Back to top</a></small></p>
