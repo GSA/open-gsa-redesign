@@ -25,7 +25,7 @@ The response will be provided in the JSON format in a paginated manner.
 ## Getting Started
 
 Exclusions API can be accessed from Beta or Alpha via the following end points:
-* Beta: https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key= < value > - This will be available on 06/10/2019
+* Beta: https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key= < value >
 * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v0.9/api/exclusions?api_key= < value >
 
 Generating a personal API Key:
@@ -121,10 +121,10 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | addressLine1 | string | Address Line 1  | 
 | addressLine2 | string | Address Line 2  | 
 | city | string | Address City  | 
-| stateOrProvince | string | Address State or Province |
+| stateOrProvinceCode | string | Address State or Province Code |
 | zipCode | string | Address Zip OR Postal Code  |
 | zipCodePlus4 | string | Address Zip Plus 4  |
-| country | string | Country  |
+| countryCode | string | Country Code |
 | **exclusionOtherInformation** |
 | additionalComments | string | Additional Comments  |
 | ctCode | string | CT Code  |
@@ -140,7 +140,14 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | grt | string | GRT  |
 | flag | string | Flag  |
 | owner | string | Owner |
-| secondaryAddress | string | Secondary Address  |
+| **vesselDetails --> secondaryAddress**  |
+| addressLine1 | string | Address Line 1  | 
+| addressLine2 | string | Address Line 2  | 
+| city | string | Address City  | 
+| stateOrProvinceCode | string | Address State or Province Code |
+| zipCode | string | Address Zip OR Postal Code  |
+| zipCodePlus4 | string | Address Zip Plus 4  |
+| countryCode | string | Country Code |
 
 <p><small><a href="#">Back to top</a></small></p>
 
