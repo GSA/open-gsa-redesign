@@ -1862,7 +1862,7 @@ Examples
 {
 	"attType": "file",                                              
 	"content": "T25lIG1vcmUgc21hbGwgdGVzdA==",
-	"userFileName": "demo.txt",
+	"resourceName": "demo.txt",
 	"description": "description",
 	"packageAccessLevel": "public"
 }
@@ -1877,7 +1877,7 @@ Examples
 {
 	"attType":"link",
 	"description":"test",
-"userFileName": "BETA URL",
+"resourceName": "BETA URL",
 	"link" : "http://beta.sam.gov",
 	"packageAccessLevel":"public"
 }
@@ -1922,7 +1922,7 @@ Examples
 <code><pre>
 {
   "attType": "file",
-  "userFileName": "testing.txt",
+  "resourceName": "testing.txt",
   "description": "description",
   "explicitAccess": "1",
   "packageAccessLevel": "public"
@@ -1937,7 +1937,7 @@ Examples
 <code><pre>
 {
   "attType": "link",
-  "userFileName": "updated beta.sam.gov url",
+  "resourceName": "updated beta.sam.gov url",
   "description": "description",
   "explicitAccess": "1",
   "packageAccessLevel": "public"
@@ -2976,7 +2976,7 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
 {
   "attType": "file",
   "content": "",
-  "userFileName": "",
+  "resourceName": "",
   "description": "",
   "packageAccessLevel": ""
 }
@@ -3097,7 +3097,7 @@ content | byte |  | Yes (if attType=file) | File content in byte format
 description | string |  | No | Description of file or link
 link | string |  | Yes (if attType=link) | Resource link or URL
 packageAccessLevel | string | public,private(default public) | No | Type of access to file or link
-userFileName | string |  | Yes (if attType=file) | Name of file
+resourceName | string |  | Yes (if attType=file) | Name of file
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3110,7 +3110,7 @@ userFileName | string |  | Yes (if attType=file) | Name of file
 <code><pre>
 {
   "attType": "User entered",
-  "userFileName": "User entered",
+  "resourceName": "User entered",
   "explicitAccess": "1",
   "description": "User entered",
   "packageAccessLevel": "User entered"
@@ -3126,7 +3126,7 @@ attType | string | link, file | Yes | Type of attachment, either link or file
 description | string |  | No | Description of file or link
 link | string |  | Yes (if attType=link) | Resource link or URL
 packageAccessLevel | string | public,private(default public) | No | Type of access to file or link
-userFileName | string |  | Yes (if attType=file) | Name of file
+resourceName | string |  | Yes (if attType=file) | Name of file
 explicitAccess |  |  |  |
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3254,7 +3254,7 @@ Primary Contact Full Name |	Primary Contact - Name is required | Point of Contac
 Response Date |	This opportunity cannot be published. Response Date is a required field |	Response Date is only valid for Notice Type “o” |	Publish
 Title |	Title is required |	Title is required |	Publish
 UNARCHIVE |	This opportunity is not the latest published |	Only archived notices can be unarchived | UNARCHIVE
-userFileName | File Resource must have userFileName | File Name is a required field |	Create Attachment
+resourceName | Attachment must have a name | File Name is a required field |	Create Attachment
 Request Id |	Duplicate request. Vendor is already added as an authorized party on the notice. | Request already exists for the vendor on the notice.	| AddAuthorizedParty
 Duns# |	No contact match on vendor data provided.	| Not a Valid email or Duns#.	| AddAuthorizedParty
 Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
