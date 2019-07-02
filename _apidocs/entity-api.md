@@ -28,11 +28,11 @@ The Entity Management API will allow users to request Public Entity Information 
 ## Getting Started
 
 Public Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value > - This endpoint will be available on     06/10/2019.
+   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value >
    * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v0.9/api/entities?api_key= < value >
 
 FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value > - This endpoint will be available on     06/10/2019.
+   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value > 
    * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v0.9/api/entities?api_key= < value >
 
 Sensitive Entity Details  can be accessed from Beta or Alpha via the following end points:
@@ -176,6 +176,13 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
+</tr>
+
+<tr>
+<td>updateDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -543,9 +550,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province and Mailing Address State or Province</td>
+<td>Physical Address State or Province Code and Mailing Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -561,9 +568,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country and Mailing Address Country</td>
+<td>Physical Address Country Code and Mailing Address Country Code</td>
 </tr>
 
 </table>
@@ -727,9 +734,15 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>expirationDate</td>
+<td>certificationEntryDate</td>
 <td>string</td>
-<td>Expiration Date</td>
+<td>Certification Entry Date</td>
+</tr>
+
+<tr>
+<td>certificationExitDate</td>
+<td>string</td>
+<td>Certification Exit Date</td>
 </tr>
 
 </table>
@@ -906,13 +919,35 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>geographicalAreaServedmetropolitanStatisticalArea</td>
+<td>geographicalAreaServedmetropolitanStatisticalAreaCode</td>
 <td>string</td>
-<td>Metropolitan Statistical Area name</td>
+<td>Metropolitan Statistical Area Code</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedmetropolitanStatisticalAreaName</td>
+<td>string</td>
+<td>Metropolitan Statistical Area Name</td>
 </tr>
 </table>
 </details>
 </td>
+</tr>
+
+</table>
+
+<summary>ediInformation Sub Section</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ediInformationFlag</td>
+<td>string</td>
+<td>EDI Information Flag</td>
 </tr>
 
 </table>
@@ -1012,6 +1047,18 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>hasSizeProtest</td>
+<td>string</td>
+<td>Has Size Protest</td>
 </tr>
 
 <tr>
@@ -1268,31 +1315,31 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>blackAmerican</td>
+<td>blackAmericanOwned</td>
 <td>string</td>
 <td>Black American</td>
 </tr>
 
 <tr>
-<td>hispanicAmerican</td>
+<td>hispanicAmericanOwned</td>
 <td>string</td>
 <td>Hispanic American</td>
 </tr>
 
 <tr>
-<td>nativeAmerican</td>
+<td>nativeAmericanOwned</td>
 <td>string</td>
 <td>Native American</td>
 </tr>
 
 <tr>
-<td>asianPacificAmerican</td>
+<td>asianPacificAmericanOwned</td>
 <td>string</td>
 <td>Asian Pacific American</td>
 </tr>
 
 <tr>
-<td>subcontinentAsian<br>IndianAmerican</td>
+<td>subcontinentAsian<br>IndianAmericanOwned</td>
 <td>string</td>
 <td>Sub Continent <br>Asian Indian American</td>
 </tr>
@@ -1777,9 +1824,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -1795,9 +1842,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -1882,9 +1929,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -1900,9 +1947,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -1987,9 +2034,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -2005,9 +2052,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -2092,9 +2139,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -2110,9 +2157,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -2197,9 +2244,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -2215,9 +2262,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -2302,9 +2349,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -2320,9 +2367,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -2434,6 +2481,13 @@ First Name</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
+</tr>
+
+<tr>
+<td>updateDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -2569,12 +2623,6 @@ First Name</td>
 </tr>
 
 <tr>
-<td>taxpayerIdentificationNumber</td>
-<td>Allows a text.
-<br>Example: taxpayerIdentificationNumber=XXXXXXXXX</td>
-</tr>
-
-<tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
 <br>Example: includeSections=entityRegistration,coreData</td>
@@ -2599,15 +2647,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>companySecurityLevel</td>
+<td>companySecurityLevelCode</td>
 <td>Allows 2 character code.
-<br>Example: companySecurityLevel=92</td>
+<br>Example: companySecurityLevelCode=92</td>
 </tr>
 
 <tr>
-<td>highestEmployeeSecurityLevel</td>
+<td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
-<br>Example: highestEmployeeSecurityLevel=90</td>
+<br>Example: highestEmployeeSecurityLevelCode=90</td>
 </tr>
 
 <tr>
@@ -2623,9 +2671,15 @@ First Name</td>
 </tr>
 
 <tr>
+<td>agencyBusinessPurposeCode</td>
+<td>Allows text, Determines Agency Business Purpose Code.
+<br>Example: agencyBusinessPurposeCode=1</td>
+</tr>
+
+<tr>
 <td>sensitivity</td>
-<td>Allows text, Determines Sensitivity Level of Data.
-<br>Example: sensitivity=fouo</td>
+<td>Allows a text, Determines Sensitivity Level of Data.
+<br>Example: sensitivity=public</td>
 </tr>
 
 </table>
@@ -2836,9 +2890,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province</td>
+<td>Physical Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -2854,7 +2908,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -2954,9 +3008,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province</td>
+<td>Physical Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -2972,7 +3026,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -3058,9 +3112,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province</td>
+<td>Physical Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -3076,7 +3130,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -3168,9 +3222,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province</td>
+<td>Physical Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -3186,7 +3240,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -3290,15 +3344,15 @@ dnbMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 </details>
@@ -3375,15 +3429,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 </details>
@@ -3520,9 +3574,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province and Mailing Address State or Province</td>
+<td>Physical Address State or Province Code and Mailing Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -3538,9 +3592,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country and Mailing Address Country</td>
+<td>Physical Address Country Code and Mailing Address Country Code</td>
 </tr>
 </table>
 
@@ -3550,6 +3604,18 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeCode</td>
+<td>string</td>
+<td>Agency Business Purpose Code</td>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeDesc</td>
+<td>string</td>
+<td>Agency Business Purpose Desc</td>
 </tr>
 
 <tr>
@@ -3625,15 +3691,27 @@ samMonitoring
 </tr>
 
 <tr>
-<td>companySecurityLevel</td>
+<td>companySecurityLevelCode</td>
 <td>string</td>
-<td>Company Security Level</td>
+<td>Company Security Level Code</td>
 </tr>
 
 <tr>
-<td>highestEmployeeSecurityLevel</td>
+<td>companySecurityLevelDesc</td>
 <td>string</td>
-<td>Highest Employee Security Level</td>
+<td>Company Security Level Description</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelCode</td>
+<td>string</td>
+<td>Highest Employee Security Level Code</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelDesc</td>
+<td>string</td>
+<td>Highest Employee Security Level Description</td>
 </tr>
 </table>
 
@@ -3701,9 +3779,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>expirationDate</td>
+<td>certificationEntryDate</td>
 <td>string</td>
-<td>Expiration Date</td>
+<td>Certification Entry Date</td>
+</tr>
+
+<tr>
+<td>certificationExitDate</td>
+<td>string</td>
+<td>Certification Exit Date</td>
 </tr>
 
 </table>
@@ -3848,6 +3932,37 @@ samMonitoring
 </tr>
 
 <tr>
+<td>bondingLevels</td>
+<td>list</td>
+<td>
+<details>
+<summary>Bonding Levels contains these fields</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Type of bonding level</td>
+</tr>
+
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Value of bonding level</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
 <td>geographicalAreaServed</td>
 <td>list</td>
 <td>
@@ -3886,9 +4001,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>geographicalAreaServedmetropolitanStatisticalArea</td>
+<td>geographicalAreaServedmetropolitanStatisticalAreaCode</td>
 <td>string</td>
-<td>Metropolitan Statistical Area name</td>
+<td>Metropolitan Statistical Area Code</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedmetropolitanStatisticalAreaName</td>
+<td>string</td>
+<td>Metropolitan Statistical Area Name</td>
 </tr>
 </table>
 </details>
@@ -3974,6 +4095,12 @@ samMonitoring
 </tr>
 
 <tr>
+<td>ediInformationFlag</td>
+<td>string</td>
+<td>EDI Information Flag</td>
+</tr>
+
+<tr>
 <td>vanProvider</td>
 <td>string</td>
 <td>Van Provider</td>
@@ -3982,13 +4109,13 @@ samMonitoring
 <tr>
 <td>isaQualifier</td>
 <td>string</td>
-<td>Is a Qualifier</td>
+<td>ISA Qualifier</td>
 </tr>
 
 <tr>
 <td>isaIdentifier</td>
 <td>string</td>
-<td>Is a Identifier</td>
+<td>ISA Identifier</td>
 </tr>
 
 <tr>
@@ -4099,6 +4226,18 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>hasSizeProtest</td>
+<td>string</td>
+<td>Has Size Protest</td>
 </tr>
 
 <tr>
@@ -4355,31 +4494,31 @@ samMonitoring
 </tr>
 
 <tr>
-<td>blackAmerican</td>
+<td>blackAmericanOwned</td>
 <td>string</td>
 <td>Black American</td>
 </tr>
 
 <tr>
-<td>hispanicAmerican</td>
+<td>hispanicAmericanOwned</td>
 <td>string</td>
 <td>Hispanic American</td>
 </tr>
 
 <tr>
-<td>nativeAmerican</td>
+<td>nativeAmericanOwned</td>
 <td>string</td>
 <td>Native American</td>
 </tr>
 
 <tr>
-<td>asianPacificAmerican</td>
+<td>asianPacificAmericanOwned</td>
 <td>string</td>
 <td>Asian Pacific American</td>
 </tr>
 
 <tr>
-<td>subcontinentAsian<br>IndianAmerican</td>
+<td>subcontinentAsian<br>IndianAmericanOwned</td>
 <td>string</td>
 <td>Sub Continent <br>Asian Indian American</td>
 </tr>
@@ -4868,9 +5007,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -4886,9 +5025,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -4973,9 +5112,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -4991,9 +5130,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5078,9 +5217,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5096,9 +5235,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5183,9 +5322,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5201,9 +5340,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5288,9 +5427,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5306,9 +5445,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5393,9 +5532,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5411,9 +5550,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5498,9 +5637,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5516,9 +5655,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5603,9 +5742,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5621,9 +5760,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5708,9 +5847,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5726,9 +5865,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5813,9 +5952,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5831,9 +5970,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -5918,9 +6057,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -5936,9 +6075,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -6023,9 +6162,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -6041,9 +6180,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -6128,9 +6267,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -6146,9 +6285,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -6260,6 +6399,13 @@ First Name</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
+</tr>
+
+<tr>
+<td>updateDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
 </tr>
 
 <tr>
@@ -6406,13 +6552,6 @@ First Name</td>
 <br>Example: servedDisasterMSA=86800730</td>
 </tr>
 
-
-<tr>
-<td>taxpayerIdentificationNumber</td>
-<td>Allows a text.
-<br>Example: taxpayerIdentificationNumber=XXXXXXXXX</td>
-</tr>
-
 <tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
@@ -6430,6 +6569,97 @@ First Name</td>
 <td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
 <br>Example: emailId=test@gsa.gov</td>
 </tr>
+
+<tr>
+<td>edi</td>
+<td>Allows text.
+<br>Example: edi=YES/NO</td>
+</tr>
+
+<tr>
+<td>companySecurityLevelCode</td>
+<td>Allows 2 character code.
+<br>Example: companySecurityLevelCode=92</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelCode</td>
+<td>Allows 2 character code .
+<br>Example: highestEmployeeSecurityLevelCode=90</td>
+</tr>
+
+<tr>
+<td>ultimateParentUEIDUNS</td>
+<td>Allows text.
+<br>Example: ultimateParentUEIDUNS=090123451</td>
+</tr>
+
+<tr>
+<td>ultimateParentUEISAM</td>
+<td>Allows text.
+<br>Example: ultimateParentUEISAM=090123451</td>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeCode</td>
+<td>Allows text, Determines Agency Business Purpose Code.
+<br>Example: agencyBusinessPurposeCode=1</td>
+</tr>
+
+<tr>
+<td>routingNumber</td>
+<td>Allows a text.
+<br>Example: routingNumber=0123456</td>
+</tr>
+
+<tr>
+<td>bankName</td>
+<td>Allows a text.
+<br>Example: bankName=TEST</td>
+</tr>
+
+<tr>
+<td>accountNumber</td>
+<td>Allows a text.
+<br>Example: accountNumber=012323456</td>
+</tr>
+
+<tr>
+<td>eftWaiverFlag</td>
+<td>Allows a text.
+<br>Example: eftWaiverFlag=Y</td>
+</tr>
+
+<tr>
+<td>agencyLocationCode</td>
+<td>Allows a text.
+<br>Example: agencyLocationCode=1</td>
+</tr>
+
+<tr>
+<td>disbursingOfficeSymbol</td>
+<td>Allows a text.
+<br>Example: disbursingOfficeSymbol=1093</td>
+</tr>
+
+<tr>
+<td>taxpayerName</td>
+<td>Allows a text.
+<br>Example: taxpayerName=test</td>
+</tr>
+
+<tr>
+<td>taxpayerIdentificationNumber</td>
+<td>Allows a text.
+<br>Example: taxpayerIdentificationNumber=01234</td>
+</tr>
+
+<tr>
+<td>sensitivity</td>
+<td>Allows a text, Determines Sensitivity Level of Data.
+<br>Example: sensitivity=public</td>
+</tr>
+
 </table>
 </details>
 
@@ -6632,7 +6862,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
 <td>Physical Address State or Province</td>
 </tr>
@@ -6650,7 +6880,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -6737,7 +6967,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
 <td>Physical Address State or Province</td>
 </tr>
@@ -6755,7 +6985,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -6843,7 +7073,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
 <td>Physical Address State or Province</td>
 </tr>
@@ -6861,7 +7091,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
 <td>Physical Address Country</td>
 </tr>
@@ -6966,15 +7196,15 @@ dnbMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 </details>
@@ -7050,15 +7280,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 </details>
@@ -7221,9 +7451,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province and Mailing Address State or Province</td>
+<td>Physical Address State or Province Code and Mailing Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -7239,9 +7469,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country and Mailing Address Country</td>
+<td>Physical Address Country Code and Mailing Address Country Code</td>
 </tr>
 
 
@@ -7253,6 +7483,18 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeCode</td>
+<td>string</td>
+<td>Agency Business Purpose Code</td>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeDesc</td>
+<td>string</td>
+<td>Agency Business Purpose Desc</td>
 </tr>
 
 <tr>
@@ -7326,6 +7568,29 @@ samMonitoring
 <td>string</td>
 <td>Country Of Incorporation Desc</td>
 </tr>
+<tr>
+<td>companySecurityLevelCode</td>
+<td>string</td>
+<td>Company Security Level Code</td>
+</tr>
+
+<tr>
+<td>companySecurityLevelDesc</td>
+<td>string</td>
+<td>Company Security Level Description</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelCode</td>
+<td>string</td>
+<td>Highest Employee Security Level Code</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelDesc</td>
+<td>string</td>
+<td>Highest Employee Security Level Description</td>
+</tr>
 </table>
 
 <summary>businessTypes Sub Section</summary>
@@ -7392,9 +7657,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>expirationDate</td>
+<td>certificationEntryDate</td>
 <td>string</td>
-<td>Expiration Date</td>
+<td>Certification Entry Date</td>
+</tr>
+
+<tr>
+<td>certificationExitDate</td>
+<td>string</td>
+<td>Certification Exit Date</td>
 </tr>
 
 </table>
@@ -7598,9 +7869,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -7615,9 +7886,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 
 </table>
@@ -7712,12 +7983,6 @@ samMonitoring
 </details>
 </td>
 </tr>
-
-<tr>
-<td>ediInformationFlag</td>
-<td>string</td>
-<td>EDI Information Flag</td>
-</tr>
 </table>
 
 <summary>disasterReliefData Sub Section</summary>
@@ -7736,6 +8001,12 @@ samMonitoring
 
 <tr>
 <td>bondingFlag</td>
+<td>string</td>
+<td>Bonding Flag</td>
+</tr>
+
+<tr>
+<td>bondingLevels</td>
 <td>string</td>
 <td>Bonding Flag</td>
 </tr>
@@ -7779,9 +8050,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>geographicalAreaServedmetropolitanStatisticalArea</td>
+<td>geographicalAreaServedmetropolitanStatisticalAreaCode</td>
 <td>string</td>
-<td>Metropolitan Statistical Area name</td>
+<td>Metropolitan Statistical Area Code</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedmetropolitanStatisticalAreaName</td>
+<td>string</td>
+<td>Metropolitan Statistical Area Name</td>
 </tr>
 </table>
 </details>
@@ -7867,6 +8144,12 @@ samMonitoring
 </tr>
 
 <tr>
+<td>ediInformationFlag</td>
+<td>string</td>
+<td>EDI Information Flag</td>
+</tr>
+
+<tr>
 <td>vanProvider</td>
 <td>string</td>
 <td>Van Provider</td>
@@ -7875,13 +8158,13 @@ samMonitoring
 <tr>
 <td>isaQualifier</td>
 <td>string</td>
-<td>Is a Qualifier</td>
+<td>ISA Qualifier</td>
 </tr>
 
 <tr>
 <td>isaIdentifier</td>
 <td>string</td>
-<td>Is a Identifier</td>
+<td>ISA Identifier</td>
 </tr>
 
 <tr>
@@ -7992,6 +8275,18 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>hasSizeProtest</td>
+<td>string</td>
+<td>Has Size Protest</td>
 </tr>
 
 <tr>
@@ -8248,31 +8543,31 @@ samMonitoring
 </tr>
 
 <tr>
-<td>blackAmerican</td>
+<td>blackAmericanOwned</td>
 <td>string</td>
 <td>Black American</td>
 </tr>
 
 <tr>
-<td>hispanicAmerican</td>
+<td>hispanicAmericanOwned</td>
 <td>string</td>
 <td>Hispanic American</td>
 </tr>
 
 <tr>
-<td>nativeAmerican</td>
+<td>nativeAmericanOwned</td>
 <td>string</td>
 <td>Native American</td>
 </tr>
 
 <tr>
-<td>asianPacificAmerican</td>
+<td>asianPacificAmericanOwned</td>
 <td>string</td>
 <td>Asian Pacific American</td>
 </tr>
 
 <tr>
-<td>subcontinentAsian<br>IndianAmerican</td>
+<td>subcontinentAsian<br>IndianAmericanOwned</td>
 <td>string</td>
 <td>Sub Continent <br>Asian Indian American</td>
 </tr>
@@ -8761,9 +9056,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -8779,9 +9074,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -8866,9 +9161,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -8884,9 +9179,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -8971,9 +9266,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -8989,9 +9284,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9076,9 +9371,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9094,9 +9389,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9181,9 +9476,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9199,9 +9494,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9286,9 +9581,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9304,9 +9599,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9391,9 +9686,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9409,9 +9704,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9496,9 +9791,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9514,9 +9809,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9601,9 +9896,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9619,9 +9914,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9706,9 +10001,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9724,9 +10019,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9811,9 +10106,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9829,9 +10124,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -9916,9 +10211,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -9934,9 +10229,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 
@@ -10021,9 +10316,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>stateOrProvince</td>
+<td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province</td>
+<td>State or Province Code</td>
 </tr>
 
 <tr>
@@ -10039,9 +10334,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>country</td>
+<td>countryCode</td>
 <td>string</td>
-<td>Country</td>
+<td>Country Code</td>
 </tr>
 </table>
 

@@ -128,6 +128,12 @@ paths:
           required: false
           schema:
             type: string
+        - name: updateDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
         - name: physicalAddressCity
           in: query
           description: City name
@@ -296,13 +302,13 @@ paths:
           required: false
           schema:
             type: string
-        - name: companySecurityLevel
+        - name: companySecurityLevelCode
           in: query
           description: Company Security Level code
           required: false
           schema:
             type: string
-        - name: highestEmployeeSecurityLevel
+        - name: highestEmployeeSecurityLevelCode
           in: query
           description: Highest Employee Security Level Code
           required: false
@@ -324,6 +330,60 @@ paths:
         - name: sensitivity
           in: query
           description: Determines Sensitivity Level of Data
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeCode
+          in: query
+          description: Determines Agency Business Purpose Code
+          required: false
+          schema:
+            type: string
+        - name: routingNumber
+          in: query
+          description: Determines Routing Number
+          required: false
+          schema:
+            type: string
+        - name: bankName
+          in: query
+          description: Determines Bank Name
+          required: false
+          schema:
+            type: string
+        - name: accountNumber
+          in: query
+          description: Determines Account Number
+          required: false
+          schema:
+            type: string
+        - name: eftWaiverFlag
+          in: query
+          description: Determines EFT Waiver
+          required: false
+          schema:
+            type: string
+        - name: agencyLocationCode
+          in: query
+          description: Determines Agency Location Code
+          required: false
+          schema:
+            type: string
+        - name: disbursingOfficeSymbol
+          in: query
+          description: Determines Disbursing Symbol
+          required: false
+          schema:
+            type: string
+        - name: taxpayerName
+          in: query
+          description: Determines Taxpayer Name
+          required: false
+          schema:
+            type: string
+        - name: taxpayerIdentificationNumber
+          in: query
+          description: Determines Taxpayer Identification Number
           required: false
           schema:
             type: string
@@ -470,6 +530,12 @@ paths:
           schema:
             type: string
         - name: registrationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: updateDate
           in: query
           description: A single Date or Date range in the format MM/DD/YYYY
           required: false
@@ -644,13 +710,13 @@ paths:
           required: false
           schema:
             type: string
-        - name: companySecurityLevel
+        - name: companySecurityLevelCode
           in: query
           description: Company Security Level code
           required: false
           schema:
             type: string
-        - name: highestEmployeeSecurityLevel
+        - name: highestEmployeeSecurityLevelCode
           in: query
           description: Highest Employee Security Level Code
           required: false
@@ -672,6 +738,66 @@ paths:
         - name: sensitivity
           in: query
           description: Determines Sensitivity Level of Data
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeCode
+          in: query
+          description: Determines Agency Business Purpose Code
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeCode
+          in: query
+          description: Determines Agency Business Purpose Code
+          required: false
+          schema:
+            type: string
+        - name: routingNumber
+          in: query
+          description: Determines Routing Number
+          required: false
+          schema:
+            type: string
+        - name: bankName
+          in: query
+          description: Determines Bank Name
+          required: false
+          schema:
+            type: string
+        - name: accountNumber
+          in: query
+          description: Determines Account Number
+          required: false
+          schema:
+            type: string
+        - name: eftWaiverFlag
+          in: query
+          description: Determines EFT Waiver
+          required: false
+          schema:
+            type: string
+        - name: agencyLocationCode
+          in: query
+          description: Determines Agency Location Code
+          required: false
+          schema:
+            type: string
+        - name: disbursingOfficeSymbol
+          in: query
+          description: Determines Disbursing Symbol
+          required: false
+          schema:
+            type: string
+        - name: taxpayerName
+          in: query
+          description: Determines Taxpayer Name
+          required: false
+          schema:
+            type: string
+        - name: taxpayerIdentificationNumber
+          in: query
+          description: Determines Taxpayer Identification Number
           required: false
           schema:
             type: string
