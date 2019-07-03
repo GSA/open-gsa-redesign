@@ -12,7 +12,7 @@ tags:
   - name: Awards Data Service
 
 paths:
-  /contractdata:
+  /contractdata/v1/api/contracts:
     get:
       tags:
         - Awards Data Service
@@ -2350,7 +2350,7 @@ paths:
           description: Forbidden
         "404":
           description: Not Found
-  /contractdata-extract/:
+  /contractdata/v1/api/contract-extracts/:
     get:
       tags:
         - Awards Extract Service
@@ -4377,7 +4377,7 @@ paths:
           description: API key is not correct or was not provided
         "404":
           description: The resource you were trying to reach is not found
-  /contractdata-download:
+  /contractdata/v1/download/contracts:
     get:
       tags:
         - Awards Extract Service
@@ -4407,7 +4407,7 @@ paths:
           description: API key is not correct or was not provided
         "404":
           description: The resource you were trying to reach is not found
-  /contractdata-delete:
+  /contractdata/v1/api/deletes:
     get:
       tags:
         - Awards Delete Service
@@ -4501,7 +4501,7 @@ paths:
           description: API key is not correct or was not provided
         "404":
           description: The resource you were trying to reach is not found
-  /contractdata-delete-extract:
+  /contractdata/v1/api/delete-extracts:
     get:
       tags:
         - Awards Delete Service
@@ -4595,7 +4595,7 @@ paths:
           description: API key is not correct or was not provided
         "404":
           description: The resource you were trying to reach is not found
-  /contractdata-delete-download:
+  /contractdata/v1/download/deletes:
     get:
       tags:
         - Awards Delete Service

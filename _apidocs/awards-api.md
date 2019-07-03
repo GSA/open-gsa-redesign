@@ -2,8 +2,8 @@
 title: Awards API
 banner-heading: Awards API
 ---
-<!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
+	<!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
+	<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
 
 
 ## Overview
@@ -49,20 +49,20 @@ Awards Delete Extract API:
 ## Getting Started
 
 Awards API can be accessed from Beta or Alpha via the following end points:
-* https://api.sam.gov/prod/contractdata?api_key=< value >
-* https://api-alpha.sam.gov/prodlike/contractdata?api_key=< value >
+* https://api.sam.gov/prod/contractdata/v1/api/contracts?api_key=< value >
+* https://api-alpha.sam.gov/prodlike/contractdata/v1/api/contracts?api_key=< value >
 
 Awards Extract API can be accessed from Beta or Alpha via the following end points:
-* https://api.sam.gov/prod/contractdata-extract?api_key=< value >&format=< Format Type >&emailId=< a valid email address >
-* https://api-alpha.sam.gov/prodlike/contractdata-extract?api_key=< value >& format=< Format Type >&emailId=< a valid email address >
+* https://api.sam.gov/prod/contractdata/v1/api/contract-extracts?api_key=< value >&format=< Format Type >&emailId=< a valid email address >
+* https://api-alpha.sam.gov/prodlike/contractdata/v1/api/contract-extracts?api_key=< value >& format=< Format Type >&emailId=< a valid email address >
 
 Awards Delete API can be accessed from Beta or Alpha via the following end points:
-* https://api.sam.gov/prod/contractdata-delete?api_key=< value >
-* https://api-alpha.sam.gov/prodlike/contractdata-delete?api_key=< value >
+* https://api.sam.gov/prod/contractdata/v1/api/deletes?api_key=< value >
+* https://api-alpha.sam.gov/prodlike/contractdata/v1/api/deletes?api_key=< value >
 
 Awards Delete Extract API can be accessed from Beta or Alpha via the following end points:
-* https://api.sam.gov/prod/contractdata-delete-extract?api_key=< value >&format=< Format Type >&emailId=< a valid email address >
-* https://api-alpha.sam.gov/prodlike/contractdata-delete-extract?api_key=< value >& format=< Format Type >&emailId=< a valid email address >
+* https://api.sam.gov/prod/contractdata/v1/api/delete-extracts?api_key=< value >&format=< Format Type >&emailId=< a valid email address >
+* https://api-alpha.sam.gov/prodlike/contractdata/v1/api/delete-extracts?api_key=< value >& format=< Format Type >&emailId=< a valid email address >
 
 Generating the API Key:
 * Registered users can request for a public API on 'Account Details' page.
@@ -76,7 +76,7 @@ Generating the API Key:
 
 ### Awards API
 
-**Endpoint:** https://api.sam.gov/prod/contractdata?api_key=< value >&page=< value >&size=< value >
+**Endpoint:** https://api.sam.gov/prod/contractdata/v1/api/contracts?api_key=< value >&page=< value >&size=< value >
 
 **Description** Restful endpoint to retrieve Awards data service detail information
 
@@ -914,7 +914,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 
 ### Awards Extract API
 
-**Endpoint:** https://api.sam.gov/prod/contractdata-extract?api_key=< value >&format=< Format Type >&emailId=< a valid email address >
+**Endpoint:** https://api.sam.gov/prod/contractdata/v1/api/contract-extracts?api_key=< value >&format=< Format Type >&emailId=< a valid email address >
 
 **Description**  Restful endpoint to retrieve Awards data service detail information in the form of csv or json format instead of paginated.
 
@@ -926,7 +926,7 @@ Same response as mentioned above applies.
 
 ### Awards Delete API
 
-**Endpoint:** https://api.sam.gov/prod/contractdata-delete?api_key=< value >&page=< value >&size=< value >
+**Endpoint:** https://api.sam.gov/prod/contractdata/v1/api/deletes?api_key=< value >&page=< value >&size=< value >
 
 **Description** Restful endpoint to retrieve deleted awards in a paginated manner.
 
