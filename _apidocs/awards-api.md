@@ -2,8 +2,6 @@
 title: Awards API
 banner-heading: Awards API
 ---
-	<!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
-	<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
 
 
 ## Overview
