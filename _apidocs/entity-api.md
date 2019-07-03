@@ -10391,7 +10391,7 @@ https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&
 ## Change Log
 
 Date | Version | Description |
-------|---------------|---------
+------|---------------|--------- |
 06/03/2019 | v0.9 | Base Version |
 07/03/2019 | v0.9 | * New Filters were added for Sensitive api  <br><br>  * agencyBusinessPurposeCode, agencyBusinessPurposeDesc, bondingLevels, companySecurityLevelCode, companySecurityLevelDesc,
 highestEmployeeSecurityLevelCode, highestEmployeeSecurityLevelDesc were added to FOUO and Sensitive api's schema.
