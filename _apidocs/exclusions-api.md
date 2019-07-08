@@ -189,6 +189,13 @@ https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key=<API Key
 &exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=JSON
 &emailId= < a valid email address >
 
+<p><small><a href="#">Back to top</a></small></p>
+
+## Additional Information
+You can view the full details of the differences between the SAM legacy API and Beta API 
+<br> available here: <a href="LegacySAMvsBetaSAM-ExclusionsAPI.pdf">Variance Document</a>
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
 
