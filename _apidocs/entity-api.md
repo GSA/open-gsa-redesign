@@ -3904,11 +3904,6 @@ samMonitoring
 </td>
 </tr>
 
-<tr>
-<td>ediInformationFlag</td>
-<td>string</td>
-<td>EDI Information Flag</td>
-</tr>
 </table>
 
 <summary>disasterReliefData Sub Section</summary>
@@ -10395,8 +10390,9 @@ https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&
 
 ## Change Log
 
-Date | Version | Description
-------|---------------|---------
-06/03/2019 | v0.9 | Base Version
+| Date | Version | Description |
+| ------ | --------------- | --------- |
+| 06/03/2019 | v0.9 | Base Version |
+| 07/03/2019 | v0.9 | * Sensitive version of api was added.<br><br>  * agencyBusinessPurposeCode, agencyBusinessPurposeDesc, bondingLevels, companySecurityLevelCode, companySecurityLevelDesc, highestEmployeeSecurityLevelCode, highestEmployeeSecurityLevelDesc were added to FOUO and Sensitive api's schema. <br><br>  * New Filters agencyBusinessPurposeCode, companySecurityLevelCode and highestEmployeeSecurityLevelCode have been added for FOUO and Sensitive api's. <br><br>  * country and stateOrProvince were updated to countryCode and stateOrProvinceCode across all versions of api.<br><br>  * ediInformationFlag was added across all versions of api.<br><br>  * geographicalAreaServedmetropolitanStatisticalAreaCode, geographicalAreaServedmetropolitanStatisticalAreaName were added across all versions of api instead of geographicalAreaServedMSAName.<br><br>  * certificationEntryDate, certificationExitDate were added to SBA Business Types across all versions of api instead of expirationDate.|
 
 <p><small><a href="#">Back to top</a></small></p>
