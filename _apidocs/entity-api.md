@@ -10380,6 +10380,8 @@ To get a CSV file of active Entity records that have a DBAN and that cater to GE
 **API request:** 
 https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&samExtractCode=A&q=”GEOPHYSICAL SURVEYING AND MAPPING SERVICES”&dbaName=!””&format=CSV
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Additional Information
 You can view the full details of the differences between the SAM legacy API and Beta API 
 <br> available here: <a href="LegacySAMvsBetaSAM-EntityManagementAPI.pdf">Variance Document</a>
