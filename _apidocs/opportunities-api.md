@@ -2194,7 +2194,7 @@ N/A
 
 ------- | -------
 **Request Type** | GET
-**URL** | /v2/opportunities/access/{ opportunityId}/accessRequest
+**URL** | /v1/opportunities/access/{opportunityId}/accessRequest
 **Summary** | Summary	Get Authorized Party list for the explicit access requests submitted to an Opportunity
 **Consumes** | application/json
 **Produces** | JSON
@@ -2274,7 +2274,7 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | /v2/opportunities/access/{opportunityId}/accessRequest
+**URL** | /v1/opportunities/access/{opportunityId}/accessRequest
 **Summary** | Add a Vendor as an Authorized Party for a notice to grant access to all the secured attachments across all the versions . This API will create and approve the request for the vendor.
 **Consumes** | application/json
 **Produces** | JSON
@@ -2286,7 +2286,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON  | Body | JSON | Yes | Refer to Vendor Data JSON section
+Request JSON  | Body | JSON | Yes | [Refer Vendor Data JSON](#vendor-data-json)
 
 Responses
 
@@ -2418,11 +2418,11 @@ Examples
 </p>
 </details>
 
-### Delete Notice*  ###
+### Delete Notice ###
 
 ------- | -------
 **Request Type** | POST
-**URL** |	/opps/v2/opportunities/{opportunityId}/requests
+**URL** |	/opps/v1/opportunities/{opportunityId}/requests
 **Summary** | Deletes all the versions or latest version of a notice
 **Consumes** | application/json
 **Produces** | JSON
@@ -2433,7 +2433,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization	| Header | string |	Yes |	Valid and authorized user ID
 api_key |	query |	string |	Yes |	Valid System Account API Key
-Request JSON|	Body|	JSON|	Yes|	Refer Delete Notice JSON
+Request JSON|	Body|	JSON|	Yes|	[Refer Delete Notice JSON](#delete-notice-json)
 
 Responses
 
@@ -2443,24 +2443,6 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Examples
 
-<details>
-<summary>Response</summary>
-<p>
-<code><pre>
-   {
-   "requestType”: delete_request",
-    "reason":"test",
-     "data": {
-                           "description”: “test",
-                            "title”: null,
-                            "newArchiveDate":null,
-                             "newArchiveType":null,
-                             "deleteOption”: latest"  ( “all”  - to delete all versions)
-              }
-}
-</pre></code>
-</p>
-</details>
 
 ### Download All Attachments by Resource ID  ###
 
@@ -3175,7 +3157,25 @@ newArchiveDate|	date|	YYYY-MM-DD|	No|	New Archive Date
 newArchiveType|	string|	|	No|	New Archive Type
 deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or all versions of a notice
 
-
+<div id="delete-notice-json" title="Click to view Delete Notice JSON">
+<details>
+<summary>Response</summary>
+<p>
+<code><pre>
+   {
+   "requestType”: delete_request",
+    "reason":"test",
+     "data": {
+                           "description”: “test",
+                            "title”: null,
+                            "newArchiveDate":null,
+                             "newArchiveType":null,
+                             "deleteOption”: latest"  ( “all”  - to delete all versions)
+              }
+}
+</pre></code>
+</p>
+</details>
 
 <p><small><a href="#">Back to top</a></small></p>
 
