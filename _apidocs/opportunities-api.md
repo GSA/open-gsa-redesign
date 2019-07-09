@@ -173,7 +173,8 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Create/Update Opportunity Contract JSON](#create-update-json)
+Request JSON | Body | JSON | Yes | [Refer Create/Update Opportunity Contract JSON](#Create/Update-Opportunity-Contract-JSON)
+)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -477,7 +478,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Publish Opportunity Contract JSON](#publish-json)
+Request JSON | Body | JSON | Yes | [Refer Create/Update Opportunity Contract JSON](#Create/Update-Opportunity-Contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -521,7 +522,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Published Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Revise Opportunity Contract JSON](#revise-json)
+Request JSON | Body | JSON | Yes | [Refer Revise Opportunity Contract JSON](#Revise-Opportunity-Contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -565,7 +566,8 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Create/Update Opportunity Contract JSON](#create-update-json)
+Request JSON | Body | JSON | Yes | [Refer Create/Update Opportunity Contract JSON](#Create/Update-Opportunity-Contract-JSON)
+)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1643,7 +1645,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Cancel Opportunity Contract JSON](#cancel-json)
+Request JSON | Body | JSON | Yes | [Refer Cancel Opportunity Contract JSON](#Cancel-Opportunity-Contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1689,7 +1691,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Uncancel Opportunity Contract JSON](#uncancel-json)
+Request JSON | Body | JSON | Yes | [Refer Uncancel Opportunity Contract JSON](#Uncancel-Opportunity-Contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1753,7 +1755,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Archive Opportunity Contract JSON](#archive-json)
+Request JSON | Body | JSON | Yes | [Refer Archive Opportunity Contract JSON](#Archive-Opportunity-Contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1795,7 +1797,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Unarchive Opportunity Contract JSON](#unarchive-json)
+Request JSON | Body | JSON | Yes | [Refer Unarchive Opportunity Contract JSON](#Unarchive-Opportunity-Contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1843,7 +1845,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Create Attachment Contract JSON](#create-attachment-json)
+Request JSON | Body | JSON | Yes | [Refer Create Attachment Contract JSON](#create-attachment-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1860,11 +1862,11 @@ Examples
 <p>
 <code><pre>
 {
-	"attType": "file",                                              
-	"content": "T25lIG1vcmUgc21hbGwgdGVzdA==",
-	"resourceName": "demo.txt",
-	"description": "description",
-	"packageAccessLevel": "public"
+ "attType": "file",
+ "content": "SGVsbG8=",
+ "resourceName": "Hello.txt",
+ "fileType": "text/plain",
+ "packageAccessLevel": "public"
 }
 </pre></code>
 </p>
@@ -1904,7 +1906,7 @@ Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
 resourceId | query | string | Yes | Attachment ID
-Request JSON | Body | JSON | Yes | [Refer Update Attachment Contract JSON](#update-attachment-json)
+Request JSON | Body | JSON | Yes | [Refer Update Attachment Contract JSON](#update-attachment-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1921,27 +1923,21 @@ Examples
 <p>
 <code><pre>
 {
-  "attType": "file",
-  "resourceName": "testing.txt",
-  "description": "description",
+ "attType": "file",
+ "packageAccessLevel": "private",
   "explicitAccess": "1",
-  "packageAccessLevel": "public"
+"content": "SGVsbG8=",
+"fileType": "text/plain"
 }
 </pre></code>
 </p>
 </details>
 
 <details>
-<summary>Update Attachment Request - link</summary>
+<summary>Update Attachment Request - link (Coming Soon)</summary>
 <p>
 <code><pre>
-{
-  "attType": "link",
-  "resourceName": "updated beta.sam.gov url",
-  "description": "description",
-  "explicitAccess": "1",
-  "packageAccessLevel": "public"
-}
+
 </pre></code>
 </p>
 </details>
@@ -2135,7 +2131,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 orgId | query | string | Yes | FH Org Id/AAC code of the organization
-Request JSON | Body | JSON | Yes | [Refer IVL Settings Contract JSON](#ivl-settings-json)
+Request JSON | Body | JSON | Yes | [Refer IVL Settings Contract JSON](#ivl-settings-contract-json)
 
 Responses
 
@@ -2956,11 +2952,11 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
 <p>
 <code><pre>
 {
-  "attType": "file",
-  "content": "",
-  "resourceName": "",
-  "description": "",
-  "packageAccessLevel": ""
+ "attType": "file",
+ "content": "",
+ "resourceName": "",
+ "fileType": "text/plain",
+ "packageAccessLevel": "public"
 }
 </pre></code>
 </p>
@@ -3091,11 +3087,11 @@ resourceName | string |  | Yes (if attType=file) | Name of file
 <p>
 <code><pre>
 {
-  "attType": "User entered",
-  "resourceName": "User entered",
+ "attType": "file",
+ "packageAccessLevel": "private",
   "explicitAccess": "1",
-  "description": "User entered",
-  "packageAccessLevel": "User entered"
+"content": "SGVsbG8=",
+"fileType": "text/plain"
 }
 </pre></code>
 </p>
