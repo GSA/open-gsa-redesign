@@ -1876,12 +1876,10 @@ Examples
 <summary>Create Attachment Request - link</summary>
 <p>
 <code><pre>
-{
-	"attType":"link",
-	"description":"test",
-"resourceName": "BETA URL",
-	"link" : "http://beta.sam.gov",
-	"packageAccessLevel":"public"
+{"attType":"link",
+ "link":"https://faaco.faa.gov/index.cfm/attachment/download/84723",
+ "description":"test attachment pdf link",
+"packageAccessLevel":null
 }
 </pre></code>
 </p>
@@ -1923,21 +1921,27 @@ Examples
 <p>
 <code><pre>
 {
- "attType": "file",
- "packageAccessLevel": "private",
-  "explicitAccess": "1",
-"content": "SGVsbG8=",
-"fileType": "text/plain"
+  "attType": "file",
+  "packageAccessLevel": "private",
+   "explicitAccess": "1",
+ "content": "SGVsbG8=",
+ "fileType": "text/plain"
 }
 </pre></code>
 </p>
 </details>
 
 <details>
-<summary>Update Attachment Request - link (Coming Soon)</summary>
+<summary>Update Attachment Request - link</summary>
 <p>
 <code><pre>
-
+{
+  "attType": "file",
+  "packageAccessLevel": "private",
+   "explicitAccess": "1",
+ "content": "SGVsbG8=",
+ "fileType": "text/plain"
+}
 </pre></code>
 </p>
 </details>
@@ -2439,6 +2443,24 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Examples
 
+<details>
+<summary>Delete Notice:</summary>
+<p>
+<code><pre>
+{
+   "requestType":"delete_request",
+    "reason":"test",
+     "data":{
+              "description":"test",
+               "title":null,
+                "newArchiveDate":null,
+                "newArchiveType":null,
+                 "deleteOption":"latest"  ( “all”  - to delete all versions)
+              }
+}
+</pre></code>
+</p>
+</details>
 
 ### Download All Attachments by Resource ID  ###
 
@@ -3113,7 +3135,7 @@ explicitAccess |  |  |  |
 
 <div id="ivl-settings-json" title="Click to view IVL Settings Contract">
 <details>
-<summary>IVL_Settings_Contract_Json</summary>
+<summary>IVL_Settings_Contract_JSON</summary>
 <p>
 <code><pre>
 {
