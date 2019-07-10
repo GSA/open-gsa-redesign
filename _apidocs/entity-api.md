@@ -2,6 +2,8 @@
 title: Entity Management  API
 banner-heading: Entity Management API
 ---
+<!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >-->
+<!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
 
 This content is currently not Firefox compliant.  Please access via Chrome or Internet Explorer.
 ## Overview
@@ -15,17 +17,23 @@ The Entity Management API will allow users to request Public Entity Information 
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
 
+**Additional Features of the Entity Management API:** It can serve as an Extract API with the addition of "format" parameter in the request. Following are the key features of the Entity Management Extract API:
+* It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
+* It returns asynchronous responses by sending file downloadable links in the browser and in the user emails.
+* It returns data in the JSON or CSV format as selected by the user.
+* It can return only the first 1,000,000 records.
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
 
 Public Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/prod/entity-management?api_key= < value >
-   * Alpha: https://api-alpha.sam.gov/prodlike/entity-management?api_key= < value >- This end point is valid until 05/31/2019, and a new end point will be provided soon.
+   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value > - This endpoint will be available on     06/10/2019.
+   * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v0.9/api/entities?api_key= < value >
 
 FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: Coming soon
-   * Alpha: Coming soon
+   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value > - This endpoint will be available on     06/10/2019.
+   * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v0.9/api/entities?api_key= < value >
 
 Sensitive Entity Details  can be accessed from Beta or Alpha via the following end points:
    * Beta: Coming soon
@@ -47,22 +55,22 @@ Generating a System Account API Key:
 * The user must enter their password again to retrieve the key.
 * NOTE:  To obtain access to the FOUO/Sensitive Entity API data with a system account the user must be registered with a government email address.
 
+Utilizing the Entity API as an extract:
+* To utilize this API as an Extract an additional parameter called 'format' has been implemented.
+* To retrieve Entity data in a CSV format, the parameter '&format=csv' must be provided in the request.
+* To retrieve Entity data in a JSON format, the parameter '&format=json' must be provided in the request.
+* If the requests that contain the 'format' parameter are executed successfully, then they will provide the user with a file downloadable URL in the response.
+* In the file downloadable URL, the phrase REPLACE_WITH_API_KEY must be deleted and replaced with a valid API Key and sent as another request.
+* If the file is ready for download, then the users can retrieve it. If the file is not ready for download, then the users will need to try again in some time.
+* Users can also provide another parameter, "emailId" with a valid email address if they choose to receive the file downloadable link in their emails.
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ## API Description
 
 If you are using Chrome, subsections that can be expanded are denoted with an arrow.
 
-### Public Endpoints Information
-<details>
-<summary><b>Public Entity Management Endpoint</b></summary><br>
-<tr>
-<td><b>Endpoint:</b>  https://api.sam.gov/prod/entity-management?api_key= < value > </td>
-</tr><br>
-
-<tr>
-<td><b>Description:</b> Restful endpoint to retrieve Entity detail information</td>
-</tr><br>
+### Public API Information
 
 <details>
 <summary><b>Query String Parameters</b></summary>
@@ -122,9 +130,8 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 
 <tr>
 <td>entityStructureDesc</td>
-<td>Allows a text.
-<br>entityStructureDesc=Partnership or Limited Liability Partnership</td>
-<br>Example: entityStructureDesc=Sole Proprietorship</td>
+<td>Allows Description or null.
+<br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
 </tr>
 
 <tr>
@@ -321,11 +328,26 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <br>Example: includeSections=entityRegistration,coreData</td>
 </tr>
 
+<tr>
+<td>format</td>
+<td>Allows user to download different file formats(csv and json are allowable values).
+<br>Example: format=csv</td>
+</tr>
+
+<tr>
+<td>emailId</td>
+<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
+<br>Example: emailId=test@gsa.gov</td>
+</tr>
+
 </table>
-</details><br>
+</details>
 
 <tr>
 <td><b> Expected Result:</b></td>
+</tr>
+<tr>
+<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.</td>
 </tr>
 <details>
 <summary>entityRegistration Section</summary>
@@ -503,15 +525,15 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1 and Mailing Address 1</td>
+<td>Physical Address Line 1 and Mailing Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2 and Mailing Address 2</td>
+<td>Physical Address Line 2 and Mailing Address Line 2</td>
 </tr>
 
 <tr>
@@ -521,9 +543,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State and Mailing Address State</td>
+<td>Physical Address State or Province and Mailing Address State or Province</td>
 </tr>
 
 <tr>
@@ -544,11 +566,19 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>Physical Address Country and Mailing Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
+</table>
+
+<table>		
+<tr>		
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>		
+<th style="background-color: #f1f1f1;"><b>Type</b></th>		
+<th style="background-color: #f1f1f1;"><b>Description</b></th>		
+</tr>		
+<tr>		
+<td>congressionalDistrict</td>		
+<td>string</td>		
+<td>Physical Address Congressional District</td>		
+</tr>		
 </table>
 
 <summary>generalInformation Sub Section</summary>
@@ -815,11 +845,6 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </td>
 </tr>
 
-<tr>
-<td>ediInformationFlag</td>
-<td>string</td>
-<td>EDI Information Flag</td>
-</tr>
 </table>
 
 <summary>disasterReliefData Sub Section</summary>
@@ -1599,6 +1624,41 @@ First Name</td>
 <td>Company Is Reference</td>
 </tr>
 <tr>
+<td>firmNumOfEmployees</td>
+<td>string</td>
+<td>Number of Employees in the Firm</td>
+</tr>
+<tr>
+<td>branchNumOfEmployees</td>
+<td>string</td>
+<td>Number of Employees in the Branch</td>
+</tr>
+<tr>
+<td>experienceCode</td>
+<td>string</td>
+<td>Experience Code</td>
+</tr>
+<tr>
+<td>annualAvgRevenueCode	</td>
+<td>string</td>
+<td>Annual Average Revenue Code</td>
+</tr>
+<tr>
+<td>federalRevenueCode</td>
+<td>string</td>	
+<td>Federal Revenue Code</td>
+</tr>
+<tr>
+<td>nonFedRevenueCode</td>	
+<td>string</td>	
+<td>Non-Federal Revenue Code</td>
+</tr>
+<tr>
+<td>totalRevenueCode	</td>
+<td>string</td>
+<td>Total Revenue Code</td>
+</tr>
+<tr>
 <td>qualificationURLPDF</td>
 <td>string</td>
 <td>Qualification URL PDF</td>
@@ -1615,6 +1675,20 @@ First Name</td>
 </table>
 </details>
 </td>
+</tr>
+</table>
+
+<summary>financialAssistanceCertifications Sub Section</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+<tr>
+<td>financialAssistanceResponse</td>
+<td>string</td>
+<td>Financial Assistance Response</td>
 </tr>
 </table>
 
@@ -1685,15 +1759,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -1703,9 +1777,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -1790,15 +1864,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -1808,9 +1882,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -1895,15 +1969,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -1913,9 +1987,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -2000,15 +2074,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -2018,9 +2092,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -2105,15 +2179,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -2123,9 +2197,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -2210,15 +2284,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -2228,9 +2302,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -2252,21 +2326,9 @@ First Name</td>
 </tr>
 </table>
 
-</details><br>
 </details>
 
-
-
-### FOUO Endpoints Information
-<details>
-<summary><b>FOUO Entity Management Endpoint</b></summary><br>
-<tr>
-<td><b>Endpoint:</b>  Coming soon </td>
-</tr><br>
-
-<tr>
-<td><b>Description:</b> Restful endpoint to retrieve Entity detail information with FOUO data</td>
-</tr><br>
+### FOUO API Information
 
 <details>
 <summary><b>Query String Parameters</b></summary>
@@ -2326,7 +2388,7 @@ First Name</td>
 
 <tr>
 <td>entityStructureDesc</td>
-<td>Allows a text.
+<td>Allows Description or null.
 <br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
 </tr>
 
@@ -2518,11 +2580,62 @@ First Name</td>
 <br>Example: includeSections=entityRegistration,coreData</td>
 </tr>
 
+<tr>
+<td>format</td>
+<td>Allows user to download different file formats(csv and json are allowable values).
+<br>Example: format=csv</td>
+</tr>
+
+<tr>
+<td>emailId</td>
+<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
+<br>Example: emailId=test@gsa.gov</td>
+</tr>
+
+<tr>
+<td>edi</td>
+<td>Allows text.
+<br>Example: edi=YES/NO</td>
+</tr>
+
+<tr>
+<td>companySecurityLevel</td>
+<td>Allows 2 character code.
+<br>Example: companySecurityLevel=92</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevel</td>
+<td>Allows 2 character code .
+<br>Example: highestEmployeeSecurityLevel=90</td>
+</tr>
+
+<tr>
+<td>ultimateParentUEIDUNS</td>
+<td>Allows text.
+<br>Example: ultimateParentUEIDUNS=090123451</td>
+</tr>
+
+<tr>
+<td>ultimateParentUEISAM</td>
+<td>Allows text.
+<br>Example: ultimateParentUEISAM=090123451</td>
+</tr>
+
+<tr>
+<td>sensitivity</td>
+<td>Allows text, Determines Sensitivity Level of Data.
+<br>Example: sensitivity=fouo</td>
+</tr>
+
 </table>
-</details><br>
+</details>
 
 <tr>
 <td><b> Expected Result:</b></td>
+</tr>
+<tr>
+<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.</td>
 </tr>
 <details>
 <summary>entityRegistration Section</summary>
@@ -2639,6 +2752,18 @@ First Name</td>
 
 <details>
 <summary>core Data Section</summary><br>
+<table>		
+<tr>		
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>		
+<th style="background-color: #f1f1f1;"><b>Type</b></th>		
+<th style="background-color: #f1f1f1;"><b>Description</b></th>		
+</tr>		
+<tr>		
+<td>congressionalDistrict</td>		
+<td>string</td>		
+<td>Physical Address Congressional District</td>		
+</tr>		
+</table>
 <summary>entityHierarchyInformation Sub Section</summary>
 <table>
 <tr>
@@ -2693,15 +2818,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1</td>
+<td>Physical Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2</td>
+<td>Physical Address Line 2</td>
 </tr>
 
 <tr>
@@ -2711,9 +2836,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State</td>
+<td>Physical Address State or Province</td>
 </tr>
 
 <tr>
@@ -2734,12 +2859,8 @@ First Name</td>
 <td>Physical Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
 </table>
+
 </details>
 </td>
 </div>
@@ -2757,11 +2878,24 @@ First Name</td>
 </tr>
 
 <tr>
-<td>intermediateParentEntites</td>
+<td>intermediateParentEntities</td>
+<td>List</td>
+<td>
+<details>
+<summary>intermediateParentEntities contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>domesticParent</td>
 <td>object</td>
 <td>
 <details>
-<summary>ultimateDomesticParent contains below fields</summary>
+<summary>domesticParent contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -2802,15 +2936,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1</td>
+<td>Physical Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2</td>
+<td>Physical Address Line 2</td>
 </tr>
 
 <tr>
@@ -2820,9 +2954,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State</td>
+<td>Physical Address State or Province</td>
 </tr>
 
 <tr>
@@ -2843,11 +2977,6 @@ First Name</td>
 <td>Physical Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
 </table>
 </details>
 </td>
@@ -2858,6 +2987,116 @@ First Name</td>
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>hqParent</td>
+<td>object</td>
+<td>
+<details>
+<summary>hqParent contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ueiSAM</td>
+<td>string</td>
+<td>Unique Entity Identifier SAM</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>string</td>
+<td>Unique Entity Identifier DUNS</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<div style="width: 20px">
+<td>physicalAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>physicalAddress contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Physical Address Line 1</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Physical Address Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>Physical Address City</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>Physical Address State or Province</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Physical Address Zip</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Physical Address Zip Plus4</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Physical Address Country</td>
+</tr>
+
+
+</table>
+</details>
+</td>
+</div>
+</tr>
+
+<tr>
+<td>phoneNumber</td>
+<td>string</td>
+<td>Phone Number</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 
@@ -2911,15 +3150,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1</td>
+<td>Physical Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2</td>
+<td>Physical Address Line 2</td>
 </tr>
 
 <tr>
@@ -2929,9 +3168,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State</td>
+<td>Physical Address State or Province</td>
 </tr>
 
 <tr>
@@ -2952,11 +3191,7 @@ First Name</td>
 <td>Physical Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
+
 </table>
 </details>
 </td>
@@ -3031,15 +3266,15 @@ dnbMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -3057,7 +3292,7 @@ dnbMonitoring
 <tr>
 <td>stateOrProvince</td>
 <td>string</td>
-<td>State Or Province</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -3069,6 +3304,7 @@ dnbMonitoring
 </details>
 </td>
 </tr>
+
 <tr>
 <td>
 samMonitoring
@@ -3115,15 +3351,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -3141,7 +3377,7 @@ samMonitoring
 <tr>
 <td>stateOrProvince</td>
 <td>string</td>
-<td>State Or Province</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -3205,26 +3441,6 @@ samMonitoring
 </tr>
 </table>
 
-<summary>tinInformation Sub Section</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>taxpayerIdentificationType</td>
-<td>string</td>
-<td>Taxpayer Identification Type</td>
-</tr>
-
-<tr>
-<td>taxpayerIdentificationNumber</td>
-<td>string</td>
-<td>Taxpayer Identification Number</td>
-</tr>
-</table>
 
 <summary>entityInformation Sub Section</summary>
 <table>
@@ -3286,15 +3502,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1 and Mailing Address 1</td>
+<td>Physical Address Line 1 and Mailing Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2 and Mailing Address 2</td>
+<td>Physical Address Line 2 and Mailing Address Line 2</td>
 </tr>
 
 <tr>
@@ -3304,9 +3520,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State and Mailing Address State</td>
+<td>Physical Address State or Province and Mailing Address State or Province</td>
 </tr>
 
 <tr>
@@ -3325,12 +3541,6 @@ samMonitoring
 <td>country</td>
 <td>string</td>
 <td>Physical Address Country and Mailing Address Country</td>
-</tr>
-
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
 </tr>
 </table>
 
@@ -3412,6 +3622,18 @@ samMonitoring
 <td>countryOfIncorporationDesc</td>
 <td>string</td>
 <td>Country Of IncorporationDescription</td>
+</tr>
+
+<tr>
+<td>companySecurityLevel</td>
+<td>string</td>
+<td>Company Security Level</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevel</td>
+<td>string</td>
+<td>Highest Employee Security Level</td>
 </tr>
 </table>
 
@@ -4492,6 +4714,41 @@ First Name</td>
 <td>Company Is Reference</td>
 </tr>
 <tr>
+<td>firmNumOfEmployees</td>
+<td>string</td>
+<td>Number of Employees in the Firm</td>
+</tr>
+<tr>
+<td>branchNumOfEmployees</td>
+<td>string</td>
+<td>Number of Employees in the Branch</td>
+</tr>
+<tr>
+<td>experienceCode</td>
+<td>string</td>
+<td>Experience Code</td>
+</tr>
+<tr>
+<td>annualAvgRevenueCode	</td>
+<td>string</td>
+<td>Annual Average Revenue Code</td>
+</tr>
+<tr>
+<td>federalRevenueCode</td>
+<td>string</td>	
+<td>Federal Revenue Code</td>
+</tr>
+<tr>
+<td>nonFedRevenueCode</td>	
+<td>string</td>	
+<td>Non-Federal Revenue Code</td>
+</tr>
+<tr>
+<td>totalRevenueCode	</td>
+<td>string</td>
+<td>Total Revenue Code</td>
+</tr>
+<tr>
 <td>qualificationURLPDF</td>
 <td>string</td>
 <td>Qualification URL PDF</td>
@@ -4508,6 +4765,20 @@ First Name</td>
 </table>
 </details>
 </td>
+</tr>
+</table>
+
+<summary>financialAssistanceCertifications Sub Section</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+<tr>
+<td>financialAssistanceResponse</td>
+<td>string</td>
+<td>Financial Assistance Response</td>
 </tr>
 </table>
 
@@ -4579,15 +4850,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -4597,9 +4868,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -4684,15 +4955,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -4702,9 +4973,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -4789,15 +5060,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -4807,9 +5078,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -4894,15 +5165,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -4912,9 +5183,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -4999,15 +5270,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5017,9 +5288,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5104,15 +5375,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5122,9 +5393,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5209,15 +5480,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5227,9 +5498,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5314,15 +5585,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5332,9 +5603,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5419,15 +5690,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5437,9 +5708,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5524,15 +5795,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5542,9 +5813,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5629,15 +5900,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5647,9 +5918,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5734,15 +6005,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5752,9 +6023,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5839,15 +6110,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -5857,9 +6128,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -5881,22 +6152,9 @@ First Name</td>
 </tr>
 </table>
 
-</details><br>
-
 </details>
 
-
-### Sensitive Endpoints Information
-
-<details>
-<summary><b>Sensitive Entity Management Endpoint</b></summary><br>
-<tr>
-<td><b>Endpoint:</b>  Coming soon </td>
-</tr><br>
-
-<tr>
-<td><b>Description:</b> Restful endpoint to retrieve Entity detail information with Sensitive data</td>
-</tr><br>
+### Sensitive API Information
 
 <details>
 <summary><b>Query String Parameters</b></summary>
@@ -5956,7 +6214,7 @@ First Name</td>
 
 <tr>
 <td>entityStructureDesc</td>
-<td>Allows Description or null
+<td>Allows Description or null.
 <br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
 </tr>
 
@@ -6161,11 +6419,25 @@ First Name</td>
 <br>Example: includeSections=entityRegistration,coreData</td>
 </tr>
 
+<tr>
+<td>format</td>
+<td>Allows user to download different file formats(csv and json are allowable values).
+<br>Example: format=csv</td>
+</tr>
+
+<tr>
+<td>emailId</td>
+<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
+<br>Example: emailId=test@gsa.gov</td>
+</tr>
 </table>
-</details><br>
+</details>
 
 <tr>
 <td><b> Expected Result:</b></td>
+</tr>
+<tr>
+<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.</td>
 </tr>
 <details>
 <summary>entityRegistration Section</summary>
@@ -6276,6 +6548,18 @@ First Name</td>
 
 <details>
 <summary>core Data Section</summary><br>
+<table>		
+<tr>		
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>		
+<th style="background-color: #f1f1f1;"><b>Type</b></th>		
+<th style="background-color: #f1f1f1;"><b>Description</b></th>		
+</tr>		
+<tr>		
+<td>congressionalDistrict</td>		
+<td>string</td>		
+<td>Physical Address Congressional District</td>		
+</tr>		
+</table>
 <summary>entityHierarchyInformation</summary>
 <table>
 <tr>
@@ -6330,15 +6614,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1</td>
+<td>Physical Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2</td>
+<td>Physical Address Line 2</td>
 </tr>
 
 <tr>
@@ -6348,9 +6632,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State</td>
+<td>Physical Address State or Province</td>
 </tr>
 
 <tr>
@@ -6371,12 +6655,8 @@ First Name</td>
 <td>Physical Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
 </table>
+
 </details>
 </td>
 </div>
@@ -6394,7 +6674,7 @@ First Name</td>
 </tr>
 
 <tr>
-<td>intermediateParentEntites</td>
+<td>intermediateParentEntities</td>
 <td>object</td>
 <td>
 <details>
@@ -6439,15 +6719,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1</td>
+<td>Physical Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2</td>
+<td>Physical Address Line 2</td>
 </tr>
 
 <tr>
@@ -6457,9 +6737,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State</td>
+<td>Physical Address State or Province</td>
 </tr>
 
 <tr>
@@ -6480,12 +6760,9 @@ First Name</td>
 <td>Physical Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
 </table>
+
+
 </details>
 </td>
 </div>
@@ -6548,15 +6825,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1</td>
+<td>Physical Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2</td>
+<td>Physical Address Line 2</td>
 </tr>
 
 <tr>
@@ -6566,9 +6843,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State</td>
+<td>Physical Address State or Province</td>
 </tr>
 
 <tr>
@@ -6589,12 +6866,9 @@ First Name</td>
 <td>Physical Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
 </table>
+
+
 </details>
 </td>
 </div>
@@ -6668,15 +6942,15 @@ dnbMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -6694,7 +6968,7 @@ dnbMonitoring
 <tr>
 <td>stateOrProvince</td>
 <td>string</td>
-<td>State Or Province</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -6752,15 +7026,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -6778,7 +7052,7 @@ samMonitoring
 <tr>
 <td>stateOrProvince</td>
 <td>string</td>
-<td>State Or Province</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -6929,15 +7203,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Physical Address 1 and Mailing Address 1</td>
+<td>Physical Address Line 1 and Mailing Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Physical Address 2 and Mailing Address 2</td>
+<td>Physical Address Line 2 and Mailing Address Line 2</td>
 </tr>
 
 <tr>
@@ -6947,9 +7221,9 @@ samMonitoring
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>Physical Address State and Mailing Address State</td>
+<td>Physical Address State or Province and Mailing Address State or Province</td>
 </tr>
 
 <tr>
@@ -6970,11 +7244,7 @@ samMonitoring
 <td>Physical Address Country and Mailing Address Country</td>
 </tr>
 
-<tr>
-<td>congressionalDistrict</td>
-<td>string</td>
-<td>Physical Address Congressional District</td>
-</tr>
+
 </table>
 
 <summary>generalInformation Sub Section</summary>
@@ -7311,14 +7581,14 @@ samMonitoring
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address1</td>
+<td>Address Line 1</td>
 </tr>
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -7330,7 +7600,7 @@ samMonitoring
 <tr>
 <td>stateOrProvince</td>
 <td>string</td>
-<td>State Or Province</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -8337,6 +8607,41 @@ First Name</td>
 <td>Company Is Reference</td>
 </tr>
 <tr>
+<td>firmNumOfEmployees</td>
+<td>string</td>
+<td>Number of Employees in the Firm</td>
+</tr>
+<tr>
+<td>branchNumOfEmployees</td>
+<td>string</td>
+<td>Number of Employees in the Branch</td>
+</tr>
+<tr>
+<td>experienceCode</td>
+<td>string</td>
+<td>Experience Code</td>
+</tr>
+<tr>
+<td>annualAvgRevenueCode	</td>
+<td>string</td>
+<td>Annual Average Revenue Code</td>
+</tr>
+<tr>
+<td>federalRevenueCode</td>
+<td>string</td>	
+<td>Federal Revenue Code</td>
+</tr>
+<tr>
+<td>nonFedRevenueCode</td>	
+<td>string</td>	
+<td>Non-Federal Revenue Code</td>
+</tr>
+<tr>
+<td>totalRevenueCode	</td>
+<td>string</td>
+<td>Total Revenue Code</td>
+</tr>
+<tr>
 <td>qualificationURLPDF</td>
 <td>string</td>
 <td>Qualification URL PDF</td>
@@ -8353,6 +8658,20 @@ First Name</td>
 </table>
 </details>
 </td>
+</tr>
+</table>
+
+<summary>financialAssistanceCertifications Sub Section</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+<tr>
+<td>financialAssistanceResponse</td>
+<td>string</td>
+<td>Financial Assistance Response</td>
 </tr>
 </table>
 
@@ -8424,15 +8743,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -8442,9 +8761,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -8529,15 +8848,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -8547,9 +8866,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -8634,15 +8953,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -8652,9 +8971,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -8739,15 +9058,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -8757,9 +9076,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -8844,15 +9163,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -8862,9 +9181,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -8949,15 +9268,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -8967,9 +9286,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9054,15 +9373,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9072,9 +9391,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9159,15 +9478,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9177,9 +9496,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9264,15 +9583,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9282,9 +9601,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9369,15 +9688,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9387,9 +9706,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9474,15 +9793,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9492,9 +9811,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9579,15 +9898,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9597,9 +9916,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9684,15 +10003,15 @@ First Name</td>
 </tr>
 
 <tr>
-<td>address1</td>
+<td>addressLine1</td>
 <td>string</td>
-<td>Address 1</td>
+<td>Address Line 1</td>
 </tr>
 
 <tr>
-<td>address2</td>
+<td>addressLine2</td>
 <td>string</td>
-<td>Address 2</td>
+<td>Address Line 2</td>
 </tr>
 
 <tr>
@@ -9702,9 +10021,9 @@ First Name</td>
 </tr>
 
 <tr>
-<td>state</td>
+<td>stateOrProvince</td>
 <td>string</td>
-<td>State</td>
+<td>State or Province</td>
 </tr>
 
 <tr>
@@ -9726,10 +10045,10 @@ First Name</td>
 </tr>
 </table>
 
-</details><br>
 </details>
 
 <p><small><a href="#">Back to top</a></small></p>
+
 
 ## OpenAPI Specification File 
 
@@ -9744,14 +10063,45 @@ The API will return one of the following responses:
 
 | HTTP Response Code | Description |
 | ---- | ----------- |
-| 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameter: 'includeSections' is not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. |
-| 403 | API key is not correct or was not provided. |
+| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. |
 
 <p><small><a href="#">Back to top</a></small></p>
+
+## Explanation of the API using Examples
+Functionality of the Entity API has been explained with the following examples:
+
+**User requirement:** 
+To get only the entityRegistration, coreData and assertions sections for the Entity records whose entityStructureCode is 2J or 8H, 
+physicalAddressCountryCode is USA, countryOfIncorporationCode is USA, registrationDate is from 01/01/2018 to 04/23/2019, servedDisasterStateCode is  
+NE or LA or TX, cageCode is not null, dodaac is null, and primaryNaics is 812112 or 484121 or 336411.
+
+**API Request:**
+https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&q=((entityStructureCode=2J OR entityStructureCode=8H) 
+AND physicalAddressCountryCode=USA AND countryOfIncorporationCode=USA)&registrationDate=[01/01/2018,04/23/2019]&servedDisasterStateCode=[NE~LA~TX]&cageCode=!""
+&dodaac=""&primaryNaics=[812112~484121~336411]&includeSections=entityRegistration,coreData,assertions
+<br>OR<br>
+https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&entityStructureCode=[2J~8H]&physicalAddressCountryCode=USA
+&countryOfIncorporationCode=USA&registrationDate=[01/01/2018,04/23/2019]&servedDisasterStateCode=[NE~LA~TX]&cageCode=!""&dodaac=""&primaryNaics=[812112~484121~336411]
+&includeSections=entityRegistration,coreData,assertions
+
+**User requirement:**
+To get a CSV file of active Entity records that have a DBAN and that cater to GEOPHYSICAL SURVEYING AND MAPPING SERVICES.
+
+**API request:** 
+https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&samExtractCode=A&q=”GEOPHYSICAL SURVEYING AND MAPPING SERVICES”&dbaName=!””&format=CSV
+
+
 
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
+
+<p><small><a href="#">Back to top</a></small></p>
+
+## Change Log
+
+Date | Version | Description
+------|---------------|---------
+06/03/2019 | v0.9 | Base Version
 
 <p><small><a href="#">Back to top</a></small></p>
