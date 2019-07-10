@@ -3,8 +3,6 @@ title: Entity/Exclusions Extracts Download APIs
 banner-heading: Entity/Exclusions Extracts Download APIs
 ---
 
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
-
 
 ## Overview
 The Extracts Download API permits beta.SAM.gov users with valid roles to download entity and exclusions data extracts.<br>
@@ -40,14 +38,12 @@ The Entity Management extracts contain entities (businesses and government agenc
      Monthly ASCII (Default): SAM_SENSITIVE_MONTHLY_V2_YYYYMMDD.ZIP<br />
      Monthly UTF-8 (Default): SAM_SENSITIVE_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
 
-
 4. **Exclusions Public Data Package:**
    * This extract all active exclusions in SAM as a comma-separated value (CSV) file.
    * The Exclusions extract is a daily file, published 7 days per week.
    * End user needs to create an account in beta.SAM.gov and procure an API_KEY to access these extracts.
    * File Name: SAM_Exclusions_Public_Extract_YYDDD.ZIP (Julian Date)<br />
    		* April 16, 2019 is the 106th day of 2019.  Therefore, the Exclusions extract for April 16, 2019 would be SAM_Exclusions_Public_Extract_19106.ZIP.
-
 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -237,5 +233,13 @@ The API will return one of the following responses:
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
+
+<p><small><a href="#">Back to top</a></small></p>
+
+## Change Log
+
+Date | Version | Description
+------|---------------|---------
+06/03/2019 | v 1.0 | Base Version
 
 <p><small><a href="#">Back to top</a></small></p>
