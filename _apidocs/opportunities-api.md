@@ -3150,7 +3150,7 @@ Name | Data Type | Allowed Values | Required | Description
 ivlCreate | string | forcedon, forcedoff | Yes | Indicates whether vendors can indicate interest in the organization’s Opportunities
 ivlView | string | forcedon, forcedoff | Yes | Indicates whether vendors can view other vendors interested in the organization’s Opportunities
 
-### Vendor Data JSON ###
+### Vendor Data JSON
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -3161,7 +3161,7 @@ contractorName | string | | No | Contractor Name
 duns | string | | Yes | DUNS#
 cageCode | string | | No | Cage Code
 
-### Delete Notice JSON ###
+### Delete Notice JSON
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
