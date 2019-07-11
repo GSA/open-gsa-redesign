@@ -124,20 +124,27 @@ This API has two primary endpoints:
 | title | The title of the content-item |
 | type | The content-type of the content-item |
 | body | A blob of text contained as the body of this content item |
+| public_url | The public URL for this content item on GSA.gov |
+| navigation_title | The Navigation-Title for this page |
 | created | A unix timestamp indicating when the content-item was created |
 | last_updated | A unix timestamp indicating when the content-item was last edited |
 | content_id | A numerical unique ID for this content item in this system |
-| author | The user who last modified this content-item |
+| last_modified_by | The user who last modified this content-item |
 | owner | A numerical identifier that indicates who owns this content in this system. This is a reference to another items content_id |
-| owner | A numerical identifier that indicates who the POC is for this content in this system. This is a reference to another items content_id |
-
+| poc | A numerical identifier that indicates who the POC is for this content in this system. This is a reference to another items content_id |
+| page_content_area | A numerical identifier that indicates which content item is used as the main-body-area for this page |
+| page_children | A numerical identifier that indicates which pages are considered child-pages to this one |
+| contacts | A numerical identifier that indicates which individuals are considered to be reachable contacts related to this content |
+| generic_contact | A numerical identifier that indicates which group of individuals are considered to be reachable contacts related to this content |
+| info_infoblock | A numerical identifier that indicates which content item shall be used as a right-side-bar for this page |
+| rotating_feature_block | A numerical identifier that indicates which content item shall be used as slide-show on this page |
+| expiration_date | The date at which the page will expire on GSA.gov (in unix epoch time) |
 
 **Endpoint 2:** https://api.gsa.gov/technology/gsa-content/v2/by-id/{id}
 
 **Description:**   An individual piece of content based on its content ID.  
 
 **Example** https://api.gsa.gov/technology/gsa-content/v2/by-id/73
-
 
 **Query String Parameters**
 
