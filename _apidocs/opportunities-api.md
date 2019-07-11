@@ -3173,7 +3173,6 @@ newArchiveDate|	date|	YYYY-MM-DD|	No|	New Archive Date
 newArchiveType|	string|	|	No|	New Archive Type
 deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or all versions of a notice
 
-<div id="delete-notice-json" title="Click to view Delete Notice JSON">
 <details>
 <summary>Response</summary>
 <p>
