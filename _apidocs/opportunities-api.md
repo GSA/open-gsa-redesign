@@ -173,8 +173,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Create/Update Opportunity Contract JSON](#Create/Update-Opportunity-Contract-JSON)
-)
+Request JSON | Body | JSON | Yes | [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -478,7 +477,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Create/Update Opportunity Contract JSON](#Create/Update-Opportunity-Contract-JSON)
+Request JSON | Body | JSON | Yes | [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -486,7 +485,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-204 | string | Opportunity successfully published | returns Opporutnity ID in response header
+204 | string | Opportunity successfully published | returns Opportunity ID in response header
 
 Examples
 
@@ -522,7 +521,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Published Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Revise Opportunity Contract JSON](#Revise-Opportunity-Contract-JSON)
+Request JSON | Body | JSON | Yes | [Refer Revise Opportunity Contract JSON](#revise-opportunity-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -566,8 +565,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Create/Update Opportunity Contract JSON](#Create/Update-Opportunity-Contract-JSON)
-)
+Request JSON | Body | JSON | Yes |[Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1631,10 +1629,6 @@ Examples
 ### Cancel Opportunity
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 ------- | -------
 **Request Type** | POST
 **URL** | /v1/api/cancel/{opportunityId}
@@ -1649,7 +1643,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Cancel Opportunity Contract JSON](#Cancel-Opportunity-Contract-JSON)
+Request JSON | Body | JSON | Yes | [Refer Cancel Opportunity Contract JSON](#cancel-opportunity-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1695,7 +1689,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Uncancel Opportunity Contract JSON](#Uncancel-Opportunity-Contract-JSON)
+Request JSON | Body | JSON | Yes | [Refer Uncancel Opportunity Contract JSON](#uncancel-opportunity-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1759,7 +1753,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Archive Opportunity Contract JSON](#Archive-Opportunity-Contract-JSON)
+Request JSON | Body | JSON | Yes | [Refer Archive Opportunity Contract JSON](#archive-opportunity-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1801,7 +1795,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Unarchive Opportunity Contract JSON](#Unarchive-Opportunity-Contract-JSON)
+Request JSON | Body | JSON | Yes | [Refer Unarchive Opportunity Contract JSON](#unarchive-opportunity-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2584,7 +2578,7 @@ Examples
 
 ## API Contract JSON
 
-### Create/Update Opportunity Contract JSON
+### Create and Update Opportunity Contract JSON
 
 <div id="create-update-json">
 <details>
