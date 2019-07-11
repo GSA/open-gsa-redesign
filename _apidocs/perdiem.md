@@ -191,7 +191,7 @@ This API has five primary endpoints:
 
 **Endpoint 5:** https://api.gsa.gov/travel/perdiem/v2/rates/conus/mie/{year}
 
-**Description:**   Meals and Incidental Expense (M&IE) rates 
+**Description:**   Meals and Incidental Expense (M&IE) Breakdown Rates by Year
 
 **Example:** https://api.gsa.gov/travel/perdiem/v2/rates/conus/mie/2019
 
@@ -206,13 +206,33 @@ This API has five primary endpoints:
 
 | Name  | Description |
 | ---- | ----------- |
-| total |  |
-| breakfast |  |
-| lunch |  |
-| dinner |  |
-| incidental |  |
-| FirstLastDay |  |
+| total | Total PerDiem |
+| breakfast | PerDiem for breakfast |
+| lunch | PerDiem for lunch |
+| dinner | PerDiem for dinner |
+| incidental | PerDiem for incidents |
+| FirstLastDay | PerDiem for the first and last day |
 
+
+**Endpoint 6:** https://api.gsa.gov/travel/perdiem/v2/rates/conus/zipcodes/{year}
+
+**Description:**   Mapping of Destination-IDs to ZipCode and State locations
+
+**Example:** https://api.gsa.gov/travel/perdiem/v2/rates/conus/zipcodes/2019
+
+**Query Parameters**
+
+| Name  | Description | Example |
+| ---- | ----------- | ----------- |
+| year | Fiscal year of travel.  Available back to 2010. | 2019 |
+
+**Expected Result**
+
+| Name  | Description |
+| ---- | ----------- |
+| DID | A destination-ID |
+| Zip | The ZipCode this destination-ID resides within |
+| ST | The state this destination-ID resides within |
 
 
 <p><small><a href="#">Back to top</a></small></p>
