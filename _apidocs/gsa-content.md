@@ -166,7 +166,7 @@ This API has two primary endpoints:
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/openapi.yaml">Open API specification file for the Sample API</a>
+<a href="sample-api/v1/openapi.yaml">Open API specification file for the Sample API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
