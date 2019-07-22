@@ -1,6 +1,6 @@
 ---
-title: Per Diem API - Draft
-banner-heading: Per Diem API - Draft
+title: Per Diem API
+banner-heading: Per Diem API
 ---
 
 
