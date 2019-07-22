@@ -2716,7 +2716,7 @@ Examples
 Name | Data Type | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
 -----|-----------|----------------|--------------------------|-----------------------|------------
 type | string | See Notice Types table | Yes | Yes | Notice Type
-solicitationNumber | string |  | Yes | Yes | Solicitation Number
+solicitationNumber | string |  | No | Yes | Solicitation Number
 title | string |  | No | Yes | Title of the Opportunity
 organizationId | string |  | No | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
 classificationCode | string |  | No | Yes (not required for type= r) | Product Service Code (PSC)
@@ -2730,7 +2730,7 @@ pointOfContact | JSON | NA | NA | NA |
 pointOfContact.type | string | p | Yes | Yes | Contact Type Note: 'p' must be in lower case
 pointOfContact.title | string |  | No | No | Contact title
 pointOfContact.fullname | string |  | No | Yes | Contact Full Name
-pointOfContact.email | string |  | No | No | Contact email
+pointOfContact.email | string |  | Yes (no if type = a) | Yes (no if type = a)  | Contact email
 pointOfContact.phone | string |  | No | No | Contact Phone
 pointOfContact.fax | string |  | No  | No | Contact Fax
 placeOfPerformance | JSON | NA | NA | NA |
@@ -2761,8 +2761,8 @@ solicitation.deadlines | JSON | NA | NA | NA |
 solicitation.<br/>deadlines.response | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes (for type=k,o)<br/>2) Yes (when archive.type=<br/>auto1) | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
 solicitation.deadlines.<br/>responseresponseTz | string | | No | No | Time Zone for <br/>Solicitation Deadline Date
 award | JSON | NA | NA | NA |
-award.date | date | YYYY-MM-DD | Yes (only for type=<br/>i, u, a) | Yes (only for type=<br/>i, u, a) | Award Date
-award.number | string |  | Yes (only for type=i, u, a) | Yes (only for type=i, u, a) | Award Number
+award.date | date | YYYY-MM-DD | Yes only for type= a | Yes only for type= a | Award Date
+award.number | string |  | Yes only for type= i, j, a | Yes only for type= i, j, a | Award Number
 award.deliverOrderNumber | string |  | No | No | Award Deliver Order Number
 award.amount | number |  | No | No | Award Amount
 award.lineitemNumber | string |  | No | No | Award Line item Number
@@ -3092,7 +3092,6 @@ Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 attType | string | link, file | Yes | Type of attachment, either link or file
 content | byte |  | Yes (if attType=file) | File content in byte format
-description | string |  | No | Description of file or link
 link | string |  | Yes (if attType=link) | Resource link or URL
 packageAccessLevel | string | public,private(default public) | No | Type of access to file or link
 resourceName | string |  | Yes (if attType=file) | Name of file
@@ -3121,7 +3120,6 @@ resourceName | string |  | Yes (if attType=file) | Name of file
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 attType | string | link, file | Yes | Type of attachment, either link or file
-description | string |  | No | Description of file or link
 link | string |  | Yes (if attType=link) | Resource link or URL
 packageAccessLevel | string | public,private(default public) | No | Type of access to file or link
 resourceName | string |  | Yes (if attType=file) | Name of file
@@ -3300,6 +3298,6 @@ Date | Version | Description
 5/23/2019 | v0.3 | Update IVL Settings URL <br> Removed Get IVL by DUNS <br> Added EntityID to getIVL API parameter <br> Updated Get Authorized Party <br> Updated Add Authorized Party <br> Error Message Section Updated
 5/28/2019 | v0.4| Updated  Add Authorized Party<br> Get Authorized Party<br> Delete All Attachments API’s <br> Added Delete Notice API <br> Updated User Permissions <br> Create and Publish Contract Opportunity
 6/6/2019| v0.5| Deleted Download All Attachments (metadata) <br> Added Download All Attachments by Resource ID <br> Added Download All Attachments by Opportunity ID
-
+7/22/2019| v0.6 | Solicitation number not required for create/update draft notices JSON <br> soliciation.deadlines.respose required for types k and o <br> Contract Award Date required only for Award <br> Contract Award Number required only for a, j, and i <br> POC email required except for Award <br> Description not needed for Update Attachment JSON
 
 <p><small><a href="#">Back to top</a></small></p>
