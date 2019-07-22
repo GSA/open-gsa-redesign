@@ -2715,22 +2715,22 @@ Examples
 
 Name | Data Type | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
 -----|-----------|----------------|--------------------------|-----------------------|------------
-type | string | See Notice Types table | Yes | Yes | Notice Type
+type | string | See Notice Types table | No | Yes | Notice Type
 solicitationNumber | string |  | No | Yes | Solicitation Number
-title | string |  | No | Yes | Title of the Opportunity
+title | string |  | Yes | Yes | Title of the Opportunity
 organizationId | string |  | No | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
 classificationCode | string |  | No | Yes (not required for type= r) | Product Service Code (PSC)
 naics | JSON | NA | NA | NA |
 naics.code | string |  | No | Yes | NAICS Code
-naics.type | string | P  | Yes | Yes | NAICS Type Note: 'P' must be in upper case
+naics.type | string | P  | No | Yes | NAICS Type Note: 'P' must be in upper case
 flags | JSON | NA | NA | NA |
 flags.code | string | Recovery act | No | No | This is a recovery or Reinvestment Act Action
 flags.IsSelected | boolean | default = True | No | No |
 pointOfContact | JSON | NA | NA | NA |
-pointOfContact.type | string | p | Yes | Yes | Contact Type Note: 'p' must be in lower case
+pointOfContact.type | string | p | No | Yes | Contact Type Note: 'p' must be in lower case
 pointOfContact.title | string |  | No | No | Contact title
 pointOfContact.fullname | string |  | No | Yes | Contact Full Name
-pointOfContact.email | string |  | Yes (no if type = a) | Yes (no if type = a)  | Contact email
+pointOfContact.email | string |  | No  | Yes (no if type = a)  | Contact email
 pointOfContact.phone | string |  | No | No | Contact Phone
 pointOfContact.fax | string |  | No  | No | Contact Fax
 placeOfPerformance | JSON | NA | NA | NA |
@@ -2758,11 +2758,11 @@ permissions.ivl.delete | boolean | Not In Use | Not In Use | Not In Use | Not In
 solicitation | JSON | NA | NA | NA |
 solicitation.setAside | string | See Set-Aside values table | No | No | setAside
 solicitation.deadlines | JSON | NA | NA | NA |
-solicitation.<br/>deadlines.response | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes (for type=k,o)<br/>2) Yes (when archive.type=<br/>auto1) | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
+solicitation.<br/>deadlines.response | date | YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
 solicitation.deadlines.<br/>responseresponseTz | string | | No | No | Time Zone for <br/>Solicitation Deadline Date
 award | JSON | NA | NA | NA |
-award.date | date | YYYY-MM-DD | Yes only for type= a | Yes only for type= a | Award Date
-award.number | string |  | Yes only for type= i, j, a | Yes only for type= i, j, a | Award Number
+award.date | date | YYYY-MM-DD |No | Yes only for type= a | Award Date
+award.number | string |  | No | Yes only for type= i, j, a | Award Number
 award.deliverOrderNumber | string |  | No | No | Award Deliver Order Number
 award.amount | number |  | No | No | Award Amount
 award.lineitemNumber | string |  | No | No | Award Line item Number
@@ -3298,6 +3298,6 @@ Date | Version | Description
 5/23/2019 | v0.3 | Update IVL Settings URL <br> Removed Get IVL by DUNS <br> Added EntityID to getIVL API parameter <br> Updated Get Authorized Party <br> Updated Add Authorized Party <br> Error Message Section Updated
 5/28/2019 | v0.4| Updated  Add Authorized Party<br> Get Authorized Party<br> Delete All Attachments API’s <br> Added Delete Notice API <br> Updated User Permissions <br> Create and Publish Contract Opportunity
 6/6/2019| v0.5| Deleted Download All Attachments (metadata) <br> Added Download All Attachments by Resource ID <br> Added Download All Attachments by Opportunity ID
-7/22/2019| v0.6 | Solicitation number not required for create/update draft notices JSON <br> soliciation.deadlines.respose required for types k and o <br> Contract Award Date required only for Award <br> Contract Award Number required only for a, j, and i <br> POC email required except for Award <br> Description not needed for Update Attachment JSON
+7/22/2019| v0.6 | Only title required for create draft opportunity <br> Solicitation number not required for create/update draft notices JSON <br> soliciation.deadlines.respose required for types k and o <br> Contract Award Date required only for Award <br> Contract Award Number required only for a, j, and i <br> POC email required except for Award <br> Description not needed for Update Attachment JSON
 
 <p><small><a href="#">Back to top</a></small></p>
