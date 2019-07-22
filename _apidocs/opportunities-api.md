@@ -17,7 +17,8 @@ Opportunity Management API can be accessed from Beta or Alpha via the following 
 * Beta: https://api.sam.gov/prod/opportunity  (Coming Soon)
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity
 
-REST API Workflow Chart
+**REST API Workflow Chart**
+
 To view the current workflow of REST APIs, refer below file:
 * Workflow Chart  <br><a href="v1/Opportunity Management REST Workflow Updated.pdf" download="Opportunity Management REST Workflow Updated">Download</a>
 
@@ -3302,6 +3303,6 @@ Date | Version | Description
 5/23/2019 | v0.3 | Update IVL Settings URL <br> Removed Get IVL by DUNS <br> Added EntityID to getIVL API parameter <br> Updated Get Authorized Party <br> Updated Add Authorized Party <br> Error Message Section Updated
 5/28/2019 | v0.4| Updated  Add Authorized Party<br> Get Authorized Party<br> Delete All Attachments API’s <br> Added Delete Notice API <br> Updated User Permissions <br> Create and Publish Contract Opportunity
 6/6/2019| v0.5| Deleted Download All Attachments (metadata) <br> Added Download All Attachments by Resource ID <br> Added Download All Attachments by Opportunity ID
-7/22/2019| v0.6 | Only title required for create draft opportunity <br> Solicitation number not required for create/update draft notices JSON <br> soliciation.deadlines.respose required for types k and o <br> Contract Award Date required only for Award <br> Contract Award Number required only for a, j, and i <br> POC email required except for Award <br> Description not needed for Update Attachment JSON
+7/22/2019| v0.6 | Only title required for create draft opportunity <br> Solicitation number not required for create/update draft notices JSON <br> soliciation.deadlines.respose required for types k and o <br> Contract Award Date required only for Award <br> Contract Award Number required only for a, j, and i <br> POC email required except for Award <br> Description not needed for Update Attachment JSON <br> Workflow Chart Added
 
 <p><small><a href="#">Back to top</a></small></p>
