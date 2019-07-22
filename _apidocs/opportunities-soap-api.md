@@ -16,6 +16,10 @@ To view the WSDL for all available methods and object definitions, refer below l
 * Alpha WSDL Link: https://api-alpha.sam.gov/prodlike/ws/services.wsdl <br><a href="v1/services.wsdl.xml" download="services.wsdl">Download</a>
 * Beta WSDL Link: Coming Soon
 
+## SOAP Web Services Workflow Chart
+To view the current workflow of SOAP web service, refer below file:
+* Workflow Chart  <br><a href="v1/Opportunity Management SOAP Workflow.pdf" download="Opportunity Management SOAP Workflow">Download</a>
+
 ## Authentication
 
 ### User Accounts
@@ -4206,5 +4210,6 @@ _NA_
 Date | Version | Description
 ------|---------------|---------
 5/10/2019 | v0.1 | Base Version
+7/22/2019 | v0.2 | Workflow Chart Added
 
 <p><small><a href="#">Back to top</a></small></p>
