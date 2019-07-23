@@ -30,6 +30,9 @@ Refer to section 5 and 6 for role specific methods.
 * On beta.sam.gov, please log in and click on the profile and go to Account Details. AAC is listed under 'Organization Information' section.
 * On alpha.sam.gov, please log in and click on the profile and go to Account Details. AAC is listed under 'Organization Information' section.
 
+### Type of Connection Validation
+All SOAP service requests will be validated against the Type of Connection within the system account profile. All requests without "SOAP" type of connection in the system account profile will be rejected with an error.
+
 ### Authentication Methods
 beta.SAM.gov Web Services supports SOAP header authentication. Configure your client to send a specific SOAP header with every method call which contains the authentication data. Below is the example of header included before the body:
 * Note: Username and email are case sensitive 
