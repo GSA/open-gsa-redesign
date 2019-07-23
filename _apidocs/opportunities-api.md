@@ -37,6 +37,9 @@ To view the current workflow of REST APIs, refer below file:
 In order to utilize the Contract Opportunity Management API, the following is required:
 * Valid beta.SAM.GOV federal government system account with Read and Write permissions under Contract Opportunity domain.
 
+### Type of Connection Validation
+All REST API requests will be validated against the Type of Connection within the system account profile. All requests without "REST API" type of connection in the system account profile will be rejected with an error.
+
 #### User Account Authorization
 In order to perform an Opportunity Management API operation, the following is required:
 * beta.SAM.GOV user account with either 'Administrator', 'Contracting Officer' role or 'Contracting Specialist' role. Permissions for operations by role are listed in the table below.<br/>
