@@ -54,16 +54,16 @@ Operation    | Administrator <br/>(Contract Opportunities domain)| Contracting O
 Create Opportunity | Yes | Yes | Yes
 Create and Publish | Yes | Yes | No
 Publish Opportunity | Yes | Yes | No
-Revise Opportunity | Yes | Yes | No
-Update Opportunity | Yes | Yes | No
+Revise Opportunity | Yes | Yes | Yes
+Update Opportunity | Yes | Yes | Yes
 Opportunity History | Yes | Yes | Yes
 Delete Opportunity | Yes | No | No
 Get List of Opportunity | Yes | Yes | Yes
 Get Opportunity by ID | Yes | Yes | Yes
-Cancel Opportunity | Yes | Yes | Yes
-Uncancel Opportunity | Yes | Yes | Yes
+Cancel Opportunity | Yes | Yes | No
+Uncancel Opportunity | Yes | Yes | No
 Archive Opportunity | Yes | Yes | Yes
-Unarchive Opportunity | Yes | Yes | Yes
+Unarchive Opportunity | Yes | Yes | No
 Create Attachment | Yes | Yes | Yes
 Update Attachment| Yes | Yes | Yes
 Download Attachment | Yes | Yes | Yes
@@ -2796,7 +2796,7 @@ Examples
 
 Name | Data Type | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
 -----|-----------|----------------|--------------------------|-----------------------|------------
-type | string | See Notice Types table | No | Yes | Notice Type
+type | string | See Notice Types table | Yes | Yes | Notice Type
 solicitationNumber | string |  | No | Yes | Solicitation Number
 title | string |  | Yes | Yes | Title of the Opportunity
 organizationId | string |  | No | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
