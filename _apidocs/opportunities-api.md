@@ -1,5 +1,5 @@
 ---
-title: Opportunity Management API
+title: Beta.Sam.Gov Opportunity Management API
 banner-heading: Opportunity Management API
 ---
 
