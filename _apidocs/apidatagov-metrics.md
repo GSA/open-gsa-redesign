@@ -103,7 +103,43 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
 This API has one primary endpoints:
 
-**Endpoint 1:** ...
+**Endpoint 1:** https://api.gsa.gov/operations/api-data-gov/v0/analytics/summary.json
+
+**Expected Result**
+
+
+#### Overall
+
+| Name  | Description |
+| ---- | ----------- |
+| total_hits | Number of API hits processed by the api.data.gov system over all time |
+| total_users | Number of API keys that accessed APIs through the api.data.gov system over all time |
+
+
+#### Hits by Month
+
+| Name  | Description |
+| ---- | ----------- |
+| year | Year in which the results took place |
+| month | Month in which the results took place |
+| count |  Number of API hits processed by the api.data.gov system in that month and year |
+
+
+#### Production APIs
+
+| Name  | Description |
+| ---- | ----------- |
+| api_backend_count | Year in which the results took place |
+| organization_count | Month in which the results took place |
+| api_backend_url_match_count |  Number of API hits processed by the api.data.gov system in that month and year |
+
+
+#### Production APIs - All
+
+...
+
+
+
 
 
 **Description**   ...
