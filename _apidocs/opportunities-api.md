@@ -57,7 +57,7 @@ Publish Opportunity | Yes | Yes | No
 Revise Opportunity | Yes | Yes | Yes
 Update Opportunity | Yes | Yes | Yes
 Opportunity History | Yes | Yes | Yes
-Delete Opportunity | Yes | No | No
+Delete Draft Opportunity | Yes | Yes | Yes
 Get List of Opportunity | Yes | Yes | Yes
 Get Opportunity by ID | Yes | Yes | Yes
 Cancel Opportunity | Yes | Yes | No
@@ -1052,7 +1052,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Delete Opportunity
+### Delete Draft Opportunity
 
 
 
@@ -2895,7 +2895,7 @@ description.body | string |  | No | Yes | Description of notice
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason | string |  | Yes | Publish reason
+Reason | string |  | No | Publish reason
 requestType | string | publish_request | Yes | Type of request
 
 <p><small><a href="#">Back to top</a></small></p>
