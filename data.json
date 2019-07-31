@@ -1902,7 +1902,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Energy Usage Analysis System",
 			"description": "The EUAS application is a web based system which serves Energy Center of Expertise, under the Office of Facilitates Management and Service Programs.  EUAS is used for tracking energy details for various energy sources namely electricity, natural gas, oil, chilled water, steam and renewable energy.",
-			"modified": "2019-07-29",
+			"modified": "2019-07-30",
 			"accessLevel": "public",
 			"identifier": "GSA-4305",
 			"dataQuality": true,
@@ -2018,6 +2018,13 @@
 					"title": "MAR.FACILITY_BUILDINGS",
 					"description": "EUAS - March 2019",
 					"downloadURL": "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/b168c887-c8c7-4fa4-bb98-8603a38ca259/download/mar.facilitybuildings.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "MAR.UNIT_SOURCE_CONVERSIONS",
+					"description": "EUAS - March 2019",
+					"downloadURL": "https://inventory.data.gov/dataset/235b5536-64b0-4885-bc7a-5d3c6ac69761/resource/f22e1ca6-b246-4783-8472-ad2e3a65852c/download/mar.unitsourceconversions.xlsx"
 				}
 			],
 			"keyword": ["Analysis", "Chilled Water", "Energy Usage", "Utilities", "electricity", "natural gas", "oil", "steam and renewable energy"],
@@ -3566,7 +3573,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2019-07-29",
+			"modified": "2019-07-31",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3589,8 +3596,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON 07/29/19",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-07-29-19.json"
+					"description": "EDI JSON 07/31/19",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-07-31-19.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
