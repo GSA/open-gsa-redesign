@@ -113,7 +113,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 
 {% include swagger-section-header.html %}
-    url: "/v1/openapi.yaml", 
+    url: "v1/openapi.yaml", 
 {% include swagger-section-footer.html %}
 
 
