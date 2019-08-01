@@ -1,0 +1,187 @@
+openapi: 3.0.0
+info:
+  version: 1.1.0
+  title: Analytics API
+  description: This program helps government agencies understand how people find, access, and use government services online. The program does not track individuals, and anonymizes the IP addresses of visitors.
+paths:
+  '/reports/{report_name}/data':
+    get:
+      summary: Analytic Reports
+      description: |
+        this endpoint returns analytic reports. 
+      parameters:
+        -  name: report_name
+           in: path
+           description: Name of the report
+           required: true
+           schema: 
+              type: string
+        -  $ref: '#/components/parameters/limit'
+        -  $ref: '#/components/parameters/page'
+        -  $ref: '#/components/parameters/after'
+        -  $ref: '#/components/parameters/before'
+      responses:
+        '200':
+          description: A JSON array of reports
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reports'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  '/agencies/{agency_name}/reports/{report_name}/data':
+       get:
+         summary: Analytic Reports filtered by agency
+         description: |
+            this endpoint returns analytic reports that are filtered by agency. 
+         parameters:
+          -  name: report_name
+             in: path
+             description: Name of the report
+             required: true
+             schema: 
+               type: string
+               format: string
+
+          -  name: agency_name
+             in: path
+             description: Name of the agency
+             required: true
+             schema: 
+               type: string
+               format: string
+          -  $ref: '#/components/parameters/limit'
+          -  $ref: '#/components/parameters/page'
+          -  $ref: '#/components/parameters/after'
+          -  $ref: '#/components/parameters/before'
+         responses:
+           '200':
+             description: A JSON array of reports
+             content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Reports'
+           default:
+             description: Unexpected error
+             content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/Error'
+  '/domain/{domain}/reports/{report_name}/data':
+       get:
+         summary: Analytic Reports filtered by domain
+         description: |
+            this endpoint returns analytic reports that are filtered by domain. 
+         parameters:
+          -  name: report_name
+             in: path
+             description: Name of the report
+             required: true
+             schema: 
+               type: string
+               format: string
+
+          -  name: domain
+             in: path
+             description: Name of the domain
+             required: true
+             schema: 
+               type: string
+               format: string
+          -  $ref: '#/components/parameters/limit'
+          -  $ref: '#/components/parameters/page'
+          -  $ref: '#/components/parameters/after'
+          -  $ref: '#/components/parameters/before'
+         responses:
+           '200':
+             description: A JSON array of reports
+             content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Reports'
+           default:
+             description: Unexpected error
+             content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/Error'
+             
+                  
+servers:
+  - url: 'https://api.gsa.gov/analytics/dap/v1.1'
+components:
+  schemas:
+    Reports:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Generated unique identifier.
+        report_name:
+          type: string
+          description:  The name of the data point’s report.
+        report_agency:
+           type: string
+           description: The name of the data point’s agency.
+        date_time: 
+           type: string
+           description: The data/time the data in the data point corresponds to.
+        data:
+           type: string
+           description: The data associated with the data point. This may contain child properties such as visits, browser, screen size, and so on, depending on the report
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        required_fields:
+          type: string
+        example:
+          type: string
+          
+  parameters:
+    limit:
+      name: limit
+      in: query
+      description: Limit the number of data points that are rendered. The default is 1000 and the max is 10,000
+      schema:
+        type: integer
+      required: false
+    page:
+      name: page
+      in: query
+      description:  Pages through the results. If the limit is set to 1000, using page=2 will render the 1001st through 2000th data point.
+      schema:
+        type: integer
+      required: false
+    after:
+      name: after
+      in: query
+      description:  Limit the results to in dates on or after the date specified. Expects YYYY-MM-DD.
+      schema:
+        type: integer
+      required: false  
+    before:
+      name: before
+      in: query
+      description:  Limit the results to in dates on or before the date specified. Expects YYYY-MM-DD.
+      schema:
+        type: integer
+      required: false  
+  securitySchemes:
+    ApiKeyAuth:        # arbitrary name for the security scheme
+      type: apiKey
+      in: header       # can be "header", "query" or "cookie"
+      name: X-API-KEY  # name of the header, query parameter or cookie
+security:
+  - ApiKeyAuth: []

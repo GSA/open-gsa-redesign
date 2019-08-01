@@ -7,6 +7,9 @@
 - title: Api.Data.Gov Admin API
   description: api.data.gov is a free API management service for federal agencies. This API implements the API Umbrella Admin API.
   url: https://open.gsa.gov/api/apidatagov/
+- title: Api.Data.Gov Metrics API
+  description: api.data.gov is a free API management service for federal agencies. This API provides system metrics from api.data.gov.  
+  url: https://open.gsa.gov/api/apidatagov-metrics/
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: https://gsa.github.io/auctions_api/
