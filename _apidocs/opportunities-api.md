@@ -60,7 +60,7 @@ Publish Opportunity | Yes | Yes | No
 Revise Opportunity | Yes | Yes | Yes
 Update Opportunity | Yes | Yes | Yes
 Opportunity History | Yes | Yes | Yes
-Delete Draft Opportunity | Yes | Yes | Yes
+Delete Draft Opportunity | Yes | Yes | No
 Get List of Opportunity | Yes | Yes | Yes
 Get Opportunity by ID | Yes | Yes | Yes
 Cancel Opportunity | Yes | Yes | No
