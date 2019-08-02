@@ -37,8 +37,11 @@ To view the current workflow of REST APIs, refer below file:
 In order to utilize the Contract Opportunity Management API, the following is required:
 * Valid beta.SAM.GOV federal government system account with Read and Write permissions under Contract Opportunity domain.
 
-### Type of Connection Validation
+### *Type of Connection Validation (Future Implementation)*
 All REST API requests will be validated against the Type of Connection within the system account profile. All requests without "REST API" type of connection in the system account profile will be rejected with an error.
+
+### *IP Address Validation (Future Implementation)*
+All REST API requests will be validated against the IP Addresses registered within the system account profile. All requests that are not from registered IP address(es) in the system account profile will be rejected with an error.
 
 #### User Account Authorization
 In order to perform an Opportunity Management API operation, the following is required:
