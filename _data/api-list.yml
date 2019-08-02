@@ -10,10 +10,10 @@
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: https://gsa.github.io/auctions_api/
-- title: Beta.Sam.Gov Opportunity Management API
+- title: Beta.SAM.Gov Opportunity Management API
   description: The Opportunity Management API will allow authorized users to submit and request Opportunities data.
   url: opportunities-api/
-- title: Beta.Sam.Gov Opportunity Management SOAP Web Services
+- title: Beta.SAM.Gov Opportunity Management SOAP Web Services
   description: The Opportunity Management SOAP Web Services will allow authorized users to submit and request Opportunities data using SOAP service.
   url: https://open.gsa.gov/api/opportunities-soap-api/
 - title: Code.gov API
