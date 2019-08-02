@@ -1,6 +1,6 @@
 ---
 title: Beta.Sam.Gov Opportunity Management SOAP Web Services
-banner-heading: Opportunity Management SOAP Web Services
+banner-heading: Beta.Sam.Gov Opportunity Management SOAP Web Services
 ---
 
 ## Overview
