@@ -1,6 +1,6 @@
 ---
 title: Beta.Sam.Gov Opportunity Management API
-banner-heading: Opportunity Management API
+banner-heading: Beta.Sam.Gov Opportunity Management API
 ---
 
 ## Overview
