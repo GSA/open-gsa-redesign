@@ -519,7 +519,7 @@ Examples
 
 
 ------- | -------
-**Request Type** | GET
+**Request Type** | POST
 **URL** | /opps/v1/opportunities/createAndPublish
 **Summary** | Creates and publishes contract opportunity
 **Consumes** | application/json
