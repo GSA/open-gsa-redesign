@@ -4155,7 +4155,6 @@ id|	Yes	||	1.	If the request Id is not provided, then the system throws an error
 
 
 
-
 #### rejectExplicitAccessRequestByVendorData
 Details will be added in future.
 
@@ -4217,5 +4216,6 @@ Date | Version | Description
 ------|---------------|---------
 5/10/2019 | v0.1 | Base Version
 7/22/2019 | v0.2 | Workflow Chart Added
+8/1/2019 | v0.3 | Added Future Implementation for IP Address Validation and Type of Connection 
 
 <p><small><a href="#">Back to top</a></small></p>
