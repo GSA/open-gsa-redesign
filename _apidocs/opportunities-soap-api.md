@@ -1,6 +1,6 @@
 ---
-title: Opportunity Management SOAP Web Services
-banner-heading: Opportunity Management SOAP Web Services
+title: Beta.SAM.Gov Opportunity Management SOAP Web Services
+banner-heading: Beta.SAM.Gov Opportunity Management SOAP Web Services
 ---
 
 ## Overview
@@ -29,6 +29,12 @@ Refer to section 5 and 6 for role specific methods.
 **Note** To submit any opportunity for an office, user should provide office org key or AAC. If office org key is known, please provide the same in the 'officeid' field in the requests. If office org key is not available, then users can provide AAC in place of office org key in 'officeid' field. In order to get AAC:
 * On beta.sam.gov, please log in and click on the profile and go to Account Details. AAC is listed under 'Organization Information' section.
 * On alpha.sam.gov, please log in and click on the profile and go to Account Details. AAC is listed under 'Organization Information' section.
+
+### *Type of Connection Validation (Future Implementation)*
+All SOAP Web Service requests will be validated against the Type of Connection within the system account profile. All requests without "SOAP" type of connection in the system account profile will be rejected with an error.
+
+### *IP Address Validation (Future Implementation)*
+All SOAP Web Service requests will be validated against the IP Addresses registered within the system account profile. All requests that are not from registered IP address(es) in the system account profile will be rejected with an error.
 
 ### Authentication Methods
 beta.SAM.gov Web Services supports SOAP header authentication. Configure your client to send a specific SOAP header with every method call which contains the authentication data. Below is the example of header included before the body:
@@ -4149,7 +4155,6 @@ id|	Yes	||	1.	If the request Id is not provided, then the system throws an error
 
 
 
-
 #### rejectExplicitAccessRequestByVendorData
 Details will be added in future.
 
@@ -4211,5 +4216,6 @@ Date | Version | Description
 ------|---------------|---------
 5/10/2019 | v0.1 | Base Version
 7/22/2019 | v0.2 | Workflow Chart Added
+8/1/2019 | v0.3 | Added Future Implementation for IP Address Validation and Type of Connection 
 
 <p><small><a href="#">Back to top</a></small></p>
