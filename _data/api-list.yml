@@ -81,4 +81,4 @@
   url: https://gsa.github.io/sam_api/sam/
 - title: U.S. Digital Registry API
   description: Contains listing from the U.S. Digital Media Registry, which serves as a crowdsource resource for agencies, citizens, and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps, and mobile websites. The accounts in the registry are independently updated by federal managers across the government who maintain individual agency accounts.
-  url: https://usdigitalregistry.digitalgov.gov/
+  url: https://open.gsa.gov/api/digital-registry/
