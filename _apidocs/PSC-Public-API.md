@@ -8,6 +8,8 @@ banner-heading: Beta.SAM.Gov PSC Public API
 PSC API provides PSC data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. 
 This API supports pagination as needed. 
 
+**API Version: v1.0**
+
 ## Getting Started
 
 PSC API can be accessed from Beta or Alpha via the following endpoints:
@@ -603,15 +605,6 @@ Note: By default API brings back only top 100 records. Example below shows only 
 </p>
 </details>
 
-## API Versions
-Version 1.0
-
-## Authentication and API Keys
-
-Users of this public API must provide an API key to use this PSC public API. Request per day are limited based on the federal or non-federal or general roles. 
-<br>
-*Note: Users can request a public API Key in their Account Details page on beta.sam.gov (if on production) or on alpha.sam.gov (if on staging)*
-
 ## HTTP Response Codes
 
 200 - Success
@@ -648,5 +641,6 @@ User enters a updatedDateFrom greater than updatedDateTo|	"updatedDateFrom canno
 Date | Version | Description
 ------|---------------|---------
 5/20 | v1.0 | Base Version
+8/6 | v1.2| Updated format
 
 <p><small><a href="#">Back to top</a></small></p>
