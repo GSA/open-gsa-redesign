@@ -641,6 +641,6 @@ User enters a updatedDateFrom greater than updatedDateTo|	"updatedDateFrom canno
 Date | Version | Description
 ------|---------------|---------
 5/20 | v1.0 | Base Version
-8/6 | v1.2| Updated format
+8/6 | v1.1| Updated format
 
 <p><small><a href="#">Back to top</a></small></p>
