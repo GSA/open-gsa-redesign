@@ -19,7 +19,7 @@
 - title: Beta.SAM.Gov Product Service Codes (PSC) API
   description: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From Beta.sam.gov.
   url: PSC-Public-API/
-  title: Beta.SAM.Gov Opportunity Management API
+-  title: Beta.SAM.Gov Opportunity Management API
   description: The Opportunity Management API will allow authorized users to submit and request Opportunities data.
   url: opportunities-api/
 - title: Beta.SAM.Gov Opportunity Management SOAP Web Services
