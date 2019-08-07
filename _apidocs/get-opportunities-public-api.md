@@ -103,7 +103,7 @@ Note: Request URL for alpha is used in this example
 </details>
 
 <details>
-    <summary>Response (JASON Output)</summary>
+    <summary>Response (JSON Output)</summary>
 
 Note: Response for one record is provided as an example <br>
 
@@ -195,7 +195,7 @@ Note: Request URL for alpha is used in this example
 </details>
 
 <details>
-    <summary>Response (JASON Output)</summary>
+    <summary>Response (JSON Output)</summary>
 
 Note: Response for one record is provided as an example <br>
 
@@ -287,7 +287,7 @@ Note: Request URL for alpha is used in this example
 </details>
 
 <details>
-    <summary>Response (JASON Output)</summary>
+    <summary>Response (JSON Output)</summary>
 
 Note: Response for one record is provided as an example <br>
 
