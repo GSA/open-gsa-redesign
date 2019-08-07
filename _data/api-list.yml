@@ -13,7 +13,13 @@
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: https://gsa.github.io/auctions_api/
-- title: Beta.SAM.Gov Opportunity Management API
+- title: Beta.SAM.Gov Get Opportunities Public API
+  description: Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. 
+  url: get-opportunities-public-api/
+- title: Beta.SAM.Gov Product Service Codes (PSC) API
+  description: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From Beta.sam.gov.
+  url: PSC-Public-API/
+  title: Beta.SAM.Gov Opportunity Management API
   description: The Opportunity Management API will allow authorized users to submit and request Opportunities data.
   url: opportunities-api/
 - title: Beta.SAM.Gov Opportunity Management SOAP Web Services
@@ -61,9 +67,6 @@
 - title: Per Diem API
   description: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers.
   url: https://open.gsa.gov/api/perdiem/
-- title: Product Service Codes (PSC) API
-  description: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From Beta.sam.gov.
-  url: https://s3.amazonaws.com/falextracts/Documentation/PSC/PSC%20Public%20API%20Documentation.pdf
 - title: Search.gov i14y API
   description: For Search.gov customers. This API allows search.gov customers to send content directly from their content management system (CMS) into Search.gov for real-time indexing.
   url: https://search.gov/developer/i14y.html
