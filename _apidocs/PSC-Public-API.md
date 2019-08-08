@@ -630,7 +630,9 @@ User enters a startDateFrom greater than startDateTo	|"startDateFrom cannot be g
 User enters a endDateFrom greater than endDateFrom|	"endDateFrom cannot be greater than endDateFrom "
 User enters a updatedDateFrom greater than updatedDateTo|	"updatedDateFrom cannot be greater than updatedDateTo"
 
+## FAQ
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
 
