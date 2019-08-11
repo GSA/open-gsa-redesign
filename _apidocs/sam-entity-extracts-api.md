@@ -245,6 +245,6 @@ The API will return one of the following responses:
 Date | Version | Description
 ------|---------------|---------
 06/03/2019 | v 1.0 | Base Version
-08/12/2019 | v 1.1 | <br>*Added Beta.SAM.Gov to the page title. <br >*Clarified the Alpha and Beta endpoints.
+08/12/2019 | v 1.1 | * Added Beta.SAM.Gov to the page title. <br><br>* Clarified the Alpha and Beta endpoints.
 
 <p><small><a href="#">Back to top</a></small></p>
