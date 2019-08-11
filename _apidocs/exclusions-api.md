@@ -210,6 +210,6 @@ You can view the full details of the differences between the SAM legacy API and 
 Date | Version | Description
 ------|---------------|---------
 06/03/2019 | v1.0 | Base Version
-08/12/2019 | v1.1 | * Added Beta.SAM.Gov to the page title. <br><br> *Updated the Alpha endpoint to v1.
+08/12/2019 | v1.1 | * Added Beta.SAM.Gov to the page title. <br><br> *Updated the Alpha endpoint to v1. <br><br> *Added Secondary Address fields.
 
 <p><small><a href="#">Back to top</a></small></p>
