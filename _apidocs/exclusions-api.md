@@ -24,7 +24,7 @@ The response will be provided in the JSON format in a paginated manner.
 
 ## Getting Started
 
-IMPORTANT:  Please note the version number of the end point you are using as it is subject to change.  Version 0.9 of the API will be deprecated in Alpha starting the evening of 8/12/19 and Version 1.0 will be made active.  The same will occur in Beta on a date to be determined.
+**IMPORTANT:**  Please note the version number of the end point you are using as it is subject to change.  Version 0.9 of the API will be deprecated in Alpha starting the evening of 8/12/19 and Version 1.0 will be made active.  The same will occur in Beta on a date to be determined.
 
 Exclusions API can be accessed from Beta or Alpha via the following end points:
 * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key= < value >
