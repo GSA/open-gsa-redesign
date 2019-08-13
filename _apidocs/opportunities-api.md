@@ -58,11 +58,11 @@ Create Opportunity | Yes | Yes | Yes
 Create and Publish | Yes | Yes | No
 Publish Opportunity | Yes | Yes | No
 Revise Opportunity | Yes | Yes | Yes
-Update Opportunity | Yes | Yes | Yes
-Opportunity History | Yes | Yes | Yes
+Update Draft Opportunity | Yes | Yes | Yes
+Get Opportunity History | Yes | Yes | Yes
 Delete Draft Opportunity | Yes | Yes | No
 Get List of Opportunity | Yes | Yes | Yes
-Get Opportunity by ID | Yes | Yes | Yes
+Get Opportunity by Opportunity ID | Yes | Yes | Yes
 Cancel Opportunity | Yes | Yes | No
 Uncancel Opportunity | Yes | Yes | No
 Archive Opportunity | Yes | Yes | Yes
@@ -585,8 +585,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update Opportunity
-
+### Update Draft Opportunity
 
 
 ------- | -------
@@ -900,7 +899,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Opportunity History
+### Get Opportunity History
 
 
 ------- | -------
@@ -1518,7 +1517,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Get Opportunity by ID
+### Get Opportunity by Opportunity ID
 
 
 ------- | -------
