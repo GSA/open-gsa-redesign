@@ -3078,99 +3078,6 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
 </pre></code>
 </p>
 </details>
-<details>
-<summary>Valid_File_Types</summary>
-<p>
-<code><pre>
-.wmv
-.pdf
-.htm
-.exe
-.xml
-.csv
-.ps
-.eps
-.kmz
-.xpw
-.xpx
-.xlsb
-.xlsm
-.xltm
-.sst
-.stl
-.pps
-.ppt
-.pptm
-.mpp
-.pub
-.vsd
-.docm
-.dotm
-.xps
-.odp
-.ods
-.odt
-.xfd
-.xfdl
-.wlmp
-.wpd
-.z
-.js
-.swf
-.mht
-.webarchive
-.mp3
-.wav
-.wma
-.xyz
-.bmp
-.c4
-.dwg
-.zip
-.docx
-.xls
-.fp5
-.doc
-.pptx
-.xlsx
-.hta
-.ptm
-.accdb
-.mdb
-.wps
-.gif
-.rar
-.ai
-.rtf
-.jpeg
-.jpg
-.jpe
-.png
-.tif
-.dgn
-.dxf
-.mdi
-.emf
-.ico
-.wmf
-.eml
-.dwf
-.dwfx
-.ics
-.css
-.html
-.txt
-.vcf
-.avi
-.mp4
-.mpg
-.vob
-.mov
-.flv
-</pre></code>
-</p>
-</details>
-</div>
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -3180,6 +3087,33 @@ link | string |  | Yes (if attType=link) | Resource link or URL
 packageAccessLevel | string | public,private(default public) | No | Type of access to file or link
 resourceName | string |  | Yes (if attType=file) | Name of file
 
+#### Valid File Types ####
+
+File Extension | File Type
+-----|-----
+Bitmap Image File (.bmp)|	image/bmp
+Graphical Interchange Format File (.gif)|	image/gif
+JPEG Image (.jpeg)|	image/jpeg
+JPEG Image (.jpg)	|image/jpeg
+LaTex (.tex)|	application/x-tex
+Microsoft Excel Document (.xls)|	application/vnd.ms-excel
+Microsoft Excel Open XML Document (.xlsx)|	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+Microsoft Word Document (.doc)|	application/msword
+Microsoft Word Open XML Document (.docx)|	application/vnd.openxmlformats-officedocument.wordprocessingml.document
+OpenDocument Text Document (.odt)|	application/vnd.oasis.opendocument.text
+Plain Text File (.txt)|	text/plain
+Portable Document Format File (.pdf)|	application/pdf
+Portable Network Graphic (.png)|	image/png
+PowerPoint Open XML Presentation (.pptx)|	application/vnd.openxmlformats-officedocument.presentationml.presentation
+PowerPoint Presentation (.ppt)|	application/vnd.ms-powerpoint
+Rich Text Format (.rtf)	|application/rtf
+Audio Video Interleaved (.AVI)|	video/avi
+QuickTime (.mov)|	video/quicktime
+MPEG (.mpg, .mpeg, .mp4)	|video/mpeg , video/mp4
+Windows Media Video (.wmv)	|video/x-ms-wmv
+Flash Video (.flv, .f4v)|	video/x-flv
+
+</div>
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Update Attachment Contract JSON
