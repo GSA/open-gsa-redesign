@@ -1,0 +1,848 @@
+{
+swagger: "2.0",
+info: {
+description: "Code.gov API documentation. While using this documentation locally please choose to ",
+version: "2.0.0",
+title: "Code.gov API",
+license: {
+name: "CC0",
+url: "https://creativecommons.org/publicdomain/zero/1.0/"
+}
+},
+host: "api.code.gov",
+basePath: "/",
+tags: [
+{
+name: "repo",
+description: "Get information on repositories"
+},
+{
+name: "terms",
+description: "Find items based on indexed terms"
+},
+{
+name: "agencies",
+description: "Find items based on agencies"
+},
+{
+name: "languages",
+description: "The language of which a software project is composed"
+},
+{
+name: "repo-json",
+description: "Schema for a repo"
+},
+{
+name: "status-json",
+description: "List of compliances by agency"
+},
+{
+name: "status",
+description: "List of statuses"
+},
+{
+name: "version",
+description: "The version of this API"
+}
+],
+securityDefinitions: {
+ApiKeyAuth: {
+type: "apiKey",
+in: "header",
+name: "X-Api-Key"
+}
+},
+schemes: [
+"http",
+"https"
+],
+paths: {
+/repos: {
+get: {
+tags: [
+"repo"
+],
+summary: "Get a list of repos",
+description: "Get list of repositories indexed by Code.gov.",
+produces: [
+"application/json"
+],
+security: [
+{
+ApiKeyAuth: [ ]
+}
+],
+parameters: [
+{
+name: "q",
+in: "query",
+description: "Text to search for. This will make a full text search on all our index properties. Eg. rest api",
+required: false,
+type: "string"
+},
+{
+name: "size",
+in: "query",
+description: "Sets the size of the results returned. Default is 10.",
+required: false,
+type: "number"
+},
+{
+name: "from",
+in: "query",
+description: "Sets the offset from where to paginate. Default is 0 (first element in the result set).",
+required: false,
+type: "number"
+},
+{
+name: "agency.name",
+in: "query",
+description: "Filters search by the Agency's name. Eg. General Services Administration",
+required: false,
+type: "string"
+},
+{
+name: "agency.acronym",
+in: "query",
+description: "Filters search by the Agency's acronym. Eg. GSA",
+required: false,
+type: "string"
+},
+{
+name: "agency.website",
+in: "query",
+description: "Filters search by the Agency's website URL. Eg. https://gsa.gov",
+required: false,
+type: "string"
+},
+{
+name: "status",
+in: "query",
+description: "Filters search by the repository's status.",
+required: false,
+type: "string"
+},
+{
+name: "vcs",
+in: "query",
+description: "Filters search by the version control system for the repository. Eg. git, svn",
+required: false,
+type: "string"
+},
+{
+name: "name",
+in: "query",
+description: "Filters search by the repository's name.",
+required: false,
+type: "string"
+},
+{
+name: "organization",
+in: "query",
+description: "Filters search by the repository's organization.",
+required: false,
+type: "string"
+},
+{
+name: "tags",
+in: "query",
+description: "Filters search by the repository's tags.",
+required: false,
+type: "string"
+},
+{
+name: "languages",
+in: "query",
+description: "Filters search by programming languages. Eg. Python, Ruby",
+required: false,
+type: "string"
+},
+{
+name: "contact.name",
+in: "query",
+description: "Filters search by the repository's contact name.",
+required: false,
+type: "string"
+},
+{
+name: "contact.email",
+in: "query",
+description: "Filters search by the repository's contact email.",
+required: false,
+type: "string"
+},
+{
+name: "permissions.licenses.name",
+in: "query",
+description: "Filters search by the repository's license name. Eg. MIT",
+required: false,
+type: "string"
+},
+{
+name: "permissions.usageType",
+in: "query",
+description: "Filters search by the repository's usage type. Eg. openSource, governmentWideReuse",
+required: false,
+type: "array",
+items: {
+type: "string"
+},
+style: "form",
+collectionFormat: "multi",
+enum: [
+"openSource",
+"governmentWideReuse",
+"exemptByLaw",
+"exemptByNationalSecurity",
+"exemptByAgencySystem",
+"exemptByAgencyMission",
+"exemptByCIO"
+]
+},
+{
+name: "laborHours",
+in: "query",
+description: "Filters search by the amount of labor hours dedicated to the project.",
+required: false,
+type: "number"
+},
+{
+name: "date.created",
+in: "query",
+description: "Filters search by the repository's created date. You can also use date.created_gte, date.created_lte, date.created_gt, date.created_lt to define ranges. Eg. 2018-02-01",
+required: false,
+type: "string"
+},
+{
+name: "date.lastModified",
+in: "query",
+description: "Filters search by the last date the repository was modified. You can also use date.lastModified_gte, date.lastModified_lte, date.lastModified_gt, date.lastModified_lt to define ranges. Eg. 2018-02-01",
+required: false,
+type: "string"
+}
+],
+responses: {
+200: {
+description: "successful operation",
+schema: {
+type: "array",
+items: {
+$ref: "#/definitions/Repo"
+}
+}
+},
+400: {
+description: "Invalid"
+}
+}
+}
+},
+/repos/{repoId}: {
+get: {
+tags: [
+"repo"
+],
+summary: "Get information for specified repoId",
+description: "Gets the information of a specific repository index with the passed repoId.",
+produces: [
+"application/json"
+],
+security: [
+{
+ApiKeyAuth: [ ]
+}
+],
+parameters: [
+{
+name: "repoId",
+in: "path",
+description: "ID of repo to return",
+required: true,
+type: "string"
+}
+],
+responses: {
+200: {
+description: "successful operation",
+schema: {
+$ref: "#/definitions/Repo"
+}
+},
+400: {
+description: "Invalid ID supplied"
+},
+404: {
+description: "Repo not found"
+}
+}
+}
+},
+/terms: {
+get: {
+tags: [
+"terms"
+],
+summary: "Get a list of terms",
+description: "Get a list of terms that were extracted from the repositories indexed.",
+produces: [
+"application/json"
+],
+security: [
+{
+ApiKeyAuth: [ ]
+}
+],
+parameters: [
+{
+name: "term",
+in: "query",
+description: "Filters the result set by the term value. The API will match the text to any part of the value. Eg. term=ox will return { ... "term": "oxide" ... }",
+required: false,
+type: "string"
+},
+{
+name: "term_type",
+in: "query",
+description: "Filters the result set by the term type. Eg. term_type=agency.acronym",
+required: false,
+type: "string"
+},
+{
+name: "size",
+in: "query",
+description: "Sets the size of the results returned. Default is 10.",
+required: false,
+type: "number"
+},
+{
+name: "from",
+in: "query",
+description: "Sets the offset from where to paginate. Default is 0 (first element in the result set).",
+required: false,
+type: "number"
+}
+],
+responses: {
+200: {
+description: "successful operation",
+schema: {
+type: "array",
+items: {
+$ref: "#/definitions/Term"
+}
+}
+},
+400: {
+description: "Invalid"
+}
+}
+}
+},
+/agencies: {
+get: {
+tags: [
+"agencies"
+],
+summary: "Get a list of agencies",
+description: "Get a list of agencies.",
+consumes: [
+"application/json"
+],
+produces: [
+"application/json"
+],
+security: [
+{
+ApiKeyAuth: [ ]
+}
+],
+parameters: [
+{
+name: "size",
+in: "query",
+description: "Number of agencies to return",
+required: false,
+type: "number"
+},
+{
+name: "from",
+in: "query",
+description: "Specify an offset to return",
+required: false,
+type: "number"
+}
+],
+responses: {
+200: {
+description: "successful operation",
+schema: {
+type: "array",
+items: {
+$ref: "#/definitions/Agency"
+}
+}
+},
+400: {
+description: "Invalid"
+}
+}
+}
+},
+/languages: {
+get: {
+tags: [
+"languages"
+],
+summary: "Get a list of programming languages found in our code inventory.",
+description: "This returns a list of the programming languages that are used in the indexed code inventory. When a repo is index the programming language is extracted written to a file.",
+consumes: [
+"application/json"
+],
+produces: [
+"application/json"
+],
+security: [
+{
+ApiKeyAuth: [ ]
+}
+],
+parameters: [
+{
+name: "size",
+in: "query",
+description: "Number of programming languages to return",
+required: false,
+type: "number"
+},
+{
+name: "from",
+in: "query",
+description: "Specify an offset to return",
+required: false,
+type: "number"
+}
+],
+responses: {
+200: {
+description: "successful operation",
+schema: {
+type: "array",
+items: {
+$ref: "#/definitions/Language"
+}
+}
+},
+400: {
+description: "Invalid"
+}
+}
+}
+},
+/repo.json: {
+get: {
+tags: [
+"repo-json"
+],
+summary: "Get the JSON schema for a repo",
+description: "",
+produces: [
+"application/json"
+],
+security: [
+{
+ApiKeyAuth: [ ]
+}
+],
+responses: {
+200: {
+description: "successful operation",
+schema: {
+type: "object"
+}
+},
+400: {
+description: "Invalid"
+}
+}
+}
+},
+/status.json: {
+get: {
+tags: [
+"status-json"
+],
+summary: "Get a list of agencies with their compliance status",
+description: "Get a list of agencies with their Federal Source Code Policy compliance status ",
+produces: [
+"application/json"
+],
+security: [
+{
+ApiKeyAuth: [ ]
+}
+],
+responses: {
+200: {
+description: "successful operation",
+schema: {
+type: "object"
+}
+},
+400: {
+description: "Invalid"
+}
+}
+}
+},
+/status: {
+get: {
+tags: [
+"status"
+],
+summary: "Get an HTML page rendering the agencies status from status.json",
+description: "Get an HTML page rendering the agencies status from status.json",
+produces: [
+"text/html"
+],
+responses: {
+200: {
+description: "successful operation",
+schema: {
+type: "string"
+}
+},
+400: {
+description: "Invalid"
+}
+}
+}
+},
+/status/{agencyName}/issues: {
+get: {
+tags: [
+"status"
+],
+summary: "Get a list of issues for a particular agency",
+description: "Get a list of issues for a particular agency. These issues are grouped by software repository.",
+produces: [
+"text/html"
+],
+parameters: [
+{
+name: "agencyName",
+in: "path",
+type: "string",
+description: "Agency name",
+required: true
+}
+],
+responses: {
+200: {
+description: "successful operation",
+schema: {
+type: "string"
+}
+},
+400: {
+description: "Invalid"
+}
+}
+}
+},
+/status/{agencyName}/fetched: {
+get: {
+tags: [
+"status"
+],
+summary: "Get a list of repos by agency",
+description: "Lists out all repositories that have been indexed for a given agency.",
+produces: [
+"application/json"
+],
+parameters: [
+{
+name: "agencyName",
+in: "path",
+type: "string",
+description: "Agency name",
+required: true
+}
+],
+responses: {
+200: {
+description: "successful operation",
+schema: {
+$ref: "#/definitions/Repo"
+}
+},
+400: {
+description: "Invalid"
+}
+}
+}
+},
+/version: {
+get: {
+tags: [
+"version"
+],
+summary: "Get the version of this API",
+description: "",
+produces: [
+"application/json"
+],
+security: [
+{
+ApiKeyAuth: [ ]
+}
+],
+responses: {
+200: {
+description: "successful operation",
+schema: {
+$ref: "#/definitions/Version"
+}
+},
+400: {
+description: "Invalid"
+}
+}
+}
+}
+},
+definitions: {
+Repo: {
+type: "object",
+properties: {
+repoID: {
+type: "string"
+},
+name: {
+type: "string"
+},
+description: {
+type: "string"
+},
+tags: {
+type: "array",
+items: {
+type: "string"
+}
+},
+contact: {
+type: "object",
+properties: {
+name: {
+type: "string"
+},
+email: {
+type: "string"
+},
+twitter: {
+type: "string"
+},
+phone: {
+type: "string"
+}
+}
+},
+agency: {
+type: "object",
+properties: {
+name: {
+type: "string"
+},
+acronym: {
+type: "string"
+},
+website: {
+type: "string"
+},
+codeUrl: {
+type: "string"
+},
+requirements: {
+type: "object",
+properties: {
+agencyWidePolicy: {
+type: "integer"
+},
+openSourceRequirement: {
+type: "integer"
+},
+inventoryRequirement: {
+type: "integer"
+},
+schemaFormat: {
+type: "integer"
+},
+overallCompliance: {
+type: "integer"
+}
+}
+},
+complianceDashboard: {
+type: "boolean"
+}
+}
+},
+laborHours: {
+type: "integer"
+},
+repositoryURL: {
+type: "string"
+},
+homepageURL: {
+type: "string"
+},
+permissions: {
+type: "object",
+properties: {
+usageType: {
+type: "string"
+},
+exemptionText: {
+type: "string"
+},
+licenses: {
+type: "array",
+items: {
+type: "object",
+properties: {
+URL: {
+type: "string"
+},
+name: {
+type: "string"
+}
+}
+}
+}
+}
+},
+vcs: {
+type: "string"
+},
+disclaimerText: {
+type: "string"
+},
+disclaimerURL: {
+type: "string"
+},
+relatedCode: {
+type: "array",
+items: {
+type: "object",
+properties: {
+codeName: {
+type: "string"
+},
+codeURL: {
+type: "string"
+},
+isGovernmentRepo: {
+type: "boolean"
+}
+}
+}
+},
+reusedCode: {
+type: "array",
+items: {
+type: "object",
+properties: {
+name: {
+type: "string"
+},
+URL: {
+type: "string"
+}
+}
+}
+},
+date: {
+type: "object",
+properties: {
+created: {
+type: "string"
+},
+lastModified: {
+type: "string"
+},
+metadataLastUpdated: {
+type: "string"
+}
+}
+}
+}
+},
+Term: {
+type: "object",
+properties: {
+term_key: {
+type: "string"
+},
+term: {
+type: "string"
+},
+term_type: {
+type: "string"
+},
+count: {
+type: "number"
+},
+count_normalized: {
+type: "number"
+},
+score: {
+type: "number"
+}
+}
+},
+Agency: {
+type: "object",
+properties: {
+acronym: {
+type: "string"
+},
+name: {
+type: "string"
+},
+website: {
+type: "string"
+},
+codeUrl: {
+type: "string"
+},
+numRepos: {
+type: "number"
+}
+}
+},
+Language: {
+type: "object",
+properties: {
+name: {
+type: "string"
+},
+numRepos: {
+type: "number"
+}
+}
+},
+Version: {
+type: "object",
+properties: {
+version: {
+type: "string"
+},
+git-hash: {
+type: "string"
+},
+git-repository: {
+type: "string"
+}
+}
+}
+}
+}
