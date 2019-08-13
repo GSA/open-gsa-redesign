@@ -142,7 +142,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/openapi.json">Open API specification file for the Sample API</a>
+<a href="v1/openapi.json">Open API specification file for the Code.gov API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -152,8 +152,6 @@ You can view the full details of this API in the OpenAPI Specification file avai
 We have extensive Swagger documentation where you can test our API. You can find them at [https://api.code.gov/docs](https://api.code.gov/docs).
 
 Before you can actually try the docs, you need to obtain an API key. You can do so [here](/key.html). Once you obtain your API key, you can go to our Swagger documentation and use it by clicking on the __Authorize__ button located at the top right of the Swagger documentation.
-
-![authorize button in docs](static/img/swagger-docs.png){: height="300px" width="100%"}
 
 Remember to change the __Schema__ to __HTTPS__. If this is not changed, you will receive an error when submitting the test request.
 In eget nibh consectetur, faucibus sapien et, finibus justo. Duis feugiat elit ex, non aliquet nisl cursus et. Morbi hendrerit est nec leo venenatis tempus. Vestibulum auctor auctor varius. Aenean lorem lacus, rutrum finibus nulla ac, tempor aliquet dolor. Donec egestas lectus ut augue posuere fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse nec turpis sed ipsum vestibulum aliquam nec eu nunc. Etiam ipsum orci, maximus et lorem nec, interdum dapibus sem. Sed nisl ex, scelerisque nec sodales at, finibus non dolor.
