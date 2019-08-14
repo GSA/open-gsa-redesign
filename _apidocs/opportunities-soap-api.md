@@ -162,14 +162,14 @@ officeid |	string |	Yes |	Office id of the office where an opportunity is being 
 subject |	string |	Yes |	Subject |	255 characters
 solnbr |	string |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 ntype	| string |	No |	Base Notice Type |	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “ITB” - for Intend to bundle
-awdnbr |	string |	 Yes |	Award Number |	255 characters
+awdnbr |	open text, label: Agency assigned number for control tracking and identification.<br> Please use ONLY alphanumeric and - _ ( ) { } characters [no spaces]. |	 Yes |	Award Number |	255 characters
 awdamt |	string |	Yes |	Award Amount |	64 characters
 linenbr |	string |	No |	Line Number |	255 characters
 awddate |	date |	Yes |	Award Date |	YYYYMMDD
 archdate |	date |	No |	Archive Date |	YYYYMMDD
 awardee |	string |	Yes |	Awardee |	65535 characters
 awardee_duns |	string |	No |	Awardee DUNS |	9 digits with optional plus 4
-contact |	string |	Yes |	Contact Info |	65535 characters
+contact |	string |	No |	Contact Info |	65535 characters
 desc |	string |	No |	Description |	65535 characters
 link |	GovURL |	No |	Government Link	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)|
 email |	GovEmail |	No |	Government Email |	128 characters
@@ -461,13 +461,13 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No |	Posting Date |	YYYYMMDD
 zip |	string |	No |	Zip Code |	5 digits
-classcod |	string	 | Yes – For combined type, presol type, Sale of surplus, No – For test |	Class-Code	| Valid classification code (FAR, Section 5.207(g))
+classcod |	string	 | Yes – For combined type, presol type, Sale of surplus, No – For rest |	Class-Code	| Valid classification code (FAR, Section 5.207(g))
 naics | 	string |	Yes – For combined type, No – For rest | 	NAICS Code |	Valid NAICS Code  NAICS Reference
 officeid |	string	| Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
 offadd |	string	| no	| Office Address |	65535 characters
 subject	| string	| no |	Subject |	255 characters
-solnbr | string |	yes | 	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
-ntype |	string |	no |	Base Notice Type |	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice
+solnbr | string |	Yes | 	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
+ntype |	string |	Yes |	Base Notice Type |	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice
 respdate |	date |	Yes – Combined, No – For rest |	Response Date |	YYYYMMDD
 archdate |	date |	no	| Archive Date |	YYYYMMDD
 contact |	string |	No – For Special notice, Yes – For rest |	Contact Info |	65535 characters
@@ -3710,7 +3710,7 @@ awardee_duns|	No	|9 digits with optional plus 4|	NA|	NA
 contact	|Yes – For presol, submitSourcesSought, combined, ITB, JA, award and submitSaleofSurplus <br><br>No – For rest	|65535 characters Default value = Primary Other types are: Secondary, Owner|	1. This required field should be validated	|1. Primary Contact is Required
 desc|	Yes – For presol, submitSourcesSought , combined, ITB, special and surplus <br><br>No – For rest 	|65535 characters|	1. This required field should be validated.|	1. Description is required
 link|	No|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)|	NA	| NA
-email|	No|	128 characters|	NA	 |NA
+email|	Yes <br> No if type=Award|	128 characters|	NA	 |NA
 links	|No	|Array of links	|NA	|NA
 files|	No|	Array of files|	NA|	NA
 setaside|	No|	See SetAside Section for valid values|	NA	|NA
@@ -3742,7 +3742,7 @@ archdate	|No	|YYYYMMDD|	1.	No validation is performed on this field. However, if
 contact|	Yes|	65535 characters <br><br>Default value: Primary<br><br> Other types: Secondary, Owner|	1. This required field should be validated|	1. Primary Contact is required
 desc	|Yes |	65535 characters|	1. This required field should be validated	|1. Description is required
 link|	No|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)|	NA	|NA
-email	| No|	128 characters|		| NA
+email	| Yes <br> No if type=Award|	128 characters|		| NA
 links|	No|	Array of links|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
 files|	No|	Array of files|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 setaside|	No|	See SetAside section for valid values	|NA	|NA
@@ -3771,7 +3771,7 @@ archdate|	No|	YYYYMMDD|	1.	No validation is performed on this field. However, if
 contact|	Yes|	65535 characters Default value: Primary <br><br>Other types: Secondary, Owner|	1. This required field should be validated|	1. Primary Contact is Required
 desc|	Yes |	65535 characters|	1. This required field should be validated|	1. Description is required
 link	|No|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)|	NA|	NA
-email	|No	|128 characters	|NA	| NA
+email	|Yes <br> No if type=Award	|128 characters	|NA	| NA
 links|	No	|Array of links|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 files	|No	|Array of files|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
 setaside|	No|	See SetAside section for valid values|	NA|	NA
@@ -3804,7 +3804,7 @@ desc|	Yes|	65535 characters|	1. This required field should be validated	|1. Desc
 link|	No	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)	|NA	|NA
 link	|No	| |	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 files|	No	| |	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
-email|	No|	128 characters|	NA	 |
+email|	Yes <br> No if type=Award|	128 characters|	NA	 |
 recovery_act|	No|	True or False|	NA|	 NA
 correction|	No|		True or False <br><br> If correcting a previously submitted itb notice, specify true and the system will lookup the itb by award number, delivery number and sol number if applicable|	1. When user tries to convert a notice to ITB and the solicitation number and ntype do not match the notice and correction = true, then the service throws an error<br><br> 2. If correction = True and the system cannot return a single record for the same delivery number/ award number / sol-number or combination of all three, then the service throws an error<br><br> 3. If correction = True and the system returns more than one record for the same delivery number/ award number / sol-number or combination of all three, then service throws an error|	1. Notice could not be found for correction <br><br> 2. Notice could not be found for correction<br><br> 3. Multiple Notices found. Please input more details
 
@@ -3832,7 +3832,7 @@ desc	|Yes|	65535 characters|	1. This required field should be validated	|1. Desc
 link|	No	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)|	NA	|NA
 links	|No	|Collection	|1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 files|	No|	 |	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
-email	|No|128 characters|	NA|NA
+email	|Yes <br> No if type=Award|128 characters|	NA|NA
 setaside|	No|	See SetAside section for valid values|	NA|	NA
 popaddress|	No	|65535 characters|	NA|	NA
 popzip	|No	|5 digit	|NA |	NA
@@ -3875,10 +3875,10 @@ desc|	No|	65535 characters|	NA	|NA
 link|	No	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)|	NA|	NA
 links	|No	| |	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 files	|No|	 |	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
-email	|No |	128 characters|	NA|	NA
+email	|Yes <br> No if type=Award |	128 characters|	NA|	NA
 recovery_act	|No	|True or False|	NA	|NA
 correction	|No	|True or False<br><br> If correcting a previously submitted J&A notice, specify true and the system will lookup the j&a by award number and sol number if applicable.|	If correction = true, system checks if an opportunity exists or not. If exists, then a new modified record will be posted of the same type and will be set as the latest. If No, then the request will be rejected |	 NA
-donbr	|Yes|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}	|1. This field is required<br><br> 2. In value provided for this field does not meet the character limit/restrictions mentioned, then service throws an error|	1. Award Details Section - Task/Delivery Order Number is required field<br><br> 2. Award Details Section - Task/Delivery Order Number - Please enter a valid number
+donbr	|Yes|	255 characters from the set: a-z A-Z 0-9 - _ ( )|1. This field is required<br><br> 2. In value provided for this field does not meet the character limit/restrictions mentioned, then service throws an error|	1. Award Details Section - Task/Delivery Order Number is required field<br><br> 2. Award Details Section - Task/Delivery Order Number - Please enter a valid number
 
 #### submitAward
 
@@ -3906,7 +3906,7 @@ awardee_duns	|No|	9 digits with optional plus 4	|NA	|NA
 contact|	Yes|	65535 characters Default value: Primary <br><br>Other types: Secondary, Owner	|1. This required field should be validated|	1. Primary Contact is Required
 desc|	No|	65535 characters|	NA|	NA
 link|	No|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)|	NA|	NA
-email|	No|	128 characters|	NA|	NA
+email|	Yes <br> No if type=Award|	128 characters|	NA|	NA
 links|	No|	 	|1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 files|	No|	| 	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
 setaside|	No|	See SetAside section for valid values|	NA|	NA
@@ -3953,7 +3953,7 @@ naics|	No|	Valid NAICS Code  NAICS Reference|	NA|	NA
 offadd|	No|	65535 characters|	NA	|NA
 officeid|	Yes	|20 characters|	1. This field is required <br><br>2. If an invalid officeid is given, then service throws an error<br><br> 3. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 4. Officeid must be associated with user account|	1. Contracting Office is required <br><br>2. Invalid officeid provided <br><br>3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 subject	|Yes|	255 characters|	1. This required field should be validated	|1. $.data.title: is missing but it is required
-solnbr|	Yes	|128 characters from the set: a-z A-Z 0-9 - _ ( ) {}. Note for statutory authority FAR 6.302- 1(c) - Brand name, this is required|	1. This required field should be validated<br><br>  2. If a space is given along with numbers in this field, then service throws an error |1. Notice Id is required <br><br>2. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
+solnbr|	No	|128 characters from the set: a-z A-Z 0-9 - _ ( ) {}. Note for statutory authority FAR 6.302- 1(c) - Brand name, this is required|	1. This required field should be validated<br><br>  2. If a space is given along with numbers in this field, then service throws an error |1. Notice Id is required <br><br>2. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
 archdate	|No	|YYYYMMDD	|1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restrictions <br><br>2.	This date cannot be current or in past; has to be in future |	1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2.	This opportunity cannot be published. Archive date provided is in the past
 contact|	No|	65535 characters Default value: Primary <br><br>Other types: Secondary, Owner|	NA|	NA
 desc|	Yes	|65535 characters|	1. This required field should be validated|	1. Description is required
