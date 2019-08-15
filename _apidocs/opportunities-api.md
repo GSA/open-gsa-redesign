@@ -169,7 +169,7 @@ far13	| FAR 13.5 - Simplified Procedures for One Source
 <span style="color:red">Note: All Opportunity notices types except Special notices will be associated to organization at office level. Special notices can be associated to Organization at department, sub-tier, or office level.</span>
 
 
-### Create Opportunity
+### Create Draft Opportunity
 
 
 ------- | -------
@@ -472,7 +472,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Publish Opportunity
+### Publish Draft Opportunity
 
 
 ------- | -------
@@ -542,7 +542,7 @@ HTTP Status Code | Response Type | Reason  | Description
 201 | string | Draft Opportunity successfully created | returns Opportunity ID in response header
 
 
-### Revise Opportunity
+### Revise Published Opportunity
 
 
 ------- | -------
@@ -1517,7 +1517,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Get Opportunity by Opportunity ID
+### Get an Opportunity by Opportunity ID
 
 
 ------- | -------
@@ -1663,7 +1663,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Cancel Opportunity
+### Cancel Published Opportunity
 
 
 ------- | -------
@@ -1709,7 +1709,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Uncancel Opportunity
+### Uncancel Canceled Opportunity
 
 
 ------- | -------
@@ -1774,7 +1774,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Archive Opportunity
+### Archive Published Opportunity
 
 ------- | -------
 **Request Type** | POST
@@ -1816,7 +1816,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Unarchive Opportunity
+### Unarchive Archived Opportunity
 
 ------- | -------
 **Request Type** | POST
@@ -1864,7 +1864,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Create Attachment
+### Create Attachment in Draft Opportunity
 
 ------- | -------
 **Request Type** | POST
@@ -1922,7 +1922,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update Attachment
+### Update Attachment in Draft Opportunity
 
 ------- | -------
 **Request Type** | PATCH
@@ -1983,7 +1983,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Download Attachment
+### Download Attachment as Original File Type
 
 
 ------- | -------
@@ -2017,13 +2017,13 @@ _NA_
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Download Attachments as Zip
+### Download All Attachments as Zip for an Opportunity
 
 
 ------- | -------
 **Request Type** | GET
 **URL** |/v1/api/{opportunityId}/resources/download/zip
-**Summary** | Download attachments as zip file for Opportunity
+**Summary** | Download all attachments as zip file for an Opportunity
 **Consumes** | Request Parameters
 **Produces** | Zip
 
@@ -2497,7 +2497,7 @@ Examples
 </p>
 </details>
 
-### Download All Attachments by Resource ID  ###
+### Download Metadata for an Attachment by Resource ID  ###
 
 ------- | -------
 **Request Type** | GET
@@ -2552,7 +2552,7 @@ Examples
 </p>
 </details>
 
-### Download All Attachments by Opportunity ID  ###
+### Download Metadata for All Attachments by Opportunity ID  ###
 
 ------- | -------
 **Request Type** | GET
