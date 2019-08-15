@@ -3278,22 +3278,22 @@ Error Code|Field | Error Message | Reason/Description | Operation
 ||Organization Id |	Contracting office is required | FH Org Id/AAC code is required |	Publish
 ||Organization Id |	The Organization ID that you provided is an inactive and/or invalid. | Inactive/Invalid Organization Id |	Create Opportunity
 ||Organization Id |	The Organization ID that you provided is not an office level, and it must be for this opportunity type.	| Organization ID is not valid for opportunity type. Note: Organization ID must be Office level unless creating a Special Notice.	| Create Opportunity
-|Point of Contact Type |	$.data.pointOfContact[0].type: does not have a value in the enumeration [primary, secondary, owner] |	Point of Contact Type is required |	Create Opportunity
-|Point of Contact Email |	Primary Contact – Email is required	| If Contact email is missing. This is a required field	| Publish
-|Primary Contact Full Name |	Primary Contact - Name is required | Point of Contact Full Name is required | Publish
-|Response Date |	This opportunity cannot be published. Response Date is a required field |	Response Date is only valid for Notice Type “o” |	Publish
-|Title |	Title is required |	Title is required |	Publish
-|UNARCHIVE |	This opportunity is not the latest published |	Only archived notices can be unarchived | UNARCHIVE
-|resourceName | Attachment must have a name | File Name is a required field |	Create Attachment
-|Request Id |	Duplicate request. Vendor is already added as an authorized party on the notice. | Request already exists for the vendor on the notice.	| AddAuthorizedParty
-|Duns# |	No contact match on vendor data provided.	| Not a Valid email or Duns#.	| AddAuthorizedParty
-|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
-|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
-|Authorization|	Error code: 401 ; Your request did not get processed! Please verify your permission/roles|	If nonfed email id is used in authorization	|Get Authorized Party
-|Entity|	Error code: 400 ; No contact match on vendor data provided|	Wrong entity info is entered	|Add Authorized Party
-|Duns#|	No contact match on vendor data provided.	|Not a Valid email or Duns#.|	AddAuthorizedParty, Approve or Reject Explicit Access Request By Vendor Data.
-|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided.|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
-|JSON| No Request JSON Given| Can't parse JSON. Raw result: error processing request| Delete Latest or All Notices
+||Point of Contact Type |	$.data.pointOfContact[0].type: does not have a value in the enumeration [primary, secondary, owner] |	Point of Contact Type is required |	Create Opportunity
+||Point of Contact Email |	Primary Contact – Email is required	| If Contact email is missing. This is a required field	| Publish
+||Primary Contact Full Name |	Primary Contact - Name is required | Point of Contact Full Name is required | Publish
+||Response Date |	This opportunity cannot be published. Response Date is a required field |	Response Date is only valid for Notice Type “o” |	Publish
+||Title |	Title is required |	Title is required |	Publish
+||UNARCHIVE |	This opportunity is not the latest published |	Only archived notices can be unarchived | UNARCHIVE
+||resourceName | Attachment must have a name | File Name is a required field |	Create Attachment
+||Request Id |	Duplicate request. Vendor is already added as an authorized party on the notice. | Request already exists for the vendor on the notice.	| AddAuthorizedParty
+||Duns# |	No contact match on vendor data provided.	| Not a Valid email or Duns#.	| AddAuthorizedParty
+||Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
+||Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
+||Authorization|	Error code: 401 ; Your request did not get processed! Please verify your permission/roles|	If nonfed email id is used in authorization	|Get Authorized Party
+||Entity|	Error code: 400 ; No contact match on vendor data provided|	Wrong entity info is entered	|Add Authorized Party
+||Duns#|	No contact match on vendor data provided.	|Not a Valid email or Duns#.|	AddAuthorizedParty, Approve or Reject Explicit Access Request By Vendor Data.
+||Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided.|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
+||JSON| No Request JSON Given| Can't parse JSON. Raw result: error processing request| Delete Latest or All Notices
 
 ## Coming soon…
 
