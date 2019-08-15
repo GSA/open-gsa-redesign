@@ -17,7 +17,7 @@ tags:
   - name: exclusions-extract-controller
     description: Operations pertaining to Exclusions API
 paths:
-  /entity-information/v0.9/download/exclusions:
+  /entity-information/v1/download/exclusions:
     get:
       tags:
         - exclusions-extract-controller
@@ -45,7 +45,7 @@ paths:
           description: Accessing the resource you were trying to reach is forbidden
         "404":
           description: The resource you were trying to reach is not found
-  /entity-information/v0.9/api/exclusions:
+  /entity-information/v1/api/exclusions:
     get:
       tags:
         - exclusions-api-controller
@@ -222,7 +222,7 @@ paths:
           description: Accessing the resource you were trying to reach is forbidden
         "404":
           description: The resource you were trying to reach is not found
-  /entity-information/v0.9/api/exclusions/:
+  /entity-information/v1/api/exclusions/:
     get:
       tags:
         - exclusions-extract-controller
