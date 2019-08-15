@@ -3078,6 +3078,7 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
 </p>
 </details>
 
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 attType | string | link, file | Yes | Type of attachment, either link or file
@@ -3085,6 +3086,7 @@ content | byte |  | Yes (if attType=file) | File content in byte format
 link | string |  | Yes (if attType=link) | Resource link or URL
 packageAccessLevel | string | public,private(default public) | No | Type of access to file or link
 resourceName | string |  | Yes (if attType=file) | Name of file
+
 
 #### Valid File Types ####
 
