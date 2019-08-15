@@ -27,7 +27,7 @@ The Entity Management API will allow users to request Public Entity Information 
 
 ## Getting Started
 
-**IMPORTANT:**  Please note the version number of the endpoint you are using as it is subject to change.  Version 0.9 of the API will be deprecated in Alpha starting the evening of 8/12/19 and Version 1.0 will be made active.  The same will occur in Beta on a date to be determined.
+**IMPORTANT:**  Please note the version number of the endpoint you are using as it is subject to change.  Version 0.9 of the API will be deprecated in Alpha starting the evening of 8/14/19 and Version 1 will be made active.  The same will occur in Beta on a date to be determined.
 
 Public Entity Details can be accessed from Beta or Alpha via the following end points:
    * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value >
@@ -10402,6 +10402,6 @@ You can view the full details of the differences between the SAM legacy API and 
 | ------ | --------------- | --------- |
 | 06/03/2019 | v0.9 | Base Version |
 | 07/03/2019 | v1.0 | * Alpha endpoint for the Sensitive version of the API has been added.<br><br>  * agencyBusinessPurposeCode, agencyBusinessPurposeDesc, bondingLevels, companySecurityLevelCode, companySecurityLevelDesc, highestEmployeeSecurityLevelCode, highestEmployeeSecurityLevelDesc were added to FOUO and Sensitive api's schema. <br><br>  * New Filters agencyBusinessPurposeCode, companySecurityLevelCode and highestEmployeeSecurityLevelCode have been added for FOUO and Sensitive api's. <br><br>  * country and stateOrProvince were updated to countryCode and stateOrProvinceCode across all versions of api.<br><br>  * ediInformationFlag was added across all versions of api.<br><br>  * geographicalAreaServedmetropolitanStatisticalAreaCode, geographicalAreaServedmetropolitanStatisticalAreaName were added across all versions of api instead of geographicalAreaServedMSAName.<br><br>  * certificationEntryDate, certificationExitDate were added to SBA Business Types across all versions of api instead of expirationDate.<br><br>  * updateDate was added as a filter across all versions of api.|
-| 08/12/2019 | v1.1 | * Alpha endpoints for public and FOUO API were updated from version 0.9 to version 1.0.<br><br> *Warning message added under Getting Started to inform users of API version changes.<br><br> *Added Beta.SAM.Gov to the page title.|
+| 08/15/2019 | v1.1 | * Alpha endpoints for public and FOUO API were updated from version 0.9 to version 1.0.<br><br> *Warning message added under Getting Started to inform users of API version changes.<br><br> *Added Beta.SAM.Gov to the page title.|
 
 <p><small><a href="#">Back to top</a></small></p>
