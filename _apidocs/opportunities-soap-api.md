@@ -3972,7 +3972,7 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-solnbr|	No|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1a. This required field if not given, service throws an error <br><br>1b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination<br><br> 2. If solicitation & ntype combination is not matched, then service throws an error	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found for correction
+solnbr|	Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1a. This required field if not given, service throws an error <br><br>1b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination<br><br> 2. If solicitation & ntype combination is not matched, then service throws an error	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found for correction
 officeid|	No	|20 characters|	Officeid must be associated with user account	|NA
 ntype|	No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice|	1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error |  	1. NTYPE value provided is not valid
 awdnbr	|No|	255 characters|	NA|	NA
