@@ -16,7 +16,7 @@ tags:
   - name: entity-management-extract-controller
     description: Operations pertaining to Entity Management Extract Data
 paths:
-  /entity-information/v0.9/api/entities:
+  /entity-information/v1/api/entities:
     get:
       tags:
         - entity-management-controller
@@ -302,13 +302,13 @@ paths:
           required: false
           schema:
             type: string
-        - name: companySecurityLevelCode
+        - name: companySecurityLevel
           in: query
           description: Company Security Level code
           required: false
           schema:
             type: string
-        - name: highestEmployeeSecurityLevelCode
+        - name: highestEmployeeSecurityLevel
           in: query
           description: Highest Employee Security Level Code
           required: false
@@ -330,60 +330,6 @@ paths:
         - name: sensitivity
           in: query
           description: Determines Sensitivity Level of Data
-          required: false
-          schema:
-            type: string
-        - name: agencyBusinessPurposeCode
-          in: query
-          description: Determines Agency Business Purpose Code
-          required: false
-          schema:
-            type: string
-        - name: routingNumber
-          in: query
-          description: Determines Routing Number
-          required: false
-          schema:
-            type: string
-        - name: bankName
-          in: query
-          description: Determines Bank Name
-          required: false
-          schema:
-            type: string
-        - name: accountNumber
-          in: query
-          description: Determines Account Number
-          required: false
-          schema:
-            type: string
-        - name: eftWaiverFlag
-          in: query
-          description: Determines EFT Waiver
-          required: false
-          schema:
-            type: string
-        - name: agencyLocationCode
-          in: query
-          description: Determines Agency Location Code
-          required: false
-          schema:
-            type: string
-        - name: disbursingOfficeSymbol
-          in: query
-          description: Determines Disbursing Symbol
-          required: false
-          schema:
-            type: string
-        - name: taxpayerName
-          in: query
-          description: Determines Taxpayer Name
-          required: false
-          schema:
-            type: string
-        - name: taxpayerIdentificationNumber
-          in: query
-          description: Determines Taxpayer Identification Number
           required: false
           schema:
             type: string
@@ -423,7 +369,7 @@ paths:
           description: API key is not correct or was not provided
         "404":
           description: The resource you were trying to reach is not found
-  /entity-information/v0.9/api/entities/:
+  /entity-information/v1/api/entities/:
     get:
       tags:
         - entity-management-extract-controller
@@ -710,13 +656,13 @@ paths:
           required: false
           schema:
             type: string
-        - name: companySecurityLevelCode
+        - name: companySecurityLevel
           in: query
           description: Company Security Level code
           required: false
           schema:
             type: string
-        - name: highestEmployeeSecurityLevelCode
+        - name: highestEmployeeSecurityLevel
           in: query
           description: Highest Employee Security Level Code
           required: false
@@ -738,66 +684,6 @@ paths:
         - name: sensitivity
           in: query
           description: Determines Sensitivity Level of Data
-          required: false
-          schema:
-            type: string
-        - name: agencyBusinessPurposeCode
-          in: query
-          description: Determines Agency Business Purpose Code
-          required: false
-          schema:
-            type: string
-        - name: agencyBusinessPurposeCode
-          in: query
-          description: Determines Agency Business Purpose Code
-          required: false
-          schema:
-            type: string
-        - name: routingNumber
-          in: query
-          description: Determines Routing Number
-          required: false
-          schema:
-            type: string
-        - name: bankName
-          in: query
-          description: Determines Bank Name
-          required: false
-          schema:
-            type: string
-        - name: accountNumber
-          in: query
-          description: Determines Account Number
-          required: false
-          schema:
-            type: string
-        - name: eftWaiverFlag
-          in: query
-          description: Determines EFT Waiver
-          required: false
-          schema:
-            type: string
-        - name: agencyLocationCode
-          in: query
-          description: Determines Agency Location Code
-          required: false
-          schema:
-            type: string
-        - name: disbursingOfficeSymbol
-          in: query
-          description: Determines Disbursing Symbol
-          required: false
-          schema:
-            type: string
-        - name: taxpayerName
-          in: query
-          description: Determines Taxpayer Name
-          required: false
-          schema:
-            type: string
-        - name: taxpayerIdentificationNumber
-          in: query
-          description: Determines Taxpayer Identification Number
           required: false
           schema:
             type: string
@@ -829,7 +715,7 @@ paths:
           description: API key is not correct or was not provided
         "404":
           description: The resource you were trying to reach is not found
-  /entity-information/v0.9/download/entities:
+  /entity-information/v1/download/entities:
     get:
       tags:
         - entity-management-extract-controller
