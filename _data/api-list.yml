@@ -13,6 +13,18 @@
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: https://gsa.github.io/auctions_api/
+- title: Beta.SAM.Gov Get Opportunities Public API
+  description: Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. 
+  url: get-opportunities-public-api/
+- title: Beta.SAM.Gov Product Service Codes (PSC) API
+  description: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From Beta.sam.gov.
+  url: PSC-Public-API/
+- title: Beta.SAM.Gov Opportunity Management API
+  description: The Opportunity Management API will allow authorized users to submit and request Opportunities data.
+  url: opportunities-api/
+- title: Beta.SAM.Gov Opportunity Management SOAP Web Services
+  description: The Opportunity Management SOAP Web Services will allow authorized users to submit and request Opportunities data using SOAP service.
+  url: https://open.gsa.gov/api/opportunities-soap-api/
 - title: Code.gov API
   description: Provides information from Code.gov, which leverages the power of code sharing and collaboration to help the US Government cut down on duplicative software development and save millions of taxpayer dollars for the American people.
   url: https://developers.code.gov
@@ -28,17 +40,17 @@
 - title: eMuseum API
   description: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
   url: https://gsa.github.io/eMuseum-API/
-- title: Entity/Exclusions Extracts Download API
+- title: Beta.SAM.Gov Entity/Exclusions Extracts Download API
   description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
   url: sam-entity-extracts-api/
-- title: Entity Management API
+- title: Beta.SAM.Gov Entity Management API
   description: API to retrieve Entity detail information from beta.sam.gov using various searchable parameters.
   url: entity-api/
-- title: Exclusions API
+- title: Beta.SAM.Gov Exclusions API
   description: API to retrieve Exclusion detail information from beta.sam.gov using various searchable parameters.
   url: exclusions-api/
-- title: FedBizOpps Web Services
-  description: This system supports Web Services for Federal buyers to post information to the database using their agency’s electronic procurement system.
+- title: FedBizOpps Web Services (These will be deprecated)
+  description: This API previously supported Federal buyers who needed to post information to the legacy FedBizOpps (FBO.gov) system using their agency's electronic contract writing system. FedBizOpps will be decommissioned by the end of 2019 and its functionality will move to beta.SAM.gov. Use the beta.SAM.gov Opportunities Management API referenced in this directory to prepare to interface with the new functionality. 
   url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
 - title: Federal Procurement Data System - FPDS API
   description: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
@@ -52,18 +64,9 @@
 - title: GSA.gov Content API
   description: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last.
   url: https://open.gsa.gov/api/gsa-content/
-- title: Opportunity Management API
-  description: The Opportunity Management API will allow authorized users to submit and request Opportunities data.
-  url: opportunities-api/
-- title: Opportunity Management SOAP Web Services
-  description: The Opportunity Management SOAP Web Services will allow authorized users to submit and request Opportunities data using SOAP service.
-  url: https://open.gsa.gov/api/opportunities-soap-api/
 - title: Per Diem API
   description: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers.
   url: https://open.gsa.gov/api/perdiem/
-- title: Product Service Codes (PSC) API
-  description: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From Beta.sam.gov.
-  url: https://s3.amazonaws.com/falextracts/Documentation/PSC/PSC%20Public%20API%20Documentation.pdf
 - title: Search.gov i14y API
   description: For Search.gov customers. This API allows search.gov customers to send content directly from their content management system (CMS) into Search.gov for real-time indexing.
   url: https://search.gov/developer/i14y.html
@@ -81,4 +84,4 @@
   url: https://gsa.github.io/sam_api/sam/
 - title: U.S. Digital Registry API
   description: Contains listing from the U.S. Digital Media Registry, which serves as a crowdsource resource for agencies, citizens, and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps, and mobile websites. The accounts in the registry are independently updated by federal managers across the government who maintain individual agency accounts.
-  url: https://usdigitalregistry.digitalgov.gov/
+  url: https://open.gsa.gov/api/digital-registry/

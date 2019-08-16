@@ -1,6 +1,6 @@
 ---
-title: Opportunity Management API
-banner-heading: Opportunity Management API
+title: Beta.SAM.Gov Opportunity Management API
+banner-heading: Beta.SAM.Gov Opportunity Management API
 ---
 
 ## Overview
@@ -37,6 +37,12 @@ To view the current workflow of REST APIs, refer below file:
 In order to utilize the Contract Opportunity Management API, the following is required:
 * Valid beta.SAM.GOV federal government system account with Read and Write permissions under Contract Opportunity domain.
 
+### *Type of Connection Validation (Future Implementation)*
+All REST API requests will be validated against the Type of Connection within the system account profile. All requests without "REST API" type of connection in the system account profile will be rejected with an error.
+
+### *IP Address Validation (Future Implementation)*
+All REST API requests will be validated against the IP Addresses registered within the system account profile. All requests that are not from registered IP address(es) in the system account profile will be rejected with an error.
+
 #### User Account Authorization
 In order to perform an Opportunity Management API operation, the following is required:
 * beta.SAM.GOV user account with either 'Administrator', 'Contracting Officer' role or 'Contracting Specialist' role. Permissions for operations by role are listed in the table below.<br/>
@@ -49,17 +55,18 @@ To submit any opportunity notice type (except “Special Notice”) for an offic
 Operation    | Administrator <br/>(Contract Opportunities domain)| Contracting Officer | Contracting Specialist
 -------------|---------------|---------------------|------------------------------
 Create Opportunity | Yes | Yes | Yes
+Create and Publish | Yes | Yes | No
 Publish Opportunity | Yes | Yes | No
-Revise Opportunity | Yes | Yes | No
-Update Opportunity | Yes | Yes | No
+Revise Opportunity | Yes | Yes | Yes
+Update Opportunity | Yes | Yes | Yes
 Opportunity History | Yes | Yes | Yes
-Delete Opportunity | Yes | No | No
+Delete Draft Opportunity | Yes | Yes | No
 Get List of Opportunity | Yes | Yes | Yes
 Get Opportunity by ID | Yes | Yes | Yes
-Cancel Opportunity | Yes | Yes | Yes
-Uncancel Opportunity | Yes | Yes | Yes
+Cancel Opportunity | Yes | Yes | No
+Uncancel Opportunity | Yes | Yes | No
 Archive Opportunity | Yes | Yes | Yes
-Unarchive Opportunity | Yes | Yes | Yes
+Unarchive Opportunity | Yes | Yes | No
 Create Attachment | Yes | Yes | Yes
 Update Attachment| Yes | Yes | Yes
 Download Attachment | Yes | Yes | Yes
@@ -508,8 +515,34 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Revise Opportunity
+### Create and Publish Opportunity
 
+
+------- | -------
+**Request Type** | POST
+**URL** | /opps/v1/opportunities/createAndPublish
+**Summary** | Creates and publishes contract opportunity
+**Consumes** | application/json
+**Produces** | JSON
+
+Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+Authorization | header |  string | Yes | Valid and authorized user ID
+api_key | query | string | Yes | Valid System Account API Key
+Request JSON | Body | JSON | Yes | [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json)
+
+<p><small><a href="#">Back to top</a></small></p>
+
+Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+201 | string | Draft Opportunity successfully created | returns Opportunity ID in response header
+
+
+### Revise Opportunity
 
 
 ------- | -------
@@ -1022,7 +1055,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Delete Opportunity
+### Delete Draft Opportunity
 
 
 
@@ -2591,127 +2624,173 @@ Examples
 <p>
 <code><pre>
 {
-  "data": {
-    "solicitationNumber": "string",
-    "title": "string",
-    "type": "string",
-    "classificationCode": "string",
-    "organizationId": "string",
-    "organizationLocationId": "string",
-    "naics": [
-      {
-        "code": [
-          "string"
-        ],
-        "type": "string"
-      }
-    ],
-    "pointOfContact": [
-      {
-        "additionalInfo": {
-          "content": "string"
-        },
-        "email": "string",
-        "fax": "string",
-        "fullName": "string",
-        "phone": "string",
-        "title": "string",
-        "type": "string"
-      }
-    ],
-    "placeOfPerformance": {
-      "city": {
-        "code": "string",
-        "name": "string"
-      },
-      "country": {
-        "code": "string",
-        "name": "string"
-      },
-      "state": {
-        "code": "string",
-        "name": "string"
-      },
-      "streetAddress": "string",
-      "streetAddress2": "string",
-      "zip": "string"
-    },
-    "award": {
-      "date": "date",
-      "number": "string",
-      "deliveryOrderNumber": "string",
-      "amount": "number",
-      "lineItemNumber": "integer",
-      "awardee": {
-        "manual": "flag",
-        "name": "string",
-        "duns": "string",
-        "location": {
-          "streetAddress": "string",
-          "streetAddress2": "string",
-          "city": {
-            "code": "string",
-            "name": "string"
-          },
-          "state": {
-            "code": "string",
-            "name": "string"
-          },
-          "zip": "string",
-          "country": {
-            "code": "string",
-            "name": "string"
-          }
-        }
-      },
-      "justificationAuthority": {
-        "modificationNumber": "string",
-        "authority": "dictionary"
-      },
-      "fairOpportunity": {
-        "authority": "string"
-      }
-    },
-    "permissions": {
-      "IVL": {
-        "create": false,
-        "delete": false,
-        "read": false,
-        "update": false
-      }
-    },
-    "solicitation": {
-      "setAside": "string",
-      "deadlines": {
-        "responseTz": "string",
-        "response": "date"
-      }
-    },
-    "archive": {
-      "date": "string",
-      "type": "auto15"
-    },
-    "flags": [
-      {
-        "code": "string",
-        "isSelected": true
-      }
-    ],
-    "link": {
-      "additionalInfo": {
-        "content": "string"
-      },
-      "href": "string"
-    },
-    "additionalReporting": [
-      "none"
-    ]
-  },
-  "description": [
+
+    "data":
+
     {
-      "body": "string"
-    }
-  ]
+
+        "type": "p",
+
+        "solicitationNumber": "234344u854546uu6",
+
+        "title": "SOAP_IT_SubmitPresolNotice",
+
+        "organizationId": "100186612",
+
+        "organizationLocationId": "50185692",
+
+        "descriptions": [],
+
+        "link":
+
+        {
+
+            "additionalInfo":
+
+            {}
+
+        },
+
+        "classificationCode": "13",
+
+        "naics": [],
+
+        "pointOfContact": [
+
+        {
+
+            "type": "primary",
+
+            "fullName": "test contact",
+
+            "email": "test@test.com",
+
+            "additionalInfo":
+
+            {
+
+                "content": "primary email contact"
+
+            }
+
+        }],
+
+        "placeOfPerformance":
+
+        {},
+
+        "archive":
+
+        {
+
+            "type": "autocustom",
+
+            "date": "2020-01-01"
+
+        },
+
+        "permissions":
+
+        {
+
+            "IVL":
+
+            {
+
+                "create": false,
+
+                "read": false,
+
+                "update": false,
+
+                "delete": false
+
+            }
+
+        },
+
+        "solicitation":
+
+        {
+
+            "setAside": "1000002",
+
+            "deadlines":
+
+            {
+
+                "response": "2019-01-01"
+
+            }
+
+        },
+
+        "award":
+
+        {
+
+            "awardee":
+
+            {
+
+                "location":
+
+                {}
+
+            },
+
+            "justificationAuthority":
+
+            {},
+
+            "fairOpportunity":
+
+            {}
+
+        },
+
+        "additionalReporting": ["none"]
+
+    },
+
+    "description": [
+
+    {
+
+        "body": "Description"
+
+    }],
+
+    "resources": [
+
+    {
+
+        "attType": "link",
+
+        "link": "http://beta.sam.gov",
+
+        "description": "test beta sam link",
+
+        "packageAccessLevel": null
+
+    },
+
+    {
+
+        "attType": "link",
+
+        "link": "https://faaco.faa.gov/index.cfm/attachment/download/84723",
+
+        "description": "test attachment pdf link",
+
+        "packageAccessLevel": null
+
+    }],
+
+    "postedDate": "20190423",
+
+    "archived": false
+
 }
 </pre></code>
 </p>
@@ -2720,7 +2799,7 @@ Examples
 
 Name | Data Type | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
 -----|-----------|----------------|--------------------------|-----------------------|------------
-type | string | See Notice Types table | No | Yes | Notice Type
+type | string | See Notice Types table | Yes | Yes | Notice Type
 solicitationNumber | string |  | No | Yes | Solicitation Number
 title | string |  | Yes | Yes | Title of the Opportunity
 organizationId | string |  | No | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
@@ -2819,7 +2898,7 @@ description.body | string |  | No | Yes | Description of notice
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason | string |  | Yes | Publish reason
+Reason | string |  | No | Publish reason
 requestType | string | publish_request | Yes | Type of request
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3305,6 +3384,7 @@ Date | Version | Description
 5/28/2019 | v0.4| Updated  Add Authorized Party<br> Get Authorized Party<br> Delete All Attachments API’s <br> Added Delete Notice API <br> Updated User Permissions <br> Create and Publish Contract Opportunity
 6/6/2019| v0.5| Deleted Download All Attachments (metadata) <br> Added Download All Attachments by Resource ID <br> Added Download All Attachments by Opportunity ID
 7/22/2019| v0.6 | Only title required to create draft opportunity <br> Solicitation number not required for create/update draft notices JSON <br> soliciation.deadlines.respose required for types k and o to publish<br> Contract Award Date required only for Award to publish <br> Contract Award Number required only for a, j, and i to publish <br> POC email required except for Award to publish <br> Description not needed for Update Attachment JSON <br> Workflow Chart Added
-8/1/2019| v0.7| Error message section updated
+8/1/2019 | v0.71 | Added Future Implementation for IP Address Validation and Type of Connection <br> Delete Draft Opportunities Role changed so that CO and Admin can Delete <br> Reason not required for Publish Opportunity
+8/16/2019| v0.72 | Error message section updated
 
 <p><small><a href="#">Back to top</a></small></p>
