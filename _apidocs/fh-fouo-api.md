@@ -1,6 +1,6 @@
 ---
-title: Beta.SAM.Gov Get Opportunities Public API 
-banner-heading: Beta.SAM.Gov Get Opportunities Public API 
+title: Beta.SAM.Gov FH FOUO API 
+banner-heading: Beta.SAM.Gov FH FOUO API 
 ---
 
 ## Overview
