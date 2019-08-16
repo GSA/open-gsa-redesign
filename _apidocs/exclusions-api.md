@@ -1,6 +1,6 @@
 ---
-title: Exclusions  API
-banner-heading: Exclusions API
+title: Beta.SAM.Gov Exclusions  API
+banner-heading: Beta.SAM.Gov Exclusions API
 ---
 
 ## Overview
@@ -24,9 +24,11 @@ The response will be provided in the JSON format in a paginated manner.
 
 ## Getting Started
 
+**IMPORTANT:**  Please note the version number of the end point you are using as it is subject to change.  Version 0.9 of the API will be deprecated in Alpha starting the evening of 8/14/19 and Version 1 will be made active.  The same will occur in Beta on a date to be determined.
+
 Exclusions API can be accessed from Beta or Alpha via the following end points:
-* Beta: https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key= < value > - This will be available on 06/10/2019
-* Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v0.9/api/exclusions?api_key= < value >
+* Beta: https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key= < value >
+* Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v1/api/exclusions?api_key= < value >
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
@@ -121,10 +123,10 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | addressLine1 | string | Address Line 1  | 
 | addressLine2 | string | Address Line 2  | 
 | city | string | Address City  | 
-| stateOrProvince | string | Address State or Province |
+| stateOrProvinceCode | string | Address State or Province Code |
 | zipCode | string | Address Zip OR Postal Code  |
 | zipCodePlus4 | string | Address Zip Plus 4  |
-| country | string | Country  |
+| countryCode | string | Country Code |
 | **exclusionOtherInformation** |
 | additionalComments | string | Additional Comments  |
 | ctCode | string | CT Code  |
@@ -140,7 +142,14 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | grt | string | GRT  |
 | flag | string | Flag  |
 | owner | string | Owner |
-| secondaryAddress | string | Secondary Address  |
+| **vesselDetails --> secondaryAddress**  |
+| addressLine1 | string | Address Line 1  | 
+| addressLine2 | string | Address Line 2  | 
+| city | string | Address City  | 
+| stateOrProvinceCode | string | Address State or Province Code |
+| zipCode | string | Address Zip OR Postal Code  |
+| zipCodePlus4 | string | Address Zip Plus 4  |
+| countryCode | string | Country Code |
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -182,6 +191,13 @@ https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key=<API Key
 &exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=JSON
 &emailId= < a valid email address >
 
+<p><small><a href="#">Back to top</a></small></p>
+
+## Additional Information
+You can view the full details of the differences between the SAM legacy API and Beta API 
+<br> available here: <a href="LegacySAMvsBetaSAM-ExclusionsAPI.pdf">Variance Document</a>
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
 
@@ -193,6 +209,7 @@ https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key=<API Key
 
 Date | Version | Description
 ------|---------------|---------
-06/03/2019 | v0.9 | Base Version
+06/03/2019 | v1.0 | Base Version
+08/15/2019 | v1.1 | * Added Beta.SAM.Gov to the page title. <br><br> *Updated the Alpha endpoint to v1. <br><br> *Added Secondary Address fields.
 
 <p><small><a href="#">Back to top</a></small></p>
