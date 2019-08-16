@@ -10,6 +10,15 @@
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: https://gsa.github.io/auctions_api/
+- title: Beta.SAM.Gov Entity/Exclusions Extracts Download API
+  description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
+  url: sam-entity-extracts-api/
+- title: Beta.SAM.Gov Entity Management API
+  description: API to retrieve Entity detail information from beta.sam.gov using various searchable parameters.
+  url: entity-api/
+- title: Beta.SAM.Gov Exclusions API
+  description: API to retrieve Exclusion detail information from beta.sam.gov using various searchable parameters.
+  url: exclusions-api/
 - title: Code.gov API
   description: Provides information from Code.gov, which leverages the power of code sharing and collaboration to help the US Government cut down on duplicative software development and save millions of taxpayer dollars for the American people.
   url: https://developers.code.gov
@@ -25,17 +34,8 @@
 - title: eMuseum API
   description: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
   url: https://gsa.github.io/eMuseum-API/
-- title: Beta.SAM.Gov Entity/Exclusions Extracts Download API
-  description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
-  url: sam-entity-extracts-api/
-- title: Beta.SAM.Gov Entity Management API
-  description: API to retrieve Entity detail information from beta.sam.gov using various searchable parameters.
-  url: entity-api/
-- title: Beta.SAM.Gov Exclusions API
-  description: API to retrieve Exclusion detail information from beta.sam.gov using various searchable parameters.
-  url: exclusions-api/
 - title: FedBizOpps Web Services
-  description: This system supports Web Services for Federal buyers to post information to the database using their agency’s electronic procurement system.
+  description: This system supports Web Services for Federal buyers to post information to the database using their agencyâ€™s electronic procurement system.
   url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
 - title: Federal Procurement Data System - FPDS API
   description: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
@@ -65,7 +65,7 @@
   description: For Search.gov customers. This API allows search.gov customers to send content directly from their content management system (CMS) into Search.gov for real-time indexing.
   url: https://search.gov/developer/i14y.html
 - title: Search.gov Search Results API
-  description: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application.
+  description: For Search.gov customers. This API exposes all relevant results â€œmodulesâ€� in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application.
   url: https://search.gov/manual/search-results-api.html
 - title: Search.gov Type-ahead API
   description: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms.
