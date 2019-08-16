@@ -40,13 +40,13 @@
 - title: eMuseum API
   description: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
   url: https://gsa.github.io/eMuseum-API/
-- title: Entity/Exclusions Extracts Download API
+- title: Beta.SAM.Gov Entity/Exclusions Extracts Download API
   description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
   url: sam-entity-extracts-api/
-- title: Entity Management API
+- title: Beta.SAM.Gov Entity Management API
   description: API to retrieve Entity detail information from beta.sam.gov using various searchable parameters.
   url: entity-api/
-- title: Exclusions API
+- title: Beta.SAM.Gov Exclusions API
   description: API to retrieve Exclusion detail information from beta.sam.gov using various searchable parameters.
   url: exclusions-api/
 - title: FedBizOpps Web Services (These will be deprecated)

@@ -1,6 +1,6 @@
 ---
-title: Entity/Exclusions Extracts Download APIs
-banner-heading: Entity/Exclusions Extracts Download APIs
+title: Beta.SAM.Gov Entity/Exclusions Extracts Download APIs
+banner-heading: Beta.SAM.Gov Entity/Exclusions Extracts Download APIs
 ---
 
 
@@ -37,6 +37,8 @@ The Entity Management extracts contain entities (businesses and government agenc
      Daily UTF-8: SAM_SENSITIVE_UTF-8_DAILY_V2_YYYYMMDD.ZIP<br />
      Monthly ASCII (Default): SAM_SENSITIVE_MONTHLY_V2_YYYYMMDD.ZIP<br />
      Monthly UTF-8 (Default): SAM_SENSITIVE_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
+   * This extract requires IP address whitelisting to download your file.  You will need to keep an up-to-date list of your IP addresses in your System Account.
+
 
 4. **Exclusions Public Data Package:**
    * This extract all active exclusions in SAM as a comma-separated value (CSV) file.
@@ -46,14 +48,15 @@ The Entity Management extracts contain entities (businesses and government agenc
    		* April 16, 2019 is the 106th day of 2019.  Therefore, the Exclusions extract for April 16, 2019 would be SAM_Exclusions_Public_Extract_19106.ZIP.
 
 
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
 
-The Entity Management extracts are available using the following endpoints:
+The Entity and Exclusion extracts are available using the following endpoints:
  
-  * https://api.sam.gov/prodlike/dataservices/v1/extracts
-  * https://api.sam.gov/prod/dataservices/v1/extracts
+  * Beta: https://api.sam.gov/prod/dataservices/v1/extracts?api_key= < value >
+  * Alpha: https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts?api_key= < value >
   
 Generating a personal API Key:
 * Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on beta.sam.gov
@@ -69,6 +72,7 @@ Generating a System Account API Key:
 * The user can select ‘Go to System Accounts’ again in the widget from their workspace and enter a new system account password.
 * After setting up the password the user will see a new section for retrieving a system account API Key.
 * The user must enter their password again to retrieve the key.
+* The user must maintain accurate IP addresses in their System Accounts, particularly if they are downloading the Entity Management Sensitive Data Package.
 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -241,5 +245,6 @@ The API will return one of the following responses:
 Date | Version | Description
 ------|---------------|---------
 06/03/2019 | v 1.0 | Base Version
+08/15/2019 | v 1.1 | * Added Beta.SAM.Gov to the page title. <br><br>* Clarified the Alpha and Beta endpoints.
 
 <p><small><a href="#">Back to top</a></small></p>
