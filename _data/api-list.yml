@@ -13,6 +13,15 @@
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: https://gsa.github.io/auctions_api/
+- title: Beta.SAM.Gov Entity/Exclusions Extracts Download API
+  description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
+  url: sam-entity-extracts-api/
+- title: Beta.SAM.Gov Entity Management API
+  description: API to retrieve Entity detail information from beta.sam.gov using various searchable parameters.
+  url: entity-api/
+- title: Beta.SAM.Gov Exclusions API
+  description: API to retrieve Exclusion detail information from beta.sam.gov using various searchable parameters.
+  url: exclusions-api/
 - title: Beta.SAM.Gov Get Opportunities Public API
   description: Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. 
   url: get-opportunities-public-api/
@@ -40,15 +49,6 @@
 - title: eMuseum API
   description: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
   url: https://gsa.github.io/eMuseum-API/
-- title: Beta.SAM.Gov Entity/Exclusions Extracts Download API
-  description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
-  url: sam-entity-extracts-api/
-- title: Beta.SAM.Gov Entity Management API
-  description: API to retrieve Entity detail information from beta.sam.gov using various searchable parameters.
-  url: entity-api/
-- title: Beta.SAM.Gov Exclusions API
-  description: API to retrieve Exclusion detail information from beta.sam.gov using various searchable parameters.
-  url: exclusions-api/
 - title: FedBizOpps Web Services (These will be deprecated)
   description: This API previously supported Federal buyers who needed to post information to the legacy FedBizOpps (FBO.gov) system using their agency's electronic contract writing system. FedBizOpps will be decommissioned by the end of 2019 and its functionality will move to beta.SAM.gov. Use the beta.SAM.gov Opportunities Management API referenced in this directory to prepare to interface with the new functionality. 
   url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
@@ -71,7 +71,7 @@
   description: For Search.gov customers. This API allows search.gov customers to send content directly from their content management system (CMS) into Search.gov for real-time indexing.
   url: https://search.gov/developer/i14y.html
 - title: Search.gov Search Results API
-  description: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application.
+  description: For Search.gov customers. This API exposes all relevant results â€œmodulesâ€� in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application.
   url: https://search.gov/manual/search-results-api.html
 - title: Search.gov Type-ahead API
   description: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms.
