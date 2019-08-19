@@ -18,6 +18,10 @@ PSC API can be accessed from Beta or Alpha via the following endpoints:
 
 ## Authentication and API Keys
 User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles. 
+
+* Rate limit for Federal User is 1000 requests/day
+* Rate limit for Non-Federal User is 10 requests/day
+
 Note: User can request a public API Key in the Account Details page on beta.sam.gov (if testing in production) Else on alpha.sam.gov (if testing in prodlike).
 
 #### User Account API Key Creation
@@ -630,7 +634,9 @@ User enters a startDateFrom greater than startDateTo	|"startDateFrom cannot be g
 User enters a endDateFrom greater than endDateFrom|	"endDateFrom cannot be greater than endDateFrom "
 User enters a updatedDateFrom greater than updatedDateTo|	"updatedDateFrom cannot be greater than updatedDateTo"
 
+## FAQ
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
 

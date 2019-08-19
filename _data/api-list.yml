@@ -22,6 +22,9 @@
 - title: Beta.SAM.Gov Exclusions API
   description: API to retrieve Exclusion detail information from beta.sam.gov using various searchable parameters.
   url: exclusions-api/
+- title: Beta.SAM.Gov Federal Hierarchy FOUO API
+  description: The Federal Hierarchy “For Official Use Only” (FOUO) API allows U.S. Government users to obtain Federal Organization details down to the office level.
+  url: fh-fouo-api/
 - title: Beta.SAM.Gov Get Opportunities Public API
   description: Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. 
   url: get-opportunities-public-api/
