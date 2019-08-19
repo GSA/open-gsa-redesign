@@ -545,7 +545,7 @@ awdnbr |	String |	Yes |	Award Number |	255 characters
 modnbr |	String |	No |	Mod Number |	32 characters
 awdamt |	String |	No |	Award Amount |	64 characters
 awddate |	Date |	No – May change in future	| Award Date |	YYYYMMDD
-donbr	| String |	Yes |	Task/Delivery Order Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
+donbr	| String |	Yes |	Task/Delivery Order Number |	255 characters from the set: a-z A-Z 0-9 - _ ( )
 archdate |	Date |	No |	Archive Date |	YYYYMMDD
 contact |	String |	Yes | 	Contact Info |	65535 characters
 desc |	String |	No |	Description	| 65535 characters
@@ -822,7 +822,7 @@ subject|	String|	Yes|	Subject	|255 characters
 solnbr	|String	|Yes|	Sol #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 ntype	|string	|No|	Base Notice Type|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice
 awdnbr|	String	|Yes	|Award Number|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
-donbr|	String|	No	|Task/Delivery Order Number	|255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
+donbr|	String|	No	|Task/Delivery Order Number	|255 characters from the set: a-z A-Z 0-9 - _ ( )
 archdate	|Date	|No	|Archive Date|	YYYYMMDD
 contact|	String|	Yes|	Contact Info	|65535 characters; Default value = Primary, Other types are: Secondary, Owner
 desc	|String	|Yes	|Description|	65535 characters
@@ -3749,7 +3749,7 @@ subject	|Yes|	255 characters|	1. This required field should be validated|	1. $.d
 solnbr	|Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated<br><br>  2. If submitting a notice with same solnbr number, then system throws an error <br><br>3. If a space is given along with numbers in this field, then service throws an error<br><br>4. If solicitation & ntype combination is not matched, then service throws an error|	1. Notice Id is required <br><br>2. Notice Id for the selected opportunity type already exists <br><br>3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br><br>4.	Opportunity not found with given solicitation number and ntype
 ntype|	no|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice |1. When user tries to convert a notice to ITB and the solicitation number and ntype do not match the notice, then the service throws an error<br><br>  2. This field accepts only valid values mentioned. If invalid values are provided, then system throws an error. Also, if all the required field is given and this field is not given then service throws an error    |1. Opportunity not found with given solicitation number and ntype<br><br> 2. Invalid NTYPE value provided
 awdnbr|	Yes|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}	|1. This required field should be validated<br><br> 2. This field accepts only valid characters as mentioned under character limit/restrictions column |	1. Award Details Section - Contract Award Number is a required field<br><br> 2. Award Details Section - Contract Award Number - Please enter a valid number
-donbr|	No|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}|	NA|	NA
+donbr|	No|	255 characters from the set: a-z A-Z 0-9 - _ ( ) |	NA|	NA
 archdate|	No|	YYYYMMDD|	1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restrictions <br><br>2.	This date cannot be current or in past; has to be in future	|1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2.	This opportunity cannot be published. Archive date provided is in the past
 contact|	Yes	|65535 characters<br><br> 65535 characters Default value: Primary<br><br> Other types: Secondary, Owner|	1. This required field should be validated	| 1. Primary Contact is Required
 desc|	Yes|	65535 characters|	1. This required field should be validated	|1. Description is required
@@ -4169,5 +4169,6 @@ Date | Version | Description
 5/10/2019 | v0.1 | Base Version
 7/22/2019 | v0.2 | Workflow Chart Added
 8/1/2019 | v0.3 | Added Future Implementation for IP Address Validation and Type of Connection 
+8/19/2019| v0.4 | SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated
 
 <p><small><a href="#">Back to top</a></small></p>
