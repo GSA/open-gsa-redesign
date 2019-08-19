@@ -54,23 +54,26 @@ To submit any opportunity notice type (except “Special Notice”) for an offic
 
 Operation    | Administrator <br/>(Contract Opportunities domain)| Contracting Officer | Contracting Specialist
 -------------|---------------|---------------------|------------------------------
-Create Opportunity | Yes | Yes | Yes
+Create Draft Opportunity | Yes | Yes | Yes
 Create and Publish | Yes | Yes | No
-Publish Opportunity | Yes | Yes | No
-Revise Opportunity | Yes | Yes | Yes
+Publish Draft Opportunity | Yes | Yes | No
+Revise Published Opportunity | Yes | Yes | Yes
 Update Draft Opportunity | Yes | Yes | Yes
 Get Opportunity History | Yes | Yes | Yes
 Delete Draft Opportunity | Yes | Yes | No
+Delete Notice|	Yes|	Yes|	No
 Get List of Opportunity | Yes | Yes | Yes
-Get Opportunity by Opportunity ID | Yes | Yes | Yes
-Cancel Opportunity | Yes | Yes | No
-Uncancel Opportunity | Yes | Yes | No
+Get an Opportunity by Opportunity ID | Yes | Yes | Yes
+Cancel Published Opportunity | Yes | Yes | No
+Uncancel Canceled Opportunity | Yes | Yes | No
 Archive Opportunity | Yes | Yes | Yes
-Unarchive Opportunity | Yes | Yes | No
-Create Attachment | Yes | Yes | Yes
-Update Attachment| Yes | Yes | Yes
-Download Attachment | Yes | Yes | Yes
-Download Attachment Zip | Yes | Yes | Yes
+Unarchive Archived Opportunity | Yes | Yes | No
+Create Attachment in Draft Opportunity| Yes | Yes | Yes
+Update Attachment in Draft Opportunity| Yes | Yes | Yes
+Download Attachment as Original File Type | Yes | Yes | Yes
+Download All Attachments as Zip for an Opportunity | Yes | Yes | Yes
+Download Metadata for an Attachment by Resource ID|	Yes|	Yes|	Yes
+Download Metadata for All Attachments by Oppoprtunity ID	|Yes	|Yes	|Yes
 Get Attachment | Yes | Yes | Yes
 Get IVL | Yes | Yes | Yes
 IVL settings | Yes | Yes | Yes
@@ -79,9 +82,8 @@ Get Authorized Party | Yes | Yes | No
 Add Authorized Party  | Yes | Yes | No
 Check Unique Solicitation Number | Yes | Yes | Yes
 Get Related Opportunities | Yes | Yes | Yes
-Delete Notice|	Yes|	Yes|	No
-Download All Attachments by Resource ID|	Yes|	Yes|	Yes
-Download All Attachments by Oppoprtunity ID	|Yes	|Yes	|Yes
+
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1086,6 +1088,52 @@ Examples
 _NA_
 
 <p><small><a href="#">Back to top</a></small></p>
+
+
+### Delete Notice ###
+
+------- | -------
+**Request Type** | POST
+**URL** |	/opps/v1/opportunities/{opportunityId}/requests
+**Summary** | Deletes all the versions or latest version of a notice
+**Consumes** | application/json
+**Produces** | JSON
+
+Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+Authorization	| Header | string |	Yes |	Valid and authorized user ID
+api_key |	query |	string |	Yes |	Valid System Account API Key
+Request JSON|	Body|	JSON|	Yes|	Refer Delete Notice JSON
+
+Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+200	|JSON|	Deleted the latest or all versions of a notice	|NA
+
+Examples
+
+<details>
+<summary>Delete Notice:</summary>
+<p>
+<code><pre>
+{
+   "requestType":"delete_request",
+    "reason":"test",
+     "data":{
+              "description":"test",
+               "title":null,
+                "newArchiveDate":null,
+                "newArchiveType":null,
+                 "deleteOption":"latest"  ( “all”  - to delete all versions)
+              }
+}
+</pre></code>
+</p>
+</details>
+
 
 ### Get List of Opportunities
 
@@ -2153,6 +2201,124 @@ ivl": [
 
 <p><small><a href="#">Back to top</a></small></p>
 
+### Download Metadata for an Attachment by Resource ID  ###
+
+------- | -------
+**Request Type** | GET
+**URL** |	/opps/v1/api/resource
+**Summary** | Download all attachments from resource ID
+**Consumes** | application/json
+**Produces** | JSON
+
+Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+Authorization|	Header|	string|	Yes|Valid and authorized user ID
+Api_key	query	| string|	Yes|	Valid System Account API Key
+ResourceID	|query|	string|	Yes	| Resource ID
+
+
+Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+200	|JSON|	Downloaded all attachments from resource ID	|OK
+
+Examples
+
+<details>
+<summary>Response</summary>
+<p>
+<code><pre>
+{
+"opportunityId": "02160428f9e84cbe8af8f7cc1bd49c7b",
+"attachments": [
+{
+"attachmentId": "eab82b2378aa4cdbacf340b01631c011",
+"resourceId": "5ed09570655a4fbb93bbea4a8570ebe9",
+"fileExists": "1",
+"name": "Hello.txt",
+"type": "file",
+"postedDate": "",
+"accessLevel": "public",
+"exportControlled": "0",
+"explicitAccess": "0",
+"mimeType": ".txt",
+"size": 5,
+"deletedDate": "",
+"deletedFlag": "0",
+"accessStatus": "public"
+}
+]
+}
+</pre></code>
+</p>
+</details>
+
+
+### Download Metadata for All Attachments by Opportunity ID  ###
+
+------- | -------
+**Request Type** | GET
+**URL** |	/opps/v1/api/resources
+**Summary** | Download all attachments from opportunity ID
+**Consumes** | application/json
+**Produces** | JSON
+
+Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+Authorization|	Header|	string|	Yes|Valid and authorized user ID
+Api_key	query	| string|	Yes|	Valid System Account API Key
+OpportunityID	|query|	string|	Yes	| Opportunity ID
+
+
+Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+200	|JSON|	Downloaded all attachments from opportunity ID	|OK
+
+Examples
+
+<details>
+<summary>Response</summary>
+<p>
+<code><pre>
+{
+  "_embedded": {
+    "opportunityAttachmentList": [
+      {
+        "opportunityId": "02160428f9e84cbe8af8f7cc1bd49c7b",
+        "attachments": [
+          {
+            "attachmentId": "eab82b2378aa4cdbacf340b01631c011",
+            "resourceId": "5ed09570655a4fbb93bbea4a8570ebe9",
+            "fileExists": "1",
+            "name": "Hello.txt",
+            "type": "file",
+            "postedDate": "",
+            "accessLevel": "public",
+            "exportControlled": "0",
+            "explicitAccess": "0",
+            "mimeType": ".txt",
+            "size": 5,
+            "deletedDate": "",
+            "deletedFlag": "0",
+            "accessStatus": "public"
+          }
+        ]
+      }
+    ]
+  }
+}
+</pre></code>
+</p>
+</details>
+
+
 ### IVL Settings
 
 
@@ -2453,165 +2619,7 @@ Examples
 </p>
 </details>
 
-### Delete Notice ###
 
-------- | -------
-**Request Type** | POST
-**URL** |	/opps/v1/opportunities/{opportunityId}/requests
-**Summary** | Deletes all the versions or latest version of a notice
-**Consumes** | application/json
-**Produces** | JSON
-
-Request Parameters
-
-Parameter Name | Parameter Type | Data Type  | Required | Description
----------------|----------------|------------|----------|------------
-Authorization	| Header | string |	Yes |	Valid and authorized user ID
-api_key |	query |	string |	Yes |	Valid System Account API Key
-Request JSON|	Body|	JSON|	Yes|	Refer Delete Notice JSON
-
-Responses
-
-HTTP Status Code | Response Type | Reason  | Description
------------------|---------------|---------|------------
-200	|JSON|	Deleted the latest or all versions of a notice	|NA
-
-Examples
-
-<details>
-<summary>Delete Notice:</summary>
-<p>
-<code><pre>
-{
-   "requestType":"delete_request",
-    "reason":"test",
-     "data":{
-              "description":"test",
-               "title":null,
-                "newArchiveDate":null,
-                "newArchiveType":null,
-                 "deleteOption":"latest"  ( “all”  - to delete all versions)
-              }
-}
-</pre></code>
-</p>
-</details>
-
-### Download Metadata for an Attachment by Resource ID  ###
-
-------- | -------
-**Request Type** | GET
-**URL** |	/opps/v1/api/resource
-**Summary** | Download all attachments from resource ID
-**Consumes** | application/json
-**Produces** | JSON
-
-Request Parameters
-
-Parameter Name | Parameter Type | Data Type  | Required | Description
----------------|----------------|------------|----------|------------
-Authorization|	Header|	string|	Yes|Valid and authorized user ID
-Api_key	query	| string|	Yes|	Valid System Account API Key
-ResourceID	|query|	string|	Yes	| Resource ID
-
-
-Responses
-
-HTTP Status Code | Response Type | Reason  | Description
------------------|---------------|---------|------------
-200	|JSON|	Downloaded all attachments from resource ID	|OK
-
-Examples
-
-<details>
-<summary>Response</summary>
-<p>
-<code><pre>
-{
-"opportunityId": "02160428f9e84cbe8af8f7cc1bd49c7b",
-"attachments": [
-{
-"attachmentId": "eab82b2378aa4cdbacf340b01631c011",
-"resourceId": "5ed09570655a4fbb93bbea4a8570ebe9",
-"fileExists": "1",
-"name": "Hello.txt",
-"type": "file",
-"postedDate": "",
-"accessLevel": "public",
-"exportControlled": "0",
-"explicitAccess": "0",
-"mimeType": ".txt",
-"size": 5,
-"deletedDate": "",
-"deletedFlag": "0",
-"accessStatus": "public"
-}
-]
-}
-</pre></code>
-</p>
-</details>
-
-### Download Metadata for All Attachments by Opportunity ID  ###
-
-------- | -------
-**Request Type** | GET
-**URL** |	/opps/v1/api/resources
-**Summary** | Download all attachments from opportunity ID
-**Consumes** | application/json
-**Produces** | JSON
-
-Request Parameters
-
-Parameter Name | Parameter Type | Data Type  | Required | Description
----------------|----------------|------------|----------|------------
-Authorization|	Header|	string|	Yes|Valid and authorized user ID
-Api_key	query	| string|	Yes|	Valid System Account API Key
-OpportunityID	|query|	string|	Yes	| Opportunity ID
-
-
-Responses
-
-HTTP Status Code | Response Type | Reason  | Description
------------------|---------------|---------|------------
-200	|JSON|	Downloaded all attachments from opportunity ID	|OK
-
-Examples
-
-<details>
-<summary>Response</summary>
-<p>
-<code><pre>
-{
-  "_embedded": {
-    "opportunityAttachmentList": [
-      {
-        "opportunityId": "02160428f9e84cbe8af8f7cc1bd49c7b",
-        "attachments": [
-          {
-            "attachmentId": "eab82b2378aa4cdbacf340b01631c011",
-            "resourceId": "5ed09570655a4fbb93bbea4a8570ebe9",
-            "fileExists": "1",
-            "name": "Hello.txt",
-            "type": "file",
-            "postedDate": "",
-            "accessLevel": "public",
-            "exportControlled": "0",
-            "explicitAccess": "0",
-            "mimeType": ".txt",
-            "size": 5,
-            "deletedDate": "",
-            "deletedFlag": "0",
-            "accessStatus": "public"
-          }
-        ]
-      }
-    ]
-  }
-}
-</pre></code>
-</p>
-</details>
 
 ## API Contract JSON
 
@@ -3319,5 +3327,5 @@ Date | Version | Description
 6/6/2019| v0.5| Deleted Download All Attachments (metadata) <br> Added Download All Attachments by Resource ID <br> Added Download All Attachments by Opportunity ID
 7/22/2019| v0.6 | Only title required to create draft opportunity <br> Solicitation number not required for create/update draft notices JSON <br> soliciation.deadlines.response required for types k and o to publish<br> Contract Award Date required only for Award to publish <br> Contract Award Number required only for a, j, and i to publish <br> POC email required except for Award to publish <br> Description not needed for Update Attachment JSON <br> Workflow Chart Added
 8/1/2019 | v0.71 | Added Future Implementation for IP Address Validation and Type of Connection <br> Delete Draft Opportunities Role changed so that CO and Admin can Delete <br> Reason not required for Publish Opportunity
-
+8/19/2019 | v0.72 | API Names Updated <br> Valid File Types Updated
 <p><small><a href="#">Back to top</a></small></p>
