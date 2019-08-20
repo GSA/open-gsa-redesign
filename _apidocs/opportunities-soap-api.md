@@ -1027,43 +1027,43 @@ archdate	|date|	No|	New Archive Date|	YYYYMMDD
 
 ### Secure Document Package <br> (attachSecureDocumentPackagesToNotice)
 
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 ### Non-FBO Solicitation <br> (createNonFBOSolicitation)
 
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 ### Secure Document Packages <br> (attachSecureDocumentPackagesToNonFBOSolicitation)
 
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 ### Remove Secure Document Package <br> (removeSecureDocumentPackagesFromNonFBOSolicitation)
 
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 ### Non-FBO Solicitation Release <br> (releaseNonFBOSolicitation)
 
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 ### Un-Release-Non-FBO-Solicitation <br> (unreleaseNonFBOSolicitation)
 
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 ### Secure Technical Document Package <br> (createSecureDocumentPackage)
 
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 ### Add Files to Secure Document Package <br> (addFilesToSecureDocumentPackage)
 
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 ### Delete Files from Secure Document Package <br> (deleteFilesFromSecureDocumentPackage)
 
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 ### Delete Secure Document Package <br> (deleteSecureDocumentPackage)
 
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 ## Methods Available <br> to All Office Location Users
 
@@ -1193,7 +1193,42 @@ Response | PostingResponse | Complex type
 
 ### Approve Explicit Access Requests <br> (approveExplicitAccessRequestByVendorData)
 
-Details will be added in future
+This method is the same as the “approveExplicitAccessRequestByID” method, but it accepts vendor data in a structured format in order to locate the matching vendor account in the system. This method will only work if there is an exact match based on the vendor data provided, and only if a unique vendor can be determined. 
+
+Input Parameters:
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+data|	ExplicitAccessRequest	|Complex type defined below
+
+ExplicitAccessRequestComplex Type Definition:
+
+Element Name	|Type	|Required|	Description
+-----|-----|-----|----
+solnbr	|string	|yes|	Solicitation #
+ntype|	string|	no|	Valid values: "PRESOL" - for Presolicitation <br> "COMBINE" - for Combined Synopsis/Solicitation <br> "SRCSGT" - for Sources Sought <br> "SSALE" - for Sale of Surplus Property<br> "SNOTE" - for Special Notice<br>  “ITB” – for Intent to Bundle Requirements (DoD- Funded)
+nonfbo_solbr|	string|	no|	Non-fbo Solicitation #.  Not supported for this method
+Id|	string|	no| Not used in this method 
+vendor|	VendorData	|yes|	Complex type defined below
+reason	|string|	no	|Rejection reason not used in this method
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | PostingResponse | Complex type
+
+VendorData Complex Type Definition:
+
+Element Name | Type  | Description
+------ | -------  | -------
+lname|	string|	Last Name
+fname	|string|	First Name
+email	|string|	Email
+contractor_name	|string	|Contractor Name
+duns	|string	|DUNS #
+cage_code|	string|	Cage Code
+
 
 ### Reject Explicit Access Requests <br> (rejectExplicitAccessRequestByID)
 
@@ -1225,7 +1260,42 @@ Response | PostingResponse | Complex type
 
 ### Reject Explicit Access Requests <br> (rejectExplicitAccessRequestByVendorData)
 
-Details will be added in future
+This method is the same as the “rejectExplicitAccessRequestByID” method, but it accepts vendor data in a structured format to locate the matching vendor account in the system. This method will only work if there is an exact match based on the vendor data provided and only if a unique vendor can be determined. 
+
+Input Parameters:
+
+Input Parameter |	Type |	Description
+------- | ------ | -------
+data	|ExplicitAccessRequest|	Complex type defined below
+
+ExplicitAccessRequestComplex Type Definition:
+
+Element Name | Type | Required | Description
+------ | ------- | ------- | -------
+solnbr|	string|	yes|	Solicitation #
+ntype	|string	|no|	Valid values: "PRESOL" - for Presolicitation<br> "COMBINE" - forCombined Synopsis/Solicitation<br> "SRCSGT" - for Sources Sought<br> "SSALE" - for Sale of Surplus Property<br> "SNOTE" - for Special Notice <br>  “ITB” – for Intent to Bundle Requirements (DoD- Funded)
+nonfbo_solbr	|string	|no	|Non-fbo Solicitation #.  Not supported for this method
+Id	|string|	no |Not used in this method 
+vendor	|VendorData|	yes|	Complex type defined below
+reason|	string|	yes	|Rejection Reason 
+
+Response:
+
+Output Parameter |	Type |	Description
+------- | ------ | -------
+Response | PostingResponse | Complex type
+
+VendorData Complex Type Definition:
+
+Element Name | Type  | Description
+------ | -------  | -------
+lname|	string|	Last Name
+fname	|string|	First Name
+email	|string|	Email
+contractor_name	|string	|Contractor Name
+duns	|string	|DUNS #
+cage_code|	string|	Cage Code
+
 
 ### Add Authorized Party <br> (addAuthorizedParty)
 
@@ -1945,6 +2015,131 @@ Please note that variances may exist between SOAP requests generated by differen
 </textarea>
 </details>
 
+### getNoticeData
+
+<details>
+    <summary>Request Sample</summary>
+<textarea>
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="https://www.sam.gov/">
+   <soapenv:Header>
+<AuthenticationData xsi:type="sam:AuthenticationData"></AuthenticationData>
+        <username xsi:type="xsd:string">system account user name</username>
+        <password xsi:type="xsd:string">system account password</password>
+        <emailid xsi:type="xsd:string"> Email of the contracting officer/specialist who can submit opportunities </emailid>
+        </AuthenticationData>
+   </soapenv:Header>
+   <soapenv:Body>
+      <sam:getNoticeData soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <data xsi:type="sam:NoticeDataRequest">
+            <notice_id xsi:type="xsd:string">b9b337da8b994afd878e962bfb2810fa</notice_id>
+            <!--Optional:-->
+            <get_changes xsi:type="xsd:boolean"></get_changes>
+            <!--Optional:-->
+            <get_changes_from_date xsi:type="xsd:date"></get_changes_from_date>
+            <!--Optional:-->
+            <get_file_data xsi:type="xsd:boolean"></get_file_data></data>
+      </sam:getNoticeData>
+   </soapenv:Body>
+</soapenv:Envelope>
+</textarea>
+</details>
+
+<details>
+    <summary>Response Sample – Success</summary>
+<textarea>
+Note: This service gets a list of all notices
+  <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns1:getNoticeDataResponse xmlns:ns1="https://www.sam.gov/">
+            <return xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:NoticeData">
+                <success xsi:type="xsd:boolean">true</success>
+                <messages xsi:nil="true" xsi:type="ns1:ArrayOfstring"/>
+                <notice xsi:type="ns1:NoticeData">
+                    <notice_id xsi:type="xsd:string">b9b337da8b994afd878e962bfb2810fa</notice_id>
+                    <notice_type xsi:type="xsd:string">PRESOL</notice_type>
+                    <agency xsi:type="xsd:string">TRANSPORTATION, DEPARTMENT OF</agency>
+                    <office xsi:type="xsd:string">FEDERAL MOTOR CARRIER SAFETY ADMINISTRATION</office>
+                    <location xsi:type="xsd:string">FMCSA GRANTS MANAGEMENT OFFICE</location>
+                    <date xsi:type="xsd:date">Sat Jan 04 00:00:00 GMT 6425</date>
+                    <classcod xsi:type="xsd:string">13</classcod>
+                    <naics xsi:type="xsd:string">11150</naics>
+                    <subject xsi:type="xsd:string">title</subject>
+                    <solnbr xsi:type="xsd:string">testDm14</solnbr>
+                    <archdate xsi:type="xsd:date">2030-01-01</archdate>
+                    <desc xsi:type="xsd:string">test</desc>
+                    <link xsi:type="xsd:string"/>
+                    <contact xsi:type="xsd:string">Veera</contact>
+                    <recovery_act xsi:type="xsd:string">none</recovery_act>
+                    <document_packages xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENC:arrayType="ns1:DocumentPackageData[1]" xsi:type="ns1:ArrayOfDocumentPackageData">
+                        <item xsi:type="ns1:DocumentPackageData">
+                            <package_id xsi:type="xsd:string">509d5e96c88a435c89503a64369141c9</package_id>
+                            <label xsi:type="xsd:string"/>
+                            <type xsi:type="xsd:string"/>
+                            <files SOAP-ENC:arrayType="ns1:DocumentFileData[4]" xsi:type="ns1:ArrayOfDocumentFileData">
+                                <item xsi:type="ns1:DocumentFileData">
+                                    <file_id xsi:type="xsd:string">f16a71fdf4874edb8c4ce80281e3b36b</file_id>
+                                    <type xsi:type="xsd:string">link</type>
+                                    <filename xsi:type="xsd:string"/>
+                                    <link xsi:type="xsd:string">http://beta.sam.gov</link>
+                                    <desc xsi:type="xsd:string">test beta sam link</desc>
+                                    <size_limit_error xsi:type="xsd:string">0</size_limit_error>
+                                </item>
+                                <item xsi:type="ns1:DocumentFileData">
+                                    <file_id xsi:type="xsd:string">011b61f9e9154ed3bbe3f7aa21b1c2c1</file_id>
+                                    <type xsi:type="xsd:string">link</type>
+                                    <filename xsi:type="xsd:string">TAY VOR Scope of Work 10-25-17.pdf</filename>
+                                    <link xsi:type="xsd:string">https://faaco.faa.gov/index.cfm/attachment/download/84723</link>
+                                    <desc xsi:type="xsd:string">test attachment pdf link</desc>
+                                    <size_limit_error xsi:type="xsd:string">0</size_limit_error>
+                                </item>
+                                <item xsi:type="ns1:DocumentFileData">
+                                    <file_id xsi:type="xsd:string">ccb450b711734dce848c44f840d22a7a</file_id>
+                                    <type xsi:type="xsd:string">file</type>
+                                    <filename xsi:type="xsd:string">test_document1.pdf</filename>
+                                    <filedata xsi:type="xsd:string">SnVzdCBhIHNtYWxsIHRl</filedata>
+                                    <desc xsi:type="xsd:string"/>
+                                    <size_limit_error xsi:type="xsd:string">0</size_limit_error>
+                                </item>
+                                <item xsi:type="ns1:DocumentFileData">
+                                    <file_id xsi:type="xsd:string">91624a57e1bd4f15967f5a2b42f49dc0</file_id>
+                                    <type xsi:type="xsd:string">file</type>
+                                    <filename xsi:type="xsd:string">test_document2.pdf</filename>
+                                    <filedata xsi:type="xsd:string">SnVzdCBhIHNtYWxsIHRlc3Q2</filedata>
+                                    <desc xsi:type="xsd:string"/>
+                                    <size_limit_error xsi:type="xsd:string">0</size_limit_error>
+                                </item>
+                            </files>
+                        </item>
+                    </document_packages>
+                </notice>
+            </return>
+        </ns1:getNoticeDataResponse>
+    </SOAP-ENV:Body>
+    </SOAP-ENV:Envelope>
+
+</textarea>
+</details>
+
+<details>
+    <summary>Response sample – error</summary>
+<textarea>
+   <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+       <ns1:getNoticeDataResponse xmlns:ns1="https://www.sam.gov/">
+           <return xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:NoticeData">
+               <success xsi:type="xsd:boolean">false</success>
+               <messages xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENC:arrayType="xsd:string[1]" xsi:type="ns1:ArrayOfstring">
+                   <item xsi:type="xsd:string">notice_id from getList is required.</item>
+               </messages>
+           </return>
+       </ns1:getNoticeDataResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+</textarea>
+</details>
+
 ### submitAward
 
 <details>
@@ -2349,6 +2544,99 @@ Please note that variances may exist between SOAP requests generated by differen
                </messages>
            </return>
        </ns1:SubmitSpecialNoticeResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+</textarea>
+</details>
+
+### submitSaleOfSurplus
+
+<details>
+    <summary>Request Sample</summary>
+<textarea>
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="https://www.sam.gov/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header>
+      <AuthenticationData xsi:type="sam:AuthenticationData">
+        <username xsi:type="xsd:string">system account user name</username>
+        <password xsi:type="xsd:string">system account password</password>
+        <emailid xsi:type="xsd:string"> Email of the contracting officer/specialist who can submit opportunities </emailid>
+     </AuthenticationData>
+   </soapenv:Header>
+   <soapenv:Body>
+      <sam:submitSaleOfSurplus soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <data xsi:type="sam:SaleOfSurplus">
+            <officeid xsi:type="xsd:string">100525144</officeid>
+            <date xsi:type="xsd:date"></date>
+            <zip xsi:type="xsd:string"></zip>
+            <classcod xsi:type="xsd:string">13</classcod>
+            <naics xsi:type="xsd:string">111150</naics>
+            <!--Optional:-->
+            <offadd xsi:type="xsd:string"></offadd>
+            <subject xsi:type="xsd:string">Test sales surplus</subject>
+            <solnbr xsi:type="xsd:string">testsalesur3</solnbr>
+            <!--Optional:-->
+            <archdate xsi:type="xsd:date"></archdate>
+            <contact xsi:type="xsd:string">Veera</contact>
+            <desc xsi:type="xsd:string">test desc</desc>
+            <!--Optional:-->
+            <link xsi:type="sam:GovURL">
+               <url xsi:type="xsd:string"> </url>
+               <desc xsi:type="xsd:string"> </desc>
+            </link>
+            <!--Optional:-->
+            <email xsi:type="sam:GovEmail">
+               <address xsi:type="xsd:string">abc@a.com</address>
+               <desc xsi:type="xsd:string">email desc test</desc>
+            </email>
+            <!--Optional:-->
+            <links xsi:type="sam:ArrayOfDocumentLink" soapenc:arrayType="sam:DocumentLink[]"/>
+            <!--Optional:-->
+            <files xsi:type="sam:ArrayOfDocumentFile" soapenc:arrayType="sam:DocumentFile[]"/>
+            <!--Optional:-->
+            <recovery_act xsi:type="xsd:boolean"></recovery_act>
+         </data>
+      </sam:submitSaleOfSurplus>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+</textarea>
+</details>
+
+<details>
+    <summary>Response Sample – Success</summary>
+<textarea>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+       <ns1:SubmitSaleOfSurplusResponse xmlns:ns1="https://www.sam.gov/">
+           <return xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:PostingResponse">
+               <success xsi:type="xsd:boolean">true</success>
+               <messages xsi:nil="true" xsi:type="ns1:ArrayOfstring"/>
+           </return>
+       </ns1:SubmitSaleOfSurplusResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+</textarea>
+</details>
+
+<details>
+    <summary>Response Sample – Failure</summary>
+<textarea>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+       <ns1:SubmitSaleOfSurplusResponse xmlns:ns1="https://www.sam.gov/">
+           <return xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:PostingResponse">
+               <success xsi:type="xsd:boolean">false</success>
+               <messages xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENC:arrayType="xsd:string[5]" xsi:type="ns1:ArrayOfstring">
+                   <item xsi:type="xsd:string">Contracting office is required</item>
+                   <item xsi:type="xsd:string">PSC code is required</item>
+                   <item xsi:type="xsd:string">Description is required</item>
+                   <item xsi:type="xsd:string">Primary Contact is required</item>
+                   <item xsi:type="xsd:string">Notice Id is required</item>
+               </messages>
+           </return>
+       </ns1:SubmitSaleOfSurplusResponse>
    </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
 </textarea>
@@ -2896,7 +3184,6 @@ Please note that variances may exist between SOAP requests generated by differen
    <soapenv:Body>
       <sam:getFileData soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
          <data xsi:type="sam:FileDataRequest">
-		     <notice_id xsi:type="xsd:string"></notice_id>
             <file_id xsi:type="xsd:string"></file_id>
          </data>
       </sam:getFileData>
@@ -2947,6 +3234,81 @@ Please note that variances may exist between SOAP requests generated by differen
                </messages>
            </return>
        </ns1:GetFileDataResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+</textarea>
+</details>
+
+### getIVLList
+<details>
+    <summary>Request Sample</summary>
+<textarea>
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="https://www.sam.gov/">
+   <soapenv:Header>
+     <AuthenticationData xsi:type="sam:AuthenticationData">
+        <username xsi:type="xsd:string">system account user name</username>
+        <password xsi:type="xsd:string">system account password</password>
+      	  <emailid xsi:type="xsd:string">Email of the contracting officer/specialist who can submit opportunities</emailid>
+     		</AuthenticationData>
+   </soapenv:Header>
+   <soapenv:Body>
+      <sam:getIVLList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <data xsi:type="sam:IVLListRequest">
+            <solnbr xsi:type="xsd:string">TEST_IVL_1</solnbr>
+            <ntype xsi:type="xsd:string">PRESOL</ntype>
+         </data>
+      </sam:getIVLList>
+   </soapenv:Body>
+</soapenv:Envelope>
+</textarea>
+</details>
+
+<details>
+    <summary>Response Sample - Success</summary>
+<textarea>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns1:getIVLListResponse xmlns:ns1="https://www.sam.gov/">
+            <return xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:IVLListResponse">
+                <success xsi:type="xsd:boolean">true</success>
+                <messages xsi:nil="true" xsi:type="ns1:ArrayOfstring"/>
+                <data xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENC:arrayType="ns1:IVL[1]" xsi:type="ns1:ArrayOfIVL">
+                    <item xsi:type="ns1:IVL">
+                        <lname xsi:type="xsd:string">SANGHANI</lname>
+                        <fname xsi:type="xsd:string">MEHUL</fname>
+                        <email xsi:type="xsd:string">mehul.sanghani@octoconsulting.com</email>
+                        <phone xsi:type="xsd:string">5712750120</phone>
+                        <contractor_name xsi:type="xsd:string">OCTO CONSULTING GROUP, INC.</contractor_name>
+                        <dba_name xsi:type="xsd:string"/>
+                        <duns xsi:type="xsd:string">800127859</duns>
+                        <cage_code xsi:type="xsd:string">4RSC0</cage_code>
+                        <address xsi:type="xsd:string">10780 PARKRIDGE BOULEVARD 4TH FLOOR RESTON VIRGINIA 20191 UNITED STATES</address>
+                        <bus_types xsi:type="xsd:string"/>
+                        <naics_codes xsi:type="xsd:string">511210,517110,517210,517911,518210,519130,541330,541511,541512,541513,541519,541611,541612,541613,541614,541618,541690,541712,541990</naics_codes>
+                    </item>
+                </data>
+            </return>
+        </ns1:getIVLListResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+</textarea>
+</details>
+
+<details>
+    <summary>Response Sample - Failure</summary>
+<textarea>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+       <ns1:getIVLListResponse xmlns:ns1="https://www.sam.gov/">
+           <return xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:IVLListResponse">
+               <success xsi:type="xsd:boolean">false</success>
+               <messages xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENC:arrayType="xsd:string[1]" xsi:type="ns1:ArrayOfstring">
+                   <item xsi:type="xsd:string">Multiple Notices found. Please input more details</item>
+               </messages>
+           </return>
+       </ns1:getIVLListResponse>
    </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
 </textarea>
@@ -3321,243 +3683,41 @@ Please note that variances may exist between SOAP requests generated by differen
 </textarea>
 </details>
 
-### getNoticeData
+### approveExplicitAccessRequestbyVendorData
 
 <details>
     <summary>Request Sample</summary>
 <textarea>
-<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="https://www.sam.gov/">
-   <soapenv:Header>
-<AuthenticationData xsi:type="sam:AuthenticationData"></AuthenticationData>
-        <username xsi:type="xsd:string">system account user name</username>
-        <password xsi:type="xsd:string">system account password</password>
-        <emailid xsi:type="xsd:string"> Email of the contracting officer/specialist who can submit opportunities </emailid>
-        </AuthenticationData>
-   </soapenv:Header>
-   <soapenv:Body>
-      <sam:getNoticeData soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-         <data xsi:type="sam:NoticeDataRequest">
-            <notice_id xsi:type="xsd:string">b9b337da8b994afd878e962bfb2810fa</notice_id>
-            <!--Optional:-->
-            <get_changes xsi:type="xsd:boolean"></get_changes>
-            <!--Optional:-->
-            <get_changes_from_date xsi:type="xsd:date"></get_changes_from_date>
-            <!--Optional:-->
-            <get_file_data xsi:type="xsd:boolean"></get_file_data></data>
-      </sam:getNoticeData>
-   </soapenv:Body>
-</soapenv:Envelope>
-</textarea>
-</details>
-
-<details>
-    <summary>Response Sample – Success</summary>
-<textarea>
-Note: This service gets a list of all notices
-  <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
-    <SOAP-ENV:Header/>
-    <SOAP-ENV:Body>
-        <ns1:getNoticeDataResponse xmlns:ns1="https://www.sam.gov/">
-            <return xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:NoticeData">
-                <success xsi:type="xsd:boolean">true</success>
-                <messages xsi:nil="true" xsi:type="ns1:ArrayOfstring"/>
-                <notice xsi:type="ns1:NoticeData">
-                    <notice_id xsi:type="xsd:string">b9b337da8b994afd878e962bfb2810fa</notice_id>
-                    <notice_type xsi:type="xsd:string">PRESOL</notice_type>
-                    <agency xsi:type="xsd:string">TRANSPORTATION, DEPARTMENT OF</agency>
-                    <office xsi:type="xsd:string">FEDERAL MOTOR CARRIER SAFETY ADMINISTRATION</office>
-                    <location xsi:type="xsd:string">FMCSA GRANTS MANAGEMENT OFFICE</location>
-                    <date xsi:type="xsd:date">Sat Jan 04 00:00:00 GMT 6425</date>
-                    <classcod xsi:type="xsd:string">13</classcod>
-                    <naics xsi:type="xsd:string">11150</naics>
-                    <subject xsi:type="xsd:string">title</subject>
-                    <solnbr xsi:type="xsd:string">testDm14</solnbr>
-                    <archdate xsi:type="xsd:date">2030-01-01</archdate>
-                    <desc xsi:type="xsd:string">test</desc>
-                    <link xsi:type="xsd:string"/>
-                    <contact xsi:type="xsd:string">Veera</contact>
-                    <recovery_act xsi:type="xsd:string">none</recovery_act>
-                    <document_packages xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENC:arrayType="ns1:DocumentPackageData[1]" xsi:type="ns1:ArrayOfDocumentPackageData">
-                        <item xsi:type="ns1:DocumentPackageData">
-                            <package_id xsi:type="xsd:string">509d5e96c88a435c89503a64369141c9</package_id>
-                            <label xsi:type="xsd:string"/>
-                            <type xsi:type="xsd:string"/>
-                            <files SOAP-ENC:arrayType="ns1:DocumentFileData[4]" xsi:type="ns1:ArrayOfDocumentFileData">
-                                <item xsi:type="ns1:DocumentFileData">
-                                    <file_id xsi:type="xsd:string">f16a71fdf4874edb8c4ce80281e3b36b</file_id>
-                                    <type xsi:type="xsd:string">link</type>
-                                    <filename xsi:type="xsd:string"/>
-                                    <link xsi:type="xsd:string">http://beta.sam.gov</link>
-                                    <desc xsi:type="xsd:string">test beta sam link</desc>
-                                    <size_limit_error xsi:type="xsd:string">0</size_limit_error>
-                                </item>
-                                <item xsi:type="ns1:DocumentFileData">
-                                    <file_id xsi:type="xsd:string">011b61f9e9154ed3bbe3f7aa21b1c2c1</file_id>
-                                    <type xsi:type="xsd:string">link</type>
-                                    <filename xsi:type="xsd:string">TAY VOR Scope of Work 10-25-17.pdf</filename>
-                                    <link xsi:type="xsd:string">https://faaco.faa.gov/index.cfm/attachment/download/84723</link>
-                                    <desc xsi:type="xsd:string">test attachment pdf link</desc>
-                                    <size_limit_error xsi:type="xsd:string">0</size_limit_error>
-                                </item>
-                                <item xsi:type="ns1:DocumentFileData">
-                                    <file_id xsi:type="xsd:string">ccb450b711734dce848c44f840d22a7a</file_id>
-                                    <type xsi:type="xsd:string">file</type>
-                                    <filename xsi:type="xsd:string">test_document1.pdf</filename>
-                                    <filedata xsi:type="xsd:string">SnVzdCBhIHNtYWxsIHRl</filedata>
-                                    <desc xsi:type="xsd:string"/>
-                                    <size_limit_error xsi:type="xsd:string">0</size_limit_error>
-                                </item>
-                                <item xsi:type="ns1:DocumentFileData">
-                                    <file_id xsi:type="xsd:string">91624a57e1bd4f15967f5a2b42f49dc0</file_id>
-                                    <type xsi:type="xsd:string">file</type>
-                                    <filename xsi:type="xsd:string">test_document2.pdf</filename>
-                                    <filedata xsi:type="xsd:string">SnVzdCBhIHNtYWxsIHRlc3Q2</filedata>
-                                    <desc xsi:type="xsd:string"/>
-                                    <size_limit_error xsi:type="xsd:string">0</size_limit_error>
-                                </item>
-                            </files>
-                        </item>
-                    </document_packages>
-                </notice>
-            </return>
-        </ns1:getNoticeDataResponse>
-    </SOAP-ENV:Body>
-    </SOAP-ENV:Envelope>
-
-</textarea>
-</details>
-
-<details>
-    <summary>Response sample – error</summary>
-<textarea>
-   <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
-   <SOAP-ENV:Header/>
-   <SOAP-ENV:Body>
-       <ns1:getNoticeDataResponse xmlns:ns1="https://www.sam.gov/">
-           <return xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:NoticeData">
-               <success xsi:type="xsd:boolean">false</success>
-               <messages xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENC:arrayType="xsd:string[1]" xsi:type="ns1:ArrayOfstring">
-                   <item xsi:type="xsd:string">notice_id from getList is required.</item>
-               </messages>
-           </return>
-       </ns1:getNoticeDataResponse>
-   </SOAP-ENV:Body>
-</SOAP-ENV:Envelope>
-</textarea>
-</details>
-
-### submitSaleOfSurplus
-
-<details>
-    <summary>Request Sample</summary>
-<textarea>
-<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="https://www.sam.gov/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
-   <soapenv:Header>
-      <AuthenticationData xsi:type="sam:AuthenticationData">
-        <username xsi:type="xsd:string">system account user name</username>
-        <password xsi:type="xsd:string">system account password</password>
-        <emailid xsi:type="xsd:string"> Email of the contracting officer/specialist who can submit opportunities </emailid>
-     </AuthenticationData>
-   </soapenv:Header>
-   <soapenv:Body>
-      <sam:submitSaleOfSurplus soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-         <data xsi:type="sam:SaleOfSurplus">
-            <officeid xsi:type="xsd:string">100525144</officeid>
-            <date xsi:type="xsd:date"></date>
-            <zip xsi:type="xsd:string"></zip>
-            <classcod xsi:type="xsd:string">13</classcod>
-            <naics xsi:type="xsd:string">111150</naics>
-            <!--Optional:-->
-            <offadd xsi:type="xsd:string"></offadd>
-            <subject xsi:type="xsd:string">Test sales surplus</subject>
-            <solnbr xsi:type="xsd:string">testsalesur3</solnbr>
-            <!--Optional:-->
-            <archdate xsi:type="xsd:date"></archdate>
-            <contact xsi:type="xsd:string">Veera</contact>
-            <desc xsi:type="xsd:string">test desc</desc>
-            <!--Optional:-->
-            <link xsi:type="sam:GovURL">
-               <url xsi:type="xsd:string"> </url>
-               <desc xsi:type="xsd:string"> </desc>
-            </link>
-            <!--Optional:-->
-            <email xsi:type="sam:GovEmail">
-               <address xsi:type="xsd:string">abc@a.com</address>
-               <desc xsi:type="xsd:string">email desc test</desc>
-            </email>
-            <!--Optional:-->
-            <links xsi:type="sam:ArrayOfDocumentLink" soapenc:arrayType="sam:DocumentLink[]"/>
-            <!--Optional:-->
-            <files xsi:type="sam:ArrayOfDocumentFile" soapenc:arrayType="sam:DocumentFile[]"/>
-            <!--Optional:-->
-            <recovery_act xsi:type="xsd:boolean"></recovery_act>
-         </data>
-      </sam:submitSaleOfSurplus>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-</textarea>
-</details>
-
-<details>
-    <summary>Response Sample – Success</summary>
-<textarea>
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
-   <SOAP-ENV:Header/>
-   <SOAP-ENV:Body>
-       <ns1:SubmitSaleOfSurplusResponse xmlns:ns1="https://www.sam.gov/">
-           <return xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:PostingResponse">
-               <success xsi:type="xsd:boolean">true</success>
-               <messages xsi:nil="true" xsi:type="ns1:ArrayOfstring"/>
-           </return>
-       </ns1:SubmitSaleOfSurplusResponse>
-   </SOAP-ENV:Body>
-</SOAP-ENV:Envelope>
-</textarea>
-</details>
-
-<details>
-    <summary>Response Sample – Failure</summary>
-<textarea>
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
-   <SOAP-ENV:Header/>
-   <SOAP-ENV:Body>
-       <ns1:SubmitSaleOfSurplusResponse xmlns:ns1="https://www.sam.gov/">
-           <return xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:PostingResponse">
-               <success xsi:type="xsd:boolean">false</success>
-               <messages xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENC:arrayType="xsd:string[5]" xsi:type="ns1:ArrayOfstring">
-                   <item xsi:type="xsd:string">Contracting office is required</item>
-                   <item xsi:type="xsd:string">PSC code is required</item>
-                   <item xsi:type="xsd:string">Description is required</item>
-                   <item xsi:type="xsd:string">Primary Contact is required</item>
-                   <item xsi:type="xsd:string">Notice Id is required</item>
-               </messages>
-           </return>
-       </ns1:SubmitSaleOfSurplusResponse>
-   </SOAP-ENV:Body>
-</SOAP-ENV:Envelope>
-</textarea>
-</details>
-
-### getIVLList
-<details>
-    <summary>Request Sample</summary>
-<textarea>
-<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="https://www.sam.gov/">
-   <soapenv:Header>
-     <AuthenticationData xsi:type="sam:AuthenticationData">
+<soapenv:Envelope
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:sam="https://www.sam.gov/">
+	<soapenv:Header>
+	<AuthenticationData xsi:type="sam:AuthenticationData">
         <username xsi:type="xsd:string">system account user name</username>
         <password xsi:type="xsd:string">system account password</password>
       	  <emailid xsi:type="xsd:string">Email of the contracting officer/specialist who can submit opportunities</emailid>
-     		</AuthenticationData>
-   </soapenv:Header>
-   <soapenv:Body>
-      <sam:getIVLList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-         <data xsi:type="sam:IVLListRequest">
-            <solnbr xsi:type="xsd:string">TEST_IVL_1</solnbr>
-            <ntype xsi:type="xsd:string">PRESOL</ntype>
-         </data>
-      </sam:getIVLList>
+    </AuthenticationData>
+	</soapenv:Header>
+                       <soapenv:Body>
+   <sam:approveExplicitAccessRequestByVendorData soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+            <data xsi:type="sam:ExplicitAccessRequest">
+                <solnbr xsi:type="xsd:string">123456789</solnbr>
+                <ntype xsi:type="xsd:string">SNOTE</ntype>
+                <nonfbo_solnbr xsi:type="xsd:string"></nonfbo_solnbr>
+                <id xsi:type="xsd:string"></id>
+                <vendor xsi:type="tns:VendorData">
+                    <lname xsi:type="xsd:string">test</lname>
+                    <fname xsi:type="xsd:string">test123</fname>
+                    <email xsi:type="xsd:string">reitestuser.de@gmail.com</email>
+                    <contractor_name xsi:type="xsd:string">REI</contractor_name>
+                    <duns xsi:type="xsd:string">608999520</duns>
+                    <cage_code xsi:type="xsd:string">1234</cage_code>
+                </vendor>
+                <reason xsi:type="xsd:string"></reason>
+            </data>
+        </sam:approveExplicitAccessRequestByVendorData>
    </soapenv:Body>
 </soapenv:Envelope>
 </textarea>
@@ -3566,31 +3726,16 @@ Note: This service gets a list of all notices
 <details>
     <summary>Response Sample - Success</summary>
 <textarea>
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="https://www.sam.gov" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <SOAP-ENV:Header/>
     <SOAP-ENV:Body>
-        <ns1:getIVLListResponse xmlns:ns1="https://www.sam.gov/">
-            <return xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:IVLListResponse">
+<ns1:approveExplicitAccessRequestByVendorDataResponse xmlns:ns1="https://www.sam.gov/">
+            <return xsi:type="ns1:PostingResponse">
                 <success xsi:type="xsd:boolean">true</success>
                 <messages xsi:nil="true" xsi:type="ns1:ArrayOfstring"/>
-                <data xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENC:arrayType="ns1:IVL[1]" xsi:type="ns1:ArrayOfIVL">
-                    <item xsi:type="ns1:IVL">
-                        <lname xsi:type="xsd:string">SANGHANI</lname>
-                        <fname xsi:type="xsd:string">MEHUL</fname>
-                        <email xsi:type="xsd:string">mehul.sanghani@octoconsulting.com</email>
-                        <phone xsi:type="xsd:string">5712750120</phone>
-                        <contractor_name xsi:type="xsd:string">OCTO CONSULTING GROUP, INC.</contractor_name>
-                        <dba_name xsi:type="xsd:string"/>
-                        <duns xsi:type="xsd:string">800127859</duns>
-                        <cage_code xsi:type="xsd:string">4RSC0</cage_code>
-                        <address xsi:type="xsd:string">10780 PARKRIDGE BOULEVARD 4TH FLOOR RESTON VIRGINIA 20191 UNITED STATES</address>
-                        <bus_types xsi:type="xsd:string"/>
-                        <naics_codes xsi:type="xsd:string">511210,517110,517210,517911,518210,519130,541330,541511,541512,541513,541519,541611,541612,541613,541614,541618,541690,541712,541990</naics_codes>
-                    </item>
-                </data>
             </return>
-        </ns1:getIVLListResponse>
-    </SOAP-ENV:Body>
+    </ns1:approveExplicitAccessRequestByVendorDataResponse>   
+ </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
 </textarea>
 </details>
@@ -3598,21 +3743,99 @@ Note: This service gets a list of all notices
 <details>
     <summary>Response Sample - Failure</summary>
 <textarea>
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
-   <SOAP-ENV:Header/>
-   <SOAP-ENV:Body>
-       <ns1:getIVLListResponse xmlns:ns1="https://www.sam.gov/">
-           <return xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:IVLListResponse">
-               <success xsi:type="xsd:boolean">false</success>
-               <messages xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENC:arrayType="xsd:string[1]" xsi:type="ns1:ArrayOfstring">
-                   <item xsi:type="xsd:string">Multiple Notices found. Please input more details</item>
-               </messages>
-           </return>
-       </ns1:getIVLListResponse>
-   </SOAP-ENV:Body>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="https://www.sam.gov" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns1:approveExplicitAccessRequestByVendorDataResponse xmlns:ns1="https://www.sam.gov/">
+            <return xsi:type="ns1:PostingResponse">
+                <success xsi:type="xsd:boolean">false</success>
+                <messages SOAP-ENC:arrayType="xsd:string[1]" xsi:type="ns1:ArrayOfstring">
+                    <item xsi:type="xsd:string">Multiple Notices found. Please input more details</item>
+                </messages>
+            </return>
+        </ns1:approveExplicitAccessRequestByVendorDataResponse>
+    </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
 </textarea>
 </details>
+
+### rejectExplicitAccessRequestbyVendorData
+
+<details>
+    <summary>Request Sample</summary>
+<textarea>
+<soapenv:Envelope
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:sam="https://www.sam.gov/">
+	<soapenv:Header>
+	<AuthenticationData xsi:type="sam:AuthenticationData">
+        <username xsi:type="xsd:string">system account user name</username>
+        <password xsi:type="xsd:string">system account password</password>
+      	  <emailid xsi:type="xsd:string">Email of the contracting officer/specialist who can submit opportunities</emailid>
+    </AuthenticationData>
+	</soapenv:Header>
+                       <soapenv:Body>
+<sam:rejectExplicitAccessRequestByVendorData soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+            <data xsi:type="sam:ExplicitAccessRequest">
+                <solnbr xsi:type="xsd:string">123456789</solnbr>
+                <ntype xsi:type="xsd:string">pres</ntype>
+                <nonfbo_solnbr xsi:type="xsd:string"></nonfbo_solnbr>
+                <id xsi:type="xsd:string"></id>
+                <vendor xsi:type="tns:VendorData">
+                    <lname xsi:type="xsd:string">test</lname>
+                    <fname xsi:type="xsd:string">test123</fname>
+                    <email xsi:type="xsd:string">reitestuser.de@gmail.com</email>
+                    <contractor_name xsi:type="xsd:string">REI</contractor_name>
+                    <duns xsi:type="xsd:string">608999520</duns>
+                    <cage_code xsi:type="xsd:string">1234</cage_code>
+                </vendor>
+                <reason xsi:type="xsd:string">testing rejection by vendor data</reason>
+            </data>
+        </sam:rejectExplicitAccessRequestByVendorData>   
+</soapenv:Body>
+</soapenv:Envelope>
+</textarea>
+</details>
+
+<details>
+    <summary>Response Sample - Success</summary>
+<textarea>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="https://www.sam.gov" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+<ns1:rejectExplicitAccessRequestByVendorDataResponse xmlns:ns1="https://www.sam.gov/">
+            <return xsi:type="ns1:PostingResponse">
+                <success xsi:type="xsd:boolean">true</success>
+                <messages xsi:nil="true" xsi:type="ns1:ArrayOfstring"/>
+            </return>
+        </ns1:rejectExplicitAccessRequestByVendorDataResponse>    
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+</textarea>
+</details>
+
+<details>
+    <summary>Response Sample - Failure</summary>
+<textarea>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="https://www.sam.gov" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+<ns1:rejectExplicitAccessRequestByVendorDataResponse xmlns:ns1="https://www.sam.gov/">
+            <return xsi:type="ns1:PostingResponse">
+                <success xsi:type="xsd:boolean">false</success>
+                <messages SOAP-ENC:arrayType="xsd:string[2]" xsi:type="ns1:ArrayOfstring">
+                    <item xsi:type="xsd:string">Request with Request ID: 12cf604442494a2face00074ac88b779 already rejected.</item>
+                    <item xsi:type="xsd:string">Invalid request provided.</item>
+                </messages>
+            </return>
+        </ns1:rejectExplicitAccessRequestByVendorDataResponse>   
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+</textarea>
+</details>
+
 
 ## Business Rules and Error Messages
 
@@ -3945,9 +4168,9 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-solnbr|	Yes if non-award|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }| 1. This required field should be validated. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found<br><br>  3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
-awdnbr|	Yes if award|	255 characters| If neither solnbr or awdnbr is provided, then the system throws an error|	Solicitation Number or Award Number is required
-ntype|No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice |	1. If an invalid ntype is provided, then service throws an error |  	1. NTYPE value provided is not valid
+solnbr|	Yes if non-award|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }| 1. This required field should be validated. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error. 	|1. Multiple notices found. Pelase input more details. <br><br>  2. Notice not found
+awdnbr|	Yes if award|	255 characters|1.	If neither solnbr or awdnbr is provided, then the system throws an error. <br> 2.	If both solnbr and awdnbr are provided, then the system throws an error.|	1.	Solicitation Number or Award Number is required.<br> 2.	Solicitation Number and Award Number cannot be specified together
+ntype|No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice |	1. If an invalid ntype is provided, then service throws an error |  1.Invalid NTYPE value provided.
 deletetype|	no|	Valid values: “notice” to delete the notice, “attachment” to delete attachments from the notice|	1. If an invalid deletetype is provided, then service throws an error  |	Delete type provided is not “notice” or “attachment”
 deletemethod|	no|	Valid Values: “all” to delete all versions or “latest” to delete latest version	|1. If an invalid deletemethod is provided, then service throws an error  |	Delete method provided is not “latest” or “all”
 
@@ -4028,8 +4251,7 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-file_id	|Yes|	Unique ID of a file found from getNoticeData call (i.e. file_id element) |This required field should be validated |	file_id is required
-notice_id|	Yes|	Unique identifier for a notice	|This required field should be validated|	notice_id from getList is required
+file_id	|Yes|	Unique ID of a file found from getNoticeData call (i.e. file_id element) |1. This required field should be validated <br> 2. If an invalid file Id is provided, then the system throws an error.|	1. file_id is required <br> 2.	File Id not found. Please enter a valid Id.
 
 #### getIVLListResponse
 
@@ -4046,10 +4268,10 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-solnbr|	Yes| 	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }| 1. This required field should be validated. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error<br><br> 4. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error |	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces<br><br> 4. Multiple notices found. Please input more details
-ntype|	No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice|	If an invalid ntype is provided, then service throws an error  | 1. NTYPE value provided is not valid
+solnbr|	Yes| 	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }| 1. This required field should be validated. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error. <br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error. |	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details
+ntype|	No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice|	If an invalid ntype is provided, then service throws an error  | 1. Invalid NTYPE value provided.
 nonfbo_solbr |	No|	|	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together <br><br>2.	addAuthoizedParty service is deprecated for Non-FBO Solicitations
-status|	No|	Valid Options: approved, pending, rejected, “empty value”<br><br> If empty, all status will be returned<br><br> Note, use “pending” to pull the pending explicit access requests |1.	If the status value is inputted and doesn’t match approved, pending, rejected|	1.	Status value is invalid
+status|	No|	Valid Options: approved, pending, rejected, “empty value”<br><br> If empty, all status will be returned<br><br> Note, use “pending” to pull the pending explicit access requests |1.	If the status value entered doesn’t match the valid values , then the system throws an error|	1.	Status value is invalid
 
 #### approveExplicitAccessRequestByID
 
@@ -4057,14 +4279,21 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-solnbr	|Yes |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error<br><br> 4. If ntype value is not provided and the solnbr is not unique, then the system throws an error 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br><br>4. Multiple notices found. Please input more details
-ntype	|No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice	|If an invalid ntype is provided, then service throws an error  | 1. NTYPE value provided is not valid
+solnbr	|Yes |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error. 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details. 
+ntype	|No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice	|If an invalid ntype is provided, then service throws an error  | 1. Invalid NTYPE value provided.
 nonfbo_solbr |	No|	|	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	approveExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
 id|	Yes|	|	1.	If the request Id is not provided, then the system throws an error<br><br> 2.	If the request Id provided is already approved, then the service throws an error<br><br>3.	If the solicitation number provided does not match the solicitation number of the request Id, then the service throws an error<br><br> 4.	If the solicitation number provided matches with the solicitation number of the  request Id  but does not match with the provided N type, then the service throws an error	|1.	Internal ID is required. Use getAuthorizedPartyList to retrieve this information<br><br> 2.	Request with Request ID: #id already approved<br><br> 3.	You have request that is tied to different solicitation number<br><br> 4.	You have request that is tied to the same solicitation number but different notice type
 
 #### approveExplicitAccessRequestByVendorData
 
-Details will be added in future.
+Individual business rules per field are listed across each of the fields in below table.
+
+Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
+------ | ------- | ------- | ------- | --------
+solnbr	|Yes |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error. 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details. 
+ntype	|No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice	|If an invalid ntype is provided, then service throws an error  | 1. Invalid NTYPE value provided.
+nonfbo_solbr |	No|	|	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	approveExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
+vendor	|Yes|	Vendor Data	|1.	If all the elements in the Vendor Data complex definition are not provided, then the system throws an error. <br>2.	If no match is found in the system for the vendor data provided, then the system throws an error. <br> 3.	If the Explicit Access request found for the vendor and solnum is already approved, then the system throws an error.|	1.	This method requires all fields from complex type VendorData to find a match in the system; if vendor data not fully provided this error will be thrown. <br> 2.	No contact match on vendor data provided.  <br> 3.	Request with Request ID: #id already approved.
 
 #### addAuthorizedParty
 
@@ -4072,11 +4301,10 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-solnbr|	Yes |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|1. This required field should be validated. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error<br><br> 4. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error |	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces<br><br> 4. Multiple notices found. Please input more details
-ntype|	No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice	|If an invalid ntype is provided, then service throws an error |  1. NTYPE value provided is not valid
+solnbr	|Yes |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error. 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details. 
+ntype	|No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice	|If an invalid ntype is provided, then service throws an error  | 1. Invalid NTYPE value provided.
 nonfbo_solbr 	|No|	|	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	addAuthoizedParty service is deprecated for Non-FBO Solicitations
-vendor|	Yes|	Vendor Data|	1.	If all the elements in the Vendor Data complex definition are not provided, then the system throws an error<br><br> 2.	If no match is found in the system for the vendor data provided, then the system throws an error|	1.	This method requires all fields from complex type VendorData to find a match in the system; if vendor data not fully provided this error will be thrown<br><br> 2.	No contact match on vendor data provided
-
+vendor|	Yes|	Vendor Data|	1.	If all the elements in the Vendor Data complex definition are not provided, then the system throws an error<br><br> 2.	If no match is found in the system for the vendor data provided, then the system throws an error<br> 3. If the vendor is already added as an authorized party on the notice, then the system throws an error.|	1.	This method requires all fields from complex type VendorData to find a match in the system; if vendor data not fully provided this error will be thrown<br><br> 2.	No contact match on vendor data provided <br> 3.	Duplicate request. Vendor is already added as an authorized party on the notice
 
 #### rejectExplicitAccessRequestByID
 
@@ -4084,70 +4312,67 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-solnbr|	Yes |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { } |1. This required field should be validated. If no value is provided, then service throws an error <br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error<br><br> 4. If ntype value is not provided and the solnbr is not unique, then the system throws an error|	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br/> 4. Multiple notices found. Please input more details
-ntype|	No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice|	1.	If an invalid ntype is provided, then service throws an error   |	1. NTYPE value provided is not valid
+solnbr	|Yes |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error. 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details. 
+ntype	|No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice	|If an invalid ntype is provided, then service throws an error  | 1. Invalid NTYPE value provided.
 nonfbo_solbr |	No|	|	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	rejectExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
 id|	Yes	||	1.	If the request Id is not provided, then the system throws an error<br><br> 2.	If the request Id provided is already rejected, then the service throws an error<br><br> 3.	If the solicitation number provided does not match the solicitation number of the request Id, then the service throws an error<br><br> 4.	If the solicitation number provided matches with the solicitation number of the  request Id  but does not match with the provided N type, then the service throws an error|	1.	Internal ID is required. Use getAuthorizedPartyList to retrieve this information<br><br> 2.	Request with Request ID: #id already rejected<br><br> 3.	You have request that is tied to different solicitation number<br><br> 4.	You have request that is tied to the same solicitation number but different notice type
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+reason| Yes| Rejection Reason| 1.	This is a required field. If no value is provided, then the system throws an error.| 1.	A reason must be provided with an explicit access rejection.
 
 #### rejectExplicitAccessRequestByVendorData
-Details will be added in future.
+Individual business rules per field are listed across each of the fields in below table.  
+
+Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
+------ | ------- | ------- | ------- | --------
+solnbr	|Yes |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error. 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details. 
+ntype	|No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice	|If an invalid ntype is provided, then service throws an error  | 1. Invalid NTYPE value provided.
+nonfbo_solbr |	No|	|	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	rejectExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
+vendor|	Yes|	Vendor Data|	1.	If all the elements in the Vendor Data complex definition are not provided, then the system throws an error<br><br> 2.	If no match is found in the system for the vendor data provided, then the system throws an error<br> 3. If the vendor is already added as an authorized party on the notice, then the system throws an error.|	1.	This method requires all fields from complex type VendorData to find a match in the system; if vendor data not fully provided this error will be thrown<br><br> 2.	No contact match on vendor data provided <br> 3.	Duplicate request. Vendor is already added as an authorized party on the notice
+reason| Yes| Rejection Reason| 1.	This is a required field. If no value is provided, then the system throws an error.| 1.	A reason must be provided with an explicit access rejection.
+
+
+
+
+
+
 
 #### setBidModuleOptions
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 #### getBidModuleResponses
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 #### createSecureDocumentPackage
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 #### addFilesToSecureDocumentPackage
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 #### deleteFilesFromSecureDocumentPackage
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 #### deleteSecureDocumentPackage
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 #### releaseSecureDocumentPackage
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 #### attachSecureDocumentPackagesToNotice
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 #### createNonFBOSolicitation
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 #### attachSecureDocumentPackagesToNonFBOSolicitation
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 #### removeSecureDocumentPackagesFromNonFBOSolicitation
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 #### releaseNonFBOSolicitation
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 #### unreleaseNonFBOSolicitation
-Details will be added in future.
+Service is now deprecated. Hence no longer available.
 
 
 
@@ -4170,5 +4395,7 @@ Date | Version | Description
 7/22/2019 | v0.2 | Workflow Chart Added
 8/1/2019 | v0.3 | Added Future Implementation for IP Address Validation and Type of Connection 
 8/19/2019| v0.4 | SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated <br> User Account Section Updated
+8/20/2019|v0.5| Added details, request& response samples, business rules for approveExplictAccessRequestByVendorData and rejectExplicitAccessRequestByVendorData.<br>Updated the business rules for getfileData, addAuthorizedParty, getAuthorizedPartyList, approveExplicitAccessRequestById, rejectExplicitAccessRequestById and deleteNoticeOrDocumentPackage <br> Noted deprecated services <br> Removed reference to Notice ID from Get File Data
+
 
 <p><small><a href="#">Back to top</a></small></p>
