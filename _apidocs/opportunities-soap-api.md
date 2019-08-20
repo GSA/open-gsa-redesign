@@ -960,7 +960,7 @@ export_controlled	| boolean	| No	| Export Controlled	|
 
 ### Document Packages <br> (submitDocumentsAndLinksToNotice)
 
-This method is used to attach document packages (non sensitive) to a notice modification.  This is similar to the EPSUPLOAD or DocumentUpload function currently found in the ftp/email electronic interface. The web service method now supports transmitting actual file data along with external links. Note: A base notice must already exist in the system.
+This method is used to attach sensitive and non-sensitive (unclassified) document packages to notice modification. Note: A base notice must already exist in the system.
 
 Input Parameter |	Type |	Description
 ------- | ------ | -------
