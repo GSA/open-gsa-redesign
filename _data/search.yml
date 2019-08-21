@@ -13085,10 +13085,6 @@
   contact:
     email: github-admins@gsa.gov
   url: https://github.com/GSA/icpa_user_training
-- title: Acquisition Gateway API
-  body: The data for this API comes from the Acquisition Gateway, which is a workspace for acquisition professionals and federal buyers to connect with resources, tools and each other to improve acquisition government-wide.
-  url: https://hallways.cap.gsa.gov/docs/#/api
-  category: APIs
 - title: Analytics.usa.gov API
   body: The data for this API comes from Analytics.usa.gov, which is a unified Google Analytics account for U.S. federal government agencies known as the Digital Analytics Program. This program helps government agencies understand how people find, access, and use government services online. The program does not track individuals, and anonymizes the IP addresses of visitors.
   url: https://analytics.usa.gov/developer
