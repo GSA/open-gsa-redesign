@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   description: Entity Management API to retrieve entity information via Request parameters
     in the paginated manner
-  version: "0.9"
+  version: "1"
   title: Entity Management Rest API
   contact:
     name: GSA
@@ -16,7 +16,7 @@ tags:
   - name: entity-management-extract-controller
     description: Operations pertaining to Entity Management Extract Data
 paths:
-  /entity-information/v0.9/api/entities:
+  /entity-information/v1/api/entities:
     get:
       tags:
         - entity-management-controller
@@ -123,6 +123,12 @@ paths:
           schema:
             type: string
         - name: registrationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: updateDate
           in: query
           description: A single Date or Date range in the format MM/DD/YYYY
           required: false
@@ -363,7 +369,7 @@ paths:
           description: API key is not correct or was not provided
         "404":
           description: The resource you were trying to reach is not found
-  /entity-information/v0.9/api/entities/:
+  /entity-information/v1/api/entities/:
     get:
       tags:
         - entity-management-extract-controller
@@ -470,6 +476,12 @@ paths:
           schema:
             type: string
         - name: registrationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: updateDate
           in: query
           description: A single Date or Date range in the format MM/DD/YYYY
           required: false
@@ -703,7 +715,7 @@ paths:
           description: API key is not correct or was not provided
         "404":
           description: The resource you were trying to reach is not found
-  /entity-information/v0.9/download/entities:
+  /entity-information/v1/download/entities:
     get:
       tags:
         - entity-management-extract-controller
