@@ -1,6 +1,3 @@
-- title: Acquisition Gateway API
-  description: The data for this API comes from the Acquisition Gateway, which is a workspace for acquisition professionals and federal buyers to connect with resources, tools and each other to improve acquisition government-wide.
-  url: https://hallways.cap.gsa.gov/docs/#/api
 - title: Analytics.usa.gov API
   description: The data for this API comes from Analytics.usa.gov, which is a unified Google Analytics account for U.S. federal government agencies known as the Digital Analytics Program. This program helps government agencies understand how people find, access, and use government services online. The program does not track individuals, and anonymizes the IP addresses of visitors.
   url: https://open.gsa.gov/api/dap/
@@ -13,6 +10,18 @@
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: https://gsa.github.io/auctions_api/
+- title: Beta.SAM.Gov Entity/Exclusions Extracts Download API
+  description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
+  url: sam-entity-extracts-api/
+- title: Beta.SAM.Gov Entity Management API
+  description: API to retrieve Entity detail information from beta.sam.gov using various searchable parameters.
+  url: entity-api/
+- title: Beta.SAM.Gov Exclusions API
+  description: API to retrieve Exclusion detail information from beta.sam.gov using various searchable parameters.
+  url: exclusions-api/
+- title: Beta.SAM.Gov Federal Hierarchy FOUO API
+  description: The Federal Hierarchy “For Official Use Only” (FOUO) API allows U.S. Government users to obtain Federal Organization details down to the office level.
+  url: fh-fouo-api/
 - title: Beta.SAM.Gov Get Opportunities Public API
   description: Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. 
   url: get-opportunities-public-api/
@@ -40,15 +49,6 @@
 - title: eMuseum API
   description: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
   url: https://gsa.github.io/eMuseum-API/
-- title: Entity/Exclusions Extracts Download API
-  description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
-  url: sam-entity-extracts-api/
-- title: Entity Management API
-  description: API to retrieve Entity detail information from beta.sam.gov using various searchable parameters.
-  url: entity-api/
-- title: Exclusions API
-  description: API to retrieve Exclusion detail information from beta.sam.gov using various searchable parameters.
-  url: exclusions-api/
 - title: FedBizOpps Web Services (These will be deprecated)
   description: This API previously supported Federal buyers who needed to post information to the legacy FedBizOpps (FBO.gov) system using their agency's electronic contract writing system. FedBizOpps will be decommissioned by the end of 2019 and its functionality will move to beta.SAM.gov. Use the beta.SAM.gov Opportunities Management API referenced in this directory to prepare to interface with the new functionality. 
   url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
