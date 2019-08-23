@@ -13128,7 +13128,7 @@
   category: APIs
 - title: Federal Procurement Data System - FPDS API
   body: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
-  url: https://www.fpds.gov/downloads/FPDS-Specifications-WebServices_Integration_Specifications_V1.5.doc
+  url: https://www.fpds.gov/fpdsng_cms/index.php/en/worksite.html
   category: APIs
 - title: Go.USA.gov API
   body: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
