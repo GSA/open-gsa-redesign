@@ -3573,7 +3573,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2019-08-21",
+			"modified": "2019-08-28",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3596,8 +3596,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON 08/21/19",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-08-21-19.json"
+					"description": "EDI JSON 08/28/19",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-08-28-19.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5816,8 +5816,8 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Per Diem API",
-			"description": "The API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 322 locations across the continental United States for Fiscal Year's 2020, 2019, 2018, 2017, and 2016, as well as the standard per diem rates for any locations not specifically listed.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n                                                                                                                     \r\nNote - Starting with the FY20 Per Diem data, the GSA API page is being hosted on openGSA, click on the 'Visit page' button below to visit the Per Diem API page (Link -https://open.gsa.gov/api/perdiem/ ).  Follow the directions to register for an API key and begin using the data.",
-			"modified": "2019-08-21",
+			"description": "The API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 322 locations across the continental United States for Fiscal Year's 2020, 2019, 2018, 2017, and 2016, as well as the standard per diem rates for any locations not specifically listed.\r\n\r\n\r\n\r\nNote – We are making changes to this dataset and this is the last year that GSA will place the Per Diem Data on the data.gov site.  GSA is moving the Per Diem API data to a new GSA API page and it will be hosted on openGSA (https://open.gsa.gov/api/perdiem/).  \r\n\r\nVisit the page and ensure that you can access the data you need from the new site.  Should you have any questions or concerns about the upcoming change (FY21) please send an email to jill.denning@gsa.gov.",
+			"modified": "2019-08-28",
 			"accessLevel": "public",
 			"identifier": "GSA-138679",
 			"dataQuality": true,
