@@ -3248,62 +3248,62 @@ This section details possible error messages for specific operations.
 Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
 400|Additional Reporting |	This opportunity cannot be published. Additional reporting is required. |	Additional Reporting is required with valid values of “none” or “recovery_act”	| Publish
-|400|ARCHIVE |	This opportunity is not the latest published. |	Draft Opportunity cannot be archived.	| Archive
-|400|Archive Date |	$.archive.date: does not match the date pattern ^\\d{4}-(?:0[0-9]{1}\1[0-2]{1})-(0?[1-9]\[12][0-9]\3[01])$ |	Archive Date must be in specified format |	Create, Publish, Uncancel, Unarchive
-|400|Archive Date |	This opportunity cannot be published. Inactive date is a required field. |	Archive Date is required if Archive Type = autocustom |	Create, Publish, Uncancel, Unarchive
-|400|Archive Type |	This opportunity cannot be published. Inactive Policy is a required field. |	Archive Type is required |	Publish
-|400|Archive Type |	$.archive.type: does not have a value in the enumeration[auto15, auto30, autocustom] |	Archive type must be specified value | Create, Publish, Uncancel, Unarchive
-|400|Archive Type |	This opportunity cannot be published. Auto 15 archive type is not allowed for this opportunity type. | Archive Type = auto15 not allowed |	Publish
-|400|attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a line |	Create Attachment
-|401|Authorization |	Insufficient privileges to edit opportunity |	See User Account Authorization section |	Update, Publish, Revise
-|401|Authorization |	Insufficient privileges to create opportunity |	Insufficient privileges to create an award notice. See User Account Authorization section for more details. |	Create Opportunity
-|401|Authorization |	Insufficient privileges to create request |	Insufficient privileges to publish an award notice. See User Account Authorization section for more details. |	Create
-|400|Award |	Award Details Section - Contract Award Dollar Amount is not a valid field for this opportunity type |	Award Section is not valid for Base Notice Types (s, o, p, r, g, k, i) |	Publish
-|400|Award Amount |	Award Detail Section-Please enter valid integer for Amount Field |	Award Amount required |	Publish
-|400|Award Amount |	Award Details Section - Contract Award Dollar Amount is not a valid field for this opportunity type |	Contract Award Amount only valid for Type "a" Award |	Publish
-|400|Award Date |	Award Details Section - Contract Award Date provided is in an invalid format. |	Date is not in specified format |	Create Opportunity, Publish, Uncancel, Unarchive
-|400|Award Date |	Award Details section -Award date provided is in the past. |	Award Date must be current or future date. |	Create Opportunity, Publish, Uncancel, Unarchive
-|400|Award Number |	Award Details Section - Contract Award Number is a required field	| Contract Award Number is missing | Publish, Uncancel, Unarchive
-|400|Classification Code |	This opportunity cannot be published. Classification Code provided did not match expected codes |	Invalid PSC provided |	Publish
-|400|CANCEL |	This opportunity cannot be cancelled. This opportunity is a revision. |	Cannot cancel a revised Opportunity. |	Cancel
-|400|Content |	File Resource must have content. |	File Resource must be filled out | Create Attachment
-|400|Contract Award Dollar Amount |	Award Details Section – Please enter valid integer for Amount Field	| Valid integer amount must be entered for award dollar amount | Publish
-|401|CREATE | Insufficient privileges to create opportunity |	Account does not have appropriate privileges to create opportunity | CREATE
-|401|CREATE ATTACHMENT |	Insufficient privileges to upload attachment | Attachments cannot be added to published notices |	Create Attachment
-|400|Deadlines Response | This opportunity cannot be published. | Response Deadline Date is required |	Publish
-|400|Description |	Description is required |	Description is required |	Publish
-|400|IVL |	This opportunity cannot be published. Interested Vendors List Add is a required field. |Interested Vendors List Add is a required |	Publish
-|400|Justification Authority |	This opportunity cannot be published. Justification Authority is not valid field for this opportunity type | Justification Authority Section is not valid for Base Notice Types (s, o, p, r, g, k, i) | Publish
-|400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type. | Justification Authority Section is not valid for Base Notice Types (s, o, p, r, g, k, i) | Publish
-|400|Justification Authority |	This opportunity cannot be published. Justification Authority is not valid field for this opportunity type | Justification Authority only valid for Type "u" Justification and Authorization | Publish
-|400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type | Justification Authority Modification Number is only valid for Type "u" Justification and Authorization | Publish
-|400|NAICS Code | This opportunity cannot be published. NAICS provided did not match expected codes | NAICS Code is invalid | Create Opportunity, Publish
-|400|NAICS Type | $.data.naics[0].type: does not have a value in the enumeration [Primary] | NAICS Type is required | Create Opportunity
-|404|Notice Type |	This opportunity cannot be published. The opportunity type `j` is no longer supported	| See Notice Types table for valid notice types |	Publish
-|404|Opportunity ID | Opportunity ID for the selected opportunity type already exists | Cannot publish an existing published record | Publish
-|400|Opportunity ID | Opportunity cannot be updated | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state  | Revise
-|404|Opportunity ID | Opportunity ID is required	| Opportunity ID is required | All
-|400|Opportunity Type | Opportunity type is required | Opportunity type is required | Create Opportunity
-|400|Opportunity Type | errorCode":400,"message":"Opportunity type given is not a valid type." |	Opportunity type is empty |	Create Opportunity
-|400|Organization Id |	Contracting office is required | FH Org Id/AAC code is required |	Publish
-|400|Organization Id |	The Organization ID that you provided is an inactive and/or invalid. | Inactive/Invalid Organization Id |	Create Opportunity
-|400|Organization Id |	The Organization ID that you provided is not an office level, and it must be for this opportunity type.	| Organization ID is not valid for opportunity type. Note: Organization ID must be Office level unless creating a Special Notice.	| Create Opportunity
-|400|Point of Contact Type |	$.data.pointOfContact[0].type: does not have a value in the enumeration [primary, secondary, owner] |	Point of Contact Type is required |	Create Opportunity
-|400|Point of Contact Email |	Primary Contact – Email is required	| If Contact email is missing. This is a required field	| Publish
-|400|Primary Contact Full Name |	Primary Contact - Name is required | Point of Contact Full Name is required | Publish
-|400|Response Date |	This opportunity cannot be published. Response Date is a required field |	Response Date is only valid for Notice Type “o” |	Publish
-|400|Title |	Title is required |	Title is required |	Publish
-|400|UNARCHIVE |	This opportunity is not the latest published |	Only archived notices can be unarchived | UNARCHIVE
-|400|resourceName | Attachment must have a name | File Name is a required field |	Create Attachment
-|400|Request Id |	Duplicate request. Vendor is already added as an authorized party on the notice. | Request already exists for the vendor on the notice.	| AddAuthorizedParty
-|404|Duns# |	No contact match on vendor data provided.	| Not a Valid email or Duns#.	| AddAuthorizedParty
-|401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
-|400|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
-|401|Authorization|	Error code: 401 ; Your request did not get processed! Please verify your permission/roles|	If nonfed email id is used in authorization	|Get Authorized Party
-|400|Entity|	Error code: 400 ; No contact match on vendor data provided|	Wrong entity info is entered	|Add Authorized Party
-|404|Duns#|	No contact match on vendor data provided.	|Not a Valid email or Duns#.|	AddAuthorizedParty, Approve or Reject Explicit Access Request By Vendor Data.
-|404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided.|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
-|400|JSON| No Request JSON Given| Can't parse JSON. Raw result: error processing request| Delete Latest or All Notices
+400|ARCHIVE |	This opportunity is not the latest published. |	Draft Opportunity cannot be archived.	| Archive
+400|Archive Date |	$.archive.date: does not match the date pattern ^\\d{4}-(?:0[0-9]{1}\1[0-2]{1})-(0?[1-9]\[12][0-9]\3[01])$ |	Archive Date must be in specified format |	Create, Publish, Uncancel, Unarchive
+400|Archive Date |	This opportunity cannot be published. Inactive date is a required field. |	Archive Date is required if Archive Type = autocustom |	Create, Publish, Uncancel, Unarchive
+400|Archive Type |	This opportunity cannot be published. Inactive Policy is a required field. |	Archive Type is required |	Publish
+400|Archive Type |	$.archive.type: does not have a value in the enumeration[auto15, auto30, autocustom] |	Archive type must be specified value | Create, Publish, Uncancel, Unarchive
+400|Archive Type |	This opportunity cannot be published. Auto 15 archive type is not allowed for this opportunity type. | Archive Type = auto15 not allowed |	Publish
+400|attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a line |	Create Attachment
+401|Authorization |	Insufficient privileges to edit opportunity |	See User Account Authorization section |	Update, Publish, Revise
+401|Authorization |	Insufficient privileges to create opportunity |	Insufficient privileges to create an award notice. See User Account Authorization section for more details. |	Create Opportunity
+401|Authorization |	Insufficient privileges to create request |	Insufficient privileges to publish an award notice. See User Account Authorization section for more details. |	Create
+400|Award |	Award Details Section - Contract Award Dollar Amount is not a valid field for this opportunity type |	Award Section is not valid for Base Notice Types (s, o, p, r, g, k, i) |	Publish
+400|Award Amount |	Award Detail Section-Please enter valid integer for Amount Field |	Award Amount required |	Publish
+400|Award Amount |	Award Details Section - Contract Award Dollar Amount is not a valid field for this opportunity type |	Contract Award Amount only valid for Type "a" Award |	Publish
+400|Award Date |	Award Details Section - Contract Award Date provided is in an invalid format. |	Date is not in specified format |	Create Opportunity, Publish, Uncancel, Unarchive
+400|Award Date |	Award Details section -Award date provided is in the past. |	Award Date must be current or future date. |	Create Opportunity, Publish, Uncancel, Unarchive
+400|Award Number |	Award Details Section - Contract Award Number is a required field	| Contract Award Number is missing | Publish, Uncancel, Unarchive
+400|Classification Code |	This opportunity cannot be published. Classification Code provided did not match expected codes |	Invalid PSC provided |	Publish
+400|CANCEL |	This opportunity cannot be cancelled. This opportunity is a revision. |	Cannot cancel a revised Opportunity. |	Cancel
+400|Content |	File Resource must have content. |	File Resource must be filled out | Create Attachment
+400|Contract Award Dollar Amount |	Award Details Section – Please enter valid integer for Amount Field	| Valid integer amount must be entered for award dollar amount | Publish
+401|CREATE | Insufficient privileges to create opportunity |	Account does not have appropriate privileges to create opportunity | CREATE
+401|CREATE ATTACHMENT |	Insufficient privileges to upload attachment | Attachments cannot be added to published notices |	Create Attachment
+400|Deadlines Response | This opportunity cannot be published. | Response Deadline Date is required |	Publish
+400|Description |	Description is required |	Description is required |	Publish
+400|IVL |	This opportunity cannot be published. Interested Vendors List Add is a required field. |Interested Vendors List Add is a required |	Publish
+400|Justification Authority |	This opportunity cannot be published. Justification Authority is not valid field for this opportunity type | Justification Authority Section is not valid for Base Notice Types (s, o, p, r, g, k, i) | Publish
+400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type. | Justification Authority Section is not valid for Base Notice Types (s, o, p, r, g, k, i) | Publish
+400|Justification Authority |	This opportunity cannot be published. Justification Authority is not valid field for this opportunity type | Justification Authority only valid for Type "u" Justification and Authorization | Publish
+400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type | Justification Authority Modification Number is only valid for Type "u" Justification and Authorization | Publish
+400|NAICS Code | This opportunity cannot be published. NAICS provided did not match expected codes | NAICS Code is invalid | Create Opportunity, Publish
+400|NAICS Type | $.data.naics[0].type: does not have a value in the enumeration [Primary] | NAICS Type is required | Create Opportunity
+404|Notice Type |	This opportunity cannot be published. The opportunity type `j` is no longer supported	| See Notice Types table for valid notice types |	Publish
+404|Opportunity ID | Opportunity ID for the selected opportunity type already exists | Cannot publish an existing published record | Publish
+400|Opportunity ID | Opportunity cannot be updated | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state  | Revise
+404|Opportunity ID | Opportunity ID is required	| Opportunity ID is required | All
+400|Opportunity Type | Opportunity type is required | Opportunity type is required | Create Opportunity
+400|Opportunity Type | errorCode":400,"message":"Opportunity type given is not a valid type." |	Opportunity type is empty |	Create Opportunity
+400|Organization Id |	Contracting office is required | FH Org Id/AAC code is required |	Publish
+400|Organization Id |	The Organization ID that you provided is an inactive and/or invalid. | Inactive/Invalid Organization Id |	Create Opportunity
+400|Organization Id |	The Organization ID that you provided is not an office level, and it must be for this opportunity type.	| Organization ID is not valid for opportunity type. Note: Organization ID must be Office level unless creating a Special Notice.	| Create Opportunity
+400|Point of Contact Type |	$.data.pointOfContact[0].type: does not have a value in the enumeration [primary, secondary, owner] |	Point of Contact Type is required |	Create Opportunity
+400|Point of Contact Email |	Primary Contact – Email is required	| If Contact email is missing. This is a required field	| Publish
+400|Primary Contact Full Name |	Primary Contact - Name is required | Point of Contact Full Name is required | Publish
+400|Response Date |	This opportunity cannot be published. Response Date is a required field |	Response Date is only valid for Notice Type “o” |	Publish
+400|Title |	Title is required |	Title is required |	Publish
+400|UNARCHIVE |	This opportunity is not the latest published |	Only archived notices can be unarchived | UNARCHIVE
+400|resourceName | Attachment must have a name | File Name is a required field |	Create Attachment
+400|Request Id |	Duplicate request. Vendor is already added as an authorized party on the notice. | Request already exists for the vendor on the notice.	| AddAuthorizedParty
+404|Duns# |	No contact match on vendor data provided.	| Not a Valid email or Duns#.	| AddAuthorizedParty
+401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
+400|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
+401|Authorization|	Error code: 401 ; Your request did not get processed! Please verify your permission/roles|	If nonfed email id is used in authorization	|Get Authorized Party
+400|Entity|	Error code: 400 ; No contact match on vendor data provided|	Wrong entity info is entered	|Add Authorized Party
+404|Duns#|	No contact match on vendor data provided.	|Not a Valid email or Duns#.|	AddAuthorizedParty, Approve or Reject Explicit Access Request By Vendor Data.
+404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided.|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
+400|JSON| No Request JSON Given| Can't parse JSON. Raw result: error processing request| Delete Latest or All Notices
 
 ## Coming soon…
 
