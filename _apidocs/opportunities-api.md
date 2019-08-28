@@ -2809,7 +2809,7 @@ Name | Data Type | Allowed Values | Required (Create/Update) | Required (to Publ
 type | string | See Notice Types table | Yes | Yes | Notice Type
 solicitationNumber | string |  | No | Yes | Solicitation Number
 title | string |  | Yes | Yes | Title of the Opportunity
-organizationId | string |  | No | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
+organizationId | string |  | No for Create (Yes for Update) | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
 classificationCode | string |  | No | Yes (not required for type= r) | Product Service Code (PSC)
 naics | JSON | NA | NA | NA |
 naics.code | string |  | No | Yes | NAICS Code
