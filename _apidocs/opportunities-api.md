@@ -2884,6 +2884,12 @@ link.href | string |  | No | No | Website Address
 additionalReporting | string | none/<br/>auto_recovery | No | Yes |
 description | JSON | NA | NA | NA |
 description.body | string |  | No | Yes | Description of notice
+attType | string | link, file | No |No| Type of attachment, either link or file
+content | byte |  | No|No | File content in byte format
+link | string |  | |No|No | Resource link or URL
+packageAccessLevel | string | public,private(default public) | No | No| Type of access to file or link
+resourceName | string |  | No|No | Name of file
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2972,6 +2978,7 @@ Description | string |  | Yes | Description for cancelation
   "requestType": " uncancel_request ",
   "data": {
     "description": "",
+    "newContractAwardDate": "",
     "newArchiveDate": "",
     "newArchiveType": "",
     "newResponseDate": "",
@@ -3032,6 +3039,7 @@ requestType | string | archive_request | Yes | Type of request
   "reason": "",
   "requestType": " unarchive_request",
   "data": {
+    "newContractAwardDate": "",
     "newArchiveDate": "",
     "newArchiveType": "",
     "newResponseDate": "",
