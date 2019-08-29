@@ -3573,7 +3573,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2019-08-19",
+			"modified": "2019-08-28",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3596,8 +3596,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON 08/19/19",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-08-19-19.json"
+					"description": "EDI JSON 08/28/19",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-08-28-19.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3726,7 +3726,7 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "GSA IT Reform Cost Savings/Avoidance",
-					"description": "GSA's May 2019 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description": "GSA's August 2019 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -3757,7 +3757,7 @@
 					"mediaType": "application/zip",
 					"format": "ZIP",
 					"title": "GSA IT Policy Archive Zip",
-					"description": "Last update: 2019-04-23",
+					"description": "Last update: 2019-08-19",
 					"downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
 				}
 			],
@@ -5776,7 +5776,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Per Diem Reimbursement Rates",
 			"description": "The dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 322 locations across the continental United States for Fiscal Year's 2020, 2019, 2018, 2017, and 2016, as well as the standard per diem rates for any locations not specifically listed.",
-			"modified": "2019-08-19",
+			"modified": "2019-08-21",
 			"accessLevel": "public",
 			"identifier": "GSA-31641",
 			"dataQuality": true,
@@ -5800,6 +5800,13 @@
 					"format": "html",
 					"title": "Per Diem Rates",
 					"description": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "FY20 Per Diem Rates",
+					"description": "FY20 Per Diem Reimbursement Rates.",
+					"downloadURL": "https://inventory.data.gov/dataset/ad729937-b245-4eec-a88d-b72eb36d8106/resource/e0eb3a12-a13d-4b83-af5c-8dcb73042c3d/download/fy20-per-diem-rates.xlsx"
 				}
 			],
 			"keyword": ["federal per diem", "lodging", "m ie", "maximum per diem rates", "meals and incidental expenses", "per diem"],
@@ -5809,8 +5816,8 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Per Diem API",
-			"description": "The API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 322 locations across the continental United States for Fiscal Year's 2020, 2019, 2018, 2017, and 2016, as well as the standard per diem rates for any locations not specifically listed.",
-			"modified": "2019-08-19",
+			"description": "The API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 322 locations across the continental United States for Fiscal Year's 2020, 2019, 2018, 2017, and 2016, as well as the standard per diem rates for any locations not specifically listed.\r\n\r\n\r\n\r\nNote – We are making changes to this dataset and this is the last year that GSA will place the Per Diem Data on the data.gov site.  GSA is moving the Per Diem API data to a new GSA API page and it will be hosted on openGSA (https://open.gsa.gov/api/perdiem/).  \r\n\r\nVisit the page and ensure that you can access the data you need from the new site.  Should you have any questions or concerns about the upcoming change (FY21) please send an email to jill.denning@gsa.gov.",
+			"modified": "2019-08-28",
 			"accessLevel": "public",
 			"identifier": "GSA-138679",
 			"dataQuality": true,
@@ -8400,7 +8407,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Subcontracting Directory for Small Businesses",
 			"description": "The GSA Subcontracting Directory list large Prime Contractors who, by law, are required to establish plans and goals for subcontracting with Small Business Firms.",
-			"modified": "2018-05-28",
+			"modified": "2018-08-21",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-10-26-01",
 			"dataQuality": true,
@@ -8419,6 +8426,15 @@
 				"fn": "Debbie E Eble",
 				"hasEmail": "mailto:deborah.eble@gsa.gov"
 			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "Subk_Directory_August_2019",
+					"description": "Subcontracting Directory for August 2019",
+					"downloadURL": "https://inventory.data.gov/dataset/50bfccab-460c-4f18-9f17-28c4104e6d50/resource/d074c4ed-07f3-4fdd-8a7d-f56d6c8c5e02/download/subkdirectoryaugust2019.xlsx"
+				}
+			],
 			"keyword": ["Prime Contractors", "Subcontracting", "Subcontracting Directory"],
 			"bureauCode": ["001:40"],
 			"programCode": ["015:010"],
