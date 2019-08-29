@@ -3233,6 +3233,8 @@ deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or al
 
 The following error messages may be returned as part of the response to various web service calls; these errors are not specific to one method and may apply to more than one.
 
+Error codes may change depending on the error given; document will be updated accordingly.
+
 Error Code|Error Message | Reason/Description
 ----------|--------------|-------------------
 401|Please provide valid Authorization Email & API Key |	API Key and/or Authorization Email is required
@@ -3252,6 +3254,8 @@ Error Code|Error Message | Reason/Description
 #### Specific Error Messages
 
 This section details possible error messages for specific operations.
+Error codes may change depending on the error given; document will be updated accordingly.
+
 
 Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
