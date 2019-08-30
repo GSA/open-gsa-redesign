@@ -2631,147 +2631,117 @@ Examples
 <p>
 <code><pre>
 {
-
-    "data":
-
-    {
-
+   "data": {
+        "solicitationNumber": "Test1",
+        "title": "TST_T1",
         "type": "p",
-
-        "solicitationNumber": "234344u854546uu6",
-
-        "title": "SOAP_IT_SubmitPresolNotice",
-
-        "organizationId": "100186612",
-
-        "organizationLocationId": "50185692",
-
-        "descriptions": [],
-
-        "link":
-
-        {
-
-            "additionalInfo":
-
-            {}
-
-        },
-
         "classificationCode": "13",
-
-        "naics": [],
-
-        "pointOfContact": [
-
-        {
-
-            "type": "primary",
-
-            "fullName": "test contact",
-
-            "email": "test@test.com",
-
-            "additionalInfo":
-
-            {
-
-                "content": "primary email contact"
-
-            }
-
+        "organizationId": "100000136",
+        "organizationLocationId": "",
+        "naics": [{
+            "type": "Primary",
+            "code": ["111150"]
         }],
-
-        "placeOfPerformance":
-
-        {},
-
-        "archive":
-
-        {
-
+        "pointOfContact": [{
+                "additionalInfo": {
+                        "content": ""
+                },
+                "email": "",
+                "fax": "",
+                "fullName": "Veera",
+                "phone": "",
+                "title": "",
+                "type": "primary"
+        }],
+        "placeOfPerformance": {
+                "city": {
+                        "code": "",
+                        "name": ""
+                },
+                "country": {
+                        "code": "",
+                        "name": ""
+                },
+                "state": {
+                        "code": "",
+                        "name": ""
+                },
+                "streetAddress": "",
+                "streetAddress2": "",
+                "zip": ""
+        },
+        "award": {
+                "date": "",
+                "number": "",
+                "deliveryOrderNumber": "",
+                "amount": "number",
+                "lineItemNumber": "",
+                "awardee": {
+                        "manual": false,
+                        "name": "",
+                        "duns": "",
+                        "location": {
+                                "streetAddress": "",
+                                "streetAddress2": "",
+                                "city": {
+                                        "code": "",
+                                        "name": ""
+                                },
+                                "state": {
+                                        "code": "",
+                                        "name": ""
+                                },
+                                "zip": "",
+                                "country": {
+                                        "code": "",
+                                        "name": ""
+                                }
+                        }
+                },
+                "justificationAuthority": {
+                        "modificationNumber": "",
+                        "authority": "dictionary"
+                },
+                "fairOpportunity": {
+                        "authority": ""
+                }
+        },
+        "permissions": {
+                "IVL": {
+                        "create": false,
+                        "delete": false,
+                        "read": false,
+                        "update": false
+                }
+        }, 
+          "solicitation": {
+            "setAside": "10",
+            "deadlines": {
+                "response": "2019-08-08"
+            }
+        },
+       "archive": {
             "type": "autocustom",
-
-            "date": "2020-01-01"
-
+            "date": "2019-09-09"
         },
-
-        "permissions":
-
-        {
-
-            "IVL":
-
-            {
-
-                "create": false,
-
-                "read": false,
-
-                "update": false,
-
-                "delete": false
-
-            }
-
+        "flags": [{
+                "code": "",
+                "isSelected": true
+        }],
+        "link": {
+                "additionalInfo": {
+                        "content": ""
+                },
+                "href": ""
         },
-
-        "solicitation":
-
-        {
-
-            "setAside": "1000002",
-
-            "deadlines":
-
-            {
-
-                "response": "2019-01-01"
-
-            }
-
+         "additionalReporting": [
+                "none"
+        ]
         },
-
-        "award":
-
-        {
-
-            "awardee":
-
-            {
-
-                "location":
-
-                {}
-
-            },
-
-            "justificationAuthority":
-
-            {},
-
-            "fairOpportunity":
-
-            {}
-
-        },
-
-        "additionalReporting": ["none"]
-
-    },
-
-    "description": [
-
-    {
-
-        "body": "Description"
-
+ "description": [{
+        "body": ""
     }],
-
-    "resources": [
-
-    {
-
+     "resources": [{
         "attType": "link",
 
         "link": "http://beta.sam.gov",
@@ -2779,12 +2749,9 @@ Examples
         "description": "test beta sam link",
 
         "packageAccessLevel": null
-
     },
-
     {
-
-        "attType": "link",
+       "attType": "link",
 
         "link": "https://faaco.faa.gov/index.cfm/attachment/download/84723",
 
@@ -2797,7 +2764,6 @@ Examples
     "postedDate": "20190423",
 
     "archived": false
-
 }
 </pre></code>
 </p>
@@ -2810,6 +2776,7 @@ type | string | See Notice Types table | Yes | Yes | Notice Type
 solicitationNumber | string |  | No | Yes | Solicitation Number
 title | string |  | Yes | Yes | Title of the Opportunity
 organizationId | string |  | No for Create (Yes for Update) | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
+organizationLocationId | string | | No|No| Organization Location ID
 classificationCode | string |  | No | Yes (not required for type= r) | Product Service Code (PSC)
 naics | JSON | NA | NA | NA |
 naics.code | string |  | No | Yes | NAICS Code
@@ -2830,9 +2797,9 @@ placeOfPerformance.<br/>streetAddess2 | string |  | No | No | Pop Address2
 placeOfPerformance.city | JSON | NA | NA | NA | Pop City
 placeOfPerformance.city.<br/>code | string |  | No | No | Pop City code
 placeOfPerformance.city.<br/>name | string |  | No | No | Pop City name
-placeOfPerformance.city.<br/>state | JSON | NA | NA | NA | Pop City state
-placeOfPerformance.city.<br/>state.code | string |  | No | No | Pop city state code
-placeOfPerformance.city.<br/>state.name | string |  | No | No | Pop city state name
+placeOfPerformance.state | JSON | NA | NA | NA | Pop City state
+placeOfPerformance.state.<br/>code | string |  | No | No | Pop city state code
+placeOfPerformance.state.<br/>name | string |  | No | No | Pop city state name
 placeOfPerformance.country | JSON | NA | NA | NA | Pop Country
 placeOfPerformance.<br/>country.code | string |  | No | No | Pop Country Code
 placeOfPerformance.<br/>country.name | string |  | No | No | Pop Country name
@@ -2889,7 +2856,10 @@ content | byte |  | No|No | File content in byte format
 link | string |  | |No|No | Resource link or URL
 packageAccessLevel | string | public,private(default public) | No | No| Type of access to file or link
 resourceName | string |  | No|No | Name of file
-
+fairOpportunity | string | |No|No| Fair Opportunity|
+fairOpportunity.authority|string | |No|No| Fair Opportunity Authority
+postedDate| date| |No|No| Posted Date
+archived| string| | |No|No| Archived Status
 
 <p><small><a href="#">Back to top</a></small></p>
 
