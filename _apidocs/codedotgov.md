@@ -1,3 +1,4 @@
+
 ---
 title: Code.gov API
 banner-heading: Code.gov API
@@ -22,10 +23,24 @@ The Code.gov front-end is found in the [code-gov-front-end repository](https://g
 
 The Code.gov API is a GET API. With this API, you will be able to explore the software projects that federal agencies have published in accordance with the [Federal Source Code Policy](https://sourcecode.cio.gov/).
 
+#### Versioning
+Because REST does not provide any specific versioning guidelines, The Code.gov API is versioned using URI versioning with an alias to the current version. This allows for a straightforward approach with a hard-settable version to prevent breaking client integrations, as well as allowing bleeding-edge applications to keep the same URI.
+
+-  `/v2`
+	- The current default: `https://api.code.gov/v2/`
+	- Aliased to: `https://api.code.gov/` 
+
+#### Endpoints
 There are two basic endpoints:
 
 - `/repos`: this endpoint will let you query all federal repositories that have been indexed by us.
 - `/terms`: this endpoint will let you query all terms we have indexed as part of our data harvesting process. These terms will help you in your search efforts.
+
+And four more specific endpoints:
+- `/agencies`: this endpoint will let you query all federal agencies that have been indexed. 
+- `/terms`: this endpoint will let you query against terms used in repositories.
+- `/languages`:  lists the repositories' tagged languages and the count of repositories using the language.
+- `/version`: lists the current version of the API with a link to the repository.
 
 #### Additional Notes
 
@@ -35,8 +50,8 @@ The rate limit for the API is currently 5,000 calls/day and 5 calls per 5 second
 
 The URLs provided below are for initial browsing of API data. This DEMO_KEY will not work after a certain number of attempts. Users can request a personal key from [api.data.gov](https://api.data.gov/signup/). The personal key will have more data access capabilities.
 
-* [https://api.code.gov/repos?api_key=DEMO_KEY](https://api.code.gov/repos?api_key=DEMO_KEY)
-* [https://api.code.gov/terms?api_key=DEMO_KEY](https://api.code.gov/terms?api_key=DEMO_KEY)
+* [https://api.code.gov/v2/repos?api_key=DEMO_KEY](https://api.code.gov/repos?api_key=DEMO_KEY)
+* [https://api.code.gov/v2/terms?api_key=DEMO_KEY](https://api.code.gov/terms?api_key=DEMO_KEY)
 
 #### Output
 
@@ -142,7 +157,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/openapi.json">Open API specification file for the Code.gov API</a>
+<a href="v2/openapi.json">Open API specification file for the Code.gov API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -158,7 +173,7 @@ In eget nibh consectetur, faucibus sapien et, finibus justo. Duis feugiat elit e
 
 
 {% include swagger-section-header.html %}
-    url: "v1/openapi.json", 
+    url: "v2/openapi.json", 
 {% include swagger-section-footer.html %}
 
 
