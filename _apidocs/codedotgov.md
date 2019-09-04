@@ -38,8 +38,9 @@ There are two basic endpoints:
 
 And four more specific endpoints:
 - `/agencies`: this endpoint will let you query all federal agencies that have been indexed. 
-- `/terms`: this endpoint will let you query against terms used in repositories.
 - `/languages`:  lists the repositories' tagged languages and the count of repositories using the language.
+- `/open-tasks`:  will display open tasks which have `code.gov` tag on issues.
+- `/status.json`:  will display current status of agencies repositories.
 - `/version`: lists the current version of the API with a link to the repository.
 
 #### Additional Notes
