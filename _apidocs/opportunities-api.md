@@ -3063,6 +3063,8 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
 </pre></code>
 </p>
 </details>
+</div>
+
 
 
 Name | Data Type | Allowed Values | Required | Description
@@ -3074,7 +3076,7 @@ packageAccessLevel | string | public,private(default public) | No | Type of acce
 resourceName | string |  | Yes (if attType=file) | Name of file
 
 
-#### Valid File Types ####
+#### Valid File Types 
 
 File Extension | File Type
 -----|-----
