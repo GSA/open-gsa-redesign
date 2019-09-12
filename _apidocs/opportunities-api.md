@@ -517,7 +517,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Create and Publish Opportunity
+### Create and Publish Opportunity (Coming Soon)
 
 
 ------- | -------
