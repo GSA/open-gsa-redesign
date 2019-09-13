@@ -3051,6 +3051,7 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
 </p>
 </details>
 <details>
+
 <summary>Create_Attachment_Contract_Json - Link</summary>
 <p>
 <code><pre>
@@ -3102,7 +3103,6 @@ MPEG (.mpg, .mpeg, .mp4)	|video/mpeg , video/mp4
 Windows Media Video (.wmv)	|video/x-ms-wmv
 Flash Video (.flv, .f4v)|	video/x-flv
 
-</div>
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Update Attachment Contract JSON
