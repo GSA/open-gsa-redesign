@@ -158,7 +158,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v2/openapi.json">Open API specification file for the Code.gov API</a>
+<a href="v2/openapi.yaml">Open API specification file for the Code.gov API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -174,7 +174,7 @@ In eget nibh consectetur, faucibus sapien et, finibus justo. Duis feugiat elit e
 
 
 {% include swagger-section-header.html %}
-    url: "v2/openapi.json", 
+    url: "v2/openapi.yaml", 
 {% include swagger-section-footer.html %}
 
 
