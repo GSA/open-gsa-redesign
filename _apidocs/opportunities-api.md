@@ -2881,8 +2881,8 @@ archived| string| | |No|No| Archived Status
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason | string |  | No | Publish reason
 requestType | string | publish_request | Yes | Type of request
+reason | string |  | No | Publish reason
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2904,8 +2904,8 @@ requestType | string | publish_request | Yes | Type of request
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason | string |  | Yes | Reason for revision
 requestType | string | update_publish_request | Yes | Type of request
+reason | string |  | Yes | Reason for revision
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2932,7 +2932,7 @@ Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 Reason | string |  | Yes | Reason for cancelation
 requestType | string | cancel_request | Yes | Type of request
-Description | string |  | Yes | Description for cancelation
+description | string |  | Yes | Description for cancelation
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2963,9 +2963,9 @@ Description | string |  | Yes | Description for cancelation
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason | string |  | Yes | Reason for uncanceling
+reason | string |  | Yes | Reason for uncanceling
 requestType | string | uncancel_request | Yes | Type of request
-Description | string |  | Yes | Description for uncanceling
+description | string |  | Yes | Description for uncanceling
 newContractAwardDate | date | YYYY-MM-DD | Yes (if unarchiving an award notice) | New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes (if newArchiveType=autocustome) | New Archive Date
 newArchiveType | string | auto15, auto30, autocustom | Yes  | New Archive Type
@@ -2993,8 +2993,8 @@ newContractAwardDate | date | YYYY-MM-DD | Yes (if type=a) | New Contract Award 
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason | string |  | Yes | Archive reason
 requestType | string | archive_request | Yes | Type of request
+reason | string |  | Yes | Archive reason
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3023,7 +3023,7 @@ requestType | string | archive_request | Yes | Type of request
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason | string |  | Yes | Reason for uncanceling
+reason | string |  | Yes | Reason for uncanceling
 requestType | string | unarchive_request | Yes | Type of request
 newContractAwardDate | date | YYYY-MM-DD | Yes (if unarchiving an award notice) | New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes (if newArchiveType=autocustom) | New Archive Date
@@ -3170,9 +3170,9 @@ cageCode | string | | No | Cage Code
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason|	string|	|	Yes|	Reason for deletion
+reason|	string|	|	Yes|	Reason for deletion
 requestType	|string	|delete_request |Yes	|Type of request
-Description	|string|		|Yes|	Description for deletion of a notice
+description	|string|		|Yes|	Description for deletion of a notice
 title	|string	|	|No|	
 newArchiveDate|	date|	YYYY-MM-DD|	No|	New Archive Date
 newArchiveType|	string|	|	No|	New Archive Type
