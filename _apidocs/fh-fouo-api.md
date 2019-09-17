@@ -88,8 +88,6 @@ createddatefrom	|Field to specify the starting range of the created date of an o
 createddateto|	Field to specify the end range of the created date of an organization. Format must be YYYY-MM-DD.	|Date
 limit|	Total number of records to be retrieved per page. This field must be a positive number equal to 100 or less. If this field is not provided, the default page size is 10. Maximum supported page size will be 100.	|Number
 offset	|Indicates the record index. Default offset starts with 0 i.e. offset=0 and limit=10 signifies 0-10 records. offset=5 and limit=10 signifies records from 5th to 15.	|Number
-region| Region Code| Text	
-
 
 ### For Request URL /org/hierarchy?orgkey=[orgkey]&api_key=[key]
 * Users can retrieve immediate next level hierarchy organizations for the respective organization.
@@ -118,7 +116,7 @@ fhorgtype |	Type of an Organization in Federal Hierarchy: <br> - Department/Ind.
 description 	|Description of the Organization.|	Text
 level| 	Level (1-7) of the Organization in the hierarchy: <br> 1 = Department/Ind. Agency<br> 2 = Sub-Tier<br>3 = Office / Major Command for DoD<br>4 = Office / Sub-Command 1 for DoD<br>5 = Office / Sub-Command 2 for DoD<br>6 = Office / Sub-Command 3 for DoD<br>7 = Office|	Number
 status|	Status of the Organization in the Federal Hierarchy: <br> - Active <br> - Inactive	|Text
-region|	Region of an organization.  <br> <br> *Note: Value for this field is currently not available*|	Text
+region|	Region of an organization.|	Text
 categoryid|	Category of the Organization per FPDS. Values are CAT-1, CAT-2, CAT-3, CAT-4, CAT-5, and CAT-6. <br><br> *Note: This field is same as level field.*| 	Text
 effectivestartdate	|Start Date of an organization in the Federal Hierarchy. <br><br> *Note: For organization legacy data, there are instances where there is no effective start date or end date provided. So, for such legacy data, effectivestartdate and effectiveenddate appear as null. However, for new organizations created using beta.sam.gov UI, start date is mandatory. So, in future such null dates will not appear for new organizations created using beta.sam.gov UI.*	|Date
 effectiveenddate|	Date when the organization will no longer be active in the Federal Hierarchy. <br><br> *Note: For organization legacy data, there are instances where there is no effective start date or end date provided. So, for such legacy data, effectivestartdate and effectiveenddate appear as null. However, for new organizations created using beta.sam.gov UI, start date is mandatory. So, in future such null dates will not appear for new organizations created using beta.sam.gov UI.*|	Date
@@ -157,7 +155,6 @@ This is specific to pre-merge.  |	Text
 agencycode|	Identifier that represents either a department or a sub-tier created in FPDS. This is specific to pre-merge. If the sub-tiers get merged, only this field and cgaclist show up; aaccode will not show up	|Text
 effectivedate|	Date when the merge became effective in the Federal Hierarchy.| 	Date
 links	|This is an array consisting of <br> 1)	“rel: self” which is a self-link to the Organization itself <br> 2)	“rel: nextLevelChildren” which is a link to the next level of the Organization’s hierarchy |
-region| Region Code| Text	
 
 ## Examples
 
