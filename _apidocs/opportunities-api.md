@@ -491,7 +491,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Publish Draft Opportunity Contract JSON](#publish-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
