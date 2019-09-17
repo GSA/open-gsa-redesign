@@ -49,13 +49,13 @@ Note:
 
 ## Federal Hierarchy FOUO API Request Parameters
 
-### For Request URI /orgs?api_key=[key]
+### For Request URL /orgs?api_key=[key]
 
 * Users can search on any of the following fields
 * None of these fields are mandatory
 * Results will be sorted on level & fhorgname in ascending order
 
-**Table 1: FH FOUO API Request Parameters For request URI mentioned in 2.1**
+**Table 1: FH FOUO API Request Parameters**
 
 Request Parameters that API accepts	| Description | Data Type
 ----- | ----- | ----- 
@@ -67,7 +67,7 @@ region|	Region of an organization |	Text
 level|	Level of an organization: <br> 1 = Department/Ind. Agency <br>  2 = Sub-Tier <br> 3 = Office / Major Command for DoD <br> 4 = Office / Sub-Command 1 for DoD <br> 5 = Office / Sub-Command 2 for DoD <br> 6 = Office / Sub-Command 3 for DoD <br> 7 = Office|	Number
 agencycode|	Identifier that represents either a department or a sub-tier created in the Federal Procurement Data System (FPDS). For offices, users will see the sub-tier’s Agency Code.	|Text
 oldfpdsofficecode	|Office code for offices created before 04/01/2016 in FPDS.	|Text
-cgac	|Common Government-wide Accounting Classification (CGAC) Agency Code. This field can accommodate multiple, comma separated values.  <br><br> *Note: This API only supports one CGAC per record at this time. In a future version, this API will be enhanced to support multiple CGACs.*| 	Text
+cgac	|Common Government-wide Accounting Classification (CGAC) Agency Code. This field can accommodate multiple, comma separated values. | 	Text
 searchby|	Field for users to search by state code, country code, city; Search by values must be either state code, country code, or city | 	Text
 q |	Field for users to specify the search term. This field can only be used in combination with searchby. |	Text
 aacofficecode	|Activity Address Code (AAC) for an office.	|Text
@@ -88,12 +88,14 @@ createddatefrom	|Field to specify the starting range of the created date of an o
 createddateto|	Field to specify the end range of the created date of an organization. Format must be YYYY-MM-DD.	|Date
 limit|	Total number of records to be retrieved per page. This field must be a positive number equal to 100 or less. If this field is not provided, the default page size is 10. Maximum supported page size will be 100.	|Number
 offset	|Indicates the record index. Default offset starts with 0 i.e. offset=0 and limit=10 signifies 0-10 records. offset=5 and limit=10 signifies records from 5th to 15.	|Number
+region| Region Code| Text	
 
-### For Request URI /org/hierarchy?orgkey=[orgkey]&api_key=[key]
+
+### For Request URL /org/hierarchy?orgkey=[orgkey]&api_key=[key]
 * Users can retrieve immediate next level hierarchy organizations for the respective organization.
 * Results will be sorted on level and fhorgname in ascending order.
 
-**Table 2: FH FOUO API Request Parameters For request URI mentioned in 2.2**
+**Table 2: FH FOUO API Request Parameters**
 
 Request Parameters that API accepts	| Description | Data Type
 ----- | ----- | ----- 
@@ -129,7 +131,7 @@ fhagencyorgname|	Name of the Department/Ind. agency in the Federal Hierarchy to 
 agencycode|	Identifier that represents either a department or a sub-tier created in FPDS.| 	Text
 oldfpdsofficecode	|Office code for offices created before 04/01/2016 in FPDS.	|Text
 aacofficecode	|Activity Address Code (AAC) for an office.|	Text
-cgaclist|	An array of Common Government-wide Accounting Classification (CGAC) Agency Codes. This field can accommodate multiple, comma separated values.  <br><br>*Note: This API only supports one CGAC per record at this time. In a future version, this API will be enhanced to return multiple CGACs per record.*	|Array
+cgaclist|	An array of Common Government-wide Accounting Classification (CGAC) Agency Codes. This field can accommodate multiple, comma separated values. |Array
 fhorgofficetypelist|	An Array of office types for an office consisting of officetype, officetypestartdate and officetypeenddate for each of the office types.	|Array
 officetype|	Type of an office. Currently there are the following office types available in the Federal Hierarchy FOUO API: <br> -	Contracting <br> -	Funding <br> -	Grant <br><br>*Note: In future if the office type names change, the API will bring back the latest office types names from FH DB* |	Text
 officetypestartdate	|Start date of an office type. Format is YYYY-MM-DD. |	Date
@@ -154,7 +156,8 @@ cgaclist |	An array of CGACs. If the departments get merged, only this field sho
 This is specific to pre-merge.  |	Text
 agencycode|	Identifier that represents either a department or a sub-tier created in FPDS. This is specific to pre-merge. If the sub-tiers get merged, only this field and cgaclist show up; aaccode will not show up	|Text
 effectivedate|	Date when the merge became effective in the Federal Hierarchy.| 	Date
-links	|This is an array consisting of <br> 1)	“rel: self” which is a self-link to the Organization itself <br> 2)	“rel: nextLevelChildren” which is a link to the next level of the Organization’s hierarchy |	
+links	|This is an array consisting of <br> 1)	“rel: self” which is a self-link to the Organization itself <br> 2)	“rel: nextLevelChildren” which is a link to the next level of the Organization’s hierarchy |
+region| Region Code| Text	
 
 ## Examples
 
@@ -498,6 +501,7 @@ https://www.census.gov/programs-surveys/geography.html
 
 Date | Version | Description
 ------|---------------|---------
-8/8 | v1.0 | Base Version
+8/8/19 | v1.0 | Base Version
+9/16/19 | v1.1 | Added Region Code <br> Updated rules for multiple CGAC
 
 <p><small><a href="#">Back to top</a></small></p>
