@@ -2783,7 +2783,7 @@ organizationLocationId | string | | No|No| Organization Location ID
 classificationCode | string |  | No | Yes (not required for type= r) | Product Service Code (PSC)
 naics | JSON | NA | NA | NA |
 naics.code | string |  | No | Yes | NAICS Code
-naics.type | string | P  | No | Yes | NAICS Type Note: 'P' must be in upper case
+naics.type | string | Primary  | No | Yes | NAICS Type Note: 'P' must be in upper case
 flags | JSON | NA | NA | NA |
 flags.code | string | Recovery act | No | No | This is a recovery or Reinvestment Act Action
 flags.IsSelected | boolean | default = True | No | No |
