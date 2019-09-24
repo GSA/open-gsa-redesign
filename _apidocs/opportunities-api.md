@@ -2625,6 +2625,7 @@ Examples
 
 ### Create and Update Opportunity Contract JSON
 
+
 <div id="create-update-json">
 <details>
 <summary>Create_Update_Opportunity_Contract_Json</summary>
@@ -2770,6 +2771,8 @@ Examples
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
 -----|-----------|----------------|--------------------------|-----------------------|------------
 type | string | See Notice Types table | Yes | Yes | Notice Type
@@ -2879,6 +2882,8 @@ archived| string| | |No|No| Archived Status
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 requestType | string | publish_request | Yes | Type of request
@@ -2901,6 +2906,8 @@ reason | string |  | No | Publish reason
 </p>
 </details>
 </div>
+
+* Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -2927,6 +2934,8 @@ reason | string |  | Yes | Reason for revision
 </p>
 </details>
 </div>
+
+* Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -2961,6 +2970,8 @@ description | string |  | Yes | Description for cancelation
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 reason | string |  | Yes | Reason for uncanceling
@@ -2991,6 +3002,8 @@ newContractAwardDate | date | YYYY-MM-DD | Yes (if type=a) | New Contract Award 
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 requestType | string | archive_request | Yes | Type of request
@@ -3020,6 +3033,8 @@ reason | string |  | Yes | Archive reason
 </p>
 </details>
 </div>
+
+* Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -3066,7 +3081,7 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
 </details>
 </div>
 
-
+* Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -3124,6 +3139,8 @@ Flash Video (.flv, .f4v)|	video/x-flv
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 attType | string | link, file | Yes | Type of attachment, either link or file
@@ -3150,6 +3167,8 @@ explicitAccess |  |  |  |
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 ivlCreate | string | forcedon, forcedoff | Yes | Indicates whether vendors can indicate interest in the organization’s Opportunities
@@ -3167,6 +3186,8 @@ duns | string | | Yes | DUNS#
 cageCode | string | | No | Cage Code
 
 ### Delete Notice JSON
+
+* Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
