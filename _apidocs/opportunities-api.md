@@ -212,7 +212,7 @@ Examples
     "organizationId": "100120624",
     "naics": [
       {
-        "type": "Primary",
+        "type": "primary",
         "code": [
           "111150"
         ]
@@ -424,7 +424,7 @@ Examples
     },
     "naics": [
       {
-        "type": "Primary",
+        "type": "primary",
         "code": [
           "111150"
         ]
@@ -629,7 +629,7 @@ Examples
     "organizationId": "100120624",
     "naics": [
       {
-        "type": "Primary",
+        "type": "primary",
         "code": [
           "111150"
         ]
@@ -754,7 +754,7 @@ Examples
     "organizationId": "100120624",
     "naics": [
       {
-        "type": "Primary",
+        "type": "primary",
         "code": [
           "111150"
         ]
@@ -851,7 +851,7 @@ Examples
     },
     "naics": [
       {
-        "type": "Primary",
+        "type": "primary",
         "code": [
           "111150"
         ]
@@ -2640,7 +2640,7 @@ Examples
         "organizationId": "100000136",
         "organizationLocationId": "",
         "naics": [{
-            "type": "Primary",
+            "type": "primary",
             "code": ["111150"]
         }],
         "pointOfContact": [{
@@ -2783,7 +2783,7 @@ organizationLocationId | string | | No|No| Organization Location ID
 classificationCode | string |  | No | Yes (not required for type= r) | Product Service Code (PSC)
 naics | JSON | NA | NA | NA |
 naics.code | string |  | No | Yes | NAICS Code
-naics.type | string | Primary  | No | Yes | NAICS Type Note: 'P' must be in upper case
+naics.type | string | primary  | No | Yes | NAICS Type Note: 'p' must be in lower case
 flags | JSON | NA | NA | NA |
 flags.code | string | Recovery act | No | No | This is a recovery or Reinvestment Act Action
 flags.IsSelected | boolean | default = True | No | No |
@@ -3284,7 +3284,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Justification Authority |	This opportunity cannot be published. Justification Authority is not valid field for this opportunity type | Justification Authority only valid for Type "u" Justification and Authorization | Publish
 400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type | Justification Authority Modification Number is only valid for Type "u" Justification and Authorization | Publish
 400|NAICS Code | This opportunity cannot be published. NAICS provided did not match expected codes | NAICS Code is invalid | Create Opportunity, Publish
-400|NAICS Type | $.data.naics[0].type: does not have a value in the enumeration [Primary] | NAICS Type is required | Create Opportunity
+400|NAICS Type | $.data.naics[0].type: does not have a value in the enumeration [primary] | NAICS Type is required | Create Opportunity
 400|Notice Type |	This opportunity cannot be published. The opportunity type `j` is no longer supported	| See Notice Types table for valid notice types |	Publish
 400|Opportunity ID | Opportunity ID for the selected opportunity type already exists | Cannot publish an existing published record | Publish
 400|Opportunity ID | Opportunity cannot be updated | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state  | Revise
