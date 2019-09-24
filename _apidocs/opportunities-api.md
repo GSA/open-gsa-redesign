@@ -1154,7 +1154,6 @@ api_key | query | string | Yes | Valid System Account API Key
 archivedFrom | query | date-time | No | Archive From UTC Date and Time <br />Example: 2018-11-01 00:00:00
 archivedTo | query | date-time | No | Archive To UTC Date and Time <br />Example: 2018-11-01 00:00:00
 awardNumber | query | string | No | Award Number
-cancelled | query | boolean | No | True or false
 doNumber | query | string | No | Delivery Order Number
 includeCount | query | boolean | No | True or false
 keyword | query | string | No | Enter any keyword from the description
@@ -1172,7 +1171,7 @@ responseTo | query | date-time | No | ResponseTo UTC Date and Time <br />Example
 size | query | integer | No | Size limit is 10 by default
 solNumber | query | string | No | Solicitation Number
 sortBy | query | string | No | Sort (-createdOn, -modifiedOn)
-status | query | Array[string] | No | 1.status= active (published, unarchive and uncancelled records)<br/> 2.status=inactive (published, archive and uncancelled records)<br/>3.status=draft (draft records)<br/> 4.status=published (published and unarchive)<br/>5.status=active_cancelled(published, unarchive and cancelled records)<br/>6.status=inactive_cancelled(published, archive and cancelled records)<br/>7. status=archived(published and archived) <br />(comma separated)
+status | query | Array[string] | No | 1.status= active (All published Active Notice)<br/> 2.status=inactive (All archived/inactive notices. (Before it was archived))<br/>3.status=draft (All draft records)<br/> 4.status=published (All published notices) <br/> 5. status=cancelled (All cancelled notices) <br />(comma separated)
 
 <p><small><a href="#">Back to top</a></small></p>
 
