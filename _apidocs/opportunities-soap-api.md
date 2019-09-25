@@ -4648,8 +4648,9 @@ Date | Version | Description
 ------|---------------|---------
 5/10/2019 | v0.1 | Base Version
 7/22/2019 | v0.2 | Workflow Chart Added
-8/01/2019 | v0.3 | Added Future Implementation for IP Address Validation and Type of Connection 
+8/01/2019  | v0.3 | Added Future Implementation for IP Address Validation and Type of Connection 
 8/01/2019 | v0.4 | Added the details for the Solicitation notice type and business rules for nType
 8/19/2019 | v0.5 | SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated <br> User Account Section Updated
 9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions.
+
 <p><small><a href="#">Back to top</a></small></p>
