@@ -3334,7 +3334,7 @@ Date | Version | Description
 8/1/2019 | v0.71 | Added Future Implementation for IP Address Validation and Type of Connection <br> Delete Draft Opportunities Role changed so that CO and Admin can Delete <br> Reason not required for Publish Opportunity
 8/19/2019 | v0.72 | API Names Updated <br> Valid File Types Updated
 8/29/2019| v0.73| Error Codes Added
-8/29/2019| v0.73| Updated the missing description for explicitAccess field in Update Attachment Contract JSON
+8/29/2019| v0.74| Updated the missing description for explicitAccess field in Update Attachment Contract JSON
 
 
 <p><small><a href="#">Back to top</a></small></p>
