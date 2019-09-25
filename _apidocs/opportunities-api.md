@@ -212,7 +212,7 @@ Examples
     "organizationId": "100120624",
     "naics": [
       {
-        "type": "Primary",
+        "type": "primary",
         "code": [
           "111150"
         ]
@@ -424,7 +424,7 @@ Examples
     },
     "naics": [
       {
-        "type": "Primary",
+        "type": "primary",
         "code": [
           "111150"
         ]
@@ -491,7 +491,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Publish Draft Opportunity Contract JSON](#publish-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -517,13 +517,13 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Create and Publish Opportunity (Coming Soon)
+### Create and Publish Opportunity 
 
 
 ------- | -------
 **Request Type** | POST
 **URL** | /opps/v1/opportunities/createAndPublish
-**Summary** | Creates and publishes contract opportunity
+**Summary** | Creates and publishes contract opportunity; JSON same as Create and Update API
 **Consumes** | application/json
 **Produces** | JSON
 
@@ -629,7 +629,7 @@ Examples
     "organizationId": "100120624",
     "naics": [
       {
-        "type": "Primary",
+        "type": "primary",
         "code": [
           "111150"
         ]
@@ -754,7 +754,7 @@ Examples
     "organizationId": "100120624",
     "naics": [
       {
-        "type": "Primary",
+        "type": "primary",
         "code": [
           "111150"
         ]
@@ -851,7 +851,7 @@ Examples
     },
     "naics": [
       {
-        "type": "Primary",
+        "type": "primary",
         "code": [
           "111150"
         ]
@@ -1154,7 +1154,7 @@ api_key | query | string | Yes | Valid System Account API Key
 archivedFrom | query | date-time | No | Archive From UTC Date and Time <br />Example: 2018-11-01 00:00:00
 archivedTo | query | date-time | No | Archive To UTC Date and Time <br />Example: 2018-11-01 00:00:00
 awardNumber | query | string | No | Award Number
-cancelled | query | boolean | No | True or false
+cancelled (will be deprecated) | query | boolean | No | True or false
 doNumber | query | string | No | Delivery Order Number
 includeCount | query | boolean | No | True or false
 keyword | query | string | No | Enter any keyword from the description
@@ -1172,7 +1172,7 @@ responseTo | query | date-time | No | ResponseTo UTC Date and Time <br />Example
 size | query | integer | No | Size limit is 10 by default
 solNumber | query | string | No | Solicitation Number
 sortBy | query | string | No | Sort (-createdOn, -modifiedOn)
-status | query | Array[string] | No | 1.status= active (published, unarchive and uncancelled records)<br/> 2.status=inactive (published, archive and uncancelled records)<br/>3.status=draft (draft records)<br/> 4.status=published (published and unarchive)<br/>5.status=active_cancelled(published, unarchive and cancelled records)<br/>6.status=inactive_cancelled(published, archive and cancelled records)<br/>7. status=archived(published and archived) <br />(comma separated)
+status (To be updated) | query | Array[string] | No | 1.status= active (published, unarchive and uncancelled records)<br/> 2.status=inactive (published, archive and uncancelled records)<br/>3.status=draft (draft records)<br/> 4.status=published (published and unarchive)<br/>5.status=active_cancelled(published, unarchive and cancelled records)<br/>6.status=inactive_cancelled(published, archive and cancelled records)<br/>7. status=archived(published and archived) <br />(comma separated)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2625,6 +2625,7 @@ Examples
 
 ### Create and Update Opportunity Contract JSON
 
+
 <div id="create-update-json">
 <details>
 <summary>Create_Update_Opportunity_Contract_Json</summary>
@@ -2639,7 +2640,7 @@ Examples
         "organizationId": "100000136",
         "organizationLocationId": "",
         "naics": [{
-            "type": "Primary",
+            "type": "primary",
             "code": ["111150"]
         }],
         "pointOfContact": [{
@@ -2770,6 +2771,8 @@ Examples
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
 -----|-----------|----------------|--------------------------|-----------------------|------------
 type | string | See Notice Types table | Yes | Yes | Notice Type
@@ -2780,7 +2783,7 @@ organizationLocationId | string | | No|No| Organization Location ID
 classificationCode | string |  | No | Yes (not required for type= r) | Product Service Code (PSC)
 naics | JSON | NA | NA | NA |
 naics.code | string |  | No | Yes | NAICS Code
-naics.type | string | P  | No | Yes | NAICS Type Note: 'P' must be in upper case
+naics.type | string | primary  | No | Yes | NAICS Type Note: 'p' must be in lower case
 flags | JSON | NA | NA | NA |
 flags.code | string | Recovery act | No | No | This is a recovery or Reinvestment Act Action
 flags.IsSelected | boolean | default = True | No | No |
@@ -2879,10 +2882,12 @@ archived| string| | |No|No| Archived Status
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason | string |  | No | Publish reason
 requestType | string | publish_request | Yes | Type of request
+reason | string |  | No | Publish reason
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2902,10 +2907,12 @@ requestType | string | publish_request | Yes | Type of request
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason | string |  | Yes | Reason for revision
 requestType | string | update_publish_request | Yes | Type of request
+reason | string |  | Yes | Reason for revision
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2928,11 +2935,13 @@ requestType | string | update_publish_request | Yes | Type of request
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 Reason | string |  | Yes | Reason for cancelation
 requestType | string | cancel_request | Yes | Type of request
-Description | string |  | Yes | Description for cancelation
+description | string |  | Yes | Description for cancelation
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2961,11 +2970,13 @@ Description | string |  | Yes | Description for cancelation
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason | string |  | Yes | Reason for uncanceling
+reason | string |  | Yes | Reason for uncanceling
 requestType | string | uncancel_request | Yes | Type of request
-Description | string |  | Yes | Description for uncanceling
+description | string |  | Yes | Description for uncanceling
 newContractAwardDate | date | YYYY-MM-DD | Yes (if unarchiving an award notice) | New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes (if newArchiveType=autocustome) | New Archive Date
 newArchiveType | string | auto15, auto30, autocustom | Yes  | New Archive Type
@@ -2991,10 +3002,12 @@ newContractAwardDate | date | YYYY-MM-DD | Yes (if type=a) | New Contract Award 
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason | string |  | Yes | Archive reason
 requestType | string | archive_request | Yes | Type of request
+reason | string |  | Yes | Archive reason
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3021,9 +3034,11 @@ requestType | string | archive_request | Yes | Type of request
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason | string |  | Yes | Reason for uncanceling
+reason | string |  | Yes | Reason for uncanceling
 requestType | string | unarchive_request | Yes | Type of request
 newContractAwardDate | date | YYYY-MM-DD | Yes (if unarchiving an award notice) | New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes (if newArchiveType=autocustom) | New Archive Date
@@ -3066,7 +3081,7 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
 </details>
 </div>
 
-
+* Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
@@ -3124,13 +3139,15 @@ Flash Video (.flv, .f4v)|	video/x-flv
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 attType | string | link, file | Yes | Type of attachment, either link or file
 link | string |  | Yes (if attType=link) | Resource link or URL
 packageAccessLevel | string | public,private(default public) | No | Type of access to file or link
 resourceName | string |  | Yes (if attType=file) | Name of file
-explicitAccess |  |  |  |
+explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3150,6 +3167,8 @@ explicitAccess |  |  |  |
 </details>
 </div>
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 ivlCreate | string | forcedon, forcedoff | Yes | Indicates whether vendors can indicate interest in the organization’s Opportunities
@@ -3168,11 +3187,13 @@ cageCode | string | | No | Cage Code
 
 ### Delete Notice JSON
 
+* Field headers in the table must match with field headers shown in JSON example  
+
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason|	string|	|	Yes|	Reason for deletion
+reason|	string|	|	Yes|	Reason for deletion
 requestType	|string	|delete_request |Yes	|Type of request
-Description	|string|		|Yes|	Description for deletion of a notice
+description	|string|		|Yes|	Description for deletion of a notice
 title	|string	|	|No|	
 newArchiveDate|	date|	YYYY-MM-DD|	No|	New Archive Date
 newArchiveType|	string|	|	No|	New Archive Type
@@ -3263,7 +3284,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Justification Authority |	This opportunity cannot be published. Justification Authority is not valid field for this opportunity type | Justification Authority only valid for Type "u" Justification and Authorization | Publish
 400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type | Justification Authority Modification Number is only valid for Type "u" Justification and Authorization | Publish
 400|NAICS Code | This opportunity cannot be published. NAICS provided did not match expected codes | NAICS Code is invalid | Create Opportunity, Publish
-400|NAICS Type | $.data.naics[0].type: does not have a value in the enumeration [Primary] | NAICS Type is required | Create Opportunity
+400|NAICS Type | $.data.naics[0].type: does not have a value in the enumeration [primary] | NAICS Type is required | Create Opportunity
 400|Notice Type |	This opportunity cannot be published. The opportunity type `j` is no longer supported	| See Notice Types table for valid notice types |	Publish
 400|Opportunity ID | Opportunity ID for the selected opportunity type already exists | Cannot publish an existing published record | Publish
 400|Opportunity ID | Opportunity cannot be updated | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state  | Revise
@@ -3313,5 +3334,7 @@ Date | Version | Description
 8/1/2019 | v0.71 | Added Future Implementation for IP Address Validation and Type of Connection <br> Delete Draft Opportunities Role changed so that CO and Admin can Delete <br> Reason not required for Publish Opportunity
 8/19/2019 | v0.72 | API Names Updated <br> Valid File Types Updated
 8/29/2019| v0.73| Error Codes Added
+8/29/2019| v0.74| Updated the missing description for explicitAccess field in Update Attachment Contract JSON
+
 
 <p><small><a href="#">Back to top</a></small></p>

@@ -198,18 +198,18 @@ DocumentLink Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url |	string |	No |	External URL |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-Desc |	string |	No |	Description/Title |	255 characters
+url |	string |	Yes |	External URL |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+Desc |	string |	Yes |	Description/Title |	255 characters
 
 DocumentFile Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No |	File Name |	255 characters
-filedata |	base64binary |	No |	File Data |	100 MB
+filename |	string |	Yes |	File Name |	255 characters
+filedata |	base64binary |	Yes |	File Data |	100 MB
 desc |	string |	No |	Description |	255 characters
-explicit_access |	boolean |	No |	Explicit Access | Defaults to 'false'
-export_controlled |	boolean	|No |	Export Controlled |
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Delete Notice/ Document Package <br>(deleteNoticeOrDocumentPackage)
 
@@ -231,9 +231,9 @@ DeleteNoticeOrDocumentPackage Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-solnbr |	string |	no |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
+solnbr |	string |	Yes, if Non-Award |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
 ntype |	string |	no |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
-awdnbr |  string | no | Award # |	255 characters
+awdnbr |  string | Yes, if Award| Award # |	255 characters
 deletetype |	string |	no |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachment. Defaults to “notice” if not provided
 deletemethod |	string | no | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
 
@@ -259,8 +259,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date |	date |	No |	Posting Date | YYYYMMDD
 solnbr | string |	Yes |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
-ntype |	string | no |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
-archdate | date |	no | New Archive Date – If none provided, notice will archive immediately | YYYYMMDD
+ntype |	string | No |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
+archdate | date |	No | New Archive Date – If none provided, notice will archive immediately | YYYYMMDD
 officeid | string |	No |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
 
 ### Cancel Notice<br> (CancelNotice)
@@ -291,7 +291,7 @@ solnbr |string | Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9
 ntype | string | No |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice,  “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
 awdnbr | string |	No | Award # |255 characters
 archdate | date |	No | Archive Date | YYYYMMDD
-contact | string | Yes | Contact Info | 65535 characters
+contact | string | No | Contact Info | 65535 characters
 desc | string | Yes |	Cancellation Description | 65535 characters
 
 ## Contracting Officer/Contracting <br>Specialist Method Details
@@ -356,19 +356,18 @@ DocumentLink Complex Type Definition: This field is not implemented
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url | string | No |	External URL | 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc | string |	No | Description/Title | 255 characters
+url | string | Yes |	External URL | 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc | string |	Yes | Description/Title | 255 characters
 
 DocumentFile Complex Type Definition: This field is not implemented
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename | string |	No | File Name | 255 characters
-filedata | base64binary |	No | File Data | 100 MB
+filename | string |	Yes | File Name | 255 characters
+filedata | base64binary |	Yes | File Data | 100 MB
 desc | string |	No | Description | 255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
-
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Combined/Synopsis<br> (submitCombined)
 
@@ -428,19 +427,18 @@ DocumentLink Complex Type Definition: This field is not implemented
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	| string | No |	External URL | 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc | string |	No | Description/Title | 255 characters
+url	| string | Yes |	External URL | 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc | string |	Yes | Description/Title | 255 characters
 
 DocumentFile Complex Type Definition: This field is not implemented
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename | string | No | File Name | 255 characters
-filedata | base64binary |	No | File Data | 100 MB
+filename | string | Yes | File Name | 255 characters
+filedata | base64binary |	Yes | File Data | 100 MB
 desc | string |	No | Description | 255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
-
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Modification/Amendment <br> (submitMod)
 
@@ -501,18 +499,18 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url | 	string	| No |	External URL |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc |	string |	No |	Description/Title |	255 characters
+url | 	string	| Yes |	External URL |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc |	string |	Yes |	Description/Title |	255 characters
 
 DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string	| No | 	File Name |	255 characters
-filedata |	base64binary |	No |	File Data	| 100 MB
+filename |	string	| Yes | 	File Name |	255 characters
+filedata |	base64binary |	Yes |	File Data	| 100 MB
 desc |	string |	No |	Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Justification and Authorization <br> (J&A) Notice (submitJA)
 
@@ -575,18 +573,18 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url |	string	| No |	External URL	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc |	string |	No |	Description/Title |	255 characters
+url |	string	| Yes |	External URL	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc |	string |	Yes |	Description/Title |	255 characters
 
 DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string	| No |	File Name	| 255 characters
-filedata |	base64binary |	No |	File Data	| 100 MB
+filename |	string	| Yes |	File Name	| 255 characters
+filedata |	base64binary |	Yes |	File Data	| 100 MB
 desc	| string |	No |	Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Sources Sought Notice <br> (submitSourcesSought)
 
@@ -646,18 +644,18 @@ DocumentLink Complex Type Definition: This field is not implemented
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	| string	| No |	External URL	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc |	string	| No	| Description/Title |	255 characters
+url	| string	| Yes |	External URL	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc |	string	| Yes	| Description/Title |	255 characters
 
 DocumentFile Complex Type Definition: This field is not implemented
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No |	File Name |	255 characters
-filedata |	base64binary |	No	| File Data |	100 MB
+filename |	string |	Yes |	File Name |	255 characters
+filedata |	base64binary |	Yes	| File Data |	100 MB
 desc	| string |	No	 | Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Foreign Government Standard <br> (submitForeignGovernment)
 
@@ -716,18 +714,18 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	|string|	No	|External URL	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc	|string	|No	|Description/Title	|255 characters
+url	|string|	Yes	|External URL	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc	|string	|Yes	|Description/Title	|255 characters
 
 DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No |	File Name |	255 characters
-filedata |	base64binary |	No	| File Data |	100 MB
+filename |	string |	Yes |	File Name |	255 characters
+filedata |	base64binary |	Yes	| File Data |	100 MB
 desc	| string |	No	 | Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Sale of Surplus Property Notice <br> (submitSaleOfSurplus)
 
@@ -782,18 +780,18 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url|	string|	No|	External URL	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc	|string|	No|	Description/Title	|255 characters
+url|	string|	Yes|	External URL	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc	|string|	Yes|	Description/Title	|255 characters
 
 DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No |	File Name |	255 characters
-filedata |	base64binary |	No	| File Data |	100 MB
+filename |	string |	Yes |	File Name |	255 characters
+filedata |	base64binary |	Yes	| File Data |	100 MB
 desc	| string |	No	 | Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Solicitation <br> (submitSolicitation)
 
@@ -853,20 +851,18 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	| string | No |	External URL | 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc | string |	No | Description/Title | 255 characters
+url	| string | Yes |	External URL | 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc | string |	Yes | Description/Title | 255 characters
 
 DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename | string | No | File Name | 255 characters
-filedata | base64binary |	No | File Data | 100 MB
+filename | string | Yes | File Name | 255 characters
+filedata | base64binary |	Yes | File Data | 100 MB
 desc | string |	No | Description | 255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
-
-
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Intent to Bundle Requirements <br> (DoD- Funded) (submitITB)
 
@@ -925,16 +921,16 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url|	string|	No	|External URL|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc|	string|	No|	Description/Title	|255 characters
+url|	string|	Yes	|External URL|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc|	string|	Yes|	Description/Title	|255 characters
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No |	File Name |	255 characters
-filedata |	base64binary |	No	| File Data |	100 MB
+filename |	string |	Yes |	File Name |	255 characters
+filedata |	base64binary |	Yes	| File Data |	100 MB
 desc	| string |	No	 | Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Fair Opportunity / Limited Sources <br> Justification (submitFairOpp)
 
@@ -1022,16 +1018,16 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	|string|	No	|External URL	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc|	string|	No|	Description/Title|	255 characters
+url	|string|	Yes	|External URL	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc|	string|	Yes|	Description/Title|	255 characters
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No |	File Name |	255 characters
-filedata |	base64binary |	No	| File Data |	100 MB
+filename |	string |	Yes |	File Name |	255 characters
+filedata |	base64binary |	Yes	| File Data |	100 MB
 desc	| string |	No	 | Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Document Packages <br> (submitDocumentsAndLinksToNotice)
 
@@ -1064,18 +1060,18 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	|string	|No|	External URL|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc|	string|	No|	Description/Title	|255 characters
+url	|string	|Yes|	External URL|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc|	string|	Yes|	Description/Title	|255 characters
 
 DocumentFile Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No |	File Name |	255 characters
-filedata |	base64binary |	No	| File Data |	100 MB
+filename |	string |	Yes |	File Name |	255 characters
+filedata |	base64binary |	Yes	| File Data |	100 MB
 desc	| string |	No	 | Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Unarchive Notice <br> (unarchiveNotice)
 
@@ -1098,7 +1094,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 ntype	|string	|No	|Base Notice Type	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
 awdnbr	|string|	No|	Award #|	255 characters
-archdate	|date|	No|	New Archive Date|	YYYYMMDD
+archdate	|date|	Yes|	New Archive Date|	YYYYMMDD
 
 ### Secure Document Package <br> (attachSecureDocumentPackagesToNotice)
 
@@ -2858,11 +2854,14 @@ Note: This service gets a list of all notices
    <soapenv:Body>
       <sam:archiveNotice soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
          <data xsi:type="sam:ArchiveNotice">
+            <!--Optional:-->
             <date xsi:type="xsd:string"></date>
+            <!--Optional:-->
             <officeid xsi:type="xsd:string">100525144</officeid>
             <solnbr xsi:type="xsd:string">testDm12</solnbr>
             <!--Optional:-->
             <ntype xsi:type="xsd:string">COMBINE</ntype>
+            <!--Optional:-->
             <archdate xsi:type="xsd:date"></archdate>
          </data>
       </sam:archiveNotice>
@@ -3026,8 +3025,10 @@ Note: This service gets a list of all notices
    <soapenv:Body>
       <sam:unarchiveNotice soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
          <data xsi:type="sam:UnarchiveNotice">
-           <officeid xsi:type="xsd:string">100525144</officeid>
+           <!--Optional:-->
+            <officeid xsi:type="xsd:string">100525144</officeid>
             <solnbr xsi:type="xsd:string">testDm13</solnbr>
+            <!--Optional:-->
             <ntype xsi:type="xsd:string"></ntype>
             <!--Optional:-->
             <awdnbr xsi:type="xsd:string"></awdnbr>
@@ -3218,8 +3219,11 @@ Note: This service gets a list of all notices
    <soapenv:Body>
       <sam:cancelNotice soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
          <data xsi:type="sam:CancelNotice">
+           <!--Optional:-->
            <officeid xsi:type="xsd:string">##officeid##</officeid>
+           <!--Optional:-->
             <date xsi:type="xsd:date">##posteddate##</date>
+            <!--Optional:-->
             <subject xsi:type="xsd:string">SOAP_IT_CancelNotice</subject>
             <solnbr xsi:type="xsd:string">##solnum##</solnbr>
             <!--Optional:-->
@@ -3228,6 +3232,7 @@ Note: This service gets a list of all notices
             <awdnbr xsi:type="xsd:string"></awdnbr>
             <!--Optional:-->
             <archdate xsi:type="xsd:string"></archdate>
+            <!--Optional:-->
             <contact xsi:type="xsd:string">test contact</contact>
             <desc xsi:type="xsd:string">test desc</desc>
          </data>
@@ -3603,10 +3608,15 @@ Note: This service gets a list of all notices
        <sam:deleteNoticeOrDocumentPackage soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
          <data xsi:type="sam:DeleteDocument">
             <solnbr xsi:type="xsd:string">542345345345235</solnbr>
+            <!--Optional:-->
             <ntype xsi:type="xsd:string">PRESOL</ntype>
+            <!--Optional:-->
             <deletetype xsi:type="xsd:string">notice</deletetype>
+            <!--Optional:-->
             <deletemethod xsi:type="xsd:string">all</deletemethod>
+            <!--Optional:-->
             <awdnbr xsi:type="xsd:string"></awdnbr>
+            <!--Optional:-->
             <uploadtype xsi:type="xsd:string"></uploadtype>
          </data>
       </sam:deleteNoticeOrDocumentPackage>
@@ -4298,7 +4308,7 @@ Individual business rules per field are listed across each of the fields in belo
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 date|	No|	YYYYMMDD|	Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
-officeid|	No	|20 characters|	1. This field is required<br><br>2. If an invalid officeid is given, then service throws an error<br><br> 3. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 4. Officeid must be associated with user account	|1. Contracting Office is required <br><br>2. Invalid officeid provided<br><br> 3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
+officeid|	No	|20 characters|	1. If an invalid officeid is given, then service throws an error<br><br> 2. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 3. Officeid must be associated with user account	|1. Invalid officeid provided<br><br> 2. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 solnbr|	Yes	|128 characters from the set: a-z A-Z 0-9 - _ ( ) { }	|1a. This required field if not given, service throws an error <br><br>1b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination<br><br> 2. If solicitation & ntype combination is not matched, then service throws an error<br><br> 3. If a space is given along with numbers in this field, then service throws an error	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found for correction<br><br>  3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
 ntype	|No	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "SOL" - for Solicitation|	1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error  |  1. Notice Type value provided is not valid
 uploadtype|	No – May change in future Upload type accepts 2 types – link or file|	A for amendment, S for solicitation or any title for other; 255 characters|	NA|	NA
@@ -4426,7 +4436,7 @@ solnbr|	Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1a. This requ
 officeid|	No	|20 characters|	Officeid must be associated with user account	|NA
 ntype|	No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation |	1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error |  	1. NTYPE value provided is not valid
 awdnbr	|No|	255 characters|	NA|	NA
-archdate|	No|	YYYYMMDD|	1.	If this value is available, this field should meet the character limit/restrictions <br><br>2.	If current date or a past date is provided, then the system throws an error<br><br>  3.	If no archive date is given, then the system throws an error| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2.	New archive date provided is in the past<br><br> 3.	$.reason: null found, string expected. Unable to process request. Please try again
+archdate|	Yes|	YYYYMMDD|	1. This required field should be validated  <br><br>2. If this value is available, this field should meet the character limit/restrictions <br><br>3.	If current date or a past date is provided, then the system throws an error<br><br>  3.	If no archive date is given, then the system throws an error| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2.	New archive date provided is in the past<br><br> 3.	$.reason: null found, string expected. Unable to process request. Please try again
 
 #### cancelNotice
 
@@ -4443,7 +4453,7 @@ solnbr|	Yes	|128 characters from the set: a-z A-Z 0-9 - _ ( ) { }	|1a. This requ
 ntype	|No	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation |	1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error   | 1. Notice Type value provided is not valid
 awdnbr|	No|	255 characters|	NA|	NA
 archdate|	No|	YYYYMMDD|	1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restrictions<br><br> 2.	This date cannot be in past; has to be in future|	1.	DATE field in unexpected format. Expects YYYYMMDD<br><br>  2.	This opportunity cannot be cancelled
-contact|	Yes|	65535 characters Default value: Primary <br><br>Other types : Secondary, Owner|	1. This required field should be validated	|1. Unable to process request. Please try again
+contact|	No|	65535 characters Default value: Primary <br><br>Other types: Secondary, Owner| NA| NA
 desc|	Yes|	65535 characters|	1. This required field should be validated |	1. Unable to process request. Please try again
 
 #### getNoticeData
@@ -4634,9 +4644,9 @@ Date | Version | Description
 ------|---------------|---------
 5/10/2019 | v0.1 | Base Version
 7/22/2019 | v0.2 | Workflow Chart Added
-8/1/2019  | v0.3 | Added Future Implementation for IP Address Validation and Type of Connection 
-8/1/2019  | v0.3 | Added Future Implementation for IP Address Validation and Type of Connection 
+8/01/2019  | v0.3 | Added Future Implementation for IP Address Validation and Type of Connection 
 8/01/2019 | v0.4 | Added the details for the Solicitation notice type and business rules for nType
-8/19/2019 | v0.5| SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated <br> User Account Section Updated
+8/19/2019 | v0.5 | SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated <br> User Account Section Updated
+9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions
 
 <p><small><a href="#">Back to top</a></small></p>
