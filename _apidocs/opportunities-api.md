@@ -523,7 +523,7 @@ Examples
 ------- | -------
 **Request Type** | POST
 **URL** | /opps/v1/opportunities/createAndPublish
-**Summary** | Creates and publishes contract opportunity
+**Summary** | Creates and publishes contract opportunity; JSON same as Create and Update API
 **Consumes** | application/json
 **Produces** | JSON
 
