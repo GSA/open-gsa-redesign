@@ -3147,7 +3147,7 @@ attType | string | link, file | Yes | Type of attachment, either link or file
 link | string |  | Yes (if attType=link) | Resource link or URL
 packageAccessLevel | string | public,private(default public) | No | Type of access to file or link
 resourceName | string |  | Yes (if attType=file) | Name of file
-explicitAccess |  |  |  |
+explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3334,5 +3334,7 @@ Date | Version | Description
 8/1/2019 | v0.71 | Added Future Implementation for IP Address Validation and Type of Connection <br> Delete Draft Opportunities Role changed so that CO and Admin can Delete <br> Reason not required for Publish Opportunity
 8/19/2019 | v0.72 | API Names Updated <br> Valid File Types Updated
 8/29/2019| v0.73| Error Codes Added
+8/29/2019| v0.73| Updated the missing description for explicitAccess field in Update Attachment Contract JSON
+
 
 <p><small><a href="#">Back to top</a></small></p>

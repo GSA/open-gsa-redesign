@@ -208,8 +208,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes |	File Data |	100 MB
 desc |	string |	No |	Description |	255 characters
-explicit_access |	boolean |	No |	Explicit Access | Defaults to 'false'
-export_controlled |	boolean	|No |	Export Controlled |
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Delete Notice/ Document Package <br>(deleteNoticeOrDocumentPackage)
 
@@ -366,9 +366,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 filename | string |	Yes | File Name | 255 characters
 filedata | base64binary |	Yes | File Data | 100 MB
 desc | string |	No | Description | 255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
-
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Combined/Synopsis<br> (submitCombined)
 
@@ -438,9 +437,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 filename | string | Yes | File Name | 255 characters
 filedata | base64binary |	Yes | File Data | 100 MB
 desc | string |	No | Description | 255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
-
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Modification/Amendment <br> (submitMod)
 
@@ -511,8 +509,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 filename |	string	| Yes | 	File Name |	255 characters
 filedata |	base64binary |	Yes |	File Data	| 100 MB
 desc |	string |	No |	Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Justification and Authorization <br> (J&A) Notice (submitJA)
 
@@ -585,8 +583,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 filename |	string	| Yes |	File Name	| 255 characters
 filedata |	base64binary |	Yes |	File Data	| 100 MB
 desc	| string |	No |	Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Sources Sought Notice <br> (submitSourcesSought)
 
@@ -656,8 +654,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	100 MB
 desc	| string |	No	 | Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Foreign Government Standard <br> (submitForeignGovernment)
 
@@ -726,8 +724,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	100 MB
 desc	| string |	No	 | Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Sale of Surplus Property Notice <br> (submitSaleOfSurplus)
 
@@ -792,8 +790,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	100 MB
 desc	| string |	No	 | Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Solicitation <br> (submitSolicitation)
 
@@ -863,10 +861,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 filename | string | Yes | File Name | 255 characters
 filedata | base64binary |	Yes | File Data | 100 MB
 desc | string |	No | Description | 255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
-
-
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Intent to Bundle Requirements <br> (DoD- Funded) (submitITB)
 
@@ -933,8 +929,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	100 MB
 desc	| string |	No	 | Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Fair Opportunity / Limited Sources <br> Justification (submitFairOpp)
 
@@ -1030,8 +1026,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	100 MB
 desc	| string |	No	 | Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Document Packages <br> (submitDocumentsAndLinksToNotice)
 
@@ -1074,8 +1070,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	100 MB
 desc	| string |	No	 | Description |	255 characters
-explicit_access | boolean |	No |	Explicit Access| 	Defaults to ‘false’
-export_controlled	| boolean	| No	| Export Controlled	|
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
 ### Unarchive Notice <br> (unarchiveNotice)
 
@@ -4651,6 +4647,6 @@ Date | Version | Description
 8/01/2019  | v0.3 | Added Future Implementation for IP Address Validation and Type of Connection 
 8/01/2019 | v0.4 | Added the details for the Solicitation notice type and business rules for nType
 8/19/2019 | v0.5 | SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated <br> User Account Section Updated
-9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions.
+9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions
 
 <p><small><a href="#">Back to top</a></small></p>
