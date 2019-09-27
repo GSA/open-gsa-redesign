@@ -1,28 +1,24 @@
 openapi: '3.0.0'
 info:
   title: Code.gov API
-  description: 'Code.gov API documentation.'
-  version: 2.0.0
+  description: 'Code.gov API documentation. To use this utility, first click on the `authorize` button and input an API key. Once authorized, queries can be made below. More information and source can be found here: https://github.com/GSA/code-gov-api'
+  version: 2.0.1
   license:
     name: CC0
     url: 'https://creativecommons.org/publicdomain/zero/1.0/'
 security:
   - ApiKeyAuth: []
 servers:
-  - url: '{protocol}://api.code.gov'
+  - url: 'https://api.code.gov'
     description: Default endpoint for Code.gov API
-    variables:
-      protocol:
-        enum:
-          - https
-        default: https
-      api_key:
-        default: ""
+
 paths:
   /repos:
     get:
       summary: Get a list of repos
       description: Get list of repositories indexed by Code.gov.
+      security:
+        - ApiKeyAuth: []
       tags:
         - repo
       parameters:
@@ -430,6 +426,8 @@ components:
       type: apiKey
       in: query
       name: api_key
+      description: Required for use. `DEMO_KEY` can be used for testing. A full key can be obtained https://from api.data.gov/signup/
+      
   schemas:
     Repo:
       type: object
