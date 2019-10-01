@@ -6,19 +6,16 @@ info:
   license:
     name: CC0
     url: 'https://creativecommons.org/publicdomain/zero/1.0/'
-security:
-  - ApiKeyAuth: []
 servers:
-  - url: 'https://api.code.gov'
+  - url: 'https://api.code.gov/v2'
     description: Default endpoint for Code.gov API
-
+security: 
+  - ApiKeyAuth: []
 paths:
   /repos:
     get:
       summary: Get a list of repos
       description: Get list of repositories indexed by Code.gov.
-      security:
-        - ApiKeyAuth: []
       tags:
         - repo
       parameters:
@@ -193,8 +190,6 @@ paths:
         - terms
       summary: Get a list of terms
       description: Get a list of terms that were extracted from the repositories indexed.
-      security:
-        - ApiKeyAuth: []
       parameters:
         - in: query
           name: term
@@ -238,8 +233,6 @@ paths:
       summary: Get a list of agencies
       tags:
         - agencies
-      security:
-        - ApiKeyAuth: []
       parameters:
         - name: size
           in: query
@@ -272,8 +265,6 @@ paths:
         - languages
       summary: Get a list of programming languages found in our code inventory.
       description: This returns a list of the programming languages that are used in the indexed code inventory. When a repo is index the programming language is extracted written to a file.
-      security:
-        - ApiKeyAuth: []
       parameters:
         - name: size
           in: query
@@ -306,8 +297,6 @@ paths:
         - repo-json
       summary: Get the JSON schema for a repo
       description: ''
-      security:
-        - ApiKeyAuth: []
       responses:
         '200':
           description: successful operation
@@ -325,8 +314,6 @@ paths:
         - status-json
       summary: Get a list of agencies with their compliance status
       description: 'Get a list of agencies with their Federal Source Code Policy compliance status '
-      security:
-        - ApiKeyAuth: []
       responses:
         '200':
           description: successful operation
@@ -407,8 +394,6 @@ paths:
         - version
       summary: Get the version of this API
       description: ''
-      security:
-        - ApiKeyAuth: []
       responses:
         '200':
           description: successful operation
@@ -424,10 +409,9 @@ components:
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
-      in: query
-      name: api_key
-      description: Required for use. `DEMO_KEY` can be used for testing. A full key can be obtained https://from api.data.gov/signup/
-      
+      in: header
+      name: X-API-KEY
+      description: Required for use. `DEMO_KEY` can be used for testing. A full use key can be obtained https://from api.data.gov/signup/
   schemas:
     Repo:
       type: object
