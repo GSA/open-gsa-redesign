@@ -2939,7 +2939,7 @@ reason | string |  | Yes | Reason for revision
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-Reason | string |  | Yes | Reason for cancelation
+reason | string |  | Yes | Reason for cancelation
 requestType | string | cancel_request | Yes | Type of request
 description | string |  | Yes | Description for cancelation
 
