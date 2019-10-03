@@ -1094,7 +1094,7 @@ _NA_
 
 ------- | -------
 **Request Type** | POST
-**URL** |	/opps/v1/opportunities/{opportunityId}/requests
+**URL** |	/opps/v1/api/{opportunityId}/requests
 **Summary** | Deletes all the versions or latest version of a notice
 **Consumes** | application/json
 **Produces** | JSON
@@ -2395,7 +2395,7 @@ N/A
 
 ------- | -------
 **Request Type** | GET
-**URL** | /v1/opportunities/access/{opportunityId}/accessRequest
+**URL** | /opps/v1/api/opportunities/access/{opportunityId}/accessRequest
 **Summary** | Summary	Get Authorized Party list for the explicit access requests submitted to an Opportunity
 **Consumes** | application/json
 **Produces** | JSON
@@ -2475,7 +2475,7 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | /v1/opportunities/access/{opportunityId}/accessRequest
+**URL** | /opps/v1/api/opportunities/access/{opportunityId}/accessRequest
 **Summary** | Add a Vendor as an Authorized Party for a notice to grant access to all the secured attachments across all the versions . This API will create and approve the request for the vendor.
 **Consumes** | application/json
 **Produces** | JSON
