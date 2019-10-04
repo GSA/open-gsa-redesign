@@ -48,7 +48,7 @@ The rate limit for the API is currently 5,000 calls/day and 5 calls per 5 second
 
 #### Example URL
 
-The URLs provided below are for initial browsing of API data. This DEMO_KEY will not work after a certain number of attempts. Users can request a personal key from [api.data.gov](https://api.data.gov/signup/). The personal key will have more data access capabilities. The example links below are for demo only; actual API calls should use the `x-api-key` header as described in the [API Key](#api-key) section.
+The URLs provided below are for initial browsing of API data. This DEMO_KEY will not work after a certain number of attempts. Users can request a personal key from [the signup form below](#api-key). The personal key will have more data access capabilities. The example links below are for demo only; actual API calls should use the `x-api-key` header as described in the [API Key](#api-key) section.
 
 * [https://api.code.gov/v2/repos?api_key=DEMO_KEY](https://api.code.gov/repos?api_key=DEMO_KEY)
 * [https://api.code.gov/v2/terms?api_key=DEMO_KEY](https://api.code.gov/terms?api_key=DEMO_KEY)
