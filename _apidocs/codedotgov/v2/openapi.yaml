@@ -411,7 +411,7 @@ components:
       type: apiKey
       in: header
       name: X-API-KEY
-      description: Required for use. `DEMO_KEY` can be used for testing. A full use key can be obtained https://from api.data.gov/signup/
+      description: Required for use. `DEMO_KEY` can be used for testing. A full use key can be obtained https://open.gsa.gov/api/codedotgov#api-key
   schemas:
     Repo:
       type: object
