@@ -1154,7 +1154,6 @@ api_key | query | string | Yes | Valid System Account API Key
 archivedFrom | query | date-time | No | Archive From UTC Date and Time <br />Example: 2018-11-01 00:00:00
 archivedTo | query | date-time | No | Archive To UTC Date and Time <br />Example: 2018-11-01 00:00:00
 awardNumber | query | string | No | Award Number
-cancelled (will be deprecated) | query | boolean | No | True or false
 doNumber | query | string | No | Delivery Order Number
 includeCount | query | boolean | No | True or false
 keyword | query | string | No | Enter any keyword from the description
@@ -1172,7 +1171,7 @@ responseTo | query | date-time | No | ResponseTo UTC Date and Time <br />Example
 size | query | integer | No | Size limit is 10 by default
 solNumber | query | string | No | Solicitation Number
 sortBy | query | string | No | Sort (-createdOn, -modifiedOn)
-status (To be updated) | query | Array[string] | No | 1.status= active (published, unarchive and uncancelled records)<br/> 2.status=inactive (published, archive and uncancelled records)<br/>3.status=draft (draft records)<br/> 4.status=published (published and unarchive)<br/>5.status=active_cancelled(published, unarchive and cancelled records)<br/>6.status=inactive_cancelled(published, archive and cancelled records)<br/>7. status=archived(published and archived) <br />(comma separated)
+status| query | Array[string] | No | Active - All Published Active Notice <br> Draft - All Draft Notice <br> Published - All Published Notice <br> Inactive - All archived/Inactive Notice (before archive) <br> Cancelled - All Cancelled Notice <br/>(comma separated)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3335,6 +3334,6 @@ Date | Version | Description
 8/19/2019 | v0.72 | API Names Updated <br> Valid File Types Updated
 8/29/2019| v0.73| Error Codes Added
 8/29/2019| v0.74| Updated the missing description for explicitAccess field in Update Attachment Contract JSON
-
+10/9/2019 | v0.75| Get List of Opportunities API Parameter Changes (cancelled field removed/status field updated)
 
 <p><small><a href="#">Back to top</a></small></p>
