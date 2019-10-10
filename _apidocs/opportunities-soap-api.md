@@ -4103,7 +4103,7 @@ link|	No|	255 characters, consist of a restricted set of characters (see URL spe
 email|	Yes <br> No if type=Award|	128 characters|	NA	 |NA
 links	|No	|Array of links	|NA	|NA
 files|	No|	Array of files|	NA|	NA
-setaside|	No|	See SetAside Section for valid values|	NA	|NA
+setaside|	No|	See Set-Aside Values section for valid codes|	NA	|NA
 popaddress|	No|	65535 characters|	This is a free Text. No validation is performed on this field	 |
 popzip	|No	|5 digits|	NA|	NA
 popcountry|	Yes – Only Award type No – For rest	|32 characters|	1. This required field should be validated for Award type only|	1. Award Details Section - Country is a required field
@@ -4135,7 +4135,7 @@ link|	No|	255 characters, consist of a restricted set of characters (see URL spe
 email	| Yes <br> No if type=Award|	128 characters|		| NA
 links|	No|	Array of links|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
 files|	No|	Array of files|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
-setaside|	No|	See SetAside section for valid values	|NA	|NA
+setaside|	No|	See Set-Aside Values section for valid codes	|NA	|NA
 popaddress|	No|	65535 characters|	This is a free Text. No validation is performed on this field	 |
 popzip|	No|	5 digits|	NA|	NA
 popcountry	|No|	32 characters|	NA|	NA
@@ -4164,7 +4164,7 @@ link	|No|	255 characters, consist of a restricted set of characters (see URL spe
 email	|Yes <br> No if type=Award	|128 characters	|NA	| NA
 links|	No	|Array of links|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 files	|No	|Array of files|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
-setaside|	No|	See SetAside section for valid values|	NA|	NA
+setaside|	No|	See Set-Aside Values section for valid codes|	NA|	NA
 popaddress|	No|	65535 characters|	This is a free Text. No validation is performed on this field	 |
 popzip|	No|	5 digits|	NA|	NA
 popcountry|	No|	32 characters	|NA	|NA
@@ -4223,7 +4223,7 @@ link|	No	|255 characters, consist of a restricted set of characters (see URL spe
 links	|No	|Collection	|1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 files|	No|	 |	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 email	|Yes <br> No if type=Award|128 characters|	NA|NA
-setaside|	No|	See SetAside section for valid values|	NA|	NA
+setaside|	No|	See Set-Aside Values section for valid codes|	NA|	NA
 popaddress|	No	|65535 characters|	NA|	NA
 popzip	|No	|5 digit	|NA |	NA
 popcountry|	No	|32 characters|	NA|	NA
@@ -4299,7 +4299,7 @@ link|	No|	255 characters, consist of a restricted set of characters (see URL spe
 email|	Yes <br> No if type=Award|	128 characters|	NA|	NA
 links|	No|	 	|1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 files|	No|	| 	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
-setaside|	No|	See SetAside section for valid values|	NA|	NA
+setaside|	No|	See Set-Aside Values section for valid codes|	NA|	NA
 recovery_act	|No	|True or False|	NA|	NA
 correction|	No|	True or False <br><br> If correcting a previously submitted award notice, specify true and the system will lookup the award by award number and sol number if applicable|	If correction = true, system checks if an opportunity exists or not. If exists, then a new modified record will be posted of the same type and will be set as the latest. If No, then the request will be rejected	 |
 
@@ -4374,7 +4374,7 @@ link	|No|	255 characters, consist of a restricted set of characters (see URL spe
 email	|Yes	|128 characters	|1. This field is required <br><br>  2. If an invalid email address is provided, then the service throws an error	| 1. Primary Contact - Email is required <br><br>  2. Primary Contact - Please enter a valid Internet email address. Format: username@host.domain
 links|	No	|Array of links|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 files	|No	|Array of files|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
-setaside|	No|	See SetAside section for valid values|	NA|	NA
+setaside|	No|	See Set-Aside Values section for valid codes|	NA|	NA
 popaddress|	No|	65535 characters|	This is a free Text. No validation is performed on this field	 |
 popzip|	No|	5 digits|	NA|	NA
 popcountry|	No|	32 characters	|NA	|NA
