@@ -210,7 +210,7 @@ Date | Version | Description
 ------|---------------|---------
 06/03/2019 | v1.0 | Base Version
 08/15/2019 | v1.1 | * Added Beta.SAM.Gov to the page title. <br><br> *Updated the Alpha endpoint to v1. <br><br> *Added Secondary Address fields.
-09/25/2019 | v1.0 | * Beta endpoints for public FOUO and Sensitive API were updated from version 0.9 to version 1.0.
+09/25/2019 | v1.0 | Beta endpoints for public FOUO and Sensitive API were updated from version 0.9 to version 1.0.
 
 
 
