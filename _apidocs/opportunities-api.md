@@ -3333,7 +3333,7 @@ Date | Version | Description
 8/19/2019 | v0.72 | API Names Updated <br> Valid File Types Updated
 8/29/2019| v0.73| Error Codes Added
 8/29/2019| v0.74| Updated the missing description for explicitAccess field in Update Attachment Contract JSON
-10/10/2019 | v0.8 | updated the set Aside values with the latest codes
+10/10/2019 | v0.8 | Updated the Set-Aside values with the latest codes
 
 
 <p><small><a href="#">Back to top</a></small></p>

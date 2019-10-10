@@ -4653,5 +4653,6 @@ Date | Version | Description
 8/01/2019 | v0.4 | Added the details for the Solicitation notice type and business rules for nType
 8/19/2019 | v0.5 | SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated <br> User Account Section Updated
 9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions
-10/10/2019 | v0.7 | updated the set Aside values with the latest codes
+10/10/2019 | v0.7 | Updated the Set-Aside values with the latest codes
+
 <p><small><a href="#">Back to top</a></small></p>
