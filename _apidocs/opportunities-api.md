@@ -115,7 +115,7 @@ The API includes specific methods to submit each of the base notice types (i.e. 
 <p><small><a href="#">Back to top</a></small></p>
 
 #### Set-Aside Values
-Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field.
+Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field. Use the Set-Aside codes to submit notices.
 
 Refer below table for valid Set-Aside values:
 
@@ -287,7 +287,7 @@ Examples
       }
     },
     "solicitation": {
-      "setAside": "10",
+      "setAside": "SBA",
       "deadlines": {
         "response": "2019-08-08T11:20:20-05:00"
       }
@@ -374,7 +374,7 @@ Examples
         }
     },
      "solicitation": {
-      "setAside": "10",
+      "setAside": "SBA",
       "deadlines": {
         "response": "2019-08-08"
       }
@@ -704,7 +704,7 @@ Examples
       }
     },
     "solicitation": {
-      "setAside": "10",
+      "setAside": "SBA",
       "deadlines": {
         "response": "2019-08-08T11:20:20-05:00"
       }
@@ -797,7 +797,7 @@ Examples
       }
     },
     "solicitation": {
-      "setAside": "10",
+      "setAside": "SBA",
       "deadlines": {
         "response": "2019-08-08"
       }
@@ -2714,7 +2714,7 @@ Examples
                 }
         }, 
           "solicitation": {
-            "setAside": "10",
+            "setAside": "SBA",
             "deadlines": {
                 "response": "2019-08-08"
             }
