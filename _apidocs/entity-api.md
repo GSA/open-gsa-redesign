@@ -30,11 +30,11 @@ The Entity Management API will allow users to request Public Entity Information 
 **IMPORTANT:**  Please note the version number of the endpoint you are using as it is subject to change.  Version 0.9 of the API will be deprecated in Alpha starting the evening of 8/14/19 and Version 1 will be made active.  The same will occur in Beta on a date to be determined.
 
 Public Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value >
+   * Beta: https://api.sam.gov/prod/entity-information/v1/api/entities?api_key= < value >
    * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v1/api/entities?api_key= < value >
 
 FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key= < value > 
+   * Beta: https://api.sam.gov/prod/entity-information/v1/api/entities?api_key= < value > 
    * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v1/api/entities?api_key= < value >
 
 Sensitive Entity Details  can be accessed from Beta or Alpha via the following end points:
@@ -10368,11 +10368,11 @@ physicalAddressCountryCode is USA, countryOfIncorporationCode is USA, registrati
 NE or LA or TX, cageCode is not null, dodaac is null, and primaryNaics is 812112 or 484121 or 336411.
 
 **API Request:**
-https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&q=((entityStructureCode=2J OR entityStructureCode=8H) 
+https://api.sam.gov/prod/entity-information/v1/api/entities?api_key=<API Key>&q=((entityStructureCode=2J OR entityStructureCode=8H) 
 AND physicalAddressCountryCode=USA AND countryOfIncorporationCode=USA)&registrationDate=[01/01/2018,04/23/2019]&servedDisasterStateCode=[NE~LA~TX]&cageCode=!""
 &dodaac=""&primaryNaics=[812112~484121~336411]&includeSections=entityRegistration,coreData,assertions
 <br>OR<br>
-https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&entityStructureCode=[2J~8H]&physicalAddressCountryCode=USA
+https://api.sam.gov/prod/entity-information/v1/api/entities?api_key=<API Key>&entityStructureCode=[2J~8H]&physicalAddressCountryCode=USA
 &countryOfIncorporationCode=USA&registrationDate=[01/01/2018,04/23/2019]&servedDisasterStateCode=[NE~LA~TX]&cageCode=!""&dodaac=""&primaryNaics=[812112~484121~336411]
 &includeSections=entityRegistration,coreData,assertions
 
@@ -10380,7 +10380,7 @@ https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&
 To get a CSV file of active Entity records that have a DBAN and that cater to GEOPHYSICAL SURVEYING AND MAPPING SERVICES.
 
 **API request:** 
-https://api.sam.gov/prod/entity-information/v0.9/api/entities?api_key=<API Key>&samExtractCode=A&q=”GEOPHYSICAL SURVEYING AND MAPPING SERVICES”&dbaName=!””&format=CSV
+https://api.sam.gov/prod/entity-information/v1/api/entities?api_key=<API Key>&samExtractCode=A&q=”GEOPHYSICAL SURVEYING AND MAPPING SERVICES”&dbaName=!””&format=CSV
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -10403,5 +10403,5 @@ You can view the full details of the differences between the SAM legacy API and 
 | 06/03/2019 | v0.9 | Base Version |
 | 07/03/2019 | v1.0 | * Alpha endpoint for the Sensitive version of the API has been added.<br><br>  * agencyBusinessPurposeCode, agencyBusinessPurposeDesc, bondingLevels, companySecurityLevelCode, companySecurityLevelDesc, highestEmployeeSecurityLevelCode, highestEmployeeSecurityLevelDesc were added to FOUO and Sensitive api's schema. <br><br>  * New Filters agencyBusinessPurposeCode, companySecurityLevelCode and highestEmployeeSecurityLevelCode have been added for FOUO and Sensitive api's. <br><br>  * country and stateOrProvince were updated to countryCode and stateOrProvinceCode across all versions of api.<br><br>  * ediInformationFlag was added across all versions of api.<br><br>  * geographicalAreaServedmetropolitanStatisticalAreaCode, geographicalAreaServedmetropolitanStatisticalAreaName were added across all versions of api instead of geographicalAreaServedMSAName.<br><br>  * certificationEntryDate, certificationExitDate were added to SBA Business Types across all versions of api instead of expirationDate.<br><br>  * updateDate was added as a filter across all versions of api.|
 | 08/15/2019 | v1.1 | * Alpha endpoints for public and FOUO API were updated from version 0.9 to version 1.0.<br><br> *Warning message added under Getting Started to inform users of API version changes.<br><br> *Added Beta.SAM.Gov to the page title.|
-
+| 09/25/2019 | v1.2 | Beta endpoints for public and FOUO API were updated from version 0.9 to version 1.0. |
 <p><small><a href="#">Back to top</a></small></p>
