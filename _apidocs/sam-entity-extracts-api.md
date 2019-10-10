@@ -90,7 +90,6 @@ Generating a System Account API Key:
 <tr>
 <td>api_key</td>
 <td>Required element to identify API users and validate role-based access<br />
-Example: df234124fgv8v23il4lk12l341kkl0124kc
 </td>
 </tr>
 <tr>
