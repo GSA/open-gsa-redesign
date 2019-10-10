@@ -94,21 +94,26 @@ Several methods pertaining to submitting Contract Opportunities involve the Set-
 
 Refer below table for mapping between legacy SetAside Values to modern SetAside Value:
 
-Modern SetAside Values | Legacy SetAside values
-------- | -------
-Total Small Business Set-Aside (FAR 19.5)	| Total Small Business
-Partial Small Business Set-Aside (FAR 19.5) |	Partial Small Business
-8(a) Set-Aside (FAR 19.8)	| Competitive 8(a)
-8(a) Sole Source (FAR 19.8)	| Competitive 8(a)
-Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13) |	HUBZone
-Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13) |	HUBZone
-Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14) |	Service-Disabled Veteran-Owned Small Business
-Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14) |	Service-Disabled Veteran-Owned Small Business
-Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15) |	Women-Owned Small Business
-Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15) |	Women-Owned Small Business
-Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15) |	Economically Disadvantaged Women-Owned Small Business
-Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15) |	Economically Disadvantaged Women-Owned Small Business
-Local Area Set-Aside (FAR 26.2)	|
+Code | Modern SetAside Values | Legacy SetAside values
+-----|------- | -------
+SBA     | Total Small Business Set-Aside (FAR 19.5)	| Total Small Business
+SBP     | Partial Small Business Set-Aside (FAR 19.5) |	Partial Small Business
+8A      | 8(a) Set-Aside (FAR 19.8)	| Competitive 8(a)
+8AN     | 8(a) Sole Source (FAR 19.8)	| Competitive 8(a)
+HZC     | Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13) |	HUBZone
+HZS     | Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13) |	HUBZone
+SDVOSBC | Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14) |	Service-Disabled Veteran-Owned Small Business
+SDVOSBS | Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14) |	Service-Disabled Veteran-Owned Small Business
+WOSB    | Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15) |	Women-Owned Small Business
+WOSBSS  | Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15) |	Women-Owned Small Business
+EDWOSB  | Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15) |	Economically Disadvantaged Women-Owned Small Business
+EDWOSBSS | Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15) |	Economically Disadvantaged Women-Owned Small Business
+LAS | Local Area Set-Aside (FAR 26.2) |
+IEE | Indian Economic Enterprise (IEE) Set-Aside (specific to Department of Interior) |
+ISBEE | Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior) |
+BICiv | Buy Indian Set-Aside (specific to Department of Health and Human Services, Indian Health Services) |
+VSA | Veteran-Owned Small Business Set-Aside (specific to Department of Veterans Affairs) |
+VSS | Veteran-Owned Small Business Sole source (specific to Department of Veterans Affairs) |
 
 ### Notice Types
 The web service API includes specific methods to submit each of the base notice types (i.e. presolicitation, combined/synopsis, award, etc.). You will find these outlined in the sections below.
@@ -213,7 +218,7 @@ export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP 
 
 ### Delete Notice/ Document Package <br>(deleteNoticeOrDocumentPackage)
 
-This method is used to permanently delete an entire notice or delete attachments across all versions of the notice. Modifications/Amendments are recommended instead of using this method. Specify the solicitation number or award number to delete a notice. To delete attachments, also specify the attachment deletetype.
+This method is used to permanently delete a notice or delete all attachments/links for all the versions or the latest version of the notice. Modifications/Amendments are recommended instead of using this method. Specify the solicitation number or award number to delete a notice. To delete attachments, also specify the attachment deletetype.
 
 Input Parameters:
 
@@ -4648,5 +4653,5 @@ Date | Version | Description
 8/01/2019 | v0.4 | Added the details for the Solicitation notice type and business rules for nType
 8/19/2019 | v0.5 | SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated <br> User Account Section Updated
 9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions
-
+10/10/2019 | v0.7 | updated the set Aside values with the latest codes
 <p><small><a href="#">Back to top</a></small></p>
