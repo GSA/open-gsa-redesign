@@ -239,7 +239,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 solnbr |	string |	Yes, if Non-Award |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
 ntype |	string |	no |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
 awdnbr |  string | Yes, if Award| Award # |	255 characters
-deletetype |	string |	no |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachment. Defaults to “notice” if not provided
+deletetype |	string |	no |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachments/links. Defaults to “notice” if not provided
 deletemethod |	string | no | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
 
 ### Archive Notice <br>(ArchiveNotice)
