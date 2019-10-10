@@ -90,7 +90,7 @@ messages | string [] - array of strings
 **Note**: Some methods will have a different response value format due to the nature of the data being returned. These custom cases will be outlined below.
 
 ### Set-Aside Values
-Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field.
+Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field. Use the Set-Aside codes to submit notices.
 
 Refer below table for mapping between legacy SetAside Values to modern SetAside Value:
 
@@ -181,7 +181,7 @@ link |	GovURL |	No |	Government Link	255 characters, consist of a restricted set
 email |	GovEmail |	No |	Government Email |	128 characters
 links |	DocumentLink[] |	No |	Array Of links |
 files |	DocumentFile[] |	No |	Array of files |
-setaside |	string |	No |	Set Aside |	See Set Aside Value Section for valid values
+setaside |	string |	No |	Set-Aside code |	See Set Aside Value Section for valid values
 recovery_act |	boolean |	No |	Recovery Act |	True or False
 correction |	boolean |	No |	Correction of previous Award |	True or False <br> If correcting a previously submitted award notice, specify true and the system will lookup the award by award number and sol number if applicable.
 
@@ -337,7 +337,7 @@ link | GovURL – complex type | No |	Government Link has URL & description |	25
 email |	GovEmail – complex type |	No | Government Email | 128 characters
 links | DocumentLink[] | No |	Array of links |
 files |	DocumentFile[] | No |	Array of files |
-setaside | string |	No | Set-aside | See Set Aside Values Section for valid values
+setaside | string |	No | Set-Aside code | See Set Aside Values Section for valid values
 popaddress | string |	No | Pop Add | 65535 characters
 popzip |string | No |	Pop Zip | 5 digits
 popcountry | string |	No | Pop Country | 32 characters
@@ -408,7 +408,7 @@ link | GovURL – complex type | No |	Government Link	| 255 characters, consist 
 email |	GovEmail – complex type |	No | Government Email | 128 characters
 links |	DocumentLink[] | No |	Array Of links |
 files |	DocumentFile[] | No |	Array of files |
-setaside | string |	No | Set-aside | See Set Aside Values section for valid values
+setaside | string |	No | Set-Aside code | See Set Aside Values section for valid values
 popaddress | string |	No | Pop Add | 65535 characters
 popzip | string |	No | Pop Zip | 5 digits
 popcountry | string |	No | Pop Country | 32 characters
@@ -480,7 +480,7 @@ link	| GovURL – complex type |	no |	Government Link |	255 characters, consist 
 email |	GovEmail – complex type |	no |	Government Email |	128 characters
 links |	DocumentLink[] |	no |	Array Of links |
 files |	DocumentFile[] |	no |	Array of files |
-setaside |	string |	no |	Set-aside |	See Set Aside Value Section for valid values
+setaside |	string |	no |	Set-Aside code |	See Set Aside Value Section for valid values
 popaddress |	string |	no	 | Pop Add |	65535 characters
 popzip	| string |	no	 | Pop Zip |	5 digits
 popcountry |	string |	no	 | Pop Country |	32 characters
@@ -625,7 +625,7 @@ link |	GovURL – complex type |	No |	Government Link	| 255 characters, consist 
 email	| GovEmail – complex type |	No |	Government Email	| 128 characters
 links |	DocumentLink[] |	No |	Array Of links	|
 files |	DocumentFile[] |	No |	Array of files |
-setaside	| string |	No |	Set-aside |	See Set Aside Value Section
+setaside	| string |	No |	Set-Aside code |	See Set Aside Value Section
 popaddress |	string |	No |	Pop Add |	65535 characters
 popzip |	string	| No |	Pop Zip	| 5 digits
 popcountry |	string |	No |	Pop Country |	32 characters
@@ -832,7 +832,7 @@ link | GovURL – complex type | No |	Government Link	| 255 characters, consist 
 email |	GovEmail – complex type |	Yes | Government Email | 128 characters
 links |	DocumentLink[] | No |	Array Of links |
 files |	DocumentFile[] | No |	Array of files |
-setaside | string |	No | Set-aside | See Set Aside Values section for valid values
+setaside | string |	No | Set-Aside code | See Set Aside Values section for valid values
 popaddress | string |	No | Pop Add | 65535 characters
 popzip | string |	No | Pop Zip | 5 digits
 popcountry | string |	No | Pop Country | 32 characters
@@ -996,7 +996,7 @@ link|	GovernmentURL|	No|	Government Link	|255 characters, consist of a restricte
 email|	GovernmentEmail|	No|	Government Email	|128 characters
 links	|DocumentLink []|	no	|Array Of links	|
 files	|DocumentFile[]|	no|	Array of files	|
-setaside|	string|	no|	Set-aside types|	See Set Aside Section for valid values
+setaside|	string|	no|	Set-Aside code |	See Set Aside Section for valid values
 popaddress|	string|	No|	POP Address	|65535 characters
 popzip|	string	|No	|POP Zip	|5 digits
 popcountry|	string|	Yes – For wards; No – For rest|	POP Country|	32 characters
@@ -1527,7 +1527,7 @@ desc|	string|	Main Description
 link|	GovernmentURL	|Government Link
 email|	Government Email|	Government Email
 files	|DocumentPack ageData[]|	Array of package data if applicable
-setaside	|string	|Set-aside types
+setaside	|string	|Set-Aside value
 popaddress	|string	|POP Address
 popzip	|string|	POP Zip
 popcountry|	string|	POP Country
