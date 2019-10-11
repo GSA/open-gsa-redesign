@@ -13,7 +13,7 @@ The Opportunity Management SOAP APIs will allow authorized users to submit and r
 
 ## Web Services <br> Description Language (WSDL)
 To view the WSDL for all available methods and object definitions, refer below links:
-* Alpha WSDL Link: https://api-alpha.sam.gov/prodlike/ws/services.wsdl <br><a href="v1/services.wsdl.xml" download="services.wsdl">Download</a>
+* Alpha WSDL Link: https://api-alpha.sam.gov/prodlike/ws/services.wsdl <br>
 * Beta WSDL Link: Coming Soon
 
 ## SOAP Web Services Workflow Chart
@@ -90,25 +90,30 @@ messages | string [] - array of strings
 **Note**: Some methods will have a different response value format due to the nature of the data being returned. These custom cases will be outlined below.
 
 ### Set-Aside Values
-Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field.
+Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field. Use the Set-Aside codes to submit notices.
 
 Refer below table for mapping between legacy SetAside Values to modern SetAside Value:
 
-Modern SetAside Values | Legacy SetAside values
-------- | -------
-Total Small Business Set-Aside (FAR 19.5)	| Total Small Business
-Partial Small Business Set-Aside (FAR 19.5) |	Partial Small Business
-8(a) Set-Aside (FAR 19.8)	| Competitive 8(a)
-8(a) Sole Source (FAR 19.8)	| Competitive 8(a)
-Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13) |	HUBZone
-Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13) |	HUBZone
-Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14) |	Service-Disabled Veteran-Owned Small Business
-Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14) |	Service-Disabled Veteran-Owned Small Business
-Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15) |	Women-Owned Small Business
-Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15) |	Women-Owned Small Business
-Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15) |	Economically Disadvantaged Women-Owned Small Business
-Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15) |	Economically Disadvantaged Women-Owned Small Business
-Local Area Set-Aside (FAR 26.2)	|
+Code | Modern SetAside Values | Legacy SetAside values
+-----|------- | -------
+SBA     | Total Small Business Set-Aside (FAR 19.5)	| Total Small Business
+SBP     | Partial Small Business Set-Aside (FAR 19.5) |	Partial Small Business
+8A      | 8(a) Set-Aside (FAR 19.8)	| Competitive 8(a)
+8AN     | 8(a) Sole Source (FAR 19.8)	| Competitive 8(a)
+HZC     | Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13) |	HUBZone
+HZS     | Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13) |	HUBZone
+SDVOSBC | Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14) |	Service-Disabled Veteran-Owned Small Business
+SDVOSBS | Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14) |	Service-Disabled Veteran-Owned Small Business
+WOSB    | Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15) |	Women-Owned Small Business
+WOSBSS  | Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15) |	Women-Owned Small Business
+EDWOSB  | Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15) |	Economically Disadvantaged Women-Owned Small Business
+EDWOSBSS | Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15) |	Economically Disadvantaged Women-Owned Small Business
+LAS | Local Area Set-Aside (FAR 26.2) |
+IEE | Indian Economic Enterprise (IEE) Set-Aside (specific to Department of Interior) |
+ISBEE | Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior) |
+BICiv | Buy Indian Set-Aside (specific to Department of Health and Human Services, Indian Health Services) |
+VSA | Veteran-Owned Small Business Set-Aside (specific to Department of Veterans Affairs) |
+VSS | Veteran-Owned Small Business Sole source (specific to Department of Veterans Affairs) |
 
 ### Notice Types
 The web service API includes specific methods to submit each of the base notice types (i.e. presolicitation, combined/synopsis, award, etc.). You will find these outlined in the sections below.
@@ -176,7 +181,7 @@ link |	GovURL |	No |	Government Link	255 characters, consist of a restricted set
 email |	GovEmail |	No |	Government Email |	128 characters
 links |	DocumentLink[] |	No |	Array Of links |
 files |	DocumentFile[] |	No |	Array of files |
-setaside |	string |	No |	Set Aside |	See Set Aside Value Section for valid values
+setaside |	string |	No |	Set-Aside code |	See Set Aside Value Section for valid codes
 recovery_act |	boolean |	No |	Recovery Act |	True or False
 correction |	boolean |	No |	Correction of previous Award |	True or False <br> If correcting a previously submitted award notice, specify true and the system will lookup the award by award number and sol number if applicable.
 
@@ -213,7 +218,7 @@ export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP 
 
 ### Delete Notice/ Document Package <br>(deleteNoticeOrDocumentPackage)
 
-This method is used to permanently delete an entire notice or delete attachments across all versions of the notice. Modifications/Amendments are recommended instead of using this method. Specify the solicitation number or award number to delete a notice. To delete attachments, also specify the attachment deletetype.
+This method is used to permanently delete a notice or delete all attachments/links for all the versions or the latest version of the notice. Modifications/Amendments are recommended instead of using this method. Specify the solicitation number or award number to delete a notice. To delete attachments, also specify the attachment deletetype.
 
 Input Parameters:
 
@@ -234,7 +239,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 solnbr |	string |	Yes, if Non-Award |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
 ntype |	string |	no |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
 awdnbr |  string | Yes, if Award| Award # |	255 characters
-deletetype |	string |	no |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachment. Defaults to “notice” if not provided
+deletetype |	string |	no |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachments/links. Defaults to “notice” if not provided
 deletemethod |	string | no | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
 
 ### Archive Notice <br>(ArchiveNotice)
@@ -332,7 +337,7 @@ link | GovURL – complex type | No |	Government Link has URL & description |	25
 email |	GovEmail – complex type |	No | Government Email | 128 characters
 links | DocumentLink[] | No |	Array of links |
 files |	DocumentFile[] | No |	Array of files |
-setaside | string |	No | Set-aside | See Set Aside Values Section for valid values
+setaside | string |	No | Set-Aside code | See Set Aside Values Section for valid codes
 popaddress | string |	No | Pop Add | 65535 characters
 popzip |string | No |	Pop Zip | 5 digits
 popcountry | string |	No | Pop Country | 32 characters
@@ -403,7 +408,7 @@ link | GovURL – complex type | No |	Government Link	| 255 characters, consist 
 email |	GovEmail – complex type |	No | Government Email | 128 characters
 links |	DocumentLink[] | No |	Array Of links |
 files |	DocumentFile[] | No |	Array of files |
-setaside | string |	No | Set-aside | See Set Aside Values section for valid values
+setaside | string |	No | Set-Aside code | See Set Aside Values section for valid codes
 popaddress | string |	No | Pop Add | 65535 characters
 popzip | string |	No | Pop Zip | 5 digits
 popcountry | string |	No | Pop Country | 32 characters
@@ -475,7 +480,7 @@ link	| GovURL – complex type |	no |	Government Link |	255 characters, consist 
 email |	GovEmail – complex type |	no |	Government Email |	128 characters
 links |	DocumentLink[] |	no |	Array Of links |
 files |	DocumentFile[] |	no |	Array of files |
-setaside |	string |	no |	Set-aside |	See Set Aside Value Section for valid values
+setaside |	string |	no |	Set-Aside code |	See Set Aside Value Section for valid codes
 popaddress |	string |	no	 | Pop Add |	65535 characters
 popzip	| string |	no	 | Pop Zip |	5 digits
 popcountry |	string |	no	 | Pop Country |	32 characters
@@ -620,7 +625,7 @@ link |	GovURL – complex type |	No |	Government Link	| 255 characters, consist 
 email	| GovEmail – complex type |	No |	Government Email	| 128 characters
 links |	DocumentLink[] |	No |	Array Of links	|
 files |	DocumentFile[] |	No |	Array of files |
-setaside	| string |	No |	Set-aside |	See Set Aside Value Section
+setaside	| string |	No |	Set-Aside code |	See Set Aside Value Section for valid codes
 popaddress |	string |	No |	Pop Add |	65535 characters
 popzip |	string	| No |	Pop Zip	| 5 digits
 popcountry |	string |	No |	Pop Country |	32 characters
@@ -827,7 +832,7 @@ link | GovURL – complex type | No |	Government Link	| 255 characters, consist 
 email |	GovEmail – complex type |	Yes | Government Email | 128 characters
 links |	DocumentLink[] | No |	Array Of links |
 files |	DocumentFile[] | No |	Array of files |
-setaside | string |	No | Set-aside | See Set Aside Values section for valid values
+setaside | string |	No | Set-Aside code | See Set Aside Values section for valid codes
 popaddress | string |	No | Pop Add | 65535 characters
 popzip | string |	No | Pop Zip | 5 digits
 popcountry | string |	No | Pop Country | 32 characters
@@ -991,7 +996,7 @@ link|	GovernmentURL|	No|	Government Link	|255 characters, consist of a restricte
 email|	GovernmentEmail|	No|	Government Email	|128 characters
 links	|DocumentLink []|	no	|Array Of links	|
 files	|DocumentFile[]|	no|	Array of files	|
-setaside|	string|	no|	Set-aside types|	See Set Aside Section for valid values
+setaside|	string|	no|	Set-Aside code |	See Set Aside Section for valid codes
 popaddress|	string|	No|	POP Address	|65535 characters
 popzip|	string	|No	|POP Zip	|5 digits
 popcountry|	string|	Yes – For wards; No – For rest|	POP Country|	32 characters
@@ -1522,7 +1527,7 @@ desc|	string|	Main Description
 link|	GovernmentURL	|Government Link
 email|	Government Email|	Government Email
 files	|DocumentPack ageData[]|	Array of package data if applicable
-setaside	|string	|Set-aside types
+setaside	|string	|Set-Aside value
 popaddress	|string	|POP Address
 popzip	|string|	POP Zip
 popcountry|	string|	POP Country
@@ -1677,7 +1682,7 @@ Please note that variances may exist between SOAP requests generated by differen
                         <export_controlled xsi:type="xsd:boolean"> </export_controlled>          
                         </DocumentFile>
                         </files>
-                        <setaside xsi:type="xsd:string"></setaside>
+                        <setaside xsi:type="xsd:string">SBA</setaside>
                         <!--Optional:-->
                         <popaddress xsi:type="xsd:string"></popaddress>
                         <!--Optional:-->
@@ -1775,7 +1780,7 @@ Please note that variances may exist between SOAP requests generated by differen
             <!--Optional:-->
             <files xsi:type="sam:ArrayOfDocumentFile" soapenc:arrayType="sam:DocumentFile[]"/>
             <!--Optional:-->
-            <setaside xsi:type="xsd:string"></setaside>
+            <setaside xsi:type="xsd:string">SBA</setaside>
             <!--Optional:-->
             <popaddress xsi:type="xsd:string"></popaddress>
             <!--Optional:-->
@@ -2689,7 +2694,7 @@ Note: This service gets a list of all notices
                       </DocumentFile>
                   </files>
                  <!--Optional:-->
-                 <setaside xsi:type="xsd:string">1000002</setaside>
+                 <setaside xsi:type="xsd:string">SBA</setaside>
                  <!--Optional:-->
                  <popaddress xsi:type="xsd:string">124356 Rockridge Dr Ashburn</popaddress>
                  <!--Optional:-->
@@ -2952,7 +2957,7 @@ Note: This service gets a list of all notices
             <!--Optional:-->
             <links xsi:type="sam:ArrayOfDocumentLink" soapenc:arrayType="sam:DocumentLink[]"/>
             <files xsi:type="sam:ArrayOfDocumentFile" soapenc:arrayType="sam:DocumentFile[]"/>
-            <setaside xsi:type="xsd:string"></setaside>
+            <setaside xsi:type="xsd:string">SBA</setaside>
             <!--Optional:-->
             <popaddress xsi:type="xsd:string"></popaddress>
             <!--Optional:-->
@@ -4098,7 +4103,7 @@ link|	No|	255 characters, consist of a restricted set of characters (see URL spe
 email|	Yes <br> No if type=Award|	128 characters|	NA	 |NA
 links	|No	|Array of links	|NA	|NA
 files|	No|	Array of files|	NA|	NA
-setaside|	No|	See SetAside Section for valid values|	NA	|NA
+setaside|	No|	See Set-Aside Values section for valid codes|	NA	|NA
 popaddress|	No|	65535 characters|	This is a free Text. No validation is performed on this field	 |
 popzip	|No	|5 digits|	NA|	NA
 popcountry|	Yes – Only Award type No – For rest	|32 characters|	1. This required field should be validated for Award type only|	1. Award Details Section - Country is a required field
@@ -4130,7 +4135,7 @@ link|	No|	255 characters, consist of a restricted set of characters (see URL spe
 email	| Yes <br> No if type=Award|	128 characters|		| NA
 links|	No|	Array of links|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
 files|	No|	Array of files|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
-setaside|	No|	See SetAside section for valid values	|NA	|NA
+setaside|	No|	See Set-Aside Values section for valid codes	|NA	|NA
 popaddress|	No|	65535 characters|	This is a free Text. No validation is performed on this field	 |
 popzip|	No|	5 digits|	NA|	NA
 popcountry	|No|	32 characters|	NA|	NA
@@ -4159,7 +4164,7 @@ link	|No|	255 characters, consist of a restricted set of characters (see URL spe
 email	|Yes <br> No if type=Award	|128 characters	|NA	| NA
 links|	No	|Array of links|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 files	|No	|Array of files|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
-setaside|	No|	See SetAside section for valid values|	NA|	NA
+setaside|	No|	See Set-Aside Values section for valid codes|	NA|	NA
 popaddress|	No|	65535 characters|	This is a free Text. No validation is performed on this field	 |
 popzip|	No|	5 digits|	NA|	NA
 popcountry|	No|	32 characters	|NA	|NA
@@ -4218,7 +4223,7 @@ link|	No	|255 characters, consist of a restricted set of characters (see URL spe
 links	|No	|Collection	|1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 files|	No|	 |	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 email	|Yes <br> No if type=Award|128 characters|	NA|NA
-setaside|	No|	See SetAside section for valid values|	NA|	NA
+setaside|	No|	See Set-Aside Values section for valid codes|	NA|	NA
 popaddress|	No	|65535 characters|	NA|	NA
 popzip	|No	|5 digit	|NA |	NA
 popcountry|	No	|32 characters|	NA|	NA
@@ -4294,7 +4299,7 @@ link|	No|	255 characters, consist of a restricted set of characters (see URL spe
 email|	Yes <br> No if type=Award|	128 characters|	NA|	NA
 links|	No|	 	|1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 files|	No|	| 	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
-setaside|	No|	See SetAside section for valid values|	NA|	NA
+setaside|	No|	See Set-Aside Values section for valid codes|	NA|	NA
 recovery_act	|No	|True or False|	NA|	NA
 correction|	No|	True or False <br><br> If correcting a previously submitted award notice, specify true and the system will lookup the award by award number and sol number if applicable|	If correction = true, system checks if an opportunity exists or not. If exists, then a new modified record will be posted of the same type and will be set as the latest. If No, then the request will be rejected	 |
 
@@ -4369,7 +4374,7 @@ link	|No|	255 characters, consist of a restricted set of characters (see URL spe
 email	|Yes	|128 characters	|1. This field is required <br><br>  2. If an invalid email address is provided, then the service throws an error	| 1. Primary Contact - Email is required <br><br>  2. Primary Contact - Please enter a valid Internet email address. Format: username@host.domain
 links|	No	|Array of links|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 files	|No	|Array of files|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
-setaside|	No|	See SetAside section for valid values|	NA|	NA
+setaside|	No|	See Set-Aside Values section for valid codes|	NA|	NA
 popaddress|	No|	65535 characters|	This is a free Text. No validation is performed on this field	 |
 popzip|	No|	5 digits|	NA|	NA
 popcountry|	No|	32 characters	|NA	|NA
@@ -4408,7 +4413,7 @@ Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Erro
 solnbr|	Yes if non-award|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }| 1. This required field should be validated. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found<br><br>  3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
 awdnbr|	Yes if award|	255 characters| If neither solnbr or awdnbr is provided, then the system throws an error|	Solicitation Number or Award Number is required
 ntype|No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation |	1. If an invalid ntype is provided, then service throws an error |  	1. NTYPE value provided is not valid
-deletetype|	no|	Valid values: “notice” to delete the notice, “attachment” to delete attachments from the notice|	1. If an invalid deletetype is provided, then service throws an error  |	Delete type provided is not “notice” or “attachment”
+deletetype|	no|	Valid values: “notice” to delete the notice, “attachment” to delete attachments and links from the notice|	1. If an invalid deletetype is provided, then service throws an error  |	Delete type provided is not “notice” or “attachment”
 deletemethod|	no|	Valid Values: “all” to delete all versions or “latest” to delete latest version	|1. If an invalid deletemethod is provided, then service throws an error  |	Delete method provided is not “latest” or “all”
 
 #### archiveNotice
@@ -4648,5 +4653,6 @@ Date | Version | Description
 8/01/2019 | v0.4 | Added the details for the Solicitation notice type and business rules for nType
 8/19/2019 | v0.5 | SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated <br> User Account Section Updated
 9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions
+10/10/2019 | v0.7 | Updated the Set-Aside values with the latest codes
 
 <p><small><a href="#">Back to top</a></small></p>
