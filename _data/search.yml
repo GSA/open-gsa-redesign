@@ -13085,10 +13085,6 @@
   contact:
     email: github-admins@gsa.gov
   url: https://github.com/GSA/icpa_user_training
-- title: Acquisition Gateway API
-  body: The data for this API comes from the Acquisition Gateway, which is a workspace for acquisition professionals and federal buyers to connect with resources, tools and each other to improve acquisition government-wide.
-  url: https://hallways.cap.gsa.gov/docs/#/api
-  category: APIs
 - title: Analytics.usa.gov API
   body: The data for this API comes from Analytics.usa.gov, which is a unified Google Analytics account for U.S. federal government agencies known as the Digital Analytics Program. This program helps government agencies understand how people find, access, and use government services online. The program does not track individuals, and anonymizes the IP addresses of visitors.
   url: https://analytics.usa.gov/developer
@@ -13132,7 +13128,7 @@
   category: APIs
 - title: Federal Procurement Data System - FPDS API
   body: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
-  url: https://www.fpds.gov/downloads/FPDS-Specifications-WebServices_Integration_Specifications_V1.5.doc
+  url: https://www.fpds.gov/fpdsng_cms/index.php/en/worksite.html
   category: APIs
 - title: Go.USA.gov API
   body: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
@@ -13214,7 +13210,7 @@
     - Sales
 - title: Code.gov API
   body: Provides information from Code.gov, which leverages the power of code sharing and collaboration to help the US Government cut down on duplicative software development and save millions of taxpayer dollars for the American people. 
-  url: https://developers.code.gov
+  url: https://open.gsa.gov/api/codedotgov
   category: APIs
   tags:
     - Code

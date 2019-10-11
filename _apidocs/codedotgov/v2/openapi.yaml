@@ -1,0 +1,583 @@
+openapi: '3.0.0'
+info:
+  title: Code.gov API
+  description: 'Code.gov API documentation. To use this utility, first click on the `authorize` button and input an API key. Once authorized, queries can be made below. More information and source can be found here: https://github.com/GSA/code-gov-api'
+  version: 2.0.1
+  license:
+    name: CC0
+    url: 'https://creativecommons.org/publicdomain/zero/1.0/'
+servers:
+  - url: 'https://api.code.gov/v2'
+    description: Default endpoint for Code.gov API
+security: 
+  - ApiKeyAuth: []
+paths:
+  /repos:
+    get:
+      summary: Get a list of repos
+      description: Get list of repositories indexed by Code.gov.
+      tags:
+        - repo
+      parameters:
+        - name: q
+          in: query
+          description: Text to search for. This will make a full text search on all our index properties. Eg. rest api
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: size
+          description: Sets the size of the results returned. Default is 10.
+          required: false
+          schema:
+            type: number
+        - in: query
+          name: from
+          description: Sets the offset from where to paginate. Default is 0 (first element in the result set).
+          required: false
+          schema:
+            type: number
+        - in: query
+          name: agency.name
+          description: Filters search by the Agency's name. Eg. General Services Administration
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: agency.acronym
+          description: Filters search by the Agency's acronym. Eg. GSA
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: agency.website
+          description: 'Filters search by the Agency''s website URL. Eg. https://gsa.gov'
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: status
+          description: Filters search by the repository's status.
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: vcs
+          description: 'Filters search by the version control system for the repository. Eg. git, svn'
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: name
+          description: Filters search by the repository's name.
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: organization
+          description: Filters search by the repository's organization.
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: tags
+          description: Filters search by the repository's tags.
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: languages
+          description: 'Filters search by programming languages. Eg. Python, Ruby'
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: contact.name
+          description: Filters search by the repository's contact name.
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: contact.email
+          description: Filters search by the repository's contact email.
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: permissions.licenses.name
+          description: Filters search by the repository's license name. Eg. MIT
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: permissions.usageType
+          description: 'Filters search by the repository''s usage type. Eg. openSource, governmentWideReuse'
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: array
+            items:
+              type: string
+            enum:
+              - openSource
+              - governmentWideReuse
+              - exemptByLaw
+              - exemptByNationalSecurity
+              - exemptByAgencySystem
+              - exemptByAgencyMission
+              - exemptByCIO
+        - in: query
+          name: laborHours
+          description: Filters search by the amount of labor hours dedicated to the project.
+          required: false
+          schema:
+            type: number
+        - in: query
+          name: date.created
+          description: 'Filters search by the repository''s created date. You can also use date.created_gte, date.created_lte, date.created_gt, date.created_lt to define ranges. Eg. 2018-02-01'
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: date.lastModified
+          description: 'Filters search by the last date the repository was modified. You can also use date.lastModified_gte, date.lastModified_lte, date.lastModified_gt, date.lastModified_lt to define ranges. Eg. 2018-02-01'
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Repo'
+        '400':
+          description: Invalid
+        '403':
+           $ref: "#/components/responses/UnauthorizedError"
+  '/repos/{repoId}':
+    get:
+      tags:
+        - repo
+      summary: Get information for specified repoId
+      description: Gets the information of a specific repository index with the passed repoId.
+      parameters:
+        - name: repoId
+          in: path
+          description: ID of repo to return
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Repo'
+        '400':
+          description: Invalid ID supplied
+        '403':
+           $ref: "#/components/responses/UnauthorizedError"
+        '404':
+          description: Repo not found
+  /terms:
+    get:
+      tags:
+        - terms
+      summary: Get a list of terms
+      description: Get a list of terms that were extracted from the repositories indexed.
+      parameters:
+        - in: query
+          name: term
+          description: 'Filters the result set by the term value. The API will match the text to any part of the value. Eg. term=ox will return { ... "term": "oxide" ... }'
+          schema:
+            type: string
+          required: false
+        - in: query
+          name: term_type
+          description: Filters the result set by the term type. Eg. term_type=agency.acronym
+          required: false
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: Sets the size of the results returned. Default is 10.
+          required: false
+          schema:
+            type: number
+        - name: from
+          in: query
+          description: Sets the offset from where to paginate. Default is 0 (first element in the result set).
+          required: false
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Term'
+        '400':
+          description: Invalid
+        '403':
+           $ref: "#/components/responses/UnauthorizedError"
+  /agencies:
+    get:
+      summary: Get a list of agencies
+      tags:
+        - agencies
+      parameters:
+        - name: size
+          in: query
+          description: Number of agencies to return
+          required: false
+          schema:
+            type: number
+        - name: from
+          in: query
+          description: Specify an offset to return
+          required: false
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Agency'
+        '400':
+          description: Invalid
+        '401':
+           $ref: "#/components/responses/UnauthorizedError"
+  /languages:
+    get:
+      tags:
+        - languages
+      summary: Get a list of programming languages found in our code inventory.
+      description: This returns a list of the programming languages that are used in the indexed code inventory. When a repo is index the programming language is extracted written to a file.
+      parameters:
+        - name: size
+          in: query
+          description: Number of programming languages to return
+          required: false
+          schema:
+            type: number
+        - name: from
+          in: query
+          description: Specify an offset to return
+          required: false
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+          content:
+            applicaton/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Language'
+        '400':
+          description: Invalid
+        '403':
+           $ref: "#/components/responses/UnauthorizedError"
+  /repo.json:
+    get:
+      tags:
+        - repo-json
+      summary: Get the JSON schema for a repo
+      description: ''
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid
+        '403':
+           $ref: "#/components/responses/UnauthorizedError"
+  /status.json:
+    get:
+      tags:
+        - status-json
+      summary: Get a list of agencies with their compliance status
+      description: 'Get a list of agencies with their Federal Source Code Policy compliance status '
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid
+        '403':
+           $ref: "#/components/responses/UnauthorizedError"
+  /status:
+    get:
+      tags:
+        - status
+      summary: Get an HTML page rendering the agencies status from status.json
+      description: Get an HTML page rendering the agencies status from status.json
+      responses:
+        '200':
+          description: successful operation
+          content:
+            text/html:
+              schema:
+                type: string
+        '400':
+          description: Invalid
+  '/status/{agencyName}/issues':
+    get:
+      tags:
+        - status
+      summary: Get a list of issues for a particular agency
+      description: Get a list of issues for a particular agency. These issues are grouped by software repository.
+      parameters:
+        - name: agencyName
+          in: path
+          description: Agency name
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            text/html:
+              schema:
+                type: string
+        '400':
+          description: Invalid
+        '403':
+           $ref: "#/components/responses/UnauthorizedError"
+  '/status/{agencyName}/fetched':
+    get:
+      tags:
+        - status
+      summary: Get a list of repos by agency
+      description: Lists out all repositories that have been indexed for a given agency.
+      parameters:
+        - name: agencyName
+          in: path
+          description: Agency name
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Repo'
+        '400':
+          description: Invalid
+        '403':
+           $ref: "#/components/responses/UnauthorizedError"
+  /version:
+    get:
+      tags:
+        - version
+      summary: Get the version of this API
+      description: ''
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Version'
+        '400':
+          description: Invalid
+        '403':
+          $ref: "#/components/responses/UnauthorizedError"
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
+      description: Required for use. `DEMO_KEY` can be used for testing. A full use key can be obtained https://open.gsa.gov/api/codedotgov#api-key
+  schemas:
+    Repo:
+      type: object
+      properties:
+        repoID:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        contact:
+          type: object
+          properties:
+            name:
+              type: string
+            email:
+              type: string
+            twitter:
+              type: string
+            phone:
+              type: string
+        agency:
+          type: object
+          properties:
+            name:
+              type: string
+            acronym:
+              type: string
+            website:
+              type: string
+            codeUrl:
+              type: string
+            requirements:
+              type: object
+              properties:
+                agencyWidePolicy:
+                  type: integer
+                openSourceRequirement:
+                  type: integer
+                inventoryRequirement:
+                  type: integer
+                schemaFormat:
+                  type: integer
+                overallCompliance:
+                  type: integer
+            complianceDashboard:
+              type: boolean
+        laborHours:
+          type: integer
+        repositoryURL:
+          type: string
+        homepageURL:
+          type: string
+        permissions:
+          type: object
+          properties:
+            usageType:
+              type: string
+            exemptionText:
+              type: string
+            licenses:
+              type: array
+              items:
+                type: object
+                properties:
+                  URL:
+                    type: string
+                  name:
+                    type: string
+        vcs:
+          type: string
+        disclaimerText:
+          type: string
+        disclaimerURL:
+          type: string
+        relatedCode:
+          type: array
+          items:
+            type: object
+            properties:
+              codeName:
+                type: string
+              codeURL:
+                type: string
+              isGovernmentRepo:
+                type: boolean
+        reusedCode:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              URL:
+                type: string
+        date:
+          type: object
+          properties:
+            created:
+              type: string
+            lastModified:
+              type: string
+            metadataLastUpdated:
+              type: string
+    Term:
+      type: object
+      properties:
+        term_key:
+          type: string
+        term:
+          type: string
+        term_type:
+          type: string
+        count:
+          type: number
+        count_normalized:
+          type: number
+        score:
+          type: number
+    Agency:
+      type: object
+      properties:
+        acronym:
+          type: string
+        name:
+          type: string
+        website:
+          type: string
+        codeUrl:
+          type: string
+        numRepos:
+          type: number
+    Language:
+      type: object
+      properties:
+        name:
+          type: string
+        numRepos:
+          type: number
+    Unauthorized:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    Version:
+      type: object
+      properties:
+        version:
+          type: string
+        git-hash:
+          type: string
+        git-repository:
+          type: string
+  responses:
+    UnauthorizedError:
+      description: API key is missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Unauthorized'
