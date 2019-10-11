@@ -24,10 +24,9 @@ The response will be provided in the JSON format in a paginated manner.
 
 ## Getting Started
 
-**IMPORTANT:**  Please note the version number of the end point you are using as it is subject to change.  Version 0.9 of the API will be deprecated in Alpha starting the evening of 8/14/19 and Version 1 will be made active.  The same will occur in Beta on a date to be determined.
 
 Exclusions API can be accessed from Beta or Alpha via the following end points:
-* Beta: https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key= < value >
+* Beta: https://api.sam.gov/prod/entity-information/v1/api/exclusions?api_key= < value >
 * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v1/api/exclusions?api_key= < value >
 
 Generating a personal API Key:
@@ -179,7 +178,7 @@ Functionality of the Exclusion API has been explained with the following example
 To get Individual or Special Entity Designation Exclusion records that are based off of Korea, that are not excluded by DOJ and that contain CHONG anywhere in the response.
 
 **API request:** 
-https://api.sam.gov/prodlike/entity-information/v0.9/api/exclusions?api_key=<API Key>&classification=[Individual~Special Entity Designation]
+https://api.sam.gov/prodlike/entity-information/v1/api/exclusions?api_key=<API Key>&classification=[Individual~Special Entity Designation]
 &excludingAgencyCode=!DOJ&country=KOR&q=CHONG
 
 **User requirement:** 
@@ -187,7 +186,7 @@ To receive the JSON file downloadable link in the email for only exclusionDetail
 Firm records of type Ineligible (Proceedings Completed) or Prohibition/Restriction that are based off of Korea, China or Germany and that have a non-null ueiDUNS.
 
 **API request:**
-https://api.sam.gov/prod/entity-information/v0.9/api/exclusions?api_key=<API Key>&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm
+https://api.sam.gov/prod/entity-information/v1/api/exclusions?api_key=<API Key>&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm
 &exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=JSON
 &emailId= < a valid email address >
 
@@ -211,5 +210,8 @@ Date | Version | Description
 ------|---------------|---------
 06/03/2019 | v1.0 | Base Version
 08/15/2019 | v1.1 | * Added Beta.SAM.Gov to the page title. <br><br> *Updated the Alpha endpoint to v1. <br><br> *Added Secondary Address fields.
+09/25/2019 | v1.2 | Beta endpoints for public FOUO and Sensitive API were updated from version 0.9 to version 1.0.
+
+
 
 <p><small><a href="#">Back to top</a></small></p>
