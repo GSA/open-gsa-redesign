@@ -13210,7 +13210,7 @@
     - Sales
 - title: Code.gov API
   body: Provides information from Code.gov, which leverages the power of code sharing and collaboration to help the US Government cut down on duplicative software development and save millions of taxpayer dollars for the American people. 
-  url: https://developers.code.gov
+  url: https://open.gsa.gov/api/codedotgov
   category: APIs
   tags:
     - Code
