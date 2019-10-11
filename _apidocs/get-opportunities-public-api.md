@@ -386,6 +386,10 @@ User provides invalid API Key|	An invalid api_key was supplied
 User does not provide any API key	|No api_key was supplied
 User clicks on the description link available in the response and description content is not available	|Description Not Found
 
+## FAQ
+
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
