@@ -88,6 +88,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
+You can download the OpenAPI Specification File <a href="gsa-content-api.swagger.yml">from here (gsa-content-api.swagger.yml)</a>
 <p><small><a href="#">Back to top</a></small></p>
 
 | HTTP Header Name | Description |
