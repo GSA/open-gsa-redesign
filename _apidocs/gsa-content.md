@@ -8,6 +8,8 @@ banner-heading: GSA.gov Content API
 
 The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last. 
 
+You can download the OpenAPI Specification File <a href="https://open.gsa.gov/api/perdiem/gsa-content-api.swagger.yml">from here (gsa-content-api.swagger.yml)</a>
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
@@ -88,7 +90,6 @@ To begin using this API, you will need to register for an API Key. You can sign 
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
-You can download the OpenAPI Specification File <a href="gsa-content-api.swagger.yml">from here (gsa-content-api.swagger.yml)</a>
 <p><small><a href="#">Back to top</a></small></p>
 
 | HTTP Header Name | Description |
