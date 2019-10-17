@@ -1,0 +1,82 @@
+swagger: "2.0"
+info:
+  description: "Swagger documentation for GSA.gov"
+  version: "1.0.0"
+  title: "GSA Content API"
+  contact:
+    email: "EWM@gsa.gov"
+host: "api.gsa.gov"
+basePath: "/technology/gsa-content"
+schemes:
+- "https"
+paths:
+  /v2/by-type/{contentType}/{page}:
+    get:
+      summary: "Get content from GSA.gov"
+      description: "Get content from GSA.gov based on content-type"
+      produces:
+      - "application/xml"
+      parameters:
+      - name: "contentType"
+        in: "path"
+        description: "The machine-name of the desiered content-type to filter by"
+        required: true
+        type: "string"
+      - name: "page"
+        in: "path"
+        description: "Pagination controle"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Node"
+  /v2/by-id/{nodeID}/{page}:
+    get:
+      summary: "Get content from GSA.gov"
+      description: "Get content from GSA.gov based on content-type"
+      produces:
+      - "application/xml"
+      parameters:
+      - name: "nodeID"
+        in: "path"
+        description: "Node ID number"
+        required: true
+        type: "integer"
+      - name: "page"
+        in: "path"
+        description: "Pagination controle"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Node"
+definitions:
+  Node:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+      type:
+        type: "string"
+      created:
+        type: "integer"
+      body:
+        type: "string"
+      content_id:
+        type: "integer"
+      last_updated:
+        type: "integer"
+      author:
+        type: "string"
+      owner:
+        type: "integer"
+      poc:
+        type: "integer"
