@@ -1,0 +1,137 @@
+swagger: "2.0"
+info:
+  title: "GSA Perdiem API"
+  description: "Per Diem Rates are the allowed reimbursement rates for hotel stays and meals for federal travelers. Rates are set for each of the federal government's fiscal years (October 1st to September 30th) GSA is responsible for setting the rates in the continental United States. Many businesses and other organizations adopt these rates as well. This API provides access to the current rate information."
+  version: "1.0.0"
+  contact:
+    email: "EWM@gsa.gov"
+host: "api.gsa.gov"
+basePath: "/travel"
+schemes:
+- "https"
+paths:
+  /perdiem/v2/rates/city/{city}/state/{state}/year/{year}:
+    get:
+      summary: "Get perdiem rates by city/state/year"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "city"
+        in: "path"
+        description: "The city filter by"
+        required: true
+        type: "string"
+      - name: "state"
+        in: "path"
+        description: "The state to filter by"
+        required: true
+        type: "string"
+      - name: "year"
+        in: "path"
+        description: "The fical-year to filter by"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful. Data will be returned in JSON format."
+        400:
+          description: "Bad request. Verify the query string parmaters that were provided."
+        403:
+          description: "API key is not correct or was not provided."
+
+  /perdiem/v2/rates/state/{state}/year/{year}:
+    get:
+      summary: "Get perdiem rates for all counties/cities, by state and year"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "state"
+        in: "path"
+        description: "The state to filter by"
+        required: true
+        type: "string"
+      - name: "year"
+        in: "path"
+        description: "The fical-year to filter by"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful. Data will be returned in JSON format."
+        400:
+          description: "Bad request. Verify the query string parmaters that were provided."
+        403:
+          description: "API key is not correct or was not provided."
+
+  /perdiem/v2/rates/zip/{zip}/year/{year}:
+    get:
+      summary: "Get perdiem rates by ZipCode and year"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "zip"
+        in: "path"
+        description: "The ZipCode to filter by"
+        required: true
+        type: "integer"
+      - name: "year"
+        in: "path"
+        description: "The fical-year to filter by"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful. Data will be returned in JSON format."
+        400:
+          description: "Bad request. Verify the query string parmaters that were provided."
+        403:
+          description: "API key is not correct or was not provided."
+
+  /perdiem/v2/rates/conus/lodging/{year}:
+    get:
+      summary: "Lodging Rates for the Continental U.S. by Year"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "year"
+        in: "path"
+        description: "The fical-year to filter by"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful. Data will be returned in JSON format."
+        400:
+          description: "Bad request. Verify the query string parmaters that were provided."
+        403:
+          description: "API key is not correct or was not provided."
+
+
+  /perdiem/v2/rates/conus/zipcodes/{year}:
+    get:
+      summary: "Mapping of Destination-IDs to ZipCode and State locations"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "year"
+        in: "path"
+        description: "The fical-year to filter by"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful. Data will be returned in JSON format."
+        400:
+          description: "Bad request. Verify the query string parmaters that were provided."
+        403:
+          description: "API key is not correct or was not provided."
+
+
+
+
+
+
+
+
+
+
