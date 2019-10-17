@@ -10,6 +10,7 @@ Per Diem Rates are the allowed reimbursement rates for hotel stays and meals for
 
 Use of this API is subject to [Terms of Service for GSA.gov's Developer Resources](https://www.gsa.gov/technology/government-it-initiatives/digital-strategy/per-diem-apis/terms-of-service-for-gsagovs-developer-resources).
 
+You can download the OpenAPI Specification File <a href="perdiem-api.swagger.yml">from here (perdiem-api.swagger.yml)</a>
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
