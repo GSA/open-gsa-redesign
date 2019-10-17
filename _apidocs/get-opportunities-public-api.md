@@ -87,6 +87,35 @@ additionalInfoLink|	Any additional info link if available for the opportunity	|S
 uiLink	|Direct UI link to the opportunity. To view the opportunity on UI, user must have either a contracting officer or a Contracting Specialist role. If user hits the link without logging in, user is directed to 404 not found page |	String
 links	|Every record in a response has this links array consisting of: <br> rel: self<br>href: link to the specific opportunity itself. User should provide an API key to access the opportunity directly<br><br>Also, every response has a master links array consisting of:<br>    rel: self<br>href: link to the actual request. User should provide an API key to access the request|	Array
 
+#### Set-Aside Values
+Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field.
+
+Refer below table for valid Set-Aside values:
+
+Code | SetAside Values
+-----|-----------------
+1000 | FAR Set-Aside/Sole Source
+1000001 | Total Small Business Set-Aside (FAR 19.5)
+1000002 | Partial Small Business Set-Aside (FAR 19.5)
+1000003 | 8(a) Set-Aside (FAR 19.8)
+1000004 | 8(a) Sole Source (FAR 19.8)
+1000005 | Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13)
+1000006 | Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13)
+1000007 | Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)
+1000008 | Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14)
+1000009 | Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15)
+1000010 | Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15)
+1000011 | Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15)
+1000012 | Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15)
+1000013 | Local Area Set-Aside (FAR 26.2)
+2000 | Agency Specific Set-Aside/Sole Source (per FAR supplement)
+2000001 | Indian Economic Enterprise (IEE) Set-Aside (specific to Department of Interior)
+2000002 | Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior)
+2000003 | Buy Indian Set-Aside (specific to Department of Health and Human Services, Indian Health Services)
+2000004 | Veteran-Owned Small Business Set-Aside (specific to Department of Veterans Affairs)
+2000005 | Veteran-Owned Small Business Sole source (specific to Department of Veterans Affairs)
+
+
 ## Examples
 
 ### Example 1: Search opportunities for the given date
@@ -398,7 +427,8 @@ User clicks on the description link available in the response and description co
 
 Date | Version | Description
 ------|---------------|---------
-5/20 | v1.0 | Base Version
-8/6 | v1.1| Format updated
+5/20/19 | v1.0 | Base Version
+8/6/19 | v1.1| Format updated
+10/17/19 | v1.2| Added Set-Aside Code
 
 <p><small><a href="#">Back to top</a></small></p>
