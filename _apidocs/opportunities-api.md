@@ -117,6 +117,8 @@ The API includes specific methods to submit each of the base notice types (i.e. 
 #### Set-Aside Values
 Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field.
 
+Only one Set-Aside value is accepted in the field at this time
+
 Refer below table for valid Set-Aside values:
 
 Code | SetAside Values
