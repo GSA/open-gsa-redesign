@@ -103,34 +103,35 @@ After registration, you will need to provide this API key in the `x-api-key` HTT
 
 ### Content APIs
 
-HOME — https://digital.gov/index.json
 
-Communities JSON — https://digital.gov/communities/index.json
+HOME — https://api.gsa.gov/technology/digitalgov/v1/index.json?api_key=DEMO_KEY
 
-Resources JSON — https://digital.gov/resources/index.json
+Communities JSON — https://api.gsa.gov/technology/digitalgov/v1/communities/index.json?api_key=DEMO_KEY
 
-Blog Posts JSON — https://digital.gov/posts/index.json
+Resources JSON — https://api.gsa.gov/technology/digitalgov/v1/resources/index.json?api_key=DEMO_KEY
 
-Events JSON — https://digital.gov/events/index.json
+Blog Posts JSON — https://api.gsa.gov/technology/digitalgov/v1/posts/index.json?api_key=DEMO_KEY
 
-Single Community — https://digital.gov/communities/agile-lean/index.json
+Events JSON — https://api.gsa.gov/technology/digitalgov/v1/events/index.json?api_key=DEMO_KEY
 
-Single Resource — https://digital.gov/resources/omb-memos-circulars-executive-orders-and-other-policies/index.json
+Single Community — https://api.gsa.gov/technology/digitalgov/v1/communities/agile-lean/index.json?api_key=DEMO_KEY
 
-Single Blog Post — https://digital.gov/2018/07/17/experiments-in-tweaking-agile-for-ux/index.json
+Single Resource — https://api.gsa.gov/technology/digitalgov/v1/resources/omb-memos-circulars-executive-orders-and-other-policies/index.json?api_key=DEMO_KEY
 
-Single Event — https://digital.gov/event/2018/07/26/civic-service-design-tools-tactics/index.json
+Single Blog Post — https://api.gsa.gov/technology/digitalgov/v1/2018/07/17/experiments-in-tweaking-agile-for-ux/index.json?api_key=DEMO_KEY
+
+Single Event — https://api.gsa.gov/technology/digitalgov/v1/event/2018/07/26/civic-service-design-tools-tactics/index.json?api_key=DEMO_KEY
 
 
 ### Taxonomy / Data APIs
 
-All Images — https://digital.gov/images/v1/json/
+All Images — https://api.gsa.gov/technology/digitalgov/v1/images/v1/json/?api_key=DEMO_KEY
 
-All Tags — https://digital.gov/tag/v1/json/
+All Tags — https://api.gsa.gov/technology/digitalgov/v1/tag/v1/json/?api_key=DEMO_KEY
 
-All Categories — https://digital.gov/categories/v1/json/
+All Categories — https://api.gsa.gov/technology/digitalgov/v1/categories/v1/json/?api_key=DEMO_KEY
 
-All Authors — https://digital.gov/authors/v1/json/
+All Authors — https://api.gsa.gov/technology/digitalgov/v1/authors/v1/json/?api_key=DEMO_KEY
 
 
 <p><small><a href="#">Back to top</a></small></p>
