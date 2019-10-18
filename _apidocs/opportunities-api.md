@@ -77,7 +77,6 @@ Download Metadata for All Attachments by Oppoprtunity ID	|Yes	|Yes	|Yes
 Get Attachment | Yes | Yes | Yes
 Get IVL | Yes | Yes | Yes
 IVL settings | Yes | Yes | Yes
-Delete Vendor | Yes | Yes | Yes
 Get Authorized Party | Yes | Yes | No
 Add Authorized Party  | Yes | Yes | No
 Check Unique Solicitation Number | Yes | Yes | Yes
@@ -2361,36 +2360,6 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Delete Vendor
-
-
-------- | -------
-**Request Type** | DELETE
-**URL** | /v2/opportunities/{opportunityId}/ivl/{entityid}
-**Summary** | Delete Vendor from IVL for Opportunity ID
-**Consumes** | Request Parameters
-**Produces** | JSON
-
-Request Parameters
-
-Parameter Name | Parameter Type | Data Type  | Required | Description
----------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized user ID
-api_key | query | string | Yes | Valid System Account API Key
-opportunityId | query | string | Yes | Opportunity ID
-entityid | query | string | Yes | DUNS number for the business entity
-
-Responses
-
-HTTP Status Code | Response Type | Reason  | Description
------------------|---------------|---------|------------
-204 | string | Vendor successfully deleted | NA
-
-Examples
-
-N/A
-
-<p><small><a href="#">Back to top</a></small></p>
 
 ### Get Authorized Party ###
 
