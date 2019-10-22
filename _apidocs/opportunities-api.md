@@ -14,7 +14,7 @@ The Opportunity Management API will allow authorized users to submit and request
 ## Getting Started
 
 Opportunity Management API can be accessed from Beta or Alpha via the following endpoints:
-* Beta: https://api.sam.gov/prod/opportunity  (Coming Soon)
+* Beta: https://api.sam.gov/prod/opportunity 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity
 
 **REST API Workflow Chart**
