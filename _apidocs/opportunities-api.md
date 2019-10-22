@@ -2779,7 +2779,7 @@ placeOfPerformance.<br/>country.name | string |  | No | No | Pop Country name
 placeOfPerformance.zip | string |  | No | No | Pop Country zip
 archive | JSON | NA | NA | NA |
 archive.type | string | auto15, auto30, autocustom | No | Yes | Archive Type
-archive.date | date |  | No | Yes (if archive.type=<br/>autocustom) | Archive Date
+archive.date | date |  | No (Yes for Presol, Sources Sought, Special Notice, Sale of Surplus; Either Archive Date or Response Date must be provided) | Yes (if archive.type=autocustom OR Yes for Presol, Sources Sought, Special Notice, Sale of Surplus; Either Archive Date or Response Date must be provided ) | Archive Date
 permissions | JSON | NA | NA | NA |
 permissions.ivl | JSON | NA | NA | NA |
 permissions.ivl.create | boolean |  | No | No | permissions.ivl.create
@@ -2789,7 +2789,7 @@ permissions.ivl.delete | boolean | Not In Use | Not In Use | Not In Use | Not In
 solicitation | JSON | NA | NA | NA |
 solicitation.setAside | string | See Set-Aside values table | No | No | setAside
 solicitation.deadlines | JSON | NA | NA | NA |
-solicitation.<br/>deadlines.response | date | YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
+solicitation.<br/>deadlines.response | date | YYYY-MM-DDTHH:MM:SS-05:00 | No (Yes for Presol, Sources Sought, Special Notice, Sale of Surplus; Either Archive Date or Response Date must be provided) | 1) Yes (for type=k,o) <br/> 2)	Yes (when archive.type=auto1) <br/> 3) Yes for Presol, Sources Sought, Special Notice, Sale of Surplus; Either Archive Date or Response Date must be provided	| Deadline Date
 solicitation.deadlines.<br/>responseresponseTz | string | | No | No | Time Zone for <br/>Solicitation Deadline Date
 award | JSON | NA | NA | NA |
 award.date | date | YYYY-MM-DD |No | Yes only for type= a | Award Date
@@ -3306,5 +3306,5 @@ Date | Version | Description
 8/29/2019| v0.73| Error Codes Added
 8/29/2019| v0.74| Updated the missing description for explicitAccess field in Update Attachment Contract JSON
 10/9/2019 | v0.75| Get List of Opportunities API Parameter Changes (cancelled field removed/status field updated)
-
+10/22/2019 | v0.76| Create and Publish JSON field for Archive.Date and Response Date updated <br> Production Link Updated <br> API URLs updated
 <p><small><a href="#">Back to top</a></small></p>
