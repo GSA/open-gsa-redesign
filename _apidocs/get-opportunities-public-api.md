@@ -5,7 +5,13 @@ banner-heading: Beta.SAM.Gov Get Opportunities Public API
 
 ## Overview
 
-Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. If pagination is requested, then the response will be provided to users synchronously else the call will be asynchronous. 
+Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. If pagination is requested, then the response will be provided to users synchronously, else the call will be asynchronous. 
+
+This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Beta.Sam.Gov. All active notices in Beta.Sam.Gov are updated daily and all archived notices are updated on a weekly basis.
+
+Active Opportunities: https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2Fdatagov
+
+Archived Opportunities: https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2FArchived%20Data
 
 **API Version: v1.0**
 
