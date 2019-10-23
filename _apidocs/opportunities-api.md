@@ -114,7 +114,7 @@ The API includes specific methods to submit each of the base notice types (i.e. 
 <p><small><a href="#">Back to top</a></small></p>
 
 #### Set-Aside Values
-Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field.
+Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field. Use the Set-Aside codes to submit notices.
 
 Only one Set-Aside value is accepted in the field at this time
 
@@ -122,26 +122,24 @@ Refer below table for valid Set-Aside values:
 
 Code | SetAside Values
 -----|-----------------
-1000 | FAR Set-Aside/Sole Source
-1000001 | Total Small Business Set-Aside (FAR 19.5)
-1000002 | Partial Small Business Set-Aside (FAR 19.5)
-1000003 | 8(a) Set-Aside (FAR 19.8)
-1000004 | 8(a) Sole Source (FAR 19.8)
-1000005 | Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13)
-1000006 | Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13)
-1000007 | Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)
-1000008 | Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14)
-1000009 | Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15)
-1000010 | Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15)
-1000011 | Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15)
-1000012 | Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15)
-1000013 | Local Area Set-Aside (FAR 26.2)
-2000 | Agency Specific Set-Aside/Sole Source (per FAR supplement)
-2000001 | Indian Economic Enterprise (IEE) Set-Aside (specific to Department of Interior)
-2000002 | Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior)
-2000003 | Buy Indian Set-Aside (specific to Department of Health and Human Services, Indian Health Services)
-2000004 | Veteran-Owned Small Business Set-Aside (specific to Department of Veterans Affairs)
-2000005 | Veteran-Owned Small Business Sole source (specific to Department of Veterans Affairs)
+SBA     | Total Small Business Set-Aside (FAR 19.5)
+SBP     | Partial Small Business Set-Aside (FAR 19.5)
+8A      | 8(a) Set-Aside (FAR 19.8)
+8AN     | 8(a) Sole Source (FAR 19.8)
+HZC     | Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13)
+HZS     | Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13)
+SDVOSBC | Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)
+SDVOSBS | Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14)
+WOSB    | Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15)
+WOSBSS  | Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15)
+EDWOSB  | Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15)
+EDWOSBSS | Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15)
+LAS | Local Area Set-Aside (FAR 26.2)
+IEE | Indian Economic Enterprise (IEE) Set-Aside (specific to Department of Interior)
+ISBEE | Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior)
+BICiv | Buy Indian Set-Aside (specific to Department of Health and Human Services, Indian Health Services)
+VSA | Veteran-Owned Small Business Set-Aside (specific to Department of Veterans Affairs)
+VSS | Veteran-Owned Small Business Sole source (specific to Department of Veterans Affairs)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -290,7 +288,7 @@ Examples
       }
     },
     "solicitation": {
-      "setAside": "10",
+      "setAside": "SBA",
       "deadlines": {
         "response": "2019-08-08T11:20:20-05:00"
       }
@@ -377,7 +375,7 @@ Examples
         }
     },
      "solicitation": {
-      "setAside": "10",
+      "setAside": "SBA",
       "deadlines": {
         "response": "2019-08-08"
       }
@@ -707,7 +705,7 @@ Examples
       }
     },
     "solicitation": {
-      "setAside": "10",
+      "setAside": "SBA",
       "deadlines": {
         "response": "2019-08-08T11:20:20-05:00"
       }
@@ -800,7 +798,7 @@ Examples
       }
     },
     "solicitation": {
-      "setAside": "10",
+      "setAside": "SBA",
       "deadlines": {
         "response": "2019-08-08"
       }
@@ -2686,7 +2684,7 @@ Examples
                 }
         }, 
           "solicitation": {
-            "setAside": "10",
+            "setAside": "SBA",
             "deadlines": {
                 "response": "2019-08-08"
             }
@@ -3305,6 +3303,12 @@ Date | Version | Description
 8/19/2019 | v0.72 | API Names Updated <br> Valid File Types Updated
 8/29/2019| v0.73| Error Codes Added
 8/29/2019| v0.74| Updated the missing description for explicitAccess field in Update Attachment Contract JSON
+<<<<<<< HEAD
 10/9/2019 | v0.75| Get List of Opportunities API Parameter Changes (cancelled field removed/status field updated)
 10/22/2019 | v0.76| Create and Publish JSON field for Archive.Date and Response Date updated <br> Production Link Updated <br> API URLs updated
+=======
+10/10/2019 | v0.8 | Updated the Set-Aside values with the latest codes
+
+
+>>>>>>> master
 <p><small><a href="#">Back to top</a></small></p>
