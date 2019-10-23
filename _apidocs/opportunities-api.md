@@ -523,7 +523,7 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | /opps/v1/api/createAndPublish
+**URL** | /v1/api/createAndPublish
 **Summary** | Creates and publishes contract opportunity; JSON same as Create and Update API
 **Consumes** | application/json
 **Produces** | JSON
@@ -1095,7 +1095,7 @@ _NA_
 
 ------- | -------
 **Request Type** | POST
-**URL** |	/opps/v1/api/{opportunityId}/requests
+**URL** | /v1/api/{opportunityId}/requests
 **Summary** | Deletes all the versions or latest version of a notice
 **Consumes** | application/json
 **Produces** | JSON
@@ -2205,7 +2205,7 @@ ivl": [
 
 ------- | -------
 **Request Type** | GET
-**URL** |	/opps/v1/api/resource
+**URL** |	/v1/api/resource
 **Summary** | Download all attachments from resource ID
 **Consumes** | application/json
 **Produces** | JSON
@@ -2261,7 +2261,7 @@ Examples
 
 ------- | -------
 **Request Type** | GET
-**URL** |	/opps/v1/api/resources
+**URL** |	/v1/api/resources
 **Summary** | Download all attachments from opportunity ID
 **Consumes** | application/json
 **Produces** | JSON
@@ -2365,7 +2365,7 @@ Examples
 
 ------- | -------
 **Request Type** | GET
-**URL** | /opps/v1/api/opportunities/access/{opportunityId}/accessRequest
+**URL** | /v1/api/opportunities/access/{opportunityId}/accessRequest
 **Summary** | Summary	Get Authorized Party list for the explicit access requests submitted to an Opportunity
 **Consumes** | application/json
 **Produces** | JSON
@@ -2445,7 +2445,7 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | /opps/v1/api/opportunities/access/{opportunityId}/accessRequest
+**URL** | /v1/api/opportunities/access/{opportunityId}/accessRequest
 **Summary** | Add a Vendor as an Authorized Party for a notice to grant access to all the secured attachments across all the versions . This API will create and approve the request for the vendor.
 **Consumes** | application/json
 **Produces** | JSON
