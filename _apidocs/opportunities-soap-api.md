@@ -16,10 +16,6 @@ To view the WSDL for all available methods and object definitions, refer below l
 <<<<<<< HEAD
 * Alpha WSDL Link: https://api-alpha.sam.gov/prodlike/ws/fboendpoint/services.wsdl or https://api-alpha.sam.gov/prodlike/ws/fboendpoint/fbo.wsdl 
 * Beta WSDL Link: https://api.sam.gov/prod/ws/fboendpoint/services.wsdl or https://api.sam.gov/prod/ws/fboendpoint/fbo.wsdl
-=======
-* Alpha WSDL Link: https://api-alpha.sam.gov/prodlike/ws/services.wsdl <br>
-* Beta WSDL Link: Coming Soon
->>>>>>> master
 
 ## SOAP Web Services Workflow Chart
 To view the current workflow of SOAP web service, refer below file:
