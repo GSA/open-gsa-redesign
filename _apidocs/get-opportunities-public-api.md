@@ -7,7 +7,7 @@ banner-heading: Beta.SAM.Gov Get Opportunities Public API
 
 Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. If pagination is requested, then the response will be provided to users synchronously, else the call will be asynchronous. 
 
-This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Beta.Sam.Gov. All active notices in Beta.Sam.Gov are updated daily and all archived notices are updated on a weekly basis.
+**This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Beta.Sam.Gov. All active notices in Beta.Sam.Gov are updated daily and all archived notices are updated on a weekly basis.**
 
 Active Opportunities: https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2Fdatagov
 
@@ -86,8 +86,8 @@ award|	Award Information (If Available): <br> Award amount <br>Awardee <br> Awar
 pointofContact|	Point of Contact Information. It can have below fields if available: <br> Fax <br>Type<br> Email <br>Phone<br> Title<br> Full name	|JSON
 description|	A link to an opportunity description. <br>Note: To download the description, user should append the public API Key. If no description is available then, user is shown an error message “ Description not found”|	String
 organizationType|	Type of an organization – department/sub-tier/office|	String
-officeAddress|	Office Mailing Address|	String
-placeOfPerformance|	Place of performance information. It can have below fields if available:<br>Street Address<br>City (City code & Name)<br> State (State Code Only)<br>Country (Country Code Only)<br>Zip|	JSON
+officeAddress|	Office Address Information. It can have below fields if available: <br> City<br> State<br>Zip|	String
+placeOfPerformance|	Place of performance information. It can have below fields if available:<br> City<br> State<br>Zip|	JSON
 additionalInfoLink|	Any additional info link if available for the opportunity	|String
 uiLink	|Direct UI link to the opportunity. To view the opportunity on UI, user must have either a contracting officer or a Contracting Specialist role. If user hits the link without logging in, user is directed to 404 not found page |	String
 links	|Every record in a response has this links array consisting of: <br> rel: self<br>href: link to the specific opportunity itself. User should provide an API key to access the opportunity directly<br><br>Also, every response has a master links array consisting of:<br>    rel: self<br>href: link to the actual request. User should provide an API key to access the request|	Array
@@ -436,5 +436,6 @@ Date | Version | Description
 8/6/19 | v1.1| Format Updated
 10/17/19 | v1.2| Added Set-Aside Code
 10/23/19 | v1.3| Set-Aside Values Updated
+10/24/19| v1.4| Office Address Description Updated 
 
 <p><small><a href="#">Back to top</a></small></p>
