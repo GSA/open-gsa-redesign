@@ -331,7 +331,7 @@ archdate | date |	No |	Archive Date | YYYYMMDD
 contact |	string | Yes |	Contact Info | 65535 characters
 desc |string |Yes |	Description | 65535 characters
 link | GovURL – complex type | No |	Government Link has URL & description |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-email |	GovEmail – complex type |	No | Government Email | 128 characters
+email |	GovEmail – complex type |	Yes | Government Email | 128 characters
 links | DocumentLink[] | No |	Array of links |
 files |	DocumentFile[] | No |	Array of files |
 setaside | string |	No | Set-Aside code | See Set Aside Values Section for valid codes
@@ -402,7 +402,7 @@ archdate | date |	No | Archive Date | YYYYMMDD
 contact | string |Yes | Contact Info | 65535 characters
 desc | string |	Yes |	Description |	65535 characters
 link | GovURL – complex type | No |	Government Link	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-email |	GovEmail – complex type |	No | Government Email | 128 characters
+email |	GovEmail – complex type |	Yes | Government Email | 128 characters
 links |	DocumentLink[] | No |	Array Of links |
 files |	DocumentFile[] | No |	Array of files |
 setaside | string |	No | Set-Aside code | See Set Aside Values section for valid codes
@@ -553,7 +553,7 @@ desc |	String |	No |	Description	| 65535 characters
 link |	GovURL |	No	| Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
 links |	DocumentLink[]	| No |	Array Of links	|
 files |	DocumentFile[]	| No |	Array of files	|
-email |	GovEmail |	No | 	Government Email |	128 characters
+email |	GovEmail |	Yes | 	Government Email |	128 characters
 recovery_act |	boolean |	No |	Recovery Act |	True or False;
 correction	| boolean |	No |	Correction of previous J&A |	True or False <br> If correcting a previously submitted j&a notice, specify true and the system will lookup the j&a by award number and sol number if applicable.
 
@@ -619,7 +619,7 @@ archdate |	date |	No |	Archive Date	| YYYYMMDD
 contact	| string	| Yes |	Contact Info	| 65535 characters<br> Default value: Primary <br>Other types: Secondary, Owner
 desc | string |	Yes |	Description |	65535 characters
 link |	GovURL – complex type |	No |	Government Link	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-email	| GovEmail – complex type |	No |	Government Email	| 128 characters
+email	| GovEmail – complex type |	Yes |	Government Email	| 128 characters
 links |	DocumentLink[] |	No |	Array Of links	|
 files |	DocumentFile[] |	No |	Array of files |
 setaside	| string |	No |	Set-Aside code |	See Set Aside Value Section for valid codes
@@ -693,7 +693,7 @@ archdate |	Date |	No |	Archive Date |	YYYYMMDD
 contact |	String |	No	| Contact Info |	65535 characters
 desc |	String |	Yes |	Description |	65535 characters
 link	| GovURL – complex type	| No |	Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-email |	GovEmail – complex type |	No |	Government Email	| 128 characters
+email |	GovEmail – complex type |	Yes |	Government Email	| 128 characters
 links |	DocumentLink[] 	| No |	Array Of links |
 files	| DocumentFile[]	 | No	| Array of files	 |
 recovery_act |	boolean |	No |	Recovery Act	| True or False
@@ -759,7 +759,7 @@ archdate|	date|	No|	Archive Date|	YYYYMMDD
 contact|	string|	Yes|	Contact Info|	65535 characters
 desc|	string	|Yes|	Description	|65535 characters
 link	|GovURL – complex type|	No|	Government Link	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-email	|GovEmail – complex type	|No|	Government Email|	128 characters
+email	|GovEmail – complex type	|Yes|	Government Email|	128 characters
 links|	DocumentLink[]|	No	|Array Of links	|
 files	|DocumentFile[]|	No	|Array of files	|
 recovery_act|	boolean	|No	|Recovery Act	|True or False
@@ -901,7 +901,7 @@ desc	|String	|Yes	|Description|	65535 characters
 link|	GovURL|	No|	Government Link	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
 links	|DocumentLink[]|	No|	Array Of links	|
 files|	DocumentFile[]	|No	|Array of files	|
-email	|GovEmail|	No|	Government Email|	128 characters
+email	|GovEmail|	Yes|	Government Email|	128 characters
 recovery_act|	boolean	|No	|Recovery Act	|True or False
 correction	|boolean	|No	|Correction of previous ITB|	True or False <br><br>If correcting a previously submitted itb notice, specify true and the system will lookup the itb by award number, delivery number and sol number if applicable.
 
@@ -990,7 +990,7 @@ awardee_duns|	string	|no	|Awardee DUNS	|9 digits with optional plus 4
 contact|	string|	Yes – for presol, submitSourcesSought, combined, itb, ja, award, saleofSurplus, Solicitation<br><br> No – for rest|	Contact Info|	65535 characters
 desc	|string|	Yes – For presol, submitSourcesSought, combined, ITB, special and saleOfSurplus, Solicitation<br><br> No – For rest|	Main Description|	65535 characters
 link|	GovernmentURL|	No|	Government Link	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-email|	GovernmentEmail|	No|	Government Email	|128 characters
+email|	GovernmentEmail|	Yes / No: Only for Award|	Government Email	|128 characters
 links	|DocumentLink []|	no	|Array Of links	|
 files	|DocumentFile[]|	no|	Array of files	|
 setaside|	string|	no|	Set-Aside code |	See Set Aside Section for valid codes
