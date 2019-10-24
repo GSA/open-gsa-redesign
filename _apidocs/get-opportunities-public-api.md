@@ -40,11 +40,10 @@ Request Parameters that API accepts	| Description | Mandatory?| Data Type
 api_key	| Public Key of users	| Yes|	String
 ptype |	Procurement Type. Below are the available Procurement Types: <br> u= Justification (J&A) <br>p = Pre solicitation <br>a = Award Notice <br>r = Sources Sought <br>s = Special Notice <br>g = Sale of Surplus Property <br>k = Combined Synopsis/Solicitation <br>i = Intent to Bundle Requirements (DoD-Funded) <br><br> Note: Below services are now retired:<br>f = Foreign Government Standard <br>l = Fair Opportunity / Limited Sources  <br> <br>Use Justification (u) instead of fair Opportunity 	|No	|String
 solnum|	Solicitation Number|	No|	String
+noticeid| Notice ID | No | String
 title|	Title|	No	|String
-description|	Description|	No|	String
 postedFrom	| Posted date From <br>Format must be MM/dd/yyyy <br> Note: Date range between Posted Date From and To is 1 year	|Yes|	String
 postedTo|	Posted date To  Format must be MM/dd/yyyy <br> Note: Date range between Posted Date From and To is 1 year	|Yes	|String
-status	| Status of record. Must be one of Active/Inactive/Both <br> Default status: Active	|No|	String
 deptname |	Department Name (L1)	|No|	String
 subtier|	Agency Name (L2)| 	No|	String
 state|	Place of Performance (State)|	No	|String
