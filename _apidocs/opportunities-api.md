@@ -2087,7 +2087,7 @@ Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
 resourceId | query | string | Yes | Resource ID
-deleteAll | query | boolean | No | Should be true if deleting attachment from all versions of a notice; else false
+deleteAll | query | boolean | Yes | Should be true if deleting attachment from all versions of a notice; else false
 
 <p><small><a href="#">Back to top</a></small></p>
 
