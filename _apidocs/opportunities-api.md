@@ -1985,7 +1985,7 @@ Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
 resourceId | query | string | Yes | Resource ID
-Request JSON | Body | JSON | Yes | [Refer Update Attachment Contract JSON](#update-attachment-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Update Attachment Link Contract JSON](#update-attachment-link-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3126,7 +3126,7 @@ attType | string | link, file | Yes | Type of attachment, either link or file
 content | byte |  | Yes (if attType=file) | File content in base64 format
 packageAccessLevel | string | public,private(default public) | No | Type of access to file. Only used with attType 'file'.
 resourceName | string |  | Yes (if attType=file) | Name of file
-fileType | string |  | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#Valid File Types)
+fileType | string |  | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#Valid-File-Types)
 link | string |  | Yes (if attType=link) | Resource link  URL
 description | string |  | Yes (if attType=link) | Description of the link
 
@@ -3158,7 +3158,7 @@ Flash Video (.flv, .f4v)|	video/x-flv
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update Attachment/Link Contract JSON
+### Update Attachment Link Contract JSON
 
 <div id="update-attachment-json" title="Click to view update Attachment/Link Contract">
 <details>
