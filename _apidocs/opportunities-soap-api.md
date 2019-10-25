@@ -138,15 +138,15 @@ far7 | FAR 6.302-7 - Public interest
 
 This section indicates the list of  notices that can be used in the SOAP services
 
-PRESOL - Presolicitation
-COMBINE - Combined Synopsis/Solicitation
-SRCSGT - for Sources Sought
-SSALE - Sale of Surplus Property
-SNOTE - Special Notice
-JA – Justification
-ITB – Intent to Bundle 
-SOL - Solicitation
-AWARD - Award
+PRESOL - Presolicitation<br>
+COMBINE - Combined Synopsis/Solicitation<br>
+SRCSGT - for Sources Sought<br>
+SSALE - Sale of Surplus Property<br>
+SNOTE - Special Notice<br>
+JA – Justification<br>
+ITB – Intent to Bundle <br>
+SOL - Solicitation<br>
+AWARD - Award<br>
 
 This is a conversion table for notices using SOAP services
 
