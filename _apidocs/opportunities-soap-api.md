@@ -4468,7 +4468,7 @@ ntype|	No|[Refer Related Notices](#related-notices) |	1. If all the required fie
 awdnbr	|Yes - Award/ITB/Justification; No - Rest|	255 characters|	NA|	NA
 archdate|	Yes|	YYYYMMDD|	1. This required field should be validated  <br><br>2. If this value is available, this field should meet the character limit/restrictions <br><br>3.	If current date or a past date is provided, then the system throws an error<br><br>  3.	If no archive date is given, then the system throws an error| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2.	New archive date provided is in the past<br><br> 3.	$.reason: null found, string expected. Unable to process request. Please try again
 
-#### cancelNotice
+#### cancelNotice (NEEDS FIX)
 
 Individual business rules per field are listed across each of the fields in below table.  
 * Note: : If user tries to cancel already cancelled opportunity, service throws an error - This opportunity cannot be cancelled. This opportunity is already cancelled. Unable to process request. Please try again.
@@ -4684,6 +4684,7 @@ Date | Version | Description
 8/19/2019 | v0.5 | SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated <br> User Account Section Updated
 9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions
 10/10/2019 | v0.7 | Updated the Set-Aside values with the latest codes
+10/25/2019 | v0.71| Updated Business Rules
 
 <p><small><a href="#">Back to top</a></small></p>
 
