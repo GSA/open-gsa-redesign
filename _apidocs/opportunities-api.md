@@ -2866,7 +2866,7 @@ award.number | string | 255 characters | |No | Yes only for type= i, j, a | Awar
 award.deliverOrderNumber | string | 255 characters| | No | No | Award Deliver Order Number
 award.amount | number |64 digits |  | No | No | Award Amount
 award.lineitemNumber | string |255 characters | | No | No | Award Line item Number
-award.awardee | JSON | | NA | NA | NA |
+award.awardee | JSON | NA| NA | NA | NA |
 award.awardee.manual | string | |boolean  | Yes | Yes  | Awardee
 award.awardee.name | string | 255 characters | | No | No | Awardee Name
 award.awardee.duns | string | 9 digits | | No | No | Awardee Duns
@@ -2876,27 +2876,27 @@ award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Stre
 award.awardee.location.<br/>city | string | | | No | No | Awardee City
 award.awardee.location.<br/>city.code | string | | | No | No | Awardee City code
 award.awardee.location.<br/>city.name | string | | | No | No | Awardee City name
-award.awardee.location.<br/>state | JSON | | NA | NA | NA |
+award.awardee.location.<br/>state | JSON | NA | NA | NA | NA |
 award.awardee.location.<br/>state.code | string | | | No | No | Awardee State code
 award.awardee.location.<br/>state.name | string | | | No | No | Awardee State name
 award.awardee.location.<br/>country | JSON | | NA | NA | NA |
 award.awardee.location.<br/>country.code | string | | | No | No | Awardee Country code
 award.awardee.location.<br/>country.name | string | | | No | No | Awardee Country Name
 award.awardee.location.<br/>zip | string | | | No | No | Awardee Country Zip
-justificationAuthority | JSON | |NA | NA | NA |
+justificationAuthority | JSON |NA |NA | NA | NA |
 justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number
 justificationAuthority.<br/>authority | | string |  | No | No | Justification Authority
-link | JSON | NA | NA | NA |
+link | JSON | NA |NA | NA | NA |
 link.href | string |  | | No | No | Url for the notice on SAM.gov
-link.additionalInfo | JSON | NA | NA | NA |
+link.additionalInfo | JSON | NA |NA | NA | NA |
 link.additionalInfo.content | string | | | No | No | Additional info
-additionalReporting | string | none/<br/>auto_recovery | No | Yes |
-description | JSON | | NA | NA | NA |
+additionalReporting | string | |none/<br/>auto_recovery | No | Yes |
+description | JSON | NA | NA | NA | NA |
 description.body | string | 65535 characters| | No | Yes | Description of notice
-resources | JSON | | NA | NA | NA |
-resources.attType | string | link, file | No |No| Type of attachment, either link or file
+resources | JSON |NA | NA | NA | NA |
+resources.attType | string | |link, file | No |No| Type of attachment, either link or file
 resources.content | byte |250MB |  | No|No | File content in base64 format
-resources.link | string |  | |No|No | Resource link URL
+resources.link | string | 255 characters | |No|No | Resource link URL
 resources.packageAccessLevel | string | | public,private(default public) | No | No| Type of access to file or link
 resources.resourceName | string | 255 characters |  | No|No | Name of file
 postedDate| date| | |No|No| Posted Date
