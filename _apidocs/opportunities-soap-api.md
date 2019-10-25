@@ -183,7 +183,7 @@ Award Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date |	date |	No |	Posting Date |	YYYYMMDD
+date |	date |	Yes |	Posting Date |	YYYYMMDD
 zip |	string |	No |	Zip Code |	5 digits
 classcod |	string |	No |	Class-Code |	Valid classification code (FAR, Section 5.207(g))
 naics |	string |	No |	NAICS Code |	Valid NAICS Code NAICS Reference
@@ -191,7 +191,7 @@ offadd |	string |	No |	Office Address |	65535 characters
 officeid |	string |	Yes |	Office id of the office where an opportunity is being submitted |	20 characters
 subject |	string |	Yes |	Subject |	255 characters
 solnbr |	string |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
-ntype	| string |	No |	Base Notice Type |	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
+ntype	| string |	No |	Base Notice Type |		[Refer Related Notices](#related-notices)
 awdnbr |	string |	 Yes |	Award Number |	255 characters
 awdnbr |	open text, label: Agency assigned number for control tracking and identification.<br> Please use ONLY alphanumeric and - _ ( ) { } characters [no spaces]. |	 Yes |	Award Number |	255 characters
 awdamt |	string |	Yes |	Award Amount |	64 characters
@@ -262,8 +262,8 @@ DeleteNoticeOrDocumentPackage Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr |	string |	Yes, if Non-Award |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
-ntype |	string |	no |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
-awdnbr |  string | Yes, if Award| Award # |	255 characters
+ntype |	string |	no |	[Refer Related Notices](#related-notices)
+awdnbr |  string | Yes; Solicitation Number or Award Number is required| Award # |	255 characters
 deletetype |	string |	no |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachments/links. Defaults to “notice” if not provided
 deletemethod |	string | no | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
 
@@ -288,12 +288,12 @@ ArchiveNotice Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date |	date |	No |	Posting Date | YYYYMMDD
-solnbr | string |	Yes |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
-ntype |	string | No |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
-archdate | date |	No | New Archive Date – If none provided, notice will archive immediately | YYYYMMDD
+solnbr | string |	No |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
+ntype |	string | No |	[Refer Related Notices](#related-notices)
+archdate | date |	Yes | New Archive Date – If none provided, notice will archive immediately | YYYYMMDD
 officeid | string |	No |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
 
-### Cancel Notice<br> (CancelNotice)
+### Cancel Notice<br> (CancelNotice) NEEDS FIX
 
 This method is used to post a cancellation notice to any base notice type already in the Opportunities system. Provide a Solicitation Number or an Award Number (for stand- alone awards) and other data outlined below for the cancellation notice.
 
@@ -348,14 +348,14 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No | Posting Date |	YYYYMMDD
 zip |	string | No |	Zip Code | 5 digits
-classcod | string |	Yes |	Class-Code | Valid classification code (FAR, Section 5.207(g))
+classcod | string |	No |	Class-Code | Valid classification code (FAR, Section 5.207(g))
 naics |	string | No |	NAICS Code | Valid NAICS Code  NAICS Reference
 officeid | string |	Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account | 20 characters
 offadd | string |	No | Office Address |	65535 characters
 subject |	string | Yes|	Title of the Pre-solicitation |	255 characters
 solnbr | string |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-respdate | date |	No |	Response Date |	YYYYMMDD
-archdate | date |	No |	Archive Date | YYYYMMDD
+respdate | date |	No - However either Respdate or Archdate must be selected |	Response Date |	YYYYMMDD
+**archdate** (update needed) | date |	No - However either Respdate or Archdate must be selected |	Archive Date | YYYYMMDD
 contact |	string | Yes |	Contact Info | 65535 characters
 desc |string |Yes |	Description | 65535 characters
 link | GovURL – complex type | No |	Government Link has URL & description |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -426,7 +426,7 @@ offadd | string | No | Office Address	| 65535 characters
 subject | string | Yes | Subject | 255 characters
 solnbr | string |	Yes | Sol # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate | date |	Yes | Response Date | YYYYMMDD
-archdate | date |	No | Archive Date | YYYYMMDD
+**archdate** (update needed) | date |	No | Archive Date | YYYYMMDD
 contact | string |Yes | Contact Info | 65535 characters
 desc | string |	Yes |	Description |	65535 characters
 link | GovURL – complex type | No |	Government Link	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -488,21 +488,21 @@ Mod Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date | date |	No |	Posting Date |	YYYYMMDD
+date | date |	Yes - Only Award <br> No - Rest |	Posting Date |	YYYYMMDD
 zip |	string |	No |	Zip Code |	5 digits
-classcod |	string	 | Yes – For combined type, presol type, Sale of surplus, No – For rest |	Class-Code	| Valid classification code (FAR, Section 5.207(g))
-naics | 	string |	Yes – For combined type, No – For rest | 	NAICS Code |	Valid NAICS Code  NAICS Reference
+classcod |	string	 | Yes – Solicitation/Combined/Sale of Surplus/ITB/Justification <br>No – Rest |	Class-Code	| Valid classification code (FAR, Section 5.207(g))
+naics | 	string |	Yes – Combined & Solicitation <br> No – Rest | 	NAICS Code |	Valid NAICS Code  NAICS Reference
 officeid |	string	| Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
 offadd |	string	| no	| Office Address |	65535 characters
-subject	| string	| no |	Subject |	255 characters
+subject	| string	| Yes |	Subject |	255 characters
 solnbr | string |	Yes | 	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
-ntype |	string |	Yes |	Base Notice Type |	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "SOL" - for Solicitation
-respdate |	date |	Yes – Combined, No – For rest |	Response Date |	YYYYMMDD
-archdate |	date |	no	| Archive Date |	YYYYMMDD
-contact |	string |	No – For Special notice, Yes – For rest |	Contact Info |	65535 characters
-desc |	string |	Yes	| Description |	65535 characters
+ntype |	string |	Yes |	Base Notice Type |	[Refer Related Notices](#related-notices)
+respdate |	date |	Yes – for Combined/Solicitation <br> No – Rest (Special Notice/Sale of Surplus/Sources Sought/Presol must have either respdate or archdate)|	Response Date |	YYYYMMDD
+**archdate** (update needed) |	date |	no	| Archive Date |	YYYYMMDD
+contact |	string |	Yes – Rest <br> No – For Award/Special notice|	Contact Info |	65535 characters
+desc |	string |	Yes - Award/Justification <br> No - Rest	| Description |	65535 characters
 link	| GovURL – complex type |	no |	Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-email |	GovEmail – complex type |	no |	Government Email |	128 characters
+email |	GovEmail – complex type |	Yes - Rest <br> No - Only Award |	Government Email |	128 characters
 links |	DocumentLink[] |	no |	Array Of links |
 files |	DocumentFile[] |	no |	Array of files |
 setaside |	string |	no |	Set-Aside code |	See Set Aside Value Section for valid codes
@@ -568,14 +568,14 @@ offadd |	String	| No |	Office Address	| 65535 characters
 officeid |	String |	Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
 subject |	String |	Yes |	Subject |	255 characters
 solnbr	| String |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}. <br><br> Note for statutory authority FAR 6.302- 1(c) - Brand name, this is required
-ntype	| string |	No	| Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "SOL" - for Solicitation
+ntype	| string |	No	| Base Notice Type | 	[Refer Related Notices](#related-notices)
 stauth	| String	| Yes |	Stat. Authority – Both foja & stauth values will be given under stauth in legacy |	Valid values: 1, 2, 3, 4, 5, brand, far1, far2, far3, far4, far5, far6, far7 <br> Description of each of these stauth values is captured in section 4.4<br><br> Foja values are: Valid values: 'Urgency’, ‘Only One Source (except brand name)’, ‘Follow-on Delivery Order Following Competitive Initial Order’, ‘Minimum Guarantee’, ‘Other Statutory Authority’
 awdnbr |	String |	Yes |	Award Number |	255 characters
 modnbr |	String |	No |	Mod Number |	32 characters
 awdamt |	String |	No |	Award Amount |	64 characters
-awddate |	Date |	No – May change in future	| Award Date |	YYYYMMDD
+awddate |	Date |	No	| Award Date |	YYYYMMDD
 donbr	| String |	Yes |	Task/Delivery Order Number |	255 characters from the set: a-z A-Z 0-9 - _ ( )
-archdate |	Date |	No |	Archive Date |	YYYYMMDD
+**archdate** (update needed)  |	Date |	No |	Archive Date |	YYYYMMDD
 contact |	String |	Yes | 	Contact Info |	65535 characters
 desc |	String |	No |	Description	| 65535 characters
 link |	GovURL |	No	| Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -643,7 +643,7 @@ offadd	| string	 | No |	Office Address |	65535 characters
 subject |	string |	Yes |	Subject |	255 characters
 solnbr	| string |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate |	date |	No |	Response Date |	YYYYMMDD
-archdate |	date |	No |	Archive Date	| YYYYMMDD
+**archdate** (update needed) |	date |	No |	Archive Date	| YYYYMMDD
 contact	| string	| Yes |	Contact Info	| 65535 characters<br> Default value: Primary <br>Other types: Secondary, Owner
 desc | string |	Yes |	Description |	65535 characters
 link |	GovURL – complex type |	No |	Government Link	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -717,7 +717,7 @@ officeid	| string |	Yes |	Office id of the office where an opportunity is being 
 offadd |	String |	No |	Office Address	| 65535 characters
 subject | 	String |	Yes |	Subject |	255 characters
 solnbr	| String |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-archdate |	Date |	No |	Archive Date |	YYYYMMDD
+**archdate** (update needed) |	Date |	No |	Archive Date |	YYYYMMDD
 contact |	String |	No	| Contact Info |	65535 characters
 desc |	String |	Yes |	Description |	65535 characters
 link	| GovURL – complex type	| No |	Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -783,7 +783,7 @@ officeid	|string	|Yes|	Office id of the office where an opportunity is being sub
 offadd|	string|	No	|Office Address	|65535 characters
 subject|	string|	Yes|	Subject	|255 characters
 solnbr|	string	|Yes	|Sol #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-archdate|	date|	No|	Archive Date|	YYYYMMDD
+**archdate** (update needed)|	date|	No|	Archive Date|	YYYYMMDD
 contact|	string|	Yes|	Contact Info|	65535 characters
 desc|	string	|Yes|	Description	|65535 characters
 link	|GovURL – complex type|	No|	Government Link	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -850,7 +850,7 @@ offadd | string | No | Office Address	| 65535 characters
 subject | string | Yes | Subject | 255 characters
 solnbr | string |	Yes | Sol # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate | date |	Yes | Response Date | YYYYMMDD
-archdate | date |	No | Archive Date | YYYYMMDD
+**archdate** (update needed) | date |	No | Archive Date | YYYYMMDD
 contact | string |Yes | Contact Info | 65535 characters
 desc | string |	Yes |	Description |	65535 characters
 link | GovURL – complex type | No |	Government Link	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -920,10 +920,10 @@ officeid|	String|	Yes|	Office id of the office where an opportunity is being sub
 offadd|	String	|No|	Office Address|	65535 characters
 subject|	String|	Yes|	Subject	|255 characters
 solnbr	|String	|Yes|	Sol #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
-ntype	|string	|No|	Base Notice Type|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "SOL" - for Solicitation, "AWARD" - for Award
+ntype	|string	|No|	[Refer Related Notices](#related-notices)
 awdnbr|	String	|Yes	|Award Number|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 donbr|	String|	No	|Task/Delivery Order Number	|255 characters from the set: a-z A-Z 0-9 - _ ( )
-archdate	|Date	|No	|Archive Date|	YYYYMMDD
+**archdate** (update needed) 	|Date	|No	|Archive Date|	YYYYMMDD
 contact|	String|	Yes|	Contact Info	|65535 characters; Default value = Primary, Other types are: Secondary, Owner
 desc	|String	|Yes	|Description|	65535 characters
 link|	GovURL|	No|	Government Link	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -994,31 +994,30 @@ Complete notice Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date|	date|	No	|Posting Date|	YYYYMMDD
+date|	date|	Yes - Only Award<br>No - Rest	|Posting Date|	YYYYMMDD
 notice_type	|string	|Yes|	Notice type	|Valid options outlined above
 zip	|string	|No	|Zip Code|	5 digits
 classcod|	string|	No|	Class-Code	|Valid classification code (FAR, Section 5.207(g))
-naics	|string	|No	|NAICS Code|	Valid NAICS Code  NAICS Reference
-officeid|	String|	No|	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account	|20 characters
+naics	|string	|Yes - Combined Synopsis/Solicitation & Solicitation  <br> No - Rest	|NAICS Code|	Valid NAICS Code  NAICS Reference
+officeid|	String|	Yes|	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account	|20 characters
 offadd	|string|	No|	Office Address	|65535 characters
 subject|	string|	Yes – For presol, combined, itb, ja, award, special, surplus<br><br> No – for rest|	Subject|	255 characters
-solnbr|	string|	Yes – For presol, combined, itb, ja, award, special, document, surplus<br><br> No – for rest|	Sol #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-ntype	|string	|no	|Base Notice Type	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation 
-awdnbr|	string|	Yes – For Award & JA, ITB<br><br> No – For rest|	Award #	|255 characters
-donbr	|string	|Yes – For JA<br><br> No – For rest|	Delivery/Task Order Number	|255 characters
-awdamt	|string|	Yes – For Award<br><br> No – For rest	|Award Amount|	64 characters
+solnbr|	string|	Yes - Rest  <br> No - Only Special Notice|	Sol #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
+ntype	|string	|no	|[Refer Related Notices](#related-notices)
+awdnbr|	string|	Yes – Award, ITB & JA <br> No – Rest|	Award #	|255 characters
+donbr	|string	|Yes – JA <br> No – Rest|	Delivery/Task Order Number	|255 characters
+awdamt	|string|	Yes – Award <br> No – Rest	|Award Amount|	64 characters
 linenbr|	string	|No|	Award Line Item Number	|255 characters
-awddate	|date|	Yes – for award; No – for rest|	Award Date	|YYYYMMDD
-stauth	|string	|Yes – for JA; No – for test	|J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy| Valid values: 1, 2, 3, 4, 5, brand, far1, far2, far3, far4, far5, far6, far7<br><br> Description of each of these stauth values is captured in Stauth Value section<br><br> Foja values are: Valid values: 'Urgency’, ‘Only One Source (except brand name)’, ‘Follow-on Delivery Order Following Competitive Initial Order’, ‘Minimum Guarantee’, ‘Other Statutory Authority’
-modnbr	|string	|No	|J&A and FairOpp Contract Modification Number|	32 digits
-respdate|	date|	Yes – for combined<br><br> No – for rest	|Response Date	|YYYYMMDD
-archdate|	date|	No|	Archive Date|	YYYYMMDD
-awardee|	string|	Yes - award<br><br> No – for rest|	Awardee	|65535 characters
+awddate	|date|	Yes – Award <br> No – Rest|	Award Date	|YYYYMMDD
+stauth	|string	|Yes –  JA <br> No – Rest	|J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy| Valid values: 1, 2, 3, 4, 5, brand, far1, far2, far3, far4, far5, far6, far7<br><br> Description of each of these stauth values is captured in Stauth Value section<br><br> Foja values are: Valid values: 'Urgency’, ‘Only One Source (except brand name)’, ‘Follow-on Delivery Order Following Competitive Initial Order’, ‘Minimum Guarantee’, ‘Other Statutory Authority’
+respdate|	date|	Yes – Only Combined/Solicitation<br> No – Rest (Required for Sources Sought/Presol/Sale of Surplus/Special Notice when Required when 15 Days after Response is selected)	|Response Date	|YYYYMMDD
+**archdate** (update needed) |	date|	No|	Archive Date|	YYYYMMDD
+awardee|	string|	Yes – Only Award <br> No – Rest|	Awardee	|65535 characters
 awardee_duns|	string	|no	|Awardee DUNS	|9 digits with optional plus 4
-contact|	string|	Yes – for presol, submitSourcesSought, combined, itb, ja, award, saleofSurplus, Solicitation<br><br> No – for rest|	Contact Info|	65535 characters
-desc	|string|	Yes – For presol, submitSourcesSought, combined, ITB, special and saleOfSurplus, Solicitation<br><br> No – For rest|	Main Description|	65535 characters
+contact|	string|	Yes - Rest <br> No - Award & Special Notice|	Contact Info|	65535 characters
+desc	|string|	Yes - Rest  <br> No – Justfication & Award|	Main Description|	65535 characters
 link|	GovernmentURL|	No|	Government Link	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-email|	GovernmentEmail|	Yes / No: Only for Award|	Government Email	|128 characters
+email|	GovernmentEmail|	Yes - Rest <br>No - Only Award|	Government Email	|128 characters
 links	|DocumentLink []|	no	|Array Of links	|
 files	|DocumentFile[]|	no|	Array of files	|
 setaside|	string|	no|	Set-Aside code |	See Set Aside Section for valid codes
@@ -1078,12 +1077,12 @@ DocumentUpload Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 Date|	Date|	No	|Posting Date	|YYYYMMDD
-solnbr	|String	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-ntype	|String	|No|	Base Notice Type|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "SOL" - for Solicitation
-uploadtype|	String|	No – May change in future|	Upload Type|	A for amendment, S for solicitation or any title for other; 255 characters
-respdate	|Date	|No	|Response Date|	YYYYMMDD
-links|	DocumentLin k[]|	No|	Array Of links	|
-files	|DocumentFile []|	No|	Array of files	|
+solnbr	|String	|No|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
+ntype	|String	|No|	[Refer Related Notices](#related-notices)
+uploadtype|	String|	No |	Upload Type|	A for amendment, S for solicitation or any title for other; 255 characters
+respdate	|Date	|No |Response Date|	YYYYMMDD
+links|	DocumentLin k[]|	Yes; Either Links or Files needs to be provided|	Array Of links	|
+files	|DocumentFile []|	Yes; Either Links or Files needs to be provided|	Array of files	|
 officeid	|String|	No|	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account|	20 characters
 
 DocumentLink Complex Type Definition:
@@ -1122,7 +1121,7 @@ UnarchiveNotice Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No	|Base Notice Type	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
+ntype	|string	|No	|[Refer Related Notices](#related-notices)
 awdnbr	|string|	No|	Award #|	255 characters
 archdate	|date|	Yes|	New Archive Date|	YYYYMMDD
 
@@ -1187,7 +1186,7 @@ IVLListRequest Complex Type Definition:
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
 solnbr|	string|	yes|	Solicitation #
-ntype	|string	|no	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice,  “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
+ntype	|string	|no	|[Refer Related Notices](#related-notices)
 
 IVLListResponse Complex Type Definition:
 
@@ -1232,13 +1231,9 @@ AuthorizedPartyListRequest Complex Type Definition:
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
 solnbr|	string|	yes	|Solicitation #. Provide an empty string for this argument if using nonfbo_solnbr below
-ntype|	string|	no|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
+ntype|	string|	no|	V[Refer Related Notices](#related-notices)
 nonfbo_solbr|	string|	no|	Non-fbo Solicitation #. Not supported for this method
 status| string	|no	|Valid Options: approved, pending, rejected, “empty value”. If empty, all status will be returned <br> <br> Note, use “pending” to pull the pending explicit access requests.
-resource_name	|string	|Yes |Only populates if the type_of_request is a resource.
-type_of_request 	|string	|Yes |Indicates if the id is a resource or a notice level request
-
-
 
 AuthorizedPartyListResponse Complex Type Definition:
 
@@ -1280,11 +1275,10 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
 solnbr|	string	|yes|	Solicitation #
-ntype	|string	|no|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice,  “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
+ntype	|string	|no|	[Refer Related Notices](#related-notices)
 nonfbo_solbr	|string|	no|	Non-fbo Solicitation #.  Not supported for this method
 Id|	string|	yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.
-vendor|	VendorData|	no|	Complex type not used in this method
-reason	|string|	no|	rejection reason not used in this method
+
 
 Response:
 
@@ -1307,11 +1301,9 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name	|Type	|Required|	Description
 -----|-----|-----|----
 solnbr	|string	|yes|	Solicitation #
-ntype|	string|	no|	Valid values: "PRESOL" - for Presolicitation <br> "COMBINE" - for Combined Synopsis/Solicitation <br> "SRCSGT" - for Sources Sought <br> "SSALE" - for Sale of Surplus Property<br> "SNOTE" - for Special Notice<br>  “ITB” – for Intent to Bundle Requirements (DoD- Funded)
+ntype|	string|	no|	[Refer Related Notices](#related-notices)
 nonfbo_solbr|	string|	no|	Non-fbo Solicitation #.  Not supported for this method
-Id|	string|	no| Not used in this method 
 vendor|	VendorData	|yes|	Complex type defined below
-reason	|string|	no	|Rejection reason not used in this method
 
 Response:
 
@@ -1346,11 +1338,10 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
 solnbr|	string	|yes|	Solicitation #
-ntype	|string	|no|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice,  “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
+ntype	|string	|no|[Refer Related Notices](#related-notices)
 nonfbo_solbr	|string|	no|	Non-fbo Solicitation #.  Not supported for this method
-Id|	string|	yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.
-vendor|	VendorData|	no|	Complex type not used in this method
-reason	|string|	no|	rejection reason not used in this method
+Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.
+reason	|string|	Yes|	rejection reason not used in this method
 
 Response:
 
@@ -1374,9 +1365,8 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
 solnbr|	string|	yes|	Solicitation #
-ntype	|string	|no|	Valid values: "PRESOL" - for Presolicitation<br> "COMBINE" - forCombined Synopsis/Solicitation<br> "SRCSGT" - for Sources Sought<br> "SSALE" - for Sale of Surplus Property<br> "SNOTE" - for Special Notice <br>  “ITB” – for Intent to Bundle Requirements (DoD- Funded)
+ntype	|string	|no|	[Refer Related Notices](#related-notices)
 nonfbo_solbr	|string	|no	|Non-fbo Solicitation #.  Not supported for this method
-Id	|string|	no |Not used in this method 
 vendor	|VendorData|	yes|	Complex type defined below
 reason|	string|	yes	|Rejection Reason 
 
@@ -1411,11 +1401,10 @@ ExplicitAccessRequest Complex Type Definition:
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
 solnbr|	string|	yes|	Solicitation #
-ntype	|string	|no	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice,  “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
+ntype	|string	|no	|[Refer Related Notices](#related-notices)
 nonfbo_solbr|	string|	no	|Non-fbo Solicitation #.   Not supported for this method.
 Id	|string	|no	|Not used in this method
 vendor	|VendorData|	yes|	Complex type defined below
-reason	|string	|no	|rejection reason not used in this method
 
 Response:
 
@@ -1450,12 +1439,12 @@ NoticeListRequest Complex Type Definition:
 
 Element Name|	Type|	Required|	Description
 -----|-----|-----|-----
-notice_type	|string|	No|	Solicitation #.  Valid Values: PRESOL, COMBINE,  AWARD, JA, SRCSGT, SSALE, SNOTE, ITB, SOL.  Note:Searches for awardsj&as, itb’s and fairopps will return both standalone notices AND base notices that contain one of these type
-solnbr	|string	|No	|Solicitation #
-awdnbr	|string	|No	|Award #
-posted_from	|date|	No|	Posted From Date. YYYYMMDD.
-posted_to	|date|	|No	Posted To Date. YYYYMMDD
-documents_to_search	|string|	No|	Valid Values: ‘active’ or ‘archived’. Default is ALL if nothing provided.
+notice_type	|string|	No (at least 1 field is required)|	[Refer Related Notices](#related-notices)  Note:Searches for awardsj&as, itb’s and fairopps will return both standalone notices AND base notices that contain one of these type
+solnbr	|string	|No (at least 1 field is required)	|Solicitation #
+awdnbr	|string	|No	(at least 1 field is required)|Award #
+posted_from	|date|	No (at least 1 field is required)|	Posted From Date. YYYYMMDD.
+posted_to	|date|	|No (at least 1 field is required)|	Posted To Date. YYYYMMDD
+documents_to_search	|string|	No(at least 1 field is required)|	Valid Values: ‘active’ or ‘archived’. Default is ALL if nothing provided.
 
 Response:
 
@@ -1500,10 +1489,10 @@ NoticeDataRequest Complex Type Definition:
 
 Element Name|	Type|	Required|	Description
 -----|-----|-----|-----
-notice_id	|string	|Yes|	Unique ID found from getList call or ID’s for changes found in getNoticeData call.
-get_changes	|boolean|	No|	True or false<br> Pass in true to get the full notice history with all changes
-get_changes_from_date	|date|	No|	If maintaining a sync of changes, can specify a date so that only changes that have occurred since provided date will be returned.
-get_file_data|	boolean|	No|	True or False<br> Pass in true and the method will return any file content stored in Contract Opportunities (attachment data will be retuned as Base64Encoding Format). If false, the meta details/links will still be provided.
+notice_id	|string	|No (at least 1 field is required)|	Unique ID found from getList call or ID’s for changes found in getNoticeData call.
+get_changes	|boolean|	No (at least 1 field is required)|	True or false<br> Pass in true to get the full notice history with all changes
+get_changes_from_date	|date|	No (at least 1 field is required)|	If maintaining a sync of changes, can specify a date so that only changes that have occurred since provided date will be returned.
+get_file_data|	boolean|	No (at least 1 field is required)|	True or False<br> Pass in true and the method will return any file content stored in Contract Opportunities (attachment data will be retuned as Base64Encoding Format). If false, the meta details/links will still be provided.
 
 Response:
 
@@ -2149,75 +2138,75 @@ Please note that variances may exist between SOAP requests generated by differen
     <summary>Response Sample – Success</summary>
 <textarea>
 Note: This service gets a list of all notices
-  <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
-    <SOAP-ENV:Header/>
-    <SOAP-ENV:Body>
-        <ns1:getNoticeDataResponse xmlns:ns1="https://www.sam.gov/">
-            <return xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:NoticeData">
-                <success xsi:type="xsd:boolean">true</success>
-                <messages xsi:nil="true" xsi:type="ns1:ArrayOfstring"/>
-                <notice xsi:type="ns1:NoticeData">
-                    <notice_id xsi:type="xsd:string">b9b337da8b994afd878e962bfb2810fa</notice_id>
-                    <notice_type xsi:type="xsd:string">PRESOL</notice_type>
-                    <agency xsi:type="xsd:string">TRANSPORTATION, DEPARTMENT OF</agency>
-                    <office xsi:type="xsd:string">FEDERAL MOTOR CARRIER SAFETY ADMINISTRATION</office>
-                    <location xsi:type="xsd:string">FMCSA GRANTS MANAGEMENT OFFICE</location>
-                    <date xsi:type="xsd:date">Sat Jan 04 00:00:00 GMT 6425</date>
-                    <classcod xsi:type="xsd:string">13</classcod>
-                    <naics xsi:type="xsd:string">11150</naics>
-                    <subject xsi:type="xsd:string">title</subject>
-                    <solnbr xsi:type="xsd:string">testDm14</solnbr>
-                    <archdate xsi:type="xsd:date">2030-01-01</archdate>
-                    <desc xsi:type="xsd:string">test</desc>
-                    <link xsi:type="xsd:string"/>
-                    <contact xsi:type="xsd:string">Veera</contact>
-                    <recovery_act xsi:type="xsd:string">none</recovery_act>
-                    <document_packages xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENC:arrayType="ns1:DocumentPackageData[1]" xsi:type="ns1:ArrayOfDocumentPackageData">
-                        <item xsi:type="ns1:DocumentPackageData">
-                            <package_id xsi:type="xsd:string">509d5e96c88a435c89503a64369141c9</package_id>
-                            <label xsi:type="xsd:string"/>
-                            <type xsi:type="xsd:string"/>
-                            <files SOAP-ENC:arrayType="ns1:DocumentFileData[4]" xsi:type="ns1:ArrayOfDocumentFileData">
-                                <item xsi:type="ns1:DocumentFileData">
-                                    <file_id xsi:type="xsd:string">f16a71fdf4874edb8c4ce80281e3b36b</file_id>
-                                    <type xsi:type="xsd:string">link</type>
-                                    <filename xsi:type="xsd:string"/>
-                                    <link xsi:type="xsd:string">http://beta.sam.gov</link>
-                                    <desc xsi:type="xsd:string">test beta sam link</desc>
-                                    <size_limit_error xsi:type="xsd:string">0</size_limit_error>
-                                </item>
-                                <item xsi:type="ns1:DocumentFileData">
-                                    <file_id xsi:type="xsd:string">011b61f9e9154ed3bbe3f7aa21b1c2c1</file_id>
-                                    <type xsi:type="xsd:string">link</type>
-                                    <filename xsi:type="xsd:string">TAY VOR Scope of Work 10-25-17.pdf</filename>
-                                    <link xsi:type="xsd:string">https://faaco.faa.gov/index.cfm/attachment/download/84723</link>
-                                    <desc xsi:type="xsd:string">test attachment pdf link</desc>
-                                    <size_limit_error xsi:type="xsd:string">0</size_limit_error>
-                                </item>
-                                <item xsi:type="ns1:DocumentFileData">
-                                    <file_id xsi:type="xsd:string">ccb450b711734dce848c44f840d22a7a</file_id>
-                                    <type xsi:type="xsd:string">file</type>
-                                    <filename xsi:type="xsd:string">test_document1.pdf</filename>
-                                    <filedata xsi:type="xsd:string">SnVzdCBhIHNtYWxsIHRl</filedata>
-                                    <desc xsi:type="xsd:string"/>
-                                    <size_limit_error xsi:type="xsd:string">0</size_limit_error>
-                                </item>
-                                <item xsi:type="ns1:DocumentFileData">
-                                    <file_id xsi:type="xsd:string">91624a57e1bd4f15967f5a2b42f49dc0</file_id>
-                                    <type xsi:type="xsd:string">file</type>
-                                    <filename xsi:type="xsd:string">test_document2.pdf</filename>
-                                    <filedata xsi:type="xsd:string">SnVzdCBhIHNtYWxsIHRlc3Q2</filedata>
-                                    <desc xsi:type="xsd:string"/>
-                                    <size_limit_error xsi:type="xsd:string">0</size_limit_error>
-                                </item>
-                            </files>
-                        </item>
-                    </document_packages>
-                </notice>
-            </return>
-        </ns1:getNoticeDataResponse>
-    </SOAP-ENV:Body>
-    </SOAP-ENV:Envelope>
+ <SOAP-ENV:Envelope
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:ns1="https://www.sam.gov"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SOAP-ENV:Header/>
+	<SOAP-ENV:Body>
+		<ns1:getNoticeDataResponse
+			xmlns:ns1="https://www.sam.gov/">
+			<return xsi:type="ns1:NoticeDataResponse">
+				<success xsi:type="xsd:boolean">true</success>
+				<messages xsi:nil="true" xsi:type="ns1:ArrayOfstring"/>
+				<notice xsi:type="ns1:NoticeData">
+					<notice_id xsi:type="xsd:string">bf20590c11c74f209f992c074dbbb0d1</notice_id>
+					<notice_type xsi:type="xsd:string">PRESOL</notice_type>
+					<agency xsi:type="xsd:string">GENERAL SERVICES ADMINISTRATION</agency>
+					<office xsi:type="xsd:string">FEDERAL ACQUISITION SERVICE</office>
+					<location xsi:type="xsd:string">GSA/FAS CENTER FOR IT SCHEDULE PROG</location>
+					<date xsi:type="xsd:date">2019-10-25T19:22:58</date>
+					<classcod xsi:type="xsd:string">13</classcod>
+					<naics xsi:type="xsd:string">111150</naics>
+					<subject xsi:type="xsd:string">Presol Test</subject>
+					<solnbr xsi:type="xsd:string">ST_PRESOL_Oct_0012</solnbr>
+					<respdate xsi:type="xsd:date">2020-01-01T23:59:59-05:00</respdate>
+					<archdate xsi:type="xsd:date">2020-01-01</archdate>
+					<desc xsi:type="xsd:string">Description by Veera</desc>
+					<link xsi:type="xsd:string">https://100samfrontendaltcomp.apps.prod-iae.bsp.gsa.gov/opp/bf20590c11c74f209f992c074dbbb0d1/view</link>
+					<contact xsi:type="xsd:string">Veera Sareddy primary&lt;a href=""&gt; Gmail Desc&lt;/a&gt;</contact>
+					<email xsi:type="ns1:GovEmail">
+						<address xsi:type="xsd:string"></address>
+						<desc xsi:type="xsd:string"></desc>
+					</email>
+					<popaddress xsi:type="xsd:string">Alton Sq</popaddress>
+					<popzip xsi:type="xsd:string">20170</popzip>
+					<popcountry xsi:type="xsd:string">USA</popcountry>
+					<recovery_act xsi:type="xsd:boolean">true</recovery_act>
+					<document_packages SOAP-ENC:arrayType="ns1:DocumentPackageData[1]" xsi:type="ns1:ArrayOfDocumentPackageData">
+						<item xsi:type="ns1:DocumentPackageData">
+							<package_id xsi:type="xsd:string">N/A</package_id>
+							<label xsi:type="xsd:string">N/A</label>
+							<type xsi:type="xsd:string">N/A</type>
+							<sensitive xsi:type="xsd:boolean">true</sensitive>
+							<pr_number xsi:type="xsd:string">N/A</pr_number>
+							<project_number xsi:type="xsd:string">N/A</project_number>
+							<nsn_mmac xsi:type="xsd:string">N/A</nsn_mmac>
+							<part_number xsi:type="xsd:string">N/A</part_number>
+							<nomenclature xsi:type="xsd:string">N/A</nomenclature>
+							<export_controlled xsi:type="xsd:boolean">true</export_controlled>
+							<explicit_access xsi:type="xsd:boolean">true</explicit_access>
+							<is_cd_avail xsi:type="xsd:boolean">false</is_cd_avail>
+							<files SOAP-ENC:arrayType="ns1:DocumentFileData[1]" xsi:type="ns1:ArrayOfDocumentFileData">
+								<item xsi:type="ns1:DocumentFileData">
+									<file_id xsi:type="xsd:string">14add82cf11844ceb15f0e61ebe26235</file_id>
+									<type xsi:type="xsd:string">link</type>
+									<filename xsi:type="xsd:string"/>
+									<link xsi:type="xsd:string">http://fbo.gov</link>
+									<desc xsi:type="xsd:string">test desc</desc>
+									<size_limit_error xsi:type="xsd:string"/>
+								</item>
+							</files>
+						</item>
+					</document_packages>
+				</notice>
+			</return>
+		</ns1:getNoticeDataResponse>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
 
 </textarea>
 </details>
@@ -4122,7 +4111,7 @@ respdate|Yes – Only Combined/Solicitation<br> No – Rest (Required for Source
 **archdate** (updated needed)|	No|	YYYYMMDD	|1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restriction <br><br> 2.	This date cannot be current or in past; has to be in future|	1.	DATE field in unexpected format  Expects YYYYMMDD<br><br> 2.	This opportunity cannot be published. Archive date provided is in the past.
 awardee	|Yes – Only Award<br> No – Rest|	6553 characters|	NA|	NA
 awardee_duns|	No	|9 digits with optional plus 4|	NA|	NA
-contact	| Yes - Rest <br> No - Award & Special Notice;	|65535 characters Default value = Primary Other types are: Secondary, Owner|	1. This required field should be validated	|1. Primary Contact is Required
+contact	| Yes - Rest <br> No - Award & Special Notice	|65535 characters Default value = Primary Other types are: Secondary, Owner|	1. This required field should be validated	|1. Primary Contact is Required
 desc| Yes - Rest <br> No – Justfication & Award 	|65535 characters|	1. This required field should be validated.|	1. Description is required
 link|No|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)|	NA	| NA
 email|	Yes - Rest <br> No - Only Award|	128 characters|	NA	 |NA
