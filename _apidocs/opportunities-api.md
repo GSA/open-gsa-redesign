@@ -2813,8 +2813,8 @@ Examples
 * Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type |Field Length | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
------|-----------|----------------|--------------------------|-----------------------|------------ |------------
-type | string | 1 character | See Notice Types table | Yes | Yes | Notice Type
+-----|-----------|-------|-------------------|------------|------------ |----------
+type | string | 1 character| See Notice Types table | Yes | Yes | Notice Type
 solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes | Solicitation Number
 title | string | 256 characters | |Yes | Yes | Title of the Opportunity
 organizationId | string | 32 characters | |No for Create (Yes for Update) | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
@@ -2871,8 +2871,8 @@ award.awardee.manual | string | |boolean  | Yes | Yes  | Awardee
 award.awardee.name | string | 255 characters | | No | No | Awardee Name
 award.awardee.duns | string | 9 digits | | No | No | Awardee Duns
 award.awardee.location | JSON | | NA | NA | NA |
-award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address 1
-award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 1
+award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address 
+award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 2
 award.awardee.location.<br/>city | string | | | No | No | Awardee City
 award.awardee.location.<br/>city.code | string | | | No | No | Awardee City code
 award.awardee.location.<br/>city.name | string | | | No | No | Awardee City name
