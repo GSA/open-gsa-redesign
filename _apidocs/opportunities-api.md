@@ -2817,50 +2817,50 @@ Name | Data Type |Field Length | Allowed Values | Required (Create/Update) | Req
 type | string | 1 character | See Notice Types table | Yes | Yes | Notice Type
 solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes | Solicitation Number
 title | string | 256 characters | |Yes | Yes | Title of the Opportunity
-organizationId | string | 32 characters | No for Create (Yes for Update) | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
-organizationLocationId | string | | No|No| This field has been deprecated.Organization Location details will be pulled from the Federal Hierarchy 
-classificationCode | string |  | No | Yes (not required for type= r) | Product Service Code (PSC)
-naics | JSON | | NA | NA | NA |
-naics.code | string |  | No | Yes | valid NAICS Code
+organizationId | string | 32 characters | |No for Create (Yes for Update) | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
+organizationLocationId | string | | | No|No| This field has been deprecated.Organization Location details will be pulled from the Federal Hierarchy 
+classificationCode | string |  | | No | Yes (not required for type= r) | Product Service Code (PSC)
+naics | JSON | NA |NA | NA | NA |
+naics.code | string |  | | No | Yes | Valid NAICS Code
 naics.type | string | |primary  | No | Yes | NAICS Type Note: 'p' must be in lower case
-flags | JSON | |NA | NA | NA |
+flags | JSON | NA |NA | NA | NA |
 flags.code | string | |Recovery act | No | No | This is a recovery or Reinvestment Act Action
 flags.IsSelected | boolean | |default is 'True' | No | No |
-pointOfContact | JSON | |NA | NA | NA |
+pointOfContact | JSON | NA |NA | NA | NA |
 pointOfContact.type | string | | p | No | Yes | Contact Type Note: 'p' must be in lower case
 pointOfContact.title | string | |  | No | No | Contact title
 pointOfContact.fullname | string | 255 characters| | No | Yes | Contact Full Name
 pointOfContact.email | string |255 characters | | No  | Yes (no if type = a)  | Contact email
 pointOfContact.phone | string |255 characters | | No | No | Contact Phone
 pointOfContact.fax | string | 255 characters | | No  | No | Contact Fax
-placeOfPerformance | JSON | | NA | NA | NA |
+placeOfPerformance | JSON | NA | NA | NA | NA |
 placeOfPerformance.<br/>streetAddess | string | | | No | No | Pop Address
 placeOfPerformance.<br/>streetAddess2 | string | | | No | No | Pop Address2
-placeOfPerformance.city | JSON | | NA | NA | NA | Pop City
+placeOfPerformance.city | JSON | NA | NA | NA | NA | Pop City
 placeOfPerformance.city.<br/>code | string | | | No | No | Pop City code
 placeOfPerformance.city.<br/>name | string | | | No | No | Pop City name
-placeOfPerformance.state | JSON | | NA | NA | NA | Pop City state
+placeOfPerformance.state | JSON |NA | NA | NA | NA | Pop City state
 placeOfPerformance.state.<br/>code | string | | | No | No | Pop city state code
 placeOfPerformance.state.<br/>name | string | | | No | No | Pop city state name
-placeOfPerformance.country | JSON | | NA | NA | NA | Pop Country
+placeOfPerformance.country | JSON | NA | NA | NA | NA | Pop Country
 placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country Code
 placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name
 placeOfPerformance.zip | string | | | No | No | Pop Country zip
-archive | JSON | | NA | NA | NA |
+archive | JSON |NA | NA | NA | NA |
 archive.type | string | | auto15, auto30, autocustom | No | Yes | Archive Type
-archive.date | date |  | No | Yes (if archive.type=<br/>autocustom) | Archive Date
-permissions | JSON | | NA | NA | NA |
-permissions.ivl | JSON | | NA | NA | NA |
+archive.date | date | | | No | Yes (if archive.type=<br/>autocustom) | Archive Date
+permissions | JSON | NA | NA | NA | NA |
+permissions.ivl | JSON | NA | NA | NA | NA |
 permissions.ivl.create | boolean | | | No | No | permissions.ivl.create
 permissions.ivl.read | boolean | | | No | No | permissions.ivl.read
 permissions.ivl.update | boolean | | Not In Use | Not In Use | Not In Use | Not In Use
 permissions.ivl.delete | boolean | | Not In Use | Not In Use | Not In Use | Not In Use
-solicitation | JSON | | NA | NA | NA |
+solicitation | JSON |NA | NA | NA | NA |
 solicitation.setAside | string | |See Set-Aside values table | No | No | setAside
-solicitation.deadlines | JSON | | NA | NA | NA |
+solicitation.deadlines | JSON | NA | NA | NA | NA |
 solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
-solicitation.deadlines.<br/>responseresponseTz | |string | | No | No | Time Zone for <br/>Solicitation Deadline Date
-award | JSON | | NA | NA | NA |
+solicitation.deadlines.<br/>responseresponseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
+award | JSON | NA | NA | NA | NA |
 award.date | date | |YYYY-MM-DD |No | Yes only for type= a | Award Date
 award.number | string | 255 characters | |No | Yes only for type= i, j, a | Award Number
 award.deliverOrderNumber | string | 255 characters| | No | No | Award Deliver Order Number
@@ -3097,8 +3097,8 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
  "attType": "file",
  "content": "",
  "resourceName": "",
- "fileType": "text/plain",
- "packageAccessLevel": "public"
+ "fileType": "",
+ "packageAccessLevel": ""
 }
 </pre></code>
 </p>
@@ -3162,19 +3162,21 @@ Flash Video (.flv, .f4v)|	video/x-flv
 
 <div id="update-attachment-json" title="Click to view update Attachment/Link Contract">
 <details>
-<summary>Update_Attachment/Link_Contract_Json - To modify the access level of a draft attachment on a draft notice </summary>
+<summary>Update_Attachment_Contract_Json </summary>
 <p>
 <code><pre>
 {
  "attType": "file",
  "packageAccessLevel": "",
- "explicitAccess": ""
+ "explicitAccess": "",
+ "resourceName": "",
+ "sortOrderChanged":true ,
+ "resourceIdBelow": ""
 }
 </pre></code>
 </p>
-</details>
 
-<summary>Update_Attachment/Link_Contract_Json - To modify the name of a draft attachment/link on a draft notice </summary>
+<summary>Update_Link_Contract_Json </summary>
 <p>
 <code><pre>
 {
