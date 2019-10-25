@@ -3126,7 +3126,7 @@ attType | string | link, file | Yes | Type of attachment, either link or file
 content | byte |  | Yes (if attType=file) | File content in base64 format
 packageAccessLevel | string | public,private(default public) | No | Type of access to file. Only used with attType 'file'.
 resourceName | string |  | Yes (if attType=file) | Name of file
-fileType | string |  | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#Valid-File-Types)
+fileType | string |  | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
 link | string |  | Yes (if attType=link) | Resource link  URL
 description | string |  | Yes (if attType=link) | Description of the link
 
