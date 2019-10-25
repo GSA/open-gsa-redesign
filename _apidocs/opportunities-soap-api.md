@@ -31,10 +31,10 @@ To perform an operation, user who is registered with beta.sam.gov should have ei
 * On beta.sam.gov, please log in and click on the profile and go to Account Details. AAC is listed under 'Organization Information' section.
 * On alpha.sam.gov, please log in and click on the profile and go to Account Details. AAC is listed under 'Organization Information' section.
 
-### *Type of Connection Validation (Future Implementation)*
+### Type of Connection Validation 
 All SOAP Web Service requests will be validated against the Type of Connection within the system account profile. All requests without "SOAP" type of connection in the system account profile will be rejected with an error.
 
-### *IP Address Validation (Future Implementation)*
+### IP Address Validation
 All SOAP Web Service requests will be validated against the IP Addresses registered within the system account profile. All requests that are not from registered IP address(es) in the system account profile will be rejected with an error.
 
 ### Authentication Methods
@@ -4668,7 +4668,7 @@ Date | Version | Description
 ------|---------------|---------
 5/10/2019 | v0.1 | Base Version
 7/22/2019 | v0.2 | Workflow Chart Added
-8/01/2019  | v0.3 | Added Future Implementation for IP Address Validation and Type of Connection 
+8/01/2019  | v0.3 | Added IP Address Validation and Type of Connection 
 8/01/2019 | v0.4 | Added the details for the Solicitation notice type and business rules for nType
 8/19/2019 | v0.5 | SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated <br> User Account Section Updated
 9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions
