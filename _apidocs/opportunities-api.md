@@ -1984,7 +1984,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-resourceId | query | string | Yes | Attachment ID
+resourceId | query | string | Yes | Resource ID
 Request JSON | Body | JSON | Yes | [Refer Update Attachment Contract JSON](#update-attachment-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -1998,30 +1998,71 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Update Attachment Request - file</summary>
+<summary>Update Attachment Request - Change File Access : Controlled Unclassified (Only applicable to files that are not published) </summary>
 <p>
 <code><pre>
 {
   "attType": "file",
   "packageAccessLevel": "private",
-   "explicitAccess": "1",
- "content": "SGVsbG8=",
- "fileType": "text/plain"
+  "explicitAccess": "1"
 }
 </pre></code>
 </p>
 </details>
 
 <details>
-<summary>Update Attachment Request - link</summary>
+<summary>Update Attachment Request - Change File Access : Public (Only applicable to files that are not published) </summary>
 <p>
 <code><pre>
 {
   "attType": "file",
-  "packageAccessLevel": "private",
-   "explicitAccess": "1",
- "content": "SGVsbG8=",
- "fileType": "text/plain"
+  "packageAccessLevel": "public",
+  "explicitAccess": "0"
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Update Attachment Request - Change File Name (Only applicable to files that are not published)</summary>
+<p>
+<code><pre>
+{
+  "resourceName": "newFileName.pdf"
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Update Attachment Request - Change Resource Order (Applicable to both files and links)</summary>
+<p>
+<code><pre>
+{
+  "sortOrderChanged": true,
+  "resourceIdBelow": "292dc517a19b4e43846f39d20e6f7ecf"
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Update Attachment Request - Change Resource Order (Move resource to the bottom.(Applicable to both files and links))</summary>
+<p>
+<code><pre>
+{
+  "sortOrderChanged": true
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Update Attachment Request - Change Link Display text</summary>
+<p>
+<code><pre>
+{
+  "resourceName": "New Display Text"
 }
 </pre></code>
 </p>
@@ -3128,9 +3169,7 @@ Flash Video (.flv, .f4v)|	video/x-flv
 {
  "attType": "file",
  "packageAccessLevel": "private",
-  "explicitAccess": "1",
-"content": "SGVsbG8=",
-"fileType": "text/plain"
+ "explicitAccess": "1"
 }
 </pre></code>
 </p>
@@ -3141,11 +3180,12 @@ Flash Video (.flv, .f4v)|	video/x-flv
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-attType | string | link, file | Yes | Type of attachment, either link or file
-link | string |  | Yes (if attType=link) | Resource link or URL
-packageAccessLevel | string | public,private(default public) | No | Type of access to file or link
-resourceName | string |  | Yes (if attType=file) | Name of file
-explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files.
+attType | string | link, file | No | Should be provided if file access level is changed.
+packageAccessLevel | string | public,private(default public) | No | Type of access to file or link. Should be provided if file access level is changed
+resourceName | string |  | No | Name of file
+explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files. Should be provided if file access level is changed.
+sortOrderChanged | boolean  | true, false | No | Should be provided if file order is changed.
+resourceIdBelow | string  |  | No | This should be Resource ID of the file/link that will display below the attachment/file that is moved.
 
 <p><small><a href="#">Back to top</a></small></p>
 
