@@ -2070,6 +2070,39 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
+### Delete Attachment in Opportunity
+
+------- | -------
+**Request Type** | DELETE
+**URL** |/v1/api/{opportunityId}/attachments/{resourceId}
+**Summary** | Delete an attachment from an opportunity
+**Consumes** | Request Parameters
+**Produces** | NA
+
+Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+Authorization | Header |  string | Yes | Valid and authorized user ID
+api_key | query | string | Yes | Valid System Account API Key
+opportunityId | query | string | Yes | Opportunity ID
+resourceId | query | string | Yes | Resource ID
+deleteAll | query | boolean | No | Should be true if deleting attachment from all versions of a notice; else false
+
+<p><small><a href="#">Back to top</a></small></p>
+
+Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+204 | string | Attachment successfully deleted | NA
+
+Examples
+
+_NA_
+
+<p><small><a href="#">Back to top</a></small></p>
+
 ### Download Attachment as Original File Type
 
 
