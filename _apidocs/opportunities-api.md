@@ -2885,7 +2885,7 @@ award.awardee.location.<br/>country.name | string | | | No | No | Awardee Countr
 award.awardee.location.<br/>zip | string | | | No | No | Awardee Country Zip
 justificationAuthority | JSON |NA |NA | NA | NA |
 justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number
-justificationAuthority.<br/>authority | | string |  | No | No | Justification Authority
+justificationAuthority.<br/>authority | string|  |  | No | No | Justification Authority
 link | JSON | NA |NA | NA | NA |
 link.href | string |  | | No | No | Url for the notice on SAM.gov
 link.additionalInfo | JSON | NA |NA | NA | NA |
