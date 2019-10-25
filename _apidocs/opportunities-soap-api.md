@@ -153,7 +153,7 @@ This is a conversion table for notices using SOAP services
 ||SRCSGT | PRESOL | COMBINE | SOL| AWARD | SSALE | ITB | JA | SNOTE
 -----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 |**SRCSGT**||O|O|O|O|O|||O
-|**PRESOL**|O||O|O||O|O|O|O|O|O
+|**PRESOL**|O||O|O||O|O|O|O
 |**COMBINE**|O|O|||O||O|O|O
 |**SOL**|O|O|||O||O|O|O
 |**AWARD**|||O|O|||O|O|O
