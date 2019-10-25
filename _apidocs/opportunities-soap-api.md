@@ -214,8 +214,8 @@ GovURL Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url |	string |	yes |	Website Address |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc |	string |	yes |	Description |	255 characters
+url |	string |	Yes |	Website Address |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc |	string |	Yes |	Description |	255 characters
 
 GovEmail Complex Type Definition
 
@@ -262,10 +262,10 @@ DeleteNoticeOrDocumentPackage Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr |	string |	Yes, if Non-Award |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
-ntype |	string |	no |	[Refer Related Notices](#related-notices)
+ntype |	string |	No |	[Refer Related Notices](#related-notices)
 awdnbr |  string | Yes; Solicitation Number or Award Number is required| Award # |	255 characters
 deletetype |	string |	no |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachments/links. Defaults to “notice” if not provided
-deletemethod |	string | no | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
+deletemethod |	string | No | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
 
 ### Archive Notice <br>(ArchiveNotice)
 
@@ -372,15 +372,15 @@ GovURL Complex Type Definition: This field is not implemented
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	| string | no |	Website Address |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc | string |	no | Description |	255 characters
+url	| string | No |	Website Address |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc | string |	No | Description |	255 characters
 
 GovEmail Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-address	| string | no |Email Address |128 characters
-desc | string	| no | Description | 255 characters
+address	| string | No |Email Address |128 characters
+desc | string	| No | Description | 255 characters
 
 DocumentLink Complex Type Definition: This field is not implemented
 
@@ -493,23 +493,23 @@ zip |	string |	No |	Zip Code |	5 digits
 classcod |	string	 | Yes – Solicitation/Combined/Sale of Surplus/ITB/Justification <br>No – Rest |	Class-Code	| Valid classification code (FAR, Section 5.207(g))
 naics | 	string |	Yes – Combined & Solicitation <br> No – Rest | 	NAICS Code |	Valid NAICS Code  NAICS Reference
 officeid |	string	| Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
-offadd |	string	| no	| Office Address |	65535 characters
+offadd |	string	| No	| Office Address |	65535 characters
 subject	| string	| Yes |	Subject |	255 characters
 solnbr | string |	Yes | 	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 ntype |	string |	Yes |	Base Notice Type |	[Refer Related Notices](#related-notices)
 respdate |	date |	Yes – for Combined/Solicitation <br> No – Rest (Special Notice/Sale of Surplus/Sources Sought/Presol must have either respdate or archdate)|	Response Date |	YYYYMMDD
-**archdate** (update needed) |	date |	no	| Archive Date |	YYYYMMDD
+**archdate** (update needed) |	date |	No	| Archive Date |	YYYYMMDD
 contact |	string |	Yes – Rest <br> No – For Award/Special notice|	Contact Info |	65535 characters
 desc |	string |	Yes - Award/Justification <br> No - Rest	| Description |	65535 characters
-link	| GovURL – complex type |	no |	Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+link	| GovURL – complex type |	No |	Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
 email |	GovEmail – complex type |	Yes - Rest <br> No - Only Award |	Government Email |	128 characters
-links |	DocumentLink[] |	no |	Array Of links |
-files |	DocumentFile[] |	no |	Array of files |
-setaside |	string |	no |	Set-Aside code |	See Set Aside Value Section for valid codes
-popaddress |	string |	no	 | Pop Add |	65535 characters
-popzip	| string |	no	 | Pop Zip |	5 digits
-popcountry |	string |	no	 | Pop Country |	32 characters
-recovery_act |	boolean |	no |	Recovery Act |	True or False
+links |	DocumentLink[] |	No |	Array Of links |
+files |	DocumentFile[] |	No |	Array of files |
+setaside |	string |	No |	Set-Aside code |	See Set Aside Value Section for valid codes
+popaddress |	string |	No	 | Pop Add |	65535 characters
+popzip	| string |	No	 | Pop Zip |	5 digits
+popcountry |	string |	No	 | Pop Country |	32 characters
+recovery_act |	boolean |	No |	Recovery Act |	True or False
 
 GovURL Complex Type Definition:
 
@@ -589,15 +589,15 @@ GovURL Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url |	string |	yes |	Website Address	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc	| string	| yes |	Description |	255 characters
+url |	string |	Yes |	Website Address	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc	| string	| Yes |	Description |	255 characters
 
 GovEmail Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-address |	string	| yes |	Email Address	| 128 characters
-desc |	string |	yes |	Description |	255 characters
+address |	string	| Yes |	Email Address	| 128 characters
+desc |	string |	Yes |	Description |	255 characters
 
 DocumentLink Complex Type Definition:
 
@@ -660,15 +660,15 @@ GovURL Complex Type Definition: This field is not implemented
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	 | string	| yes |	Website Address |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc |	string |	yes |	Description |	255 characters
+url	 | string	| Yes |	Website Address |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc |	string |	Yes |	Description |	255 characters
 
 GovEmail Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-address	| string |	yes |	Email Address |	128 characters
-desc	| string |	yes |	Description |	255 characters
+address	| string |	Yes |	Email Address |	128 characters
+desc	| string |	Yes |	Description |	255 characters
 
 DocumentLink Complex Type Definition: This field is not implemented
 
@@ -730,15 +730,15 @@ GovURL Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	|string	|yes|	Website Address|	255 characters, consist of a restricted set of characters (see URL specification - RFC2396)
-desc|	string	|yes|	Description|	255 characters
+url	|string	|Yes|	Website Address|	255 characters, consist of a restricted set of characters (see URL specification - RFC2396)
+desc|	string	|Yes|	Description|	255 characters
 
 GovEmail Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-address	|string|	yes|	Email Address	|128 characters
-desc	|string	|yes	|Description	|255 characters
+address	|string|	Yes|	Email Address	|128 characters
+desc	|string	|Yes	|Description	|255 characters
 
 DocumentLink Complex Type Definition:
 
@@ -796,15 +796,15 @@ GovURL Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	|string	|yes	|Website Address	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc	|string	|yes	|Description	|255 characters
+url	|string	|Yes	|Website Address	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc	|string	|Yes	|Description	|255 characters
 
 GovEmail Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-address|	string|	yes|	Email Address	|128 characters
-desc	|string	|yes	|Description	|255 characters
+address|	string|	Yes|	Email Address	|128 characters
+desc	|string	|Yes	|Description	|255 characters
 
 DocumentLink Complex Type Definition:
 
@@ -937,15 +937,15 @@ GovURL Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	|string	|yes	|Website Address	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc	|string|	yes|	Description|	255 characters
+url	|string	|Yes	|Website Address	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc	|string|	Yes|	Description|	255 characters
 
 GovEmail Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-address	|string	|yes|	Email Address	|128 characters
-desc|	string|	yes	|Description|	255 characters
+address	|string	|Yes|	Email Address	|128 characters
+desc|	string|	Yes	|Description|	255 characters
 
 DocumentLink Complex Type Definition:
 
@@ -1013,14 +1013,14 @@ stauth	|string	|Yes –  JA <br> No – Rest	|J&A StatutoryAuthority<br><br> Not
 respdate|	date|	Yes – Only Combined/Solicitation<br> No – Rest (Required for Sources Sought/Presol/Sale of Surplus/Special Notice when Required when 15 Days after Response is selected)	|Response Date	|YYYYMMDD
 **archdate** (update needed) |	date|	No|	Archive Date|	YYYYMMDD
 awardee|	string|	Yes – Only Award <br> No – Rest|	Awardee	|65535 characters
-awardee_duns|	string	|no	|Awardee DUNS	|9 digits with optional plus 4
+awardee_duns|	string	|No	|Awardee DUNS	|9 digits with optional plus 4
 contact|	string|	Yes - Rest <br> No - Award & Special Notice|	Contact Info|	65535 characters
 desc	|string|	Yes - Rest  <br> No – Justfication & Award|	Main Description|	65535 characters
 link|	GovernmentURL|	No|	Government Link	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
 email|	GovernmentEmail|	Yes - Rest <br>No - Only Award|	Government Email	|128 characters
-links	|DocumentLink []|	no	|Array Of links	|
-files	|DocumentFile[]|	no|	Array of files	|
-setaside|	string|	no|	Set-Aside code |	See Set Aside Section for valid codes
+links	|DocumentLink []|	No	|Array Of links	|
+files	|DocumentFile[]|	No|	Array of files	|
+setaside|	string|	No|	Set-Aside code |	See Set Aside Section for valid codes
 popaddress|	string|	No|	POP Address	|65535 characters
 popzip|	string	|No	|POP Zip	|5 digits
 popcountry|	string|	Yes – For wards; No – For rest|	POP Country|	32 characters
@@ -1033,15 +1033,15 @@ GovURL Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url|	string|	yes|	Website Address|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc|	string|	yes	|Description|	255 characters
+url|	string|	Yes|	Website Address|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+desc|	string|	Yes	|Description|	255 characters
 
 GovEmail Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-address|	string|	yes	|Email Address|	128 characters
-desc	|string|	yes	|Description	|255 characters
+address|	string|	Yes	|Email Address|	128 characters
+desc	|string|	Yes	|Description	|255 characters
 
 DocumentLink Complex Type Definition:
 
@@ -1185,8 +1185,8 @@ IVLListRequest Complex Type Definition:
 
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
-solnbr|	string|	yes|	Solicitation #
-ntype	|string	|no	|[Refer Related Notices](#related-notices)
+solnbr|	string|	Yes|	Solicitation #
+ntype	|string	|No	|[Refer Related Notices](#related-notices)
 
 IVLListResponse Complex Type Definition:
 
@@ -1230,10 +1230,10 @@ AuthorizedPartyListRequest Complex Type Definition:
 
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
-solnbr|	string|	yes	|Solicitation #. Provide an empty string for this argument if using nonfbo_solnbr below
-ntype|	string|	no|	V[Refer Related Notices](#related-notices)
+solnbr|	string|	Yes	|Solicitation #. Provide an empty string for this argument if using nonfbo_solnbr below
+ntype|	string|	No|	V[Refer Related Notices](#related-notices)
 nonfbo_solbr|	string|	no|	Non-fbo Solicitation #. Not supported for this method
-status| string	|no	|Valid Options: approved, pending, rejected, “empty value”. If empty, all status will be returned <br> <br> Note, use “pending” to pull the pending explicit access requests.
+status| string	|No	|Valid Options: approved, pending, rejected, “empty value”. If empty, all status will be returned <br> <br> Note, use “pending” to pull the pending explicit access requests.
 
 AuthorizedPartyListResponse Complex Type Definition:
 
@@ -1274,10 +1274,10 @@ ExplicitAccessRequestComplex Type Definition:
 
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
-solnbr|	string	|yes|	Solicitation #
-ntype	|string	|no|	[Refer Related Notices](#related-notices)
+solnbr|	string	|Yes|	Solicitation #
+ntype	|string	|No|	[Refer Related Notices](#related-notices)
 nonfbo_solbr	|string|	no|	Non-fbo Solicitation #.  Not supported for this method
-Id|	string|	yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.
+Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.
 
 
 Response:
@@ -1300,10 +1300,10 @@ ExplicitAccessRequestComplex Type Definition:
 
 Element Name	|Type	|Required|	Description
 -----|-----|-----|----
-solnbr	|string	|yes|	Solicitation #
-ntype|	string|	no|	[Refer Related Notices](#related-notices)
-nonfbo_solbr|	string|	no|	Non-fbo Solicitation #.  Not supported for this method
-vendor|	VendorData	|yes|	Complex type defined below
+solnbr	|string	|Yes|	Solicitation #
+ntype|	string|	No|	[Refer Related Notices](#related-notices)
+nonfbo_solbr|	string|	No|	Non-fbo Solicitation #.  Not supported for this method
+vendor|	VendorData	|Yes|	Complex type defined below
 
 Response:
 
@@ -1337,9 +1337,9 @@ ExplicitAccessRequestComplex Type Definition:
 
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
-solnbr|	string	|yes|	Solicitation #
-ntype	|string	|no|[Refer Related Notices](#related-notices)
-nonfbo_solbr	|string|	no|	Non-fbo Solicitation #.  Not supported for this method
+solnbr|	string	|Yes|	Solicitation #
+ntype	|string	|No|[Refer Related Notices](#related-notices)
+nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method
 Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.
 reason	|string|	Yes|	rejection reason not used in this method
 
@@ -1364,11 +1364,11 @@ ExplicitAccessRequestComplex Type Definition:
 
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
-solnbr|	string|	yes|	Solicitation #
-ntype	|string	|no|	[Refer Related Notices](#related-notices)
-nonfbo_solbr	|string	|no	|Non-fbo Solicitation #.  Not supported for this method
-vendor	|VendorData|	yes|	Complex type defined below
-reason|	string|	yes	|Rejection Reason 
+solnbr|	string|	Yes|	Solicitation #
+ntype	|string	|No|	[Refer Related Notices](#related-notices)
+nonfbo_solbr	|string	|No	|Non-fbo Solicitation #.  Not supported for this method
+vendor	|VendorData|	Yes|	Complex type defined below
+reason|	string|	Yes	|Rejection Reason 
 
 Response:
 
@@ -1400,11 +1400,11 @@ ExplicitAccessRequest Complex Type Definition:
 
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
-solnbr|	string|	yes|	Solicitation #
-ntype	|string	|no	|[Refer Related Notices](#related-notices)
-nonfbo_solbr|	string|	no	|Non-fbo Solicitation #.   Not supported for this method.
-Id	|string	|no	|Not used in this method
-vendor	|VendorData|	yes|	Complex type defined below
+solnbr|	string|	Yes|	Solicitation #
+ntype	|string	|No	|[Refer Related Notices](#related-notices)
+nonfbo_solbr|	string|	No	|Non-fbo Solicitation #.   Not supported for this method.
+Id	|string	|No	|Not used in this method
+vendor	|VendorData|	Yes|	Complex type defined below
 
 Response:
 
@@ -1596,7 +1596,7 @@ FileDataRequest Complex Type Definition:
 
 Element Name|	Type|	Required|	Description
 -----|-----|-----|-----
-file_id	|string|	yes|	Unique ID of a file found from getNoticeData call  (i.e. file_id element)
+file_id	|string|	Yes|	Unique ID of a file found from getNoticeData call  (i.e. file_id element)
 
 Response:
 
@@ -4100,7 +4100,7 @@ offadd|	No|	65535 characters|	Not-Used|	NA
 officeid	|Yes	|20 characters 	|1. This field is required<br><br> 2. If an invalid officeid is given, then service throws an error<br><br> 3. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 4. Officeid must be associated with user account	|1. Contracting Office is required<br><br> 2. Invalid officeid provided<br><br><br> 3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 subject	|Yes	|255 characters|	1. This required field should be validated	|1. $.data.title: is missing but it is required
 solnbr|	 Yes - Rest <br> No - Only Special Notice|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated. If this field is not given, then system throws an errors as shown on the right hand side<br><br> 2. If duplicate solicitation number is given, then system throws an error<br><br> 3. For an invalid solnbr and notice_type combination, the service throws an error|	1.Notice Id is required<br><br> 2. Notice Id for the selected opportunity type already exists<br><br> 3. Opportunity not found with given solicitation number and ntype
-ntype|	no|	[Refer Related Notices](#related-notices) |	1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error 	|NTYPE value provided is not valid
+ntype|	No|	[Refer Related Notices](#related-notices) |	1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error 	|NTYPE value provided is not valid
 awdnbr|	Yes –  Award, ITB & JA <br> No – Rest|	255 characters|	1. This required field should be validated|	1. Award Details Section - Contract Award Number is a required field
 donbr|	Yes – JA <br> No – Rest	|255 characters	|1. This is required field for JA	|1. Award Details Section - Task/Delivery Order Number is required field
 awdamt	|Yes – Award <br> No – Rest|	64 characters|	1. This required field should be validated	|1. Award Details Section – Amount is a required field.
