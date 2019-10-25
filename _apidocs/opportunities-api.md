@@ -2812,96 +2812,95 @@ Examples
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
------|-----------|----------------|--------------------------|-----------------------|------------
-type | string | See Notice Types table | Yes | Yes | Notice Type
-solicitationNumber | string |  | No | Yes | Solicitation Number
-title | string |  | Yes | Yes | Title of the Opportunity
-organizationId | string |  | No for Create (Yes for Update) | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
-organizationLocationId | string | | No|No| Organization Location ID
+Name | Data Type |Field Length | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
+-----|-----------|----------------|--------------------------|-----------------------|------------ |------------
+type | string | 1 character | See Notice Types table | Yes | Yes | Notice Type
+solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes | Solicitation Number
+title | string | 256 characters | |Yes | Yes | Title of the Opportunity
+organizationId | string | 32 characters | No for Create (Yes for Update) | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
+organizationLocationId | string | | No|No| This field has been deprecated.Organization Location details will be pulled from the Federal Hierarchy 
 classificationCode | string |  | No | Yes (not required for type= r) | Product Service Code (PSC)
-naics | JSON | NA | NA | NA |
-naics.code | string |  | No | Yes | NAICS Code
-naics.type | string | primary  | No | Yes | NAICS Type Note: 'p' must be in lower case
-flags | JSON | NA | NA | NA |
-flags.code | string | Recovery act | No | No | This is a recovery or Reinvestment Act Action
-flags.IsSelected | boolean | default = True | No | No |
-pointOfContact | JSON | NA | NA | NA |
-pointOfContact.type | string | p | No | Yes | Contact Type Note: 'p' must be in lower case
-pointOfContact.title | string |  | No | No | Contact title
-pointOfContact.fullname | string |  | No | Yes | Contact Full Name
-pointOfContact.email | string |  | No  | Yes (no if type = a)  | Contact email
-pointOfContact.phone | string |  | No | No | Contact Phone
-pointOfContact.fax | string |  | No  | No | Contact Fax
-placeOfPerformance | JSON | NA | NA | NA |
-placeOfPerformance.<br/>streetAddess | string |  | No | No | Pop Address
-placeOfPerformance.<br/>streetAddess2 | string |  | No | No | Pop Address2
-placeOfPerformance.city | JSON | NA | NA | NA | Pop City
-placeOfPerformance.city.<br/>code | string |  | No | No | Pop City code
-placeOfPerformance.city.<br/>name | string |  | No | No | Pop City name
-placeOfPerformance.state | JSON | NA | NA | NA | Pop City state
-placeOfPerformance.state.<br/>code | string |  | No | No | Pop city state code
-placeOfPerformance.state.<br/>name | string |  | No | No | Pop city state name
-placeOfPerformance.country | JSON | NA | NA | NA | Pop Country
-placeOfPerformance.<br/>country.code | string |  | No | No | Pop Country Code
-placeOfPerformance.<br/>country.name | string |  | No | No | Pop Country name
-placeOfPerformance.zip | string |  | No | No | Pop Country zip
-archive | JSON | NA | NA | NA |
-archive.type | string | auto15, auto30, autocustom | No | Yes | Archive Type
+naics | JSON | | NA | NA | NA |
+naics.code | string |  | No | Yes | valid NAICS Code
+naics.type | string | |primary  | No | Yes | NAICS Type Note: 'p' must be in lower case
+flags | JSON | |NA | NA | NA |
+flags.code | string | |Recovery act | No | No | This is a recovery or Reinvestment Act Action
+flags.IsSelected | boolean | |default is 'True' | No | No |
+pointOfContact | JSON | |NA | NA | NA |
+pointOfContact.type | string | | p | No | Yes | Contact Type Note: 'p' must be in lower case
+pointOfContact.title | string | |  | No | No | Contact title
+pointOfContact.fullname | string | 255 characters| | No | Yes | Contact Full Name
+pointOfContact.email | string |255 characters | | No  | Yes (no if type = a)  | Contact email
+pointOfContact.phone | string |255 characters | | No | No | Contact Phone
+pointOfContact.fax | string | 255 characters | | No  | No | Contact Fax
+placeOfPerformance | JSON | | NA | NA | NA |
+placeOfPerformance.<br/>streetAddess | string | | | No | No | Pop Address
+placeOfPerformance.<br/>streetAddess2 | string | | | No | No | Pop Address2
+placeOfPerformance.city | JSON | | NA | NA | NA | Pop City
+placeOfPerformance.city.<br/>code | string | | | No | No | Pop City code
+placeOfPerformance.city.<br/>name | string | | | No | No | Pop City name
+placeOfPerformance.state | JSON | | NA | NA | NA | Pop City state
+placeOfPerformance.state.<br/>code | string | | | No | No | Pop city state code
+placeOfPerformance.state.<br/>name | string | | | No | No | Pop city state name
+placeOfPerformance.country | JSON | | NA | NA | NA | Pop Country
+placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country Code
+placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name
+placeOfPerformance.zip | string | | | No | No | Pop Country zip
+archive | JSON | | NA | NA | NA |
+archive.type | string | | auto15, auto30, autocustom | No | Yes | Archive Type
 archive.date | date |  | No | Yes (if archive.type=<br/>autocustom) | Archive Date
-permissions | JSON | NA | NA | NA |
-permissions.ivl | JSON | NA | NA | NA |
-permissions.ivl.create | boolean |  | No | No | permissions.ivl.create
-permissions.ivl.read | boolean |  | No | No | permissions.ivl.read
-permissions.ivl.update | boolean | Not In Use | Not In Use | Not In Use | Not In Use
-permissions.ivl.delete | boolean | Not In Use | Not In Use | Not In Use | Not In Use
-solicitation | JSON | NA | NA | NA |
-solicitation.setAside | string | See Set-Aside values table | No | No | setAside
-solicitation.deadlines | JSON | NA | NA | NA |
-solicitation.<br/>deadlines.response | date | YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
-solicitation.deadlines.<br/>responseresponseTz | string | | No | No | Time Zone for <br/>Solicitation Deadline Date
-award | JSON | NA | NA | NA |
-award.date | date | YYYY-MM-DD |No | Yes only for type= a | Award Date
-award.number | string |  | No | Yes only for type= i, j, a | Award Number
-award.deliverOrderNumber | string |  | No | No | Award Deliver Order Number
-award.amount | number |  | No | No | Award Amount
-award.lineitemNumber | string |  | No | No | Award Line item Number
-award.awardee | JSON | NA | NA | NA |
-award.awardee.manual | string | boolean  | Yes | Yes  | Awardee
-award.awardee.name | string |  | No | No | Awardee Name
-award.awardee.duns | string |  | No | No | Awardee Duns
-award.awardee.location | JSON | NA | NA | NA |
-award.awardee.location.<br/>streetAddress | string |  | No | No | Awardee Street Address 1
-award.awardee.location.<br/>streetAddress2 | string |  | No | No | Awardee Street Address 1
-award.awardee.location.<br/>city | string |  | No | No | Awardee City
-award.awardee.location.<br/>city.code | string |  | No | No | Awardee City code
-award.awardee.location.<br/>city.name | string |  | No | No | Awardee City name
-award.awardee.location.<br/>state | JSON | NA | NA | NA |
-award.awardee.location.<br/>state.code | string |  | No | No | Awardee State code
-award.awardee.location.<br/>state.name | string |  | No | No | Awardee State name
-award.awardee.location.<br/>country | JSON | NA | NA | NA |
-award.awardee.location.<br/>country.code | string |  | No | No | Awardee Country code
-award.awardee.location.<br/>country.name | string |  | No | No | Awardee Country Name
-award.awardee.location.<br/>zip | string |  | No | No | Awardee Country Zip
-justificationAuthority | JSON | NA | NA | NA |
-justificationAuthority.<br/>modificationNumber | string |  | No | No | Justification Authority Modification Number
-justificationAuthority.<br/>authority | string |  | No | No | Justification Authority
+permissions | JSON | | NA | NA | NA |
+permissions.ivl | JSON | | NA | NA | NA |
+permissions.ivl.create | boolean | | | No | No | permissions.ivl.create
+permissions.ivl.read | boolean | | | No | No | permissions.ivl.read
+permissions.ivl.update | boolean | | Not In Use | Not In Use | Not In Use | Not In Use
+permissions.ivl.delete | boolean | | Not In Use | Not In Use | Not In Use | Not In Use
+solicitation | JSON | | NA | NA | NA |
+solicitation.setAside | string | |See Set-Aside values table | No | No | setAside
+solicitation.deadlines | JSON | | NA | NA | NA |
+solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
+solicitation.deadlines.<br/>responseresponseTz | |string | | No | No | Time Zone for <br/>Solicitation Deadline Date
+award | JSON | | NA | NA | NA |
+award.date | date | |YYYY-MM-DD |No | Yes only for type= a | Award Date
+award.number | string | 255 characters | |No | Yes only for type= i, j, a | Award Number
+award.deliverOrderNumber | string | 255 characters| | No | No | Award Deliver Order Number
+award.amount | number |64 digits |  | No | No | Award Amount
+award.lineitemNumber | string |255 characters | | No | No | Award Line item Number
+award.awardee | JSON | | NA | NA | NA |
+award.awardee.manual | string | |boolean  | Yes | Yes  | Awardee
+award.awardee.name | string | 255 characters | | No | No | Awardee Name
+award.awardee.duns | string | 9 digits | | No | No | Awardee Duns
+award.awardee.location | JSON | | NA | NA | NA |
+award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address 1
+award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 1
+award.awardee.location.<br/>city | string | | | No | No | Awardee City
+award.awardee.location.<br/>city.code | string | | | No | No | Awardee City code
+award.awardee.location.<br/>city.name | string | | | No | No | Awardee City name
+award.awardee.location.<br/>state | JSON | | NA | NA | NA |
+award.awardee.location.<br/>state.code | string | | | No | No | Awardee State code
+award.awardee.location.<br/>state.name | string | | | No | No | Awardee State name
+award.awardee.location.<br/>country | JSON | | NA | NA | NA |
+award.awardee.location.<br/>country.code | string | | | No | No | Awardee Country code
+award.awardee.location.<br/>country.name | string | | | No | No | Awardee Country Name
+award.awardee.location.<br/>zip | string | | | No | No | Awardee Country Zip
+justificationAuthority | JSON | |NA | NA | NA |
+justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number
+justificationAuthority.<br/>authority | | string |  | No | No | Justification Authority
 link | JSON | NA | NA | NA |
+link.href | string |  | | No | No | Url for the notice on SAM.gov
 link.additionalInfo | JSON | NA | NA | NA |
-link.additionalInfo.cotent | string |  | No | No | Additional info
-link.href | string |  | No | No | Website Address
+link.additionalInfo.content | string | | | No | No | Additional info
 additionalReporting | string | none/<br/>auto_recovery | No | Yes |
-description | JSON | NA | NA | NA |
-description.body | string |  | No | Yes | Description of notice
-attType | string | link, file | No |No| Type of attachment, either link or file
-content | byte |  | No|No | File content in byte format
-link | string |  | |No|No | Resource link or URL
-packageAccessLevel | string | public,private(default public) | No | No| Type of access to file or link
-resourceName | string |  | No|No | Name of file
-fairOpportunity | string | |No|No| Fair Opportunity|
-fairOpportunity.authority|string | |No|No| Fair Opportunity Authority
-postedDate| date| |No|No| Posted Date
-archived| string| | |No|No| Archived Status
+description | JSON | | NA | NA | NA |
+description.body | string | 65535 characters| | No | Yes | Description of notice
+resources | JSON | | NA | NA | NA |
+resources.attType | string | link, file | No |No| Type of attachment, either link or file
+resources.content | byte |250MB |  | No|No | File content in base64 format
+resources.link | string |  | |No|No | Resource link URL
+resources.packageAccessLevel | string | | public,private(default public) | No | No| Type of access to file or link
+resources.resourceName | string | 255 characters |  | No|No | Name of file
+postedDate| date| | |No|No| Posted Date
+archived| boolean| | true or false |No|No| Archived Status
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3112,8 +3111,7 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
 {
   "attType": "link",
   "link": "",
-  "description": "",
-  "packageAccessLevel": ""
+  "description": ""
 }
 </pre></code>
 </p>
@@ -3125,11 +3123,12 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 attType | string | link, file | Yes | Type of attachment, either link or file
-content | byte |  | Yes (if attType=file) | File content in byte format
-link | string |  | Yes (if attType=link) | Resource link or URL
-packageAccessLevel | string | public,private(default public) | No | Type of access to file or link
+content | byte |  | Yes (if attType=file) | File content in base64 format
+packageAccessLevel | string | public,private(default public) | No | Type of access to file. Only used with attType 'file'.
 resourceName | string |  | Yes (if attType=file) | Name of file
-
+fileType | string |  | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#Valid File Types)
+link | string |  | Yes (if attType=link) | Resource link  URL
+description | string |  | Yes (if attType=link) | Description of the link
 
 #### Valid File Types 
 
@@ -3159,17 +3158,27 @@ Flash Video (.flv, .f4v)|	video/x-flv
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update Attachment Contract JSON
+### Update Attachment/Link Contract JSON
 
-<div id="update-attachment-json" title="Click to view Update Attachment Contract">
+<div id="update-attachment-json" title="Click to view update Attachment/Link Contract">
 <details>
-<summary>Update_Attachment_Contract_Json</summary>
+<summary>Update_Attachment/Link_Contract_Json - To modify the access level of a draft attachment on a draft notice </summary>
 <p>
 <code><pre>
 {
  "attType": "file",
- "packageAccessLevel": "private",
- "explicitAccess": "1"
+ "packageAccessLevel": "",
+ "explicitAccess": ""
+}
+</pre></code>
+</p>
+</details>
+
+<summary>Update_Attachment/Link_Contract_Json - To modify the name of a draft attachment/link on a draft notice </summary>
+<p>
+<code><pre>
+{
+ "resourceName": ""
 }
 </pre></code>
 </p>
@@ -3180,12 +3189,12 @@ Flash Video (.flv, .f4v)|	video/x-flv
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-attType | string | link, file | No | Should be provided if file access level is changed.
-packageAccessLevel | string | public,private(default public) | No | Type of access to file or link. Should be provided if file access level is changed
-resourceName | string |  | No | Name of file
-explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files. Should be provided if file access level is changed.
+attType | string | link, file | No | Required only for file access level changes
+packageAccessLevel | string | public,private(default public) | No | Type of access to file. Only used with attType 'file'
+resourceName | string |  | No | Name of file or link
+explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files. Required only for file access level changes
 sortOrderChanged | boolean  | true, false | No | Should be provided if file order is changed.
-resourceIdBelow | string  |  | No | This should be Resource ID of the file/link that will display below the attachment/file that is moved.
+resourceIdBelow | string  |  | No | This should be Resource ID of the file/link that will display below the file/link that is moved
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3374,6 +3383,8 @@ Date | Version | Description
 8/29/2019| v0.73| Error Codes Added
 8/29/2019| v0.74| Updated the missing description for explicitAccess field in Update Attachment Contract JSON
 10/10/2019 | v0.8 | Updated the Set-Aside values with the latest codes
+10/25/2019 | v0.9 | Updated the field lengths
+
 
 
 <p><small><a href="#">Back to top</a></small></p>
