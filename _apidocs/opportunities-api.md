@@ -2070,12 +2070,12 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Delete Attachment in Opportunity
+### Delete Resource from Draft Opportunity
 
 ------- | -------
 **Request Type** | DELETE
 **URL** |/v1/api/{opportunityId}/attachments/{resourceId}
-**Summary** | Delete an attachment from an opportunity
+**Summary** | Delete a resource from a draft opportunity.
 **Consumes** | Request Parameters
 **Produces** | NA
 
@@ -2087,7 +2087,7 @@ Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
 resourceId | query | string | Yes | Resource ID
-deleteAll | query | boolean | Yes | Should be true if deleting attachment from all versions of a notice; else false
+deleteAll | query | boolean | Yes | Should be true if deleting resource from all versions of a notice; else false. The deleted published resources will not show up if there are any further revisions made for the current opportunity. 
 
 <p><small><a href="#">Back to top</a></small></p>
 
