@@ -115,6 +115,16 @@ VSS | Veteran-Owned Small Business Sole source (specific to Department of Vetera
 ### Notice Types
 The web service API includes specific methods to submit each of the base notice types (i.e. presolicitation, combined/synopsis, award, etc.). You will find these outlined in the sections below.
 
+PRESOL - Presolicitation<br>
+COMBINE - Combined Synopsis/Solicitation<br>
+SRCSGT - for Sources Sought<br>
+SSALE - Sale of Surplus Property<br>
+SNOTE - Special Notice<br>
+JA – Justification<br>
+ITB – Intent to Bundle <br>
+SOL - Solicitation<br>
+AWARD - Award<br>
+
 ### Stauth Valid Values
 Below table captures stauth values to use while making requests as needed.
 
@@ -135,18 +145,6 @@ far6 | FAR 6.302-6  - National security
 far7 | FAR 6.302-7 - Public interest
 
 ### Related Notices
-
-This section indicates the list of  notices that can be used in the SOAP services
-
-PRESOL - Presolicitation<br>
-COMBINE - Combined Synopsis/Solicitation<br>
-SRCSGT - for Sources Sought<br>
-SSALE - Sale of Surplus Property<br>
-SNOTE - Special Notice<br>
-JA – Justification<br>
-ITB – Intent to Bundle <br>
-SOL - Solicitation<br>
-AWARD - Award<br>
 
 This is a conversion table for notices using SOAP services
 
