@@ -159,21 +159,20 @@ Award Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date |	date |	No |	Posting Date |	YYYYMMDD
-zip |	string |	No |	Zip Code |	5 digits
+zip |	string |	No |	Zip Code |	5 digits.This field has been deprecated
 classcod |	string |	No |	Class-Code |	Valid classification code (FAR, Section 5.207(g))
 naics |	string |	No |	NAICS Code |	Valid NAICS Code NAICS Reference
-offadd |	string |	No |	Office Address |	65535 characters
+offadd |	string |	No |	Office Address |	65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy
 officeid |	string |	Yes |	Office id of the office where an opportunity is being submitted |	20 characters
 subject |	string |	Yes |	Subject |	256 characters
 solnbr |	string |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 ntype	| string |	No |	Base Notice Type |	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
-awdnbr |	string |	 Yes |	Award Number |	255 characters
-awdnbr |	open text, label: Agency assigned number for control tracking and identification.<br> Please use ONLY alphanumeric and - _ ( ) { } characters [no spaces]. |	 Yes |	Award Number |	255 characters
+awdnbr |	string |	 Yes |	Award Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 awdamt |	string |	Yes |	Award Amount |	64 digits
-linenbr |	string |	No |	Line Number |	255 characters
+linenbr |	string |	No |	Line Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 awddate |	date |	Yes |	Award Date |	YYYYMMDD
 archdate |	date |	No |	Archive Date |	YYYYMMDD
-awardee |	string |	Yes |	Awardee |	65535 characters
+awardee |	string |	Yes |	Awardee |	255 characters
 awardee_duns |	string |	No |	Awardee DUNS |	9 digits with optional plus 4
 contact |	string |	No |	Contact Info |	255 characters
 desc |	string |	No |	Description |	65535 characters
@@ -212,9 +211,9 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes |	File Data |	250 MB
-desc |	string |	No |	Description |	65535 characters
-explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+desc |	string |	No |	Description |	65535 characters. This field has been deprecated
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true"|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation	| 
 
 ### Delete Notice/ Document Package <br>(deleteNoticeOrDocumentPackage)
 
@@ -238,7 +237,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr |	string |	Yes, if Non-Award |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
 ntype |	string |	No |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation, "AWARD" - for Award
-awdnbr |  string | Yes, if Award| Award # |	255 characters
+awdnbr |  string | Yes, if Award| Award # |	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 deletetype |	string |	No |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachments/links. Defaults to “notice” if not provided
 deletemethod |	string | No | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
 
@@ -264,7 +263,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date |	date |	No |	Posting Date | YYYYMMDD
 solnbr | string |	Yes |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
-ntype |	string | No |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
+ntype |	string | No |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation, "AWARD" - for Award
 archdate | date |	No | New Archive Date – If none provided, notice will archive immediately | YYYYMMDD
 officeid | string |	No |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
 
@@ -289,12 +288,12 @@ CancelNotice Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No | Posting Date |	YYYYMMDD
-offadd | string |	No | Office Address |	65535 characters
+offadd | string |	No | Office Address |	65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy
 officeid | String | No |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
 subject |	string | No |	Subject |	256 characters
 solnbr |string | Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-ntype | string | No |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice,  “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
-awdnbr | string |	No | Award # |255 characters
+ntype | string | No |	Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice,  “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation, "AWARD" - for Award
+awdnbr | string |	No | Award # |255 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 archdate | date |	No | Archive Date | YYYYMMDD
 contact | string | No | Contact Info | 255 characters
 desc | string | Yes |	Cancellation Description | 65535 characters
@@ -322,11 +321,11 @@ Presol Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No | Posting Date |	YYYYMMDD
-zip |	string | No |	Zip Code | 5 digits
+zip |	string | No |	Zip Code | 5 digits. This field has been deprecated
 classcod | string |	Yes |	Class-Code | Valid classification code (FAR, Section 5.207(g))
 naics |	string | No |	NAICS Code | Valid NAICS Code  NAICS Reference
 officeid | string |	Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account | 20 characters
-offadd | string |	No | Office Address |	65535 characters
+offadd | string |	No | Office Address |	65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy
 subject |	string | Yes|	Subject |	256 characters
 solnbr | string |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate | date |	No |	Response Date |	YYYYMMDD
@@ -370,9 +369,9 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 filename | string |	Yes | File Name | 255 characters
 filedata | base64binary |	Yes | File Data | 250 MB
-desc | string |	No | Description | 65535 characters
-explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+desc | string |	No | Description | 65535 characters. This field has been deprecated
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true"|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation	| 
 
 ### Combined/Synopsis<br> (submitCombined)
 
@@ -393,11 +392,11 @@ Combined Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No | Posting Date |	YYYYMMDD
-zip |	string | No |	Zip Code | 5 digits
+zip |	string | No |	Zip Code | 5 digits. This field has been deprecated
 classcod | string |	Yes |	Class-Code | Valid classification code (FAR, Section 5.207(g))
-naics | string | Yes | NAICS Code	| Valid NAICS Code NAICS Reference
+naics | string | Yes | NAICS Code	| Valid NAICS Code
 officeid | string | Yes | Office id of the office where an opportunity is being submitted. Officeid must be associated with user account | 20 characters
-offadd | string | No | Office Address	| 65535 characters
+offadd | string | No | Office Address	| 65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy
 subject | string | Yes | Subject | 256 characters
 solnbr | string |	Yes | Sol # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate | date |	Yes | Response Date | YYYYMMDD
@@ -441,9 +440,9 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 filename | string | Yes | File Name | 255 characters
 filedata | base64binary |	Yes | File Data | 250 MB
-desc | string |	No | Description | 65535 characters
-explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+desc | string |	No | Description | 65535 characters. This field has been deprecated
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true"|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation	| 
 
 ### Modification/Amendment <br> (submitMod)
 
@@ -464,11 +463,11 @@ Mod Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No |	Posting Date |	YYYYMMDD
-zip |	string |	No |	Zip Code |	5 digits
+zip |	string |	No |	Zip Code |	5 digits. This field has been deprecated
 classcod |	string	 | Yes – For combined type, presol type, Sale of surplus, No – For rest |	Class-Code	| Valid classification code (FAR, Section 5.207(g))
 naics | 	string |	Yes – For combined type, No – For rest | 	NAICS Code |	Valid NAICS Code  NAICS Reference
 officeid |	string	| Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
-offadd |	string	| no	| Office Address |	65535 characters
+offadd |	string	| no	| Office Address |	65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy
 subject	| string	| no |	Subject |	256 characters
 solnbr | string |	Yes | 	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 ntype |	string |	Yes |	Base Notice Type |	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "SOL" - for Solicitation
@@ -513,9 +512,9 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 filename |	string	| Yes | 	File Name |	255 characters
 filedata |	base64binary |	Yes |	File Data	| 250 MB
-desc |	string |	No |	Description |	65535 characters
-explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+desc |	string |	No |	Description |	65535 characters. This field has been deprecated
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true"|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation	| 
 
 ### Justification and Authorization <br> (J&A) Notice (submitJA)
 
@@ -536,16 +535,16 @@ JA Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | Date	| No |	Posting Date |	YYYYMMDD
-zip |	String |	No	| Zip Code |	5 digits
-classcod	| String |	Yes |	Class-Code |	Valid classification code
-naics	| String |	No	| NAICS Code	| Valid NAICS Code  NAICS Reference
-offadd |	String	| No |	Office Address	| 65535 characters
+zip |	String |	No	| Zip Code |	5 digits. This field has been deprecated
+classcod	| String |	Yes |	Class-Code |	Valid classification code (FAR, Section 5.207(g))
+naics	| String |	No	| NAICS Code	| Valid NAICS Code NAICS Reference
+offadd |	String	| No |	Office Address	| 65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy
 officeid |	String |	Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
 subject |	String |	Yes |	Subject |	256 characters
 solnbr	| String |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}. <br><br> Note for statutory authority FAR 6.302- 1(c) - Brand name, this is required
 ntype	| string |	No	| Base Notice Type | Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "SOL" - for Solicitation
 stauth	| String	| Yes |	Stat. Authority – Both foja & stauth values will be given under stauth in legacy |	Valid values: 1, 2, 3, 4, 5, brand, far1, far2, far3, far4, far5, far6, far7 <br> Description of each of these stauth values is captured in section 4.4<br><br> Foja values are: Valid values: 'Urgency’, ‘Only One Source (except brand name)’, ‘Follow-on Delivery Order Following Competitive Initial Order’, ‘Minimum Guarantee’, ‘Other Statutory Authority’
-awdnbr |	String |	Yes |	Award Number |	255 characters
+awdnbr |	String |	Yes |	Award Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 modnbr |	String |	No |	Mod Number |	32 characters
 awdamt |	String |	No |	Award Amount. This field has been deprecated for JA notice type |	64 digits
 awddate |	Date |	No – May change in future	| Award Date |	YYYYMMDD
@@ -587,7 +586,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 filename |	string	| Yes |	File Name	| 255 characters
 filedata |	base64binary |	Yes |	File Data	| 250 MB
-desc	| string |	No |	Description |	65535 characters
+desc	| string |	No |	Description |	65535 characters. This field has been deprecated.
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
@@ -610,11 +609,11 @@ SourcesSought Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date |	date |	No |	Posting Date |	YYYYMMDD
-zip	 | string |	No |	Zip Code |	5 digits
+zip	 | string |	No |	Zip Code |	5 digits. This field has been deprecated
 classcod |	string |	No |	Class-Code |	Valid classification code (FAR, Section 5.207(g))
-naics	| string |	No |	NAICS Code |	Valid NAICS Code
+naics	| string |	No |	NAICS Code |	Valid NAICS Code NAICS Reference
 officeid |	string |	Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account	| 20 characters
-offadd	| string	 | No |	Office Address |	65535 characters
+offadd	| string	 | No |	Office Address | 65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy
 subject |	string |	Yes |	Subject |	256 characters
 solnbr	| string |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate |	date |	No |	Response Date |	YYYYMMDD
@@ -658,7 +657,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	250 MB
-desc	| string |	No	 | Description |	65535 characters
+desc	| string |	No	 | Description |	65535 characters. This field has been deprecated
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
@@ -685,11 +684,11 @@ SpecialNotice Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date	| Date |	No	| Posting Date |	YYYYMMDD
-zip |	String |	No	 | Zip Code |	5 digits
+zip |	String |	No	 | Zip Code |	5 digits. This field has been deprecated
 classcod |	String	| No	| Class-Code | 	Valid classification code (FAR, Section 5.207(g))
 naics |	String |	No	| NAICS Code |	Valid NAICS Code  NAICS Reference
 officeid	| string |	Yes |	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account	 | 20 characters
-offadd |	String |	No |	Office Address	| 65535 characters
+offadd |	String |	No |	Office Address	|65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy
 subject | 	String |	Yes |	Subject |	256 characters
 solnbr	| String |	Yes |	Sol # |	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 archdate |	Date |	No |	Archive Date |	YYYYMMDD
@@ -728,7 +727,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	250 MB
-desc	| string |	No	 | Description |	65535 characters
+desc	| string |	No	 | Description |	65535 characters. This field has been deprecated
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
 
@@ -751,11 +750,11 @@ SaleOfSurplus Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date |	date|	No|	Posting Date|	YYYYMMDD
-zip|	string|	No|	Zip Code|	5 digits
+zip|	string|	No|	Zip Code|	5 digits. This field has been deprecated
 classcod|	string|	Yes	|Class-Code|	Valid classification code (FAR, Section 5.207(g))
-naics|	string|	No|	NAICS Code|	Valid NAICS Code  NAICS Reference
+naics|	string|	No|	NAICS Code|	Valid NAICS Code NAICS Reference
 officeid	|string	|Yes|	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account |	20 characters
-offadd|	string|	No	|Office Address	|65535 characters
+offadd|	string|	No	|Office Address	|65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy
 subject|	string|	Yes|	Subject	|256 characters
 solnbr|	string	|Yes	|Sol #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 archdate|	date|	No|	Archive Date|	YYYYMMDD
@@ -817,11 +816,11 @@ Solicitation Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No | Posting Date |	YYYYMMDD
-zip |	string | No |	Zip Code | 5 digits
+zip |	string | No |	Zip Code | 5 digits. This field has been deprecated
 classcod | string |	Yes |	Class-Code | Valid classification code (FAR, Section 5.207(g))
 naics | string | Yes | NAICS Code	| Valid NAICS Code NAICS Reference
 officeid | string | Yes | Office id of the office where an opportunity is being submitted. Officeid must be associated with user account | 20 characters
-offadd | string | No | Office Address	| 65535 characters
+offadd | string | No | Office Address	| 65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy
 subject | string | Yes | Subject | 256 characters
 solnbr | string |	Yes | Sol # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate | date |	Yes | Response Date | YYYYMMDD
@@ -865,9 +864,9 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 filename | string | Yes | File Name | 255 characters
 filedata | base64binary |	Yes | File Data | 250 MB
-desc | string |	No | Description | 65535 characters
-explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+desc | string |	No | Description | 65535 characters. This field has been deprecated
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true"|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation	| 
 
 ### Intent to Bundle Requirements <br> (DoD- Funded) (submitITB)
 
@@ -888,15 +887,15 @@ ITB Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date	|Date	|No	|Posting Date	|YYYYMMDD
-zip	|String|	No|	Zip Code|	5 digits
+zip	|String|	No|	Zip Code|	5 digits. This field has been deprecated
 classcod|	String|	Yes|	Class-Code|	Valid classification code (FAR, Section 5.207(g))
-naics|	String|	No|	NAICS Code|	Valid NAICS Code
+naics|	String|	No|	NAICS Code|	Valid NAICS Code NAICS Reference
 officeid|	String|	Yes|	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account|	20 characters
-offadd|	String	|No|	Office Address|	65535 characters
+offadd|	String	|No|	Office Address|	65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy
 subject|	String|	Yes|	Subject	|256 characters
 solnbr	|String	|Yes|	Sol #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 ntype	|string	|No|	Base Notice Type|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "SOL" - for Solicitation
-awdnbr|	String	|Yes	|Award Number|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
+awdnbr|	String	|Yes	|Award Number|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 donbr|	String|	No	|Task/Delivery Order Number	|255 characters from the set: a-z A-Z 0-9 - _ ( )
 archdate	|Date	|No	|Archive Date|	YYYYMMDD
 contact|	String|	Yes|	Contact Info	|255 characters; Default value = Primary, Other types are: Secondary, Owner
@@ -971,18 +970,18 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date|	date|	No	|Posting Date|	YYYYMMDD
 notice_type	|string	|Yes|	Notice type	|Valid options outlined above
-zip	|string	|No	|Zip Code|	5 digits
+zip	|string	|No	|Zip Code|	5 digits. This field has been deprecated
 classcod|	string|	No|	Class-Code	|Valid classification code (FAR, Section 5.207(g))
 naics	|string	|No	|NAICS Code|	Valid NAICS Code  NAICS Reference
 officeid|	String|	No|	Office id of the office where an opportunity is being submitted. Officeid must be associated with user account	|20 characters
-offadd	|string|	No|	Office Address	|65535 characters
+offadd	|string|	No|	Office Address	|65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy
 subject|	string|	Yes|	Subject|	256 characters
 solnbr|	string|	Yes – For presol, combined, itb, ja, award, special, document, surplus<br><br> No – for rest|	Sol #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 ntype	|string	|no	|Base Notice Type	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation 
-awdnbr|	string|	Yes – For Award & JA, ITB<br><br> No – For rest|	Award #	|255 characters
-donbr	|string	|Yes – For JA<br><br> No – For rest|	Delivery/Task Order Number	|255 characters
+awdnbr|	string|	Yes – For Award & JA, ITB<br><br> No – For rest| 255 characters from the set: a-z A-Z 0-9 - _ ( ) { }
+donbr	|string	|Yes – For JA<br><br> No – For rest|	Delivery/Task Order Number	|255 characters from the set: a-z A-Z 0-9 - _ ( )
 awdamt	|string|	Yes – For Award<br><br> No – For rest	|Award Amount|	64 digits
-linenbr|	string	|No|	Award Line Item Number	|255 characters
+linenbr|	string	|No|	Award Line Item Number	|255 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 awddate	|date|	Yes – for award; No – for rest|	Award Date	|YYYYMMDD
 stauth	|string	|Yes – for JA; No – for test	|J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy| Valid values: 1, 2, 3, 4, 5, brand, far1, far2, far3, far4, far5, far6, far7<br><br> Description of each of these stauth values is captured in Stauth Value section<br><br> Foja values are: Valid values: 'Urgency’, ‘Only One Source (except brand name)’, ‘Follow-on Delivery Order Following Competitive Initial Order’, ‘Minimum Guarantee’, ‘Other Statutory Authority’
 modnbr	|string	|No	|J&A and FairOpp Contract Modification Number|	32 digits
@@ -1030,9 +1029,9 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	250 MB
-desc	| string |	No	 | Description |	65535 characters
-explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+desc	| string |	No	 | Description |	65535 characters. This field has been deprecated.
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true"|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation	| 
 
 ### Document Packages <br> (submitDocumentsAndLinksToNotice)
 
@@ -1097,8 +1096,8 @@ UnarchiveNotice Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No	|Base Notice Type	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation
-awdnbr	|string|	No|	Award #|	255 characters
+ntype	|string	|No	|Base Notice Type	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation, "AWARD" - for Award
+awdnbr	|string|	No|	Award #|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 archdate	|date|	Yes|	New Archive Date|	YYYYMMDD
 
 ### Secure Document Package <br> (attachSecureDocumentPackagesToNotice)
@@ -1423,7 +1422,7 @@ Element Name|	Type|	Required|	Description | Character Limit / Restrictions
 -----|-----|-----|-----|-----
 notice_type	|string|	No| Valid Values: PRESOL, COMBINE,  AWARD, JA, SRCSGT, SSALE, SNOTE, ITB, SOL.  Note:Searches for awardsj&as, itb’s and fairopps will return both standalone notices AND base notices that contain one of these type |
 solnbr	|string	|No	|Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-awdnbr	|string	|No	|Award # | 255 characters
+awdnbr	|string	|No	|Award # | 255 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 posted_from	|date|	No|	Posted From Date. YYYYMMDD. |
 posted_to	|date|	|No	Posted To Date. YYYYMMDD |
 documents_to_search	|string|	No|	Valid Values: ‘active’ or ‘archived’. Default is ALL if nothing provided. |
@@ -4075,18 +4074,18 @@ Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Erro
 ------ | ------- | ------- | ------- | --------
 date |	No	| YYYYMMDD	|1. This field should meet the character limit/restrictions<br><br> Note: Date field allows current date and also any date in past/future |	1. DATE field in unexpected format. Expects YYYYMMDD
 Notice_type	|Yes| Valid Options mentioned General Notice (submitNotice) section |	1. This required field should be validated |	1. Opportunity type is required
-zip|	No|	5 digits|	NA |NA
+zip|	No|	5 digits. This field has been deprecated|	NA |NA
 classcod	|No|	Valid classification code (FAR, Section 5.207(g))	|1. This required field should be validated where applicable<br><br>     2.If a wrong classification code is given, then the service throws an error | 1. PSC code is required                   <br><br> 2. This opportunity cannot be published. Classification Code provided did not match expected codes.
 naics	|No| 	Valid NAICS Code NAICS Reference	|NA |	NA
-offadd|	No|	65535 characters|	NA|	NA
+offadd|	No|	65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy|	NA|	NA
 officeid	|No	|20 characters 	|1. This field is required<br><br> 2. If an invalid officeid is given, then service throws an error<br><br> 3. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 4. Officeid must be associated with user account	|1. Contracting Office is required<br><br> 2. Invalid officeid provided<br><br><br> 3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 subject	|Yes – for all; NA – for submitDocumentAndLinks	|256 characters|	1. This required field should be validated	|1. title: is missing but it is required
 solnbr|	Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated. If this field is not given, then system throws an errors as shown on the right hand side<br><br> 2. If duplicate solicitation number is given, then system throws an error<br><br> 3. For an invalid solnbr and notice_type combination, the service throws an error|	1.Notice Id is required<br><br> 2. Notice Id for the selected opportunity type already exists<br><br> 3. Opportunity not found with given solicitation number and ntype
 ntype|	no|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation |	1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error 	|NTYPE value provided is not valid
-awdnbr|	Yes – For Award, ITB & JA; No – For rest|	255 characters|	1. This required field should be validated|	1. Award Details Section - Contract Award Number is a required field
-donbr|	Yes – For JA; No – For rest	|255 characters	|1. This is required field for JA	|1. Award Details Section - Task/Delivery Order Number is required field
+awdnbr|	Yes – For Award, ITB & JA; No – For rest|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated|	1. Award Details Section - Contract Award Number is a required field
+donbr|	Yes – For JA; No – For rest	|255 characters from the set: a-z A-Z 0-9 - _ ( )	|1. This is required field for JA	|1. Award Details Section - Task/Delivery Order Number is required field
 awdamt	|Yes – For Award; No – For rest|	64 characters|	1. This required field should be validated	|1. Award Details Section – Amount is a required field.
-linenbr|	No|	255 characters|	NA	|NA
+linenbr|	No|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	NA	|NA
 awddate	|Yes – For award; No – for rest	|YYYYMMDD|	1. This field should meet the character limit/restrictions (Note: Date field allows current date and also any date in past/future)<br><br> 2. This required field should be validated|	1. DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. Award Details Section - Contract Award Date is required field.
 stauth|	Yes – For JA<br><br> No – for rest	| Valid values: 1, 2, 3, 4, 5, brand, far1, far2, far3, far4, far5, far6, far7<br><br>  Description of each of these stauth values is captured in Stauth Values section<br><br> Foja values are: Valid values: 'Urgency’, ‘Only One Source (except brand name)’, ‘Follow-on Delivery Order Following Competitive Initial Order’, ‘Minimum Guarantee’, ‘Other Statutory Authority’ | Both foja & stauth values will be given under stauth in legacy |	NA
 respdate|	Yes – For SubmitCombined No- For rest|	YYYYMMDD |	1.	No validation is performed on this field for all services except submitCombined. However, if this value is available, this field should meet the character limit/restrictions <br><br> 2.	This date cannot be in past; has to be in future. If the given date is in past, then system throws 2 errors (#2&#3) <br><br>3.	For submitCombined this field is required	| 1.	DATE field in unexpected format. Expects YYYYMMDD <br><br> 2.	This opportunity cannot be published. Response date provided is in the past<br><br> 3.	This opportunity cannot be published. Inactive date provided is in the past<br><br> 4.	Response Date is required
@@ -4116,10 +4115,10 @@ Individual business rules per field are listed across each of the fields in belo
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 date|	No|	YYYYMMDD	|1. This field should meet the character limit/restrictions Note: Date field allows current date and also any date in past/future|	1. DATE field in unexpected format. Expects YYYYMMDD
-zip	|No	|5 digits|	NA| NA
+zip	|No	|5 digits. This field has been deprecated|	NA| NA
 classcod|	Yes – For submitpresol<br> No - SourcesSought |	Valid classification code (FAR, Section 5.207(g))|	1. This required field should be validated <br><br>2. If a wrong classification code is given, then the service throws an error | 1. PSC code is required <br><br> 2. This opportunity cannot be published. Classification Code provided did not match expected codes
 naics	|No|  Valid NAICS Code  NAICS Reference|	NA| 	NA
-offadd|	No	|65535 characters	|NA|	NA
+offadd|	No	|65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy	|NA|	NA
 officeid	|Yes	|20 characters |	1.	This field is required <br><br>2.	If an invalid officeid is given, then service throws an error<br><br>  3.	If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 4.	Officeid must be associated with user account	|1. Contracting Office is required<br><br> 2. Invalid officeid provided<br><br> 3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 subject	|Yes	|256 characters|	1. This required field should be validated|	1. title: is missing but it is required
 solnbr	|Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated<br><br>  2. If submitting a notice with same solnbr number, then system throws an error <br><br>3. If a space is given along with numbers in this field, then service throws an error|	1. Notice Id is required <br><br>2. Notice Id for the selected opportunity type already exists<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
@@ -4145,11 +4144,11 @@ Individual business rules per field are listed across each of the fields in belo
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 date|	No|	YYYYMMDD|	1. This field should meet the character limit/restrictions <br><br>Note: Date field allows current date and also any date in past/future	|1. DATE field in unexpected format. Expects YYYYMMDD
-zip	|No	|5 digits|	NA|	NA
+zip	|No	|5 digits. This field has been deprecated|	NA|	NA
 classcod	|Yes|	Valid classification code (FAR, Section 5.207(g))|	1. This required field should be validated<br><br> 2. If a wrong classification code is given, then the service throws an error | 1. PSC code is required <br><br>2. This opportunity cannot be published. Classification Code provided did not match expected codes.
 naics	|Yes |Valid NAICS Code  NAICS Reference|	1. This required field should be validated |1. NAICS code is required
 officeid	|Yes|	20 characters|	1. This field is required<br><br> 2. If an invalid officeid is given, then service throws an error<br><br>  3. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 4. Officeid must be associated with user account	|1. Contracting Office is required<br><br> 2. Invalid officeid provided<br><br> 3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
-offadd|	No|	65535 characters|	NA|	NA
+offadd|	No|	65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy|	NA|	NA
 subject	|Yes|	256 characters|	1. This required field should be validated|	1. title: is missing but it is required
 solnbr	|Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated<br><br>  2. If submitting a notice with same solnbr number, then system throws an error <br><br>3. If a space is given along with numbers in this field, then service throws an error	|1. Notice Id is required <br><br>2. Notice Id for the selected opportunity type already exists <br><br>3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
 respdate|	Yes	|YYYYMMDD	|1.	This required field should be validated<br><br> 2.	This field should meet the character limit/restrictions<br><br> 3.	This date cannot be in past; has to be in future <br><br>4.	When giving future date, response date cannot exceed 5 years from the current date.|	1.	This opportunity cannot be published. Response date is required<br><br>  2.	DATE field in unexpected format. Expects YYYYMMDD  <br><br>3.	This opportunity cannot be published. Response date provided is in the past<br><br> 4.	This opportunity cannot be published. Response Date cannot exceed 5 years from current date
@@ -4174,15 +4173,15 @@ Individual business rules per field are listed across each of the fields in belo
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 date|	No|	YYYYMMDD	|1. This field should meet the character limit/restrictions Note: Date field allows current date and also any date in past/future	|1. DATE field in unexpected format. Expects YYYYMMDD
-zip|	No|	5 digits|	NA|	NA
+zip|	No|	5 digits. This field has been deprecated|	NA|	NA
 classcod	|Yes |	Valid classification code (FAR, Section 5.207(g))|	1. This required field should be validated <br><br> 2. If a wrong classification code is given, then the service throws an error | 1. PSC code is required<br><br> 2. This opportunity cannot be published. Classification Code provided did not match expected codes
 naics	|No	|Valid NAICS Code  NAICS Reference| 	NA|	NA
 officeid|	Yes|	20 characters|	1. This field is required<br><br> 2. If an invalid officeid is given, then service throws an error<br><br> 3. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br>4. Officeid must be associated with user account|	1. Contracting Office is required<br><br> 2. Invalid officeid provided <br><br>3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
-offadd|	No|	65535 characters|	NA|	NA
+offadd|	No|	65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy|	NA|	NA
 subject	|Yes|	256 characters|	1. This required field should be validated|	1. title: is missing but it is required
 solnbr	|Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated<br><br>  2. If submitting a notice with same solnbr number, then system throws an error <br><br>3. If a space is given along with numbers in this field, then service throws an error<br><br>4. If solicitation & ntype combination is not matched, then service throws an error|	1. Notice Id is required <br><br>2. Notice Id for the selected opportunity type already exists <br><br>3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br><br>4.	Opportunity not found with given solicitation number and ntype
 ntype|	no|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "SOL" - for Solicitation |1. When user tries to convert a notice to ITB and the solicitation number and ntype do not match the notice, then the service throws an error<br><br>  2. This field accepts only valid values mentioned. If invalid values are provided, then system throws an error. Also, if all the required field is given and this field is not given then service throws an error    |1. Opportunity not found with given solicitation number and ntype<br><br> 2. Invalid NTYPE value provided
-awdnbr|	Yes|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}	|1. This required field should be validated<br><br> 2. This field accepts only valid characters as mentioned under character limit/restrictions column |	1. Award Details Section - Contract Award Number is a required field<br><br> 2. Award Details Section - Contract Award Number - Please enter a valid number
+awdnbr|	Yes|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }	|1. This required field should be validated<br><br> 2. This field accepts only valid characters as mentioned under character limit/restrictions column |	1. Award Details Section - Contract Award Number is a required field<br><br> 2. Award Details Section - Contract Award Number - Please enter a valid number
 donbr|	No|	255 characters from the set: a-z A-Z 0-9 - _ ( ) |	NA|	NA
 archdate|	No|	YYYYMMDD|	1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restrictions <br><br>2.	This date cannot be current or in past; has to be in future	|1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2.	This opportunity cannot be published. Archive date provided is in the past
 contact|	Yes	|255 characters<br><br> 255 characters Default value: Primary<br><br> Other types: Secondary, Owner|	1. This required field should be validated	| 1. Primary Contact is Required
@@ -4203,11 +4202,11 @@ Individual business rules per field are listed across each of the fields in belo
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 date|	No|	YYYYMMDD|	1. This field should meet the character limit/restrictions <br><br>Note: Date field allows current date and also any date in past/future|	1. DATE field in unexpected format. Expects YYYYMMDD
-zip|	No|	5 digits|	NA|	NA
+zip|	No|	5 digits. This field has been deprecated|	NA|	NA
 classcod	|Yes – For combined type, presol type, Sale of surplus<br><br>  No – For test	|Valid classification code (FAR, Section 5.207(g))	|1. This field is required and should be validated<br><br> 2. If a wrong classification code is given, then service throws an error |1. PSC code is required<br><br> 2. This opportunity cannot be published. Classification Code provided did not match expected codes
 naics	|Yes – For combined type <br><br>No – For rest|	Valid NAICS Code  NAICS Reference	|1. For combined, this field is required and should be validated|	1. NAICS code is required
 officeid|	Yes|	20 characters|	1. This field is required <br><br>2. If an invalid officeid is given, then service throws an error<br><br> 3. If contracting officer does not have access to an office but is trying to make modifications to an opportunity associated to that office, then the service throws an error<br><br> 4. Officeid must be associated with user account|	1. Contracting Office is required <br><br>2. Invalid officeid provided <br><br>3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
-offadd|	No	|65535 characters|	NA|	NA
+offadd|	No	|65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy|	NA|	NA
 subject	|Yes|	256 characters|	1. This required field should be validated	|1. title: is missing but it is required
 solnbr|	Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}<br><br> Note for statutory authority FAR 6.302- 1(c) - Brand name, this is required	|1a. This required field if not given, service will throws an error <br><br>1b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination<br><br> 2. If a space is given along with numbers in this field, then service throws an error<br><br> 3. If solicitation & ntype combination is not matched, then service throws an error|	1. Multiple notices found. Please input more details<br><br>  2. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces<br><br> 3.	Notice not found for correction
 ntype|	No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "SOL" - for Solicitation	 |	1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error  |	1.	NTYPE value provided is not valid
@@ -4242,19 +4241,19 @@ Individual business rules per field are listed across each of the fields in belo
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 date|	No	|YYYYMMDD	|1. This field should meet the character limit/restrictions <br><br>Note: Date field allows current date and also any date in past/future	|1. DATE field in unexpected format. Expects YYYYMMDD
-zip	|No	|5 digits|	NA|	NA
+zip	|No	|5 digits. This field has been deprecated|	NA|	NA
 classcod|	Yes|	Valid classification code (FAR, Section 5.207(g))|	1. This required field should be validated <br><br>2. If a wrong classification code is given, then the service throws an error	|1. PSC code is required<br><br> 2. This opportunity cannot be published. Classification Code provided did not match expected codes
 naics|	No – this may change in future	|Valid NAICS Code  NAICS Reference|	NA|	NA
-offadd|	No|	65535 characters|	NA|	NA
+offadd|	No|	65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy|	NA|	NA
 officeid|	Yes|	20 characters	|1. This field is required<br><br> 2. If an invalid officeid is given, then service throws an error<br><br> 3. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 4. Officeid must be associated with user account	|1. Contracting Office is required<br><br> 2. Invalid officeid provided<br><br> 3. UnAuthorized Credentials. This may be the JWT issue or Role management issue
 subject	|Yes|	256 characters	|1. This required field should be validated	|1. title: is missing but it is required
 solnbr|	Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}<br><br> Note for statutory authority FAR 6.302- 1(c) - Brand name, this is required|	1. This required field if not given will throw an error <br><br> 2. Duplicate solicitation number cannot be submitted<br><br> (Refer error #2) 3. If a space is given along with numbers in this field, then service throws an error<br><br> 4. If solicitation & ntype combination is not matched, then service throws an error.	|1. Notice Id is required <br><br>2. Notice ID for the selected opportunity type already exits<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces<br><br> 4. Opportunity not found with given solicitation number and ntype
 ntype	|No	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, "SOL" - for Solicitation|1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error |   1. Invalid NTYPE value provided
 stauth	|Yes|	Valid values: 1, 2, 3, 4, 5, brand, far1, far2, far3, far4, far5, far6, far7  <br><br>Description of each of these stauth values is captured in Stauth Value section<br><br> Foja values are: Valid values: 'Urgency’, ‘Only One Source (except brand name)’, ‘Follow-on Delivery Order Following Competitive Initial Order’, ‘Minimum Guarantee’, ‘Other Statutory Authority’|	1. This required field should be validated <br><br>Note: Both foja & stauth values will be given under stauth in legacy	|1. This opportunity cannot be published. Authority is required
-awdnbr	|Yes|	255 characters|	1. This required field should be validated	|1. Award Details Section - Contract Award Number is a required field
+awdnbr	|Yes|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated	|1. Award Details Section - Contract Award Number is a required field
 modnbr|	No	|32 characters|	NA|	NA
 awddate	|No – May change in future|	YYYYMMDD|	1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restrictions| 	1.	DATE field in unexpected format. Expects YYYYMMDD
-awdamt|	No|	64 characters|	NA|	NA
+awdamt|	No|	64 digits|	NA|	NA
 archdate|	No|	YYYYMMDD|	1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restrictions <br><br>2.	This date cannot be current or in past; has to be in future|	1.	DATE field in unexpected format. Expects YYYYMMDD<br><br>  2.	This opportunity cannot be published. Archive date provided is in the past.
 contact|	Yes |	255 characters Default value: Primary <br><br>Other types: Secondary, Owner	|1. This required field should be validated|	1. Primary Contact is Required
 desc|	No|	65535 characters|	NA	|NA
@@ -4274,17 +4273,17 @@ Individual business rules per field are listed across each of the fields in belo
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 date|	No	|YYYYMMDD|	1. If this field is given, then this field should meet the character limit/restrictions |1. DATE field in unexpected format. Expects YYYYMMDD
-zip	|No|	5 digits|	NA|	NA
+zip	|No|	5 digits. This field has been deprecated|	NA|	NA
 classcod|	No|	Valid classification code (FAR, Section 5.207(g))|	1. If a wrong classification code is given, then the service throws an error | 1. This opportunity cannot be published. Classification Code provided did not match expected codes
 naics	| No|	Valid NAICS Code  NAICS Reference|	NA|	NA
-offadd|	No	|65535 characters|	NA|	NA
+offadd|	No	|65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy|	NA|	NA
 officeid	|Yes	|20 characters	|1. This field is required<br><br> 2. If an invalid officeid is given, then service throws an error<br><br> 3. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 4. Officeid must be associated with user account|	1. Contracting Office is required<br><br> 2. Invalid officeid provided <br><br> 3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 subject	|Yes|	256 characters|	1. This required field should be validated	| 1. title: is missing but it is required
 solnbr	|Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}|	1. This required field should be validated<br><br>  2. If a space is given along with numbers in this field, then service throws an error<br><br> 3. If solicitation & ntype combination is not matched, then service throws an error|	1. Notice Id is required <br><br>2. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br><br>3. Opportunity not found with given solicitation number and ntype
 ntype|	No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation|	1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error  | 	1. Invalid NTYPE value provided.
-awdnbr|	Yes|	Valid numbers|	1. This required field should be validated <br><br>2. If an invalid number is given (e.g with special characters), then service throws an error|	1. Award Details Section - Contract Award Number is a required field<br><br> 2. Award Details Section - Contract Award Number - Please enter a valid number
-awdamt|	Yes|	Valid integer values| 	1. This required field should be validated<br><br> 2. If an invalid integer values is given, then service throws an error 	|1. Award Details Section - Amount is a required field<br><br> 2. Award Details Section - Please enter valid integer for Amount Field
-linenbr	|No|	255 characters|	NA|	NA
+awdnbr|	Yes|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated <br><br>2. If an invalid number is given (e.g with special characters), then service throws an error|	1. Award Details Section - Contract Award Number is a required field<br><br> 2. Award Details Section - Contract Award Number - Please enter a valid number
+awdamt|	Yes|	64 digits| 	1. This required field should be validated<br><br> 2. If an invalid integer values is given, then service throws an error 	|1. Award Details Section - Amount is a required field<br><br> 2. Award Details Section - Please enter valid integer for Amount Field
+linenbr	|No|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	NA|	NA
 awddate	|Yes|	YYYYMMDD	|1. This required field should be validated<br><br>  2. If this field is given, then this field should meet the character limit/restrictions<br><br> Note: Date field allows current date and also any date in past/future	|1. Award Details Section - Contract Award Date is required field<br><br> 2. DATE field in unexpected format. Expects YYYYMMDD
 archdate|	No|	YYYYMMDD|	1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restrictions<br><br> 2.	This date cannot be current or in past; has to be in future|	1.	DATE field in unexpected format. Expects YYYYMMDD<br><br>  2.	This opportunity cannot be published. Archive date provided is in the past
 awardee|	Yes|	65535 characters|	1. This required field should be validated	|1. Award Details Section - Contractor Awarded Name is a required field
@@ -4333,10 +4332,10 @@ Individual business rules per field are listed across each of the fields in belo
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 date|	No|	YYYYMMDD|	1. This field should meet the character limit/restrictions Note: Date field allows current date and also any date in past/future	|1. DATE field in unexpected format. Expects YYYYMMDD
-zip|	No|	5 digits|	NA|	NA
+zip|	No|	5 digits. This field has been deprecated|	NA|	NA
 classcod	|No|	Valid classification code (FAR, Section 5.207(g))|	1. This field does not take invalid codes	|1. This opportunity cannot be published. Classification Code provided did not match expected codes
 naics|	No|	Valid NAICS Code  NAICS Reference|	NA|	NA
-offadd|	No|	65535 characters|	NA	|NA
+offadd|	No|	65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy|	NA	|NA
 officeid|	Yes	|20 characters|	1. This field is required <br><br>2. If an invalid officeid is given, then service throws an error<br><br> 3. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 4. Officeid must be associated with user account|	1. Contracting Office is required <br><br>2. Invalid officeid provided <br><br>3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 subject	|Yes|	256 characters|	1. This required field should be validated	|1. title: is missing but it is required
 solnbr|	No	|128 characters from the set: a-z A-Z 0-9 - _ ( ) {}. Note for statutory authority FAR 6.302- 1(c) - Brand name, this is required|	1. This required field should be validated<br><br>  2. If a space is given along with numbers in this field, then service throws an error |1. Notice Id is required <br><br>2. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
@@ -4356,11 +4355,11 @@ Individual business rules per field are listed across each of the fields in belo
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 date|	No|	YYYYMMDD|	1. This field should meet the character limit/restrictions <br><br>Note: Date field allows current date and also any date in past/future	|1. DATE field in unexpected format. Expects YYYYMMDD
-zip	|No	|5 digits|	NA|	NA
+zip	|No	|5 digits. This field has been deprecated|	NA|	NA
 classcod	|Yes|	Valid classification code (FAR, Section 5.207(g))|	1. This required field should be validated<br><br> 2. If a wrong classification code is given, then the service throws an error | 1. Product Service Code is a required field  <br><br>2. Classification Code provided did not match expected codes
 naics	|Yes |Valid NAICS Code  NAICS Reference|	1. This required field should be validated |1. NAICS code is required
 officeid	|Yes|	20 characters|	1. This field is required<br><br> 2. If an invalid officeid is given, then service throws an error<br><br>  3. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 4. Officeid must be associated with user account	|1.   Invalid officeid provided<br><br> 2.   Insufficient privileges to create opportunity.
-offadd|	No|	65535 characters|	NA|	NA
+offadd|	No|	65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy|	NA|	NA
 subject	|Yes|	256 characters|	1. This required field should be validated|	1. title: is missing but it is required
 solnbr	|Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1. This required field should be validated<br><br>  2. If submitting a notice with same solnbr number, then system throws an error <br><br>3. If a space is given along with numbers in this field, then service throws an error	|1.   Notice ID is a required field <br><br>2. Notice ID must be unique based on selected notice type <br><br>3. Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces
 respdate|	Yes	|YYYYMMDD	|1.	This required field should be validated<br><br> 2.	This field should meet the character limit/restrictions<br><br> 3.	This date cannot be in past; has to be in future <br><br>4.	When giving future date, response date cannot exceed 5 years from the current date.|	1.	Response date is required<br><br>  2.    DATE field in unexpected format. Expects YYYYMMDD  <br><br>3.	Response Date cannot be in the past<br><br> 4.	Response Date cannot exceed 5 years from current date
@@ -4385,10 +4384,10 @@ Individual business rules per field are listed across each of the fields in belo
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 date|	No|	YYYYMMDD	|1. This field should meet the character limit/restrictions Note: Date field allows current date and also any date in past/future|	1. DATE field in unexpected format. Expects YYYYMMDD
-zip|	No|	5 digits|	NA|	NA
+zip|	No|	5 digits. This field has been deprecated|	NA|	NA
 classcod|	Yes|	Valid classification code (FAR, Section 5.207(g))|	1. This required field should be validated <br><br>2. If a wrong classification code is given, then the service throws an error  |1. PSC code is required <br><br>2. This opportunity cannot be published. Classification Code provided did not match expected codes
 naics	|No	|Valid NAICS Code  NAICS Reference|	NA|	NA
-offadd|	No|	65535 characters|	NA|	NA
+offadd|	No|	65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy|	NA|	NA
 officeid|	Yes	|20 characters|	1. This field is required <br><br>2. If an invalid officeid is given, then service throws an error<br><br> 3. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 4. Officeid must be associated with user account|	1. Contracting Office is required<br><br> 2. Invalid officeid provided <br><br>3. UnAuthorized Credentials. This may be the JWT issue or Role management issue
 subject|	Yes	|256 characters	|1. This required field should be validated	|1. title: is missing but it is required
 solnbr	|Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}<br><br> Note for statutory authority FAR 6.302- 1(c) - Brand name, this is required	|1. This required field should be validated<br><br> 2. If a space is given along with numbers in this field, then service throws an error |1. Notice Id is required <br><br>2. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
@@ -4408,7 +4407,7 @@ Individual business rules per field are listed across each of the fields in belo
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 solnbr|	Yes if non-award|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }| 1. This required field should be validated. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found<br><br>  3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
-awdnbr|	Yes if award|	255 characters| If neither solnbr or awdnbr is provided, then the system throws an error|	Solicitation Number or Award Number is required for Award Notice
+awdnbr|	Yes if award|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }| If neither solnbr or awdnbr is provided, then the system throws an error|	Solicitation Number or Award Number is required for Award Notice
 ntype|No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation, "AWARD" - for Award |	1. If an invalid ntype is provided, then service throws an error |  	1. NTYPE value provided is not valid
 deletetype|	no|	Valid values: “notice” to delete the notice, “attachment” to delete attachments and links from the notice|	1. If an invalid deletetype is provided, then service throws an error  |	Delete type provided is not “notice” or “attachment”
 deletemethod|	no|	Valid Values: “all” to delete all versions or “latest” to delete latest version	|1. If an invalid deletemethod is provided, then service throws an error  |	Delete method provided is not “latest” or “all”
@@ -4423,7 +4422,7 @@ Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Erro
 date|	No|	YYYYMMDD|	Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
 solnbr|	Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1a. This required field if not given, service throws an error <br><br>1b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error|	1. Multiple notices found. Please input more details<br><br>  2. Notice not found for correction<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
 officeid	|No|	20 characters|	Officeid must be associated with user account	|NA
-ntype|	No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation |	1. If an invalid ntype is provided, then service throws an error<br><br>    2. If a valid ntype but a wrong ntype is not provided for the solnbrthen service throws an error | 1. NTYPE value provided is not valid 2. Notice not found for correction
+ntype|	No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation, "AWARD" - for Award |	1. If an invalid ntype is provided, then service throws an error<br><br>    2. If a valid ntype but a wrong ntype is not provided for the solnbrthen service throws an error | 1. NTYPE value provided is not valid 2. Notice not found for correction
 archdate|	No|	YYYYMMDD|	1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restrictions<br><br> 2.	This date cannot be current or in past; has to be in future	|1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2.	This opportunity cannot be published. Archive date provided is in the past
 
 #### unarchiveNotice
@@ -4436,8 +4435,8 @@ Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Erro
 ------ | ------- | ------- | ------- | --------
 solnbr|	Yes|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	1a. This required field if not given, service throws an error <br><br>1b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination<br><br> 2. If solicitation & ntype combination is not matched, then service throws an error	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found for correction
 officeid|	No	|20 characters|	Officeid must be associated with user account	|NA
-ntype|	No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation |	1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error |  	1. NTYPE value provided is not valid
-awdnbr	|No|	255 characters|	NA|	NA
+ntype|	No|	Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation, "AWARD" - for Award |	1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error |  	1. NTYPE value provided is not valid
+awdnbr	|No|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	NA|	NA
 archdate|	Yes|	YYYYMMDD|	1. This required field should be validated  <br><br>2. If this value is available, this field should meet the character limit/restrictions <br><br>3.	If current date or a past date is provided, then the system throws an error<br><br>  3.	If no archive date is given, then the system throws an error| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2.	New archive date provided is in the past<br><br> 3.	$.reason: null found, string expected. Unable to process request. Please try again
 
 #### cancelNotice
@@ -4452,8 +4451,8 @@ date|	No|	YYYYMMDD	|Date field should meet the expected format	|DATE field in un
 officeid|	No	|20 characters|	Officeid must be associated with user account	|NA
 subject|	No|	256 characters|	NA|	NA
 solnbr|	Yes	|128 characters from the set: a-z A-Z 0-9 - _ ( ) { }	|1a. This required field if not given, service throws an error<br><br> 1b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination<br><br> 2. If valid solnbr is given with a different ntype, then service throws an error<br><br> 3. If a space is given along with numbers in this field, then service throws an error	|1. Multiple Notices found. Please input more details<br><br>  2. Notice not found for correction<br><br>  3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
-ntype	|No	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation |	1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error   | 1. Notice Type value provided is not valid
-awdnbr|	No|	255 characters|	NA|	NA
+ntype	|No	|Valid values: "PRESOL" - for Presolicitation, "COMBINE" - for Combined Synopsis/Solicitation, "SRCSGT" - for Sources Sought, "SSALE" - for Sale of Surplus Property, "SNOTE" - for Special Notice, “JA” – For Justification, “ITB” – for Intent to Bundle Requirements (DoD- Funded), "SOL" - for Solicitation, "AWARD" - for Award |	1. If all the required field is given and this field is not given OR a wrong ntype is provided, then service throws an error   | 1. Notice Type value provided is not valid
+awdnbr|	No|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	NA|	NA
 archdate|	No|	YYYYMMDD|	1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restrictions<br><br> 2.	This date cannot be in past; has to be in future|	1.	DATE field in unexpected format. Expects YYYYMMDD<br><br>  2.	This opportunity cannot be cancelled
 contact|	No|	255 characters Default value: Primary <br><br>Other types: Secondary, Owner| NA| NA
 desc|	Yes|	65535 characters|	1. This required field should be validated |	1. Unable to process request. Please try again
@@ -4477,8 +4476,8 @@ Individual business rules per field are listed across each of the fields in belo
 Element Name	| Required |	Character Limit / Restrictions |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 notice_type	|No|	Solicitation type <br><br>  Valid Values: PRESOL, COMBINE, AWARD, JA, SRCSGT, SSALE, SNOTE, ITB, SOL<br><br>   Note: Searches for awards, ja and itb’s will return both standalone notices AND base notices that contain one of these type	|Notice_type if given should be valid |	Notice Type is not recognized<br><br> Expects one of the following: PRESOL, COMBINE, AWARD, JA, SRCSGT, SSALE, SNOTE,  ITB
-solnbr|	No|	Solicitation #|	NA|	NA
-awdnbr|	No|	Award #|	NA|	NA
+solnbr|	No|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	NA|	NA
+awdnbr|	No|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { }|	NA|	NA
 posted_from	|No	|Posted From Date. YYYYMMDD|	Date field should meet the expected format|	DATE field in unexpected format. Expects YYYYMMDD
 posted_to|	No	|Posted To Date. YYYYMMDD	|Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
 documents_to_search|	No	|Valid Values: ‘active’ or ‘archived’. Default is ALL if nothing provided|	NA|	NA
