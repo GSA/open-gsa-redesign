@@ -93,7 +93,7 @@ In order to download secure attachment, user should have at least one of the bel
 * Edit Draft Attachment
 * Delete Draft Attachment
 
-### Lookup/Meta Data
+### Lookup/Meta-Data
 
 #### Notice Types
 
@@ -143,7 +143,7 @@ VSS | Veteran-Owned Small Business Sole source (specific to Department of Vetera
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Stauth valid values
+#### Stauth Valid Values
 Below table captures stauth values to use while making requests as needed.
 
 Code | Description
