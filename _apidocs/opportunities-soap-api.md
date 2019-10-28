@@ -4078,7 +4078,7 @@ Note:
 
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 date 	|1. This field should meet the character limit/restrictions<br><br> Note: Date field allows current date and also any date in past/future |	1. DATE field in unexpected format. Expects YYYYMMDD
 notice_type	|	1. This field is required where applicable |	1. Opportunity type is required
 zip|	NA |NA
@@ -4123,7 +4123,7 @@ Individual business rules per field are listed across each of the fields in belo
 * Note: When links/files are given but none of the other fields are given, then service throws an error - Multiple Notices found. Please input more details
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 date|		Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
 officeid|		1. If an invalid officeid is given, then service throws an error<br><br> 2. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 3. Office ID must be associated with user account	|1. Invalid officeid provided<br><br> 2. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 solnbr|1a. This required field if not given, service throws an error <br><br>1b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination<br><br> 2. If solicitation & ntype combination is not matched, then service throws an error<br><br> 3. If a space is given along with numbers in this field, then service throws an error	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found for correction<br><br>  3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
@@ -4140,7 +4140,7 @@ files	|	1.	This field is not required but if url & description fields within the
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	| 	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 solnbr| 1. This field is required where applicable. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found<br><br>  3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
 awdnbr|	 If neither solnbr or awdnbr is provided, then the system throws an error|	Solicitation Number or Award Number is required
 ntype|	1. If an invalid ntype is provided, then service throws an error |  	1. NTYPE value provided is not valid
@@ -4153,7 +4153,7 @@ Individual business rules per field are listed across each of the fields in belo
 * Note: : If a user tries to archive a notice that is already archived, then the service throws an error -  Opportunity already archived
 
 Element Name	| 	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 date|	Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
 solnbr|	1a. This required field if not given, service throws an error <br><br>1b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error|	1. Multiple notices found. Please input more details<br><br>  2. Notice not found for correction<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
 officeid	|	Office ID must be associated with user account	|NA
@@ -4167,7 +4167,7 @@ Individual business rules per field are listed across each of the fields in belo
 * Note: If a user tries to unarchive an active notice, then the service throws an error - Opportunity is active
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 solnbr|	1a. This required field if not given, service throws an error <br><br>1b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination<br><br> 2. If solicitation & ntype combination is not matched, then service throws an error	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found for correction
 officeid|	Office ID must be associated with user account	|NA
 ntype|		1. If field is not provided OR a wrong ntype is provided, then service throws an error |  	1. NTYPE value provided is not valid
@@ -4181,7 +4181,7 @@ Individual business rules per field are listed across each of the fields in belo
 * Note: -	When user tries to cancel a notice without giving any input, then the service throws an error ‘Unable to process request. Please try again’
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 date|	Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
 officeid|	Office ID must be associated with user account	|NA
 subject|		NA|	NA
@@ -4197,7 +4197,7 @@ desc|	1. This field is required where applicable |	1. Unable to process request.
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 notice_id	|	notice_id is required|	notice_id from getList is required
 Get_changes|		NA|	NA
 get_changes_from_date|		Date field should meet the expected format.|	DATE field in unexpected format. Expects YYYYMMDD
@@ -4209,7 +4209,7 @@ Individual business rules per field are listed across each of the fields in belo
 * Note: Although none of the individual elements are mandatory, at least one filter should be given to perform the operation. If no filters are entered, then system throws an error - Insufficient Search Criteria.
 
 Element Name	 |	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 notice_type	 |	<br><br> Valid Notice Type must be provided | Notice Type is not recognized
 solnbr|	NA|	NA
 awdnbr|		NA|	NA
@@ -4223,7 +4223,7 @@ Individual business rules per field are listed across each of the fields in belo
 * Note: If a wrong combination of file_id and notice_id is given, then the service throws a success message without any data.
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 file_id	|1. This field is required where applicable <br> 2. If an invalid file Id is provided, then the system throws an error.|	1. file_id is required <br> 2.	File Id not found. Please enter a valid Id.
 
 #### getIVLListResponse
@@ -4231,7 +4231,7 @@ file_id	|1. This field is required where applicable <br> 2. If an invalid file I
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 solnbr|		1. If an incorrect solicitation number and ntype combination is given, the service throws an error<br><br>   2a. If this required field if not given, service throws an error <br><br>2b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination |1. Notice not found <br><br>2a. Notice not found<br><br> 2b. Multiple Notices found. Please input more details
 ntype|	NA	|NA
 
@@ -4240,7 +4240,7 @@ ntype|	NA	|NA
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 solnbr|	 1. This field is required where applicable. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error<br><br> 4. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error |	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces<br><br> 4. Multiple notices found. Please input more details
 ntype|		If an invalid ntype is provided, then service throws an error  | 1. NTYPE value provided is not valid
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together <br><br>2.	addAuthoizedParty service is deprecated for Non-FBO Solicitations
@@ -4253,7 +4253,7 @@ Individual business rules per field are listed across each of the fields in belo
 ID can be obtained through getAuthorizedPartyList   
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 solnbr	|	1. This field is required where applicable. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error<br><br> 4. If ntype value is not provided and the solnbr is not unique, then the system throws an error 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br><br>4. Multiple notices found. Please input more details
 ntype	|If an invalid ntype is provided, then service throws an error  | 1. NTYPE value provided is not valid
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	approveExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
@@ -4267,7 +4267,7 @@ Vendor can be obtained through getAuthorizedPartyList
 
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 solnbr	|	1. This field is required where applicable. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error. 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details. 
 ntype	|If an invalid ntype is provided, then service throws an error  | 1. Invalid NTYPE value provided.
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	approveExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
@@ -4278,7 +4278,7 @@ vendor	|1.	If all the elements in the Vendor Data complex definition are not pro
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	| 	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 solnbr|	1. This field is required where applicable. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error<br><br> 4. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error |	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces<br><br> 4. Multiple notices found. Please input more details
 ntype|	If an invalid ntype is provided, then service throws an error |  1. NTYPE value provided is not valid
 nonfbo_solbr 	|	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	addAuthoizedParty service is deprecated for Non-FBO Solicitations
@@ -4289,7 +4289,7 @@ vendor|		1.	If all the elements in the Vendor Data complex definition are not pr
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	 |	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 solnbr|	1. This field is required where applicable. If no value is provided, then service throws an error <br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error<br><br> 4. If ntype value is not provided and the solnbr is not unique, then the system throws an error|	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br/> 4. Multiple notices found. Please input more details
 ntype|	1.	If an invalid ntype is provided, then service throws an error   |	1. NTYPE value provided is not valid
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	rejectExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
@@ -4300,7 +4300,7 @@ reason|  1.	This is a required field. If no value is provided, then the system t
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- | ------- | --------
+------ | ------- | ------- 
 solnbr	|	1. This field is required where applicable. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error. 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details. 
 ntype		|If an invalid ntype is provided, then service throws an error  | 1. Invalid NTYPE value provided.
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	rejectExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
