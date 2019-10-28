@@ -128,7 +128,7 @@ The Notice Types valid options are:
 
 #### Related Notices
 
-This is a conversion table for notices using submitNotice method.
+This is a conversion table for notices using following functions: submitNotice, submitJA, submitAward, submitITB
 
 ||SRCSGT | PRESOL | COMBINE | SOL| AWARD | SSALE | ITB | JA | SNOTE
 -----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
@@ -191,7 +191,7 @@ offadd |	string |	No |	Office Address (Not used) |	65535 characters
 officeid |	string |	Yes |	Office ID of the office where an opportunity is being submitted |	20 characters
 subject |	string |	Yes |	Subject |	255 characters
 solnbr |	string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
-ntype	| string |	No |	[Refer Notice Types](#notice-types) |		
+ntype	| string |	No |	 [Refer Related Notices](#related-notices) |		
 awdnbr |String |	 Yes |	Award Number |	255 characters <br> Agency assigned number for control tracking and identification.<br> Alphanumeric and - _ ( ) { } characters [no spaces]
 awdamt |	string |	Yes |	Award Amount |	64 characters
 linenbr |	string |	No |	Line Number |	255 characters
@@ -261,7 +261,7 @@ DeleteNoticeOrDocumentPackage Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr |	string |	Yes; Solicitation # or Award # is required |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
-ntype |	string |	No |	[Refer Notice Types](#notice-types) 
+ntype |	string |	No |	 [Refer Related Notices](#related-notices) 
 awdnbr |  string | Yes; Solicitation # or Award # is required| Award # |	255 characters
 deletetype |	string |	No |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachments/links. Defaults to “notice” if not provided
 deletemethod |	string | No | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
@@ -288,7 +288,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date |	date |	No |	Posting Date | YYYYMMDD
 solnbr | string |	Yes |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
-ntype |	string | No |	[Refer Notice Types](#notice-types)
+ntype |	string | No |	 [Refer Related Notices](#related-notices)
 archdate | date |	No | New Archive Date – If none provided, notice will archive immediately | YYYYMMDD
 officeid | string |	No |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 
@@ -317,7 +317,7 @@ offadd | string |	No | Office Address |	65535 characters
 officeid | String | No |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 subject |	string | No |	Subject |	255 characters
 solnbr |string | Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-ntype | string | No |	[Refer Notice Types](#notice-types) | 
+ntype | string | No |	 [Refer Related Notices](#related-notices) | 
 awdnbr | string |	No | Award # |255 characters
 archdate | date |	No | Archive Date | YYYYMMDD
 contact | string | Yes | Contact Info | 65535 characters
@@ -353,8 +353,8 @@ officeid | string |	Yes |	Office ID of the office where an opportunity is being 
 offadd | string |	No | Office Address (Not Used) |	65535 characters
 subject |	string | Yes|	Title of the Pre-solicitation |	255 characters
 solnbr | string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-respdate | date |	Yes - either respdate or archdate is required |	Response Date |	YYYYMMDD
-archdate | date |	Yes - either respdate or archdate is required |	Archive Date | YYYYMMDD
+respdate | date |	No - either respdate or archdate is required |	Response Date |	YYYYMMDD
+archdate | date |	No - either respdate or archdate is required |	Archive Date | YYYYMMDD
 contact |	string | Yes |	Contact Info | 65535 characters
 desc |string |Yes |	Description | 65535 characters
 link | GovURL – complex type | No |	Government Link has URL & description |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -496,8 +496,8 @@ offadd |	string	| No	| Office Address (Not Used)|	65535 characters
 subject	| string	| Yes |	Subject |	255 characters
 solnbr | string |	Yes, EXCEPT No - Only for SNOTE | 	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 ntype |	string |	Yes |	 Notice Type |	Valid values: PRESOL, COMBINE, SRCSGT, SSALE, SNOTE, SOL
-respdate |	date |	Yes – for COMBINE, SOL <br><br> Either respdate or archdate required for SNOTE, SSALE, SRCSGT, PRESOL |	Response Date |	YYYYMMDD
-archdate |	date |	Yes	| Archive Date |	YYYYMMDD
+respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SNOTE, SSALE, SRCSGT, PRESOL	|Response Date	|YYYYMMDD
+archdate  |	date|	No - Either respdate or archdate required for SNOTE, SSALE, SRCSGT, PRESOL|	Archive Date|	YYYYMMDD
 contact |	string |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL |	Contact Info |	65535 characters
 desc |	string |	Yes - for PRESOL, COMBINE, SRCSGT, SSALE, ITB, SOL, SNOTE	| Description |	65535 characters
 link	| GovURL – complex type |	No |	Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -567,14 +567,14 @@ offadd |	String	| No |	Office Address	| 65535 characters
 officeid |	String |	Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 subject |	String |	Yes |	Subject |	255 characters
 solnbr	| String |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
-ntype	| string |	No	| Notice Type   | 	Valid Value: JA
+ntype	| string |	No	| [Refer Related Notices](#related-notices)  | 	
 stauth	| String	| Yes |	J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy |	[Refer Stauth Valid Values](#stauth-valid-values)
 awdnbr |	String |	Yes |	Award Number |	255 characters
 modnbr |	String |	No |	Mod Number |	32 characters
 awdamt |	String |	No |	Award Amount |	64 characters
 awddate |	Date |	No	| Award Date |	YYYYMMDD
 donbr	| String |	Yes |	Task/Delivery Order Number |	255 characters from the set: a-z A-Z 0-9 - _ ( )
-archdate  |	Date |	Yes |	Archive Date |	YYYYMMDD
+archdate  |	Date |	No |	Archive Date |	YYYYMMDD
 contact |	String |	Yes | 	Contact Info |	65535 characters
 desc |	String |	No |	Description	| 65535 characters
 link |	GovURL |	No	| Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -641,8 +641,8 @@ officeid |	string |	Yes |	Office ID of the office where an opportunity is being 
 offadd	| string	 | No |	Office Address |	65535 characters
 subject |	string |	Yes |	Subject |	255 characters
 solnbr	| string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-respdate |	date |	Yes - either respdate or archdate is required |	Response Date |	YYYYMMDD
-archdate |	date |	Yes - either respdate or archdate is required |	Archive Date	| YYYYMMDD
+respdate |	date |	No - either respdate or archdate is required |	Response Date |	YYYYMMDD
+archdate |	date |	No - either respdate or archdate is required |	Archive Date	| YYYYMMDD
 contact	| string	| Yes |	Contact Info	| 65535 characters
 desc | string |	Yes |	Description |	65535 characters
 link |	GovURL – complex type |	No |	Government Link	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -919,10 +919,10 @@ officeid|	String|	Yes|	Office ID of the office where an opportunity is being sub
 offadd|	String	|No|	Office Address|	65535 characters
 subject|	String|	Yes|	Subject	|255 characters
 solnbr	|String	|Yes|	Solicitation #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
-ntype	|string	|No|	[Refer Notice Types](#notice-types)
+ntype	|string	|No|	 [Refer Related Notices](#related-notices)
 awdnbr|	String	|Yes	|Award Number|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 donbr|	String|	No	|Task/Delivery Order Number	|255 characters from the set: a-z A-Z 0-9 - _ ( )
-archdate 	|Date	|Yes	|Archive Date|	YYYYMMDD
+archdate 	|Date	|No	|Archive Date|	YYYYMMDD
 contact|	String|	Yes|	Contact Info	|65535 characters; Default value = Primary, Other types are: Secondary, Owner
 desc	|String	|Yes	|Description|	65535 characters
 link|	GovURL|	No|	Government Link	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -984,7 +984,7 @@ Complete notice Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date|	date|	No	|Posting Date|	YYYYMMDD
-notice_type	|string	|Yes|	[Refer Notice Types](#notice-types)	|
+notice_type	|string	|Yes|	 [Refer Notice Types](#notice-types)	|
 zip	|string	|No	|Zip Code|	5 digits
 classcod|	string|	Yes - for SOL, COMBINE, SSALE, ITB, JA  |	Class-Code	|Valid classification code (FAR, Section 5.207(g))
 naics	|string	|Yes - for COMBINE, SOL	|NAICS Code|	Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference
@@ -992,7 +992,7 @@ officeid|	String|	Yes|	Office ID of the office where an opportunity is being sub
 offadd	|string|	No|	Office Address (Not Used)	|65535 characters
 subject|	string|	Yes|	Subject|	255 characters
 solnbr|	string|	Yes, EXCEPT No - Only for SNOTE|	Solicitation #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-ntype	|string	|No	|[Refer Notice Types](#notice-types)
+ntype	|string	|No	| [Refer Related Notices](#related-notices)
 awdnbr|	string|	Yes - for AWARD, ITB & JA |	Award #	|255 characters
 donbr	|string	|Yes - for JA|	Delivery/Task Order Number	|255 characters
 awdamt	|string|	Yes - for AWARD 	|Award Amount|	64 characters
@@ -1000,7 +1000,7 @@ linenbr|	string	|No|	Award Line Item Number	|255 characters
 awddate	|date|	Yes - for AWARD|	Award Date	|YYYYMMDD
 stauth	|string	|Yes - for JA 	|J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy| [Refer Stauth Valid Values](#stauth-valid-values)
 respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SNOTE, SSALE, SRCSGT, PRESOL	|Response Date	|YYYYMMDD
-archdate  |	date|	Yes|	Archive Date|	YYYYMMDD
+archdate  |	date|	No - Either respdate or archdate required for SNOTE, SSALE, SRCSGT, PRESOL|	Archive Date|	YYYYMMDD
 awardee|	string|	Yes – for AWARD |	Awardee	|65535 characters
 awardee_duns|	string	|No	|Awardee DUNS	|9 digits with optional plus 4
 contact|	string|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL|	Contact Info|	65535 characters
@@ -1067,7 +1067,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 Date|	Date|	No	|Posting Date	|YYYYMMDD
 solnbr	|String	|No|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-ntype	|String	|No|	[Refer Notice Types](#notice-types)
+ntype	|String	|No|	 [Refer Related Notices](#related-notices)
 uploadtype|	String|	No |	Upload Type|	A for amendment, S for solicitation or any title for other; 255 characters
 respdate	|Date	|No |Response Date|	YYYYMMDD
 links|	DocumentLin k[]|	Yes; Either Links or Files needs to be provided|	Array Of links	|
@@ -1110,7 +1110,7 @@ UnarchiveNotice Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No	|[Refer Notice Types](#notice-types)
+ntype	|string	|No	| [Refer Related Notices](#related-notices)
 awdnbr	|string|	No|	Award #|	255 characters
 archdate	|date|	Yes|	New Archive Date|	YYYYMMDD
 
@@ -1175,7 +1175,7 @@ IVLListRequest Complex Type Definition:
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
 solnbr|	string|	Yes|	Solicitation #
-ntype	|string	|No	|[Refer Notice Types](#notice-types)
+ntype	|string	|No	| [Refer Related Notices](#related-notices)
 
 IVLListResponse Complex Type Definition:
 
@@ -1220,7 +1220,7 @@ AuthorizedPartyListRequest Complex Type Definition:
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
 solnbr|	string|	Yes	|Solicitation #. Provide an empty string for this argument if using nonfbo_solnbr below
-ntype|	string|	No|	[Refer Notice Types](#notice-types)
+ntype|	string|	No|	 [Refer Related Notices](#related-notices)
 nonfbo_solbr|	string|	No|	Non-fbo Solicitation #. Not supported for this method
 status| string	|No	|Valid Options: approved, pending, rejected, “empty value”. If empty, all status will be returned <br> <br> Note, use “pending” to pull the pending explicit access requests.
 
@@ -1264,7 +1264,7 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
 solnbr|	string	|Yes|	Solicitation #
-ntype	|string	|No|	[Refer Notice Types](#notice-types)
+ntype	|string	|No|	 [Refer Related Notices](#related-notices)
 nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method
 Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.
 
@@ -1290,7 +1290,7 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name	|Type	|Required|	Description
 -----|-----|-----|----
 solnbr	|string	|Yes|	Solicitation #
-ntype|	string|	No|	[Refer Notice Types](#notice-types)
+ntype|	string|	No|	 [Refer Related Notices](#related-notices)
 nonfbo_solbr|	string|	No|	Non-fbo Solicitation #.  Not supported for this method
 vendor|	VendorData	|Yes|	Complex type defined below
 
@@ -1327,7 +1327,7 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
 solnbr|	string	|Yes|	Solicitation #
-ntype	|string	|No|[Refer Notice Types](#notice-types)
+ntype	|string	|No| [Refer Related Notices](#related-notices)
 nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method
 Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.
 reason	|string|	Yes|	rejection reason not used in this method
@@ -1354,7 +1354,7 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
 solnbr|	string|	Yes|	Solicitation #
-ntype	|string	|No|	[Refer Notice Types](#notice-types)
+ntype	|string	|No|	 [Refer Related Notices](#related-notices)
 nonfbo_solbr	|string	|No	|Non-fbo Solicitation #.  Not supported for this method
 vendor	|VendorData|	Yes|	Complex type defined below
 reason|	string|	Yes	|Rejection Reason 
@@ -1390,7 +1390,7 @@ ExplicitAccessRequest Complex Type Definition:
 Element Name | Type | Required | Description
 ------ | ------- | ------- | -------
 solnbr|	string|	Yes|	Solicitation #
-ntype	|string	|No	|[Refer Notice Types](#notice-types)
+ntype	|string	|No	| [Refer Related Notices](#related-notices)
 nonfbo_solbr|	string|	No	|Non-fbo Solicitation #.   Not supported for this method.
 Id	|string	|No	|Not used in this method
 vendor	|VendorData|	Yes|	Complex type defined below
@@ -1428,7 +1428,7 @@ NoticeListRequest Complex Type Definition:
 
 Element Name|	Type|	Required|	Description
 -----|-----|-----|-----
-notice_type	|string|	No (at least 1 field is required)|	[Refer Notice Types](#notice-types)  Note:Searches for award, j&a, itb and fairopps will return both standalone notices AND base notices that contain one of these type
+notice_type	|string|	No (at least 1 field is required)|	 [Refer Notice Types](#notice-types)(#related-notices)  Note:Searches for award, j&a, itb and fairopps will return both standalone notices AND base notices that contain one of these type
 solnbr	|string	|No (at least 1 field is required)	|Solicitation #
 awdnbr	|string	|No	(at least 1 field is required)|Award #
 posted_from	|date|	No (at least 1 field is required)|	Posted From Date. YYYYMMDD.
@@ -2127,76 +2127,75 @@ Please note that variances may exist between SOAP requests generated by differen
     <summary>Response Sample – Success</summary>
 <textarea>
 Note: This service gets a list of all notices
-<SOAP-ENV:Envelope
-            xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
-            xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
-            xmlns:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
-            xmlns:ns1="https://www.sam.gov"
-            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <SOAP-ENV:Header/>
-            <SOAP-ENV:Body>
-                        <ns1:getNoticeDataResponse
-                                    xmlns:ns1="https://www.sam.gov/">
-                                    <return xsi:type="ns1:NoticeDataResponse">
-                                                <success xsi:type="xsd:boolean">true</success>
-                                                <messages xsi:nil="true" xsi:type="ns1:ArrayOfstring"/>
-                                                <notice xsi:type="ns1:NoticeData">
-                                                            <notice_id xsi:type="xsd:string">bf20590c11c74f209f992c074dbbb0d1</notice_id>
-                                                            <notice_type xsi:type="xsd:string">PRESOL</notice_type>
-                                                            <agency xsi:type="xsd:string">GENERAL SERVICES ADMINISTRATION</agency>
-                                                            <office xsi:type="xsd:string">FEDERAL ACQUISITION SERVICE</office>
-                                                            <location xsi:type="xsd:string">GSA/FAS CENTER FOR IT SCHEDULE PROG</location>
-                                                            <date xsi:type="xsd:date">2019-10-25T19:22:58</date>
-                                                            <classcod xsi:type="xsd:string">13</classcod>
-                                                            <naics xsi:type="xsd:string">111150</naics>
-                                                            <subject xsi:type="xsd:string">Presol Test</subject>
-                                                            <solnbr xsi:type="xsd:string">ST_PRESOL_Oct_0012</solnbr>
-                                                            <respdate xsi:type="xsd:date">2020-01-01T23:59:59-05:00</respdate>
-                                                            <archdate xsi:type="xsd:date">2020-01-01</archdate>
-                                                            <desc xsi:type="xsd:string">Description by Veera</desc>
-                                                            <link xsi:type="xsd:string">https://www.google.com</link>
-                                                            <contact xsi:type="xsd:string">John Doe</contact>
-                                                            <email xsi:type="ns1:GovEmail">
-                                                                        <address xsi:type="xsd:string">john.doe@gmail.com</address>
-                                                                        <desc xsi:type="xsd:string">Gmail Desc</desc>
-                                                            </email>
-                                                            <popaddress xsi:type="xsd:string">Main Sq</popaddress>
-                                                            <popzip xsi:type="xsd:string">20170</popzip>
-                                                            <popcountry xsi:type="xsd:string">USA</popcountry>
-                                                            <recovery_act xsi:type="xsd:boolean">true</recovery_act>
-                                                            <document_packages SOAP-ENC:arrayType="ns1:DocumentPackageData[1]" xsi:type="ns1:ArrayOfDocumentPackageData">
-                                                                        <item xsi:type="ns1:DocumentPackageData">
-                                                                                    <package_id xsi:type="xsd:string">N/A</package_id>
-                                                                                    <label xsi:type="xsd:string">N/A</label>
-                                                                                    <type xsi:type="xsd:string">N/A</type>
-                                                                                    <sensitive xsi:type="xsd:boolean">true</sensitive>
-                                                                                    <pr_number xsi:type="xsd:string">N/A</pr_number>
-                                                                                    <project_number xsi:type="xsd:string">N/A</project_number>
-                                                                                    <nsn_mmac xsi:type="xsd:string">N/A</nsn_mmac>
-                                                                                    <part_number xsi:type="xsd:string">N/A</part_number>
-                                                                                    <nomenclature xsi:type="xsd:string">N/A</nomenclature>
-                                                                                    <export_controlled xsi:type="xsd:boolean">true</export_controlled>
-                                                                                    <explicit_access xsi:type="xsd:boolean">true</explicit_access>
-                                                                                    <is_cd_avail xsi:type="xsd:boolean">false</is_cd_avail>
-                                                                                    <files SOAP-ENC:arrayType="ns1:DocumentFileData[1]" xsi:type="ns1:ArrayOfDocumentFileData">
-                                                                                                <item xsi:type="ns1:DocumentFileData">
-                                                                                                            <file_id xsi:type="xsd:string">14add82cf11844ceb15f0e61ebe26235</file_id>
-                                                                                                            <type xsi:type="xsd:string">link</type>
-                                                                                                            <filename xsi:type="xsd:string"/>
-                                                                                                            <link xsi:type="xsd:string">http://fbo.gov</link>
-                                                                                                            <desc xsi:type="xsd:string">test desc</desc>
-                                                                                                            <size_limit_error xsi:type="xsd:string"/>
-                                                                                                </item>
-                                                                                    </files>
-                                                                        </item>
-                                                            </document_packages>
-                                                </notice>
-                                    </return>
-                        </ns1:getNoticeDataResponse>
-            </SOAP-ENV:Body>
+ <SOAP-ENV:Envelope
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:ns1="https://www.sam.gov"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SOAP-ENV:Header/>
+	<SOAP-ENV:Body>
+		<ns1:getNoticeDataResponse
+			xmlns:ns1="https://www.sam.gov/">
+			<return xsi:type="ns1:NoticeDataResponse">
+				<success xsi:type="xsd:boolean">true</success>
+				<messages xsi:nil="true" xsi:type="ns1:ArrayOfstring"/>
+				<notice xsi:type="ns1:NoticeData">
+					<notice_id xsi:type="xsd:string">bf20590c11c74f209f992c074dbbb0d1</notice_id>
+					<notice_type xsi:type="xsd:string">PRESOL</notice_type>
+					<agency xsi:type="xsd:string">GENERAL SERVICES ADMINISTRATION</agency>
+					<office xsi:type="xsd:string">FEDERAL ACQUISITION SERVICE</office>
+					<location xsi:type="xsd:string">GSA/FAS CENTER FOR IT SCHEDULE PROG</location>
+					<date xsi:type="xsd:date">2019-10-25T19:22:58</date>
+					<classcod xsi:type="xsd:string">13</classcod>
+					<naics xsi:type="xsd:string">111150</naics>
+					<subject xsi:type="xsd:string">Presol Test</subject>
+					<solnbr xsi:type="xsd:string">ST_PRESOL_Oct_0012</solnbr>
+					<respdate xsi:type="xsd:date">2020-01-01T23:59:59-05:00</respdate>
+					<archdate xsi:type="xsd:date">2020-01-01</archdate>
+					<desc xsi:type="xsd:string">Description by XYZ</desc>
+					<link xsi:type="xsd:string">https://xyz.com</link>
+					<contact xsi:type="xsd:string">John Doe primary&lt;a href=""&gt; Gmail Desc&lt;/a&gt;</contact>
+					<email xsi:type="ns1:GovEmail">
+						<address xsi:type="xsd:string"></address>
+						<desc xsi:type="xsd:string"></desc>
+					</email>
+					<popaddress xsi:type="xsd:string">Alton Sq</popaddress>
+					<popzip xsi:type="xsd:string">20170</popzip>
+					<popcountry xsi:type="xsd:string">USA</popcountry>
+					<recovery_act xsi:type="xsd:boolean">true</recovery_act>
+					<document_packages SOAP-ENC:arrayType="ns1:DocumentPackageData[1]" xsi:type="ns1:ArrayOfDocumentPackageData">
+						<item xsi:type="ns1:DocumentPackageData">
+							<package_id xsi:type="xsd:string">N/A</package_id>
+							<label xsi:type="xsd:string">N/A</label>
+							<type xsi:type="xsd:string">N/A</type>
+							<sensitive xsi:type="xsd:boolean">true</sensitive>
+							<pr_number xsi:type="xsd:string">N/A</pr_number>
+							<project_number xsi:type="xsd:string">N/A</project_number>
+							<nsn_mmac xsi:type="xsd:string">N/A</nsn_mmac>
+							<part_number xsi:type="xsd:string">N/A</part_number>
+							<nomenclature xsi:type="xsd:string">N/A</nomenclature>
+							<export_controlled xsi:type="xsd:boolean">true</export_controlled>
+							<explicit_access xsi:type="xsd:boolean">true</explicit_access>
+							<is_cd_avail xsi:type="xsd:boolean">false</is_cd_avail>
+							<files SOAP-ENC:arrayType="ns1:DocumentFileData[1]" xsi:type="ns1:ArrayOfDocumentFileData">
+								<item xsi:type="ns1:DocumentFileData">
+									<file_id xsi:type="xsd:string">14add82cf11844ceb15f0e61ebe26235</file_id>
+									<type xsi:type="xsd:string">link</type>
+									<filename xsi:type="xsd:string"/>
+									<link xsi:type="xsd:string">http://fbo.gov</link>
+									<desc xsi:type="xsd:string">test desc</desc>
+									<size_limit_error xsi:type="xsd:string"/>
+								</item>
+							</files>
+						</item>
+					</document_packages>
+				</notice>
+			</return>
+		</ns1:getNoticeDataResponse>
+	</SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
-
 
 </textarea>
 </details>
@@ -4078,7 +4077,7 @@ Note:
 
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | -------
 date 	|1. This field should meet the character limit/restrictions<br><br> Note: Date field allows current date and also any date in past/future |	1. DATE field in unexpected format. Expects YYYYMMDD
 notice_type	|	1. This field is required where applicable |	1. Opportunity type is required
 zip|	NA |NA
@@ -4123,7 +4122,7 @@ Individual business rules per field are listed across each of the fields in belo
 * Note: When links/files are given but none of the other fields are given, then service throws an error - Multiple Notices found. Please input more details
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | -------
 date|		Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
 officeid|		1. If an invalid officeid is given, then service throws an error<br><br> 2. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 3. Office ID must be associated with user account	|1. Invalid officeid provided<br><br> 2. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 solnbr|1a. This required field if not given, service throws an error <br><br>1b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination<br><br> 2. If solicitation & ntype combination is not matched, then service throws an error<br><br> 3. If a space is given along with numbers in this field, then service throws an error	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found for correction<br><br>  3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
@@ -4140,7 +4139,7 @@ files	|	1.	This field is not required but if url & description fields within the
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	| 	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 solnbr| 1. This field is required where applicable. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found<br><br>  3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
 awdnbr|	 If neither solnbr or awdnbr is provided, then the system throws an error|	Solicitation Number or Award Number is required
 ntype|	1. If an invalid ntype is provided, then service throws an error |  	1. NTYPE value provided is not valid
@@ -4153,7 +4152,7 @@ Individual business rules per field are listed across each of the fields in belo
 * Note: : If a user tries to archive a notice that is already archived, then the service throws an error -  Opportunity already archived
 
 Element Name	| 	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 date|	Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
 solnbr|	1a. This required field if not given, service throws an error <br><br>1b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error|	1. Multiple notices found. Please input more details<br><br>  2. Notice not found for correction<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces
 officeid	|	Office ID must be associated with user account	|NA
@@ -4167,7 +4166,7 @@ Individual business rules per field are listed across each of the fields in belo
 * Note: If a user tries to unarchive an active notice, then the service throws an error - Opportunity is active
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 solnbr|	1a. This required field if not given, service throws an error <br><br>1b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination<br><br> 2. If solicitation & ntype combination is not matched, then service throws an error	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found for correction
 officeid|	Office ID must be associated with user account	|NA
 ntype|		1. If field is not provided OR a wrong ntype is provided, then service throws an error |  	1. NTYPE value provided is not valid
@@ -4181,7 +4180,7 @@ Individual business rules per field are listed across each of the fields in belo
 * Note: -	When user tries to cancel a notice without giving any input, then the service throws an error ‘Unable to process request. Please try again’
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 date|	Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
 officeid|	Office ID must be associated with user account	|NA
 subject|		NA|	NA
@@ -4197,7 +4196,7 @@ desc|	1. This field is required where applicable |	1. Unable to process request.
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 notice_id	|	notice_id is required|	notice_id from getList is required
 Get_changes|		NA|	NA
 get_changes_from_date|		Date field should meet the expected format.|	DATE field in unexpected format. Expects YYYYMMDD
@@ -4209,7 +4208,7 @@ Individual business rules per field are listed across each of the fields in belo
 * Note: Although none of the individual elements are mandatory, at least one filter should be given to perform the operation. If no filters are entered, then system throws an error - Insufficient Search Criteria.
 
 Element Name	 |	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 notice_type	 |	<br><br> Valid Notice Type must be provided | Notice Type is not recognized
 solnbr|	NA|	NA
 awdnbr|		NA|	NA
@@ -4223,7 +4222,7 @@ Individual business rules per field are listed across each of the fields in belo
 * Note: If a wrong combination of file_id and notice_id is given, then the service throws a success message without any data.
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 file_id	|1. This field is required where applicable <br> 2. If an invalid file Id is provided, then the system throws an error.|	1. file_id is required <br> 2.	File Id not found. Please enter a valid Id.
 
 #### getIVLListResponse
@@ -4231,7 +4230,7 @@ file_id	|1. This field is required where applicable <br> 2. If an invalid file I
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 solnbr|		1. If an incorrect solicitation number and ntype combination is given, the service throws an error<br><br>   2a. If this required field if not given, service throws an error <br><br>2b. If multiple notices are found with solicitation number given, then provide ntype and solicitation number combination |1. Notice not found <br><br>2a. Notice not found<br><br> 2b. Multiple Notices found. Please input more details
 ntype|	NA	|NA
 
@@ -4240,7 +4239,7 @@ ntype|	NA	|NA
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 solnbr|	 1. This field is required where applicable. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error<br><br> 4. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error |	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces<br><br> 4. Multiple notices found. Please input more details
 ntype|		If an invalid ntype is provided, then service throws an error  | 1. NTYPE value provided is not valid
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together <br><br>2.	addAuthoizedParty service is deprecated for Non-FBO Solicitations
@@ -4253,7 +4252,7 @@ Individual business rules per field are listed across each of the fields in belo
 ID can be obtained through getAuthorizedPartyList   
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 solnbr	|	1. This field is required where applicable. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error<br><br> 4. If ntype value is not provided and the solnbr is not unique, then the system throws an error 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br><br>4. Multiple notices found. Please input more details
 ntype	|If an invalid ntype is provided, then service throws an error  | 1. NTYPE value provided is not valid
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	approveExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
@@ -4267,7 +4266,7 @@ Vendor can be obtained through getAuthorizedPartyList
 
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 solnbr	|	1. This field is required where applicable. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error. 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details. 
 ntype	|If an invalid ntype is provided, then service throws an error  | 1. Invalid NTYPE value provided.
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	approveExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
@@ -4278,7 +4277,7 @@ vendor	|1.	If all the elements in the Vendor Data complex definition are not pro
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	| 	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 solnbr|	1. This field is required where applicable. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error<br><br> 4. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error |	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces<br><br> 4. Multiple notices found. Please input more details
 ntype|	If an invalid ntype is provided, then service throws an error |  1. NTYPE value provided is not valid
 nonfbo_solbr 	|	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	addAuthoizedParty service is deprecated for Non-FBO Solicitations
@@ -4289,7 +4288,7 @@ vendor|		1.	If all the elements in the Vendor Data complex definition are not pr
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	 |	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 solnbr|	1. This field is required where applicable. If no value is provided, then service throws an error <br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If a space is given along with numbers in this field, then service throws an error<br><br> 4. If ntype value is not provided and the solnbr is not unique, then the system throws an error|	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br/> 4. Multiple notices found. Please input more details
 ntype|	1.	If an invalid ntype is provided, then service throws an error   |	1. NTYPE value provided is not valid
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	rejectExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
@@ -4300,7 +4299,7 @@ reason|  1.	This is a required field. If no value is provided, then the system t
 Individual business rules per field are listed across each of the fields in below table.  
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
------- | ------- | ------- 
+------ | ------- | ------- | ------- | --------
 solnbr	|	1. This field is required where applicable. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error. 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details. 
 ntype		|If an invalid ntype is provided, then service throws an error  | 1. Invalid NTYPE value provided.
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	rejectExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
