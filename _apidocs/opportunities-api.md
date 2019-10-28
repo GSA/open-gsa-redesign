@@ -2047,7 +2047,7 @@ Examples
 </details>
 
 <details>
-<summary>Update Attachment Request - Change Resource Order (Move resource to the bottom.(Applicable to both files and links))</summary>
+<summary>Update Attachment Request - Change Resource Order (Move resource to the bottom of the list. Applicable to both files and links)</summary>
 <p>
 <code><pre>
 {
