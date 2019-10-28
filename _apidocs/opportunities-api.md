@@ -1910,7 +1910,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Create Attachment in Draft Opportunity
+### Create Resource in Draft Opportunity
 
 ------- | -------
 **Request Type** | POST
@@ -1968,7 +1968,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update Attachment in Draft Opportunity
+### Update Resource in Draft Opportunity
 
 ------- | -------
 **Request Type** | PATCH
