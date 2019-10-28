@@ -2087,7 +2087,7 @@ Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
 resourceId | query | string | Yes | Resource ID
-deleteAll | query | boolean | Yes | Should be true if deleting resource from all versions of a notice; else false. The deleted published resources will not show up if there are any further revisions made for the current opportunity. 
+deleteAll | query | boolean | Yes | Should be true if deleting resource from all versions of a notice; else false. The deleted published resources will not show up for any further revisions that will be created. 
 
 <p><small><a href="#">Back to top</a></small></p>
 
