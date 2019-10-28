@@ -2070,7 +2070,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Delete Resource from Draft Opportunity
+### Delete Resource in Draft Opportunity
 
 ------- | -------
 **Request Type** | DELETE
