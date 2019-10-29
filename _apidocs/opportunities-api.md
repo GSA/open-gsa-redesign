@@ -2221,7 +2221,7 @@ Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
 resourceId | query | string | Yes | Resource ID
-Request JSON | Body | JSON | Yes | [Refer Update Attachment Link Contract JSON](#update-attachment-link-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Update Attachment Link Contract JSON](#update-attachment-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
