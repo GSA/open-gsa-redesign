@@ -409,13 +409,11 @@ Since Opportunities data volume is huge, API works as follows:
 
 Scenario | Error Messages
 ------| ------
-For status, user provides a value apart from Both or Active or InActive.|	Invalid Status value. Allowed values are any of Both/Active/InActive
 For limit, user provides range beyond 1000.|	Limit valid range is 0-1000. Please provide valid input.
 For limit or offset, user inputs characters/special characters.|	limit/offset must be a positive number.
 For postedFrom, postedTo, rdlfrom, rdlto user enters an invalid date format. |	Invalid Date Entered. Expected date format is MM/dd/yyyy
 User does not provide postedFrom and postedTo values.	|PostedFrom and PostedTo are mandatory
 User provides more than 1 year of date range for postedFrom and postedTo <br>OR<br>User provides more than 1 year of date range for rdlfrom and rdlto	|Date range must be 1 year(s) apart
-User provides more than 25 characters for description field. |	Description length is limited to 25 characters
 User provides invalid API Key|	An invalid api_key was supplied
 User does not provide any API key	|No api_key was supplied
 User clicks on the description link available in the response and description content is not available	|Description Not Found
