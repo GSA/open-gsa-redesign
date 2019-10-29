@@ -87,7 +87,7 @@ pointofContact|	Point of Contact Information. It can have below fields if availa
 description|	A link to an opportunity description. <br>Note: To download the description, user should append the public API Key. If no description is available then, user is shown an error message “ Description not found”|	String
 organizationType|	Type of an organization – department/sub-tier/office|	String
 officeAddress|	Office Address Information. It can have below fields if available: <br> City<br> State<br>Zip|	String
-placeOfPerformance|	Place of performance information. It can have below fields if available:<br> City<br> State<br>Zip|	JSON
+placeOfPerformance|	Place of performance information. It can have below fields if available: Street<br> City<br> State<br>Zip|	JSON
 additionalInfoLink|	Any additional info link if available for the opportunity	|String
 uiLink	|Direct UI link to the opportunity. To view the opportunity on UI, user must have either a contracting officer or a Contracting Specialist role. If user hits the link without logging in, user is directed to 404 not found page |	String
 links	|Every record in a response has this links array consisting of: <br> rel: self<br>href: link to the specific opportunity itself. User should provide an API key to access the opportunity directly<br><br>Also, every response has a master links array consisting of:<br>    rel: self<br>href: link to the actual request. User should provide an API key to access the request|	Array
