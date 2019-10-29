@@ -4106,7 +4106,7 @@ links|	1. This field is not required but if url & description fields within the 
 files|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
 setaside|	NA	|NA
 popaddress|	This is a free Text. No validation is performed on this field	 | NA
-popzip	|No	|5 digits|	NA|	NA
+popzip	|No	|5 digits
 popcountry|	 No|	1. Award Details Section - Country is a required field
 city	|NA|	NA
 state	|	NA|	NA
