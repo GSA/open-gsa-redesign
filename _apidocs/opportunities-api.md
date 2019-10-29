@@ -3028,8 +3028,7 @@ reason | string |  | No | Publish reason
 <p>
 <code><pre>
 {
-    "data":
-    {
+    "data": {
         "type": "",
         "solicitationNumber": "",
         "title": "",
@@ -3037,131 +3036,134 @@ reason | string |  | No | Publish reason
         "organizationLocationId": "",
         "classificationCode": "",
         "naics": [
-        {
-            "type": "primary",
-            "code": [""]
-        }],
-        "flags": [
-        {
-            "code": "",
-            "isSelected": true
-        }],
-        "pointOfContact": [
-        {
-            "type": "primary",
-            "title": "",
-            "fullName": "",
-            "email": "",
-            "phone": "",
-            "fax": "",
-            "additionalInfo":
             {
-                "content": ""
+                "type": "primary",
+                "code": [
+                    ""
+                ]
             }
-        }],
-        "placeOfPerformance":
-        {
+        ],
+        "flags": [
+            {
+                "code": "",
+                "isSelected": true
+            }
+        ],
+        "pointOfContact": [
+            {
+                "type": "primary",
+                "title": "",
+                "fullName": "",
+                "email": "",
+                "phone": "",
+                "fax": "",
+                "additionalInfo": {
+                    "content": ""
+                }
+            }
+        ],
+        "placeOfPerformance": {
             "streetAddress": "",
             "streetAddress2": "",
-            "city":
-            {
+            "city": {
                 "code": "",
                 "name": ""
             },
-            "country":
-            {
+            "country": {
                 "code": "",
                 "name": ""
             },
-            "state":
-            {
+            "state": {
                 "code": "",
                 "name": ""
             },
             "zip": ""
         },
-        "archive":
-        {
+        "archive": {
             "type": "autocustom",
             "date": "2019-09-09"
         },
-        "permissions":
-        {
-            "IVL":
-            {
+        "permissions": {
+            "IVL": {
                 "create": false,
                 "delete": false,
                 "read": false,
                 "update": false
             }
         },
-        "solicitation":
-        {
+        "solicitation": {
             "setAside": "SBA",
-            "deadlines":
-            {
+            "deadlines": {
                 "response": "2019-08-08"
             }
         },
-        "award":
-        {
+        "award": {
             "date": "",
             "number": "",
             "deliveryOrderNumber": "",
             "amount": "",
             "lineItemNumber": "",
-            "awardee":
-            {
+            "awardee": {
                 "manual": false,
                 "name": "",
                 "duns": "",
-                "location":
-                {
+                "location": {
                     "streetAddress": "",
                     "streetAddress2": "",
-                    "city":
-                    {
+                    "city": {
                         "code": "",
                         "name": ""
                     },
-                    "state":
-                    {
+                    "state": {
                         "code": "",
                         "name": ""
                     },
                     "zip": "",
-                    "country":
-                    {
+                    "country": {
                         "code": "",
                         "name": ""
                     }
                 }
             }
-            },
-            "justificationAuthority":
-            {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            },
-            "link":
-            {
-                "additionalInfo":
-                {
-                    "content": ""
-                },
-                "href": ""
-            },
-            "additionalReporting": ["none"]
         },
-        "description": [
+        "justificationAuthority": {
+            "modificationNumber": "",
+            "authority": "dictionary"
+        },
+        "link": {
+            "additionalInfo": {
+                "content": ""
+            },
+            "href": ""
+        },
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
         {
             "body": ""
-        }],
-        "related":
-        {
-            "opportunityId": ""
         }
-    }
+    ],
+    "related": {
+        "opportunityId": ""
+    },
+    "resources": [
+        {
+            "attType": "link",
+            "link": "",
+            "description": ""
+        },
+        {
+            "attType": "file",
+            "content": "",
+            "resourceName": "",
+            "packageAccessLevel": "",
+            "explicitAccess": "",
+            "exportControlled": null
+        }
+    ]
+}
 </pre></code>
 </p>
 </details>
