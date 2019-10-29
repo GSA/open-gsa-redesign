@@ -3022,7 +3022,7 @@ reason | string |  | No | Publish reason
 ### Create and Publish Opportunity Contract JSON
 
 
-<div id="create-update-json">
+<div id="create-publish-json">
 <details>
 <summary>Create_Publish_Opportunity_Contract_Json</summary>
 <p>
