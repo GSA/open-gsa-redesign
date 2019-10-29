@@ -422,6 +422,148 @@ Examples
 </p>
 </details>
 
+<details>
+<summary>SOLICITATION Request related to a PRESOL Notice</summary>
+<p>
+<code><pre>
+
+{
+    "data":
+    {
+        "type": "o",
+        "solicitationNumber": "test-12345678901",
+        "title": "Test submit solicitation",
+        "organizationId": "100186612",
+        "organizationLocationId": "",
+        "classificationCode": "1260",
+        "naics": [
+        {
+            "type": "primary",
+            "code": ["111150"]
+        }],
+        "flags": [
+        {
+            "code": "",
+            "isSelected": true
+        }],
+        "pointOfContact": [
+        {
+            "type": "primary",
+            "title": "",
+            "fullName": "test contact",
+            "email": "test@test.com",
+            "phone": "",
+            "fax": "",
+            "additionalInfo":
+            {
+                "content": "Primary contact info"
+            }
+        }],
+        "placeOfPerformance":
+        {
+            "streetAddress": "1234 XYZ street",
+            "streetAddress2": "",
+            "city": {
+                "code": "75376",
+                "name": "Sterling"
+            },
+            "state": {
+                "code": "VA",
+                "name": "Virginia"
+            },
+            "country": {
+                "code": "USA",
+                "name":"USA"
+            }
+,
+            "zip": ""
+        },
+        "archive":
+        {
+            "type": "autocustom",
+            "date": "2022-09-09"
+        },
+        "permissions":
+        {
+            "IVL":
+            {
+                "create": false,
+                "delete": false,
+                "read": false,
+                "update": false
+            }
+        },
+        "solicitation":
+        {
+            "setAside": "SBA",
+            "deadlines":
+            {
+                "response": "2022-08-08"
+            }
+        },
+        "award":
+        {
+            "date": "",
+            "number": "",
+            "deliveryOrderNumber": "",
+            "amount": "",
+            "lineItemNumber": "",
+            "awardee":
+            {
+                "manual": false,
+                "name": "",
+                "duns": "",
+                "location":
+                {
+                    "streetAddress": "",
+                    "streetAddress2": "",
+                    "city":
+                    {
+                        "code": "",
+                        "name": ""
+                    },
+                    "state":
+                    {
+                        "code": "",
+                        "name": ""
+                    },
+                    "zip": "",
+                    "country":
+                    {
+                        "code": "",
+                        "name": ""
+                    }
+                }
+            }
+            },
+            "justificationAuthority":
+            {
+                "modificationNumber": "",
+                "authority": "dictionary"
+            },
+            "link":
+            {
+                "additionalInfo":
+                {
+                    "content": ""
+                },
+                "href": ""
+            },
+            "additionalReporting": ["none"]
+        },
+        "description": [
+        {
+            "body": "test description"
+        }],
+        "related":
+        {
+            "opportunityId": "bc14e9f810a44e468c31fd120dd41b4f"
+        }
+    }
+</pre></code>
+</p>
+</details>
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Publish Draft Opportunity
@@ -2787,7 +2929,7 @@ pointOfContact.email | string |255 characters | | No  | Yes (no if type = a)  | 
 pointOfContact.phone | string |255 characters | | No | No | Contact Phone
 pointOfContact.fax | string | 255 characters | | No  | No | Contact Fax
 pointOfContact.additionalInfo | JSON |NA |NA | NA  | NA |  Any additional information on Point of Contact
-pointOfContact.additionalInfo.content | String | | | No  | No | Details of the additional information on Point of Contact 
+pointOfContact.additionalInfo.<br/>content | String | | | No  | No | Details of the additional information on Point of Contact 
 placeOfPerformance | JSON | NA | NA | NA | NA |
 placeOfPerformance.<br/>streetAddess | string | | | No | No | Pop Address
 placeOfPerformance.<br/>streetAddess2 | string | | | No | No | Pop Address2
@@ -2843,7 +2985,7 @@ justificationAuthority.<br/>authority | string|  |  | No | No | Justification Au
 link | JSON | NA |NA | NA | NA |
 link.href | string | | | No | No | Url for the notice on SAM.gov
 link.additionalInfo | JSON | NA |NA | NA | NA | Any additional information on the opportunity
-link.additionalInfo.content | string | | | No | No | Additional information details
+link.additionalInfo.<br/>content | string | | | No | No | Additional information details
 additionalReporting | string | |none/<br/>auto_recovery | No | Yes | Additional reporting requirements that apply to the contract action
 description | JSON | NA | NA | NA | NA |
 description.body | string | 65535 characters| | No | Yes | Description of the notice
@@ -3049,7 +3191,7 @@ pointOfContact.email | string |255 characters | | No  | Yes (no if type = a)  | 
 pointOfContact.phone | string |255 characters | | No | No | Contact Phone
 pointOfContact.fax | string | 255 characters | | No  | No | Contact Fax
 pointOfContact.additionalInfo | JSON |NA |NA | NA  | NA |  Any additional information on Point of Contact
-pointOfContact.additionalInfo.content | String | | | No  | No | Details of the additional information on Point of Contact 
+pointOfContact.additionalInfo.<br/>content | String | | | No  | No | Details of the additional information on Point of Contact 
 placeOfPerformance | JSON | NA | NA | NA | NA |
 placeOfPerformance.<br/>streetAddess | string | | | No | No | Pop Address
 placeOfPerformance.<br/>streetAddess2 | string | | | No | No | Pop Address2
@@ -3105,7 +3247,7 @@ justificationAuthority.<br/>authority | string|  |  | No | No | Justification Au
 link | JSON | NA |NA | NA | NA |
 link.href | string | | | No | No | Url for the notice on SAM.gov
 link.additionalInfo | JSON | NA |NA | NA | NA | Any additional information on the opportunity
-link.additionalInfo.content | string | | | No | No | Additional information details
+link.additionalInfo.<br/>content | string | | | No | No | Additional information details
 additionalReporting | string | |none/<br/>auto_recovery | No | Yes | Additional reporting requirements that apply to the contract action
 description | JSON | NA | NA | NA | NA |
 description.body | string | 65535 characters| | No | Yes | Description of the notice
@@ -3311,15 +3453,15 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
+Name | Data Type | Field Length |Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-attType | string | link, file | Yes | Type of attachment, either link or file
-content | byte |  | Yes (if attType=file) | File content in base64 format
-packageAccessLevel | string | public,private(default public) | No | Type of access to file. Only used with attType 'file'.
-resourceName | string |  | Yes (if attType=file) | Name of file
-fileType | string |  | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
-link | string |  | Yes (if attType=link) | Resource link  URL
-description | string |  | Yes (if attType=link) | Description of the link
+attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file
+content | byte | 250MB| | Yes (if attType=file) | File content in base64 format
+packageAccessLevel | string | 32 characters|public,private(default public) | No | Type of access to file. Only used with attType 'file'.
+resourceName | string | 255 characters| | Yes (if attType=file) | Name of file
+fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
+link | string | 255 characters| | Yes (if attType=link) | Resource link  URL
+description | string |255 characters | | Yes (if attType=link) | Description of the link
 
 #### Valid File Types 
 
