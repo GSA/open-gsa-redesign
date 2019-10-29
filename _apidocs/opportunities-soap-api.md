@@ -4209,7 +4209,7 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	 |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-notice_type	 |	<br><br> Valid Notice Type must be provided | Notice Type is not recognized
+notice_type	 |	 Valid Notice Type must be provided | Notice Type is not recognized
 solnbr|	NA|	NA
 awdnbr|		NA|	NA
 posted_from	|	Date field should meet the expected format|	DATE field in unexpected format. Expects YYYYMMDD
