@@ -1344,6 +1344,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization	| Header | string |	Yes |	Valid and authorized user ID
 api_key |	query |	string |	Yes |	Valid System Account API Key
+opportunityId | query | string | Yes | Opportunity ID
 Request JSON|	Body|	JSON|	Yes|	[Refer Delete Notice JSON](#delete-notice-json)
 
 Responses
@@ -2526,7 +2527,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization|	Header|	string|	Yes|Valid and authorized user ID
 Api_key	query	| string|	Yes|	Valid System Account API Key
 ResourceID	|query|	string|	Yes	| Resource ID
-
+excludeDeleted | query | string | No|
 
 Responses
 
@@ -2582,7 +2583,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization|	Header|	string|	Yes|Valid and authorized user ID
 Api_key	query	| string|	Yes|	Valid System Account API Key
 OpportunityID	|query|	string|	Yes	| Opportunity ID
-
+excludeDeleted | query | string | No|
 
 Responses
 
@@ -2686,7 +2687,6 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization|	Header	|string	|Yes	|Valid and authorized user ID
 api_key|	query|	string|	Yes|	Valid API Key
 opportunityId	|query	|string|	Yes|	Opportunity ID
-status|	query|	string|	No|	Request access status can be: Pending, Approved, Rejected, or blank to get all request details for a notice
 
 
 Responses
