@@ -1331,7 +1331,7 @@ solnbr|	string	|Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -
 ntype	|string	|No| Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method|
 Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.| 32 characters
-reason	|string|	Yes|	rejection reason not used in this method|
+reason	|string|	Yes|	rejection reason not used in this method| 65535 characters
 
 Response:
 
