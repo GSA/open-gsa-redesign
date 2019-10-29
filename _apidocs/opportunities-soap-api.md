@@ -261,7 +261,7 @@ DeleteNoticeOrDocumentPackage Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr |	string |	Yes; Solicitation # or Award # is required |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
-ntype |	string |	No | Notice Type	| [Refer Notice Types](#Notice Types) 
+ntype |	string |	No | Notice Type	| [Refer Notice Types](#notice-types) 
 awdnbr |  string | Yes; Solicitation # or Award # is required| Award # |	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 deletetype |	string |	No |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachments/links. Defaults to “notice” if not provided
 deletemethod |	string | No | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
@@ -288,7 +288,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date |	date |	No |	Posting Date | YYYYMMDD
 solnbr | string |	Yes |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
-ntype |	string | No |	Notice Type	| [Refer Notice Types](#Notice Types) 
+ntype |	string | No |	Notice Type	| [Refer Notice Types](#notice-types) 
 archdate | date |	No | New Archive Date – If none provided, notice will archive immediately | YYYYMMDD
 officeid | string |	No |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 
@@ -317,7 +317,7 @@ offadd | string |	No | Office Address (Deprecated). The Contracting office addre
 officeid | String | No |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 subject |	string | No |	Subject |	256 characters
 solnbr |string | Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-ntype | string | No | Notice Type	| [Refer Notice Types](#Notice Types)  
+ntype | string | No | Notice Type	| [Refer Notice Types](#notice-types)  
 awdnbr | string |	No | Award # |255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 archdate | date |	No | Archive Date | YYYYMMDD
 contact | string | Yes | Contact Info | 255 characters
@@ -1066,7 +1066,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 Date|	Date|	No	|Posting Date	|YYYYMMDD
 solnbr	|String	|No|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-ntype	|String	|No|	Notice Type	| [Refer Notice Types](#Notice Types) 
+ntype	|String	|No|	Notice Type	| [Refer Notice Types](#notice-types) 
 uploadtype|	String|	No |	Upload Type|	A for amendment, S for solicitation or any title for other; 255 characters
 respdate	|Date	|No |Response Date|	YYYYMMDD
 links|	DocumentLin k[]|	Yes; Either Links or Files needs to be provided|	Array Of links	|
@@ -1109,7 +1109,7 @@ UnarchiveNotice Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No	| Notice Type	| [Refer Notice Types](#Notice Types) 
+ntype	|string	|No	| Notice Type	| [Refer Notice Types](#notice-types) 
 awdnbr	|string|	No|	Award #|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 archdate	|date|	Yes|	New Archive Date|	YYYYMMDD
 
@@ -1174,7 +1174,7 @@ IVLListRequest Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr|	string|	Yes|	Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No	| Notice Type	| [Refer Notice Types](#Notice Types) 
+ntype	|string	|No	| Notice Type	| [Refer Notice Types](#notice-types) 
 
 IVLListResponse Complex Type Definition:
 
@@ -1219,7 +1219,7 @@ AuthorizedPartyListRequest Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr|	string|	Yes	|Solicitation #. Provide an empty string for this argument if using nonfbo_solnbr below | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype|	string|	No|	Notice Type	| [Refer Notice Types](#Notice Types) 
+ntype|	string|	No|	Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr|	string|	No|	Non-fbo Solicitation #. Not supported for this method |
 status| string	|No	|Valid Options: approved, pending, rejected, “empty value”. If empty, all status will be returned <br> <br> Note, use “pending” to pull the pending explicit access requests. |
 
@@ -1263,7 +1263,7 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr|	string	|Yes|	Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No|	Notice Type	| [Refer Notice Types](#Notice Types) 
+ntype	|string	|No|	Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method|
 Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.|  32 characters
 
@@ -1289,7 +1289,7 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name	|Type	|Required|	Description | Character Limit / Restrictions
 -----|-----|-----|---- | -------
 solnbr	|string	|Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype|	string|	No|	Notice Type	| [Refer Notice Types](#Notice Types) 
+ntype|	string|	No|	Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr|	string|	No|	Non-fbo Solicitation #.  Not supported for this method|
 vendor|	VendorData	|Yes|	Complex type defined below|
 
@@ -1326,7 +1326,7 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr|	string	|Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No| Notice Type	| [Refer Notice Types](#Notice Types) 
+ntype	|string	|No| Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method|
 Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.| 32 characters
 reason	|string|	Yes|	rejection reason not used in this method|
@@ -1353,7 +1353,7 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr|	string|	Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No| Notice Type	| [Refer Notice Types](#Notice Types) 
+ntype	|string	|No| Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr	|string	|No	|Non-fbo Solicitation #.  Not supported for this method|
 vendor	|VendorData|	Yes|	Complex type defined below|
 reason|	string|	Yes	|Rejection Reason | 65535 characters
@@ -1389,7 +1389,7 @@ ExplicitAccessRequest Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr|	string|	Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No	| Notice Type	| [Refer Notice Types](#Notice Types) 
+ntype	|string	|No	| Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr|	string|	No	|Non-fbo Solicitation #.   Not supported for this method.|
 Id	|string	|No	|Not used in this method|
 vendor	|VendorData|	Yes|	Complex type defined below|
