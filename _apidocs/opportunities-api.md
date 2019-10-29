@@ -68,8 +68,9 @@ Cancel Published Opportunity | Yes | Yes | No
 Uncancel Canceled Opportunity | Yes | Yes | No
 Archive Opportunity | Yes | Yes | Yes
 Unarchive Archived Opportunity | Yes | Yes | No
-Create Attachment in Draft Opportunity| Yes | Yes | Yes
-Update Attachment in Draft Opportunity| Yes | Yes | Yes
+Create Resource in Draft Opportunity| Yes | Yes | Yes
+Update Resource in Draft Opportunity| Yes | Yes | Yes
+Delete Resource in Draft Opportunity| Yes | Yes | Yes
 Download Attachment as Original File Type | Yes | Yes | Yes
 Download All Attachments as Zip for an Opportunity | Yes | Yes | Yes
 Download Metadata for an Attachment by Resource ID|	Yes|	Yes|	Yes
@@ -635,6 +636,154 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Draft Opportunity successfully created | returns Opportunity ID in response header
 
+Examples
+
+<details>
+<summary>Create and Publish  'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice:</summary>
+<p>
+<code><pre>
+{
+    "data": {
+        "type": "o",
+        "solicitationNumber": "test-12345457",
+        "title": "Test Create and Publish SOL notice",
+        "organizationId": "100186612",
+        "organizationLocationId": "",
+        "classificationCode": "1260",
+        "naics": [
+            {
+                "type": "primary",
+                "code": [
+                    "111150"
+                ]
+            }
+        ],
+        "flags": [
+            {
+                "code": "",
+                "isSelected": true
+            }
+        ],
+        "pointOfContact": [
+            {
+                "type": "primary",
+                "title": "",
+                "fullName": "test contact",
+                "email": "test@test.com",
+                "phone": "",
+                "fax": "",
+                "additionalInfo": {
+                    "content": "Primary contact info"
+                }
+            }
+        ],
+        "placeOfPerformance": {
+            "streetAddress": "1234 XYZ street",
+            "streetAddress2": "",
+            "city": {
+                "code": "75376",
+                "name": "Sterling"
+            },
+            "state": {
+                "code": "VA",
+                "name": "Virginia"
+            },
+            "country": {
+                "code": "USA",
+                "name": "USA"
+            },
+            "zip": ""
+        },
+        "archive": {
+            "type": "autocustom",
+            "date": "2022-09-09"
+        },
+        "permissions": {
+            "IVL": {
+                "create": false,
+                "delete": false,
+                "read": false,
+                "update": false
+            }
+        },
+        "solicitation": {
+            "setAside": "SBA",
+            "deadlines": {
+                "response": "2022-08-08"
+            }
+        },
+        "award": {
+            "date": "",
+            "number": "",
+            "deliveryOrderNumber": "",
+            "amount": "",
+            "lineItemNumber": "",
+            "awardee": {
+                "manual": false,
+                "name": "",
+                "duns": "",
+                "location": {
+                    "streetAddress": "",
+                    "streetAddress2": "",
+                    "city": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "state": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "zip": "",
+                    "country": {
+                        "code": "",
+                        "name": ""
+                    }
+                }
+            }
+        },
+        "justificationAuthority": {
+            "modificationNumber": "",
+            "authority": "dictionary"
+        },
+        "link": {
+            "additionalInfo": {
+                "content": ""
+            },
+            "href": ""
+        },
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
+        {
+            "body": "test description"
+        }
+    ],
+    "related": {
+        "opportunityId": "f8ccfca94d794e07855ebe0d6f55c7d5"
+    },
+    "resources": [
+        {
+            "attType": "link",
+            "link": "https://faaco.faa.gov/index.cfm/attachment/download/84723",
+            "description": "test attachment pdf link"
+        },
+        {
+            "attType": "file",
+            "content": "SGVsbG8=",
+            "resourceName": "Hello.txt",
+            "fileType": "text/plain",
+            "packageAccessLevel": "private",
+            "explicitAccess": "1"
+        }
+    ]
+}
+</pre></code>
+</p>
+</details>
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Revise Published Opportunity
 
@@ -1150,8 +1299,6 @@ Examples
 
 ### Delete Draft Opportunity
 
-
-
 ------- | -------
 **Request Type** | DELETE
 **URL** | /v1/api/delete/{opportunityId}
@@ -1197,7 +1344,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization	| Header | string |	Yes |	Valid and authorized user ID
 api_key |	query |	string |	Yes |	Valid System Account API Key
-Request JSON|	Body|	JSON|	Yes|	Refer Delete Notice JSON
+Request JSON|	Body|	JSON|	Yes|	[Refer Delete Notice JSON](#delete-notice-json)
 
 Responses
 
@@ -1208,19 +1355,16 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Delete Notice:</summary>
+<summary>Delete latest version of a notice:</summary>
 <p>
 <code><pre>
 {
-   "requestType":"delete_request",
-    "reason":"test",
-     "data":{
-              "description":"test",
-               "title":null,
-                "newArchiveDate":null,
-                "newArchiveType":null,
-                 "deleteOption":"latest"  ( “all”  - to delete all versions)
-              }
+  "reason": "test",
+  "requestType": "delete_request",
+  "data": {
+    "description": "test",
+    "deleteOption": "latest"
+  }
 }
 </pre></code>
 </p>
@@ -1475,7 +1619,6 @@ Examples
           "opportunityId": "8de3d88fc7642d9adcdb8d4ff9070399"
         },
         "related": {
-
         },
         "status": {
           "code": "draft",
@@ -2008,7 +2151,7 @@ Examples
 ------- | -------
 **Request Type** | POST
 **URL** |/v1/api/{opportunityId}/attachments
-**Summary** | Create attachment/link to a draft Opportunity
+**Summary** | Add attachment/link to a draft Opportunity
 **Consumes** | application/json
 **Produces** | JSON
 
@@ -2036,11 +2179,12 @@ Examples
 <p>
 <code><pre>
 {
- "attType": "file",
- "content": "SGVsbG8=",
- "resourceName": "Hello.txt",
- "fileType": "text/plain",
- "packageAccessLevel": "public"
+    "attType": "file",
+    "content": "SGVsbG8=",
+    "resourceName": "Hello.txt",
+    "fileType": "text/plain",
+    "packageAccessLevel": "private",
+    "explicitAccess": "1"
 }
 </pre></code>
 </p>
@@ -2050,10 +2194,10 @@ Examples
 <summary>Create Attachment Request - link</summary>
 <p>
 <code><pre>
-{"attType":"link",
- "link":"https://faaco.faa.gov/index.cfm/attachment/download/84723",
- "description":"test attachment pdf link",
-"packageAccessLevel":null
+{
+    "attType": "link",
+    "link": "https://faaco.faa.gov/index.cfm/attachment/download/84723",
+    "description": "test attachment pdf link"
 }
 </pre></code>
 </p>
@@ -2066,7 +2210,7 @@ Examples
 ------- | -------
 **Request Type** | PATCH
 **URL** |/v1/api/{opportunityId}/attachments/{resourceId}
-**Summary** | Update an attachment metadata on a draft Opportunity
+**Summary** | Update draft attachment/link metadata on a draft Opportunity
 **Consumes** | application/json
 **Produces** | JSON
 
@@ -2168,7 +2312,7 @@ Examples
 ------- | -------
 **Request Type** | DELETE
 **URL** |/v1/api/{opportunityId}/attachments/{resourceId}
-**Summary** | Delete a resource from a draft opportunity.
+**Summary** | Delete an attachment/link from a draft opportunity.
 **Consumes** | Request Parameters
 **Produces** | NA
 
@@ -2909,11 +3053,11 @@ Examples
 
 Name | Data Type |Field Length | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
 -----|-----------|-------|-------------------|------------|------------ |----------
-type | string | 1 character| See Notice Types table | Yes | Yes | Notice Type
+type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | Notice Type
 solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes | Solicitation Number
 title | string | 256 characters | |Yes | Yes | Title of the Opportunity
 organizationId | string | 32 characters | |No for Create (Yes for Update) | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
-organizationLocationId | string | | | No|No| This field has been deprecated.Organization Location details will be pulled from the Federal Hierarchy 
+organizationLocationId | string | | | No|No| This field has been deprecated. Organization Location details will be pulled from the Federal Hierarchy 
 classificationCode | string |  | | No | Yes (not required for type= r) | Product Service Code (PSC)
 naics | JSON Array | NA |NA | NA | NA |
 naics.code | Array of String | | | No | Yes | Valid NAICS Code
@@ -2922,7 +3066,7 @@ flags | JSON Array| NA |NA | NA | NA |
 flags.code | string | |Recovery act | No | No | This is a recovery or Reinvestment Act Action
 flags.IsSelected | boolean | |default is 'True' | No | No |
 pointOfContact | JSON Array | NA |NA | NA | NA |
-pointOfContact.type | string | | primary, secondary | No | Yes | Contact Type Note: 'p' and 's' must be in lower case
+pointOfContact.type | string | | primary,</br> secondary | No | Yes | Contact Type Note: 'p' and 's' must be in lower case
 pointOfContact.title | string | |  | No | No | Contact title
 pointOfContact.fullname | string | 255 characters| | No | Yes | Contact Full Name
 pointOfContact.email | string |255 characters | | No  | Yes (no if type = a)  | Contact email
@@ -2944,8 +3088,8 @@ placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country Code
 placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name
 placeOfPerformance.zip | string | | | No | No | Pop Country zip
 archive | JSON |NA | NA | NA | NA | Contract opportunity archive policy information
-archive.type | string | | auto15,<br/> auto30,<br/> autocustom | No | Yes | Archive Type. The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
-archive.date | date | | | No | Yes (if archive.type=<br/>autocustom) | Archive Date. This date will indicate when a notice will be moved to the inactive status. This date must be in the future
+archive.type | string | | auto15,<br/> auto30,<br/> autocustom | No | Yes | Archive Type. </br>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
+archive.date | date | | | No | Yes (if archive.type=<br/>autocustom) | Archive Date.</br> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
 permissions | JSON | NA | NA | NA | NA |
 permissions.ivl | JSON | NA | NA | NA | NA |Government determined use and visibility of the 'Inerested Vendor's List' where users outside the notice can indicate a desire to submit a proposal. This list in way binds either party
 permissions.ivl.create | boolean | | | No | No | IVL create permission
@@ -2953,7 +3097,7 @@ permissions.ivl.read | boolean | | | No | No | IVL read permission
 permissions.ivl.update | boolean | | Not In Use | Not In Use | Not In Use | IVL update permission
 permissions.ivl.delete | boolean | | Not In Use | Not In Use | Not In Use | IVL delete permission
 solicitation | JSON |NA | NA | NA | NA |
-solicitation.setAside | string | |See Set-Aside values table | No | No | Set-Aside code. The designator for type of set aside determined for the contract action
+solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code.</br> The designator for type of set aside determined for the contract action
 solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity
 solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
 solicitation.deadlines.<br/>responseresponseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
@@ -2986,7 +3130,7 @@ link | JSON | NA |NA | NA | NA |
 link.href | string | | | No | No | Url for the notice on SAM.gov
 link.additionalInfo | JSON | NA |NA | NA | NA | Any additional information on the opportunity
 link.additionalInfo.<br/>content | string | | | No | No | Additional information details
-additionalReporting | string | |none/<br/>auto_recovery | No | Yes | Additional reporting requirements that apply to the contract action
+additionalReporting | string | |none, <br/>auto_recovery | No | Yes | Additional reporting requirements that apply to the contract action
 description | JSON | NA | NA | NA | NA |
 description.body | string | 65535 characters| | No | Yes | Description of the notice
 related | JSON | NA | NA | NA | NA | Related Notice information
@@ -3173,11 +3317,11 @@ reason | string |  | No | Publish reason
 
 Name | Data Type |Field Length | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
 -----|-----------|-------|-------------------|------------|------------ |----------
-type | string | 1 character| See Notice Types table | Yes | Yes | Notice Type
+type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | Notice Type
 solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes | Solicitation Number
 title | string | 256 characters | |Yes | Yes | Title of the Opportunity
 organizationId | string | 32 characters | |No for Create (Yes for Update) | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
-organizationLocationId | string | | | No|No| This field has been deprecated.Organization Location details will be pulled from the Federal Hierarchy 
+organizationLocationId | string | | | No|No| This field has been deprecated. Organization Location details will be pulled from the Federal Hierarchy 
 classificationCode | string |  | | No | Yes (not required for type= r) | Product Service Code (PSC)
 naics | JSON Array | NA |NA | NA | NA |
 naics.code | Array of String | | | No | Yes | Valid NAICS Code
@@ -3186,7 +3330,7 @@ flags | JSON Array| NA |NA | NA | NA |
 flags.code | string | |Recovery act | No | No | This is a recovery or Reinvestment Act Action
 flags.IsSelected | boolean | |default is 'True' | No | No |
 pointOfContact | JSON Array | NA |NA | NA | NA |
-pointOfContact.type | string | | primary, secondary | No | Yes | Contact Type Note: 'p' and 's' must be in lower case
+pointOfContact.type | string | | primary,</br> secondary | No | Yes | Contact Type Note: 'p' and 's' must be in lower case
 pointOfContact.title | string | |  | No | No | Contact title
 pointOfContact.fullname | string | 255 characters| | No | Yes | Contact Full Name
 pointOfContact.email | string |255 characters | | No  | Yes (no if type = a)  | Contact email
@@ -3208,8 +3352,8 @@ placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country Code
 placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name
 placeOfPerformance.zip | string | | | No | No | Pop Country zip
 archive | JSON |NA | NA | NA | NA | Contract opportunity archive policy information
-archive.type | string | | auto15,<br/> auto30,<br/> autocustom | No | Yes | Archive Type. The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
-archive.date | date | | | No | Yes (if archive.type=<br/>autocustom) | Archive Date. This date will indicate when a notice will be moved to the inactive status. This date must be in the future
+archive.type | string | | auto15,<br/> auto30,<br/> autocustom | No | Yes | Archive Type. </br>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
+archive.date | date | | | No | Yes (if archive.type=<br/>autocustom) | Archive Date.</br> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
 permissions | JSON | NA | NA | NA | NA |
 permissions.ivl | JSON | NA | NA | NA | NA |Government determined use and visibility of the 'Inerested Vendor's List' where users outside the notice can indicate a desire to submit a proposal. This list in way binds either party
 permissions.ivl.create | boolean | | | No | No | IVL create permission
@@ -3217,7 +3361,7 @@ permissions.ivl.read | boolean | | | No | No | IVL read permission
 permissions.ivl.update | boolean | | Not In Use | Not In Use | Not In Use | IVL update permission
 permissions.ivl.delete | boolean | | Not In Use | Not In Use | Not In Use | IVL delete permission
 solicitation | JSON |NA | NA | NA | NA |
-solicitation.setAside | string | |See Set-Aside values table | No | No | Set-Aside code. The designator for type of set aside determined for the contract action
+solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code. </br>The designator for type of set aside determined for the contract action
 solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity
 solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
 solicitation.deadlines.<br/>responseresponseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
@@ -3250,7 +3394,7 @@ link | JSON | NA |NA | NA | NA |
 link.href | string | | | No | No | Url for the notice on SAM.gov
 link.additionalInfo | JSON | NA |NA | NA | NA | Any additional information on the opportunity
 link.additionalInfo.<br/>content | string | | | No | No | Additional information details
-additionalReporting | string | |none/<br/>auto_recovery | No | Yes | Additional reporting requirements that apply to the contract action
+additionalReporting | string | |none,<br/>auto_recovery | No | Yes | Additional reporting requirements that apply to the contract action
 description | JSON | NA | NA | NA | NA |
 description.body | string | 65535 characters| | No | Yes | Description of the notice
 related | JSON | NA | NA | NA | NA | Related Notice information
@@ -3259,7 +3403,7 @@ resources | JSON |NA | NA | NA | NA |
 resources.attType | string | |link, file | No |No| Type of attachment, either link or file
 resources.content | byte |250MB |  | No|No | File content in base64 format
 resources.link | string | 255 characters | |No|No | Resource link URL
-resources.packageAccessLevel | string | | public,private(default public) | No | No| Type of access to file
+resources.packageAccessLevel | string | | public,</b>private</br>(default public) | No | No| Type of access to file
 resources.resourceName | string | 255 characters |  | No|No | Name of file
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3578,26 +3722,20 @@ Name | Data Type | Allowed Values | Required | Description
 reason|	string|	|	Yes|	Reason for deletion
 requestType	|string	|delete_request |Yes	|Type of request
 description	|string|		|Yes|	Description for deletion of a notice
-title	|string	|	|No|	
-newArchiveDate|	date|	YYYY-MM-DD|	No|	New Archive Date
-newArchiveType|	string|	|	No|	New Archive Type
 deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or all versions of a notice
 
 <details>
-<summary>Response</summary>
+<summary>Delete Notice Request</summary>
 <p>
 <code><pre>
    {
-   "requestType”: delete_request",
-    "reason":"test",
+     "reason": "",
+     "requestType": "delete_request",
      "data": {
-                           "description”: “test",
-                            "title”: null,
-                            "newArchiveDate":null,
-                             "newArchiveType":null,
-                             "deleteOption”: latest"  ( “all”  - to delete all versions)
-              }
-}
+       "description": "",
+       "deleteOption": "all"   -- "latest" to delete the latest published version of a notice 
+     }
+   }
 </pre></code>
 </p>
 </details>
@@ -3669,7 +3807,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type | Justification Authority Modification Number is only valid for Type "u" Justification and Authorization | Publish
 400|NAICS Code | This opportunity cannot be published. NAICS provided did not match expected codes | NAICS Code is invalid | Create Opportunity, Publish
 400|NAICS Type | $.data.naics[0].type: does not have a value in the enumeration [primary] | NAICS Type is required | Create Opportunity
-400|Notice Type |	This opportunity cannot be published. The opportunity type `j` is no longer supported	| See Notice Types table for valid notice types |	Publish
+400|Notice Type |	This opportunity cannot be published. The opportunity type `j` is no longer supported	| [Refer Notice Types](#notice-types) for valid notice types |	Publish
 400|Opportunity ID | Opportunity ID for the selected opportunity type already exists | Cannot publish an existing published record | Publish
 400|Opportunity ID | Opportunity cannot be updated | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state  | Revise
 404|Opportunity ID | Opportunity ID is required	| Opportunity ID is required | All
