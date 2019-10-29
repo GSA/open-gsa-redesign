@@ -3635,7 +3635,7 @@ Flash Video (.flv, .f4v)|	video/x-flv
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update Attachment Link Contract JSON
+### Update Attachment Contract JSON
 
 <div id="update-attachment-json" title="Click to view update Attachment/Link Contract">
 <details>
@@ -3652,7 +3652,9 @@ Flash Video (.flv, .f4v)|	video/x-flv
 }
 </pre></code>
 </p>
+</details>
 
+<details>
 <summary>Update_Link_Contract_Json </summary>
 <p>
 <code><pre>
