@@ -128,9 +128,9 @@ The Notice Types valid options are:
 
 #### Related Notices
 
-This is a conversion table for notices using following functions: submitNotice, submitJA, submitAward, submitITB
+The table below lists notices that can be related.
 
-||SRCSGT | PRESOL | COMBINE | SOL| AWARD | SSALE | ITB | JA | SNOTE
+|*Below Notice can be Related to:*|SRCSGT | PRESOL | COMBINE | SOL| AWARD | SSALE | ITB | JA | SNOTE
 -----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 |**SRCSGT**||O|O|O|O|O|||O
 |**PRESOL**|O||O|O||O|O|O|O
@@ -228,7 +228,7 @@ DocumentLink Complex Type Definition
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 url |	string |	No |	External URL |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-Desc |	string |	No |	Description/Title |	255 characters
+desc |	string |	No |	Description/Title |	255 characters
 
 DocumentFile Complex Type Definition
 
@@ -317,7 +317,7 @@ offadd | string |	No | Office Address (Deprecated). The Contracting office addre
 officeid | String | No |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 subject |	string | No |	Subject |	256 characters
 solnbr |string | Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-ntype | string | No | Notice Type	| [Refer Notice Types](#notice-types)  
+ntype | string | No | [Refer Notice Types](#notice-types) 	| 
 awdnbr | string |	No | Award # |255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 archdate | date |	No | Archive Date | YYYYMMDD
 contact | string | Yes | Contact Info | 255 characters
@@ -378,7 +378,7 @@ GovEmail Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-address	| string | No |Email Address |255 characters
+address	| string | Yes |Email Address |255 characters
 desc | string	| No | Description | 255 characters
 
 DocumentLink Complex Type Definition: 
@@ -449,7 +449,7 @@ GovEmail Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 address	| string | Yes | Email Address | 255 characters
-desc | string |	Yes |	Description |	255 characters
+desc | string |	No |	Description |	255 characters
 
 DocumentLink Complex Type Definition: 
 
@@ -495,8 +495,8 @@ offadd |	string	| No	| Office Address (Deprecated). The Contracting office addre
 subject	| string	| no |	Subject |	256 characters
 solnbr | string |	Yes, EXCEPT No - Only for SNOTE | 	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 ntype |	string |	Yes |	 Notice Type |	Valid values: PRESOL, COMBINE, SRCSGT, SSALE, SNOTE, SOL
-respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SNOTE, SSALE, SRCSGT, PRESOL	|Response Date	|YYYYMMDD
-archdate  |	date|	No - Either respdate or archdate required for SNOTE, SSALE, SRCSGT, PRESOL|	Archive Date|	YYYYMMDD
+respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL	|Response Date	|YYYYMMDD
+archdate  |	date|	Yes - for SNOTE, SSALE <br><br> Either respdate or archdate required for SRCSGT, PRESOL|	Archive Date|	YYYYMMDD
 contact |	string |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL |	Contact Info |	255 characters
 desc |	string |	Yes - for PRESOL, COMBINE, SRCSGT, SSALE, ITB, SOL, SNOTE	| Description |	65535 characters
 link	| GovURL – complex type |	No |	Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
@@ -521,7 +521,7 @@ GovEmail Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 address	| string |	Yes |	Email Address	| 255 characters
-desc |	string |	Yes |	Description |	255 characters
+desc |	string |	No |	Description |	255 characters
 
 DocumentLink Complex Type Definition:
 
@@ -666,7 +666,7 @@ GovEmail Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 address	| string |	Yes |	Email Address |	255 characters
-desc	| string |	Yes |	Description |	255 characters
+desc	| string |	No |	Description |	255 characters
 
 DocumentLink Complex Type Definition: 
 
@@ -736,7 +736,7 @@ GovEmail Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 address	|string|	Yes|	Email Address	|255 characters
-desc	|string	|Yes	|Description	|255 characters
+desc	|string	|No	|Description	|255 characters
 
 DocumentLink Complex Type Definition:
 
@@ -749,8 +749,8 @@ DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No |	File Name |	255 characters
-filedata |	base64binary |	No	| File Data |	250 MB
+filename |	string |	No  |	File Name |	255 characters
+filedata |	base64binary |	No 	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
@@ -802,7 +802,7 @@ GovEmail Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 address|	string|	Yes|	Email Address	|255 characters
-desc	|string	|Yes	|Description	|255 characters
+desc	|string	|No	|Description	|255 characters
 
 DocumentLink Complex Type Definition:
 
@@ -873,7 +873,7 @@ GovEmail Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 address	| string | Yes | Email Address | 255 characters
-desc | string |	Yes |	Description |	255 characters
+desc | string |	No |	Description |	255 characters
 
 DocumentLink Complex Type Definition:
 
@@ -936,14 +936,14 @@ GovURL Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 url	|string	|No	|Website Address	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc	|string|	No|	Description|	255 characters
+desc	|string|	No - Yes, if URL provided|	Description|	255 characters
 
 GovEmail Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 address	|string	|Yes|	Email Address	|255 characters
-desc|	string|	No	|Description|	255 characters
+desc|	string|	No 	|Description|	255 characters
 
 DocumentLink Complex Type Definition:
 
@@ -951,6 +951,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 url|	string|	No	|External URL|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
 desc|	string|	No|	Description/Title	|255 characters
+
+DocumentFile Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
@@ -998,8 +1000,8 @@ awdamt	|string|	Yes - for AWARD 	|Award Amount|	64 digits
 linenbr|	string	|No|	Award Line Item Number	|255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 awddate	|date|	Yes - for AWARD|	Award Date	|YYYYMMDD
 stauth	|string	|Yes - for JA 	|J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy| [Refer Stauth Valid Values](#stauth-valid-values)
-respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SNOTE, SSALE, SRCSGT, PRESOL	|Response Date	|YYYYMMDD
-archdate  |	date|	No - Either respdate or archdate required for SNOTE, SSALE, SRCSGT, PRESOL|	Archive Date|	YYYYMMDD
+respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL	|Response Date	|YYYYMMDD
+archdate  |	date|	Yes - for SNOTE, SSALE <br><br> Either respdate or archdate required for SRCSGT, PRESOL|	Archive Date|	YYYYMMDD
 awardee|	string|	Yes – for AWARD |	Awardee	|65535 characters
 awardee_duns|	string	|No	|Awardee DUNS	|9 digits with optional plus 4
 contact|	string|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL|	Contact Info|	255 characters
@@ -4080,23 +4082,23 @@ Element Name	|	Business Rules |	Error Messages with respect to business rules (I
 date 	|1. This field should meet the character limit/restrictions<br><br> Note: Date field allows current date and also any date in past/future |	1. DATE field in unexpected format. Expects YYYYMMDD
 notice_type	|	1. This field is required where applicable |	1. Opportunity type is required
 zip|	NA |NA
-classcod	|1. This field is required where applicable<br><br>     2.If a wrong classification code is given, then the service throws an error | 1. PSC code is required <br><br> 2. This opportunity cannot be published. Classification Code provided did not match expected codes.
+classcod	|1. This field is required where applicable<br><br>     2.If a wrong classification code is given, then the service throws an error | 1. Product Service Code is a required field <br><br> 2. This opportunity cannot be published. Classification Code provided did not match expected codes.
 naics		|NA |  NAICS code is required
 offadd| Not Used|	NA
 officeid	|1. This field is required<br><br> 2. If an invalid officeid is given, then service throws an error<br><br> 3. If user does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br>	|1. Contracting Office is required<br><br> 2. Invalid officeid provided<br><br> 3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 subject	|	1. This field is required where appicable 	|1. $.data.title: is missing but it is required
-solnbr|	1. This field is required where applicable<br><br>  2. If submitting a notice with same solnbr number, then system throws an error <br><br>3. If solnbr is in invalid format, then service throws an error<br><br>4. If solicitation & ntype combination is not matched, then service throws an error|	1. Notice Id is required <br><br>2. Notice Id for the selected opportunity type already exists <br><br>3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br><br>4.	Opportunity not found with given solicitation number and ntype
+solnbr|	1. This field is required where applicable<br><br>  2. If submitting a notice with a duplicabe solnbr, then system throws an error <br><br>3. If solnbr is in invalid format, then service throws an error<br><br>4. If solnbr & ntype combination is not matched, then service throws an error <br><br> |	1. Notice Id is required <br><br>2. Notice Id for the selected opportunity type already exists <br><br>3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br><br>4.	Opportunity not found with given solicitation number and ntype <br><br>5. Notice ID must be unique based on selected notice type
 ntype	 |1. When user tries to convert a notice and the solicitation number/ntype do not match the notice, then the service throws an error<br><br>  2. This field accepts only valid values listed. If invalid values are provided, then system throws an error. Also, if all the required field is given and this field is not given then service throws an error    |1. Opportunity not found with given solicitation number and ntype<br><br> 2. Invalid NTYPE value provided
 awdnbr|	1. This field is required where applicable|	1. Award Details Section - Contract Award Number is a required field
 donbr	|1. This field is required where applicable<br><br> 2. If value provided does not meet the character limit/restrictions, then service throws an error|	1. Award Details Section - Task/Delivery Order Number is required field<br><br> 2. Award Details Section - Task/Delivery Order Number - Please enter a valid number
 awdamt|	 	1. This field is required where applicable<br><br> 2. If an invalid integer values is given, then service throws an error 	|1. Award Details Section - Amount is a required field<br><br> 2. Award Details Section - Please enter valid integer for Amount Field
 linenbr|	NA	|NA
-awddate	|	1. This field should meet the character limit/restrictions (Note: Date field allows current date and also any date in past/future)<br><br> 2. This field is required where applicable|	1. DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. Award Details Section - Contract Award Date is required field <br><br> 3. Award Details Section - Contract Award Date provided is in an invalid format
-stauth|	 Both foja & stauth values will be given under stauth in legacy |	NA
+awddate	|	1. This field should meet the character limit/restrictions <br><br> 2. This field is required where applicable <br><br> 3. Date cannot be in the past|	1. DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. Award Details Section - Contract Award Date is required field <br><br> 3. Award Details Section - Contract Award Date provided is in an invalid format <br><br>4. Award date provided is in the past. <br><br> 5.Contract Award Date set would result in inactive date being in the past.
+stauth|	 1. This field is required where applicable <br><br> 2. This field accepts only valid values listed. If invalid values are provided, then system throws an error.|	1. Contract Award Number is a required field <br><br>2. Invalid Authority Fields, please refer to Contract Opportunities SOAP Web Service Tech Document valid authority fields
 respdate|	1.	This field is required where applicable <br><br> 2.	This date cannot be in past; has to be in future. If the given date is in past, then system throws errors 	| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2.	This opportunity cannot be published. Response date provided is in the past<br><br> 3.	This opportunity cannot be published. Response Date cannot exceed 5 years from current date <br><br> 4. One of Response date or Archive date is required <br><br> 5. One of Response date or Archive date is required
 archdate|	1.	This field is required where applicable. Note user may receive "Auto 30 <br><br> 2.	This date cannot be current or in past; has to be in future|	1.	DATE field in unexpected format  Expects YYYYMMDD<br><br> 2.	This opportunity cannot be published. Archive date provided is in the past. <br><br> 3. One of Response date or Archive date is required
 awardee	|	NA|	NA
-awardee_duns|	NA|	NA
+awardee_duns|	1. Must provide a valid DUNS|	1. Unique Entity Identifier (duns) is invalid.
 contact	|	1. This field is required where applicable	|1. Primary Contact is Required
 desc| 	1. This field is required where applicable.|	1. Description is required
 link|	NA	| NA
@@ -4116,7 +4118,7 @@ correction|	1. When user tries to convert a notice and the solicitation number/n
 #### submitDocumentsAndLinksToNotice
 
 Individual business rules per field are listed across each of the fields in below table.  
-* Note: Users cannot verify the attachments/links on front end (UI.)
+* Note: Users cannot verify the attachments/links on front end (UI)
 * Note: When none of the fields are given the service throws an error - Links and/or Files are not complete
 * Note: When links/files are given but none of the other fields are given, then service throws an error - Multiple Notices found. Please input more details
 
@@ -4395,8 +4397,8 @@ Date | Version | Description
 8/19/2019 | v0.5 | SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated <br> User Account Section Updated
 9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions
 10/10/2019 | v0.7 | Updated the Set-Aside values with the latest codes
-10/28/2019 | v0.8| Removed redundant Required and Character Limit columns from Business Rules section. Consolidated Business Rules section for all Submit methods. Updated submitMod and submitNotice methods to align with implemenation. 
-10/28/2019 | v0.81 | Updated the character limits
+10/28/2019 | v0.8| Added Notice Type and Related Notice sections for reference. Updated the character limits. Removed redundant Required and Character Limit columns from Business Rules section. Consolidated Business Rules section for all Submit methods. Updated submitMod and submitNotice methods to align with implemenation. 
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
