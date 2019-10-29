@@ -639,7 +639,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Create and Publish  'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice:</summary>
+<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice:</summary>
 <p>
 <code><pre>
 {
@@ -1662,10 +1662,8 @@ Examples
           ]
         },
         "parent": {
-
         },
         "related": {
-
         },
         "status": {
           "code": "draft",
@@ -3060,13 +3058,13 @@ organizationId | string | 32 characters | |No for Create (Yes for Update) | Yes 
 organizationLocationId | string | | | No|No| This field has been deprecated. Organization Location details will be pulled from the Federal Hierarchy 
 classificationCode | string |  | | No | Yes (not required for type= r) | Product Service Code (PSC)
 naics | JSON Array | NA |NA | NA | NA |
-naics.code | Array of String | | | No | Yes | Valid NAICS Code
+naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes | Valid NAICS Code
 naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case
 flags | JSON Array| NA |NA | NA | NA |
 flags.code | string | |Recovery act | No | No | This is a recovery or Reinvestment Act Action
 flags.IsSelected | boolean | |default is 'True' | No | No |
 pointOfContact | JSON Array | NA |NA | NA | NA |
-pointOfContact.type | string | | primary,</br> secondary | No | Yes | Contact Type Note: 'p' and 's' must be in lower case
+pointOfContact.type | string | | primary,<br/> secondary | No | Yes | Contact Type Note: 'p' and 's' must be in lower case
 pointOfContact.title | string | |  | No | No | Contact title
 pointOfContact.fullname | string | 255 characters| | No | Yes | Contact Full Name
 pointOfContact.email | string |255 characters | | No  | Yes (no if type = a)  | Contact email
@@ -3088,16 +3086,16 @@ placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country Code
 placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name
 placeOfPerformance.zip | string | | | No | No | Pop Country zip
 archive | JSON |NA | NA | NA | NA | Contract opportunity archive policy information
-archive.type | string | | auto15,<br/> auto30,<br/> autocustom | No | Yes | Archive Type. </br>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
-archive.date | date | | | No | Yes (if archive.type=<br/>autocustom) | Archive Date.</br> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
+archive.type | string | | auto15,<br/> auto30,<br/> autocustom | No | Yes | Archive Type.<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
+archive.date | date | | | No | Yes (if archive.type=<br/>autocustom) | Archive Date.<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
 permissions | JSON | NA | NA | NA | NA |
 permissions.ivl | JSON | NA | NA | NA | NA |Government determined use and visibility of the 'Inerested Vendor's List' where users outside the notice can indicate a desire to submit a proposal. This list in way binds either party
 permissions.ivl.create | boolean | | | No | No | IVL create permission
 permissions.ivl.read | boolean | | | No | No | IVL read permission
-permissions.ivl.update | boolean | | Not In Use | Not In Use | Not In Use | IVL update permission
-permissions.ivl.delete | boolean | | Not In Use | Not In Use | Not In Use | IVL delete permission
+permissions.ivl.update | boolean | |  | No | No | IVL update permission
+permissions.ivl.delete | boolean | | | No | No | IVL delete permission
 solicitation | JSON |NA | NA | NA | NA |
-solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code.</br> The designator for type of set aside determined for the contract action
+solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code.<br/> The designator for type of set aside determined for the contract action
 solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity
 solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
 solicitation.deadlines.<br/>responseresponseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
@@ -3324,13 +3322,13 @@ organizationId | string | 32 characters | |No for Create (Yes for Update) | Yes 
 organizationLocationId | string | | | No|No| This field has been deprecated. Organization Location details will be pulled from the Federal Hierarchy 
 classificationCode | string |  | | No | Yes (not required for type= r) | Product Service Code (PSC)
 naics | JSON Array | NA |NA | NA | NA |
-naics.code | Array of String | | | No | Yes | Valid NAICS Code
+naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes | Valid NAICS Code
 naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case
 flags | JSON Array| NA |NA | NA | NA |
 flags.code | string | |Recovery act | No | No | This is a recovery or Reinvestment Act Action
 flags.IsSelected | boolean | |default is 'True' | No | No |
 pointOfContact | JSON Array | NA |NA | NA | NA |
-pointOfContact.type | string | | primary,</br> secondary | No | Yes | Contact Type Note: 'p' and 's' must be in lower case
+pointOfContact.type | string | | primary,<br/> secondary | No | Yes | Contact Type Note: 'p' and 's' must be in lower case
 pointOfContact.title | string | |  | No | No | Contact title
 pointOfContact.fullname | string | 255 characters| | No | Yes | Contact Full Name
 pointOfContact.email | string |255 characters | | No  | Yes (no if type = a)  | Contact email
@@ -3352,16 +3350,16 @@ placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country Code
 placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name
 placeOfPerformance.zip | string | | | No | No | Pop Country zip
 archive | JSON |NA | NA | NA | NA | Contract opportunity archive policy information
-archive.type | string | | auto15,<br/> auto30,<br/> autocustom | No | Yes | Archive Type. </br>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
-archive.date | date | | | No | Yes (if archive.type=<br/>autocustom) | Archive Date.</br> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
+archive.type | string | | auto15,<br/> auto30,<br/> autocustom | No | Yes | Archive Type. <br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
+archive.date | date | | | No | Yes (if archive.type=<br/>autocustom) | Archive Date.<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
 permissions | JSON | NA | NA | NA | NA |
 permissions.ivl | JSON | NA | NA | NA | NA |Government determined use and visibility of the 'Inerested Vendor's List' where users outside the notice can indicate a desire to submit a proposal. This list in way binds either party
 permissions.ivl.create | boolean | | | No | No | IVL create permission
 permissions.ivl.read | boolean | | | No | No | IVL read permission
-permissions.ivl.update | boolean | | Not In Use | Not In Use | Not In Use | IVL update permission
-permissions.ivl.delete | boolean | | Not In Use | Not In Use | Not In Use | IVL delete permission
+permissions.ivl.update | boolean | |  | No | No | IVL update permission
+permissions.ivl.delete | boolean | |  | No | No | IVL delete permission
 solicitation | JSON |NA | NA | NA | NA |
-solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code. </br>The designator for type of set aside determined for the contract action
+solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code. <br/>The designator for type of set aside determined for the contract action
 solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity
 solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
 solicitation.deadlines.<br/>responseresponseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
@@ -3403,7 +3401,7 @@ resources | JSON |NA | NA | NA | NA |
 resources.attType | string | |link, file | No |No| Type of attachment, either link or file
 resources.content | byte |250MB |  | No|No | File content in base64 format
 resources.link | string | 255 characters | |No|No | Resource link URL
-resources.packageAccessLevel | string | | public,</b>private</br>(default public) | No | No| Type of access to file
+resources.packageAccessLevel | string | | public,<br/>private<br/>(default public) | No | No| Type of access to file
 resources.resourceName | string | 255 characters |  | No|No | Name of file
 
 <p><small><a href="#">Back to top</a></small></p>
