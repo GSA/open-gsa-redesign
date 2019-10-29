@@ -3058,7 +3058,7 @@ organizationId | string | 32 characters | |No for Create (Yes for Update) | Yes 
 organizationLocationId | string | | | No|No| This field has been deprecated. Organization Location details will be pulled from the Federal Hierarchy 
 classificationCode | string |  | | No | Yes (not required for type= r) | Product Service Code (PSC)
 naics | JSON Array | NA |NA | NA | NA |
-naics.code | Array of String | | | No | Yes | Valid NAICS Code<br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
+naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes | Valid NAICS Code
 naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case
 flags | JSON Array| NA |NA | NA | NA |
 flags.code | string | |Recovery act | No | No | This is a recovery or Reinvestment Act Action
@@ -3322,7 +3322,7 @@ organizationId | string | 32 characters | |No for Create (Yes for Update) | Yes 
 organizationLocationId | string | | | No|No| This field has been deprecated. Organization Location details will be pulled from the Federal Hierarchy 
 classificationCode | string |  | | No | Yes (not required for type= r) | Product Service Code (PSC)
 naics | JSON Array | NA |NA | NA | NA |
-naics.code | Array of String | | | No | Yes | Valid NAICS Code<br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
+naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes | Valid NAICS Code
 naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case
 flags | JSON Array| NA |NA | NA | NA |
 flags.code | string | |Recovery act | No | No | This is a recovery or Reinvestment Act Action
