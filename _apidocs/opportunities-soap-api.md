@@ -1429,7 +1429,7 @@ NoticeListRequest Complex Type Definition:
 Element Name|	Type|	Required|	Description | Character Limit / Restrictions
 -----|-----|-----|-----|-----
 notice_type	|string|	No (at least 1 field is required)|	 [Refer Notice Types](#notice-types)(#related-notices)  Note:Searches for award, j&a, itb and fairopps will return both standalone notices AND base notices that contain one of these type
-solnbr	|string	|No (at least 1 field is required)	|Solicitation #|| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
+solnbr	|string	|No (at least 1 field is required)	|Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 awdnbr	|string	|No	(at least 1 field is required)|Award # | 255 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 posted_from	|date|	No (at least 1 field is required)|	Posted From Date. YYYYMMDD.
 posted_to	|date|	No (at least 1 field is required)|	Posted To Date. YYYYMMDD
