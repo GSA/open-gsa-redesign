@@ -15,7 +15,7 @@ The Opportunity Management SOAP APIs will allow authorized users to submit and r
 To view the WSDL for all available methods and object definitions, refer below links:
 
 * Alpha WSDL Link: https://api-alpha.sam.gov/prodlike/ws/fboendpoint/services.wsdl or https://api-alpha.sam.gov/prodlike/ws/fboendpoint/fbo.wsdl 
-* Beta WSDL Link: https://api.sam.gov/prod/ws/fboendpoint/services.wsdl or https://api.sam.gov/prod/ws/fboendpoint/fbo.wsdl
+* Beta WSDL Link: https://api.sam.gov/prod/ws/fboendpoint/services.wsdl or https://api.sam.gov/prod/ws/fboendpoint/fbo.wsdl (Coming Soon)
 
 ## SOAP Web Services Workflow Chart
 To view the current workflow of SOAP web service, refer below file:
@@ -716,8 +716,8 @@ offadd |	String |	No |	Office Address (Deprecated). The Contracting office addre
 subject | 	String |	Yes |	Subject |	256 characters
 solnbr	| String |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 archdate |	Date |	Yes |	Archive Date |	YYYYMMDD
-contact |	String |	No	| Contact Info |	65535 characters
-desc |	String |	Yes |	Description |	255 characters
+contact |	String |	No	| Contact Info |	255 characters
+desc |	String |	Yes |	Description |	65535 characters
 link	| GovURL – complex type	| No |	Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
 email |	GovEmail – complex type |	Yes |	Government Email	| 255 characters
 links |	DocumentLink[] 	| No |	Array Of links |
@@ -1013,7 +1013,7 @@ files	|DocumentFile[]|	No|	Array of files	|
 setaside|	string|	No|	[Refer Set-Aside Values](#set-aside-values) |	
 popaddress|	string|	No|	Place of Performace Addressress	|65535 characters
 popzip|	string	|No	|Place of Performace Zip	|5 digits
-popcountry|	string|	Yes – For wards; No – For rest|	Place of Performace Country|	32 characters
+popcountry|	string|	Yes – For Awards; No – For rest|	Place of Performace Country|	32 characters
 city|	string|	No	|City	|NA
 state|	string|	No|	State	|NA
 recovery_act	|boolean|	No|	Recovery Act|	True or False
