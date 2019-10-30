@@ -1269,7 +1269,7 @@ ntype	|string	|No|	Notice Type	| [Refer Notice Types](#notice-types)
 nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method|
 Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.|  32 characters
 vendor	|VendorData|	No|	Complex type not used in this method|
-reason	|string|	No|	rejection reason not used in this method| 65535 characters
+reason	|string|	No|	Rejection reason not used in this method| 65535 characters
 
 Response:
 
@@ -1296,7 +1296,7 @@ ntype|	string|	No|	Notice Type	| [Refer Notice Types](#notice-types)
 nonfbo_solbr|	string|	No|	Non-fbo Solicitation #.  Not supported for this method|
 Id	|string	|No	|Not used in this method| 32 characters
 vendor	|VendorData|	Yes|	Complex type defined below|
-reason	|string|	No|	rejection reason not used in this method| 65535 characters
+reason	|string|	No|	Rejection reason not used in this method| 65535 characters
 
 Response:
 
@@ -1400,7 +1400,7 @@ ntype	|string	|No	| Notice Type	| [Refer Notice Types](#notice-types)
 nonfbo_solbr|	string|	No	|Non-fbo Solicitation #.   Not supported for this method.|
 Id	|string	|No	|Not used in this method| 32 characters
 vendor	|VendorData|	Yes|	Complex type defined below|
-reason	|string|	No|	rejection reason not used in this method| 65535 characters
+reason	|string|	No|	Rejection reason not used in this method| 65535 characters
 
 Response:
 
