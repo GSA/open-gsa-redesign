@@ -347,7 +347,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No | Posting Date |	YYYYMMDD
 zip |	string | No |	Zip Code (Deprecated) | 5 digits
-classcod | string |	No |	Class-Code | Valid classification code (FAR, Section 5.207(g))
+classcod | string |	Yes |	Class-Code | Valid classification code (FAR, Section 5.207(g))
 naics |	string | No |	NAICS Code | Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid | string |	Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account | 20 characters
 offadd | string |	No | Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
@@ -987,7 +987,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 date|	date|	No	|Posting Date|	YYYYMMDD
 notice_type	|string	|Yes|	 [Refer Notice Types](#notice-types)	|
 zip	|string	|No	|Zip Code (Deprecated)|	5 digits
-classcod|	string|	Yes - for SOL, COMBINE, SSALE, ITB, JA  |	Class-Code	|Valid classification code (FAR, Section 5.207(g))
+classcod|	string|	Yes - for SOL, COMBINE, SSALE, ITB, JA, PRESOL  |	Class-Code	|Valid classification code (FAR, Section 5.207(g))
 naics	|string	|Yes - for COMBINE, SOL	|NAICS Code|	Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid|	String|	Yes|	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account	|20 characters
 offadd	|string|	No|	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	|65535 characters
@@ -1000,8 +1000,8 @@ awdamt	|string|	Yes - for AWARD 	|Award Amount|	64 digits
 linenbr|	string	|No|	Award Line Item Number	|255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 awddate	|date|	Yes - for AWARD|	Award Date	|YYYYMMDD
 stauth	|string	|Yes - for JA 	|J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy| [Refer Stauth Valid Values](#stauth-valid-values)
-respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL	|Response Date	|YYYYMMDD
-archdate  |	date|	Yes - for SNOTE, SSALE <br><br> Either respdate or archdate required for SRCSGT, PRESOL|	Archive Date|	YYYYMMDD
+respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL, SSALE	|Response Date	|YYYYMMDD
+archdate  |	date| Either respdate or archdate required for SRCSGT, PRESOL, SSALE, SNOTE|	Archive Date|	YYYYMMDD
 awardee|	string|	Yes – for AWARD |	Awardee	|65535 characters
 awardee_duns|	string	|No	|Awardee DUNS	|9 digits with optional plus 4
 contact|	string|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL|	Contact Info|	255 characters
