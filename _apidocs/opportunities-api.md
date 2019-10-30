@@ -37,10 +37,10 @@ To view the current workflow of REST APIs, refer below file:
 In order to utilize the Contract Opportunity Management API, the following is required:
 * Valid beta.SAM.GOV federal government system account with Read and Write permissions under Contract Opportunity domain.
 
-### *Type of Connection Validation (Future Implementation)*
+### Type of Connection Validation 
 All REST API requests will be validated against the Type of Connection within the system account profile. All requests without "REST API" type of connection in the system account profile will be rejected with an error.
 
-### *IP Address Validation (Future Implementation)*
+### IP Address Validation 
 All REST API requests will be validated against the IP Addresses registered within the system account profile. All requests that are not from registered IP address(es) in the system account profile will be rejected with an error.
 
 #### User Account Authorization
@@ -1344,6 +1344,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization	| Header | string |	Yes |	Valid and authorized user ID
 api_key |	query |	string |	Yes |	Valid System Account API Key
+opportunityId | query | string | Yes | Opportunity ID
 Request JSON|	Body|	JSON|	Yes|	[Refer Delete Notice JSON](#delete-notice-json)
 
 Responses
@@ -2220,7 +2221,7 @@ Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
 resourceId | query | string | Yes | Resource ID
-Request JSON | Body | JSON | Yes | [Refer Update Attachment Link Contract JSON](#update-attachment-link-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Update Attachment Link Contract JSON](#update-attachment-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2524,7 +2525,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization|	Header|	string|	Yes|Valid and authorized user ID
 Api_key	query	| string|	Yes|	Valid System Account API Key
 ResourceID	|query|	string|	Yes	| Resource ID
-
+excludeDeleted | query | string | No|
 
 Responses
 
@@ -2580,7 +2581,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization|	Header|	string|	Yes|Valid and authorized user ID
 Api_key	query	| string|	Yes|	Valid System Account API Key
 OpportunityID	|query|	string|	Yes	| Opportunity ID
-
+excludeDeleted | query | string | No|
 
 Responses
 
@@ -2684,7 +2685,6 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization|	Header	|string	|Yes	|Valid and authorized user ID
 api_key|	query|	string|	Yes|	Valid API Key
 opportunityId	|query	|string|	Yes|	Opportunity ID
-status|	query|	string|	No|	Request access status can be: Pending, Approved, Rejected, or blank to get all request details for a notice
 
 
 Responses
@@ -3098,7 +3098,7 @@ solicitation | JSON |NA | NA | NA | NA |
 solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code.<br/> The designator for type of set aside determined for the contract action
 solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity
 solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
-solicitation.deadlines.<br/>responseresponseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
+solicitation.deadlines.<br/>responseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
 award | JSON | NA | NA | NA | NA | This section is mainly used for providing award information that is required for  'Award Notice' and 'Justification' opportunity types
 award.date | date | |YYYY-MM-DD |No | Yes only for type= a | Award Date
 award.number | string | 255 characters | |No | Yes only for type= i, j, a | Award Number
@@ -3362,7 +3362,7 @@ solicitation | JSON |NA | NA | NA | NA |
 solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code. <br/>The designator for type of set aside determined for the contract action
 solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity
 solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
-solicitation.deadlines.<br/>responseresponseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
+solicitation.deadlines.<br/>responseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
 award | JSON | NA | NA | NA | NA | This section is mainly used for providing award information that is required for  'Award Notice' and 'Justification' opportunity types
 award.date | date | |YYYY-MM-DD |No | Yes only for type= a | Award Date
 award.number | string | 255 characters | |No | Yes only for type= i, j, a | Award Number
@@ -3635,7 +3635,7 @@ Flash Video (.flv, .f4v)|	video/x-flv
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update Attachment Link Contract JSON
+### Update Attachment Contract JSON
 
 <div id="update-attachment-json" title="Click to view update Attachment/Link Contract">
 <details>
@@ -3652,7 +3652,9 @@ Flash Video (.flv, .f4v)|	video/x-flv
 }
 </pre></code>
 </p>
+</details>
 
+<details>
 <summary>Update_Link_Contract_Json </summary>
 <p>
 <code><pre>
@@ -3774,12 +3776,17 @@ Error codes may change depending on the error given; document will be updated ac
 Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
 400|Additional Reporting |	This opportunity cannot be published. Additional reporting is required. |	Additional Reporting is required with valid values of “none” or “recovery_act”	| Publish
+400|Additional Reporting |	Additional Reporting/Initiative is required. |	Additional Reporting/Initiative is required when opportunity is not a special notice | Publish
+400|Title |	Title max character length is 256. |	Title max character length is 256.	| Publish
 400|ARCHIVE |	This opportunity is not the latest published. |	Draft Opportunity cannot be archived.	| Archive
 400|Archive Date |	$.archive.date: does not match the date pattern ^\\d{4}-(?:0[0-9]{1}\1[0-2]{1})-(0?[1-9]\[12][0-9]\3[01])$ |	Archive Date must be in specified format |	Create, Publish, Uncancel, Unarchive
 400|Archive Date |	This opportunity cannot be published. Inactive date is a required field. |	Archive Date is required if Archive Type = autocustom |	Create, Publish, Uncancel, Unarchive
+400|Archive Date Response Date   |	One of Response date or Archive date is required |	Either Response date or archive date is required for presolicitation, sources sought, special notice, sale surplus  |	Publish
+400|Archive Date |	Inactive date provided is an invalid format. |	Date is not in specified format  |	Create, Publish, Uncancel, Unarchive
 400|Archive Type |	This opportunity cannot be published. Inactive Policy is a required field. |	Archive Type is required |	Publish
 400|Archive Type |	$.archive.type: does not have a value in the enumeration[auto15, auto30, autocustom] |	Archive type must be specified value | Create, Publish, Uncancel, Unarchive
 400|Archive Type |	This opportunity cannot be published. Auto 15 archive type is not allowed for this opportunity type. | Archive Type = auto15 not allowed |	Publish
+400|Archive Type |	Auto 30 archive type is not allowed for this opportunity type. | Archive Type = auto30   not allowed for Intent bundle and Justification |	Publish
 400|attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a line |	Create Attachment
 401|Authorization |	Insufficient privileges to edit opportunity |	See User Account Authorization section |	Update, Publish, Revise
 401|Authorization |	Insufficient privileges to create opportunity |	Insufficient privileges to create an award notice. See User Account Authorization section for more details. |	Create Opportunity
@@ -3789,7 +3796,9 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Award Amount |	Award Details Section - Contract Award Dollar Amount is not a valid field for this opportunity type |	Contract Award Amount only valid for Type "a" Award |	Publish
 400|Award Date |	Award Details Section - Contract Award Date provided is in an invalid format. |	Date is not in specified format |	Create Opportunity, Publish, Uncancel, Unarchive
 400|Award Date |	Award Details section -Award date provided is in the past. |	Award Date must be current or future date. |	Create Opportunity, Publish, Uncancel, Unarchive
+400|Award Date |	Award Details section -Contract Award Date set would result in inactive date being in the past. |	Contract Award Date set would result in inactive date being in the past. |	Create Opportunity, Publish, Uncancel, Unarchive
 400|Award Number |	Award Details Section - Contract Award Number is a required field	| Contract Award Number is missing | Publish, Uncancel, Unarchive
+400|Contract Line Item number |	The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces.	| The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | All
 400|Classification Code |	This opportunity cannot be published. Classification Code provided did not match expected codes |	Invalid PSC provided |	Publish
 400|CANCEL |	This opportunity cannot be cancelled. This opportunity is a revision. |	Cannot cancel a revised Opportunity. |	Cancel
 400|Content |	File Resource must have content. |	File Resource must be filled out | Create Attachment
@@ -3797,27 +3806,45 @@ Error Code|Field | Error Message | Reason/Description | Operation
 401|CREATE | Insufficient privileges to create opportunity |	Account does not have appropriate privileges to create opportunity | CREATE
 401|CREATE ATTACHMENT |	Insufficient privileges to upload attachment | Attachments cannot be added to published notices |	Create Attachment
 400|Deadlines Response | This opportunity cannot be published. | Response Deadline Date is required |	Publish
-400|Description |	Description is required |	Description is required |	Publish
+400|Description |	Description is a required field |	Description is a required field except for award notice |	Publish
 400|IVL |	This opportunity cannot be published. Interested Vendors List Add is a required field. |Interested Vendors List Add is a required |	Publish
+400|IVL |	Interested Vendors List Read is a required field. |Interested Vendors List Read is a required field. |	Publish
+400|IVL |	Interested Vendors List should be enabled for this organization. |Interested Vendors List should be enabled for this organization when FORCE ON |	Publish
+400|IVL |	Interested Vendors List should not be enabled for this organization. |Interested Vendors List should not be enabled for this organization when FORCE OFF |	Publish
 400|Justification Authority |	This opportunity cannot be published. Justification Authority is not valid field for this opportunity type | Justification Authority Section is not valid for Base Notice Types (s, o, p, r, g, k, i) | Publish
 400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type. | Justification Authority Section is not valid for Base Notice Types (s, o, p, r, g, k, i) | Publish
 400|Justification Authority |	This opportunity cannot be published. Justification Authority is not valid field for this opportunity type | Justification Authority only valid for Type "u" Justification and Authorization | Publish
 400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type | Justification Authority Modification Number is only valid for Type "u" Justification and Authorization | Publish
 400|NAICS Code | This opportunity cannot be published. NAICS provided did not match expected codes | NAICS Code is invalid | Create Opportunity, Publish
 400|NAICS Type | $.data.naics[0].type: does not have a value in the enumeration [primary] | NAICS Type is required | Create Opportunity
-400|Notice Type |	This opportunity cannot be published. The opportunity type `j` is no longer supported	| [Refer Notice Types](#notice-types) for valid notice types |	Publish
+400|Notice Type |	This opportunity cannot be published. The inactive type `manual` is no longer supported.	| See Notice Types table for valid notice types |	Publish
+400|Notice Type |	The opportunity type `j` is no longer supported	| See Notice Types table for valid notice types |	Publish
+400|Notice Type |	The opportunity type `m` is no longer supported	| See Notice Types table for valid notice types |	Publish
+400|Notice Type |	The opportunity type `l` is no longer supported	| See Notice Types table for valid notice types |	Publish
 400|Opportunity ID | Opportunity ID for the selected opportunity type already exists | Cannot publish an existing published record | Publish
 400|Opportunity ID | Opportunity cannot be updated | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state  | Revise
-404|Opportunity ID | Opportunity ID is required	| Opportunity ID is required | All
+404|Notice ID | Notice ID is required	| Notice ID is required | All
+400|Notice ID | Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces.	| Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | All
+400|Notice ID | Notice ID must be unique based on selected notice type.	| Notice ID must be unique when selected notice type is not an award notice. | All
+400|Notice ID | Submitted solicitation number doesn't match the previous published opportunity	| Submitted solicitation number doesn't match the previous published opportunity for award notice type | All
+400|Related Notice ID | This Related Notice's ID is invalid	| The Related Notice's ID is not found | All
+400|Related Notice ID | The Related Notice's Type is invalid for this Opportunity	| The Related Notice's Type cannot be related  | All
+400|Related Notice ID | Related Notice's ID needs to match previous Opportunity's Related Notice ID	| Related Notice's ID needs to match previous Opportunity's Related Notice ID  | All
 400|Opportunity Type | Opportunity type is required | Opportunity type is required | Create Opportunity
 400|Opportunity Type | errorCode":400,"message":"Opportunity type given is not a valid type." |	Opportunity type is empty |	Create Opportunity
-400|Organization Id |	Contracting office is required | FH Org Id/AAC code is required |	Publish
-400|Organization Id |	The Organization ID that you provided is an inactive and/or invalid. | Inactive/Invalid Organization Id |	Create Opportunity
-400|Organization Id |	The Organization ID that you provided is not an office level, and it must be for this opportunity type.	| Organization ID is not valid for opportunity type. Note: Organization ID must be Office level unless creating a Special Notice.	| Create Opportunity
+400|Organization Id |	Contracting Office is a required field. | FH Org Id/AAC code is required |	Publish
+400|Organization Id |	The Federal Organization ID that you provided is inactive and/or invalid. | Inactive/Invalid Organization Id |	Create Opportunity
+400|Organization Id |	The Federal Organization ID that you provided is not an office level, and it must be for this opportunity type.	| Organization ID is not valid for opportunity type. Note: Organization ID must be Office level unless creating a Special Notice.	| Create Opportunity
+400|Organization Id |	The Federal Organization ID that you provided is unmapped in Federal Hierarchy. | Organization ID length should be greater than 10 |	Publish
 400|Point of Contact Type |	$.data.pointOfContact[0].type: does not have a value in the enumeration [primary, secondary, owner] |	Point of Contact Type is required |	Create Opportunity
 400|Point of Contact Email |	Primary Contact – Email is required	| If Contact email is missing. This is a required field	| Publish
 400|Primary Contact Full Name |	Primary Contact - Name is required | Point of Contact Full Name is required | Publish
-400|Response Date |	This opportunity cannot be published. Response Date is a required field |	Response Date is only valid for Notice Type “o” |	Publish
+400|Response Date |	Response Date is a required field |	Response Date is only valid for Notice Type “o” |	Publish
+400|Response Date |	Response Date provided is an invalid format. |	Response Date provided is an invalid format. |	Publish
+400|Response Date |	Response Date cannot be in the past. |	Response Date cannot be in the past. |	Publish
+400|Response Date |	Response Date set would result in inactive date being in the past. |	Response Date provided is within 15 days |	Publish
+400|Response Date |	Auto 15 archive type is not allowed for this opportunity type. |	Auto 15 archive type is not allowed for award notice |	Publish
+400|Response Date |	Response Date cannot exceed 5 years from current date. |	Response Date cannot exceed 5 years from current date. |	Publish 
 400|Title |	Title is required |	Title is required |	Publish
 400|UNARCHIVE |	This opportunity is not the latest published |	Only archived notices can be unarchived | UNARCHIVE
 400|resourceName | Attachment must have a name | File Name is a required field |	Create Attachment
