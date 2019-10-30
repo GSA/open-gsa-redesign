@@ -3362,7 +3362,7 @@ solicitation | JSON |NA | NA | NA | NA |
 solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code. <br/>The designator for type of set aside determined for the contract action
 solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity
 solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
-solicitation.deadlines.<br/>responseresponseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
+solicitation.deadlines.<br/>responseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
 award | JSON | NA | NA | NA | NA | This section is mainly used for providing award information that is required for  'Award Notice' and 'Justification' opportunity types
 award.date | date | |YYYY-MM-DD |No | Yes only for type= a | Award Date
 award.number | string | 255 characters | |No | Yes only for type= i, j, a | Award Number
