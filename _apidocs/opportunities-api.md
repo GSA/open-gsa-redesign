@@ -3806,7 +3806,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 401|CREATE | Insufficient privileges to create opportunity |	Account does not have appropriate privileges to create opportunity | CREATE
 401|CREATE ATTACHMENT |	Insufficient privileges to upload attachment | Attachments cannot be added to published notices |	Create Attachment
 400|Deadlines Response | This opportunity cannot be published. | Response Deadline Date is required |	Publish
-400|Description |	Description is required |	Description is required |	Publish
+400|Description |	Description is a required field |	Description is a required field except for award notice |	Publish
 400|IVL |	This opportunity cannot be published. Interested Vendors List Add is a required field. |Interested Vendors List Add is a required |	Publish
 400|IVL |	Interested Vendors List Read is a required field. |Interested Vendors List Read is a required field. |	Publish
 400|IVL |	Interested Vendors List should be enabled for this organization. |Interested Vendors List should be enabled for this organization when FORCE ON |	Publish
