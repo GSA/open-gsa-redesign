@@ -183,7 +183,7 @@ Award Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date |	date |	Yes |	Posting Date |	YYYYMMDD
+date |	date |	No |	Posting Date |	YYYYMMDD
 zip |	string |	No |	Zip Code (Deprecated) |	5 digits
 classcod |	string |	No |	Class-Code |	Valid classification code (FAR, Section 5.207(g)) 
 naics |	string |	No |	NAICS Code |	Valid NAICS Code <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
@@ -486,7 +486,7 @@ Mod Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date | date |	Yes - for AWARD  |	Posting Date |	YYYYMMDD
+date | date |	No  |	Posting Date |	YYYYMMDD
 zip |	string |	No |Zip Code (Deprecated) |	5 digits
 classcod |	string	 | Yes - for SOL, COMBINE, SSALE, ITB, JA   |	Class-Code	| Valid classification code (FAR, Section 5.207(g))
 naics | 	string |	Yes - for COMBINE, SOL  | 	NAICS Code |	Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
