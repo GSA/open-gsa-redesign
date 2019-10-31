@@ -4273,7 +4273,7 @@ reason|  1.	This is a required field. If no value is provided, then the system t
 
 
 
-### Deprecated Methods
+## Deprecated Methods
 * submitFairOpps *(Instead use submitJA to perform the operation)*
 * submitForeignGovernment
 * setBidModuleOptions
