@@ -4047,25 +4047,18 @@ Note:
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | -------
-date 	|1. This field should meet the character limit/restrictions<br><br> Note: Date field allows current date and also any date in past/future |	1. DATE field in unexpected format. Expects YYYYMMDD
+date 	|1. This field should meet the character limit/restrictions |	1. DATE field in unexpected format. Expects YYYYMMDD
 notice_type	|	1. This field is required where applicable |	1. Opportunity type is required
-zip|	NA |NA
-classcod	|1. This field is required where applicable<br><br>     2.If a wrong classification code is given, then the service throws an error | 1. Product Service Code is a required field <br><br> 2. This opportunity cannot be published. Classification Code provided did not match expected codes.
-naics		|NA |  NAICS code is required
-offadd| Deprecated|	NA
-officeid	|1. This field is required where applicable<br><br> 2. If an invalid officeid is given, then service throws an error<br><br> 3. If user does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br>	|1. Contracting Office is required<br><br> 2. Invalid officeid provided<br><br> 3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
-subject	|	1. This field is required where appicable 	|1. title: is missing but it is required
 solnbr|	1. This field is required where applicable<br><br>  2. If submitting a notice with a duplicate solnbr, then system throws an error <br><br>3. If solnbr is in invalid format, then service throws an error<br><br>4. If solnbr & ntype combination is not matched, then service throws an error <br><br> |	1. Notice Id is required <br><br>2. Notice Id for the selected opportunity type already exists <br><br>3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br><br>4.	Opportunity not found with given solicitation number and ntype <br><br>5. Notice ID must be unique based on selected notice type
-ntype	 |1. When user tries to convert a notice and the solicitation number/ntype do not match the notice, then the service throws an error<br><br>  2. This field accepts only valid values listed. If invalid values are provided, then system throws an error. Also, if all the required field is given and this field is not given then service throws an error    |1. Opportunity not found with given solicitation number and ntype<br><br> 2. Invalid NTYPE value provided
-awdnbr|	1. This field is required where applicable|	1. Award Details Section - Contract Award Number is a required field
-donbr	|1. This field is required where applicable<br><br> 2. If value provided does not meet the character limit/restrictions, then service throws an error|	1. Award Details Section - Task/Delivery Order Number is required field<br><br> 2. Award Details Section - Task/Delivery Order Number - Please enter a valid number
-awdamt|	 	1. This field is required where applicable<br><br> 2. If an invalid integer values is given, then service throws an error 	|1. Award Details Section - Amount is a required field<br><br> 2. Award Details Section - Please enter valid integer for Amount Field
-linenbr|	NA	|NA
-awddate	|	1. This field should meet the character limit/restrictions <br><br> 2. This field is required where applicable <br><br> 3. Date cannot be in the past|	1. DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. Award Details Section - Contract Award Date is required field <br><br> 3. Award Details Section - Contract Award Date provided is in an invalid format <br><br>4. Award date provided is in the past. <br><br> 5.Contract Award Date set would result in inactive date being in the past.
-stauth|	 1. This field is required where applicable <br><br> 2. This field accepts only valid values listed. If invalid values are provided, then system throws an error.|	1. Contract Award Number is a required field <br><br>2. Invalid Authority Fields, please refer to Contract Opportunities SOAP Web Service Tech Document valid authority fields
-respdate|	1.	This field is required where applicable <br><br> 2.	This date cannot be in past; has to be in future. If the given date is in past, then system throws errors 	| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2.	This opportunity cannot be published. Response date provided is in the past<br><br> 3.	This opportunity cannot be published. Response Date cannot exceed 5 years from current date <br><br> 4. One of Response date or Archive date is required <br><br> 5. One of Response date or Archive date is required
-archdate|	1.	This field is required where applicable. 2.	This date cannot be current or in past; has to be in future|	1.	DATE field in unexpected format  Expects YYYYMMDD<br><br> 2.	This opportunity cannot be published. Archive date provided is in the past. <br><br> 3. One of Response date or Archive date is required
-awardee	|	NA|	NA
+ntype	 |1. When user tries to convert a notice and the solicitation number/ntype do not match the notice, then the service throws an error<br><br>  2. This field accepts only valid values listed. If invalid values are provided, then system throws an error. Also, if all the required field is given and this field is not given then service throws an error <br><br> 3. If the solicitation is related to ntype that is not allowed, then the system throws an error   |1. Opportunity not found with given solicitation number and ntype<br><br> 2. Invalid NTYPE value provided<br><br> 3.The Related Notice's Type is invalid for this Opportunity
+awdnbr|	1. This field is required where applicable<br><br> 2.If value provided does not meet the character limit/restrictions, then service throws an error|	1. Contract Award Number is a required field <br><br> 2.Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces
+donbr	|1. This field is required where applicable<br><br> 2. If value provided does not meet the character limit/restrictions, then service throws an error|	1. Task/Delivery Order Number is required field<br><br> 2. Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces
+awdamt|	 	1. This field is required where applicable<br><br> 2. If an invalid integer values is given, then service throws an error <br><br> 3. If value provided does not meet the character limit/restrictions, then service throws an error 	|1. Base and All Options Value is a required field<br><br> 2. Base and All Options Value - Invalid input: Please enter a valid number<br><br> 3. Base and All Options Value max length is 64 digits
+linenbr|	1.If value provided does not meet the character limit/restrictions, then service throws an error	|1. The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces
+awddate	|	1. This field is required where applicable <br><br>2. This field should meet the character limit/restrictions <br><br>  3. Date cannot be in the past <br><br> 4. If the Contract Award Date is 15 days prior to the current date and the archive date is not provided then the service throws an error|	1. DATE field in unexpected format. Expects YYYYMMDD<br><br> 2.Contract Award Date is required field <br><br> 3. Award date provided is in the past. <br><br> 4.Contract Award Date set would result in inactive date being in the past
+stauth|	 1. This field is required where applicable <br><br> 2. This field accepts only valid values listed. If invalid values are provided, then system throws an error|	1. Authority is a required field <br><br>2. Invalid Authority Fields, please refer to Contract Opportunities SOAP Web Service Tech Document valid authority fields
+respdate|	1.	This field is required where applicable <br><br> 2.	This date cannot be in past; has to be in future. If the given date is in past, then system throws an error 	| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. Response date provided is in the past<br><br> 3. Response Date cannot exceed 5 years from current date <br><br> 4. One of Response date or Archive date is required
+archdate|	1.	This field is required where applicable. 2.	This date cannot be current or in past; has to be in future|	1.	DATE field in unexpected format  Expects YYYYMMDD<br><br> 2. Archive date provided is in the past <br><br> 3. One of Response date or Archive date is required
 awardee_duns|	1. Must provide a valid DUNS|	1. Unique Entity Identifier (duns) is invalid
 contact	|	1. This field is required where applicable	|1. Primary Contact is Required
 desc| 	1. This field is required where applicable.|	1. Description is required
@@ -4073,12 +4066,12 @@ link|	NA	| NA
 email	|1. This field is required where applicable <br><br>  2. If an invalid email address is provided, then the service throws an error	| 1. Primary Contact - Email is required <br><br>  2. Primary Contact - Please enter a valid Internet email address. Format: username@host.domain
 links|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
 files|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
-setaside|	NA	|NA
+setaside| 1.If an invalid set aside code is given, then the service throws an error	|1.Set Aside provided did not match expected codes
 popaddress|	This is a free Text. No validation is performed on this field	 | NA
-popzip	|No	|5 digits
-popcountry|	 No|	1. Award Details Section - Country is a required field
-city	|NA|	NA
-state	|	NA|	NA
+popzip	|	|5 digits
+popcountry|1. This field is required where appicable	 |	1. Award Details Section - Country is required
+city	|1. This field is required where appicable|	1. Award Details Section - City is required
+state	|	1. This field is required where appicable|	1. Award Details Section - State is required
 recovery_act|	NA	|NA
 correction|	1. When user tries to convert a notice and the solicitation number/ntype do not match the notice and correction = true, then the service throws an error<br><br> 2. If correction = True and the system cannot return a single record for the same delivery number/ award number / soliciation number or combination of all three, then the service throws an error<br><br> 3. If correction = True and the system returns more than one record for the same delivery number/ award number / sol-number or combination of all three, then service throws an error|	1. Notice could not be found for correction <br><br> 2. Multiple Notices found. Please input more details
 
@@ -4227,7 +4220,7 @@ id|		1.	If the request Id is not provided, then the system throws an error<br><b
 
 Individual business rules per field are listed across each of the fields in below table.
 
-Vendor can be obtained through getAuthorizedPartyList   
+* Note: Vendor can be obtained through getAuthorizedPartyList   
 
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
