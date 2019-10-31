@@ -1,8 +1,9 @@
-swagger: "2.0"
+openapi: 3.0.0
 info:
   title: "GSA Perdiem API"
-  description: "Per Diem Rates are the allowed reimbursement rates for hotel stays and meals for federal travelers. Rates are set for each of the federal government's fiscal years (October 1st to September 30th) GSA is responsible for setting the rates in the continental United States. Many businesses and other organizations adopt these rates as well. This API provides access to the current rate information."
-  version: "1.0.0"
+  description: >-
+    Per Diem Rates are the allowed reimbursement rates for hotel stays and meals for federal travelers. Rates are set for each of the federal government's fiscal years (October 1st to September 30th) GSA is responsible for setting the rates in the continental United States. Many businesses and other organizations adopt these rates as well. This API provides access to the current rate information.
+  version: 2.0.0
   contact:
     email: "EWM@gsa.gov"
 host: "api.gsa.gov"

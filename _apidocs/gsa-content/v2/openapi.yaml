@@ -1,8 +1,9 @@
-swagger: "2.0"
+openapi: 3.0.0
 info:
-  description: "Swagger documentation for GSA.gov"
-  version: "1.0.0"
   title: "GSA Content API"
+  description: >-
+    Swagger documentation for GSA.gov
+  version: 2.0.0
   contact:
     email: "EWM@gsa.gov"
 host: "api.gsa.gov"
