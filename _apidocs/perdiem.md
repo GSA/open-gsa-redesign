@@ -34,7 +34,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
     // This can be any API endpoint on your server, and you can use the
     // special {{api_key}} variable to automatically substitute in the API
     // key the user just signed up for.
-     exampleApiUrl: 'https://api.gsa.gov/travel/perdiem/rates/city/Fairfax/state/VA/year/2019?api_key={{api_key}}',
+     exampleApiUrl: 'https://api.gsa.gov/travel/perdiem/v2/rates/city/Fairfax/state/VA/year/2019?api_key={{api_key}}',
 
     // OPTIONAL: Provide extra content to display on the signup confirmation
     // page. This will be displayed below the user's API key and the example
