@@ -2993,7 +2993,7 @@ type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | N
 solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes (No for type = s  (Special Notice)) | Solicitation Number
 title | string | 256 characters | |Yes | Yes | Title of the Opportunity
 organizationId | string | 32 characters | | Yes | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
-classificationCode | string |  | | No | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
+classificationCode | string |  | | No | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Award)) | Product Service Code (PSC)
 naics | JSON Array | NA |NA | NA | NA |
 naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
 naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case
@@ -3236,7 +3236,7 @@ type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Notice 
 solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {}| Yes (No for type = s  (Special Notice)) | Solicitation Number
 title | string | 256 characters | | Yes | Title of the Opportunity
 organizationId | string | 32 characters | | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
-classificationCode | string |  | | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
+classificationCode | string |  | | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Award)) | Product Service Code (PSC)
 naics | JSON Array | NA |NA | NA |
 naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
 naics.type | string | |primary|Yes | NAICS Type Note: 'p' must be in lower case
@@ -3407,7 +3407,11 @@ description | string |  | Yes | Description for uncanceling
 newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
+<<<<<<< Updated upstream
 newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
+=======
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes; for types = k, o (Combined Synopsis/Solicitation) <br/> 2) Yes; if newArchive.type=auto15 except for type = a (Award) | New Response Date
+>>>>>>> Stashed changes
 newResponseTz | string |  | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3469,7 +3473,11 @@ requestType | string | unarchive_request | Yes | Type of request
 newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
+<<<<<<< Updated upstream
 newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
+=======
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes; for types = k, o (Combined Synopsis/Solicitation) <br/> 2) Yes; if newArchive.type=auto15 except for type = a (Award) | New Response Date
+>>>>>>> Stashed changes
 newResponseTz | string |  | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3714,9 +3722,18 @@ Error codes may change depending on the error given; document will be updated ac
 
 Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
-400|Additional Reporting |	This opportunity cannot be published. Additional reporting is required. |	Additional Reporting is required with valid values of “none” or “recovery_act”	| Publish
-400|Additional Reporting |	Additional Reporting/Initiative is required. |	Additional Reporting/Initiative is required when opportunity is not a special notice | Publish
-400|Title |	Title max character length is 256. |	Title max character length is 256.	| Publish
+400|Type | Opportunity type is required | Opportunity type is required | Create Opportunity
+400|Type | The Opportunity's type provided is not supported|Invalid Opportunity type provided |	Create Opportunity
+400|Title |	Title max character length is 256 |	Title max character length is 256	| Create Opportunity, Publish
+400|Title |	Title is required |	Title is required |	Publish
+400|Additional Reporting |	Additional Reporting/Initiative is required |	Additional Reporting/Initiative is required when opportunity is not a special notice | Publish
+400|ARCHIVE |	This opportunity is not the latest published. |	Draft Opportunity cannot be archived	| Archive
+400|Archive Date |	Inactive date is a required field |	Archive Date is required if Archive Type = autocustom | Publish, Uncancel, Unarchive
+400|Archive Date Response Date   |	One of Response date or Archive date is required |	Either Response date or archive date is required for presolicitation, sources sought, special notice, sale surplus  |	Publish
+400|Archive Date |	Inactive date provided is an invalid format |	Date is not in specified format  |	Create, Publish, Uncancel, Unarchive
+400|Archive Date |	Inactive date provided is in the past |	Archive date cannot be a past date  | Publish, Uncancel, Unarchive
+400|Archive Type |	Inactive Policy is a required field. |	Archive Type is required |	Publish
+400|Archive Type |	Auto 30 archive type is not allowed for this opportunity type | Archive Type = auto30  is only allowed for Intent bundle and Justification. System throws an error if it is used with other notice types |	Publish
 400|ARCHIVE |	This opportunity is not the latest published. |	Draft Opportunity cannot be archived.	| Archive
 400|ARCHIVE |	Opportunity already inactive. |	Opportunity is already archived.	| Archive
 400|Update |	Opportunity cannot be updated. |	Opportunity is either in draft, archived or cancelled status.	| Update
@@ -3731,23 +3748,15 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Description |	Description is required |	Description is required	| Uncancel
 400|UNARCHIVE |	Opportunity is active. |	Active opportunity	| UnArchive
 400|UNARCHIVE |	Opportunity is cancelled. |	Cancelled opportunity	| UnArchive
-400|Opportunity Type |	The new opportunity type field is missing. |	prevent activating if opportunity type is `m`, `l` or `j` and new type opportunity isn't provided	| UnArchive
-400|Opportunity Type |	The new opportunity type field is not supported. |	prevent activating if opportunity type is not one of `m`, `l` or `j` and new type opportunity is provided	| UnArchive
-400|Opportunity Type |	The Opportunity's type provided is not supported. |	prevent activating if opportunity type is `m` and new type opportunity provided is not supported	| UnArchive
-400|Opportunity Type |	The new opportunity type provided is not supported. |	prevent activating if opportunity type is  `l` or `j` and new type opportunity provided is not `u`	| UnArchive
-400|Archive Date |	$.archive.date: does not match the date pattern ^\\d{4}-(?:0[0-9]{1}\1[0-2]{1})-(0?[1-9]\[12][0-9]\3[01])$ |	Archive Date must be in specified format |	Create, Publish, Uncancel, Unarchive
-400|Archive Date |	This opportunity cannot be published. Inactive date is a required field. |	Archive Date is required if Archive Type = autocustom |	Create, Publish, Uncancel, Unarchive
-400|Archive Date Response Date   |	One of Response date or Archive date is required |	Either Response date or archive date is required for presolicitation, sources sought, special notice, sale surplus  |	Publish
-400|Archive Date |	Inactive date provided is an invalid format. |	Date is not in specified format  |	Create, Publish, Uncancel, Unarchive
 400|Archive Date |	New archive date is required. |	New archive date is required.  |	Unarchive
 400|Archive Date |	New archive date provided is in an invalid format. |	New archive date provided is in an invalid format. |	Unarchive
 400|Archive Date |	New archive date provided is in the past. |	New archive date provided is before today's date. |	Unarchive
 400|Archive Type |	New archive type is invalid. |	archive type is not one of the following "auto15", "autocustom", "auto30"	| UnArchive
 400|Archive Type |	Archive type is invalid for this notice type. |	archive type is one of the following "auto15", "auto30" and is not allowed for this notice type	| UnArchive
-400|Archive Type |	This opportunity cannot be published. Inactive Policy is a required field. |	Archive Type is required |	Publish
-400|Archive Type |	$.archive.type: does not have a value in the enumeration[auto15, auto30, autocustom] |	Archive type must be specified value | Create, Publish, Uncancel, Unarchive
-400|Archive Type |	This opportunity cannot be published. Auto 15 archive type is not allowed for this opportunity type. | Archive Type = auto15 not allowed |	Publish
-400|Archive Type |	Auto 30 archive type is not allowed for this opportunity type. | Archive Type = auto30   not allowed for Intent bundle and Justification |	Publish
+400|Opportunity Type |	The new opportunity type field is missing. |	prevent activating if opportunity type is `m`, `l` or `j` and new type opportunity isn't provided	| UnArchive
+400|Opportunity Type |	The new opportunity type field is not supported. |	prevent activating if opportunity type is not one of `m`, `l` or `j` and new type opportunity is provided	| UnArchive
+400|Opportunity Type |	The Opportunity's type provided is not supported. |	prevent activating if opportunity type is `m` and new type opportunity provided is not supported	| UnArchive
+400|Opportunity Type |	The new opportunity type provided is not supported. |	prevent activating if opportunity type is  `l` or `j` and new type opportunity provided is not `u`	| UnArchive
 400|Attachment |	has unknown issue/missing, please remove this attachment and republish. | has unknown issue/missing, please remove this attachment and republish. |	Publish
 400|Attachment |	is PENDING, please try to publish at a later time. | is PENDING, please try to publish at a later time. |	Publish
 400|Attachment |	is ENCRYPTED, please remove this attachment and republish. | is ENCRYPTED, please remove this attachment and republish. |	Publish
@@ -3756,85 +3765,76 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Attachment |	is a UNSUPPORTED FILE TYPE, please remove this attachment and republish. | is a UNSUPPORTED FILE TYPE, please remove this attachment and republish. |	Publish
 400|Attachment |	Exception occured while trying to validate attachments, Please retry at a later time. | Exception occured while trying to validate attachments, Please retry at a later time. |	Publish
 400|Attachment |	Unknown type was found for Resource named: | Unknown type was found for Resource named: |	Publish
-400|attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a line |	Create Attachment
 401|Authorization |	Insufficient privileges to edit opportunity |	See User Account Authorization section |	Update, Publish, Revise
 401|Authorization |	Insufficient privileges to create opportunity |	Insufficient privileges to create an award notice. See User Account Authorization section for more details. |	Create Opportunity
 401|Authorization |	Insufficient privileges to create request |	Insufficient privileges to publish an award notice. See User Account Authorization section for more details. |	Create
 400|Award |	Award Details Section - Contract Award Dollar Amount is not a valid field for this opportunity type |	Award Section is not valid for Base Notice Types (s, o, p, r, g, k, i) |	Publish
 400|Award |	Award Details Section is missing data. | Award Details Section is missing data. |	Publish
-400|Award Amount |	Award Detail Section-Please enter valid integer for Amount Field |	Award Amount required |	Publish
-400|Award Amount |	Award Details Section - Contract Award Dollar Amount is not a valid field for this opportunity type |	Contract Award Amount only valid for Type "a" Award |	Publish
-400|Total Contract Value |	Base and All Options Value is a required field. |	Base and All Options Value is a required field. |	Publish
-400|Total Contract Value |	Base and All Options Value max length is 64 digits. |	Base and All Options Value max length is 64 digits. |	Publish
-400|Total Contract Value |	Base and All Options Value - Invalid input: Please enter a valid number. |	Base and All Options Value - Invalid input: Please enter a valid number. |	Publish
-400|Modification Number |	Modification Number max character limit is 32 characters. |	Modification Number max character limit is 32 characters. |	Publish
-400|Award Date |	Contract Award Date is required field. |	Contract Award Date is required field. |	Create Opportunity, Publish, Uncancel
-400|Award Date |	New contract award date provided is in the past. |	New contract award date provided is in the past. | Unarchive
-400|Award Date |	New contract award date is not provided |	New contract award date is not provided | Unarchive
-400|Award Date |	Contract Award Date provided is in an invalid format. |	Date is not in specified format |	Create Opportunity, Publish, Uncancel, Unarchive
-400|Award Date |	Contract Award Date provided should have 4 digit year. | Contract Award Date provided should have 4 digit year. |	Create Opportunity, Publish, Uncancel, Unarchive
-400|Award Date |	Award date provided is in the past. |	Award Date must be current or future date. |	Create Opportunity, Publish, Uncancel, Unarchive
-400|Award Date |	Contract Award Date set would result in inactive date being in the past. |	Contract Award Date set would result in inactive date being in the past. |	Create Opportunity, Publish, Uncancel, Unarchive
-400|Award Number |	Contract Award Number is a required field	| Contract Award Number is missing | Publish, Uncancel, Unarchive
-400|Award Number |	Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces.| Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | Publish, Uncancel, Unarchive
-400|Contract Line Item number |	The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces.	| The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | All
+400|Award Amount |	Base and All Options Value is a required field |	Base and All Options Value is a required field |	Publish
+400|Award Amount |	Base and All Options Value max length is 64 digits |	Base and All Options Value max length is 64 digits |	Publish
+400|Award Amount |	Base and All Options Value - Invalid input: Please enter a valid number |	Base and All Options Value - Invalid input: Please enter a valid number |	Publish
+400|Award Date |	Contract Award Date is required field |	Contract Award Date is required field for Award Notice |	 Publish, Uncancel, Unarchive
+400|Award Date |	Contract Award Date provided is in an invalid format |	Date is not in specified format | Publish, Uncancel, Unarchive
+400|Award Date |	Contract Award Date set would result in inactive date being in the past |	Contract Award Date cannot be 15 days prior to the current date if the Archiving policy is "15 days from Award date" for an Award Notice |	Publish, Uncancel, Unarchive
+400|Award Date |	Contract Award Date provided should have 4 digit year |	Invalid Year provided in the Award Date |	Publish, Uncancel, Unarchive
+400|Award Number |	Contract Award Number is a required field	| Contract Award Number is required for Intent to Bundle, Justification, Award | Publish
+400|Award Number |	Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces| Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | Publish
+400|Contract Line Item number |	The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces	| The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | Publish
 400|DUNS | Unique Entity Identifier (duns) is invalid. |	Invalid DUNS provided |	Publish
-400|Awardee Name | Contractor Awarded Name is a required field. |	Contractor Awarded Name is a required field. |	Publish
-400|Awardee Name | Contractor Awarded Name max character length is 255. |	Contractor Awarded Name max character length is 255. |	Publish
-400|Awardee | Required fields from Awardee section is missing. |Required fields from Awardee section is missing. |	Publish
-400|Awardee Country | Award Details Section - Country is required. |Country is required. |	Publish
-400|Awardee Country | Award Details Section - Country provided is invalid. |Country provided is invalid. |	Publish
-400|Awardee State | Award Details Section - State is required. |State is required. |	Publish
-400|Awardee State | Award Details Section - State provided is invalid. |State provided is invalid. |	Publish
-400|Awardee City | Award Details Section - City is required. |City is required. |	Publish
-400|Awardee City | Award Details Section - City provided is invalid. |City provided is invalid. |	Publish
+400|Awardee Name | Contractor Awarded Name is a required field |	Contractor Awarded Name is a required field if the DUNS is not provided for an Award Notice |	Publish
+400|Awardee Name | Contractor Awarded Name max character length is 255 |	Contractor Awarded Name max character length is 255 | Publish
+400|Awardee | Required fields from Awardee section is missing |Awardee Name or DUNS# not provided for Award notice|	Publish
+400|Awardee Country | Award Details Section - Country is required |Country Code is required if the Awardee name is provided instead of DUNS# |	Publish
+400|Awardee Country | Award Details Section - Country provided is invalid |Country Code  provided is invalid |	Publish
+400|Awardee State | Award Details Section - State is required |State Code is required if the Awardee name is provided instead of DUNS# |	Publish
+400|Awardee State | Award Details Section - State provided is invalid |State Code provided is invalid |	Publish
+400|Awardee City | Award Details Section - City is required |City Code is required if the Awardee name is provided instead of DUNS# |	Publish
+400|Awardee City | Award Details Section - City provided is invalid |City Code provided is invalid |	Publish
+400|Classification Code | Product Service Code is a required field |	Product service code is required for all types except SourcesSought, Sale of Surplus and Award  |	Publish
 400|Classification Code | Classification Code provided did not match expected codes |	Invalid PSC provided |	Publish
 400|CANCEL |	This opportunity cannot be cancelled. This opportunity is a revision. |	Cannot cancel a revised Opportunity. |	Cancel
-400|Content |	File Resource must have content. |	File Resource must be filled out | Create Attachment
-400|Contract Award Dollar Amount |	Award Details Section – Please enter valid integer for Amount Field	| Valid integer amount must be entered for award dollar amount | Publish
-400|Task/Delivery Order Number |	Task/Delivery Order Number is required field.	| Task/Delivery Order Number is required field. | Publish
-400|Task/Delivery Order Number |	Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces.	| Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces. | Publish
+400|Task/Delivery Order Number |	Task/Delivery Order Number is required field	| Task/Delivery Order Number is required field. | Publish
+400|Task/Delivery Order Number |	Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces	| Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces. | Publish
 401|CREATE | Insufficient privileges to create opportunity |	Account does not have appropriate privileges to create opportunity | CREATE
 401|CREATE ATTACHMENT |	Insufficient privileges to upload attachment | Attachments cannot be added to published notices |	Create Attachment
 400|Deadlines Response | This opportunity cannot be published. | Response Deadline Date is required |	Publish
-400|Description |	Description is a required field |	Description is a required field except for award notice |	Publish
+400|Description |	Description is a required field |	Description is a required field except for award notice |	Publish, Unarchive, Uncancel
 400|IVL |	This opportunity cannot be published. Interested Vendors List Add is a required field. |Interested Vendors List Add is a required |	Publish
 400|IVL |	Interested Vendors List Read is a required field. |Interested Vendors List Read is a required field. |	Publish
 400|IVL |	Interested Vendors List should be enabled for this organization. |Interested Vendors List should be enabled for this organization when FORCE ON |	Publish
 400|IVL |	Interested Vendors List should not be enabled for this organization. |Interested Vendors List should not be enabled for this organization when FORCE OFF |	Publish
-400|Justification Authority |	This opportunity cannot be published. Justification Authority is not valid field for this opportunity type | Justification Authority Section is not valid for Base Notice Types (s, o, p, r, g, k, i) | Publish
-400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type. | Justification Authority Section is not valid for Base Notice Types (s, o, p, r, g, k, i) | Publish
-400|Justification Authority |	This opportunity cannot be published. Justification Authority is not valid field for this opportunity type | Justification Authority only valid for Type "u" Justification and Authorization | Publish
-400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type | Justification Authority Modification Number is only valid for Type "u" Justification and Authorization | Publish
-400|NAICS Code | NAICS provided did not match expected codes | NAICS Code is invalid | Create Opportunity, Publish
-400|Set Aside | Set Aside is not valid field for this opportunity type. | Set Aside is invalid | Create Opportunity, Publish
-400|Set Aside | Contracting Office is a required for Set Aside. | Contracting Office is a required for Set Aside. | Create Opportunity, Publish
-400|Set Aside | Set Aside provided did not match expected codes | Set Aside provided did not match expected codes | Create Opportunity, Publish
-400|NAICS Type | $.data.naics[0].type: does not have a value in the enumeration [primary] | NAICS Type is required | Create Opportunity
+400|Justification Authority - Authority|	Justification Authority is not valid field for this opportunity type | Justification Authority only valid for Type "u" Justification and Authorization | Publish
+400|Justification Authority - Authority|	Authority is a required field | Justification Authority is a required field for Type "u" Justification and Authorization | Publish
+400|Justification Authority - Authority|	Invalid Authority Fields, please refer to Contract Opportunities SOAP Web Service Tech Document valid authority fields | If Invalid authority details are provided for Type "u" Justification and Authorization | Publish
+400|Justification Authority - Modification Number |	Justification Authority Modification Number is not valid field for this opportunity type | Justification Authority Modification Number is only valid for Type "u" Justification and Authorization| Publish
+400|Justification Authority - Modification Number |	Modification Number max character limit is 32 characters | MOdification number size exceeds 32 characters| Publish
+400|NAICS Code | NAICS Code is a required field | NAICS Code is required for Combined Synopsis and Solicitation | Publish
+400|NAICS Code | NAICS provided did not match expected codes | NAICS Code is invalid | Publish
+400|Set Aside | Set Aside is not valid field for this opportunity type | Set Aside is an invalid field for Justification and Intent to Bundle | Publish
+400|Set Aside | Contracting Office is a required for Set Aside | Contracting Office is a required for Set Aside |Publish
+400|Set Aside | Set Aside provided did not match expected codes | Set Aside code provided is invalid | Publish
 400|Notice Type |	This opportunity cannot be published. The inactive type `manual` is no longer supported.	| See Notice Types table for valid notice types |	Publish
 400|Notice Type |	The opportunity type `j` is no longer supported	| See Notice Types table for valid notice types |	Publish
 400|Notice Type |	The opportunity type `m` is no longer supported	| See Notice Types table for valid notice types |	Publish
 400|Notice Type |	The opportunity type `l` is no longer supported	| See Notice Types table for valid notice types |	Publish
 400|Opportunity ID | Opportunity ID for the selected opportunity type already exists | Cannot publish an existing published record | Publish
 400|Opportunity ID | Opportunity cannot be updated | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state  | Revise
-404|Notice ID | Notice ID is required	| Notice ID is required | All
-400|Notice ID | Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces.	| Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | All
-400|Notice ID | Notice ID must be unique based on selected notice type.	| Notice ID must be unique when selected notice type is not an award notice. | All
-400|Notice ID | Submitted solicitation number doesn't match the previous published opportunity	| Submitted solicitation number doesn't match the previous published opportunity for award notice type | All
-400|Related Notice ID | This Related Notice's ID is invalid	| The Related Notice's ID is not found | All
-400|Related Notice ID | The Related Notice's Type is invalid for this Opportunity	| The Related Notice's Type cannot be related  | All
-400|Related Notice ID | Related Notice's ID needs to match previous Opportunity's Related Notice ID	| Related Notice's ID needs to match previous Opportunity's Related Notice ID  | All
-400|Opportunity Type | Opportunity type is required | Opportunity type is required | Create Opportunity
-400|Opportunity Type | errorCode":400,"message":"Opportunity type given is not a valid type." |	Opportunity type is empty |	Create Opportunity
+404|Solicitation Number | Notice ID is required	| Notice ID is required | All
+400|Solicitation Number | Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces	| Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces | Publish
+400|Solicitation Number | Notice ID must be unique based on selected notice type.	| Notice ID must be unique when selected notice type is not an award notice | Publish
+400|Solicitation Number | Submitted solicitation number doesn't match the previous published opportunity	| Submitted solicitation number doesn't match the previous published opportunity for award notice type | Publish
+400|Related Opportunity ID | This Related Notice's ID is invalid	| The Related Notice's ID is not found | Publish
+400|Related Opportunity ID | The Related Notice's Type is invalid for this Opportunity	| The Related Notice's Type cannot be related  | Publish
+400|Related Opportunity ID | Related Notice's ID needs to match previous Opportunity's Related Notice ID	| Related Notice's ID  provided while revising a notice needs to match the Parent Opportunity's Related Notice ID  | Publish
 400|Organization Id |	Contracting Office is a required field. | FH Org Id/AAC code is required |	Publish
-400|Organization Id |	The Federal Organization ID that you provided is inactive and/or invalid. | Inactive/Invalid Organization Id |	Create Opportunity
-400|Organization Id |	The Federal Organization ID that you provided is not an office level, and it must be for this opportunity type.	| Organization ID is not valid for opportunity type. Note: Organization ID must be Office level unless creating a Special Notice.	| Create Opportunity
-400|Organization Id |	The Federal Organization ID that you provided is unmapped in Federal Hierarchy. | Organization ID length should be greater than 10 |	Publish
-400|Point of Contact Type |	$.data.pointOfContact[0].type: does not have a value in the enumeration [primary, secondary, owner] |	Point of Contact Type is required |	Create Opportunity
+400|Organization Id |	The Federal Organization ID that you provided is inactive and/or invalid. | Inactive/Invalid Organization Id provided|	Create Opportunity, Publish
+400|Organization Id |	The Federal Organization ID that you provided is not an office level, and it must be for this opportunity type.	| Organization ID is not valid for opportunity type. Note: Organization ID must be Office level unless creating a Special Notice	| Create Opportunity, Publish
+400|Organization Id |	The Federal Organization ID that you provided is unmapped in Federal Hierarchy |If the Organization Id provided is a legacy one and is unmapped in Federal Hierarchy, then the system throws and error  |	Publish
 400|Point of Contact Email |	Primary Contact – Email is required	| If Contact email is missing. This is a required field	| Publish
-400|Primary Contact |	Primary Contact is required | Primary Contact is required | Publish
+400|Primary Contact |	Primary Contact is required | Primary Contact is required  for all types except Award| Publish
 400|Primary Contact Full Name |	Primary Contact - Name is required | Point of Contact Full Name is required | Publish
-400|Primary Contact Full Name |	Primary Contact - Name limit is 255 characters. | Point of Contact Name limit is 255 characters | Publish
+400|Primary Contact Full Name |	Primary Contact - Name limit is 255 characters | Point of Contact Name limit is 255 characters | Publish
+400|Primary Contact Full Name |	Primary Contact - Email is required | Point of Contact Email is required for all types except Award | Publish
 400|Primary Contact Email |	Primary Contact - Please enter a valid Internet email address. Format: username@host.domain. | Primary Contact invalid Email format | Publish
 400|Primary Contact Email |	Primary Contact - email character limit is 255 characters. | Primary Contact email limit is 255 | Publish
 400|Primary Contact Phone |	Primary Contact - phone character limit is 255 characters. | Primary Contact phone limit is 255 | Publish
@@ -3848,10 +3848,19 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Response Date |	New response date is required. |	Unarchive requires new response date	| UnArchive
 400|Response Date |	New response date provided is in an invalid format. |	Invalid date format	| UnArchive
 400|Response Date |	New response date provided is in the past. |	Response date is before offset date	| UnArchive
-400|Response Date |	New response date provided would place inactive date in the past. |	New response date providedis within 15 days	| UnArchive
-400|Title |	Title is required |	Title is required |	Publish
+400|Response Date |	New response date provided would place inactive date in the past. |	New response date providedis within 15 days	| UnArchiv
 400|UNARCHIVE |	This opportunity is not the latest published |	Only archived notices can be unarchived | UNARCHIVE
-400|resourceName | Attachment must have a name | File Name is a required field |	Create Attachment
+400|Resources -  attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a line |	Create Attachment
+400|Resources - resourceName | Attachment must have a name | Attachment Name is a required field |	Create Attachment, Create And Publish
+400|Resources - content |Attachment must have content | File content is missing |	Create Attachment, Create And Publish
+400|Resources - description | Link Resource must have a description | Link provided is missing description |	Create Attachment, Create And Publish
+400|Resources - description | Link with the display text {}  already exists | Link with the same description/name already exists on the notice | Create Attachment, Create And Publish
+400|Resources - link | Link Resource must have a link | Link URL is missing |	Create Attachment, Create And Publish
+400|Resources - link | Please enter a valid url. [protocol]://hostname.domain. Protocol can be ftp, http, or https. Spaces are not allowed | Link URL is not valid |	Create Attachment, Create And Publish
+400|Resources - link | Link {} already exists| Link URL is already added to the notice |	Create Attachment, Create And Publish
+400|Resources - resourceName | The file type that you are trying to upload is not supported | File extension provided is unsupported |	Create Attachment, Create And Publish
+400|Resources - resourceName | Attachment with the name {} already exists | File with the same name is already added to the notice |	Create Attachment, Create And Publish
+400|Resources - content | The file size should be greater than zero bytes and less than 250 MB | File Size doesn't meet the specified limits |	Create Attachment, Create And Publish
 400|Request Id |	Duplicate request. Vendor is already added as an authorized party on the notice. | Request already exists for the vendor on the notice.	| AddAuthorizedParty
 400|Duns# |	No contact match on vendor data provided.	| Not a Valid email or Duns#.	| AddAuthorizedParty
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
