@@ -3838,7 +3838,13 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Organization Id |	The Federal Organization ID that you provided is unmapped in Federal Hierarchy. | Organization ID length should be greater than 10 |	Publish
 400|Point of Contact Type |	$.data.pointOfContact[0].type: does not have a value in the enumeration [primary, secondary, owner] |	Point of Contact Type is required |	Create Opportunity
 400|Point of Contact Email |	Primary Contact – Email is required	| If Contact email is missing. This is a required field	| Publish
+400|Primary Contact |	Primary Contact is required | Primary Contact is required | Publish
 400|Primary Contact Full Name |	Primary Contact - Name is required | Point of Contact Full Name is required | Publish
+400|Primary Contact Full Name |	Primary Contact - Name limit is 255 characters. | Point of Contact Name limit is 255 characters | Publish
+400|Primary Contact Email |	Primary Contact - Please enter a valid Internet email address. Format: username@host.domain. | Primary Contact invalid Email format | Publish
+400|Primary Contact Email |	Primary Contact - email character limit is 255 characters. | Primary Contact email limit is 255 | Publish
+400|Primary Contact Phone |	Primary Contact - phone character limit is 255 characters. | Primary Contact phone limit is 255 | Publish
+400|Primary Contact Phone |	Primary Contact - fax character limit is 255 characters. | Primary Contact fax limit is 255 | Publish
 400|Response Date |	Response Date is a required field |	Response Date is only valid for Notice Type “o” |	Publish
 400|Response Date |	Response Date provided is an invalid format. |	Response Date provided is an invalid format. |	Publish
 400|Response Date |	Response Date cannot be in the past. |	Response Date cannot be in the past. |	Publish
