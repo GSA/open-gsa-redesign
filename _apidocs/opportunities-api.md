@@ -3718,10 +3718,32 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Additional Reporting |	Additional Reporting/Initiative is required. |	Additional Reporting/Initiative is required when opportunity is not a special notice | Publish
 400|Title |	Title max character length is 256. |	Title max character length is 256.	| Publish
 400|ARCHIVE |	This opportunity is not the latest published. |	Draft Opportunity cannot be archived.	| Archive
+400|ARCHIVE |	Opportunity already inactive. |	Opportunity is already archived.	| Archive
+400|Update |	Opportunity cannot be updated. |	Opportunity is either in draft, archived or cancelled status.	| Update
+400|Cancel |	This opportunity cannot be cancelled. This opportunity should be published. |	This opportunity cannot be cancelled. This opportunity should be published.	| Cancel
+400|Cancel |	This opportunity cannot be cancelled. This opportunity is a revision. |	This opportunity cannot be cancelled. This opportunity is a revision.	| Cancel
+400|Cancel |	This opportunity cannot be cancelled. This opportunity is already inactive. |	This opportunity cannot be cancelled. This opportunity is already inactive.	| Cancel
+400|Cancel |	This opportunity cannot be cancelled. This opportunity is already cancelled. |	This opportunity cannot be cancelled. This opportunity is already cancelled.	| Cancel
+400|Description |	This opportunity cannot be cancelled. The cancel request is missing `Cancellation description` field. |	This opportunity cannot be cancelled. The cancel request is missing `Cancellation description` field.	| Cancel
+400|Uncancel, Delete |	This opportunity is not published. |	This opportunity is not published.	| Uncancel, Delete
+400|Uncancel |	This opportunity is a revision. |	This opportunity is a revision.	| Uncancel
+400|Uncancel |	This opportunity is not cancelled. |	This opportunity is not cancelled.	| Uncancel
+400|Description |	Description is required |	Description is required	| Uncancel
+400|UNARCHIVE |	Opportunity is active. |	Active opportunity	| UnArchive
+400|UNARCHIVE |	Opportunity is cancelled. |	Cancelled opportunity	| UnArchive
+400|Opportunity Type |	The new opportunity type field is missing. |	prevent activating if opportunity type is `m`, `l` or `j` and new type opportunity isn't provided	| UnArchive
+400|Opportunity Type |	The new opportunity type field is not supported. |	prevent activating if opportunity type is not one of `m`, `l` or `j` and new type opportunity is provided	| UnArchive
+400|Opportunity Type |	The Opportunity's type provided is not supported. |	prevent activating if opportunity type is `m` and new type opportunity provided is not supported	| UnArchive
+400|Opportunity Type |	The new opportunity type provided is not supported. |	prevent activating if opportunity type is  `l` or `j` and new type opportunity provided is not `u`	| UnArchive
 400|Archive Date |	$.archive.date: does not match the date pattern ^\\d{4}-(?:0[0-9]{1}\1[0-2]{1})-(0?[1-9]\[12][0-9]\3[01])$ |	Archive Date must be in specified format |	Create, Publish, Uncancel, Unarchive
 400|Archive Date |	This opportunity cannot be published. Inactive date is a required field. |	Archive Date is required if Archive Type = autocustom |	Create, Publish, Uncancel, Unarchive
 400|Archive Date Response Date   |	One of Response date or Archive date is required |	Either Response date or archive date is required for presolicitation, sources sought, special notice, sale surplus  |	Publish
 400|Archive Date |	Inactive date provided is an invalid format. |	Date is not in specified format  |	Create, Publish, Uncancel, Unarchive
+400|Archive Date |	New archive date is required. |	New archive date is required.  |	Unarchive
+400|Archive Date |	New archive date provided is in an invalid format. |	New archive date provided is in an invalid format. |	Unarchive
+400|Archive Date |	New archive date provided is in the past. |	New archive date provided is before today's date. |	Unarchive
+400|Archive Type |	New archive type is invalid. |	archive type is not one of the following "auto15", "autocustom", "auto30"	| UnArchive
+400|Archive Type |	Archive type is invalid for this notice type. |	archive type is one of the following "auto15", "auto30" and is not allowed for this notice type	| UnArchive
 400|Archive Type |	This opportunity cannot be published. Inactive Policy is a required field. |	Archive Type is required |	Publish
 400|Archive Type |	$.archive.type: does not have a value in the enumeration[auto15, auto30, autocustom] |	Archive type must be specified value | Create, Publish, Uncancel, Unarchive
 400|Archive Type |	This opportunity cannot be published. Auto 15 archive type is not allowed for this opportunity type. | Archive Type = auto15 not allowed |	Publish
@@ -3746,7 +3768,9 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Total Contract Value |	Base and All Options Value max length is 64 digits. |	Base and All Options Value max length is 64 digits. |	Publish
 400|Total Contract Value |	Base and All Options Value - Invalid input: Please enter a valid number. |	Base and All Options Value - Invalid input: Please enter a valid number. |	Publish
 400|Modification Number |	Modification Number max character limit is 32 characters. |	Modification Number max character limit is 32 characters. |	Publish
-400|Award Date |	Contract Award Date is required field. |	Contract Award Date is required field. |	Create Opportunity, Publish, Uncancel, Unarchive
+400|Award Date |	Contract Award Date is required field. |	Contract Award Date is required field. |	Create Opportunity, Publish, Uncancel
+400|Award Date |	New contract award date provided is in the past. |	New contract award date provided is in the past. | Unarchive
+400|Award Date |	New contract award date is not provided |	New contract award date is not provided | Unarchive
 400|Award Date |	Contract Award Date provided is in an invalid format. |	Date is not in specified format |	Create Opportunity, Publish, Uncancel, Unarchive
 400|Award Date |	Contract Award Date provided should have 4 digit year. | Contract Award Date provided should have 4 digit year. |	Create Opportunity, Publish, Uncancel, Unarchive
 400|Award Date |	Award date provided is in the past. |	Award Date must be current or future date. |	Create Opportunity, Publish, Uncancel, Unarchive
@@ -3821,7 +3845,10 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Response Date |	Response Date set would result in inactive date being in the past. |	Response Date provided is within 15 days |	Publish
 400|Response Date |	Auto 15 archive type is not allowed for this opportunity type. |	Auto 15 archive type is not allowed for award notice |	Publish
 400|Response Date |	Response Date cannot exceed 5 years from current date. |	Response Date cannot exceed 5 years from current date. |	Publish 
-
+400|Response Date |	New response date is required. |	Unarchive requires new response date	| UnArchive
+400|Response Date |	New response date provided is in an invalid format. |	Invalid date format	| UnArchive
+400|Response Date |	New response date provided is in the past. |	Response date is before offset date	| UnArchive
+400|Response Date |	New response date provided would place inactive date in the past. |	New response date providedis within 15 days	| UnArchive
 400|Title |	Title is required |	Title is required |	Publish
 400|UNARCHIVE |	This opportunity is not the latest published |	Only archived notices can be unarchived | UNARCHIVE
 400|resourceName | Attachment must have a name | File Name is a required field |	Create Attachment
