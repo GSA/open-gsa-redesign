@@ -1067,14 +1067,14 @@ DocumentUpload Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date|	Date|	No	|Posting Date	(Deprecated) |YYYYMMDD
-solnbr	|String	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-ntype	|String	|No|	Notice Type	| [Refer Notice Types](#notice-types) 
-uploadtype|	String|	No |	Upload Type (Deprecated)| 255 characters
-respdate	|Date	|No |Response Date|	YYYYMMDD
+date|	date|	No	|Posting Date	(Deprecated) |YYYYMMDD
+solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
+ntype	|string	|No|	Notice Type	| [Refer Notice Types](#notice-types) 
+uploadtype|	string|	No |	Upload Type (Deprecated)| 255 characters
+respdate	|date	|No |Response Date|	YYYYMMDD
 links|	DocumentLin k[]|	Yes; Either Links or Files needs to be provided|	Array Of links	|
 files	|DocumentFile []|	Yes; Either Links or Files needs to be provided|	Array of files	|
-officeid	|String|	No|	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account|	20 characters
+officeid	|string|	No|	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account|	20 characters
 
 DocumentLink Complex Type Definition:
 
