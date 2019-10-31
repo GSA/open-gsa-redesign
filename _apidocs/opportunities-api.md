@@ -3792,6 +3792,11 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Description |	Description is required |	Description is required	| Uncancel
 400|UNARCHIVE |	Opportunity is active. |	Active opportunity	| UnArchive
 400|UNARCHIVE |	Opportunity is cancelled. |	Cancelled opportunity	| UnArchive
+400| Delete |	This opportunity cannot be deleted. This opportunity is a revision. |	This opportunity cannot be deleted. This opportunity is a revision.	| Delete
+400| Delete |	Opportunity has been already deleted. |	Opportunity has been already deleted.	| Delete
+400| Delete |	This opportunity cannot be deleted. The delete request is missing `Delete option` field. |	This opportunity cannot be deleted. The delete request is missing `Delete option` field.	| Delete
+400| Delete |	This opportunity cannot be deleted. The `Delete option` provided is not supported. |	This opportunity cannot be deleted. The `Delete option` provided is not supported.	| Delete
+400| Delete |	This opportunity cannot be deleted. The `Delete option` provided is not supported for deleting original published notice. |	This opportunity cannot be deleted. The `Delete option` provided is not supported for deleting original published notice.	| Delete
 400|Opportunity Type |	The new opportunity type field is missing. |	prevent activating if opportunity type is `m`, `l` or `j` and new type opportunity isn't provided	| UnArchive
 400|Opportunity Type |	The new opportunity type field is not supported. |	prevent activating if opportunity type is not one of `m`, `l` or `j` and new type opportunity is provided	| UnArchive
 400|Opportunity Type |	The Opportunity's type provided is not supported. |	prevent activating if opportunity type is `m` and new type opportunity provided is not supported	| UnArchive
