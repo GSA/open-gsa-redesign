@@ -10,7 +10,6 @@ Per Diem Rates are the allowed reimbursement rates for hotel stays and meals for
 
 Use of this API is subject to [Terms of Service for GSA.gov's Developer Resources](https://www.gsa.gov/technology/government-it-initiatives/digital-strategy/per-diem-apis/terms-of-service-for-gsagovs-developer-resources).
 
-You can download the OpenAPI Specification File <a href="https://open.gsa.gov/api/perdiem/perdiem-api.swagger.yml">from here (perdiem-api.swagger.yml)</a>
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
@@ -97,6 +96,14 @@ To begin using this API, you will need to register for an API Key. You can sign 
 The default rate limit is 1,000 hits per hour.  If you need to request a rate limit change, please email us at [ocmweb@gsa.gov](mailto:ocmweb@gsa.gov)
 
 <p><small><a href="#">Back to top</a></small></p>
+
+## OpenAPI Specification File
+
+You can view the full details of this API in the OpenAPI Specification file available here:
+<a href="v2/openapi.yaml">Open API specification file for the Sample API</a>
+
+<p><small><a href="#">Back to top</a></small></p>
+
 
 ## API Description
 
