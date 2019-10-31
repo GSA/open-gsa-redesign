@@ -489,7 +489,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No  |	Posting Date (Deprecated) |	YYYYMMDD
 zip |	string |	No |Zip Code (Deprecated) |	5 digits
-classcod |	string	 | Yes - for SOL, COMBINE, SSALE, ITB, JA, PRESOL   |	Class-Code	| Valid classification code (FAR, Section 5.207(g))
+classcod |	string	 | Yes - for SOL, COMBINE, SSALE, PRESOL   |	Class-Code	| Valid classification code (FAR, Section 5.207(g))
 naics | 	string |	Yes - for COMBINE, SOL  | 	NAICS Code |	Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid |	string	| Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 offadd |	string	| No	| Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
@@ -1271,7 +1271,7 @@ ntype	|string	|No|	Notice Type	| [Refer Notice Types](#notice-types)
 nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method|
 Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.|  32 characters
 vendor	|VendorData|	No|	Complex type not used in this method|
-reason	|string|	No|	Rejection reason not used in this method| 65535 characters
+reason	|string|	No|	Not in Use| 65535 characters
 
 Response:
 
@@ -1296,9 +1296,9 @@ Element Name	|Type	|Required|	Description | Character Limit / Restrictions
 solnbr	|string	|Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 ntype|	string|	No|	Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr|	string|	No|	Non-fbo Solicitation #.  Not supported for this method|
-Id	|string	|No	|Not used in this method| 32 characters
+Id	|string	|No	|Not in Use | 32 characters
 vendor	|VendorData|	Yes|	Complex type defined below|
-reason	|string|	No|	Rejection reason not used in this method| 65535 characters
+reason	|string|	No|	Not in Use| 65535 characters
 
 Response:
 
@@ -1363,7 +1363,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 solnbr|	string|	Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 ntype	|string	|No| Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr	|string	|No	|Non-fbo Solicitation #.  Not supported for this method|
-Id	|string	|No	|Not used in this method| 32 characters
+Id	|string	|No	|Not in Use| 32 characters
 vendor	|VendorData|	Yes|	Complex type defined below|
 reason|	string|	Yes	|Rejection Reason | 65535 characters
 
@@ -1400,9 +1400,9 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 solnbr|	string|	Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 ntype	|string	|No	| Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr|	string|	No	|Non-fbo Solicitation #.   Not supported for this method.|
-Id	|string	|No	|Not used in this method| 32 characters
+Id	|string	|No	|Not in Use| 32 characters
 vendor	|VendorData|	Yes|	Complex type defined below|
-reason	|string|	No|	Rejection reason not used in this method| 65535 characters
+reason	|string|	No|	Not in Use| 65535 characters
 
 Response:
 
@@ -4091,7 +4091,7 @@ notice_type	|	1. This field is required where applicable |	1. Opportunity type i
 zip|	NA |NA
 classcod	|1. This field is required where applicable<br><br>     2.If a wrong classification code is given, then the service throws an error | 1. Product Service Code is a required field <br><br> 2. This opportunity cannot be published. Classification Code provided did not match expected codes.
 naics		|NA |  NAICS code is required
-offadd| Not Used|	NA
+offadd| Not in Use|	NA
 officeid	|1. This field is required<br><br> 2. If an invalid officeid is given, then service throws an error<br><br> 3. If user does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br>	|1. Contracting Office is required<br><br> 2. Invalid officeid provided<br><br> 3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 subject	|	1. This field is required where appicable 	|1. title: is missing but it is required
 solnbr|	1. This field is required where applicable<br><br>  2. If submitting a notice with a duplicate solnbr, then system throws an error <br><br>3. If solnbr is in invalid format, then service throws an error<br><br>4. If solnbr & ntype combination is not matched, then service throws an error <br><br> |	1. Notice Id is required <br><br>2. Notice Id for the selected opportunity type already exists <br><br>3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br><br>4.	Opportunity not found with given solicitation number and ntype <br><br>5. Notice ID must be unique based on selected notice type
