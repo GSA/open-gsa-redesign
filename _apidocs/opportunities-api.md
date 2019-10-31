@@ -3405,9 +3405,9 @@ reason | string |  | Yes | Reason for uncanceling
 requestType | string | uncancel_request | Yes | Type of request
 description | string |  | Yes | Description for uncanceling
 newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date
-newArchiveDate | date | YYYY-MM-DD | Yes; (if newArchiveType=autocustom) | New Archive Date
+newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes; if newArchive.type=auto15 except for type = a (Award) | New Response Date
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
 newResponseTz | string |  | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3466,10 +3466,10 @@ Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 reason | string |  | Yes | Reason for unarchiving
 requestType | string | unarchive_request | Yes | Type of request
-newContractAwardDate | date | YYYY-MM-DD | Yes; for type = a (Award)| New Contract Award Date
-newArchiveDate | date | YYYY-MM-DD | Yes; (if newArchiveType=autocustom) | New Archive Date
+newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date
+newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes; for types = k, o (Combined Synopsis/Solicitation) 2) Yes; if newArchive.type=auto15 except for type = a (Award) | New Response Date
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
 newResponseTz | string |  | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3518,7 +3518,7 @@ packageAccessLevel | string | 32 characters|public, <br/>private <br/>(default p
 resourceName | string | 255 characters| | Yes if attType=file | Name of file
 fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
 link | string | 255 characters| | Yes if attType=link | Resource link  URL
-description | string |255 characters | | Yes; if attType=link | Description of the link
+description | string |255 characters | | Yes if attType=link | Description of the link
 explicitAccess | string |1 character | 0, 1 <br/>(defaults to '0' public access, if not provided) | No  |Explicit Access. For Controlled Unclassified files, specify '1'
 exportControlled | string |1 character | 0 | No  | *Captured for future JCP validation*<br> Export Controlled
 
