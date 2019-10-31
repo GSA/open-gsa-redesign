@@ -1,0 +1,140 @@
+openapi: 3.0.0
+info:
+  title: "GSA Perdiem API"
+  description: >-
+    Per Diem Rates are the allowed reimbursement rates for hotel stays and meals for federal travelers. Rates are set for each of the federal government's fiscal years (October 1st to September 30th) GSA is responsible for setting the rates in the continental United States. Many businesses and other organizations adopt these rates as well. This API provides access to the current rate information.
+  version: 2.0.0
+paths:
+  /v2/rates/city/{city}/state/{state}/year/{year}:
+    get:
+      summary: "Get perdiem rates by city/state/year"
+      parameters:
+      - name: "city"
+        in: "path"
+        description: "The city filter by"
+        required: true
+        schema:
+          type: string
+          format: string
+      - name: "state"
+        in: "path"
+        description: "The state to filter by"
+        required: true
+        schema:
+          type: string
+          format: string
+      - name: "year"
+        in: "path"
+        description: "The fical-year to filter by"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        200:
+          description: "Successful. Data will be returned in JSON format."
+        400:
+          description: "Bad request. Verify the query string parameters that were provided."
+        403:
+          description: "API key is not correct or was not provided."
+
+  /v2/rates/state/{state}/year/{year}:
+    get:
+      summary: "Get perdiem rates for all counties/cities, by state and year"
+      parameters:
+      - name: "state"
+        in: "path"
+        description: "The state to filter by"
+        required: true
+        schema:
+          type: string
+          format: string
+      - name: "year"
+        in: "path"
+        description: "The fical-year to filter by"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        200:
+          description: "Successful. Data will be returned in JSON format."
+        400:
+          description: "Bad request. Verify the query string parameters that were provided."
+        403:
+          description: "API key is not correct or was not provided."
+
+  /v2/rates/zip/{zip}/year/{year}:
+    get:
+      summary: "Get perdiem rates by ZipCode and year"
+      parameters:
+      - name: "zip"
+        in: "path"
+        description: "The ZipCode to filter by"
+        required: true
+        schema:
+          type: integer
+          format: integer
+      - name: "year"
+        in: "path"
+        description: "The fical-year to filter by"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        200:
+          description: "Successful. Data will be returned in JSON format."
+        400:
+          description: "Bad request. Verify the query string parameters that were provided."
+        403:
+          description: "API key is not correct or was not provided."
+
+  /v2/rates/conus/lodging/{year}:
+    get:
+      summary: "Lodging Rates for the Continental U.S. by Year"
+      parameters:
+      - name: "year"
+        in: "path"
+        description: "The fical-year to filter by"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        200:
+          description: "Successful. Data will be returned in JSON format."
+        400:
+          description: "Bad request. Verify the query string parameters that were provided."
+        403:
+          description: "API key is not correct or was not provided."
+
+
+  /v2/rates/conus/zipcodes/{year}:
+    get:
+      summary: "Mapping of Destination-IDs to ZipCode and State locations"
+      parameters:
+      - name: "year"
+        in: "path"
+        description: "The fical-year to filter by"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        200:
+          description: "Successful. Data will be returned in JSON format."
+        400:
+          description: "Bad request. Verify the query string parameters that were provided."
+        403:
+          description: "API key is not correct or was not provided."
+servers:
+  - url: 'https://api.gsa.gov/travel/perdiem'
+components:
+  securitySchemes:
+    ApiKeyAuth:        # arbitrary name for the security scheme
+      type: apiKey
+      in: header       # can be "header", "query" or "cookie"
+      name: X-API-KEY  # name of the header, query parameter or cookie
+security:
+  - ApiKeyAuth: []  
