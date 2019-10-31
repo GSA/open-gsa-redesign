@@ -185,7 +185,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date |	date |	No |	Posting Date (Deprecated) |	YYYYMMDD
 zip |	string |	No |	Zip Code (Deprecated) |	5 digits
-classcod |	string |	No |	Class-Code |	Valid classification code (FAR, Section 5.207(g)) 
+classcod |	string |	No |	Classification Code |	Valid classification code (FAR, Section 5.207(g)) 
 naics |	string |	No |	NAICS Code |	Valid NAICS Code <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 offadd |	string |	No |	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
 officeid |	string |	Yes |	Office ID of the office where an opportunity is being submitted |	20 characters
@@ -261,7 +261,7 @@ DeleteNoticeOrDocumentPackage Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr |	string |	Yes; Either Solicitation # or Award # is required only for Award|	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
-ntype |	string |	No; Yes if there are multiple notices with same Solicitation # | Notice Type	| [Refer Notice Types](#notice-types) 
+ntype |	string |	No; Yes if there are multiple notices with same Solicitation # | [Refer Notice Types](#notice-types)	| 
 awdnbr |  string | Yes; Either Solicitation # or Award # is required ony for Award| Award # |	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 deletetype |	string |	No |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachments/links. Defaults to “notice” if not provided
 deletemethod |	string | No | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
@@ -288,7 +288,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date |	date |	No |	Posting Date (Deprecated)| YYYYMMDD
 solnbr | string |	Yes |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
-ntype |	string | No |	Notice Type	| [Refer Notice Types](#notice-types) 
+ntype |	string | No |	[Refer Notice Types](#notice-types)	| 
 archdate | date |	No | Deprecated. Notice will archive immediately | YYYYMMDD
 officeid | string |	No |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 
@@ -314,7 +314,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No | Posting Date (Deprecated) |	YYYYMMDD
 offadd | string |	No | Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
-officeid | String | No |	OfficeID (Not in Use)|	20 characters
+officeid | String | No |	Office ID (Not in Use)|	20 characters
 subject |	string | No |	Subject |	256 characters
 solnbr |string | Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 ntype | string | No | [Refer Notice Types](#notice-types) 	| 
@@ -347,7 +347,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No | Posting Date (Deprecated) |	YYYYMMDD
 zip |	string | No |	Zip Code (Deprecated) | 5 digits
-classcod | string |	Yes |	Class-Code | Valid classification code (FAR, Section 5.207(g))
+classcod | string |	Yes |	Classification Code | Valid classification code (FAR, Section 5.207(g))
 naics |	string | No |	NAICS Code | Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid | string |	Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account | 20 characters
 offadd | string |	No | Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
@@ -357,8 +357,8 @@ respdate | date |	No - either respdate or archdate is required |	Response Date |
 archdate | date |	No - either respdate or archdate is required |	Archive Date | YYYYMMDD
 contact |	string | Yes |	Contact Info | 255 characters
 desc |string |Yes |	Description | 65535 characters
-link | GovURL – complex type | No |	Government Link has URL & description |	255 characters
-email |	GovEmail – complex type |	Yes | Government Email | 255 characters
+link | GovURL – complex type | No |	Government Link has URL & description |	
+email |	GovEmail – complex type |	Yes | Government Email |  
 links | DocumentLink[] | No |	Array of links |
 files |	DocumentFile[] | No |	Array of files |
 setaside | string |	No | [Refer Set-Aside Values](#set-aside-values) | 
@@ -418,7 +418,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No | Posting Date (Deprecated) |	YYYYMMDD
 zip |	string | No |	Zip Code (Deprecated) | 5 digits
-classcod | string |	Yes |	Class-Code | Valid classification code (FAR, Section 5.207(g))
+classcod | string |	Yes |	Classification Code | Valid classification code (FAR, Section 5.207(g))
 naics | string | Yes | NAICS Code	| Valid NAICS Code <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid | string | Yes | Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account | 20 characters
 offadd | string | No |Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	| 65535 characters
@@ -428,8 +428,8 @@ respdate | date |	Yes | Response Date | YYYYMMDD
 archdate | date |	No | Archive Date | YYYYMMDD
 contact | string |Yes | Contact Info | 255 characters
 desc | string |	Yes |	Description |	65535 characters
-link | GovURL – complex type | No |	Government Link	| 255 characters
-email |	GovEmail – complex type |	Yes | Government Email | 255 characters
+link | GovURL – complex type | No |	Government Link	| 
+email |	GovEmail – complex type |	Yes | Government Email | 
 links |	DocumentLink[] | No |	Array Of links |
 files |	DocumentFile[] | No |	Array of files |
 setaside | string |	No | [Refer Set-Aside Values](#set-aside-values) | 
@@ -471,7 +471,7 @@ export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP 
 
 ### Modification/Amendment <br> (submitMod)
 
-This method is used to submit a Modification/Amendment to any base notice.
+This method is used to submit a Modification/Amendment to the following notice types: PRESOL, COMBINE, SRCSGT, SSALE, SNOTE, SOL.
 
 Input Parameter |	Type |	Description
 ------- | ------ | -------
@@ -489,7 +489,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No  |	Posting Date (Deprecated) |	YYYYMMDD
 zip |	string |	No |Zip Code (Deprecated) |	5 digits
-classcod |	string	 | Yes - for SOL, COMBINE, SSALE, PRESOL   |	Class-Code	| Valid classification code (FAR, Section 5.207(g))
+classcod |	string	 | Yes - for SOL, COMBINE, SSALE, PRESOL   |	Classification Code	| Valid classification code (FAR, Section 5.207(g))
 naics | 	string |	Yes - for COMBINE, SOL  | 	NAICS Code |	Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid |	string	| Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 offadd |	string	| No	| Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
@@ -497,11 +497,11 @@ subject	| string	| Yes |	Subject |	256 characters
 solnbr | string |	Yes | 	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 ntype |	string |	Yes |	 Notice Type |	Valid values: PRESOL, COMBINE, SRCSGT, SSALE, SNOTE, SOL
 respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL, SNOTE, SSALE	|Response Date	|YYYYMMDD
-archdate  |	date|	No- Either respdate or archdate required for SRCSGT, PRESOL, SNOTE, SSALE|	Archive Date|	YYYYMMDD
+archdate  |	date|	No - Either respdate or archdate required for SRCSGT, PRESOL, SNOTE, SSALE|	Archive Date|	YYYYMMDD
 contact |	string |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, SOL |	Contact Info |	255 characters
 desc |	string |	Yes - for PRESOL, COMBINE, SRCSGT, SSALE, SOL, SNOTE	| Description |	65535 characters
-link	| GovURL – complex type |	No |	Government Link |	255 characters
-email |	GovEmail – complex type |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, SOL |	Government Email |	255 characters
+link	| GovURL – complex type |	No |	Government Link |	
+email |	GovEmail – complex type |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, SOL |	Government Email |	
 links |	DocumentLink[] |	No |	Array Of links |
 files |	DocumentFile[] |	No |	Array of files |
 setaside |	string |	No |	[Refer Set-Aside Values](#set-aside-values) |	
@@ -561,7 +561,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | Date	| No |	Posting Date (Deprecated) |	YYYYMMDD
 zip |	String |	No	| Zip Code (Deprecated) |	5 digits
-classcod	| String |	Yes |	Class-Code |	Valid classification code
+classcod	| String |	Yes |	Classification Code |	Valid classification code
 naics	| String |	No	| NAICS Code	| Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 offadd |	String	| No |	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	|65535 characters
 officeid |	String |	Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
@@ -635,7 +635,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date |	date |	No |	Posting Date (Deprecated)|	YYYYMMDD
 zip	 | string |	No |	Zip Code (Deprecated) |	5 digits
-classcod |	string |	No |	Class-Code |	Valid classification code (FAR, Section 5.207(g))
+classcod |	string |	No |	Classification Code |	Valid classification code (FAR, Section 5.207(g))
 naics	| string |	No |	NAICS Code |	Valid NAICS Code<br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid |	string |	Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account	| 20 characters
 offadd	| string	 | No |	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
@@ -645,8 +645,8 @@ respdate |	date |	No - either respdate or archdate is required |	Response Date |
 archdate |	date |	No - either respdate or archdate is required |	Archive Date	| YYYYMMDD
 contact	| string	| Yes |	Contact Info	| 255 characters
 desc | string |	Yes |	Description |	65535 characters
-link |	GovURL – complex type |	No |	Government Link	| 255 characters
-email	| GovEmail – complex type |	Yes |	Government Email	| 255 characters
+link |	GovURL – complex type |	No |	Government Link	| 
+email	| GovEmail – complex type |	Yes |	Government Email	| 
 links |	DocumentLink[] |	No |	Array Of links	|
 files |	DocumentFile[] |	No |	Array of files |
 setaside	| string |	No |	[Refer Set-Aside Values](#set-aside-values) |	
@@ -710,7 +710,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date	| Date |	No	| Posting Date (Deprecated) |	YYYYMMDD
 zip |	String |	No	 | Zip Code (Deprecated)|	5 digits
-classcod |	String	| No	| Class-Code | 	Valid classification code (FAR, Section 5.207(g))
+classcod |	String	| No	| Classification Code | 	Valid classification code (FAR, Section 5.207(g))
 naics |	String |	No	| NAICS Code |	Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid	| String |	Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account	 | 20 characters
 offadd |	String |	No |	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	| 65535 characters
@@ -719,8 +719,8 @@ solnbr	| String |	No |	Solicitation # |	128 characters from the set: a-z A-Z 0-9
 archdate |	Date |	Yes |	Archive Date |	YYYYMMDD
 contact |	String |	No	| Contact Info |	255 characters
 desc |	String |	Yes |	Description |	65535 characters
-link	| GovURL – complex type	| No |	Government Link |	255 characters
-email |	GovEmail – complex type |	Yes if contact is provided |	Government Email	| 255 characters
+link	| GovURL – complex type	| No |	Government Link |	
+email |	GovEmail – complex type |	Yes if contact provided |	Government Email	| 
 links |	DocumentLink[] 	| No |	Array Of links |
 files	| DocumentFile[]	 | No	| Array of files	 |
 recovery_act |	boolean |	No |	Recovery Act	| True or False (Default = False)
@@ -776,7 +776,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date |	date|	No|	Posting Date (Deprecated|	YYYYMMDD
 zip|	string|	No|	Zip Code (Deprecated) |	5 digits
-classcod|	string|	Yes	|Class-Code|	Valid classification code (FAR, Section 5.207(g))
+classcod|	string|	Yes	|Classification Code|	Valid classification code (FAR, Section 5.207(g))
 naics|	string|	No|	NAICS Code|	Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid	|string	|Yes|	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 offadd|	string|	No	|Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	|65535 characters
@@ -785,8 +785,8 @@ solnbr|	string	|Yes	|Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_
 archdate|	date|	Yes|	Archive Date|	YYYYMMDD
 contact|	string|	Yes|	Contact Info|	255 characters
 desc|	string	|Yes|	Description	|65535 characters
-link	|GovURL – complex type|	No|	Government Link	|255 characters
-email	|GovEmail – complex type	|Yes|	Government Email|	255 characters
+link	|GovURL – complex type|	No|	Government Link	|
+email	|GovEmail – complex type	|Yes|	Government Email|	
 links|	DocumentLink[]|	No	|Array Of links	|
 files	|DocumentFile[]|	No	|Array of files	|
 recovery_act|	boolean	|No	|Recovery Act	|True or False (Default = False)
@@ -842,7 +842,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date | date |	No | Posting Date (Deprecated)|	YYYYMMDD
 zip |	string | No |	Zip Code (Deprecated) | 5 digits
-classcod | string |	Yes |	Class-Code | Valid classification code (FAR, Section 5.207(g))
+classcod | string |	Yes |	Classification Code | Valid classification code (FAR, Section 5.207(g))
 naics | string | Yes | NAICS Code	| Valid NAICS Code <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid | string | Yes | Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account | 20 characters
 offadd | string | No | Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	| 65535 characters
@@ -852,8 +852,8 @@ respdate | date |	Yes  | Response Date | YYYYMMDD
 archdate | date |	No  | Archive Date | YYYYMMDD
 contact | string |Yes | Contact Info | 255 characters
 desc | string |	Yes |	Description |	65535 characters
-link | GovURL – complex type | No |	Government Link	| 255 characters
-email |	GovEmail – complex type |	Yes | Government Email | 255 characters
+link | GovURL – complex type | No |	Government Link	| 
+email |	GovEmail – complex type |	Yes | Government Email | 
 links |	DocumentLink[] | No |	Array Of links |
 files |	DocumentFile[] | No |	Array of files |
 setaside | string |	No | [Refer Set-Aside Values](#set-aside-values) | 
@@ -913,7 +913,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date	|Date	|No	|Posting Date (Deprecated)	|YYYYMMDD
 zip	|String|	No|	Zip Code (Deprecated)|	5 digits
-classcod|	String|	Yes|	Class-Code|	Valid classification code (FAR, Section 5.207(g))
+classcod|	String|	Yes|	Classification Code|	Valid classification code (FAR, Section 5.207(g))
 naics|	String|	No|	NAICS Code|	Valid NAICS Code <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid|	String|	Yes|	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account|	20 characters
 offadd|	String	|No|	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy|	65535 characters
@@ -988,7 +988,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 date|	date|	No	|Posting Date (Deprecated)|	YYYYMMDD
 notice_type	|string	|Yes|	 [Refer Notice Types](#notice-types)	|
 zip	|string	|No	|Zip Code (Deprecated)|	5 digits
-classcod|	string|	Yes - for SOL, COMBINE, SSALE, ITB, JA, PRESOL  |	Class-Code	|Valid classification code (FAR, Section 5.207(g))
+classcod|	string|	Yes - for SOL, COMBINE, SSALE, ITB, JA, PRESOL  |	Classification Code	|Valid classification code (FAR, Section 5.207(g))
 naics	|string	|Yes - for COMBINE, SOL	|NAICS Code|	Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid|	String|	Yes|	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account	|20 characters
 offadd	|string|	No|	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	|65535 characters
@@ -1008,7 +1008,7 @@ awardee_duns|	string	|Yes - for AWARD	|Awardee DUNS	|9 digits with optional plus
 contact|	string|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL|	Contact Info|	255 characters
 desc	|string|	Yes - for PRESOL, COMBINE, SRCSGT, SSALE, ITB, SOL, SNOTE|	Main Description|	65535 characters
 link|	GovernmentURL|	No|	Government Link	|255 characters
-email|	GovernmentEmail|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL, SNOTE (SNOTE only required if contact is provided)|	Government Email	|255 characters
+email|	GovernmentEmail|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL, SNOTE (Required only for SNOTE if contact is provided)|	Government Email	|255 characters
 links	|DocumentLink []|	No	|Array Of links	|
 files	|DocumentFile[]|	No|	Array of files	|
 setaside|	string|	No|	[Refer Set-Aside Values](#set-aside-values) |	
@@ -1069,7 +1069,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date|	date|	No	|Posting Date	(Deprecated) |YYYYMMDD
 solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-ntype	|string	|No|	Notice Type	| [Refer Notice Types](#notice-types) 
+ntype	|string	|No|	[Refer Notice Types](#notice-types)	|  
 uploadtype|	string|	No |	Upload Type (Deprecated)| 255 characters
 respdate	|date	|No |Response Date|	YYYYMMDD
 links|	DocumentLin k[]|	Yes; Either Links or Files needs to be provided|	Array Of links	|
@@ -1112,50 +1112,11 @@ UnarchiveNotice Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No	| Notice Type	| [Refer Notice Types](#notice-types) 
+ntype	|string	|No	| [Refer Notice Types](#notice-types)	| 
 awdnbr	|string|	No|	Award #|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 archdate	|date|	Yes|	New Archive Date|	YYYYMMDD
 officeid|	String|	No|	Office ID (Not in Use)
 
-### Secure Document Package <br> (attachSecureDocumentPackagesToNotice)
-
-Service is now deprecated. 
-
-### Non-FBO Solicitation <br> (createNonFBOSolicitation)
-
-Service is now deprecated. 
-
-### Secure Document Packages <br> (attachSecureDocumentPackagesToNonFBOSolicitation)
-
-Service is now deprecated. 
-
-### Remove Secure Document Package <br> (removeSecureDocumentPackagesFromNonFBOSolicitation)
-
-Service is now deprecated. 
-
-### Non-FBO Solicitation Release <br> (releaseNonFBOSolicitation)
-
-Service is now deprecated. 
-
-### Un-Release-Non-FBO-Solicitation <br> (unreleaseNonFBOSolicitation)
-
-Service is now deprecated. 
-
-### Secure Technical Document Package <br> (createSecureDocumentPackage)
-
-Service is now deprecated. 
-
-### Add Files to Secure Document Package <br> (addFilesToSecureDocumentPackage)
-
-Service is now deprecated. 
-
-### Delete Files from Secure Document Package <br> (deleteFilesFromSecureDocumentPackage)
-
-Service is now deprecated. 
-
-### Delete Secure Document Package <br> (deleteSecureDocumentPackage)
-
-Service is now deprecated. 
 
 ## Methods Available <br> to All Office Location Users
 
@@ -1178,7 +1139,7 @@ IVLListRequest Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr|	string|	Yes|	Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No	| Notice Type	| [Refer Notice Types](#notice-types) 
+ntype	|string	|No	| [Refer Notice Types](#notice-types)	|
 
 IVLListResponse Complex Type Definition:
 
@@ -1223,7 +1184,7 @@ AuthorizedPartyListRequest Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr|	string|	Yes	|Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype|	string|	No|	Notice Type	| [Refer Notice Types](#notice-types) 
+ntype|	string|	No|	[Refer Notice Types](#notice-types)	| 
 nonfbo_solbr|	string|	No|	Non-fbo Solicitation #. Not supported for this method |
 status| string	|No	|Valid Options: approved, pending, rejected, “empty value”. If empty, all status will be returned <br> <br> Note, use “pending” to pull the pending explicit access requests. |
 
@@ -1267,11 +1228,11 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr|	string	|Yes|	Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No|	Notice Type	| [Refer Notice Types](#notice-types) 
+ntype	|string	|No|	[Refer Notice Types](#notice-types)	| 
 nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method|
-Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.|  32 characters
+id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.|  32 characters
 vendor	|VendorData|	No|	Complex type not used in this method|
-reason	|string|	No|	Not in Use| 65535 characters
+reason	|string|	No|	Rejection reason not used in this method| 65535 characters
 
 Response:
 
@@ -1294,11 +1255,11 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name	|Type	|Required|	Description | Character Limit / Restrictions
 -----|-----|-----|---- | -------
 solnbr	|string	|Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype|	string|	No|	Notice Type	| [Refer Notice Types](#notice-types) 
+ntype|	string|	No|	[Refer Notice Types](#notice-types) 
 nonfbo_solbr|	string|	No|	Non-fbo Solicitation #.  Not supported for this method|
-Id	|string	|No	|Not in Use | 32 characters
+Id	|string	|No	|Not used in this method| 32 characters
 vendor	|VendorData|	Yes|	Complex type defined below|
-reason	|string|	No|	Not in Use| 65535 characters
+reason	|string|	No|	Rejection reason not used in this method| 65535 characters
 
 Response:
 
@@ -1333,9 +1294,9 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr|	string	|Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No| Notice Type	| [Refer Notice Types](#notice-types) 
+ntype	|string	|No| [Refer Notice Types](#notice-types) 
 nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method|
-Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.| 32 characters
+id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.| 32 characters
 vendor	|VendorData|	No|	Complex type not used in this method|
 reason|	string|	Yes	|Rejection Reason | 65535 characters
 
@@ -1361,9 +1322,9 @@ ExplicitAccessRequestComplex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr|	string|	Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No| Notice Type	| [Refer Notice Types](#notice-types) 
+ntype	|string	|No| [Refer Notice Types](#notice-types) 
 nonfbo_solbr	|string	|No	|Non-fbo Solicitation #.  Not supported for this method|
-Id	|string	|No	|Not in Use| 32 characters
+Id	|string	|No	|Not used in this method| 32 characters
 vendor	|VendorData|	Yes|	Complex type defined below|
 reason|	string|	Yes	|Rejection Reason | 65535 characters
 
@@ -1398,11 +1359,11 @@ ExplicitAccessRequest Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 solnbr|	string|	Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
-ntype	|string	|No	| Notice Type	| [Refer Notice Types](#notice-types) 
+ntype	|string	|No	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr|	string|	No	|Non-fbo Solicitation #.   Not supported for this method.|
-Id	|string	|No	|Not in Use| 32 characters
+Id	|string	|No	|Not used in this method| 32 characters
 vendor	|VendorData|	Yes|	Complex type defined below|
-reason	|string|	No|	Not in Use| 65535 characters
+reason	|string|	No|	Rejection reason not used in this method| 65535 characters
 
 Response:
 
@@ -1437,7 +1398,7 @@ NoticeListRequest Complex Type Definition:
 
 Element Name|	Type|	Required|	Description | Character Limit / Restrictions
 -----|-----|-----|-----|-----
-notice_type	|string|	No (at least 1 field is required)|Notice Type| [Refer Notice Types](#notice-types)
+notice_type	|string|	No (at least 1 field is required)|[Refer Notice Types](#notice-types)
 solnbr	|string	|No (at least 1 field is required)	|Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 awdnbr	|string	|No	(at least 1 field is required)|Award # | 255 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 posted_from	|date|	No (at least 1 field is required)|	Posted From Date |YYYYMMDD
@@ -1546,7 +1507,7 @@ recovery_act	|boolean	|Recovery Act
 correction|	boolean	|Correction of previous notice for the following types: Award #, Delivery Order #) – Awards, J&A’s, Intent to Bundle Requirements (DoD-Funded), Fair Opportunity / Limited Source Justification.
 changes	|NoticeData[]	|This element will only be present on the base/original posting and will contain an array of changes (for any mods/awards/etc.). Each change uses the same complex type.
 
-DocumentPackageData Complex Type Definition: Not in Use
+DocumentPackageData Complex Type Definition: **Not in Use**
 
 Element Name | Type |  Description
 ------ | ------- | -------
@@ -4091,8 +4052,8 @@ notice_type	|	1. This field is required where applicable |	1. Opportunity type i
 zip|	NA |NA
 classcod	|1. This field is required where applicable<br><br>     2.If a wrong classification code is given, then the service throws an error | 1. Product Service Code is a required field <br><br> 2. This opportunity cannot be published. Classification Code provided did not match expected codes.
 naics		|NA |  NAICS code is required
-offadd| Not in Use|	NA
-officeid	|1. This field is required<br><br> 2. If an invalid officeid is given, then service throws an error<br><br> 3. If user does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br>	|1. Contracting Office is required<br><br> 2. Invalid officeid provided<br><br> 3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
+offadd| Deprecated|	NA
+officeid	|1. This field is required where applicable<br><br> 2. If an invalid officeid is given, then service throws an error<br><br> 3. If user does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br>	|1. Contracting Office is required<br><br> 2. Invalid officeid provided<br><br> 3. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 subject	|	1. This field is required where appicable 	|1. title: is missing but it is required
 solnbr|	1. This field is required where applicable<br><br>  2. If submitting a notice with a duplicate solnbr, then system throws an error <br><br>3. If solnbr is in invalid format, then service throws an error<br><br>4. If solnbr & ntype combination is not matched, then service throws an error <br><br> |	1. Notice Id is required <br><br>2. Notice Id for the selected opportunity type already exists <br><br>3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br><br>4.	Opportunity not found with given solicitation number and ntype <br><br>5. Notice ID must be unique based on selected notice type
 ntype	 |1. When user tries to convert a notice and the solicitation number/ntype do not match the notice, then the service throws an error<br><br>  2. This field accepts only valid values listed. If invalid values are provided, then system throws an error. Also, if all the required field is given and this field is not given then service throws an error    |1. Opportunity not found with given solicitation number and ntype<br><br> 2. Invalid NTYPE value provided
@@ -4155,7 +4116,7 @@ deletemethod|	1. If an invalid deletemethod is provided, then service throws an 
 #### archiveNotice
 
 Individual business rules per field are listed across each of the fields in below table.  
-* Note: : If a user tries to archive a notice that is already archived, then the service throws an error -  Opportunity already archived
+* Note:  If a user tries to archive a notice that is already archived, then the service throws an error -  Opportunity already archived
 
 Element Name	| 	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
@@ -4168,7 +4129,7 @@ archdate|	1.	No validation is performed on this field. However, if this value is
 #### unarchiveNotice
 
 Individual business rules per field are listed across each of the fields in below table.  
-* Note: : If a user tries to unarchive a notice that is already unarchived, then the service throws an error - Opportunity is not archived
+* Note: If a user tries to unarchive a notice that is already unarchived, then the service throws an error - Opportunity is not archived
 * Note: If a user tries to unarchive an active notice, then the service throws an error - Opportunity is active
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
@@ -4204,7 +4165,7 @@ Individual business rules per field are listed across each of the fields in belo
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 notice_id	|	notice_id is required|	notice_id from getList is required
-Get_changes|		NA|	NA
+get_changes|		NA|	NA
 get_changes_from_date|		Date field should meet the expected format|	DATE field in unexpected format. Expects YYYYMMDD
 get_file_data	|NA	|NA
 
@@ -4253,7 +4214,7 @@ status|	1.	If the status value entered doesn’t match the valid values , then t
 
 Individual business rules per field are listed across each of the fields in below table.
 
-ID can be obtained through getAuthorizedPartyList   
+* Note: ID can be obtained through getAuthorizedPartyList   
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
@@ -4310,52 +4271,36 @@ nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service
 vendor|		1.	If all the elements in the Vendor Data complex definition are not provided, then the system throws an error<br><br> 2.	If no match is found in the system for the vendor data provided, then the system throws an error<br><br>3. If the Explicit Access request found for the vendor and solnum is already rejected, then the system throws an error|	1.	This method requires all fields from complex type VendorData to find a match in the system; if vendor data not fully provided this error will be thrown<br><br> 2.	No contact match on vendor data provided <br><br> 3.	Request with Request ID: #id already rejected
 reason|  1.	This is a required field. If no value is provided, then the system throws an error| 1.	A reason must be provided with an explicit access rejection
 
-#### submitFairOpps
 
-This service is now deprecated. Instead, please use submitJA to perform the operation.
 
-#### submitForeignGovernment
+### Deprecated Methods
+* submitFairOpps *(Instead use submitJA to perform the operation)*
+* submitForeignGovernment
+* setBidModuleOptions
+* getBidModuleResponses
+* createSecureDocumentPackage
+* addFilesToSecureDocumentPackage
+* deleteFilesFromSecureDocumentPackage
+* deleteSecureDocumentPackage
+* releaseSecureDocumentPackage
+* attachSecureDocumentPackagesToNotice
+* createNonFBOSolicitation
+* attachSecureDocumentPackagesToNonFBOSolicitation
+* removeSecureDocumentPackagesFromNonFBOSolicitation
+* releaseNonFBOSolicitation
+* unreleaseNonFBOSolicitation
+* attachSecureDocumentPackagesToNotice
+* createNonFBOSolicitation
+* attachSecureDocumentPackagesToNonFBOSolicitation
+* removeSecureDocumentPackagesFromNonFBOSolicitation
+* releaseNonFBOSolicitation
+* unreleaseNonFBOSolicitation
+* createSecureDocumentPackage
+* addFilesToSecureDocumentPackage
+* deleteFilesFromSecureDocumentPackage
+* deleteSecureDocumentPackage
 
-This service is now deprecated.
 
-#### setBidModuleOptions
-Service is now deprecated. 
-
-#### getBidModuleResponses
-Service is now deprecated. 
-
-#### createSecureDocumentPackage
-Service is now deprecated. 
-
-#### addFilesToSecureDocumentPackage
-Service is now deprecated. 
-
-#### deleteFilesFromSecureDocumentPackage
-Service is now deprecated. 
-
-#### deleteSecureDocumentPackage
-Service is now deprecated. 
-
-#### releaseSecureDocumentPackage
-Service is now deprecated. 
-
-#### attachSecureDocumentPackagesToNotice
-Service is now deprecated. 
-
-#### createNonFBOSolicitation
-Service is now deprecated. 
-
-#### attachSecureDocumentPackagesToNonFBOSolicitation
-Service is now deprecated. 
-
-#### removeSecureDocumentPackagesFromNonFBOSolicitation
-Service is now deprecated. 
-
-#### releaseNonFBOSolicitation
-Service is now deprecated. 
-
-#### unreleaseNonFBOSolicitation
-Service is now deprecated. 
 
 
 
@@ -4381,7 +4326,7 @@ Date | Version | Description
 8/19/2019 | v0.5 | SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated <br> User Account Section Updated
 9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions
 10/10/2019 | v0.7 | Updated the Set-Aside values with the latest codes
-10/28/2019 | v0.8| Added Notice Type and Related Notice sections for reference. Updated the character limits. Removed redundant Required and Character Limit columns from Business Rules section. Consolidated Business Rules section for all Submit methods. Updated submitMod and submitNotice methods to align with implemenation. 
+10/28/2019 | v0.8| See attached document 
 
 
 <p><small><a href="#">Back to top</a></small></p>
