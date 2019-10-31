@@ -183,7 +183,7 @@ Award Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date |	date |	No |	Posting Date |	YYYYMMDD
+date |	date |	No |	Posting Date (Deprecated) |	YYYYMMDD
 zip |	string |	No |	Zip Code (Deprecated) |	5 digits
 classcod |	string |	No |	Class-Code |	Valid classification code (FAR, Section 5.207(g)) 
 naics |	string |	No |	NAICS Code |	Valid NAICS Code <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
@@ -192,50 +192,50 @@ officeid |	string |	Yes |	Office ID of the office where an opportunity is being 
 subject |	string |	Yes |	Subject |	256 characters
 solnbr |	string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 ntype	| string |	No |	 [Refer Related Notices](#related-notices) |		
-awdnbr |String |	 Yes |	Award Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) {} 
+awdnbr | string |	 Yes |	Award Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) {} 
 awdamt |	string |	Yes |	Award Amount |	64 digits
 linenbr |	string |	No |	Line Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 awddate |	date |	Yes |	Award Date |	YYYYMMDD
 archdate |	date |	No |	Archive Date |	YYYYMMDD
-awardee |	string |	Yes |	Awardee |	255 characters
-awardee_duns |	string |	No |	Awardee DUNS |	9 digits with optional plus 4
+awardee |	string |	No; Either awardee or awardee_duns is required |	Awardee |	255 characters
+awardee_duns |	string |	No; No; Either awardee or awardee_duns is required |	Awardee DUNS |	9 digits with optional plus 4
 contact |	string |	No |	Contact Info |	255 characters
 desc |	string |	No |	Description |	65535 characters
-link |	GovURL |	No |	Government Link	|255 characters. Consist of a restricted set of characters (see URL specification - RFC 2396)
+link |	GovURL |	No |	Government Link	|
 email |	GovEmail |	No |	Government Email |	255 characters
 links |	DocumentLink[] |	No |	Array Of links |
 files |	DocumentFile[] |	No |	Array of files |
 setaside |	string |	No |	[Refer Set-Aside Values](#set-aside-values) |	
-recovery_act |	boolean |	No |	Recovery Act |	True or False
+recovery_act |	boolean |	No |	Recovery Act |	True or False (default=False)
 correction |	boolean |	No |	Correction of previous Award |	True or False <br> If correcting a previously submitted Award notice, specify True and the system will lookup the award by award number and sol number if applicable.
 
 GovURL Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url |	string |	No |	Website Address |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc |	string |	No |	Description |	255 characters
+url |	string |	Yes |	Website Address |	255 characters
+desc |	string |	Yes |	Description |	255 characters
 
 GovEmail Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-address | string |	No |	Email Address |	255 characters
+address | string |	Yes |	Email Address |	255 characters
 desc |	string |	No |	Description |	255 characters
 
 DocumentLink Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url |	string |	No |	External URL |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc |	string |	No |	Description/Title |	255 characters
+url |	string |	Yes |	External URL |	255 characters
+desc |	string |	Yes |	Description/Title |	255 characters
 
 DocumentFile Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No |	File Name |	255 characters
-filedata |	base64binary |	No |	File Data |	250 MB
+filename |	string |	Yes |	File Name |	255 characters
+filedata |	base64binary |	Yes |	File Data |	250 MB
 desc |	string |	No |	Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
@@ -260,9 +260,9 @@ DeleteNoticeOrDocumentPackage Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-solnbr |	string |	Yes; Solicitation # or Award # is required |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
-ntype |	string |	No | Notice Type	| [Refer Notice Types](#notice-types) 
-awdnbr |  string | Yes; Solicitation # or Award # is required| Award # |	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
+solnbr |	string |	Yes; Either Solicitation # or Award # is required only for Award|	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
+ntype |	string |	No; Yes if there are multiple notices with same Solicitation # | Notice Type	| [Refer Notice Types](#notice-types) 
+awdnbr |  string | Yes; Either Solicitation # or Award # is required ony for Award| Award # |	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 deletetype |	string |	No |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachments/links. Defaults to “notice” if not provided
 deletemethod |	string | No | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
 
@@ -286,10 +286,10 @@ ArchiveNotice Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date |	date |	No |	Posting Date | YYYYMMDD
+date |	date |	No |	Posting Date (Deprecated)| YYYYMMDD
 solnbr | string |	Yes |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { }
 ntype |	string | No |	Notice Type	| [Refer Notice Types](#notice-types) 
-archdate | date |	No | New Archive Date – If none provided, notice will archive immediately | YYYYMMDD
+archdate | date |	No | Deprecated. Notice will archive immediately | YYYYMMDD
 officeid | string |	No |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 
 ### Cancel Notice<br> (CancelNotice) 
@@ -312,15 +312,15 @@ CancelNotice Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date | date |	No | Posting Date |	YYYYMMDD
+date | date |	No | Posting Date (Deprecated) |	YYYYMMDD
 offadd | string |	No | Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
-officeid | String | No |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
+officeid | String | No |	OfficeID (Not in Use)|	20 characters
 subject |	string | No |	Subject |	256 characters
 solnbr |string | Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 ntype | string | No | [Refer Notice Types](#notice-types) 	| 
 awdnbr | string |	No | Award # |255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 archdate | date |	No | Archive Date | YYYYMMDD
-contact | string | Yes | Contact Info | 255 characters
+contact | string | No | Contact Info | 255 characters
 desc | string | Yes |	Cancellation Description | 65535 characters
 
 ## Contracting Officer/Contracting <br>Specialist Method Details
@@ -345,7 +345,7 @@ Presol Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date | date |	No | Posting Date |	YYYYMMDD
+date | date |	No | Posting Date (Deprecated) |	YYYYMMDD
 zip |	string | No |	Zip Code (Deprecated) | 5 digits
 classcod | string |	Yes |	Class-Code | Valid classification code (FAR, Section 5.207(g))
 naics |	string | No |	NAICS Code | Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
@@ -357,21 +357,21 @@ respdate | date |	No - either respdate or archdate is required |	Response Date |
 archdate | date |	No - either respdate or archdate is required |	Archive Date | YYYYMMDD
 contact |	string | Yes |	Contact Info | 255 characters
 desc |string |Yes |	Description | 65535 characters
-link | GovURL – complex type | No |	Government Link has URL & description |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+link | GovURL – complex type | No |	Government Link has URL & description |	255 characters
 email |	GovEmail – complex type |	Yes | Government Email | 255 characters
 links | DocumentLink[] | No |	Array of links |
 files |	DocumentFile[] | No |	Array of files |
 setaside | string |	No | [Refer Set-Aside Values](#set-aside-values) | 
-popaddress | string |	No | Place of Performace Address | 65535 characters
-popzip |string | No |	Place of Performace Zip | 5 digits
-popcountry | string |	No | Place of Performace Country | 32 characters
-recovery_act	| boolean |	No | Recovery Act | True or False
+popaddress | string |	No | Place of Performance Address | 65535 characters
+popzip |string | No |	Place of Performance Zip | 5 digits
+popcountry | string |	No | Place of Performance Country | 32 characters
+recovery_act	| boolean |	No | Recovery Act | True or False (default=False)
 
 GovURL Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	| string | No |	Website Address |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+url	| string | No |	Website Address |	255 characters
 desc | string |	No | Description |	255 characters
 
 GovEmail Complex Type Definition:
@@ -385,15 +385,15 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url | string | No |	External URL | 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc | string |	No | Description/Title | 255 characters
+url | string | Yes |	External URL | 255 characters
+desc | string |	Yes | Description/Title | 255 characters
 
 DocumentFile Complex Type Definition: 
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename | string |	No | File Name | 255 characters
-filedata | base64binary |	No | File Data | 250 MB
+filename | string |	Yes  | File Name | 255 characters
+filedata | base64binary |	Yes | File Data | 250 MB
 desc | string |	No | Description | 65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
@@ -416,33 +416,34 @@ Combined Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date | date |	No | Posting Date |	YYYYMMDD
+date | date |	No | Posting Date (Deprecated) |	YYYYMMDD
 zip |	string | No |	Zip Code (Deprecated) | 5 digits
 classcod | string |	Yes |	Class-Code | Valid classification code (FAR, Section 5.207(g))
 naics | string | Yes | NAICS Code	| Valid NAICS Code <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid | string | Yes | Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account | 20 characters
 offadd | string | No |Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	| 65535 characters
 solnbr | string |	Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
+subject | string | Yes | Subject | 256 characters
 respdate | date |	Yes | Response Date | YYYYMMDD
 archdate | date |	No | Archive Date | YYYYMMDD
 contact | string |Yes | Contact Info | 255 characters
 desc | string |	Yes |	Description |	65535 characters
-link | GovURL – complex type | No |	Government Link	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+link | GovURL – complex type | No |	Government Link	| 255 characters
 email |	GovEmail – complex type |	Yes | Government Email | 255 characters
 links |	DocumentLink[] | No |	Array Of links |
 files |	DocumentFile[] | No |	Array of files |
 setaside | string |	No | [Refer Set-Aside Values](#set-aside-values) | 
-popaddress | string |	No | Place of Performace Address | 65535 characters
-popzip | string |	No | Place of Performace Zip | 5 digits
-popcountry | string |	No | Place of Performace Country | 32 characters
-recovery_act | boolean | No |	Recovery Act | True or False
+popaddress | string |	No | Place of Performance Address | 65535 characters
+popzip | string |	No | Place of Performance Zip | 5 digits
+popcountry | string |	No | Place of Performance Country | 32 characters
+recovery_act | boolean | No |	Recovery Act | True or False (default = false)
 
 GovURL Complex Type Definition: 
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	| string | No | Website Address | 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc | string |	No |	Description |	255 characters
+url	| string | Yes | Website Address | 255 characters
+desc | string |	Yes  |	Description |	255 characters
 
 GovEmail Complex Type Definition:
 
@@ -455,15 +456,15 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	| string | No |	External URL | 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc | string |	No | Description/Title | 255 characters
+url	| string | Yes |	External URL | 255 characters
+desc | string |	Yes | Description/Title | 255 characters
 
 DocumentFile Complex Type Definition: 
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename | string | No | File Name | 255 characters
-filedata | base64binary |	No | File Data | 250 MB
+filename | string | Yes | File Name | 255 characters
+filedata | base64binary |	Yes | File Data | 250 MB
 desc | string |	No | Description | 65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
@@ -486,35 +487,35 @@ Mod Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date | date |	No  |	Posting Date |	YYYYMMDD
+date | date |	No  |	Posting Date (Deprecated) |	YYYYMMDD
 zip |	string |	No |Zip Code (Deprecated) |	5 digits
-classcod |	string	 | Yes - for SOL, COMBINE, SSALE, ITB, JA   |	Class-Code	| Valid classification code (FAR, Section 5.207(g))
+classcod |	string	 | Yes - for SOL, COMBINE, SSALE, ITB, JA, PRESOL   |	Class-Code	| Valid classification code (FAR, Section 5.207(g))
 naics | 	string |	Yes - for COMBINE, SOL  | 	NAICS Code |	Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid |	string	| Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 offadd |	string	| No	| Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
-subject	| string	| no |	Subject |	256 characters
-solnbr | string |	Yes, EXCEPT No - Only for SNOTE | 	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
+subject	| string	| Yes |	Subject |	256 characters
+solnbr | string |	Yes | 	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 ntype |	string |	Yes |	 Notice Type |	Valid values: PRESOL, COMBINE, SRCSGT, SSALE, SNOTE, SOL
-respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL	|Response Date	|YYYYMMDD
-archdate  |	date|	Yes - for SNOTE, SSALE <br><br> Either respdate or archdate required for SRCSGT, PRESOL|	Archive Date|	YYYYMMDD
-contact |	string |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL |	Contact Info |	255 characters
-desc |	string |	Yes - for PRESOL, COMBINE, SRCSGT, SSALE, ITB, SOL, SNOTE	| Description |	65535 characters
-link	| GovURL – complex type |	No |	Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-email |	GovEmail – complex type |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL, SNOTE |	Government Email |	255 characters
+respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL, SNOTE, SSALE	|Response Date	|YYYYMMDD
+archdate  |	date|	No- Either respdate or archdate required for SRCSGT, PRESOL, SNOTE, SSALE|	Archive Date|	YYYYMMDD
+contact |	string |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, SOL |	Contact Info |	255 characters
+desc |	string |	Yes - for PRESOL, COMBINE, SRCSGT, SSALE, SOL, SNOTE	| Description |	65535 characters
+link	| GovURL – complex type |	No |	Government Link |	255 characters
+email |	GovEmail – complex type |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, SOL |	Government Email |	255 characters
 links |	DocumentLink[] |	No |	Array Of links |
 files |	DocumentFile[] |	No |	Array of files |
 setaside |	string |	No |	[Refer Set-Aside Values](#set-aside-values) |	
-popaddress |	string |	No	 | Place of Performace Address |	65535 characters
-popzip	| string |	No	 | Place of Performace Zip |	5 digits
-popcountry |	string |	No	 | Place of Performace Country |	32 characters
-recovery_act |	boolean |	No |	Recovery Act |	True or False
+popaddress |	string |	No	 | Place of Performance Address |	65535 characters
+popzip	| string |	No	 | Place of Performance Zip |	5 digits
+popcountry |	string |	No	 | Place of Performance Country |	32 characters
+recovery_act |	boolean |	No |	Recovery Act |	True or False (Default = False)
 
 GovURL Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	| string	| No |	Website Address |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc |	string |	No |	Description |	255 characters
+url	| string	| Yes |	Website Address |	255 characters
+desc |	string |	Yes |	Description |	255 characters
 
 GovEmail Complex Type Definition:
 
@@ -527,15 +528,15 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url | 	string	| No |	External URL |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc |	string |	No |	Description/Title |	255 characters
+url | 	string	| Yes |	External URL |	255 characters
+desc |	string |	Yes |	Description/Title |	255 characters
 
 DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string	| No | 	File Name |	255 characters
-filedata |	base64binary |	No |	File Data	| 250 MB
+filename |	string	| Yes | 	File Name |	255 characters
+filedata |	base64binary |	Yes |	File Data	| 250 MB
 desc |	string |	No |	Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
@@ -558,7 +559,7 @@ JA Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date | Date	| No |	Posting Date |	YYYYMMDD
+date | Date	| No |	Posting Date (Deprecated) |	YYYYMMDD
 zip |	String |	No	| Zip Code (Deprecated) |	5 digits
 classcod	| String |	Yes |	Class-Code |	Valid classification code
 naics	| String |	No	| NAICS Code	| Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
@@ -570,25 +571,25 @@ ntype	| string |	No	| [Refer Related Notices](#related-notices)  |
 stauth	| String	| Yes |	J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy |	[Refer Stauth Valid Values](#stauth-valid-values)
 awdnbr |	String |	Yes |	Award Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 modnbr |	String |	No |	Mod Number |	32 characters
-awdamt |	String |	No |	Award Amount |	64 digits
+awdamt |	String |	No |	Award Amount (Not in Use) |	64 digits
 awddate |	Date |	No	| Award Date |	YYYYMMDD
 donbr	| String |	Yes |	Task/Delivery Order Number |	255 characters from the set: a-z A-Z 0-9 - _ ( )
 archdate  |	Date |	No |	Archive Date |	YYYYMMDD
 contact |	String |	Yes | 	Contact Info |	255 characters
 desc |	String |	No |	Description	| 65535 characters
-link |	GovURL |	No	| Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+link |	GovURL |	No	| Government Link |	255 characters
 links |	DocumentLink[]	| No |	Array Of links	|
 files |	DocumentFile[]	| No |	Array of files	|
 email |	GovEmail |	Yes | 	Government Email |	255 characters
-recovery_act |	boolean |	No |	Recovery Act |	True or False;
+recovery_act |	boolean |	No |	Recovery Act |	True or False (Default = False)
 correction	| boolean |	No |	Correction of previous J&A |	True or False <br> If correcting a previously submitted J&A notice, specify True and the system will lookup the j&a by award number and sol number if applicable.
 
 GovURL Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url |	string |	No |	Website Address	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc	| string	| No |	Description |	255 characters
+url |	string |	Yes |	Website Address	| 255 characters
+desc	| string	| Yes |	Description |	255 characters
 
 GovEmail Complex Type Definition:
 
@@ -601,15 +602,15 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url |	string	| No |	External URL	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc |	string |	No |	Description/Title |	255 characters
+url |	string	| Yes |	External URL	| 255 characters
+desc |	string |	Yes |	Description/Title |	255 characters
 
 DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string	| No |	File Name	| 255 characters
-filedata |	base64binary |	No |	File Data	| 250 MB
+filename |	string	| Yes  |	File Name	| 255 characters
+filedata |	base64binary |	Yes |	File Data	| 250 MB
 desc	| string |	No |	Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
@@ -632,7 +633,7 @@ SourcesSought Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date |	date |	No |	Posting Date |	YYYYMMDD
+date |	date |	No |	Posting Date (Deprecated)|	YYYYMMDD
 zip	 | string |	No |	Zip Code (Deprecated) |	5 digits
 classcod |	string |	No |	Class-Code |	Valid classification code (FAR, Section 5.207(g))
 naics	| string |	No |	NAICS Code |	Valid NAICS Code<br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
@@ -644,22 +645,22 @@ respdate |	date |	No - either respdate or archdate is required |	Response Date |
 archdate |	date |	No - either respdate or archdate is required |	Archive Date	| YYYYMMDD
 contact	| string	| Yes |	Contact Info	| 255 characters
 desc | string |	Yes |	Description |	65535 characters
-link |	GovURL – complex type |	No |	Government Link	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-email	| GovEmail – complex type |	Yes |	Government Email	| 128 characters
+link |	GovURL – complex type |	No |	Government Link	| 255 characters
+email	| GovEmail – complex type |	Yes |	Government Email	| 255 characters
 links |	DocumentLink[] |	No |	Array Of links	|
 files |	DocumentFile[] |	No |	Array of files |
 setaside	| string |	No |	[Refer Set-Aside Values](#set-aside-values) |	
-popaddress |	string |	No |	Place of Performace Address |	65535 characters
-popzip |	string	| No |	Place of Performace Zip	| 5 digits
-popcountry |	string |	No |	Place of Performace Country |	32 characters
-recovery_act |	boolean |	No	 | Recovery Act |	True or False
+popaddress |	string |	No |	Place of Performance Address |	65535 characters
+popzip |	string	| No |	Place of Performance Zip	| 5 digits
+popcountry |	string |	No |	Place of Performance Country |	32 characters
+recovery_act |	boolean |	No	 | Recovery Act |	True or False (Default = False_)
 
 GovURL Complex Type Definition: 
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	 | string	| No |	Website Address |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc |	string |	No |	Description |	255 characters
+url	 | string	| Yes |	Website Address |	255 characters
+desc |	string |	Yes|	Description |	255 characters
 
 GovEmail Complex Type Definition:
 
@@ -672,15 +673,15 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	| string	| No |	External URL	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc |	string	| No	| Description/Title |	255 characters
+url	| string	| Yes |	External URL	| 255 characters
+desc |	string	| Yes	| Description/Title |	255 characters
 
 DocumentFile Complex Type Definition: 
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No |	File Name |	255 characters
-filedata |	base64binary |	No	| File Data |	250 MB
+filename |	string |	Yes |	File Name |	255 characters
+filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
@@ -707,50 +708,50 @@ SpecialNotice Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date	| Date |	No	| Posting Date |	YYYYMMDD
+date	| Date |	No	| Posting Date (Deprecated) |	YYYYMMDD
 zip |	String |	No	 | Zip Code (Deprecated)|	5 digits
 classcod |	String	| No	| Class-Code | 	Valid classification code (FAR, Section 5.207(g))
 naics |	String |	No	| NAICS Code |	Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid	| String |	Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account	 | 20 characters
 offadd |	String |	No |	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	| 65535 characters
 subject | 	String |	Yes |	Subject |	256 characters
-solnbr	| String |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
+solnbr	| String |	No |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 archdate |	Date |	Yes |	Archive Date |	YYYYMMDD
 contact |	String |	No	| Contact Info |	255 characters
 desc |	String |	Yes |	Description |	65535 characters
-link	| GovURL – complex type	| No |	Government Link |	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-email |	GovEmail – complex type |	Yes |	Government Email	| 255 characters
+link	| GovURL – complex type	| No |	Government Link |	255 characters
+email |	GovEmail – complex type |	Yes if contact is provided |	Government Email	| 255 characters
 links |	DocumentLink[] 	| No |	Array Of links |
 files	| DocumentFile[]	 | No	| Array of files	 |
-recovery_act |	boolean |	No |	Recovery Act	| True or False
+recovery_act |	boolean |	No |	Recovery Act	| True or False (Default = False)
 
 GovURL Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	|string	|No|	Website Address|	255 characters, consist of a restricted set of characters (see URL specification - RFC2396)
-desc|	string	|No|	Description|	255 characters
+url	|string	|Yes|	Website Address|	255 characters
+desc|	string	|Yes|	Description|	255 characters
 
 GovEmail Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-address	|string|	Yes|	Email Address	|255 characters
+address	|string|	Yes |	Email Address	|255 characters
 desc	|string	|No	|Description	|255 characters
 
 DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	|string|	No	|External URL	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc	|string	|No	|Description/Title	|255 characters
+url	|string|	Yes	|External URL	|255 characters
+desc	|string	|Yes	|Description/Title	|255 characters
 
 DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No  |	File Name |	255 characters
-filedata |	base64binary |	No 	| File Data |	250 MB
+filename |	string |Yes |	File Name |	255 characters
+filedata |	base64binary |	Yes 	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
@@ -773,7 +774,7 @@ SaleOfSurplus Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date |	date|	No|	Posting Date|	YYYYMMDD
+date |	date|	No|	Posting Date (Deprecated|	YYYYMMDD
 zip|	string|	No|	Zip Code (Deprecated) |	5 digits
 classcod|	string|	Yes	|Class-Code|	Valid classification code (FAR, Section 5.207(g))
 naics|	string|	No|	NAICS Code|	Valid NAICS Code  <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
@@ -784,18 +785,18 @@ solnbr|	string	|Yes	|Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_
 archdate|	date|	Yes|	Archive Date|	YYYYMMDD
 contact|	string|	Yes|	Contact Info|	255 characters
 desc|	string	|Yes|	Description	|65535 characters
-link	|GovURL – complex type|	No|	Government Link	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-email	|GovEmail – complex type	|Yes|	Government Email|	128 characters
+link	|GovURL – complex type|	No|	Government Link	|255 characters
+email	|GovEmail – complex type	|Yes|	Government Email|	255 characters
 links|	DocumentLink[]|	No	|Array Of links	|
 files	|DocumentFile[]|	No	|Array of files	|
-recovery_act|	boolean	|No	|Recovery Act	|True or False
+recovery_act|	boolean	|No	|Recovery Act	|True or False (Default = False)
 
 GovURL Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	|string	|No	|Website Address	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc	|string	|No	|Description	|255 characters
+url	|string	|Yes	|Website Address	|255 characters
+desc	|string	|Yes	|Description	|255 characters
 
 GovEmail Complex Type Definition:
 
@@ -808,15 +809,15 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url|	string|	No|	External URL	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc	|string|	No|	Description/Title	|255 characters
+url|	string|	Yes|	External URL	|255 characters
+desc	|string|	Yes|	Description/Title	|255 characters
 
 DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No |	File Name |	255 characters
-filedata |	base64binary |	No	| File Data |	250 MB
+filename |	string |	Yes |	File Name |	255 characters
+filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
@@ -839,7 +840,7 @@ Solicitation Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date | date |	No | Posting Date |	YYYYMMDD
+date | date |	No | Posting Date (Deprecated)|	YYYYMMDD
 zip |	string | No |	Zip Code (Deprecated) | 5 digits
 classcod | string |	Yes |	Class-Code | Valid classification code (FAR, Section 5.207(g))
 naics | string | Yes | NAICS Code	| Valid NAICS Code <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
@@ -851,22 +852,22 @@ respdate | date |	Yes  | Response Date | YYYYMMDD
 archdate | date |	No  | Archive Date | YYYYMMDD
 contact | string |Yes | Contact Info | 255 characters
 desc | string |	Yes |	Description |	65535 characters
-link | GovURL – complex type | No |	Government Link	| 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+link | GovURL – complex type | No |	Government Link	| 255 characters
 email |	GovEmail – complex type |	Yes | Government Email | 255 characters
 links |	DocumentLink[] | No |	Array Of links |
 files |	DocumentFile[] | No |	Array of files |
 setaside | string |	No | [Refer Set-Aside Values](#set-aside-values) | 
-popaddress | string |	No | Place of Performace Address | 65535 characters
-popzip | string |	No | Place of Performace Zip | 5 digits
-popcountry | string |	No | Place of Performace Country | 32 characters
-recovery_act | boolean | No |	Recovery Act | True or False
+popaddress | string |	No | Place of Performance Address | 65535 characters
+popzip | string |	No | Place of Performance Zip | 5 digits
+popcountry | string |	No | Place of Performance Country | 32 characters
+recovery_act | boolean | No |	Recovery Act | True or False (Default = False)
 
 GovURL Complex Type Definition: 
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	| string | No | Website Address | 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc | string |	No |	Description |	255 characters
+url	| string | Yes | Website Address | 255 characters
+desc | string |	Yes |	Description |	255 characters
 
 GovEmail Complex Type Definition:
 
@@ -879,15 +880,15 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	| string | No |	External URL | 255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc | string |	No | Description/Title | 255 characters
+url	| string | Yes |	External URL | 255 characters
+desc | string |	Yes | Description/Title | 255 characters
 
 DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename | string | No | File Name | 255 characters
-filedata | base64binary |	No | File Data | 250 MB
+filename | string | Yes | File Name | 255 characters
+filedata | base64binary |	Yes | File Data | 250 MB
 desc | string |	No | Description | 65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
@@ -910,7 +911,7 @@ ITB Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date	|Date	|No	|Posting Date	|YYYYMMDD
+date	|Date	|No	|Posting Date (Deprecated)	|YYYYMMDD
 zip	|String|	No|	Zip Code (Deprecated)|	5 digits
 classcod|	String|	Yes|	Class-Code|	Valid classification code (FAR, Section 5.207(g))
 naics|	String|	No|	NAICS Code|	Valid NAICS Code <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
@@ -918,25 +919,25 @@ officeid|	String|	Yes|	Office ID of the office where an opportunity is being sub
 offadd|	String	|No|	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy|	65535 characters
 subject|	String|	Yes|	Subject	|256 characters
 solnbr	|String	|Yes|	Solicitation #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) {}
-ntype	|string	|No|	 [Refer Related Notices](#related-notices)
+ntype	|String	|No|	 [Refer Related Notices](#related-notices)
 awdnbr|	String	|Yes	|Award Number|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 donbr|	String|	No	|Task/Delivery Order Number	|255 characters from the set: a-z A-Z 0-9 - _ ( )
 archdate 	|Date	|No	|Archive Date|	YYYYMMDD
 contact|	String|	Yes|	Contact Info	|255 characters; Default value = Primary, Other types are: Secondary, Owner
 desc	|String	|Yes	|Description|	65535 characters
-link|	GovURL|	No|	Government Link	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
+link|	GovURL|	No|	Government Link	|255 characters
 links	|DocumentLink[]|	No|	Array Of links	|
 files|	DocumentFile[]	|No	|Array of files	|
 email	|GovEmail|	Yes|	Government Email|	255 characters
-recovery_act|	boolean	|No	|Recovery Act	|True or False
+recovery_act|	boolean	|No	|Recovery Act	|True or False (Default = False)
 correction	|boolean	|No	|Correction of previous ITB|	True or False <br><br>If correcting a previously submitted ITB notice, specify True and the system will lookup the itb by award number, delivery number and sol number if applicable.
 
 GovURL Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	|string	|No	|Website Address	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc	|string|	No - Yes, if URL provided|	Description|	255 characters
+url	|string	|Yes	|Website Address	|255 characters
+desc	|string|	Yes|	Description|	255 characters
 
 GovEmail Complex Type Definition:
 
@@ -949,15 +950,15 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url|	string|	No	|External URL|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc|	string|	No|	Description/Title	|255 characters
+url|	string|	Yes	|External URL|	255 characters
+desc|	string|	Yes|	Description/Title	|255 characters
 
 DocumentFile Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No |	File Name |	255 characters
-filedata |	base64binary |	No	| File Data |	250 MB
+filename |	string |	Yes |	File Name |	255 characters
+filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
@@ -984,7 +985,7 @@ Complete notice Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-date|	date|	No	|Posting Date|	YYYYMMDD
+date|	date|	No	|Posting Date (Deprecated)|	YYYYMMDD
 notice_type	|string	|Yes|	 [Refer Notice Types](#notice-types)	|
 zip	|string	|No	|Zip Code (Deprecated)|	5 digits
 classcod|	string|	Yes - for SOL, COMBINE, SSALE, ITB, JA, PRESOL  |	Class-Code	|Valid classification code (FAR, Section 5.207(g))
@@ -1001,30 +1002,30 @@ linenbr|	string	|No|	Award Line Item Number	|255 characters from the set: a-z A-
 awddate	|date|	Yes - for AWARD|	Award Date	|YYYYMMDD
 stauth	|string	|Yes - for JA 	|J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy| [Refer Stauth Valid Values](#stauth-valid-values)
 respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL, SSALE	|Response Date	|YYYYMMDD
-archdate  |	date| Either respdate or archdate required for SRCSGT, PRESOL, SSALE, SNOTE|	Archive Date|	YYYYMMDD
+archdate  |	date| No; Either respdate or archdate required for SRCSGT, PRESOL, SSALE, SNOTE|	Archive Date|	YYYYMMDD
 awardee|	string|	Yes – for AWARD |	Awardee	|65535 characters
-awardee_duns|	string	|No	|Awardee DUNS	|9 digits with optional plus 4
+awardee_duns|	string	|Yes - for AWARD	|Awardee DUNS	|9 digits with optional plus 4
 contact|	string|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL|	Contact Info|	255 characters
 desc	|string|	Yes - for PRESOL, COMBINE, SRCSGT, SSALE, ITB, SOL, SNOTE|	Main Description|	65535 characters
-link|	GovernmentURL|	No|	Government Link	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-email|	GovernmentEmail|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL, SNOTE|	Government Email	|255 characters
+link|	GovernmentURL|	No|	Government Link	|255 characters
+email|	GovernmentEmail|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL, SNOTE (SNOTE only required if contact is provided)|	Government Email	|255 characters
 links	|DocumentLink []|	No	|Array Of links	|
 files	|DocumentFile[]|	No|	Array of files	|
 setaside|	string|	No|	[Refer Set-Aside Values](#set-aside-values) |	
-popaddress|	string|	No|	Place of Performace Addressress	|65535 characters
-popzip|	string	|No	|Place of Performace Zip	|5 digits
-popcountry|	string|	Yes – For Awards; No – For rest|	Place of Performace Country|	32 characters
+popaddress|	string|	No|	Place of Performance Address	|65535 characters
+popzip|	string	|No	|Place of Performance Zip	|5 digits
+popcountry|	string|	No|	Place of Performance Country|	32 characters
 city|	string|	No	|City	|NA
 state|	string|	No|	State	|NA
-recovery_act	|boolean|	No|	Recovery Act|	True or False
-correction|	boolean|	No|	Correction of previous notice for the following types:  Award #, Delivery Order #) – Awards, J&A’s, Intent to Bundle Requirements (DoD-Funded), Limited Source Justification <br><br> This is used to modify/correct notice types where uniqueness is potentially determined by fields other than Solicitation # (i.e. Award #, Delivery Order #)	|True or False<br><br> If correcting a previously submitted notice, specify True and the system will lookup the notice by award number, delivery order number, and sol number if applicable.
+recovery_act	|boolean|	No|	Recovery Act|	True or False (Default = False)
+correction|	boolean|	No| If correcting a previously submitted notice, specify True and the system will lookup the notice by award number, delivery order number, and sol number if applicable.	|True or False
 
 GovURL Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url|	string|	No|	Website Address|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc|	string|	No	|Description|	255 characters
+url|	string|	Yes|	Website Address|255 characters
+desc|	string|	Yes	|Description|	255 characters
 
 GovEmail Complex Type Definition:
 
@@ -1037,13 +1038,13 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	|string|	No	|External URL	|255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc|	string|	No|	Description/Title|	255 characters
+url	|string|	Yes	|External URL	|255 characters
+desc|	string|	Yes|	Description/Title|	255 characters
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	No |	File Name |	255 characters
-filedata |	base64binary |	No	| File Data |	250 MB
+filename |	string |	Yes |	File Name |	255 characters
+filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
 export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
@@ -1066,10 +1067,10 @@ DocumentUpload Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-Date|	Date|	No	|Posting Date	|YYYYMMDD
-solnbr	|String	|No|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
+date|	Date|	No	|Posting Date	(Deprecated) |YYYYMMDD
+solnbr	|String	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 ntype	|String	|No|	Notice Type	| [Refer Notice Types](#notice-types) 
-uploadtype|	String|	No |	Upload Type|	A for amendment, S for solicitation or any title for other; 255 characters
+uploadtype|	String|	No |	Upload Type (Deprecated)| 255 characters
 respdate	|Date	|No |Response Date|	YYYYMMDD
 links|	DocumentLin k[]|	Yes; Either Links or Files needs to be provided|	Array Of links	|
 files	|DocumentFile []|	Yes; Either Links or Files needs to be provided|	Array of files	|
@@ -1079,14 +1080,14 @@ DocumentLink Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-url	|string	|Yes|	External URL|	255 characters, consist of a restricted set of characters (see URL specification - RFC 2396)
-desc|	string|	Yes|	Description/Title	|255 characters
+url	|string	|Yes|	External URL|	255 characters
+desc|	string|	Yes |	Description/Title	|255 characters
 
 DocumentFile Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	Yes |	File Name |	255 characters
+filename |	string |	Yes  |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
@@ -1114,6 +1115,7 @@ solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_
 ntype	|string	|No	| Notice Type	| [Refer Notice Types](#notice-types) 
 awdnbr	|string|	No|	Award #|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 archdate	|date|	Yes|	New Archive Date|	YYYYMMDD
+officeid|	String|	No|	Office ID (Not in Use)
 
 ### Secure Document Package <br> (attachSecureDocumentPackagesToNotice)
 
@@ -1204,7 +1206,7 @@ naics_codes|	string	|Naics Codes <br><a href="https://www.census.gov/eos/www/nai
 
 ### Authorized Parties List <br> (getAuthorizedPartyList)
 
-This method is used to retrieve the Authorized Party lists for an FBO Solicitation or a Non-FBO Solicitation. A third argument - ‘status’ - can be provided to retrieve pending Explicit Access requests, rejected requests, approved vendors, or all. Specify the first parameter to the web service method for FBO Solicitations and leave the second parameter blank. If retrieving lists for Non-FBO Solicitations, leave the first parameter blank and specify the second parameter. Valid options for status field: approved, rejected, pending, or leave blank for all.
+This method is used to retrieve the Authorized Party lists for an FBO Solicitation. ‘status’ - can be provided to retrieve pending Explicit Access requests, rejected requests, approved vendors, or all. Valid options for status field: approved, rejected, pending, or leave blank for all.
 
 Input Parameter |	Type |	Description
 ------- | ------ | -------
@@ -1220,7 +1222,7 @@ AuthorizedPartyListRequest Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-solnbr|	string|	Yes	|Solicitation #. Provide an empty string for this argument if using nonfbo_solnbr below | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
+solnbr|	string|	Yes	|Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 ntype|	string|	No|	Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr|	string|	No|	Non-fbo Solicitation #. Not supported for this method |
 status| string	|No	|Valid Options: approved, pending, rejected, “empty value”. If empty, all status will be returned <br> <br> Note, use “pending” to pull the pending explicit access requests. |
@@ -1306,14 +1308,14 @@ Response | PostingResponse | Complex type
 
 VendorData Complex Type Definition:
 
-Element Name | Type  | Description | Character Limit / Restrictions
------- | -------  | ------- | -------
-lname|	string|	Last Name | 255 characters
-fname	|string|	First Name | 255 characters
-email	|string|	Email | 255 characters
-contractor_name	|string	|Contractor Name | 255 characters
-duns	|string	|DUNS # | 9 digits
-cage_code|	string|	Cage Code | 5 alpha/numeric characters
+Element Name | Type  | Required| Description | Character Limit / Restrictions
+------ | ------- |------ | ------- | -------
+lname|	string|	Yes|Last Name | 255 characters
+fname	|string|Yes|	First Name | 255 characters
+email	|string|Yes|	Email | 255 characters
+contractor_name	|string|Yes	|Contractor Name | 255 characters
+duns	|string	| Yes| DUNS # | 9 digits
+cage_code|	string|	Yes|Cage Code | 5 alpha/numeric characters
 
 
 ### Reject Explicit Access Requests <br> (rejectExplicitAccessRequestByID)
@@ -1373,14 +1375,14 @@ Response | PostingResponse | Complex type
 
 VendorData Complex Type Definition:
 
-Element Name | Type  | Description | Character Limit / Restrictions
------- | -------  | ------- | -------
-lname|	string|	Last Name | 255 characters
-fname	|string|	First Name | 255 characters
-email	|string|	Email | 255 characters
-contractor_name	|string	|Contractor Name | 255 characters
-duns	|string	|DUNS # | 9 digits
-cage_code|	string|	Cage Code | 5 alpha/numeric characters
+Element Name | Type  | Required| Description | Character Limit / Restrictions
+------ | -------  | ------- |------- |-------
+lname|	string|	Yes|Last Name | 255 characters
+fname	|string|Yes|	First Name | 255 characters
+email	|string|Yes|	Email | 255 characters
+contractor_name	|string|Yes	|Contractor Name | 255 characters
+duns	|string	|Yes|DUNS # | 9 digits
+cage_code|	string|	Yes|Cage Code | 5 alpha/numeric characters
 
 
 ### Add Authorized Party <br> (addAuthorizedParty)
@@ -1410,20 +1412,20 @@ Response | PostingResponse | Complex type
 
 VendorData Complex Type Definition:
 
-Element Name | Type  | Description | Character Limit / Restrictions
------- | -------  | ------- | -------
-lname|	string|	Last Name | 255 characters
-fname	|string|	First Name | 255 characters
-email	|string|	Email | 255 characters
-contractor_name	|string	|Contractor Name | 255 characters
-duns	|string	|DUNS # | 9 digits
-cage_code|	string|	Cage Code | 5 alpha/numeric characters
+Element Name | Type  | Required| Description | Character Limit / Restrictions
+------ | -------  | ------- |------- |-------
+lname|	string|	Yes|Last Name | 255 characters
+fname	|string|Yes|	First Name | 255 characters
+email	|string|Yes|	Email | 255 characters
+contractor_name	|string|Yes	|Contractor Name | 255 characters
+duns	|string	|Yes|DUNS # | 9 digits
+cage_code|	string|	Yes|Cage Code | 5 alpha/numeric characters
 
 ## Method Available for Data Export
 
 ### Get List of Notices <br> (getList)
 
-This method is used to retrieve a list of base notices. For each record returned, an internal identifier/unique key is provided that must be used in subsequent getNoticeData calls to get the complete notice data (and any of its changes or awards posted). The method will return a maximum of 1000 records and allows filtering the results by specifying the notice type, solicitation number, award number, posted date range and documents to search (active or archive).   For performance reasons, at least one filter must be provided.
+This method is used to retrieve list of notices. For each record returned, an internal identifier/unique key is provided that must be used in subsequent getNoticeData calls to get the complete notice data (and any of its changes or awards posted). The method will return a maximum of 1000 records and allows filtering the results by specifying the notice type, solicitation number, award number, posted date range and documents to search (active or archive).   For performance reasons, at least one filter must be provided.
 
 Input Parameters:
 
@@ -1435,12 +1437,12 @@ NoticeListRequest Complex Type Definition:
 
 Element Name|	Type|	Required|	Description | Character Limit / Restrictions
 -----|-----|-----|-----|-----
-notice_type	|string|	No (at least 1 field is required)|	 [Refer Notice Types](#notice-types) Note:Searches for award, j&a, itb and fairopps will return both standalone notices AND base notices that contain one of these type
+notice_type	|string|	No (at least 1 field is required)|Notice Type| [Refer Notice Types](#notice-types)
 solnbr	|string	|No (at least 1 field is required)	|Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 awdnbr	|string	|No	(at least 1 field is required)|Award # | 255 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-posted_from	|date|	No (at least 1 field is required)|	Posted From Date. YYYYMMDD.
-posted_to	|date|	No (at least 1 field is required)|	Posted To Date. YYYYMMDD
-documents_to_search	|string|	No (at least 1 field is required)|	Valid Values: ‘active’ or ‘archived’. Default is ALL if nothing provided.
+posted_from	|date|	No (at least 1 field is required)|	Posted From Date |YYYYMMDD
+posted_to	|date|	No (at least 1 field is required)|	Posted To Date| YYYYMMDD
+documents_to_search	|string|	No (at least 1 field is required)|	Notice Status|Valid values: ‘active’ or 'inactive'. Default is ALL if nothing provided.
 
 Response:
 
@@ -1473,7 +1475,7 @@ archived|	boolean	|True or false
 
 ### Get Notice Data <br> (getNoticeData)
 
-This method is used to retrieve notice data and any changes/awards that were made. The notice_id from getList calls should be used in this call.   If document package data is requested, the total aggregate size for any request is 100MB. If a certain file pushes the total past this threshold, the data will not be returned for that file and any others encountered for the request; instead, links to the data will be provided and one can call the separate getFileData to cut down the size and to pull a specific document.
+This method is used to retrieve notice data and any changes/awards that were made. The notice_id from getList calls should be used in this call.   If file or link data is requested, the total aggregate size for any request is 100MB. If a certain file pushes the total past this threshold, the data will not be returned for that file and any others encountered for the request; instead, links to the data will be provided and one can call the separate getFileData to cut down the size and to pull a specific document.
 
 Input Parameters:
 
@@ -1485,10 +1487,10 @@ NoticeDataRequest Complex Type Definition:
 
 Element Name|	Type|	Required|	Description | Character Limit / Restrictions
 -----|-----|-----|----- |----- 
-notice_id	|string	|No (at least 1 field is required)|	Unique ID found from getList call or ID’s for changes found in getNoticeData call. | 32 characters
-get_changes	|boolean|	No (at least 1 field is required)|	True or false<br> Pass in true to get the full notice history with all changes
-get_changes_from_date	|date|	No (at least 1 field is required)|	If maintaining a sync of changes, can specify a date so that only changes that have occurred since provided date will be returned.
-get_file_data|	boolean|	No (at least 1 field is required)|	True or False<br> Pass in true and the method will return any file content stored in Contract Opportunities (attachment data will be retuned as Base64Encoding Format). If false, the meta details/links will still be provided.
+notice_id	|string	|Yes|	Unique ID found from getList call or ID’s for changes found in getNoticeData call. | 32 characters
+get_changes	|boolean|	No |	 Pass in true to get the full notice history with all changes|True or false 
+get_changes_from_date	|date|	No|	If maintaining a sync of changes, can specify a date so that only changes that have occurred since provided date will be returned| YYYYMMDD
+get_file_data|	boolean|	No |	 Pass in true and the method will return any file content stored in Contract Opportunities (attachment data will be retuned as Base64Encoding Format). If false, the meta details/links will still be provided.|True or False
 
 Response:
 
@@ -1508,14 +1510,14 @@ NoticeData Complex Type Definition:
 
 Element Name | Type |  Description
 ------ | ------- | -------
-id|	string|	Unique ID
-notice_type|	string|	Type of notice
+id|	string|	Notice ID
+notice_type|	string|	Notice Type
 agency|	string|	Top level Agency
 office|	string|	Office
 location|	string|	Location
 date|	dateTime|	Posting Date
 zip|	string|	Zip Code
-classcod|	string|	Class-Code
+classcod|	string|	Classification Code
 naics	|string|	NAICS Code
 offadd	|string	|Office Address
 subject	|string	|Subject
@@ -1523,10 +1525,9 @@ solnbr|	string	|Solicitation #
 awdnbr|	string|	Award #
 donbr	|string	|Delivery/Task Order Number
 awdamt	|string	|Award Amount
-linenbr	|string	|Award Line Item Number
+linenbr	|string	|Line Item Number
 awddate	|date|	Award Date
 stauth	|string|	J&A StatutoryAuthority
-foja|	String	|Justification Authority
 modnbr	|string	|J&A and FairOpp Contract Modification Number
 respdate	|date|	Response Date
 archdate|	date|	Archive Date
@@ -1538,14 +1539,14 @@ link|	GovernmentURL	|Government Link
 email|	Government Email|	Government Email
 files	|DocumentPack ageData[]|	Array of package data if applicable
 setaside	|string	|Set-Aside value
-popaddress	|string	|Place of Performace Addressress
-popzip	|string|	Place of Performace Zip
-popcountry|	string|	Place of Performace Country
+popaddress	|string	|Place of Performance Address
+popzip	|string|	Place of Performance Zip
+popcountry|	string|	Place of Performance Country
 recovery_act	|boolean	|Recovery Act
 correction|	boolean	|Correction of previous notice for the following types: Award #, Delivery Order #) – Awards, J&A’s, Intent to Bundle Requirements (DoD-Funded), Fair Opportunity / Limited Source Justification.
 changes	|NoticeData[]	|This element will only be present on the base/original posting and will contain an array of changes (for any mods/awards/etc.). Each change uses the same complex type.
 
-DocumentPackageData Complex Type Definition:
+DocumentPackageData Complex Type Definition: Not in Use
 
 Element Name | Type |  Description
 ------ | ------- | -------
@@ -1563,16 +1564,16 @@ explicit_access	|boolean|	True or False – used for sensitive packages only
 is_cd_avail	|boolean|	True or False – used for sensitive packages only
 files	|DocumentFile Data[]|	Array of Document Files/Links as described below
 
-DocumentFileData Complex Type Definition:
+DocumentFileData Complex Type Definition: 
 
 Element Name | Type |  Description
 ------ | ------- | -------
 file_id	|string|	Unique ID
-filename|	string|	Filename – only used for files stored on notices
+filename|	string|	Filename 
 filedata|	base64Binary|	File data – only used for files stored on notices
-link|	string|	Link to file – used for files not stored on notices
+link|	string|	Link 
 desc|	string|	Description
-size_limit_error|	boolean	|This element will be true if its size or aggregate file data for the request exceeds the max return size.
+size_limit_error|	boolean	|This element will be true if its size or aggregate file data for the request exceeds the max return size (Not in Use)
 
 ### Get Document Package Data <br> (getDocumentPackageData)
 
@@ -1580,7 +1581,7 @@ This service is now deprecated
 
 ### Get File Data <br> (getFileData)
 
-This method provides the ability to pull in file data for a single file of a document package. The primary use of this method is if a single file’s size exceeds the 100MB max– when using this method for a single file, the file limit check does not occur.
+This method provides the ability to pull in file data for a single file of a notice. The primary use of this method is if a single file’s size exceeds the 100MB max– when using this method for a single file, the file limit check does not occur.
 
 Input Parameters:
 
@@ -1613,12 +1614,12 @@ DocumentFileData Complex Type Definition:
 Element Name | Type |  Description
 ------ | ------- | -------
 file_id	|string|	Unique ID
-filename|	string	|Filename – only used for files stored on FBO
-notice_id	|string|	Unique identifier for a notice
-filedata|	base64Binary|	File data – only used for files stored on FBO
-link|	string	|Link to file – used for files not stored on FBO
+filename|	string	|Filename 
+notice_id	|string|	Notice ID
+filedata|	base64Binary|	File data 
+link|	string	|Link 
 desc	|string|	Description
-size_limit_error|	boolean	|This element will be true if its size or aggregate file data for the request exceeds the max return size.
+size_limit_error|	boolean	|This element will be true if its size or aggregate file data for the request exceeds the max return size (Not in Use)
 
 ## Examples
 
@@ -4102,7 +4103,7 @@ linenbr|	NA	|NA
 awddate	|	1. This field should meet the character limit/restrictions <br><br> 2. This field is required where applicable <br><br> 3. Date cannot be in the past|	1. DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. Award Details Section - Contract Award Date is required field <br><br> 3. Award Details Section - Contract Award Date provided is in an invalid format <br><br>4. Award date provided is in the past. <br><br> 5.Contract Award Date set would result in inactive date being in the past.
 stauth|	 1. This field is required where applicable <br><br> 2. This field accepts only valid values listed. If invalid values are provided, then system throws an error.|	1. Contract Award Number is a required field <br><br>2. Invalid Authority Fields, please refer to Contract Opportunities SOAP Web Service Tech Document valid authority fields
 respdate|	1.	This field is required where applicable <br><br> 2.	This date cannot be in past; has to be in future. If the given date is in past, then system throws errors 	| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2.	This opportunity cannot be published. Response date provided is in the past<br><br> 3.	This opportunity cannot be published. Response Date cannot exceed 5 years from current date <br><br> 4. One of Response date or Archive date is required <br><br> 5. One of Response date or Archive date is required
-archdate|	1.	This field is required where applicable. Note user may receive "Auto 30 <br><br> 2.	This date cannot be current or in past; has to be in future|	1.	DATE field in unexpected format  Expects YYYYMMDD<br><br> 2.	This opportunity cannot be published. Archive date provided is in the past. <br><br> 3. One of Response date or Archive date is required
+archdate|	1.	This field is required where applicable. 2.	This date cannot be current or in past; has to be in future|	1.	DATE field in unexpected format  Expects YYYYMMDD<br><br> 2.	This opportunity cannot be published. Archive date provided is in the past. <br><br> 3. One of Response date or Archive date is required
 awardee	|	NA|	NA
 awardee_duns|	1. Must provide a valid DUNS|	1. Unique Entity Identifier (duns) is invalid
 contact	|	1. This field is required where applicable	|1. Primary Contact is Required
