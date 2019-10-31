@@ -3791,7 +3791,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Archive Date |	Inactive date provided is an invalid format. |	Date is not in specified format  |	Create, Publish, Uncancel, Unarchive
 400|Archive Date |	New archive date is required. |	New archive date is required.  |	Unarchive
 400|Archive Date |	New archive date provided is in an invalid format. |	New archive date provided is in an invalid format. |	Unarchive
-400|Archive Date |	New archive date provided is in the past. |	New archive date provided is in the past. |	Unarchive
+400|Archive Date |	New archive date provided is in the past. |	New archive date provided is before today's date. |	Unarchive
 400|Archive Type |	New archive type is invalid. |	archive type is not one of the following "auto15", "autocustom", "auto30"	| UnArchive
 400|Archive Type |	Archive type is invalid for this notice type. |	archive type is one of the following "auto15", "auto30" and is not allowed for this notice type	| UnArchive
 400|Archive Type |	This opportunity cannot be published. Inactive Policy is a required field. |	Archive Type is required |	Publish
