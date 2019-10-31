@@ -3789,6 +3789,9 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Archive Date |	This opportunity cannot be published. Inactive date is a required field. |	Archive Date is required if Archive Type = autocustom |	Create, Publish, Uncancel, Unarchive
 400|Archive Date Response Date   |	One of Response date or Archive date is required |	Either Response date or archive date is required for presolicitation, sources sought, special notice, sale surplus  |	Publish
 400|Archive Date |	Inactive date provided is an invalid format. |	Date is not in specified format  |	Create, Publish, Uncancel, Unarchive
+400|Archive Date |	New archive date is required. |	New archive date is required.  |	Unarchive
+400|Archive Date |	New archive date provided is in an invalid format. |	New archive date provided is in an invalid format. |	Unarchive
+400|Archive Date |	New archive date provided is in the past. |	New archive date provided is in the past. |	Unarchive
 400|Archive Type |	New archive type is invalid. |	archive type is not one of the following "auto15", "autocustom", "auto30"	| UnArchive
 400|Archive Type |	Archive type is invalid for this notice type. |	archive type is one of the following "auto15", "auto30" and is not allowed for this notice type	| UnArchive
 400|Archive Type |	This opportunity cannot be published. Inactive Policy is a required field. |	Archive Type is required |	Publish
@@ -3893,6 +3896,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Response Date |	New response date is required. |	Unarchive requires new response date	| UnArchive
 400|Response Date |	New response date provided is in an invalid format. |	Invalid date format	| UnArchive
 400|Response Date |	New response date provided is in the past. |	Response date is before offset date	| UnArchive
+400|Response Date |	New response date provided would place inactive date in the past. |	New response date providedis within 15 days	| UnArchive
 400|Title |	Title is required |	Title is required |	Publish
 400|UNARCHIVE |	This opportunity is not the latest published |	Only archived notices can be unarchived | UNARCHIVE
 400|resourceName | Attachment must have a name | File Name is a required field |	Create Attachment
