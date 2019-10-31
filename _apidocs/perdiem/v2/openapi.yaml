@@ -6,32 +6,32 @@ info:
   version: 2.0.0
   contact:
     email: "EWM@gsa.gov"
-host: "api.gsa.gov"
-basePath: "/travel"
-schemes:
-- "https"
 paths:
   /perdiem/v2/rates/city/{city}/state/{state}/year/{year}:
     get:
       summary: "Get perdiem rates by city/state/year"
-      produces:
-      - "application/json"
       parameters:
       - name: "city"
         in: "path"
         description: "The city filter by"
         required: true
-        type: "string"
+        schema:
+          type: string
+          format: string
       - name: "state"
         in: "path"
         description: "The state to filter by"
         required: true
-        type: "string"
+        schema:
+          type: string
+          format: string
       - name: "year"
         in: "path"
         description: "The fical-year to filter by"
         required: true
-        type: "string"
+        schema:
+          type: string
+          format: string
       - name: api_key
         in: query
         description: API key for accessing data
@@ -51,19 +51,21 @@ paths:
   /perdiem/v2/rates/state/{state}/year/{year}:
     get:
       summary: "Get perdiem rates for all counties/cities, by state and year"
-      produces:
-      - "application/json"
       parameters:
       - name: "state"
         in: "path"
         description: "The state to filter by"
         required: true
-        type: "string"
+        schema:
+          type: string
+          format: string
       - name: "year"
         in: "path"
         description: "The fical-year to filter by"
         required: true
-        type: "string"
+        schema:
+          type: string
+          format: string
       - name: api_key
         in: query
         description: API key for accessing data
@@ -83,19 +85,21 @@ paths:
   /perdiem/v2/rates/zip/{zip}/year/{year}:
     get:
       summary: "Get perdiem rates by ZipCode and year"
-      produces:
-      - "application/json"
       parameters:
       - name: "zip"
         in: "path"
         description: "The ZipCode to filter by"
         required: true
-        type: "integer"
+        schema:
+          type: integer
+          format: integer
       - name: "year"
         in: "path"
         description: "The fical-year to filter by"
         required: true
-        type: "string"
+        schema:
+          type: string
+          format: string
       - name: api_key
         in: query
         description: API key for accessing data
@@ -115,14 +119,14 @@ paths:
   /perdiem/v2/rates/conus/lodging/{year}:
     get:
       summary: "Lodging Rates for the Continental U.S. by Year"
-      produces:
-      - "application/json"
       parameters:
       - name: "year"
         in: "path"
         description: "The fical-year to filter by"
         required: true
-        type: "string"
+        schema:
+          type: string
+          format: string
       - name: api_key
         in: query
         description: API key for accessing data
@@ -143,14 +147,14 @@ paths:
   /perdiem/v2/rates/conus/zipcodes/{year}:
     get:
       summary: "Mapping of Destination-IDs to ZipCode and State locations"
-      produces:
-      - "application/json"
       parameters:
       - name: "year"
         in: "path"
         description: "The fical-year to filter by"
         required: true
-        type: "string"
+        schema:
+          type: string
+          format: string
       - name: api_key
         in: query
         description: API key for accessing data
