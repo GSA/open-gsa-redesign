@@ -3779,6 +3779,12 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Additional Reporting |	Additional Reporting/Initiative is required. |	Additional Reporting/Initiative is required when opportunity is not a special notice | Publish
 400|Title |	Title max character length is 256. |	Title max character length is 256.	| Publish
 400|ARCHIVE |	This opportunity is not the latest published. |	Draft Opportunity cannot be archived.	| Archive
+400|UNARCHIVE |	Opportunity is active. |	Active opportunity	| UnArchive
+400|UNARCHIVE |	Opportunity is cancelled. |	Cancelled opportunity	| UnArchive
+400|UNARCHIVE |	The new opportunity type field is missing. |	prevent activating if opportunity type is `m`, `l` or `j` and new type opportunity isn't provided	| UnArchive
+400|UNARCHIVE |	The new opportunity type field is not supported. |	prevent activating if opportunity type is not one of `m`, `l` or `j` and new type opportunity is provided	| UnArchive
+400|UNARCHIVE |	The Opportunity's type provided is not supported. |	prevent activating if opportunity type is `m` and new type opportunity provided is not supported	| UnArchive
+400|UNARCHIVE |	The new opportunity type provided is not supported. |	prevent activating if opportunity type is  `l` or `j` and new type opportunity provided is not `u`	| UnArchive
 400|Archive Date |	$.archive.date: does not match the date pattern ^\\d{4}-(?:0[0-9]{1}\1[0-2]{1})-(0?[1-9]\[12][0-9]\3[01])$ |	Archive Date must be in specified format |	Create, Publish, Uncancel, Unarchive
 400|Archive Date |	This opportunity cannot be published. Inactive date is a required field. |	Archive Date is required if Archive Type = autocustom |	Create, Publish, Uncancel, Unarchive
 400|Archive Date Response Date   |	One of Response date or Archive date is required |	Either Response date or archive date is required for presolicitation, sources sought, special notice, sale surplus  |	Publish
