@@ -844,7 +844,7 @@ zip |	string | No |	Zip Code (Deprecated) | 5 digits
 classcod | string |	Yes |	Class-Code | Valid classification code (FAR, Section 5.207(g))
 naics | string | Yes | NAICS Code	| Valid NAICS Code <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid | string | Yes | Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account | 20 characters
-offadd | string | No | Office Address (Deprecated)	| 65535 characters. This field has been deprecated. The Contracting office address details are retrieved from the Federal Hierarchy
+offadd | string | No | Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	| 65535 characters
 subject | string | Yes | Subject | 256 characters
 solnbr | string |	Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate | date |	Yes  | Response Date | YYYYMMDD
@@ -1269,7 +1269,8 @@ solnbr|	string	|Yes|	Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_
 ntype	|string	|No|	Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method|
 Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.|  32 characters
-
+vendor	|VendorData|	No|	Complex type not used in this method|
+reason	|string|	No|	Rejection reason not used in this method| 65535 characters
 
 Response:
 
@@ -1294,7 +1295,9 @@ Element Name	|Type	|Required|	Description | Character Limit / Restrictions
 solnbr	|string	|Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 ntype|	string|	No|	Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr|	string|	No|	Non-fbo Solicitation #.  Not supported for this method|
-vendor|	VendorData	|Yes|	Complex type defined below|
+Id	|string	|No	|Not used in this method| 32 characters
+vendor	|VendorData|	Yes|	Complex type defined below|
+reason	|string|	No|	Rejection reason not used in this method| 65535 characters
 
 Response:
 
@@ -1332,7 +1335,8 @@ solnbr|	string	|Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -
 ntype	|string	|No| Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method|
 Id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.| 32 characters
-reason	|string|	Yes|	rejection reason not used in this method| 65535 characters
+vendor	|VendorData|	No|	Complex type not used in this method|
+reason|	string|	Yes	|Rejection Reason | 65535 characters
 
 Response:
 
@@ -1358,6 +1362,7 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 solnbr|	string|	Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 ntype	|string	|No| Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr	|string	|No	|Non-fbo Solicitation #.  Not supported for this method|
+Id	|string	|No	|Not used in this method| 32 characters
 vendor	|VendorData|	Yes|	Complex type defined below|
 reason|	string|	Yes	|Rejection Reason | 65535 characters
 
@@ -1394,8 +1399,9 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 solnbr|	string|	Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 ntype	|string	|No	| Notice Type	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr|	string|	No	|Non-fbo Solicitation #.   Not supported for this method.|
-Id	|string	|No	|Not used in this method|
+Id	|string	|No	|Not used in this method| 32 characters
 vendor	|VendorData|	Yes|	Complex type defined below|
+reason	|string|	No|	Rejection reason not used in this method| 65535 characters
 
 Response:
 
