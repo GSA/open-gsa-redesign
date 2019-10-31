@@ -2766,7 +2766,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON  | Body | JSON | Yes | [Refer Vendor Data JSON](#vendor-data-json)
+Request JSON  | Body | JSON | Yes | [Refer Vendor Data Contract JSON](#vendor-data-contract-json)
 
 Responses
 
@@ -3711,7 +3711,7 @@ Name | Data Type | Allowed Values | Required | Description
 ivlCreate | string | forcedon, forcedoff | Yes | Indicates whether vendors can indicate interest in the organization’s Opportunities
 ivlView | string | forcedon, forcedoff | Yes | Indicates whether vendors can view other vendors interested in the organization’s Opportunities
 
-### Vendor Data JSON
+### Vendor Data Contract JSON
 
 <div id="vendor-data-json" title="Click to view Vendor Data Contract">
 <details>
