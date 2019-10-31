@@ -3090,7 +3090,7 @@ archive | JSON |NA | NA | NA | NA | Contract opportunity archive policy informat
 archive.type | string | | auto15<br/> auto30<br/> autocustom | No | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
 archive.date | date | | | No | Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
 permissions | JSON | NA | NA | NA | NA |
-permissions.ivl | JSON | NA | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a desire to submit a proposal
+permissions.ivl | JSON | NA | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
 permissions.ivl.create | boolean | | | No | Yes (No for type = a (Award)) | IVL create permission
 permissions.ivl.read | boolean | | | No | Yes (No for type = a (Award)) | IVL read permission
 permissions.ivl.update | boolean | |  | No | No | IVL update permission
@@ -3346,7 +3346,7 @@ archive | JSON |NA | NA | NA | Contract opportunity archive policy information
 archive.type | string | | auto15<br/> auto30<br/> autocustom | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
 archive.date | date | | |Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
 permissions | JSON | NA | NA | NA 
-permissions.ivl | JSON | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a desire to submit a proposal
+permissions.ivl | JSON | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
 permissions.ivl.create | boolean | | | Yes (No for type = a (Award)) | IVL create permission
 permissions.ivl.read | boolean | | |Yes (No for type = a (Award)) | IVL read permission
 permissions.ivl.update | boolean | |  | No | IVL update permission
