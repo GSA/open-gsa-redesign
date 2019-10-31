@@ -14,7 +14,7 @@ The Opportunity Management API will allow authorized users to submit and request
 ## Getting Started
 
 Opportunity Management API can be accessed from Beta or Alpha via the following endpoints:
-* Beta: https://api.sam.gov/prod/opportunity (Coming Soon)
+* Beta: https://api.sam.gov/prod/opportunity  (Coming Soon)
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity
 
 **REST API Workflow Chart**
@@ -37,10 +37,10 @@ To view the current workflow of REST APIs, refer below file:
 In order to utilize the Contract Opportunity Management API, the following is required:
 * Valid beta.SAM.GOV federal government system account with Read and Write permissions under Contract Opportunity domain.
 
-### Type of Connection Validation 
+### *Type of Connection Validation (Future Implementation)*
 All REST API requests will be validated against the Type of Connection within the system account profile. All requests without "REST API" type of connection in the system account profile will be rejected with an error.
 
-### IP Address Validation 
+### *IP Address Validation (Future Implementation)*
 All REST API requests will be validated against the IP Addresses registered within the system account profile. All requests that are not from registered IP address(es) in the system account profile will be rejected with an error.
 
 #### User Account Authorization
@@ -68,9 +68,8 @@ Cancel Published Opportunity | Yes | Yes | No
 Uncancel Canceled Opportunity | Yes | Yes | No
 Archive Opportunity | Yes | Yes | Yes
 Unarchive Archived Opportunity | Yes | Yes | No
-Create Resource in Draft Opportunity| Yes | Yes | Yes
-Update Resource in Draft Opportunity| Yes | Yes | Yes
-Delete Resource in Draft Opportunity| Yes | Yes | Yes
+Create Attachment in Draft Opportunity| Yes | Yes | Yes
+Update Attachment in Draft Opportunity| Yes | Yes | Yes
 Download Attachment as Original File Type | Yes | Yes | Yes
 Download All Attachments as Zip for an Opportunity | Yes | Yes | Yes
 Download Metadata for an Attachment by Resource ID|	Yes|	Yes|	Yes
@@ -78,6 +77,7 @@ Download Metadata for All Attachments by Oppoprtunity ID	|Yes	|Yes	|Yes
 Get Attachment | Yes | Yes | Yes
 Get IVL | Yes | Yes | Yes
 IVL settings | Yes | Yes | Yes
+Delete Vendor | Yes | Yes | Yes
 Get Authorized Party | Yes | Yes | No
 Add Authorized Party  | Yes | Yes | No
 Check Unique Solicitation Number | Yes | Yes | Yes
@@ -94,7 +94,7 @@ In order to download secure attachment, user should have at least one of the bel
 * Edit Draft Attachment
 * Delete Draft Attachment
 
-### Lookup/Meta-Data
+### Lookup/Meta Data
 
 #### Notice Types
 
@@ -116,8 +116,6 @@ The API includes specific methods to submit each of the base notice types (i.e. 
 
 #### Set-Aside Values
 Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field. Use the Set-Aside codes to submit notices.
-
-Only one Set-Aside value is accepted in the field at this time
 
 Refer below table for valid Set-Aside values:
 
@@ -144,7 +142,7 @@ VSS | Veteran-Owned Small Business Sole source (specific to Department of Vetera
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Stauth Valid Values
+#### Stauth valid values
 Below table captures stauth values to use while making requests as needed.
 
 Code | Description
@@ -204,71 +202,121 @@ Examples
 <p>
 <code><pre>
 {
-    "data": {
-        "type": "i",
-        "award": {
-            "date": "2222-02-22",
-            "number": "ContractAwardNumber123-_(){}",
-            "deliveryOrderNumber": "TaskOrderNumber1234-_()"
-        },
-        "naics": [
-            {
-                "code": [
-                    "111160"
-                ],
-                "type": "primary"
-            }
-        ],
-        "title": "Create Intent To Bundle Requirements notice",
-        "archive": {
-            "date": null,
-            "type": "auto30"
-        },
-        "permissions": {
-            "IVL": {
-                "read": false,
-                "create": false,
-                "delete": false,
-                "update": false
-            }
-        },
-        "solicitation": {
-            "deadlines": {
-                "response": null,
-                "responseTz": null
-            }
-        },
-        "organizationId": "100186612",
-        "pointOfContact": [
-            {
-                "fax": "1234567890",
-                "type": "primary",
-                "email": "test.email2@gmail.com",
-                "phone": "1234567890",
-                "title": null,
-                "fullName": "Test User"
-            },
-            {
-                "fax": "4512367890",
-                "type": "secondary",
-                "email": "test.email@gmail.com",
-                "phone": "1234567890",
-                "title": null,
-                "fullName": "Test User 2"
-            }
-        ],
-        "classificationCode": "1005",
-        "solicitationNumber": "Test-ITB-123",
-        "additionalReporting": [
-            "recovery_act"
+  "data": {
+    "solicitationNumber": "ITB_Test1",
+    "title": "TST_T1",
+    "type": "i",
+    "classificationCode": "13",
+    "organizationId": "100120624",
+    "naics": [
+      {
+        "type": "primary",
+        "code": [
+          "111150"
         ]
+      }
+    ],
+    "pointOfContact": [
+      {
+        "additionalInfo": {
+          "content": ""
+        },
+        "email": "",
+        "fax": "",
+        "fullName": "GSA",
+        "phone": "",
+        "title": "",
+        "type": "primary"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "code": "",
+        "name": ""
+      },
+      "country": {
+        "code": "",
+        "name": ""
+      },
+      "state": {
+        "code": "",
+        "name": ""
+      },
+      "streetAddress": "",
+      "streetAddress2": "",
+      "zip": ""
     },
-    "related": {},
-    "description": [
-        {
-            "body": "Test Description"
+    "award": {
+      "date": "2019-08-08T11:20:20-05:00",
+      "number": "12345",
+      "deliveryOrderNumber": "",
+      "amount": "number",
+      "lineItemNumber": "",
+      "awardee": {
+        "name": "",
+        "duns": "",
+        "location": {
+          "streetAddress": "",
+          "streetAddress2": "",
+          "city": {
+            "code": "",
+            "name": ""
+          },
+          "state": {
+            "code": "",
+            "name": ""
+          },
+          "zip": "",
+          "country": {
+            "code": "",
+            "name": ""
+          }
         }
+      },
+      "justificationAuthority": {
+        "modificationNumber": "",
+        "authority": "dictionary"
+      },
+    },
+    "permissions": {
+      "IVL": {
+        "create": false,
+        "delete": false,
+        "read": false,
+        "update": false
+      }
+    },
+    "solicitation": {
+      "setAside": "SBA",
+      "deadlines": {
+        "response": "2019-08-08T11:20:20-05:00"
+      }
+    },
+    "archive": {
+      "type": "autocustom",
+      "date": "2019-09-09"
+    },
+    "flags": [
+      {
+        "code": "",
+        "isSelected": true
+      }
+    ],
+    "link": {
+      "additionalInfo": {
+        "content": ""
+      },
+      "href": ""
+    },
+    "additionalReporting": [
+      "none"
     ]
+  },
+  "description": [
+    {
+      "body": "Description"
+    }
+  ]
 }
 </pre></code>
 </p>
@@ -284,7 +332,7 @@ Examples
     "title": "PRESOLTEST_T1",
     "type": "p",
     "classificationCode": "13",
-    "organizationId": "100186612",
+    "organizationId": "100120624",
     "naics": [{
       "type": "primary",
       "code": ["111150"]
@@ -293,9 +341,9 @@ Examples
         "additionalInfo": {
             "content": ""
         },
-        "email": "testemail@gsa.gov",
+        "email": "",
         "fax": "",
-        "fullName": "test user",
+        "fullName": "gsa",
         "phone": "",
         "title": "",
         "type": "primary"
@@ -328,12 +376,22 @@ Examples
      "solicitation": {
       "setAside": "SBA",
       "deadlines": {
-        "response": "2023-08-08"
+        "response": "2019-08-08"
       }
     },
     "archive": {
       "type": "autocustom",
-      "date": "2023-09-09"
+      "date": "2019-09-09"
+    },
+    "flags": [{
+        "code": "",
+        "isSelected": true
+    }],
+    "link": {
+        "additionalInfo": {
+            "content": ""
+        },
+        "href": ""
     },
      "additionalReporting": [
         "none"
@@ -352,190 +410,62 @@ Examples
 <p>
 <code><pre>
 {
-   "data": {
-     "solicitationNumber": "Test1combine1",
-     "title": "TST_T1",
-     "type": "k",
-     "classificationCode": "13",
-     "organizationId": "100186612",
-     "archive": {
-       "type": "autocustom",
-       "date": "2022-09-09"
-     },
-     "naics": [
-       {
-         "type": "primary",
-         "code": [
-           "111150"
-         ]
-       }
-     ],
-     "pointOfContact": [
-       {
-         "additionalInfo": {
-           "content": ""
-         },
-         "email": "testemail@gsa.gov",
-         "fax": "",
-         "fullName": "test user",
-         "phone": "",
-         "title": "",
-         "type": "primary"
-       }
-     ],
-     "permissions": {
-       "IVL": {
-         "create": false,
-         "delete": false,
-         "read": false,
-         "update": false
-       }
-     },
-     "solicitation": {
-       "setAside": "",
-       "deadlines": {
-         "responseTz": "YYYY-MM-DDTHH:MM:SS-05:00",
-         "response": "2022-11-11T11:12:00-05:00"
-       }
-     },
-     "additionalReporting": [
-       "none"
-     ]
-   },
-   "description": [
-     {
-       "body": "Description_TEST "
-     }
-   ]
- }
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>SOLICITATION Request related to a PRESOL Notice</summary>
-<p>
-<code><pre>
-
-{
-    "data":
+  "data": {
+    "solicitationNumber": "Test1combine1",
+    "title": "TST_T1",
+    "type": "k",
+    "classificationCode": "13",
+    "organizationId": "100000136",
+    "archive": {
+      "type": "autocustom",
+      "date": "2019-09-09"
+    },
+    "naics": [
+      {
+        "type": "primary",
+        "code": [
+          "111150"
+        ]
+      }
+    ],
+    "pointOfContact": [
+      {
+        "additionalInfo": {
+          "content": ""
+        },
+        "email": "",
+        "fax": "",
+        "fullName": "gsa",
+        "phone": "",
+        "title": "",
+        "type": "primary"
+      }
+    ],
+    "permissions": {
+      "IVL": {
+        "create": false,
+        "delete": false,
+        "read": false,
+        "update": false
+      }
+    },
+    "solicitation": {
+      "setAside": "",
+      "deadlines": {
+        "responseTz": "YYYY-MM-DDTHH:MM:SS-05:00",
+        "response": "2019-11-11T11:12:00-05:00"
+      }
+    },
+    "additionalReporting": [
+      "none"
+    ]
+  },
+  "description": [
     {
-        "type": "o",
-        "solicitationNumber": "test-12345678901",
-        "title": "Test submit solicitation",
-        "organizationId": "100186612",
-        "classificationCode": "1260",
-        "naics": [
-        {
-            "type": "primary",
-            "code": ["111150"]
-        }],
-        "pointOfContact": [
-        {
-            "type": "primary",
-            "title": "",
-            "fullName": "test contact",
-            "email": "test@test.com",
-            "phone": "",
-            "fax": "",
-            "additionalInfo":
-            {
-                "content": "Primary contact info"
-            }
-        }],
-        "placeOfPerformance":
-        {
-            "streetAddress": "1234 XYZ street",
-            "streetAddress2": "",
-            "city": {
-                "code": "75376",
-                "name": "Sterling"
-            },
-            "state": {
-                "code": "VA",
-                "name": "Virginia"
-            },
-            "country": {
-                "code": "USA",
-                "name":"USA"
-            }
-,
-            "zip": ""
-        },
-        "archive":
-        {
-            "type": "autocustom",
-            "date": "2022-09-09"
-        },
-        "permissions":
-        {
-            "IVL":
-            {
-                "create": false,
-                "delete": false,
-                "read": false,
-                "update": false
-            }
-        },
-        "solicitation":
-        {
-            "setAside": "SBA",
-            "deadlines":
-            {
-                "response": "2022-08-08"
-            }
-        },
-        "award":
-        {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee":
-            {
-                "manual": false,
-                "name": "",
-                "duns": "",
-                "location":
-                {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city":
-                    {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state":
-                    {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country":
-                    {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            }
-            },
-            "justificationAuthority":
-            {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            },
-            "additionalReporting": ["none"]
-        },
-        "description": [
-        {
-            "body": "test description"
-        }],
-        "related":
-        {
-            "opportunityId": "bc14e9f810a44e468c31fd120dd41b4f"
-        }
+      "body": "Description_TEST "
     }
+  ]
+}
 </pre></code>
 </p>
 </details>
@@ -552,8 +482,6 @@ Examples
 **Consumes** | application/json
 **Produces** | NA
 
-**Please [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json) to ensure that all required fields in "Required (Publish)" is met to publish opportunity**
-
 Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
@@ -561,7 +489,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Publish Draft Opportunity Contract JSON](#publish-opportunity-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Publish Draft Opportunity Contract JSON](#publish-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -592,7 +520,7 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | /v1/api/createAndPublish
+**URL** | /opps/v1/opportunities/createAndPublish
 **Summary** | Creates and publishes contract opportunity; JSON same as Create and Update API
 **Consumes** | application/json
 **Produces** | JSON
@@ -603,7 +531,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Create and Publish Opportunity Contract JSON](#create-and-publish-opportunity-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -613,141 +541,6 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Draft Opportunity successfully created | returns Opportunity ID in response header
 
-Examples
-
-<details>
-<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice:</summary>
-<p>
-<code><pre>
-{
-    "data": {
-        "type": "o",
-        "solicitationNumber": "test-12345457",
-        "title": "Test Create and Publish SOL notice",
-        "organizationId": "100186612",
-        "classificationCode": "1260",
-        "naics": [
-            {
-                "type": "primary",
-                "code": [
-                    "111150"
-                ]
-            }
-        ],
-        "pointOfContact": [
-            {
-                "type": "primary",
-                "title": "",
-                "fullName": "test contact",
-                "email": "test@test.com",
-                "phone": "",
-                "fax": "",
-                "additionalInfo": {
-                    "content": "Primary contact info"
-                }
-            }
-        ],
-        "placeOfPerformance": {
-            "streetAddress": "1234 XYZ street",
-            "streetAddress2": "",
-            "city": {
-                "code": "75376",
-                "name": "Sterling"
-            },
-            "state": {
-                "code": "VA",
-                "name": "Virginia"
-            },
-            "country": {
-                "code": "USA",
-                "name": "USA"
-            },
-            "zip": ""
-        },
-        "archive": {
-            "type": "autocustom",
-            "date": "2022-09-09"
-        },
-        "permissions": {
-            "IVL": {
-                "create": false,
-                "delete": false,
-                "read": false,
-                "update": false
-            }
-        },
-        "solicitation": {
-            "setAside": "SBA",
-            "deadlines": {
-                "response": "2022-08-08"
-            }
-        },
-        "award": {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee": {
-                "manual": false,
-                "name": "",
-                "duns": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            }
-        },
-        "justificationAuthority": {
-            "modificationNumber": "",
-            "authority": "dictionary"
-        },
-        "additionalReporting": [
-            "none"
-        ]
-    },
-    "description": [
-        {
-            "body": "test description"
-        }
-    ],
-    "related": {
-        "opportunityId": "f8ccfca94d794e07855ebe0d6f55c7d5"
-    },
-    "resources": [
-        {
-            "attType": "link",
-            "link": "https://faaco.faa.gov/index.cfm/attachment/download/84723",
-            "description": "test attachment pdf link"
-        },
-        {
-            "attType": "file",
-            "content": "SGVsbG8=",
-            "resourceName": "Hello.txt",
-            "fileType": "text/plain",
-            "packageAccessLevel": "private",
-            "explicitAccess": "1"
-        }
-    ]
-}
-</pre></code>
-</p>
-</details>
-
-<p><small><a href="#">Back to top</a></small></p>
 
 ### Revise Published Opportunity
 
@@ -755,7 +548,7 @@ Examples
 ------- | -------
 **Request Type** | POST
 **URL** | /v1/api/revise/{opportunityId}
-**Summary** | Create a draft version for a Published Opportunity.
+**Summary** | Create a draft version of an Opportunity for a Published Opportunity.
 **Consumes** | application/json
 **Produces** | JSON
 
@@ -896,12 +689,12 @@ Examples
             "name": ""
           }
         }
-      }
       },
       "justificationAuthority": {
         "modificationNumber": "",
         "authority": "dictionary"
       },
+    },
     "permissions": {
       "IVL": {
         "create": true,
@@ -919,6 +712,18 @@ Examples
     "archive": {
       "type": "autocustom",
       "date": "2019-09-09"
+    },
+    "flags": [
+      {
+        "code": "",
+        "isSelected": true
+      }
+    ],
+    "link": {
+      "additionalInfo": {
+        "content": ""
+      },
+      "href": ""
     },
     "additionalReporting": [
       "none"
@@ -1000,6 +805,18 @@ Examples
     "archive": {
       "type": "autocustom",
       "date": "2019-09-09"
+    },
+    "flags": [
+      {
+        "code": "",
+        "isSelected": true
+      }
+    ],
+    "link": {
+      "additionalInfo": {
+        "content": ""
+      },
+      "href": ""
     },
     "additionalReporting": [
       "none"
@@ -1239,6 +1056,8 @@ Examples
 
 ### Delete Draft Opportunity
 
+
+
 ------- | -------
 **Request Type** | DELETE
 **URL** | /v1/api/delete/{opportunityId}
@@ -1273,7 +1092,7 @@ _NA_
 
 ------- | -------
 **Request Type** | POST
-**URL** | /v1/api/{opportunityId}/requests
+**URL** |	/opps/v1/opportunities/{opportunityId}/requests
 **Summary** | Deletes all the versions or latest version of a notice
 **Consumes** | application/json
 **Produces** | JSON
@@ -1284,8 +1103,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization	| Header | string |	Yes |	Valid and authorized user ID
 api_key |	query |	string |	Yes |	Valid System Account API Key
-opportunityId | query | string | Yes | Opportunity ID
-Request JSON|	Body|	JSON|	Yes|	[Refer Delete Notice Contract JSON](#delete-notice-contract-json)
+Request JSON|	Body|	JSON|	Yes|	Refer Delete Notice JSON
 
 Responses
 
@@ -1296,16 +1114,19 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Delete latest version of a notice:</summary>
+<summary>Delete Notice:</summary>
 <p>
 <code><pre>
 {
-  "reason": "test",
-  "requestType": "delete_request",
-  "data": {
-    "description": "test",
-    "deleteOption": "latest"
-  }
+   "requestType":"delete_request",
+    "reason":"test",
+     "data":{
+              "description":"test",
+               "title":null,
+                "newArchiveDate":null,
+                "newArchiveType":null,
+                 "deleteOption":"latest"  ( “all”  - to delete all versions)
+              }
 }
 </pre></code>
 </p>
@@ -1331,6 +1152,7 @@ api_key | query | string | Yes | Valid System Account API Key
 archivedFrom | query | date-time | No | Archive From UTC Date and Time <br />Example: 2018-11-01 00:00:00
 archivedTo | query | date-time | No | Archive To UTC Date and Time <br />Example: 2018-11-01 00:00:00
 awardNumber | query | string | No | Award Number
+cancelled (will be deprecated) | query | boolean | No | True or false
 doNumber | query | string | No | Delivery Order Number
 includeCount | query | boolean | No | True or false
 keyword | query | string | No | Enter any keyword from the description
@@ -1348,7 +1170,7 @@ responseTo | query | date-time | No | ResponseTo UTC Date and Time <br />Example
 size | query | integer | No | Size limit is 10 by default
 solNumber | query | string | No | Solicitation Number
 sortBy | query | string | No | Sort (-createdOn, -modifiedOn)
-status| query | Array[string] | No | Active - All Published Active Notice <br> Draft - All Draft Notice <br> Published - All Published Notice <br> Inactive - All archived/Inactive Notice (before archive) <br> Cancelled - All Cancelled Notice <br/>(comma separated)
+status (To be updated) | query | Array[string] | No | 1.status= active (published, unarchive and uncancelled records)<br/> 2.status=inactive (published, archive and uncancelled records)<br/>3.status=draft (draft records)<br/> 4.status=published (published and unarchive)<br/>5.status=active_cancelled(published, unarchive and cancelled records)<br/>6.status=inactive_cancelled(published, archive and cancelled records)<br/>7. status=archived(published and archived) <br />(comma separated)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1560,6 +1382,7 @@ Examples
           "opportunityId": "8de3d88fc7642d9adcdb8d4ff9070399"
         },
         "related": {
+
         },
         "status": {
           "code": "draft",
@@ -1602,8 +1425,10 @@ Examples
           ]
         },
         "parent": {
+
         },
         "related": {
+
         },
         "status": {
           "code": "draft",
@@ -1703,8 +1528,10 @@ Examples
           ]
         },
         "parent": {
+
         },
         "related": {
+
         },
         "status": {
           "code": "published",
@@ -1957,9 +1784,23 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Examples
 
+<details>
+<summary>Uncancel Request (active Opportunity):</summary>
+<p>
+<code><pre>
+{
+  "reason": "",
+  "requestType": "uncancel_request",
+  "data": {
+    "description": "test"
+  }
+}
+</pre></code>
+</p>
+</details>
 
 <details>
-<summary>Uncancel Request for a Non Award Notice</summary>
+<summary>Uncancel Request (inactive Opportunity):</summary>
 <p>
 <code><pre>
 {
@@ -1971,26 +1812,6 @@ Examples
     "newArchiveType": "auto15",
     "newResponseDate": "2018-11-11T10:58:00-05:00",
     "newResponseTz": "America/New_York"
-  }
-}
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>UnCancel Request for a Award notice</summary>
-<p>
-<code><pre>
-{
-  "reason": "test uncancel for award notice",
-  "requestType": "uncancel_request",
-  "data": {
-    "description": "test",
-    "newResponseDate": null,
-    "newResponseTz": null,
-    "newArchiveType": "autocustom",
-    "newArchiveDate": "2020-03-01",
-    "newContractAwardDate": "2020-02-02"
   }
 }
 </pre></code>
@@ -2070,36 +1891,17 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Unarchive Request for a Non-Award notice</summary>
+<summary>Unarchive:</summary>
 <p>
 <code><pre>
 {
   "reason": "test",
   "requestType": "unarchive_request",
   "data": {
-    "newResponseDate": "2019-12-12T00:12:00-05:00",
-    "newResponseTz": "America/New_York",
+    "newArchiveDate": null,
     "newArchiveType": "auto15",
-    "newArchiveDate": null
-  }
-}
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>Unarchive Request for a Award notice</summary>
-<p>
-<code><pre>
-{
-  "reason": "test unarchive for award notice",
-  "requestType": "unarchive_request",
-  "data": {
-    "newResponseDate": null,
-    "newResponseTz": null,
-    "newArchiveType": "autocustom",
-    "newArchiveDate": "2020-03-01",
-    "newContractAwardDate": "2020-02-02"
+    "newResponseDate": "2019-11-11T10:58:00-05:00",
+    "newResponseTz": "America/New_York"
   }
 }
 </pre></code>
@@ -2108,12 +1910,12 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Create Resource in Draft Opportunity
+### Create Attachment in Draft Opportunity
 
 ------- | -------
 **Request Type** | POST
 **URL** |/v1/api/{opportunityId}/attachments
-**Summary** | Add attachment/link to a draft Opportunity
+**Summary** | Create attachment/link to a draft Opportunity
 **Consumes** | application/json
 **Produces** | JSON
 
@@ -2141,12 +1943,11 @@ Examples
 <p>
 <code><pre>
 {
-    "attType": "file",
-    "content": "SGVsbG8=",
-    "resourceName": "Hello.txt",
-    "fileType": "text/plain",
-    "packageAccessLevel": "private",
-    "explicitAccess": "1"
+ "attType": "file",
+ "content": "SGVsbG8=",
+ "resourceName": "Hello.txt",
+ "fileType": "text/plain",
+ "packageAccessLevel": "public"
 }
 </pre></code>
 </p>
@@ -2156,10 +1957,10 @@ Examples
 <summary>Create Attachment Request - link</summary>
 <p>
 <code><pre>
-{
-    "attType": "link",
-    "link": "https://faaco.faa.gov/index.cfm/attachment/download/84723",
-    "description": "test attachment pdf link"
+{"attType":"link",
+ "link":"https://faaco.faa.gov/index.cfm/attachment/download/84723",
+ "description":"test attachment pdf link",
+"packageAccessLevel":null
 }
 </pre></code>
 </p>
@@ -2167,12 +1968,12 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update Resource in Draft Opportunity
+### Update Attachment in Draft Opportunity
 
 ------- | -------
 **Request Type** | PATCH
 **URL** |/v1/api/{opportunityId}/attachments/{resourceId}
-**Summary** | Update draft attachment/link metadata on a draft Opportunity
+**Summary** | Update an attachment metadata on a draft Opportunity
 **Consumes** | application/json
 **Produces** | JSON
 
@@ -2183,8 +1984,8 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-resourceId | query | string | Yes | Resource ID
-Request JSON | Body | JSON | Yes | [Refer Update Attachment Link Contract JSON](#update-attachment-contract-json)
+resourceId | query | string | Yes | Attachment ID
+Request JSON | Body | JSON | Yes | [Refer Update Attachment Contract JSON](#update-attachment-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2197,108 +1998,34 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Update Attachment Request - Change File Access : Controlled Unclassified (Only applicable to files that are not published) </summary>
+<summary>Update Attachment Request - file</summary>
 <p>
 <code><pre>
 {
   "attType": "file",
   "packageAccessLevel": "private",
-  "explicitAccess": "1"
+   "explicitAccess": "1",
+ "content": "SGVsbG8=",
+ "fileType": "text/plain"
 }
 </pre></code>
 </p>
 </details>
 
 <details>
-<summary>Update Attachment Request - Change File Access : Public (Only applicable to files that are not published) </summary>
+<summary>Update Attachment Request - link</summary>
 <p>
 <code><pre>
 {
   "attType": "file",
-  "packageAccessLevel": "public",
-  "explicitAccess": "0"
+  "packageAccessLevel": "private",
+   "explicitAccess": "1",
+ "content": "SGVsbG8=",
+ "fileType": "text/plain"
 }
 </pre></code>
 </p>
 </details>
-
-<details>
-<summary>Update Attachment Request - Change File Name (Only applicable to files that are not published)</summary>
-<p>
-<code><pre>
-{
-  "resourceName": "newFileName.pdf"
-}
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>Update Attachment Request - Change Resource Order (Applicable to both files and links)</summary>
-<p>
-<code><pre>
-{
-  "sortOrderChanged": true,
-  "resourceIdBelow": "292dc517a19b4e43846f39d20e6f7ecf"
-}
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>Update Attachment Request - Change Resource Order (Move resource to the bottom of the list. Applicable to both files and links)</summary>
-<p>
-<code><pre>
-{
-  "sortOrderChanged": true
-}
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>Update Attachment Request - Change Link Display text</summary>
-<p>
-<code><pre>
-{
-  "resourceName": "New Display Text"
-}
-</pre></code>
-</p>
-</details>
-
-<p><small><a href="#">Back to top</a></small></p>
-
-### Delete Resource in Draft Opportunity
-
-------- | -------
-**Request Type** | DELETE
-**URL** |/v1/api/{opportunityId}/attachments/{resourceId}
-**Summary** | Delete an attachment/link from a draft opportunity.
-**Consumes** | Request Parameters
-**Produces** | NA
-
-Request Parameters
-
-Parameter Name | Parameter Type | Data Type  | Required | Description
----------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized user ID
-api_key | query | string | Yes | Valid System Account API Key
-opportunityId | query | string | Yes | Opportunity ID
-resourceId | query | string | Yes | Resource ID
-deleteAll | query | boolean | Yes | Should be true if deleting resource from all versions of a notice; else false. The deleted published resources will not show up for any further revisions that will be created. 
-
-<p><small><a href="#">Back to top</a></small></p>
-
-Responses
-
-HTTP Status Code | Response Type | Reason  | Description
------------------|---------------|---------|------------
-204 | string | Attachment successfully deleted | NA
-
-Examples
-
-_NA_
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2476,7 +2203,7 @@ ivl": [
 
 ------- | -------
 **Request Type** | GET
-**URL** |	/v1/api/resource
+**URL** |	/opps/v1/api/resource
 **Summary** | Download all attachments from resource ID
 **Consumes** | application/json
 **Produces** | JSON
@@ -2488,7 +2215,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization|	Header|	string|	Yes|Valid and authorized user ID
 Api_key	query	| string|	Yes|	Valid System Account API Key
 ResourceID	|query|	string|	Yes	| Resource ID
-excludeDeleted | query | string | No|
+
 
 Responses
 
@@ -2532,7 +2259,7 @@ Examples
 
 ------- | -------
 **Request Type** | GET
-**URL** |	/v1/api/resources
+**URL** |	/opps/v1/api/resources
 **Summary** | Download all attachments from opportunity ID
 **Consumes** | application/json
 **Produces** | JSON
@@ -2544,7 +2271,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization|	Header|	string|	Yes|Valid and authorized user ID
 Api_key	query	| string|	Yes|	Valid System Account API Key
 OpportunityID	|query|	string|	Yes	| Opportunity ID
-excludeDeleted | query | string | No|
+
 
 Responses
 
@@ -2631,12 +2358,42 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
+### Delete Vendor
+
+
+------- | -------
+**Request Type** | DELETE
+**URL** | /v2/opportunities/{opportunityId}/ivl/{entityid}
+**Summary** | Delete Vendor from IVL for Opportunity ID
+**Consumes** | Request Parameters
+**Produces** | JSON
+
+Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+Authorization | Header |  string | Yes | Valid and authorized user ID
+api_key | query | string | Yes | Valid System Account API Key
+opportunityId | query | string | Yes | Opportunity ID
+entityid | query | string | Yes | DUNS number for the business entity
+
+Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+204 | string | Vendor successfully deleted | NA
+
+Examples
+
+N/A
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Get Authorized Party ###
 
 ------- | -------
 **Request Type** | GET
-**URL** | /v1/api/opportunities/access/{opportunityId}/accessRequest
+**URL** | /v1/opportunities/access/{opportunityId}/accessRequest
 **Summary** | Summary	Get Authorized Party list for the explicit access requests submitted to an Opportunity
 **Consumes** | application/json
 **Produces** | JSON
@@ -2648,6 +2405,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization|	Header	|string	|Yes	|Valid and authorized user ID
 api_key|	query|	string|	Yes|	Valid API Key
 opportunityId	|query	|string|	Yes|	Opportunity ID
+status|	query|	string|	No|	Request access status can be: Pending, Approved, Rejected, or blank to get all request details for a notice
 
 
 Responses
@@ -2663,6 +2421,7 @@ Examples
 <p>
 <code><pre>
 {
+
     "_embedded": {
         "authorizedPartyList": [
             {
@@ -2714,7 +2473,7 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | /v1/api/opportunities/access/{opportunityId}/accessRequest
+**URL** | /v1/opportunities/access/{opportunityId}/accessRequest
 **Summary** | Add a Vendor as an Authorized Party for a notice to grant access to all the secured attachments across all the versions . This API will create and approve the request for the vendor.
 **Consumes** | application/json
 **Produces** | JSON
@@ -2726,7 +2485,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON  | Body | JSON | Yes | [Refer Vendor Data Contract JSON](#vendor-data-contract-json)
+Request JSON  | Body | JSON | Yes | [Refer Vendor Data JSON](#vendor-data-json)
 
 Responses
 
@@ -2737,16 +2496,16 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Request – Add Authorized Party</summary>
+<summary>Response – Add Authorized Party</summary>
 <p>
 <code><pre>
 {
 "lname":"test",
 "fname":"test123",
-"email":"testuser.de@gmail.com",
-"contractorName":"test contractor",
-"duns":"608999570",
-"cageCode":"4CHY"
+"email":"reitestuser.de@gmail.com",
+"contractorName":"",
+"duns":"608999520",
+"cageCode":""
 }
 </pre></code>
 </p>
@@ -2871,115 +2630,140 @@ Examples
 <p>
 <code><pre>
 {
-    "data": {
-        "type": "",
-        "solicitationNumber": "",
-        "title": "",
-        "organizationId": "",
-        "classificationCode": "",
-        "naics": [
-            {
-                "type": "primary",
-                "code": [
-                    ""
-                ]
-            }
-        ],
-        "pointOfContact": [
-            {
-                "type": "primary",
-                "title": "",
-                "fullName": "",
-                "email": "",
-                "phone": "",
-                "fax": "",
+   "data": {
+        "solicitationNumber": "Test1",
+        "title": "TST_T1",
+        "type": "p",
+        "classificationCode": "13",
+        "organizationId": "100000136",
+        "organizationLocationId": "",
+        "naics": [{
+            "type": "primary",
+            "code": ["111150"]
+        }],
+        "pointOfContact": [{
                 "additionalInfo": {
-                    "content": ""
-                }
-            }
-        ],
+                        "content": ""
+                },
+                "email": "",
+                "fax": "",
+                "fullName": "Veera",
+                "phone": "",
+                "title": "",
+                "type": "primary"
+        }],
         "placeOfPerformance": {
-            "streetAddress": "",
-            "streetAddress2": "",
-            "city": {
-                "code": "",
-                "name": ""
-            },
-            "country": {
-                "code": "",
-                "name": ""
-            },
-            "state": {
-                "code": "",
-                "name": ""
-            },
-            "zip": ""
+                "city": {
+                        "code": "",
+                        "name": ""
+                },
+                "country": {
+                        "code": "",
+                        "name": ""
+                },
+                "state": {
+                        "code": "",
+                        "name": ""
+                },
+                "streetAddress": "",
+                "streetAddress2": "",
+                "zip": ""
         },
-        "archive": {
-            "type": "autocustom",
-            "date": "2019-09-09"
+        "award": {
+                "date": "",
+                "number": "",
+                "deliveryOrderNumber": "",
+                "amount": "number",
+                "lineItemNumber": "",
+                "awardee": {
+                        "manual": false,
+                        "name": "",
+                        "duns": "",
+                        "location": {
+                                "streetAddress": "",
+                                "streetAddress2": "",
+                                "city": {
+                                        "code": "",
+                                        "name": ""
+                                },
+                                "state": {
+                                        "code": "",
+                                        "name": ""
+                                },
+                                "zip": "",
+                                "country": {
+                                        "code": "",
+                                        "name": ""
+                                }
+                        }
+                },
+                "justificationAuthority": {
+                        "modificationNumber": "",
+                        "authority": "dictionary"
+                },
+                "fairOpportunity": {
+                        "authority": ""
+                }
         },
         "permissions": {
-            "IVL": {
-                "create": false,
-                "delete": false,
-                "read": false,
-                "update": false
-            }
-        },
-        "solicitation": {
+                "IVL": {
+                        "create": false,
+                        "delete": false,
+                        "read": false,
+                        "update": false
+                }
+        }, 
+          "solicitation": {
             "setAside": "SBA",
             "deadlines": {
                 "response": "2019-08-08"
             }
         },
-        "award": {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee": {
-                "manual": false,
-                "name": "",
-                "duns": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            }
+       "archive": {
+            "type": "autocustom",
+            "date": "2019-09-09"
         },
-        "justificationAuthority": {
-            "modificationNumber": "",
-            "authority": "dictionary"
+        "flags": [{
+                "code": "",
+                "isSelected": true
+        }],
+        "link": {
+                "additionalInfo": {
+                        "content": ""
+                },
+                "href": ""
         },
-        "additionalReporting": [
-            "none"
+         "additionalReporting": [
+                "none"
         ]
-    },
-    "description": [
-        {
-            "body": ""
-        }
-    ],
-    "related": {
-        "opportunityId": ""
-    }
-}
+        },
+ "description": [{
+        "body": ""
+    }],
+     "resources": [{
+        "attType": "link",
 
+        "link": "http://beta.sam.gov",
+
+        "description": "test beta sam link",
+
+        "packageAccessLevel": null
+    },
+    {
+       "attType": "link",
+
+        "link": "https://faaco.faa.gov/index.cfm/attachment/download/84723",
+
+        "description": "test attachment pdf link",
+
+        "packageAccessLevel": null
+
+    }],
+
+    "postedDate": "20190423",
+
+    "archived": false
+}
 </pre></code>
 </p>
 </details>
@@ -2987,6 +2771,7 @@ Examples
 
 * Field headers in the table must match with field headers shown in JSON example  
 
+<<<<<<< HEAD
 Name | Data Type |Field Length | Allowed Values | Required (Create/Update) | Required (Publish) | Description
 -----|-----------|-------|-------------------|------------|------------ |----------
 type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | Notice Type
@@ -3063,6 +2848,98 @@ description | JSON | NA | NA | NA | NA |
 description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice
 related | JSON | NA | NA | NA | NA | Related Notice information
 related.opportunityId | string | 32 characters| | No | No | Opportunity Id of the related notice
+=======
+Name | Data Type | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
+-----|-----------|----------------|--------------------------|-----------------------|------------
+type | string | See Notice Types table | Yes | Yes | Notice Type
+solicitationNumber | string |  | No | Yes | Solicitation Number
+title | string |  | Yes | Yes | Title of the Opportunity
+organizationId | string |  | No for Create (Yes for Update) | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
+organizationLocationId | string | | No|No| Organization Location ID
+classificationCode | string |  | No | Yes (not required for type= r) | Product Service Code (PSC)
+naics | JSON | NA | NA | NA |
+naics.code | string |  | No | Yes | NAICS Code
+naics.type | string | primary  | No | Yes | NAICS Type Note: 'p' must be in lower case
+flags | JSON | NA | NA | NA |
+flags.code | string | Recovery act | No | No | This is a recovery or Reinvestment Act Action
+flags.IsSelected | boolean | default = True | No | No |
+pointOfContact | JSON | NA | NA | NA |
+pointOfContact.type | string | p | No | Yes | Contact Type Note: 'p' must be in lower case
+pointOfContact.title | string |  | No | No | Contact title
+pointOfContact.fullname | string |  | No | Yes | Contact Full Name
+pointOfContact.email | string |  | No  | Yes (no if type = a)  | Contact email
+pointOfContact.phone | string |  | No | No | Contact Phone
+pointOfContact.fax | string |  | No  | No | Contact Fax
+placeOfPerformance | JSON | NA | NA | NA |
+placeOfPerformance.<br/>streetAddess | string |  | No | No | Pop Address
+placeOfPerformance.<br/>streetAddess2 | string |  | No | No | Pop Address2
+placeOfPerformance.city | JSON | NA | NA | NA | Pop City
+placeOfPerformance.city.<br/>code | string |  | No | No | Pop City code
+placeOfPerformance.city.<br/>name | string |  | No | No | Pop City name
+placeOfPerformance.state | JSON | NA | NA | NA | Pop City state
+placeOfPerformance.state.<br/>code | string |  | No | No | Pop city state code
+placeOfPerformance.state.<br/>name | string |  | No | No | Pop city state name
+placeOfPerformance.country | JSON | NA | NA | NA | Pop Country
+placeOfPerformance.<br/>country.code | string |  | No | No | Pop Country Code
+placeOfPerformance.<br/>country.name | string |  | No | No | Pop Country name
+placeOfPerformance.zip | string |  | No | No | Pop Country zip
+archive | JSON | NA | NA | NA |
+archive.type | string | auto15, auto30, autocustom | No | Yes | Archive Type
+archive.date | date |  | No | Yes (if archive.type=<br/>autocustom) | Archive Date
+permissions | JSON | NA | NA | NA |
+permissions.ivl | JSON | NA | NA | NA |
+permissions.ivl.create | boolean |  | No | No | permissions.ivl.create
+permissions.ivl.read | boolean |  | No | No | permissions.ivl.read
+permissions.ivl.update | boolean | Not In Use | Not In Use | Not In Use | Not In Use
+permissions.ivl.delete | boolean | Not In Use | Not In Use | Not In Use | Not In Use
+solicitation | JSON | NA | NA | NA |
+solicitation.setAside | string | See Set-Aside values table | No | No | setAside
+solicitation.deadlines | JSON | NA | NA | NA |
+solicitation.<br/>deadlines.response | date | YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
+solicitation.deadlines.<br/>responseresponseTz | string | | No | No | Time Zone for <br/>Solicitation Deadline Date
+award | JSON | NA | NA | NA |
+award.date | date | YYYY-MM-DD |No | Yes only for type= a | Award Date
+award.number | string |  | No | Yes only for type= i, j, a | Award Number
+award.deliverOrderNumber | string |  | No | No | Award Deliver Order Number
+award.amount | number |  | No | No | Award Amount
+award.lineitemNumber | string |  | No | No | Award Line item Number
+award.awardee | JSON | NA | NA | NA |
+award.awardee.manual | string | boolean  | Yes | Yes  | Awardee
+award.awardee.name | string |  | No | No | Awardee Name
+award.awardee.duns | string |  | No | No | Awardee Duns
+award.awardee.location | JSON | NA | NA | NA |
+award.awardee.location.<br/>streetAddress | string |  | No | No | Awardee Street Address 1
+award.awardee.location.<br/>streetAddress2 | string |  | No | No | Awardee Street Address 1
+award.awardee.location.<br/>city | string |  | No | No | Awardee City
+award.awardee.location.<br/>city.code | string |  | No | No | Awardee City code
+award.awardee.location.<br/>city.name | string |  | No | No | Awardee City name
+award.awardee.location.<br/>state | JSON | NA | NA | NA |
+award.awardee.location.<br/>state.code | string |  | No | No | Awardee State code
+award.awardee.location.<br/>state.name | string |  | No | No | Awardee State name
+award.awardee.location.<br/>country | JSON | NA | NA | NA |
+award.awardee.location.<br/>country.code | string |  | No | No | Awardee Country code
+award.awardee.location.<br/>country.name | string |  | No | No | Awardee Country Name
+award.awardee.location.<br/>zip | string |  | No | No | Awardee Country Zip
+justificationAuthority | JSON | NA | NA | NA |
+justificationAuthority.<br/>modificationNumber | string |  | No | No | Justification Authority Modification Number
+justificationAuthority.<br/>authority | string |  | No | No | Justification Authority
+link | JSON | NA | NA | NA |
+link.additionalInfo | JSON | NA | NA | NA |
+link.additionalInfo.cotent | string |  | No | No | Additional info
+link.href | string |  | No | No | Website Address
+additionalReporting | string | none/<br/>auto_recovery | No | Yes |
+description | JSON | NA | NA | NA |
+description.body | string |  | No | Yes | Description of notice
+attType | string | link, file | No |No| Type of attachment, either link or file
+content | byte |  | No|No | File content in byte format
+link | string |  | |No|No | Resource link or URL
+packageAccessLevel | string | public,private(default public) | No | No| Type of access to file or link
+resourceName | string |  | No|No | Name of file
+fairOpportunity | string | |No|No| Fair Opportunity|
+fairOpportunity.authority|string | |No|No| Fair Opportunity Authority
+postedDate| date| |No|No| Posted Date
+archived| string| | |No|No| Archived Status
+>>>>>>> f21b023feae17de4a6a6259f847dbfa9c3d7ab41
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3091,6 +2968,7 @@ reason | string |  | No | Publish reason
 
 <p><small><a href="#">Back to top</a></small></p>
 
+<<<<<<< HEAD
 ### Create and Publish Opportunity Contract JSON
 
 
@@ -3319,6 +3197,8 @@ resources.exportControlled | string |1 character | 0 | No |Export Controlled. * 
 
 <p><small><a href="#">Back to top</a></small></p>
 
+=======
+>>>>>>> f21b023feae17de4a6a6259f847dbfa9c3d7ab41
 ### Revise Opportunity Contract JSON
 
 <div id="revise-json" title="Click to view Revise Contract">
@@ -3340,7 +3220,7 @@ resources.exportControlled | string |1 character | 0 | No |Export Controlled. * 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 requestType | string | update_publish_request | Yes | Type of request
-reason | string |  | No | Reason for revision
+reason | string |  | Yes | Reason for revision
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3367,7 +3247,7 @@ reason | string |  | No | Reason for revision
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-reason | string |  | No | Reason for cancelation
+Reason | string |  | Yes | Reason for cancelation
 requestType | string | cancel_request | Yes | Type of request
 description | string |  | Yes | Description for cancelation
 
@@ -3382,14 +3262,15 @@ description | string |  | Yes | Description for cancelation
 <code><pre>
 {
   "reason": "",
-  "requestType": "uncancel_request",
+  "requestType": " uncancel_request ",
   "data": {
     "description": "",
     "newContractAwardDate": "",
     "newArchiveDate": "",
     "newArchiveType": "",
     "newResponseDate": "",
-    "newResponseTz": "America/New_York"
+    "newResponseTz": "America/New_York",
+    "newContractAwardDate": ""
   }
 }
 </pre></code>
@@ -3404,6 +3285,7 @@ Name | Data Type | Allowed Values | Required | Description
 reason | string |  | Yes | Reason for uncanceling
 requestType | string | uncancel_request | Yes | Type of request
 description | string |  | Yes | Description for uncanceling
+<<<<<<< HEAD
 newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
@@ -3413,6 +3295,14 @@ newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Co
 newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes; for types = k, o (Combined Synopsis/Solicitation) <br/> 2) Yes; if newArchive.type=auto15 except for type = a (Award) | New Response Date
 >>>>>>> Stashed changes
 newResponseTz | string |  | No | New Response Time Zone
+=======
+newContractAwardDate | date | YYYY-MM-DD | Yes (if unarchiving an award notice) | New Contract Award Date
+newArchiveDate | date | YYYY-MM-DD | Yes (if newArchiveType=autocustome) | New Archive Date
+newArchiveType | string | auto15, auto30, autocustom | Yes  | New Archive Type
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | Yes (if newArchiveType = auto15) | New Response Date
+newResponseTz | string | America/New_York | Yes (if newResponseDate is provided) | New Response Time Zone
+newContractAwardDate | date | YYYY-MM-DD | Yes (if type=a) | New Contract Award Date
+>>>>>>> f21b023feae17de4a6a6259f847dbfa9c3d7ab41
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3437,7 +3327,7 @@ newResponseTz | string |  | No | New Response Time Zone
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 requestType | string | archive_request | Yes | Type of request
-reason | string |  | No | Archive reason
+reason | string |  | Yes | Archive reason
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3468,8 +3358,9 @@ reason | string |  | No | Archive reason
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-reason | string |  | Yes | Reason for unarchiving
+reason | string |  | Yes | Reason for uncanceling
 requestType | string | unarchive_request | Yes | Type of request
+<<<<<<< HEAD
 newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
@@ -3479,6 +3370,13 @@ newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Co
 newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes; for types = k, o (Combined Synopsis/Solicitation) <br/> 2) Yes; if newArchive.type=auto15 except for type = a (Award) | New Response Date
 >>>>>>> Stashed changes
 newResponseTz | string |  | No | New Response Time Zone
+=======
+newContractAwardDate | date | YYYY-MM-DD | Yes (if unarchiving an award notice) | New Contract Award Date
+newArchiveDate | date | YYYY-MM-DD | Yes (if newArchiveType=autocustom) | New Archive Date
+newArchiveType | string | auto15, auto30, autocustom | Yes  | New Archive Type
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | Yes (if newArchiveType = auto15) | New Response Date
+newResponseTz | string | America/New_York | Yes (if newResponseDate is provided) | New Response Time Zone
+>>>>>>> f21b023feae17de4a6a6259f847dbfa9c3d7ab41
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3493,10 +3391,8 @@ newResponseTz | string |  | No | New Response Time Zone
  "attType": "file",
  "content": "",
  "resourceName": "",
- "fileType": "",
- "packageAccessLevel": "",
- "explicitAccess":"",
- "exportControlled": null
+ "fileType": "text/plain",
+ "packageAccessLevel": "public"
 }
 </pre></code>
 </p>
@@ -3509,7 +3405,8 @@ newResponseTz | string |  | No | New Response Time Zone
 {
   "attType": "link",
   "link": "",
-  "description": ""
+  "description": "",
+  "packageAccessLevel": ""
 }
 </pre></code>
 </p>
@@ -3518,17 +3415,14 @@ newResponseTz | string |  | No | New Response Time Zone
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Field Length |Allowed Values | Required | Description
+Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file
-content | byte | 250MB| | Yes if attType=file | File content in base64 format
-packageAccessLevel | string | 32 characters|public, <br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'.
-resourceName | string | 255 characters| | Yes if attType=file | Name of file
-fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
-link | string | 255 characters| | Yes if attType=link | Resource link  URL
-description | string |255 characters | | Yes if attType=link | Description of the link
-explicitAccess | string |1 character | 0, 1 <br/>(defaults to '0' public access, if not provided) | No  |Explicit Access. For Controlled Unclassified files, specify '1'
-exportControlled | string |1 character | 0 | No  | *Captured for future JCP validation*<br> Export Controlled
+attType | string | link, file | Yes | Type of attachment, either link or file
+content | byte |  | Yes (if attType=file) | File content in byte format
+link | string |  | Yes (if attType=link) | Resource link or URL
+packageAccessLevel | string | public,private(default public) | No | Type of access to file or link
+resourceName | string |  | Yes (if attType=file) | Name of file
+
 
 #### Valid File Types 
 
@@ -3560,29 +3454,17 @@ Flash Video (.flv, .f4v)|	video/x-flv
 
 ### Update Attachment Contract JSON
 
-<div id="update-attachment-json" title="Click to view update Attachment/Link Contract">
+<div id="update-attachment-json" title="Click to view Update Attachment Contract">
 <details>
-<summary>Update_Attachment_Contract_Json </summary>
+<summary>Update_Attachment_Contract_Json</summary>
 <p>
 <code><pre>
 {
  "attType": "file",
- "packageAccessLevel": "",
- "explicitAccess": "",
- "resourceName": "",
- "sortOrderChanged":true ,
- "resourceIdBelow": ""
-}
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>Update_Link_Contract_Json </summary>
-<p>
-<code><pre>
-{
- "resourceName": ""
+ "packageAccessLevel": "private",
+  "explicitAccess": "1",
+"content": "SGVsbG8=",
+"fileType": "text/plain"
 }
 </pre></code>
 </p>
@@ -3593,12 +3475,11 @@ Flash Video (.flv, .f4v)|	video/x-flv
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-attType | string | link, file | No | Required only for file access level changes
-packageAccessLevel | string | public,<br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'
-resourceName | string |  | No | Name of file or link
-explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files. Required only for file access level changes
-sortOrderChanged | boolean  | true, false | No | Should be provided if file order is changed.
-resourceIdBelow | string  |  | No | This should be Resource ID of the file/link that will display below the file/link that is moved
+attType | string | link, file | Yes | Type of attachment, either link or file
+link | string |  | Yes (if attType=link) | Resource link or URL
+packageAccessLevel | string | public,private(default public) | No | Type of access to file or link
+resourceName | string |  | Yes (if attType=file) | Name of file
+explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3622,70 +3503,52 @@ resourceIdBelow | string  |  | No | This should be Resource ID of the file/link 
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-ivlCreate | string | forcedon, forcedoff | No | Indicates whether vendors can indicate interest in the organization’s Opportunities
-ivlView | string | forcedon, forcedoff | No | Indicates whether vendors can view other vendors interested in the organization’s Opportunities
+ivlCreate | string | forcedon, forcedoff | Yes | Indicates whether vendors can indicate interest in the organization’s Opportunities
+ivlView | string | forcedon, forcedoff | Yes | Indicates whether vendors can view other vendors interested in the organization’s Opportunities
 
-### Vendor Data Contract JSON
-
-<div id="vendor-data-json" title="Click to view Vendor Data Contract">
-<details>
-<summary>Vendor_Data_Contract_JSON</summary>
-<p>
-<code><pre>
-{
-"lname":"",
-"fname":"",
-"email":"",
-"contractorName":"",
-"duns":"",
-"cageCode":""
-}
-</pre></code>
-</p>
-</details>
-</div>
-
-* Field headers in the table must match with field headers shown in JSON example  
+### Vendor Data JSON
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 fname | string | | Yes | First name of the user
 lname | string | | Yes | Last name of the user
 email | string | | Yes | Email Id of the user
-contractorName | string | | Yes | Contractor Name
+contractorName | string | | No | Contractor Name
 duns | string | | Yes | DUNS#
-cageCode | string | | Yes | Cage Code
+cageCode | string | | No | Cage Code
 
-<p><small><a href="#">Back to top</a></small></p>
-
-### Delete Notice Contract JSON
-
-<div id="delete-notice-json" title="Click to view Delete Notice Contract">
-<details>
-<summary>Delete_Notice_Contract_JSON</summary>
-<p>
-<code><pre>
-   {
-     "reason": "",
-     "requestType": "delete_request",
-     "data": {
-       "description": "",
-       "deleteOption": "all"   -- "latest" to delete the latest published version of a notice 
-     }
-   }
-</pre></code>
-</p>
-</details>
-</div>
+### Delete Notice JSON
 
 * Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-reason|	string|	|	No|	Reason for deletion
+reason|	string|	|	Yes|	Reason for deletion
 requestType	|string	|delete_request |Yes	|Type of request
 description	|string|		|Yes|	Description for deletion of a notice
+title	|string	|	|No|	
+newArchiveDate|	date|	YYYY-MM-DD|	No|	New Archive Date
+newArchiveType|	string|	|	No|	New Archive Type
 deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or all versions of a notice
+
+<details>
+<summary>Response</summary>
+<p>
+<code><pre>
+   {
+   "requestType”: delete_request",
+    "reason":"test",
+     "data": {
+                           "description”: “test",
+                            "title”: null,
+                            "newArchiveDate":null,
+                             "newArchiveType":null,
+                             "deleteOption”: latest"  ( “all”  - to delete all versions)
+              }
+}
+</pre></code>
+</p>
+</details>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3768,7 +3631,6 @@ Error Code|Field | Error Message | Reason/Description | Operation
 401|Authorization |	Insufficient privileges to edit opportunity |	See User Account Authorization section |	Update, Publish, Revise
 401|Authorization |	Insufficient privileges to create opportunity |	Insufficient privileges to create an award notice. See User Account Authorization section for more details. |	Create Opportunity
 401|Authorization |	Insufficient privileges to create request |	Insufficient privileges to publish an award notice. See User Account Authorization section for more details. |	Create
-400|Award |	Award Details Section - Contract Award Dollar Amount is not a valid field for this opportunity type |	Award Section is not valid for Base Notice Types (s, o, p, r, g, k, i) |	Publish
 400|Award |	Award Details Section is missing data. | Award Details Section is missing data. |	Publish
 400|Award Amount |	Base and All Options Value is a required field |	Base and All Options Value is a required field |	Publish
 400|Award Amount |	Base and All Options Value max length is 64 digits |	Base and All Options Value max length is 64 digits |	Publish
@@ -3895,11 +3757,7 @@ Date | Version | Description
 8/19/2019 | v0.72 | API Names Updated <br> Valid File Types Updated
 8/29/2019| v0.73| Error Codes Added
 8/29/2019| v0.74| Updated the missing description for explicitAccess field in Update Attachment Contract JSON
-10/9/2019 | v0.75| Get List of Opportunities API Parameter Changes (cancelled field removed/status field updated)
-10/22/2019 | v0.76| Create and Publish JSON field for Archive.Date and Response Date updated <br> Production Link Updated <br> API URLs updated
 10/10/2019 | v0.8 | Updated the Set-Aside values with the latest codes
-10/25/2019 | v0.9 | Updated the field lengths
-
 
 
 <p><small><a href="#">Back to top</a></small></p>
