@@ -791,7 +791,7 @@ Examples
 ------- | -------
 **Request Type** | POST
 **URL** | /v1/api/revise/{opportunityId}
-**Summary** | Create a draft version of an Opportunity for a Published Opportunity.
+**Summary** | Create a draft version for a Published Opportunity.
 **Consumes** | application/json
 **Produces** | JSON
 
@@ -1763,10 +1763,8 @@ Examples
           ]
         },
         "parent": {
-
         },
         "related": {
-
         },
         "status": {
           "code": "published",
@@ -2019,23 +2017,9 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Examples
 
-<details>
-<summary>Uncancel Request (active Opportunity):</summary>
-<p>
-<code><pre>
-{
-  "reason": "",
-  "requestType": "uncancel_request",
-  "data": {
-    "description": "test"
-  }
-}
-</pre></code>
-</p>
-</details>
 
 <details>
-<summary>Uncancel Request (inactive Opportunity):</summary>
+<summary>Uncancel Request:</summary>
 <p>
 <code><pre>
 {
@@ -2126,17 +2110,36 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Unarchive:</summary>
+<summary>Unarchive Request for a Non-Award notice</summary>
 <p>
 <code><pre>
 {
   "reason": "test",
   "requestType": "unarchive_request",
   "data": {
-    "newArchiveDate": null,
+    "newResponseDate": "2019-12-12T00:12:00-05:00",
+    "newResponseTz": "America/New_York",
     "newArchiveType": "auto15",
-    "newResponseDate": "2019-11-11T10:58:00-05:00",
-    "newResponseTz": "America/New_York"
+    "newArchiveDate": null
+  }
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Unarchive Request for a Award notice</summary>
+<p>
+<code><pre>
+{
+  "reason": "test unarchive for award notice",
+  "requestType": "unarchive_request",
+  "data": {
+    "newResponseDate": null,
+    "newResponseTz": null,
+    "newArchiveType": "autocustom",
+    "newArchiveDate": "2020-03-01",
+    "newContractAwardDate": "2020-02-02"
   }
 }
 </pre></code>
@@ -3403,6 +3406,10 @@ resources.content | byte |250MB |  | No|No | File content in base64 format
 resources.link | string | 255 characters | |No|No | Resource link URL
 resources.packageAccessLevel | string | | public,<br/>private<br/>(default public) | No | No| Type of access to file
 resources.resourceName | string | 255 characters |  | No|No | Name of file
+resources.description | string |255 characters | | No|No | Description of the link
+resources.explicitAccess | string |1 character | 0, 1 (defaults to '0' public access, if not provided) | No |No |Explicit Access. For Controlled Unclassified files, specify '1'
+resources.exportControlled | string |1 character | 0 | No |No |Export Controlled. * Captured for future JCP validation
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3477,7 +3484,6 @@ description | string |  | Yes | Description for cancelation
     "newArchiveType": "",
     "newResponseDate": "",
     "newResponseTz": "America/New_York",
-    "newContractAwardDate": ""
   }
 }
 </pre></code>
@@ -3497,7 +3503,6 @@ newArchiveDate | date | YYYY-MM-DD | Yes (if newArchiveType=autocustome) | New A
 newArchiveType | string | auto15, auto30, autocustom | Yes  | New Archive Type
 newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | Yes (if newArchiveType = auto15) | New Response Date
 newResponseTz | string | America/New_York | Yes (if newResponseDate is provided) | New Response Time Zone
-newContractAwardDate | date | YYYY-MM-DD | Yes (if type=a) | New Contract Award Date
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3575,7 +3580,9 @@ newResponseTz | string | America/New_York | Yes (if newResponseDate is provided)
  "content": "",
  "resourceName": "",
  "fileType": "",
- "packageAccessLevel": ""
+ "packageAccessLevel": "",
+ "explicitAccess":"",
+ "exportControlled": null
 }
 </pre></code>
 </p>
@@ -3606,6 +3613,8 @@ resourceName | string | 255 characters| | Yes (if attType=file) | Name of file
 fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
 link | string | 255 characters| | Yes (if attType=link) | Resource link  URL
 description | string |255 characters | | Yes (if attType=link) | Description of the link
+explicitAccess | string |1 character | 0, 1 (defaults to '0' public access, if not provided) | No  |Explicit Access. For Controlled Unclassified files, specify '1'
+exportControlled | string |1 character | 0 | No  |Export Controlled. * Captured for future JCP validation
 
 #### Valid File Types 
 
@@ -3704,28 +3713,41 @@ ivlView | string | forcedon, forcedoff | Yes | Indicates whether vendors can vie
 
 ### Vendor Data JSON
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-fname | string | | Yes | First name of the user
-lname | string | | Yes | Last name of the user
-email | string | | Yes | Email Id of the user
-contractorName | string | | No | Contractor Name
-duns | string | | Yes | DUNS#
-cageCode | string | | No | Cage Code
-
-### Delete Notice JSON
+<div id="vendor-data-json" title="Click to view Vendor Data Contract">
+<details>
+<summary>Vendor_Data_Contract_JSON</summary>
+<p>
+<code><pre>
+{
+"lname":"",
+"fname":"",
+"email":"",
+"contractorName":"",
+"duns":"",
+"cageCode":""
+}
+</pre></code>
+</p>
+</details>
 
 * Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-reason|	string|	|	Yes|	Reason for deletion
-requestType	|string	|delete_request |Yes	|Type of request
-description	|string|		|Yes|	Description for deletion of a notice
-deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or all versions of a notice
+fname | string | | Yes | First name of the user
+lname | string | | Yes | Last name of the user
+email | string | | Yes | Email Id of the user
+contractorName | string | | Yes | Contractor Name
+duns | string | | Yes | DUNS#
+cageCode | string | | Yes | Cage Code
 
+<p><small><a href="#">Back to top</a></small></p>
+
+### Delete Notice JSON
+
+<div id="delete-notice-json" title="Click to view Delete Notice Contract">
 <details>
-<summary>Delete Notice Request</summary>
+<summary>Delete_Notice_Contract_JSON</summary
 <p>
 <code><pre>
    {
@@ -3739,6 +3761,15 @@ deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or al
 </pre></code>
 </p>
 </details>
+
+* Field headers in the table must match with field headers shown in JSON example  
+
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+reason|	string|	|	Yes|	Reason for deletion
+requestType	|string	|delete_request |Yes	|Type of request
+description	|string|		|Yes|	Description for deletion of a notice
+deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or all versions of a notice
 
 <p><small><a href="#">Back to top</a></small></p>
 
