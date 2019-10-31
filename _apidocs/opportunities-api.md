@@ -3796,11 +3796,12 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Award Amount |	Award Detail Section-Please enter valid integer for Amount Field |	Award Amount required |	Publish
 400|Award Amount |	Award Details Section - Contract Award Dollar Amount is not a valid field for this opportunity type |	Contract Award Amount only valid for Type "a" Award |	Publish
 400|Award Date |	Contract Award Date is required field. |	Contract Award Date is required field. |	Create Opportunity, Publish, Uncancel, Unarchive
-400|Award Date |	Award Details Section - Contract Award Date provided is in an invalid format. |	Date is not in specified format |	Create Opportunity, Publish, Uncancel, Unarchive
+400|Award Date |	Contract Award Date provided is in an invalid format. |	Date is not in specified format |	Create Opportunity, Publish, Uncancel, Unarchive
 400|Award Date |	Contract Award Date provided should have 4 digit year. | Contract Award Date provided should have 4 digit year. |	Create Opportunity, Publish, Uncancel, Unarchive
-400|Award Date |	Award Details section -Award date provided is in the past. |	Award Date must be current or future date. |	Create Opportunity, Publish, Uncancel, Unarchive
-400|Award Date |	Award Details section -Contract Award Date set would result in inactive date being in the past. |	Contract Award Date set would result in inactive date being in the past. |	Create Opportunity, Publish, Uncancel, Unarchive
-400|Award Number |	Award Details Section - Contract Award Number is a required field	| Contract Award Number is missing | Publish, Uncancel, Unarchive
+400|Award Date |	Award date provided is in the past. |	Award Date must be current or future date. |	Create Opportunity, Publish, Uncancel, Unarchive
+400|Award Date |	Contract Award Date set would result in inactive date being in the past. |	Contract Award Date set would result in inactive date being in the past. |	Create Opportunity, Publish, Uncancel, Unarchive
+400|Award Number |	Contract Award Number is a required field	| Contract Award Number is missing | Publish, Uncancel, Unarchive
+400|Award Number |	Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces.| Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | Publish, Uncancel, Unarchive
 400|Contract Line Item number |	The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces.	| The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | All
 400|Classification Code | Classification Code provided did not match expected codes |	Invalid PSC provided |	Publish
 400|CANCEL |	This opportunity cannot be cancelled. This opportunity is a revision. |	Cannot cancel a revised Opportunity. |	Cancel
