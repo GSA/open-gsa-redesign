@@ -6,28 +6,26 @@ info:
   version: 2.0.0
   contact:
     email: "EWM@gsa.gov"
-host: "api.gsa.gov"
-basePath: "/technology/gsa-content"
-schemes:
-- "https"
 paths:
   /v2/by-type/{contentType}/{page}:
     get:
       summary: "Get content from GSA.gov"
       description: "Get content from GSA.gov based on content-type"
-      produces:
-      - "application/xml"
       parameters:
       - name: "contentType"
         in: "path"
         description: "The machine-name of the desiered content-type to filter by"
         required: true
-        type: "string"
+        schema:
+          type: string
+          format: string
       - name: "page"
         in: "path"
         description: "Pagination controle"
         required: true
-        type: "integer"
+        schema:
+          type: integer
+          format: ineger
       - name: api_key
         in: query
         description: API key for accessing data
@@ -39,27 +37,25 @@ paths:
       responses:
         200:
           description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Node"
   /v2/by-id/{nodeID}/{page}:
     get:
       summary: "Get content from GSA.gov"
       description: "Get content from GSA.gov based on content-type"
-      produces:
-      - "application/xml"
       parameters:
       - name: "nodeID"
         in: "path"
         description: "Node ID number"
         required: true
-        type: "integer"
+        schema:
+          type: integer
+          format: integer
       - name: "page"
         in: "path"
         description: "Pagination controle"
         required: true
-        type: "integer"
+        schema:
+          type: integer
+          format: integer
       - name: api_key
         in: query
         description: API key for accessing data
@@ -71,29 +67,3 @@ paths:
       responses:
         200:
           description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Node"
-definitions:
-  Node:
-    type: "object"
-    properties:
-      title:
-        type: "string"
-      type:
-        type: "string"
-      created:
-        type: "integer"
-      body:
-        type: "string"
-      content_id:
-        type: "integer"
-      last_updated:
-        type: "integer"
-      author:
-        type: "string"
-      owner:
-        type: "integer"
-      poc:
-        type: "integer"
