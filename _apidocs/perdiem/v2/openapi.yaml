@@ -32,6 +32,14 @@ paths:
         description: "The fical-year to filter by"
         required: true
         type: "string"
+      - name: api_key
+        in: query
+        description: API key for accessing data
+        required: true
+        schema:
+          type: string
+          format: string
+          default: DEMO_KEY
       responses:
         200:
           description: "Successful. Data will be returned in JSON format."
@@ -56,6 +64,14 @@ paths:
         description: "The fical-year to filter by"
         required: true
         type: "string"
+      - name: api_key
+        in: query
+        description: API key for accessing data
+        required: true
+        schema:
+          type: string
+          format: string
+          default: DEMO_KEY
       responses:
         200:
           description: "Successful. Data will be returned in JSON format."
@@ -80,6 +96,14 @@ paths:
         description: "The fical-year to filter by"
         required: true
         type: "string"
+      - name: api_key
+        in: query
+        description: API key for accessing data
+        required: true
+        schema:
+          type: string
+          format: string
+          default: DEMO_KEY
       responses:
         200:
           description: "Successful. Data will be returned in JSON format."
@@ -99,6 +123,14 @@ paths:
         description: "The fical-year to filter by"
         required: true
         type: "string"
+      - name: api_key
+        in: query
+        description: API key for accessing data
+        required: true
+        schema:
+          type: string
+          format: string
+          default: DEMO_KEY
       responses:
         200:
           description: "Successful. Data will be returned in JSON format."
@@ -119,6 +151,14 @@ paths:
         description: "The fical-year to filter by"
         required: true
         type: "string"
+      - name: api_key
+        in: query
+        description: API key for accessing data
+        required: true
+        schema:
+          type: string
+          format: string
+          default: DEMO_KEY
       responses:
         200:
           description: "Successful. Data will be returned in JSON format."
@@ -126,13 +166,3 @@ paths:
           description: "Bad request. Verify the query string parmaters that were provided."
         403:
           description: "API key is not correct or was not provided."
-
-
-
-
-
-
-
-
-
-
