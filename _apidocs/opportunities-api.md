@@ -3729,6 +3729,7 @@ ivlView | string | forcedon, forcedoff | Yes | Indicates whether vendors can vie
 </pre></code>
 </p>
 </details>
+</div>
 
 * Field headers in the table must match with field headers shown in JSON example  
 
@@ -3761,6 +3762,7 @@ cageCode | string | | Yes | Cage Code
 </pre></code>
 </p>
 </details>
+</div>
 
 * Field headers in the table must match with field headers shown in JSON example  
 
