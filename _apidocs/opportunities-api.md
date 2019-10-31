@@ -3231,7 +3231,7 @@ reason | string |  | No | Publish reason
 * Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type |Field Length | Allowed Values| Required | Description
------|-----------|-------|-------------------|------------|------------ |----------
+-----|-----------|-------|-------------------|------------|------------ 
 type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | Notice Type
 solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {}| Yes (No for type = s  (Special Notice)) | Solicitation Number
 title | string | 256 characters | | Yes | Title of the Opportunity
