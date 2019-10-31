@@ -3799,7 +3799,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Award Date |	Award Details section -Contract Award Date set would result in inactive date being in the past. |	Contract Award Date set would result in inactive date being in the past. |	Create Opportunity, Publish, Uncancel, Unarchive
 400|Award Number |	Award Details Section - Contract Award Number is a required field	| Contract Award Number is missing | Publish, Uncancel, Unarchive
 400|Contract Line Item number |	The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces.	| The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | All
-400|Classification Code |	This opportunity cannot be published. Classification Code provided did not match expected codes |	Invalid PSC provided |	Publish
+400|Classification Code | Classification Code provided did not match expected codes |	Invalid PSC provided |	Publish
 400|CANCEL |	This opportunity cannot be cancelled. This opportunity is a revision. |	Cannot cancel a revised Opportunity. |	Cancel
 400|Content |	File Resource must have content. |	File Resource must be filled out | Create Attachment
 400|Contract Award Dollar Amount |	Award Details Section – Please enter valid integer for Amount Field	| Valid integer amount must be entered for award dollar amount | Publish
