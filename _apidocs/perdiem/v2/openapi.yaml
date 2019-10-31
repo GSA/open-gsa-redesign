@@ -34,7 +34,7 @@ paths:
         200:
           description: "Successful. Data will be returned in JSON format."
         400:
-          description: "Bad request. Verify the query string parmaters that were provided."
+          description: "Bad request. Verify the query string parameters that were provided."
         403:
           description: "API key is not correct or was not provided."
 
@@ -60,7 +60,7 @@ paths:
         200:
           description: "Successful. Data will be returned in JSON format."
         400:
-          description: "Bad request. Verify the query string parmaters that were provided."
+          description: "Bad request. Verify the query string parameters that were provided."
         403:
           description: "API key is not correct or was not provided."
 
@@ -86,7 +86,7 @@ paths:
         200:
           description: "Successful. Data will be returned in JSON format."
         400:
-          description: "Bad request. Verify the query string parmaters that were provided."
+          description: "Bad request. Verify the query string parameters that were provided."
         403:
           description: "API key is not correct or was not provided."
 
@@ -105,7 +105,7 @@ paths:
         200:
           description: "Successful. Data will be returned in JSON format."
         400:
-          description: "Bad request. Verify the query string parmaters that were provided."
+          description: "Bad request. Verify the query string parameters that were provided."
         403:
           description: "API key is not correct or was not provided."
 
@@ -125,7 +125,7 @@ paths:
         200:
           description: "Successful. Data will be returned in JSON format."
         400:
-          description: "Bad request. Verify the query string parmaters that were provided."
+          description: "Bad request. Verify the query string parameters that were provided."
         403:
           description: "API key is not correct or was not provided."
 servers:
