@@ -177,7 +177,7 @@ The API will return one of the following responses:
 
 | HTTP Response Code | Description |
 | ---- | ----------- |
-| 200 | Successful. Data will be returned in JSON format. |
+| 200 | Successful. Data will be returned in XML format. |
 | 400 | Bad request. Verify the query string parameters that were provided. |
 | 403 | API key is not correct or was not provided. |
 | 4XX | Additional 400-level are caused by some type of error in the information submitted. |
