@@ -3787,6 +3787,14 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Archive Type |	$.archive.type: does not have a value in the enumeration[auto15, auto30, autocustom] |	Archive type must be specified value | Create, Publish, Uncancel, Unarchive
 400|Archive Type |	This opportunity cannot be published. Auto 15 archive type is not allowed for this opportunity type. | Archive Type = auto15 not allowed |	Publish
 400|Archive Type |	Auto 30 archive type is not allowed for this opportunity type. | Archive Type = auto30   not allowed for Intent bundle and Justification |	Publish
+400|Attachment |	has unknown issue/missing, please remove this attachment and republish. | has unknown issue/missing, please remove this attachment and republish. |	Publish
+400|Attachment |	is PENDING, please try to publish at a later time. | is PENDING, please try to publish at a later time. |	Publish
+400|Attachment |	is ENCRYPTED, please remove this attachment and republish. | is ENCRYPTED, please remove this attachment and republish. |	Publish
+400|Attachment |	is INFECTED, please remove this attachment and republish. | is INFECTED, please remove this attachment and republish. |	Publish
+400|Attachment |	FILE SIZE GT 250MB or larger, please remove this attachment and republish. | FILE SIZE GT 250MB or larger, please remove this attachment and republish. |	Publish
+400|Attachment |	is a UNSUPPORTED FILE TYPE, please remove this attachment and republish. | is a UNSUPPORTED FILE TYPE, please remove this attachment and republish. |	Publish
+400|Attachment |	Exception occured while trying to validate attachments, Please retry at a later time. | Exception occured while trying to validate attachments, Please retry at a later time. |	Publish
+400|Attachment |	Unknown type was found for Resource named: | Unknown type was found for Resource named: |	Publish
 400|attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a line |	Create Attachment
 401|Authorization |	Insufficient privileges to edit opportunity |	See User Account Authorization section |	Update, Publish, Revise
 401|Authorization |	Insufficient privileges to create opportunity |	Insufficient privileges to create an award notice. See User Account Authorization section for more details. |	Create Opportunity
@@ -3795,6 +3803,10 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Award |	Award Details Section is missing data. | Award Details Section is missing data. |	Publish
 400|Award Amount |	Award Detail Section-Please enter valid integer for Amount Field |	Award Amount required |	Publish
 400|Award Amount |	Award Details Section - Contract Award Dollar Amount is not a valid field for this opportunity type |	Contract Award Amount only valid for Type "a" Award |	Publish
+400|Total Contract Value |	Base and All Options Value is a required field. |	Base and All Options Value is a required field. |	Publish
+400|Total Contract Value |	Base and All Options Value max length is 64 digits. |	Base and All Options Value max length is 64 digits. |	Publish
+400|Total Contract Value |	Base and All Options Value - Invalid input: Please enter a valid number. |	Base and All Options Value - Invalid input: Please enter a valid number. |	Publish
+400|Modification Number |	Modification Number max character limit is 32 characters. |	Modification Number max character limit is 32 characters. |	Publish
 400|Award Date |	Contract Award Date is required field. |	Contract Award Date is required field. |	Create Opportunity, Publish, Uncancel, Unarchive
 400|Award Date |	Contract Award Date provided is in an invalid format. |	Date is not in specified format |	Create Opportunity, Publish, Uncancel, Unarchive
 400|Award Date |	Contract Award Date provided should have 4 digit year. | Contract Award Date provided should have 4 digit year. |	Create Opportunity, Publish, Uncancel, Unarchive
@@ -3803,10 +3815,22 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Award Number |	Contract Award Number is a required field	| Contract Award Number is missing | Publish, Uncancel, Unarchive
 400|Award Number |	Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces.| Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | Publish, Uncancel, Unarchive
 400|Contract Line Item number |	The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces.	| The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | All
+400|DUNS | Unique Entity Identifier (duns) is invalid. |	Invalid DUNS provided |	Publish
+400|Awardee Name | Contractor Awarded Name is a required field. |	Contractor Awarded Name is a required field. |	Publish
+400|Awardee Name | Contractor Awarded Name max character length is 255. |	Contractor Awarded Name max character length is 255. |	Publish
+400|Awardee | Required fields from Awardee section is missing. |Required fields from Awardee section is missing. |	Publish
+400|Awardee Country | Award Details Section - Country is required. |Country is required. |	Publish
+400|Awardee Country | Award Details Section - Country provided is invalid. |Country provided is invalid. |	Publish
+400|Awardee State | Award Details Section - State is required. |State is required. |	Publish
+400|Awardee State | Award Details Section - State provided is invalid. |State provided is invalid. |	Publish
+400|Awardee City | Award Details Section - City is required. |City is required. |	Publish
+400|Awardee City | Award Details Section - City provided is invalid. |City provided is invalid. |	Publish
 400|Classification Code | Classification Code provided did not match expected codes |	Invalid PSC provided |	Publish
 400|CANCEL |	This opportunity cannot be cancelled. This opportunity is a revision. |	Cannot cancel a revised Opportunity. |	Cancel
 400|Content |	File Resource must have content. |	File Resource must be filled out | Create Attachment
 400|Contract Award Dollar Amount |	Award Details Section – Please enter valid integer for Amount Field	| Valid integer amount must be entered for award dollar amount | Publish
+400|Task/Delivery Order Number |	Task/Delivery Order Number is required field.	| Task/Delivery Order Number is required field. | Publish
+400|Task/Delivery Order Number |	Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces.	| Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces. | Publish
 401|CREATE | Insufficient privileges to create opportunity |	Account does not have appropriate privileges to create opportunity | CREATE
 401|CREATE ATTACHMENT |	Insufficient privileges to upload attachment | Attachments cannot be added to published notices |	Create Attachment
 400|Deadlines Response | This opportunity cannot be published. | Response Deadline Date is required |	Publish
@@ -3858,6 +3882,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Response Date |	Response Date set would result in inactive date being in the past. |	Response Date provided is within 15 days |	Publish
 400|Response Date |	Auto 15 archive type is not allowed for this opportunity type. |	Auto 15 archive type is not allowed for award notice |	Publish
 400|Response Date |	Response Date cannot exceed 5 years from current date. |	Response Date cannot exceed 5 years from current date. |	Publish 
+
 400|Title |	Title is required |	Title is required |	Publish
 400|UNARCHIVE |	This opportunity is not the latest published |	Only archived notices can be unarchived | UNARCHIVE
 400|resourceName | Attachment must have a name | File Name is a required field |	Create Attachment
