@@ -423,6 +423,7 @@ naics | string | Yes | NAICS Code	| Valid NAICS Code <br><a href="https://www.ce
 officeid | string | Yes | Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account | 20 characters
 offadd | string | No |Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	| 65535 characters
 solnbr | string |	Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
+subject | string | Yes | Subject | 256 characters
 respdate | date |	Yes | Response Date | YYYYMMDD
 archdate | date |	No | Archive Date | YYYYMMDD
 contact | string |Yes | Contact Info | 255 characters
