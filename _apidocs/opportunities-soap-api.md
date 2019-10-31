@@ -4326,7 +4326,8 @@ Date | Version | Description
 8/19/2019 | v0.5 | SUBMITPRESOL/SOURCESSOUGHT, SUBMITCOMBINED, SUBMITAWARD, SUBMITSALEOFSURPLUS, SUBMITJA, SUBMITITB, SUBMITSPECIANOTICE, SUBMITMOD, ARCHIVENOTICE, UNARCHIVENOTICE, CANCELNOTICE, SUBMITDOCUMENTSANDLINKS, GETLIST, GETNOTICEDATA, GETFILEDATA, DELETENOTICE parameters updated <br> User Account Section Updated
 9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions
 10/10/2019 | v0.7 | Updated the Set-Aside values with the latest codes
-10/28/2019 | v0.8| See attached document 
+10/28/2019 | v0.8| See attached document  <br><a href="v1/Opportunity Management SOAP Web Services Change Log v0.8.docx" download="Opportunity Management SOAP Web Services Change Log v0.8">attached document</a>
+
 
 
 <p><small><a href="#">Back to top</a></small></p>
