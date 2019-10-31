@@ -3786,6 +3786,10 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Cancel |	This opportunity cannot be cancelled. This opportunity is already inactive. |	This opportunity cannot be cancelled. This opportunity is already inactive.	| Cancel
 400|Cancel |	This opportunity cannot be cancelled. This opportunity is already cancelled. |	This opportunity cannot be cancelled. This opportunity is already cancelled.	| Cancel
 400|Description |	This opportunity cannot be cancelled. The cancel request is missing `Cancellation description` field. |	This opportunity cannot be cancelled. The cancel request is missing `Cancellation description` field.	| Cancel
+400|Uncancel |	This opportunity is not published. |	This opportunity is not published.	| Uncancel
+400|Uncancel |	This opportunity is a revision. |	This opportunity is a revision.	| Uncancel
+400|Uncancel |	This opportunity is not cancelled. |	This opportunity is not cancelled.	| Uncancel
+400|Description |	Description is required |	Description is required	| Uncancel
 400|UNARCHIVE |	Opportunity is active. |	Active opportunity	| UnArchive
 400|UNARCHIVE |	Opportunity is cancelled. |	Cancelled opportunity	| UnArchive
 400|Opportunity Type |	The new opportunity type field is missing. |	prevent activating if opportunity type is `m`, `l` or `j` and new type opportunity isn't provided	| UnArchive
