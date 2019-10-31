@@ -3815,7 +3815,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type. | Justification Authority Section is not valid for Base Notice Types (s, o, p, r, g, k, i) | Publish
 400|Justification Authority |	This opportunity cannot be published. Justification Authority is not valid field for this opportunity type | Justification Authority only valid for Type "u" Justification and Authorization | Publish
 400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type | Justification Authority Modification Number is only valid for Type "u" Justification and Authorization | Publish
-400|NAICS Code | This opportunity cannot be published. NAICS provided did not match expected codes | NAICS Code is invalid | Create Opportunity, Publish
+400|NAICS Code | NAICS provided did not match expected codes | NAICS Code is invalid | Create Opportunity, Publish
 400|NAICS Type | $.data.naics[0].type: does not have a value in the enumeration [primary] | NAICS Type is required | Create Opportunity
 400|Notice Type |	This opportunity cannot be published. The inactive type `manual` is no longer supported.	| See Notice Types table for valid notice types |	Publish
 400|Notice Type |	The opportunity type `j` is no longer supported	| See Notice Types table for valid notice types |	Publish
