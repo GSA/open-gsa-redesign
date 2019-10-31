@@ -3404,10 +3404,10 @@ Name | Data Type | Allowed Values | Required | Description
 reason | string |  | Yes | Reason for uncanceling
 requestType | string | uncancel_request | Yes | Type of request
 description | string |  | Yes | Description for uncanceling
-newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date
-newArchiveDate | date | YYYY-MM-DD | Yes (if newArchiveType=autocustome) | New Archive Date
-newArchiveType | string | auto15, auto30, autocustom | Yes  | New Archive Type
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1). Yes for types = k, o (Combined Synopsis/Solicitation) 2). Yes if Newarchive.type=auto15 except type = a (Award) | New Response Date
+newContractAwardDate | date | YYYY-MM-DD | Yes; for type = a (Award)| New Contract Award Date
+newArchiveDate | date | YYYY-MM-DD | Yes; (if newArchiveType=autocustom) | New Archive Date
+newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes; for types = k, o (Combined Synopsis/Solicitation) 2) Yes; if newArchive.type=auto15 except for type = a (Award) | New Response Date
 newResponseTz | string |  | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3466,10 +3466,10 @@ Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 reason | string |  | Yes | Reason for unarchiving
 requestType | string | unarchive_request | Yes | Type of request
-newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date
-newArchiveDate | date | YYYY-MM-DD | Yes (if newArchiveType=autocustome) | New Archive Date
-newArchiveType | string | auto15, auto30, autocustom | Yes  | New Archive Type
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1). Yes for types = k, o (Combined Synopsis/Solicitation) 2). Yes if Newarchive.type=auto15 except type = a (Award) | New Response Date
+newContractAwardDate | date | YYYY-MM-DD | Yes; for type = a (Award)| New Contract Award Date
+newArchiveDate | date | YYYY-MM-DD | Yes; (if newArchiveType=autocustom) | New Archive Date
+newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes; for types = k, o (Combined Synopsis/Solicitation) 2) Yes; if newArchive.type=auto15 except for type = a (Award) | New Response Date
 newResponseTz | string |  | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3513,13 +3513,13 @@ newResponseTz | string |  | No | New Response Time Zone
 Name | Data Type | Field Length |Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file
-content | byte | 250MB| | Yes if attType=file | File content in base64 format
-packageAccessLevel | string | 32 characters|public,private(default public) | No | Type of access to file. Only used with attType 'file'.
-resourceName | string | 255 characters| | Yes if attType=file | Name of file
+content | byte | 250MB| | Yes; if attType=file | File content in base64 format
+packageAccessLevel | string | 32 characters|public, <br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'.
+resourceName | string | 255 characters| | Yes; if attType=file | Name of file
 fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
-link | string | 255 characters| | Yes if attType=link | Resource link  URL
-description | string |255 characters | | Yes if attType=link | Description of the link
-explicitAccess | string |1 character | 0, 1 (defaults to '0' public access, if not provided) | No  |Explicit Access. For Controlled Unclassified files, specify '1'
+link | string | 255 characters| | Yes; if attType=link | Resource link  URL
+description | string |255 characters | | Yes; if attType=link | Description of the link
+explicitAccess | string |1 character | 0, 1 <br/>(defaults to '0' public access, if not provided) | No  |Explicit Access. For Controlled Unclassified files, specify '1'
 exportControlled | string |1 character | 0 | No  | *Captured for future JCP validation*<br> Export Controlled
 
 #### Valid File Types 
@@ -3586,7 +3586,7 @@ Flash Video (.flv, .f4v)|	video/x-flv
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 attType | string | link, file | No | Required only for file access level changes
-packageAccessLevel | string | public,private(default public) | No | Type of access to file. Only used with attType 'file'
+packageAccessLevel | string | public,<br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'
 resourceName | string |  | No | Name of file or link
 explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files. Required only for file access level changes
 sortOrderChanged | boolean  | true, false | No | Should be provided if file order is changed.
@@ -3654,7 +3654,7 @@ cageCode | string | | Yes | Cage Code
 
 <div id="delete-notice-json" title="Click to view Delete Notice Contract">
 <details>
-<summary>Delete_Notice_Contract_JSON</summary
+<summary>Delete_Notice_Contract_JSON</summary>
 <p>
 <code><pre>
    {
