@@ -3818,7 +3818,9 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Total Contract Value |	Base and All Options Value max length is 64 digits. |	Base and All Options Value max length is 64 digits. |	Publish
 400|Total Contract Value |	Base and All Options Value - Invalid input: Please enter a valid number. |	Base and All Options Value - Invalid input: Please enter a valid number. |	Publish
 400|Modification Number |	Modification Number max character limit is 32 characters. |	Modification Number max character limit is 32 characters. |	Publish
-400|Award Date |	Contract Award Date is required field. |	Contract Award Date is required field. |	Create Opportunity, Publish, Uncancel, Unarchive
+400|Award Date |	Contract Award Date is required field. |	Contract Award Date is required field. |	Create Opportunity, Publish, Uncancel
+400|Award Date |	New contract award date provided is in the past. |	New contract award date provided is in the past. | Unarchive
+400|Award Date |	New contract award date is not provided |	New contract award date is not provided | Unarchive
 400|Award Date |	Contract Award Date provided is in an invalid format. |	Date is not in specified format |	Create Opportunity, Publish, Uncancel, Unarchive
 400|Award Date |	Contract Award Date provided should have 4 digit year. | Contract Award Date provided should have 4 digit year. |	Create Opportunity, Publish, Uncancel, Unarchive
 400|Award Date |	Award date provided is in the past. |	Award Date must be current or future date. |	Create Opportunity, Publish, Uncancel, Unarchive
