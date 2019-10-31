@@ -3232,13 +3232,13 @@ reason | string |  | No | Publish reason
 
 Name | Data Type |Field Length | Allowed Values| Required | Description
 -----|-----------|-------|-------------------|------------|------------ 
-type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | Notice Type
+type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Notice Type
 solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {}| Yes (No for type = s  (Special Notice)) | Solicitation Number
 title | string | 256 characters | | Yes | Title of the Opportunity
 organizationId | string | 32 characters | | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
 classificationCode | string |  | | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
 naics | JSON Array | NA |NA | NA |
-naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
+naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
 naics.type | string | |primary|Yes | NAICS Type Note: 'p' must be in lower case
 pointOfContact | JSON Array | NA |NA | NA |
 pointOfContact.type | string | | primary<br/> secondary | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
@@ -3304,7 +3304,7 @@ justificationAuthority.<br/>authority | string|  |  | Yes | Justification Author
 additionalReporting | string | |none, <br/>auto_recovery | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
 description | JSON | NA | NA | NA |
 description.body | string | 65535 characters| | Yes; No for type = a (Award) | Description of the notice
-related | JSON | NA | NA | NA | NA | Related Notice information
+related | JSON | NA | NA | NA | Related Notice information
 related.opportunityId | string | 32 characters| | No | Opportunity Id of the related notice
 resources | JSON |NA | NA | NA |
 resources.attType | string | |link, file | No| Type of attachment, either link or file
