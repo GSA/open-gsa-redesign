@@ -3058,7 +3058,7 @@ award.awardee.location.<br/>zip | string | | | No | No | Awardee Country Zip cod
 justificationAuthority | JSON |NA |NA | NA | NA | Only for type = j (Justification)
 justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number
 justificationAuthority.<br/>authority | string|  |  | No | Yes | Justification Authority
-additionalReporting | string | |none, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
+additionalReporting | string | |None, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
 description | JSON | NA | NA | NA | NA |
 description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice
 related | JSON | NA | NA | NA | NA | Related Notice information
@@ -3404,10 +3404,10 @@ Name | Data Type | Allowed Values | Required | Description
 reason | string |  | Yes | Reason for uncanceling
 requestType | string | uncancel_request | Yes | Type of request
 description | string |  | Yes | Description for uncanceling
-newContractAwardDate | date | YYYY-MM-DD | Yes; for type = a (Award)| New Contract Award Date
+newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes; (if newArchiveType=autocustom) | New Archive Date
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes; for types = k, o (Combined Synopsis/Solicitation) 2) Yes; if newArchive.type=auto15 except for type = a (Award) | New Response Date
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes; if newArchive.type=auto15 except for type = a (Award) | New Response Date
 newResponseTz | string |  | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3513,11 +3513,11 @@ newResponseTz | string |  | No | New Response Time Zone
 Name | Data Type | Field Length |Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file
-content | byte | 250MB| | Yes; if attType=file | File content in base64 format
+content | byte | 250MB| | Yes if attType=file | File content in base64 format
 packageAccessLevel | string | 32 characters|public, <br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'.
-resourceName | string | 255 characters| | Yes; if attType=file | Name of file
+resourceName | string | 255 characters| | Yes if attType=file | Name of file
 fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
-link | string | 255 characters| | Yes; if attType=link | Resource link  URL
+link | string | 255 characters| | Yes if attType=link | Resource link  URL
 description | string |255 characters | | Yes; if attType=link | Description of the link
 explicitAccess | string |1 character | 0, 1 <br/>(defaults to '0' public access, if not provided) | No  |Explicit Access. For Controlled Unclassified files, specify '1'
 exportControlled | string |1 character | 0 | No  | *Captured for future JCP validation*<br> Export Controlled
