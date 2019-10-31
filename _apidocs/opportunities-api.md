@@ -2987,13 +2987,21 @@ Examples
 
 * Field headers in the table must match with field headers shown in JSON example  
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 Name | Data Type |Field Length | Allowed Values | Required (Create/Update) | Required (Publish) | Description
 -----|-----------|-------|-------------------|------------|------------ |----------
 type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | Notice Type
 solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes (No for type = s  (Special Notice)) | Solicitation Number
 title | string | 256 characters | |Yes | Yes | Title of the Opportunity
 organizationId | string | 32 characters | | Yes | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
+<<<<<<< HEAD
 classificationCode | string |  | | No | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
+=======
+classificationCode | string |  | | No | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Award)) | Product Service Code (PSC)
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 naics | JSON Array | NA |NA | NA | NA |
 naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
 naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case
@@ -3063,6 +3071,101 @@ description | JSON | NA | NA | NA | NA |
 description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice
 related | JSON | NA | NA | NA | NA | Related Notice information
 related.opportunityId | string | 32 characters| | No | No | Opportunity Id of the related notice
+<<<<<<< HEAD
+=======
+=======
+Name | Data Type | Allowed Values | Required (Create/Update) | Required (to Publish) | Description
+-----|-----------|----------------|--------------------------|-----------------------|------------
+type | string | See Notice Types table | Yes | Yes | Notice Type
+solicitationNumber | string |  | No | Yes | Solicitation Number
+title | string |  | Yes | Yes | Title of the Opportunity
+organizationId | string |  | No for Create (Yes for Update) | Yes | FH Org Id/AAC code of the office where an Opportunity is being submitted
+organizationLocationId | string | | No|No| Organization Location ID
+classificationCode | string |  | No | Yes (not required for type= r) | Product Service Code (PSC)
+naics | JSON | NA | NA | NA |
+naics.code | string |  | No | Yes | NAICS Code
+naics.type | string | primary  | No | Yes | NAICS Type Note: 'p' must be in lower case
+flags | JSON | NA | NA | NA |
+flags.code | string | Recovery act | No | No | This is a recovery or Reinvestment Act Action
+flags.IsSelected | boolean | default = True | No | No |
+pointOfContact | JSON | NA | NA | NA |
+pointOfContact.type | string | p | No | Yes | Contact Type Note: 'p' must be in lower case
+pointOfContact.title | string |  | No | No | Contact title
+pointOfContact.fullname | string |  | No | Yes | Contact Full Name
+pointOfContact.email | string |  | No  | Yes (no if type = a)  | Contact email
+pointOfContact.phone | string |  | No | No | Contact Phone
+pointOfContact.fax | string |  | No  | No | Contact Fax
+placeOfPerformance | JSON | NA | NA | NA |
+placeOfPerformance.<br/>streetAddess | string |  | No | No | Pop Address
+placeOfPerformance.<br/>streetAddess2 | string |  | No | No | Pop Address2
+placeOfPerformance.city | JSON | NA | NA | NA | Pop City
+placeOfPerformance.city.<br/>code | string |  | No | No | Pop City code
+placeOfPerformance.city.<br/>name | string |  | No | No | Pop City name
+placeOfPerformance.state | JSON | NA | NA | NA | Pop City state
+placeOfPerformance.state.<br/>code | string |  | No | No | Pop city state code
+placeOfPerformance.state.<br/>name | string |  | No | No | Pop city state name
+placeOfPerformance.country | JSON | NA | NA | NA | Pop Country
+placeOfPerformance.<br/>country.code | string |  | No | No | Pop Country Code
+placeOfPerformance.<br/>country.name | string |  | No | No | Pop Country name
+placeOfPerformance.zip | string |  | No | No | Pop Country zip
+archive | JSON | NA | NA | NA |
+archive.type | string | auto15, auto30, autocustom | No | Yes | Archive Type
+archive.date | date |  | No | Yes (if archive.type=<br/>autocustom) | Archive Date
+permissions | JSON | NA | NA | NA |
+permissions.ivl | JSON | NA | NA | NA |
+permissions.ivl.create | boolean |  | No | No | permissions.ivl.create
+permissions.ivl.read | boolean |  | No | No | permissions.ivl.read
+permissions.ivl.update | boolean | Not In Use | Not In Use | Not In Use | Not In Use
+permissions.ivl.delete | boolean | Not In Use | Not In Use | Not In Use | Not In Use
+solicitation | JSON | NA | NA | NA |
+solicitation.setAside | string | See Set-Aside values table | No | No | setAside
+solicitation.deadlines | JSON | NA | NA | NA |
+solicitation.<br/>deadlines.response | date | YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes (for type=k,o) <br/>2)	Yes (when archive.type=<br/>auto1)	| Deadline Date
+solicitation.deadlines.<br/>responseresponseTz | string | | No | No | Time Zone for <br/>Solicitation Deadline Date
+award | JSON | NA | NA | NA |
+award.date | date | YYYY-MM-DD |No | Yes only for type= a | Award Date
+award.number | string |  | No | Yes only for type= i, j, a | Award Number
+award.deliverOrderNumber | string |  | No | No | Award Deliver Order Number
+award.amount | number |  | No | No | Award Amount
+award.lineitemNumber | string |  | No | No | Award Line item Number
+award.awardee | JSON | NA | NA | NA |
+award.awardee.manual | string | boolean  | Yes | Yes  | Awardee
+award.awardee.name | string |  | No | No | Awardee Name
+award.awardee.duns | string |  | No | No | Awardee Duns
+award.awardee.location | JSON | NA | NA | NA |
+award.awardee.location.<br/>streetAddress | string |  | No | No | Awardee Street Address 1
+award.awardee.location.<br/>streetAddress2 | string |  | No | No | Awardee Street Address 1
+award.awardee.location.<br/>city | string |  | No | No | Awardee City
+award.awardee.location.<br/>city.code | string |  | No | No | Awardee City code
+award.awardee.location.<br/>city.name | string |  | No | No | Awardee City name
+award.awardee.location.<br/>state | JSON | NA | NA | NA |
+award.awardee.location.<br/>state.code | string |  | No | No | Awardee State code
+award.awardee.location.<br/>state.name | string |  | No | No | Awardee State name
+award.awardee.location.<br/>country | JSON | NA | NA | NA |
+award.awardee.location.<br/>country.code | string |  | No | No | Awardee Country code
+award.awardee.location.<br/>country.name | string |  | No | No | Awardee Country Name
+award.awardee.location.<br/>zip | string |  | No | No | Awardee Country Zip
+justificationAuthority | JSON | NA | NA | NA |
+justificationAuthority.<br/>modificationNumber | string |  | No | No | Justification Authority Modification Number
+justificationAuthority.<br/>authority | string |  | No | No | Justification Authority
+link | JSON | NA | NA | NA |
+link.additionalInfo | JSON | NA | NA | NA |
+link.additionalInfo.cotent | string |  | No | No | Additional info
+link.href | string |  | No | No | Website Address
+additionalReporting | string | none/<br/>auto_recovery | No | Yes |
+description | JSON | NA | NA | NA |
+description.body | string |  | No | Yes | Description of notice
+attType | string | link, file | No |No| Type of attachment, either link or file
+content | byte |  | No|No | File content in byte format
+link | string |  | |No|No | Resource link or URL
+packageAccessLevel | string | public,private(default public) | No | No| Type of access to file or link
+resourceName | string |  | No|No | Name of file
+fairOpportunity | string | |No|No| Fair Opportunity|
+fairOpportunity.authority|string | |No|No| Fair Opportunity Authority
+postedDate| date| |No|No| Posted Date
+archived| string| | |No|No| Archived Status
+>>>>>>> f21b023feae17de4a6a6259f847dbfa9c3d7ab41
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3091,6 +3194,10 @@ reason | string |  | No | Publish reason
 
 <p><small><a href="#">Back to top</a></small></p>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 ### Create and Publish Opportunity Contract JSON
 
 
@@ -3236,7 +3343,11 @@ type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Notice 
 solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {}| Yes (No for type = s  (Special Notice)) | Solicitation Number
 title | string | 256 characters | | Yes | Title of the Opportunity
 organizationId | string | 32 characters | | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
+<<<<<<< HEAD
 classificationCode | string |  | | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
+=======
+classificationCode | string |  | | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Award)) | Product Service Code (PSC)
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 naics | JSON Array | NA |NA | NA |
 naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
 naics.type | string | |primary|Yes | NAICS Type Note: 'p' must be in lower case
@@ -3319,6 +3430,11 @@ resources.exportControlled | string |1 character | 0 | No |Export Controlled. * 
 
 <p><small><a href="#">Back to top</a></small></p>
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> f21b023feae17de4a6a6259f847dbfa9c3d7ab41
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 ### Revise Opportunity Contract JSON
 
 <div id="revise-json" title="Click to view Revise Contract">
@@ -3404,11 +3520,32 @@ Name | Data Type | Allowed Values | Required | Description
 reason | string |  | Yes | Reason for uncanceling
 requestType | string | uncancel_request | Yes | Type of request
 description | string |  | Yes | Description for uncanceling
+<<<<<<< HEAD
 newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
 newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
 newResponseTz | string |  | No | New Response Time Zone
+=======
+<<<<<<< HEAD
+newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date
+newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
+newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
+<<<<<<< Updated upstream
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
+=======
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes; for types = k, o (Combined Synopsis/Solicitation) <br/> 2) Yes; if newArchive.type=auto15 except for type = a (Award) | New Response Date
+>>>>>>> Stashed changes
+newResponseTz | string |  | No | New Response Time Zone
+=======
+newContractAwardDate | date | YYYY-MM-DD | Yes (if unarchiving an award notice) | New Contract Award Date
+newArchiveDate | date | YYYY-MM-DD | Yes (if newArchiveType=autocustome) | New Archive Date
+newArchiveType | string | auto15, auto30, autocustom | Yes  | New Archive Type
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | Yes (if newArchiveType = auto15) | New Response Date
+newResponseTz | string | America/New_York | Yes (if newResponseDate is provided) | New Response Time Zone
+newContractAwardDate | date | YYYY-MM-DD | Yes (if type=a) | New Contract Award Date
+>>>>>>> f21b023feae17de4a6a6259f847dbfa9c3d7ab41
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3466,11 +3603,31 @@ Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 reason | string |  | Yes | Reason for unarchiving
 requestType | string | unarchive_request | Yes | Type of request
+<<<<<<< HEAD
 newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
 newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
 newResponseTz | string |  | No | New Response Time Zone
+=======
+<<<<<<< HEAD
+newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date
+newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
+newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
+<<<<<<< Updated upstream
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
+=======
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes; for types = k, o (Combined Synopsis/Solicitation) <br/> 2) Yes; if newArchive.type=auto15 except for type = a (Award) | New Response Date
+>>>>>>> Stashed changes
+newResponseTz | string |  | No | New Response Time Zone
+=======
+newContractAwardDate | date | YYYY-MM-DD | Yes (if unarchiving an award notice) | New Contract Award Date
+newArchiveDate | date | YYYY-MM-DD | Yes (if newArchiveType=autocustom) | New Archive Date
+newArchiveType | string | auto15, auto30, autocustom | Yes  | New Archive Type
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | Yes (if newArchiveType = auto15) | New Response Date
+newResponseTz | string | America/New_York | Yes (if newResponseDate is provided) | New Response Time Zone
+>>>>>>> f21b023feae17de4a6a6259f847dbfa9c3d7ab41
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3714,9 +3871,24 @@ Error codes may change depending on the error given; document will be updated ac
 
 Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
+<<<<<<< HEAD
 400|Additional Reporting |	This opportunity cannot be published. Additional reporting is required. |	Additional Reporting is required with valid values of “none” or “recovery_act”	| Publish
 400|Additional Reporting |	Additional Reporting/Initiative is required. |	Additional Reporting/Initiative is required when opportunity is not a special notice | Publish
 400|Title |	Title max character length is 256. |	Title max character length is 256.	| Publish
+=======
+400|Type | Opportunity type is required | Opportunity type is required | Create Opportunity
+400|Type | The Opportunity's type provided is not supported|Invalid Opportunity type provided |	Create Opportunity
+400|Title |	Title max character length is 256 |	Title max character length is 256	| Create Opportunity, Publish
+400|Title |	Title is required |	Title is required |	Publish
+400|Additional Reporting |	Additional Reporting/Initiative is required |	Additional Reporting/Initiative is required when opportunity is not a special notice | Publish
+400|ARCHIVE |	This opportunity is not the latest published. |	Draft Opportunity cannot be archived	| Archive
+400|Archive Date |	Inactive date is a required field |	Archive Date is required if Archive Type = autocustom | Publish, Uncancel, Unarchive
+400|Archive Date Response Date   |	One of Response date or Archive date is required |	Either Response date or archive date is required for presolicitation, sources sought, special notice, sale surplus  |	Publish
+400|Archive Date |	Inactive date provided is an invalid format |	Date is not in specified format  |	Create, Publish, Uncancel, Unarchive
+400|Archive Date |	Inactive date provided is in the past |	Archive date cannot be a past date  | Publish, Uncancel, Unarchive
+400|Archive Type |	Inactive Policy is a required field. |	Archive Type is required |	Publish
+400|Archive Type |	Auto 30 archive type is not allowed for this opportunity type | Archive Type = auto30  is only allowed for Intent bundle and Justification. System throws an error if it is used with other notice types |	Publish
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 400|ARCHIVE |	This opportunity is not the latest published. |	Draft Opportunity cannot be archived.	| Archive
 400|ARCHIVE |	Opportunity already inactive. |	Opportunity is already archived.	| Archive
 400|Update |	Opportunity cannot be updated. |	Opportunity is either in draft, archived or cancelled status.	| Update
@@ -3731,6 +3903,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Description |	Description is required |	Description is required	| Uncancel
 400|UNARCHIVE |	Opportunity is active. |	Active opportunity	| UnArchive
 400|UNARCHIVE |	Opportunity is cancelled. |	Cancelled opportunity	| UnArchive
+<<<<<<< HEAD
 400|Opportunity Type |	The new opportunity type field is missing. |	prevent activating if opportunity type is `m`, `l` or `j` and new type opportunity isn't provided	| UnArchive
 400|Opportunity Type |	The new opportunity type field is not supported. |	prevent activating if opportunity type is not one of `m`, `l` or `j` and new type opportunity is provided	| UnArchive
 400|Opportunity Type |	The Opportunity's type provided is not supported. |	prevent activating if opportunity type is `m` and new type opportunity provided is not supported	| UnArchive
@@ -3739,15 +3912,24 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Archive Date |	This opportunity cannot be published. Inactive date is a required field. |	Archive Date is required if Archive Type = autocustom |	Create, Publish, Uncancel, Unarchive
 400|Archive Date Response Date   |	One of Response date or Archive date is required |	Either Response date or archive date is required for presolicitation, sources sought, special notice, sale surplus  |	Publish
 400|Archive Date |	Inactive date provided is an invalid format. |	Date is not in specified format  |	Create, Publish, Uncancel, Unarchive
+=======
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 400|Archive Date |	New archive date is required. |	New archive date is required.  |	Unarchive
 400|Archive Date |	New archive date provided is in an invalid format. |	New archive date provided is in an invalid format. |	Unarchive
 400|Archive Date |	New archive date provided is in the past. |	New archive date provided is before today's date. |	Unarchive
 400|Archive Type |	New archive type is invalid. |	archive type is not one of the following "auto15", "autocustom", "auto30"	| UnArchive
 400|Archive Type |	Archive type is invalid for this notice type. |	archive type is one of the following "auto15", "auto30" and is not allowed for this notice type	| UnArchive
+<<<<<<< HEAD
 400|Archive Type |	This opportunity cannot be published. Inactive Policy is a required field. |	Archive Type is required |	Publish
 400|Archive Type |	$.archive.type: does not have a value in the enumeration[auto15, auto30, autocustom] |	Archive type must be specified value | Create, Publish, Uncancel, Unarchive
 400|Archive Type |	This opportunity cannot be published. Auto 15 archive type is not allowed for this opportunity type. | Archive Type = auto15 not allowed |	Publish
 400|Archive Type |	Auto 30 archive type is not allowed for this opportunity type. | Archive Type = auto30   not allowed for Intent bundle and Justification |	Publish
+=======
+400|Opportunity Type |	The new opportunity type field is missing. |	prevent activating if opportunity type is `m`, `l` or `j` and new type opportunity isn't provided	| UnArchive
+400|Opportunity Type |	The new opportunity type field is not supported. |	prevent activating if opportunity type is not one of `m`, `l` or `j` and new type opportunity is provided	| UnArchive
+400|Opportunity Type |	The Opportunity's type provided is not supported. |	prevent activating if opportunity type is `m` and new type opportunity provided is not supported	| UnArchive
+400|Opportunity Type |	The new opportunity type provided is not supported. |	prevent activating if opportunity type is  `l` or `j` and new type opportunity provided is not `u`	| UnArchive
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 400|Attachment |	has unknown issue/missing, please remove this attachment and republish. | has unknown issue/missing, please remove this attachment and republish. |	Publish
 400|Attachment |	is PENDING, please try to publish at a later time. | is PENDING, please try to publish at a later time. |	Publish
 400|Attachment |	is ENCRYPTED, please remove this attachment and republish. | is ENCRYPTED, please remove this attachment and republish. |	Publish
@@ -3756,6 +3938,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Attachment |	is a UNSUPPORTED FILE TYPE, please remove this attachment and republish. | is a UNSUPPORTED FILE TYPE, please remove this attachment and republish. |	Publish
 400|Attachment |	Exception occured while trying to validate attachments, Please retry at a later time. | Exception occured while trying to validate attachments, Please retry at a later time. |	Publish
 400|Attachment |	Unknown type was found for Resource named: | Unknown type was found for Resource named: |	Publish
+<<<<<<< HEAD
 400|attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a line |	Create Attachment
 401|Authorization |	Insufficient privileges to edit opportunity |	See User Account Authorization section |	Update, Publish, Revise
 401|Authorization |	Insufficient privileges to create opportunity |	Insufficient privileges to create an award notice. See User Account Authorization section for more details. |	Create Opportunity
@@ -3798,10 +3981,46 @@ Error Code|Field | Error Message | Reason/Description | Operation
 401|CREATE ATTACHMENT |	Insufficient privileges to upload attachment | Attachments cannot be added to published notices |	Create Attachment
 400|Deadlines Response | This opportunity cannot be published. | Response Deadline Date is required |	Publish
 400|Description |	Description is a required field |	Description is a required field except for award notice |	Publish
+=======
+401|Authorization |	Insufficient privileges to edit opportunity |	See User Account Authorization section |	Update, Publish, Revise
+401|Authorization |	Insufficient privileges to create opportunity |	Insufficient privileges to create an award notice. See User Account Authorization section for more details. |	Create Opportunity
+401|Authorization |	Insufficient privileges to create request |	Insufficient privileges to publish an award notice. See User Account Authorization section for more details. |	Create
+400|Award |	Award Details Section is missing data. | Award Details Section is missing data. |	Publish
+400|Award Amount |	Base and All Options Value is a required field |	Base and All Options Value is a required field |	Publish
+400|Award Amount |	Base and All Options Value max length is 64 digits |	Base and All Options Value max length is 64 digits |	Publish
+400|Award Amount |	Base and All Options Value - Invalid input: Please enter a valid number |	Base and All Options Value - Invalid input: Please enter a valid number |	Publish
+400|Award Date |	Contract Award Date is required field |	Contract Award Date is required field for Award Notice |	 Publish, Uncancel, Unarchive
+400|Award Date |	Contract Award Date provided is in an invalid format |	Date is not in specified format | Publish, Uncancel, Unarchive
+400|Award Date |	Contract Award Date set would result in inactive date being in the past |	Contract Award Date cannot be 15 days prior to the current date if the Archiving policy is "15 days from Award date" for an Award Notice |	Publish, Uncancel, Unarchive
+400|Award Date |	Contract Award Date provided should have 4 digit year |	Invalid Year provided in the Award Date |	Publish, Uncancel, Unarchive
+400|Award Number |	Contract Award Number is a required field	| Contract Award Number is required for Intent to Bundle, Justification, Award | Publish
+400|Award Number |	Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces| Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | Publish
+400|Contract Line Item number |	The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces	| The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | Publish
+400|DUNS | Unique Entity Identifier (duns) is invalid. |	Invalid DUNS provided |	Publish
+400|Awardee Name | Contractor Awarded Name is a required field |	Contractor Awarded Name is a required field if the DUNS is not provided for an Award Notice |	Publish
+400|Awardee Name | Contractor Awarded Name max character length is 255 |	Contractor Awarded Name max character length is 255 | Publish
+400|Awardee | Required fields from Awardee section is missing |Awardee Name or DUNS# not provided for Award notice|	Publish
+400|Awardee Country | Award Details Section - Country is required |Country Code is required if the Awardee name is provided instead of DUNS# |	Publish
+400|Awardee Country | Award Details Section - Country provided is invalid |Country Code  provided is invalid |	Publish
+400|Awardee State | Award Details Section - State is required |State Code is required if the Awardee name is provided instead of DUNS# |	Publish
+400|Awardee State | Award Details Section - State provided is invalid |State Code provided is invalid |	Publish
+400|Awardee City | Award Details Section - City is required |City Code is required if the Awardee name is provided instead of DUNS# |	Publish
+400|Awardee City | Award Details Section - City provided is invalid |City Code provided is invalid |	Publish
+400|Classification Code | Product Service Code is a required field |	Product service code is required for all types except SourcesSought, Sale of Surplus and Award  |	Publish
+400|Classification Code | Classification Code provided did not match expected codes |	Invalid PSC provided |	Publish
+400|CANCEL |	This opportunity cannot be cancelled. This opportunity is a revision. |	Cannot cancel a revised Opportunity. |	Cancel
+400|Task/Delivery Order Number |	Task/Delivery Order Number is required field	| Task/Delivery Order Number is required field. | Publish
+400|Task/Delivery Order Number |	Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces	| Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces. | Publish
+401|CREATE | Insufficient privileges to create opportunity |	Account does not have appropriate privileges to create opportunity | CREATE
+401|CREATE ATTACHMENT |	Insufficient privileges to upload attachment | Attachments cannot be added to published notices |	Create Attachment
+400|Deadlines Response | This opportunity cannot be published. | Response Deadline Date is required |	Publish
+400|Description |	Description is a required field |	Description is a required field except for award notice |	Publish, Unarchive, Uncancel
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 400|IVL |	This opportunity cannot be published. Interested Vendors List Add is a required field. |Interested Vendors List Add is a required |	Publish
 400|IVL |	Interested Vendors List Read is a required field. |Interested Vendors List Read is a required field. |	Publish
 400|IVL |	Interested Vendors List should be enabled for this organization. |Interested Vendors List should be enabled for this organization when FORCE ON |	Publish
 400|IVL |	Interested Vendors List should not be enabled for this organization. |Interested Vendors List should not be enabled for this organization when FORCE OFF |	Publish
+<<<<<<< HEAD
 400|Justification Authority |	This opportunity cannot be published. Justification Authority is not valid field for this opportunity type | Justification Authority Section is not valid for Base Notice Types (s, o, p, r, g, k, i) | Publish
 400|Justification Authority |	This opportunity cannot be published. Justification Authority Modification Number is not valid field for this opportunity type. | Justification Authority Section is not valid for Base Notice Types (s, o, p, r, g, k, i) | Publish
 400|Justification Authority |	This opportunity cannot be published. Justification Authority is not valid field for this opportunity type | Justification Authority only valid for Type "u" Justification and Authorization | Publish
@@ -3811,12 +4030,25 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Set Aside | Contracting Office is a required for Set Aside. | Contracting Office is a required for Set Aside. | Create Opportunity, Publish
 400|Set Aside | Set Aside provided did not match expected codes | Set Aside provided did not match expected codes | Create Opportunity, Publish
 400|NAICS Type | $.data.naics[0].type: does not have a value in the enumeration [primary] | NAICS Type is required | Create Opportunity
+=======
+400|Justification Authority - Authority|	Justification Authority is not valid field for this opportunity type | Justification Authority only valid for Type "u" Justification and Authorization | Publish
+400|Justification Authority - Authority|	Authority is a required field | Justification Authority is a required field for Type "u" Justification and Authorization | Publish
+400|Justification Authority - Authority|	Invalid Authority Fields, please refer to Contract Opportunities SOAP Web Service Tech Document valid authority fields | If Invalid authority details are provided for Type "u" Justification and Authorization | Publish
+400|Justification Authority - Modification Number |	Justification Authority Modification Number is not valid field for this opportunity type | Justification Authority Modification Number is only valid for Type "u" Justification and Authorization| Publish
+400|Justification Authority - Modification Number |	Modification Number max character limit is 32 characters | MOdification number size exceeds 32 characters| Publish
+400|NAICS Code | NAICS Code is a required field | NAICS Code is required for Combined Synopsis and Solicitation | Publish
+400|NAICS Code | NAICS provided did not match expected codes | NAICS Code is invalid | Publish
+400|Set Aside | Set Aside is not valid field for this opportunity type | Set Aside is an invalid field for Justification and Intent to Bundle | Publish
+400|Set Aside | Contracting Office is a required for Set Aside | Contracting Office is a required for Set Aside |Publish
+400|Set Aside | Set Aside provided did not match expected codes | Set Aside code provided is invalid | Publish
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 400|Notice Type |	This opportunity cannot be published. The inactive type `manual` is no longer supported.	| See Notice Types table for valid notice types |	Publish
 400|Notice Type |	The opportunity type `j` is no longer supported	| See Notice Types table for valid notice types |	Publish
 400|Notice Type |	The opportunity type `m` is no longer supported	| See Notice Types table for valid notice types |	Publish
 400|Notice Type |	The opportunity type `l` is no longer supported	| See Notice Types table for valid notice types |	Publish
 400|Opportunity ID | Opportunity ID for the selected opportunity type already exists | Cannot publish an existing published record | Publish
 400|Opportunity ID | Opportunity cannot be updated | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state  | Revise
+<<<<<<< HEAD
 404|Notice ID | Notice ID is required	| Notice ID is required | All
 400|Notice ID | Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces.	| Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | All
 400|Notice ID | Notice ID must be unique based on selected notice type.	| Notice ID must be unique when selected notice type is not an award notice. | All
@@ -3835,6 +4067,24 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Primary Contact |	Primary Contact is required | Primary Contact is required | Publish
 400|Primary Contact Full Name |	Primary Contact - Name is required | Point of Contact Full Name is required | Publish
 400|Primary Contact Full Name |	Primary Contact - Name limit is 255 characters. | Point of Contact Name limit is 255 characters | Publish
+=======
+404|Solicitation Number | Notice ID is required	| Notice ID is required | All
+400|Solicitation Number | Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces	| Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces | Publish
+400|Solicitation Number | Notice ID must be unique based on selected notice type.	| Notice ID must be unique when selected notice type is not an award notice | Publish
+400|Solicitation Number | Submitted solicitation number doesn't match the previous published opportunity	| Submitted solicitation number doesn't match the previous published opportunity for award notice type | Publish
+400|Related Opportunity ID | This Related Notice's ID is invalid	| The Related Notice's ID is not found | Publish
+400|Related Opportunity ID | The Related Notice's Type is invalid for this Opportunity	| The Related Notice's Type cannot be related  | Publish
+400|Related Opportunity ID | Related Notice's ID needs to match previous Opportunity's Related Notice ID	| Related Notice's ID  provided while revising a notice needs to match the Parent Opportunity's Related Notice ID  | Publish
+400|Organization Id |	Contracting Office is a required field. | FH Org Id/AAC code is required |	Publish
+400|Organization Id |	The Federal Organization ID that you provided is inactive and/or invalid. | Inactive/Invalid Organization Id provided|	Create Opportunity, Publish
+400|Organization Id |	The Federal Organization ID that you provided is not an office level, and it must be for this opportunity type.	| Organization ID is not valid for opportunity type. Note: Organization ID must be Office level unless creating a Special Notice	| Create Opportunity, Publish
+400|Organization Id |	The Federal Organization ID that you provided is unmapped in Federal Hierarchy |If the Organization Id provided is a legacy one and is unmapped in Federal Hierarchy, then the system throws and error  |	Publish
+400|Point of Contact Email |	Primary Contact – Email is required	| If Contact email is missing. This is a required field	| Publish
+400|Primary Contact |	Primary Contact is required | Primary Contact is required  for all types except Award| Publish
+400|Primary Contact Full Name |	Primary Contact - Name is required | Point of Contact Full Name is required | Publish
+400|Primary Contact Full Name |	Primary Contact - Name limit is 255 characters | Point of Contact Name limit is 255 characters | Publish
+400|Primary Contact Full Name |	Primary Contact - Email is required | Point of Contact Email is required for all types except Award | Publish
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 400|Primary Contact Email |	Primary Contact - Please enter a valid Internet email address. Format: username@host.domain. | Primary Contact invalid Email format | Publish
 400|Primary Contact Email |	Primary Contact - email character limit is 255 characters. | Primary Contact email limit is 255 | Publish
 400|Primary Contact Phone |	Primary Contact - phone character limit is 255 characters. | Primary Contact phone limit is 255 | Publish
@@ -3848,10 +4098,24 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Response Date |	New response date is required. |	Unarchive requires new response date	| UnArchive
 400|Response Date |	New response date provided is in an invalid format. |	Invalid date format	| UnArchive
 400|Response Date |	New response date provided is in the past. |	Response date is before offset date	| UnArchive
+<<<<<<< HEAD
 400|Response Date |	New response date provided would place inactive date in the past. |	New response date providedis within 15 days	| UnArchive
 400|Title |	Title is required |	Title is required |	Publish
+=======
+400|Response Date |	New response date provided would place inactive date in the past. |	New response date providedis within 15 days	| UnArchiv
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 400|UNARCHIVE |	This opportunity is not the latest published |	Only archived notices can be unarchived | UNARCHIVE
-400|resourceName | Attachment must have a name | File Name is a required field |	Create Attachment
+400|Resources -  attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a line |	Create Attachment
+400|Resources - resourceName | Attachment must have a name | Attachment Name is a required field |	Create Attachment, Create And Publish
+400|Resources - content |Attachment must have content | File content is missing |	Create Attachment, Create And Publish
+400|Resources - description | Link Resource must have a description | Link provided is missing description |	Create Attachment, Create And Publish
+400|Resources - description | Link with the display text {}  already exists | Link with the same description/name already exists on the notice | Create Attachment, Create And Publish
+400|Resources - link | Link Resource must have a link | Link URL is missing |	Create Attachment, Create And Publish
+400|Resources - link | Please enter a valid url. [protocol]://hostname.domain. Protocol can be ftp, http, or https. Spaces are not allowed | Link URL is not valid |	Create Attachment, Create And Publish
+400|Resources - link | Link {} already exists| Link URL is already added to the notice |	Create Attachment, Create And Publish
+400|Resources - resourceName | The file type that you are trying to upload is not supported | File extension provided is unsupported |	Create Attachment, Create And Publish
+400|Resources - resourceName | Attachment with the name {} already exists | File with the same name is already added to the notice |	Create Attachment, Create And Publish
+400|Resources - content | The file size should be greater than zero bytes and less than 250 MB | File Size doesn't meet the specified limits |	Create Attachment, Create And Publish
 400|Request Id |	Duplicate request. Vendor is already added as an authorized party on the notice. | Request already exists for the vendor on the notice.	| AddAuthorizedParty
 400|Duns# |	No contact match on vendor data provided.	| Not a Valid email or Duns#.	| AddAuthorizedParty
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
@@ -3892,5 +4156,8 @@ Date | Version | Description
 10/25/2019 | v0.9 | Updated the field lengths
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5b247ea71abd6addd5c39631c650297e36000bc8
 <p><small><a href="#">Back to top</a></small></p>
