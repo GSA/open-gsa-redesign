@@ -1003,7 +1003,7 @@ awddate	|date|	Yes - for AWARD|	Award Date	|YYYYMMDD
 stauth	|string	|Yes - for JA 	|J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy| [Refer Stauth Valid Values](#stauth-valid-values)
 respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL, SSALE	|Response Date	|YYYYMMDD
 archdate  |	date| No; Either respdate or archdate required for SRCSGT, PRESOL, SSALE, SNOTE|	Archive Date|	YYYYMMDD
-awardee|	string|	Yes – for AWARD |	Awardee	|65535 characters
+awardee|	string|	Yes – for AWARD |	Awardee	|255 characters
 awardee_duns|	string	|Yes - for AWARD	|Awardee DUNS	|9 digits with optional plus 4
 contact|	string|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL|	Contact Info|	255 characters
 desc	|string|	Yes - for PRESOL, COMBINE, SRCSGT, SSALE, ITB, SOL, SNOTE|	Main Description|	65535 characters
