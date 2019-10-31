@@ -270,7 +270,6 @@ Examples
         }
     ]
 }
-
 </pre></code>
 </p>
 </details>
@@ -335,16 +334,6 @@ Examples
     "archive": {
       "type": "autocustom",
       "date": "2023-09-09"
-    },
-    "flags": [{
-        "code": "",
-        "isSelected": true
-    }],
-    "link": {
-        "additionalInfo": {
-            "content": ""
-        },
-        "href": ""
     },
      "additionalReporting": [
         "none"
@@ -435,17 +424,11 @@ Examples
         "solicitationNumber": "test-12345678901",
         "title": "Test submit solicitation",
         "organizationId": "100186612",
-        "organizationLocationId": "",
         "classificationCode": "1260",
         "naics": [
         {
             "type": "primary",
             "code": ["111150"]
-        }],
-        "flags": [
-        {
-            "code": "",
-            "isSelected": true
         }],
         "pointOfContact": [
         {
@@ -541,14 +524,6 @@ Examples
             {
                 "modificationNumber": "",
                 "authority": "dictionary"
-            },
-            "link":
-            {
-                "additionalInfo":
-                {
-                    "content": ""
-                },
-                "href": ""
             },
             "additionalReporting": ["none"]
         },
@@ -648,7 +623,6 @@ Examples
         "solicitationNumber": "test-12345457",
         "title": "Test Create and Publish SOL notice",
         "organizationId": "100186612",
-        "organizationLocationId": "",
         "classificationCode": "1260",
         "naics": [
             {
@@ -656,12 +630,6 @@ Examples
                 "code": [
                     "111150"
                 ]
-            }
-        ],
-        "flags": [
-            {
-                "code": "",
-                "isSelected": true
             }
         ],
         "pointOfContact": [
@@ -744,12 +712,6 @@ Examples
         "justificationAuthority": {
             "modificationNumber": "",
             "authority": "dictionary"
-        },
-        "link": {
-            "additionalInfo": {
-                "content": ""
-            },
-            "href": ""
         },
         "additionalReporting": [
             "none"
@@ -932,12 +894,12 @@ Examples
             "name": ""
           }
         }
+      }
       },
       "justificationAuthority": {
         "modificationNumber": "",
         "authority": "dictionary"
       },
-    },
     "permissions": {
       "IVL": {
         "create": true,
@@ -955,18 +917,6 @@ Examples
     "archive": {
       "type": "autocustom",
       "date": "2019-09-09"
-    },
-    "flags": [
-      {
-        "code": "",
-        "isSelected": true
-      }
-    ],
-    "link": {
-      "additionalInfo": {
-        "content": ""
-      },
-      "href": ""
     },
     "additionalReporting": [
       "none"
@@ -1048,18 +998,6 @@ Examples
     "archive": {
       "type": "autocustom",
       "date": "2019-09-09"
-    },
-    "flags": [
-      {
-        "code": "",
-        "isSelected": true
-      }
-    ],
-    "link": {
-      "additionalInfo": {
-        "content": ""
-      },
-      "href": ""
     },
     "additionalReporting": [
       "none"
@@ -2019,7 +1957,7 @@ Examples
 
 
 <details>
-<summary>Uncancel Request:</summary>
+<summary>Uncancel Request for a Non Award Notice</summary>
 <p>
 <code><pre>
 {
@@ -2031,6 +1969,26 @@ Examples
     "newArchiveType": "auto15",
     "newResponseDate": "2018-11-11T10:58:00-05:00",
     "newResponseTz": "America/New_York"
+  }
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>UnCancel Request for a Award notice</summary>
+<p>
+<code><pre>
+{
+  "reason": "test uncancel for award notice",
+  "requestType": "uncancel_request",
+  "data": {
+    "description": "test",
+    "newResponseDate": null,
+    "newResponseTz": null,
+    "newArchiveType": "autocustom",
+    "newArchiveDate": "2020-03-01",
+    "newContractAwardDate": "2020-02-02"
   }
 }
 </pre></code>
@@ -2911,140 +2869,115 @@ Examples
 <p>
 <code><pre>
 {
-    "data":
-    {
+    "data": {
         "type": "",
         "solicitationNumber": "",
         "title": "",
         "organizationId": "",
-        "organizationLocationId": "",
         "classificationCode": "",
         "naics": [
-        {
-            "type": "primary",
-            "code": [""]
-        }],
-        "flags": [
-        {
-            "code": "",
-            "isSelected": true
-        }],
-        "pointOfContact": [
-        {
-            "type": "primary",
-            "title": "",
-            "fullName": "",
-            "email": "",
-            "phone": "",
-            "fax": "",
-            "additionalInfo":
             {
-                "content": ""
+                "type": "primary",
+                "code": [
+                    ""
+                ]
             }
-        }],
-        "placeOfPerformance":
-        {
+        ],
+        "pointOfContact": [
+            {
+                "type": "primary",
+                "title": "",
+                "fullName": "",
+                "email": "",
+                "phone": "",
+                "fax": "",
+                "additionalInfo": {
+                    "content": ""
+                }
+            }
+        ],
+        "placeOfPerformance": {
             "streetAddress": "",
             "streetAddress2": "",
-            "city":
-            {
+            "city": {
                 "code": "",
                 "name": ""
             },
-            "country":
-            {
+            "country": {
                 "code": "",
                 "name": ""
             },
-            "state":
-            {
+            "state": {
                 "code": "",
                 "name": ""
             },
             "zip": ""
         },
-        "archive":
-        {
+        "archive": {
             "type": "autocustom",
             "date": "2019-09-09"
         },
-        "permissions":
-        {
-            "IVL":
-            {
+        "permissions": {
+            "IVL": {
                 "create": false,
                 "delete": false,
                 "read": false,
                 "update": false
             }
         },
-        "solicitation":
-        {
+        "solicitation": {
             "setAside": "SBA",
-            "deadlines":
-            {
+            "deadlines": {
                 "response": "2019-08-08"
             }
         },
-        "award":
-        {
+        "award": {
             "date": "",
             "number": "",
             "deliveryOrderNumber": "",
             "amount": "",
             "lineItemNumber": "",
-            "awardee":
-            {
+            "awardee": {
                 "manual": false,
                 "name": "",
                 "duns": "",
-                "location":
-                {
+                "location": {
                     "streetAddress": "",
                     "streetAddress2": "",
-                    "city":
-                    {
+                    "city": {
                         "code": "",
                         "name": ""
                     },
-                    "state":
-                    {
+                    "state": {
                         "code": "",
                         "name": ""
                     },
                     "zip": "",
-                    "country":
-                    {
+                    "country": {
                         "code": "",
                         "name": ""
                     }
                 }
             }
-            },
-            "justificationAuthority":
-            {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            },
-            "link":
-            {
-                "additionalInfo":
-                {
-                    "content": ""
-                },
-                "href": ""
-            },
-            "additionalReporting": ["none"]
         },
-        "description": [
+        "justificationAuthority": {
+            "modificationNumber": "",
+            "authority": "dictionary"
+        },
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
         {
             "body": ""
-        }],
-        "related":
-        {
-            "opportunityId": ""
         }
+    ],
+    "related": {
+        "opportunityId": ""
     }
+}
+
 </pre></code>
 </p>
 </details>
@@ -3178,7 +3111,6 @@ reason | string |  | No | Publish reason
         "solicitationNumber": "",
         "title": "",
         "organizationId": "",
-        "organizationLocationId": "",
         "classificationCode": "",
         "naics": [
             {
@@ -3186,12 +3118,6 @@ reason | string |  | No | Publish reason
                 "code": [
                     ""
                 ]
-            }
-        ],
-        "flags": [
-            {
-                "code": "",
-                "isSelected": true
             }
         ],
         "pointOfContact": [
@@ -3274,12 +3200,6 @@ reason | string |  | No | Publish reason
         "justificationAuthority": {
             "modificationNumber": "",
             "authority": "dictionary"
-        },
-        "link": {
-            "additionalInfo": {
-                "content": ""
-            },
-            "href": ""
         },
         "additionalReporting": [
             "none"
@@ -3476,14 +3396,14 @@ description | string |  | Yes | Description for cancelation
 <code><pre>
 {
   "reason": "",
-  "requestType": " uncancel_request ",
+  "requestType": "uncancel_request",
   "data": {
     "description": "",
     "newContractAwardDate": "",
     "newArchiveDate": "",
     "newArchiveType": "",
     "newResponseDate": "",
-    "newResponseTz": "America/New_York",
+    "newResponseTz": "America/New_York"
   }
 }
 </pre></code>
