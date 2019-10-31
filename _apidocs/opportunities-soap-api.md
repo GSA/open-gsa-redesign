@@ -1090,8 +1090,8 @@ Element Name | Type | Required | Description | Character Limit / Restrictions
 filename |	string |	Yes  |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
-explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true"|  
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation	| 
 
 ### Unarchive Notice <br> (unarchiveNotice)
 
@@ -4134,13 +4134,11 @@ Element Name	|	Business Rules |	Error Messages with respect to business rules (I
 date|		Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
 officeid|		1. If an invalid officeid is given, then service throws an error<br><br> 2. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 3. Office ID must be associated with user account	|1. Invalid officeid provided<br><br> 2. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 solnbr| 1. This field is required where applicable. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found<br><br> 
-ntype	|	1. If field is not provided OR a wrong ntype is provided, then service throws an error  |  1. Notice Type value provided is not valid
+ntype	|	1. If an invalid ntype is provided, then service throws an error   | 1. Invalid NTYPE value provided
 uploadtype|	NA|	NA
 respdate|	1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restrictions	|1.	DATE field in unexpected format. Expects YYYYMMDD
 links|	1.This field is not required but if url & description fields within the links and files are empty, then the service throws an error.<br><br> 2. If a link with same name already exists on the notice, then the system throws an error.<br><br> 3. If the Url is empty for a link, then the system throws an error.<br><br> 4.	If the description is missing for a link, then the system throws an error.| 1.	Links and/or files are not complete<br><br> 2.	Resource with the same name already exists<br><br> 3.	Link Resource must have a link<br><br> 4. Link Resource must have a description
 files	|	1.	This field is not required but if url & description fields within the links and files are empty, then the service throws an error<br><br> 2.	If the filename is not provided for a file, then the system throws an error<br><br> 3.	If the filedata is empty for a file, then the system throws an error<br><br> 4.	If the filename provided has either no type specified or is an unsupported type, then the system throws an error<br><br> 5.	If the file size exceeds 250MB, then the system throws an error <br><br> 6. If a file with same name already exists on the notice, then the system throwns an error |1.	Links and/or files are not complete <br><br>2.	Attachment must have a name<br><br> 3.	Attachment must have content <br><br>4.	The file type that you are trying to upload is not supported<br><br> 5.	The file size should be greater than zero bytes and less than 250 MB <br><br>6.	Resource with the same name already exists
-
-
 
 #### deleteNoticeOrDocumentPackage
 
@@ -4311,25 +4309,6 @@ ntype		|1. If an invalid ntype is provided, then service throws an error  | 1. I
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	rejectExplicitAccessRequestByVendorData service is deprecated for Non-FBO Solicitations
 vendor|		1.	If all the elements in the Vendor Data complex definition are not provided, then the system throws an error<br><br> 2.	If no match is found in the system for the vendor data provided, then the system throws an error<br><br>3. If the Explicit Access request found for the vendor and solnum is already rejected, then the system throws an error|	1.	This method requires all fields from complex type VendorData to find a match in the system; if vendor data not fully provided this error will be thrown<br><br> 2.	No contact match on vendor data provided <br><br> 3.	Request with Request ID: #id already rejected
 reason|  1.	This is a required field. If no value is provided, then the system throws an error| 1.	A reason must be provided with an explicit access rejection
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #### submitFairOpps
 
