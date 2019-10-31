@@ -28,6 +28,14 @@ paths:
         description: "Pagination controle"
         required: true
         type: "integer"
+      - name: api_key
+        in: query
+        description: API key for accessing data
+        required: true
+        schema:
+          type: string
+          format: string
+          default: DEMO_KEY
       responses:
         200:
           description: "successful operation"
@@ -52,6 +60,14 @@ paths:
         description: "Pagination controle"
         required: true
         type: "integer"
+      - name: api_key
+        in: query
+        description: API key for accessing data
+        required: true
+        schema:
+          type: string
+          format: string
+          default: DEMO_KEY
       responses:
         200:
           description: "successful operation"
