@@ -3777,7 +3777,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
 400|Additional Reporting |	This opportunity cannot be published. Additional reporting is required. |	Additional Reporting is required with valid values of “none” or “recovery_act”	| Publish
 400|Additional Reporting |	Additional Reporting/Initiative is required. |	Additional Reporting/Initiative is required when opportunity is not a special notice | Publish
-400|Title |	Title max character length is 256. |	Title max character length is 256.	| Publish
+400|Title |	Title max character length is 256. |	Title max character length is 256.	| Create, Publish
 400|ARCHIVE |	This opportunity is not the latest published. |	Draft Opportunity cannot be archived.	| Archive
 400|ARCHIVE |	Opportunity already inactive. |	Opportunity is already archived.	| Archive
 400|Update |	Opportunity cannot be updated. |	Opportunity is either in draft, archived or cancelled status.	| Update
@@ -3915,7 +3915,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Response Date |	New response date provided is in an invalid format. |	Invalid date format	| UnArchive
 400|Response Date |	New response date provided is in the past. |	Response date is before offset date	| UnArchive
 400|Response Date |	New response date provided would place inactive date in the past. |	New response date providedis within 15 days	| UnArchive
-400|Title |	Title is a required field. |	Title is a required field. |	Publish
+400|Title |	Title is a required field. |	Title is a required field. | Create, Publish
 400|UNARCHIVE |	This opportunity is not the latest published |	Only archived notices can be unarchived | UNARCHIVE
 400|resourceName | Attachment must have a name | File Name is a required field |	Create Attachment
 400|Request Id |	Duplicate request. Vendor is already added as an authorized party on the notice. | Request already exists for the vendor on the notice.	| AddAuthorizedParty
