@@ -3296,15 +3296,15 @@ Note: This service gets a list of all notices
               <filename xsi:type="xsd:string">test_document3.pdf</filename>
               <filedata xsi:type="xsd:base64Binary">SnVzdCBhIHNtYWxsIHRlc3Q</filedata>
               <desc xsi:type="xsd:string">test doc 1</desc>
-<explicit_access xsi:type="xsd:boolean">true</explicit_access>
-<export_controlled xsi:type="xsd:boolean"> </export_controlled>
+              <explicit_access xsi:type="xsd:boolean">true</explicit_access>
+              <export_controlled xsi:type="xsd:boolean"> </export_controlled>
               </DocumentFile>
               <DocumentFile>
-               <filename xsi:type="xsd:string">test_document2.pdf</filename>
+              <filename xsi:type="xsd:string">test_document2.pdf</filename>
               <filedata xsi:type="xsd:base64Binary">SnVzdCBhIHNtYWxsIHRlc3Q22</filedata>
               <desc xsi:type="xsd:string">test doc 2</desc>
-<explicit_access xsi:type="xsd:boolean">false</explicit_access>
-<export_controlled xsi:type="xsd:boolean"> </export_controlled>
+              <explicit_access xsi:type="xsd:boolean">false</explicit_access>
+              <export_controlled xsi:type="xsd:boolean"> </export_controlled>
               </DocumentFile>
             </files>
          </data>
@@ -4062,7 +4062,7 @@ archdate|	1. This field should meet the character limit/restrictions <br><br> 2.
 awardee_duns|	1. Must provide a valid DUNS|	1. Unique Entity Identifier (duns) is invalid
 contact	|	1. This field is required where applicable	|1. Primary Contact is Required
 desc| 	1. This field is required where applicable.|	1. Description is required
-link|	1. If a link is with same and url is added to the notice during modification/amendment, then the service throws an error	| 1. Link with the display text {}  already exists
+link|	1. If a link is with same name and url is added to the notice during modification/amendment, then the service throws an error	| 1. Link with the display text {}  already exists
 email	|1. This field is required where applicable <br><br>  2. If an invalid email address is provided, then the service throws an error	| 1. Primary Contact - Email is required <br><br>  2. Primary Contact - Please enter a valid Internet email address. Format: username@host.domain
 links|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error|	1. Links and/or files are not complete
 files|	1. This field is not required but if url & description fields within the links and files are empty, then the service throws an error	|1. Links and/or files are not complete
