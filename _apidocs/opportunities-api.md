@@ -3875,7 +3875,8 @@ Date | Version | Description
 10/22/2019 | v0.76| Create and Publish JSON field for Archive.Date and Response Date updated <br> Production Link Updated <br> API URLs updated
 10/10/2019 | v0.8 | Updated the Set-Aside values with the latest codes
 10/25/2019 | v0.9 | Updated the field lengths
-10/31/2019| v0.91| Delete Vendor Removed <br> Delete Resource in Draft API Added <br> Delete Notice API Updated <br> Getlist API Updated <br> Download Metadata for Attachment by Resource ID and Opportunity ID Updated <br> Create and Update JSON Updated <br> Create and Publish JSON Updated <br> Revise Opportunity JSON Updated <br> Cancel Notice JSON Updated <br> Uncancel Notice JSON Updated <br> Archive JSOM Updated <br> Unarchive JSON Updated <br> Create Attachment JSON Updated <br> Update Attachment JSON Updated <br> IVL Settings JSON Updated <br> Delete Notice JSON Updated <br> Error Message Section Updated
+10/31/2019| v0.91| Delete Vendor removed <br> Delete Resource in Draft API added <br> API Specifications Updated: Delete Notice, Getlist, Download Metadata for Attachment by Resource ID, and Download Metadata for Attachment by Opportunity ID <br> JSON Updated: Create and Update, Create and Publish, Revise Opportunity, Cancel Notice, Uncancel Notice, Archive, Unarchive, Create Attachment, Update Attachment, IVL Settings, and Delete Notice <br> Error Message Section Updated
+
 
 
 
