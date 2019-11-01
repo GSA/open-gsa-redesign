@@ -426,6 +426,6 @@ Date | Version | Description
 10/17/19 | v1.2| Added Set-Aside Code
 10/23/19 | v1.3| Set-Aside Values Updated
 10/24/19| v1.4| Office Address Description Updated 
-11/1/19| v1.5| - Street Address 1 & 2 removed from Response <br> - Status and Description Removed from Request <br> - Limit changed to "Required" <br> - Asynchronous opportunities file download feature disabled <br> - Response returns only latest active version of a notice
+11/1/19| v1.5| - Street Address 1 & 2 removed from Response <br> - Status and Description removed from request <br> - Limit changed to "Required" <br> - Asynchronous opportunities file download feature disabled <br> - Response returns only the latest active version of a notice
 
 <p><small><a href="#">Back to top</a></small></p>
