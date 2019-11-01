@@ -3927,6 +3927,21 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Duns#|	No contact match on vendor data provided.	|Not a Valid email or Duns#.|	AddAuthorizedParty, Approve or Reject Explicit Access Request By Vendor Data.
 404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided.|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
 400|JSON| No Request JSON Given| Can't parse JSON. Raw result: error processing request| Delete Latest or All Notices
+400|VendorData| Reason should not be empty| Reason should not be empty| Requets by VendorData
+400|VendorData| Request type is incorrect| Request type is incorrect| Requets by VendorData
+400|VendorData| Request already exists for the user| Request already exists for the user| Requets by VendorData
+400|VendorData| This request is not applicable to links| This request is not applicable to links| Requets by VendorData
+400|VendorData| This request is not applicable to public attachments| This request is not applicable to public attachments| Requets by VendorData
+400|VendorData| Solicitation number not found for request id| Solicitation number not found for request id| Requets by VendorData
+400|VendorData| Please provide valid action type| Please provide valid action type| Requets by VendorData
+400|VendorData| You have a request that is tied to different solicitation number.| You have a request that is tied to different solicitation number.| Requets by VendorData
+400|VendorData| You have a request that is tied to same solicitation number but different notice type.| You have a request that is tied to same solicitation number but different notice type.| Requets by VendorData
+400|Attachments| This action is not applicable to links| This action is not applicable to links| Requets by VendorData
+400|Attachments| This action is not applicable to public attachments| This action is not applicable to public attachments| Requets by VendorData
+400|VendorData| fname should not be empty| fname should not be empty| Requets by VendorData
+400|VendorData| lname should not be empty| lname should not be empty| Requets by VendorData
+400|VendorData| Email should not be empty| Email should not be empty| Requets by VendorData
+400|VendorData| Duns should not be empty| Duns should not be empty| Requets by VendorData
 
 
 
