@@ -9,11 +9,10 @@ Get Opportunities API provides all the published opportunity details based on th
 
 **This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Beta.Sam.Gov. All active notices in Beta.Sam.Gov are updated daily and all archived notices are updated on a weekly basis.**
 
-Active Opportunities: https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2Fdatagov
+[Active Opportunities](https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2Fdatagov)
 
-Archived Opportunities: https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2FArchived%20Data
+[Archived Opportunities](https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2FArchived%20Data)
 
-**API Version: v1.0**
 
 ## Getting Started
 
