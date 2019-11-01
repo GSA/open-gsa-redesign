@@ -5,7 +5,7 @@ banner-heading: Beta.SAM.Gov Get Opportunities Public API
 
 ## Overview
 
-Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. If pagination is requested, then the response will be provided to users synchronously, else the call will be asynchronous. 
+Get Opportunities API provides all the published opportunity details based on the request parameters. This API requires pagination, and the response will be provided to users synchronously. 
 
 **This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Beta.Sam.Gov. All active notices in Beta.Sam.Gov are updated daily and all archived notices are updated on a weekly basis.**
 
@@ -54,7 +54,7 @@ ncode|	NAICS Code. This code is maximum of 6 digits|	No|	String
 ccode|	Classification Code|	No|	String
 rdlfrom	|Response Deadline date. Format must be MM/dd/yyyy <br>Note: If response date From & To is provided, then the date range is 1 year|	No|	String
 rdlto	|Response Deadline date. Format must be MM/dd/yyyy <br>Note: If response date From & To is provided, then the date range is 1 year|	No|	String
-limit	|Total number of records to be retrieved per page. This field must be a number.<br>NOTE: If limit is not provided, request will be treated as an asynchronous request and users will receive an email with a download option to retrieve response|	No	|Int
+limit	|Total number of records to be retrieved per page. This field must be a number <br> Max Value = 1000|	Yes	|Int
 offset	|Indicates the page index. Default offset starts with 0 |	No|	Int
 
 ## Get Opportunities Response Parameters
