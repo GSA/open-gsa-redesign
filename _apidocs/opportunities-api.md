@@ -3716,7 +3716,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
 400|Additional Reporting |	This opportunity cannot be published. Additional reporting is required. |	Additional Reporting is required with valid values of “none” or “recovery_act”	| Publish
 400|Additional Reporting |	Additional Reporting/Initiative is required. |	Additional Reporting/Initiative is required when opportunity is not a special notice | Publish
-400|Title |	Title max character length is 256. |	Title max character length is 256.	| Publish
+400|Title |	Title max character length is 256. |	Title max character length is 256.	| Create, Publish
 400|ARCHIVE |	This opportunity is not the latest published. |	Draft Opportunity cannot be archived.	| Archive
 400|ARCHIVE |	Opportunity already inactive. |	Opportunity is already archived.	| Archive
 400|Update |	Opportunity cannot be updated. |	Opportunity is either in draft, archived or cancelled status.	| Update
@@ -3731,9 +3731,14 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Description |	Description is required |	Description is required	| Uncancel
 400|UNARCHIVE |	Opportunity is active. |	Active opportunity	| UnArchive
 400|UNARCHIVE |	Opportunity is cancelled. |	Cancelled opportunity	| UnArchive
+400| Delete |	This opportunity cannot be deleted. This opportunity is a revision. |	This opportunity cannot be deleted. This opportunity is a revision.	| Delete
+400| Delete |	Opportunity has been already deleted. |	Opportunity has been already deleted.	| Delete
+400| Delete |	This opportunity cannot be deleted. The delete request is missing `Delete option` field. |	This opportunity cannot be deleted. The delete request is missing `Delete option` field.	| Delete
+400| Delete |	This opportunity cannot be deleted. The `Delete option` provided is not supported. |	This opportunity cannot be deleted. The `Delete option` provided is not supported.	| Delete
+400| Delete |	This opportunity cannot be deleted. The `Delete option` provided is not supported for deleting original published notice. |	This opportunity cannot be deleted. The `Delete option` provided is not supported for deleting original published notice.	| Delete
 400|Opportunity Type |	The new opportunity type field is missing. |	prevent activating if opportunity type is `m`, `l` or `j` and new type opportunity isn't provided	| UnArchive
 400|Opportunity Type |	The new opportunity type field is not supported. |	prevent activating if opportunity type is not one of `m`, `l` or `j` and new type opportunity is provided	| UnArchive
-400|Opportunity Type |	The Opportunity's type provided is not supported. |	prevent activating if opportunity type is `m` and new type opportunity provided is not supported	| UnArchive
+400|Opportunity Type |	The Opportunity's type provided is not supported. |	prevent activating if opportunity type is `m` and new type opportunity provided is not supported	| Create, UnArchive
 400|Opportunity Type |	The new opportunity type provided is not supported. |	prevent activating if opportunity type is  `l` or `j` and new type opportunity provided is not `u`	| UnArchive
 400|Archive Date |	$.archive.date: does not match the date pattern ^\\d{4}-(?:0[0-9]{1}\1[0-2]{1})-(0?[1-9]\[12][0-9]\3[01])$ |	Archive Date must be in specified format |	Create, Publish, Uncancel, Unarchive
 400|Archive Date |	This opportunity cannot be published. Inactive date is a required field. |	Archive Date is required if Archive Type = autocustom |	Create, Publish, Uncancel, Unarchive
@@ -3849,7 +3854,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Response Date |	New response date provided is in an invalid format. |	Invalid date format	| UnArchive
 400|Response Date |	New response date provided is in the past. |	Response date is before offset date	| UnArchive
 400|Response Date |	New response date provided would place inactive date in the past. |	New response date providedis within 15 days	| UnArchive
-400|Title |	Title is required |	Title is required |	Publish
+400|Title |	Title is a required field. |	Title is a required field. | Create, Publish
 400|UNARCHIVE |	This opportunity is not the latest published |	Only archived notices can be unarchived | UNARCHIVE
 400|resourceName | Attachment must have a name | File Name is a required field |	Create Attachment
 400|Request Id |	Duplicate request. Vendor is already added as an authorized party on the notice. | Request already exists for the vendor on the notice.	| AddAuthorizedParty
