@@ -3799,7 +3799,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400| Delete |	This opportunity cannot be deleted. The `Delete option` provided is not supported for deleting original published notice. |	This opportunity cannot be deleted. The `Delete option` provided is not supported for deleting original published notice.	| Delete
 400|Opportunity Type |	The new opportunity type field is missing. |	prevent activating if opportunity type is `m`, `l` or `j` and new type opportunity isn't provided	| UnArchive
 400|Opportunity Type |	The new opportunity type field is not supported. |	prevent activating if opportunity type is not one of `m`, `l` or `j` and new type opportunity is provided	| UnArchive
-400|Opportunity Type |	The Opportunity's type provided is not supported. |	prevent activating if opportunity type is `m` and new type opportunity provided is not supported	| UnArchive
+400|Opportunity Type |	The Opportunity's type provided is not supported. |	prevent activating if opportunity type is `m` and new type opportunity provided is not supported	| Create, UnArchive
 400|Opportunity Type |	The new opportunity type provided is not supported. |	prevent activating if opportunity type is  `l` or `j` and new type opportunity provided is not `u`	| UnArchive
 400|Archive Date |	$.archive.date: does not match the date pattern ^\\d{4}-(?:0[0-9]{1}\1[0-2]{1})-(0?[1-9]\[12][0-9]\3[01])$ |	Archive Date must be in specified format |	Create, Publish, Uncancel, Unarchive
 400|Archive Date |	This opportunity cannot be published. Inactive date is a required field. |	Archive Date is required if Archive Type = autocustom |	Create, Publish, Uncancel, Unarchive
