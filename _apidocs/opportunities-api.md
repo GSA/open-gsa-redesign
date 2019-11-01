@@ -3806,44 +3806,44 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Cancel |	This opportunity cannot be cancelled. This opportunity is a revision |	This opportunity cannot be cancelled. This opportunity is a revision	| Cancel
 400|Cancel |	This opportunity cannot be cancelled. This opportunity is already inactive |	This opportunity cannot be cancelled. This opportunity is already inactive	| Cancel
 400|Cancel |	This opportunity cannot be cancelled. This opportunity is already cancelled |	This opportunity cannot be cancelled. This opportunity is already cancelled	| Cancel
-400|Cancel - Description |	This opportunity cannot be cancelled. The cancel request is missing `Cancellation description` field. |	This opportunity cannot be cancelled. The cancel request is missing `Cancellation description` field.	| Cancel
+400|Cancel - Description |	This opportunity cannot be cancelled. The cancel request is missing `Cancellation description` field |	This opportunity cannot be cancelled. The cancel request is missing `Cancellation description` field	| Cancel
 400|Uncancel, Delete |	This opportunity is not published |	This opportunity is not published.	| Uncancel, Delete
 400|Uncancel |	This opportunity is a revision |	This opportunity is a revision	| Uncancel
 400|Uncancel |	This opportunity is not cancelled |	This opportunity is not cancelled	| Uncancel
 400|Uncancel -Description |	Description is required |	Description is required	| Uncancel
-400|Unarchive |	Opportunity is active. |	Active opportunity	| UnArchive
-400|Unarchive |	Opportunity is cancelled. |	Cancelled opportunity	| UnArchive
+400|Unarchive |	Opportunity is active |	Active opportunity	| UnArchive
+400|Unarchive |	Opportunity is cancelled |	Cancelled opportunity	| UnArchive
 400|UnArchive, Uncancel - Archive Date |	New archive date is required |	New archive date is required  |	Unarchive, Uncancel
 400|UnArchive, Uncancel - Archive Date |	New archive date provided is in an invalid format |	New archive date provided is in an invalid format |	Unarchive, Uncancel
 400|UnArchive, Uncancel - Archive Date|	New archive date provided is in the past |	New archive date provided is before today's date |	Unarchive, Uncancel
 400|UnArchive, Uncancel - Archive Date |	New archive type is invalid |	archive type is not one of the following "auto15", "autocustom", "auto30"	| Unarchive, Uncancel
 400|UnArchive, Uncancel - Award Date |	New contract award date provided is in the past |	New contract award date provided is in the past. | Unarchive, Uncancel
 400|UnArchive, Uncancel - Award Date |	New contract award date is not provided |	New contract award date is not provided | Unarchive, Uncancel
-400|UnArchive, Uncancel - Response Date |	New response date is required. |	Unarchive requires new response date	| UnArchive
+400|UnArchive, Uncancel - Response Date |	New response date is required |	Unarchive requires new response date	| UnArchive
 400|UnArchive, Uncancel - Response Date |	New response date provided is in an invalid format |	Invalid date format	| UnArchive
 400|UnArchive, Uncancel - Response Date |	New response date provided is in the past   |	Response Date cannot be in the past 	| UnArchive
-400|UnArchive, Uncancel - Response Date |	New response date provided would place inactive date in the past. |	New response date providedis within 15 days	| UnArchive
-400|Delete |	This opportunity cannot be deleted. This opportunity is a revision. |	This opportunity cannot be deleted. This opportunity is a revision.	| Delete
-400|Delete |	Opportunity has been already deleted. |	Opportunity has been already deleted.	| Delete
-400|Delete |	This opportunity cannot be deleted. The delete request is missing `Delete option` field. |	This opportunity cannot be deleted. The delete request is missing `Delete option` field.	| Delete
-400|Delete |	This opportunity cannot be deleted. The `Delete option` provided is not supported. |	This opportunity cannot be deleted. The `Delete option` provided is not supported.	| Delete
+400|UnArchive, Uncancel - Response Date |	New response date provided would place inactive date in the past |	New response date providedis within 15 days	| UnArchive
+400|Delete |	This opportunity cannot be deleted. This opportunity is a revision |	This opportunity cannot be deleted. This opportunity is a revision.	| Delete
+400|Delete |	Opportunity has been already deleted. |	Opportunity has been already deleted	| Delete
+400|Delete |	This opportunity cannot be deleted. The delete request is missing `Delete option` field |	This opportunity cannot be deleted. The delete request is missing `Delete option` field.	| Delete
+400|Delete |	This opportunity cannot be deleted. The `Delete option` provided is not supported |	This opportunity cannot be deleted. The `Delete option` provided is not supported.	| Delete
 400|Delete |	This opportunity cannot be deleted. The `Delete option` provided is not supported for deleting original published notice. |	This opportunity cannot be deleted. The `Delete option` provided is not supported for deleting original published notice.	| Delete
-400|Attachment |	has unknown issue/missing, please remove this attachment and republish. | has unknown issue/missing, please remove this attachment and republish. |	Publish
-400|Attachment |	is PENDING, please try to publish at a later time. | is PENDING, please try to publish at a later time. |	Publish
-400|Attachment |	is ENCRYPTED, please remove this attachment and republish. | is ENCRYPTED, please remove this attachment and republish. |	Publish
-400|Attachment |	is INFECTED, please remove this attachment and republish. | is INFECTED, please remove this attachment and republish. |	Publish
-400|Attachment |	FILE SIZE GT 250MB or larger, please remove this attachment and republish. | FILE SIZE GT 250MB or larger, please remove this attachment and republish. |	Publish
-400|Attachment |	is a UNSUPPORTED FILE TYPE, please remove this attachment and republish. | is a UNSUPPORTED FILE TYPE, please remove this attachment and republish. |	Publish
-400|Attachment |	Exception occured while trying to validate attachments, Please retry at a later time. | Exception occured while trying to validate attachments, Please retry at a later time. |	Publish
+400|Attachment |	has unknown issue/missing, please remove this attachment and republish. | has unknown issue/missing, please remove this attachment and republish |	Publish
+400|Attachment |	is PENDING, please try to publish at a later time | is PENDING, please try to publish at a later time |	Publish
+400|Attachment |	is ENCRYPTED, please remove this attachment and republish | is ENCRYPTED, please remove this attachment and republish |	Publish
+400|Attachment |	is INFECTED, please remove this attachment and republish | is INFECTED, please remove this attachment and republish |	Publish
+400|Attachment |	FILE SIZE GT 250MB or larger, please remove this attachment and republish | FILE SIZE GT 250MB or larger, please remove this attachment and republish |	Publish
+400|Attachment |	is a UNSUPPORTED FILE TYPE, please remove this attachment and republish | is a UNSUPPORTED FILE TYPE, please remove this attachment and republish |	Publish
+400|Attachment |	Exception occured while trying to validate attachments, Please retry at a later time | Exception occured while trying to validate attachments, Please retry at a later time. |	Publish
 400|Attachment |	Unknown type was found for Resource named: | Unknown type was found for Resource named: |	Publish
 400|IVL |	This opportunity cannot be published. Interested Vendors List Add is a required field |Interested Vendors List Add is a required |	Publish
 400|IVL |	Interested Vendors List Read is a required field. |Interested Vendors List Read is a required field |	Publish
 400|IVL |	Interested Vendors List should be enabled for this organization |Interested Vendors List should be enabled for this organization when FORCE ON |	Publish
 400|IVL |	Interested Vendors List should not be enabled for this organization |Interested Vendors List should not be enabled for this organization when FORCE OFF |	Publish
 400|Revise | Opportunity cannot be updated | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state  | Revise
-400|Vendor Data |	Duplicate request. Vendor is already added as an authorized party on the notice. | Request already exists for the vendor on the notice.	| AddAuthorizedParty
+400|Vendor Data |	Duplicate request. Vendor is already added as an authorized party on the notice | Request already exists for the vendor on the notice.	| AddAuthorizedParty
 400|Duns# |	No contact match on vendor data provided.	| Not a Valid email or Duns#	| AddAuthorizedParty
-404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided.|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
+404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
 400|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
 401|Authorization|	Error code: 401 ; Your request did not get processed! Please verify your permission/roles|	If nonfed email id is used in authorization	|Get Authorized Party
