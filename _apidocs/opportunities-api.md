@@ -3824,7 +3824,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|UnArchive, Uncancel - Response Date |	New response date provided is in the past   |	Response Date cannot be in the past 	| UnArchive
 400|UnArchive, Uncancel - Response Date |	New response date provided would place inactive date in the past |	New response date providedis within 15 days	| UnArchive
 400|Delete |	This opportunity cannot be deleted. This opportunity is a revision |	This opportunity cannot be deleted. This opportunity is a revision.	| Delete
-400|Delete |	Opportunity has been already deleted. |	Opportunity has been already deleted	| Delete
+400|Delete |	Opportunity has been already deleted |	Opportunity has been already deleted	| Delete
 400|Delete |	This opportunity cannot be deleted. The delete request is missing `Delete option` field |	This opportunity cannot be deleted. The delete request is missing `Delete option` field.	| Delete
 400|Delete |	This opportunity cannot be deleted. The `Delete option` provided is not supported |	This opportunity cannot be deleted. The `Delete option` provided is not supported.	| Delete
 400|Delete |	This opportunity cannot be deleted. The `Delete option` provided is not supported for deleting original published notice. |	This opportunity cannot be deleted. The `Delete option` provided is not supported for deleting original published notice.	| Delete
@@ -3842,7 +3842,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|IVL |	Interested Vendors List should not be enabled for this organization |Interested Vendors List should not be enabled for this organization when FORCE OFF |	Publish
 400|Revise | Opportunity cannot be updated | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state  | Revise
 400|Vendor Data |	Duplicate request. Vendor is already added as an authorized party on the notice | Request already exists for the vendor on the notice.	| AddAuthorizedParty
-400|Duns# |	No contact match on vendor data provided.	| Not a Valid email or Duns#	| AddAuthorizedParty
+400|Duns# |	No contact match on vendor data provided	| Not a Valid email or Duns#	| AddAuthorizedParty
 404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
 400|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
