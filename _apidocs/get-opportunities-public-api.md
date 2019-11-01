@@ -385,14 +385,6 @@ Note: Response for one record is provided as an example <br>
 </p>
 </details>
 
-## Synchronous vs Asynchronous call
-Since Opportunities data volume is huge, API works as follows:
-
-* If limit is provided (limit range is 0-1000), then the API will give response immediately (synchronous call) 
-<br>
-* If limit is not provided, then the API will work asynchronously and sends an email to the user with the response as a downloadable link. This downloadable link will have an expiry time. The downloadable CSV file format is: <br> 
-"Title", "Sol#", "Department/Ind.Agency", "Sub-Tier", "Office", "PostedDate", "Type",  "BaseType", "ArchiveType", "ArchiveDate", "SetASideCode", "SetASide", "ResponseDeadLine", "NaicsCode", "ClassificationCode", "PopStreetAddress", "PopCity", "PopState", "PopZip", "PopCountry", "Active", "AwardNumber", "AwardDate", "Award$", "Awardee", "PrimaryContactTitle", "PrimaryContactFullname", "PrimaryContactEmail", "PrimaryContactPhone", "PrimaryContactFax", "SecondaryContactTitle",            "SecondaryContactFullname","SecondaryContactEmail", "SecondaryContactPhone", "SecondaryContactFax","Description","OrganizationType","StreetAddress","StreetAddress2","State","City","ZipCode","CountryCode","AdditionalInfoLik", "Link"
-
 ## HTTP Response Codes
 
 200 - Success
