@@ -5,15 +5,14 @@ banner-heading: Beta.SAM.Gov Get Opportunities Public API
 
 ## Overview
 
-Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. If pagination is requested, then the response will be provided to users synchronously, else the call will be asynchronous. 
+Get Opportunities API provides all the published opportunity details based on the request parameters. This API requires pagination, and the response will be provided to users synchronously. 
 
 **This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Beta.Sam.Gov. All active notices in Beta.Sam.Gov are updated daily and all archived notices are updated on a weekly basis.**
 
-Active Opportunities: https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2Fdatagov
+[Active Opportunities](https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2Fdatagov)
 
-Archived Opportunities: https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2FArchived%20Data
+[Archived Opportunities](https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2FArchived%20Data)
 
-**API Version: v1.0**
 
 ## Getting Started
 
@@ -54,7 +53,7 @@ ncode|	NAICS Code. This code is maximum of 6 digits|	No|	String
 ccode|	Classification Code|	No|	String
 rdlfrom	|Response Deadline date. Format must be MM/dd/yyyy <br>Note: If response date From & To is provided, then the date range is 1 year|	No|	String
 rdlto	|Response Deadline date. Format must be MM/dd/yyyy <br>Note: If response date From & To is provided, then the date range is 1 year|	No|	String
-limit	|Total number of records to be retrieved per page. This field must be a number.<br>NOTE: If limit is not provided, request will be treated as an asynchronous request and users will receive an email with a download option to retrieve response|	No	|Int
+limit	|Total number of records to be retrieved per page. This field must be a number <br> Max Value = 1000|	Yes	|Int
 offset	|Indicates the page index. Default offset starts with 0 |	No|	Int
 
 ## Get Opportunities Response Parameters
@@ -386,14 +385,6 @@ Note: Response for one record is provided as an example <br>
 </p>
 </details>
 
-## Synchronous vs Asynchronous call
-Since Opportunities data volume is huge, API works as follows:
-
-* If limit is provided (limit range is 0-1000), then the API will give response immediately (synchronous call) 
-<br>
-* If limit is not provided, then the API will work asynchronously and sends an email to the user with the response as a downloadable link. This downloadable link will have an expiry time. The downloadable CSV file format is: <br> 
-"Title", "Sol#", "Department/Ind.Agency", "Sub-Tier", "Office", "PostedDate", "Type",  "BaseType", "ArchiveType", "ArchiveDate", "SetASideCode", "SetASide", "ResponseDeadLine", "NaicsCode", "ClassificationCode", "PopStreetAddress", "PopCity", "PopState", "PopZip", "PopCountry", "Active", "AwardNumber", "AwardDate", "Award$", "Awardee", "PrimaryContactTitle", "PrimaryContactFullname", "PrimaryContactEmail", "PrimaryContactPhone", "PrimaryContactFax", "SecondaryContactTitle",            "SecondaryContactFullname","SecondaryContactEmail", "SecondaryContactPhone", "SecondaryContactFax","Description","OrganizationType","StreetAddress","StreetAddress2","State","City","ZipCode","CountryCode","AdditionalInfoLik", "Link"
-
 ## HTTP Response Codes
 
 200 - Success
@@ -435,5 +426,6 @@ Date | Version | Description
 10/17/19 | v1.2| Added Set-Aside Code
 10/23/19 | v1.3| Set-Aside Values Updated
 10/24/19| v1.4| Office Address Description Updated 
+11/1/19| v1.5| - Street Address 1 & 2 removed from Response <br> - Status and Description removed from request <br> - Limit changed to "Required" <br> - Asynchronous opportunities file download feature disabled <br> - Response returns only the latest active version of a notice
 
 <p><small><a href="#">Back to top</a></small></p>
