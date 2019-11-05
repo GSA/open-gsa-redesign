@@ -1437,7 +1437,6 @@ data.link.additionalInfo | JSON |
 data.link.additionalInfo.content | string | Additional Info
 data.link.href | string |  Website Address
 data.additionalReporting | string |  recovery_act or none
-description | JSON | 
 additionalInfo.sections JSON | JSON | 
 additionalInfo.sections.opportunityId | string | 
 additionalInfo.sections.status | string | 
@@ -2704,7 +2703,7 @@ Examples
                 "cageCode": "1DJP1”
             }
         ]
-    },
+    }
 }
 </pre></code>
 </p>

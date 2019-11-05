@@ -4165,7 +4165,7 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | -------
-date|		Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
+date|		1. Date field should meet the expected format	|1. DATE field in unexpected format. Expects YYYYMMDD
 officeid|		1. If an invalid officeid is given, then service throws an error<br><br> 2. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 3. Office ID must be associated with user account	|1. Invalid officeid provided<br><br> 2. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 solnbr| 1. This field is required where applicable. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found<br><br> 
 ntype	|	1. If an invalid ntype is provided, then service throws an error   | 1. Invalid NTYPE value provided
@@ -4193,7 +4193,7 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	| 	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-date|	Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
+date|	1. Date field should meet the expected format	|1. DATE field in unexpected format. Expects YYYYMMDD
 solnbr|	 1. This field is required where applicable. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error |	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details
 officeid	|	Office ID must be associated with user account	|NA
 ntype	|	1. If an invalid ntype is provided, then service throws an error   | 1. Invalid NTYPE value provided
@@ -4221,7 +4221,7 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-date|	Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
+date|	1. Date field should meet the expected format	|1. DATE field in unexpected format. Expects YYYYMMDD
 officeid|	Office ID must be associated with user account	|NA
 subject|		NA|	NA
 solnbr|	 1. This field is required where applicable. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error |	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details
@@ -4237,9 +4237,9 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-notice_id	|	notice_id is required|	notice_id from getList is required
+notice_id	|	1. notice_id is required|	1. notice_id from getList is required
 get_changes|		NA|	NA
-get_changes_from_date|		Date field should meet the expected format|	DATE field in unexpected format. Expects YYYYMMDD
+get_changes_from_date|		1. Date field should meet the expected format|	1. DATE field in unexpected format. Expects YYYYMMDD
 get_file_data	|NA	|NA
 
 #### getList
@@ -4249,11 +4249,11 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	 |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-notice_type	 |	 Valid Notice Type must be provided | Notice Type is not recognized. Expects one of the following: PRESOL, COMBINE, MOD, AWARD, JA, SRCSGT, SSALE, SNOTE, ITB, SOL
+notice_type	 |	 1. Valid Notice Type must be provided |1. Notice Type is not recognized. Expects one of the following: PRESOL, COMBINE, MOD, AWARD, JA, SRCSGT, SSALE, SNOTE, ITB, SOL
 solnbr|	NA|	NA
 awdnbr|		NA|	NA
-posted_from	|	Date field should meet the expected format|	DATE field in unexpected format. Expects YYYYMMDD
-posted_to|Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
+posted_from	|	1. Date field should meet the expected format|	1. DATE field in unexpected format. Expects YYYYMMDD
+posted_to|1. Date field should meet the expected format	|1. DATE field in unexpected format. Expects YYYYMMDD
 documents_to_search|	NA|	NA
 
 #### getFileData
