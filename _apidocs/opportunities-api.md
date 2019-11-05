@@ -574,7 +574,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Publish Opportunity Request:</summary>
+<summary>Publish Opportunity Request</summary>
 <p>
 <code><pre>
 {
@@ -616,7 +616,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice:</summary>
+<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice</summary>
 <p>
 <code><pre>
 {
@@ -779,7 +779,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Revise Opportunity Request:</summary>
+<summary>Revise Opportunity Request</summary>
 <p>
 <code><pre>
 {
@@ -1109,30 +1109,30 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | History of Opportunity | JSON (see below)
 
-Response Element | Response Type | Reason  | Description
------------------|---------------|---------|------------
-history | JSON |  |
-history.parentOpportunityId | string |  | Parent Opportunity ID
-history.cancel_notice | boolean |  | Identify if the Opportunity is cancelled or not
-history.procurement_type | string |  | Notice Type
-history.archive_notice | boolean |  | Identify if the Opportunity is archived or not
-history.request.type | string |  | Type of request on Opportunity such as 'submit', 'cancel_request', 'archive_request' etc.
-history.action_type | string |  | Type of action performed on Opportunity request such as 'publish', 'cancel','archive' etc.
-history.action_date | date |  | Date and time of the action type <br/>Example: 2019-02-01T17:12:00-5:00
-history.title | string |  | Opportunity title
-history.index | string |  | Version number of revision
-history.relatedOpportunityId | string |  | Related Opportunity ID
-history.opportunityId | string |  | Opportunity ID (System generated)
-history.deleted | string |  | Identify if the Opportunity is deleted or not
-history.solicitation_number | string |  | Solicitation Number of a Notice (Opportunity ID in UI)
-history.revision_reason | string |  | Reason for revision
-history.posted_date | string |  | Posted date and time <br/>Example: 2019-01-04T14:00:00
-history.latest |  |  | Service will return all the Opportunities but with latest=1
+Response Element | Response Type |  Description
+-----------------|---------------|------------
+history | JSON |  
+history.parentOpportunityId | string |  Parent Opportunity ID
+history.cancel_notice | boolean |  Identify if the Opportunity is cancelled or not
+history.procurement_type | string |  Notice Type
+history.archive_notice | boolean | Identify if the Opportunity is archived or not
+history.request.type | string |  Type of request on Opportunity such as 'submit', 'cancel_request', 'archive_request' etc.
+history.action_type | string |  Type of action performed on Opportunity request such as 'publish', 'cancel','archive' etc.
+history.action_date | date | Date and time of the action type <br/>Example: 2019-02-01T17:12:00-5:00
+history.title | string |  Opportunity title
+history.index | string | Version number of revision
+history.relatedOpportunityId | string | Related Opportunity ID
+history.opportunityId | string |  Opportunity ID (System generated)
+history.deleted | string |  Identify if the Opportunity is deleted or not
+history.solicitation_number | string | Solicitation Number of a Notice (Opportunity ID in UI)
+history.revision_reason | string | Reason for revision
+history.posted_date | string |  Posted date and time <br/>Example: 2019-01-04T14:00:00
+history.latest |  | Service will return all the Opportunities but with latest=1
 
 Examples
 
 <details>
-<summary>History Response:</summary>
+<summary>History Response</summary>
 <p>
 <code><pre>
 {
@@ -1264,7 +1264,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Examples
 
-_NA_
+N/A
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1296,7 +1296,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Delete latest version of a notice:</summary>
+<summary>Delete latest version of a notice</summary>
 <p>
 <code><pre>
 {
@@ -1358,122 +1358,122 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | List of Opportunities | JSON (see below)
 
-Response Element | Response Type | Reason  | Description
------------------|---------------|---------|------------
-data | JSON |  | All the Opportunities are listed out in the response
-opportunityId | string |  | Opportunity ID
-data.type | string |  | See Notices Types table
-data.solicitationNumber | string |  | Solicitation Number
-data.title | string |  | Title of the Opportunity
-data.organizationId | string |  | FH Org Id/AAC code of the office where an Opportunity is being submitted
-data.classificationCode | string |  | Product Service Code (PSC)
-data.naics | JSON |  |
-data.naics.code | string |  | NAICS Code
-data.naics.type | string |  | NAICS type
-data.flags | JSON |  |
-data.flags.code | string |  |
-data.flags.isSelected | boolean |  |
-data.pointOfContact | JSON |  |
-data.pointOfContact.type | string |  | Contact Type
-data.pointOfContact.title | string |  | Contact title
-data.pointOfContact.fullname | string |  | Contact Full Name
-data.pointOfContact.email | string |  | Contact email
-data.pointOfContact.phone | string |  | Contact Phone
-data.pointOfContact.fax | string |  | Contact Fax
-data.placeOfPerformance | JSON |  |
-data.placeOfPerformance.streetAddress | string |  | Pop Address
-data.placeOfPerformance.streetAddress2 | string |  | Pop Address2
-data.placeOfPerformance.city | JSON |  | Pop City
-data.placeOfPerformance.city.code | string |  | Pop City code
-data.placeOfPerformance.city.name | string |  | Pop City name
-data.placeOfPerformance.city.state | JSON |  | Pop City state
-data.placeOfPerformance.state.code | string |  | Pop city state code
-data.placeOfPerformance.state.name | string |  | Pop city state name
-data.placeOfPerformance.country | JSON |  | Pop Country
-data.placeOfPerformance.country.code | string |  | Pop Country Code
-data.placeOfPerformance.country.name | string |  | Pop Country name
-data.placeOfPerformance.zip | string |  | Pop Country zip
-data.archive | JSON |  |
-data.archive.type | string |  | Archive Type: auto15, auto30, autocustom
-data.archive.date | date and time |  | Archive Date
-data.permissions | JSON |  |
-data.permissions.ivl | JSON |  |
-data.permissions.ivl.create | boolean |  | permissions.ivl.create
-data.permissions.ivl.read | boolean |  | permissions.ivl.read
-data.permissions.ivl.update | boolean |  | permissions.ivl.update
-data.permissions.ivl.delete | boolean |  | permissions.ivl.delete
-data.solicitation | JSON |  |
-data.solicitation.setAside | string |  | See Set-Aside values table
-data.solicitation.deadlines | JSON |  |
-data.solicitation.deadlines.response | date and time |  | Solicitation Deadline Date
-data.solicitation.deadlines.responseTz | string |  | Solicitation Deadlines Response Time Zone
-data.award | JSON |  |
-data.award.date | date and time |  | Award Date
-data.award.number | string |  | Award Number
-data.award.deliveryOrderNumber | string |  | Award Deliver Order Number
-data.award.amount | Number |  | Award Amount
-data.award.lineitemNumber | string |  | Award Line Item Number
-data.award.awardee | JSON |  |
-data.award.awardee.name | string |  | Awardee Name
-data.award.awardee.duns | string |  | Awardee Duns
-data.award.awardee.location | JSON |  | Awardee Location
-data.award.awardee.location.streetAddress | string |  | Awardee Street Address 1
-data.award.awardee.location.streetAddress2 | string |  | Awardee Street Address 1
-data.award.awardee.location.city | string |  | Awardee City
-data.award.awardee.location.city.code | string |  | Awardee City Code
-data.award.awardee.location.city.name | string |  | Awardee City Name
-data.award.awardee.location.state | JSON |  | Awardee State
-data.award.awardee.location.state.code | string |  | Awardee State Code
-data.award.awardee.location.state.name | string |  | Awardee State Name
-data.award.awardee.location.country | JSON |  | Awardee Country
-data.award.awardee.location.country.code | string |  | Awardee Country Code
-data.award.awardee.location.country.name | string |  | Awardee Country Name
-data.award.awardee.location.zip | string |  | Awardee Zip
-data.award.justificationAuthority | JSON |  |
-data.award.justificationAuthority.modificationNumber | string |  | justificationAuthority modification number
-data.award.justificationAuthority.authority | string |  | justificationAuthority authority
-data.link | JSON |   |  
-data.link.additionalInfo | JSON |   |  
-data.link.additionalInfo.content | string |   | Additional Info
-data.link.href | string |   | Website Address
-data.additionalReporting | string |   |  recovery_act or none
-description | JSON |   |  
-additionalInfo.sections JSON | JSON |   |
-additionalInfo.sections.opportunityId | string |  |
-additionalInfo.sections.status | string |  |
-parent  | JSON |  |
-parent.opportunityId | string |  | Parent Opportunity ID
-related  | JSON |  |
-related.opportunityId | string |  | Related Opportunity ID
-status  | JSON |  |
-status.code | string |  | 1.status= active (published, unarchive and uncancelled records) <br />2.status=inactive (published, archive and uncancelled records)<br />3.status=draft (draft records)<br />4.status=published (published and unarchive)<br />5.status=active_cancelled(published, unarchive and cancelled records)<br />6.status=inactive_cancelled(published, archive and cancelled records)<br />7.status=archived(published and archived)
-status.value | string |  | Refer to status.code
-archived | boolean |  | Indicates Archived
-cancelled | boolean |  | Indicates Canceled
-latest | string |  | Inidcates latest record
-deleted | boolean |  | Indicates Deleted
-postedDate | date |  | Date Posted
-modifiedDate | date |  | Date Modified
-createdDate | date |  | Date Created
-modifiedBy | string |  | Modified By User ID
-createdBy | string |  | Created By User ID
-description  | JSON |  | JSON applicable to Get Opportunity By ID only
-description.body | string |  | Description of Notice
-description.opportunityId | string |  | Opportunity ID (UI)
-description.descriptionId | string |  |
-description.modifiedOn | string |  | Date Description modified
-page  | JSON |  | JSON applicable to Get List of Opportunities only
-page.size | string |  |
-page.totalElements | string |  |
-page.totalPages | string |  |
-page.number | string |  |
+Response Element | Response Type |  Description
+-----------------|---------------|------------
+data | JSON |  All the Opportunities are listed out in the response
+opportunityId | string |  Opportunity ID
+data.type | string | See Notices Types table
+data.solicitationNumber | string | Solicitation Number
+data.title | string | Title of the Opportunity
+data.organizationId | string | FH Org Id/AAC code of the office where an Opportunity is being submitted
+data.classificationCode | string | Product Service Code (PSC)
+data.naics | JSON | 
+data.naics.code | string | NAICS Code
+data.naics.type | string |  NAICS type
+data.flags | JSON | 
+data.flags.code | string | 
+data.flags.isSelected | boolean | 
+data.pointOfContact | JSON | 
+data.pointOfContact.type | string |  Contact Type
+data.pointOfContact.title | string |  Contact title
+data.pointOfContact.fullname | string |  Contact Full Name
+data.pointOfContact.email | string | Contact email
+data.pointOfContact.phone | string | Contact Phone
+data.pointOfContact.fax | string |Contact Fax
+data.placeOfPerformance | JSON | 
+data.placeOfPerformance.streetAddress | string |  Pop Address
+data.placeOfPerformance.streetAddress2 | string |  Pop Address2
+data.placeOfPerformance.city | JSON | Pop City
+data.placeOfPerformance.city.code | string |  Pop City code
+data.placeOfPerformance.city.name | string |  Pop City name
+data.placeOfPerformance.city.state | JSON | Pop City state
+data.placeOfPerformance.state.code | string | Pop city state code
+data.placeOfPerformance.state.name | string |  Pop city state name
+data.placeOfPerformance.country | JSON | Pop Country
+data.placeOfPerformance.country.code | string | Pop Country Code
+data.placeOfPerformance.country.name | string | Pop Country name
+data.placeOfPerformance.zip | string | Pop Country zip
+data.archive | JSON | 
+data.archive.type | string |  Archive Type: auto15, auto30, autocustom
+data.archive.date | date and time |  Archive Date
+data.permissions | JSON | 
+data.permissions.ivl | JSON | 
+data.permissions.ivl.create | boolean |  permissions.ivl.create
+data.permissions.ivl.read | boolean |  permissions.ivl.read
+data.permissions.ivl.update | boolean |  permissions.ivl.update
+data.permissions.ivl.delete | boolean |  permissions.ivl.delete
+data.solicitation | JSON | 
+data.solicitation.setAside | string |  See Set-Aside values table
+data.solicitation.deadlines | JSON | 
+data.solicitation.deadlines.response | date and time |  Solicitation Deadline Date
+data.solicitation.deadlines.responseTz | string |  Solicitation Deadlines Response Time Zone
+data.award | JSON | 
+data.award.date | date and time |  Award Date
+data.award.number | string |  Award Number
+data.award.deliveryOrderNumber | string |   Award Deliver Order Number
+data.award.amount | Number | Award Amount
+data.award.lineitemNumber | string |  Award Line Item Number
+data.award.awardee | JSON |  
+data.award.awardee.name | string |  Awardee Name
+data.award.awardee.duns | string |  Awardee Duns
+data.award.awardee.location | JSON |  Awardee Location
+data.award.awardee.location.streetAddress | string | Awardee Street Address 1
+data.award.awardee.location.streetAddress2 | string |  Awardee Street Address 1
+data.award.awardee.location.city | string |  Awardee City
+data.award.awardee.location.city.code | string |  Awardee City Code
+data.award.awardee.location.city.name | string |  Awardee City Name
+data.award.awardee.location.state | JSON |  Awardee State
+data.award.awardee.location.state.code | string |  Awardee State Code
+data.award.awardee.location.state.name | string |  Awardee State Name
+data.award.awardee.location.country | JSON |  Awardee Country
+data.award.awardee.location.country.code | string |  Awardee Country Code
+data.award.awardee.location.country.name | string |  Awardee Country Name
+data.award.awardee.location.zip | string |  Awardee Zip
+data.award.justificationAuthority | JSON | 
+data.award.justificationAuthority.modificationNumber | string | justificationAuthority modification number
+data.award.justificationAuthority.authority | string |  justificationAuthority authority
+data.link | JSON |   
+data.link.additionalInfo | JSON |  
+data.link.additionalInfo.content | string | Additional Info
+data.link.href | string |  Website Address
+data.additionalReporting | string |  recovery_act or none
+description | JSON | 
+additionalInfo.sections JSON | JSON | 
+additionalInfo.sections.opportunityId | string | 
+additionalInfo.sections.status | string | 
+parent  | JSON | 
+parent.opportunityId | string |  Parent Opportunity ID
+related  | JSON |
+related.opportunityId | string | Related Opportunity ID
+status  | JSON |  
+status.code | string |  1.status= active (published, unarchive and uncancelled records) <br />2.status=inactive (published, archive and uncancelled records)<br />3.status=draft (draft records)<br />4.status=published (published and unarchive)<br />5.status=active_cancelled(published, unarchive and cancelled records)<br />6.status=inactive_cancelled(published, archive and cancelled records)<br />7.status=archived(published and archived)
+status.value | string |  Refer to status.code
+archived | boolean |  Indicates Archived
+cancelled | boolean |  Indicates Canceled
+latest | string | Inidcates latest record
+deleted | boolean |  Indicates Deleted
+postedDate | date |  Date Posted
+modifiedDate | date |  Date Modified
+createdDate | date | Date Created
+modifiedBy | string |  Modified By User ID
+createdBy | string |  Created By User ID
+description  | JSON |  JSON applicable to Get Opportunity By ID only
+description.body | string |   Description of Notice
+description.opportunityId | string |  Opportunity ID (UI)
+description.descriptionId | string | 
+description.modifiedOn | string |  Date Description modified
+page  | JSON |  JSON applicable to Get List of Opportunities only
+page.size | string | 
+page.totalElements | string | 
+page.totalPages | string | 
+page.number | string | 
 
 <p><small><a href="#">Back to top</a></small></p>
 
 Examples
 
 <details>
-<summary>Get List of Opportunities Response:</summary>
+<summary>Get List of Opportunities Response</summary>
 <p>
 <code><pre>
 {
@@ -1759,7 +1759,7 @@ latest | query | boolean | No | default = true
 
 Responses
 
-See Responses for Get List of Opportunity - link to the above display
+See Response for Get List of Opportunities
 
 Examples
 
@@ -1912,7 +1912,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Cancel Request:</summary>
+<summary>Cancel Request</summary>
 <p>
 <code><pre>
 {
@@ -2028,7 +2028,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Archive Request:</summary>
+<summary>Archive Request</summary>
 <p>
 <code><pre>
 {
@@ -2298,7 +2298,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Examples
 
-_NA_
+N/A
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2332,7 +2332,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Examples
 
-_NA_
+N/A
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2389,32 +2389,32 @@ entityId | query | string | No | Entity ID (DUNS #)
 
 Responses
 
-HTTP Status Code | Response Type | Reason  | Description
------------------|---------------|---------|------------
-ivl | JSON |  |
-ivl. duns | string |  | DUNS number for the business entity
-ivl.cageNumber | string |  | Identifies a given facility at a specific location
-ivl.name | string |  | Name of business entity
-ivl.addedOn | string |  | Date added to IVL
-ivl.contacts | JSON |  | Business entity contact
-ivl.contacts.email | string |  | Business entity email
-ivl.contacts.firstName | string |  | Business entity contact first name
-ivl.contacts.lastName | string |  | Business entity contact last name
-ivl.contacts.phoneNumber | string |  | Business entity contact phone number
-ivl.contacts.type | string |  | Business entity contact type
-ivl.addresses | JSON |  |
-ivl.addresses.streetAddress | string |  | Business entity address
-ivl.addresses.city | string |  | Business entity city
-ivl.addresses.state | string |  | Business entity state
-ivl.addresses.zip | string |  | Business entity zip
-ivl.addresses.country | string |  | Business entity country
-ivl.addresses.addressType | string |  | Business entity address type
-ivl.naicsList | Array |  | Business entity’s NAICS
+HTTP Status Code | Response Type |  Description
+-----------------|---------------|------------
+ivl | JSON | 
+ivl. duns | string | DUNS number for the business entity
+ivl.cageNumber | string | Identifies a given facility at a specific location
+ivl.name | string | Name of business entity
+ivl.addedOn | string | Date added to IVL
+ivl.contacts | JSON | Business entity contact
+ivl.contacts.email | string | Business entity email
+ivl.contacts.firstName | string |Business entity contact first name
+ivl.contacts.lastName | string | Business entity contact last name
+ivl.contacts.phoneNumber | string | Business entity contact phone number
+ivl.contacts.type | string | Business entity contact type
+ivl.addresses | JSON | 
+ivl.addresses.streetAddress | string | Business entity address
+ivl.addresses.city | string |  Business entity city
+ivl.addresses.state | string |  Business entity state
+ivl.addresses.zip | string | Business entity zip
+ivl.addresses.country | string |  Business entity country
+ivl.addresses.addressType | string |  Business entity address type
+ivl.naicsList | Array |  Business entity’s NAICS
 
 Examples
 
 <details>
-<summary>Response - Get IVL</summary>
+<summary>Get IVL Response</summary>
 <p>
 <code><pre>
 ivl": [
@@ -2499,7 +2499,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Response</summary>
+<summary>Get Attachments details by Resource Id Response</summary>
 <p>
 <code><pre>
 {
@@ -2555,7 +2555,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Response</summary>
+<summary>Get Attachments details by Opportunity Id Response</summary>
 <p>
 <code><pre>
 {
@@ -2618,7 +2618,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Request - IVL Settings</summary>
+<summary>IVL Settings Request</summary>
 <p>
 <code><pre>
 {
@@ -2659,7 +2659,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Response – Get Authorized Party</summary>
+<summary>Get Authorized Party List Response</summary>
 <p>
 <code><pre>
 {
@@ -2737,7 +2737,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Request – Add Authorized Party</summary>
+<summary>Add Authorized Party Request</summary>
 <p>
 <code><pre>
 {
@@ -2780,7 +2780,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Response – Check Unique Solicitation Number</summary>
+<summary>Check Unique Solicitation Number Response</summary>
 <p>
 <code><pre>
 {
@@ -2820,7 +2820,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Response – Get Related Opportunities</summary>
+<summary>Get Related Opportunities Response</summary>
 <p>
 <code><pre>
 {
@@ -3000,7 +3000,7 @@ naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower
 pointOfContact | JSON Array | NA |NA | NA | NA |
 pointOfContact.type | string | | primary<br/> secondary | No | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
 pointOfContact.title | string | |  | No | No | Contact title
-pointOfContact.fullname | string | 255 characters| | No | Yes (No for type = a (Award))| Contact Full Name
+pointOfContact.fullname | string | 500 characters| | No | Yes (No for type = a (Award))| Contact Full Name
 pointOfContact.email | string |255 characters | | No  | Yes (No for type = a (Award))  | Contact email
 pointOfContact.phone | string |255 characters | | No | No | Contact Phone
 pointOfContact.fax | string | 255 characters | | No  | No | Contact Fax
@@ -3040,7 +3040,7 @@ award.deliverOrderNumber | string | 255 characters| | No | Yes only for type = j
 award.amount | number |64 digits |  | No | Yes only for type = a (Award) | Award Amount
 award.lineitemNumber | string |255 characters | | No | No | Contract Line item Number
 award.awardee | JSON | NA| NA | NA | NA |Awardee details; Only for type = a (Award)
-award.awardee.name | string | 255 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name
+award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name
 award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required | Awardee Duns
 award.awardee.location | JSON |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
 award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address 
@@ -3243,7 +3243,7 @@ naics.type | string | |primary|Yes | NAICS Type Note: 'p' must be in lower case
 pointOfContact | JSON Array | NA |NA | NA |
 pointOfContact.type | string | | primary<br/> secondary | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
 pointOfContact.title | string | |  | No | Contact title
-pointOfContact.fullname | string | 255 characters| | Yes (No for type = a (Award))| Contact Full Name
+pointOfContact.fullname | string | 500 characters| | Yes (No for type = a (Award))| Contact Full Name
 pointOfContact.email | string |255 characters | | Yes (No for type = a (Award))  | Contact email
 pointOfContact.phone | string |255 characters | | No | Contact Phone
 pointOfContact.fax | string | 255 characters | | No | Contact Fax
@@ -3283,7 +3283,7 @@ award.deliverOrderNumber | string | 255 characters| | Yes only for type = j (Jus
 award.amount | number |64 digits |  | Yes only for type = a (Award) | Award Amount
 award.lineitemNumber | string |255 characters | | No | Contract Line item Number
 award.awardee | JSON | NA| NA | NA |Awardee details; Only for type = a (Award)
-award.awardee.name | string | 255 characters | | No; Either awardee.name or awardee.duns is required | Awardee Name
+award.awardee.name | string | 1000 characters | | No; Either awardee.name or awardee.duns is required | Awardee Name
 award.awardee.duns | string | 9 digits | | No; Either awardee.name or awardee.duns is required | Awardee Duns
 award.awardee.location | JSON |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
 award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address 
@@ -3407,7 +3407,7 @@ description | string |  | Yes | Description for uncanceling
 newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
 newResponseTz | string |  | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3469,7 +3469,7 @@ requestType | string | unarchive_request | Yes | Type of request
 newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
 newResponseTz | string |  | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3768,7 +3768,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Award Number |	Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces| Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces | Publish
 400|DUNS | Unique Entity Identifier (duns) is invalid. |	Invalid DUNS provided |	Publish
 400|Awardee Name | Contractor Awarded Name is a required field |	Contractor Awarded Name is a required field if the DUNS is not provided for an Award Notice |	Publish
-400|Awardee Name | Contractor Awarded Name max character length is 255 |	Contractor Awarded Name max character length is 255 | Publish
+400|Awardee Name | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | Publish
 400|Awardee | Required fields from Awardee section is missing |Awardee Name or DUNS# not provided for Award notice|	Publish
 400|Awardee Country | Award Details Section - Country is required |Country Code is required if the Awardee name is provided instead of DUNS# |	Publish
 400|Awardee Country | Award Details Section - Country provided is invalid |Country Code  provided is invalid |	Publish
@@ -3782,7 +3782,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Point of Contact Type |	$.data.pointOfContact[0].type: does not have a value in the enumeration [primary, secondary, owner] |	Point of Contact Type is required |	Create Opportunity
 400|Primary Contact |	Primary Contact is required | Primary Contact is required  for all types except Award| Publish
 400|Primary Contact Full Name |	Primary Contact - Full Name is required | Point of Contact Email is required for all types except Award | Publish
-400|Primary Contact Full Name |	Primary Contact - Name limit is 255 characters | Point of Contact Name limit is 255 characters | Publish
+400|Primary Contact Full Name |	Primary Contact - Name limit is 500 characters | Point of Contact Name limit is 500 characters | Publish
 400|Primary Contact Email |	Primary Contact - Email is required | Point of Contact Email is required for all types except Award | Publish
 400|Primary Contact Email |	Primary Contact - Please enter a valid Internet email address. Format: username@host.domain | Primary Contact invalid Email format | Publish
 400|Primary Contact Email |	Primary Contact - email character limit is 255 characters | Primary Contact email limit is 255 | Publish
@@ -3861,7 +3861,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 
 Date | Version | Description
 ------|---------------|---------
-4/25/2019 | v.01 | Base Version
+4/25/2019 | v0.1 | Base Version
 4/29/2019 | v0.2 | Added information for Get Authorized Party List <br> Added Add Authorized Party <br> Added Vendor Data JSON <br> POC Email changed to not required <br> Change log added <br> Secure Attachment Download Authorization section added <br> Alpha and Beta endpoint section added
 5/23/2019 | v0.3 | Update IVL Settings URL <br> Removed Get IVL by DUNS <br> Added EntityID to getIVL API parameter <br> Updated Get Authorized Party <br> Updated Add Authorized Party <br> Error Message Section Updated
 5/28/2019 | v0.4| Updated  Add Authorized Party<br> Get Authorized Party<br> Delete All Attachments API’s <br> Added Delete Notice API <br> Updated User Permissions <br> Create and Publish Contract Opportunity
@@ -3876,8 +3876,7 @@ Date | Version | Description
 10/10/2019 | v0.8 | Updated the Set-Aside values with the latest codes
 10/25/2019 | v0.9 | Updated the field lengths
 10/31/2019| v0.91| Delete Vendor removed <br> Delete Resource in Draft API added <br> API Specifications Updated: Delete Notice, Getlist, Download Metadata for Attachment by Resource ID, and Download Metadata for Attachment by Opportunity ID <br> JSON Updated: Create and Update, Create and Publish, Revise Opportunity, Cancel Notice, Uncancel Notice, Archive, Unarchive, Create Attachment, Update Attachment, IVL Settings, and Delete Notice <br> Error Message Section Updated
-
-
+11/04/2019| v1.0 | Updated the field lengths for contact full name and awardee name fields for create Opportunity, Create and Publish Opportunity Contract Jsons. Updated the Error messages for these fields
 
 
 

@@ -197,9 +197,9 @@ awdamt |	string |	Yes |	Award Amount |	64 digits
 linenbr |	string |	No |	Line Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 awddate |	date |	Yes |	Award Date |	YYYYMMDD
 archdate |	date |	No |	Archive Date |	YYYYMMDD
-awardee |	string |	No - Either awardee or awardee_duns is required |	Awardee |	255 characters
+awardee |	string |	No - Either awardee or awardee_duns is required |	Awardee |	1000 characters
 awardee_duns |	string |	No - Either awardee or awardee_duns is required |	Awardee DUNS |	9 digits with optional plus 4
-contact |	string |	No |	Contact Info |	255 characters
+contact |	string |	No |	Contact Info |	500 characters
 desc |	string |	No |	Description |	65535 characters
 link |	GovURL |	No |	Government Link	|
 email |	GovEmail |	No |	Government Email |	255 characters
@@ -320,7 +320,7 @@ solnbr |string | Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9
 ntype | string | No | [Refer Notice Types](#notice-types) 	| 
 awdnbr | string |	No | Award # |255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 archdate | date |	No | Archive Date | YYYYMMDD
-contact | string | No | Contact Info | 255 characters
+contact | string | No | Contact Info | 500 characters
 desc | string | Yes |	Cancellation Description | 65535 characters
 
 ## Contracting Officer/Contracting <br>Specialist Method Details
@@ -355,7 +355,7 @@ subject |	string | Yes|	Subject|	256 characters
 solnbr | string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate | date |	No - either respdate or archdate is required |	Response Date |	YYYYMMDD
 archdate | date |	No - either respdate or archdate is required |	Archive Date | YYYYMMDD
-contact |	string | Yes |	Contact Info | 255 characters
+contact |	string | Yes |	Contact Info | 500 characters
 desc |string |Yes |	Description | 65535 characters
 link | GovURL – complex type | No |	Government Link has URL & description |	
 email |	GovEmail – complex type |	Yes | Government Email |  
@@ -426,7 +426,7 @@ solnbr | string |	Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-
 subject | string | Yes | Subject | 256 characters
 respdate | date |	Yes | Response Date | YYYYMMDD
 archdate | date |	No | Archive Date | YYYYMMDD
-contact | string |Yes | Contact Info | 255 characters
+contact | string |Yes | Contact Info | 500 characters
 desc | string |	Yes |	Description |	65535 characters
 link | GovURL – complex type | No |	Government Link	| 
 email |	GovEmail – complex type |	Yes | Government Email | 
@@ -498,7 +498,7 @@ solnbr | string |	Yes | 	Solicitation # |	128 characters from the set: a-z A-Z 0
 ntype |	string |	Yes |	 Notice Type |	Valid values: PRESOL, COMBINE, SRCSGT, SSALE, SNOTE, SOL
 respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL, SNOTE, SSALE	|Response Date	|YYYYMMDD
 archdate  |	date|	No - Either respdate or archdate required for SRCSGT, PRESOL, SNOTE, SSALE|	Archive Date|	YYYYMMDD
-contact |	string |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, SOL |	Contact Info |	255 characters
+contact |	string |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, SOL |	Contact Info |	500 characters
 desc |	string |	Yes - for PRESOL, COMBINE, SRCSGT, SSALE, SOL, SNOTE	| Description |	65535 characters
 link	| GovURL – complex type |	No |	Government Link |	
 email |	GovEmail – complex type |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, SOL |	Government Email |	
@@ -575,7 +575,7 @@ awdamt |	String |	No |	Award Amount (Not in Use) |	64 digits
 awddate |	Date |	No	| Award Date |	YYYYMMDD
 donbr	| String |	Yes |	Task/Delivery Order Number |	255 characters from the set: a-z A-Z 0-9 - _ ( )
 archdate  |	Date |	No |	Archive Date |	YYYYMMDD
-contact |	String |	Yes | 	Contact Info |	255 characters
+contact |	String |	Yes | 	Contact Info |	500 characters
 desc |	String |	No |	Description	| 65535 characters
 link |	GovURL |	No	| Government Link |	255 characters
 links |	DocumentLink[]	| No |	Array Of links	|
@@ -643,7 +643,7 @@ subject |	string |	Yes |	Subject |	256 characters
 solnbr	| string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate |	date |	No - either respdate or archdate is required |	Response Date |	YYYYMMDD
 archdate |	date |	No - either respdate or archdate is required |	Archive Date	| YYYYMMDD
-contact	| string	| Yes |	Contact Info	| 255 characters
+contact	| string	| Yes |	Contact Info	| 500 characters
 desc | string |	Yes |	Description |	65535 characters
 link |	GovURL – complex type |	No |	Government Link	| 
 email	| GovEmail – complex type |	Yes |	Government Email	| 
@@ -717,7 +717,7 @@ offadd |	String |	No |	Office Address (Deprecated). The Contracting office addre
 subject | 	String |	Yes |	Subject |	256 characters
 solnbr	| String |	No |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 archdate |	Date |	Yes |	Archive Date |	YYYYMMDD
-contact |	String |	No	| Contact Info |	255 characters
+contact |	String |	No	| Contact Info |	500 characters
 desc |	String |	Yes |	Description |	65535 characters
 link	| GovURL – complex type	| No |	Government Link |	
 email |	GovEmail – complex type |	Yes if contact provided |	Government Email	| 
@@ -783,7 +783,7 @@ offadd|	string|	No	|Office Address (Deprecated). The Contracting office address 
 subject|	string|	Yes|	Subject	|256 characters
 solnbr|	string	|Yes	|Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 archdate|	date|	Yes|	Archive Date|	YYYYMMDD
-contact|	string|	Yes|	Contact Info|	255 characters
+contact|	string|	Yes|	Contact Info|	500 characters
 desc|	string	|Yes|	Description	|65535 characters
 link	|GovURL – complex type|	No|	Government Link	|
 email	|GovEmail – complex type	|Yes|	Government Email|	
@@ -850,7 +850,7 @@ subject | string | Yes | Subject | 256 characters
 solnbr | string |	Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate | date |	Yes  | Response Date | YYYYMMDD
 archdate | date |	No  | Archive Date | YYYYMMDD
-contact | string |Yes | Contact Info | 255 characters
+contact | string |Yes | Contact Info | 500 characters
 desc | string |	Yes |	Description |	65535 characters
 link | GovURL – complex type | No |	Government Link	| 
 email |	GovEmail – complex type |	Yes | Government Email | 
@@ -923,7 +923,7 @@ ntype	|String	|No|	 [Refer Related Notices](#related-notices)
 awdnbr|	String	|Yes	|Award Number|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 donbr|	String|	No	|Task/Delivery Order Number	|255 characters from the set: a-z A-Z 0-9 - _ ( )
 archdate 	|Date	|No	|Archive Date|	YYYYMMDD
-contact|	String|	Yes|	Contact Info	|255 characters; Default value = Primary, Other types are: Secondary, Owner
+contact|	String|	Yes|	Contact Info	|500 characters
 desc	|String	|Yes	|Description|	65535 characters
 link|	GovURL|	No|	Government Link	|255 characters
 links	|DocumentLink[]|	No|	Array Of links	|
@@ -1003,9 +1003,9 @@ awddate	|date|	Yes - for AWARD|	Award Date	|YYYYMMDD
 stauth	|string	|Yes - for JA 	|J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy| [Refer Stauth Valid Values](#stauth-valid-values)
 respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL, SSALE	|Response Date	|YYYYMMDD
 archdate  |	date| No; Either respdate or archdate required for SRCSGT, PRESOL, SSALE, SNOTE|	Archive Date|	YYYYMMDD
-awardee|	string|	Yes – for AWARD |	Awardee	|255 characters
+awardee|	string|	Yes – for AWARD |	Awardee	|1000 characters
 awardee_duns|	string	|Yes - for AWARD	|Awardee DUNS	|9 digits with optional plus 4
-contact|	string|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL|	Contact Info|	255 characters
+contact|	string|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL|	Contact Info|	500 characters
 desc	|string|	Yes - for PRESOL, COMBINE, SRCSGT, SSALE, ITB, SOL, SNOTE|	Main Description|	65535 characters
 link|	GovernmentURL|	No|	Government Link	|255 characters
 email|	GovernmentEmail|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL, SNOTE (Required only for SNOTE if contact is provided)|	Government Email	|255 characters
@@ -2421,7 +2421,7 @@ Note: This service gets a list of all notices
                <desc xsi:type="xsd:string"></desc>
             </link>
            <email xsi:type="sam:GovEmail">
-               <address xsi:type="xsd:string"></address>
+               <address xsi:type="xsd:string">test@gmail.com</address>
                <desc xsi:type="xsd:string"></desc>
             </email>
             <!--Optional:-->
@@ -2525,7 +2525,7 @@ Note: This service gets a list of all notices
            </link>
            <!--Optional:-->
            <email xsi:type="sam:GovEmail">
-              <address xsi:type="xsd:string"></address>
+               <address xsi:type="xsd:string">test@gmail.com</address>
               <desc xsi:type="xsd:string"></desc>
            </email>
            <!--Optional:-->
@@ -4139,7 +4139,7 @@ awddate	|	1. This field is required where applicable <br><br>2. This field shoul
 stauth|	 1. This field is required where applicable <br><br> 2. This field accepts only valid values listed. If invalid values are provided, then system throws an error|	1. Authority is a required field <br><br>2. Invalid Authority Fields, please refer to Contract Opportunities SOAP Web Service Tech Document valid authority fields
 respdate|	1.	This field should meet the character limit/restrictions <br><br> 2.	This date cannot be in past; has to be in future. If the given date is in past, then system throws an error<br><br> 3. If the date provided exceeds 5 years from the current date, then the system throws an error <br><br> 4. Either respdate or archdate required for SRCSGT, PRESOL, SSALE.If none is provided, then the service throws the error 	| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. Response date provided is in the past<br><br> 3. Response Date cannot exceed 5 years from current date <br><br> 4. One of Response date or Archive date is required
 archdate|	1. This field should meet the character limit/restrictions <br><br> 2. This date cannot be current or in past; has to be in future <br><br> 3. Either respdate or archdate required for SRCSGT, PRESOL, SSALE.If none is provided, then the service throws the error |	1.	DATE field in unexpected format  Expects YYYYMMDD<br><br> 2. Archive date provided is in the past <br><br> 3. One of Response date or Archive date is required
-awardee_duns|	1. Must provide a valid DUNS|	1. Unique Entity Identifier (duns) is invalid
+awardee|	 1. This field is required where applicable <br><br>2. This field should meet the character limit/restrictions|	1. Contractor Awarded Name is a required field <br><br>2. Contractor Awarded Name max character length is 1000
 contact	|	1. This field is required where applicable	|1. Primary Contact is Required
 desc| 	1. This field is required where applicable.|	1. Description is required
 link|	1. If a link is with same name and url is added to the notice during modification/amendment, then the service throws an error	| 1. Link with the display text {}  already exists
@@ -4400,6 +4400,7 @@ Date | Version | Description
 9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions
 10/10/2019 | v0.7 | Updated the Set-Aside values with the latest codes
 10/28/2019 | v0.8| Documentation updates only. No change to Implementation <br> - Production WSDL link added <br> - Redundant Character Limit and Required columns removed from Specific Business Rules and Error Messages section <br> - Notice Types and Related Notices sections added for reference <br>- Consolidated and summarized list of deprecated methods <br>- Far13 added to Stauth Valid Values section <br>- Updated character limits<br>- Updated required column for submitAward, archiveNotice, submitPresol, submitCombined, submitMod, submitJA, submitSourcesSought, submitSpecialNotice, submitSaleofSurplus, submitITB, submitNotice, submitdocumentsandlinkstonotice <br>- Remove foja from getnoticedata response
+11/04/2019 | v0.9| Updated the character limits for contact and awardee fields for all the submit methods
 
 
 
