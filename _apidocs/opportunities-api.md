@@ -3840,7 +3840,11 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|IVL |	Interested Vendors List should be enabled for this organization |Interested Vendors List should be enabled for this organization when FORCE ON |	Publish
 400|IVL |	Interested Vendors List should not be enabled for this organization |Interested Vendors List should not be enabled for this organization when FORCE OFF |	Publish
 400|Revise | Opportunity cannot be updated | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state  | Revise
-400|Vendor Data |	Duplicate request. Vendor is already added as an authorized party on the notice | Request already exists for the vendor on the notice.	| AddAuthorizedParty
+400|Vendor Data |	Duplicate request. Vendor is already added as an authorized party on the notice | Request already exists for the vendor on the notice	| AddAuthorizedParty
+400|VendorData| fname should not be empty| fname should not be empty| AddAuthorizedParty
+400|VendorData| lname should not be empty| lname should not be empty| AddAuthorizedParty
+400|VendorData| Email should not be empty| Email should not be empty| AddAuthorizedParty
+400|VendorData| Duns should not be empty| Duns should not be empty| AddAuthorizedParty
 400|Duns# |	No contact match on vendor data provided	| Not a Valid email or Duns#	| AddAuthorizedParty
 404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
