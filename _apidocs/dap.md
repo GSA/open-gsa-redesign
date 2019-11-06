@@ -111,7 +111,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
   })();
 </script>
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
-{% endraw %}  
+{% endraw %}
 
 | HTTP Header Name | Description |
 | ---- | ----------- |
@@ -128,7 +128,6 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <a href="v1/openapi.yaml">Open API specification file for the Digital Analytics Program API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
-
 
 ## The Response
 
@@ -156,6 +155,8 @@ Note that is has the following properties:
 - `date_time`: The data/time the data in the data point corresponds to
 - `data`: The data associated with the data point. This may contain child properties such as visits, browser, screen size, and so on, depending on the report
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Querying reports
 
 Reports can be queried by substituting `<report name>` in the path with the name of the report.
@@ -177,6 +178,8 @@ The following reports can be queried using the API:
 - windows  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/windows/data?api_key=DEMO_KEY1))_
 - ie  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/ie/data?api_key=DEMO_KEY1))_
 - device  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/device/data?api_key=DEMO_KEY1))_
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Filtering based on agencies
 
@@ -212,8 +215,12 @@ The list of valid agency names includes:
 - treasury  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/treasury/reports/site/data?api_key=DEMO_KEY1))_
 - veterans-affairs  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/veterans-affairs/reports/site/data?api_key=DEMO_KEY1))_
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Filtering by domain
 For the `site`, `domain`, `download`, and `second-level-domain` reports you may use the `domain` route, to only return results by domain.
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Query params
 
@@ -224,6 +231,7 @@ The following query params are supported to work with the data:
 - `after`: Limit the results to in dates on or after the date specified. Expects `YYYY-MM-DD`. 
 - `before`: Limit the results to in dates on or before the date specified. Expects `YYYY-MM-DD`.
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## HTTP Response Codes
 
@@ -238,9 +246,8 @@ The API will return one of the following responses:
 
 <p><small><a href="#">Back to top</a></small></p>
 
-
 ## Contact Us
 
-To suggest a feature or ask for help, please [file an issue in our project repository](https://github.com/18F/analytics.usa.gov/issues).    
+To suggest a feature or ask for help, please [file an issue in our project repository](https://github.com/18F/analytics.usa.gov/issues).
 
 <p><small><a href="#">Back to top</a></small></p>

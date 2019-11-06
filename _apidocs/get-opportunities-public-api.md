@@ -1,11 +1,11 @@
 ---
-title: Beta.SAM.Gov Get Opportunities Public API 
-banner-heading: Beta.SAM.Gov Get Opportunities Public API 
+title: Beta.SAM.Gov Get Opportunities Public API
+banner-heading: Beta.SAM.Gov Get Opportunities Public API
 ---
 
 ## Overview
 
-Get Opportunities API provides all the published opportunity details based on the request parameters. This API requires pagination, and the response will be provided to users synchronously. 
+Get Opportunities API provides all the published opportunity details based on the request parameters. This API requires pagination, and the response will be provided to users synchronously.
 
 **This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Beta.Sam.Gov. All active notices in Beta.Sam.Gov are updated daily and all archived notices are updated on a weekly basis.**
 
@@ -13,6 +13,7 @@ Get Opportunities API provides all the published opportunity details based on th
 
 [Archived Opportunities](https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2FArchived%20Data)
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
 
@@ -20,8 +21,10 @@ Get Opportunities API can be accessed from Beta or Alpha via the following envir
 * Beta: <br>  https://api.sam.gov/prod/opportunities/v1/search
 * Alpha: <br> https://api-alpha.sam.gov/prodlike/opportunities/v1/search
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Authentication and API Keys
-User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles. 
+User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles.
 Note: User can request a public API Key in the Account Details page on beta.sam.gov (if testing in production) Else on alpha.sam.gov (if testing in prodlike).
 
 #### User Account API Key Creation
@@ -30,9 +33,11 @@ Note: User can request a public API Key in the Account Details page on beta.sam.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
 * If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Get Opportunities Request Parameters
 
-Users can search by any of the below request parameters with Date field as mandatory. 
+Users can search by any of the below request parameters with Date field as mandatory.
 
 Request Parameters that API accepts	| Description | Mandatory?| Data Type
 ----- | ----- | ----- | -----
@@ -56,12 +61,14 @@ rdlto	|Response Deadline date. Format must be MM/dd/yyyy <br>Note: If response d
 limit	|Total number of records to be retrieved per page. This field must be a number <br> Max Value = 1000|	Yes	|Int
 offset	|Indicates the page index. Default offset starts with 0 |	No|	Int
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Get Opportunities Response Parameters
 
 Based on the request parameters, API provides below response parameters.
 
 Request Parameters that API accepts	| Description | Data Type
------ | ----- | ----- 
+----- | ----- | -----
 totalRecords|	Total number of records for the search	|Number
 limit|	Limit entered by a user while making the request i.e. total number of records that user wished to retrieve per page|	Number
 offset|	Page index specified by a user. Default offset starts with 0 if user does not provide any offset in the request|	Number
@@ -119,6 +126,7 @@ BICiv | Buy Indian Set-Aside (specific to Department of Health and Human Service
 VSA | Veteran-Owned Small Business Set-Aside (specific to Department of Veterans Affairs)
 VSS | Veteran-Owned Small Business Sole source (specific to Department of Veterans Affairs)
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Examples
 
@@ -385,6 +393,8 @@ Note: Response for one record is provided as an example <br>
 </p>
 </details>
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## HTTP Response Codes
 
 200 - Success
@@ -395,6 +405,7 @@ Note: Response for one record is provided as an example <br>
 
 500	– Internal Server Error
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Error Messages
 
@@ -409,6 +420,8 @@ User provides invalid API Key|	An invalid api_key was supplied
 User does not provide any API key	|No api_key was supplied
 User clicks on the description link available in the response and description content is not available	|Description Not Found
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## FAQ
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -416,6 +429,8 @@ User clicks on the description link available in the response and description co
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Change Log
 
@@ -425,7 +440,7 @@ Date | Version | Description
 8/6/19 | v1.1| Format Updated
 10/17/19 | v1.2| Added Set-Aside Code
 10/23/19 | v1.3| Set-Aside Values Updated
-10/24/19| v1.4| Office Address Description Updated 
+10/24/19| v1.4| Office Address Description Updated
 11/1/19| v1.5| - Street Address 1 & 2 removed from Response <br> - Status and Description removed from request <br> - Limit changed to "Required" <br> - Asynchronous opportunities file download feature disabled <br> - Response returns only the latest active version of a notice
 
 <p><small><a href="#">Back to top</a></small></p>

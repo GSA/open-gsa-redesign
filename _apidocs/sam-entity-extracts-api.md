@@ -9,7 +9,7 @@ The Extracts Download API permits beta.SAM.gov users with valid roles to downloa
 
 The Entity Management extracts contain entities (businesses and government agencies) data from SAM.gov.  The Exclusions extract contains a list of all parties with a currently active exclusion in SAM.
 
-  
+
 1. **Entity Management Public Data Package:**
    * This extract contains entity registration data publicly available under the Freedom of Information Act (FOIA) for those registered in SAM.gov to do business with the Federal government.
    * All entities and data elements are classified as public.
@@ -54,10 +54,10 @@ The Entity Management extracts contain entities (businesses and government agenc
 ## Getting Started
 
 The Entity and Exclusion extracts are available using the following endpoints:
- 
+
   * Beta: https://api.sam.gov/prod/dataservices/v1/extracts?api_key= < value >
   * Alpha: https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts?api_key= < value >
-  
+
 Generating a personal API Key:
 * Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on beta.sam.gov
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
@@ -214,6 +214,8 @@ https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=EXC
 
 **Expected Result**:
 The layout of the Exclusions extract is available here: [TBD]
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## OpenAPI Specification File 
 

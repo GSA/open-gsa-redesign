@@ -9,9 +9,9 @@ banner-heading: Api.Data.Gov Metrics API
 
 ## Overview
 
-[api.data.gov](https://api.data.gov) is a free API management service for federal agencies. This API offers access to high level metrics for the APIs that are using the shared service.  
+[api.data.gov](https://api.data.gov) is a free API management service for federal agencies. This API offers access to high level metrics for the APIs that are using the shared service.
 
-This API is used to power the [api.data.gov metrics page](https://api.data.gov/metrics).  
+This API is used to power the [api.data.gov metrics page](https://api.data.gov/metrics).
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -90,7 +90,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
   })();
 </script>
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
-{% endraw %}  
+{% endraw %}
 
 | HTTP Header Name | Description |
 | ---- | ----------- |
@@ -132,10 +132,10 @@ This API has one primary endpoints:
 | organization_count | Month in which the results took place |
 | api_backend_url_match_count |  Number of API hits processed by the api.data.gov system in that month and year |
 
-
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
 
-* Reach out to the api.data.gov team at [api.data.gov@gsa.gov](mailto:api.data.gov@gsa.gov).  
+* Reach out to the api.data.gov team at [api.data.gov@gsa.gov](mailto:api.data.gov@gsa.gov).
 
 <p><small><a href="#">Back to top</a></small></p>

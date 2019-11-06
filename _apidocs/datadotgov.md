@@ -86,12 +86,11 @@ To begin using this API, you will need to register for an API Key. You can sign 
   })();
 </script>
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
-{% endraw %}  
+{% endraw %}
 
 <p><small><a href="#">Back to top</a></small></p>
 
 ## API Description
-
 
 This API has one primary endpoint:
 
@@ -110,10 +109,10 @@ Complete API documentation is available [from CKAN](https://docs.ckan.org/en/lat
 | x-api-key | API key from api.data.gov.  For sample purposes, you can use `DEMO_KEY` as an API key. |
 
 
-
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
 
-For questions or help, please use our [Contact Us page](https://www.data.gov/contact).  
+For questions or help, please use our [Contact Us page](https://www.data.gov/contact).
 
 <p><small><a href="#">Back to top</a></small></p>

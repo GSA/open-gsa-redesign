@@ -1,17 +1,19 @@
 ---
-title: Beta.SAM.Gov FH FOUO API 
-banner-heading: Beta.SAM.Gov FH FOUO API 
+title: Beta.SAM.Gov FH FOUO API
+banner-heading: Beta.SAM.Gov FH FOUO API
 ---
 
 ## Overview
 
-The Federal Hierarchy “For Official Use Only” (FOUO) API allows U.S. Government users to obtain Federal Organization details down to the office level. As part of this API, organization information for all levels (Departments/Sub-Tiers/Offices) is provided by default. 
+The Federal Hierarchy “For Official Use Only” (FOUO) API allows U.S. Government users to obtain Federal Organization details down to the office level. As part of this API, organization information for all levels (Departments/Sub-Tiers/Offices) is provided by default.
 
 **Note**: *The term “organization” as used in the Federal Hierarchy FOUO API denotes any Departments/Independent Agencies, Sub-Tiers, Offices, or major commands/sub-commands under the Department of Defense (DOD).*
 
 This API can return both active and inactive organizations. The API supports pagination with a default of 10 records and a max of 100 records.
 
 **API Version: v1.0**
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
 
@@ -22,21 +24,24 @@ Get Opportunities API can be accessed from Beta or Alpha via the following envir
 * Production (Beta) URL: https://api.sam.gov/prod/federalorganizations/v1/
 * Staging (Alpha) URL: https://api-alpha.sam.gov/prodlike/federalorganizations/v1
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Terms of Use
 
 You are allowed to use the Federal Hierarchy FOUO API for internal, U.S. Government business purposes. You are not allowed to display or disseminate outside the U.S. Government any values received in a Federal Hierarchy FOUO API response unless that value is directly associated with a Federal award record.
 
 For financial assistance awards only, you are allowed to use the awarding and funding Activity Address Codes (AACs) submitted in association with a financial assistance award to derive the respective Office Name, Sub-Tier Agency Code, Sub-Tier Agency Name, Department/Independent Agency Code, and Department/Independent Agency Name from the Federal Hierarchy FOUO API. You may publicly display and disseminate the awarding and funding AACs, and the five specified Federal Hierarchy FOUO API-derived values from those AACs, in connection with the financial assistance awards.
- 
+
 You may not use the Federal Hierarchy FOUO API to build out a public view of either the partial or complete Federal Hierarchy. You must use the Federal Hierarchy Public API if you wish to display or disseminate the public-facing Department and Sub-Tier information.
- 
+
 You agree to be bound by these Terms of Use when you submit a Federal Hierarchy FOUO API request as well as when you receive a Federal Hierarchy FOUO API response. Contact the GSA IAE Program Management Office at newsamtesting@gsa.gov if you have any questions about these Terms of Use.
 
-## Authentication and API Keys
-User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles. 
+<p><small><a href="#">Back to top</a></small></p>
 
-Note: 
+## Authentication and API Keys
+User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles.
+
+Note:
 * For production, users can request an API Key in their Profile under Account Details on https://beta.sam.gov/
 * For prodlike, users can request an API Key in their Profile under Account Details on https://alpha.sam.gov/
 
@@ -46,6 +51,8 @@ Note:
 * User must enter account password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
 * If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Federal Hierarchy FOUO API Request Parameters
 
@@ -101,6 +108,8 @@ fhorgid|	Unique ID for an organization in the Federal Hierarchy. Mandatory to br
 limit|	Total number of records to be retrieved per page. This field must be a positive number. If this field is not provided, the default page size is 10. Maximum supported page size will be 100.|	Number
 offset|	Indicates the record index. Default offset starts with 0 i.e. offset=0 and limit=10 signifies 0-10 records. offset=5 and limit=10 signifies records from 5th to 15.	|Number
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Federal Hierarchy FOUO Response Parameters
 
 Based on the request parameters, API provides below response parameters.
@@ -155,6 +164,8 @@ This is specific to pre-merge.  |	Text
 agencycode|	Identifier that represents either a department or a sub-tier created in FPDS. This is specific to pre-merge. If the sub-tiers get merged, only this field and cgaclist show up; aaccode will not show up	|Text
 effectivedate|	Date when the merge became effective in the Federal Hierarchy.| 	Date
 links	|This is an array consisting of <br> 1)	“rel: self” which is a self-link to the Organization itself <br> 2)	“rel: nextLevelChildren” which is a link to the next level of the Organization’s hierarchy |
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Examples
 
@@ -460,6 +471,8 @@ Request URL: <br> https://api-alpha.sam.gov/prodlike/federalorganizations/v1/org
 </p>
 </details>
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## HTTP Response Codes
 
 200 - Success
@@ -467,6 +480,7 @@ Request URL: <br> https://api-alpha.sam.gov/prodlike/federalorganizations/v1/org
 400 – Bad Request 
 500	– Internal Server Error
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Error Messages
 
@@ -476,15 +490,17 @@ User enters an invalid date format|	Invalid date entered. Expected format YYYY-M
 User enters an invalid value for status	|Status value must be either Active/Inactive
 For limit or offset, user inputs characters/special characters|	Limit and offset must be a positive number
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Appendix
 
-For Country Codes, please refer to: 
+For Country Codes, please refer to:
 https://www.iso.org/obp/ui/#search
 
-For State Codes, please refer to: 
+For State Codes, please refer to:
 https://www.census.gov/programs-surveys/geography.html
 
-
+<p><small><a href="#">Back to top</a></small></p>
 
 ## FAQ
 
@@ -493,6 +509,8 @@ https://www.census.gov/programs-surveys/geography.html
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Change Log
 

@@ -1,19 +1,19 @@
 ---
-title: Beta.SAM.Gov Federal Hierarchy Public API 
-banner-heading: Beta.SAM.Gov Federal Hierarchy Public API 
+title: Beta.SAM.Gov Federal Hierarchy Public API
+banner-heading: Beta.SAM.Gov Federal Hierarchy Public API
 ---
 
 ## Overview
 
-Federal Hierarchy public API allows non-federal users to obtain Federal Organization details. As part of this API, organization information for first 2 levels (Departments/Ind. Agency and SubTier) is provided by default. 
+Federal Hierarchy public API allows non-federal users to obtain Federal Organization details. As part of this API, organization information for first 2 levels (Departments/Ind. Agency and SubTier) is provided by default.
 
 *Note : The term “organization” as used in the Federal Hierarchy FOUO API denotes any Departments/Independent Agencies and Sub-Tiers*
 
-This API will return both active and inactive organizations. The API supports pagination with a default of 10 records and a max 100 records. 
+This API will return both active and inactive organizations. The API supports pagination with a default of 10 records and a max 100 records.
 
 **API Version: v1.0**
 
-
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
 
@@ -24,10 +24,12 @@ Get Opportunities API can be accessed from Beta or Alpha via the following envir
 * Production URL: https://api.sam.gov/prod/federalorganizations/v1/
 * Staging URL: https://api-alpha.sam.gov/prodlike/federalorganizations/v1
 
-## Authentication and API Keys
-User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles. 
+<p><small><a href="#">Back to top</a></small></p>
 
-Note: 
+## Authentication and API Keys
+User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles.
+
+Note:
 * For production, users can request an API Key in their Profile under Account Details on https://beta.sam.gov/
 * For prodlike, users can request an API Key in their Profile under Account Details on https://alpha.sam.gov/
 
@@ -38,14 +40,15 @@ Note:
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
 * If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Federal Hierarchy Public API Request Parameters
 
-### For Request URI: /orgs?api_key=[key] 
+### For Request URI: /orgs?api_key=[key]
 
 * Users can search on any of the following fields.
 * None of these fields are mandatory.
-* Results will be sorted on level & fhorgname in ascending order. 
+* Results will be sorted on level & fhorgname in ascending order.
 
 **Table 1: FH Public API Request Parameters For request URL**
 
@@ -118,9 +121,11 @@ effectivedate| Date when the merge became effective in the Federal Hierarchy.| D
 links| This is an array consisting of <br>1) “rel: self” which is a self-link to the
 Organization itself <br> 2) “rel: nextLevelChildren” which is a link to the next level of the Organization’s |hierarchy
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Examples
 
-### Example response schema structure 
+### Example response schema structure
 
 *Note: Below response is given as an example that shows all the response fields with
 dummy data. Please refer to examples covered in 4.2, 4.3 and 4.4 for the actual response
@@ -152,7 +157,7 @@ from this API*
  "cgac": "011"
  }
  ],
- "fhorgnamehistory": [ 
+ "fhorgnamehistory": [
 Federal Hierarchy Public API
 
  8
@@ -176,12 +181,12 @@ PRESIDENT.AFRICAN DEVELOPMENT FUND",
  }
  ]
  }
-} 
+}
 </pre></code>
 </p>
 </details>
 
-### Example 1: Search by organization name 
+### Example 1: Search by organization name
 
 Request URL:
 
@@ -202,7 +207,7 @@ API Key}&fhorgname=DEVELOPMENT
  "orglist": [
  {
  "fhorgid": 100148640,
- "fhorgname": "AGENCY FOR INTERNATIONAL DEVELOPMENT", 
+ "fhorgname": "AGENCY FOR INTERNATIONAL DEVELOPMENT",
  "fhorgtype": "Department/Ind. Agency",
  "status": "ACTIVE",
  "createddate": "2005-07-21 00:00",
@@ -239,12 +244,12 @@ API Key}&fhorgname=DEVELOPMENT
  "href": "https://apialpha.sam.gov/prodlike/federalorganizations/v1/org/hierarchy?fhorgid=100148640"
  }
  ]
- }, 
+ },
  </pre></code>
 </p>
 </details>
 
-### Example 2: Search for an active organization of type Sub-Tier 
+### Example 2: Search for an active organization of type Sub-Tier
 
 Request URL:
 
@@ -294,19 +299,19 @@ IMPROVEMENT AND TEACHER QUALITY PROGRAMS",
  "effectivedate": null
  }
  ],
- "links": [ 
+ "links": [
  {
  "rel": "self",
  "href": "https://api-alpha.sam.gov/prodlike
 /federalorganizations/v1/orgs?fhorgid=300000352"
  }
  ]
- }, 
+ },
  </pre></code>
 </p>
 </details>
 
-###  Example 3: Get hierarchy for an organization 
+###  Example 3: Get hierarchy for an organization
 
 Request URL:
 
@@ -340,7 +345,7 @@ https://apialpha.sam.gov/prodlike/federalorganizations/v1/org/hierarchy?limit=10
  ],
  "fhorgnamehistory": [
  {
- "fhorgname": "GENERAL SERVICES ADMINISTRATION", 
+ "fhorgname": "GENERAL SERVICES ADMINISTRATION",
  "effectivedate": null
  }
  ],
@@ -363,10 +368,12 @@ https://apialpha.sam.gov/prodlike/federalorganizations/v1/org/hierarchy?limit=10
  ]
  }
  ]
-} 
+}
  </pre></code>
 </p>
 </details>
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## HTTP Response Codes
 
@@ -375,20 +382,27 @@ https://apialpha.sam.gov/prodlike/federalorganizations/v1/org/hierarchy?limit=10
 * 400 – Bad Request
 * 500 – Internal Server Error
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Error Messages
 
 Scenario | Error Messages
 -----| -----
-User enters an invalid date format| Invalid date entered. Expected format YYYY-MM-DD 
-User enters an invalid value for status |Status value must be either Active/Inactive 
+User enters an invalid date format| Invalid date entered. Expected format YYYY-MM-DD
+User enters an invalid value for status |Status value must be either Active/Inactive
 For limit or offset, user inputs characters/special characters| Limit and offset must be positive number
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## FAQ
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Change Log
 

@@ -11,6 +11,8 @@ The Opportunity Management API will allow authorized users to submit and request
 
 **Note:** Operations marked with * (asterisk) are not available at this time
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Getting Started
 
 Opportunity Management API can be accessed from Beta or Alpha via the following endpoints:
@@ -3857,6 +3859,8 @@ Error Code|Field | Error Message | Reason/Description | Operation
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Change Log
 
 Date | Version | Description
@@ -3876,9 +3880,5 @@ Date | Version | Description
 10/10/2019 | v0.8 | Updated the Set-Aside values with the latest codes
 10/25/2019 | v0.9 | Updated the field lengths
 10/31/2019| v0.91| Delete Vendor removed <br> Delete Resource in Draft API added <br> API Specifications Updated: Delete Notice, Getlist, Download Metadata for Attachment by Resource ID, and Download Metadata for Attachment by Opportunity ID <br> JSON Updated: Create and Update, Create and Publish, Revise Opportunity, Cancel Notice, Uncancel Notice, Archive, Unarchive, Create Attachment, Update Attachment, IVL Settings, and Delete Notice <br> Error Message Section Updated
-
-
-
-
 
 <p><small><a href="#">Back to top</a></small></p>

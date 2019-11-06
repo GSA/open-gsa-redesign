@@ -5,10 +5,12 @@ banner-heading: Beta.SAM.Gov PSC Public API
 
 ## Overview
 
-PSC API provides PSC data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. 
-This API supports pagination as needed. 
+PSC API provides PSC data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters.
+This API supports pagination as needed.
 
 **API Version: v1.0**
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
 
@@ -16,8 +18,10 @@ PSC API can be accessed from Beta or Alpha via the following endpoints:
 * Beta: <br> https://api.sam.gov/prod/locationservices/v1/api/publicpscdetails
 * Alpha: <br> https://api-alpha.sam.gov/prodlike/locationservices/v1/api/publicpscdetails
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Authentication and API Keys
-User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles. 
+User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles.
 
 * Rate limit for Federal User is 1000 requests/day
 * Rate limit for Non-Federal User is 10 requests/day
@@ -29,6 +33,8 @@ Note: User can request a public API Key in the Account Details page on beta.sam.
 * User must enter account password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
 * If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## PSC API Request Parameters
 
@@ -54,6 +60,8 @@ updatedDateTo|	Updated Date Range To <br>  *Note: Format is YYYY-MM-DD*	|No	|Str
 limit	| This field must be a number. Total number of records to be retrieved per page. <br> *NOTE: If limit is not provided, this field will return maximum of 100 records* |	No|	Int
 offset	| Indicates the page index. Default offset starts with 0 |	No	|Int
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## PSC API Response Parameters
 
 Based on the request parameters, API provides below response parameters.
@@ -78,6 +86,8 @@ level1CategoryName|	Name of a level 1 category. E.g. Weapons & Ammunition	|Strin
 level2Category|	Numerical Value of the level 2 category. E.g. 12.4|	String
 level2CategoryName|	Name of a level 1 category. E.g. Guns|	String
 links |	This is an array consisting of: <br>"rel": "self"<br>"href" |	String
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Examples
 
@@ -175,7 +185,7 @@ Note: By default API brings back only top 100 records. Example below shows only 
 
 <details>
     <summary>Request URL</summary>
- 
+
  https://api-alpha.sam.gov/prodlike/locationservices/v1/api/publicpscdetails?api_key={User’s Public API Key}&q=15&active=ALL<br>
  <br>
 
@@ -609,16 +619,19 @@ Note: By default API brings back only top 100 records. Example below shows only 
 </p>
 </details>
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## HTTP Response Codes
 
 200 - Success
 
-404 – No Data found 
+404 – No Data found
 
-400 – Bad Request 
+400 – Bad Request
 
 500	– Internal Server Error
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Error Messages
 
@@ -634,6 +647,8 @@ User enters a startDateFrom greater than startDateTo	|"startDateFrom cannot be g
 User enters a endDateFrom greater than endDateFrom|	"endDateFrom cannot be greater than endDateFrom "
 User enters a updatedDateFrom greater than updatedDateTo|	"updatedDateFrom cannot be greater than updatedDateTo"
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## FAQ
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -641,6 +656,8 @@ User enters a updatedDateFrom greater than updatedDateTo|	"updatedDateFrom canno
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Change Log
 

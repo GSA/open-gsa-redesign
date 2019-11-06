@@ -9,7 +9,11 @@ The Opportunity Management SOAP APIs will allow authorized users to submit and r
 
 **Note:** The specifications on this page are for a soon to be released API. Check back here or be in contact with IAE for the release date and testing session.
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Getting Started
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Web Services <br> Description Language (WSDL)
 To view the WSDL for all available methods and object definitions, refer below links:
@@ -17,9 +21,13 @@ To view the WSDL for all available methods and object definitions, refer below l
 * Alpha WSDL Link: https://api-alpha.sam.gov/prodlike/ws/fboendpoint/services.wsdl or https://api-alpha.sam.gov/prodlike/ws/fboendpoint/fbo.wsdl 
 * Beta WSDL Link: https://api.sam.gov/prod/ws/fboendpoint/services.wsdl or https://api.sam.gov/prod/ws/fboendpoint/fbo.wsdl (Coming Soon)
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## SOAP Web Services Workflow Chart
 To view the current workflow of SOAP web service, refer below file:
 * Workflow Chart  <br><a href="v1/Opportunity Management SOAP Workflow.pdf" download="Opportunity Management SOAP Workflow">Download</a>
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Authentication
 
@@ -66,8 +74,10 @@ The complex type definition for this object (AuthenticationData) is located in t
 The authentication namespace must match for a web service call to be successful.
 This is due to core settings for the web services internals where the authorization header validates the namespace against the WSDL. So, when the namespace for your authentication header in soap xml does not match the namespace defined in the WSDL at the endpoint (in this case sam), it does not pass on the credentials (username/password/emailid). Therefore, the Contract Opportunities service is not able to authenticate the user and returns an authentication error.
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Method Overview
-All methods available can be found in the WSDL and will be listed in this document. Methods will take different parameters ranging from basic types (string/integer/boolean/date and array of these types) or complex data types that are further comprised of these basic types and sometimes other complex data types.  
+All methods available can be found in the WSDL and will be listed in this document. Methods will take different parameters ranging from basic types (string/integer/boolean/date and array of these types) or complex data types that are further comprised of these basic types and sometimes other complex data types.
 Supported input content type formats are text/xml.
 Note: For all elements/parameters that are specified as type “date,” please supply date in YYYYMMDD (i.e. 20090428) format.
 
@@ -111,6 +121,8 @@ BICiv | Buy Indian Set-Aside (specific to Department of Health and Human Service
 VSA | Veteran-Owned Small Business Set-Aside (specific to Department of Veterans Affairs) |
 VSS | Veteran-Owned Small Business Sole source (specific to Department of Veterans Affairs) |
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ### Notice Types
 The web service API includes specific methods to submit each of the base notice types (i.e. presolicitation, combined/synopsis, award, etc.). You will find these outlined in the sections below.
 
@@ -142,6 +154,8 @@ The table below lists notices that can be related.
 |**JA**||O|O|O|O|O|O||O
 |**SNOTE**|O|O|O|O|O|O|O|O|
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ### Stauth Valid Values
 Below table captures stauth values to use while making requests as needed.
 
@@ -161,6 +175,8 @@ far5 | FAR 6.302-5 - Authorized or required by statute
 far6 | FAR 6.302-6  - National security
 far7 | FAR 6.302-7 - Public interest
 far13 | FAR 13.5 - Simplified Procedures for One Source
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contracting Officer<br> Method Details
 
@@ -238,7 +254,9 @@ filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes |	File Data |	250 MB
 desc |	string |	No |	Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	|
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Delete Notice/ Document Package <br>(deleteNoticeOrDocumentPackage)
 
@@ -266,6 +284,8 @@ awdnbr |  string | Yes - Either Solicitation # or Award # is required ony for Aw
 deletetype |	string |	No |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachments/links. Defaults to “notice” if not provided
 deletemethod |	string | No | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ### Archive Notice <br>(ArchiveNotice)
 
 This method is used to update the archive date on an existing notice.  If a past date is provided or no date provided at all, the notice will be immediately archived.
@@ -292,6 +312,8 @@ ntype |	string | No |	[Refer Notice Types](#notice-types)	|
 archdate | date |	No | Deprecated. Notice will archive immediately | YYYYMMDD
 officeid | string |	No |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ### Cancel Notice<br> (CancelNotice) 
 
 This method is used to post a cancellation notice to any base notice type already in the Opportunities system. Provide a Solicitation Number or an Award Number (for stand- alone awards) and other data outlined below for the cancellation notice.
@@ -317,11 +339,13 @@ offadd | string |	No | Office Address (Deprecated). The Contracting office addre
 officeid | String | No |	Office ID (Not in Use)|	20 characters
 subject |	string | No |	Subject |	256 characters
 solnbr |string | Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
-ntype | string | No | [Refer Notice Types](#notice-types) 	| 
+ntype | string | No | [Refer Notice Types](#notice-types) 	|
 awdnbr | string |	No | Award # |255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 archdate | date |	No | Archive Date | YYYYMMDD
 contact | string | No | Contact Info | 255 characters
 desc | string | Yes |	Cancellation Description | 65535 characters
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contracting Officer/Contracting <br>Specialist Method Details
 
@@ -396,7 +420,9 @@ filename | string |	Yes  | File Name | 255 characters
 filedata | base64binary |	Yes | File Data | 250 MB
 desc | string |	No | Description | 65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	|
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Combined/Synopsis<br> (submitCombined)
 
@@ -467,7 +493,9 @@ filename | string | Yes | File Name | 255 characters
 filedata | base64binary |	Yes | File Data | 250 MB
 desc | string |	No | Description | 65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	|
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Modification/Amendment <br> (submitMod)
 
@@ -539,7 +567,9 @@ filename |	string	| Yes | 	File Name |	255 characters
 filedata |	base64binary |	Yes |	File Data	| 250 MB
 desc |	string |	No |	Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	|
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Justification and Authorization <br> (J&A) Notice (submitJA)
 
@@ -613,7 +643,9 @@ filename |	string	| Yes  |	File Name	| 255 characters
 filedata |	base64binary |	Yes |	File Data	| 250 MB
 desc	| string |	No |	Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	|
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Sources Sought Notice <br> (submitSourcesSought)
 
@@ -684,11 +716,15 @@ filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	|
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Foreign Government Standard <br> (submitForeignGovernment)
 
-This service is deprecated. 
+This service is deprecated.
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Special Notice <br> (submitSpecialNotice)
 
@@ -754,7 +790,9 @@ filename |	string |Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes 	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	|
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Sale of Surplus Property Notice <br> (submitSaleOfSurplus)
 
@@ -820,7 +858,9 @@ filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	|
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Solicitation <br> (submitSolicitation)
 
@@ -891,7 +931,9 @@ filename | string | Yes | File Name | 255 characters
 filedata | base64binary |	Yes | File Data | 250 MB
 desc | string |	No | Description | 65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	|
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Intent to Bundle Requirements <br> (DoD- Funded) (submitITB)
 
@@ -961,11 +1003,15 @@ filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	|
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Fair Opportunity / Limited Sources <br> Justification (submitFairOpp)
 
 This service is now deprecated. Instead, please use submitJA to perform the operation.
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### General Notice <br> (submitNotice)
 
@@ -1047,7 +1093,9 @@ filename |	string |	Yes |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	| 
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation.	|
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Document Packages <br> (submitDocumentsAndLinksToNotice)
 
@@ -1091,7 +1139,9 @@ filename |	string |	Yes  |	File Name |	255 characters
 filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true"|  
-export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation	| 
+export_controlled	| boolean	| No	| Export Controlled. * Captured for future JCP validation	|
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Unarchive Notice <br> (unarchiveNotice)
 
@@ -1117,6 +1167,7 @@ awdnbr	|string|	No|	Award #|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 archdate	|date|	Yes|	New Archive Date|	YYYYMMDD
 officeid|	String|	No|	Office ID (Not in Use)
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Methods Available <br> to All Office Location Users
 
@@ -1164,6 +1215,8 @@ cage_code	|string|	Cage Code
 address	|string	|Address
 bus_types|	string|	Business Types
 naics_codes|	string	|Naics Codes <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Authorized Parties List <br> (getAuthorizedPartyList)
 
@@ -1213,6 +1266,8 @@ dba_name|	string|	DBA Name
 duns|	string|	DUNS #
 cage_code	|string|	Cage Code
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ### Approve Explicit Access Requests <br> (approveExplicitAccessRequestByID)
 
 This method is used to approve an Explicit Access request that is either in pending or rejected status. This method requires the internal ID which can be retrieved by first calling the getAuthorizedPartyList method. Specify an FBO Solicitation Number as the first argument.
@@ -1239,6 +1294,8 @@ Response:
 Output Parameter |	Type |	Description
 ------- | ------ | -------
 Response | PostingResponse | Complex type
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Approve Explicit Access Requests <br> (approveExplicitAccessRequestByVendorData)
 
@@ -1278,6 +1335,7 @@ contractor_name	|string|Yes	|Contractor Name | 255 characters
 duns	|string	| Yes| DUNS # | 9 digits
 cage_code|	string|	Yes|Cage Code | 5 alpha/numeric characters
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Reject Explicit Access Requests <br> (rejectExplicitAccessRequestByID)
 
@@ -1306,6 +1364,7 @@ Output Parameter |	Type |	Description
 ------- | ------ | -------
 Response | PostingResponse | Complex type
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Reject Explicit Access Requests <br> (rejectExplicitAccessRequestByVendorData)
 
@@ -1345,6 +1404,7 @@ contractor_name	|string|Yes	|Contractor Name | 255 characters
 duns	|string	|Yes|DUNS # | 9 digits
 cage_code|	string|	Yes|Cage Code | 5 alpha/numeric characters
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Add Authorized Party <br> (addAuthorizedParty)
 
@@ -1381,6 +1441,8 @@ email	|string|Yes|	Email | 255 characters
 contractor_name	|string|Yes	|Contractor Name | 255 characters
 duns	|string	|Yes|DUNS # | 9 digits
 cage_code|	string|	Yes|Cage Code | 5 alpha/numeric characters
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Method Available for Data Export
 
@@ -1433,6 +1495,8 @@ subject	|string|	Notice subject
 solnbr	|string	|Solicitation Number
 awdnbr|	string	|Award Number
 archived|	boolean	|True or false
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Get Notice Data <br> (getNoticeData)
 
@@ -1536,9 +1600,13 @@ link|	string|	Link
 desc|	string|	Description
 size_limit_error|	boolean	|This element will be true if its size or aggregate file data for the request exceeds the max return size (Not in Use)
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ### Get Document Package Data <br> (getDocumentPackageData)
 
 This service is now deprecated
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Get File Data <br> (getFileData)
 
@@ -4103,6 +4171,7 @@ Note: This service gets a list of all notices
 </textarea>
 </details>
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Business Rules and Error Messages
 
@@ -4155,6 +4224,7 @@ state	|	1. This field is required where applicable|	1. Award Details Section - S
 recovery_act|	NA	|NA
 correction|	1. When user tries to convert a notice and the solicitation number/ntype do not match the notice and correction = true, then the service throws an error<br><br> 2. If correction = True and the system cannot return a single record for the same delivery number/ award number / soliciation number or combination of all three, then the service throws an error<br><br> 3. If correction = True and the system returns more than one record for the same delivery number/ award number / sol-number or combination of all three, then service throws an error|	1. Notice could not be found for correction <br><br> 2. Multiple Notices found. Please input more details
 
+<p><small><a href="#">Back to top</a></small></p>
 
 #### submitDocumentsAndLinksToNotice
 
@@ -4174,6 +4244,8 @@ respdate|	1.	No validation is performed on this field. However, if this value is
 links|	1.This field is not required but if url & description fields within the links and files are empty, then the service throws an error.<br><br> 2. If a link with same name already exists on the notice, then the system throws an error.<br><br> 3. If the Url is empty for a link, then the system throws an error.<br><br> 4.	If the description is missing for a link, then the system throws an error.| 1.	Links and/or files are not complete<br><br> 2.	Resource with the same name already exists<br><br> 3.	Link Resource must have a link<br><br> 4. Link Resource must have a description
 files	|	1.	This field is not required but if url & description fields within the links and files are empty, then the service throws an error<br><br> 2.	If the filename is not provided for a file, then the system throws an error<br><br> 3.	If the filedata is empty for a file, then the system throws an error<br><br> 4.	If the filename provided has either no type specified or is an unsupported type, then the system throws an error<br><br> 5.	If the file size exceeds 250MB, then the system throws an error <br><br> 6. If a file with same name already exists on the notice, then the system throwns an error |1.	Links and/or files are not complete <br><br>2.	Attachment must have a name<br><br> 3.	Attachment must have content <br><br>4.	The file type that you are trying to upload is not supported<br><br> 5.	The file size should be greater than zero bytes and less than 250 MB <br><br>6.	Resource with the same name already exists
 
+<p><small><a href="#">Back to top</a></small></p>
+
 #### deleteNoticeOrDocumentPackage
 
 Individual business rules per field are listed across each of the fields in below table.  
@@ -4186,9 +4258,11 @@ ntype|	1. If an invalid ntype is provided, then service throws an error |  	1. I
 deletetype|		1. If an invalid deletetype is provided, then service throws an error  |	1.Delete type provided is not “notice” or “attachment”
 deletemethod|	1. If an invalid deletemethod is provided, then service throws an error  |	1. Delete method provided is not “latest” or “all”
 
+<p><small><a href="#">Back to top</a></small></p>
+
 #### archiveNotice
 
-Individual business rules per field are listed across each of the fields in below table.  
+Individual business rules per field are listed across each of the fields in below table.
 * Note:  If a user tries to archive a notice that is already archived, then the service throws an error -  Opportunity already archived
 
 Element Name	| 	Business Rules |	Error Messages with respect to business rules (If any)
@@ -4197,11 +4271,13 @@ date|	Date field should meet the expected format	|DATE field in unexpected forma
 solnbr|	 1. This field is required where applicable. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error |	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details
 officeid	|	Office ID must be associated with user account	|NA
 ntype	|	1. If an invalid ntype is provided, then service throws an error   | 1. Invalid NTYPE value provided
-archdate|	1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restrictions<br><br> 	|1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 
+archdate|	1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restrictions<br><br> 	|1.	DATE field in unexpected format. Expects YYYYMMDD<br><br>
+
+<p><small><a href="#">Back to top</a></small></p>
 
 #### unarchiveNotice
 
-Individual business rules per field are listed across each of the fields in below table.  
+Individual business rules per field are listed across each of the fields in below table.
 * Note: If a user tries to unarchive a notice that is already unarchived, then the service throws an error - Opportunity is not archived
 * Note: If a user tries to unarchive an active notice, then the service throws an error - Opportunity is active
 
@@ -4211,11 +4287,13 @@ solnbr|	 1. This field is required where applicable. If no value is provided, th
 officeid|	Office ID must be associated with user account	|NA
 ntype	|	1. If an invalid ntype is provided, then service throws an error   | 1. Invalid NTYPE value provided
 awdnbr	|	NA|	NA
-archdate|	1. If this value is available, this field should meet the character limit/restrictions <br><br>2.	If current date or a past date is provided, then the system throws an error<br><br>  3.	If no archive date is given, then the system throws an error| 1. DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. New archive date provided is in the past<br><br> 3.	New archive date is required
+archdate|	1. If this value is available, this field should meet the character limit/restrictions <br><br>2.	If current date or a past date is provided, then the system throws an error<br><br>  3.	If no archive date is given, then the system throws an error| 1. DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. New archive date provided is in the past<br><br> 3.	New archive date is required.
 
-#### cancelNotice 
+<p><small><a href="#">Back to top</a></small></p>
 
-Individual business rules per field are listed across each of the fields in below table.  
+#### cancelNotice
+
+Individual business rules per field are listed across each of the fields in below table.
 * Note:  If user tries to cancel already cancelled opportunity, service throws an error - This opportunity cannot be cancelled. This opportunity is already cancelled. Unable to process request. Please try again.
 * Note: When user tries to cancel a notice without giving any input, then the service throws an error ‘Unable to process request. Please try again’
 
@@ -4229,11 +4307,13 @@ ntype	|	1. If an invalid ntype is provided, then service throws an error   | 1. 
 awdnbr|		NA|	NA
 archdate|	1.	No validation is performed on this field. However, if this value is available, this field should meet the character limit/restrictions<br><br> 2.	This date cannot be in past; has to be in future|	1.	DATE field in unexpected format. Expects YYYYMMDD<br><br>  2.	This opportunity cannot be cancelled
 contact| NA| NA
-desc|	1. This field is required where applicable |	1. This opportunity cannot be cancelled. The cancel request is missing 'Cancellation description' field.
+desc|	1. This field is required where applicable |	1. This opportunity cannot be cncelled. The cancel request is missing 'Cancellation description' field.
+
+<p><small><a href="#">Back to top</a></small></p>
 
 #### getNoticeData
 
-Individual business rules per field are listed across each of the fields in below table.  
+Individual business rules per field are listed across each of the fields in below table.
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
@@ -4242,9 +4322,11 @@ get_changes|		NA|	NA
 get_changes_from_date|		Date field should meet the expected format|	DATE field in unexpected format. Expects YYYYMMDD
 get_file_data	|NA	|NA
 
+<p><small><a href="#">Back to top</a></small></p>
+
 #### getList
 
-Individual business rules per field are listed across each of the fields in below table.  
+Individual business rules per field are listed across each of the fields in below table.
 * Note: Although none of the individual elements are mandatory, at least one filter should be given to perform the operation. If no filters are entered, then system throws an error - Insufficient Search Criteria.
 
 Element Name	 |	Business Rules |	Error Messages with respect to business rules (If any)
@@ -4256,25 +4338,31 @@ posted_from	|	Date field should meet the expected format|	DATE field in unexpect
 posted_to|Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
 documents_to_search|	NA|	NA
 
+<p><small><a href="#">Back to top</a></small></p>
+
 #### getFileData
 
-Individual business rules per field are listed across each of the fields in below table.  
+Individual business rules per field are listed across each of the fields in below table.
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 file_id	|1. This field is required where applicable <br><br> 2. If an invalid file Id is provided, then the system throws an error.|	1. file_id is required <br><br> 2.	Unable to find details for the resourceId
 
+<p><small><a href="#">Back to top</a></small></p>
+
 #### getIVLList
 
-Individual business rules per field are listed across each of the fields in below table.  
+Individual business rules per field are listed across each of the fields in below table.
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
 solnbr|	 1. This field is required where applicable. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error |	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details
 
+<p><small><a href="#">Back to top</a></small></p>
+
 #### getAuthorizedPartyList
 
-Individual business rules per field are listed across each of the fields in below table.  
+Individual business rules per field are listed across each of the fields in below table.
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
@@ -4283,11 +4371,13 @@ ntype|	1. If an invalid ntype is provided, then service throws an error  | 1. In
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2. If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together <br><br>2.	addAuthoizedParty service is deprecated for Non-FBO Solicitations
 status|	1.	If the status value entered doesn’t match the valid values , then the system throws an error|	1.	Status value is invalid
 
+<p><small><a href="#">Back to top</a></small></p>
+
 #### approveExplicitAccessRequestByID
 
 Individual business rules per field are listed across each of the fields in below table.
 
-* Note: ID can be obtained through getAuthorizedPartyList   
+* Note: ID can be obtained through getAuthorizedPartyList
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
@@ -4296,11 +4386,13 @@ ntype	|1. If an invalid ntype is provided, then service throws an error  | 1. In
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	approveExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
 id|		1.	If the request Id is not provided, then the system throws an error<br><br> 2.	If the request Id provided is already approved, then the service throws an error<br><br>3.	If the solicitation number provided does not match the solicitation number of the request Id, then the service throws an error<br><br> 4.	If the solicitation number provided matches with the solicitation number of the  request Id  but does not match with the provided N type, then the service throws an error	|1.	Internal ID is required. Use getAuthorizedPartyList to retrieve this information<br><br> 2.	Request with Request ID: #id already approved<br><br> 3.	You have request that is tied to different solicitation number<br><br> 4.	You have request that is tied to the same solicitation number but different notice type
 
+<p><small><a href="#">Back to top</a></small></p>
+
 #### approveExplicitAccessRequestByVendorData
 
 Individual business rules per field are listed across each of the fields in below table.
 
-* Note: Vendor can be obtained through getAuthorizedPartyList   
+* Note: Vendor can be obtained through getAuthorizedPartyList
 
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
@@ -4310,9 +4402,11 @@ ntype	|   1. If an invalid ntype is provided, then service throws an error  | 1.
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	approveExplicitAccessRequestByID service is deprecated for Non-FBO Solicitations
 vendor	|1.	If all the elements in the Vendor Data complex definition are not provided, then the system throws an error <br><br>2.	If no match is found in the system for the vendor data provided, then the system throws an error <br><br> 3.	If the Explicit Access request found for the vendor and solnum is already approved, then the system throws an error|	1.	This method requires all fields from complex type VendorData to find a match in the system; if vendor data not fully provided this error will be thrown <br><br> 2.	No contact match on vendor data provided  <br><br> 3.	Request with Request ID: #id already approved
 
+<p><small><a href="#">Back to top</a></small></p>
+
 #### addAuthorizedParty
 
-Individual business rules per field are listed across each of the fields in below table.  
+Individual business rules per field are listed across each of the fields in below table.
 
 Element Name	| 	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
@@ -4321,9 +4415,11 @@ ntype|	1. If an invalid ntype is provided, then service throws an error |  1. In
 nonfbo_solbr 	|	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	addAuthorizedParty service is deprecated for Non-FBO Solicitations
 vendor|		1.	If all the elements in the Vendor Data complex definition are not provided, then the system throws an error<br><br> 2.	If no match is found in the system for the vendor data provided, then the system throws an error<br><br> 3. If the vendor is already added as an authorized party on the notice, then the system throws an error|	1.	This method requires all fields from complex type VendorData to find a match in the system; if vendor data not fully provided this error will be thrown<br><br> 2.	No contact match on vendor data provided <br><br> 3.	Duplicate request. Vendor is already added as an authorized party on the notice
 
+<p><small><a href="#">Back to top</a></small></p>
+
 #### rejectExplicitAccessRequestByID
 
-Individual business rules per field are listed across each of the fields in below table.  
+Individual business rules per field are listed across each of the fields in below table.
 
 Element Name	 |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
@@ -4333,18 +4429,20 @@ nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service
 id|		1.	If the request Id is not provided, then the system throws an error<br><br> 2.	If the request Id provided is already rejected, then the service throws an error<br><br> 3.	If the solicitation number provided does not match the solicitation number of the request Id, then the service throws an error<br><br> 4.	If the solicitation number provided matches with the solicitation number of the  request Id  but does not match with the provided N type, then the service throws an error|	1.	Internal ID is required. Use getAuthorizedPartyList to retrieve this information<br><br> 2.	Request with Request ID: #id already rejected<br><br> 3.	You have request that is tied to different solicitation number<br><br> 4.	You have request that is tied to the same solicitation number but different notice type
 reason|  1.	This is a required field. If no value is provided, then the system throws an error| 1.	A reason must be provided with an explicit access rejection
 
+<p><small><a href="#">Back to top</a></small></p>
+
 #### rejectExplicitAccessRequestByVendorData
-Individual business rules per field are listed across each of the fields in below table.  
+Individual business rules per field are listed across each of the fields in below table.
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-solnbr	|	1. This field is required where applicable. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error. 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details. 
+solnbr	|	1. This field is required where applicable. If no value is provided, then service throws an error <br><br>2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error. 	|1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details.
 ntype		|1. If an invalid ntype is provided, then service throws an error  | 1. Invalid NTYPE value provided
 nonfbo_solbr |	1.	If both solnbr and nonfbo_solbr are provided, then the service throws an error<br><br> 2.	If only nonfbo_solbr is provided, then the service throws an error| 1.	Solicitation Number and Non-FBO Solicitation Number cannot be specified together<br><br> 2.	rejectExplicitAccessRequestByVendorData service is deprecated for Non-FBO Solicitations
 vendor|		1.	If all the elements in the Vendor Data complex definition are not provided, then the system throws an error<br><br> 2.	If no match is found in the system for the vendor data provided, then the system throws an error<br><br>3. If the Explicit Access request found for the vendor and solnum is already rejected, then the system throws an error|	1.	This method requires all fields from complex type VendorData to find a match in the system; if vendor data not fully provided this error will be thrown<br><br> 2.	No contact match on vendor data provided <br><br> 3.	Request with Request ID: #id already rejected
 reason|  1.	This is a required field. If no value is provided, then the system throws an error| 1.	A reason must be provided with an explicit access rejection
 
-
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Deprecated Methods
 * submitFairOpps *(Instead use submitJA to perform the operation)*
@@ -4373,10 +4471,7 @@ reason|  1.	This is a required field. If no value is provided, then the system t
 * deleteFilesFromSecureDocumentPackage
 * deleteSecureDocumentPackage
 
-
-
-
-
+<p><small><a href="#">Back to top</a></small></p>
 
 ## FAQ
 
@@ -4387,6 +4482,8 @@ _NA_
 ## Contact Us
 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Change Log
 
@@ -4401,7 +4498,4 @@ Date | Version | Description
 10/10/2019 | v0.7 | Updated the Set-Aside values with the latest codes
 10/28/2019 | v0.8| Documentation updates only. No change to Implementation <br> - Production WSDL link added <br> - Redundant Character Limit and Required columns removed from Specific Business Rules and Error Messages section <br> - Notice Types and Related Notices sections added for reference <br>- Consolidated and summarized list of deprecated methods <br>- Far13 added to Stauth Valid Values section <br>- Updated character limits<br>- Updated required column for submitAward, archiveNotice, submitPresol, submitCombined, submitMod, submitJA, submitSourcesSought, submitSpecialNotice, submitSaleofSurplus, submitITB, submitNotice, submitdocumentsandlinkstonotice <br>- Remove foja from getnoticedata response
 
-
-
 <p><small><a href="#">Back to top</a></small></p>
-
