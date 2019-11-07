@@ -4211,7 +4211,7 @@ solnbr|	 1. This field is required where applicable. If no value is provided, th
 officeid|	Office ID must be associated with user account	|NA
 ntype	|	1. If an invalid ntype is provided, then service throws an error   | 1. Invalid NTYPE value provided
 awdnbr	|	NA|	NA
-archdate|	1. If this value is available, this field should meet the character limit/restrictions <br><br>2.	If current date or a past date is provided, then the system throws an error<br><br>  3.	If no archive date is given, then the system throws an error| 1. DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. New archive date provided is in the past<br><br> 3.	New archive date is required
+archdate|	1. If this value is available, this field should meet the character limit/restrictions <br><br>2.	If a past date is provided, then the system throws an error<br><br>  3.	If no archive date is given, then the system throws an error| 1. DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. New archive date provided is in the past<br><br> 3.	New archive date is required
 
 #### cancelNotice 
 
