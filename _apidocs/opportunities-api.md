@@ -1410,7 +1410,7 @@ data.solicitation.deadlines.responseTz | string |  Solicitation Deadlines Respon
 data.award | JSON | 
 data.award.date | date and time |  Award Date
 data.award.number | string |  Award Number
-data.award.deliveryOrderNumber | string |   Award Deliver Order Number
+data.award.deliveryOrderNumber | string |   Award Delivery Order Number
 data.award.amount | Number | Award Amount
 data.award.lineitemNumber | string |  Award Line Item Number
 data.award.awardee | JSON |  
@@ -3038,7 +3038,7 @@ solicitation.deadlines.<br/>responseTz |string | | | No | No | Time Zone for <br
 award | JSON | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types
 award.date | date | |YYYY-MM-DD |No | Yes only for type = a (Award) | Award Date
 award.number | string | 255 characters | |No | Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number
-award.deliverOrderNumber | string | 255 characters| | No | Yes only for type = j (Justification) | Award Delivery Order Number
+award.deliverOrderNumber | string | 255 characters| | No | No | Award Delivery Order Number
 award.amount | number |64 digits |  | No | Yes only for type = a (Award) | Award Amount
 award.lineitemNumber | string |255 characters | | No | No | Contract Line item Number
 award.awardee | JSON | NA| NA | NA | NA |Awardee details; Only for type = a (Award)
@@ -3282,7 +3282,7 @@ solicitation.deadlines.<br/>responseTz |string | | |No | Time Zone for <br/>Soli
 award | JSON | NA | NA | NA| This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types
 award.date | date | |YYYY-MM-DD | Yes only for type = a (Award) | Award Date
 award.number | string | 255 characters | |Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number
-award.deliverOrderNumber | string | 255 characters| | Yes only for type = j (Justification) | Award Delivery Order Number
+award.deliverOrderNumber | string | 255 characters| | No | Award Delivery Order Number
 award.amount | number |64 digits |  | Yes only for type = a (Award) | Award Amount
 award.lineitemNumber | string |255 characters | | No | Contract Line item Number
 award.awardee | JSON | NA| NA | NA |Awardee details; Only for type = a (Award)
@@ -3783,7 +3783,6 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Awardee City | Award Details Section - City is required |City Code is required if the Awardee name is provided instead of DUNS# |	Publish
 400|Awardee City | Award Details Section - City provided is invalid |City Code provided is invalid |	Publish
 400|Contract Line Item number |	The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces	| The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | Publish
-400|Task/Delivery Order Number |	Task/Delivery Order Number is required field	| Task/Delivery Order Number is required field. | Publish
 400|Task/Delivery Order Number |	Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces	| Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces | Publish
 400|Point of Contact Type |	$.data.pointOfContact[0].type: does not have a value in the enumeration [primary, secondary, owner] |	Point of Contact Type is required |	Create Opportunity
 400|Primary Contact |	Primary Contact is required | Primary Contact is required  for all types except Award| Publish
@@ -3888,7 +3887,7 @@ Date | Version | Description
 10/10/2019 | v0.8 | Updated the Set-Aside values with the latest codes
 10/25/2019 | v0.9 | Updated the field lengths
 10/31/2019| v0.91| Delete Vendor removed <br> Delete Resource in Draft API added <br> API Specifications Updated: Delete Notice, Getlist, Download Metadata for Attachment by Resource ID, and Download Metadata for Attachment by Opportunity ID <br> JSON Updated: Create and Update, Create and Publish, Revise Opportunity, Cancel Notice, Uncancel Notice, Archive, Unarchive, Create Attachment, Update Attachment, IVL Settings, and Delete Notice <br> Error Message Section Updated
-11/04/2019| v1.0 | Updated the field lengths for contact full name and awardee name fields for create Opportunity, Create and Publish Opportunity Contract Jsons. Updated the Error messages for these fields<br>Added Future Implementation for UEI SAM# Validation and Type of Connection
+11/04/2019| v1.0 | Updated the field lengths for contact full name and awardee name fields for create Opportunity, Create and Publish Opportunity Contract Jsons. Updated the Error messages for these fields<br>Added Future Implementation for UEI SAM# Validation and Type of Connection. Task/Delivery Order number is updated to be a non required field for Justification submission
 
 
 

@@ -573,7 +573,7 @@ awdnbr |	String |	Yes |	Award Number |	255 characters from the set: a-z A-Z 0-9 
 modnbr |	String |	No |	Mod Number |	32 characters
 awdamt |	String |	No |	Award Amount (Not in Use) |	64 digits
 awddate |	Date |	No	| Award Date |	YYYYMMDD
-donbr	| String |	Yes |	Task/Delivery Order Number |	255 characters from the set: a-z A-Z 0-9 - _ ( )
+donbr	| String |	No |	Task/Delivery Order Number |	255 characters from the set: a-z A-Z 0-9 - _ ( )
 archdate  |	Date |	No |	Archive Date |	YYYYMMDD
 contact |	String |	Yes | 	Contact Info |	500 characters
 desc |	String |	No |	Description	| 65535 characters
@@ -996,7 +996,7 @@ subject|	string|	Yes|	Subject|	256 characters
 solnbr|	string|	Yes, EXCEPT No - Only for SNOTE|	Solicitation #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 ntype	|string	|No	| [Refer Related Notices](#related-notices)
 awdnbr|	string|	Yes - for AWARD, ITB & JA |	Award #	|255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
-donbr	|string	|Yes - for JA|	Delivery/Task Order Number	|	255 characters from the set: a-z A-Z 0-9 - _ ( )
+donbr	|string	|No|	Delivery/Task Order Number	|	255 characters from the set: a-z A-Z 0-9 - _ ( )
 awdamt	|string|	Yes - for AWARD 	|Award Amount|	64 digits
 linenbr|	string	|No|	Award Line Item Number	|255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 awddate	|date|	Yes - for AWARD|	Award Date	|YYYYMMDD
@@ -4132,7 +4132,7 @@ notice_type	|	1. This field is required where applicable |	1. Opportunity type i
 solnbr|	1. This field is required where applicable<br><br>  2. If submitting a notice with a duplicate solnbr, then system throws an error <br><br>3. If solnbr is in invalid format, then service throws an error<br><br>4. If solnbr & ntype combination is not matched, then service throws an error <br><br> |	1. Notice Id is required <br><br>2. Notice ID must be unique based on selected notice type. <br><br>3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br><br>4.	Opportunity not found with given solicitation number and ntype
 ntype	 |1. When user tries to convert a notice and the solicitation number/ntype do not match the notice, then the service throws an error<br><br>  2. If an invalid ntype is provided, then service throws an error <br><br> 3. If the solicitation is related to ntype that is not allowed, then the system throws an error   |1. Opportunity not found with given solicitation number and ntype<br><br> 2. Invalid NTYPE value provided<br><br> 3.The Related Notice's Type is invalid for this Opportunity
 awdnbr|	1. This field is required where applicable<br><br> 2. If value provided does not meet the character limit/restrictions, then service throws an error|	1. Contract Award Number is a required field <br><br> 2.Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces
-donbr	|1. This field is required where applicable<br><br> 2. If value provided does not meet the character limit/restrictions, then service throws an error|	1. Task/Delivery Order Number is required field<br><br> 2. Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces
+donbr	| 1. If value provided does not meet the character limit/restrictions, then service throws an error|	1. Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces
 awdamt|	 	1. This field is required where applicable<br><br> 2. If an invalid integer values= is given, then service throws an error <br><br> 3. If value provided does not meet the character limit/restrictions, then service throws an error 	|1. Base and All Options Value is a required field<br><br> 2. Base and All Options Value - Invalid input: Please enter a valid number<br><br> 3. Base and All Options Value max length is 64 digits
 linenbr|	1.If value provided does not meet the character limit/restrictions, then service throws an error	|1. The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces
 awddate	|	1. This field is required where applicable <br><br>2. This field should meet the character limit/restrictions <br><br>  3. If the Contract Award Date is 15 days prior to the current date and the archive date is not provided then the service throws an error|	1. Contract Award Date is required field <br><br> 2. DATE field in unexpected format. Expects YYYYMMDD<br><br> 3. Contract Award Date set would result in inactive date being in the past
@@ -4400,7 +4400,7 @@ Date | Version | Description
 9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions
 10/10/2019 | v0.7 | Updated the Set-Aside values with the latest codes
 10/28/2019 | v0.8| Documentation updates only. No change to Implementation <br> - Production WSDL link added <br> - Redundant Character Limit and Required columns removed from Specific Business Rules and Error Messages section <br> - Notice Types and Related Notices sections added for reference <br>- Consolidated and summarized list of deprecated methods <br>- Far13 added to Stauth Valid Values section <br>- Updated character limits<br>- Updated required column for submitAward, archiveNotice, submitPresol, submitCombined, submitMod, submitJA, submitSourcesSought, submitSpecialNotice, submitSaleofSurplus, submitITB, submitNotice, submitdocumentsandlinkstonotice <br>- Remove foja from getnoticedata response
-11/04/2019 | v0.9| Updated the character limits for contact and awardee fields for all the submit methods
+11/04/2019 | v0.9| Updated the character limits for contact and awardee fields for all the submit methods. Modified "donbr" as a not required field for Justification notice submission
 
 
 
