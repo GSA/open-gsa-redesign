@@ -3823,12 +3823,12 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|UnArchive, Uncancel - Archive Date |	New archive date provided is in an invalid format |	New archive date provided is in an invalid format |	Unarchive, Uncancel
 400|UnArchive, Uncancel - Archive Date|	New archive date provided is in the past |	New archive date provided is before today's date |	Unarchive, Uncancel
 400|UnArchive, Uncancel - Archive Date |	New archive type is invalid |	archive type is not one of the following "auto15", "autocustom", "auto30"	| Unarchive, Uncancel
-400|UnArchive, Uncancel - Award Date |	New contract award date provided is in the past |	New contract award date provided is in the past. | Unarchive, Uncancel
+400|UnArchive, Uncancel - Award Date |	New contract award date provided is in the past |	New contract award date provided is in the past | Unarchive, Uncancel
 400|UnArchive, Uncancel - Award Date |	New contract award date is not provided |	New contract award date is not provided | Unarchive, Uncancel
 400|UnArchive, Uncancel - Response Date |	New response date is required |	Unarchive requires new response date	| UnArchive
 400|UnArchive, Uncancel - Response Date |	New response date provided is in an invalid format |	Invalid date format	| UnArchive
 400|UnArchive, Uncancel - Response Date |	New response date provided is in the past   |	Response Date cannot be in the past 	| UnArchive
-400|UnArchive, Uncancel - Response Date |	New response date provided would place inactive date in the past |	New response date providedis within 15 days	| UnArchive
+400|UnArchive, Uncancel - Response Date |	New response date provided would place inactive date in the past |	New response date provided is within 15 days	| UnArchive
 400|Delete |	This opportunity cannot be deleted. This opportunity is a revision |	This opportunity cannot be deleted. This opportunity is a revision.	| Delete
 400|Delete |	Opportunity has been already deleted |	Opportunity has been already deleted	| Delete
 400|Delete |	This opportunity cannot be deleted. The delete request is missing `Delete option` field |	This opportunity cannot be deleted. The delete request is missing `Delete option` field.	| Delete
