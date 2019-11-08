@@ -418,33 +418,34 @@ Examples
 <code><pre>
 
 {
-    "data":
-    {
+    "data": {
         "type": "o",
         "solicitationNumber": "test-12345678901",
         "title": "Test submit solicitation",
         "organizationId": "100186612",
         "classificationCode": "1260",
         "naics": [
-        {
-            "type": "primary",
-            "code": ["111150"]
-        }],
-        "pointOfContact": [
-        {
-            "type": "primary",
-            "title": "",
-            "fullName": "test contact",
-            "email": "test@test.com",
-            "phone": "",
-            "fax": "",
-            "additionalInfo":
             {
-                "content": "Primary contact info"
+                "type": "primary",
+                "code": [
+                    "111150"
+                ]
             }
-        }],
-        "placeOfPerformance":
-        {
+        ],
+        "pointOfContact": [
+            {
+                "type": "primary",
+                "title": "",
+                "fullName": "test contact",
+                "email": "test@test.com",
+                "phone": "",
+                "fax": "",
+                "additionalInfo": {
+                    "content": "Primary contact info"
+                }
+            }
+        ],
+        "placeOfPerformance": {
             "streetAddress": "1234 XYZ street",
             "streetAddress2": "",
             "city": {
@@ -457,85 +458,74 @@ Examples
             },
             "country": {
                 "code": "USA",
-                "name":"USA"
-            }
-,
+                "name": "USA"
+            },
             "zip": ""
         },
-        "archive":
-        {
+        "archive": {
             "type": "autocustom",
             "date": "2022-09-09"
         },
-        "permissions":
-        {
-            "IVL":
-            {
+        "permissions": {
+            "IVL": {
                 "create": false,
                 "delete": false,
                 "read": false,
                 "update": false
             }
         },
-        "solicitation":
-        {
+        "solicitation": {
             "setAside": "SBA",
-            "deadlines":
-            {
+            "deadlines": {
                 "response": "2022-08-08"
             }
         },
-        "award":
-        {
+        "award": {
             "date": "",
             "number": "",
             "deliveryOrderNumber": "",
             "amount": "",
             "lineItemNumber": "",
-            "awardee":
-            {
+            "awardee": {
                 "manual": false,
                 "name": "",
                 "duns": "",
-                "location":
-                {
+                "location": {
                     "streetAddress": "",
                     "streetAddress2": "",
-                    "city":
-                    {
+                    "city": {
                         "code": "",
                         "name": ""
                     },
-                    "state":
-                    {
+                    "state": {
                         "code": "",
                         "name": ""
                     },
                     "zip": "",
-                    "country":
-                    {
+                    "country": {
                         "code": "",
                         "name": ""
                     }
                 }
-            }
             },
-            "justificationAuthority":
-            {
+            "justificationAuthority": {
                 "modificationNumber": "",
                 "authority": "dictionary"
-            },
-            "additionalReporting": ["none"]
+            }
         },
-        "description": [
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
         {
             "body": "test description"
-        }],
-        "related":
-        {
-            "opportunityId": "bc14e9f810a44e468c31fd120dd41b4f"
         }
+    ],
+    "related": {
+        "opportunityId": "bc14e9f810a44e468c31fd120dd41b4f"
     }
+}
 </pre></code>
 </p>
 </details>
@@ -709,11 +699,11 @@ Examples
                         "name": ""
                     }
                 }
+            },
+            "justificationAuthority": {
+                "modificationNumber": "",
+                "authority": "dictionary"
             }
-        },
-        "justificationAuthority": {
-            "modificationNumber": "",
-            "authority": "dictionary"
         },
         "additionalReporting": [
             "none"
@@ -826,109 +816,109 @@ Examples
 <p>
 <code><pre>
 {
-  "data": {
-    "solicitationNumber": "ITB_Test1_Update",
-    "title": "TST_T1_update",
-    "type": "i",
-    "classificationCode": "13",
-    "organizationId": "100120624",
-    "naics": [
-      {
-        "type": "primary",
-        "code": [
-          "111150"
-        ]
-      }
-    ],
-    "pointOfContact": [
-      {
-        "additionalInfo": {
-          "content": ""
+    "data": {
+        "solicitationNumber": "ITB_Test1_Update",
+        "title": "TST_T1_update",
+        "type": "i",
+        "classificationCode": "13",
+        "organizationId": "100186612",
+        "naics": [
+            {
+                "type": "primary",
+                "code": [
+                    "111150"
+                ]
+            }
+        ],
+        "pointOfContact": [
+            {
+                "additionalInfo": {
+                    "content": ""
+                },
+                "email": "",
+                "fax": "",
+                "fullName": "GSA",
+                "phone": "",
+                "title": "",
+                "type": "primary"
+            }
+        ],
+        "placeOfPerformance": {
+            "city": {
+                "code": "",
+                "name": ""
+            },
+            "country": {
+                "code": "",
+                "name": ""
+            },
+            "state": {
+                "code": "",
+                "name": ""
+            },
+            "streetAddress": "",
+            "streetAddress2": "",
+            "zip": ""
         },
-        "email": "",
-        "fax": "",
-        "fullName": "GSA",
-        "phone": "",
-        "title": "",
-        "type": "primary"
-      }
-    ],
-    "placeOfPerformance": {
-      "city": {
-        "code": "",
-        "name": ""
-      },
-      "country": {
-        "code": "",
-        "name": ""
-      },
-      "state": {
-        "code": "",
-        "name": ""
-      },
-      "streetAddress": "",
-      "streetAddress2": "",
-      "zip": ""
+        "award": {
+            "date": "2019-08-08T11:20:20-05:00",
+            "number": "12345",
+            "deliveryOrderNumber": "",
+            "amount": "number",
+            "lineItemNumber": "",
+            "awardee": {
+                "name": "",
+                "duns": "",
+                "location": {
+                    "streetAddress": "",
+                    "streetAddress2": "",
+                    "city": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "state": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "zip": "",
+                    "country": {
+                        "code": "",
+                        "name": ""
+                    }
+                }
+            },
+            "justificationAuthority": {
+                "modificationNumber": "",
+                "authority": "dictionary"
+            }
+        },
+        "permissions": {
+            "IVL": {
+                "create": true,
+                "delete": true,
+                "read": true,
+                "update": true
+            }
+        },
+        "solicitation": {
+            "setAside": "SBA",
+            "deadlines": {
+                "response": "2019-08-08T11:20:20-05:00"
+            }
+        },
+        "archive": {
+            "type": "autocustom",
+            "date": "2019-09-09"
+        },
+        "additionalReporting": [
+            "none"
+        ]
     },
-    "award": {
-      "date": "2019-08-08T11:20:20-05:00",
-      "number": "12345",
-      "deliveryOrderNumber": "",
-      "amount": "number",
-      "lineItemNumber": "",
-      "awardee": {
-        "name": "",
-        "duns": "",
-        "location": {
-          "streetAddress": "",
-          "streetAddress2": "",
-          "city": {
-            "code": "",
-            "name": ""
-          },
-          "state": {
-            "code": "",
-            "name": ""
-          },
-          "zip": "",
-          "country": {
-            "code": "",
-            "name": ""
-          }
+    "description": [
+        {
+            "body": "Description_updated"
         }
-      }
-      },
-      "justificationAuthority": {
-        "modificationNumber": "",
-        "authority": "dictionary"
-      },
-    "permissions": {
-      "IVL": {
-        "create": true,
-        "delete": true,
-        "read": true,
-        "update": true
-      }
-    },
-    "solicitation": {
-      "setAside": "SBA",
-      "deadlines": {
-        "response": "2019-08-08T11:20:20-05:00"
-      }
-    },
-    "archive": {
-      "type": "autocustom",
-      "date": "2019-09-09"
-    },
-    "additionalReporting": [
-      "none"
     ]
-  },
-  "description": [
-    {
-      "body": "Description_updated"
-    }
-  ]
 }
 </pre></code>
 </p>
@@ -2962,11 +2952,11 @@ Examples
                         "name": ""
                     }
                 }
+            },
+            "justificationAuthority": {
+                "modificationNumber": "",
+                "authority": "dictionary"
             }
-        },
-        "justificationAuthority": {
-            "modificationNumber": "",
-            "authority": "dictionary"
         },
         "additionalReporting": [
             "none"
@@ -3058,9 +3048,9 @@ award.awardee.location.<br/>country | JSON | NA| NA | NA | NA |Awardee Country d
 award.awardee.location.<br/>country.code | string | | | No | Yes | Awardee Country code
 award.awardee.location.<br/>country.name | string | | | No | No | Awardee Country Name
 award.awardee.location.<br/>zip | string | | | No | No | Awardee Country Zip code
-justificationAuthority | JSON |NA |NA | NA | NA | Only for type = j (Justification)
-justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number
-justificationAuthority.<br/>authority | string|  |  | No | Yes | Justification Authority
+award.justificationAuthority | JSON |NA |NA | NA | NA | Only for type = j (Justification)
+award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number
+award.justificationAuthority.<br/>authority | string|  |  | No | Yes | Justification Authority
 additionalReporting | string | |None, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
 description | JSON | NA | NA | NA | NA |
 description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice
@@ -3192,11 +3182,11 @@ reason | string |  | No | Publish reason
                         "name": ""
                     }
                 }
+            },
+            "justificationAuthority": {
+                "modificationNumber": "",
+                "authority": "dictionary"
             }
-        },
-        "justificationAuthority": {
-            "modificationNumber": "",
-            "authority": "dictionary"
         },
         "additionalReporting": [
             "none"
@@ -3302,9 +3292,9 @@ award.awardee.location.<br/>country | JSON | NA| NA | NA |Awardee Country detail
 award.awardee.location.<br/>country.code | string | | | Yes | Awardee Country code
 award.awardee.location.<br/>country.name | string | | |  No | Awardee Country Name
 award.awardee.location.<br/>zip | string | | | No | Awardee Country Zip code
-justificationAuthority | JSON |NA |NA | NA | Only for type = j (Justification)
-justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | Justification Authority Modification Number
-justificationAuthority.<br/>authority | string|  |  | Yes | Justification Authority
+award.justificationAuthority | JSON |NA |NA | NA | Only for type = j (Justification)
+award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | Justification Authority Modification Number
+award.justificationAuthority.<br/>authority | string|  |  | Yes | Justification Authority
 additionalReporting | string | |none, <br/>auto_recovery | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
 description | JSON | NA | NA | NA |
 description.body | string | 65535 characters| | Yes; No for type = a (Award) | Description of the notice
