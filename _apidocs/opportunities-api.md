@@ -2981,77 +2981,78 @@ Examples
 
 Name | Data Type |Field Length | Allowed Values | Required (Create/Update) | Required (Publish) | Description
 -----|-----------|-------|-------------------|------------|------------ |----------
-type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | Notice Type
-solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes (No for type = s  (Special Notice)) | Solicitation Number
-title | string | 256 characters | |Yes | Yes | Title of the Opportunity
-organizationId | string | 32 characters | | Yes | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
-classificationCode | string |  | | No | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
-naics | JSON Array | NA |NA | NA | NA |
-naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
-naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case
-pointOfContact | JSON Array | NA |NA | NA | NA |
-pointOfContact.type | string | | primary<br/> secondary | No | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
-pointOfContact.title | string | |  | No | No | Contact title
-pointOfContact.fullname | string | 500 characters| | No | Yes (No for type = a (Award))| Contact Full Name
-pointOfContact.email | string |255 characters | | No  | Yes (No for type = a (Award))  | Contact email
-pointOfContact.phone | string |255 characters | | No | No | Contact Phone
-pointOfContact.fax | string | 255 characters | | No  | No | Contact Fax
-pointOfContact.additionalInfo | JSON |NA |NA | NA  | NA |  Any additional information on Point of Contact
-pointOfContact.additionalInfo.<br/>content | String | | | No  | No | Details of the additional information on Point of Contact 
-placeOfPerformance | JSON | NA | NA | NA | NA |
-placeOfPerformance.<br/>streetAddess | string | | | No | No | Pop Address
-placeOfPerformance.<br/>streetAddess2 | string | | | No | No | Pop Address2
-placeOfPerformance.city | JSON | NA | NA | NA | NA | Pop City
-placeOfPerformance.city.<br/>code | string | | | No | No | Pop City code
-placeOfPerformance.city.<br/>name | string | | | No | No | Pop City name
-placeOfPerformance.state | JSON |NA | NA | NA | NA | Pop City state
-placeOfPerformance.state.<br/>code | string | | | No | No | Pop city state code
-placeOfPerformance.state.<br/>name | string | | | No | No | Pop city state name
-placeOfPerformance.country | JSON | NA | NA | NA | NA | Pop Country
-placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country Code
-placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name
-placeOfPerformance.zip | string | | | No | No | Pop Country zip
-archive | JSON |NA | NA | NA | NA | Contract opportunity archive policy information
-archive.type | string | | auto15<br/> auto30<br/> autocustom | No | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
-archive.date | date | | | No | Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
-permissions | JSON | NA | NA | NA | NA |
-permissions.ivl | JSON | NA | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
-permissions.ivl.create | boolean | | | No | Yes (No for type = a (Award)) | IVL create permission
-permissions.ivl.read | boolean | | | No | Yes (No for type = a (Award)) | IVL read permission
-permissions.ivl.update | boolean | |  | No | No | IVL update permission
-permissions.ivl.delete | boolean | | | No | No | IVL delete permission
-solicitation | JSON |NA | NA | NA | NA |
-solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action
-solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity
-solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date
-solicitation.deadlines.<br/>responseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
-award | JSON | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types
-award.date | date | |YYYY-MM-DD |No | Yes only for type = a (Award) | Award Date
-award.number | string | 255 characters | |No | Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number
-award.deliverOrderNumber | string | 255 characters| | No | No | Award Delivery Order Number
-award.amount | number |64 digits |  | No | Yes only for type = a (Award) | Award Amount
-award.lineitemNumber | string |255 characters | | No | No | Contract Line item Number
-award.awardee | JSON | NA| NA | NA | NA |Awardee details; Only for type = a (Award)
-award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name
-award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required |(**Planned to be deprecate by October 2020**) Awardee UEI Duns
-award.awardee.ueiSAM | string | 12 characters | | No | No; **Requirements will be set at a later date** |(**Planned to replace Duns# by October 2020 and usable by December 2019**) Awardee UEI SAM
-award.awardee.location | JSON |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
-award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address 
-award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 2
-award.awardee.location.<br/>city | JSON |NA |NA |NA | NA | Awardee City details
-award.awardee.location.<br/>city.code | string | | | No | Yes | Awardee City code
-award.awardee.location.<br/>city.name | string | | | No | No | Awardee City name
-award.awardee.location.<br/>state | JSON | NA | NA | NA | NA | Awardee State details
-award.awardee.location.<br/>state.code | string | | | No | Yes | Awardee State code
-award.awardee.location.<br/>state.name | string | | | No | No | Awardee State name
-award.awardee.location.<br/>country | JSON | NA| NA | NA | NA |Awardee Country details
-award.awardee.location.<br/>country.code | string | | | No | Yes | Awardee Country code
-award.awardee.location.<br/>country.name | string | | | No | No | Awardee Country Name
-award.awardee.location.<br/>zip | string | | | No | No | Awardee Country Zip code
-award.justificationAuthority | JSON |NA |NA | NA | NA | Only for type = j (Justification)
-award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number
-award.justificationAuthority.<br/>authority | string|  |  | No | Yes | Justification Authority
-additionalReporting | string | |None, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
+data | JSON |NA | NA | NA | NA | 
+data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | Notice Type
+data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes (No for type = s  (Special Notice)) | Solicitation Number
+data.title | string | 256 characters | |Yes | Yes | Title of the Opportunity
+data.organizationId | string | 32 characters | | Yes | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
+data.classificationCode | string |  | | No | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
+data.naics | JSON Array | NA |NA | NA | NA |
+data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
+data.naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case
+data.pointOfContact | JSON Array | NA |NA | NA | NA |
+data.pointOfContact.type | string | | primary<br/> secondary | No | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
+data.pointOfContact.title | string | |  | No | No | Contact title
+data.pointOfContact.fullname | string | 500 characters| | No | Yes (No for type = a (Award))| Contact Full Name
+data.pointOfContact.email | string |255 characters | | No  | Yes (No for type = a (Award))  | Contact email
+data.pointOfContact.phone | string |255 characters | | No | No | Contact Phone
+data.pointOfContact.fax | string | 255 characters | | No  | No | Contact Fax
+data.pointOfContact.additionalInfo | JSON |NA |NA | NA  | NA |  Any additional information on Point of Contact
+data.pointOfContact.additionalInfo.<br/>content | String | | | No  | No | Details of the additional information on Point of Contact 
+data.placeOfPerformance | JSON | NA | NA | NA | NA |
+data.placeOfPerformance.<br/>streetAddess | string | | | No | No | Pop Address
+data.placeOfPerformance.<br/>streetAddess2 | string | | | No | No | Pop Address2
+data.placeOfPerformance.city | JSON | NA | NA | NA | NA | Pop City
+data.placeOfPerformance.city.<br/>code | string | | | No | No | Pop City code
+data.placeOfPerformance.city.<br/>name | string | | | No | No | Pop City name
+data.placeOfPerformance.state | JSON |NA | NA | NA | NA | Pop City state
+data.placeOfPerformance.state.<br/>code | string | | | No | No | Pop city state code
+data.placeOfPerformance.state.<br/>name | string | | | No | No | Pop city state name
+data.placeOfPerformance.country | JSON | NA | NA | NA | NA | Pop Country
+data.placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country Code
+data.placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name
+data.placeOfPerformance.zip | string | | | No | No | Pop Country zip
+data.archive | JSON |NA | NA | NA | NA | Contract opportunity archive policy information
+data.archive.type | string | | auto15<br/> auto30<br/> autocustom | No | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
+data.archive.date | date | | | No | Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
+data.permissions | JSON | NA | NA | NA | NA |
+data.permissions.ivl | JSON | NA | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
+data.permissions.ivl.create | boolean | | | No | Yes (No for type = a (Award)) | IVL create permission
+data.permissions.ivl.read | boolean | | | No | Yes (No for type = a (Award)) | IVL read permission
+data.permissions.ivl.update | boolean | |  | No | No | IVL update permission
+data.permissions.ivl.delete | boolean | | | No | No | IVL delete permission
+data.solicitation | JSON |NA | NA | NA | NA |
+data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action
+data.solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity
+data.solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date
+data.solicitation.deadlines.<br/>responseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
+data.award | JSON | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types
+data.award.date | date | |YYYY-MM-DD |No | Yes only for type = a (Award) | Award Date
+data.award.number | string | 255 characters | |No | Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number
+data.award.deliverOrderNumber | string | 255 characters| | No | No | Award Delivery Order Number
+data.award.amount | number |64 digits |  | No | Yes only for type = a (Award) | Award Amount
+data.award.lineitemNumber | string |255 characters | | No | No | Contract Line item Number
+data.award.awardee | JSON | NA| NA | NA | NA |Awardee details; Only for type = a (Award)
+data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name
+data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required |(**Planned to be deprecate by October 2020**) Awardee UEI Duns
+data.award.awardee.ueiSAM | string | 12 characters | | No | No; **Requirements will be set at a later date** |(**Planned to replace Duns# by October 2020 and usable by December 2019**) Awardee UEI SAM
+data.award.awardee.location | JSON |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
+data.award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address 
+data.award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 2
+data.award.awardee.location.<br/>city | JSON |NA |NA |NA | NA | Awardee City details
+data.award.awardee.location.<br/>city.code | string | | | No | Yes | Awardee City code
+data.award.awardee.location.<br/>city.name | string | | | No | No | Awardee City name
+data.award.awardee.location.<br/>state | JSON | NA | NA | NA | NA | Awardee State details
+data.award.awardee.location.<br/>state.code | string | | | No | Yes | Awardee State code
+data.award.awardee.location.<br/>state.name | string | | | No | No | Awardee State name
+data.award.awardee.location.<br/>country | JSON | NA| NA | NA | NA |Awardee Country details
+data.award.awardee.location.<br/>country.code | string | | | No | Yes | Awardee Country code
+data.award.awardee.location.<br/>country.name | string | | | No | No | Awardee Country Name
+data.award.awardee.location.<br/>zip | string | | | No | No | Awardee Country Zip code
+data.award.justificationAuthority | JSON |NA |NA | NA | NA | Only for type = j (Justification)
+data.award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number
+data.award.justificationAuthority.<br/>authority | string|  |  | No | Yes for type = j (Justification) | Justification Authority
+data.additionalReporting | string | |None, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
 description | JSON | NA | NA | NA | NA |
 description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice
 related | JSON | NA | NA | NA | NA | Related Notice information
@@ -3225,77 +3226,78 @@ reason | string |  | No | Publish reason
 
 Name | Data Type |Field Length | Allowed Values| Required | Description
 -----|-----------|-------|-------------------|------------|------------ 
-type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Notice Type
-solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {}| Yes (No for type = s  (Special Notice)) | Solicitation Number
-title | string | 256 characters | | Yes | Title of the Opportunity
-organizationId | string | 32 characters | | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
-classificationCode | string |  | | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
-naics | JSON Array | NA |NA | NA |
-naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
-naics.type | string | |primary|Yes | NAICS Type Note: 'p' must be in lower case
-pointOfContact | JSON Array | NA |NA | NA |
-pointOfContact.type | string | | primary<br/> secondary | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
-pointOfContact.title | string | |  | No | Contact title
-pointOfContact.fullname | string | 500 characters| | Yes (No for type = a (Award))| Contact Full Name
-pointOfContact.email | string |255 characters | | Yes (No for type = a (Award))  | Contact email
-pointOfContact.phone | string |255 characters | | No | Contact Phone
-pointOfContact.fax | string | 255 characters | | No | Contact Fax
-pointOfContact.additionalInfo | JSON |NA |NA | NA |  Any additional information on Point of Contact
-pointOfContact.additionalInfo.<br/>content | String | | | No | Details of the additional information on Point of Contact 
-placeOfPerformance | JSON | NA | NA | NA |
-placeOfPerformance.<br/>streetAddess | string | | |No | Pop Address
-placeOfPerformance.<br/>streetAddess2 | string | | | No | Pop Address2
-placeOfPerformance.city | JSON | NA | NA |NA | Pop City
-placeOfPerformance.city.<br/>code | string | | |No | Pop City code
-placeOfPerformance.city.<br/>name | string | | |No | Pop City name
-placeOfPerformance.state | JSON |NA | NA |NA | Pop City state
-placeOfPerformance.state.<br/>code | string | | | No | Pop city state code
-placeOfPerformance.state.<br/>name | string | | | No | Pop city state name
-placeOfPerformance.country | JSON | NA | NA | NA | Pop Country
-placeOfPerformance.<br/>country.code | string | | |No | Pop Country Code
-placeOfPerformance.<br/>country.name | string | | |No | Pop Country name
-placeOfPerformance.zip | string | | |No | Pop Country zip
-archive | JSON |NA | NA | NA | Contract opportunity archive policy information
-archive.type | string | | auto15<br/> auto30<br/> autocustom | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
-archive.date | date | | |Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
-permissions | JSON | NA | NA | NA 
-permissions.ivl | JSON | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
-permissions.ivl.create | boolean | | | Yes (No for type = a (Award)) | IVL create permission
-permissions.ivl.read | boolean | | |Yes (No for type = a (Award)) | IVL read permission
-permissions.ivl.update | boolean | |  | No | IVL update permission
-permissions.ivl.delete | boolean | | |No | IVL delete permission
-solicitation | JSON |NA | NA | NA 
-solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action
-solicitation.deadlines | JSON | NA | NA | NA |Response deadline date for Contract opportunity
-solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date
-solicitation.deadlines.<br/>responseTz |string | | |No | Time Zone for <br/>Solicitation Deadline Date
-award | JSON | NA | NA | NA| This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types
-award.date | date | |YYYY-MM-DD | Yes only for type = a (Award) | Award Date
-award.number | string | 255 characters | |Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number
-award.deliverOrderNumber | string | 255 characters| | No | Award Delivery Order Number
-award.amount | number |64 digits |  | Yes only for type = a (Award) | Award Amount
-award.lineitemNumber | string |255 characters | | No | Contract Line item Number
-award.awardee | JSON | NA| NA | NA |Awardee details; Only for type = a (Award)
-award.awardee.name | string | 1000 characters | | No; Either awardee.name or awardee.duns is required | Awardee Name
-award.awardee.duns | string | 9 digits | | No; Either awardee.name or awardee.duns is required | (**Planned to be deprecate by October 2020**) Awardee Duns
-award.awardee.ueiSAM | string | 12 characters | | No; **Requirements will be set at a later date** | (**Planned to replace Duns# by October 2020 and usable by December 2019**) Awardee UEI SAM
-award.awardee.location | JSON |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
-award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address 
-award.awardee.location.<br/>streetAddress2 | string | | | No | Awardee Street Address 2
-award.awardee.location.<br/>city | JSON |NA |NA |NA | Awardee City details
-award.awardee.location.<br/>city.code | string | | | Yes | Awardee City code
-award.awardee.location.<br/>city.name | string | | | No | Awardee City name
-award.awardee.location.<br/>state | JSON | NA | NA | NA | Awardee State details
-award.awardee.location.<br/>state.code | string | | | Yes | Awardee State code
-award.awardee.location.<br/>state.name | string | | | No | Awardee State name
-award.awardee.location.<br/>country | JSON | NA| NA | NA |Awardee Country details
-award.awardee.location.<br/>country.code | string | | | Yes | Awardee Country code
-award.awardee.location.<br/>country.name | string | | |  No | Awardee Country Name
-award.awardee.location.<br/>zip | string | | | No | Awardee Country Zip code
-award.justificationAuthority | JSON |NA |NA | NA | Only for type = j (Justification)
-award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | Justification Authority Modification Number
-award.justificationAuthority.<br/>authority | string|  |  | Yes | Justification Authority
-additionalReporting | string | |none, <br/>auto_recovery | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
+data | JSON |NA | NA | NA | 
+data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Notice Type
+data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {}| Yes (No for type = s  (Special Notice)) | Solicitation Number
+data.title | string | 256 characters | | Yes | Title of the Opportunity
+data.organizationId | string | 32 characters | | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
+data.classificationCode | string |  | | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
+data.naics | JSON Array | NA |NA | NA |
+data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
+data.naics.type | string | |primary|Yes | NAICS Type Note: 'p' must be in lower case
+data.pointOfContact | JSON Array | NA |NA | NA |
+data.pointOfContact.type | string | | primary<br/> secondary | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
+data.pointOfContact.title | string | |  | No | Contact title
+data.pointOfContact.fullname | string | 500 characters| | Yes (No for type = a (Award))| Contact Full Name
+data.pointOfContact.email | string |255 characters | | Yes (No for type = a (Award))  | Contact email
+data.pointOfContact.phone | string |255 characters | | No | Contact Phone
+data.pointOfContact.fax | string | 255 characters | | No | Contact Fax
+data.pointOfContact.additionalInfo | JSON |NA |NA | NA |  Any additional information on Point of Contact
+data.pointOfContact.additionalInfo.<br/>content | String | | | No | Details of the additional information on Point of Contact 
+data.placeOfPerformance | JSON | NA | NA | NA |
+data.placeOfPerformance.<br/>streetAddess | string | | |No | Pop Address
+data.placeOfPerformance.<br/>streetAddess2 | string | | | No | Pop Address2
+data.placeOfPerformance.city | JSON | NA | NA |NA | Pop City
+data.placeOfPerformance.city.<br/>code | string | | |No | Pop City code
+data.placeOfPerformance.city.<br/>name | string | | |No | Pop City name
+data.placeOfPerformance.state | JSON |NA | NA |NA | Pop City state
+data.placeOfPerformance.state.<br/>code | string | | | No | Pop city state code
+data.placeOfPerformance.state.<br/>name | string | | | No | Pop city state name
+data.placeOfPerformance.country | JSON | NA | NA | NA | Pop Country
+data.laceOfPerformance.<br/>country.code | string | | |No | Pop Country Code
+data.placeOfPerformance.<br/>country.name | string | | |No | Pop Country name
+data.placeOfPerformance.zip | string | | |No | Pop Country zip
+data.archive | JSON |NA | NA | NA | Contract opportunity archive policy information
+data.archive.type | string | | auto15<br/> auto30<br/> autocustom | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
+data.archive.date | date | | |Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
+data.permissions | JSON | NA | NA | NA 
+data.permissions.ivl | JSON | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
+data.permissions.ivl.create | boolean | | | Yes (No for type = a (Award)) | IVL create permission
+data.permissions.ivl.read | boolean | | |Yes (No for type = a (Award)) | IVL read permission
+data.permissions.ivl.update | boolean | |  | No | IVL update permission
+data.permissions.ivl.delete | boolean | | |No | IVL delete permission
+data.solicitation | JSON |NA | NA | NA 
+data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action
+data.solicitation.deadlines | JSON | NA | NA | NA |Response deadline date for Contract opportunity
+data.solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date
+data.solicitation.deadlines.<br/>responseTz |string | | |No | Time Zone for <br/>Solicitation Deadline Date
+data.award | JSON | NA | NA | NA| This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types
+data.award.date | date | |YYYY-MM-DD | Yes only for type = a (Award) | Award Date
+data.award.number | string | 255 characters | |Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number
+data.award.deliverOrderNumber | string | 255 characters| | No | Award Delivery Order Number
+data.award.amount | number |64 digits |  | Yes only for type = a (Award) | Award Amount
+data.award.lineitemNumber | string |255 characters | | No | Contract Line item Number
+data.award.awardee | JSON | NA| NA | NA |Awardee details; Only for type = a (Award)
+data.award.awardee.name | string | 1000 characters | | No; Either awardee.name or awardee.duns is required | Awardee Name
+data.award.awardee.duns | string | 9 digits | | No; Either awardee.name or awardee.duns is required | (**Planned to be deprecate by October 2020**) Awardee Duns
+data.award.awardee.ueiSAM | string | 12 characters | | No; **Requirements will be set at a later date** | (**Planned to replace Duns# by October 2020 and usable by December 2019**) Awardee UEI SAM
+data.award.awardee.location | JSON |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
+data.award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address 
+data.award.awardee.location.<br/>streetAddress2 | string | | | No | Awardee Street Address 2
+data.award.awardee.location.<br/>city | JSON |NA |NA |NA | Awardee City details
+data.award.awardee.location.<br/>city.code | string | | | Yes | Awardee City code
+data.award.awardee.location.<br/>city.name | string | | | No | Awardee City name
+data.award.awardee.location.<br/>state | JSON | NA | NA | NA | Awardee State details
+data.award.awardee.location.<br/>state.code | string | | | Yes | Awardee State code
+data.award.awardee.location.<br/>state.name | string | | | No | Awardee State name
+data.award.awardee.location.<br/>country | JSON | NA| NA | NA |Awardee Country details
+data.award.awardee.location.<br/>country.code | string | | | Yes | Awardee Country code
+data.award.awardee.location.<br/>country.name | string | | |  No | Awardee Country Name
+data.award.awardee.location.<br/>zip | string | | | No | Awardee Country Zip code
+data.award.justificationAuthority | JSON |NA |NA | NA | Only for type = j (Justification)
+data.award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | Justification Authority Modification Number
+data.award.justificationAuthority.<br/>authority | string|  |  | Yes for type = j (Justification) | Justification Authority
+data.additionalReporting | string | |none, <br/>auto_recovery | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
 description | JSON | NA | NA | NA |
 description.body | string | 65535 characters| | Yes; No for type = a (Award) | Description of the notice
 related | JSON | NA | NA | NA | Related Notice information
