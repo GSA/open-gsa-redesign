@@ -2991,7 +2991,7 @@ data.naics | JSON Array | NA |NA | NA | NA |
 data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
 data.naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case
 data.pointOfContact | JSON Array | NA |NA | NA | NA |
-data.pointOfContact.type | string | | primary<br/> secondary | No | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
+data.pointOfContact.type | string | | primary,<br/> secondary | No | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
 data.pointOfContact.title | string | |  | No | No | Contact title
 data.pointOfContact.fullname | string | 500 characters| | No | Yes (No for type = a (Award))| Contact Full Name
 data.pointOfContact.email | string |255 characters | | No  | Yes (No for type = a (Award))  | Contact email
@@ -3013,7 +3013,7 @@ data.placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country C
 data.placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name
 data.placeOfPerformance.zip | string | | | No | No | Pop Country zip
 data.archive | JSON |NA | NA | NA | NA | Contract opportunity archive policy information
-data.archive.type | string | | auto15<br/> auto30<br/> autocustom | No | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
+data.archive.type | string | | auto15,<br/> auto30,<br/> autocustom | No | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
 data.archive.date | date | | | No | Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
 data.permissions | JSON | NA | NA | NA | NA |
 data.permissions.ivl | JSON | NA | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
@@ -3236,7 +3236,7 @@ data.naics | JSON Array | NA |NA | NA |
 data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
 data.naics.type | string | |primary|Yes | NAICS Type Note: 'p' must be in lower case
 data.pointOfContact | JSON Array | NA |NA | NA |
-data.pointOfContact.type | string | | primary<br/> secondary | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
+data.pointOfContact.type | string | | primary,<br/> secondary | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
 data.pointOfContact.title | string | |  | No | Contact title
 data.pointOfContact.fullname | string | 500 characters| | Yes (No for type = a (Award))| Contact Full Name
 data.pointOfContact.email | string |255 characters | | Yes (No for type = a (Award))  | Contact email
@@ -3258,7 +3258,7 @@ data.laceOfPerformance.<br/>country.code | string | | |No | Pop Country Code
 data.placeOfPerformance.<br/>country.name | string | | |No | Pop Country name
 data.placeOfPerformance.zip | string | | |No | Pop Country zip
 data.archive | JSON |NA | NA | NA | Contract opportunity archive policy information
-data.archive.type | string | | auto15<br/> auto30<br/> autocustom | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
+data.archive.type | string | | auto15,<br/> auto30,<br/> autocustom | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
 data.archive.date | date | | |Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
 data.permissions | JSON | NA | NA | NA 
 data.permissions.ivl | JSON | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
