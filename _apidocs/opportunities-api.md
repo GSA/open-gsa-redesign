@@ -1339,7 +1339,7 @@ size | query | integer | No | Size limit is 10 by default
 solNumber | query | string | No | Solicitation Number
 sortBy | query | string | No | Sort (-createdOn, -modifiedOn)
 status| query | Array[string] | No | Active - All Published Active Notice <br> Draft - All Draft Notice <br> Published - All Published Notice <br> Inactive - All archived/Inactive Notice (before archive) <br> Cancelled - All Cancelled Notice <br/>(comma separated)
-orgStatus| query | Array | No| Organization Status
+orgStatus| query | Array | No| Organization Status: Active, Inactive, Mapped, Unmapped
 Links | query | boolean | |No | Links; Default Value = True
 
 <p><small><a href="#">Back to top</a></small></p>
