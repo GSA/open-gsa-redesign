@@ -5869,7 +5869,7 @@ Date | Version | Description
 10/25/2019 | v0.9 | Updated the field lengths
 10/31/2019| v0.91| Delete Vendor removed <br> Delete Resource in Draft API added <br> API Specifications Updated: Delete Notice, Getlist, Download Metadata for Attachment by Resource ID, and Download Metadata for Attachment by Opportunity ID <br> JSON Updated: Create and Update, Create and Publish, Revise Opportunity, Cancel Notice, Uncancel Notice, Archive, Unarchive, Create Attachment, Update Attachment, IVL Settings, and Delete Notice <br> Error Message Section Updated
 11/04/2019| v0.92 | Updated the field lengths for contact full name and awardee name fields for create Opportunity, Create and Publish Opportunity Contract Jsons. Updated the Error messages for these fields<br>Added Future Implementation for UEI SAM# Validation and Type of Connection. Task/Delivery Order number is updated to be a non required field for Justification submission
-11/11/2019| v1.0 | Initial Release Finalized
+11/12/2019| v1.0 | Initial Release Finalized
 
 
 <p><small><a href="#">Back to top</a></small></p>
