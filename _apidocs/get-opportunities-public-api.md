@@ -421,11 +421,11 @@ User clicks on the description link available in the response and description co
 
 Date | Version | Description
 ------|---------------|---------
-5/20/19 | v1.0 | Base Version
-8/6/19 | v1.1| Format Updated
-10/17/19 | v1.2| Added Set-Aside Code
-10/23/19 | v1.3| Set-Aside Values Updated
-10/24/19| v1.4| Office Address Description Updated 
-11/1/19| v1.5| - Street Address 1 & 2 removed from Response <br> - Status and Description removed from request <br> - Limit changed to "Required" <br> - Asynchronous opportunities file download feature disabled <br> - Response returns only the latest active version of a notice
+5/20/19 | v0.1 | Base Version
+8/6/19 | v0.2| Format Updated
+10/17/19 | v0.3| Added Set-Aside Code
+10/23/19 | v0.4| Set-Aside Values Updated
+10/24/19| v0.5| Office Address Description Updated 
+11/1/19| v0.6| - Street Address 1 & 2 removed from Response <br> - Status and Description removed from request <br> - Limit changed to "Required" <br> - Asynchronous opportunities file download feature disabled <br> - Response returns only the latest active version of a notice
 
 <p><small><a href="#">Back to top</a></small></p>
