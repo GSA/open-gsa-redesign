@@ -5720,7 +5720,6 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Related Opportunity ID | Related Notice's ID needs to match previous Opportunity's Related Notice ID	| Related Notice's ID  provided while revising a notice needs to match the Parent Opportunity's Related Notice ID  | Publish
 400|Response Date |	Response Date is a required field |	Response Date is not provided for Combined Synopsis and Solicitation types |	Publish
 400|Response Date |	Response Date provided is an invalid format |	Response Date provided is not in valid format |	Publish
-400|Response Date |	Response Date cannot be in the past |	Response Date provided is in the past |	Publish
 400|Response Date |	Response Date cannot exceed 5 years from current date |	Response Date exceeds 5 years from the current date |	Publish 
 400|Archive Date |	Inactive date is a required field |	Archive Date is required if Archive Type = autocustom |Publish
 400|Archive Date Response Date   |	One of Response date or Archive date is required |	Either Response date or archive date is required for presolicitation, sources sought, special notice, sale surplus  |	Publish
@@ -5807,8 +5806,6 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|UnArchive, Uncancel - Award Date |	New contract award date is not provided |	New contract award date is not provided | Unarchive, Uncancel
 400|UnArchive, Uncancel - Response Date |	New response date is required |	Unarchive requires new response date	| UnArchive
 400|UnArchive, Uncancel - Response Date |	New response date provided is in an invalid format |	Invalid date format	| UnArchive
-400|UnArchive, Uncancel - Response Date |	New response date provided is in the past   |	Response Date cannot be in the past 	| UnArchive
-400|UnArchive, Uncancel - Response Date |	New response date provided would place inactive date in the past |	New response date provided is within 15 days	| UnArchive
 400|Delete |	This opportunity cannot be deleted. This opportunity is a revision |	This opportunity cannot be deleted. This opportunity is a revision.	| Delete
 400|Delete |	Opportunity has been already deleted |	Opportunity has been already deleted	| Delete
 400|Delete |	This opportunity cannot be deleted. The delete request is missing `Delete option` field |	This opportunity cannot be deleted. The delete request is missing `Delete option` field.	| Delete
