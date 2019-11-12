@@ -47,7 +47,7 @@ deptname |	Department Name (L1)	|No|	String
 subtier|	Agency Name (L2)| 	No|	String
 state|	Place of Performance (State)|	No	|String
 zip|	Place of Performance (Zip code)|	No|	String
-typeOfSetAside|	See Set-Aside Section for List of Set-Asides    |No	|String
+typeOfSetAside|	[Refer Set-Aside Value Section](#set-aside-values)    |No	|String
 typeOfSetAsideDescription	|Set Aside code Description. See above descriptions mentioned against each of the Set Aside Code|	No|	String
 ncode|	NAICS Code. This code is maximum of 6 digits|	No|	String
 ccode|	Classification Code|	No|	String
