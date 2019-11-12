@@ -166,6 +166,7 @@ far13 | FAR 13.5 - Simplified Procedures for One Source
 
 ### Award Notice (submitAward)
 This method is used to submit an award notice.
+If there are multiple awards with same Solicitation Number and Award Number, any revisions must be done from REST Services or from User Interface
 
 Input parameters:
 
@@ -4137,8 +4138,8 @@ awdamt|	 	1. This field is required where applicable<br><br> 2. If an invalid in
 linenbr|	1.If value provided does not meet the character limit/restrictions, then service throws an error	|1. The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces
 awddate	|	1. This field is required where applicable <br><br>2. This field should meet the character limit/restrictions <br><br>  3. If the Contract Award Date is 15 days prior to the current date and the archive date is not provided then the service throws an error|	1. Contract Award Date is required field <br><br> 2. DATE field in unexpected format. Expects YYYYMMDD<br><br> 3. Contract Award Date set would result in inactive date being in the past
 stauth|	 1. This field is required where applicable <br><br> 2. This field accepts only valid values listed. If invalid values are provided, then system throws an error|	1. Authority is a required field <br><br>2. Invalid Authority Fields, please refer to Contract Opportunities SOAP Web Service Tech Document valid authority fields
-respdate|	1.	This field should meet the character limit/restrictions <br><br> 2.	This date cannot be in past; has to be in future. If the given date is in past, then system throws an error<br><br> 3. If the date provided exceeds 5 years from the current date, then the system throws an error <br><br> 4. Either respdate or archdate required for SRCSGT, PRESOL, SSALE.If none is provided, then the service throws the error 	| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. Response date provided is in the past<br><br> 3. Response Date cannot exceed 5 years from current date <br><br> 4. One of Response date or Archive date is required
-archdate|	1. This field should meet the character limit/restrictions <br><br> 2. This date cannot be current or in past; has to be in future <br><br> 3. Either respdate or archdate required for SRCSGT, PRESOL, SSALE.If none is provided, then the service throws the error |	1.	DATE field in unexpected format  Expects YYYYMMDD<br><br> 2. Archive date provided is in the past <br><br> 3. One of Response date or Archive date is required
+respdate|	1.	This field should meet the character limit/restrictions <br><br>  2. If the date provided exceeds 5 years from the current date, then the system throws an error <br><br> 3. Either respdate or archdate required for SRCSGT, PRESOL, SSALE.If none is provided, then the service throws the error 	| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. Response Date cannot exceed 5 years from current date <br><br> 3. One of Response date or Archive date is required
+archdate|	1. This field should meet the character limit/restrictions <br><br> 2. This date cannot be in the past <br><br> 3. Either respdate or archdate required for SRCSGT, PRESOL, SSALE.If none is provided, then the service throws the error |	1.	DATE field in unexpected format  Expects YYYYMMDD<br><br> 2. Archive date provided is in the past <br><br> 3. One of Response date or Archive date is required
 awardee|	 1. This field is required where applicable <br><br>2. This field should meet the character limit/restrictions|	1. Contractor Awarded Name is a required field <br><br>2. Contractor Awarded Name max character length is 1000
 contact	|	1. This field is required where applicable <br><br>2. This field should meet the character limit/restrictions	|1. Primary Contact is Required <br><br>2. Primary Contact - Name limit is 500 characters
 desc| 	1. This field is required where applicable.|	1. Description is required
@@ -4401,6 +4402,7 @@ Date | Version | Description
 10/10/2019 | v0.7 | Updated the Set-Aside values with the latest codes
 10/28/2019 | v0.8| Documentation updates only. No change to Implementation <br> - Production WSDL link added <br> - Redundant Character Limit and Required columns removed from Specific Business Rules and Error Messages section <br> - Notice Types and Related Notices sections added for reference <br>- Consolidated and summarized list of deprecated methods <br>- Far13 added to Stauth Valid Values section <br>- Updated character limits<br>- Updated required column for submitAward, archiveNotice, submitPresol, submitCombined, submitMod, submitJA, submitSourcesSought, submitSpecialNotice, submitSaleofSurplus, submitITB, submitNotice, submitdocumentsandlinkstonotice <br>- Remove foja from getnoticedata response
 11/04/2019 | v0.9| Updated the character limits for contact and awardee fields for all the submit methods. Modified "donbr" as a not required field for Justification notice submission
+11/12/2019| v1.0| Initial Release Finalized
 
 
 
