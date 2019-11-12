@@ -1339,6 +1339,8 @@ size | query | integer | No | Size limit is 10 by default
 solNumber | query | string | No | Solicitation Number
 sortBy | query | string | No | Sort (-createdOn, -modifiedOn)
 status| query | Array[string] | No | Active - All Published Active Notice <br> Draft - All Draft Notice <br> Published - All Published Notice <br> Inactive - All archived/Inactive Notice (before archive) <br> Cancelled - All Cancelled Notice <br/>(comma separated)
+orgStatus| query | Array | No| Organization Status
+Links | query | boolean | |No | Links; Default Value = True
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4466,6 +4468,24 @@ You can view the full details of this API in the OpenAPI Specification file avai
           description: status
           required: false
           type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: orgStatus
+          in: query
+          description: Organization Status
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: Links
+          in: query
+          description: Link
+          required: false
+          type: boolean
           items:
             type: string
           collectionFormat: multi
