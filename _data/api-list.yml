@@ -61,9 +61,6 @@
 - title: Go.USA.gov API
   description: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
   url: https://go.usa.gov/api
-- title: Government Jobs API (Deprecation planned)
-  description: This API returns job openings on USAJobs.gov that are open to the public and located in the United States. This API is planned to be deprecated.
-  url: https://search.gov/developer/jobs.html
 - title: GSA.gov Content API
   description: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last.
   url: https://open.gsa.gov/api/gsa-content/
