@@ -166,6 +166,7 @@ far13 | FAR 13.5 - Simplified Procedures for One Source
 
 ### Award Notice (submitAward)
 This method is used to submit an award notice.
+If there are multiple awards with same Solicitation Number and Award Number, any revisions must be done from REST Services or from User Interface
 
 Input parameters:
 
