@@ -5604,7 +5604,7 @@ post:
 <summary>Get Authorized Party</summary>
 <p>
 <code><pre>
-v1/api/opportunities/access/{opportunityId}/accessRequest:
+/v1/api/opportunities/access/{opportunityId}/accessRequest:
     get:
       tags:
         - attachments
