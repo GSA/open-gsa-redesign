@@ -1743,7 +1743,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-latest | query | boolean | No | default = true
+PostedFrom | query | string | No | Posted Date
 
 <p><small><a href="#">Back to top</a></small></p>
 
