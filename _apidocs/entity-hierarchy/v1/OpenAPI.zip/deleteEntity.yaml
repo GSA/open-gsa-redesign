@@ -1,4 +1,4 @@
-/v1//entity-hierarchy/v1/delete-entity:
+/v1/entity-hierarchy/v1/delete-entity:
     delete:
       tags:
         - Entity Hierarchy
