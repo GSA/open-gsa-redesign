@@ -49,7 +49,7 @@ e rejected with an error.
 **Summary**      | Get Company information based on duns number
 **Consumes**     | NA 
 **Produces**     | application/json
-
+]\
 Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
@@ -216,10 +216,116 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <a href="v1/OpenAPI.zip" download="OpenAPI">OpenAPI File</a>
 
 <details>
-<summary>Create Draft Opportunity</summary>
+<summary>GET Company Information</summary>
 <p>
 <code><pre>
-
+/v1/entity-hierarchy/v1/company-info:
+    get:
+      tags:
+        - Entity Hierarchy
+      summary: Get Company information based on duns number
+      description: Retrives company record.
+      operationId: duns
+      produces:
+        - application/json
+      parameters:
+        - name: duns
+          in: query
+          description: assigned entity identifier
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+<details>
+<summary>Delete Company Information</summary>
+<p>
+<code><pre>
+/v1/entity-hierarchy/v1/delete-entity:
+    delete:
+      tags:
+        - Entity Hierarchy
+      summary: soft delete record by duns, uei or reg_id
+      description: Delete company record.
+      operationId: duns, uei or reg_id
+      produces:
+        - application/json
+      parameters:
+        - name: duns
+          in: query
+          description: assigned entity identifier
+          required: true
+          type: string
+        - name: uei
+          in: query
+          description: assigned unique entity identifier
+          required: true
+          type: string
+        - name: reg_id
+          in: query
+          description: assigned entity identifier
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
 </pre></code>
 </p>
 </details>
