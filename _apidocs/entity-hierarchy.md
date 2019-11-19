@@ -72,9 +72,8 @@ HTTP Status Code | Response Type | Reason  | Description
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Soft Delete By UEI, DUNS or REGID
-
+------- | -------
 **Request Type** | DELETE                                |
-|----------------|------------------------------------|
 |**URL**         | /entity-hierarchy/v1/delete-entity
 **Summary**      | soft delete record by duns, uei or reg_id
 **Consumes**     | application/json
@@ -330,7 +329,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 </p>
 </details>
 
-### Error Messages*
+### Error Messages *
 
 #### General Error Messages
 
@@ -361,12 +360,12 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400| |	|	 |	
 400| |	 |		| 
 
-# FAQ*
+## FAQ *
 <p><small><a href="#">Back to top</a></small></p>
 ## Contact Us*
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
 
-# Change Log*
+## Change Log *
 
 Date | Version | Description
 ------|---------------|---------
