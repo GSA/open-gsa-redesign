@@ -267,6 +267,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 </pre></code>
 </p>
 </details>
+
 <details>
 <summary>Delete Company Information</summary>
 <p>
