@@ -213,7 +213,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 
-<a href="v1/OpenAPI.zip" download="OpenAPI">OpenAPI File</a>
+<a href="v1/OpenAPIEntityHierarchy" download="OpenAPI">OpenAPI File</a>
 
 <details>
 <summary>GET Company Information</summary>
@@ -330,7 +330,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 </p>
 </details>
 
-### Error Messages
+### Error Messages*
 
 #### General Error Messages
 
@@ -346,10 +346,10 @@ Error Code|Error Message | Reason/Description
 400|Error processing POST request |	Invalid JSON format provided
 400|$.data: is missing but it is required |	Request JSON is empty
 400|"$.requestType: does not have a value in the enumeration [archive_request, unarchive_request, publish_request, update_publish_request, cancel_request, uncancel_request]" ] |	Request Type must be valid for operation
-404|Please provide Opportunity id	| Invalid Opportunity ID provided
-401|Insufficient privileges to retrieve system account profile as the given organization is not part of the approved FH hierarchy	| Office ID provided is not authorized for system account
-401|Insufficient privileges to edit opportunity |	Account does not have appropriate privileges to edit opportunity
-403|This opportunity cannot be published. Auto 15 archive type is not allowed for this opportunity type |	Archive type = auto 15 archive type is not allowed for type “u” Justification and Authorization sections
+404|Please provide duns	| Invalid duns provided
+401|Insufficient privileges to retrieve entity hierarchy profile as the given organization is not part of the approved FH hierarchy	| Office ID provided is not authorized for system account
+401|Insufficient privileges to edit hierarchy  |	Account does not have appropriate privileges to edit hierarchy
+
 
 <p><small><a href="#">Back to top</a></small></p>
 #### Specific Error Messages*
