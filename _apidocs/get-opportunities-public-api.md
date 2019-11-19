@@ -5,9 +5,14 @@ banner-heading: Beta.SAM.Gov Get Opportunities Public API
 
 ## Overview
 
-Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. If pagination is requested, then the response will be provided to users synchronously else the call will be asynchronous. 
+Get Opportunities API provides all the published opportunity details based on the request parameters. This API requires pagination, and the response will be provided to users synchronously. 
 
-**API Version: v1.0**
+**This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Beta.Sam.Gov. All active notices in Beta.Sam.Gov are updated daily and all archived notices are updated on a weekly basis.**
+
+[Active Opportunities](https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2Fdatagov)
+
+[Archived Opportunities](https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2FArchived%20Data)
+
 
 ## Getting Started
 
@@ -34,22 +39,21 @@ Request Parameters that API accepts	| Description | Mandatory?| Data Type
 api_key	| Public Key of users	| Yes|	String
 ptype |	Procurement Type. Below are the available Procurement Types: <br> u= Justification (J&A) <br>p = Pre solicitation <br>a = Award Notice <br>r = Sources Sought <br>s = Special Notice <br>g = Sale of Surplus Property <br>k = Combined Synopsis/Solicitation <br>i = Intent to Bundle Requirements (DoD-Funded) <br><br> Note: Below services are now retired:<br>f = Foreign Government Standard <br>l = Fair Opportunity / Limited Sources  <br> <br>Use Justification (u) instead of fair Opportunity 	|No	|String
 solnum|	Solicitation Number|	No|	String
+noticeid| Notice ID | No | String
 title|	Title|	No	|String
-description|	Description|	No|	String
 postedFrom	| Posted date From <br>Format must be MM/dd/yyyy <br> Note: Date range between Posted Date From and To is 1 year	|Yes|	String
 postedTo|	Posted date To  Format must be MM/dd/yyyy <br> Note: Date range between Posted Date From and To is 1 year	|Yes	|String
-status	| Status of record. Must be one of Active/Inactive/Both <br> Default status: Active	|No|	String
 deptname |	Department Name (L1)	|No|	String
 subtier|	Agency Name (L2)| 	No|	String
 state|	Place of Performance (State)|	No	|String
 zip|	Place of Performance (Zip code)|	No|	String
-typeOfSetAside|	Legacy Set Aside codes & their descriptions are: <br> 1 = Partial Small Business <br>2 = Partial HBCU / MI <br>3 = Service-Disabled Veteran-Owned Small Business <br>4 = Total Women-owned Business <br>5 = HUBZone <br>6 = Total Small Disadvantage Business <br>7 = Total Small Business <br>8 = Veteran-Owned Small Business <br>9 = Total HBCU / MI <br>10 = Partial Women-owned Business <br>11 = Partial HUB-Zone <br>12 = Partial Small Disadvantage Business <br>13 = Very Small Business <br>14 = Competitive 8(a) <br>15 = Emerging Small Business <br>16 = Woman Owned Small Business <br>17 = Economically Disadvantaged Woman Owned Small Business <br>18 = Indian Economic Enterprises <br>19 = Indian Small Business Economic Enterprises <br><br> Modern Set Aside codes & their descriptions are: <br>1000001 = Total Small Business Set-Aside (FAR 19.5) <br>1000002 = Partial Small Business Set-Aside (FAR 19.5) <br>1000003 = 8(a) Set-Aside (FAR 19.8) <br>1000004 = 8(a) Sole Source (FAR 19.8) <br>1000005 = Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13) <br>1000006 = Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13) <br>1000007 = Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14) <br>1000008 = Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14) <br>1000009 = Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15) <br>1000010 = Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15) <br>1000011 = Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15) <br>1000012 = Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15) <br>1000013 = Local Area Set-Aside (FAR 26.2) <br>2000001 = Indian Economic Enterprise (IEE) Set-Aside (specific to Department of Interior) <br>2000002 = Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior) <br>2000003 = Buy Indian Set-Aside (specific to Department of Health and Human Services, Indian Health Services) <br>2000004 = Veteran-Owned Small Business Set-Aside (specific to Department of Veterans Affairs) <br>2000005 = Veteran-Owned Small Business Sole source (specific to Department of Veterans Affairs) <br><br>Note: Backend is making a transition to the modern set aside codes in phases. Hence the document lists both the setAside codes for now |No	|String
+typeOfSetAside|	[Refer Set-Aside Value Section](#set-aside-values)    |No	|String
 typeOfSetAsideDescription	|Set Aside code Description. See above descriptions mentioned against each of the Set Aside Code|	No|	String
 ncode|	NAICS Code. This code is maximum of 6 digits|	No|	String
 ccode|	Classification Code|	No|	String
 rdlfrom	|Response Deadline date. Format must be MM/dd/yyyy <br>Note: If response date From & To is provided, then the date range is 1 year|	No|	String
 rdlto	|Response Deadline date. Format must be MM/dd/yyyy <br>Note: If response date From & To is provided, then the date range is 1 year|	No|	String
-limit	|Total number of records to be retrieved per page. This field must be a number.<br>NOTE: If limit is not provided, request will be treated as an asynchronous request and users will receive an email with a download option to retrieve response|	No	|Int
+limit	|Total number of records to be retrieved per page. This field must be a number <br> Max Value = 1000|	Yes	|Int
 offset	|Indicates the page index. Default offset starts with 0 |	No|	Int
 
 ## Get Opportunities Response Parameters
@@ -81,11 +85,40 @@ award|	Award Information (If Available): <br> Award amount <br>Awardee <br> Awar
 pointofContact|	Point of Contact Information. It can have below fields if available: <br> Fax <br>Type<br> Email <br>Phone<br> Title<br> Full name	|JSON
 description|	A link to an opportunity description. <br>Note: To download the description, user should append the public API Key. If no description is available then, user is shown an error message “ Description not found”|	String
 organizationType|	Type of an organization – department/sub-tier/office|	String
-officeAddress|	Office Mailing Address|	String
-placeOfPerformance|	Place of performance information. It can have below fields if available:<br>Street Address<br>City (City code & Name)<br> State (State Code Only)<br>Country (Country Code Only)<br>Zip|	JSON
+officeAddress|	Office Address Information. It can have below fields if available: <br> City<br> State<br>Zip|	String
+placeOfPerformance|	Place of performance information. It can have below fields if available: Street<br> City<br> State<br>Zip|	JSON
 additionalInfoLink|	Any additional info link if available for the opportunity	|String
 uiLink	|Direct UI link to the opportunity. To view the opportunity on UI, user must have either a contracting officer or a Contracting Specialist role. If user hits the link without logging in, user is directed to 404 not found page |	String
 links	|Every record in a response has this links array consisting of: <br> rel: self<br>href: link to the specific opportunity itself. User should provide an API key to access the opportunity directly<br><br>Also, every response has a master links array consisting of:<br>    rel: self<br>href: link to the actual request. User should provide an API key to access the request|	Array
+
+### Set-Aside Values
+Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field. Use the Set-Aside codes to submit notices.
+
+Only one Set-Aside value is accepted in the field at this time
+
+Refer below table for valid Set-Aside values:
+
+Code | SetAside Values
+-----|-----------------
+SBA     | Total Small Business Set-Aside (FAR 19.5)
+SBP     | Partial Small Business Set-Aside (FAR 19.5)
+8A      | 8(a) Set-Aside (FAR 19.8)
+8AN     | 8(a) Sole Source (FAR 19.8)
+HZC     | Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13)
+HZS     | Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13)
+SDVOSBC | Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)
+SDVOSBS | Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14)
+WOSB    | Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15)
+WOSBSS  | Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15)
+EDWOSB  | Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15)
+EDWOSBSS | Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15)
+LAS | Local Area Set-Aside (FAR 26.2)
+IEE | Indian Economic Enterprise (IEE) Set-Aside (specific to Department of Interior)
+ISBEE | Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior)
+BICiv | Buy Indian Set-Aside (specific to Department of Health and Human Services, Indian Health Services)
+VSA | Veteran-Owned Small Business Set-Aside (specific to Department of Veterans Affairs)
+VSS | Veteran-Owned Small Business Sole source (specific to Department of Veterans Affairs)
+
 
 ## Examples
 
@@ -352,14 +385,6 @@ Note: Response for one record is provided as an example <br>
 </p>
 </details>
 
-## Synchronous vs Asynchronous call
-Since Opportunities data volume is huge, API works as follows:
-
-* If limit is provided (limit range is 0-1000), then the API will give response immediately (synchronous call) 
-<br>
-* If limit is not provided, then the API will work asynchronously and sends an email to the user with the response as a downloadable link. This downloadable link will have an expiry time. The downloadable CSV file format is: <br> 
-"Title", "Sol#", "Department/Ind.Agency", "Sub-Tier", "Office", "PostedDate", "Type",  "BaseType", "ArchiveType", "ArchiveDate", "SetASideCode", "SetASide", "ResponseDeadLine", "NaicsCode", "ClassificationCode", "PopStreetAddress", "PopCity", "PopState", "PopZip", "PopCountry", "Active", "AwardNumber", "AwardDate", "Award$", "Awardee", "PrimaryContactTitle", "PrimaryContactFullname", "PrimaryContactEmail", "PrimaryContactPhone", "PrimaryContactFax", "SecondaryContactTitle",            "SecondaryContactFullname","SecondaryContactEmail", "SecondaryContactPhone", "SecondaryContactFax","Description","OrganizationType","StreetAddress","StreetAddress2","State","City","ZipCode","CountryCode","AdditionalInfoLik", "Link"
-
 ## HTTP Response Codes
 
 200 - Success
@@ -375,13 +400,11 @@ Since Opportunities data volume is huge, API works as follows:
 
 Scenario | Error Messages
 ------| ------
-For status, user provides a value apart from Both or Active or InActive.|	Invalid Status value. Allowed values are any of Both/Active/InActive
 For limit, user provides range beyond 1000.|	Limit valid range is 0-1000. Please provide valid input.
 For limit or offset, user inputs characters/special characters.|	limit/offset must be a positive number.
 For postedFrom, postedTo, rdlfrom, rdlto user enters an invalid date format. |	Invalid Date Entered. Expected date format is MM/dd/yyyy
 User does not provide postedFrom and postedTo values.	|PostedFrom and PostedTo are mandatory
 User provides more than 1 year of date range for postedFrom and postedTo <br>OR<br>User provides more than 1 year of date range for rdlfrom and rdlto	|Date range must be 1 year(s) apart
-User provides more than 25 characters for description field. |	Description length is limited to 25 characters
 User provides invalid API Key|	An invalid api_key was supplied
 User does not provide any API key	|No api_key was supplied
 User clicks on the description link available in the response and description content is not available	|Description Not Found
@@ -398,7 +421,12 @@ User clicks on the description link available in the response and description co
 
 Date | Version | Description
 ------|---------------|---------
-5/20 | v1.0 | Base Version
-8/6 | v1.1| Format updated
+5/20/19 | v0.1 | Base Version
+8/6/19 | v0.2| Format Updated
+10/17/19 | v0.3| Added Set-Aside Code
+10/23/19 | v0.4| Set-Aside Values Updated
+10/24/19| v0.5| Office Address Description Updated 
+11/1/19| v1.0| Initial Release Finalized
+
 
 <p><small><a href="#">Back to top</a></small></p>
