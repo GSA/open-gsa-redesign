@@ -97,6 +97,14 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
 <p><small><a href="#">Back to top</a></small></p>
 
+
+## OpenAPI Specification File
+
+You can view the full details of this API in the OpenAPI Specification file available here:
+<a href="v2/openapi.yaml">Open API specification file for the Sample API</a>
+
+<p><small><a href="#">Back to top</a></small></p>
+
 ## API Description
 
 
@@ -163,21 +171,14 @@ This API has two primary endpoints:
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## OpenAPI Specification File
-
-You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="https://open.gsa.gov/api/sample-api/v1/openapi.yaml">Open API specification file for the Sample API</a>
-
-<p><small><a href="#">Back to top</a></small></p>
-
 ## HTTP Response Codes
 
 The API will return one of the following responses:
 
 | HTTP Response Code | Description |
 | ---- | ----------- |
-| 200 | Successful. Data will be returned in JSON format. |
-| 400 | Bad request. Verify the query string parmaters that were provided. |
+| 200 | Successful. Data will be returned in XML format. |
+| 400 | Bad request. Verify the query string parameters that were provided. |
 | 403 | API key is not correct or was not provided. |
 | 4XX | Additional 400-level are caused by some type of error in the information submitted. |
 
