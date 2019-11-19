@@ -42,14 +42,13 @@ e rejected with an error.
 ## API Description
 
 ### Get Company Information
-
+------- | -------
 **Request Type** | GET                                |
-|----------------|------------------------------------|
-|**URL**         | /entity-hierarchy/v1/company-info
-**Summary**      | Get Company information based on duns number
-**Consumes**     | NA 
-**Produces**     | application/json
-]\
+**URL** | /entity-hierarchy/v1/company-info
+**Summary** | Get Company information based on duns number
+**Consumes** | NA 
+**Produces** | application/json
+
 Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
@@ -362,12 +361,12 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400| |	|	 |	
 400| |	 |		| 
 
-## FAQ*
+# FAQ*
 <p><small><a href="#">Back to top</a></small></p>
 ## Contact Us*
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
 
-## Change Log*
+# Change Log*
 
 Date | Version | Description
 ------|---------------|---------
