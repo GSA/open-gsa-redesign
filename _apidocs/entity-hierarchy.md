@@ -213,7 +213,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 
-<a href="v1/OpenEntityHierarchyAPI.zip" download="OpenEntityHierarchyAPI.zip">OpenEntityHierarchyAPI File</a>
+<a href="v1/OpenEntityHierarchyAPI.zip" download="OpenEntityHierarchyAPI.zip">OpenEntity Hierarchy API File</a>
 
 <details>
 <summary>GET Company Information</summary>
