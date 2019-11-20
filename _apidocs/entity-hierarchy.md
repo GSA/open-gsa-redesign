@@ -54,7 +54,7 @@ Request Parameters
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 duns| query |  string | Yes | assigned entity identifier
-Response  JSON | Body | JSON | Yes | [Refer GET Company Information JSON](#GET-Company-Information-JSON)
+Response  JSON | Body | JSON | Yes | [Refer GET Company Information JSON](#get-company-information-json)
 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -86,7 +86,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 duns | query |  string | Yes | assigned entity identifier
 uei | query | string | Yes | assigned unique entity identifier
 regId | query | string | Yes | registration id
-Response  JSON | Body | JSON | Yes | [Refer Soft Delete JSON](#Soft-Delete-JSON)
+Response  JSON | Body | JSON | Yes | [Refer Soft Delete JSON](#soft-delete-json)
 <p><small><a href="#">Back to top</a></small></p>
 
 Responses
