@@ -52,7 +52,7 @@ deptname |	Department Name (L1)	|No|	String
 subtier|	Agency Name (L2)| 	No|	String
 state|	Place of Performance (State)|	No	|String
 zip|	Place of Performance (Zip code)|	No|	String
-typeOfSetAside|	Legacy Set Aside codes & their descriptions are: <br> 1 = Partial Small Business <br>2 = Partial HBCU / MI <br>3 = Service-Disabled Veteran-Owned Small Business <br>4 = Total Women-owned Business <br>5 = HUBZone <br>6 = Total Small Disadvantage Business <br>7 = Total Small Business <br>8 = Veteran-Owned Small Business <br>9 = Total HBCU / MI <br>10 = Partial Women-owned Business <br>11 = Partial HUB-Zone <br>12 = Partial Small Disadvantage Business <br>13 = Very Small Business <br>14 = Competitive 8(a) <br>15 = Emerging Small Business <br>16 = Woman Owned Small Business <br>17 = Economically Disadvantaged Woman Owned Small Business <br>18 = Indian Economic Enterprises <br>19 = Indian Small Business Economic Enterprises <br><br> Modern Set Aside codes & their descriptions are: <br>1000001 = Total Small Business Set-Aside (FAR 19.5) <br>1000002 = Partial Small Business Set-Aside (FAR 19.5) <br>1000003 = 8(a) Set-Aside (FAR 19.8) <br>1000004 = 8(a) Sole Source (FAR 19.8) <br>1000005 = Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13) <br>1000006 = Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13) <br>1000007 = Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14) <br>1000008 = Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14) <br>1000009 = Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15) <br>1000010 = Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15) <br>1000011 = Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15) <br>1000012 = Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15) <br>1000013 = Local Area Set-Aside (FAR 26.2) <br>2000001 = Indian Economic Enterprise (IEE) Set-Aside (specific to Department of Interior) <br>2000002 = Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior) <br>2000003 = Buy Indian Set-Aside (specific to Department of Health and Human Services, Indian Health Services) <br>2000004 = Veteran-Owned Small Business Set-Aside (specific to Department of Veterans Affairs) <br>2000005 = Veteran-Owned Small Business Sole source (specific to Department of Veterans Affairs) <br><br>Note: Backend is making a transition to the modern set aside codes in phases. Hence the document lists both the setAside codes for now |No	|String
+typeOfSetAside|	[Refer Set-Aside Value Section](#set-aside-values)    |No	|String
 typeOfSetAsideDescription	|Set Aside code Description. See above descriptions mentioned against each of the Set Aside Code|	No|	String
 ncode|	NAICS Code. This code is maximum of 6 digits|	No|	String
 ccode|	Classification Code|	No|	String
@@ -436,11 +436,11 @@ User clicks on the description link available in the response and description co
 
 Date | Version | Description
 ------|---------------|---------
-5/20/19 | v1.0 | Base Version
-8/6/19 | v1.1| Format Updated
-10/17/19 | v1.2| Added Set-Aside Code
-10/23/19 | v1.3| Set-Aside Values Updated
-10/24/19| v1.4| Office Address Description Updated
-11/1/19| v1.5| - Street Address 1 & 2 removed from Response <br> - Status and Description removed from request <br> - Limit changed to "Required" <br> - Asynchronous opportunities file download feature disabled <br> - Response returns only the latest active version of a notice
+5/20/19 | v0.1 | Base Version
+8/6/19 | v0.2| Format Updated
+10/17/19 | v0.3| Added Set-Aside Code
+10/23/19 | v0.4| Set-Aside Values Updated
+10/24/19| v0.5| Office Address Description Updated 
+11/1/19| v1.0| Initial Release Finalized
 
 <p><small><a href="#">Back to top</a></small></p>
