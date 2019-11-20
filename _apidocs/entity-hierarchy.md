@@ -205,7 +205,7 @@ HTTP Status Code | Response Type | Reason  | Description
 </p>
 </details>
 
-<p><small><a href="#">Back to top</a></small></p>
+
 
 ### OpenAPI Specification File
 
