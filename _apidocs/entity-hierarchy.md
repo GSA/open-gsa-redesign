@@ -43,7 +43,7 @@ e rejected with an error.
 
 ### Get Company Information
 ------- | -------
-**Request Type** | GET                                |
+**Request Type** | GET    
 **URL** | /entity-hierarchy/v1/company-info
 **Summary** | Get Company information based on duns number
 **Consumes** | NA 
@@ -73,7 +73,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 ### Soft Delete By UEI, DUNS or REGID
 ------- | -------
-**Request Type** | DELETE                                |
+**Request Type** | DELETE    
 |**URL**         | /entity-hierarchy/v1/delete-entity
 **Summary**      | soft delete record by duns, uei or reg_id
 **Consumes**     | application/json
@@ -87,6 +87,8 @@ duns | query |  string | Yes | assigned entity identifier
 uei | query | string | Yes | assigned unique entity identifier
 regId | query | string | Yes | registration id
 Response  JSON | Body | JSON | Yes | [Refer Soft Delete JSON](#soft-delete-json)
+
+
 <p><small><a href="#">Back to top</a></small></p>
 
 Responses
@@ -365,5 +367,5 @@ Error Code|Field | Error Message | Reason/Description | Operation
 ## Change Log *
 
 Date | Version | Description
-------|---------------|---------
+------|--------|--------
 
