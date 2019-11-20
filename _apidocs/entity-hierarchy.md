@@ -86,7 +86,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 duns | query |  string | Yes | assigned entity identifier
 uei | query | string | Yes | assigned unique entity identifier
 regId | query | string | Yes | registration id
-
+Response  JSON | Body | JSON | Yes | [Refer Soft Delete JSON](#Soft-Delete-JSON)
 <p><small><a href="#">Back to top</a></small></p>
 
 Responses
@@ -363,6 +363,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
 
 ## Change Log *
+
 Date | Version | Description
 ------|---------------|---------
 
