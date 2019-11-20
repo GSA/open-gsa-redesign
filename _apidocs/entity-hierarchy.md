@@ -41,7 +41,9 @@ e rejected with an error.
 
 ## API Description
 
-### Get Company Information
+### Get Company Information 
+
+
 ------- | -------
 **Request Type** | GET    
 **URL** | /entity-hierarchy/v1/company-info
@@ -71,10 +73,12 @@ HTTP Status Code | Response Type | Reason  | Description
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Soft Delete By UEI, DUNS or REGID
+### Soft Delete By UEI, DUNS or REGID 
+
+
 ------- | -------
 **Request Type** | DELETE    
-|**URL**         | /entity-hierarchy/v1/delete-entity
+**URL**         | /entity-hierarchy/v1/delete-entity
 **Summary**      | soft delete record by duns, uei or reg_id
 **Consumes**     | application/json
 **Produces**     | NA
@@ -199,7 +203,7 @@ HTTP Status Code | Response Type | Reason  | Description
 <p>
 <code><pre>
 {
-  "response": "string"
+  "response": "Successfully deleted the record"
 }
 </pre></code>
 </p>
@@ -348,6 +352,7 @@ Error Code|Error Message | Reason/Description
 404|Please provide duns	| Invalid duns provided
 401|Insufficient privileges to retrieve entity hierarchy profile as the given organization is not part of the approved FH hierarchy	| Office ID provided is not authorized for system account
 401|Insufficient privileges to edit hierarchy  |	Account does not have appropriate privileges to edit hierarchy
+500|                                            |Internal Server Error
 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -357,10 +362,15 @@ Error codes may change depending on the error given; document will be updated ac
 
 Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
-
+400|DUNS | Unique Entity Identifier (duns) is invalid. |	(**Planned to be deprecate by October 2020**) Invalid UEI DUNS provided |	Get
+400|DUNS | Unique Entity Identifier (duns) is invalid. | Delete
+400|UEI | Unique Entity Identifier (ueiDuns) is invalid. | Delete
+400|REGID | Registration ID (REgId) is invalid. | Delete
 
 ## FAQ *
+
 <p><small><a href="#">Back to top</a></small></p>
+
 ## Contact Us *
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
 
@@ -368,4 +378,4 @@ Error Code|Field | Error Message | Reason/Description | Operation
 
 Date | Version | Description
 ------|--------|--------
-
+11/20/2019 | v0.1 | Base Version
