@@ -55,7 +55,7 @@ To submit any opportunity notice type (except “Special Notice”) for an offic
 Operation    | Administrator <br/>(Contract Opportunities domain)| Contracting Officer | Contracting Specialist
 -------------|---------------|---------------------|------------------------------
 Create Draft Opportunity | Yes | Yes | Yes
-Create and Publish | Yes | Yes | No
+Create and Publish Opportunity | Yes | Yes | No
 Publish Draft Opportunity | Yes | Yes | No
 Revise Published Opportunity | Yes | Yes | Yes
 Update Draft Opportunity | Yes | Yes | Yes
@@ -73,7 +73,7 @@ Update Resource in Draft Opportunity| Yes | Yes | Yes
 Delete Resource in Draft Opportunity| Yes | Yes | Yes
 Download Attachment as Original File Type | Yes | Yes | Yes
 Download All Attachments as Zip for an Opportunity | Yes | Yes | Yes
-Download Metadata for an Attachment by Resource ID|	Yes|	Yes|	Yes
+Download Metadata for All Attachments by Resource ID|	Yes|	Yes|	Yes
 Download Metadata for All Attachments by Oppoprtunity ID	|Yes	|Yes	|Yes
 Get Attachment | Yes | Yes | Yes
 Get IVL | Yes | Yes | Yes
@@ -418,33 +418,34 @@ Examples
 <code><pre>
 
 {
-    "data":
-    {
+    "data": {
         "type": "o",
         "solicitationNumber": "test-12345678901",
         "title": "Test submit solicitation",
         "organizationId": "100186612",
         "classificationCode": "1260",
         "naics": [
-        {
-            "type": "primary",
-            "code": ["111150"]
-        }],
-        "pointOfContact": [
-        {
-            "type": "primary",
-            "title": "",
-            "fullName": "test contact",
-            "email": "test@test.com",
-            "phone": "",
-            "fax": "",
-            "additionalInfo":
             {
-                "content": "Primary contact info"
+                "type": "primary",
+                "code": [
+                    "111150"
+                ]
             }
-        }],
-        "placeOfPerformance":
-        {
+        ],
+        "pointOfContact": [
+            {
+                "type": "primary",
+                "title": "",
+                "fullName": "test contact",
+                "email": "test@test.com",
+                "phone": "",
+                "fax": "",
+                "additionalInfo": {
+                    "content": "Primary contact info"
+                }
+            }
+        ],
+        "placeOfPerformance": {
             "streetAddress": "1234 XYZ street",
             "streetAddress2": "",
             "city": {
@@ -457,85 +458,74 @@ Examples
             },
             "country": {
                 "code": "USA",
-                "name":"USA"
-            }
-,
+                "name": "USA"
+            },
             "zip": ""
         },
-        "archive":
-        {
+        "archive": {
             "type": "autocustom",
             "date": "2022-09-09"
         },
-        "permissions":
-        {
-            "IVL":
-            {
+        "permissions": {
+            "IVL": {
                 "create": false,
                 "delete": false,
                 "read": false,
                 "update": false
             }
         },
-        "solicitation":
-        {
+        "solicitation": {
             "setAside": "SBA",
-            "deadlines":
-            {
+            "deadlines": {
                 "response": "2022-08-08"
             }
         },
-        "award":
-        {
+        "award": {
             "date": "",
             "number": "",
             "deliveryOrderNumber": "",
             "amount": "",
             "lineItemNumber": "",
-            "awardee":
-            {
+            "awardee": {
                 "manual": false,
                 "name": "",
                 "duns": "",
-                "location":
-                {
+                "location": {
                     "streetAddress": "",
                     "streetAddress2": "",
-                    "city":
-                    {
+                    "city": {
                         "code": "",
                         "name": ""
                     },
-                    "state":
-                    {
+                    "state": {
                         "code": "",
                         "name": ""
                     },
                     "zip": "",
-                    "country":
-                    {
+                    "country": {
                         "code": "",
                         "name": ""
                     }
                 }
-            }
             },
-            "justificationAuthority":
-            {
+            "justificationAuthority": {
                 "modificationNumber": "",
                 "authority": "dictionary"
-            },
-            "additionalReporting": ["none"]
+            }
         },
-        "description": [
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
         {
             "body": "test description"
-        }],
-        "related":
-        {
-            "opportunityId": "bc14e9f810a44e468c31fd120dd41b4f"
         }
+    ],
+    "related": {
+        "opportunityId": "bc14e9f810a44e468c31fd120dd41b4f"
     }
+}
 </pre></code>
 </p>
 </details>
@@ -574,7 +564,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Publish Opportunity Request:</summary>
+<summary>Publish Opportunity Request</summary>
 <p>
 <code><pre>
 {
@@ -616,7 +606,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice:</summary>
+<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice</summary>
 <p>
 <code><pre>
 {
@@ -709,11 +699,11 @@ Examples
                         "name": ""
                     }
                 }
+            },
+            "justificationAuthority": {
+                "modificationNumber": "",
+                "authority": "dictionary"
             }
-        },
-        "justificationAuthority": {
-            "modificationNumber": "",
-            "authority": "dictionary"
         },
         "additionalReporting": [
             "none"
@@ -779,7 +769,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Revise Opportunity Request:</summary>
+<summary>Revise Opportunity Request</summary>
 <p>
 <code><pre>
 {
@@ -826,109 +816,109 @@ Examples
 <p>
 <code><pre>
 {
-  "data": {
-    "solicitationNumber": "ITB_Test1_Update",
-    "title": "TST_T1_update",
-    "type": "i",
-    "classificationCode": "13",
-    "organizationId": "100120624",
-    "naics": [
-      {
-        "type": "primary",
-        "code": [
-          "111150"
-        ]
-      }
-    ],
-    "pointOfContact": [
-      {
-        "additionalInfo": {
-          "content": ""
+    "data": {
+        "solicitationNumber": "ITB_Test1_Update",
+        "title": "TST_T1_update",
+        "type": "i",
+        "classificationCode": "13",
+        "organizationId": "100186612",
+        "naics": [
+            {
+                "type": "primary",
+                "code": [
+                    "111150"
+                ]
+            }
+        ],
+        "pointOfContact": [
+            {
+                "additionalInfo": {
+                    "content": ""
+                },
+                "email": "",
+                "fax": "",
+                "fullName": "GSA",
+                "phone": "",
+                "title": "",
+                "type": "primary"
+            }
+        ],
+        "placeOfPerformance": {
+            "city": {
+                "code": "",
+                "name": ""
+            },
+            "country": {
+                "code": "",
+                "name": ""
+            },
+            "state": {
+                "code": "",
+                "name": ""
+            },
+            "streetAddress": "",
+            "streetAddress2": "",
+            "zip": ""
         },
-        "email": "",
-        "fax": "",
-        "fullName": "GSA",
-        "phone": "",
-        "title": "",
-        "type": "primary"
-      }
-    ],
-    "placeOfPerformance": {
-      "city": {
-        "code": "",
-        "name": ""
-      },
-      "country": {
-        "code": "",
-        "name": ""
-      },
-      "state": {
-        "code": "",
-        "name": ""
-      },
-      "streetAddress": "",
-      "streetAddress2": "",
-      "zip": ""
+        "award": {
+            "date": "2019-08-08T11:20:20-05:00",
+            "number": "12345",
+            "deliveryOrderNumber": "",
+            "amount": "number",
+            "lineItemNumber": "",
+            "awardee": {
+                "name": "",
+                "duns": "",
+                "location": {
+                    "streetAddress": "",
+                    "streetAddress2": "",
+                    "city": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "state": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "zip": "",
+                    "country": {
+                        "code": "",
+                        "name": ""
+                    }
+                }
+            },
+            "justificationAuthority": {
+                "modificationNumber": "",
+                "authority": "dictionary"
+            }
+        },
+        "permissions": {
+            "IVL": {
+                "create": true,
+                "delete": true,
+                "read": true,
+                "update": true
+            }
+        },
+        "solicitation": {
+            "setAside": "SBA",
+            "deadlines": {
+                "response": "2019-08-08T11:20:20-05:00"
+            }
+        },
+        "archive": {
+            "type": "autocustom",
+            "date": "2019-09-09"
+        },
+        "additionalReporting": [
+            "none"
+        ]
     },
-    "award": {
-      "date": "2019-08-08T11:20:20-05:00",
-      "number": "12345",
-      "deliveryOrderNumber": "",
-      "amount": "number",
-      "lineItemNumber": "",
-      "awardee": {
-        "name": "",
-        "duns": "",
-        "location": {
-          "streetAddress": "",
-          "streetAddress2": "",
-          "city": {
-            "code": "",
-            "name": ""
-          },
-          "state": {
-            "code": "",
-            "name": ""
-          },
-          "zip": "",
-          "country": {
-            "code": "",
-            "name": ""
-          }
+    "description": [
+        {
+            "body": "Description_updated"
         }
-      }
-      },
-      "justificationAuthority": {
-        "modificationNumber": "",
-        "authority": "dictionary"
-      },
-    "permissions": {
-      "IVL": {
-        "create": true,
-        "delete": true,
-        "read": true,
-        "update": true
-      }
-    },
-    "solicitation": {
-      "setAside": "SBA",
-      "deadlines": {
-        "response": "2019-08-08T11:20:20-05:00"
-      }
-    },
-    "archive": {
-      "type": "autocustom",
-      "date": "2019-09-09"
-    },
-    "additionalReporting": [
-      "none"
     ]
-  },
-  "description": [
-    {
-      "body": "Description_updated"
-    }
-  ]
 }
 </pre></code>
 </p>
@@ -1109,30 +1099,30 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | History of Opportunity | JSON (see below)
 
-Response Element | Response Type | Reason  | Description
------------------|---------------|---------|------------
-history | JSON |  |
-history.parentOpportunityId | string |  | Parent Opportunity ID
-history.cancel_notice | boolean |  | Identify if the Opportunity is cancelled or not
-history.procurement_type | string |  | Notice Type
-history.archive_notice | boolean |  | Identify if the Opportunity is archived or not
-history.request.type | string |  | Type of request on Opportunity such as 'submit', 'cancel_request', 'archive_request' etc.
-history.action_type | string |  | Type of action performed on Opportunity request such as 'publish', 'cancel','archive' etc.
-history.action_date | date |  | Date and time of the action type <br/>Example: 2019-02-01T17:12:00-5:00
-history.title | string |  | Opportunity title
-history.index | string |  | Version number of revision
-history.relatedOpportunityId | string |  | Related Opportunity ID
-history.opportunityId | string |  | Opportunity ID (System generated)
-history.deleted | string |  | Identify if the Opportunity is deleted or not
-history.solicitation_number | string |  | Solicitation Number of a Notice (Opportunity ID in UI)
-history.revision_reason | string |  | Reason for revision
-history.posted_date | string |  | Posted date and time <br/>Example: 2019-01-04T14:00:00
-history.latest |  |  | Service will return all the Opportunities but with latest=1
+Response Element | Response Type |  Description
+-----------------|---------------|------------
+history | JSON |  
+history.parentOpportunityId | string |  Parent Opportunity ID
+history.cancel_notice | boolean |  Identify if the Opportunity is cancelled or not
+history.procurement_type | string |  Notice Type
+history.archive_notice | boolean | Identify if the Opportunity is archived or not
+history.request.type | string |  Type of request on Opportunity such as 'submit', 'cancel_request', 'archive_request' etc.
+history.action_type | string |  Type of action performed on Opportunity request such as 'publish', 'cancel','archive' etc.
+history.action_date | date | Date and time of the action type <br/>Example: 2019-02-01T17:12:00-5:00
+history.title | string |  Opportunity title
+history.index | string | Version number of revision
+history.relatedOpportunityId | string | Related Opportunity ID
+history.opportunityId | string |  Opportunity ID (System generated)
+history.deleted | string |  Identify if the Opportunity is deleted or not
+history.solicitation_number | string | Solicitation Number of a Notice (Opportunity ID in UI)
+history.revision_reason | string | Reason for revision
+history.posted_date | string |  Posted date and time <br/>Example: 2019-01-04T14:00:00
+history.latest |  | Service will return all the Opportunities but with latest=1
 
 Examples
 
 <details>
-<summary>History Response:</summary>
+<summary>History Response</summary>
 <p>
 <code><pre>
 {
@@ -1264,7 +1254,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Examples
 
-_NA_
+N/A
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1296,7 +1286,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Delete latest version of a notice:</summary>
+<summary>Delete latest version of a notice</summary>
 <p>
 <code><pre>
 {
@@ -1349,6 +1339,8 @@ size | query | integer | No | Size limit is 10 by default
 solNumber | query | string | No | Solicitation Number
 sortBy | query | string | No | Sort (-createdOn, -modifiedOn)
 status| query | Array[string] | No | Active - All Published Active Notice <br> Draft - All Draft Notice <br> Published - All Published Notice <br> Inactive - All archived/Inactive Notice (before archive) <br> Cancelled - All Cancelled Notice <br/>(comma separated)
+orgStatus| query | Array | No| Organization Status: Active, Inactive, Mapped, Unmapped
+Links | query | boolean | |No | Links; Default Value = True
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1358,122 +1350,122 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | List of Opportunities | JSON (see below)
 
-Response Element | Response Type | Reason  | Description
------------------|---------------|---------|------------
-data | JSON |  | All the Opportunities are listed out in the response
-opportunityId | string |  | Opportunity ID
-data.type | string |  | See Notices Types table
-data.solicitationNumber | string |  | Solicitation Number
-data.title | string |  | Title of the Opportunity
-data.organizationId | string |  | FH Org Id/AAC code of the office where an Opportunity is being submitted
-data.classificationCode | string |  | Product Service Code (PSC)
-data.naics | JSON |  |
-data.naics.code | string |  | NAICS Code
-data.naics.type | string |  | NAICS type
-data.flags | JSON |  |
-data.flags.code | string |  |
-data.flags.isSelected | boolean |  |
-data.pointOfContact | JSON |  |
-data.pointOfContact.type | string |  | Contact Type
-data.pointOfContact.title | string |  | Contact title
-data.pointOfContact.fullname | string |  | Contact Full Name
-data.pointOfContact.email | string |  | Contact email
-data.pointOfContact.phone | string |  | Contact Phone
-data.pointOfContact.fax | string |  | Contact Fax
-data.placeOfPerformance | JSON |  |
-data.placeOfPerformance.streetAddress | string |  | Pop Address
-data.placeOfPerformance.streetAddress2 | string |  | Pop Address2
-data.placeOfPerformance.city | JSON |  | Pop City
-data.placeOfPerformance.city.code | string |  | Pop City code
-data.placeOfPerformance.city.name | string |  | Pop City name
-data.placeOfPerformance.city.state | JSON |  | Pop City state
-data.placeOfPerformance.state.code | string |  | Pop city state code
-data.placeOfPerformance.state.name | string |  | Pop city state name
-data.placeOfPerformance.country | JSON |  | Pop Country
-data.placeOfPerformance.country.code | string |  | Pop Country Code
-data.placeOfPerformance.country.name | string |  | Pop Country name
-data.placeOfPerformance.zip | string |  | Pop Country zip
-data.archive | JSON |  |
-data.archive.type | string |  | Archive Type: auto15, auto30, autocustom
-data.archive.date | date and time |  | Archive Date
-data.permissions | JSON |  |
-data.permissions.ivl | JSON |  |
-data.permissions.ivl.create | boolean |  | permissions.ivl.create
-data.permissions.ivl.read | boolean |  | permissions.ivl.read
-data.permissions.ivl.update | boolean |  | permissions.ivl.update
-data.permissions.ivl.delete | boolean |  | permissions.ivl.delete
-data.solicitation | JSON |  |
-data.solicitation.setAside | string |  | See Set-Aside values table
-data.solicitation.deadlines | JSON |  |
-data.solicitation.deadlines.response | date and time |  | Solicitation Deadline Date
-data.solicitation.deadlines.responseTz | string |  | Solicitation Deadlines Response Time Zone
-data.award | JSON |  |
-data.award.date | date and time |  | Award Date
-data.award.number | string |  | Award Number
-data.award.deliveryOrderNumber | string |  | Award Deliver Order Number
-data.award.amount | Number |  | Award Amount
-data.award.lineitemNumber | string |  | Award Line Item Number
-data.award.awardee | JSON |  |
-data.award.awardee.name | string |  | Awardee Name
-data.award.awardee.duns | string |  | Awardee Duns
-data.award.awardee.location | JSON |  | Awardee Location
-data.award.awardee.location.streetAddress | string |  | Awardee Street Address 1
-data.award.awardee.location.streetAddress2 | string |  | Awardee Street Address 1
-data.award.awardee.location.city | string |  | Awardee City
-data.award.awardee.location.city.code | string |  | Awardee City Code
-data.award.awardee.location.city.name | string |  | Awardee City Name
-data.award.awardee.location.state | JSON |  | Awardee State
-data.award.awardee.location.state.code | string |  | Awardee State Code
-data.award.awardee.location.state.name | string |  | Awardee State Name
-data.award.awardee.location.country | JSON |  | Awardee Country
-data.award.awardee.location.country.code | string |  | Awardee Country Code
-data.award.awardee.location.country.name | string |  | Awardee Country Name
-data.award.awardee.location.zip | string |  | Awardee Zip
-data.award.justificationAuthority | JSON |  |
-data.award.justificationAuthority.modificationNumber | string |  | justificationAuthority modification number
-data.award.justificationAuthority.authority | string |  | justificationAuthority authority
-data.link | JSON |   |  
-data.link.additionalInfo | JSON |   |  
-data.link.additionalInfo.content | string |   | Additional Info
-data.link.href | string |   | Website Address
-data.additionalReporting | string |   |  recovery_act or none
-description | JSON |   |  
-additionalInfo.sections JSON | JSON |   |
-additionalInfo.sections.opportunityId | string |  |
-additionalInfo.sections.status | string |  |
-parent  | JSON |  |
-parent.opportunityId | string |  | Parent Opportunity ID
-related  | JSON |  |
-related.opportunityId | string |  | Related Opportunity ID
-status  | JSON |  |
-status.code | string |  | 1.status= active (published, unarchive and uncancelled records) <br />2.status=inactive (published, archive and uncancelled records)<br />3.status=draft (draft records)<br />4.status=published (published and unarchive)<br />5.status=active_cancelled(published, unarchive and cancelled records)<br />6.status=inactive_cancelled(published, archive and cancelled records)<br />7.status=archived(published and archived)
-status.value | string |  | Refer to status.code
-archived | boolean |  | Indicates Archived
-cancelled | boolean |  | Indicates Canceled
-latest | string |  | Inidcates latest record
-deleted | boolean |  | Indicates Deleted
-postedDate | date |  | Date Posted
-modifiedDate | date |  | Date Modified
-createdDate | date |  | Date Created
-modifiedBy | string |  | Modified By User ID
-createdBy | string |  | Created By User ID
-description  | JSON |  | JSON applicable to Get Opportunity By ID only
-description.body | string |  | Description of Notice
-description.opportunityId | string |  | Opportunity ID (UI)
-description.descriptionId | string |  |
-description.modifiedOn | string |  | Date Description modified
-page  | JSON |  | JSON applicable to Get List of Opportunities only
-page.size | string |  |
-page.totalElements | string |  |
-page.totalPages | string |  |
-page.number | string |  |
+Response Element | Response Type |  Description
+-----------------|---------------|------------
+data | JSON |  All the Opportunities are listed out in the response
+opportunityId | string |  Opportunity ID
+data.type | string | See Notices Types table
+data.solicitationNumber | string | Solicitation Number
+data.title | string | Title of the Opportunity
+data.organizationId | string | FH Org Id/AAC code of the office where an Opportunity is being submitted
+data.classificationCode | string | Product Service Code (PSC)
+data.naics | JSON | 
+data.naics.code | string | NAICS Code
+data.naics.type | string |  NAICS type
+data.flags | JSON | 
+data.flags.code | string | 
+data.flags.isSelected | boolean | 
+data.pointOfContact | JSON | 
+data.pointOfContact.type | string |  Contact Type
+data.pointOfContact.title | string |  Contact title
+data.pointOfContact.fullname | string |  Contact Full Name
+data.pointOfContact.email | string | Contact email
+data.pointOfContact.phone | string | Contact Phone
+data.pointOfContact.fax | string |Contact Fax
+data.placeOfPerformance | JSON | 
+data.placeOfPerformance.streetAddress | string |  Pop Address
+data.placeOfPerformance.streetAddress2 | string |  Pop Address2
+data.placeOfPerformance.city | JSON | Pop City
+data.placeOfPerformance.city.code | string |  Pop City code
+data.placeOfPerformance.city.name | string |  Pop City name
+data.placeOfPerformance.city.state | JSON | Pop City state
+data.placeOfPerformance.state.code | string | Pop city state code
+data.placeOfPerformance.state.name | string |  Pop city state name
+data.placeOfPerformance.country | JSON | Pop Country
+data.placeOfPerformance.country.code | string | Pop Country Code
+data.placeOfPerformance.country.name | string | Pop Country name
+data.placeOfPerformance.zip | string | Pop Country zip
+data.archive | JSON | 
+data.archive.type | string |  Archive Type: auto15, auto30, autocustom
+data.archive.date | date and time |  Archive Date
+data.permissions | JSON | 
+data.permissions.ivl | JSON | 
+data.permissions.ivl.create | boolean |  permissions.ivl.create
+data.permissions.ivl.read | boolean |  permissions.ivl.read
+data.permissions.ivl.update | boolean |  permissions.ivl.update
+data.permissions.ivl.delete | boolean |  permissions.ivl.delete
+data.solicitation | JSON | 
+data.solicitation.setAside | string |  See Set-Aside values table
+data.solicitation.deadlines | JSON | 
+data.solicitation.deadlines.response | date and time |  Solicitation Deadline Date
+data.solicitation.deadlines.responseTz | string |  Solicitation Deadlines Response Time Zone
+data.award | JSON | 
+data.award.date | date and time |  Award Date
+data.award.number | string |  Award Number
+data.award.deliveryOrderNumber | string |   Award Delivery Order Number
+data.award.amount | Number | Award Amount
+data.award.lineitemNumber | string |  Award Line Item Number
+data.award.awardee | JSON |  
+data.award.awardee.name | string |  Awardee Name
+data.award.awardee.duns | string | (**Planned to be deprecate by October 2020**) Awardee UEI DUNS
+data.award.awardee.ueiSAM | string | (**Planned to replace Duns# by October 2020 and usable by December 2019**) Awardee UEI SAM
+data.award.awardee.location | JSON |  Awardee Location
+data.award.awardee.location.streetAddress | string | Awardee Street Address 1
+data.award.awardee.location.streetAddress2 | string |  Awardee Street Address 1
+data.award.awardee.location.city | string |  Awardee City
+data.award.awardee.location.city.code | string |  Awardee City Code
+data.award.awardee.location.city.name | string |  Awardee City Name
+data.award.awardee.location.state | JSON |  Awardee State
+data.award.awardee.location.state.code | string |  Awardee State Code
+data.award.awardee.location.state.name | string |  Awardee State Name
+data.award.awardee.location.country | JSON |  Awardee Country
+data.award.awardee.location.country.code | string |  Awardee Country Code
+data.award.awardee.location.country.name | string |  Awardee Country Name
+data.award.awardee.location.zip | string |  Awardee Zip
+data.award.justificationAuthority | JSON | 
+data.award.justificationAuthority.modificationNumber | string | justificationAuthority modification number
+data.award.justificationAuthority.authority | string |  justificationAuthority authority
+data.link | JSON |   
+data.link.additionalInfo | JSON |  
+data.link.additionalInfo.content | string | Additional Info
+data.link.href | string |  Website Address
+data.additionalReporting | string |  recovery_act or none
+additionalInfo.sections JSON | JSON | 
+additionalInfo.sections.opportunityId | string | 
+additionalInfo.sections.status | string | 
+parent  | JSON | 
+parent.opportunityId | string |  Parent Opportunity ID
+related  | JSON |
+related.opportunityId | string | Related Opportunity ID
+status  | JSON |  
+status.code | string |  1.status= active (published, unarchive and uncancelled records) <br />2.status=inactive (published, archive and uncancelled records)<br />3.status=draft (draft records)<br />4.status=published (published and unarchive)<br />5.status=active_cancelled(published, unarchive and cancelled records)<br />6.status=inactive_cancelled(published, archive and cancelled records)<br />7.status=archived(published and archived)
+status.value | string |  Refer to status.code
+archived | boolean |  Indicates Archived
+cancelled | boolean |  Indicates Canceled
+latest | string | Inidcates latest record
+deleted | boolean |  Indicates Deleted
+postedDate | date |  Date Posted
+modifiedDate | date |  Date Modified
+createdDate | date | Date Created
+modifiedBy | string |  Modified By User ID
+createdBy | string |  Created By User ID
+description  | JSON |  JSON applicable to Get Opportunity By ID only
+description.body | string |   Description of Notice
+description.opportunityId | string |  Opportunity ID (UI)
+description.descriptionId | string | 
+description.modifiedOn | string |  Date Description modified
+page  | JSON |  JSON applicable to Get List of Opportunities only
+page.size | string | 
+page.totalElements | string | 
+page.totalPages | string | 
+page.number | string | 
 
 <p><small><a href="#">Back to top</a></small></p>
 
 Examples
 
 <details>
-<summary>Get List of Opportunities Response:</summary>
+<summary>Get List of Opportunities Response</summary>
 <p>
 <code><pre>
 {
@@ -1753,13 +1745,13 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-latest | query | boolean | No | default = true
+PostedFrom | query | string | No | Posted Date
 
 <p><small><a href="#">Back to top</a></small></p>
 
 Responses
 
-See Responses for Get List of Opportunity - link to the above display
+See Response for Get List of Opportunities
 
 Examples
 
@@ -1912,7 +1904,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Cancel Request:</summary>
+<summary>Cancel Request</summary>
 <p>
 <code><pre>
 {
@@ -2028,7 +2020,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Archive Request:</summary>
+<summary>Archive Request</summary>
 <p>
 <code><pre>
 {
@@ -2298,7 +2290,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Examples
 
-_NA_
+N/A
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2332,7 +2324,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Examples
 
-_NA_
+N/A
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2383,38 +2375,40 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-entityId | query | string | No | Entity ID (DUNS #)
+entityId | query | string | No | (**Planned to be deprecate by October 2020**) Entity ID - UEI DUNS #
+ueiSAM | query | string | No | (**Planned to replace Duns# by October 2020 and usable by December 2019**) UEI SAM #
 
 <p><small><a href="#">Back to top</a></small></p>
 
 Responses
 
-HTTP Status Code | Response Type | Reason  | Description
------------------|---------------|---------|------------
-ivl | JSON |  |
-ivl. duns | string |  | DUNS number for the business entity
-ivl.cageNumber | string |  | Identifies a given facility at a specific location
-ivl.name | string |  | Name of business entity
-ivl.addedOn | string |  | Date added to IVL
-ivl.contacts | JSON |  | Business entity contact
-ivl.contacts.email | string |  | Business entity email
-ivl.contacts.firstName | string |  | Business entity contact first name
-ivl.contacts.lastName | string |  | Business entity contact last name
-ivl.contacts.phoneNumber | string |  | Business entity contact phone number
-ivl.contacts.type | string |  | Business entity contact type
-ivl.addresses | JSON |  |
-ivl.addresses.streetAddress | string |  | Business entity address
-ivl.addresses.city | string |  | Business entity city
-ivl.addresses.state | string |  | Business entity state
-ivl.addresses.zip | string |  | Business entity zip
-ivl.addresses.country | string |  | Business entity country
-ivl.addresses.addressType | string |  | Business entity address type
-ivl.naicsList | Array |  | Business entity’s NAICS
+HTTP Status Code | Response Type |  Description
+-----------------|---------------|------------
+ivl | JSON | 
+ivl.duns | string | (**Planned to be deprecate by October 2020**) UEI DUNS number for the business entity
+ivl.ueiSAM | string | (**Planned to replace Duns# by October 2020 and usable by December 2019**) UEI SAM number for the business entity
+ivl.cageNumber | string | Identifies a given facility at a specific location
+ivl.name | string | Name of business entity
+ivl.addedOn | string | Date added to IVL
+ivl.contacts | JSON | Business entity contact
+ivl.contacts.email | string | Business entity email
+ivl.contacts.firstName | string |Business entity contact first name
+ivl.contacts.lastName | string | Business entity contact last name
+ivl.contacts.phoneNumber | string | Business entity contact phone number
+ivl.contacts.type | string | Business entity contact type
+ivl.addresses | JSON | 
+ivl.addresses.streetAddress | string | Business entity address
+ivl.addresses.city | string |  Business entity city
+ivl.addresses.state | string |  Business entity state
+ivl.addresses.zip | string | Business entity zip
+ivl.addresses.country | string |  Business entity country
+ivl.addresses.addressType | string |  Business entity address type
+ivl.naicsList | Array |  Business entity’s NAICS
 
 Examples
 
 <details>
-<summary>Response - Get IVL</summary>
+<summary>Get IVL Response</summary>
 <p>
 <code><pre>
 ivl": [
@@ -2472,7 +2466,7 @@ ivl": [
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Download Metadata for an Attachment by Resource ID  ###
+### Download Metadata for All Attachments by Resource ID ###
 
 ------- | -------
 **Request Type** | GET
@@ -2499,7 +2493,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Response</summary>
+<summary>Get Attachments details by Resource Id Response</summary>
 <p>
 <code><pre>
 {
@@ -2555,7 +2549,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Response</summary>
+<summary>Get Attachments details by Opportunity Id Response</summary>
 <p>
 <code><pre>
 {
@@ -2618,7 +2612,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Request - IVL Settings</summary>
+<summary>IVL Settings Request</summary>
 <p>
 <code><pre>
 {
@@ -2659,7 +2653,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Response – Get Authorized Party</summary>
+<summary>Get Authorized Party List Response</summary>
 <p>
 <code><pre>
 {
@@ -2704,7 +2698,7 @@ Examples
                 "cageCode": "1DJP1”
             }
         ]
-    },
+    }
 }
 </pre></code>
 </p>
@@ -2737,7 +2731,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Request – Add Authorized Party</summary>
+<summary>Add Authorized Party Request</summary>
 <p>
 <code><pre>
 {
@@ -2780,7 +2774,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Response – Check Unique Solicitation Number</summary>
+<summary>Check Unique Solicitation Number Response</summary>
 <p>
 <code><pre>
 {
@@ -2820,7 +2814,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Response – Get Related Opportunities</summary>
+<summary>Get Related Opportunities Response</summary>
 <p>
 <code><pre>
 {
@@ -2960,11 +2954,11 @@ Examples
                         "name": ""
                     }
                 }
+            },
+            "justificationAuthority": {
+                "modificationNumber": "",
+                "authority": "dictionary"
             }
-        },
-        "justificationAuthority": {
-            "modificationNumber": "",
-            "authority": "dictionary"
         },
         "additionalReporting": [
             "none"
@@ -2989,76 +2983,78 @@ Examples
 
 Name | Data Type |Field Length | Allowed Values | Required (Create/Update) | Required (Publish) | Description
 -----|-----------|-------|-------------------|------------|------------ |----------
-type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | Notice Type
-solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes (No for type = s  (Special Notice)) | Solicitation Number
-title | string | 256 characters | |Yes | Yes | Title of the Opportunity
-organizationId | string | 32 characters | | Yes | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
-classificationCode | string |  | | No | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
-naics | JSON Array | NA |NA | NA | NA |
-naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
-naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case
-pointOfContact | JSON Array | NA |NA | NA | NA |
-pointOfContact.type | string | | primary<br/> secondary | No | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
-pointOfContact.title | string | |  | No | No | Contact title
-pointOfContact.fullname | string | 255 characters| | No | Yes (No for type = a (Award))| Contact Full Name
-pointOfContact.email | string |255 characters | | No  | Yes (No for type = a (Award))  | Contact email
-pointOfContact.phone | string |255 characters | | No | No | Contact Phone
-pointOfContact.fax | string | 255 characters | | No  | No | Contact Fax
-pointOfContact.additionalInfo | JSON |NA |NA | NA  | NA |  Any additional information on Point of Contact
-pointOfContact.additionalInfo.<br/>content | String | | | No  | No | Details of the additional information on Point of Contact 
-placeOfPerformance | JSON | NA | NA | NA | NA |
-placeOfPerformance.<br/>streetAddess | string | | | No | No | Pop Address
-placeOfPerformance.<br/>streetAddess2 | string | | | No | No | Pop Address2
-placeOfPerformance.city | JSON | NA | NA | NA | NA | Pop City
-placeOfPerformance.city.<br/>code | string | | | No | No | Pop City code
-placeOfPerformance.city.<br/>name | string | | | No | No | Pop City name
-placeOfPerformance.state | JSON |NA | NA | NA | NA | Pop City state
-placeOfPerformance.state.<br/>code | string | | | No | No | Pop city state code
-placeOfPerformance.state.<br/>name | string | | | No | No | Pop city state name
-placeOfPerformance.country | JSON | NA | NA | NA | NA | Pop Country
-placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country Code
-placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name
-placeOfPerformance.zip | string | | | No | No | Pop Country zip
-archive | JSON |NA | NA | NA | NA | Contract opportunity archive policy information
-archive.type | string | | auto15<br/> auto30<br/> autocustom | No | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
-archive.date | date | | | No | Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
-permissions | JSON | NA | NA | NA | NA |
-permissions.ivl | JSON | NA | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
-permissions.ivl.create | boolean | | | No | Yes (No for type = a (Award)) | IVL create permission
-permissions.ivl.read | boolean | | | No | Yes (No for type = a (Award)) | IVL read permission
-permissions.ivl.update | boolean | |  | No | No | IVL update permission
-permissions.ivl.delete | boolean | | | No | No | IVL delete permission
-solicitation | JSON |NA | NA | NA | NA |
-solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action
-solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity
-solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date
-solicitation.deadlines.<br/>responseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
-award | JSON | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types
-award.date | date | |YYYY-MM-DD |No | Yes only for type = a (Award) | Award Date
-award.number | string | 255 characters | |No | Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number
-award.deliverOrderNumber | string | 255 characters| | No | Yes only for type = j (Justification) | Award Delivery Order Number
-award.amount | number |64 digits |  | No | Yes only for type = a (Award) | Award Amount
-award.lineitemNumber | string |255 characters | | No | No | Contract Line item Number
-award.awardee | JSON | NA| NA | NA | NA |Awardee details; Only for type = a (Award)
-award.awardee.name | string | 255 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name
-award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required | Awardee Duns
-award.awardee.location | JSON |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
-award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address 
-award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 2
-award.awardee.location.<br/>city | JSON |NA |NA |NA | NA | Awardee City details
-award.awardee.location.<br/>city.code | string | | | No | Yes | Awardee City code
-award.awardee.location.<br/>city.name | string | | | No | No | Awardee City name
-award.awardee.location.<br/>state | JSON | NA | NA | NA | NA | Awardee State details
-award.awardee.location.<br/>state.code | string | | | No | Yes | Awardee State code
-award.awardee.location.<br/>state.name | string | | | No | No | Awardee State name
-award.awardee.location.<br/>country | JSON | NA| NA | NA | NA |Awardee Country details
-award.awardee.location.<br/>country.code | string | | | No | Yes | Awardee Country code
-award.awardee.location.<br/>country.name | string | | | No | No | Awardee Country Name
-award.awardee.location.<br/>zip | string | | | No | No | Awardee Country Zip code
-justificationAuthority | JSON |NA |NA | NA | NA | Only for type = j (Justification)
-justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number
-justificationAuthority.<br/>authority | string|  |  | No | Yes | Justification Authority
-additionalReporting | string | |None, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
+data | JSON |NA | NA | NA | NA | 
+data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | Notice Type
+data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes (No for type = s  (Special Notice)) | Solicitation Number
+data.title | string | 256 characters | |Yes | Yes | Title of the Opportunity
+data.organizationId | string | 32 characters | | Yes | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
+data.classificationCode | string |  | | No | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
+data.naics | JSON Array | NA |NA | NA | NA |
+data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
+data.naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case
+data.pointOfContact | JSON Array | NA |NA | NA | NA |
+data.pointOfContact.type | string | | primary,<br/> secondary | No | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
+data.pointOfContact.title | string | |  | No | No | Contact title
+data.pointOfContact.fullname | string | 500 characters| | No | Yes (No for type = a (Award))| Contact Full Name
+data.pointOfContact.email | string |255 characters | | No  | Yes (No for type = a (Award))  | Contact email
+data.pointOfContact.phone | string |255 characters | | No | No | Contact Phone
+data.pointOfContact.fax | string | 255 characters | | No  | No | Contact Fax
+data.pointOfContact.additionalInfo | JSON |NA |NA | NA  | NA |  Any additional information on Point of Contact
+data.pointOfContact.additionalInfo.<br/>content | String | | | No  | No | Details of the additional information on Point of Contact 
+data.placeOfPerformance | JSON | NA | NA | NA | NA |
+data.placeOfPerformance.<br/>streetAddess | string | | | No | No | Pop Address
+data.placeOfPerformance.<br/>streetAddess2 | string | | | No | No | Pop Address2
+data.placeOfPerformance.city | JSON | NA | NA | NA | NA | Pop City
+data.placeOfPerformance.city.<br/>code | string | | | No | No | Pop City code
+data.placeOfPerformance.city.<br/>name | string | | | No | No | Pop City name
+data.placeOfPerformance.state | JSON |NA | NA | NA | NA | Pop City state
+data.placeOfPerformance.state.<br/>code | string | | | No | No | Pop city state code
+data.placeOfPerformance.state.<br/>name | string | | | No | No | Pop city state name
+data.placeOfPerformance.country | JSON | NA | NA | NA | NA | Pop Country
+data.placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country Code
+data.placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name
+data.placeOfPerformance.zip | string | | | No | No | Pop Country zip
+data.archive | JSON |NA | NA | NA | NA | Contract opportunity archive policy information
+data.archive.type | string | | auto15,<br/> auto30,<br/> autocustom | No | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
+data.archive.date | date | | | No | Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
+data.permissions | JSON | NA | NA | NA | NA |
+data.permissions.ivl | JSON | NA | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
+data.permissions.ivl.create | boolean | | | No | Yes (No for type = a (Award)) | IVL create permission
+data.permissions.ivl.read | boolean | | | No | Yes (No for type = a (Award)) | IVL read permission
+data.permissions.ivl.update | boolean | |  | No | No | IVL update permission
+data.permissions.ivl.delete | boolean | | | No | No | IVL delete permission
+data.solicitation | JSON |NA | NA | NA | NA |
+data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action
+data.solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity
+data.solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date
+data.solicitation.deadlines.<br/>responseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
+data.award | JSON | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types
+data.award.date | date | |YYYY-MM-DD |No | Yes only for type = a (Award) | Award Date
+data.award.number | string | 255 characters | |No | Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number
+data.award.deliverOrderNumber | string | 255 characters| | No | No | Award Delivery Order Number
+data.award.amount | number |64 digits |  | No | Yes only for type = a (Award) | Award Amount
+data.award.lineitemNumber | string |255 characters | | No | No | Contract Line item Number
+data.award.awardee | JSON | NA| NA | NA | NA |Awardee details; Only for type = a (Award)
+data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name
+data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required |(**Planned to be deprecate by October 2020**) Awardee UEI Duns
+data.award.awardee.ueiSAM | string | 12 characters | | No | No; **Requirements will be set at a later date** |(**Planned to replace Duns# by October 2020 and usable by December 2019**) Awardee UEI SAM
+data.award.awardee.location | JSON |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
+data.award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address 
+data.award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 2
+data.award.awardee.location.<br/>city | JSON |NA |NA |NA | NA | Awardee City details
+data.award.awardee.location.<br/>city.code | string | | | No | Yes | Awardee City code
+data.award.awardee.location.<br/>city.name | string | | | No | No | Awardee City name
+data.award.awardee.location.<br/>state | JSON | NA | NA | NA | NA | Awardee State details
+data.award.awardee.location.<br/>state.code | string | | | No | Yes | Awardee State code
+data.award.awardee.location.<br/>state.name | string | | | No | No | Awardee State name
+data.award.awardee.location.<br/>country | JSON | NA| NA | NA | NA |Awardee Country details
+data.award.awardee.location.<br/>country.code | string | | | No | Yes | Awardee Country code
+data.award.awardee.location.<br/>country.name | string | | | No | No | Awardee Country Name
+data.award.awardee.location.<br/>zip | string | | | No | No | Awardee Country Zip code
+data.award.justificationAuthority | JSON |NA |NA | NA | NA | Only for type = j (Justification)
+data.award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number
+data.award.justificationAuthority.<br/>authority | string|  |  | No | Yes for type = j (Justification) | Justification Authority
+data.additionalReporting | string | |None, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
 description | JSON | NA | NA | NA | NA |
 description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice
 related | JSON | NA | NA | NA | NA | Related Notice information
@@ -3189,11 +3185,11 @@ reason | string |  | No | Publish reason
                         "name": ""
                     }
                 }
+            },
+            "justificationAuthority": {
+                "modificationNumber": "",
+                "authority": "dictionary"
             }
-        },
-        "justificationAuthority": {
-            "modificationNumber": "",
-            "authority": "dictionary"
         },
         "additionalReporting": [
             "none"
@@ -3232,76 +3228,78 @@ reason | string |  | No | Publish reason
 
 Name | Data Type |Field Length | Allowed Values| Required | Description
 -----|-----------|-------|-------------------|------------|------------ 
-type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Notice Type
-solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {}| Yes (No for type = s  (Special Notice)) | Solicitation Number
-title | string | 256 characters | | Yes | Title of the Opportunity
-organizationId | string | 32 characters | | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
-classificationCode | string |  | | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
-naics | JSON Array | NA |NA | NA |
-naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
-naics.type | string | |primary|Yes | NAICS Type Note: 'p' must be in lower case
-pointOfContact | JSON Array | NA |NA | NA |
-pointOfContact.type | string | | primary<br/> secondary | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
-pointOfContact.title | string | |  | No | Contact title
-pointOfContact.fullname | string | 255 characters| | Yes (No for type = a (Award))| Contact Full Name
-pointOfContact.email | string |255 characters | | Yes (No for type = a (Award))  | Contact email
-pointOfContact.phone | string |255 characters | | No | Contact Phone
-pointOfContact.fax | string | 255 characters | | No | Contact Fax
-pointOfContact.additionalInfo | JSON |NA |NA | NA |  Any additional information on Point of Contact
-pointOfContact.additionalInfo.<br/>content | String | | | No | Details of the additional information on Point of Contact 
-placeOfPerformance | JSON | NA | NA | NA |
-placeOfPerformance.<br/>streetAddess | string | | |No | Pop Address
-placeOfPerformance.<br/>streetAddess2 | string | | | No | Pop Address2
-placeOfPerformance.city | JSON | NA | NA |NA | Pop City
-placeOfPerformance.city.<br/>code | string | | |No | Pop City code
-placeOfPerformance.city.<br/>name | string | | |No | Pop City name
-placeOfPerformance.state | JSON |NA | NA |NA | Pop City state
-placeOfPerformance.state.<br/>code | string | | | No | Pop city state code
-placeOfPerformance.state.<br/>name | string | | | No | Pop city state name
-placeOfPerformance.country | JSON | NA | NA | NA | Pop Country
-placeOfPerformance.<br/>country.code | string | | |No | Pop Country Code
-placeOfPerformance.<br/>country.name | string | | |No | Pop Country name
-placeOfPerformance.zip | string | | |No | Pop Country zip
-archive | JSON |NA | NA | NA | Contract opportunity archive policy information
-archive.type | string | | auto15<br/> auto30<br/> autocustom | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
-archive.date | date | | |Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
-permissions | JSON | NA | NA | NA 
-permissions.ivl | JSON | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
-permissions.ivl.create | boolean | | | Yes (No for type = a (Award)) | IVL create permission
-permissions.ivl.read | boolean | | |Yes (No for type = a (Award)) | IVL read permission
-permissions.ivl.update | boolean | |  | No | IVL update permission
-permissions.ivl.delete | boolean | | |No | IVL delete permission
-solicitation | JSON |NA | NA | NA 
-solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action
-solicitation.deadlines | JSON | NA | NA | NA |Response deadline date for Contract opportunity
-solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date
-solicitation.deadlines.<br/>responseTz |string | | |No | Time Zone for <br/>Solicitation Deadline Date
-award | JSON | NA | NA | NA| This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types
-award.date | date | |YYYY-MM-DD | Yes only for type = a (Award) | Award Date
-award.number | string | 255 characters | |Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number
-award.deliverOrderNumber | string | 255 characters| | Yes only for type = j (Justification) | Award Delivery Order Number
-award.amount | number |64 digits |  | Yes only for type = a (Award) | Award Amount
-award.lineitemNumber | string |255 characters | | No | Contract Line item Number
-award.awardee | JSON | NA| NA | NA |Awardee details; Only for type = a (Award)
-award.awardee.name | string | 255 characters | | No; Either awardee.name or awardee.duns is required | Awardee Name
-award.awardee.duns | string | 9 digits | | No; Either awardee.name or awardee.duns is required | Awardee Duns
-award.awardee.location | JSON |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
-award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address 
-award.awardee.location.<br/>streetAddress2 | string | | | No | Awardee Street Address 2
-award.awardee.location.<br/>city | JSON |NA |NA |NA | Awardee City details
-award.awardee.location.<br/>city.code | string | | | Yes | Awardee City code
-award.awardee.location.<br/>city.name | string | | | No | Awardee City name
-award.awardee.location.<br/>state | JSON | NA | NA | NA | Awardee State details
-award.awardee.location.<br/>state.code | string | | | Yes | Awardee State code
-award.awardee.location.<br/>state.name | string | | | No | Awardee State name
-award.awardee.location.<br/>country | JSON | NA| NA | NA |Awardee Country details
-award.awardee.location.<br/>country.code | string | | | Yes | Awardee Country code
-award.awardee.location.<br/>country.name | string | | |  No | Awardee Country Name
-award.awardee.location.<br/>zip | string | | | No | Awardee Country Zip code
-justificationAuthority | JSON |NA |NA | NA | Only for type = j (Justification)
-justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | Justification Authority Modification Number
-justificationAuthority.<br/>authority | string|  |  | Yes | Justification Authority
-additionalReporting | string | |none, <br/>auto_recovery | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
+data | JSON |NA | NA | NA | 
+data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Notice Type
+data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {}| Yes (No for type = s  (Special Notice)) | Solicitation Number
+data.title | string | 256 characters | | Yes | Title of the Opportunity
+data.organizationId | string | 32 characters | | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
+data.classificationCode | string |  | | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
+data.naics | JSON Array | NA |NA | NA |
+data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
+data.naics.type | string | |primary|Yes | NAICS Type Note: 'p' must be in lower case
+data.pointOfContact | JSON Array | NA |NA | NA |
+data.pointOfContact.type | string | | primary,<br/> secondary | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
+data.pointOfContact.title | string | |  | No | Contact title
+data.pointOfContact.fullname | string | 500 characters| | Yes (No for type = a (Award))| Contact Full Name
+data.pointOfContact.email | string |255 characters | | Yes (No for type = a (Award))  | Contact email
+data.pointOfContact.phone | string |255 characters | | No | Contact Phone
+data.pointOfContact.fax | string | 255 characters | | No | Contact Fax
+data.pointOfContact.additionalInfo | JSON |NA |NA | NA |  Any additional information on Point of Contact
+data.pointOfContact.additionalInfo.<br/>content | String | | | No | Details of the additional information on Point of Contact 
+data.placeOfPerformance | JSON | NA | NA | NA |
+data.placeOfPerformance.<br/>streetAddess | string | | |No | Pop Address
+data.placeOfPerformance.<br/>streetAddess2 | string | | | No | Pop Address2
+data.placeOfPerformance.city | JSON | NA | NA |NA | Pop City
+data.placeOfPerformance.city.<br/>code | string | | |No | Pop City code
+data.placeOfPerformance.city.<br/>name | string | | |No | Pop City name
+data.placeOfPerformance.state | JSON |NA | NA |NA | Pop City state
+data.placeOfPerformance.state.<br/>code | string | | | No | Pop city state code
+data.placeOfPerformance.state.<br/>name | string | | | No | Pop city state name
+data.placeOfPerformance.country | JSON | NA | NA | NA | Pop Country
+data.laceOfPerformance.<br/>country.code | string | | |No | Pop Country Code
+data.placeOfPerformance.<br/>country.name | string | | |No | Pop Country name
+data.placeOfPerformance.zip | string | | |No | Pop Country zip
+data.archive | JSON |NA | NA | NA | Contract opportunity archive policy information
+data.archive.type | string | | auto15,<br/> auto30,<br/> autocustom | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
+data.archive.date | date | | |Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
+data.permissions | JSON | NA | NA | NA 
+data.permissions.ivl | JSON | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
+data.permissions.ivl.create | boolean | | | Yes (No for type = a (Award)) | IVL create permission
+data.permissions.ivl.read | boolean | | |Yes (No for type = a (Award)) | IVL read permission
+data.permissions.ivl.update | boolean | |  | No | IVL update permission
+data.permissions.ivl.delete | boolean | | |No | IVL delete permission
+data.solicitation | JSON |NA | NA | NA 
+data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action
+data.solicitation.deadlines | JSON | NA | NA | NA |Response deadline date for Contract opportunity
+data.solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date
+data.solicitation.deadlines.<br/>responseTz |string | | |No | Time Zone for <br/>Solicitation Deadline Date
+data.award | JSON | NA | NA | NA| This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types
+data.award.date | date | |YYYY-MM-DD | Yes only for type = a (Award) | Award Date
+data.award.number | string | 255 characters | |Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number
+data.award.deliverOrderNumber | string | 255 characters| | No | Award Delivery Order Number
+data.award.amount | number |64 digits |  | Yes only for type = a (Award) | Award Amount
+data.award.lineitemNumber | string |255 characters | | No | Contract Line item Number
+data.award.awardee | JSON | NA| NA | NA |Awardee details; Only for type = a (Award)
+data.award.awardee.name | string | 1000 characters | | No; Either awardee.name or awardee.duns is required | Awardee Name
+data.award.awardee.duns | string | 9 digits | | No; Either awardee.name or awardee.duns is required | (**Planned to be deprecate by October 2020**) Awardee Duns
+data.award.awardee.ueiSAM | string | 12 characters | | No; **Requirements will be set at a later date** | (**Planned to replace Duns# by October 2020 and usable by December 2019**) Awardee UEI SAM
+data.award.awardee.location | JSON |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
+data.award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address 
+data.award.awardee.location.<br/>streetAddress2 | string | | | No | Awardee Street Address 2
+data.award.awardee.location.<br/>city | JSON |NA |NA |NA | Awardee City details
+data.award.awardee.location.<br/>city.code | string | | | Yes | Awardee City code
+data.award.awardee.location.<br/>city.name | string | | | No | Awardee City name
+data.award.awardee.location.<br/>state | JSON | NA | NA | NA | Awardee State details
+data.award.awardee.location.<br/>state.code | string | | | Yes | Awardee State code
+data.award.awardee.location.<br/>state.name | string | | | No | Awardee State name
+data.award.awardee.location.<br/>country | JSON | NA| NA | NA |Awardee Country details
+data.award.awardee.location.<br/>country.code | string | | | Yes | Awardee Country code
+data.award.awardee.location.<br/>country.name | string | | |  No | Awardee Country Name
+data.award.awardee.location.<br/>zip | string | | | No | Awardee Country Zip code
+data.award.justificationAuthority | JSON |NA |NA | NA | Only for type = j (Justification)
+data.award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | Justification Authority Modification Number
+data.award.justificationAuthority.<br/>authority | string|  |  | Yes for type = j (Justification) | Justification Authority
+data.additionalReporting | string | |none, <br/>auto_recovery | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
 description | JSON | NA | NA | NA |
 description.body | string | 65535 characters| | Yes; No for type = a (Award) | Description of the notice
 related | JSON | NA | NA | NA | Related Notice information
@@ -3407,7 +3405,7 @@ description | string |  | Yes | Description for uncanceling
 newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
 newResponseTz | string |  | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3469,7 +3467,7 @@ requestType | string | unarchive_request | Yes | Type of request
 newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) 2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
+newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
 newResponseTz | string |  | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3645,7 +3643,8 @@ fname | string | | Yes | First name of the user
 lname | string | | Yes | Last name of the user
 email | string | | Yes | Email Id of the user
 contractorName | string | | Yes | Contractor Name
-duns | string | | Yes | DUNS#
+duns | string | | Yes | (**Planned to be deprecate by October 2020**) UEI DUNS#
+ueiSAM | string | | No | (**Planned to replace Duns# by October 2020 and usable by December 2019**) UEI SAM#
 cageCode | string | | Yes | Cage Code
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3680,6 +3679,1993 @@ description	|string|		|Yes|	Description for deletion of a notice
 deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or all versions of a notice
 
 <p><small><a href="#">Back to top</a></small></p>
+
+
+### OpenAPI Specification File
+
+You can view the full details of this API in the OpenAPI Specification file available here:
+<a href="v1/OpenAPI.zip" download="OpenAPI">OpenAPI File</a>
+
+<details>
+<summary>Create Draft Opportunity</summary>
+<p>
+<code><pre>
+/v1/api/create:
+    post:
+      tags:
+        - Opportunity
+      summary: Create contract opportunity
+      description: Create contract opportunity.
+      operationId: createOpportunityUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/*
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - in: body
+          name: requestJson
+          description: requestJson
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Create and Publish Opportunity</summary>
+<p>
+<code><pre>
+/v1/api/createAndPublish:
+    post:
+      tags:
+        - Opportunity
+      summary: Create and publish contract opportunity
+      description: Create and publish contract opportunity.
+      operationId: createAndPublishOpportunityUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/*
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - in: body
+          name: requestJson
+          description: requestJson
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Publish Draft Opportunity	</summary>
+<p>
+<code><pre>
+/v1/api/publish/{opportunityId}:
+    post:
+      tags:
+        - Opportunity
+      summary: Publish contract opportunity
+      description: Publish contract opportunity.
+      operationId: publishOpportunityUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - in: body
+          name: requestJson
+          description: requestJson
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Revise Published Opportunity</summary>
+<p>
+<code><pre>
+/v1/api/revise/{opportunityId}:
+    post:
+      tags:
+        - Opportunity
+      summary: Revise contract opportunity
+      description: Revise contract opportunity.
+      operationId: reviseOpportunityUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - in: body
+          name: requestJson
+          description: requestJson
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false/v1/api/revise/{opportunityId}:
+    post:
+      tags:
+        - Opportunity
+      summary: Revise contract opportunity
+      description: Revise contract opportunity.
+      operationId: reviseOpportunityUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - in: body
+          name: requestJson
+          description: requestJson
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Update Draft Opportunity	</summary>
+<p>
+<code><pre>
+ /v1/api/update/{opportunityId}:
+    patch:
+      tags:
+        - Opportunity
+      summary: Update Opportunity
+      description: Update contract opportunity.
+      operationId: updateOpportunityUsingPATCH
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - in: body
+          name: requestJson
+          description: requestJson
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '412':
+          description: Precondition Failed
+        '428':
+          description: Precondition Required
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get Opportunity History</summary>
+<p>
+<code><pre>
+/v1/api/history/{opportunityId}:
+    get:
+      tags:
+        - Opportunity
+      summary: Get history of Opportunity
+      operationId: getOpportunityHistoryUsingGET
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - name: postedFrom
+          in: query
+          description: postedFrom
+          required: false
+          type: string
+          allowEmptyValue: false
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Delete Draft Opportunity</summary>
+<p>
+<code><pre>
+/v1/api/delete/{opportunityId}:
+    delete:
+      tags:
+        - Opportunity
+      summary: Delete contract opportunity
+      description: Delete contract opportunity.
+      operationId: deleteOpportunityUsingDELETE
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Delete Notice</summary>
+<p>
+<code><pre>
+/v1/api/{opportunityId}/requests:
+    post:
+      tags:
+        - Opportunity
+      summary: Delete all versions of Opportunity
+      description: Delete all versions of Opportunity.
+      operationId: deleteOpportunitiesAllVersionsUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - in: body
+          name: requestJson
+          description: requestJson
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get List of Opportunity</summary>
+<p>
+<code><pre>
+/v1/api/search:
+    get:
+      tags:
+        - Opportunity
+      summary: Get Opportunities
+      description: Get all opportunities.
+      operationId: getOpportunitiesUsingGET
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: archivedFrom
+          in: query
+          description: archivedFrom
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: archivedTo
+          in: query
+          description: archivedTo
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: awardNumber
+          in: query
+          description: awardNumber
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: doNumber
+          in: query
+          description: doNumber
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: includeCount
+          in: query
+          description: includeCount
+          required: false
+          type: boolean
+          default: true
+          allowEmptyValue: false
+        - name: keyword
+          in: query
+          description: keyword
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: latest
+          in: query
+          description: latest
+          required: false
+          type: boolean
+          default: true
+          allowEmptyValue: false
+        - name: noticeType
+          in: query
+          description: noticeType
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: opportunityIds
+          in: query
+          description: opportunityIds
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: organizationId
+          in: query
+          description: organizationId
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+          allowEmptyValue: false
+        - name: parentNotice
+          in: query
+          description: parentNotice
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: postedFrom
+          in: query
+          description: postedFrom
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: postedTo
+          in: query
+          description: postedTo
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: relatedNotice
+          in: query
+          description: relatedNotice
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: responseFrom
+          in: query
+          description: responseFrom
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: responseTo
+          in: query
+          description: responseTo
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 10
+          format: int32
+          allowEmptyValue: false
+        - name: solNumber
+          in: query
+          description: solNumber
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: sortBy
+          in: query
+          description: sortBy
+          required: false
+          type: string
+          default: '-modifiedOn'
+          allowEmptyValue: false
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: orgStatus
+          in: query
+          description: Organization Status
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: Links
+          in: query
+          description: Link
+          required: false
+          type: boolean
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      security:
+        - Token-based Access: []
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get an Opportunity by Opportunity ID</summary>
+<p>
+<code><pre>
+v1/api/history/{opportunityId}:
+    get:
+      tags:
+        - Opportunity
+      summary: Get history of Opportunity
+      operationId: getOpportunityHistoryUsingGET
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - name: postedFrom
+          in: query
+          description: postedFrom
+          required: false
+          type: string
+          allowEmptyValue: false
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Cancel Published Opportunity</summary>
+<p>
+<code><pre>
+/v1/api/cancel/{opportunityId}:
+    post:
+      tags:
+        - Opportunity
+      summary: Cancel contract opportunity
+      description: Cancel contract opportunity.
+      operationId: cancelOpportunityUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - in: body
+          name: requestJson
+          description: requestJson
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Uncancel Canceled Opportunity	</summary>
+<p>
+<code><pre>
+ /v1/api/uncancel/{opportunityId}:
+    post:
+      tags:
+        - Opportunity
+      summary: UnCancel contract opportunity
+      description: UnCancel contract opportunity.
+      operationId: unCancelOpportunityUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - in: body
+          name: requestJson
+          description: requestJson
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Archive Opportunity</summary>
+<p>
+<code><pre>
+/v1/api/archive/{opportunityId}:
+    post:
+      tags:
+        - Opportunity
+      summary: Archive contract opportunity
+      description: Archive contract opportunity.
+      operationId: archiveOpportunityUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - in: body
+          name: requestJson
+          description: requestJson
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Unarchive Archived Opportunity	</summary>
+<p>
+<code><pre>
+/v1/api/unarchive/{opportunityId}:
+    post:
+      tags:
+        - Opportunity
+      summary: UnArchive contract opportunity
+      description: UnArchive contract opportunity.
+      operationId: unArchiveOpportunityUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - in: body
+          name: requestJson
+          description: requestJson
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Create Resource in Draft Opportunity</summary>
+<p>
+<code><pre>
+/v1/api/{opportunityId}/attachments:
+    post:
+      tags:
+        - attachments
+      summary: Add attachment to an opportunity
+      description: Add attachment to an opportunity.
+      operationId: createAttachmentUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - in: body
+          name: requestJson
+          description: requestJson
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Update Resource in Draft Opportunity</summary>
+<p>
+<code><pre>
+/v1/api/{opportunityId}/attachments/{resourceId}
+patch:
+      tags:
+        - attachments
+      summary: Update attachment to an opportunity
+      description: Update attachment for an opportunity.
+      operationId: updateAttachmentUsingPATCH
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - in: body
+          name: requestJson
+          description: requestJson
+          required: false
+          schema:
+            type: string
+        - name: resourceId
+          in: path
+          description: resourceId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Delete Resource in Draft Opportunity</summary>
+<p>
+<code><pre>
+/v1/api/{opportunityId}/attachments/{resourceId}:
+    delete:
+      tags:
+        - attachments
+      summary: Delete attachment for an opportunity
+      description: Delete attachment for an opportunity.
+      operationId: deleteAttachmentUsingDELETE
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: deleteAll
+          in: query
+          description: deleteAll
+          required: true
+          type: string
+          default: 'false'
+          allowEmptyValue: false
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - name: resourceId
+          in: path
+          description: resourceId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Download Attachment as Original File Type</summary>
+<p>
+<code><pre>
+/v1/api/resources/files/{resourceId}/download:
+    get:
+      tags:
+        - attachments
+      summary: get attachment
+      description: get attachment.
+      operationId: getAttachmentUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: resourceId
+          in: path
+          description: resourceId
+          required: true
+          type: string
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: token
+          in: query
+          description: token
+          required: false
+          type: string
+          allowEmptyValue: false
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Download All Attachments as Zip for an Opportunity</summary>
+<p>
+<code><pre>
+/v1/api/{opportunityId}/resources/download/zip:
+    get:
+      tags:
+        - attachments
+      summary: Download Opportunity's attachments as zip
+      description: Download Opportunity's attachments as zip.
+      operationId: downloadAttachmentsAsZipUsingGET
+      produces:
+        - application/zip
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Download Metadata for All Attachments by Resource ID</summary>
+<p>
+<code><pre>
+/v1/api/resource:
+    get:
+      tags:
+        - attachments
+      summary: Download all attachments from resource Id
+      description: Download attachments for an Resource.
+      operationId: downloadAttachmentsByResourceUsingGET
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: excludeDeleted
+          in: query
+          description: 'excludeDeleted '
+          required: false
+          type: boolean
+          allowEmptyValue: false
+        - name: resourceId
+          in: query
+          description: 'resourceId '
+          required: true
+          type: string
+          allowEmptyValue: false
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Download Metadata for All Attachments by Opportunity ID</summary>
+<p>
+<code><pre>
+/v1/api/resources:
+    get:
+      tags:
+        - attachments
+      summary: Download all attachments from an opportunity
+      description: Download attachments for an opportunity.
+      operationId: downloadAttachmentsByOpportunityUsingGET
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: excludeDeleted
+          in: query
+          description: 'excludeDeleted '
+          required: false
+          type: boolean
+          allowEmptyValue: false
+        - name: opportunityId
+          in: query
+          description: opportunityId
+          required: true
+          type: string
+          allowEmptyValue: false
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get Related Opportunities</summary>
+<p>
+<code><pre>
+ /v1/api/opportunities/{opportunityId}/relatedopportunities/{type}:
+    get:
+      tags:
+        - Opportunity
+      summary: Get related contract opportunities
+      operationId: getRelatedOpportunitiesGET
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+          allowEmptyValue: false
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 10
+          format: int32
+          allowEmptyValue: false
+        - name: sortBy
+          in: query
+          description: sortBy
+          required: false
+          type: string
+          default: '-modifiedOn'
+          allowEmptyValue: false
+        - name: type
+          in: path
+          description: type
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Check Unique Solicitation Number	</summary>
+<p>
+<code><pre>
+ /v1/api/isSolicitationNumberUnique/{parent}/{solicitationNumber}/{type}:
+    get:
+      tags:
+        - Opportunity
+      summary: 'Check if solicitation number is unique. A solicitation number is unique if it is not used by another opportunity of equivalent type. For justification type, j&a and fair opportunity/limited sources justification are considered equivalent.'
+      operationId: getOpportunityHistoryUsingGET_1
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: parent
+          in: query
+          description: parent
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: solicitationNumber
+          in: path
+          description: solicitationNumber
+          required: true
+          type: string
+        - name: type
+          in: path
+          description: type
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Add Authorized Party</summary>
+<p>
+<code><pre>
+/v1/api/opportunities/access/{opportunityId}/accessRequest
+post: 
+  consumes: 
+    - application/json
+  deprecated: false
+  description: "Add Authorized Party to the Opportunity"
+  operationId: createAndApproveRequestUsingPOST
+  parameters: 
+    - 
+      description: Authorization
+      in: header
+      name: Authorization
+      required: true
+      type: string
+    - 
+      description: api_key
+      in: query
+      name: api_key
+      required: true
+      type: string
+    - 
+      description: opportunityId
+      in: path
+      name: opportunityId
+      required: true
+      type: string
+    - 
+      description: requestJson
+      in: body
+      name: requestJson
+      required: false
+      schema: 
+        type: string
+  produces: 
+    - application/json
+  responses: 
+    "200": 
+      description: OK
+      schema: 
+        type: object
+    "201": 
+      description: Created
+    "400": 
+      description: "Bad Request"
+      schema: 
+        type: string
+    "401": 
+      description: Unauthorized
+      schema: 
+        type: string
+    "403": 
+      description: Forbidden
+      schema: 
+        type: string
+    "404": 
+      description: "Not Found"
+    "500": 
+      description: "Internal Server Error"
+      schema: 
+        type: string
+    "501": 
+      description: "Not Implemented"
+      schema: 
+        type: string
+  summary: "Add Authorized Party to the Opportunity"
+  tags: 
+    - attachments
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get Authorized Party</summary>
+<p>
+<code><pre>
+/v1/api/opportunities/access/{opportunityId}/accessRequest:
+    get:
+      tags:
+        - attachments
+      summary: Get Request Access List for the  opportunity
+      description: Get Request Access List for the  opportunity.
+      operationId: getRequestAccessList
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      security:
+        - Token-based Access: []
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+
+
+
 
 ### Error Messages
 
@@ -3734,7 +5720,6 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Related Opportunity ID | Related Notice's ID needs to match previous Opportunity's Related Notice ID	| Related Notice's ID  provided while revising a notice needs to match the Parent Opportunity's Related Notice ID  | Publish
 400|Response Date |	Response Date is a required field |	Response Date is not provided for Combined Synopsis and Solicitation types |	Publish
 400|Response Date |	Response Date provided is an invalid format |	Response Date provided is not in valid format |	Publish
-400|Response Date |	Response Date cannot be in the past |	Response Date provided is in the past |	Publish
 400|Response Date |	Response Date cannot exceed 5 years from current date |	Response Date exceeds 5 years from the current date |	Publish 
 400|Archive Date |	Inactive date is a required field |	Archive Date is required if Archive Type = autocustom |Publish
 400|Archive Date Response Date   |	One of Response date or Archive date is required |	Either Response date or archive date is required for presolicitation, sources sought, special notice, sale surplus  |	Publish
@@ -3766,9 +5751,10 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Award Date |	Contract Award Date provided should have 4 digit year |	Invalid Year provided in the Award Date |	Publish, Uncancel, Unarchive
 400|Award Number |	Contract Award Number is a required field	| Contract Award Number is required for Intent to Bundle, Justification, Award | Publish
 400|Award Number |	Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces| Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces | Publish
-400|DUNS | Unique Entity Identifier (duns) is invalid. |	Invalid DUNS provided |	Publish
+400|DUNS | Unique Entity Identifier (duns) is invalid. |	(**Planned to be deprecate by October 2020**) Invalid UEI DUNS provided |	Publish
+400|ueiSAM | Unique Entity Identifier (SAM) is invalid. |	(**Planned to replace Duns# by October 2020 and invalid message will be added at a later date**) Invalid UEI SAM provided |	Publish
 400|Awardee Name | Contractor Awarded Name is a required field |	Contractor Awarded Name is a required field if the DUNS is not provided for an Award Notice |	Publish
-400|Awardee Name | Contractor Awarded Name max character length is 255 |	Contractor Awarded Name max character length is 255 | Publish
+400|Awardee Name | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | Publish
 400|Awardee | Required fields from Awardee section is missing |Awardee Name or DUNS# not provided for Award notice|	Publish
 400|Awardee Country | Award Details Section - Country is required |Country Code is required if the Awardee name is provided instead of DUNS# |	Publish
 400|Awardee Country | Award Details Section - Country provided is invalid |Country Code  provided is invalid |	Publish
@@ -3777,12 +5763,11 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Awardee City | Award Details Section - City is required |City Code is required if the Awardee name is provided instead of DUNS# |	Publish
 400|Awardee City | Award Details Section - City provided is invalid |City Code provided is invalid |	Publish
 400|Contract Line Item number |	The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces	| The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | Publish
-400|Task/Delivery Order Number |	Task/Delivery Order Number is required field	| Task/Delivery Order Number is required field. | Publish
 400|Task/Delivery Order Number |	Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces	| Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces | Publish
 400|Point of Contact Type |	$.data.pointOfContact[0].type: does not have a value in the enumeration [primary, secondary, owner] |	Point of Contact Type is required |	Create Opportunity
 400|Primary Contact |	Primary Contact is required | Primary Contact is required  for all types except Award| Publish
 400|Primary Contact Full Name |	Primary Contact - Full Name is required | Point of Contact Email is required for all types except Award | Publish
-400|Primary Contact Full Name |	Primary Contact - Name limit is 255 characters | Point of Contact Name limit is 255 characters | Publish
+400|Primary Contact Full Name |	Primary Contact - Name limit is 500 characters | Point of Contact Name limit is 500 characters | Publish
 400|Primary Contact Email |	Primary Contact - Email is required | Point of Contact Email is required for all types except Award | Publish
 400|Primary Contact Email |	Primary Contact - Please enter a valid Internet email address. Format: username@host.domain | Primary Contact invalid Email format | Publish
 400|Primary Contact Email |	Primary Contact - email character limit is 255 characters | Primary Contact email limit is 255 | Publish
@@ -3817,12 +5802,10 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|UnArchive, Uncancel - Archive Date |	New archive date provided is in an invalid format |	New archive date provided is in an invalid format |	Unarchive, Uncancel
 400|UnArchive, Uncancel - Archive Date|	New archive date provided is in the past |	New archive date provided is before today's date |	Unarchive, Uncancel
 400|UnArchive, Uncancel - Archive Date |	New archive type is invalid |	archive type is not one of the following "auto15", "autocustom", "auto30"	| Unarchive, Uncancel
-400|UnArchive, Uncancel - Award Date |	New contract award date provided is in the past |	New contract award date provided is in the past. | Unarchive, Uncancel
+400|UnArchive, Uncancel - Award Date |	New contract award date provided is in the past |	New contract award date provided is in the past | Unarchive, Uncancel
 400|UnArchive, Uncancel - Award Date |	New contract award date is not provided |	New contract award date is not provided | Unarchive, Uncancel
 400|UnArchive, Uncancel - Response Date |	New response date is required |	Unarchive requires new response date	| UnArchive
 400|UnArchive, Uncancel - Response Date |	New response date provided is in an invalid format |	Invalid date format	| UnArchive
-400|UnArchive, Uncancel - Response Date |	New response date provided is in the past   |	Response Date cannot be in the past 	| UnArchive
-400|UnArchive, Uncancel - Response Date |	New response date provided would place inactive date in the past |	New response date providedis within 15 days	| UnArchive
 400|Delete |	This opportunity cannot be deleted. This opportunity is a revision |	This opportunity cannot be deleted. This opportunity is a revision.	| Delete
 400|Delete |	Opportunity has been already deleted |	Opportunity has been already deleted	| Delete
 400|Delete |	This opportunity cannot be deleted. The delete request is missing `Delete option` field |	This opportunity cannot be deleted. The delete request is missing `Delete option` field.	| Delete
@@ -3841,8 +5824,14 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|IVL |	Interested Vendors List should be enabled for this organization |Interested Vendors List should be enabled for this organization when FORCE ON |	Publish
 400|IVL |	Interested Vendors List should not be enabled for this organization |Interested Vendors List should not be enabled for this organization when FORCE OFF |	Publish
 400|Revise | Opportunity cannot be updated | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state  | Revise
-400|Vendor Data |	Duplicate request. Vendor is already added as an authorized party on the notice | Request already exists for the vendor on the notice.	| AddAuthorizedParty
-400|Duns# |	No contact match on vendor data provided	| Not a Valid email or Duns#	| AddAuthorizedParty
+400|Vendor Data |	Duplicate request. Vendor is already added as an authorized party on the notice | Request already exists for the vendor on the notice	| AddAuthorizedParty
+400|VendorData| fname should not be empty| fname should not be empty| AddAuthorizedParty
+400|VendorData| lname should not be empty| lname should not be empty| AddAuthorizedParty
+400|VendorData| Email should not be empty| Email should not be empty| AddAuthorizedParty
+400|VendorData| Duns should not be empty| (**Planned to be deprecate by October 2020**) Duns should not be empty| AddAuthorizedParty
+400|VendorData| ueiSAM should not be empty| (**Planned to replace Duns# by October 2020 and usable by December 2019**) ueiSAM should not be empty| AddAuthorizedParty
+400|Duns# |	No contact match on vendor data provided	| (**Planned to be deprecate by October 2020**) Not a Valid email or Duns#	| AddAuthorizedParty
+400|ueiSAM# |	No contact match on vendor data provided	| (**Planned to replace Duns# by October 2020 and usable by December 2019**) Not a Valid email or ueiSAM#	| AddAuthorizedParty
 404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
 400|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
@@ -3861,7 +5850,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 
 Date | Version | Description
 ------|---------------|---------
-4/25/2019 | v.01 | Base Version
+4/25/2019 | v0.1 | Base Version
 4/29/2019 | v0.2 | Added information for Get Authorized Party List <br> Added Add Authorized Party <br> Added Vendor Data JSON <br> POC Email changed to not required <br> Change log added <br> Secure Attachment Download Authorization section added <br> Alpha and Beta endpoint section added
 5/23/2019 | v0.3 | Update IVL Settings URL <br> Removed Get IVL by DUNS <br> Added EntityID to getIVL API parameter <br> Updated Get Authorized Party <br> Updated Add Authorized Party <br> Error Message Section Updated
 5/28/2019 | v0.4| Updated  Add Authorized Party<br> Get Authorized Party<br> Delete All Attachments API’s <br> Added Delete Notice API <br> Updated User Permissions <br> Create and Publish Contract Opportunity
@@ -3876,9 +5865,8 @@ Date | Version | Description
 10/10/2019 | v0.8 | Updated the Set-Aside values with the latest codes
 10/25/2019 | v0.9 | Updated the field lengths
 10/31/2019| v0.91| Delete Vendor removed <br> Delete Resource in Draft API added <br> API Specifications Updated: Delete Notice, Getlist, Download Metadata for Attachment by Resource ID, and Download Metadata for Attachment by Opportunity ID <br> JSON Updated: Create and Update, Create and Publish, Revise Opportunity, Cancel Notice, Uncancel Notice, Archive, Unarchive, Create Attachment, Update Attachment, IVL Settings, and Delete Notice <br> Error Message Section Updated
-
-
-
+11/04/2019| v0.92 | Updated the field lengths for contact full name and awardee name fields for create Opportunity, Create and Publish Opportunity Contract Jsons. Updated the Error messages for these fields<br>Added Future Implementation for UEI SAM# Validation and Type of Connection. Task/Delivery Order number is updated to be a non required field for Justification submission
+11/12/2019| v1.0 | Initial Release Finalized
 
 
 <p><small><a href="#">Back to top</a></small></p>

@@ -166,6 +166,7 @@ far13 | FAR 13.5 - Simplified Procedures for One Source
 
 ### Award Notice (submitAward)
 This method is used to submit an award notice.
+If there are multiple awards with same Solicitation Number and Award Number, any revisions must be done from REST Services or from User Interface
 
 Input parameters:
 
@@ -197,9 +198,9 @@ awdamt |	string |	Yes |	Award Amount |	64 digits
 linenbr |	string |	No |	Line Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 awddate |	date |	Yes |	Award Date |	YYYYMMDD
 archdate |	date |	No |	Archive Date |	YYYYMMDD
-awardee |	string |	No - Either awardee or awardee_duns is required |	Awardee |	255 characters
+awardee |	string |	No - Either awardee or awardee_duns is required |	Awardee |	1000 characters
 awardee_duns |	string |	No - Either awardee or awardee_duns is required |	Awardee DUNS |	9 digits with optional plus 4
-contact |	string |	No |	Contact Info |	255 characters
+contact |	string |	No |	Contact Info |	500 characters
 desc |	string |	No |	Description |	65535 characters
 link |	GovURL |	No |	Government Link	|
 email |	GovEmail |	No |	Government Email |	255 characters
@@ -320,7 +321,7 @@ solnbr |string | Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9
 ntype | string | No | [Refer Notice Types](#notice-types) 	| 
 awdnbr | string |	No | Award # |255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 archdate | date |	No | Archive Date | YYYYMMDD
-contact | string | No | Contact Info | 255 characters
+contact | string | No | Contact Info | 500 characters
 desc | string | Yes |	Cancellation Description | 65535 characters
 
 ## Contracting Officer/Contracting <br>Specialist Method Details
@@ -355,7 +356,7 @@ subject |	string | Yes|	Subject|	256 characters
 solnbr | string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate | date |	No - either respdate or archdate is required |	Response Date |	YYYYMMDD
 archdate | date |	No - either respdate or archdate is required |	Archive Date | YYYYMMDD
-contact |	string | Yes |	Contact Info | 255 characters
+contact |	string | Yes |	Contact Info | 500 characters
 desc |string |Yes |	Description | 65535 characters
 link | GovURL – complex type | No |	Government Link has URL & description |	
 email |	GovEmail – complex type |	Yes | Government Email |  
@@ -426,7 +427,7 @@ solnbr | string |	Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-
 subject | string | Yes | Subject | 256 characters
 respdate | date |	Yes | Response Date | YYYYMMDD
 archdate | date |	No | Archive Date | YYYYMMDD
-contact | string |Yes | Contact Info | 255 characters
+contact | string |Yes | Contact Info | 500 characters
 desc | string |	Yes |	Description |	65535 characters
 link | GovURL – complex type | No |	Government Link	| 
 email |	GovEmail – complex type |	Yes | Government Email | 
@@ -498,7 +499,7 @@ solnbr | string |	Yes | 	Solicitation # |	128 characters from the set: a-z A-Z 0
 ntype |	string |	Yes |	 Notice Type |	Valid values: PRESOL, COMBINE, SRCSGT, SSALE, SNOTE, SOL
 respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL, SNOTE, SSALE	|Response Date	|YYYYMMDD
 archdate  |	date|	No - Either respdate or archdate required for SRCSGT, PRESOL, SNOTE, SSALE|	Archive Date|	YYYYMMDD
-contact |	string |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, SOL |	Contact Info |	255 characters
+contact |	string |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, SOL |	Contact Info |	500 characters
 desc |	string |	Yes - for PRESOL, COMBINE, SRCSGT, SSALE, SOL, SNOTE	| Description |	65535 characters
 link	| GovURL – complex type |	No |	Government Link |	
 email |	GovEmail – complex type |	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, SOL |	Government Email |	
@@ -573,9 +574,9 @@ awdnbr |	String |	Yes |	Award Number |	255 characters from the set: a-z A-Z 0-9 
 modnbr |	String |	No |	Mod Number |	32 characters
 awdamt |	String |	No |	Award Amount (Not in Use) |	64 digits
 awddate |	Date |	No	| Award Date |	YYYYMMDD
-donbr	| String |	Yes |	Task/Delivery Order Number |	255 characters from the set: a-z A-Z 0-9 - _ ( )
+donbr	| String |	No |	Task/Delivery Order Number |	255 characters from the set: a-z A-Z 0-9 - _ ( )
 archdate  |	Date |	No |	Archive Date |	YYYYMMDD
-contact |	String |	Yes | 	Contact Info |	255 characters
+contact |	String |	Yes | 	Contact Info |	500 characters
 desc |	String |	No |	Description	| 65535 characters
 link |	GovURL |	No	| Government Link |	255 characters
 links |	DocumentLink[]	| No |	Array Of links	|
@@ -643,7 +644,7 @@ subject |	string |	Yes |	Subject |	256 characters
 solnbr	| string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate |	date |	No - either respdate or archdate is required |	Response Date |	YYYYMMDD
 archdate |	date |	No - either respdate or archdate is required |	Archive Date	| YYYYMMDD
-contact	| string	| Yes |	Contact Info	| 255 characters
+contact	| string	| Yes |	Contact Info	| 500 characters
 desc | string |	Yes |	Description |	65535 characters
 link |	GovURL – complex type |	No |	Government Link	| 
 email	| GovEmail – complex type |	Yes |	Government Email	| 
@@ -717,7 +718,7 @@ offadd |	String |	No |	Office Address (Deprecated). The Contracting office addre
 subject | 	String |	Yes |	Subject |	256 characters
 solnbr	| String |	No |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 archdate |	Date |	Yes |	Archive Date |	YYYYMMDD
-contact |	String |	No	| Contact Info |	255 characters
+contact |	String |	No	| Contact Info |	500 characters
 desc |	String |	Yes |	Description |	65535 characters
 link	| GovURL – complex type	| No |	Government Link |	
 email |	GovEmail – complex type |	Yes if contact provided |	Government Email	| 
@@ -783,7 +784,7 @@ offadd|	string|	No	|Office Address (Deprecated). The Contracting office address 
 subject|	string|	Yes|	Subject	|256 characters
 solnbr|	string	|Yes	|Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { }
 archdate|	date|	Yes|	Archive Date|	YYYYMMDD
-contact|	string|	Yes|	Contact Info|	255 characters
+contact|	string|	Yes|	Contact Info|	500 characters
 desc|	string	|Yes|	Description	|65535 characters
 link	|GovURL – complex type|	No|	Government Link	|
 email	|GovEmail – complex type	|Yes|	Government Email|	
@@ -850,7 +851,7 @@ subject | string | Yes | Subject | 256 characters
 solnbr | string |	Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 respdate | date |	Yes  | Response Date | YYYYMMDD
 archdate | date |	No  | Archive Date | YYYYMMDD
-contact | string |Yes | Contact Info | 255 characters
+contact | string |Yes | Contact Info | 500 characters
 desc | string |	Yes |	Description |	65535 characters
 link | GovURL – complex type | No |	Government Link	| 
 email |	GovEmail – complex type |	Yes | Government Email | 
@@ -923,7 +924,7 @@ ntype	|String	|No|	 [Refer Related Notices](#related-notices)
 awdnbr|	String	|Yes	|Award Number|	255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 donbr|	String|	No	|Task/Delivery Order Number	|255 characters from the set: a-z A-Z 0-9 - _ ( )
 archdate 	|Date	|No	|Archive Date|	YYYYMMDD
-contact|	String|	Yes|	Contact Info	|255 characters; Default value = Primary, Other types are: Secondary, Owner
+contact|	String|	Yes|	Contact Info	|500 characters
 desc	|String	|Yes	|Description|	65535 characters
 link|	GovURL|	No|	Government Link	|255 characters
 links	|DocumentLink[]|	No|	Array Of links	|
@@ -996,16 +997,16 @@ subject|	string|	Yes|	Subject|	256 characters
 solnbr|	string|	Yes, EXCEPT No - Only for SNOTE|	Solicitation #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) { }
 ntype	|string	|No	| [Refer Related Notices](#related-notices)
 awdnbr|	string|	Yes - for AWARD, ITB & JA |	Award #	|255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
-donbr	|string	|Yes - for JA|	Delivery/Task Order Number	|	255 characters from the set: a-z A-Z 0-9 - _ ( )
+donbr	|string	|No|	Delivery/Task Order Number	|	255 characters from the set: a-z A-Z 0-9 - _ ( )
 awdamt	|string|	Yes - for AWARD 	|Award Amount|	64 digits
 linenbr|	string	|No|	Award Line Item Number	|255 characters from the set: a-z A-Z 0-9 - _ ( ) {}
 awddate	|date|	Yes - for AWARD|	Award Date	|YYYYMMDD
 stauth	|string	|Yes - for JA 	|J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy| [Refer Stauth Valid Values](#stauth-valid-values)
 respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL, SSALE	|Response Date	|YYYYMMDD
 archdate  |	date| No; Either respdate or archdate required for SRCSGT, PRESOL, SSALE, SNOTE|	Archive Date|	YYYYMMDD
-awardee|	string|	Yes – for AWARD |	Awardee	|255 characters
+awardee|	string|	Yes – for AWARD |	Awardee	|1000 characters
 awardee_duns|	string	|Yes - for AWARD	|Awardee DUNS	|9 digits with optional plus 4
-contact|	string|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL|	Contact Info|	255 characters
+contact|	string|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL|	Contact Info|	500 characters
 desc	|string|	Yes - for PRESOL, COMBINE, SRCSGT, SSALE, ITB, SOL, SNOTE|	Main Description|	65535 characters
 link|	GovernmentURL|	No|	Government Link	|255 characters
 email|	GovernmentEmail|	Yes – for PRESOL, COMBINE, SRCSGT, SSALE, JA, ITB, SOL, SNOTE (Required only for SNOTE if contact is provided)|	Government Email	|255 characters
@@ -2421,7 +2422,7 @@ Note: This service gets a list of all notices
                <desc xsi:type="xsd:string"></desc>
             </link>
            <email xsi:type="sam:GovEmail">
-               <address xsi:type="xsd:string"></address>
+               <address xsi:type="xsd:string">test@gmail.com</address>
                <desc xsi:type="xsd:string"></desc>
             </email>
             <!--Optional:-->
@@ -2525,7 +2526,7 @@ Note: This service gets a list of all notices
            </link>
            <!--Optional:-->
            <email xsi:type="sam:GovEmail">
-              <address xsi:type="xsd:string"></address>
+               <address xsi:type="xsd:string">test@gmail.com</address>
               <desc xsi:type="xsd:string"></desc>
            </email>
            <!--Optional:-->
@@ -4132,15 +4133,15 @@ notice_type	|	1. This field is required where applicable |	1. Opportunity type i
 solnbr|	1. This field is required where applicable<br><br>  2. If submitting a notice with a duplicate solnbr, then system throws an error <br><br>3. If solnbr is in invalid format, then service throws an error<br><br>4. If solnbr & ntype combination is not matched, then service throws an error <br><br> |	1. Notice Id is required <br><br>2. Notice ID must be unique based on selected notice type. <br><br>3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br><br>4.	Opportunity not found with given solicitation number and ntype
 ntype	 |1. When user tries to convert a notice and the solicitation number/ntype do not match the notice, then the service throws an error<br><br>  2. If an invalid ntype is provided, then service throws an error <br><br> 3. If the solicitation is related to ntype that is not allowed, then the system throws an error   |1. Opportunity not found with given solicitation number and ntype<br><br> 2. Invalid NTYPE value provided<br><br> 3.The Related Notice's Type is invalid for this Opportunity
 awdnbr|	1. This field is required where applicable<br><br> 2. If value provided does not meet the character limit/restrictions, then service throws an error|	1. Contract Award Number is a required field <br><br> 2.Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces
-donbr	|1. This field is required where applicable<br><br> 2. If value provided does not meet the character limit/restrictions, then service throws an error|	1. Task/Delivery Order Number is required field<br><br> 2. Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces
+donbr	| 1. If value provided does not meet the character limit/restrictions, then service throws an error|	1. Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces
 awdamt|	 	1. This field is required where applicable<br><br> 2. If an invalid integer values= is given, then service throws an error <br><br> 3. If value provided does not meet the character limit/restrictions, then service throws an error 	|1. Base and All Options Value is a required field<br><br> 2. Base and All Options Value - Invalid input: Please enter a valid number<br><br> 3. Base and All Options Value max length is 64 digits
 linenbr|	1.If value provided does not meet the character limit/restrictions, then service throws an error	|1. The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces
 awddate	|	1. This field is required where applicable <br><br>2. This field should meet the character limit/restrictions <br><br>  3. If the Contract Award Date is 15 days prior to the current date and the archive date is not provided then the service throws an error|	1. Contract Award Date is required field <br><br> 2. DATE field in unexpected format. Expects YYYYMMDD<br><br> 3. Contract Award Date set would result in inactive date being in the past
 stauth|	 1. This field is required where applicable <br><br> 2. This field accepts only valid values listed. If invalid values are provided, then system throws an error|	1. Authority is a required field <br><br>2. Invalid Authority Fields, please refer to Contract Opportunities SOAP Web Service Tech Document valid authority fields
-respdate|	1.	This field should meet the character limit/restrictions <br><br> 2.	This date cannot be in past; has to be in future. If the given date is in past, then system throws an error<br><br> 3. If the date provided exceeds 5 years from the current date, then the system throws an error <br><br> 4. Either respdate or archdate required for SRCSGT, PRESOL, SSALE.If none is provided, then the service throws the error 	| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. Response date provided is in the past<br><br> 3. Response Date cannot exceed 5 years from current date <br><br> 4. One of Response date or Archive date is required
-archdate|	1. This field should meet the character limit/restrictions <br><br> 2. This date cannot be current or in past; has to be in future <br><br> 3. Either respdate or archdate required for SRCSGT, PRESOL, SSALE.If none is provided, then the service throws the error |	1.	DATE field in unexpected format  Expects YYYYMMDD<br><br> 2. Archive date provided is in the past <br><br> 3. One of Response date or Archive date is required
-awardee_duns|	1. Must provide a valid DUNS|	1. Unique Entity Identifier (duns) is invalid
-contact	|	1. This field is required where applicable	|1. Primary Contact is Required
+respdate|	1.	This field should meet the character limit/restrictions <br><br>  2. If the date provided exceeds 5 years from the current date, then the system throws an error <br><br> 3. Either respdate or archdate required for SRCSGT, PRESOL, SSALE.If none is provided, then the service throws the error 	| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. Response Date cannot exceed 5 years from current date <br><br> 3. One of Response date or Archive date is required
+archdate|	1. This field should meet the character limit/restrictions <br><br> 2. This date cannot be in the past <br><br> 3. Either respdate or archdate required for SRCSGT, PRESOL, SSALE.If none is provided, then the service throws the error |	1.	DATE field in unexpected format  Expects YYYYMMDD<br><br> 2. Archive date provided is in the past <br><br> 3. One of Response date or Archive date is required
+awardee|	 1. This field is required where applicable <br><br>2. This field should meet the character limit/restrictions|	1. Contractor Awarded Name is a required field <br><br>2. Contractor Awarded Name max character length is 1000
+contact	|	1. This field is required where applicable <br><br>2. This field should meet the character limit/restrictions	|1. Primary Contact is Required <br><br>2. Primary Contact - Name limit is 500 characters
 desc| 	1. This field is required where applicable.|	1. Description is required
 link|	1. If a link is with same name and url is added to the notice during modification/amendment, then the service throws an error	| 1. Link with the display text {}  already exists
 email	|1. This field is required where applicable <br><br>  2. If an invalid email address is provided, then the service throws an error	| 1. Primary Contact - Email is required <br><br>  2. Primary Contact - Please enter a valid Internet email address. Format: username@host.domain
@@ -4165,7 +4166,7 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | -------
-date|		Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
+date|		1. Date field should meet the expected format	|1. DATE field in unexpected format. Expects YYYYMMDD
 officeid|		1. If an invalid officeid is given, then service throws an error<br><br> 2. If contracting officer does not have access to an office but is trying to make a submission to that office, then the service throws an error<br><br> 3. Office ID must be associated with user account	|1. Invalid officeid provided<br><br> 2. UnAuthorized Credentials. This may be the JWT issue or Role management issue. Please check
 solnbr| 1. This field is required where applicable. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  	|1. Multiple notices found. Please input more details<br><br>  2. Notice not found<br><br> 
 ntype	|	1. If an invalid ntype is provided, then service throws an error   | 1. Invalid NTYPE value provided
@@ -4193,7 +4194,7 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	| 	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-date|	Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
+date|	1. Date field should meet the expected format	|1. DATE field in unexpected format. Expects YYYYMMDD
 solnbr|	 1. This field is required where applicable. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error |	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details
 officeid	|	Office ID must be associated with user account	|NA
 ntype	|	1. If an invalid ntype is provided, then service throws an error   | 1. Invalid NTYPE value provided
@@ -4211,7 +4212,7 @@ solnbr|	 1. This field is required where applicable. If no value is provided, th
 officeid|	Office ID must be associated with user account	|NA
 ntype	|	1. If an invalid ntype is provided, then service throws an error   | 1. Invalid NTYPE value provided
 awdnbr	|	NA|	NA
-archdate|	1. If this value is available, this field should meet the character limit/restrictions <br><br>2.	If current date or a past date is provided, then the system throws an error<br><br>  3.	If no archive date is given, then the system throws an error| 1. DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. New archive date provided is in the past<br><br> 3.	New archive date is required
+archdate|	1. If this value is available, this field should meet the character limit/restrictions <br><br>2.	If a past date is provided, then the system throws an error<br><br>  3.	If no archive date is given, then the system throws an error| 1. DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. New archive date provided is in the past<br><br> 3.	New archive date is required
 
 #### cancelNotice 
 
@@ -4221,7 +4222,7 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-date|	Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
+date|	1. Date field should meet the expected format	|1. DATE field in unexpected format. Expects YYYYMMDD
 officeid|	Office ID must be associated with user account	|NA
 subject|		NA|	NA
 solnbr|	 1. This field is required where applicable. If no value is provided, then service throws an error<br><br> 2. If invalid combination of ntype and solnbr is provided, then system throws an error<br><br>  3. If ntype value is not provided and the solnbr is not unique or if multiple notices are found with same solnbr and ntype, then the system throws an error |	1. Solicitation Number is required<br><br> 2. Notice not found<br><br> 3. Multiple notices found. Please input more details
@@ -4237,9 +4238,9 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	|	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-notice_id	|	notice_id is required|	notice_id from getList is required
+notice_id	|	1. notice_id is required|	1. notice_id from getList is required
 get_changes|		NA|	NA
-get_changes_from_date|		Date field should meet the expected format|	DATE field in unexpected format. Expects YYYYMMDD
+get_changes_from_date|		1. Date field should meet the expected format|	1. DATE field in unexpected format. Expects YYYYMMDD
 get_file_data	|NA	|NA
 
 #### getList
@@ -4249,11 +4250,11 @@ Individual business rules per field are listed across each of the fields in belo
 
 Element Name	 |	Business Rules |	Error Messages with respect to business rules (If any)
 ------ | ------- | ------- | ------- | --------
-notice_type	 |	 Valid Notice Type must be provided | Notice Type is not recognized. Expects one of the following: PRESOL, COMBINE, MOD, AWARD, JA, SRCSGT, SSALE, SNOTE, ITB, SOL
+notice_type	 |	 1. Valid Notice Type must be provided |1. Notice Type is not recognized. Expects one of the following: PRESOL, COMBINE, MOD, AWARD, JA, SRCSGT, SSALE, SNOTE, ITB, SOL
 solnbr|	NA|	NA
 awdnbr|		NA|	NA
-posted_from	|	Date field should meet the expected format|	DATE field in unexpected format. Expects YYYYMMDD
-posted_to|Date field should meet the expected format	|DATE field in unexpected format. Expects YYYYMMDD
+posted_from	|	1. Date field should meet the expected format|	1. DATE field in unexpected format. Expects YYYYMMDD
+posted_to|1. Date field should meet the expected format	|1. DATE field in unexpected format. Expects YYYYMMDD
 documents_to_search|	NA|	NA
 
 #### getFileData
@@ -4400,6 +4401,8 @@ Date | Version | Description
 9/25/2019 | v0.6 | Updated required fields for DocumentLink, DocumentFile, ArchiveNotice, UnArchiveNotice, CancelNotice and DeleteNoticeOrDocumentPackage ComplexType definitions
 10/10/2019 | v0.7 | Updated the Set-Aside values with the latest codes
 10/28/2019 | v0.8| Documentation updates only. No change to Implementation <br> - Production WSDL link added <br> - Redundant Character Limit and Required columns removed from Specific Business Rules and Error Messages section <br> - Notice Types and Related Notices sections added for reference <br>- Consolidated and summarized list of deprecated methods <br>- Far13 added to Stauth Valid Values section <br>- Updated character limits<br>- Updated required column for submitAward, archiveNotice, submitPresol, submitCombined, submitMod, submitJA, submitSourcesSought, submitSpecialNotice, submitSaleofSurplus, submitITB, submitNotice, submitdocumentsandlinkstonotice <br>- Remove foja from getnoticedata response
+11/04/2019 | v0.9| Updated the character limits for contact and awardee fields for all the submit methods. Modified "donbr" as a not required field for Justification notice submission
+11/12/2019| v1.0| Initial Release Finalized
 
 
 
