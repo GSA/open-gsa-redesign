@@ -48,7 +48,7 @@ e rejected with an error.
 **Request Type** | GET    
 **URL** | /entity-hierarchy/v1/company-info
 **Summary** | Get Company information based on duns number
-**Consumes** | NA 
+**Consumes** | Request Parameter 
 **Produces** | application/json
 
 Request Parameters
@@ -68,8 +68,8 @@ HTTP Status Code | Response Type | Reason  | Description
 200 | string | successfully retrived the list| returns company information in response body
 401 | string | You are not authorized to view the resource
 403	| string |Accessing the resource you were trying to reach is forbidden
-404	| String | The resource you were trying to reach is not found
-
+404	| string | The resource you were trying to reach is not found
+500 | string | Internal Server Error
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -80,7 +80,7 @@ HTTP Status Code | Response Type | Reason  | Description
 **Request Type** | DELETE    
 **URL**         | /entity-hierarchy/v1/delete-entity
 **Summary**      | soft delete record by duns, uei or reg_id
-**Consumes**     | application/json
+**Consumes**     | Request Parameters
 **Produces**     | NA
 
 Request Parameters
@@ -102,7 +102,8 @@ HTTP Status Code | Response Type | Reason  | Description
 200 | string | successfully deleted the record| 
 401 | string | You are not authorized to view the resource
 403	| string |Accessing the resource you were trying to reach is forbidden
-404	| String | The resource you were trying to reach is not found
+404	| string | The resource you were trying to reach is not found
+500 | string | Internal Server Error 
 
 ## Examples
 
