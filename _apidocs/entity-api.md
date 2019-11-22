@@ -78,6 +78,16 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <tr>
 <th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<td>samRegistered</td>
+<td>Allows Y or N or ALL.
+<br>Example: samRegistered=Y
+<br> NOTE:  If not used the API will return SAM registrants only by default.
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -85,90 +95,206 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
 <br>Example: dbaName=ALLTEL</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y or N or null.
 <br>Example: debtSubjectToOffset=Y</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>Allows 9 character value.
 <br>Example: dodaac=DOD123456</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values can be sent.
-<br>Example: ueiDUNS=025114695</td>
+<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values 
+can be sent.
+<br>Example: ueiDUNS=025114695
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
-<td>TBD</td>
+<td>Unique Entity Indentifier SAM - Allow 12 digit value, 
+alphanumeric (ueiSAM values not yet avilable for search).
+<br>Example: ueiSAM=025114695
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
 <br>Example: entityStructureCode=Z1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>Allows Description or null.
 <br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
 <td>Allows D or null.
 <br>Example: exclusionStatusFlag=D</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>expirationDate</td>
+<td>expirationDate --> <br>registrationExpirationDate</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
-<br>Examples: expirationDate=01/01/2019, expirationDate=[01/01/2019,05/29/2019]</td>
+<br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
+NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
+</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>Allows Partial or Complete value.
-<br>Example: legalBusinessName=ALLTEL</td>
+<br>Example: legalBusinessName=ALLTEL
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>activationDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>Allows exact 5 character value.
+<br>Example: cageCode=00000</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>dbaName</td>
+<td>Allows Partial or Complete value.
+<br>Example: dbaName=ALLTEL</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>debtSubjectToOffset</td>
+<td>Allows Y or N or null.
+<br>Example: debtSubjectToOffset=Y</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>dodaac</td>
+<td>Allows 9 character value.
+<br>Example: dodaac=DOD123456</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values 
+can be sent.
+<br>Example: ueiDUNS=025114695
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiSAM</td>
+<td>Unique Entity Indentifier SAM - Allow 12 digit value, 
+alphanumeric (ueiSAM values not yet avilable for search).
+<br>Example: ueiSAM=025114695
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>entityStructureCode</td>
+<td>Allows 2 character code or null.
+<br>Example: entityStructureCode=Z1</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>entityStructureDesc</td>
+<td>Allows Description or null.
+<br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>exclusionStatusFlag</td>
+<td>Allows D or null.
+<br>Example: exclusionStatusFlag=D</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>expirationDate <br>-- registrationExpirationDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
+NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
+</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>Allows Partial or Complete value.
+<br>Example: legalBusinessName=ALLTEL
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
 <br>Example: primaryNaics=513310</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
 <br>Example: purposeOfRegistrationCode=Z2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>Allows a text.
 <br>Example: purposeOfRegistrationDesc=All Awards</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -176,6 +302,16 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiCreationDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: ueiCreationDate=01/01/2019, ueiCreationDate=[01/01/2019,05/29/2019]
+<br>Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -183,170 +319,206 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
-<br>Example: physicalAddressCity=Herndon</td>
+<br>Example: physicalAddressCity=Herndon
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
 <td>Allows 2 characters.
-<br>Example: physicalAddressCongressionalDistrict=AR</td>
+<br>Example: physicalAddressCongressionalDistrict=AR
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressCountryCode</td>
 <td>Allows 3 character code.
-<br>Example: physicalAddressCountryCode=USA</td>
+<br>Example: physicalAddressCountryCode=USA
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressProvinceOrState</td>
 <td>Allows 2 character code.
-<br>Example: physicalAddressProvinceOrState=AR</td>
+<br>Example: physicalAddressProvinceOrState=AR
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
 <td>Allows 5 digit zip code.
-<br>Example: physicalAddressZipPostalCode=02201</td>
+<br>Example: physicalAddressZipPostalCode=02201
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>samExtractCode</td>
 <td>Allows 1 character code (A or E).
 <br>Example: samExtractCode=A</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
 <br>Example: businessTypeCode=2L</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>businessTypeDesc</td>
 <td>Allows a text.
 <br>Example: businessTypeDesc=Woman Owned Business </td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureCode=2L</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureDesc=Limited Liability Company</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
 <br>Example: stateOfIncorporationCode=VA</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: stateOfIncorporationDesc=Virginia</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
 <br>Example: countryOfIncorporationCode=USA</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: countryOfIncorporationDesc=United States Of America</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
 <br>Example: naicsCode=513310</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>naicsDesc</td>
 <td>Allows a text.
 <br>Example: naicsDesc=Furniture Stores</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows 6 character code.
 <br>Example: naicsLimitedSB=513310</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
 <br>Example: pscCode=0989</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>pscDesc</td>
 <td>Allows a text.
 <br>Example: pscDesc=Screws</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateCode</td>
 <td>Allows 2 character code.
 <br>Example: servedDisasterStateCode=VA</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateName</td>
 <td>Allows Name or null.
 <br>Example: servedDisasterStateName=Virginia</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyCode</td>
 <td>Allows text.
 <br>Example: servedDisasterCountyCode=12334</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
 <td>Allows a text.
 <br>Example: servedDisasterCountyName=FAIRFAX</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
 <td>Allows text.
 <br>Example: servedDisasterMSA=86800730</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>Example: includeSections=entityRegistration,coreData</td>
+<br>Example: includeSections=entityRegistration,coreData
+<br>Applicable to non-SAM registrants but only the sections
+ entityRegistration and coreData are applicable.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>format</td>
 <td>Allows user to download different file formats(csv and json are allowable values).
-<br>Example: format=csv</td>
+<br>Example: format=csv<
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>emailId</td>
 <td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov</td>
+<br>Example: emailId=test@gsa.gov
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
-
 </table>
 </details>
 
@@ -363,30 +535,46 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<td>samRegistered</td>
+<td>string</td>
+<td>SAM Registered Entity
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
-<td>Unique Entity Identifier SAM</td>
+<td>Unique Entity Identifier SAM
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityEFTIndicator</td>
 <td>string</td>
 <td>Entity EFT Indicator</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>string</td>
-<td>CAGE Code</td>
+<td>CAGE Code
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 
@@ -394,78 +582,118 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>dodaac</td>
 <td>string</td>
 <td>DoDAAC</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
-<td>Legal Business Name</td>
+<td>Legal Business Name
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>Doing Business As Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>string</td>
 <td>Purpose of Registration Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>string</td>
 <td>Purpose of Registration Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>string</td>
 <td>Registration Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastUpdateDate</td>
 <td>string</td>
 <td>Last Update Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>expirationDate</td>
+<td>expirationDate -><br> registrationExpirationDate</td>
 <td>string</td>
-<td>Expiration Date</td>
+<td>Registration Expiration Date
+<br>NOTE: This parameter is being renamed.  
+expirationDate is in V1 and registrationExpirationDate will be V2.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>activeDate</td>
 <td>string</td>
 <td>Active Date</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiExpirationDate</td>
+<td>string</td>
+<td>Unique Entity Identifier Expiration Date
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>ueiCreationDate</td>
+<td>string</td>
+<td>Unique Entity Identifier Creation Date
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
 <td>noPublicDisplayFlag</td>
 <td>string</td>
 <td>No Public Display Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
 <td>string</td>
 <td>Exclusion Status Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>exclusionURL</td>
 <td>string</td>
 <td>Active Exclusion URL</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>dnbOpenData</td>
+<td>string</td>
+<td>Dun & Bradstreet Open Data
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 </table>
 </details>
@@ -478,48 +706,56 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>entityURL</td>
 <td>string</td>
 <td>Entity URL</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
 <td>Entity Division Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
 <td>Entity Division Number</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityStartDate</td>
 <td>string</td>
 <td>Entity Start Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fiscalYearEndCloseDate</td>
 <td>string</td>
 <td>Fiscal Year End Close Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>submissionDate</td>
 <td>string</td>
 <td>Submission Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>correspondenceFlag</td>
 <td>string</td>
 <td>Correspondence Flag</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -529,48 +765,63 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
-<td>Physical Address Line 1 and Mailing Address Line 1</td>
+<td>Physical Address Line 1 and Mailing Address Line 1
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
-<td>Physical Address Line 2 and Mailing Address Line 2</td>
+<td>Physical Address Line 2 and Mailing Address Line 2
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
-<td>Physical Address City and Mailing Address City</td>
+<td>Physical Address City and Mailing Address City
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province Code and Mailing Address State or Province Code</td>
+<td>Physical Address State or Province Code and Mailing Address State or Province Code
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
-<td>Physical Address Zip and Mailing Address Zip</td>
+<td>Physical Address Zip and Mailing Address Zip
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
-<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4</td>
+<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country Code and Mailing Address Country Code</td>
+<td>Physical Address Country Code and Mailing Address Country Code
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 </table>
@@ -579,12 +830,14 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <tr>		
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>		
 <th style="background-color: #f1f1f1;"><b>Type</b></th>		
-<th style="background-color: #f1f1f1;"><b>Description</b></th>		
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>	
 </tr>		
 <tr>		
 <td>congressionalDistrict</td>		
 <td>string</td>		
-<td>Physical Address Congressional District</td>		
+<td>Physical Address Congressional District</td>
+<td>v1<br>v2</td>
 </tr>		
 </table>
 
@@ -594,79 +847,91 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>string</td>
 <td>Entity Structure Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>string</td>
 <td>Entity Structure Description</td>
+<td>v1<br>v2</td>
 </tr>
-
 
 <tr>
 <td>entityTypeCode</td>
 <td>string</td>
 <td>Entity Type Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityTypeDesc</td>
 <td>string</td>
 <td>Entity Type Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>profitStructureCode</td>
 <td>string</td>
 <td>Profit Structure Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>profitStructureDesc</td>
 <td>string</td>
 <td>Profit Structure Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>string</td>
 <td>Organization Structure Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>string</td>
 <td>Organization Structure Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>string</td>
 <td>State Of Incorporation Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>string</td>
 <td>State Of Incorporation Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>string</td>
 <td>Country Of Incorporation Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>string</td>
 <td>Country Of Incorporation Description</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -676,6 +941,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
@@ -705,8 +971,8 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
-
 
 <tr>
 <td>sbaBusinessTypeList</td>
@@ -748,6 +1014,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -757,18 +1024,21 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>creditCardUsage</td>
 <td>string</td>
 <td>Credit Card Usage</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>string</td>
 <td>Debt Subject to Offset Flag</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 </details>
@@ -782,12 +1052,14 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>string</td>
 <td>Primary NAICS</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -829,6 +1101,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -856,6 +1129,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 </table>
@@ -866,18 +1140,21 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>disasterRegistryFlag</td>
 <td>string</td>
 <td>Disaster Registry Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>bondingFlag</td>
 <td>string</td>
 <td>Bonding Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -932,6 +1209,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 </table>
@@ -942,12 +1220,14 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>ediInformationFlag</td>
 <td>string</td>
 <td>EDI Information Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 </table>
@@ -962,6 +1242,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
@@ -1377,6 +1658,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -1550,6 +1832,7 @@ First Name</td>
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 </table>
@@ -1561,6 +1844,7 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 <tr>
 <td>architectEngineerResponses</td>
@@ -1722,6 +2006,7 @@ First Name</td>
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -1731,11 +2016,13 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 <tr>
 <td>financialAssistanceResponse</td>
 <td>string</td>
 <td>Financial Assistance Response</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -1749,102 +2036,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -1854,102 +2158,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -1959,102 +2280,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -2064,102 +2402,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -2169,102 +2524,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -2274,102 +2646,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -2383,6 +2772,16 @@ First Name</td>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<td>samRegistered</td>
+<td>Allows Y or N or ALL.
+<br>Example: samRegistered=Y
+<br> NOTE:  If not used the API will return SAM registrants only by default.
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -2390,90 +2789,206 @@ First Name</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
 <br>Example: dbaName=ALLTEL</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y or N or null.
 <br>Example: debtSubjectToOffset=Y</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>Allows 9 character value.
 <br>Example: dodaac=DOD123456</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values can be sent.
-<br>Example: ueiDUNS=025114695</td>
+<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values 
+can be sent.
+<br>Example: ueiDUNS=025114695
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
-<td>TBD</td>
+<td>Unique Entity Indentifier SAM - Allow 12 digit value, 
+alphanumeric (ueiSAM values not yet avilable for search).
+<br>Example: ueiSAM=025114695
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>entityStructure</td>
+<td>entityStructureCode</td>
 <td>Allows 2 character code or null.
-<br>Example: entityStructure=Z1</td>
+<br>Example: entityStructureCode=Z1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>Allows Description or null.
 <br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
 <td>Allows D or null.
 <br>Example: exclusionStatusFlag=D</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>expirationDate</td>
+<td>expirationDate --> <br>registrationExpirationDate</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
-<br>Examples: expirationDate=01/01/2019, expirationDate=[01/01/2019,05/29/2019]</td>
+<br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
+NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
+</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>Allows Partial or Complete value.
-<br>Example: legalBusinessName=ALLTEL</td>
+<br>Example: legalBusinessName=ALLTEL
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>activationDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>Allows exact 5 character value.
+<br>Example: cageCode=00000</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>dbaName</td>
+<td>Allows Partial or Complete value.
+<br>Example: dbaName=ALLTEL</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>debtSubjectToOffset</td>
+<td>Allows Y or N or null.
+<br>Example: debtSubjectToOffset=Y</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>dodaac</td>
+<td>Allows 9 character value.
+<br>Example: dodaac=DOD123456</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values 
+can be sent.
+<br>Example: ueiDUNS=025114695
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiSAM</td>
+<td>Unique Entity Indentifier SAM - Allow 12 digit value, 
+alphanumeric (ueiSAM values not yet avilable for search).
+<br>Example: ueiSAM=025114695
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>entityStructureCode</td>
+<td>Allows 2 character code or null.
+<br>Example: entityStructureCode=Z1</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>entityStructureDesc</td>
+<td>Allows Description or null.
+<br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>exclusionStatusFlag</td>
+<td>Allows D or null.
+<br>Example: exclusionStatusFlag=D</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>expirationDate <br>-- registrationExpirationDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
+NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
+</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>Allows Partial or Complete value.
+<br>Example: legalBusinessName=ALLTEL
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
 <br>Example: primaryNaics=513310</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
 <br>Example: purposeOfRegistrationCode=Z2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>Allows a text.
 <br>Example: purposeOfRegistrationDesc=All Awards</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -2481,6 +2996,16 @@ First Name</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiCreationDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: ueiCreationDate=01/01/2019, ueiCreationDate=[01/01/2019,05/29/2019]
+<br>Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -2488,198 +3013,254 @@ First Name</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
-<br>Example: physicalAddressCity=Herndon</td>
+<br>Example: physicalAddressCity=Herndon
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
 <td>Allows 2 characters.
-<br>Example: physicalAddressCongressionalDistrict=AR</td>
+<br>Example: physicalAddressCongressionalDistrict=AR
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressCountryCode</td>
 <td>Allows 3 character code.
-<br>Example: physicalAddressCountryCode=USA</td>
+<br>Example: physicalAddressCountryCode=USA
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressProvinceOrState</td>
 <td>Allows 2 character code.
-<br>Example: physicalAddressProvinceOrState=AR</td>
+<br>Example: physicalAddressProvinceOrState=AR
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
 <td>Allows 5 digit zip code.
-<br>Example: physicalAddressZipPostalCode=02201</td>
+<br>Example: physicalAddressZipPostalCode=02201
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>samExtractCode</td>
 <td>Allows 1 character code (A or E).
 <br>Example: samExtractCode=A</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>businessTypeCode</td>
+<td>Allows 2 character code.
+<br>Example: businessTypeCode=2L</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>businessTypeDesc</td>
+<td>Allows a text.
+<br>Example: businessTypeDesc=Woman Owned Business </td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureCode=2L</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureDesc=Limited Liability Company</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
 <br>Example: stateOfIncorporationCode=VA</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: stateOfIncorporationDesc=Virginia</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
 <br>Example: countryOfIncorporationCode=USA</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
-<td>Allows Name or null Unites States.
+<td>Allows a text.
 <br>Example: countryOfIncorporationDesc=United States Of America</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
 <br>Example: naicsCode=513310</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>naicsDesc</td>
 <td>Allows a text.
 <br>Example: naicsDesc=Furniture Stores</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows 6 character code.
 <br>Example: naicsLimitedSB=513310</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
 <br>Example: pscCode=0989</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>pscDesc</td>
 <td>Allows a text.
 <br>Example: pscDesc=Screws</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateCode</td>
 <td>Allows 2 character code.
 <br>Example: servedDisasterStateCode=VA</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateName</td>
-<td>Allows a text.
+<td>Allows Name or null.
 <br>Example: servedDisasterStateName=Virginia</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyCode</td>
-<td>Allows a text.
-<br>Example: servedDisasterCountyCode=32324</td>
+<td>Allows text.
+<br>Example: servedDisasterCountyCode=12334</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
-<td>Allows Name or null Virginia.
+<td>Allows a text.
 <br>Example: servedDisasterCountyName=FAIRFAX</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
-<td>Allows a text.
+<td>Allows text.
 <br>Example: servedDisasterMSA=86800730</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>Example: includeSections=entityRegistration,coreData</td>
+<br>Example: includeSections=entityRegistration,coreData
+<br>Applicable to non-SAM registrants but only the sections
+ entityRegistration and coreData are applicable.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>format</td>
 <td>Allows user to download different file formats(csv and json are allowable values).
-<br>Example: format=csv</td>
+<br>Example: format=csv<
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>emailId</td>
 <td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov</td>
+<br>Example: emailId=test@gsa.gov
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>edi</td>
 <td>Allows text.
 <br>Example: edi=YES/NO</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelCode</td>
 <td>Allows 2 character code.
 <br>Example: companySecurityLevelCode=92</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
 <br>Example: highestEmployeeSecurityLevelCode=90</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ultimateParentUEIDUNS</td>
 <td>Allows text.
 <br>Example: ultimateParentUEIDUNS=090123451</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ultimateParentUEISAM</td>
 <td>Allows text.
 <br>Example: ultimateParentUEISAM=090123451</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeCode</td>
 <td>Allows text, Determines Agency Business Purpose Code.
 <br>Example: agencyBusinessPurposeCode=1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>sensitivity</td>
 <td>Allows a text, Determines Sensitivity Level of Data.
 <br>Example: sensitivity=public</td>
+<td>v1<br>v2</td>
 </tr>
 
 </table>
@@ -2698,126 +3279,172 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<td>samRegistered</td>
+<td>string</td>
+<td>SAM Registered Entity
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
-<td>Unique Entity Identifier SAM</td>
+<td>Unique Entity Identifier SAM
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityEFTIndicator</td>
 <td>string</td>
 <td>Entity EFT Indicator</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>string</td>
-<td>CAGE Code</td>
+<td>CAGE Code
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
+
 
 <tr>
 <td>dodaac</td>
 <td>string</td>
 <td>DoDAAC</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
-<td>Legal Business Name</td>
+<td>Legal Business Name
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>Doing Business As Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>string</td>
 <td>Purpose of Registration Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>string</td>
 <td>Purpose of Registration Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>string</td>
 <td>Registration Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastUpdateDate</td>
 <td>string</td>
 <td>Last Update Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>expirationDate</td>
+<td>expirationDate -><br> registrationExpirationDate</td>
 <td>string</td>
-<td>Expiration Date</td>
+<td>Registration Expiration Date
+<br>NOTE: This parameter is being renamed.  
+expirationDate is in V1 and registrationExpirationDate will be V2.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>activeDate</td>
 <td>string</td>
 <td>Active Date</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiExpirationDate</td>
+<td>string</td>
+<td>Unique Entity Identifier Expiration Date
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>ueiCreationDate</td>
+<td>string</td>
+<td>Unique Entity Identifier Creation Date
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
 <td>noPublicDisplayFlag</td>
 <td>string</td>
 <td>No Public Display Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
 <td>string</td>
 <td>Exclusion Status Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>exclusionURL</td>
 <td>string</td>
 <td>Active Exclusion URL</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>dnbOpenData</td>
+<td>string</td>
+<td>Dun & Bradstreet Open Data
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 </table>
 </details>
 
 <details>
 <summary>core Data Section</summary><br>
-<table>		
-<tr>		
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>		
-<th style="background-color: #f1f1f1;"><b>Type</b></th>		
-<th style="background-color: #f1f1f1;"><b>Description</b></th>		
-</tr>		
-<tr>		
-<td>congressionalDistrict</td>		
-<td>string</td>		
-<td>Physical Address Congressional District</td>		
-</tr>		
-</table>
+
 <summary>entityHierarchyInformation Sub Section</summary>
 <table>
 <tr>
@@ -2837,24 +3464,28 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -2917,6 +3548,7 @@ First Name</td>
 
 </details>
 </td>
+<td>v1<br>v2</td>
 </div>
 </tr>
 
@@ -2924,6 +3556,7 @@ First Name</td>
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
+<td>v1<br>v2</td>
 </tr>
 
 </table>
@@ -2942,6 +3575,7 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
@@ -3046,6 +3680,7 @@ First Name</td>
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -3151,6 +3786,7 @@ First Name</td>
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 
@@ -3170,23 +3806,27 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -3249,6 +3889,7 @@ First Name</td>
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </div>
 </tr>
 
@@ -3256,6 +3897,7 @@ First Name</td>
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 </details>
@@ -3273,176 +3915,86 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-<tr>
-<td>
-dnbMonitoring
-</td>
-<td>object</td>
-<td>
-<details>
-<summary>dnbMonitoring contains below fields</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>postalCode</td>
 <td>string</td>
 <td>Postal Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-</tr>
-</table>
-</details>
-</td>
+<td>v1<br>v2</td>
 </tr>
 
-<tr>
-<td>
-samMonitoring
-</td>
-<td>object</td>
-<td>
-<details>
-<summary>samMonitoring contains below fields</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>dbaName</td>
-<td>string</td>
-<td>DBA Name</td>
-</tr>
-
-<tr>
-<td>outOfBusinessFlag</td>
-<td>string</td>
-<td>Out Of Business Flag</td>
-</tr>
-
-<tr>
-<td>monitoringStatus</td>
-<td>string</td>
-<td>Monitoring Status</td>
-</tr>
-
-<tr>
-<td>lastUpdated</td>
-<td>string</td>
-<td>Last Updated</td>
-</tr>
-
-<tr>
-<td>addressLine1</td>
-<td>string</td>
-<td>Address Line 1</td>
-</tr>
-
-<tr>
-<td>addressLine2</td>
-<td>string</td>
-<td>Address Line 2</td>
-</tr>
-
-<tr>
-<td>city</td>
-<td>string</td>
-<td>City</td>
-</tr>
-
-<tr>
-<td>postalCode</td>
-<td>string</td>
-<td>Postal Code</td>
-</tr>
-
-<tr>
-<td>stateOrProvinceCode</td>
-<td>string</td>
-<td>State or Province Code</td>
-</tr>
-
-<tr>
-<td>countryCode</td>
-<td>string</td>
-<td>Country Code</td>
-</tr>
-</table>
-</details>
-</td>
-</tr>
 </table>
 </details>
 </td>
@@ -3456,42 +4008,49 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>source</td>
 <td>string</td>
 <td>Source</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>hierarchyDepartmentCode</td>
 <td>string</td>
 <td>Hierarchy Department Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>hierarchyDepartmentName</td>
 <td>string</td>
 <td>Hierarchy Department Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>hierarchyAgencyCode</td>
 <td>string</td>
 <td>Hierarchy Agency Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>hierarchyAgencyName</td>
 <td>string</td>
 <td>Hierarchy Agency Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>hierarchyOfficeCode</td>
 <td>string</td>
 <td>Hierarchy Office Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -3502,48 +4061,56 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>entityURL</td>
 <td>string</td>
 <td>Entity URL</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
 <td>Entity Division Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
 <td>Entity Division Number</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityStartDate</td>
 <td>string</td>
 <td>Entity Start Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fiscalYearEndCloseDate</td>
 <td>string</td>
 <td>Fiscal Year End Close Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>submissionDate</td>
 <td>string</td>
 <td>Submission Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>correspondenceFlag</td>
 <td>string</td>
 <td>Correspondence Flag</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -3553,49 +4120,80 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
-<td>Physical Address Line 1 and Mailing Address Line 1</td>
+<td>Physical Address Line 1 and Mailing Address Line 1
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
-<td>Physical Address Line 2 and Mailing Address Line 2</td>
+<td>Physical Address Line 2 and Mailing Address Line 2
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
-<td>Physical Address City and Mailing Address City</td>
+<td>Physical Address City and Mailing Address City
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province Code and Mailing Address State or Province Code</td>
+<td>Physical Address State or Province Code and Mailing Address State or Province Code
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
-<td>Physical Address Zip and Mailing Address Zip</td>
+<td>Physical Address Zip and Mailing Address Zip
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
-<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4</td>
+<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country Code and Mailing Address Country Code</td>
+<td>Physical Address Country Code and Mailing Address Country Code
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
+
+</table>
+
+<table>		
+<tr>		
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>		
+<th style="background-color: #f1f1f1;"><b>Type</b></th>		
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>	
+</tr>		
+<tr>		
+<td>congressionalDistrict</td>		
+<td>string</td>		
+<td>Physical Address Congressional District</td>	
+<td>v1<br>v2</td>	
+</tr>		
 </table>
 
 <summary>generalInformation Sub Section</summary>
@@ -3604,114 +4202,133 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeCode</td>
 <td>string</td>
 <td>Agency Business Purpose Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeDesc</td>
 <td>string</td>
 <td>Agency Business Purpose Desc</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>string</td>
 <td>Entity Structure Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityStructureDescription</td>
 <td>string</td>
 <td>Entity Structure Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityTypeCode</td>
 <td>string</td>
 <td>Entity Type Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityTypeDesc</td>
 <td>string</td>
 <td>Entity Type Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>profitStructureCode</td>
 <td>string</td>
 <td>Profit Structure Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>profitStructureDesc</td>
 <td>string</td>
 <td>Profit Structure Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>string</td>
 <td>Organization Structure Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>string</td>
 <td>Organization Structure Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>string</td>
 <td>State Of Incorporation Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>string</td>
 <td>State Of Incorporation Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>string</td>
 <td>Country Of IncorporationCode</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>string</td>
 <td>Country Of IncorporationDescription</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelCode</td>
 <td>string</td>
 <td>Company Security Level Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelDesc</td>
 <td>string</td>
 <td>Company Security Level Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>string</td>
 <td>Highest Employee Security Level Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelDesc</td>
 <td>string</td>
 <td>Highest Employee Security Level Description</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -3721,6 +4338,7 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
@@ -3750,6 +4368,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 
@@ -3793,6 +4412,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -3802,18 +4422,21 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>creditCardUsage</td>
 <td>string</td>
 <td>Credit Card Usage</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>string</td>
 <td>Debt Subject to Offset Flag</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 </details>
@@ -3827,12 +4450,14 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>string</td>
 <td>Primary NAICS</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -3874,6 +4499,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -3902,6 +4528,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 </table>
@@ -3912,18 +4539,21 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>disasterRegistryFlag</td>
 <td>string</td>
 <td>Disaster Registry Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>bondingFlag</td>
 <td>string</td>
 <td>Bonding Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -3955,6 +4585,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -4009,6 +4640,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -4018,18 +4650,21 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>averageAnnualRevenue</td>
 <td>string</td>
 <td>Average Annual Revenue</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>averageNumberOfEmployees</td>
 <td>string</td>
 <td>Average Number Of Employees</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -4039,18 +4674,21 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>employeesLocation</td>
 <td>string</td>
 <td>Employees Location</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>receiptsLocation</td>
 <td>string</td>
 <td>Receipts Location</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -4060,24 +4698,28 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>barrelsCapacity</td>
 <td>string</td>
 <td>Barrels Capacity</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>totalAssets</td>
 <td>string</td>
 <td>Total Assets</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>megawattHours</td>
 <td>string</td>
 <td>Mega Watt Hours</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -4087,42 +4729,49 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>ediInformationFlag</td>
 <td>string</td>
 <td>EDI Information Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>vanProvider</td>
 <td>string</td>
 <td>Van Provider</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>isaQualifier</td>
 <td>string</td>
 <td>ISA Qualifier</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>isaIdentifier</td>
 <td>string</td>
 <td>ISA Identifier</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>functionalGroupIdentifier</td>
 <td>string</td>
 <td>Functional Group Identifier</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>requestFlag820s</td>
 <td>string</td>
 <td>Request Flag 820s</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 </details>
@@ -4136,6 +4785,7 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
@@ -4551,6 +5201,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -4727,6 +5378,7 @@ First Name</td>
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 </table>
@@ -4738,6 +5390,7 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 <tr>
 <td>architectEngineerResponses</td>
@@ -4899,6 +5552,7 @@ First Name</td>
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -4908,11 +5562,13 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 <tr>
 <td>financialAssistanceResponse</td>
 <td>string</td>
 <td>Financial Assistance Response</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -4927,102 +5583,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -5032,18 +5705,21 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -5056,78 +5732,91 @@ First Name</td>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -5137,102 +5826,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -5242,102 +5948,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -5347,102 +6070,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -5452,102 +6192,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -5557,102 +6314,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -5662,102 +6436,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -5767,102 +6558,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -5872,102 +6680,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -5977,102 +6802,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -6082,102 +6924,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -6187,102 +7046,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -6296,6 +7172,16 @@ First Name</td>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<td>samRegistered</td>
+<td>Allows Y or N or ALL.
+<br>Example: samRegistered=Y
+<br> NOTE:  If not used the API will return SAM registrants only by default.
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -6303,90 +7189,206 @@ First Name</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
 <br>Example: dbaName=ALLTEL</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y or N or null.
 <br>Example: debtSubjectToOffset=Y</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>Allows 9 character value.
 <br>Example: dodaac=DOD123456</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values can be sent.
-<br>Example: ueiDUNS=025114695</td>
+<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values 
+can be sent.
+<br>Example: ueiDUNS=025114695
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
-<td>TBD</td>
+<td>Unique Entity Indentifier SAM - Allow 12 digit value, 
+alphanumeric (ueiSAM values not yet avilable for search).
+<br>Example: ueiSAM=025114695
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
 <br>Example: entityStructureCode=Z1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>Allows Description or null.
 <br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
 <td>Allows D or null.
 <br>Example: exclusionStatusFlag=D</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>expirationDate</td>
+<td>expirationDate --> <br>registrationExpirationDate</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
-<br>Examples: expirationDate=01/01/2019, expirationDate=[01/01/2019,05/29/2019]</td>
+<br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
+NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
+</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>Allows Partial or Complete value.
-<br>Example: legalBusinessName=ALLTEL</td>
+<br>Example: legalBusinessName=ALLTEL
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>activationDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>Allows exact 5 character value.
+<br>Example: cageCode=00000</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>dbaName</td>
+<td>Allows Partial or Complete value.
+<br>Example: dbaName=ALLTEL</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>debtSubjectToOffset</td>
+<td>Allows Y or N or null.
+<br>Example: debtSubjectToOffset=Y</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>dodaac</td>
+<td>Allows 9 character value.
+<br>Example: dodaac=DOD123456</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values 
+can be sent.
+<br>Example: ueiDUNS=025114695
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiSAM</td>
+<td>Unique Entity Indentifier SAM - Allow 12 digit value, 
+alphanumeric (ueiSAM values not yet avilable for search).
+<br>Example: ueiSAM=025114695
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>entityStructureCode</td>
+<td>Allows 2 character code or null.
+<br>Example: entityStructureCode=Z1</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>entityStructureDesc</td>
+<td>Allows Description or null.
+<br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>exclusionStatusFlag</td>
+<td>Allows D or null.
+<br>Example: exclusionStatusFlag=D</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>expirationDate <br>-- registrationExpirationDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
+NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
+</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>Allows Partial or Complete value.
+<br>Example: legalBusinessName=ALLTEL
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
 <br>Example: primaryNaics=513310</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
 <br>Example: purposeOfRegistrationCode=Z2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>Allows a text.
 <br>Example: purposeOfRegistrationDesc=All Awards</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -6394,6 +7396,16 @@ First Name</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiCreationDate</td>
+<td>Allows a single Date or a Date range.
+<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
+<br>Examples: ueiCreationDate=01/01/2019, ueiCreationDate=[01/01/2019,05/29/2019]
+<br>Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -6401,192 +7413,233 @@ First Name</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
-<br>Example: physicalAddressCity=Herndon</td>
+<br>Example: physicalAddressCity=Herndon
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
 <td>Allows 2 characters.
-<br>Example: physicalAddressCongressionalDistrict=AR</td>
+<br>Example: physicalAddressCongressionalDistrict=AR
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressCountryCode</td>
 <td>Allows 3 character code.
-<br>Example: physicalAddressCountryCode=USA</td>
+<br>Example: physicalAddressCountryCode=USA
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressProvinceOrState</td>
 <td>Allows 2 character code.
-<br>Example: physicalAddressProvinceOrState=AR</td>
+<br>Example: physicalAddressProvinceOrState=AR
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
 <td>Allows 5 digit zip code.
-<br>Example: physicalAddressZipPostalCode=02201</td>
+<br>Example: physicalAddressZipPostalCode=02201
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>samExtractCode</td>
 <td>Allows 1 character code (A or E).
 <br>Example: samExtractCode=A</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
 <br>Example: businessTypeCode=2L</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>businessTypeDesc</td>
 <td>Allows a text.
 <br>Example: businessTypeDesc=Woman Owned Business </td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureCode=2L</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureDesc=Limited Liability Company</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
 <br>Example: stateOfIncorporationCode=VA</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: stateOfIncorporationDesc=Virginia</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
 <br>Example: countryOfIncorporationCode=USA</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: countryOfIncorporationDesc=United States Of America</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
 <br>Example: naicsCode=513310</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>naicsDesc</td>
 <td>Allows a text.
 <br>Example: naicsDesc=Furniture Stores</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows 6 character code.
 <br>Example: naicsLimitedSB=513310</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
 <br>Example: pscCode=0989</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>pscDesc</td>
 <td>Allows a text.
 <br>Example: pscDesc=Screws</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateCode</td>
 <td>Allows 2 character code.
 <br>Example: servedDisasterStateCode=VA</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateName</td>
-<td>Allows a text.
+<td>Allows Name or null.
 <br>Example: servedDisasterStateName=Virginia</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyCode</td>
 <td>Allows text.
-<br>Example: servedDisasterCountyCode=763577</td>
+<br>Example: servedDisasterCountyCode=12334</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
 <td>Allows a text.
 <br>Example: servedDisasterCountyName=FAIRFAX</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
 <td>Allows text.
 <br>Example: servedDisasterMSA=86800730</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>Example: includeSections=entityRegistration,coreData</td>
+<br>Example: includeSections=entityRegistration,coreData
+<br>Applicable to non-SAM registrants but only the sections
+ entityRegistration and coreData are applicable.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>format</td>
 <td>Allows user to download different file formats(csv and json are allowable values).
-<br>Example: format=csv</td>
+<br>Example: format=csv<
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>emailId</td>
 <td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov</td>
+<br>Example: emailId=test@gsa.gov
+<br>Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>edi</td>
 <td>Allows text.
 <br>Example: edi=YES/NO</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelCode</td>
 <td>Allows 2 character code.
 <br>Example: companySecurityLevelCode=92</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
 <br>Example: highestEmployeeSecurityLevelCode=90</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ultimateParentUEIDUNS</td>
 <td>Allows text.
 <br>Example: ultimateParentUEIDUNS=090123451</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -6599,60 +7652,70 @@ First Name</td>
 <td>agencyBusinessPurposeCode</td>
 <td>Allows text, Determines Agency Business Purpose Code.
 <br>Example: agencyBusinessPurposeCode=1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>routingNumber</td>
 <td>Allows a text.
 <br>Example: routingNumber=0123456</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>bankName</td>
 <td>Allows a text.
 <br>Example: bankName=TEST</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>accountNumber</td>
 <td>Allows a text.
 <br>Example: accountNumber=012323456</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>eftWaiverFlag</td>
 <td>Allows a text.
 <br>Example: eftWaiverFlag=Y</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>agencyLocationCode</td>
 <td>Allows a text.
 <br>Example: agencyLocationCode=1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>disbursingOfficeSymbol</td>
 <td>Allows a text.
 <br>Example: disbursingOfficeSymbol=1093</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>taxpayerName</td>
 <td>Allows a text.
 <br>Example: taxpayerName=test</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>taxpayerIdentificationNumber</td>
 <td>Allows a text.
 <br>Example: taxpayerIdentificationNumber=01234</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>sensitivity</td>
 <td>Allows a text, Determines Sensitivity Level of Data.
 <br>Example: sensitivity=public</td>
+<td>v1<br>v2</td>
 </tr>
 
 </table>
@@ -6671,120 +7734,172 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<td>samRegistered</td>
+<td>string</td>
+<td>SAM Registered Entity
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
-<td>Unique Entity Identifier SAM</td>
+<td>Unique Entity Identifier SAM
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityEFTIndicator</td>
 <td>string</td>
 <td>Entity EFT Indicator</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>string</td>
-<td>CAGE Code</td>
+<td>CAGE Code
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
+
 
 <tr>
 <td>dodaac</td>
 <td>string</td>
 <td>DoDAAC</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
-<td>Legal Business Name</td>
+<td>Legal Business Name
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>Doing Business As Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>purposeOfRegistration</td>
+<td>purposeOfRegistrationCode</td>
 <td>string</td>
-<td>Purpose of Registration</td>
+<td>Purpose of Registration Code</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>purposeOfRegistrationDesc</td>
+<td>string</td>
+<td>Purpose of Registration Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>string</td>
 <td>Registration Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastUpdateDate</td>
 <td>string</td>
 <td>Last Update Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>expirationDate</td>
+<td>expirationDate -><br> registrationExpirationDate</td>
 <td>string</td>
-<td>Expiration Date</td>
+<td>Registration Expiration Date
+<br>NOTE: This parameter is being renamed.  
+expirationDate is in V1 and registrationExpirationDate will be V2.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>activeDate</td>
 <td>string</td>
 <td>Active Date</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiExpirationDate</td>
+<td>string</td>
+<td>Unique Entity Identifier Expiration Date
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>ueiCreationDate</td>
+<td>string</td>
+<td>Unique Entity Identifier Creation Date
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
 <td>noPublicDisplayFlag</td>
 <td>string</td>
 <td>No Public Display Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
 <td>string</td>
 <td>Exclusion Status Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>exclusionURL</td>
 <td>string</td>
 <td>Active Exclusion URL</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>dnbOpenData</td>
+<td>string</td>
+<td>Dun & Bradstreet Open Data
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 </table>
 </details>
 
 <details>
 <summary>core Data Section</summary><br>
-<table>		
-<tr>		
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>		
-<th style="background-color: #f1f1f1;"><b>Type</b></th>		
-<th style="background-color: #f1f1f1;"><b>Description</b></th>		
-</tr>		
-<tr>		
-<td>congressionalDistrict</td>		
-<td>string</td>		
-<td>Physical Address Congressional District</td>		
-</tr>		
-</table>
+
 <summary>entityHierarchyInformation</summary>
 <table>
 <tr>
@@ -6804,24 +7919,28 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -6884,6 +8003,7 @@ First Name</td>
 
 </details>
 </td>
+<td>v1<br>v2</td>
 </div>
 </tr>
 
@@ -6891,6 +8011,7 @@ First Name</td>
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
+<td>v1<br>v2</td>
 </tr>
 
 </table>
@@ -6909,24 +8030,28 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -6990,6 +8115,7 @@ First Name</td>
 
 </details>
 </td>
+<td>v1<br>v2</td>
 </div>
 </tr>
 
@@ -6997,8 +8123,8 @@ First Name</td>
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
+<td>v1<br>v2</td>
 </tr>
-
 
 </table>
 </details>
@@ -7016,23 +8142,27 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -7096,6 +8226,7 @@ First Name</td>
 
 </details>
 </td>
+<td>v1<br>v2</td>
 </div>
 </tr>
 
@@ -7103,6 +8234,7 @@ First Name</td>
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 </details>
@@ -7120,175 +8252,86 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-<tr>
-<td>
-dnbMonitoring
-</td>
-<td>object</td>
-<td>
-<details>
-<summary>dnbMonitoring contains below fields</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>postalCode</td>
 <td>string</td>
 <td>Postal Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-</tr>
-</table>
-</details>
-</td>
-</tr>
-<tr>
-<td>
-samMonitoring
-</td>
-<td>object</td>
-<td>
-<details>
-<summary>samMonitoring contains below fields</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<td>v1<br>v2</td>
 </tr>
 
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>dbaName</td>
-<td>string</td>
-<td>DBA Name</td>
-</tr>
-
-<tr>
-<td>outOfBusinessFlag</td>
-<td>string</td>
-<td>Out Of Business Flag</td>
-</tr>
-
-<tr>
-<td>monitoringStatus</td>
-<td>string</td>
-<td>Monitoring Status</td>
-</tr>
-
-<tr>
-<td>lastUpdated</td>
-<td>string</td>
-<td>Last Updated</td>
-</tr>
-
-<tr>
-<td>addressLine1</td>
-<td>string</td>
-<td>Address Line 1</td>
-</tr>
-
-<tr>
-<td>addressLine2</td>
-<td>string</td>
-<td>Address Line 2</td>
-</tr>
-
-<tr>
-<td>city</td>
-<td>string</td>
-<td>City</td>
-</tr>
-
-<tr>
-<td>postalCode</td>
-<td>string</td>
-<td>Postal Code</td>
-</tr>
-
-<tr>
-<td>stateOrProvinceCode</td>
-<td>string</td>
-<td>State or Province Code</td>
-</tr>
-
-<tr>
-<td>countryCode</td>
-<td>string</td>
-<td>Country Code</td>
-</tr>
-</table>
-</details>
-</td>
-</tr>
 </table>
 </details>
 </td>
@@ -7302,42 +8345,49 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>source</td>
 <td>string</td>
 <td>Source</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>hierarchyDepartmentCode</td>
 <td>string</td>
 <td>Hierarchy Department Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>hierarchyDepartmentName</td>
 <td>string</td>
 <td>Hierarchy Department Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>hierarchyAgencyCode</td>
 <td>string</td>
 <td>Hierarchy Agency Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>hierarchyAgencyName</td>
 <td>string</td>
 <td>Hierarchy Agency Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>hierarchyOfficeCode</td>
 <td>string</td>
 <td>Hierarchy Office Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -7347,24 +8397,28 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>taxpayerName</td>
 <td>string</td>
 <td>Taxpayer Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>taxpayerIdentificationType</td>
 <td>string</td>
 <td>Taxpayer Identification Type</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>taxpayerIdentificationNumber</td>
 <td>string</td>
 <td>Taxpayer Identification Number</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -7374,48 +8428,56 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>entityURL</td>
 <td>string</td>
 <td>Entity URL</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
 <td>Entity Division Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
 <td>Entity Division Number</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityStartDate</td>
 <td>string</td>
 <td>Entity Start Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fiscalYearEndCloseDate</td>
 <td>string</td>
 <td>Fiscal Year End Close Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>submissionDate</td>
 <td>string</td>
 <td>Submission Date</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>correspondenceFlag</td>
 <td>string</td>
 <td>Correspondence Flag</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -7425,51 +8487,80 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
-<td>Physical Address Line 1 and Mailing Address Line 1</td>
+<td>Physical Address Line 1 and Mailing Address Line 1
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
-<td>Physical Address Line 2 and Mailing Address Line 2</td>
+<td>Physical Address Line 2 and Mailing Address Line 2
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
-<td>Physical Address City and Mailing Address City</td>
+<td>Physical Address City and Mailing Address City
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province Code and Mailing Address State or Province Code</td>
+<td>Physical Address State or Province Code and Mailing Address State or Province Code
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
-<td>Physical Address Zip and Mailing Address Zip</td>
+<td>Physical Address Zip and Mailing Address Zip
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
-<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4</td>
+<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country Code and Mailing Address Country Code</td>
+<td>Physical Address Country Code and Mailing Address Country Code
+<br> Applicable to non-SAM registrants.</td>
+<td>v1<br>v2</td>
 </tr>
 
+</table>
 
+<table>		
+<tr>		
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>		
+<th style="background-color: #f1f1f1;"><b>Type</b></th>		
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>	
+</tr>		
+<tr>		
+<td>congressionalDistrict</td>		
+<td>string</td>		
+<td>Physical Address Congressional District</td>
+<td>v1<br>v2</td>		
+</tr>		
 </table>
 
 <summary>generalInformation Sub Section</summary>
@@ -7478,113 +8569,132 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeCode</td>
 <td>string</td>
 <td>Agency Business Purpose Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeDesc</td>
 <td>string</td>
 <td>Agency Business Purpose Desc</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>string</td>
 <td>Entity Structure Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>string</td>
 <td>Entity Structure Desc</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityTypeCode</td>
 <td>string</td>
 <td>Entity Type Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>entityTypeDesc</td>
 <td>string</td>
 <td>Entity Type Desc</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>profitStructureCode</td>
 <td>string</td>
 <td>Profit Structure Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>profitStructureDesc</td>
 <td>string</td>
 <td>Profit Structure Desc</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>string</td>
 <td>Organization StructureCode</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>string</td>
 <td>Organization StructureDesc</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>string</td>
 <td>State Of Incorporation Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>string</td>
 <td>State Of Incorporation Desc</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>string</td>
 <td>Country Of Incorporation Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>string</td>
 <td>Country Of Incorporation Desc</td>
+<td>v1<br>v2</td>
 </tr>
 <tr>
 <td>companySecurityLevelCode</td>
 <td>string</td>
 <td>Company Security Level Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelDesc</td>
 <td>string</td>
 <td>Company Security Level Description</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>string</td>
 <td>Highest Employee Security Level Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelDesc</td>
 <td>string</td>
 <td>Highest Employee Security Level Description</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -7594,6 +8704,7 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
@@ -7623,6 +8734,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 
@@ -7666,6 +8778,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -7675,18 +8788,21 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>creditCardUsage</td>
 <td>string</td>
 <td>Credit Card Usage</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>string</td>
 <td>Debt Subject to Offset Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -7782,6 +8898,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -7824,8 +8941,8 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
-
 
 <tr>
 <td>remittanceInformation</td>
@@ -7889,6 +9006,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -7903,12 +9021,14 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>string</td>
 <td>Primary NAICS</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -7950,6 +9070,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -7977,6 +9098,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -7986,24 +9108,28 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>disasterRegistryFlag</td>
 <td>string</td>
 <td>Disaster Registry Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>bondingFlag</td>
 <td>string</td>
 <td>Bonding Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>bondingLevels</td>
 <td>string</td>
 <td>Bonding Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -8058,6 +9184,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -8067,18 +9194,21 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>averageAnnualRevenue</td>
 <td>string</td>
 <td>Average Annual Revenue</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>averageNumberOfEmployees</td>
 <td>string</td>
 <td>Average Number Of Employees</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -8088,18 +9218,21 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>employeesLocation</td>
 <td>string</td>
 <td>Employees Location</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>receiptsLocation</td>
 <td>string</td>
 <td>Receipts Location</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -8109,24 +9242,28 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>barrelsCapacity</td>
 <td>string</td>
 <td>Barrels Capacity</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>totalAssets</td>
 <td>string</td>
 <td>Total Assets</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>megawattHours</td>
 <td>string</td>
 <td>Mega Watt Hours</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -8136,42 +9273,49 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>ediInformationFlag</td>
 <td>string</td>
 <td>EDI Information Flag</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>vanProvider</td>
 <td>string</td>
 <td>Van Provider</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>isaQualifier</td>
 <td>string</td>
 <td>ISA Qualifier</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>isaIdentifier</td>
 <td>string</td>
 <td>ISA Identifier</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>functionalGroupIdentifier</td>
 <td>string</td>
 <td>Functional Group Identifier</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>requestFlag820s</td>
 <td>string</td>
 <td>Request Flag 820s</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 </details>
@@ -8185,6 +9329,7 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
@@ -8600,6 +9745,7 @@ samMonitoring
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -8776,6 +9922,7 @@ First Name</td>
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 
 </table>
@@ -8787,6 +9934,7 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 <tr>
 <td>architectEngineerResponses</td>
@@ -8948,6 +10096,7 @@ First Name</td>
 </table>
 </details>
 </td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -8957,11 +10106,13 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 <tr>
 <td>financialAssistanceResponse</td>
 <td>string</td>
 <td>Financial Assistance Response</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -8976,102 +10127,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -9081,102 +10249,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -9186,102 +10371,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -9291,102 +10493,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -9396,102 +10615,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -9501,102 +10737,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -9606,24 +10859,28 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -9636,72 +10893,84 @@ First Name</td>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -9711,102 +10980,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -9816,102 +11102,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -9921,102 +11224,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -10026,102 +11346,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -10131,102 +11468,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -10236,102 +11590,119 @@ First Name</td>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td>v1<br>v2</td>
 </tr>
 </table>
 
@@ -10384,7 +11755,14 @@ https://api.sam.gov/prod/entity-information/v1/api/entities?api_key=<API Key>&sa
 
 ## Additional Information
 You can view the full details of the differences between the SAM legacy API and Beta API 
-<br> available here: <a href="LegacySAMvsBetaSAM-EntityManagementAPI.pdf">Variance Document</a>
+<br> available here: <a href="LegacySAMvsBetaSAM-EntityManagementAPI.pdf">Variance Document</a><br>
+
+Disclaimer: 
+<br><b>Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data</b>
+This website contains data supplied by third party information suppliers, one of which is D&B. For the purposes of the following limitation on permissible use of D&B data, which includes each entity's DUNS Number and its associated business information, "D&B Open Data" is defined as the following data elements: Business Name, Street Address, City Name, State/Province Name, Country Name, County Code, State/Province Code, State/Province Abbreviation, ZIP/Postal Code, Country Name and Country Code.
+D&B hereby grants you, the user, a license for a limited, non-exclusive right to use D&B Open Data within the limitations set forth herein. By using this website you agree that you shall not use D&B Open Data without giving written attribution to the source of such data (i.e., D&B) and shall not access, use or disseminate D&B Open Data in bulk, (i.e., in amounts sufficient for use as an original source or as a substitute for the product and/or service being licensed hereunder).
+Except for data elements identified above as D&B Open Data, under no circumstances are you authorized to use any other D&B data for commercial, resale or marketing purposes (e.g., identifying, quantifying, segmenting and/or analyzing customers and prospective customers). Systematic access (electronic harvesting) or extraction of content from the website, including the use of "bots" or "spiders", is prohibited. Federal government entities are authorized to use the D&B data for purposes of acquisition as defined in FAR 2.101 and for the purpose of managing Federal awards, including sub-awards, or reporting Federal award information.
+GSA assumes no liability for the use of the D&B data once it is downloaded or accessed. The D&B data is provided "as is" without warranty of any kind. The D&B data is the intellectual property of D&B. In no event will D&B or any third party information supplier be liable in any way with regard to the use of the D&B data. For more information about the scope of permissible use of D&B data licensed hereunder, please contact D&B at datause_govt@dnb.com.
 
 <p><small><a href="#">Back to top</a></small></p>
 
