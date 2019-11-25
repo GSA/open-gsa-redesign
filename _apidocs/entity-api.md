@@ -101,7 +101,8 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
-<br>Example: cageCode=00000</td>
+<br>Example: cageCode=00000
+<br> Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -139,7 +140,7 @@ can be sent.
 <td>ueiSAM</td>
 <td>Unique Entity Indentifier SAM - Allow 12 digit value, 
 alphanumeric (ueiSAM values not yet avilable for search).
-<br>Example: ueiSAM=025114695
+<br>Example: ueiSAM=025114695AST
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -232,7 +233,7 @@ can be sent.
 <td>ueiSAM</td>
 <td>Unique Entity Indentifier SAM - Allow 12 digit value, 
 alphanumeric (ueiSAM values not yet avilable for search).
-<br>Example: ueiSAM=025114695
+<br>Example: ueiSAM=025114695AST
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -771,59 +772,58 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>addressLine1</td>
 <td>string</td>
-<td>Physical Address Line 1 and Mailing Address Line 1
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Line 1 and Mailing Address Line 1.
+<br>Only Physical Address Line 1 is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
-<td>Physical Address Line 2 and Mailing Address Line 2
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Line 2 and Mailing Address Line 2.
+<br>Only Physical Address Line 2 is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
-<td>Physical Address City and Mailing Address City
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address City and Mailing Address City.
+<br>Only Physical Address City is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province Code and Mailing Address State or Province Code
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address State or Province Code and Mailing Address State or Province Code.
+<br>Only Physical Address State or Province Code is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
-<td>Physical Address Zip and Mailing Address Zip
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Zip and Mailing Address Zip.
+<br>Only Physical Address Zip is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
-<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4.
+<br>Only Physical Address Zip Plus4 is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country Code and Mailing Address Country Code
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Country Code and Mailing Address Country Code.
+<br>Only Physical Address Country Code is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
-
 </table>
 
 <table>		
@@ -2795,7 +2795,8 @@ First Name</td>
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
-<br>Example: cageCode=00000</td>
+<br>Example: cageCode=00000
+<br> Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -2833,7 +2834,7 @@ can be sent.
 <td>ueiSAM</td>
 <td>Unique Entity Indentifier SAM - Allow 12 digit value, 
 alphanumeric (ueiSAM values not yet avilable for search).
-<br>Example: ueiSAM=025114695
+<br>Example: ueiSAM=025114695AST
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -2888,7 +2889,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
-<br>Example: cageCode=00000</td>
+<br>Example: cageCode=00000
+<br> Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -2926,7 +2928,7 @@ can be sent.
 <td>ueiSAM</td>
 <td>Unique Entity Indentifier SAM - Allow 12 digit value, 
 alphanumeric (ueiSAM values not yet avilable for search).
-<br>Example: ueiSAM=025114695
+<br>Example: ueiSAM=025114695AST
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -3919,80 +3921,245 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
+<td>
+dnbMonitoring
+</td>
+<td>object</td>
+<td>
+<details>
+<summary>dnbMonitoring contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>postalCode</td>
 <td>string</td>
 <td>Postal Code</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+</tr>
+</table>
+</details>
+</td>
+<td>v1</td>
+</tr>
+
+<tr>
+<td>
+samMonitoring
+</td>
+<td>object</td>
+<td>
+<details>
+<summary>samMonitoring contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>dbaName</td>
+<td>string</td>
+<td>DBA Name</td>
+</tr>
+
+<tr>
+<td>outOfBusinessFlag</td>
+<td>string</td>
+<td>Out Of Business Flag</td>
+</tr>
+
+<tr>
+<td>monitoringStatus</td>
+<td>string</td>
+<td>Monitoring Status</td>
+</tr>
+
+<tr>
+<td>lastUpdated</td>
+<td>string</td>
+<td>Last Updated</td>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>postalCode</td>
+<td>string</td>
+<td>Postal Code</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+</table>
+</details>
+</td>
+<td>v1</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>dbaName</td>
+<td>string</td>
+<td>DBA Name</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>outOfBusinessFlag</td>
+<td>string</td>
+<td>Out Of Business Flag</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>lastUpdated</td>
+<td>string</td>
+<td>Last Updated</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>postalCode</td>
+<td>string</td>
+<td>Postal Code</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v2</td>
 </tr>
 
 </table>
@@ -4126,59 +4293,58 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>addressLine1</td>
 <td>string</td>
-<td>Physical Address Line 1 and Mailing Address Line 1
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Line 1 and Mailing Address Line 1.
+<br>Only Physical Address Line 1 is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
-<td>Physical Address Line 2 and Mailing Address Line 2
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Line 2 and Mailing Address Line 2.
+<br>Only Physical Address Line 2 is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
-<td>Physical Address City and Mailing Address City
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address City and Mailing Address City.
+<br>Only Physical Address City is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province Code and Mailing Address State or Province Code
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address State or Province Code and Mailing Address State or Province Code.
+<br>Only Physical Address State or Province Code is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
-<td>Physical Address Zip and Mailing Address Zip
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Zip and Mailing Address Zip.
+<br>Only Physical Address Zip is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
-<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4.
+<br>Only Physical Address Zip Plus4 is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country Code and Mailing Address Country Code
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Country Code and Mailing Address Country Code.
+<br>Only Physical Address Country Code is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
-
 </table>
 
 <table>		
@@ -7195,7 +7361,8 @@ First Name</td>
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
-<br>Example: cageCode=00000</td>
+<br>Example: cageCode=00000
+<br> Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7233,7 +7400,7 @@ can be sent.
 <td>ueiSAM</td>
 <td>Unique Entity Indentifier SAM - Allow 12 digit value, 
 alphanumeric (ueiSAM values not yet avilable for search).
-<br>Example: ueiSAM=025114695
+<br>Example: ueiSAM=025114695AST
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7288,7 +7455,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
-<br>Example: cageCode=00000</td>
+<br>Example: cageCode=00000
+<br> Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7326,7 +7494,7 @@ can be sent.
 <td>ueiSAM</td>
 <td>Unique Entity Indentifier SAM - Allow 12 digit value, 
 alphanumeric (ueiSAM values not yet avilable for search).
-<br>Example: ueiSAM=025114695
+<br>Example: ueiSAM=025114695AST
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -8256,80 +8424,245 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
+<td>
+dnbMonitoring
+</td>
+<td>object</td>
+<td>
+<details>
+<summary>dnbMonitoring contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>postalCode</td>
 <td>string</td>
 <td>Postal Code</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+</tr>
+</table>
+</details>
+</td>
+<td>v1</td>
+</tr>
+
+<tr>
+<td>
+samMonitoring
+</td>
+<td>object</td>
+<td>
+<details>
+<summary>samMonitoring contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>dbaName</td>
+<td>string</td>
+<td>DBA Name</td>
+</tr>
+
+<tr>
+<td>outOfBusinessFlag</td>
+<td>string</td>
+<td>Out Of Business Flag</td>
+</tr>
+
+<tr>
+<td>monitoringStatus</td>
+<td>string</td>
+<td>Monitoring Status</td>
+</tr>
+
+<tr>
+<td>lastUpdated</td>
+<td>string</td>
+<td>Last Updated</td>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>postalCode</td>
+<td>string</td>
+<td>Postal Code</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+</table>
+</details>
+</td>
+<td>v1</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>dbaName</td>
+<td>string</td>
+<td>DBA Name</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>outOfBusinessFlag</td>
+<td>string</td>
+<td>Out Of Business Flag</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>lastUpdated</td>
+<td>string</td>
+<td>Last Updated</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>postalCode</td>
+<td>string</td>
+<td>Postal Code</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v2</td>
 </tr>
 
 </table>
@@ -8493,59 +8826,58 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>addressLine1</td>
 <td>string</td>
-<td>Physical Address Line 1 and Mailing Address Line 1
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Line 1 and Mailing Address Line 1.
+<br>Only Physical Address Line 1 is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
-<td>Physical Address Line 2 and Mailing Address Line 2
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Line 2 and Mailing Address Line 2.
+<br>Only Physical Address Line 2 is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
-<td>Physical Address City and Mailing Address City
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address City and Mailing Address City.
+<br>Only Physical Address City is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province Code and Mailing Address State or Province Code
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address State or Province Code and Mailing Address State or Province Code.
+<br>Only Physical Address State or Province Code is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
-<td>Physical Address Zip and Mailing Address Zip
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Zip and Mailing Address Zip.
+<br>Only Physical Address Zip is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
-<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Zip Plus4 and Mailing Address Zip Plus4.
+<br>Only Physical Address Zip Plus4 is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country Code and Mailing Address Country Code
-<br> Applicable to non-SAM registrants.</td>
+<td>Physical Address Country Code and Mailing Address Country Code.
+<br>Only Physical Address Country Code is applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
-
 </table>
 
 <table>		
