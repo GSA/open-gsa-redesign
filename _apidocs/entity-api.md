@@ -574,7 +574,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>cageCode</td>
 <td>string</td>
 <td>CAGE Code
-<br> Applicable to non-SAM registrants.</td>
+<br> May be applicable to non-SAM registrants</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -2796,7 +2796,7 @@ First Name</td>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000
-<br> Applicable to non-SAM registrants.</td>
+<br> May be applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -2890,7 +2890,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000
-<br> Applicable to non-SAM registrants.</td>
+<br> May be applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3319,7 +3319,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>cageCode</td>
 <td>string</td>
 <td>CAGE Code
-<br> Applicable to non-SAM registrants.</td>
+<br> May be applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7362,7 +7362,7 @@ First Name</td>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000
-<br> Applicable to non-SAM registrants.</td>
+<br> May be applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7456,7 +7456,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000
-<br> Applicable to non-SAM registrants.</td>
+<br> May be applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7940,7 +7940,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>cageCode</td>
 <td>string</td>
 <td>CAGE Code
-<br> Applicable to non-SAM registrants.</td>
+<br> May be applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
