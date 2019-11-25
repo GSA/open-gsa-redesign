@@ -102,7 +102,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000
-<br> Applicable to non-SAM registrants.</td>
+<br> May be applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -195,7 +195,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
-<br>Example: cageCode=00000</td>
+<br>Example: cageCode=00000
+<br>May be applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
