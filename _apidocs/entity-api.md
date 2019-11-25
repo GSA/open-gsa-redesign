@@ -7533,6 +7533,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ultimateParentUEISAM</td>
 <td>Allows text.
 <br>Example: ultimateParentUEISAM=090123451</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
