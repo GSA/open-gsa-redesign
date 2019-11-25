@@ -7533,6 +7533,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ultimateParentUEISAM</td>
 <td>Allows text.
 <br>Example: ultimateParentUEISAM=090123451</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -11829,7 +11830,8 @@ Disclaimer:
 | ------ | --------------- | --------- |
 | 06/03/2019 | v0.9 | Base Version |
 | 07/03/2019 | v1.0 | * Alpha endpoint for the Sensitive version of the API has been added.<br><br>  * agencyBusinessPurposeCode, agencyBusinessPurposeDesc, bondingLevels, companySecurityLevelCode, companySecurityLevelDesc, highestEmployeeSecurityLevelCode, highestEmployeeSecurityLevelDesc were added to FOUO and Sensitive api's schema. <br><br>  * New Filters agencyBusinessPurposeCode, companySecurityLevelCode and highestEmployeeSecurityLevelCode have been added for FOUO and Sensitive api's. <br><br>  * country and stateOrProvince were updated to countryCode and stateOrProvinceCode across all versions of api.<br><br>  * ediInformationFlag was added across all versions of api.<br><br>  * geographicalAreaServedmetropolitanStatisticalAreaCode, geographicalAreaServedmetropolitanStatisticalAreaName were added across all versions of api instead of geographicalAreaServedMSAName.<br><br>  * certificationEntryDate, certificationExitDate were added to SBA Business Types across all versions of api instead of expirationDate.<br><br>  * updateDate was added as a filter across all versions of api.|
-| 08/15/2019 | v1.1 | * Alpha endpoints for public and FOUO API were updated from version 0.9 to version 1.0.<br><br> *Warning message added under Getting Started to inform users of API version changes.<br><br> *Added Beta.SAM.Gov to the page title.|
-| 09/25/2019 | v1.2 | Beta endpoints for public and FOUO API were updated from version 0.9 to version 1.0.|
+| 08/15/2019 | v1.1 | * Alpha endpoints for public and FOUO API were updated from version 0.9 to version 1.0.<br><br> * Warning message added under Getting Started to inform users of API version changes.<br><br> *Added Beta.SAM.Gov to the page title.|
+| 09/25/2019 | v1.2 | * Beta endpoints for public and FOUO API were updated from version 0.9 to version 1.0.|
+| 11/25/2019 | v1.3 | * Added D&B Disclaimer in the Additional Information section. * Updated the specifications to include parameters and fields that will be included in v2 of the API.|
 
 <p><small><a href="#">Back to top</a></small></p>
