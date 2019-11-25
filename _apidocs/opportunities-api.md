@@ -3044,7 +3044,7 @@ data.award.awardee | JSON | NA| NA | NA | NA |Awardee details; Only for type = a
 data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name
 data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required |(**Planned to be deprecate by October 2020**) Awardee UEI Duns
 data.award.awardee.ueiSAM | string | 12 characters | | No | No; **Requirements will be set at a later date** |(**Planned to replace Duns# by October 2020 and usable by December 2019**) Awardee UEI SAM
-data.award.awardee.cageCode | string | 5 characters | | No | No; | Awardee Cage Code
+data.award.awardee.cageCode | string | 5 characters | | No | No | Awardee Cage Code
 data.award.awardee.location | JSON |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
 data.award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address 
 data.award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 2
@@ -3291,7 +3291,7 @@ data.award.awardee | JSON | NA| NA | NA |Awardee details; Only for type = a (Awa
 data.award.awardee.name | string | 1000 characters | | No; Either awardee.name or awardee.duns is required | Awardee Name
 data.award.awardee.duns | string | 9 digits | | No; Either awardee.name or awardee.duns is required | (**Planned to be deprecate by October 2020**) Awardee Duns
 data.award.awardee.ueiSAM | string | 12 characters | | No; **Requirements will be set at a later date** | (**Planned to replace Duns# by October 2020 and usable by December 2019**) Awardee UEI SAM
-data.award.awardee.cageCode | string | 5 characters | | No | No; | Awardee Cage Code
+data.award.awardee.cageCode | string | 5 characters | | No | No | Awardee Cage Code
 data.award.awardee.location | JSON |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
 data.award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address 
 data.award.awardee.location.<br/>streetAddress2 | string | | | No | Awardee Street Address 2
