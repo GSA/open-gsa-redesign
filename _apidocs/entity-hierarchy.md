@@ -30,7 +30,7 @@ The Entity Hierarchy API can be accessed from Beta or Alpha via the following en
 * After setting up the password the user will see a new section for retrieving a system account API Key. The user must enter their password again to retrieve the key.
 
 
-#### System Account Authentication
+#### System Account Authentication*
 In order to utilize the Entity Hierarchy API, the following is required:
 * Valid beta.SAM.GOV federal government system account with Read and Write permissions under Entity-Hierarchy-Service domain.
 e rejected with an error.
