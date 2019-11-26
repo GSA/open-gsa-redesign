@@ -13138,16 +13138,6 @@
     - API
     - URL shortener
     - Sharing
-- title: Government Jobs API (Deprecation planned)
-  body: This API returns job openings on USAJobs.gov that are open to the public and located in the United States. This API is planned to be deprecated.
-  url: https://search.gov/developer/jobs.html
-  category: APIs
-  tags:
-  - GSA
-  - DigitalGovSearch
-  - search
-  - indexing
-  - jobs
 - title: GSA.gov Content API
   body: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last. 
   url: https://www.gsa.gov/about-us/gsa-content-api

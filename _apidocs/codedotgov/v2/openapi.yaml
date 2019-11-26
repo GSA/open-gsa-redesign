@@ -308,6 +308,37 @@ paths:
           description: Invalid
         '403':
            $ref: "#/components/responses/UnauthorizedError"
+  /open-tasks:
+    get:
+      summary: Get a list of open tasks
+      tags:
+        - open-tasks
+      parameters:
+        - name: size
+          in: query
+          description: Number of open tasks to return
+          required: false
+          schema:
+            type: number
+        - name: from
+          in: query
+          description: Specify an offset to return
+          required: false
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Open-Task'
+        '400':
+          description: Invalid
+        '401':
+           $ref: "#/components/responses/UnauthorizedError"
   /status.json:
     get:
       tags:
@@ -548,6 +579,54 @@ components:
           type: string
         numRepos:
           type: number
+    Open-Task:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        languages:
+          type: array
+          items:
+            type: string
+        projectURL:
+          type: string
+        issueURL:
+          type: number
+        featured:
+          type: boolean
+        active:
+          type: boolean
+        popular:
+          type: boolean
+        licenses:
+          type: array
+          items:
+            type: object
+            properties:
+              URL:
+                type: string
+              name:
+                type: string
+        agency:
+          type: object
+          properties:
+            name:
+              type: string
+            acronym:
+              type: string
+        date:
+          type: object
+          properties:
+            lastModified:
+              type: string
+        effort:
+          type: string
+        type:
+          type: string
+        skill:
+          type: string
     Language:
       type: object
       properties:
