@@ -145,8 +145,8 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | **vesselDetails --> secondaryAddress**  |
 | addressLine1 | string | Address Line 1  |  v1<br>v2 |
 | addressLine2 | string | Address Line 2  |  v1<br>v2 |
-| city | string | Address City  | 
-| stateOrProvinceCode | string | Address State or Province Code |
+| city | string | Address City  |  v1<br>v2 |
+| stateOrProvinceCode | string | Address State or Province Code |  v1<br>v2 |
 | zipCode | string | Address Zip OR Postal Code  |  v1<br>v2 |
 | zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2 |
 | countryCode | string | Country Code |  v1<br>v2 |
