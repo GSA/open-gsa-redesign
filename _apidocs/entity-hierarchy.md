@@ -41,9 +41,51 @@ e rejected with an error.
 
 ## API Description
 
+### Get Company Information 
+
+
+------- | -------
+**Request Type** | GET    
+**URL** | /entity-hierarchy/v1/hsData
+**Summary** | retrieve DUNS, UEI, and cage code of a specified entity
+**Consumes** | Request Parameter 
+**Produces** | application/json
+
+Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+duns| query |  string | Yes | assigned entity identifier
+uei | query | string | Yes | assigned unique entity identifier
+cageCode|query|string|yes|alpha numeric identifier assigned to entities
+Response  JSON | Body | JSON | Yes | [Refer DUNS, UEI, and cage code of a specified entity JSON](#get-duns-uei-and-cagecodeof-aspecified-entity-json)
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
+Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+200 | string | successfully retrived the list| returns company information in response body
+401 | string | You are not authorized to view the resource
+403	| string |Accessing the resource you were trying to reach is forbidden
+404	| string | The resource you were trying to reach is not found
+500 | string | Internal Server Error
+
+<p><small><a href="#">Back to top</a></small></p>
+## Examples
+
+### GET Company Information JSON
+
+<details>
+<summary>Success</summary>
+<p>
+<code><pre>
+
+</pre></code>
+</p>
+</details>
 
 
 ## FAQ *
