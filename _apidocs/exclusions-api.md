@@ -110,7 +110,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | middleName | string | Middle Name   | v1<br>v2 |
 | lastName | string | Last Name   | v1<br>v2 |
 | suffix | string | Suffix   | v1<br>v2 |
-| name--> entityName | string | Firm Name <br><br> NOTE: This parameter is being renamed.   name is in V1 and entityName will be V2.  | v1<br>v2 |
+| name/entityName | string | Firm Name <br><br> NOTE: This parameter is being renamed.  name is in V1 and entityName will be V2.  | v1<br>v2 |
 | dnbOpenData | string | DNB Open Data | v2 |
 | **exclusionActions  --> listOfActions** |
 | createDate | string | Create Date   | v1<br>v2 |
@@ -130,9 +130,9 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | **exclusionOtherInformation** |
 | additionalComments | string | Additional Comments  |  v1<br>v2 |
 | ctCode | string | CT Code  |  v1<br>v2 |
-| dnbInvestigationStatus --> evsInvestigationStatus | string | DNB Investigation Status  <br><br>NOTE: This parameter is being renamed. dnbInvestigationStatus is in V1 and evsInvestigationStatus will be V2.   |  v1<br>v2 |
+| dnbInvestigationStatus/evsInvestigationStatus | string | EVS Investigation Status  <br><br>NOTE: This parameter is being renamed. dnbInvestigationStatus is in V1 and evsInvestigationStatus will be V2.   |  v1<br>v2 |
 | **references --> referencesList**   |
-| name -->exclusionName | string | Name <br><br>NOTE:  This parameter is being renamed.  name is in V1 and exclusionName will be V2.|  v1<br>v2 |
+| name/exclusionName | string | Exclusion Name <br><br>NOTE:  This parameter is being renamed.  name is in V1 and exclusionName will be V2.|  v1<br>v2 |
 | type | string | Type  |  v1<br>v2 |
 | moreLocations | string |  More Locations   |  v1<br>v2 |
 | **vesselDetails** |
