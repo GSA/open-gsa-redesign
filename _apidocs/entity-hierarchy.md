@@ -33,9 +33,14 @@ The Entity Hierarchy API can be accessed from Beta or Alpha via the following en
 #### System Account Authentication*
 In order to utilize the Entity Hierarchy API, the following is required:
 * Valid beta.SAM.GOV federal government system account with Read and Write permissions under Entity-Hierarchy-Service domain.
-e rejected with an error.
 
 **Note:** Permissions marked "Yes" are may not be assigned by default and will require your user administrator to update.
+
+Operation    | Administrator <br/>(Entity Hierarchy domain)| Contracting Officer | Contracting Specialist
+-------------|---------------|---------------------|------------------------------
+Get duns | Yes | Yes | Yes
+Get uei | Yes | Yes | Yes
+Get cageCode | Yes | Yes | Yes
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -58,8 +63,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 duns| query |  string | Yes | assigned entity identifier
 uei | query | string | Yes | assigned unique entity identifier
 cageCode|query|string|yes|alpha numeric identifier assigned to entities
-Response  JSON | Body | JSON | Yes | [Refer DUNS, UEI, and cage code of a specified entity JSON](#get-duns-uei-and-cagecodeof-aspecified-entity-json)
-
+Response  JSON | Body | JSON | Yes | [Refer DUNS, UEI, and cage code JSON](#get-duns-uei-and-cagecode-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -74,12 +78,28 @@ HTTP Status Code | Response Type | Reason  | Description
 500 | string | Internal Server Error
 
 <p><small><a href="#">Back to top</a></small></p>
+
 ## Examples
 
-### GET Company Information JSON
+### GET DUNS, UEI, and cageCode JSON
 
 <details>
 <summary>Success</summary>
+<p>
+<code><pre>
+"successfully retrieved list"
+</pre></code>
+</p>
+</details>
+
+### OpenAPI Specification File
+
+You can view the full details of this API in the OpenAPI Specification file available here:
+
+<a href="v1/OpenEntityHierarchyAPI.zip" download="OpenEntityHierarchyAPI.zip">OpenEntity Hierarchy API File</a>
+
+<details>
+<summary>GET DUNS, UEI, or CageCode Information</summary>
 <p>
 <code><pre>
 
@@ -87,15 +107,47 @@ HTTP Status Code | Response Type | Reason  | Description
 </p>
 </details>
 
+### Error Messages 
+
+#### General Error Messages
+
+The following error messages may be returned as part of the response to various web service calls; these errors are not specific to one method and may apply to more than one.
+
+Error codes may change depending on the error given; document will be updated accordingly.
+
+Error Code|Error Message | Reason/Description
+----------|--------------|-------------------
+401|Please provide valid Authorization Email & API Key |	API Key and/or Authorization Email is required
+401|Encountered error authenticating user.Invalid JWT provided | Invalid Authorization Email provided
+401|Insufficient privileges to retrieve system account profile as the given organization is invalid |	Invalid Organization ID provided
+400|Error processing GET request |	Invalid JSON format provided
+400|$.data: is missing but it is required |	Request JSON is empty
+400|"$.requestType: does not have a value in the enumeration [archive_request, unarchive_request, publish_request, update_publish_request, cancel_request, uncancel_request]" ] |	Request Type must be valid for operation
+404|Please provide duns	| Invalid duns provided
+401|Insufficient privileges to retrieve entity hierarchy profile as the given organization is not part of the approved FH hierarchy	| Office ID provided is not authorized for system account
+401|Insufficient privilege?                                            
+
+
+<p><small><a href="#">Back to top</a></small></p>
+#### Specific Error Messages*
+This section details possible error messages for specific operations.
+Error codes may change depending on the error given; document will be updated accordingly.
+
+Error Code|Field | Error Message | Reason/Description | Operation
+-----|------|---------------|--------------------|----------
+400|DUNS | Unique Entity Identifier (duns) is invalid |	(**Planned to be deprecate by October 2020**) Invalid UEI DUNS provided |	Get
+400|UEI | Unique Entity Identifier (ueiDuns) is invalid | Get
+400|cageCode | Invalid cageCode is provided | Get
+
 
 ## FAQ *
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Contact Us *
+## Contact Us 
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
 
-## Change Log *
+## Change Log 
 
 Date | Version | Description
 ------|--------|--------
