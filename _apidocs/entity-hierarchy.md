@@ -63,6 +63,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 duns| query |  string | Yes | assigned entity identifier
 uei | query | string | Yes | assigned unique entity identifier
 cageCode|query|string|yes|alpha numeric identifier assigned to entities
+active|query|boolean|yes| status 
 Response  JSON | Body | JSON | Yes | [Refer DUNS, UEI, and cage code JSON](#get-duns-uei-and-cagecode-json)
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -71,7 +72,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-200 | string | successfully retrived the list| returns company information in response body
+200 | string | successfully retrived the list| 
 401 | string | You are not authorized to view the resource
 403	| string |Accessing the resource you were trying to reach is forbidden
 404	| string | The resource you were trying to reach is not found
@@ -96,13 +97,22 @@ HTTP Status Code | Response Type | Reason  | Description
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 
-<a href="v1/OpenEntityHierarchyAPI.zip" download="OpenEntityHierarchyAPI.zip">OpenEntity Hierarchy API File</a>
+<a href="v1/OpenhsDataAPI.zip" download="OpenhsDataAPI.zip">OpenhsData API File</a>
 
 <details>
 <summary>GET DUNS, UEI, or CageCode Information</summary>
 <p>
 <code><pre>
-
+{
+  "totalRecords": 1,
+  "entityData": [
+    {
+    "duns": "3333333333",
+     "uei": "abcd",
+     "cage_code": "null"
+    }
+ ]
+}
 </pre></code>
 </p>
 </details>
