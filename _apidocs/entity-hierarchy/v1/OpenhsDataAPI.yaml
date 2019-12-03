@@ -2,8 +2,8 @@
     get:
       tags:
         - Entity Hierarchy
-      summary: Get Company information based on duns number
-      description: Retrives company record.
+      summary: retrieve DUNS, UEI, and cage_code of a specified entity
+      description: retrives list of DUNS, UEI, and cage_code of specified entity
       operationId: duns,uei,cage_code
       produces:
         - application/json

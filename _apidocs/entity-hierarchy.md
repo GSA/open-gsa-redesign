@@ -38,7 +38,7 @@ In order to utilize the Entity Hierarchy API, the following is required:
 
 Operation    | Administrator <br/>(Entity Hierarchy domain)| Contracting Officer | Contracting Specialist
 -------------|---------------|---------------------|------------------------------
-Get duns | Yes | Yes | Yes
+Get ueiDUNS | Yes | Yes | Yes
 Get uei | Yes | Yes | Yes
 Get cageCode | Yes | Yes | Yes
 
@@ -52,7 +52,7 @@ Get cageCode | Yes | Yes | Yes
 ------- | -------
 **Request Type** | GET    
 **URL** | /entity-hierarchy/v1/hsData
-**Summary** | retrieve DUNS, UEI, and cage code of a specified entity
+**Summary** | retrieve DUNS, UEI, and cage_code of a specified entity
 **Consumes** | Request Parameter 
 **Produces** | application/json
 
@@ -60,23 +60,23 @@ Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-duns| query |  string | Yes | assigned entity identifier
-uei | query | string | Yes | assigned unique entity identifier
-cageCode|query|string|yes|alpha numeric identifier assigned to entities
-active|query|boolean|yes| status 
-Response  JSON | Body | JSON | Yes | [Refer DUNS, UEI, and cage code JSON](#get-duns-uei-and-cagecode-json)
+duns| query |  string | No | assigned entity identifier
+uei | query | string | No | assigned unique entity identifier
+cage_code|query|string|No|alpha numeric identifier assigned to entities
+active|query|boolean|No| status 
 
 <p><small><a href="#">Back to top</a></small></p>
 
 Responses
 
-HTTP Status Code | Response Type | Reason  | Description
------------------|---------------|---------|------------
+HTTP Status Code | Response Type | Reason  | Description| refer
+-----------------|---------------|---------|------------|------
 200 | string | successfully retrived the list| 
 401 | string | You are not authorized to view the resource
 403	| string |Accessing the resource you were trying to reach is forbidden
 404	| string | The resource you were trying to reach is not found
 500 | string | Internal Server Error
+Response JSON|Body|JSON|Yes|[Refer DUNS, UEI, and cage code JSON](#get-duns-uei-and-cagecode-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -100,14 +100,14 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <a href="v1/OpenhsDataAPI.zip" download="OpenhsDataAPI.zip">OpenhsData API File</a>
 
 <details>
-<summary>GET DUNS, UEI, or CageCode Information</summary>
+<summary>GET ueiDUNS, UEI, and CageCode Information</summary>
 <p>
 <code><pre>
 {
   "totalRecords": 1,
   "entityData": [
     {
-    "duns": "3333333333",
+    "ueiDUNS": "333333333",
      "uei": "abcd",
      "cage_code": "null"
     }
@@ -128,7 +128,9 @@ Error codes may change depending on the error given; document will be updated ac
 Error Code|Error Message | Reason/Description
 ----------|--------------|-------------------
 401|Please provide valid Authorization Email & API Key |	API Key and/or Authorization Email is required
-401|Encountered error authenticating user.Invalid JWT provided | Invalid Authorization Email provided
+401|Encountered error authenticating user.Invalid JWT provided | Invalid 
+400|active Should only be True or False
+Authorization Email provided
 401|Insufficient privileges to retrieve system account profile as the given organization is invalid |	Invalid Organization ID provided
 400|Error processing GET request |	Invalid JSON format provided
 400|$.data: is missing but it is required |	Request JSON is empty
@@ -145,10 +147,9 @@ Error codes may change depending on the error given; document will be updated ac
 
 Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
-400|DUNS | Unique Entity Identifier (duns) is invalid |	(**Planned to be deprecate by October 2020**) Invalid UEI DUNS provided |	Get
-400|UEI | Unique Entity Identifier (ueiDuns) is invalid | Get
-400|cageCode | Invalid cageCode is provided | Get
-
+400|ueiDUNS | Unique Entity Identifier (duns) is invalid |	(**Planned to be deprecate by October 2020**) Invalid UEI DUNS provided |	Get
+400|ueiDUNS Should Contain Only Numeric Value
+400|ueiDUNS Can Only be 9 Digits
 
 ## FAQ *
 
@@ -161,4 +162,4 @@ Error Code|Field | Error Message | Reason/Description | Operation
 
 Date | Version | Description
 ------|--------|--------
-11/20/2019 | v0.1 | Base Version
+12/02/2019 | v0.1 | Base Version
