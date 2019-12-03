@@ -125,19 +125,18 @@ The following error messages may be returned as part of the response to various 
 
 Error codes may change depending on the error given; document will be updated accordingly.
 
+
 Error Code|Error Message | Reason/Description
 ----------|--------------|-------------------
 401|Please provide valid Authorization Email & API Key |	API Key and/or Authorization Email is required
-401|Encountered error authenticating user.Invalid JWT provided | Invalid 
-400|active Should only be True or False
-Authorization Email provided
+401|Encountered error authenticating user.Invalid JWT provided | Invalid Authorization Email provided
 401|Insufficient privileges to retrieve system account profile as the given organization is invalid |	Invalid Organization ID provided
 400|Error processing GET request |	Invalid JSON format provided
 400|$.data: is missing but it is required |	Request JSON is empty
 400|"$.requestType: does not have a value in the enumeration [archive_request, unarchive_request, publish_request, update_publish_request, cancel_request, uncancel_request]" ] |	Request Type must be valid for operation
-404|Please provide duns	| Invalid duns provided
+404|Please provide ueiDUNS	| Invalid ueiDUNS provided
 401|Insufficient privileges to retrieve entity hierarchy profile as the given organization is not part of the approved FH hierarchy	| Office ID provided is not authorized for system account
-401|Insufficient privilege?                                            
+401|Insufficient privilege?                                          
 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -148,8 +147,9 @@ Error codes may change depending on the error given; document will be updated ac
 Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
 400|ueiDUNS | Unique Entity Identifier (duns) is invalid |	(**Planned to be deprecate by October 2020**) Invalid UEI DUNS provided |	Get
-400|ueiDUNS Should Contain Only Numeric Value
-400|ueiDUNS Can Only be 9 Digits
+400|ueiDUNS| ueiDUNS Should Contain Only Numeric Value||Get
+400|ueiDUNS|ueiDUNS Can Only be 9 Digits||Get
+400|active | Should only be True or False
 
 ## FAQ *
 
