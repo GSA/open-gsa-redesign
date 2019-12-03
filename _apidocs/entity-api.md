@@ -560,6 +560,14 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
+<td>ueiStatus</td>
+<td>string</td>
+<td>Unique Entity Identifier Status
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
+</tr>
+
+<tr>
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
@@ -3208,6 +3216,14 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>string</td>
 <td>Active Date</td>
 <td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiStatus</td>
+<td>string</td>
+<td>Unique Entity Identifier Status
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -7736,6 +7752,14 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>string</td>
 <td>Active Date</td>
 <td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>ueiStatus</td>
+<td>string</td>
+<td>Unique Entity Identifier Status
+<br> Applicable to non-SAM registrants.</td>
+<td>v2</td>
 </tr>
 
 <tr>
