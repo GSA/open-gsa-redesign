@@ -72,11 +72,12 @@ Responses
 HTTP Status Code | Response Type | Reason  | Description| refer
 -----------------|---------------|---------|------------|------
 200 | string | successfully retrived the list| 
+400 | string  | Bad request
 401 | string | You are not authorized to view the resource
 403	| string |Accessing the resource you were trying to reach is forbidden
 404	| string | The resource you were trying to reach is not found
 500 | string | Internal Server Error
-Response JSON|Body|JSON|Yes|[Refer DUNS, UEI, and cage code JSON](#get-duns-uei-and-cagecode-json)
+Response JSON|Body|JSON||[Refer DUNS, UEI, and cage code JSON](#get-duns-uei-and-cagecode-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -149,7 +150,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|ueiDUNS | Unique Entity Identifier (duns) is invalid |	(**Planned to be deprecate by October 2020**) Invalid UEI DUNS provided |	Get
 400|ueiDUNS| ueiDUNS Should Contain Only Numeric Value||Get
 400|ueiDUNS|ueiDUNS Can Only be 9 Digits||Get
-400|active | Should only be True or False
+400|active | active Should only be True or False
 
 ## FAQ *
 
