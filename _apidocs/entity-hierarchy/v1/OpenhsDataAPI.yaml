@@ -1,16 +1,16 @@
-/v1/entity-hierarchy/v1/company-info
+/v1/entity-hierarchy/v1/hsData
     get:
       tags:
         - Entity Hierarchy
       summary: Get Company information based on duns number
       description: Retrives company record.
-      operationId: duns
+      operationId: duns,uei,cage_code
       produces:
         - application/json
       parameters:
-        - name: duns
+        - name: duns,uei,cage_code
           in: query
-          description: assigned entity identifier
+          description: assigned entity identifiers
           required: true
           type: string
       responses:
