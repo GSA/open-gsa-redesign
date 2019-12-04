@@ -98,7 +98,7 @@ Response JSON|Body JSON|||[Refer DUNS, UEI, and cage code JSON](#get-duns-uei-an
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 
-<a href="v1/OpenhsDataAPI.zip" download="OpenhsDataAPI.zip">OpenhsData API File</a>
+<a href="v1/OpenhsDataAPI.zip" download="OpenhsDataAPI.zip">hsData API Specification</a>
 
 <details>
 <summary>GET ueiDUNS, UEI, and CageCode Information</summary>
