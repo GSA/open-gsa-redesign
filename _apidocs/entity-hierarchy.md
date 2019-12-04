@@ -51,10 +51,9 @@ In order to utilize the Entity Hierarchy API, the following is required:
 Request Parameters
 
 Parameter Name | Parameter Type | Data Type | Required | Description
----------------|----------------|-----------|----------|------------
-Authorization* | header |  string | Yes | Valid and authorized user ID (Not Implemented)
-api_key* | query | string | Yes | Valid System Account API Key (
-  Not Implemented)
+---------------|----------------|-----------|----------|-------------------
+Authorization* | header | string | Yes | Valid and authorized user ID (Not Implemented)|
+api_key* | query | string | Yes | Valid System Account API Key (Not Implemented)
 duns| query | string | No | assigned entity identifier
 uei | query | string | No | assigned unique entity identifier
 cage_code|query|string|No|alpha numeric identifier assigned to entities
