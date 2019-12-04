@@ -3943,6 +3943,13 @@ samMonitoring
 </tr>
 
 <tr>
+<td>monitoringStatus</td>
+<td>string</td>
+<td>Monitoring Status</td>
+<td>v2</td>
+</tr>
+
+<tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
@@ -8357,6 +8364,13 @@ samMonitoring
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>monitoringStatus</td>
+<td>string</td>
+<td>Monitoring Status</td>
 <td>v2</td>
 </tr>
 
