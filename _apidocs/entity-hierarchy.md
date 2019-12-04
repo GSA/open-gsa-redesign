@@ -19,7 +19,7 @@ The Entity Hierarchy API can be accessed from Beta or Alpha via the following en
 
 
 
-###	Authentication and Authorization
+###	Authentication and Authorization*
 
 #### Generating a System Account API Key
 * Users registered with a government email address and have appropriate System Account Manager or System Account Admin role may request a system account for data access.
@@ -30,17 +30,9 @@ The Entity Hierarchy API can be accessed from Beta or Alpha via the following en
 * After setting up the password the user will see a new section for retrieving a system account API Key. The user must enter their password again to retrieve the key.
 
 
-#### System Account Authentication
+#### System Account Authentication*
 In order to utilize the Entity Hierarchy API, the following is required:
 * Valid beta.SAM.GOV federal government system account with Read and Write permissions under Entity-Hierarchy-Service domain.
-
-**Note:** Permissions marked "Yes" may not be assigned by default and will require your user administrator to update.
-
-Operation    | Administrator <br/>(Entity Hierarchy domain)| Contracting Officer | Contracting Specialist
--------------|---------------|---------------------|------------------------------
-Get ueiDUNS | Yes | Yes | Yes
-Get uei | Yes | Yes | Yes
-Get cageCode | Yes | Yes | Yes
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -60,6 +52,9 @@ Request Parameters
 
 Parameter Name | Parameter Type | Data Type | Required | Description
 ---------------|----------------|-----------|----------|------------
+Authorization* | header |  string | Yes | Valid and authorized user ID (Not Implemented)
+api_key* | query | string | Yes | Valid System Account API Key (
+  Not Implemented)
 duns| query | string | No | assigned entity identifier
 uei | query | string | No | assigned unique entity identifier
 cage_code|query|string|No|alpha numeric identifier assigned to entities
