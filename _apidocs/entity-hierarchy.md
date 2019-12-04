@@ -34,7 +34,7 @@ The Entity Hierarchy API can be accessed from Beta or Alpha via the following en
 In order to utilize the Entity Hierarchy API, the following is required:
 * Valid beta.SAM.GOV federal government system account with Read and Write permissions under Entity-Hierarchy-Service domain.
 
-**Note:** Permissions marked "Yes" are may not be assigned by default and will require your user administrator to update.
+**Note:** Permissions marked "Yes" may not be assigned by default and will require your user administrator to update.
 
 Operation    | Administrator <br/>(Entity Hierarchy domain)| Contracting Officer | Contracting Specialist
 -------------|---------------|---------------------|------------------------------
@@ -71,10 +71,10 @@ Responses
 
 HTTP Status Code | Response Type | Reason | Description | refer
 -----------------|---------------|--------|-------------|------
-200 | string | successfully retrieved the list| 
+200 | string | Successfully retrieved the list| 
 400 | string | Bad request
 401 | string | You are not authorized to view the resource
-403	| string |Accessing the resource you were trying to reach is forbidden
+403	| string | Accessing the resource you were trying to reach is forbidden
 404	| string | The resource you were trying to reach is not found
 500 | string | Internal Server Error
 Response JSON|Body JSON|||[Refer DUNS, UEI, and cage code JSON](#get-duns-uei-and-cagecode-json)
