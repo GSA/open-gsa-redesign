@@ -1407,8 +1407,8 @@ data.award.amount | Number | Award Amount
 data.award.lineitemNumber | string |  Award Line Item Number
 data.award.awardee | JSON |  
 data.award.awardee.name | string |  Awardee Name
-data.award.awardee.duns | string | (**Planned to be deprecate in the future**) Awardee Unique Entity Identifier DUNS
-data.award.awardee.ueiSAM | string | (**Planned to replace Duns# in the future, and ueiSAM values not yet available**) Awardee Unique Entity Identifier SAM
+data.award.awardee.duns | string | (**Plan to deprecate in the future**) Awardee Unique Entity Identifier DUNS
+data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
 data.award.awardee.location | JSON |  Awardee Location
 data.award.awardee.location.streetAddress | string | Awardee Street Address 1
 data.award.awardee.location.streetAddress2 | string |  Awardee Street Address 1
@@ -2375,8 +2375,8 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-entityId | query | string | No | (**Planned to be deprecate in the future**) Entity ID - Unique Entity Identifier DUNS #
-ueiSAM | query | string | No | (**Planned to replace Duns# in the future, and ueiSAM values not yet available**) Unique Entity Identifier SAM #
+entityId | query | string | No | (**Plan to deprecate in the future**) Entity ID - Unique Entity Identifier DUNS #
+ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2385,8 +2385,8 @@ Responses
 HTTP Status Code | Response Type |  Description
 -----------------|---------------|------------
 ivl | JSON | 
-ivl.duns | string | (**Planned to be deprecate in the future**) Unique Entity Identifier DUNS number for the business entity
-ivl.ueiSAM | string | (**Planned to replace Duns# in the future, and ueiSAM values not yet available**) Unique Entity Identifier SAM number for the business entity
+ivl.duns | string | (**Plan to deprecate in the future**) Unique Entity Identifier DUNS number for the business entity
+ivl.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
 ivl.cageNumber | string | Identifies a given facility at a specific location
 ivl.name | string | Name of business entity
 ivl.addedOn | string | Date added to IVL
@@ -3036,8 +3036,8 @@ data.award.amount | number |64 digits |  | No | Yes only for type = a (Award) | 
 data.award.lineitemNumber | string |255 characters | | No | No | Contract Line item Number
 data.award.awardee | JSON | NA| NA | NA | NA |Awardee details; Only for type = a (Award)
 data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name
-data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required |(**Planned to be deprecate in the future**) Awardee UEI Duns
-data.award.awardee.ueiSAM | string | 12 alphanumeric | | No | No; **ueiSAM values not yet available** |(**Planned to replace Duns# in the future**) Awardee UEI SAM
+data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required |(**Plan to deprecate in the future**) Awardee UEI Duns
+data.award.awardee.ueiSAM | string | 12 alphanumeric | | No | No; **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST.
 data.award.awardee.location | JSON |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
 data.award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address 
 data.award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 2
@@ -3281,8 +3281,8 @@ data.award.amount | number |64 digits |  | Yes only for type = a (Award) | Award
 data.award.lineitemNumber | string |255 characters | | No | Contract Line item Number
 data.award.awardee | JSON | NA| NA | NA |Awardee details; Only for type = a (Award)
 data.award.awardee.name | string | 1000 characters | | No; Either awardee.name or awardee.duns is required | Awardee Name
-data.award.awardee.duns | string | 9 digits | | No; Either awardee.name or awardee.duns is required | (**Planned to be deprecate in the future**) Awardee Duns
-data.award.awardee.ueiSAM | string | 12 alphanumeric | | No; **ueiSAM values not yet available** | (**Planned to replace Duns# in the future**) Awardee UEI SAM
+data.award.awardee.duns | string | 9 digits | | No; Either awardee.name or awardee.duns is required | (**Plan to deprecate in the future**) Awardee Duns
+data.award.awardee.ueiSAM | string | 12 alphanumeric | | No; **ueiSAM values not yet available** | Unique Entity Identifier SAM - Example: ueiSAM=025114695AST.
 data.award.awardee.location | JSON |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
 data.award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address 
 data.award.awardee.location.<br/>streetAddress2 | string | | | No | Awardee Street Address 2
@@ -3643,8 +3643,8 @@ fname | string | | Yes | First name of the user
 lname | string | | Yes | Last name of the user
 email | string | | Yes | Email Id of the user
 contractorName | string | | Yes | Contractor Name
-duns | string | | Yes | (**Planned to be deprecate in the future**) Unique Entity Identifier DUNS#
-ueiSAM | string | | No | (**Planned to replace Duns# in the future, and ueiSAM values not yet available**) Unique Entity Identifier SAM#
+duns | string | | Yes | (**Plan to deprecate in the future**) Unique Entity Identifier DUNS#
+ueiSAM | string | | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
 cageCode | string | | Yes | Cage Code
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -5751,8 +5751,8 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Award Date |	Contract Award Date provided should have 4 digit year |	Invalid Year provided in the Award Date |	Publish, Uncancel, Unarchive
 400|Award Number |	Contract Award Number is a required field	| Contract Award Number is required for Intent to Bundle, Justification, Award | Publish
 400|Award Number |	Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces| Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces | Publish
-400|DUNS | Unique Entity Identifier (duns) is invalid. |	(**Planned to be deprecate in the future**) Invalid UEI DUNS provided |	Publish
-400|ueiSAM | Unique Entity Identifier (SAM) is invalid. |	(**Planned to replace Duns# in the future, and ueiSAM values not yet available**) Invalid UEI SAM provided |	Publish
+400|DUNS | Unique Entity Identifier (duns) is invalid. |	(**Plan to deprecate in the future**) Invalid UEI DUNS provided |	Publish
+400|ueiSAM | Unique Entity Identifier (SAM) is invalid. |	(**Plan to replace Duns# in the future, and ueiSAM values not yet available**) Invalid UEI SAM provided |	Publish
 400|Awardee Name | Contractor Awarded Name is a required field |	Contractor Awarded Name is a required field if the DUNS is not provided for an Award Notice |	Publish
 400|Awardee Name | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | Publish
 400|Awardee | Required fields from Awardee section is missing |Awardee Name or DUNS# not provided for Award notice|	Publish
@@ -5828,10 +5828,10 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|VendorData| fname should not be empty| fname should not be empty| AddAuthorizedParty
 400|VendorData| lname should not be empty| lname should not be empty| AddAuthorizedParty
 400|VendorData| Email should not be empty| Email should not be empty| AddAuthorizedParty
-400|VendorData| Duns should not be empty| (**Planned to be deprecate in the future**) Duns should not be empty| AddAuthorizedParty
-400|VendorData| ueiSAM should not be empty| (**Planned to replace Duns# in the future, and ueiSAM values not yet available**) ueiSAM should not be empty| AddAuthorizedParty
-400|Duns# |	No contact match on vendor data provided	| (**Planned to be deprecate in the future**) Not a Valid email or Duns#	| AddAuthorizedParty
-400|ueiSAM# |	No contact match on vendor data provided	| (**Planned to replace Duns# in the future, and ueiSAM values not yet available**) Not a Valid email or ueiSAM#	| AddAuthorizedParty
+400|VendorData| Duns should not be empty| (**Plan to deprecate in the future**) Duns should not be empty| AddAuthorizedParty
+400|VendorData| ueiSAM should not be empty| (**Plan to replace Duns# in the future, and ueiSAM values not yet available**) ueiSAM should not be empty| AddAuthorizedParty
+400|Duns# |	No contact match on vendor data provided	| (**Plan to deprecate in the future**) Not a Valid email or Duns#	| AddAuthorizedParty
+400|ueiSAM# |	No contact match on vendor data provided	| (**Plan to replace Duns# in the future, and ueiSAM values not yet available**) Not a Valid email or ueiSAM#	| AddAuthorizedParty
 404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
 400|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
