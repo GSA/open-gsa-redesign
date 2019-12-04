@@ -5,7 +5,7 @@ banner-heading: Beta.SAM.Gov Entity Hierarchy API
 
 ## Overview
 
-The Entity Hierarchy API retrives entity hierarchy information  from D&B based on DUNS
+The Entity Hierarchy API retrieves entity hierarchy information from D&B based on DUNS
 
 
 
@@ -23,7 +23,7 @@ The Entity Hierarchy API can be accessed from Beta or Alpha via the following en
 
 #### Generating a System Account API Key
 * Users registered with a government email address and have appropriate System Account Manager or System Account Admin role may request a system account for data access.
-* If a user satisfies the above registration criteria they will be able to access the System Accounts widget from their Workspace page after logging in.
+* If a user satisfies the above registration criteria, they will be able to access the System Accounts widget from their Workspace page after logging in.
 * The user can then select “Request System Account” from the widget and fill out the required sections with appropriate Entity-Hierarchy-Service permissions.
 * The requested system account will then need to be approved. After approval the user will be notified via email and they can also see the updated status in the System Account widget.
 * The user can select ‘Go to System Accounts’ in the widget from their workspace and enter a new system account password.
@@ -58,9 +58,9 @@ Get cageCode | Yes | Yes | Yes
 
 Request Parameters
 
-Parameter Name | Parameter Type | Data Type  | Required | Description
----------------|----------------|------------|----------|------------
-duns| query |  string | No | assigned entity identifier
+Parameter Name | Parameter Type | Data Type | Required | Description
+---------------|----------------|-----------|----------|------------
+duns| query | string | No | assigned entity identifier
 uei | query | string | No | assigned unique entity identifier
 cage_code|query|string|No|alpha numeric identifier assigned to entities
 active|query|boolean|No| status 
@@ -69,10 +69,10 @@ active|query|boolean|No| status
 
 Responses
 
-HTTP Status Code | Response Type | Reason  | Description| refer
------------------|---------------|---------|------------|------
-200 | string | successfully retrived the list| 
-400 | string  | Bad request
+HTTP Status Code | Response Type | Reason | Description | refer
+-----------------|---------------|--------|-------------|------
+200 | string | successfully retrieved the list| 
+400 | string | Bad request
 401 | string | You are not authorized to view the resource
 403	| string |Accessing the resource you were trying to reach is forbidden
 404	| string | The resource you were trying to reach is not found
@@ -136,8 +136,7 @@ Error Code|Error Message | Reason/Description
 400|$.data: is missing but it is required |	Request JSON is empty
 400|"$.requestType: does not have a value in the enumeration [archive_request, unarchive_request, publish_request, update_publish_request, cancel_request, uncancel_request]" ] |	Request Type must be valid for operation
 404|Please provide ueiDUNS	| Invalid ueiDUNS provided
-401|Insufficient privileges to retrieve entity hierarchy profile as the given organization is not part of the approved FH hierarchy	| Office ID provided is not authorized for system account
-401|Insufficient privilege?                                          
+401|Insufficient privileges to retrieve entity hierarchy profile as the given organization is not part of the approved FH hierarchy	| Office ID provided is not authorized for system account                                         
 
 
 <p><small><a href="#">Back to top</a></small></p>
