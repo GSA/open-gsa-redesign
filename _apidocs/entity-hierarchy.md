@@ -15,13 +15,13 @@ The Entity Hierarchy API retrieves entity hierarchy information from D&B based o
 
 The Entity Hierarchy API can be accessed from Beta or Alpha via the following endpoints:
 * Beta: https://api.sam.gov/prod/ (Coming Soon)
-* Alpha: https://api-alpha.sam.gov/prodlike/
+* Alpha: https://api-alpha.sam.gov/prodlike/ (Coming Soon)
 
 
 
 ###	Authentication and Authorization*
 
-#### Generating a System Account API Key
+#### Generating a System Account API Key*
 * Users registered with a government email address and have appropriate System Account Manager or System Account Admin role may request a system account for data access.
 * If a user satisfies the above registration criteria, they will be able to access the System Accounts widget from their Workspace page after logging in.
 * The user can then select “Request System Account” from the widget and fill out the required sections with appropriate Entity-Hierarchy-Service permissions.
