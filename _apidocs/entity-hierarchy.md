@@ -140,7 +140,7 @@ Error Code|Error Message | Reason/Description
 
 
 <p><small><a href="#">Back to top</a></small></p>
-#### Specific Error Messages*
+#### Specific Error Messages
 This section details possible error messages for specific operations.
 Error codes may change depending on the error given; document will be updated accordingly.
 
