@@ -77,7 +77,7 @@ HTTP Status Code | Response Type | Reason  | Description| refer
 403	| string |Accessing the resource you were trying to reach is forbidden
 404	| string | The resource you were trying to reach is not found
 500 | string | Internal Server Error
-Response JSON|Body|JSON||[Refer DUNS, UEI, and cage code JSON](#get-duns-uei-and-cagecode-json)
+Response JSON|Body JSON|||[Refer DUNS, UEI, and cage code JSON](#get-duns-uei-and-cagecode-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
