@@ -11,7 +11,7 @@
         - name: duns,uei,cage_code
           in: query
           description: assigned entity identifiers
-          required: true
+          required: No
           type: string
       responses:
         '200':
