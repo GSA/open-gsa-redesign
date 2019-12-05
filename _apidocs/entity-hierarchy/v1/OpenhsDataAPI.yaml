@@ -2,13 +2,13 @@
     get:
       tags:
         - Entity Hierarchy
-      summary: retrieve DUNS, UEI, and cage_code of a specified entity
-      description: retrives list of DUNS, UEI, and cage_code of specified entity
-      operationId: duns,uei,cage_code
+      summary: retrieve DUNS, UEI, and cageCode of a specified entity
+      description: retrives list of DUNS, UEI, and cageCode of specified entity
+      operationId: duns,uei,cageCode
       produces:
         - application/json
       parameters:
-        - name: duns,uei,cage_code
+        - name: duns,uei,cageCode
           in: query
           description: assigned entity identifiers
           required: No

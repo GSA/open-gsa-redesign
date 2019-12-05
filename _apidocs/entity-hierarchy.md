@@ -34,7 +34,7 @@ The Entity Hierarchy API can be accessed from Beta or Alpha via the following en
 In order to utilize the Entity Hierarchy API, the following is required:
 * Valid beta.SAM.GOV federal government system account with Read and Write permissions under Entity-Hierarchy-Service domain.
 
-<p><small><a href="#">Back to top</a></small></p>
+<p><small><a href="#">Back to top</a></small></p> 
 
 ## API Description
 
@@ -44,7 +44,7 @@ In order to utilize the Entity Hierarchy API, the following is required:
 ------- | -------
 **Request Type** | GET    
 **URL** | /entity-hierarchy/v1/hsData
-**Summary** | retrieve DUNS, UEI, and cage_code of a specified entity
+**Summary** | retrieve DUNS, UEI, and cageCode of a specified entity
 **Consumes** | Request Parameter 
 **Produces** | application/json
 
@@ -56,7 +56,7 @@ Authorization* | header | string | Yes | Valid and authorized user ID (Not Imple
 api_key* | query | string | Yes | Valid System Account API Key (Not Implemented)
 duns| query | string | No | assigned entity identifier
 uei | query | string | No | assigned unique entity identifier
-cage_code|query|string|No|alpha numeric identifier assigned to entities
+cageCode|query|string|No|alpha numeric identifier assigned to entities
 active|query|boolean|No| status 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -95,7 +95,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <a href="v1/OpenhsDataAPI.zip" download="OpenhsDataAPI.zip">hsData API Specification</a>
 
 <details>
-<summary>GET ueiDUNS, UEI, and CageCode Information</summary>
+<summary>GET ueiDUNS, UEI, and cageCode Information</summary>
 <p>
 <code><pre>
 {
@@ -104,7 +104,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
     {
     "ueiDUNS": "333333333",
      "uei": "abcd",
-     "cage_code": "null"
+     "cageCode": "null"
     }
  ]
 }
