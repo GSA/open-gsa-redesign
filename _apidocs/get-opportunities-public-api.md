@@ -787,6 +787,6 @@ Date | Version | Description
 10/23/19 | v0.4| Set-Aside Values Updated
 10/24/19| v0.5| Office Address Description Updated 
 11/1/19| v1.0| Initial Release Finalized
-
+12/2/19| v1.1| OpenAPI Spec Added
 
 <p><small><a href="#">Back to top</a></small></p>
