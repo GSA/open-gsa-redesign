@@ -59,96 +59,97 @@ Utilizing the Exclusion API as an extract:
 
 **Query String Parameters**
 
-| Parameter Name | Description |
-| ---- | ----------- |
-| classification | Allows a string (Individual, Firm, Vessel, Special Entity Designation, null).<br><br> Example: 'classification=Firm' |
-| exclusionName | Allows partial text or a complete text. <br><br> Example: 'exclusionName=SAM' |
-| exclusionType | Allows a string (IP, IC, PR, VE,  Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction, Voluntary Exclusion).<br><br> Example: 'exclusionType=IP' |
-| exclusionProgram | Allows a string (RE, NP, PR, Reciprocal, Non-Procurement, Procurement).<br><br> Example: 'exclusionProgram=Y' |
-| stateProvince | Allows a string.<br><br> Example: 'stateProvince=AR' |
-| country  | Allows a string.<br><br> Example: 'country=USA' |
-| zipCode  | Allows a string.<br><br> Example: 'zipCode=20171' |
-| ueiDUNS | Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652, 047795005, null).<br><br> Example: 'ueiDUNS=9725565' |
-| ueiSAM | TBD |
-| excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> Example: 'excludingAgencyCode=AF' |
-| excludingAgencyName | Allows a string (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null).<br><br> Example: 'excludingAgencyName=FEDERAL' |
-| ctCode | Allows a string.<br><br> Example: 'ctCode=ZZ' |
-| activationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'activationDate=01/01/2019', 'activationDate=[01/01/2019,05/29/2019]' |
-| creationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'creationDate=01/01/2019', 'creationDate=[01/01/2019,05/29/2019]' |
-| updateDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br>  Examples: 'updateDate=01/01/2019', 'updateDate=[01/01/2019,05/29/2019]'' |
-| terminationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'terminationDate=01/01/2019', 'terminationDate=[01/01/2019,05/29/2019]' |
-| cageCode | Allows a string.<br><br> Example: 'cageCode=0Y5L9' |
-| npi  | Allows a string.<br><br> Example: 'npi=1053373266' |
-| ssn  | Allows a string.<br><br> Example: 'ssn=XXXXXXXXX' |
-| tin  | Allows a string.<br><br> Example: 'tin=XXXXX' |
-| page  | Page number.<br><br> Example: 'page=0' |
-| size  | Retrieves Records size per page.<br><br> Example: 'size=1' |
-| includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'includeSections=exclusionOtherInformation,exclusionDetails' |
-| format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'format=csv' |
-| emailId | User email Id for notification message .<br><br> Example: 'emailId=test@gsa.gov' |
+| Parameter Name | Description | Applicable Versions |
+| ---- | ----------- | ----------- |
+| classification | Allows a string (Individual, Firm, Vessel, Special Entity Designation, null).<br><br> Example: 'classification=Firm' |  v1<br>v2 |
+| exclusionName | Allows partial text or a complete text. <br><br> Example: 'exclusionName=SAM' |  v1<br>v2 |
+| exclusionType | Allows a string (IP, IC, PR, VE,  Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction, Voluntary Exclusion).<br><br> Example: 'exclusionType=IP' |  v1<br>v2 |
+| exclusionProgram | Allows a string (RE, NP, PR, Reciprocal, Non-Procurement, Procurement).<br><br> Example: 'exclusionProgram=Y' |  v1<br>v2 |
+| stateProvince | Allows a string.<br><br> Example: 'stateProvince=AR' |  v1<br>v2 |
+| country  | Allows a string.<br><br> Example: 'country=USA' |  v1<br>v2 |
+| zipCode  | Allows a string.<br><br> Example: 'zipCode=20171' |  v1<br>v2 |
+| ueiDUNS | Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652, 047795005, null).<br><br> Example: 'ueiDUNS=9725565' |  v1<br>v2 |
+| ueiSAM | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available for search). <br><br> Example: ueiSAM=025114695AST |  v1<br>v2 |
+| excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> Example: 'excludingAgencyCode=AF' |  v1<br>v2 |
+| excludingAgencyName | Allows a string (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null).<br><br> Example: 'excludingAgencyName=FEDERAL' |  v1<br>v2 |
+| ctCode | Allows a string.<br><br> Example: 'ctCode=ZZ' |  v1<br>v2 |
+| activationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'activationDate=01/01/2019', 'activationDate=[01/01/2019,05/29/2019]' |  v1<br>v2 |
+| creationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'creationDate=01/01/2019', 'creationDate=[01/01/2019,05/29/2019]' |  v1<br>v2 |
+| updateDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br>  Examples: 'updateDate=01/01/2019', 'updateDate=[01/01/2019,05/29/2019]'' |  v1<br>v2 |
+| terminationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'terminationDate=01/01/2019', 'terminationDate=[01/01/2019,05/29/2019]' |  v1<br>v2 |
+| cageCode | Allows a string.<br><br> Example: 'cageCode=0Y5L9' |  v1<br>v2 |
+| npi  | Allows a string.<br><br> Example: 'npi=1053373266' |  v1<br>v2 |
+| ssn  | Allows a string.<br><br> Example: 'ssn=XXXXXXXXX' |  v1<br>v2 |
+| tin  | Allows a string.<br><br> Example: 'tin=XXXXX' |  v1<br>v2 |
+| page  | Page number.<br><br> Example: 'page=0' |  v1<br>v2 |
+| size  | Retrieves Records size per page.<br><br> Example: 'size=1' |  v1<br>v2 |
+| includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'includeSections=exclusionOtherInformation,exclusionDetails' |  v1<br>v2 |
+| format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'format=csv' |  v1<br>v2 |
+| emailId | User email Id for notification message .<br><br> Example: 'emailId=test@gsa.gov' |  v1<br>v2 |
 
 **Expected Result**
 
 API response consists of Sections, Sub-sections and Tags underneath each of the Sections or Sub-sections. There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.
 
-| Section/Sub-section/Tag | Type | Description |
-| ---- | ---- | ----------- |
+| Section/Sub-section/Tag | Type | Description | Applicable Versions | 
+| ---- | ---- | ----------- | ----------- |
 | **exclusionDetails** |
-| classificationType | string | Classification Type |
-| exclusionType | string | Exclusion Type  |
-| exclusionProgram | string | Exclusion Program | 
-| excludingAgencyCode | string | Excluding Agency Code  |
-| excludingAgencyName | string | Excluding Agency Name  |
+| classificationType | string | Classification Type | v1<br>v2 |
+| exclusionType | string | Exclusion Type  | v1<br>v2 |
+| exclusionProgram | string | Exclusion Program | v1<br>v2 | 
+| excludingAgencyCode | string | Excluding Agency Code  | v1<br>v2 |
+| excludingAgencyName | string | Excluding Agency Name  | v1<br>v2 |
 | **exclusionIdentification** |
-| ueiSAM | string | Unique Entity Identifier SAM   |
-| ueiDUNS | string | Unique Entity Identifier DUNS  |
-| entityEFTIndicator | string | Entity EFT Indicator   |
-| cageCode | string | CAGE Code  | 
-| npi | string| NPI | 
-| prefix | string | Prefix | 
-| firstName | string | First Name  | 
-| middleName | string | Middle Name   |
-| lastName | string | Last Name   |
-| suffix | string | Suffix   |
-| name | string | Company Name  |
+| ueiSAM | string | Unique Entity Identifier SAM   | v1<br>v2 |
+| ueiDUNS | string | Unique Entity Identifier DUNS  | v1<br>v2 |
+| entityEFTIndicator | string | Entity EFT Indicator   | v1<br>v2 |
+| cageCode | string | CAGE Code  |  v1<br>v2 |
+| npi | string| NPI |  v1<br>v2 |
+| prefix | string | Prefix |  v1<br>v2 |
+| firstName | string | First Name  |  v1<br>v2 |
+| middleName | string | Middle Name   | v1<br>v2 |
+| lastName | string | Last Name   | v1<br>v2 |
+| suffix | string | Suffix   | v1<br>v2 |
+| name/entityName | string | Firm Name <br><br> NOTE: This parameter is being renamed.  name is in V1 and entityName will be V2.  | v1<br>v2 |
+| dnbOpenData | string | DNB Open Data | v2 |
 | **exclusionActions  --> listOfActions** |
-| createDate | string | Create Date   |
-| updateDate | string | Update Date  |
-| activateDate | string | Activate Date |
-| terminationDate | string | Termination Date   |
-| terminationType | string | Termination Type   |
-| recordStatus | string | Record Status  |
+| createDate | string | Create Date   | v1<br>v2 |
+| updateDate | string | Update Date  | v1<br>v2 |
+| activateDate | string | Activate Date | v1<br>v2 |
+| terminationDate | string | Termination Date   | v1<br>v2 |
+| terminationType | string | Termination Type   | v1<br>v2 |
+| recordStatus | string | Record Status  | v1<br>v2 |
 | **exclusionAddress** |
-| addressLine1 | string | Address Line 1  | 
-| addressLine2 | string | Address Line 2  | 
-| city | string | Address City  | 
-| stateOrProvinceCode | string | Address State or Province Code |
-| zipCode | string | Address Zip OR Postal Code  |
-| zipCodePlus4 | string | Address Zip Plus 4  |
-| countryCode | string | Country Code |
+| addressLine1 | string | Address Line 1  |  v1<br>v2 |
+| addressLine2 | string | Address Line 2  |  v1<br>v2 |
+| city | string | Address City  |  v1<br>v2 | 
+| stateOrProvinceCode | string | Address State or Province Code |  v1<br>v2 |
+| zipCode | string | Address Zip OR Postal Code  |  v1<br>v2 |
+| zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2 |
+| countryCode | string | Country Code |  v1<br>v2 |
 | **exclusionOtherInformation** |
-| additionalComments | string | Additional Comments  |
-| ctCode | string | CT Code  |
-| dnbInvestigationStatus | string | DNB Investigation Status    |
+| additionalComments | string | Additional Comments  |  v1<br>v2 |
+| ctCode | string | CT Code  |  v1<br>v2 |
+| dnbInvestigationStatus/evsInvestigationStatus | string | EVS Investigation Status  <br><br>NOTE: This parameter is being renamed. dnbInvestigationStatus is in V1 and evsInvestigationStatus will be V2.   |  v1<br>v2 |
 | **references --> referencesList**   |
-| name | string | Name  |
-| type | string | Type  |
-| moreLocations | string |  More Locations   |
+| name/exclusionName | string | Exclusion Name <br><br>NOTE:  This parameter is being renamed.  name is in V1 and exclusionName will be V2.|  v1<br>v2 |
+| type | string | Type  |  v1<br>v2 |
+| moreLocations | string |  More Locations   |  v1<br>v2 |
 | **vesselDetails** |
-| callSign | string | Call Sign  |
-| type | string | Type  |
-| tonnage | string | Tonnage  |
-| grt | string | GRT  |
-| flag | string | Flag  |
-| owner | string | Owner |
+| callSign | string | Call Sign  |  v1<br>v2 |
+| type | string | Type  |  v1<br>v2 |
+| tonnage | string | Tonnage  |  v1<br>v2 |
+| grt | string | GRT  |  v1<br>v2 |
+| flag | string | Flag  |  v1<br>v2 |
+| owner | string | Owner |  v1<br>v2 |
 | **vesselDetails --> secondaryAddress**  |
-| addressLine1 | string | Address Line 1  | 
-| addressLine2 | string | Address Line 2  | 
-| city | string | Address City  | 
-| stateOrProvinceCode | string | Address State or Province Code |
-| zipCode | string | Address Zip OR Postal Code  |
-| zipCodePlus4 | string | Address Zip Plus 4  |
-| countryCode | string | Country Code |
+| addressLine1 | string | Address Line 1  |  v1<br>v2 |
+| addressLine2 | string | Address Line 2  |  v1<br>v2 |
+| city | string | Address City  |  v1<br>v2 |
+| stateOrProvinceCode | string | Address State or Province Code |  v1<br>v2 |
+| zipCode | string | Address Zip OR Postal Code  |  v1<br>v2 |
+| zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2 |
+| countryCode | string | Country Code |  v1<br>v2 |
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -194,7 +195,14 @@ https://api.sam.gov/prod/entity-information/v1/api/exclusions?api_key=<API Key>&
 
 ## Additional Information
 You can view the full details of the differences between the SAM legacy API and Beta API 
-<br> available here: <a href="LegacySAMvsBetaSAM-ExclusionsAPI.pdf">Variance Document</a>
+<br> available here: <a href="LegacySAMvsBetaSAM-ExclusionsAPI.pdf">Variance Document</a><br>
+
+Disclaimer: 
+**Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data**
+* This website contains data supplied by third party information suppliers, one of which is D&B. For the purposes of the following limitation on permissible use of D&B data, which includes each entity's DUNS Number and its associated business information, "D&B Open Data" is defined as the following data elements: Business Name, Street Address, City Name, State/Province Name, Country Name, County Code, State/Province Code, State/Province Abbreviation, ZIP/Postal Code, Country Name and Country Code.
+* D&B hereby grants you, the user, a license for a limited, non-exclusive right to use D&B Open Data within the limitations set forth herein. By using this website you agree that you shall not use D&B Open Data without giving written attribution to the source of such data (i.e., D&B) and shall not access, use or disseminate D&B Open Data in bulk, (i.e., in amounts sufficient for use as an original source or as a substitute for the product and/or service being licensed hereunder).
+* Except for data elements identified above as D&B Open Data, under no circumstances are you authorized to use any other D&B data for commercial, resale or marketing purposes (e.g., identifying, quantifying, segmenting and/or analyzing customers and prospective customers). Systematic access (electronic harvesting) or extraction of content from the website, including the use of "bots" or "spiders", is prohibited. Federal government entities are authorized to use the D&B data for purposes of acquisition as defined in FAR 2.101 and for the purpose of managing Federal awards, including sub-awards, or reporting Federal award information.
+* GSA assumes no liability for the use of the D&B data once it is downloaded or accessed. The D&B data is provided "as is" without warranty of any kind. The D&B data is the intellectual property of D&B. In no event will D&B or any third party information supplier be liable in any way with regard to the use of the D&B data. For more information about the scope of permissible use of D&B data licensed hereunder, please contact D&B at datause_govt@dnb.com.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -211,7 +219,6 @@ Date | Version | Description
 06/03/2019 | v1.0 | Base Version
 08/15/2019 | v1.1 | * Added Beta.SAM.Gov to the page title. <br><br> *Updated the Alpha endpoint to v1. <br><br> *Added Secondary Address fields.
 09/25/2019 | v1.2 | Beta endpoints for public FOUO and Sensitive API were updated from version 0.9 to version 1.0.
-
-
+11/25/2019 | v1.3 | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.|
 
 <p><small><a href="#">Back to top</a></small></p>
