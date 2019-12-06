@@ -5667,9 +5667,9 @@ post:
 
 
 
-### Error Messages
+## Error Messages
 
-#### General Error Messages
+### General Error Messages
 
 The following error messages may be returned as part of the response to various web service calls; these errors are not specific to one method and may apply to more than one.
 
@@ -5691,7 +5691,7 @@ Error Code|Error Message | Reason/Description
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Specific Error Messages
+### Specific Error Messages
 
 This section details possible error messages for specific operations.
 
