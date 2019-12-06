@@ -463,7 +463,7 @@ Request URL: <br> https://api-alpha.sam.gov/prodlike/federalorganizations/v1/org
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/fh-fouo.zip" download="OpenAPI">OpenAPI File</a>
+<a href="v1/fh-fouo.zip" download="fh-fouo">OpenAPI File</a>
 
 <details>
 <summary>FOUO FH Organization</summary>
