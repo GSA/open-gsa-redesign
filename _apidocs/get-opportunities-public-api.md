@@ -775,7 +775,7 @@ User clicks on the description link available in the response and description co
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](mailto:www.fsd.gov)
+* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 ## Change Log
 
