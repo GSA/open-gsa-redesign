@@ -612,7 +612,7 @@ Note: By default API brings back only top 100 records. Example below shows only 
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/PSC YAML.yml" download="PSC YAML">OpenAPI File</a>
+<a href="v1/psc.yml" download="psc">OpenAPI File</a>
 
 <details>
 <summary>Public PSC Details</summary>
