@@ -1,0 +1,2471 @@
+swagger: '2.0'
+info:
+  description: 'APIs to fetch/manipulate Location Details'
+  title: 'Location Services REST APIs'
+  contact:
+    name: 'Location Services Contact'
+    url: 'https://gsa.gov'
+    email: someone@gsa.gov
+  license: {}
+host: ***REMOVED***
+basePath: /
+tags:
+  -
+    name: city-controller
+    description: 'City Controller'
+  -
+    name: county-controller
+    description: 'County Controller'
+  -
+    name: location-api-controller
+    description: 'Location API Controller'
+  -
+    name: set-aside-controller
+    description: 'Set Aside Controller'
+  -
+    name: state-controller
+    description: 'State Controller'
+  -
+    name: claimant-controller
+    description: 'Claimant Controller'
+  -
+    name: country-controller
+    description: 'Country Controller'
+  -
+    name: naics-controller
+    description: 'NAICS Controller'
+  -
+    name: dod-controller
+    description: 'DOD Controller'
+  -
+    name: congressional-district-controller
+    description: 'Congressional District Controller'
+  -
+    name: psc-controller
+    description: 'PSC Controller'
+  -
+    name: tas
+    description: "Get a list of Treasury Account Symbol (TAS) Code Data Rest Controller\nV 1"
+  -
+    name: timezone-controller
+    description: 'Timezone Controller'
+paths:
+  /locationservices/psc:
+    post:
+      tags:
+        - psc-controller
+      summary: createPsc
+      operationId: createPscUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          in: body
+          name: pscBean
+          description: pscBean
+          required: true
+          schema:
+            $ref: '#/definitions/ProductServiceCode'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ProductServiceCode'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+    put:
+      tags:
+        - psc-controller
+      summary: updatePsc
+      operationId: updatePscUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          in: body
+          name: pscBean
+          description: pscBean
+          required: true
+          schema:
+            $ref: '#/definitions/ProductServiceCode'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ProductServiceCode'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+    delete:
+      tags:
+        - psc-controller
+      summary: deletePsc
+      operationId: deletePscUsingDELETE
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: psc
+          in: query
+          description: psc
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: 'No Content'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /locationservices/psccacheevict:
+    get:
+      tags:
+        - psc-controller
+      summary: cacheEvict
+      operationId: cacheEvictUsingGET_5
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/setasidecacheevict:
+    get:
+      tags:
+        - set-aside-controller
+      summary: cacheEvict
+      operationId: cacheEvictUsingGET_6
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/cities:
+    get:
+      tags:
+        - city-controller
+      summary: 'API to get a list of cities for IAE'
+      operationId: getCitiesUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: cc
+          in: query
+          description: cc
+          required: false
+          type: string
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: false
+          type: string
+        -
+          name: searchvalue
+          in: query
+          description: searchvalue
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: string
+        -
+          name: county
+          in: query
+          description: county
+          required: false
+          type: string
+        -
+          name: active
+          in: query
+          description: active
+          required: false
+          type: string
+          default: Y
+        -
+          name: verbose
+          in: query
+          description: verbose
+          required: false
+          type: string
+        -
+          name: limit
+          in: query
+          description: limit
+          required: false
+          type: integer
+          format: int64
+        -
+          name: offset
+          in: query
+          description: offset
+          required: false
+          type: integer
+          format: int64
+        -
+          name: citycode
+          in: query
+          description: citycode
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resources«Resource«City»»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/citycacheevict:
+    get:
+      tags:
+        - city-controller
+      summary: cacheEvict
+      operationId: cacheEvictUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/counties:
+    get:
+      tags:
+        - county-controller
+      summary: 'API to get a list of counties for IAE'
+      operationId: getCountiesUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: cc
+          in: query
+          description: cc
+          required: false
+          type: string
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: false
+          type: string
+        -
+          name: searchvalue
+          in: query
+          description: searchvalue
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: string
+        -
+          name: city
+          in: query
+          description: city
+          required: false
+          type: string
+        -
+          name: iswdol
+          in: query
+          description: iswdol
+          required: false
+          type: string
+          default: N
+        -
+          name: active
+          in: query
+          description: active
+          required: false
+          type: string
+          default: Y
+        -
+          name: verbose
+          in: query
+          description: verbose
+          required: false
+          type: string
+        -
+          name: limit
+          in: query
+          description: limit
+          required: false
+          type: integer
+          format: int64
+        -
+          name: offset
+          in: query
+          description: offset
+          required: false
+          type: integer
+          format: int64
+        -
+          name: countyCode
+          in: query
+          description: countyCode
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resources«Resource«County»»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/countries:
+    get:
+      tags:
+        - country-controller
+      summary: 'API to get a list of countries for IAE'
+      operationId: getCountriesUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: string
+        -
+          name: active
+          in: query
+          description: active
+          required: false
+          type: string
+          default: Y
+        -
+          name: verbose
+          in: query
+          description: verbose
+          required: false
+          type: string
+          default: Y
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resources«Resource«Country»»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+    post:
+      tags:
+        - country-controller
+      summary: createCountry
+      operationId: createCountryUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          in: body
+          name: country
+          description: country
+          required: true
+          schema:
+            $ref: '#/definitions/Country'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resource«Country»'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+    put:
+      tags:
+        - country-controller
+      summary: updateCountry
+      operationId: updateCountryUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          in: body
+          name: country
+          description: country
+          required: true
+          schema:
+            $ref: '#/definitions/Country'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resource«Country»'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  '/locationservices/v1/api/countries/{countryName}':
+    delete:
+      tags:
+        - country-controller
+      summary: deleteCountry
+      operationId: deleteCountryUsingDELETE
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: countryName
+          in: path
+          description: countryName
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: 'No Content'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /locationservices/v1/api/countrycacheevict:
+    get:
+      tags:
+        - country-controller
+      summary: cacheEvict
+      operationId: cacheEvictUsingGET_1
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/countycacheevict:
+    get:
+      tags:
+        - county-controller
+      summary: cacheEvict
+      operationId: cacheEvictUsingGET_2
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/cpc:
+    get:
+      tags:
+        - claimant-controller
+      summary: 'API to get a list of claimant program code(s) for IAE'
+      operationId: getCpcUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resources«Resource«ClaimantProgramCode»»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/districts:
+    get:
+      tags:
+        - congressional-district-controller
+      summary: 'API to get a list of congressional districts for IAE'
+      operationId: getCongressionalDistrictsUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: string
+        -
+          name: active
+          in: query
+          description: active
+          required: false
+          type: string
+          default: Y
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resources«Resource«CongressionalDistrict»»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/dod:
+    get:
+      tags:
+        - dod-controller
+      summary: 'API to get a list of dod acquisition code(s) for IAE'
+      operationId: getDACUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resources«Resource«DOD»»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/locationgroup:
+    get:
+      tags:
+        - location-api-controller
+      summary: 'Get List of Cities and Counties Data based on Zip or Zip plus 4 code'
+      operationId: getLocationWrapperDataByZipUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: zip
+          in: query
+          description: zip
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/LocationWrapper'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/locations:
+    get:
+      tags:
+        - location-api-controller
+      summary: 'API to get Location Data based on Zip or Zip plus 4'
+      operationId: getLocationDataByZipUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: true
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: true
+          type: string
+        -
+          name: verbose
+          in: query
+          description: verbose
+          required: false
+          type: string
+        -
+          name: active
+          in: query
+          description: active
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resources«Resource«Location»»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/naics:
+    get:
+      tags:
+        - naics-controller
+      summary: 'API to get ALL NAICS Data'
+      operationId: getNAICSDataUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: sourceyear
+          in: query
+          description: sourceyear
+          required: false
+          type: string
+        -
+          name: code
+          in: query
+          description: code
+          required: false
+          type: string
+        -
+          name: asOfDate
+          in: query
+          description: asOfDate
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: string
+        -
+          name: size
+          in: query
+          description: size
+          required: false
+          type: string
+        -
+          name: active
+          in: query
+          description: active
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resources«Resource«NAICS»»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/naicscacheevict:
+    get:
+      tags:
+        - naics-controller
+      summary: cacheEvict
+      operationId: cacheEvictUsingGET_4
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/psc:
+    get:
+      tags:
+        - psc-controller
+      summary: 'API to get a list of product service codes for IAE'
+      operationId: getPscsUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        -
+          name: size
+          in: query
+          description: size
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        -
+          name: active
+          in: query
+          description: active
+          required: false
+          type: string
+        -
+          name: advanceSearch
+          in: query
+          description: advanceSearch
+          required: false
+          type: string
+          default: N
+        -
+          name: startDateFrom
+          in: query
+          description: startDateFrom
+          required: false
+          type: string
+        -
+          name: startDateTo
+          in: query
+          description: startDateTo
+          required: false
+          type: string
+        -
+          name: endDateFrom
+          in: query
+          description: endDateFrom
+          required: false
+          type: string
+        -
+          name: endDateTo
+          in: query
+          description: endDateTo
+          required: false
+          type: string
+        -
+          name: updatedDateFrom
+          in: query
+          description: updatedDateFrom
+          required: false
+          type: string
+        -
+          name: updatedDateTo
+          in: query
+          description: updatedDateTo
+          required: false
+          type: string
+        -
+          name: asOfDate
+          in: query
+          description: asOfDate
+          required: false
+          type: string
+        -
+          name: offset
+          in: query
+          description: offset
+          required: false
+          type: integer
+          format: int32
+        -
+          name: limit
+          in: query
+          description: limit
+          required: false
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resources«Resource«ProductServiceCode»»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/publicpscdetails:
+    get:
+      tags:
+        - psc-controller
+      summary: 'API to get a list of product service codes for IAE'
+      operationId: getPublicPscDetailsUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        -
+          name: size
+          in: query
+          description: size
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        -
+          name: active
+          in: query
+          description: active
+          required: false
+          type: string
+          default: Y
+        -
+          name: advanceSearch
+          in: query
+          description: advanceSearch
+          required: false
+          type: string
+          default: N
+        -
+          name: startDateFrom
+          in: query
+          description: startDateFrom
+          required: false
+          type: string
+        -
+          name: startDateTo
+          in: query
+          description: startDateTo
+          required: false
+          type: string
+        -
+          name: endDateFrom
+          in: query
+          description: endDateFrom
+          required: false
+          type: string
+        -
+          name: endDateTo
+          in: query
+          description: endDateTo
+          required: false
+          type: string
+        -
+          name: updatedDateFrom
+          in: query
+          description: updatedDateFrom
+          required: false
+          type: string
+        -
+          name: updatedDateTo
+          in: query
+          description: updatedDateTo
+          required: false
+          type: string
+        -
+          name: asOfDate
+          in: query
+          description: asOfDate
+          required: false
+          type: string
+        -
+          name: level1Category
+          in: query
+          description: level1Category
+          required: false
+          type: string
+        -
+          name: level1CategoryName
+          in: query
+          description: level1CategoryName
+          required: false
+          type: string
+        -
+          name: level2Category
+          in: query
+          description: level2Category
+          required: false
+          type: string
+        -
+          name: level2CategoryName
+          in: query
+          description: level2CategoryName
+          required: false
+          type: string
+        -
+          name: offset
+          in: query
+          description: offset
+          required: false
+          type: integer
+          format: int32
+        -
+          name: limit
+          in: query
+          description: limit
+          required: false
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ProductServiceCodeWrapper'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/setAside:
+    get:
+      tags:
+        - set-aside-controller
+      summary: 'API to get a list of set aside codes for IAE'
+      operationId: getSetAsidesUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        -
+          name: active
+          in: query
+          description: active
+          required: false
+          type: string
+        -
+          name: activeStartDate
+          in: query
+          description: activeStartDate
+          required: false
+          type: string
+          format: date-time
+        -
+          name: activeEndDate
+          in: query
+          description: activeEndDate
+          required: false
+          type: string
+          format: date-time
+        -
+          name: organizationIds
+          in: query
+          description: organizationIds
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resources«Resource«SetAside»»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/state:
+    post:
+      tags:
+        - state-controller
+      summary: createState
+      operationId: createStateUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          in: body
+          name: state
+          description: state
+          required: true
+          schema:
+            $ref: '#/definitions/State'
+        -
+          name: countrycode
+          in: query
+          description: countrycode
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/State'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+    put:
+      tags:
+        - state-controller
+      summary: updateState
+      operationId: updateStateUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          in: body
+          name: state
+          description: state
+          required: true
+          schema:
+            $ref: '#/definitions/State'
+        -
+          name: statename
+          in: query
+          description: statename
+          required: true
+          type: string
+        -
+          name: countrycode
+          in: query
+          description: countrycode
+          required: true
+          type: string
+        -
+          name: 'statename,countrycode'
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/State'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+    delete:
+      tags:
+        - state-controller
+      summary: deleteState
+      operationId: deleteStateUsingDELETE
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: statename
+          in: query
+          description: statename
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/State'
+        '204':
+          description: 'No Content'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /locationservices/v1/api/statecacheevict:
+    get:
+      tags:
+        - state-controller
+      summary: cacheEvict
+      operationId: cacheEvictUsingGET_7
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/states:
+    get:
+      tags:
+        - state-controller
+      summary: 'API to get a list of states for IAE'
+      operationId: getStatesUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: cc
+          in: query
+          description: cc
+          required: false
+          type: string
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        -
+          name: active
+          in: query
+          description: active
+          required: false
+          type: string
+        -
+          name: verbose
+          in: query
+          description: verbose
+          required: false
+          type: string
+          default: Y
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resources«Resource«State»»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/tas:
+    get:
+      tags:
+        - tas
+      summary: 'API to get a list of Treasury Acccount Symbol(TAS) codes for IAE'
+      description: 'This API returns Treasury Account Symbol Data'
+      operationId: getTasCodesUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+        - application/hal+json
+      parameters:
+        -
+          name: q
+          in: query
+          description: "Enter the Search Term (q) for the complete or partial TAS Code.\nFor example: 510 in q. Note that q will operate as autocomplete on TAS code."
+          required: false
+          type: string
+        -
+          name: active
+          in: query
+          description: 'Status Active(Y)/Inactive(N) for the TAS Code.'
+          required: false
+          type: string
+        -
+          name: api_key
+          in: query
+          description: 'Enter the API Key from the API URL.'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/TreasuryAccountSymbolCode'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/tasstatus:
+    get:
+      tags:
+        - tas
+      summary: 'API to get status of Treasury Acccount Symbol(TAS) code'
+      description: 'This API returns Treasury Account Symbol Status'
+      operationId: getTasCodeStatusUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+        - application/hal+json
+      parameters:
+        -
+          name: code
+          in: query
+          description: 'Enter the complete TAS Code. For example: 51080 in code.'
+          required: false
+          type: string
+        -
+          name: api_key
+          in: query
+          description: 'Enter the API Key from the API URL.'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resource«string»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/timezones:
+    get:
+      tags:
+        - timezone-controller
+      summary: 'API to get a list of timezones for IAE'
+      operationId: getTimezonesUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: string
+        -
+          name: active
+          in: query
+          description: active
+          required: false
+          type: string
+          default: Y
+        -
+          name: limit
+          in: query
+          description: limit
+          required: false
+          type: integer
+          format: int32
+        -
+          name: offset
+          in: query
+          description: offset
+          required: false
+          type: integer
+          format: int32
+        -
+          name: verbose
+          in: query
+          description: verbose
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resources«Resource«Timezone»»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/validatezip:
+    get:
+      tags:
+        - location-api-controller
+      summary: 'API to validate Zip or Zip plus 4'
+      operationId: validateZipUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: zip
+          in: query
+          description: zip
+          required: true
+          type: string
+        -
+          name: citycode
+          in: query
+          description: citycode
+          required: false
+          type: string
+        -
+          name: countycode
+          in: query
+          description: countycode
+          required: false
+          type: string
+        -
+          name: statecode
+          in: query
+          description: statecode
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ZipValidity'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v1/api/zipcacheevict:
+    get:
+      tags:
+        - location-api-controller
+      summary: cacheEvict
+      operationId: cacheEvictUsingGET_3
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /locationservices/v2/api/psc:
+    get:
+      tags:
+        - psc-controller
+      summary: 'API to get a list of product service codes for IAE'
+      operationId: getPscsV2UsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        -
+          name: size
+          in: query
+          description: size
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        -
+          name: active
+          in: query
+          description: active
+          required: false
+          type: string
+        -
+          name: advanceSearch
+          in: query
+          description: advanceSearch
+          required: false
+          type: string
+          default: N
+        -
+          name: startDateFrom
+          in: query
+          description: startDateFrom
+          required: false
+          type: string
+        -
+          name: startDateTo
+          in: query
+          description: startDateTo
+          required: false
+          type: string
+        -
+          name: endDateFrom
+          in: query
+          description: endDateFrom
+          required: false
+          type: string
+        -
+          name: endDateTo
+          in: query
+          description: endDateTo
+          required: false
+          type: string
+        -
+          name: updatedDateFrom
+          in: query
+          description: updatedDateFrom
+          required: false
+          type: string
+        -
+          name: updatedDateTo
+          in: query
+          description: updatedDateTo
+          required: false
+          type: string
+        -
+          name: asOfDate
+          in: query
+          description: asOfDate
+          required: false
+          type: string
+        -
+          name: level1Category
+          in: query
+          description: level1Category
+          required: false
+          type: string
+        -
+          name: level1CategoryName
+          in: query
+          description: level1CategoryName
+          required: false
+          type: string
+        -
+          name: level2Category
+          in: query
+          description: level2Category
+          required: false
+          type: string
+        -
+          name: level2CategoryName
+          in: query
+          description: level2CategoryName
+          required: false
+          type: string
+        -
+          name: offset
+          in: query
+          description: offset
+          required: false
+          type: integer
+          format: int32
+        -
+          name: limit
+          in: query
+          description: limit
+          required: false
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ProductServiceCodeWrapper'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+definitions:
+  Timezone:
+    type: object
+    properties:
+      activeInd:
+        type: string
+      reference:
+        type: string
+      timeDifference:
+        type: string
+      timezone:
+        type: string
+      timezoneCode:
+        type: string
+  Resource«TreasuryAccountSymbolCode»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      agencyCode:
+        type: string
+      mainAccountCode:
+        type: string
+      status:
+        type: string
+      subAccountCode:
+        type: string
+      tasCode:
+        type: string
+      tasId:
+        type: integer
+        format: int32
+  SetAside:
+    type: object
+    properties:
+      active:
+        type: string
+      activeEndDate:
+        type: string
+      activeStartDate:
+        type: string
+      legacyFBOCode:
+        type: string
+      organizationIds:
+        type: string
+      parentSetAsideCode:
+        type: string
+      setAsideCode:
+        type: string
+      setAsideId:
+        type: integer
+        format: int32
+      setAsideName:
+        type: string
+      sortIndex:
+        type: integer
+        format: int32
+  Resource«string»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  Resources«Resource«ProductServiceCode»»:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/Collection«Resource«ProductServiceCode»»'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  CongressionalDistrict:
+    type: object
+    properties:
+      activeInd:
+        type: string
+      congressionalDistrictCode:
+        type: string
+      congressionalDistrictId:
+        type: integer
+        format: int32
+      state:
+        $ref: '#/definitions/State'
+  NAICS:
+    type: object
+    properties:
+      activeInd:
+        type: string
+      naicsCode:
+        type: string
+      naicsId:
+        type: integer
+        format: int32
+      naicsSize:
+        type: string
+      naicsTitle:
+        type: string
+      parentNaicsCode:
+        type: string
+      sourceYear:
+        type: string
+  Resource«Timezone»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      activeInd:
+        type: string
+      reference:
+        type: string
+      timeDifference:
+        type: string
+      timezone:
+        type: string
+      timezoneCode:
+        type: string
+  Resources«Resource«SetAside»»:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/Collection«Resource«SetAside»»'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  DOD:
+    type: object
+    properties:
+      activeInd:
+        type: string
+      dodApAcronym:
+        type: string
+      dodApCode:
+        type: string
+      dodApId:
+        type: integer
+        format: int32
+      programName:
+        type: string
+  Collection«Resource«SetAside»»:
+    type: object
+  Resources«Resource«ClaimantProgramCode»»:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/Collection«Resource«ClaimantProgramCode»»'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  Resources«Resource«NAICS»»:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/Collection«Resource«NAICS»»'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  Resource«CongressionalDistrict»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      activeInd:
+        type: string
+      congressionalDistrictCode:
+        type: string
+      congressionalDistrictId:
+        type: integer
+        format: int32
+      state:
+        $ref: '#/definitions/State'
+  Collection«Resource«ProductServiceCode»»:
+    type: object
+  Resource«ClaimantProgramCode»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      activeInd:
+        type: string
+      claimantProgramCode:
+        type: string
+      claimantProgramDescription:
+        type: string
+      claimantProgramId:
+        type: integer
+        format: int32
+      claimantProgramName:
+        type: string
+  Resources«Resource«CongressionalDistrict»»:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/Collection«Resource«CongressionalDistrict»»'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  Resource«ProductServiceCode»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      activeEndDate:
+        type: string
+      activeInd:
+        type: string
+      activeStartDate:
+        type: string
+      level1Category:
+        type: string
+      level1CategoryName:
+        type: string
+      level2Category:
+        type: string
+      level2CategoryName:
+        type: string
+      links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      parentPscCode:
+        type: string
+      pscCode:
+        type: string
+      pscExclude:
+        type: string
+      pscFullName:
+        type: string
+      pscId:
+        type: integer
+        format: int32
+      pscInclude:
+        type: string
+      pscName:
+        type: string
+      pscNote:
+        type: string
+      updatedDate:
+        $ref: '#/definitions/Timestamp'
+  Collection«Resource«ClaimantProgramCode»»:
+    type: object
+  Resource«City»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      activeInd:
+        type: string
+      city:
+        type: string
+      cityCode:
+        type: string
+      cityId:
+        type: integer
+        format: int32
+      state:
+        $ref: '#/definitions/State'
+  Collection«Resource«County»»:
+    type: object
+  City:
+    type: object
+    properties:
+      activeInd:
+        type: string
+      city:
+        type: string
+      cityCode:
+        type: string
+      cityId:
+        type: integer
+        format: int32
+      state:
+        $ref: '#/definitions/State'
+  Resource«SetAside»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      active:
+        type: string
+      activeEndDate:
+        type: string
+      activeStartDate:
+        type: string
+      legacyFBOCode:
+        type: string
+      organizationIds:
+        type: string
+      parentSetAsideCode:
+        type: string
+      setAsideCode:
+        type: string
+      setAsideId:
+        type: integer
+        format: int32
+      setAsideName:
+        type: string
+      sortIndex:
+        type: integer
+        format: int32
+  State:
+    type: object
+    properties:
+      activeInd:
+        type: string
+      country:
+        $ref: '#/definitions/Country'
+      state:
+        type: string
+      stateCapital:
+        type: string
+      stateCode:
+        type: string
+      stateId:
+        type: integer
+        format: int32
+      stateType:
+        type: string
+  LocationWrapper:
+    type: object
+    properties:
+      cityList:
+        type: array
+        items:
+          $ref: '#/definitions/City'
+      country:
+        type: string
+      countryCode:
+        type: string
+      countyList:
+        type: array
+        items:
+          $ref: '#/definitions/County'
+      state:
+        type: string
+      stateCode:
+        type: string
+      zipCode:
+        type: string
+  Country:
+    type: object
+    properties:
+      activeEndDate:
+        type: string
+      activeInd:
+        type: string
+      activeStartDate:
+        type: string
+      country:
+        type: string
+      countryCode2:
+        type: string
+      countryFipsCode2:
+        type: string
+      countryFpdsName:
+        type: string
+      countryFullName:
+        type: string
+      countryId:
+        type: integer
+        format: int32
+      countryNumber:
+        type: integer
+        format: int32
+      countryShortName:
+        type: string
+      countrySource:
+        type: string
+      country_id:
+        type: integer
+        format: int32
+      countrycode:
+        type: string
+      dodQualifyingCountry:
+        type: string
+  Link:
+    type: object
+    properties:
+      deprecation:
+        type: string
+      href:
+        type: string
+      hreflang:
+        type: string
+      media:
+        type: string
+      rel:
+        type: string
+      templated:
+        type: boolean
+      title:
+        type: string
+      type:
+        type: string
+  Resource«Country»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      activeEndDate:
+        type: string
+      activeInd:
+        type: string
+      activeStartDate:
+        type: string
+      country:
+        type: string
+      countryCode2:
+        type: string
+      countryFipsCode2:
+        type: string
+      countryFpdsName:
+        type: string
+      countryFullName:
+        type: string
+      countryId:
+        type: integer
+        format: int32
+      countryNumber:
+        type: integer
+        format: int32
+      countryShortName:
+        type: string
+      countrySource:
+        type: string
+      countrycode:
+        type: string
+      dodQualifyingCountry:
+        type: string
+  Resources«Resource«County»»:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/Collection«Resource«County»»'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  Resource«State»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      activeInd:
+        type: string
+      country:
+        $ref: '#/definitions/Country'
+      state:
+        type: string
+      stateCapital:
+        type: string
+      stateCode:
+        type: string
+      stateId:
+        type: integer
+        format: int32
+      stateType:
+        type: string
+  ZipValidity:
+    type: object
+    properties:
+      description:
+        type: string
+      zipCode:
+        type: string
+  Resources«Resource«DOD»»:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/Collection«Resource«DOD»»'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  County:
+    type: object
+    properties:
+      activeInd:
+        type: string
+      county:
+        type: string
+      countyCode:
+        type: string
+      countyId:
+        type: integer
+        format: int32
+      state:
+        $ref: '#/definitions/State'
+  Timestamp:
+    type: object
+    properties:
+      date:
+        type: integer
+        format: int32
+      day:
+        type: integer
+        format: int32
+      hours:
+        type: integer
+        format: int32
+      minutes:
+        type: integer
+        format: int32
+      month:
+        type: integer
+        format: int32
+      nanos:
+        type: integer
+        format: int32
+      seconds:
+        type: integer
+        format: int32
+      time:
+        type: integer
+        format: int64
+      timezoneOffset:
+        type: integer
+        format: int32
+      year:
+        type: integer
+        format: int32
+  Collection«Resource«Location»»:
+    type: object
+  ProductServiceCodeWrapper:
+    type: object
+    properties:
+      links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      productServiceCodeList:
+        type: array
+        items:
+          $ref: '#/definitions/ProductServiceCode'
+      totalRecords:
+        type: string
+  Collection«Resource«State»»:
+    type: object
+  Collection«Resource«DOD»»:
+    type: object
+  Collection«Resource«NAICS»»:
+    type: object
+  Resource«County»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      activeInd:
+        type: string
+      county:
+        type: string
+      countyCode:
+        type: string
+      countyId:
+        type: integer
+        format: int32
+      state:
+        $ref: '#/definitions/State'
+  Resource«Location»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      activeInd:
+        type: string
+      city:
+        $ref: '#/definitions/City'
+      congressionalDistrict:
+        $ref: '#/definitions/CongressionalDistrict'
+      county:
+        $ref: '#/definitions/County'
+      locationId:
+        type: integer
+        format: int32
+      state:
+        $ref: '#/definitions/State'
+      zipCode:
+        type: string
+      zipCode4:
+        type: string
+  TreasuryAccountSymbolCode:
+    type: object
+    properties:
+      agencyCode:
+        type: string
+      mainAccountCode:
+        type: string
+      status:
+        type: string
+      subAccountCode:
+        type: string
+      tasCode:
+        type: string
+      tasId:
+        type: integer
+        format: int32
+  ProductServiceCode:
+    type: object
+    properties:
+      activeEndDate:
+        type: string
+      activeInd:
+        type: string
+      activeStartDate:
+        type: string
+      level1Category:
+        type: string
+      level1CategoryName:
+        type: string
+      level2Category:
+        type: string
+      level2CategoryName:
+        type: string
+      links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      parentPscCode:
+        type: string
+      pscCode:
+        type: string
+      pscExclude:
+        type: string
+      pscFullName:
+        type: string
+      pscId:
+        type: integer
+        format: int32
+      pscInclude:
+        type: string
+      pscName:
+        type: string
+      pscNote:
+        type: string
+      updatedDate:
+        $ref: '#/definitions/Timestamp'
+  Resources«Resource«State»»:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/Collection«Resource«State»»'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  Collection«Resource«CongressionalDistrict»»:
+    type: object
+  Resource«NAICS»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      activeInd:
+        type: string
+      naicsCode:
+        type: string
+      naicsId:
+        type: integer
+        format: int32
+      naicsSize:
+        type: string
+      naicsTitle:
+        type: string
+      parentNaicsCode:
+        type: string
+      sourceYear:
+        type: string
+  Collection«Resource«City»»:
+    type: object
+  Resources«Resource«Location»»:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/Collection«Resource«Location»»'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  Resource«DOD»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      activeInd:
+        type: string
+      dodApAcronym:
+        type: string
+      dodApCode:
+        type: string
+      dodApId:
+        type: integer
+        format: int32
+      programName:
+        type: string
+  Collection«Resource«Country»»:
+    type: object
+  Resources«Resource«Timezone»»:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/Collection«Resource«Timezone»»'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  Resources«Resource«City»»:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/Collection«Resource«City»»'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  Resources«Resource«Country»»:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/Collection«Resource«Country»»'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  ClaimantProgramCode:
+    type: object
+    properties:
+      activeInd:
+        type: string
+      claimantProgramCode:
+        type: string
+      claimantProgramDescription:
+        type: string
+      claimantProgramId:
+        type: integer
+        format: int32
+      claimantProgramName:
+        type: string
+  Collection«Resource«TreasuryAccountSymbolCode»»:
+    type: object
+  Collection«Resource«Timezone»»:
+    type: object
+  Resources«Resource«TreasuryAccountSymbolCode»»:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/Collection«Resource«TreasuryAccountSymbolCode»»'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  Location:
+    type: object
+    properties:
+      activeInd:
+        type: string
+      city:
+        $ref: '#/definitions/City'
+      congressionalDistrict:
+        $ref: '#/definitions/CongressionalDistrict'
+      county:
+        $ref: '#/definitions/County'
+      locationId:
+        type: integer
+        format: int32
+      state:
+        $ref: '#/definitions/State'
+      zipCode:
+        type: string
+      zipCode4:
+        type: string
