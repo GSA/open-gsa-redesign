@@ -388,7 +388,7 @@ Note: Response for one record is provided as an example <br>
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/GET Opportunities YAML.yml" download="OpenAPI">OpenAPI File</a>
+<a href="v1/GET Opportunities YAML.yml" download="GET Opportunities YAML">OpenAPI File</a>
 
 <details>
 <summary>Create Draft Opportunity</summary>
