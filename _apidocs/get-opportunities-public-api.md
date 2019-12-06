@@ -385,7 +385,7 @@ Note: Response for one record is provided as an example <br>
 </p>
 </details>
 
-### OpenAPI Specification File
+## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="v1/GET Opportunities YAML.yml" download="OpenAPI">OpenAPI File</a>
