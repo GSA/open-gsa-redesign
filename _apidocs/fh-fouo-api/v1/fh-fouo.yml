@@ -1,0 +1,4443 @@
+swagger: '2.0'
+info:
+  description: 'Swagger Documentation for all the FH API'
+  version: 1.0.0
+  title: 'FH API'
+  license: {}
+host: ***REMOVED***
+basePath: /
+tags:
+  -
+    name: Organizations
+    description: 'Endpoints pertaining to federal organizations'
+  -
+    name: RequestOrg
+    description: 'Request Orgs endpoints'
+  -
+    name: Search
+    description: 'Endpoints pertaining to Search'
+  -
+    name: Administration
+    description: 'Endpoints pertaining to user management'
+  -
+    name: Cache-Controller
+    description: "Endpoints pertaining to Caches |'All endpoints are for internal use\nonly'"
+  -
+    name: feature-controller
+    description: 'Feature Controller'
+  -
+    name: 'Organizations V 2'
+    description: 'Organizations Version 2 endpoints'
+paths:
+  /feature/v1/hello:
+    get:
+      tags:
+        - feature-controller
+      summary: getText
+      operationId: getTextUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /feature/v1/print:
+    get:
+      tags:
+        - feature-controller
+      summary: getPrintAll
+      operationId: getPrintAllUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: server
+          in: path
+          description: 'server name'
+          required: true
+          type: string
+        -
+          name: app
+          in: path
+          description: 'application name'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Feature'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  '/feature/v1/read/{key}':
+    get:
+      tags:
+        - feature-controller
+      summary: isEnabled
+      operationId: isEnabledUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: key
+          in: path
+          description: key
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /feature/v1/update:
+    post:
+      tags:
+        - feature-controller
+      summary: updateFeature
+      operationId: updateFeatureUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          in: body
+          name: feature
+          description: feature
+          required: true
+          schema:
+            $ref: '#/definitions/Feature'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Feature'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/appStatus:
+    get:
+      tags:
+        - Organizations
+      summary: 'Pinger API To Validate Status of Application'
+      description: 'Pinger API To Validate Status of Application'
+      operationId: getAppActiveStatusUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/cache/evictDepartmentCache:
+    get:
+      tags:
+        - Cache-Controller
+      summary: 'Evict Department Cache'
+      operationId: resetDepartmentCacheUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/cache/evictHierarchyKeysV1Cache:
+    get:
+      tags:
+        - Cache-Controller
+      summary: 'Evict Hierarchy Keys V1 Cache'
+      operationId: resetHierarchyKeysV1CacheUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/cache/evictHierarchyKeysV2Cache:
+    get:
+      tags:
+        - Cache-Controller
+      summary: 'Evict Hierarchy Keys V2 Cache'
+      operationId: resetHierarchyKeysV2CacheUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/cache/evictHierarchyTreeCache:
+    get:
+      tags:
+        - Cache-Controller
+      summary: 'Evict Hierarchy Tree Cache'
+      operationId: resetHierarchyTreeCacheUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/cache/evictHierarchyTreeV2Cache:
+    get:
+      tags:
+        - Cache-Controller
+      summary: 'Evict Hierarchy Tree V2 Cache'
+      operationId: resetEnhancedHierarchyTreeCacheUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/cache/evictOfficeTypeCache:
+    get:
+      tags:
+        - Cache-Controller
+      summary: 'Evict Office Type Cache'
+      operationId: resetOfficeTypeCacheUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/cache/evictSearchCache:
+    get:
+      tags:
+        - Cache-Controller
+      summary: 'Evict Search Cache'
+      operationId: resetSearchCacheUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/cache/evictV2SearchCache:
+    get:
+      tags:
+        - Cache-Controller
+      summary: 'Evict Search V2 Cache'
+      operationId: resetV2SearchCacheUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/cache/orgbyaccevict:
+    get:
+      tags:
+        - Cache-Controller
+      summary: 'Evict Hierarchy Tree Cache'
+      operationId: resetOrgByAacCacheUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  '/v1/federal/organizations/{orgKey}':
+    get:
+      tags:
+        - Organizations
+      summary: 'Get organization''s information'
+      description: 'Returns a specified organization''s information'
+      operationId: getOrgUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: orgKey
+          in: path
+          description: 'An organization''s key'
+          required: true
+          type: integer
+          format: int64
+        -
+          name: mode
+          in: query
+          description: mode
+          required: false
+          type: string
+          default: full
+        -
+          name: types
+          in: query
+          description: types
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/HalWrapper'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/org/hierarchy:
+    get:
+      tags:
+        - Organizations
+      summary: 'PublicAPI - Get organization''s and hierarchy'
+      description: 'Public Api | Returns a org details & hierarchical tree'
+      operationId: getPublicOrgHierarchyUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: api_key
+          in: query
+          description: 'Enter the Public API Key.'
+          required: true
+          type: string
+        -
+          name: fhorgid
+          in: query
+          description: 'Enter FH Org ID to search.'
+          required: false
+          type: string
+        -
+          name: limit
+          in: query
+          description: "Enter number of records per page. Default value is 10 & Max allowed\nis 100."
+          required: false
+          type: string
+        -
+          name: offset
+          in: query
+          description: "Enter offset value. For example, to retrieve 11 to 20 records\noffset=11 and limit=10. Default value is 0"
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/organizations:
+    get:
+      tags:
+        - Organizations
+      summary: 'Get organization''s information'
+      description: 'Returns multiple organizations information'
+      operationId: getOrgsByKeysUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: orgKey
+          in: query
+          description: orgKey
+          required: false
+          type: string
+        -
+          name: cfdaKey
+          in: query
+          description: cfdaKey
+          required: false
+          type: string
+        -
+          name: fpdsKey
+          in: query
+          description: fpdsKey
+          required: false
+          type: string
+        -
+          name: hasFpds
+          in: query
+          description: hasFpds
+          required: false
+          type: boolean
+          default: false
+        -
+          name: mode
+          in: query
+          description: mode
+          required: false
+          type: string
+        -
+          name: status
+          in: query
+          description: 'Provide the status filter'
+          required: false
+          type: string
+          enum:
+            - active
+            - activepending
+            - allactive
+            - inactive
+            - everything
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/HalWrapper2'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/organizations/activedepartment:
+    get:
+      tags:
+        - Organizations
+      summary: 'Get departments'
+      description: 'Returns all active organizations of type department'
+      operationId: getDepartmentsUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: status
+          in: query
+          description: status
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/HalWrapper'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/organizations/at:
+    get:
+      tags:
+        - Organizations
+      summary: getActiveThreadsRunning
+      operationId: getActiveThreadsRunningUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/organizations/departments:
+    get:
+      tags:
+        - Organizations
+      summary: 'Get departments'
+      description: 'Returns all organizations of type department'
+      operationId: getDepartmentsUsingGET_1
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: has-fpds
+          in: query
+          description: has-fpds
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/HalWrapper'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  '/v1/organizations/hierarchy/{orgKey}':
+    get:
+      tags:
+        - Organizations
+      summary: 'Get organization''s hierarchy'
+      description: 'Returns a hierarchical tree with the specified org as the root'
+      operationId: getOrgHierarchyUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: orgKey
+          in: path
+          description: 'Key of the Organization to serve as the root of the tree'
+          required: true
+          type: integer
+          format: int64
+        -
+          name: mode
+          in: query
+          description: 'Mode decided whether complate or partial info is fetched'
+          required: false
+          type: string
+          enum:
+            - slim
+            - full
+        -
+          name: status
+          in: query
+          description: 'Active/Inactive status of the orgs to be fetched'
+          required: false
+          type: string
+          enum:
+            - allactive
+            - inactive
+        -
+          name: limit
+          in: query
+          description: 'No of records'
+          required: false
+          type: string
+          default: '10'
+        -
+          name: offset
+          in: query
+          description: Offset
+          required: false
+          type: string
+          default: '1'
+        -
+          name: sort
+          in: query
+          description: 'Field name for sorting the results'
+          required: false
+          type: string
+          enum:
+            - name
+            - code
+        -
+          name: order
+          in: query
+          description: 'Order of the results '
+          required: false
+          type: string
+          enum:
+            - asc
+            - desc
+        -
+          name: has-fpds
+          in: query
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: false
+          type: boolean
+          enum:
+            - 'true'
+            - 'false'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/HalWrapper'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  '/v1/organizations/hierarchykeys/{orgKey}':
+    get:
+      tags:
+        - Organizations
+      summary: 'Get organization''s hierarchy OrgKeys'
+      description: "Returns a hierarchical tree of Orgs with the specified org as the\nroot"
+      operationId: getOrgHierarchyKeysUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: orgKey
+          in: path
+          description: 'Key of the Organization to serve as the root of the tree'
+          required: false
+          type: integer
+          format: int64
+        -
+          name: depth
+          in: query
+          description: depth
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        -
+          name: status
+          in: query
+          description: status
+          required: false
+          type: string
+          default: everything
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/OrgHierarchyWrapper'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/organizations/type:
+    get:
+      tags:
+        - Organizations
+      summary: 'Get orgnization types'
+      description: 'Returns all organization type'
+      operationId: getOrgTypeUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  '/v1/organizations/{orgKey}':
+    get:
+      tags:
+        - Organizations
+      summary: 'Get organization''s details'
+      description: 'Get orgs details'
+      operationId: orgByKeyUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: orgKey
+          in: path
+          description: 'Key of the Organization to serve as the root of the tree'
+          required: true
+          type: string
+        -
+          name: types
+          in: query
+          description: 'Types to be added or not'
+          required: false
+          type: boolean
+          default: false
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: mode
+          in: query
+          description: 'Mode decided whether complate or partial info is fetched'
+          required: false
+          type: string
+          default: full
+          enum:
+            - slim
+            - full
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/HalWrapper'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/orgs:
+    get:
+      tags:
+        - Organizations
+      summary: 'PublicAPI - Get organization''s and hierarchy'
+      description: 'PUBLIC API | Returns a org details & hierarchical tree'
+      operationId: getPublicOrgHierarchyUsingGET_1
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: api_key
+          in: query
+          description: 'Enter Public API Key.'
+          required: true
+          type: string
+        -
+          name: fhorgid
+          in: query
+          description: 'Enter fh org id.'
+          required: false
+          type: string
+        -
+          name: fhorgname
+          in: query
+          description: 'Enter fh org name.'
+          required: false
+          type: string
+        -
+          name: fhorgtype
+          in: query
+          description: 'Enter fh org type. Possible values: Department/Ind-agency, Sub-tier.'
+          required: false
+          type: string
+        -
+          name: status
+          in: query
+          description: 'Enter status(active/inactive/all). Default value is active.'
+          required: false
+          type: string
+        -
+          name: level
+          in: query
+          description: 'Enter level'
+          required: false
+          type: string
+        -
+          name: agencycode
+          in: query
+          description: 'Enter agency code'
+          required: false
+          type: string
+        -
+          name: oldfpdsofficecode
+          in: query
+          description: 'Enter old fpds office code'
+          required: false
+          type: string
+        -
+          name: cgac
+          in: query
+          description: 'Enter cgac'
+          required: false
+          type: string
+        -
+          name: searchby
+          in: query
+          description: 'Enter searchby value. Allowed values are state, city ,country'
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: "Enter value for q. For example if search by value is city and\nq will be McLean"
+          required: false
+          type: string
+        -
+          name: fhparentorgid
+          in: query
+          description: 'Enter fh parent org id'
+          required: false
+          type: string
+        -
+          name: fhparentorgname
+          in: query
+          description: 'Enter fh parent org name'
+          required: false
+          type: string
+        -
+          name: aacofficecode
+          in: query
+          description: 'Enter aac office code'
+          required: false
+          type: string
+        -
+          name: startdatefrom
+          in: query
+          description: 'Enter fh org start date from'
+          required: false
+          type: string
+        -
+          name: startdateto
+          in: query
+          description: 'Enter fh org start date to'
+          required: false
+          type: string
+        -
+          name: enddatefrom
+          in: query
+          description: 'Enter fh org end date from'
+          required: false
+          type: string
+        -
+          name: enddateto
+          in: query
+          description: 'Enter fh org end date to'
+          required: false
+          type: string
+        -
+          name: officetype
+          in: query
+          description: 'Enter office type. Allowed values are funding/contracting/grant'
+          required: false
+          type: string
+        -
+          name: region
+          in: query
+          description: 'Enter region'
+          required: false
+          type: string
+        -
+          name: officetypestartdatefrom
+          in: query
+          description: 'Enter office type start date from'
+          required: false
+          type: string
+        -
+          name: officetypestartdateto
+          in: query
+          description: 'Enter office type start date to'
+          required: false
+          type: string
+        -
+          name: officetypeenddatefrom
+          in: query
+          description: 'Enter office type end date from'
+          required: false
+          type: string
+        -
+          name: officetypeenddateto
+          in: query
+          description: 'Enter office type end date to'
+          required: false
+          type: string
+        -
+          name: updatedby
+          in: query
+          description: 'Enter updated by'
+          required: false
+          type: string
+        -
+          name: updateddatefrom
+          in: query
+          description: 'Enter updated date from'
+          required: false
+          type: string
+        -
+          name: updateddateto
+          in: query
+          description: 'Enter updated date to'
+          required: false
+          type: string
+        -
+          name: createdby
+          in: query
+          description: 'Enter created by'
+          required: false
+          type: string
+        -
+          name: createddatefrom
+          in: query
+          description: 'Enter created date from'
+          required: false
+          type: string
+        -
+          name: createddateto
+          in: query
+          description: 'Enter created date to'
+          required: false
+          type: string
+        -
+          name: limit
+          in: query
+          description: 'Enter number of records per page. Default value will be 10.'
+          required: false
+          type: string
+        -
+          name: offset
+          in: query
+          description: "Enter offset value. For example, to retrieve 11 to 20 records\noffset=11 and limit=10. Default offset value is 0."
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/requestOrg:
+    get:
+      tags:
+        - RequestOrg
+      summary: 'API endpoint to get Request Org Details | Internal Use only'
+      operationId: getRequestOrgDetailsUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: requestIds
+          in: query
+          description: 'Provide the request org ids for which details is needeed'
+          required: false
+          type: string
+        -
+          name: pageNum
+          in: query
+          description: 'Provide page number'
+          required: true
+          type: string
+          default: '1'
+        -
+          name: limit
+          in: query
+          description: 'Max no of results in a payload'
+          required: true
+          type: string
+          default: '10'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RequestOrg'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+    post:
+      tags:
+        - RequestOrg
+      summary: 'Create an Request Organization'
+      description: 'Returns the request organization created'
+      operationId: createRequestOrgUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          in: body
+          name: requestOrg
+          description: requestOrg
+          required: true
+          schema:
+            $ref: '#/definitions/RequestOrg'
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+        -
+          name: fullParentPathName
+          in: query
+          description: 'Provide the parent org''s full parent path name'
+          required: true
+          type: string
+        -
+          name: fullParentPath
+          in: query
+          description: 'Provide the parent org''s full parent path'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RequestOrg'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/requestOrg/getFileUrl:
+    get:
+      tags:
+        - RequestOrg
+      summary: 'Get url for of the file which was uploaded | For Internal Use Only'
+      operationId: getAttachmentUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+        -
+          name: fileName
+          in: query
+          description: 'Provide the name of the file which was uploaded'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ResponseEntity'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/requestOrg/presignedUrl:
+    get:
+      tags:
+        - RequestOrg
+      summary: 'Get post url for S3 | For Internal Use only'
+      operationId: getS3PreSignedUrlUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+        -
+          name: method
+          in: query
+          description: 'The action that is being performed on s3 bucket'
+          required: true
+          type: string
+          enum:
+            - Put
+            - Delete
+        -
+          name: key
+          in: query
+          description: 'Provide the name of the file to be uploaded'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/URL'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/requestOrg/processXML:
+    post:
+      tags:
+        - RequestOrg
+      summary: 'API to validate and process the uploaded XML for office creation'
+      operationId: processXMLUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+        -
+          in: body
+          name: files
+          description: 'XML to be validated and processed'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RequestOrg'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/requestOrg/validate:
+    post:
+      tags:
+        - RequestOrg
+      summary: 'API endpoint to validate Request Org Details'
+      operationId: validateRequestOrgDetailsUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          in: body
+          name: requestOrg
+          description: requestOrg
+          required: true
+          schema:
+            $ref: '#/definitions/RequestOrg'
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+        -
+          name: fullParentPathName
+          in: query
+          description: 'Provide the parent org''s full parent path name'
+          required: true
+          type: string
+        -
+          name: fullParentPath
+          in: query
+          description: 'Provide the parent org''s full parent path'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RequestOrg'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/requestOrg/view:
+    get:
+      tags:
+        - RequestOrg
+      summary: getRequestOrgById
+      operationId: getRequestOrgByIdUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: reqId
+          in: query
+          description: "Provide the request org ids for which details is needeed | Internal\nUse only"
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RequestOrg'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v1/search:
+    get:
+      tags:
+        - Search
+      summary: 'performs search based on the parameters given'
+      operationId: searchJdbcUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: emailDomain
+          in: query
+          description: emailDomain
+          required: false
+          type: string
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: false
+          type: string
+        -
+          name: searchType
+          in: query
+          description: "the kind of thing to search for.  options are {name, code, shortName,\ngeneral}.  the default is general, which searches the union of all the other\nsearch types."
+          required: false
+          type: string
+          default: general
+          enum:
+            - name
+            - code
+            - shortName
+            - general
+        -
+          name: q
+          in: query
+          description: 'the search query'
+          required: false
+          type: string
+        -
+          name: parent
+          in: query
+          description: "an orgKey, all results will be descendants of this org.  leave\nblank or make 0 to have the parent be the root"
+          required: false
+          type: string
+        -
+          name: depth
+          in: query
+          description: 'how many generations.  0 by default.'
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        -
+          name: exclusive
+          in: query
+          description: "if false then the depth is inclusive (everything up to depth,\n0 means unrestricted).  If true, then the depth is exclusive (only the level\nof depth, 0 throws error)"
+          required: false
+          type: boolean
+          default: false
+        -
+          name: status
+          in: query
+          description: 'Provide the status of orgs to be searched'
+          required: false
+          type: string
+          default: everything
+          enum:
+            - everything
+            - active
+            - allActive
+            - activePending
+            - inactive
+        -
+          name: orgType
+          in: query
+          description: "the kind of organization, Dept/Ind Agency,Sub-Tier,Office,'Maj\nCommand',Sub-Command 1,Sub-Command 2,Sub-Command 3"
+          required: false
+          type: string
+        -
+          name: orderBy
+          in: query
+          description: "column to order the results by.  options are {fullParentPathName,\nname, shortName,orgKey,type}.  default is fullParentPathName."
+          required: false
+          type: string
+          default: fullParentPathName
+          enum:
+            - fullParentPathName
+            - name
+            - shortName
+            - orgKey
+            - level
+            - endDate
+            - code
+            - type
+        -
+          name: ascending
+          in: query
+          description: "Ordering ascending or descending, options are {asc, desc}.  asc\nby default"
+          required: false
+          type: string
+          default: asc
+          enum:
+            - asc
+            - desc
+        -
+          name: pageSize
+          in: query
+          description: 'How many search results on a single page'
+          required: true
+          type: integer
+          format: int32
+        -
+          name: pageNum
+          in: query
+          description: 'Page number'
+          required: true
+          type: integer
+          format: int32
+        -
+          name: levels
+          in: query
+          description: 'Provide org levels to be searched on'
+          required: false
+          type: string
+        -
+          name: userOrgs
+          in: query
+          description: "Search will be restricted to the orgs given by userOrgs.  Multiple\nuserOrgs parameters can be given."
+          required: false
+          type: integer
+          format: int32
+        -
+          name: defaultDept
+          in: query
+          description: "if true then filter records based the departments for the logged\nin user, if false then include all departments"
+          required: false
+          type: boolean
+        -
+          name: has-fpds
+          in: query
+          description: 'Provide true to obtain only orgs with fpds code'
+          required: false
+          type: boolean
+          default: false
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: defaultRoles
+          in: query
+          description: 'Provide true to obtain orgs on which user has admin priviledges'
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: adminHierarchy
+          in: query
+          description: "Provide true to obtain orgs with its hierarchy on which user\nhave admin priviledges"
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: adminRolesHierarchy
+          in: query
+          description: "Provide hierarchy to obtain orgs full hierarchy on which user\nhave admin priviledges, or provide role to provide org with its parent hierarchy\non which he has permissions"
+          required: false
+          type: string
+          enum:
+            - roles
+            - hierarchy
+        -
+          name: restriction
+          in: query
+          description: "Restiction for code to its level only can be added for general\nor code"
+          required: false
+          type: string
+          default: none
+          enum:
+            - none
+            - code
+        -
+          name: mode
+          in: query
+          description: 'Limited column response or complete projection'
+          required: false
+          type: string
+          default: full
+          enum:
+            - full
+            - slim
+        -
+          name: hierarchyTree
+          in: query
+          description: 'Provide with complete hierarchy along with parent'
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: domain
+          in: query
+          description: "Domain is only accepted if (defaultRoles or adminHierarchy is\ntrue) or adminRolesHierarchy is not null"
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/HalWrapper'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+        '428':
+          description: 'valid pageSize parameter require'
+        '500':
+          description: 'Database failure'
+  /v1/search/count:
+    get:
+      tags:
+        - Search
+      summary: "gives total amount of search results that would be returned if a search\nis performed with parameters given"
+      operationId: getSearchCountUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: domain
+          in: query
+          description: domain
+          required: false
+          type: string
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: false
+          type: string
+        -
+          name: searchType
+          in: query
+          description: "the kind of thing to search for.  options are {name, code, shortName,\ngeneral}.  the default is general, which searches the union of all the other\nsearch types."
+          required: false
+          type: string
+          default: general
+          enum:
+            - name
+            - code
+            - shortName
+            - general
+        -
+          name: q
+          in: query
+          description: 'the search query'
+          required: false
+          type: string
+        -
+          name: parent
+          in: query
+          description: 'an org_key, all results will be descendants of this org'
+          required: false
+          type: string
+        -
+          name: depth
+          in: query
+          description: "how many generations below the restrict org to search for.  put\n0 or leave blank for unrestricted depth"
+          required: false
+          type: integer
+          format: int32
+        -
+          name: exclusive
+          in: query
+          description: "if false then the depth is inclusive (everything up to depth,\n0 means unrestricted).  If true, then the depth is exclusive (only the level\nof depth, 0 throws error)"
+          required: false
+          type: boolean
+        -
+          name: status
+          in: query
+          description: 'Provide the status of orgs to be searched'
+          required: false
+          type: string
+          default: everything
+          enum:
+            - everything
+            - active
+            - allActive
+            - activePending
+            - inactive
+        -
+          name: orgType
+          in: query
+          description: "the kind of organization, Dept/Ind Agency,Sub-Tier,Office,'Maj\nCommand',Sub-Command 1,Sub-Command 2,Sub-Command 3"
+          required: false
+          type: string
+        -
+          name: levels
+          in: query
+          description: 'Provide org levels to be searched on'
+          required: false
+          type: string
+        -
+          name: userOrgs
+          in: query
+          description: "Search will be restricted to the orgs given by userOrgs.  Multiple\nuserOrgs parameters can be given."
+          required: false
+          type: integer
+          format: int32
+        -
+          name: defaultDept
+          in: query
+          description: "if true then filter records based the departments for the logged\nin user, if false then include all departments"
+          required: false
+          type: boolean
+        -
+          name: has-fpds
+          in: query
+          description: 'Provide true to obtain only orgs with fpds code'
+          required: false
+          type: boolean
+          default: false
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: defaultRoles
+          in: query
+          description: 'Provide true to obtain orgs on which user has admin priviledges'
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: adminHierarchy
+          in: query
+          description: "Provide true to obtain orgs with its hierarchy on which user\nhave admin priviledges"
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: adminRolesHierarchy
+          in: query
+          description: "Provide hierarchy to obtain orgs full hierarchy on which user\nhave admin priviledges, or provide role to provide org with its parent hierarchy\non which he has permissions"
+          required: false
+          type: string
+          enum:
+            - roles
+            - hierarchy
+        -
+          name: restriction
+          in: query
+          description: "Restiction for code to its level only can be added for general\nor code"
+          required: false
+          type: string
+          default: none
+          enum:
+            - none
+            - code
+        -
+          name: hierarchyTree
+          in: query
+          description: 'Provide with complete hierarchy along with parent'
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: integer
+            format: int64
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+        '500':
+          description: 'Database failure'
+  /v1/search/criteria:
+    get:
+      tags:
+        - Search
+      summary: 'performs search based on the parameters given'
+      operationId: searchUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: emailDomain
+          in: query
+          description: emailDomain
+          required: false
+          type: string
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: false
+          type: string
+        -
+          name: searchType
+          in: query
+          description: "the kind of thing to search for.  options are {name, code, shortName,\ngeneral}.  the default is general, which searches the union of all the other\nsearch types."
+          required: false
+          type: string
+          default: general
+          enum:
+            - name
+            - code
+            - shortName
+            - general
+        -
+          name: q
+          in: query
+          description: 'the search query'
+          required: false
+          type: string
+        -
+          name: parent
+          in: query
+          description: "an orgKey, all results will be descendants of this org.  leave\nblank or make 0 to have the parent be the root"
+          required: false
+          type: string
+        -
+          name: depth
+          in: query
+          description: 'how many generations.  0 by default.'
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        -
+          name: exclusive
+          in: query
+          description: "if false then the depth is inclusive (everything up to depth,\n0 means unrestricted).  If true, then the depth is exclusive (only the level\nof depth, 0 throws error)"
+          required: false
+          type: boolean
+          default: false
+        -
+          name: status
+          in: query
+          description: 'Provide the status of orgs to be searched'
+          required: false
+          type: string
+          default: everything
+          enum:
+            - everything
+            - active
+            - allActive
+            - activePending
+            - inactive
+        -
+          name: orgType
+          in: query
+          description: "the kind of organization, Dept/Ind Agency,Sub-Tier,Office,'Maj\nCommand',Sub-Command 1,Sub-Command 2,Sub-Command 3"
+          required: false
+          type: string
+        -
+          name: orderBy
+          in: query
+          description: "column to order the results by.  options are {fullParentPathName,\nname, shortName,orgKey,type}.  default is fullParentPathName."
+          required: false
+          type: string
+          default: fullParentPathName
+          enum:
+            - fullParentPathName
+            - name
+            - shortName
+            - orgKey
+            - level
+            - endDate
+            - code
+            - type
+        -
+          name: ascending
+          in: query
+          description: "Ordering ascending or descending, options are {asc, desc}.  asc\nby default"
+          required: false
+          type: string
+          default: asc
+          enum:
+            - asc
+            - desc
+        -
+          name: pageSize
+          in: query
+          description: 'How many search results on a single page'
+          required: true
+          type: integer
+          format: int32
+        -
+          name: pageNum
+          in: query
+          description: 'Page number'
+          required: true
+          type: integer
+          format: int32
+        -
+          name: levels
+          in: query
+          description: 'Provide org levels to be searched on'
+          required: false
+          type: string
+        -
+          name: userOrgs
+          in: query
+          description: "Search will be restricted to the orgs given by userOrgs.  Multiple\nuserOrgs parameters can be given."
+          required: false
+          type: integer
+          format: int32
+        -
+          name: defaultDept
+          in: query
+          description: "if true then filter records based the departments for the logged\nin user, if false then include all departments"
+          required: false
+          type: boolean
+        -
+          name: has-fpds
+          in: query
+          description: 'Provide true to obtain only orgs with fpds code'
+          required: false
+          type: boolean
+          default: false
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: defaultRoles
+          in: query
+          description: 'Provide true to obtain orgs on which user has admin priviledges'
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: adminHierarchy
+          in: query
+          description: "Provide true to obtain orgs with its hierarchy on which user\nhave admin priviledges"
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: adminRolesHierarchy
+          in: query
+          description: "Provide hierarchy to obtain orgs full hierarchy on which user\nhave admin priviledges, or provide role to provide org with its parent hierarchy\non which he has permissions"
+          required: false
+          type: string
+          enum:
+            - roles
+            - hierarchy
+        -
+          name: restriction
+          in: query
+          description: "Restiction for code to its level only can be added for general\nor code"
+          required: false
+          type: string
+          default: none
+          enum:
+            - none
+            - code
+        -
+          name: mode
+          in: query
+          description: 'Limited column response or complete projection'
+          required: false
+          type: string
+          default: full
+          enum:
+            - full
+            - slim
+        -
+          name: hierarchyTree
+          in: query
+          description: 'Provide with complete hierarchy along with parent'
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: domain
+          in: query
+          description: "Domain is only accepted if (defaultRoles or adminHierarchy is\ntrue) or adminRolesHierarchy is not null"
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/HalWrapper'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+        '428':
+          description: 'valid pageSize parameter require'
+        '500':
+          description: 'Database failure'
+  /v2/FHWidget:
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: 'Get start_date and end_date count for FH Widget'
+      description: "Returns count of start_date and end_date depending on the params\npassed"
+      operationId: getFHWidgetDataUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: days
+          in: query
+          description: days
+          required: true
+          type: integer
+          format: int32
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Authentication Token from IPlanet Directory'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/FHWidget'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/FHWidgetPageData:
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: 'Get start_date and end_date Org Result for FH Widget'
+      description: "Returns Organizations with, start_date and end_date depending on\nthe params passed"
+      operationId: getFHWidgetPageDataUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+        -
+          name: duration
+          in: query
+          description: "Duration/Filter to find the duration for which Organization needs\nto be searched"
+          required: false
+          type: string
+          enum:
+            - PAST_START
+            - PAST_END
+            - SCH_START
+            - SCH_END
+        -
+          name: days
+          in: query
+          description: "the kind of organization, Dept/Ind Agency,Sub-Tier,Office,'Maj\nCommand',Sub-Command 1,Sub-Command 2,Sub-Command 3"
+          required: false
+          type: string
+        -
+          name: orgTypes
+          in: query
+          description: "the kind of organization, Dept/Ind Agency,Sub-Tier,Office,'Maj\nCommand',Sub-Command 1,Sub-Command 2,Sub-Command 3"
+          required: false
+          type: string
+        -
+          name: orderBy
+          in: query
+          description: 'Currently all orgs are ordered by name as default'
+          required: false
+          type: string
+          default: name
+          enum:
+            - name
+        -
+          name: sortBy
+          in: query
+          description: 'Sort the name in asc or desc order'
+          required: false
+          type: string
+          default: asc
+          enum:
+            - asc
+            - desc
+        -
+          name: pageNum
+          in: query
+          description: 'Page number is used for pagination '
+          required: false
+          type: string
+          default: '1'
+        -
+          name: limit
+          in: query
+          description: 'Maximum number of records to be retrieved in one payload'
+          required: false
+          type: string
+          default: '10'
+        -
+          name: typeLookUp
+          in: query
+          description: 'Provide true if type reverse mapping to be performed'
+          required: false
+          type: string
+          default: 'true'
+          enum:
+            - 'true'
+            - 'false'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resource«OrgDetails»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/admin/checkAccess:
+    get:
+      tags:
+        - Administration
+      summary: "Check Access to the page based on user role and permissions, this endpoint\nis used as a guard for front-end"
+      operationId: AdminRoleAccessUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+        -
+          name: pageName
+          in: query
+          description: 'provide the page Name for which access needs to be checked'
+          required: false
+          type: string
+          enum:
+            - federal-hierarchy
+            - create
+            - profile
+            - hierarchy
+            - move
+            - update_office
+            - aac_upload
+        -
+          name: orgKey
+          in: query
+          description: 'provide the orgId details beings displayed on the page provided'
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/checkDlaConnection:
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: 'check DLA webservice connection'
+      operationId: checkDlaConnectionUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/createOrg:
+    post:
+      tags:
+        - 'Organizations V 2'
+      summary: 'Create an Organization'
+      description: 'Returns the organization created'
+      operationId: createOrgWithValidationUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          in: body
+          name: org
+          description: org
+          required: true
+          schema:
+            $ref: '#/definitions/Org'
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+        -
+          name: fullParentPathName
+          in: query
+          description: "Provide the parent org's full parent path name, full parent path\nname empty for dept"
+          required: false
+          type: string
+        -
+          name: fullParentPath
+          in: query
+          description: "Provide the parent org's full parent path, full parent path empty\nfor dept"
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Org'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/federal/hierarchyTree:
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: 'Update API endpoint to get list of org keys in the hierarchy'
+      operationId: getEnhancedHierarchyTreeUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: orgKeys
+          in: query
+          description: 'Provide the orgKey for which hierarchy keys are needed'
+          required: false
+          type: string
+        -
+          name: status
+          in: query
+          description: "Provide active to obtain all the active orgs, inactive for all\ninactive orgs and all to retrieve both active and inactive"
+          required: false
+          type: string
+          default: active
+          enum:
+            - all
+            - active
+            - inactive
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/FhHierarchyTree'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  '/v2/hierarchy/{orgKey}':
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: 'Get organization''s hierarchy'
+      description: 'Returns a hierarchical tree with the specified org as the root'
+      operationId: getHierarchyUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: orgKey
+          in: path
+          description: 'Key of the Organization to serve as the root of the tree'
+          required: true
+          type: integer
+          format: int64
+        -
+          name: mode
+          in: query
+          description: 'Mode decided whether complate or partial info is fetched'
+          required: false
+          type: string
+          default: slim
+          enum:
+            - slim
+            - full
+        -
+          name: status
+          in: query
+          description: 'Active/Inactive status of the orgs to be fetched'
+          required: false
+          type: string
+          default: active
+          enum:
+            - allactive
+            - inactive
+        -
+          name: limit
+          in: query
+          description: 'No of records'
+          required: false
+          type: string
+          default: '10'
+        -
+          name: offset
+          in: query
+          description: Offset
+          required: false
+          type: string
+          default: '1'
+        -
+          name: sort
+          in: query
+          description: 'Field name for sorting the results'
+          required: false
+          type: string
+          default: name
+          enum:
+            - name
+            - aac
+        -
+          name: order
+          in: query
+          description: 'Order of the results '
+          required: false
+          type: string
+          default: asc
+          enum:
+            - asc
+            - desc
+        -
+          name: has-fpds
+          in: query
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: false
+          type: boolean
+          default: false
+          enum:
+            - 'true'
+            - 'false'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/HalWrapper'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/hierarchyKeys:
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: 'API endpoint to get list of Keys in the hierarchy'
+      operationId: getHierarchyKeysUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: orgKey
+          in: query
+          description: 'Provide the orgKey for which hierarchy keys are needed'
+          required: false
+          type: string
+        -
+          name: status
+          in: query
+          description: "Provide active to obtain all the active orgs, inactive for all\ninactive orgs and all to retrieve both active and inactive"
+          required: false
+          type: string
+          default: active
+          enum:
+            - all
+            - active
+            - inactive
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/hierarchyTree:
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: 'API endpoint to get list of org keys in the hierarchy'
+      operationId: getHierarchyTreeUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: orgKeys
+          in: query
+          description: 'Provide the orgKey for which hierarchy keys are needed'
+          required: false
+          type: string
+        -
+          name: status
+          in: query
+          description: "Provide active to obtain all the active orgs, inactive for all\ninactive orgs and all to retrieve both active and inactive"
+          required: false
+          type: string
+          default: active
+          enum:
+            - all
+            - active
+            - inactive
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HierarchyTree'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/landingPage:
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: getLandingPageDetails
+      operationId: getLandingPageDetailsUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+        -
+          name: myOrg
+          in: query
+          description: "Provide true to obtain only agencies on which you have admin\naccess"
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: q
+          in: query
+          description: 'Provide keyowrd to be searched in the db'
+          required: false
+          type: string
+        -
+          name: orgTypes
+          in: query
+          description: "the kind of organization, Dept/Ind Agency,Sub-Tier,Office,'Maj\nCommand',Sub-Command 1,Sub-Command 2,Sub-Command 3"
+          required: false
+          type: string
+        -
+          name: status
+          in: query
+          description: "Provide active to obtain all the active orgs, inactive for all\ninactive orgs and all to retrieve both active and inactive"
+          required: false
+          type: string
+          default: active
+          enum:
+            - all
+            - active
+            - inactive
+        -
+          name: orderBy
+          in: query
+          description: 'Currently all orgs are ordered by name as default'
+          required: false
+          type: string
+          default: name
+          enum:
+            - name
+        -
+          name: sortBy
+          in: query
+          description: 'Sort the name in asc or desc order'
+          required: false
+          type: string
+          default: asc
+          enum:
+            - asc
+            - desc
+        -
+          name: pageNum
+          in: query
+          description: 'Page number is used for pagination '
+          required: false
+          type: string
+          default: '1'
+        -
+          name: limit
+          in: query
+          description: 'Maximum number of records to be retrieved in one payload'
+          required: false
+          type: string
+          default: '10'
+        -
+          name: typeLookUp
+          in: query
+          description: 'Provide true if type reverse mapping to be performed'
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: orgAdmin
+          in: query
+          description: 'Provide true to filter search results of only orgs I administer'
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resource«OrgDetails»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/legacyOrgs:
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: 'Provide Legacy Organization key to get FH Org Info'
+      operationId: getOrgForLegacyIdUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: legacySystem
+          in: query
+          description: 'Provide the legacy system Name Eg. CFDA,FBO'
+          required: true
+          type: string
+        -
+          name: legacyKeys
+          in: query
+          description: 'Provide the legacy keys of the legacy system'
+          required: true
+          type: string
+        -
+          name: status
+          in: query
+          description: "Provide active to obtain all the active orgs, inactive for all\ninactive orgs and all to retrieve both active and inactive"
+          required: false
+          type: string
+          default: active
+          enum:
+            - all
+            - active
+            - inactive
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Org'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/officeReport:
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: 'Generate end dated offices report as CSV file to be emailed'
+      operationId: generateOfficesAsCSVUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/officeTypeList:
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: "Provides the list all the different Office Types | For Internal Use\nOnly"
+      operationId: getOfficeTypeListUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: status
+          in: query
+          description: 'Provide status of the office type'
+          required: false
+          type: string
+          default: active
+          enum:
+            - active
+            - inactive
+            - everything
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/OfficeTypeRef'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  '/v2/organizations/view/{orgKey}':
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: 'Get organization''s information'
+      description: 'Returns a specified organization''s information'
+      operationId: getOrgUsingGET_1
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          name: orgKey
+          in: path
+          description: 'An organization''s key'
+          required: true
+          type: integer
+          format: int64
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Authentication Token from IPlanet Directory'
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Resource«Org»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/orgbyaacorgkey:
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: 'Provide Organization details by aac code or org key'
+      operationId: orgbyaacorgkeyUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: searchvalue
+          in: query
+          description: searchvalue
+          required: false
+          type: string
+        -
+          name: mode
+          in: query
+          description: mode
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/orgdownload:
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: downloadFHData
+      operationId: downloadFHDataUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: orgKey
+          in: query
+          description: orgKey
+          required: false
+          type: string
+          default: active
+        -
+          name: includeChildren
+          in: query
+          description: includeChildren
+          required: false
+          type: boolean
+          default: false
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+        -
+          name: myOrg
+          in: query
+          description: "Provide true to obtain only agencies on which you have admin\naccess"
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: q
+          in: query
+          description: 'Provide keyowrd to be searched in the db'
+          required: false
+          type: string
+        -
+          name: orgTypes
+          in: query
+          description: "the kind of organization, Dept/Ind Agency,Sub-Tier,Office,'Maj\nCommand',Sub-Command 1,Sub-Command 2,Sub-Command 3"
+          required: false
+          type: string
+        -
+          name: status
+          in: query
+          description: "Provide active to obtain all the active orgs, inactive for all\ninactive orgs and all to retrieve both active and inactive"
+          required: false
+          type: string
+          default: active
+          enum:
+            - all
+            - active
+            - inactive
+        -
+          name: orderBy
+          in: query
+          description: 'Currently all orgs are ordered by name as default'
+          required: false
+          type: string
+          default: name
+          enum:
+            - name
+        -
+          name: sortBy
+          in: query
+          description: 'Sort the name in asc or desc order'
+          required: false
+          type: string
+          default: asc
+          enum:
+            - asc
+            - desc
+        -
+          name: pageNum
+          in: query
+          description: 'Page number is used for pagination '
+          required: false
+          type: string
+          default: '1'
+        -
+          name: limit
+          in: query
+          description: 'Maximum number of records to be retrieved in one payload'
+          required: false
+          type: string
+          default: '10'
+        -
+          name: filename
+          in: query
+          description: 'Download file name'
+          required: false
+          type: string
+        -
+          name: typeLookUp
+          in: query
+          description: 'Provide true if type reverse mapping to be performed'
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: orgAdmin
+          in: query
+          description: 'Provide true to filter search results of only orgs I administer'
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        -
+          name: saveSearch
+          in: query
+          description: 'Flag to save the search'
+          required: false
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/profileDetails:
+    get:
+      tags:
+        - 'Organizations V 2'
+      summary: 'API endpoint to get profile details'
+      operationId: getProfileDetailsUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+        -
+          name: mode
+          in: query
+          description: 'Provide create or update based on the form'
+          required: true
+          type: string
+          enum:
+            - create
+            - update
+        -
+          name: orgKey
+          in: query
+          description: 'Provide parent org for create or org key for update'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Org'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/updateOrg:
+    put:
+      tags:
+        - 'Organizations V 2'
+      summary: 'API endpoint used to update the organization with sectional validation'
+      operationId: updateOrgWithValidationUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          in: body
+          name: org
+          description: org
+          required: true
+          schema:
+            $ref: '#/definitions/Org'
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+        -
+          name: section
+          in: query
+          description: 'Provide the section that needs to be updated'
+          required: false
+          type: string
+          enum:
+            - section1
+            - section2
+            - section3
+            - section4
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Org'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/validateOrg:
+    post:
+      tags:
+        - 'Organizations V 2'
+      summary: 'Run validations before org creation'
+      description: 'Return the error messages, if any'
+      operationId: validateOrgCreationUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/hal+json
+      parameters:
+        -
+          in: body
+          name: org
+          description: org
+          required: true
+          schema:
+            $ref: '#/definitions/Org'
+        -
+          name: X-Auth-Token
+          in: header
+          description: 'Provide the iPlanetDirectoryPro cookie from your application'
+          required: true
+          type: string
+        -
+          name: fullParentPathName
+          in: query
+          description: "Provide the parent org's full parent path name, full parent path\nname empty for dept"
+          required: false
+          type: string
+        -
+          name: fullParentPath
+          in: query
+          description: "Provide the parent org's full parent path, full parent path empty\nfor dept"
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Org'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  /v2/wsdl/content:
+    get:
+      tags:
+        - wsdl
+        - 'Organizations V 2'
+      summary: 'get wsdl content'
+      description: 'get wsdl, use https url'
+      operationId: getUrlContentUsingGET
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        -
+          name: url
+          in: query
+          description: url
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: 'Bad Request'
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: 'Not Found'
+        '500':
+          description: 'Internal Server Error'
+          schema:
+            type: string
+        '501':
+          description: 'Not Implemented'
+          schema:
+            type: string
+definitions:
+  PocInfo:
+    type: object
+    properties:
+      email:
+        type: string
+      name:
+        type: string
+      phone:
+        type: string
+  Org:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      a11TacCode:
+        type: integer
+        format: int64
+      aacCode:
+        type: string
+      agencyName:
+        type: string
+      categoryDesc:
+        type: string
+      categoryId:
+        type: string
+      cfdaBur:
+        type: integer
+        format: int64
+      cfdaCode:
+        type: string
+      cfdaOmb:
+        type: integer
+        format: int64
+      cgac:
+        type: string
+      code:
+        type: string
+      contractingOfficeEndDate:
+        $ref: '#/definitions/Timestamp'
+      contractingOfficeId:
+        type: string
+      contractingOfficeStartDate:
+        $ref: '#/definitions/Timestamp'
+      createdBy:
+        type: string
+      createdDate:
+        $ref: '#/definitions/Timestamp'
+      description:
+        type: string
+      emailId:
+        type: string
+      endDate:
+        $ref: '#/definitions/Timestamp'
+      errorMessage:
+        type: string
+      errorMessageList:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessage'
+      fboCode:
+        type: string
+      fboLocation:
+        type: string
+      fboOfficeName:
+        type: string
+      fpdsCode:
+        type: string
+      fpdsOrgId:
+        type: string
+      fullParentPath:
+        type: string
+      fullParentPathName:
+        type: string
+      governmentOfficeId:
+        type: string
+      hierarchy:
+        type: array
+        items:
+          $ref: '#/definitions/OrgWrapper'
+      ingestedOn:
+        $ref: '#/definitions/Timestamp'
+      isSourceCfda:
+        type: boolean
+      isSourceCwCfda:
+        type: boolean
+      isSourceCwFbo:
+        type: boolean
+      isSourceFhApp:
+        type: boolean
+      isSourceFpds:
+        type: boolean
+      l1Name:
+        type: string
+      l1OrgKey:
+        type: integer
+        format: int64
+      l1ShortName:
+        type: string
+      l2Name:
+        type: string
+      l2OrgKey:
+        type: integer
+        format: int64
+      l3Name:
+        type: string
+      l4Name:
+        type: string
+      l5Name:
+        type: string
+      l6Name:
+        type: string
+      l7Name:
+        type: string
+      lastModifiedBy:
+        type: string
+      lastModifiedDate:
+        $ref: '#/definitions/Timestamp'
+      level:
+        type: integer
+        format: int32
+      logoUrl:
+        type: string
+      modStatus:
+        type: string
+      movedOrgKey:
+        type: integer
+        format: int64
+      name:
+        type: string
+      newIsAward:
+        type: boolean
+      newIsFunding:
+        type: boolean
+      numChildren:
+        type: integer
+        format: int32
+      officeTypesRef:
+        type: array
+        items:
+          $ref: '#/definitions/OfficeTypeRef'
+      oldFpdsCode:
+        type: string
+      ombAgencyCode:
+        type: string
+      ombBureauCode:
+        type: string
+      orgAddresses:
+        type: array
+        items:
+          $ref: '#/definitions/OrgAddress'
+      orgCode:
+        type: string
+      orgKey:
+        type: integer
+        format: int64
+      orgLegacyList:
+        type: array
+        items:
+          $ref: '#/definitions/OrgLegacy'
+      orgOfficeTypes:
+        type: array
+        items:
+          $ref: '#/definitions/OrgOfficeType'
+      parentOrg:
+        type: string
+      parentOrgKey:
+        type: integer
+        format: int64
+      phoneNumber:
+        type: string
+      procAACRequestedDate:
+        $ref: '#/definitions/Timestamp'
+      procAACRequesterId:
+        type: string
+      procurementAACCode:
+        type: string
+      procurementAACRequestedDate:
+        $ref: '#/definitions/Timestamp'
+      profileHierarchy:
+        type: array
+        items:
+          $ref: '#/definitions/Hierarchy'
+      regionCode:
+        type: string
+      sendEmail:
+        type: boolean
+      shortName:
+        type: string
+      sourceAddressPk:
+        type: string
+      sourceCfdaPk:
+        type: string
+      sourceParentCfdaPk:
+        type: string
+      startDate:
+        $ref: '#/definitions/Timestamp'
+      summary:
+        type: string
+      tas2Code:
+        type: string
+      tas3Code:
+        type: string
+      type:
+        type: string
+      userName:
+        type: string
+  HalWrapper:
+    type: object
+    properties:
+      _embedded:
+        type: array
+        items:
+          type: object
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+  RowSet:
+    type: object
+    properties:
+      file:
+        type: file
+      row:
+        $ref: '#/definitions/Row'
+  Self:
+    type: object
+    properties:
+      href:
+        type: string
+  Feature:
+    type: object
+    properties:
+      featureKey:
+        type: string
+      featureValue:
+        type: boolean
+  MyOrg:
+    type: object
+    properties:
+      orgKey:
+        type: integer
+        format: int64
+  Timestamp:
+    type: object
+    properties:
+      date:
+        type: integer
+        format: int32
+      day:
+        type: integer
+        format: int32
+      hours:
+        type: integer
+        format: int32
+      minutes:
+        type: integer
+        format: int32
+      month:
+        type: integer
+        format: int32
+      nanos:
+        type: integer
+        format: int32
+      seconds:
+        type: integer
+        format: int32
+      time:
+        type: integer
+        format: int64
+      timezoneOffset:
+        type: integer
+        format: int32
+      year:
+        type: integer
+        format: int32
+  URL:
+    type: object
+    properties:
+      authority:
+        type: string
+      content:
+        type: object
+      defaultPort:
+        type: integer
+        format: int32
+      file:
+        type: string
+      host:
+        type: string
+      path:
+        type: string
+      port:
+        type: integer
+        format: int32
+      protocol:
+        type: string
+      query:
+        type: string
+      ref:
+        type: string
+      userInfo:
+        type: string
+  Hierarchy:
+    type: object
+    properties:
+      code:
+        type: string
+      labelCode:
+        type: string
+      labelName:
+        type: string
+      name:
+        type: string
+  OrgMapper:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      a11TacCode:
+        type: string
+      aacCode:
+        type: string
+      agencyName:
+        type: string
+      categoryDesc:
+        type: string
+      categoryId:
+        type: string
+      cfdaBur:
+        type: integer
+        format: int64
+      cfdaCode:
+        type: string
+      cfdaOmb:
+        type: integer
+        format: int64
+      cgac:
+        type: string
+      code:
+        type: string
+      createdBy:
+        type: string
+      createdDate:
+        $ref: '#/definitions/Timestamp'
+      description:
+        type: string
+      endDate:
+        $ref: '#/definitions/Timestamp'
+      fpdsCode:
+        type: string
+      fpdsOrgId:
+        type: string
+      fullParentPath:
+        type: string
+      fullParentPathName:
+        type: string
+      hierarchy:
+        type: array
+        items:
+          $ref: '#/definitions/OrgWrapper'
+      isSourceCfda:
+        type: boolean
+      isSourceCwCfda:
+        type: boolean
+      isSourceCwFbo:
+        type: boolean
+      isSourceFhApp:
+        type: boolean
+      isSourceFpds:
+        type: boolean
+      l1Name:
+        type: string
+      l1OrgKey:
+        type: integer
+        format: int64
+      l1ShortName:
+        type: string
+      l2Name:
+        type: string
+      l2OrgKey:
+        type: integer
+        format: int64
+      l3Name:
+        type: string
+      l4Name:
+        type: string
+      l5Name:
+        type: string
+      l6Name:
+        type: string
+      l7Name:
+        type: string
+      lastModifiedBy:
+        type: string
+      lastModifiedDate:
+        $ref: '#/definitions/Timestamp'
+      level:
+        type: integer
+        format: int32
+      logoUrl:
+        type: string
+      modStatus:
+        type: string
+      name:
+        type: string
+      ombAgencyCode:
+        type: string
+      ombBureauCode:
+        type: string
+      orgAddresses:
+        type: string
+      orgCode:
+        type: string
+      orgKey:
+        type: integer
+        format: int64
+      orgLegacyList:
+        type: string
+      orgOfficeTypes:
+        type: string
+      parentOrg:
+        type: string
+      parentOrgKey:
+        type: integer
+        format: int64
+      regionCode:
+        type: string
+      shortName:
+        type: string
+      sourceCfdaPk:
+        type: string
+      sourceParentCfdaPk:
+        type: string
+      startDate:
+        $ref: '#/definitions/Timestamp'
+      summary:
+        type: string
+      tas2Code:
+        type: string
+      tas3Code:
+        type: string
+      type:
+        type: string
+  OrgDetails:
+    type: object
+    properties:
+      agencyAdminList:
+        type: array
+        items:
+          $ref: '#/definitions/Org'
+      deptAdminList:
+        type: array
+        items:
+          $ref: '#/definitions/Org'
+      featuredOrg:
+        $ref: '#/definitions/Org'
+      officeAdminList:
+        type: array
+        items:
+          $ref: '#/definitions/Org'
+      orgCount:
+        type: integer
+        format: int64
+      orgList:
+        type: array
+        items:
+          $ref: '#/definitions/Org'
+  _embedded:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      orgs:
+        type: array
+        items:
+          $ref: '#/definitions/OrgWrapper'
+  Resource«Org»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      a11TacCode:
+        type: integer
+        format: int64
+      aacCode:
+        type: string
+      agencyName:
+        type: string
+      categoryDesc:
+        type: string
+      categoryId:
+        type: string
+      cfdaBur:
+        type: integer
+        format: int64
+      cfdaCode:
+        type: string
+      cfdaOmb:
+        type: integer
+        format: int64
+      cgac:
+        type: string
+      code:
+        type: string
+      contractingOfficeEndDate:
+        $ref: '#/definitions/Timestamp'
+      contractingOfficeId:
+        type: string
+      contractingOfficeStartDate:
+        $ref: '#/definitions/Timestamp'
+      createdBy:
+        type: string
+      createdDate:
+        $ref: '#/definitions/Timestamp'
+      description:
+        type: string
+      emailId:
+        type: string
+      endDate:
+        $ref: '#/definitions/Timestamp'
+      errorMessage:
+        type: string
+      errorMessageList:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessage'
+      fboCode:
+        type: string
+      fboLocation:
+        type: string
+      fboOfficeName:
+        type: string
+      fpdsCode:
+        type: string
+      fpdsOrgId:
+        type: string
+      fullParentPath:
+        type: string
+      fullParentPathName:
+        type: string
+      governmentOfficeId:
+        type: string
+      hierarchy:
+        type: array
+        items:
+          $ref: '#/definitions/OrgWrapper'
+      ingestedOn:
+        $ref: '#/definitions/Timestamp'
+      isSourceCfda:
+        type: boolean
+      isSourceCwCfda:
+        type: boolean
+      isSourceCwFbo:
+        type: boolean
+      isSourceFhApp:
+        type: boolean
+      isSourceFpds:
+        type: boolean
+      l1Name:
+        type: string
+      l1OrgKey:
+        type: integer
+        format: int64
+      l1ShortName:
+        type: string
+      l2Name:
+        type: string
+      l2OrgKey:
+        type: integer
+        format: int64
+      l3Name:
+        type: string
+      l4Name:
+        type: string
+      l5Name:
+        type: string
+      l6Name:
+        type: string
+      l7Name:
+        type: string
+      lastModifiedBy:
+        type: string
+      lastModifiedDate:
+        $ref: '#/definitions/Timestamp'
+      level:
+        type: integer
+        format: int32
+      logoUrl:
+        type: string
+      modStatus:
+        type: string
+      movedOrgKey:
+        type: integer
+        format: int64
+      name:
+        type: string
+      newIsAward:
+        type: boolean
+      newIsFunding:
+        type: boolean
+      numChildren:
+        type: integer
+        format: int32
+      officeTypesRef:
+        type: array
+        items:
+          $ref: '#/definitions/OfficeTypeRef'
+      oldFpdsCode:
+        type: string
+      ombAgencyCode:
+        type: string
+      ombBureauCode:
+        type: string
+      orgAddresses:
+        type: array
+        items:
+          $ref: '#/definitions/OrgAddress'
+      orgCode:
+        type: string
+      orgKey:
+        type: integer
+        format: int64
+      orgLegacyList:
+        type: array
+        items:
+          $ref: '#/definitions/OrgLegacy'
+      orgOfficeTypes:
+        type: array
+        items:
+          $ref: '#/definitions/OrgOfficeType'
+      parentOrg:
+        type: string
+      parentOrgKey:
+        type: integer
+        format: int64
+      phoneNumber:
+        type: string
+      procAACRequestedDate:
+        $ref: '#/definitions/Timestamp'
+      procAACRequesterId:
+        type: string
+      procurementAACCode:
+        type: string
+      procurementAACRequestedDate:
+        $ref: '#/definitions/Timestamp'
+      profileHierarchy:
+        type: array
+        items:
+          $ref: '#/definitions/Hierarchy'
+      regionCode:
+        type: string
+      sendEmail:
+        type: boolean
+      shortName:
+        type: string
+      sourceAddressPk:
+        type: string
+      sourceCfdaPk:
+        type: string
+      sourceParentCfdaPk:
+        type: string
+      startDate:
+        $ref: '#/definitions/Timestamp'
+      summary:
+        type: string
+      tas2Code:
+        type: string
+      tas3Code:
+        type: string
+      type:
+        type: string
+      userName:
+        type: string
+  Create:
+    type: object
+    properties:
+      href:
+        type: string
+      method:
+        type: string
+      rel:
+        type: string
+  RequestOrgOfficeType:
+    type: object
+    properties:
+      createdBy:
+        type: string
+      createdDate:
+        $ref: '#/definitions/Timestamp'
+      endDate:
+        $ref: '#/definitions/Timestamp'
+      lastModifiedBy:
+        type: string
+      lastModifiedDate:
+        $ref: '#/definitions/Timestamp'
+      officeType:
+        type: integer
+        format: int64
+      requestOrgOfficeId:
+        type: integer
+        format: int64
+      startDate:
+        $ref: '#/definitions/Timestamp'
+      status:
+        type: string
+  OrgLegacy:
+    type: object
+    properties:
+      createdBy:
+        type: string
+      createdDate:
+        $ref: '#/definitions/Timestamp'
+      lastModifiedBy:
+        type: string
+      lastModifiedDate:
+        $ref: '#/definitions/Timestamp'
+      legacyId:
+        type: string
+      legacyKey:
+        type: integer
+        format: int64
+      legacyName:
+        type: string
+      legacySystemName:
+        type: string
+  FHWidget:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      completedEndCount:
+        type: integer
+        format: int64
+      completedStartCount:
+        type: integer
+        format: int64
+      scheduledEndCount:
+        type: integer
+        format: int64
+      scheduledStartCount:
+        type: integer
+        format: int64
+  TAC3:
+    type: object
+    properties:
+      addr1:
+        type: string
+      addr2:
+        type: string
+      addr3:
+        type: string
+      adsnfsn:
+        type: string
+      city:
+        type: string
+      country:
+        type: string
+      deleteDate:
+        type: string
+      deletedate:
+        type: string
+      effectiveDate:
+        type: string
+      effectivedate:
+        type: string
+      ipcZipCode:
+        type: string
+      ipczipcode:
+        type: string
+      state:
+        type: string
+      zipCode:
+        type: string
+      zipcode:
+        type: string
+  DODAACInfo:
+    type: object
+    properties:
+      authorityCode:
+        type: string
+      authoritycode:
+        type: string
+      cgac:
+        type: string
+      cocom:
+        type: string
+      contractAdminOffice:
+        type: string
+      contractadminoffice:
+        type: string
+      contractor:
+        type: string
+      dodaac:
+        type: string
+      fundingOffice:
+        type: string
+      fundngoffice:
+        type: string
+      grantAuthority:
+        type: string
+      grantauthority:
+        type: string
+      majorCommand:
+        type: string
+      majorcommand:
+        type: string
+      orgTypeCode:
+        type: string
+      orgtypecode:
+        type: string
+      procurementAuthority:
+        type: string
+      procurementauthority:
+        type: string
+      subtierCode:
+        type: string
+      subtiercode:
+        type: string
+      uic:
+        type: string
+  TAC2:
+    type: object
+    properties:
+      addr1:
+        type: string
+      addr2:
+        type: string
+      addr3:
+        type: string
+      aloc:
+        type: string
+      apod:
+        type: string
+      bbp:
+        type: string
+      bloc:
+        type: string
+      ccp:
+        type: string
+      city:
+        type: string
+      conusoconus:
+        type: string
+      country:
+        type: string
+      deleteDate:
+        type: string
+      deltedate:
+        type: string
+      effectiveDate:
+        type: string
+      effectivedate:
+        type: string
+      ipcZipCode:
+        type: string
+      ipczipcode:
+        type: string
+      splc:
+        type: string
+      state:
+        type: string
+      wpod:
+        type: string
+      zipCode:
+        type: string
+      zipcode:
+        type: string
+  OrgAddress:
+    type: object
+    properties:
+      addressKey:
+        type: integer
+        format: int64
+      city:
+        type: string
+      countryCode:
+        type: string
+      createdBy:
+        type: string
+      createdDate:
+        $ref: '#/definitions/Timestamp'
+      isSourceCfda:
+        type: boolean
+      isSourceFhApp:
+        type: boolean
+      isSourceFpds:
+        type: boolean
+      lastModifiedBy:
+        type: string
+      lastModifiedDate:
+        $ref: '#/definitions/Timestamp'
+      modStatus:
+        type: string
+      state:
+        type: string
+      streetAddress:
+        type: string
+      streetAddress2:
+        type: string
+      type:
+        $ref: '#/definitions/Character'
+      zipcode:
+        type: string
+  TAC1:
+    type: object
+    properties:
+      addr1:
+        type: string
+      addr2:
+        type: string
+      addr3:
+        type: string
+      city:
+        type: string
+      country:
+        type: string
+      deleteDate:
+        type: string
+      deletedate:
+        type: string
+      effectiveDate:
+        type: string
+      effectivedate:
+        type: string
+      ipcZipCode:
+        type: string
+      ipczipcode:
+        type: string
+      state:
+        type: string
+      zipCode:
+        type: string
+      zipcode:
+        type: string
+  Requestor:
+    type: object
+    properties:
+      date:
+        type: string
+      email:
+        type: string
+      name:
+        type: string
+      office:
+        type: string
+      phone:
+        type: string
+      reason:
+        type: string
+      route:
+        type: string
+      service:
+        type: string
+      type:
+        type: string
+  OrgHierarchyWrapper:
+    type: object
+    properties:
+      childrenKeys:
+        type: array
+        items:
+          $ref: '#/definitions/OrgHierarchyWrapper'
+      orgKey:
+        type: integer
+        format: int64
+  OfficeTypeRef:
+    type: object
+    properties:
+      modStatus:
+        type: boolean
+      officeTypeId:
+        type: integer
+        format: int32
+      officeTypeName:
+        type: string
+      position:
+        type: integer
+        format: int64
+  OrgWrapper:
+    type: object
+    properties:
+      _link:
+        $ref: '#/definitions/Link'
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Links'
+      count:
+        type: integer
+        format: int64
+      myorg:
+        $ref: '#/definitions/MyOrg'
+      org:
+        $ref: '#/definitions/Org'
+  HalWrapper2:
+    type: object
+    properties:
+      _embedded:
+        $ref: '#/definitions/_embedded'
+      _link:
+        $ref: '#/definitions/Link'
+  Character:
+    type: object
+  RequestOrgAddress:
+    type: object
+    properties:
+      addressKey:
+        type: integer
+        format: int64
+      city:
+        type: string
+      countryCode:
+        type: string
+      createdBy:
+        type: string
+      createdDate:
+        $ref: '#/definitions/Timestamp'
+      lastModifiedBy:
+        type: string
+      lastModifiedDate:
+        $ref: '#/definitions/Timestamp'
+      requestOrgAddressId:
+        type: integer
+        format: int64
+      state:
+        type: string
+      status:
+        type: string
+      streetAddress:
+        type: string
+      streetAddress2:
+        type: string
+      type:
+        $ref: '#/definitions/Character'
+      zipcode:
+        type: string
+  Request:
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Data'
+      id:
+        type: string
+      requestor:
+        $ref: '#/definitions/Requestor'
+  Data:
+    type: object
+    properties:
+      action:
+        type: string
+      dodaacinfo:
+        $ref: '#/definitions/DODAACInfo'
+      pocInfo:
+        $ref: '#/definitions/PocInfo'
+      pocinfo:
+        $ref: '#/definitions/PocInfo'
+      recType:
+        type: string
+      rectype:
+        type: string
+      tac1:
+        $ref: '#/definitions/TAC1'
+      tac2:
+        $ref: '#/definitions/TAC2'
+      tac3:
+        $ref: '#/definitions/TAC3'
+  Resource«OrgDetails»:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      agencyAdminList:
+        type: array
+        items:
+          $ref: '#/definitions/Org'
+      deptAdminList:
+        type: array
+        items:
+          $ref: '#/definitions/Org'
+      featuredOrg:
+        $ref: '#/definitions/Org'
+      officeAdminList:
+        type: array
+        items:
+          $ref: '#/definitions/Org'
+      orgCount:
+        type: integer
+        format: int64
+      orgList:
+        type: array
+        items:
+          $ref: '#/definitions/Org'
+  Logo:
+    type: object
+    properties:
+      href:
+        type: string
+  RequestOrg:
+    type: object
+    properties:
+      _links:
+        type: array
+        items:
+          $ref: '#/definitions/Link'
+      aacCode:
+        type: string
+      cgac:
+        type: string
+      createdBy:
+        type: string
+      createdDate:
+        $ref: '#/definitions/Timestamp'
+      endDate:
+        $ref: '#/definitions/Timestamp'
+      errorMessage:
+        type: string
+      errorMessageList:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessage'
+      fileName:
+        type: string
+      filePath:
+        type: string
+      fileUploadedDate:
+        $ref: '#/definitions/Timestamp'
+      fpdsCode:
+        type: string
+      fullParentPath:
+        type: string
+      fullParentPathName:
+        type: string
+      level:
+        type: integer
+        format: int32
+      majCommandID:
+        type: string
+      name:
+        type: string
+      orgKey:
+        type: integer
+        format: int64
+      parentOrgKey:
+        type: integer
+        format: int64
+      pocEmail:
+        type: string
+      pocName:
+        type: string
+      pocPhoneNo:
+        type: string
+      region:
+        type: string
+      reqOrgAddresses:
+        type: array
+        items:
+          $ref: '#/definitions/RequestOrgAddress'
+      reqOrgOfficeTypes:
+        type: array
+        items:
+          $ref: '#/definitions/RequestOrgOfficeType'
+      requestId:
+        type: integer
+        format: int64
+      requestOrgListUploaded:
+        type: array
+        items:
+          $ref: '#/definitions/RequestOrg'
+      requestType:
+        type: string
+      requestorEmail:
+        type: string
+      requestorName:
+        type: string
+      requestorPhoneNo:
+        type: string
+      shortName:
+        type: string
+      startDate:
+        $ref: '#/definitions/Timestamp'
+      status:
+        type: string
+      subCommand1Id:
+        type: string
+      subCommand2Id:
+        type: string
+      subCommand3Id:
+        type: string
+      type:
+        type: string
+      updatedBy:
+        type: string
+      updatedDate:
+        $ref: '#/definitions/Timestamp'
+      uploadedByEmail:
+        type: string
+      uploadedByName:
+        type: string
+      xmlObjMap:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/RowSet'
+  ResponseEntity:
+    type: object
+    properties:
+      body:
+        type: object
+      statusCode:
+        type: string
+        enum:
+          - '100 CONTINUE'
+          - '101 SWITCHING_PROTOCOLS'
+          - '102 PROCESSING'
+          - '103 CHECKPOINT'
+          - '200 OK'
+          - '201 CREATED'
+          - '202 ACCEPTED'
+          - '203 NON_AUTHORITATIVE_INFORMATION'
+          - '204 NO_CONTENT'
+          - '205 RESET_CONTENT'
+          - '206 PARTIAL_CONTENT'
+          - '207 MULTI_STATUS'
+          - '208 ALREADY_REPORTED'
+          - '226 IM_USED'
+          - '300 MULTIPLE_CHOICES'
+          - '301 MOVED_PERMANENTLY'
+          - '302 FOUND'
+          - '302 MOVED_TEMPORARILY'
+          - '303 SEE_OTHER'
+          - '304 NOT_MODIFIED'
+          - '305 USE_PROXY'
+          - '307 TEMPORARY_REDIRECT'
+          - '308 PERMANENT_REDIRECT'
+          - '400 BAD_REQUEST'
+          - '401 UNAUTHORIZED'
+          - '402 PAYMENT_REQUIRED'
+          - '403 FORBIDDEN'
+          - '404 NOT_FOUND'
+          - '405 METHOD_NOT_ALLOWED'
+          - '406 NOT_ACCEPTABLE'
+          - '407 PROXY_AUTHENTICATION_REQUIRED'
+          - '408 REQUEST_TIMEOUT'
+          - '409 CONFLICT'
+          - '410 GONE'
+          - '411 LENGTH_REQUIRED'
+          - '412 PRECONDITION_FAILED'
+          - '413 PAYLOAD_TOO_LARGE'
+          - '413 REQUEST_ENTITY_TOO_LARGE'
+          - '414 URI_TOO_LONG'
+          - '414 REQUEST_URI_TOO_LONG'
+          - '415 UNSUPPORTED_MEDIA_TYPE'
+          - '416 REQUESTED_RANGE_NOT_SATISFIABLE'
+          - '417 EXPECTATION_FAILED'
+          - '418 I_AM_A_TEAPOT'
+          - '419 INSUFFICIENT_SPACE_ON_RESOURCE'
+          - '420 METHOD_FAILURE'
+          - '421 DESTINATION_LOCKED'
+          - '422 UNPROCESSABLE_ENTITY'
+          - '423 LOCKED'
+          - '424 FAILED_DEPENDENCY'
+          - '426 UPGRADE_REQUIRED'
+          - '428 PRECONDITION_REQUIRED'
+          - '429 TOO_MANY_REQUESTS'
+          - '431 REQUEST_HEADER_FIELDS_TOO_LARGE'
+          - '451 UNAVAILABLE_FOR_LEGAL_REASONS'
+          - '500 INTERNAL_SERVER_ERROR'
+          - '501 NOT_IMPLEMENTED'
+          - '502 BAD_GATEWAY'
+          - '503 SERVICE_UNAVAILABLE'
+          - '504 GATEWAY_TIMEOUT'
+          - '505 HTTP_VERSION_NOT_SUPPORTED'
+          - '506 VARIANT_ALSO_NEGOTIATES'
+          - '507 INSUFFICIENT_STORAGE'
+          - '508 LOOP_DETECTED'
+          - '509 BANDWIDTH_LIMIT_EXCEEDED'
+          - '510 NOT_EXTENDED'
+          - '511 NETWORK_AUTHENTICATION_REQUIRED'
+      statusCodeValue:
+        type: integer
+        format: int32
+  OrgOfficeType:
+    type: object
+    properties:
+      createdBy:
+        type: string
+      createdDate:
+        $ref: '#/definitions/Timestamp'
+      endDate:
+        $ref: '#/definitions/Timestamp'
+      isActive:
+        type: string
+      lastModifiedBy:
+        type: string
+      lastModifiedDate:
+        $ref: '#/definitions/Timestamp'
+      latest:
+        type: boolean
+      message:
+        type: string
+      officeId:
+        type: integer
+        format: int64
+      officeType:
+        type: integer
+        format: int64
+      officeTypeName:
+        type: string
+      startDate:
+        $ref: '#/definitions/Timestamp'
+      status:
+        type: string
+  FhHierarchyTree:
+    type: object
+    properties:
+      hierarchyKeys:
+        type: array
+        items:
+          type: object
+      orgKey:
+        type: integer
+        format: int64
+      orgs:
+        type: array
+        items:
+          $ref: '#/definitions/OrgMapper'
+  HierarchyTree:
+    type: object
+    properties:
+      fullParentPath:
+        type: string
+      hierarchyKeys:
+        type: array
+        items:
+          type: object
+      orgKey:
+        type: integer
+        format: int64
+  Links:
+    type: object
+    properties:
+      link:
+        $ref: '#/definitions/Create'
+  Row:
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request'
+  ErrorMessage:
+    type: object
+    properties:
+      errorMessages:
+        type: array
+        items:
+          type: string
+      fieldName:
+        type: string
+  File:
+    type: object
+    properties:
+      absolute:
+        type: boolean
+      absolutePath:
+        type: string
+      canonicalPath:
+        type: string
+      directory:
+        type: boolean
+      executable:
+        type: boolean
+      file:
+        type: boolean
+      freeSpace:
+        type: integer
+        format: int64
+      hidden:
+        type: boolean
+      lastModified:
+        type: integer
+        format: int64
+      name:
+        type: string
+      parent:
+        type: string
+      path:
+        type: string
+      readable:
+        type: boolean
+      totalSpace:
+        type: integer
+        format: int64
+      usableSpace:
+        type: integer
+        format: int64
+      writable:
+        type: boolean
+  Link:
+    type: object
+    properties:
+      deprecation:
+        type: string
+      href:
+        type: string
+      hreflang:
+        type: string
+      media:
+        type: string
+      rel:
+        type: string
+      templated:
+        type: boolean
+      title:
+        type: string
+      type:
+        type: string
