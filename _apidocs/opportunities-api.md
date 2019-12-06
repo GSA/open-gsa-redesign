@@ -3681,7 +3681,7 @@ deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or al
 <p><small><a href="#">Back to top</a></small></p>
 
 
-### OpenAPI Specification File
+## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="v1/OpenAPI.zip" download="OpenAPI">OpenAPI File</a>
