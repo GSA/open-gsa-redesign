@@ -368,6 +368,196 @@ https://apialpha.sam.gov/prodlike/federalorganizations/v1/org/hierarchy?limit=10
 </p>
 </details>
 
+## OpenAPI Specification File
+
+You can view the full details of this API in the OpenAPI Specification file available here:
+<a href="v1/fh-public.yml" download="OpenAPI">OpenAPI File</a>
+
+<details>
+<summary>Public FH Organization</summary>
+<p>
+<code><pre>
+/v1/orgs:
+    get:
+      tags:
+        - Organizations
+      summary: 'PublicAPI - Get organization''s and hierarchy'
+      description: 'PUBLIC API | Returns a org details & hierarchical tree'
+      operationId: getPublicOrgHierarchyUsingGET_1
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: api_key
+          in: query
+          description: 'Enter Public API Key.'
+          required: true
+          type: string
+        -
+          name: fhorgid
+          in: query
+          description: 'Enter fh org id.'
+          required: false
+          type: string
+        -
+          name: fhorgname
+          in: query
+          description: 'Enter fh org name.'
+          required: false
+          type: string
+        -
+          name: fhorgtype
+          in: query
+          description: 'Enter fh org type. Possible values: Department/Ind-agency, Sub-tier.'
+          required: false
+          type: string
+        -
+          name: status
+          in: query
+          description: 'Enter status(active/inactive/all). Default value is active.'
+          required: false
+          type: string
+        -
+          name: agencycode
+          in: query
+          description: 'Enter agency code'
+          required: false
+          type: string
+        -
+          name: oldfpdsofficecode
+          in: query
+          description: 'Enter old fpds office code'
+          required: false
+          type: string
+        -
+          name: cgac
+          in: query
+          description: 'Enter cgac'
+          required: false
+          type: string
+        -
+          name: updatedby
+          in: query
+          description: 'Enter updated by'
+          required: false
+          type: string
+        -
+          name: updateddatefrom
+          in: query
+          description: 'Enter updated date from'
+          required: false
+          type: string
+        -
+          name: updateddateto
+          in: query
+          description: 'Enter updated date to'
+          required: false
+          type: string
+        -
+          name: createdby
+          in: query
+          description: 'Enter created by'
+          required: false
+          type: string
+        -
+          name: createddatefrom
+          in: query
+          description: 'Enter created date from'
+          required: false
+          type: string
+        -
+          name: createddateto
+          in: query
+          description: 'Enter created date to'
+          required: false
+          type: string
+        -
+          name: limit
+          in: query
+          description: 'Enter number of records per page. Default value will be 10.'
+          required: false
+          type: string
+        -
+          name: offset
+          in: query
+          description: "Enter offset value. For example, to retrieve 11 to 20 records\noffset=11 and limit=10. Default offset value is 0."
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Public FH Hierarchy</summary>
+<p>
+<code><pre>
+/v1/org/hierarchy:
+    get:
+      tags:
+        - Organizations
+      summary: 'PublicAPI - Get organization''s and hierarchy'
+      description: 'Public Api | Returns a org details & hierarchical tree'
+      operationId: getPublicOrgHierarchyUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: api_key
+          in: query
+          description: 'Enter the Public API Key.'
+          required: true
+          type: string
+        -
+          name: fhorgid
+          in: query
+          description: 'Enter FH Org ID to search.'
+          required: false
+          type: string
+        -
+          name: limit
+          in: query
+          description: "Enter number of records per page. Default value is 10 & Max allowed\nis 100."
+          required: false
+          type: string
+        -
+          name: offset
+          in: query
+          description: "Enter offset value. For example, to retrieve 11 to 20 records\noffset=11 and limit=10. Default value is 0"
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+</pre></code>
+</p>
+</details>
+
+  
+
+
 ## HTTP Response Codes
 
 * 200 - Success
@@ -396,5 +586,6 @@ For limit or offset, user inputs characters/special characters| Limit and offset
 Date | Version | Description
 ------|---------------|---------
 9/10 | v1.0 | Base Version
+12/2/2019 | v1.1| Added OpenAPI Specification
 
 <p><small><a href="#">Back to top</a></small></p>
