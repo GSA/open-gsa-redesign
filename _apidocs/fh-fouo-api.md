@@ -765,7 +765,7 @@ https://www.census.gov/programs-surveys/geography.html
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](mailto:www.fsd.gov)
+* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 ## Change Log
 
