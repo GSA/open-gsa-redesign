@@ -124,9 +124,7 @@ Error codes may change depending on the error given; document will be updated ac
 Error Code|Error Message | Reason/Description
 ----------|--------------|-------------------
 401*|Please provide valid Authorization Email & API Key |	API Key and/or Authorization Email is required
-401*|Encountered error authenticating user.Invalid JWT provided | Invalid Authorization Email provided
-401*|Insufficient privileges to retrieve system account profile as the given organization is invalid |	Invalid Organization ID provided
-                                       
+                   
 <p><small><a href="#">Back to top</a></small></p>
 #### Specific Error Messages
 This section details possible error messages for specific operations.
