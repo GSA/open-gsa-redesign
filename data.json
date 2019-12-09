@@ -1249,7 +1249,7 @@
 					"mediaType": "application/json",
 					"format": "json",
 					"title": "GSA DCOI Strategic Plan February 2019",
-					"description": "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 11/19/2018 at 8:52 pm Eastern. Updated 05/16/2019 to change tiered closures. Updated on 06/25/2019 to change planned value. Updated on 7/11/2019 to change achieved closures. Updated on 8/5/2019 to change closures for FYs16-20. Updated on 10/7/19 to reflect FY20 Achieved closure values.",
+					"description": "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 11/19/2018 at 8:52 pm Eastern. Updated 05/16/2019 to change tiered closures. Updated on 06/25/2019 to change planned value. Updated on 7/11/2019 to change achieved closures. Updated on 8/5/2019 to change closures for FYs16-20. Updated on 10/7/19 to reflect FY20 Achieved closure values. Updated on 11/15/19 to reflect only \"agency owned\" data centers for closures.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/b8d9e71b-963b-4398-8d37-04628e64871d/download/datacenteroptimizationstrategicplan.json"
 				}, {
@@ -3573,7 +3573,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2019-10-16",
+			"modified": "2019-12-04",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3596,8 +3596,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON 10/16/19",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-10-16-19.json"
+					"description": "EDI JSON 12/04/19",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-12-04-19.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3693,10 +3693,10 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA FITARA Actions and Milestones 2019-08-19",
-					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the August 31, 2019, quarterly submission to OMB.",
+					"title": "GSA FITARA Actions and Milestones 2019-11-18",
+					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the November 29, 2019, quarterly submission to OMB.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
-					"downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/gsaitcostsavingsavoidance20151125.json"
+					"downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
 				}
 			],
 			"keyword": ["FITARA", "GSA", "Milestones", "fitaramilestones.json"],
@@ -3726,7 +3726,7 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "GSA IT Reform Cost Savings/Avoidance",
-					"description": "GSA's August 2019 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description": "GSA's November 2019 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -3757,7 +3757,7 @@
 					"mediaType": "application/zip",
 					"format": "ZIP",
 					"title": "GSA IT Policy Archive Zip",
-					"description": "Last update: 2019-08-19",
+					"description": "Last update: 2019-11-26",
 					"downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
 				}
 			],
@@ -3903,7 +3903,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
 			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2019-10-16",
+			"modified": "2019-12-04",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
@@ -5597,6 +5597,41 @@
 					"title": "TotRevFY19_3rdQtr",
 					"description": "TotRevFY19_3rdQtr",
 					"downloadURL": "https://inventory.data.gov/dataset/1a757d61-6861-42a0-bc72-8a1cf7379959/resource/2a13a13e-0278-4e1e-ad90-f817f96d7251/download/totrevfy193rdqtr.xlsx"
+				}
+			],
+			"keyword": ["Contract", "Networx Telecommunications", "Telecommunications"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:019"],
+			"language": ["en-US"],
+			"theme": ["Telecommunications Services"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2019, 4th Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+			"modified": "2019-11-13",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-11-13-06",
+			"dataQuality": true,
+			"issued": "2015-11-13",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2015-08-27P",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni L Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "TotRevFY19_4thQtr",
+					"description": "4th Quarter Total Revenue FY19",
+					"downloadURL": "https://inventory.data.gov/dataset/7e3391d0-fe71-4fa6-b427-4151c8fd4be6/resource/71a794d4-c577-4259-a54c-ab58b2798f41/download/totrevfy194thqtr.xlsx"
 				}
 			],
 			"keyword": ["Contract", "Networx Telecommunications", "Telecommunications"],
@@ -8082,6 +8117,186 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Purchase Card Transactions - CBCA July-Sept 2019, 4th Qtr",
+			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified": "2019-11-13",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-11-13-01",
+			"dataQuality": true,
+			"issued": "2014-10-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-06-1",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "James G Parks",
+				"hasEmail": "mailto:greg.parks@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "2019-4th Qtr (July-Sept)_CBCA PC Transactions US Bank",
+					"description": "4th Quarter CBCA PC Transactions US Bank July-Sept 2019",
+					"downloadURL": "https://inventory.data.gov/dataset/a3152c25-6be2-4acd-a676-7cca57d7b518/resource/79ca678d-c345-4653-b3e6-78b0e85d215d/download/2019-4th-qtr-july-septcbca-pc-transactions-us-bank.xlsx"
+				}
+			],
+			"keyword": ["August", "BOCA", "Contract Board", "GSA SmartPay", "July", "Purchase Card", "September", "Transactions"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Purchase Card Transactions - CBCA Apr-Jun 2019, 3rd Qtr",
+			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified": "2019-11-13",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-11-13-02",
+			"dataQuality": true,
+			"issued": "2014-10-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-06-1",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "James G Parks",
+				"hasEmail": "mailto:greg.parks@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "2019-3rd Qtr (Apr-Jun) CBCA PC transactions",
+					"description": "3rd Quarter CBCA PC transactions Apr-Jun 2019",
+					"downloadURL": "https://inventory.data.gov/dataset/c1cb14ea-5e8c-44f4-b403-5e9a3cdfc5b1/resource/0fdc3072-1793-4a00-82ce-a897a660daaf/download/2019-3rd-qtr-apr-jun-cbca-pc-transactionsus-bank.xlsx"
+				}
+			],
+			"keyword": ["April", "BOCA", "Contract Board", "GSA SmartPay", "June", "May", "Purchase Card", "Transactions"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Purchase Card Transactions - CBCA Jan-Mar 2019, 2nd Qtr",
+			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified": "2019-11-13",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-11-13-03",
+			"dataQuality": true,
+			"issued": "2014-10-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-06-1",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "James G Parks",
+				"hasEmail": "mailto:greg.parks@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "2019-2nd Qtr (Jan-Mar) CBCA PC transactions",
+					"description": "2nd Quarter CBCA PC transactions January-March 2019",
+					"downloadURL": "https://inventory.data.gov/dataset/da897366-ddba-4da6-b8b7-039d440ed55a/resource/2cf101b4-f8a6-4636-b642-10b16196abd9/download/2019-2nd-qtr-jan-mar-cbca-pc-transactionsus-bank.xlsx"
+				}
+			],
+			"keyword": ["BOCA", "Contract Board", "February", "GSA SmartPay", "January", "March", "Purchase Card", "Transactions"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Purchase Card Transactions - CBCA Oct-Dec 2019, 1st Qtr Citibank",
+			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified": "2019-11-13",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-11-13-04",
+			"dataQuality": true,
+			"issued": "2014-10-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-06-1",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "James G Parks",
+				"hasEmail": "mailto:greg.parks@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "2019-1st Qtr (Oct-Dec) CBCA PC transactions_Citibank",
+					"description": "1st Quarter CBCA PC transactions Citibank",
+					"downloadURL": "https://inventory.data.gov/dataset/678e1717-0dda-495f-b995-7c1a6b015744/resource/a7b8c8dc-e10d-45ba-a193-1e13e1f9cc0f/download/2019-1st-qtr-oct-dec-cbca-pc-transactionsctibank.xlsx"
+				}
+			],
+			"keyword": ["BOCA", "Contract Board", "December", "GSA SmartPay", "November", "October", "Purchase Card", "Transactions"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Purchase Card Transactions - CBCA Oct-Dec 2019, 1st Qtr US Bank",
+			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified": "2019-11-13",
+			"accessLevel": "public",
+			"identifier": "GSA-2019-11-13-05",
+			"dataQuality": true,
+			"issued": "2014-10-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-06-1",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "James G Parks",
+				"hasEmail": "mailto:greg.parks@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "2019-1st Qtr (Oct-Dec) CBCA PC transactions_US Bank",
+					"description": "1st Quarter CBCA PC transactions October-December \r\n2019 US Bank",
+					"downloadURL": "https://inventory.data.gov/dataset/d30e84dd-45e5-4020-8b70-007dfa57d7df/resource/0ddff4d4-d41d-4e76-97ba-361816ec08f0/download/2019-1st-qtr-oct-dec-cbca-pc-transactionsus-bank.xlsx"
+				}
+			],
+			"keyword": ["BOCA", "Contract Board", "December", "GSA SmartPay", "November", "October", "Purchase Card", "Transactions"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - OIG Apr-June 2014, 3rd Qtr",
 			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
 			"modified": "2018-11-15",
@@ -8218,7 +8433,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2019-10-16",
+			"modified": "2019-12-04",
 			"accessLevel": "public",
 			"identifier": "GSA-25251",
 			"dataQuality": true,
@@ -8241,7 +8456,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_bldg_rexus",
-					"description": "October - Rexus Building file",
+					"description": "December - Rexus Building file",
 					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/e8972de5-310c-49e2-be42-c1089eee98fd/download/datagovbldgrexus.csv"
 				}
 			],
@@ -8252,7 +8467,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) (Lease)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2019-10-16",
+			"modified": "2019-12-04",
 			"accessLevel": "public",
 			"identifier": "GSA-25261",
 			"dataQuality": true,
@@ -8275,7 +8490,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus",
-					"description": "October - Rexus Lease file",
+					"description": "December - Rexus Lease file",
 					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/dc2e6239-5c72-465d-a23e-43ee976a0910/download/datagovlserexus.csv"
 				}
 			],
@@ -8524,7 +8739,7 @@
 			"@type": "dcat:Dataset",
 			"title": "System for Award Management (SAM) API",
 			"description": "The SAM API is a RESTful method of retrieving public information about the businesses, organizations, or individuals (referred to as entities) within the SAM entity regsitration data set. Public registration information can currently be retrieved on an entity-by-entity basis. In addition, the SAM Search API offers both a 'quick search' and 'advanced search' method.",
-			"modified": "2018-09-24",
+			"modified": "2019-11-26",
 			"accessLevel": "public",
 			"identifier": "GSA - 139633",
 			"dataQuality": true,
@@ -8538,8 +8753,8 @@
 			},
 			"contactPoint": {
 				"@type": "vcard:Contact",
-				"fn": "Navin Nagaraj Vembar",
-				"hasEmail": "mailto:navin.vembar@gsa.gov"
+				"fn": "Meredith Whitehead",
+				"hasEmail": "mailto:meredith.whitehead@gsa.gov"
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
