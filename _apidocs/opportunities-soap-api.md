@@ -191,11 +191,11 @@ naics |	string |	No |	NAICS Code |	Valid NAICS Code <br><a href="https://www.cen
 offadd |	string |	No |	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
 officeid |	string |	Yes |	Office ID of the office where an opportunity is being submitted |	20 characters
 subject |	string |	Yes |	Subject |	256 characters
-solnbr |	string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr |	string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype	| string |	No |	 [Refer Related Notices](#related-notices) |		
-awdnbr | string |	 Yes |	Award Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+awdnbr | string |	 Yes |	Award Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 awdamt |	string |	Yes |	Award Amount |	64 digits
-linenbr |	string |	No |	Line Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+linenbr |	string |	No |	Line Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 awddate |	date |	Yes |	Award Date |	YYYYMMDD
 archdate |	date |	No |	Archive Date |	YYYYMMDD
 awardee |	string |	No - Either awardee or awardee_duns is required |	Awardee |	1000 characters
@@ -261,9 +261,9 @@ DeleteNoticeOrDocumentPackage Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-solnbr |	string |	Yes - Either Solicitation # or Award # is required only for Award|	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr |	string |	Yes - Either Solicitation # or Award # is required only for Award|	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype |	string |	No; Yes if there are multiple notices with same Solicitation # | [Refer Notice Types](#notice-types)	| 
-awdnbr |  string | Yes - Either Solicitation # or Award # is required ony for Award| Award # |	255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+awdnbr |  string | Yes - Either Solicitation # or Award # is required ony for Award| Award # |	255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 deletetype |	string |	No |	Notice or Attachment delete operation type |	Valid Values: “notice” for notice, “attachment” for attachments/links. Defaults to “notice” if not provided
 deletemethod |	string | No | Delete latest or all versions |	Valid Values: “latest” for latest version, “all” for all versions. Defaults to “all” if not provided
 
@@ -288,7 +288,7 @@ ArchiveNotice Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date |	date |	No |	Posting Date (Deprecated)| YYYYMMDD
-solnbr | string |	Yes |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr | string |	Yes |	Solicitation # | 128 characters from the set: a-z 0-9 -_ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype |	string | No |	[Refer Notice Types](#notice-types)	| 
 archdate | date |	No | Deprecated. Notice will archive immediately | YYYYMMDD
 officeid | string |	No |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
@@ -317,9 +317,9 @@ date | date |	No | Posting Date (Deprecated) |	YYYYMMDD
 offadd | string |	No | Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
 officeid | String | No |	Office ID (Not in Use)|	20 characters
 subject |	string | No |	Subject |	256 characters
-solnbr |string | Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr |string | Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype | string | No | [Refer Notice Types](#notice-types) 	| 
-awdnbr | string |	No | Award # |255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+awdnbr | string |	No | Award # |255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 archdate | date |	No | Archive Date | YYYYMMDD
 contact | string | No | Contact Info | 500 characters
 desc | string | Yes |	Cancellation Description | 65535 characters
@@ -353,7 +353,7 @@ naics |	string | No |	NAICS Code | Valid NAICS Code  <br><a href="https://www.ce
 officeid | string |	Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account | 20 characters
 offadd | string |	No | Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
 subject |	string | Yes|	Subject|	256 characters
-solnbr | string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr | string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 respdate | date |	No - either respdate or archdate is required |	Response Date |	YYYYMMDD
 archdate | date |	No - either respdate or archdate is required |	Archive Date | YYYYMMDD
 contact |	string | Yes |	Contact Info | 500 characters
@@ -423,7 +423,7 @@ classcod | string |	Yes |	Classification Code | Valid classification code (FAR, 
 naics | string | Yes | NAICS Code	| Valid NAICS Code <br><a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>
 officeid | string | Yes | Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account | 20 characters
 offadd | string | No |Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	| 65535 characters
-solnbr | string |	Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr | string |	Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 subject | string | Yes | Subject | 256 characters
 respdate | date |	Yes | Response Date | YYYYMMDD
 archdate | date |	No | Archive Date | YYYYMMDD
@@ -495,7 +495,7 @@ naics | 	string |	Yes - for COMBINE, SOL  | 	NAICS Code |	Valid NAICS Code  <br>
 officeid |	string	| Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 offadd |	string	| No	| Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
 subject	| string	| Yes |	Subject |	256 characters
-solnbr | string |	Yes | 	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr | string |	Yes | 	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype |	string |	Yes |	 Notice Type |	Valid values: PRESOL, COMBINE, SRCSGT, SSALE, SNOTE, SOL
 respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL, SNOTE, SSALE	|Response Date	|YYYYMMDD
 archdate  |	date|	No - Either respdate or archdate required for SRCSGT, PRESOL, SNOTE, SSALE|	Archive Date|	YYYYMMDD
@@ -567,14 +567,14 @@ naics	| String |	No	| NAICS Code	| Valid NAICS Code  <br><a href="https://www.ce
 offadd |	String	| No |	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	|65535 characters
 officeid |	String |	Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 subject |	String |	Yes |	Subject |	256 characters
-solnbr	| String |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr	| String |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype	| string |	No	| [Refer Related Notices](#related-notices)  | 	
 stauth	| String	| Yes |	J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy |	[Refer Stauth Valid Values](#stauth-valid-values)
-awdnbr |	String |	Yes |	Award Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+awdnbr |	String |	Yes |	Award Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 modnbr |	String |	No |	Mod Number |	32 characters
 awdamt |	String |	No |	Award Amount (Not in Use) |	64 digits
 awddate |	Date |	No	| Award Date |	YYYYMMDD
-donbr	| String |	No |	Task/Delivery Order Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) <br> *Note: To use "&", enter <\&amp;>
+donbr	| String |	No |	Task/Delivery Order Number |	255 characters from the set: a-z A-Z 0-9 - _ ( ) <br> *Note: To use "&", enter \\&amp;
 archdate  |	Date |	No |	Archive Date |	YYYYMMDD
 contact |	String |	Yes | 	Contact Info |	500 characters
 desc |	String |	No |	Description	| 65535 characters
@@ -641,7 +641,7 @@ naics	| string |	No |	NAICS Code |	Valid NAICS Code<br><a href="https://www.cens
 officeid |	string |	Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account	| 20 characters
 offadd	| string	 | No |	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy |	65535 characters
 subject |	string |	Yes |	Subject |	256 characters
-solnbr	| string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr	| string |	Yes |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 respdate |	date |	No - either respdate or archdate is required |	Response Date |	YYYYMMDD
 archdate |	date |	No - either respdate or archdate is required |	Archive Date	| YYYYMMDD
 contact	| string	| Yes |	Contact Info	| 500 characters
@@ -716,7 +716,7 @@ naics |	String |	No	| NAICS Code |	Valid NAICS Code  <br><a href="https://www.ce
 officeid	| String |	Yes |	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account	 | 20 characters
 offadd |	String |	No |	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	| 65535 characters
 subject | 	String |	Yes |	Subject |	256 characters
-solnbr	| String |	No |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr	| String |	No |	Solicitation # |	128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter \\&amp;
 archdate |	Date |	Yes |	Archive Date |	YYYYMMDD
 contact |	String |	No	| Contact Info |	500 characters
 desc |	String |	Yes |	Description |	65535 characters
@@ -782,7 +782,7 @@ naics|	string|	No|	NAICS Code|	Valid NAICS Code  <br><a href="https://www.census
 officeid	|string	|Yes|	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account |	20 characters
 offadd|	string|	No	|Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	|65535 characters
 subject|	string|	Yes|	Subject	|256 characters
-solnbr|	string	|Yes	|Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr|	string	|Yes	|Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter \\&amp;
 archdate|	date|	Yes|	Archive Date|	YYYYMMDD
 contact|	string|	Yes|	Contact Info|	500 characters
 desc|	string	|Yes|	Description	|65535 characters
@@ -848,7 +848,7 @@ naics | string | Yes | NAICS Code	| Valid NAICS Code <br><a href="https://www.ce
 officeid | string | Yes | Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account | 20 characters
 offadd | string | No | Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	| 65535 characters
 subject | string | Yes | Subject | 256 characters
-solnbr | string |	Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr | string |	Yes | Solicitation # | 128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 respdate | date |	Yes  | Response Date | YYYYMMDD
 archdate | date |	No  | Archive Date | YYYYMMDD
 contact | string |Yes | Contact Info | 500 characters
@@ -919,10 +919,10 @@ naics|	String|	No|	NAICS Code|	Valid NAICS Code <br><a href="https://www.census.
 officeid|	String|	Yes|	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account|	20 characters
 offadd|	String	|No|	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy|	65535 characters
 subject|	String|	Yes|	Subject	|256 characters
-solnbr	|String	|Yes|	Solicitation #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr	|String	|Yes|	Solicitation #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype	|String	|No|	 [Refer Related Notices](#related-notices)
-awdnbr|	String	|Yes	|Award Number|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
-donbr|	String|	No	|Task/Delivery Order Number	|255 characters from the set: a-z A-Z 0-9 - _ ( ) <br> *Note: To use "&", enter <\&amp;>
+awdnbr|	String	|Yes	|Award Number|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
+donbr|	String|	No	|Task/Delivery Order Number	|255 characters from the set: a-z A-Z 0-9 - _ ( ) <br> *Note: To use "&", enter \\&amp;
 archdate 	|Date	|No	|Archive Date|	YYYYMMDD
 contact|	String|	Yes|	Contact Info	|500 characters
 desc	|String	|Yes	|Description|	65535 characters
@@ -994,12 +994,12 @@ naics	|string	|Yes - for COMBINE, SOL	|NAICS Code|	Valid NAICS Code  <br><a href
 officeid|	String|	Yes|	Office ID of the office where an opportunity is being submitted. Office ID must be associated with user account	|20 characters
 offadd	|string|	No|	Office Address (Deprecated). The Contracting office address details are retrieved from the Federal Hierarchy	|65535 characters
 subject|	string|	Yes|	Subject|	256 characters
-solnbr|	string|	Yes, EXCEPT No - Only for SNOTE|	Solicitation #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr|	string|	Yes, EXCEPT No - Only for SNOTE|	Solicitation #	|128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype	|string	|No	| [Refer Related Notices](#related-notices)
-awdnbr|	string|	Yes - for AWARD, ITB & JA |	Award #	|255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
-donbr	|string	|No|	Delivery/Task Order Number	|	255 characters from the set: a-z A-Z 0-9 - _ ( ) <br> *Note: To use "&", enter <\&amp;>
+awdnbr|	string|	Yes - for AWARD, ITB & JA |	Award #	|255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
+donbr	|string	|No|	Delivery/Task Order Number	|	255 characters from the set: a-z A-Z 0-9 - _ ( ) <br> *Note: To use "&", enter \\&amp;
 awdamt	|string|	Yes - for AWARD 	|Award Amount|	64 digits
-linenbr|	string	|No|	Award Line Item Number	|255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+linenbr|	string	|No|	Award Line Item Number	|255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 awddate	|date|	Yes - for AWARD|	Award Date	|YYYYMMDD
 stauth	|string	|Yes - for JA 	|J&A StatutoryAuthority<br><br> Note: Both foja & stauth values will be given under stauth in legacy| [Refer Stauth Valid Values](#stauth-valid-values)
 respdate|	date|	Yes - for COMBINE, SOL <br><br> Either respdate or archdate required for SRCSGT, PRESOL, SSALE	|Response Date	|YYYYMMDD
@@ -1069,7 +1069,7 @@ DocumentUpload Complex Type Definition:
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
 date|	date|	No	|Posting Date	(Deprecated) |YYYYMMDD
-solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype	|string	|No|	[Refer Notice Types](#notice-types)	|  
 uploadtype|	string|	No |	Upload Type (Deprecated)| 255 characters
 respdate	|date	|No |Response Date|	YYYYMMDD
@@ -1112,9 +1112,9 @@ UnarchiveNotice Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr	|string	|Yes|	Solicitation #|	128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype	|string	|No	| [Refer Notice Types](#notice-types)	| 
-awdnbr	|string|	No|	Award #|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+awdnbr	|string|	No|	Award #|	255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 archdate	|date|	Yes|	New Archive Date|	YYYYMMDD
 officeid|	String|	No|	Office ID (Not in Use)
 
@@ -1139,7 +1139,7 @@ IVLListRequest Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-solnbr|	string|	Yes|	Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr|	string|	Yes|	Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype	|string	|No	| [Refer Notice Types](#notice-types)	|
 
 IVLListResponse Complex Type Definition:
@@ -1184,7 +1184,7 @@ AuthorizedPartyListRequest Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-solnbr|	string|	Yes	|Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr|	string|	Yes	|Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype|	string|	No|	[Refer Notice Types](#notice-types)	| 
 nonfbo_solbr|	string|	No|	Non-fbo Solicitation #. Not supported for this method |
 status| string	|No	|Valid Options: approved, pending, rejected, “empty value”. If empty, all status will be returned <br> <br> Note, use “pending” to pull the pending explicit access requests. |
@@ -1228,7 +1228,7 @@ ExplicitAccessRequestComplex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-solnbr|	string	|Yes|	Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr|	string	|Yes|	Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype	|string	|No|	[Refer Notice Types](#notice-types)	| 
 nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method|
 id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.|  32 characters
@@ -1255,7 +1255,7 @@ ExplicitAccessRequestComplex Type Definition:
 
 Element Name	|Type	|Required|	Description | Character Limit / Restrictions
 -----|-----|-----|---- | -------
-solnbr	|string	|Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr	|string	|Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype|	string|	No|	[Refer Notice Types](#notice-types) 
 nonfbo_solbr|	string|	No|	Non-fbo Solicitation #.  Not supported for this method|
 Id	|string	|No	|Not used in this method| 32 characters
@@ -1294,7 +1294,7 @@ ExplicitAccessRequestComplex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-solnbr|	string	|Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr|	string	|Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype	|string	|No| [Refer Notice Types](#notice-types) 
 nonfbo_solbr	|string|	No|	Non-fbo Solicitation #.  Not supported for this method|
 id|	string|	Yes|	Matches internal record ID. This is retrieved from getAuthorizedPartyList method above.| 32 characters
@@ -1322,7 +1322,7 @@ ExplicitAccessRequestComplex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-solnbr|	string|	Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr|	string|	Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype	|string	|No| [Refer Notice Types](#notice-types) 
 nonfbo_solbr	|string	|No	|Non-fbo Solicitation #.  Not supported for this method|
 Id	|string	|No	|Not used in this method| 32 characters
@@ -1359,7 +1359,7 @@ ExplicitAccessRequest Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-solnbr|	string|	Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr|	string|	Yes|	Solicitation # | 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter \\&amp;
 ntype	|string	|No	| [Refer Notice Types](#notice-types) 
 nonfbo_solbr|	string|	No	|Non-fbo Solicitation #.   Not supported for this method.|
 Id	|string	|No	|Not used in this method| 32 characters
@@ -1400,8 +1400,8 @@ NoticeListRequest Complex Type Definition:
 Element Name|	Type|	Required|	Description | Character Limit / Restrictions
 -----|-----|-----|-----|-----
 notice_type	|string|	No (at least 1 field is required)|[Refer Notice Types](#notice-types)
-solnbr	|string	|No (at least 1 field is required)	|Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter <\&amp;>
-awdnbr	|string	|No	(at least 1 field is required)|Award # | 255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter <\&amp;>
+solnbr	|string	|No (at least 1 field is required)	|Solicitation #| 128 characters from the set: a-z A-Z 0-9 -_ ( ) { } <br> *Note: To use "&", enter \\&amp;
+awdnbr	|string	|No	(at least 1 field is required)|Award # | 255 characters from the set: a-z A-Z 0-9 - _ ( ) { } <br> *Note: To use "&", enter \\&amp;
 posted_from	|date|	No (at least 1 field is required)|	Posted From Date |YYYYMMDD
 posted_to	|date|	No (at least 1 field is required)|	Posted To Date| YYYYMMDD
 documents_to_search	|string|	No (at least 1 field is required)|	Notice Status|Valid values: ‘active’ or 'inactive'. Default is ALL if nothing provided.
@@ -4130,12 +4130,12 @@ Element Name	|	Business Rules |	Error Messages with respect to business rules (I
 ------ | ------- | -------
 date 	|1. This field should meet the character limit/restrictions |	1. DATE field in unexpected format. Expects YYYYMMDD
 notice_type	|	1. This field is required where applicable |	1. Opportunity type is required
-solnbr|	1. This field is required where applicable<br><br>  2. If submitting a notice with a duplicate solnbr, then system throws an error <br><br>3. If solnbr is in invalid format, then service throws an error<br><br>4. If solnbr & ntype combination is not matched, then service throws an error <br><br> |	1. Notice Id is required <br><br>2. Notice ID must be unique based on selected notice type. <br><br>3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br> *Note: To use "&", enter <\&amp;> 4.	Opportunity not found with given solicitation number and ntype
+solnbr|	1. This field is required where applicable<br><br>  2. If submitting a notice with a duplicate solnbr, then system throws an error <br><br>3. If solnbr is in invalid format, then service throws an error<br><br>4. If solnbr & ntype combination is not matched, then service throws an error <br><br> |	1. Notice Id is required <br><br>2. Notice ID must be unique based on selected notice type. <br><br>3. Notice Id can only contain 128 characters from the following set: a-z A-Z 0-9 - _ ( ) { } with no spaces <br> *Note: To use "&", enter \\&amp; 4.	Opportunity not found with given solicitation number and ntype
 ntype	 |1. When user tries to convert a notice and the solicitation number/ntype do not match the notice, then the service throws an error<br><br>  2. If an invalid ntype is provided, then service throws an error <br><br> 3. If the solicitation is related to ntype that is not allowed, then the system throws an error   |1. Opportunity not found with given solicitation number and ntype<br><br> 2. Invalid NTYPE value provided<br><br> 3.The Related Notice's Type is invalid for this Opportunity
-awdnbr|	1. This field is required where applicable<br><br> 2. If value provided does not meet the character limit/restrictions, then service throws an error|	1. Contract Award Number is a required field <br><br> 2.Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces <br> *Note: To use "&", enter <\&amp;>
-donbr	| 1. If value provided does not meet the character limit/restrictions, then service throws an error|	1. Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces <br> *Note: To use "&", enter <\&amp;>
+awdnbr|	1. This field is required where applicable<br><br> 2. If value provided does not meet the character limit/restrictions, then service throws an error|	1. Contract Award Number is a required field <br><br> 2.Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces <br> *Note: To use "&", enter \\&amp;
+donbr	| 1. If value provided does not meet the character limit/restrictions, then service throws an error|	1. Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces <br> *Note: To use "&", enter \\&amp;
 awdamt|	 	1. This field is required where applicable<br><br> 2. If an invalid integer values= is given, then service throws an error <br><br> 3. If value provided does not meet the character limit/restrictions, then service throws an error 	|1. Base and All Options Value is a required field<br><br> 2. Base and All Options Value - Invalid input: Please enter a valid number<br><br> 3. Base and All Options Value max length is 64 digits
-linenbr|	1.If value provided does not meet the character limit/restrictions, then service throws an error	|1. The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces <br> *Note: To use "&", enter <\&amp;>
+linenbr|	1.If value provided does not meet the character limit/restrictions, then service throws an error	|1. The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces <br> *Note: To use "&", enter \\&amp;
 awddate	|	1. This field is required where applicable <br><br>2. This field should meet the character limit/restrictions <br><br>  3. If the Contract Award Date is 15 days prior to the current date and the archive date is not provided then the service throws an error|	1. Contract Award Date is required field <br><br> 2. DATE field in unexpected format. Expects YYYYMMDD<br><br> 3. Contract Award Date set would result in inactive date being in the past
 stauth|	 1. This field is required where applicable <br><br> 2. This field accepts only valid values listed. If invalid values are provided, then system throws an error|	1. Authority is a required field <br><br>2. Invalid Authority Fields, please refer to Contract Opportunities SOAP Web Service Tech Document valid authority fields
 respdate|	1.	This field should meet the character limit/restrictions <br><br>  2. If the date provided exceeds 5 years from the current date, then the system throws an error <br><br> 3. Either respdate or archdate required for SRCSGT, PRESOL, SSALE.If none is provided, then the service throws the error 	| 1.	DATE field in unexpected format. Expects YYYYMMDD<br><br> 2. Response Date cannot exceed 5 years from current date <br><br> 3. One of Response date or Archive date is required
