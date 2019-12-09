@@ -1,0 +1,45 @@
+/v1/entity-hierarchy/v1/hsData
+    get:
+      tags:
+        - Entity Hierarchy
+      summary: retrieve DUNS, UEI, and cageCode of a specified entity
+      description: retrives list of DUNS, UEI, and cageCode of specified entity
+      operationId: duns,uei,cageCode
+      produces:
+        - application/json
+      parameters:
+        - name: duns,uei,cageCode
+          in: query
+          description: assigned entity identifiers
+          required: No
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
