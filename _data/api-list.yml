@@ -52,9 +52,6 @@
 - title: eMuseum API
   description: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
   url: https://gsa.github.io/eMuseum-API/
-- title: FedBizOpps Web Services (These will be deprecated)
-  description: This API previously supported Federal buyers who needed to post information to the legacy FedBizOpps (FBO.gov) system using their agency's electronic contract writing system. FedBizOpps will be decommissioned by the end of 2019 and its functionality will move to beta.SAM.gov. Use the beta.SAM.gov Opportunities Management API referenced in this directory to prepare to interface with the new functionality. 
-  url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
 - title: Federal Procurement Data System - FPDS API
   description: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
   url: https://www.fpds.gov/fpdsng_cms/index.php/en/worksite.html
