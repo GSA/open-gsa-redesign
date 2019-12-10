@@ -1,0 +1,13 @@
+---
+layout: baseapi
+---
+{% if page.banner-heading %}
+  {% include banner-header.html %}
+{% endif %}
+
+<main class="usa-grid" id="main" tabindex="-1">
+  <section>
+    {{ content }}
+  </section>
+  <div class="fixed-page-height"></div>
+</main>
