@@ -3681,7 +3681,7 @@ deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or al
 <p><small><a href="#">Back to top</a></small></p>
 
 
-### OpenAPI Specification File
+## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="v1/OpenAPI.zip" download="OpenAPI">OpenAPI File</a>
@@ -5667,9 +5667,9 @@ post:
 
 
 
-### Error Messages
+## Error Messages
 
-#### General Error Messages
+### General Error Messages
 
 The following error messages may be returned as part of the response to various web service calls; these errors are not specific to one method and may apply to more than one.
 
@@ -5691,7 +5691,7 @@ Error Code|Error Message | Reason/Description
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Specific Error Messages
+### Specific Error Messages
 
 This section details possible error messages for specific operations.
 
@@ -5844,7 +5844,8 @@ Error Code|Field | Error Message | Reason/Description | Operation
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
+* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov)
+
 
 ## Change Log
 
