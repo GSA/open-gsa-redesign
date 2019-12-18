@@ -138,6 +138,8 @@ Examples: 04/19/2019; 11/15/2018; 03/2019
 </tr>
 </table>
 
+### Explanation of the API using Examples
+
 The api_key parameter is required for identification and role-based access control.  After the api_key, there are query paths to download the correct file:<br>
 
 Option 1: Using the fileName only.  The fileName is an exact match parameter which can be used for any type of file.  If you use the fileName parameter, no other parameters are required and will be ignored if included.<br>
@@ -263,5 +265,6 @@ Date | Version | Description
 ------|---------------|---------
 06/03/2019 | v 1.0 | Base Version
 08/15/2019 | v 1.1 | * Added Beta.SAM.Gov to the page title. <br><br>* Clarified the Alpha and Beta endpoints.
+12/18/2019 | v 1.1 | Added Sample FOUO and Sensitive File Names.
 
 <p><small><a href="#">Back to top</a></small></p>
