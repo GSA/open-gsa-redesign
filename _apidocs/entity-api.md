@@ -1986,35 +1986,35 @@ First Name</td>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -2108,35 +2108,35 @@ First Name</td>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -2230,35 +2230,35 @@ First Name</td>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -2352,35 +2352,35 @@ First Name</td>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -2474,35 +2474,35 @@ First Name</td>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -2596,35 +2596,35 @@ First Name</td>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -7940,10 +7940,10 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 <tr>
 <td>intermediateParentEntities</td>
-<td>object</td>
+<td>List</td>
 <td>
 <details>
-<summary>ultimateDomesticParent contains below fields</summary>
+<summary>intermediateParentEntities contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7953,24 +7953,34 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
+<td>domesticParent</td>
+<td>object</td>
+<td>
+<details>
+<summary>domesticParent contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -8008,7 +8018,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province</td>
+<td>Physical Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -8030,11 +8040,8 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 </table>
-
-
 </details>
 </td>
-<td>v1<br>v2</td>
 </div>
 </tr>
 
@@ -8042,8 +8049,120 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
+</tr>
+
+</table>
+</details>
+</td>
 <td>v1<br>v2</td>
 </tr>
+
+<tr>
+<td>hqParent</td>
+<td>object</td>
+<td>
+<details>
+<summary>hqParent contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ueiSAM</td>
+<td>string</td>
+<td>Unique Entity Identifier SAM</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>string</td>
+<td>Unique Entity Identifier DUNS</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<div style="width: 20px">
+<td>physicalAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>physicalAddress contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Physical Address Line 1</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Physical Address Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>Physical Address City</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>Physical Address State or Province Code</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Physical Address Zip</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Physical Address Zip Plus4</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Physical Address Country</td>
+</tr>
+
+
+</table>
+</details>
+</td>
+</div>
+</tr>
+
+<tr>
+<td>phoneNumber</td>
+<td>string</td>
+<td>Phone Number</td>
+</tr>
+
+</table>
+</details>
+</td>
+<td>v1<br>v2</td>
+</tr>
+
 
 </table>
 </details>
