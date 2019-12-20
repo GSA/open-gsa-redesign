@@ -82,7 +82,7 @@ naicsCode	|NAICS Code. This code is maximum of 6 digits	|String
 classificationCode	|Classification Code	|String
 active|	If Active = Yes, then the opportunity is active, if No, then opportunity is Archived| String
 award|	Award Information (If Available): <br> Award amount <br>Awardee <br> Award date <Br> Award Number|	JSON
-award.awardee|	 Name <br> Duns <br> ueiSAM (***will be available in future**)|	JSON
+award.awardee|	 Name <br> Location <br> Duns <br> ueiSAM (***will be available in future**)|	JSON
 pointofContact|	Point of Contact Information. It can have below fields if available: <br> Fax <br>Type<br> Email <br>Phone<br> Title<br> Full name	|JSON
 description|	A link to an opportunity description. <br>Note: To download the description, user should append the public API Key. If no description is available then, user is shown an error message “ Description not found”|	String
 organizationType|	Type of an organization – department/sub-tier/office|	String
