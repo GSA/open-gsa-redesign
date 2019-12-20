@@ -26,8 +26,17 @@ The response will be provided in the JSON format in a paginated manner.
 
 
 Exclusions API can be accessed from Beta or Alpha via the following end points:
-* Beta: https://api.sam.gov/prod/entity-information/v1/api/exclusions?api_key= < value >
-* Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v1/api/exclusions?api_key= < value >
+* Beta: https://api.sam.gov/prod/entity-information/v1/api/exclusions?api_key=< value >
+* Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v1/api/exclusions?api_key=< value ><br><br>
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+      COMING SOON:<br> 
+      The endpoints will be updated as follows to meet new API standards:<br> 
+      <ul>
+      <li style="color: #31708f;">Beta: https://api.sam.gov/entity-information/v1/exclusions?api_key= < value ></li>
+      <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/entity-information/v1/exclusions?api_key= < value ></li>
+      </ul>
+      </div>
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
@@ -220,5 +229,6 @@ Date | Version | Description
 08/15/2019 | v1.1 | * Added Beta.SAM.Gov to the page title. <br><br> *Updated the Alpha endpoint to v1. <br><br> *Added Secondary Address fields.
 09/25/2019 | v1.2 | Beta endpoints for public FOUO and Sensitive API were updated from version 0.9 to version 1.0.
 11/25/2019 | v1.3 | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.|
+12/20/2019 | v1.4 | Updated New Alpha and Beta Endpoints as per GSA standards.
 
 <p><small><a href="#">Back to top</a></small></p>

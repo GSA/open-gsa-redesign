@@ -56,7 +56,16 @@ The Entity Management extracts contain entities (businesses and government agenc
 The Entity and Exclusion extracts are available using the following endpoints:
  
   * Beta: https://api.sam.gov/prod/dataservices/v1/extracts?api_key= < value >
-  * Alpha: https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts?api_key= < value >
+  * Alpha: https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts?api_key= < value ><br><br>
+  
+  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  COMING SOON:<br> 
+  The endpoints will be updated as follows to meet new API standards:<br>
+  <ul>
+  <li style="color: #31708f;">Beta: https://api.sam.gov/dataservices/v1/extracts?api_key= < value ></li>
+  <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/dataservices/v1/extracts?api_key= < value ></li>
+  </ul>
+  </div>
   
 Generating a personal API Key:
 * Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on beta.sam.gov
@@ -138,6 +147,8 @@ Examples: 04/19/2019; 11/15/2018; 03/2019
 </tr>
 </table>
 
+### Explanation of the API using Examples
+
 The api_key parameter is required for identification and role-based access control.  After the api_key, there are query paths to download the correct file:<br>
 
 Option 1: Using the fileName only.  The fileName is an exact match parameter which can be used for any type of file.  If you use the fileName parameter, no other parameters are required and will be ignored if included.<br>
@@ -157,6 +168,7 @@ https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=ENT
 
 **Expected Result:**<br>
 Click to view the full details of the data elements: <a href="v1/public_extract_layout.pdf">Public Extract Layout</a><br>
+Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes:<a href="v1/SAM_Entity_Management_Public_V2_Extract_Layout.pdf">Public Extract Layout</a><br>
 
 **Entity Management FOUO Data Package Sample API calls:**<br>
 
@@ -180,6 +192,7 @@ https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=ENT
 
 **Expected Result**<br>
 Click to view the full details of the data elements: <a href="v1/fouo_extract_layout.pdf">FOUO Extract Layout</a><br>
+Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes:<a href="v1/SAM_Entity_Management_FOUO_V2_Extract_Layout.pdf">FOUO Extract Layout</a><br>
 
 **Entity Management Sensitive Data Package Sample API calls:**<br>
 
@@ -213,7 +226,8 @@ Daily File, April 16, 2019 (parameter):<br>
 https://api.sam.gov/prod/dataservices/v1/extracts?api_key={API_KEY}&fileType=EXCLUSION&date=04/16/2019<br>
 
 **Expected Result**:
-The layout of the Exclusions extract is available here: [TBD]
+The layout of the Exclusions extract is available here: <br>
+Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes:<a href="v1/SAM_Exclusions_Public_V2_Extract_Layout.pdf">Exclusions Extract Layout</a><br>
 
 **Sample File Names:**<br>
 
@@ -263,5 +277,6 @@ Date | Version | Description
 ------|---------------|---------
 06/03/2019 | v 1.0 | Base Version
 08/15/2019 | v 1.1 | * Added Beta.SAM.Gov to the page title. <br><br>* Clarified the Alpha and Beta endpoints.
+12/20/2019 | v 1.2 | * Added Sample FOUO and Sensitive File Names and Revised extract layouts for the upcoming UEI/EVS changes. <br><br> * Updated New Alpha and Beta Endpoints as per GSA standards. 
 
 <p><small><a href="#">Back to top</a></small></p>
