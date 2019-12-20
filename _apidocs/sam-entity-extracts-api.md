@@ -62,8 +62,8 @@ The Entity and Exclusion extracts are available using the following endpoints:
   COMING SOON:<br> 
   The endpoints will be updated as follows to meet new API standards:<br>
   <ul>
-  <li style="color: #31708f;">Beta: https://api.sam.gov/dataservices/v1/extracts?api_key= < value ></li>
-  <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/dataservices/v1/extracts?api_key= < value ></li>
+  <li style="color: #31708f;">Beta: https://api.sam.gov/data-services/v1/extracts?api_key= < value ></li>
+  <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?api_key= < value ></li>
   </ul>
   </div>
   
