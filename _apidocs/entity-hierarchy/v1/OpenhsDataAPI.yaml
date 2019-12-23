@@ -1,14 +1,14 @@
-/v1//IQaaS/v1/api/uei-info
+/v1/entity-hierarchy/v1/hsData
     get:
       tags:
-        - Identifier Query as a Service (IQaaS) 
-      summary: retrieve ueiDUNS, ueiSAM, and cageCode of a specified entity
-      description: retrives list of ueiDUNS, ueiSAM, and cageCode of specified entity
-      operationId: ueiDUNS,ueiSAM,cageCode
+        - Entity Hierarchy
+      summary: retrieve DUNS, UEI, and cageCode of a specified entity
+      description: retrives list of DUNS, UEI, and cageCode of specified entity
+      operationId: duns,uei,cageCode
       produces:
         - application/json
       parameters:
-        - name: ueiDUNS,ueiSAM,cageCode
+        - name: duns,uei,cageCode
           in: query
           description: assigned entity identifiers
           required: No
