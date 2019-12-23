@@ -8,7 +8,7 @@
       produces:
         - application/json
       parameters:
-        - name: ueiSAM,ueiSAM,cageCode
+        - name: ueiDUNS,ueiSAM,cageCode
           in: query
           description: assigned entity identifiers
           required: No
