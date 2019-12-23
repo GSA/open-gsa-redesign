@@ -13122,10 +13122,6 @@
     - API
     - Fine arts
     - TMS
-- title: FedBizOpps Web Services
-  body: This system supports Web Services for Federal buyers to post information to the database using their agency’s electronic procurement system.
-  url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
-  category: APIs
 - title: Federal Procurement Data System - FPDS API
   body: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
   url: https://www.fpds.gov/fpdsng_cms/index.php/en/worksite.html
