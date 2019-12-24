@@ -1,8 +1,8 @@
-/v1//IQaaS/v1/api/uei-info
+/IQaaS/v1/api/uei-info
     get:
       tags:
-        - Identifier Query as a Service (IQaaS) 
-      summary: retrieve ueiDUNS, ueiSAM, and cageCode of a specified entity
+        - Identifier Query as a Service (IQaaS) API
+      summary: retrieves ueiDUNS, ueiSAM, and cageCode of a specified entity
       description: retrives list of ueiDUNS, ueiSAM, and cageCode of specified entity
       operationId: ueiDUNS,ueiSAM,cageCode
       produces:
