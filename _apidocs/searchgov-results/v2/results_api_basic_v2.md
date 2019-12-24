@@ -21,7 +21,7 @@ This API exposes all relevant Search.gov results “modules” in a single JSON 
 
 ## Getting Started
 
-The endpoint is `https://search.usa.gov/api/v2/search/i14y`.
+The endpoint is `https://api.gsa.gov/technology/searchgov/v2/results/i14y`.
 
 You must use https.
 
@@ -36,7 +36,7 @@ The endpoint you use to retrieve web results through this API will depend on the
   
 We can index content using your [XML sitemap](https://search.gov/blog/sitemaps.html) (preferred) or [RSS feeds](https://search.gov/manual/rss.html)}). We can also deploy a crawler on a limited basis.
   
-Sites indexed via sitemaps or crawling will use the `/search/i14y` endpoint. Because most users are in this category, the example API calls below are to this endpoint. Sites indexed via RSS will use the top level `/search` endpoint, please modify your calls accordingly.
+Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because most users are in this category, the example API calls below are to this endpoint. Sites indexed via RSS will use the top level `/` endpoint, please modify your calls accordingly.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -45,7 +45,7 @@ Sites indexed via sitemaps or crawling will use the `/search/i14y` endpoint. Bec
   ## Required Parameters
   
   Three parameters are required: `affiliate`, `access_key`, and `query`. All others are optional.
-  `https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX`
+  `https://api.gsa.gov/technology/searchgov/v2/results/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX`
 
   * You can find your site handle on the Settings page.
   * Replace `SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX` with the query entered by the searchers using your website's search box.
@@ -54,6 +54,7 @@ Sites indexed via sitemaps or crawling will use the `/search/i14y` endpoint. Bec
   Note that your access key is unique to your site handle so they must be paired properly to return results.
 
   | Parameters                      | Description
+  | :--								| :--
   | affiliate (required)			| Site handle
   |	access\_key (required)			| The key used to access the API
   | query (required)			    | Search term
@@ -108,47 +109,47 @@ Sites indexed via sitemaps or crawling will use the `/search/i14y` endpoint. Bec
 
       Graphic best bets, which appear only when the query matches the text of the best bet’s title, description, or keywords.
 
-      | Values         | Description
-      | :--            | :--
-      | title          | Title of the graphic best bet
+      | Values         	| Description
+      | :--            	| :--
+      | title          	| Title of the graphic best bet
       | title\_url      | URL of the graphic best bet
       | image\_url      | URL of the graphic image
       | image\_alt_text | Alternative text of the image
-      | links          | An array of links in the graphic best bet. Each link contains a title and a URL
+      | links          	| An array of links in the graphic best bet. Each link contains a title and a URL
 
   * ### health_topics
 
-      | Values         | Description
-      | :--            | :--
-      | title          | Title of the health topic
-      | url            | URL of the health topic
-      | snippet        | Snippet of the health topic
+      | Values         	| Description
+      | :--            	| :--
+      | title          	| Title of the health topic
+      | url            	| URL of the health topic
+      | snippet        	| Snippet of the health topic
       | related\_topics | An array of topics related to the health topic. Each topic contains a title and a URL
-      | related_sites  | An array of sites related to the the health topic. Each site contains a title and a URL
+      | related_sites  	| An array of sites related to the the health topic. Each site contains a title and a URL
 
   * ### job_openings
 
-      | Values             | Description
-      | :--                | :--
+      | Values             	| Description
+      | :--                	| :--
       | position\_title     | Position title of the job opening
       | organization\_name  | Organization name of the job opening
-      | rate\_interval\_code | Rate interval code of the job opening
-      | minimum            | Minimum salary of the job opening
-      | maximum            | Maximum salary of the job opening
+      | rate\_interval\_code| Rate interval code of the job opening
+      | minimum             | Minimum salary of the job opening
+      | maximum            	| Maximum salary of the job opening
       | start\_date         | Start date of the job opening
-      | end_date           | End date of the job opening
-      | locations          | An array of locations of the job opening
-      | url                | URL of the job opening
+      | end_date           	| End date of the job opening
+      | locations          	| An array of locations of the job opening
+      | url                	| URL of the job opening
 
   * ### recent_tweets
 
-      | Values            | Description
-      | :--               | :--
-      | text              | Text of the tweet
-      | url               | URL of the tweet
-      | name              | Name of the tweet author
-      | screen\_name       | Screen name of the tweet author
-      | profile\_image_url | URL of the tweet author profile image
+      | Values            	| Description
+      | :--               	| :--
+      | text              	| Text of the tweet
+      | url               	| URL of the tweet
+      | name              	| Name of the tweet author
+      | screen\_name       	| Screen name of the tweet author
+      | profile\_image_url 	| URL of the tweet author profile image
 
   * ### recent_news
 
@@ -182,16 +183,16 @@ Sites indexed via sitemaps or crawling will use the `/search/i14y` endpoint. Bec
       | Values              | Description
       | :--                 | :--
       | id                  | The ID of the document as known to usasearch
-      | document\_number     | Document number of the federal register document
-      | document\_type       | Document type of the federal register document
+      | document\_number    | Document number of the federal register document
+      | document\_type      | Document type of the federal register document
       | title               | Title of the federal register document
       | url                 | URL of the federal register document
-      | agency\_names        | An array of agency names of the federal register document
-      | page\_length         | Page length of the federal register document
-      | start\_page          | Start page of the federal register document
-      | end\_page            | End page of the federal register document
-      | publication\_date    | Publication date of the federal register document
-      | comments\_close_date | Comments close date of the federal register document
+      | agency\_names       | An array of agency names of the federal register document
+      | page\_length        | Page length of the federal register document
+      | start\_page         | Start page of the federal register document
+      | end\_page           | End page of the federal register document
+      | publication\_date   | Publication date of the federal register document
+      | comments\_close_date| Comments close date of the federal register document
 
   * ### related\_search_terms
 
