@@ -23,18 +23,15 @@ This API exposes all relevant Search.gov results “modules” in a single JSON 
 
 The endpoint is `https://api.gsa.gov/technology/searchgov/v2/results/i14y`.
 
-You must use https.
+You must use https. You can find your access key on the API Access Key page of the Search.gov Admin Center.
 
 <p><small><a href="#">Back to top</a></small></p>
-
-  * You can find your access key on the API Access Key page of the Search.gov Admin Center.
-
 
 ## Note about Web Results and Endpoints
 
 The endpoint you use to retrieve web results through this API will depend on the method we used to index your content. If we don't yet have your content indexed, you won't see results in the API.
   
-We can index content using your [XML sitemap](https://search.gov/blog/sitemaps.html) (preferred) or [RSS feeds](https://search.gov/manual/rss.html)}). We can also deploy a crawler on a limited basis.
+We can index content using your [XML sitemap](https://search.gov/blog/sitemaps.html) (preferred) or [RSS feeds](https://search.gov/manual/rss.html)). We can also deploy a crawler on a limited basis.
   
 Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because most users are in this category, the example API calls below are to this endpoint. Sites indexed via RSS will use the top level `/` endpoint, please modify your calls accordingly.
 
@@ -42,9 +39,10 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
 
 ## API Description
 
-  ## Required Parameters
+## Required Parameters
   
-  Three parameters are required: `affiliate`, `access_key`, and `query`. All others are optional.
+  Three parameters are required: (1) `affiliate`, (2) `access_key`, and (3) `query`. All others are optional.
+  
   `https://api.gsa.gov/technology/searchgov/v2/results/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX`
 
   * You can find your site handle on the Settings page.
@@ -57,25 +55,20 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
   | :--								| :--
   | affiliate (required)			| Site handle
   |	access\_key (required)			| The key used to access the API
-  | query (required)			    | Search term
-  |									|`https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&sort_by=date`
-  | enable\_highlighting (optional) | Enables or disables the highlighting of keywords in the results. The default is 'true' so use 'false' to disable highlighting. The opening and closing highlighting characters are `<U+E000>` and `<U+E001>`, which both look like "". You can learn more about them [here](http://unicodesymbols.wikia.com/wiki/U%2BE000) and [here](http://unicodesymbols.wikia.com/wiki/U%2BE001) (external resources). Your team will determine how to display the characters, whether as bold, italics, or some other preferred highlighting style.
-  |									|`https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&enable_highlighting=false`
-  | limit (optional)                | Defines the number of results to return. The default is 20, but you can specify between 1 and 50 results.
-  |									|`https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&limit=5`
-  | offset (optional)               | Defines the number of results you want to skip from the first result. The default is 0 and the maximum is 999.
-  |									|`https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&offset=20`
-  | sort\_by (optional)             | Sort the results by date. The default is sort by relevance.
-  |									|`https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&sort_by=date`
+  | query (required)			    | Search term <br> `https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&sort_by=date`
+  | enable\_highlighting (optional) | Enables or disables the highlighting of keywords in the results. The default is 'true' so use 'false' to disable highlighting. The opening and closing highlighting characters are `<U+E000>` and `<U+E001>`, which both look like "". You can learn more about them [here](http://unicodesymbols.wikia.com/wiki/U%2BE000) and [here](http://unicodesymbols.wikia.com/wiki/U%2BE001) (external resources). Your team will determine how to display the characters, whether as bold, italics, or some other preferred highlighting style. <br> `https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&enable_highlighting=false`
+  | limit (optional)                | Defines the number of results to return. The default is 20, but you can specify between 1 and 50 results. <br> `https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&limit=5`
+  | offset (optional)               | Defines the number of results you want to skip from the first result. The default is 0 and the maximum is 999. <br> `https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&offset=20`
+  | sort\_by (optional)             | Sort the results by date. The default is sort by relevance. <br> `https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&sort_by=date`
 
-  ## Expected Results
+## Expected Results
 
   Each item returns a unique set of fields. Each array will only have contents if there are results in that search feature matching the query.
 
   * ### web:results
 
       Web results from our Search.gov indexes.
-
+      
       | Values           | Description
       | :--              | :--
       | title            | Title of the document
@@ -202,6 +195,6 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
 
 ## Contact Us
 
-Please never hesitate to reach out! [Email us](search@support.digitalgov.gov) or call us at 202-969-7426. 
+Please never hesitate to reach out! [Email the Search.gov team](search@support.digitalgov.gov). 
 
 <p><small><a href="#">Back to top</a></small></p>
