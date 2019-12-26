@@ -74,46 +74,16 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Airfare'
-        default:
-          description: Unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  '/airfares/{id}':
-    get:
-      summary: Individual airfare by ID
-      description: >
-        This endpoint returns one airfare by ID. (This is just for demonstration
-        purpose. For City Pairs, the ID does not have meaning.)
-      parameters:
-        - name: id
-          in: path
-          description: Unique identifier
-          required: true
-          schema:
-            type: integer
-            format: int32
-        - name: api_key
-          in: query
-          description: API key for api.data.gov platform.
-          required: true
-          schema:
-            type: string
-            format: string
-            default: DEMO_KEY
-      tags:
-        - airfares
+                  $ref: '#/components/schemas/Web_Results'
       responses:
         '200':
-          description: An array of airfares
+          description: An array of search results
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Results'
+                  $ref: '#/components/schemas/Text_best_bets'
         default:
           description: Unexpected error
           content:
@@ -124,7 +94,7 @@ servers:
   - url: 'https://api.gsa.gov/technology/searchgov/v2/results'
 components:
   schemas:
-    Results:
+    Web_Results:
     
     
     ####### Gray stopping here - restart here and delete this line later.  #####
