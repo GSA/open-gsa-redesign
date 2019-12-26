@@ -1,10 +1,10 @@
 openapi: 3.0.0
 info:
-  title: Prototype City Pairs API
+  title: Search.gov Results API
   description: >-
-    Prototype project to demonstrate GSA API Standards and API Documentation
-    Template.
-  version: 0.0.0
+    Search.gov is a service of the General Services Administration, providing search engine     capability to federal agencies for their public websites. This API This API exposes all relevant Search.gov results “modules” in a single JSON call.
+    
+  version: 2.0
 paths:
   /airfares:
     get:
