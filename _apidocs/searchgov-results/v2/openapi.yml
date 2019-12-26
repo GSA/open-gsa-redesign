@@ -66,6 +66,11 @@ paths:
             default: relevance
       tags:
         - search
+        
+        
+        
+        ############   temp note 1 start -  there should be one of these for each of the Expected Results categories.  Notice $ref part refers to the 'Components' section lower down  #############
+
       responses:
         '200':
           description: An array of search results
@@ -84,6 +89,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Text_best_bets'
+                  
+                  
+             ############   temp note 1 end -   #############
+
+                  
+                  
         default:
           description: Unexpected error
           content:
@@ -94,10 +105,14 @@ servers:
   - url: 'https://api.gsa.gov/technology/searchgov/v2/results'
 components:
   schemas:
+  
+      ####### There needs be a distince schema section for each of the Expected Results.  So, there should be ~12 schema sections.   #####
+
+  
     Web_Results:
     
     
-    ####### Gray stopping here - restart here and delete this line later.  #####
+    ####### old material below  #####
     
     
       type: object
@@ -114,66 +129,6 @@ components:
         ORIGIN_AIRPORT_ABBREV:
           type: string
           description: Origin Airport Abbreviation.
-        DESTINATION_AIRPORT_ABBREV:
-          type: string
-          description: Destinatoin Airport Abbreviation.
-        ORIGIN_CITY_NAME:
-          type: string
-          description: Original City Name.
-        ORIGIN_STATE:
-          type: string
-          description: Origin State.
-        ORIGIN_COUNTRY:
-          type: string
-          description: Origin Country.
-        DESTINATION_CITY_NAME:
-          type: string
-          description: Destination City Name.
-        DESTINATION_STATE:
-          type: string
-          description: Destination State.
-        DESTINATION_COUNTRY:
-          type: string
-          description: Destination Country.
-        AIRLINE_ABBREV:
-          type: string
-          description: Airline Abbreviation.
-        AWARDED_SERV:
-          type: string
-          description: Awarded Serv.
-        PAX_COUNT:
-          type: string
-          description: PAX Count.
-        YCA_FARE:
-          type: integer
-          description: YCA Fare.
-        XCA_FARE:
-          type: integer
-          description: XCA Fare.
-        BUSINESS_FARE:
-          type: integer
-          description: Business Fare.
-        ORIGIN_AIRPORT_LOCATION:
-          type: string
-          description: Origin Airport Location.
-        DESTINATION_AIRPORT_LOCATION:
-          type: string
-          description: Destination Airport Location.
-        ORIGIN_CITY_STATE_AIRPORT:
-          type: string
-          description: Origin City State Airport.
-        DESTINATION_CITY_STATE_AIRPORT:
-          type: string
-          format: date-time
-          description: Destination City State Airport.
-        EFFECTIVE_DATE:
-          type: string
-          format: date-time
-          description: Expiration Date.
-        EXPIRATION_DATE:
-          type: string
-          format: date-time
-          description: Expiration Date.
     Error:
       type: object
       properties:
