@@ -39,7 +39,7 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
 
 ## API Description
 
-## Required Parameters
+## Parameters
   
   Three parameters are required: (1) `affiliate`, (2) `access_key`, and (3) `query`. All others are optional.
   
