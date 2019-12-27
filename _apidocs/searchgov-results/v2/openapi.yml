@@ -1,0 +1,140 @@
+openapi: 3.0.0
+info:
+  title: Search.gov Results API
+  description: >-
+    Search.gov is a service of the General Services Administration, providing search engine capability to federal agencies for their public websites. This API This API exposes all relevant Search.gov results “modules” in a single JSON call.
+  version: 2.0
+paths:
+  /i14y:
+    get:
+      summary: Search Results
+      description: |
+        This endpoint returns search results.
+      parameters:
+        - name: affiliate
+          in: query
+          description: 'Site handle. Example: ''usasearch'''
+          required: true
+          schema:
+            type: string
+            format: string
+        - name: access_key
+          in: query
+          description: 'The Search.gov key used to access the API'
+          required: true
+          schema:
+            type: string
+            format: string
+        - name: query
+          in: query
+          description: 'Search term.  Example: ''car'''
+          required: false
+          schema:
+            type: string
+            format: string
+        - name: enable_highlighting
+          in: query
+          description: 'Enables or disables the highlighting of keywords in the results. The default is 'true' so use 'false' to disable highlighting.'
+          required: false
+          schema:
+            type: boolean
+            format: string
+            default: true
+        - name: limit
+          in: query
+          description: 'Defines the number of results to return. The default is 20, but you can specify between 1 and 50 results.'
+          required: false
+          schema:
+            type: integer
+            format: integer
+            default: 20
+        - name: offset
+          in: query
+          description: 'Defines the number of results you want to skip from the first result. The default is 0 and the maximum is 999.'
+          required: false
+          schema:
+            type: integer
+            format: integer
+            default: 0
+        - name: sort_by
+          in: query
+          description: 'Sort the results by date. The default is sort by relevance.'
+          required: false
+          schema:
+            type: string
+            format: string
+            default: relevance
+      tags:
+        - search
+        
+        
+        
+        ############   temp note 1 start -  there should be one of these for each of the Expected Results categories.  Notice $ref part refers to the 'Components' section lower down  #############
+
+      responses:
+        '200':
+          description: An array of search results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Web_Results'
+      responses:
+        '200':
+          description: An array of search results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Text_best_bets'
+                  
+                  
+             ############   temp note 1 end -   #############
+
+                  
+                  
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+servers:
+  - url: 'https://api.gsa.gov/technology/searchgov/v2/results'
+components:
+  schemas:
+  
+      ####### There needs be a distince schema section for each of the Expected Results.  So, there should be ~12 schema sections.   #####
+
+  
+    Web_Results:
+    
+    
+    ####### old material below  #####
+    
+    
+      type: object
+      properties:
+        ID:
+          type: integer
+          description: Generated unique identifier.
+        ITEM_NUM:
+          type: string
+          description: Item number.
+        AWARD_YEAR:
+          type: string
+          description: Award Year.
+        ORIGIN_AIRPORT_ABBREV:
+          type: string
+          description: Origin Airport Abbreviation.
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        required_fields:
+          type: string
+        example:
+          type: string
