@@ -82,6 +82,7 @@ naicsCode	|NAICS Code. This code is maximum of 6 digits	|String
 classificationCode	|Classification Code	|String
 active|	If Active = Yes, then the opportunity is active, if No, then opportunity is Archived| String
 award|	Award Information (If Available): <br> Award amount <br>Awardee <br> Award date <Br> Award Number|	JSON
+award.awardee|	 Name <br> Location <br> Duns <br> ueiSAM (***will be available in future**)|	JSON
 pointofContact|	Point of Contact Information. It can have below fields if available: <br> Fax <br>Type<br> Email <br>Phone<br> Title<br> Full name	|JSON
 description|	A link to an opportunity description. <br>Note: To download the description, user should append the public API Key. If no description is available then, user is shown an error message “ Description not found”|	String
 organizationType|	Type of an organization – department/sub-tier/office|	String
@@ -143,73 +144,136 @@ Note: Response for one record is provided as an example <br>
 <p>
 <code><pre>
 {
-  "totalRecords": 25543,
-  "limit": 10,
-  "offset": 1,
-  "opportunitiesData": [
-    {
-      "noticeId": "ea55e45cded123fd8d6afd7c061138f0",
-      "title": "Judge Rice Courtroom Lighting Project",
-      "solicitationNumber": "EQ5P2SS2P1-18-0005",
-      "department": null,
-      "subTier": null,
-      "office": null,
-      "postedDate": "2018-05-09 23:45:22+00",
-      "type": "Presolicitation",
-      "baseType": "Presolicitation",
-      "archiveType": "manual",
-      "archiveDate": null,
-      "typeOfSetAsideDescription": null,
-      "typeOfSetAside": "7",
-      "responseDeadLine": null,
-      "naicsCode": "236220",
-      "classificationCode": "Z",
-      "active": "Yes",
-      "award": null,
-      "pointOfContact": [
+    "totalRecords": 25543,
+    "limit": 10,
+    "offset": 1,
+    "opportunitiesData": [
         {
-          "fax": null,
-          "type": "primary",
-          "email": "jordan.waldschmidt@gsa.gov",
-          "phone": "312-385-3050",
-          "title": "Contract Specialist",
-          "fullName": "Jordan Waldschmidt"
+            "noticeId": "ea55e45cded123fd8d6afd7c061138f0",
+            "title": "Judge Rice Courtroom Lighting Project",
+            "solicitationNumber": "EQ5P2SS2P1-18-0005",
+            "department": null,
+            "subTier": null,
+            "office": null,
+            "postedDate": "2018-05-09 23:45:22+00",
+            "type": "Presolicitation",
+            "baseType": "Presolicitation",
+            "archiveType": "manual",
+            "archiveDate": null,
+            "typeOfSetAsideDescription": null,
+            "typeOfSetAside": "7",
+            "responseDeadLine": null,
+            "naicsCode": "236220",
+            "classificationCode": "Z",
+            "active": "Yes",
+            "award": null,
+            "pointOfContact": [
+                {
+                    "fax": null,
+                    "type": "primary",
+                    "email": "jordan.waldschmidt@gsa.gov",
+                    "phone": "312-385-3050",
+                    "title": "Contract Specialist",
+                    "fullName": "Jordan Waldschmidt"
+                },
+                {
+                    "fax": null,
+                    "type": "secondary",
+                    "email": "johanna.nieves@gsa.gov",
+                    "phone": "312.758.2467",
+                    "title": "Contracting Officer",
+                    "fullName": "Johanna Nieves"
+                }
+            ],
+            "description": " https://api-alpha.sam.gov/prodlike /opportunities/v1/noticedesc?noticeid=ea55e45cded123fd8d6afd7c061138f0",
+            "organizationType": null,
+            "officeAddress": null,
+            "placeOfPerformance": {
+                "streetAddress": "Dayton Federal Building and US Courthouse\r\n200 West Second Street",
+                "city": {
+                    "code": "21000",
+                    "name": "21000"
+                },
+                "state": {
+                    "code": "OH"
+                },
+                "zip": "45402",
+                "country": {
+                    "code": "USA"
+                }
+            },
+            "additionalInfoLink": null,
+            "uiLink": "https://alpha.sam.gov/opp/ea55e45cded123fd8d6afd7c061138f0",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": " https://api-alpha.sam.gov/prodlike/opportunities/v1/search?noticeid=ea55e45cded123fd8d6afd7c061138f0&limit="
+                }
+            ]
         },
         {
-          "fax": null,
-          "type": "secondary",
-          "email": "johanna.nieves@gsa.gov",
-          "phone": "312.758.2467",
-          "title": "Contracting Officer",
-          "fullName": "Johanna Nieves"
+            "noticeId": "00000000000000000000000000000000",
+            "title": "Award Notice Title ",
+            "solicitationNumber": "solicitationNumber000000",
+            "department": "DEPARTMENT NAME",
+            "subTier": "SUBTIER NAME",
+            "office": "OFFICE NAME",
+            "postedDate": "2018-05-09",
+            "type": "Award Notice",
+            "baseType": "Combined Synopsis/Solicitation",
+            "archiveType": "autocustom",
+            "archiveDate": "2020-01-09",
+            "typeOfSetAsideDescription": "Partial Small Business Set-Aside (FAR 19.5)",
+            "typeOfSetAside": "SBP",
+            "responseDeadLine": null,
+            "naicsCode": "111130",
+            "classificationCode": "11",
+            "active": "Yes",
+            "award": {
+                "date": "2019-11-10",
+                "number": "0X0X0X0X",
+                "amount": "00000.00000000",
+                "awardee": {
+                    "name": "Name of Entity; Street Address;City;State;Zip Code",
+                    "location": {},
+                    "duns": "000000000"
+                }
+            },
+            "pointOfContact": [
+                {
+                    "fax": null,
+                    "type": "primary",
+                    "email": "emailName@email.email",
+                    "phone": null,
+                    "title": null,
+                    "fullName": "First M. Last"
+                }
+            ],
+            "description": "https://api-alpha.sam.gov/prodlike/opportunities/v1/noticedesc?noticeid=00000000000000000000000000000000",
+            "organizationType": "OFFICE",
+            "officeAddress": {
+                "zipcode": "OFFICE zipcode",
+                "city": "OFFICE city",
+                "countryCode": "OFFICE countryCode",
+                "state": "OFFICE state"
+            },
+            "placeOfPerformance": {},
+            "additionalInfoLink": null,
+            "uiLink": "https://alpha.sam.gov/opp/00000000000000000000000000000000/view",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://api-alpha.sam.gov/prodlike/opportunities/v1/search?noticeid=00000000000000000000000000000000&limit=1",
+                    "hreflang": null,
+                    "media": null,
+                    "title": null,
+                    "type": null,
+                    "deprecation": null
+                }
+            ]
         }
-      ],
-      "description": " https://api-alpha.sam.gov/prodlike /opportunities/v1/noticedesc?noticeid=ea55e45cded123fd8d6afd7c061138f0",
-      "organizationType": null,
-      "officeAddress": null,
-      "placeOfPerformance": {
-        "streetAddress": "Dayton Federal Building and US Courthouse\r\n200 West Second Street",
-        "city": {
-          "code": "21000",
-          "name": "21000"
-        },
-        "state": {
-          "code": "OH"
-        },
-        "zip": "45402",
-        "country": {
-          "code": "USA"
-        }
-      },
-      "additionalInfoLink": null,
-      "uiLink": "https://alpha.sam.gov/opp/ea55e45cded123fd8d6afd7c061138f0",
-      "links": [
-        {
-          "rel": "self",
-          "href": " https://api-alpha.sam.gov/prodlike/opportunities/v1/search?noticeid=ea55e45cded123fd8d6afd7c061138f0&limit="
-        }
-      ]
-    }
+    ]
+}
 </pre></code>
 </p>
 </details>
@@ -788,5 +852,7 @@ Date | Version | Description
 10/24/19| v0.5| Office Address Description Updated 
 11/1/19| v1.0| Initial Release Finalized
 12/2/19| v1.1|Added OpenAPI Specification
+12/18/19| v1.2|Opportunities Response parameters updated to include Award Details JSON Specification and provided the  examples
+
 
 <p><small><a href="#">Back to top</a></small></p>
