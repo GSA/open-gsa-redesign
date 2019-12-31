@@ -113,7 +113,7 @@ Complete API documentation is available [from CKAN](https://docs.ckan.org/en/lat
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="https://open.gsa.gov/api/datadotgov/v1/openapi.yaml">Open API specification file for the data.gov catalog API</a>.
+<a href="https://open.gsa.gov/api/datadotgov/v1/openapi.json">Open API specification file for the data.gov catalog API</a>.
 
 
 ## Contact Us
