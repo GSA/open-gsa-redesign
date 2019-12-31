@@ -132,7 +132,12 @@ This API has one primary endpoints:
 | organization_count | Month in which the results took place |
 | api_backend_url_match_count |  Number of API hits processed by the api.data.gov system in that month and year |
 
+## OpenAPI Specification File
 
+You can view the full details of this API in the OpenAPI Specification file available here:
+<a href="v0/openapi.yaml">Open API specification file for the api.data.gov Analytics API</a>
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
 
