@@ -17,8 +17,8 @@ Opportunity Management API can be accessed from Beta or Alpha via the following 
 * Beta: https://api.sam.gov/prod/opportunity/v1/api/
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v1/api/
 
-* Beta: https://api.sam.gov/prod/opportunity/v2/api/ (coming soon)
-* Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/api/ (coming soon)
+* Beta: https://api.sam.gov/prod/opportunity/v2/ (coming soon)
+* Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ (coming soon)
 
 **REST API Workflow Chart**
 
@@ -1410,7 +1410,7 @@ data.award.amount | Number | Award Amount
 data.award.lineitemNumber | string |  Award Line Item Number
 data.award.awardee | JSON |  
 data.award.awardee.name | string |  Awardee Name
-data.award.awardee.duns | string | (**Plan to deprecate in the future**) Awardee Unique Entity Identifier DUNS
+data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS
 data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
 data.award.awardee.location | JSON |  Awardee Location
 data.award.awardee.location.streetAddress | string | Awardee Street Address 1
@@ -3160,8 +3160,8 @@ data.award.amount | number |64 digits |  | No | Yes only for type = a (Award) | 
 data.award.lineitemNumber | string |255 characters | | No | No | Contract Line item Number | v1 <br> v2
 data.award.awardee | JSON | NA| NA | NA | NA |Awardee details; Only for type = a (Award) |NA
 data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
-data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required |(**Plan to deprecate in the future**) Awardee UEI Duns | v1 
-data.award.awardee.ueiSAM | string | 12 alphanumeric | | No | No; **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
+data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
+data.award.awardee.ueiSAM | string | 12 alphanumeric | | No | No; Either awardee.name or awardee.ueiSAM is required <br> **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
 data.award.awardee.location | JSON |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided** | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address  | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 2 | v1 <br> v2
@@ -3539,9 +3539,9 @@ data.award.deliverOrderNumber | string | 255 characters| | No | Award Delivery O
 data.award.amount | number |64 digits |  | Yes only for type = a (Award) | Award Amount| v1 <br> v2
 data.award.lineitemNumber | string |255 characters | | No | Contract Line item Number| v1 <br> v2
 data.award.awardee | JSON | NA| NA | NA |Awardee details; Only for type = a (Award)| v1 <br> v2
-data.award.awardee.name | string | 1000 characters | | No; Either awardee.name or awardee.duns is required | Awardee Name| v1 <br> v2
-data.award.awardee.duns | string | 9 digits | | No; Either awardee.name or awardee.duns is required | (**Plan to deprecate in the future**) Awardee Duns| v1
-data.award.awardee.ueiSAM | string | 12 alphanumeric | | No; **ueiSAM values not yet available** | Unique Entity Identifier SAM - Example: ueiSAM=025114695AST.| v2
+data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
+data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
+data.award.awardee.ueiSAM | string | 12 alphanumeric | | No | No; Either awardee.name or awardee.ueiSAM is required <br> **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
 data.award.awardee.location | JSON |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**| v1 <br> v2
 data.award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress2 | string | | | No | Awardee Street Address 2| v1 <br> v2
@@ -3917,10 +3917,10 @@ Name | Data Type | Allowed Values | Required | Description|Applicable Versions
 fname | string | | Yes | First name of the user| v1 <br> v2
 lname | string | | Yes | Last name of the user| v1 <br> v2
 email | string | | Yes | Email Id of the user| v1 <br> v2
-contractorName | string | | Yes | Contractor Name| v1 
+contractorName | string | | Yes | Contractor Name| v1 <br> v2 - Deprecated
 duns | string | | Yes | (**Plan to deprecate in the future**) Unique Entity Identifier DUNS#| v1
 ueiSAM | string | | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.| v1 <br> v2
-cageCode | string | | Yes | Cage Code| v1
+cageCode | string | | Yes | Cage Code| v1 <br> v2 - Deprecated
 
 <p><small><a href="#">Back to top</a></small></p>
 
