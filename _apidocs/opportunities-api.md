@@ -5,7 +5,7 @@ banner-heading: Beta.SAM.Gov Opportunity Management API
 
 ## Overview
 
-The Opportunity Management API will allow authorized users to submit and request Opportunities data.
+The Opportunity Management API will allow authorized users to submit and request Opportunities data. 
 
 **Note:** The specifications on this page are for a soon to be released API.  Check back here or be in contact with IAE for the release date and testing session.
 
@@ -416,7 +416,7 @@ Examples
 </details>
 
 <details>
-<summary>SOLICITATION Request related to a PRESOL Notice</summary>
+<summary>SOLICITATION Request related to a PRESOL Notice_v1</summary>
 <p>
 <code><pre>
 
@@ -533,6 +533,126 @@ Examples
 </p>
 </details>
 
+<details>
+<summary>SOLICITATION Request related to a PRESOL Notice_v2</summary>
+<p>
+<code><pre>
+
+{
+    "data": {
+        "type": "o",
+        "solicitationNumber": "test-12345678901",
+        "title": "Test submit solicitation",
+        "organizationId": "100186612",
+        "classificationCode": "1260",
+        "naics": [
+            {
+                "type": "primary",
+                "code": [
+                    "111150"
+                ]
+            }
+        ],
+        "pointOfContact": [
+            {
+                "type": "primary",
+                "title": "",
+                "fullName": "test contact",
+                "email": "test@test.com",
+                "phone": "",
+                "fax": "",
+                "additionalInfo": {
+                    "content": "Primary contact info"
+                }
+            }
+        ],
+        "placeOfPerformance": {
+            "streetAddress": "1234 XYZ street",
+            "streetAddress2": "",
+            "city": {
+                "code": "75376",
+                "name": "Sterling"
+            },
+            "state": {
+                "code": "VA",
+                "name": "Virginia"
+            },
+            "country": {
+                "code": "USA",
+                "name": "USA"
+            },
+            "zip": ""
+        },
+        "archive": {
+            "type": "autocustom",
+            "date": "2022-09-09"
+        },
+        "permissions": {
+            "IVL": {
+                "create": false,
+                "delete": false,
+                "read": false,
+                "update": false
+            }
+        },
+        "solicitation": {
+            "setAside": "SBA",
+            "deadlines": {
+                "response": "2022-08-08"
+            }
+        },
+        "award": {
+            "date": "",
+            "number": "",
+            "deliveryOrderNumber": "",
+            "amount": "",
+            "lineItemNumber": "",
+            "awardee": {
+                "manual": false,
+                "name": "",
+                "duns": "",
+                "ueiSAM": "",
+                "location": {
+                    "streetAddress": "",
+                    "streetAddress2": "",
+                    "city": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "state": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "zip": "",
+                    "country": {
+                        "code": "",
+                        "name": ""
+                    }
+                }
+            },
+            "justificationAuthority": {
+                "modificationNumber": "",
+                "authority": "dictionary"
+            }
+        },
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
+        {
+            "body": "test description"
+        }
+    ],
+    "related": {
+        "opportunityId": "bc14e9f810a44e468c31fd120dd41b4f"
+    }
+}
+</pre></code>
+</p>
+</details>
+
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Publish Draft Opportunity
@@ -609,7 +729,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice</summary>
+<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice_v1</summary>
 <p>
 <code><pre>
 {
@@ -740,6 +860,140 @@ Examples
 </p>
 </details>
 
+<details>
+<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice_v2</summary>
+<p>
+<code><pre>
+{
+    "data": {
+        "type": "o",
+        "solicitationNumber": "test-12345457",
+        "title": "Test Create and Publish SOL notice",
+        "organizationId": "100186612",
+        "classificationCode": "1260",
+        "naics": [
+            {
+                "type": "primary",
+                "code": [
+                    "111150"
+                ]
+            }
+        ],
+        "pointOfContact": [
+            {
+                "type": "primary",
+                "title": "",
+                "fullName": "test contact",
+                "email": "test@test.com",
+                "phone": "",
+                "fax": "",
+                "additionalInfo": {
+                    "content": "Primary contact info"
+                }
+            }
+        ],
+        "placeOfPerformance": {
+            "streetAddress": "1234 XYZ street",
+            "streetAddress2": "",
+            "city": {
+                "code": "75376",
+                "name": "Sterling"
+            },
+            "state": {
+                "code": "VA",
+                "name": "Virginia"
+            },
+            "country": {
+                "code": "USA",
+                "name": "USA"
+            },
+            "zip": ""
+        },
+        "archive": {
+            "type": "autocustom",
+            "date": "2022-09-09"
+        },
+        "permissions": {
+            "IVL": {
+                "create": false,
+                "delete": false,
+                "read": false,
+                "update": false
+            }
+        },
+        "solicitation": {
+            "setAside": "SBA",
+            "deadlines": {
+                "response": "2022-08-08"
+            }
+        },
+        "award": {
+            "date": "",
+            "number": "",
+            "deliveryOrderNumber": "",
+            "amount": "",
+            "lineItemNumber": "",
+            "awardee": {
+                "manual": false,
+                "name": "",
+                "duns": "",
+                "ueiSAM":"",
+                "location": {
+                    "streetAddress": "",
+                    "streetAddress2": "",
+                    "city": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "state": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "zip": "",
+                    "country": {
+                        "code": "",
+                        "name": ""
+                    }
+                }
+            },
+            "justificationAuthority": {
+                "modificationNumber": "",
+                "authority": "dictionary"
+            }
+        },
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
+        {
+            "body": "test description"
+        }
+    ],
+    "related": {
+        "opportunityId": "f8ccfca94d794e07855ebe0d6f55c7d5"
+    },
+    "resources": [
+        {
+            "attType": "link",
+            "link": "https://faaco.faa.gov/index.cfm/attachment/download/84723",
+            "description": "test attachment pdf link"
+        },
+        {
+            "attType": "file",
+            "content": "SGVsbG8=",
+            "resourceName": "Hello.txt",
+            "fileType": "text/plain",
+            "packageAccessLevel": "private",
+            "explicitAccess": "1"
+        }
+    ]
+}
+</pre></code>
+</p>
+</details>
+
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Revise Published Opportunity
@@ -815,7 +1069,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>ITB Request</summary>
+<summary>ITB Request_v1</summary>
 <p>
 <code><pre>
 {
@@ -926,6 +1180,121 @@ Examples
 </pre></code>
 </p>
 </details>
+
+<details>
+<summary>ITB Request_v2</summary>
+<p>
+<code><pre>
+{
+    "data": {
+        "solicitationNumber": "ITB_Test1_Update",
+        "title": "TST_T1_update",
+        "type": "i",
+        "classificationCode": "13",
+        "organizationId": "100186612",
+        "naics": [
+            {
+                "type": "primary",
+                "code": [
+                    "111150"
+                ]
+            }
+        ],
+        "pointOfContact": [
+            {
+                "additionalInfo": {
+                    "content": ""
+                },
+                "email": "",
+                "fax": "",
+                "fullName": "GSA",
+                "phone": "",
+                "title": "",
+                "type": "primary"
+            }
+        ],
+        "placeOfPerformance": {
+            "city": {
+                "code": "",
+                "name": ""
+            },
+            "country": {
+                "code": "",
+                "name": ""
+            },
+            "state": {
+                "code": "",
+                "name": ""
+            },
+            "streetAddress": "",
+            "streetAddress2": "",
+            "zip": ""
+        },
+        "award": {
+            "date": "2019-08-08T11:20:20-05:00",
+            "number": "12345",
+            "deliveryOrderNumber": "",
+            "amount": "number",
+            "lineItemNumber": "",
+            "awardee": {
+                "name": "",
+                "duns": "",
+                "ueiSAM":"",
+                "location": {
+                    "streetAddress": "",
+                    "streetAddress2": "",
+                    "city": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "state": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "zip": "",
+                    "country": {
+                        "code": "",
+                        "name": ""
+                    }
+                }
+            },
+            "justificationAuthority": {
+                "modificationNumber": "",
+                "authority": "dictionary"
+            }
+        },
+        "permissions": {
+            "IVL": {
+                "create": true,
+                "delete": true,
+                "read": true,
+                "update": true
+            }
+        },
+        "solicitation": {
+            "setAside": "SBA",
+            "deadlines": {
+                "response": "2019-08-08T11:20:20-05:00"
+            }
+        },
+        "archive": {
+            "type": "autocustom",
+            "date": "2019-09-09"
+        },
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
+        {
+            "body": "Description_updated"
+        }
+    ]
+}
+</pre></code>
+</p>
+</details>
+
 
 <details>
 <summary>PRESOL Request</summary>
@@ -1410,7 +1779,7 @@ data.award.amount | Number | Award Amount
 data.award.lineitemNumber | string |  Award Line Item Number
 data.award.awardee | JSON |  
 data.award.awardee.name | string |  Awardee Name
-data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS
+data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS (v2 - Deprecated)
 data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
 data.award.awardee.location | JSON |  Awardee Location
 data.award.awardee.location.streetAddress | string | Awardee Street Address 1
@@ -2373,13 +2742,13 @@ N/A
 
 Request Parameters
 
-Parameter Name | Parameter Type | Data Type  | Required | Description
----------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized user ID
+Parameter Name | Parameter Type | Data Type  | Required | Description| Applicable Versions
+---------------|----------------|------------|----------|------------|-----
+Authorization | Header |  string | Yes | Valid and authorized user ID 
 api_key | query | string | Yes | Valid System Account API Key
-opportunityId | query | string | Yes | Opportunity ID
-entityId | query | string | No | (**Plan to deprecate in the future**) Entity ID - Unique Entity Identifier DUNS #
-ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST (Will be implemented for v2)
+opportunityId | query | string | Yes | Opportunity IDv1
+entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2 - Deprecated
+ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST| v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2388,7 +2757,7 @@ Responses
 HTTP Status Code | Response Type |  Description
 -----------------|---------------|------------
 ivl | JSON | 
-ivl.duns | string | (**Plan to deprecate in the future**) Unique Entity Identifier DUNS number for the business entity
+ivl.duns | string | Unique Entity Identifier DUNS number for the business entity (v2 - Deprecated)
 ivl.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
 ivl.cageNumber | string | Identifies a given facility at a specific location
 ivl.name | string | Name of business entity
@@ -2411,12 +2780,70 @@ ivl.naicsList | Array |  Business entity’s NAICS
 Examples
 
 <details>
-<summary>Get IVL Response</summary>
+<summary>Get IVL Response_v1</summary>
 <p>
 <code><pre>
 ivl": [
   {
     "duns": "6759999520",
+    "cageNumber": "3ABC1",
+    "name": "TECH SYSTEMS, INC.",
+    "addedOn": "2019-03-04 15:06:11",
+    "contacts": [
+      {
+        "email": "johndoe@techsystems.com",
+        "firstName": "JOHN",
+        "lastName": "DOE",
+        "phoneNumber": "7031234567",
+        "type": "Government Business POC"
+      }
+    ],
+    "addresses": [
+      {
+        "streetAddress": "P.O. BOX 123",
+        "city": "SOMECITY",
+        "state": "VIRGINIA",
+        "zip": "22102",
+        "country": "UNITED STATES",
+        "addressType": "mailing"
+      }
+    ],
+    "naicsList": [
+      "423430",
+      "511210",
+      "518210",
+      "541330",
+      "541511",
+      "541512",
+      "541513",
+      "541519",
+      "541611",
+      "541618",
+      "541990",
+      "611430",
+      "811212"
+    ]
+  }
+]
+  },
+  "page": {
+    "size": 10,
+    "totalElements": 1,
+    "totalPages": 1,
+    "number": 0
+  }
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get IVL Response_v2</summary>
+<p>
+<code><pre>
+ivl": [
+  {
+    "duns": "6759999520",
+    "ueiSAM": "025114695AST",
     "cageNumber": "3ABC1",
     "name": "TECH SYSTEMS, INC.",
     "addedOn": "2019-03-04 15:06:11",
@@ -2656,7 +3083,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Get Authorized Party List Response</summary>
+<summary>Get Authorized Party List Response_v1</summary>
 <p>
 <code><pre>
 {
@@ -2707,6 +3134,62 @@ Examples
 </p>
 </details>
 
+<details>
+<summary>Get Authorized Party List Response_v2</summary>
+<p>
+<code><pre>
+{
+    "_embedded": {
+        "authorizedPartyList": [
+            {
+                "idType": "resource",
+                "resourceName": "Secure 2.png",
+                "requestId": "cfc4c057a13e4a2c91741e46399d4a7d",
+                "actionType": "pending",
+                "fName": "Data",
+                "lName": "Entry",
+                "email": "reitestuser.de@gmail.com",
+                "phone": "1+9734323019",
+                "contractorName": "REI SYSTEMS, INC.",
+                "duns": "608999520",
+                "ueiSAM": "025114695AST",
+                "cageCode": "1DJP1"
+            },
+            {
+                "idType": "resource",
+                "resourceName": "Secure 1.png",
+                "requestId": "7900084914ea400e82db0152cecfbcaf",
+                "actionType": "pending",
+                "fName": "Data",
+                "lName": "Entry",
+                "email": "reitestuser.de@gmail.com",
+                "phone": "1+9734323019",
+                "contractorName": "REI SYSTEMS, INC.",
+                "duns": "608999520",
+                "ueiSAM": "025114695AST",
+                "cageCode": "1DJP1"
+            },
+            {
+                "idType": "notice",
+                "requestId": "4f4eeb29dcd2411dbc5a89ab0243f7c8",
+                "actionType": "approved",
+                "fName": "Data",
+                "lName": "Entry",
+                "email": "reitestuser.de@gmail.com",
+                "phone": "1+9734323019",
+                "contractorName": "REI SYSTEMS, INC.",
+                "duns": "608999520",
+                "ueiSAM": "025114695AST",
+                "cageCode": "1DJP1”
+            }
+        ]
+    }
+}
+</pre></code>
+</p>
+</details>
+
+
 ### Add Authorized Party ###
 
 ------- | -------
@@ -2734,7 +3217,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Add Authorized Party Request</summary>
+<summary>Add Authorized Party Request_v1</summary>
 <p>
 <code><pre>
 {
@@ -2748,6 +3231,21 @@ Examples
 </pre></code>
 </p>
 </details>
+
+<details>
+<summary>Add Authorized Party Request_v2</summary>
+<p>
+<code><pre>
+{
+"lname":"test",
+"fname":"test123",
+"email":"testuser.de@gmail.com",
+"ueiSAM": "025114695AST"
+}
+</pre></code>
+</p>
+</details>
+
 
 ### Check Unique Solicitation Number ###
 
@@ -2817,7 +3315,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Get Related Opportunities Response</summary>
+<summary>Get Related Opportunities Response_v1</summary>
 <p>
 <code><pre>
 {
@@ -2834,6 +3332,46 @@ Examples
           "number": "awd123",
           "awardee": {
             "duns": null,
+            "name": null,
+            "location": null
+          },
+          "lineItemNumber": null,
+          "deliveryOrderNumber": "donumber"
+        },
+        "title": "Test Justification 4 conv 1",
+        "id": "96ba2e5833b14cecb3c2b3ac1ba3b56e",
+        "opportunityId": "96ba2e5833b14cecb3c2b3ac1ba3b56e"
+      },
+      "archived": false,
+      "cancelled": false,
+      "latest": false,
+      "deleted": false
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get Related Opportunities Response_v2</summary>
+<p>
+<code><pre>
+{
+  "recipientCount": 0,
+  "unparsableCount": 0,
+  "count": 1,
+  "totalAwardAmt": 0,
+  "relatedOpportunities": [
+    {
+      "data": {
+        "award": {
+          "date": null,
+          "amount": null,
+          "number": "awd123",
+          "awardee": {
+            "duns": null,
+            "ueiSAM": "null",
             "name": null,
             "location": null
           },
@@ -3539,9 +4077,9 @@ data.award.deliverOrderNumber | string | 255 characters| | No | Award Delivery O
 data.award.amount | number |64 digits |  | Yes only for type = a (Award) | Award Amount| v1 <br> v2
 data.award.lineitemNumber | string |255 characters | | No | Contract Line item Number| v1 <br> v2
 data.award.awardee | JSON | NA| NA | NA |Awardee details; Only for type = a (Award)| v1 <br> v2
-data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
-data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
-data.award.awardee.ueiSAM | string | 12 alphanumeric | | No | No; Either awardee.name or awardee.ueiSAM is required <br> **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
+data.award.awardee.name | string | 1000 characters | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
+data.award.awardee.duns | string | 9 digits | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
+data.award.awardee.ueiSAM | string | 12 alphanumeric | No | No; Either awardee.name or awardee.ueiSAM is required <br> **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
 data.award.awardee.location | JSON |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**| v1 <br> v2
 data.award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress2 | string | | | No | Awardee Street Address 2| v1 <br> v2
@@ -3918,8 +4456,8 @@ fname | string | | Yes | First name of the user| v1 <br> v2
 lname | string | | Yes | Last name of the user| v1 <br> v2
 email | string | | Yes | Email Id of the user| v1 <br> v2
 contractorName | string | | Yes | Contractor Name| v1 <br> v2 - Deprecated
-duns | string | | Yes | (**Plan to deprecate in the future**) Unique Entity Identifier DUNS#| v1
-ueiSAM | string | | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.| v1 <br> v2
+duns | string | | Yes |  Unique Entity Identifier DUNS#| v1 <br> v2- Deprecated
+ueiSAM | string | | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.|  v2
 cageCode | string | | Yes | Cage Code| v1 <br> v2 - Deprecated
 
 <p><small><a href="#">Back to top</a></small></p>
