@@ -3128,7 +3128,7 @@ data.pointOfContact.additionalInfo.<br/>content | String | | | No  | No | Detail
 data.placeOfPerformance | JSON | NA | NA | NA | NA | NA | NA
 data.placeOfPerformance.<br/>streetAddess | string | | | No | No | Pop Address | v1 <br> v2
 data.placeOfPerformance.<br/>streetAddess2 | string | | | No | No | Pop Address2 | v1 <br> v2
-data.placeOfPerformance.city | JSON | NA | NA | NA | NA | Pop City |NA | NA |NA
+data.placeOfPerformance.city | JSON | NA | NA | NA | NA | Pop City |NA
 data.placeOfPerformance.city.<br/>code | string | | | No | No | Pop City code | v1 <br> v2
 data.placeOfPerformance.city.<br/>name | string | | | No | No | Pop City name| v1 <br> v2
 data.placeOfPerformance.state | JSON |NA | NA | NA | NA | Pop City state| NA
