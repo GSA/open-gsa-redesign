@@ -3400,7 +3400,7 @@ Examples
 ### Create and Update Opportunity Contract JSON
 
 
-<div id="create-update-json">
+<div id="create-update-json-v1">
 <details>
 <summary>Create_Update_Opportunity_Contract_JSON_v1</summary>
 <p>
@@ -3520,7 +3520,7 @@ Examples
 </details>
 </div>
 
-<div id="create-update-json">
+<div id="create-update-json-v2">
 <details>
 <summary>Create_Update_Opportunity_Contract_JSON_v2</summary>
 <p>
@@ -3752,7 +3752,7 @@ reason | string |  | No | Publish reason| v1 <br> v2
 ### Create and Publish Opportunity Contract JSON
 
 
-<div id="create-publish-json">
+<div id="create-publish-json-v1">
 <details>
 <summary>Create_Publish_Opportunity_Contract_JSON_v1</summary>
 <p>
@@ -3886,7 +3886,7 @@ reason | string |  | No | Publish reason| v1 <br> v2
 </details>
 </div>
 
-<div id="create-publish-json">
+<div id="create-publish-json-v2">
 <details>
 <summary>Create_Publish_Opportunity_Contract_JSON_v2</summary>
 <p>
@@ -4414,7 +4414,7 @@ ivlView | string | forcedon, forcedoff | No | Indicates whether vendors can view
 
 ### Vendor Data Contract JSON
 
-<div id="vendor-data-json" title="Click to view Vendor Data Contract">
+<div id="vendor-data-json-v1" title="Click to view Vendor Data Contract-v1">
 <details>
 <summary>Vendor_Data_Contract_JSON_v1</summary>
 <p>
@@ -4432,7 +4432,7 @@ ivlView | string | forcedon, forcedoff | No | Indicates whether vendors can view
 </details>
 </div>
 
-<div id="vendor-data-json" title="Click to view Vendor Data Contract">
+<div id="vendor-data-json-v2" title="Click to view Vendor Data Contract-v2">
 <details>
 <summary>Vendor_Data_Contract_JSON_v2</summary>
 <p>
