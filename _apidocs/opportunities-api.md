@@ -6682,6 +6682,6 @@ Date | Version | Description
 11/04/2019| v0.92 | Updated the field lengths for contact full name and awardee name fields for create Opportunity, Create and Publish Opportunity Contract Jsons. Updated the Error messages for these fields<br>Added Future Implementation for UEI SAM# Validation and Type of Connection. Task/Delivery Order number is updated to be a non required field for Justification submission
 11/12/2019| v1.0 | Initial Release Finalized
 12/04/2019| v1.01 | Minor updates to UEI(SAM) and UEI(DUNS) info
-12/31/2019| v1.02| Updates to UEI(SAM) and UEI(DUNS) info
+1/3/2020| v1.02| Updates to UEI(SAM) and UEI(DUNS) info
 
 <p><small><a href="#">Back to top</a></small></p>
