@@ -67,8 +67,6 @@ paths:
       tags:
         - search
         
-        
-        
         ############   temp note 1 start -  there should be one of these for each of the Expected Results categories.  Notice $ref part refers to the 'Components' section lower down  #############
 
       responses:
@@ -80,16 +78,116 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Web_Results'
+
       responses:
         '200':
-          description: An array of search results
+          description: Total number of results available
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Text_best_bets'
+                  $ref: '#/components/schemas/web_total'
+
+      responses:
+        '200':
+          description: Offset for the subsequent results
+          content:
+            application/json:
+              schema:
+                type: 
+                items:
+                  $ref: '#/components/schemas/web_next_offset'
                   
+      responses:
+        '200':
+          description: Spelling correction for your search term
+          content:
+            application/json:
+              schema:
+                type: 
+                items:
+                  $ref: '#/components/schemas/web_spelling_correction'
+
+      responses:
+        '200':
+          description: Graphic best bets, which appear only when the query matches the text of the best bet’s title, description, or keywords.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Graphic_best_bets'
+                  
+     responses:
+        '200':
+          description: 
+          content:
+            application/json:
+              schema:
+                type: 
+                items:
+                  $ref: '#/components/schemas/health_topics'
+                  
+     responses:
+        '200':
+          description: 
+          content:
+            application/json:
+              schema:
+                type: 
+                items:
+                  $ref: '#/components/schemas/job_openings'
+                  
+     responses:
+        '200':
+          description: 
+          content:
+            application/json:
+              schema:
+                type: 
+                items:
+                  $ref: '#/components/schemas/recent_tweets'
+
+     responses:
+        '200':
+          description: Recent news from our Search.gov indexes. Only available with commercial results.
+          content:
+            application/json:
+              schema:
+                type: 
+                items:
+                  $ref: '#/components/schemas/recent_news'
+
+     responses:
+        '200':
+          description: Recent video news from our Search.gov indexes. Only available with commercial results. 
+          content:
+            application/json:
+              schema:
+                type: 
+                items:
+                  $ref: '#/components/schemas/recent_video_news'
+
+     responses:
+        '200':
+          description: Federal Register documents
+          content:
+            application/json:
+              schema:
+                type: 
+                items:
+                  $ref: '#/components/schemas/federal_register_documents'
+
+     responses:
+        '200':
+          description: An array of related search terms, which are based on recent, common searches on the your site. Users will need to render each of these into a link that would make a new API call with that query term as they query
+          content:
+            application/json:
+              schema:
+                type: 
+                items:
+                  $ref: '#/components/schemas/related_search_terms'
                   
              ############   temp note 1 end -   #############
 
@@ -106,11 +204,24 @@ servers:
 components:
   schemas:
   
-      ####### There needs be a distince schema section for each of the Expected Results.  So, there should be ~12 schema sections.   #####
+      ####### There needs be a distinct schema section for each of the Expected Results.  So, there should be ~12 schema sections.   #####
 
   
     Web_Results:
-    
+      type: object
+      properties:
+        ID:
+          type: integer
+          description: Generated unique identifier.
+        ITEM_NUM:
+          type: string
+          description: Item number.
+        AWARD_YEAR:
+          type: string
+          description: Award Year.
+        ORIGIN_AIRPORT_ABBREV:
+          type: string
+          description: Origin Airport Abbreviation.    
     
     ####### old material below  #####
     

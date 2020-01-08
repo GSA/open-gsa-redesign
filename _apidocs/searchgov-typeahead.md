@@ -5,11 +5,11 @@ banner-heading: Search.gov Type-Ahead API
 
 ## Overview
 
-This API exposes the type-ahead suggestions that usually appear below your search box as searchers enter their search terms.
+This API is specific to Search.gov and exposes the type-ahead suggestions that usually appear below your search box as searchers enter their search terms.
 
 ## Getting Started
 
-The endpoint is `https://api.gsa.gov/technology/searchgov/v2/sayt'.
+The endpoint is `https://api.gsa.gov/technology/searchgov/v2/sayt`.
 
 You must use https. You can find your access key on the API Access Key page of the Search.gov Admin Center.
 
@@ -19,10 +19,10 @@ You must use https. You can find your access key on the API Access Key page of t
   
   Two parameters are required: (1) `name`, and (2) `q`.
   
-  `https://api.gsa.gov/technology/searchgov/v2/sayt?name=dawn-h1&q={YOUR_SEARCH_TERM}
+  `https://api.gsa.gov/technology/searchgov/v2/sayt?name=YOUR_SITE_HANDLE&q=YOUR_SEARCH_TERM`
 
-  * The value for the name parameter is your site handle on the [Settings](https://search.usa.gov/sites/7905/setting/edit) page.
-  *	Replace {YOUR\_SEARCH_TERM} with a word or phrase of your choice. A minimum of a 2-character term is required.
+  * The value for the `name` parameter is your site handle on the Settings page. You can find this through the Search.gov Admin Center > Your Search Site > Dashboard > Settings.
+  *	Replace `YOUR_SEARCH_TERM` with a word or phrase of your choice. A minimum of a 2-character term is required.
 
 ## Expected Results
 
