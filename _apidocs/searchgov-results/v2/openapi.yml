@@ -8,12 +8,11 @@ paths:
   /i14y:
     get:
       summary: Search Results
-      description: |
-        This endpoint returns search results.
+      description: 'This endpoint returns search results.'
       parameters:
         - name: affiliate
           in: query
-          description: 'Site handle. Example: ''usasearch'''
+          description: 'Site handle.'
           required: true
           schema:
             type: string
@@ -27,14 +26,14 @@ paths:
             format: string
         - name: query
           in: query
-          description: 'Search term.  Example: ''car'''
+          description: 'Search term.'
           required: false
           schema:
             type: string
             format: string
         - name: enable_highlighting
           in: query
-          description: 'Enables or disables the highlighting of keywords in the results. The default is 'true' so use 'false' to disable highlighting.'
+          description: 'Enables or disables the highlighting of keywords in the results. The default is ''true' so use false' to disable highlighting.'
           required: false
           schema:
             type: boolean
@@ -50,7 +49,7 @@ paths:
             default: 20
         - name: offset
           in: query
-          description: 'Defines the number of results you want to skip from the first result. The default is 0 and the maximum is 999.'
+          description: 'Defines the number of results you want to skip from the first result. The offset is used for implementing pagination. The default is 0 and the maximum is 999.'
           required: false
           schema:
             type: integer
@@ -58,7 +57,7 @@ paths:
             default: 0
         - name: sort_by
           in: query
-          description: 'Sort the results by date. The default is sort by relevance.'
+          description: Allowed variables are date and relevance. The default sort is relevance. Add `sort_by = date` to sort by date.
           required: false
           schema:
             type: string
@@ -67,8 +66,6 @@ paths:
       tags:
         - search
         
-        ############   temp note 1 start -  there should be one of these for each of the Expected Results categories.  Notice $ref part refers to the 'Components' section lower down  #############
-
       responses:
         '200':
           description: An array of search results
@@ -189,9 +186,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/related_search_terms'
                   
-             ############   temp note 1 end -   #############
-
-                  
                   
         default:
           description: Unexpected error
@@ -201,7 +195,8 @@ paths:
                 $ref: '#/components/schemas/Error'
 servers:
   - url: 'https://api.gsa.gov/technology/searchgov/v2/results'
-components:
+
+acomponents:
   schemas:
   
       ####### There needs be a distinct schema section for each of the Expected Results.  So, there should be ~12 schema sections.   #####
@@ -223,29 +218,3 @@ components:
           type: string
           description: Origin Airport Abbreviation.    
     
-    ####### old material below  #####
-    
-    
-      type: object
-      properties:
-        ID:
-          type: integer
-          description: Generated unique identifier.
-        ITEM_NUM:
-          type: string
-          description: Item number.
-        AWARD_YEAR:
-          type: string
-          description: Award Year.
-        ORIGIN_AIRPORT_ABBREV:
-          type: string
-          description: Origin Airport Abbreviation.
-    Error:
-      type: object
-      properties:
-        message:
-          type: string
-        required_fields:
-          type: string
-        example:
-          type: string
