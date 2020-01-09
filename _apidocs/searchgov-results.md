@@ -133,7 +133,7 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
       | position\_id        			| ID of the job opening
       | position\_title     			| Position title of the job opening
       | position\_uri       			| URI of the job opening
-      | apply\_uri     					| An application which includes the URI of the application
+      | apply\_uri     					| An array which includes the URI of the application
       | position\_location\_display     | Text of the position location
       | position\_location          	| An array of locations of the job opening      
       | organization\_name  			| Organization name of the job opening
