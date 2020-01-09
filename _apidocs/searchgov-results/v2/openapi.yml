@@ -74,37 +74,17 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Web_Results'
-
-      responses:
+                  $ref: '#/components/schemas/web'
+ 
+     responses:
         '200':
-          description: Total number of results available
+          description: Text best bets, which appear only when the query matches the text of the best bet’s title, description, or keywords.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/web_total'
-
-      responses:
-        '200':
-          description: Offset for the subsequent results
-          content:
-            application/json:
-              schema:
-                type: 
-                items:
-                  $ref: '#/components/schemas/web_next_offset'
-                  
-      responses:
-        '200':
-          description: Spelling correction for your search term
-          content:
-            application/json:
-              schema:
-                type: 
-                items:
-                  $ref: '#/components/schemas/web_spelling_correction'
+                  $ref: '#/components/schemas/text_best_bets'r
 
       responses:
         '200':
@@ -114,7 +94,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Graphic_best_bets'
+                  $ref: '#/components/schemas/graphic_best_bets'
                   
      responses:
         '200':
@@ -122,7 +102,7 @@ paths:
           content:
             application/json:
               schema:
-                type: 
+                type: array
                 items:
                   $ref: '#/components/schemas/health_topics'
                   
@@ -132,7 +112,7 @@ paths:
           content:
             application/json:
               schema:
-                type: 
+                type: array
                 items:
                   $ref: '#/components/schemas/job_openings'
                   
@@ -142,7 +122,7 @@ paths:
           content:
             application/json:
               schema:
-                type: 
+                type: array
                 items:
                   $ref: '#/components/schemas/recent_tweets'
 
@@ -152,7 +132,7 @@ paths:
           content:
             application/json:
               schema:
-                type: 
+                type: array
                 items:
                   $ref: '#/components/schemas/recent_news'
 
@@ -162,7 +142,7 @@ paths:
           content:
             application/json:
               schema:
-                type: 
+                type: array
                 items:
                   $ref: '#/components/schemas/recent_video_news'
 
@@ -172,7 +152,7 @@ paths:
           content:
             application/json:
               schema:
-                type: 
+                type: array
                 items:
                   $ref: '#/components/schemas/federal_register_documents'
 
@@ -182,7 +162,7 @@ paths:
           content:
             application/json:
               schema:
-                type: 
+                type: array
                 items:
                   $ref: '#/components/schemas/related_search_terms'
                   
@@ -196,25 +176,357 @@ paths:
 servers:
   - url: 'https://api.gsa.gov/technology/searchgov/v2/results'
 
-acomponents:
+components:
   schemas:
-  
-      ####### There needs be a distinct schema section for each of the Expected Results.  So, there should be ~12 schema sections.   #####
+    query:
+        type: string
+        description: We return the query to you for use in the results page display
+    web:
+        type: array
+        description: An array of data about the web results
+        properties:
+            total: 
+                type: integer
+                description:  Total number of results available
+            next_offset: 
+                type: integer
+                description:  Offset for the subsequent results.
+            spelling_correction: 
+                type: string
+                description:  Spelling correction for your search term.            
+            results: 
+                type: array
+                description: Results are an array of arrays, each containing the properties listed below.
+                properties:
+                    title:
+                        type: string
+                        description: Title of the document
+                    url:
+                        type: string
+                        description: URL of the document
+                    snippet:
+                        type: string
+                        description: Summary of the document
+                    publication_date:
+                        type: string
+                        format: date
+                        description: Publication date of the document (not available on commercial results) 
+    text_best_bets:
+        type: array
+        properties: 
+            id:
+                type: integer
+                description: ID of the best bet
+            title:
+                type: string
+                description: Title of the best bet 
+            url:
+                type: string
+                description: URL of the best bet
+            description:
+                type: string
+                description: Description of the best bet
 
-  
-    Web_Results:
-      type: object
-      properties:
-        ID:
-          type: integer
-          description: Generated unique identifier.
-        ITEM_NUM:
-          type: string
-          description: Item number.
-        AWARD_YEAR:
-          type: string
-          description: Award Year.
-        ORIGIN_AIRPORT_ABBREV:
-          type: string
-          description: Origin Airport Abbreviation.    
-    
+    graphics_best_bets:
+        type: array
+        properties: 
+            id:
+                type: integer
+                description: ID of the graphic best bet
+            title:
+                type: string
+                description: Title of the graphic best bet 
+            title_url:
+                type: string
+                description: URL of the graphic best bet
+            image_url:
+                type: string
+                description: URL of the image
+            image_alt_text:
+                type: string
+                description: Alternative text of the image
+            links:
+                type: array
+                properties:
+                    title:
+                        type: string
+                        description: Title of the link
+                    url:
+                        type: string
+                        description: URL of the best bet link
+                        
+    health_topics:
+        type: array
+        properties: 
+            title:
+                type: string
+                description: Title of the health topic 
+            url:
+                type: string
+                description: URL of the health topic
+            snippet:
+                type: string
+                description: snippet of the health topic
+            related_topics:
+                type: array
+                properties:
+                    title:
+                        type: string
+                        description: Title of the related topic
+                    url:
+                        type: string
+                        description: URL of the related topic
+            related_sites:
+                type: array
+                properties:
+                    title:
+                        type: string
+                        description: Title of the related site
+                    url:
+                        type: string
+                        description: URL of the related site
+                        
+    job_openings:
+        type: array
+        properties: 
+            position_id:
+                type: integer
+                description: ID of the job opening 
+            position_title:
+                type: string
+                description: Position title of the job opening
+            position_uri:
+                type: string
+                description: URI of the job opening
+            apply_uri:
+                type: array
+                properties:
+                    uri:
+                        type: string
+                        description: URI of the job opening            
+            position_location_display:
+                type: string
+                description: Text of the position location
+            position_location:
+                type: array
+                properties:
+                    location_name:
+                        type: string
+                        description: City/State of job location
+                    country_code:
+                        type: string
+                        description: Country of job location
+                    country_sub-division_code:
+                        type: string
+                        description: State or subdivision of job location
+                    longitude:
+                        type: number
+                        description: Longitude of job location
+                    latitude:
+                        type: number
+                        description: Latitude of job location
+            organization_name:
+                type: string
+                description: Organization name of the job opening
+            department_name:
+                type: string
+                description: Name of the department with opening
+            sub_agency:
+                type: string
+                description: Name of the department's agency with opening
+            job_category:
+                type: array
+                properties:
+                    title:
+                        type: string
+                        description: Title of the related topic
+                    url:
+                        type: string
+                        description: URL of the related topic
+            job_grade:
+                type: array
+                properties:
+                    code:
+                        type: string
+                        description: Job code
+            position_schedule:
+                type: array
+                properties:
+                    name:
+                        type: string
+                        description: Type of schedule for job
+                    code:
+                        type: string
+                        description: Code for job type
+            position_offering_type:
+                type: array
+                properties:
+                    name:
+                        type: string
+                        description: Position type (permanent or temporary)
+                    code:
+                        type: string
+                        description: Code for position type
+            qualification_summary:
+                type: string
+                description: Summary of the job's required qualifications
+            position_renumeration:
+                type: array
+                properties:
+                    minimum_range:
+                        type: string
+                        description: Minimum payment
+                    maximum_range:
+                        type: string
+                        description: Maximum payment
+                    rate_interval_code:
+                        type: string
+                        description: Frequency of pay listed above
+            position_start_date:
+                type: string
+                description: Start date of the job opening
+            position_end_date:
+                type: string
+                description: End date of the job opening
+            publication_start_date:
+                type: string
+                description: Application start date
+            appication_close_date:
+                type: string
+                description: Application close date
+            position_formatted_description:
+                type: array
+                properties:
+                    label:
+                        type: string
+                        description: Type of added formatting to job posting
+                    label_description:
+                        type: string
+                        description: Additional text for customizing posting
+            user_area:
+                type: array
+                properties:
+                    details:
+                    type: array
+                    properties:
+                        job_summary:
+                            type: string
+                            description: Summary of the job
+                        who_may_apply:
+                            type: array
+                            properties:
+                                name:
+                                    type: string
+                                code:
+                                    type: string
+                        low_grade:
+                            type: string
+                        high_grade:
+                            type: string
+                        promotion_potential:
+                            type: string
+                        hiring_path:
+                            type: array
+                            properties:
+                                hiring_path:
+                                type: string
+                        total_openings:
+                            type: string
+                            description: Total number of openings
+                        agency_marketing_statement:
+                            type: string
+                            description: Marketing information about the agency posting the job
+                        travel code:
+                            type: string
+                            descripton: Travel code
+                        apply_online_url:
+                            type: string
+                            description: URL of the job application
+                        detail_status_url:
+                            type: string
+                            description: URL of job application status
+                    is_radial_search:
+                        type: boolean
+                url:
+                    type: string
+                    description: URL for job details
+                locations:
+                    type: array
+                        locations:
+                        type: string
+                        description: Locations of job opening
+                minimum: 
+                    type: integer
+                    description: Minimum salary of the job opening
+                maximum:
+                    type: integer
+                    description: Maximum salary of the job opening
+                rate_interval_code:
+                    type: string
+                    description: Rate interval code of the job opening
+                org_codes:
+                    type: string
+                    description: Organization codes
+                    
+    recent_tweets:
+        type: array
+        properties: 
+            text:
+                type: string
+                description: Text of the tweet
+            url:
+                type: string
+                description: URL of the tweet 
+            name:
+                type: string
+                description: Name of the tweet author
+            screen_name:
+                type: string
+                description: Screen name of the tweet author
+            profile_image_url:
+                type: string
+                description: URL of the tweet author profile image
+            created_at:
+                type: string
+                description: Date of creation
+
+    federal_register_documents:
+        type: array
+        properties: 
+            id:
+                type: integer
+                description: The ID of the document as known to usasearch
+            document_number:
+                type: string
+                description: Document number of the federal register document 
+            title:
+                type: string
+                description: 
+            url:
+                type: string
+                description: 
+            agency:
+                type: array
+                properties:
+                    agency_names:
+                        type: string
+                        description: agency names of the federal register document
+            page_length:
+                type: integer
+                description: Page length of the federal register document
+            start_page:
+                type: integer
+                description: Start page of the federal register document
+            end_page:
+                type: integer
+                description: End page of the federal register document
+            publication_date:
+                type: string
+                description: Publication date of the federal register document
+            comments_close_date:
+                type: string
+                description: Comments close date of the federal register document
+
+    related_search_terms:
+        type: array
+        description: An array of related search terms, which are based on recent, common searches on the your site. Users will need to render each of these into a link that would make a new API call with that query term as they query

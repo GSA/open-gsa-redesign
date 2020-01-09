@@ -156,7 +156,7 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
       | minimum             			| Minimum salary of the job opening
       | maximum            				| Maximum salary of the job opening
       | rate\_interval\_code			| Rate interval code of the job opening
-      | org\_codes						| Rate interval code of the job opening
+      | org\_codes						| Organization codes
 
   * ### recent_tweets
 
