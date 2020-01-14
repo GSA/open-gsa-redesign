@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: Search.gov Results API
+  description: >-
+    Search.gov is a service of the General Services Administration, providing search engine capability to federal agencies for their public websites. This API This API exposes all relevant Search.gov results “modules” in a single JSON call.
+  version: 2.0
+paths:
+  /i14y:
+    get:
+      summary: Search Results
+      description: 'This endpoint returns search results.'
+      parameters:
+        - name: name
+          in: query
+          description: 'The value for the `name` parameter is your site handle on the Settings page.'
+          required: true
+          schema:
+            type: string
+            format: string
+        - name: q
+          in: query
+          description: 'The Search.gov key used to access the API'
+          required: true
+          schema:
+            type: string
+            format: string
+        
+      tags:
+        - search
+        
+      responses:
+        '200':
+          description: You will see an array of suggestions. Suggestions are derived from the searches performed on your website. Up to five suggestions related to your visitors' search term are returned and are updated in near real time. A given term/phrase must be searched 10 times in a 24 hour period to appear as a suggestion.
+            application/json:
+              schema:
+                type: array
+                items:

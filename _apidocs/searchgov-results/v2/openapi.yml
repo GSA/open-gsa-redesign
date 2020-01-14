@@ -78,13 +78,13 @@ paths:
  
      responses:
         '200':
-          description: Text best bets, which appear only when the query matches the text of the best bet’s title, description, or keywords.
+          description: Text best bets, which appear only when the query matches the text of the best bet’s title, description, or keywords. This array can contain up to two more arrays.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/text_best_bets'r
+                  $ref: '#/components/schemas/text_best_bets'
 
       responses:
         '200':
@@ -98,7 +98,7 @@ paths:
                   
      responses:
         '200':
-          description: 
+          description: Health Topics
           content:
             application/json:
               schema:
@@ -108,7 +108,7 @@ paths:
                   
      responses:
         '200':
-          description: 
+          description: Job Openings
           content:
             application/json:
               schema:
@@ -118,7 +118,7 @@ paths:
                   
      responses:
         '200':
-          description: 
+          description: Recent Tweets
           content:
             application/json:
               schema:
@@ -370,7 +370,7 @@ components:
             qualification_summary:
                 type: string
                 description: Summary of the job's required qualifications
-            position_renumeration:
+            position_remuneration:
                 type: array
                 properties:
                     minimum_range:

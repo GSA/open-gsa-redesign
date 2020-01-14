@@ -144,7 +144,7 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
       | position\_schedule		  		| An array of job schedule
       | position\_offering\_type		| An array of job type
       | qualification\_summary		  	| Summary of the job's required qualifications
-      | position\_renumeration		  	| An array of salary information
+      | position\_remuneration		  	| An array of salary information
       | position\_start\_date         	| Start date of the job opening
       | position_end\_date           	| End date of the job opening
       | publication\_start\_date        | Application start date

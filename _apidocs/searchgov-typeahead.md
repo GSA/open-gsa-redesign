@@ -11,7 +11,7 @@ This API is specific to Search.gov and exposes the type-ahead suggestions that u
 
 The endpoint is `https://api.gsa.gov/technology/searchgov/v2/sayt`.
 
-You must use https. You can find your access key on the API Access Key page of the Search.gov Admin Center.
+You must use https and send a new call for every character strike. Whenever a user selects a query from the drop-down list, this will become the new query sent to our system.
 
 <p><small><a href="#">Back to top</a></small></p>
 
