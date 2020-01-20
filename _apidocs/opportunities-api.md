@@ -185,6 +185,80 @@ far13	| FAR 13.5 - Simplified Procedures for One Source
 
 <p><small><a href="#">Back to top</a></small></p>
 
+#### Time Zone values
+Refer below table for valid Solicitation response date Time Zones:
+
+Code | Description
+-----|------------
+America/Los_Angeles | PACIFIC STANDARD TIME, LOS ANGELES, USA
+America/Los_Angeles |(UTC-07:00) PACIFIC DAYLIGHT TIME, LOS ANGELES, USA
+America/Denver | MOUNTAIN STANDARD TIME, DENVER, USA
+America/Denver |  (UTC-06:00) MOUNTAIN DAYLIGHT TIME, DENVER, USA
+America/Chicago | CENTRAL STANDARD TIME, CHICAGO, USA
+America/Chicago | (UTC-05:00) CENTRAL DAYLIGHT TIME, CHICAGO, USA
+America/New_York | EASTERN STANDARD TIME, NEW YORK, USA
+America/New_York | (UTC-04:00) EASTERN DAYLIGHT TIME, NEW YORK, USA
+Pacific/Samoa | (UTC-11:00) PAGO PAGO, AMERICAN SAMOA
+Pacific/Honolulu | (UTC-10:00) HONOLULU, HAWAII, USA
+Pacific/Wellington | (UTC+13:00) WELLINGTON, NEW ZEALAND
+America/Anchorage | (UTC-08:00) ANCHORAGE, ALASKA, USA
+America/Vancouver | (UTC-07:00) VANCOUVER, BRITISH COLUMBIA, CANADA
+America/Mazatlan | (UTC-06:00) LA PAZ, MEXICO
+America/Managua | (UTC-06:00) MANAGUA, NICARAGUA
+America/Mexico_City | (UTC-05:00) MEXICO CITY, MEXICO
+America/Costa_Rica | (UTC-06:00) SAN JOSE, COSTA RICA
+America/Winnipeg	| (UTC-05:00) WINNIPEG, MANITOBA, CANADA
+America/Bogota | (UTC-05:00) BOGOTA, COLOMBIA
+America/Lima | (UTC-05:00) LIMA, PERU
+America/Montreal |(UTC-04:00) MONTREAL, QUEBEC, CANADA
+America/Quito | (UTC-05:00) QUITO, ECUADOR
+America/Panama | (UTC-05:00) PANAMA CITY, PANAMA
+America/Santiago | (UTC-03:00) SANTIAGO, CHILE
+America/Toronto | (UTC-04:00) TORONTO, ONTARIO, CANADA
+America/Asuncion | (UTC-03:00) ASUNCION, PARAGUAY
+America/Argentina/Buenos_Aires | (UTC-03:00) BUENOS AIRES, ARGENTINA
+America/Goose_Bay | (UTC-03:00) GOOSE BAY, LABRADOR, CANADA
+America/Halifax |(UTC-03:00) HALIFAX, NOVA SCOTIA, CANADA
+America/La_Paz | (UTC-04:00) LA PAZ, BOLIVIA
+America/Puerto_Rico | (UTC-04:00) SAN JUAN, PUERTO RICO
+America/St_Johns |(UTC-02:30) ST. JOHN’S, NEWFOUNDLAND, CANADA
+America/Godthab | (UTC-02:00) GODTHAB, GREENLAND
+America/Sao_Paulo | (UTC-03:00) SAO PAULO, BRAZIL
+America/Noronha | (UTC-02:00) NORONHA, BRAZIL
+{Atlantic/Reykjavik | (UTC+00:00) REYKJAVIK, ICELAND
+Europe/Belfast | (UTC+01:00) BELFAST, NORTHERN IRELAND
+Europe/Dublin | (UTC+01:00) DUBLIN, IRELAND
+Europe/Edinburgh | (UTC+01:00) EDINBURGH, SCOTLAND
+Europe/Lisbon | (UTC+01:00) LISBON, PORTUGAL
+Europe/London |(UTC+01:00) LONDON, ENGLAND
+Europe/Amsterdam | (UTC+02:00) AMSTERDAM, NETHERLANDS
+Europe/Berlin | (UTC+02:00) BERLIN, GERMANY
+Europe/Bern |(UTC+02:00) BERN, SWITZERLAND
+Europe/Copenhagen |(UTC+02:00) COPENHAGEN, DENMARK
+Europe/Madrid | (UTC+02:00) MADRID, SPAIN
+Europe/Oslo | (UTC+02:00) OSLO, NORWAY
+Europe/Paris |(UTC+02:00) PARIS, FRANCE
+Europe/Rome | (UTC+02:00) ROME, ITALY
+Europe/Stockholm | (UTC+02:00) STOCKHOLM, SWEDEN
+Europe/Athens | (UTC+03:00) ATHENS, GREECE
+Europe/Istanbul | (UTC+03:00) ISTANBUL, TURKEY
+Europe/Moscow | (UTC+03:00) MOSCOW, RUSSIA
+Asia/Riyadh | (UTC+03:00) RIYADH, SAUDI ARABIA
+Asia/Dubai |(UTC+04:00) DUBAI, UNITED ARAB EMIRATES
+Asia/Lahore |(UTC+05:00) LAHORE, PAKISTAN
+Asia/Delhi |(UTC+05:30) DELHI, INDIA
+Asia/Kolkata |(UTC+05:30) KOLKATA, INDIA
+Asia/Dhaka |(UTC+06:00) DHAKA, BANGLADESH
+Asia/Jakarta |(UTC+07:00) JAKARTA, INDONESIA
+Asia/Beijing |(UTC+08:00) BEIJING, CHINA
+Asia/Manila |(UTC+08:00) MANILA, PHILIPPINES
+Australia/Perth |(UTC+08:00) PERTH, AUSTRALIA
+Asia/Seoul |(UTC+09:00) SEOUL, KOREA
+Asia/Tokyo | (UTC+09:00) TOKYO, JAPAN
+Australia/Sydney |(UTC+11:00) SYDNEY, AUSTRALIA
+
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Contract Opportunity Management API Request and Responses
 
 <span style="color:red">Note: All Opportunity notices types except Special notices will be associated to organization at office level. Special notices can be associated to Organization at department, sub-tier, or office level.</span>
@@ -3727,8 +3801,8 @@ data.permissions.ivl.delete | boolean | | | No | No | IVL delete permission | v1
 data.solicitation | JSON |NA | NA | NA | NA | NA
 data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action | v1 <br> v2
 data.solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity|NA
-data.solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date | v1 <br> v2
-data.solicitation.deadlines.<br/>responseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date | v1 <br> v2
+data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format yyyy-MM-dd'T'HH:mm:ssXXX (ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br> 2. To specify date with time, use the format yyyy-MM-dd'T'HH:mm:ss (ex: 2020-01-01T13:01:00)<br> 3. To specify only date, use the format yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
+data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone Values](#time-zone-values) |No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
 data.award | JSON | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types |NA 
 data.award.date | date | |YYYY-MM-DD |No | Yes only for type = a (Award) | Award Date | v1 <br> v2
 data.award.number | string | 255 characters | |No | Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number | v1 <br> v2
@@ -4115,8 +4189,8 @@ data.permissions.ivl.delete | boolean | | |No | IVL delete permission| v1 <br> v
 data.solicitation | JSON |NA | NA | NA |NA|NA
 data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action| v1 <br> v2
 data.solicitation.deadlines | JSON | NA | NA | NA |Response deadline date for Contract opportunity| v1 <br> v2
-data.solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
-data.solicitation.deadlines.<br/>responseTz |string | | |No | Time Zone for <br/>Solicitation Deadline Date| v1 <br> v2
+data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format yyyy-MM-dd'T'HH:mm:ssXXX (ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br> 2. To specify date with time, use the format yyyy-MM-dd'T'HH:mm:ss (ex: 2020-01-01T13:01:00)<br> 3. To specify only date, use the format yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
+data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone Values](#time-zone-values) |No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
 data.award | JSON | NA | NA | NA| This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types| v1 <br> v2
 data.award.date | date | |YYYY-MM-DD | Yes only for type = a (Award) | Award Date| v1 <br> v2
 data.award.number | string | 255 characters | |Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number| v1 <br> v2
@@ -6730,5 +6804,8 @@ Date | Version | Description
 11/12/2019| v1.0 | Initial Release Finalized
 12/04/2019| v1.01 | Minor updates to UEI(SAM) and UEI(DUNS) info
 1/3/2020| v1.02| Updates to UEI(SAM) and UEI(DUNS) info
+1/16/2020| v1.03| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br>
+Added the Related Notices section.
+
 
 <p><small><a href="#">Back to top</a></small></p>
