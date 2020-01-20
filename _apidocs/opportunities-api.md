@@ -3485,7 +3485,7 @@ Examples
         },
         "archive": {
             "type": "autocustom",
-            "date": "2019-09-09"
+            "date": "2022-09-09"
         },
         "permissions": {
             "IVL": {
@@ -3498,7 +3498,7 @@ Examples
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2019-08-08"
+                "response": "2022-08-08"
             }
         },
         "award": {
@@ -3544,6 +3544,9 @@ Examples
         }
     ],
     "related": {
+        "opportunityId": ""
+    },
+    "parent": {
         "opportunityId": ""
     }
 }
@@ -3842,7 +3845,7 @@ reason | string |  | No | Publish reason| v1 <br> v2
         },
         "archive": {
             "type": "autocustom",
-            "date": "2019-09-09"
+            "date": "2022-09-09"
         },
         "permissions": {
             "IVL": {
@@ -3855,7 +3858,7 @@ reason | string |  | No | Publish reason| v1 <br> v2
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2019-08-08"
+                "response": "2022-08-08"
             }
         },
         "award": {
@@ -3979,7 +3982,7 @@ reason | string |  | No | Publish reason| v1 <br> v2
         },
         "archive": {
             "type": "autocustom",
-            "date": "2019-09-09"
+            "date": "2022-09-09"
         },
         "permissions": {
             "IVL": {
@@ -3992,7 +3995,7 @@ reason | string |  | No | Publish reason| v1 <br> v2
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2019-08-08"
+                "response": "2022-08-08"
             }
         },
         "award": {
@@ -4038,6 +4041,9 @@ reason | string |  | No | Publish reason| v1 <br> v2
         }
     ],
     "related": {
+        "opportunityId": ""
+    },
+    "parent": {
         "opportunityId": ""
     },
     "resources": [
