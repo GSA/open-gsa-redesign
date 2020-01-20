@@ -117,6 +117,22 @@ The API includes specific methods to submit each of the base notice types (i.e. 
 
 <p><small><a href="#">Back to top</a></small></p>
 
+#### Related Notices
+
+The table below lists notices that can be related.
+
+|*Below Notice can be Related to:*|SOURCES SOUGHT | PRESOLICITATION | COMBINED SYNOPSIS | SOLICITATION| AWARD | SALE OF SURPLUS | INTENT TO BUNDLE | JUSTIFICATION | SPECIAL NOTICE
+-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|**SOURCES SOUGHT**||O|O|O|O|O|||O
+|**PRESOLICITATION**|O||O|O||O|O|O|O
+|**COMBINED SYNOPSIS**|O|O|||O||O|O|O
+|**SOLICITATION**|O|O|||O||O|O|O
+|**AWARD**|||O|O|||O|O|O
+|**SALE OF SURPLUS**|O|O|||||O|O|O
+|**INTENT TO BUNDLE**||O|O|O|O|O||O|O
+|**JUSTIFICATION**||O|O|O|O|O|O||O
+|**SPECIAL NOTICE**|O|O|O|O|O|O|O|O|
+
 #### Set-Aside Values
 Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field. Use the Set-Aside codes to submit notices.
 
@@ -652,6 +668,90 @@ Examples
 </p>
 </details>
 
+<details>
+<summary> Request to create a draft opportunity for a previously published 'SOLICITATION' notice by providing the parent opportunity Id</summary>
+<p>
+<code><pre>
+{
+    "data": {
+        "type": "o",
+        "solicitationNumber": "test-12345457",
+        "title": "Create Draft for a published SOL notice",
+        "organizationId": "100186612",
+        "classificationCode": "1260",
+        "naics": [
+            {
+                "type": "primary",
+                "code": [
+                    "111150"
+                ]
+            }
+        ],
+        "pointOfContact": [
+            {
+                "type": "primary",
+                "title": "",
+                "fullName": "test contact",
+                "email": "test@test.com",
+                "phone": "",
+                "fax": "",
+                "additionalInfo": {
+                    "content": "Primary contact info"
+                }
+            }
+        ],
+        "placeOfPerformance": {
+            "streetAddress": "1234 XYZ street",
+            "streetAddress2": "",
+            "city": {
+                "code": "75376",
+                "name": "Sterling"
+            },
+            "state": {
+                "code": "VA",
+                "name": "Virginia"
+            },
+            "country": {
+                "code": "USA",
+                "name": "USA"
+            },
+            "zip": ""
+        },
+        "archive": {
+            "type": "autocustom",
+            "date": "2022-09-09"
+        },
+        "permissions": {
+            "IVL": {
+                "create": false,
+                "delete": false,
+                "read": false,
+                "update": false
+            }
+        },
+        "solicitation": {
+            "setAside": "SBA",
+            "deadlines": {
+                "response": "2022-08-08"
+            }
+        },
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
+        {
+            "body": "test description"
+        }
+    ],
+    "parent":{
+          	"opportunityId":"6f85afa8eb03443ab7d210655525ca60"      	
+   }
+}
+</pre></code>
+</p>
+</details>
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -706,7 +806,7 @@ Examples
 ------- | -------
 **Request Type** | POST
 **URL** | /createAndPublish
-**Summary** | Creates and publishes contract opportunity; JSON same as Create and Update API
+**Summary** | Creates and publishes contract opportunity. Can be used to modify (revise and publish) an active published notice.
 **Consumes** | application/json
 **Produces** | JSON
 
@@ -724,12 +824,12 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-201 | string | Draft Opportunity successfully created | returns Opportunity ID in response header
+201 | string |  Opportunity successfully created and Published| returns Opportunity ID in response header
 
 Examples
 
 <details>
-<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice_v1</summary>
+<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice</summary>
 <p>
 <code><pre>
 {
@@ -795,39 +895,6 @@ Examples
                 "response": "2022-08-08"
             }
         },
-        "award": {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee": {
-                "manual": false,
-                "name": "",
-                "duns": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            }
-        },
         "additionalReporting": [
             "none"
         ]
@@ -859,16 +926,17 @@ Examples
 </pre></code>
 </p>
 </details>
+
 
 <details>
-<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice_v2</summary>
+<summary>Create and Publish Request to submit a modification to the 'SOLICITATION' Opportunity published in the above example by providing the parent opportunity Id</summary>
 <p>
 <code><pre>
 {
     "data": {
         "type": "o",
         "solicitationNumber": "test-12345457",
-        "title": "Test Create and Publish SOL notice",
+        "title": "Test Create and Publish API to submit modification to a SOL notice",
         "organizationId": "100186612",
         "classificationCode": "1260",
         "naics": [
@@ -927,40 +995,6 @@ Examples
                 "response": "2022-08-08"
             }
         },
-        "award": {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee": {
-                "manual": false,
-                "name": "",
-                "duns": "",
-                "ueiSAM":"",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            }
-        },
         "additionalReporting": [
             "none"
         ]
@@ -970,29 +1004,28 @@ Examples
             "body": "test description"
         }
     ],
-    "related": {
-        "opportunityId": "f8ccfca94d794e07855ebe0d6f55c7d5"
-    },
+    "parent":{
+          	"opportunityId":"6f85afa8eb03443ab7d210655525ca60"      	
+   },
     "resources": [
         {
             "attType": "link",
-            "link": "https://faaco.faa.gov/index.cfm/attachment/download/84723",
-            "description": "test attachment pdf link"
+            "link": "https://www.google.com",
+            "description": "Google"
         },
         {
             "attType": "file",
             "content": "SGVsbG8=",
-            "resourceName": "Hello.txt",
+            "resourceName": "Hello_updated.txt",
             "fileType": "text/plain",
-            "packageAccessLevel": "private",
-            "explicitAccess": "1"
+            "packageAccessLevel": "public",
+            "explicitAccess": "0"
         }
     ]
 }
 </pre></code>
 </p>
 </details>
-
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1390,7 +1423,7 @@ Examples
     "organizationId": "100000136",
     "archive": {
       "type": "autocustom",
-      "date": "2019-09-09"
+      "date": "2022-09-09"
     },
     "naics": [
       {
@@ -1405,9 +1438,9 @@ Examples
         "additionalInfo": {
           "content": ""
         },
-        "email": "",
+        "email": "test.contact@gmail.com",
         "fax": "",
-        "fullName": "gsa",
+        "fullName": "test contact",
         "phone": "",
         "title": "",
         "type": "primary"
@@ -1425,7 +1458,7 @@ Examples
       "setAside": "",
       "deadlines": {
         "responseTz": "America/New_York",
-        "response": "2019-12-12T23:59:00-05:00"
+        "response": "2021-12-12T23:59:00-05:00"
       }
     },
     "additionalReporting": [
@@ -3632,6 +3665,9 @@ Examples
     ],
     "related": {
         "opportunityId": ""
+    },
+    "parent": {
+        "opportunityId": ""
     }
 }
 
@@ -3721,6 +3757,8 @@ description | JSON | NA | NA | NA | NA | NA |NA
 description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice | v1 <br> v2
 related | JSON | NA | NA | NA | NA | Related Notice information |NA
 related.opportunityId | string | 32 characters| | No | No | Opportunity Id of the related notice | v1 <br> v2
+parent | JSON | NA | NA | NA | Parent Notice information| v1 <br> v2
+parent.opportunityId | string | 32 characters| | Yes (for modifications to a published notice) | Opportunity Id of the parent notice| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3863,6 +3901,9 @@ reason | string |  | No | Publish reason| v1 <br> v2
         }
     ],
     "related": {
+        "opportunityId": ""
+    },
+    "parent": {
         "opportunityId": ""
     },
     "resources": [
@@ -4101,6 +4142,8 @@ description | JSON | NA | NA | NA |NA|NA
 description.body | string | 65535 characters| | Yes; No for type = a (Award) | Description of the notice| v1 <br> v2
 related | JSON | NA | NA | NA | Related Notice information| v1 <br> v2
 related.opportunityId | string | 32 characters| | No | Opportunity Id of the related notice| v1 <br> v2
+parent | JSON | NA | NA | NA | Parent Notice information| v1 <br> v2
+parent.opportunityId | string | 32 characters| | Yes (for modifications to a published notice) | Opportunity Id of the parent notice| v1 <br> v2
 resources | JSON |NA | NA | NA |NA|NA
 resources.attType | string | |link, file | No| Type of attachment, either link or file| v1 <br> v2
 resources.content | byte |250MB |  | No | File content in base64 format| v1 <br> v2
@@ -6478,8 +6521,6 @@ post:
 
 
 
-
-
 ## Error Messages
 
 ### General Error Messages
@@ -6524,11 +6565,11 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Organization Id |	The Federal Organization ID that you provided is inactive and/or invalid | Inactive/Invalid Organization Id |	Create Opportunity, Publish
 400|Organization Id |	The Federal Organization ID that you provided is not an office level, and it must be for this opportunity type	| Organization ID is not valid for opportunity type. Note: Organization ID must be Office level unless creating a Special Notice	| Create Opportunity, Publish
 400|Organization Id |	The Federal Organization ID that you provided is unmapped in Federal Hierarchy | If the Organization Id provided is a legacy one and is unmapped in Federal Hierarchy, then the system throws and error |	Publish
-404|Solicitation Number | Notice ID is required	| Notice ID is required | Publish
+404|Solicitation Number | Notice ID is required	| Notice ID is required for all notice types except for Special Notice | Publish
 400|Solicitation Number | Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces	| Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces | Publish
-400|Solicitation Number | Notice ID must be unique based on selected notice type	| Notice ID must be unique when selected notice type is not an award notice | Publish
-400|Solicitation Number | Submitted solicitation number doesn't match the previous published opportunity	| Solicitation number provided with update opportunity doesn't match the previous published opportunity for an award notice type | Publish
-400|Related Opportunity ID | This Related Notice's ID is invalid	| The Related Notice's ID is not found | Publish
+400|Solicitation Number | Notice ID must be unique based on selected notice type	| Notice ID must be unique when selected notice type is not an award notice | Publish, Create and Publish
+400|Solicitation Number | Submitted solicitation number doesn't match the previous published opportunity	| Solicitation number provided with update opportunity doesn't match the previous published opportunity for an award notice type | Publish, Create and Publish
+400|Related Opportunity ID | This Related Notice's ID is invalid	| The Related Notice's ID is not found | Publish, Create and Publish
 400|Related Opportunity ID | The Related Notice's Type is invalid for this Opportunity	| The Related Notice's Type cannot be related  | Publish
 400|Related Opportunity ID | Related Notice's ID needs to match previous Opportunity's Related Notice ID	| Related Notice's ID  provided while revising a notice needs to match the Parent Opportunity's Related Notice ID  | Publish
 400|Response Date |	Response Date is a required field |	Response Date is not provided for Combined Synopsis and Solicitation types |	Publish
