@@ -1797,7 +1797,7 @@ data.award.awardee.location.zip | string |  Awardee Zip
 data.award.justificationAuthority | JSON Object | 
 data.award.justificationAuthority.modificationNumber | string | justificationAuthority modification number
 data.award.justificationAuthority.authority | string |  justificationAuthority authority
-data.link | JSON |   
+data.link | JSON Array of Object |   
 data.link.additionalInfo | JSON Object |  
 data.link.additionalInfo.content | string | Additional Info
 data.link.href | string |  Website Address
