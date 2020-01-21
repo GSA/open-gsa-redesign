@@ -270,7 +270,7 @@ Australia/Sydney |(UTC+11:00) SYDNEY, AUSTRALIA
 ------- | -------
 **Request Type** | POST
 **URL** | /create
-**Summary** | Create a new Draft Opportunity
+**Summary** | Creates a new Draft Opportunity
 **Consumes** | application/json
 **Produces** | NA
 
@@ -506,7 +506,7 @@ Examples
 </details>
 
 <details>
-<summary>SOLICITATION Request related to a PRESOL Notice_v1</summary>
+<summary>SOLICITATION Request related to a PRESOL Notice</summary>
 <p>
 <code><pre>
 
@@ -571,39 +571,6 @@ Examples
             "setAside": "SBA",
             "deadlines": {
                 "response": "2022-08-08"
-            }
-        },
-        "award": {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee": {
-                "manual": false,
-                "name": "",
-                "duns": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
             }
         },
         "additionalReporting": [
@@ -624,120 +591,228 @@ Examples
 </details>
 
 <details>
-<summary>SOLICITATION Request related to a PRESOL Notice_v2</summary>
+<summary>Request to create Award Notice related to a Combined Synopsis Notice_v1</summary>
 <p>
 <code><pre>
-
 {
-    "data": {
-        "type": "o",
-        "solicitationNumber": "test-12345678901",
-        "title": "Test submit solicitation",
-        "organizationId": "100186612",
-        "classificationCode": "1260",
-        "naics": [
-            {
-                "type": "primary",
-                "code": [
-                    "111150"
-                ]
-            }
-        ],
-        "pointOfContact": [
-            {
-                "type": "primary",
-                "title": "",
-                "fullName": "test contact",
-                "email": "test@test.com",
-                "phone": "",
-                "fax": "",
-                "additionalInfo": {
-                    "content": "Primary contact info"
-                }
-            }
-        ],
-        "placeOfPerformance": {
-            "streetAddress": "1234 XYZ street",
-            "streetAddress2": "",
-            "city": {
-                "code": "75376",
-                "name": "Sterling"
-            },
-            "state": {
-                "code": "VA",
-                "name": "Virginia"
-            },
-            "country": {
-                "code": "USA",
-                "name": "USA"
-            },
-            "zip": ""
-        },
-        "archive": {
-            "type": "autocustom",
-            "date": "2022-09-09"
-        },
-        "permissions": {
-            "IVL": {
-                "create": false,
-                "delete": false,
-                "read": false,
-                "update": false
-            }
-        },
-        "solicitation": {
-            "setAside": "SBA",
-            "deadlines": {
-                "response": "2022-08-08"
-            }
-        },
-        "award": {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee": {
-                "manual": false,
-                "name": "",
-                "duns": "",
-                "ueiSAM": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            }
-        },
-        "additionalReporting": [
-            "none"
-        ]
-    },
-    "description": [
-        {
-            "body": "test description"
+  "data": {
+    "type": "a",
+    "award": {
+      "lineItemNumber": "123456789879",
+      "date": "2020-01-02",
+      "number": "1376487348949",
+      "deliveryOrderNumber": "23577980900",
+      "awardee": {
+        "duns": "690888227",
+        "name": "TONETS CORPORATION",
+        "cageCode": "SP971",
+        "location": {
+          "city": {
+            "name": "Chuo-ku"
+          },
+          "state": {
+            "name": "TOKYO"
+          },
+          "country": {
+            "name": "JPN"
+          },
+          "zip": null
         }
+      },
+      "amount": "43567.00"
+    },
+    "title": "Test-Award notice-V1",
+    "version": "2",
+    "permissions": {
+      "IVL": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      }
+    },
+    "organizationId": "100272386",
+    "solicitationNumber": "test-123456789",
+    "additionalReporting": [
+      "none"
     ],
-    "related": {
-        "opportunityId": "bc14e9f810a44e468c31fd120dd41b4f"
+    "archive": {
+      "type": "autocustom",
+      "date": "2021-01-02"
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      },
+      "setAside": "SBA"
+    },
+    "classificationCode": "AA12",
+    "naics": [
+      {
+        "code": [
+          "711510"
+        ],
+        "type": "primary"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "name": "Alabaster",
+        "code": "820"
+      },
+      "state": {
+        "name": "Alabama",
+        "code": "AL"
+      },
+      "country": {
+        "code": "USA"
+      },
+      "zip": null
+    },
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "Test Contact 1",
+        "email": "test.contact1@gmail.com",
+        "phone": "",
+        "fax": null,
+        "type": "primary"
+      },
+      {
+        "title": null,
+        "fullName": "Test Contact 2",
+        "email": "test.contact2@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "secondary"
+      }
+    ]
+  },
+  "description": [
+    {
+      "body": "test description"
     }
+  ],
+  "related": {
+    "opportunityId": "c61597bdfc5d492268d664bce8e2345a"
+  }
 }
+
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Request to create Award Notice related to a Combined Synopsis Notice_v2</summary>
+<p>
+<code><pre>
+{
+  "data": {
+    "type": "a",
+    "award": {
+      "lineItemNumber": "123456789879",
+      "date": "2020-01-02",
+      "number": "1376487348949",
+      "deliveryOrderNumber": "23577980900",
+      "awardee": {
+        "duns": "690888227",
+        "ueiSAM": "025114695AST",
+        "name": "TONETS CORPORATION",
+        "cageCode": "SP971",
+        "location": {
+          "city": {
+            "name": "Chuo-ku"
+          },
+          "state": {
+            "name": "TOKYO"
+          },
+          "country": {
+            "name": "JPN"
+          },
+          "zip": null
+        }
+      },
+      "amount": "43567.00"
+    },
+    "title": "Test-Award notice-V1",
+    "version": "2",
+    "permissions": {
+      "IVL": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      }
+    },
+    "organizationId": "100272386",
+    "solicitationNumber": "test-123456789",
+    "additionalReporting": [
+      "none"
+    ],
+    "archive": {
+      "type": "autocustom",
+      "date": "2021-01-02"
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      },
+      "setAside": "SBA"
+    },
+    "classificationCode": "AA12",
+    "naics": [
+      {
+        "code": [
+          "711510"
+        ],
+        "type": "primary"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "name": "Alabaster",
+        "code": "820"
+      },
+      "state": {
+        "name": "Alabama",
+        "code": "AL"
+      },
+      "country": {
+        "code": "USA"
+      },
+      "zip": null
+    },
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "Test Contact 1",
+        "email": "test.contact1@gmail.com",
+        "phone": "",
+        "fax": null,
+        "type": "primary"
+      },
+      {
+        "title": null,
+        "fullName": "Test Contact 2",
+        "email": "test.contact2@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "secondary"
+      }
+    ]
+  },
+  "description": [
+    {
+      "body": "test description"
+    }
+  ],
+  "related": {
+    "opportunityId": "c61597bdfc5d492268d664bce8e2345a"
+  }
+}
+
 </pre></code>
 </p>
 </details>
@@ -1101,6 +1176,264 @@ Examples
 </p>
 </details>
 
+<details>
+<summary>Create and Publish request for Award Notice related to a Combined Synopsis Notice_v1</summary>
+<p>
+<code><pre>
+{
+  "data": {
+    "type": "a",
+    "award": {
+      "lineItemNumber": "123456789879",
+      "date": "2020-01-02",
+      "number": "1376487348949",
+      "deliveryOrderNumber": "23577980900",
+      "awardee": {
+        "duns": "690888227",
+        "name": "TONETS CORPORATION",
+        "cageCode": "SP971",
+        "location": {
+          "city": {
+            "name": "Chuo-ku"
+          },
+          "state": {
+            "name": "TOKYO"
+          },
+          "country": {
+            "name": "JPN"
+          },
+          "zip": null
+        }
+      },
+      "amount": "43567.00"
+    },
+    "title": "Test-Award notice-V1",
+    "version": "2",
+    "permissions": {
+      "IVL": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      }
+    },
+    "organizationId": "100272386",
+    "solicitationNumber": "test-123456789",
+    "additionalReporting": [
+      "none"
+    ],
+    "archive": {
+      "type": "autocustom",
+      "date": "2021-01-02"
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      },
+      "setAside": "SBA"
+    },
+    "classificationCode": "AA12",
+    "naics": [
+      {
+        "code": [
+          "711510"
+        ],
+        "type": "primary"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "name": "Alabaster",
+        "code": "820"
+      },
+      "state": {
+        "name": "Alabama",
+        "code": "AL"
+      },
+      "country": {
+        "code": "USA"
+      },
+      "zip": null
+    },
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "Test Contact 1",
+        "email": "test.contact1@gmail.com",
+        "phone": "",
+        "fax": null,
+        "type": "primary"
+      },
+      {
+        "title": null,
+        "fullName": "Test Contact 2",
+        "email": "test.contact2@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "secondary"
+      }
+    ]
+  },
+  "description": [
+    {
+      "body": "test description"
+    }
+  ],
+  "related": {
+    "opportunityId": "c61597bdfc5d492268d664bce8e2345a"
+  },
+  "resources": [
+          {
+              "attType": "link",
+              "link": "https://www.google.com",
+              "description": "Google"
+          },
+          {
+              "attType": "file",
+              "content": "SGVsbG8=",
+              "resourceName": "Hello_updated.txt",
+              "fileType": "text/plain",
+              "packageAccessLevel": "public",
+              "explicitAccess": "0"
+          }
+      ]
+}
+
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Create and Publish request for Award Notice related to a Combined Synopsis Notice_v2</summary>
+<p>
+<code><pre>
+{
+  "data": {
+    "type": "a",
+    "award": {
+      "lineItemNumber": "123456789879",
+      "date": "2020-01-02",
+      "number": "1376487348949",
+      "deliveryOrderNumber": "23577980900",
+      "awardee": {
+        "duns": "690888227",
+        "ueiSAM": "025114695AST",
+        "name": "TONETS CORPORATION",
+        "cageCode": "SP971",
+        "location": {
+          "city": {
+            "name": "Chuo-ku"
+          },
+          "state": {
+            "name": "TOKYO"
+          },
+          "country": {
+            "name": "JPN"
+          },
+          "zip": null
+        }
+      },
+      "amount": "43567.00"
+    },
+    "title": "Test-Award notice-V1",
+    "version": "2",
+    "permissions": {
+      "IVL": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      }
+    },
+    "organizationId": "100272386",
+    "solicitationNumber": "test-123456789",
+    "additionalReporting": [
+      "none"
+    ],
+    "archive": {
+      "type": "autocustom",
+      "date": "2021-01-02"
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      },
+      "setAside": "SBA"
+    },
+    "classificationCode": "AA12",
+    "naics": [
+      {
+        "code": [
+          "711510"
+        ],
+        "type": "primary"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "name": "Alabaster",
+        "code": "820"
+      },
+      "state": {
+        "name": "Alabama",
+        "code": "AL"
+      },
+      "country": {
+        "code": "USA"
+      },
+      "zip": null
+    },
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "Test Contact 1",
+        "email": "test.contact1@gmail.com",
+        "phone": "",
+        "fax": null,
+        "type": "primary"
+      },
+      {
+        "title": null,
+        "fullName": "Test Contact 2",
+        "email": "test.contact2@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "secondary"
+      }
+    ]
+  },
+  "description": [
+    {
+      "body": "test description"
+    }
+  ],
+  "related": {
+    "opportunityId": "c61597bdfc5d492268d664bce8e2345a"
+  },
+  "resources": [
+          {
+              "attType": "link",
+              "link": "https://www.google.com",
+              "description": "Google"
+          },
+          {
+              "attType": "file",
+              "content": "SGVsbG8=",
+              "resourceName": "Hello_updated.txt",
+              "fileType": "text/plain",
+              "packageAccessLevel": "public",
+              "explicitAccess": "0"
+          }
+      ]
+}
+
+</pre></code>
+</p>
+</details>
+
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Revise Published Opportunity
@@ -1176,316 +1509,162 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>ITB Request_v1</summary>
-<p>
-<code><pre>
-{
-    "data": {
-        "solicitationNumber": "ITB_Test1_Update",
-        "title": "TST_T1_update",
-        "type": "i",
-        "classificationCode": "13",
-        "organizationId": "100186612",
-        "naics": [
-            {
-                "type": "primary",
-                "code": [
-                    "111150"
-                ]
-            }
-        ],
-        "pointOfContact": [
-            {
-                "additionalInfo": {
-                    "content": ""
-                },
-                "email": "",
-                "fax": "",
-                "fullName": "GSA",
-                "phone": "",
-                "title": "",
-                "type": "primary"
-            }
-        ],
-        "placeOfPerformance": {
-            "city": {
-                "code": "",
-                "name": ""
-            },
-            "country": {
-                "code": "",
-                "name": ""
-            },
-            "state": {
-                "code": "",
-                "name": ""
-            },
-            "streetAddress": "",
-            "streetAddress2": "",
-            "zip": ""
-        },
-        "award": {
-            "date": "2019-08-08T11:20:20-05:00",
-            "number": "12345",
-            "deliveryOrderNumber": "",
-            "amount": "number",
-            "lineItemNumber": "",
-            "awardee": {
-                "name": "",
-                "duns": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            }
-        },
-        "permissions": {
-            "IVL": {
-                "create": true,
-                "delete": true,
-                "read": true,
-                "update": true
-            }
-        },
-        "solicitation": {
-            "setAside": "SBA",
-            "deadlines": {
-                "response": "2019-08-08T11:20:20-05:00"
-            }
-        },
-        "archive": {
-            "type": "autocustom",
-            "date": "2019-09-09"
-        },
-        "additionalReporting": [
-            "none"
-        ]
-    },
-    "description": [
-        {
-            "body": "Description_updated"
-        }
-    ]
-}
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>ITB Request_v2</summary>
-<p>
-<code><pre>
-{
-    "data": {
-        "solicitationNumber": "ITB_Test1_Update",
-        "title": "TST_T1_update",
-        "type": "i",
-        "classificationCode": "13",
-        "organizationId": "100186612",
-        "naics": [
-            {
-                "type": "primary",
-                "code": [
-                    "111150"
-                ]
-            }
-        ],
-        "pointOfContact": [
-            {
-                "additionalInfo": {
-                    "content": ""
-                },
-                "email": "",
-                "fax": "",
-                "fullName": "GSA",
-                "phone": "",
-                "title": "",
-                "type": "primary"
-            }
-        ],
-        "placeOfPerformance": {
-            "city": {
-                "code": "",
-                "name": ""
-            },
-            "country": {
-                "code": "",
-                "name": ""
-            },
-            "state": {
-                "code": "",
-                "name": ""
-            },
-            "streetAddress": "",
-            "streetAddress2": "",
-            "zip": ""
-        },
-        "award": {
-            "date": "2019-08-08T11:20:20-05:00",
-            "number": "12345",
-            "deliveryOrderNumber": "",
-            "amount": "number",
-            "lineItemNumber": "",
-            "awardee": {
-                "name": "",
-                "duns": "",
-                "ueiSAM":"",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            }
-        },
-        "permissions": {
-            "IVL": {
-                "create": true,
-                "delete": true,
-                "read": true,
-                "update": true
-            }
-        },
-        "solicitation": {
-            "setAside": "SBA",
-            "deadlines": {
-                "response": "2019-08-08T11:20:20-05:00"
-            }
-        },
-        "archive": {
-            "type": "autocustom",
-            "date": "2019-09-09"
-        },
-        "additionalReporting": [
-            "none"
-        ]
-    },
-    "description": [
-        {
-            "body": "Description_updated"
-        }
-    ]
-}
-</pre></code>
-</p>
-</details>
-
-
-<details>
-<summary>PRESOL Request</summary>
+<summary>Update request for Intent to Bundle Draft opportunity</summary>
 <p>
 <code><pre>
 {
   "data": {
-    "solicitationNumber": "PRESOLTest1_update",
-    "title": "PRESOLTEST_T1_update",
-    "type": "p",
-    "classificationCode": "13",
-    "organizationId": "100120624",
-    "naics": [
-      {
-        "type": "primary",
-        "code": [
-          "111150"
-        ]
-      }
-    ],
-    "pointOfContact": [
-      {
-        "additionalInfo": {
-          "content": ""
-        },
-        "email": "",
-        "fax": "",
-        "fullName": "gsa",
-        "phone": "",
-        "title": "",
-        "type": "primary"
-      }
-    ],
-    "placeOfPerformance": {
-      "city": {
-        "code": "",
-        "name": ""
-      },
-      "country": {
-        "code": "",
-        "name": ""
-      },
-      "state": {
-        "code": "",
-        "name": ""
-      },
-      "streetAddress": "",
-      "streetAddress2": "",
-      "zip": ""
+    "type": "i",
+    "award": {
+      "lineItemNumber": null,
+      "date": "2020-01-02",
+      "number": "234567889",
+      "deliveryOrderNumber": "TASK-345654"
     },
+    "title": "Test-ITB-23454-Updated",
     "permissions": {
       "IVL": {
+        "read": true,
         "create": true,
         "delete": true,
-        "read": true,
         "update": true
       }
     },
-    "solicitation": {
-      "setAside": "SBA",
-      "deadlines": {
-        "response": "2019-08-08"
+    "organizationId": "500011222",
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "test contact",
+        "email": "test.contact@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "primary"
       }
-    },
+    ],
+    "solicitationNumber": "Test-ITB-123456",
     "archive": {
-      "type": "autocustom",
-      "date": "2019-09-09"
+      "type": "auto30",
+      "date": null
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      }
     },
     "additionalReporting": [
       "none"
+    ],
+    "classificationCode": "E1AA",
+    "naics": [
+      {
+        "code": [
+          "111120"
+        ],
+        "type": "primary"
+      }
     ]
   },
   "description": [
     {
-      "body": "Description_updated "
+      "body": "test description updated"
     }
-  ]
+  ],
+  "related": {}
+}
+
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Update request for a Draft PRESOLICITAITON notice</summary>
+<p>
+<code><pre>
+{
+    "data": {
+        "solicitationNumber": "PRESOLTest1_update",
+        "title": "PRESOLTEST_T1_update",
+        "type": "p",
+        "classificationCode": "1005",
+        "organizationId": "100120624",
+        "naics": [
+            {
+                "type": "primary",
+                "code": [
+                    "111150"
+                ]
+            }
+        ],
+        "pointOfContact": [
+            {
+                "fax": "1234567890",
+                "type": "primary",
+                "email": "test.email2@gmail.com",
+                "phone": "1234567890",
+                "title": null,
+                "fullName": "Test User"
+            },
+            {
+                "fax": "4512367890",
+                "type": "secondary",
+                "email": "test.email@gmail.com",
+                "phone": "1234567890",
+                "title": null,
+                "fullName": "Test User 2"
+            }
+        ],
+        "placeOfPerformance": {
+            "city": {
+                "code": "",
+                "name": ""
+            },
+            "country": {
+                "code": "",
+                "name": ""
+            },
+            "state": {
+                "code": "",
+                "name": ""
+            },
+            "streetAddress": "",
+            "streetAddress2": "",
+            "zip": ""
+        },
+        "permissions": {
+            "IVL": {
+                "create": true,
+                "delete": true,
+                "read": true,
+                "update": true
+            }
+        },
+        "solicitation": {
+            "setAside": "SBA",
+            "deadlines": {
+                "response": "2022-08-08"
+            }
+        },
+        "archive": {
+            "type": "autocustom",
+            "date": "2022-09-09"
+        },
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
+        {
+            "body": "Description_updated "
+        }
+    ]
 }
 </pre></code>
 </p>
 </details>
 
 <details>
-<summary>COMBINE Request</summary>
+<summary>Update request for a Draft COMBINED SYNOPSIS notice</summary>
 <p>
 <code><pre>
 {
