@@ -1021,6 +1021,6 @@ Date | Version | Description
 11/1/19| v1.0| Initial Release Finalized
 12/2/19| v1.1|Added OpenAPI Specification
 12/18/19| v1.2|Opportunities Response parameters updated to include Award Details JSON Specification and provided the  examples
-
+1/20/2020 | v1.3| Added Award Response and Versioning columns
 
 <p><small><a href="#">Back to top</a></small></p>
