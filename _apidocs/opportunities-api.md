@@ -190,13 +190,13 @@ Refer below table for valid Solicitation response date Time Zones:
 
 Code | Description
 -----|------------
-America/Los_Angeles | PACIFIC STANDARD TIME, LOS ANGELES, USA
+America/Los_Angeles |(UTC-08:00)PACIFIC STANDARD TIME, LOS ANGELES, USA
 America/Los_Angeles |(UTC-07:00) PACIFIC DAYLIGHT TIME, LOS ANGELES, USA
-America/Denver | MOUNTAIN STANDARD TIME, DENVER, USA
+America/Denver | (UTC−07:00) MOUNTAIN STANDARD TIME, DENVER, USA
 America/Denver |  (UTC-06:00) MOUNTAIN DAYLIGHT TIME, DENVER, USA
-America/Chicago | CENTRAL STANDARD TIME, CHICAGO, USA
+America/Chicago | (UTC-06:00) CENTRAL STANDARD TIME, CHICAGO, USA
 America/Chicago | (UTC-05:00) CENTRAL DAYLIGHT TIME, CHICAGO, USA
-America/New_York | EASTERN STANDARD TIME, NEW YORK, USA
+America/New_York | (UTC-05:00) EASTERN STANDARD TIME, NEW YORK, USA
 America/New_York | (UTC-04:00) EASTERN DAYLIGHT TIME, NEW YORK, USA
 Pacific/Samoa | (UTC-11:00) PAGO PAGO, AMERICAN SAMOA
 Pacific/Honolulu | (UTC-10:00) HONOLULU, HAWAII, USA
@@ -3801,8 +3801,8 @@ data.permissions.ivl.delete | boolean | | | No | No | IVL delete permission | v1
 data.solicitation | JSON |NA | NA | NA | NA | NA
 data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action | v1 <br> v2
 data.solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity|NA
-data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format yyyy-MM-dd'T'HH:mm:ssXXX (ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br> 2. To specify date with time, use the format yyyy-MM-dd'T'HH:mm:ss (ex: 2020-01-01T13:01:00)<br> 3. To specify only date, use the format yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
-data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone Values](#time-zone-values) |No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
+data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br><br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| No |1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
+data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone Values](#time-zone-values) |No| No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
 data.award | JSON | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types |NA 
 data.award.date | date | |YYYY-MM-DD |No | Yes only for type = a (Award) | Award Date | v1 <br> v2
 data.award.number | string | 255 characters | |No | Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number | v1 <br> v2
@@ -3833,9 +3833,9 @@ data.additionalReporting | string | |None, <br/>auto_recovery | No | Yes; No for
 description | JSON | NA | NA | NA | NA | NA |NA
 description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice | v1 <br> v2
 related | JSON | NA | NA | NA | NA | Related Notice information |NA
-related.opportunityId | string | 32 characters| | No | No | Opportunity Id of the related notice | v1 <br> v2
-parent | JSON | NA | NA | NA | Parent Notice information| v1 <br> v2
-parent.opportunityId | string | 32 characters| | Yes (for modifications to a published notice) | Opportunity Id of the parent notice| v1 <br> v2
+related.opportunityId | string | 32 characters|[Refer Related Notices](#related-notices) | No | No | Opportunity Id of the related notice  | v1 <br> v2
+parent | JSON | NA | NA | NA | NA |  Parent Notice information| NA
+parent.opportunityId | string | 32 characters| | Yes (to create a draft opportunity for a published notice) | No |Opportunity Id of the parent notice| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4189,7 +4189,7 @@ data.permissions.ivl.delete | boolean | | |No | IVL delete permission| v1 <br> v
 data.solicitation | JSON |NA | NA | NA |NA|NA
 data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action| v1 <br> v2
 data.solicitation.deadlines | JSON | NA | NA | NA |Response deadline date for Contract opportunity| v1 <br> v2
-data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format yyyy-MM-dd'T'HH:mm:ssXXX (ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br> 2. To specify date with time, use the format yyyy-MM-dd'T'HH:mm:ss (ex: 2020-01-01T13:01:00)<br> 3. To specify only date, use the format yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
+data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br><br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
 data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone Values](#time-zone-values) |No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
 data.award | JSON | NA | NA | NA| This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types| v1 <br> v2
 data.award.date | date | |YYYY-MM-DD | Yes only for type = a (Award) | Award Date| v1 <br> v2
@@ -4221,7 +4221,7 @@ data.additionalReporting | string | |none, <br/>auto_recovery | Yes; No for type
 description | JSON | NA | NA | NA |NA|NA
 description.body | string | 65535 characters| | Yes; No for type = a (Award) | Description of the notice| v1 <br> v2
 related | JSON | NA | NA | NA | Related Notice information| v1 <br> v2
-related.opportunityId | string | 32 characters| | No | Opportunity Id of the related notice| v1 <br> v2
+related.opportunityId | string | 32 characters| [Refer Related Notices](#related-notices)| No | Opportunity Id of the related notice| v1 <br> v2
 parent | JSON | NA | NA | NA | Parent Notice information| v1 <br> v2
 parent.opportunityId | string | 32 characters| | Yes (for modifications to a published notice) | Opportunity Id of the parent notice| v1 <br> v2
 resources | JSON |NA | NA | NA |NA|NA
@@ -4325,8 +4325,8 @@ description | string |  | Yes | Description for uncanceling| v1 <br> v2
 newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date| v1 <br> v2
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date| v1 <br> v2
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type| v1 <br> v2
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
-newResponseTz | string |  | No | New Response Time Zone| v1 <br> v2
+newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br><br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
+newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4387,8 +4387,8 @@ requestType | string | unarchive_request | Yes | Type of request| v1 <br> v2
 newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date| v1 <br> v2
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date| v1 <br> v2
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type| v1 <br> v2
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
-newResponseTz | string |  | No | New Response Time Zone| v1 <br> v2
+newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br><br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01) | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
+newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -6804,8 +6804,7 @@ Date | Version | Description
 11/12/2019| v1.0 | Initial Release Finalized
 12/04/2019| v1.01 | Minor updates to UEI(SAM) and UEI(DUNS) info
 1/3/2020| v1.02| Updates to UEI(SAM) and UEI(DUNS) info
-1/16/2020| v1.03| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br>
-Added the Related Notices section.
+1/16/2020| v1.03| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
 
 
 <p><small><a href="#">Back to top</a></small></p>
