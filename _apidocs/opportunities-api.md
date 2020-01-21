@@ -181,7 +181,7 @@ far13	| FAR 13.5 - Simplified Procedures for One Source
 **Request Type** | POST
 **URL** | /create
 **Summary** | Create a new Draft Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | NA
 
 Request Parameters
@@ -190,7 +190,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -662,10 +662,10 @@ Examples
 **Request Type** | POST
 **URL** | /publish/{opportunityId}
 **Summary** | Publish a Draft Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | NA
 
-**Please [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json) to ensure that all required fields in "Required (Publish)" is met to publish opportunity**
+**Please [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-JSON) to ensure that all required fields in "Required (Publish)" is met to publish opportunity**
 
 Request Parameters
 
@@ -674,7 +674,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Publish Draft Opportunity Contract JSON](#publish-opportunity-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Publish Draft Opportunity Contract JSON](#publish-opportunity-contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -707,7 +707,7 @@ Examples
 **Request Type** | POST
 **URL** | /createAndPublish
 **Summary** | Creates and publishes contract opportunity; JSON same as Create and Update API
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -716,7 +716,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Create and Publish Opportunity Contract JSON](#create-and-publish-opportunity-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Create and Publish Opportunity Contract JSON](#create-and-publish-opportunity-contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1003,7 +1003,7 @@ Examples
 **Request Type** | POST
 **URL** | /revise/{opportunityId}
 **Summary** | Create a draft version for a Published Opportunity.
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -1013,7 +1013,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Published Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Revise Opportunity Contract JSON](#revise-opportunity-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Revise Opportunity Contract JSON](#revise-opportunity-contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1046,7 +1046,7 @@ Examples
 **Request Type** | PATCH
 **URL** | /update/{opportunityId}
 **Summary** | Update a Draft Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -1056,7 +1056,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes |[Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json)
+Request JSON | Body | JSON | Yes |[Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1461,7 +1461,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-postedFrom | Body | JSON | No | Posted From - Date
+postedFrom | Body | JSON Object | No | Posted From - Date
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1473,7 +1473,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Response Element | Response Type |  Description
 -----------------|---------------|------------
-history | JSON |  
+history | JSON Array |  
 history.parentOpportunityId | string |  Parent Opportunity ID
 history.cancel_notice | boolean |  Identify if the Opportunity is cancelled or not
 history.procurement_type | string |  Notice Type
@@ -1637,7 +1637,7 @@ N/A
 **Request Type** | POST
 **URL** | /{opportunityId}/requests
 **Summary** | Deletes all the versions or latest version of a notice
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -1647,7 +1647,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization	| Header | string |	Yes |	Valid and authorized user ID
 api_key |	query |	string |	Yes |	Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON|	Body|	JSON|	Yes|	[Refer Delete Notice Contract JSON](#delete-notice-contract-json)
+Request JSON|	Body|	JSON|	Yes|	[Refer Delete Notice Contract JSON](#delete-notice-contract-JSON)
 
 Responses
 
@@ -1724,92 +1724,92 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Response Element | Response Type |  Description
 -----------------|---------------|------------
-data | JSON |  All the Opportunities are listed out in the response
+data | JSON Array |  All the Opportunities are listed out in the response
 opportunityId | string |  Opportunity ID
 data.type | string | See Notices Types table
 data.solicitationNumber | string | Solicitation Number
 data.title | string | Title of the Opportunity
 data.organizationId | string | FH Org Id/AAC code of the office where an Opportunity is being submitted
 data.classificationCode | string | Product Service Code (PSC)
-data.naics | JSON | 
+data.naics | JSON Array | 
 data.naics.code | string | NAICS Code
 data.naics.type | string |  NAICS type
-data.flags | JSON | 
+data.flags | JSON Array | 
 data.flags.code | string | 
 data.flags.isSelected | boolean | 
-data.pointOfContact | JSON | 
+data.pointOfContact | JSON Array| 
 data.pointOfContact.type | string |  Contact Type
 data.pointOfContact.title | string |  Contact title
 data.pointOfContact.fullname | string |  Contact Full Name
 data.pointOfContact.email | string | Contact email
 data.pointOfContact.phone | string | Contact Phone
 data.pointOfContact.fax | string |Contact Fax
-data.placeOfPerformance | JSON | 
+data.placeOfPerformance | JSON Object | 
 data.placeOfPerformance.streetAddress | string |  Pop Address
 data.placeOfPerformance.streetAddress2 | string |  Pop Address2
-data.placeOfPerformance.city | JSON | Pop City
+data.placeOfPerformance.city | JSON Object  | Pop City
 data.placeOfPerformance.city.code | string |  Pop City code
 data.placeOfPerformance.city.name | string |  Pop City name
-data.placeOfPerformance.city.state | JSON | Pop City state
+data.placeOfPerformance.city.state | JSON Object | Pop City state
 data.placeOfPerformance.state.code | string | Pop city state code
 data.placeOfPerformance.state.name | string |  Pop city state name
-data.placeOfPerformance.country | JSON | Pop Country
+data.placeOfPerformance.country | JSON Object  | Pop Country
 data.placeOfPerformance.country.code | string | Pop Country Code
 data.placeOfPerformance.country.name | string | Pop Country name
 data.placeOfPerformance.zip | string | Pop Country zip
-data.archive | JSON | 
+data.archive | JSON Object  | 
 data.archive.type | string |  Archive Type: auto15, auto30, autocustom
 data.archive.date | date and time |  Archive Date
-data.permissions | JSON | 
-data.permissions.ivl | JSON | 
+data.permissions | JSON Object| 
+data.permissions.ivl | JSON Object| 
 data.permissions.ivl.create | boolean |  permissions.ivl.create
 data.permissions.ivl.read | boolean |  permissions.ivl.read
 data.permissions.ivl.update | boolean |  permissions.ivl.update
 data.permissions.ivl.delete | boolean |  permissions.ivl.delete
-data.solicitation | JSON | 
+data.solicitation | JSON Object | 
 data.solicitation.setAside | string |  See Set-Aside values table
-data.solicitation.deadlines | JSON | 
+data.solicitation.deadlines | JSON Object | 
 data.solicitation.deadlines.response | date and time |  Solicitation Deadline Date
 data.solicitation.deadlines.responseTz | string |  Solicitation Deadlines Response Time Zone
-data.award | JSON | 
+data.award | JSON Object | 
 data.award.date | date and time |  Award Date
 data.award.number | string |  Award Number
 data.award.deliveryOrderNumber | string |   Award Delivery Order Number
 data.award.amount | Number | Award Amount
 data.award.lineitemNumber | string |  Award Line Item Number
-data.award.awardee | JSON |  
+data.award.awardee | JSON Object |  
 data.award.awardee.name | string |  Awardee Name
 data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS (v2 - Deprecated)
 data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
-data.award.awardee.location | JSON |  Awardee Location
+data.award.awardee.location | JSON Object|  Awardee Location
 data.award.awardee.location.streetAddress | string | Awardee Street Address 1
 data.award.awardee.location.streetAddress2 | string |  Awardee Street Address 1
-data.award.awardee.location.city | string |  Awardee City
+data.award.awardee.location.city | JSON Object |  Awardee City
 data.award.awardee.location.city.code | string |  Awardee City Code
 data.award.awardee.location.city.name | string |  Awardee City Name
-data.award.awardee.location.state | JSON |  Awardee State
+data.award.awardee.location.state | JSON Object |  Awardee State
 data.award.awardee.location.state.code | string |  Awardee State Code
 data.award.awardee.location.state.name | string |  Awardee State Name
-data.award.awardee.location.country | JSON |  Awardee Country
+data.award.awardee.location.country | JSON Object |  Awardee Country
 data.award.awardee.location.country.code | string |  Awardee Country Code
 data.award.awardee.location.country.name | string |  Awardee Country Name
 data.award.awardee.location.zip | string |  Awardee Zip
-data.award.justificationAuthority | JSON | 
+data.award.justificationAuthority | JSON Object | 
 data.award.justificationAuthority.modificationNumber | string | justificationAuthority modification number
 data.award.justificationAuthority.authority | string |  justificationAuthority authority
 data.link | JSON |   
-data.link.additionalInfo | JSON |  
+data.link.additionalInfo | JSON Object |  
 data.link.additionalInfo.content | string | Additional Info
 data.link.href | string |  Website Address
 data.additionalReporting | string |  recovery_act or none
-additionalInfo.sections JSON | JSON | 
+additionalInfo.sections JSON | JSON Array | 
 additionalInfo.sections.opportunityId | string | 
 additionalInfo.sections.status | string | 
-parent  | JSON | 
+parent  | JSON Object | 
 parent.opportunityId | string |  Parent Opportunity ID
-related  | JSON |
+related  | JSON Object |
 related.opportunityId | string | Related Opportunity ID
-status  | JSON |  
+status  | JSON Object |  
 status.code | string |  1.status= active (published, unarchive and uncancelled records) <br />2.status=inactive (published, archive and uncancelled records)<br />3.status=draft (draft records)<br />4.status=published (published and unarchive)<br />5.status=active_cancelled(published, unarchive and cancelled records)<br />6.status=inactive_cancelled(published, archive and cancelled records)<br />7.status=archived(published and archived)
 status.value | string |  Refer to status.code
 archived | boolean |  Indicates Archived
@@ -1821,12 +1821,12 @@ modifiedDate | date |  Date Modified
 createdDate | date | Date Created
 modifiedBy | string |  Modified By User ID
 createdBy | string |  Created By User ID
-description  | JSON |  JSON applicable to Get Opportunity By ID only
+description  | JSON Object |  JSON applicable to Get Opportunity By ID only
 description.body | string |   Description of Notice
 description.opportunityId | string |  Opportunity ID (UI)
 description.descriptionId | string | 
 description.modifiedOn | string |  Date Description modified
-page  | JSON |  JSON applicable to Get List of Opportunities only
+page Object  | JSON |  JSON applicable to Get List of Opportunities only
 page.size | string | 
 page.totalElements | string | 
 page.totalPages | string | 
@@ -2253,7 +2253,7 @@ Examples
 **Request Type** | POST
 **URL** | /cancel/{opportunityId}
 **Summary** | Cancel a Published Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2263,7 +2263,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Cancel Opportunity Contract JSON](#cancel-opportunity-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Cancel Opportunity Contract JSON](#cancel-opportunity-contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2299,7 +2299,7 @@ Examples
 **Request Type** | POST
 **URL** | /uncancel/{opportunityId}
 **Summary** | Update status of a Canceled Opportunity to Published status
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2309,7 +2309,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Uncancel Opportunity Contract JSON](#uncancel-opportunity-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Uncancel Opportunity Contract JSON](#uncancel-opportunity-contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2369,7 +2369,7 @@ Examples
 **Request Type** | POST
 **URL** | /archive/{opportunityId}
 **Summary** | Archive a Published Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2379,7 +2379,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Archive Opportunity Contract JSON](#archive-opportunity-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Archive Opportunity Contract JSON](#archive-opportunity-contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2411,7 +2411,7 @@ Examples
 **Request Type** | POST
 **URL** | /unarchive/{opportunityId}
 **Summary** | Update status of a Archived Opportunity to Published status
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2421,7 +2421,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Unarchive Opportunity Contract JSON](#unarchive-opportunity-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Unarchive Opportunity Contract JSON](#unarchive-opportunity-contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2478,7 +2478,7 @@ Examples
 **Request Type** | POST
 **URL** | /{opportunityId}/attachments
 **Summary** | Add attachment/link to a draft Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2488,7 +2488,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes | [Refer Create Attachment Contract JSON](#create-attachment-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Create Attachment Contract JSON](#create-attachment-contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2537,7 +2537,7 @@ Examples
 **Request Type** | PATCH
 **URL** | /{opportunityId}/attachments/{resourceId}
 **Summary** | Update draft attachment/link metadata on a draft Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2548,7 +2548,7 @@ Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
 resourceId | query | string | Yes | Resource ID
-Request JSON | Body | JSON | Yes | [Refer Update Attachment Link Contract JSON](#update-attachment-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Update Attachment Link Contract JSON](#update-attachment-contract-JSON)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2756,19 +2756,19 @@ Responses
 
 HTTP Status Code | Response Type |  Description
 -----------------|---------------|------------
-ivl | JSON | 
+ivl | JSON Array | 
 ivl.duns | string | Unique Entity Identifier DUNS number for the business entity (v2 - Deprecated)
 ivl.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
 ivl.cageNumber | string | Identifies a given facility at a specific location
 ivl.name | string | Name of business entity
 ivl.addedOn | string | Date added to IVL
-ivl.contacts | JSON | Business entity contact
+ivl.contacts | JSON Array | Business entity contact
 ivl.contacts.email | string | Business entity email
 ivl.contacts.firstName | string |Business entity contact first name
 ivl.contacts.lastName | string | Business entity contact last name
 ivl.contacts.phoneNumber | string | Business entity contact phone number
 ivl.contacts.type | string | Business entity contact type
-ivl.addresses | JSON | 
+ivl.addresses | JSON Array | 
 ivl.addresses.streetAddress | string | Business entity address
 ivl.addresses.city | string |  Business entity city
 ivl.addresses.state | string |  Business entity state
@@ -2902,7 +2902,7 @@ ivl": [
 **Request Type** | GET
 **URL** |	/resource
 **Summary** | Download all attachments from resource ID
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2958,7 +2958,7 @@ Examples
 **Request Type** | GET
 **URL** |	/resources
 **Summary** | Download all attachments from opportunity ID
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -3021,7 +3021,7 @@ Examples
 **Request Type** | PUT
 **URL** | /organization/{orgId}/ivl
 **Summary** | Update IVL Settings (on or off) for an Organization
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -3031,7 +3031,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 orgId | query | string | Yes | FH Org Id/AAC code of the organization
-Request JSON | Body | JSON | Yes | [Refer IVL Settings Contract JSON](#ivl-settings-contract-json)
+Request JSON | Body | JSON | Yes | [Refer IVL Settings Contract JSON](#ivl-settings-contract-JSON)
 
 Responses
 
@@ -3062,7 +3062,7 @@ Examples
 **Request Type** | GET
 **URL** | /opportunities/access/{opportunityId}/accessRequest
 **Summary** | Summary	Get Authorized Party list for the explicit access requests submitted to an Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -3196,7 +3196,7 @@ Examples
 **Request Type** | POST
 **URL** | /opportunities/access/{opportunityId}/accessRequest
 **Summary** | Add a Vendor as an Authorized Party for a notice to grant access to all the secured attachments across all the versions . This API will create and approve the request for the vendor.
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -3206,7 +3206,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON  | Body | JSON | Yes | [Refer Vendor Data Contract JSON](#vendor-data-contract-json)
+Request JSON  | Body | JSON | Yes | [Refer Vendor Data Contract JSON](#vendor-data-contract-JSON)
 
 Responses
 
@@ -3253,7 +3253,7 @@ Examples
 **Request Type** | GET
 **URL** | /isSolicitationNumberUnique/{parent}/{solicitationNumber}/{type}
 **Summary** | Check if solicitation number is unique. A solicitation number is unique if it is not used by another opportunity of equivalent type. For justification type, j&a and fair opportunity/limited sources justification are considered equivalent.
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -3291,7 +3291,7 @@ Examples
 **Request Type** | GET
 **URL** | /opportunities/{opportunityId}/relatedopportunities/{type}
 **Summary** | Get Related Contract Opportunities
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -3400,7 +3400,7 @@ Examples
 ### Create and Update Opportunity Contract JSON
 
 
-<div id="create-update-json-v1">
+<div id="create-update-JSON-v1">
 <details>
 <summary>Create_Update_Opportunity_Contract_JSON_v1</summary>
 <p>
@@ -3520,7 +3520,7 @@ Examples
 </details>
 </div>
 
-<div id="create-update-json-v2">
+<div id="create-update-JSON-v2">
 <details>
 <summary>Create_Update_Opportunity_Contract_JSON_v2</summary>
 <p>
@@ -3645,7 +3645,7 @@ Examples
 
 Name | Data Type |Field Length | Allowed Values | Required (Create/Update) | Required (Publish) | Description | Applicable Versions
 -----|-----------|-------|-------------------|------------|------------ |---------- | -------- 
-data | JSON |NA | NA | NA | NA | NA | NA
+data | JSON Object |NA | NA | NA | NA | NA | NA
 data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | Notice Type | v1 <br> v2
 data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes (No for type = s  (Special Notice)) | Solicitation Number | v1 <br> v2
 data.title | string | 256 characters | |Yes | Yes | Title of the Opportunity | v1 <br> v2
@@ -3661,74 +3661,74 @@ data.pointOfContact.fullname | string | 500 characters| | No | Yes (No for type 
 data.pointOfContact.email | string |255 characters | | No  | Yes (No for type = a (Award))  | Contact email | v1 <br> v2
 data.pointOfContact.phone | string |255 characters | | No | No | Contact Phone | v1 <br> v2
 data.pointOfContact.fax | string | 255 characters | | No  | No | Contact Fax | v1 <br> v2
-data.pointOfContact.additionalInfo | JSON |NA |NA | NA  | NA |  Any additional information on Point of Contact | v1 <br> v2
+data.pointOfContact.additionalInfo | JSON Object |NA |NA | NA  | NA |  Any additional information on Point of Contact | v1 <br> v2
 data.pointOfContact.additionalInfo.<br/>content | String | | | No  | No | Details of the additional information on Point of Contact | v1 <br> v2 
-data.placeOfPerformance | JSON | NA | NA | NA | NA | NA | NA
+data.placeOfPerformance | JSON Object| NA | NA | NA | NA | NA | NA
 data.placeOfPerformance.<br/>streetAddess | string | | | No | No | Pop Address | v1 <br> v2
 data.placeOfPerformance.<br/>streetAddess2 | string | | | No | No | Pop Address2 | v1 <br> v2
-data.placeOfPerformance.city | JSON | NA | NA | NA | NA | Pop City |NA
+data.placeOfPerformance.city | JSON Object | NA | NA | NA | NA | Pop City |NA
 data.placeOfPerformance.city.<br/>code | string | | | No | No | Pop City code | v1 <br> v2
 data.placeOfPerformance.city.<br/>name | string | | | No | No | Pop City name| v1 <br> v2
-data.placeOfPerformance.state | JSON |NA | NA | NA | NA | Pop City state| NA
+data.placeOfPerformance.state | JSON Object |NA | NA | NA | NA | Pop City state| NA
 data.placeOfPerformance.state.<br/>code | string | | | No | No | Pop city state code | v1 <br> v2
 data.placeOfPerformance.state.<br/>name | string | | | No | No | Pop city state name| v1 <br> v2
-data.placeOfPerformance.country | JSON | NA | NA | NA | NA | Pop Country| v1 <br> v2
+data.placeOfPerformance.country | JSON Object | NA | NA | NA | NA | Pop Country| v1 <br> v2
 data.placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country Code| v1 <br> v2
 data.placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name| v1 <br> v2
 data.placeOfPerformance.zip | string | | | No | No | Pop Country zip| v1 <br> v2
-data.archive | JSON |NA | NA | NA | NA | Contract opportunity archive policy information | NA
+data.archive | JSON Object |NA | NA | NA | NA | Contract opportunity archive policy information | NA
 data.archive.type | string | | auto15,<br/> auto30,<br/> autocustom | No | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive | v1 <br> v2
 data.archive.date | date | | | No | Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future | v1 <br> v2
-data.permissions | JSON | NA | NA | NA | NA | NA|NA
-data.permissions.ivl | JSON | NA | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice | v1 <br> v2
+data.permissions | JSON Object | NA | NA | NA | NA | NA|NA
+data.permissions.ivl | JSON Object | NA | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice | v1 <br> v2
 data.permissions.ivl.create | boolean | | | No | Yes (No for type = a (Award)) | IVL create permission | v1 <br> v2
 data.permissions.ivl.read | boolean | | | No | Yes (No for type = a (Award)) | IVL read permission | v1 <br> v2
 data.permissions.ivl.update | boolean | |  | No | No | IVL update permission | v1 <br> v2
 data.permissions.ivl.delete | boolean | | | No | No | IVL delete permission | v1 <br> v2
-data.solicitation | JSON |NA | NA | NA | NA | NA
+data.solicitation | JSON Object |NA | NA | NA | NA | NA
 data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action | v1 <br> v2
-data.solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity|NA
+data.solicitation.deadlines | JSON Object| NA | NA | NA | NA |Response deadline date for Contract opportunity|NA
 data.solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date | v1 <br> v2
 data.solicitation.deadlines.<br/>responseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date | v1 <br> v2
-data.award | JSON | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types |NA 
+data.award | JSON Object | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types |NA 
 data.award.date | date | |YYYY-MM-DD |No | Yes only for type = a (Award) | Award Date | v1 <br> v2
 data.award.number | string | 255 characters | |No | Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number | v1 <br> v2
 data.award.deliverOrderNumber | string | 255 characters| | No | No | Award Delivery Order Number | v1 <br> v2
 data.award.amount | number |64 digits |  | No | Yes only for type = a (Award) | Award Amount | v1 <br> v2
 data.award.lineitemNumber | string |255 characters | | No | No | Contract Line item Number | v1 <br> v2
-data.award.awardee | JSON | NA| NA | NA | NA |Awardee details; Only for type = a (Award) |NA
+data.award.awardee | JSON Object | NA| NA | NA | NA |Awardee details; Only for type = a (Award) |NA
 data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
 data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
 data.award.awardee.ueiSAM | string | 12 alphanumeric | | No | No; Either awardee.name or awardee.ueiSAM is required <br> **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
-data.award.awardee.location | JSON |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided** | v1 <br> v2
+data.award.awardee.location | JSON Object |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided** | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address  | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 2 | v1 <br> v2
-data.award.awardee.location.<br/>city | JSON |NA |NA |NA | NA | Awardee City details | v1 <br> v2
+data.award.awardee.location.<br/>city | JSON Object |NA |NA |NA | NA | Awardee City details | v1 <br> v2
 data.award.awardee.location.<br/>city.code | string | | | No | Yes | Awardee City code | v1 <br> v2
 data.award.awardee.location.<br/>city.name | string | | | No | No | Awardee City name | v1 <br> v2
-data.award.awardee.location.<br/>state | JSON | NA | NA | NA | NA | Awardee State details | v1 <br> v2
+data.award.awardee.location.<br/>state | JSON Object | NA | NA | NA | NA | Awardee State details | v1 <br> v2
 data.award.awardee.location.<br/>state.code | string | | | No | Yes | Awardee State code | v1 <br> v2
 data.award.awardee.location.<br/>state.name | string | | | No | No | Awardee State name | v1 <br> v2
-data.award.awardee.location.<br/>country | JSON | NA| NA | NA | NA |Awardee Country details | v1 <br> v2
+data.award.awardee.location.<br/>country | JSON Object | NA| NA | NA | NA |Awardee Country details | v1 <br> v2
 data.award.awardee.location.<br/>country.code | string | | | No | Yes | Awardee Country code | v1 <br> v2
 data.award.awardee.location.<br/>country.name | string | | | No | No | Awardee Country Name | v1 <br> v2
 data.award.awardee.location.<br/>zip | string | | | No | No | Awardee Country Zip code | v1 <br> v2
-data.award.justificationAuthority | JSON |NA |NA | NA | NA | Only for type = j (Justification) |NA
+data.award.justificationAuthority | JSON Object |NA |NA | NA | NA | Only for type = j (Justification) |NA
 data.award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number | v1 <br> v2
 data.award.justificationAuthority.<br/>authority | string|  |  | No | Yes for type = j (Justification) | Justification Authority | v1 <br> v2
 data.additionalReporting | string | |None, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice | v1 <br> v2
-description | JSON | NA | NA | NA | NA | NA |NA
+description | JSON Array | NA | NA | NA | NA | NA |NA
 description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice | v1 <br> v2
-related | JSON | NA | NA | NA | NA | Related Notice information |NA
+related | JSON Object| NA | NA | NA | NA | Related Notice information |NA
 related.opportunityId | string | 32 characters| | No | No | Opportunity Id of the related notice | v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Publish Opportunity Contract JSON
 
-<div id="publish-json" title="Click to view Publish Contract">
+<div id="publish-JSON" title="Click to view Publish Contract">
 <details>
-<summary>Publish_Opportunity_Contract_Json</summary>
+<summary>Publish_Opportunity_Contract_JSON</summary>
 <p>
 <code><pre>
 {
@@ -3752,7 +3752,7 @@ reason | string |  | No | Publish reason| v1 <br> v2
 ### Create and Publish Opportunity Contract JSON
 
 
-<div id="create-publish-json-v1">
+<div id="create-publish-JSON-v1">
 <details>
 <summary>Create_Publish_Opportunity_Contract_JSON_v1</summary>
 <p>
@@ -3886,7 +3886,7 @@ reason | string |  | No | Publish reason| v1 <br> v2
 </details>
 </div>
 
-<div id="create-publish-json-v2">
+<div id="create-publish-JSON-v2">
 <details>
 <summary>Create_Publish_Opportunity_Contract_JSON_v2</summary>
 <p>
@@ -4025,7 +4025,7 @@ reason | string |  | No | Publish reason| v1 <br> v2
 
 Name | Data Type |Field Length | Allowed Values| Required | Description|Applicable Versions
 -----|-----------|-------|-------------------|------------|------------|-----
-data | JSON |NA | NA | NA | NA|NA
+data | JSON Object |NA | NA | NA | NA|NA
 data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Notice Type| v1 <br> v2
 data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {}| Yes (No for type = s  (Special Notice)) | Solicitation Number| v1 <br> v2
 data.title | string | 256 characters | | Yes | Title of the Opportunity| v1 <br> v2
@@ -4041,67 +4041,67 @@ data.pointOfContact.fullname | string | 500 characters| | Yes (No for type = a (
 data.pointOfContact.email | string |255 characters | | Yes (No for type = a (Award))  | Contact email| v1 <br> v2
 data.pointOfContact.phone | string |255 characters | | No | Contact Phone| v1 <br> v2
 data.pointOfContact.fax | string | 255 characters | | No | Contact Fax| v1 <br> v2
-data.pointOfContact.additionalInfo | JSON |NA |NA | NA |  Any additional information on Point of Contact| v1 <br> v2
+data.pointOfContact.additionalInfo | JSON Object |NA |NA | NA |  Any additional information on Point of Contact| v1 <br> v2
 data.pointOfContact.additionalInfo.<br/>content | String | | | No | Details of the additional information on Point of Contact | v1 <br> v2
-data.placeOfPerformance | JSON | NA | NA | NA |NA|NA
+data.placeOfPerformance | JSON Object| NA | NA | NA |NA|NA
 data.placeOfPerformance.<br/>streetAddess | string | | |No | Pop Address| v1 <br> v2
 data.placeOfPerformance.<br/>streetAddess2 | string | | | No | Pop Address2| v1 <br> v2
-data.placeOfPerformance.city | JSON | NA | NA |NA | Pop City| v1 <br> v2
+data.placeOfPerformance.city | JSON Object| NA | NA |NA | Pop City| v1 <br> v2
 data.placeOfPerformance.city.<br/>code | string | | |No | Pop City code| v1 <br> v2
 data.placeOfPerformance.city.<br/>name | string | | |No | Pop City name| v1 <br> v2
-data.placeOfPerformance.state | JSON |NA | NA |NA | Pop City state| v1 <br> v2
+data.placeOfPerformance.state | JSON Object |NA | NA |NA | Pop City state| v1 <br> v2
 data.placeOfPerformance.state.<br/>code | string | | | No | Pop city state code| v1 <br> v2
 data.placeOfPerformance.state.<br/>name | string | | | No | Pop city state name| v1 <br> v2
-data.placeOfPerformance.country | JSON | NA | NA | NA | Pop Country| v1 <br> v2
+data.placeOfPerformance.country | JSON Object | NA | NA | NA | Pop Country| v1 <br> v2
 data.laceOfPerformance.<br/>country.code | string | | |No | Pop Country Code| v1 <br> v2
 data.placeOfPerformance.<br/>country.name | string | | |No | Pop Country name| v1 <br> v2
 data.placeOfPerformance.zip | string | | |No | Pop Country zip| v1 <br> v2
-data.archive | JSON |NA | NA | NA | Contract opportunity archive policy information| v1 <br> v2
+data.archive | JSON Object |NA | NA | NA | Contract opportunity archive policy information| v1 <br> v2
 data.archive.type | string | | auto15,<br/> auto30,<br/> autocustom | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive| v1 <br> v2
 data.archive.date | date | | |Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future| v1 <br> v2
-data.permissions | JSON | NA | NA | NA |NA|NA
+data.permissions | JSON Object | NA | NA | NA |NA|NA
 data.permissions.ivl | JSON | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice| v1 <br> v2
 data.permissions.ivl.create | boolean | | | Yes (No for type = a (Award)) | IVL create permission| v1 <br> v2
 data.permissions.ivl.read | boolean | | |Yes (No for type = a (Award)) | IVL read permission| v1 <br> v2
 data.permissions.ivl.update | boolean | |  | No | IVL update permission| v1 <br> v2
 data.permissions.ivl.delete | boolean | | |No | IVL delete permission| v1 <br> v2
-data.solicitation | JSON |NA | NA | NA |NA|NA
+data.solicitation | JSON Object |NA | NA | NA |NA|NA
 data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action| v1 <br> v2
-data.solicitation.deadlines | JSON | NA | NA | NA |Response deadline date for Contract opportunity| v1 <br> v2
+data.solicitation.deadlines | JSON Object| NA | NA | NA |Response deadline date for Contract opportunity| v1 <br> v2
 data.solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
 data.solicitation.deadlines.<br/>responseTz |string | | |No | Time Zone for <br/>Solicitation Deadline Date| v1 <br> v2
-data.award | JSON | NA | NA | NA| This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types| v1 <br> v2
+data.award | JSON Object | NA | NA | NA| This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types| v1 <br> v2
 data.award.date | date | |YYYY-MM-DD | Yes only for type = a (Award) | Award Date| v1 <br> v2
 data.award.number | string | 255 characters | |Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number| v1 <br> v2
 data.award.deliverOrderNumber | string | 255 characters| | No | Award Delivery Order Number| v1 <br> v2
 data.award.amount | number |64 digits |  | Yes only for type = a (Award) | Award Amount| v1 <br> v2
 data.award.lineitemNumber | string |255 characters | | No | Contract Line item Number| v1 <br> v2
-data.award.awardee | JSON | NA| NA | NA |Awardee details; Only for type = a (Award)| v1 <br> v2
+data.award.awardee | JSON Object | NA| NA | NA |Awardee details; Only for type = a (Award)| v1 <br> v2
 data.award.awardee.name | string | 1000 characters | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
 data.award.awardee.duns | string | 9 digits | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
 data.award.awardee.ueiSAM | string | 12 alphanumeric | No | No; Either awardee.name or awardee.ueiSAM is required <br> **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
-data.award.awardee.location | JSON |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**| v1 <br> v2
+data.award.awardee.location | JSON Object |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**| v1 <br> v2
 data.award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress2 | string | | | No | Awardee Street Address 2| v1 <br> v2
-data.award.awardee.location.<br/>city | JSON |NA |NA |NA | Awardee City details| v1 <br> v2
+data.award.awardee.location.<br/>city | JSON Object|NA |NA |NA | Awardee City details| v1 <br> v2
 data.award.awardee.location.<br/>city.code | string | | | Yes | Awardee City code| v1 <br> v2
 data.award.awardee.location.<br/>city.name | string | | | No | Awardee City name| v1 <br> v2
-data.award.awardee.location.<br/>state | JSON | NA | NA | NA | Awardee State details| v1 <br> v2
+data.award.awardee.location.<br/>state | JSON Object | NA | NA | NA | Awardee State details| v1 <br> v2
 data.award.awardee.location.<br/>state.code | string | | | Yes | Awardee State code| v1 <br> v2
 data.award.awardee.location.<br/>state.name | string | | | No | Awardee State name| v1 <br> v2
-data.award.awardee.location.<br/>country | JSON | NA| NA | NA |Awardee Country details| v1 <br> v2
+data.award.awardee.location.<br/>country | JSON Object | NA| NA | NA |Awardee Country details| v1 <br> v2
 data.award.awardee.location.<br/>country.code | string | | | Yes | Awardee Country code| v1 <br> v2
 data.award.awardee.location.<br/>country.name | string | | |  No | Awardee Country Name| v1 <br> v2
 data.award.awardee.location.<br/>zip | string | | | No | Awardee Country Zip code| v1 <br> v2
-data.award.justificationAuthority | JSON |NA |NA | NA | Only for type = j (Justification)| v1 <br> v2
+data.award.justificationAuthority | JSON Object |NA |NA | NA | Only for type = j (Justification)| v1 <br> v2
 data.award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | Justification Authority Modification Number| v1 <br> v2
 data.award.justificationAuthority.<br/>authority | string|  |  | Yes for type = j (Justification) | Justification Authority| v1 <br> v2
 data.additionalReporting | string | |none, <br/>auto_recovery | Yes; No for type = s (Special Notice) | Initiative that applies to the notice| v1 <br> v2
-description | JSON | NA | NA | NA |NA|NA
+description | JSON Array | NA | NA | NA |NA|NA
 description.body | string | 65535 characters| | Yes; No for type = a (Award) | Description of the notice| v1 <br> v2
-related | JSON | NA | NA | NA | Related Notice information| v1 <br> v2
+related | JSON Object| NA | NA | NA | Related Notice information| v1 <br> v2
 related.opportunityId | string | 32 characters| | No | Opportunity Id of the related notice| v1 <br> v2
-resources | JSON |NA | NA | NA |NA|NA
+resources | JSON Array |NA | NA | NA |NA|NA
 resources.attType | string | |link, file | No| Type of attachment, either link or file| v1 <br> v2
 resources.content | byte |250MB |  | No | File content in base64 format| v1 <br> v2
 resources.link | string | 255 characters | |No | Resource link URL| v1 <br> v2
@@ -4116,9 +4116,9 @@ resources.exportControlled | string |1 character | 0 | No |Export Controlled. * 
 
 ### Revise Opportunity Contract JSON
 
-<div id="revise-json" title="Click to view Revise Contract">
+<div id="revise-JSON" title="Click to view Revise Contract">
 <details>
-<summary>Revise_Opportunity_Contract_Json</summary>
+<summary>Revise_Opportunity_Contract_JSON</summary>
 <p>
 <code><pre>
 {
@@ -4141,9 +4141,9 @@ reason | string |  | No | Reason for revision| v1 <br> v2
 
 ### Cancel Opportunity Contract JSON
 
-<div id="cancel-json" title="Click to view Cancel Contract">
+<div id="cancel-JSON" title="Click to view Cancel Contract">
 <details>
-<summary>Cancel_Opportunity_Contract_Json</summary>
+<summary>Cancel_Opportunity_Contract_JSON</summary>
 <p>
 <code><pre>
 {
@@ -4170,9 +4170,9 @@ description | string |  | Yes | Description for cancelation| v1 <br> v2
 
 ### Uncancel Opportunity Contract JSON
 
-<div id="uncancel-json" title="Click to view Uncancel Contract">
+<div id="uncancel-JSON" title="Click to view Uncancel Contract">
 <details>
-<summary>Uncancel_Opportunity_Contract_Json</summary>
+<summary>Uncancel_Opportunity_Contract_JSON</summary>
 <p>
 <code><pre>
 {
@@ -4209,9 +4209,9 @@ newResponseTz | string |  | No | New Response Time Zone| v1 <br> v2
 
 ### Archive Opportunity Contract JSON
 
-<div id="archive-json" title="Click to view Archive Contract">
+<div id="archive-JSON" title="Click to view Archive Contract">
 <details>
-<summary>Archive_Opportunity_Contract_Json</summary>
+<summary>Archive_Opportunity_Contract_JSON</summary>
 <p>
 <code><pre>
 {
@@ -4234,9 +4234,9 @@ reason | string |  | No | Archive reason| v1 <br> v2
 
 ### Unarchive Opportunity Contract JSON
 
-<div id="unarchive-json" title="Click to view Unarchive Contract">
+<div id="unarchive-JSON" title="Click to view Unarchive Contract">
 <details>
-<summary>Unarchive_Opportunity_Contract_Json</summary>
+<summary>Unarchive_Opportunity_Contract_JSON</summary>
 <p>
 <code><pre>
 {
@@ -4271,9 +4271,9 @@ newResponseTz | string |  | No | New Response Time Zone| v1 <br> v2
 
 ### Create Attachment Contract JSON
 
-<div id="create-attachment-json" title="Click to view Create Attachment Contract">
+<div id="create-attachment-JSON" title="Click to view Create Attachment Contract">
 <details>
-<summary>Create_Attachment_Contract_Json - File</summary>
+<summary>Create_Attachment_Contract_JSON - File</summary>
 <p>
 <code><pre>
 {
@@ -4290,7 +4290,7 @@ newResponseTz | string |  | No | New Response Time Zone| v1 <br> v2
 </details>
 <details>
 
-<summary>Create_Attachment_Contract_Json - Link</summary>
+<summary>Create_Attachment_Contract_JSON - Link</summary>
 <p>
 <code><pre>
 {
@@ -4347,9 +4347,9 @@ Flash Video (.flv, .f4v)|	video/x-flv
 
 ### Update Attachment Contract JSON
 
-<div id="update-attachment-json" title="Click to view update Attachment/Link Contract">
+<div id="update-attachment-JSON" title="Click to view update Attachment/Link Contract">
 <details>
-<summary>Update_Attachment_Contract_Json </summary>
+<summary>Update_Attachment_Contract_JSON </summary>
 <p>
 <code><pre>
 {
@@ -4365,7 +4365,7 @@ Flash Video (.flv, .f4v)|	video/x-flv
 </details>
 
 <details>
-<summary>Update_Link_Contract_Json </summary>
+<summary>Update_Link_Contract_JSON </summary>
 <p>
 <code><pre>
 {
@@ -4391,7 +4391,7 @@ resourceIdBelow | string  |  | No | This should be Resource ID of the file/link 
 
 ### IVL Settings Contract JSON
 
-<div id="ivl-settings-json" title="Click to view IVL Settings Contract">
+<div id="ivl-settings-JSON" title="Click to view IVL Settings Contract">
 <details>
 <summary>IVL_Settings_Contract_JSON</summary>
 <p>
@@ -4414,7 +4414,7 @@ ivlView | string | forcedon, forcedoff | No | Indicates whether vendors can view
 
 ### Vendor Data Contract JSON
 
-<div id="vendor-data-json-v1" title="Click to view Vendor Data Contract-v1">
+<div id="vendor-data-JSON-v1" title="Click to view Vendor Data Contract-v1">
 <details>
 <summary>Vendor_Data_Contract_JSON_v1</summary>
 <p>
@@ -4432,7 +4432,7 @@ ivlView | string | forcedon, forcedoff | No | Indicates whether vendors can view
 </details>
 </div>
 
-<div id="vendor-data-json-v2" title="Click to view Vendor Data Contract-v2">
+<div id="vendor-data-JSON-v2" title="Click to view Vendor Data Contract-v2">
 <details>
 <summary>Vendor_Data_Contract_JSON_v2</summary>
 <p>
@@ -4464,7 +4464,7 @@ cageCode | string | | Yes | Cage Code| v1 <br> v2 - Deprecated
 
 ### Delete Notice Contract JSON
 
-<div id="delete-notice-json" title="Click to view Delete Notice Contract">
+<div id="delete-notice-JSON" title="Click to view Delete Notice Contract">
 <details>
 <summary>Delete_Notice_Contract_JSON</summary>
 <p>
@@ -4511,7 +4511,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Create contract opportunity.
       operationId: createOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
         - application/*
       parameters:
@@ -4526,8 +4526,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4577,7 +4577,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Create and publish contract opportunity.
       operationId: createAndPublishOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
         - application/*
       parameters:
@@ -4592,8 +4592,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4643,9 +4643,9 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Publish contract opportunity.
       operationId: publishOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4663,8 +4663,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4714,9 +4714,9 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Revise contract opportunity.
       operationId: reviseOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4734,8 +4734,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4776,9 +4776,9 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Revise contract opportunity.
       operationId: reviseOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4796,8 +4796,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4847,9 +4847,9 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Update contract opportunity.
       operationId: updateOpportunityUsingPATCH
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4867,8 +4867,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4921,7 +4921,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
       summary: Get history of Opportunity
       operationId: getOpportunityHistoryUsingGET
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4988,7 +4988,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Delete contract opportunity.
       operationId: deleteOpportunityUsingDELETE
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5051,9 +5051,9 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Delete all versions of Opportunity.
       operationId: deleteOpportunitiesAllVersionsUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5071,8 +5071,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -5122,7 +5122,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Get all opportunities.
       operationId: getOpportunitiesUsingGET
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5348,7 +5348,7 @@ v1/api/history/{opportunityId}:
       summary: Get history of Opportunity
       operationId: getOpportunityHistoryUsingGET
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5415,9 +5415,9 @@ v1/api/history/{opportunityId}:
       description: Cancel contract opportunity.
       operationId: cancelOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5435,8 +5435,8 @@ v1/api/history/{opportunityId}:
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -5486,9 +5486,9 @@ v1/api/history/{opportunityId}:
       description: UnCancel contract opportunity.
       operationId: unCancelOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5506,8 +5506,8 @@ v1/api/history/{opportunityId}:
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -5557,9 +5557,9 @@ v1/api/history/{opportunityId}:
       description: Archive contract opportunity.
       operationId: archiveOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5577,8 +5577,8 @@ v1/api/history/{opportunityId}:
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -5628,9 +5628,9 @@ v1/api/history/{opportunityId}:
       description: UnArchive contract opportunity.
       operationId: unArchiveOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5648,8 +5648,8 @@ v1/api/history/{opportunityId}:
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -5699,9 +5699,9 @@ v1/api/history/{opportunityId}:
       description: Add attachment to an opportunity.
       operationId: createAttachmentUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5719,8 +5719,8 @@ v1/api/history/{opportunityId}:
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -5770,9 +5770,9 @@ patch:
       description: Update attachment for an opportunity.
       operationId: updateAttachmentUsingPATCH
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5790,8 +5790,8 @@ patch:
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -5846,7 +5846,7 @@ patch:
       description: Delete attachment for an opportunity.
       operationId: deleteAttachmentUsingDELETE
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -6055,7 +6055,7 @@ patch:
       description: Download attachments for an Resource.
       operationId: downloadAttachmentsByResourceUsingGET
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -6123,7 +6123,7 @@ patch:
       description: Download attachments for an opportunity.
       operationId: downloadAttachmentsByOpportunityUsingGET
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -6190,7 +6190,7 @@ patch:
       summary: Get related contract opportunities
       operationId: getRelatedOpportunitiesGET
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -6278,7 +6278,7 @@ patch:
       summary: 'Check if solicitation number is unique. A solicitation number is unique if it is not used by another opportunity of equivalent type. For justification type, j&a and fair opportunity/limited sources justification are considered equivalent.'
       operationId: getOpportunityHistoryUsingGET_1
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -6345,7 +6345,7 @@ patch:
 /v1/api/opportunities/access/{opportunityId}/accessRequest
 post: 
   consumes: 
-    - application/json
+    - application/JSON
   deprecated: false
   description: "Add Authorized Party to the Opportunity"
   operationId: createAndApproveRequestUsingPOST
@@ -6369,14 +6369,14 @@ post:
       required: true
       type: string
     - 
-      description: requestJson
+      description: requestJSON
       in: body
-      name: requestJson
+      name: requestJSON
       required: false
       schema: 
         type: string
   produces: 
-    - application/json
+    - application/JSON
   responses: 
     "200": 
       description: OK
@@ -6425,7 +6425,7 @@ post:
       description: Get Request Access List for the  opportunity.
       operationId: getRequestAccessList
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -6679,7 +6679,7 @@ Date | Version | Description
 10/10/2019 | v0.8 | Updated the Set-Aside values with the latest codes
 10/25/2019 | v0.9 | Updated the field lengths
 10/31/2019| v0.91| Delete Vendor removed <br> Delete Resource in Draft API added <br> API Specifications Updated: Delete Notice, Getlist, Download Metadata for Attachment by Resource ID, and Download Metadata for Attachment by Opportunity ID <br> JSON Updated: Create and Update, Create and Publish, Revise Opportunity, Cancel Notice, Uncancel Notice, Archive, Unarchive, Create Attachment, Update Attachment, IVL Settings, and Delete Notice <br> Error Message Section Updated
-11/04/2019| v0.92 | Updated the field lengths for contact full name and awardee name fields for create Opportunity, Create and Publish Opportunity Contract Jsons. Updated the Error messages for these fields<br>Added Future Implementation for UEI SAM# Validation and Type of Connection. Task/Delivery Order number is updated to be a non required field for Justification submission
+11/04/2019| v0.92 | Updated the field lengths for contact full name and awardee name fields for create Opportunity, Create and Publish Opportunity Contract JSONs. Updated the Error messages for these fields<br>Added Future Implementation for UEI SAM# Validation and Type of Connection. Task/Delivery Order number is updated to be a non required field for Justification submission
 11/12/2019| v1.0 | Initial Release Finalized
 12/04/2019| v1.01 | Minor updates to UEI(SAM) and UEI(DUNS) info
 1/3/2020| v1.02| Updates to UEI(SAM) and UEI(DUNS) info
