@@ -716,7 +716,6 @@ Examples
       "number": "1376487348949",
       "deliveryOrderNumber": "23577980900",
       "awardee": {
-        "duns": "690888227",
         "ueiSAM": "025114695AST",
         "name": "TONETS CORPORATION",
         "cageCode": "SP971",
@@ -1317,7 +1316,6 @@ Examples
       "number": "1376487348949",
       "deliveryOrderNumber": "23577980900",
       "awardee": {
-        "duns": "690888227",
         "ueiSAM": "025114695AST",
         "name": "TONETS CORPORATION",
         "cageCode": "SP971",
@@ -3980,8 +3978,8 @@ data.permissions.ivl.delete | boolean | | | No | No | IVL delete permission | v1
 data.solicitation | JSON |NA | NA | NA | NA | NA
 data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action | v1 <br> v2
 data.solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity|NA
-data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br><br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| No |1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
-data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone Values](#time-zone-values) |No| No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
+data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| No |1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
+data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone values](#time-zone-values) |No| No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
 data.award | JSON | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types |NA 
 data.award.date | date | |YYYY-MM-DD |No | Yes only for type = a (Award) | Award Date | v1 <br> v2
 data.award.number | string | 255 characters | |No | Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number | v1 <br> v2
@@ -4368,8 +4366,8 @@ data.permissions.ivl.delete | boolean | | |No | IVL delete permission| v1 <br> v
 data.solicitation | JSON |NA | NA | NA |NA|NA
 data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action| v1 <br> v2
 data.solicitation.deadlines | JSON | NA | NA | NA |Response deadline date for Contract opportunity| v1 <br> v2
-data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br><br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
-data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone Values](#time-zone-values) |No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
+data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
+data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone values](#time-zone-values) |No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
 data.award | JSON | NA | NA | NA| This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types| v1 <br> v2
 data.award.date | date | |YYYY-MM-DD | Yes only for type = a (Award) | Award Date| v1 <br> v2
 data.award.number | string | 255 characters | |Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number| v1 <br> v2
@@ -4504,7 +4502,7 @@ description | string |  | Yes | Description for uncanceling| v1 <br> v2
 newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date| v1 <br> v2
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date| v1 <br> v2
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type| v1 <br> v2
-newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br><br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
+newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
 newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -4566,7 +4564,7 @@ requestType | string | unarchive_request | Yes | Type of request| v1 <br> v2
 newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date| v1 <br> v2
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date| v1 <br> v2
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type| v1 <br> v2
-newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br><br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01) | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
+newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01) | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
 newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
