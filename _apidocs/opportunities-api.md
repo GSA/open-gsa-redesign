@@ -117,6 +117,22 @@ The API includes specific methods to submit each of the base notice types (i.e. 
 
 <p><small><a href="#">Back to top</a></small></p>
 
+#### Related Notices
+
+The table below lists notices that can be related.
+
+|*Below Notice can be Related to:*|SOURCES SOUGHT | PRESOLICITATION | COMBINED SYNOPSIS | SOLICITATION| AWARD | SALE OF SURPLUS | INTENT TO BUNDLE | JUSTIFICATION | SPECIAL NOTICE
+-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|**SOURCES SOUGHT**||O|O|O|O|O|||O
+|**PRESOLICITATION**|O||O|O||O|O|O|O
+|**COMBINED SYNOPSIS**|O|O|||O||O|O|O
+|**SOLICITATION**|O|O|||O||O|O|O
+|**AWARD**|||O|O|||O|O|O
+|**SALE OF SURPLUS**|O|O|||||O|O|O
+|**INTENT TO BUNDLE**||O|O|O|O|O||O|O
+|**JUSTIFICATION**||O|O|O|O|O|O||O
+|**SPECIAL NOTICE**|O|O|O|O|O|O|O|O|
+
 #### Set-Aside Values
 Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field. Use the Set-Aside codes to submit notices.
 
@@ -169,6 +185,80 @@ far13	| FAR 13.5 - Simplified Procedures for One Source
 
 <p><small><a href="#">Back to top</a></small></p>
 
+#### Time Zone values
+Refer below table for valid Solicitation response date Time Zones:
+
+Code | Description
+-----|------------
+America/Los_Angeles |(UTC-08:00)PACIFIC STANDARD TIME, LOS ANGELES, USA
+America/Los_Angeles |(UTC-07:00) PACIFIC DAYLIGHT TIME, LOS ANGELES, USA
+America/Denver | (UTC−07:00) MOUNTAIN STANDARD TIME, DENVER, USA
+America/Denver |  (UTC-06:00) MOUNTAIN DAYLIGHT TIME, DENVER, USA
+America/Chicago | (UTC-06:00) CENTRAL STANDARD TIME, CHICAGO, USA
+America/Chicago | (UTC-05:00) CENTRAL DAYLIGHT TIME, CHICAGO, USA
+America/New_York | (UTC-05:00) EASTERN STANDARD TIME, NEW YORK, USA
+America/New_York | (UTC-04:00) EASTERN DAYLIGHT TIME, NEW YORK, USA
+Pacific/Samoa | (UTC-11:00) PAGO PAGO, AMERICAN SAMOA
+Pacific/Honolulu | (UTC-10:00) HONOLULU, HAWAII, USA
+Pacific/Wellington | (UTC+13:00) WELLINGTON, NEW ZEALAND
+America/Anchorage | (UTC-08:00) ANCHORAGE, ALASKA, USA
+America/Vancouver | (UTC-07:00) VANCOUVER, BRITISH COLUMBIA, CANADA
+America/Mazatlan | (UTC-06:00) LA PAZ, MEXICO
+America/Managua | (UTC-06:00) MANAGUA, NICARAGUA
+America/Mexico_City | (UTC-05:00) MEXICO CITY, MEXICO
+America/Costa_Rica | (UTC-06:00) SAN JOSE, COSTA RICA
+America/Winnipeg	| (UTC-05:00) WINNIPEG, MANITOBA, CANADA
+America/Bogota | (UTC-05:00) BOGOTA, COLOMBIA
+America/Lima | (UTC-05:00) LIMA, PERU
+America/Montreal |(UTC-04:00) MONTREAL, QUEBEC, CANADA
+America/Quito | (UTC-05:00) QUITO, ECUADOR
+America/Panama | (UTC-05:00) PANAMA CITY, PANAMA
+America/Santiago | (UTC-03:00) SANTIAGO, CHILE
+America/Toronto | (UTC-04:00) TORONTO, ONTARIO, CANADA
+America/Asuncion | (UTC-03:00) ASUNCION, PARAGUAY
+America/Argentina/Buenos_Aires | (UTC-03:00) BUENOS AIRES, ARGENTINA
+America/Goose_Bay | (UTC-03:00) GOOSE BAY, LABRADOR, CANADA
+America/Halifax |(UTC-03:00) HALIFAX, NOVA SCOTIA, CANADA
+America/La_Paz | (UTC-04:00) LA PAZ, BOLIVIA
+America/Puerto_Rico | (UTC-04:00) SAN JUAN, PUERTO RICO
+America/St_Johns |(UTC-02:30) ST. JOHN’S, NEWFOUNDLAND, CANADA
+America/Godthab | (UTC-02:00) GODTHAB, GREENLAND
+America/Sao_Paulo | (UTC-03:00) SAO PAULO, BRAZIL
+America/Noronha | (UTC-02:00) NORONHA, BRAZIL
+{Atlantic/Reykjavik | (UTC+00:00) REYKJAVIK, ICELAND
+Europe/Belfast | (UTC+01:00) BELFAST, NORTHERN IRELAND
+Europe/Dublin | (UTC+01:00) DUBLIN, IRELAND
+Europe/Edinburgh | (UTC+01:00) EDINBURGH, SCOTLAND
+Europe/Lisbon | (UTC+01:00) LISBON, PORTUGAL
+Europe/London |(UTC+01:00) LONDON, ENGLAND
+Europe/Amsterdam | (UTC+02:00) AMSTERDAM, NETHERLANDS
+Europe/Berlin | (UTC+02:00) BERLIN, GERMANY
+Europe/Bern |(UTC+02:00) BERN, SWITZERLAND
+Europe/Copenhagen |(UTC+02:00) COPENHAGEN, DENMARK
+Europe/Madrid | (UTC+02:00) MADRID, SPAIN
+Europe/Oslo | (UTC+02:00) OSLO, NORWAY
+Europe/Paris |(UTC+02:00) PARIS, FRANCE
+Europe/Rome | (UTC+02:00) ROME, ITALY
+Europe/Stockholm | (UTC+02:00) STOCKHOLM, SWEDEN
+Europe/Athens | (UTC+03:00) ATHENS, GREECE
+Europe/Istanbul | (UTC+03:00) ISTANBUL, TURKEY
+Europe/Moscow | (UTC+03:00) MOSCOW, RUSSIA
+Asia/Riyadh | (UTC+03:00) RIYADH, SAUDI ARABIA
+Asia/Dubai |(UTC+04:00) DUBAI, UNITED ARAB EMIRATES
+Asia/Lahore |(UTC+05:00) LAHORE, PAKISTAN
+Asia/Delhi |(UTC+05:30) DELHI, INDIA
+Asia/Kolkata |(UTC+05:30) KOLKATA, INDIA
+Asia/Dhaka |(UTC+06:00) DHAKA, BANGLADESH
+Asia/Jakarta |(UTC+07:00) JAKARTA, INDONESIA
+Asia/Beijing |(UTC+08:00) BEIJING, CHINA
+Asia/Manila |(UTC+08:00) MANILA, PHILIPPINES
+Australia/Perth |(UTC+08:00) PERTH, AUSTRALIA
+Asia/Seoul |(UTC+09:00) SEOUL, KOREA
+Asia/Tokyo | (UTC+09:00) TOKYO, JAPAN
+Australia/Sydney |(UTC+11:00) SYDNEY, AUSTRALIA
+
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Contract Opportunity Management API Request and Responses
 
 <span style="color:red">Note: All Opportunity notices types except Special notices will be associated to organization at office level. Special notices can be associated to Organization at department, sub-tier, or office level.</span>
@@ -180,8 +270,8 @@ far13	| FAR 13.5 - Simplified Procedures for One Source
 ------- | -------
 **Request Type** | POST
 **URL** | /create
-**Summary** | Create a new Draft Opportunity
-**Consumes** | application/JSON
+**Summary** | Creates a new Draft Opportunity
+**Consumes** | application/json
 **Produces** | NA
 
 Request Parameters
@@ -416,7 +506,7 @@ Examples
 </details>
 
 <details>
-<summary>SOLICITATION Request related to a PRESOL Notice_v1</summary>
+<summary>SOLICITATION Request related to a PRESOL Notice</summary>
 <p>
 <code><pre>
 
@@ -481,39 +571,6 @@ Examples
             "setAside": "SBA",
             "deadlines": {
                 "response": "2022-08-08"
-            }
-        },
-        "award": {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee": {
-                "manual": false,
-                "name": "",
-                "duns": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
             }
         },
         "additionalReporting": [
@@ -534,15 +591,240 @@ Examples
 </details>
 
 <details>
-<summary>SOLICITATION Request related to a PRESOL Notice_v2</summary>
+<summary>Request to create Award Notice related to a Combined Synopsis Notice_v1</summary>
 <p>
 <code><pre>
+{
+  "data": {
+    "type": "a",
+    "award": {
+      "lineItemNumber": "123456789879",
+      "date": "2020-01-02",
+      "number": "1376487348949",
+      "deliveryOrderNumber": "23577980900",
+      "awardee": {
+        "duns": "690888227",
+        "name": "TONETS CORPORATION",
+        "cageCode": "SP971",
+        "location": {
+          "city": {
+            "name": "Chuo-ku"
+          },
+          "state": {
+            "name": "TOKYO"
+          },
+          "country": {
+            "name": "JPN"
+          },
+          "zip": null
+        }
+      },
+      "amount": "43567.00"
+    },
+    "title": "Test-Award notice-V1",
+    "version": "2",
+    "permissions": {
+      "IVL": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      }
+    },
+    "organizationId": "100272386",
+    "solicitationNumber": "test-123456789",
+    "additionalReporting": [
+      "none"
+    ],
+    "archive": {
+      "type": "autocustom",
+      "date": "2021-01-02"
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      },
+      "setAside": "SBA"
+    },
+    "classificationCode": "AA12",
+    "naics": [
+      {
+        "code": [
+          "711510"
+        ],
+        "type": "primary"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "name": "Alabaster",
+        "code": "820"
+      },
+      "state": {
+        "name": "Alabama",
+        "code": "AL"
+      },
+      "country": {
+        "code": "USA"
+      },
+      "zip": null
+    },
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "Test Contact 1",
+        "email": "test.contact1@gmail.com",
+        "phone": "",
+        "fax": null,
+        "type": "primary"
+      },
+      {
+        "title": null,
+        "fullName": "Test Contact 2",
+        "email": "test.contact2@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "secondary"
+      }
+    ]
+  },
+  "description": [
+    {
+      "body": "test description"
+    }
+  ],
+  "related": {
+    "opportunityId": "c61597bdfc5d492268d664bce8e2345a"
+  }
+}
 
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Request to create Award Notice related to a Combined Synopsis Notice_v2</summary>
+<p>
+<code><pre>
+{
+  "data": {
+    "type": "a",
+    "award": {
+      "lineItemNumber": "123456789879",
+      "date": "2020-01-02",
+      "number": "1376487348949",
+      "deliveryOrderNumber": "23577980900",
+      "awardee": {
+        "ueiSAM": "025114695AST",
+        "name": "TONETS CORPORATION",
+        "cageCode": "SP971",
+        "location": {
+          "city": {
+            "name": "Chuo-ku"
+          },
+          "state": {
+            "name": "TOKYO"
+          },
+          "country": {
+            "name": "JPN"
+          },
+          "zip": null
+        }
+      },
+      "amount": "43567.00"
+    },
+    "title": "Test-Award notice-V1",
+    "version": "2",
+    "permissions": {
+      "IVL": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      }
+    },
+    "organizationId": "100272386",
+    "solicitationNumber": "test-123456789",
+    "additionalReporting": [
+      "none"
+    ],
+    "archive": {
+      "type": "autocustom",
+      "date": "2021-01-02"
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      },
+      "setAside": "SBA"
+    },
+    "classificationCode": "AA12",
+    "naics": [
+      {
+        "code": [
+          "711510"
+        ],
+        "type": "primary"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "name": "Alabaster",
+        "code": "820"
+      },
+      "state": {
+        "name": "Alabama",
+        "code": "AL"
+      },
+      "country": {
+        "code": "USA"
+      },
+      "zip": null
+    },
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "Test Contact 1",
+        "email": "test.contact1@gmail.com",
+        "phone": "",
+        "fax": null,
+        "type": "primary"
+      },
+      {
+        "title": null,
+        "fullName": "Test Contact 2",
+        "email": "test.contact2@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "secondary"
+      }
+    ]
+  },
+  "description": [
+    {
+      "body": "test description"
+    }
+  ],
+  "related": {
+    "opportunityId": "c61597bdfc5d492268d664bce8e2345a"
+  }
+}
+
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary> Request to create a draft opportunity for a previously published 'SOLICITATION' notice by providing the parent opportunity Id</summary>
+<p>
+<code><pre>
 {
     "data": {
         "type": "o",
-        "solicitationNumber": "test-12345678901",
-        "title": "Test submit solicitation",
+        "solicitationNumber": "test-12345457",
+        "title": "Create Draft for a published SOL notice",
         "organizationId": "100186612",
         "classificationCode": "1260",
         "naics": [
@@ -601,40 +883,6 @@ Examples
                 "response": "2022-08-08"
             }
         },
-        "award": {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee": {
-                "manual": false,
-                "name": "",
-                "duns": "",
-                "ueiSAM": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            }
-        },
         "additionalReporting": [
             "none"
         ]
@@ -644,9 +892,9 @@ Examples
             "body": "test description"
         }
     ],
-    "related": {
-        "opportunityId": "bc14e9f810a44e468c31fd120dd41b4f"
-    }
+    "parent":{
+          	"opportunityId":"6f85afa8eb03443ab7d210655525ca60"      	
+   }
 }
 </pre></code>
 </p>
@@ -706,7 +954,7 @@ Examples
 ------- | -------
 **Request Type** | POST
 **URL** | /createAndPublish
-**Summary** | Creates and publishes contract opportunity; JSON same as Create and Update API
+**Summary** | Creates and publishes contract opportunity. Can be used to modify (revise and publish) an active published notice.
 **Consumes** | application/JSON
 **Produces** | JSON
 
@@ -724,12 +972,12 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-201 | string | Draft Opportunity successfully created | returns Opportunity ID in response header
+201 | string |  Opportunity successfully created and Published| returns Opportunity ID in response header
 
 Examples
 
 <details>
-<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice_v1</summary>
+<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice</summary>
 <p>
 <code><pre>
 {
@@ -793,39 +1041,6 @@ Examples
             "setAside": "SBA",
             "deadlines": {
                 "response": "2022-08-08"
-            }
-        },
-        "award": {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee": {
-                "manual": false,
-                "name": "",
-                "duns": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
             }
         },
         "additionalReporting": [
@@ -860,15 +1075,16 @@ Examples
 </p>
 </details>
 
+
 <details>
-<summary>Create and Publish Request for a 'SOLICITATION' Opportunity with attachments/links related to a 'PRESOL' notice_v2</summary>
+<summary>Create and Publish Request to submit a modification to the 'SOLICITATION' Opportunity published in the above example by providing the parent opportunity Id</summary>
 <p>
 <code><pre>
 {
     "data": {
         "type": "o",
         "solicitationNumber": "test-12345457",
-        "title": "Test Create and Publish SOL notice",
+        "title": "Test Create and Publish API to submit modification to a SOL notice",
         "organizationId": "100186612",
         "classificationCode": "1260",
         "naics": [
@@ -927,40 +1143,6 @@ Examples
                 "response": "2022-08-08"
             }
         },
-        "award": {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee": {
-                "manual": false,
-                "name": "",
-                "duns": "",
-                "ueiSAM":"",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            }
-        },
         "additionalReporting": [
             "none"
         ]
@@ -970,25 +1152,282 @@ Examples
             "body": "test description"
         }
     ],
-    "related": {
-        "opportunityId": "f8ccfca94d794e07855ebe0d6f55c7d5"
-    },
+    "parent":{
+          	"opportunityId":"6f85afa8eb03443ab7d210655525ca60"      	
+   },
     "resources": [
         {
             "attType": "link",
-            "link": "https://faaco.faa.gov/index.cfm/attachment/download/84723",
-            "description": "test attachment pdf link"
+            "link": "https://www.google.com",
+            "description": "Google"
         },
         {
             "attType": "file",
             "content": "SGVsbG8=",
-            "resourceName": "Hello.txt",
+            "resourceName": "Hello_updated.txt",
             "fileType": "text/plain",
-            "packageAccessLevel": "private",
-            "explicitAccess": "1"
+            "packageAccessLevel": "public",
+            "explicitAccess": "0"
         }
     ]
 }
+</pre></code>
+</p>
+</details>
+
+
+<details>
+<summary>Create and Publish request for Award Notice related to a Combined Synopsis Notice_v1</summary>
+<p>
+<code><pre>
+{
+  "data": {
+    "type": "a",
+    "award": {
+      "lineItemNumber": "123456789879",
+      "date": "2020-01-02",
+      "number": "1376487348949",
+      "deliveryOrderNumber": "23577980900",
+      "awardee": {
+        "duns": "690888227",
+        "name": "TONETS CORPORATION",
+        "cageCode": "SP971",
+        "location": {
+          "city": {
+            "name": "Chuo-ku"
+          },
+          "state": {
+            "name": "TOKYO"
+          },
+          "country": {
+            "name": "JPN"
+          },
+          "zip": null
+        }
+      },
+      "amount": "43567.00"
+    },
+    "title": "Test-Award notice-V1",
+    "version": "2",
+    "permissions": {
+      "IVL": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      }
+    },
+    "organizationId": "100272386",
+    "solicitationNumber": "test-123456789",
+    "additionalReporting": [
+      "none"
+    ],
+    "archive": {
+      "type": "autocustom",
+      "date": "2021-01-02"
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      },
+      "setAside": "SBA"
+    },
+    "classificationCode": "AA12",
+    "naics": [
+      {
+        "code": [
+          "711510"
+        ],
+        "type": "primary"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "name": "Alabaster",
+        "code": "820"
+      },
+      "state": {
+        "name": "Alabama",
+        "code": "AL"
+      },
+      "country": {
+        "code": "USA"
+      },
+      "zip": null
+    },
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "Test Contact 1",
+        "email": "test.contact1@gmail.com",
+        "phone": "",
+        "fax": null,
+        "type": "primary"
+      },
+      {
+        "title": null,
+        "fullName": "Test Contact 2",
+        "email": "test.contact2@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "secondary"
+      }
+    ]
+  },
+  "description": [
+    {
+      "body": "test description"
+    }
+  ],
+  "related": {
+    "opportunityId": "c61597bdfc5d492268d664bce8e2345a"
+  },
+  "resources": [
+          {
+              "attType": "link",
+              "link": "https://www.google.com",
+              "description": "Google"
+          },
+          {
+              "attType": "file",
+              "content": "SGVsbG8=",
+              "resourceName": "Hello_updated.txt",
+              "fileType": "text/plain",
+              "packageAccessLevel": "public",
+              "explicitAccess": "0"
+          }
+      ]
+}
+
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Create and Publish request for Award Notice related to a Combined Synopsis Notice_v2</summary>
+<p>
+<code><pre>
+{
+  "data": {
+    "type": "a",
+    "award": {
+      "lineItemNumber": "123456789879",
+      "date": "2020-01-02",
+      "number": "1376487348949",
+      "deliveryOrderNumber": "23577980900",
+      "awardee": {
+        "ueiSAM": "025114695AST",
+        "name": "TONETS CORPORATION",
+        "cageCode": "SP971",
+        "location": {
+          "city": {
+            "name": "Chuo-ku"
+          },
+          "state": {
+            "name": "TOKYO"
+          },
+          "country": {
+            "name": "JPN"
+          },
+          "zip": null
+        }
+      },
+      "amount": "43567.00"
+    },
+    "title": "Test-Award notice-V1",
+    "version": "2",
+    "permissions": {
+      "IVL": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      }
+    },
+    "organizationId": "100272386",
+    "solicitationNumber": "test-123456789",
+    "additionalReporting": [
+      "none"
+    ],
+    "archive": {
+      "type": "autocustom",
+      "date": "2021-01-02"
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      },
+      "setAside": "SBA"
+    },
+    "classificationCode": "AA12",
+    "naics": [
+      {
+        "code": [
+          "711510"
+        ],
+        "type": "primary"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "name": "Alabaster",
+        "code": "820"
+      },
+      "state": {
+        "name": "Alabama",
+        "code": "AL"
+      },
+      "country": {
+        "code": "USA"
+      },
+      "zip": null
+    },
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "Test Contact 1",
+        "email": "test.contact1@gmail.com",
+        "phone": "",
+        "fax": null,
+        "type": "primary"
+      },
+      {
+        "title": null,
+        "fullName": "Test Contact 2",
+        "email": "test.contact2@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "secondary"
+      }
+    ]
+  },
+  "description": [
+    {
+      "body": "test description"
+    }
+  ],
+  "related": {
+    "opportunityId": "c61597bdfc5d492268d664bce8e2345a"
+  },
+  "resources": [
+          {
+              "attType": "link",
+              "link": "https://www.google.com",
+              "description": "Google"
+          },
+          {
+              "attType": "file",
+              "content": "SGVsbG8=",
+              "resourceName": "Hello_updated.txt",
+              "fileType": "text/plain",
+              "packageAccessLevel": "public",
+              "explicitAccess": "0"
+          }
+      ]
+}
+
 </pre></code>
 </p>
 </details>
@@ -1003,7 +1442,7 @@ Examples
 **Request Type** | POST
 **URL** | /revise/{opportunityId}
 **Summary** | Create a draft version for a Published Opportunity.
-**Consumes** | application/JSON
+**Consumes** | application/json
 **Produces** | JSON
 
 Request Parameters
@@ -1046,7 +1485,7 @@ Examples
 **Request Type** | PATCH
 **URL** | /update/{opportunityId}
 **Summary** | Update a Draft Opportunity
-**Consumes** | application/JSON
+**Consumes** | application/json
 **Produces** | JSON
 
 Request Parameters
@@ -1069,316 +1508,162 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>ITB Request_v1</summary>
-<p>
-<code><pre>
-{
-    "data": {
-        "solicitationNumber": "ITB_Test1_Update",
-        "title": "TST_T1_update",
-        "type": "i",
-        "classificationCode": "13",
-        "organizationId": "100186612",
-        "naics": [
-            {
-                "type": "primary",
-                "code": [
-                    "111150"
-                ]
-            }
-        ],
-        "pointOfContact": [
-            {
-                "additionalInfo": {
-                    "content": ""
-                },
-                "email": "",
-                "fax": "",
-                "fullName": "GSA",
-                "phone": "",
-                "title": "",
-                "type": "primary"
-            }
-        ],
-        "placeOfPerformance": {
-            "city": {
-                "code": "",
-                "name": ""
-            },
-            "country": {
-                "code": "",
-                "name": ""
-            },
-            "state": {
-                "code": "",
-                "name": ""
-            },
-            "streetAddress": "",
-            "streetAddress2": "",
-            "zip": ""
-        },
-        "award": {
-            "date": "2019-08-08T11:20:20-05:00",
-            "number": "12345",
-            "deliveryOrderNumber": "",
-            "amount": "number",
-            "lineItemNumber": "",
-            "awardee": {
-                "name": "",
-                "duns": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            }
-        },
-        "permissions": {
-            "IVL": {
-                "create": true,
-                "delete": true,
-                "read": true,
-                "update": true
-            }
-        },
-        "solicitation": {
-            "setAside": "SBA",
-            "deadlines": {
-                "response": "2019-08-08T11:20:20-05:00"
-            }
-        },
-        "archive": {
-            "type": "autocustom",
-            "date": "2019-09-09"
-        },
-        "additionalReporting": [
-            "none"
-        ]
-    },
-    "description": [
-        {
-            "body": "Description_updated"
-        }
-    ]
-}
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>ITB Request_v2</summary>
-<p>
-<code><pre>
-{
-    "data": {
-        "solicitationNumber": "ITB_Test1_Update",
-        "title": "TST_T1_update",
-        "type": "i",
-        "classificationCode": "13",
-        "organizationId": "100186612",
-        "naics": [
-            {
-                "type": "primary",
-                "code": [
-                    "111150"
-                ]
-            }
-        ],
-        "pointOfContact": [
-            {
-                "additionalInfo": {
-                    "content": ""
-                },
-                "email": "",
-                "fax": "",
-                "fullName": "GSA",
-                "phone": "",
-                "title": "",
-                "type": "primary"
-            }
-        ],
-        "placeOfPerformance": {
-            "city": {
-                "code": "",
-                "name": ""
-            },
-            "country": {
-                "code": "",
-                "name": ""
-            },
-            "state": {
-                "code": "",
-                "name": ""
-            },
-            "streetAddress": "",
-            "streetAddress2": "",
-            "zip": ""
-        },
-        "award": {
-            "date": "2019-08-08T11:20:20-05:00",
-            "number": "12345",
-            "deliveryOrderNumber": "",
-            "amount": "number",
-            "lineItemNumber": "",
-            "awardee": {
-                "name": "",
-                "duns": "",
-                "ueiSAM":"",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            }
-        },
-        "permissions": {
-            "IVL": {
-                "create": true,
-                "delete": true,
-                "read": true,
-                "update": true
-            }
-        },
-        "solicitation": {
-            "setAside": "SBA",
-            "deadlines": {
-                "response": "2019-08-08T11:20:20-05:00"
-            }
-        },
-        "archive": {
-            "type": "autocustom",
-            "date": "2019-09-09"
-        },
-        "additionalReporting": [
-            "none"
-        ]
-    },
-    "description": [
-        {
-            "body": "Description_updated"
-        }
-    ]
-}
-</pre></code>
-</p>
-</details>
-
-
-<details>
-<summary>PRESOL Request</summary>
+<summary>Update request for Intent to Bundle Draft opportunity</summary>
 <p>
 <code><pre>
 {
   "data": {
-    "solicitationNumber": "PRESOLTest1_update",
-    "title": "PRESOLTEST_T1_update",
-    "type": "p",
-    "classificationCode": "13",
-    "organizationId": "100120624",
-    "naics": [
-      {
-        "type": "primary",
-        "code": [
-          "111150"
-        ]
-      }
-    ],
-    "pointOfContact": [
-      {
-        "additionalInfo": {
-          "content": ""
-        },
-        "email": "",
-        "fax": "",
-        "fullName": "gsa",
-        "phone": "",
-        "title": "",
-        "type": "primary"
-      }
-    ],
-    "placeOfPerformance": {
-      "city": {
-        "code": "",
-        "name": ""
-      },
-      "country": {
-        "code": "",
-        "name": ""
-      },
-      "state": {
-        "code": "",
-        "name": ""
-      },
-      "streetAddress": "",
-      "streetAddress2": "",
-      "zip": ""
+    "type": "i",
+    "award": {
+      "lineItemNumber": null,
+      "date": "2020-01-02",
+      "number": "234567889",
+      "deliveryOrderNumber": "TASK-345654"
     },
+    "title": "Test-ITB-23454-Updated",
     "permissions": {
       "IVL": {
+        "read": true,
         "create": true,
         "delete": true,
-        "read": true,
         "update": true
       }
     },
-    "solicitation": {
-      "setAside": "SBA",
-      "deadlines": {
-        "response": "2019-08-08"
+    "organizationId": "500011222",
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "test contact",
+        "email": "test.contact@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "primary"
       }
-    },
+    ],
+    "solicitationNumber": "Test-ITB-123456",
     "archive": {
-      "type": "autocustom",
-      "date": "2019-09-09"
+      "type": "auto30",
+      "date": null
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      }
     },
     "additionalReporting": [
       "none"
+    ],
+    "classificationCode": "E1AA",
+    "naics": [
+      {
+        "code": [
+          "111120"
+        ],
+        "type": "primary"
+      }
     ]
   },
   "description": [
     {
-      "body": "Description_updated "
+      "body": "test description updated"
     }
-  ]
+  ],
+  "related": {}
+}
+
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Update request for a Draft PRESOLICITAITON notice</summary>
+<p>
+<code><pre>
+{
+    "data": {
+        "solicitationNumber": "PRESOLTest1_update",
+        "title": "PRESOLTEST_T1_update",
+        "type": "p",
+        "classificationCode": "1005",
+        "organizationId": "100120624",
+        "naics": [
+            {
+                "type": "primary",
+                "code": [
+                    "111150"
+                ]
+            }
+        ],
+        "pointOfContact": [
+            {
+                "fax": "1234567890",
+                "type": "primary",
+                "email": "test.email2@gmail.com",
+                "phone": "1234567890",
+                "title": null,
+                "fullName": "Test User"
+            },
+            {
+                "fax": "4512367890",
+                "type": "secondary",
+                "email": "test.email@gmail.com",
+                "phone": "1234567890",
+                "title": null,
+                "fullName": "Test User 2"
+            }
+        ],
+        "placeOfPerformance": {
+            "city": {
+                "code": "",
+                "name": ""
+            },
+            "country": {
+                "code": "",
+                "name": ""
+            },
+            "state": {
+                "code": "",
+                "name": ""
+            },
+            "streetAddress": "",
+            "streetAddress2": "",
+            "zip": ""
+        },
+        "permissions": {
+            "IVL": {
+                "create": true,
+                "delete": true,
+                "read": true,
+                "update": true
+            }
+        },
+        "solicitation": {
+            "setAside": "SBA",
+            "deadlines": {
+                "response": "2022-08-08"
+            }
+        },
+        "archive": {
+            "type": "autocustom",
+            "date": "2022-09-09"
+        },
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
+        {
+            "body": "Description_updated "
+        }
+    ]
 }
 </pre></code>
 </p>
 </details>
 
 <details>
-<summary>COMBINE Request</summary>
+<summary>Update request for a Draft COMBINED SYNOPSIS notice</summary>
 <p>
 <code><pre>
 {
@@ -1390,7 +1675,7 @@ Examples
     "organizationId": "100000136",
     "archive": {
       "type": "autocustom",
-      "date": "2019-09-09"
+      "date": "2022-09-09"
     },
     "naics": [
       {
@@ -1405,9 +1690,9 @@ Examples
         "additionalInfo": {
           "content": ""
         },
-        "email": "",
+        "email": "test.contact@gmail.com",
         "fax": "",
-        "fullName": "gsa",
+        "fullName": "test contact",
         "phone": "",
         "title": "",
         "type": "primary"
@@ -1425,7 +1710,7 @@ Examples
       "setAside": "",
       "deadlines": {
         "responseTz": "America/New_York",
-        "response": "2019-12-12T23:59:00-05:00"
+        "response": "2021-12-12T23:59:00-05:00"
       }
     },
     "additionalReporting": [
@@ -3452,7 +3737,7 @@ Examples
         },
         "archive": {
             "type": "autocustom",
-            "date": "2019-09-09"
+            "date": "2022-09-09"
         },
         "permissions": {
             "IVL": {
@@ -3465,7 +3750,7 @@ Examples
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2019-08-08"
+                "response": "2022-08-08"
             }
         },
         "award": {
@@ -3511,6 +3796,9 @@ Examples
         }
     ],
     "related": {
+        "opportunityId": ""
+    },
+    "parent": {
         "opportunityId": ""
     }
 }
@@ -3632,6 +3920,9 @@ Examples
     ],
     "related": {
         "opportunityId": ""
+    },
+    "parent": {
+        "opportunityId": ""
     }
 }
 
@@ -3687,9 +3978,9 @@ data.permissions.ivl.update | boolean | |  | No | No | IVL update permission | v
 data.permissions.ivl.delete | boolean | | | No | No | IVL delete permission | v1 <br> v2
 data.solicitation | JSON Object |NA | NA | NA | NA | NA
 data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action | v1 <br> v2
-data.solicitation.deadlines | JSON Object| NA | NA | NA | NA |Response deadline date for Contract opportunity|NA
-data.solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date | v1 <br> v2
-data.solicitation.deadlines.<br/>responseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date | v1 <br> v2
+data.solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity|NA
+data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| No |1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
+data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone values](#time-zone-values) |No| No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
 data.award | JSON Object | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types |NA 
 data.award.date | date | |YYYY-MM-DD |No | Yes only for type = a (Award) | Award Date | v1 <br> v2
 data.award.number | string | 255 characters | |No | Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number | v1 <br> v2
@@ -3719,8 +4010,10 @@ data.award.justificationAuthority.<br/>authority | string|  |  | No | Yes for ty
 data.additionalReporting | string | |None, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice | v1 <br> v2
 description | JSON Array | NA | NA | NA | NA | NA |NA
 description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice | v1 <br> v2
-related | JSON Object| NA | NA | NA | NA | Related Notice information |NA
-related.opportunityId | string | 32 characters| | No | No | Opportunity Id of the related notice | v1 <br> v2
+related | JSON  Object| NA | NA | NA | NA | Related Notice information |NA
+related.opportunityId | string | 32 characters|[Refer Related Notices](#related-notices) | No | No | Opportunity Id of the related notice  | v1 <br> v2
+parent | JSON Object| NA | NA | NA | NA |  Parent Notice information| NA
+parent.opportunityId | string | 32 characters| | Yes (to create a draft opportunity for a published notice) | No |Opportunity Id of the parent notice| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3804,7 +4097,7 @@ reason | string |  | No | Publish reason| v1 <br> v2
         },
         "archive": {
             "type": "autocustom",
-            "date": "2019-09-09"
+            "date": "2022-09-09"
         },
         "permissions": {
             "IVL": {
@@ -3817,7 +4110,7 @@ reason | string |  | No | Publish reason| v1 <br> v2
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2019-08-08"
+                "response": "2022-08-08"
             }
         },
         "award": {
@@ -3863,6 +4156,9 @@ reason | string |  | No | Publish reason| v1 <br> v2
         }
     ],
     "related": {
+        "opportunityId": ""
+    },
+    "parent": {
         "opportunityId": ""
     },
     "resources": [
@@ -3938,7 +4234,7 @@ reason | string |  | No | Publish reason| v1 <br> v2
         },
         "archive": {
             "type": "autocustom",
-            "date": "2019-09-09"
+            "date": "2022-09-09"
         },
         "permissions": {
             "IVL": {
@@ -3951,7 +4247,7 @@ reason | string |  | No | Publish reason| v1 <br> v2
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2019-08-08"
+                "response": "2022-08-08"
             }
         },
         "award": {
@@ -3997,6 +4293,9 @@ reason | string |  | No | Publish reason| v1 <br> v2
         }
     ],
     "related": {
+        "opportunityId": ""
+    },
+    "parent": {
         "opportunityId": ""
     },
     "resources": [
@@ -4067,9 +4366,9 @@ data.permissions.ivl.update | boolean | |  | No | IVL update permission| v1 <br>
 data.permissions.ivl.delete | boolean | | |No | IVL delete permission| v1 <br> v2
 data.solicitation | JSON Object |NA | NA | NA |NA|NA
 data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action| v1 <br> v2
-data.solicitation.deadlines | JSON Object| NA | NA | NA |Response deadline date for Contract opportunity| v1 <br> v2
-data.solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
-data.solicitation.deadlines.<br/>responseTz |string | | |No | Time Zone for <br/>Solicitation Deadline Date| v1 <br> v2
+data.solicitation.deadlines | JSON | NA | NA | NA |Response deadline date for Contract opportunity| v1 <br> v2
+data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
+data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone values](#time-zone-values) |No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
 data.award | JSON Object | NA | NA | NA| This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types| v1 <br> v2
 data.award.date | date | |YYYY-MM-DD | Yes only for type = a (Award) | Award Date| v1 <br> v2
 data.award.number | string | 255 characters | |Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number| v1 <br> v2
@@ -4099,8 +4398,10 @@ data.award.justificationAuthority.<br/>authority | string|  |  | Yes for type = 
 data.additionalReporting | string | |none, <br/>auto_recovery | Yes; No for type = s (Special Notice) | Initiative that applies to the notice| v1 <br> v2
 description | JSON Array | NA | NA | NA |NA|NA
 description.body | string | 65535 characters| | Yes; No for type = a (Award) | Description of the notice| v1 <br> v2
-related | JSON Object| NA | NA | NA | Related Notice information| v1 <br> v2
-related.opportunityId | string | 32 characters| | No | Opportunity Id of the related notice| v1 <br> v2
+related | JSON Object | NA | NA | NA | Related Notice information| v1 <br> v2
+related.opportunityId | string | 32 characters| [Refer Related Notices](#related-notices)| No | Opportunity Id of the related notice| v1 <br> v2
+parent | JSON Object | NA | NA | NA | Parent Notice information| v1 <br> v2
+parent.opportunityId | string | 32 characters| | Yes (for modifications to a published notice) | Opportunity Id of the parent notice| v1 <br> v2
 resources | JSON Array |NA | NA | NA |NA|NA
 resources.attType | string | |link, file | No| Type of attachment, either link or file| v1 <br> v2
 resources.content | byte |250MB |  | No | File content in base64 format| v1 <br> v2
@@ -4202,8 +4503,8 @@ description | string |  | Yes | Description for uncanceling| v1 <br> v2
 newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date| v1 <br> v2
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date| v1 <br> v2
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type| v1 <br> v2
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
-newResponseTz | string |  | No | New Response Time Zone| v1 <br> v2
+newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
+newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4264,8 +4565,8 @@ requestType | string | unarchive_request | Yes | Type of request| v1 <br> v2
 newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date| v1 <br> v2
 newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date| v1 <br> v2
 newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type| v1 <br> v2
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
-newResponseTz | string |  | No | New Response Time Zone| v1 <br> v2
+newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01) | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
+newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -6478,8 +6779,6 @@ post:
 
 
 
-
-
 ## Error Messages
 
 ### General Error Messages
@@ -6524,11 +6823,11 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Organization Id |	The Federal Organization ID that you provided is inactive and/or invalid | Inactive/Invalid Organization Id |	Create Opportunity, Publish
 400|Organization Id |	The Federal Organization ID that you provided is not an office level, and it must be for this opportunity type	| Organization ID is not valid for opportunity type. Note: Organization ID must be Office level unless creating a Special Notice	| Create Opportunity, Publish
 400|Organization Id |	The Federal Organization ID that you provided is unmapped in Federal Hierarchy | If the Organization Id provided is a legacy one and is unmapped in Federal Hierarchy, then the system throws and error |	Publish
-404|Solicitation Number | Notice ID is required	| Notice ID is required | Publish
+404|Solicitation Number | Notice ID is required	| Notice ID is required for all notice types except for Special Notice | Publish
 400|Solicitation Number | Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces	| Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces | Publish
-400|Solicitation Number | Notice ID must be unique based on selected notice type	| Notice ID must be unique when selected notice type is not an award notice | Publish
-400|Solicitation Number | Submitted solicitation number doesn't match the previous published opportunity	| Solicitation number provided with update opportunity doesn't match the previous published opportunity for an award notice type | Publish
-400|Related Opportunity ID | This Related Notice's ID is invalid	| The Related Notice's ID is not found | Publish
+400|Solicitation Number | Notice ID must be unique based on selected notice type	| Notice ID must be unique when selected notice type is not an award notice | Publish, Create and Publish
+400|Solicitation Number | Submitted solicitation number doesn't match the previous published opportunity	| Solicitation number provided with update opportunity doesn't match the previous published opportunity for an award notice type | Publish, Create and Publish
+400|Related Opportunity ID | This Related Notice's ID is invalid	| The Related Notice's ID is not found | Publish, Create and Publish
 400|Related Opportunity ID | The Related Notice's Type is invalid for this Opportunity	| The Related Notice's Type cannot be related  | Publish
 400|Related Opportunity ID | Related Notice's ID needs to match previous Opportunity's Related Notice ID	| Related Notice's ID  provided while revising a notice needs to match the Parent Opportunity's Related Notice ID  | Publish
 400|Response Date |	Response Date is a required field |	Response Date is not provided for Combined Synopsis and Solicitation types |	Publish
@@ -6684,4 +6983,6 @@ Date | Version | Description
 12/04/2019| v1.01 | Minor updates to UEI(SAM) and UEI(DUNS) info
 1/3/2020| v1.02| Updates to UEI(SAM) and UEI(DUNS) info
 1/20/2020| v1.03| Updated JSON arrays and objects
+1/21/2020| v1.04| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
+
 <p><small><a href="#">Back to top</a></small></p>
