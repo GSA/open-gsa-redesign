@@ -220,6 +220,6 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
 
 ## Contact Us
 
-Please never hesitate to reach out! [Email the Search.gov team](search@support.digitalgov.gov). 
+Please never hesitate to reach out! [Email the Search.gov team](mailto:search@support.digitalgov.gov). 
 
 <p><small><a href="#">Back to top</a></small></p>
