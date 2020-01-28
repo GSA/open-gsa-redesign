@@ -15,7 +15,7 @@ The Opportunity Management SOAP APIs will allow authorized users to submit and r
 To view the WSDL for all available methods and object definitions, refer below links:
 
 * Alpha WSDL Link: https://api-alpha.sam.gov/prodlike/ws/fboendpoint/services.wsdl or https://api-alpha.sam.gov/prodlike/ws/fboendpoint/fbo.wsdl 
-* Beta WSDL Link: https://api.sam.gov/prod/ws/fboendpoint/services.wsdl or https://api.sam.gov/prod/ws/fboendpoint/fbo.wsdl (Coming Soon)
+* Beta WSDL Link: https://api.sam.gov/prod/ws/fboendpoint/services.wsdl or https://api.sam.gov/prod/ws/fboendpoint/fbo.wsdl 
 
 ## SOAP Web Services Workflow Chart
 To view the current workflow of SOAP web service, refer below file:

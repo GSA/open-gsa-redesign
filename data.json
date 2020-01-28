@@ -3573,7 +3573,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2019-12-04",
+			"modified": "2020-01-23",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3596,8 +3596,8 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "EDI JSON",
-					"description": "EDI JSON 12/04/19",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-12-04-19.json"
+					"description": "EDI JSON 01/23/20",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-01-23-20.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3903,7 +3903,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
 			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2019-12-04",
+			"modified": "2020-01-23",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
@@ -5809,9 +5809,9 @@
 			"theme": ["Other"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Per Diem Reimbursement Rates",
+			"title": "Per Diem Reimbursement Rates & API",
 			"description": "The dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 322 locations across the continental United States for Fiscal Year's 2020, 2019, 2018, 2017, and 2016, as well as the standard per diem rates for any locations not specifically listed.",
-			"modified": "2019-08-21",
+			"modified": "2020-01-23",
 			"accessLevel": "public",
 			"identifier": "GSA-31641",
 			"dataQuality": true,
@@ -5837,66 +5837,23 @@
 					"description": "Per Diem Rates"
 				}, {
 					"@type": "dcat:Distribution",
-					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format": "xlsx",
-					"title": "FY20 Per Diem Rates",
-					"description": "FY20 Per Diem Reimbursement Rates.",
-					"downloadURL": "https://inventory.data.gov/dataset/ad729937-b245-4eec-a88d-b72eb36d8106/resource/e0eb3a12-a13d-4b83-af5c-8dcb73042c3d/download/fy20-per-diem-rates.xlsx"
+					"mediaType": "text/csv",
+					"format": "csv",
+					"title": "FY20-FY16 Per Diem Rates",
+					"description": "FY20-FY16 Per Diem Reimbursement Rates",
+					"downloadURL": "https://inventory.data.gov/dataset/ad729937-b245-4eec-a88d-b72eb36d8106/resource/e0eb3a12-a13d-4b83-af5c-8dcb73042c3d/download/perdiemreimbursementratesfy20fy16.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/json",
+					"format": "json",
+					"title": "Per Diem API (JSON)",
+					"downloadURL": "https://open.gsa.gov/api/perdiem/"
 				}
 			],
 			"keyword": ["federal per diem", "lodging", "m ie", "maximum per diem rates", "meals and incidental expenses", "per diem"],
 			"bureauCode": ["023:30"],
 			"programCode": ["023:015"],
 			"language": ["us-EN"]
-		}, {
-			"@type": "dcat:Dataset",
-			"title": "Per Diem API",
-			"description": "The API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 322 locations across the continental United States for Fiscal Year 2020, as well as the standard per diem rates for any locations not specifically listed.\r\n\r\n\r\n\r\nNote – We are making changes to this dataset and this is the last year that GSA will place the Per Diem Data on the data.gov site.  GSA is moving the Per Diem API data to a new GSA API page and it will be hosted on openGSA (https://open.gsa.gov/api/perdiem/).  \r\n\r\nVisit the page and ensure that you can access the data you need from the new site.  Should you have any questions or concerns about the upcoming change (FY21) please send an email to jill.denning@gsa.gov.",
-			"modified": "2019-09-10",
-			"accessLevel": "public",
-			"identifier": "GSA-138679",
-			"dataQuality": true,
-			"issued": "2012-08-07",
-			"landingPage": "http://www.gsa.gov/perdiem",
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"spatial": "National",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "General Services Administration"
-			},
-			"accrualPeriodicity": "R/P1Y",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Jill Miller Denning",
-				"hasEmail": "mailto:jill.denning@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"accessURL": "http://gsa.gov/portal/content/162379",
-					"format": "JSON",
-					"title": "Per Diem API",
-					"description": "This API contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 322 locations across the continental United States for Fiscal Year 2020, as well as the standard per diem rates for any locations not specifically listed."
-				}, {
-					"@type": "dcat:Distribution",
-					"mediaType": "text/csv",
-					"format": "csv",
-					"title": "FY20 Per Diem Rates",
-					"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidentals (M&IE) rates for 322 locations across the continental United States for Fiscal Year 2020.",
-					"downloadURL": "https://inventory.data.gov/dataset/5bc0c670-b86d-4987-9874-10c6fd23b61f/resource/b251c327-8180-45b1-8bff-d735b3842636/download/fy20-per-diem-rates.csv"
-				}, {
-					"@type": "dcat:Distribution",
-					"accessURL": "https://inventory.data.gov/api/3/action/datastore_search?resource_id=b251c327-8180-45b1-8bff-d735b3842636",
-					"format": "JSON",
-					"title": "Per Diem API",
-					"description": "Please note that this link will only be supported for 1 more year.  With the release of FY21 Per Diem Rates this will no longer be supported."
-				}
-			],
-			"keyword": ["API", "Per Diem"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:010"],
-			"language": ["us-EN"],
-			"theme": ["API"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "PSC Matrix for Active GSA Schedules and GSA GWACs",
@@ -8433,7 +8390,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2019-12-04",
+			"modified": "2020-01-02",
 			"accessLevel": "public",
 			"identifier": "GSA-25251",
 			"dataQuality": true,
@@ -8456,7 +8413,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_bldg_rexus",
-					"description": "December - Rexus Building file",
+					"description": "January - Rexus Building file",
 					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/e8972de5-310c-49e2-be42-c1089eee98fd/download/datagovbldgrexus.csv"
 				}
 			],
@@ -8467,7 +8424,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) (Lease)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2019-12-04",
+			"modified": "2020-01-02",
 			"accessLevel": "public",
 			"identifier": "GSA-25261",
 			"dataQuality": true,
@@ -8490,7 +8447,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus",
-					"description": "December - Rexus Lease file",
+					"description": "January - Rexus Lease file",
 					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/dc2e6239-5c72-465d-a23e-43ee976a0910/download/datagovlserexus.csv"
 				}
 			],

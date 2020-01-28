@@ -27,17 +27,22 @@ The Entity Management API will allow users to request Public Entity Information 
 
 ## Getting Started
 
-Public Entity Details can be accessed from Beta or Alpha via the following end points:
+Public and FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
    * Beta: https://api.sam.gov/prod/entity-information/v1/api/entities?api_key= < value >
-   * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v1/api/entities?api_key= < value >
-
-FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/prod/entity-information/v1/api/entities?api_key= < value > 
    * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v1/api/entities?api_key= < value >
 
 Sensitive Entity Details  can be accessed from Beta or Alpha via the following end points:
    * Beta: Coming soon
-   * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v1/api/entities?api_key= < value >  
+   * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v1/api/entities?api_key= < value ><br><br>
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+COMING SOON:<br> 
+The Public, FOUO, and Sensitive API endpoints will be updated as follows to meet new API standards:<br>
+<ul>
+ <li style="color: #31708f;">Beta: https://api.sam.gov/entity-information/v1/entities?api_key= < value ></li>
+ <li style="color: #31708f;"> Alpha: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value ></li>
+ </ul>
+</div>
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
@@ -1986,35 +1991,35 @@ First Name</td>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -2108,35 +2113,35 @@ First Name</td>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -2230,35 +2235,35 @@ First Name</td>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -2352,35 +2357,35 @@ First Name</td>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -2474,35 +2479,35 @@ First Name</td>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -2596,35 +2601,35 @@ First Name</td>
 <td>USPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>USPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -3939,6 +3944,13 @@ samMonitoring
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>monitoringStatus</td>
+<td>string</td>
+<td>Monitoring Status</td>
 <td>v2</td>
 </tr>
 
@@ -7933,10 +7945,10 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 <tr>
 <td>intermediateParentEntities</td>
-<td>object</td>
+<td>List</td>
 <td>
 <details>
-<summary>ultimateDomesticParent contains below fields</summary>
+<summary>intermediateParentEntities contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7946,24 +7958,34 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
+<td>domesticParent</td>
+<td>object</td>
+<td>
+<details>
+<summary>domesticParent contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -8001,7 +8023,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province</td>
+<td>Physical Address State or Province Code</td>
 </tr>
 
 <tr>
@@ -8023,11 +8045,8 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 </table>
-
-
 </details>
 </td>
-<td>v1<br>v2</td>
 </div>
 </tr>
 
@@ -8035,8 +8054,120 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
+</tr>
+
+</table>
+</details>
+</td>
 <td>v1<br>v2</td>
 </tr>
+
+<tr>
+<td>hqParent</td>
+<td>object</td>
+<td>
+<details>
+<summary>hqParent contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>ueiSAM</td>
+<td>string</td>
+<td>Unique Entity Identifier SAM</td>
+</tr>
+
+<tr>
+<td>ueiDUNS</td>
+<td>string</td>
+<td>Unique Entity Identifier DUNS</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<div style="width: 20px">
+<td>physicalAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>physicalAddress contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Physical Address Line 1</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Physical Address Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>Physical Address City</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>Physical Address State or Province Code</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Physical Address Zip</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Physical Address Zip Plus4</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Physical Address Country</td>
+</tr>
+
+
+</table>
+</details>
+</td>
+</div>
+</tr>
+
+<tr>
+<td>phoneNumber</td>
+<td>string</td>
+<td>Phone Number</td>
+</tr>
+
+</table>
+</details>
+</td>
+<td>v1<br>v2</td>
+</tr>
+
 
 </table>
 </details>
@@ -8357,6 +8488,13 @@ samMonitoring
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
+<td>v2</td>
+</tr>
+
+<tr>
+<td>monitoringStatus</td>
+<td>string</td>
+<td>Monitoring Status</td>
 <td>v2</td>
 </tr>
 
@@ -11857,5 +11995,7 @@ Disclaimer:
 | 08/15/2019 | v1.1 | * Alpha endpoints for public and FOUO API were updated from version 0.9 to version 1.0.<br><br> * Warning message added under Getting Started to inform users of API version changes.<br><br> *Added Beta.SAM.Gov to the page title.|
 | 09/25/2019 | v1.2 | Beta endpoints for public and FOUO API were updated from version 0.9 to version 1.0.|
 | 11/25/2019 | v1.3 | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.|
+| 12/20/2019 | v1.4 | * Removed Email, Fax,US phone number and non-us phone number from public poc sections for v2. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.|
+
 
 <p><small><a href="#">Back to top</a></small></p>
