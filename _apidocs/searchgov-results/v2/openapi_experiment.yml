@@ -5,7 +5,7 @@ info:
     Search.gov is a service of the General Services Administration, providing search engine capability to federal agencies for their public websites. This API This API exposes all relevant Search.gov results “modules” in a single JSON call.
   version: 2.0
 paths:
-  /i14y:
+  /results/i14y:
     get:
       summary: Search Results
       description: 'This endpoint returns search results.'
@@ -174,7 +174,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 servers:
-  - url: 'https://api.gsa.gov/technology/searchgov/v2/results'
+  - url: 'https://api.gsa.gov/technology/searchgov/v2'
 
 components:
   schemas:
