@@ -34,62 +34,102 @@ Note: User can request a public API Key in the Account Details page on beta.sam.
 
 Users can search by any of the below request parameters with Date field as mandatory. 
 
-Request Parameters that API accepts	| Description | Mandatory?| Data Type
------ | ----- | ----- | -----
-api_key	| Public Key of users	| Yes|	String
-ptype |	Procurement Type. Below are the available Procurement Types: <br> u= Justification (J&A) <br>p = Pre solicitation <br>a = Award Notice <br>r = Sources Sought <br>s = Special Notice <br>g = Sale of Surplus Property <br>k = Combined Synopsis/Solicitation <br>i = Intent to Bundle Requirements (DoD-Funded) <br><br> Note: Below services are now retired:<br>f = Foreign Government Standard <br>l = Fair Opportunity / Limited Sources  <br> <br>Use Justification (u) instead of fair Opportunity 	|No	|String
-solnum|	Solicitation Number|	No|	String
-noticeid| Notice ID | No | String
-title|	Title|	No	|String
-postedFrom	| Posted date From <br>Format must be MM/dd/yyyy <br> Note: Date range between Posted Date From and To is 1 year	|Yes|	String
-postedTo|	Posted date To  Format must be MM/dd/yyyy <br> Note: Date range between Posted Date From and To is 1 year	|Yes	|String
-deptname |	Department Name (L1)	|No|	String
-subtier|	Agency Name (L2)| 	No|	String
-state|	Place of Performance (State)|	No	|String
-zip|	Place of Performance (Zip code)|	No|	String
-typeOfSetAside|	[Refer Set-Aside Value Section](#set-aside-values)    |No	|String
-typeOfSetAsideDescription	|Set Aside code Description. See above descriptions mentioned against each of the Set Aside Code|	No|	String
-ncode|	NAICS Code. This code is maximum of 6 digits|	No|	String
-ccode|	Classification Code|	No|	String
-rdlfrom	|Response Deadline date. Format must be MM/dd/yyyy <br>Note: If response date From & To is provided, then the date range is 1 year|	No|	String
-rdlto	|Response Deadline date. Format must be MM/dd/yyyy <br>Note: If response date From & To is provided, then the date range is 1 year|	No|	String
-limit	|Total number of records to be retrieved per page. This field must be a number <br> Max Value = 1000|	Yes	|Int
-offset	|Indicates the page index. Default offset starts with 0 |	No|	Int
+Request Parameters that API accepts	| Description | Required| Data Type| Applicable Versions
+----- | ----- | ----- | ----- | -----
+api_key	| Public Key of users	| Yes|	String | v1<br> v2
+ptype |	Procurement Type. Below are the available Procurement Types: <br> u= Justification (J&A) <br>p = Pre solicitation <br>a = Award Notice <br>r = Sources Sought <br>s = Special Notice <br>g = Sale of Surplus Property <br>k = Combined Synopsis/Solicitation <br>i = Intent to Bundle Requirements (DoD-Funded) <br><br> Note: Below services are now retired:<br>f = Foreign Government Standard <br>l = Fair Opportunity / Limited Sources  <br> <br>Use Justification (u) instead of fair Opportunity 	|No	|String | v1<br> v2
+solnum|	Solicitation Number|	No|	String | v1<br> v2
+noticeid| Notice ID | No | String | v1<br> v2
+title|	Title|	No	|String | v1<br> v2
+postedFrom	| Posted date From <br>Format must be MM/dd/yyyy <br> Note: Date range between Posted Date From and To is 1 year	|Yes|	String | v1<br> v2
+postedTo|	Posted date To  Format must be MM/dd/yyyy <br> Note: Date range between Posted Date From and To is 1 year	|Yes	|String | v1<br> v2
+deptname |	Department Name (L1)	|No|	String | v1<br> v2
+subtier|	Agency Name (L2)| 	No|	String | v1<br> v2
+state|	Place of Performance (State)|	No	|String | v1<br> v2
+zip|	Place of Performance (Zip code)|	No|	String | v1<br> v2
+typeOfSetAside|	[Refer Set-Aside Value Section](#set-aside-values)    |No	|String | v1<br> v2
+typeOfSetAsideDescription	|Set Aside code Description. See above descriptions mentioned against each of the Set Aside Code|	No|	String | v1<br> v2
+ncode|	NAICS Code. This code is maximum of 6 digits|	No|	String | v1<br> v2
+ccode|	Classification Code|	No|	String | v1<br> v2
+rdlfrom	|Response Deadline date. Format must be MM/dd/yyyy <br>Note: If response date From & To is provided, then the date range is 1 year|	No|	String | v1<br> v2
+rdlto	|Response Deadline date. Format must be MM/dd/yyyy <br>Note: If response date From & To is provided, then the date range is 1 year|	No|	String | v1<br> v2
+limit	|Total number of records to be retrieved per page. This field must be a number <br> Max Value = 1000|	Yes	|Int | v1<br> v2
+offset	|Indicates the page index. Default offset starts with 0 |	No|	Int | v1<br> v2
 
 ## Get Opportunities Response Parameters
 
 Based on the request parameters, API provides below response parameters.
 
-Request Parameters that API accepts	| Description | Data Type
------ | ----- | ----- 
-totalRecords|	Total number of records for the search	|Number
-limit|	Limit entered by a user while making the request i.e. total number of records that user wished to retrieve per page|	Number
-offset|	Page index specified by a user. Default offset starts with 0 if user does not provide any offset in the request|	Number
-title	|Opportunity Title|	String
-solicitationNumber|	Solicitation Number |	String
-department|	Department (L1)	|String
-subTier|	Sub-Tier (L2)|	String
-office|	Office (L3)	|String
-postedDate|	Opportunity Posted Date <br> YYYY-MM-DD HH:MM:SS	|String
-type|	Opportunity current type|	String
-baseType|	Opportunity original type|	String
-archiveType	|Archive Type	|String
-archiveDate	|Archived Date	|String
-setAside	|Set Aside Description	|String
-setAsideCode	|Set Aside Code	|String
-reponseDeadLine	|Response Deadline Date	|String
-naicsCode	|NAICS Code. This code is maximum of 6 digits	|String
-classificationCode	|Classification Code	|String
-active|	If Active = Yes, then the opportunity is active, if No, then opportunity is Archived| String
-award|	Award Information (If Available): <br> Award amount <br>Awardee <br> Award date <Br> Award Number|	JSON
-pointofContact|	Point of Contact Information. It can have below fields if available: <br> Fax <br>Type<br> Email <br>Phone<br> Title<br> Full name	|JSON
-description|	A link to an opportunity description. <br>Note: To download the description, user should append the public API Key. If no description is available then, user is shown an error message “ Description not found”|	String
-organizationType|	Type of an organization – department/sub-tier/office|	String
-officeAddress|	Office Address Information. It can have below fields if available: <br> City<br> State<br>Zip|	String
-placeOfPerformance|	Place of performance information. It can have below fields if available: Street<br> City<br> State<br>Zip|	JSON
-additionalInfoLink|	Any additional info link if available for the opportunity	|String
-uiLink	|Direct UI link to the opportunity. To view the opportunity on UI, user must have either a contracting officer or a Contracting Specialist role. If user hits the link without logging in, user is directed to 404 not found page |	String
-links	|Every record in a response has this links array consisting of: <br> rel: self<br>href: link to the specific opportunity itself. User should provide an API key to access the opportunity directly<br><br>Also, every response has a master links array consisting of:<br>    rel: self<br>href: link to the actual request. User should provide an API key to access the request|	Array
+Request Parameters that API accepts	| Description | Data Type|Applicable Versions
+----- | ----- | ----- | -----  
+totalRecords|	Total number of records for the search	|Number | v1<br> v2
+limit|	Limit entered by a user while making the request i.e. total number of records that user wished to retrieve per page|	Number | v1<br> v2
+offset|	Page index specified by a user. Default offset starts with 0 if user does not provide any offset in the request|	Number | v1<br> v2
+title	|Opportunity Title|	String | v1<br> v2
+solicitationNumber|	Solicitation Number |	String | v1<br> v2
+department|	Department (L1)	|String | v1<br> v2
+subTier|	Sub-Tier (L2)|	String | v1<br> v2
+office|	Office (L3)	|String | v1<br> v2
+postedDate|	Opportunity Posted Date <br> YYYY-MM-DD HH:MM:SS	|String | v1<br> v2
+type|	Opportunity current type|	String | v1<br> v2
+baseType|	Opportunity original type|	String | v1<br> v2
+archiveType	|Archive Type	|String | v1<br> v2
+archiveDate	|Archived Date	|String | v1<br> v2
+setAside	|Set Aside Description	|String | v1<br> v2
+setAsideCode	|Set Aside Code	|String | v1<br> v2
+reponseDeadLine	|Response Deadline Date	|String | v1<br> v2
+naicsCode	|NAICS Code. This code is maximum of 6 digits	|String | v1<br> v2
+classificationCode	|Classification Code	|String | v1<br> v2
+active|	If Active = Yes, then the opportunity is active, if No, then opportunity is Archived| String | v1<br> v2
+data.award|	Award Information (If Available): <br> Award amount <br>Awardee <br> Award date <Br> Award Number|	JSON Object | v1<br> v2
+data.award.number| Award Number| String | v1<br> v2
+data.award.amount| Award Amount| Number | v1<br> v2
+data.award.date| Award Date| Date and Time | v1<br> v2
+data.award.awardee|	 Name <br> Location <br> Duns <br> ueiSAM (***will be available in future**)|	JSON Object | v1<br> v2
+data.award.awardee.name|Awardee Name|String | v1<br> v2
+data.award.awardee.duns|DUNS Number|String | v1  <br> v2 - Deprecated
+data.award.awardee.ueiSAM| Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available).<br> Example: ueiSAM=025114695AST | String |  v2
+data.award.awardee.location.<br/>streetAddress | Awardee Street Address 1 | String | v1<br> v2
+data.award.awardee.location.<br/>streetAddress2 | Awardee Street Address 2 | String | v1<br> v2
+data.award.awardee.location.<br/>city | Awardee City |JSON Object  | v1<br> v2
+data.award.awardee.location.<br/>city.code | Awardee City Code| String  | v1<br> v2
+data.award.awardee.location.<br/>city.name | Awardee City Name | String  | v1<br> v2
+data.award.awardee.location.<br/>state |Awardee State| JSON Object  | v1<br> v2
+data.award.awardee.location.<br/>state.code|Awardee State Code | String  | v1<br> v2
+data.award.awardee.location.<br/>state.name |Awardee State Name| String  | v1<br> v2
+data.award.awardee.location.<br/>country |Awardee Country| JSON Object | v1<br> v2
+data.award.awardee.location.<br/>country.code|Awardee Country Code | String | v1<br> v2
+data.award.awardee.location.<br/>country.name |Awardee Country Name | String | v1<br> v2 
+data.award.awardee.location.<br/>zip | Awardee Zip | String | v1<br> v2
+pointofContact|	Point of Contact Information. It can have below fields if available: <br> Fax <br>Type<br> Email <br>Phone<br> Title<br> Full name	|JSON Array
+data.pointOfContact.type | Point of Contact Type| String | v1<br> v2
+data.pointOfContact.title| Point of Contact Title | String | v1<br> v2
+data.pointOfContact.fullname| Point of Contact Full Name | String | v1<br> v2
+data.pointOfContact.email| Point of Contact Email | String | v1<br> v2
+data.pointOfContact.phone| Point of Contact Phone | String | v1<br> v2
+data.pointOfContact.fax |  Point of Contact Fax|String | v1<br> v2
+description|	A link to an opportunity description. <br>Note: To download the description, user should append the public API Key. If no description is available then, user is shown an error message “ Description not found”|	String| v1<br> v2
+organizationType|	Type of an organization – department/sub-tier/office|	String | v1<br> v2
+officeAddress|	Office Address Information. It can have below fields if available: <br> City<br> State<br>Zip|	String | v1<br> v2
+data.officeAddress.city| Office Address City| String | v1<br> v2
+data.officeAddress.state| Office Address State| String | v1<br> v2
+data.officeAddress.zip|Office Address Zip| String | v1<br> v2
+placeOfPerformance|	Place of performance information. It can have below fields if available: Street<br> City<br> State<br>Zip|	JSON Object | v1<br> v2
+data.placeOfPerformance.streetAddress|  Pop Address | String | v1<br> v2 
+data.placeOfPerformance.streetAddress2 |  Pop Address2| String  | v1<br> v2
+data.placeOfPerformance.city | JSON Object| Pop City | v1<br> v2
+data.placeOfPerformance.city.code |  Pop City code | String  | v1<br> v2
+data.placeOfPerformance.city.name  |  Pop City name | String  | v1<br> v2
+data.placeOfPerformance.city.state | JSON Object | Pop City state | v1<br> v2
+data.placeOfPerformance.state.code | Pop city state code | String  | v1<br> v2
+data.placeOfPerformance.state.name  |  Pop city state name | String  | v1<br> v2
+data.placeOfPerformance.country | JSON Object| Pop Country | v1<br> v2
+data.placeOfPerformance.country.code  | Pop Country Code | String | v1<br> v2
+data.placeOfPerformance.country.name  | Pop Country name | String | v1<br> v2
+data.placeOfPerformance.zip  | Pop Country zip| String | v1<br> v2
+additionalInfoLink|	Any additional info link if available for the opportunity	|String| v1<br> v2
+uiLink	|Direct UI link to the opportunity. To view the opportunity on UI, user must have either a contracting officer or a Contracting Specialist role. If user hits the link without logging in, user is directed to 404 not found page |	String| v1<br> v2
+links	|Every record in a response has this links array consisting of: <br> rel: self<br>href: link to the specific opportunity itself. User should provide an API key to access the opportunity directly<br><br>Also, every response has a master links array consisting of:<br>    rel: self<br>href: link to the actual request. User should provide an API key to access the request|	Array| v1<br> v2
 
 ### Set-Aside Values
 Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field. Use the Set-Aside codes to submit notices.
@@ -143,73 +183,136 @@ Note: Response for one record is provided as an example <br>
 <p>
 <code><pre>
 {
-  "totalRecords": 25543,
-  "limit": 10,
-  "offset": 1,
-  "opportunitiesData": [
-    {
-      "noticeId": "ea55e45cded123fd8d6afd7c061138f0",
-      "title": "Judge Rice Courtroom Lighting Project",
-      "solicitationNumber": "EQ5P2SS2P1-18-0005",
-      "department": null,
-      "subTier": null,
-      "office": null,
-      "postedDate": "2018-05-09 23:45:22+00",
-      "type": "Presolicitation",
-      "baseType": "Presolicitation",
-      "archiveType": "manual",
-      "archiveDate": null,
-      "typeOfSetAsideDescription": null,
-      "typeOfSetAside": "7",
-      "responseDeadLine": null,
-      "naicsCode": "236220",
-      "classificationCode": "Z",
-      "active": "Yes",
-      "award": null,
-      "pointOfContact": [
+    "totalRecords": 25543,
+    "limit": 10,
+    "offset": 1,
+    "opportunitiesData": [
         {
-          "fax": null,
-          "type": "primary",
-          "email": "jordan.waldschmidt@gsa.gov",
-          "phone": "312-385-3050",
-          "title": "Contract Specialist",
-          "fullName": "Jordan Waldschmidt"
+            "noticeId": "ea55e45cded123fd8d6afd7c061138f0",
+            "title": "Judge Rice Courtroom Lighting Project",
+            "solicitationNumber": "EQ5P2SS2P1-18-0005",
+            "department": null,
+            "subTier": null,
+            "office": null,
+            "postedDate": "2018-05-09 23:45:22+00",
+            "type": "Presolicitation",
+            "baseType": "Presolicitation",
+            "archiveType": "manual",
+            "archiveDate": null,
+            "typeOfSetAsideDescription": null,
+            "typeOfSetAside": "7",
+            "responseDeadLine": null,
+            "naicsCode": "236220",
+            "classificationCode": "Z",
+            "active": "Yes",
+            "award": null,
+            "pointOfContact": [
+                {
+                    "fax": null,
+                    "type": "primary",
+                    "email": "jordan.waldschmidt@gsa.gov",
+                    "phone": "312-385-3050",
+                    "title": "Contract Specialist",
+                    "fullName": "Jordan Waldschmidt"
+                },
+                {
+                    "fax": null,
+                    "type": "secondary",
+                    "email": "johanna.nieves@gsa.gov",
+                    "phone": "312.758.2467",
+                    "title": "Contracting Officer",
+                    "fullName": "Johanna Nieves"
+                }
+            ],
+            "description": " https://api-alpha.sam.gov/prodlike /opportunities/v1/noticedesc?noticeid=ea55e45cded123fd8d6afd7c061138f0",
+            "organizationType": null,
+            "officeAddress": null,
+            "placeOfPerformance": {
+                "streetAddress": "Dayton Federal Building and US Courthouse\r\n200 West Second Street",
+                "city": {
+                    "code": "21000",
+                    "name": "21000"
+                },
+                "state": {
+                    "code": "OH"
+                },
+                "zip": "45402",
+                "country": {
+                    "code": "USA"
+                }
+            },
+            "additionalInfoLink": null,
+            "uiLink": "https://alpha.sam.gov/opp/ea55e45cded123fd8d6afd7c061138f0",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": " https://api-alpha.sam.gov/prodlike/opportunities/v1/search?noticeid=ea55e45cded123fd8d6afd7c061138f0&limit="
+                }
+            ]
         },
         {
-          "fax": null,
-          "type": "secondary",
-          "email": "johanna.nieves@gsa.gov",
-          "phone": "312.758.2467",
-          "title": "Contracting Officer",
-          "fullName": "Johanna Nieves"
+            "noticeId": "00000000000000000000000000000000",
+            "title": "Award Notice Title ",
+            "solicitationNumber": "solicitationNumber000000",
+            "department": "DEPARTMENT NAME",
+            "subTier": "SUBTIER NAME",
+            "office": "OFFICE NAME",
+            "postedDate": "2018-05-09",
+            "type": "Award Notice",
+            "baseType": "Combined Synopsis/Solicitation",
+            "archiveType": "autocustom",
+            "archiveDate": "2020-01-09",
+            "typeOfSetAsideDescription": "Partial Small Business Set-Aside (FAR 19.5)",
+            "typeOfSetAside": "SBP",
+            "responseDeadLine": null,
+            "naicsCode": "111130",
+            "classificationCode": "11",
+            "active": "Yes",
+            "award": {
+                "date": "2019-11-10",
+                "number": "0X0X0X0X",
+                "amount": "00000.00000000",
+                "awardee": {
+                    "name": "Name of Entity; Street Address;City;State;Zip Code",
+                    "location": {},
+                    "duns": "000000000"
+                }
+            },
+            "pointOfContact": [
+                {
+                    "fax": null,
+                    "type": "primary",
+                    "email": "emailName@email.email",
+                    "phone": null,
+                    "title": null,
+                    "fullName": "First M. Last"
+                }
+            ],
+            "description": "https://api-alpha.sam.gov/prodlike/opportunities/v1/noticedesc?noticeid=00000000000000000000000000000000",
+            "organizationType": "OFFICE",
+            "officeAddress": {
+                "zipcode": "OFFICE zipcode",
+                "city": "OFFICE city",
+                "countryCode": "OFFICE countryCode",
+                "state": "OFFICE state"
+            },
+            "placeOfPerformance": {},
+            "additionalInfoLink": null,
+            "uiLink": "https://alpha.sam.gov/opp/00000000000000000000000000000000/view",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://api-alpha.sam.gov/prodlike/opportunities/v1/search?noticeid=00000000000000000000000000000000&limit=1",
+                    "hreflang": null,
+                    "media": null,
+                    "title": null,
+                    "type": null,
+                    "deprecation": null
+                }
+            ]
         }
-      ],
-      "description": " https://api-alpha.sam.gov/prodlike /opportunities/v1/noticedesc?noticeid=ea55e45cded123fd8d6afd7c061138f0",
-      "organizationType": null,
-      "officeAddress": null,
-      "placeOfPerformance": {
-        "streetAddress": "Dayton Federal Building and US Courthouse\r\n200 West Second Street",
-        "city": {
-          "code": "21000",
-          "name": "21000"
-        },
-        "state": {
-          "code": "OH"
-        },
-        "zip": "45402",
-        "country": {
-          "code": "USA"
-        }
-      },
-      "additionalInfoLink": null,
-      "uiLink": "https://alpha.sam.gov/opp/ea55e45cded123fd8d6afd7c061138f0",
-      "links": [
-        {
-          "rel": "self",
-          "href": " https://api-alpha.sam.gov/prodlike/opportunities/v1/search?noticeid=ea55e45cded123fd8d6afd7c061138f0&limit="
-        }
-      ]
-    }
+    ]
+}
 </pre></code>
 </p>
 </details>
@@ -219,9 +322,9 @@ Note: Response for one record is provided as an example <br>
 <details>
     <summary>Request URL</summary>
 
-Production URL: https://api.sam.gov/prod/opportunities/v1/search?limit=10&api_key={User’s Public API Key}  &postedFrom=01/01/2018&postedTo=05/10/2018&ptype=p <br>
+Production URL: https://api.sam.gov/prod/opportunities/v1/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=p <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/prodlike/opportunities/v1/search?limit=10&api_key={User’s Public API Key}  &postedFrom=01/01/2018&postedTo=05/10/2018&ptype=p <br>
+Alpha URL: https://api-alpha.sam.gov/prodlike/opportunities/v1/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=p <br>
  <br>
 
 Note: Request URL for alpha is used in this example
@@ -306,7 +409,136 @@ Note: Response for one record is provided as an example <br>
 </p>
 </details>
 
-### Example 3: Search for opportunities by a given title
+### Example 3: Search by award type
+
+<details>
+    <summary>Request URL</summary>
+
+Production URL: https://api.sam.gov/prod/opportunities/v1/search?limit=1&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general <br>
+ <br>
+Alpha URL: https://api.sam.gov/prod/opportunities/v1/search?limit=1&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general<br>
+ <br>
+
+Note: Request URL for alpha is used in this example
+</details>
+
+<details>
+    <summary>Response (JSON Output)</summary>
+
+Note: Response for one record is provided as an example <br>
+
+<p>
+<code><pre>
+{
+    "totalRecords": 34,
+    "limit": 1,
+    "offset": 0,
+    "opportunitiesData": [
+        {
+            "noticeId": "5b345bbb7127b91a3ad577b203fc6f68",
+            "title": "Historic Office Renovation ",
+            "solicitationNumber": " 47PF0018R0023 ",
+            "department": "GENERAL SERVICES ADMINISTRATION",
+            "subTier": "PUBLIC BUILDINGS SERVICE",
+            "office": "PBS R5",
+            "postedDate": "2018-05-04",
+            "type": "Award Notice",
+            "baseType": "Combined Synopsis/Solicitation",
+            "archiveType": "manual",
+            "archiveDate": null,
+            "typeOfSetAsideDescription": null,
+            "typeOfSetAside": null,
+            "responseDeadLine": null,
+            "naicsCode": "236220",
+            "classificationCode": "Z",
+            "active": "Yes",
+            "award": {
+                "date": "2018-05-04",
+                "number": "47PF0018C0066",
+                "amount": "800620",
+                "awardee": {
+                    "name": "D.G. Beyer, Inc.",
+                    "location": {
+                        "streetAddress": "3080 S Calhoun Rd.",
+                        "city": {
+                            "code": "56375",
+                            "name": "New Berlin"
+                        },
+                        "state": {
+                            "code": "WI"
+                        },
+                        "zip": "53151",
+                        "country": {
+                            "code": "USA"
+                        }
+                    },
+                    "duns": "006435549"
+                }
+            },
+            "pointOfContact": [
+                {
+                    "fax": null,
+                    "type": "primary",
+                    "email": "jesse.jones@gsa.gov",
+                    "phone": "2174941263",
+                    "title": "Contracting Officer ",
+                    "fullName": "Jesse L. Jones"
+                }
+            ],
+            "description": "https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=5b345bbb7127b91a3ad577b203fc6f68",
+            "organizationType": "OFFICE",
+            "officeAddress": {
+                "zipcode": "60604",
+                "city": "CHICAGO",
+                "countryCode": "USA",
+                "state": "IL"
+            },
+            "placeOfPerformance": {
+                "streetAddress": "517 E Wisconsin Ave",
+                "city": {
+                    "code": "53000",
+                    "name": "Milwaukee"
+                },
+                "state": {
+                    "code": "WI"
+                },
+                "zip": "53202",
+                "country": {
+                    "code": "USA"
+                }
+            },
+            "additionalInfoLink": null,
+            "uiLink": "https://beta.sam.gov/opp/5b345bbb7127b91a3ad577b203fc6f68/view",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://api.sam.gov/prod/opportunities/v1/search?noticeid=5b345bbb7127b91a3ad577b203fc6f68&limit=1",
+                    "hreflang": null,
+                    "media": null,
+                    "title": null,
+                    "type": null,
+                    "deprecation": null
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://api.sam.gov/prod/opportunities/v1/search?limit=1&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general",
+            "hreflang": null,
+            "media": null,
+            "title": null,
+            "type": null,
+            "deprecation": null
+        }
+    ]
+}
+</pre></code>
+</p>
+</details>
+
+### Example 4: Search for opportunities by a given title
 
 <details>
     <summary>Request URL</summary>
@@ -391,7 +623,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <a href="v1/get-opportunities.yml" download="get-opportunities">OpenAPI File</a>
 
 <details>
-<summary>Create Draft Opportunity</summary>
+<summary>Get Opportunities Public API</summary>
 <p>
 <code><pre>
 /v1/search:
@@ -413,117 +645,117 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: false
           type: array
           items:
-            type: string
+            type: String
           collectionFormat: multi
         -
           name: noticeid
           in: query
           description: 'Enter Notice Id.'
           required: false
-          type: string
+          type: String
         -
           name: solnum
           in: query
           description: 'Enter Solicitation number.'
           required: false
-          type: string
+          type: String
         -
           name: title
           in: query
           description: 'Enter Title.'
           required: false
-          type: string
+          type: String
         -
           name: deptname
           in: query
           description: 'Enter Department Name.'
           required: false
-          type: string
+          type: String
         -
           name: subtier
           in: query
           description: 'Enter SubTier Name.'
           required: false
-          type: string
+          type: String
         -
           name: state
           in: query
           description: 'Enter Place of performence State.'
           required: false
-          type: string
+          type: String
         -
           name: zip
           in: query
           description: 'Enter Place of performence Zip.'
           required: false
-          type: string
+          type: String
         -
           name: typeOfSetAsideDescription
           in: query
           description: 'Enter type Of SetAside Description.'
           required: false
-          type: string
+          type: String
         -
           name: typeOfSetAside
           in: query
           description: 'Enter type Of SetAside Code.'
           required: false
-          type: string
+          type: String
         -
           name: ncode
           in: query
           description: 'Enter Naics code.'
           required: false
-          type: string
+          type: String
         -
           name: ccode
           in: query
           description: 'Enter Classification code.'
           required: false
-          type: string
+          type: String
         -
           name: postedFrom
           in: query
           description: "Enter posted from date in mm/dd/yyyy format. Required when providing\nlimit."
           required: false
-          type: string
+          type: String
         -
           name: postedTo
           in: query
           description: "Enter posted to date in mm/dd/yyyy format. Required when providing\nlimit."
           required: false
-          type: string
+          type: String
         -
           name: rdlfrom
           in: query
           description: 'Enter response deadline in mm/dd/yyyy format'
           required: false
-          type: string
+          type: String
         -
           name: rdlto
           in: query
           description: 'Enter response deadline to in mm/dd/yyyy format'
           required: false
-          type: string
+          type: String
         -
           name: limit
           in: query
           description: 'Enter limit to fetch number of records'
           required: true
-          type: string
+          type: String
         -
           name: offset
           in: query
           description: 'Enter offset value'
           required: true
-          type: string
+          type: String
           default: '0'
         -
           name: api_key
           in: query
           description: 'Enter the Public API Key.'
           required: true
-          type: string
+          type: String
       responses:
         '200':
           description: OK
@@ -540,75 +772,75 @@ definitions:
     type: object
     properties:
       disabled_at:
-        type: string
+        type: String
       email:
-        type: string
+        type: String
       email_verified:
         type: boolean
       enabled:
         type: boolean
       expires_at:
-        type: string
+        type: String
       first_name:
-        type: string
+        type: String
       id:
-        type: string
+        type: String
       last_name:
-        type: string
+        type: String
       registration_source:
-        type: string
+        type: String
       roles:
         type: array
         items:
-          type: string
+          type: String
       settings:
         $ref: '#/definitions/Settings'
   Creator:
     type: object
     properties:
       username:
-        type: string
+        type: String
   APIKeyUser:
     type: object
     properties:
       api_key:
-        type: string
+        type: String
       api_key_hides_at:
-        type: string
+        type: String
       api_key_preview:
-        type: string
+        type: String
       created_at:
-        type: string
+        type: String
       creator:
         $ref: '#/definitions/Creator'
       email:
-        type: string
+        type: String
       email_verified:
         type: boolean
       enabled:
         type: boolean
       expires_at:
-        type: string
+        type: String
       first_name:
-        type: string
+        type: String
       id:
-        type: string
+        type: String
       last_name:
-        type: string
+        type: String
       registration_ip:
-        type: string
+        type: String
       registration_origin:
-        type: string
+        type: String
       registration_referer:
-        type: string
+        type: String
       registration_source:
-        type: string
+        type: String
       registration_user_agent:
-        type: string
+        type: String
       roles:
         type: array
         items:
-          type: string
+          type: String
       settings:
         $ref: '#/definitions/Settings'
       terms_and_conditions:
@@ -616,18 +848,18 @@ definitions:
       throttle_by_ip:
         type: boolean
       updated_at:
-        type: string
+        type: String
       updater:
         $ref: '#/definitions/Updater'
       use_description:
-        type: string
+        type: String
       website:
-        type: string
+        type: String
   SystemAccountDetail:
     type: object
     properties:
       id:
-        type: string
+        type: String
       isFedCapable:
         type: boolean
       isGov:
@@ -636,7 +868,7 @@ definitions:
     type: object
     properties:
       featureKey:
-        type: string
+        type: String
       featureValue:
         type: boolean
   SystemAccountDisableUsers:
@@ -645,16 +877,16 @@ definitions:
       arrayOfSAUserNames:
         type: array
         items:
-          type: string
+          type: String
   Response:
     type: object
     properties:
       errorMessage:
-        type: string
+        type: String
       message:
-        type: string
+        type: String
       successMessage:
-        type: string
+        type: String
   RateLimit:
     type: object
     properties:
@@ -667,12 +899,12 @@ definitions:
         type: integer
         format: int64
       id:
-        type: string
+        type: String
       limit:
         type: integer
         format: int32
       limit_by:
-        type: string
+        type: String
       response_headers:
         type: boolean
   EmailDetails:
@@ -683,16 +915,16 @@ definitions:
         items:
           $ref: '#/definitions/Link'
       email:
-        type: string
+        type: String
       firstName:
-        type: string
+        type: String
       lastName:
-        type: string
+        type: String
   Updater:
     type: object
     properties:
       username:
-        type: string
+        type: String
   FilteredAPIKeyUserDetails:
     type: object
     properties:
@@ -701,22 +933,22 @@ definitions:
         items:
           $ref: '#/definitions/Link'
       apiKey:
-        type: string
+        type: String
       apiKeyExpiryDate:
-        type: string
+        type: String
       limit:
-        type: string
+        type: String
       roles:
         type: array
         items:
-          type: string
+          type: String
   Settings:
     type: object
     properties:
       id:
-        type: string
+        type: String
       rate_limit_mode:
-        type: string
+        type: String
       rate_limits:
         type: array
         items:
@@ -725,21 +957,21 @@ definitions:
     type: object
     properties:
       deprecation:
-        type: string
+        type: String
       href:
-        type: string
+        type: String
       hreflang:
-        type: string
+        type: String
       media:
-        type: string
+        type: String
       rel:
-        type: string
+        type: String
       templated:
         type: boolean
       title:
-        type: string
+        type: String
       type:
-        type: string
+        type: String
 </pre></code>
 </p>
 </details>
@@ -788,5 +1020,7 @@ Date | Version | Description
 10/24/19| v0.5| Office Address Description Updated 
 11/1/19| v1.0| Initial Release Finalized
 12/2/19| v1.1|Added OpenAPI Specification
+12/18/19| v1.2|Opportunities Response parameters updated to include Award Details JSON Specification and provided the  examples
+1/20/2020 | v1.3| Added Award Response and Versioning columns
 
 <p><small><a href="#">Back to top</a></small></p>
