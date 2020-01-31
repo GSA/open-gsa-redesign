@@ -27,6 +27,13 @@ You must use https. You can find your access key on the API Access Key page of t
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## OpenAPI Specification File
+
+You can view the full details of this API in the OpenAPI Specification file available here:
+<a href="v2/openapi.yaml">Open API specification file for the Results API</a>
+
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Note about Web Results and Endpoints
 
 The endpoint you use to retrieve web results through this API will depend on the method we used to index your content. If we don't yet have your content indexed, you won't see results in the API.
