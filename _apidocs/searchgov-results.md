@@ -30,7 +30,7 @@ You must use https. You can find your access key on the API Access Key page of t
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v2/openapi.yaml">Open API specification file for the Results API</a>
+<a href="v2/openapi.yml">Open API specification file for the Results API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 

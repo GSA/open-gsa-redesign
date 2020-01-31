@@ -20,8 +20,8 @@ You must use https and send a new call for every keystroke. Whenever a user sele
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/openapi.yaml">Open API specification file for the Search.gov Type-Ahead Suggestions API</a>
-
+<a href="v1/openapi.yml">Open API specification file for the Search.gov Type-Ahead Suggestions API</a>
+ 
 ## Parameters
   
 Three parameters are required: (1) `name`, (2) `q`, and (3) `api_key`.
