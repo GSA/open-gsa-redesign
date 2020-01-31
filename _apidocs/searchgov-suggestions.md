@@ -50,7 +50,7 @@ Note: inappropriate terms are filtered by our system and will not be presented a
 
 By using this API, you agree to our [Terms of Service](https://search.gov/tos).
 
-##Contact Us
+## Contact Us
 
 Please never hesitate to reach out! [Email the Search.gov team](mailto:search@support.digitalgov.gov). 
 
