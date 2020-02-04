@@ -50,10 +50,10 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
   
   Three parameters are required: (1) `affiliate`, (2) `access_key`, and (3) `query`. All others are optional.
 
-  * You can find your site handle on the Settings page.
+  * You can find your site handle on the Search.gov Admin Center Settings page.
+  * Your access key is unique to your site handle so they must be paired properly to return results. If you have more than one search site set up, make sure you've selected the right one to get the right handle/key combination.
   * Replace `SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX` with the query entered by the searchers using your website's search box.
   * Preformatted request strings with your unique values are provided in the [Search.gov Admin Center](https://search.usa.gov/sites/) > Your Site > Activate > Search Results API Instructions. 
-  * If you have more than one search site set up, make sure you've selected the right one to get the right handle/key combination. Your access key is unique to your site handle so they must be paired properly to return results.
 
   | Parameters                      | Description
   | :--								| :--
