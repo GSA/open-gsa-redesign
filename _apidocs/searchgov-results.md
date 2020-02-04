@@ -60,13 +60,13 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
 
   | Parameters                      | Description
   | :--								| :--
-  | affiliate (required)			| Site handle
-  |	access\_key (required)			| The key used to access the API
-  | query (required)			    | Search term <br> `https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&sort_by=date`
-  | enable\_highlighting (optional) | Enables or disables the highlighting of keywords in the results. The default is 'true' so use 'false' to disable highlighting. The opening and closing highlighting characters are `<U+E000>` and `<U+E001>`, which both look like "". You can learn more about them [here](http://unicodesymbols.wikia.com/wiki/U%2BE000) and [here](http://unicodesymbols.wikia.com/wiki/U%2BE001) (external resources). Your team will determine how to display the characters, whether as bold, italics, or some other preferred highlighting style. <br> `https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&enable_highlighting=false`
-  | limit (optional)                | Defines the number of results to return. The default is 20, but you can specify between 1 and 50 results. <br> `https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&limit=5`
-  | offset (optional)               | Defines the number of results you want to skip from the first result. The offset is used for implementing pagination. The default is 0 and the maximum is 999. <br> `https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&offset=20`
-  | sort\_by (optional)             | Allowed variables are date and relevance. The default sort is relevance. Add `sort_by = date` to sort by date. <br> `https://search.usa.gov/api/v2/search/i14y?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER&query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX&sort_by=date`
+  | affiliate (required)			| Site handle <br> `affiliate=YOUR_SITE_HANDLE`
+  |	access\_key (required)			| The key used to access the API <br> `access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER`
+  | query (required)			    | Search term <br> `query=SEARCH_TERM_ENTERED_IN_YOUR_SEARCH_BOX`
+  | enable\_highlighting (optional) | Enables or disables the highlighting of keywords in the results. The default is 'true' so use 'false' to disable highlighting. The opening and closing highlighting characters are `<U+E000>` and `<U+E001>`, which both look like "". You can learn more about them [here](http://unicodesymbols.wikia.com/wiki/U%2BE000) and [here](http://unicodesymbols.wikia.com/wiki/U%2BE001) (external resources). Your team will determine how to display the characters, whether as bold, italics, or some other preferred highlighting style. <br> `enable_highlighting=false`
+  | limit (optional)                | Defines the number of results to return. The default is 20, but you can specify between 1 and 50 results. <br> `limit=5`
+  | offset (optional)               | Defines the number of results you want to skip from the first result. The offset is used for implementing pagination. The default is 0 and the maximum is 999. <br> `offset=20`
+  | sort\_by (optional)             | Allowed variables are date and relevance. The default sort is relevance. Add `sort_by=date` to sort by date.
 
 ## Expected Results
 
