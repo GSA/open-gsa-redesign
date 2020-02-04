@@ -13122,10 +13122,6 @@
     - API
     - Fine arts
     - TMS
-- title: FedBizOpps Web Services
-  body: This system supports Web Services for Federal buyers to post information to the database using their agency’s electronic procurement system.
-  url: https://www.fbo.gov/?s=generalinfo&mode=list&tab=list&tabmode=list&static=documentation
-  category: APIs
 - title: Federal Procurement Data System - FPDS API
   body: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
   url: https://www.fpds.gov/fpdsng_cms/index.php/en/worksite.html
@@ -13138,16 +13134,6 @@
     - API
     - URL shortener
     - Sharing
-- title: Government Jobs API (Deprecation planned)
-  body: This API returns job openings on USAJobs.gov that are open to the public and located in the United States. This API is planned to be deprecated.
-  url: https://search.gov/developer/jobs.html
-  category: APIs
-  tags:
-  - GSA
-  - DigitalGovSearch
-  - search
-  - indexing
-  - jobs
 - title: GSA.gov Content API
   body: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last. 
   url: https://www.gsa.gov/about-us/gsa-content-api
@@ -13165,17 +13151,13 @@
   body: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From Beta.sam.gov.
   url: https://s3.amazonaws.com/falextracts/Documentation/PSC/PSC%20Public%20API%20Documentation.pdf 
   category: APIs
-- title: Search.gov i14y API
-  body: For Search.gov customers. This API allows search.gov customers to send content directly from their content management system (CMS) into Search.gov for real-time indexing. 
-  url: https://search.gov/developer/i14y.html
-  category: APIs
 - title: Search.gov Search Results API
   body: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application. 
-  url: https://search.gov/manual/search-results-api.html
+  url: https://open.gsa.gov/api/searchgov-results/
   category: APIs
-- title: Search.gov Type-ahead API
+- title: Search.gov Type-ahead Suggestions API
   body: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms. 
-  url: https://search.gov/manual/typeahead-api.html
+  url: https://open.gsa.gov/api/searchgov-suggestions/
   category: APIs
 - title: Sustainable Facilities Tool API
   body: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
