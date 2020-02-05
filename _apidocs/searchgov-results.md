@@ -38,7 +38,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 The endpoint you use to retrieve web results through this API will depend on the method we used to index your content. If we don't yet have your content indexed, you won't see results in the API.
   
-We can index content using your [XML sitemap](https://search.gov/blog/sitemaps.html) (preferred) or [RSS feeds](https://search.gov/manual/rss.html)). We can also deploy a crawler on a limited basis.
+We can index content using your [XML sitemap](https://search.gov/blog/sitemaps.html) (preferred) or [RSS feeds](https://search.gov/manual/rss.html). We can also deploy a crawler on a limited basis.
   
 Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because most users are in this category, the example API calls below are to this endpoint. Sites indexed via RSS will use the top level `/` endpoint, please modify your calls accordingly.
 
