@@ -130,6 +130,7 @@ data.placeOfPerformance.zip  | Pop Country zip| String | v1<br> v2
 additionalInfoLink|	Any additional info link if available for the opportunity	|String| v1<br> v2
 uiLink	|Direct UI link to the opportunity. To view the opportunity on UI, user must have either a contracting officer or a Contracting Specialist role. If user hits the link without logging in, user is directed to 404 not found page |	String| v1<br> v2
 links	|Every record in a response has this links array consisting of: <br> rel: self<br>href: link to the specific opportunity itself. User should provide an API key to access the opportunity directly<br><br>Also, every response has a master links array consisting of:<br>    rel: self<br>href: link to the actual request. User should provide an API key to access the request|	Array| v1<br> v2
+resourceLinks (Coming Soon to Production) | Direct URL to download attachments in the opportunity | Array of Strings| v1<br> v2
 
 ### Set-Aside Values
 Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field. Use the Set-Aside codes to submit notices.
@@ -1022,5 +1023,6 @@ Date | Version | Description
 12/2/19| v1.1|Added OpenAPI Specification
 12/18/19| v1.2|Opportunities Response parameters updated to include Award Details JSON Specification and provided the  examples
 1/20/2020 | v1.3| Added Award Response and Versioning columns
+1/31/2020 | v1.4 | Added field "ResourceLinks" with Coming Soon to prod
 
 <p><small><a href="#">Back to top</a></small></p>
