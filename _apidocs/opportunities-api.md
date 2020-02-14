@@ -2122,7 +2122,269 @@ page.number | string |
 Examples
 
 <details>
-<summary>Get List of Opportunities Response</summary>
+<summary>Get List of Opportunities Response v1</summary>
+<p>
+<code><pre>
+{
+  "_embedded": {
+    "opportunity": [
+      {
+        "data": {
+          "type": "r",
+          "flags": [
+            {
+              "code": "isScheduledNotice",
+              "isSelected": false
+            }
+          ],
+          "title": "V--flight services",
+          "archive": {
+            "date": "2020-06-14",
+            "type": "auto15"
+          },
+          "permissions": {
+            "IVL": {
+              "read": false,
+              "create": false,
+              "delete": false,
+              "update": false
+            }
+          },
+          "solicitation": {
+            "deadlines": {
+              "response": "2020-05-30T00:00:00-05:00",
+              "responseTz": "America/Chicago"
+            }
+          },
+          "organizationId": "500028949",
+          "pointOfContact": [
+            {
+              "fax": null,
+              "type": "primary",
+              "email": "test@gsa.gov",
+              "phone": null,
+              "title": null,
+              "fullName": "Neal Hitchcock at 208-387-5400; Bureau of Land Management, Office of Fire and Aviation, 3833 S. Development Avenue, Boise, ID 83705-5354"
+            }
+          ],
+          "classificationCode": "V",
+          "solicitationNumber": "NICC-01",
+          "additionalReporting": [
+            "none"
+          ]
+        },
+        "additionalInfo": {
+          "sections": [
+            {
+              "id": "header",
+              "status": "updated"
+            },
+            {
+              "id": "award",
+              "status": "updated"
+            },
+            {
+              "id": "general",
+              "status": "updated"
+            },
+            {
+              "id": "classification",
+              "status": "updated"
+            },
+            {
+              "id": "description",
+              "status": "updated"
+            },
+            {
+              "id": "attachments-links",
+              "status": "updated"
+            },
+            {
+              "id": "contact",
+              "status": "updated"
+            }
+          ]
+        },
+        "parent": {
+          "opportunityId": "8de3d88fc7642d9adcdb8d4ff9070399"
+        },
+        "related": {
+        },
+        "status": {
+          "code": "draft",
+          "value": "Draft"
+        },
+        "archived": false,
+        "cancelled": false,
+        "latest": false,
+        "deleted": false,
+        "modifiedDate": "2019-02-19T21:18:20.669+0000",
+        "createdDate": "2019-02-19T21:18:20.669+0000",
+        "modifiedBy": "reitestuser+aa@gsa.gov",
+        "createdBy": "reitestuser+aa@gsa.gov",
+        "opportunityId": "f563391e2c8a4b7180a6cf49d6980723"
+      },
+      {
+        "data": {
+          "type": "s",
+          "award": {
+            "lineItemNumber": null
+          },
+          "title": "test",
+          "permissions": {
+            "IVL": {
+              "create": false,
+              "delete": false,
+              "update": false
+            }
+          },
+          "organizationId": "100186612",
+          "pointOfContact": null,
+          "solicitationNumber": ""
+        },
+        "additionalInfo": {
+          "sections": [
+            {
+              "id": "header",
+              "status": "updated"
+            }
+          ]
+        },
+        "parent": {
+        },
+        "related": {
+        },
+        "status": {
+          "code": "draft",
+          "value": "Draft"
+        },
+        "archived": false,
+        "cancelled": false,
+        "latest": false,
+        "deleted": false,
+        "modifiedDate": "2019-02-19T21:14:02.308+0000",
+        "createdDate": "2019-02-19T21:14:02.308+0000",
+        "modifiedBy": "reitestuser+cs1@gsa.gov",
+        "createdBy": "reitestuser+cs1@gsa.gov",
+        "opportunityId": "f687c5c4e4124c27a068c145d0a4a1f5"
+      },
+      {
+        "data": {
+          "type": "i",
+          "award": {
+            "date": "2019-01-01",
+            "number": "A1234567890",
+            "deliveryOrderNumber": "TO3456789"
+          },
+          "naics": [
+            {
+              "code": [
+                "621111"
+              ]
+            }
+          ],
+          "title": "SK Intent to Bundle Requirements",
+          "archive": {
+            "date": "2019-03-21",
+            "type": "auto30"
+          },
+          "permissions": {
+            "IVL": {
+              "read": false,
+              "create": false,
+              "delete": false,
+              "update": false
+            }
+          },
+          "solicitation": {
+            "deadlines": {
+              "response": null,
+              "responseTz": null
+            }
+          },
+          "organizationId": "100186612",
+          "pointOfContact": [
+            {
+              "fax": "",
+              "type": "primary",
+              "email": "sk@test.com",
+              "phone": "",
+              "title": null,
+              "fullName": "Sravanthi Kundur"
+            }
+          ],
+          "classificationCode": "84",
+          "solicitationNumber": "31231231241414",
+          "additionalReporting": [
+            "none"
+          ]
+        },
+        "additionalInfo": {
+          "sections": [
+            {
+              "id": "header",
+              "status": "updated"
+            },
+            {
+              "id": "contact",
+              "status": "updated"
+            },
+            {
+              "id": "attachments-links",
+              "status": "updated"
+            },
+            {
+              "id": "description",
+              "status": "updated"
+            },
+            {
+              "id": "classification",
+              "status": "updated"
+            },
+            {
+              "id": "general",
+              "status": "updated"
+            },
+            {
+              "id": "award",
+              "status": "updated"
+            }
+          ]
+        },
+        "parent": {
+        },
+        "related": {
+        },
+        "status": {
+          "code": "published",
+          "value": "Published"
+        },
+        "archived": false,
+        "cancelled": false,
+        "latest": true,
+        "deleted": false,
+        "postedDate": "2019-02-19T21:09:37.369+0000",
+        "modifiedDate": "2019-02-19T21:09:37.369+0000",
+        "createdDate": "2019-02-19T20:16:31.728+0000",
+        "modifiedBy": "reitestuser+aa@gsa.gov",
+        "createdBy": "reitestuser+aa@gsa.gov",
+        "opportunityId": "530382634cc9401db875fd18c9831bda"
+      }
+    ]
+  },
+  "page": {
+    "size": 4,
+    "totalElements": 1153,
+    "totalPages": 289,
+    "number": 0
+  }
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get List of Opportunities Response v2</summary>
 <p>
 <code><pre>
 {
@@ -3127,7 +3389,6 @@ ivl": [
 <code><pre>
 ivl": [
   {
-    "duns": "6759999520",
     "ueiSAM": "025114695AST",
     "cageNumber": "3ABC1",
     "name": "TECH SYSTEMS, INC.",
