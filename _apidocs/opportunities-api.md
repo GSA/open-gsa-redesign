@@ -5,7 +5,7 @@ banner-heading: Beta.SAM.Gov Opportunity Management API
 
 ## Overview
 
-The Opportunity Management API will allow authorized users to submit and request Opportunities data.
+The Opportunity Management API will allow authorized users to submit and request Opportunities data. 
 
 **Note:** The specifications on this page are for a soon to be released API.  Check back here or be in contact with IAE for the release date and testing session.
 
@@ -14,8 +14,11 @@ The Opportunity Management API will allow authorized users to submit and request
 ## Getting Started
 
 Opportunity Management API can be accessed from Beta or Alpha via the following endpoints:
-* Beta: https://api.sam.gov/prod/opportunity (Coming Soon)
-* Alpha: https://api-alpha.sam.gov/prodlike/opportunity
+* Beta: https://api.sam.gov/prod/opportunity/v1/api/
+* Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v1/api/
+
+* Beta: https://api.sam.gov/prod/opportunity/v2/ (coming soon)
+* Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ (coming soon)
 
 **REST API Workflow Chart**
 
@@ -114,6 +117,22 @@ The API includes specific methods to submit each of the base notice types (i.e. 
 
 <p><small><a href="#">Back to top</a></small></p>
 
+#### Related Notices
+
+The table below lists notices that can be related.
+
+|*Below Notice can be Related to:*|SOURCES SOUGHT | PRESOLICITATION | COMBINED SYNOPSIS | SOLICITATION| AWARD | SALE OF SURPLUS | INTENT TO BUNDLE | JUSTIFICATION | SPECIAL NOTICE
+-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|**SOURCES SOUGHT**||O|O|O|O|O|||O
+|**PRESOLICITATION**|O||O|O||O|O|O|O
+|**COMBINED SYNOPSIS**|O|O|||O||O|O|O
+|**SOLICITATION**|O|O|||O||O|O|O
+|**AWARD**|||O|O|||O|O|O
+|**SALE OF SURPLUS**|O|O|||||O|O|O
+|**INTENT TO BUNDLE**||O|O|O|O|O||O|O
+|**JUSTIFICATION**||O|O|O|O|O|O||O
+|**SPECIAL NOTICE**|O|O|O|O|O|O|O|O|
+
 #### Set-Aside Values
 Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field. Use the Set-Aside codes to submit notices.
 
@@ -166,6 +185,80 @@ far13	| FAR 13.5 - Simplified Procedures for One Source
 
 <p><small><a href="#">Back to top</a></small></p>
 
+#### Time Zone values
+Refer below table for valid Solicitation response date Time Zones:
+
+Code | Description
+-----|------------
+America/Los_Angeles |(UTC-08:00)PACIFIC STANDARD TIME, LOS ANGELES, USA
+America/Los_Angeles |(UTC-07:00) PACIFIC DAYLIGHT TIME, LOS ANGELES, USA
+America/Denver | (UTC−07:00) MOUNTAIN STANDARD TIME, DENVER, USA
+America/Denver |  (UTC-06:00) MOUNTAIN DAYLIGHT TIME, DENVER, USA
+America/Chicago | (UTC-06:00) CENTRAL STANDARD TIME, CHICAGO, USA
+America/Chicago | (UTC-05:00) CENTRAL DAYLIGHT TIME, CHICAGO, USA
+America/New_York | (UTC-05:00) EASTERN STANDARD TIME, NEW YORK, USA
+America/New_York | (UTC-04:00) EASTERN DAYLIGHT TIME, NEW YORK, USA
+Pacific/Samoa | (UTC-11:00) PAGO PAGO, AMERICAN SAMOA
+Pacific/Honolulu | (UTC-10:00) HONOLULU, HAWAII, USA
+Pacific/Wellington | (UTC+13:00) WELLINGTON, NEW ZEALAND
+America/Anchorage | (UTC-08:00) ANCHORAGE, ALASKA, USA
+America/Vancouver | (UTC-07:00) VANCOUVER, BRITISH COLUMBIA, CANADA
+America/Mazatlan | (UTC-06:00) LA PAZ, MEXICO
+America/Managua | (UTC-06:00) MANAGUA, NICARAGUA
+America/Mexico_City | (UTC-05:00) MEXICO CITY, MEXICO
+America/Costa_Rica | (UTC-06:00) SAN JOSE, COSTA RICA
+America/Winnipeg	| (UTC-05:00) WINNIPEG, MANITOBA, CANADA
+America/Bogota | (UTC-05:00) BOGOTA, COLOMBIA
+America/Lima | (UTC-05:00) LIMA, PERU
+America/Montreal |(UTC-04:00) MONTREAL, QUEBEC, CANADA
+America/Quito | (UTC-05:00) QUITO, ECUADOR
+America/Panama | (UTC-05:00) PANAMA CITY, PANAMA
+America/Santiago | (UTC-03:00) SANTIAGO, CHILE
+America/Toronto | (UTC-04:00) TORONTO, ONTARIO, CANADA
+America/Asuncion | (UTC-03:00) ASUNCION, PARAGUAY
+America/Argentina/Buenos_Aires | (UTC-03:00) BUENOS AIRES, ARGENTINA
+America/Goose_Bay | (UTC-03:00) GOOSE BAY, LABRADOR, CANADA
+America/Halifax |(UTC-03:00) HALIFAX, NOVA SCOTIA, CANADA
+America/La_Paz | (UTC-04:00) LA PAZ, BOLIVIA
+America/Puerto_Rico | (UTC-04:00) SAN JUAN, PUERTO RICO
+America/St_Johns |(UTC-02:30) ST. JOHN’S, NEWFOUNDLAND, CANADA
+America/Godthab | (UTC-02:00) GODTHAB, GREENLAND
+America/Sao_Paulo | (UTC-03:00) SAO PAULO, BRAZIL
+America/Noronha | (UTC-02:00) NORONHA, BRAZIL
+{Atlantic/Reykjavik | (UTC+00:00) REYKJAVIK, ICELAND
+Europe/Belfast | (UTC+01:00) BELFAST, NORTHERN IRELAND
+Europe/Dublin | (UTC+01:00) DUBLIN, IRELAND
+Europe/Edinburgh | (UTC+01:00) EDINBURGH, SCOTLAND
+Europe/Lisbon | (UTC+01:00) LISBON, PORTUGAL
+Europe/London |(UTC+01:00) LONDON, ENGLAND
+Europe/Amsterdam | (UTC+02:00) AMSTERDAM, NETHERLANDS
+Europe/Berlin | (UTC+02:00) BERLIN, GERMANY
+Europe/Bern |(UTC+02:00) BERN, SWITZERLAND
+Europe/Copenhagen |(UTC+02:00) COPENHAGEN, DENMARK
+Europe/Madrid | (UTC+02:00) MADRID, SPAIN
+Europe/Oslo | (UTC+02:00) OSLO, NORWAY
+Europe/Paris |(UTC+02:00) PARIS, FRANCE
+Europe/Rome | (UTC+02:00) ROME, ITALY
+Europe/Stockholm | (UTC+02:00) STOCKHOLM, SWEDEN
+Europe/Athens | (UTC+03:00) ATHENS, GREECE
+Europe/Istanbul | (UTC+03:00) ISTANBUL, TURKEY
+Europe/Moscow | (UTC+03:00) MOSCOW, RUSSIA
+Asia/Riyadh | (UTC+03:00) RIYADH, SAUDI ARABIA
+Asia/Dubai |(UTC+04:00) DUBAI, UNITED ARAB EMIRATES
+Asia/Lahore |(UTC+05:00) LAHORE, PAKISTAN
+Asia/Delhi |(UTC+05:30) DELHI, INDIA
+Asia/Kolkata |(UTC+05:30) KOLKATA, INDIA
+Asia/Dhaka |(UTC+06:00) DHAKA, BANGLADESH
+Asia/Jakarta |(UTC+07:00) JAKARTA, INDONESIA
+Asia/Beijing |(UTC+08:00) BEIJING, CHINA
+Asia/Manila |(UTC+08:00) MANILA, PHILIPPINES
+Australia/Perth |(UTC+08:00) PERTH, AUSTRALIA
+Asia/Seoul |(UTC+09:00) SEOUL, KOREA
+Asia/Tokyo | (UTC+09:00) TOKYO, JAPAN
+Australia/Sydney |(UTC+11:00) SYDNEY, AUSTRALIA
+
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Contract Opportunity Management API Request and Responses
 
 <span style="color:red">Note: All Opportunity notices types except Special notices will be associated to organization at office level. Special notices can be associated to Organization at department, sub-tier, or office level.</span>
@@ -176,8 +269,8 @@ far13	| FAR 13.5 - Simplified Procedures for One Source
 
 ------- | -------
 **Request Type** | POST
-**URL** | /v1/api/create
-**Summary** | Create a new Draft Opportunity
+**URL** | /create
+**Summary** | Creates a new Draft Opportunity
 **Consumes** | application/json
 **Produces** | NA
 
@@ -480,39 +573,6 @@ Examples
                 "response": "2022-08-08"
             }
         },
-        "award": {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee": {
-                "manual": false,
-                "name": "",
-                "duns": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            }
-        },
         "additionalReporting": [
             "none"
         ]
@@ -530,6 +590,317 @@ Examples
 </p>
 </details>
 
+<details>
+<summary>Request to create Award Notice related to a Combined Synopsis Notice_v1</summary>
+<p>
+<code><pre>
+{
+  "data": {
+    "type": "a",
+    "award": {
+      "lineItemNumber": "123456789879",
+      "date": "2020-01-02",
+      "number": "1376487348949",
+      "deliveryOrderNumber": "23577980900",
+      "awardee": {
+        "duns": "690888227",
+        "name": "TONETS CORPORATION",
+        "cageCode": "SP971",
+        "location": {
+          "city": {
+            "name": "Chuo-ku"
+          },
+          "state": {
+            "name": "TOKYO"
+          },
+          "country": {
+            "name": "JPN"
+          },
+          "zip": null
+        }
+      },
+      "amount": "43567.00"
+    },
+    "title": "Test-Award notice-V1",
+    "version": "2",
+    "permissions": {
+      "IVL": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      }
+    },
+    "organizationId": "100272386",
+    "solicitationNumber": "test-123456789",
+    "additionalReporting": [
+      "none"
+    ],
+    "archive": {
+      "type": "autocustom",
+      "date": "2021-01-02"
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      },
+      "setAside": "SBA"
+    },
+    "classificationCode": "AA12",
+    "naics": [
+      {
+        "code": [
+          "711510"
+        ],
+        "type": "primary"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "name": "Alabaster",
+        "code": "820"
+      },
+      "state": {
+        "name": "Alabama",
+        "code": "AL"
+      },
+      "country": {
+        "code": "USA"
+      },
+      "zip": null
+    },
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "Test Contact 1",
+        "email": "test.contact1@gmail.com",
+        "phone": "",
+        "fax": null,
+        "type": "primary"
+      },
+      {
+        "title": null,
+        "fullName": "Test Contact 2",
+        "email": "test.contact2@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "secondary"
+      }
+    ]
+  },
+  "description": [
+    {
+      "body": "test description"
+    }
+  ],
+  "related": {
+    "opportunityId": "c61597bdfc5d492268d664bce8e2345a"
+  }
+}
+
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Request to create Award Notice related to a Combined Synopsis Notice_v2</summary>
+<p>
+<code><pre>
+{
+  "data": {
+    "type": "a",
+    "award": {
+      "lineItemNumber": "123456789879",
+      "date": "2020-01-02",
+      "number": "1376487348949",
+      "deliveryOrderNumber": "23577980900",
+      "awardee": {
+        "ueiSAM": "025114695AST",
+        "name": "TONETS CORPORATION",
+        "cageCode": "SP971",
+        "location": {
+          "city": {
+            "name": "Chuo-ku"
+          },
+          "state": {
+            "name": "TOKYO"
+          },
+          "country": {
+            "name": "JPN"
+          },
+          "zip": null
+        }
+      },
+      "amount": "43567.00"
+    },
+    "title": "Test-Award notice-V1",
+    "version": "2",
+    "permissions": {
+      "IVL": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      }
+    },
+    "organizationId": "100272386",
+    "solicitationNumber": "test-123456789",
+    "additionalReporting": [
+      "none"
+    ],
+    "archive": {
+      "type": "autocustom",
+      "date": "2021-01-02"
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      },
+      "setAside": "SBA"
+    },
+    "classificationCode": "AA12",
+    "naics": [
+      {
+        "code": [
+          "711510"
+        ],
+        "type": "primary"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "name": "Alabaster",
+        "code": "820"
+      },
+      "state": {
+        "name": "Alabama",
+        "code": "AL"
+      },
+      "country": {
+        "code": "USA"
+      },
+      "zip": null
+    },
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "Test Contact 1",
+        "email": "test.contact1@gmail.com",
+        "phone": "",
+        "fax": null,
+        "type": "primary"
+      },
+      {
+        "title": null,
+        "fullName": "Test Contact 2",
+        "email": "test.contact2@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "secondary"
+      }
+    ]
+  },
+  "description": [
+    {
+      "body": "test description"
+    }
+  ],
+  "related": {
+    "opportunityId": "c61597bdfc5d492268d664bce8e2345a"
+  }
+}
+
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary> Request to create a draft opportunity for a previously published 'SOLICITATION' notice by providing the parent opportunity Id</summary>
+<p>
+<code><pre>
+{
+    "data": {
+        "type": "o",
+        "solicitationNumber": "test-12345457",
+        "title": "Create Draft for a published SOL notice",
+        "organizationId": "100186612",
+        "classificationCode": "1260",
+        "naics": [
+            {
+                "type": "primary",
+                "code": [
+                    "111150"
+                ]
+            }
+        ],
+        "pointOfContact": [
+            {
+                "type": "primary",
+                "title": "",
+                "fullName": "test contact",
+                "email": "test@test.com",
+                "phone": "",
+                "fax": "",
+                "additionalInfo": {
+                    "content": "Primary contact info"
+                }
+            }
+        ],
+        "placeOfPerformance": {
+            "streetAddress": "1234 XYZ street",
+            "streetAddress2": "",
+            "city": {
+                "code": "75376",
+                "name": "Sterling"
+            },
+            "state": {
+                "code": "VA",
+                "name": "Virginia"
+            },
+            "country": {
+                "code": "USA",
+                "name": "USA"
+            },
+            "zip": ""
+        },
+        "archive": {
+            "type": "autocustom",
+            "date": "2022-09-09"
+        },
+        "permissions": {
+            "IVL": {
+                "create": false,
+                "delete": false,
+                "read": false,
+                "update": false
+            }
+        },
+        "solicitation": {
+            "setAside": "SBA",
+            "deadlines": {
+                "response": "2022-08-08"
+            }
+        },
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
+        {
+            "body": "test description"
+        }
+    ],
+    "parent":{
+          	"opportunityId":"6f85afa8eb03443ab7d210655525ca60"      	
+   }
+}
+</pre></code>
+</p>
+</details>
+
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Publish Draft Opportunity
@@ -537,9 +908,9 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | /v1/api/publish/{opportunityId}
+**URL** | /publish/{opportunityId}
 **Summary** | Publish a Draft Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | NA
 
 **Please [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json) to ensure that all required fields in "Required (Publish)" is met to publish opportunity**
@@ -582,9 +953,9 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | /v1/api/createAndPublish
-**Summary** | Creates and publishes contract opportunity; JSON same as Create and Update API
-**Consumes** | application/json
+**URL** | /createAndPublish
+**Summary** | Creates and publishes contract opportunity. Can be used to modify (revise and publish) an active published notice.
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -601,7 +972,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-201 | string | Draft Opportunity successfully created | returns Opportunity ID in response header
+201 | string |  Opportunity successfully created and Published| returns Opportunity ID in response header
 
 Examples
 
@@ -672,39 +1043,6 @@ Examples
                 "response": "2022-08-08"
             }
         },
-        "award": {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee": {
-                "manual": false,
-                "name": "",
-                "duns": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            }
-        },
         "additionalReporting": [
             "none"
         ]
@@ -737,6 +1075,364 @@ Examples
 </p>
 </details>
 
+
+<details>
+<summary>Create and Publish Request to submit a modification to the 'SOLICITATION' Opportunity published in the above example by providing the parent opportunity Id</summary>
+<p>
+<code><pre>
+{
+    "data": {
+        "type": "o",
+        "solicitationNumber": "test-12345457",
+        "title": "Test Create and Publish API to submit modification to a SOL notice",
+        "organizationId": "100186612",
+        "classificationCode": "1260",
+        "naics": [
+            {
+                "type": "primary",
+                "code": [
+                    "111150"
+                ]
+            }
+        ],
+        "pointOfContact": [
+            {
+                "type": "primary",
+                "title": "",
+                "fullName": "test contact",
+                "email": "test@test.com",
+                "phone": "",
+                "fax": "",
+                "additionalInfo": {
+                    "content": "Primary contact info"
+                }
+            }
+        ],
+        "placeOfPerformance": {
+            "streetAddress": "1234 XYZ street",
+            "streetAddress2": "",
+            "city": {
+                "code": "75376",
+                "name": "Sterling"
+            },
+            "state": {
+                "code": "VA",
+                "name": "Virginia"
+            },
+            "country": {
+                "code": "USA",
+                "name": "USA"
+            },
+            "zip": ""
+        },
+        "archive": {
+            "type": "autocustom",
+            "date": "2022-09-09"
+        },
+        "permissions": {
+            "IVL": {
+                "create": false,
+                "delete": false,
+                "read": false,
+                "update": false
+            }
+        },
+        "solicitation": {
+            "setAside": "SBA",
+            "deadlines": {
+                "response": "2022-08-08"
+            }
+        },
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
+        {
+            "body": "test description"
+        }
+    ],
+    "parent":{
+          	"opportunityId":"6f85afa8eb03443ab7d210655525ca60"      	
+   },
+    "resources": [
+        {
+            "attType": "link",
+            "link": "https://www.google.com",
+            "description": "Google"
+        },
+        {
+            "attType": "file",
+            "content": "SGVsbG8=",
+            "resourceName": "Hello_updated.txt",
+            "fileType": "text/plain",
+            "packageAccessLevel": "public",
+            "explicitAccess": "0"
+        }
+    ]
+}
+</pre></code>
+</p>
+</details>
+
+
+<details>
+<summary>Create and Publish request for Award Notice related to a Combined Synopsis Notice_v1</summary>
+<p>
+<code><pre>
+{
+  "data": {
+    "type": "a",
+    "award": {
+      "lineItemNumber": "123456789879",
+      "date": "2020-01-02",
+      "number": "1376487348949",
+      "deliveryOrderNumber": "23577980900",
+      "awardee": {
+        "duns": "690888227",
+        "name": "TONETS CORPORATION",
+        "cageCode": "SP971",
+        "location": {
+          "city": {
+            "name": "Chuo-ku"
+          },
+          "state": {
+            "name": "TOKYO"
+          },
+          "country": {
+            "name": "JPN"
+          },
+          "zip": null
+        }
+      },
+      "amount": "43567.00"
+    },
+    "title": "Test-Award notice-V1",
+    "version": "2",
+    "permissions": {
+      "IVL": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      }
+    },
+    "organizationId": "100272386",
+    "solicitationNumber": "test-123456789",
+    "additionalReporting": [
+      "none"
+    ],
+    "archive": {
+      "type": "autocustom",
+      "date": "2021-01-02"
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      },
+      "setAside": "SBA"
+    },
+    "classificationCode": "AA12",
+    "naics": [
+      {
+        "code": [
+          "711510"
+        ],
+        "type": "primary"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "name": "Alabaster",
+        "code": "820"
+      },
+      "state": {
+        "name": "Alabama",
+        "code": "AL"
+      },
+      "country": {
+        "code": "USA"
+      },
+      "zip": null
+    },
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "Test Contact 1",
+        "email": "test.contact1@gmail.com",
+        "phone": "",
+        "fax": null,
+        "type": "primary"
+      },
+      {
+        "title": null,
+        "fullName": "Test Contact 2",
+        "email": "test.contact2@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "secondary"
+      }
+    ]
+  },
+  "description": [
+    {
+      "body": "test description"
+    }
+  ],
+  "related": {
+    "opportunityId": "c61597bdfc5d492268d664bce8e2345a"
+  },
+  "resources": [
+          {
+              "attType": "link",
+              "link": "https://www.google.com",
+              "description": "Google"
+          },
+          {
+              "attType": "file",
+              "content": "SGVsbG8=",
+              "resourceName": "Hello_updated.txt",
+              "fileType": "text/plain",
+              "packageAccessLevel": "public",
+              "explicitAccess": "0"
+          }
+      ]
+}
+
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Create and Publish request for Award Notice related to a Combined Synopsis Notice_v2</summary>
+<p>
+<code><pre>
+{
+  "data": {
+    "type": "a",
+    "award": {
+      "lineItemNumber": "123456789879",
+      "date": "2020-01-02",
+      "number": "1376487348949",
+      "deliveryOrderNumber": "23577980900",
+      "awardee": {
+        "ueiSAM": "025114695AST",
+        "name": "TONETS CORPORATION",
+        "cageCode": "SP971",
+        "location": {
+          "city": {
+            "name": "Chuo-ku"
+          },
+          "state": {
+            "name": "TOKYO"
+          },
+          "country": {
+            "name": "JPN"
+          },
+          "zip": null
+        }
+      },
+      "amount": "43567.00"
+    },
+    "title": "Test-Award notice-V1",
+    "version": "2",
+    "permissions": {
+      "IVL": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      }
+    },
+    "organizationId": "100272386",
+    "solicitationNumber": "test-123456789",
+    "additionalReporting": [
+      "none"
+    ],
+    "archive": {
+      "type": "autocustom",
+      "date": "2021-01-02"
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      },
+      "setAside": "SBA"
+    },
+    "classificationCode": "AA12",
+    "naics": [
+      {
+        "code": [
+          "711510"
+        ],
+        "type": "primary"
+      }
+    ],
+    "placeOfPerformance": {
+      "city": {
+        "name": "Alabaster",
+        "code": "820"
+      },
+      "state": {
+        "name": "Alabama",
+        "code": "AL"
+      },
+      "country": {
+        "code": "USA"
+      },
+      "zip": null
+    },
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "Test Contact 1",
+        "email": "test.contact1@gmail.com",
+        "phone": "",
+        "fax": null,
+        "type": "primary"
+      },
+      {
+        "title": null,
+        "fullName": "Test Contact 2",
+        "email": "test.contact2@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "secondary"
+      }
+    ]
+  },
+  "description": [
+    {
+      "body": "test description"
+    }
+  ],
+  "related": {
+    "opportunityId": "c61597bdfc5d492268d664bce8e2345a"
+  },
+  "resources": [
+          {
+              "attType": "link",
+              "link": "https://www.google.com",
+              "description": "Google"
+          },
+          {
+              "attType": "file",
+              "content": "SGVsbG8=",
+              "resourceName": "Hello_updated.txt",
+              "fileType": "text/plain",
+              "packageAccessLevel": "public",
+              "explicitAccess": "0"
+          }
+      ]
+}
+
+</pre></code>
+</p>
+</details>
+
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Revise Published Opportunity
@@ -744,7 +1440,7 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | /v1/api/revise/{opportunityId}
+**URL** | /revise/{opportunityId}
 **Summary** | Create a draft version for a Published Opportunity.
 **Consumes** | application/json
 **Produces** | JSON
@@ -787,7 +1483,7 @@ Examples
 
 ------- | -------
 **Request Type** | PATCH
-**URL** | /v1/api/update/{opportunityId}
+**URL** | /update/{opportunityId}
 **Summary** | Update a Draft Opportunity
 **Consumes** | application/json
 **Produces** | JSON
@@ -812,16 +1508,85 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>ITB Request</summary>
+<summary>Update request for Intent to Bundle Draft opportunity</summary>
+<p>
+<code><pre>
+{
+  "data": {
+    "type": "i",
+    "award": {
+      "lineItemNumber": null,
+      "date": "2020-01-02",
+      "number": "234567889",
+      "deliveryOrderNumber": "TASK-345654"
+    },
+    "title": "Test-ITB-23454-Updated",
+    "permissions": {
+      "IVL": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      }
+    },
+    "organizationId": "500011222",
+    "pointOfContact": [
+      {
+        "title": null,
+        "fullName": "test contact",
+        "email": "test.contact@gmail.com",
+        "phone": null,
+        "fax": null,
+        "type": "primary"
+      }
+    ],
+    "solicitationNumber": "Test-ITB-123456",
+    "archive": {
+      "type": "auto30",
+      "date": null
+    },
+    "solicitation": {
+      "deadlines": {
+        "response": null,
+        "responseTz": null
+      }
+    },
+    "additionalReporting": [
+      "none"
+    ],
+    "classificationCode": "E1AA",
+    "naics": [
+      {
+        "code": [
+          "111120"
+        ],
+        "type": "primary"
+      }
+    ]
+  },
+  "description": [
+    {
+      "body": "test description updated"
+    }
+  ],
+  "related": {}
+}
+
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Update request for a Draft PRESOLICITAITON notice</summary>
 <p>
 <code><pre>
 {
     "data": {
-        "solicitationNumber": "ITB_Test1_Update",
-        "title": "TST_T1_update",
-        "type": "i",
-        "classificationCode": "13",
-        "organizationId": "100186612",
+        "solicitationNumber": "PRESOLTest1_update",
+        "title": "PRESOLTEST_T1_update",
+        "type": "p",
+        "classificationCode": "1005",
+        "organizationId": "100120624",
         "naics": [
             {
                 "type": "primary",
@@ -832,15 +1597,20 @@ Examples
         ],
         "pointOfContact": [
             {
-                "additionalInfo": {
-                    "content": ""
-                },
-                "email": "",
-                "fax": "",
-                "fullName": "GSA",
-                "phone": "",
-                "title": "",
-                "type": "primary"
+                "fax": "1234567890",
+                "type": "primary",
+                "email": "test.email2@gmail.com",
+                "phone": "1234567890",
+                "title": null,
+                "fullName": "Test User"
+            },
+            {
+                "fax": "4512367890",
+                "type": "secondary",
+                "email": "test.email@gmail.com",
+                "phone": "1234567890",
+                "title": null,
+                "fullName": "Test User 2"
             }
         ],
         "placeOfPerformance": {
@@ -860,38 +1630,6 @@ Examples
             "streetAddress2": "",
             "zip": ""
         },
-        "award": {
-            "date": "2019-08-08T11:20:20-05:00",
-            "number": "12345",
-            "deliveryOrderNumber": "",
-            "amount": "number",
-            "lineItemNumber": "",
-            "awardee": {
-                "name": "",
-                "duns": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
-            },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
-            }
-        },
         "permissions": {
             "IVL": {
                 "create": true,
@@ -903,12 +1641,12 @@ Examples
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2019-08-08T11:20:20-05:00"
+                "response": "2022-08-08"
             }
         },
         "archive": {
             "type": "autocustom",
-            "date": "2019-09-09"
+            "date": "2022-09-09"
         },
         "additionalReporting": [
             "none"
@@ -916,7 +1654,7 @@ Examples
     },
     "description": [
         {
-            "body": "Description_updated"
+            "body": "Description_updated "
         }
     ]
 }
@@ -925,88 +1663,7 @@ Examples
 </details>
 
 <details>
-<summary>PRESOL Request</summary>
-<p>
-<code><pre>
-{
-  "data": {
-    "solicitationNumber": "PRESOLTest1_update",
-    "title": "PRESOLTEST_T1_update",
-    "type": "p",
-    "classificationCode": "13",
-    "organizationId": "100120624",
-    "naics": [
-      {
-        "type": "primary",
-        "code": [
-          "111150"
-        ]
-      }
-    ],
-    "pointOfContact": [
-      {
-        "additionalInfo": {
-          "content": ""
-        },
-        "email": "",
-        "fax": "",
-        "fullName": "gsa",
-        "phone": "",
-        "title": "",
-        "type": "primary"
-      }
-    ],
-    "placeOfPerformance": {
-      "city": {
-        "code": "",
-        "name": ""
-      },
-      "country": {
-        "code": "",
-        "name": ""
-      },
-      "state": {
-        "code": "",
-        "name": ""
-      },
-      "streetAddress": "",
-      "streetAddress2": "",
-      "zip": ""
-    },
-    "permissions": {
-      "IVL": {
-        "create": true,
-        "delete": true,
-        "read": true,
-        "update": true
-      }
-    },
-    "solicitation": {
-      "setAside": "SBA",
-      "deadlines": {
-        "response": "2019-08-08"
-      }
-    },
-    "archive": {
-      "type": "autocustom",
-      "date": "2019-09-09"
-    },
-    "additionalReporting": [
-      "none"
-    ]
-  },
-  "description": [
-    {
-      "body": "Description_updated "
-    }
-  ]
-}
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>COMBINE Request</summary>
+<summary>Update request for a Draft COMBINED SYNOPSIS notice</summary>
 <p>
 <code><pre>
 {
@@ -1018,7 +1675,7 @@ Examples
     "organizationId": "100000136",
     "archive": {
       "type": "autocustom",
-      "date": "2019-09-09"
+      "date": "2022-09-09"
     },
     "naics": [
       {
@@ -1033,9 +1690,9 @@ Examples
         "additionalInfo": {
           "content": ""
         },
-        "email": "",
+        "email": "test.contact@gmail.com",
         "fax": "",
-        "fullName": "gsa",
+        "fullName": "test contact",
         "phone": "",
         "title": "",
         "type": "primary"
@@ -1053,7 +1710,7 @@ Examples
       "setAside": "",
       "deadlines": {
         "responseTz": "America/New_York",
-        "response": "2019-12-12T23:59:00-05:00"
+        "response": "2021-12-12T23:59:00-05:00"
       }
     },
     "additionalReporting": [
@@ -1077,7 +1734,7 @@ Examples
 
 ------- | -------
 **Request Type** | GET
-**URL** | /v1/api/history/{opportunityId}
+**URL** | /history/{opportunityId}
 **Summary** | Get history of an Opportunity
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -1089,7 +1746,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-postedFrom | Body | JSON | No | Posted From - Date
+postedFrom | Body | JSON Object | No | Posted From - Date
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1101,7 +1758,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Response Element | Response Type |  Description
 -----------------|---------------|------------
-history | JSON |  
+history | JSON Array |  
 history.parentOpportunityId | string |  Parent Opportunity ID
 history.cancel_notice | boolean |  Identify if the Opportunity is cancelled or not
 history.procurement_type | string |  Notice Type
@@ -1231,7 +1888,7 @@ Examples
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /v1/api/delete/{opportunityId}
+**URL** | /delete/{opportunityId}
 **Summary** |   Delete a Draft Opportunity
 **Consumes** | Request Parameters
 **Produces** | NA
@@ -1263,9 +1920,9 @@ N/A
 
 ------- | -------
 **Request Type** | POST
-**URL** | /v1/api/{opportunityId}/requests
+**URL** | /{opportunityId}/requests
 **Summary** | Deletes all the versions or latest version of a notice
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -1307,7 +1964,7 @@ Examples
 
 ------- | -------
 **Request Type** | GET
-**URL** | /v1/api/search
+**URL** | /search
 **Summary** | Get list of Opportunities
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -1352,92 +2009,92 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Response Element | Response Type |  Description
 -----------------|---------------|------------
-data | JSON |  All the Opportunities are listed out in the response
+data | JSON Array |  All the Opportunities are listed out in the response
 opportunityId | string |  Opportunity ID
 data.type | string | See Notices Types table
 data.solicitationNumber | string | Solicitation Number
 data.title | string | Title of the Opportunity
 data.organizationId | string | FH Org Id/AAC code of the office where an Opportunity is being submitted
 data.classificationCode | string | Product Service Code (PSC)
-data.naics | JSON | 
+data.naics | JSON Array | 
 data.naics.code | string | NAICS Code
 data.naics.type | string |  NAICS type
-data.flags | JSON | 
+data.flags | JSON Array | 
 data.flags.code | string | 
 data.flags.isSelected | boolean | 
-data.pointOfContact | JSON | 
+data.pointOfContact | JSON Array| 
 data.pointOfContact.type | string |  Contact Type
 data.pointOfContact.title | string |  Contact title
 data.pointOfContact.fullname | string |  Contact Full Name
 data.pointOfContact.email | string | Contact email
 data.pointOfContact.phone | string | Contact Phone
 data.pointOfContact.fax | string |Contact Fax
-data.placeOfPerformance | JSON | 
+data.placeOfPerformance | JSON Object | 
 data.placeOfPerformance.streetAddress | string |  Pop Address
 data.placeOfPerformance.streetAddress2 | string |  Pop Address2
-data.placeOfPerformance.city | JSON | Pop City
+data.placeOfPerformance.city | JSON Object  | Pop City
 data.placeOfPerformance.city.code | string |  Pop City code
 data.placeOfPerformance.city.name | string |  Pop City name
-data.placeOfPerformance.city.state | JSON | Pop City state
+data.placeOfPerformance.city.state | JSON Object | Pop City state
 data.placeOfPerformance.state.code | string | Pop city state code
 data.placeOfPerformance.state.name | string |  Pop city state name
-data.placeOfPerformance.country | JSON | Pop Country
+data.placeOfPerformance.country | JSON Object  | Pop Country
 data.placeOfPerformance.country.code | string | Pop Country Code
 data.placeOfPerformance.country.name | string | Pop Country name
 data.placeOfPerformance.zip | string | Pop Country zip
-data.archive | JSON | 
+data.archive | JSON Object  | 
 data.archive.type | string |  Archive Type: auto15, auto30, autocustom
 data.archive.date | date and time |  Archive Date
-data.permissions | JSON | 
-data.permissions.ivl | JSON | 
+data.permissions | JSON Object| 
+data.permissions.ivl | JSON Object| 
 data.permissions.ivl.create | boolean |  permissions.ivl.create
 data.permissions.ivl.read | boolean |  permissions.ivl.read
 data.permissions.ivl.update | boolean |  permissions.ivl.update
 data.permissions.ivl.delete | boolean |  permissions.ivl.delete
-data.solicitation | JSON | 
+data.solicitation | JSON Object | 
 data.solicitation.setAside | string |  See Set-Aside values table
-data.solicitation.deadlines | JSON | 
+data.solicitation.deadlines | JSON Object | 
 data.solicitation.deadlines.response | date and time |  Solicitation Deadline Date
 data.solicitation.deadlines.responseTz | string |  Solicitation Deadlines Response Time Zone
-data.award | JSON | 
+data.award | JSON Object | 
 data.award.date | date and time |  Award Date
 data.award.number | string |  Award Number
 data.award.deliveryOrderNumber | string |   Award Delivery Order Number
 data.award.amount | Number | Award Amount
 data.award.lineitemNumber | string |  Award Line Item Number
-data.award.awardee | JSON |  
+data.award.awardee | JSON Object |  
 data.award.awardee.name | string |  Awardee Name
-data.award.awardee.duns | string | (**Planned to be deprecate by October 2020**) Awardee UEI DUNS
-data.award.awardee.ueiSAM | string | (**Planned to replace Duns# by October 2020 and usable by December 2019**) Awardee UEI SAM
-data.award.awardee.location | JSON |  Awardee Location
+data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS (v2 - Deprecated)
+data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
+data.award.awardee.location | JSON Object|  Awardee Location
 data.award.awardee.location.streetAddress | string | Awardee Street Address 1
 data.award.awardee.location.streetAddress2 | string |  Awardee Street Address 1
-data.award.awardee.location.city | string |  Awardee City
+data.award.awardee.location.city | JSON Object |  Awardee City
 data.award.awardee.location.city.code | string |  Awardee City Code
 data.award.awardee.location.city.name | string |  Awardee City Name
-data.award.awardee.location.state | JSON |  Awardee State
+data.award.awardee.location.state | JSON Object |  Awardee State
 data.award.awardee.location.state.code | string |  Awardee State Code
 data.award.awardee.location.state.name | string |  Awardee State Name
-data.award.awardee.location.country | JSON |  Awardee Country
+data.award.awardee.location.country | JSON Object |  Awardee Country
 data.award.awardee.location.country.code | string |  Awardee Country Code
 data.award.awardee.location.country.name | string |  Awardee Country Name
 data.award.awardee.location.zip | string |  Awardee Zip
-data.award.justificationAuthority | JSON | 
+data.award.justificationAuthority | JSON Object | 
 data.award.justificationAuthority.modificationNumber | string | justificationAuthority modification number
 data.award.justificationAuthority.authority | string |  justificationAuthority authority
-data.link | JSON |   
-data.link.additionalInfo | JSON |  
+data.link | JSON Array of Object |   
+data.link.additionalInfo | JSON Object |  
 data.link.additionalInfo.content | string | Additional Info
 data.link.href | string |  Website Address
 data.additionalReporting | string |  recovery_act or none
-additionalInfo.sections JSON | JSON | 
+additionalInfo.sections JSON | JSON Array | 
 additionalInfo.sections.opportunityId | string | 
 additionalInfo.sections.status | string | 
-parent  | JSON | 
+parent  | JSON Object | 
 parent.opportunityId | string |  Parent Opportunity ID
-related  | JSON |
+related  | JSON Object |
 related.opportunityId | string | Related Opportunity ID
-status  | JSON |  
+status  | JSON Object |  
 status.code | string |  1.status= active (published, unarchive and uncancelled records) <br />2.status=inactive (published, archive and uncancelled records)<br />3.status=draft (draft records)<br />4.status=published (published and unarchive)<br />5.status=active_cancelled(published, unarchive and cancelled records)<br />6.status=inactive_cancelled(published, archive and cancelled records)<br />7.status=archived(published and archived)
 status.value | string |  Refer to status.code
 archived | boolean |  Indicates Archived
@@ -1449,12 +2106,12 @@ modifiedDate | date |  Date Modified
 createdDate | date | Date Created
 modifiedBy | string |  Modified By User ID
 createdBy | string |  Created By User ID
-description  | JSON |  JSON applicable to Get Opportunity By ID only
+description  | JSON Object |  JSON applicable to Get Opportunity By ID only
 description.body | string |   Description of Notice
 description.opportunityId | string |  Opportunity ID (UI)
 description.descriptionId | string | 
 description.modifiedOn | string |  Date Description modified
-page  | JSON |  JSON applicable to Get List of Opportunities only
+page Object  | JSON |  JSON applicable to Get List of Opportunities only
 page.size | string | 
 page.totalElements | string | 
 page.totalPages | string | 
@@ -1733,7 +2390,7 @@ Examples
 
 ------- | -------
 **Request Type** | GET
-**URL** | /v1/api/{opportunityId}
+**URL** | /{opportunityId}
 **Summary** | Get Opportunity by Opportunity ID
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -1879,9 +2536,9 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | /v1/api/cancel/{opportunityId}
+**URL** | /cancel/{opportunityId}
 **Summary** | Cancel a Published Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -1925,9 +2582,9 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | v1/api/uncancel/{opportunityId}
+**URL** | /uncancel/{opportunityId}
 **Summary** | Update status of a Canceled Opportunity to Published status
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -1995,9 +2652,9 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** |/v1/api/archive/{opportunityId}
+**URL** | /archive/{opportunityId}
 **Summary** | Archive a Published Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2037,9 +2694,9 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** |/v1/api/unarchive/{opportunityId}
+**URL** | /unarchive/{opportunityId}
 **Summary** | Update status of a Archived Opportunity to Published status
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2104,9 +2761,9 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** |/v1/api/{opportunityId}/attachments
+**URL** | /{opportunityId}/attachments
 **Summary** | Add attachment/link to a draft Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2163,9 +2820,9 @@ Examples
 
 ------- | -------
 **Request Type** | PATCH
-**URL** |/v1/api/{opportunityId}/attachments/{resourceId}
+**URL** | /{opportunityId}/attachments/{resourceId}
 **Summary** | Update draft attachment/link metadata on a draft Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2265,7 +2922,7 @@ Examples
 
 ------- | -------
 **Request Type** | DELETE
-**URL** |/v1/api/{opportunityId}/attachments/{resourceId}
+**URL** | /{opportunityId}/attachments/{resourceId}
 **Summary** | Delete an attachment/link from a draft opportunity.
 **Consumes** | Request Parameters
 **Produces** | NA
@@ -2299,7 +2956,7 @@ N/A
 
 ------- | -------
 **Request Type** | GET
-**URL** |/v1/api/resources/files/{resourceId}/download
+**URL** | /resources/files/{resourceId}/download
 **Summary** | Download the attachment for the given Resource ID
 **Consumes** | Request Parameters
 **Produces** | file
@@ -2333,7 +2990,7 @@ N/A
 
 ------- | -------
 **Request Type** | GET
-**URL** |/v1/api/{opportunityId}/resources/download/zip
+**URL** | /{opportunityId}/resources/download/zip
 **Summary** | Download all attachments as zip file for an Opportunity
 **Consumes** | Request Parameters
 **Produces** | Zip
@@ -2363,20 +3020,20 @@ N/A
 
 ------- | -------
 **Request Type** | GET
-**URL** | /v1/api/{opportunityId}/ivl
+**URL** | /{opportunityId}/ivl
 **Summary** | Get IVL of the Opportunity ID
 **Consumes** | Request Parameters
 **Produces** | JSON
 
 Request Parameters
 
-Parameter Name | Parameter Type | Data Type  | Required | Description
----------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized user ID
+Parameter Name | Parameter Type | Data Type  | Required | Description| Applicable Versions
+---------------|----------------|------------|----------|------------|-----
+Authorization | Header |  string | Yes | Valid and authorized user ID 
 api_key | query | string | Yes | Valid System Account API Key
-opportunityId | query | string | Yes | Opportunity ID
-entityId | query | string | No | (**Planned to be deprecate by October 2020**) Entity ID - UEI DUNS #
-ueiSAM | query | string | No | (**Planned to replace Duns# by October 2020 and usable by December 2019**) UEI SAM #
+opportunityId | query | string | Yes | Opportunity IDv1
+entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2 - Deprecated
+ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST| v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2384,19 +3041,19 @@ Responses
 
 HTTP Status Code | Response Type |  Description
 -----------------|---------------|------------
-ivl | JSON | 
-ivl.duns | string | (**Planned to be deprecate by October 2020**) UEI DUNS number for the business entity
-ivl.ueiSAM | string | (**Planned to replace Duns# by October 2020 and usable by December 2019**) UEI SAM number for the business entity
+ivl | JSON Array | 
+ivl.duns | string | Unique Entity Identifier DUNS number for the business entity (v2 - Deprecated)
+ivl.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
 ivl.cageNumber | string | Identifies a given facility at a specific location
 ivl.name | string | Name of business entity
 ivl.addedOn | string | Date added to IVL
-ivl.contacts | JSON | Business entity contact
+ivl.contacts | JSON Array | Business entity contact
 ivl.contacts.email | string | Business entity email
 ivl.contacts.firstName | string |Business entity contact first name
 ivl.contacts.lastName | string | Business entity contact last name
 ivl.contacts.phoneNumber | string | Business entity contact phone number
 ivl.contacts.type | string | Business entity contact type
-ivl.addresses | JSON | 
+ivl.addresses | JSON Array | 
 ivl.addresses.streetAddress | string | Business entity address
 ivl.addresses.city | string |  Business entity city
 ivl.addresses.state | string |  Business entity state
@@ -2408,12 +3065,70 @@ ivl.naicsList | Array |  Business entity’s NAICS
 Examples
 
 <details>
-<summary>Get IVL Response</summary>
+<summary>Get IVL Response_v1</summary>
 <p>
 <code><pre>
 ivl": [
   {
     "duns": "6759999520",
+    "cageNumber": "3ABC1",
+    "name": "TECH SYSTEMS, INC.",
+    "addedOn": "2019-03-04 15:06:11",
+    "contacts": [
+      {
+        "email": "johndoe@techsystems.com",
+        "firstName": "JOHN",
+        "lastName": "DOE",
+        "phoneNumber": "7031234567",
+        "type": "Government Business POC"
+      }
+    ],
+    "addresses": [
+      {
+        "streetAddress": "P.O. BOX 123",
+        "city": "SOMECITY",
+        "state": "VIRGINIA",
+        "zip": "22102",
+        "country": "UNITED STATES",
+        "addressType": "mailing"
+      }
+    ],
+    "naicsList": [
+      "423430",
+      "511210",
+      "518210",
+      "541330",
+      "541511",
+      "541512",
+      "541513",
+      "541519",
+      "541611",
+      "541618",
+      "541990",
+      "611430",
+      "811212"
+    ]
+  }
+]
+  },
+  "page": {
+    "size": 10,
+    "totalElements": 1,
+    "totalPages": 1,
+    "number": 0
+  }
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get IVL Response_v2</summary>
+<p>
+<code><pre>
+ivl": [
+  {
+    "duns": "6759999520",
+    "ueiSAM": "025114695AST",
     "cageNumber": "3ABC1",
     "name": "TECH SYSTEMS, INC.",
     "addedOn": "2019-03-04 15:06:11",
@@ -2470,9 +3185,9 @@ ivl": [
 
 ------- | -------
 **Request Type** | GET
-**URL** |	/v1/api/resource
+**URL** |	/resource
 **Summary** | Download all attachments from resource ID
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2526,9 +3241,9 @@ Examples
 
 ------- | -------
 **Request Type** | GET
-**URL** |	/v1/api/resources
+**URL** |	/resources
 **Summary** | Download all attachments from opportunity ID
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2589,9 +3304,9 @@ Examples
 
 ------- | -------
 **Request Type** | PUT
-**URL** |/v1/api/organization/{orgId}/ivl
+**URL** | /organization/{orgId}/ivl
 **Summary** | Update IVL Settings (on or off) for an Organization
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2630,9 +3345,9 @@ Examples
 
 ------- | -------
 **Request Type** | GET
-**URL** | /v1/api/opportunities/access/{opportunityId}/accessRequest
+**URL** | /opportunities/access/{opportunityId}/accessRequest
 **Summary** | Summary	Get Authorized Party list for the explicit access requests submitted to an Opportunity
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2653,7 +3368,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Get Authorized Party List Response</summary>
+<summary>Get Authorized Party List Response_v1</summary>
 <p>
 <code><pre>
 {
@@ -2704,13 +3419,69 @@ Examples
 </p>
 </details>
 
+<details>
+<summary>Get Authorized Party List Response_v2</summary>
+<p>
+<code><pre>
+{
+    "_embedded": {
+        "authorizedPartyList": [
+            {
+                "idType": "resource",
+                "resourceName": "Secure 2.png",
+                "requestId": "cfc4c057a13e4a2c91741e46399d4a7d",
+                "actionType": "pending",
+                "fName": "Data",
+                "lName": "Entry",
+                "email": "reitestuser.de@gmail.com",
+                "phone": "1+9734323019",
+                "contractorName": "REI SYSTEMS, INC.",
+                "duns": "608999520",
+                "ueiSAM": "025114695AST",
+                "cageCode": "1DJP1"
+            },
+            {
+                "idType": "resource",
+                "resourceName": "Secure 1.png",
+                "requestId": "7900084914ea400e82db0152cecfbcaf",
+                "actionType": "pending",
+                "fName": "Data",
+                "lName": "Entry",
+                "email": "reitestuser.de@gmail.com",
+                "phone": "1+9734323019",
+                "contractorName": "REI SYSTEMS, INC.",
+                "duns": "608999520",
+                "ueiSAM": "025114695AST",
+                "cageCode": "1DJP1"
+            },
+            {
+                "idType": "notice",
+                "requestId": "4f4eeb29dcd2411dbc5a89ab0243f7c8",
+                "actionType": "approved",
+                "fName": "Data",
+                "lName": "Entry",
+                "email": "reitestuser.de@gmail.com",
+                "phone": "1+9734323019",
+                "contractorName": "REI SYSTEMS, INC.",
+                "duns": "608999520",
+                "ueiSAM": "025114695AST",
+                "cageCode": "1DJP1”
+            }
+        ]
+    }
+}
+</pre></code>
+</p>
+</details>
+
+
 ### Add Authorized Party ###
 
 ------- | -------
 **Request Type** | POST
-**URL** | /v1/api/opportunities/access/{opportunityId}/accessRequest
+**URL** | /opportunities/access/{opportunityId}/accessRequest
 **Summary** | Add a Vendor as an Authorized Party for a notice to grant access to all the secured attachments across all the versions . This API will create and approve the request for the vendor.
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2731,7 +3502,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Add Authorized Party Request</summary>
+<summary>Add Authorized Party Request_v1</summary>
 <p>
 <code><pre>
 {
@@ -2746,13 +3517,28 @@ Examples
 </p>
 </details>
 
+<details>
+<summary>Add Authorized Party Request_v2</summary>
+<p>
+<code><pre>
+{
+"lname":"test",
+"fname":"test123",
+"email":"testuser.de@gmail.com",
+"ueiSAM": "025114695AST"
+}
+</pre></code>
+</p>
+</details>
+
+
 ### Check Unique Solicitation Number ###
 
 ------- | -------
 **Request Type** | GET
-**URL** | /v1/api/isSolicitationNumberUnique/{parent}/{solicitationNumber}/{type}
+**URL** | /isSolicitationNumberUnique/{parent}/{solicitationNumber}/{type}
 **Summary** | Check if solicitation number is unique. A solicitation number is unique if it is not used by another opportunity of equivalent type. For justification type, j&a and fair opportunity/limited sources justification are considered equivalent.
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2788,9 +3574,9 @@ Examples
 
 ------- | -------
 **Request Type** | GET
-**URL** | /v1/api/opportunities/{opportunityId}/relatedopportunities/{type}
+**URL** | /opportunities/{opportunityId}/relatedopportunities/{type}
 **Summary** | Get Related Contract Opportunities
-**Consumes** | application/json
+**Consumes** | application/JSON
 **Produces** | JSON
 
 Request Parameters
@@ -2814,7 +3600,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Get Related Opportunities Response</summary>
+<summary>Get Related Opportunities Response_v1</summary>
 <p>
 <code><pre>
 {
@@ -2852,6 +3638,46 @@ Examples
 </p>
 </details>
 
+<details>
+<summary>Get Related Opportunities Response_v2</summary>
+<p>
+<code><pre>
+{
+  "recipientCount": 0,
+  "unparsableCount": 0,
+  "count": 1,
+  "totalAwardAmt": 0,
+  "relatedOpportunities": [
+    {
+      "data": {
+        "award": {
+          "date": null,
+          "amount": null,
+          "number": "awd123",
+          "awardee": {
+            "duns": null,
+            "ueiSAM": "null",
+            "name": null,
+            "location": null
+          },
+          "lineItemNumber": null,
+          "deliveryOrderNumber": "donumber"
+        },
+        "title": "Test Justification 4 conv 1",
+        "id": "96ba2e5833b14cecb3c2b3ac1ba3b56e",
+        "opportunityId": "96ba2e5833b14cecb3c2b3ac1ba3b56e"
+      },
+      "archived": false,
+      "cancelled": false,
+      "latest": false,
+      "deleted": false
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+
 
 
 ## API Contract JSON
@@ -2859,9 +3685,9 @@ Examples
 ### Create and Update Opportunity Contract JSON
 
 
-<div id="create-update-json">
+<div id="create-update-json-v1">
 <details>
-<summary>Create_Update_Opportunity_Contract_Json</summary>
+<summary>Create_Update_Opportunity_Contract_JSON_v1</summary>
 <p>
 <code><pre>
 {
@@ -2911,7 +3737,7 @@ Examples
         },
         "archive": {
             "type": "autocustom",
-            "date": "2019-09-09"
+            "date": "2022-09-09"
         },
         "permissions": {
             "IVL": {
@@ -2924,7 +3750,7 @@ Examples
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2019-08-08"
+                "response": "2022-08-08"
             }
         },
         "award": {
@@ -2971,6 +3797,9 @@ Examples
     ],
     "related": {
         "opportunityId": ""
+    },
+    "parent": {
+        "opportunityId": ""
     }
 }
 
@@ -2979,120 +3808,9 @@ Examples
 </details>
 </div>
 
-* Field headers in the table must match with field headers shown in JSON example  
-
-Name | Data Type |Field Length | Allowed Values | Required (Create/Update) | Required (Publish) | Description
------|-----------|-------|-------------------|------------|------------ |----------
-data | JSON |NA | NA | NA | NA | 
-data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | Notice Type
-data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes (No for type = s  (Special Notice)) | Solicitation Number
-data.title | string | 256 characters | |Yes | Yes | Title of the Opportunity
-data.organizationId | string | 32 characters | | Yes | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
-data.classificationCode | string |  | | No | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
-data.naics | JSON Array | NA |NA | NA | NA |
-data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
-data.naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case
-data.pointOfContact | JSON Array | NA |NA | NA | NA |
-data.pointOfContact.type | string | | primary,<br/> secondary | No | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
-data.pointOfContact.title | string | |  | No | No | Contact title
-data.pointOfContact.fullname | string | 500 characters| | No | Yes (No for type = a (Award))| Contact Full Name
-data.pointOfContact.email | string |255 characters | | No  | Yes (No for type = a (Award))  | Contact email
-data.pointOfContact.phone | string |255 characters | | No | No | Contact Phone
-data.pointOfContact.fax | string | 255 characters | | No  | No | Contact Fax
-data.pointOfContact.additionalInfo | JSON |NA |NA | NA  | NA |  Any additional information on Point of Contact
-data.pointOfContact.additionalInfo.<br/>content | String | | | No  | No | Details of the additional information on Point of Contact 
-data.placeOfPerformance | JSON | NA | NA | NA | NA |
-data.placeOfPerformance.<br/>streetAddess | string | | | No | No | Pop Address
-data.placeOfPerformance.<br/>streetAddess2 | string | | | No | No | Pop Address2
-data.placeOfPerformance.city | JSON | NA | NA | NA | NA | Pop City
-data.placeOfPerformance.city.<br/>code | string | | | No | No | Pop City code
-data.placeOfPerformance.city.<br/>name | string | | | No | No | Pop City name
-data.placeOfPerformance.state | JSON |NA | NA | NA | NA | Pop City state
-data.placeOfPerformance.state.<br/>code | string | | | No | No | Pop city state code
-data.placeOfPerformance.state.<br/>name | string | | | No | No | Pop city state name
-data.placeOfPerformance.country | JSON | NA | NA | NA | NA | Pop Country
-data.placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country Code
-data.placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name
-data.placeOfPerformance.zip | string | | | No | No | Pop Country zip
-data.archive | JSON |NA | NA | NA | NA | Contract opportunity archive policy information
-data.archive.type | string | | auto15,<br/> auto30,<br/> autocustom | No | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
-data.archive.date | date | | | No | Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
-data.permissions | JSON | NA | NA | NA | NA |
-data.permissions.ivl | JSON | NA | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
-data.permissions.ivl.create | boolean | | | No | Yes (No for type = a (Award)) | IVL create permission
-data.permissions.ivl.read | boolean | | | No | Yes (No for type = a (Award)) | IVL read permission
-data.permissions.ivl.update | boolean | |  | No | No | IVL update permission
-data.permissions.ivl.delete | boolean | | | No | No | IVL delete permission
-data.solicitation | JSON |NA | NA | NA | NA |
-data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action
-data.solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity
-data.solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | No | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date
-data.solicitation.deadlines.<br/>responseTz |string | | | No | No | Time Zone for <br/>Solicitation Deadline Date
-data.award | JSON | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types
-data.award.date | date | |YYYY-MM-DD |No | Yes only for type = a (Award) | Award Date
-data.award.number | string | 255 characters | |No | Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number
-data.award.deliverOrderNumber | string | 255 characters| | No | No | Award Delivery Order Number
-data.award.amount | number |64 digits |  | No | Yes only for type = a (Award) | Award Amount
-data.award.lineitemNumber | string |255 characters | | No | No | Contract Line item Number
-data.award.awardee | JSON | NA| NA | NA | NA |Awardee details; Only for type = a (Award)
-data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name
-data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required |(**Planned to be deprecate by October 2020**) Awardee UEI Duns
-data.award.awardee.ueiSAM | string | 12 characters | | No | No; **Requirements will be set at a later date** |(**Planned to replace Duns# by October 2020 and usable by December 2019**) Awardee UEI SAM
-data.award.awardee.location | JSON |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
-data.award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address 
-data.award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 2
-data.award.awardee.location.<br/>city | JSON |NA |NA |NA | NA | Awardee City details
-data.award.awardee.location.<br/>city.code | string | | | No | Yes | Awardee City code
-data.award.awardee.location.<br/>city.name | string | | | No | No | Awardee City name
-data.award.awardee.location.<br/>state | JSON | NA | NA | NA | NA | Awardee State details
-data.award.awardee.location.<br/>state.code | string | | | No | Yes | Awardee State code
-data.award.awardee.location.<br/>state.name | string | | | No | No | Awardee State name
-data.award.awardee.location.<br/>country | JSON | NA| NA | NA | NA |Awardee Country details
-data.award.awardee.location.<br/>country.code | string | | | No | Yes | Awardee Country code
-data.award.awardee.location.<br/>country.name | string | | | No | No | Awardee Country Name
-data.award.awardee.location.<br/>zip | string | | | No | No | Awardee Country Zip code
-data.award.justificationAuthority | JSON |NA |NA | NA | NA | Only for type = j (Justification)
-data.award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number
-data.award.justificationAuthority.<br/>authority | string|  |  | No | Yes for type = j (Justification) | Justification Authority
-data.additionalReporting | string | |None, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
-description | JSON | NA | NA | NA | NA |
-description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice
-related | JSON | NA | NA | NA | NA | Related Notice information
-related.opportunityId | string | 32 characters| | No | No | Opportunity Id of the related notice
-
-<p><small><a href="#">Back to top</a></small></p>
-
-### Publish Opportunity Contract JSON
-
-<div id="publish-json" title="Click to view Publish Contract">
+<div id="create-update-json-v2">
 <details>
-<summary>Publish_Opportunity_Contract_Json</summary>
-<p>
-<code><pre>
-{
-  "requestType": "publish_request",
-  "reason": ""
-}
-</pre></code>
-</p>
-</details>
-</div>
-
-* Field headers in the table must match with field headers shown in JSON example  
-
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-requestType | string | publish_request | Yes | Type of request
-reason | string |  | No | Publish reason
-
-<p><small><a href="#">Back to top</a></small></p>
-
-### Create and Publish Opportunity Contract JSON
-
-
-<div id="create-publish-json">
-<details>
-<summary>Create_Publish_Opportunity_Contract_Json</summary>
+<summary>Create_Update_Opportunity_Contract_JSON_v2</summary>
 <p>
 <code><pre>
 {
@@ -3167,6 +3885,243 @@ reason | string |  | No | Publish reason
             "awardee": {
                 "manual": false,
                 "name": "",
+                "ueiSAM": "",
+                "location": {
+                    "streetAddress": "",
+                    "streetAddress2": "",
+                    "city": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "state": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "zip": "",
+                    "country": {
+                        "code": "",
+                        "name": ""
+                    }
+                }
+            },
+            "justificationAuthority": {
+                "modificationNumber": "",
+                "authority": "dictionary"
+            }
+        },
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
+        {
+            "body": ""
+        }
+    ],
+    "related": {
+        "opportunityId": ""
+    },
+    "parent": {
+        "opportunityId": ""
+    }
+}
+
+</pre></code>
+</p>
+</details>
+</div>
+
+
+* Field headers in the table must match with field headers shown in JSON example  
+
+Name | Data Type |Field Length | Allowed Values | Required (Create/Update) | Required (Publish) | Description | Applicable Versions
+-----|-----------|-------|-------------------|------------|------------ |---------- | -------- 
+data | JSON Object |NA | NA | NA | NA | NA | NA
+data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Yes | Notice Type | v1 <br> v2
+data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes (No for type = s  (Special Notice)) | Solicitation Number | v1 <br> v2
+data.title | string | 256 characters | |Yes | Yes | Title of the Opportunity | v1 <br> v2
+data.organizationId | string | 32 characters | | Yes | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted | v1 <br> v2
+data.classificationCode | string |  | | No | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC) | v1 <br> v2
+data.naics | JSON Array | NA |NA | NA | NA | NA | NA
+data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code | v1 <br> v2
+data.naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case | v1 <br> v2
+data.pointOfContact | JSON Array | NA |NA | NA | NA |  NA | NA
+data.pointOfContact.type | string | | primary,<br/> secondary | No | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case | v1 <br> v2
+data.pointOfContact.title | string | |  | No | No | Contact title | v1 <br> v2
+data.pointOfContact.fullname | string | 500 characters| | No | Yes (No for type = a (Award))| Contact Full Name | v1 <br> v2
+data.pointOfContact.email | string |255 characters | | No  | Yes (No for type = a (Award))  | Contact email | v1 <br> v2
+data.pointOfContact.phone | string |255 characters | | No | No | Contact Phone | v1 <br> v2
+data.pointOfContact.fax | string | 255 characters | | No  | No | Contact Fax | v1 <br> v2
+data.pointOfContact.additionalInfo | JSON Object |NA |NA | NA  | NA |  Any additional information on Point of Contact | v1 <br> v2
+data.pointOfContact.additionalInfo.<br/>content | String | | | No  | No | Details of the additional information on Point of Contact | v1 <br> v2 
+data.placeOfPerformance | JSON Object| NA | NA | NA | NA | NA | NA
+data.placeOfPerformance.<br/>streetAddess | string | | | No | No | Pop Address | v1 <br> v2
+data.placeOfPerformance.<br/>streetAddess2 | string | | | No | No | Pop Address2 | v1 <br> v2
+data.placeOfPerformance.city | JSON Object | NA | NA | NA | NA | Pop City |NA
+data.placeOfPerformance.city.<br/>code | string | | | No | No | Pop City code | v1 <br> v2
+data.placeOfPerformance.city.<br/>name | string | | | No | No | Pop City name| v1 <br> v2
+data.placeOfPerformance.state | JSON Object |NA | NA | NA | NA | Pop City state| NA
+data.placeOfPerformance.state.<br/>code | string | | | No | No | Pop city state code | v1 <br> v2
+data.placeOfPerformance.state.<br/>name | string | | | No | No | Pop city state name| v1 <br> v2
+data.placeOfPerformance.country | JSON Object | NA | NA | NA | NA | Pop Country| v1 <br> v2
+data.placeOfPerformance.<br/>country.code | string | | | No | No | Pop Country Code| v1 <br> v2
+data.placeOfPerformance.<br/>country.name | string | | | No | No | Pop Country name| v1 <br> v2
+data.placeOfPerformance.zip | string | | | No | No | Pop Country zip| v1 <br> v2
+data.archive | JSON Object |NA | NA | NA | NA | Contract opportunity archive policy information | NA
+data.archive.type | string | | auto15,<br/> auto30,<br/> autocustom | No | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive | v1 <br> v2
+data.archive.date | date | | | No | Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future | v1 <br> v2
+data.permissions | JSON Object | NA | NA | NA | NA | NA|NA
+data.permissions.ivl | JSON Object | NA | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice | v1 <br> v2
+data.permissions.ivl.create | boolean | | | No | Yes (No for type = a (Award)) | IVL create permission | v1 <br> v2
+data.permissions.ivl.read | boolean | | | No | Yes (No for type = a (Award)) | IVL read permission | v1 <br> v2
+data.permissions.ivl.update | boolean | |  | No | No | IVL update permission | v1 <br> v2
+data.permissions.ivl.delete | boolean | | | No | No | IVL delete permission | v1 <br> v2
+data.solicitation | JSON Object |NA | NA | NA | NA | NA
+data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action | v1 <br> v2
+data.solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity|NA
+data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| No |1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
+data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone values](#time-zone-values) |No| No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
+data.award | JSON Object | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types |NA 
+data.award.date | date | |YYYY-MM-DD |No | Yes only for type = a (Award) | Award Date | v1 <br> v2
+data.award.number | string | 255 characters | |No | Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number | v1 <br> v2
+data.award.deliverOrderNumber | string | 255 characters| | No | No | Award Delivery Order Number | v1 <br> v2
+data.award.amount | number |64 digits |  | No | Yes only for type = a (Award) | Award Amount | v1 <br> v2
+data.award.lineitemNumber | string |255 characters | | No | No | Contract Line item Number | v1 <br> v2
+data.award.awardee | JSON Object | NA| NA | NA | NA |Awardee details; Only for type = a (Award) |NA
+data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
+data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
+data.award.awardee.ueiSAM | string | 12 alphanumeric | | No | No; Either awardee.name or awardee.ueiSAM is required <br> **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
+data.award.awardee.location | JSON Object |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided** | v1 <br> v2
+data.award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address  | v1 <br> v2
+data.award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 2 | v1 <br> v2
+data.award.awardee.location.<br/>city | JSON Object |NA |NA |NA | NA | Awardee City details | v1 <br> v2
+data.award.awardee.location.<br/>city.code | string | | | No | Yes | Awardee City code | v1 <br> v2
+data.award.awardee.location.<br/>city.name | string | | | No | No | Awardee City name | v1 <br> v2
+data.award.awardee.location.<br/>state | JSON Object | NA | NA | NA | NA | Awardee State details | v1 <br> v2
+data.award.awardee.location.<br/>state.code | string | | | No | Yes | Awardee State code | v1 <br> v2
+data.award.awardee.location.<br/>state.name | string | | | No | No | Awardee State name | v1 <br> v2
+data.award.awardee.location.<br/>country | JSON Object | NA| NA | NA | NA |Awardee Country details | v1 <br> v2
+data.award.awardee.location.<br/>country.code | string | | | No | Yes | Awardee Country code | v1 <br> v2
+data.award.awardee.location.<br/>country.name | string | | | No | No | Awardee Country Name | v1 <br> v2
+data.award.awardee.location.<br/>zip | string | | | No | No | Awardee Country Zip code | v1 <br> v2
+data.award.justificationAuthority | JSON Object |NA |NA | NA | NA | Only for type = j (Justification) |NA
+data.award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number | v1 <br> v2
+data.award.justificationAuthority.<br/>authority | string|  |  | No | Yes for type = j (Justification) | Justification Authority | v1 <br> v2
+data.additionalReporting | string | |None, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice | v1 <br> v2
+description | JSON Array | NA | NA | NA | NA | NA |NA
+description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice | v1 <br> v2
+related | JSON  Object| NA | NA | NA | NA | Related Notice information |NA
+related.opportunityId | string | 32 characters|[Refer Related Notices](#related-notices) | No | No | Opportunity Id of the related notice  | v1 <br> v2
+parent | JSON Object| NA | NA | NA | NA |  Parent Notice information| NA
+parent.opportunityId | string | 32 characters| | Yes (to create a draft opportunity for a published notice) | No |Opportunity Id of the parent notice| v1 <br> v2
+
+<p><small><a href="#">Back to top</a></small></p>
+
+### Publish Opportunity Contract JSON
+
+<div id="publish-json" title="Click to view Publish Contract">
+<details>
+<summary>Publish_Opportunity_Contract_JSON</summary>
+<p>
+<code><pre>
+{
+  "requestType": "publish_request",
+  "reason": ""
+}
+</pre></code>
+</p>
+</details>
+</div>
+
+* Field headers in the table must match with field headers shown in JSON example  
+
+Name | Data Type | Allowed Values | Required | Description| Applicable Versions
+-----|-----------|----------------|----------|------------|-----
+requestType | string | publish_request | Yes | Type of request| v1 <br> v2
+reason | string |  | No | Publish reason| v1 <br> v2
+
+<p><small><a href="#">Back to top</a></small></p>
+
+### Create and Publish Opportunity Contract JSON
+
+
+<div id="create-publish-json-v1">
+<details>
+<summary>Create_Publish_Opportunity_Contract_JSON_v1</summary>
+<p>
+<code><pre>
+{
+    "data": {
+        "type": "",
+        "solicitationNumber": "",
+        "title": "",
+        "organizationId": "",
+        "classificationCode": "",
+        "naics": [
+            {
+                "type": "primary",
+                "code": [
+                    ""
+                ]
+            }
+        ],
+        "pointOfContact": [
+            {
+                "type": "primary",
+                "title": "",
+                "fullName": "",
+                "email": "",
+                "phone": "",
+                "fax": "",
+                "additionalInfo": {
+                    "content": ""
+                }
+            }
+        ],
+        "placeOfPerformance": {
+            "streetAddress": "",
+            "streetAddress2": "",
+            "city": {
+                "code": "",
+                "name": ""
+            },
+            "country": {
+                "code": "",
+                "name": ""
+            },
+            "state": {
+                "code": "",
+                "name": ""
+            },
+            "zip": ""
+        },
+        "archive": {
+            "type": "autocustom",
+            "date": "2022-09-09"
+        },
+        "permissions": {
+            "IVL": {
+                "create": false,
+                "delete": false,
+                "read": false,
+                "update": false
+            }
+        },
+        "solicitation": {
+            "setAside": "SBA",
+            "deadlines": {
+                "response": "2022-08-08"
+            }
+        },
+        "award": {
+            "date": "",
+            "number": "",
+            "deliveryOrderNumber": "",
+            "amount": "",
+            "lineItemNumber": "",
+            "awardee": {
+                "manual": false,
+                "name": "",
                 "duns": "",
                 "location": {
                     "streetAddress": "",
@@ -3201,6 +4156,9 @@ reason | string |  | No | Publish reason
         }
     ],
     "related": {
+        "opportunityId": ""
+    },
+    "parent": {
         "opportunityId": ""
     },
     "resources": [
@@ -3224,95 +4182,235 @@ reason | string |  | No | Publish reason
 </details>
 </div>
 
+<div id="create-publish-json-v2">
+<details>
+<summary>Create_Publish_Opportunity_Contract_JSON_v2</summary>
+<p>
+<code><pre>
+{
+    "data": {
+        "type": "",
+        "solicitationNumber": "",
+        "title": "",
+        "organizationId": "",
+        "classificationCode": "",
+        "naics": [
+            {
+                "type": "primary",
+                "code": [
+                    ""
+                ]
+            }
+        ],
+        "pointOfContact": [
+            {
+                "type": "primary",
+                "title": "",
+                "fullName": "",
+                "email": "",
+                "phone": "",
+                "fax": "",
+                "additionalInfo": {
+                    "content": ""
+                }
+            }
+        ],
+        "placeOfPerformance": {
+            "streetAddress": "",
+            "streetAddress2": "",
+            "city": {
+                "code": "",
+                "name": ""
+            },
+            "country": {
+                "code": "",
+                "name": ""
+            },
+            "state": {
+                "code": "",
+                "name": ""
+            },
+            "zip": ""
+        },
+        "archive": {
+            "type": "autocustom",
+            "date": "2022-09-09"
+        },
+        "permissions": {
+            "IVL": {
+                "create": false,
+                "delete": false,
+                "read": false,
+                "update": false
+            }
+        },
+        "solicitation": {
+            "setAside": "SBA",
+            "deadlines": {
+                "response": "2022-08-08"
+            }
+        },
+        "award": {
+            "date": "",
+            "number": "",
+            "deliveryOrderNumber": "",
+            "amount": "",
+            "lineItemNumber": "",
+            "awardee": {
+                "manual": false,
+                "name": "",
+                "ueiSAM": "",
+                "location": {
+                    "streetAddress": "",
+                    "streetAddress2": "",
+                    "city": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "state": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "zip": "",
+                    "country": {
+                        "code": "",
+                        "name": ""
+                    }
+                }
+            },
+            "justificationAuthority": {
+                "modificationNumber": "",
+                "authority": "dictionary"
+            }
+        },
+        "additionalReporting": [
+            "none"
+        ]
+    },
+    "description": [
+        {
+            "body": ""
+        }
+    ],
+    "related": {
+        "opportunityId": ""
+    },
+    "parent": {
+        "opportunityId": ""
+    },
+    "resources": [
+        {
+            "attType": "link",
+            "link": "",
+            "description": ""
+        },
+        {
+            "attType": "file",
+            "content": "",
+            "resourceName": "",
+            "packageAccessLevel": "",
+            "explicitAccess": "",
+            "exportControlled": null
+        }
+    ]
+}
+</pre></code>
+</p>
+</details>
+</div>
+
+
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type |Field Length | Allowed Values| Required | Description
------|-----------|-------|-------------------|------------|------------ 
-data | JSON |NA | NA | NA | 
-data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Notice Type
-data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {}| Yes (No for type = s  (Special Notice)) | Solicitation Number
-data.title | string | 256 characters | | Yes | Title of the Opportunity
-data.organizationId | string | 32 characters | | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted
-data.classificationCode | string |  | | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)
-data.naics | JSON Array | NA |NA | NA |
-data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code
-data.naics.type | string | |primary|Yes | NAICS Type Note: 'p' must be in lower case
-data.pointOfContact | JSON Array | NA |NA | NA |
-data.pointOfContact.type | string | | primary,<br/> secondary | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case
-data.pointOfContact.title | string | |  | No | Contact title
-data.pointOfContact.fullname | string | 500 characters| | Yes (No for type = a (Award))| Contact Full Name
-data.pointOfContact.email | string |255 characters | | Yes (No for type = a (Award))  | Contact email
-data.pointOfContact.phone | string |255 characters | | No | Contact Phone
-data.pointOfContact.fax | string | 255 characters | | No | Contact Fax
-data.pointOfContact.additionalInfo | JSON |NA |NA | NA |  Any additional information on Point of Contact
-data.pointOfContact.additionalInfo.<br/>content | String | | | No | Details of the additional information on Point of Contact 
-data.placeOfPerformance | JSON | NA | NA | NA |
-data.placeOfPerformance.<br/>streetAddess | string | | |No | Pop Address
-data.placeOfPerformance.<br/>streetAddess2 | string | | | No | Pop Address2
-data.placeOfPerformance.city | JSON | NA | NA |NA | Pop City
-data.placeOfPerformance.city.<br/>code | string | | |No | Pop City code
-data.placeOfPerformance.city.<br/>name | string | | |No | Pop City name
-data.placeOfPerformance.state | JSON |NA | NA |NA | Pop City state
-data.placeOfPerformance.state.<br/>code | string | | | No | Pop city state code
-data.placeOfPerformance.state.<br/>name | string | | | No | Pop city state name
-data.placeOfPerformance.country | JSON | NA | NA | NA | Pop Country
-data.laceOfPerformance.<br/>country.code | string | | |No | Pop Country Code
-data.placeOfPerformance.<br/>country.name | string | | |No | Pop Country name
-data.placeOfPerformance.zip | string | | |No | Pop Country zip
-data.archive | JSON |NA | NA | NA | Contract opportunity archive policy information
-data.archive.type | string | | auto15,<br/> auto30,<br/> autocustom | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive
-data.archive.date | date | | |Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future
-data.permissions | JSON | NA | NA | NA 
-data.permissions.ivl | JSON | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice
-data.permissions.ivl.create | boolean | | | Yes (No for type = a (Award)) | IVL create permission
-data.permissions.ivl.read | boolean | | |Yes (No for type = a (Award)) | IVL read permission
-data.permissions.ivl.update | boolean | |  | No | IVL update permission
-data.permissions.ivl.delete | boolean | | |No | IVL delete permission
-data.solicitation | JSON |NA | NA | NA 
-data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action
-data.solicitation.deadlines | JSON | NA | NA | NA |Response deadline date for Contract opportunity
-data.solicitation.<br/>deadlines.response | date | |YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date
-data.solicitation.deadlines.<br/>responseTz |string | | |No | Time Zone for <br/>Solicitation Deadline Date
-data.award | JSON | NA | NA | NA| This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types
-data.award.date | date | |YYYY-MM-DD | Yes only for type = a (Award) | Award Date
-data.award.number | string | 255 characters | |Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number
-data.award.deliverOrderNumber | string | 255 characters| | No | Award Delivery Order Number
-data.award.amount | number |64 digits |  | Yes only for type = a (Award) | Award Amount
-data.award.lineitemNumber | string |255 characters | | No | Contract Line item Number
-data.award.awardee | JSON | NA| NA | NA |Awardee details; Only for type = a (Award)
-data.award.awardee.name | string | 1000 characters | | No; Either awardee.name or awardee.duns is required | Awardee Name
-data.award.awardee.duns | string | 9 digits | | No; Either awardee.name or awardee.duns is required | (**Planned to be deprecate by October 2020**) Awardee Duns
-data.award.awardee.ueiSAM | string | 12 characters | | No; **Requirements will be set at a later date** | (**Planned to replace Duns# by October 2020 and usable by December 2019**) Awardee UEI SAM
-data.award.awardee.location | JSON |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**
-data.award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address 
-data.award.awardee.location.<br/>streetAddress2 | string | | | No | Awardee Street Address 2
-data.award.awardee.location.<br/>city | JSON |NA |NA |NA | Awardee City details
-data.award.awardee.location.<br/>city.code | string | | | Yes | Awardee City code
-data.award.awardee.location.<br/>city.name | string | | | No | Awardee City name
-data.award.awardee.location.<br/>state | JSON | NA | NA | NA | Awardee State details
-data.award.awardee.location.<br/>state.code | string | | | Yes | Awardee State code
-data.award.awardee.location.<br/>state.name | string | | | No | Awardee State name
-data.award.awardee.location.<br/>country | JSON | NA| NA | NA |Awardee Country details
-data.award.awardee.location.<br/>country.code | string | | | Yes | Awardee Country code
-data.award.awardee.location.<br/>country.name | string | | |  No | Awardee Country Name
-data.award.awardee.location.<br/>zip | string | | | No | Awardee Country Zip code
-data.award.justificationAuthority | JSON |NA |NA | NA | Only for type = j (Justification)
-data.award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | Justification Authority Modification Number
-data.award.justificationAuthority.<br/>authority | string|  |  | Yes for type = j (Justification) | Justification Authority
-data.additionalReporting | string | |none, <br/>auto_recovery | Yes; No for type = s (Special Notice) | Initiative that applies to the notice
-description | JSON | NA | NA | NA |
-description.body | string | 65535 characters| | Yes; No for type = a (Award) | Description of the notice
-related | JSON | NA | NA | NA | Related Notice information
-related.opportunityId | string | 32 characters| | No | Opportunity Id of the related notice
-resources | JSON |NA | NA | NA |
-resources.attType | string | |link, file | No| Type of attachment, either link or file
-resources.content | byte |250MB |  | No | File content in base64 format
-resources.link | string | 255 characters | |No | Resource link URL
-resources.packageAccessLevel | string | | public,<br/>private<br/>(default public) |  No| Type of access to file
-resources.resourceName | string | 255 characters |  | No | Name of file
-resources.description | string |255 characters | | No | Description of the link
-resources.explicitAccess | string |1 character | 0, 1 (defaults to '0' public access, if not provided) |No |Explicit Access. For Controlled Unclassified files, specify '1'
-resources.exportControlled | string |1 character | 0 | No |Export Controlled. * Captured for future JCP validation
+Name | Data Type |Field Length | Allowed Values| Required | Description|Applicable Versions
+-----|-----------|-------|-------------------|------------|------------|-----
+data | JSON Object |NA | NA | NA | NA|NA
+data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Notice Type| v1 <br> v2
+data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {}| Yes (No for type = s  (Special Notice)) | Solicitation Number| v1 <br> v2
+data.title | string | 256 characters | | Yes | Title of the Opportunity| v1 <br> v2
+data.organizationId | string | 32 characters | | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted| v1 <br> v2
+data.classificationCode | string |  | | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)| v1 <br> v2
+data.naics | JSON Array | NA |NA | NA |NA|NA
+data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code| v1 <br> v2
+data.naics.type | string | |primary|Yes | NAICS Type Note: 'p' must be in lower case| v1 <br> v2
+data.pointOfContact | JSON Array | NA |NA | NA |NA|NA
+data.pointOfContact.type | string | | primary,<br/> secondary | Yes (No for type = a, s (Award, Special Notice)) | Contact Type Note: 'p' and 's' must be in lower case| v1 <br> v2
+data.pointOfContact.title | string | |  | No | Contact title| v1 <br> v2
+data.pointOfContact.fullname | string | 500 characters| | Yes (No for type = a (Award))| Contact Full Name| v1 <br> v2
+data.pointOfContact.email | string |255 characters | | Yes (No for type = a (Award))  | Contact email| v1 <br> v2
+data.pointOfContact.phone | string |255 characters | | No | Contact Phone| v1 <br> v2
+data.pointOfContact.fax | string | 255 characters | | No | Contact Fax| v1 <br> v2
+data.pointOfContact.additionalInfo | JSON Object |NA |NA | NA |  Any additional information on Point of Contact| v1 <br> v2
+data.pointOfContact.additionalInfo.<br/>content | String | | | No | Details of the additional information on Point of Contact | v1 <br> v2
+data.placeOfPerformance | JSON Object| NA | NA | NA |NA|NA
+data.placeOfPerformance.<br/>streetAddess | string | | |No | Pop Address| v1 <br> v2
+data.placeOfPerformance.<br/>streetAddess2 | string | | | No | Pop Address2| v1 <br> v2
+data.placeOfPerformance.city | JSON Object| NA | NA |NA | Pop City| v1 <br> v2
+data.placeOfPerformance.city.<br/>code | string | | |No | Pop City code| v1 <br> v2
+data.placeOfPerformance.city.<br/>name | string | | |No | Pop City name| v1 <br> v2
+data.placeOfPerformance.state | JSON Object |NA | NA |NA | Pop City state| v1 <br> v2
+data.placeOfPerformance.state.<br/>code | string | | | No | Pop city state code| v1 <br> v2
+data.placeOfPerformance.state.<br/>name | string | | | No | Pop city state name| v1 <br> v2
+data.placeOfPerformance.country | JSON Object | NA | NA | NA | Pop Country| v1 <br> v2
+data.laceOfPerformance.<br/>country.code | string | | |No | Pop Country Code| v1 <br> v2
+data.placeOfPerformance.<br/>country.name | string | | |No | Pop Country name| v1 <br> v2
+data.placeOfPerformance.zip | string | | |No | Pop Country zip| v1 <br> v2
+data.archive | JSON Object |NA | NA | NA | Contract opportunity archive policy information| v1 <br> v2
+data.archive.type | string | | auto15,<br/> auto30,<br/> autocustom | Yes | Archive Type<br/>The policy will determine the date either by validation of other dates associated to the notice or by a manually entered date that will be used for marking the notice inactive| v1 <br> v2
+data.archive.date | date | | |Yes for archive.type = autocustom | Archive Date<br/> This date will indicate when a notice will be moved to the inactive status. This date must be in the future| v1 <br> v2
+data.permissions | JSON Object | NA | NA | NA |NA|NA
+data.permissions.ivl | JSON | NA | NA | NA |Government determined use and visibility of the 'Interested Vendor's List' where users outside the notice can indicate a interest in the notice| v1 <br> v2
+data.permissions.ivl.create | boolean | | | Yes (No for type = a (Award)) | IVL create permission| v1 <br> v2
+data.permissions.ivl.read | boolean | | |Yes (No for type = a (Award)) | IVL read permission| v1 <br> v2
+data.permissions.ivl.update | boolean | |  | No | IVL update permission| v1 <br> v2
+data.permissions.ivl.delete | boolean | | |No | IVL delete permission| v1 <br> v2
+data.solicitation | JSON Object |NA | NA | NA |NA|NA
+data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action| v1 <br> v2
+data.solicitation.deadlines | JSON | NA | NA | NA |Response deadline date for Contract opportunity| v1 <br> v2
+data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
+data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone values](#time-zone-values) |No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
+data.award | JSON Object | NA | NA | NA| This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types| v1 <br> v2
+data.award.date | date | |YYYY-MM-DD | Yes only for type = a (Award) | Award Date| v1 <br> v2
+data.award.number | string | 255 characters | |Yes only for type= i, j, a (Intent to Bundle, Justification, Award) | Award Number| v1 <br> v2
+data.award.deliverOrderNumber | string | 255 characters| | No | Award Delivery Order Number| v1 <br> v2
+data.award.amount | number |64 digits |  | Yes only for type = a (Award) | Award Amount| v1 <br> v2
+data.award.lineitemNumber | string |255 characters | | No | Contract Line item Number| v1 <br> v2
+data.award.awardee | JSON Object | NA| NA | NA |Awardee details; Only for type = a (Award)| v1 <br> v2
+data.award.awardee.name | string | 1000 characters | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
+data.award.awardee.duns | string | 9 digits | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
+data.award.awardee.ueiSAM | string | 12 alphanumeric | No | No; Either awardee.name or awardee.ueiSAM is required <br> **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
+data.award.awardee.location | JSON Object |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**| v1 <br> v2
+data.award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address | v1 <br> v2
+data.award.awardee.location.<br/>streetAddress2 | string | | | No | Awardee Street Address 2| v1 <br> v2
+data.award.awardee.location.<br/>city | JSON Object|NA |NA |NA | Awardee City details| v1 <br> v2
+data.award.awardee.location.<br/>city.code | string | | | Yes | Awardee City code| v1 <br> v2
+data.award.awardee.location.<br/>city.name | string | | | No | Awardee City name| v1 <br> v2
+data.award.awardee.location.<br/>state | JSON Object | NA | NA | NA | Awardee State details| v1 <br> v2
+data.award.awardee.location.<br/>state.code | string | | | Yes | Awardee State code| v1 <br> v2
+data.award.awardee.location.<br/>state.name | string | | | No | Awardee State name| v1 <br> v2
+data.award.awardee.location.<br/>country | JSON Object | NA| NA | NA |Awardee Country details| v1 <br> v2
+data.award.awardee.location.<br/>country.code | string | | | Yes | Awardee Country code| v1 <br> v2
+data.award.awardee.location.<br/>country.name | string | | |  No | Awardee Country Name| v1 <br> v2
+data.award.awardee.location.<br/>zip | string | | | No | Awardee Country Zip code| v1 <br> v2
+data.award.justificationAuthority | JSON Object |NA |NA | NA | Only for type = j (Justification)| v1 <br> v2
+data.award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | Justification Authority Modification Number| v1 <br> v2
+data.award.justificationAuthority.<br/>authority | string|  |  | Yes for type = j (Justification) | Justification Authority| v1 <br> v2
+data.additionalReporting | string | |none, <br/>auto_recovery | Yes; No for type = s (Special Notice) | Initiative that applies to the notice| v1 <br> v2
+description | JSON Array | NA | NA | NA |NA|NA
+description.body | string | 65535 characters| | Yes; No for type = a (Award) | Description of the notice| v1 <br> v2
+related | JSON Object | NA | NA | NA | Related Notice information| v1 <br> v2
+related.opportunityId | string | 32 characters| [Refer Related Notices](#related-notices)| No | Opportunity Id of the related notice| v1 <br> v2
+parent | JSON Object | NA | NA | NA | Parent Notice information| v1 <br> v2
+parent.opportunityId | string | 32 characters| | Yes (for modifications to a published notice) | Opportunity Id of the parent notice| v1 <br> v2
+resources | JSON Array |NA | NA | NA |NA|NA
+resources.attType | string | |link, file | No| Type of attachment, either link or file| v1 <br> v2
+resources.content | byte |250MB |  | No | File content in base64 format| v1 <br> v2
+resources.link | string | 255 characters | |No | Resource link URL| v1 <br> v2
+resources.packageAccessLevel | string | | public,<br/>private<br/>(default public) |  No| Type of access to file| v1 <br> v2
+resources.resourceName | string | 255 characters |  | No | Name of file| v1 <br> v2
+resources.description | string |255 characters | | No | Description of the link| v1 <br> v2
+resources.explicitAccess | string |1 character | 0, 1 (defaults to '0' public access, if not provided) |No |Explicit Access. For Controlled Unclassified files, specify '1'| v1 <br> v2
+resources.exportControlled | string |1 character | 0 | No |Export Controlled. * Captured for future JCP validation| v1 <br> v2
 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3321,7 +4419,7 @@ resources.exportControlled | string |1 character | 0 | No |Export Controlled. * 
 
 <div id="revise-json" title="Click to view Revise Contract">
 <details>
-<summary>Revise_Opportunity_Contract_Json</summary>
+<summary>Revise_Opportunity_Contract_JSON</summary>
 <p>
 <code><pre>
 {
@@ -3335,10 +4433,10 @@ resources.exportControlled | string |1 character | 0 | No |Export Controlled. * 
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-requestType | string | update_publish_request | Yes | Type of request
-reason | string |  | No | Reason for revision
+Name | Data Type | Allowed Values | Required | Description|Applicable Verions
+-----|-----------|----------------|----------|------------|-----
+requestType | string | update_publish_request | Yes | Type of request| v1 <br> v2
+reason | string |  | No | Reason for revision| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3346,7 +4444,7 @@ reason | string |  | No | Reason for revision
 
 <div id="cancel-json" title="Click to view Cancel Contract">
 <details>
-<summary>Cancel_Opportunity_Contract_Json</summary>
+<summary>Cancel_Opportunity_Contract_JSON</summary>
 <p>
 <code><pre>
 {
@@ -3363,11 +4461,11 @@ reason | string |  | No | Reason for revision
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-reason | string |  | No | Reason for cancelation
-requestType | string | cancel_request | Yes | Type of request
-description | string |  | Yes | Description for cancelation
+Name | Data Type | Allowed Values | Required | Description|Applicable Versions
+-----|-----------|----------------|----------|------------|-----
+reason | string |  | No | Reason for cancelation| v1 <br> v2
+requestType | string | cancel_request | Yes | Type of request| v1 <br> v2
+description | string |  | Yes | Description for cancelation| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3375,7 +4473,7 @@ description | string |  | Yes | Description for cancelation
 
 <div id="uncancel-json" title="Click to view Uncancel Contract">
 <details>
-<summary>Uncancel_Opportunity_Contract_Json</summary>
+<summary>Uncancel_Opportunity_Contract_JSON</summary>
 <p>
 <code><pre>
 {
@@ -3397,16 +4495,16 @@ description | string |  | Yes | Description for cancelation
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-reason | string |  | Yes | Reason for uncanceling
-requestType | string | uncancel_request | Yes | Type of request
-description | string |  | Yes | Description for uncanceling
-newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date
-newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
-newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
-newResponseTz | string |  | No | New Response Time Zone
+Name | Data Type | Allowed Values | Required | Description|Applicable Versions
+-----|-----------|----------------|----------|------------|-----
+reason | string |  | Yes | Reason for uncanceling| v1 <br> v2
+requestType | string | uncancel_request | Yes | Type of request| v1 <br> v2
+description | string |  | Yes | Description for uncanceling| v1 <br> v2
+newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date| v1 <br> v2
+newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date| v1 <br> v2
+newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type| v1 <br> v2
+newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
+newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3414,7 +4512,7 @@ newResponseTz | string |  | No | New Response Time Zone
 
 <div id="archive-json" title="Click to view Archive Contract">
 <details>
-<summary>Archive_Opportunity_Contract_Json</summary>
+<summary>Archive_Opportunity_Contract_JSON</summary>
 <p>
 <code><pre>
 {
@@ -3428,10 +4526,10 @@ newResponseTz | string |  | No | New Response Time Zone
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-requestType | string | archive_request | Yes | Type of request
-reason | string |  | No | Archive reason
+Name | Data Type | Allowed Values | Required | Description|Applicable Versions
+-----|-----------|----------------|----------|------------|-----
+requestType | string | archive_request | Yes | Type of request| v1 <br> v2
+reason | string |  | No | Archive reason| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3439,7 +4537,7 @@ reason | string |  | No | Archive reason
 
 <div id="unarchive-json" title="Click to view Unarchive Contract">
 <details>
-<summary>Unarchive_Opportunity_Contract_Json</summary>
+<summary>Unarchive_Opportunity_Contract_JSON</summary>
 <p>
 <code><pre>
 {
@@ -3460,15 +4558,15 @@ reason | string |  | No | Archive reason
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-reason | string |  | Yes | Reason for unarchiving
-requestType | string | unarchive_request | Yes | Type of request
-newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date
-newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
-newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
-newResponseDate | date | YYYY-MM-DDTHH:MM:SS-05:00 | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
-newResponseTz | string |  | No | New Response Time Zone
+Name | Data Type | Allowed Values | Required | Description|Applicable Versions
+-----|-----------|----------------|----------|------------|-----
+reason | string |  | Yes | Reason for unarchiving| v1 <br> v2
+requestType | string | unarchive_request | Yes | Type of request| v1 <br> v2
+newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date| v1 <br> v2
+newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date| v1 <br> v2
+newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type| v1 <br> v2
+newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01) | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
+newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3476,7 +4574,7 @@ newResponseTz | string |  | No | New Response Time Zone
 
 <div id="create-attachment-json" title="Click to view Create Attachment Contract">
 <details>
-<summary>Create_Attachment_Contract_Json - File</summary>
+<summary>Create_Attachment_Contract_JSON - File</summary>
 <p>
 <code><pre>
 {
@@ -3493,7 +4591,7 @@ newResponseTz | string |  | No | New Response Time Zone
 </details>
 <details>
 
-<summary>Create_Attachment_Contract_Json - Link</summary>
+<summary>Create_Attachment_Contract_JSON - Link</summary>
 <p>
 <code><pre>
 {
@@ -3508,17 +4606,17 @@ newResponseTz | string |  | No | New Response Time Zone
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Field Length |Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file
-content | byte | 250MB| | Yes if attType=file | File content in base64 format
-packageAccessLevel | string | 32 characters|public, <br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'.
-resourceName | string | 255 characters| | Yes if attType=file | Name of file
-fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
-link | string | 255 characters| | Yes if attType=link | Resource link  URL
-description | string |255 characters | | Yes if attType=link | Description of the link
-explicitAccess | string |1 character | 0, 1 <br/>(defaults to '0' public access, if not provided) | No  |Explicit Access. For Controlled Unclassified files, specify '1'
-exportControlled | string |1 character | 0 | No  | *Captured for future JCP validation*<br> Export Controlled
+Name | Data Type | Field Length |Allowed Values | Required | Description|Applicable Versions
+-----|-----------|----------------|----------|------------|-------|-----
+attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file| v1 <br> v2
+content | byte | 250MB| | Yes if attType=file | File content in base64 format| v1 <br> v2
+packageAccessLevel | string | 32 characters|public, <br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'.| v1 <br> v2
+resourceName | string | 255 characters| | Yes if attType=file | Name of file| v1 <br> v2
+fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)| v1 <br> v2
+link | string | 255 characters| | Yes if attType=link | Resource link  URL| v1 <br> v2
+description | string |255 characters | | Yes if attType=link | Description of the link| v1 <br> v2
+explicitAccess | string |1 character | 0, 1 <br/>(defaults to '0' public access, if not provided) | No  |Explicit Access. For Controlled Unclassified files, specify '1'| v1 <br> v2
+exportControlled | string |1 character | 0 | No  | *Captured for future JCP validation*<br> Export Controlled| v1 <br> v2
 
 #### Valid File Types 
 
@@ -3552,7 +4650,7 @@ Flash Video (.flv, .f4v)|	video/x-flv
 
 <div id="update-attachment-json" title="Click to view update Attachment/Link Contract">
 <details>
-<summary>Update_Attachment_Contract_Json </summary>
+<summary>Update_Attachment_Contract_JSON </summary>
 <p>
 <code><pre>
 {
@@ -3568,7 +4666,7 @@ Flash Video (.flv, .f4v)|	video/x-flv
 </details>
 
 <details>
-<summary>Update_Link_Contract_Json </summary>
+<summary>Update_Link_Contract_JSON </summary>
 <p>
 <code><pre>
 {
@@ -3581,14 +4679,14 @@ Flash Video (.flv, .f4v)|	video/x-flv
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-attType | string | link, file | No | Required only for file access level changes
-packageAccessLevel | string | public,<br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'
-resourceName | string |  | No | Name of file or link
-explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files. Required only for file access level changes
-sortOrderChanged | boolean  | true, false | No | Should be provided if file order is changed.
-resourceIdBelow | string  |  | No | This should be Resource ID of the file/link that will display below the file/link that is moved
+Name | Data Type | Allowed Values | Required | Description|Applicable Versions
+-----|-----------|----------------|----------|------------|-----
+attType | string | link, file | No | Required only for file access level changes| v1 <br> v2
+packageAccessLevel | string | public,<br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'| v1 <br> v2
+resourceName | string |  | No | Name of file or link| v1 <br> v2
+explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files. Required only for file access level changes| v1 <br> v2
+sortOrderChanged | boolean  | true, false | No | Should be provided if file order is changed.| v1 <br> v2
+resourceIdBelow | string  |  | No | This should be Resource ID of the file/link that will display below the file/link that is moved| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3610,16 +4708,16 @@ resourceIdBelow | string  |  | No | This should be Resource ID of the file/link 
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
+Name | Data Type | Allowed Values | Required | Description|Applicable Versions
 -----|-----------|----------------|----------|------------
-ivlCreate | string | forcedon, forcedoff | No | Indicates whether vendors can indicate interest in the organization’s Opportunities
-ivlView | string | forcedon, forcedoff | No | Indicates whether vendors can view other vendors interested in the organization’s Opportunities
+ivlCreate | string | forcedon, forcedoff | No | Indicates whether vendors can indicate interest in the organization’s Opportunities| v1 <br> v2
+ivlView | string | forcedon, forcedoff | No | Indicates whether vendors can view other vendors interested in the organization’s Opportunities| v1 <br> v2
 
 ### Vendor Data Contract JSON
 
-<div id="vendor-data-json" title="Click to view Vendor Data Contract">
+<div id="vendor-data-json-v1" title="Click to view Vendor Data Contract-v1">
 <details>
-<summary>Vendor_Data_Contract_JSON</summary>
+<summary>Vendor_Data_Contract_JSON_v1</summary>
 <p>
 <code><pre>
 {
@@ -3635,17 +4733,33 @@ ivlView | string | forcedon, forcedoff | No | Indicates whether vendors can view
 </details>
 </div>
 
+<div id="vendor-data-json-v2" title="Click to view Vendor Data Contract-v2">
+<details>
+<summary>Vendor_Data_Contract_JSON_v2</summary>
+<p>
+<code><pre>
+{
+"lname":"",
+"fname":"",
+"email":"",
+"ueiSAM":""
+}
+</pre></code>
+</p>
+</details>
+</div>
+
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-fname | string | | Yes | First name of the user
-lname | string | | Yes | Last name of the user
-email | string | | Yes | Email Id of the user
-contractorName | string | | Yes | Contractor Name
-duns | string | | Yes | (**Planned to be deprecate by October 2020**) UEI DUNS#
-ueiSAM | string | | No | (**Planned to replace Duns# by October 2020 and usable by December 2019**) UEI SAM#
-cageCode | string | | Yes | Cage Code
+Name | Data Type | Allowed Values | Required | Description|Applicable Versions
+-----|-----------|----------------|----------|------------|-----
+fname | string | | Yes | First name of the user| v1 <br> v2
+lname | string | | Yes | Last name of the user| v1 <br> v2
+email | string | | Yes | Email Id of the user| v1 <br> v2
+contractorName | string | | Yes | Contractor Name| v1 <br> v2 - Deprecated
+duns | string | | Yes |  Unique Entity Identifier DUNS#| v1 <br> v2- Deprecated
+ueiSAM | string | | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.|  v2
+cageCode | string | | Yes | Cage Code| v1 <br> v2 - Deprecated
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3671,17 +4785,17 @@ cageCode | string | | Yes | Cage Code
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-reason|	string|	|	No|	Reason for deletion
-requestType	|string	|delete_request |Yes	|Type of request
-description	|string|		|Yes|	Description for deletion of a notice
-deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or all versions of a notice
+Name | Data Type | Allowed Values | Required | Description|Applicable Versions
+-----|-----------|----------------|----------|------------|-----
+reason|	string|	|	No|	Reason for deletion| v1 <br> v2
+requestType	|string	|delete_request |Yes	|Type of request| v1 <br> v2
+description	|string|		|Yes|	Description for deletion of a notice| v1 <br> v2
+deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or all versions of a notice| v1 <br> v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
 
-### OpenAPI Specification File
+## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="v1/OpenAPI.zip" download="OpenAPI">OpenAPI File</a>
@@ -3698,7 +4812,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Create contract opportunity.
       operationId: createOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
         - application/*
       parameters:
@@ -3713,8 +4827,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -3764,7 +4878,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Create and publish contract opportunity.
       operationId: createAndPublishOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
         - application/*
       parameters:
@@ -3779,8 +4893,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -3830,9 +4944,9 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Publish contract opportunity.
       operationId: publishOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -3850,8 +4964,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -3901,9 +5015,9 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Revise contract opportunity.
       operationId: reviseOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -3921,8 +5035,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -3963,9 +5077,9 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Revise contract opportunity.
       operationId: reviseOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -3983,8 +5097,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4034,9 +5148,9 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Update contract opportunity.
       operationId: updateOpportunityUsingPATCH
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4054,8 +5168,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4108,7 +5222,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
       summary: Get history of Opportunity
       operationId: getOpportunityHistoryUsingGET
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4175,7 +5289,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Delete contract opportunity.
       operationId: deleteOpportunityUsingDELETE
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4238,9 +5352,9 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Delete all versions of Opportunity.
       operationId: deleteOpportunitiesAllVersionsUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4258,8 +5372,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4309,7 +5423,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
       description: Get all opportunities.
       operationId: getOpportunitiesUsingGET
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4535,7 +5649,7 @@ v1/api/history/{opportunityId}:
       summary: Get history of Opportunity
       operationId: getOpportunityHistoryUsingGET
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4602,9 +5716,9 @@ v1/api/history/{opportunityId}:
       description: Cancel contract opportunity.
       operationId: cancelOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4622,8 +5736,8 @@ v1/api/history/{opportunityId}:
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4673,9 +5787,9 @@ v1/api/history/{opportunityId}:
       description: UnCancel contract opportunity.
       operationId: unCancelOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4693,8 +5807,8 @@ v1/api/history/{opportunityId}:
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4744,9 +5858,9 @@ v1/api/history/{opportunityId}:
       description: Archive contract opportunity.
       operationId: archiveOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4764,8 +5878,8 @@ v1/api/history/{opportunityId}:
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4815,9 +5929,9 @@ v1/api/history/{opportunityId}:
       description: UnArchive contract opportunity.
       operationId: unArchiveOpportunityUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4835,8 +5949,8 @@ v1/api/history/{opportunityId}:
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4886,9 +6000,9 @@ v1/api/history/{opportunityId}:
       description: Add attachment to an opportunity.
       operationId: createAttachmentUsingPOST
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4906,8 +6020,8 @@ v1/api/history/{opportunityId}:
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -4957,9 +6071,9 @@ patch:
       description: Update attachment for an opportunity.
       operationId: updateAttachmentUsingPATCH
       consumes:
-        - application/json
+        - application/JSON
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -4977,8 +6091,8 @@ patch:
           required: true
           type: string
         - in: body
-          name: requestJson
-          description: requestJson
+          name: requestJSON
+          description: requestJSON
           required: false
           schema:
             type: string
@@ -5033,7 +6147,7 @@ patch:
       description: Delete attachment for an opportunity.
       operationId: deleteAttachmentUsingDELETE
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5242,7 +6356,7 @@ patch:
       description: Download attachments for an Resource.
       operationId: downloadAttachmentsByResourceUsingGET
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5310,7 +6424,7 @@ patch:
       description: Download attachments for an opportunity.
       operationId: downloadAttachmentsByOpportunityUsingGET
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5377,7 +6491,7 @@ patch:
       summary: Get related contract opportunities
       operationId: getRelatedOpportunitiesGET
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5465,7 +6579,7 @@ patch:
       summary: 'Check if solicitation number is unique. A solicitation number is unique if it is not used by another opportunity of equivalent type. For justification type, j&a and fair opportunity/limited sources justification are considered equivalent.'
       operationId: getOpportunityHistoryUsingGET_1
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5532,7 +6646,7 @@ patch:
 /v1/api/opportunities/access/{opportunityId}/accessRequest
 post: 
   consumes: 
-    - application/json
+    - application/JSON
   deprecated: false
   description: "Add Authorized Party to the Opportunity"
   operationId: createAndApproveRequestUsingPOST
@@ -5556,14 +6670,14 @@ post:
       required: true
       type: string
     - 
-      description: requestJson
+      description: requestJSON
       in: body
-      name: requestJson
+      name: requestJSON
       required: false
       schema: 
         type: string
   produces: 
-    - application/json
+    - application/JSON
   responses: 
     "200": 
       description: OK
@@ -5612,7 +6726,7 @@ post:
       description: Get Request Access List for the  opportunity.
       operationId: getRequestAccessList
       produces:
-        - application/json
+        - application/JSON
       parameters:
         - name: Authorization
           in: header
@@ -5665,11 +6779,9 @@ post:
 
 
 
+## Error Messages
 
-
-### Error Messages
-
-#### General Error Messages
+### General Error Messages
 
 The following error messages may be returned as part of the response to various web service calls; these errors are not specific to one method and may apply to more than one.
 
@@ -5691,7 +6803,7 @@ Error Code|Error Message | Reason/Description
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Specific Error Messages
+### Specific Error Messages
 
 This section details possible error messages for specific operations.
 
@@ -5711,11 +6823,11 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Organization Id |	The Federal Organization ID that you provided is inactive and/or invalid | Inactive/Invalid Organization Id |	Create Opportunity, Publish
 400|Organization Id |	The Federal Organization ID that you provided is not an office level, and it must be for this opportunity type	| Organization ID is not valid for opportunity type. Note: Organization ID must be Office level unless creating a Special Notice	| Create Opportunity, Publish
 400|Organization Id |	The Federal Organization ID that you provided is unmapped in Federal Hierarchy | If the Organization Id provided is a legacy one and is unmapped in Federal Hierarchy, then the system throws and error |	Publish
-404|Solicitation Number | Notice ID is required	| Notice ID is required | Publish
+404|Solicitation Number | Notice ID is required	| Notice ID is required for all notice types except for Special Notice | Publish
 400|Solicitation Number | Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces	| Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces | Publish
-400|Solicitation Number | Notice ID must be unique based on selected notice type	| Notice ID must be unique when selected notice type is not an award notice | Publish
-400|Solicitation Number | Submitted solicitation number doesn't match the previous published opportunity	| Solicitation number provided with update opportunity doesn't match the previous published opportunity for an award notice type | Publish
-400|Related Opportunity ID | This Related Notice's ID is invalid	| The Related Notice's ID is not found | Publish
+400|Solicitation Number | Notice ID must be unique based on selected notice type	| Notice ID must be unique when selected notice type is not an award notice | Publish, Create and Publish
+400|Solicitation Number | Submitted solicitation number doesn't match the previous published opportunity	| Solicitation number provided with update opportunity doesn't match the previous published opportunity for an award notice type | Publish, Create and Publish
+400|Related Opportunity ID | This Related Notice's ID is invalid	| The Related Notice's ID is not found | Publish, Create and Publish
 400|Related Opportunity ID | The Related Notice's Type is invalid for this Opportunity	| The Related Notice's Type cannot be related  | Publish
 400|Related Opportunity ID | Related Notice's ID needs to match previous Opportunity's Related Notice ID	| Related Notice's ID  provided while revising a notice needs to match the Parent Opportunity's Related Notice ID  | Publish
 400|Response Date |	Response Date is a required field |	Response Date is not provided for Combined Synopsis and Solicitation types |	Publish
@@ -5751,8 +6863,8 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Award Date |	Contract Award Date provided should have 4 digit year |	Invalid Year provided in the Award Date |	Publish, Uncancel, Unarchive
 400|Award Number |	Contract Award Number is a required field	| Contract Award Number is required for Intent to Bundle, Justification, Award | Publish
 400|Award Number |	Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces| Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces | Publish
-400|DUNS | Unique Entity Identifier (duns) is invalid. |	(**Planned to be deprecate by October 2020**) Invalid UEI DUNS provided |	Publish
-400|ueiSAM | Unique Entity Identifier (SAM) is invalid. |	(**Planned to replace Duns# by October 2020 and invalid message will be added at a later date**) Invalid UEI SAM provided |	Publish
+400|DUNS | Unique Entity Identifier (duns) is invalid. |	(**Plan to deprecate in the future**) Invalid UEI DUNS provided |	Publish
+400|ueiSAM | Unique Entity Identifier (SAM) is invalid. |	(**Plan to replace Duns# in the future, and ueiSAM values not yet available**) Invalid UEI SAM provided |	Publish
 400|Awardee Name | Contractor Awarded Name is a required field |	Contractor Awarded Name is a required field if the DUNS is not provided for an Award Notice |	Publish
 400|Awardee Name | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | Publish
 400|Awardee | Required fields from Awardee section is missing |Awardee Name or DUNS# not provided for Award notice|	Publish
@@ -5828,10 +6940,10 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|VendorData| fname should not be empty| fname should not be empty| AddAuthorizedParty
 400|VendorData| lname should not be empty| lname should not be empty| AddAuthorizedParty
 400|VendorData| Email should not be empty| Email should not be empty| AddAuthorizedParty
-400|VendorData| Duns should not be empty| (**Planned to be deprecate by October 2020**) Duns should not be empty| AddAuthorizedParty
-400|VendorData| ueiSAM should not be empty| (**Planned to replace Duns# by October 2020 and usable by December 2019**) ueiSAM should not be empty| AddAuthorizedParty
-400|Duns# |	No contact match on vendor data provided	| (**Planned to be deprecate by October 2020**) Not a Valid email or Duns#	| AddAuthorizedParty
-400|ueiSAM# |	No contact match on vendor data provided	| (**Planned to replace Duns# by October 2020 and usable by December 2019**) Not a Valid email or ueiSAM#	| AddAuthorizedParty
+400|VendorData| Duns should not be empty| (**Plan to deprecate in the future**) Duns should not be empty| AddAuthorizedParty
+400|VendorData| ueiSAM should not be empty| (**Plan to replace Duns# in the future, and ueiSAM values not yet available**) ueiSAM should not be empty| AddAuthorizedParty
+400|Duns# |	No contact match on vendor data provided	| (**Plan to deprecate in the future**) Not a Valid email or Duns#	| AddAuthorizedParty
+400|ueiSAM# |	No contact match on vendor data provided	| (**Plan to replace Duns# in the future, and ueiSAM values not yet available**) Not a Valid email or ueiSAM#	| AddAuthorizedParty
 404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
 400|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
@@ -5844,7 +6956,8 @@ Error Code|Field | Error Message | Reason/Description | Operation
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
+* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov)
+
 
 ## Change Log
 
@@ -5865,8 +6978,11 @@ Date | Version | Description
 10/10/2019 | v0.8 | Updated the Set-Aside values with the latest codes
 10/25/2019 | v0.9 | Updated the field lengths
 10/31/2019| v0.91| Delete Vendor removed <br> Delete Resource in Draft API added <br> API Specifications Updated: Delete Notice, Getlist, Download Metadata for Attachment by Resource ID, and Download Metadata for Attachment by Opportunity ID <br> JSON Updated: Create and Update, Create and Publish, Revise Opportunity, Cancel Notice, Uncancel Notice, Archive, Unarchive, Create Attachment, Update Attachment, IVL Settings, and Delete Notice <br> Error Message Section Updated
-11/04/2019| v0.92 | Updated the field lengths for contact full name and awardee name fields for create Opportunity, Create and Publish Opportunity Contract Jsons. Updated the Error messages for these fields<br>Added Future Implementation for UEI SAM# Validation and Type of Connection. Task/Delivery Order number is updated to be a non required field for Justification submission
+11/04/2019| v0.92 | Updated the field lengths for contact full name and awardee name fields for create Opportunity, Create and Publish Opportunity Contract JSONs. Updated the Error messages for these fields<br>Added Future Implementation for UEI SAM# Validation and Type of Connection. Task/Delivery Order number is updated to be a non required field for Justification submission
 11/12/2019| v1.0 | Initial Release Finalized
-
+12/04/2019| v1.01 | Minor updates to UEI(SAM) and UEI(DUNS) info
+1/3/2020| v1.02| Updates to UEI(SAM) and UEI(DUNS) info
+1/20/2020| v1.03| Updated JSON arrays and objects
+1/21/2020| v1.04| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
 
 <p><small><a href="#">Back to top</a></small></p>
