@@ -1140,5 +1140,6 @@ Date | Version | Description
 12/18/19| v1.2|Opportunities Response parameters updated to include Award Details JSON Specification and provided the  examples
 1/20/2020 | v1.3| Added Award Response and Versioning columns
 1/31/2020 | v1.4 | Added field "ResourceLinks" with Coming Soon to prod
+2/18/2020 | v1.5| Added UEI information and versioning column and response example for awards
 
 <p><small><a href="#">Back to top</a></small></p>
