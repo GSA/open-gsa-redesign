@@ -64,15 +64,12 @@
 - title: Per Diem API
   description: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers.
   url: https://open.gsa.gov/api/perdiem/
-- title: Search.gov i14y API
-  description: For Search.gov customers. This API allows search.gov customers to send content directly from their content management system (CMS) into Search.gov for real-time indexing.
-  url: https://search.gov/developer/i14y.html
 - title: Search.gov Search Results API
   description: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application.
-  url: https://search.gov/manual/search-results-api.html
-- title: Search.gov Type-ahead API
+  url: https://open.gsa.gov/api/searchgov-results/
+- title: Search.gov Type-ahead Suggestions API
   description: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms.
-  url: https://search.gov/manual/typeahead-api.html
+  url: https://open.gsa.gov/api/searchgov-suggestions/
 - title: Sustainable Facilities Tool API
   description: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
   url: https://sftool.gov/developers
