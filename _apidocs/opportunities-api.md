@@ -6951,5 +6951,6 @@ Date | Version | Description
 1/3/2020| v1.02| Updates to UEI(SAM) and UEI(DUNS) info
 1/20/2020| v1.03| Updated JSON arrays and objects
 1/21/2020| v1.04| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
+2/18/2020| v1.05| Added JSON information for UEI additions
 
 <p><small><a href="#">Back to top</a></small></p>
