@@ -55,18 +55,9 @@ The Entity Management extracts contain entities (businesses and government agenc
 
 The Entity and Exclusion extracts are available using the following endpoints:
  
-  * Beta: https://api.sam.gov/prod/dataservices/v1/extracts?api_key= < value >
-  * Alpha: https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts?api_key= < value ><br><br>
-  
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
-  COMING SOON:<br> 
-  The endpoints will be updated as follows to meet new API standards:<br>
-  <ul>
-  <li style="color: #31708f;">Beta: https://api.sam.gov/data-services/v1/extracts?api_key= < value ></li>
-  <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?api_key= < value ></li>
-  </ul>
-  </div>
-  
+  * Beta: https://api.sam.gov/data-services/v1/extracts?api_key= < value >
+  * Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?api_key= < value ><br><br>
+    
 Generating a personal API Key:
 * Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on beta.sam.gov
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.

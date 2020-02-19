@@ -48,6 +48,12 @@ paths:
           required: false
           schema:
             type: string
+        - name: entityEFTIndicator
+            in: query
+            description: Entity EFT Indicator aka duns4.
+            required: false
+            schema:
+              type: string
         - name: debtSubjectToOffset
           in: query
           description: Y or N or null
@@ -69,7 +75,7 @@ paths:
             type: string
         - name: ueiSAM
           in: query
-          description: Unique Entity Identifier SAM- 9 digit value; a maximum of up to 100
+          description: Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
             values can be sent (This will replace ueiDUNS)
           required: false
           schema:
@@ -401,6 +407,12 @@ paths:
           required: false
           schema:
             type: string
+        - name: entityEFTIndicator
+            in: query
+            description: Entity EFT Indicator aka duns4.
+            required: false
+            schema:
+              type: string
         - name: debtSubjectToOffset
           in: query
           description: Y or N or null
@@ -422,7 +434,7 @@ paths:
             type: string
         - name: ueiSAM
           in: query
-          description: Unique Entity Identifier SAM- 9 digit value; a maximum of up to 100
+          description: Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
             values can be sent (This will replace ueiDUNS)
           required: false
           schema:
