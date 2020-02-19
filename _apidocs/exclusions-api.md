@@ -174,12 +174,12 @@ The API will return one of the following responses:
 
 ## Examples
 
-### Example 1: Get Individual or Special Entity Designation Exclusion records that are based off of Korea, that are not excluded by DOJ and that contain CHONG anywhere in each of the records.
+### Example 1: Get Individual or Special Entity Designation Exclusion records
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
+<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
 <br>
 </details>
 
@@ -298,7 +298,7 @@ Note: Public Response for one record is provided as an example <br>
 </p>
 </details>
 
-### Example 2: Get Firm Exclusion records of type Ineligible (Proceedings Completed) or Prohibition/Restriction that are based off of Korea, China or Germany, and to get only exclusionDetails, exclusionIdentification and exclusionAddress sections.
+### Example 2: Get Firm Exclusion records of type Ineligible (Proceedings Completed) or Prohibition/Restriction
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
@@ -359,6 +359,8 @@ Note: Public Response for one record is provided as an example <br>
 </p>
 </details>
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Explanation of the API using Examples
 Functionality of the Exclusion API has been explained with the following examples:
 
@@ -406,7 +408,8 @@ Date | Version | Description
 06/03/2019 | v1.0 | Base Version
 08/15/2019 | v1.1 | * Added Beta.SAM.Gov to the page title. <br><br> *Updated the Alpha endpoint to v1. <br><br> *Added Secondary Address fields.
 09/25/2019 | v1.2 | Beta endpoints for public FOUO and Sensitive API were updated from version 0.9 to version 1.0.
-11/25/2019 | v1.3 | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.|
+11/25/2019 | v1.3 | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.
 12/20/2019 | v1.4 | Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.
+02/19/2020 | v1.5 | * Added Examples for v2 responses. <br><br> * Updated Alpha and Beta endpoints to meet new API standards.
 
 <p><small><a href="#">Back to top</a></small></p>

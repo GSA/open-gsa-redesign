@@ -269,5 +269,6 @@ Date | Version | Description
 06/03/2019 | v 1.0 | Base Version
 08/15/2019 | v 1.1 | * Added Beta.SAM.Gov to the page title. <br><br>* Clarified the Alpha and Beta endpoints.
 12/20/2019 | v 1.2 | * Added Sample FOUO and Sensitive File Names and Revised extract layouts for the upcoming UEI/EVS changes. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.
+02/19/2020 | v1.3 | * Updated Alpha and Beta endpoints to meet new API standards.
 
 <p><small><a href="#">Back to top</a></small></p>

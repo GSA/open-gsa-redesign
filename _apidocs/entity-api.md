@@ -17910,6 +17910,8 @@ Note: FOUO Response for one record is provided as an example <br>
 </p>
 </details>
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Explanation of the API using Examples
 Functionality of the Entity API has been explained with the following examples:
 
@@ -17964,6 +17966,7 @@ Disclaimer:
 | 09/25/2019 | v1.2 | Beta endpoints for public and FOUO API were updated from version 0.9 to version 1.0.|
 | 11/25/2019 | v1.3 | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.|
 | 12/20/2019 | v1.4 | * Removed Email, Fax,US phone number and non-us phone number from public poc sections for v2. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.|
+| 02/19/2020 | v1.5 | * Added Examples for v2 responses. <br><br> * Updated Alpha and Beta endpoints to meet new API standards.|
 
 
 <p><small><a href="#">Back to top</a></small></p>
