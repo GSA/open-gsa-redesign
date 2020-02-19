@@ -65,7 +65,7 @@ Update Draft Opportunity | Yes | Yes | Yes
 Get Opportunity History | Yes | Yes | Yes
 Delete Draft Opportunity | Yes | Yes | No
 Delete Notice|	Yes|	Yes|	No
-Get List of Opportunity | Yes | Yes | Yes
+Get List of Opportunities | Yes | Yes | Yes
 Get an Opportunity by Opportunity ID | Yes | Yes | Yes
 Cancel Published Opportunity | Yes | Yes | No
 Uncancel Canceled Opportunity | Yes | Yes | No
@@ -2122,170 +2122,31 @@ page.number | string |
 Examples
 
 <details>
-<summary>Get List of Opportunities Response</summary>
+<summary>Get List of Opportunities Response - Award Notice v1</summary>
 <p>
 <code><pre>
-{
-  "_embedded": {
-    "opportunity": [
       {
         "data": {
-          "type": "r",
-          "flags": [
-            {
-              "code": "isScheduledNotice",
-              "isSelected": false
-            }
-          ],
-          "title": "V--flight services",
-          "archive": {
-            "date": "2020-06-14",
-            "type": "auto15"
+          "link": {
+            "additionalInfo": {}
           },
-          "permissions": {
-            "IVL": {
-              "read": false,
-              "create": false,
-              "delete": false,
-              "update": false
-            }
-          },
-          "solicitation": {
-            "deadlines": {
-              "response": "2020-05-30T00:00:00-05:00",
-              "responseTz": "America/Chicago"
-            }
-          },
-          "organizationId": "500028949",
-          "pointOfContact": [
-            {
-              "fax": null,
-              "type": "primary",
-              "email": "test@gsa.gov",
-              "phone": null,
-              "title": null,
-              "fullName": "Neal Hitchcock at 208-387-5400; Bureau of Land Management, Office of Fire and Aviation, 3833 S. Development Avenue, Boise, ID 83705-5354"
-            }
-          ],
-          "classificationCode": "V",
-          "solicitationNumber": "NICC-01",
-          "additionalReporting": [
-            "none"
-          ]
-        },
-        "additionalInfo": {
-          "sections": [
-            {
-              "id": "header",
-              "status": "updated"
-            },
-            {
-              "id": "award",
-              "status": "updated"
-            },
-            {
-              "id": "general",
-              "status": "updated"
-            },
-            {
-              "id": "classification",
-              "status": "updated"
-            },
-            {
-              "id": "description",
-              "status": "updated"
-            },
-            {
-              "id": "attachments-links",
-              "status": "updated"
-            },
-            {
-              "id": "contact",
-              "status": "updated"
-            }
-          ]
-        },
-        "parent": {
-          "opportunityId": "8de3d88fc7642d9adcdb8d4ff9070399"
-        },
-        "related": {
-        },
-        "status": {
-          "code": "draft",
-          "value": "Draft"
-        },
-        "archived": false,
-        "cancelled": false,
-        "latest": false,
-        "deleted": false,
-        "modifiedDate": "2019-02-19T21:18:20.669+0000",
-        "createdDate": "2019-02-19T21:18:20.669+0000",
-        "modifiedBy": "reitestuser+aa@gsa.gov",
-        "createdBy": "reitestuser+aa@gsa.gov",
-        "opportunityId": "f563391e2c8a4b7180a6cf49d6980723"
-      },
-      {
-        "data": {
-          "type": "s",
+          "type": "a",
           "award": {
-            "lineItemNumber": null
+            "date": "2019-05-28",
+            "amount": "100",
+            "number": "0001",
+            "awardee": {
+              "duns": "608999520",
+              "name": "JDSInc1",
+              "location": {}
+            },
+            "fairOpportunity": {},
+            "justificationAuthority": {}
           },
-          "title": "test",
-          "permissions": {
-            "IVL": {
-              "create": false,
-              "delete": false,
-              "update": false
-            }
-          },
-          "organizationId": "100186612",
-          "pointOfContact": null,
-          "solicitationNumber": ""
-        },
-        "additionalInfo": {
-          "sections": [
-            {
-              "id": "header",
-              "status": "updated"
-            }
-          ]
-        },
-        "parent": {
-        },
-        "related": {
-        },
-        "status": {
-          "code": "draft",
-          "value": "Draft"
-        },
-        "archived": false,
-        "cancelled": false,
-        "latest": false,
-        "deleted": false,
-        "modifiedDate": "2019-02-19T21:14:02.308+0000",
-        "createdDate": "2019-02-19T21:14:02.308+0000",
-        "modifiedBy": "reitestuser+cs1@gsa.gov",
-        "createdBy": "reitestuser+cs1@gsa.gov",
-        "opportunityId": "f687c5c4e4124c27a068c145d0a4a1f5"
-      },
-      {
-        "data": {
-          "type": "i",
-          "award": {
-            "date": "2019-01-01",
-            "number": "A1234567890",
-            "deliveryOrderNumber": "TO3456789"
-          },
-          "naics": [
-            {
-              "code": [
-                "621111"
-              ]
-            }
-          ],
-          "title": "SK Intent to Bundle Requirements",
+          "naics": [],
+          "title": "Test Award 2A",
           "archive": {
-            "date": "2019-03-21",
+            "date": null,
             "type": "auto30"
           },
           "permissions": {
@@ -2296,28 +2157,30 @@ Examples
               "update": false
             }
           },
+          "descriptions": [],
           "solicitation": {
             "deadlines": {
               "response": null,
               "responseTz": null
             }
           },
-          "organizationId": "100186612",
+          "organizationId": "100167253",
           "pointOfContact": [
             {
-              "fax": "",
               "type": "primary",
-              "email": "sk@test.com",
-              "phone": "",
-              "title": null,
-              "fullName": "Sravanthi Kundur"
+              "email": "john.doe@gsa.gov",
+              "fullName": "HC1013-58-A-0005",
+              "additionalInfo": {
+                "content": "test email"
+              }
             }
           ],
-          "classificationCode": "84",
-          "solicitationNumber": "31231231241414",
+          "placeOfPerformance": {},
+          "solicitationNumber": "02SoL_(){}",
           "additionalReporting": [
             "none"
-          ]
+          ],
+          "organizationLocationId": "50166357"
         },
         "additionalInfo": {
           "sections": [
@@ -2326,19 +2189,7 @@ Examples
               "status": "updated"
             },
             {
-              "id": "contact",
-              "status": "updated"
-            },
-            {
-              "id": "attachments-links",
-              "status": "updated"
-            },
-            {
-              "id": "description",
-              "status": "updated"
-            },
-            {
-              "id": "classification",
+              "id": "award",
               "status": "updated"
             },
             {
@@ -2346,15 +2197,25 @@ Examples
               "status": "updated"
             },
             {
-              "id": "award",
+              "id": "classification",
+              "status": "updated"
+            },
+            {
+              "id": "description",
+              "status": "updated"
+            },
+            {
+              "id": "attachments-links",
+              "status": "updated"
+            },
+            {
+              "id": "contact",
               "status": "updated"
             }
           ]
         },
-        "parent": {
-        },
-        "related": {
-        },
+        "parent": {},
+        "related": {},
         "status": {
           "code": "published",
           "value": "Published"
@@ -2363,22 +2224,129 @@ Examples
         "cancelled": false,
         "latest": true,
         "deleted": false,
-        "postedDate": "2019-02-19T21:09:37.369+0000",
-        "modifiedDate": "2019-02-19T21:09:37.369+0000",
-        "createdDate": "2019-02-19T20:16:31.728+0000",
-        "modifiedBy": "reitestuser+aa@gsa.gov",
-        "createdBy": "reitestuser+aa@gsa.gov",
-        "opportunityId": "530382634cc9401db875fd18c9831bda"
+        "postedDate": "2019-10-03T15:06:18.980+0000",
+        "modifiedDate": "2019-10-03T15:06:18.980+0000",
+        "createdDate": "2019-10-03T15:06:18.858+0000",
+        "modifiedBy": "john.doe@gsa.gov",
+        "createdBy": "john.doe@gsa.gov",
+        "totalCount": 778,
+        "opportunityId": "34a99046c5d8422e806ac8def092eb10"
       }
-    ]
-  },
-  "page": {
-    "size": 4,
-    "totalElements": 1153,
-    "totalPages": 289,
-    "number": 0
-  }
-}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get List of Opportunities Response - Award Notice v2</summary>
+<p>
+<code><pre>
+      {
+        "data": {
+          "link": {
+            "additionalInfo": {}
+          },
+          "type": "a",
+          "award": {
+            "date": "2019-05-28",
+            "amount": "100",
+            "number": "0001",
+            "awardee": {
+              "ueiSAM": "025114695AST",
+              "name": "JDSInc1",
+              "location": {}
+            },
+            "fairOpportunity": {},
+            "justificationAuthority": {}
+          },
+          "naics": [],
+          "title": "Test Award 2A",
+          "archive": {
+            "date": null,
+            "type": "auto30"
+          },
+          "permissions": {
+            "IVL": {
+              "read": false,
+              "create": false,
+              "delete": false,
+              "update": false
+            }
+          },
+          "descriptions": [],
+          "solicitation": {
+            "deadlines": {
+              "response": null,
+              "responseTz": null
+            }
+          },
+          "organizationId": "100167253",
+          "pointOfContact": [
+            {
+              "type": "primary",
+              "email": "john.doe@gsa.gov",
+              "fullName": "HC1013-58-A-0005",
+              "additionalInfo": {
+                "content": "test email"
+              }
+            }
+          ],
+          "placeOfPerformance": {},
+          "solicitationNumber": "02SoL_(){}",
+          "additionalReporting": [
+            "none"
+          ],
+          "organizationLocationId": "50166357"
+        },
+        "additionalInfo": {
+          "sections": [
+            {
+              "id": "header",
+              "status": "updated"
+            },
+            {
+              "id": "award",
+              "status": "updated"
+            },
+            {
+              "id": "general",
+              "status": "updated"
+            },
+            {
+              "id": "classification",
+              "status": "updated"
+            },
+            {
+              "id": "description",
+              "status": "updated"
+            },
+            {
+              "id": "attachments-links",
+              "status": "updated"
+            },
+            {
+              "id": "contact",
+              "status": "updated"
+            }
+          ]
+        },
+        "parent": {},
+        "related": {},
+        "status": {
+          "code": "published",
+          "value": "Published"
+        },
+        "archived": false,
+        "cancelled": false,
+        "latest": true,
+        "deleted": false,
+        "postedDate": "2019-10-03T15:06:18.980+0000",
+        "modifiedDate": "2019-10-03T15:06:18.980+0000",
+        "createdDate": "2019-10-03T15:06:18.858+0000",
+        "modifiedBy": "john.doe@gsa.gov",
+        "createdBy": "john.doe@gsa.gov",
+        "totalCount": 778,
+        "opportunityId": "34a99046c5d8422e806ac8def092eb10"
+      }
 </pre></code>
 </p>
 </details>
@@ -3127,7 +3095,6 @@ ivl": [
 <code><pre>
 ivl": [
   {
-    "duns": "6759999520",
     "ueiSAM": "025114695AST",
     "cageNumber": "3ABC1",
     "name": "TECH SYSTEMS, INC.",
@@ -3436,7 +3403,6 @@ Examples
                 "email": "reitestuser.de@gmail.com",
                 "phone": "1+9734323019",
                 "contractorName": "REI SYSTEMS, INC.",
-                "duns": "608999520",
                 "ueiSAM": "025114695AST",
                 "cageCode": "1DJP1"
             },
@@ -6984,5 +6950,6 @@ Date | Version | Description
 1/3/2020| v1.02| Updates to UEI(SAM) and UEI(DUNS) info
 1/20/2020| v1.03| Updated JSON arrays and objects
 1/21/2020| v1.04| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
+2/18/2020| v1.05| Added JSON information for UEI additions
 
 <p><small><a href="#">Back to top</a></small></p>
