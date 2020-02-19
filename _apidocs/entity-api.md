@@ -144,7 +144,7 @@ can be sent.
 <td>ueiSAM</td>
 <td>Unique Entity Identifier SAM - Allow 12 digit value, 
 alphanumeric (ueiSAM values not yet available for search).
-<br>Example: ueiSAM=025114695AST
+<br>Example: ueiSAM=RV56IG5JM6G9
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -2760,7 +2760,7 @@ can be sent.
 <td>ueiSAM</td>
 <td>Unique Entity Identifier SAM - Allow 12 digit value, 
 alphanumeric (ueiSAM values not yet available for search).
-<br>Example: ueiSAM=025114695AST
+<br>Example: ueiSAM=RV56IG5JM6G9
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -3079,7 +3079,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>ultimateParentUEISAM</td>
 <td>Allows text.
-<br>Example: ultimateParentUEISAM=090123451</td>
+<br>Example: ultimateParentUEISAM=RQ56IG5JM6G9</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7255,7 +7255,7 @@ can be sent.
 <td>ueiSAM</td>
 <td>Unique Entity Identifier SAM - Allow 12 digit value, 
 alphanumeric (ueiSAM values not yet available for search).
-<br>Example: ueiSAM=025114695AST
+<br>Example: ueiSAM=RV56IG5JM6G9
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7574,7 +7574,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>ultimateParentUEISAM</td>
 <td>Allows text.
-<br>Example: ultimateParentUEISAM=090123451</td>
+<br>Example: ultimateParentUEISAM=RQ56IG5JM6G9</td>
 <td>v1<br>v2</td>
 </tr>
 
