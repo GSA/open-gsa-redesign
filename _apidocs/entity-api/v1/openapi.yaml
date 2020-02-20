@@ -328,7 +328,7 @@ paths:
             type: string
         - name: ultimateParentUEISAM
           in: query
-          description: Ultimate Parent Unique Entity Identifier SAM- 9 digit value (This
+          description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
             will replace ultimateParentUEIDUNS)
           required: false
           schema:
@@ -682,13 +682,13 @@ paths:
             type: string
         - name: ultimateParentUEIDUNS
           in: query
-          description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
+          description: Ultimate Parent Unique Entity Identifier DUNS- 12 digit value
           required: false
           schema:
             type: string
         - name: ultimateParentUEISAM
           in: query
-          description: Ultimate Parent Unique Entity Identifier SAM- 9 digit value (This
+          description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
             will replace ultimateParentUEIDUNS)
           required: false
           schema:
