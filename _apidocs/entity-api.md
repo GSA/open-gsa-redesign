@@ -17904,7 +17904,7 @@ Note: Response for one record is provided as an example <br>
 </p>
 </details>
 
-### Example 12: 
+### Example 12: Get a CSV file of active Entity records that have a non-null DBAN, a CAGE Code that starts with A and that cater to GEOPHYSICAL SURVEYING AND MAPPING SERVICES
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>  https://api.sam.gov/prod/entity-information/v2/entities?api_key=< FOUO API Key>&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV<br>
