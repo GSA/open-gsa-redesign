@@ -31,7 +31,7 @@ Public and FOUO Entity Details can be accessed from Beta or Alpha via the follow
    * Beta: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
    * Alpha: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
 
-Sensitive Entity Details  can be accessed from Beta or Alpha via the following end points:
+Sensitive Entity Details can be accessed from Beta or Alpha via the following end points:
    * Beta: Coming soon
    * Alpha: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value ><br><br>
 
@@ -45,12 +45,12 @@ Generating a personal API Key:
 Generating a System Account API Key:
 * Users registered with a non-government email address and associated with an entity OR users registered with a government email address may request a system account for public data access.
 * If a user satisfies the above registration criteria they will be able to access the System Accounts widget from their Workspace page after logging in.
-* The user can then select “Go to System Accounts” from the widget and fill out the required sections.
+* The user can then select "Go to System Accounts" from the widget and fill out the required sections.
 * The requested system account will then need to be approved.  After approval the user will be notified via email and they can also see the updated status in the System Account widget.
 * The user can select 'Go to System Accounts' again in the widget from their workspace and enter a new system account password.
 * After setting up the password the user will see a new section for retrieving a system account API Key.
 * The user must enter their password again to retrieve the key.
-* NOTE:  To obtain access to the FOUO/Sensitive Entity API data with a system account the user must be registered with a government email address.
+* NOTE: To obtain access to the FOUO/Sensitive Entity API data with a system account the user must be registered with a government email address.
 
 Utilizing the Entity API as an extract:
 * To utilize this API as an Extract an additional parameter called 'format' has been implemented.
@@ -11958,7 +11958,7 @@ The API will return one of the following responses:
 
 ## Examples
 
-### Example 1: Get all the Entities that are registered for “All Awards & IGT”
+### Example 1: Get all the Entities that are registered for "All Awards & IGT"
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&q=(purposeOfRegistrationCode:Z5 OR purposeOfRegistrationDesc:"All Awards *IGT")<br>
@@ -11978,7 +11978,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-       “samRegistered”: “Y”,
+       "samRegistered": "Y",
         "ueiSAM": "F7SEZJMNRYN1",
         "ueiDUNS": "116766843",
         "entityEFTIndicator": null,
@@ -11993,18 +11993,18 @@ Note: FOUO Response for one record is provided as an example <br>
         "lastUpdateDate": "2019-04-28",
         "registrationExpirationDate": "2020-01-28",
         "activationDate": "2019-01-28",
-        “ueiStatus”: “Active”,
-        “ueiExpirationDate”: “2022-01-28”,
-        “ueiCreationDate”: “2020-02-06”,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-28",
+        "ueiCreationDate": "2020-02-06",
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null,
-        “dnbOpenData”: “Y”
+        "dnbOpenData": "Y"
       },
       "coreData": {
         "entityHierarchyInformation": {
           "immediateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS": null,
             "legalBusinessName": null,
             "physicalAddress": null,
@@ -12013,7 +12013,7 @@ Note: FOUO Response for one record is provided as an example <br>
           "intermediateParentEntities": [
             {
               "domesticParent": {
-                “ueiSAM”: null,
+                "ueiSAM": null,
                 "ueiDUNS": null,
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -12028,7 +12028,7 @@ Note: FOUO Response for one record is provided as an example <br>
                 "phoneNumber": null
               },
               "hqParent": {
-                “ueiSAM”: null,
+                "ueiSAM": null,
                 "ueiDUNS": null,
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -12045,7 +12045,7 @@ Note: FOUO Response for one record is provided as an example <br>
             }
           ],
           "ultimateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS": null,
             "legalBusinessName": null,
             "physicalAddress": {
@@ -12066,7 +12066,7 @@ Note: FOUO Response for one record is provided as an example <br>
               "monitoringStatus": "Y",
               "lastUpdated": "Y",
               "addressLine1": "Address1",
-              "addressLine2": “Address2”,
+              "addressLine2": "Address2",
               "city": "City",
               "zipCode": "11111",
               "zipCodePlus4": "1111",
@@ -12093,19 +12093,19 @@ Note: FOUO Response for one record is provided as an example <br>
         },
         "physicalAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
-          "zipCode": “11111",
+          "zipCode": "11111",
           "zipCodePlus4": "1111",
           "countryCode": "ABC"
         },
         "mailingAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
-          "zipCode": “11111",
+          "zipCode": "11111",
           "zipCodePlus4": "1111",
           "countryCode": "ABC"
         },
@@ -12385,10 +12385,10 @@ Note: FOUO Response for one record is provided as an example <br>
           "addressLine1": "ADDRESS LINE 1",
           "addressLine2": null,
           "city": "CITY",
-          "stateOrProvinceCode": "MD",
-          "zipCode": "21532",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
           "zipCodePlus4": null,
-          "countryCode": "USA"
+          "countryCode": "ABC"
         },
         "electronicBusinessPOC": {
           "firstName": "A",
@@ -12403,10 +12403,10 @@ Note: FOUO Response for one record is provided as an example <br>
           "addressLine1": "ADDRESS LINE 1",
           "addressLine2": null,
           "city": "CITY",
-          "stateOrProvinceCode": "MD",
-          "zipCode": "21532",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
           "zipCodePlus4": null,
-          "countryCode": "USA"
+          "countryCode": "ABC"
         },
         "governmentBusinessAlternatePOC": {
           "firstName": null,
@@ -12533,10 +12533,10 @@ Note: FOUO Response for one record is provided as an example <br>
           "addressLine1": "ADDRESS LINE 1",
           "addressLine2": null,
           "city": "CITY",
-          "stateOrProvinceCode": "MD",
-          "zipCode": "21532",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "1111",
           "zipCodePlus4": null,
-          "countryCode": "USA"
+          "countryCode": "ABC"
         },
         "ediPOC": {
           "firstName": null,
@@ -12562,10 +12562,10 @@ Note: FOUO Response for one record is provided as an example <br>
           "addressLine1": "ADDRESS LINE 1",
           "addressLine2": null,
           "city": "CITY",
-          "stateOrProvinceCode": "MD",
-          "zipCode": "21532",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "1111",
           "zipCodePlus4": null,
-          "countryCode": "USA"
+          "countryCode": "ABC"
         },
         "salesPOC": {
           "firstName": "A",
@@ -12580,17 +12580,17 @@ Note: FOUO Response for one record is provided as an example <br>
           "addressLine1": "ADDRESS LINE 1",
           "addressLine2": null,
           "city": "CITY",
-          "stateOrProvinceCode": "MD",
-          "zipCode": "21532",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "1111",
           "zipCodePlus4": null,
-          "countryCode": "USA"
+          "countryCode": "ABC"
         }
       }
     }
   ],
   "links": {
-    "selfLink": "https://api.sam.gov/entity-information/v2/entities? api_key=REPLACE_WITH_API_KEY&purposeOfRegistrationCode=Z5&page=0&size=10",
-    "nextLink": "https://api.sam.gov/entity-information/v2/entities? api_key=REPLACE_WITH_API_KEY&purposeOfRegistrationCode=Z5&page=1&size=10"
+    "selfLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&purposeOfRegistrationCode=Z5&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&purposeOfRegistrationCode=Z5&page=1&size=10"
   }
 }
 </pre>
@@ -12598,7 +12598,7 @@ Note: FOUO Response for one record is provided as an example <br>
 </p>
 </details>
 
-### Example 2: Get the “entityRegistration” section of all the Entities that are registered for “All Awards ” or “Federal Assistance Awards”
+### Example 2: Get the "entityRegistration" section of all the Entities that are registered for "All Awards" or "Federal Assistance Awards"
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&purposeOfRegistrationCode=[Z1~Z2]&includeSections=entityRegistration <br>
@@ -12618,7 +12618,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        “samRegistered”: “Y”,
+        "samRegistered": "Y",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "075211119",
         "entityEFTIndicator": null,
@@ -12633,18 +12633,18 @@ Note: FOUO Response for one record is provided as an example <br>
         "lastUpdateDate": "2019-04-24",
         "registrationExpirationDate": "2020-04-23",
         "activationDate": "2019-04-24",
-        “ueiStatus”: “Active”,
-        “ueiExpirationDate”: “2022-01-01”,
-        “ueiCreationDate”: “2020-02-06”,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        “dnbOpenData”: “Y”
+        "dnbOpenData": "Y"
       }
     },
     {
       "entityRegistration": {
-        “samRegistered”: “Y”,
+        "samRegistered": "Y",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "081296509",
         "entityEFTIndicator": null,
@@ -12659,13 +12659,13 @@ Note: FOUO Response for one record is provided as an example <br>
         "lastUpdateDate": "2019-04-24",
         "registrationExpirationDate": "2020-04-23",
         "activationDate": "2019-04-24",
-        “ueiStatus”: “Active”,
-        “ueiExpirationDate”: “2022-01-01”,
-        “ueiCreationDate”: “2020-02-06”,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        “dnbOpenData”: “Y”
+        "dnbOpenData": "Y"
       }
     }
 ],
@@ -12679,12 +12679,12 @@ Note: FOUO Response for one record is provided as an example <br>
 </p>
 </details>
 
-### Example 3: Get all the Entities that are registered as ‘Joint Venture Women’ or ‘Asian-Pacific”
+### Example 3: Get all the Entities that are registered as 'Joint Venture Women' or 'Asian-Pacific'
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&q=(businessTypeDesc:'Joint+Venture+Women' OR businessTypeDesc:'Asian-Pacific')<br>
+<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&q=(businessTypeDesc:'Joint+Venture+Women' OR businessTypeDesc:'Asian-Pacific')<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')<br>
 <br>
 </details>
 
@@ -12699,7 +12699,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        “samRegistered”: “Y”,
+        "samRegistered": "Y",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "557905982",
         "entityEFTIndicator": null,
@@ -12714,18 +12714,18 @@ Note: FOUO Response for one record is provided as an example <br>
         "lastUpdateDate": "2018-09-08",
         "registrationExpirationDate": "2019-08-30",
         "activationDate": "2018-09-04",
-        “ueiStatus”: “Active”,
-        “ueiExpirationDate”: “2022-01-01”,
-        “ueiCreationDate”: “2020-02-06”,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        “dnbOpenData”: “N”
+        "dnbOpenData": "N"
       },
       "coreData": {
         "entityHierarchyInformation": {
           "immediateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS": null,
             "legalBusinessName": null,
             "physicalAddress": null,
@@ -12734,7 +12734,7 @@ Note: FOUO Response for one record is provided as an example <br>
           "intermediateParentEntities": [
             {
               "domesticParent": {
-                “ueiSAM”: null,
+                "ueiSAM": null,
                 "ueiDUNS": null,
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -12749,7 +12749,7 @@ Note: FOUO Response for one record is provided as an example <br>
                 "phoneNumber": null
               },
               "hqParent": {
-                “ueiSAM”: null,
+                "ueiSAM": null,
                 "ueiDUNS": null,
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -12766,7 +12766,7 @@ Note: FOUO Response for one record is provided as an example <br>
             }
           ],
           "ultimateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS": null,
             "legalBusinessName": null,
             "physicalAddress": {
@@ -12787,7 +12787,7 @@ Note: FOUO Response for one record is provided as an example <br>
               "monitoringStatus": "Y",
               "lastUpdated": "Y",
               "addressLine1": "Address1",
-              "addressLine2": “Address2”,
+              "addressLine2": "Address2",
               "city": "City",
               "zipCode": "11111",
               "zipCodePlus4": “1111",
@@ -12814,7 +12814,7 @@ Note: FOUO Response for one record is provided as an example <br>
         },
         "physicalAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
+          "addressLine2": "Address2",
           "city": “City",
           "stateOrProvinceCode": "XX",
           "zipCode": “11111",
@@ -12823,7 +12823,7 @@ Note: FOUO Response for one record is provided as an example <br>
         },
         "mailingAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
+          "addressLine2": "Address2",
           "city": “City",
           "stateOrProvinceCode": "XX",
           "zipCode": “11111",
@@ -13136,18 +13136,18 @@ Note: FOUO Response for one record is provided as an example <br>
           "middleInitial": null,
           "lastName": "LAKRA",
           "title": "ENTITY ADMINISTRATOR",
-          "usPhone": "66960406",
+          "usPhone": "9999999999",
           "usPhoneExtension": null,
-          "nonUSPhone": "0965-66060406",
+          "nonUSPhone": "9999-9999999",
           "fax": null,
           "email": "something@sam.gov",
           "addressLine1": "BUILDING",
           "addressLine2": null,
-          "city": "KUWAIT",
+          "city": "ABC",
           "stateOrProvinceCode": null,
-          "zipCode": "13074",
+          "zipCode": "1111",
           "zipCodePlus4": null,
-          "countryCode": "KWT"
+          "countryCode": "ABC"
         },
         "electronicBusinessPOC": {
           "firstName": "JAMIS",
@@ -13156,16 +13156,16 @@ Note: FOUO Response for one record is provided as an example <br>
           "title": "ENTITY ADMINISTRATOR",
           "usPhone": null,
           "usPhoneExtension": null,
-          "nonUSPhone": "0965-66060406",
+          "nonUSPhone": "9999-9999999",
           "fax": null,
           "email": "something@sam.gov",
           "addressLine1": "BUILDING",
           "addressLine2": null,
-          "city": "KUWAIT",
-          "stateOrProvinceCode": "KS",
+          "city": "ABC",
+          "stateOrProvinceCode": "XX",
           "zipCode": null,
           "zipCodePlus4": null,
-          "countryCode": "KWT"
+          "countryCode": "ABC"
         },
         "governmentBusinessAlternatePOC": {
           "firstName": null,
@@ -13275,7 +13275,7 @@ Note: FOUO Response for one record is provided as an example <br>
           "title": "ENTITY ADMINISTRATOR",
           "usPhone": null,
           "usPhoneExtension": null,
-          "nonUSPhone": "0965-66060406",
+          "nonUSPhone": "9999-9999999",
           "fax": null,
           "email": "something@sam.gov"
         },
@@ -13376,7 +13376,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        “samRegistered”: “Y”,
+        "samRegistered": "Y",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "561349642",
         "entityEFTIndicator": null,
@@ -13391,18 +13391,18 @@ Note: FOUO Response for one record is provided as an example <br>
         "lastUpdateDate": "2019-04-23",
         "registrationExpirationDate": "2020-04-22",
         "activationDate": "2019-04-23",
-        “ueiStatus”: “Active”,
-        “ueiExpirationDate”: “2022-01-01”,
-        “ueiCreationDate”: “2020-02-06”,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
-        "exclusionURL": null
-        “dnbOpenData”: “N”
+        "exclusionURL": null,
+        "dnbOpenData": "N"
       },
       "coreData": {
         "entityHierarchyInformation": {
           "immediateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS": null,
             "legalBusinessName": null,
             "physicalAddress": null,
@@ -13411,7 +13411,7 @@ Note: FOUO Response for one record is provided as an example <br>
           "intermediateParentEntities": [
             {
               "domesticParent": {
-                “ueiSAM”: null,
+                "ueiSAM": null,
                 "ueiDUNS": null,
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -13426,7 +13426,7 @@ Note: FOUO Response for one record is provided as an example <br>
                 "phoneNumber": null
               },
               "hqParent": {
-                “ueiSAM”: null,
+                "ueiSAM": null,
                 "ueiDUNS": null,
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -13443,7 +13443,7 @@ Note: FOUO Response for one record is provided as an example <br>
             }
           ],
           "ultimateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS": null,
             "legalBusinessName": null,
             "physicalAddress": {
@@ -13464,7 +13464,7 @@ Note: FOUO Response for one record is provided as an example <br>
               "monitoringStatus": "Y",
               "lastUpdated": "Y",
               "addressLine1": "Address1",
-              "addressLine2": “Address2”,
+              "addressLine2": "Address2",
               "city": "City",
               "zipCode": "11111",
               "zipCodePlus4": "1111",
@@ -13491,7 +13491,7 @@ Note: FOUO Response for one record is provided as an example <br>
         },
        "physicalAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
+          "addressLine2": "Address2",
           "city": “City",
           "stateOrProvinceCode": "XX",
           "zipCode": “11111",
@@ -13500,7 +13500,7 @@ Note: FOUO Response for one record is provided as an example <br>
         },
         "mailingAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
+          "addressLine2": "Address2",
           "city": “City",
           "stateOrProvinceCode": "XX",
           "zipCode": “11111",
@@ -13812,7 +13812,7 @@ Note: FOUO Response for one record is provided as an example <br>
           "stateOrProvinceCode": "XX",
           "zipCode": "11111",
           "zipCodePlus4": null,
-          "countryCode": "USA"
+          "countryCode": "ABC"
         },
         "governmentBusinessAlternatePOC": {
           "firstName": null,
@@ -14004,7 +14004,7 @@ Note: FOUO Response for one record is provided as an example <br>
 </p>
 </details>
 
-### Example 5: Get non-SAM-registered Entity
+### Example 5: Get a non-SAM-registered Entity
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&samRegistered=N<br>
@@ -14024,34 +14024,34 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        “samRegistered”: “N”,
+        "samRegistered": "N",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "111111111",
         "cageCode": "SFUQ6",
         "legalBusinessName": "AMME ASSOCIACAO MOCAMBICANA MULHER E EDUCAO",
         "registrationExpirationDate": "2020-04-22",
         "activationDate": "2019-04-23",
-        “ueiStatus”: “Active”,
-        “ueiExpirationDate”: “2022-01-01”,
-        “ueiCreationDate”: “2020-02-06”,
-        “dnbOpenData”: “N”
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
+        "dnbOpenData": "N"
       },
       "coreData": {
         "physicalAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
-          "zipCode": “11111",
+          "zipCode": "11111",
           "zipCodePlus4": "1111",
           "countryCode": "ABC"
         },
         "mailingAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
-          "zipCode": “11111",
+          "zipCode": "11111",
           "zipCodePlus4": "1111",
           "countryCode": "ABC"
         },
@@ -14078,7 +14078,6 @@ Note: Response for one record is provided as an example <br>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
 <p>
 <code>
 <pre>
@@ -14087,7 +14086,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        “samRegistered”: “Y”,
+        "samRegistered": "Y",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "075211119",
         "entityEFTIndicator": null,
@@ -14102,18 +14101,18 @@ Note: FOUO Response for one record is provided as an example <br>
         "lastUpdateDate": "2019-04-24",
         "expirationDate": "2020-04-23",
         "activationDate": "2019-04-24",
-        “ueiStatus”: “Active”,
-        “ueiExpirationDate”: “2022-01-01”,
-        “ueiCreationDate”: “2020-02-06”,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        “dnbOpenData”: “Y”
+        "dnbOpenData": "Y"
       },
       "coreData": {
         "entityHierarchyInformation": {
           "immediateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS":null,
             "legalBusinessName": null,
             "physicalAddress": null,
@@ -14122,7 +14121,7 @@ Note: FOUO Response for one record is provided as an example <br>
           "intermediateParentEntities": [
             {
               "domesticParent": {
-                “ueiSAM”: null,
+                "ueiSAM": null,
                 "ueiDUNS": null,
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -14137,7 +14136,7 @@ Note: FOUO Response for one record is provided as an example <br>
                 "phoneNumber": null
               },
               "hqParent": {
-                “ueiSAM”: null,
+                "ueiSAM": null,
                 "ueiDUNS": null,
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -14154,7 +14153,7 @@ Note: FOUO Response for one record is provided as an example <br>
             }
           ],
           "ultimateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS": null,
             "legalBusinessName": null,
             "physicalAddress": {
@@ -14175,7 +14174,7 @@ Note: FOUO Response for one record is provided as an example <br>
               "monitoringStatus": "Y",
               "lastUpdated": "Y",
               "addressLine1": "Address1",
-              "addressLine2": “Address2”,
+              "addressLine2": "Address2",
               "city": "City",
               "zipCode": "11111",
               "zipCodePlus4": "1111",
@@ -14201,19 +14200,19 @@ Note: FOUO Response for one record is provided as an example <br>
         },
           "physicalAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
-          "zipCode": “11111",
+          "zipCode": "11111",
           "zipCodePlus4": "1111",
           "countryCode": "ABC"
         },
         "mailingAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
-          "zipCode": “11111",
+          "zipCode": "11111",
           "zipCodePlus4": "1111",
           "countryCode": "ABC"
         },
@@ -14529,7 +14528,7 @@ Note: FOUO Response for one record is provided as an example <br>
           "middleInitial": null,
           "lastName": "LAST",
           "title": null,
-          "usPhone": “1111111111",
+          "usPhone": "1111111111",
           "usPhoneExtension": "222",
           "nonUSPhone": null,
           "fax": null,
@@ -14749,7 +14748,7 @@ Note: FOUO Response for one record is provided as an example <br>
 </p>
 </details>
 
-### Example 7: Get an Entity with a small hierarchy.
+### Example 7: Get an Entity with a small hierarchy
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=081343434<br>
@@ -14760,7 +14759,6 @@ Note: FOUO Response for one record is provided as an example <br>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
 <p>
 <code>
 <pre>
@@ -14769,7 +14767,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-       “samRegistered”: “Y”,
+       "samRegistered": "Y",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "081343434",
         "entityEFTIndicator": null,
@@ -14784,18 +14782,18 @@ Note: FOUO Response for one record is provided as an example <br>
         "lastUpdateDate": "2018-09-08",
         "expirationDate": "2019-08-28",
         "activationDate": "2018-09-02",
-        “ueiStatus”: “Active”,
-        “ueiExpirationDate”: “2022-01-01”,
-        “ueiCreationDate”: “2020-02-06”,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        “dnbOpenData”: “Y”
+        "dnbOpenData": "Y"
       },
       "coreData": {
         "entityHierarchyInformation": {
           "immediateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS": null,
             "legalBusinessName": null,
             "physicalAddress": null,
@@ -14804,7 +14802,7 @@ Note: FOUO Response for one record is provided as an example <br>
           "intermediateParentEntities": [
             {
               "domesticParent": {
-                “ueiSAM”: “F7SEZJMNRYN1”,
+                "ueiSAM": "F7SEZJMNRYN1",
                 "ueiDUNS": "963709998",
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -14819,7 +14817,7 @@ Note: FOUO Response for one record is provided as an example <br>
                 "phoneNumber": null
               },
               "hqParent": {
-                “ueiSAM”: “F7SEZJMNRYN1”,
+                "ueiSAM": "F7SEZJMNRYN1",
                 "ueiDUNS": "361076693",
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -14836,7 +14834,7 @@ Note: FOUO Response for one record is provided as an example <br>
             }
           ],
           "ultimateParentEntity": {
-            “ueiSAM”: “F7SEZJMNRYN1”,
+            "ueiSAM": "F7SEZJMNRYN1",
             "ueiDUNS": "963709998",
             "legalBusinessName": null,
             "physicalAddress": {
@@ -14845,7 +14843,7 @@ Note: FOUO Response for one record is provided as an example <br>
               "city": "City",
               "stateOrProvinceCode": "XX",
               "countryCode": "ABC",
-              "zipCode": “11111",
+              "zipCode": "11111",
               "zipCodePlus4": "1111"
             },
             "phoneNumber": null
@@ -14857,12 +14855,12 @@ Note: FOUO Response for one record is provided as an example <br>
               "monitoringStatus": "Y",
               "lastUpdated": "Y",
               "addressLine1": "Address 1",
-              "addressLine2": “Address2”,
+              "addressLine2": "Address2",
               "city": "City",
               "zipCode": "11111",
-              "zipCodePlus4": “1111",
-              "stateOrProvinceCode": “XX",
-              "countryCode": “ABC"
+              "zipCodePlus4": "1111",
+              "stateOrProvinceCode": "XX",
+              "countryCode": "ABC"
             },
         },
         "federalHierarchy": {
@@ -14883,8 +14881,8 @@ Note: FOUO Response for one record is provided as an example <br>
         },
        "physicalAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
           "zipCode": "1111",
           "zipCodePlus4": "11111",
@@ -14892,8 +14890,8 @@ Note: FOUO Response for one record is provided as an example <br>
         },
         "mailingAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
           "zipCode": "1111",
           "zipCodePlus4": "11111",
@@ -15278,7 +15276,7 @@ Note: FOUO Response for one record is provided as an example <br>
         "accountsReceivablePOC": {
           "firstName": "FIRST",
           "middleInitial": null,
-          "lastName": “LAST",
+          "lastName": "LAST",
           "title": "VP OF OPERATIONS",
           "usPhone": "1111111111",
           "usPhoneExtension": null,
@@ -15374,7 +15372,6 @@ Note: FOUO Response for one record is provided as an example <br>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
 <p>
 <code>
 <pre>
@@ -15383,7 +15380,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        “samRegistered”: “Y”,
+        "samRegistered": "Y",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "439307625",
         "entityEFTIndicator": null,
@@ -15398,18 +15395,18 @@ Note: FOUO Response for one record is provided as an example <br>
         "lastUpdateDate": "2018-09-08",
         "expirationDate": "2019-04-04",
         "activationDate": "2018-04-17",
-        “ueiStatus”: “Active”,
-        “ueiExpirationDate”: “2022-01-01”,
-        “ueiCreationDate”: “2020-02-06,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06,
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        “dnbOpenData”: “N”
+        "dnbOpenData": "N"
       },
       "coreData": {
         "entityHierarchyInformation": {
           "immediateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS": null,
             "legalBusinessName": null,
             "physicalAddress": null,
@@ -15418,22 +15415,22 @@ Note: FOUO Response for one record is provided as an example <br>
           "intermediateParentEntities": [
             {
               "domesticParent": {
-                “ueiSAM”: “F7SEZJMNRYN1”,
+                "ueiSAM": "F7SEZJMNRYN1",
                 "ueiDUNS": "355149347",
                 "legalBusinessName": null,
                 "physicalAddress": {
                   "addressLine1": "Address1",
                   "addressLine2": null,
                   "city": "City",
-                  "stateOrProvinceCode": “XX”,
-                  "countryCode": “ABC”,
+                  "stateOrProvinceCode": "XX",
+                  "countryCode": "ABC",
                   "zipCode": null,
                   "zipCodePlus4": null
                 },
                 "phoneNumber": null
               },
               "hqParent": {
-                “ueiSAM”: “F7SEZJMNRYN1”,
+                "ueiSAM": "F7SEZJMNRYN1",
                 "ueiDUNS": "440774594",
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -15450,7 +15447,7 @@ Note: FOUO Response for one record is provided as an example <br>
             }
           ],
           "ultimateParentEntity": {
-            “ueiSAM”: “F7SEZJMNRYN1”,
+            "ueiSAM": "F7SEZJMNRYN1",
             "ueiDUNS": "655149347",
             "legalBusinessName": null,
             "physicalAddress": {
@@ -15471,9 +15468,9 @@ Note: FOUO Response for one record is provided as an example <br>
               "monitoringStatus": "Y",
               "lastUpdated": "Y",
               "addressLine1": "Address1",
-              "addressLine2": “Address2”,
+              "addressLine2": "Address2",
               "city": "City",
-              "zipCode": “11111",
+              "zipCode": "11111",
               "zipCodePlus4": "1111",
               "stateOrProvinceCode": "XX",
               "countryCode": "ABC"
@@ -15496,8 +15493,8 @@ Note: FOUO Response for one record is provided as an example <br>
         },
        "physicalAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
           "zipCode": "11111",
           "zipCodePlus4": "1111",
@@ -15505,8 +15502,8 @@ Note: FOUO Response for one record is provided as an example <br>
         },
         "mailingAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
           "zipCode": "11111",
           "zipCodePlus4": "1111",
@@ -15987,7 +15984,6 @@ Note: FOUO Response for one record is provided as an example <br>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
 <p>
 <code>
 <pre>
@@ -15996,7 +15992,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        “samRegistered”: “Y”,
+        "samRegistered": "Y",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "081270422",
         "entityEFTIndicator": null,
@@ -16011,18 +16007,18 @@ Note: FOUO Response for one record is provided as an example <br>
         "lastUpdateDate": "2018-09-08",
         "expirationDate": "2019-07-24",
         "activationDate": "2018-07-26",
-        “ueiStatus”: “Active”,
-        “ueiExpirationDate”: “2022-01-01”,
-        “ueiCreationDate”: “2020-02-06,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06,
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        “dnbOpenData”: “Y”
+        "dnbOpenData": "Y"
       },
       "coreData": {
         "entityHierarchyInformation": {
           "immediateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS": null,
             "legalBusinessName": null,
             "physicalAddress": null,
@@ -16031,7 +16027,7 @@ Note: FOUO Response for one record is provided as an example <br>
           "intermediateParentEntities": [
             {
               "domesticParent": {
-                “ueiSAM”: null,
+                "ueiSAM": null,
                 "ueiDUNS": null,
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -16046,7 +16042,7 @@ Note: FOUO Response for one record is provided as an example <br>
                 "phoneNumber": null
               },
               "hqParent": {
-                “ueiSAM”: null,
+                "ueiSAM": null,
                 "ueiDUNS": null,
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -16063,7 +16059,7 @@ Note: FOUO Response for one record is provided as an example <br>
             }
           ],
           "ultimateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS": null,
             "legalBusinessName": null,
             "physicalAddress": {
@@ -16079,15 +16075,15 @@ Note: FOUO Response for one record is provided as an example <br>
           },
           "evsMonitoring": {
               "legalBusinessName": "N/A",
-              "dbaName": “N/A”,
-              "outOfBusinessFlag": “N/A”,
+              "dbaName": "N/A",
+              "outOfBusinessFlag": "N/A",
               "monitoringStatus": "Y",
               "lastUpdated": "Y",
               "addressLine1": "Address1",
-              "addressLine2": “Address2”,
+              "addressLine2": "Address2",
               "city": "City",
               "zipCode": "11111",
-              "zipCodePlus4": “1111",
+              "zipCodePlus4": "1111",
               "stateOrProvinceCode": "XX",
               "countryCode": "ABC"
             },              
@@ -16109,8 +16105,8 @@ Note: FOUO Response for one record is provided as an example <br>
         },
          "physicalAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
           "zipCode": "11111",
           "zipCodePlus4": "1111",
@@ -16118,8 +16114,8 @@ Note: FOUO Response for one record is provided as an example <br>
         },
         "mailingAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
           "zipCode": "11111",
           "zipCodePlus4": "1111",
@@ -16600,7 +16596,6 @@ Note: FOUO Response for one record is provided as an example <br>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
 <p>
 <code>
 <pre>
@@ -16609,7 +16604,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        “samRegistered”: “Y”,
+        "samRegistered": "Y",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "080192883",
         "entityEFTIndicator": null,
@@ -16624,18 +16619,18 @@ Note: FOUO Response for one record is provided as an example <br>
         "lastUpdateDate": "2019-04-22",
         "expirationDate": "2019-06-25",
         "activationDate": "2018-06-25",
-        “ueiStatus”: “Active”,
-        “ueiExpirationDate”: “2022-01-01”,
-        “ueiCreationDate”: “2020-02-06,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06,
         "noPublicDisplayFlag": "NPDY",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        “dnbOpenData”: “N”
+        "dnbOpenData": "N"
       },
       "coreData": {
         "entityHierarchyInformation": {
           "immediateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS": null,
             "legalBusinessName": null,
             "physicalAddress": null,
@@ -16644,7 +16639,7 @@ Note: FOUO Response for one record is provided as an example <br>
           "intermediateParentEntities": [
             {
               "domesticParent": {
-                “ueiSAM”: “F7SEZJMNRYN1”,
+                "ueiSAM": "F7SEZJMNRYN1",
                 "ueiDUNS": "080192883",
                 "legalBusinessName": "IBM SOUTHEAST EMPLOYEES' CREDIT UNION",
                 "physicalAddress": {
@@ -16659,7 +16654,7 @@ Note: FOUO Response for one record is provided as an example <br>
                 "phoneNumber": null
               },
               "hqParent": {
-                “ueiSAM”: “F7SEZJMNRYN1”,
+                "ueiSAM": "F7SEZJMNRYN1",
                 "ueiDUNS": "080192883",
                 "legalBusinessName": "IBM SOUTHEAST EMPLOYEES' CREDIT UNION",
                 "physicalAddress": {
@@ -16676,13 +16671,13 @@ Note: FOUO Response for one record is provided as an example <br>
             }
           ],
           "ultimateParentEntity": {
-            “ueiSAM”: “F7SEZJMNRYN1”,
+            "ueiSAM": "F7SEZJMNRYN1",
             "ueiDUNS": "080192883",
             "legalBusinessName": "IBM SOUTHEAST EMPLOYEES' CREDIT UNION",
             "physicalAddress": {
               "addressLine1": "Address1",
               "addressLine2": null,
-              "city": "City”,
+              "city": "City",
               "stateOrProvinceCode": "XX",
               "countryCode": "ABC",
               "zipCode": "11111",
@@ -16692,14 +16687,14 @@ Note: FOUO Response for one record is provided as an example <br>
           },
           "evsMonitoring": {
               "legalBusinessName": "IBM Credit Union for Southeast Employees",
-              "dbaName": “N/A”,
-              "outOfBusinessFlag": “N/A”,
+              "dbaName": "N/A",
+              "outOfBusinessFlag": "N/A",
               "monitoringStatus": "Y",
               "lastUpdated": "Y",
               "addressLine1": "N/A",
-              "addressLine2": “N/A”,
-              "city": "N/A”,
-              "zipCode": “N/A",
+              "addressLine2": "N/A",
+              "city": "N/A",
+              "zipCode": "N/A",
               "zipCodePlus4": "N/A",
               "stateOrProvinceCode": "N/A",
               "countryCode": "N/A"
@@ -16722,8 +16717,8 @@ Note: FOUO Response for one record is provided as an example <br>
         },
   "physicalAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
           "zipCode": "11111",
           "zipCodePlus4": "1111",
@@ -16731,8 +16726,8 @@ Note: FOUO Response for one record is provided as an example <br>
         },
         "mailingAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
           "zipCode": "11111",
           "zipCodePlus4": "1111",
@@ -17205,15 +17200,14 @@ Note: FOUO Response for one record is provided as an example <br>
 ### Example 11: Get an Entity with No EVS Monitoring
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key ><br>
+<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=079870954<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key ><br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=079870954<br>
 <br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
 <p>
 <code>
 <pre>
@@ -17222,7 +17216,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        “samRegistered”: “Y”,
+        "samRegistered": "Y",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "079870954",
         "entityEFTIndicator": null,
@@ -17237,18 +17231,18 @@ Note: FOUO Response for one record is provided as an example <br>
         "lastUpdateDate": "2018-09-08",
         "expirationDate": "2019-05-15",
         "activationDate": "2018-07-05",
-        “ueiStatus”: “Active”,
-        “ueiExpirationDate”: “2022-01-01”,
-        “ueiCreationDate”: “2020-02-06,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06,
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        “dnbOpenData”: “Y”
+        "dnbOpenData": "Y"
       },
       "coreData": {
         "entityHierarchyInformation": {
           "immediateParentEntity": {
-            “ueiSAM”: null,
+            "ueiSAM": null,
             "ueiDUNS": null,
             "legalBusinessName": null,
             "physicalAddress": null,
@@ -17257,7 +17251,7 @@ Note: FOUO Response for one record is provided as an example <br>
           "intermediateParentEntities": [
             {
               "domesticParent": {
-                “ueiSAM”: null,
+                "ueiSAM": null,
                 "ueiDUNS": null,
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -17272,7 +17266,7 @@ Note: FOUO Response for one record is provided as an example <br>
                 "phoneNumber": null
               },
               "hqParent": {
-                “ueiSAM”: null,
+                "ueiSAM": null,
                 "ueiDUNS": null,
                 "legalBusinessName": null,
                 "physicalAddress": {
@@ -17305,12 +17299,12 @@ Note: FOUO Response for one record is provided as an example <br>
           },
           "evsMonitoring": 
               "legalBusinessName": "Enterprise Assurance Management",
-              "dbaName": “N/A”,
-              "outOfBusinessFlag": “N/A”,
+              "dbaName": "N/A",
+              "outOfBusinessFlag": "N/A",
               "monitoringStatus": "N",
               "lastUpdated": "Y",
               "addressLine1": "N/A",
-              "addressLine2": “N/A”,
+              "addressLine2": "N/A",
               "city": "N/A",
               "zipCode": "N/A",
               "zipCodePlus4": "N/A",
@@ -17335,8 +17329,8 @@ Note: FOUO Response for one record is provided as an example <br>
         },
          "physicalAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
           "zipCode": "11111",
           "zipCodePlus4": "1111",
@@ -17344,8 +17338,8 @@ Note: FOUO Response for one record is provided as an example <br>
         },
         "mailingAddress": {
           "addressLine1": "Address1",
-          "addressLine2": “Address2”,
-          "city": “City",
+          "addressLine2": "Address2",
+          "city": "City",
           "stateOrProvinceCode": "XX",
           "zipCode": "11111",
           "zipCodePlus4": "1111",
@@ -17704,7 +17698,7 @@ Note: FOUO Response for one record is provided as an example <br>
           "countryCode": "ABC"
         },
         "electronicBusinessPOC": {
-"firstName": "FIRST",
+          "firstName": "FIRST",
           "middleInitial": null,
           "lastName": "LAST",
           "title": "TITLE",
@@ -17767,13 +17761,13 @@ Note: FOUO Response for one record is provided as an example <br>
           "nonUSPhone": null,
           "fax": null,
           "email": "something@sam.gov",
-          "addressLine1": "ADDRESS1”,
+          "addressLine1": "ADDRESS1",
           "addressLine2": "ADDRESS2",
-          "city": "NEW YORK",
+          "city": "CITY",
           "stateOrProvinceCode": "XX",
           "zipCode": "11111",
           "zipCodePlus4": "1111",
-          "countryCode": “ABC"
+          "countryCode": "ABC"
         },
         "pastPerformanceAlternatePOC": {
           "firstName": "FIRST",
@@ -17785,13 +17779,13 @@ Note: FOUO Response for one record is provided as an example <br>
           "nonUSPhone": null,
           "fax": null,
           "email": "something@sam.gov",
-          "addressLine1": "ADDRESS1”,
+          "addressLine1": "ADDRESS1",
           "addressLine2": "ADDRESS2",
-          "city": "NEW YORK",
+          "city": "CITY",
           "stateOrProvinceCode": "XX",
           "zipCode": "11111",
           "zipCodePlus4": "1111",
-          "countryCode": “ABC"
+          "countryCode": "ABC"
         },
         "partyPerformingCertificationPOC": {
           "firstName": null,
@@ -17910,30 +17904,19 @@ Note: FOUO Response for one record is provided as an example <br>
 </p>
 </details>
 
-<p><small><a href="#">Back to top</a></small></p>
+### Example 12: 
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>  https://api.sam.gov/prod/entity-information/v2/entities?api_key=< FOUO API Key>&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV<br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV><br>
+<br>
+</details>
 
-## Explanation of the API using Examples
-Functionality of the Entity API has been explained with the following examples:
-
-**User requirement:** 
-To get only the entityRegistration, coreData and assertions sections for the Entity records whose entityStructureCode is 2J or 8H, 
-physicalAddressCountryCode is USA, countryOfIncorporationCode is USA, registrationDate is from 01/01/2018 to 04/23/2019, servedDisasterStateCode is  
-NE or LA or TX, cageCode is not null, dodaac is null, and primaryNaics is 812112 or 484121 or 336411.
-
-**API Request:**
-https://api.sam.gov/prod/entity-information/v1/api/entities?api_key=<API Key>&q=((entityStructureCode=2J OR entityStructureCode=8H) 
-AND physicalAddressCountryCode=USA AND countryOfIncorporationCode=USA)&registrationDate=[01/01/2018,04/23/2019]&servedDisasterStateCode=[NE~LA~TX]&cageCode=!""
-&dodaac=""&primaryNaics=[812112~484121~336411]&includeSections=entityRegistration,coreData,assertions
-<br>OR<br>
-https://api.sam.gov/prod/entity-information/v1/api/entities?api_key=<API Key>&entityStructureCode=[2J~8H]&physicalAddressCountryCode=USA
-&countryOfIncorporationCode=USA&registrationDate=[01/01/2018,04/23/2019]&servedDisasterStateCode=[NE~LA~TX]&cageCode=!""&dodaac=""&primaryNaics=[812112~484121~336411]
-&includeSections=entityRegistration,coreData,assertions
-
-**User requirement:**
-To get a CSV file of active Entity records that have a DBAN and that cater to GEOPHYSICAL SURVEYING AND MAPPING SERVICES.
-
-**API request:** 
-https://api.sam.gov/prod/entity-information/v1/api/entities?api_key=<API Key>&samExtractCode=A&q=”GEOPHYSICAL SURVEYING AND MAPPING SERVICES”&dbaName=!””&format=CSV
+<details>
+<summary>Response</summary>
+Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sample CSV Response</a><br>
+</details>
 
 <p><small><a href="#">Back to top</a></small></p>
 

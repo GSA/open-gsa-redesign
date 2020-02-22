@@ -177,9 +177,9 @@ The API will return one of the following responses:
 ### Example 1: Get Individual or Special Entity Designation Exclusion records
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
+<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
 <br>
 </details>
 
@@ -301,9 +301,9 @@ Note: Public Response for one record is provided as an example <br>
 ### Example 2: Get Firm Exclusion records of type Ineligible (Proceedings Completed) or Prohibition/Restriction
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
+<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
 <br>
 </details>
 
@@ -359,28 +359,23 @@ Note: Public Response for one record is provided as an example <br>
 </p>
 </details>
 
-<p><small><a href="#">Back to top</a></small></p>
+### Example 2: Get Firm Exclusion records of type Ineligible (Proceedings Completed) or Prohibition/Restriction
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v1/api/exclusions?api_key=< a Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=< a valid email address ><br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=< a valid email address ><br>
+<br>
+</details>
 
-## Explanation of the API using Examples
-Functionality of the Exclusion API has been explained with the following examples:
-
-**User requirement:** 
-To get Individual or Special Entity Designation Exclusion records that are based off of Korea, that are not excluded by DOJ and that contain CHONG anywhere in the response.
-
-**API request:** 
-https://api.sam.gov/prodlike/entity-information/v1/api/exclusions?api_key=<API Key>&classification=[Individual~Special Entity Designation]
-&excludingAgencyCode=!DOJ&country=KOR&q=CHONG
-
-**User requirement:** 
-To receive the JSON file downloadable link in the email for only exclusionDetails, exclusionIdentification and exclusionAddress sections of the Excluded 
-Firm records of type Ineligible (Proceedings Completed) or Prohibition/Restriction that are based off of Korea, China or Germany and that have a non-null ueiDUNS.
-
-**API request:**
-https://api.sam.gov/prod/entity-information/v1/api/exclusions?api_key=<API Key>&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm
-&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=JSON
-&emailId= < a valid email address >
+<details>
+<summary>Response</summary>
+Click to view CSV Response for one record <a href="v1/exclusion-sample-csv.xlsx">Sample CSV Response</a><br>
+</details>
 
 <p><small><a href="#">Back to top</a></small></p>
+
+
 
 ## Additional Information
 You can view the full details of the differences between the SAM legacy API and Beta API 
