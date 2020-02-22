@@ -359,7 +359,7 @@ Note: Public Response for one record is provided as an example <br>
 </p>
 </details>
 
-### Example 2: Get Firm Exclusion records of type Ineligible (Proceedings Completed) or Prohibition/Restriction
+### Example 3: Get Firm Exclusion records of type Ineligible (Proceedings Completed) or Prohibition/Restriction
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v1/api/exclusions?api_key=< a Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=< a valid email address ><br>
