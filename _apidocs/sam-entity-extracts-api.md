@@ -253,14 +253,17 @@ You can view the full details of this API's in the OpenAPI Specification file av
 
 ## Sample Extract Files
 
-* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_20140504.dat">Public Monthly Extarct File</a>
-* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_V2_20200207.ZIP">Public Monthly V2 Extarct File</a>
-* Click to view <a href="v1/sample-files/SAM_Exclusions_Public_Extract_20049.ZIP">Exclusions Public Extract File</a>
-* Click to view <a href="v1/sample-files/SAM_FOUO_DAILY_20140508.dat">FOUO Daily Extarct File</a>
-* Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_20140504.dat">FOUO Monthly Extarct File </a>
-* Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_V2_20200207.ZIP">FOUO Monthly V2 Extarct File</a>
-* Click to view <a href="v1/sample-files/SENSITIVE_V2_EXTRACT_REFERENCES.ZIP">Sensitive V2 Extarct File</a>
-* Click to view <a href="v1/sample-files/SAM_SENSITIVE_MONTHLY_V3_20200207.ZIP">Sensitive Monthly V2 Extarct File</a>
+1. Existing Extract files: 
+* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_20140504.dat">Public Monthly Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_FOUO_DAILY_20140508.dat">FOUO Daily Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_20140504.dat">FOUO Monthly Extract File </a>
+* Click to view <a href="v1/sample-files/SENSITIVE_V2_EXTRACT_REFERENCES.ZIP">Sensitive Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_Exclusions_Public_Extract_20049.ZIP">Exclusions Public Extract File</a><br><br>
+
+2. Updated Version Extract files:
+* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_V2_20200207.ZIP">Public Monthly V2 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_V2_20200207.ZIP">FOUO Monthly V2 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_SENSITIVE_MONTHLY_V3_20200207.ZIP">Sensitive Monthly V2 Extract File</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
