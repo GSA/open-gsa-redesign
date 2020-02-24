@@ -257,7 +257,7 @@ You can view the full details of this API's in the OpenAPI Specification file av
 * Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_20140504.dat">Public Monthly Extract File</a>
 * Click to view <a href="v1/sample-files/SAM_FOUO_DAILY_20140508.dat">FOUO Daily Extract File</a>
 * Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_20140504.dat">FOUO Monthly Extract File </a>
-* Click to view <a href="v1/sample-files/SENSITIVE_V2_EXTRACT_REFERENCES.ZIP">Sensitive Extract File</a>
+* Click to view <a href="v1/sample-files/SENSITIVE_V2_EXTRACT_REFERENCES.ZIP">Sensitive Monthly Extract File</a>
 * Click to view <a href="v1/sample-files/SAM_Exclusions_Public_Extract_20049.ZIP">Exclusions Public Extract File</a><br><br>
 
 2. Updated Version Extract files:
