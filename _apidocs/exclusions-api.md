@@ -177,9 +177,9 @@ The API will return one of the following responses:
 ### Example 1: Get Individual or Special Entity Designation Exclusion records
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
 <br>
 </details>
 
@@ -289,8 +289,8 @@ Note: Public Response for one record is provided as an example <br>
     },
 ],
   "links": {
-    "selfLink": "https://api.sam.gov/prod/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation]%20&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&isActive=true&page=0&size=10",
-    "nextLink": "https://api.sam.gov/prod/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation]%20&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&isActive=true&page=1&size=10"
+    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation]%20&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&isActive=true&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation]%20&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&isActive=true&page=1&size=10"
   }
 }
 </pre>
@@ -301,9 +301,9 @@ Note: Public Response for one record is provided as an example <br>
 ### Example 2: Get Firm Exclusion records of type Ineligible (Proceedings Completed) or Prohibition/Restriction
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
 <br>
 </details>
 
@@ -350,8 +350,8 @@ Note: Public Response for one record is provided as an example <br>
     },
   ],
   "links": {
-    "selfLink": "https://api.sam.gov/prod/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&ueiDUNS=!%E2%80%9D%E2%80%9D&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&isActive=true&page=0&size=10",
-    "nextLink": "https://api.sam.gov/prod/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&ueiDUNS=!%E2%80%9D%E2%80%9D&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&isActive=true&page=1&size=10"
+    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&ueiDUNS=!%E2%80%9D%E2%80%9D&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&isActive=true&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&ueiDUNS=!%E2%80%9D%E2%80%9D&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&isActive=true&page=1&size=10"
   }
 }
 </pre>
@@ -362,9 +362,9 @@ Note: Public Response for one record is provided as an example <br>
 ### Example 3: To receive a link in the email to the Exclusions Extract in CSV format
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v1/api/exclusions?api_key=< a Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=< a valid email address ><br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v1/api/exclusions?api_key=< a Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=< a valid email address ><br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=< a valid email address ><br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=< a valid email address ><br>
 <br>
 </details>
 
