@@ -11961,9 +11961,9 @@ The API will return one of the following responses:
 ### Example 1: Get all the Entities that are registered for "All Awards & IGT"
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&q=(purposeOfRegistrationCode:Z5 OR purposeOfRegistrationDesc:"All Awards *IGT")<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&q=(purposeOfRegistrationCode:Z5 OR purposeOfRegistrationDesc:"All Awards *IGT")<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&q=(purposeOfRegistrationCode:Z5 OR purposeOfRegistrationDesc:"All Awards *IGT")<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&q=(purposeOfRegistrationCode:Z5 OR purposeOfRegistrationDesc:"All Awards *IGT")<br>
 <br>
 </details>
 
@@ -12601,9 +12601,9 @@ Note: FOUO Response for one record is provided as an example <br>
 ### Example 2: Get the "entityRegistration" section of all the Entities that are registered for "All Awards" or "Federal Assistance Awards"
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&purposeOfRegistrationCode=[Z1~Z2]&includeSections=entityRegistration <br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&purposeOfRegistrationCode=[Z1~Z2]&includeSections=entityRegistration <br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&purposeOfRegistrationCode=[Z1~Z2]&includeSections=entityRegistration <br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&purposeOfRegistrationCode=[Z1~Z2]&includeSections=entityRegistration <br>
 <br>
 </details>
 
@@ -12670,8 +12670,8 @@ Note: FOUO Response for one record is provided as an example <br>
     }
 ],
   "links": {
-    "selfLink": " https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&purposeOfRegistrationCode=%5BZ1%7EZ2%5D&includeSections=entityRegistration&page=0&size=10",
-    "nextLink": " https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&purposeOfRegistrationCode=%5BZ1%7EZ2%5D&includeSections=entityRegistration&page=1&size=10"
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&purposeOfRegistrationCode=%5BZ1%7EZ2%5D&includeSections=entityRegistration&page=0&size=10",
+    "nextLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&purposeOfRegistrationCode=%5BZ1%7EZ2%5D&includeSections=entityRegistration&page=1&size=10"
   }
 }
 </pre>
@@ -12682,9 +12682,9 @@ Note: FOUO Response for one record is provided as an example <br>
 ### Example 3: Get all the Entities that are registered as 'Joint Venture Women' or 'Asian-Pacific'
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')<br>
 <br>
 </details>
 
@@ -13347,8 +13347,9 @@ Note: FOUO Response for one record is provided as an example <br>
       }
     },
 ],
-  "links": {    "selfLink": "https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&page=0&size=10",
-    "nextLink": "https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&page=1&size=10"
+  "links": {
+    "selfLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&page=1&size=10"
   }
 }
 </pre>
@@ -13359,9 +13360,9 @@ Note: FOUO Response for one record is provided as an example <br>
 ### Example 4: Get all the Entities that are registered as A5 and 2X
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&q=(businessTypeCode=A5 AND businessTypeCode=2X) <br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&q=(businessTypeCode=A5 AND businessTypeCode=2X) <br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&q=(businessTypeCode=A5 AND businessTypeCode=2X) <br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&q=(businessTypeCode=A5 AND businessTypeCode=2X) <br>
 <br>
 </details>
 
@@ -13995,8 +13996,8 @@ Note: FOUO Response for one record is provided as an example <br>
     },
 ],
 "links": {
-    "selfLink": "https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&q=%28businessTypeCode%3DA5+AND+businessTypeCode%3D2X%29&page=0&size=10",
-    "nextLink": "https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&q=%28businessTypeCode%3DA5+AND+businessTypeCode%3D2X%29&page=1&size=10"
+    "selfLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&q=%28businessTypeCode%3DA5+AND+businessTypeCode%3D2X%29&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&q=%28businessTypeCode%3DA5+AND+businessTypeCode%3D2X%29&page=1&size=10"
   }
 }
 </pre>
@@ -14007,9 +14008,9 @@ Note: FOUO Response for one record is provided as an example <br>
 ### Example 5: Get a non-SAM-registered Entity
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b> https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&samRegistered=N<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&samRegistered=N<br>
 <br>
-<b>Alpha URL:</b> https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&samRegistered=N<br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&samRegistered=N<br>
 <br>
 </details>
 
@@ -14058,8 +14059,8 @@ Note: Response for one record is provided as an example <br>
         "congressionalDistrict": null,
 ],
 "links": {
-    "selfLink": "https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&samRegistered=N&page=0&size=10",
-    "nextLink": "https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&samRegistered=N&page=1&size=10"
+    "selfLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&samRegistered=N&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&samRegistered=N&page=1&size=10"
   }
 }
 </pre>
@@ -14070,9 +14071,9 @@ Note: Response for one record is provided as an example <br>
 ### Example 6: Get an Entity with no hierarchy
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=075211119<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=075211119<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=075211119<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=075211119<br>
 <br>
 </details>
 
@@ -14740,7 +14741,7 @@ Note: Response for one record is provided as an example <br>
     }
   ],
   "links": {
-    "selfLink": " https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=075211119&page=0&size=10"
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=075211119&page=0&size=10"
   }
 }
 </pre>
@@ -14751,9 +14752,9 @@ Note: Response for one record is provided as an example <br>
 ### Example 7: Get an Entity with a small hierarchy
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=081343434<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=081343434<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=081343434<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=081343434<br>
 <br>
 </details>
 
@@ -15353,7 +15354,7 @@ Note: Response for one record is provided as an example <br>
     }
   ],
   "links": {
-    "selfLink": " https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=081343434&page=0&size=10"
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=081343434&page=0&size=10"
   }
 }
 </pre>
@@ -15364,9 +15365,9 @@ Note: Response for one record is provided as an example <br>
 ### Example 8: Get an Entity with a large hierarchy
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=439307625<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=439307625<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=439307625<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=439307625<br>
 <br>
 </details>
 
@@ -15965,7 +15966,7 @@ Note: Response for one record is provided as an example <br>
     }
   ],
   "links": {
-    "selfLink": " https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=439307625&page=0&size=10"
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=439307625&page=0&size=10"
   }
 }
 </pre>
@@ -15976,9 +15977,9 @@ Note: Response for one record is provided as an example <br>
 ### Example 9: Get an Entity with an Address Change resulting from EVS Monitoring
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=081270422<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=081270422<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=081270422<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=081270422<br>
 <br>
 </details>
 
@@ -16577,7 +16578,7 @@ Note: Response for one record is provided as an example <br>
     }
   ],
   "links": {
-    "selfLink": " https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=081270422&page=0&size=10"
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=081270422&page=0&size=10"
   }
 }
 </pre>
@@ -16588,9 +16589,9 @@ Note: Response for one record is provided as an example <br>
 ### Example 10: Get an Entity with a Name Change resulting from EVS Monitoring
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=080192883<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=080192883<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=080192883<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=080192883<br>
 <br>
 </details>
 
@@ -17189,7 +17190,7 @@ Note: Response for one record is provided as an example <br>
     }
   ],
   "links": {
-    "selfLink": " https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=080192883&page=0&size=10"
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=080192883&page=0&size=10"
   }
 }
 </pre>
@@ -17200,9 +17201,9 @@ Note: Response for one record is provided as an example <br>
 ### Example 11: Get an Entity with No EVS Monitoring
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/prod/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=079870954<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=079870954<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=079870954<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=079870954<br>
 <br>
 </details>
 
@@ -17896,7 +17897,7 @@ Note: Response for one record is provided as an example <br>
     }
   ],
   "links": {
-    "selfLink": " https://api.sam.gov/prod/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=079870954&page=0&size=10"
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=079870954&page=0&size=10"
   }
 }
 </pre>
@@ -17907,9 +17908,9 @@ Note: Response for one record is provided as an example <br>
 ### Example 12: Get a CSV file of active Entity records that have a non-null DBAN, a CAGE Code that starts with A and that cater to GEOPHYSICAL SURVEYING AND MAPPING SERVICES
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>  https://api.sam.gov/prod/entity-information/v2/entities?api_key=< FOUO API Key>&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV<br>
+<b>Production URL:</b>  https://api.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key>&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/prodlike/entity-information/v2/entities?api_key=&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV><br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV><br>
 <br>
 </details>
 
