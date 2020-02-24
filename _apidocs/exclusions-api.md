@@ -246,27 +246,27 @@ Note: Public Response for one record is provided as an example <br>
       "exclusionOtherInformation": {
         "additionalComments": "",
         "ctCode": "A",
-        "dnbInvestigationStatus": "Currently Not Available",
+        "evsInvestigationStatus": "Currently Not Available",
         "references": {
           "referencesList": [
             {
-              "name": " KWANG PAK",
+              "exclusionName": " KWANG PAK",
               "type": "Currently Not Available"
             },
             {
-              "name": " TAEK CHI",
+              "exclusionName": " TAEK CHI",
               "type": "Currently Not Available"
             },
             {
-              "name": " SOUKDAI KO",
+              "exclusionName": " SOUKDAI KO",
               "type": "Currently Not Available"
             },
             {
-              "name": " MYOUNG KIM",
+              "exclusionName": " MYOUNG KIM",
               "type": "Currently Not Available"
             },
             {
-              "name": " KI NAM",
+              "exclusionName": " KI NAM",
               "type": "Currently Not Available"
             }
           ]
