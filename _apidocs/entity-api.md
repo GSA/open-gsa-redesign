@@ -28,13 +28,20 @@ The Entity Management API will allow users to request Public Entity Information 
 ## Getting Started
 
 Public and FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
+   * Beta: https://api.sam.gov/prod/entity-information/v1/api/entities?api_key= < value >
    * Alpha: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
 
 Sensitive Entity Details can be accessed from Beta or Alpha via the following end points:
    * Beta: Coming soon
    * Alpha: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value ><br><br>
 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+COMING SOON:<br> 
+The Public, FOUO, and Sensitive API endpoints will be updated as follows to meet new API standards:<br>
+<ul>
+ <li style="color: #31708f;">Beta: https://api.sam.gov/entity-information/v1/entities?api_key= < value ></li>
+ </ul>
+</div>
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
@@ -13269,9 +13276,9 @@ Note: FOUO Response for one record is provided as an example <br>
           "email": null
         },
         "accountsReceivablePOC": {
-          "firstName": "JAMIS",
+          "firstName": "FIRST",
           "middleInitial": null,
-          "lastName": "LAKRA",
+          "lastName": "LAST",
           "title": "ENTITY ADMINISTRATOR",
           "usPhone": null,
           "usPhoneExtension": null,
@@ -17905,12 +17912,12 @@ Note: Response for one record is provided as an example <br>
 </p>
 </details>
 
-### Example 12: Get a CSV file of active Entity records that have a non-null DBAN, a CAGE Code that starts with A and that cater to GEOPHYSICAL SURVEYING AND MAPPING SERVICES
+### Example 12:  Get a CSV file of active Entity records
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>  https://api.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key>&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV<br>
+<b>Production URL:</b>  https://api.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key>&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV><br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
 <br>
 </details>
 
