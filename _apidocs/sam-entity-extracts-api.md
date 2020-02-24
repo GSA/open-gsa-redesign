@@ -60,7 +60,7 @@ The Entity and Exclusion extracts are available using the following endpoints:
   
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   COMING SOON:<br> 
-  The endpoints will be updated as follows to meet new API standards:<br>
+  The endpoint will be updated as follows to meet new API standards:<br>
   <ul>
   <li style="color: #31708f;">Beta: https://api.sam.gov/data-services/v1/extracts?api_key= < value ></li>
   </ul>
@@ -254,16 +254,16 @@ You can view the full details of this API's in the OpenAPI Specification file av
 ## Sample Extract Files
 
 1. Existing Extract files: 
-* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_20140504.dat">Public Monthly Extract File</a>
-* Click to view <a href="v1/sample-files/SAM_FOUO_DAILY_20140508.dat">FOUO Daily Extract File</a>
-* Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_20140504.dat">FOUO Monthly Extract File </a>
-* Click to view <a href="v1/sample-files/SENSITIVE_V2_EXTRACT_REFERENCES.ZIP">Sensitive Monthly Extract File</a>
-* Click to view <a href="v1/sample-files/SAM_Exclusions_Public_Extract_20049.ZIP">Exclusions Public Extract File</a><br><br>
+* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_20140504.dat">Public Monthly V1 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_FOUO_DAILY_20140508.dat">FOUO Daily V1 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_20140504.dat">FOUO Monthly V1 Extract File </a>
+* Click to view <a href="v1/sample-files/SENSITIVE_V2_EXTRACT_REFERENCES.ZIP">Sensitive Monthly V2 Extract File</a>
 
 2. Updated Version Extract files:
 * Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_V2_20200207.ZIP">Public Monthly V2 Extract File</a>
 * Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_V2_20200207.ZIP">FOUO Monthly V2 Extract File</a>
-* Click to view <a href="v1/sample-files/SAM_SENSITIVE_MONTHLY_V3_20200207.ZIP">Sensitive Monthly V2 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_SENSITIVE_MONTHLY_V3_20200207.ZIP">Sensitive Monthly V3 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_Exclusions_Public_Extract_20049.ZIP">Exclusions Public V2 Extract File</a><br><br>
 
 <p><small><a href="#">Back to top</a></small></p>
 
