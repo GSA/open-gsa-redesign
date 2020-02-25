@@ -10,8 +10,8 @@ group :jekyll_plugins do
 end
 
 group :development, :test do
-  gem 'rake'
+  gem 'rake', '>= 12.3.3'
   gem 'html-proofer'
-  gem 'eslintrb'
+  gem 'eslintrb', '>= 2.1.0'
   gem 'jekyll-autoprefixer'
 end
