@@ -413,6 +413,6 @@ Date | Version | Description
 09/25/2019 | v1.2 | Beta endpoints for public FOUO and Sensitive API were updated from version 0.9 to version 1.0.
 11/25/2019 | v1.3 | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.
 12/20/2019 | v1.4 | Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.
-02/25/2020 | v1.5 | * Added Examples for v2 responses. <br><br> * Updated Alpha and Beta endpoints to meet new API standards.
+02/25/2020 | v1.5 | * Added Examples for v2 requests and responses. <br><br> * Updated Alpha endpoints to meet new API standards.
 
 <p><small><a href="#">Back to top</a></small></p>
