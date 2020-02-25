@@ -130,6 +130,7 @@ data.placeOfPerformance.zip  | Pop Country zip| String | v1<br> v2
 additionalInfoLink|	Any additional info link if available for the opportunity	|String| v1<br> v2
 uiLink	|Direct UI link to the opportunity. To view the opportunity on UI, user must have either a contracting officer or a Contracting Specialist role. If user hits the link without logging in, user is directed to 404 not found page |	String| v1<br> v2
 links	|Every record in a response has this links array consisting of: <br> rel: self<br>href: link to the specific opportunity itself. User should provide an API key to access the opportunity directly<br><br>Also, every response has a master links array consisting of:<br>    rel: self<br>href: link to the actual request. User should provide an API key to access the request|	Array| v1<br> v2
+resourceLinks (Coming Soon to Production) | Direct URL to download attachments in the opportunity | Array of Strings| v1<br> v2
 
 ### Set-Aside Values
 Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field. Use the Set-Aside codes to submit notices.
@@ -423,7 +424,7 @@ Note: Request URL for alpha is used in this example
 </details>
 
 <details>
-    <summary>Response (JSON Output)</summary>
+    <summary>Response (JSON Output) v1</summary>
 
 Note: Response for one record is provided as an example <br>
 
@@ -473,6 +474,122 @@ Note: Response for one record is provided as an example <br>
                         }
                     },
                     "duns": "006435549"
+                }
+            },
+            "pointOfContact": [
+                {
+                    "fax": null,
+                    "type": "primary",
+                    "email": "jesse.jones@gsa.gov",
+                    "phone": "2174941263",
+                    "title": "Contracting Officer ",
+                    "fullName": "Jesse L. Jones"
+                }
+            ],
+            "description": "https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=5b345bbb7127b91a3ad577b203fc6f68",
+            "organizationType": "OFFICE",
+            "officeAddress": {
+                "zipcode": "60604",
+                "city": "CHICAGO",
+                "countryCode": "USA",
+                "state": "IL"
+            },
+            "placeOfPerformance": {
+                "streetAddress": "517 E Wisconsin Ave",
+                "city": {
+                    "code": "53000",
+                    "name": "Milwaukee"
+                },
+                "state": {
+                    "code": "WI"
+                },
+                "zip": "53202",
+                "country": {
+                    "code": "USA"
+                }
+            },
+            "additionalInfoLink": null,
+            "uiLink": "https://beta.sam.gov/opp/5b345bbb7127b91a3ad577b203fc6f68/view",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://api.sam.gov/prod/opportunities/v1/search?noticeid=5b345bbb7127b91a3ad577b203fc6f68&limit=1",
+                    "hreflang": null,
+                    "media": null,
+                    "title": null,
+                    "type": null,
+                    "deprecation": null
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://api.sam.gov/prod/opportunities/v1/search?limit=1&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general",
+            "hreflang": null,
+            "media": null,
+            "title": null,
+            "type": null,
+            "deprecation": null
+        }
+    ]
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+    <summary>Response (JSON Output) v2</summary>
+
+Note: Response for one record is provided as an example <br>
+
+<p>
+<code><pre>
+{
+    "totalRecords": 34,
+    "limit": 1,
+    "offset": 0,
+    "opportunitiesData": [
+        {
+            "noticeId": "5b345bbb7127b91a3ad577b203fc6f68",
+            "title": "Historic Office Renovation ",
+            "solicitationNumber": " 47PF0018R0023 ",
+            "department": "GENERAL SERVICES ADMINISTRATION",
+            "subTier": "PUBLIC BUILDINGS SERVICE",
+            "office": "PBS R5",
+            "postedDate": "2018-05-04",
+            "type": "Award Notice",
+            "baseType": "Combined Synopsis/Solicitation",
+            "archiveType": "manual",
+            "archiveDate": null,
+            "typeOfSetAsideDescription": null,
+            "typeOfSetAside": null,
+            "responseDeadLine": null,
+            "naicsCode": "236220",
+            "classificationCode": "Z",
+            "active": "Yes",
+            "award": {
+                "date": "2018-05-04",
+                "number": "47PF0018C0066",
+                "amount": "800620",
+                "awardee": {
+                    "name": "D.G. Beyer, Inc.",
+                    "location": {
+                        "streetAddress": "3080 S Calhoun Rd.",
+                        "city": {
+                            "code": "56375",
+                            "name": "New Berlin"
+                        },
+                        "state": {
+                            "code": "WI"
+                        },
+                        "zip": "53151",
+                        "country": {
+                            "code": "USA"
+                        }
+                    },
+                    "ueiSAM": "025114695AST"
                 }
             },
             "pointOfContact": [
@@ -1022,5 +1139,7 @@ Date | Version | Description
 12/2/19| v1.1|Added OpenAPI Specification
 12/18/19| v1.2|Opportunities Response parameters updated to include Award Details JSON Specification and provided the  examples
 1/20/2020 | v1.3| Added Award Response and Versioning columns
+1/31/2020 | v1.4 | Added field "ResourceLinks" with Coming Soon to prod
+2/18/2020 | v1.5| Added UEI information and versioning column and response example for awards
 
 <p><small><a href="#">Back to top</a></small></p>
