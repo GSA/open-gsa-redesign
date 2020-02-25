@@ -56,17 +56,16 @@ The Entity Management extracts contain entities (businesses and government agenc
 The Entity and Exclusion extracts are available using the following endpoints:
  
   * Beta: https://api.sam.gov/prod/dataservices/v1/extracts?api_key= < value >
-  * Alpha: https://api-alpha.sam.gov/prodlike/dataservices/v1/extracts?api_key= < value ><br><br>
+  * Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?api_key= < value ><br><br>
   
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   COMING SOON:<br> 
-  The endpoints will be updated as follows to meet new API standards:<br>
+  The endpoint will be updated as follows to meet new API standards:<br>
   <ul>
   <li style="color: #31708f;">Beta: https://api.sam.gov/data-services/v1/extracts?api_key= < value ></li>
-  <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?api_key= < value ></li>
   </ul>
   </div>
-  
+    
 Generating a personal API Key:
 * Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on beta.sam.gov
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
@@ -252,6 +251,27 @@ You can view the full details of this API's in the OpenAPI Specification file av
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## Sample Extract Files
+
+ 
+1. Existing Extract files: 
+* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_20140504.dat">Public Monthly V1 Extract File</a><br><br>
+
+2. Updated Version of Extract files with UEI Information:
+* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_V2_20200207.ZIP">Public Monthly V2 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_Exclusions_Public_Extract_20049.ZIP">Exclusions Public V2 Extract File</a><br>
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">  COMING SOON:<br>
+  <ul>
+  <li style="color: #31708f;">FOUO Daily V1 Extract File</li>
+  <li style="color: #31708f;">FOUO Monthly V1 Extract File</li>
+  <li style="color: #31708f;">Sensitive Monthly V2 Extract File</li>
+  <li style="color: #31708f;">FOUO Monthly V2 Extract File</li>
+  <li style="color: #31708f;">Sensitive Monthly V3 Extract File</li>
+  </ul>
+</div>
+<p><small><a href="#">Back to top</a></small></p>
+
 ## HTTP Response Codes
 
 The API will return one of the following responses:
@@ -278,5 +298,6 @@ Date | Version | Description
 06/03/2019 | v 1.0 | Base Version
 08/15/2019 | v 1.1 | * Added Beta.SAM.Gov to the page title. <br><br>* Clarified the Alpha and Beta endpoints.
 12/20/2019 | v 1.2 | * Added Sample FOUO and Sensitive File Names and Revised extract layouts for the upcoming UEI/EVS changes. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.
+02/25/2020 | v1.3 | * Updated Alpha endpoint to meet new API standards.<br><br> * Added Sample Extract Files.
 
 <p><small><a href="#">Back to top</a></small></p>
