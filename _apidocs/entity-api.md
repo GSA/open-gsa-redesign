@@ -29,18 +29,17 @@ The Entity Management API will allow users to request Public Entity Information 
 
 Public and FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
    * Beta: https://api.sam.gov/prod/entity-information/v1/api/entities?api_key= < value >
-   * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v1/api/entities?api_key= < value >
+   * Alpha: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
 
-Sensitive Entity Details  can be accessed from Beta or Alpha via the following end points:
+Sensitive Entity Details can be accessed from Beta or Alpha via the following end points:
    * Beta: Coming soon
-   * Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v1/api/entities?api_key= < value ><br><br>
+   * Alpha: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value ><br><br>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
 COMING SOON:<br> 
 The Public, FOUO, and Sensitive API endpoints will be updated as follows to meet new API standards:<br>
 <ul>
  <li style="color: #31708f;">Beta: https://api.sam.gov/entity-information/v1/entities?api_key= < value ></li>
- <li style="color: #31708f;"> Alpha: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value ></li>
  </ul>
 </div>
 
@@ -53,12 +52,12 @@ Generating a personal API Key:
 Generating a System Account API Key:
 * Users registered with a non-government email address and associated with an entity OR users registered with a government email address may request a system account for public data access.
 * If a user satisfies the above registration criteria they will be able to access the System Accounts widget from their Workspace page after logging in.
-* The user can then select “Go to System Accounts” from the widget and fill out the required sections.
+* The user can then select "Go to System Accounts" from the widget and fill out the required sections.
 * The requested system account will then need to be approved.  After approval the user will be notified via email and they can also see the updated status in the System Account widget.
 * The user can select 'Go to System Accounts' again in the widget from their workspace and enter a new system account password.
 * After setting up the password the user will see a new section for retrieving a system account API Key.
 * The user must enter their password again to retrieve the key.
-* NOTE:  To obtain access to the FOUO/Sensitive Entity API data with a system account the user must be registered with a government email address.
+* NOTE: To obtain access to the FOUO/Sensitive Entity API data with a system account the user must be registered with a government email address.
 
 Utilizing the Entity API as an extract:
 * To utilize this API as an Extract an additional parameter called 'format' has been implemented.
@@ -119,6 +118,13 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
+<td>entityEFTIndicator</td>
+<td>Entity EFT Indicator aka duns4.
+<br>Example: entityEFTIndicator=0000</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y or N or null.
 <br>Example: debtSubjectToOffset=Y</td>
@@ -145,7 +151,7 @@ can be sent.
 <td>ueiSAM</td>
 <td>Unique Entity Identifier SAM - Allow 12 digit value, 
 alphanumeric (ueiSAM values not yet available for search).
-<br>Example: ueiSAM=025114695AST
+<br>Example: ueiSAM=RV56IG5JM6G9
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -260,9 +266,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>physicalAddressProvinceOrState</td>
+<td>physicalAddressProvinceOrStateCode</td>
 <td>Allows 2 character code.
-<br>Example: physicalAddressProvinceOrState=AR
+<br>Example: physicalAddressProvinceOrStateCode=AR
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -2728,6 +2734,13 @@ First Name</td>
 </tr>
 
 <tr>
+<td>entityEFTIndicator</td>
+<td>Entity EFT Indicator aka duns4.
+<br>Example: entityEFTIndicator=0000</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y or N or null.
 <br>Example: debtSubjectToOffset=Y</td>
@@ -2754,7 +2767,7 @@ can be sent.
 <td>ueiSAM</td>
 <td>Unique Entity Identifier SAM - Allow 12 digit value, 
 alphanumeric (ueiSAM values not yet available for search).
-<br>Example: ueiSAM=025114695AST
+<br>Example: ueiSAM=RV56IG5JM6G9
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -2869,9 +2882,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>physicalAddressProvinceOrState</td>
+<td>physicalAddressProvinceOrStateCode</td>
 <td>Allows 2 character code.
-<br>Example: physicalAddressProvinceOrState=AR
+<br>Example: physicalAddressProvinceOrStateCode=AR
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -3073,7 +3086,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>ultimateParentUEISAM</td>
 <td>Allows text.
-<br>Example: ultimateParentUEISAM=090123451</td>
+<br>Example: ultimateParentUEISAM=RQ56IG5JM6G9</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -5733,6 +5746,7 @@ First Name</td>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -7215,6 +7229,13 @@ First Name</td>
 </tr>
 
 <tr>
+<td>entityEFTIndicator</td>
+<td>Entity EFT Indicator aka duns4.
+<br>Example: entityEFTIndicator=0000</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y or N or null.
 <br>Example: debtSubjectToOffset=Y</td>
@@ -7241,7 +7262,7 @@ can be sent.
 <td>ueiSAM</td>
 <td>Unique Entity Identifier SAM - Allow 12 digit value, 
 alphanumeric (ueiSAM values not yet available for search).
-<br>Example: ueiSAM=025114695AST
+<br>Example: ueiSAM=RV56IG5JM6G9
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7356,9 +7377,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>physicalAddressProvinceOrState</td>
+<td>physicalAddressProvinceOrStateCode</td>
 <td>Allows 2 character code.
-<br>Example: physicalAddressProvinceOrState=AR
+<br>Example: physicalAddressProvinceOrStateCode=AR
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7560,7 +7581,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>ultimateParentUEISAM</td>
 <td>Allows text.
-<br>Example: ultimateParentUEISAM=090123451</td>
+<br>Example: ultimateParentUEISAM=RQ56IG5JM6G9</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -11942,28 +11963,5968 @@ The API will return one of the following responses:
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Explanation of the API using Examples
-Functionality of the Entity API has been explained with the following examples:
+## Examples
 
-**User requirement:** 
-To get only the entityRegistration, coreData and assertions sections for the Entity records whose entityStructureCode is 2J or 8H, 
-physicalAddressCountryCode is USA, countryOfIncorporationCode is USA, registrationDate is from 01/01/2018 to 04/23/2019, servedDisasterStateCode is  
-NE or LA or TX, cageCode is not null, dodaac is null, and primaryNaics is 812112 or 484121 or 336411.
+### Example 1: Get all the Entities that are registered for "All Awards & IGT"
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&q=(purposeOfRegistrationCode:Z5 OR purposeOfRegistrationDesc:"All Awards *IGT")<br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&q=(purposeOfRegistrationCode:Z5 OR purposeOfRegistrationDesc:"All Awards *IGT")<br>
+<br>
+</details>
 
-**API Request:**
-https://api.sam.gov/prod/entity-information/v1/api/entities?api_key=<API Key>&q=((entityStructureCode=2J OR entityStructureCode=8H) 
-AND physicalAddressCountryCode=USA AND countryOfIncorporationCode=USA)&registrationDate=[01/01/2018,04/23/2019]&servedDisasterStateCode=[NE~LA~TX]&cageCode=!""
-&dodaac=""&primaryNaics=[812112~484121~336411]&includeSections=entityRegistration,coreData,assertions
-<br>OR<br>
-https://api.sam.gov/prod/entity-information/v1/api/entities?api_key=<API Key>&entityStructureCode=[2J~8H]&physicalAddressCountryCode=USA
-&countryOfIncorporationCode=USA&registrationDate=[01/01/2018,04/23/2019]&servedDisasterStateCode=[NE~LA~TX]&cageCode=!""&dodaac=""&primaryNaics=[812112~484121~336411]
-&includeSections=entityRegistration,coreData,assertions
+<details>
+<summary>Response (JSON Output)</summary>
+Note: FOUO Response for one record is provided as an example <br>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 192,
+  "entityData": [
+    {
+      "entityRegistration": {
+       "samRegistered": "Y",
+        "ueiSAM": "F7SEZJMNRYN1",
+        "ueiDUNS": "116766843",
+        "entityEFTIndicator": null,
+        "cageCode": "882S5",
+        "dodaac": null,
+        "legalBusinessName": "SOUTHERN COASTAL SERVICES, LLC",
+        "dbaName": null,
+        "purposeOfRegistrationCode": "Z5",
+        "purposeOfRegistrationDesc": "All Awards & IGT",
+        "registrationStatus": "Active",
+        "registrationDate": "2019-01-28",
+        "lastUpdateDate": "2019-04-28",
+        "registrationExpirationDate": "2020-01-28",
+        "activationDate": "2019-01-28",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-28",
+        "ueiCreationDate": "2020-02-06",
+        "noPublicDisplayFlag": "F",
+        "exclusionStatusFlag": null,
+        "exclusionURL": null,
+        "dnbOpenData": "Y"
+      },
+      "coreData": {
+        "entityHierarchyInformation": {
+          "immediateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": null,
+            "phoneNumber": null
+          },
+          "intermediateParentEntities": [
+            {
+              "domesticParent": {
+                "ueiSAM": null,
+                "ueiDUNS": null,
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": null,
+                  "addressLine2": null,
+                  "city": null,
+                  "stateOrProvinceCode": null,
+                  "countryCode": null,
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              },
+              "hqParent": {
+                "ueiSAM": null,
+                "ueiDUNS": null,
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": null,
+                  "addressLine2": null,
+                  "city": null,
+                  "stateOrProvinceCode": null,
+                  "countryCode": null,
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              }
+            }
+          ],
+          "ultimateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": {
+              "addressLine1": null,
+              "addressLine2": null,
+              "city": null,
+              "stateOrProvinceCode": null,
+              "countryCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null
+            },
+            "phoneNumber": null
+          },
+          "evsMonitoring": {
+              "legalBusinessName": "Southern Coastal Services, LLC",
+              "dbaName": null,
+              "outOfBusinessFlag": null,
+              "monitoringStatus": "Y",
+              "lastUpdated": "Y",
+              "addressLine1": "Address1",
+              "addressLine2": "Address2",
+              "city": "City",
+              "zipCode": "11111",
+              "zipCodePlus4": "1111",
+              "stateOrProvinceCode": "XX",
+              "countryCode": "ABC"
+            },
+          }
+        },
+        "federalHierarchy": {
+          "source": "Federal",
+          "hierarchyDepartmentCode": "7000",
+          "hierarchyDepartmentName": "United States Department of Homeland Security",
+          "hierarchyAgencyCode": "7008",
+          "hierarchyAgencyName": "United States Coast Guard",
+          "hierarchyOfficeCode": "70Z00L"
+        },
+        "entityInformation": {
+          "entityURL": "www.corpURL.com",
+          "entityDivisionName": "DIVISION NAME",
+          "entityDivisionNumber": "21",
+          "entityStartDate": "2018-12-12",
+          "fiscalYearEndCloseDate": "1212",
+          "submissionDate": "Currently Not Available"
+        },
+        "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "congressionalDistrict": "01",
+        "generalInformation": {
+          "agencyBusinessPurposeCode": "3",
+          "agencyBusinessPurposeDesc": "Buyer and Seller",
+          "entityStructureCode": "2A",
+          "entityStructureDesc": "U.S. Government Entity",
+          "entityTypeCode": "2R",
+          "entityTypeDesc": "US Federal Government",
+          "profitStructureCode": null,
+          "profitStructureDesc": null,
+          "organizationStructureCode": null,
+          "organizationStructureDesc": null,
+          "stateOfIncorporationCode": null,
+          "stateOfIncorporationDesc": "Currently Not Available",
+          "countryOfIncorporationCode": null,
+          "countryOfIncorporationDesc": "Currently Not Available",
+          "companySecurityLevelCode": null,
+          "companySecurityLevelDesc": "",
+          "highestEmployeeSecurityLevelCode": null,
+          "highestEmployeeSecurityLevelDesc": ""
+        },
+        "businessTypes": {
+          "businessTypeList": [
+            {
+              "businessTypeCode": "2R",
+              "businessTypeDesc": "US Federal Government"
+            }
+          ],
+          "sbaBusinessTypeList": [
+            {
+              "sbaBusinessTypeCode": null,
+              "sbaBusinessTypeDesc": null,
+              "certificationEntryDate": "Currently Not Available",
+              "certificationExitDate": null
+            }
+          ]
+        },
+        "financialInformation": {
+          "creditCardUsage": "Y",
+          "debtSubjectToOffset": null
+        }
+      },
+      "assertions": {
+        "goodsAndServices": {
+          "primaryNaics": "541990",
+          "naicsList": [
+            {
+              "naicsCode": "541990",
+              "naicsDescription": "ALL OTHER PROFESSIONAL, SCIENTIFIC, AND TECHNICAL SERVICES",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            }
+          ],
+          "pscList": [
+            {
+              "pscCode": "R425",
+              "pscDescription": "SUPPORT- PROFESSIONAL: ENGINEERING/TECHNICAL"
+            }
+          ]
+        },
+        "disasterReliefData": {
+          "disasterRegistryFlag": "YES",
+          "bondingFlag": "YES",
+          "bondingLevels": [
+            {
+              "type": "Construction Bonding Level, Per Contract (dollars)",
+              "value": "11111"
+            },
+            {
+              "type": "Construction Bonding Level, Aggregate (dollars)",
+              "value": "22222"
+            },
+            {
+              "type": "Service Bonding Level, Per Contract (dollars)",
+              "value": "33333"
+            },
+            {
+              "type": "Service Bonding Level, Aggregate (dollars)",
+              "value": "44444"
+            }
+          ],
+          "geographicalAreaServed": [
+            {
+              "geographicalAreaServedStateCode": "ANY",
+              "geographicalAreaServedStateName": "Currently Not Available",
+              "geographicalAreaServedCountyCode": null,
+              "geographicalAreaServedCountyName": "Currently Not Available",
+              "geographicalAreaServedmetropolitanStatisticalAreaCode": null,
+              "geographicalAreaServedmetropolitanStatisticalAreaName": "Currently Not Available"
+            }
+          ]
+        },
+        "sizeMetrics": {
+          "averageAnnualRevenue": "11",
+          "averageNumberOfEmployees": "22"
+        },
+        "sizeMetricDetails": {
+          "employeesLocation": "11",
+          "receiptsLocation": "22"
+        },
+        "industrySpecificSizeMetrics": {
+          "barrelsCapacity": null,
+          "totalAssets": null,
+          "megawattHours": null
+        },
+        "ediInformation": {
+          "ediInformationFlag": "Y",
+          "vanProvider": "UPDATE",
+          "isaQualifier": "11",
+          "isaIdentifier": "1234567",
+          "functionalGroupIdentifier": "FUNCTION",
+          "requestFlag820s": "Y"
+        }
+      },
+      "repsAndCerts": {
+        "certifications": {
+          "fARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "firstName": "Currently Not Available",
+                  "lastName": "Currently Not Available",
+                  "hasSizeProtest": "Currently Not Available",
+                  "title": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "status": "Currently Not Available",
+                  "organizationType": "Currently Not Available",
+                  "endProductName": "Currently Not Available",
+                  "endProductType": "Currently Not Available",
+                  "endProductCountry": "Currently Not Available",
+                  "placeOfManufacture": "Currently Not Available",
+                  "fscCode": "Currently Not Available",
+                  "environmentURL": "Currently Not Available",
+                  "facilityStreetAddress1": "Currently Not Available",
+                  "facilityStreetAddress2": "Currently Not Available",
+                  "facilityCity": "Currently Not Available",
+                  "facilityPostalCode": "Currently Not Available",
+                  "facilityState": "Currently Not Available",
+                  "facilityCountry": "Currently Not Available",
+                  "facilityOwner": "Currently Not Available",
+                  "facilityOwnerStreetAddress1": "Currently Not Available",
+                  "facilityOwnerStreetAddress2": "Currently Not Available",
+                  "facilityOwnerCity": "Currently Not Available",
+                  "facilityOwnerPostalCode": "Currently Not Available",
+                  "facilityOwnerState": "Currently Not Available",
+                  "facilityOwnerCountry": "Currently Not Available",
+                  "immediateOwnerLegalBusinessName": "Currently Not Available",
+                  "immediateOwnerCageCode": "Currently Not Available",
+                  "highestOwnerLegalBusinessName": "Currently Not Available",
+                  "highestOwnerCageCode": "Currently Not Available",
+                  "firstPredecessorLegalBusinessName": "Currently Not Available",
+                  "firstPredecessorCageCode": "Currently Not Available",
+                  "secondPredecessorLegalBusinessName": "Currently Not Available",
+                  "secondPredecessorCageCode": "Currently Not Available",
+                  "thirdPredecessorLegalBusinessName": "Currently Not Available",
+                  "thirdPredecessorCageCode": "Currently Not Available",
+                  "primaryNaics": "Currently Not Available",
+                  "naicsCode": "Currently Not Available",
+                  "sbaSmallBusiness": "Currently Not Available",
+                  "smallBusiness": "Currently Not Available",
+                  "veteranOwnedSmallBusiness": "Currently Not Available",
+                  "serviceDisabledVetOwnedSmallBusiness": "Currently Not Available",
+                  "womenOwnedSmallBusinessConcern": "Currently Not Available",
+                  "womenOwnedSmallBusiness": "Currently Not Available",
+                  "economicallyDisadvWomenOwnedSmallBusiness": "Currently Not Available",
+                  "smallDisadvantagedBusinessConcern": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusiness": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted": "Currently Not Available",
+                  "hubZoneSmallBusinessConcern": "Currently Not Available",
+                  "blackAmericanOwned": "Currently Not Available",
+                  "hispanicAmericanOwned": "Currently Not Available",
+                  "nativeAmericanOwned": "Currently Not Available",
+                  "asianPacificAmericanOwned": "Currently Not Available",
+                  "subcontinentAsianIndianAmericanOwned": "Currently Not Available",
+                  "historicallyBlackCollegeOrUniversity": "Currently Not Available",
+                  "minorityInstitution": "Currently Not Available",
+                  "linkForFARReportPDF": "https://www.sam.gov/SAMPortal/filedownload?pdfType=1&duns=116766843",
+                  "linkForFARReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ],
+          "dFARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "foreignGovernmentOwnershipFirstName": "Currently Not Available",
+                  "foreignGovernmentOwnershipMiddleInitial": "Currently Not Available",
+                  "foreignGovernmentOwnershipLastName": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneNum": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneExt": "Currently Not Available",
+                  "foreignGovernmentOwnershipInternationalNum": "Currently Not Available",
+                  "foreignGovernmentControlCountry": "Currently Not Available",
+                  "foreignEndProductName": "Currently Not Available",
+                  "foreignEndProductCountry": "Currently Not Available",
+                  "linkForDFARSReportPDF": "https://www.sam.gov/SAM/filedownload?pdfType=2&duns=116766843",
+                  "linkForDFARSReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ]
+        },
+        "qualifications": {
+          "architectEngineerResponses": {
+            "listOfProvisions": [
+              {
+                "provisionId": "Currently Not Available"
+              }
+            ],
+            "listOfAnswers": [
+              {
+                "answerType": "Currently Not Available",
+                "answerId": "Currently Not Available",
+                "answerText": "Currently Not Available",
+                "businessObjectType": "Currently Not Available",
+                "businessObjectId": "Currently Not Available",
+                "firstName": "Currently Not Available",
+                "middleInitial": "Currently Not Available",
+                "lastName": "Currently Not Available",
+                "title": "Currently Not Available",
+                "companyName": "Currently Not Available",
+                "companyEstablishedYear": "Currently Not Available",
+                "companyDUNS": "Currently Not Available",
+                "companyIsReference": "Currently Not Available",
+                "firmNumOfEmployees": "Currently Not Available",
+                "branchNumOfEmployees": "Currently Not Available",
+                "experienceCode": "Currently Not Available",
+                "annualAvgRevenueCode": "Currently Not Available",
+                "federalRevenueCode": "Currently Not Available",
+                "nonFedRevenueCode": "Currently Not Available",
+                "totalRevenueCode": "Currently Not Available",
+                "qualificationURLPDF": "Currently Not Available",
+                "qualificationURLHTML": "Currently Not Available"
+              }
+            ]
+          }
+        },
+        "financialAssistanceCertifications": {
+          "financialAssistanceResponse": "Currently Not Available"
+        }
+      },
+      "pointsOfContact": {
+        "governmentBusinessPOC": {
+          "firstName": "A",
+          "middleInitial": null,
+          "lastName": "B",
+          "title": "TITLE",
+          "usPhone": "9999999999",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "test@test.com",
+          "addressLine1": "ADDRESS LINE 1",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "electronicBusinessPOC": {
+          "firstName": "A",
+          "middleInitial": null,
+          "lastName": "B",
+          "title": "TITLE",
+          "usPhone": "9999999999",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "test@test.com",
+          "addressLine1": "ADDRESS LINE 1",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "governmentBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "electronicBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformancePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformanceAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "partyPerformingCertificationPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "soleProprietorshipPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "accountsReceivablePOC": {
+          "firstName": "A",
+          "middleInitial": null,
+          "lastName": "B",
+          "title": "TITLE",
+          "usPhone": "9999999999",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "test@test.com"
+        },
+        "accountsPayablePOC": {
+          "firstName": "A",
+          "middleInitial": null,
+          "lastName": "B",
+          "title": "TITLE",
+          "usPhone": "9999999999",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "test@test.com",
+          "addressLine1": "ADDRESS LINE 1",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "1111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "ediPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "eliminationsPOC": {
+          "firstName": "A",
+          "middleInitial": null,
+          "lastName": "B",
+          "title": "TITLE",
+          "usPhone": "9999999999",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "test@test.com",
+          "addressLine1": "ADDRESS LINE 1",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "1111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "salesPOC": {
+          "firstName": "A",
+          "middleInitial": null,
+          "lastName": "B",
+          "title": "TITLE",
+          "usPhone": "9999999999",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "test@test.com",
+          "addressLine1": "ADDRESS LINE 1",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "1111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        }
+      }
+    }
+  ],
+  "links": {
+    "selfLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&purposeOfRegistrationCode=Z5&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&purposeOfRegistrationCode=Z5&page=1&size=10"
+  }
+}
+</pre>
+</code>
+</p>
+</details>
 
-**User requirement:**
-To get a CSV file of active Entity records that have a DBAN and that cater to GEOPHYSICAL SURVEYING AND MAPPING SERVICES.
+### Example 2: Get the "entityRegistration" section of all the Entities that are registered for "All Awards" or "Federal Assistance Awards"
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&purposeOfRegistrationCode=[Z1~Z2]&includeSections=entityRegistration <br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&purposeOfRegistrationCode=[Z1~Z2]&includeSections=entityRegistration <br>
+<br>
+</details>
 
-**API request:** 
-https://api.sam.gov/prod/entity-information/v1/api/entities?api_key=<API Key>&samExtractCode=A&q=”GEOPHYSICAL SURVEYING AND MAPPING SERVICES”&dbaName=!””&format=CSV
+<details>
+<summary>Response (JSON Output)</summary>
+Note: FOUO Response for one record is provided as an example <br>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 555506 ,
+  "entityData": [
+    {
+      "entityRegistration": {
+        "samRegistered": "Y",
+        "ueiSAM": " F7SEZJMNRYN1",
+        "ueiDUNS": "075211119",
+        "entityEFTIndicator": null,
+        "cageCode": "87AW0",
+        "dodaac": null,
+        "legalBusinessName": "BRADLEY DEFENSE SOLUTIONS INC",
+        "dbaName": null,
+        "purposeOfRegistrationCode": "Z2",
+        "purposeOfRegistrationDesc": "All Awards",
+        "registrationStatus": "Active",
+        "registrationDate": "2019-04-23",
+        "lastUpdateDate": "2019-04-24",
+        "registrationExpirationDate": "2020-04-23",
+        "activationDate": "2019-04-24",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
+        "noPublicDisplayFlag": "F",
+        "exclusionStatusFlag": null,
+        "exclusionURL": null
+        "dnbOpenData": "Y"
+      }
+    },
+    {
+      "entityRegistration": {
+        "samRegistered": "Y",
+        "ueiSAM": " F7SEZJMNRYN1",
+        "ueiDUNS": "081296509",
+        "entityEFTIndicator": null,
+        "cageCode": "877M1",
+        "dodaac": null,
+        "legalBusinessName": "AMIRA LEARNING, INC.",
+        "dbaName": null,
+        "purposeOfRegistrationCode": "Z1",
+        "purposeOfRegistrationDesc": "Federal Assistance Awards",
+        "registrationStatus": "Active",
+        "registrationDate": "2019-04-23",
+        "lastUpdateDate": "2019-04-24",
+        "registrationExpirationDate": "2020-04-23",
+        "activationDate": "2019-04-24",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
+        "noPublicDisplayFlag": "F",
+        "exclusionStatusFlag": null,
+        "exclusionURL": null
+        "dnbOpenData": "Y"
+      }
+    }
+],
+  "links": {
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&purposeOfRegistrationCode=%5BZ1%7EZ2%5D&includeSections=entityRegistration&page=0&size=10",
+    "nextLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&purposeOfRegistrationCode=%5BZ1%7EZ2%5D&includeSections=entityRegistration&page=1&size=10"
+  }
+}
+</pre>
+</code>
+</p>
+</details>
+
+### Example 3: Get all the Entities that are registered as 'Joint Venture Women' or 'Asian-Pacific'
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')<br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')<br>
+<br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+Note: FOUO Response for one record is provided as an example <br>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 3401,
+  "entityData": [
+    {
+      "entityRegistration": {
+        "samRegistered": "Y",
+        "ueiSAM": " F7SEZJMNRYN1",
+        "ueiDUNS": "557905982",
+        "entityEFTIndicator": null,
+        "cageCode": "SFFJ7",
+        "dodaac": null,
+        "legalBusinessName": "BEUT AL WATIYAH GENERAL TRADING AND CONTRACTING COMPANY",
+        "dbaName": null,
+        "purposeOfRegistrationCode": "Z2",
+        "purposeOfRegistrationDesc": "All Awards",
+        "registrationStatus": "Active",
+        "registrationDate": "2018-08-28",
+        "lastUpdateDate": "2018-09-08",
+        "registrationExpirationDate": "2019-08-30",
+        "activationDate": "2018-09-04",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
+        "noPublicDisplayFlag": "F",
+        "exclusionStatusFlag": null,
+        "exclusionURL": null
+        "dnbOpenData": "N"
+      },
+      "coreData": {
+        "entityHierarchyInformation": {
+          "immediateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": null,
+            "phoneNumber": null
+          },
+          "intermediateParentEntities": [
+            {
+              "domesticParent": {
+                "ueiSAM": null,
+                "ueiDUNS": null,
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": null,
+                  "addressLine2": null,
+                  "city": null,
+                  "stateOrProvinceCode": null,
+                  "countryCode": null,
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              },
+              "hqParent": {
+                "ueiSAM": null,
+                "ueiDUNS": null,
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": null,
+                  "addressLine2": null,
+                  "city": null,
+                  "stateOrProvinceCode": null,
+                  "countryCode": null,
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              }
+            }
+          ],
+          "ultimateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": {
+              "addressLine1": null,
+              "addressLine2": null,
+              "city": null,
+              "stateOrProvinceCode": null,
+              "countryCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null
+            },
+            "phoneNumber": null
+          },
+          "evsMonitoring": {
+              "legalBusinessName": "BEUT AL WATIYAH GENERAL TRADING AND CONTRACTING COMPANY",
+              "dbaName": null,
+              "outOfBusinessFlag": null,
+              "monitoringStatus": "Y",
+              "lastUpdated": "Y",
+              "addressLine1": "Address1",
+              "addressLine2": "Address2",
+              "city": "City",
+              "zipCode": "11111",
+              "zipCodePlus4": “1111",
+              "stateOrProvinceCode": "XX",
+              "countryCode": "ABC"
+            },
+         }
+        },
+        "federalHierarchy": {
+          "source": null,
+          "hierarchyDepartmentCode": null,
+          "hierarchyDepartmentName": null,
+          "hierarchyAgencyCode": null,
+          "hierarchyAgencyName": null,
+          "hierarchyOfficeCode": null
+        },
+        "entityInformation": {
+          "entityURL": null,
+          "entityDivisionName": "BEUT AL WATIYAH GENERAL TRADING AND CONTRACTING COMPANY",
+          "entityDivisionNumber": "4669",
+          "entityStartDate": "1990-10-15",
+          "fiscalYearEndCloseDate": "1231",
+          "submissionDate": "Currently Not Available"
+        },
+        "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": “City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": “11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": “City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": “11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "congressionalDistrict": null,
+        "generalInformation": {
+          "agencyBusinessPurposeCode": null,
+          "agencyBusinessPurposeDesc": "",
+          "entityStructureCode": "2K",
+          "entityStructureDesc": "Partnership or Limited Liability Partnership",
+          "entityTypeCode": "Currently Not Available",
+          "entityTypeDesc": "Currently Not Available",
+          "profitStructureCode": "2X",
+          "profitStructureDesc": "For Profit Organization",
+          "organizationStructureCode": "LJ",
+          "organizationStructureDesc": "Limited Liability Company",
+          "stateOfIncorporationCode": null,
+          "stateOfIncorporationDesc": "Currently Not Available",
+          "countryOfIncorporationCode": null,
+          "countryOfIncorporationDesc": "Currently Not Available",
+          "companySecurityLevelCode": null,
+          "companySecurityLevelDesc": "",
+          "highestEmployeeSecurityLevelCode": null,
+          "highestEmployeeSecurityLevelDesc": ""
+        },
+        "businessTypes": {
+          "businessTypeList": [
+            {
+              "businessTypeCode": "23",
+              "businessTypeDesc": "Minority Owned Business"
+            },
+            {
+              "businessTypeCode": "2X",
+              "businessTypeDesc": "For Profit Organization"
+            },
+            {
+              "businessTypeCode": "8C",
+              "businessTypeDesc": "Joint Venture Women Owned Small Business"
+            },
+            {
+              "businessTypeCode": "8D",
+              "businessTypeDesc": "Joint Venture Economically Disadvantaged Women Small Owned Business"
+            },
+            {
+              "businessTypeCode": "A2",
+              "businessTypeDesc": "Woman Owned Business"
+            },
+            {
+              "businessTypeCode": "A5",
+              "businessTypeDesc": "Veteran Owned Business"
+            },
+            {
+              "businessTypeCode": "FR",
+              "businessTypeDesc": "Asian-Pacific American Owned"
+            },
+            {
+              "businessTypeCode": "HK",
+              "businessTypeDesc": "Community Development Corporation Owned Firm"
+            },
+            {
+              "businessTypeCode": "LJ",
+              "businessTypeDesc": "Limited Liability Company"
+            }
+          ],
+          "sbaBusinessTypeList": [
+            {
+              "sbaBusinessTypeCode": null,
+              "sbaBusinessTypeDesc": null,
+              "certificationEntryDate": "Currently Not Available",
+              "certificationExitDate": null
+            }
+          ]
+        },
+        "financialInformation": {
+          "creditCardUsage": "N",
+          "debtSubjectToOffset": null
+        }
+      },
+      "assertions": {
+        "goodsAndServices": {
+          "primaryNaics": "423610",
+          "naicsList": [
+            {
+              "naicsCode": "236115",
+              "naicsDescription": "NEW SINGLE-FAMILY HOUSING CONSTRUCTION (EXCEPT FOR-SALE BUILDERS)",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            },
+            {
+              "naicsCode": "236116",
+              "naicsDescription": "NEW MULTIFAMILY HOUSING CONSTRUCTION (EXCEPT FOR-SALE BUILDERS)",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            },
+            {
+              "naicsCode": "236117",
+              "naicsDescription": "NEW HOUSING FOR-SALE BUILDERS",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            },
+            {
+              "naicsCode": "236118",
+              "naicsDescription": "RESIDENTIAL REMODELERS",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            },
+            {
+              "naicsCode": "238210",
+              "naicsDescription": "ELECTRICAL CONTRACTORS AND OTHER WIRING INSTALLATION CONTRACTORS",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            },
+            {
+              "naicsCode": "423610",
+              "naicsDescription": "ELECTRICAL APPARATUS AND EQUIPMENT, WIRING SUPPLIES, AND RELATED EQUIPMENT MERCHANT WHOLESALERS",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            }
+          ],
+          "pscList": [
+            {
+              "pscCode": null,
+              "pscDescription": null
+            }
+          ]
+        },
+        "disasterReliefData": {
+          "disasterRegistryFlag": "NO",
+          "bondingFlag": "NO",
+          "bondingLevels": null,
+          "geographicalAreaServed": [
+            {
+              "geographicalAreaServedStateCode": null,
+              "geographicalAreaServedStateName": "Currently Not Available",
+              "geographicalAreaServedCountyCode": null,
+              "geographicalAreaServedCountyName": "Currently Not Available",
+              "geographicalAreaServedmetropolitanStatisticalAreaCode": null,
+              "geographicalAreaServedmetropolitanStatisticalAreaName": "Currently Not Available"
+            }
+          ]
+        },
+        "sizeMetrics": {
+          "averageAnnualRevenue": "1111",
+          "averageNumberOfEmployees": "2222"
+        },
+        "sizeMetricDetails": null,
+        "industrySpecificSizeMetrics": null,
+        "ediInformation": {
+          "ediInformationFlag": "N",
+          "vanProvider": null,
+          "isaQualifier": null,
+          "isaIdentifier": null,
+          "functionalGroupIdentifier": null,
+          "requestFlag820s": null
+        }
+      },
+      "repsAndCerts": {
+        "certifications": {
+          "fARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "firstName": "Currently Not Available",
+                  "lastName": "Currently Not Available",
+                  "hasSizeProtest": "Currently Not Available",
+                  "title": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "status": "Currently Not Available",
+                  "organizationType": "Currently Not Available",
+                  "endProductName": "Currently Not Available",
+                  "endProductType": "Currently Not Available",
+                  "endProductCountry": "Currently Not Available",
+                  "placeOfManufacture": "Currently Not Available",
+                  "fscCode": "Currently Not Available",
+                  "environmentURL": "Currently Not Available",
+                  "facilityStreetAddress1": "Currently Not Available",
+                  "facilityStreetAddress2": "Currently Not Available",
+                  "facilityCity": "Currently Not Available",
+                  "facilityPostalCode": "Currently Not Available",
+                  "facilityState": "Currently Not Available",
+                  "facilityCountry": "Currently Not Available",
+                  "facilityOwner": "Currently Not Available",
+                  "facilityOwnerStreetAddress1": "Currently Not Available",
+                  "facilityOwnerStreetAddress2": "Currently Not Available",
+                  "facilityOwnerCity": "Currently Not Available",
+                  "facilityOwnerPostalCode": "Currently Not Available",
+                  "facilityOwnerState": "Currently Not Available",
+                  "facilityOwnerCountry": "Currently Not Available",
+                  "immediateOwnerLegalBusinessName": "Currently Not Available",
+                  "immediateOwnerCageCode": "Currently Not Available",
+                  "highestOwnerLegalBusinessName": "Currently Not Available",
+                  "highestOwnerCageCode": "Currently Not Available",
+                  "firstPredecessorLegalBusinessName": "Currently Not Available",
+                  "firstPredecessorCageCode": "Currently Not Available",
+                  "secondPredecessorLegalBusinessName": "Currently Not Available",
+                  "secondPredecessorCageCode": "Currently Not Available",
+                  "thirdPredecessorLegalBusinessName": "Currently Not Available",
+                  "thirdPredecessorCageCode": "Currently Not Available",
+                  "primaryNaics": "Currently Not Available",
+                  "naicsCode": "Currently Not Available",
+                  "sbaSmallBusiness": "Currently Not Available",
+                  "smallBusiness": "Currently Not Available",
+                  "veteranOwnedSmallBusiness": "Currently Not Available",
+                  "serviceDisabledVetOwnedSmallBusiness": "Currently Not Available",
+                  "womenOwnedSmallBusinessConcern": "Currently Not Available",
+                  "womenOwnedSmallBusiness": "Currently Not Available",
+                  "economicallyDisadvWomenOwnedSmallBusiness": "Currently Not Available",
+                  "smallDisadvantagedBusinessConcern": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusiness": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted": "Currently Not Available",
+                  "hubZoneSmallBusinessConcern": "Currently Not Available",
+                  "blackAmericanOwned": "Currently Not Available",
+                  "hispanicAmericanOwned": "Currently Not Available",
+                  "nativeAmericanOwned": "Currently Not Available",
+                  "asianPacificAmericanOwned": "Currently Not Available",
+                  "subcontinentAsianIndianAmericanOwned": "Currently Not Available",
+                  "historicallyBlackCollegeOrUniversity": "Currently Not Available",
+                  "minorityInstitution": "Currently Not Available",
+                  "linkForFARReportPDF": "https://www.sam.gov/SAMPortal/filedownload?pdfType=1&duns=557905982",
+                  "linkForFARReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ],
+          "dFARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "foreignGovernmentOwnershipFirstName": "Currently Not Available",
+                  "foreignGovernmentOwnershipMiddleInitial": "Currently Not Available",
+                  "foreignGovernmentOwnershipLastName": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneNum": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneExt": "Currently Not Available",
+                  "foreignGovernmentOwnershipInternationalNum": "Currently Not Available",
+                  "foreignGovernmentControlCountry": "Currently Not Available",
+                  "foreignEndProductName": "Currently Not Available",
+                  "foreignEndProductCountry": "Currently Not Available",
+                  "linkForDFARSReportPDF": "https://www.sam.gov/SAM/filedownload?pdfType=2&duns=557905982",
+                  "linkForDFARSReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ]
+        },
+        "qualifications": {
+          "architectEngineerResponses": {
+            "listOfProvisions": [
+              {
+                "provisionId": "Currently Not Available"
+              }
+            ],
+            "listOfAnswers": [
+              {
+                "answerType": "Currently Not Available",
+                "answerId": "Currently Not Available",
+                "answerText": "Currently Not Available",
+                "businessObjectType": "Currently Not Available",
+                "businessObjectId": "Currently Not Available",
+                "firstName": "Currently Not Available",
+                "middleInitial": "Currently Not Available",
+                "lastName": "Currently Not Available",
+                "title": "Currently Not Available",
+                "companyName": "Currently Not Available",
+                "companyEstablishedYear": "Currently Not Available",
+                "companyDUNS": "Currently Not Available",
+                "companyIsReference": "Currently Not Available",
+                "firmNumOfEmployees": "Currently Not Available",
+                "branchNumOfEmployees": "Currently Not Available",
+                "experienceCode": "Currently Not Available",
+                "annualAvgRevenueCode": "Currently Not Available",
+                "federalRevenueCode": "Currently Not Available",
+                "nonFedRevenueCode": "Currently Not Available",
+                "totalRevenueCode": "Currently Not Available",
+                "qualificationURLPDF": "Currently Not Available",
+                "qualificationURLHTML": "Currently Not Available"
+              }
+            ]
+          }
+        },
+        "financialAssistanceCertifications": {
+          "financialAssistanceResponse": "Currently Not Available"
+        }
+      },
+      "pointsOfContact": {
+        "governmentBusinessPOC": {
+          "firstName": "JAMIS",
+          "middleInitial": null,
+          "lastName": "LAKRA",
+          "title": "ENTITY ADMINISTRATOR",
+          "usPhone": "9999999999",
+          "usPhoneExtension": null,
+          "nonUSPhone": "9999-9999999",
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "BUILDING",
+          "addressLine2": null,
+          "city": "ABC",
+          "stateOrProvinceCode": null,
+          "zipCode": "1111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "electronicBusinessPOC": {
+          "firstName": "JAMIS",
+          "middleInitial": null,
+          "lastName": "LAKRA",
+          "title": "ENTITY ADMINISTRATOR",
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": "9999-9999999",
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "BUILDING",
+          "addressLine2": null,
+          "city": "ABC",
+          "stateOrProvinceCode": "XX",
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "governmentBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "electronicBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformancePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformanceAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "partyPerformingCertificationPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "soleProprietorshipPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "accountsReceivablePOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "ENTITY ADMINISTRATOR",
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": "9999-9999999",
+          "fax": null,
+          "email": "something@sam.gov"
+        },
+        "accountsPayablePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "ediPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "eliminationsPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "salesPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        }
+      }
+    },
+],
+  "links": {
+    "selfLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&page=1&size=10"
+  }
+}
+</pre>
+</code>
+</p>
+</details>
+
+### Example 4: Get all the Entities that are registered as A5 and 2X
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&q=(businessTypeCode=A5 AND businessTypeCode=2X) <br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&q=(businessTypeCode=A5 AND businessTypeCode=2X) <br>
+<br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+Note: FOUO Response for one record is provided as an example <br>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 43357,
+  "entityData": [
+    {
+      "entityRegistration": {
+        "samRegistered": "Y",
+        "ueiSAM": " F7SEZJMNRYN1",
+        "ueiDUNS": "561349642",
+        "entityEFTIndicator": null,
+        "cageCode": "SFUQ6",
+        "dodaac": null,
+        "legalBusinessName": "AMME ASSOCIACAO MOCAMBICANA MULHER E EDUCAO",
+        "dbaName": null,
+        "purposeOfRegistrationCode": "Z2",
+        "purposeOfRegistrationDesc": "All Awards",
+        "registrationStatus": "Active",
+        "registrationDate": "2019-04-23",
+        "lastUpdateDate": "2019-04-23",
+        "registrationExpirationDate": "2020-04-22",
+        "activationDate": "2019-04-23",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
+        "noPublicDisplayFlag": "F",
+        "exclusionStatusFlag": null,
+        "exclusionURL": null,
+        "dnbOpenData": "N"
+      },
+      "coreData": {
+        "entityHierarchyInformation": {
+          "immediateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": null,
+            "phoneNumber": null
+          },
+          "intermediateParentEntities": [
+            {
+              "domesticParent": {
+                "ueiSAM": null,
+                "ueiDUNS": null,
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": null,
+                  "addressLine2": null,
+                  "city": null,
+                  "stateOrProvinceCode": null,
+                  "countryCode": null,
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              },
+              "hqParent": {
+                "ueiSAM": null,
+                "ueiDUNS": null,
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": null,
+                  "addressLine2": null,
+                  "city": null,
+                  "stateOrProvinceCode": null,
+                  "countryCode": null,
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              }
+            }
+          ],
+          "ultimateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": {
+              "addressLine1": null,
+              "addressLine2": null,
+              "city": null,
+              "stateOrProvinceCode": null,
+              "countryCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null
+            },
+            "phoneNumber": null
+          },
+          "evsMonitoring": {
+              "legalBusinessName": "AMME ASSOCIACAO MOCAMBICANA MULHER E EDUCAO",
+             "dbaName": null,
+              "outOfBusinessFlag": null,
+              "monitoringStatus": "Y",
+              "lastUpdated": "Y",
+              "addressLine1": "Address1",
+              "addressLine2": "Address2",
+              "city": "City",
+              "zipCode": "11111",
+              "zipCodePlus4": "1111",
+              "stateOrProvinceCode": "XX",
+              "countryCode": “ABC"
+            },
+         }
+        },
+        "federalHierarchy": {
+          "source": null,
+          "hierarchyDepartmentCode": null,
+          "hierarchyDepartmentName": null,
+          "hierarchyAgencyCode": null,
+          "hierarchyAgencyName": null,
+          "hierarchyOfficeCode": null
+        },
+        "entityInformation": {
+          "entityURL": null,
+          "entityDivisionName": null,
+          "entityDivisionNumber": null,
+          "entityStartDate": "2000-10-10",
+          "fiscalYearEndCloseDate": "1010",
+          "submissionDate": "Currently Not Available"
+        },
+       "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": “City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": “11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": “City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": “11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "congressionalDistrict": null,
+        "generalInformation": {
+          "agencyBusinessPurposeCode": null,
+          "agencyBusinessPurposeDesc": "",
+          "entityStructureCode": "8H",
+          "entityStructureDesc": "Corporate Entity (Tax Exempt)",
+          "entityTypeCode": "Currently Not Available",
+          "entityTypeDesc": "Currently Not Available",
+          "profitStructureCode": "2X",
+          "profitStructureDesc": "For Profit Organization",
+          "organizationStructureCode": null,
+          "organizationStructureDesc": null,
+          "stateOfIncorporationCode": null,
+          "stateOfIncorporationDesc": "Currently Not Available",
+          "countryOfIncorporationCode": "AGO",
+          "countryOfIncorporationDesc": "Currently Not Available",
+          "companySecurityLevelCode": null,
+          "companySecurityLevelDesc": "",
+          "highestEmployeeSecurityLevelCode": null,
+          "highestEmployeeSecurityLevelDesc": ""
+        },
+        "businessTypes": {
+          "businessTypeList": [
+            {
+              "businessTypeCode": "05",
+              "businessTypeDesc": null
+            },
+            {
+              "businessTypeCode": "2X",
+              "businessTypeDesc": "For Profit Organization"
+            },
+            {
+              "businessTypeCode": "A5",
+              "businessTypeDesc": "Veteran Owned Business"
+            }
+          ],
+          "sbaBusinessTypeList": [
+            {
+              "sbaBusinessTypeCode": null,
+              "sbaBusinessTypeDesc": null,
+              "certificationEntryDate": "Currently Not Available",
+              "certificationExitDate": null
+            }
+          ]
+        },
+        "financialInformation": {
+          "creditCardUsage": "N",
+          "debtSubjectToOffset": null
+        }
+      },
+      "assertions": {
+        "goodsAndServices": {
+          "primaryNaics": "813312",
+          "naicsList": [
+            {
+              "naicsCode": "813312",
+              "naicsDescription": "ENVIRONMENT, CONSERVATION AND WILDLIFE ORGANIZATIONS",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            }
+          ],
+          "pscList": [
+            {
+              "pscCode": "Z2QA",
+              "pscDescription": "REPAIR OR ALTERATION OF RESTORATION OF REAL PROPERTY (PUBLIC OR PRIVATE)"
+            }
+          ]
+        },
+        "disasterReliefData": {
+          "disasterRegistryFlag": "YES",
+          "bondingFlag": "YES",
+          "bondingLevels": [
+            {
+              "type": "Construction Bonding Level, Per Contract (dollars)",
+              "value": "0"
+            },
+            {
+              "type": "Construction Bonding Level, Aggregate (dollars)",
+              "value": "0"
+            },
+            {
+              "type": "Service Bonding Level, Per Contract (dollars)",
+              "value": "0"
+            },
+            {
+              "type": "Service Bonding Level, Aggregate (dollars)",
+              "value": "0"
+            }
+          ],
+          "geographicalAreaServed": [
+            {
+              "geographicalAreaServedStateCode": "ANY",
+              "geographicalAreaServedStateName": "Currently Not Available",
+              "geographicalAreaServedCountyCode": null,
+              "geographicalAreaServedCountyName": "Currently Not Available",
+              "geographicalAreaServedmetropolitanStatisticalAreaCode": null,
+              "geographicalAreaServedmetropolitanStatisticalAreaName": "Currently Not Available"
+            }
+          ]
+        },
+        "sizeMetrics": {
+          "averageAnnualRevenue": "1111",
+          "averageNumberOfEmployees": "2222"
+        },
+        "sizeMetricDetails": {
+          "employeesLocation": "11",
+          "receiptsLocation": "22"
+        },
+        "industrySpecificSizeMetrics": {
+          "barrelsCapacity": null,
+          "totalAssets": null,
+          "megawattHours": null
+        },
+        "ediInformation": {
+          "ediInformationFlag": "Y",
+          "vanProvider": "test",
+          "isaQualifier": "te",
+          "isaIdentifier": "test",
+          "functionalGroupIdentifier": "test",
+          "requestFlag820s": "Y"
+        }
+      },
+      "repsAndCerts": {
+        "certifications": {
+          "fARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "firstName": "Currently Not Available",
+                  "lastName": "Currently Not Available",
+                  "hasSizeProtest": "Currently Not Available",
+                  "title": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "status": "Currently Not Available",
+                  "organizationType": "Currently Not Available",
+                  "endProductName": "Currently Not Available",
+                  "endProductType": "Currently Not Available",
+                  "endProductCountry": "Currently Not Available",
+                  "placeOfManufacture": "Currently Not Available",
+                  "fscCode": "Currently Not Available",
+                  "environmentURL": "Currently Not Available",
+                  "facilityStreetAddress1": "Currently Not Available",
+                  "facilityStreetAddress2": "Currently Not Available",
+                  "facilityCity": "Currently Not Available",
+                  "facilityPostalCode": "Currently Not Available",
+                  "facilityState": "Currently Not Available",
+                  "facilityCountry": "Currently Not Available",
+                  "facilityOwner": "Currently Not Available",
+                  "facilityOwnerStreetAddress1": "Currently Not Available",
+                  "facilityOwnerStreetAddress2": "Currently Not Available",
+                  "facilityOwnerCity": "Currently Not Available",
+                  "facilityOwnerPostalCode": "Currently Not Available",
+                  "facilityOwnerState": "Currently Not Available",
+                  "facilityOwnerCountry": "Currently Not Available",
+                  "immediateOwnerLegalBusinessName": "Currently Not Available",
+                  "immediateOwnerCageCode": "Currently Not Available",
+                  "highestOwnerLegalBusinessName": "Currently Not Available",
+                  "highestOwnerCageCode": "Currently Not Available",
+                  "firstPredecessorLegalBusinessName": "Currently Not Available",
+                  "firstPredecessorCageCode": "Currently Not Available",
+                  "secondPredecessorLegalBusinessName": "Currently Not Available",
+                  "secondPredecessorCageCode": "Currently Not Available",
+                  "thirdPredecessorLegalBusinessName": "Currently Not Available",
+                  "thirdPredecessorCageCode": "Currently Not Available",
+                  "primaryNaics": "Currently Not Available",
+                  "naicsCode": "Currently Not Available",
+                  "sbaSmallBusiness": "Currently Not Available",
+                  "smallBusiness": "Currently Not Available",
+                  "veteranOwnedSmallBusiness": "Currently Not Available",
+                  "serviceDisabledVetOwnedSmallBusiness": "Currently Not Available",
+                  "womenOwnedSmallBusinessConcern": "Currently Not Available",
+                  "womenOwnedSmallBusiness": "Currently Not Available",
+                  "economicallyDisadvWomenOwnedSmallBusiness": "Currently Not Available",
+                  "smallDisadvantagedBusinessConcern": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusiness": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted": "Currently Not Available",
+                  "hubZoneSmallBusinessConcern": "Currently Not Available",
+                  "blackAmericanOwned": "Currently Not Available",
+                  "hispanicAmericanOwned": "Currently Not Available",
+                  "nativeAmericanOwned": "Currently Not Available",
+                  "asianPacificAmericanOwned": "Currently Not Available",
+                  "subcontinentAsianIndianAmericanOwned": "Currently Not Available",
+                  "historicallyBlackCollegeOrUniversity": "Currently Not Available",
+                  "minorityInstitution": "Currently Not Available",
+                  "linkForFARReportPDF": "https://www.sam.gov/SAMPortal/filedownload?pdfType=1&duns=561349642",
+                  "linkForFARReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ],
+          "dFARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "foreignGovernmentOwnershipFirstName": "Currently Not Available",
+                  "foreignGovernmentOwnershipMiddleInitial": "Currently Not Available",
+                  "foreignGovernmentOwnershipLastName": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneNum": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneExt": "Currently Not Available",
+                  "foreignGovernmentOwnershipInternationalNum": "Currently Not Available",
+                  "foreignGovernmentControlCountry": "Currently Not Available",
+                  "foreignEndProductName": "Currently Not Available",
+                  "foreignEndProductCountry": "Currently Not Available",
+                  "linkForDFARSReportPDF": "https://www.sam.gov/SAM/filedownload?pdfType=2&duns=561349642",
+                  "linkForDFARSReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ]
+        },
+        "qualifications": {
+          "architectEngineerResponses": {
+            "listOfProvisions": [
+              {
+                "provisionId": "Currently Not Available"
+              }
+            ],
+            "listOfAnswers": [
+              {
+                "answerType": "Currently Not Available",
+                "answerId": "Currently Not Available",
+                "answerText": "Currently Not Available",
+                "businessObjectType": "Currently Not Available",
+                "businessObjectId": "Currently Not Available",
+                "firstName": "Currently Not Available",
+                "middleInitial": "Currently Not Available",
+                "lastName": "Currently Not Available",
+                "title": "Currently Not Available",
+                "companyName": "Currently Not Available",
+                "companyEstablishedYear": "Currently Not Available",
+                "companyDUNS": "Currently Not Available",
+                "companyIsReference": "Currently Not Available",
+                "firmNumOfEmployees": "Currently Not Available",
+                "branchNumOfEmployees": "Currently Not Available",
+                "experienceCode": "Currently Not Available",
+                "annualAvgRevenueCode": "Currently Not Available",
+                "federalRevenueCode": "Currently Not Available",
+                "nonFedRevenueCode": "Currently Not Available",
+                "totalRevenueCode": "Currently Not Available",
+                "qualificationURLPDF": "Currently Not Available",
+                "qualificationURLHTML": "Currently Not Available"
+              }
+            ]
+          }
+        },
+        "financialAssistanceCertifications": {
+          "financialAssistanceResponse": "Currently Not Available"
+        }
+      },
+      "pointsOfContact": {
+        "governmentBusinessPOC": {
+          "firstName": "TESTIG",
+          "middleInitial": null,
+          "lastName": "TESTING",
+          "title": null,
+          "usPhone": "3333333333",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "testing@gmail.com",
+          "addressLine1": "BUILDING",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "XXX"
+        },
+        "electronicBusinessPOC": {
+          "firstName": "TESTIG",
+          "middleInitial": null,
+          "lastName": "TESTING",
+          "title": null,
+          "usPhone": "3333333333",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "testing@gmail.com",
+          "addressLine1": "BUILDING",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "governmentBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "electronicBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformancePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformanceAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "partyPerformingCertificationPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "soleProprietorshipPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "accountsReceivablePOC": {
+          "firstName": "TESTING",
+          "middleInitial": null,
+          "lastName": "TESTING",
+          "title": null,
+          "usPhone": "3333333333",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "testign@gmail.com"
+        },
+        "accountsPayablePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "ediPOC": {
+          "firstName": "TESTING",
+          "middleInitial": null,
+          "lastName": "TESTING",
+          "title": null,
+          "usPhone": "3333333333",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "testign@gmail.com"
+        },
+        "eliminationsPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "salesPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        }
+      }
+    },
+],
+"links": {
+    "selfLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&q=%28businessTypeCode%3DA5+AND+businessTypeCode%3D2X%29&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&q=%28businessTypeCode%3DA5+AND+businessTypeCode%3D2X%29&page=1&size=10"
+  }
+}
+</pre>
+</code>
+</p>
+</details>
+
+### Example 5: Get a non-SAM-registered Entity
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&samRegistered=N<br>
+<br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&samRegistered=N<br>
+<br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+Note: Response for one record is provided as an example <br>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 100,
+  "entityData": [
+    {
+      "entityRegistration": {
+        "samRegistered": "N",
+        "ueiSAM": " F7SEZJMNRYN1",
+        "ueiDUNS": "111111111",
+        "cageCode": "SFUQ6",
+        "legalBusinessName": "AMME ASSOCIACAO MOCAMBICANA MULHER E EDUCAO",
+        "registrationExpirationDate": "2020-04-22",
+        "activationDate": "2019-04-23",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
+        "dnbOpenData": "N"
+      },
+      "coreData": {
+        "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "congressionalDistrict": null,
+],
+"links": {
+    "selfLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&samRegistered=N&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&samRegistered=N&page=1&size=10"
+  }
+}
+</pre>
+</code>
+</p>
+</details>
+
+### Example 6: Get an Entity with no hierarchy
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=075211119<br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=075211119<br>
+<br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 1,
+  "entityData": [
+    {
+      "entityRegistration": {
+        "samRegistered": "Y",
+        "ueiSAM": " F7SEZJMNRYN1",
+        "ueiDUNS": "075211119",
+        "entityEFTIndicator": null,
+        "cageCode": "87AW0",
+        "dodaac": null,
+        "legalBusinessName": "BRADLEY DEFENSE SOLUTIONS INC",
+        "dbaName": null,
+        "purposeOfRegistrationCode": "Z2",
+        "purposeOfRegistrationDesc": "All Awards",
+        "registrationStatus": "Active",
+        "registrationDate": "2019-04-23",
+        "lastUpdateDate": "2019-04-24",
+        "expirationDate": "2020-04-23",
+        "activationDate": "2019-04-24",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
+        "noPublicDisplayFlag": "F",
+        "exclusionStatusFlag": null,
+        "exclusionURL": null
+        "dnbOpenData": "Y"
+      },
+      "coreData": {
+        "entityHierarchyInformation": {
+          "immediateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS":null,
+            "legalBusinessName": null,
+            "physicalAddress": null,
+            "phoneNumber": null
+          },
+          "intermediateParentEntities": [
+            {
+              "domesticParent": {
+                "ueiSAM": null,
+                "ueiDUNS": null,
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": null,
+                  "addressLine2": null,
+                  "city": null,
+                  "stateOrProvinceCode": null,
+                  "countryCode": null,
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              },
+              "hqParent": {
+                "ueiSAM": null,
+                "ueiDUNS": null,
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": null,
+                  "addressLine2": null,
+                  "city": null,
+                  "stateOrProvinceCode": null,
+                  "countryCode": null,
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              }
+            }
+          ],
+          "ultimateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": {
+              "addressLine1": null,
+              "addressLine2": null,
+              "city": null,
+              "stateOrProvinceCode": null,
+              "countryCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null
+            },
+            "phoneNumber": null
+          },
+          "evsMonitoring": {
+              "legalBusinessName": "BRADLEY DEFENSE SOLUTIONS INC",
+              "dbaName": null,
+              "outOfBusinessFlag": null,
+              "monitoringStatus": "Y",
+              "lastUpdated": "Y",
+              "addressLine1": "Address1",
+              "addressLine2": "Address2",
+              "city": "City",
+              "zipCode": "11111",
+              "zipCodePlus4": "1111",
+              "stateOrProvinceCode": "XX",
+              "countryCode": "ABC"
+            },
+        },
+        "federalHierarchy": {
+          "source": null,
+          "hierarchyDepartmentCode": null,
+          "hierarchyDepartmentName": null,
+          "hierarchyAgencyCode": null,
+          "hierarchyAgencyName": null,
+          "hierarchyOfficeCode": null
+        },
+        "entityInformation": {
+          "entityURL": "www.updatingURL.com",
+          "entityDivisionName": "SECOND UPDATE",
+          "entityDivisionNumber": "31",
+          "entityStartDate": "2018-05-01",
+          "fiscalYearEndCloseDate": "0501",
+          "submissionDate": "Currently Not Available"
+        },
+          "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "congressionalDistrict": "02",
+        "generalInformation": {
+          "agencyBusinessPurposeCode": null,
+          "agencyBusinessPurposeDesc": "",
+          "entityStructureCode": "2L",
+          "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+          "entityTypeCode": "Currently Not Available",
+          "entityTypeDesc": "Currently Not Available",
+          "profitStructureCode": "2X",
+          "profitStructureDesc": "For Profit Organization",
+          "organizationStructureCode": null,
+          "organizationStructureDesc": null,
+          "stateOfIncorporationCode": "NY",
+          "stateOfIncorporationDesc": "Currently Not Available",
+          "countryOfIncorporationCode": "USA",
+          "countryOfIncorporationDesc": "Currently Not Available",
+          "companySecurityLevelCode": null,
+          "companySecurityLevelDesc": "",
+          "highestEmployeeSecurityLevelCode": null,
+          "highestEmployeeSecurityLevelDesc": ""
+        },
+        "businessTypes": {
+          "businessTypeList": [
+            {
+              "businessTypeCode": "27",
+              "businessTypeDesc": "Self Certified Small Disadvantaged Business"
+            },
+            {
+              "businessTypeCode": "2X",
+              "businessTypeDesc": "For Profit Organization"
+            },
+            {
+              "businessTypeCode": "JX",
+              "businessTypeDesc": null
+            }
+          ],
+          "sbaBusinessTypeList": [
+            {
+              "sbaBusinessTypeCode": null,
+              "sbaBusinessTypeDesc": null,
+              "certificationEntryDate": "Currently Not Available",
+              "certificationExitDate": null
+            }
+          ]
+        },
+        "financialInformation": {
+          "creditCardUsage": "Y",
+          "debtSubjectToOffset": null
+        }
+      },
+      "assertions": {
+        "goodsAndServices": {
+          "primaryNaics": "541310",
+          "naicsList": [
+            {
+              "naicsCode": "541310",
+              "naicsDescription": "ARCHITECTURAL SERVICES",
+              "sbaSmallBusiness": "Y",
+              "naicsException": null
+            },
+            {
+              "naicsCode": "541320",
+              "naicsDescription": "LANDSCAPE ARCHITECTURAL SERVICES",
+              "sbaSmallBusiness": "Y",
+              "naicsException": null
+            },
+            {
+              "naicsCode": "541330",
+              "naicsDescription": "ENGINEERING SERVICES",
+              "sbaSmallBusiness": "E",
+              "naicsException": "YYYY"
+            },
+            {
+              "naicsCode": "541360",
+              "naicsDescription": "GEOPHYSICAL SURVEYING AND MAPPING SERVICES",
+              "sbaSmallBusiness": "Y",
+              "naicsException": null
+            },
+            {
+              "naicsCode": "541370",
+              "naicsDescription": "SURVEYING AND MAPPING (EXCEPT GEOPHYSICAL) SERVICES",
+              "sbaSmallBusiness": "Y",
+              "naicsException": null
+            }
+          ],
+          "pscList": [
+            {
+              "pscCode": "1337",
+              "pscDescription": "GUIDED MISSILE AND SPACE VEHICLE EXPLOSIVE PROPULSION UNITS, SOLID FUEL; AND COMPONENTS"
+            },
+            {
+              "pscCode": "4710",
+              "pscDescription": "PIPE, TUBE AND RIGID TUBING"
+            },
+            {
+              "pscCode": "9915",
+              "pscDescription": "COLLECTORS' AND/OR HISTORICAL ITEMS"
+            },
+            {
+              "pscCode": "R425",
+              "pscDescription": "SUPPORT- PROFESSIONAL: ENGINEERING/TECHNICAL"
+            }
+          ]
+        },
+        "disasterReliefData": {
+          "disasterRegistryFlag": "YES",
+          "bondingFlag": "YES",
+          "bondingLevels": [
+            {
+              "type": "Construction Bonding Level, Per Contract (dollars)",
+              "value": "1111"
+            },
+            {
+              "type": "Construction Bonding Level, Aggregate (dollars)",
+              "value": "2222"
+            },
+            {
+              "type": "Service Bonding Level, Per Contract (dollars)",
+              "value": "3333"
+            },
+            {
+              "type": "Service Bonding Level, Aggregate (dollars)",
+              "value": "44444"
+            }
+          ],
+          "geographicalAreaServed": [
+            {
+              "geographicalAreaServedStateCode": "ANY",
+              "geographicalAreaServedStateName": "Currently Not Available",
+              "geographicalAreaServedCountyCode": null,
+              "geographicalAreaServedCountyName": "Currently Not Available",
+              "geographicalAreaServedmetropolitanStatisticalAreaCode": null,
+              "geographicalAreaServedmetropolitanStatisticalAreaName": "Currently Not Available"
+            }
+          ]
+        },
+        "sizeMetrics": {
+          "averageAnnualRevenue": "1111",
+          "averageNumberOfEmployees": "22222"
+        },
+        "sizeMetricDetails": {
+          "employeesLocation": "1111",
+          "receiptsLocation": "2222"
+        },
+        "industrySpecificSizeMetrics": {
+          "barrelsCapacity": null,
+          "totalAssets": null,
+          "megawattHours": null
+        },
+        "ediInformation": {
+          "ediInformationFlag": "Y",
+          "vanProvider": "PROVIDER",
+          "isaQualifier": "IS",
+          "isaIdentifier": "ISAIdentifier01",
+          "functionalGroupIdentifier": "FUNCTIONAL",
+          "requestFlag820s": "Y"
+        }
+      },
+      "repsAndCerts": {
+        "certifications": {
+          "fARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "firstName": "Currently Not Available",
+                  "lastName": "Currently Not Available",
+                  "hasSizeProtest": "Currently Not Available",
+                  "title": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "status": "Currently Not Available",
+                  "organizationType": "Currently Not Available",
+                  "endProductName": "Currently Not Available",
+                  "endProductType": "Currently Not Available",
+                  "endProductCountry": "Currently Not Available",
+                  "placeOfManufacture": "Currently Not Available",
+                  "fscCode": "Currently Not Available",
+                  "environmentURL": "Currently Not Available",
+                  "facilityStreetAddress1": "Currently Not Available",
+                  "facilityStreetAddress2": "Currently Not Available",
+                  "facilityCity": "Currently Not Available",
+                  "facilityPostalCode": "Currently Not Available",
+                  "facilityState": "Currently Not Available",
+                  "facilityCountry": "Currently Not Available",
+                  "facilityOwner": "Currently Not Available",
+                  "facilityOwnerStreetAddress1": "Currently Not Available",
+                  "facilityOwnerStreetAddress2": "Currently Not Available",
+                  "facilityOwnerCity": "Currently Not Available",
+                  "facilityOwnerPostalCode": "Currently Not Available",
+                  "facilityOwnerState": "Currently Not Available",
+                  "facilityOwnerCountry": "Currently Not Available",
+                  "immediateOwnerLegalBusinessName": "Currently Not Available",
+                  "immediateOwnerCageCode": "Currently Not Available",
+                  "highestOwnerLegalBusinessName": "Currently Not Available",
+                  "highestOwnerCageCode": "Currently Not Available",
+                  "firstPredecessorLegalBusinessName": "Currently Not Available",
+                  "firstPredecessorCageCode": "Currently Not Available",
+                  "secondPredecessorLegalBusinessName": "Currently Not Available",
+                  "secondPredecessorCageCode": "Currently Not Available",
+                  "thirdPredecessorLegalBusinessName": "Currently Not Available",
+                  "thirdPredecessorCageCode": "Currently Not Available",
+                  "primaryNaics": "Currently Not Available",
+                  "naicsCode": "Currently Not Available",
+                  "sbaSmallBusiness": "Currently Not Available",
+                  "smallBusiness": "Currently Not Available",
+                  "veteranOwnedSmallBusiness": "Currently Not Available",
+                  "serviceDisabledVetOwnedSmallBusiness": "Currently Not Available",
+                  "womenOwnedSmallBusinessConcern": "Currently Not Available",
+                  "womenOwnedSmallBusiness": "Currently Not Available",
+                  "economicallyDisadvWomenOwnedSmallBusiness": "Currently Not Available",
+                  "smallDisadvantagedBusinessConcern": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusiness": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted": "Currently Not Available",
+                  "hubZoneSmallBusinessConcern": "Currently Not Available",
+                  "blackAmericanOwned": "Currently Not Available",
+                  "hispanicAmericanOwned": "Currently Not Available",
+                  "nativeAmericanOwned": "Currently Not Available",
+                  "asianPacificAmericanOwned": "Currently Not Available",
+                  "subcontinentAsianIndianAmericanOwned": "Currently Not Available",
+                  "historicallyBlackCollegeOrUniversity": "Currently Not Available",
+                  "minorityInstitution": "Currently Not Available",
+                  "linkForFARReportPDF": "https://www.sam.gov/SAMPortal/filedownload?pdfType=1&duns=075211119",
+                  "linkForFARReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ],
+          "dFARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "foreignGovernmentOwnershipFirstName": "Currently Not Available",
+                  "foreignGovernmentOwnershipMiddleInitial": "Currently Not Available",
+                  "foreignGovernmentOwnershipLastName": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneNum": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneExt": "Currently Not Available",
+                  "foreignGovernmentOwnershipInternationalNum": "Currently Not Available",
+                  "foreignGovernmentControlCountry": "Currently Not Available",
+                  "foreignEndProductName": "Currently Not Available",
+                  "foreignEndProductCountry": "Currently Not Available",
+                  "linkForDFARSReportPDF": "https://www.sam.gov/SAM/filedownload?pdfType=2&duns=075211119",
+                  "linkForDFARSReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ]
+        },
+        "qualifications": {
+          "architectEngineerResponses": {
+            "listOfProvisions": [
+              {
+                "provisionId": "Currently Not Available"
+              }
+            ],
+            "listOfAnswers": [
+              {
+                "answerType": "Currently Not Available",
+                "answerId": "Currently Not Available",
+                "answerText": "Currently Not Available",
+                "businessObjectType": "Currently Not Available",
+                "businessObjectId": "Currently Not Available",
+                "firstName": "Currently Not Available",
+                "middleInitial": "Currently Not Available",
+                "lastName": "Currently Not Available",
+                "title": "Currently Not Available",
+                "companyName": "Currently Not Available",
+                "companyEstablishedYear": "Currently Not Available",
+                "companyDUNS": "Currently Not Available",
+                "companyIsReference": "Currently Not Available",
+                "firmNumOfEmployees": "Currently Not Available",
+                "branchNumOfEmployees": "Currently Not Available",
+                "experienceCode": "Currently Not Available",
+                "annualAvgRevenueCode": "Currently Not Available",
+                "federalRevenueCode": "Currently Not Available",
+                "nonFedRevenueCode": "Currently Not Available",
+                "totalRevenueCode": "Currently Not Available",
+                "qualificationURLPDF": "Currently Not Available",
+                "qualificationURLHTML": "Currently Not Available"
+              }
+            ]
+          }
+        },
+        "financialAssistanceCertifications": {
+          "financialAssistanceResponse": "Currently Not Available"
+        }
+      },
+      "pointsOfContact": {
+        "governmentBusinessPOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": null,
+          "usPhone": "1111111111",
+          "usPhoneExtension": "222",
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "EMAIL",
+          "addressLine1": "ADDRESS1",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "electronicBusinessPOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": null,
+          "usPhone": "1111111111",
+          "usPhoneExtension": "222",
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "EMAIL",
+          "addressLine1": "ADDRESS1",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "governmentBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "electronicBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformancePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformanceAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "partyPerformingCertificationPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "soleProprietorshipPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "accountsReceivablePOC": {
+          "firstName": "FIRSTNAME",
+          "middleInitial": "A",
+          "lastName": "LASTNAME",
+          "title": "MR",
+          "usPhone": "4432382323",
+          "usPhoneExtension": "232",
+          "nonUSPhone": "1234-56789101112",
+          "fax": "4432382323",
+          "email": "something@sam.gov"
+        },
+        "accountsPayablePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "ediPOC": {
+          "firstName": "FIRSTNAME",
+          "middleInitial": "A",
+          "lastName": "LASTNAME",
+          "title": "MR",
+          "usPhone": "4432382323",
+          "usPhoneExtension": "232",
+          "nonUSPhone": "1234-56789101112",
+          "fax": "4432382323",
+          "email": "something@sam.gov"
+        },
+        "eliminationsPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "salesPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        }
+      }
+    }
+  ],
+  "links": {
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=075211119&page=0&size=10"
+  }
+}
+</pre>
+</code>
+</p>
+</details>
+
+### Example 7: Get an Entity with a small hierarchy
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=081343434<br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=081343434<br>
+<br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 1,
+  "entityData": [
+    {
+      "entityRegistration": {
+       "samRegistered": "Y",
+        "ueiSAM": " F7SEZJMNRYN1",
+        "ueiDUNS": "081343434",
+        "entityEFTIndicator": null,
+        "cageCode": "85U37",
+        "dodaac": null,
+        "legalBusinessName": "21ST CENTURY ONCOLOGY, LLC",
+        "dbaName": "DARWICH E BEJANY MD",
+        "purposeOfRegistrationCode": "Z2",
+        "purposeOfRegistrationDesc": "All Awards",
+        "registrationStatus": "Active",
+        "registrationDate": "2018-08-28",
+        "lastUpdateDate": "2018-09-08",
+        "expirationDate": "2019-08-28",
+        "activationDate": "2018-09-02",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06",
+        "noPublicDisplayFlag": "F",
+        "exclusionStatusFlag": null,
+        "exclusionURL": null
+        "dnbOpenData": "Y"
+      },
+      "coreData": {
+        "entityHierarchyInformation": {
+          "immediateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": null,
+            "phoneNumber": null
+          },
+          "intermediateParentEntities": [
+            {
+              "domesticParent": {
+                "ueiSAM": "F7SEZJMNRYN1",
+                "ueiDUNS": "963709998",
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": null,
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "countryCode": "ABC",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111"
+                },
+                "phoneNumber": null
+              },
+              "hqParent": {
+                "ueiSAM": "F7SEZJMNRYN1",
+                "ueiDUNS": "361076693",
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": null,
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "countryCode": "ABC",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111"
+                },
+                "phoneNumber": null
+              }
+            }
+          ],
+          "ultimateParentEntity": {
+            "ueiSAM": "F7SEZJMNRYN1",
+            "ueiDUNS": "963709998",
+            "legalBusinessName": null,
+            "physicalAddress": {
+              "addressLine1": "Address1",
+              "addressLine2": null,
+              "city": "City",
+              "stateOrProvinceCode": "XX",
+              "countryCode": "ABC",
+              "zipCode": "11111",
+              "zipCodePlus4": "1111"
+            },
+            "phoneNumber": null
+          },
+          "evsMonitoring": {
+              "legalBusinessName": "21st Century Oncology, LLC",
+              "dbaName": null,
+              "outOfBusinessFlag": null,
+              "monitoringStatus": "Y",
+              "lastUpdated": "Y",
+              "addressLine1": "Address 1",
+              "addressLine2": "Address2",
+              "city": "City",
+              "zipCode": "11111",
+              "zipCodePlus4": "1111",
+              "stateOrProvinceCode": "XX",
+              "countryCode": "ABC"
+            },
+        },
+        "federalHierarchy": {
+          "source": null,
+          "hierarchyDepartmentCode": null,
+          "hierarchyDepartmentName": null,
+          "hierarchyAgencyCode": null,
+          "hierarchyAgencyName": null,
+          "hierarchyOfficeCode": null
+        },
+        "entityInformation": {
+          "entityURL": null,
+          "entityDivisionName": null,
+          "entityDivisionNumber": null,
+          "entityStartDate": "1984-12-31",
+          "fiscalYearEndCloseDate": "1231",
+          "submissionDate": "Currently Not Available"
+        },
+       "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "1111",
+          "zipCodePlus4": "11111",
+          "countryCode": ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "1111",
+          "zipCodePlus4": "11111",
+          "countryCode": ABC"
+        },
+        "congressionalDistrict": "24",
+        "generalInformation": {
+          "agencyBusinessPurposeCode": null,
+          "agencyBusinessPurposeDesc": "",
+          "entityStructureCode": "2L",
+          "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+          "entityTypeCode": "Currently Not Available",
+          "entityTypeDesc": "Currently Not Available",
+          "profitStructureCode": "2X",
+          "profitStructureDesc": "For Profit Organization",
+          "organizationStructureCode": null,
+          "organizationStructureDesc": null,
+          "stateOfIncorporationCode": "FL",
+          "stateOfIncorporationDesc": "Currently Not Available",
+          "countryOfIncorporationCode": "USA",
+          "countryOfIncorporationDesc": "Currently Not Available",
+          "companySecurityLevelCode": null,
+          "companySecurityLevelDesc": "",
+          "highestEmployeeSecurityLevelCode": null,
+          "highestEmployeeSecurityLevelDesc": ""
+        },
+        "businessTypes": {
+          "businessTypeList": [
+            {
+              "businessTypeCode": "2X",
+              "businessTypeDesc": "For Profit Organization"
+            }
+          ],
+          "sbaBusinessTypeList": [
+            {
+              "sbaBusinessTypeCode": null,
+              "sbaBusinessTypeDesc": null,
+              "certificationEntryDate": "Currently Not Available",
+              "certificationExitDate": null
+            }
+          ]
+        },
+        "financialInformation": {
+          "creditCardUsage": "Y",
+          "debtSubjectToOffset": null
+        }
+      },
+      "assertions": {
+        "goodsAndServices": {
+          "primaryNaics": "621111",
+          "naicsList": [
+            {
+              "naicsCode": "621111",
+              "naicsDescription": "OFFICES OF PHYSICIANS (EXCEPT MENTAL HEALTH SPECIALISTS)",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            }
+          ],
+          "pscList": [
+            {
+              "pscCode": null,
+              "pscDescription": null
+            }
+          ]
+        },
+        "disasterReliefData": {
+          "disasterRegistryFlag": "NO",
+          "bondingFlag": "NO",
+          "bondingLevels": null,
+          "geographicalAreaServed": [
+            {
+              "geographicalAreaServedStateCode": null,
+              "geographicalAreaServedStateName": "Currently Not Available",
+              "geographicalAreaServedCountyCode": null,
+              "geographicalAreaServedCountyName": "Currently Not Available",
+              "geographicalAreaServedmetropolitanStatisticalAreaCode": null,
+              "geographicalAreaServedmetropolitanStatisticalAreaName": "Currently Not Available"
+            }
+          ]
+        },
+        "sizeMetrics": {
+          "averageAnnualRevenue": "1111",
+          "averageNumberOfEmployees": "2222"
+        },
+        "sizeMetricDetails": null,
+        "industrySpecificSizeMetrics": null,
+        "ediInformation": {
+          "ediInformationFlag": "N",
+          "vanProvider": null,
+          "isaQualifier": null,
+          "isaIdentifier": null,
+          "functionalGroupIdentifier": null,
+          "requestFlag820s": null
+        }
+      },
+      "repsAndCerts": {
+        "certifications": {
+          "fARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "firstName": "Currently Not Available",
+                  "lastName": "Currently Not Available",
+                  "hasSizeProtest": "Currently Not Available",
+                  "title": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "status": "Currently Not Available",
+                  "organizationType": "Currently Not Available",
+                  "endProductName": "Currently Not Available",
+                  "endProductType": "Currently Not Available",
+                  "endProductCountry": "Currently Not Available",
+                  "placeOfManufacture": "Currently Not Available",
+                  "fscCode": "Currently Not Available",
+                  "environmentURL": "Currently Not Available",
+                  "facilityStreetAddress1": "Currently Not Available",
+                  "facilityStreetAddress2": "Currently Not Available",
+                  "facilityCity": "Currently Not Available",
+                  "facilityPostalCode": "Currently Not Available",
+                  "facilityState": "Currently Not Available",
+                  "facilityCountry": "Currently Not Available",
+                  "facilityOwner": "Currently Not Available",
+                  "facilityOwnerStreetAddress1": "Currently Not Available",
+                  "facilityOwnerStreetAddress2": "Currently Not Available",
+                  "facilityOwnerCity": "Currently Not Available",
+                  "facilityOwnerPostalCode": "Currently Not Available",
+                  "facilityOwnerState": "Currently Not Available",
+                  "facilityOwnerCountry": "Currently Not Available",
+                  "immediateOwnerLegalBusinessName": "Currently Not Available",
+                  "immediateOwnerCageCode": "Currently Not Available",
+                  "highestOwnerLegalBusinessName": "Currently Not Available",
+                  "highestOwnerCageCode": "Currently Not Available",
+                  "firstPredecessorLegalBusinessName": "Currently Not Available",
+                  "firstPredecessorCageCode": "Currently Not Available",
+                  "secondPredecessorLegalBusinessName": "Currently Not Available",
+                  "secondPredecessorCageCode": "Currently Not Available",
+                  "thirdPredecessorLegalBusinessName": "Currently Not Available",
+                  "thirdPredecessorCageCode": "Currently Not Available",
+                  "primaryNaics": "Currently Not Available",
+                  "naicsCode": "Currently Not Available",
+                  "sbaSmallBusiness": "Currently Not Available",
+                  "smallBusiness": "Currently Not Available",
+                  "veteranOwnedSmallBusiness": "Currently Not Available",
+                  "serviceDisabledVetOwnedSmallBusiness": "Currently Not Available",
+                  "womenOwnedSmallBusinessConcern": "Currently Not Available",
+                  "womenOwnedSmallBusiness": "Currently Not Available",
+                  "economicallyDisadvWomenOwnedSmallBusiness": "Currently Not Available",
+                  "smallDisadvantagedBusinessConcern": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusiness": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted": "Currently Not Available",
+                  "hubZoneSmallBusinessConcern": "Currently Not Available",
+                  "blackAmericanOwned": "Currently Not Available",
+                  "hispanicAmericanOwned": "Currently Not Available",
+                  "nativeAmericanOwned": "Currently Not Available",
+                  "asianPacificAmericanOwned": "Currently Not Available",
+                  "subcontinentAsianIndianAmericanOwned": "Currently Not Available",
+                  "historicallyBlackCollegeOrUniversity": "Currently Not Available",
+                  "minorityInstitution": "Currently Not Available",
+                  "linkForFARReportPDF": "https://www.sam.gov/SAMPortal/filedownload?pdfType=1&duns=081343434",
+                  "linkForFARReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ],
+          "dFARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "foreignGovernmentOwnershipFirstName": "Currently Not Available",
+                  "foreignGovernmentOwnershipMiddleInitial": "Currently Not Available",
+                  "foreignGovernmentOwnershipLastName": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneNum": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneExt": "Currently Not Available",
+                  "foreignGovernmentOwnershipInternationalNum": "Currently Not Available",
+                  "foreignGovernmentControlCountry": "Currently Not Available",
+                  "foreignEndProductName": "Currently Not Available",
+                  "foreignEndProductCountry": "Currently Not Available",
+                  "linkForDFARSReportPDF": "https://www.sam.gov/SAM/filedownload?pdfType=2&duns=081343434",
+                  "linkForDFARSReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ]
+        },
+        "qualifications": {
+          "architectEngineerResponses": {
+            "listOfProvisions": [
+              {
+                "provisionId": "Currently Not Available"
+              }
+            ],
+            "listOfAnswers": [
+              {
+                "answerType": "Currently Not Available",
+                "answerId": "Currently Not Available",
+                "answerText": "Currently Not Available",
+                "businessObjectType": "Currently Not Available",
+                "businessObjectId": "Currently Not Available",
+                "firstName": "Currently Not Available",
+                "middleInitial": "Currently Not Available",
+                "lastName": "Currently Not Available",
+                "title": "Currently Not Available",
+                "companyName": "Currently Not Available",
+                "companyEstablishedYear": "Currently Not Available",
+                "companyDUNS": "Currently Not Available",
+                "companyIsReference": "Currently Not Available",
+                "firmNumOfEmployees": "Currently Not Available",
+                "branchNumOfEmployees": "Currently Not Available",
+                "experienceCode": "Currently Not Available",
+                "annualAvgRevenueCode": "Currently Not Available",
+                "federalRevenueCode": "Currently Not Available",
+                "nonFedRevenueCode": "Currently Not Available",
+                "totalRevenueCode": "Currently Not Available",
+                "qualificationURLPDF": "Currently Not Available",
+                "qualificationURLHTML": "Currently Not Available"
+              }
+            ]
+          }
+        },
+        "financialAssistanceCertifications": {
+          "financialAssistanceResponse": "Currently Not Available"
+        }
+      },
+      "pointsOfContact": {
+        "governmentBusinessPOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "VP OF OPERATIONS",
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "Address1",
+          "addressLine2": null,
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "electronicBusinessPOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "VP OF OPERATIONS",
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "Address1",
+          "addressLine2": null,
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "governmentBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "electronicBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformancePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformanceAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "partyPerformingCertificationPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "soleProprietorshipPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "accountsReceivablePOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "VP OF OPERATIONS",
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov"
+        },
+        "accountsPayablePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "ediPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "eliminationsPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "salesPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        }
+      }
+    }
+  ],
+  "links": {
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=081343434&page=0&size=10"
+  }
+}
+</pre>
+</code>
+</p>
+</details>
+
+### Example 8: Get an Entity with a large hierarchy
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=439307625<br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=439307625<br>
+<br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 1,
+  "entityData": [
+    {
+      "entityRegistration": {
+        "samRegistered": "Y",
+        "ueiSAM": " F7SEZJMNRYN1",
+        "ueiDUNS": "439307625",
+        "entityEFTIndicator": null,
+        "cageCode": "AQ773",
+        "dodaac": null,
+        "legalBusinessName": "CONSIGLIO NAZIONALE DELLE RICERCHE - CNR",
+        "dbaName": "ICB ISTITUTO DI CHIMICA BIOMOLECOLARE",
+        "purposeOfRegistrationCode": "Z2",
+        "purposeOfRegistrationDesc": "All Awards",
+        "registrationStatus": "Active",
+        "registrationDate": "2018-03-02",
+        "lastUpdateDate": "2018-09-08",
+        "expirationDate": "2019-04-04",
+        "activationDate": "2018-04-17",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06,
+        "noPublicDisplayFlag": "F",
+        "exclusionStatusFlag": null,
+        "exclusionURL": null
+        "dnbOpenData": "N"
+      },
+      "coreData": {
+        "entityHierarchyInformation": {
+          "immediateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": null,
+            "phoneNumber": null
+          },
+          "intermediateParentEntities": [
+            {
+              "domesticParent": {
+                "ueiSAM": "F7SEZJMNRYN1",
+                "ueiDUNS": "355149347",
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": null,
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "countryCode": "ABC",
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              },
+              "hqParent": {
+                "ueiSAM": "F7SEZJMNRYN1",
+                "ueiDUNS": "440774594",
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": null,
+                  "city": "City",
+                  "stateOrProvinceCode": null,
+                  "countryCode": null,
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              }
+            }
+          ],
+          "ultimateParentEntity": {
+            "ueiSAM": "F7SEZJMNRYN1",
+            "ueiDUNS": "655149347",
+            "legalBusinessName": null,
+            "physicalAddress": {
+              "addressLine1": "Address1",
+              "addressLine2": null,
+              "city": "City",
+              "stateOrProvinceCode": null,
+              "countryCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null
+            },
+            "phoneNumber": null
+          },
+          "evsMonitoring": {
+              "legalBusinessName": "CONSIGLIO NAZIONALE DELLE RICERCHE - CNR",
+              "dbaName": null,
+              "outOfBusinessFlag": null,
+              "monitoringStatus": "Y",
+              "lastUpdated": "Y",
+              "addressLine1": "Address1",
+              "addressLine2": "Address2",
+              "city": "City",
+              "zipCode": "11111",
+              "zipCodePlus4": "1111",
+              "stateOrProvinceCode": "XX",
+              "countryCode": "ABC"
+            },
+        "federalHierarchy": {
+          "source": null,
+          "hierarchyDepartmentCode": null,
+          "hierarchyDepartmentName": null,
+          "hierarchyAgencyCode": null,
+          "hierarchyAgencyName": null,
+          "hierarchyOfficeCode": null
+        },
+        "entityInformation": {
+          "entityURL": null,
+          "entityDivisionName": null,
+          "entityDivisionNumber": null,
+          "entityStartDate": "2018-04-04",
+          "fiscalYearEndCloseDate": "1231",
+          "submissionDate": "Currently Not Available"
+        },
+       "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "congressionalDistrict": null,
+        "generalInformation": {
+          "agencyBusinessPurposeCode": null,
+       "agencyBusinessPurposeDesc": "",
+          "entityStructureCode": "ZZ",
+          "entityStructureDesc": "Other",
+          "entityTypeCode": "Currently Not Available",
+          "entityTypeDesc": "Currently Not Available",
+          "profitStructureCode": "2U",
+          "profitStructureDesc": "Other Not For Profit Organization",
+          "organizationStructureCode": null,
+          "organizationStructureDesc": null,
+          "stateOfIncorporationCode": null,
+          "stateOfIncorporationDesc": "Currently Not Available",
+          "countryOfIncorporationCode": "ITA",
+          "countryOfIncorporationDesc": "Currently Not Available",
+          "companySecurityLevelCode": null,
+          "companySecurityLevelDesc": "",
+          "highestEmployeeSecurityLevelCode": null,
+          "highestEmployeeSecurityLevelDesc": ""
+        },
+        "businessTypes": {
+          "businessTypeList": [
+            {
+              "businessTypeCode": "2U",
+              "businessTypeDesc": "Other Not For Profit Organization"
+            }
+          ],
+          "sbaBusinessTypeList": [
+            {
+              "sbaBusinessTypeCode": null,
+              "sbaBusinessTypeDesc": null,
+              "certificationEntryDate": "Currently Not Available",
+              "certificationExitDate": null
+            }
+          ]
+        },
+        "financialInformation": {
+          "creditCardUsage": "N",
+          "debtSubjectToOffset": null
+        }
+      },
+      "assertions": {
+        "goodsAndServices": {
+          "primaryNaics": "541715",
+          "naicsList": [
+            {
+              "naicsCode": "541715",
+              "naicsDescription": null,
+              "sbaSmallBusiness": "E",
+              "naicsException": "NNNN"
+            }
+          ],
+          "pscList": [
+            {
+              "pscCode": null,
+              "pscDescription": null
+            }
+          ]
+        },
+        "disasterReliefData": {
+          "disasterRegistryFlag": "NO",
+          "bondingFlag": "NO",
+          "bondingLevels": null,
+          "geographicalAreaServed": [
+            {
+              "geographicalAreaServedStateCode": null,
+              "geographicalAreaServedStateName": "Currently Not Available",
+              "geographicalAreaServedCountyCode": null,
+              "geographicalAreaServedCountyName": "Currently Not Available",
+              "geographicalAreaServedmetropolitanStatisticalAreaCode": null,
+              "geographicalAreaServedmetropolitanStatisticalAreaName": "Currently Not Available"
+            }
+          ]
+        },
+        "sizeMetrics": {
+          "averageAnnualRevenue": "1111",
+          "averageNumberOfEmployees": "2222"
+        },
+        "sizeMetricDetails": null,
+        "industrySpecificSizeMetrics": null,
+        "ediInformation": {
+          "ediInformationFlag": "N",
+          "vanProvider": null,
+          "isaQualifier": null,
+          "isaIdentifier": null,
+          "functionalGroupIdentifier": null,
+          "requestFlag820s": null
+        }
+      },
+      "repsAndCerts": {
+        "certifications": {
+          "fARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "firstName": "Currently Not Available",
+                  "lastName": "Currently Not Available",
+                  "hasSizeProtest": "Currently Not Available",
+                  "title": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "status": "Currently Not Available",
+                  "organizationType": "Currently Not Available",
+                  "endProductName": "Currently Not Available",
+                  "endProductType": "Currently Not Available",
+                  "endProductCountry": "Currently Not Available",
+                  "placeOfManufacture": "Currently Not Available",
+                  "fscCode": "Currently Not Available",
+                  "environmentURL": "Currently Not Available",
+                  "facilityStreetAddress1": "Currently Not Available",
+                  "facilityStreetAddress2": "Currently Not Available",
+                  "facilityCity": "Currently Not Available",
+                  "facilityPostalCode": "Currently Not Available",
+                  "facilityState": "Currently Not Available",
+                  "facilityCountry": "Currently Not Available",
+                  "facilityOwner": "Currently Not Available",
+                  "facilityOwnerStreetAddress1": "Currently Not Available",
+                  "facilityOwnerStreetAddress2": "Currently Not Available",
+                  "facilityOwnerCity": "Currently Not Available",
+                  "facilityOwnerPostalCode": "Currently Not Available",
+                  "facilityOwnerState": "Currently Not Available",
+                  "facilityOwnerCountry": "Currently Not Available",
+                  "immediateOwnerLegalBusinessName": "Currently Not Available",
+                  "immediateOwnerCageCode": "Currently Not Available",
+                  "highestOwnerLegalBusinessName": "Currently Not Available",
+                  "highestOwnerCageCode": "Currently Not Available",
+                  "firstPredecessorLegalBusinessName": "Currently Not Available",
+                  "firstPredecessorCageCode": "Currently Not Available",
+                  "secondPredecessorLegalBusinessName": "Currently Not Available",
+                  "secondPredecessorCageCode": "Currently Not Available",
+                  "thirdPredecessorLegalBusinessName": "Currently Not Available",
+                  "thirdPredecessorCageCode": "Currently Not Available",
+                  "primaryNaics": "Currently Not Available",
+                  "naicsCode": "Currently Not Available",
+                  "sbaSmallBusiness": "Currently Not Available",
+                  "smallBusiness": "Currently Not Available",
+                  "veteranOwnedSmallBusiness": "Currently Not Available",
+                  "serviceDisabledVetOwnedSmallBusiness": "Currently Not Available",
+                  "womenOwnedSmallBusinessConcern": "Currently Not Available",
+                  "womenOwnedSmallBusiness": "Currently Not Available",
+                  "economicallyDisadvWomenOwnedSmallBusiness": "Currently Not Available",
+                  "smallDisadvantagedBusinessConcern": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusiness": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted": "Currently Not Available",
+                  "hubZoneSmallBusinessConcern": "Currently Not Available",
+                  "blackAmericanOwned": "Currently Not Available",
+                  "hispanicAmericanOwned": "Currently Not Available",
+                  "nativeAmericanOwned": "Currently Not Available",
+                  "asianPacificAmericanOwned": "Currently Not Available",
+                  "subcontinentAsianIndianAmericanOwned": "Currently Not Available",
+                  "historicallyBlackCollegeOrUniversity": "Currently Not Available",
+                  "minorityInstitution": "Currently Not Available",
+                  "linkForFARReportPDF": "https://www.sam.gov/SAMPortal/filedownload?pdfType=1&duns=439307625",
+                  "linkForFARReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ],
+          "dFARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "foreignGovernmentOwnershipFirstName": "Currently Not Available",
+                  "foreignGovernmentOwnershipMiddleInitial": "Currently Not Available",
+                  "foreignGovernmentOwnershipLastName": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneNum": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneExt": "Currently Not Available",
+                  "foreignGovernmentOwnershipInternationalNum": "Currently Not Available",
+                  "foreignGovernmentControlCountry": "Currently Not Available",
+                  "foreignEndProductName": "Currently Not Available",
+                  "foreignEndProductCountry": "Currently Not Available",
+                  "linkForDFARSReportPDF": "https://www.sam.gov/SAM/filedownload?pdfType=2&duns=439307625",
+                  "linkForDFARSReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ]
+        },
+        "qualifications": {
+          "architectEngineerResponses": {
+            "listOfProvisions": [
+              {
+                "provisionId": "Currently Not Available"
+              }
+            ],
+            "listOfAnswers": [
+              {
+                "answerType": "Currently Not Available",
+                "answerId": "Currently Not Available",
+                "answerText": "Currently Not Available",
+                "businessObjectType": "Currently Not Available",
+                "businessObjectId": "Currently Not Available",
+                "firstName": "Currently Not Available",
+                "middleInitial": "Currently Not Available",
+                "lastName": "Currently Not Available",
+                "title": "Currently Not Available",
+                "companyName": "Currently Not Available",
+                "companyEstablishedYear": "Currently Not Available",
+                "companyDUNS": "Currently Not Available",
+                "companyIsReference": "Currently Not Available",
+                "firmNumOfEmployees": "Currently Not Available",
+                "branchNumOfEmployees": "Currently Not Available",
+                "experienceCode": "Currently Not Available",
+                "annualAvgRevenueCode": "Currently Not Available",
+                "federalRevenueCode": "Currently Not Available",
+                "nonFedRevenueCode": "Currently Not Available",
+                "totalRevenueCode": "Currently Not Available",
+                "qualificationURLPDF": "Currently Not Available",
+                "qualificationURLHTML": "Currently Not Available"
+              }
+            ]
+          }
+        },
+        "financialAssistanceCertifications": {
+          "financialAssistanceResponse": "Currently Not Available"
+        }
+      },
+      "pointsOfContact": {
+        "governmentBusinessPOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "XX",
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": "1111111111",
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "Address1",
+          "addressLine2": null,
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "electronicBusinessPOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "XX",
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": "1111111111",
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "Address1",
+          "addressLine2": null,
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "governmentBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "electronicBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformancePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformanceAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "partyPerformingCertificationPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "soleProprietorshipPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "accountsReceivablePOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "XX",
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": "1111111111",
+          "fax": null,
+          "email": "something@sam.gov"
+        },
+        "accountsPayablePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "ediPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "eliminationsPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "salesPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        }
+      }
+    }
+  ],
+  "links": {
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=439307625&page=0&size=10"
+  }
+}
+</pre>
+</code>
+</p>
+</details>
+
+### Example 9: Get an Entity with an Address Change resulting from EVS Monitoring
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=081270422<br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=081270422<br>
+<br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 1,
+  "entityData": [
+    {
+      "entityRegistration": {
+        "samRegistered": "Y",
+        "ueiSAM": " F7SEZJMNRYN1",
+        "ueiDUNS": "081270422",
+        "entityEFTIndicator": null,
+        "cageCode": "855J5",
+        "dodaac": null,
+        "legalBusinessName": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+        "dbaName": null,
+        "purposeOfRegistrationCode": "Z2",
+        "purposeOfRegistrationDesc": "All Awards",
+        "registrationStatus": "Active",
+        "registrationDate": "2018-07-24",
+        "lastUpdateDate": "2018-09-08",
+        "expirationDate": "2019-07-24",
+        "activationDate": "2018-07-26",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06,
+        "noPublicDisplayFlag": "F",
+        "exclusionStatusFlag": null,
+        "exclusionURL": null
+        "dnbOpenData": "Y"
+      },
+      "coreData": {
+        "entityHierarchyInformation": {
+          "immediateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": null,
+            "phoneNumber": null
+          },
+          "intermediateParentEntities": [
+            {
+              "domesticParent": {
+                "ueiSAM": null,
+                "ueiDUNS": null,
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": null,
+                  "addressLine2": null,
+                  "city": null,
+                  "stateOrProvinceCode": null,
+                  "countryCode": null,
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              },
+              "hqParent": {
+                "ueiSAM": null,
+                "ueiDUNS": null,
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": null,
+                  "addressLine2": null,
+                  "city": null,
+                  "stateOrProvinceCode": null,
+                  "countryCode": null,
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              }
+            }
+          ],
+          "ultimateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": {
+              "addressLine1": null,
+              "addressLine2": null,
+              "city": null,
+              "stateOrProvinceCode": null,
+              "countryCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null
+            },
+            "phoneNumber": null
+          },
+          "evsMonitoring": {
+              "legalBusinessName": "N/A",
+              "dbaName": "N/A",
+              "outOfBusinessFlag": "N/A",
+              "monitoringStatus": "Y",
+              "lastUpdated": "Y",
+              "addressLine1": "Address1",
+              "addressLine2": "Address2",
+              "city": "City",
+              "zipCode": "11111",
+              "zipCodePlus4": "1111",
+              "stateOrProvinceCode": "XX",
+              "countryCode": "ABC"
+            },              
+        "federalHierarchy": {
+          "source": null,
+          "hierarchyDepartmentCode": null,
+          "hierarchyDepartmentName": null,
+          "hierarchyAgencyCode": null,
+          "hierarchyAgencyName": null,
+          "hierarchyOfficeCode": null
+        },
+        "entityInformation": {
+          "entityURL": "http://www.ibm.com/us/en",
+          "entityDivisionName": "IBM GLOBAL BUSINESS SERVICES",
+          "entityDivisionNumber": "16",
+          "entityStartDate": null,
+          "fiscalYearEndCloseDate": "1231",
+          "submissionDate": "Currently Not Available"
+        },
+         "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "congressionalDistrict": "02",
+        "generalInformation": {
+          "agencyBusinessPurposeCode": null,
+          "agencyBusinessPurposeDesc": "",
+          "entityStructureCode": "2L",
+          "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+          "entityTypeCode": "Currently Not Available",
+          "entityTypeDesc": "Currently Not Available",
+          "profitStructureCode": "2X",
+          "profitStructureDesc": "For Profit Organization",
+          "organizationStructureCode": null,
+          "organizationStructureDesc": null,
+          "stateOfIncorporationCode": "NY",
+          "stateOfIncorporationDesc": "Currently Not Available",
+          "countryOfIncorporationCode": "USA",
+          "countryOfIncorporationDesc": "Currently Not Available",
+          "companySecurityLevelCode": "94",
+          "companySecurityLevelDesc": "Government Top Secret",
+          "highestEmployeeSecurityLevelCode": "94",
+          "highestEmployeeSecurityLevelDesc": "Government Top Secret"
+        },
+        "businessTypes": {
+          "businessTypeList": [
+            {
+              "businessTypeCode": "2X",
+              "businessTypeDesc": "For Profit Organization"
+            }
+          ],
+          "sbaBusinessTypeList": [
+            {
+              "sbaBusinessTypeCode": null,
+              "sbaBusinessTypeDesc": null,
+              "certificationEntryDate": "Currently Not Available",
+              "certificationExitDate": null
+            }
+          ]
+        },
+        "financialInformation": {
+          "creditCardUsage": "N",
+          "debtSubjectToOffset": null
+        }
+      },
+      "assertions": {
+        "goodsAndServices": {
+          "primaryNaics": "334413",
+          "naicsList": [
+            {
+              "naicsCode": "334413",
+              "naicsDescription": "SEMICONDUCTOR AND RELATED DEVICE MANUFACTURING",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            }
+          ],
+          "pscList": [
+            {
+              "pscCode": null,
+              "pscDescription": null
+            }
+          ]
+        },
+        "disasterReliefData": {
+          "disasterRegistryFlag": "NO",
+          "bondingFlag": "NO",
+          "bondingLevels": null,
+          "geographicalAreaServed": [
+            {
+              "geographicalAreaServedStateCode": null,
+              "geographicalAreaServedStateName": "Currently Not Available",
+              "geographicalAreaServedCountyCode": null,
+              "geographicalAreaServedCountyName": "Currently Not Available",
+              "geographicalAreaServedmetropolitanStatisticalAreaCode": null,
+              "geographicalAreaServedmetropolitanStatisticalAreaName": "Currently Not Available"
+            }
+          ]
+        },
+        "sizeMetrics": {
+          "averageAnnualRevenue": "1111",
+          "averageNumberOfEmployees": "2222"
+        },
+        "sizeMetricDetails": null,
+        "industrySpecificSizeMetrics": null,
+        "ediInformation": {
+          "ediInformationFlag": "N",
+          "vanProvider": null,
+          "isaQualifier": null,
+          "isaIdentifier": null,
+          "functionalGroupIdentifier": null,
+          "requestFlag820s": null
+        }
+      },
+      "repsAndCerts": {
+        "certifications": {
+          "fARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "firstName": "Currently Not Available",
+                  "lastName": "Currently Not Available",
+                  "hasSizeProtest": "Currently Not Available",
+                  "title": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "status": "Currently Not Available",
+                  "organizationType": "Currently Not Available",
+                  "endProductName": "Currently Not Available",
+                  "endProductType": "Currently Not Available",
+                  "endProductCountry": "Currently Not Available",
+                  "placeOfManufacture": "Currently Not Available",
+                  "fscCode": "Currently Not Available",
+                  "environmentURL": "Currently Not Available",
+                  "facilityStreetAddress1": "Currently Not Available",
+                  "facilityStreetAddress2": "Currently Not Available",
+                  "facilityCity": "Currently Not Available",
+                  "facilityPostalCode": "Currently Not Available",
+                  "facilityState": "Currently Not Available",
+                  "facilityCountry": "Currently Not Available",
+                  "facilityOwner": "Currently Not Available",
+                  "facilityOwnerStreetAddress1": "Currently Not Available",
+                  "facilityOwnerStreetAddress2": "Currently Not Available",
+                  "facilityOwnerCity": "Currently Not Available",
+                  "facilityOwnerPostalCode": "Currently Not Available",
+                  "facilityOwnerState": "Currently Not Available",
+                  "facilityOwnerCountry": "Currently Not Available",
+                  "immediateOwnerLegalBusinessName": "Currently Not Available",
+                  "immediateOwnerCageCode": "Currently Not Available",
+                  "highestOwnerLegalBusinessName": "Currently Not Available",
+                  "highestOwnerCageCode": "Currently Not Available",
+                  "firstPredecessorLegalBusinessName": "Currently Not Available",
+                  "firstPredecessorCageCode": "Currently Not Available",
+                  "secondPredecessorLegalBusinessName": "Currently Not Available",
+                  "secondPredecessorCageCode": "Currently Not Available",
+                  "thirdPredecessorLegalBusinessName": "Currently Not Available",
+                  "thirdPredecessorCageCode": "Currently Not Available",
+                  "primaryNaics": "Currently Not Available",
+                  "naicsCode": "Currently Not Available",
+                  "sbaSmallBusiness": "Currently Not Available",
+                  "smallBusiness": "Currently Not Available",
+                  "veteranOwnedSmallBusiness": "Currently Not Available",
+                  "serviceDisabledVetOwnedSmallBusiness": "Currently Not Available",
+                  "womenOwnedSmallBusinessConcern": "Currently Not Available",
+                  "womenOwnedSmallBusiness": "Currently Not Available",
+                  "economicallyDisadvWomenOwnedSmallBusiness": "Currently Not Available",
+                  "smallDisadvantagedBusinessConcern": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusiness": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted": "Currently Not Available",
+                  "hubZoneSmallBusinessConcern": "Currently Not Available",
+                  "blackAmericanOwned": "Currently Not Available",
+                  "hispanicAmericanOwned": "Currently Not Available",
+                  "nativeAmericanOwned": "Currently Not Available",
+                  "asianPacificAmericanOwned": "Currently Not Available",
+                  "subcontinentAsianIndianAmericanOwned": "Currently Not Available",
+                  "historicallyBlackCollegeOrUniversity": "Currently Not Available",
+                  "minorityInstitution": "Currently Not Available",
+                  "linkForFARReportPDF": "https://www.sam.gov/SAMPortal/filedownload?pdfType=1&duns=081270422",
+                  "linkForFARReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ],
+          "dFARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "foreignGovernmentOwnershipFirstName": "Currently Not Available",
+                  "foreignGovernmentOwnershipMiddleInitial": "Currently Not Available",
+                  "foreignGovernmentOwnershipLastName": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneNum": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneExt": "Currently Not Available",
+                  "foreignGovernmentOwnershipInternationalNum": "Currently Not Available",
+                  "foreignGovernmentControlCountry": "Currently Not Available",
+                  "foreignEndProductName": "Currently Not Available",
+                  "foreignEndProductCountry": "Currently Not Available",
+                  "linkForDFARSReportPDF": "https://www.sam.gov/SAM/filedownload?pdfType=2&duns=081270422",
+                  "linkForDFARSReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ]
+        },
+        "qualifications": {
+          "architectEngineerResponses": {
+            "listOfProvisions": [
+              {
+                "provisionId": "Currently Not Available"
+              }
+            ],
+            "listOfAnswers": [
+              {
+                "answerType": "Currently Not Available",
+                "answerId": "Currently Not Available",
+                "answerText": "Currently Not Available",
+                "businessObjectType": "Currently Not Available",
+                "businessObjectId": "Currently Not Available",
+                "firstName": "Currently Not Available",
+                "middleInitial": "Currently Not Available",
+                "lastName": "Currently Not Available",
+                "title": "Currently Not Available",
+                "companyName": "Currently Not Available",
+                "companyEstablishedYear": "Currently Not Available",
+                "companyDUNS": "Currently Not Available",
+                "companyIsReference": "Currently Not Available",
+                "firmNumOfEmployees": "Currently Not Available",
+                "branchNumOfEmployees": "Currently Not Available",
+                "experienceCode": "Currently Not Available",
+                "annualAvgRevenueCode": "Currently Not Available",
+                "federalRevenueCode": "Currently Not Available",
+                "nonFedRevenueCode": "Currently Not Available",
+                "totalRevenueCode": "Currently Not Available",
+                "qualificationURLPDF": "Currently Not Available",
+                "qualificationURLHTML": "Currently Not Available"
+              }
+            ]
+          }
+        },
+        "financialAssistanceCertifications": {
+          "financialAssistanceResponse": "Currently Not Available"
+        }
+      },
+      "pointsOfContact": {
+        "governmentBusinessPOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "TITLE",
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "ADDRESS1",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "electronicBusinessPOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "TITLE",
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "ADDRESS1",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "governmentBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "electronicBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformancePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformanceAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "partyPerformingCertificationPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "soleProprietorshipPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "accountsReceivablePOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "TITLE",
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov"
+        },
+        "accountsPayablePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "ediPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "eliminationsPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "salesPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        }
+      }
+    }
+  ],
+  "links": {
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=081270422&page=0&size=10"
+  }
+}
+</pre>
+</code>
+</p>
+</details>
+
+### Example 10: Get an Entity with a Name Change resulting from EVS Monitoring
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=080192883<br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=080192883<br>
+<br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 1,
+  "entityData": [
+    {
+      "entityRegistration": {
+        "samRegistered": "Y",
+        "ueiSAM": " F7SEZJMNRYN1",
+        "ueiDUNS": "080192883",
+        "entityEFTIndicator": null,
+        "cageCode": "7X7G0",
+        "dodaac": null,
+        "legalBusinessName": "IBM SOUTHEAST EMPLOYEES' CREDIT UNION",
+        "dbaName": null,
+        "purposeOfRegistrationCode": "Z1",
+        "purposeOfRegistrationDesc": "Federal Assistance Awards",
+        "registrationStatus": "Active",
+        "registrationDate": "2017-07-27",
+        "lastUpdateDate": "2019-04-22",
+        "expirationDate": "2019-06-25",
+        "activationDate": "2018-06-25",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06,
+        "noPublicDisplayFlag": "NPDY",
+        "exclusionStatusFlag": null,
+        "exclusionURL": null
+        "dnbOpenData": "N"
+      },
+      "coreData": {
+        "entityHierarchyInformation": {
+          "immediateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": null,
+            "phoneNumber": null
+          },
+          "intermediateParentEntities": [
+            {
+              "domesticParent": {
+                "ueiSAM": "F7SEZJMNRYN1",
+                "ueiDUNS": "080192883",
+                "legalBusinessName": "IBM SOUTHEAST EMPLOYEES' CREDIT UNION",
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": null,
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "countryCode": "ABC",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111"
+                },
+                "phoneNumber": null
+              },
+              "hqParent": {
+                "ueiSAM": "F7SEZJMNRYN1",
+                "ueiDUNS": "080192883",
+                "legalBusinessName": "IBM SOUTHEAST EMPLOYEES' CREDIT UNION",
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": null,
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "countryCode": "ABC",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111"
+                },
+                "phoneNumber": null
+              }
+            }
+          ],
+          "ultimateParentEntity": {
+            "ueiSAM": "F7SEZJMNRYN1",
+            "ueiDUNS": "080192883",
+            "legalBusinessName": "IBM SOUTHEAST EMPLOYEES' CREDIT UNION",
+            "physicalAddress": {
+              "addressLine1": "Address1",
+              "addressLine2": null,
+              "city": "City",
+              "stateOrProvinceCode": "XX",
+              "countryCode": "ABC",
+              "zipCode": "11111",
+              "zipCodePlus4": "1111"
+            },
+            "phoneNumber": null
+          },
+          "evsMonitoring": {
+              "legalBusinessName": "IBM Credit Union for Southeast Employees",
+              "dbaName": "N/A",
+              "outOfBusinessFlag": "N/A",
+              "monitoringStatus": "Y",
+              "lastUpdated": "Y",
+              "addressLine1": "N/A",
+              "addressLine2": "N/A",
+              "city": "N/A",
+              "zipCode": "N/A",
+              "zipCodePlus4": "N/A",
+              "stateOrProvinceCode": "N/A",
+              "countryCode": "N/A"
+            },    
+        "federalHierarchy": {
+          "source": null,
+          "hierarchyDepartmentCode": null,
+          "hierarchyDepartmentName": null,
+          "hierarchyAgencyCode": null,
+          "hierarchyAgencyName": null,
+          "hierarchyOfficeCode": null
+        },
+        "entityInformation": {
+          "entityURL": "www.ibmsecu.org",
+          "entityDivisionName": null,
+          "entityDivisionNumber": null,
+          "entityStartDate": null,
+          "fiscalYearEndCloseDate": "1231",
+          "submissionDate": "Currently Not Available"
+        },
+  "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "congressionalDistrict": "21",
+        "generalInformation": {
+          "agencyBusinessPurposeCode": null,
+          "agencyBusinessPurposeDesc": "",
+          "entityStructureCode": "8H",
+          "entityStructureDesc": "Corporate Entity (Tax Exempt)",
+          "entityTypeCode": "Currently Not Available",
+          "entityTypeDesc": "Currently Not Available",
+          "profitStructureCode": "A8",
+          "profitStructureDesc": "Non-Profit Organization",
+          "organizationStructureCode": null,
+          "organizationStructureDesc": null,
+          "stateOfIncorporationCode": "FL",
+          "stateOfIncorporationDesc": "Currently Not Available",
+          "countryOfIncorporationCode": "USA",
+          "countryOfIncorporationDesc": "Currently Not Available",
+          "companySecurityLevelCode": null,
+          "companySecurityLevelDesc": "",
+          "highestEmployeeSecurityLevelCode": null,
+          "highestEmployeeSecurityLevelDesc": ""
+        },
+        "businessTypes": {
+          "businessTypeList": [
+            {
+              "businessTypeCode": "A8",
+              "businessTypeDesc": "Non-Profit Organization"
+            }
+          ],
+          "sbaBusinessTypeList": [
+            {
+              "sbaBusinessTypeCode": null,
+              "sbaBusinessTypeDesc": null,
+              "certificationEntryDate": "Currently Not Available",
+              "certificationExitDate": null
+            }
+          ]
+        },
+        "financialInformation": {
+          "creditCardUsage": "N",
+          "debtSubjectToOffset": null
+        }
+      },
+      "assertions": {
+        "goodsAndServices": {
+          "primaryNaics": null,
+          "naicsList": [
+            {
+              "naicsCode": null,
+              "naicsDescription": null,
+              "sbaSmallBusiness": null,
+              "naicsException": null
+            }
+          ],
+          "pscList": [
+            {
+              "pscCode": null,
+              "pscDescription": null
+            }
+          ]
+        },
+        "disasterReliefData": {
+          "disasterRegistryFlag": "NO",
+          "bondingFlag": "NO",
+          "bondingLevels": null,
+          "geographicalAreaServed": [
+            {
+              "geographicalAreaServedStateCode": null,
+              "geographicalAreaServedStateName": "Currently Not Available",
+              "geographicalAreaServedCountyCode": null,
+              "geographicalAreaServedCountyName": "Currently Not Available",
+              "geographicalAreaServedmetropolitanStatisticalAreaCode": null,
+              "geographicalAreaServedmetropolitanStatisticalAreaName": "Currently Not Available"
+            }
+          ]
+        },
+        "sizeMetrics": {
+          "averageAnnualRevenue": null,
+          "averageNumberOfEmployees": null
+        },
+        "sizeMetricDetails": null,
+        "industrySpecificSizeMetrics": null,
+        "ediInformation": {
+          "ediInformationFlag": "N",
+          "vanProvider": null,
+          "isaQualifier": null,
+          "isaIdentifier": null,
+          "functionalGroupIdentifier": null,
+          "requestFlag820s": null
+        }
+      },
+      "repsAndCerts": {
+        "certifications": {
+          "fARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "firstName": "Currently Not Available",
+                  "lastName": "Currently Not Available",
+                  "hasSizeProtest": "Currently Not Available",
+                  "title": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "status": "Currently Not Available",
+                  "organizationType": "Currently Not Available",
+                  "endProductName": "Currently Not Available",
+                  "endProductType": "Currently Not Available",
+                  "endProductCountry": "Currently Not Available",
+                  "placeOfManufacture": "Currently Not Available",
+                  "fscCode": "Currently Not Available",
+                  "environmentURL": "Currently Not Available",
+                  "facilityStreetAddress1": "Currently Not Available",
+                  "facilityStreetAddress2": "Currently Not Available",
+                  "facilityCity": "Currently Not Available",
+                  "facilityPostalCode": "Currently Not Available",
+                  "facilityState": "Currently Not Available",
+                  "facilityCountry": "Currently Not Available",
+                  "facilityOwner": "Currently Not Available",
+                  "facilityOwnerStreetAddress1": "Currently Not Available",
+                  "facilityOwnerStreetAddress2": "Currently Not Available",
+                  "facilityOwnerCity": "Currently Not Available",
+                  "facilityOwnerPostalCode": "Currently Not Available",
+                  "facilityOwnerState": "Currently Not Available",
+                  "facilityOwnerCountry": "Currently Not Available",
+                  "immediateOwnerLegalBusinessName": "Currently Not Available",
+                  "immediateOwnerCageCode": "Currently Not Available",
+                  "highestOwnerLegalBusinessName": "Currently Not Available",
+                  "highestOwnerCageCode": "Currently Not Available",
+                  "firstPredecessorLegalBusinessName": "Currently Not Available",
+                  "firstPredecessorCageCode": "Currently Not Available",
+                  "secondPredecessorLegalBusinessName": "Currently Not Available",
+                  "secondPredecessorCageCode": "Currently Not Available",
+                  "thirdPredecessorLegalBusinessName": "Currently Not Available",
+                  "thirdPredecessorCageCode": "Currently Not Available",
+                  "primaryNaics": "Currently Not Available",
+                  "naicsCode": "Currently Not Available",
+                  "sbaSmallBusiness": "Currently Not Available",
+                  "smallBusiness": "Currently Not Available",
+                  "veteranOwnedSmallBusiness": "Currently Not Available",
+                  "serviceDisabledVetOwnedSmallBusiness": "Currently Not Available",
+                  "womenOwnedSmallBusinessConcern": "Currently Not Available",
+                  "womenOwnedSmallBusiness": "Currently Not Available",
+                  "economicallyDisadvWomenOwnedSmallBusiness": "Currently Not Available",
+                  "smallDisadvantagedBusinessConcern": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusiness": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted": "Currently Not Available",
+                  "hubZoneSmallBusinessConcern": "Currently Not Available",
+                  "blackAmericanOwned": "Currently Not Available",
+                  "hispanicAmericanOwned": "Currently Not Available",
+                  "nativeAmericanOwned": "Currently Not Available",
+                  "asianPacificAmericanOwned": "Currently Not Available",
+                  "subcontinentAsianIndianAmericanOwned": "Currently Not Available",
+                  "historicallyBlackCollegeOrUniversity": "Currently Not Available",
+                  "minorityInstitution": "Currently Not Available",
+                  "linkForFARReportPDF": "https://www.sam.gov/SAMPortal/filedownload?pdfType=1&duns=080192883",
+                  "linkForFARReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ],
+          "dFARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "foreignGovernmentOwnershipFirstName": "Currently Not Available",
+                  "foreignGovernmentOwnershipMiddleInitial": "Currently Not Available",
+                  "foreignGovernmentOwnershipLastName": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneNum": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneExt": "Currently Not Available",
+                  "foreignGovernmentOwnershipInternationalNum": "Currently Not Available",
+                  "foreignGovernmentControlCountry": "Currently Not Available",
+                  "foreignEndProductName": "Currently Not Available",
+                  "foreignEndProductCountry": "Currently Not Available",
+                  "linkForDFARSReportPDF": "https://www.sam.gov/SAM/filedownload?pdfType=2&duns=080192883",
+                  "linkForDFARSReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ]
+        },
+        "qualifications": {
+          "architectEngineerResponses": {
+            "listOfProvisions": [
+              {
+                "provisionId": "Currently Not Available"
+              }
+            ],
+            "listOfAnswers": [
+              {
+                "answerType": "Currently Not Available",
+                "answerId": "Currently Not Available",
+                "answerText": "Currently Not Available",
+                "businessObjectType": "Currently Not Available",
+                "businessObjectId": "Currently Not Available",
+                "firstName": "Currently Not Available",
+                "middleInitial": "Currently Not Available",
+                "lastName": "Currently Not Available",
+                "title": "Currently Not Available",
+                "companyName": "Currently Not Available",
+                "companyEstablishedYear": "Currently Not Available",
+                "companyDUNS": "Currently Not Available",
+                "companyIsReference": "Currently Not Available",
+                "firmNumOfEmployees": "Currently Not Available",
+                "branchNumOfEmployees": "Currently Not Available",
+                "experienceCode": "Currently Not Available",
+                "annualAvgRevenueCode": "Currently Not Available",
+                "federalRevenueCode": "Currently Not Available",
+                "nonFedRevenueCode": "Currently Not Available",
+                "totalRevenueCode": "Currently Not Available",
+                "qualificationURLPDF": "Currently Not Available",
+                "qualificationURLHTML": "Currently Not Available"
+              }
+            ]
+          }
+        },
+        "financialAssistanceCertifications": {
+          "financialAssistanceResponse": "Currently Not Available"
+        }
+      },
+      "pointsOfContact": {
+        "governmentBusinessPOC": {
+          "firstName": "FIRST",
+          "middleInitial": "M",
+          "lastName": "LAST",
+          "title": "TITLE",
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "ADDRESS1",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "electronicBusinessPOC": {
+          "firstName": "FIRST",
+          "middleInitial": "M",
+          "lastName": "LAST",
+          "title": "TITLE",
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "ADDRESS1",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "ABC"
+        },
+        "governmentBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "electronicBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformancePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformanceAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "partyPerformingCertificationPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "soleProprietorshipPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "accountsReceivablePOC": {
+          "firstName": "FIRST",
+          "middleInitial": "M",
+          "lastName": "LAST",
+          "title": "TITLE",
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov"
+        },
+        "accountsPayablePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "ediPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "eliminationsPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "salesPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        }
+      }
+    }
+  ],
+  "links": {
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=080192883&page=0&size=10"
+  }
+}
+</pre>
+</code>
+</p>
+</details>
+
+### Example 11: Get an Entity with No EVS Monitoring
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=079870954<br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=079870954<br>
+<br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 1,
+  "entityData": [
+    {
+      "entityRegistration": {
+        "samRegistered": "Y",
+        "ueiSAM": " F7SEZJMNRYN1",
+        "ueiDUNS": "079870954",
+        "entityEFTIndicator": null,
+        "cageCode": "7F0U0",
+        "dodaac": null,
+        "legalBusinessName": "ENTERPRISE ASSURANCE MANAGEMENT",
+        "dbaName": null,
+        "purposeOfRegistrationCode": "Z2",
+        "purposeOfRegistrationDesc": "All Awards",
+        "registrationStatus": "Active",
+        "registrationDate": "2015-07-10",
+        "lastUpdateDate": "2018-09-08",
+        "expirationDate": "2019-05-15",
+        "activationDate": "2018-07-05",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": "2022-01-01",
+        "ueiCreationDate": "2020-02-06,
+        "noPublicDisplayFlag": "F",
+        "exclusionStatusFlag": null,
+        "exclusionURL": null
+        "dnbOpenData": "Y"
+      },
+      "coreData": {
+        "entityHierarchyInformation": {
+          "immediateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": null,
+            "phoneNumber": null
+          },
+          "intermediateParentEntities": [
+            {
+              "domesticParent": {
+                "ueiSAM": null,
+                "ueiDUNS": null,
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": null,
+                  "addressLine2": null,
+                  "city": null,
+                  "stateOrProvinceCode": null,
+                  "countryCode": null,
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              },
+              "hqParent": {
+                "ueiSAM": null,
+                "ueiDUNS": null,
+                "legalBusinessName": null,
+                "physicalAddress": {
+                  "addressLine1": null,
+                  "addressLine2": null,
+                  "city": null,
+                  "stateOrProvinceCode": null,
+                  "countryCode": null,
+                  "zipCode": null,
+                  "zipCodePlus4": null
+                },
+                "phoneNumber": null
+              }
+            }
+          ],
+          "ultimateParentEntity": {
+            "ueiSAM": null,
+            "ueiDUNS": null,
+            "legalBusinessName": null,
+            "physicalAddress": {
+              "addressLine1": null,
+              "addressLine2": null,
+              "city": null,
+              "stateOrProvinceCode": null,
+              "countryCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null
+            },
+            "phoneNumber": null
+          },
+          "evsMonitoring": 
+              "legalBusinessName": "Enterprise Assurance Management",
+              "dbaName": "N/A",
+              "outOfBusinessFlag": "N/A",
+              "monitoringStatus": "N",
+              "lastUpdated": "Y",
+              "addressLine1": "N/A",
+              "addressLine2": "N/A",
+              "city": "N/A",
+              "zipCode": "N/A",
+              "zipCodePlus4": "N/A",
+              "stateOrProvinceCode": "N/A",
+              "countryCode": "N/A"
+            },
+        "federalHierarchy": {
+          "source": null,
+          "hierarchyDepartmentCode": null,
+          "hierarchyDepartmentName": null,
+          "hierarchyAgencyCode": null,
+          "hierarchyAgencyName": null,
+          "hierarchyOfficeCode": null
+        },
+        "entityInformation": {
+          "entityURL": null,
+          "entityDivisionName": null,
+          "entityDivisionNumber": null,
+          "entityStartDate": "2011-06-30",
+          "fiscalYearEndCloseDate": "1031",
+          "submissionDate": "Currently Not Available"
+        },
+         "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "congressionalDistrict": "04",
+        "generalInformation": {
+          "agencyBusinessPurposeCode": null,
+          "agencyBusinessPurposeDesc": "",
+          "entityStructureCode": "8H",
+          "entityStructureDesc": "Corporate Entity (Tax Exempt)",
+          "entityTypeCode": "Currently Not Available",
+          "entityTypeDesc": "Currently Not Available",
+          "profitStructureCode": "2X",
+          "profitStructureDesc": "For Profit Organization",
+          "organizationStructureCode": "XS",
+          "organizationStructureDesc": "Subchapter S Corporation",
+          "stateOfIncorporationCode": "MD",
+          "stateOfIncorporationDesc": "Currently Not Available",
+          "countryOfIncorporationCode": "USA",
+          "countryOfIncorporationDesc": "Currently Not Available",
+          "companySecurityLevelCode": "93",
+          "companySecurityLevelDesc": "Government Secret",
+          "highestEmployeeSecurityLevelCode": "94",
+          "highestEmployeeSecurityLevelDesc": "Government Top Secret"
+        },
+        "businessTypes": {
+          "businessTypeList": [
+            {
+              "businessTypeCode": "2X",
+              "businessTypeDesc": "For Profit Organization"
+            },
+            {
+              "businessTypeCode": "A2",
+              "businessTypeDesc": "Woman Owned Business"
+            },
+            {
+              "businessTypeCode": "HQ",
+              "businessTypeDesc": "DOT Certified DBE"
+            },
+            {
+              "businessTypeCode": "OY",
+              "businessTypeDesc": "Black American Owned"
+            },
+            {
+              "businessTypeCode": "XS",
+              "businessTypeDesc": "Subchapter S Corporation"
+            }
+          ],
+          "sbaBusinessTypeList": [
+            {
+              "sbaBusinessTypeCode": null,
+              "sbaBusinessTypeDesc": null,
+              "certificationEntryDate": "Currently Not Available",
+              "certificationExitDate": null
+            }
+          ]
+        },
+        "financialInformation": {
+          "creditCardUsage": "Y",
+          "debtSubjectToOffset": null
+        }
+      },
+      "assertions": {
+        "goodsAndServices": {
+          "primaryNaics": "541519",
+          "naicsList": [
+            {
+              "naicsCode": "423430",
+              "naicsDescription": "COMPUTER AND COMPUTER PERIPHERAL EQUIPMENT AND SOFTWARE MERCHANT WHOLESALERS",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            },
+            {
+              "naicsCode": "541330",
+              "naicsDescription": "ENGINEERING SERVICES",
+              "sbaSmallBusiness": "E",
+              "naicsException": "NNNN"
+            },
+            {
+              "naicsCode": "541513",
+              "naicsDescription": "COMPUTER FACILITIES MANAGEMENT SERVICES",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            },
+            {
+              "naicsCode": "541519",
+              "naicsDescription": "OTHER COMPUTER RELATED SERVICES",
+              "sbaSmallBusiness": "E",
+              "naicsException": "NN  "
+            },
+            {
+              "naicsCode": "541990",
+              "naicsDescription": "ALL OTHER PROFESSIONAL, SCIENTIFIC, AND TECHNICAL SERVICES",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            },
+            {
+              "naicsCode": "561210",
+              "naicsDescription": "FACILITIES SUPPORT SERVICES",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            },
+            {
+              "naicsCode": "561990",
+              "naicsDescription": "ALL OTHER SUPPORT SERVICES",
+              "sbaSmallBusiness": "N",
+              "naicsException": null
+            }
+          ],
+          "pscList": [
+            {
+              "pscCode": "AE31",
+              "pscDescription": "R&D- ECONOMIC GROWTH: MANUFACTURING TECHNOLOGY (BASIC RESEARCH)"
+            },
+            {
+              "pscCode": "AE32",
+              "pscDescription": "R&D- ECONOMIC GROWTH: MANUFACTURING TECHNOLOGY (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT)"
+            },
+            {
+              "pscCode": "AE33",
+              "pscDescription": "R&D- ECONOMIC GROWTH: MANUFACTURING TECHNOLOGY (ADVANCED DEVELOPMENT)"
+            },
+            {
+              "pscCode": "AE34",
+              "pscDescription": "R&D- ECONOMIC GROWTH: MANUFACTURING TECHNOLOGY (ENGINEERING DEVELOPMENT)"
+            },
+            {
+              "pscCode": "AE35",
+              "pscDescription": "R&D- ECONOMIC GROWTH: MANUFACTURING TECHNOLOGY (OPERATIONAL SYSTEMS DEVELOPMENT)"
+            },
+            {
+              "pscCode": "AE36",
+              "pscDescription": "R&D- ECONOMIC GROWTH: MANUFACTURING TECHNOLOGY (MANAGEMENT/SUPPORT)"
+            }
+          ]
+        },
+        "disasterReliefData": {
+          "disasterRegistryFlag": "YES",
+          "bondingFlag": "NO",
+          "bondingLevels": null,
+          "geographicalAreaServed": [
+            {
+              "geographicalAreaServedStateCode": "DC",
+              "geographicalAreaServedStateName": "Currently Not Available",
+              "geographicalAreaServedCountyCode": null,
+              "geographicalAreaServedCountyName": "Currently Not Available",
+              "geographicalAreaServedmetropolitanStatisticalAreaCode": null,
+              "geographicalAreaServedmetropolitanStatisticalAreaName": "Currently Not Available"
+            },
+            {
+              "geographicalAreaServedStateCode": "MD",
+              "geographicalAreaServedStateName": "Currently Not Available",
+              "geographicalAreaServedCountyCode": null,
+              "geographicalAreaServedCountyName": "Currently Not Available",
+              "geographicalAreaServedmetropolitanStatisticalAreaCode": null,
+              "geographicalAreaServedmetropolitanStatisticalAreaName": "Currently Not Available"
+            },
+            {
+              "geographicalAreaServedStateCode": "VA",
+              "geographicalAreaServedStateName": "Currently Not Available",
+              "geographicalAreaServedCountyCode": null,
+              "geographicalAreaServedCountyName": "Currently Not Available",
+              "geographicalAreaServedmetropolitanStatisticalAreaCode": null,
+              "geographicalAreaServedmetropolitanStatisticalAreaName": "Currently Not Available"
+            }
+          ]
+        },
+        "sizeMetrics": {
+          "averageAnnualRevenue": "1111",
+          "averageNumberOfEmployees": "2222"
+        },
+        "sizeMetricDetails": {
+          "employeesLocation": "1111",
+          "receiptsLocation": "2222"
+        },
+        "industrySpecificSizeMetrics": {
+          "barrelsCapacity": null,
+          "totalAssets": null,
+          "megawattHours": null
+        },
+        "ediInformation": {
+          "ediInformationFlag": "N",
+          "vanProvider": null,
+          "isaQualifier": null,
+          "isaIdentifier": null,
+          "functionalGroupIdentifier": null,
+          "requestFlag820s": null
+        }
+      },
+      "repsAndCerts": {
+        "certifications": {
+          "fARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "firstName": "Currently Not Available",
+                  "lastName": "Currently Not Available",
+                  "hasSizeProtest": "Currently Not Available",
+                  "title": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "status": "Currently Not Available",
+                  "organizationType": "Currently Not Available",
+                  "endProductName": "Currently Not Available",
+                  "endProductType": "Currently Not Available",
+                  "endProductCountry": "Currently Not Available",
+                  "placeOfManufacture": "Currently Not Available",
+                  "fscCode": "Currently Not Available",
+                  "environmentURL": "Currently Not Available",
+                  "facilityStreetAddress1": "Currently Not Available",
+                  "facilityStreetAddress2": "Currently Not Available",
+                  "facilityCity": "Currently Not Available",
+                  "facilityPostalCode": "Currently Not Available",
+                  "facilityState": "Currently Not Available",
+                  "facilityCountry": "Currently Not Available",
+                  "facilityOwner": "Currently Not Available",
+                  "facilityOwnerStreetAddress1": "Currently Not Available",
+                  "facilityOwnerStreetAddress2": "Currently Not Available",
+                  "facilityOwnerCity": "Currently Not Available",
+                  "facilityOwnerPostalCode": "Currently Not Available",
+                  "facilityOwnerState": "Currently Not Available",
+                  "facilityOwnerCountry": "Currently Not Available",
+                  "immediateOwnerLegalBusinessName": "Currently Not Available",
+                  "immediateOwnerCageCode": "Currently Not Available",
+                  "highestOwnerLegalBusinessName": "Currently Not Available",
+                  "highestOwnerCageCode": "Currently Not Available",
+                  "firstPredecessorLegalBusinessName": "Currently Not Available",
+                  "firstPredecessorCageCode": "Currently Not Available",
+                  "secondPredecessorLegalBusinessName": "Currently Not Available",
+                  "secondPredecessorCageCode": "Currently Not Available",
+                  "thirdPredecessorLegalBusinessName": "Currently Not Available",
+                  "thirdPredecessorCageCode": "Currently Not Available",
+                  "primaryNaics": "Currently Not Available",
+                  "naicsCode": "Currently Not Available",
+                  "sbaSmallBusiness": "Currently Not Available",
+                  "smallBusiness": "Currently Not Available",
+                  "veteranOwnedSmallBusiness": "Currently Not Available",
+                  "serviceDisabledVetOwnedSmallBusiness": "Currently Not Available",
+                  "womenOwnedSmallBusinessConcern": "Currently Not Available",
+                  "womenOwnedSmallBusiness": "Currently Not Available",
+                  "economicallyDisadvWomenOwnedSmallBusiness": "Currently Not Available",
+                  "smallDisadvantagedBusinessConcern": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusiness": "Currently Not Available",
+                  "sbaCertifiedSmallBusinessDisadvBusinessNotSubmitted": "Currently Not Available",
+                  "hubZoneSmallBusinessConcern": "Currently Not Available",
+                  "blackAmericanOwned": "Currently Not Available",
+                  "hispanicAmericanOwned": "Currently Not Available",
+                  "nativeAmericanOwned": "Currently Not Available",
+                  "asianPacificAmericanOwned": "Currently Not Available",
+                  "subcontinentAsianIndianAmericanOwned": "Currently Not Available",
+                  "historicallyBlackCollegeOrUniversity": "Currently Not Available",
+                  "minorityInstitution": "Currently Not Available",
+                  "linkForFARReportPDF": "https://www.sam.gov/SAMPortal/filedownload?pdfType=1&duns=079870954",
+                  "linkForFARReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ],
+          "dFARResponses": [
+            {
+              "listOfProvisions": [
+                {
+                  "provisionId": "Currently Not Available"
+                }
+              ],
+              "listOfAnswers": [
+                {
+                  "answerType": "Currently Not Available",
+                  "answerId": "Currently Not Available",
+                  "answerText": "Currently Not Available",
+                  "businessObjectType": "Currently Not Available",
+                  "businessObjectId": "Currently Not Available",
+                  "section": "Currently Not Available",
+                  "foreignGovernmentOwnershipFirstName": "Currently Not Available",
+                  "foreignGovernmentOwnershipMiddleInitial": "Currently Not Available",
+                  "foreignGovernmentOwnershipLastName": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneNum": "Currently Not Available",
+                  "foreignGovernmentOwnershipPhoneExt": "Currently Not Available",
+                  "foreignGovernmentOwnershipInternationalNum": "Currently Not Available",
+                  "foreignGovernmentControlCountry": "Currently Not Available",
+                  "foreignEndProductName": "Currently Not Available",
+                  "foreignEndProductCountry": "Currently Not Available",
+                  "linkForDFARSReportPDF": "https://www.sam.gov/SAM/filedownload?pdfType=2&duns=079870954",
+                  "linkForDFARSReportHTML": "Currently Not Available"
+                }
+              ]
+            }
+          ]
+        },
+        "qualifications": {
+          "architectEngineerResponses": {
+            "listOfProvisions": [
+              {
+                "provisionId": "Currently Not Available"
+              }
+            ],
+            "listOfAnswers": [
+              {
+                "answerType": "Currently Not Available",
+                "answerId": "Currently Not Available",
+                "answerText": "Currently Not Available",
+                "businessObjectType": "Currently Not Available",
+                "businessObjectId": "Currently Not Available",
+                "firstName": "Currently Not Available",
+                "middleInitial": "Currently Not Available",
+                "lastName": "Currently Not Available",
+                "title": "Currently Not Available",
+                "companyName": "Currently Not Available",
+                "companyEstablishedYear": "Currently Not Available",
+                "companyDUNS": "Currently Not Available",
+                "companyIsReference": "Currently Not Available",
+                "firmNumOfEmployees": "Currently Not Available",
+                "branchNumOfEmployees": "Currently Not Available",
+                "experienceCode": "Currently Not Available",
+                "annualAvgRevenueCode": "Currently Not Available",
+                "federalRevenueCode": "Currently Not Available",
+                "nonFedRevenueCode": "Currently Not Available",
+                "totalRevenueCode": "Currently Not Available",
+                "qualificationURLPDF": "Currently Not Available",
+                "qualificationURLHTML": "Currently Not Available"
+              }
+            ]
+          }
+        },
+        "financialAssistanceCertifications": {
+          "financialAssistanceResponse": "Currently Not Available"
+        }
+      },
+      "pointsOfContact": {
+        "governmentBusinessPOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "TITLE",
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "ADDRESS1",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "electronicBusinessPOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "TITLE",
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "ADDRESS1",
+          "addressLine2": null,
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "governmentBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "electronicBusinessAlternatePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "pastPerformancePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "ADDRESS1",
+          "addressLine2": "ADDRESS2",
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "pastPerformanceAlternatePOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "TITLE",
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov",
+          "addressLine1": "ADDRESS1",
+          "addressLine2": "ADDRESS2",
+          "city": "CITY",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "partyPerformingCertificationPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "soleProprietorshipPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "accountsReceivablePOC": {
+          "firstName": "FIRST",
+          "middleInitial": null,
+          "lastName": "LAST",
+          "title": "TITLE",
+          "usPhone": "1111111111",
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": "something@sam.gov"
+        },
+        "accountsPayablePOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "ediPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null
+        },
+        "eliminationsPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        },
+        "salesPOC": {
+          "firstName": null,
+          "middleInitial": null,
+          "lastName": null,
+          "title": null,
+          "usPhone": null,
+          "usPhoneExtension": null,
+          "nonUSPhone": null,
+          "fax": null,
+          "email": null,
+          "addressLine1": null,
+          "addressLine2": null,
+          "city": null,
+          "stateOrProvinceCode": null,
+          "zipCode": null,
+          "zipCodePlus4": null,
+          "countryCode": null
+        }
+      }
+    }
+  ],
+  "links": {
+    "selfLink": " https://api.sam.gov/entity-information/v2/entities?api_key=REPLACE_WITH_API_KEY&ueiDUNS=079870954&page=0&size=10"
+  }
+}
+</pre>
+</code>
+</p>
+</details>
+
+### Example 12:  Get a CSV file of active Entity records
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>  https://api.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key>&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
+<br>
+</details>
+
+<details>
+<summary>Response</summary>
+Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sample CSV Response</a><br>
+</details>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -11996,6 +17957,7 @@ Disclaimer:
 | 09/25/2019 | v1.2 | Beta endpoints for public and FOUO API were updated from version 0.9 to version 1.0.|
 | 11/25/2019 | v1.3 | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.|
 | 12/20/2019 | v1.4 | * Removed Email, Fax,US phone number and non-us phone number from public poc sections for v2. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.|
+| 02/25/2020 | v1.5 | * Added Examples for v2 requests and responses.  <br><br> * Updated Alpha endpoint to meet new API standards.|
 
 
 <p><small><a href="#">Back to top</a></small></p>
