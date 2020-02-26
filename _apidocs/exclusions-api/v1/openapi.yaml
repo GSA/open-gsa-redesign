@@ -111,7 +111,7 @@ paths:
             type: string
         - name: ueiSAM
           in: query
-          description: Unique Entity Identifier SAM- 12 charecter value (9725565TF10, TF1186521211,
+          description: Unique Entity Identifier SAM- 12 character value (9725565TF10, TF1186521211,
             47795005123QW, null) - Replacement for ueiDUNS
           required: false
           schema:
@@ -288,7 +288,7 @@ paths:
             type: string
         - name: ueiSAM
           in: query
-          description: Unique Entity Identifier SAMMI- 12 charecter value (9725565TF10, TF1186521211,
+          description: Unique Entity Identifier SAMMI- 12 character value (9725565TF10, TF1186521211,
             47795005123QW, null) - Replacement for ueiDUNS
           required: false
           schema:

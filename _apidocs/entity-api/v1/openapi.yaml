@@ -75,7 +75,7 @@ paths:
             type: string
         - name: ueiSAM
           in: query
-          description: Unique Entity Identifier SAM- 12 charecter value; a maximum of up to 100
+          description: Unique Entity Identifier SAM- 12 character value; a maximum of up to 100
             values can be sent (This will replace ueiDUNS)
           required: false
           schema:
@@ -328,7 +328,7 @@ paths:
             type: string
         - name: ultimateParentUEISAM
           in: query
-          description: Ultimate Parent Unique Entity Identifier SAM- 12 charecter value (This
+          description: Ultimate Parent Unique Entity Identifier SAM- 12 character value (This
             will replace ultimateParentUEIDUNS)
           required: false
           schema:
@@ -434,7 +434,7 @@ paths:
             type: string
         - name: ueiSAM
           in: query
-          description: Unique Entity Identifier SAM- 12 charecter value; a maximum of up to 100
+          description: Unique Entity Identifier SAM- 12 character value; a maximum of up to 100
             values can be sent (This will replace ueiDUNS)
           required: false
           schema:
@@ -682,13 +682,13 @@ paths:
             type: string
         - name: ultimateParentUEIDUNS
           in: query
-          description: Ultimate Parent Unique Entity Identifier DUNS- 12 charecter value
+          description: Ultimate Parent Unique Entity Identifier DUNS- 12 character value
           required: false
           schema:
             type: string
         - name: ultimateParentUEISAM
           in: query
-          description: Ultimate Parent Unique Entity Identifier SAM- 12 charecter value (This
+          description: Ultimate Parent Unique Entity Identifier SAM- 12 character value (This
             will replace ultimateParentUEIDUNS)
           required: false
           schema:
