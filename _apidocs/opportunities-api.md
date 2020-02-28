@@ -1856,7 +1856,7 @@ Examples
         "revision_reason": null,
         "posted_date": "2006-10-23T00:00:00",
         "latest": "0"
-      },
+      
       {
         "parentOpportunityId": null,
         "cancel_notice": "0",
@@ -4609,6 +4609,9 @@ QuickTime (.mov)|	video/quicktime
 MPEG (.mpg, .mpeg, .mp4)	|video/mpeg , video/mp4
 Windows Media Video (.wmv)	|video/x-ms-wmv
 Flash Video (.flv, .f4v)|	video/x-flv
+Zip file (.zip)| zip
+
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -6951,5 +6954,8 @@ Date | Version | Description
 1/20/2020| v1.03| Updated JSON arrays and objects
 1/21/2020| v1.04| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
 2/18/2020| v1.05| Added JSON information for UEI additions
+2/28/2020| v1.06| Updated the Valid file types to include Zip file
+
+
 
 <p><small><a href="#">Back to top</a></small></p>
