@@ -244,24 +244,18 @@ You can view the full details of this API's in the OpenAPI Specification file av
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Sample Extract Files
-
  
 1. Existing Extract files: 
-* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_20140504.dat">Public Monthly V1 Extract File</a><br><br>
+* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_20140504.dat">Public Monthly V1 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_V1_20140504.ZIP">FOUO Monthly V1 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_SENSITIVE_MONTHLY_V2_20170702.ZIP">Sensitive Monthly V2 Extract File</a><br><br>
 
 2. Updated Version of Extract files with UEI Information:
 * Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_V2_20200207.ZIP">Public Monthly V2 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_V2_20200207.ZIP">FOUO Monthly V2 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_SENSITIVE_MONTHLY_V3_20200207.ZIP">Sensitive Monthly V3 Extract File</a>
 * Click to view <a href="v1/sample-files/SAM_Exclusions_Public_Extract_20049.ZIP">Exclusions Public V2 Extract File</a><br>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">  COMING SOON:<br>
-  <ul>
-  <li style="color: #31708f;">FOUO Daily V1 Extract File</li>
-  <li style="color: #31708f;">FOUO Monthly V1 Extract File</li>
-  <li style="color: #31708f;">Sensitive Monthly V2 Extract File</li>
-  <li style="color: #31708f;">FOUO Monthly V2 Extract File</li>
-  <li style="color: #31708f;">Sensitive Monthly V3 Extract File</li>
-  </ul>
-</div>
 <p><small><a href="#">Back to top</a></small></p>
 
 ## HTTP Response Codes
@@ -291,6 +285,6 @@ Date | Version | Description
 08/15/2019 | v 1.1 | * Added Beta.SAM.Gov to the page title. <br><br>* Clarified the Alpha and Beta endpoints.
 12/20/2019 | v 1.2 | * Added Sample FOUO and Sensitive File Names and Revised extract layouts for the upcoming UEI/EVS changes. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.
 02/25/2020 | v1.3 | * Updated Alpha endpoint to meet new API standards.<br><br> * Added Sample Extract Files.
-02/28/2020 | v1.3 | * Updated Beta endpoint to meet new API standards.<br><br> * Removed "COMING SOON" information in Getting Started section.
+02/28/2020 | v1.3 | * Updated Beta endpoint to meet new API standards.<br><br> * Removed "COMING SOON" information in Getting Started section. <br><br> * Added FOUO and Sensitive Sample Extract Files for different versions.
 
 <p><small><a href="#">Back to top</a></small></p>
