@@ -245,8 +245,8 @@ You can view the full details of this API's in the OpenAPI Specification file av
 
 ## Sample Extract Files
  
-1. Existing Extract files: 
-* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_20140504.dat">Public Monthly V1 Extract File</a>
+1. Existing Extract files:
+* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_20140504.ZIP">Public Monthly V1 Extract File</a>
 * Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_V1_20140504.ZIP">FOUO Monthly V1 Extract File</a>
 * Click to view <a href="v1/sample-files/SAM_SENSITIVE_MONTHLY_V2_20170702.ZIP">Sensitive Monthly V2 Extract File</a><br><br>
 
