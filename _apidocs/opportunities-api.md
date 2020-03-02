@@ -6959,7 +6959,7 @@ Date | Version | Description
 1/20/2020| v1.03| Updated JSON arrays and objects
 1/21/2020| v1.04| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
 2/18/2020| v1.05| Added JSON information for UEI additions
-2/28/2020| v1.06| Updated the Valid file types to include Zip file, Added a new validation for resource name to specify the allowed character set
+2/28/2020| v1.06| Updated the Valid file types to include Zip file.<br/> Added a new validation for resource name to specify the allowed character set
 
 
 
