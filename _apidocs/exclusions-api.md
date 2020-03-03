@@ -24,18 +24,10 @@ The response will be provided in the JSON format in a paginated manner.
 
 ## Getting Started
 
-
 Exclusions API can be accessed from Beta or Alpha via the following end points:
-* Beta: https://api.sam.gov/prod/entity-information/v1/api/exclusions?api_key=< value >
+* Beta: https://api.sam.gov/entity-information/v1/api/exclusions?api_key=< value >
 * Alpha: https://api-alpha.sam.gov/entity-information/v1/exclusions?api_key=< value ><br><br>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
-      COMING SOON:<br> 
-      The endpoints will be updated as follows to meet new API standards:<br> 
-      <ul>
-      <li style="color: #31708f;">Beta: https://api.sam.gov/entity-information/v1/exclusions?api_key= < value ></li>
-      </ul>
-</div>
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
@@ -414,5 +406,6 @@ Date | Version | Description
 11/25/2019 | v1.3 | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.
 12/20/2019 | v1.4 | Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.
 02/25/2020 | v1.5 | * Added Examples for v2 requests and responses. <br><br> * Updated Alpha endpoint to meet new API standards.
+02/28/2020 | v1.5 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.
 
 <p><small><a href="#">Back to top</a></small></p>
