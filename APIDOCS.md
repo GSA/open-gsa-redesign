@@ -29,8 +29,7 @@ In the new branch:
 
 4. Edit the apiname.md file with all of the information about your API. When you commit your changes to your repo in github, a preview will be available of the site (with your doco) at this URL after 5 min or so for the preview to build:
 
-     https://federalist-proxy.app.cloud.gov/preview/gsa/open-gsa-redesign/[branch-name]/api/[apiname]/
-
+     https://federalist-ecc58765-2903-48b3-920c-5d93318ad084.app.cloud.gov/preview/gsa/open-gsa-redesign/[branch-name]/api/[apiname]/
 
 5. When you are ready to publish in the API directory, submit a pull request to merge your branch with the `master` branch. Post a comment with the preview URL from step 4 and @mention Ryan Day or Jeff Fredrickson from the CTO team. 
 
