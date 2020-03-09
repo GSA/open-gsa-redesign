@@ -65,7 +65,7 @@ Update Draft Opportunity | Yes | Yes | Yes
 Get Opportunity History | Yes | Yes | Yes
 Delete Draft Opportunity | Yes | Yes | No
 Delete Notice|	Yes|	Yes|	No
-Get List of Opportunity | Yes | Yes | Yes
+Get List of Opportunities | Yes | Yes | Yes
 Get an Opportunity by Opportunity ID | Yes | Yes | Yes
 Cancel Published Opportunity | Yes | Yes | No
 Uncancel Canceled Opportunity | Yes | Yes | No
@@ -421,7 +421,8 @@ Examples
      "solicitation": {
       "setAside": "SBA",
       "deadlines": {
-        "response": "2023-08-08"
+       "response": "2020-02-25T11:00:00-04:00",
+       "responseTz": "America/New_York"
       }
     },
     "archive": {
@@ -487,7 +488,7 @@ Examples
      "solicitation": {
        "setAside": "",
        "deadlines": {
-         "responseTz": "YYYY-MM-DDTHH:MM:SS-05:00",
+         "responseTz": "America/New_York",
          "response": "2022-11-11T11:12:00-05:00"
        }
      },
@@ -570,7 +571,8 @@ Examples
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2022-08-08"
+               "response": "2020-02-25T11:00:00-05:00",
+               "responseTz": "America/Chicago"
             }
         },
         "additionalReporting": [
@@ -1040,7 +1042,8 @@ Examples
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2022-08-08"
+               "response": "2020-02-25T11:00:00-06:00",
+               "responseTz": "America/Chicago"
             }
         },
         "additionalReporting": [
@@ -1140,8 +1143,8 @@ Examples
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2022-08-08"
-            }
+             "response": "2020-02-24T11:00:00-05:00",
+             "responseTz": "America/Chicago"            }
         },
         "additionalReporting": [
             "none"
@@ -1856,7 +1859,7 @@ Examples
         "revision_reason": null,
         "posted_date": "2006-10-23T00:00:00",
         "latest": "0"
-      },
+      
       {
         "parentOpportunityId": null,
         "cancel_notice": "0",
@@ -2122,170 +2125,31 @@ page.number | string |
 Examples
 
 <details>
-<summary>Get List of Opportunities Response</summary>
+<summary>Get List of Opportunities Response - Award Notice v1</summary>
 <p>
 <code><pre>
-{
-  "_embedded": {
-    "opportunity": [
       {
         "data": {
-          "type": "r",
-          "flags": [
-            {
-              "code": "isScheduledNotice",
-              "isSelected": false
-            }
-          ],
-          "title": "V--flight services",
-          "archive": {
-            "date": "2020-06-14",
-            "type": "auto15"
+          "link": {
+            "additionalInfo": {}
           },
-          "permissions": {
-            "IVL": {
-              "read": false,
-              "create": false,
-              "delete": false,
-              "update": false
-            }
-          },
-          "solicitation": {
-            "deadlines": {
-              "response": "2020-05-30T00:00:00-05:00",
-              "responseTz": "America/Chicago"
-            }
-          },
-          "organizationId": "500028949",
-          "pointOfContact": [
-            {
-              "fax": null,
-              "type": "primary",
-              "email": "test@gsa.gov",
-              "phone": null,
-              "title": null,
-              "fullName": "Neal Hitchcock at 208-387-5400; Bureau of Land Management, Office of Fire and Aviation, 3833 S. Development Avenue, Boise, ID 83705-5354"
-            }
-          ],
-          "classificationCode": "V",
-          "solicitationNumber": "NICC-01",
-          "additionalReporting": [
-            "none"
-          ]
-        },
-        "additionalInfo": {
-          "sections": [
-            {
-              "id": "header",
-              "status": "updated"
-            },
-            {
-              "id": "award",
-              "status": "updated"
-            },
-            {
-              "id": "general",
-              "status": "updated"
-            },
-            {
-              "id": "classification",
-              "status": "updated"
-            },
-            {
-              "id": "description",
-              "status": "updated"
-            },
-            {
-              "id": "attachments-links",
-              "status": "updated"
-            },
-            {
-              "id": "contact",
-              "status": "updated"
-            }
-          ]
-        },
-        "parent": {
-          "opportunityId": "8de3d88fc7642d9adcdb8d4ff9070399"
-        },
-        "related": {
-        },
-        "status": {
-          "code": "draft",
-          "value": "Draft"
-        },
-        "archived": false,
-        "cancelled": false,
-        "latest": false,
-        "deleted": false,
-        "modifiedDate": "2019-02-19T21:18:20.669+0000",
-        "createdDate": "2019-02-19T21:18:20.669+0000",
-        "modifiedBy": "reitestuser+aa@gsa.gov",
-        "createdBy": "reitestuser+aa@gsa.gov",
-        "opportunityId": "f563391e2c8a4b7180a6cf49d6980723"
-      },
-      {
-        "data": {
-          "type": "s",
+          "type": "a",
           "award": {
-            "lineItemNumber": null
+            "date": "2019-05-28",
+            "amount": "100",
+            "number": "0001",
+            "awardee": {
+              "duns": "608999520",
+              "name": "JDSInc1",
+              "location": {}
+            },
+            "fairOpportunity": {},
+            "justificationAuthority": {}
           },
-          "title": "test",
-          "permissions": {
-            "IVL": {
-              "create": false,
-              "delete": false,
-              "update": false
-            }
-          },
-          "organizationId": "100186612",
-          "pointOfContact": null,
-          "solicitationNumber": ""
-        },
-        "additionalInfo": {
-          "sections": [
-            {
-              "id": "header",
-              "status": "updated"
-            }
-          ]
-        },
-        "parent": {
-        },
-        "related": {
-        },
-        "status": {
-          "code": "draft",
-          "value": "Draft"
-        },
-        "archived": false,
-        "cancelled": false,
-        "latest": false,
-        "deleted": false,
-        "modifiedDate": "2019-02-19T21:14:02.308+0000",
-        "createdDate": "2019-02-19T21:14:02.308+0000",
-        "modifiedBy": "reitestuser+cs1@gsa.gov",
-        "createdBy": "reitestuser+cs1@gsa.gov",
-        "opportunityId": "f687c5c4e4124c27a068c145d0a4a1f5"
-      },
-      {
-        "data": {
-          "type": "i",
-          "award": {
-            "date": "2019-01-01",
-            "number": "A1234567890",
-            "deliveryOrderNumber": "TO3456789"
-          },
-          "naics": [
-            {
-              "code": [
-                "621111"
-              ]
-            }
-          ],
-          "title": "SK Intent to Bundle Requirements",
+          "naics": [],
+          "title": "Test Award 2A",
           "archive": {
-            "date": "2019-03-21",
+            "date": null,
             "type": "auto30"
           },
           "permissions": {
@@ -2296,28 +2160,30 @@ Examples
               "update": false
             }
           },
+          "descriptions": [],
           "solicitation": {
             "deadlines": {
               "response": null,
               "responseTz": null
             }
           },
-          "organizationId": "100186612",
+          "organizationId": "100167253",
           "pointOfContact": [
             {
-              "fax": "",
               "type": "primary",
-              "email": "sk@test.com",
-              "phone": "",
-              "title": null,
-              "fullName": "Sravanthi Kundur"
+              "email": "john.doe@gsa.gov",
+              "fullName": "HC1013-58-A-0005",
+              "additionalInfo": {
+                "content": "test email"
+              }
             }
           ],
-          "classificationCode": "84",
-          "solicitationNumber": "31231231241414",
+          "placeOfPerformance": {},
+          "solicitationNumber": "02SoL_(){}",
           "additionalReporting": [
             "none"
-          ]
+          ],
+          "organizationLocationId": "50166357"
         },
         "additionalInfo": {
           "sections": [
@@ -2326,19 +2192,7 @@ Examples
               "status": "updated"
             },
             {
-              "id": "contact",
-              "status": "updated"
-            },
-            {
-              "id": "attachments-links",
-              "status": "updated"
-            },
-            {
-              "id": "description",
-              "status": "updated"
-            },
-            {
-              "id": "classification",
+              "id": "award",
               "status": "updated"
             },
             {
@@ -2346,15 +2200,25 @@ Examples
               "status": "updated"
             },
             {
-              "id": "award",
+              "id": "classification",
+              "status": "updated"
+            },
+            {
+              "id": "description",
+              "status": "updated"
+            },
+            {
+              "id": "attachments-links",
+              "status": "updated"
+            },
+            {
+              "id": "contact",
               "status": "updated"
             }
           ]
         },
-        "parent": {
-        },
-        "related": {
-        },
+        "parent": {},
+        "related": {},
         "status": {
           "code": "published",
           "value": "Published"
@@ -2363,22 +2227,129 @@ Examples
         "cancelled": false,
         "latest": true,
         "deleted": false,
-        "postedDate": "2019-02-19T21:09:37.369+0000",
-        "modifiedDate": "2019-02-19T21:09:37.369+0000",
-        "createdDate": "2019-02-19T20:16:31.728+0000",
-        "modifiedBy": "reitestuser+aa@gsa.gov",
-        "createdBy": "reitestuser+aa@gsa.gov",
-        "opportunityId": "530382634cc9401db875fd18c9831bda"
+        "postedDate": "2019-10-03T15:06:18.980+0000",
+        "modifiedDate": "2019-10-03T15:06:18.980+0000",
+        "createdDate": "2019-10-03T15:06:18.858+0000",
+        "modifiedBy": "john.doe@gsa.gov",
+        "createdBy": "john.doe@gsa.gov",
+        "totalCount": 778,
+        "opportunityId": "34a99046c5d8422e806ac8def092eb10"
       }
-    ]
-  },
-  "page": {
-    "size": 4,
-    "totalElements": 1153,
-    "totalPages": 289,
-    "number": 0
-  }
-}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get List of Opportunities Response - Award Notice v2</summary>
+<p>
+<code><pre>
+      {
+        "data": {
+          "link": {
+            "additionalInfo": {}
+          },
+          "type": "a",
+          "award": {
+            "date": "2019-05-28",
+            "amount": "100",
+            "number": "0001",
+            "awardee": {
+              "ueiSAM": "025114695AST",
+              "name": "JDSInc1",
+              "location": {}
+            },
+            "fairOpportunity": {},
+            "justificationAuthority": {}
+          },
+          "naics": [],
+          "title": "Test Award 2A",
+          "archive": {
+            "date": null,
+            "type": "auto30"
+          },
+          "permissions": {
+            "IVL": {
+              "read": false,
+              "create": false,
+              "delete": false,
+              "update": false
+            }
+          },
+          "descriptions": [],
+          "solicitation": {
+            "deadlines": {
+              "response": null,
+              "responseTz": null
+            }
+          },
+          "organizationId": "100167253",
+          "pointOfContact": [
+            {
+              "type": "primary",
+              "email": "john.doe@gsa.gov",
+              "fullName": "HC1013-58-A-0005",
+              "additionalInfo": {
+                "content": "test email"
+              }
+            }
+          ],
+          "placeOfPerformance": {},
+          "solicitationNumber": "02SoL_(){}",
+          "additionalReporting": [
+            "none"
+          ],
+          "organizationLocationId": "50166357"
+        },
+        "additionalInfo": {
+          "sections": [
+            {
+              "id": "header",
+              "status": "updated"
+            },
+            {
+              "id": "award",
+              "status": "updated"
+            },
+            {
+              "id": "general",
+              "status": "updated"
+            },
+            {
+              "id": "classification",
+              "status": "updated"
+            },
+            {
+              "id": "description",
+              "status": "updated"
+            },
+            {
+              "id": "attachments-links",
+              "status": "updated"
+            },
+            {
+              "id": "contact",
+              "status": "updated"
+            }
+          ]
+        },
+        "parent": {},
+        "related": {},
+        "status": {
+          "code": "published",
+          "value": "Published"
+        },
+        "archived": false,
+        "cancelled": false,
+        "latest": true,
+        "deleted": false,
+        "postedDate": "2019-10-03T15:06:18.980+0000",
+        "modifiedDate": "2019-10-03T15:06:18.980+0000",
+        "createdDate": "2019-10-03T15:06:18.858+0000",
+        "modifiedBy": "john.doe@gsa.gov",
+        "createdBy": "john.doe@gsa.gov",
+        "totalCount": 778,
+        "opportunityId": "34a99046c5d8422e806ac8def092eb10"
+      }
 </pre></code>
 </p>
 </details>
@@ -3127,7 +3098,6 @@ ivl": [
 <code><pre>
 ivl": [
   {
-    "duns": "6759999520",
     "ueiSAM": "025114695AST",
     "cageNumber": "3ABC1",
     "name": "TECH SYSTEMS, INC.",
@@ -3436,7 +3406,6 @@ Examples
                 "email": "reitestuser.de@gmail.com",
                 "phone": "1+9734323019",
                 "contractorName": "REI SYSTEMS, INC.",
-                "duns": "608999520",
                 "ueiSAM": "025114695AST",
                 "cageCode": "1DJP1"
             },
@@ -4407,7 +4376,7 @@ resources.attType | string | |link, file | No| Type of attachment, either link o
 resources.content | byte |250MB |  | No | File content in base64 format| v1 <br> v2
 resources.link | string | 255 characters | |No | Resource link URL| v1 <br> v2
 resources.packageAccessLevel | string | | public,<br/>private<br/>(default public) |  No| Type of access to file| v1 <br> v2
-resources.resourceName | string | 255 characters |  | No | Name of file| v1 <br> v2
+resources.resourceName | string | 255 characters |a-z A-Z 0-9 - _ ()  | No | Name of file| v1 <br> v2
 resources.description | string |255 characters | | No | Description of the link| v1 <br> v2
 resources.explicitAccess | string |1 character | 0, 1 (defaults to '0' public access, if not provided) |No |Explicit Access. For Controlled Unclassified files, specify '1'| v1 <br> v2
 resources.exportControlled | string |1 character | 0 | No |Export Controlled. * Captured for future JCP validation| v1 <br> v2
@@ -4611,7 +4580,7 @@ Name | Data Type | Field Length |Allowed Values | Required | Description|Applica
 attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file| v1 <br> v2
 content | byte | 250MB| | Yes if attType=file | File content in base64 format| v1 <br> v2
 packageAccessLevel | string | 32 characters|public, <br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'.| v1 <br> v2
-resourceName | string | 255 characters| | Yes if attType=file | Name of file| v1 <br> v2
+resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes if attType=file | Name of file| v1 <br> v2
 fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)| v1 <br> v2
 link | string | 255 characters| | Yes if attType=link | Resource link  URL| v1 <br> v2
 description | string |255 characters | | Yes if attType=link | Description of the link| v1 <br> v2
@@ -4643,6 +4612,9 @@ QuickTime (.mov)|	video/quicktime
 MPEG (.mpg, .mpeg, .mp4)	|video/mpeg , video/mp4
 Windows Media Video (.wmv)	|video/x-ms-wmv
 Flash Video (.flv, .f4v)|	video/x-flv
+Zip file (.zip)| application/zip
+
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4683,7 +4655,7 @@ Name | Data Type | Allowed Values | Required | Description|Applicable Versions
 -----|-----------|----------------|----------|------------|-----
 attType | string | link, file | No | Required only for file access level changes| v1 <br> v2
 packageAccessLevel | string | public,<br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'| v1 <br> v2
-resourceName | string |  | No | Name of file or link| v1 <br> v2
+resourceName | string | a-z A-Z 0-9 - _ () | No | Name of file or link| v1 <br> v2
 explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files. Required only for file access level changes| v1 <br> v2
 sortOrderChanged | boolean  | true, false | No | Should be provided if file order is changed.| v1 <br> v2
 resourceIdBelow | string  |  | No | This should be Resource ID of the file/link that will display below the file/link that is moved| v1 <br> v2
@@ -6885,17 +6857,19 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Primary Contact Email |	Primary Contact - email character limit is 255 characters | Primary Contact email limit is 255 | Publish
 400|Primary Contact Phone |	Primary Contact - phone character limit is 255 characters | Primary Contact phone limit is 255 | Publish
 400|Primary Contact Phone |	Primary Contact - fax character limit is 255 characters | Primary Contact fax limit is 255 | Publish
-400|Resources -  attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a line |	Create Attachment
-400|Resources - resourceName | Attachment must have a name | Attachment Name is a required field |	Create Attachment, Create And Publish
-400|Resources - content |Attachment must have content | File content is missing |	Create Attachment, Create And Publish
-400|Resources - description | Link Resource must have a description | Link provided is missing description |	Create Attachment, Create And Publish
-400|Resources - description | Link with the display text {}  already exists | Link with the same description/name already exists on the notice | Create Attachment, Create And Publish
-400|Resources - link | Link Resource must have a link | Link URL is missing |	Create Attachment, Create And Publish
-400|Resources - link | Please enter a valid url. [protocol]://hostname.domain. Protocol can be ftp, http, or https. Spaces are not allowed | Link URL is not valid |	Create Attachment, Create And Publish
-400|Resources - link | Link {} already exists| Link URL is already added to the notice |	Create Attachment, Create And Publish
-400|Resources - resourceName | The file type that you are trying to upload is not supported | File extension provided is unsupported |	Create Attachment, Create And Publish
-400|Resources - resourceName | Attachment with the name {} already exists | File with the same name is already added to the notice |	Create Attachment, Create And Publish
-400|Resources - content | The file size should be greater than zero bytes and less than 250 MB | File Size doesn't meet the specified limits |	Create Attachment, Create And Publish
+400|Resources -  attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a link |	Create Resource, Create And Publish
+400|Resources - resourceName | Attachment must have a name | Attachment Name is a required field |	Create Resource, Create And Publish
+400|Resources - resourceName | File name should have valid file type specified | Attachment Name should have valid file extension |	Create Resource, Update Resource, Create And Publish
+400|Resources - resourceName | File name should contain only Alpha numeric characters with spaces, hyphen, underscore and () | Attachment Name can contain only  the allowed character set |	Create Resource, Update Resource, Create And Publish
+400|Resources - content |Attachment must have content | File content is missing |	Create Resource, Create And Publish
+400|Resources - description | Link Resource must have a description | Link provided is missing description |	Create Resource, Create And Publish
+400|Resources - description | Link with the display text {}  already exists | Link with the same description/name already exists on the notice | Create Resource, Update Resource,  Create And Publish
+400|Resources - link | Link Resource must have a link | Link URL is missing |	Create Resource, Create And Publish
+400|Resources - link | Please enter a valid url. [protocol]://hostname.domain. Protocol can be ftp, http, or https. Spaces are not allowed | Link URL is not valid |	Create Resource, Create And Publish
+400|Resources - link | Link {} already exists| Link URL is already added to the notice |	Create Resource, Create And Publish
+400|Resources - resourceName | The file type that you are trying to upload is not supported | File extension provided is unsupported |	Create Resource, Create And Publish
+400|Resources - resourceName | Attachment with the name {} already exists | File with the same name is already added to the notice |	Create Resource, Create And Publish
+400|Resources - content | The file size should be greater than zero bytes and less than 250 MB | File Size doesn't meet the specified limits |	Create Resource, Create And Publish
 400|Archive |	This opportunity is not the latest published |	Draft Opportunity cannot be archived	| Archive
 400|Archive |	Opportunity already inactive |	Opportunity is already archived	| Archive
 400|Update |	Opportunity cannot be updated |	Opportunity is either in draft, archived or cancelled status	| Update
@@ -6984,5 +6958,9 @@ Date | Version | Description
 1/3/2020| v1.02| Updates to UEI(SAM) and UEI(DUNS) info
 1/20/2020| v1.03| Updated JSON arrays and objects
 1/21/2020| v1.04| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
+2/18/2020| v1.05| Added JSON information for UEI additions
+2/28/2020| v1.06| Updated the Valid file types to include Zip file.<br/> Added a new validation for resource name to specify the allowed character set
+
+
 
 <p><small><a href="#">Back to top</a></small></p>

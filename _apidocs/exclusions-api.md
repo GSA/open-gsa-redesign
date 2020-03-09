@@ -24,19 +24,10 @@ The response will be provided in the JSON format in a paginated manner.
 
 ## Getting Started
 
-
 Exclusions API can be accessed from Beta or Alpha via the following end points:
-* Beta: https://api.sam.gov/prod/entity-information/v1/api/exclusions?api_key=< value >
-* Alpha: https://api-alpha.sam.gov/prodlike/entity-information/v1/api/exclusions?api_key=< value ><br><br>
+* Beta: https://api.sam.gov/entity-information/v1/api/exclusions?api_key=< value >
+* Alpha: https://api-alpha.sam.gov/entity-information/v1/exclusions?api_key=< value ><br><br>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
-      COMING SOON:<br> 
-      The endpoints will be updated as follows to meet new API standards:<br> 
-      <ul>
-      <li style="color: #31708f;">Beta: https://api.sam.gov/entity-information/v1/exclusions?api_key= < value ></li>
-      <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/entity-information/v1/exclusions?api_key= < value ></li>
-      </ul>
-      </div>
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
@@ -181,26 +172,210 @@ The API will return one of the following responses:
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Explanation of the API using Examples
-Functionality of the Exclusion API has been explained with the following examples:
+## Examples
 
-**User requirement:** 
-To get Individual or Special Entity Designation Exclusion records that are based off of Korea, that are not excluded by DOJ and that contain CHONG anywhere in the response.
+### Example 1: Get Individual or Special Entity Designation Exclusion records
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key= < Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
+<br>
+</details>
 
-**API request:** 
-https://api.sam.gov/prodlike/entity-information/v1/api/exclusions?api_key=<API Key>&classification=[Individual~Special Entity Designation]
-&excludingAgencyCode=!DOJ&country=KOR&q=CHONG
+<details>
+<summary>Response (JSON Output)</summary>
+Note: Public Response for one record is provided as an example <br>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 14,
+  "excludedEntity": [
+    {
+      "exclusionDetails": {
+        "classificationType": "Individual",
+        "exclusionType": "Ineligible (Proceedings Completed)",
+        "exclusionProgram": "Reciprocal",
+        "excludingAgencyCode": "ARMY",
+        "excludingAgencyName": "DEPT OF THE ARMY"
+      },
+      "exclusionIdentification": {
+        "ueiSAM": null,
+        "ueiDUNS": "",
+        "entityEFTIndicator": null,
+        "cageCode": "",
+        "npi": "",
+        "prefix": "MS.",
+        "firstName": "CHONG",
+        "middleName": "SUN",
+        "lastName": "HWANG",
+        "suffix": "",
+        "entityName": ""
+        “dnbOpenData”: “N”
+      },
+      "exclusionActions": {
+        "listOfActions": [
+          {
+            "createDate": "Currently Not Available",
+            "updateDate": "Currently Not Available",
+            "activateDate": "12-12-2011",
+            "terminationDate": "11-08-2029",
+            "terminationType": "Definite",
+            "recordStatus": "Active"
+          }
+        ]
+      },
+      "exclusionAddress": {
+        "addressLine1": null,
+        "addressLine2": null,
+        "city": "CITY",
+        "stateOrProvinceCode": "",
+        "zipCode": "",
+        "zipCodePlus4": null,
+        "countryCode": "ABC"
+      },
+      "exclusionOtherInformation": {
+        "additionalComments": "",
+        "ctCode": "A",
+        "evsInvestigationStatus": "Currently Not Available",
+        "references": {
+          "referencesList": [
+            {
+              "exclusionName": " KWANG PAK",
+              "type": "Currently Not Available"
+            },
+            {
+              "exclusionName": " TAEK CHI",
+              "type": "Currently Not Available"
+            },
+            {
+              "exclusionName": " SOUKDAI KO",
+              "type": "Currently Not Available"
+            },
+            {
+              "exclusionName": " MYOUNG KIM",
+              "type": "Currently Not Available"
+            },
+            {
+              "exclusionName": " KI NAM",
+              "type": "Currently Not Available"
+            }
+          ]
+        },
+        "moreLocations": [
+          "Currently Not Available"
+        ]
+      },
+      "vesselDetails": {
+        "callSign": "Currently Not Available",
+        "type": "Currently Not Available",
+        "tonnage": "Currently Not Available",
+        "grt": "Currently Not Available",
+        "flag": "Currently Not Available",
+        "owner": "Currently Not Available",
+        "secondaryAddress": [
+          {
+            "addressLine1": "Currently Not Available",
+            "addressLine2": "Currently Not Available",
+            "city": "Currently Not Available",
+            "stateOrProvinceCode": "Currently Not Available",
+            "zipCode": "Currently Not Available",
+            "zipCodePlus4": "Currently Not Available",
+            "countryCode": "Currently Not Available"
+          }
+        ]
+      }
+    },
+],
+  "links": {
+    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation]%20&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&isActive=true&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation]%20&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&isActive=true&page=1&size=10"
+  }
+}
+</pre>
+</code>
+</p>
+</details>
 
-**User requirement:** 
-To receive the JSON file downloadable link in the email for only exclusionDetails, exclusionIdentification and exclusionAddress sections of the Excluded 
-Firm records of type Ineligible (Proceedings Completed) or Prohibition/Restriction that are based off of Korea, China or Germany and that have a non-null ueiDUNS.
+### Example 2: Get Firm Exclusion records of type Ineligible (Proceedings Completed) or Prohibition/Restriction
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key= < Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
+<br>
+</details>
 
-**API request:**
-https://api.sam.gov/prod/entity-information/v1/api/exclusions?api_key=<API Key>&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm
-&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=JSON
-&emailId= < a valid email address >
+<details>
+<summary>Response (JSON Output)</summary>
+Note: Public Response for one record is provided as an example <br>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 53,
+  "excludedEntity": [
+    {
+      "exclusionDetails": {
+        "classificationType": "Firm",
+        "exclusionType": "Ineligible (Proceedings Completed)",
+        "exclusionProgram": "Reciprocal",
+        "excludingAgencyCode": "AF",
+        "excludingAgencyName": "DEPT OF THE AIR FORCE"
+      },
+      "exclusionIdentification": {
+        "ueiSAM": null,
+        "ueiDUNS": "",
+        "entityEFTIndicator": null,
+        "cageCode": "",
+        "npi": "",
+        "prefix": "",
+        "firstName": "",
+        "middleName": "",
+        "lastName": "",
+        "suffix": "",
+        "entityName": "SHENZHEN HONGDARK ELECTRONICS CO., LTD."
+        “dnbOpenData”: “N”
+      },
+      "exclusionAddress": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "city": "CITY",
+        "stateOrProvinceCode": "",
+        "zipCode": "",
+        "zipCodePlus4": null,
+        "countryCode": "ABC"
+      }
+    },
+  ],
+  "links": {
+    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&ueiDUNS=!%E2%80%9D%E2%80%9D&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&isActive=true&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&ueiDUNS=!%E2%80%9D%E2%80%9D&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&isActive=true&page=1&size=10"
+  }
+}
+</pre>
+</code>
+</p>
+</details>
+
+### Example 3: To receive a link in the email to the Exclusions Extract in CSV format
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key=< a Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=< a valid email address ><br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=< a valid email address ><br>
+<br>
+</details>
+
+<details>
+<summary>Response</summary>
+Click to view CSV Response for one record <a href="v1/exclusion-sample-csv.xlsx">Sample CSV Response</a><br>
+</details>
 
 <p><small><a href="#">Back to top</a></small></p>
+
+
 
 ## Additional Information
 You can view the full details of the differences between the SAM legacy API and Beta API 
@@ -228,7 +403,9 @@ Date | Version | Description
 06/03/2019 | v1.0 | Base Version
 08/15/2019 | v1.1 | * Added Beta.SAM.Gov to the page title. <br><br> *Updated the Alpha endpoint to v1. <br><br> *Added Secondary Address fields.
 09/25/2019 | v1.2 | Beta endpoints for public FOUO and Sensitive API were updated from version 0.9 to version 1.0.
-11/25/2019 | v1.3 | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.|
+11/25/2019 | v1.3 | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.
 12/20/2019 | v1.4 | Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.
+02/25/2020 | v1.5 | * Added Examples for v2 requests and responses. <br><br> * Updated Alpha endpoint to meet new API standards.
+02/28/2020 | v1.5 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.
 
 <p><small><a href="#">Back to top</a></small></p>
