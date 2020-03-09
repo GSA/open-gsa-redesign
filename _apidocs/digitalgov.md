@@ -6,7 +6,7 @@ banner-heading: Digital.gov Content API
 
 ## Overview
 
-The Digital.gov Content API provides machine-readable access to all of the content that makes up digital.gov.  
+The Digital.gov Content API provides machine-readable access to all of the content that makes up digital.gov.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -20,6 +20,7 @@ After registration, you will need to provide this API key in the `x-api-key` HTT
 
 {% raw %}
 <div id="apidatagov_signup">Loading signup form...</div>
+
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var apiUmbrellaSignupOptions = {
@@ -87,7 +88,7 @@ After registration, you will need to provide this API key in the `x-api-key` HTT
   })();
 </script>
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
-{% endraw %}  
+{% endraw %}
 
 | HTTP Header Name | Description |
 | ---- | ----------- |

@@ -1,0 +1,95 @@
+{
+    "openapi": "3.0.0",
+    "servers": [
+        {
+            "url": "https://api.gsa.gov/technology/digitalgov/v1/",
+            "description": "Digital.gov Content API"
+        },
+    ],
+    "info": {
+        "title": "Digital.gov Content API",
+        "description": "The Digital.gov Content API provides machine-readable access to all of the content that makes up digital.gov.",
+        "contact": {
+            "name": "Digital.gov Team",
+            "url": "https://digital.gov/",
+            "email": "digitalgov@gsa.gov"
+        },
+        "license": {
+            "name": "Creative Commons CC0 1.0 Universal",
+            "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
+        },
+        "version": "v1"
+    },
+    "security": [],
+    "paths": {
+        "/index.json": {
+            "get": {
+                "summary": "A list of all the sections in Digital.gov",
+                "description": "Returns list of all the sections in Digital.gov",
+                "responses": {
+                    "200": {
+                        "description": "List of sections"
+                    }
+                }
+            }
+        },
+        "/news/index.json": {
+            "get": {
+                "summary": "A list of all the digital.gov news and blog posts.",
+                "description": "Returns a list of all the digital.gov news and blog posts.",
+                "responses": {
+                    "200": {
+                        "description": "Returns a list of all the digital.gov news and blog posts."
+                    }
+                }
+            }
+        },
+        "/events/index.json": {
+            "get": {
+                "summary": "A list of all the digital.gov events.",
+                "description": "Returns a list of all the digital.gov events.",
+                "responses": {
+                    "200": {
+                        "description": "Returns a list of all the digital.gov events."
+                    }
+                }
+            }
+        },
+        "/communities/index.json": {
+            "get": {
+                "summary": "A list of all the digital.gov communities.",
+                "description": "Returns a list of all the digital.gov communities.",
+                "responses": {
+                    "200": {
+                        "description": "Returns a list of all the digital.gov communities."
+                    }
+                }
+            }
+        },
+        "/resources/index.json": {
+            "get": {
+                "summary": "All guides and resources on Digital.gov",
+                "description": "Returns a list of all the digital.gov resource pages",
+                "responses": {
+                    "200": {
+                        "description": "Returns a list of all the digital.gov resource pages"
+                    }
+                }
+            }
+        },
+        "/services/index.json": {
+            "get": {
+                "summary": "All tools and services on Digital.gov",
+                "description": "Returns a list of all the digital.gov tools and services pages",
+                "responses": {
+                    "200": {
+                        "description": "Returns a list of all the digital.gov tools and services pages"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {},
+    }
+}
