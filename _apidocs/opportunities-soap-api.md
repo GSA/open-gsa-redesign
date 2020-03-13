@@ -237,7 +237,7 @@ DocumentFile Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	Yes |	File Name |	255 characters
+filename |	string |	Yes |	File Name |	255 characters; <br> a-z A-Z 0-9 - _ ()
 filedata |	base64binary |	Yes |	File Data |	250 MB
 desc |	string |	No |	Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
@@ -395,7 +395,7 @@ DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename | string |	Yes  | File Name | 255 characters
+filename | string |	Yes  | File Name | 255 characters; <br> a-z A-Z 0-9 - _ ()
 filedata | base64binary |	Yes | File Data | 250 MB
 desc | string |	No | Description | 65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
@@ -466,7 +466,7 @@ DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename | string | Yes | File Name | 255 characters
+filename | string | Yes | File Name | 255 characters; <br> a-z A-Z 0-9 - _ ()
 filedata | base64binary |	Yes | File Data | 250 MB
 desc | string |	No | Description | 65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
@@ -538,7 +538,7 @@ DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string	| Yes | 	File Name |	255 characters
+filename |	string	| Yes | 	File Name |	255 characters; <br> a-z A-Z 0-9 - _ ()
 filedata |	base64binary |	Yes |	File Data	| 250 MB
 desc |	string |	No |	Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
@@ -612,7 +612,7 @@ DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string	| Yes  |	File Name	| 255 characters
+filename |	string	| Yes  |	File Name	| 255 characters; <br> a-z A-Z 0-9 - _ ()
 filedata |	base64binary |	Yes |	File Data	| 250 MB
 desc	| string |	No |	Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
@@ -683,7 +683,7 @@ DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	Yes |	File Name |	255 characters
+filename |	string |	Yes |	File Name |	255 characters; <br> a-z A-Z 0-9 - _ ()
 filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
@@ -753,7 +753,7 @@ DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |Yes |	File Name |	255 characters
+filename |	string |Yes |	File Name |	255 characters; <br> a-z A-Z 0-9 - _ ()
 filedata |	base64binary |	Yes 	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
@@ -819,7 +819,7 @@ DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	Yes |	File Name |	255 characters
+filename |	string |	Yes |	File Name |	255 characters; <br> a-z A-Z 0-9 - _ ()
 filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
@@ -890,7 +890,7 @@ DocumentFile Complex Type Definition:
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename | string | Yes | File Name | 255 characters
+filename | string | Yes | File Name | 255 characters; <br> a-z A-Z 0-9 - _ ()
 filedata | base64binary |	Yes | File Data | 250 MB
 desc | string |	No | Description | 65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
@@ -960,7 +960,7 @@ DocumentFile Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	Yes |	File Name |	255 characters
+filename |	string |	Yes |	File Name |	255 characters; <br> a-z A-Z 0-9 - _ ()
 filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
@@ -1046,7 +1046,7 @@ desc|	string|	Yes|	Description/Title|	255 characters
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	Yes |	File Name |	255 characters
+filename |	string |	Yes |	File Name |	255 characters; <br> a-z A-Z 0-9 - _ ()
 filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true".|  
@@ -1090,7 +1090,7 @@ DocumentFile Complex Type Definition
 
 Element Name | Type | Required | Description | Character Limit / Restrictions
 ------ | ------- | ------- | ------- | -------
-filename |	string |	Yes  |	File Name |	255 characters
+filename |	string |	Yes  |	File Name |	255 characters; <br> a-z A-Z 0-9 - _ ()
 filedata |	base64binary |	Yes	| File Data |	250 MB
 desc	| string |	No	 | Description |	65535 characters
 explicit_access | boolean |	No |	Explicit Access. Defaults to ‘false’. For Controlled Unclassified files, specify "true"|  
@@ -4406,6 +4406,7 @@ Date | Version | Description
 11/04/2019 | v0.9| Updated the character limits for contact and awardee fields for all the submit methods. Modified "donbr" as a not required field for Justification notice submission
 11/12/2019| v1.0| Initial Release Finalized
 12/10/2019| v1.1| Updated informaiton on special character limits and instructions on how to use &
+3/9/2020| v1.2| Added a new validation for file name to specify the allowed character set
 
 
 
