@@ -68,7 +68,7 @@ offset|	Page index specified by a user. Default offset starts with 0 if user doe
 title	|Opportunity Title|	String | v1<br> v2
 solicitationNumber|	Solicitation Number |	String | v1<br> v2
 department|	Department (L1)	|String | v1<br> v2
-subTier|	Sub-Tier (L2)|	String | v1<br> v2
+subtier|	Sub-Tier (L2)|	String | v1<br> v2
 office|	Office (L3)	|String | v1<br> v2
 postedDate|	Opportunity Posted Date <br> YYYY-MM-DD HH:MM:SS	|String | v1<br> v2
 type|	Opportunity current type|	String | v1<br> v2
