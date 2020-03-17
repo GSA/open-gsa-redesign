@@ -2017,7 +2017,7 @@ opportunityId | string |  Opportunity ID
 data.type | string | See Notices Types table
 data.solicitationNumber | string | Solicitation Number
 data.title | string | Title of the Opportunity
-data.organizationId | string | FH Org Id/AAC code of the office where an Opportunity is being submitted
+data.organizationId | string | FH Organization ID that opportunity is associated with <br><br> Department = CGAC <br> Subtier = FPDS code <br> Office = AAC
 data.classificationCode | string | Product Service Code (PSC)
 data.naics | JSON Array | 
 data.naics.code | string | NAICS Code
@@ -3003,7 +3003,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description| Applicabl
 Authorization | Header |  string | Yes | Valid and authorized user ID 
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity IDv1
-entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2 - Deprecated
+entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2
 ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST| v2
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3419,7 +3419,6 @@ Examples
                 "email": "reitestuser.de@gmail.com",
                 "phone": "1+9734323019",
                 "contractorName": "REI SYSTEMS, INC.",
-                "duns": "608999520",
                 "ueiSAM": "025114695AST",
                 "cageCode": "1DJP1"
             },
@@ -3432,7 +3431,6 @@ Examples
                 "email": "reitestuser.de@gmail.com",
                 "phone": "1+9734323019",
                 "contractorName": "REI SYSTEMS, INC.",
-                "duns": "608999520",
                 "ueiSAM": "025114695AST",
                 "cageCode": "1DJP1”
             }
@@ -3624,7 +3622,6 @@ Examples
           "amount": null,
           "number": "awd123",
           "awardee": {
-            "duns": null,
             "ueiSAM": "null",
             "name": null,
             "location": null
@@ -6960,6 +6957,7 @@ Date | Version | Description
 1/21/2020| v1.04| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
 2/18/2020| v1.05| Added JSON information for UEI additions
 2/28/2020| v1.06| Updated the Valid file types to include Zip file.<br/> Added a new validation for resource name to specify the allowed character set
+3/13/2020|v1.07| Updated GET APIs to include both DUNS and UEISAM in v2<br> Get list of Opp API Organization ID field updated to show FH ID dependending on department, subtier, and office
 
 
 
