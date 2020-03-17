@@ -2067,7 +2067,7 @@ data.award.amount | Number | Award Amount
 data.award.lineitemNumber | string |  Award Line Item Number
 data.award.awardee | JSON Object |  
 data.award.awardee.name | string |  Awardee Name
-data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS 
+data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS (v2 - Deprecated)
 data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
 data.award.awardee.location | JSON Object|  Awardee Location
 data.award.awardee.location.streetAddress | string | Awardee Street Address 1
@@ -2255,7 +2255,6 @@ Examples
             "number": "0001",
             "awardee": {
               "ueiSAM": "025114695AST",
-              "duns": "608999520",
               "name": "JDSInc1",
               "location": {}
             },
@@ -3004,7 +3003,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description| Applicabl
 Authorization | Header |  string | Yes | Valid and authorized user ID 
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity IDv1
-entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2 
+entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2
 ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST| v2
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3014,7 +3013,7 @@ Responses
 HTTP Status Code | Response Type |  Description
 -----------------|---------------|------------
 ivl | JSON Array | 
-ivl.duns | string | Unique Entity Identifier DUNS number for the business entity 
+ivl.duns | string | Unique Entity Identifier DUNS number for the business entity (v2 - Deprecated)
 ivl.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
 ivl.cageNumber | string | Identifies a given facility at a specific location
 ivl.name | string | Name of business entity
@@ -3100,7 +3099,6 @@ ivl": [
 ivl": [
   {
     "ueiSAM": "025114695AST",
-    "duns": "6759999520",
     "cageNumber": "3ABC1",
     "name": "TECH SYSTEMS, INC.",
     "addedOn": "2019-03-04 15:06:11",
@@ -3409,7 +3407,6 @@ Examples
                 "phone": "1+9734323019",
                 "contractorName": "REI SYSTEMS, INC.",
                 "ueiSAM": "025114695AST",
-                "duns": "608999520",
                 "cageCode": "1DJP1"
             },
             {
@@ -3422,9 +3419,7 @@ Examples
                 "email": "reitestuser.de@gmail.com",
                 "phone": "1+9734323019",
                 "contractorName": "REI SYSTEMS, INC.",
-                "duns": "608999520",
                 "ueiSAM": "025114695AST",
-                "duns": "608999520",
                 "cageCode": "1DJP1"
             },
             {
@@ -3436,7 +3431,6 @@ Examples
                 "email": "reitestuser.de@gmail.com",
                 "phone": "1+9734323019",
                 "contractorName": "REI SYSTEMS, INC.",
-                "duns": "608999520",
                 "ueiSAM": "025114695AST",
                 "cageCode": "1DJP1”
             }
