@@ -3622,7 +3622,6 @@ Examples
           "amount": null,
           "number": "awd123",
           "awardee": {
-            "duns": null,
             "ueiSAM": "null",
             "name": null,
             "location": null
