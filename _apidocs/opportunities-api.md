@@ -3003,7 +3003,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description| Applicabl
 Authorization | Header |  string | Yes | Valid and authorized user ID 
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity IDv1
-entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2
+entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2 - Deprecated
 ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST| v2
 
 <p><small><a href="#">Back to top</a></small></p>
