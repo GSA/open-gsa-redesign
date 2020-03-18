@@ -809,5 +809,6 @@ Date | Version | Description
 5/20/2019 | v1.0 | Base Version
 8/6/2019 | v1.1| Updated format
 12/2/2019 | v1.2| Added OpenAPI Specification
+3/18/2020| v1.3| Location APIs Added
 
 <p><small><a href="#">Back to top</a></small></p>
