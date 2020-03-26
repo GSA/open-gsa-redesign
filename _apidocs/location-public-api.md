@@ -43,8 +43,8 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 api_key | query | string | Yes | Valid System Account API Key
 cc | query | string | No | Enter the 3-digit Country Code to retrieve the cities within that Country. For example: United States would be USA
-searchby | query | string | No | Enter the search parameter to search counties information by stateid, statecode, statename, zipcode, cdist(Congressional District)
-searchvalue | query | string | No | Enter the searchvalue for searchby parameter. For example: If searchby is statecode provide search value as VA; if searchby is cdist provide search value as Virginia-01
+searchBy | query | string | No | Enter the search parameter to search counties information by stateid, statecode, statename, zipcode, cdist(Congressional District)
+searchValue | query | string | No | Enter the searchValue for searchBy parameter. For example: If searchBy is statecode provide search value as VA; if searchBy is cdist provide search value as Virginia-01
 q | query | string | No | Enter the City Name you want to retrieve information for. Note q will operate as Autocomplete as well
 active | query | string | No | The active indicator specifies whether the city is active or inactive. Type "Y" for a list of active city names. Type "N" for a list of inactive city names
 citycode | query | string | No | Enter the city code
@@ -68,6 +68,40 @@ country.code2 | string | Country Code 2
 country.code | string | Country Code
 href | URL | Link to the response
 
+Example: Look up cities in Alabama
+
+https://api.sam.gov/prod/locationservices/lookup/cities?api_key=[Enter System Account Api Key]&searchBy=statecode&searchValue=AL
+
+<details>
+<summary>Response</summary>
+<p>
+<code><pre>
+{
+    "_embedded": {
+        "cityList": [
+            {
+                "cityCode": "75960",
+                "city": "Thomasville",
+                "state": {
+                    "stateCode": "AL",
+                    "state": "Alabama",
+                    "country": {
+                        "country": "UNITED STATES",
+                        "countryCode2": "US",
+                        "countrycode": "USA"
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": ""
+                    }
+                }
+            },
+            {
+</pre></code>
+</p>
+</details>
+
 ### Look Up Countries
 
 ------- | -------
@@ -82,8 +116,8 @@ Request Parameters
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 api_key | query | string | Yes | Valid System Account API Key
-searchby | query | string | No |  Enter the parameter to search the Country information by. To search by Country Name, type countryname; to search by the 2-digit Country Code, type iso2; to search by the 3-digit Country Code, type iso3; to search by the fips code2, fipscode2
-q | query | string | No |  Enter the value of the parameter you typed for searchby. For example, countryname could be United States; iso2 could be US; iso3 could be USA; fipscode2 could be US. If the searchby field is left blank, q would operate as Autocomplete
+searchBy | query | string | No |  Enter the parameter to search the Country information by. To search by Country Name, type countryname; to search by the 2-digit Country Code, type iso2; to search by the 3-digit Country Code, type iso3; to search by the fips code2, fipscode2
+q | query | string | No |  Enter the value of the parameter you typed for searchBy. For example, countryname could be United States; iso2 could be US; iso3 could be USA; fipscode2 could be US. If the searchBy field is left blank, q would operate as Autocomplete
 active | query | string | No | The active indicator specifies whether the city is active or inactive. Type "Y" for a list of active city names. Type "N" for a list of inactive city names
 
 Responses
@@ -100,6 +134,32 @@ countryCode2 | string | Country Code 2
 countrycode | string | Country Code
 href | URL Link to the response
 
+Example: Look up countries that start with "South"
+
+https://api.sam.gov/prod/locationservices/lookup/countries?api_key=[Enter System Account Api Key]&searchBy=country&q=south
+
+<details>
+<summary>Response</summary>
+<p>
+<code><pre>
+{
+    "_embedded": {
+        "countryList": [
+            {
+                "country": "KOREA, SOUTH",
+                "countryFullName": "Republic of Korea",
+                "countryCode2": "KR",
+                "countrycode": "KOR",
+                "_links": {
+                    "self": {
+                        "href": ""
+                    }
+                }
+            }
+</pre></code>
+</p>
+</details>
+
 ### Look Up States
 
 ------- | -------
@@ -115,8 +175,8 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 api_key | query | string | Yes | Valid System Account API Key
 cc | query | string | No | Enter the 3-digit Country Code to retrieve the States within that Country. For example: United States would be USA
-searchby | query | string | No | Enter the search parameter to search the state information by. To search by state code, type state code; to search by state name, type statename; to search by state type, type statetype
-q | query | string | No |  Enter the value of the parameter for searchby. For example, statename could be Virginia; statecode could be VA; statetype could be State. The following statetype are available: State, Capital, Military, Minor Outlying Islands, Associated State, and Territory. You can input multiple values for the parameter by separating the values by a comma (for example: if searchby is statetype, q could be Military, Capital. This would return the Military and Capital states). If the searchby field is left blank, q would operate as Autocomplete
+searchBy | query | string | No | Enter the search parameter to search the state information by. To search by state code, type state code; to search by state name, type statename; to search by state type, type statetype
+q | query | string | No |  Enter the value of the parameter for searchBy. For example, statename could be Virginia; statecode could be VA; statetype could be State. The following statetype are available: State, Capital, Military, Minor Outlying Islands, Associated State, and Territory. You can input multiple values for the parameter by separating the values by a comma (for example: if searchBy is statetype, q could be Military, Capital. This would return the Military and Capital states). If the searchBy field is left blank, q would operate as Autocomplete
 active | query | string | No | The active indicator specifies whether the city is active or inactive. Type "Y" for a list of active city names. Type "N" for a list of inactive city names
 
 Responses
@@ -136,6 +196,40 @@ country.countryFullName | string | Full Name of Country
 country.countryCode2 | string | Country Code 2
 countrycode | string | Country Code
 href | URL Link to the response
+
+Example: Look up state of Virginia
+
+https://api.sam.gov/prod/locationservices/lookup/states?api_key=[Enter System Account Api Key]&searchBy=state&q=VA
+
+<details>
+<summary>Response</summary>
+<p>
+<code><pre>
+{
+       "_embedded": {
+        "stateList": [
+            {
+                "stateCode": "VA",
+                "state": "Virginia",
+                "stateType": "State",
+                "country": {
+                    "country": "UNITED STATES",
+                    "countryFullName": "United States of America",
+                    "countryCode2": "US",
+                    "countrycode": "USA"
+                },
+                "_links": {
+                    "self": {
+                        "href": ""
+                    }
+                }
+            }
+        ]
+    }
+}
+</pre></code>
+</p>
+</details>
 
 ### Validate Zip Code
 
@@ -165,8 +259,6 @@ HTTP Status Code | Response Type | Reason  | Description
 Response Element | Response Type |  Description
 -----------------|---------------|------------
 
-
-## Example
 
 
 
@@ -200,15 +292,15 @@ Response Element | Response Type |  Description
           required: false
           type: string
         -
-          name: searchby
+          name: searchBy
           in: query
-          description: searchby
+          description: searchBy
           required: false
           type: string
         -
-          name: searchvalue
+          name: searchValue
           in: query
-          description: searchvalue
+          description: searchValue
           required: false
           type: string
         -
@@ -264,9 +356,9 @@ Response Element | Response Type |  Description
           required: true
           type: string
         -
-          name: searchby
+          name: searchBy
           in: query
-          description: searchby
+          description: searchBy
           required: false
           type: string
         -
@@ -322,9 +414,9 @@ Response Element | Response Type |  Description
           required: false
           type: string
         -
-          name: searchby
+          name: searchBy
           in: query
-          description: searchby
+          description: searchBy
           required: false
           type: string
         -
