@@ -262,7 +262,7 @@ Response Element | Response Type |  Description
 
 
 
-## OpenAPI Specification File
+## OpenAPI Specification 
 
 <details>
 <summary>Look Up Cities</summary>
