@@ -258,8 +258,24 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Response Element | Response Type |  Description
 -----------------|---------------|------------
+zipCode | string | Zip Code 
+description | string | Status of Zip (Valid or Invalid)
 
+Example: Look up whether 36310 is a valid zip
 
+https://api.sam.gov/prod/locationservices/validate/zip?api_key=[Enter System Account Api Key]&zip=36310
+
+<details>
+<summary>Response</summary>
+<p>
+<code><pre>
+{
+       "zipCode": "36310"
+       "description": "Valid Zip"
+}
+</pre></code>
+</p>
+</details>
 
 
 ## OpenAPI Specification 
