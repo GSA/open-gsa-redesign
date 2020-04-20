@@ -10,7 +10,7 @@ The Public Location Services API provides Location Services data (State, City, a
 ## Getting Started
 
 Public Location Services API can be accessed from Beta or Alpha via the following endpoints:
-* Beta: https://api.sam.gov/prod
+* Beta: https://api.sam.gov/prod (coming soon)
 * Alpha: https://api-alpha.sam.gov/prodlike
 
 ### Authorization
