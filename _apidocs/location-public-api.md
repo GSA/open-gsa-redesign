@@ -10,8 +10,8 @@ The Public Location Services API provides Location Services data (State, City, a
 ## Getting Started
 
 Public Location Services API can be accessed from Beta or Alpha via the following endpoints:
-* Beta: https://api.sam.gov/prod (coming soon)
-* Alpha: https://api-alpha.sam.gov/prodlike
+* Beta: https://api.sam.gov (coming soon)
+* Alpha: https://api-alpha.sam.gov
 
 ### Authorization
 
@@ -32,7 +32,7 @@ In order to use Public Location Services API, the following is required:
 
 ------- | -------
 **Request Type** | GET
-**URL** | /locationservices/lookup/cities
+**URL** | /locationservices/lookup/v1/cities
 **Summary** | Get list of cities
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -106,7 +106,7 @@ https://api.sam.gov/prod/locationservices/lookup/cities?api_key=[Enter System Ac
 
 ------- | -------
 **Request Type** | GET
-**URL** | /locationservices/lookup/countries
+**URL** | /locationservices/lookup/v1/countries
 **Summary** | Get list of countries
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -164,7 +164,7 @@ https://api.sam.gov/prod/locationservices/lookup/countries?api_key=[Enter System
 
 ------- | -------
 **Request Type** | GET
-**URL** | /locationservices/lookup/states
+**URL** | /locationservices/lookup/v1/states
 **Summary** | Get list of states
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -235,7 +235,7 @@ https://api.sam.gov/prod/locationservices/lookup/states?api_key=[Enter System Ac
 
 ------- | -------
 **Request Type** | GET
-**URL** | /locationservices/validate/zip
+**URL** | /locationservices/validate/v1/zip
 **Summary** | Validate Zip Code
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -284,7 +284,7 @@ https://api.sam.gov/prod/locationservices/validate/zip?api_key=[Enter System Acc
 <summary>Look Up Cities</summary>
 <p>
 <code><pre>
-/locationservices/lookup/cities:
+/locationservices/lookup/v1/cities:
     get:
       tags:
         - locationservices
@@ -354,7 +354,7 @@ https://api.sam.gov/prod/locationservices/validate/zip?api_key=[Enter System Acc
 <summary>Look Up Countries</summary>
 <p>
 <code><pre>
-/locationservices/lookup/countries:
+/locationservices/lookup/v1/countries:
     get:
       tags:
         - locationservices
@@ -406,7 +406,7 @@ https://api.sam.gov/prod/locationservices/validate/zip?api_key=[Enter System Acc
 <summary>Look Up States</summary>
 <p>
 <code><pre>
-/locationservices/lookup/states:
+/locationservices/lookup/v1/states:
     get:
       tags:
         - locationservices
@@ -464,7 +464,7 @@ https://api.sam.gov/prod/locationservices/validate/zip?api_key=[Enter System Acc
 <summary>Validate Zip Code</summary>
 <p>
 <code><pre>
-/locationservices/validate/zip:
+/locationservices/validate/v1/zip:
     get:
       tags:
         - locationservices
