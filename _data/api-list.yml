@@ -55,6 +55,9 @@
 - title: Federal Procurement Data System - FPDS API
   description: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
   url: https://www.fpds.gov/fpdsng_cms/index.php/en/worksite.html
+- title: Fleet Vehicles API
+  description: GSA Fleet Drive-thru offers two reports through an API for GSA Fleet Leasing customers.
+  url: https://www.gsa.gov/buying-selling/products-services/transportation-logistics-services/vehicle-leasing/gsa-fleet-drivethru
 - title: Go.USA.gov API
   description: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
   url: https://go.usa.gov/api

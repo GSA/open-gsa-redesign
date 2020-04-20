@@ -421,7 +421,8 @@ Examples
      "solicitation": {
       "setAside": "SBA",
       "deadlines": {
-        "response": "2023-08-08"
+       "response": "2020-02-25T11:00:00-04:00",
+       "responseTz": "America/New_York"
       }
     },
     "archive": {
@@ -487,7 +488,7 @@ Examples
      "solicitation": {
        "setAside": "",
        "deadlines": {
-         "responseTz": "YYYY-MM-DDTHH:MM:SS-05:00",
+         "responseTz": "America/New_York",
          "response": "2022-11-11T11:12:00-05:00"
        }
      },
@@ -570,7 +571,8 @@ Examples
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2022-08-08"
+               "response": "2020-02-25T11:00:00-05:00",
+               "responseTz": "America/Chicago"
             }
         },
         "additionalReporting": [
@@ -1040,7 +1042,8 @@ Examples
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2022-08-08"
+               "response": "2020-02-25T11:00:00-06:00",
+               "responseTz": "America/Chicago"
             }
         },
         "additionalReporting": [
@@ -1140,8 +1143,8 @@ Examples
         "solicitation": {
             "setAside": "SBA",
             "deadlines": {
-                "response": "2022-08-08"
-            }
+             "response": "2020-02-24T11:00:00-05:00",
+             "responseTz": "America/Chicago"            }
         },
         "additionalReporting": [
             "none"
@@ -1856,7 +1859,7 @@ Examples
         "revision_reason": null,
         "posted_date": "2006-10-23T00:00:00",
         "latest": "0"
-      },
+      
       {
         "parentOpportunityId": null,
         "cancel_notice": "0",
@@ -2014,7 +2017,7 @@ opportunityId | string |  Opportunity ID
 data.type | string | See Notices Types table
 data.solicitationNumber | string | Solicitation Number
 data.title | string | Title of the Opportunity
-data.organizationId | string | FH Org Id/AAC code of the office where an Opportunity is being submitted
+data.organizationId | string | FH Organization ID that opportunity is associated with <br><br> Department = CGAC <br> Subtier = FPDS code <br> Office = AAC
 data.classificationCode | string | Product Service Code (PSC)
 data.naics | JSON Array | 
 data.naics.code | string | NAICS Code
@@ -3000,7 +3003,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description| Applicabl
 Authorization | Header |  string | Yes | Valid and authorized user ID 
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity IDv1
-entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2 - Deprecated
+entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2
 ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST| v2
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3416,7 +3419,6 @@ Examples
                 "email": "reitestuser.de@gmail.com",
                 "phone": "1+9734323019",
                 "contractorName": "REI SYSTEMS, INC.",
-                "duns": "608999520",
                 "ueiSAM": "025114695AST",
                 "cageCode": "1DJP1"
             },
@@ -3429,7 +3431,6 @@ Examples
                 "email": "reitestuser.de@gmail.com",
                 "phone": "1+9734323019",
                 "contractorName": "REI SYSTEMS, INC.",
-                "duns": "608999520",
                 "ueiSAM": "025114695AST",
                 "cageCode": "1DJP1”
             }
@@ -3621,7 +3622,6 @@ Examples
           "amount": null,
           "number": "awd123",
           "awardee": {
-            "duns": null,
             "ueiSAM": "null",
             "name": null,
             "location": null
@@ -4373,7 +4373,7 @@ resources.attType | string | |link, file | No| Type of attachment, either link o
 resources.content | byte |250MB |  | No | File content in base64 format| v1 <br> v2
 resources.link | string | 255 characters | |No | Resource link URL| v1 <br> v2
 resources.packageAccessLevel | string | | public,<br/>private<br/>(default public) |  No| Type of access to file| v1 <br> v2
-resources.resourceName | string | 255 characters |  | No | Name of file| v1 <br> v2
+resources.resourceName | string | 255 characters |a-z A-Z 0-9 - _ ()  | No | Name of file| v1 <br> v2
 resources.description | string |255 characters | | No | Description of the link| v1 <br> v2
 resources.explicitAccess | string |1 character | 0, 1 (defaults to '0' public access, if not provided) |No |Explicit Access. For Controlled Unclassified files, specify '1'| v1 <br> v2
 resources.exportControlled | string |1 character | 0 | No |Export Controlled. * Captured for future JCP validation| v1 <br> v2
@@ -4577,7 +4577,7 @@ Name | Data Type | Field Length |Allowed Values | Required | Description|Applica
 attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file| v1 <br> v2
 content | byte | 250MB| | Yes if attType=file | File content in base64 format| v1 <br> v2
 packageAccessLevel | string | 32 characters|public, <br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'.| v1 <br> v2
-resourceName | string | 255 characters| | Yes if attType=file | Name of file| v1 <br> v2
+resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes if attType=file | Name of file| v1 <br> v2
 fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)| v1 <br> v2
 link | string | 255 characters| | Yes if attType=link | Resource link  URL| v1 <br> v2
 description | string |255 characters | | Yes if attType=link | Description of the link| v1 <br> v2
@@ -4609,6 +4609,9 @@ QuickTime (.mov)|	video/quicktime
 MPEG (.mpg, .mpeg, .mp4)	|video/mpeg , video/mp4
 Windows Media Video (.wmv)	|video/x-ms-wmv
 Flash Video (.flv, .f4v)|	video/x-flv
+Zip file (.zip)| application/zip
+
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4649,7 +4652,7 @@ Name | Data Type | Allowed Values | Required | Description|Applicable Versions
 -----|-----------|----------------|----------|------------|-----
 attType | string | link, file | No | Required only for file access level changes| v1 <br> v2
 packageAccessLevel | string | public,<br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'| v1 <br> v2
-resourceName | string |  | No | Name of file or link| v1 <br> v2
+resourceName | string | a-z A-Z 0-9 - _ () | No | Name of file or link| v1 <br> v2
 explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files. Required only for file access level changes| v1 <br> v2
 sortOrderChanged | boolean  | true, false | No | Should be provided if file order is changed.| v1 <br> v2
 resourceIdBelow | string  |  | No | This should be Resource ID of the file/link that will display below the file/link that is moved| v1 <br> v2
@@ -6851,17 +6854,19 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Primary Contact Email |	Primary Contact - email character limit is 255 characters | Primary Contact email limit is 255 | Publish
 400|Primary Contact Phone |	Primary Contact - phone character limit is 255 characters | Primary Contact phone limit is 255 | Publish
 400|Primary Contact Phone |	Primary Contact - fax character limit is 255 characters | Primary Contact fax limit is 255 | Publish
-400|Resources -  attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a line |	Create Attachment
-400|Resources - resourceName | Attachment must have a name | Attachment Name is a required field |	Create Attachment, Create And Publish
-400|Resources - content |Attachment must have content | File content is missing |	Create Attachment, Create And Publish
-400|Resources - description | Link Resource must have a description | Link provided is missing description |	Create Attachment, Create And Publish
-400|Resources - description | Link with the display text {}  already exists | Link with the same description/name already exists on the notice | Create Attachment, Create And Publish
-400|Resources - link | Link Resource must have a link | Link URL is missing |	Create Attachment, Create And Publish
-400|Resources - link | Please enter a valid url. [protocol]://hostname.domain. Protocol can be ftp, http, or https. Spaces are not allowed | Link URL is not valid |	Create Attachment, Create And Publish
-400|Resources - link | Link {} already exists| Link URL is already added to the notice |	Create Attachment, Create And Publish
-400|Resources - resourceName | The file type that you are trying to upload is not supported | File extension provided is unsupported |	Create Attachment, Create And Publish
-400|Resources - resourceName | Attachment with the name {} already exists | File with the same name is already added to the notice |	Create Attachment, Create And Publish
-400|Resources - content | The file size should be greater than zero bytes and less than 250 MB | File Size doesn't meet the specified limits |	Create Attachment, Create And Publish
+400|Resources -  attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a link |	Create Resource, Create And Publish
+400|Resources - resourceName | Attachment must have a name | Attachment Name is a required field |	Create Resource, Create And Publish
+400|Resources - resourceName | File name should have valid file type specified | Attachment Name should have valid file extension |	Create Resource, Update Resource, Create And Publish
+400|Resources - resourceName | File name should contain only Alpha numeric characters with spaces, hyphen, underscore and () | Attachment Name can contain only  the allowed character set |	Create Resource, Update Resource, Create And Publish
+400|Resources - content |Attachment must have content | File content is missing |	Create Resource, Create And Publish
+400|Resources - description | Link Resource must have a description | Link provided is missing description |	Create Resource, Create And Publish
+400|Resources - description | Link with the display text {}  already exists | Link with the same description/name already exists on the notice | Create Resource, Update Resource,  Create And Publish
+400|Resources - link | Link Resource must have a link | Link URL is missing |	Create Resource, Create And Publish
+400|Resources - link | Please enter a valid url. [protocol]://hostname.domain. Protocol can be ftp, http, or https. Spaces are not allowed | Link URL is not valid |	Create Resource, Create And Publish
+400|Resources - link | Link {} already exists| Link URL is already added to the notice |	Create Resource, Create And Publish
+400|Resources - resourceName | The file type that you are trying to upload is not supported | File extension provided is unsupported |	Create Resource, Create And Publish
+400|Resources - resourceName | Attachment with the name {} already exists | File with the same name is already added to the notice |	Create Resource, Create And Publish
+400|Resources - content | The file size should be greater than zero bytes and less than 250 MB | File Size doesn't meet the specified limits |	Create Resource, Create And Publish
 400|Archive |	This opportunity is not the latest published |	Draft Opportunity cannot be archived	| Archive
 400|Archive |	Opportunity already inactive |	Opportunity is already archived	| Archive
 400|Update |	Opportunity cannot be updated |	Opportunity is either in draft, archived or cancelled status	| Update
@@ -6951,5 +6956,9 @@ Date | Version | Description
 1/20/2020| v1.03| Updated JSON arrays and objects
 1/21/2020| v1.04| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
 2/18/2020| v1.05| Added JSON information for UEI additions
+2/28/2020| v1.06| Updated the Valid file types to include Zip file.<br/> Added a new validation for resource name to specify the allowed character set
+3/13/2020|v1.07| Updated GET APIs to include both DUNS and UEISAM in v2<br> Get list of Opp API Organization ID field updated to show FH ID dependending on department, subtier, and office
+
+
 
 <p><small><a href="#">Back to top</a></small></p>
