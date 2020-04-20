@@ -42,9 +42,9 @@ Request Parameters
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 api_key | query | string | Yes | Valid System Account API Key
-cc | query | string | No | Enter the 3-digit Country Code to retrieve the cities within that Country. For example: United States would be USA
-searchby | query | string | No | Enter the search parameter to search counties information by stateid, statecode, statename, zipcode, cdist(Congressional District)
-searchvalue | query | string | No (Yes if searchby is provided)| Enter the searchvalue for searchby parameter. For example: If searchby is statecode provide search value as VA; if searchby is cdist provide search value as Virginia-01
+cc | query | string | No | Enter the 3-digit Country Code to retrieve the cities within that Country <br><br> Example: <br> United States: USA
+searchby | query | string | No | Enter the search parameter to search city information: <br>- statecode <br> - statename
+searchvalue | query | string | No (Yes if searchby is provided)| Enter the searchvalue for searchby parameter <br><br> Example: <br>statecode: VA <br> statename: Virginia
 q | query | string | No | Enter the City Name you want to retrieve information for. Note q also serves as general search
 active | query | string | No | The active indicator specifies whether the city is active or inactive. Type "Y" for a list of active city names. Type "N" for a list of inactive city names
 citycode | query | string | No | Enter the city code
@@ -116,8 +116,8 @@ Request Parameters
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 api_key | query | string | Yes | Valid System Account API Key
-searchby | query | string | No |  Enter the parameter to search the Country information by. To search by Country Name, type countryname; to search by the 2-digit Country Code, type iso2; to search by the 3-digit Country Code, type iso3; to search by the fips code2, fipscode2
-q | query | string | No (Yes if searchby is provided)|  Enter the value of the parameter you typed for searchby. For example, countryname could be United States; iso2 could be US; iso3 could be USA; fipscode2 could be US. If searchby is provided, q must have exact spelling to return valid results (ex. United States). If the searchby field is left blank, q would operate general search (ex. United)
+searchby | query | string | No |  Enter the parameter to search the country information: <br> - countryname <br>- iso2 <br>- iso3
+q | query | string | No (Yes if searchby is provided)|  Enter the value of the parameter you typed for searchby <br><br> Example:<br> countryname: United States <br> iso2: US <br> iso3: USA <br><br> If searchby is provided, q must have exact spelling to return valid results (ex. United States). If the searchby field is left blank, q would operate general search (ex. United)
 active | query | string | No | The active indicator specifies whether the city is active or inactive. Type "Y" for a list of active city names. Type "N" for a list of inactive city names
 
 Responses
@@ -174,9 +174,9 @@ Request Parameters
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 api_key | query | string | Yes | Valid System Account API Key
-cc | query | string | No | Enter the 3-digit Country Code to retrieve the States within that Country. For example: United States would be USA
-searchby | query | string | No | Enter the search parameter to search the state information by. To search by state code, type state code; to search by state name, type statename; to search by state type, type statetype
-q | query | string | No (Yes if searchby is provided) |  Enter the value of the parameter for searchby. For example, statename could be Virginia; statecode could be VA; statetype could be State. The following statetype are available: State, Capital, Military, Minor Outlying Islands, Associated State, and Territory. You can input multiple values for the parameter by separating the values by a comma (for example: if searchby is statetype, q could be Military, Capital. This would return the Military and Capital states). If the searchby field is left blank, q would operate as general search
+cc | query | string | No | Enter the 3-digit Country Code to retrieve the States within that Country <br><br> Example: <br> United States: USA
+searchby | query | string | No | Enter the search parameter to search the state information <br><br> - statecode <br> - statename <br> - statetype <br>
+q | query | string | No (Yes if searchby is provided) |  Enter the value of the parameter for searchby <br><br> Example: <br> statename: Virginia <br> statecode: VA <br> statetype: State (state types: State, Capital, Military, Minor Outlying Islands, Associated State, and Territory) <br><br> You can input multiple values for the parameter by separating the values by a comma (for example: if searchby is statetype, q could be Military, Capital. This would return the Military and Capital states). If the searchby field is left blank, q would operate as general search
 active | query | string | No | The active indicator specifies whether the city is active or inactive. Type "Y" for a list of active city names. Type "N" for a list of inactive city names
 
 Responses
