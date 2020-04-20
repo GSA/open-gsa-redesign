@@ -32,7 +32,7 @@ In order to use Public Location Services API, the following is required:
 
 ------- | -------
 **Request Type** | GET
-**URL** | /locationservices/lookup/v1/cities
+**URL** | /locationservices/v1/cities
 **Summary** | Get list of cities
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -70,7 +70,7 @@ href | URL | Link to the response
 
 Example: Look up cities in Alabama
 
-https://api.sam.gov/prod/locationservices/lookup/cities?api_key=[Enter System Account Api Key]&searchby=statecode&searchvalue=AL
+https://api.sam.gov/locationservices/v1/cities?api_key=[Enter System Account Api Key]&searchby=statecode&searchvalue=AL
 
 <details>
 <summary>Response</summary>
@@ -106,7 +106,7 @@ https://api.sam.gov/prod/locationservices/lookup/cities?api_key=[Enter System Ac
 
 ------- | -------
 **Request Type** | GET
-**URL** | /locationservices/lookup/v1/countries
+**URL** | /locationservices/v1/countries
 **Summary** | Get list of countries
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -136,7 +136,7 @@ href | URL Link to the response
 
 Example: Look up countries that start with "South"
 
-https://api.sam.gov/prod/locationservices/lookup/countries?api_key=[Enter System Account Api Key]&searchby=country&q=south
+https://api.sam.gov/locationservices/v1/countries?api_key=[Enter System Account Api Key]&searchby=country&q=south
 
 <details>
 <summary>Response</summary>
@@ -164,7 +164,7 @@ https://api.sam.gov/prod/locationservices/lookup/countries?api_key=[Enter System
 
 ------- | -------
 **Request Type** | GET
-**URL** | /locationservices/lookup/v1/states
+**URL** | /locationservices/v1/states
 **Summary** | Get list of states
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -199,7 +199,7 @@ href | URL Link to the response
 
 Example: Look up state of Virginia
 
-https://api.sam.gov/prod/locationservices/lookup/states?api_key=[Enter System Account Api Key]&searchby=state&q=VA
+https://api.sam.gov/locationservices/v1/states?api_key=[Enter System Account Api Key]&searchby=state&q=VA
 
 <details>
 <summary>Response</summary>
@@ -235,7 +235,7 @@ https://api.sam.gov/prod/locationservices/lookup/states?api_key=[Enter System Ac
 
 ------- | -------
 **Request Type** | GET
-**URL** | /locationservices/validate/v1/zip
+**URL** | /locationservices/v1/zip
 **Summary** | Validate Zip Code
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -263,7 +263,7 @@ description | string | Status of Zip (Valid or Invalid)
 
 Example: Look up whether 36310 is a valid zip
 
-https://api.sam.gov/prod/locationservices/validate/zip?api_key=[Enter System Account Api Key]&zip=36310
+https://api.sam.gov/locationservices/v1/zip?api_key=[Enter System Account Api Key]&zip=36310
 
 <details>
 <summary>Response</summary>
@@ -284,7 +284,7 @@ https://api.sam.gov/prod/locationservices/validate/zip?api_key=[Enter System Acc
 <summary>Look Up Cities</summary>
 <p>
 <code><pre>
-/locationservices/lookup/v1/cities:
+/locationservices/v1/cities:
     get:
       tags:
         - locationservices
@@ -354,7 +354,7 @@ https://api.sam.gov/prod/locationservices/validate/zip?api_key=[Enter System Acc
 <summary>Look Up Countries</summary>
 <p>
 <code><pre>
-/locationservices/lookup/v1/countries:
+/locationservices/v1/countries:
     get:
       tags:
         - locationservices
@@ -406,7 +406,7 @@ https://api.sam.gov/prod/locationservices/validate/zip?api_key=[Enter System Acc
 <summary>Look Up States</summary>
 <p>
 <code><pre>
-/locationservices/lookup/v1/states:
+/locationservices/v1/states:
     get:
       tags:
         - locationservices
@@ -464,7 +464,7 @@ https://api.sam.gov/prod/locationservices/validate/zip?api_key=[Enter System Acc
 <summary>Validate Zip Code</summary>
 <p>
 <code><pre>
-/locationservices/validate/v1/zip:
+/locationservices/v1/zip:
     get:
       tags:
         - locationservices
