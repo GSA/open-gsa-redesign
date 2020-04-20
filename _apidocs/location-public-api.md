@@ -5,7 +5,7 @@ banner-heading: Beta.SAM.Gov Public Location Services API
 
 ## Overview
 
-The Public Location Services API provides Location Services data (State, City, and ZIP) and is to be used when validating location data being submitted to Beta.SAM.gov ONLY. Beta.SAM is not the authoritative source for location data and is agglomerating data from 3rd parties to operate the application.
+The Public Location Services API provides Location Services data (Country, State, City, and ZIP) and is to be used when validating location data being submitted to Beta.SAM.gov ONLY. Beta.SAM is not the authoritative source for location data and is agglomerating data from 3rd parties to operate the application.
 
 ## Getting Started
 
