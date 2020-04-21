@@ -7,7 +7,7 @@ banner-heading: Beta.SAM.Gov Public Location Services API
 
 The Public Location Services API provides Location Services data (Country, State, City, and ZIP) and is to be used when validating location data being submitted to Beta.SAM.gov ONLY. Beta.SAM is not the authoritative source for location data and is agglomerating data from 3rd parties to operate the application. Location Public Services API only supports United States currently.
 
-*Note: If request filters are not provided, by default all results will returned.  If filters are provided and results have no data found for the filters, then API will return 404 error*
+*Note: If valid search parameter (e.g. searchby=statecode) from the options listed in the description is not provided, all records will be returned*
 
 
 ## Getting Started
