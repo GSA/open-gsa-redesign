@@ -206,7 +206,7 @@ Monthly File (UTF-8), April 2019 (parameter):<br>
 https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2019&charset=UTF8<br>
 
 **Expected Result**<br>
-Click to view the full details of the data elements: <a href="v1/SAM_Entity_Management_SENSITIVE_V3_Extract_Layout.xlsx">Sensitive Extract Layout</a><br>
+Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes: <a href="v1/SAM_Entity_Management_SENSITIVE_V3_Extract_Layout.xlsx">Sensitive Extract Layout</a><br>
 
 **Exclusions Public Data Package Sample API calls:**<br>
 
