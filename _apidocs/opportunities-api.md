@@ -259,6 +259,24 @@ Australia/Sydney |(UTC+11:00) SYDNEY, AUSTRALIA
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## Version Control (Coming Soon)
+
+Please use v2 for the following APIs to utilize ueiSAM in place of DUNS. Business rules for v2 endpoints can be found in the corresponding API sections.
+
+* Add Authorized Party
+* Create Draft Opportunity
+* Create and Publish Opportunity
+* Get Authorized Party
+* Get IVL
+* Get list of Opportunities
+* Get Opportunity by Opportunity ID
+* Get Related Opportunities
+
+**v2 Endpoints**
+
+* Beta: https://api.sam.gov/prod/opportunity/v2/ (coming soon)
+* Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ (coming soon)
+
 ## Contract Opportunity Management API Request and Responses
 
 <span style="color:red">Note: All Opportunity notices types except Special notices will be associated to organization at office level. Special notices can be associated to Organization at department, sub-tier, or office level.</span>
@@ -2089,7 +2107,7 @@ data.link | JSON Array of Object |
 data.link.additionalInfo | JSON Object |  
 data.link.additionalInfo.content | string | Additional Info
 data.link.href | string |  Website Address
-data.additionalReporting | string |  recovery_act or none
+data.additionalReporting | JSON Array |  recovery_act or none
 additionalInfo.sections JSON | JSON Array | 
 additionalInfo.sections.opportunityId | string | 
 additionalInfo.sections.status | string | 
@@ -3003,7 +3021,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description| Applicabl
 Authorization | Header |  string | Yes | Valid and authorized user ID 
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity IDv1
-entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2
+entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2 - Deprecated
 ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST| v2
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3973,7 +3991,7 @@ data.award.awardee.location.<br/>zip | string | | | No | No | Awardee Country Zi
 data.award.justificationAuthority | JSON Object |NA |NA | NA | NA | Only for type = j (Justification) |NA
 data.award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number | v1 <br> v2
 data.award.justificationAuthority.<br/>authority | string|  |  | No | Yes for type = j (Justification) | Justification Authority | v1 <br> v2
-data.additionalReporting | string | |None, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice | v1 <br> v2
+data.additionalReporting | JSON Array | |None, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice | v1 <br> v2
 description | JSON Array | NA | NA | NA | NA | NA |NA
 description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice | v1 <br> v2
 related | JSON  Object| NA | NA | NA | NA | Related Notice information |NA
@@ -4361,7 +4379,7 @@ data.award.awardee.location.<br/>zip | string | | | No | Awardee Country Zip cod
 data.award.justificationAuthority | JSON Object |NA |NA | NA | Only for type = j (Justification)| v1 <br> v2
 data.award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | Justification Authority Modification Number| v1 <br> v2
 data.award.justificationAuthority.<br/>authority | string|  |  | Yes for type = j (Justification) | Justification Authority| v1 <br> v2
-data.additionalReporting | string | |none, <br/>auto_recovery | Yes; No for type = s (Special Notice) | Initiative that applies to the notice| v1 <br> v2
+data.additionalReporting | JSON Array | |none, <br/>auto_recovery | Yes; No for type = s (Special Notice) | Initiative that applies to the notice| v1 <br> v2
 description | JSON Array | NA | NA | NA |NA|NA
 description.body | string | 65535 characters| | Yes; No for type = a (Award) | Description of the notice| v1 <br> v2
 related | JSON Object | NA | NA | NA | Related Notice information| v1 <br> v2
@@ -6923,7 +6941,13 @@ Error Code|Field | Error Message | Reason/Description | Operation
 
 ## FAQ
 
-<p><small><a href="#">Back to top</a></small></p>
+**Can I look up contract opportunities   without using having a role or a system account?**
+
+A. Users of beta.sam.gov may use their personal API key to look up contract opportunities. Please visit the [Get Opportunities Public API](https://open.gsa.gov/api/get-opportunities-public-api/) document for additonal details.
+
+**How do I ensure that I have used correct location information?**
+
+A. Contract Opportunity users may use Public Location Services API document to verify their location information before using it in contract opportunities.
 
 ## Contact Us
 
@@ -6958,6 +6982,7 @@ Date | Version | Description
 2/18/2020| v1.05| Added JSON information for UEI additions
 2/28/2020| v1.06| Updated the Valid file types to include Zip file.<br/> Added a new validation for resource name to specify the allowed character set
 3/13/2020|v1.07| Updated GET APIs to include both DUNS and UEISAM in v2<br> Get list of Opp API Organization ID field updated to show FH ID dependending on department, subtier, and office
+4/10/2020|v1.08| Added Version Control Section <br> Added information for Get Opportunity Public API and Public Location Services API in FAQ section
 
 
 
