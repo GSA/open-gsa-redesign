@@ -1,5 +1,5 @@
 ---
-title: Beta.SAM.Gov Public Location Services API
+title: Beta.SAM.Gov Public Location Services API (Coming Soon)
 banner-heading: Beta.SAM.Gov Public Location Services API
 ---
 
