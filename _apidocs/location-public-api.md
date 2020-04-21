@@ -7,6 +7,9 @@ banner-heading: Beta.SAM.Gov Public Location Services API
 
 The Public Location Services API provides Location Services data (Country, State, City, and ZIP) and is to be used when validating location data being submitted to Beta.SAM.gov ONLY. Beta.SAM is not the authoritative source for location data and is agglomerating data from 3rd parties to operate the application. Location Public Services API only supports United States currently.
 
+*Note: If request filters are not provided, by default all results will returned.  If filters are provided and results have no data found for the filters, then API will return 404 error*
+
+
 ## Getting Started
 
 Public Location Services API can be accessed from Beta or Alpha via the following endpoints:
@@ -39,6 +42,7 @@ In order to use Public Location Services API, the following is required:
 
 Request Parameters
 
+
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 api_key | query | string | Yes | Valid System Account API Key
@@ -48,6 +52,8 @@ searchvalue | query | string | No (Yes if searchby is provided)| Enter the searc
 q | query | string | No | Enter the City Name you want to retrieve information for. Note q also serves as general search
 active | query | string | No | The active indicator specifies whether the city is active or inactive. Type "Y" for a list of active city names. Type "N" for a list of inactive city names
 citycode | query | string | No | Enter the city code
+
+
 
 Responses
 
@@ -67,6 +73,8 @@ country.country | string | Country Name
 country.code2 | string | Country Code 2
 country.code | string | Country Code
 href | URL | Link to the response
+
+*Note: Limit 1000 entries*
 
 Example: Look up cities in Alabama
 
