@@ -1,6 +1,6 @@
 ---
-title: Beta.SAM.Gov Public Location Services API
-banner-heading: Beta.SAM.Gov Public Location Services API
+title: Beta.SAM.Gov Public Location Services API (Coming Soon)
+banner-heading: Beta.SAM.Gov Public Location Services API (Coming Soon)
 ---
 
 ## Overview
@@ -13,8 +13,8 @@ The Public Location Services API provides Location Services data (Country, State
 ## Getting Started
 
 Public Location Services API can be accessed from Beta or Alpha via the following endpoints:
-* Beta: https://api.sam.gov (coming soon)
-* Alpha: https://api-alpha.sam.gov
+* Beta: https://api.sam.gov (Coming Soon)
+* Alpha: https://api-alpha.sam.gov (Coming Soon)
 
 ### Authorization
 
@@ -183,7 +183,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 api_key | query | string | Yes | Valid System Account API Key
 cc | query | string | No | Enter the 3-digit Country Code to retrieve the States within that Country <br><br> Example: <br> United States: USA
-searchby | query | string | No | Enter the search parameter to search the state information <br><br> - statecode <br> - statename <br> - statetype <br>
+searchby | query | string | No | Enter the search parameter to search the state information: <br> - statecode <br> - statename <br> - statetype <br>
 q | query | string | No (Yes if searchby is provided) |  Enter the value of the parameter for searchby <br><br> Example: <br> statename: Virginia <br> statecode: VA <br> statetype: State (state types: State, Capital, Military, Minor Outlying Islands, Associated State, and Territory) <br><br> You can input multiple values for the parameter by separating the values by a comma (for example: if searchby is statetype, q could be Military, Capital. This would return the Military and Capital states). If the searchby field is left blank, q would operate as general search
 active | query | string | No | The active indicator specifies whether the city is active or inactive. Type "Y" for a list of active city names. Type "N" for a list of inactive city names
 
