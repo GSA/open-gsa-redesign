@@ -1,6 +1,6 @@
 ---
-title: Beta.SAM.Gov Public Location Services API (Coming Soon)
-banner-heading: Beta.SAM.Gov Public Location Services API (Coming Soon)
+title: Beta.SAM.Gov Public Location Services API 
+banner-heading: Beta.SAM.Gov Public Location Services API 
 ---
 
 ## Overview
@@ -14,7 +14,7 @@ The Public Location Services API provides Location Services data (Country, State
 
 Public Location Services API can be accessed from Beta or Alpha via the following endpoints:
 * Beta: https://api.sam.gov (Coming Soon)
-* Alpha: https://api-alpha.sam.gov (Coming Soon)
+* Alpha: https://api-alpha.sam.gov 
 
 ### Authorization
 
