@@ -29,7 +29,7 @@ paths:
       
       responses:
         '200':
-            description: You will see an array of suggestions. Suggestions are derived from the searches performed on your website. Up to five suggestions related to your visitors' search term are returned and are updated in near real time. A given term/phrase must be searched 10 times in a 24 hour period to appear as a suggestion.
+            description: You will see an array of suggestions. Suggestions are derived from the searches performed on your website. Up to five suggestions related to your visitors' search term are returned and are updated in near real time. A given term/phrase must be searched 5 times in a 24 hour period to appear as a suggestion.
             content:
                 application/json:
                     schema:
