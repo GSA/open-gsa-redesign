@@ -289,7 +289,7 @@ https://api.sam.gov/locationservices/v1/zip?api_key=[Enter System Account Api Ke
 ## OpenAPI Specification 
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/location-public-api.yml" download="location-public-api">OpenAPI File</a>
+<a href="v1/location-public.yml" download="location-public">OpenAPI File</a>
 
 <details>
 <summary>Look Up Cities</summary>
