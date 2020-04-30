@@ -6,7 +6,7 @@ banner-heading: 10x Site Scanner API
 
 ## Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non augue tortor. In sit amet ligula sem.
+Every day, the site-scanner program runs the scanning engine to dynamically pull down lists of domains from various sources and then scan them with a collection of scan plugins to gather data on them. This data is created in the json format and is indexed in an elasticsearch datastore, where it can be searched by an API written in the Django REST Framework.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -32,7 +32,9 @@ To begin using this API, you will need to register for an API Key. You can sign 
     // This can be any API endpoint on your server, and you can use the
     // special {{api_key}} variable to automatically substitute in the API
     // key the user just signed up for.
-    exampleApiUrl: 'https://api.gsa.gov/systems/datagov/3/action/package_search?api_key={{api_key}}',
+    exampleApiUrl: 'https://api.gsa.gov/technology/site-scanner/v1/scans/?format=json&api_key={{api_key}}',
+
+
 
     // OPTIONAL: Provide extra content to display on the signup confirmation
     // page. This will be displayed below the user's API key and the example
@@ -41,7 +43,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
     // OPTIONAL: Provide a URL to your own contact page to link to for user
     // support. Defaults to "https://api.data.gov/contact/"
-    contactUrl: 'https://github.com/gsa/gsa-apis/issues',
+    contactUrl: 'https://github.com/18F/site-scanning/issues',
 
     // OPTIONAL: Set to true to verify the user's e-mail address by only
     // sending them their API key via e-mail, and not displaying it on the
