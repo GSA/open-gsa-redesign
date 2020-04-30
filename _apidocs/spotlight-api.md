@@ -1,6 +1,6 @@
 ---
-title: 10x Site Scanner API
-banner-heading: 10x Site Scanner API
+title: 10x Spotlight API
+banner-heading: 10x Spotlight API
 ---
 
 
