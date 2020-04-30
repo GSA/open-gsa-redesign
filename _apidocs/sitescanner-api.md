@@ -806,8 +806,7 @@ $
 
 ## OpenAPI Specification File
 
-You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/openapi.yaml">Open API specification file for the Sample API</a>
+You can view the full details of this API in the OpenAPI Specification file available here: [link needed].
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -825,10 +824,8 @@ The API will return one of the following responses:
 <p><small><a href="#">Back to top</a></small></p>
 
 
-<p><small><a href="#">Back to top</a></small></p>
-
 ## Contact Us
 
-Praesent id cursus magna, sodales rutrum mauris. Nulla eget quam at nisl iaculis interdum. 
+Please reach out with any questions or feedback by [filing an issue here](https://github.com/18F/site-scanning/issues) or [emailing the team](mailto:site-scanning@gsa.gov).  
 
 <p><small><a href="#">Back to top</a></small></p>
