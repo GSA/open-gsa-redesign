@@ -3,6 +3,19 @@ title: 10x Spotlight API
 banner-heading: 10x Spotlight API
 ---
 
+<!-- Alpha status alert -->
+<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
+   <div class="usa-alert-body">
+     <strong>
+       This project is in ALPHA
+     </strong>
+     <p class="usa-alert-text">
+       This API is under active development, and breaking changes may be made without warning.
+       Have feedback or questions? <a href="http://github.com/18F/site-scanning/issues/">Please let us know</a>!
+     </p>
+   </div>
+ </div>
+<!-- end Alpha status alert -->
 
 ## Overview
 
@@ -98,6 +111,8 @@ To begin using this API, you will need to register for an API Key. You can sign 
 <p><small><a href="#">Back to top</a></small></p>
 
 ## API Description
+
+The endpoint begines at https://api.gsa.gov/technology/site-scanner/v1/
 
 #### Scans 
 
