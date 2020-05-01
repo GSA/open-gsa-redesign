@@ -112,7 +112,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
 ## API Description
 
-The endpoint begines at https://api.gsa.gov/technology/site-scanner/v1/
+The endpoint begins at https://api.gsa.gov/technology/site-scanner/v1/
 
 #### Scans 
 
@@ -178,7 +178,7 @@ The API returns metadata about the scans that we have, as well as a reference to
 stored.  In addition, if you go to the `/api/v1/domains/{domain}/` endpoint, you will get the scan results inline
 too.  For example:
 ```
-$ curl -s https://site-scanning.app.cloud.gov/api/v1/domains/18f.gov/ | jq
+$ curl -s https://api.gsa.gov/technology/site-scanner/v1/scans/?format=json&api_key=DEMO_KEY | jq
 [
   {
     "domain": "18f.gov",
