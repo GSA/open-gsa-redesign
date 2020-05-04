@@ -206,7 +206,8 @@ Monthly File (UTF-8), April 2019 (parameter):<br>
 https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2019&charset=UTF8<br>
 
 **Expected Result**<br>
-Click to view the full details of the data elements: Sensitive Extract Layout<br>
+Click to view the full details of the data elements: <a href="v1/SAM Master Extract Mapping v5.6 Sensitive File V2 Layout.xlsx">Sensitive Extract Layout</a><br>
+Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes: <a href="v1/SAM_Entity_Management_SENSITIVE_V3_Extract_Layout.xlsx">Sensitive Extract Layout</a><br>
 
 **Exclusions Public Data Package Sample API calls:**<br>
 
@@ -217,7 +218,7 @@ Daily File, April 16, 2019 (parameter):<br>
 https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=EXCLUSION&date=04/16/2019<br>
 
 **Expected Result**:
-The layout of the Exclusions extract is available here: <br>
+Click to view the full details of the data elements: <a href="v1/SAM_Exclusions_Public_Extract_Layout.pdf">Exclusions Extract Layout</a><br>
 Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes:<a href="v1/SAM_Exclusions_Public_V2_Extract_Layout.pdf">Exclusions Extract Layout</a><br>
 
 **Sample File Names:**<br>
@@ -251,9 +252,9 @@ You can view the full details of this API's in the OpenAPI Specification file av
 * Click to view <a href="v1/sample-files/SAM_SENSITIVE_MONTHLY_V2_20170702.ZIP">Sensitive Monthly V2 Extract File</a><br><br>
 
 2. Updated Version of Extract files with UEI Information:
-* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_V2_20200207.ZIP">Public Monthly V2 Extract File</a>
-* Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_V2_20200207.ZIP">FOUO Monthly V2 Extract File</a>
-* Click to view <a href="v1/sample-files/SAM_SENSITIVE_MONTHLY_V3_20200207.ZIP">Sensitive Monthly V3 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_V2_20200414.ZIP">Public Monthly V2 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_V2_20200414.ZIP">FOUO Monthly V2 Extract File</a>
+* Click to view <a href="v1/sample-files/SAM_SENSITIVE_MONTHLY_V3_20200414.ZIP">Sensitive Monthly V3 Extract File</a>
 * Click to view <a href="v1/sample-files/SAM_Exclusions_Public_Extract_20049.ZIP">Exclusions Public V2 Extract File</a><br>
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -285,6 +286,7 @@ Date | Version | Description
 08/15/2019 | v 1.1 | * Added Beta.SAM.Gov to the page title. <br><br>* Clarified the Alpha and Beta endpoints.
 12/20/2019 | v 1.2 | * Added Sample FOUO and Sensitive File Names and Revised extract layouts for the upcoming UEI/EVS changes. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.
 02/25/2020 | v1.3 | * Updated Alpha endpoint to meet new API standards.<br><br> * Added Sample Extract Files.
-02/28/2020 | v1.3 | * Updated Beta endpoint to meet new API standards.<br><br> * Removed "COMING SOON" information in Getting Started section. <br><br> * Added FOUO and Sensitive Sample Extract Files for different versions.
+02/28/2020 | v1.4 | * Updated Beta endpoint to meet new API standards.<br><br> * Removed "COMING SOON" information in Getting Started section. <br><br> * Added FOUO and Sensitive Sample Extract Files for different versions.
+04/20/2020 | v1.5 | Updated Public, FOUO and Sensitive Sample Extract Files that includes UEI information.
 
 <p><small><a href="#">Back to top</a></small></p>
