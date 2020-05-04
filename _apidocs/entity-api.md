@@ -27,13 +27,16 @@ The Entity Management API will allow users to request Public Entity Information 
 
 ## Getting Started
 
-Public and FOUO Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
-   * Alpha: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
+Public and FOUO Entity Details can be accessed from Beta or Alpha via the following version 1 and version 2 endpoints:
+   * Beta Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
+   * Beta Version 2: Coming soon
+   * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
+   * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
 
 Sensitive Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta: Coming soon
-   * Alpha: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value ><br><br>
+   * Beta Version 1/Version 2: Coming soon
+   * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
+   * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value ><br><br>
 
 
 Generating a personal API Key:
@@ -17953,5 +17956,6 @@ Disclaimer:
 | 12/20/2019 | v1.4 | * Removed Email, Fax,US phone number and non-us phone number from public poc sections for v2. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.|
 | 02/25/2020 | v1.5 | * Added Examples for v2 requests and responses.  <br><br> * Updated Alpha endpoint to meet new API standards.|
 | 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.|
+| 05/04/2020 | v1.7 | * Added V2 endpoint information.|
 
 <p><small><a href="#">Back to top</a></small></p>
