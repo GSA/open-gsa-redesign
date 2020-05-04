@@ -28,7 +28,7 @@
 - title: Beta.SAM.Gov Get Opportunities Public API
   description: Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. 
   url: get-opportunities-public-api/
-- title: Beta.SAM.Gov Public Location Services API (Coming Soon)
+- title: Beta.SAM.Gov Public Location Services API
   description: This API provides location retrieval needed for opportunities
   url: location-public-api/
 - title: Beta.SAM.Gov Product Service Codes (PSC) API
