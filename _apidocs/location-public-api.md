@@ -553,5 +553,6 @@ You can view the full details of this API in the OpenAPI Specification file avai
 Date | Version | Description
 ------|---------------|---------
 4/21/2020 | v1.0 | Base Version
+5/11/2020 | v1.1| OpenAPI Specification File Added
 
 <p><small><a href="#">Back to top</a></small></p>
