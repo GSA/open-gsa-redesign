@@ -1,4 +1,3 @@
----
 paths:
   /locationservices/v1/cities:
     get:
