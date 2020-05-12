@@ -222,6 +222,16 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## Routed Queries
+
+If you have [routed queries](https://search.gov/manual/routed-queries.html) set in your Admin page, then any matching query terms will change the API response.
+
+For example, if you set queries for `example` to route to `https://search.gov`, then the following API call, which will allow you to redirect your users to the URL.
+
+`https://search.usa.gov/api/v2/search?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER=&query=example`
+
+A site-specific API call and javascript sample are available within the Admin Center for Search.gov users under the "Activate" tab.
+
 ## Contact Us
 
 Please never hesitate to reach out! [Email the Search.gov team](mailto:search@support.digitalgov.gov). 
