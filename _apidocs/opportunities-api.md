@@ -3333,7 +3333,7 @@ Examples
 
 ------- | -------
 **Request Type** | GET
-**URL** | /opportunities/access/{opportunityId}/accessRequest
+**URL** | (v1) - /opportunities/access/{opportunityId}/accessRequest <br> (v2) - /access/{opportunityId}/accessRequest
 **Summary** | Summary	Get Authorized Party list for the explicit access requests submitted to an Opportunity
 **Consumes** | application/JSON
 **Produces** | JSON
@@ -3464,7 +3464,7 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | /opportunities/access/{opportunityId}/accessRequest
+**URL** | (v1) - /opportunities/access/{opportunityId}/accessRequest <br> (v2) - /access/{opportunityId}/accessRequest
 **Summary** | Add a Vendor as an Authorized Party for a notice to grant access to all the secured attachments across all the versions . This API will create and approve the request for the vendor.
 **Consumes** | application/JSON
 **Produces** | JSON
