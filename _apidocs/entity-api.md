@@ -36,13 +36,12 @@ Public and FOUO Entity Details can be accessed from Beta or Alpha via the follow
 Sensitive Entity Details can be accessed from Beta or Alpha via the following end points:
 
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
-       Process change for the Sensitive Download API <br> 
-       Sample POST endpoints are provided below: <br>
        <ul>
        <li style="color: #31708f;">Beta Version 1/Version 2: Coming soon</li>
-       <li style="color: #31708f;">Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value ></li>
-       <li style="color: #31708f;">Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value ></li>
+       <li style="color: #31708f;">Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?</li>
+       <li style="color: #31708f;">Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?</li>
        </ul>
+       The Sensitive API no longer accepts GET requests. Please refer to the "Sensitive API Process" under "Sensitive API Information" to learn more about the process change.
   </div>
 
 Generating a personal API Key:
@@ -17939,11 +17938,27 @@ Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sa
 </details>
 
 
-### Example 13: An example of the Sensitive extract download POST call using Postman:<br>
-Request URL:
-https://api.sam.gov/data-services/v1/extracts-sensitive?fileName=< name of the file ><br>
-Click to view Sample Authorization <a href="v1/DOWNLOAD_API_AUTH.JPG">Sample Authorization</a><br>
-Click to view Sample Request Body <a href="v1/api_key.JPG">Sample Request Header</a><br>
+### Example 13: Get a JSON file of all the Entities using the POST request:<br>
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>  https://api.sam.gov/entity-information/v2/entities?format=JSON  <br>
+<br>
+
+Click to view Sample Authorization <a href="v1/Auth_EM.png">Sample Authorization</a><br>
+Click to view Sample Request Header <a href="v1/Header_EM.png">Sample Request Header</a><br>
+
+Download link with the token: Extract File will be available for download with 
+POST url: https://api.sam.gov/entity-information/v2/download-entities?token=<value> in some time. 
+If you have provided an email id, you will get a notification email once file is ready for download. 
+Requests for Larger Set of Data may take longer time to process.<br>
+
+Download the file using the token via POST: https://api.sam.gov/entity-information/v2/download-entities?token=<value>
+Click to view Sample Authorization <a href="v1/Auth_EM_Download.png">Sample Authorization</a><br>
+Click to view Sample Request Header <a href="v1/Header_EM_Download.png">Sample Request Header</a><br>
+
+Once the file is downloaded, save it by renaming it in this format: <filename>.json.gz. 
+If the downloaded file is of CSV type, then file renaming convention is <filename>.csv.gz.
+</details>
 
 <p><small><a href="#">Back to top</a></small></p>
 
