@@ -34,10 +34,16 @@ Public and FOUO Entity Details can be accessed from Beta or Alpha via the follow
    * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
 
 Sensitive Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta Version 1/Version 2: Coming soon
-   * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
-   * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value ><br><br>
 
+  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+       Process change for the Sensitive Download API <br> 
+       Sample POST endpoints are provided below: <br>
+       <ul>
+       <li style="color: #31708f;">Beta Version 1/Version 2: Coming soon</li>
+       <li style="color: #31708f;">Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value ></li>
+       <li style="color: #31708f;">Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value ></li>
+       </ul>
+  </div>
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
@@ -11956,9 +11962,18 @@ The API will return one of the following responses:
 
 | HTTP Response Code | Description |
 | ---- | ----------- |
-| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. |
+| 200 | Successful. Data will be returned in JSON/CSV format. |
+| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> No system account credentials are provided. Please provide credentials via basic authentication |
+| 403 | API key is not correct or was not provided. |
 
 <p><small><a href="#">Back to top</a></small></p>
+
+### Sensitive API Process
+
+* All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.
+* The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.
+* The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL.
+* All the optional search filters can be sent in the request URL or in the "Body".
 
 ## Examples
 
@@ -17923,6 +17938,13 @@ Note: Response for one record is provided as an example <br>
 Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sample CSV Response</a><br>
 </details>
 
+
+### Example 12: An example of the Sensitive extract download POST call using Postman:**<br>
+Request URL:
+https://api.sam.gov/data-services/v1/extracts-sensitive?fileName=< name of the file ><br>
+Click to view Sample Authorization <a href="v1/DOWNLOAD_API_AUTH.JPG">Sample Authorization</a><br>
+Click to view Sample Request Body <a href="v1/apikey.PNG">Sample Request Header</a><br>
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Additional Information
@@ -17957,5 +17979,7 @@ Disclaimer:
 | 02/25/2020 | v1.5 | * Added Examples for v2 requests and responses.  <br><br> * Updated Alpha endpoint to meet new API standards.|
 | 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.|
 | 05/04/2020 | v1.7 | * Added V2 endpoint information.|
+| 05/15/2020 | v1.8 | * Added information and Example for Sensitive Download API .|
+
 
 <p><small><a href="#">Back to top</a></small></p>
