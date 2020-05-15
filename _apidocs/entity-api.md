@@ -40,7 +40,7 @@ Sensitive Entity Details can be accessed from Beta or Alpha via the following en
        <li style="color: #31708f;">Beta Version 1/Version 2: Coming soon</li>
        <li style="color: #31708f;">Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?</li>
        <li style="color: #31708f;">Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?</li>
-       </ul>
+       </ul><br>
        The Sensitive API no longer accepts GET requests. Please refer to the "Sensitive API Process" under "Sensitive API Information" to learn more about the process change.
   </div>
 
