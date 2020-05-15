@@ -17942,22 +17942,27 @@ Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sa
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>  https://api.sam.gov/entity-information/v2/entities?format=JSON  <br>
-<br>
+<ul>
+<li> Click to view Sample Authorization <a href="v1/Auth_EM.png">Sample Authorization</a></li>
+<li>Click to view Sample Request Header <a href="v1/Header_EM.png">Sample Request Header</a></li>
+</ul>
+</details>
+<details>
+<summary>Response</summary>
 
-Click to view Sample Authorization <a href="v1/Auth_EM.png">Sample Authorization</a><br>
-Click to view Sample Request Header <a href="v1/Header_EM.png">Sample Request Header</a><br>
-
-Download link with the token: Extract File will be available for download with 
+<ul>
+<li>Download link with the token: Extract File will be available for download with 
 POST url: https://api.sam.gov/entity-information/v2/download-entities?token=< value > in some time. 
 If you have provided an email id, you will get a notification email once file is ready for download. 
-Requests for Larger Set of Data may take longer time to process.<br>
+Requests for Larger Set of Data may take longer time to process.<br></li>
 
-Download the file using the token via POST: https://api.sam.gov/entity-information/v2/download-entities?token=<value>
-Click to view Sample Authorization <a href="v1/Auth_EM_Download.png">Sample Authorization</a><br>
-Click to view Sample Request Header <a href="v1/Header_EM_Download.png">Sample Request Header</a><br>
+<li>Download the file using the token via POST: https://api.sam.gov/entity-information/v2/download-entities?token=<value></li>
+<li>Click to view Sample Authorization <a href="v1/Auth_EM_Download.png">Sample Authorization</a></li>
+<li>Click to view Sample Request Header <a href="v1/Header_EM_Download.png">Sample Request Header</a></li>
 
-Once the file is downloaded, save it by renaming it in this format: < filename >.json.gz. 
-If the downloaded file is of CSV type, then file renaming convention is < filename >.csv.gz.
+<li>Once the file is downloaded, save it by renaming it in this format: < filename >.json.gz. </li>
+<li>If the downloaded file is of CSV type, then file renaming convention is < filename >.csv.gz. </li>
+</ul>
 </details>
 
 <p><small><a href="#">Back to top</a></small></p>
