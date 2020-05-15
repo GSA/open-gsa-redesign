@@ -7189,7 +7189,7 @@ First Name</td>
 
 ### Sensitive API Information
 <details>
-<summary><b>Sensitive Api Process</b></summary>
+<summary><b>Sensitive API Process</b></summary>
 <ul>
 <li> All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.</li>
 <li> The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.</li>
@@ -11972,7 +11972,6 @@ The API will return one of the following responses:
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON/CSV format. |
 | 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication |
-| 403 | API key is not correct or was not provided. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -17980,7 +17979,7 @@ Disclaimer:
 | 02/25/2020 | v1.5 | * Added Examples for v2 requests and responses.  <br><br> * Updated Alpha endpoint to meet new API standards.|
 | 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.|
 | 05/04/2020 | v1.7 | * Added V2 endpoint information.|
-| 05/15/2020 | v1.8 | * Added endpoint, new process and example for Sensitive API .|
+| 05/15/2020 | v1.8 | * Added the endpoint, new process and an example for the Sensitive API .|
 
 
 <p><small><a href="#">Back to top</a></small></p>
