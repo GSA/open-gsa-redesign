@@ -239,7 +239,7 @@ Click to view the full details of the revised extract layout for the upcoming UE
 
 **An example of the Sensitive extract download POST call using Postman:**<br>
 Request URL:
-https://api.sam.gov/data-services/v1/extracts-sensitive?fileName=< name of the file ><br>
+https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ><br>
 Click to view Sample Authorization <a href="v1/DOWNLOAD_API_AUTH.JPG">Sample Extract Authorization</a><br>
 Click to view Sample Request Body <a href="v1/api_key.JPG">Sample Request Header</a><br>
 
@@ -310,7 +310,7 @@ Date | Version | Description
 02/25/2020 | v1.3 | * Updated Alpha endpoint to meet new API standards.<br><br> * Added Sample Extract Files.
 02/28/2020 | v1.4 | * Updated Beta endpoint to meet new API standards.<br><br> * Removed "COMING SOON" information in Getting Started section. <br><br> * Added FOUO and Sensitive Sample Extract Files for different versions.
 04/20/2020 | v1.5 | Updated Public, FOUO and Sensitive Sample Extract Files that includes UEI information.
-05/15/2020 | v1.6 | * Added information and Example for Sensitive Download API .
+05/15/2020 | v1.6 | * Added endpoint, new process and example for Download API .
 
 
 <p><small><a href="#">Back to top</a></small></p>

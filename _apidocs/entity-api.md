@@ -7188,12 +7188,15 @@ First Name</td>
 </details>
 
 ### Sensitive API Information
-
-* All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.
-* The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.
-* The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL.
-* All the optional search filters can be sent in the request URL or in the "Body".<br><br>
-
+<details>
+<summary><b>Sensitive Api Process</b></summary>
+<ul>
+<li> All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.</li>
+<li> The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.</li>
+<li> The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL.</li>
+<li> All the optional search filters can be sent in the request URL or in the "Body".</li> <br><br>
+</ul>
+</details>
 <details>
 <summary><b>Query String Parameters</b></summary>
 <table>
@@ -17977,7 +17980,7 @@ Disclaimer:
 | 02/25/2020 | v1.5 | * Added Examples for v2 requests and responses.  <br><br> * Updated Alpha endpoint to meet new API standards.|
 | 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.|
 | 05/04/2020 | v1.7 | * Added V2 endpoint information.|
-| 05/15/2020 | v1.8 | * Added information and Example for Sensitive Download API .|
+| 05/15/2020 | v1.8 | * Added endpoint, new process and example for Sensitive API .|
 
 
 <p><small><a href="#">Back to top</a></small></p>
