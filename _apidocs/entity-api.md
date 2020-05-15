@@ -11996,7 +11996,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-       "samRegistered": "Y",
+       "samRegistered": "Yes",
         "ueiSAM": "F7SEZJMNRYN1",
         "ueiDUNS": "116766843",
         "entityEFTIndicator": null,
@@ -12017,7 +12017,7 @@ Note: FOUO Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null,
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -12636,7 +12636,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "075211119",
         "entityEFTIndicator": null,
@@ -12657,12 +12657,12 @@ Note: FOUO Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       }
     },
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "081296509",
         "entityEFTIndicator": null,
@@ -12683,7 +12683,7 @@ Note: FOUO Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       }
     }
 ],
@@ -12717,7 +12717,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "557905982",
         "entityEFTIndicator": null,
@@ -12738,7 +12738,7 @@ Note: FOUO Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "N"
+        "dnbOpenData": "No"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -13395,7 +13395,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "561349642",
         "entityEFTIndicator": null,
@@ -13416,7 +13416,7 @@ Note: FOUO Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null,
-        "dnbOpenData": "N"
+        "dnbOpenData": "No"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -14043,7 +14043,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "N",
+        "samRegistered": "No",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "111111111",
         "cageCode": "SFUQ6",
@@ -14053,7 +14053,7 @@ Note: Response for one record is provided as an example <br>
         "ueiStatus": "Active",
         "ueiExpirationDate": "2022-01-01",
         "ueiCreationDate": "2020-02-06",
-        "dnbOpenData": "N"
+        "dnbOpenData": "No"
       },
       "coreData": {
         "physicalAddress": {
@@ -14105,7 +14105,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "075211119",
         "entityEFTIndicator": null,
@@ -14126,7 +14126,7 @@ Note: Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -14786,7 +14786,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-       "samRegistered": "Y",
+       "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "081343434",
         "entityEFTIndicator": null,
@@ -14807,7 +14807,7 @@ Note: Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -15399,7 +15399,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "439307625",
         "entityEFTIndicator": null,
@@ -15420,7 +15420,7 @@ Note: Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "N"
+        "dnbOpenData": "No"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -16011,7 +16011,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "081270422",
         "entityEFTIndicator": null,
@@ -16032,7 +16032,7 @@ Note: Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -16623,7 +16623,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "080192883",
         "entityEFTIndicator": null,
@@ -16644,7 +16644,7 @@ Note: Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "NPDY",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "N"
+        "dnbOpenData": "No"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -17235,7 +17235,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "079870954",
         "entityEFTIndicator": null,
@@ -17256,7 +17256,7 @@ Note: Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       },
       "coreData": {
         "entityHierarchyInformation": {
