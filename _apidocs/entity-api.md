@@ -17948,7 +17948,7 @@ Click to view Sample Authorization <a href="v1/Auth_EM.png">Sample Authorization
 Click to view Sample Request Header <a href="v1/Header_EM.png">Sample Request Header</a><br>
 
 Download link with the token: Extract File will be available for download with 
-POST url: https://api.sam.gov/entity-information/v2/download-entities?token=<value> in some time. 
+POST url: https://api.sam.gov/entity-information/v2/download-entities?token=< value > in some time. 
 If you have provided an email id, you will get a notification email once file is ready for download. 
 Requests for Larger Set of Data may take longer time to process.<br>
 
@@ -17956,8 +17956,8 @@ Download the file using the token via POST: https://api.sam.gov/entity-informati
 Click to view Sample Authorization <a href="v1/Auth_EM_Download.png">Sample Authorization</a><br>
 Click to view Sample Request Header <a href="v1/Header_EM_Download.png">Sample Request Header</a><br>
 
-Once the file is downloaded, save it by renaming it in this format: <filename>.json.gz. 
-If the downloaded file is of CSV type, then file renaming convention is <filename>.csv.gz.
+Once the file is downloaded, save it by renaming it in this format: < filename >.json.gz. 
+If the downloaded file is of CSV type, then file renaming convention is < filename >.csv.gz.
 </details>
 
 <p><small><a href="#">Back to top</a></small></p>
