@@ -17943,7 +17943,7 @@ Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sa
 Request URL:
 https://api.sam.gov/data-services/v1/extracts-sensitive?fileName=< name of the file ><br>
 Click to view Sample Authorization <a href="v1/DOWNLOAD_API_AUTH.JPG">Sample Authorization</a><br>
-Click to view Sample Request Body <a href="v1/apikey.PNG">Sample Request Header</a><br>
+Click to view Sample Request Body <a href="v1/api_key.JPG">Sample Request Header</a><br>
 
 <p><small><a href="#">Back to top</a></small></p>
 
