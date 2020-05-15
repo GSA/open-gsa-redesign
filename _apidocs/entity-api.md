@@ -17956,12 +17956,7 @@ POST url: https://api.sam.gov/entity-information/v2/download-entities?token=< va
 If you have provided an email id, you will get a notification email once file is ready for download. 
 Requests for Larger Set of Data may take longer time to process.<br></li>
 
-<li>Download the file using the token via POST: https://api.sam.gov/entity-information/v2/download-entities?token=<value></li>
-<li>Click to view Sample Authorization <a href="v1/Auth_EM_Download.png">Sample Authorization</a></li>
-<li>Click to view Sample Request Header <a href="v1/Header_EM_Download.png">Sample Request Header</a></li>
 
-<li>Once the file is downloaded, save it by renaming it in this format: < filename >.json.gz. </li>
-<li>If the downloaded file is of CSV type, then file renaming convention is < filename >.csv.gz. </li>
 </ul>
 </details>
 
