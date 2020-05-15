@@ -11963,7 +11963,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON/CSV format. |
-| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> No system account credentials are provided. Please provide credentials via basic authentication |
+| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication |
 | 403 | API key is not correct or was not provided. |
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -17939,7 +17939,7 @@ Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sa
 </details>
 
 
-### Example 12: An example of the Sensitive extract download POST call using Postman:**<br>
+### Example 13: An example of the Sensitive extract download POST call using Postman:<br>
 Request URL:
 https://api.sam.gov/data-services/v1/extracts-sensitive?fileName=< name of the file ><br>
 Click to view Sample Authorization <a href="v1/DOWNLOAD_API_AUTH.JPG">Sample Authorization</a><br>
