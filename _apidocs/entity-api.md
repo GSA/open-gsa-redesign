@@ -17951,12 +17951,22 @@ Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sa
 <summary>Response</summary>
 
 <ul>
-<li>Download link with the token: Extract File will be available for download with 
+<li><b>Download link with the token:</b><br> 
+Extract File will be available for download with 
 POST url: https://api.sam.gov/entity-information/v2/download-entities?token=< value > in some time. 
 If you have provided an email id, you will get a notification email once file is ready for download. 
-Requests for Larger Set of Data may take longer time to process.<br></li>
+Requests for Larger Set of Data may take longer time to process.
+</li>
 
+<li><b>Download the file using the token via POST:</b><br> 
+https://api.sam.gov/entity-information/v2/download-entities?token=< value >
+<ul>
+<li>Click to view Sample Authorization <a href="v1/Auth_EM_Download.png">Sample Authorization</a></li>
+<li>Click to view Sample Request Header <a href="v1/Header_EM_Download.png">Sample Request Header</a></li>
+</ul></li>
 
+<li>Once the file is downloaded, save it by renaming it in this format: < filename >.json.gz. </li>
+<li>If the downloaded file is of CSV type, then file renaming convention is < filename >.csv.gz. </li></li>
 </ul>
 </details>
 
