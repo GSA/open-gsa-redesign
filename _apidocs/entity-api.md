@@ -93,7 +93,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
     All signifies both SAM registrants and non-SAM registrants.
 <br>Example: samRegistered=Yes
 <br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
-<br> Applicable to non-SAM registrants.</td>
+</td>
 <td>v2</td>
 </tr>
 
@@ -2720,7 +2720,7 @@ First Name</td>
     All signifies both SAM registrants and non-SAM registrants.
 <br>Example: samRegistered=Yes
 <br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
-<br> Applicable to non-SAM registrants.</td>
+</td>
 <td>v2</td>
 </tr>
 
@@ -7233,7 +7233,7 @@ First Name</td>
     All signifies both SAM registrants and non-SAM registrants.
 <br>Example: samRegistered=Yes
 <br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
-<br> Applicable to non-SAM registrants.</td>
+</td>
 <td>v2</td>
 </tr>
 
