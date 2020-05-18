@@ -1248,16 +1248,16 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA DCOI Strategic Plan February 2019",
-					"description": "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 11/19/2018 at 8:52 pm Eastern. Updated 05/16/2019 to change tiered closures. Updated on 06/25/2019 to change planned value. Updated on 7/11/2019 to change achieved closures. Updated on 8/5/2019 to change closures for FYs16-20. Updated on 10/7/19 to reflect FY20 Achieved closure values. Updated on 11/15/19 to reflect only \"agency owned\" data centers for closures.",
+					"title": "GSA DCOI Strategic Plan May 2020",
+					"description": "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 11/19/2018 at 8:52 pm Eastern. Updated 05/16/2019 to change tiered closures. Updated on 06/25/2019 to change planned value. Updated on 7/11/2019 to change achieved closures. Updated on 8/5/2019 to change closures for FYs16-20. Updated on 10/7/19 to reflect FY20 Achieved closure values. Updated on 11/15/19 to reflect only \"agency owned\" data centers for closures. Updated on 05/11/2020.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/b8d9e71b-963b-4398-8d37-04628e64871d/download/datacenteroptimizationstrategicplan.json"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/pdf",
 					"format": "pdf",
-					"title": "DCOI CIO Statement Feb 2019",
-					"description": "February 14, 2019 - GSA has verified that our Strategic Plan is a valid JSON file, conforms to the schema on management.cio.gov/schema, and addresses all of the requirements for it specified in the DCOI. \r\n\r\nIt further confirms that this Strategic Plan has been posted publicly as requested in the template at [agency.gov]/digitalstrategy/datacenteroptimizationstrategicplan.json under the heading “Data Center Optimization Initiative Strategic Plans”.",
+					"title": "DCOI CIO Statement May 2020",
+					"description": "May 5, 2020 - GSA has verified that our Strategic Plan is a valid JSON file, conforms to the schema on management.cio.gov/schema, and addresses all of the requirements for it specified in the DCOI. \r\n\r\nIt further confirms that this Strategic Plan has been posted publicly as requested in the template at [agency.gov]/digitalstrategy/datacenteroptimizationstrategicplan.json under the heading “Data Center Optimization Initiative Strategic Plans”.",
 					"downloadURL": "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/c61e4b8a-4a4a-46b3-9d95-36d227bc28c3/download/gsa-dcoi-cio-signature.pdf"
 				}
 			],
@@ -3609,7 +3609,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2020-05-01",
+			"modified": "2020-05-18",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3631,9 +3631,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "JSON",
-					"title": "EDI JSON 05/01/20",
-					"description": "EDI JSON 05/01/20",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-05-01-20.json"
+					"title": "EDI 05/18/20",
+					"description": "EDI 05/18/20",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-05-18-20.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3939,7 +3939,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
 			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2020-04-30",
+			"modified": "2020-05-18",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
@@ -5703,6 +5703,41 @@
 					"title": "TotRevFY20_1stQtr",
 					"description": "1st Quarter Total Revenue FY20",
 					"downloadURL": "https://inventory.data.gov/dataset/65ddcbed-eba0-48b9-9c6f-c956c1e8deb2/resource/1c09a826-64ad-42d3-9333-f46c3dc8c4f4/download/totrevfy201stqtr.xlsx"
+				}
+			],
+			"keyword": ["Contract", "Networx Telecommunications", "Telecommunications"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:019"],
+			"language": ["en-US"],
+			"theme": ["Telecommunications Services"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2020, 2nd Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+			"modified": "2020-02-20",
+			"accessLevel": "public",
+			"identifier": "GSA-2020-05-18-01",
+			"dataQuality": true,
+			"issued": "2015-11-13",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2015-08-27P",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni L Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "TotRevFY20_2ndQtr",
+					"description": "2nd Quarter FY20",
+					"downloadURL": "https://inventory.data.gov/dataset/c2095a7c-0a1c-4f2e-8e80-5f218e805213/resource/ba337757-50b9-4ce5-a43f-83fc62be35d5/download/totrevfy202ndqtr.xlsx"
 				}
 			],
 			"keyword": ["Contract", "Networx Telecommunications", "Telecommunications"],
