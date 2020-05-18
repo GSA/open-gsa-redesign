@@ -57,6 +57,15 @@ The Entity and Exclusion extracts are available using the following endpoints:
  
   * Beta: https://api.sam.gov/data-services/v1/extracts?api_key= < value >
   * Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?api_key= < value ><br><br>
+  
+  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+       Process change for the Sensitive Download API <br> 
+       Sample POST endpoints are provided below: <br>
+       <ul>
+       <li style="color: #31708f;">Beta: https://api.sam.gov/data-services/v1/extracts-sensitive?fileName=SAM_SENSITIVE_DAILY_V2_20190523.ZIP </li>
+       <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts-sensitive?fileName=SAM_SENSITIVE_DAILY_V2_20190523.ZIP </li>
+       </ul>
+  </div>
      
 Generating a personal API Key:
 * Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on beta.sam.gov
@@ -137,6 +146,13 @@ Examples: 04/19/2019; 11/15/2018; 03/2019
 </td>
 </tr>
 </table>
+
+### Sensitive Download API Process
+
+* All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.
+* The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.
+* The Sensitive api_key parameter with its value must be sent in the "Headers" as x-api-key" and not directly in the request URL.
+* All the optional search filters can be sent in the request URL or in the "Body".
 
 ### Explanation of the API using Examples
 
@@ -221,6 +237,12 @@ https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=EXCLUSI
 Click to view the full details of the data elements: <a href="v1/SAM_Exclusions_Public_Extract_Layout.pdf">Exclusions Extract Layout</a><br>
 Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes:<a href="v1/SAM_Exclusions_Public_V2_Extract_Layout.pdf">Exclusions Extract Layout</a><br>
 
+**An example of the Sensitive extract download POST call using Postman:**<br>
+Request URL:
+https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ><br>
+Click to view Sample Authorization <a href="v1/DOWNLOAD_API_AUTH.JPG">Sample Extract Authorization</a><br>
+Click to view Sample Request Header <a href="v1/api_key.JPG">Sample Request Header</a><br>
+
 **Sample File Names:**<br>
 
 * FOUO files: 
@@ -266,7 +288,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages: <br>* User does not have permission to download the file. <br />* Missing required parameters, fileName OR fileType<br />* The requested extract file not found<br/>* Invalid date format |
+| 400 | Application Level Error Messages: <br>* User does not have permission to download the file. <br />* Missing required parameters, fileName OR fileType<br />* The requested extract file not found<br />* Invalid date format<br />* This http method is not allowed to download sensitive extracts. Only POST is supported for sensitive extracts.<br />*This http method is not allowed to download non-sensitive extracts. Only GET is supported for non-sensitive extracts.<br />*No api_key was supplied in request body. Please submit with a valid API key.<br />*No system account credentials are provided. Please provide credentials via basic authentication. |
 | 403 | API key is not correct or was not provided. |
 
 
@@ -288,5 +310,7 @@ Date | Version | Description
 02/25/2020 | v1.3 | * Updated Alpha endpoint to meet new API standards.<br><br> * Added Sample Extract Files.
 02/28/2020 | v1.4 | * Updated Beta endpoint to meet new API standards.<br><br> * Removed "COMING SOON" information in Getting Started section. <br><br> * Added FOUO and Sensitive Sample Extract Files for different versions.
 04/20/2020 | v1.5 | Updated Public, FOUO and Sensitive Sample Extract Files that includes UEI information.
+05/15/2020 | v1.6 | * Added the endpoint, new process and an example for the Download API .
+
 
 <p><small><a href="#">Back to top</a></small></p>
