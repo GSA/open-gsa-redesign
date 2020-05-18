@@ -17954,7 +17954,7 @@ Note: Response for one record is provided as an example <br>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key>&registrationStatus=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
 <br>
-<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=&registrationStatus=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key>&registrationStatus=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
 <br>
 </details>
 
