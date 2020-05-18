@@ -87,7 +87,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-td>Allows Yes, No or All. <br>
+<td>Allows Yes, No or All. <br>
     Yes signifies SAM registrants.<br> No signifies non-SAM registrants.<br>
     All signifies both SAM registrants and non-SAM registrants.
 <br>Example: samRegistered=Yes
