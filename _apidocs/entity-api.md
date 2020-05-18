@@ -29,7 +29,7 @@ The Entity Management API will allow users to request Public Entity Information 
 
 Public and FOUO Entity Details can be accessed from Beta or Alpha via the following version 1 and version 2 endpoints:
    * Beta Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
-   * Beta Version 2: https://api.sam.gov/entity-information/v2/entities?api_key= < value >
+   * Beta Version 2: Coming soon
    * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
    * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
 
