@@ -3222,6 +3222,13 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>registrationStatus</td>
+<td>string</td>
+<td>Registration Status</td>
+<td>v2</td>
+</tr>
+
+<tr>
 <td>registrationDate</td>
 <td>string</td>
 <td>Registration Date</td>
