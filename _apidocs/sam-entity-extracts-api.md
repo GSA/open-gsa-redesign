@@ -62,7 +62,7 @@ The Entity and Exclusion extracts are available using the following endpoints:
        Process change for the Sensitive Download API <br> 
        Sample POST endpoints are provided below: <br>
        <ul>
-       <li style="color: #31708f;">Beta: https://api.sam.gov/data-services/v1/extracts-sensitive?fileName=SAM_SENSITIVE_DAILY_V2_20190523.ZIP </li>
+       <li style="color: #31708f;">Beta: Coming soon </li>
        <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts-sensitive?fileName=SAM_SENSITIVE_DAILY_V2_20190523.ZIP </li>
        </ul>
   </div>
