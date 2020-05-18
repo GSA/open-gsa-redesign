@@ -286,9 +286,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>samExtractCode</td>
-<td>Allows 1 character code (A or E).
-<br>Example: samExtractCode=A</td>
-<td>v1<br>v2</td>
+<td>string</td>
+<td>Registration Status</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -2910,10 +2910,12 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>samExtractCode</td>
+<td>samExtractCode --> registrationStatus</td>
 <td>Allows 1 character code (A or E).
-<br>Example: samExtractCode=A</td>
-<td>v1<br>v2</td>
+<br>samExtractCode=A, registrationStatus=A
+<br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
+</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -3212,17 +3214,12 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>samExtractCode</td>
-<td>string</td>
-<td>Registration Status</td>
+<td>samExtractCode --> registrationStatus</td>
+<td>Allows 1 character code (A or E).
+<br>samExtractCode=A, registrationStatus=A
+<br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
+</td>
 <td>v1</td>
-</tr>
-
-<tr>
-<td>registrationStatus</td>
-<td>string</td>
-<td>Registration Status</td>
-<td>v2</td>
 </tr>
 
 <tr>
@@ -7422,10 +7419,12 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>samExtractCode</td>
+<td>samExtractCode --> registrationStatus</td>
 <td>Allows 1 character code (A or E).
-<br>Example: samExtractCode=A</td>
-<td>v1<br>v2</td>
+<br>samExtractCode=A, registrationStatus=A
+<br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
+</td>
+<td>v1</td>
 </tr>
 
 <tr>
