@@ -88,9 +88,10 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 
 <tr>
 <td>samRegistered</td>
-<td>Allows Y or N or ALL.
-<br>Example: samRegistered=Y
-<br> NOTE:  If not used the API will return SAM registrants only by default.
+<td>Allows Yes, No or All. Yes signifies SAM registrants. No signifies non-SAM registrants.
+    All signifies both SAM registrants and non-SAM registrants..
+<br>Example: samRegistered=Yes
+<br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
 <br> Applicable to non-SAM registrants.</td>
 <td>v2</td>
 </tr>
@@ -535,10 +536,17 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>samExtractCode</td>
+<td>string</td>
+<td>Registration Status</td>
+<td>v1</td>
+</tr>
+
+<tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v1<br>v2</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -2704,9 +2712,10 @@ First Name</td>
 
 <tr>
 <td>samRegistered</td>
-<td>Allows Y or N or ALL.
-<br>Example: samRegistered=Y
-<br> NOTE:  If not used the API will return SAM registrants only by default.
+<td>Allows Yes, No or All. Yes signifies SAM registrants. No signifies non-SAM registrants.
+    All signifies both SAM registrants and non-SAM registrants..
+<br>Example: samRegistered=Yes
+<br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
 <br> Applicable to non-SAM registrants.</td>
 <td>v2</td>
 </tr>
@@ -3201,10 +3210,17 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>samExtractCode</td>
+<td>string</td>
+<td>Registration Status</td>
+<td>v1</td>
+</tr>
+
+<tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v1<br>v2</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -7207,9 +7223,10 @@ First Name</td>
 
 <tr>
 <td>samRegistered</td>
-<td>Allows Y or N or ALL.
-<br>Example: samRegistered=Y
-<br> NOTE:  If not used the API will return SAM registrants only by default.
+<td>Allows Yes, No or All. Yes signifies SAM registrants. No signifies non-SAM registrants.
+    All signifies both SAM registrants and non-SAM registrants..
+<br>Example: samRegistered=Yes
+<br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
 <br> Applicable to non-SAM registrants.</td>
 <td>v2</td>
 </tr>
@@ -7760,10 +7777,17 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>samExtractCode</td>
+<td>string</td>
+<td>Registration Status</td>
+<td>v1</td>
+</tr>
+
+<tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v1<br>v2</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -17926,9 +17950,9 @@ Note: Response for one record is provided as an example <br>
 ### Example 12:  Get a CSV file of active Entity records
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>  https://api.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key>&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key>&registrationStatus=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=&registrationStatus=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
 <br>
 </details>
 
@@ -17942,6 +17966,9 @@ Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sa
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>  https://api.sam.gov/entity-information/v2/entities?format=JSON  <br>
+<br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?format=JSON <br>
+<br>
 <ul>
 <li> Click to view Sample Authorization <a href="v1/Auth_EM.png">Sample Authorization</a></li>
 <li>Click to view Sample Request Header <a href="v1/Header_EM.png">Sample Request Header</a></li>
@@ -17949,7 +17976,6 @@ Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sa
 </details>
 <details>
 <summary>Response</summary>
-
 <ul>
 <li><b>Download link with the token:</b><br> 
 Extract File will be available for download with POST url:<br>
