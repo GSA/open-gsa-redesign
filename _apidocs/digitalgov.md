@@ -155,7 +155,7 @@ The API will return one of the following responses:
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="https://open.gsa.gov/api/digitalgov/v1/openapi.yaml">Open API specification file for the Digital.gov API</a>
+<a href="v1/openapi.json">Open API specification file for the Digital.gov API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
