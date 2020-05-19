@@ -105,8 +105,7 @@ After registration, you will need to provide this API key in the `x-api-key` HTT
 ### Content APIs
 
 
-The Digital.gov APIs might change from time to time. We will do our best to notify readers of any changes through our newsfeed and in this documentation page. Questions or feedback? Submit an [issue in our repository](https://github.com/GSA/digitalgov.gov/issues/) or send an email to [digitalgov@gsa.gov](mailto:digitalgov@gsa.gov).
-
+The Digital.gov APIs might change from time to time. We will do our best to notify readers of any changes through our newsfeed and in this documentation page. 
 
 HOME — [https://api.gsa.gov/technology/digitalgov/v1/index.json?api_key=DEMO_KEY](https://api.gsa.gov/technology/digitalgov/v1/index.json?api_key=DEMO_KEY)
 
