@@ -68,7 +68,7 @@ offset|	Page index specified by a user. Default offset starts with 0 if user doe
 title	|Opportunity Title|	String | v1<br> v2
 solicitationNumber|	Solicitation Number |	String | v1<br> v2
 department|	Department (L1)	|String | v1<br> v2
-subTier|	Sub-Tier (L2)|	String | v1<br> v2
+subtier|	Sub-Tier (L2)|	String | v1<br> v2
 office|	Office (L3)	|String | v1<br> v2
 postedDate|	Opportunity Posted Date <br> YYYY-MM-DD HH:MM:SS	|String | v1<br> v2
 type|	Opportunity current type|	String | v1<br> v2
@@ -87,7 +87,7 @@ data.award.amount| Award Amount| Number | v1<br> v2
 data.award.date| Award Date| Date and Time | v1<br> v2
 data.award.awardee|	 Name <br> Location <br> Duns <br> ueiSAM (***will be available in future**)|	JSON Object | v1<br> v2
 data.award.awardee.name|Awardee Name|String | v1<br> v2
-data.award.awardee.duns|DUNS Number|String | v1  <br> v2 - Deprecated
+data.award.awardee.duns|DUNS Number|String | v1  <br> v2
 data.award.awardee.ueiSAM| Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available).<br> Example: ueiSAM=025114695AST | String |  v2
 data.award.awardee.location.<br/>streetAddress | Awardee Street Address 1 | String | v1<br> v2
 data.award.awardee.location.<br/>streetAddress2 | Awardee Street Address 2 | String | v1<br> v2
@@ -130,7 +130,7 @@ data.placeOfPerformance.zip  | Pop Country zip| String | v1<br> v2
 additionalInfoLink|	Any additional info link if available for the opportunity	|String| v1<br> v2
 uiLink	|Direct UI link to the opportunity. To view the opportunity on UI, user must have either a contracting officer or a Contracting Specialist role. If user hits the link without logging in, user is directed to 404 not found page |	String| v1<br> v2
 links	|Every record in a response has this links array consisting of: <br> rel: self<br>href: link to the specific opportunity itself. User should provide an API key to access the opportunity directly<br><br>Also, every response has a master links array consisting of:<br>    rel: self<br>href: link to the actual request. User should provide an API key to access the request|	Array| v1<br> v2
-resourceLinks (Coming Soon to Production) | Direct URL to download attachments in the opportunity | Array of Strings| v1<br> v2
+resourceLinks | Direct URL to download attachments in the opportunity | Array of Strings| v1<br> v2
 
 ### Set-Aside Values
 Several methods pertaining to submitting Contract Opportunities involve the Set-Aside Type field. Use the Set-Aside codes to submit notices.
@@ -589,7 +589,9 @@ Note: Response for one record is provided as an example <br>
                             "code": "USA"
                         }
                     },
-                    "ueiSAM": "025114695AST"
+                    "ueiSAM": "025114695AST",
+                    "duns": "006435549"
+
                 }
             },
             "pointOfContact": [
@@ -1141,5 +1143,6 @@ Date | Version | Description
 1/20/2020 | v1.3| Added Award Response and Versioning columns
 1/31/2020 | v1.4 | Added field "ResourceLinks" with Coming Soon to prod
 2/18/2020 | v1.5| Added UEI information and versioning column and response example for awards
+2/27/2020 | v1.6| Added ResourceLinks to Response Section
 
 <p><small><a href="#">Back to top</a></small></p>

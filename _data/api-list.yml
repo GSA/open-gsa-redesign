@@ -24,10 +24,13 @@
   url: fh-fouo-api/
 - title: Beta.SAM.Gov Federal Hierarchy Public API
   description: Federal Hierarchy public API allows non-federal users to obtain Federal Organization details
-  url: fh-public-api
+  url: fh-public-api/
 - title: Beta.SAM.Gov Get Opportunities Public API
   description: Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. 
   url: get-opportunities-public-api/
+- title: Beta.SAM.Gov Public Location Services API
+  description: This API provides location retrieval needed for opportunities
+  url: location-public-api/
 - title: Beta.SAM.Gov Product Service Codes (PSC) API
   description: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From Beta.sam.gov.
   url: PSC-Public-API/
@@ -58,6 +61,9 @@
 - title: Federal Procurement Data System - FPDS API
   description: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
   url: https://www.fpds.gov/fpdsng_cms/index.php/en/worksite.html
+- title: Fleet Vehicles API
+  description: GSA Fleet Drive-thru offers two reports through an API for GSA Fleet Leasing customers.
+  url: https://www.gsa.gov/buying-selling/products-services/transportation-logistics-services/vehicle-leasing/gsa-fleet-drivethru
 - title: Go.USA.gov API
   description: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
   url: https://go.usa.gov/api

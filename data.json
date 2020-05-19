@@ -1248,16 +1248,16 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA DCOI Strategic Plan February 2019",
-					"description": "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 11/19/2018 at 8:52 pm Eastern. Updated 05/16/2019 to change tiered closures. Updated on 06/25/2019 to change planned value. Updated on 7/11/2019 to change achieved closures. Updated on 8/5/2019 to change closures for FYs16-20. Updated on 10/7/19 to reflect FY20 Achieved closure values. Updated on 11/15/19 to reflect only \"agency owned\" data centers for closures.",
+					"title": "GSA DCOI Strategic Plan May 2020",
+					"description": "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 11/19/2018 at 8:52 pm Eastern. Updated 05/16/2019 to change tiered closures. Updated on 06/25/2019 to change planned value. Updated on 7/11/2019 to change achieved closures. Updated on 8/5/2019 to change closures for FYs16-20. Updated on 10/7/19 to reflect FY20 Achieved closure values. Updated on 11/15/19 to reflect only \"agency owned\" data centers for closures. Updated on 05/11/2020.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/b8d9e71b-963b-4398-8d37-04628e64871d/download/datacenteroptimizationstrategicplan.json"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/pdf",
 					"format": "pdf",
-					"title": "DCOI CIO Statement Feb 2019",
-					"description": "February 14, 2019 - GSA has verified that our Strategic Plan is a valid JSON file, conforms to the schema on management.cio.gov/schema, and addresses all of the requirements for it specified in the DCOI. \r\n\r\nIt further confirms that this Strategic Plan has been posted publicly as requested in the template at [agency.gov]/digitalstrategy/datacenteroptimizationstrategicplan.json under the heading “Data Center Optimization Initiative Strategic Plans”.",
+					"title": "DCOI CIO Statement May 2020",
+					"description": "May 5, 2020 - GSA has verified that our Strategic Plan is a valid JSON file, conforms to the schema on management.cio.gov/schema, and addresses all of the requirements for it specified in the DCOI. \r\n\r\nIt further confirms that this Strategic Plan has been posted publicly as requested in the template at [agency.gov]/digitalstrategy/datacenteroptimizationstrategicplan.json under the heading “Data Center Optimization Initiative Strategic Plans”.",
 					"downloadURL": "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/c61e4b8a-4a4a-46b3-9d95-36d227bc28c3/download/gsa-dcoi-cio-signature.pdf"
 				}
 			],
@@ -1795,6 +1795,42 @@
 					"format": "xlsx",
 					"title": "ebuyFY18Awards",
 					"downloadURL": "https://inventory.data.gov/dataset/a42deff7-0d0d-433e-ae16-985b4f2ac555/resource/6a9045f1-5f83-4c1f-8f70-8203ed07ce42/download/ebuyfy18awards.xlsx"
+				}
+			],
+			"keyword": ["Awards", "Contracts", "Quote", "RFQ", "Schedules", "e-Buy", "procurement"],
+			"bureauCode": ["023:10"],
+			"programCode": ["023:007"],
+			"language": ["en-us"],
+			"theme": ["Acquisition"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "e-Buy Awards for Fiscal Year 2019",
+			"description": "GSA e-Buy, is an electronic Request for Quote (RFQ) / Request for Proposal (RFP) system designed to allow government buyers to request information, find sources, and prepare RFQs/RFPs, online, for millions of services and products offered through GSA's Multiple Award Schedule (MAS) and GSA Technology Contracts. Government buyers can use eBuy to obtain quotes or proposals for services, large quantity purchases, big ticket items, and purchases with complex requirements. Buyers may use e-Buy to evaluate and accept the quotation that represents the best value. Buyers may then make award to any contractor whose quotation was accepted. The e-Buy Award dataset are the award data collected by e-Buy for a given fiscal year.",
+			"modified": "2020-04-01",
+			"accessLevel": "public",
+			"identifier": "GSA-2020-04-01-01",
+			"dataQuality": true,
+			"issued": "2015-09-28",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P1Y",
+			"isPartOf": "GSA-2015-08-31",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Usha Gopal",
+				"hasEmail": "mailto:usha.gopal@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "ebuy_awards_FY2019",
+					"description": "e-Buy Awards for FY 2019",
+					"downloadURL": "https://inventory.data.gov/dataset/c0013298-52ea-4f3e-a0bc-9f68cb7f5144/resource/1b0710dc-fa8c-4837-be40-6017325607d7/download/ebuyawardsfy2019.xlsx"
 				}
 			],
 			"keyword": ["Awards", "Contracts", "Quote", "RFQ", "Schedules", "e-Buy", "procurement"],
@@ -3573,7 +3609,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2020-03-02",
+			"modified": "2020-05-18",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3595,9 +3631,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "JSON",
-					"title": "EDI JSON 03/02/20",
-					"description": "EDI 03/02/20",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/32606067-7bfa-4040-b089-f790c2c01473/download/edi-json-03-02-20.json"
+					"title": "EDI 05/18/20",
+					"description": "EDI 05/18/20",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-05-18-20.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3903,7 +3939,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
 			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2020-02-20",
+			"modified": "2020-05-18",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
@@ -3926,16 +3962,16 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
-					"title": "IOLP Buildings",
-					"description": "This file includes information specific to buildings, including<br/>    \r\nlocation information, congressional districts, \r\nvacant rentable space, building square footage,\r\nand also whether the building is owned or leased.",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/e7922d4d-aed1-44b2-85c4-5cffcb9bfe94/download/iolp-buildings.xlsx"
+					"title": "IOLP Leases",
+					"description": "This file includes information specific to leases, including<br/>\r\nlocation information, lease effective dates, \r\nlease expiration dates, and congressional districts.",
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/b07a5180-749f-4aca-a6f9-3e0fc04be20c/download/iolp-leases.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
-					"title": "IOLP Leases",
-					"description": "This file includes information specific to leases, including<br/>  \r\nlocation information, lease effective dates, \r\nlease expiration dates, and congressional districts.",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/6c64d7ba-8a53-4221-9377-e0d13c1c44c2/download/iolp-leases.xlsx"
+					"title": "IOLP Buildings",
+					"description": "This file includes information specific to buildings, including<br/>\r\nlocation information, congressional districts, \r\nvacant rentable space, building square footage,\r\nand also whether the building is owned or leased.",
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/1dd0f445-640b-4adc-a68a-3b7c4e87ed05/download/iolp-buildings.xlsx"
 				}
 			],
 			"keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
@@ -5667,6 +5703,41 @@
 					"title": "TotRevFY20_1stQtr",
 					"description": "1st Quarter Total Revenue FY20",
 					"downloadURL": "https://inventory.data.gov/dataset/65ddcbed-eba0-48b9-9c6f-c956c1e8deb2/resource/1c09a826-64ad-42d3-9333-f46c3dc8c4f4/download/totrevfy201stqtr.xlsx"
+				}
+			],
+			"keyword": ["Contract", "Networx Telecommunications", "Telecommunications"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:019"],
+			"language": ["en-US"],
+			"theme": ["Telecommunications Services"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2020, 2nd Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contact, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+			"modified": "2020-02-20",
+			"accessLevel": "public",
+			"identifier": "GSA-2020-05-18-01",
+			"dataQuality": true,
+			"issued": "2015-11-13",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2015-08-27P",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni L Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "TotRevFY20_2ndQtr",
+					"description": "2nd Quarter FY20",
+					"downloadURL": "https://inventory.data.gov/dataset/c2095a7c-0a1c-4f2e-8e80-5f218e805213/resource/ba337757-50b9-4ce5-a43f-83fc62be35d5/download/totrevfy202ndqtr.xlsx"
 				}
 			],
 			"keyword": ["Contract", "Networx Telecommunications", "Telecommunications"],
@@ -8530,7 +8601,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2020-03-02",
+			"modified": "2020-05-01",
 			"accessLevel": "public",
 			"identifier": "GSA-25251",
 			"dataQuality": true,
@@ -8553,8 +8624,8 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_bldg_rexus",
-					"description": "March - Rexus Building file",
-					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/e8972de5-310c-49e2-be42-c1089eee98fd/download/datagovbldgrexus.csv"
+					"description": "May - Rexus Building file",
+					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/71ac7028-6718-4d59-bae9-9903573cf1b7/download/datagovbldgrexus.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -8564,7 +8635,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) (Lease)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2020-03-02",
+			"modified": "2020-05-01",
 			"accessLevel": "public",
 			"identifier": "GSA-25261",
 			"dataQuality": true,
@@ -8587,8 +8658,8 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus",
-					"description": "March - Rexus Lease file",
-					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/dc2e6239-5c72-465d-a23e-43ee976a0910/download/datagovlserexus.csv"
+					"description": "May - Rexus Lease file",
+					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/db2e5040-a1fc-4581-975c-e38ccf70b2e9/download/datagovlserexus.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
