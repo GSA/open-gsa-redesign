@@ -11,7 +11,7 @@ end
 
 group :development, :test do
   gem 'rake'
-  gem 'html-proofer', '~>3.10.2'
+  gem 'html-proofer', '~> 3.10.2'
   gem 'eslintrb'
   gem 'jekyll-autoprefixer'
 end
