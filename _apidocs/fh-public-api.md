@@ -185,7 +185,7 @@ PRESIDENT.AFRICAN DEVELOPMENT FUND",
 
 Request URL:
 
-https://apialpha.sam.gov/prodlike/federalorganizations/v1/orgs?limit=10&api_key={User’s Public
+https://api-alpha.sam.gov/prodlike/federalorganizations/v1/orgs?limit=10&api_key={User’s Public
 API Key}&fhorgname=DEVELOPMENT
 
 *Note: Request URL used in this example is a staging URL*
@@ -248,7 +248,7 @@ API Key}&fhorgname=DEVELOPMENT
 
 Request URL:
 
-https://apialpha.sam.gov/prodlike/federalorganizations/v1/orgs?limit=10&api_key={User’s Public
+https://api-alpha.sam.gov/prodlike/federalorganizations/v1/orgs?limit=10&api_key={User’s Public
 API Key}&status=active&fhorgtype=Sub-Tier
 
 *Note: Request URL used in this example is a staging URL*
@@ -310,7 +310,7 @@ IMPROVEMENT AND TEACHER QUALITY PROGRAMS",
 
 Request URL:
 
-https://apialpha.sam.gov/prodlike/federalorganizations/v1/org/hierarchy?limit=10&api_key={User’s Public API Key}&fhorgid=100006688
+https://api-alpha.sam.gov/prodlike/federalorganizations/v1/org/hierarchy?limit=10&api_key={User’s Public API Key}&fhorgid=100006688
 
 *Note: Request URL used in this example is a staging URL*
 
