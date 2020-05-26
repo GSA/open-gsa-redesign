@@ -6984,7 +6984,7 @@ Date | Version | Description
 2/28/2020| v1.06| Updated the Valid file types to include Zip file.<br/> Added a new validation for resource name to specify the allowed character set
 3/13/2020|v1.07| Updated GET APIs to include both DUNS and UEISAM in v2 <br> Get list of Opp API Organization ID field updated to show FH ID dependending on department, subtier, and office
 4/10/2020|v1.08| Added Version Control Section <br> Added information for Get Opportunity Public API and Public Location Services API in FAQ section
-5/13/2020|v1.08| Updated v2 URL for Add Authorized and Get Authorized Party APIs
-5/26/2020|v1.08| Added returnFHOrgKey field in the request for Get list of Opportunities API so that the request provides internal FH Org key if required
+5/13/2020|v1.09| Updated v2 URL for Add Authorized and Get Authorized Party APIs
+5/26/2020|v1.1| Added returnFHOrgKey parameter in the request for Get list of Opportunities API so that the request provides internal FH Org key if required
 
 <p><small><a href="#">Back to top</a></small></p>
