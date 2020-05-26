@@ -2005,7 +2005,8 @@ keyword | query | string | No | Enter any keyword from the description
 latest | query | boolean | No | True or false
 opportunityIds | query | Array | No | Opportunity IDs (comma separated)
 noticeType | query | Array | No | See Notices Types table (comma separated)
-organizationId | query | Array | No | FH Org ID/AAC code of the office where an Opportunity is being submitted (comma separated)
+returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID
+organizationId | query | Array | No | FH Org ID/AAC code of the office where an Opportunity is being submitted (comma separated)<br> If returnFHOrgKey is set to 'True" organizationId will return internal org key
 page | query | integer | No | Page number
 parentNotice | query | Array | No | Parent Opportunity ID (comma separated)
 postedFrom | query | date-time | No | Posted From UTC Date and time <br />Example: 2018-11-01 00:00:00
@@ -6981,9 +6982,9 @@ Date | Version | Description
 1/21/2020| v1.04| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
 2/18/2020| v1.05| Added JSON information for UEI additions
 2/28/2020| v1.06| Updated the Valid file types to include Zip file.<br/> Added a new validation for resource name to specify the allowed character set
-3/13/2020|v1.07| Updated GET APIs to include both DUNS and UEISAM in v2<br> Get list of Opp API Organization ID field updated to show FH ID dependending on department, subtier, and office
+3/13/2020|v1.07| Updated GET APIs to include both DUNS and UEISAM in v2 <br> Get list of Opp API Organization ID field updated to show FH ID dependending on department, subtier, and office
 4/10/2020|v1.08| Added Version Control Section <br> Added information for Get Opportunity Public API and Public Location Services API in FAQ section
 5/13/2020|v1.08| Updated v2 URL for Add Authorized and Get Authorized Party APIs
-
+5/26/2020|v1.08| Added returnFHOrgKey field in the request for Get list of Opportunities API so that the request provides internal FH Org key if required
 
 <p><small><a href="#">Back to top</a></small></p>
