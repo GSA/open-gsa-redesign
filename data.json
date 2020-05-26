@@ -3609,7 +3609,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2020-05-18",
+			"modified": "2020-05-26",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3631,9 +3631,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "JSON",
-					"title": "EDI 05/18/20",
-					"description": "EDI 05/18/20",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-05-18-20.json"
+					"title": "EDI 05/26/20",
+					"description": "EDI 05/26/20",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-05-26-20.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3762,7 +3762,7 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "GSA IT Reform Cost Savings/Avoidance",
-					"description": "GSA's February 2020 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description": "GSA's May 2020 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -3793,7 +3793,7 @@
 					"mediaType": "application/zip",
 					"format": "ZIP",
 					"title": "GSA IT Policy Archive Zip",
-					"description": "Last update: 2019-11-26",
+					"description": "Last update: 2020-05-20",
 					"downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
 				}
 			],
@@ -3939,7 +3939,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
 			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2020-05-18",
+			"modified": "2020-05-26",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
@@ -7510,6 +7510,41 @@
 			"theme": ["Card Services Program"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "GSA Purchase Card Transactions Jan-Mar 2020, 2nd Qtr - US Bank",
+			"description": "Purchases made with the purchase card.  Files will be batched quarterly.",
+			"modified": "2020-02-04",
+			"accessLevel": "public",
+			"identifier": "GSA-2020-05-26-01",
+			"dataQuality": true,
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-05-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Nancy V Hexmoor",
+				"hasEmail": "mailto:nancy.hexmoor@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "US Bank PC Qtr 2 2020",
+					"description": "Purchase Card transactions for January through March 2020.",
+					"downloadURL": "https://inventory.data.gov/dataset/f5820775-f12d-48f3-aef2-ecf96912f7d1/resource/5b0f49fc-120a-489f-8a3d-e6dd58be24eb/download/us-bank-pc-qtr2-2020.xlsx"
+				}
+			],
+			"keyword": ["february", "january", "march", "purchase card", "transactions"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "GSA Purchase Card Transactions July-Sept 2016, 4th Qtr",
 			"description": "Purchases made with the purchase card. Files will be batched quarterly.",
 			"modified": "2018-11-15",
@@ -8459,6 +8494,42 @@
 				}
 			],
 			"keyword": ["BOCA", "Contract Board", "December", "GSA SmartPay", "November", "October", "Purchase Card", "Transactions"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Purchase Card Transactions - CBCA Jan-Mar 2020, 2nd Qtr US Bank",
+			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified": "2020-02-13",
+			"accessLevel": "public",
+			"identifier": "GSA-2020-05-26-02",
+			"dataQuality": true,
+			"issued": "2014-10-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-06-1",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "James G Parks",
+				"hasEmail": "mailto:greg.parks@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "2020-2nd Qtr (Jan-Mar)_CBCA PC transactions_US Bank",
+					"description": "CBCA PC transactions for 2nd Qtr 2020 US Bank",
+					"downloadURL": "https://inventory.data.gov/dataset/59757dcd-296e-4143-b267-a8d3e24ed4e3/resource/f74e792f-d28b-4ab4-ac6c-4daf2e76fe82/download/2020-2nd-qtr-jan-marcbca-pc-transactionsus-bank.xlsx"
+				}
+			],
+			"keyword": ["BOCA", "Contract Board", "GSA SmartPay", "Purchase Card", "Transactions", "february", "january", "march"],
 			"bureauCode": ["023:00"],
 			"programCode": ["023:010"],
 			"language": ["en-us"],
