@@ -431,7 +431,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>format</td>
 <td>Allows user to download different file formats(csv and json are allowable values).
-<br>Example: format=csv<
+<br>Example: format=csv
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -3058,7 +3058,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>format</td>
 <td>Allows user to download different file formats(csv and json are allowable values).
-<br>Example: format=csv<
+<br>Example: format=csv
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7571,7 +7571,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>format</td>
 <td>Allows user to download different file formats(csv and json are allowable values).
-<br>Example: format=csv<
+<br>Example: format=csv
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
