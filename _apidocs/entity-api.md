@@ -17978,8 +17978,8 @@ Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sa
 <b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?format=JSON <br>
 <br>
 <ul>
-<li> Click to view Sample Authorization <a href="v1/Auth_EM.png">Sample Authorization</a></li>
-<li>Click to view Sample Request Header <a href="v1/Header_EM.png">Sample Request Header</a></li>
+<li> Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM.png">Sample Authorization</a></li>
+<li>Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM.png">Sample Request Header</a></li>
 </ul>
 </details>
 <details>

@@ -239,8 +239,8 @@ Click to view the full details of the revised extract layout for the upcoming UE
 **An example of the Sensitive extract download POST call using Postman:**<br>
 Request URL:
 https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ><br>
-Click to view Sample Authorization <a href="v1/DOWNLOAD_API_AUTH.JPG">Sample Extract Authorization</a><br>
-Click to view Sample Request Header <a href="v1/api_key.JPG">Sample Request Header</a><br>
+Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/DOWNLOAD_API_AUTH.JPG">Sample Extract Authorization</a><br>
+Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/api_key.JPG">Sample Request Header</a><br>
 
 **Sample File Names:**<br>
 
