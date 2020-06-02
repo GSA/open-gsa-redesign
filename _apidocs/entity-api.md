@@ -17995,8 +17995,8 @@ Requests for Larger Set of Data may take longer time to process.
 <li><b>Download the file using the token via POST:</b><br> 
 https://api.sam.gov/entity-information/v2/download-entities?token=< value >
 <ul>
-<li>Click to view Sample Authorization <a href="v1/Auth_EM_Download.png">Sample Authorization</a></li>
-<li>Click to view Sample Request Header <a href="v1/Header_EM_Download.png">Sample Request Header</a></li>
+<li>Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_Download.png">Sample Authorization</a></li>
+<li>Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download.png">Sample Request Header</a></li>
 </ul></li>
 
 <li>Once the file is downloaded, save it by renaming it in this format: < filename >.json.gz. </li>
