@@ -18,7 +18,7 @@ Opportunity Management API can be accessed from Beta or Alpha via the following 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v1/api/
 
 * Beta: https://api.sam.gov/prod/opportunity/v2/ (coming soon)
-* Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ (coming soon)
+* Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ 
 
 **REST API Workflow Chart**
 
