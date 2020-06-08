@@ -2392,6 +2392,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
+returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID
 PostedFrom | query | string | No | Posted Date
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -6986,5 +6987,5 @@ Date | Version | Description
 4/10/2020|v1.08| Added Version Control Section <br> Added information for Get Opportunity Public API and Public Location Services API in FAQ section
 5/13/2020|v1.09| Updated v2 URL for Add Authorized and Get Authorized Party APIs
 5/26/2020|v1.1| Added returnFHOrgKey parameter in the request for Get list of Opportunities API so that the request provides internal FH Org key if required
-
+6/8/2020|v1.11|Added returnFHOrgKey parameter in the request for Get Opportunity by Opportunity ID API so that the request provides internal FH Org key if required
 <p><small><a href="#">Back to top</a></small></p>
