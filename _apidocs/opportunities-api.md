@@ -279,7 +279,7 @@ Please use v2 for the following APIs to utilize ueiSAM in place of DUNS. Busines
 
 ## Contract Opportunity Management API Request and Responses
 
-<span style="color:red">Note: All Opportunity notices types except Special notices will be associated to organization at office level. Special notices can be associated to Organization at department, sub-tier, or office level.</span>
+**Note**: All Opportunity notices types except Special notices will be associated to organization at office level. Special notices can be associated to Organization at department, sub-tier, or office level.
 
 
 ### Create Draft Opportunity
