@@ -275,7 +275,7 @@ Please use v2 for the following APIs to utilize ueiSAM in place of DUNS. Busines
 **v2 Endpoints**
 
 * Beta: https://api.sam.gov/prod/opportunity/v2/ (coming soon)
-* Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ (coming soon)
+* Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ 
 
 ## Contract Opportunity Management API Request and Responses
 
