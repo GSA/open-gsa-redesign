@@ -18038,7 +18038,7 @@ Disclaimer:
 | 02/25/2020 | v1.5 | * Added Examples for v2 requests and responses.  <br><br> * Updated Alpha endpoint to meet new API standards.|
 | 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.|
 | 05/04/2020 | v1.7 | * Added V2 endpoint information.|
-| 05/15/2020 | v1.8 | * Added the endpoint, new process and an example for the Sensitive API .|
+| 06/10/2020 | v1.8 | * Added the endpoint, new process and an example for the Sensitive API .|
 
 
 <p><small><a href="#">Back to top</a></small></p>

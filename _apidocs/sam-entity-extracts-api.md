@@ -309,7 +309,7 @@ Date | Version | Description
 02/25/2020 | v1.3 | * Updated Alpha endpoint to meet new API standards.<br><br> * Added Sample Extract Files.
 02/28/2020 | v1.4 | * Updated Beta endpoint to meet new API standards.<br><br> * Removed "COMING SOON" information in Getting Started section. <br><br> * Added FOUO and Sensitive Sample Extract Files for different versions.
 04/20/2020 | v1.5 | Updated Public, FOUO and Sensitive Sample Extract Files that includes UEI information.
-05/15/2020 | v1.6 | * Added the endpoint, new process and an example for the Download API .
+06/10/2020 | v1.6 | * Added the endpoint, new process and an example for the Download API .
 
 
 <p><small><a href="#">Back to top</a></small></p>
