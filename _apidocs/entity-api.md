@@ -34,10 +34,15 @@ Public and FOUO Entity Details can be accessed from Beta or Alpha via the follow
    * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
 
 Sensitive Entity Details can be accessed from Beta or Alpha via the following end points:
-   * Beta Version 1/Version 2: Coming soon
-   * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
-   * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value ><br><br>
 
+  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+       <ul>
+       <li style="color: #31708f;">Beta Version 1/Version 2: Coming soon</li>
+       <li style="color: #31708f;">Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?</li>
+       <li style="color: #31708f;">Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?</li>
+       </ul><br>
+       The Sensitive API no longer accepts GET requests. Please refer to the "Sensitive API Process" under "Sensitive API Information" to learn more about the process change.
+  </div>
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
@@ -83,10 +88,12 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 
 <tr>
 <td>samRegistered</td>
-<td>Allows Y or N or ALL.
-<br>Example: samRegistered=Y
-<br> NOTE:  If not used the API will return SAM registrants only by default.
-<br> Applicable to non-SAM registrants.</td>
+<td>Allows Yes, No or All. <br>
+    Yes signifies SAM registrants.<br> No signifies non-SAM registrants.<br>
+    All signifies both SAM registrants and non-SAM registrants.
+<br>Example: samRegistered=Yes
+<br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
+</td>
 <td>v2</td>
 </tr>
 
@@ -278,9 +285,11 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>samExtractCode</td>
+<td>samExtractCode --> registrationStatus</td>
 <td>Allows 1 character code (A or E).
-<br>Example: samExtractCode=A</td>
+<br>samExtractCode=A, registrationStatus=A
+<br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
+</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -422,7 +431,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>format</td>
 <td>Allows user to download different file formats(csv and json are allowable values).
-<br>Example: format=csv<
+<br>Example: format=csv
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -530,10 +539,17 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>samExtractCode</td>
+<td>string</td>
+<td>Registration Status</td>
+<td>v1</td>
+</tr>
+
+<tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v1<br>v2</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -2699,10 +2715,12 @@ First Name</td>
 
 <tr>
 <td>samRegistered</td>
-<td>Allows Y or N or ALL.
-<br>Example: samRegistered=Y
-<br> NOTE:  If not used the API will return SAM registrants only by default.
-<br> Applicable to non-SAM registrants.</td>
+<td>Allows Yes, No or All. <br>
+    Yes signifies SAM registrants.<br> No signifies non-SAM registrants.<br>
+    All signifies both SAM registrants and non-SAM registrants.
+<br>Example: samRegistered=Yes
+<br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
+</td>
 <td>v2</td>
 </tr>
 
@@ -2894,9 +2912,11 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>samExtractCode</td>
+<td>samExtractCode --> registrationStatus</td>
 <td>Allows 1 character code (A or E).
-<br>Example: samExtractCode=A</td>
+<br>samExtractCode=A, registrationStatus=A
+<br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
+</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3038,7 +3058,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>format</td>
 <td>Allows user to download different file formats(csv and json are allowable values).
-<br>Example: format=csv<
+<br>Example: format=csv
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -3158,7 +3178,6 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>v1<br>v2</td>
 </tr>
 
-
 <tr>
 <td>dodaac</td>
 <td>string</td>
@@ -3196,10 +3215,17 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>samExtractCode</td>
+<td>string</td>
+<td>Registration Status</td>
+<td>v1</td>
+</tr>
+
+<tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v1<br>v2</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -7182,7 +7208,15 @@ First Name</td>
 </details>
 
 ### Sensitive API Information
-
+<details>
+<summary><b>Sensitive API Process</b></summary>
+<ul>
+<li> All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.</li>
+<li> The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.</li>
+<li> The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL.</li>
+<li> All the optional search filters can be sent in the request URL or in the "Body".</li> <br><br>
+</ul>
+</details>
 <details>
 <summary><b>Query String Parameters</b></summary>
 <table>
@@ -7194,10 +7228,12 @@ First Name</td>
 
 <tr>
 <td>samRegistered</td>
-<td>Allows Y or N or ALL.
-<br>Example: samRegistered=Y
-<br> NOTE:  If not used the API will return SAM registrants only by default.
-<br> Applicable to non-SAM registrants.</td>
+<td>Allows Yes, No or All. <br>
+    Yes signifies SAM registrants.<br> No signifies non-SAM registrants.<br>
+    All signifies both SAM registrants and non-SAM registrants.
+<br>Example: samRegistered=Yes
+<br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
+</td>
 <td>v2</td>
 </tr>
 
@@ -7389,9 +7425,11 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>samExtractCode</td>
+<td>samExtractCode --> registrationStatus</td>
 <td>Allows 1 character code (A or E).
-<br>Example: samExtractCode=A</td>
+<br>samExtractCode=A, registrationStatus=A
+<br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
+</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7533,7 +7571,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>format</td>
 <td>Allows user to download different file formats(csv and json are allowable values).
-<br>Example: format=csv<
+<br>Example: format=csv
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7747,10 +7785,17 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>samExtractCode</td>
+<td>string</td>
+<td>Registration Status</td>
+<td>v1</td>
+</tr>
+
+<tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v1<br>v2</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -11956,7 +12001,8 @@ The API will return one of the following responses:
 
 | HTTP Response Code | Description |
 | ---- | ----------- |
-| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. |
+| 200 | Successful. Data will be returned in JSON/CSV format. |
+| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication |
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -11982,7 +12028,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-       "samRegistered": "Y",
+       "samRegistered": "Yes",
         "ueiSAM": "F7SEZJMNRYN1",
         "ueiDUNS": "116766843",
         "entityEFTIndicator": null,
@@ -12003,7 +12049,7 @@ Note: FOUO Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null,
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -12622,7 +12668,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "075211119",
         "entityEFTIndicator": null,
@@ -12643,12 +12689,12 @@ Note: FOUO Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       }
     },
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "081296509",
         "entityEFTIndicator": null,
@@ -12669,7 +12715,7 @@ Note: FOUO Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       }
     }
 ],
@@ -12703,7 +12749,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "557905982",
         "entityEFTIndicator": null,
@@ -12724,7 +12770,7 @@ Note: FOUO Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "N"
+        "dnbOpenData": "No"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -13381,7 +13427,7 @@ Note: FOUO Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "561349642",
         "entityEFTIndicator": null,
@@ -13402,7 +13448,7 @@ Note: FOUO Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null,
-        "dnbOpenData": "N"
+        "dnbOpenData": "No"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -14029,7 +14075,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "N",
+        "samRegistered": "No",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "111111111",
         "cageCode": "SFUQ6",
@@ -14039,7 +14085,7 @@ Note: Response for one record is provided as an example <br>
         "ueiStatus": "Active",
         "ueiExpirationDate": "2022-01-01",
         "ueiCreationDate": "2020-02-06",
-        "dnbOpenData": "N"
+        "dnbOpenData": "No"
       },
       "coreData": {
         "physicalAddress": {
@@ -14091,7 +14137,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "075211119",
         "entityEFTIndicator": null,
@@ -14112,7 +14158,7 @@ Note: Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -14772,7 +14818,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-       "samRegistered": "Y",
+       "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "081343434",
         "entityEFTIndicator": null,
@@ -14793,7 +14839,7 @@ Note: Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -15385,7 +15431,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "439307625",
         "entityEFTIndicator": null,
@@ -15406,7 +15452,7 @@ Note: Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "N"
+        "dnbOpenData": "No"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -15997,7 +16043,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "081270422",
         "entityEFTIndicator": null,
@@ -16018,7 +16064,7 @@ Note: Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -16609,7 +16655,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "080192883",
         "entityEFTIndicator": null,
@@ -16630,7 +16676,7 @@ Note: Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "NPDY",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "N"
+        "dnbOpenData": "No"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -17221,7 +17267,7 @@ Note: Response for one record is provided as an example <br>
   "entityData": [
     {
       "entityRegistration": {
-        "samRegistered": "Y",
+        "samRegistered": "Yes",
         "ueiSAM": " F7SEZJMNRYN1",
         "ueiDUNS": "079870954",
         "entityEFTIndicator": null,
@@ -17242,7 +17288,7 @@ Note: Response for one record is provided as an example <br>
         "noPublicDisplayFlag": "F",
         "exclusionStatusFlag": null,
         "exclusionURL": null
-        "dnbOpenData": "Y"
+        "dnbOpenData": "Yes"
       },
       "coreData": {
         "entityHierarchyInformation": {
@@ -17912,15 +17958,50 @@ Note: Response for one record is provided as an example <br>
 ### Example 12:  Get a CSV file of active Entity records
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>  https://api.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key>&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key>&registrationStatus=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=&samExtractCode=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key>&registrationStatus=A&dbaName=!""&cagecode=A*&q="GEOPHYSICAL SURVEYING AND MAPPING SERVICES"&format=CSV <br>
 <br>
 </details>
 
 <details>
 <summary>Response</summary>
 Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sample CSV Response</a><br>
+</details>
+
+
+### Example 13: Get a JSON file of all the Entities using the POST request:<br>
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>  https://api.sam.gov/entity-information/v2/entities?format=JSON  <br>
+<br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?format=JSON <br>
+<br>
+<ul>
+<li> Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM.png">Sample Authorization</a></li>
+<li>Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM.png">Sample Request Header</a></li>
+</ul>
+</details>
+<details>
+<summary>Response</summary>
+<ul>
+<li><b>Download link with the token:</b><br> 
+Extract File will be available for download with POST url:<br>
+https://api.sam.gov/entity-information/v2/download-entities?token=< value > in some time. 
+If you have provided an email id, you will get a notification email once file is ready for download. 
+Requests for Larger Set of Data may take longer time to process.
+</li>
+
+<li><b>Download the file using the token via POST:</b><br> 
+https://api.sam.gov/entity-information/v2/download-entities?token=< value >
+<ul>
+<li>Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_Download.png">Sample Authorization</a></li>
+<li>Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download.png">Sample Request Header</a></li>
+</ul></li>
+
+<li>Once the file is downloaded, save it by renaming it in this format: < filename >.json.gz. </li>
+<li>If the downloaded file is of CSV type, then file renaming convention is < filename >.csv.gz. </li>
+</ul>
 </details>
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -17957,5 +18038,7 @@ Disclaimer:
 | 02/25/2020 | v1.5 | * Added Examples for v2 requests and responses.  <br><br> * Updated Alpha endpoint to meet new API standards.|
 | 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.|
 | 05/04/2020 | v1.7 | * Added V2 endpoint information.|
+| 06/10/2020 | v1.8 | * Added the endpoint, new process and an example for the Sensitive API .|
+
 
 <p><small><a href="#">Back to top</a></small></p>
