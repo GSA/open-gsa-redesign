@@ -109,6 +109,8 @@ data.pointOfContact.email| Point of Contact Email | String | v1<br> v2
 data.pointOfContact.phone| Point of Contact Phone | String | v1<br> v2
 data.pointOfContact.fax |  Point of Contact Fax|String | v1<br> v2
 description|	A link to an opportunity description. <br>Note: To download the description, user should append the public API Key. If no description is available then, user is shown an error message “ Description not found”|	String| v1<br> v2
+data.pointOfContact.additionalInfo| Additional Information <br> *Note: This field will only show if additional information is given* | JSON Array| v2
+data.pointOfContact.additionalInfo.content| Content of Additional Information <br> *Note: This field will only show if a text is provided for additional information*|String |v2
 organizationType|	Type of an organization – department/sub-tier/office|	String | v1<br> v2
 officeAddress|	Office Address Information. It can have below fields if available: <br> City<br> State<br>Zip|	String | v1<br> v2
 data.officeAddress.city| Office Address City| String | v1<br> v2
@@ -1144,5 +1146,6 @@ Date | Version | Description
 1/31/2020 | v1.4 | Added field "ResourceLinks" with Coming Soon to prod
 2/18/2020 | v1.5| Added UEI information and versioning column and response example for awards
 2/27/2020 | v1.6| Added ResourceLinks to Response Section
+6/20/2020| v1.7| Added additional information field to point of contact parameter in the response
 
 <p><small><a href="#">Back to top</a></small></p>
