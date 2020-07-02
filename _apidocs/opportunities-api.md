@@ -2005,8 +2005,8 @@ keyword | query | string | No | Enter any keyword from the description
 latest | query | boolean | No | True or false
 opportunityIds | query | Array | No | Opportunity IDs (comma separated)
 noticeType | query | Array | No | See Notices Types table (comma separated)
-returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID
-organizationId | query | Array | No | FH Org ID/AAC code of the office where an Opportunity is being submitted (comma separated)<br> If returnFHOrgKey is set to 'True" organizationId will return internal org key
+returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID (v2 - Deprecated)
+organizationId | query | Array | No | FH Org ID/Code of the organization where an Opportunity is being submitted (comma separated)<br> If returnFHOrgKey is set to 'True" organizationId will return internal org key
 page | query | integer | No | Page number
 parentNotice | query | Array | No | Parent Opportunity ID (comma separated)
 postedFrom | query | date-time | No | Posted From UTC Date and time <br />Example: 2018-11-01 00:00:00
@@ -2036,7 +2036,11 @@ opportunityId | string |  Opportunity ID
 data.type | string | See Notices Types table
 data.solicitationNumber | string | Solicitation Number
 data.title | string | Title of the Opportunity
-data.organizationId | string | FH Organization ID that opportunity is associated with <br><br> Department = CGAC <br> Subtier = FPDS code <br> Office = AAC
+data.organizationId | string | FH Organization ID that opportunity is associated with <br><br> Department = CGAC <br> Subtier = FPDS code <br> Office = AAC (v2 - Deprecated)
+data.organizationInfo |JSON Array| v2
+data.organizationInfo.name | string | Name of organization notice is associated with
+data.organizationInfo.code | string | Code of the organization notice is associated with
+data.organizationInfo.orgKey | string | FH internal org key of the organization notice is associated with
 data.classificationCode | string | Product Service Code (PSC)
 data.naics | JSON Array | 
 data.naics.code | string | NAICS Code
@@ -2301,7 +2305,13 @@ Examples
               "responseTz": null
             }
           },
-          "organizationId": "100167253",
+          "organizationInfo": [
+            {
+              "name": "General Services Administration",
+              "code": "047",
+              "orgKey": "100006688"
+            }
+          ]
           "pointOfContact": [
             {
               "type": "primary",
@@ -2392,7 +2402,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID
+returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID (v2 - Deprecated)
 PostedFrom | query | string | No | Posted Date
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -2448,7 +2458,13 @@ Examples
         "responseTz": "America/New_York"
       }
     },
-    "organizationId": "48493828",
+    "organizationInfo": [
+    {
+      "name": "General Services Administration",
+      "code": "047",
+      "orgKey": "100006688"
+    }
+      ]
     "classificationCode": "9999",
     "solicitationNumber": "140S0318B0003",
     "additionalReporting": [
@@ -6988,4 +7004,5 @@ Date | Version | Description
 5/13/2020|v1.09| Updated v2 URL for Add Authorized and Get Authorized Party APIs
 5/26/2020|v1.1| Added returnFHOrgKey parameter in the request for Get list of Opportunities API so that the request provides internal FH Org key if required
 6/8/2020|v1.11|Added returnFHOrgKey parameter in the request for Get Opportunity by Opportunity ID API so that the request provides internal FH Org key if required
+7/3/2020|v1.12| Updated v2 endpoints for Get List and Get Opportunity by ID APIs to add FH codes and updated response samples
 <p><small><a href="#">Back to top</a></small></p>
