@@ -48,7 +48,7 @@ subtier|	Agency Name (L2)| 	No|	String | v1<br> v2 - Deprecated
 state|	Place of Performance (State)|	No	|String | v1<br> v2
 zip|	Place of Performance (Zip code)|	No|	String | v1<br> v2
 organizationCode| Code of associated organization | No| string | v2
-organizationName| Name of associated organization <br> *Note: General Search can be performed*|No|v2
+organizationName| Name of associated organization <br> *Note: General Search can be performed*|String| No|v2
 typeOfSetAside|	[Refer Set-Aside Value Section](#set-aside-values)    |No	|String | v1<br> v2
 typeOfSetAsideDescription	|Set Aside code Description. See above descriptions mentioned against each of the Set Aside Code|	No|	String | v1<br> v2
 ncode|	NAICS Code. This code is maximum of 6 digits|	No|	String | v1<br> v2
