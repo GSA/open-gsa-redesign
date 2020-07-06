@@ -742,6 +742,67 @@ Note: Response for one record is provided as an example <br>
 </p>
 </details>
 
+### Example 5: Updated v2 Endpoint with FH Information
+
+<details>
+    <summary>Request URL</summary>
+Production URL: https://api-alpha.sam.gov/opportunities/v2/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&title=Driving <br>
+ <br>
+Alpha URL: https://api.sam.gov/opportunities/v2/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2020&postedTo=05/10/2020 <br>
+
+<details>
+    <summary>Response (JSON Output)</summary>
+
+Note: Response for one record is provided as an example <br>
+
+<p>
+<code><pre>
+{
+            "noticeId": "ff826a59eac743c4a1a07ff5e0cf3e3a",
+            "title": "Test-Award notice-V2 27",
+            "solicitationNumber": "test-123456789",
+            "fullParentPathName": "GENERAL SERVICES ADMINISTRATION.FEDERAL ACQUISITION SERVICE.GSA/FAS CENTER FOR IT SCHEDULE PROG",
+            "fullParentPathCode": "047.4732.47QTCA",
+            "postedDate": "2020-07-02",
+            "type": "Award Notice",
+            "baseType": "Award Notice",
+            "archiveType": "autocustom",
+            "archiveDate": "2021-01-02",
+            "typeOfSetAsideDescription": null,
+            "typeOfSetAside": null,
+            "responseDeadLine": null,
+            "naicsCode": null,
+            "classificationCode": null,
+            "active": "Yes",
+            "award": {
+                "date": "2020-12-01",
+                "number": "4376487348950",
+                "amount": "350567.00"
+            },
+            "pointOfContact": null,
+            "description": "https://api-nonprod.prod-iae.bsp.gsa.gov/comp/opportunities/v1/noticedesc?noticeid=ff826a59eac743c4a1a07ff5e0cf3e3a",
+            "organizationType": "OFFICE",
+            "officeAddress": {
+                "zipcode": "20405",
+                "city": "WASHINGTON",
+                "countryCode": "USA",
+                "state": "DC"
+            },
+            "placeOfPerformance": null,
+            "additionalInfoLink": null,
+            "uiLink": "null",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://api-nonprod.prod-iae.bsp.gsa.gov/comp/opportunities/v2/search?noticeid=ff826a59eac743c4a1a07ff5e0cf3e3a&limit=1"
+                }
+            ],
+            "resourceLinks": null
+        }
+</pre></code>
+</p>
+</details>
+
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
