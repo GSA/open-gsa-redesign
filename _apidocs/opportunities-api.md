@@ -2005,7 +2005,7 @@ keyword | query | string | No | Enter any keyword from the description
 latest | query | boolean | No | True or false
 opportunityIds | query | Array | No | Opportunity IDs (comma separated)
 noticeType | query | Array | No | See Notices Types table (comma separated)
-returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID (v2 - Deprecated)
+returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID <br> (v2 - Deprecated)
 organizationId | query | Array | No | FH Org ID/Code of the organization where an Opportunity is being submitted (comma separated)<br> If returnFHOrgKey is set to 'True" organizationId will return internal org key
 page | query | integer | No | Page number
 parentNotice | query | Array | No | Parent Opportunity ID (comma separated)
@@ -2443,7 +2443,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID (v2 - Deprecated)
+returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID <br> (v2 - Deprecated)
 PostedFrom | query | string | No | Posted Date
 
 <p><small><a href="#">Back to top</a></small></p>
