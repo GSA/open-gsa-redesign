@@ -2365,7 +2365,7 @@ Examples
           ],
           "organizationInfo": [
             {
-              "name": "6QCA 1",
+              "name": "6QCA1",
               "code": "47Q614",
               "orgKey": "500023030"
             }
