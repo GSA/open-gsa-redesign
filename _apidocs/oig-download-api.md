@@ -36,6 +36,12 @@ In order to utilize the OIG Extract Download API, the following is required:
 ### IP Address Validation 
 All API requests will be validated against the IP Addresses registered within the system account profile. All requests that are not from registered IP address(es) in the system account profile will be rejected with an error.
 
+### Sample Request
+
+<details>
+    <summary>Request URL</summary>
+Production URL: https://api.sam.gov/prod/data-services/v1/extracts?api_key={User’s System Account API Key}
+
 
 
 
