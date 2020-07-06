@@ -2263,33 +2263,53 @@ Examples
 </details>
 
 <details>
-<summary>Get List of Opportunities Response - Award Notice v2</summary>
+<summary>Get List of Opportunities Response v2</summary>
 <p>
 <code><pre>
+{
+  "_embedded": {
+    "opportunity": [
       {
         "data": {
-          "link": {
-            "additionalInfo": {}
-          },
-          "type": "a",
+          "type": "s",
           "award": {
-            "date": "2019-05-28",
-            "amount": "100",
-            "number": "0001",
+            "date": "2020-06-01",
+            "amount": "350567.00",
+            "number": "4376487348950",
             "awardee": {
-              "ueiSAM": "025114695AST",
-              "name": "JDSInc1",
-              "location": {}
+              "name": "TONETS CORPORATION",
+              "ueiSAM": "JVDNULAZPU17",
+              "cageCode": "SP971",
+              "location": {
+                "zip": null,
+                "city": {
+                  "name": "Chuo-ku"
+                },
+                "state": {
+                  "name": "TOKYO"
+                },
+                "country": {
+                  "name": "JPN"
+                }
+              }
             },
-            "fairOpportunity": {},
-            "justificationAuthority": {}
+            "lineItemNumber": "323456789880",
+            "deliveryOrderNumber": "43577980901"
           },
-          "naics": [],
-          "title": "Test Award 2A",
+          "naics": [
+            {
+              "code": [
+                "711510"
+              ],
+              "type": "primary"
+            }
+          ],
+          "title": "Test-V2 GetOpp Org info_1",
           "archive": {
-            "date": null,
-            "type": "auto30"
+            "date": "2021-01-02",
+            "type": "autocustom"
           },
+          "version": "2",
           "permissions": {
             "IVL": {
               "read": false,
@@ -2298,36 +2318,58 @@ Examples
               "update": false
             }
           },
-          "descriptions": [],
           "solicitation": {
+            "setAside": "SBA",
             "deadlines": {
               "response": null,
               "responseTz": null
             }
           },
-          "organizationInfo": [
-            {
-              "name": "General Services Administration",
-              "code": "047",
-              "orgKey": "100006688"
-            }
-          ]
           "pointOfContact": [
             {
+              "fax": null,
               "type": "primary",
-              "email": "john.doe@gsa.gov",
-              "fullName": "HC1013-58-A-0005",
-              "additionalInfo": {
-                "content": "test email"
-              }
+              "email": "test.contact1@gmail.com",
+              "phone": "",
+              "title": null,
+              "fullName": "Test Contact 1"
+            },
+            {
+              "fax": null,
+              "type": "secondary",
+              "email": "test.contact2@gmail.com",
+              "phone": null,
+              "title": null,
+              "fullName": "Test Contact 2"
             }
           ],
-          "placeOfPerformance": {},
-          "solicitationNumber": "02SoL_(){}",
+          "classificationCode": "AA12",
+          "placeOfPerformance": {
+            "zip": null,
+            "city": {
+              "code": "124",
+              "name": "Abbeville"
+            },
+            "state": {
+              "code": "AL",
+              "name": "Alabama"
+            },
+            "country": {
+              "code": "USA",
+              "name": "UNITED STATES"
+            }
+          },
+          "solicitationNumber": "test1-100202189",
           "additionalReporting": [
             "none"
           ],
-          "organizationLocationId": "50166357"
+          "organizationInfo": [
+            {
+              "name": "6QCA 1",
+              "code": "47Q614",
+              "orgKey": "500023030"
+            }
+          ]
         },
         "additionalInfo": {
           "sections": [
@@ -2369,15 +2411,14 @@ Examples
         },
         "archived": false,
         "cancelled": false,
-        "latest": true,
+        "latest": false,
         "deleted": false,
-        "postedDate": "2019-10-03T15:06:18.980+0000",
-        "modifiedDate": "2019-10-03T15:06:18.980+0000",
-        "createdDate": "2019-10-03T15:06:18.858+0000",
-        "modifiedBy": "john.doe@gsa.gov",
-        "createdBy": "john.doe@gsa.gov",
-        "totalCount": 778,
-        "opportunityId": "34a99046c5d8422e806ac8def092eb10"
+        "postedDate": "2020-07-02T19:39:59.479+0000",
+        "modifiedDate": "2020-07-02T19:39:59.479+0000",
+        "createdDate": "2020-07-02T19:39:58.119+0000",
+        "createdBy": "veera.sareddy+5@gsa.gov",
+        "totalCount": 481,
+        "opportunityId": "8ad78752a341424bb0364e5229f0d0ef"
       }
 </pre></code>
 </p>
@@ -2409,7 +2450,7 @@ PostedFrom | query | string | No | Posted Date
 
 Responses
 
-See Response for Get List of Opportunities
+See Response for Get Opportunity by Opportunity ID
 
 Examples
 
