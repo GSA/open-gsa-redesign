@@ -41,6 +41,7 @@ All API requests will be validated against the IP Addresses registered within th
 <details>
     <summary>Request URL</summary>
 Production URL: https://api.sam.gov/prod/data-services/v1/extracts?api_key={User’s System Account API Key}
+</details>
 
 
 
