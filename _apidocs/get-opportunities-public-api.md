@@ -780,7 +780,7 @@ Note: Response for one record is provided as an example <br>
                 "amount": "350567.00"
             },
             "pointOfContact": null,
-            "description": "https://api-nonprod.prod-iae.bsp.gsa.gov/comp/opportunities/v1/noticedesc?noticeid=ff826a59eac743c4a1a07ff5e0cf3e3a",
+            "description": "null",
             "organizationType": "OFFICE",
             "officeAddress": {
                 "zipcode": "20405",
@@ -794,7 +794,7 @@ Note: Response for one record is provided as an example <br>
             "links": [
                 {
                     "rel": "self",
-                    "href": "https://api-nonprod.prod-iae.bsp.gsa.gov/comp/opportunities/v2/search?noticeid=ff826a59eac743c4a1a07ff5e0cf3e3a&limit=1"
+                    "href": "null"
                 }
             ],
             "resourceLinks": null
