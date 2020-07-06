@@ -806,7 +806,7 @@ Note: Response for one record is provided as an example <br>
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/get-opportunities.yml" download="get-opportunities">OpenAPI File</a>
+<a href="v1/get-opportunities-v1.yml" download="get-opportunities-v1">OpenAPI File</a>
 
 <details>
 <summary>Get Opportunities Public API</summary>
