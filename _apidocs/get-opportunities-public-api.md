@@ -48,7 +48,7 @@ subtier|	Agency Name (L2)| 	No|	String | v1<br> v2 - Deprecated
 state|	Place of Performance (State)|	No	|String | v1<br> v2
 zip|	Place of Performance (Zip code)|	No|	String | v1<br> v2
 organizationCode| Code of associated organization | No| string | v2
-organizationName| Name of associated organization <br> *Note: General Search can be performed*|String| No|v2
+organizationName| Name of associated organization <br> *Note: General Search can be performed*|No| String|v2
 typeOfSetAside|	[Refer Set-Aside Value Section](#set-aside-values)    |No	|String | v1<br> v2
 typeOfSetAsideDescription	|Set Aside code Description. See above descriptions mentioned against each of the Set Aside Code|	No|	String | v1<br> v2
 ncode|	NAICS Code. This code is maximum of 6 digits|	No|	String | v1<br> v2
@@ -69,8 +69,8 @@ limit|	Limit entered by a user while making the request i.e. total number of rec
 offset|	Page index specified by a user. Default offset starts with 0 if user does not provide any offset in the request|	Number | v1<br> v2
 title	|Opportunity Title|	String | v1<br> v2
 solicitationNumber|	Solicitation Number |	String | v1<br> v2
-fullParentPathName| Names of all organizations notice is associated with| v2
-fullParentPathCode| Codes of all organizations notice is associated with| v2
+fullParentPathName| Names of all organizations notice is associated with| String| v2
+fullParentPathCode| Codes of all organizations notice is associated with| String| v2
 department|	Department (L1)	|String | v1<br> v2 - Deprecated
 subtier|	Sub-Tier (L2)|	String | v1<br> v2 - Deprecated
 office|	Office (L3)	|String | v1<br> v2 v2 - Deprecated
