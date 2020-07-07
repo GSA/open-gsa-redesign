@@ -2019,7 +2019,7 @@ solNumber | query | string | No | Solicitation Number
 sortBy | query | string | No | Sort (-createdOn, -modifiedOn)
 status| query | Array[string] | No | Active - All Published Active Notice <br> Draft - All Draft Notice <br> Published - All Published Notice <br> Inactive - All archived/Inactive Notice (before archive) <br> Cancelled - All Cancelled Notice <br/>(comma separated)
 orgStatus| query | Array | No| Organization Status: Active, Inactive, Mapped, Unmapped
-Links | query | boolean | |No | Links; Default Value = True
+Links | query | boolean | No | Links; Default Value = True
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2036,8 +2036,8 @@ opportunityId | string |  Opportunity ID
 data.type | string | See Notices Types table
 data.solicitationNumber | string | Solicitation Number
 data.title | string | Title of the Opportunity
-data.organizationId | string | FH Organization ID that opportunity is associated with <br><br> Department = CGAC <br> Subtier = FPDS code <br> Office = AAC (v2 - Deprecated)
-data.organizationInfo |JSON Array| v2
+data.organizationId | string | FH Organization ID that opportunity is associated with <br><br> Department = CGAC <br> Subtier = FPDS code <br> Office = AAC <br> (v2 - Deprecated)
+data.organizationInfo |JSON Array| Federal Hierarchy Information <br>(v2 Only)
 data.organizationInfo.name | string | Name of organization notice is associated with
 data.organizationInfo.code | string | Code of the organization notice is associated with
 data.organizationInfo.orgKey | string | FH internal org key of the organization notice is associated with
