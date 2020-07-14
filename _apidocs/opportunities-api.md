@@ -7016,7 +7016,7 @@ A. Contract Opportunity users may use Public Location Services API document to v
 ## Change Log
 
 Date | Version | Description
----------|---------------|---------
+--------- | --------------- | ---------
 4/25/2019 | v0.1 | Base Version
 4/29/2019 | v0.2 | Added information for Get Authorized Party List <br> Added Add Authorized Party <br> Added Vendor Data JSON <br> POC Email changed to not required <br> Change log added <br> Secure Attachment Download Authorization section added <br> Alpha and Beta endpoint section added
 5/23/2019 | v0.3 | Update IVL Settings URL <br> Removed Get IVL by DUNS <br> Added EntityID to getIVL API parameter <br> Updated Get Authorized Party <br> Updated Add Authorized Party <br> Error Message Section Updated
