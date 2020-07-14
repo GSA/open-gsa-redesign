@@ -3242,7 +3242,7 @@ Request Parameters
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization|	Header|	string|	Yes|Valid and authorized user ID
-Api_key	query	| string|	Yes|	Valid System Account API Key
+api_key|	query	| string|	Yes|	Valid System Account API Key
 ResourceID	|query|	string|	Yes	| Resource ID
 excludeDeleted | query | string | No|
 
@@ -3298,7 +3298,7 @@ Request Parameters
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization|	Header|	string|	Yes|Valid and authorized user ID
-Api_key	query	| string|	Yes|	Valid System Account API Key
+api_key|	query	| string|	Yes|	Valid System Account API Key
 OpportunityID	|query|	string|	Yes	| Opportunity ID
 excludeDeleted | query | string | No|
 
