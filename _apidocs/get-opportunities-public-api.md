@@ -20,6 +20,10 @@ Get Opportunities API can be accessed from Beta or Alpha via the following envir
 * Beta: <br>  https://api.sam.gov/prod/opportunities/v1/search
 * Alpha: <br> https://api-alpha.sam.gov/prodlike/opportunities/v1/search
 
+### Version 2 (Coming Soon)
+* Beta: <br>  https://api.sam.gov/opportunities/v2/search
+* Alpha: <br> https://api-alpha.sam.gov/opportunities/v2/search
+
 ## Authentication and API Keys
 User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles. 
 Note: User can request a public API Key in the Account Details page on beta.sam.gov (if testing in production) Else on alpha.sam.gov (if testing in prodlike).
@@ -1214,4 +1218,5 @@ Date | Version | Description
 2/27/2020 | v1.6| Added ResourceLinks to Response Section
 6/20/2020| v1.7| Added additional information field to point of contact parameter in the response
 7/3/2020| v1.8| Updated field parameters to include all FH information for given notices in both request and response
+
 <p><small><a href="#">Back to top</a></small></p>
