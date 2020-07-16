@@ -4651,7 +4651,7 @@ newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New 
 
 Name | Data Type | Field Length |Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------|-------
-attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file| v1 <br> v2
+attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file
 content | byte | 250MB| | Yes if attType=file | File content in base64 format
 packageAccessLevel | string | 32 characters| public, <br/>private <br/>(default public) | No | Only applies to package type - file. If marked 'private', explicit access field must be marked as '1' as well
 resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes if attType=file | Name of file
