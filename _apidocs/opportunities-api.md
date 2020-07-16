@@ -2005,7 +2005,7 @@ keyword | query | string | No | Enter any keyword from the description
 latest | query | boolean | No | True or false
 opportunityIds | query | Array | No | Opportunity IDs (comma separated)
 noticeType | query | Array | No | See Notices Types table (comma separated)
-returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID <br> (v2 - Deprecated)
+returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID <br> **(v2 - Deprecated)**
 organizationId | query | Array | No | FH Org ID/Code of the organization where an Opportunity is being submitted (comma separated)<br> If returnFHOrgKey is set to 'True" organizationId will return internal org key
 page | query | integer | No | Page number
 parentNotice | query | Array | No | Parent Opportunity ID (comma separated)
@@ -2036,8 +2036,8 @@ opportunityId | string |  Opportunity ID
 data.type | string | See Notices Types table
 data.solicitationNumber | string | Solicitation Number
 data.title | string | Title of the Opportunity
-data.organizationId | string | FH Organization ID that opportunity is associated with <br><br> Department = CGAC <br> Subtier = FPDS code <br> Office = AAC <br> (v2 - Deprecated)
-data.organizationInfo |JSON Array| Federal Hierarchy Information <br>(v2 Only)
+data.organizationId | string | FH Organization ID that opportunity is associated with <br><br> Department = CGAC <br> Subtier = FPDS code <br> Office = AAC <br> **(v2 - Deprecated)**
+data.organizationInfo |JSON Array| Federal Hierarchy Information <br>**(v2 Only)**
 data.organizationInfo.name | string | Name of organization notice is associated with
 data.organizationInfo.code | string | Code of the organization notice is associated with
 data.organizationInfo.orgKey | string | FH internal org key of the organization notice is associated with
@@ -2090,8 +2090,8 @@ data.award.amount | Number | Award Amount
 data.award.lineitemNumber | string |  Award Line Item Number
 data.award.awardee | JSON Object |  
 data.award.awardee.name | string |  Awardee Name
-data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS (v2 - Deprecated)
-data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
+data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS **(v2 - Deprecated)**
+data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST <br>**(v2 Only)**
 data.award.awardee.location | JSON Object|  Awardee Location
 data.award.awardee.location.streetAddress | string | Awardee Street Address 1
 data.award.awardee.location.streetAddress2 | string |  Awardee Street Address 1
@@ -2443,7 +2443,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID <br> (v2 - Deprecated)
+returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID <br> **(v2 - Deprecated)**
 PostedFrom | query | string | No | Posted Date
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -4078,10 +4078,10 @@ parent.opportunityId | string | 32 characters| | Yes (to create a draft opportun
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description| Applicable Versions
------|-----------|----------------|----------|------------|-----
-requestType | string | publish_request | Yes | Type of request| v1 <br> v2
-reason | string |  | No | Publish reason| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+requestType | string | publish_request | Yes | Type of request
+reason | string |  | No | Publish reason
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4504,11 +4504,11 @@ reason | string |  | No | Reason for revision| v1 <br> v2
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-----
-reason | string |  | No | Reason for cancelation| v1 <br> v2
-requestType | string | cancel_request | Yes | Type of request| v1 <br> v2
-description | string |  | Yes | Description for cancelation| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+reason | string |  | No | Reason for cancelation
+requestType | string | cancel_request | Yes | Type of request
+description | string |  | Yes | Description for cancelation
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4538,16 +4538,16 @@ description | string |  | Yes | Description for cancelation| v1 <br> v2
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-----
-reason | string |  | Yes | Reason for uncanceling| v1 <br> v2
-requestType | string | uncancel_request | Yes | Type of request| v1 <br> v2
-description | string |  | Yes | Description for uncanceling| v1 <br> v2
-newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date| v1 <br> v2
-newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date| v1 <br> v2
-newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type| v1 <br> v2
-newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
-newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+reason | string |  | Yes | Reason for uncanceling
+requestType | string | uncancel_request | Yes | Type of request
+description | string |  | Yes | Description for uncanceling
+newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date
+newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
+newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
+newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
+newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4569,10 +4569,10 @@ newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New 
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-----
-requestType | string | archive_request | Yes | Type of request| v1 <br> v2
-reason | string |  | No | Archive reason| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+requestType | string | archive_request | Yes | Type of request
+reason | string |  | No | Archive reason
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4601,15 +4601,15 @@ reason | string |  | No | Archive reason| v1 <br> v2
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-----
-reason | string |  | Yes | Reason for unarchiving| v1 <br> v2
-requestType | string | unarchive_request | Yes | Type of request| v1 <br> v2
-newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date| v1 <br> v2
-newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date| v1 <br> v2
-newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type| v1 <br> v2
-newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01) | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
-newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+reason | string |  | Yes | Reason for unarchiving
+requestType | string | unarchive_request | Yes | Type of request
+newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date
+newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
+newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
+newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01) | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
+newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4649,17 +4649,17 @@ newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New 
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Field Length |Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-------|-----
+Name | Data Type | Field Length |Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------|-------
 attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file| v1 <br> v2
-content | byte | 250MB| | Yes if attType=file | File content in base64 format| v1 <br> v2
-packageAccessLevel | string | 32 characters|public, <br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'.| v1 <br> v2
-resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes if attType=file | Name of file| v1 <br> v2
-fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)| v1 <br> v2
-link | string | 255 characters| | Yes if attType=link | Resource link  URL| v1 <br> v2
-description | string |255 characters | | Yes if attType=link | Description of the link| v1 <br> v2
-explicitAccess | string |1 character | 0, 1 <br/>(defaults to '0' public access, if not provided) | No  |Explicit Access. For Controlled Unclassified files, specify '1'| v1 <br> v2
-exportControlled | string |1 character | 0 | No  | *Captured for future JCP validation*<br> Export Controlled| v1 <br> v2
+content | byte | 250MB| | Yes if attType=file | File content in base64 format
+packageAccessLevel | string | 32 characters| public, <br/>private <br/>(default public) | No | Only applies to package type - file. If marked 'private', explicit access field must be marked as '1' as well
+resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes if attType=file | Name of file
+fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
+link | string | 255 characters| | Yes if attType=link | Resource link  URL
+description | string |255 characters | | Yes if attType=link | Description of the link
+explicitAccess | string |1 character | 0, 1 <br/>(defaults to '0' if not provided) | No  | For Controlled Unclassified files, specify ‘1’ which will require users to request access to the file. Leaving blank or as a '0' will allow public access to the file. <br>- If packageAccessLevel is given as 'private' then explicitAccess must be '1' otherwise validation will fail <br> - If packageAccessLevel is 'public' explicitAccess must be '0' or null otherwise validation will fail
+exportControlled | string |1 character | 0 | No  | *Captured for future JCP validation*<br> Export Controlled
 
 #### Valid File Types 
 
@@ -4725,14 +4725,14 @@ Zip file (.zip)| application/zip
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-----
-attType | string | link, file | No | Required only for file access level changes| v1 <br> v2
-packageAccessLevel | string | public,<br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'| v1 <br> v2
-resourceName | string | a-z A-Z 0-9 - _ () | No | Name of file or link| v1 <br> v2
-explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files. Required only for file access level changes| v1 <br> v2
-sortOrderChanged | boolean  | true, false | No | Should be provided if file order is changed.| v1 <br> v2
-resourceIdBelow | string  |  | No | This should be Resource ID of the file/link that will display below the file/link that is moved| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+attType | string | link, file | No | Required only for file access level changes
+packageAccessLevel | string | public,<br/>private <br/>(default public) | No | Only applies to package type - file. If marked 'private', explicit access field must be marked as '1' as well.
+resourceName | string | a-z A-Z 0-9 - _ () | No | Name of file or link
+explicitAccess | string  | 0, 1 | No | For Controlled Unclassified files, specify ‘1’ which will require users to request access to the file. Leaving blank or as a '0' will allow public access to the file. <br> - If packageAccessLevel is given as 'private' then explicitAccess must be '1' otherwise validation will fail <br> - If packageAccessLevel is 'public' explicitAccess must be '0' or null otherwise validation will fail
+sortOrderChanged | boolean  | true, false | No | Should be provided if file order is changed
+resourceIdBelow | string  |  | No | This should be Resource ID of the file/link that will display below the file/link that is moved
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4831,12 +4831,12 @@ cageCode | string | | Yes | Cage Code| v1 <br> v2 - Deprecated
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-----
-reason|	string|	|	No|	Reason for deletion| v1 <br> v2
-requestType	|string	|delete_request |Yes	|Type of request| v1 <br> v2
-description	|string|		|Yes|	Description for deletion of a notice| v1 <br> v2
-deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or all versions of a notice| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+reason|	string|	|	No|	Reason for deletion
+requestType	|string	|delete_request |Yes	|Type of request
+description	|string|		|Yes|	Description for deletion of a notice
+deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or all versions of a notice
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -6932,6 +6932,8 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Primary Contact Phone |	Primary Contact - phone character limit is 255 characters | Primary Contact phone limit is 255 | Publish
 400|Primary Contact Phone |	Primary Contact - fax character limit is 255 characters | Primary Contact fax limit is 255 | Publish
 400|Resources -  attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a link |	Create Resource, Create And Publish
+TBD | TBD | ExplicitAccess is invalid for PackageLevel public | The resources.packageAccessLevel has been set to 'public', so the theresources.exportControlled can not be '1'. If a '1' is entered, this is a conflict as the file shows one setting for controlled and the other for public. | TBD
+TBD | TBD | ExplicitAccess is invalid for PackageLevel private | The resources.packageAccessLevel has been set to 'private', so a corresponding '1' MUST appear in theresources.exportControlled. If anything other then '1' is entered, this is a conflict as the file shows one setting for controlled and the other for public |TBD
 400|Resources - resourceName | Attachment must have a name | Attachment Name is a required field |	Create Resource, Create And Publish
 400|Resources - resourceName | File name should have valid file type specified | Attachment Name should have valid file extension |	Create Resource, Update Resource, Create And Publish
 400|Resources - resourceName | File name should contain only Alpha numeric characters with spaces, hyphen, underscore and () | Attachment Name can contain only  the allowed character set |	Create Resource, Update Resource, Create And Publish
