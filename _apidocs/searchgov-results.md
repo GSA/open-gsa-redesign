@@ -68,6 +68,8 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
 ## Expected Results
 
   Each item returns a unique set of fields. Each array will only have contents if there are results in that search feature matching the query.
+  
+  Before you begin: If you set up the Routed Query feature in the Search.gov Admin Center, you will need to set up some additional logic. If there's a match between the query and the Routed Query, we'll return only the `route_to` URL. Otherwise we'll return the full results set. See <a href="#rq">Routed Queries</a>.
 
   * ### query
   
@@ -222,15 +224,16 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
 
 <p><small><a href="#">Back to top</a></small></p>
 
+<a name="rq"/>
 ## Routed Queries
 
-If you have [routed queries](https://search.gov/manual/routed-queries.html) set in your Admin page, then any matching query terms will change the API response.
+If you have [Routed Queries](https://search.gov/manual/routed-queries.html) set up in your Admin Center, then any matching query terms will change the API response.
 
-For example, if you set queries for `example` to route to `https://search.gov`, then the following API call, which will allow you to redirect your users to the URL.
+For instance, if you set the query `example` to route to `https://www.search.gov`, then the expected response will be the following:
 
-`https://search.usa.gov/api/v2/search?affiliate=YOUR_SITE_HANDLE&access_key=YOUR_UNIQUE_ACCESS_KEY_FROM_ADMIN_CENTER=&query=example`
+`{"route_to":"https://www.search.gov/"}`
 
-A site-specific API call and javascript sample are available within the Admin Center for Search.gov users under the "Activate" tab.
+To fully implement this, you will have to add logic that will process this response and redirect the user. A site-specific API call and javascript sample are available within the [Search.gov Admin Center](https://search.usa.gov/sites/) > Your Site > Activate > Search Results API Instructions.
 
 ## Contact Us
 
