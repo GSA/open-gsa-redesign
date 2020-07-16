@@ -1,5 +1,5 @@
 ---
-title: Beta.SAM.Gov Opportunity Management API
+title: Beta.SAM.Gov Opportunity Management API 
 banner-heading: Beta.SAM.Gov Opportunity Management API
 ---
 
@@ -2005,8 +2005,8 @@ keyword | query | string | No | Enter any keyword from the description
 latest | query | boolean | No | True or false
 opportunityIds | query | Array | No | Opportunity IDs (comma separated)
 noticeType | query | Array | No | See Notices Types table (comma separated)
-returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID
-organizationId | query | Array | No | FH Org ID/AAC code of the office where an Opportunity is being submitted (comma separated)<br> If returnFHOrgKey is set to 'True" organizationId will return internal org key
+returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID <br> **(v2 - Deprecated)**
+organizationId | query | Array | No | FH Org ID/Code of the organization where an Opportunity is being submitted (comma separated)<br> If returnFHOrgKey is set to 'True" organizationId will return internal org key
 page | query | integer | No | Page number
 parentNotice | query | Array | No | Parent Opportunity ID (comma separated)
 postedFrom | query | date-time | No | Posted From UTC Date and time <br />Example: 2018-11-01 00:00:00
@@ -2019,7 +2019,7 @@ solNumber | query | string | No | Solicitation Number
 sortBy | query | string | No | Sort (-createdOn, -modifiedOn)
 status| query | Array[string] | No | Active - All Published Active Notice <br> Draft - All Draft Notice <br> Published - All Published Notice <br> Inactive - All archived/Inactive Notice (before archive) <br> Cancelled - All Cancelled Notice <br/>(comma separated)
 orgStatus| query | Array | No| Organization Status: Active, Inactive, Mapped, Unmapped
-Links | query | boolean | |No | Links; Default Value = True
+Links | query | boolean | No | Links; Default Value = True
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2036,7 +2036,11 @@ opportunityId | string |  Opportunity ID
 data.type | string | See Notices Types table
 data.solicitationNumber | string | Solicitation Number
 data.title | string | Title of the Opportunity
-data.organizationId | string | FH Organization ID that opportunity is associated with <br><br> Department = CGAC <br> Subtier = FPDS code <br> Office = AAC
+data.organizationId | string | FH Organization ID that opportunity is associated with <br><br> Department = CGAC <br> Subtier = FPDS code <br> Office = AAC <br> **(v2 - Deprecated)**
+data.organizationInfo |JSON Array| Federal Hierarchy Information <br>**(v2 Only)**
+data.organizationInfo.name | string | Name of organization notice is associated with
+data.organizationInfo.code | string | Code of the organization notice is associated with
+data.organizationInfo.orgKey | string | FH internal org key of the organization notice is associated with
 data.classificationCode | string | Product Service Code (PSC)
 data.naics | JSON Array | 
 data.naics.code | string | NAICS Code
@@ -2086,8 +2090,8 @@ data.award.amount | Number | Award Amount
 data.award.lineitemNumber | string |  Award Line Item Number
 data.award.awardee | JSON Object |  
 data.award.awardee.name | string |  Awardee Name
-data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS (v2 - Deprecated)
-data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
+data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS **(v2 - Deprecated)**
+data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST <br>**(v2 Only)**
 data.award.awardee.location | JSON Object|  Awardee Location
 data.award.awardee.location.streetAddress | string | Awardee Street Address 1
 data.award.awardee.location.streetAddress2 | string |  Awardee Street Address 1
@@ -2259,33 +2263,53 @@ Examples
 </details>
 
 <details>
-<summary>Get List of Opportunities Response - Award Notice v2</summary>
+<summary>Get List of Opportunities Response v2</summary>
 <p>
 <code><pre>
+{
+  "_embedded": {
+    "opportunity": [
       {
         "data": {
-          "link": {
-            "additionalInfo": {}
-          },
-          "type": "a",
+          "type": "s",
           "award": {
-            "date": "2019-05-28",
-            "amount": "100",
-            "number": "0001",
+            "date": "2020-06-01",
+            "amount": "350567.00",
+            "number": "4376487348950",
             "awardee": {
-              "ueiSAM": "025114695AST",
-              "name": "JDSInc1",
-              "location": {}
+              "name": "TONETS CORPORATION",
+              "ueiSAM": "JVDNULAZPU17",
+              "cageCode": "SP971",
+              "location": {
+                "zip": null,
+                "city": {
+                  "name": "Chuo-ku"
+                },
+                "state": {
+                  "name": "TOKYO"
+                },
+                "country": {
+                  "name": "JPN"
+                }
+              }
             },
-            "fairOpportunity": {},
-            "justificationAuthority": {}
+            "lineItemNumber": "323456789880",
+            "deliveryOrderNumber": "43577980901"
           },
-          "naics": [],
-          "title": "Test Award 2A",
+          "naics": [
+            {
+              "code": [
+                "711510"
+              ],
+              "type": "primary"
+            }
+          ],
+          "title": "Test-V2 GetOpp Org info_1",
           "archive": {
-            "date": null,
-            "type": "auto30"
+            "date": "2021-01-02",
+            "type": "autocustom"
           },
+          "version": "2",
           "permissions": {
             "IVL": {
               "read": false,
@@ -2294,30 +2318,58 @@ Examples
               "update": false
             }
           },
-          "descriptions": [],
           "solicitation": {
+            "setAside": "SBA",
             "deadlines": {
               "response": null,
               "responseTz": null
             }
           },
-          "organizationId": "100167253",
           "pointOfContact": [
             {
+              "fax": null,
               "type": "primary",
-              "email": "john.doe@gsa.gov",
-              "fullName": "HC1013-58-A-0005",
-              "additionalInfo": {
-                "content": "test email"
-              }
+              "email": "test.contact1@gmail.com",
+              "phone": "",
+              "title": null,
+              "fullName": "Test Contact 1"
+            },
+            {
+              "fax": null,
+              "type": "secondary",
+              "email": "test.contact2@gmail.com",
+              "phone": null,
+              "title": null,
+              "fullName": "Test Contact 2"
             }
           ],
-          "placeOfPerformance": {},
-          "solicitationNumber": "02SoL_(){}",
+          "classificationCode": "AA12",
+          "placeOfPerformance": {
+            "zip": null,
+            "city": {
+              "code": "124",
+              "name": "Abbeville"
+            },
+            "state": {
+              "code": "AL",
+              "name": "Alabama"
+            },
+            "country": {
+              "code": "USA",
+              "name": "UNITED STATES"
+            }
+          },
+          "solicitationNumber": "test1-100202189",
           "additionalReporting": [
             "none"
           ],
-          "organizationLocationId": "50166357"
+          "organizationInfo": [
+            {
+              "name": "6QCA1",
+              "code": "47Q614",
+              "orgKey": "500023030"
+            }
+          ]
         },
         "additionalInfo": {
           "sections": [
@@ -2359,15 +2411,14 @@ Examples
         },
         "archived": false,
         "cancelled": false,
-        "latest": true,
+        "latest": false,
         "deleted": false,
-        "postedDate": "2019-10-03T15:06:18.980+0000",
-        "modifiedDate": "2019-10-03T15:06:18.980+0000",
-        "createdDate": "2019-10-03T15:06:18.858+0000",
-        "modifiedBy": "john.doe@gsa.gov",
-        "createdBy": "john.doe@gsa.gov",
-        "totalCount": 778,
-        "opportunityId": "34a99046c5d8422e806ac8def092eb10"
+        "postedDate": "2020-07-02T19:39:59.479+0000",
+        "modifiedDate": "2020-07-02T19:39:59.479+0000",
+        "createdDate": "2020-07-02T19:39:58.119+0000",
+        "createdBy": "veera.sareddy+5@gsa.gov",
+        "totalCount": 481,
+        "opportunityId": "8ad78752a341424bb0364e5229f0d0ef"
       }
 </pre></code>
 </p>
@@ -2392,14 +2443,14 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID
+returnFHOrgKey| query | boolean | No | Default is set to 'False'<br> If set to 'True', organizationId will return internal org key instead of FH Organization ID <br> **(v2 - Deprecated)**
 PostedFrom | query | string | No | Posted Date
 
 <p><small><a href="#">Back to top</a></small></p>
 
 Responses
 
-See Response for Get List of Opportunities
+See Response for Get Opportunity by Opportunity ID
 
 Examples
 
@@ -2448,7 +2499,13 @@ Examples
         "responseTz": "America/New_York"
       }
     },
-    "organizationId": "48493828",
+    "organizationInfo": [
+    {
+      "name": "General Services Administration",
+      "code": "047",
+      "orgKey": "100006688"
+    }
+      ]
     "classificationCode": "9999",
     "solicitationNumber": "140S0318B0003",
     "additionalReporting": [
@@ -3185,8 +3242,8 @@ Request Parameters
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization|	Header|	string|	Yes|Valid and authorized user ID
-Api_key	query	| string|	Yes|	Valid System Account API Key
-ResourceID	|query|	string|	Yes	| Resource ID
+api_key|	query	| string|	Yes|	Valid System Account API Key
+resourceId	|query|	string|	Yes	| Resource ID
 excludeDeleted | query | string | No|
 
 Responses
@@ -3241,8 +3298,8 @@ Request Parameters
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization|	Header|	string|	Yes|Valid and authorized user ID
-Api_key	query	| string|	Yes|	Valid System Account API Key
-OpportunityID	|query|	string|	Yes	| Opportunity ID
+api_key|	query	| string|	Yes|	Valid System Account API Key
+opportunityId	|query|	string|	Yes	| Opportunity ID
 excludeDeleted | query | string | No|
 
 Responses
@@ -4021,10 +4078,10 @@ parent.opportunityId | string | 32 characters| | Yes (to create a draft opportun
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description| Applicable Versions
------|-----------|----------------|----------|------------|-----
-requestType | string | publish_request | Yes | Type of request| v1 <br> v2
-reason | string |  | No | Publish reason| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+requestType | string | publish_request | Yes | Type of request
+reason | string |  | No | Publish reason
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4419,10 +4476,10 @@ resources.exportControlled | string |1 character | 0 | No |Export Controlled. * 
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Verions
------|-----------|----------------|----------|------------|-----
-requestType | string | update_publish_request | Yes | Type of request| v1 <br> v2
-reason | string |  | No | Reason for revision| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+requestType | string | update_publish_request | Yes | Type of request
+reason | string |  | No | Reason for revision
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4447,11 +4504,11 @@ reason | string |  | No | Reason for revision| v1 <br> v2
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-----
-reason | string |  | No | Reason for cancelation| v1 <br> v2
-requestType | string | cancel_request | Yes | Type of request| v1 <br> v2
-description | string |  | Yes | Description for cancelation| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+reason | string |  | No | Reason for cancelation
+requestType | string | cancel_request | Yes | Type of request
+description | string |  | Yes | Description for cancelation
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4481,16 +4538,16 @@ description | string |  | Yes | Description for cancelation| v1 <br> v2
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-----
-reason | string |  | Yes | Reason for uncanceling| v1 <br> v2
-requestType | string | uncancel_request | Yes | Type of request| v1 <br> v2
-description | string |  | Yes | Description for uncanceling| v1 <br> v2
-newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date| v1 <br> v2
-newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date| v1 <br> v2
-newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type| v1 <br> v2
-newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
-newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+reason | string |  | Yes | Reason for uncanceling
+requestType | string | uncancel_request | Yes | Type of request
+description | string |  | Yes | Description for uncanceling
+newContractAwardDate | date | YYYY-MM-DD | Yes only for type = a (Award)| New Contract Award Date
+newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
+newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
+newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
+newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4512,10 +4569,10 @@ newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New 
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-----
-requestType | string | archive_request | Yes | Type of request| v1 <br> v2
-reason | string |  | No | Archive reason| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+requestType | string | archive_request | Yes | Type of request
+reason | string |  | No | Archive reason
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4544,15 +4601,15 @@ reason | string |  | No | Archive reason| v1 <br> v2
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-----
-reason | string |  | Yes | Reason for unarchiving| v1 <br> v2
-requestType | string | unarchive_request | Yes | Type of request| v1 <br> v2
-newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date| v1 <br> v2
-newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date| v1 <br> v2
-newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type| v1 <br> v2
-newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01) | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date| v1 <br> v2
-newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+reason | string |  | Yes | Reason for unarchiving
+requestType | string | unarchive_request | Yes | Type of request
+newContractAwardDate | date | YYYY-MM-DD | Yes for type = a (Award)| New Contract Award Date
+newArchiveDate | date | YYYY-MM-DD | Yes if newArchiveType=autocustom | New Archive Date
+newArchiveType | string | auto15,<br/> auto30,<br/> autocustom | Yes  | New Archive Type
+newResponseDate | date | 1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01) | 1) Yes for types = k, o (Combined Synopsis/Solicitation) <br/>2) Yes if newArchive.type=auto15 except for type = a (Award) | New Response Date
+newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New Response Time Zone
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4592,17 +4649,17 @@ newResponseTz | string | [Refer Time Zone Values](#time-zone-values) | No | New 
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Field Length |Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-------|-----
-attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file| v1 <br> v2
-content | byte | 250MB| | Yes if attType=file | File content in base64 format| v1 <br> v2
-packageAccessLevel | string | 32 characters|public, <br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'.| v1 <br> v2
-resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes if attType=file | Name of file| v1 <br> v2
-fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)| v1 <br> v2
-link | string | 255 characters| | Yes if attType=link | Resource link  URL| v1 <br> v2
-description | string |255 characters | | Yes if attType=link | Description of the link| v1 <br> v2
-explicitAccess | string |1 character | 0, 1 <br/>(defaults to '0' public access, if not provided) | No  |Explicit Access. For Controlled Unclassified files, specify '1'| v1 <br> v2
-exportControlled | string |1 character | 0 | No  | *Captured for future JCP validation*<br> Export Controlled| v1 <br> v2
+Name | Data Type | Field Length |Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------|-------
+attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file
+content | byte | 250MB| | Yes if attType=file | File content in base64 format
+packageAccessLevel | string | 32 characters| public, <br/>private <br/>(default public) | No | Only applies to package type - file. If marked 'private', explicit access field must be marked as '1' as well
+resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes if attType=file | Name of file
+fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
+link | string | 255 characters| | Yes if attType=link | Resource link  URL
+description | string |255 characters | | Yes if attType=link | Description of the link
+explicitAccess | string |1 character | 0, 1  | No - If packageAccessLevel is 'public' <br> Yes - If packageAccessLevel is 'private' | For Controlled Unclassified files, specify ‘1’ which will require users to request access to the file. Leaving blank or as a '0' will allow public access to the file. <br>- If packageAccessLevel is given as 'private' then explicitAccess must be '1' otherwise validation will fail <br> - If packageAccessLevel is 'public' explicitAccess must be '0' or null otherwise validation will fail
+exportControlled | string |1 character | 0 | No  | *Captured for future JCP validation*<br> Export Controlled
 
 #### Valid File Types 
 
@@ -4668,14 +4725,14 @@ Zip file (.zip)| application/zip
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-----
-attType | string | link, file | No | Required only for file access level changes| v1 <br> v2
-packageAccessLevel | string | public,<br/>private <br/>(default public) | No | Type of access to file. Only used with attType 'file'| v1 <br> v2
-resourceName | string | a-z A-Z 0-9 - _ () | No | Name of file or link| v1 <br> v2
-explicitAccess | string  | 0, 1 | No | Defaults to '0' (public access) if not provided. '1' is used for Controlled Unclassified files. Required only for file access level changes| v1 <br> v2
-sortOrderChanged | boolean  | true, false | No | Should be provided if file order is changed.| v1 <br> v2
-resourceIdBelow | string  |  | No | This should be Resource ID of the file/link that will display below the file/link that is moved| v1 <br> v2
+Name | Data Type | Field Length |Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------|-------
+attType | string | 32 characters | link, file | No | Required only for file access level changes
+packageAccessLevel | string | 32 characters| public, <br/>private <br/>(default public) | No | Only applies to package type - file. If marked 'private', explicit access field must be marked as '1' as well
+resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes if attType=file | Name of file
+explicitAccess | string |1 character | 0, 1  | No - If packageAccessLevel is 'public' <br> Yes - If packageAccessLevel is 'private' | For Controlled Unclassified files, specify ‘1’ which will require users to request access to the file. Leaving blank or as a '0' will allow public access to the file. <br>- If packageAccessLevel is given as 'private' then explicitAccess must be '1' otherwise validation will fail <br> - If packageAccessLevel is 'public' explicitAccess must be '0' or null otherwise validation will fail
+sortOrderChanged | boolean|  | true, false | No | Should be provided if file order is changed
+resourceIdBelow | string  |  | | No | This should be Resource ID of the file/link that will display below the file/link that is moved
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4774,12 +4831,12 @@ cageCode | string | | Yes | Cage Code| v1 <br> v2 - Deprecated
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Versions
------|-----------|----------------|----------|------------|-----
-reason|	string|	|	No|	Reason for deletion| v1 <br> v2
-requestType	|string	|delete_request |Yes	|Type of request| v1 <br> v2
-description	|string|		|Yes|	Description for deletion of a notice| v1 <br> v2
-deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or all versions of a notice| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+reason|	string|	|	No|	Reason for deletion
+requestType	|string	|delete_request |Yes	|Type of request
+description	|string|		|Yes|	Description for deletion of a notice
+deleteOption|	string|	latest, all|	Yes|	Option to delete either the latest or all versions of a notice
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -6875,6 +6932,9 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Primary Contact Phone |	Primary Contact - phone character limit is 255 characters | Primary Contact phone limit is 255 | Publish
 400|Primary Contact Phone |	Primary Contact - fax character limit is 255 characters | Primary Contact fax limit is 255 | Publish
 400|Resources -  attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a link |	Create Resource, Create And Publish
+400 | Resources - ExplicitAccess | ExplicitAccess is invalid for PackageLevel public | The resources.packageAccessLevel has been set to ‘public’, so the resources.explicitAccess can not be ‘1’. If a ‘1’ is entered, this is a conflict as the file shows one setting for controlled and the other for public | Create Resource in Draft Opportunity, Update Resource in Draft Opportunity
+400 | Resources - ExplicitAccess | ExplicitAccess is invalid for PackageLevel private | The resources.packageAccessLevel has been set to 'private', so a corresponding '1' MUST appear in the resources.explicitAccess. If anything other then '1' is entered, this is a conflict as the file shows one setting for controlled and the other for public | Create Resource in Draft Opportunity, Update Resource in Draft Opportunity
+400 | Resources - packageAccessLevel | Invalid package access level, must be public or private | The packageAccessLevel must specify 'public' or 'private'. Any other character will return as error | Create Resource in Draft Opportunity, Update Resource in Draft Opportunity
 400|Resources - resourceName | Attachment must have a name | Attachment Name is a required field |	Create Resource, Create And Publish
 400|Resources - resourceName | File name should have valid file type specified | Attachment Name should have valid file extension |	Create Resource, Update Resource, Create And Publish
 400|Resources - resourceName | File name should contain only Alpha numeric characters with spaces, hyphen, underscore and () | Attachment Name can contain only  the allowed character set |	Create Resource, Update Resource, Create And Publish
@@ -6959,33 +7019,36 @@ A. Contract Opportunity users may use Public Location Services API document to v
 ## Change Log
 
 Date | Version | Description
-------|---------------|---------
+--------- | --------------- | ---------
 4/25/2019 | v0.1 | Base Version
 4/29/2019 | v0.2 | Added information for Get Authorized Party List <br> Added Add Authorized Party <br> Added Vendor Data JSON <br> POC Email changed to not required <br> Change log added <br> Secure Attachment Download Authorization section added <br> Alpha and Beta endpoint section added
 5/23/2019 | v0.3 | Update IVL Settings URL <br> Removed Get IVL by DUNS <br> Added EntityID to getIVL API parameter <br> Updated Get Authorized Party <br> Updated Add Authorized Party <br> Error Message Section Updated
-5/28/2019 | v0.4| Updated  Add Authorized Party<br> Get Authorized Party<br> Delete All Attachments API’s <br> Added Delete Notice API <br> Updated User Permissions <br> Create and Publish Contract Opportunity
-6/6/2019| v0.5| Deleted Download All Attachments (metadata) <br> Added Download All Attachments by Resource ID <br> Added Download All Attachments by Opportunity ID
-7/22/2019| v0.6 | Only title required to create draft opportunity <br> Solicitation number not required for create/update draft notices JSON <br> soliciation.deadlines.response required for types k and o to publish<br> Contract Award Date required only for Award to publish <br> Contract Award Number required only for a, j, and i to publish <br> POC email required except for Award to publish <br> Description not needed for Update Attachment JSON <br> Workflow Chart Added
+5/28/2019 | v0.4 | Updated  Add Authorized Party<br> Get Authorized Party<br> Delete All Attachments API’s <br> Added Delete Notice API <br> Updated User Permissions <br> Create and Publish Contract Opportunity
+6/6/2019 | v0.5 | Deleted Download All Attachments (metadata) <br> Added Download All Attachments by Resource ID <br> Added Download All Attachments by Opportunity ID
+7/22/2019 | v0.6 | Only title required to create draft opportunity <br> Solicitation number not required for create/update draft notices JSON <br> soliciation.deadlines.response required for types k and o to publish<br> Contract Award Date required only for Award to publish <br> Contract Award Number required only for a, j, and i to publish <br> POC email required except for Award to publish <br> Description not needed for Update Attachment JSON <br> Workflow Chart Added
 8/1/2019 | v0.71 | Added Future Implementation for IP Address Validation and Type of Connection <br> Delete Draft Opportunities Role changed so that CO and Admin can Delete <br> Reason not required for Publish Opportunity
 8/19/2019 | v0.72 | API Names Updated <br> Valid File Types Updated
-8/29/2019| v0.73| Error Codes Added
-8/29/2019| v0.74| Updated the missing description for explicitAccess field in Update Attachment Contract JSON
-10/9/2019 | v0.75| Get List of Opportunities API Parameter Changes (cancelled field removed/status field updated)
-10/22/2019 | v0.76| Create and Publish JSON field for Archive.Date and Response Date updated <br> Production Link Updated <br> API URLs updated
+8/29/2019 | v0.73 | Error Codes Added
+8/29/2019 | v0.74 | Updated the missing description for explicitAccess field in Update Attachment Contract JSON
+10/9/2019 | v0.75 | Get List of Opportunities API Parameter Changes (cancelled field removed/status field updated)
+10/22/2019 | v0.76 | Create and Publish JSON field for Archive.Date and Response Date updated <br> Production Link Updated <br> API URLs updated
 10/10/2019 | v0.8 | Updated the Set-Aside values with the latest codes
 10/25/2019 | v0.9 | Updated the field lengths
-10/31/2019| v0.91| Delete Vendor removed <br> Delete Resource in Draft API added <br> API Specifications Updated: Delete Notice, Getlist, Download Metadata for Attachment by Resource ID, and Download Metadata for Attachment by Opportunity ID <br> JSON Updated: Create and Update, Create and Publish, Revise Opportunity, Cancel Notice, Uncancel Notice, Archive, Unarchive, Create Attachment, Update Attachment, IVL Settings, and Delete Notice <br> Error Message Section Updated
-11/04/2019| v0.92 | Updated the field lengths for contact full name and awardee name fields for create Opportunity, Create and Publish Opportunity Contract JSONs. Updated the Error messages for these fields<br>Added Future Implementation for UEI SAM# Validation and Type of Connection. Task/Delivery Order number is updated to be a non required field for Justification submission
-11/12/2019| v1.0 | Initial Release Finalized
-12/04/2019| v1.01 | Minor updates to UEI(SAM) and UEI(DUNS) info
-1/3/2020| v1.02| Updates to UEI(SAM) and UEI(DUNS) info
-1/20/2020| v1.03| Updated JSON arrays and objects
-1/21/2020| v1.04| Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
-2/18/2020| v1.05| Added JSON information for UEI additions
-2/28/2020| v1.06| Updated the Valid file types to include Zip file.<br/> Added a new validation for resource name to specify the allowed character set
-3/13/2020|v1.07| Updated GET APIs to include both DUNS and UEISAM in v2 <br> Get list of Opp API Organization ID field updated to show FH ID dependending on department, subtier, and office
-4/10/2020|v1.08| Added Version Control Section <br> Added information for Get Opportunity Public API and Public Location Services API in FAQ section
-5/13/2020|v1.09| Updated v2 URL for Add Authorized and Get Authorized Party APIs
-5/26/2020|v1.1| Added returnFHOrgKey parameter in the request for Get list of Opportunities API so that the request provides internal FH Org key if required
-6/8/2020|v1.11|Added returnFHOrgKey parameter in the request for Get Opportunity by Opportunity ID API so that the request provides internal FH Org key if required
+10/31/2019 | v0.91| Delete Vendor removed <br> Delete Resource in Draft API added <br> API Specifications Updated: Delete Notice, Getlist, Download Metadata for Attachment by Resource ID, and Download Metadata for Attachment by Opportunity ID <br> JSON Updated: Create and Update, Create and Publish, Revise Opportunity, Cancel Notice, Uncancel Notice, Archive, Unarchive, Create Attachment, Update Attachment, IVL Settings, and Delete Notice <br> Error Message Section Updated
+11/04/2019 | v0.92 | Updated the field lengths for contact full name and awardee name fields for create Opportunity, Create and Publish Opportunity Contract JSONs. Updated the Error messages for these fields<br>Added Future Implementation for UEI SAM# Validation and Type of Connection. Task/Delivery Order number is updated to be a non required field for Justification submission
+11/12/2019 | v1.0 | Initial Release Finalized
+12/04/2019 | v1.01 | Minor updates to UEI(SAM) and UEI(DUNS) info
+1/3/2020 | v1.02 | Updates to UEI(SAM) and UEI(DUNS) info
+1/20/2020 | v1.03 | Updated JSON arrays and objects
+1/21/2020 | v1.04 | Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
+2/18/2020 | v1.05 | Added JSON information for UEI additions
+2/28/2020 | v1.06 | Updated the Valid file types to include Zip file.<br/> Added a new validation for resource name to specify the allowed character set
+3/13/2020 |v1.07 | Updated GET APIs to include both DUNS and UEISAM in v2 <br> Get list of Opp API Organization ID field updated to show FH ID dependending on department, subtier, and office
+4/10/2020 | v1.08 | Added Version Control Section <br> Added information for Get Opportunity Public API and Public Location Services API in FAQ section
+5/13/2020 | v1.09 | Updated v2 URL for Add Authorized and Get Authorized Party APIs
+5/26/2020 | v1.1 | Added returnFHOrgKey parameter in the request for Get list of Opportunities API so that the request provides internal FH Org key if required
+6/8/2020 | v1.11 | Added returnFHOrgKey parameter in the request for Get Opportunity by Opportunity ID API so that the request provides internal FH Org key if required
+7/3/2020 | v1.12 | Updated v2 endpoints for Get List and Get Opportunity by ID APIs to add FH codes and updated response samples
+7/17/2020 | v1.13 | Updated Create Attachment JSON and Update Attachment JSON and Error Message section 
+
 <p><small><a href="#">Back to top</a></small></p>

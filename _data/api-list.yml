@@ -28,6 +28,9 @@
 - title: Beta.SAM.Gov Get Opportunities Public API
   description: Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. 
   url: get-opportunities-public-api/
+- title: Beta.SAM.Gov OIG Extract Download API
+  description: OIG Extract Download API provides capability to download OIG reports based on user permissions 
+  url: oig-download-api/
 - title: Beta.SAM.Gov Public Location Services API
   description: This API provides location retrieval needed for opportunities
   url: location-public-api/
