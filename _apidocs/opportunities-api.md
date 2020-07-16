@@ -4727,7 +4727,7 @@ Zip file (.zip)| application/zip
 
 Name | Data Type | Field Length |Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------|-------
-attType | string | | 32 characters | link, file | No | Required only for file access level changes
+attType | string | 32 characters | link, file | No | Required only for file access level changes
 packageAccessLevel | string | 32 characters| public, <br/>private <br/>(default public) | No | Only applies to package type - file. If marked 'private', explicit access field must be marked as '1' as well
 resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes if attType=file | Name of file
 explicitAccess | string |1 character | 0, 1  | No - If packageAccessLevel is 'public' <br> Yes - If packageAccessLevel is 'private' | For Controlled Unclassified files, specify ‘1’ which will require users to request access to the file. Leaving blank or as a '0' will allow public access to the file. <br>- If packageAccessLevel is given as 'private' then explicitAccess must be '1' otherwise validation will fail <br> - If packageAccessLevel is 'public' explicitAccess must be '0' or null otherwise validation will fail
