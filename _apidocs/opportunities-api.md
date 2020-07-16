@@ -4658,7 +4658,7 @@ resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes if attType=file 
 fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
 link | string | 255 characters| | Yes if attType=link | Resource link  URL
 description | string |255 characters | | Yes if attType=link | Description of the link
-explicitAccess | string |1 character | 0, 1 <br/>(defaults to '0' if not provided) | No  | For Controlled Unclassified files, specify ‘1’ which will require users to request access to the file. Leaving blank or as a '0' will allow public access to the file. <br>- If packageAccessLevel is given as 'private' then explicitAccess must be '1' otherwise validation will fail <br> - If packageAccessLevel is 'public' explicitAccess must be '0' or null otherwise validation will fail
+explicitAccess | string |1 character | 0, 1  | No - If packageAccessLevel is 'public' <br> Yes - If packageAccessLevel is 'private' | For Controlled Unclassified files, specify ‘1’ which will require users to request access to the file. Leaving blank or as a '0' will allow public access to the file. <br>- If packageAccessLevel is given as 'private' then explicitAccess must be '1' otherwise validation will fail <br> - If packageAccessLevel is 'public' explicitAccess must be '0' or null otherwise validation will fail
 exportControlled | string |1 character | 0 | No  | *Captured for future JCP validation*<br> Export Controlled
 
 #### Valid File Types 
@@ -4725,14 +4725,14 @@ Zip file (.zip)| application/zip
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-attType | string | link, file | No | Required only for file access level changes
-packageAccessLevel | string | public,<br/>private <br/>(default public) | No | Only applies to package type - file. If marked 'private', explicit access field must be marked as '1' as well.
-resourceName | string | a-z A-Z 0-9 - _ () | No | Name of file or link
-explicitAccess | string  | 0, 1 | No | For Controlled Unclassified files, specify ‘1’ which will require users to request access to the file. Leaving blank or as a '0' will allow public access to the file. <br> - If packageAccessLevel is given as 'private' then explicitAccess must be '1' otherwise validation will fail <br> - If packageAccessLevel is 'public' explicitAccess must be '0' or null otherwise validation will fail
-sortOrderChanged | boolean  | true, false | No | Should be provided if file order is changed
-resourceIdBelow | string  |  | No | This should be Resource ID of the file/link that will display below the file/link that is moved
+Name | Data Type | Field Length |Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------|-------
+attType | string | | 32 characters | link, file | No | Required only for file access level changes
+packageAccessLevel | string | 32 characters| public, <br/>private <br/>(default public) | No | Only applies to package type - file. If marked 'private', explicit access field must be marked as '1' as well
+resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes if attType=file | Name of file
+explicitAccess | string |1 character | 0, 1  | No - If packageAccessLevel is 'public' <br> Yes - If packageAccessLevel is 'private' | For Controlled Unclassified files, specify ‘1’ which will require users to request access to the file. Leaving blank or as a '0' will allow public access to the file. <br>- If packageAccessLevel is given as 'private' then explicitAccess must be '1' otherwise validation will fail <br> - If packageAccessLevel is 'public' explicitAccess must be '0' or null otherwise validation will fail
+sortOrderChanged | boolean|  | true, false | No | Should be provided if file order is changed
+resourceIdBelow | string  |  | | No | This should be Resource ID of the file/link that will display below the file/link that is moved
 
 <p><small><a href="#">Back to top</a></small></p>
 
