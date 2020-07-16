@@ -4476,10 +4476,10 @@ resources.exportControlled | string |1 character | 0 | No |Export Controlled. * 
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description|Applicable Verions
------|-----------|----------------|----------|------------|-----
-requestType | string | update_publish_request | Yes | Type of request| v1 <br> v2
-reason | string |  | No | Reason for revision| v1 <br> v2
+Name | Data Type | Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------
+requestType | string | update_publish_request | Yes | Type of request
+reason | string |  | No | Reason for revision
 
 <p><small><a href="#">Back to top</a></small></p>
 
