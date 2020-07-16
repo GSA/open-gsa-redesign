@@ -6932,7 +6932,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Primary Contact Phone |	Primary Contact - phone character limit is 255 characters | Primary Contact phone limit is 255 | Publish
 400|Primary Contact Phone |	Primary Contact - fax character limit is 255 characters | Primary Contact fax limit is 255 | Publish
 400|Resources -  attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a link |	Create Resource, Create And Publish
-TBD | TBD | ExplicitAccess is invalid for PackageLevel public | The resources.packageAccessLevel has been set to 'public', so the theresources.exportControlled can not be '1'. If a '1' is entered, this is a conflict as the file shows one setting for controlled and the other for public. | TBD
+TBD | TBD | ExplicitAccess is invalid for PackageLevel public | The resources.packageAccessLevel has been set to 'public', so the theresources.exportControlled can not be '1'. If a '1' is entered, this is a conflict as the file shows one setting for controlled and the other for public | TBD
 TBD | TBD | ExplicitAccess is invalid for PackageLevel private | The resources.packageAccessLevel has been set to 'private', so a corresponding '1' MUST appear in theresources.exportControlled. If anything other then '1' is entered, this is a conflict as the file shows one setting for controlled and the other for public |TBD
 400|Resources - resourceName | Attachment must have a name | Attachment Name is a required field |	Create Resource, Create And Publish
 400|Resources - resourceName | File name should have valid file type specified | Attachment Name should have valid file extension |	Create Resource, Update Resource, Create And Publish
