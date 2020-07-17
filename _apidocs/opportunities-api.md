@@ -1980,7 +1980,7 @@ Examples
 </details>
 
 
-### Get List of Opportunities
+### Get List of Opportunities (v2 Coming Soon)
 
 
 ------- | -------
@@ -2426,7 +2426,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Get an Opportunity by Opportunity ID
+### Get an Opportunity by Opportunity ID (v2 Coming Soon)
 
 
 ------- | -------
@@ -7048,7 +7048,7 @@ Date | Version | Description
 5/13/2020 | v1.09 | Updated v2 URL for Add Authorized and Get Authorized Party APIs
 5/26/2020 | v1.1 | Added returnFHOrgKey parameter in the request for Get list of Opportunities API so that the request provides internal FH Org key if required
 6/8/2020 | v1.11 | Added returnFHOrgKey parameter in the request for Get Opportunity by Opportunity ID API so that the request provides internal FH Org key if required
-7/3/2020 | v1.12 | Updated v2 endpoints for Get List and Get Opportunity by ID APIs to add FH codes and updated response samples
+7/3/2020 | v1.12 | Updated v2 endpoints for Get List and Get Opportunity by ID APIs to add FH codes and updated response samples (Coming Soon)
 7/17/2020 | v1.13 | Updated Create Attachment JSON and Update Attachment JSON and Error Message section 
 
 <p><small><a href="#">Back to top</a></small></p>
