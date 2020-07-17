@@ -36,9 +36,7 @@ Three parameters are required: (1) `name`, (2) `q`, and (3) `api_key`.
 
 You will see an array of suggestions. Suggestions are derived from the searches performed on your website.
 
-Up to five suggestions related to your visitors' search term are returned and are updated in near real time.
-
-A given term/phrase must be searched 5 times in a 24 hour period to appear as a suggestion. Suggestions then remain for a 30-day period. Certain queries will not appear as suggestions for privacy and security purposes.
+Up to five suggestions related to your visitors' search term are returned and are updated in near real time, ranked by a popularity score.
 
 If you want a given term to always appear as a suggestion, please [contact our team](mailto:search@support.digitalgov.gov).
 
