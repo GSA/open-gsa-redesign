@@ -259,7 +259,7 @@ Australia/Sydney |(UTC+11:00) SYDNEY, AUSTRALIA
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Version Control (Coming Soon)
+## Version Control 
 
 Please use v2 for the following APIs to utilize ueiSAM in place of DUNS. Business rules for v2 endpoints can be found in the corresponding API sections.
 
@@ -268,8 +268,8 @@ Please use v2 for the following APIs to utilize ueiSAM in place of DUNS. Busines
 * Create and Publish Opportunity
 * Get Authorized Party
 * Get IVL
-* Get list of Opportunities
-* Get Opportunity by Opportunity ID
+* Get list of Opportunities (Coming Soon)
+* Get Opportunity by Opportunity ID (Coming Soon)
 * Get Related Opportunities
 
 **v2 Endpoints**
