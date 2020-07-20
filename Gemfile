@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
+gem 'jekyll', '>= 4.0.0'
 
 group :jekyll_plugins do
   gem 'jekyll_pages_api', git: 'https://github.com/18F/jekyll_pages_api'
-  gem 'jekyll-redirect-from'
+  gem 'jekyll-redirect-from', '>= 0.16.0'
   gem 'hawkins'
   gem 'jekyll-toc', git: 'https://github.com/jfredrickson5/jekyll-toc'
 end
