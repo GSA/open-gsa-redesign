@@ -1,5 +1,6 @@
 require "eslintrb"
 require "html-proofer"
+require "rake/testtask"
 
 desc "Serve the site with live reload for development"
 task :serve do
@@ -21,6 +22,13 @@ task :build do
 end
 
 namespace :test do
+  Rake::TestTask.new do |t|
+    t.name = "unit"
+    t.libs << "test"
+    t.test_files = FileList['test/test_*.rb']
+    t.verbose = true
+  end
+
   desc "Run ESLint"
   task :eslint do
     puts "Running ESLint..."
@@ -57,12 +65,12 @@ namespace :test do
   end
 
   desc "Run all tests"
-  task all: ["eslint", "htmlproofer:all"]
+  task all: ["unit", "eslint", "htmlproofer:all"]
 
   # Don't check external links for CI since it's too much overhead. External links
   # should be tested locally before pushing.
   desc "Run continuous integration tests"
-  task ci: ["eslint", "htmlproofer:internal"]
+  task ci: ["unit", "eslint", "htmlproofer:internal"]
 end
 
 task test: ["test:all"]
