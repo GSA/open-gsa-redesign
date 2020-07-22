@@ -72,8 +72,6 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-autoprefixer (1.0.2)
       autoprefixer-rails (~> 9.3)
-    jekyll-redirect-from (0.16.0)
-      jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-watch (2.2.1)
@@ -125,7 +123,6 @@ DEPENDENCIES
   html-proofer (~> 3.10.2)
   jekyll
   jekyll-autoprefixer
-  jekyll-redirect-from
   jekyll-toc!
   jekyll_pages_api!
   json-schema
