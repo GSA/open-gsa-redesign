@@ -20,7 +20,8 @@ Get Opportunities API can be accessed from Beta or Alpha via the following envir
 * Beta: <br>  https://api.sam.gov/prod/opportunities/v1/search
 * Alpha: <br> https://api-alpha.sam.gov/prodlike/opportunities/v1/search
 
-### Version 2 (Coming Soon)
+### Version Control - v2 (Coming Soon)
+
 * Beta: <br>  https://api.sam.gov/opportunities/v2/search
 * Alpha: <br> https://api-alpha.sam.gov/opportunities/v2/search
 

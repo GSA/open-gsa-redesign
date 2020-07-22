@@ -14,4 +14,6 @@ group :development, :test do
   gem 'html-proofer', '~> 3.10.2'
   gem 'eslintrb'
   gem 'jekyll-autoprefixer'
+  gem 'test-unit'
+  gem 'json-schema'
 end
