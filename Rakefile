@@ -27,6 +27,7 @@ namespace :test do
     t.libs << "test"
     t.test_files = FileList['test/test_*.rb']
     t.verbose = true
+    t.warning = false
   end
 
   desc "Run ESLint"
