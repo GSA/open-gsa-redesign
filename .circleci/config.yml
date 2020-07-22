@@ -27,7 +27,8 @@ jobs:
           command: |
             gem update --system
             gem install bundler
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
+            bundle config set path 'vendor/bundle'
+            bundle install --jobs=4 --retry=3
 
       - save_cache:
           paths:
