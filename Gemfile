@@ -15,4 +15,5 @@ group :development, :test do
   gem 'eslintrb'
   gem 'jekyll-autoprefixer'
   gem 'test-unit'
+  gem 'json-schema'
 end

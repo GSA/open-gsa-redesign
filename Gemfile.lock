@@ -78,6 +78,8 @@ GEM
       sass (~> 3.4)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
+    json-schema (2.8.1)
+      addressable (>= 2.4)
     kramdown (1.17.0)
     liquid (4.0.3)
     listen (3.2.1)
@@ -126,6 +128,7 @@ DEPENDENCIES
   jekyll-redirect-from
   jekyll-toc!
   jekyll_pages_api!
+  json-schema
   rake
   test-unit
 
