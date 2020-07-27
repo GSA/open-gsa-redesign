@@ -59,10 +59,6 @@ The Entity and Exclusion extracts are available using the following endpoints:
   * Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?api_key= < value ><br><br>
   
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
-       <ul>
-       <li style="color: #31708f;">Beta: Coming soon </li>
-       <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts-sensitive?fileName=SAM_SENSITIVE_DAILY_V2_20190523.ZIP </li>
-       </ul><br>
        The Sensitive API no longer accepts GET requests. Please refer to the "Sensitive Download API Process" to learn more about the process change.
   </div>  
      
@@ -310,6 +306,6 @@ Date | Version | Description
 02/28/2020 | v1.4 | * Updated Beta endpoint to meet new API standards.<br><br> * Removed "COMING SOON" information in Getting Started section. <br><br> * Added FOUO and Sensitive Sample Extract Files for different versions.
 04/20/2020 | v1.5 | Updated Public, FOUO and Sensitive Sample Extract Files that includes UEI information.
 06/10/2020 | v1.6 | * Added the endpoint, new process and an example for the Download API .
-
+07/27/2020 | v1.6 | * Removed sensitive endpoint from Getting Started.
 
 <p><small><a href="#">Back to top</a></small></p>
