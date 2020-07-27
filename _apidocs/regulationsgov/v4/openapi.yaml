@@ -1,6 +1,7 @@
-#------------------
+# ------------------
 # Disclaimer:
-# This OpenAPI specification document is work in progress. This document will continue 
+# ------------------
+# This Open API specification document is work in progress. This document will continue 
 # to be updated until our Public API v4 is finalized.
 #--------------------
 openapi: 3.0.0
