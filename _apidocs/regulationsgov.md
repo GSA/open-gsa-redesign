@@ -67,7 +67,7 @@ A docket is an organizational folder containing multiple documents. Dockets can 
 
 In order to obtain more details about a single docket, you can use the endpoint `/v4/dockets/{docketId}`. Each docket has its own set of attributes, which vary based on the Agency posting the docket. Another defining characteristic is if the docket is a Rulemaking or a Nonrulemaking Docket
 
-#### Posting a comment:
+#### Posting a comment
 
 User can post a comment using the endpoint `/v4/comments`. User can post the comment using one of the following submitter types:
 
