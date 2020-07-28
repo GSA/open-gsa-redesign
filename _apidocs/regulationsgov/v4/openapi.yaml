@@ -703,14 +703,6 @@ components:
           type: boolean
         lastPage:
           type: boolean
-    SelfLink:
-      description: Link to the detailed information of the document resource
-      type: object
-      properties:
-        self:
-          description: A string containing the link URL.
-          format: uri
-          type: string
     SingleJSONResourceFindOneDocumentResponse:
       description: A JSON:API document which represents a single document
       type: object
@@ -748,7 +740,9 @@ components:
         attributes: 
           $ref: "#/components/schemas/CommentDetail"
         relationships:
-          $ref: "#/components/schemas/Relationship"
+          type: array
+          items:
+            $ref: "#/components/schemas/Relationship"
         links: 
           type: array
           items:
@@ -771,98 +765,51 @@ components:
           type: string
         attributes: 
           $ref: "#/components/schemas/DocketDetail"
-        relationships:
-          $ref: "#/components/schemas/Relationship"
         links: 
           type: array
           items:
             $ref: '#/components/schemas/SelfLink'
     Relationship:
-      description: A single relationship description
+      description: A single relationship object
       type: object
       properties:
         links:
           $ref: "#/components/schemas/RelationshipLinks"
         data:
-          description: Member, whose value represents `resource linkage`.
-          oneOf:
-            - $ref: "#/components/schemas/RelationshipToOne"
-            - $ref: "#/components/schemas/RelationshipToMany"
-      anyOf:
-        - required:
-            - data
-        - required:
-            - links
+          $ref: "#/components/schemas/RelationshipToAttachment"
       additionalProperties: false
+    RelationshipToAttachment:
+      description: >-
+        An array of attachment objects as relationship resources.
+      type: array
+      items:
+        type: object
+        properties:
+          type:
+            type: string
+          id:
+            type: string
     RelationshipLinks:
       description: >-
-        A resource object **MAY** contain references to other resource objects
-        (`relationships`). Relationships may be to-one or to-many. Relationships
-        can be specified by including a member in a resource's links object.
+        Relationship links to other related resources (`attachments`)
       type: object
       properties:
         self:
-          description: >-
-            A `self` member, whose value is a URL for the relationship itself (a
-            `relationship URL`). This URL allows the client to directly
-            manipulate the relationship. For example, it would allow a client to
-            remove an `author` from an `article` without deleting the people
-            resource itself.
           $ref: "#/components/schemas/Link"
         related:
           $ref: "#/components/schemas/Link"
       additionalProperties: true
-    Link:
-      description: >-
-        A link **MUST** be represented as either: a string containing the link's
-        URL or a link object.
-      oneOf:
-        - description: A string containing the link URL.
-          type: string
-          format: uri-reference
-        - type: object
-          required:
-            - href
-          properties:
-            href:
-              description: A string containing the link's URL.
-              type: string
-              format: uri-reference
-    RelationshipToOne:
-      description: >-
-        References to other resource objects in a to-one (`relationship`).
-        Relationships can be specified by including a member in a resource's
-        links object.
-      anyOf:
-        - $ref: "#/components/schemas/Empty"
-        - $ref: "#/components/schemas/Linkage"
-    RelationshipToMany:
-      description: >-
-        An array of objects each containing `type` and `id` members for to-many
-        relationships.
-      type: array
-      items:
-        $ref: "#/components/schemas/Linkage"
-      uniqueItems: true
-    Empty:
-      $ref: "#/components/schemas/NullType"
-    NullType:
-      description: OAS doesn't allow the null type so use this.
+    SelfLink:
+      description: Link to self
       type: object
-      nullable: true
-      default: null
-    Linkage:
-      description: The `type` and `id` to non-empty members.
-      type: object
-      required:
-        - type
-        - id
       properties:
-        type:
-          type: string
-        id:
-          type: string
-      additionalProperties: false
+        self:
+          $ref: "#/components/schemas/Link"
+    Link:
+      description: A string containing the link URL.
+      type: string
+      format: uri-reference
+      uniqueItems: true
     JSONResourcePostRequestObject:
       description: A JSON:API document which represents a single document being posted
       type: object
@@ -1649,4 +1596,3 @@ components:
           type: string
         detail:
           type: string
-          
