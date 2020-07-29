@@ -53,13 +53,18 @@ The Entity Management extracts contain entities (businesses and government agenc
 
 ## Getting Started
 
-The Entity and Exclusion extracts are available using the following endpoints:
+The Public and FOUO Entity extracts and Exclusion extracts are available using the following endpoints:
  
   * Beta: https://api.sam.gov/data-services/v1/extracts?api_key= < value >
   * Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?api_key= < value ><br><br>
   
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
-       The Sensitive API no longer accepts GET requests. Please refer to the "Sensitive Download API Process" to learn more about the process change.
+       The Sensitive version of the extracts are no longer available via GET requests.
+       Please refer to the “Sensitive Download API Process” to learn more about the Sensitive extract retrieval process.
+       <ul>
+        <li style="color: #31708f;">Beta: Coming soon</li>
+        <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?fileName=< name of file ></li>
+        </ul><br>
   </div>  
      
 Generating a personal API Key:
@@ -199,22 +204,22 @@ Click to view the full details of the revised extract layout for the upcoming UE
 **Entity Management Sensitive Data Package Sample API calls:**<br>
 
 Daily File, April 20, 2019 (fileName):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileName=SAM_SENSITIVE_DAILY_V2_20190420.ZIP<br>
+https://api.sam.gov/data-services/v1/extracts?fileName=SAM_SENSITIVE_DAILY_V2_20190420.ZIP<br>
 
 Daily File, April 20, 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/20/2019<br>
+https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/20/2019<br>
 
 Daily File (UTF-8), April 20, 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/20/2019&charset=UTF8<br>
+https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/20/2019&charset=UTF8<br>
 
 Monthly File, April 2019 (fileName): <br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileName=SAM_SENSITIVE_MONTHLY_V2_20190407.ZIP<br>
+https://api.sam.gov/data-services/v1/extracts?fileName=SAM_SENSITIVE_MONTHLY_V2_20190407.ZIP<br>
 
 Monthly File, April 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2019<br>
+https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2019<br>
 
 Monthly File (UTF-8), April 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2019&charset=UTF8<br>
+https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2019&charset=UTF8<br>
 
 **Expected Result**<br>
 Click to view the full details of the data elements: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v5.6 Sensitive File V2 Layout.xlsx">Sensitive Extract Layout</a><br>
@@ -304,8 +309,8 @@ Date | Version | Description
 12/20/2019 | v 1.2 | * Added Sample FOUO and Sensitive File Names and Revised extract layouts for the upcoming UEI/EVS changes. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.
 02/25/2020 | v1.3 | * Updated Alpha endpoint to meet new API standards.<br><br> * Added Sample Extract Files.
 02/28/2020 | v1.4 | * Updated Beta endpoint to meet new API standards.<br><br> * Removed "COMING SOON" information in Getting Started section. <br><br> * Added FOUO and Sensitive Sample Extract Files for different versions.
-04/20/2020 | v1.5 | Updated Public, FOUO and Sensitive Sample Extract Files that includes UEI information.
-06/10/2020 | v1.6 | * Added the endpoint, new process and an example for the Download API .
-07/27/2020 | v1.7 | * Removed sensitive endpoint from Getting Started.
+04/20/2020 | v1.5 |  Updated Public, FOUO and Sensitive Sample Extract Files that includes UEI information.
+06/10/2020 | v1.6 |  Added the endpoint, new process and an example for the Download API .
+07/27/2020 | v1.7 |  Removed sensitive endpoint from Getting Started.
 
 <p><small><a href="#">Back to top</a></small></p>
