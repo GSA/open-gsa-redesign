@@ -1,0 +1,219 @@
+openapi: "3.0.0"
+info:
+  title: Api.Data.Gov Metrics API
+  version: "0.1"
+security:
+  - ApiKeyQueryAuth: []
+  - ApiKeyHeaderAuth: []
+servers:
+  - url: https://api.gsa.gov/operations/api-data-gov
+paths:
+  /v0/analytics/summary:
+    get:
+      summary: Summary analytics for api.data.gov
+      description: Get summary analytics for how many users and hits api.data.gov has seen over time.
+      responses:
+        "200":
+          description: Analytics Summary Data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AnalyticsSummary"
+components:
+  securitySchemes:
+    ApiKeyQueryAuth:
+      type: apiKey
+      in: query
+      name: api_key
+    ApiKeyHeaderAuth:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+  schemas:
+    AnalyticsSummary:
+      type: object
+      properties:
+        start_time:
+          type: string
+          format: date-time
+          description: Timestamp of when the analytics data begins.
+        end_time:
+          type: string
+          format: date-time
+          description: Timestamp of when the analytics data ends.
+        timezone:
+          type: string
+          description: The timezone of dates and times in the analytics data.
+        production_apis:
+          type: object
+          description: Analytics data for all production APIs.
+          properties:
+            organization_count:
+              type: integer
+              description: The number of unique organizations that have production APIs.
+            api_backend_count:
+              type: integer
+              description: The number of API backends configured for production APIs.
+            api_backend_url_match_count:
+              type: integer
+              description: The number of separate API URL prefixes configured for production APIs.
+            organizations:
+              type: array
+              items:
+                $ref: "#/components/schemas/AnalyticsSummaryOrganization"
+            all:
+              $ref: "#/components/schemas/AnalyticsSummaryMetrics"
+        cached_at:
+          type: string
+          format: date-time
+          description: Timestamp of when the analytics summary data was generated and cached.
+    AnalyticsSummaryMetrics:
+      type: object
+      properties:
+        active_api_keys:
+          type: object
+          description: Metrics on the number of API keys used.
+          properties:
+            total:
+              type: integer
+              description: The total number of unique API keys used ever.
+            monthly:
+              type: array
+              description: The number of unique API keys used each month.
+              items:
+                type: array
+                description: A 2 element array, with the first element being the month, and the second element being the count.
+                items:
+                  oneOf:
+                    - type: string
+                      description: The month in YYYY-MM format.
+                      pattern: '^\d{4}-\d{2}$'
+                      example: 2019-01
+                    - type: integer
+                      description: The number of API keys used this month.
+                      nullable: true
+                minItems: 2
+                maxItems: 2
+            recent:
+              type: object
+              description: Metrics on the number of API keys used in the last 30 days.
+              properties:
+                total:
+                  type: integer
+                  description: The total number of unique API keys used in the last 30 days.
+                daily:
+                  type: array
+                  description: The number of unique API keys used each day in the last 30 days.
+                  items:
+                    type: array
+                    description: A 2 element array, with the first element being the day, and the second element being the count.
+                    items:
+                      oneOf:
+                        - type: string
+                          format: date
+                          description: The day in YYYY-MM-DD format.
+                        - type: integer
+                          description: The number of API keys used this day.
+                          nullable: true
+                    minItems: 2
+                    maxItems: 2
+        hits:
+          type: object
+          description: Metrics on the number of API hits.
+          properties:
+            total:
+              type: integer
+            monthly:
+              type: array
+              items:
+                type: array
+                description: A 2 element array, with the first element being the month, and the second element being the count.
+                items:
+                  oneOf:
+                    - type: string
+                      description: The month in YYYY-MM format.
+                      pattern: '^\d{4}-\d{2}$'
+                      example: 2019-01
+                    - type: integer
+                      description: The number of API hits during this month.
+                      nullable: true
+                minItems: 2
+                maxItems: 2
+            recent:
+              type: object
+              properties:
+                daily:
+                  type: array
+                  items:
+                    type: array
+                    description: A 2 element array, with the first element being the day, and the second element being the count.
+                    items:
+                      oneOf:
+                        - type: string
+                          format: date
+                          description: The day in YYYY-MM-DD format.
+                        - type: integer
+                          description: The number of API hits during this day.
+                          nullable: true
+                    minItems: 2
+                    maxItems: 2
+                total:
+                  type: integer
+        average_response_times:
+          type: object
+          description: Metrics on the average response times of the APIs.
+          properties:
+            average:
+              type: integer
+              nullable: true
+            monthly:
+              type: array
+              items:
+                type: array
+                description: A 2 element array, with the first element being the month, and the second element being the average.
+                items:
+                  oneOf:
+                    - type: string
+                      description: The month in YYYY-MM format.
+                      pattern: '^\d{4}-\d{2}$'
+                      example: 2019-01
+                    - type: integer
+                      description: The average response time of API hits during this month.
+                      nullable: true
+                minItems: 2
+                maxItems: 2
+            recent:
+              type: object
+              properties:
+                average:
+                  type: integer
+                  nullable: true
+                daily:
+                  type: array
+                  items:
+                    type: array
+                    description: A 2 element array, with the first element being the day, and the second element being the average.
+                    items:
+                      oneOf:
+                        - type: string
+                          format: date
+                          description: The day in YYYY-MM-DD format.
+                        - type: integer
+                          description: The average response time of API hits during this day.
+                          nullable: true
+                    minItems: 2
+                    maxItems: 2
+    AnalyticsSummaryOrganization:
+      allOf:
+        - type: object
+          properties:
+            name:
+              type: string
+              description: The name of the organization.
+            api_backend_count:
+              type: integer
+              description: The number of API backends this organization has.
+            api_backend_url_match_count:
+              type: integer
+              description: The number of separate API URL prefixes this organization has.
+        - $ref: "#/components/schemas/AnalyticsSummaryMetrics"

@@ -1,0 +1,49 @@
+/v1/org/hierarchy:
+    get:
+      tags:
+        - Organizations
+      summary: 'PublicAPI - Get organization''s and hierarchy'
+      description: 'Public Api | Returns a org details & hierarchical tree'
+      operationId: getPublicOrgHierarchyUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: api_key
+          in: query
+          description: 'Enter the Public API Key.'
+          required: true
+          type: string
+        -
+          name: fhorgid
+          in: query
+          description: 'Enter FH Org ID to search.'
+          required: false
+          type: string
+        -
+          name: limit
+          in: query
+          description: "Enter number of records per page. Default value is 10 & Max allowed\nis 100."
+          required: false
+          type: string
+        -
+          name: offset
+          in: query
+          description: "Enter offset value. For example, to retrieve 11 to 20 records\noffset=11 and limit=10. Default value is 0"
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+  
+  

@@ -17,7 +17,7 @@ tags:
   - name: exclusions-extract-controller
     description: Operations pertaining to Exclusions API
 paths:
-  /entity-information/v1/download/exclusions:
+  /entity-information/v1/download-exclusions:
     get:
       tags:
         - exclusions-extract-controller
@@ -45,7 +45,7 @@ paths:
           description: Accessing the resource you were trying to reach is forbidden
         "404":
           description: The resource you were trying to reach is not found
-  /entity-information/v1/api/exclusions:
+  /entity-information/v1/exclusions:
     get:
       tags:
         - exclusions-api-controller
@@ -111,8 +111,8 @@ paths:
             type: string
         - name: ueiSAM
           in: query
-          description: Unique Entity Identifier SAMMI- 9 digit value (9725565, TF118652,
-            047795005, null) - Replacement for ueiDUNS
+          description: Unique Entity Identifier SAM- 12 character value (9725565TF10, TF1186521211,
+            47795005123QW, null) - Replacement for ueiDUNS
           required: false
           schema:
             type: string
@@ -288,8 +288,8 @@ paths:
             type: string
         - name: ueiSAM
           in: query
-          description: Unique Entity Identifier SAMMI- 9 digit value (9725565, TF118652,
-            047795005, null) - Replacement for ueiDUNS
+          description: Unique Entity Identifier SAMMI- 12 character value (9725565TF10, TF1186521211,
+            47795005123QW, null) - Replacement for ueiDUNS
           required: false
           schema:
             type: string
@@ -414,4 +414,4 @@ paths:
     "404":
       description: The resource you were trying to reach is not found
 servers:
-  - url: //api-alpha.sam.gov/prodlike
+  - url: //api-alpha.sam.gov/

@@ -1,9 +1,6 @@
 ---
 layout: home
 permalink: /
-redirect_from:
-  - /developers/
-  - /developer/
 hero-image: /assets/img/feature-background.jpg
 hero-text: Get started with GSA Open Technology
 banner-heading: Be Open First

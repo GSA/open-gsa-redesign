@@ -1,0 +1,33 @@
+  <footer class="usa-footer usa-background-dark">
+    <div class="usa-grid">
+      <nav>
+        <div class="usa-width-one-fourth">
+          <h3>Work</h3>
+          <ul class="usa-unstyled-list">
+            <li><a href="{{ '/about' | prepend: site.baseurl }}">About us</a></li>
+            <li><a href="https://github.com/GSA/">Our projects</a></li>
+          </ul>
+        </div>
+        <div class="usa-width-one-fourth">
+          <h3>Open Source</h3>
+          <ul class="usa-unstyled-list">
+            <li><a href="https://github.com/gsa/open-gsa-redesign">Edit this site</a></li>
+<!--            <li><a href="https://github.com/gsa/open-gsa-redesign/issues">Submit feedback</a></li> -->
+          </ul>
+        </div>
+        <div class="usa-width-one-fourth">
+          <!-- <h3>Contact Us</h3>
+          <ul class="usa-unstyled-list">
+            <li><a href="mailto:cto@gsa.gov">Email us</a></li> -->
+        </div>
+        <div class="usa-footer-logo usa-width-one-fourth">
+          {% if site.footer.text %}
+            <p><small>{{ site.footer.text }}</small></p>
+          {% endif %}
+          {% if site.footer.image %}
+            <p><img src="{{ site.footer.image | prepend: site.baseurl }}" alt="{{ site.footer.image-alt }}" class="logo"></p>
+          {% endif %}
+        </div>
+      </nav>
+    </div>
+  </footer>

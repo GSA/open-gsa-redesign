@@ -609,6 +609,166 @@ Note: By default API brings back only top 100 records. Example below shows only 
 </p>
 </details>
 
+## OpenAPI Specification File
+
+You can view the full details of this API in the OpenAPI Specification file available here:
+<a href="v1/psc.yml" download="psc">OpenAPI File</a>
+
+<details>
+<summary>Public PSC Details</summary>
+<p>
+<code><pre>
+/v1/api/publicpscdetails:
+    get:
+      tags:
+        - psc-controller
+      summary: 'API to get a list of product service codes for IAE'
+      operationId: getPublicPscDetailsUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        -
+          name: searchby
+          in: query
+          description: searchby
+          required: false
+          type: string
+        -
+          name: q
+          in: query
+          description: q
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        -
+          name: size
+          in: query
+          description: size
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        -
+          name: active
+          in: query
+          description: active
+          required: false
+          type: string
+          default: Y
+        -
+          name: advanceSearch
+          in: query
+          description: advanceSearch
+          required: false
+          type: string
+          default: N
+        -
+          name: startDateFrom
+          in: query
+          description: startDateFrom
+          required: false
+          type: string
+        -
+          name: startDateTo
+          in: query
+          description: startDateTo
+          required: false
+          type: string
+        -
+          name: endDateFrom
+          in: query
+          description: endDateFrom
+          required: false
+          type: string
+        -
+          name: endDateTo
+          in: query
+          description: endDateTo
+          required: false
+          type: string
+        -
+          name: updatedDateFrom
+          in: query
+          description: updatedDateFrom
+          required: false
+          type: string
+        -
+          name: updatedDateTo
+          in: query
+          description: updatedDateTo
+          required: false
+          type: string
+        -
+          name: asOfDate
+          in: query
+          description: asOfDate
+          required: false
+          type: string
+        -
+          name: level1Category
+          in: query
+          description: level1Category
+          required: false
+          type: string
+        -
+          name: level1CategoryName
+          in: query
+          description: level1CategoryName
+          required: false
+          type: string
+        -
+          name: level2Category
+          in: query
+          description: level2Category
+          required: false
+          type: string
+        -
+          name: level2CategoryName
+          in: query
+          description: level2CategoryName
+          required: false
+          type: string
+        -
+          name: offset
+          in: query
+          description: offset
+          required: false
+          type: integer
+          format: int32
+        -
+          name: limit
+          in: query
+          description: limit
+          required: false
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ProductServiceCodeWrapper'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+</pre></code>
+</p>
+</details>
+
+
 ## HTTP Response Codes
 
 200 - Success
@@ -640,13 +800,15 @@ User enters a updatedDateFrom greater than updatedDateTo|	"updatedDateFrom canno
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov)
+* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 ## Change Log
 
 Date | Version | Description
 ------|---------------|---------
-5/20 | v1.0 | Base Version
-8/6 | v1.1| Updated format
+5/20/2019 | v1.0 | Base Version
+8/6/2019 | v1.1| Updated format
+12/2/2019 | v1.2| Added OpenAPI Specification
+3/18/2020| v1.3| Location APIs Added
 
 <p><small><a href="#">Back to top</a></small></p>

@@ -8,7 +8,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.6-node-browsers
         environment:
-          BUNDLER_VERSION: 2.0.1
+          BUNDLER_VERSION: 2.1.4
 
     working_directory: ~/repo
 
@@ -27,13 +27,14 @@ jobs:
           command: |
             gem update --system
             gem install bundler
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
+            bundle config set path 'vendor/bundle'
+            bundle install --jobs=4 --retry=3
 
       - save_cache:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-        
+
       # run tests!
       - run:
           name: run tests

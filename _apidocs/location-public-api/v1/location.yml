@@ -1,0 +1,195 @@
+paths:
+  /locationservices/v1/cities:
+    get:
+      tags:
+      - location-public-endpoint-controller
+      summary: Public API to get a list of cities
+      operationId: getCitiesUsingGET_1
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: api_key
+        in: query
+        description: api_key
+        required: true
+        type: string
+      - name: cc
+        in: query
+        description: cc
+        required: false
+        type: string
+      - name: searchby
+        in: query
+        description: searchby
+        required: false
+        type: string
+      - name: searchvalue
+        in: query
+        description: searchvalue
+        required: false
+        type: string
+      - name: q
+        in: query
+        description: q
+        required: false
+        type: string
+      - name: active
+        in: query
+        description: active
+        required: false
+        type: string
+        default: Y
+      - name: citycode
+        in: query
+        description: citycode
+        required: false
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Resources«Resource«City»»"
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /locationservices/v1/countries:
+    get:
+      tags:
+      - location-public-endpoint-controller
+      summary: Public API to get a list of countries
+      operationId: getCountriesUsingGET_1
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: api_key
+        in: query
+        description: api_key
+        required: true
+        type: string
+      - name: searchby
+        in: query
+        description: searchby
+        required: false
+        type: string
+      - name: q
+        in: query
+        description: q
+        required: false
+        type: string
+      - name: active
+        in: query
+        description: active
+        required: false
+        type: string
+        default: Y
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Resources«Resource«Country»»"
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /locationservices/v1/states:
+    get:
+      tags:
+      - location-public-endpoint-controller
+      summary: Public API to get a list of states
+      operationId: getStatesUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: api_key
+        in: query
+        description: api_key
+        required: true
+        type: string
+      - name: cc
+        in: query
+        description: cc
+        required: false
+        type: string
+      - name: searchby
+        in: query
+        description: searchby
+        required: false
+        type: string
+      - name: q
+        in: query
+        description: q
+        required: false
+        type: array
+        items:
+          type: string
+        collectionFormat: multi
+      - name: active
+        in: query
+        description: active
+        required: false
+        type: string
+        default: Y
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Resources«Resource«State»»"
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /locationservices/v1/zip:
+    get:
+      tags:
+      - location-public-endpoint-controller
+      summary: Public API to validate Zip or Zip plus 4
+      operationId: validateZipUsingGET_1
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: zip
+        in: query
+        description: zip
+        required: true
+        type: string
+      - name: citycode
+        in: query
+        description: citycode
+        required: false
+        type: string
+      - name: api_key
+        in: query
+        description: api_key
+        required: true
+        type: string
+      - name: statecode
+        in: query
+        description: statecode
+        required: false
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/ZipValidity"
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
