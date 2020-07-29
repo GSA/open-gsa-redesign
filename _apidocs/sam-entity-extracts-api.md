@@ -63,7 +63,7 @@ The Public and FOUO Entity extracts and Exclusion extracts are available using t
        Please refer to the “Sensitive Download API Process” to learn more about the Sensitive extract retrieval process.
        <ul>
         <li style="color: #31708f;">Beta: Coming soon</li>
-        <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?fileName=< name of file ></li>
+        <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
         </ul><br>
   </div>  
      
