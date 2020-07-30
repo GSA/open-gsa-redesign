@@ -115,7 +115,7 @@ paths:
           content:
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/JSONResourceFindAllDocumentResponse'
+                $ref: '#/components/schemas/DocumentFindAllResponse'
         '400':
           description: Validation error
           content:
@@ -154,7 +154,7 @@ paths:
           content:
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/SingleJSONResourceFindOneDocumentResponse'            
+                $ref: '#/components/schemas/DocumentFindOneResponse'
         '400':
           description: Validation error
           content:
@@ -236,7 +236,7 @@ paths:
           content:
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/JSONResourceFindAllCommentResponse'
+                $ref: '#/components/schemas/CommentFindAllResponse'
         '400':
           description: Validation error
           content:
@@ -274,7 +274,7 @@ paths:
           content:
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/SingleJSONResourceFindOneCommentResponse'            
+                $ref: '#/components/schemas/CommentFindOneResponse'
         '400':
           description: Validation error
           content:
@@ -391,7 +391,7 @@ paths:
           content:
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/JSONResourceFindAllDocketResponse'
+                $ref: '#/components/schemas/DocketFindAllResponse'
         '400':
           description: Validation error
           content:
@@ -403,7 +403,7 @@ paths:
            content:
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/JSONError' 
+                $ref: '#/components/schemas/JSONError'
   /dockets/{docketId}:
     get:
       tags:
@@ -423,7 +423,7 @@ paths:
           content:
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/SingleJSONResourceFindOneDocketResponse'            
+                $ref: '#/components/schemas/DocketFindOneResponse'
         '400':
           description: Validation error
           content:
@@ -589,7 +589,7 @@ components:
         name: X-Api-Key  # name of the header, query parameter or cookie
   schemas:
     #JSON:API Specific documentation
-    JSONResourceFindAllDocumentResponse:
+    DocumentFindAllResponse:
       description: A JSON:API document with a list of resources
       properties:
         data:
@@ -597,10 +597,10 @@ components:
           type: array
           uniqueItems: true
           items:
-            $ref: '#/components/schemas/SingleJSONResourceFindAllDocumentResponse'
+            $ref: '#/components/schemas/DocumentFindAllItem'
         meta:
           $ref: '#/components/schemas/FindAllResponseMetadata'
-    JSONResourceFindAllCommentResponse:
+    CommentFindAllResponse:
       description: A JSON:API document with a list of resources
       properties:
         data:
@@ -608,10 +608,10 @@ components:
           type: array
           uniqueItems: true
           items:
-            $ref: '#/components/schemas/SingleJSONResourceFindAllCommentResponse'
+            $ref: '#/components/schemas/CommentFindAllItem'
         meta:
           $ref: '#/components/schemas/FindAllResponseMetadata'
-    JSONResourceFindAllDocketResponse:
+    DocketFindAllResponse:
       description: A JSON:API document with a list of resources
       properties:
         data:
@@ -619,10 +619,10 @@ components:
           type: array
           uniqueItems: true
           items:
-            $ref: '#/components/schemas/SingleJSONResourceFindAllDocketResponse'
+            $ref: '#/components/schemas/DocketFindAllItem'
         meta:
           $ref: '#/components/schemas/FindAllResponseMetadata'
-    SingleJSONResourceFindAllDocumentResponse:
+    DocumentFindAllItem:
       description: A JSON:API document which represents a single document in the list
       properties:
         id:
@@ -637,7 +637,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/SelfLink'
-    SingleJSONResourceFindAllCommentResponse:
+    CommentFindAllItem:
       description: A JSON:API document which represents a single document in the list
       properties:
         id:
@@ -652,7 +652,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/SelfLink'
-    SingleJSONResourceFindAllDocketResponse:
+    DocketFindAllItem:
       description: A JSON:API document which represents a single document in the list
       properties:
         id:
@@ -667,7 +667,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/SelfLink'
-    SingleJSONResourceFindAllAttachmentResponse:
+    AttachmentFindAllItem:
       description: A JSON:API document which represents a single document in the list
       properties:
         id:
@@ -703,7 +703,7 @@ components:
           type: boolean
         lastPage:
           type: boolean
-    SingleJSONResourceFindOneDocumentResponse:
+    DocumentFindOneResponse:
       description: A JSON:API document which represents a single document
       type: object
       properties:
@@ -726,8 +726,8 @@ components:
           type: array
           uniqueItems: true
           items:
-            $ref: '#/components/schemas/SingleJSONResourceFindAllAttachmentResponse'
-    SingleJSONResourceFindOneCommentResponse:
+            $ref: '#/components/schemas/AttachmentFindAllItem'
+    CommentFindOneResponse:
       description: A JSON:API document which represents a single document
       type: object
       properties:
@@ -752,8 +752,8 @@ components:
           type: array
           uniqueItems: true
           items:
-            $ref: '#/components/schemas/SingleJSONResourceFindAllAttachmentResponse'     
-    SingleJSONResourceFindOneDocketResponse:
+            $ref: '#/components/schemas/AttachmentFindAllItem'
+    DocketFindOneResponse:
       description: A JSON:API document which represents a single document
       type: object
       properties:
@@ -836,8 +836,8 @@ components:
         type:
           description: The JSON:API resource type `comments`
           type: string
-        attributes: 
-          $ref: "#/components/schemas/CommentResponse"
+        attributes:
+          $ref: "#/components/schemas/CommentPostResponse"
     JSONError:
       description: A JSON:API document
       type: object
@@ -1445,7 +1445,7 @@ components:
           properties: 
             submitterType: #submitter type should be set to Anonymous
               $ref: '#/components/schemas/SubmitterType'
-    CommentResponse: 
+    CommentPostResponse:
       allOf:
         - oneOf:     # Returns the created comment
           - $ref: '#/components/schemas/IndividualComment'
