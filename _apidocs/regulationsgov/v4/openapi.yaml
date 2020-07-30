@@ -490,7 +490,7 @@ paths:
             application/vnd.api+json:
               schema:
                 $ref: '#/components/schemas/JSONError'
-  /submissionkeys:
+  /submissionKeys:
     post:
       summary: Creates the unique submission key
       operationId: GetSubmitterKey
@@ -507,7 +507,7 @@ paths:
                   properties:
                     type:
                       type: string
-                      example: 'submissionkeys'
+                      example: 'submissionKeys'
       responses:
         '201':
           description: Created
@@ -524,7 +524,7 @@ paths:
                           description: the newly created submission key
                         type:
                           type: string
-                          example: 'submissionkeys'
+                          example: 'submissionKeys'
                         links:
                           $ref: '#/components/schemas/SelfLink'
         '403':
