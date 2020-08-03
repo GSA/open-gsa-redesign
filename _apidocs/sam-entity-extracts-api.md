@@ -290,8 +290,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages: <br>* User does not have permission to download the file. <br />* Missing required parameters, fileName OR fileType<br />* The requested extract file not found<br />* Invalid date format<br />* This http method is not allowed to download sensitive extracts. Only POST is supported for sensitive extracts.<br />*This http method is not allowed to download non-sensitive extracts. Only GET is supported for non-sensitive extracts.<br />*No api_key was supplied in request body. Please submit with a valid API key.<br />*No system account credentials are provided. Please provide credentials via basic authentication. |
-| 403 | API key is not correct or was not provided. |
+| 400 | Application Level Error Messages: <br>* User does not have permission to download the file. <br />* Missing required parameters, fileName OR fileType<br />* The requested extract file not found<br />* Invalid date format<br />* This http method is not allowed to download sensitive extracts. Only POST is supported for sensitive extracts.<br />* This http method is not allowed to download non-sensitive extracts. Only GET is supported for non-sensitive extracts.<br />* No api_key was supplied in request body. Please submit with a valid API key.<br />* No system account credentials are provided. Please provide credentials via basic authentication. |
 | 406 | Invalid Accept Header. |
 | 415 | Invalid Content-Type Header. |
 
