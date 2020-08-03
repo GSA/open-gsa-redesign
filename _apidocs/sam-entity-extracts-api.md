@@ -151,9 +151,9 @@ Examples: 04/19/2019; 11/15/2018; 03/2019
 
 * All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.
 * The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.
-* The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL goes below:
-  * "Accept" parameter must be passed in "Headers" with value, "application/zip".
-  * "Content-Type" parameter must be passed in "Headers" with value, "application/json".
+* The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL.
+* "Accept" parameter must be passed in "Headers" with value, "application/zip".
+* "Content-Type" parameter must be passed in "Headers" with value, "application/json".
 * All the optional search filters can be sent in the request URL or in the "Body".
 
 ### Explanation of the API using Examples
@@ -292,7 +292,8 @@ The API will return one of the following responses:
 | 200 | Successful. Data will be returned in JSON format. |
 | 400 | Application Level Error Messages: <br>* User does not have permission to download the file. <br />* Missing required parameters, fileName OR fileType<br />* The requested extract file not found<br />* Invalid date format<br />* This http method is not allowed to download sensitive extracts. Only POST is supported for sensitive extracts.<br />*This http method is not allowed to download non-sensitive extracts. Only GET is supported for non-sensitive extracts.<br />*No api_key was supplied in request body. Please submit with a valid API key.<br />*No system account credentials are provided. Please provide credentials via basic authentication. |
 | 403 | API key is not correct or was not provided. |
-
+| 406 | Invalid Accept Header. |
+| 415 | Invalid Content-Type Header. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
