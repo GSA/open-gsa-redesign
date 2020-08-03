@@ -151,7 +151,9 @@ Examples: 04/19/2019; 11/15/2018; 03/2019
 
 * All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.
 * The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.
-* The Sensitive api_key parameter with its value must be sent in the "Headers" as x-api-key" and not directly in the request URL.
+* The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL goes below:
+  * "Accept" parameter must be passed in "Headers" with value, "application/zip".
+  * "Content-Type" parameter must be passed in "Headers" with value, "application/json".
 * All the optional search filters can be sent in the request URL or in the "Body".
 
 ### Explanation of the API using Examples
@@ -312,5 +314,6 @@ Date | Version | Description
 04/20/2020 | v1.5 |  Updated Public, FOUO and Sensitive Sample Extract Files that includes UEI information.
 06/10/2020 | v1.6 |  Added the endpoint, new process and an example for the Download API .
 07/27/2020 | v1.7 |  Removed sensitive endpoint from Getting Started.
+07/31/2020 | v1.8 |  Updated Sensitive Download API Process.
 
 <p><small><a href="#">Back to top</a></small></p>

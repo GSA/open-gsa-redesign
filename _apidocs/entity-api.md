@@ -7213,7 +7213,11 @@ First Name</td>
 <ul>
 <li> All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.</li>
 <li> The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.</li>
-<li> The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL.</li>
+<li> The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL goes below:</li>
+<ul>
+<li>"Accept" parameter must be passed in "Headers" with value, "application/json".</li>
+<li>"Content-Type" parameter must be passed in "Headers" with value, "application/json".</li>
+</ul>
 <li> All the optional search filters can be sent in the request URL or in the "Body".</li> <br><br>
 </ul>
 </details>
@@ -17979,7 +17983,7 @@ Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sa
 <br>
 <ul>
 <li> Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM.png">Sample Authorization</a></li>
-<li>Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM.png">Sample Request Header</a></li>
+<li> Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM.png">Sample Request Header</a></li>
 </ul>
 </details>
 <details>
@@ -18039,6 +18043,6 @@ Disclaimer:
 | 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.|
 | 05/04/2020 | v1.7 | * Added V2 endpoint information.|
 | 06/10/2020 | v1.8 | * Added the endpoint, new process and an example for the Sensitive API .|
-
+| 07/31/2020 | v1.8 | * Updated Sensitive API Information.|
 
 <p><small><a href="#">Back to top</a></small></p>
