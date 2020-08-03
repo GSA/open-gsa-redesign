@@ -17983,7 +17983,7 @@ Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sa
 <br>
 <ul>
 <li> Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM.png">Sample Authorization</a></li>
-<li> Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM.png">Sample Request Header</a></li>
+<li> Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM.PNG">Sample Request Header</a></li>
 </ul>
 </details>
 <details>
