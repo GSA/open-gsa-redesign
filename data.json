@@ -27,7 +27,7 @@
 					"mediaType": "application/pdf",
 					"format": "pdf",
 					"title": "2015 GSA Common Baseline Implementation Plan and CIO Assignment Plan",
-					"description": "This is GSA's 2015 Common Baseline Implementation Plan and its CIO Assignment Plan per the requirements set forth in FITARA legislation. Updated April 2017. Last Major Change to version updated on March 4, 2019.",
+					"description": "This is GSA's 2015 Common Baseline Implementation Plan and its CIO Assignment Plan per the requirements set forth in FITARA legislation. Updated April 2017. Last Major Change to version updated on March 4, 2019. Last Major change to version update don 8/5/2020.",
 					"downloadURL": "https://inventory.data.gov/dataset/64c56cec-4b8f-44c7-ba69-090517f9f32e/resource/87e53999-aff1-4560-8bf0-42d9dc8e4a69/download/2015gsafitaraimplementationandcioassignmentplan.pdf"
 				}
 			],
@@ -3611,7 +3611,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2020-08-05",
+			"modified": "2020-08-06",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3633,9 +3633,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "JSON",
-					"title": "EDI 08/05/20",
-					"description": "EDI 08/05/20",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-08-05-20.json"
+					"title": "EDI 08/06/20",
+					"description": "EDI 08/06/20",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-08-06-20.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -3940,8 +3940,8 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
-			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\nOccupancy Right Code - Numerical Value associated with each Occupancy Right.\r\nOccupancy Right Description - Definitions for an Occupancy Right.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2020-08-04",
+			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.\r\n-Occupancy Right Code - Numerical Value associated with each Occupancy Right.\r\n-Occupancy Right Description - Definitions for an Occupancy Right.\r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
+			"modified": "2020-08-06",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
@@ -3971,7 +3971,7 @@
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
 					"title": "IOLP Buildings",
-					"description": "This file includes information specific to buildings, including<br/>\r\nlocation information, congressional districts, \r\nvacant rentable space, building square footage,\r\nand also whether the building is owned or leased.",
+					"description": "This file includes information specific to buildings, including<br/>\r\nlocation information, congressional districts, \r\nvacant rentable space, building square footage,\r\nwhether the building is owned or leased, occupancy\r\nright code, and occupancy right description.",
 					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/1dd0f445-640b-4adc-a68a-3b7c4e87ed05/download/iolp-buildings.xlsx"
 				}
 			],
@@ -8661,6 +8661,42 @@
 				}
 			],
 			"keyword": ["BOCA", "Contract Board", "GSA SmartPay", "Purchase Card", "Transactions", "february", "january", "march"],
+			"bureauCode": ["023:00"],
+			"programCode": ["023:010"],
+			"language": ["en-us"],
+			"theme": ["Card Services Program"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Purchase Card Transactions - CBCA Apr-June 2020, 3rd Qtr",
+			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"modified": "2020-08-05",
+			"accessLevel": "public",
+			"identifier": "GSA-2020-08-05-01",
+			"dataQuality": true,
+			"issued": "2014-10-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "N/A",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "General Services Administration"
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2016-01-06-1",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "James G Parks",
+				"hasEmail": "mailto:greg.parks@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "2020 - 3rd Qtr (Apr-June)_CBCA PC",
+					"description": "3rd Quarter CBCA Purchase Card Transactions",
+					"downloadURL": "https://inventory.data.gov/dataset/619a4a55-8b9d-427d-9e3b-6a4db1158fc6/resource/a394787c-589e-407f-8b62-1c46746f8d56/download/2020-3rd-qtr-apr-june-cbca-pc-transactions.xlsx"
+				}
+			],
+			"keyword": ["BOCA", "Contract Board", "GSA SmartPay", "Purchase Card", "Transactions", "april", "june", "may"],
 			"bureauCode": ["023:00"],
 			"programCode": ["023:010"],
 			"language": ["en-us"],
