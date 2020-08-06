@@ -442,7 +442,7 @@ paths:
             application/vnd.api+json:
               schema:
                 $ref: '#/components/schemas/JSONError'
-  /agencyCategories:
+  /agency-categories:
     get:
       summary: Returns a list of categories
       description: This endpoint returns list of categories
@@ -490,7 +490,7 @@ paths:
             application/vnd.api+json:
               schema:
                 $ref: '#/components/schemas/JSONError'
-  /submissionKeys:
+  /submission-keys:
     post:
       summary: Creates the unique submission key
       operationId: GetSubmitterKey
@@ -533,7 +533,7 @@ paths:
             application/vnd.api+json:
               schema:
                 $ref: '#/components/schemas/JSONError'      
-  /fileUploadUrls: # This method signature might change
+  /file-upload-urls: # This method signature might change
     post:
       summary: get a presigned url to upload file
       tags:
