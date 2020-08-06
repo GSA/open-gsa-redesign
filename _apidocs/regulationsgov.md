@@ -13,7 +13,8 @@ banner-heading: Regulations.gov API
        This project is in BETA
      </strong>
      <p class="usa-alert-text">
-       This API is under active development, and breaking changes may be made without warning.
+       This documentation provides a preview of the new API endpoints that will be made available soon. 
+       During the Beta period, breaking changes may be made without warning.
        Have feedback or questions? <a href="https://beta.regulations.gov/support">Please let us know</a>!
      </p>
    </div>
