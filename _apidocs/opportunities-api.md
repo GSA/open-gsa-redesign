@@ -72,6 +72,7 @@ Uncancel Canceled Opportunity | Yes | Yes | No
 Archive Opportunity | Yes | Yes | Yes
 Unarchive Archived Opportunity | Yes | Yes | No
 Create Resource in Draft Opportunity| Yes | Yes | Yes
+Create Resource in Draft Opportunity - Stream Attachment | Yes | Yes | Yes
 Update Resource in Draft Opportunity| Yes | Yes | Yes
 Delete Resource in Draft Opportunity| Yes | Yes | Yes
 Download Attachment as Original File Type | Yes | Yes | Yes
@@ -271,6 +272,7 @@ Please use v2 for the following APIs to utilize ueiSAM in place of DUNS. Busines
 * Get list of Opportunities (Coming Soon)
 * Get Opportunity by Opportunity ID (Coming Soon)
 * Get Related Opportunities
+* Create Resource in Draft Opportunity - Stream Attachments (Coming Soon)
 
 **v2 Endpoints**
 
@@ -950,7 +952,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-204 | string | Opportunity successfully published | returns Opportunity ID in response header
+201 | string | Opportunity successfully published | returns Opportunity ID in response header
 
 Examples
 
@@ -2864,6 +2866,38 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
+### Create Resource in Draft Opportunity - Stream Attachments
+
+------- | -------
+**Request Type** | POST
+**URL** | /{opportunityId}/streamAttachment
+**Summary** | Add attachment/link to a draft Opportunity
+**Consumes** | application/JSON
+**Produces** | JSON
+
+Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+Authorization | Header |  string | Yes | Valid and authorized user ID
+api_key | query | string | Yes | Valid System Account API Key
+opportunityId | query | string | Yes | Opportunity ID
+file | Object | Object | Yes | File to be uploaded
+metadata | body | JSON | Yes | [Refer Stream Attachment Metadata Contract JSON](#stream-attachment-metadata-contract-json)
+
+
+<p><small><a href="#">Back to top</a></small></p>
+
+Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+201 | string | Attachment successfully created | Resource ID returned
+
+
+<p><small><a href="#">Back to top</a></small></p>
+
+
 ### Update Resource in Draft Opportunity
 
 ------- | -------
@@ -4660,6 +4694,38 @@ link | string | 255 characters| | Yes if attType=link | Resource link  URL
 description | string |255 characters | | Yes if attType=link | Description of the link
 explicitAccess | string |1 character | 0, 1  | No - If packageAccessLevel is 'public' <br> Yes - If packageAccessLevel is 'private' | For Controlled Unclassified files, specify ‘1’ which will require users to request access to the file. Leaving blank or as a '0' will allow public access to the file. <br>- If packageAccessLevel is given as 'private' then explicitAccess must be '1' otherwise validation will fail <br> - If packageAccessLevel is 'public' explicitAccess must be '0' or null otherwise validation will fail
 exportControlled | string |1 character | 0 | No  | *Captured for future JCP validation*<br> Export Controlled
+
+### Stream Attachment Metadata Contract JSON
+
+<div id="stream-attachment-metadata-json" title="Click to view Stream Attachment Metadata Contract">
+<details>
+<summary>Stream_Attachment_Metadata_Contract_JSON </summary>
+<p>
+<code><pre>
+{
+  "attType": "file", 
+  "content": "",
+  "resourceName": "hello1.txt", 
+  "fileSize": 103000, 
+  "fileType": "text/plain", 
+  "description": "description", 
+  "packageAccessLevel": "public"
+ }
+</pre></code>
+</p>
+</details>
+<details>
+
+Name | Data Type | Field Length |Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------|-------
+attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file
+content | byte | 250MB| | Yes if attType=file | File content in base64 format
+packageAccessLevel | string | 32 characters| public, <br/>private <br/>(default public) | No | Only applies to package type - file. If marked 'private', explicit access field must be marked as '1' as well
+resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes if attType=file | Name of file
+fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
+description | string |255 characters | | Yes if attType=link | Description of the link
+fileSize |  | | | |  
+
 
 #### Valid File Types 
 
