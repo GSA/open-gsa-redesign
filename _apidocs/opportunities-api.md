@@ -2871,9 +2871,9 @@ Examples
 ------- | -------
 **Request Type** | POST
 **URL** | /{opportunityId}/streamAttachment
-**Summary** | Add attachment/link to a draft Opportunity
-**Consumes** | application/JSON
-**Produces** | JSON
+**Summary** | Add attachment to a draft Opportunity
+**Consumes** | JSON & MultipartFile
+**Produces** | Text
 
 Request Parameters
 
@@ -2882,8 +2882,8 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-file | Object | Object | Yes | File to be uploaded
-metadata | body | JSON | Yes | [Refer Stream Attachment Metadata Contract JSON](#stream-attachment-metadata-contract-json)
+file | Form/MultipartFile | object | Yes | File to be streamed to the opportunity
+metadata | Form/MultipartFile | JSON | Yes | JSON metadata regarding the attachment [Refer Stream Attachment Metadata Contract JSON](#stream-attachment-metadata-contract-json) 
 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -4714,17 +4714,17 @@ exportControlled | string |1 character | 0 | No  | *Captured for future JCP vali
 </pre></code>
 </p>
 </details>
-<details>
+
 
 Name | Data Type | Field Length |Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------|-------
-attType | string | 32 characters |link, file | Yes | Type of attachment, either link or file
-content | byte | 250MB| | Yes if attType=file | File content in base64 format
-packageAccessLevel | string | 32 characters| public, <br/>private <br/>(default public) | No | Only applies to package type - file. If marked 'private', explicit access field must be marked as '1' as well
-resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes if attType=file | Name of file
-fileType | string | 64 characters | | No  | Mime Type of the file. Only used for attType 'file'. [Refer Valid File Types](#valid-file-types)
-description | string |255 characters | | Yes if attType=link | Description of the link
-fileSize |  | | | |  
+attType | string | 32 characters | file | Yes | Type of attachment
+content | byte | 250MB| | No (Field must be provided) | File content is required but it will not be authenticated (may be changed in the future)
+packageAccessLevel | string | 32 characters| public, <br/>private <br/>(default public) | No | If marked 'private', explicit access field must be marked as '1' as well <br><br> 
+resourceName | string | 255 characters|a-z A-Z 0-9 - _ () | Yes | Name of file
+fileType | string | 64 characters | | No  | Mime Type of the file. [Refer Valid File Types](#valid-file-types)
+description | string |255 characters | | No (Field must be provided) | Description of the link
+fileSize | byte  | 250MB | | No (Field must be provided) | Size of the file being uploaded 
 
 
 #### Valid File Types 
@@ -7116,5 +7116,6 @@ Date | Version | Description
 6/8/2020 | v1.11 | Added returnFHOrgKey parameter in the request for Get Opportunity by Opportunity ID API so that the request provides internal FH Org key if required
 7/3/2020 | v1.12 | Updated v2 endpoints for Get List and Get Opportunity by ID APIs to add FH codes and updated response samples (Coming Soon)
 7/17/2020 | v1.13 | Updated Create Attachment JSON and Update Attachment JSON and Error Message section 
+8/13/2020 |v1.14 | Added Streaming Attachment API (coming soon) 
 
 <p><small><a href="#">Back to top</a></small></p>
