@@ -151,7 +151,9 @@ Examples: 04/19/2019; 11/15/2018; 03/2019
 
 * All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.
 * The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.
-* The Sensitive api_key parameter with its value must be sent in the "Headers" as x-api-key" and not directly in the request URL.
+* The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL.
+* "Accept" parameter must be passed in "Headers" with value, "application/zip".
+* "Content-Type" parameter must be passed in "Headers" with value, "application/json".
 * All the optional search filters can be sent in the request URL or in the "Body".
 
 ### Explanation of the API using Examples
@@ -288,9 +290,9 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages: <br>* User does not have permission to download the file. <br />* Missing required parameters, fileName OR fileType<br />* The requested extract file not found<br />* Invalid date format<br />* This http method is not allowed to download sensitive extracts. Only POST is supported for sensitive extracts.<br />*This http method is not allowed to download non-sensitive extracts. Only GET is supported for non-sensitive extracts.<br />*No api_key was supplied in request body. Please submit with a valid API key.<br />*No system account credentials are provided. Please provide credentials via basic authentication. |
-| 403 | API key is not correct or was not provided. |
-
+| 400 | Application Level Error Messages: <br>* User does not have permission to download the file. <br />* Missing required parameters, fileName OR fileType<br />* The requested extract file not found<br />* Invalid date format<br />* This http method is not allowed to download sensitive extracts. Only POST is supported for sensitive extracts.<br />* This http method is not allowed to download non-sensitive extracts. Only GET is supported for non-sensitive extracts.<br />* No api_key was supplied in request body. Please submit with a valid API key.<br />* No system account credentials are provided. Please provide credentials via basic authentication. |
+| 406 | Invalid Accept Header. |
+| 415 | Invalid Content-Type Header. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -311,6 +313,6 @@ Date | Version | Description
 02/28/2020 | v1.4 | * Updated Beta endpoint to meet new API standards.<br><br> * Removed "COMING SOON" information in Getting Started section. <br><br> * Added FOUO and Sensitive Sample Extract Files for different versions.
 04/20/2020 | v1.5 |  Updated Public, FOUO and Sensitive Sample Extract Files that includes UEI information.
 06/10/2020 | v1.6 |  Added the endpoint, new process and an example for the Download API .
-07/27/2020 | v1.7 |  Removed sensitive endpoint from Getting Started.
+08/17/2020 | v1.7 | * The Sensitive Alpha endpoint in "Getting Started" has been corrected and the Sample Extract Authorization screenshot in "Explanation of the API using Examples" has also been updated to reflect the correct endpoint. Sensitive data sample calls in the "Explanation of the API using Examples" have also been updated to show that the API key is no longer sent in the request URL.<br><br> * The "Sensitive Download API Process" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters). The Sample Request Header screenshot in the "Explanation of the API using Examples" has been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.
 
 <p><small><a href="#">Back to top</a></small></p>
