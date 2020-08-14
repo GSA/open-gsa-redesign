@@ -4720,7 +4720,7 @@ exportControlled | string |1 character | 0 | No  | *Captured for future JCP vali
 Name | Data Type | Field Length |Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------|-------
 attType | string | 32 characters | file | Yes | Type of attachment
-content | byte | 250MB| | No (Field must be provided) | File content is required but it will not be authenticated (may be changed in the future)
+content | byte | | | No (Field must be provided) | File content is required but it will not be authenticated (may be changed in the future)
 packageAccessLevel | string | 32 characters| public, <br/>private <br/>(default public) | No | If marked 'private', explicit access field must be marked as '1' as well
 resourceName | string | 255 characters | a-z A-Z 0-9 - _ () | Yes | Name of file
 fileType | string | 64 characters | | No  | Type of the file. [Refer Valid File Types](#valid-file-types)
