@@ -18043,6 +18043,6 @@ Disclaimer:
 | 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.|
 | 05/04/2020 | v1.7 | * Added V2 endpoint information.|
 | 06/10/2020 | v1.8 | * Added the endpoint, new process and an example for the Sensitive API .|
-| 07/31/2020 | v1.8 | * Updated Sensitive API Information.|
+| 08/17/2020 | v1.9 | * The "Sensitive API Process" subsection under the "Sensitive API Information" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters). The Sample Request Header screenshots under "Example 13" have been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.|
 
 <p><small><a href="#">Back to top</a></small></p>
