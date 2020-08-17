@@ -72,7 +72,7 @@ Uncancel Canceled Opportunity | Yes | Yes | No
 Archive Opportunity | Yes | Yes | Yes
 Unarchive Archived Opportunity | Yes | Yes | No
 Create Resource in Draft Opportunity| Yes | Yes | Yes
-Create Resource in Draft Opportunity - Stream Attachment | Yes | Yes | Yes
+Create Resource in Draft Opportunity - Stream Attachment (coming soon to BETA)| Yes | Yes | Yes
 Update Resource in Draft Opportunity| Yes | Yes | Yes
 Delete Resource in Draft Opportunity| Yes | Yes | Yes
 Download Attachment as Original File Type | Yes | Yes | Yes
@@ -269,10 +269,10 @@ Please use v2 for the following APIs to utilize ueiSAM in place of DUNS. Busines
 * Create and Publish Opportunity
 * Get Authorized Party
 * Get IVL
-* Get list of Opportunities (Coming Soon)
-* Get Opportunity by Opportunity ID (Coming Soon)
+* Get list of Opportunities (Coming Soon to BETA)
+* Get Opportunity by Opportunity ID (Coming Soon to BETA)
 * Get Related Opportunities
-* Create Resource in Draft Opportunity - Stream Attachments (Coming Soon)
+* Create Resource in Draft Opportunity - Stream Attachments (Coming Soon to BETA)
 
 **v2 Endpoints**
 
@@ -2866,7 +2866,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Create Resource in Draft Opportunity - Stream Attachments
+### Create Resource in Draft Opportunity - Stream Attachments (Coming Soon to BETA)
 
 ------- | -------
 **Request Type** | POST
@@ -4720,7 +4720,7 @@ exportControlled | string |1 character | 0 | No  | *Captured for future JCP vali
 Name | Data Type | Field Length |Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------|-------
 attType | string | 32 characters | file | Yes | Type of attachment
-content | byte | | | No (Field must be provided) | File content is required but it will not be authenticated (may be changed in the future)
+content | string | | | No (Field must be provided) | Leave parameter empty
 packageAccessLevel | string | 32 characters| public, <br/>private <br/>(default public) | No | If marked 'private', explicit access field must be marked as '1' as well
 resourceName | string | 255 characters | a-z A-Z 0-9 - _ () | Yes | Name of file
 fileType | string | 64 characters | | No  | Type of the file. [Refer Valid File Types](#valid-file-types)
