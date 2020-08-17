@@ -7118,5 +7118,6 @@ Date | Version | Description
 7/3/2020 | v1.12 | Updated v2 endpoints for Get List and Get Opportunity by ID APIs to add FH codes and updated response samples (Coming Soon)
 7/17/2020 | v1.13 | Updated Create Attachment JSON and Update Attachment JSON and Error Message section 
 8/13/2020 |v1.14 | Added Streaming Attachment API (coming soon) 
+8/17/2020 | v1.15 | Get APIs and Streaming Attachment API deployed to Alpha
 
 <p><small><a href="#">Back to top</a></small></p>
