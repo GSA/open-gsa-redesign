@@ -7213,7 +7213,9 @@ First Name</td>
 <ul>
 <li> All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.</li>
 <li> The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.</li>
-<li> The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL.</li>
+<li> The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL</li>
+<li> "Accept" parameter must be passed in "Headers" with value, "application/json".</li>
+<li> "Content-Type" parameter must be passed in "Headers" with value, "application/json".</li>
 <li> All the optional search filters can be sent in the request URL or in the "Body".</li> <br><br>
 </ul>
 </details>
@@ -12003,6 +12005,8 @@ The API will return one of the following responses:
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON/CSV format. |
 | 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication |
+| 406 | Invalid Accept Header. |
+| 415 | Invalid Content-Type Header. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -17979,7 +17983,7 @@ Click to view CSV Response for one record <a href="v1/entity-sample-csv.xlsx">Sa
 <br>
 <ul>
 <li> Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM.png">Sample Authorization</a></li>
-<li>Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM.png">Sample Request Header</a></li>
+<li> Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM.PNG">Sample Request Header</a></li>
 </ul>
 </details>
 <details>
@@ -17996,7 +18000,7 @@ Requests for Larger Set of Data may take longer time to process.
 https://api.sam.gov/entity-information/v2/download-entities?token=< value >
 <ul>
 <li>Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_Download.png">Sample Authorization</a></li>
-<li>Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download.png">Sample Request Header</a></li>
+<li>Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download.PNG">Sample Request Header</a></li>
 </ul></li>
 
 <li>Once the file is downloaded, save it by renaming it in this format: < filename >.json.gz. </li>
@@ -18039,6 +18043,6 @@ Disclaimer:
 | 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.|
 | 05/04/2020 | v1.7 | * Added V2 endpoint information.|
 | 06/10/2020 | v1.8 | * Added the endpoint, new process and an example for the Sensitive API .|
-
+| 08/17/2020 | v1.9 | * The "Sensitive API Process" subsection under the "Sensitive API Information" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshots under "Example 13" have been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.|
 
 <p><small><a href="#">Back to top</a></small></p>
