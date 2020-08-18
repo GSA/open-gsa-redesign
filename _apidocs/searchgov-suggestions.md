@@ -24,7 +24,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ## API Key
 
-You can find your access key on the API Access Key page of the Search.gov Admin Center. Please get your key from [api.data.gov](https://api.data.gov/signup/). The key will be specific to you. The results API key provided by Search.gov will not work for this API.
+Please get your key from [api.data.gov](https://api.data.gov/signup/). The key will be specific to you. The results API key provided by Search.gov will not work for this API.
  
 ## Parameters
   

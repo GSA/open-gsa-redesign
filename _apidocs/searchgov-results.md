@@ -27,7 +27,7 @@ You must use https.
 
 ## API Key
 
-You can find your access key on the API Access Key page of the Search.gov Admin Center. Please get your key from [api.data.gov](https://api.data.gov/signup/). The key will be specific to you. The results API key provided by Search.gov will not work for this API.
+Please get your key from [api.data.gov](https://api.data.gov/signup/). The key will be specific to you. The results API key provided by Search.gov will not work for this API.
 
 <p><small><a href="#">Back to top</a></small></p>
 
