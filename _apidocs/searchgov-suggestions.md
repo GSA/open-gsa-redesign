@@ -21,6 +21,10 @@ You must use https and send a new call for every keystroke. Whenever a user sele
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="v1/openapi.yml">Open API specification file for the Search.gov Type-Ahead Suggestions API</a>
+
+## API Key
+
+You can find your access key on the API Access Key page of the Search.gov Admin Center. Please get your key from [api.data.gov](https://api.data.gov/signup/). The key will be specific to you. The results API key provided by Search.gov will not work for this API.
  
 ## Parameters
   
