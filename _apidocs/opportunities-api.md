@@ -72,6 +72,7 @@ Uncancel Canceled Opportunity | Yes | Yes | No
 Archive Opportunity | Yes | Yes | Yes
 Unarchive Archived Opportunity | Yes | Yes | No
 Create Resource in Draft Opportunity| Yes | Yes | Yes
+Create Resource in Draft Opportunity - Stream Attachment (coming soon to BETA)| Yes | Yes | Yes
 Update Resource in Draft Opportunity| Yes | Yes | Yes
 Delete Resource in Draft Opportunity| Yes | Yes | Yes
 Download Attachment as Original File Type | Yes | Yes | Yes
@@ -268,9 +269,10 @@ Please use v2 for the following APIs to utilize ueiSAM in place of DUNS. Busines
 * Create and Publish Opportunity
 * Get Authorized Party
 * Get IVL
-* Get list of Opportunities (Coming Soon)
-* Get Opportunity by Opportunity ID (Coming Soon)
+* Get list of Opportunities (Coming Soon to BETA)
+* Get Opportunity by Opportunity ID (Coming Soon to BETA)
 * Get Related Opportunities
+* Create Resource in Draft Opportunity - Stream Attachments (Coming Soon to BETA)
 
 **v2 Endpoints**
 
@@ -950,7 +952,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-204 | string | Opportunity successfully published | returns Opportunity ID in response header
+201 | string | Opportunity successfully published | returns Opportunity ID in response header
 
 Examples
 
@@ -2864,6 +2866,38 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
+### Create Resource in Draft Opportunity - Stream Attachments (Coming Soon to BETA)
+
+------- | -------
+**Request Type** | POST
+**URL** | /{opportunityId}/streamAttachment
+**Summary** | Add attachment to a draft Opportunity
+**Consumes** | JSON & MultipartFile
+**Produces** | Text
+
+Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+Authorization | Header |  string | Yes | Valid and authorized user ID
+api_key | query | string | Yes | Valid System Account API Key
+opportunityId | query | string | Yes | Opportunity ID
+file | Form/MultipartFile | object | Yes | File to be streamed to the opportunity
+metadata | Form/MultipartFile | JSON | Yes | JSON metadata regarding the attachment <br> [Refer Stream Attachment Metadata Contract JSON](#stream-attachment-metadata-contract-json) 
+
+
+<p><small><a href="#">Back to top</a></small></p>
+
+Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+201 | string | Attachment successfully created | Resource ID returned
+
+
+<p><small><a href="#">Back to top</a></small></p>
+
+
 ### Update Resource in Draft Opportunity
 
 ------- | -------
@@ -4660,6 +4694,39 @@ link | string | 255 characters| | Yes if attType=link | Resource link  URL
 description | string |255 characters | | Yes if attType=link | Description of the link
 explicitAccess | string |1 character | 0, 1  | No - If packageAccessLevel is 'public' <br> Yes - If packageAccessLevel is 'private' | For Controlled Unclassified files, specify ‘1’ which will require users to request access to the file. Leaving blank or as a '0' will allow public access to the file. <br>- If packageAccessLevel is given as 'private' then explicitAccess must be '1' otherwise validation will fail <br> - If packageAccessLevel is 'public' explicitAccess must be '0' or null otherwise validation will fail
 exportControlled | string |1 character | 0 | No  | *Captured for future JCP validation*<br> Export Controlled
+
+### Stream Attachment Metadata Contract JSON
+
+<div id="stream-attachment-metadata-json" title="Click to view Stream Attachment Metadata Contract">
+<details>
+<summary>Stream_Attachment_Metadata_Contract_JSON </summary>
+<p>
+<code><pre>
+{
+  "attType": "file", 
+  "content": "",
+  "resourceName": "hello1.txt", 
+  "fileSize": 103000, 
+  "fileType": "text/plain", 
+  "description": "description", 
+  "packageAccessLevel": "public"
+ }
+</pre></code>
+</p>
+</details>
+</div>
+
+
+Name | Data Type | Field Length |Allowed Values | Required | Description
+-----|-----------|----------------|----------|------------|-------
+attType | string | 32 characters | file | Yes | Type of attachment
+content | string | | | No (Field must be provided) | Leave parameter empty
+packageAccessLevel | string | 32 characters| public, <br/>private <br/>(default public) | No | If marked 'private', explicit access field must be marked as '1' as well
+resourceName | string | 255 characters | a-z A-Z 0-9 - _ () | Yes | Name of file
+fileType | string | 64 characters | | No  | Type of the file. [Refer Valid File Types](#valid-file-types)
+description | string |255 characters | | No (Field must be provided) | Description of the link
+fileSize | byte  | 250MB | | No (Field must be provided) | Size of the file being uploaded 
+
 
 #### Valid File Types 
 
@@ -7050,5 +7117,7 @@ Date | Version | Description
 6/8/2020 | v1.11 | Added returnFHOrgKey parameter in the request for Get Opportunity by Opportunity ID API so that the request provides internal FH Org key if required
 7/3/2020 | v1.12 | Updated v2 endpoints for Get List and Get Opportunity by ID APIs to add FH codes and updated response samples (Coming Soon)
 7/17/2020 | v1.13 | Updated Create Attachment JSON and Update Attachment JSON and Error Message section 
+8/13/2020 |v1.14 | Added Streaming Attachment API (coming soon) 
+8/17/2020 | v1.15 | Get APIs and Streaming Attachment API deployed to Alpha
 
 <p><small><a href="#">Back to top</a></small></p>
