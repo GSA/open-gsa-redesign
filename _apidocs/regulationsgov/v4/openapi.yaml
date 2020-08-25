@@ -939,18 +939,6 @@ components:
         title:
           type: string
           description: The formal title of the attachment
-    DisplayProperty:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the property
-        label: 
-          type: string
-          description: The label of the property
-        tooltip: 
-          type: string
-          description: The tooltip of the property 
     #Search components     
     Document:
       type: object
