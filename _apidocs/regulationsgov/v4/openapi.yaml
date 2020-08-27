@@ -248,7 +248,43 @@ paths:
            content:
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/JSONError' 
+                $ref: '#/components/schemas/JSONError'
+    post:
+      summary: Creates a new comment.
+      tags:
+        - comments
+      requestBody:
+        description: A JSON object containing comment information
+        required: true
+        content:
+          application/vnd.api+json:
+            schema:
+                $ref: '#/components/schemas/JSONResourcePostRequestObject'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONResourcePostResponseObject'
+        '400':
+          description: Validation error
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '403':
+           description: API key is missing or invalid
+           content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '404':
+          description: Document not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
   /comments/{documentId}:
     get:
       summary: Get detailed information for specified documentId
@@ -293,49 +329,6 @@ paths:
             application/vnd.api+json:
               schema:
                 $ref: '#/components/schemas/JSONError'
-    post:
-      summary: Creates a new comment.
-      tags:
-        - comments
-      parameters:
-        - name: documentId
-          in: path
-          description: ID of document the comment is being submitted to
-          required: true
-          schema:
-            type: string
-      requestBody:
-        description: A JSON object containing comment information
-        required: true
-        content:
-          application/vnd.api+json:
-            schema:
-                $ref: '#/components/schemas/JSONResourcePostRequestObject'
-      responses:
-        '201':
-          description: Created
-          content:
-            application/vnd.api+json:
-              schema:
-                $ref: '#/components/schemas/JSONResourcePostResponseObject'
-        '400':
-          description: Validation error
-          content:
-            application/vnd.api+json:
-              schema:
-                $ref: '#/components/schemas/JSONError'
-        '403':
-           description: API key is missing or invalid
-           content:
-            application/vnd.api+json:
-              schema:
-                $ref: '#/components/schemas/JSONError'
-        '404':
-          description: Document not found
-          content:
-            application/vnd.api+json:
-              schema:
-                $ref: '#/components/schemas/JSONError'        
   /dockets:
     get:
       summary: List of dockets
@@ -524,7 +517,7 @@ paths:
                           description: the newly created submission key
                         type:
                           type: string
-                          example: 'submissionKeys'
+                          example: 'submission-keys'
                         links:
                           $ref: '#/components/schemas/SelfLink'
         '403':
@@ -533,31 +526,37 @@ paths:
             application/vnd.api+json:
               schema:
                 $ref: '#/components/schemas/JSONError'      
-  /file-upload-urls: # This method signature might change
+  /file-upload-urls:
     post:
-      summary: get a presigned url to upload file
+      summary: Creates a presigned url to upload file
       tags:
         - comment submission utilities
       description: 'Returns a pre-signed URL to upload a file to the S3 bucket'
-      parameters:
-        - name: filename
-          in: query
-          description: The name of the file
-          required: true
-          schema:
-            type: string
-        - name: submissionKey
-          in: query
-          description: the submission key
-          required: true
-          schema:
-            type: string
-        - name: contentType
-          in: query
-          description: the content type
-          required: true
-          schema:
-            type: string
+      requestBody:
+        required: true
+        content: 
+          application/vnd.api+json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      example: 'file-upload-urls'
+                    attributes:
+                      type: object
+                      properties: 
+                        submissionKey:
+                          type: string
+                          description: submission key for the submission
+                        fileName:
+                          type: string
+                          description: name of the file to upload
+                        contentType:
+                          type: string
+                          description: content type of the file
       responses:
         '201':
           description: Created
@@ -566,9 +565,28 @@ paths:
               schema:
                 type: object
                 properties:
-                  presigned_url:
-                    type: string
-                    format: uri
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        format: uri
+                        description: The pre-signed url to upload the file
+                      type:
+                        type: string
+                        example: 'file-upload-urls'
+                      attributes:
+                        type: object
+                        properties: 
+                          submissionKey:
+                            type: string
+                            description: submission key for the submission
+                          fileName:
+                            type: string
+                            description: name of the file to upload
+                          contentType:
+                            type: string
+                            description: content type of the file
         '400':
           description: Validation error
           content:
@@ -921,18 +939,6 @@ components:
         title:
           type: string
           description: The formal title of the attachment
-    DisplayProperty:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the property
-        label: 
-          type: string
-          description: The label of the property
-        tooltip: 
-          type: string
-          description: The tooltip of the property 
     #Search components     
     Document:
       type: object
@@ -1040,7 +1046,7 @@ components:
           type: string
           nullable: true
           description: The city associated with the submitter's address.
-        commentCategory:
+        category:
           type: string
           nullable: true
           description: An agency-specific category allowing agencies to group comments according to their type.
@@ -1048,11 +1054,6 @@ components:
           type: string
           nullable: true
           description: The country associated with the submitter's address.
-        displayProperties:
-          type: array
-          description: list of display properties
-          items:
-            $ref: '#/components/schemas/DisplayProperty'
         docAbstract:
           type: string
           description: The detailed description of the document.
@@ -1137,6 +1138,10 @@ components:
           type: string
           nullable: true
           description: If the document is withdrawn, this field will state the reason.
+        stateProvinceRegion:
+          type: string
+          nullable: true
+          description: The submitter's state,province or region.
         subtype:
           type: string
           nullable: true
@@ -1273,11 +1278,6 @@ components:
           type: string
           nullable: true
           description: Agency specific docket category providing regulatory action details, status, and the agency program and or office.
-        displayProperties:
-          type: array
-          description: list of display properties
-          items:
-            $ref: '#/components/schemas/DisplayProperty'
         dkAbstract:
           type: string
           description: The detailed description of the docket.
@@ -1328,8 +1328,6 @@ components:
           type: string
           nullable: true
           description: The agency specific program associated with the docket.
-        regulatoryActionInfo: 
-            $ref: '#/components/schemas/RegulatoryActionInfo'
         rin:
           type: string
           nullable: true
@@ -1458,129 +1456,7 @@ components:
               description: The number of items included in the submission          
             receiveDate: 
               type: string
-              description: The date comment was received. 
-    #Unified Agenda Related components         
-    RegulatoryActionInfo:
-      type: object
-      properties:
-        rin:
-          type: string
-        cfr:
-          type: array
-          items:
-            type: string
-        contact:
-          type: array
-          items:
-            $ref: '#/components/schemas/Contact'
-        abstractText:
-          type: string
-        energyEffected:
-          type: string
-        execOrder1377Designation:
-          type: string
-        federalism:
-          type: string
-        govtLevel:
-          type: array
-          items:
-            type: string
-        internationalInterest:
-          type: string
-        legalAuthority:
-          type: array
-          items:
-            type: string
-        legalDeadline:
-          type: array
-          items:
-            $ref: '#/components/schemas/LegalDeadline'
-        major:
-          type: string
-        priorityCategory:
-          type: string
-        publicationPeriod:
-          type: string
-        relatedRin:
-          type: array
-          items:
-            type: string
-        regulatoryPlan:
-          type: string
-        rfaRequired:
-          type: string
-        ruleStage:
-          type: string
-        ruleTitle:
-          type: string
-        smallEntity:
-          type: array
-          items:
-            type: string
-        timetable:
-          type: array
-          items:
-            $ref: '#/components/schemas/TimeTable'
-        unfundedMandate:
-          type: string
-    MailingAddress:
-      type: object
-      properties:
-        streetAddress:
-          type: string
-        city:
-          type: string
-        state: 
-          type: string
-        zip: 
-          type: string
-    Contact:
-      type: object
-      properties:
-        firstName:
-          type: string
-        lastName: 
-          type: string
-        middleName:
-          type: string
-        prefix:
-          type: string
-        suffix: 
-          type: string
-        title: 
-          type: string
-        phone: 
-          type: string
-        phoneExt:
-          type: string
-        tddPhone:
-          type: string
-        fax:
-          type: string
-        email:
-          type: string
-        mailingAddress:
-          $ref: '#/components/schemas/MailingAddress'
-    LegalDeadline:
-      type: object
-      properties:
-        action:
-          type: string
-        source: 
-          type: string
-        description:
-          type: string
-        date: 
-          type: string
-    TimeTable:
-      type: object
-      properties:
-        action:
-          type: string
-        date: 
-          type: string
-        frCitation:
-          type: string
+              description: The date comment was received.
     Error:
       type: object
       properties:
