@@ -62,7 +62,7 @@ The Public and FOUO Entity extracts and Exclusion extracts are available using t
        The Sensitive version of the extracts are no longer available via GET requests.
        Please refer to the “Sensitive Download API Process” to learn more about the Sensitive extract retrieval process.
        <ul>
-        <li style="color: #31708f;">Beta: Coming soon</li>
+        <li style="color: #31708f;">Beta: https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
         <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
         </ul><br>
   </div>  
@@ -314,5 +314,6 @@ Date | Version | Description
 04/20/2020 | v1.5 |  Updated Public, FOUO and Sensitive Sample Extract Files that includes UEI information.
 06/10/2020 | v1.6 |  Added the endpoint, new process and an example for the Download API .
 08/17/2020 | v1.7 | * The Sensitive Alpha endpoint in "Getting Started" has been corrected and the Sample Extract Authorization screenshot in "Explanation of the API using Examples" has also been updated to reflect the correct endpoint.<br><br> * Sensitive data sample calls in the "Explanation of the API using Examples" have also been updated to show that the API key is no longer sent in the request URL.<br><br> * The "Sensitive Download API Process" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshot in the "Explanation of the API using Examples" has been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.
+08/31/2020 | v1.8 | * Updated the Getting Started section to include the Sensitive Beta endpoint.
 
 <p><small><a href="#">Back to top</a></small></p>
