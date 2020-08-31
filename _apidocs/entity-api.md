@@ -37,8 +37,7 @@ Sensitive Entity Details can be accessed from Beta or Alpha via the following en
 
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
        <ul>
-       <li style="color: #31708f;">Beta Version 1: https://api.sam.gov/entity-information/v1/entities?</li>
-       <li style="color: #31708f;">Beta Version 2: Coming soon</li>
+       <li style="color: #31708f;">Beta Version 1/Version 2: Coming soon</li>
        <li style="color: #31708f;">Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?</li>
        <li style="color: #31708f;">Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?</li>
        </ul><br>
@@ -18045,6 +18044,5 @@ Disclaimer:
 | 05/04/2020 | v1.7 | * Added V2 endpoint information.|
 | 06/10/2020 | v1.8 | * Added the endpoint, new process and an example for the Sensitive API .|
 | 08/17/2020 | v1.9 | * The "Sensitive API Process" subsection under the "Sensitive API Information" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshots under "Example 13" have been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.|
-| 08/31/2020 | v1.10 | * Updated the Getting Started section to include the Sensitive version 1 Beta endpoint.|
 
 <p><small><a href="#">Back to top</a></small></p>
