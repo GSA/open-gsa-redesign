@@ -1135,6 +1135,12 @@ components:
           type: string
           format: date-time
           description: The date that the document was received by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2018-06-29T04:00:00Z`.
+        restrictReason:
+          type: string
+          description: If the document is restricted, this field will state the reason.
+        restrictReasonType:
+          type: string
+          description: If the document is restricted, this field will state the type of restriction.
         stateProvinceRegion:
           type: string
           nullable: true
