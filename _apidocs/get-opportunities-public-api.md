@@ -42,7 +42,7 @@ Users can search by any of the below request parameters with Date field as manda
 Request Parameters that API accepts	| Description | Required| Data Type| Applicable Versions
 ----- | ----- | ----- | ----- | -----
 api_key	| Public Key of users	| Yes|	String | v1<br> v2
-ptype |	Procurement Type. Below are the available Procurement Types: <br> u= Justification (J&A) <br>p = Pre solicitation <br>a = Award Notice <br>r = Sources Sought <br>s = Special Notice <br>g = Sale of Surplus Property <br>k = Combined Synopsis/Solicitation <br>i = Intent to Bundle Requirements (DoD-Funded) <br><br> Note: Below services are now retired:<br>f = Foreign Government Standard <br>l = Fair Opportunity / Limited Sources  <br> <br>Use Justification (u) instead of fair Opportunity 	|No	|String | v1<br> v2
+ptype |	Procurement Type. Below are the available Procurement Types: <br> u= Justification (J&A) <br>p = Pre solicitation <br>a = Award Notice <br>r = Sources Sought <br>s = Special Notice <br>o = Solicitation <br>g = Sale of Surplus Property <br>k = Combined Synopsis/Solicitation <br>i = Intent to Bundle Requirements (DoD-Funded) <br><br> Note: Below services are now retired:<br>f = Foreign Government Standard <br>l = Fair Opportunity / Limited Sources  <br> <br>Use Justification (u) instead of fair Opportunity 	|No	|String | v1<br> v2
 solnum|	Solicitation Number|	No|	String | v1<br> v2
 noticeid| Notice ID | No | String | v1<br> v2
 title|	Title|	No	|String | v1<br> v2
