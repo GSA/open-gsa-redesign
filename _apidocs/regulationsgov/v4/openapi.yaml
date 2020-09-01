@@ -950,18 +950,15 @@ components:
           type: string
           nullable: true
           format: date-time
-          description: The date that closes the period when public comments may be submitted on the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
+          description: The date that closes the period when public comments may be submitted on the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
         commentStartDate:
           type: string
           nullable: true
           format: date-time
-          description: The date that begins the period when public comments may be submitted on the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
+          description: The date that begins the period when public comments may be submitted on the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
         docketId:
           type: string
           description: The ID of the docket to which the document corresponds.
-        documentId:
-          type: string
-          description: The unique identified of the document
         documentType:
           $ref: '#/components/schemas/DocumentType'
         highlightedContent:
@@ -973,7 +970,7 @@ components:
           description: Conveys if the document is open for comment
         postedDate:
           type: string
-          description: The date that the document was posted by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
+          description: The date that the document was posted by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
         subtype:
           type: string
           nullable: true
@@ -990,9 +987,6 @@ components:
         agencyId:
           type: string
           description: The acronym used to abbreviate the name of the agency associated with the document.
-        documentId:
-          type: string
-          description: The unique identified of the document
         documentType:
           $ref: '#/components/schemas/DocumentType'
         highlightedContent:
@@ -1001,11 +995,7 @@ components:
           description: Content highlighted by search engine for the searchTerm. Only returned for searches with searchTerm.
         postedDate:
           type: string
-          description: The date that the document was posted by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
-        subtype:
-          type: string
-          nullable: true
-          description: An agency-specific attribute to further categorize a document beyond the type (`documentType`).
+          description: The date that the document was posted by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
         title:
           type: string
           description: The formal title of the document.
@@ -1015,9 +1005,9 @@ components:
     Docket:
       type: object
       properties:
-        docketId:
+        agencyId:
           type: string
-          description: The unique identified of the docket
+          description: The acronym used to abbreviate the name of the agency associated with the docket.
         docketType:
           $ref: '#/components/schemas/DocketType'
         highlightedContent:
@@ -1050,6 +1040,9 @@ components:
           type: string
           nullable: true
           description: An agency-specific category allowing agencies to group comments according to their type.
+        comment:
+          type: string
+          description: The comment text associated with the comment submission.
         country:
           type: string
           nullable: true
@@ -1095,9 +1088,6 @@ components:
           type: string
           nullable: true
           description: The type of government agency that the submitter represents.
-        objectId:
-          type: string
-          description: The unique Regulations.gov ID associated with the document.  This value is often expected for internal use only.
         lastName:
           type: string
           nullable: true
@@ -1109,7 +1099,10 @@ components:
         modifyDate:
           type: string
           format: date-time
-          description: The date when the document was last modified.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
+          description: The date when the document was last modified.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        openForComment:
+          type: boolean
+          description: Conveys if the document is open for commenting.
         organization:
           type: string
           nullable: true
@@ -1128,16 +1121,20 @@ components:
         postedDate:
           type: string
           format: date-time
-          description: The date that the document was posted by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
+          description: The date that the document was posted by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
         postmarkDate:
           type: string
           nullable: true
           format: date-time
-          description: The postmark date of a document that was sent by mail.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
+          description: The postmark date of a document that was sent by mail.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
         reasonWithdrawn:
           type: string
           nullable: true
           description: If the document is withdrawn, this field will state the reason.
+        receiveDate:
+          type: string
+          format: date-time
+          description: The date that the document was received by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2018-06-29T04:00:00Z`.
         stateProvinceRegion:
           type: string
           nullable: true
@@ -1146,6 +1143,18 @@ components:
           type: string
           nullable: true
           description: An agency-specific attribute to further categorize a document beyond the documentType.
+        title:
+          type: string
+          description: The formal title of the document.
+        trackingNbr:
+          type: string
+          description: The tracking number of the submission.
+        withdrawn:
+          type: boolean
+          description: Conveys if the document is withdrawn
+        zip:
+          type: string
+          description: The zip associated with the submitter's address.
     DocumentDetail:
       allOf:     # Combines the BasicDetailModel and the inline model
         - $ref: '#/components/schemas/BasicDetailModel'
@@ -1166,7 +1175,7 @@ components:
               type: string
               nullable: true
               format: date-time
-              description: The date that the authors wrote or published the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
+              description: The date that the authors wrote or published the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
             authors:
               type: array
               nullable: true
@@ -1181,17 +1190,17 @@ components:
               type: string
               nullable: true
               format: date-time
-              description: The date that closes the period when public comments may be submitted on the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
+              description: The date that closes the period when public comments may be submitted on the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
             commentStartDate:
               type: string
               nullable: true
               format: date-time
-              description: The date that begins the period when public comments may be submitted on the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
+              description: The date that begins the period when public comments may be submitted on the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
             effectiveDate:
               type: string
               nullable: true
               format: date-time
-              description: The date the document is put into effect.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
+              description: The date the document is put into effect.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
             exhibitLocation:
               type: string
               nullable: true
@@ -1212,7 +1221,7 @@ components:
               type: string
               nullable: true
               format: date-time
-              description: The date the document is to be implemented.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
+              description: The date the document is to be implemented.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
             openForComment:
               type: boolean
               description: Conveys if a document is open for comment.
@@ -1259,9 +1268,6 @@ components:
           required:
             - documentId
           properties: 
-            commentOn:
-              type: string
-              description: objectId of the parent document
             commentOnDocumentId:
               type: string
               description: documentId of the parent document
@@ -1286,7 +1292,7 @@ components:
         effectiveDate:
           type: string
           format: date-time
-          description: The date the docket is put into effect.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
+          description: The date the docket is put into effect.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
         field1:
           type: string
           nullable: true
@@ -1299,9 +1305,6 @@ components:
           type: string
           nullable: true
           description: An agency-specific field used for storing additional data with the docket.
-        objectId:
-          type: string
-          description: The unique Regulations.gov ID associated with the docket.  This value is often expected for internal use only.
         keywords:
           type: array
           nullable: true
@@ -1315,7 +1318,7 @@ components:
         modifyDate:
           type: string
           format: date-time
-          description: The date when the docket was last modified.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45+01:00`.
+          description: The date when the docket was last modified.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
         organization:
           type: string
           nullable: true
