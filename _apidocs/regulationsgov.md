@@ -164,6 +164,56 @@ To retrieve detailed information on a docket, the following query can be used:
 
 `https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY`
 
+#### Posting a comment
+
+* Posting an anonymous comment without attachment:
+
+`POST https://api.regulations.gov/v4/comments {
+    "data":{
+      "attributes":{
+        "commentOnDocumentId":"FDA-2009-N-0501-0012",
+        "comment":"test comment",
+        "submissionType":"API",
+        "submitterType":"ANONYMOUS",
+        "files":[]
+      },
+      "type":"comments"
+    }
+  }`
+
+* Posting an anonymous comment with attachment:
+
+`POST https://api.regulations.gov/v4/submission-keys {
+    "data":{
+      "type":"submission-keys"
+    }
+  }`
+
+`POST https://api.regulations.gov/v4/file-upload-urls {
+    "data":{
+      "type":"file-upload-urls",
+      "attributes":{
+        "fileName":"test.jpg",
+        "submissionKey":"kex-d31z-fe04",
+        "contentType":"image/jpeg"
+      }
+    }
+  }`
+
+`POST https://api.regulations.gov/v4/comments {
+    "data":{
+      "attributes":{
+        "commentOnDocumentId":"FDA-2009-N-0501-0012",
+        "comment":"test comment",
+        "submissionType":"API",
+        "submissionKey":"kex-d31z-fe04",
+        "submitterType":"ANONYMOUS",
+        "files":[ test.jpg ]
+      },
+      "type":"comments"
+    }
+  }`
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ## OpenAPI Specification File
