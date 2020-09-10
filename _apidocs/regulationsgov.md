@@ -100,24 +100,17 @@ Note: The example URI added in this section shows unencoded [ and ] characters s
 
 Here are few example queries for searching documents:
 
-* Search for term water: 
+* Search for term water: `https://api.regulations.gov/v4/documents?filter[searchTerm]=water&api_key=DEMO_KEY`
 
-`https://api.regulations.gov/v4/documents?filter[searchTerm]=water&api_key=DEMO_KEY`
+* Filter documents by a specific date: `https://api.regulations.gov/v4/documents?filter[postedDate]=2020-09-01&api_key=DEMO_KEY`
 
-* Filter documents by a specific date: 
-`https://api.regulations.gov/v4/documents?filter[postedDate]=2020-09-01&api_key=DEMO_KEY`
+* Filter documents by a date range: `https://api.regulations.gov/v4/documents?filter[postedDate][ge]=2020-09-01&filter[postedDate][le]=2020-09-01&api_key=DEMO_KEY`
 
-* Filter documents by a date range: 
-`https://api.regulations.gov/v4/documents?filter[postedDate][ge]=2020-09-01&filter[postedDate][le]=2020-09-01&api_key=DEMO_KEY`
+* Search for a documentId: `https://api.regulations.gov/v4/documents?filter[searchTerm]=FDA-2009-N-0501-0012&api_key=DEMO_KEY`
 
-* Search for a documentId: 
-`https://api.regulations.gov/v4/documents?filter[searchTerm]=FDA-2009-N-0501-0012&api_key=DEMO_KEY`
+* Sort documents by posted date in asc: `https://api.regulations.gov/v4/documents?sort=postedDate&api_key=DEMO_KEY`
 
-* Sort documents by posted date in asc: 
-`https://api.regulations.gov/v4/documents?sort=postedDate&api_key=DEMO_KEY`
-
-* Sort documents by posted date in desc: 
-`https://api.regulations.gov/v4/documents?sort=-postedDate&api_key=DEMO_KEY`
+* Sort documents by posted date in desc: `https://api.regulations.gov/v4/documents?sort=-postedDate&api_key=DEMO_KEY`
 
 #### Detailed information for a single document
 
