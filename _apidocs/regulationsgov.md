@@ -101,6 +101,7 @@ Note: The example URI added in this section shows unencoded [ and ] characters s
 Here are few example queries for searching documents:
 
 * Search for term water: 
+
 `https://api.regulations.gov/v4/documents?filter[searchTerm]=water&api_key=DEMO_KEY`
 
 * Filter documents by a specific date: 
