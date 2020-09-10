@@ -285,16 +285,16 @@ paths:
             application/vnd.api+json:
               schema:
                 $ref: '#/components/schemas/JSONError'
-  /comments/{documentId}:
+  /comments/{commentId}:
     get:
-      summary: Get detailed information for specified documentId
-      description: Gets the detailed information of a specific document with the passed documentId.
+      summary: Get detailed information for specified commentId
+      description: Gets the detailed information of a specific comment with the passed commentId.
       tags:
         - comments
       parameters:
-        - name: documentId
+        - name: commentId
           in: path
-          description: ID of document to return
+          description: ID of comment to return
           required: true
           schema:
             type: string
