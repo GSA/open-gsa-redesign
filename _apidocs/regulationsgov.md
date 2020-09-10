@@ -48,23 +48,27 @@ Regulations.gov offers a GET API for documents, comments, and dockets and a POST
 
 You can search for a list of documents based on the criteria passed by using the endpoint `/v4/documents`. The search operation supports full text keyword searches and filtering based on a number of available parameters.
 
-#### Searching for a single document
+#### Detailed information for a single document
 
 In order to obtain more details about a single document, you can use the endpoint `/v4/documents/{documentId}`. A document is defined by one of the following types: Proposed Rule, Rule, Supporting & Related, or Other. Each document type has its own set of attributes, which vary based on the Agency posting the document. Another defining characteristic is if the document is part of a Rulemaking or Nonrulemaking Docket.
+
+You can choose to include attachments using include parameter. Attachments are not included by default.
 
 #### Searching for comments
 
 You can search for a list of comments based on the criteria passed by using the endpoint `/v4/comments`. The search operation supports full text keyword searches and filtering based on a number of available parameters.
 
-#### Searching for a single comment
+#### Detailed information for a single comment
 
-In order to obtain more details about a single comment, you can use the endpoint `/v4/comments/{documentId}`. Each comment has its own set of attributes, which vary based on the Agency posting the comment. Another defining characteristic is if the comment is part of a Rulemaking or Nonrulemaking Docket.
+In order to obtain more details about a single comment, you can use the endpoint `/v4/comments/{commentId}`. Each comment has its own set of attributes, which vary based on the Agency posting the comment. Another defining characteristic is if the comment is part of a Rulemaking or Nonrulemaking Docket.
+
+You can choose to include attachments using include parameter. Attachments are not included by default.
 
 #### Searching for dockets
 
 A docket is an organizational folder containing multiple documents. Dockets can be searched using the endpoint: `/v4/dockets`.
 
-#### Searching for a single docket
+#### Detailed information for a single docket
 
 In order to obtain more details about a single docket, you can use the endpoint `/v4/dockets/{docketId}`. Each docket has its own set of attributes, which vary based on the Agency posting the docket. Another defining characteristic is if the docket is a Rulemaking or a Nonrulemaking Docket
 
@@ -76,9 +80,9 @@ User can post a comment using the endpoint `/v4/comments`. User can post the com
 * Organization
 * Anonymous
 
-If user would like to attach files with their submission, user can get a presigned url for the amazon s3 bucket using the endpoint `/v4/fileUploadUrls`
+If user would like to attach files with their submission, user can get a presigned url for the amazon s3 bucket using the endpoint `/v4/file-upload-urls`
 
-A submissionKey can be retrieved using `/v4/submissionKeys` endpoint.
+A submissionKey can be retrieved using `/v4/submission-keys` endpoint.
 
 submissionType should be set to API.
 
@@ -90,6 +94,83 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <a href="v4/openapi.yaml">Open API specification file for the Regulations.gov API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
+
+## Examples
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+   
+Note: The example URI added in this section shows unencoded [ and ] characters simply for readability. In practice, these characters should be percent-encoded. See <a href="https://jsonapi.org/format/1.1/#appendix-query-details-square-brackets" target="_blank">Square Brackets in Parameter Names</a> section in json-api standards for complete information.
+
+</div>
+
+#### Searching for documents
+
+Here are few example queries for searching documents:
+
+* Search for term water: `https://api.regulations.gov/v4/documents?filter[searchTerm]=water&api_key=DEMO_KEY`
+
+* Filter documents by a specific date: `https://api.regulations.gov/v4/documents?filter[postedDate]=2020-09-01&api_key=DEMO_KEY`
+
+* Filter documents by a date range: `https://api.regulations.gov/v4/documents?filter[postedDate][ge]=2020-09-01&filter[postedDate][le]=2020-09-01&api_key=DEMO_KEY`
+
+* Search for a documentId: `https://api.regulations.gov/v4/documents?filter[searchTerm]=FDA-2009-N-0501-0012&api_key=DEMO_KEY`
+
+* Sort documents by posted date in asc: `https://api.regulations.gov/v4/documents?sort=postedDate&api_key=DEMO_KEY`
+
+* Sort documents by posted date in desc: `https://api.regulations.gov/v4/documents?sort=-postedDate&api_key=DEMO_KEY`
+
+#### Detailed information for a single document
+
+There are few ways a user can query `documents` endpoint to retrieve detailed information for a document.
+
+* Get document details without attachments: `https://api.regulations.gov/v4/documents/FDA-2009-N-0501-0012?api_key=DEMO_KEY`
+
+* Get document details with attachments: `https://api.regulations.gov/v4/documents/FDA-2009-N-0501-0012?include=attachments&api_key=DEMO_KEY`
+
+#### Searching for comments
+
+Here are few example queries for searching comments:
+
+* Search for term water: `https://api.regulations.gov/v4/comments?filter[searchTerm]=water&api_key=DEMO_KEY`
+
+* Filter comments by a specific date: `https://api.regulations.gov/v4/comments?filter[postedDate]=2020-09-01&api_key=DEMO_KEY`
+
+* Filter comments by a date range: `https://api.regulations.gov/v4/comments?filter[postedDate][ge]=2020-09-01&filter[postedDate][le]=2020-09-01&api_key=DEMO_KEY`
+
+* Search for a commentId: `https://api.regulations.gov/v4/comments?filter[searchTerm]=HHS-OCR-2018-0002-5313&api_key=DEMO_KEY`
+
+* Sort comments by posted date in asc: `https://api.regulations.gov/v4/comments?sort=postedDate&api_key=DEMO_KEY`
+
+* Sort comments by posted date in desc: `https://api.regulations.gov/v4/comments?sort=-postedDate&api_key=DEMO_KEY`
+
+#### Detailed information for a single comment
+
+There are few ways a user can query `comments` endpoint to retrieve detailed information for a comment:
+
+* Get comment details without attachments: `https://api.regulations.gov/v4/comments/HHS-OCR-2018-0002-5313?api_key=DEMO_KEY`
+
+* Get comment details with attachments: `https://api.regulations.gov/v4/comments/HHS-OCR-2018-0002-5313?include=attachments&api_key=DEMO_KEY`
+
+#### Searching for dockets
+
+Here are few example queries for searching dockets:
+
+* Search for term water: `https://api.regulations.gov/v4/dockets?filter[searchTerm]=water&api_key=DEMO_KEY`
+
+* Search for a docketId: `https://api.regulations.gov/v4/dockets?filter[searchTerm]=EPA-HQ-OAR-2003-0129&api_key=DEMO_KEY`
+
+* Filter dockets by multiple agencyIds: `https://api.regulations.gov/v4/dockets?filter[agencyId]=GSA,EPA&api_key=DEMO_KEY`
+
+* Sort dockets by title in asc order: `https://api.regulations.gov/v4/dockets?sort=title&api_key=DEMO_KEY`
+
+* Sort dockets by title in desc order: `https://api.regulations.gov/v4/dockets?sort=-title&api_key=DEMO_KEY`
+
+#### Detailed information for a single docket
+
+To retrieve detailed information on a docket, the following query can be used:
+
+`https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY`
+
 
 ## API Calls
 
