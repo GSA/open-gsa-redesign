@@ -88,16 +88,9 @@ submissionType should be set to API.
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## OpenAPI Specification File
-
-You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v4/openapi.yaml">Open API specification file for the Regulations.gov API</a>
-
-<p><small><a href="#">Back to top</a></small></p>
-
 ## Examples
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div style="padding: 15px; border: 1px solid; margin-bottom: 20px; border-radius: 4px; color: gray; background: rgba(90, 90, 90, 0.04); border-color: #cccccc;">
    
 Note: The example URI added in this section shows unencoded [ and ] characters simply for readability. In practice, these characters should be percent-encoded. See <a href="https://jsonapi.org/format/1.1/#appendix-query-details-square-brackets" target="_blank">Square Brackets in Parameter Names</a> section in json-api standards for complete information.
 
@@ -171,6 +164,14 @@ To retrieve detailed information on a docket, the following query can be used:
 
 `https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY`
 
+<p><small><a href="#">Back to top</a></small></p>
+
+## OpenAPI Specification File
+
+You can view the full details of this API in the OpenAPI Specification file available here:
+<a href="v4/openapi.yaml">Open API specification file for the Regulations.gov API</a>
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## API Calls
 
