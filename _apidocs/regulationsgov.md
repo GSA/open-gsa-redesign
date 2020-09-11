@@ -105,67 +105,129 @@ Here are few example queries for searching documents:
   https://api.regulations.gov/v4/documents?filter[searchTerm]=water&api_key=DEMO_KEY
   ```
 
-* Filter documents by a specific date: `https://api.regulations.gov/v4/documents?filter[postedDate]=2020-09-01&api_key=DEMO_KEY`
+* Filter documents by a specific date: 
+  ```
+  https://api.regulations.gov/v4/documents?filter[postedDate]=2020-09-01&api_key=DEMO_KEY
+  ```
 
-* Filter documents by a date range: `https://api.regulations.gov/v4/documents?filter[postedDate][ge]=2020-09-01&filter[postedDate][le]=2020-09-01&api_key=DEMO_KEY`
+* Filter documents by a date range: 
+  ```
+  https://api.regulations.gov/v4/documents?filter[postedDate][ge]=2020-09-01&filter[postedDate][le]=2020-09-01&api_key=DEMO_KEY
+  ```
 
-* Search for a documentId: `https://api.regulations.gov/v4/documents?filter[searchTerm]=FDA-2009-N-0501-0012&api_key=DEMO_KEY`
+* Search for a documentId: 
+  ```
+  https://api.regulations.gov/v4/documents?filter[searchTerm]=FDA-2009-N-0501-0012&api_key=DEMO_KEY
+  ```
 
-* Sort documents by posted date in asc: `https://api.regulations.gov/v4/documents?sort=postedDate&api_key=DEMO_KEY`
+* Sort documents by posted date in asc: 
+  ```
+  https://api.regulations.gov/v4/documents?sort=postedDate&api_key=DEMO_KEY
+  ```
 
-* Sort documents by posted date in desc: `https://api.regulations.gov/v4/documents?sort=-postedDate&api_key=DEMO_KEY`
+* Sort documents by posted date in desc: 
+  ```
+  https://api.regulations.gov/v4/documents?sort=-postedDate&api_key=DEMO_KEY
+  ```
 
 #### Detailed information for a single document
 
 There are few ways a user can query `documents` endpoint to retrieve detailed information for a document.
 
-* Get document details without attachments: `https://api.regulations.gov/v4/documents/FDA-2009-N-0501-0012?api_key=DEMO_KEY`
+* Get document details without attachments: 
+  ```
+  https://api.regulations.gov/v4/documents/FDA-2009-N-0501-0012?api_key=DEMO_KEY
+  ```
 
-* Get document details with attachments: `https://api.regulations.gov/v4/documents/FDA-2009-N-0501-0012?include=attachments&api_key=DEMO_KEY`
+* Get document details with attachments: 
+  ```
+  https://api.regulations.gov/v4/documents/FDA-2009-N-0501-0012?include=attachments&api_key=DEMO_KEY
+  ```
 
 #### Searching for comments
 
 Here are few example queries for searching comments:
 
-* Search for term water: `https://api.regulations.gov/v4/comments?filter[searchTerm]=water&api_key=DEMO_KEY`
+* Search for term water: 
+  ```
+  https://api.regulations.gov/v4/comments?filter[searchTerm]=water&api_key=DEMO_KEY
+  ```
 
-* Filter comments by a specific date: `https://api.regulations.gov/v4/comments?filter[postedDate]=2020-09-01&api_key=DEMO_KEY`
+* Filter comments by a specific date: 
+  ```
+  https://api.regulations.gov/v4/comments?filter[postedDate]=2020-09-01&api_key=DEMO_KEY
+  ```
 
-* Filter comments by a date range: `https://api.regulations.gov/v4/comments?filter[postedDate][ge]=2020-09-01&filter[postedDate][le]=2020-09-01&api_key=DEMO_KEY`
+* Filter comments by a date range: 
+  ```
+  https://api.regulations.gov/v4/comments?filter[postedDate][ge]=2020-09-01&filter[postedDate][le]=2020-09-01&api_key=DEMO_KEY
+  ```
 
-* Search for a commentId: `https://api.regulations.gov/v4/comments?filter[searchTerm]=HHS-OCR-2018-0002-5313&api_key=DEMO_KEY`
+* Search for a commentId: 
+  ```
+  https://api.regulations.gov/v4/comments?filter[searchTerm]=HHS-OCR-2018-0002-5313&api_key=DEMO_KEY
+  ```
 
-* Sort comments by posted date in asc: `https://api.regulations.gov/v4/comments?sort=postedDate&api_key=DEMO_KEY`
+* Sort comments by posted date in asc: 
+  ```
+  https://api.regulations.gov/v4/comments?sort=postedDate&api_key=DEMO_KEY
+  ```
 
-* Sort comments by posted date in desc: `https://api.regulations.gov/v4/comments?sort=-postedDate&api_key=DEMO_KEY`
+* Sort comments by posted date in desc: 
+  ```
+  https://api.regulations.gov/v4/comments?sort=-postedDate&api_key=DEMO_KEY
+  ```
 
 #### Detailed information for a single comment
 
 There are few ways a user can query `comments` endpoint to retrieve detailed information for a comment:
 
-* Get comment details without attachments: `https://api.regulations.gov/v4/comments/HHS-OCR-2018-0002-5313?api_key=DEMO_KEY`
+* Get comment details without attachments: 
+  ```
+  https://api.regulations.gov/v4/comments/HHS-OCR-2018-0002-5313?api_key=DEMO_KEY
+  ```
 
-* Get comment details with attachments: `https://api.regulations.gov/v4/comments/HHS-OCR-2018-0002-5313?include=attachments&api_key=DEMO_KEY`
+* Get comment details with attachments: 
+  ```
+  https://api.regulations.gov/v4/comments/HHS-OCR-2018-0002-5313?include=attachments&api_key=DEMO_KEY
+  ```
 
 #### Searching for dockets
 
 Here are few example queries for searching dockets:
 
-* Search for term water: `https://api.regulations.gov/v4/dockets?filter[searchTerm]=water&api_key=DEMO_KEY`
+* Search for term water: 
+  ```
+  https://api.regulations.gov/v4/dockets?filter[searchTerm]=water&api_key=DEMO_KEY
+  ```
 
-* Search for a docketId: `https://api.regulations.gov/v4/dockets?filter[searchTerm]=EPA-HQ-OAR-2003-0129&api_key=DEMO_KEY`
+* Search for a docketId: 
+  ```
+  https://api.regulations.gov/v4/dockets?filter[searchTerm]=EPA-HQ-OAR-2003-0129&api_key=DEMO_KEY
+  ```
 
-* Filter dockets by multiple agencyIds: `https://api.regulations.gov/v4/dockets?filter[agencyId]=GSA,EPA&api_key=DEMO_KEY`
+* Filter dockets by multiple agencyIds: 
+  ```
+  https://api.regulations.gov/v4/dockets?filter[agencyId]=GSA,EPA&api_key=DEMO_KEY
+  ```
 
-* Sort dockets by title in asc order: `https://api.regulations.gov/v4/dockets?sort=title&api_key=DEMO_KEY`
+* Sort dockets by title in asc order: 
+  ```
+  https://api.regulations.gov/v4/dockets?sort=title&api_key=DEMO_KEY
+  ```
 
-* Sort dockets by title in desc order: `https://api.regulations.gov/v4/dockets?sort=-title&api_key=DEMO_KEY`
+* Sort dockets by title in desc order: 
+  ```
+  https://api.regulations.gov/v4/dockets?sort=-title&api_key=DEMO_KEY
+  ```
 
 #### Detailed information for a single docket
 
 To retrieve detailed information on a docket, the following query can be used:
 
-`https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY`
+```
+https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY
+```
 
 #### Posting a comment
 
