@@ -168,7 +168,8 @@ To retrieve detailed information on a docket, the following query can be used:
 
 * Posting an anonymous comment without attachment:
 
-`POST https://api.regulations.gov/v4/comments {
+  ```json
+  POST https://api.regulations.gov/v4/comments {
     "data":{
       "attributes":{
         "commentOnDocumentId":"FDA-2009-N-0501-0012",
@@ -179,17 +180,21 @@ To retrieve detailed information on a docket, the following query can be used:
       },
       "type":"comments"
     }
-  }`
+  }```
+
+  Note: No submission key is needed for comments with no attached files.
 
 * Posting an anonymous comment with attachment:
 
-`POST https://api.regulations.gov/v4/submission-keys {
+  * Step 1: Get a submission key: 
+  ```POST https://api.regulations.gov/v4/submission-keys {
     "data":{
       "type":"submission-keys"
     }
-  }`
+  }```
 
-`POST https://api.regulations.gov/v4/file-upload-urls {
+  * Step 2: Get presigned urls for each attachment:
+  ```POST https://api.regulations.gov/v4/file-upload-urls {
     "data":{
       "type":"file-upload-urls",
       "attributes":{
@@ -198,9 +203,12 @@ To retrieve detailed information on a docket, the following query can be used:
         "contentType":"image/jpeg"
       }
     }
-  }`
+  }```
 
-`POST https://api.regulations.gov/v4/comments {
+  * Step 3: Upload binaries to presigned url
+
+  * Step 4: Submit your comment
+  ```POST https://api.regulations.gov/v4/comments {
     "data":{
       "attributes":{
         "commentOnDocumentId":"FDA-2009-N-0501-0012",
@@ -212,7 +220,7 @@ To retrieve detailed information on a docket, the following query can be used:
       },
       "type":"comments"
     }
-  }`
+  }```
 
 <p><small><a href="#">Back to top</a></small></p>
 
