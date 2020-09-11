@@ -235,8 +235,8 @@ https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY
 
   ```json
   POST https://api.regulations.gov/v4/comments {
-    "data":{
-      "attributes":{
+    "data": {
+      "attributes": {
         "commentOnDocumentId":"FDA-2009-N-0501-0012",
         "comment":"test comment",
         "submissionType":"API",
@@ -253,46 +253,49 @@ https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY
 * Posting an anonymous comment with attachment:
 
   * Step 1: Get a submission key: 
-  ```json
-  POST https://api.regulations.gov/v4/submission-keys {
-    "data":{
-      "type":"submission-keys"
-    }
-  }
-  ```
-
-  * Step 2: Get presigned url for each attachment:
-  ```json
-  POST https://api.regulations.gov/v4/file-upload-urls {
-    "data":{
-      "type":"file-upload-urls",
-      "attributes":{
-        "fileName":"test.jpg",
-        "submissionKey":"kex-d31z-fe04",
-        "contentType":"image/jpeg"
+  
+    ```json
+    POST https://api.regulations.gov/v4/submission-keys {
+      "data": {
+        "type":"submission-keys"
       }
     }
-  }
-  ```
+    ```
+
+  * Step 2: Get presigned url for each attachment:
+  
+    ```json
+    POST https://api.regulations.gov/v4/file-upload-urls {
+      "data": {
+        "type":"file-upload-urls",
+        "attributes": {
+          "fileName":"test.jpg",
+          "submissionKey":"kex-d31z-fe04",
+          "contentType":"image/jpeg"
+        }
+      }
+    }
+    ```
 
   * Step 3: Upload binaries to presigned url
 
   * Step 4: Submit your comment
-  ```json
-  POST https://api.regulations.gov/v4/comments {
-    "data":{
-      "attributes":{
-        "commentOnDocumentId":"FDA-2009-N-0501-0012",
-        "comment":"test comment",
-        "submissionType":"API",
-        "submissionKey":"kex-d31z-fe04",
-        "submitterType":"ANONYMOUS",
-        "files":[ test.jpg ]
-      },
-      "type":"comments"
+  
+    ```json
+    POST https://api.regulations.gov/v4/comments {
+      "data": {
+        "attributes": {
+          "commentOnDocumentId":"FDA-2009-N-0501-0012",
+          "comment":"test comment",
+          "submissionType":"API",
+          "submissionKey":"kex-d31z-fe04",
+          "submitterType":"ANONYMOUS",
+          "files":[ test.jpg ]
+        },
+        "type":"comments"
+      }
     }
-  }
-  ```
+    ```
 
 <p><small><a href="#">Back to top</a></small></p>
 
