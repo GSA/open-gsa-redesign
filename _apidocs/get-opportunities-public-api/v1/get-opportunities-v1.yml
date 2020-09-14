@@ -1,7 +1,7 @@
 /v1/search:
     get:
       tags:
-        - 'Public GET Opportunites API '
+        - 'Public GET Opportunities API '
       summary: 'API to get opportunities based on filter'
       operationId: getOpportunitiesUsingGET
       consumes:
