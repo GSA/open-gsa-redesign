@@ -442,7 +442,7 @@ paths:
       tags:
         - comment submission utilities
       parameters:
-        - name: filter[agencyId]
+        - name: filter[acronym]
           in: query
           description: >-
             'Filters results for the agency acronym specified in the value. Example: ''EPA'''
