@@ -102,7 +102,7 @@ paths:
           required: false
           schema:
             type: integer
-        - name: size
+        - name: page[size]
           in: query
           description: >-
             Specifies the size per page of results that will be returned from the query. <br/><br/> Acceptable values are numerical between, and including, 5 and 250.           
@@ -223,7 +223,7 @@ paths:
           required: false
           schema:
             type: integer
-        - name: size
+        - name: page[size]
           in: query
           description: >-
             Specifies the size per page of results that will be returned from the query. <br/><br/> Acceptable values are numerical between, and including, 5 and 250.           
@@ -371,7 +371,7 @@ paths:
           required: false
           schema:
             type: integer
-        - name: size
+        - name: page[size]
           in: query
           description: >-
             Specifies the size per page of results that will be returned from the query. <br/><br/> Acceptable values are numerical between, and including, 5 and 250.           
@@ -442,7 +442,7 @@ paths:
       tags:
         - comment submission utilities
       parameters:
-        - name: filter[agencyId]
+        - name: filter[acronym]
           in: query
           description: >-
             'Filters results for the agency acronym specified in the value. Example: ''EPA'''
