@@ -240,8 +240,7 @@ https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY
         "commentOnDocumentId":"FDA-2009-N-0501-0012",
         "comment":"test comment",
         "submissionType":"API",
-        "submitterType":"ANONYMOUS",
-        "files":[]
+        "submitterType":"ANONYMOUS"
       },
       "type":"comments"
     }
@@ -291,6 +290,31 @@ https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY
           "submissionKey":"kex-d31z-fe04",
           "submitterType":"ANONYMOUS",
           "files":[ test.jpg ]
+        },
+        "type":"comments"
+      }
+    }
+    ```
+
+* Posting an anonymous comment without attachments, with agency category:
+
+  * Step 1: Get agency categories for agency: 
+  
+    ```
+    https://api.regulations.gov/v4/agency-categories?filter[acronym]=FDA&api_key=DEMO_KEY
+    ```
+
+  * Step 2: Get presigned url for each attachment:
+  
+    ```json
+    POST https://api.regulations.gov/v4/comments {
+      "data": {
+        "attributes": {
+          "commentOnDocumentId":"FDA-2009-N-0501-0012",
+          "comment":"test comment",
+          "submissionType":"API",
+          "submitterType":"ANONYMOUS",
+          "category":"Academia - E0007"
         },
         "type":"comments"
       }
