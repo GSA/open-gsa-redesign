@@ -304,7 +304,7 @@ https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY
     https://api.regulations.gov/v4/agency-categories?filter[acronym]=FDA&api_key=DEMO_KEY
     ```
 
-  * Step 2: Get presigned url for each attachment:
+  * Step 2: Submit your comment with category:
   
     ```json
     POST https://api.regulations.gov/v4/comments {
