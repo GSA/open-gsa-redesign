@@ -332,9 +332,9 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ## API Calls
 
-{% include swagger-section-header-try-it-out.html %} 
+{% include swagger-section-header.html %} 
 url: "v4/openapi.yaml", 
-{% include swagger-section-footer-try-it-out.html %}
+{% include swagger-section-footer.html %}
 
 <p><small><a href="#">Back to top</a></small></p>
 
