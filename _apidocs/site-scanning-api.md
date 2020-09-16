@@ -1,6 +1,6 @@
 ---
-title: 10x Spotlight API
-banner-heading: 10x Spotlight API
+title: Site Scanning API
+banner-heading: Site Scanning API
 ---
 
 <!-- Alpha status alert -->
@@ -19,7 +19,7 @@ banner-heading: 10x Spotlight API
 
 ## Overview
 
-Every day, the site-scanner program runs the scanning engine to dynamically pull down lists of domains from various sources and then scan them with a collection of scan plugins to gather data on them. This data is created in the json format and is indexed in an elasticsearch datastore, where it can be searched by an API written in the Django REST Framework.
+Every day, the <a href="https://digital.gov/site-scanning/">Site Scanning program</a> runs a scanning engine to dynamically pull down lists of domains from various sources and then scan them with a collection of scan plugins to gather data on them. This data is created in the json format and is indexed in an elasticsearch datastore, where it can be searched by an API written in the Django REST Framework.
 
 <p><small><a href="#">Back to top</a></small></p>
 
