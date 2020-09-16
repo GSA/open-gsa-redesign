@@ -821,7 +821,7 @@ $
 
 ## OpenAPI Specification File
 
-You can view the full details of this API in the OpenAPI Specification file available here: [link needed].
+You can view the full details of this API in the <a href="v1/openapi.json">OpenAPI Specification file available here</a>.
 
 <p><small><a href="#">Back to top</a></small></p>
 
