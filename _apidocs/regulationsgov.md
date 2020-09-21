@@ -240,8 +240,7 @@ https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY
         "commentOnDocumentId":"FDA-2009-N-0501-0012",
         "comment":"test comment",
         "submissionType":"API",
-        "submitterType":"ANONYMOUS",
-        "files":[]
+        "submitterType":"ANONYMOUS"
       },
       "type":"comments"
     }
@@ -250,7 +249,7 @@ https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY
 
   Note: No submission key is needed for comments with no attached files.
 
-* Posting an anonymous comment with attachment:
+* Posting a comment with attachment:
 
   * Step 1: Get a submission key: 
   
@@ -290,13 +289,86 @@ https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY
           "submissionType":"API",
           "submissionKey":"kex-d31z-fe04",
           "submitterType":"ANONYMOUS",
-          "files":[ test.jpg ]
+          "files":[ "test.jpg" ]
         },
         "type":"comments"
       }
     }
     ```
 
+* Posting a comment with agency category:
+
+  * Step 1: Get agency categories for agency: 
+  
+    ```
+    https://api.regulations.gov/v4/agency-categories?filter[acronym]=FDA&api_key=DEMO_KEY
+    ```
+
+  * Step 2: Submit your comment with category:
+  
+    ```json
+    POST https://api.regulations.gov/v4/comments {
+      "data": {
+        "attributes": {
+          "commentOnDocumentId":"FDA-2009-N-0501-0012",
+          "comment":"test comment",
+          "submissionType":"API",
+          "submitterType":"ANONYMOUS",
+          "category":"Academia - E0007"
+        },
+        "type":"comments"
+      }
+    }
+    ```
+* Posting multiple submissions in a single comment:
+
+  To post a comment with attachment that carries 5 submissions, user should follow the following steps:
+
+  * Step 1: Get a submission key: 
+  
+    ```json
+    POST https://api.regulations.gov/v4/submission-keys {
+      "data": {
+        "type":"submission-keys"
+      }
+    }
+    ```
+
+  * Step 2: Get presigned url for the attachment with multiple submissions:
+  
+    ```json
+    POST https://api.regulations.gov/v4/file-upload-urls {
+      "data": {
+        "type":"file-upload-urls",
+        "attributes": {
+          "fileName":"multipleSubmissions.pdf",
+          "submissionKey":"kex-d31z-fe04",
+          "contentType":"image/jpeg"
+        }
+      }
+    }
+    ```
+
+  * Step 3: Upload binaries to presigned url
+
+  * Step 4: Submit your comment with 
+  
+    ```json
+    POST https://api.regulations.gov/v4/comments {
+      "data": {
+        "attributes": {
+          "commentOnDocumentId":"FDA-2009-N-0501-0012",
+          "comment":"test comment",
+          "submissionType":"API",
+          "submissionKey":"kex-d31z-fe04",
+          "submitterType":"ANONYMOUS",
+          "files":[ "multipleSubmissions.pdf" ],
+          "numItemsReceived": 5
+        },
+        "type":"comments"
+      }
+    }
+    ```
 <p><small><a href="#">Back to top</a></small></p>
 
 ## OpenAPI Specification File
