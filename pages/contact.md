@@ -9,6 +9,10 @@ banner-heading: Contact Us
 
 Each API has its own specific support team. If you need assistance with an API, please visit the [API Documentation]({{ '/api' | prepend: site.baseurl }}) for the API you are interested in, and use the contact information listed under the *Contact Us* section.
 
+### How to submit feedback regarding this website
+
+The openGSA website is open source, and we welcome your feedback on it. [Please open an issue on our repository](https://github.com/gsa/open-gsa-redesign/issues) if you would like to submit feedback.
+
 ### General inquiries
 
 For all other inquiries related to open data and open source at GSA, please [email the GSA Office of the CTO](mailto:cto@gsa.gov).
