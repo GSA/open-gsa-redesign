@@ -13,7 +13,8 @@ banner-heading: Regulations.gov API
        This project is in BETA
      </strong>
      <p class="usa-alert-text">
-       This documentation provides a preview of the new API endpoints that will be made available soon. 
+       The current comment API is still being tested and in beta phase. 
+       The ability for API key holders to submit comments will be temporarily deactivated until the beta phase is complete. 
        During the Beta period, breaking changes may be made without warning.
        Have feedback or questions? <a href="https://beta.regulations.gov/support">Please let us know</a>!
      </p>
