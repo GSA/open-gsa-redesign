@@ -88,6 +88,7 @@ Utilizing the Exclusion API as an extract:
 | includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'includeSections=exclusionOtherInformation,exclusionDetails' |  v1<br>v2 |
 | format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'format=csv' |  v1<br>v2 |
 | emailId | User email Id for notification message .<br><br> Example: 'emailId=test@gsa.gov' |  v1<br>v2 |
+| recordStatus | Allows a string (Active, Inactive) <br><br> Example: 'recordStatus=Active' | v1<br>v2 |
 
 **Expected Result**
 
