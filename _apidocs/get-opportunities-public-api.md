@@ -20,6 +20,11 @@ Get Opportunities API can be accessed from Beta or Alpha via the following envir
 * Beta: <br>  https://api.sam.gov/prod/opportunities/v1/search
 * Alpha: <br> https://api-alpha.sam.gov/prodlike/opportunities/v1/search
 
+### Version Control - v2 (Coming Soon)
+
+* Beta: <br>  https://api.sam.gov/opportunities/v2/search
+* Alpha: <br> https://api-alpha.sam.gov/opportunities/v2/search
+
 ## Authentication and API Keys
 User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles. 
 Note: User can request a public API Key in the Account Details page on beta.sam.gov (if testing in production) Else on alpha.sam.gov (if testing in prodlike).
@@ -43,10 +48,12 @@ noticeid| Notice ID | No | String | v1<br> v2
 title|	Title|	No	|String | v1<br> v2
 postedFrom	| Posted date From <br>Format must be MM/dd/yyyy <br> Note: Date range between Posted Date From and To is 1 year	|Yes|	String | v1<br> v2
 postedTo|	Posted date To  Format must be MM/dd/yyyy <br> Note: Date range between Posted Date From and To is 1 year	|Yes	|String | v1<br> v2
-deptname |	Department Name (L1)	|No|	String | v1<br> v2
-subtier|	Agency Name (L2)| 	No|	String | v1<br> v2
+deptname |	Department Name (L1)	|No|	String | v1<br> v2 - Deprecated
+subtier|	Agency Name (L2)| 	No|	String | v1<br> v2 - Deprecated
 state|	Place of Performance (State)|	No	|String | v1<br> v2
 zip|	Place of Performance (Zip code)|	No|	String | v1<br> v2
+organizationCode| Code of associated organization | No| string | v2
+organizationName| Name of associated organization <br> *Note: General Search can be performed*|No| String|v2
 typeOfSetAside|	[Refer Set-Aside Value Section](#set-aside-values)    |No	|String | v1<br> v2
 typeOfSetAsideDescription	|Set Aside code Description. See above descriptions mentioned against each of the Set Aside Code|	No|	String | v1<br> v2
 ncode|	NAICS Code. This code is maximum of 6 digits|	No|	String | v1<br> v2
@@ -67,9 +74,11 @@ limit|	Limit entered by a user while making the request i.e. total number of rec
 offset|	Page index specified by a user. Default offset starts with 0 if user does not provide any offset in the request|	Number | v1<br> v2
 title	|Opportunity Title|	String | v1<br> v2
 solicitationNumber|	Solicitation Number |	String | v1<br> v2
-department|	Department (L1)	|String | v1<br> v2
-subtier|	Sub-Tier (L2)|	String | v1<br> v2
-office|	Office (L3)	|String | v1<br> v2
+fullParentPathName| Names of all organizations notice is associated with| String| v2
+fullParentPathCode| Codes of all organizations notice is associated with| String| v2
+department|	Department (L1)	|String | v1<br> v2 - Deprecated
+subtier|	Sub-Tier (L2)|	String | v1<br> v2 - Deprecated
+office|	Office (L3)	|String | v1<br> v2 v2 - Deprecated
 postedDate|	Opportunity Posted Date <br> YYYY-MM-DD HH:MM:SS	|String | v1<br> v2
 type|	Opportunity current type|	String | v1<br> v2
 baseType|	Opportunity original type|	String | v1<br> v2
@@ -109,6 +118,8 @@ data.pointOfContact.email| Point of Contact Email | String | v1<br> v2
 data.pointOfContact.phone| Point of Contact Phone | String | v1<br> v2
 data.pointOfContact.fax |  Point of Contact Fax|String | v1<br> v2
 description|	A link to an opportunity description. <br>Note: To download the description, user should append the public API Key. If no description is available then, user is shown an error message “ Description not found”|	String| v1<br> v2
+data.pointOfContact.additionalInfo| Additional Information <br> *Note: This field will only show if additional information is given* | JSON Array| v2
+data.pointOfContact.additionalInfo.content| Content of Additional Information <br> *Note: This field will only show if a text is provided for additional information*|String |v2
 organizationType|	Type of an organization – department/sub-tier/office|	String | v1<br> v2
 officeAddress|	Office Address Information. It can have below fields if available: <br> City<br> State<br>Zip|	String | v1<br> v2
 data.officeAddress.city| Office Address City| String | v1<br> v2
@@ -736,10 +747,72 @@ Note: Response for one record is provided as an example <br>
 </p>
 </details>
 
+### Example 5: Updated v2 Endpoint with FH Information
+
+<details>
+    <summary>Request URL</summary>
+Production URL: https://api-alpha.sam.gov/opportunities/v2/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&title=Driving <br>
+ <br>
+Alpha URL: https://api.sam.gov/opportunities/v2/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2020&postedTo=05/10/2020 <br>
+</details>
+
+<details>
+    <summary>Response (JSON Output)</summary>
+
+Note: Response for one record is provided as an example <br>
+
+<p>
+<code><pre>
+{
+            "noticeId": "ff826a59eac743c4a1a07ff5e0cf3e3a",
+            "title": "Test-Award notice-V2 27",
+            "solicitationNumber": "test-123456789",
+            "fullParentPathName": "GENERAL SERVICES ADMINISTRATION.FEDERAL ACQUISITION SERVICE.GSA/FAS CENTER FOR IT SCHEDULE PROG",
+            "fullParentPathCode": "047.4732.47QTCA",
+            "postedDate": "2020-07-02",
+            "type": "Award Notice",
+            "baseType": "Award Notice",
+            "archiveType": "autocustom",
+            "archiveDate": "2021-01-02",
+            "typeOfSetAsideDescription": null,
+            "typeOfSetAside": null,
+            "responseDeadLine": null,
+            "naicsCode": null,
+            "classificationCode": null,
+            "active": "Yes",
+            "award": {
+                "date": "2020-12-01",
+                "number": "4376487348950",
+                "amount": "350567.00"
+            },
+            "pointOfContact": null,
+            "description": "null",
+            "organizationType": "OFFICE",
+            "officeAddress": {
+                "zipcode": "20405",
+                "city": "WASHINGTON",
+                "countryCode": "USA",
+                "state": "DC"
+            },
+            "placeOfPerformance": null,
+            "additionalInfoLink": null,
+            "uiLink": "null",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "null"
+                }
+            ],
+            "resourceLinks": null
+        }
+</pre></code>
+</p>
+</details>
+
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/get-opportunities.yml" download="get-opportunities">OpenAPI File</a>
+<a href="v1/get-opportunities-v1.yml" download="get-opportunities-v1">OpenAPI File</a>
 
 <details>
 <summary>Get Opportunities Public API</summary>
@@ -1144,5 +1217,7 @@ Date | Version | Description
 1/31/2020 | v1.4 | Added field "ResourceLinks" with Coming Soon to prod
 2/18/2020 | v1.5| Added UEI information and versioning column and response example for awards
 2/27/2020 | v1.6| Added ResourceLinks to Response Section
+6/20/2020| v1.7| Added additional information field to point of contact parameter in the response
+7/3/2020| v1.8| Updated field parameters to include all FH information for given notices in both request and response
 
 <p><small><a href="#">Back to top</a></small></p>

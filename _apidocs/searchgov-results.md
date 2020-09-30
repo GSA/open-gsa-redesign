@@ -23,7 +23,11 @@ This API exposes all relevant Search.gov results “modules” in a single JSON 
 
 The endpoint is `https://api.gsa.gov/technology/searchgov/v2/results/i14y`.
 
-You must use https. You can find your access key on the API Access Key page of the Search.gov Admin Center.
+You must use https. 
+
+## API Key
+
+Please get your key from [api.data.gov](https://api.data.gov/signup/). The key will be specific to you. The results API key provided by Search.gov will not work for this API.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -68,6 +72,8 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
 ## Expected Results
 
   Each item returns a unique set of fields. Each array will only have contents if there are results in that search feature matching the query.
+  
+  Before you begin: If you set up the Routed Query feature in the Search.gov Admin Center, you will need to set up some additional logic. If there's a match between the query and the Routed Query, we'll return only the `route_to` URL. Otherwise we'll return the full results set. See <a href="#rq">Routed Queries</a>.
 
   * ### query
   
@@ -221,6 +227,17 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
       | thumbnail_url    | Thumbnail URL of the recent video news
 
 <p><small><a href="#">Back to top</a></small></p>
+
+<a name="rq"/>
+## Routed Queries
+
+If you have [Routed Queries](https://search.gov/manual/routed-queries.html) set up in your Admin Center, then any matching query terms will change the API response.
+
+For instance, if you set the query `example` to route to `https://www.search.gov`, then the expected response will be the following:
+
+`{"route_to":"https://www.search.gov/"}`
+
+To fully implement this, you will have to add logic that will process this response and redirect the user. A site-specific API call and javascript sample are available within the [Search.gov Admin Center](https://search.usa.gov/sites/) > Your Site > Activate > Search Results API Instructions.
 
 ## Contact Us
 

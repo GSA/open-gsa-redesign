@@ -46,7 +46,7 @@ banner-button-link: https://catalog.data.gov/organization/gsa-gov
 
     <section class="usa-section usa-section-dark">
         <div class="usa-grid-full">
-            <h2 style="text-align: center;">Featured GSA Open Datasets</h2> 
+            <h2 style="text-align: center;">Featured GSA Open Datasets</h2>
             <div class="usa-width-one-whole data-list">
                 {% for data in site.data.data %}
                     <article class="data-listing">
@@ -57,7 +57,7 @@ banner-button-link: https://catalog.data.gov/organization/gsa-gov
                             <p class="txt">
                                 {{ data.body }}
                             </p>
-                            <a href="{{ data.url }}" class="usa-button usa-button-gray">View Project</a>                        
+                            <a href="{{ data.url }}" class="usa-button usa-button-gray">View Project</a>
                         </div>
                         <footer class="usa-card-footer">
                         </footer>
@@ -67,7 +67,6 @@ banner-button-link: https://catalog.data.gov/organization/gsa-gov
         </div>
     </section>
 
-{% include feedback.html %}
     <!-- <section class="usa-section usa-section-dark">
         <div class="usa-grid-full">
             <h2 style="text-align: center;">View GSA Datasets</h2>

@@ -45,7 +45,7 @@ banner-button-title: View GSA open source code
 
 <section class="usa-section usa-section-dark">
     <div class="usa-grid-full">
-        <h2 style="text-align: center;">Featured GSA Open Source Software Projects</h2> 
+        <h2 style="text-align: center;">Featured GSA Open Source Software Projects</h2>
         <div class="usa-width-one-whole data-list">
             {% for code in site.data.code %}
                 <article class="data-listing">
@@ -56,7 +56,7 @@ banner-button-title: View GSA open source code
                         <p class="txt">
                             {{ code.body }}
                         </p>
-                        <a href="{{ code.url }}" class="usa-button usa-button-gray">View Project</a>                        
+                        <a href="{{ code.url }}" class="usa-button usa-button-gray">View Project</a>
                     </div>
                     <footer class="usa-card-footer">
                     </footer>
@@ -65,5 +65,3 @@ banner-button-title: View GSA open source code
         </div>
     </div>
 </section>
-
-{% include feedback.html %}
