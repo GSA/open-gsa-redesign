@@ -379,7 +379,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Migration from v3 to v4 FAQs
+## Frequently Asked Questions
 
 #### I am not seeing all fields returned by v3/documents endpoint in v4/documents endpoint. How do I access this information?
 
