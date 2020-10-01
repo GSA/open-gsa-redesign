@@ -13,7 +13,8 @@ banner-heading: Regulations.gov API
        This project is in BETA
      </strong>
      <p class="usa-alert-text">
-       This documentation provides a preview of the new API endpoints that will be made available soon. 
+       The current comment API is still being tested and in beta phase. 
+       The ability for API key holders to submit comments will be temporarily deactivated until the beta phase is complete. 
        During the Beta period, breaking changes may be made without warning.
        Have feedback or questions? <a href="https://beta.regulations.gov/support">Please let us know</a>!
      </p>
@@ -377,6 +378,46 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <a href="v4/openapi.yaml">Open API specification file for the Regulations.gov API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
+
+## Frequently Asked Questions
+
+#### I am not seeing all fields returned by v3/documents endpoint in v4/documents endpoint. How do I access this information?
+
+Our v3 API had a single search endpoint which returned information about documents, comments and dockets. To streamline our data, we have split our search into three endpoints:
+    
+* Document Search
+* Comment Search
+* Docket Search
+
+Further, some data that could be retrieved using search in v3 has now been moved under details endpoint. For example, you can retrieve RIN for a docket using /dockets/{docketId} endpoint. The rin is not returned by /documents endpoint anymore.
+
+#### How do I get document status from the new `/documents` endpoint?
+
+The new `/v4/documents` carries a withdrawn field. This is a boolean field. If set to true, the document is withdrawn otherwise it’s a posted document.
+
+#### There are strict pagination limits in v4. How do I retrieve all comments in a docket posted on the same day if the number of comments is greater than 2500?
+
+We have this use case under review, and we will be updating our API to accommodate the use case before v3 retirement.
+
+#### I submitted a comment, but I am unable to find it on regs. What happened to my comment?
+
+Comments created via API are not made available in Regulations.gov right away. Agencies need to approve before the newly created comment can be posted out to Regulations.gov.
+
+#### I am seeing 400 errors from commenting API. What am I doing wrong?
+
+Please make sure you are setting Content-Type to application/vnd.api+json in request header.
+
+#### What is DEMO_KEY api key?
+
+As indicated by name, DEMO_KEY should only be used for demonstration purposes. We have added this api_key to our examples to make it easier for users to copy/paste the urls. It should not be used for anything more than exploring our APIs. 
+
+#### What is the staging API url?
+
+Users should be able to access our staging API at https://api-staging.regulations.gov. The production keys should work in a staging environment.
+
+#### I have an API key. How many requests can I make per hour and how do I know I am about to reach my request limit?
+
+Please review https://api.data.gov/docs/rate-limits/ for information on rate limits.
 
 ## API Calls
 
