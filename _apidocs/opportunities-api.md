@@ -17,7 +17,7 @@ Opportunity Management API can be accessed from Beta or Alpha via the following 
 * Beta: https://api.sam.gov/prod/opportunity/v1/api/
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v1/api/
 
-* Beta: https://api.sam.gov/prod/opportunity/v2/ (coming soon)
+* Beta: https://api.sam.gov/prod/opportunity/v2/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ 
 
 **REST API Workflow Chart**
@@ -72,7 +72,7 @@ Uncancel Canceled Opportunity | Yes | Yes | No
 Archive Opportunity | Yes | Yes | Yes
 Unarchive Archived Opportunity | Yes | Yes | No
 Create Resource in Draft Opportunity| Yes | Yes | Yes
-Create Resource in Draft Opportunity - Stream Attachment (coming soon to BETA)| Yes | Yes | Yes
+Create Resource in Draft Opportunity - Stream Attachment | Yes | Yes | Yes
 Update Resource in Draft Opportunity| Yes | Yes | Yes
 Delete Resource in Draft Opportunity| Yes | Yes | Yes
 Download Attachment as Original File Type | Yes | Yes | Yes
@@ -269,14 +269,14 @@ Please use v2 for the following APIs to utilize ueiSAM in place of DUNS. Busines
 * Create and Publish Opportunity
 * Get Authorized Party
 * Get IVL
-* Get list of Opportunities (Coming Soon to BETA)
-* Get Opportunity by Opportunity ID (Coming Soon to BETA)
+* Get list of Opportunities 
+* Get Opportunity by Opportunity ID 
 * Get Related Opportunities
-* Create Resource in Draft Opportunity - Stream Attachments (Coming Soon to BETA)
+* Create Resource in Draft Opportunity - Stream Attachments 
 
 **v2 Endpoints**
 
-* Beta: https://api.sam.gov/prod/opportunity/v2/ (coming soon)
+* Beta: https://api.sam.gov/prod/opportunity/v2/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ 
 
 ## Contract Opportunity Management API Request and Responses
@@ -1982,7 +1982,7 @@ Examples
 </details>
 
 
-### Get List of Opportunities (v2 Coming Soon)
+### Get List of Opportunities 
 
 
 ------- | -------
@@ -2428,7 +2428,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Get an Opportunity by Opportunity ID (v2 Coming Soon)
+### Get an Opportunity by Opportunity ID 
 
 
 ------- | -------
@@ -2866,7 +2866,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Create Resource in Draft Opportunity - Stream Attachments (Coming Soon to BETA)
+### Create Resource in Draft Opportunity - Stream Attachments 
 
 ------- | -------
 **Request Type** | POST
@@ -7855,5 +7855,6 @@ Date | Version | Description
 8/13/2020 |v1.14 | Added Streaming Attachment API (coming soon) 
 8/17/2020 | v1.15 | Get APIs and Streaming Attachment API deployed to Alpha
 9/14/2020| v1.16| Updated OpenAPI Specification section to include v2 endpoints
+9/15/2020| v1.17| v2 Endpoints updated status in BETA
 
 <p><small><a href="#">Back to top</a></small></p>
