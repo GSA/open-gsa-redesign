@@ -17,7 +17,7 @@ This API will return both active and inactive organizations. The API supports pa
 
 ## Getting Started
 
-Get Opportunities API can be accessed from Beta or Alpha via the following environments:
+Get Opportunities API can be accessed from Beta or Alpha environments via the following urls:
 
 *Note: Please refer the examples below to format right request URLs.*
 
@@ -25,12 +25,13 @@ Get Opportunities API can be accessed from Beta or Alpha via the following envir
 * Staging URL: https://api-alpha.sam.gov/prodlike/federalorganizations/v1
 
 ## Authentication and API Keys
-User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles. 
+User of this public API must provide an API key to use this FH public API. Request per day are limited based on the federal or non-federal or general roles. 
 
 Note: 
 * For production, users can request an API Key in their Profile under Account Details on https://beta.sam.gov/
 * For prodlike, users can request an API Key in their Profile under Account Details on https://alpha.sam.gov/
-
+* Rate limit for Federal User is 1000 requests/day
+* Rate limit for Non-Federal User is 10 requests/day
 
 #### User Account API Key Creation
 * Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on beta.sam.gov
@@ -41,13 +42,13 @@ Note:
 
 ## Federal Hierarchy Public API Request Parameters
 
-### For Request URI: /orgs?api_key=[key] 
+### /orgs?api_key=[key] 
 
 * Users can search on any of the following fields.
 * None of these fields are mandatory.
 * Results will be sorted on level & fhorgname in ascending order. 
 
-**Table 1: FH Public API Request Parameters For request URL**
+**Table 1: /orgs?api_key=[key] Request Parameter**
 
 Request Parameters that API accepts | Description |Data Type
 -----|-----|-----
@@ -68,13 +69,13 @@ createddateto| A field to specify the end range of created date of an organizati
 limit |Total number of records to be retrieved per page. This field must be a positive number equal to 100 or less. If this field is not provided, the default pagesize is 10. Maximum supported page size will be 100. |Number
 offset| Indicates the page index. Default offset starts with 0. |Number
 
-###  For Request URL: /org/hierarchy?orgkey=[orgkey]&api_key=[key] 
+### /org/hierarchy?orgkey=[orgkey]&api_key=[key] 
 
 * Users can retrieve immediate next level hierarchy organizations for the respective
 organization.
 * Results will be sorted on level and fhorgname in ascending order. 
 
-**Table 2: FH Public API Request Parameters For request URL**
+**Table 2: /org/hierarchy?orgkey=[orgkey]&api_key=[key] Request Parameter**
 
 Request Parameters that API accepts | Description |Data Type
 -----|-----|-----
@@ -82,9 +83,11 @@ fhorgid| Unique ID for an organization in Federal Hierarchy. Mandatory to bring 
 limit| Total number of records to be retrieved per page. This field must be a number. If this field is not provided, by default page size is 10. Maximum supported page size will be 100.|Number
 offset| Indicates the page index. Default offset starts with 0. |Number
 
-### Federal Hierarchy Public API Response Parameters 
+## Federal Hierarchy Public API Response Parameters 
 
 Based on the request parameters, API provides below response parameters. 
+
+**Table 3: FH FOUO API Response Parameters**
 
 Request Parameters that API accepts | Description |Data Type
 -----|-----|-----
@@ -181,7 +184,7 @@ PRESIDENT.AFRICAN DEVELOPMENT FUND",
 </p>
 </details>
 
-### Example 1: Search by organization name 
+### Example 1: Search by Organization Name 
 
 Request URL:
 
@@ -244,7 +247,7 @@ API Key}&fhorgname=DEVELOPMENT
 </p>
 </details>
 
-### Example 2: Search for an active organization of type Sub-Tier 
+### Example 2: Search for an Active Organization of Sub-Tier Type
 
 Request URL:
 
@@ -306,7 +309,7 @@ IMPROVEMENT AND TEACHER QUALITY PROGRAMS",
 </p>
 </details>
 
-###  Example 3: Get hierarchy for an organization 
+###  Example 3: Get Hierarchy for an Organization (Immediate Hierarchy)
 
 Request URL:
 
@@ -585,7 +588,9 @@ For limit or offset, user inputs characters/special characters| Limit and offset
 
 Date | Version | Description
 ------|---------------|---------
-9/10 | v1.0 | Base Version
+9/10/2019 | v1.0 | Base Version
 12/2/2019 | v1.1| Added OpenAPI Specification
+9/8/2020 |v1.2| Updated Formatting
+
 
 <p><small><a href="#">Back to top</a></small></p>

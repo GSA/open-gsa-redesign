@@ -9,13 +9,13 @@ The Federal Hierarchy “For Official Use Only” (FOUO) API allows U.S. Governm
 
 **Note**: *The term “organization” as used in the Federal Hierarchy FOUO API denotes any Departments/Independent Agencies, Sub-Tiers, Offices, or major commands/sub-commands under the Department of Defense (DOD).*
 
-This API can return both active and inactive organizations. The API supports pagination with a default of 10 records and a max of 100 records.
+This API can return both active and inactive organizations. The API supports pagination with a default of 10 records and a maximum of 100 records.
 
 **API Version: v1.0**
 
 ## Getting Started
 
-Get Opportunities API can be accessed from Beta or Alpha via the following environments:
+Get Opportunities API can be accessed from Beta or Alpha environments via the following urls:
 
 *Note: Please refer the examples below to format right request URLs.*
 
@@ -34,7 +34,7 @@ You may not use the Federal Hierarchy FOUO API to build out a public view of eit
 You agree to be bound by these Terms of Use when you submit a Federal Hierarchy FOUO API request as well as when you receive a Federal Hierarchy FOUO API response. Contact the GSA IAE Program Management Office at newsamtesting@gsa.gov if you have any questions about these Terms of Use.
 
 ## Authentication and API Keys
-User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles. 
+User of this API must provide an API key to use this FH API. API key must either be a system account API key or a personal API key. Request per day are limited based on the federal or non-federal or general roles. 
 
 Note: 
 * For production, users can request an API Key in their Profile under Account Details on https://beta.sam.gov/
@@ -47,15 +47,24 @@ Note:
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
 * If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
 
+#### Generating a System Account API Key
+* Users registered with a government email address and have appropriate System Account Manager or System Account Admin role may request a system account for data access.
+* If a user satisfies the above registration criteria they will be able to access the System Accounts widget from their Workspace page after logging in.
+* The user can then select “Request System Account” from the widget and fill out the required sections with appropriate Contract Opportunities permissions.
+* The requested system account will then need to be approved. After approval the user will be notified via email and they can also see the updated status in the System Account widget.
+* The user can select ‘Go to System Accounts’ in the widget from their workspace and enter a new system account password.
+* After setting up the password the user will see a new section for retrieving a system account API Key. The user must enter their password again to retrieve the key.
+
+
 ## Federal Hierarchy FOUO API Request Parameters
 
-### For Request URL /orgs?api_key=[key]
+### /orgs?api_key=[key]
 
 * Users can search on any of the following fields
 * None of these fields are mandatory
 * Results will be sorted on level & fhorgname in ascending order
 
-**Table 1: FH FOUO API Request Parameters**
+**Table 1: /orgs?api_key=[key] Request Parameter**
 
 Request Parameters that API accepts	| Description | Data Type
 ----- | ----- | ----- 
@@ -89,11 +98,11 @@ createddateto|	Field to specify the end range of the created date of an organiza
 limit|	Total number of records to be retrieved per page. This field must be a positive number equal to 100 or less. If this field is not provided, the default page size is 10. Maximum supported page size will be 100.	|Number
 offset	|Indicates the record index. Default offset starts with 0 i.e. offset=0 and limit=10 signifies 0-10 records. offset=5 and limit=10 signifies records from 5th to 15.	|Number
 
-### For Request URL /org/hierarchy?orgkey=[orgkey]&api_key=[key]
+### /org/hierarchy?orgkey=[orgkey]&api_key=[key]
 * Users can retrieve immediate next level hierarchy organizations for the respective organization.
 * Results will be sorted on level and fhorgname in ascending order.
 
-**Table 2: FH FOUO API Request Parameters**
+**Table 2: /org/hierarchy?orgkey=[orgkey]&api_key=[key] Request Parameters**
 
 Request Parameters that API accepts	| Description | Data Type
 ----- | ----- | ----- 
@@ -387,7 +396,7 @@ Request URL: <br> https://api-alpha.sam.gov/prodlike/federalorganizations/v1/org
 </p>
 </details>
 
-### Example 3: Get Hierarchy for an Organization
+### Example 3: Get Hierarchy for an Organization (Immediate Hierarchy)
 
 Request URL: <br> https://api-alpha.sam.gov/prodlike/federalorganizations/v1/org/hierarchy?limit=10&api_key={User’s API Key}&fhorgid=100006688
 
@@ -771,8 +780,9 @@ https://www.census.gov/programs-surveys/geography.html
 
 Date | Version | Description
 ------|---------------|---------
-8/8/19 | v1.0 | Base Version
-9/16/19 | v1.1 | Added Region Code <br> Updated rules for multiple CGAC
+8/8/2019 | v1.0 | Base Version
+9/16/2019 | v1.1 | Added Region Code <br> Updated rules for multiple CGAC
 12/2/2019 | v1.2| Added OpenAPI Specification
+9/8/2020 |v1.3| Updated Formatting
 
 <p><small><a href="#">Back to top</a></small></p>
