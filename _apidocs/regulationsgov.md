@@ -178,6 +178,27 @@ Here are few example queries for searching comments:
   ```
   https://api.regulations.gov/v4/comments?sort=-postedDate&api_key=DEMO_KEY
   ```
+  
+* Retrieve all comments for a docket:
+  
+  * Step 1: Get all documents for the docketId FAA-2018-1084: 
+    ```
+    https://api.regulations.gov/v4/documents?filter[docketId]=FAA-2018-1084&api_key=DEMO_KEY
+    ```
+    It returns two documents. 
+
+  * Step 2: Get details for each document, there should be an objectId attribute returned in the response.
+    ```
+    https://api.regulations.gov/v4/documents/FAA-2018-1084-0001&api_key=DEMO_KEY
+    ```
+    Response for the above request includes an attribute objectId and its set to 0900006483a6cba3
+  
+  * Step 3: Get all comments for each document using objectId:
+    ```
+    https://api-staging.regulations.gov/v4/comments?filter[commentOnId]=0900006483a6cba3
+    ```
+    The above request returns a list of comments for document FAA-2018-1084-0001.
+    
 
 #### Detailed information for a single comment
 
