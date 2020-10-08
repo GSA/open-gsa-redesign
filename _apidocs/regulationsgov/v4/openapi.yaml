@@ -832,9 +832,6 @@ components:
       description: A JSON:API document which represents a single document being posted
       type: object
       properties:
-        id:
-          description: The comment submission key
-          type: string
         type:
           description: The JSON:API resource type `comments`
           type: string
@@ -1361,7 +1358,6 @@ components:
       type: object
       required:
         - comment
-        - submissionKey #only required for comments submitted with attachments
         - commentOnDocumentId
         - submissionType #user should set submission Type to API
       properties:
