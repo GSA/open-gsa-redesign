@@ -123,7 +123,8 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <tr>
 <td>entityEFTIndicator</td>
 <td>Entity EFT Indicator aka duns4.
-<br>Example: entityEFTIndicator=0000</td>
+<br>Example: entityEFTIndicator=0000
+<br>NOTE: This parameter must be used in conjunction with ueiDUNS or ueiSAM.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -2750,7 +2751,8 @@ First Name</td>
 <tr>
 <td>entityEFTIndicator</td>
 <td>Entity EFT Indicator aka duns4.
-<br>Example: entityEFTIndicator=0000</td>
+<br>Example: entityEFTIndicator=0000
+<br>NOTE: This parameter must be used in conjunction with ueiDUNS or ueiSAM.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7265,7 +7267,8 @@ First Name</td>
 <tr>
 <td>entityEFTIndicator</td>
 <td>Entity EFT Indicator aka duns4.
-<br>Example: entityEFTIndicator=0000</td>
+<br>Example: entityEFTIndicator=0000
+<br>NOTE: This parameter must be used in conjunction with ueiDUNS or ueiSAM.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -18044,6 +18047,6 @@ Disclaimer:
 | 05/04/2020 | v1.7 | * Added V2 endpoint information.|
 | 06/10/2020 | v1.8 | * Added the endpoint, new process and an example for the Sensitive API .|
 | 08/17/2020 | v1.9 | * The "Sensitive API Process" subsection under the "Sensitive API Information" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshots under "Example 13" have been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.|
-| 10/15/2020 | v2.0 | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. |
+| 10/15/2020 | v2.0 | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. <br><br> * Updated the description for the entityEFTIndicator parameter. |
 
 <p><small><a href="#">Back to top</a></small></p>
