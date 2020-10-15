@@ -25,7 +25,7 @@ The response will be provided in the JSON format in a paginated manner.
 ## Getting Started
 
 Exclusions API can be accessed from Beta or Alpha via the following version 1 and version 2 endpoints:
-* Beta Version 1: https://api.sam.gov/entity-information/v1/api/exclusions?api_key=< value >
+* Beta Version 1: https://api.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Beta Version 2: Coming Soon
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< value ><br><br>
@@ -411,6 +411,7 @@ Date | Version | Description
 02/25/2020 | v1.5 | * Added Examples for v2 requests and responses. <br><br> * Updated Alpha endpoint to meet new API standards.
 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.
 05/04/2020 | v1.7 | * Added V2 endpoint information.
+10/15/2020 | v1.8 | * Updated the Beta V1 endpoint
 
 
 <p><small><a href="#">Back to top</a></small></p>
