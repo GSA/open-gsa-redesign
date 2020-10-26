@@ -37,7 +37,8 @@ Sensitive Entity Details can be accessed from Beta or Alpha via the following en
 
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
        <ul>
-       <li style="color: #31708f;">Beta Version 1/Version 2: Coming soon</li>
+       <li style="color: #31708f;">Beta Version 1: https://api.sam.gov/entity-information/v1/entities?</li>
+       <li style="color: #31708f;">Beta Version 2: Coming soon</li>
        <li style="color: #31708f;">Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?</li>
        <li style="color: #31708f;">Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?</li>
        </ul><br>
