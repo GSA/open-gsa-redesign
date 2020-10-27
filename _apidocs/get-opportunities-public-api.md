@@ -1158,6 +1158,6 @@ Date | Version | Description
 6/20/2020| v1.7| Added additional information field to point of contact parameter in the response
 7/3/2020| v1.8| Updated field parameters to include all FH information for given notices in both request and response
 9/14/2020| v1.9| Updated OpenAPI Specification section to include v2 endpoints
-10/25/2020 | v1.91| Added new request field for status (coming Soon)
+10/25/2020 | v1.91| Added new request field for status (Coming Soon)
 
 <p><small><a href="#">Back to top</a></small></p>
