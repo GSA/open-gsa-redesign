@@ -51,6 +51,7 @@ postedTo|	Posted date To  Format must be MM/dd/yyyy <br> Note: Date range betwee
 deptname |	Department Name (L1)	|No|	String | v1<br> v2 - Deprecated
 subtier|	Agency Name (L2)| 	No|	String | v1<br> v2 - Deprecated
 state|	Place of Performance (State)|	No	|String | v1<br> v2
+status (Coming Soon)| Status of the opportunity <br> Accepts following:  active, archived, cancelled, deleted | No| String | v2
 zip|	Place of Performance (Zip code)|	No|	String | v1<br> v2
 organizationCode| Code of associated organization | No| string | v2
 organizationName| Name of associated organization <br> *Note: General Search can be performed*|No| String|v2
@@ -1157,5 +1158,6 @@ Date | Version | Description
 6/20/2020| v1.7| Added additional information field to point of contact parameter in the response
 7/3/2020| v1.8| Updated field parameters to include all FH information for given notices in both request and response
 9/14/2020| v1.9| Updated OpenAPI Specification section to include v2 endpoints
+10/25/2020 | v1.91| Added new request field for status (Coming Soon)
 
 <p><small><a href="#">Back to top</a></small></p>
