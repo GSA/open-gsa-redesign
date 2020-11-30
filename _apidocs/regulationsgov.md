@@ -33,7 +33,7 @@ When Congress passes laws, federal agencies implement those laws through regulat
 
 To begin using this API, you will need to register for an API Key. You can sign up for an API key here: [API key signup page on api.data.gov](https://api.data.gov/signup/).
 
-{% raw %}
+{%raw%}
 <div id="apidatagov_signup">Loading signup form...</div>
  <script type="text/javascript">
    var apiUmbrellaSignupOptions = {
@@ -74,7 +74,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
       termsCheckbox: true,
       // OPTIONAL: If the terms & conditions checkbox is enabled, link to this
       // URL for your API's terms & conditions. Defaults to "".
-      termsUrl: "https://open.gsa.gov/api/regulationsgov/#api-calls"
+      termsUrl: 'https://open.gsa.gov/api/regulationsgov/#api-calls'
 };
 
  /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -85,7 +85,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
    })();
  </script>
  <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
-{% endraw %}
+{%endraw%}
 
 
 After registration, you will need to provide this API key in the `X-Api-Key` HTTP header with every API request.
