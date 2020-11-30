@@ -96,6 +96,14 @@ After registration, you will need to provide this API key in the `X-Api-Key` HTT
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## Terms of Participation
+
+Public comments help agencies develop regulations; we encourage comments from all viewpoints. Comments submitted to Regulations.gov should be the submitter’s own comments or be submitted with the commenter’s permission. The development of federal regulations is within the jurisdiction of the U.S. Government’s executive branch agencies. It is a violation of federal law to knowingly and willfully make a materially false, fictitious, or fraudulent statement or representation including false statements about your identity or your authority to submit a comment on someone else’s behalf, in relation to the development of such federal regulations, including through comments submitted on Regulations.gov. See 18 U.S.C. § 1001.
+
+Subject to 18 U.S.C. § 1028(c), it is also a violation of federal law to knowingly use, without lawful authority, a means of identification of another person in connection with the violation of any federal law or the commission of a felony under state or local law. See 18 U.S.C. § 1028(a)(7).
+
+You are verifying that you are not making any materially false, fictitious, or fraudulent statement or representation regarding your identity or your authority to submit on someone else’s behalf with regard to the comment you are submitting using Regulations.gov API, and that you are not using, without lawful authority, a means of identification of another person, real or fictitious, in connection with any comment you are submitting on Regulations.gov.
+
 ## API Description
 
 Regulations.gov offers a GET API for documents, comments, and dockets and a POST API for comments. These endpoints can be used for searching document, comments and dockets, and posting a comment.
