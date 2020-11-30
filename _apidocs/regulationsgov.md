@@ -189,7 +189,7 @@ Here are few example queries for searching comments:
 
   * Step 2: Get details for each document:
     ```
-    https://api.regulations.gov/v4/documents/FAA-2018-1084-0001&api_key=DEMO_KEY
+    https://api.regulations.gov/v4/documents/FAA-2018-1084-0001?api_key=DEMO_KEY
     ```
     Response for the above request includes an attribute objectId and its set to 0900006483a6cba3.
   
