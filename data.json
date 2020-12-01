@@ -3651,7 +3651,7 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2020-11-30",
+			"modified": "2020-12-01",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
@@ -3673,9 +3673,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "JSON",
-					"title": "EDI JSON 11/30/20",
-					"description": "EDI JSON 11/30/20",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-json-11-30-20.json"
+					"title": "EDI JSON 12/01/20",
+					"description": "EDI JSON 12/01/20",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-json-12-01-20.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -8949,7 +8949,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2020-11-02",
+			"modified": "2020-12-01",
 			"accessLevel": "public",
 			"identifier": "GSA-25251",
 			"dataQuality": true,
@@ -8971,7 +8971,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_bldg_rexus",
-					"description": "November - Rexus Building file",
+					"description": "December - Rexus Building file",
 					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/badb18d1-e314-4af5-bce9-16aa0b5624bb/download/datagovbldgrexus.csv"
 				}
 			],
@@ -8982,7 +8982,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) (Lease)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2020-11-02",
+			"modified": "2020-12-01",
 			"accessLevel": "public",
 			"identifier": "GSA-25261",
 			"dataQuality": true,
@@ -9004,7 +9004,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus",
-					"description": "November - Rexus Lease file",
+					"description": "December - Rexus Lease file",
 					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/db2e5040-a1fc-4581-975c-e38ccf70b2e9/download/datagovlserexus.csv"
 				}
 			],
