@@ -717,7 +717,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>correspondenceFlag</td>
 <td>string</td>
-<td>Correspondence Flag<br>This field does not contain any data and will be deprecated in a future version.</td>
+<td>Correspondence Flag<br>This field does not contain any data and has been removed from the API.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -4243,7 +4243,7 @@ samMonitoring
 <tr>
 <td>correspondenceFlag</td>
 <td>string</td>
-<td>Correspondence Flag<br>This field does not contain any data and will be deprecated in a future version.</td>
+<td>Correspondence Flag<br>This field does not contain any data and has been removed from the API.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -8913,7 +8913,7 @@ samMonitoring
 <tr>
 <td>correspondenceFlag</td>
 <td>string</td>
-<td>Correspondence Flag<br>This field does not contain any data and will be deprecated in a future version.</td>
+<td>Correspondence Flag<br>This field does not contain any data and has been removed from the API.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
