@@ -93,7 +93,8 @@ If you want to use commenting API, you MUST use the form below to register for a
 
     // OPTIONAL: If the terms & conditions checkbox is enabled, link to this
     // URL for your API's terms & conditions. Defaults to "".
-    termsUrl: 'https://open.gsa.gov/api/regulationsgov/#terms-of-participation'
+    // termsUrl: 'https://open.gsa.gov/api/regulationsgov/#terms-of-participation'
+    termsUrl: 'https://federalist-ecc58765-2903-48b3-920c-5d93318ad084.app.cloud.gov/preview/gsa/open-gsa-redesign/apidocs-regulations4-20191203/api/regulationsgov/#terms-of-participation'
   };
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
