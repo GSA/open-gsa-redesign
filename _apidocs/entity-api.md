@@ -131,7 +131,7 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 
 <tr>
 <td>debtSubjectToOffset</td>
-<td>Allows Y or N or null.
+<td>Allows Y, N, U or null.
 <br>Example: debtSubjectToOffset=Y</td>
 <td>v1<br>v2</td>
 </tr>
@@ -2780,7 +2780,7 @@ First Name</td>
 
 <tr>
 <td>debtSubjectToOffset</td>
-<td>Allows Y or N or null.
+<td>Allows Y, N, U or null.
 <br>Example: debtSubjectToOffset=Y</td>
 <td>v1<br>v2</td>
 </tr>
@@ -3110,9 +3110,23 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>companySecurityLevelDesc</td>
+<td>Allows text.
+<br>Example: companySecurityLevelDesc=Government Top Secret
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
 <br>Example: highestEmployeeSecurityLevelCode=90</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelDesc</td>
+<td>Allows text.
+<br>Example: highestEmployeeSecurityLevelDesc=Government Top Secret
 <td>v1<br>v2</td>
 </tr>
 
@@ -3134,6 +3148,13 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>agencyBusinessPurposeCode</td>
 <td>Allows text, Determines Agency Business Purpose Code.
 <br>Example: agencyBusinessPurposeCode=1</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeDesc</td>
+<td>Allows text.
+<br>Example: agencyBusinessPurposeDesc=Buyer and Seller</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7317,7 +7338,7 @@ First Name</td>
 
 <tr>
 <td>debtSubjectToOffset</td>
-<td>Allows Y or N or null.
+<td>Allows Y, N, U or null.
 <br>Example: debtSubjectToOffset=Y</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7647,9 +7668,23 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>companySecurityLevelDesc</td>
+<td>Allows text.
+<br>Example: companySecurityLevelDesc=Government Top Secret
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
 <br>Example: highestEmployeeSecurityLevelCode=90</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelDesc</td>
+<td>Allows text.
+<br>Example: highestEmployeeSecurityLevelDesc=Government Top Secret
 <td>v1<br>v2</td>
 </tr>
 
@@ -7671,6 +7706,13 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>agencyBusinessPurposeCode</td>
 <td>Allows text, Determines Agency Business Purpose Code.
 <br>Example: agencyBusinessPurposeCode=1</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeDesc</td>
+<td>Allows text.
+<br>Example: agencyBusinessPurposeDesc=Buyer and Seller</td>
 <td>v1<br>v2</td>
 </tr>
 
