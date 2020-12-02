@@ -449,14 +449,14 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>sbaBusinessTypeCode</td>
 <td>Allows a two character code or null.
-<br>Example: sbaBusinessTypeCode=12
+<br>Example: sbaBusinessTypeCode=12</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeDesc</td>
 <td>Allows text.
-<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business
+<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -3113,7 +3113,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>companySecurityLevelDesc</td>
 <td>Allows text.
-<br>Example: companySecurityLevelDesc=Government Top Secret
+<br>Example: companySecurityLevelDesc=Government Top Secret</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3127,7 +3127,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>highestEmployeeSecurityLevelDesc</td>
 <td>Allows text.
-<br>Example: highestEmployeeSecurityLevelDesc=Government Top Secret
+<br>Example: highestEmployeeSecurityLevelDesc=Government Top Secret</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3169,14 +3169,14 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>sbaBusinessTypeCode</td>
 <td>Allows a two character code or null.
-<br>Example: sbaBusinessTypeCode=12
+<br>Example: sbaBusinessTypeCode=12</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeDesc</td>
 <td>Allows text.
-<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business
+<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7695,7 +7695,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>companySecurityLevelDesc</td>
 <td>Allows text.
-<br>Example: companySecurityLevelDesc=Government Top Secret
+<br>Example: companySecurityLevelDesc=Government Top Secret</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7709,7 +7709,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>highestEmployeeSecurityLevelDesc</td>
 <td>Allows text.
-<br>Example: highestEmployeeSecurityLevelDesc=Government Top Secret
+<br>Example: highestEmployeeSecurityLevelDesc=Government Top Secret</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7807,14 +7807,14 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>sbaBusinessTypeCode</td>
 <td>Allows a two character code or null.
-<br>Example: sbaBusinessTypeCode=12
+<br>Example: sbaBusinessTypeCode=12</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeDesc</td>
 <td>Allows text.
-<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business
+<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
 <td>v1<br>v2</td>
 </tr>
 
