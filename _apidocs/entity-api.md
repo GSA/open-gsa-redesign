@@ -3914,9 +3914,17 @@ dnbMonitoring
 </tr>
 
 <tr>
-<td>postalCode</td>
+<td>zipCode</td>
 <td>string</td>
-<td>Postal Code</td>
+<td>Zip Code</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -4000,9 +4008,17 @@ samMonitoring
 </tr>
 
 <tr>
-<td>postalCode</td>
+<td>zipCode</td>
 <td>string</td>
-<td>Postal Code</td>
+<td>Zip Code</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -4079,10 +4095,17 @@ samMonitoring
 </tr>
 
 <tr>
-<td>postalCode</td>
+<td>zipCode</td>
 <td>string</td>
-<td>Postal Code</td>
-<td>v2</td>
+<td>Zip Code</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -8531,9 +8554,17 @@ dnbMonitoring
 </tr>
 
 <tr>
-<td>postalCode</td>
+<td>zipCode</td>
 <td>string</td>
-<td>Postal Code</td>
+<td>Zip Code</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -8617,9 +8648,17 @@ samMonitoring
 </tr>
 
 <tr>
-<td>postalCode</td>
+<td>zipCode</td>
 <td>string</td>
-<td>Postal Code</td>
+<td>Zip Code</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -8696,10 +8735,17 @@ samMonitoring
 </tr>
 
 <tr>
-<td>postalCode</td>
+<td>zipCode</td>
 <td>string</td>
-<td>Postal Code</td>
-<td>v2</td>
+<td>Zip Code</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
