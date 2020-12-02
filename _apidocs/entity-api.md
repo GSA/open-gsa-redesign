@@ -164,7 +164,7 @@ alphanumeric (ueiSAM values not yet available for search).
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
-<br>Example: entityStructureCode=Z1</td>
+<br>Example: entityStructureCode=2L</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -257,7 +257,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
 <td>Allows 2 characters.
-<br>Example: physicalAddressCongressionalDistrict=AR
+<br>Example: physicalAddressCongressionalDistrict=08
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -280,15 +280,15 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
-<td>Allows 5 digit zip code.
-<br>Example: physicalAddressZipPostalCode=02201
+<td>Allows 5 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Example: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>samExtractCode --> registrationStatus</td>
-<td>Allows 1 character code (A or E).
+<td>Allows 1 character code (A for Active or E for Expired).
 <br>samExtractCode=A, registrationStatus=A
 <br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
 </td>
@@ -298,7 +298,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
-<br>Example: businessTypeCode=2L</td>
+<br>Example: businessTypeCode=OY</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -312,14 +312,14 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
-<br>Example: organizationStructureCode=2L</td>
+<br>Example: organizationStructureCode=MF</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
-<br>Example: organizationStructureDesc=Limited Liability Company</td>
+<br>Example: organizationStructureDesc=MANUFACTURER OF GOODS</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -347,7 +347,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
-<br>Example: countryOfIncorporationDesc=United States Of America</td>
+<br>Example: countryOfIncorporationDesc=UNITED STATES</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -367,7 +367,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>naicsLimitedSB</td>
-<td>Allows 6 character code.
+<td>Allows a 6-digit NAICS Code, "" or !"" values.
 <br>Example: naicsLimitedSB=513310</td>
 <td>v1<br>v2</td>
 </tr>
@@ -375,7 +375,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
-<br>Example: pscCode=0989</td>
+<br>Example: pscCode=X1QA</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -388,8 +388,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterStateCode</td>
-<td>Allows 2 character code.
-<br>Example: servedDisasterStateCode=VA</td>
+<td>Allows 2 digit character code or "any".
+<br>Example: servedDisasterStateCode=VA, servedDisasterStateCode=any</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -402,8 +402,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterCountyCode</td>
-<td>Allows text.
-<br>Example: servedDisasterCountyCode=12334</td>
+<td>Allows 3 digit county code.
+<br>Example: servedDisasterCountyCode=060</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -416,8 +416,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterMSA</td>
-<td>Allows text.
-<br>Example: servedDisasterMSA=86800730</td>
+<td>Allows 4 digit MSA code.
+<br>Example: servedDisasterMSA=1720</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -632,7 +632,8 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>exclusionStatusFlag</td>
 <td>string</td>
-<td>Exclusion Status Flag</td>
+<td>Exclusion Status Flag
+<br>Description (Debarred)</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -2813,7 +2814,7 @@ alphanumeric (ueiSAM values not yet available for search).
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
-<br>Example: entityStructureCode=Z1</td>
+<br>Example: entityStructureCode=2L</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -2906,7 +2907,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
 <td>Allows 2 characters.
-<br>Example: physicalAddressCongressionalDistrict=AR
+<br>Example: physicalAddressCongressionalDistrict=08
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -2929,15 +2930,15 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
-<td>Allows 5 digit zip code.
-<br>Example: physicalAddressZipPostalCode=02201
+<td>Allows 5 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Example: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>samExtractCode --> registrationStatus</td>
-<td>Allows 1 character code (A or E).
+<td>Allows 1 character code (A for Active or E for Expired).
 <br>samExtractCode=A, registrationStatus=A
 <br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
 </td>
@@ -2947,7 +2948,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
-<br>Example: businessTypeCode=2L</td>
+<br>Example: businessTypeCode=OY</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -2961,14 +2962,14 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
-<br>Example: organizationStructureCode=2L</td>
+<br>Example: organizationStructureCode=MF</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
-<br>Example: organizationStructureDesc=Limited Liability Company</td>
+<br>Example: organizationStructureDesc=MANUFACTURER OF GOODS</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -2996,7 +2997,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
-<br>Example: countryOfIncorporationDesc=United States Of America</td>
+<br>Example: countryOfIncorporationDesc=UNITED STATES</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3016,7 +3017,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>naicsLimitedSB</td>
-<td>Allows 6 character code.
+<td>Allows a 6-digit NAICS Code, "" or !"" values.
 <br>Example: naicsLimitedSB=513310</td>
 <td>v1<br>v2</td>
 </tr>
@@ -3024,7 +3025,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
-<br>Example: pscCode=0989</td>
+<br>Example: pscCode=X1QA</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3037,8 +3038,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterStateCode</td>
-<td>Allows 2 character code.
-<br>Example: servedDisasterStateCode=VA</td>
+<td>Allows 2 digit character code or "any".
+<br>Example: servedDisasterStateCode=VA, servedDisasterStateCode=any</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3051,8 +3052,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterCountyCode</td>
-<td>Allows text.
-<br>Example: servedDisasterCountyCode=12334</td>
+<td>Allows 3 digit county code.
+<br>Example: servedDisasterCountyCode=060</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3065,8 +3066,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterMSA</td>
-<td>Allows text.
-<br>Example: servedDisasterMSA=86800730</td>
+<td>Allows 4 digit MSA code.
+<br>Example: servedDisasterMSA=1720</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3351,7 +3352,8 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>exclusionStatusFlag</td>
 <td>string</td>
-<td>Exclusion Status Flag</td>
+<td>Exclusion Status Flag
+<br>Description (Debarred)</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7371,7 +7373,7 @@ alphanumeric (ueiSAM values not yet available for search).
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
-<br>Example: entityStructureCode=Z1</td>
+<br>Example: entityStructureCode=2L</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7464,7 +7466,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
 <td>Allows 2 characters.
-<br>Example: physicalAddressCongressionalDistrict=AR
+<br>Example: physicalAddressCongressionalDistrict=08
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7487,15 +7489,15 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
-<td>Allows 5 digit zip code.
-<br>Example: physicalAddressZipPostalCode=02201
+<td>Allows 5 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Example: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>samExtractCode --> registrationStatus</td>
-<td>Allows 1 character code (A or E).
+<td>Allows 1 character code (A for Active or E for Expired).
 <br>samExtractCode=A, registrationStatus=A
 <br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
 </td>
@@ -7505,7 +7507,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
-<br>Example: businessTypeCode=2L</td>
+<br>Example: businessTypeCode=OY</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7519,14 +7521,14 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
-<br>Example: organizationStructureCode=2L</td>
+<br>Example: organizationStructureCode=MF</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
-<br>Example: organizationStructureDesc=Limited Liability Company</td>
+<br>Example: organizationStructureDesc=MANUFACTURER OF GOODS</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7554,7 +7556,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
-<br>Example: countryOfIncorporationDesc=United States Of America</td>
+<br>Example: countryOfIncorporationDesc=UNITED STATES</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7574,7 +7576,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>naicsLimitedSB</td>
-<td>Allows 6 character code.
+<td>Allows a 6-digit NAICS Code, "" or !"" values.
 <br>Example: naicsLimitedSB=513310</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7582,7 +7584,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
-<br>Example: pscCode=0989</td>
+<br>Example: pscCode=X1QA</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7595,8 +7597,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterStateCode</td>
-<td>Allows 2 character code.
-<br>Example: servedDisasterStateCode=VA</td>
+<td>Allows 2 digit character code or "any".
+<br>Example: servedDisasterStateCode=VA, servedDisasterStateCode=any</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7609,8 +7611,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterCountyCode</td>
-<td>Allows text.
-<br>Example: servedDisasterCountyCode=12334</td>
+<td>Allows 3 digit county code.
+<br>Example: servedDisasterCountyCode=060</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7623,8 +7625,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterMSA</td>
-<td>Allows text.
-<br>Example: servedDisasterMSA=86800730</td>
+<td>Allows 4 digit MSA code.
+<br>Example: servedDisasterMSA=1720</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7966,7 +7968,8 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>exclusionStatusFlag</td>
 <td>string</td>
-<td>Exclusion Status Flag</td>
+<td>Exclusion Status Flag
+<br>Description (Debarred)</td>
 <td>v1<br>v2</td>
 </tr>
 
