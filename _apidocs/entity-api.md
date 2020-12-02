@@ -18205,6 +18205,6 @@ Disclaimer:
 | 10/15/2020 | v2.0 | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. <br><br> * Updated the description for the entityEFTIndicator parameter. |
 | 12/02/2020 | v2.1 | * Updated the Query String Parameters to include the mpin parameter.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, 
 sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query
-String Parameters.
+String Parameters. |
 
 <p><small><a href="#">Back to top</a></small></p>
