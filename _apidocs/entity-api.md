@@ -445,6 +445,20 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
+
+<tr>
+<td>sbaBusinessTypeCode</td>
+<td>Allows a two character code or null.
+<br>Example: sbaBusinessTypeCode=12
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeDesc</td>
+<td>Allows text.
+<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business
+<td>v1<br>v2</td>
+</tr>
 </table>
 </details>
 
@@ -3127,6 +3141,20 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>sensitivity</td>
 <td>Allows a text, Determines Sensitivity Level of Data.
 <br>Example: sensitivity=public</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeCode</td>
+<td>Allows a two character code or null.
+<br>Example: sbaBusinessTypeCode=12
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeDesc</td>
+<td>Allows text.
+<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business
 <td>v1<br>v2</td>
 </tr>
 
@@ -7706,6 +7734,20 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>sensitivity</td>
 <td>Allows a text, Determines Sensitivity Level of Data.
 <br>Example: sensitivity=public</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeCode</td>
+<td>Allows a two character code or null.
+<br>Example: sbaBusinessTypeCode=12
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeDesc</td>
+<td>Allows text.
+<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business
 <td>v1<br>v2</td>
 </tr>
 
