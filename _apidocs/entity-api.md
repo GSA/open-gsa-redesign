@@ -3879,48 +3879,56 @@ dnbMonitoring
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+<td></td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
+<td></td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
+<td></td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
+<td></td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
+<td></td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td></td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td></td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td></td>
 </tr>
 
 <tr>
@@ -3941,12 +3949,14 @@ dnbMonitoring
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td></td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td></td>
 </tr>
 </table>
 </details>
@@ -3974,48 +3984,56 @@ samMonitoring
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+<td></td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
+<td></td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
+<td></td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
+<td></td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
+<td></td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td></td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td></td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td></td>
 </tr>
 
 <tr>
@@ -4036,12 +4054,14 @@ samMonitoring
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td></td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td></td>
 </tr>
 </table>
 </details>
@@ -8532,48 +8552,56 @@ dnbMonitoring
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+<td></td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
+<td></td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
+<td></td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
+<td></td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
+<td></td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td></td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td></td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td></td>
 </tr>
 
 <tr>
@@ -8594,12 +8622,14 @@ dnbMonitoring
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td></td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td></td>
 </tr>
 </table>
 </details>
@@ -8627,48 +8657,56 @@ samMonitoring
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+<td></td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
+<td></td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
+<td></td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
+<td></td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
+<td></td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
+<td></td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
+<td></td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
+<td></td>
 </tr>
 
 <tr>
@@ -8689,12 +8727,14 @@ samMonitoring
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
+<td></td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
+<td></td>
 </tr>
 </table>
 </details>
