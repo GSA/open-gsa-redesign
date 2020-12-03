@@ -122,7 +122,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | terminationDate | string | Termination Date   | v1<br>v2 |
 | terminationType | string | Termination Type   | v1<br>v2 |
 | recordStatus | string | Record Status  | v1<br>v2 |
-| **exclusionAddress** |
+| **exclusionAddress/exclusionPrimaryAddress** | | NOTE: This section is being renamed. It is exclusionAddress is in V1 and will be exclusionPrimaryAddress in V2. The V2 change is available in Alpha now but will remain exclusionAddress in both V1 and V2 in Beta until a later date. | |
 | addressLine1 | string | Address Line 1  |  v1<br>v2 |
 | addressLine2 | string | Address Line 2  |  v1<br>v2 |
 | city | string | Address City  |  v1<br>v2 | 
@@ -142,7 +142,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | additionalComments | string | Additional Comments  |  v1<br>v2 |
 | ctCode | string | CT Code  |  v1<br>v2 |
 | dnbInvestigationStatus/evsInvestigationStatus | string | EVS Investigation Status  <br><br>NOTE: This parameter is being renamed. dnbInvestigationStatus is in V1 and evsInvestigationStatus will be V2.   |  v1<br>v2 |
-| **references --> referencesList**   |
+| **exclusionOtherInformation  --> references --> referencesList**   |
 | name/exclusionName | string | Exclusion Name <br><br>NOTE:  This parameter is being renamed.  name is in V1 and exclusionName will be V2.|  v1<br>v2 |
 | type | string | Type  |  v1<br>v2 |
 | **exclusionOtherInformation --> moreLocations** |
