@@ -166,13 +166,13 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | flag | string | Flag  |  v1<br>v2 |
 | owner | string | Owner |  v1<br>v2 |
 | **vesselDetails --> secondaryAddress**  |
-| addressLine1 | string | Address Line 1  |  v1<br>v2 |
-| addressLine2 | string | Address Line 2  |  v1<br>v2 |
-| city | string | Address City  |  v1<br>v2 |
-| stateOrProvinceCode | string | Address State or Province Code |  v1<br>v2 |
-| zipCode | string | Address Zip OR Postal Code  |  v1<br>v2 |
-| zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2 |
-| countryCode | string | Country Code |  v1<br>v2 |
+| addressLine1 | string | Address Line 1  |  v1<br>v2 Beta Only |
+| addressLine2 | string | Address Line 2  |  v1<br>v2 Beta Only |
+| city | string | Address City  |  v1<br>v2 Beta Only |
+| stateOrProvinceCode | string | Address State or Province Code |  v1<br>v2 Beta Only |
+| zipCode | string | Address Zip OR Postal Code  |  v1<br>v2 Beta Only |
+| zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2 Beta Only |
+| countryCode | string | Country Code |  v1<br>v2 Beta Only |
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -432,7 +432,7 @@ Date | Version | Description
 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.
 05/04/2020 | v1.7 | * Added V2 endpoint information.
 10/15/2020 | v1.8 | * Updated the Beta V1 endpoint
-12/03/2020 | v1.9 | * Updated moreLocations for API response.
+12/03/2020 | v1.9 | * Updated moreLocations for API response. <br><br> Updated vesselDetails --> secondaryAddress to mention v2 Beta only.
 
 
 <p><small><a href="#">Back to top</a></small></p>
