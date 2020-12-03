@@ -3926,14 +3926,14 @@ dnbMonitoring
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -4020,14 +4020,14 @@ samMonitoring
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -4107,14 +4107,21 @@ samMonitoring
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1</td>
+</tr>
+
+<tr>
+<td>postalCode</td>
+<td>string</td>
+<td>Postal Code</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -8570,14 +8577,14 @@ dnbMonitoring
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -8664,14 +8671,14 @@ samMonitoring
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
@@ -8751,14 +8758,21 @@ samMonitoring
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1</td>
+</tr>
+
+<tr>
+<td>postalCode</td>
+<td>string</td>
+<td>Postal Code</td>
+<td>v2</td>
 </tr>
 
 <tr>
@@ -18217,5 +18231,6 @@ Disclaimer:
 | 08/17/2020 | v1.9 | * The "Sensitive API Process" subsection under the "Sensitive API Information" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshots under "Example 13" have been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.|
 | 10/15/2020 | v2.0 | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. <br><br> * Updated the description for the entityEFTIndicator parameter. |
 | 12/02/2020 | v2.1 | * Updated the Query String Parameters to include the mpin parameter.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters. |
+| 12/03/2020 | v2.2 | * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Updated evsMonitoring, dnbMonitoring, and samMonitoring versions. |
 
 <p><small><a href="#">Back to top</a></small></p>
