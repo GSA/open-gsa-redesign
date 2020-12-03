@@ -422,6 +422,20 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>sbaBusinessTypeCode</td>
+<td>Allows a two character code or null.
+<br>Example: sbaBusinessTypeCode=12</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeDesc</td>
+<td>Allows text.
+<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
 <br>Example: includeSections=entityRegistration,coreData
@@ -443,20 +457,6 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
 <br>Example: emailId=test@gsa.gov
 <br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
-</tr>
-
-<tr>
-<td>sbaBusinessTypeCode</td>
-<td>Allows a two character code or null.
-<br>Example: sbaBusinessTypeCode=12</td>
-<td>v1<br>v2</td>
-</tr>
-
-<tr>
-<td>sbaBusinessTypeDesc</td>
-<td>Allows text.
-<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -3072,6 +3072,20 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>sbaBusinessTypeCode</td>
+<td>Allows a two character code or null.
+<br>Example: sbaBusinessTypeCode=12</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeDesc</td>
+<td>Allows text.
+<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
 <br>Example: includeSections=entityRegistration,coreData
@@ -3165,21 +3179,6 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <br>Example: sensitivity=public</td>
 <td>v1<br>v2</td>
 </tr>
-
-<tr>
-<td>sbaBusinessTypeCode</td>
-<td>Allows a two character code or null.
-<br>Example: sbaBusinessTypeCode=12</td>
-<td>v1<br>v2</td>
-</tr>
-
-<tr>
-<td>sbaBusinessTypeDesc</td>
-<td>Allows text.
-<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
-<td>v1<br>v2</td>
-</tr>
-
 </table>
 </details>
 
@@ -7654,6 +7653,20 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>sbaBusinessTypeCode</td>
+<td>Allows a two character code or null.
+<br>Example: sbaBusinessTypeCode=12</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeDesc</td>
+<td>Allows text.
+<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
 <br>Example: includeSections=entityRegistration,coreData
@@ -7803,21 +7816,6 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <br>Example: sensitivity=public</td>
 <td>v1<br>v2</td>
 </tr>
-
-<tr>
-<td>sbaBusinessTypeCode</td>
-<td>Allows a two character code or null.
-<br>Example: sbaBusinessTypeCode=12</td>
-<td>v1<br>v2</td>
-</tr>
-
-<tr>
-<td>sbaBusinessTypeDesc</td>
-<td>Allows text.
-<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
-<td>v1<br>v2</td>
-</tr>
-
 </table>
 </details>
 
