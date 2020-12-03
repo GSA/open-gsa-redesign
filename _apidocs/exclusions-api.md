@@ -130,6 +130,14 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | zipCode | string | Address Zip OR Postal Code  |  v1<br>v2 |
 | zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2 |
 | countryCode | string | Country Code |  v1<br>v2 |
+| **exclusionSecondaryAddress** |
+| addressLine1 | string | Address Line 1  |  v2<br>Alpha Only, Beta Coming Soon |
+| addressLine2 | string | Address Line 2  |  v2<br>Alpha Only, Beta Coming Soon |
+| city | string | Address City  |  v2<br>Alpha Only, Beta Coming Soon | 
+| stateOrProvinceCode | string | Address State or Province Code |  v2<br>Alpha Only, Beta Coming Soon |
+| zipCode | string | Address Zip OR Postal Code  | v2<br>Alpha Only, Beta Coming Soon |
+| zipCodePlus4 | string | Address Zip Plus 4  |  v2<br>Alpha Only, Beta Coming Soon |
+| countryCode | string | Country Code |  v2<br>Alpha Only, Beta Coming Soon |
 | **exclusionOtherInformation** |
 | additionalComments | string | Additional Comments  |  v1<br>v2 |
 | ctCode | string | CT Code  |  v1<br>v2 |
@@ -432,7 +440,7 @@ Date | Version | Description
 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.
 05/04/2020 | v1.7 | * Added V2 endpoint information.
 10/15/2020 | v1.8 | * Updated the Beta V1 endpoint
-12/03/2020 | v1.9 | * Updated moreLocations for API response. <br><br> * Updated vesselDetails --> secondaryAddress to mention v2 Beta only.
+12/03/2020 | v1.9 | * Updated moreLocations for API response. <br><br> * Updated vesselDetails --> secondaryAddress to mention v2 Beta only. <br><br> * Added exclusionSecondaryAddress to API response.
 
 
 <p><small><a href="#">Back to top</a></small></p>
