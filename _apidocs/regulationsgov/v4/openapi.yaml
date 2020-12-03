@@ -1,0 +1,1473 @@
+# ------------------
+# Disclaimer:
+# ------------------
+# This Open API specification document is work in progress. This document will continue 
+# to be updated until our Public API v4 is finalized.
+#--------------------
+openapi: 3.0.0
+info:
+  title: Regulations.gov API
+  description: >-
+    Public API for Regulations.gov
+  version: "4.0"
+servers:
+  - url: 'https://api.regulations.gov/v4'
+    description: Production endpoint for Regulations.gov API
+security: 
+  - ApiKeyAuth: []
+paths:
+  /documents:
+    get:
+      summary: List of documents
+      description: This endpoint returns list of documents
+      tags:
+        - documents
+      parameters: 
+        - name: filter[agencyId]
+          in: query
+          description: >-
+            'Filters results for the agency acronym specified in the value. Example: ''EPA'''
+          required: false
+          schema:
+            type: string
+        - name: filter[commentEndDate]
+          in: query
+          description: >-  
+            Filters results relative to the comment end date.  The value must be formatted as `yyyy-MM-dd`.<br/><br/> Omission of a parameter modifier will match results to the exact date provided, otherwise, one of the parameter modifiers below may be used. <br/> `ge` - greater than or equal <br/> `le` - less than or equal
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: filter[docketId]
+          in: query
+          description: >-
+            Filters results on the specified docket ID.
+          required: false
+          schema:
+            type: string
+        - name: filter[documentType]
+          in: query
+          description: >-
+            Filters results on the specified document type.
+          required: false
+          schema:
+            $ref: '#/components/schemas/DocumentType'
+        - name: filter[frDocNum]
+          in: query
+          description: >-
+            Filters results on the specified frDocNum.
+          required: false
+          schema:
+            type: string
+        - name: filter[searchTerm]
+          in: query
+          description: >-
+            Filters results on the given term.
+          required: false
+          schema:
+            type: string
+        - name: filter[postedDate]
+          in: query
+          description: >-  
+            Filters results relative to the posted date.  The value must be formatted as `yyyy-MM-dd`.<br/><br/> Omission of a parameter modifier will match results to the exact date provided, otherwise, one of the parameter modifiers below may be used. <br/> `ge` - greater than or equal <br/> `le` - less than or equal
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: filter[subtype]
+          in: query
+          description: >-
+            Filters results on the supplied document subtype
+          required: false
+          schema:
+            type: string
+        - name: filter[withinCommentPeriod]
+          in: query
+          description: >-
+            Filters results for documents that are open for comment by setting the value to `true`. <br/><br/> _`False` is not an acceptable value for this parameter, hence it should be removed when not being used._          
+          required: false
+          schema:
+            type: boolean
+        - name: sort
+          in: query
+          description: >-
+            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> Supported values are `commentEndDate`, `postedDate`, and `title`.          
+          required: false
+          schema:
+            type: string
+        - name: page[number]
+          in: query
+          description: >-
+            Specifies the number for the page of results that will be returned from the query. <br/><br/> Acceptable values are numerical between, and including, 1 and 20.          
+          required: false
+          schema:
+            type: integer
+        - name: page[size]
+          in: query
+          description: >-
+            Specifies the size per page of results that will be returned from the query. <br/><br/> Acceptable values are numerical between, and including, 5 and 250.           
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A JSON\:API document with the a list of documents
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/DocumentFindAllResponse'
+        '400':
+          description: Validation error
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '403':
+           description: API key is missing or invalid
+           content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError' 
+  /documents/{documentId}:
+    get:
+      tags:
+        - documents
+      summary: Get detailed information for specified documentId
+      description: Gets the detailed information of a specific document with the passed documentId.
+      parameters:
+        - name: documentId
+          in: path
+          description: ID of document to return
+          required: true
+          schema:
+            type: string
+        - name: include #Only supported value for include is attachments.
+          in: query
+          description: resources to include
+          required: false
+          schema:
+            type: string
+          example: attachments
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/DocumentFindOneResponse'
+        '400':
+          description: Validation error
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '403':
+           description: API key is missing or invalid
+           content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '404':
+          description: Document not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+  /comments:
+    get:
+      summary: List of comments
+      description: This endpoint returns list of comments 
+      tags:
+        - comments
+      parameters: 
+        - name: filter[agencyId]
+          in: query
+          description: >-
+            'Filters results for the agency acronym specified in the value. Example: ''EPA'''
+          required: false
+          schema:
+            type: string
+        - name: filter[searchTerm]
+          in: query
+          description: >-
+            Filters results on the given term.
+          required: false
+          schema:
+            type: string
+        - name: filter[postedDate]
+          in: query
+          description: >-
+            Filters results relative to the posted date.  The value must be formatted as `yyyy-MM-dd`.<br/><br/> Omission of a parameter modifier will match results to the exact date provided, otherwise, one of the parameter modifiers below may be used. <br/> `ge` - greater than or equal <br/> `le` - less than or equal
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: filter[commentOnId]
+          in: query
+          description: >-
+            Filters results on the supplied commentOnId
+          required: false
+          schema:
+            type: string
+        - name: sort
+          in: query
+          description: >-
+            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> The only supported value is `postedDate`.          
+          required: false
+          schema:
+            type: string
+        - name: page[number]
+          in: query
+          description: >-
+            Specifies the number for the page of results that will be returned from the query. <br/><br/> Acceptable values are numerical between, and including, 1 and 20.          
+          required: false
+          schema:
+            type: integer
+        - name: page[size]
+          in: query
+          description: >-
+            Specifies the size per page of results that will be returned from the query. <br/><br/> Acceptable values are numerical between, and including, 5 and 250.           
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A JSON\:API document with the a list of comments
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/CommentFindAllResponse'
+        '400':
+          description: Validation error
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '403':
+           description: API key is missing or invalid
+           content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+    post:
+      summary: Creates a new comment.
+      tags:
+        - comments
+      requestBody:
+        description: A JSON object containing comment information
+        required: true
+        content:
+          application/vnd.api+json:
+            schema:
+                $ref: '#/components/schemas/JSONResourcePostRequestObject'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONResourcePostResponseObject'
+        '400':
+          description: Validation error
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '403':
+           description: API key is missing or invalid
+           content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '404':
+          description: Document not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+  /comments/{commentId}:
+    get:
+      summary: Get detailed information for specified commentId
+      description: Gets the detailed information of a specific comment with the passed commentId.
+      tags:
+        - comments
+      parameters:
+        - name: commentId
+          in: path
+          description: ID of comment to return
+          required: true
+          schema:
+            type: string
+        - name: include #Only supported value for include is attachments.
+          in: query
+          description: resources to include
+          example: attachments
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/CommentFindOneResponse'
+        '400':
+          description: Validation error
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '403':
+           description: API key is missing or invalid
+           content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '404':
+          description: Document not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+  /dockets:
+    get:
+      summary: List of dockets
+      description: This endpoint returns list of dockets 
+      tags:
+        - dockets
+      parameters:
+        - name: filter[agencyId]
+          in: query
+          description: >-
+            'Filters results for the agency acronym specified in the value. Example: ''EPA'''
+          required: false
+          schema:
+            type: string
+        - name: filter[searchTerm]
+          in: query
+          description: >-
+            Filters results on the given term.
+          required: false
+          schema:
+            type: string
+        - name: filter[docketType]
+          in: query
+          description: >-
+            Filters results on the specified docket type.
+          required: false
+          schema:
+            $ref: '#/components/schemas/DocketType'
+        - name: sort
+          in: query
+          description: >-
+            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> The only supported value is `title`.          
+          required: false
+          schema:
+            type: string
+        - name: page[number]
+          in: query
+          description: >-
+            Specifies the number for the page of results that will be returned from the query. <br/><br/> Acceptable values are numerical between, and including, 1 and 20.          
+          required: false
+          schema:
+            type: integer
+        - name: page[size]
+          in: query
+          description: >-
+            Specifies the size per page of results that will be returned from the query. <br/><br/> Acceptable values are numerical between, and including, 5 and 250.           
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A JSON\:API document with the a list of dockets
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/DocketFindAllResponse'
+        '400':
+          description: Validation error
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '403':
+           description: API key is missing or invalid
+           content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+  /dockets/{docketId}:
+    get:
+      tags:
+        - dockets
+      summary: Get detailed information for specified docketId
+      description: Gets the detailed information of a specific docket with the passed docketId.
+      parameters:
+        - name: docketId
+          in: path
+          description: ID of docket to return
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/DocketFindOneResponse'
+        '400':
+          description: Validation error
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '403':
+           description: API key is missing or invalid
+           content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '404':
+          description: Document not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+  /agency-categories:
+    get:
+      summary: Returns a list of categories
+      description: This endpoint returns list of categories
+      tags:
+        - comment submission utilities
+      parameters:
+        - name: filter[acronym]
+          in: query
+          description: >-
+            'Filters results for the agency acronym specified in the value. Example: ''EPA'''
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of agency categories
+          content:
+            application/vnd.api+json:
+             schema: # TODO: Pull this object out into a component
+                type: object 
+                properties: 
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        default:
+                          type: boolean
+                          description: Defines if its the default category value
+                        acronym:
+                          type: string
+                          description: Agency acronym
+                        categories:
+                          type: string
+                          description: The name of the category
+        '400':
+          description: Validation error
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '403':
+           description: API key is missing or invalid
+           content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+  /submission-keys:
+    post:
+      summary: Creates the unique submission key
+      operationId: GetSubmitterKey
+      tags:
+        - comment submission utilities
+      requestBody:
+        content: 
+          application/vnd.api+json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      example: 'submissionKeys'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/vnd.api+json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                        id:
+                          type: string
+                          description: the newly created submission key
+                        type:
+                          type: string
+                          example: 'submission-keys'
+                        links:
+                          $ref: '#/components/schemas/SelfLink'
+        '403':
+           description: API key is missing or invalid
+           content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'      
+  /file-upload-urls:
+    post:
+      summary: Creates a presigned url to upload file
+      tags:
+        - comment submission utilities
+      description: 'Returns a pre-signed URL to upload a file to the S3 bucket'
+      requestBody:
+        required: true
+        content: 
+          application/vnd.api+json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      example: 'file-upload-urls'
+                    attributes:
+                      type: object
+                      properties: 
+                        submissionKey:
+                          type: string
+                          description: submission key for the submission
+                        fileName:
+                          type: string
+                          description: name of the file to upload
+                        contentType:
+                          type: string
+                          description: content type of the file
+      responses:
+        '201':
+          description: Created
+          content:
+            application/vnd.api+json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        format: uri
+                        description: The pre-signed url to upload the file
+                      type:
+                        type: string
+                        example: 'file-upload-urls'
+                      attributes:
+                        type: object
+                        properties: 
+                          submissionKey:
+                            type: string
+                            description: submission key for the submission
+                          fileName:
+                            type: string
+                            description: name of the file to upload
+                          contentType:
+                            type: string
+                            description: content type of the file
+        '400':
+          description: Validation error
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+        '403':
+           description: API key is missing or invalid
+           content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/JSONError'
+components:
+  securitySchemes:
+    ApiKeyAuth:          # arbitrary name for the security scheme
+        type: apiKey
+        in: header       # can be "header", "query" or "cookie"
+        name: X-Api-Key  # name of the header, query parameter or cookie
+  schemas:
+    #JSON:API Specific documentation
+    DocumentFindAllResponse:
+      description: A JSON:API document with a list of resources
+      properties:
+        data:
+          description: The list of documents where each document is a JSON:API document
+          type: array
+          uniqueItems: true
+          items:
+            $ref: '#/components/schemas/DocumentFindAllItem'
+        meta:
+          $ref: '#/components/schemas/FindAllResponseMetadata'
+    CommentFindAllResponse:
+      description: A JSON:API document with a list of resources
+      properties:
+        data:
+          description: The list of comments where each comment is a JSON:API document
+          type: array
+          uniqueItems: true
+          items:
+            $ref: '#/components/schemas/CommentFindAllItem'
+        meta:
+          $ref: '#/components/schemas/FindAllResponseMetadata'
+    DocketFindAllResponse:
+      description: A JSON:API document with a list of resources
+      properties:
+        data:
+          description: The list of dockets where each docket is a JSON:API document
+          type: array
+          uniqueItems: true
+          items:
+            $ref: '#/components/schemas/DocketFindAllItem'
+        meta:
+          $ref: '#/components/schemas/FindAllResponseMetadata'
+    DocumentFindAllItem:
+      description: A JSON:API document which represents a single document in the list
+      properties:
+        id:
+          description: The JSON:API resource ID `documentId`
+          type: string
+        type:
+          description: The JSON:API resource type `documents`
+          type: string
+        attributes: 
+          $ref: '#/components/schemas/Document'
+        links: 
+          type: array
+          items:
+            $ref: '#/components/schemas/SelfLink'
+    CommentFindAllItem:
+      description: A JSON:API document which represents a single document in the list
+      properties:
+        id:
+          description: The JSON:API resource ID `documentId`
+          type: string
+        type:
+          description: The JSON:API resource type `comments`
+          type: string
+        attributes: 
+          $ref: '#/components/schemas/Comment'
+        links: 
+          type: array
+          items:
+            $ref: '#/components/schemas/SelfLink'
+    DocketFindAllItem:
+      description: A JSON:API document which represents a single document in the list
+      properties:
+        id:
+          description: The JSON:API resource ID `docketId`
+          type: string
+        type:
+          description: The JSON:API resource type `dockets`
+          type: string
+        attributes: 
+          $ref: '#/components/schemas/Docket'
+        links: 
+          type: array
+          items:
+            $ref: '#/components/schemas/SelfLink'
+    AttachmentFindAllItem:
+      description: A JSON:API document which represents a single document in the list
+      properties:
+        id:
+          description: The JSON:API resource ID `attachmentId`
+          type: string
+        type:
+          description: The JSON:API resource type `attachments`
+          type: string
+        attributes: 
+          $ref: '#/components/schemas/Attachment'
+        links: 
+          type: array
+          items:
+            $ref: '#/components/schemas/SelfLink'
+    FindAllResponseMetadata:
+      description: A JSON:API document
+      properties:
+        hasNextPage:
+          type: boolean
+        hasPreviousPage:
+          type: boolean
+        numberOfElements:
+          type: integer
+        pageNumber: 
+          type: integer
+        pageSize:
+          type: integer
+        totalElements:
+          type: integer
+        totalPages:
+          type: integer
+        firstPage:
+          type: boolean
+        lastPage:
+          type: boolean
+    DocumentFindOneResponse:
+      description: A JSON:API document which represents a single document
+      type: object
+      properties:
+        id:
+          description: The JSON:API resource ID (documentId of the document)
+          type: string
+        type:
+          description: The JSON:API resource type `documents`
+          type: string
+        attributes: 
+          $ref: "#/components/schemas/DocumentDetail"
+        relationships:
+          $ref: "#/components/schemas/Relationship"
+        links: 
+          type: array
+          items:
+            $ref: '#/components/schemas/SelfLink'
+        included:
+          description: The list of documents where each document is a JSON:API document
+          type: array
+          uniqueItems: true
+          items:
+            $ref: '#/components/schemas/AttachmentFindAllItem'
+    CommentFindOneResponse:
+      description: A JSON:API document which represents a single document
+      type: object
+      properties:
+        id:
+          description: The JSON:API resource ID (documentId of the comment)
+          type: string
+        type:
+          description: The JSON:API resource type `comments`
+          type: string
+        attributes: 
+          $ref: "#/components/schemas/CommentDetail"
+        relationships:
+          type: array
+          items:
+            $ref: "#/components/schemas/Relationship"
+        links: 
+          type: array
+          items:
+            $ref: '#/components/schemas/SelfLink'
+        included:
+          description: The list of documents where each document is a JSON:API document
+          type: array
+          uniqueItems: true
+          items:
+            $ref: '#/components/schemas/AttachmentFindAllItem'
+    DocketFindOneResponse:
+      description: A JSON:API document which represents a single document
+      type: object
+      properties:
+        id:
+          description: The JSON:API resource ID (docketId of the docket)
+          type: string
+        type:
+          description: The JSON:API resource type `dockets`
+          type: string
+        attributes: 
+          $ref: "#/components/schemas/DocketDetail"
+        links: 
+          type: array
+          items:
+            $ref: '#/components/schemas/SelfLink'
+    Relationship:
+      description: A single relationship object
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/RelationshipToAttachment"
+        links:
+          $ref: "#/components/schemas/RelationshipLinks"
+      additionalProperties: false
+    RelationshipToAttachment:
+      description: >-
+        An array of attachment objects as relationship resources.
+      type: array
+      items:
+        type: object
+        properties:
+          type:
+            type: string
+          id:
+            type: string
+    RelationshipLinks:
+      description: >-
+        Relationship links to other related resources (`attachments`)
+      type: object
+      properties:
+        self:
+          $ref: "#/components/schemas/Link"
+        related:
+          $ref: "#/components/schemas/Link"
+      additionalProperties: false
+    SelfLink:
+      description: Link to self
+      type: object
+      properties:
+        self:
+          $ref: "#/components/schemas/Link"
+    Link:
+      description: A string containing the link URL.
+      type: string
+      format: uri-reference
+      uniqueItems: true
+    JSONResourcePostRequestObject:
+      description: A JSON:API document which represents a single document being posted
+      type: object
+      properties:
+        type:
+          description: The JSON:API resource type `comments`
+          type: string
+        attributes: 
+          type: object
+          oneOf:
+            - $ref: "#/components/schemas/IndividualComment"
+            - $ref: "#/components/schemas/OrganizationComment"
+            - $ref: "#/components/schemas/AnonymousComment"
+    JSONResourcePostResponseObject:
+      description: A JSON:API document which represents the response from post
+      type: object
+      properties:
+        id:
+          description: The comment tracking number
+          type: string
+        type:
+          description: The JSON:API resource type `comments`
+          type: string
+        attributes:
+          $ref: "#/components/schemas/CommentPostResponse"
+    JSONError:
+      description: A JSON:API document
+      type: object
+      properties:
+        errors:
+          description: List of JSON:API Error
+          type: array
+          items:
+            $ref: "#/components/schemas/Error" 
+    #Regulations.gov documentation        
+    DocumentType:
+      type: string
+      description: type of document
+      enum:
+        - Notice
+        - Rule
+        - Proposed Rule
+        - Supporting & Related Material
+        - Other
+    DocketType:
+      type: string
+      description: the type of docket
+      enum:
+        - Rulemaking
+        - Nonrulemaking 
+    SubmitterType:
+      type: string
+      description: the submitter type
+      enum:
+        - Anonymous
+        - Individual
+        - Organization
+    FileFormat:
+      type: object
+      properties: 
+        fileUrl:
+          type: string
+          description: URL of the file on S3
+        format:
+          type: string
+          description: The format of the file such as `pdf`
+        size:
+          type: integer
+          description: The file size
+    #Relationship model for attachments
+    Attachment:
+      type: object
+      properties:
+        agencyNote:
+          type: string
+          description: The note by agency
+        authors:
+          type: array
+          items:
+            type: string
+          description: The individual, organization, or group of collaborators that contributed to the creation of the attachment.
+        docAbstract:
+          type: string
+          description: The detailed description of the attachment.
+        docOrder:
+          type: integer
+          description: The order of the attachment
+        fileFormats:
+          type: array
+          description: list of file formats
+          items:
+              $ref: '#/components/schemas/FileFormat'
+        modifyDate:
+          type: string
+          format: date-time
+          description: The date when the attachment was last modified.
+        publication:
+          type: string
+          description: The publication date
+        restrictReason:
+          type: string
+          description: If the attachment is restricted, this field will state the reason.
+        restrictReasonType:
+          type: string
+          description: If the attachment is restricted, this field will state the type of restriction.
+        title:
+          type: string
+          description: The formal title of the attachment
+    #Search components     
+    Document:
+      type: object
+      properties: 
+        agencyId:
+          type: string
+          description: The acronym used to abbreviate the name of the agency associated with the document.
+        commentEndDate:
+          type: string
+          nullable: true
+          format: date-time
+          description: The date that closes the period when public comments may be submitted on the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        commentStartDate:
+          type: string
+          nullable: true
+          format: date-time
+          description: The date that begins the period when public comments may be submitted on the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        docketId:
+          type: string
+          description: The ID of the docket to which the document corresponds.
+        documentType:
+          $ref: '#/components/schemas/DocumentType'
+        highlightedContent:
+          type: string
+          nullable: true
+          description: Content highlighted by search engine for the searchTerm. Only returned for searches with searchTerm.
+        openForComment:
+          type: boolean
+          description: Conveys if the document is open for comment
+        postedDate:
+          type: string
+          description: The date that the document was posted by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        subtype:
+          type: string
+          nullable: true
+          description: An agency-specific attribute to further categorize a document beyond the type (`documentType`).
+        title:
+          type: string
+          description: The formal title of the document.
+        withdrawn:
+          type: boolean
+          description: Conveys if the document is withdrawn
+    Comment:
+      type: object
+      properties:
+        agencyId:
+          type: string
+          description: The acronym used to abbreviate the name of the agency associated with the document.
+        documentType:
+          $ref: '#/components/schemas/DocumentType'
+        highlightedContent:
+          type: string
+          nullable: true
+          description: Content highlighted by search engine for the searchTerm. Only returned for searches with searchTerm.
+        postedDate:
+          type: string
+          description: The date that the document was posted by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        title:
+          type: string
+          description: The formal title of the document.
+        withdrawn:
+          type: boolean
+          description: Conveys if the document is withdrawn
+    Docket:
+      type: object
+      properties:
+        agencyId:
+          type: string
+          description: The acronym used to abbreviate the name of the agency associated with the docket.
+        docketType:
+          $ref: '#/components/schemas/DocketType'
+        highlightedContent:
+          type: string
+          nullable: true
+          description: Content highlighted by search engine for the searchTerm. Only returned for searches with searchTerm.
+        title:
+          type: string
+          description: The formal title of the docket.
+    #Detail components
+    BasicDetailModel:
+      type: object
+      properties:
+        address1:
+          type: string
+          nullable: true
+          description: The first line of the submitter's address.
+        address2:
+          type: string
+          nullable: true
+          description: The second line of the submitter's address.
+        agencyId:
+          type: string
+          description: The acronym used to abbreviate the name of the agency associated with the document.
+        city:
+          type: string
+          nullable: true
+          description: The city associated with the submitter's address.
+        category:
+          type: string
+          nullable: true
+          description: An agency-specific category allowing agencies to group comments according to their type.
+        comment:
+          type: string
+          description: The comment text associated with the comment submission.
+        country:
+          type: string
+          nullable: true
+          description: The country associated with the submitter's address.
+        docAbstract:
+          type: string
+          description: The detailed description of the document.
+        docketId:
+          type: string
+          description: The ID of the docket to which the document corresponds.
+        documentType:
+          $ref: '#/components/schemas/DocumentType'
+        email:
+          type: string
+          nullable: true
+          description: The submitter's e-mail address.
+        fax:
+          type: string
+          nullable: true
+          description: The submitter's fax number.
+        field1:
+          type: string
+          nullable: true
+          description: An agency-specific field used for storing additional data with the document.
+        field2:
+          type: string
+          nullable: true
+          description: An agency-specific field used for storing additional data with the document.
+        fileFormats:
+          type: array
+          description: list of file formats
+          items:
+            $ref: '#/components/schemas/FileFormat'
+        firstName:
+          type: string
+          nullable: true
+          description: The submitter's first name.
+        govAgency:
+          type: string
+          nullable: true
+          description: The name of the government agency that the submitter represents.
+        govAgencyType:
+          type: string
+          nullable: true
+          description: The type of government agency that the submitter represents.
+        lastName:
+          type: string
+          nullable: true
+          description: The submitter's last name.
+        legacyId:
+          type: string
+          nullable: true
+          description: An agency-specific identifier that was given to the document in the legacy system.
+        modifyDate:
+          type: string
+          format: date-time
+          description: The date when the document was last modified.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        openForComment:
+          type: boolean
+          description: Conveys if the document is open for commenting.
+        organization:
+          type: string
+          nullable: true
+          description: The organization that the submitter represents.
+        originalDocumentId:
+          type: string
+          description: The document ID that was assigned when first entered into the system should a change occur that requires a new document ID to be assigned.
+        pageCount:
+          type: string
+          nullable: true
+          description: Conveys the number of pages contained in the document.
+        phone:
+          type: string
+          nullable: true
+          description: The submitter's phone number.
+        postedDate:
+          type: string
+          format: date-time
+          description: The date that the document was posted by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        postmarkDate:
+          type: string
+          nullable: true
+          format: date-time
+          description: The postmark date of a document that was sent by mail.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        reasonWithdrawn:
+          type: string
+          nullable: true
+          description: If the document is withdrawn, this field will state the reason.
+        receiveDate:
+          type: string
+          format: date-time
+          description: The date that the document was received by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2018-06-29T04:00:00Z`.
+        restrictReason:
+          type: string
+          description: If the document is restricted, this field will state the reason.
+        restrictReasonType:
+          type: string
+          description: If the document is restricted, this field will state the type of restriction.
+        stateProvinceRegion:
+          type: string
+          nullable: true
+          description: The submitter's state,province or region.
+        subtype:
+          type: string
+          nullable: true
+          description: An agency-specific attribute to further categorize a document beyond the documentType.
+        title:
+          type: string
+          description: The formal title of the document.
+        trackingNbr:
+          type: string
+          description: The tracking number of the submission.
+        withdrawn:
+          type: boolean
+          description: Conveys if the document is withdrawn
+        zip:
+          type: string
+          description: The zip associated with the submitter's address.
+    DocumentDetail:
+      allOf:     # Combines the BasicDetailModel and the inline model
+        - $ref: '#/components/schemas/BasicDetailModel'
+        - type: object
+          required:
+            - documentId
+          properties: 
+            additionalRins:
+              type: array
+              nullable: true
+              items:
+                type: string
+              description: One or more Regulatory Information Numbers (RINs) to which the document relates.
+            allowLateComments:
+              type: boolean
+              description: Indicates whether the owning agency will accept comments on the document after the due date.
+            authorDate:
+              type: string
+              nullable: true
+              format: date-time
+              description: The date that the authors wrote or published the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+            authors:
+              type: array
+              nullable: true
+              items:
+                type: string
+              description: The individual, organization, or group of collaborators that contributed to the creation of the document.
+            cfrPart:
+              type: string
+              nullable: true
+              description: The Code of Federal Regulations (CFR) Citation applicable to the document.
+            commentEndDate:
+              type: string
+              nullable: true
+              format: date-time
+              description: The date that closes the period when public comments may be submitted on the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+            commentStartDate:
+              type: string
+              nullable: true
+              format: date-time
+              description: The date that begins the period when public comments may be submitted on the document.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+            effectiveDate:
+              type: string
+              nullable: true
+              format: date-time
+              description: The date the document is put into effect.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+            exhibitLocation:
+              type: string
+              nullable: true
+              description: The physical location of an exhibit to which a document refers.
+            exhibitType:
+              type: string
+              nullable: true
+              description: The type of exhibit to which a document refers.
+            frDocNum:
+              type: string
+              nullable: true
+              description: The unique identifier of a document originating in the [Federal Register](https://www.federalregister.gov/).
+            frVolNum:
+              type: string
+              nullable: true
+              description: The [Federal Register](https://www.federalregister.gov/) volume number where the document was published.
+            implementationDate:
+              type: string
+              nullable: true
+              format: date-time
+              description: The date the document is to be implemented.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+            openForComment:
+              type: boolean
+              description: Conveys if a document is open for comment.
+            media:
+              type: string
+              nullable: true
+              description: The media in which the document is stored.
+            ombApproval:
+              type: string
+              nullable: true
+              description: The control number assigned when approval is given by the Office of Management and Budget (OMB) in accordance with the Paperwork Reduction Act (PRA).
+            paperLength:
+              type: integer
+              description: When the document is in paper format, indicates the length of the paper.
+            paperWidth:
+              type: integer
+              description: When the document is in paper format, indicates the width of the paper.
+            regWriterInstruction:
+              type: string
+              nullable: true
+              description: Additional instructions provided by the writer of the regulation.
+            sourceCitation:
+              type: string
+              nullable: true
+              description: The citation for the source that published the document.
+            startEndPage:
+              type: string
+              nullable: true
+              description: The starting and ending pages where the document was published.
+            subject:
+              type: string
+              nullable: true
+              description: The subject of the document.
+            topics:
+              type: array
+              nullable: true
+              items:
+                type: string
+              description: The principal topics to which the document pertains.
+    CommentDetail: 
+      allOf:     # Combines the BasicDetailModel and the inline model
+        - $ref: '#/components/schemas/BasicDetailModel'
+        - type: object
+          required:
+            - documentId
+          properties: 
+            commentOnDocumentId:
+              type: string
+              description: documentId of the parent document
+            duplicateComments:
+              type: integer
+              description: Number of duplicate comments
+    DocketDetail:
+      type: object
+      properties:
+        agencyId:
+          type: string
+          description: The acronym used to abbreviate the name of the agency associated with the docket.
+        category:
+          type: string
+          nullable: true
+          description: Agency specific docket category providing regulatory action details, status, and the agency program and or office.
+        dkAbstract:
+          type: string
+          description: The detailed description of the docket.
+        docketType:
+          $ref: '#/components/schemas/DocketType'
+        effectiveDate:
+          type: string
+          format: date-time
+          description: The date the docket is put into effect.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        field1:
+          type: string
+          nullable: true
+          description: An agency-specific field used for storing additional data with the docket.
+        field2:
+          type: string
+          nullable: true
+          description: An agency-specific field used for storing additional data with the docket.
+        generic:
+          type: string
+          nullable: true
+          description: An agency-specific field used for storing additional data with the docket.
+        keywords:
+          type: array
+          nullable: true
+          items:
+            type: string
+            description: Agency selected keywords associated with a docket to improve its searchability by the public.
+        legacyId:
+          type: string
+          nullable: true
+          description: An agency-specific identifier that was given to the docket in the legacy system.
+        modifyDate:
+          type: string
+          format: date-time
+          description: The date when the docket was last modified.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        organization:
+          type: string
+          nullable: true
+          description: Identifies docket's (a regulatory action) orginating agency and/or department.
+        petitionNbr:
+          type: string
+          nullable: true
+          description: Agency specific identifier associated with a docket.
+        program:
+          type: string
+          nullable: true
+          description: The agency specific program associated with the docket.
+        rin:
+          type: string
+          nullable: true
+          description: OMB issued Regulation Identifier Number (RIN) uniquely identifies a docket and its documents.
+        shortTitle:
+          type: string
+          nullable: true
+          description: A combination of letters and or numbers assigned to an agency's regulatory action for purposes of brevity.
+        subType:
+          type: string
+          nullable: true
+          description: This agency specific attribute characterizes a docket (regulatory action) beyond its assigned docket type, e.g., Rulemaking.
+        subType2:
+          type: string
+          nullable: true
+          description: This agency specific attribute characterizes a docket (regulatory action) beyond the designated docket subtype.
+        title:
+          type: string
+          description: A name or descriptive heading given to an agency's docket.
+    #Comment Submission Related components
+    BaseCommentPayload:
+      type: object
+      required:
+        - comment
+        - commentOnDocumentId
+        - submissionType #user should set submission Type to API
+      properties:
+        category:
+          type: string
+          description: An agency-specific category allowing agencies to group comments according to their type.
+        comment:
+          type: string
+          description: The comment text
+        commentOnDocumentId:
+          type: string
+          description: documentId of the parent document
+        email:
+          type: string
+          description: The email address to receive email receipt for the commenrt
+        files:
+          type: array
+          items:
+            type: string
+            description: The names of the files submitted with the submission
+        numItemsReceived:
+          type: integer
+          description: The number of items included in the submission          
+        sendEmailReceipt:
+          type: boolean
+          description: Conveys if the user would like to receive an email receipt for the comment
+        submissionKey:
+          type: string
+          description: The unique identifier associated with the submission
+        submissionType:
+          type: string
+          description: The submitter type - Its always going to be `API` for comments submitted via API 
+    IndividualComment:
+      allOf:     # Combines the BasicCommentPayLoad and the inline model
+        - $ref: '#/components/schemas/BaseCommentPayload'
+        - type: object
+          required:
+            - submitterType
+            - firstName
+            - lastName
+          properties:
+            city:
+              type: string
+              description: The city associated with the submitter's address.
+            country:
+              type: string
+              description: The country associated with the submitter's address.
+            firstName:
+              type: string
+              description: The submitter's first name.
+            lastName:
+              type: string
+              description: The submitter's last name.
+            phone:
+              type: string
+              description: The submitter's phone number.
+            stateProvinceRegion:
+              type: boolean
+              description: The email associated with the submitter's address.
+            submitterType: #submitter type should be set to Individual
+              $ref: '#/components/schemas/SubmitterType'
+            zip:
+              type: string
+              description: The zip associated with the submitter's address.
+    OrganizationComment: 
+      allOf:     # Combines the BasicCommentPayLoad and the inline model
+        - $ref: '#/components/schemas/BaseCommentPayload'
+        - type: object
+          required:
+            - submitterType
+            - organization
+            - organizationType
+          properties:
+            organization:
+              type: string
+              description: The organization that the submitter represents.          
+            organizationType:
+              type: string
+              description: The agency specific organization type that the submitter represents.          
+            submitterType: #submitter type should be set to Organization
+              $ref: '#/components/schemas/SubmitterType'
+    AnonymousComment: 
+      allOf:     # Combines the BasicCommentPayLoad and the inline model
+        - $ref: '#/components/schemas/BaseCommentPayload'
+        - type: object
+          required:
+            - submitterType
+          properties: 
+            submitterType: #submitter type should be set to Anonymous
+              $ref: '#/components/schemas/SubmitterType'
+    CommentPostResponse:
+      allOf:
+        - oneOf:     # Returns the created comment
+          - $ref: '#/components/schemas/IndividualComment'
+          - $ref: '#/components/schemas/OrganizationComment'
+          - $ref: '#/components/schemas/AnonymousComment'
+        - type: object
+          properties:
+            numItemsReceived:
+              type: integer
+              description: The number of items included in the submission          
+            receiveDate: 
+              type: string
+              description: The date comment was received.
+    Error:
+      type: object
+      properties:
+        status:
+          type: integer #http status code
+        title:
+          type: string
+        detail:
+          type: string
