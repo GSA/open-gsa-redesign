@@ -137,7 +137,27 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | **references --> referencesList**   |
 | name/exclusionName | string | Exclusion Name <br><br>NOTE:  This parameter is being renamed.  name is in V1 and exclusionName will be V2.|  v1<br>v2 |
 | type | string | Type  |  v1<br>v2 |
-| moreLocations | string |  More Locations   |  v1<br>v2 |
+| **exclusionOtherInformation --> moreLocations** |
+| exclusionName | string | Exclusion Name | v2<br>Alpha Only, Beta Coming Soon |
+| duns | string | DUNS | v2<br>Alpha Only, Beta Coming Soon |
+| cageCode | string | CAGE Code | v2<br>Alpha Only, Beta Coming Soon |
+| npi | string | NPI | v2<br>Alpha Only, Beta Coming Soon |
+| **exclusionOtherInformation --> moreLocations --> primaryAddress** |
+| addressLine1 | string | Address Line 1 | v2<br>Alpha Only, Beta Coming Soon |
+| addressLine2 | string | Address Line 2 | v2<br>Alpha Only, Beta Coming Soon |
+| city | string | City | v2<br>Alpha Only, Beta Coming Soon |
+| stateOrProvinceCode | string | State or Province Code | v2<br>Alpha Only, Beta Coming Soon |
+| zipCode | string | Zip Code | v2<br>Alpha Only, Beta Coming Soon |
+| zipCodePlus4 | string | Zip Code Plus 4 | v2<br>Alpha Only, Beta Coming Soon |
+| countryCode | string | Country Code | v2<br>Alpha Only, Beta Coming Soon |
+| **exclusionOtherInformation --> moreLocations --> secondaryAddress** |
+| addressLine1 | string | Address Line 1 | v2<br>Alpha Only, Beta Coming Soon |
+| addressLine2 | string | Address Line 2 | v2<br>Alpha Only, Beta Coming Soon |
+| city | string | City | v2<br>Alpha Only, Beta Coming Soon |
+| stateOrProvinceCode | string | State or Province Code | v2<br>Alpha Only, Beta Coming Soon |
+| zipCode | string | Zip Code | v2<br>Alpha Only, Beta Coming Soon |
+| zipCodePlus4 | string | Zip Code Plus 4 | v2<br>Alpha Only, Beta Coming Soon |
+| countryCode | string | Country Code | v2<br>Alpha Only, Beta Coming Soon |
 | **vesselDetails** |
 | callSign | string | Call Sign  |  v1<br>v2 |
 | type | string | Type  |  v1<br>v2 |
@@ -412,6 +432,7 @@ Date | Version | Description
 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.
 05/04/2020 | v1.7 | * Added V2 endpoint information.
 10/15/2020 | v1.8 | * Updated the Beta V1 endpoint
+12/03/2020 | v1.9 | * Updated moreLocations for API response.
 
 
 <p><small><a href="#">Back to top</a></small></p>
