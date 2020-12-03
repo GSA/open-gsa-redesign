@@ -5,21 +5,23 @@ banner-heading: Beta.SAM.Gov Public Location Services API
 
 ## Overview
 
-The Public Location Services API provides Location Services data (Country, State, City, and ZIP) and is to be used when validating location data being submitted to Beta.SAM.gov ONLY. Beta.SAM is not the authoritative source for location data and is agglomerating data from 3rd parties to operate the application. Location Public Services API only supports United States currently.
+The Public Location Services API provides Location Services data (Country, State, City, and ZIP) and is to be used when validating location data that is being submitted to the Beta.SAM.gov ONLY. Beta.SAM is not the authoritative source for location data and is agglomerating data from 3rd parties to operate the application. Location Public Services API only supports United States currently.
 
 *Note: If valid search parameter (e.g. searchby=statecode) from the options listed in the description is not provided, all records will be returned*
 
 
 ## Getting Started
 
-Public Location Services API can be accessed from Beta or Alpha via the following endpoints:
+Get Opportunities API can be accessed from Beta or Alpha environments via the following urls:
+
 * Beta: https://api.sam.gov (Coming Soon)
 * Alpha: https://api-alpha.sam.gov 
 
-### Authorization
+## Authentication and API Keys
+User of this API must provide a System Account API key to use this Location Services API. 
 
 In order to use Public Location Services API, the following is required:
-* Valid beta.SAM.GOV federal government system account API Key
+* Valid beta.SAM.GOV Federal Government System Account API Key
 
 #### Generating a System Account API Key
 * Users registered with a government email address and have appropriate System Account Manager or System Account Admin role may request a system account for data access.
@@ -554,5 +556,6 @@ Date | Version | Description
 ------|---------------|---------
 4/21/2020 | v1.0 | Base Version
 5/11/2020 | v1.1| OpenAPI Specification File Added
+9/8/2020 |v1.2| Updated Formatting
 
 <p><small><a href="#">Back to top</a></small></p>

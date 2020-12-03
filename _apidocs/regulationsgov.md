@@ -174,7 +174,7 @@ submissionType should be set to API.
 
 <div style="padding: 15px; border: 1px solid; margin-bottom: 20px; border-radius: 4px; color: gray; background: rgba(90, 90, 90, 0.04); border-color: #cccccc;">
    
-Note: The example URI added in this section shows unencoded [ and ] characters simply for readability. In practice, these characters should be percent-encoded. See <a href="https://jsonapi.org/format/1.1/#appendix-query-details-square-brackets" target="_blank">Square Brackets in Parameter Names</a> section in json-api standards for complete information.
+Note: The examples below use unencoded bracket characters `[` and `]` for readability, however, these characters should be percent-encoded using `%5B` and `%5D`.  For example, the posted date search filter should be specified as `filter%5BpostedDate%5D`. See <a href="https://jsonapi.org/format/1.1/#appendix-query-details-square-brackets" target="_blank">Square Brackets in Parameter Names</a> section in json-api standards for additional information.
 
 </div>
 

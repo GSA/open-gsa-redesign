@@ -11,7 +11,7 @@ We have a script available that calls this API for you, which you can use as an 
 
 ## Getting Started
 
-The endpoint is `https://api.gsa.gov/technology/searchgov/v2/sayt`.
+The endpoint is `https://api.gsa.gov/technology/searchgov/v1/suggestions`.
 
 You must use https and send a new call for every keystroke. Whenever a user selects a query from the drop-down list, send this selection to us as a new query request.
 
@@ -21,12 +21,16 @@ You must use https and send a new call for every keystroke. Whenever a user sele
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="v1/openapi.yml">Open API specification file for the Search.gov Type-Ahead Suggestions API</a>
+
+## API Key
+
+Please get your key from [api.data.gov](https://api.data.gov/signup/). The key will be specific to you. The results API key provided by Search.gov will not work for this API. The API key is registered to an individual user, but can be used across the code - it would simply need to be updated if the original user left the organization.
  
 ## Parameters
   
 Three parameters are required: (1) `name`, (2) `q`, and (3) `api_key`.
   
-`https://api.gsa.gov/technology/searchgov/v2/sayt?api_key=YOUR_API_KEY&name=YOUR_SITE_HANDLE&q=YOUR_SEARCH_TERM`
+`https://api.gsa.gov/technology/searchgov/v1/suggestions?api_key=YOUR_API_KEY&name=YOUR_SITE_HANDLE&q=YOUR_SEARCH_TERM`
 
   * The value for the `name` parameter is your site handle on the Settings page. You can find this through the Search.gov Admin Center > Your Search Site > Dashboard > Settings.
   *	Replace `YOUR_SEARCH_TERM` with a word or phrase of your choice. A minimum of a 2-character term is required.
