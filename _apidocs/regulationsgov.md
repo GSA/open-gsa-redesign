@@ -33,6 +33,79 @@ When Congress passes laws, federal agencies implement those laws through regulat
 
 To begin using this API, you will need to register for an API Key. You can sign up for an API key here: [API key signup page on api.data.gov](https://api.data.gov/signup/).
 
+If you want to use commenting API, you MUST use the form below to register for an API key.
+
+{% raw %}
+<div id="apidatagov_signup">Loading signup form...</div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var apiUmbrellaSignupOptions = {
+    // Pick a short, unique name to identify your site, like 'gsa-auctions'
+    // in this example.
+    registrationSource: 'gsa-regulations',
+
+    // Enter the API key you signed up for and specially configured for this
+    // API key signup embed form.
+    apiKey: 'E41mzkIX0ZReJvQbcSFtqhckpqFnTtkcsjFWAx1Z',
+
+    // Provide an example URL you want to show to users after they signup.
+    // This can be any API endpoint on your server, and you can use the
+    // special {{api_key}} variable to automatically substitute in the API
+    // key the user just signed up for.
+    exampleApiUrl: '',
+
+    // OPTIONAL: Provide extra content to display on the signup confirmation
+    // page. This will be displayed below the user's API key and the example
+    // API URL are shown. HTML is allowed. Defaults to ""
+    // signupConfirmationMessage: '',
+
+    // OPTIONAL: Provide a URL to your own contact page to link to for user
+    // support. Defaults to "https://api.data.gov/contact/"
+    contactUrl: 'https://beta.regulations.gov/support',
+
+    // OPTIONAL: Set to true to verify the user's e-mail address by only
+    // sending them their API key via e-mail, and not displaying it on the
+    // signup confirmation web page. Defaults to false.
+    verifyEmail: true,
+
+    // OPTIONAL: Set to false to disable sending a welcome e-mail to the
+    // user after signing up. Defaults to true.
+    // sendWelcomeEmail: false,
+
+    // OPTIONAL: Provide the name of your developer site. This will appear
+    // in the subject of the welcome e-mail as "Your {{siteName}} API key".
+    // Defaults to "api.data.gov".
+    siteName: 'Regulations.gov API',
+
+    // OPTIONAL: Provide a custom sender name for who the welcome email
+    // appears from. The actual address will be "noreply@api.data.gov", but
+    // this will change the name of the displayed sender in this fashion:
+    // "{{emailFromName}} <noreply@api.data.gov>". Defaults to "".
+    emailFromName: 'eRulemaking Help Desk',
+
+    // OPTIONAL: Provide an extra input field to ask for the user's website.
+    // Defaults to false.
+    websiteInput: true,
+
+    // OPTIONAL: Provide an extra checkbox asking the user to agree to terms
+    // and conditions before signing up. Defaults to false.
+    termsCheckbox: true,
+
+    // OPTIONAL: If the terms & conditions checkbox is enabled, link to this
+    // URL for your API's terms & conditions. Defaults to "".
+    termsUrl: 'https://open.gsa.gov/api/regulationsgov/#terms-of-participation'
+  };
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var apiUmbrella = document.createElement('script'); apiUmbrella.type = 'text/javascript'; apiUmbrella.async = true;
+    apiUmbrella.src = 'https://api.data.gov/static/javascripts/signup_embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(apiUmbrella);
+  })();
+</script>
+<noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
+{% endraw %}  
+
 After registration, you will need to provide this API key in the `X-Api-Key` HTTP header with every API request.
 
 | HTTP Header Name | Description |
@@ -40,6 +113,14 @@ After registration, you will need to provide this API key in the `X-Api-Key` HTT
 | X-Api-Key | API key from api.data.gov.  For sample purposes, you can use `DEMO_KEY` as an API key. |
 
 <p><small><a href="#">Back to top</a></small></p>
+
+## Terms of Participation
+
+Public comments help agencies develop regulations; we encourage comments from all viewpoints. Comments submitted to Regulations.gov should be the submitter’s own comments or be submitted with the commenter’s permission. The development of federal regulations is within the jurisdiction of the U.S. Government’s executive branch agencies. It is a violation of federal law to knowingly and willfully make a materially false, fictitious, or fraudulent statement or representation including false statements about your identity or your authority to submit a comment on someone else’s behalf, in relation to the development of such federal regulations, including through comments submitted on Regulations.gov. See 18 U.S.C. § 1001.
+
+Subject to 18 U.S.C. § 1028(c), it is also a violation of federal law to knowingly use, without lawful authority, a means of identification of another person in connection with the violation of any federal law or the commission of a felony under state or local law. See 18 U.S.C. § 1028(a)(7).
+
+You are verifying that you are not making any materially false, fictitious, or fraudulent statement or representation regarding your identity or your authority to submit on someone else’s behalf with regard to the comment you are submitting using Regulations.gov API, and that you are not using, without lawful authority, a means of identification of another person, real or fictitious, in connection with any comment you are submitting on Regulations.gov.
 
 ## API Description
 
@@ -189,7 +270,7 @@ Here are few example queries for searching comments:
 
   * Step 2: Get details for each document:
     ```
-    https://api.regulations.gov/v4/documents/FAA-2018-1084-0001&api_key=DEMO_KEY
+    https://api.regulations.gov/v4/documents/FAA-2018-1084-0001?api_key=DEMO_KEY
     ```
     Response for the above request includes an attribute objectId and its set to 0900006483a6cba3.
   
