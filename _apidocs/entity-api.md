@@ -3185,7 +3185,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>sensitivity</td>
-<td>Allows a text, Determines Sensitivity Level of Data.
+<td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
 <br>Example: sensitivity=public</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7827,7 +7827,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>sensitivity</td>
-<td>Allows a text, Determines Sensitivity Level of Data.
+<td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
 <br>Example: sensitivity=public</td>
 <td>v1<br>v2</td>
 </tr>
