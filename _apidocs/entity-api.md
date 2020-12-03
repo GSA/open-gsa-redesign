@@ -454,8 +454,13 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
+<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation.):
+<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
 <br>Example: emailId=test@gsa.gov
+<br>Applicable to non-SAM registrants.
+<br><br>Alpha:
+<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
+<br>Example: emailId= Yes
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -3104,8 +3109,13 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
+<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation.):
+<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
 <br>Example: emailId=test@gsa.gov
+<br>Applicable to non-SAM registrants.
+<br><br>Alpha:
+<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
+<br>Example: emailId= Yes
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7685,8 +7695,13 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
+<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation.):
+<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
 <br>Example: emailId=test@gsa.gov
+<br>Applicable to non-SAM registrants.
+<br><br>Alpha:
+<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
+<br>Example: emailId= Yes
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
