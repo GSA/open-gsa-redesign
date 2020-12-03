@@ -454,7 +454,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation.):
+<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):
 <br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
 <br>Example: emailId=test@gsa.gov
 <br>Applicable to non-SAM registrants.
@@ -722,7 +722,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>correspondenceFlag</td>
 <td>string</td>
-<td>Correspondence Flag<br>This field does not contain any data and has been removed from the API.</td>
+<td>Correspondence Flag<br>NOTE: This field does not contain any data and has been removed from the API.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -3109,7 +3109,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation.):
+<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):
 <br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
 <br>Example: emailId=test@gsa.gov
 <br>Applicable to non-SAM registrants.
@@ -3872,91 +3872,78 @@ dnbMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
-<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td></td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
-<td></td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
-<td></td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
-<td></td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
-<td></td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td></td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td></td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td></td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td></td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td></td>
 </tr>
 </table>
 </details>
@@ -3977,91 +3964,78 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
-<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td></td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
-<td></td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
-<td></td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
-<td></td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
-<td></td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td></td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td></td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td></td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td></td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td></td>
 </tr>
 </table>
 </details>
@@ -4123,20 +4097,6 @@ samMonitoring
 <td>string</td>
 <td>City</td>
 <td>v2</td>
-</tr>
-
-<tr>
-<td>zipCode</td>
-<td>string</td>
-<td>Zip Code</td>
-<td>v1</td>
-</tr>
-
-<tr>
-<td>zipCodePlus4</td>
-<td>string</td>
-<td>Zip Code Plus 4</td>
-<td>v1</td>
 </tr>
 
 <tr>
@@ -4281,7 +4241,7 @@ samMonitoring
 <tr>
 <td>correspondenceFlag</td>
 <td>string</td>
-<td>Correspondence Flag<br>This field does not contain any data and has been removed from the API.</td>
+<td>Correspondence Flag<br>NOTE: This field does not contain any data and has been removed from the API.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -7724,7 +7684,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation.):
+<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):
 <br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
 <br>Example: emailId=test@gsa.gov
 <br>Applicable to non-SAM registrants.
@@ -8545,91 +8505,78 @@ dnbMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
-<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td></td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
-<td></td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
-<td></td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
-<td></td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
-<td></td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td></td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td></td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td></td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td></td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td></td>
 </tr>
 </table>
 </details>
@@ -8650,91 +8597,78 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
-<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td></td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
-<td></td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
-<td></td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
-<td></td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
-<td></td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td></td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td></td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td></td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td></td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td></td>
 </tr>
 </table>
 </details>
@@ -8796,20 +8730,6 @@ samMonitoring
 <td>string</td>
 <td>City</td>
 <td>v2</td>
-</tr>
-
-<tr>
-<td>zipCode</td>
-<td>string</td>
-<td>Zip Code</td>
-<td>v1</td>
-</tr>
-
-<tr>
-<td>zipCodePlus4</td>
-<td>string</td>
-<td>Zip Code Plus 4</td>
-<td>v1</td>
 </tr>
 
 <tr>
@@ -8984,7 +8904,7 @@ samMonitoring
 <tr>
 <td>correspondenceFlag</td>
 <td>string</td>
-<td>Correspondence Flag<br>This field does not contain any data and has been removed from the API.</td>
+<td>Correspondence Flag<br>NOTE: This field does not contain any data and has been removed from the API.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
