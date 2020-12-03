@@ -3872,6 +3872,7 @@ dnbMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
@@ -3966,6 +3967,7 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
@@ -8523,6 +8525,7 @@ dnbMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
@@ -8617,6 +8620,7 @@ samMonitoring
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
