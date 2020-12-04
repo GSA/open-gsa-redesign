@@ -130,6 +130,7 @@ By registering for, receiving and using a key to the Comment API, the key holder
 
 3. The API key may be disabled if an API key holder is determined to have violated these Terms of Participation. 
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## API Description
 
