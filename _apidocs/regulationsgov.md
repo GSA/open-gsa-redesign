@@ -116,17 +116,17 @@ After registration, you will need to provide this API key in the `X-Api-Key` HTT
 
 ## Terms of Participation
 
-The eRulemaking post Application Programming Interface (API), informally referred to as the Comment API, is provided as a convenience to facilitate the bulk upload of comments from a number of different commenters. The use of the Comment API requires a key, which may be obtained through the open GSA website. 
+The eRulemaking post Application Programming Interface (API), informally referred to as the Comment API, is provided as a convenience to facilitate the bulk upload of comments from a number of different commenters. The use of the Comment API requires a key, which may be obtained through the [open GSA](https://open.gsa.gov/api/regulationsgov/#getting-started) website. 
 
 By registering for, receiving and using a key to the Comment API, the key holder agrees to the following terms and conditions:
 
 1. When developing interfaces for commenters who will submit comment language and/or attachments through the Comment API, the key holder will include in the interface:
-  * A link to the same terms of participation and privacy notice that users encounter on the comment form for Regulations.gov, and
-  * A link to the Federal Register notice or other specific document in Regulations.gov for which the key holder is collecting or facilitating comments to be delivered through the Comment API.
+  1. A link to the same [terms of participation](https://beta.regulations.gov/user-notice) and [privacy notice](https://beta.regulations.gov/privacy-notice) that users encounter on the comment form for Regulations.gov, and
+  2. A link to the Federal Register notice or other specific document in Regulations.gov for which the key holder is collecting or facilitating comments to be delivered through the Comment API.
 
 2. The key holder certifies that:
-  * I will only submit comments through the Comment API that it has gathered through lawful means and that, to the best of the key holder’s knowledge, represent comments from real persons, and 
-  * It has not and will not submit comments of its own creation under fictitious or misappropriated identities or otherwise in violation of federal law.
+  1. I will only submit comments through the Comment API that it has gathered through lawful means and that, to the best of the key holder’s knowledge, represent comments from real persons, and 
+  2. It has not and will not submit comments of its own creation under fictitious or misappropriated identities or otherwise in violation of federal law.
 
 3. The API key may be disabled if an API key holder is determined to have violated these Terms of Participation. 
 
