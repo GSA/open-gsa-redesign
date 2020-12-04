@@ -119,10 +119,7 @@ After registration, you will need to provide this API key in the `X-Api-Key` HTT
 The eRulemaking post Application Programming Interface (API), informally referred to as the Comment API, is provided as a convenience to facilitate the bulk upload of comments from a number of different commenters. The use of the Comment API requires a key, which may be obtained through the [open GSA](https://open.gsa.gov/api/regulationsgov/#getting-started) website. 
 
 By registering for, receiving and using a key to the Comment API, the key holder agrees to the following terms and conditions:
-1. A numbered list
-              1. A nested numbered list
-              2. Which is numbered
-          2. Which is numbered
+
 1. When developing interfaces for commenters who will submit comment language and/or attachments through the Comment API, the key holder will include in the interface:
       1. A link to the same [terms of participation](https://beta.regulations.gov/user-notice) and [privacy notice](https://beta.regulations.gov/privacy-notice) that users encounter on the comment form for Regulations.gov, and
       2. A link to the Federal Register notice or other specific document in Regulations.gov for which the key holder is collecting or facilitating comments to be delivered through the Comment API.
