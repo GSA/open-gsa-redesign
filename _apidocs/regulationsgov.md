@@ -120,15 +120,15 @@ The eRulemaking post Application Programming Interface (API), informally referre
 
 By registering for, receiving and using a key to the Comment API, the key holder agrees to the following terms and conditions:
 
-* When developing interfaces for commenters who will submit comment language and/or attachments through the Comment API, the key holder will include in the interface:
+1. When developing interfaces for commenters who will submit comment language and/or attachments through the Comment API, the key holder will include in the interface:
   * A link to the same terms of participation and privacy notice that users encounter on the comment form for Regulations.gov, and
   * A link to the Federal Register notice or other specific document in Regulations.gov for which the key holder is collecting or facilitating comments to be delivered through the Comment API.
 
-* The key holder certifies that:
+2. The key holder certifies that:
   * I will only submit comments through the Comment API that it has gathered through lawful means and that, to the best of the key holder’s knowledge, represent comments from real persons, and 
   * It has not and will not submit comments of its own creation under fictitious or misappropriated identities or otherwise in violation of federal law.
 
-* The API key may be disabled if an API key holder is determined to have violated these Terms of Participation. 
+3. The API key may be disabled if an API key holder is determined to have violated these Terms of Participation. 
 
 
 ## API Description
