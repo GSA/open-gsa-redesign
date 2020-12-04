@@ -71,7 +71,7 @@ Utilizing the Exclusion API as an extract:
 | country  | Allows a string.<br><br> Example: 'country=USA' |  v1<br>v2 |
 | zipCode  | Allows a string.<br><br> Example: 'zipCode=20171' |  v1<br>v2 |
 | ueiDUNS | Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652, 047795005, null).<br><br> Example: 'ueiDUNS=9725565' |  v1<br>v2 |
-| ueiSAM | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available for search). <br><br> Example: ueiSAM=025114695AST |  v1<br>v2 |
+| ueiSAM | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. <br><br> Example: ueiSAM=025114695AST |  v1<br>v2 |
 | excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> Example: 'excludingAgencyCode=AF' |  v1<br>v2 |
 | excludingAgencyName | Allows a string (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null).<br><br> Example: 'excludingAgencyName=FEDERAL' |  v1<br>v2 |
 | ctCode | Allows a string.<br><br> Example: 'ctCode=ZZ' |  v1<br>v2 |
