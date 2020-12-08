@@ -116,11 +116,21 @@ After registration, you will need to provide this API key in the `X-Api-Key` HTT
 
 ## Terms of Participation
 
-Public comments help agencies develop regulations; we encourage comments from all viewpoints. Comments submitted to Regulations.gov should be the submitter’s own comments or be submitted with the commenter’s permission. The development of federal regulations is within the jurisdiction of the U.S. Government’s executive branch agencies. It is a violation of federal law to knowingly and willfully make a materially false, fictitious, or fraudulent statement or representation including false statements about your identity or your authority to submit a comment on someone else’s behalf, in relation to the development of such federal regulations, including through comments submitted on Regulations.gov. See 18 U.S.C. § 1001.
+The eRulemaking post Application Programming Interface (API), informally referred to as the Comment API, is provided as a convenience to facilitate the bulk upload of comments from a number of different commenters. The use of the Comment API requires a key, which may be obtained through the [open GSA](https://open.gsa.gov/api/regulationsgov/#getting-started) website. 
 
-Subject to 18 U.S.C. § 1028(c), it is also a violation of federal law to knowingly use, without lawful authority, a means of identification of another person in connection with the violation of any federal law or the commission of a felony under state or local law. See 18 U.S.C. § 1028(a)(7).
+By registering for, receiving and using a key to the Comment API, the key holder agrees to the following terms and conditions:
 
-You are verifying that you are not making any materially false, fictitious, or fraudulent statement or representation regarding your identity or your authority to submit on someone else’s behalf with regard to the comment you are submitting using Regulations.gov API, and that you are not using, without lawful authority, a means of identification of another person, real or fictitious, in connection with any comment you are submitting on Regulations.gov.
+1. When developing interfaces for commenters who will submit comment language and/or attachments through the Comment API, the key holder will include in the interface:
+      1. A link to the same [terms of participation](https://beta.regulations.gov/user-notice) and [privacy notice](https://beta.regulations.gov/privacy-notice) that users encounter on the comment form for Regulations.gov, and
+      2. A link to the Federal Register notice or other specific document in Regulations.gov for which the key holder is collecting or facilitating comments to be delivered through the Comment API.
+
+2. The key holder certifies that:
+      1. I will only submit comments through the Comment API that it has gathered through lawful means and that, to the best of the key holder’s knowledge, represent comments from real persons, and 
+      2. It has not and will not submit comments of its own creation under fictitious or misappropriated identities or otherwise in violation of federal law.
+
+3. The API key may be disabled if an API key holder is determined to have violated these Terms of Participation. 
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## API Description
 
