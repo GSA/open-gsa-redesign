@@ -17,7 +17,7 @@ Opportunity Management API can be accessed from Beta or Alpha via the following 
 * Beta: https://api.sam.gov/prod/opportunity/v1/api/
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v1/api/
 
-* Beta: https://api.sam.gov/prod/opportunity/v2/ (coming soon)
+* Beta: https://api.sam.gov/prod/opportunity/v2/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ 
 
 **REST API Workflow Chart**
@@ -72,7 +72,7 @@ Uncancel Canceled Opportunity | Yes | Yes | No
 Archive Opportunity | Yes | Yes | Yes
 Unarchive Archived Opportunity | Yes | Yes | No
 Create Resource in Draft Opportunity| Yes | Yes | Yes
-Create Resource in Draft Opportunity - Stream Attachment (coming soon to BETA)| Yes | Yes | Yes
+Create Resource in Draft Opportunity - Stream Attachment | Yes | Yes | Yes
 Update Resource in Draft Opportunity| Yes | Yes | Yes
 Delete Resource in Draft Opportunity| Yes | Yes | Yes
 Download Attachment as Original File Type | Yes | Yes | Yes
@@ -269,14 +269,14 @@ Please use v2 for the following APIs to utilize ueiSAM in place of DUNS. Busines
 * Create and Publish Opportunity
 * Get Authorized Party
 * Get IVL
-* Get list of Opportunities (Coming Soon to BETA)
-* Get Opportunity by Opportunity ID (Coming Soon to BETA)
+* Get list of Opportunities 
+* Get Opportunity by Opportunity ID 
 * Get Related Opportunities
-* Create Resource in Draft Opportunity - Stream Attachments (Coming Soon to BETA)
+* Create Resource in Draft Opportunity - Stream Attachments 
 
 **v2 Endpoints**
 
-* Beta: https://api.sam.gov/prod/opportunity/v2/ (coming soon)
+* Beta: https://api.sam.gov/prod/opportunity/v2/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ 
 
 ## Contract Opportunity Management API Request and Responses
@@ -1982,7 +1982,7 @@ Examples
 </details>
 
 
-### Get List of Opportunities (v2 Coming Soon)
+### Get List of Opportunities 
 
 
 ------- | -------
@@ -2428,7 +2428,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Get an Opportunity by Opportunity ID (v2 Coming Soon)
+### Get an Opportunity by Opportunity ID 
 
 
 ------- | -------
@@ -2866,7 +2866,7 @@ Examples
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Create Resource in Draft Opportunity - Stream Attachments (Coming Soon to BETA)
+### Create Resource in Draft Opportunity - Stream Attachments 
 
 ------- | -------
 **Request Type** | POST
@@ -4914,7 +4914,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <a href="v1/OpenAPI.zip" download="OpenAPI">OpenAPI File</a>
 
 <details>
-<summary>Create Draft Opportunity</summary>
+<summary>Create Draft Opportunity v1</summary>
 <p>
 <code><pre>
 /v1/api/create:
@@ -4980,10 +4980,142 @@ You can view the full details of this API in the OpenAPI Specification file avai
 </details>
 
 <details>
-<summary>Create and Publish Opportunity</summary>
+<summary>Create Draft Opportunity v2</summary>
+<p>
+<code><pre>
+/v2/create:
+    post:
+      tags:
+        - Opportunity
+      summary: Create contract opportunity
+      description: Create contract opportunity.
+      operationId: createOpportunityUsingPOST
+      consumes:
+        - application/JSON
+      produces:
+        - application/*
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - in: body
+          name: requestJSON
+          description: requestJSON
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Create and Publish Opportunity v1</summary>
 <p>
 <code><pre>
 /v1/api/createAndPublish:
+    post:
+      tags:
+        - Opportunity
+      summary: Create and publish contract opportunity
+      description: Create and publish contract opportunity.
+      operationId: createAndPublishOpportunityUsingPOST
+      consumes:
+        - application/JSON
+      produces:
+        - application/*
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - in: body
+          name: requestJSON
+          description: requestJSON
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Create and Publish Opportunity v2</summary>
+<p>
+<code><pre>
+/v2/createAndPublish:
     post:
       tags:
         - Opportunity
@@ -5525,10 +5657,241 @@ You can view the full details of this API in the OpenAPI Specification file avai
 </details>
 
 <details>
-<summary>Get List of Opportunity</summary>
+<summary>Get List of Opportunities v1</summary>
 <p>
 <code><pre>
 /v1/api/search:
+    get:
+      tags:
+        - Opportunity
+      summary: Get Opportunities
+      description: Get all opportunities.
+      operationId: getOpportunitiesUsingGET
+      produces:
+        - application/JSON
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: archivedFrom
+          in: query
+          description: archivedFrom
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: archivedTo
+          in: query
+          description: archivedTo
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: awardNumber
+          in: query
+          description: awardNumber
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: doNumber
+          in: query
+          description: doNumber
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: includeCount
+          in: query
+          description: includeCount
+          required: false
+          type: boolean
+          default: true
+          allowEmptyValue: false
+        - name: keyword
+          in: query
+          description: keyword
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: latest
+          in: query
+          description: latest
+          required: false
+          type: boolean
+          default: true
+          allowEmptyValue: false
+        - name: noticeType
+          in: query
+          description: noticeType
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: opportunityIds
+          in: query
+          description: opportunityIds
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: organizationId
+          in: query
+          description: organizationId
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+          allowEmptyValue: false
+        - name: parentNotice
+          in: query
+          description: parentNotice
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: postedFrom
+          in: query
+          description: postedFrom
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: postedTo
+          in: query
+          description: postedTo
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: relatedNotice
+          in: query
+          description: relatedNotice
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: responseFrom
+          in: query
+          description: responseFrom
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: responseTo
+          in: query
+          description: responseTo
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: returnFHOrgKey
+          in: query
+          description: return fh org key
+          type: string
+          allowEmptyValue: false
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 10
+          format: int32
+          allowEmptyValue: false
+        - name: solNumber
+          in: query
+          description: solNumber
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: sortBy
+          in: query
+          description: sortBy
+          required: false
+          type: string
+          default: '-modifiedOn'
+          allowEmptyValue: false
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: orgStatus
+          in: query
+          description: Organization Status
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: Links
+          in: query
+          description: Link
+          required: false
+          type: boolean
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      security:
+        - Token-based Access: []
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<summary>Get List of Opportunities v2</summary>
+<p>
+<code><pre>
+/v2/search:
     get:
       tags:
         - Opportunity
@@ -5752,10 +6115,82 @@ You can view the full details of this API in the OpenAPI Specification file avai
 </details>
 
 <details>
-<summary>Get an Opportunity by Opportunity ID</summary>
+<summary>Get an Opportunity by Opportunity ID v1</summary>
 <p>
 <code><pre>
-v1/api/history/{opportunityId}:
+v1/api/{opportunityId}:
+    get:
+      tags:
+        - Opportunity
+      summary: Get history of Opportunity
+      operationId: getOpportunityHistoryUsingGET
+      produces:
+        - application/JSON
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - name: postedFrom
+          in: query
+          description: postedFrom
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: returnFHOrgKey
+          in: query
+          description: return fh org key
+          required: false
+          type: string
+          allowEmptyValue: false
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get an Opportunity by Opportunity ID v2</summary>
+<p>
+<code><pre>
+v2/{opportunityId}:
     get:
       tags:
         - Opportunity
@@ -6138,6 +6573,81 @@ v1/api/history/{opportunityId}:
           required: false
           schema:
             type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Create Resource in Draft Opportunity - Stream Attachments</summary>
+<p>
+<code><pre>
+/v2/{opportunityId}/streamAttachments:
+    post:
+      tags:
+        - attachments
+      summary: Add attachment to an opportunity via stream
+      description: Add attachment to an opportunity via stream.
+      operationId: streamAttachmentUsingPOST
+      consumes:
+        - application/JSON
+      produces:
+        - application/JSON
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+          in: body
+        - name: file
+          description: file
+          required: true
+          type: object
+          in: Form/MultiplartFile
+        - name: metadata
+          description: metadata
+          required: true
+          type: JSON
       responses:
         '200':
           description: OK
@@ -6594,10 +7104,98 @@ patch:
 </details>
 
 <details>
-<summary>Get Related Opportunities</summary>
+<summary>Get Related Opportunities v1</summary>
 <p>
 <code><pre>
  /v1/api/opportunities/{opportunityId}/relatedopportunities/{type}:
+    get:
+      tags:
+        - Opportunity
+      summary: Get related contract opportunities
+      operationId: getRelatedOpportunitiesGET
+      produces:
+        - application/JSON
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+          allowEmptyValue: false
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 10
+          format: int32
+          allowEmptyValue: false
+        - name: sortBy
+          in: query
+          description: sortBy
+          required: false
+          type: string
+          default: '-modifiedOn'
+          allowEmptyValue: false
+        - name: type
+          in: path
+          description: type
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      deprecated: false
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get Related Opportunities v2</summary>
+<p>
+<code><pre>
+ /v2/{opportunityId}/relatedopportunities/{type}:
     get:
       tags:
         - Opportunity
@@ -6753,7 +7351,7 @@ patch:
 </details>
 
 <details>
-<summary>Add Authorized Party</summary>
+<summary>Add Authorized Party v1</summary>
 <p>
 <code><pre>
 /v1/api/opportunities/access/{opportunityId}/accessRequest
@@ -6828,7 +7426,82 @@ post:
 </details>
 
 <details>
-<summary>Get Authorized Party</summary>
+<summary>Add Authorized Party v2</summary>
+<p>
+<code><pre>
+/v2/access/{opportunityId}/accessRequest
+post: 
+  consumes: 
+    - application/JSON
+  deprecated: false
+  description: "Add Authorized Party to the Opportunity"
+  operationId: createAndApproveRequestUsingPOST
+  parameters: 
+    - 
+      description: Authorization
+      in: header
+      name: Authorization
+      required: true
+      type: string
+    - 
+      description: api_key
+      in: query
+      name: api_key
+      required: true
+      type: string
+    - 
+      description: opportunityId
+      in: path
+      name: opportunityId
+      required: true
+      type: string
+    - 
+      description: requestJSON
+      in: body
+      name: requestJSON
+      required: false
+      schema: 
+        type: string
+  produces: 
+    - application/JSON
+  responses: 
+    "200": 
+      description: OK
+      schema: 
+        type: object
+    "201": 
+      description: Created
+    "400": 
+      description: "Bad Request"
+      schema: 
+        type: string
+    "401": 
+      description: Unauthorized
+      schema: 
+        type: string
+    "403": 
+      description: Forbidden
+      schema: 
+        type: string
+    "404": 
+      description: "Not Found"
+    "500": 
+      description: "Internal Server Error"
+      schema: 
+        type: string
+    "501": 
+      description: "Not Implemented"
+      schema: 
+        type: string
+  summary: "Add Authorized Party to the Opportunity"
+  tags: 
+    - attachments
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get Authorized Party v1</summary>
 <p>
 <code><pre>
 /v1/api/opportunities/access/{opportunityId}/accessRequest:
@@ -6890,6 +7563,68 @@ post:
 </p>
 </details>
 
+<details>
+<summary>Get Authorized Party v2</summary>
+<p>
+<code><pre>
+/v2/access/{opportunityId}/accessRequest:
+    get:
+      tags:
+        - attachments
+      summary: Get Request Access List for the  opportunity
+      description: Get Request Access List for the  opportunity.
+      operationId: getRequestAccessList
+      produces:
+        - application/JSON
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          type: string
+        - name: opportunityId
+          in: path
+          description: opportunityId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '400':
+          description: Bad Request
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+        '403':
+          description: Forbidden
+          schema:
+            type: string
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          schema:
+            type: string
+        '501':
+          description: Not Implemented
+          schema:
+            type: string
+      security:
+        - Token-based Access: []
+      deprecated: false
+</pre></code>
+</p>
+</details>
 
 
 ## Error Messages
@@ -7119,5 +7854,7 @@ Date | Version | Description
 7/17/2020 | v1.13 | Updated Create Attachment JSON and Update Attachment JSON and Error Message section 
 8/13/2020 |v1.14 | Added Streaming Attachment API (coming soon) 
 8/17/2020 | v1.15 | Get APIs and Streaming Attachment API deployed to Alpha
+9/14/2020| v1.16| Updated OpenAPI Specification section to include v2 endpoints
+9/15/2020| v1.17| v2 Endpoints updated status in BETA
 
 <p><small><a href="#">Back to top</a></small></p>

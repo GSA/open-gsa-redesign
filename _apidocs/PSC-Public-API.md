@@ -12,17 +12,19 @@ This API supports pagination as needed.
 
 ## Getting Started
 
-PSC API can be accessed from Beta or Alpha via the following endpoints:
+Get Opportunities API can be accessed from Beta or Alpha environments via the following urls:
+
 * Beta: <br> https://api.sam.gov/prod/locationservices/v1/api/publicpscdetails
 * Alpha: <br> https://api-alpha.sam.gov/prodlike/locationservices/v1/api/publicpscdetails
 
 ## Authentication and API Keys
-User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles. 
+User of this API must provide an API key to use this API. Request per day are limited based on the federal or non-federal or general roles. 
 
+Note: 
+* For production, users can request an API Key in their Profile under Account Details on https://beta.sam.gov/
+* For prodlike, users can request an API Key in their Profile under Account Details on https://alpha.sam.gov/
 * Rate limit for Federal User is 1000 requests/day
 * Rate limit for Non-Federal User is 10 requests/day
-
-Note: User can request a public API Key in the Account Details page on beta.sam.gov (if testing in production) Else on alpha.sam.gov (if testing in prodlike).
 
 #### User Account API Key Creation
 * Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on beta.sam.gov
@@ -85,7 +87,7 @@ URLs for production and staging:
 * Beta (Production) Production URL: <br> https://api.sam.gov/prod/locationservices/v1/api/publicpscdetails
 * Alpha (Staging) URL: <br> https://api-alpha.sam.gov/prodlike/locationservices/v1/api/publicpscdetails
 
-### Example 1: Search for PSC Codes with start date between a given date rage
+### Example 1: Search for PSC Codes with start date between a given date range
 
 <details>
     <summary>Request URL</summary>
@@ -810,5 +812,6 @@ Date | Version | Description
 8/6/2019 | v1.1| Updated format
 12/2/2019 | v1.2| Added OpenAPI Specification
 3/18/2020| v1.3| Location APIs Added
+9/8/2020 |v1.2| Updated Formatting
 
 <p><small><a href="#">Back to top</a></small></p>

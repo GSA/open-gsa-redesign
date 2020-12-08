@@ -13,7 +13,8 @@ banner-heading: Regulations.gov API
        This project is in BETA
      </strong>
      <p class="usa-alert-text">
-       This documentation provides a preview of the new API endpoints that will be made available soon. 
+       The current comment API is still being tested and in beta phase. 
+       The ability for API key holders to submit comments will be temporarily deactivated until the beta phase is complete. 
        During the Beta period, breaking changes may be made without warning.
        Have feedback or questions? <a href="https://beta.regulations.gov/support">Please let us know</a>!
      </p>
@@ -32,11 +33,102 @@ When Congress passes laws, federal agencies implement those laws through regulat
 
 To begin using this API, you will need to register for an API Key. You can sign up for an API key here: [API key signup page on api.data.gov](https://api.data.gov/signup/).
 
+If you want to use commenting API, you MUST use the form below to register for an API key.
+
+{% raw %}
+<div id="apidatagov_signup">Loading signup form...</div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var apiUmbrellaSignupOptions = {
+    // Pick a short, unique name to identify your site, like 'gsa-auctions'
+    // in this example.
+    registrationSource: 'gsa-regulations',
+
+    // Enter the API key you signed up for and specially configured for this
+    // API key signup embed form.
+    apiKey: 'E41mzkIX0ZReJvQbcSFtqhckpqFnTtkcsjFWAx1Z',
+
+    // Provide an example URL you want to show to users after they signup.
+    // This can be any API endpoint on your server, and you can use the
+    // special {{api_key}} variable to automatically substitute in the API
+    // key the user just signed up for.
+    exampleApiUrl: '',
+
+    // OPTIONAL: Provide extra content to display on the signup confirmation
+    // page. This will be displayed below the user's API key and the example
+    // API URL are shown. HTML is allowed. Defaults to ""
+    // signupConfirmationMessage: '',
+
+    // OPTIONAL: Provide a URL to your own contact page to link to for user
+    // support. Defaults to "https://api.data.gov/contact/"
+    contactUrl: 'https://beta.regulations.gov/support',
+
+    // OPTIONAL: Set to true to verify the user's e-mail address by only
+    // sending them their API key via e-mail, and not displaying it on the
+    // signup confirmation web page. Defaults to false.
+    verifyEmail: true,
+
+    // OPTIONAL: Set to false to disable sending a welcome e-mail to the
+    // user after signing up. Defaults to true.
+    // sendWelcomeEmail: false,
+
+    // OPTIONAL: Provide the name of your developer site. This will appear
+    // in the subject of the welcome e-mail as "Your {{siteName}} API key".
+    // Defaults to "api.data.gov".
+    siteName: 'Regulations.gov API',
+
+    // OPTIONAL: Provide a custom sender name for who the welcome email
+    // appears from. The actual address will be "noreply@api.data.gov", but
+    // this will change the name of the displayed sender in this fashion:
+    // "{{emailFromName}} <noreply@api.data.gov>". Defaults to "".
+    emailFromName: 'eRulemaking Help Desk',
+
+    // OPTIONAL: Provide an extra input field to ask for the user's website.
+    // Defaults to false.
+    websiteInput: true,
+
+    // OPTIONAL: Provide an extra checkbox asking the user to agree to terms
+    // and conditions before signing up. Defaults to false.
+    termsCheckbox: true,
+
+    // OPTIONAL: If the terms & conditions checkbox is enabled, link to this
+    // URL for your API's terms & conditions. Defaults to "".
+    termsUrl: 'https://open.gsa.gov/api/regulationsgov/#terms-of-participation'
+  };
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var apiUmbrella = document.createElement('script'); apiUmbrella.type = 'text/javascript'; apiUmbrella.async = true;
+    apiUmbrella.src = 'https://api.data.gov/static/javascripts/signup_embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(apiUmbrella);
+  })();
+</script>
+<noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
+{% endraw %}  
+
 After registration, you will need to provide this API key in the `X-Api-Key` HTTP header with every API request.
 
 | HTTP Header Name | Description |
 | ---- | ----------- |
 | X-Api-Key | API key from api.data.gov.  For sample purposes, you can use `DEMO_KEY` as an API key. |
+
+<p><small><a href="#">Back to top</a></small></p>
+
+## Terms of Participation
+
+The eRulemaking post Application Programming Interface (API), informally referred to as the Comment API, is provided as a convenience to facilitate the bulk upload of comments from a number of different commenters. The use of the Comment API requires a key, which may be obtained through the [open GSA](https://open.gsa.gov/api/regulationsgov/#getting-started) website. 
+
+By registering for, receiving and using a key to the Comment API, the key holder agrees to the following terms and conditions:
+
+1. When developing interfaces for commenters who will submit comment language and/or attachments through the Comment API, the key holder will include in the interface:
+      1. A link to the same [terms of participation](https://beta.regulations.gov/user-notice) and [privacy notice](https://beta.regulations.gov/privacy-notice) that users encounter on the comment form for Regulations.gov, and
+      2. A link to the Federal Register notice or other specific document in Regulations.gov for which the key holder is collecting or facilitating comments to be delivered through the Comment API.
+
+2. The key holder certifies that:
+      1. I will only submit comments through the Comment API that it has gathered through lawful means and that, to the best of the key holder’s knowledge, represent comments from real persons, and 
+      2. It has not and will not submit comments of its own creation under fictitious or misappropriated identities or otherwise in violation of federal law.
+
+3. The API key may be disabled if an API key holder is determined to have violated these Terms of Participation. 
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -92,7 +184,7 @@ submissionType should be set to API.
 
 <div style="padding: 15px; border: 1px solid; margin-bottom: 20px; border-radius: 4px; color: gray; background: rgba(90, 90, 90, 0.04); border-color: #cccccc;">
    
-Note: The example URI added in this section shows unencoded [ and ] characters simply for readability. In practice, these characters should be percent-encoded. See <a href="https://jsonapi.org/format/1.1/#appendix-query-details-square-brackets" target="_blank">Square Brackets in Parameter Names</a> section in json-api standards for complete information.
+Note: The examples below use unencoded bracket characters `[` and `]` for readability, however, these characters should be percent-encoded using `%5B` and `%5D`.  For example, the posted date search filter should be specified as `filter%5BpostedDate%5D`. See <a href="https://jsonapi.org/format/1.1/#appendix-query-details-square-brackets" target="_blank">Square Brackets in Parameter Names</a> section in json-api standards for additional information.
 
 </div>
 
@@ -177,6 +269,29 @@ Here are few example queries for searching comments:
   ```
   https://api.regulations.gov/v4/comments?sort=-postedDate&api_key=DEMO_KEY
   ```
+  
+* Retrieve all comments for a docket:
+  
+  * Step 1: Get all documents for the docketId FAA-2018-1084: 
+    ```
+    https://api.regulations.gov/v4/documents?filter[docketId]=FAA-2018-1084&api_key=DEMO_KEY
+    ```
+    It returns two documents, FAA-2018-1084-0001 and FAA-2018-1084-0002.
+
+  * Step 2: Get details for each document:
+    ```
+    https://api.regulations.gov/v4/documents/FAA-2018-1084-0001?api_key=DEMO_KEY
+    ```
+    Response for the above request includes an attribute objectId and its set to 0900006483a6cba3.
+  
+  * Step 3: Get all comments for each document using objectId:
+    ```
+    https://api-staging.regulations.gov/v4/comments?filter[commentOnId]=0900006483a6cba3
+    ```
+    The above request returns a list of comments for document FAA-2018-1084-0001.
+    
+    Note: Step 2 and Step 3 should be repeated for FAA-2018-1084-0002 in the above example.
+    
 
 #### Detailed information for a single comment
 
@@ -377,6 +492,46 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <a href="v4/openapi.yaml">Open API specification file for the Regulations.gov API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
+
+## Frequently Asked Questions
+
+#### I am not seeing all fields returned by v3/documents endpoint in v4/documents endpoint. How do I access this information?
+
+Our v3 API had a single search endpoint which returned information about documents, comments and dockets. To streamline our data, we have split our search into three endpoints:
+    
+* Document Search
+* Comment Search
+* Docket Search
+
+Further, some data that could be retrieved using search in v3 has now been moved under details endpoint. For example, you can retrieve RIN for a docket using /dockets/{docketId} endpoint. The rin is not returned by /documents endpoint anymore.
+
+#### How do I get document status from the new `/documents` endpoint?
+
+The new `/v4/documents` carries a withdrawn field. This is a boolean field. If set to true, the document is withdrawn otherwise it’s a posted document.
+
+#### There are strict pagination limits in v4. How do I retrieve all comments in a docket posted on the same day if the number of comments is greater than 2500?
+
+We have this use case under review, and we will be updating our API to accommodate the use case before v3 retirement.
+
+#### I submitted a comment, but I am unable to find it on regs. What happened to my comment?
+
+Comments created via API are not made available in Regulations.gov right away. Agencies need to approve before the newly created comment can be posted out to Regulations.gov.
+
+#### I am seeing 400 errors from commenting API. What am I doing wrong?
+
+Please make sure you are setting Content-Type to application/vnd.api+json in request header.
+
+#### What is DEMO_KEY api key?
+
+As indicated by name, DEMO_KEY should only be used for demonstration purposes. We have added this api_key to our examples to make it easier for users to copy/paste the urls. It should not be used for anything more than exploring our APIs. 
+
+#### What is the staging API url?
+
+Users should be able to access our staging API at https://api-staging.regulations.gov. The production keys should work in a staging environment.
+
+#### I have an API key. How many requests can I make per hour and how do I know I am about to reach my request limit?
+
+Please review https://api.data.gov/docs/rate-limits/ for information on rate limits.
 
 ## API Calls
 
