@@ -25,7 +25,7 @@ The response will be provided in the JSON format in a paginated manner.
 ## Getting Started
 
 Exclusions API can be accessed from Beta or Alpha via the following version 1 and version 2 endpoints:
-* Beta Version 1: https://api.sam.gov/entity-information/v1/api/exclusions?api_key=< value >
+* Beta Version 1: https://api.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Beta Version 2: Coming Soon
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< value ><br><br>
@@ -71,7 +71,7 @@ Utilizing the Exclusion API as an extract:
 | country  | Allows a string.<br><br> Example: 'country=USA' |  v1<br>v2 |
 | zipCode  | Allows a string.<br><br> Example: 'zipCode=20171' |  v1<br>v2 |
 | ueiDUNS | Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652, 047795005, null).<br><br> Example: 'ueiDUNS=9725565' |  v1<br>v2 |
-| ueiSAM | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available for search). <br><br> Example: ueiSAM=025114695AST |  v1<br>v2 |
+| ueiSAM | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. <br><br> Example: ueiSAM=025114695AST |  v1<br>v2 |
 | excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> Example: 'excludingAgencyCode=AF' |  v1<br>v2 |
 | excludingAgencyName | Allows a string (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null).<br><br> Example: 'excludingAgencyName=FEDERAL' |  v1<br>v2 |
 | ctCode | Allows a string.<br><br> Example: 'ctCode=ZZ' |  v1<br>v2 |
@@ -88,6 +88,7 @@ Utilizing the Exclusion API as an extract:
 | includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'includeSections=exclusionOtherInformation,exclusionDetails' |  v1<br>v2 |
 | format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'format=csv' |  v1<br>v2 |
 | emailId | User email Id for notification message .<br><br> Example: 'emailId=test@gsa.gov' |  v1<br>v2 |
+| recordStatus | Allows a string (Active, Inactive) <br><br> Example: 'recordStatus=Active' | v1<br>v2 |
 
 **Expected Result**
 
@@ -121,7 +122,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | terminationDate | string | Termination Date   | v1<br>v2 |
 | terminationType | string | Termination Type   | v1<br>v2 |
 | recordStatus | string | Record Status  | v1<br>v2 |
-| **exclusionAddress** |
+| **exclusionAddress/exclusionPrimaryAddress** | | NOTE: This section is being renamed. It is exclusionAddress is in V1 and will be exclusionPrimaryAddress in V2. The V2 change is available in Alpha now but will remain exclusionAddress in both V1 and V2 in Beta until a later date. | |
 | addressLine1 | string | Address Line 1  |  v1<br>v2 |
 | addressLine2 | string | Address Line 2  |  v1<br>v2 |
 | city | string | Address City  |  v1<br>v2 | 
@@ -129,14 +130,42 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | zipCode | string | Address Zip OR Postal Code  |  v1<br>v2 |
 | zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2 |
 | countryCode | string | Country Code |  v1<br>v2 |
+| **exclusionSecondaryAddress** |
+| addressLine1 | string | Address Line 1  |  v2<br>Alpha Only, Beta Coming Soon |
+| addressLine2 | string | Address Line 2  |  v2<br>Alpha Only, Beta Coming Soon |
+| city | string | Address City  |  v2<br>Alpha Only, Beta Coming Soon | 
+| stateOrProvinceCode | string | Address State or Province Code |  v2<br>Alpha Only, Beta Coming Soon |
+| zipCode | string | Address Zip OR Postal Code  | v2<br>Alpha Only, Beta Coming Soon |
+| zipCodePlus4 | string | Address Zip Plus 4  |  v2<br>Alpha Only, Beta Coming Soon |
+| countryCode | string | Country Code |  v2<br>Alpha Only, Beta Coming Soon |
 | **exclusionOtherInformation** |
 | additionalComments | string | Additional Comments  |  v1<br>v2 |
 | ctCode | string | CT Code  |  v1<br>v2 |
 | dnbInvestigationStatus/evsInvestigationStatus | string | EVS Investigation Status  <br><br>NOTE: This parameter is being renamed. dnbInvestigationStatus is in V1 and evsInvestigationStatus will be V2.   |  v1<br>v2 |
-| **references --> referencesList**   |
+| **exclusionOtherInformation  --> references --> referencesList**   |
 | name/exclusionName | string | Exclusion Name <br><br>NOTE:  This parameter is being renamed.  name is in V1 and exclusionName will be V2.|  v1<br>v2 |
 | type | string | Type  |  v1<br>v2 |
-| moreLocations | string |  More Locations   |  v1<br>v2 |
+| **exclusionOtherInformation --> moreLocations** |
+| exclusionName | string | Exclusion Name | v2<br>Alpha Only, Beta Coming Soon |
+| duns | string | DUNS | v2<br>Alpha Only, Beta Coming Soon |
+| cageCode | string | CAGE Code | v2<br>Alpha Only, Beta Coming Soon |
+| npi | string | NPI | v2<br>Alpha Only, Beta Coming Soon |
+| **exclusionOtherInformation --> moreLocations --> primaryAddress** |
+| addressLine1 | string | Address Line 1 | v2<br>Alpha Only, Beta Coming Soon |
+| addressLine2 | string | Address Line 2 | v2<br>Alpha Only, Beta Coming Soon |
+| city | string | City | v2<br>Alpha Only, Beta Coming Soon |
+| stateOrProvinceCode | string | State or Province Code | v2<br>Alpha Only, Beta Coming Soon |
+| zipCode | string | Zip Code | v2<br>Alpha Only, Beta Coming Soon |
+| zipCodePlus4 | string | Zip Code Plus 4 | v2<br>Alpha Only, Beta Coming Soon |
+| countryCode | string | Country Code | v2<br>Alpha Only, Beta Coming Soon |
+| **exclusionOtherInformation --> moreLocations --> secondaryAddress** |
+| addressLine1 | string | Address Line 1 | v2<br>Alpha Only, Beta Coming Soon |
+| addressLine2 | string | Address Line 2 | v2<br>Alpha Only, Beta Coming Soon |
+| city | string | City | v2<br>Alpha Only, Beta Coming Soon |
+| stateOrProvinceCode | string | State or Province Code | v2<br>Alpha Only, Beta Coming Soon |
+| zipCode | string | Zip Code | v2<br>Alpha Only, Beta Coming Soon |
+| zipCodePlus4 | string | Zip Code Plus 4 | v2<br>Alpha Only, Beta Coming Soon |
+| countryCode | string | Country Code | v2<br>Alpha Only, Beta Coming Soon |
 | **vesselDetails** |
 | callSign | string | Call Sign  |  v1<br>v2 |
 | type | string | Type  |  v1<br>v2 |
@@ -145,13 +174,13 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | flag | string | Flag  |  v1<br>v2 |
 | owner | string | Owner |  v1<br>v2 |
 | **vesselDetails --> secondaryAddress**  |
-| addressLine1 | string | Address Line 1  |  v1<br>v2 |
-| addressLine2 | string | Address Line 2  |  v1<br>v2 |
-| city | string | Address City  |  v1<br>v2 |
-| stateOrProvinceCode | string | Address State or Province Code |  v1<br>v2 |
-| zipCode | string | Address Zip OR Postal Code  |  v1<br>v2 |
-| zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2 |
-| countryCode | string | Country Code |  v1<br>v2 |
+| addressLine1 | string | Address Line 1  |  v1<br>v2 Beta Only |
+| addressLine2 | string | Address Line 2  |  v1<br>v2 Beta Only |
+| city | string | Address City  |  v1<br>v2 Beta Only |
+| stateOrProvinceCode | string | Address State or Province Code |  v1<br>v2 Beta Only |
+| zipCode | string | Address Zip OR Postal Code  |  v1<br>v2 Beta Only |
+| zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2 Beta Only |
+| countryCode | string | Country Code |  v1<br>v2 Beta Only |
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -410,6 +439,8 @@ Date | Version | Description
 02/25/2020 | v1.5 | * Added Examples for v2 requests and responses. <br><br> * Updated Alpha endpoint to meet new API standards.
 02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.
 05/04/2020 | v1.7 | * Added V2 endpoint information.
+10/15/2020 | v1.8 | * Updated the Beta V1 endpoint
+12/07/2020 | v1.9 | * Updated moreLocations for API response. <br><br> * Updated vesselDetails --> secondaryAddress to mention v2 Beta only. <br><br> * Added exclusionSecondaryAddress to API response.<br><br> * Changed exclusionAddress to exclusionAddress/exclusionPrimaryAddress in the API response.
 
 
 <p><small><a href="#">Back to top</a></small></p>

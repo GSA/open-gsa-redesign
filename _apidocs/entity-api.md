@@ -37,7 +37,8 @@ Sensitive Entity Details can be accessed from Beta or Alpha via the following en
 
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
        <ul>
-       <li style="color: #31708f;">Beta Version 1/Version 2: Coming soon</li>
+       <li style="color: #31708f;">Beta Version 1: https://api.sam.gov/entity-information/v1/entities?</li>
+       <li style="color: #31708f;">Beta Version 2: Coming soon</li>
        <li style="color: #31708f;">Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?</li>
        <li style="color: #31708f;">Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?</li>
        </ul><br>
@@ -123,13 +124,14 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <tr>
 <td>entityEFTIndicator</td>
 <td>Entity EFT Indicator aka duns4.
-<br>Example: entityEFTIndicator=0000</td>
+<br>Example: entityEFTIndicator=0000
+<br>NOTE: This parameter must be used in conjunction with ueiDUNS or ueiSAM.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
-<td>Allows Y or N or null.
+<td>Allows Y, N, U or null.
 <br>Example: debtSubjectToOffset=Y</td>
 <td>v1<br>v2</td>
 </tr>
@@ -162,7 +164,7 @@ alphanumeric (ueiSAM values not yet available for search).
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
-<br>Example: entityStructureCode=Z1</td>
+<br>Example: entityStructureCode=2L</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -255,7 +257,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
 <td>Allows 2 characters.
-<br>Example: physicalAddressCongressionalDistrict=AR
+<br>Example: physicalAddressCongressionalDistrict=08
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -278,15 +280,15 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
-<td>Allows 5 digit zip code.
-<br>Example: physicalAddressZipPostalCode=02201
+<td>Allows 5 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Example: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>samExtractCode --> registrationStatus</td>
-<td>Allows 1 character code (A or E).
+<td>Allows 1 character code (A for Active or E for Expired).
 <br>samExtractCode=A, registrationStatus=A
 <br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
 </td>
@@ -296,7 +298,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
-<br>Example: businessTypeCode=2L</td>
+<br>Example: businessTypeCode=OY</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -310,14 +312,14 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
-<br>Example: organizationStructureCode=2L</td>
+<br>Example: organizationStructureCode=MF</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
-<br>Example: organizationStructureDesc=Limited Liability Company</td>
+<br>Example: organizationStructureDesc=MANUFACTURER OF GOODS</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -345,7 +347,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
-<br>Example: countryOfIncorporationDesc=United States Of America</td>
+<br>Example: countryOfIncorporationDesc=UNITED STATES</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -365,7 +367,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>naicsLimitedSB</td>
-<td>Allows 6 character code.
+<td>Allows a 6-digit NAICS Code, "" or !"" values.
 <br>Example: naicsLimitedSB=513310</td>
 <td>v1<br>v2</td>
 </tr>
@@ -373,7 +375,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
-<br>Example: pscCode=0989</td>
+<br>Example: pscCode=X1QA</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -386,8 +388,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterStateCode</td>
-<td>Allows 2 character code.
-<br>Example: servedDisasterStateCode=VA</td>
+<td>Allows 2 digit character code or "any".
+<br>Example: servedDisasterStateCode=VA, servedDisasterStateCode=any</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -400,8 +402,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterCountyCode</td>
-<td>Allows text.
-<br>Example: servedDisasterCountyCode=12334</td>
+<td>Allows 3 digit county code.
+<br>Example: servedDisasterCountyCode=060</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -414,8 +416,22 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterMSA</td>
+<td>Allows 4 digit MSA code.
+<br>Example: servedDisasterMSA=1720</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeCode</td>
+<td>Allows a two character code or null.
+<br>Example: sbaBusinessTypeCode=12</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeDesc</td>
 <td>Allows text.
-<br>Example: servedDisasterMSA=86800730</td>
+<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -438,8 +454,13 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
+<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):
+<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
 <br>Example: emailId=test@gsa.gov
+<br>Applicable to non-SAM registrants.
+<br><br>Alpha:
+<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
+<br>Example: emailId= Yes
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -616,7 +637,8 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>exclusionStatusFlag</td>
 <td>string</td>
-<td>Exclusion Status Flag</td>
+<td>Exclusion Status Flag
+<br>Description (Debarred)</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -691,9 +713,16 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
+<td>mpin</td>
+<td>string</td>
+<td>mpin</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
 <td>correspondenceFlag</td>
 <td>string</td>
-<td>Correspondence Flag</td>
+<td>Correspondence Flag<br>NOTE: This field does not contain any data and has been removed from the API.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -2750,13 +2779,14 @@ First Name</td>
 <tr>
 <td>entityEFTIndicator</td>
 <td>Entity EFT Indicator aka duns4.
-<br>Example: entityEFTIndicator=0000</td>
+<br>Example: entityEFTIndicator=0000
+<br>NOTE: This parameter must be used in conjunction with ueiDUNS or ueiSAM.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
-<td>Allows Y or N or null.
+<td>Allows Y, N, U or null.
 <br>Example: debtSubjectToOffset=Y</td>
 <td>v1<br>v2</td>
 </tr>
@@ -2789,7 +2819,7 @@ alphanumeric (ueiSAM values not yet available for search).
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
-<br>Example: entityStructureCode=Z1</td>
+<br>Example: entityStructureCode=2L</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -2882,7 +2912,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
 <td>Allows 2 characters.
-<br>Example: physicalAddressCongressionalDistrict=AR
+<br>Example: physicalAddressCongressionalDistrict=08
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -2905,15 +2935,15 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
-<td>Allows 5 digit zip code.
-<br>Example: physicalAddressZipPostalCode=02201
+<td>Allows 5 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Example: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>samExtractCode --> registrationStatus</td>
-<td>Allows 1 character code (A or E).
+<td>Allows 1 character code (A for Active or E for Expired).
 <br>samExtractCode=A, registrationStatus=A
 <br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
 </td>
@@ -2923,7 +2953,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
-<br>Example: businessTypeCode=2L</td>
+<br>Example: businessTypeCode=OY</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -2937,14 +2967,14 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
-<br>Example: organizationStructureCode=2L</td>
+<br>Example: organizationStructureCode=MF</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
-<br>Example: organizationStructureDesc=Limited Liability Company</td>
+<br>Example: organizationStructureDesc=MANUFACTURER OF GOODS</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -2972,7 +3002,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
-<br>Example: countryOfIncorporationDesc=United States Of America</td>
+<br>Example: countryOfIncorporationDesc=UNITED STATES</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -2992,7 +3022,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>naicsLimitedSB</td>
-<td>Allows 6 character code.
+<td>Allows a 6-digit NAICS Code, "" or !"" values.
 <br>Example: naicsLimitedSB=513310</td>
 <td>v1<br>v2</td>
 </tr>
@@ -3000,7 +3030,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
-<br>Example: pscCode=0989</td>
+<br>Example: pscCode=X1QA</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3013,8 +3043,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterStateCode</td>
-<td>Allows 2 character code.
-<br>Example: servedDisasterStateCode=VA</td>
+<td>Allows 2 digit character code or "any".
+<br>Example: servedDisasterStateCode=VA, servedDisasterStateCode=any</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3027,8 +3057,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterCountyCode</td>
-<td>Allows text.
-<br>Example: servedDisasterCountyCode=12334</td>
+<td>Allows 3 digit county code.
+<br>Example: servedDisasterCountyCode=060</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3041,8 +3071,22 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterMSA</td>
+<td>Allows 4 digit MSA code.
+<br>Example: servedDisasterMSA=1720</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeCode</td>
+<td>Allows a two character code or null.
+<br>Example: sbaBusinessTypeCode=12</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeDesc</td>
 <td>Allows text.
-<br>Example: servedDisasterMSA=86800730</td>
+<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3065,8 +3109,13 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
+<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):
+<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
 <br>Example: emailId=test@gsa.gov
+<br>Applicable to non-SAM registrants.
+<br><br>Alpha:
+<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
+<br>Example: emailId= Yes
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -3086,9 +3135,23 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>companySecurityLevelDesc</td>
+<td>Allows text.
+<br>Example: companySecurityLevelDesc=Government Top Secret</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
 <br>Example: highestEmployeeSecurityLevelCode=90</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelDesc</td>
+<td>Allows text.
+<br>Example: highestEmployeeSecurityLevelDesc=Government Top Secret</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3114,12 +3177,18 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>sensitivity</td>
-<td>Allows a text, Determines Sensitivity Level of Data.
-<br>Example: sensitivity=public</td>
+<td>agencyBusinessPurposeDesc</td>
+<td>Allows text.
+<br>Example: agencyBusinessPurposeDesc=Buyer and Seller</td>
 <td>v1<br>v2</td>
 </tr>
 
+<tr>
+<td>sensitivity</td>
+<td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
+<br>Example: sensitivity=public</td>
+<td>v1<br>v2</td>
+</tr>
 </table>
 </details>
 
@@ -3292,7 +3361,8 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>exclusionStatusFlag</td>
 <td>string</td>
-<td>Exclusion Status Flag</td>
+<td>Exclusion Status Flag
+<br>Description (Debarred)</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -3853,9 +3923,15 @@ dnbMonitoring
 </tr>
 
 <tr>
-<td>postalCode</td>
+<td>zipCode</td>
 <td>string</td>
-<td>Postal Code</td>
+<td>Zip Code</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
 </tr>
 
 <tr>
@@ -3939,9 +4015,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>postalCode</td>
+<td>zipCode</td>
 <td>string</td>
-<td>Postal Code</td>
+<td>Zip Code</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
 </tr>
 
 <tr>
@@ -4150,9 +4232,16 @@ samMonitoring
 </tr>
 
 <tr>
+<td>mpin</td>
+<td>string</td>
+<td>mpin</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
 <td>correspondenceFlag</td>
 <td>string</td>
-<td>Correspondence Flag</td>
+<td>Correspondence Flag<br>NOTE: This field does not contain any data and has been removed from the API.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -7265,13 +7354,14 @@ First Name</td>
 <tr>
 <td>entityEFTIndicator</td>
 <td>Entity EFT Indicator aka duns4.
-<br>Example: entityEFTIndicator=0000</td>
+<br>Example: entityEFTIndicator=0000
+<br>NOTE: This parameter must be used in conjunction with ueiDUNS or ueiSAM.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
-<td>Allows Y or N or null.
+<td>Allows Y, N, U or null.
 <br>Example: debtSubjectToOffset=Y</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7304,7 +7394,7 @@ alphanumeric (ueiSAM values not yet available for search).
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
-<br>Example: entityStructureCode=Z1</td>
+<br>Example: entityStructureCode=2L</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7397,7 +7487,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
 <td>Allows 2 characters.
-<br>Example: physicalAddressCongressionalDistrict=AR
+<br>Example: physicalAddressCongressionalDistrict=08
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7420,15 +7510,15 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
-<td>Allows 5 digit zip code.
-<br>Example: physicalAddressZipPostalCode=02201
+<td>Allows 5 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Example: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>samExtractCode --> registrationStatus</td>
-<td>Allows 1 character code (A or E).
+<td>Allows 1 character code (A for Active or E for Expired).
 <br>samExtractCode=A, registrationStatus=A
 <br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
 </td>
@@ -7438,7 +7528,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
-<br>Example: businessTypeCode=2L</td>
+<br>Example: businessTypeCode=OY</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7452,14 +7542,14 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
-<br>Example: organizationStructureCode=2L</td>
+<br>Example: organizationStructureCode=MF</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
-<br>Example: organizationStructureDesc=Limited Liability Company</td>
+<br>Example: organizationStructureDesc=MANUFACTURER OF GOODS</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7487,7 +7577,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
-<br>Example: countryOfIncorporationDesc=United States Of America</td>
+<br>Example: countryOfIncorporationDesc=UNITED STATES</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7507,7 +7597,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>naicsLimitedSB</td>
-<td>Allows 6 character code.
+<td>Allows a 6-digit NAICS Code, "" or !"" values.
 <br>Example: naicsLimitedSB=513310</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7515,7 +7605,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
-<br>Example: pscCode=0989</td>
+<br>Example: pscCode=X1QA</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7528,8 +7618,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterStateCode</td>
-<td>Allows 2 character code.
-<br>Example: servedDisasterStateCode=VA</td>
+<td>Allows 2 digit character code or "any".
+<br>Example: servedDisasterStateCode=VA, servedDisasterStateCode=any</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7542,8 +7632,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterCountyCode</td>
-<td>Allows text.
-<br>Example: servedDisasterCountyCode=12334</td>
+<td>Allows 3 digit county code.
+<br>Example: servedDisasterCountyCode=060</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7556,8 +7646,22 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>servedDisasterMSA</td>
+<td>Allows 4 digit MSA code.
+<br>Example: servedDisasterMSA=1720</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeCode</td>
+<td>Allows a two character code or null.
+<br>Example: sbaBusinessTypeCode=12</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeDesc</td>
 <td>Allows text.
-<br>Example: servedDisasterMSA=86800730</td>
+<br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7580,8 +7684,13 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
+<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):
+<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
 <br>Example: emailId=test@gsa.gov
+<br>Applicable to non-SAM registrants.
+<br><br>Alpha:
+<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
+<br>Example: emailId= Yes
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
@@ -7601,9 +7710,23 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
+<td>companySecurityLevelDesc</td>
+<td>Allows text.
+<br>Example: companySecurityLevelDesc=Government Top Secret</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
 <br>Example: highestEmployeeSecurityLevelCode=90</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelDesc</td>
+<td>Allows text.
+<br>Example: highestEmployeeSecurityLevelDesc=Government Top Secret</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7625,6 +7748,13 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>agencyBusinessPurposeCode</td>
 <td>Allows text, Determines Agency Business Purpose Code.
 <br>Example: agencyBusinessPurposeCode=1</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeDesc</td>
+<td>Allows text.
+<br>Example: agencyBusinessPurposeDesc=Buyer and Seller</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -7686,11 +7816,10 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>sensitivity</td>
-<td>Allows a text, Determines Sensitivity Level of Data.
+<td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
 <br>Example: sensitivity=public</td>
 <td>v1<br>v2</td>
 </tr>
-
 </table>
 </details>
 
@@ -7864,7 +7993,8 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>exclusionStatusFlag</td>
 <td>string</td>
-<td>Exclusion Status Flag</td>
+<td>Exclusion Status Flag
+<br>Description (Debarred)</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -8426,9 +8556,15 @@ dnbMonitoring
 </tr>
 
 <tr>
-<td>postalCode</td>
+<td>zipCode</td>
 <td>string</td>
-<td>Postal Code</td>
+<td>Zip Code</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
 </tr>
 
 <tr>
@@ -8512,9 +8648,15 @@ samMonitoring
 </tr>
 
 <tr>
-<td>postalCode</td>
+<td>zipCode</td>
 <td>string</td>
-<td>Postal Code</td>
+<td>Zip Code</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
 </tr>
 
 <tr>
@@ -8753,9 +8895,16 @@ samMonitoring
 </tr>
 
 <tr>
+<td>mpin</td>
+<td>string</td>
+<td>mpin</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
 <td>correspondenceFlag</td>
 <td>string</td>
-<td>Correspondence Flag</td>
+<td>Correspondence Flag<br>NOTE: This field does not contain any data and has been removed from the API.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -12004,7 +12153,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON/CSV format. |
-| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication |
+| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication. <br><br> * entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter. |
 | 406 | Invalid Accept Header. |
 | 415 | Invalid Content-Type Header. |
 
@@ -18044,5 +18193,7 @@ Disclaimer:
 | 05/04/2020 | v1.7 | * Added V2 endpoint information.|
 | 06/10/2020 | v1.8 | * Added the endpoint, new process and an example for the Sensitive API .|
 | 08/17/2020 | v1.9 | * The "Sensitive API Process" subsection under the "Sensitive API Information" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshots under "Example 13" have been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.|
+| 10/15/2020 | v2.0 | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. <br><br> * Updated the description for the entityEFTIndicator parameter. |
+| 12/07/2020 | v2.1 | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.|
 
 <p><small><a href="#">Back to top</a></small></p>
