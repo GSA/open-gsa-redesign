@@ -1,0 +1,103 @@
+openapi: 3.0.0
+info:
+  title: Search.gov Clicks API
+  description: Search.gov is a service of the General Services Administration, providing search engine capability to federal agencies for their public websites. This API enables you to send click events to the Search.gov console.
+  version: 2.0
+
+paths:
+  /clicks/:
+    get:
+      summary: Click Tracking
+      description: 'This endpoint allows you to send in click events.'
+      parameters:
+        - name: url
+          in: query
+          description: 'The URL of the link that was clicked.'
+          required: true
+          schema:
+              type: string
+              format: string
+        - name: query
+          in: query
+          description: 'The search term that surfaced this result and ended in a click.'
+          required: true
+          schema:
+            type: string
+            format: string
+        - name: affiliate
+          in: query
+          description: 'You can find your site handle in the Admin Center on your settings page.'
+          required: true
+          schema:
+            type: string
+            format: string
+        - name: position
+          in: query
+          description: 'The position/rank of the result on your search results page. Was it the first result or the second?'
+          required: true
+          schema:
+            type: integer
+            format: string
+        - name: module_code
+          in: query
+          description: 'The module code for the source of the clicked result. Must be a valid module code. See manual for more information'
+          required: true
+          schema:
+            type: integer
+            format: integer
+            default: 20
+        - name: access_key
+          in: query
+          description: 'Your API access key. You can find this under Your Site > Activate > API Key. Note: The API key from api.data.gov will not work for this API. It must be the one from the Search.gov admin center.'
+          required: true
+          schema:
+            type: integer
+            format: integer
+            default: 0
+        - name: client_ip
+          in: query
+          description: 'The IP address of the user who clicked.'
+          required: true
+          schema:
+            type: string
+            format: string
+            default: relevance
+        - name: user_agent
+          in: query
+          description: 'The user agent of the user who clicked.'
+          required: true
+          schema:
+            type: string
+            format: string
+            default: relevance
+        - name: referrer
+          in: query
+          description: 'The URL of the results page the searcher was on.'
+          required: false
+          schema:
+            type: string
+            format: string
+            default: relevance
+      tags:
+      - search
+
+      responses:            
+        "200":
+          description: Successfully retrieved list
+        "400":
+          description: Query can't be blank.
+        "401":
+          description: Errors with inputs, such as access keys, URLs or module codes.
+          
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
+      
+security: 
+  - ApiKeyAuth: []
+                
+servers:
+  - url: 'https://api.gsa.gov/technology/searchgov/v2'
