@@ -1,3 +1,8 @@
+---
+title: Search.gov Clicks API
+banner-heading: Search.gov Clicks API
+---
+
 ### Click Tracking API Instructions
 
 The click tracking API endpoint lets you send in click events, which allows you to see click data on your [Admin Click Analytics](http://localhost:3000/sites/6/clicks/new) page. We also use this click data to strengthen the search results algorithm for your site.
