@@ -108,7 +108,7 @@ fhagencyorgname| Name of a department/Ind. agency in Federal Hierarchy to the cu
 fhorgnamehistory| An array of the current organization name, the date when this name became effective, previous name/s (if available) and date when that name became effective. <br><br>Note: This data may not be currently available in the FH for all records. |Array
 fhorgname| Current and/or previous name of an organization in the Federal Hierarchy. |Text
 effectivedate| Date when the organization was created and the office became effective in the Federal Hierarchy.|Text 
-fhorgparenthistory| An array of full parent id, full parent path name and the date when this full parent became effective. This array contains details about current parent and also the previous parents before the organization moved. <br><br> Note: Data for moved organizations is currently not available in the FH. |Array
+fhorgparenthistory| An array of full parent id, full parent path name, date when this full parent became effective, code hierarchy for that organization and the action type taken place. This array contains details about current parent and also the previous parents before the organization moved. <br><br> Note: Data for moved organizations is currently not available in the FH(For departments and Sub tiers). |Array
 fhfullparentpathid| ID of the full parent path for an organization. For example, a sub-tier would have a path of <Org id of parent department>.<Org id of parent sub-tier> |Text 
 fhfullparentpathname |Name of the full parent path for an organization. Example for this field a sub-tier is <Org name of parent department>.<Org name of parent sub-tier>|Text 
 effectivedate| Date when the current name or previous names became effective. Currently this field is mapped to the start date of an organization. <br><br> Note: Data for moved organization is currently not available in the FH.| Date 
@@ -167,10 +167,12 @@ Federal Hierarchy Public API
  "fhorgparenthistory": [
  {
  "fhfullparentpathid": "100041854.100525425",
- "fhfullparentpathname": "EXECUTIVE OFFICE OF THE
-PRESIDENT.AFRICAN DEVELOPMENT FUND",
- "effectivedate": "2003-06-07 00:00"
+ "fhfullparentpathname": "EXECUTIVE OFFICE OF THE PRESIDENT.AFRICAN DEVELOPMENT FUND",
+ "effectivedate": "2003-06-07",
+ "codehierarchy": "11DB",
+ "actiontype": "CREATE"            
  }
+ 
  ],
  "links": [
  {
@@ -229,7 +231,9 @@ API Key}&fhorgname=DEVELOPMENT
  {
  "fhfullparentpathid": "100148640",
  "fhfullparentpathname": "AGENCY FOR INTERNATIONAL DEVELOPMENT",
- "effectivedate": null
+ "effectivedate": null,
+ "codehierarchy": "7200",
+ "actiontype": "CREATE" 
  }
  ],
  "links": [
@@ -292,16 +296,16 @@ PROGRAMS",
  "fhorgparenthistory": [
  {
  "fhfullparentpathid": "100001616.300000352",
- "fhfullparentpathname": "EDUCATION, DEPARTMENT OF.ACADEMIC
-IMPROVEMENT AND TEACHER QUALITY PROGRAMS",
- "effectivedate": null
+ "fhfullparentpathname": "EDUCATION, DEPARTMENT OF.ACADEMIC IMPROVEMENT AND TEACHER QUALITY PROGRAMS",
+ "effectivedate": null,
+ "codehierarchy": "9147",
+ "actiontype": "CREATE" 
  }
  ],
  "links": [ 
  {
  "rel": "self",
- "href": "https://api-alpha.sam.gov/prodlike
-/federalorganizations/v1/orgs?fhorgid=300000352"
+ "href": "https://api-alpha.sam.gov/prodlike/federalorganizations/v1/orgs?fhorgid=300000352"
  }
  ]
  }, 
@@ -351,7 +355,9 @@ https://api-alpha.sam.gov/prodlike/federalorganizations/v1/org/hierarchy?limit=1
  {
  "fhfullparentpathid": "100006688",
  "fhfullparentpathname": "GENERAL SERVICES ADMINISTRATION",
- "effectivedate": null
+ "effectivedate": null,
+ "codehierarchy": "4700",
+ "actiontype": "CREATE" 
  }
  ],
  "links": [
