@@ -797,5 +797,6 @@ Date | Version | Description
 9/16/2019 | v1.1 | Added Region Code <br> Updated rules for multiple CGAC
 12/2/2019 | v1.2| Added OpenAPI Specification
 9/8/2020 |v1.3| Updated Formatting
+1/11/2021 |v1.4| Updated move history details
 
 <p><small><a href="#">Back to top</a></small></p>
