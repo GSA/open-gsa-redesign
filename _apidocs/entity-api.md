@@ -1492,7 +1492,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 <tr>
 <td>address</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>address contains below fields</summary><br>
@@ -1830,7 +1830,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
   
 <tr>
 <td>plantAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>plantAddress contains below fields</summary><br>
@@ -1891,7 +1891,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 <tr>
 <td>ownerAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>ownerAddress contains below fields</summary><br>
@@ -2381,7 +2381,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 <tr>
 <td>address</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>address contains below fields</summary><br>
@@ -2719,7 +2719,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
   
 <tr>
 <td>plantAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>plantAddress contains below fields</summary><br>
@@ -2780,7 +2780,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 <tr>
 <td>ownerAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>ownerAddress contains below fields</summary><br>
@@ -3279,7 +3279,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 <tr>
 <td>address</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>address contains below fields</summary><br>
@@ -3617,7 +3617,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
   
 <tr>
 <td>plantAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>plantAddress contains below fields</summary><br>
@@ -3678,7 +3678,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 <tr>
 <td>ownerAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>ownerAddress contains below fields</summary><br>
@@ -7177,7 +7177,7 @@ samMonitoring
 
 <tr>
 <td>address</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>address contains below fields</summary><br>
@@ -7515,7 +7515,7 @@ samMonitoring
   
 <tr>
 <td>plantAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>plantAddress contains below fields</summary><br>
@@ -7576,7 +7576,7 @@ samMonitoring
 
 <tr>
 <td>ownerAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>ownerAddress contains below fields</summary><br>
@@ -8066,7 +8066,7 @@ samMonitoring
 
 <tr>
 <td>address</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>address contains below fields</summary><br>
@@ -8404,7 +8404,7 @@ samMonitoring
   
 <tr>
 <td>plantAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>plantAddress contains below fields</summary><br>
@@ -8465,7 +8465,7 @@ samMonitoring
 
 <tr>
 <td>ownerAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>ownerAddress contains below fields</summary><br>
@@ -8964,7 +8964,7 @@ samMonitoring
 
 <tr>
 <td>address</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>address contains below fields</summary><br>
@@ -9302,7 +9302,7 @@ samMonitoring
   
 <tr>
 <td>plantAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>plantAddress contains below fields</summary><br>
@@ -9363,7 +9363,7 @@ samMonitoring
 
 <tr>
 <td>ownerAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>ownerAddress contains below fields</summary><br>
@@ -13991,7 +13991,7 @@ samMonitoring
 
 <tr>
 <td>address</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>address contains below fields</summary><br>
@@ -14329,7 +14329,7 @@ samMonitoring
   
 <tr>
 <td>plantAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>plantAddress contains below fields</summary><br>
@@ -14390,7 +14390,7 @@ samMonitoring
 
 <tr>
 <td>ownerAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>ownerAddress contains below fields</summary><br>
@@ -14880,7 +14880,7 @@ samMonitoring
 
 <tr>
 <td>address</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>address contains below fields</summary><br>
@@ -15218,7 +15218,7 @@ samMonitoring
   
 <tr>
 <td>plantAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>plantAddress contains below fields</summary><br>
@@ -15279,7 +15279,7 @@ samMonitoring
 
 <tr>
 <td>ownerAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>ownerAddress contains below fields</summary><br>
@@ -15778,7 +15778,7 @@ samMonitoring
 
 <tr>
 <td>address</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>address contains below fields</summary><br>
@@ -16116,7 +16116,7 @@ samMonitoring
   
 <tr>
 <td>plantAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>plantAddress contains below fields</summary><br>
@@ -16177,7 +16177,7 @@ samMonitoring
 
 <tr>
 <td>ownerAddress</td>
-<td>List</td>
+<td>object</td>
 <td>
 <details>
 <summary>ownerAddress contains below fields</summary><br>
