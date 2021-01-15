@@ -1314,10 +1314,11 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>architectExperiencesList</td>
 <td>List</td>
-<td>Arhitect Experiences List</td>
+<td>Arhitect Experiences List
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
+  
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1356,6 +1357,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 </table>
 </details>
+</td>
 </tr>
 
 <tr>
