@@ -1986,9 +1986,6 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </td>
 </tr>
 
-</table>
-</details>
-
 <tr>
 <td>servicesRevenuesList</td>
 <td>List</td>
@@ -2006,7 +2003,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -2067,7 +2064,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -2895,7 +2892,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -2956,7 +2953,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -3793,7 +3790,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -3854,7 +3851,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -7691,7 +7688,7 @@ samMonitoring
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -7752,7 +7749,7 @@ samMonitoring
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -8580,7 +8577,7 @@ samMonitoring
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -8641,7 +8638,7 @@ samMonitoring
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -9478,7 +9475,7 @@ samMonitoring
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -9539,7 +9536,7 @@ samMonitoring
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -14505,7 +14502,7 @@ samMonitoring
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -14566,7 +14563,7 @@ samMonitoring
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -15394,7 +15391,7 @@ samMonitoring
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -15455,7 +15452,7 @@ samMonitoring
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -16292,7 +16289,7 @@ samMonitoring
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
@@ -16353,7 +16350,7 @@ samMonitoring
 <tr>
 <td>id</td>
 <td>string</td>
-<td>ID/td>
+<td>ID</td>
 </tr>
 
 <tr>
