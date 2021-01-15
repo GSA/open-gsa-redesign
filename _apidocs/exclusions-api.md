@@ -24,6 +24,10 @@ The response will be provided in the JSON format in a paginated manner.
 
 ## Getting Started
 
+**IMPORTANT**: There will be a period from early 2021 through the integration of SAM.gov into Beta.SAM.gov where Alpha and Beta functionality of the APIs will not be in sync. During this time, we recommend you primarily test the functionality of the APIs in Alpha. Please pay close attention to the parameter and schema "Description" and "Applicable Version" columns as all differences are noted there. Some of the key differences between Alpha and Beta API functionality are highlighted here:
+* Some minor schema differences between V2 API in Alpha vs Beta
+* New parameters/parameter functionality differences
+
 Exclusions API can be accessed from Beta or Alpha via the following version 1 and version 2 endpoints:
 * Beta Version 1: https://api.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Beta Version 2: Coming Soon
