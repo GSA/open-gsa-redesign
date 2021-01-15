@@ -31,6 +31,7 @@ The Entity Management API will allow users to request Public Entity Information 
    * Data completeness (many fields in Beta will display “Currently not available”)
    * Reps and Certs (the Beta version of Reps and Certs section will return no data and an older schema version)
    * Availability and/or functionality of certain parameters
+   * The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
 
 
 Public and FOUO Entity Details can be accessed from Beta or Alpha via the following version 1 and version 2 endpoints:
@@ -636,7 +637,9 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>noPublicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag</td>
+<td>No Public Display Flag<br>
+NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in Beta for V1/V2. The Beta versions of the API will display Y/N at the time of SAM Integration.
+</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -1208,6 +1211,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 <details>
 <summary>repsAndCerts Section</summary><br>
+This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br>
 <summary>certifications Sub Section</summary>
 
 <table>
@@ -5338,7 +5342,9 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>noPublicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag</td>
+<td>No Public Display Flag<br>
+NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in Beta for V1/V2. The Beta versions of the API will display Y/N at the time of SAM Integration.
+</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -6893,6 +6899,7 @@ samMonitoring
 
 <details>
 <summary>repsAndCerts Section</summary><br>
+This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br>
 <summary>certifications Sub Section</summary>
 
 <table>
@@ -11944,7 +11951,9 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>noPublicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag</td>
+<td>No Public Display Flag<br>
+NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in Beta for V1/V2. The Beta versions of the API will display Y/N at the time of SAM Integration.
+</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -13707,6 +13716,7 @@ samMonitoring
 
 <details>
 <summary>repsAndCerts Section</summary><br>
+This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br>
 <summary>certifications Sub Section</summary>
 
 <table>
@@ -24127,6 +24137,6 @@ Disclaimer:
 | 08/17/2020 | v1.9 | * The "Sensitive API Process" subsection under the "Sensitive API Information" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshots under "Example 13" have been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.|
 | 10/15/2020 | v2.0 | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. <br><br> * Updated the description for the entityEFTIndicator parameter. |
 | 12/07/2020 | v2.1 | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.|
-| 01/15/2021 | v2.2 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive  |
+| 01/15/2021 | v2.2 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive.<br><br> * Added note to the noPublicDisplayFlag field in the response.  |
 
 <p><small><a href="#">Back to top</a></small></p>
