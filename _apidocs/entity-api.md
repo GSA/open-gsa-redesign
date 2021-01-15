@@ -2101,11 +2101,13 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </td>
 </tr>
 
-</table>
-</details>
+
 </td>
 <td>v1<br>v2</td>
 </tr>
+
+</table>
+</details>
 
 <tr>
 <td>dFARResponses</td>
