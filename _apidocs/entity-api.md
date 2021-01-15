@@ -2113,7 +2113,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>
 
 <details>
-<summary>fARResponses contains below fields</summary>
+<summary>dFARResponses contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3011,7 +3011,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>List</td>
 <td>
 <details>
-<summary>fARResponses contains below fields</summary>
+<summary>architectEngineerResponses contains below fields</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3935,6 +3935,44 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>certifierMiddleInitial</td>
 <td>string</td>
 <td>Certifier Middle Initial</td>
+<td>v1<br>v2</td>
+</tr>
+</table>
+
+<summary>pdfLinks Sub Section</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+ 
+<tr>
+<td>pdfLinks</td>
+<td>string</td>
+<td>PDF Links</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>farAndDfarsPDF</td>
+<td>string</td>
+<td>FAR and DFARS PDF</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>architectEngineeringPDF</td>
+<td>string</td>
+<td>Architect Engineering PDF</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>financialAssistanceCertificationsPDF</td>
+<td>string</td>
+<td>Financial Assistance Certifications PDF</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
