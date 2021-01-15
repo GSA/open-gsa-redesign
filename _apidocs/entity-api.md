@@ -1986,7 +1986,8 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </td>
 </tr>
 
-</td></tr>
+</table>
+</details>
 
 <tr>
 <td>servicesRevenuesList</td>
