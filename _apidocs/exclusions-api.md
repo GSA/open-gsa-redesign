@@ -24,6 +24,10 @@ The response will be provided in the JSON format in a paginated manner.
 
 ## Getting Started
 
+**IMPORTANT**: There will be a period from early 2021 through the integration of SAM.gov into Beta.SAM.gov where Alpha and Beta functionality of the APIs will not be in sync. During this time, we recommend you primarily test the functionality of the APIs in Alpha. Please pay close attention to the parameter and schema "Description" and "Applicable Version" columns as all differences are noted there. Some of the key differences between Alpha and Beta API functionality are highlighted here:
+* Some minor schema differences between V2 API in Alpha vs Beta
+* New parameters/parameter functionality differences
+
 Exclusions API can be accessed from Beta or Alpha via the following version 1 and version 2 endpoints:
 * Beta Version 1: https://api.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Beta Version 2: Coming Soon
@@ -441,6 +445,7 @@ Date | Version | Description
 05/04/2020 | v1.7 | * Added V2 endpoint information.
 10/15/2020 | v1.8 | * Updated the Beta V1 endpoint
 12/07/2020 | v1.9 | * Updated moreLocations for API response. <br><br> * Updated vesselDetails --> secondaryAddress to mention v2 Beta only. <br><br> * Added exclusionSecondaryAddress to API response.<br><br> * Changed exclusionAddress to exclusionAddress/exclusionPrimaryAddress in the API response.
+01/15/2021 | v2.2 | * Added the highlighted changes message under the "Getting Started" section.
 
 
 <p><small><a href="#">Back to top</a></small></p>
