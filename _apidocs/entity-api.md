@@ -1278,7 +1278,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>country</td>
 <td>string</td>
-<td>Country>/td>
+<td>Country</td>
 </tr>
 
 <tr>
@@ -2167,7 +2167,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>country</td>
 <td>string</td>
-<td>Country>/td>
+<td>Country</td>
 </tr>
 
 <tr>
@@ -3065,7 +3065,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>country</td>
 <td>string</td>
-<td>Country>/td>
+<td>Country</td>
 </tr>
 
 <tr>
@@ -6963,7 +6963,7 @@ samMonitoring
 <tr>
 <td>country</td>
 <td>string</td>
-<td>Country>/td>
+<td>Country</td>
 </tr>
 
 <tr>
@@ -7852,7 +7852,7 @@ samMonitoring
 <tr>
 <td>country</td>
 <td>string</td>
-<td>Country>/td>
+<td>Country</td>
 </tr>
 
 <tr>
@@ -8750,7 +8750,7 @@ samMonitoring
 <tr>
 <td>country</td>
 <td>string</td>
-<td>Country>/td>
+<td>Country</td>
 </tr>
 
 <tr>
@@ -13777,7 +13777,7 @@ samMonitoring
 <tr>
 <td>country</td>
 <td>string</td>
-<td>Country>/td>
+<td>Country</td>
 </tr>
 
 <tr>
@@ -14666,7 +14666,7 @@ samMonitoring
 <tr>
 <td>country</td>
 <td>string</td>
-<td>Country>/td>
+<td>Country</td>
 </tr>
 
 <tr>
@@ -15564,7 +15564,7 @@ samMonitoring
 <tr>
 <td>country</td>
 <td>string</td>
-<td>Country>/td>
+<td>Country</td>
 </tr>
 
 <tr>
