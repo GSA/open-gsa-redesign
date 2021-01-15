@@ -2997,6 +2997,904 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 </table>
 
+<summary>qualifications Sub Section</summary>
+
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+<tr>
+<td>architectEngineerResponses</td>
+<td>List</td>
+<td>
+<details>
+<summary>fARResponses contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>provisionId</td>
+<td>string</td>
+<td>Provision ID</td>
+</tr>
+
+<tr>
+<td>listOfAnswers</td>
+<td>list</td>
+<td>
+<details>
+<summary>listOfAnswers contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>section</td>
+<td>string</td>
+<td>Section</td>
+</tr>
+
+<tr>
+<td>questionText</td>
+<td>string</td>
+<td>Question Text</td>
+</tr>
+
+<tr>
+<td>answerId</td>
+<td>string</td>
+<td>Answer ID</td>
+</tr>
+
+<tr>
+<td>answerText</td>
+<td>string</td>
+<td>Answer Text</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country>/td>
+</tr>
+
+<tr>
+<td>company</td>
+<td>string</td>
+<td>Company</td>
+</tr>
+
+<tr>
+<td>highestLevelOwnerCage</td>
+<td>string</td>
+<td>Highest Level Owner CAGE</td>
+</tr>
+
+<tr>
+<td>immediateOwnerCage</td>
+<td>string</td>
+<td>Immediate Owner CAGE</td>
+</tr>
+
+<tr>
+<td>personDetails</td>
+<td>string</td>
+<td>Person Details</td>
+</tr>
+
+<tr>
+<td>pointOfContact</td>
+<td>string</td>
+<td>Point of Contact</td>
+</tr>
+
+<tr>
+<td>architectExperiencesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>architectExperiencesList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>experienceCode</td>
+<td>string</td>
+<td>Experience Code</td>
+</tr>
+
+<tr>
+<td>experienceDescription</td>
+<td>string</td>
+<td>Experience Description</td>
+</tr>
+
+<tr>
+<td>annualAvgRevenueCode</td>
+<td>string</td>
+<td>Annual Avg Revenue Code</td>
+</tr>
+
+<tr>
+<td>annualAvgRevenueDescription</td>
+<td>string</td>
+<td>Annual Avg Revenue Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>disciplineInfoList</td>
+<td>List</td>
+<td>
+<details>
+<summary>disciplineInfoList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>disciplineID</td>
+<td>string</td>
+<td>Discipline ID</td>
+</tr>
+
+<tr>
+<td>firmNumOfEmployees</td>
+<td>string</td>
+<td>Firm Num of Employees</td>
+</tr>
+
+<tr>
+<td>branchNumOfEmployees</td>
+<td>string</td>
+<td>Branch Num of Employees</td>
+</tr>
+
+<tr>
+<td>disciplineDescription</td>
+<td>string</td>
+<td>Discipline Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>endProductsList</td>
+<td>string</td>
+<td>
+<details>
+<summary>endProductsList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+
+<tr>
+<td>productType</td>
+<td>string</td>
+<td>ProductType</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>foreignGovtEntitiesList</td>
+<td>string</td>
+<td>
+<details>
+<summary>foreignGovtEntitiesList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>controlledEntityName</td>
+<td>string</td>
+<td>Controlled Entity Name</td>
+</tr>
+
+<tr>
+<td>interestDescription</td>
+<td>string</td>
+<td>Interest Description</td>
+</tr>
+
+<tr>
+<td>ownershipPercentageType</td>
+<td>string</td>
+<td>Ownership Percentage Type</td>
+</tr>
+
+<tr>
+<td>address</td>
+<td>List</td>
+<td>
+<details>
+<summary>address contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>Line 1</td>
+</tr>
+
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Zip</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>govtCountry</td>
+<td>string</td>
+<td>Govt Country</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>formerFirmsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>formerFirmsList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>Tin</td>
+</tr>
+
+<tr>
+<td>duns</td>
+<td>string</td>
+<td>DUNS</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>fscInfoList</td>
+<td>List</td>
+<td>
+<details>
+<summary>fscInfoList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>placeOfManufacture</td>
+<td>string</td>
+<td>Place of Manufacture</td>
+</tr>
+
+<tr>
+<td>fscCode</td>
+<td>string</td>
+<td>FSC Code</td>
+</tr>
+
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>jointVentureCompaniesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>jointVentureCompaniesList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>Tin</td>
+</tr>
+
+<tr>
+<td>duns</td>
+<td>string</td>
+<td>DUNS</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>laborSurplusConcernsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>laborSurplusConcernsList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>surplusArea</td>
+<td>string</td>
+<td>Surplus Area</td>
+</tr>
+
+<tr>
+<td>civilJurisdiction</td>
+<td>string</td>
+<td>Civil Jurisdiction</td>
+</tr>
+
+<tr>
+<td>state</td>
+<td>string</td>
+<td>State</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>naicsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>naicsList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>naicsCode</td>
+<td>string</td>
+<td>NAICS Code</td>
+</tr>
+
+<tr>
+<td>naicsDescription</td>
+<td>string</td>
+<td>NAICS Description</td>
+</tr>
+
+<tr>
+<td>sbaSmallBusiness</td>
+<td>string</td>
+<td>SBA Small Business</td>
+</tr>
+
+<tr>
+<td>naicsException</td>
+<td>string</td>
+<td>NAICS Exception</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>predecessorsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>predecessorsList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>ncageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>samFacilitiesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>samFacilitiesList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>plantAddress</td>
+<td>List</td>
+<td>
+<details>
+<summary>plantAddress contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>Line 1</td>
+</tr>
+
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Zip</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>ownerName</td>
+<td>string</td>
+<td>Owner Name</td>
+</tr>
+
+<tr>
+<td>ownerAddress</td>
+<td>List</td>
+<td>
+<details>
+<summary>ownerAddress contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>Line 1</td>
+</tr>
+
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Zip</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>samPointsOfContactList</td>
+<td>List</td>
+<td>
+<details>
+<summary>samPointsOfContactList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>servicesRevenuesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>servicesRevenuesList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID/td>
+</tr>
+
+<tr>
+<td>federalRevenueCode</td>
+<td>string</td>
+<td>Federal Revenue Code</td>
+</tr>
+
+<tr>
+<td>federalRevenueDescription</td>
+<td>string</td>
+<td>Federal Revenue Description</td>
+</tr>
+
+<tr>
+<td>nonFedRevenueCode</td>
+<td>string</td>
+<td>Non Fed Revenue Code</td>
+</tr>
+
+<tr>
+<td>nonFedRevenueDescription</td>
+<td>string</td>
+<td>Non Fed Revenue Description</td>
+</tr>
+
+<tr>
+<td>totalRevenueCode</td>
+<td>string</td>
+<td>Total Revenue Code</td>
+</tr>
+
+<tr>
+<td>totalRevenueDescription</td>
+<td>string</td>
+<td>Total Revenue Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>softwareList</td>
+<td>List</td>
+<td>
+<details>
+<summary>softwareList contains below fields</summary><br>
+<table>
+  
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID/td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+
+<tr>
+<td>productType</td>
+<td>string</td>
+<td>Product Type</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>urlList</td>
+<td>List</td>
+<td>URL List</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+</table>
+</details>
+</td>
+<td>v1<br>v2</td>
+</tr>
+</table>
+
 <summary>financialAssistanceCertifications Sub Section</summary>
 <table>
 <tr>
