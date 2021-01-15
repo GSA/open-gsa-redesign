@@ -27,6 +27,12 @@ The Entity Management API will allow users to request Public Entity Information 
 
 ## Getting Started
 
+**IMPORTANT**: There will be a period from early 2021 through the integration of SAM.gov into Beta.SAM.gov where Alpha and Beta functionality of the APIs will not be in sync. During this time, we recommend you primarily test the functionality of the APIs in Alpha. Please pay close attention to the parameter and schema "Description" and "Applicable Version" columns as all differences are noted there. Some of the key differences between Alpha and Beta API functionality are highlighted here:
+   * Data completeness (many fields in Beta will display “Currently not available”)
+   * Reps and Certs (the Beta version of Reps and Certs section will return no data and an older schema version)
+   * Availability and/or functionality of certain parameters
+
+
 Public and FOUO Entity Details can be accessed from Beta or Alpha via the following version 1 and version 2 endpoints:
    * Beta Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
    * Beta Version 2: Coming soon
@@ -18195,5 +18201,6 @@ Disclaimer:
 | 08/17/2020 | v1.9 | * The "Sensitive API Process" subsection under the "Sensitive API Information" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshots under "Example 13" have been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.|
 | 10/15/2020 | v2.0 | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. <br><br> * Updated the description for the entityEFTIndicator parameter. |
 | 12/07/2020 | v2.1 | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.|
+| 01/15/2021 | v2.2 | * Added the highlighted changes message under the "Getting Started" section |
 
 <p><small><a href="#">Back to top</a></small></p>
