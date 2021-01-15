@@ -1233,25 +1233,9 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
-<td>listOfProvisions</td>
-<td>list</td>
-<td>
-<details>
-<summary>listOfProvisions contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-<tr>
 <td>provisionId</td>
 <td>string</td>
-<td>Provision Id</td>
-</tr>
-</table>
-</details>
-</td>
+<td>Provision ID</td>
 </tr>
 
 <tr>
@@ -1266,11 +1250,17 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
+  
+<tr>
+<td>section</td>
+<td>string</td>
+<td>Section</td>
+</tr>
 
 <tr>
-<td>answerType</td>
+<td>questionText</td>
 <td>string</td>
-<td>Answer Type</td>
+<td>Question Text</td>
 </tr>
 
 <tr>
@@ -1286,51 +1276,92 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
-<td>businessObjectType</td>
+<td>country</td>
 <td>string</td>
-<td>Business Object Type</td>
+<td>Country>/td>
 </tr>
 
 <tr>
-<td>businessObjectId</td>
+<td>company</td>
 <td>string</td>
-<td>Business Object ID</td>
+<td>Company</td>
 </tr>
 
 <tr>
-<td>firstName</td>
+<td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>First Name</td>
+<td>Highest Level Owner CAGE</td>
 </tr>
 
 <tr>
-<td>lastName</td>
+<td>immediateOwnerCage</td>
 <td>string</td>
-<td>First Name</td>
+<td>Immediate Owner CAGE</td>
 </tr>
 
 <tr>
-<td>hasSizeProtest</td>
+<td>personDetails</td>
 <td>string</td>
-<td>Has Size Protest</td>
+<td>Person Details</td>
 </tr>
 
 <tr>
-<td>title</td>
+<td>pointOfContact</td>
 <td>string</td>
-<td>Title</td>
+<td>Point of Contact</td>
 </tr>
 
 <tr>
-<td>section</td>
+<td>architectExperiencesList</td>
+<td>List</td>
+<td>Arhitect Experiences List</td>
+<details>
+<summary>architectExperiencesList contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+  
+<tr>
+<td>id</td>
 <td>string</td>
-<td>Section</td>
+<td>ID</td>
 </tr>
 
 <tr>
-<td>organizationType</td>
+<td>experienceCode</td>
 <td>string</td>
-<td>Organization Type</td>
+<td>Experience Code</td>
+</tr>
+
+<tr>
+<td>experienceDescription</td>
+<td>string</td>
+<td>Experience Description</td>
+</tr>
+
+<tr>
+<td>annualAvgRevenueCode</td>
+<td>string</td>
+<td>Annual Avg Revenue Code</td>
+</tr>
+
+<tr>
+<td>annualAvgRevenueDescription</td>
+<td>string</td>
+<td>Annual Avg Revenue Description</td>
+</tr>
+
+</table>
+</details>
+</tr>
+
+<tr>
+<td>disciplineInfoList</td>
+<td>string</td>
+<td>disciplineInfoList</td>
 </tr>
 
 <tr>
