@@ -3904,9 +3904,37 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 <tr>
-<td>financialAssistanceResponse</td>
+<td>grantsCertificationStatus</td>
 <td>string</td>
-<td>Financial Assistance Response</td>
+<td>Grants Certification Status</td>
+<td>v1<br>v2</td>
+</tr>
+  
+<tr>
+<td>grantsCertifyingResponse</td>
+<td>string</td>
+<td>Grants Certifying Response</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>certifierFirstName</td>
+<td>string</td>
+<td>Certifier First Name</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>certifierLastName</td>
+<td>string</td>
+<td>Certifier Last Name</td>
+<td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>certifierMiddleInitial</td>
+<td>string</td>
+<td>Certifier Middle Initial</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
