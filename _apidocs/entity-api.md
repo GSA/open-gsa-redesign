@@ -1298,97 +1298,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>highestLevelOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Highest Level Owner CAGE</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>immediateOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Immediate Owner CAGE</td>
 </tr>
 
 <tr>
@@ -2295,99 +2211,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>highestLevelOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Highest Level Owner CAGE</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>immediateOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<td>Immediate Owner CAGE</td>
 </tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
-</tr>
-
 
 <tr>
 <td>personDetails</td>
@@ -3302,99 +3133,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>highestLevelOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Highest Level Owner CAGE</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>immediateOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<td>Immediate Owner CAGE</td>
 </tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
-</tr>
-
 
 <tr>
 <td>personDetails</td>
@@ -7316,99 +7062,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>highestLevelOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Highest Level Owner CAGE</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>immediateOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<td>Immediate Owner CAGE</td>
 </tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
-</tr>
-
 
 <tr>
 <td>personDetails</td>
@@ -8315,99 +7976,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>highestLevelOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Highest Level Owner CAGE</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>immediateOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<td>Immediate Owner CAGE</td>
 </tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
-</tr>
-
 
 <tr>
 <td>personDetails</td>
@@ -9322,99 +8898,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>highestLevelOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Highest Level Owner CAGE</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>immediateOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<td>Immediate Owner CAGE</td>
 </tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
-</tr>
-
 
 <tr>
 <td>personDetails</td>
@@ -14465,99 +13956,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>highestLevelOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Highest Level Owner CAGE</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>immediateOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<td>Immediate Owner CAGE</td>
 </tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
-</tr>
-
 
 <tr>
 <td>personDetails</td>
@@ -15463,99 +14869,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>highestLevelOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Highest Level Owner CAGE</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>immediateOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<td>Immediate Owner CAGE</td>
 </tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
-</tr>
-
 
 <tr>
 <td>personDetails</td>
@@ -16470,97 +15791,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>highestLevelOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Highest Level Owner CAGE</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>
-<details>
-<summary>immediateOwnerCage contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>cageCode</td>
-<td>string</td>
-<td>CAGE Code</td>
-</tr>
-
-<tr>
-<td>nCageCode</td>
-<td>string</td>
-<td>NCAGE Code</td>
-</tr>
-
-<tr>
-<td>legalBusinessName</td>
-<td>string</td>
-<td>Legal Business Name</td>
-</tr>
-
-<tr>
-<td>hasOwner</td>
-<td>string</td>
-<td>Has Owner</td>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Immediate Owner CAGE</td>
 </tr>
 
 <tr>
