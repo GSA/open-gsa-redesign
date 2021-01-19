@@ -1298,25 +1298,205 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>Highest Level Owner CAGE</td>
+<td>
+<details>
+<summary>highestLevelOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>Immediate Owner CAGE</td>
+<td>
+<details>
+<summary>immediateOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>Person Details</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>pointOfContact</td>
 <td>string</td>
-<td>Point of Contact</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+<tr>
+<td>telephoneNumber</td>
+<td>string</td>
+<td>Telephone Number</td>
+</tr>
+
+<tr>
+<td>extension</td>
+<td>string</td>
+<td>Extension</td>
+</tr>
+
+<tr>
+<td>internationalNumber</td>
+<td>string</td>
+<td>InterNationalNumber</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
@@ -1763,21 +1943,39 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsDescription</td>
+<td>naicsName</td>
 <td>string</td>
-<td>NAICS Description</td>
+<td>NAICS Name</td>
 </tr>
 
 <tr>
-<td>sbaSmallBusiness</td>
+<td>isPrimary</td>
 <td>string</td>
-<td>SBA Small Business</td>
+<td>Is Primary</td>
 </tr>
 
 <tr>
-<td>naicsException</td>
+<td>isSmallBusiness</td>
 <td>string</td>
-<td>NAICS Exception</td>
+<td>Is Small Business</td>
+</tr>
+
+<tr>
+<td>exceptionCounter</td>
+<td>string</td>
+<td>Exception Counter</td>
+</tr>
+
+<tr>
+<td>hasSBAProtest</td>
+<td>string</td>
+<td>Has SBA Protest</td>
+</tr>
+
+<tr>
+<td>hasSizeChanged</td>
+<td>string</td>
+<td>Has Size Changed</td>
 </tr>
 
 </table>
@@ -1815,6 +2013,12 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
 </tr>
 
 </table>
@@ -2181,31 +2385,254 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>Company</td>
+<td>
+<details>
+<summary>company contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>TIN</td>
+</tr>
+
+<tr>
+<td>duns</td>
+<td>string</td>
+<td>DUNS</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>Highest Level Owner CAGE</td>
+<td>
+<details>
+<summary>highestLevelOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>Immediate Owner CAGE</td>
+<td>
+<details>
+<summary>immediateOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
 
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>Person Details</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>pointOfContact</td>
 <td>string</td>
-<td>Point of Contact</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+<tr>
+<td>telephoneNumber</td>
+<td>string</td>
+<td>Telephone Number</td>
+</tr>
+
+<tr>
+<td>extension</td>
+<td>string</td>
+<td>Extension</td>
+</tr>
+
+<tr>
+<td>internationalNumber</td>
+<td>string</td>
+<td>InterNationalNumber</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
@@ -2652,21 +3079,39 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsDescription</td>
+<td>naicsName</td>
 <td>string</td>
-<td>NAICS Description</td>
+<td>NAICS Name</td>
 </tr>
 
 <tr>
-<td>sbaSmallBusiness</td>
+<td>isPrimary</td>
 <td>string</td>
-<td>SBA Small Business</td>
+<td>Is Primary</td>
 </tr>
 
 <tr>
-<td>naicsException</td>
+<td>isSmallBusiness</td>
 <td>string</td>
-<td>NAICS Exception</td>
+<td>Is Small Business</td>
+</tr>
+
+<tr>
+<td>exceptionCounter</td>
+<td>string</td>
+<td>Exception Counter</td>
+</tr>
+
+<tr>
+<td>hasSBAProtest</td>
+<td>string</td>
+<td>Has SBA Protest</td>
+</tr>
+
+<tr>
+<td>hasSizeChanged</td>
+<td>string</td>
+<td>Has Size Changed</td>
 </tr>
 
 </table>
@@ -2704,6 +3149,12 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
 </tr>
 
 </table>
@@ -3079,31 +3530,253 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>Company</td>
+<td>
+<details>
+<summary>company contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>TIN</td>
+</tr>
+
+<tr>
+<td>duns</td>
+<td>string</td>
+<td>DUNS</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>Highest Level Owner CAGE</td>
+<td>
+<details>
+<summary>highestLevelOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>Immediate Owner CAGE</td>
+<td>
+<details>
+<summary>immediateOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>Person Details</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>pointOfContact</td>
 <td>string</td>
-<td>Point of Contact</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+<tr>
+<td>telephoneNumber</td>
+<td>string</td>
+<td>Telephone Number</td>
+</tr>
+
+<tr>
+<td>extension</td>
+<td>string</td>
+<td>Extension</td>
+</tr>
+
+<tr>
+<td>internationalNumber</td>
+<td>string</td>
+<td>InterNationalNumber</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
@@ -3550,21 +4223,39 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsDescription</td>
+<td>naicsName</td>
 <td>string</td>
-<td>NAICS Description</td>
+<td>NAICS Name</td>
 </tr>
 
 <tr>
-<td>sbaSmallBusiness</td>
+<td>isPrimary</td>
 <td>string</td>
-<td>SBA Small Business</td>
+<td>Is Primary</td>
 </tr>
 
 <tr>
-<td>naicsException</td>
+<td>isSmallBusiness</td>
 <td>string</td>
-<td>NAICS Exception</td>
+<td>Is Small Business</td>
+</tr>
+
+<tr>
+<td>exceptionCounter</td>
+<td>string</td>
+<td>Exception Counter</td>
+</tr>
+
+<tr>
+<td>hasSBAProtest</td>
+<td>string</td>
+<td>Has SBA Protest</td>
+</tr>
+
+<tr>
+<td>hasSizeChanged</td>
+<td>string</td>
+<td>Has Size Changed</td>
 </tr>
 
 </table>
@@ -3602,6 +4293,12 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
 </tr>
 
 </table>
@@ -6984,31 +7681,254 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>Company</td>
+<td>
+<details>
+<summary>company contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>TIN</td>
+</tr>
+
+<tr>
+<td>duns</td>
+<td>string</td>
+<td>DUNS</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>Highest Level Owner CAGE</td>
+<td>
+<details>
+<summary>highestLevelOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>Immediate Owner CAGE</td>
+<td>
+<details>
+<summary>immediateOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
 
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>Person Details</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>pointOfContact</td>
 <td>string</td>
-<td>Point of Contact</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+<tr>
+<td>telephoneNumber</td>
+<td>string</td>
+<td>Telephone Number</td>
+</tr>
+
+<tr>
+<td>extension</td>
+<td>string</td>
+<td>Extension</td>
+</tr>
+
+<tr>
+<td>internationalNumber</td>
+<td>string</td>
+<td>InterNationalNumber</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
@@ -7449,27 +8369,46 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
   
 <tr>
+<tr>
 <td>naicsCode</td>
 <td>string</td>
 <td>NAICS Code</td>
 </tr>
 
 <tr>
-<td>naicsDescription</td>
+<td>naicsName</td>
 <td>string</td>
-<td>NAICS Description</td>
+<td>NAICS Name</td>
 </tr>
 
 <tr>
-<td>sbaSmallBusiness</td>
+<td>isPrimary</td>
 <td>string</td>
-<td>SBA Small Business</td>
+<td>Is Primary</td>
 </tr>
 
 <tr>
-<td>naicsException</td>
+<td>isSmallBusiness</td>
 <td>string</td>
-<td>NAICS Exception</td>
+<td>Is Small Business</td>
+</tr>
+
+<tr>
+<td>exceptionCounter</td>
+<td>string</td>
+<td>Exception Counter</td>
+</tr>
+
+<tr>
+<td>hasSBAProtest</td>
+<td>string</td>
+<td>Has SBA Protest</td>
+</tr>
+
+<tr>
+<td>hasSizeChanged</td>
+<td>string</td>
+<td>Has Size Changed</td>
 </tr>
 
 </table>
@@ -7507,6 +8446,12 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
 </tr>
 
 </table>
@@ -7873,31 +8818,253 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>Company</td>
+<td>
+<details>
+<summary>company contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>TIN</td>
+</tr>
+
+<tr>
+<td>duns</td>
+<td>string</td>
+<td>DUNS</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>Highest Level Owner CAGE</td>
+<td>
+<details>
+<summary>highestLevelOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>Immediate Owner CAGE</td>
+<td>
+<details>
+<summary>immediateOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>Person Details</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>pointOfContact</td>
 <td>string</td>
-<td>Point of Contact</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+<tr>
+<td>telephoneNumber</td>
+<td>string</td>
+<td>Telephone Number</td>
+</tr>
+
+<tr>
+<td>extension</td>
+<td>string</td>
+<td>Extension</td>
+</tr>
+
+<tr>
+<td>internationalNumber</td>
+<td>string</td>
+<td>InterNationalNumber</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
@@ -8344,21 +9511,39 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsDescription</td>
+<td>naicsName</td>
 <td>string</td>
-<td>NAICS Description</td>
+<td>NAICS Name</td>
 </tr>
 
 <tr>
-<td>sbaSmallBusiness</td>
+<td>isPrimary</td>
 <td>string</td>
-<td>SBA Small Business</td>
+<td>Is Primary</td>
 </tr>
 
 <tr>
-<td>naicsException</td>
+<td>isSmallBusiness</td>
 <td>string</td>
-<td>NAICS Exception</td>
+<td>Is Small Business</td>
+</tr>
+
+<tr>
+<td>exceptionCounter</td>
+<td>string</td>
+<td>Exception Counter</td>
+</tr>
+
+<tr>
+<td>hasSBAProtest</td>
+<td>string</td>
+<td>Has SBA Protest</td>
+</tr>
+
+<tr>
+<td>hasSizeChanged</td>
+<td>string</td>
+<td>Has Size Changed</td>
 </tr>
 
 </table>
@@ -8396,6 +9581,12 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
 </tr>
 
 </table>
@@ -8771,31 +9962,253 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>Company</td>
+<td>
+<details>
+<summary>company contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>TIN</td>
+</tr>
+
+<tr>
+<td>duns</td>
+<td>string</td>
+<td>DUNS</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>Highest Level Owner CAGE</td>
+<td>
+<details>
+<summary>highestLevelOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>Immediate Owner CAGE</td>
+<td>
+<details>
+<summary>immediateOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>Person Details</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>pointOfContact</td>
 <td>string</td>
-<td>Point of Contact</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+<tr>
+<td>telephoneNumber</td>
+<td>string</td>
+<td>Telephone Number</td>
+</tr>
+
+<tr>
+<td>extension</td>
+<td>string</td>
+<td>Extension</td>
+</tr>
+
+<tr>
+<td>internationalNumber</td>
+<td>string</td>
+<td>InterNationalNumber</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
@@ -9242,21 +10655,39 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsDescription</td>
+<td>naicsName</td>
 <td>string</td>
-<td>NAICS Description</td>
+<td>NAICS Name</td>
 </tr>
 
 <tr>
-<td>sbaSmallBusiness</td>
+<td>isPrimary</td>
 <td>string</td>
-<td>SBA Small Business</td>
+<td>Is Primary</td>
 </tr>
 
 <tr>
-<td>naicsException</td>
+<td>isSmallBusiness</td>
 <td>string</td>
-<td>NAICS Exception</td>
+<td>Is Small Business</td>
+</tr>
+
+<tr>
+<td>exceptionCounter</td>
+<td>string</td>
+<td>Exception Counter</td>
+</tr>
+
+<tr>
+<td>hasSBAProtest</td>
+<td>string</td>
+<td>Has SBA Protest</td>
+</tr>
+
+<tr>
+<td>hasSizeChanged</td>
+<td>string</td>
+<td>Has Size Changed</td>
 </tr>
 
 </table>
@@ -9294,6 +10725,12 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
 </tr>
 
 </table>
@@ -13805,31 +15242,253 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>Company</td>
+<td>
+<details>
+<summary>company contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>TIN</td>
+</tr>
+
+<tr>
+<td>duns</td>
+<td>string</td>
+<td>DUNS</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>Highest Level Owner CAGE</td>
+<td>
+<details>
+<summary>highestLevelOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>Immediate Owner CAGE</td>
+<td>
+<details>
+<summary>immediateOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>Person Details</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>pointOfContact</td>
 <td>string</td>
-<td>Point of Contact</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+<tr>
+<td>telephoneNumber</td>
+<td>string</td>
+<td>Telephone Number</td>
+</tr>
+
+<tr>
+<td>extension</td>
+<td>string</td>
+<td>Extension</td>
+</tr>
+
+<tr>
+<td>internationalNumber</td>
+<td>string</td>
+<td>InterNationalNumber</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
@@ -14276,21 +15935,39 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsDescription</td>
+<td>naicsName</td>
 <td>string</td>
-<td>NAICS Description</td>
+<td>NAICS Name</td>
 </tr>
 
 <tr>
-<td>sbaSmallBusiness</td>
+<td>isPrimary</td>
 <td>string</td>
-<td>SBA Small Business</td>
+<td>Is Primary</td>
 </tr>
 
 <tr>
-<td>naicsException</td>
+<td>isSmallBusiness</td>
 <td>string</td>
-<td>NAICS Exception</td>
+<td>Is Small Business</td>
+</tr>
+
+<tr>
+<td>exceptionCounter</td>
+<td>string</td>
+<td>Exception Counter</td>
+</tr>
+
+<tr>
+<td>hasSBAProtest</td>
+<td>string</td>
+<td>Has SBA Protest</td>
+</tr>
+
+<tr>
+<td>hasSizeChanged</td>
+<td>string</td>
+<td>Has Size Changed</td>
 </tr>
 
 </table>
@@ -14328,6 +16005,12 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
 </tr>
 
 </table>
@@ -14694,31 +16377,253 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>Company</td>
+<td>
+<details>
+<summary>company contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>TIN</td>
+</tr>
+
+<tr>
+<td>duns</td>
+<td>string</td>
+<td>DUNS</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>Highest Level Owner CAGE</td>
+<td>
+<details>
+<summary>highestLevelOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>Immediate Owner CAGE</td>
+<td>
+<details>
+<summary>immediateOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>Person Details</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>pointOfContact</td>
 <td>string</td>
-<td>Point of Contact</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+<tr>
+<td>telephoneNumber</td>
+<td>string</td>
+<td>Telephone Number</td>
+</tr>
+
+<tr>
+<td>extension</td>
+<td>string</td>
+<td>Extension</td>
+</tr>
+
+<tr>
+<td>internationalNumber</td>
+<td>string</td>
+<td>InterNationalNumber</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
@@ -15165,21 +17070,39 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsDescription</td>
+<td>naicsName</td>
 <td>string</td>
-<td>NAICS Description</td>
+<td>NAICS Name</td>
 </tr>
 
 <tr>
-<td>sbaSmallBusiness</td>
+<td>isPrimary</td>
 <td>string</td>
-<td>SBA Small Business</td>
+<td>Is Primary</td>
 </tr>
 
 <tr>
-<td>naicsException</td>
+<td>isSmallBusiness</td>
 <td>string</td>
-<td>NAICS Exception</td>
+<td>Is Small Business</td>
+</tr>
+
+<tr>
+<td>exceptionCounter</td>
+<td>string</td>
+<td>Exception Counter</td>
+</tr>
+
+<tr>
+<td>hasSBAProtest</td>
+<td>string</td>
+<td>Has SBA Protest</td>
+</tr>
+
+<tr>
+<td>hasSizeChanged</td>
+<td>string</td>
+<td>Has Size Changed</td>
 </tr>
 
 </table>
@@ -15217,6 +17140,12 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
 </tr>
 
 </table>
@@ -15592,31 +17521,253 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>Company</td>
+<td>
+<details>
+<summary>company contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>TIN</td>
+</tr>
+
+<tr>
+<td>duns</td>
+<td>string</td>
+<td>DUNS</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>highestLevelOwnerCage</td>
 <td>string</td>
-<td>Highest Level Owner CAGE</td>
+<td>
+<details>
+<summary>highestLevelOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>immediateOwnerCage</td>
 <td>string</td>
-<td>Immediate Owner CAGE</td>
+<td>
+<details>
+<summary>immediateOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>Person Details</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
 <td>pointOfContact</td>
 <td>string</td>
-<td>Point of Contact</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+<tr>
+<td>telephoneNumber</td>
+<td>string</td>
+<td>Telephone Number</td>
+</tr>
+
+<tr>
+<td>extension</td>
+<td>string</td>
+<td>Extension</td>
+</tr>
+
+<tr>
+<td>internationalNumber</td>
+<td>string</td>
+<td>InterNationalNumber</td>
+</tr>
+
+</table>
+</details>
+</td>
 </tr>
 
 <tr>
@@ -16063,21 +18214,39 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsDescription</td>
+<td>naicsName</td>
 <td>string</td>
-<td>NAICS Description</td>
+<td>NAICS Name</td>
 </tr>
 
 <tr>
-<td>sbaSmallBusiness</td>
+<td>isPrimary</td>
 <td>string</td>
-<td>SBA Small Business</td>
+<td>Is Primary</td>
 </tr>
 
 <tr>
-<td>naicsException</td>
+<td>isSmallBusiness</td>
 <td>string</td>
-<td>NAICS Exception</td>
+<td>Is Small Business</td>
+</tr>
+
+<tr>
+<td>exceptionCounter</td>
+<td>string</td>
+<td>Exception Counter</td>
+</tr>
+
+<tr>
+<td>hasSBAProtest</td>
+<td>string</td>
+<td>Has SBA Protest</td>
+</tr>
+
+<tr>
+<td>hasSizeChanged</td>
+<td>string</td>
+<td>Has Size Changed</td>
 </tr>
 
 </table>
@@ -16115,6 +18284,12 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
 </tr>
 
 </table>
