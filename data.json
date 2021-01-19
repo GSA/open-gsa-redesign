@@ -3282,9 +3282,9 @@
 			"theme": ["Travel and Transportation"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Federal Hiring Assessments and Selection Outcome Dataset January 2021",
+			"title": "Federal Hiring Assessments and Selection Outcome Dataset",
 			"description": "A XLSX export of combined OPM (USA Staffing) and Monster Hiring Assessment and Selection Outcome Data. We believe this data will empower Chief Human Capital Officers and Human Resources staff with the right data to focus on improved hiring outcomes while complying with open data requirements to increase transparency to the millions of applicants who apply for federal positions each year on USAJOBS.",
-			"modified": "2021-01-19T12:46:41.052Z",
+			"modified": "2021-01-19T17:24:08.365Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-01-08-01",
 			"dataQuality": true,
