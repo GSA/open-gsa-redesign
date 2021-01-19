@@ -2385,49 +2385,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>
-<details>
-<summary>company contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-<tr>
-<td>name</td>
-<td>string</td>
-<td>Name</td>
-</tr>
-
-<tr>
-<td>tin</td>
-<td>string</td>
-<td>TIN</td>
-</tr>
-
-<tr>
-<td>duns</td>
-<td>string</td>
-<td>DUNS</td>
-</tr>
-
-<tr>
-<td>yearEstablished</td>
-<td>string</td>
-<td>Year Established</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Company</td>
 </tr>
 
 <tr>
@@ -3530,49 +3488,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>
-<details>
-<summary>company contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-<tr>
-<td>name</td>
-<td>string</td>
-<td>Name</td>
-</tr>
-
-<tr>
-<td>tin</td>
-<td>string</td>
-<td>TIN</td>
-</tr>
-
-<tr>
-<td>duns</td>
-<td>string</td>
-<td>DUNS</td>
-</tr>
-
-<tr>
-<td>yearEstablished</td>
-<td>string</td>
-<td>Year Established</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Company</td>
 </tr>
 
 <tr>
@@ -7681,49 +7597,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>
-<details>
-<summary>company contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-<tr>
-<td>name</td>
-<td>string</td>
-<td>Name</td>
-</tr>
-
-<tr>
-<td>tin</td>
-<td>string</td>
-<td>TIN</td>
-</tr>
-
-<tr>
-<td>duns</td>
-<td>string</td>
-<td>DUNS</td>
-</tr>
-
-<tr>
-<td>yearEstablished</td>
-<td>string</td>
-<td>Year Established</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Company</td>
 </tr>
 
 <tr>
@@ -8818,49 +8692,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>
-<details>
-<summary>company contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-<tr>
-<td>name</td>
-<td>string</td>
-<td>Name</td>
-</tr>
-
-<tr>
-<td>tin</td>
-<td>string</td>
-<td>TIN</td>
-</tr>
-
-<tr>
-<td>duns</td>
-<td>string</td>
-<td>DUNS</td>
-</tr>
-
-<tr>
-<td>yearEstablished</td>
-<td>string</td>
-<td>Year Established</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Company</td>
 </tr>
 
 <tr>
@@ -9962,49 +9794,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>
-<details>
-<summary>company contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-<tr>
-<td>name</td>
-<td>string</td>
-<td>Name</td>
-</tr>
-
-<tr>
-<td>tin</td>
-<td>string</td>
-<td>TIN</td>
-</tr>
-
-<tr>
-<td>duns</td>
-<td>string</td>
-<td>DUNS</td>
-</tr>
-
-<tr>
-<td>yearEstablished</td>
-<td>string</td>
-<td>Year Established</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Company</td>
 </tr>
 
 <tr>
@@ -15242,49 +15032,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>
-<details>
-<summary>company contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-<tr>
-<td>name</td>
-<td>string</td>
-<td>Name</td>
-</tr>
-
-<tr>
-<td>tin</td>
-<td>string</td>
-<td>TIN</td>
-</tr>
-
-<tr>
-<td>duns</td>
-<td>string</td>
-<td>DUNS</td>
-</tr>
-
-<tr>
-<td>yearEstablished</td>
-<td>string</td>
-<td>Year Established</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Company</td>
 </tr>
 
 <tr>
@@ -16377,49 +16125,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>
-<details>
-<summary>company contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-<tr>
-<td>name</td>
-<td>string</td>
-<td>Name</td>
-</tr>
-
-<tr>
-<td>tin</td>
-<td>string</td>
-<td>TIN</td>
-</tr>
-
-<tr>
-<td>duns</td>
-<td>string</td>
-<td>DUNS</td>
-</tr>
-
-<tr>
-<td>yearEstablished</td>
-<td>string</td>
-<td>Year Established</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Company</td>
 </tr>
 
 <tr>
@@ -17521,49 +17227,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>company</td>
 <td>string</td>
-<td>
-<details>
-<summary>company contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>id</td>
-<td>string</td>
-<td>ID</td>
-</tr>
-
-<tr>
-<td>name</td>
-<td>string</td>
-<td>Name</td>
-</tr>
-
-<tr>
-<td>tin</td>
-<td>string</td>
-<td>TIN</td>
-</tr>
-
-<tr>
-<td>duns</td>
-<td>string</td>
-<td>DUNS</td>
-</tr>
-
-<tr>
-<td>yearEstablished</td>
-<td>string</td>
-<td>Year Established</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Company</td>
 </tr>
 
 <tr>
