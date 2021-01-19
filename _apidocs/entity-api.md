@@ -446,7 +446,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
 <br>Example: includeSections=entityRegistration,coreData
 <br>Applicable to non-SAM registrants but only the sections
- entityRegistration and coreData are applicable.</td>
+ entityRegistration and coreData are applicable.<br><br>
+ Note: The repsAndCerts section will only be returned if included in this parameter. 
+ </td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -1210,8 +1212,8 @@ NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in B
 
 <details>
 <summary>repsAndCerts Section</summary><br>
-Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br>
-Note: The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
+Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
+The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
 <br>
 <br>
 <summary>certifications Sub Section</summary>
@@ -5085,7 +5087,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
 <br>Example: includeSections=entityRegistration,coreData
 <br>Applicable to non-SAM registrants but only the sections
- entityRegistration and coreData are applicable.</td>
+ entityRegistration and coreData are applicable.<br><br>
+ Note: The repsAndCerts section will only be returned if included in this parameter.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -6901,8 +6904,8 @@ samMonitoring
 
 <details>
 <summary>repsAndCerts Section</summary><br>
-Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br>
-Note: The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
+Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
+The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
 <br>
 <br>
 <summary>certifications Sub Section</summary>
@@ -11640,7 +11643,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
 <br>Example: includeSections=entityRegistration,coreData
 <br>Applicable to non-SAM registrants but only the sections
- entityRegistration and coreData are applicable.</td>
+ entityRegistration and coreData are applicable.<br><br>
+ Note: The repsAndCerts section will only be returned if included in this parameter.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -13721,8 +13725,8 @@ samMonitoring
 
 <details>
 <summary>repsAndCerts Section</summary><br>
-Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br>
-Note: The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
+Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
+The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
 <br>
 <br>
 <summary>certifications Sub Section</summary>
