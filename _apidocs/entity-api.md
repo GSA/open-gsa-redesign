@@ -8369,7 +8369,6 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
   
 <tr>
-<tr>
 <td>naicsCode</td>
 <td>string</td>
 <td>NAICS Code</td>
