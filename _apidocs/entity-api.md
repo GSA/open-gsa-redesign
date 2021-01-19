@@ -1763,39 +1763,21 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsName</td>
+<td>naicsDescription</td>
 <td>string</td>
-<td>NAICS Name</td>
+<td>NAICS Description</td>
 </tr>
 
 <tr>
-<td>isPrimary</td>
+<td>sbaSmallBusiness</td>
 <td>string</td>
-<td>Is Primary</td>
+<td>SBA Small Business</td>
 </tr>
 
 <tr>
-<td>isSmallBusiness</td>
+<td>naicsException</td>
 <td>string</td>
-<td>Is Small Business</td>
-</tr>
-
-<tr>
-<td>exceptionCounter</td>
-<td>string</td>
-<td>Exception Counter</td>
-</tr>
-
-<tr>
-<td>hasSBAProtest</td>
-<td>string</td>
-<td>Has SBA Protest</td>
-</tr>
-
-<tr>
-<td>hasSizeChanged</td>
-<td>string</td>
-<td>Has Size Changed</td>
+<td>NAICS Exception</td>
 </tr>
 
 </table>
@@ -2676,39 +2658,21 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsName</td>
+<td>naicsDescription</td>
 <td>string</td>
-<td>NAICS Name</td>
+<td>NAICS Description</td>
 </tr>
 
 <tr>
-<td>isPrimary</td>
+<td>sbaSmallBusiness</td>
 <td>string</td>
-<td>Is Primary</td>
+<td>SBA Small Business</td>
 </tr>
 
 <tr>
-<td>isSmallBusiness</td>
+<td>naicsException</td>
 <td>string</td>
-<td>Is Small Business</td>
-</tr>
-
-<tr>
-<td>exceptionCounter</td>
-<td>string</td>
-<td>Exception Counter</td>
-</tr>
-
-<tr>
-<td>hasSBAProtest</td>
-<td>string</td>
-<td>Has SBA Protest</td>
-</tr>
-
-<tr>
-<td>hasSizeChanged</td>
-<td>string</td>
-<td>Has Size Changed</td>
+<td>NAICS Exception</td>
 </tr>
 
 </table>
@@ -3598,39 +3562,21 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsName</td>
+<td>naicsDescription</td>
 <td>string</td>
-<td>NAICS Name</td>
+<td>NAICS Description</td>
 </tr>
 
 <tr>
-<td>isPrimary</td>
+<td>sbaSmallBusiness</td>
 <td>string</td>
-<td>Is Primary</td>
+<td>SBA Small Business</td>
 </tr>
 
 <tr>
-<td>isSmallBusiness</td>
+<td>naicsException</td>
 <td>string</td>
-<td>Is Small Business</td>
-</tr>
-
-<tr>
-<td>exceptionCounter</td>
-<td>string</td>
-<td>Exception Counter</td>
-</tr>
-
-<tr>
-<td>hasSBAProtest</td>
-<td>string</td>
-<td>Has SBA Protest</td>
-</tr>
-
-<tr>
-<td>hasSizeChanged</td>
-<td>string</td>
-<td>Has Size Changed</td>
+<td>NAICS Exception</td>
 </tr>
 
 </table>
@@ -7521,46 +7467,27 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
   
 <tr>
-<tr>
 <td>naicsCode</td>
 <td>string</td>
 <td>NAICS Code</td>
 </tr>
 
 <tr>
-<td>naicsName</td>
+<td>naicsDescription</td>
 <td>string</td>
-<td>NAICS Name</td>
+<td>NAICS Description</td>
 </tr>
 
 <tr>
-<td>isPrimary</td>
+<td>sbaSmallBusiness</td>
 <td>string</td>
-<td>Is Primary</td>
+<td>SBA Small Business</td>
 </tr>
 
 <tr>
-<td>isSmallBusiness</td>
+<td>naicsException</td>
 <td>string</td>
-<td>Is Small Business</td>
-</tr>
-
-<tr>
-<td>exceptionCounter</td>
-<td>string</td>
-<td>Exception Counter</td>
-</tr>
-
-<tr>
-<td>hasSBAProtest</td>
-<td>string</td>
-<td>Has SBA Protest</td>
-</tr>
-
-<tr>
-<td>hasSizeChanged</td>
-<td>string</td>
-<td>Has Size Changed</td>
+<td>NAICS Exception</td>
 </tr>
 
 </table>
@@ -8441,39 +8368,21 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsName</td>
+<td>naicsDescription</td>
 <td>string</td>
-<td>NAICS Name</td>
+<td>NAICS Description</td>
 </tr>
 
 <tr>
-<td>isPrimary</td>
+<td>sbaSmallBusiness</td>
 <td>string</td>
-<td>Is Primary</td>
+<td>SBA Small Business</td>
 </tr>
 
 <tr>
-<td>isSmallBusiness</td>
+<td>naicsException</td>
 <td>string</td>
-<td>Is Small Business</td>
-</tr>
-
-<tr>
-<td>exceptionCounter</td>
-<td>string</td>
-<td>Exception Counter</td>
-</tr>
-
-<tr>
-<td>hasSBAProtest</td>
-<td>string</td>
-<td>Has SBA Protest</td>
-</tr>
-
-<tr>
-<td>hasSizeChanged</td>
-<td>string</td>
-<td>Has Size Changed</td>
+<td>NAICS Exception</td>
 </tr>
 
 </table>
@@ -9363,39 +9272,21 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsName</td>
+<td>naicsDescription</td>
 <td>string</td>
-<td>NAICS Name</td>
+<td>NAICS Description</td>
 </tr>
 
 <tr>
-<td>isPrimary</td>
+<td>sbaSmallBusiness</td>
 <td>string</td>
-<td>Is Primary</td>
+<td>SBA Small Business</td>
 </tr>
 
 <tr>
-<td>isSmallBusiness</td>
+<td>naicsException</td>
 <td>string</td>
-<td>Is Small Business</td>
-</tr>
-
-<tr>
-<td>exceptionCounter</td>
-<td>string</td>
-<td>Exception Counter</td>
-</tr>
-
-<tr>
-<td>hasSBAProtest</td>
-<td>string</td>
-<td>Has SBA Protest</td>
-</tr>
-
-<tr>
-<td>hasSizeChanged</td>
-<td>string</td>
-<td>Has Size Changed</td>
+<td>NAICS Exception</td>
 </tr>
 
 </table>
@@ -14421,39 +14312,21 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsName</td>
+<td>naicsDescription</td>
 <td>string</td>
-<td>NAICS Name</td>
+<td>NAICS Description</td>
 </tr>
 
 <tr>
-<td>isPrimary</td>
+<td>sbaSmallBusiness</td>
 <td>string</td>
-<td>Is Primary</td>
+<td>SBA Small Business</td>
 </tr>
 
 <tr>
-<td>isSmallBusiness</td>
+<td>naicsException</td>
 <td>string</td>
-<td>Is Small Business</td>
-</tr>
-
-<tr>
-<td>exceptionCounter</td>
-<td>string</td>
-<td>Exception Counter</td>
-</tr>
-
-<tr>
-<td>hasSBAProtest</td>
-<td>string</td>
-<td>Has SBA Protest</td>
-</tr>
-
-<tr>
-<td>hasSizeChanged</td>
-<td>string</td>
-<td>Has Size Changed</td>
+<td>NAICS Exception</td>
 </tr>
 
 </table>
@@ -15334,39 +15207,21 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsName</td>
+<td>naicsDescription</td>
 <td>string</td>
-<td>NAICS Name</td>
+<td>NAICS Description</td>
 </tr>
 
 <tr>
-<td>isPrimary</td>
+<td>sbaSmallBusiness</td>
 <td>string</td>
-<td>Is Primary</td>
+<td>SBA Small Business</td>
 </tr>
 
 <tr>
-<td>isSmallBusiness</td>
+<td>naicsException</td>
 <td>string</td>
-<td>Is Small Business</td>
-</tr>
-
-<tr>
-<td>exceptionCounter</td>
-<td>string</td>
-<td>Exception Counter</td>
-</tr>
-
-<tr>
-<td>hasSBAProtest</td>
-<td>string</td>
-<td>Has SBA Protest</td>
-</tr>
-
-<tr>
-<td>hasSizeChanged</td>
-<td>string</td>
-<td>Has Size Changed</td>
+<td>NAICS Exception</td>
 </tr>
 
 </table>
@@ -16256,39 +16111,21 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>naicsName</td>
+<td>naicsDescription</td>
 <td>string</td>
-<td>NAICS Name</td>
+<td>NAICS Description</td>
 </tr>
 
 <tr>
-<td>isPrimary</td>
+<td>sbaSmallBusiness</td>
 <td>string</td>
-<td>Is Primary</td>
+<td>SBA Small Business</td>
 </tr>
 
 <tr>
-<td>isSmallBusiness</td>
+<td>naicsException</td>
 <td>string</td>
-<td>Is Small Business</td>
-</tr>
-
-<tr>
-<td>exceptionCounter</td>
-<td>string</td>
-<td>Exception Counter</td>
-</tr>
-
-<tr>
-<td>hasSBAProtest</td>
-<td>string</td>
-<td>Has SBA Protest</td>
-</tr>
-
-<tr>
-<td>hasSizeChanged</td>
-<td>string</td>
-<td>Has Size Changed</td>
+<td>NAICS Exception</td>
 </tr>
 
 </table>
