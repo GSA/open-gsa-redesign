@@ -1394,43 +1394,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>
-<details>
-<summary>personDetails contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>firstName</td>
-<td>string</td>
-<td>First Name</td>
-</tr>
-
-<tr>
-<td>middleInitial</td>
-<td>string</td>
-<td>Middle Initial</td>
-</tr>
-
-<tr>
-<td>lastName</td>
-<td>string</td>
-<td>Last Name</td>
-</tr>
-
-<tr>
-<td>title</td>
-<td>string</td>
-<td>Title</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Person Details</td>
 </tr>
 
 <tr>
@@ -2428,43 +2392,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>
-<details>
-<summary>personDetails contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>firstName</td>
-<td>string</td>
-<td>First Name</td>
-</tr>
-
-<tr>
-<td>middleInitial</td>
-<td>string</td>
-<td>Middle Initial</td>
-</tr>
-
-<tr>
-<td>lastName</td>
-<td>string</td>
-<td>Last Name</td>
-</tr>
-
-<tr>
-<td>title</td>
-<td>string</td>
-<td>Title</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Person Details</td>
 </tr>
 
 <tr>
@@ -3467,46 +3395,11 @@ The repsAndCerts section will only be returned in the response if requested via 
 </td>
 </tr>
 
+
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>
-<details>
-<summary>personDetails contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>firstName</td>
-<td>string</td>
-<td>First Name</td>
-</tr>
-
-<tr>
-<td>middleInitial</td>
-<td>string</td>
-<td>Middle Initial</td>
-</tr>
-
-<tr>
-<td>lastName</td>
-<td>string</td>
-<td>Last Name</td>
-</tr>
-
-<tr>
-<td>title</td>
-<td>string</td>
-<td>Title</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Person Details</td>
 </tr>
 
 <tr>
@@ -7520,43 +7413,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>
-<details>
-<summary>personDetails contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>firstName</td>
-<td>string</td>
-<td>First Name</td>
-</tr>
-
-<tr>
-<td>middleInitial</td>
-<td>string</td>
-<td>Middle Initial</td>
-</tr>
-
-<tr>
-<td>lastName</td>
-<td>string</td>
-<td>Last Name</td>
-</tr>
-
-<tr>
-<td>title</td>
-<td>string</td>
-<td>Title</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Person Details</td>
 </tr>
 
 <tr>
@@ -8551,46 +8408,11 @@ The repsAndCerts section will only be returned in the response if requested via 
 </td>
 </tr>
 
+
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>
-<details>
-<summary>personDetails contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>firstName</td>
-<td>string</td>
-<td>First Name</td>
-</tr>
-
-<tr>
-<td>middleInitial</td>
-<td>string</td>
-<td>Middle Initial</td>
-</tr>
-
-<tr>
-<td>lastName</td>
-<td>string</td>
-<td>Last Name</td>
-</tr>
-
-<tr>
-<td>title</td>
-<td>string</td>
-<td>Title</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Person Details</td>
 </tr>
 
 <tr>
@@ -9593,46 +9415,11 @@ The repsAndCerts section will only be returned in the response if requested via 
 </td>
 </tr>
 
+
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>
-<details>
-<summary>personDetails contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>firstName</td>
-<td>string</td>
-<td>First Name</td>
-</tr>
-
-<tr>
-<td>middleInitial</td>
-<td>string</td>
-<td>Middle Initial</td>
-</tr>
-
-<tr>
-<td>lastName</td>
-<td>string</td>
-<td>Last Name</td>
-</tr>
-
-<tr>
-<td>title</td>
-<td>string</td>
-<td>Title</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Person Details</td>
 </tr>
 
 <tr>
@@ -14771,46 +14558,11 @@ The repsAndCerts section will only be returned in the response if requested via 
 </td>
 </tr>
 
+
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>
-<details>
-<summary>personDetails contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>firstName</td>
-<td>string</td>
-<td>First Name</td>
-</tr>
-
-<tr>
-<td>middleInitial</td>
-<td>string</td>
-<td>Middle Initial</td>
-</tr>
-
-<tr>
-<td>lastName</td>
-<td>string</td>
-<td>Last Name</td>
-</tr>
-
-<tr>
-<td>title</td>
-<td>string</td>
-<td>Title</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Person Details</td>
 </tr>
 
 <tr>
@@ -15804,46 +15556,11 @@ The repsAndCerts section will only be returned in the response if requested via 
 </td>
 </tr>
 
+
 <tr>
 <td>personDetails</td>
 <td>string</td>
-<td>
-<details>
-<summary>personDetails contains below fields</summary><br>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>firstName</td>
-<td>string</td>
-<td>First Name</td>
-</tr>
-
-<tr>
-<td>middleInitial</td>
-<td>string</td>
-<td>Middle Initial</td>
-</tr>
-
-<tr>
-<td>lastName</td>
-<td>string</td>
-<td>Last Name</td>
-</tr>
-
-<tr>
-<td>title</td>
-<td>string</td>
-<td>Title</td>
-</tr>
-
-</table>
-</details>
-</td>
+<td>Person Details</td>
 </tr>
 
 <tr>
