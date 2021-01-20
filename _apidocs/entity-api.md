@@ -1438,7 +1438,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>string</td>
 <td>
 <details>
-<summary>personDetails contains below fields</summary><br>
+<summary>pointOfContact contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -2574,7 +2574,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>string</td>
 <td>
 <details>
-<summary>personDetails contains below fields</summary><br>
+<summary>pointOfContact contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3718,7 +3718,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>string</td>
 <td>
 <details>
-<summary>personDetails contains below fields</summary><br>
+<summary>pointOfContact contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -7870,7 +7870,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>string</td>
 <td>
 <details>
-<summary>personDetails contains below fields</summary><br>
+<summary>pointOfContact contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -9005,7 +9005,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>string</td>
 <td>
 <details>
-<summary>personDetails contains below fields</summary><br>
+<summary>pointOfContact contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -10149,7 +10149,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>string</td>
 <td>
 <details>
-<summary>personDetails contains below fields</summary><br>
+<summary>pointOfContact contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -15429,7 +15429,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>string</td>
 <td>
 <details>
-<summary>personDetails contains below fields</summary><br>
+<summary>pointOfContact contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -16564,7 +16564,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>string</td>
 <td>
 <details>
-<summary>personDetails contains below fields</summary><br>
+<summary>pointOfContact contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -17708,7 +17708,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>string</td>
 <td>
 <details>
-<summary>personDetails contains below fields</summary><br>
+<summary>pointOfContact contains below fields</summary><br>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
