@@ -445,7 +445,7 @@ Date | Version | Description
 05/04/2020 | v1.7 | * Added V2 endpoint information.
 10/15/2020 | v1.8 | * Updated the Beta V1 endpoint
 12/07/2020 | v1.9 | * Updated moreLocations for API response. <br><br> * Updated vesselDetails --> secondaryAddress to mention v2 Beta only. <br><br> * Added exclusionSecondaryAddress to API response.<br><br> * Changed exclusionAddress to exclusionAddress/exclusionPrimaryAddress in the API response.
-01/21/2021 | v2.2 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Added Beta V2 endpoint.
+01/22/2021 | v2.0 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Added Beta V2 endpoint.
 
 
 <p><small><a href="#">Back to top</a></small></p>
