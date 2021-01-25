@@ -823,7 +823,7 @@ $
 
 ## OpenAPI Specification File
 
-You can view the full details of this API in the <a href="v1/openapi.json">OpenAPI Specification file available here</a>.
+You can view the full details of this API in the <a href="https://api.gsa.gov/technology/site-scanning/v1/api-json">OpenAPI Specification file available here</a>.
 
 <p><small><a href="#">Back to top</a></small></p>
 
