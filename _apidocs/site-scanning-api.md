@@ -21,6 +21,8 @@ banner-heading: Site Scanning API
 
 Every day, the <a href="https://digital.gov/site-scanning/">Site Scanning program</a> runs a scanning engine to dynamically pull down lists of domains from various sources and then scan them with a collection of scan plugins to gather data on them. This data is created in the json format and is indexed in an elasticsearch datastore, where it can be searched by an API written in the Django REST Framework.
 
+In addition to querying the data via API, you can also [download it directly](#download-the-data-directly) as a CSV or JSON file.  
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
@@ -112,7 +114,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
 ## API Description
 
-The endpoint begins at https://api.gsa.gov/technology/site-scanner/v1/
+The endpoint begins at https://api.gsa.gov/technology/site-scanning/v1/websites
 
 #### Scans 
 
@@ -838,7 +840,13 @@ The API will return one of the following responses:
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## Download the Data Directly
 
+In order to download all of the scan data as a flat file, the system generates a CSV and JSON export every weekend.  This data can be accessed at:  
+  
+* [https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.csv](https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.csv)
+* [https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.json](https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.json)
+  
 ## Contact Us
 
 Please reach out with any questions or feedback by [filing an issue here](https://github.com/18F/site-scanning/issues) or [emailing the team](mailto:site-scanning@gsa.gov).  
