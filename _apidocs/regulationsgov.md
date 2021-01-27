@@ -278,7 +278,7 @@ Here are few example queries for searching comments:
     ```
     It returns two documents, FAA-2018-1084-0001 and FAA-2018-1084-0002. Each document metadata includes an objectId attribute.
   
-  * Step 3: Get all comments for each document using objectId:
+  * Step 2: Get all comments for each document using objectId:
     ```
     https://api.regulations.gov/v4/comments?filter[commentOnId]=0900006483a6cba3&api_key=DEMO_KEY
     ```
