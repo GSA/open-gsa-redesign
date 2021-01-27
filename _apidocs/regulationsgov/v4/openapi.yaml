@@ -982,10 +982,20 @@ components:
           description: The ID of the docket to which the document corresponds.
         documentType:
           $ref: '#/components/schemas/DocumentType'
+        frDocNum:
+          type: string
+          description: The federal register document number of the document.
         highlightedContent:
           type: string
           nullable: true
           description: Content highlighted by search engine for the searchTerm. Only returned for searches with searchTerm.
+        lastModifiedDate:
+          type: string
+          format: date-time
+          description: The date document was last modified in the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        objectId:
+          type: string
+          description: The internal ID of the document in our system.
         openForComment:
           type: boolean
           description: Conveys if the document is open for comment
@@ -1014,6 +1024,13 @@ components:
           type: string
           nullable: true
           description: Content highlighted by search engine for the searchTerm. Only returned for searches with searchTerm.
+        lastModifiedDate:
+          type: string
+          format: date-time
+          description: The date comment was last modified in the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        objectId:
+          type: string
+          description: The internal ID of the comment in our system.
         postedDate:
           type: string
           description: The date that the document was posted by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
@@ -1035,6 +1052,13 @@ components:
           type: string
           nullable: true
           description: Content highlighted by search engine for the searchTerm. Only returned for searches with searchTerm.
+        lastModifiedDate:
+          type: string
+          format: date-time
+          description: The date docket was last modified in the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        objectId:
+          type: string
+          description: The internal ID of the docket in our system.
         title:
           type: string
           description: The formal title of the docket.
@@ -1121,6 +1145,9 @@ components:
           type: string
           format: date-time
           description: The date when the document was last modified.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        objectId:
+          type: string
+          description: The internal ID of the document in our system.
         openForComment:
           type: boolean
           description: Conveys if the document is open for commenting.
@@ -1346,6 +1373,9 @@ components:
           type: string
           format: date-time
           description: The date when the docket was last modified.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        objectId:
+          type: string
+          description: The internal ID of the document in our system.
         organization:
           type: string
           nullable: true
