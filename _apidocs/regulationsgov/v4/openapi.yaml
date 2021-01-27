@@ -74,6 +74,14 @@ paths:
           schema:
             type: string
             format: date
+        - name: filter[lastModifiedDate]
+          in: query
+          description: >-  
+            Filters results relative to the last modified date.  The value must be formatted as `yyyy-MM-dd HH:mm:ss`.<br/><br/> Omission of a parameter modifier will match results to the exact date provided, otherwise, one of the parameter modifiers below may be used. <br/> `ge` - greater than or equal <br/> `le` - less than or equal
+          required: false
+          schema:
+            type: string
+            format: date            
         - name: filter[subtype]
           in: query
           description: >-
@@ -91,7 +99,7 @@ paths:
         - name: sort
           in: query
           description: >-
-            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> Supported values are `commentEndDate`, `postedDate`, and `title`.          
+            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> Supported values are `commentEndDate`, `postedDate`, `lastModifiedDate`, `documentId` and `title`. Multiple sort options can be passed in as a comma separated list to sort results by multiple fields.         
           required: false
           schema:
             type: string
@@ -202,6 +210,14 @@ paths:
           schema:
             type: string
             format: date
+        - name: filter[lastModifiedDate]
+          in: query
+          description: >-  
+            Filters results relative to the last modified date.  The value must be formatted as `yyyy-MM-dd HH:mm:ss`.<br/><br/> Omission of a parameter modifier will match results to the exact date provided, otherwise, one of the parameter modifiers below may be used. <br/> `ge` - greater than or equal <br/> `le` - less than or equal
+          required: false
+          schema:
+            type: string
+            format: date
         - name: filter[commentOnId]
           in: query
           description: >-
@@ -212,7 +228,7 @@ paths:
         - name: sort
           in: query
           description: >-
-            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> The only supported value is `postedDate`.          
+            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> The only supported values are `postedDate`, `lastModifiedDate` and `documentId`. Multiple sort options can be passed in as a comma separated list to sort results by multiple fields.          
           required: false
           schema:
             type: string
@@ -350,6 +366,14 @@ paths:
           required: false
           schema:
             type: string
+        - name: filter[lastModifiedDate]
+          in: query
+          description: >-  
+            Filters results relative to the last modified date.  The value must be formatted as `yyyy-MM-dd HH:mm:ss`.<br/><br/> Omission of a parameter modifier will match results to the exact date provided, otherwise, one of the parameter modifiers below may be used. <br/> `ge` - greater than or equal <br/> `le` - less than or equal
+          required: false
+          schema:
+            type: string
+            format: date
         - name: filter[docketType]
           in: query
           description: >-
@@ -360,7 +384,7 @@ paths:
         - name: sort
           in: query
           description: >-
-            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> The only supported value is `title`.          
+            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> The only supported values are `title`, `docketId` and `lastModifiedDate`. Multiple sort options can be passed in as a comma separated list to sort results by multiple fields.          
           required: false
           schema:
             type: string
