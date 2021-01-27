@@ -292,7 +292,7 @@ Here are few example queries for searching comments:
     ```
     https://api.regulations.gov/v4/documents?filter[docketId]=EOIR-2020-0003&api_key=DEMO_KEY
     ```
-    It returns five documents, where four are Supporting & Related Material documents and one is a Proposed Rule. Response for the above request includes an attribute objectId for each document and its set to 09000064846eebaf for the Proposed Rule, EOIR-2020-0003-0001.
+    The above query returns five documents where four documents are Supporting & Related Material documents and one document is a Proposed Rule. Response for the above request includes an attribute objectId for each document and its set to 09000064846eebaf for the Proposed Rule, EOIR-2020-0003-0001.
       
   * Step 2: Get all comments for each document using objectId:
     ```
