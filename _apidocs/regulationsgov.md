@@ -270,28 +270,57 @@ Here are few example queries for searching comments:
   https://api.regulations.gov/v4/comments?sort=-postedDate&api_key=DEMO_KEY
   ```
   
-* Retrieve all comments for a docket:
+* Retrieve all comments for a docket where number of comments is less than 5000:
   
   * Step 1: Get all documents for the docketId FAA-2018-1084: 
     ```
     https://api.regulations.gov/v4/documents?filter[docketId]=FAA-2018-1084&api_key=DEMO_KEY
     ```
-    It returns two documents, FAA-2018-1084-0001 and FAA-2018-1084-0002.
-
-  * Step 2: Get details for each document:
-    ```
-    https://api.regulations.gov/v4/documents/FAA-2018-1084-0001?api_key=DEMO_KEY
-    ```
-    Response for the above request includes an attribute objectId and its set to 0900006483a6cba3.
+    It returns two documents, FAA-2018-1084-0001 and FAA-2018-1084-0002. Each document metadata includes an objectId attribute.
   
   * Step 3: Get all comments for each document using objectId:
     ```
-    https://api-staging.regulations.gov/v4/comments?filter[commentOnId]=0900006483a6cba3
+    https://api.regulations.gov/v4/comments?filter[commentOnId]=0900006483a6cba3&api_key=DEMO_KEY
     ```
     The above request returns a list of comments for document FAA-2018-1084-0001.
     
-    Note: Step 2 and Step 3 should be repeated for FAA-2018-1084-0002 in the above example.
+    Note: Step 2 should be repeated for FAA-2018-1084-0002 in the above example.
+
+* Retrieve all comments for a docket where number of comments is greater than 5000:
+  
+  * Step 1: Get all documents for the docketId EOIR-2020-0003: 
+    ```
+    https://api.regulations.gov/v4/documents?filter[docketId]=EOIR-2020-0003&api_key=DEMO_KEY
+    ```
+    It returns five documents, where four are Supporting & Related Material documents and one is a Proposed Rule. Response for the above request includes an attribute objectId for each document and its set to 09000064846eebaf for the Proposed Rule, EOIR-2020-0003-0001.
+      
+  * Step 2: Get all comments for each document using objectId:
+    ```
+    https://api.regulations.gov/v4/comments?filter[commentOnId]=09000064846eebaf&api_key=DEMO_KEY
+    ```
+    The above request returns a list of comments for document EOIR-2020-0003-0001, the only Proposed Rule in the docket. 
+    totalElements under meta attribute shows that this document has total 88,061 comments. 
     
+    Note: Step 2 should be repeated for each document. 
+    
+  * Step 3: Page through the first set of 5000 documents:
+    ```
+    https://api.regulations.gov/v4/comments?filter[commentOnId]=09000064846eebaf&page[size]=250&page[number]=N&sort=lastModifiedDate,documentId&api_key=DEMO_KEY
+    ```   
+    The first 5000 documents can be retrieved using the query above by paging through the results where N in the query is the page number between 1-20. 
+    Please note we are sorting the results by lastModifiedDate to ensure we can filter our data by lastModifiedDate later.
+    On the last page of this set, please note the lastModifiedDate of the last document. In our case, EOIR-2020-0003-5548 is the last document on page 20 and the lastModifiedDate attribute of the document is 2020-08-10T15:58:52Z.
+    
+ * Step 4: Page through the next set of 5000 documents:
+    ```
+    https://api.regulations.gov/v4/comments?filter[commentOnId]=09000064846eebaf&filter[lastModifiedDate][ge]=2020-08-10 11:58:52&page[size]=250&page[number]=N&sort=lastModifiedDate,documentId&api_key=DEMO_KEY
+    ```
+    The next 5000 documents can be retrieved using the query above by paging through the results where N in the query is the page number between 1-20.
+    The lastModifiedDate attribute of the last document in the first set (Step 3) was `2020-08-10T15:58:52Z`. This date translates to `2020-08-10 11:58:52` in Eastern time. Running the above query should return all documents where lastModifiedDate is greater than or equal to `2020-08-10T15:58:52Z`. Its important to note that we are running a "greater than or equal to" query to ensure we do not miss any documents where last modified date is `2020-08-10T15:58:52Z` and it did not make the first set. 
+
+On the last page of this set, please note the lastModifiedDate of the last document and repeat.
+   
+Note: Step 4 should be repeated for as many times as needed to retrieve all 88,061 comments on this document.
 
 #### Detailed information for a single comment
 
@@ -511,7 +540,7 @@ The new `/v4/documents` carries a withdrawn field. This is a boolean field. If s
 
 #### There are strict pagination limits in v4. How do I retrieve all comments in a docket posted on the same day if the number of comments is greater than 2500?
 
-We have this use case under review, and we will be updating our API to accommodate the use case before v3 retirement.
+We have added an example that shows how to retrieve more than 5000 comments on a docket. Please see the example section.
 
 #### I submitted a comment, but I am unable to find it on regs. What happened to my comment?
 
