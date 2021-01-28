@@ -307,20 +307,21 @@ Here are few example queries for searching comments:
     ```
     https://api.regulations.gov/v4/comments?filter[commentOnId]=09000064846eebaf&page[size]=250&page[number]=N&sort=lastModifiedDate,documentId&api_key=DEMO_KEY
     ```   
-    The first 5000 documents can be retrieved using the query above by paging through the results where N in the query is the page number between 1-20. 
+    The first 5000 documents can be retrieved using the query above and paging through the results where N is the page number between 1 and 20. 
     Please note we are sorting the results by lastModifiedDate to ensure we can filter our data by lastModifiedDate later.
-    On the last page of this set, please note the lastModifiedDate of the last document. In our case, EOIR-2020-0003-5548 is the last document on page 20 and the lastModifiedDate attribute of the document is 2020-08-10T15:58:52Z.
+    On the last page of this set, please note the lastModifiedDate of the last document. In our case, EOIR-2020-0003-5548 is the last document on page 20 and the lastModifiedDate attribute of the document is 2020-08-10T15:58:52Z. We will be filtering the data in the next step using this date.
     
- * Step 4: Page through the next set of 5000 documents:
+  * Step 4: Page through the next set of 5000 documents:
     ```
     https://api.regulations.gov/v4/comments?filter[commentOnId]=09000064846eebaf&filter[lastModifiedDate][ge]=2020-08-10 11:58:52&page[size]=250&page[number]=N&sort=lastModifiedDate,documentId&api_key=DEMO_KEY
     ```
-    The next 5000 documents can be retrieved using the query above by paging through the results where N in the query is the page number between 1-20.
-    The lastModifiedDate attribute of the last document in the first set (Step 3) was `2020-08-10T15:58:52Z`. This date translates to `2020-08-10 11:58:52` in Eastern time. Running the above query should return all documents where lastModifiedDate is greater than or equal to `2020-08-10T15:58:52Z`. Its important to note that we are running a "greater than or equal to" query to ensure we do not miss any documents where last modified date is `2020-08-10T15:58:52Z` and it did not make the first set. 
+    The next 5000 documents can be retrieved using the query above and paging through the results where N is the page number between 1 and 20.
+    
+    The lastModifiedDate attribute of the last document in the first set (Step 3) was `2020-08-10T15:58:52Z`. This date translates to `2020-08-10 11:58:52` in Eastern time. Running the above query should return all documents where lastModifiedDate is greater than or equal to `2020-08-10T15:58:52Z`. Its important to note that we are running a "greater than or equal to" query to ensure we do not miss any documents where last modified date is `2020-08-10T15:58:52Z`.
 
-On the last page of this set, please note the lastModifiedDate of the last document and repeat.
+    On the last page of this set, please note the lastModifiedDate of the last document and repeat.
    
-Note: Step 4 should be repeated for as many times as needed to retrieve all 88,061 comments on this document.
+    Note: Step 4 should be repeated for as many times as needed to retrieve all 88,061 comments.
 
 #### Detailed information for a single comment
 
