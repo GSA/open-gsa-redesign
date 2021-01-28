@@ -3284,7 +3284,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Federal Hiring Assessments and Selection Outcome Dataset",
 			"description": "An Excel export of combined USA Staffing, Monster, Aviator (FAA) Hiring Assessment and Selection Outcome Data from the 24 CFO Act agencies.  We believe this data will empower Chief Human Capital Officers and Human Resources staff with the right data to focus on improved hiring outcomes while complying with open data requirements to increase transparency to the millions of applicants who apply for federal positions each year on USAJOBS.",
-			"modified": "2021-01-22T18:59:58.316Z",
+			"modified": "2021-01-27T17:27:00.940Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-01-08-01",
 			"dataQuality": true,
@@ -4210,9 +4210,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "JSON",
-					"title": "EDI JSON 01/26/21",
-					"description": "EDI JSON 01/26/21",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-json-01-26-21.json"
+					"title": "EDI JSON 01/28/21",
+					"description": "EDI JSON 01/28/21",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-json-01-28-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
