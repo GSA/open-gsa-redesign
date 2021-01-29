@@ -71,7 +71,7 @@ All parameters below are required unless noted otherwise. As a reminder, all par
 
 ## Terms of Service
 ​
-By using this API, you agree to our [Terms of Service](https://search.gov/tos).
+By using this API, you agree to our [Terms of Service](https://search.gov/tos.html).
 
 ## Contact Us
 
