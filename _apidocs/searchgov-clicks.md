@@ -36,7 +36,7 @@ Please note that we only support this particular content type
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/openapi.yml">Open API specification file for the Clicks API</a>
+<a href="v2/openapi.yml">Open API specification file for the Clicks API</a>
 
 
 
