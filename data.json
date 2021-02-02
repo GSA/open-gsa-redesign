@@ -2421,7 +2421,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Federal Acquisition Service Instructional Letter 2009",
 			"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.  All ILs are current only as of the date posted and are subject to amendment, update, and supersession without further notice being posted on this site. Changes and revisions to regulatory or statutory guidance subsequent to the effective date of this IL may affect its relevancy and accurateness. The IL is provided for informational purposes only.",
-			"modified": "2016-01-22",
+			"modified": "2020-12-22",
 			"accessLevel": "public",
 			"identifier": "GSA-6367",
 			"dataQuality": true,
@@ -2443,10 +2443,65 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "application/zip",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "FAS IL 2009 Table of Contents",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/c15954a2-f177-4463-89d5-9b3cb0ae62fc/resource/f85a9b50-1929-49b0-8932-6e9e69497753/download/table-of-contents-federal-acquisition-service-instructional-letters-2009.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+					"format": "docx",
+					"title": "FAS IL 2009-01",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/c15954a2-f177-4463-89d5-9b3cb0ae62fc/resource/2147cf36-32cc-48a0-bf3f-3993245b99b9/download/fas-instructional-letter-2009-01.docx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
 					"format": "pdf",
-					"title": "Federal Acquisition Service Instructional Letter 2009",
-					"downloadURL": "https://gsa.my.salesforce.com/sfc/p/30000001G26s/a/30000000PzIP/U2iK0NpanOTj5oKDKZGRn6jZvGvfTsRbzvFoDtUdsp4"
+					"title": "FAS IL 2009-02",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/c15954a2-f177-4463-89d5-9b3cb0ae62fc/resource/c8722b57-1c8a-4a0b-a4f5-acd0d638b4af/download/fas-instructional-letter-2009-02.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2009-03",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/c15954a2-f177-4463-89d5-9b3cb0ae62fc/resource/04b327ee-ebc9-41b6-82fa-07e7294d87e4/download/fas-instructional-letter-2009-03.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/c15954a2-f177-4463-89d5-9b3cb0ae62fc/resource/596525fe-eac8-48bb-8307-90ecbec2259b/download/fas-instructional-letter-il-2009-03-supplement-1.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2009-03 Supplemental",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2009-04",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/c15954a2-f177-4463-89d5-9b3cb0ae62fc/resource/b3dfb0cd-daad-46dd-b91b-ff2f130b7a41/download/fas-instructional-letter-2009-04.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2009-05",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/c15954a2-f177-4463-89d5-9b3cb0ae62fc/resource/78e701df-bdba-4392-9805-80370dba7dc4/download/fas-instructional-letter-2009-05.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2009-06",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/c15954a2-f177-4463-89d5-9b3cb0ae62fc/resource/3ea4faca-90a5-4d5b-9bc3-f148974fbd35/download/fas-instructional-letter-2009-06.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/c15954a2-f177-4463-89d5-9b3cb0ae62fc/resource/9b146ca3-0032-471b-a6b9-6f3556da6e9a/download/fas-instructional-letter-2009-07.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2009-07",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
 				}
 			],
 			"keyword": ["FAS", "Industrial Funding Fee", "Instructional Letters", "Interactive"],
@@ -2458,7 +2513,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Federal Acquisition Service Instructional Letter 2010",
 			"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.  All ILs are current only as of the date posted and are subject to amendment, update, and supersession without further notice being posted on this site. Changes and revisions to regulatory or statutory guidance subsequent to the effective date of this IL may affect its relevancy and accurateness. The IL is provided for informational purposes only.",
-			"modified": "2016-01-22",
+			"modified": "2020-12-22",
 			"accessLevel": "public",
 			"identifier": "GSA-6368",
 			"dataQuality": true,
@@ -2480,11 +2535,72 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "application/zip",
+					"accessURL": "https://inventory.data.gov/dataset/8401eca3-0636-4671-b250-938b36232681/resource/a59357e3-538d-416c-9ac4-e6f0b5f43b47/download/table-of-contents-federal-acquisition-service-instructional-letters-2010.xlsx",
+					"format": "xlsx",
+					"title": "Table of Contents FAS IL 2010"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/8401eca3-0636-4671-b250-938b36232681/resource/18dbf229-ea0e-4177-9162-5742a29abb79/download/fas-instructional-letter-il-2010-01.pdf",
 					"format": "pdf",
-					"title": "Federal Acquisition Service Instructional Letter 2010",
+					"title": "FAS IL 2010-01",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2010-02",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://gsa.my.salesforce.com/sfc/p/30000001G26s/a/30000000PzIK/9_rF2VBQw0HFTRD.BieqjPnrvINSfunYkoEFlEs04OA"
+					"downloadURL": "https://inventory.data.gov/dataset/8401eca3-0636-4671-b250-938b36232681/resource/9ee81071-578f-4a44-a55f-184037382f09/download/fas-instructional-letter-il-2010-02.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/8401eca3-0636-4671-b250-938b36232681/resource/9519df7f-796f-4034-8a3e-d0653f00ee39/download/fas-instructional-letter-2010-03.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2010-03",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/8401eca3-0636-4671-b250-938b36232681/resource/d845399c-3fe5-4cce-a052-484456f999c7/download/fas-instructional-letter-2010-04.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2010-04",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/8401eca3-0636-4671-b250-938b36232681/resource/7ef3b63b-3c8c-41d1-9c88-33fb7b049ff7/download/fas-instructional-letter-2010-05.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2010-05",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/8401eca3-0636-4671-b250-938b36232681/resource/96a7111a-77ce-4ca7-a4d8-056017a48aa3/download/fas-instructional-letter-2010-06.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2010-06",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/8401eca3-0636-4671-b250-938b36232681/resource/d6b366bb-1fc2-40b6-a8b0-7ad177f1d6cf/download/fas-instructional-letter-2010-07.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2010-07",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2010-08",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/8401eca3-0636-4671-b250-938b36232681/resource/3704f43a-6ff7-4bac-bcaf-5081ea012783/download/fas-instructional-letter-il-2010-08.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2010-09 Supplemental",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/8401eca3-0636-4671-b250-938b36232681/resource/610fd1ec-468a-4d4c-a5ef-4d528c78fe0f/download/fas-instructional-letter-il-2010-09-supplement.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/8401eca3-0636-4671-b250-938b36232681/resource/1e1b9307-a8e4-47db-bf04-0340a5ee3c8e/download/instruction-letter-il-2010-07-supplement.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2010-07 Supplemental",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
 				}
 			],
 			"keyword": ["FAS", "Industrial Funding Fee", "Instructional Letters", "Interactive"],
@@ -2496,7 +2612,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Federal Acquisition Service Instructional Letter 2011",
 			"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.  All ILs are current only as of the date posted and are subject to amendment, update, and supersession without further notice being posted on this site. Changes and revisions to regulatory or statutory guidance subsequent to the effective date of this IL may affect its relevancy and accurateness. The IL is provided for informational purposes only.",
-			"modified": "2016-01-22",
+			"modified": "2020-12-30",
 			"accessLevel": "public",
 			"identifier": "GSA-6369",
 			"dataQuality": true,
@@ -2518,11 +2634,186 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "application/zip",
+					"mediaType": "application/pdf",
 					"format": "pdf",
-					"title": "Federal Acquisition Service Instructional Letter 2011",
+					"title": "FAS IL 2011-01-Supplemental",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://gsa.my.salesforce.com/sfc/p/30000001G26s/a/30000000PzIF/PGU.8TV9Ooh0CViYs3e.O2.FlMR49NcDTQ05NBoGpPI"
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/096719f8-c297-4e6d-8137-6a2d1ae18e3e/download/fas-il-2011-01-supplement.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-01",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/e4de071e-f4fe-44cd-90e5-ad43f99e3556/download/fas-il-2011-01.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-03",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/d07b44fd-7b33-4bac-8af7-6ce4950dc8f0/download/fas-il-2011-03.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-04",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/6fb955cd-4917-46af-b298-e8f4656f487b/download/fas-il-2011-04.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-05",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/bf495425-9ec3-4842-aadd-f4ebd298b758/download/fas-il-2011-05.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-06",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/d51987e2-2736-4faf-8512-f40f03cbe92e/download/fas-il-2011-06.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-06-Supplemental",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/ae2a362f-e331-4636-889e-8700fde3e479/download/fas-il-2011-06-supplement.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-07",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/ed395edb-6038-45de-a8ff-efe13cdcf28b/download/fas-il-2011-07.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-08",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/5594bef8-2aa8-45bb-85b3-97fae53eeb0b/download/fas-il-2011-08.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-09",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/04bfaed9-bc5f-4374-a1eb-71d813fef4b8/download/fas-il-2011-09.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-10",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/112d6789-17c2-4ad0-ab14-4a9b053981b4/download/fas-il-2011-10.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 20011-11",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/066db519-bd26-4236-9c35-22a824b3c4cc/download/fas-il-2011-11.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-12",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/125b8c12-df70-4aa2-8925-2fcd268213d5/download/fas-il-2011-12.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-12-Supplemental",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/4890a3c2-e1fb-4376-8144-a8ae60bf0ac5/download/fas-il-2011--12-supplement.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-13",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/cefcc7aa-866a-491d-93d7-5820a3ea7a4c/download/fas-il-2011-13.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-14",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/05415a1b-1878-4e5c-986f-17561328fe7e/download/fas-il-2011--13-supplement.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-15",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/e9395971-07ac-4753-bb12-b12f7284d2a4/download/fas-il-2011-15.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-15-Supplemental",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/e25c790c-09f7-4b5e-b4f1-5d0f10887270/download/fas-il-2011--15-supplement.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-16-Revised",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/9b2b0136-2a83-414f-a81e-b18dddec5fcd/download/fas-il-2011--16-revised.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-17",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/312f2ddc-c9ef-48c7-8128-eff1e6443b46/download/fas-il-2011--17.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-18",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/123d0cc7-c52d-4461-8a1f-8bd091d68f64/download/fas-il-2011--18.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-19",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/3f9fd9ba-5d07-462d-a6db-9944932354be/download/fas-il-2011--19.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-20",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/8f7b7cb7-a2d0-4026-85d3-7f5ab90cd2f3/download/fas-il-2011--20.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-24",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/ccb366d0-c7fa-4536-a759-576a0b0fb1d5/download/fas-il-2011--24.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "Table of Contents FAS IL 2011",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/14ed7d4d-ce95-4fbf-812c-906652a43cda/download/table-of-contents-fas-il-2011.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2011-13-Supplemental",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/91598bea-83b3-4ec2-8a8f-ff2df116cd0a/download/fas-il-2011--13-supplement.pdf"
 				}
 			],
 			"keyword": ["FAS", "Industrial Funding Fee", "Instructional Letters", "Interactive"],
@@ -2534,7 +2825,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Federal Acquisition Service Instructional Letter 2012",
 			"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.  All ILs are current only as of the date posted and are subject to amendment, update, and supersession without further notice being posted on this site. Changes and revisions to regulatory or statutory guidance subsequent to the effective date of this IL may affect its relevancy and accurateness. The IL is provided for informational purposes only.",
-			"modified": "2016-01-22",
+			"modified": "2020-12-30",
 			"accessLevel": "public",
 			"identifier": "GSA-6374",
 			"dataQuality": true,
@@ -2556,11 +2847,116 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "application/zip",
-					"format": "pdf",
-					"title": "Federal Acquisition Service Instructional Letter 2012",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "FAS IL Table of Contents 2012",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://gsa.my.salesforce.com/sfc/p/30000001G26s/a/30000000PzIA/hAjg3y1hoKJ9fsgwCENoUZF1oGVyCWAgY0Kl_uu8cls"
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/733ac5c5-fe80-41f3-8d2b-e3c749793b96/download/table-of-contents-federal-acquisition-service-instructional-letters-2012.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-01",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/24d008b0-9a84-48c6-a026-5bce98eed444/download/instruction-letter-il-2012-01.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-02",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/d994b868-e03e-4f76-8c08-50348594b4ae/download/instruction-letter-il-2012-02.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-03",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/5f750b55-dd41-40e4-bd78-64f9bbc95d1f/download/instruction-letter-il-2012-03.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-03-Supplemental",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/2afa5ba0-33b6-4bae-b553-91446c408b23/download/instruction-letter-il-2012-03-supplement.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-04",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/84bfd581-a6bf-4631-b9cb-a842faff8a51/download/instruction-letter-il-2012-04.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-05",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/0e2fb00a-7471-4050-adc9-12df8d15e673/download/instruction-letter-il-2012-05.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-06",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/00bf1ca0-a17f-40ee-ac87-4ab1e18db05f/download/instruction-letter-il-2012-06.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-07",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/dd3eb28b-dc6d-45c8-a76c-b45534f27a93/download/instruction-letter-il-2012-07.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-07-Supplemental",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/9aa80046-b6f2-481c-a2bd-e3cbb00699bf/download/instruction-letter-il-2012-07-supplement.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-08",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/7bdcc547-ae5b-4143-9dd2-a25e9e5dea9a/download/instruction-letter-il-2012-08.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-09",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/a423f50c-1803-483a-ac39-4cfda640b968/download/instruction-letter-il-2012-09.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-09-Supplemental",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/06354a4e-ddae-479b-a001-ff5150ceccbb/download/fas-instruction-letter-il-2012-09-supplement.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-10",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/068513c5-6917-426f-b5a7-f73551d118fd/download/instruction-letter-il-2012-10.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-10-Supplemental",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/b0219277-f535-4534-b646-996724ad443a/download/instruction-letter-il-2012-10-supplement.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2012-11",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/4e5de992-579a-4709-9f46-77d399f4e9f8/resource/746e3ec6-c226-4d32-9474-90cfca2e3280/download/instruction-letter-il-2012-11.pdf"
 				}
 			],
 			"keyword": ["FAS", "Industrial Funding Fee", "Instructional Letters", "Interactive"],
@@ -2572,7 +2968,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Federal Acquisition Service Instructional Letter 2013",
 			"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts. All ILs are current only as of the date posted and are subject to amendment, update, and supersession without further notice being posted on this site. Changes and revisions to regulatory or statutory guidance subsequent to the effective date of this IL may affect its relevancy and accurateness. The IL is provided for informational purposes only.",
-			"modified": "2016-01-22",
+			"modified": "2020-12-22",
 			"accessLevel": "public",
 			"identifier": "GSA - 139296",
 			"dataQuality": true,
@@ -2593,11 +2989,51 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "application/zip",
-					"format": "pdf",
-					"title": "Federal Acquisition Service Instructional Letter 2013",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "FAS IL Table of Contents 2013",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://gsa.my.salesforce.com/sfc/p/30000001G26s/a/30000000PzI5/1wxr7RKRCl8XiZGhbSBnCdEvyDqHzuyBllnxyhJcZj4"
+					"downloadURL": "https://inventory.data.gov/dataset/81cd1b12-0cfc-4dbf-8e42-236194d9f608/resource/2d177970-f1a0-4d89-be33-0d8017ce411f/download/table-of-contents-federal-acquisition-service-instructional-letters-2013.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2013-01",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/81cd1b12-0cfc-4dbf-8e42-236194d9f608/resource/5c9db53e-cf36-48a5-aa07-37107e287d8e/download/instruction-letter-il-2013-01.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/81cd1b12-0cfc-4dbf-8e42-236194d9f608/resource/13d1e6d1-fc3d-4962-ae3c-d63717a914a9/download/instruction-letter-il-2013-02.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2013-02",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/81cd1b12-0cfc-4dbf-8e42-236194d9f608/resource/5fef5fc6-c906-4173-9bfa-32ca1061a4c4/download/instruction-letter-il-2013-03.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2013-03",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2013-04",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/81cd1b12-0cfc-4dbf-8e42-236194d9f608/resource/00eee92f-8ebe-41c3-98dc-b16a3e3c163a/download/instruction-letter-il-2013-04.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2013-05",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/81cd1b12-0cfc-4dbf-8e42-236194d9f608/resource/2afe451b-8b64-4bc6-8278-960b46b2b05e/download/instruction-letter-il-2013-05.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2013-06",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/81cd1b12-0cfc-4dbf-8e42-236194d9f608/resource/aa5e1cdd-c0d9-4789-8959-ba1fec4494d9/download/instructional-letter-il-2013-06.pdf"
 				}
 			],
 			"keyword": ["FAS", "GSA", "Industrial Funding Fee", "Instructional Letters", "Interactive"],
@@ -2609,7 +3045,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Federal Acquisition Service Instructional Letter 2014",
 			"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts. All ILs are current only as of the date posted and are subject to amendment, update, and supersession without further notice being posted on this site. Changes and revisions to regulatory or statutory guidance subsequent to the effective date of this IL may affect its relevancy and accurateness. The IL is provided for informational purposes only.",
-			"modified": "2016-01-22",
+			"modified": "2020-12-22",
 			"accessLevel": "public",
 			"identifier": "GSA - 139297",
 			"dataQuality": true,
@@ -2630,11 +3066,69 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "application/zip",
+					"accessURL": "https://inventory.data.gov/dataset/8c2f4e37-7420-4467-adcd-65a454b4cde0/resource/741ffa4c-ca09-47b7-9d52-68fff90286e5/download/federal-acquisition-service-instructional-letters-2014.xlsx",
+					"format": "xlsx",
+					"title": "FAS IL 2014",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
 					"format": "pdf",
-					"title": "Federal Acquisition Service Instructional Letter 2014",
+					"title": "FAS IL 2014-01",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://gsa.my.salesforce.com/sfc/p/30000001G26s/a/30000000PzHv/cCYWtdN9Vad0qj1P_eUMFiFZaxnn.mPHdoPCCvVCuAE"
+					"downloadURL": "https://inventory.data.gov/dataset/8c2f4e37-7420-4467-adcd-65a454b4cde0/resource/9751a2c1-1f28-447f-bbfc-d357391e361d/download/instruction-letter-il-2014-01.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/8c2f4e37-7420-4467-adcd-65a454b4cde0/resource/a2c6d9f0-120f-4fcc-96e0-fde47551faa6/download/instruction-letter-il-2014-02.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2014-02",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/8c2f4e37-7420-4467-adcd-65a454b4cde0/resource/a3b93cfe-7ce4-4caf-b5eb-601d209ed9e5/download/instruction-letter-il-2014-03.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2014-03",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/8c2f4e37-7420-4467-adcd-65a454b4cde0/resource/1c773eb9-fd8a-4e9c-8d2d-d3454fc4f453/download/instruction-letter-il-2014-04.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2014-04",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2014-05",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/8c2f4e37-7420-4467-adcd-65a454b4cde0/resource/eb6d8b95-0894-416b-aa9d-4c1afc27691b/download/instruction-letter-il-2014-05.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2014-06",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/8c2f4e37-7420-4467-adcd-65a454b4cde0/resource/446c038c-d6de-464e-bc4a-d0a489d535a1/download/instruction-letter-il-2014-06.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2014-07",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/8c2f4e37-7420-4467-adcd-65a454b4cde0/resource/2c61f14e-e0ca-431b-8aa2-80a4af3127e9/download/instruction-letter-il-2014-07.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/pdf",
+					"format": "pdf",
+					"title": "FAS IL 2014-08",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
+					"downloadURL": "https://inventory.data.gov/dataset/8c2f4e37-7420-4467-adcd-65a454b4cde0/resource/d8a4de08-87bc-4b31-8b3d-f236fd1fd2d0/download/instruction-letter-il-2014-08.pdf"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/8c2f4e37-7420-4467-adcd-65a454b4cde0/resource/59464574-8e18-4a8e-9bc9-8987989b23db/download/instructional-letter-il-14-09.pdf",
+					"format": "pdf",
+					"title": "FAS IL 2014-09",
+					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts."
 				}
 			],
 			"keyword": ["FAS", "GSA", "Industrial Funding Fee", "Instructional Letters", "Interactive"],
@@ -2786,6 +3280,49 @@
 			"programCode": ["023:005"],
 			"language": ["en-us"],
 			"theme": ["Travel and Transportation"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Federal Hiring Assessments and Selection Outcome Dataset",
+			"description": "An Excel export of combined USA Staffing, Monster, Aviator (FAA) Hiring Assessment and Selection Outcome Data from the 24 CFO Act agencies.  We believe this data will empower Chief Human Capital Officers and Human Resources staff with the right data to focus on improved hiring outcomes while complying with open data requirements to increase transparency to the millions of applicants who apply for federal positions each year on USAJOBS.",
+			"modified": "2021-01-27T17:27:00.940Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-01-08-01",
+			"dataQuality": true,
+			"describedBy": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/e91deb82-0d38-48f9-8dd2-6109619758e6/download/data-dictionary-for-hiring-assessment-and-selection-outcome-dataset.xlsx",
+			"describedByType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+			"issued": "2021-01-08",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "138"
+			},
+			"accrualPeriodicity": "R/P1M",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "Hiring Assessment and Selection Outcome Dataset January 2021",
+					"description": "An Excel export of combined USA Staffing, Monster, Aviator (FAA) Hiring Assessment and Selection Outcome Data from the 24 CFO Act agencies.",
+					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/e86fd987-e414-483a-a27c-9dfeb2a385eb/download/hiring-assessment-and-selection-outcome-dataset-january-2021-final.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "Data Dictionary for Hiring Assessment and Selection Outcome Dataset",
+					"description": "This is the Data Dictionary for the Hiring Assessment and Selection Outcome Dataset.",
+					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/e91deb82-0d38-48f9-8dd2-6109619758e6/download/data-dictionary-for-hiring-assessment-and-selection-outcome-dataset.xlsx"
+				}
+			],
+			"keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Federal Mail Expenditures",
@@ -3651,14 +4188,14 @@
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Data Inventory (EDI)",
 			"description": "GSA Enterprise Data Inventory (EDI)",
-			"modified": "2020-12-03",
+			"modified": "2021-01-22T19:36:40.467Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-13-01",
 			"dataQuality": true,
 			"describedByType": "application/json",
 			"issued": "2015-11-13",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
+			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
 				"name": "General Services Administration"
@@ -3673,16 +4210,15 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "JSON",
-					"title": "EDI JSON 12/03/20",
-					"description": "EDI JSON 12/03/20",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-json-12-03-20.json"
+					"title": "EDI JSON 02/01/21",
+					"description": "EDI JSON 02/01/21",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-json-02-01-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
 			"bureauCode": ["023:00"],
 			"programCode": ["023:014"],
-			"language": ["us-EN"],
-			"theme": ["Enterprise Data Inventory"]
+			"language": ["us-EN"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Roadmap",
@@ -3981,19 +4517,18 @@
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
 			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.  \r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2020-12-03",
+			"modified": "2021-01-22T19:02:53.860Z",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
 			"issued": "2002-01-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
+			"rights": "true",
 			"spatial": "United States",
 			"publisher": {
 				"@type": "org:Organization",
 				"name": "General Services Administration"
 			},
-			"accrualPeriodicity": "R/P1W",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Valerie R Butler",
@@ -4003,23 +4538,20 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
-					"title": "IOLP Leases",
-					"description": "This file includes information specific to leases, including<br />\r\nlocation information, lease effective dates, \r\nlease expiration dates, and congressional districts.",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/b07a5180-749f-4aca-a6f9-3e0fc04be20c/download/iolp-leases.xlsx"
+					"title": "IOLP Leases.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/b6411f3b-2e07-4c11-9108-556f54d05661/download/iolp-leases.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
-					"title": "IOLP Buildings",
-					"description": "This file includes information specific to buildings, including  \r\nlocation information, congressional districts, \r\nvacant rentable space, building square footage,\r\nwhether the building is owned or leased.",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/1dd0f445-640b-4adc-a68a-3b7c4e87ed05/download/iolp-buildings.xlsx"
+					"title": "IOLP Buildings.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/1b0820fb-1c20-42a9-85a2-e3e833eda68e/download/iolp-buildings.xlsx"
 				}
 			],
 			"keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
 			"bureauCode": ["023:05"],
 			"programCode": ["023:004"],
-			"language": ["en-us"],
-			"theme": ["Geospatial"]
+			"language": ["en-us"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Inventory Reporting Information System (IRIS)",
@@ -4300,7 +4832,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Networx Business Parent",
-			"description": "These datasets represent the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract.  This collection contains data from FY2008 to the presesnt.",
+			"description": "These datasets represent the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract.  This collection contains data from FY2008 to the present.",
 			"modified": "2015-09-04",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-08-27P",
@@ -4316,8 +4848,8 @@
 			"accrualPeriodicity": "R/P3M",
 			"contactPoint": {
 				"@type": "vcard:Contact",
-				"fn": "Cindy Smith",
-				"hasEmail": "mailto:cindya.smith@gsa.gov"
+				"fn": "Toni L Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
 			},
 			"keyword": ["Networx", "Parent", "Telecommunications"],
 			"bureauCode": ["023:00"],
@@ -4341,7 +4873,7 @@
 				"@type": "org:Organization",
 				"name": "General Services Administration"
 			},
-			"accrualPeriodicity": "R/P1M",
+			"accrualPeriodicity": "R/P3M",
 			"isPartOf": "GSA-2015-08-27P",
 			"contactPoint": {
 				"@type": "vcard:Contact",
@@ -4378,7 +4910,7 @@
 				"@type": "org:Organization",
 				"name": "General Services Administration"
 			},
-			"accrualPeriodicity": "R/P1M",
+			"accrualPeriodicity": "R/P3M",
 			"isPartOf": "GSA-2015-08-27P",
 			"contactPoint": {
 				"@type": "vcard:Contact",
@@ -4415,7 +4947,7 @@
 				"@type": "org:Organization",
 				"name": "General Services Administration"
 			},
-			"accrualPeriodicity": "R/P1M",
+			"accrualPeriodicity": "R/P3M",
 			"isPartOf": "GSA-2015-08-27P",
 			"contactPoint": {
 				"@type": "vcard:Contact",
@@ -4452,7 +4984,7 @@
 				"@type": "org:Organization",
 				"name": "General Services Administration"
 			},
-			"accrualPeriodicity": "R/P1M",
+			"accrualPeriodicity": "R/P3M",
 			"isPartOf": "GSA-2015-08-27P",
 			"contactPoint": {
 				"@type": "vcard:Contact",
@@ -4489,7 +5021,7 @@
 				"@type": "org:Organization",
 				"name": "General Services Administration"
 			},
-			"accrualPeriodicity": "R/P1M",
+			"accrualPeriodicity": "R/P3M",
 			"isPartOf": "GSA-2015-08-27P",
 			"contactPoint": {
 				"@type": "vcard:Contact",
@@ -4600,7 +5132,7 @@
 				"@type": "org:Organization",
 				"name": "General Services Administration"
 			},
-			"accrualPeriodicity": "R/P1M",
+			"accrualPeriodicity": "R/P3M",
 			"isPartOf": "GSA-2015-08-27P",
 			"contactPoint": {
 				"@type": "vcard:Contact",
@@ -4637,7 +5169,7 @@
 				"@type": "org:Organization",
 				"name": "General Services Administration"
 			},
-			"accrualPeriodicity": "R/P1M",
+			"accrualPeriodicity": "R/P3M",
 			"isPartOf": "GSA-2015-08-27P",
 			"contactPoint": {
 				"@type": "vcard:Contact",
@@ -4674,7 +5206,7 @@
 				"@type": "org:Organization",
 				"name": "General Services Administration"
 			},
-			"accrualPeriodicity": "R/P1M",
+			"accrualPeriodicity": "R/P3M",
 			"isPartOf": "GSA-2015-08-27P",
 			"contactPoint": {
 				"@type": "vcard:Contact",
@@ -4748,7 +5280,7 @@
 				"@type": "org:Organization",
 				"name": "General Services Administration"
 			},
-			"accrualPeriodicity": "R/P1M",
+			"accrualPeriodicity": "R/P3M",
 			"isPartOf": "GSA-2015-08-27P",
 			"contactPoint": {
 				"@type": "vcard:Contact",
@@ -6938,7 +7470,7 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "application/vnd.ms-excel",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
 					"title": "January March 2015 PC Transactions",
 					"downloadURL": "https://inventory.data.gov/dataset/71e0196c-533a-4efc-a878-1f447858b0c3/resource/4a8b8081-eef6-44a3-9840-58f459eb5388/download/january-march-2015-pc-transactions.xlsx"
@@ -7181,8 +7713,8 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "application/vnd.ms-excel",
-					"format": "xls",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
 					"title": "Jan-Mar 2016 PC Transactions",
 					"description": "Purchases made with the purchase card. Files will be batched quarterly.",
 					"downloadURL": "https://inventory.data.gov/dataset/ada3353e-b4da-4a3c-8f58-fd401cee999c/resource/7ff97ec6-f85d-409a-80f4-f84295c96623/download/jan-mar-2016-pc-transactions.xlsx"
@@ -8949,12 +9481,13 @@
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) Inventory (Building)",
 			"description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-			"modified": "2020-12-01",
+			"modified": "2021-01-04T15:59:39.946Z",
 			"accessLevel": "public",
 			"identifier": "GSA-25251",
 			"dataQuality": true,
 			"issued": "2011-07-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
 			"spatial": "US",
 			"publisher": {
 				"@type": "org:Organization",
@@ -8970,14 +9503,15 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
 					"format": "csv",
-					"title": "data_gov_bldg_rexus",
-					"description": "December - Rexus Building file",
-					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/badb18d1-e314-4af5-bce9-16aa0b5624bb/download/datagovbldgrexus.csv"
+					"title": "data_gov_bldg_rexus.csv",
+					"description": "February Rexus Building file",
+					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/b1803048-81da-46a8-8b38-f6591a63224b/download/datagovbldgrexus.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
 			"bureauCode": ["023:05"],
-			"programCode": ["023:004"]
+			"programCode": ["023:004"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Real Estate Across the United States (REXUS) (Lease)",
@@ -9004,7 +9538,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus",
-					"description": "December - Rexus Lease file",
+					"description": "February - Rexus Lease file",
 					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/db2e5040-a1fc-4581-975c-e38ccf70b2e9/download/datagovlserexus.csv"
 				}
 			],
@@ -9318,6 +9852,12 @@
 					"describedBy": "https://www.sam.gov/sam/transcript/SAM_Exclusions_Extract_User_Guide.pdf",
 					"describedByType": "application/pdf",
 					"downloadURL": "https://www.sam.gov/SAM/extractfiledownload?role=WW&version=EPLSPUB&filename=SAM_Exclusions_Public_Extract.ZIP"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://inventory.data.gov/dataset/7416a2e4-9aa7-4bcd-801c-20f25a545916/resource/78bb6c57-42e8-4055-931d-928ebcbde39f/download/samexclusionspublicextract-gsa-1626.csv",
+					"format": "csv",
+					"title": "SAM_Exclusions_Public_Extract GSA-1626",
+					"description": "CSV file containing SAM Exclusions Public Extract"
 				}
 			],
 			"keyword": ["Black List", "EPLS", "Ineligible Proceedings Completed", "Ineligible Proceedings Pending", "Prohibition Restriction", "SAM", "System for Award Management", "Voluntary Exclusion", "debarred list", "excluded parties list", "list of exclusions"],

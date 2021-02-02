@@ -82,6 +82,9 @@
 - title: Search.gov Type-ahead Suggestions API
   description: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms.
   url: https://open.gsa.gov/api/searchgov-suggestions/
+- title: Search.gov Clicks API
+  description: For Search.gov customers. This API allows you to collect click data for both analytics reporting and as an input to relevance ranking of search results. 
+  url: https://open.gsa.gov/api/searchgov-clicks/
 - title: Sustainable Facilities Tool API
   description: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
   url: https://sftool.gov/developers
