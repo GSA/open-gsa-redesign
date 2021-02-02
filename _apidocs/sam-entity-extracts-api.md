@@ -263,7 +263,7 @@ Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer"
   SAM_SENSITIVE_DAILY_V3_20200827.ZIP<br>  SAM_SENSITIVE_MONTHLY_V3_20200826.ZIP<br>  SAM_SENSITIVE_UTF-8_DAILY_V3_20200827.ZIP<br>  SAM_SENSITIVE_UTF-8_MONTHLY_V3_20200826.ZIP
   
 * Public files:
-  <br> SAM_PUBLIC_UTF-8_MONTHLY_V2_20200826.ZIP<br>  SAM_PUBLIC_MONTHLY_V2_20200826.ZIP<br>
+  <br> SAM_PUBLIC_UTF-8_MONTHLY_V2_20200826.ZIP<br>  SAM_PUBLIC_MONTHLY_V2_20200826.ZIP<br>  SAM_PUBLIC_MONTHLY_20190407.ZIP
 
 ## OpenAPI Specification File 
 
@@ -319,5 +319,6 @@ Date | Version | Description
 06/10/2020 | v1.6 |  Added the endpoint, new process and an example for the Download API .
 08/17/2020 | v1.7 | * The Sensitive Alpha endpoint in "Getting Started" has been corrected and the Sample Extract Authorization screenshot in "Explanation of the API using Examples" has also been updated to reflect the correct endpoint.<br><br> * Sensitive data sample calls in the "Explanation of the API using Examples" have also been updated to show that the API key is no longer sent in the request URL.<br><br> * The "Sensitive Download API Process" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshot in the "Explanation of the API using Examples" has been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.
 08/31/2020 | v1.8 | * Updated the Getting Started section to include the Sensitive Beta endpoint.
+02/02/2021 | V1.9 | * Added V1/V2 Public, V3 Sensitive, and V2 FOUO files available in Alpha S3.
 
 <p><small><a href="#">Back to top</a></small></p>
