@@ -5830,8 +5830,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <br>Example: includeSections=entityRegistration,coreData; includeSections=All
 <br>Applicable to non-SAM registrants but only the sections
  entityRegistration and coreData are applicable.<br><br>
- Note: The repsAndCerts section will only be returned if included in this parameter. 
- </td>
+ Note: The repsAndCerts section will only be returned if included in this parameter.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -13127,8 +13126,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <br>Example: includeSections=entityRegistration,coreData; includeSections=All
 <br>Applicable to non-SAM registrants but only the sections
  entityRegistration and coreData are applicable.<br><br>
- Note: The repsAndCerts section will only be returned if included in this parameter. 
- </td>
+ Note: The repsAndCerts section will only be returned if included in this parameter.</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -26372,6 +26370,6 @@ Disclaimer:
 | 10/15/2020 | v2.0 | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. <br><br> * Updated the description for the entityEFTIndicator parameter. |
 | 12/07/2020 | v2.1 | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.|
 | 01/22/2021 | v2.2 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive.<br><br> * Added note to the noPublicDisplayFlag field in the response.<br><br>  * Added the Beta V2 endpoints. |
-| 02/02/2021 | V2.2 | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition. |
+| 02/03/2021 | V2.2 | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition. |
 
 <p><small><a href="#">Back to top</a></small></p>
