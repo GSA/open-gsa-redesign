@@ -650,7 +650,10 @@ NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in B
 <td>exclusionStatusFlag</td>
 <td>string</td>
 <td>Exclusion Status Flag
-<br>Description (Debarred)</td>
+<br>Description (Debarred)
+<br><br>For exclusionStatusFlag=D in the API request, the response would:
+<br>1. Show 'exclusionStatusFlag': 'Debarred'
+<br>2. Populate 'exclusionURL' with the endpoint to access the debarred record</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -5566,7 +5569,7 @@ alphanumeric (ueiSAM values not yet available for search).
 <tr>
 <td>exclusionStatusFlag</td>
 <td>Allows D or null.
-<br>Example: exclusionStatusFlag=D</td>
+<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -6099,7 +6102,10 @@ NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in B
 <td>exclusionStatusFlag</td>
 <td>string</td>
 <td>Exclusion Status Flag
-<br>Description (Debarred)</td>
+<br>Description (Debarred)
+<br><br>For exclusionStatusFlag=D in the API request, the response would:
+<br>1. Show 'exclusionStatusFlag': 'Debarred'
+<br>2. Populate 'exclusionURL' with the endpoint to access the debarred record</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -12862,7 +12868,7 @@ alphanumeric (ueiSAM values not yet available for search).
 <tr>
 <td>exclusionStatusFlag</td>
 <td>Allows D or null.
-<br>Example: exclusionStatusFlag=D</td>
+<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -13452,7 +13458,10 @@ NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in B
 <td>exclusionStatusFlag</td>
 <td>string</td>
 <td>Exclusion Status Flag
-<br>Description (Debarred)</td>
+<br>Description (Debarred)
+<br><br>For exclusionStatusFlag=D in the API request, the response would:
+<br>1. Show 'exclusionStatusFlag': 'Debarred'
+<br>2. Populate 'exclusionURL' with the endpoint to access the debarred record</td>
 <td>v1<br>v2</td>
 </tr>
 
