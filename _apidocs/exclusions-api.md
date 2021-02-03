@@ -68,9 +68,9 @@ Utilizing the Exclusion API as an extract:
 | Parameter Name | Description | Applicable Versions |
 | ---- | ----------- | ----------- |
 | classification | Allows a string (Individual, Firm, Vessel, Special Entity Designation, null).<br><br> Example: 'classification=Firm' |  v1<br>v2 |
-| exclusionName | Allows partial text or a complete text.<br><br> When not used inside the 'q' parameter, it will apply the AND operator if a multi-text value is provided in any order and in any case. <br><br> Example: 'exclusionName=SAM' |  v1<br>v2 |
-| exclusionType | Allows a string (IP, IC, PR, VE,  Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction, Voluntary Exclusion).<br><br> When not used inside the 'q' parameter, it will apply the AND operator if a multi-text value is provided in any order and in any case.<br><br> Example: 'exclusionType=IP' |  v1<br>v2 |
-| exclusionProgram | Allows a string (RE, NP, PR, Reciprocal, Non-Procurement, Procurement).<br><br> Example: 'exclusionProgram=Y' |  v1<br>v2 |
+| exclusionName | Allows a partial text or a complete text.<br><br> This parameter must not be used inside the 'q' parameter.<br><br> This parameter accepts multi-text values in any order and in any case, and will apply the AND operator between the texts.<br><br> Examples: 'exclusionName=J Roy',  'exclusionName=ROY j'  |  v1<br>v2 |
+| exclusionType | Allows a partial text or a complete text (a string).<br><br> Allowable values are: Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction and Voluntary Exclusion.<br><br> This parameter can be used inside the 'q' parameter. <br><br> When not used inside the 'q' parameter, this parameter will apply the AND operator if a multi-text value is provided in any order and in any case.<br><br> Examples: 'q=exclusionType:Ineligible (Proceedings Pending)', 'exclusionType=Ineligible PENDING', 'exclusionType=[Pending~Voluntary]' |  v1<br>v2 |
+| exclusionProgram | Allows a complete text (a string).<br><br> Allowable values are: Reciprocal, NonProcurement and Procurement.<br><br> This parameter can be used inside the 'q' parameter. <br><br> Examples: 'q=((exclusionProgram:Reciprocal) OR (exclusionProgram:Procurement))', 'exclusionProgram=[NonProcurement~RECIPROCAL]', 'exclusionProgram=!NonProcurement'|  v1<br>v2 |
 | stateProvince | Allows a string.<br><br> Example: 'stateProvince=AR' |  v1<br>v2 |
 | country  | Allows a string.<br><br> Example: 'country=USA' |  v1<br>v2 |
 | zipCode  | Allows a string.<br><br> Example: 'zipCode=20171' |  v1<br>v2 |
@@ -446,6 +446,6 @@ Date | Version | Description
 10/15/2020 | v1.8 | * Updated the Beta V1 endpoint
 12/07/2020 | v1.9 | * Updated moreLocations for API response. <br><br> * Updated vesselDetails --> secondaryAddress to mention v2 Beta only. <br><br> * Added exclusionSecondaryAddress to API response.<br><br> * Changed exclusionAddress to exclusionAddress/exclusionPrimaryAddress in the API response.
 01/22/2021 | v2.0 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Added Beta V2 endpoint.
-02/03/2021 | V2.1 | * Updated description for emailId parameter. <br><br> * Updated description for exclusionName, exclusionsType, and excludingAgencyName parameters.
+02/03/2021 | V2.1 | * Updated description for emailId parameter. <br><br> * Updated description for exclusionName, exclusionsType, exclusionProgram and excludingAgencyName parameters.
 
 <p><small><a href="#">Back to top</a></small></p>
