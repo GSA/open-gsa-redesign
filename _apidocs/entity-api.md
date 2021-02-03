@@ -16,6 +16,7 @@ The Entity Management API will allow users to request Public Entity Information 
 * It returns synchronous responses directly in the browser.
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
+* The following characters are not allowed to be sent in the API request: + - = && || ! ( ) { } [ ] ^ ~ * ? : /
 
 **Additional Features of the Entity Management API:** It can serve as an Extract API with the addition of "format" parameter in the request. Following are the key features of the Entity Management Extract API:
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
@@ -184,7 +185,7 @@ alphanumeric (ueiSAM values not yet available for search).
 <tr>
 <td>exclusionStatusFlag</td>
 <td>Allows D or null.
-<br>Example: exclusionStatusFlag=D</td>
+<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -26371,6 +26372,6 @@ Disclaimer:
 | 10/15/2020 | v2.0 | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. <br><br> * Updated the description for the entityEFTIndicator parameter. |
 | 12/07/2020 | v2.1 | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.|
 | 01/22/2021 | v2.2 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive.<br><br> * Added note to the noPublicDisplayFlag field in the response.<br><br>  * Added the Beta V2 endpoints. |
-| 02/02/2021 | V2.2 | * Added message to includeSections that user can provide "All". |
+| 02/02/2021 | V2.2 | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition. |
 
 <p><small><a href="#">Back to top</a></small></p>
