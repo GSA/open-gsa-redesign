@@ -16,7 +16,7 @@ The Entity Management API will allow users to request Public Entity Information 
 * It returns synchronous responses directly in the browser.
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
-* The following characters are not allowed to be sent in the API request: + - = && || ! ( ) { } [ ] ^ ~ * ? : /
+* The following characters are not allowed to be sent in the API request: + - = && \|\| ! ( ) { } [ ] ^ ~ * ? : /
 
 **Additional Features of the Entity Management API:** It can serve as an Extract API with the addition of "format" parameter in the request. Following are the key features of the Entity Management Extract API:
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
