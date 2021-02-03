@@ -149,7 +149,7 @@ Examples: 04/19/2019; 11/15/2018; 03/2019
 <tr>
 <td>version</td>
 <td>Allows users to select the file they wish to download by version.<br />
-Default value: Most recent version, depending on fileType<br />
+Default value: Most recent version, depending on fileType and/or sensitivity<br />
 Examples: V1; V2; V3
 </td>
 </tr>
