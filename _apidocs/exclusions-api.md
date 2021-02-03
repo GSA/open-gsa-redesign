@@ -68,15 +68,15 @@ Utilizing the Exclusion API as an extract:
 | Parameter Name | Description | Applicable Versions |
 | ---- | ----------- | ----------- |
 | classification | Allows a string (Individual, Firm, Vessel, Special Entity Designation, null).<br><br> Example: 'classification=Firm' |  v1<br>v2 |
-| exclusionName | Allows partial text or a complete text. <br><br> Example: 'exclusionName=SAM' |  v1<br>v2 |
-| exclusionType | Allows a string (IP, IC, PR, VE,  Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction, Voluntary Exclusion).<br><br> Example: 'exclusionType=IP' |  v1<br>v2 |
+| exclusionName | Allows partial text or a complete text.<br><br> When not used inside the 'q' parameter, it will apply the AND operator if a multi-text value is provided in any order and in any case. <br><br> Example: 'exclusionName=SAM' |  v1<br>v2 |
+| exclusionType | Allows a string (IP, IC, PR, VE,  Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction, Voluntary Exclusion).<br><br> When not used inside the 'q' parameter, it will apply the AND operator if a multi-text value is provided in any order and in any case.<br><br> Example: 'exclusionType=IP' |  v1<br>v2 |
 | exclusionProgram | Allows a string (RE, NP, PR, Reciprocal, Non-Procurement, Procurement).<br><br> Example: 'exclusionProgram=Y' |  v1<br>v2 |
 | stateProvince | Allows a string.<br><br> Example: 'stateProvince=AR' |  v1<br>v2 |
 | country  | Allows a string.<br><br> Example: 'country=USA' |  v1<br>v2 |
 | zipCode  | Allows a string.<br><br> Example: 'zipCode=20171' |  v1<br>v2 |
 | ueiDUNS | Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652, 047795005, null).<br><br> Example: 'ueiDUNS=9725565' |  v1<br>v2 |
 | ueiSAM | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. <br><br> Example: ueiSAM=025114695AST |  v1<br>v2 |
-| excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> Example: 'excludingAgencyCode=AF' |  v1<br>v2 |
+| excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> When not used inside the 'q' parameter, it will apply the AND operator if a multi-text value is provided in any order and in any case.<br><br> Example: 'excludingAgencyCode=AF' |  v1<br>v2 |
 | excludingAgencyName | Allows a string (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null).<br><br> Example: 'excludingAgencyName=FEDERAL' |  v1<br>v2 |
 | ctCode | Allows a string.<br><br> Example: 'ctCode=ZZ' |  v1<br>v2 |
 | activationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'activationDate=01/01/2019', 'activationDate=[01/01/2019,05/29/2019]' |  v1<br>v2 |
@@ -91,7 +91,7 @@ Utilizing the Exclusion API as an extract:
 | size  | Retrieves Records size per page.<br><br> Example: 'size=1' |  v1<br>v2 |
 | includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'includeSections=exclusionOtherInformation,exclusionDetails' |  v1<br>v2 |
 | format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'format=csv' |  v1<br>v2 |
-| emailId | User email Id for notification message .<br><br> Example: 'emailId=test@gsa.gov' |  v1<br>v2 |
+| emailId | Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.<br>Example: emailId=test@gsa.gov<br>Applicable to non-SAM registrants.<br><br>Alpha:<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.<br>Example: emailId= Yes<br>Applicable to non-SAM registrants. |  v1<br>v2 |
 | recordStatus | Allows a string (Active, Inactive) <br><br> Example: 'recordStatus=Active' | v1<br>v2 |
 
 **Expected Result**
@@ -446,6 +446,6 @@ Date | Version | Description
 10/15/2020 | v1.8 | * Updated the Beta V1 endpoint
 12/07/2020 | v1.9 | * Updated moreLocations for API response. <br><br> * Updated vesselDetails --> secondaryAddress to mention v2 Beta only. <br><br> * Added exclusionSecondaryAddress to API response.<br><br> * Changed exclusionAddress to exclusionAddress/exclusionPrimaryAddress in the API response.
 01/22/2021 | v2.0 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Added Beta V2 endpoint.
-
+02/03/2021 | V2.1 | * Updated description for emailId parameter. <br><br> * Updated description for exclusionName, exclusionsType, and excludingAgencyName parameters.
 
 <p><small><a href="#">Back to top</a></small></p>
