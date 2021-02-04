@@ -447,6 +447,6 @@ Date | Version | Description
 10/15/2020 | v1.8 | * Updated the Beta V1 endpoint
 12/07/2020 | v1.9 | * Updated moreLocations for API response. <br><br> * Updated vesselDetails --> secondaryAddress to mention v2 Beta only. <br><br> * Added exclusionSecondaryAddress to API response.<br><br> * Changed exclusionAddress to exclusionAddress/exclusionPrimaryAddress in the API response.
 01/22/2021 | v2.0 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Added Beta V2 endpoint.
-02/03/2021 | V2.1 | * Updated description for emailId parameter. <br><br> * Updated parameter definitions and examples.<br><br> * Added message about non-allowable characters.<br><br> * removed tin and ssn parameters.<br><br> * Added addressLine1 and addressLine2 parameters.
+02/05/2021 | V2.1 | * Updated description for emailId parameter. <br><br> * Updated parameter definitions and examples.<br><br> * Added message about non-allowable characters.<br><br> * removed tin and ssn parameters.<br><br> * Added addressLine1 and addressLine2 parameters.
 
 <p><small><a href="#">Back to top</a></small></p>
