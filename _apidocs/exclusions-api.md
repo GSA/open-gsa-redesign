@@ -8,10 +8,11 @@ The Exclusions API will allow users to request Public Exclusion Information base
 The response will be provided in the JSON format in a paginated manner.
 
 **Key Features of the Exclusion API:**
-* It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
+* It offers several optional search parameters, filtering by sections, AND (&), OR (~), NOT (!) conditions and a free text search q to obtain the desired data.
 * It returns synchronous responses directly in the browser.
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
+* The following characters are not allowed to be sent in the parameter values with the API request: & \| { } ^ \
 
 **Additional Features of the Exclusion API:** It can serve as an Extract API with the addition of “format” parameter in the request. Following are the key features of the Exclusion Extract API:
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
@@ -446,6 +447,6 @@ Date | Version | Description
 10/15/2020 | v1.8 | * Updated the Beta V1 endpoint
 12/07/2020 | v1.9 | * Updated moreLocations for API response. <br><br> * Updated vesselDetails --> secondaryAddress to mention v2 Beta only. <br><br> * Added exclusionSecondaryAddress to API response.<br><br> * Changed exclusionAddress to exclusionAddress/exclusionPrimaryAddress in the API response.
 01/22/2021 | v2.0 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Added Beta V2 endpoint.
-02/03/2021 | V2.1 | * Updated description for emailId parameter. <br><br> * Updated description for exclusionName, exclusionsType, exclusionProgram and excludingAgencyName parameters.
+02/03/2021 | V2.1 | * Updated description for emailId parameter. <br><br> * Updated description for exclusionName, exclusionsType, exclusionProgram and excludingAgencyName parameters.<br><br> * Added message about non-allowable characters.
 
 <p><small><a href="#">Back to top</a></small></p>
