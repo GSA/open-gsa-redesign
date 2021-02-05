@@ -177,10 +177,10 @@ Option 2: Using fileType and other parameters.  If you choose not to use the fil
 Monthly File, Version 1, April 2019 (fileName):<br>
 https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileName=SAM_PUBLIC_MONTHLY_20190407.ZIP<br>
 
-Monthly File,Version 1, April 2019 (parameter):<br>
+Monthly File, Version 1, April 2019 (parameter):<br>
 https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=PUBLIC&frequency=MONTHLY&date=04/2019&version=V1<br>
 
-Monthly File (UTF-8),Version 1, April 2019 (parameter):<br>
+Monthly File (UTF-8), Version 1, April 2019 (parameter):<br>
 https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=PUBLIC&frequency=MONTHLY&date=04/2019&charset=UTF8&version=V1<br>
 
 **Expected Result:**<br>
