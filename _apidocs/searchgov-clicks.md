@@ -5,13 +5,13 @@ banner-heading: Search.gov Clicks API
 
 ### Click Tracking API Instructions
 
-The click tracking API endpoint lets you send in click events, which allows you to see click data on your [Admin Click Analytics](http://localhost:3000/sites/6/clicks/new) page. We also use this click data to strengthen the search results algorithm for your site.
+The click tracking API endpoint lets you send in click events, which allows you to see click data on your Admin Click Analytics page. We also use this click data to strengthen the search results algorithm for your site.
 
 Read more about click tracking [here](https://search.gov/manual/clicks.html). This API uses the **post** method for click tracking.
 
 ## Getting Started
 
-The endpoint is `https://search.usa.gov/api/v2/clicks`
+The endpoint is `https://api.gsa.gov/technology/searchgov/v2/clicks/`
 
 Parameters include:
 * url
@@ -36,7 +36,7 @@ Please note that we only support this particular content type
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/openapi.yml">Open API specification file for the Results API</a>
+<a href="v2/openapi.yml">Open API specification file for the Clicks API</a>
 
 
 
@@ -70,6 +70,11 @@ All parameters below are required unless noted otherwise. As a reminder, all par
 ​
 
 ## Terms of Service
-
 ​
-By using this API, you agree to our [Terms of Service](https://search.gov/tos).
+By using this API, you agree to our [Terms of Service](https://search.gov/tos.html).
+
+## Contact Us
+
+Please never hesitate to reach out! [Email the Search.gov team](mailto:search@support.digitalgov.gov). 
+
+<p><small><a href="#">Back to top</a></small></p>
