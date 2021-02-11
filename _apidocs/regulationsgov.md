@@ -9,14 +9,8 @@ banner-heading: Regulations.gov API
 <!-- Beta status alert -->
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
-     <strong>
-       This project is in BETA
-     </strong>
      <p class="usa-alert-text">
-       The current comment API is still being tested and in beta phase. 
-       The ability for API key holders to submit comments will be temporarily deactivated until the beta phase is complete. 
-       During the Beta period, breaking changes may be made without warning.
-       Have feedback or questions? <a href="https://beta.regulations.gov/support">Please let us know</a>!
+       The current API (version 3) will be replaced with the new API (version 4) on February 18, 2021. To help you prepare for your transition, we have made documentation for version 4 of our Public API available at <a href="https://open.gsa.gov/api/regulations.gov">https://open.gsa.gov/api/regulations.gov</a>. API users should plan to transition to the new API by March 11, 2021, when version 3 will be decommissioned.
      </p>
    </div>
  </div>
