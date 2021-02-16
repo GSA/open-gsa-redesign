@@ -6,16 +6,6 @@ banner-heading: Regulations.gov API
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
 
-<!-- Beta status alert -->
-<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
-   <div class="usa-alert-body">
-     <p class="usa-alert-text">
-       The current API (version 3) will be replaced with the new API (version 4) on February 18, 2021. To help you prepare for your transition, we have made documentation for version 4 of our Public API available at <a href="https://open.gsa.gov/api/regulations.gov">https://open.gsa.gov/api/regulations.gov</a>. API users should plan to transition to the new API by March 11, 2021, when version 3 will be decommissioned.
-     </p>
-   </div>
- </div>
-<!-- end Beta status alert -->
-
 
 ## Overview
 
@@ -99,6 +89,8 @@ If you want to use commenting API, you MUST use the form below to register for a
 </script>
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
+
+In order to enable commenting, please contact [erulemaking@gsa.gov](mailto:erulemaking@gsa.gov) and provide the first 5 digits of your API key and the email address used to sign up for the key. You will be notified when your API key is ready for posting comments.
 
 After registration, you will need to provide this API key in the `X-Api-Key` HTTP header with every API request.
 
