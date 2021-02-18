@@ -546,7 +546,7 @@ Users should be able to access our staging API at https://api-staging.regulation
 
 #### I have an API key. How many requests can I make per hour and how do I know I am about to reach my request limit?
 
-Please review https://api.data.gov/docs/rate-limits/ for information on rate limits.
+Please review https://api.data.gov/docs/rate-limits/ for information on rate limits. Commenting API is restricted to 500 requests per hour.
 
 ## API Calls
 
