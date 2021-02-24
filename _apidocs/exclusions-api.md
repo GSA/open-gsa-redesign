@@ -8,13 +8,14 @@ The Exclusions API will allow users to request Public Exclusion Information base
 The response will be provided in the JSON format in a paginated manner.
 
 **Key Features of the Exclusion API:**
-* It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
+* It offers several optional search parameters, filtering by sections, AND (&), OR (~), NOT (!), WILD CARD(*) conditions and a free text search q to obtain the desired data. Please note that q does not support null (''), not-null (!'') or not (!) searches. Additionally, q accepts only AND, OR, :, =, * (denotes wild card) operators.
 * It returns synchronous responses directly in the browser.
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
+* The following characters are not allowed to be sent in the parameter values with the API request: & \| { } ^ \
 
 **Additional Features of the Exclusion API:** It can serve as an Extract API with the addition of “format” parameter in the request. Following are the key features of the Exclusion Extract API:
-* It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
+* It offers several optional search parameters, filtering by sections, AND (&), OR (~), NOT (!), WILD CARD(*) conditions and a free text search q to obtain the desired data. Please note that q does not support null (''), not-null (!'') or not (!) searches. Additionally, q accepts only AND, OR, :, =, * (denotes wild card) operators.
 * It returns asynchronous responses by sending file downloadable links in the browser and in the user emails.
 * It returns data in the JSON or CSV format as selected by the user.
 * It can return only the first 1,000,000 records.
@@ -67,32 +68,32 @@ Utilizing the Exclusion API as an extract:
 
 | Parameter Name | Description | Applicable Versions |
 | ---- | ----------- | ----------- |
-| classification | Allows a string (Individual, Firm, Vessel, Special Entity Designation, null).<br><br> Example: 'classification=Firm' |  v1<br>v2 |
-| exclusionName | Allows partial text or a complete text. <br><br> Example: 'exclusionName=SAM' |  v1<br>v2 |
-| exclusionType | Allows a string (IP, IC, PR, VE,  Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction, Voluntary Exclusion).<br><br> Example: 'exclusionType=IP' |  v1<br>v2 |
-| exclusionProgram | Allows a string (RE, NP, PR, Reciprocal, Non-Procurement, Procurement).<br><br> Example: 'exclusionProgram=Y' |  v1<br>v2 |
-| stateProvince | Allows a string.<br><br> Example: 'stateProvince=AR' |  v1<br>v2 |
-| country  | Allows a string.<br><br> Example: 'country=USA' |  v1<br>v2 |
-| zipCode  | Allows a string.<br><br> Example: 'zipCode=20171' |  v1<br>v2 |
-| ueiDUNS | Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652, 047795005, null).<br><br> Example: 'ueiDUNS=9725565' |  v1<br>v2 |
-| ueiSAM | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. <br><br> Example: ueiSAM=025114695AST |  v1<br>v2 |
-| excludingAgencyCode | Allows a string (AF, DOJ, FEMA-IOD, null).<br><br> Example: 'excludingAgencyCode=AF' |  v1<br>v2 |
-| excludingAgencyName | Allows a string (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null).<br><br> Example: 'excludingAgencyName=FEDERAL' |  v1<br>v2 |
-| ctCode | Allows a string.<br><br> Example: 'ctCode=ZZ' |  v1<br>v2 |
+| classification | Allows a partial text or a complete text (Individual, Firm, Vessel, Special Entity Designation).<br><br> This parameter can be used inside the 'q' parameter. <br><br> Example: 'classification=Firm', 'classification=!INDIVIDUAL', 'classification=[Vessel~Special]', 'q=((classification:Vessel) OR (classification:Special))' |  v1<br>v2 |
+| exclusionName | Allows a partial text or a complete text.<br><br> This parameter must not be used inside the 'q' parameter.<br><br> This parameter accepts multi-text values in any order and in any case, and will apply the AND operator between the texts.<br><br> Examples: 'exclusionName=J Roy', 'exclusionName=ROY j' |  v1<br>v2 |
+| exclusionType | Allows a partial text or a complete text (a string).<br><br> Allowable values are: Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction and Voluntary Exclusion.<br><br> This parameter can be used inside the 'q' parameter. When not used inside the 'q' parameter, this parameter will apply the AND operator if a multi-text value is provided in any order and in any case.<br><br> Examples: 'q=exclusionType:Ineligible (Proceedings Pending)', 'exclusionType=Ineligible PENDING', 'exclusionType=[Pending~Voluntary]' |  v1<br>v2 |
+| exclusionProgram | Allows a complete text (a string).<br><br> Allowable values are: Reciprocal, NonProcurement and Procurement.<br><br> This parameter can be used inside the 'q' parameter. <br><br> Examples: 'q=((exclusionProgram:Reciprocal) OR (exclusionProgram:Procurement))', 'exclusionProgram=[NonProcurement~RECIPROCAL]', 'exclusionProgram=!NonProcurement'|  v1<br>v2 |
+| addressLine1  | Allows a partial text, a complete text and null.<br><br> This parameter must not be used inside the 'q' parameter. <br><br> Examples: 'addressLine1=""', 'addressLine1="7th Floor, Buraengdang Building 530-14"'<br><br> This parameter is available in Alpha but will not be available in Beta until SAM Integration. |  v1<br>v2 |
+| addressLine2  | Allows a partial text, a complete text and null.<br><br> This parameter must not be used inside the 'q' parameter. <br><br> Examples: 'addressLine2=""', 'addressLine2="Dapsipri, 5 Dong, Dongdaemun-K"'<br><br> This parameter is available in Alpha but will not be available in Beta until SAM Integration. |  v1<br>v2 |
+| stateProvince | Allows 2-character codes for the USA, names for foreign countries and null (a string).<br><br> Examples: 'stateProvince=AR', 'stateProvince=[VA~MICHOACÁN]', 'stateProvince=""' |  v1<br>v2 |
+| country  | Allows 3-character codes, numerical values and null (a string).<br><br> Examples: 'country=USA' 'country=[RUS~292~mex]', 'country=!""', 'q=((country:RUS) OR (country:292) OR (country:mex))' |  v1<br>v2 |
+| zipCode  | Allows 5-digit values for the USA, any value as it was provided for foreign countries and null (a string).<br><br> Example: 'zipCode=20171', 'zipCode=[901-2132~V3M 5P8~C.P. 44890]', 'zipCode=""', 'q=((zipCode:901-2132) OR (zipCode:20147))' |  v1<br>v2 |
+| ueiDUNS | Denotes Unique Entity Identifier DUNS.<br><br> Allows any complete value as it was provided, null and also wildcard searches.<br><br> Examples: 'ueiDUNS=9725565', 'ueiDUNS=[001*~""]', 'q=((ueiDUNS:9725565) OR (ueiDUNS:047795005))' |  v1<br>v2 |
+| ueiSAM | Denotes Unique Entity Identifier SAM.<br><br> Allows 12-character values, null and also wildcard searches.<br><br> Examples: 'ueiSAM=""', 'ueiSAM=!""', 'ueiSAM=P*X*1', 'q=((ueiSAM:PMC9YQMXJZU1) OR (ueiSAM:PG4XZ77WRC21))' |  v1<br>v2 |
+| excludingAgencyCode | Allows a partial text, a complete text and null (a string).<br><br> Examples: 'excludingAgencyCode=ICE', 'excludingAgencyCode=DHS-ICE', 'excludingAgencyCode=[AF~HUD~""]', 'q=((excludingAgencyCode:AF) OR (excludingAgencyCode:HUD))' |  v1<br>v2 |
+| excludingAgencyName | Allows a partial text, a complete text and null (a string).<br><br> This parameter can be used inside the 'q' parameter. When not used inside the 'q' parameter, this parameter will apply the AND operator if a multi-text value is provided in any order and in any case<br><br> Examples: 'excludingAgencyName=Of URBAN housing',  'excludingAgencyName=[Geological~Navy]', q=((excludingAgencyName:Geological) OR (excludingAgencyName:Navy)) |  v1<br>v2 |
+| ctCode | Allows a complete text, null and also wild card searches (a string).<br><br> Examples: 'ctCode=*SDN*', 'ctCode=[AA~""], 'q=((ctCode:AA) OR (ctCode:03-SDN-01))' |  v1<br>v2 |
 | activationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'activationDate=01/01/2019', 'activationDate=[01/01/2019,05/29/2019]' |  v1<br>v2 |
 | creationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'creationDate=01/01/2019', 'creationDate=[01/01/2019,05/29/2019]' |  v1<br>v2 |
 | updateDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br>  Examples: 'updateDate=01/01/2019', 'updateDate=[01/01/2019,05/29/2019]'' |  v1<br>v2 |
 | terminationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'terminationDate=01/01/2019', 'terminationDate=[01/01/2019,05/29/2019]' |  v1<br>v2 |
-| cageCode | Allows a string.<br><br> Example: 'cageCode=0Y5L9' |  v1<br>v2 |
-| npi  | Allows a string.<br><br> Example: 'npi=1053373266' |  v1<br>v2 |
-| ssn  | Allows a string.<br><br> Example: 'ssn=XXXXXXXXX' |  v1<br>v2 |
-| tin  | Allows a string.<br><br> Example: 'tin=XXXXX' |  v1<br>v2 |
-| page  | Page number.<br><br> Example: 'page=0' |  v1<br>v2 |
-| size  | Retrieves Records size per page.<br><br> Example: 'size=1' |  v1<br>v2 |
+| cageCode | Allows a complete value, null and also wild card searches (a string).<br><br> Examples: 'cageCode=0*0', 'cageCode=[0XLE0~1CM51~""]', 'q=((cageCode:0XLE0) OR (cageCode:1CM51))' |  v1<br>v2 |
+| npi  | Allows 1234567890 (this is masked data) and null (a string).<br><br> Examples: 'npi=1234567890', 'npi=""', 'npi=!""' |  v1<br>v2 |
+| recordStatus | Allows a complete text (a string).<br><br> Allowable values are: Active, Inactive <br><br> Examples: 'recordStatus=Active', 'recordStatus=active~inactive' | v1<br>v2 |
+| page  | Denotes a page number.<br><br> Allowable values are 0 to 999.<br><br> Example: 'page=0' |  v1<br>v2 |
+| size  | Denotes the number of records returned per page.<br><br> Allowable values are 1 to 10.<br><br> Example: 'size=1' |  v1<br>v2 |
 | includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'includeSections=exclusionOtherInformation,exclusionDetails' |  v1<br>v2 |
 | format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'format=csv' |  v1<br>v2 |
-| emailId | User email Id for notification message .<br><br> Example: 'emailId=test@gsa.gov' |  v1<br>v2 |
-| recordStatus | Allows a string (Active, Inactive) <br><br> Example: 'recordStatus=Active' | v1<br>v2 |
+| emailId | Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.<br>Example: emailId=test@gsa.gov<br>Applicable to non-SAM registrants.<br><br>Alpha:<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.<br>Example: emailId= Yes<br>Applicable to non-SAM registrants. |  v1<br>v2 |
 
 **Expected Result**
 
@@ -446,6 +447,6 @@ Date | Version | Description
 10/15/2020 | v1.8 | * Updated the Beta V1 endpoint
 12/07/2020 | v1.9 | * Updated moreLocations for API response. <br><br> * Updated vesselDetails --> secondaryAddress to mention v2 Beta only. <br><br> * Added exclusionSecondaryAddress to API response.<br><br> * Changed exclusionAddress to exclusionAddress/exclusionPrimaryAddress in the API response.
 01/22/2021 | v2.0 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Added Beta V2 endpoint.
-
+02/05/2021 | V2.1 | * Updated description for emailId parameter. <br><br> * Updated parameter definitions and examples.<br><br> * Added message about non-allowable characters.<br><br> * Removed tin and ssn parameters.<br><br> * Added addressLine1 and addressLine2 parameters.
 
 <p><small><a href="#">Back to top</a></small></p>

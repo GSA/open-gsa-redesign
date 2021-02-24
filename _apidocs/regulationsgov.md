@@ -6,23 +6,6 @@ banner-heading: Regulations.gov API
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
 
-<!-- Beta status alert -->
-<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
-   <div class="usa-alert-body">
-     <strong>
-       This project is in BETA
-     </strong>
-     <p class="usa-alert-text">
-       The current comment API is still being tested and in beta phase. 
-       The ability for API key holders to submit comments will be temporarily deactivated until the beta phase is complete. 
-       During the Beta period, breaking changes may be made without warning.
-       Have feedback or questions? <a href="https://beta.regulations.gov/support">Please let us know</a>!
-     </p>
-   </div>
- </div>
-<!-- end Beta status alert -->
-
-
 ## Overview
 
 When Congress passes laws, federal agencies implement those laws through regulations. These regulations vary in subject, but include everything from ensuring water is safe to drink to setting health care standards. Regulations.gov is the place where users can find and comment on regulations. The APIs allow for users to find creative ways to present regulatory data. To learn more about the program visit the [About Us](https://beta.regulations.gov/about) page.
@@ -105,6 +88,8 @@ If you want to use commenting API, you MUST use the form below to register for a
 </script>
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
+
+In order to enable commenting, please contact [erulemaking@gsa.gov](mailto:erulemaking@gsa.gov) and provide the first 5 digits of your API key and the email address used to sign up for the key. You will be notified when your API key is ready for posting comments.
 
 After registration, you will need to provide this API key in the `X-Api-Key` HTTP header with every API request.
 
@@ -561,7 +546,7 @@ Users should be able to access our staging API at https://api-staging.regulation
 
 #### I have an API key. How many requests can I make per hour and how do I know I am about to reach my request limit?
 
-Please review https://api.data.gov/docs/rate-limits/ for information on rate limits.
+Please review https://api.data.gov/docs/rate-limits/ for information on rate limits. Commenting API is restricted to 500 requests per hour.
 
 ## API Calls
 
