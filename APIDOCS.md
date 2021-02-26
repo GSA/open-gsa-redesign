@@ -4,40 +4,44 @@ GSA teams can host their API documentation directly on this site if they prefer.
 
 A live example of this is available here:
 - Without the Swagger UI interactive documentation: https://open.gsa.gov/api/sample-api-basic/
-- With  the Swagger UI interactive documentation: https://open.gsa.gov/api/sample-api/
+- With the Swagger UI interactive documentation: https://open.gsa.gov/api/sample-api/
+
+The API documentation on open.gsa.gov is managed by the Cloud Integration Shared Services (CISS) team.
 
 ## Steps to add you API documentation to the GSA API Directory
 
-1. Contact cto@gsa.gov and ask for access to manage API docs, sharing your github ID. (Your GitHub ID will have to be in the GSA org.)
+1. [Contact CISS](mailto:api.ciss@gsa.gov) and ask for access to manage API docs, sharing your GitHub ID. Your GitHub ID will have to be in the GSA GitHub organization; follow the instructions in the [GitHub Administration repository](https://github.com/GSA/GitHub-Administration) if you haven't done so yet.
 
 2. Create a branch of the site from the `master` branch. Naming convention for new branch: `apidocs-apiname-YYYYMMDD` (replace `apiname` with the name of your API without spaces)
 
-3A. If you want to use the Swagger UI for interactive documentation
-In the new branch:
-* Copy the file _apidocs/sample-api.md to a file named _apidocs/apiname.md 
-* Create a folder _apidocs/apiname/v1/ (or the correct version).
-* In this new folder, add the OpenAPI specification file, with the name openapi.yaml (if it is OpenAPI v.3) or openapi.json (if it is OpenAPI or Swagger v.2)
-* In the new apinamed.md file, modify the `url: "v1/openapi.yaml",` entry to match the name of your OpenAPI specification file.
+3. Depending on whether or not you plan to use Swagger UI:
 
-3B. If you do _not_ want to use the Swagger UI for interactive documentation
-In the new branch:
-* Copy the file _apidocs/sample-api-basic.md to a file named _apidocs/apiname.md 
-* Create a folder _apidocs/apiname/v1/ (or the correct version).
-* In this new folder, add the OpenAPI specification file, with the name openapi.yaml (if it is OpenAPI v.3) or openapi.json (if it is OpenAPI or Swagger v.2)
+    * If you want to use the Swagger UI for interactive documentation, then in the new branch:
+
+        1. Copy the file _apidocs/sample-api.md to a file named _apidocs/apiname.md 
+        2. Create a folder _apidocs/apiname/v1/ (or the correct version).
+        3. In this new folder, add the OpenAPI specification file, with the name openapi.yaml (if it is OpenAPI v.3) or openapi.json (if it is OpenAPI or Swagger v.2)
+        4. In the new apinamed.md file, modify the `url: "v1/openapi.yaml",` entry to match the name of your OpenAPI specification file.
+
+    * If you do _not_ want to use the Swagger UI for interactive documentation, then in the new branch:
+
+        1. Copy the file _apidocs/sample-api-basic.md to a file named _apidocs/apiname.md 
+        2. Create a folder _apidocs/apiname/v1/ (or the correct version).
+        3. In this new folder, add the OpenAPI specification file, with the name openapi.yaml (if it is OpenAPI v.3) or openapi.json (if it is OpenAPI or Swagger v.2)
  
-  Note: the navigation bar is generated from the headings in the markdown file, so those can be customized to meet your needs.
+    Note: the side navigation bar is automatically generated from the headings in the markdown file. You can customize the headings, and your customizations will be reflected in the navigation bar.
 
-4. Edit the apiname.md file with all of the information about your API. When you commit your changes to your repo in github, a preview will be available of the site (with your doco) at this URL after 5 min or so for the preview to build:
+4. Edit the `apiname.md` file with all of the information about your API. When you commit your changes to your repo in GitHub, a preview will be available of the site (with your doco) at this URL after waiting 5 min or so for the preview to build:
 
-     https://federalist-ecc58765-2903-48b3-920c-5d93318ad084.app.cloud.gov/preview/gsa/open-gsa-redesign/[branch-name]/api/[apiname]/
+    https://federalist-ecc58765-2903-48b3-920c-5d93318ad084.app.cloud.gov/preview/gsa/open-gsa-redesign/YOUR_BRANCH_NAME/api/YOUR_API_NAME/ (insert your branch name and API name where indicated)
+     
+5. When you are ready to publish in the API directory, [open a pull request (PR)](https://github.com/GSA/open-gsa-redesign/pulls) to merge your branch with the `master` branch. Email the [CISS API team](mailto:api.ciss@gsa.gov) with your PR number or a link to your PR, informing them that your branch is ready to be merged.
 
-5. When you are ready to publish in the API directory, submit a pull request to merge your branch with the `master` branch. Post a comment with the preview URL from step 4 and @mention Ryan Day or Jeff Fredrickson from the CTO team. 
+6. The CISS team will merge your branch with `master`, resulting in your doco going to the live website. At this point, you will see your API doco at: https://open.gsa.gov/api/YOUR_API_NAME/
 
-6. The CTO team will merge your branch with master, publishing your doco.  At this point, you will see your API doco at: https://open.gsa.gov/api/apiname/
+    You can also ask the CISS team to add your API to the `/_data/api-list.yml` file, which will add your API to the directory page: https://open.gsa.gov/api/
 
-You can also ask the CTO team to update the /_data/api-list.yml, which will add your API to the directory page: https://open.gsa.gov/api/
-
-## Adding swagger UI to your existing API documentation (with Try It Out functionality)
+## Adding Swagger UI to your existing API documentation (with Try It Out functionality)
 
 If you already host your documentation on this site, and you'd like to add the Swagger UI, add this code above the first section:
 
@@ -45,7 +49,6 @@ If you already host your documentation on this site, and you'd like to add the S
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
 ```
-
 
 Next, add this section following the section with the OpenAPI specification:
 
@@ -63,7 +66,7 @@ Next, add this section following the section with the OpenAPI specification:
 <p><small><a href="#">Back to top</a></small></p>
 ```
 
-## Adding swagger UI to your existing API documentation (no Try It Out functionality)
+## Adding Swagger UI to your existing API documentation (no Try It Out functionality)
 
 If you already host your documentation on this site, and you'd like to add the Swagger UI, add this code above the first section:
 
@@ -87,5 +90,3 @@ Next, this section following the section with the OpenAPI specification:
 
 <p><small><a href="#">Back to top</a></small></p>
 ```
-
-

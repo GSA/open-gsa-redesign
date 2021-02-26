@@ -6,23 +6,6 @@ banner-heading: Regulations.gov API
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
 
-<!-- Beta status alert -->
-<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
-   <div class="usa-alert-body">
-     <strong>
-       This project is in BETA
-     </strong>
-     <p class="usa-alert-text">
-       The current comment API is still being tested and in beta phase. 
-       The ability for API key holders to submit comments will be temporarily deactivated until the beta phase is complete. 
-       During the Beta period, breaking changes may be made without warning.
-       Have feedback or questions? <a href="https://beta.regulations.gov/support">Please let us know</a>!
-     </p>
-   </div>
- </div>
-<!-- end Beta status alert -->
-
-
 ## Overview
 
 When Congress passes laws, federal agencies implement those laws through regulations. These regulations vary in subject, but include everything from ensuring water is safe to drink to setting health care standards. Regulations.gov is the place where users can find and comment on regulations. The APIs allow for users to find creative ways to present regulatory data. To learn more about the program visit the [About Us](https://beta.regulations.gov/about) page.
@@ -105,6 +88,8 @@ If you want to use commenting API, you MUST use the form below to register for a
 </script>
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
+
+In order to enable commenting, please contact [erulemaking@gsa.gov](mailto:erulemaking@gsa.gov) and provide the first 5 digits of your API key and the email address used to sign up for the key. You will be notified when your API key is ready for posting comments.
 
 After registration, you will need to provide this API key in the `X-Api-Key` HTTP header with every API request.
 
@@ -270,28 +255,58 @@ Here are few example queries for searching comments:
   https://api.regulations.gov/v4/comments?sort=-postedDate&api_key=DEMO_KEY
   ```
   
-* Retrieve all comments for a docket:
+* Retrieve all comments for a docket where number of comments is less than 5000:
   
   * Step 1: Get all documents for the docketId FAA-2018-1084: 
     ```
     https://api.regulations.gov/v4/documents?filter[docketId]=FAA-2018-1084&api_key=DEMO_KEY
     ```
-    It returns two documents, FAA-2018-1084-0001 and FAA-2018-1084-0002.
-
-  * Step 2: Get details for each document:
-    ```
-    https://api.regulations.gov/v4/documents/FAA-2018-1084-0001?api_key=DEMO_KEY
-    ```
-    Response for the above request includes an attribute objectId and its set to 0900006483a6cba3.
+    It returns two documents, FAA-2018-1084-0001 and FAA-2018-1084-0002. Each document metadata includes an objectId attribute.
   
-  * Step 3: Get all comments for each document using objectId:
+  * Step 2: Get all comments for each document using objectId:
     ```
-    https://api-staging.regulations.gov/v4/comments?filter[commentOnId]=0900006483a6cba3
+    https://api.regulations.gov/v4/comments?filter[commentOnId]=0900006483a6cba3&api_key=DEMO_KEY
     ```
     The above request returns a list of comments for document FAA-2018-1084-0001.
     
-    Note: Step 2 and Step 3 should be repeated for FAA-2018-1084-0002 in the above example.
+    Note: Step 2 should be repeated for FAA-2018-1084-0002 in the above example.
+
+* Retrieve all comments for a docket where number of comments is greater than 5000:
+  
+  * Step 1: Get all documents for the docketId EOIR-2020-0003: 
+    ```
+    https://api.regulations.gov/v4/documents?filter[docketId]=EOIR-2020-0003&api_key=DEMO_KEY
+    ```
+    The above query returns five documents where four documents are Supporting & Related Material documents and one document is a Proposed Rule. Response for the above request includes an attribute objectId for each document and its set to 09000064846eebaf for the Proposed Rule, EOIR-2020-0003-0001.
+      
+  * Step 2: Get all comments for each document using objectId:
+    ```
+    https://api.regulations.gov/v4/comments?filter[commentOnId]=09000064846eebaf&api_key=DEMO_KEY
+    ```
+    The above request returns a list of comments for document EOIR-2020-0003-0001, the only Proposed Rule in the docket. 
+    totalElements under meta attribute shows that this document has total 88,061 comments. 
     
+    Note: Step 2 should be repeated for each document. 
+    
+  * Step 3: Page through the first set of 5000 documents:
+    ```
+    https://api.regulations.gov/v4/comments?filter[commentOnId]=09000064846eebaf&page[size]=250&page[number]=N&sort=lastModifiedDate,documentId&api_key=DEMO_KEY
+    ```   
+    The first 5000 documents can be retrieved using the query above and paging through the results where N is the page number between 1 and 20. 
+    Please note we are sorting the results by lastModifiedDate to ensure we can filter our data by lastModifiedDate later.
+    On the last page of this set, please note the lastModifiedDate of the last document. In our case, EOIR-2020-0003-5548 is the last document on page 20 and the lastModifiedDate attribute of the document is 2020-08-10T15:58:52Z. We will be filtering the data in the next step using this date.
+    
+  * Step 4: Page through the next set of 5000 documents:
+    ```
+    https://api.regulations.gov/v4/comments?filter[commentOnId]=09000064846eebaf&filter[lastModifiedDate][ge]=2020-08-10 11:58:52&page[size]=250&page[number]=N&sort=lastModifiedDate,documentId&api_key=DEMO_KEY
+    ```
+    The next 5000 documents can be retrieved using the query above and paging through the results where N is the page number between 1 and 20.
+    
+    The lastModifiedDate attribute of the last document in the first set (Step 3) was `2020-08-10T15:58:52Z`. This date translates to `2020-08-10 11:58:52` in Eastern time. Running the above query should return all documents where lastModifiedDate is greater than or equal to `2020-08-10T15:58:52Z`. Its important to note that we are running a "greater than or equal to" query to ensure we do not miss any documents where last modified date is `2020-08-10T15:58:52Z`.
+
+    On the last page of this set, please note the lastModifiedDate of the last document and repeat.
+   
+    Note: Step 4 should be repeated for as many times as needed to retrieve all 88,061 comments.
 
 #### Detailed information for a single comment
 
@@ -511,7 +526,7 @@ The new `/v4/documents` carries a withdrawn field. This is a boolean field. If s
 
 #### There are strict pagination limits in v4. How do I retrieve all comments in a docket posted on the same day if the number of comments is greater than 2500?
 
-We have this use case under review, and we will be updating our API to accommodate the use case before v3 retirement.
+We have added an example that shows how to retrieve more than 5000 comments on a docket. Please see the example section.
 
 #### I submitted a comment, but I am unable to find it on regs. What happened to my comment?
 
@@ -531,7 +546,7 @@ Users should be able to access our staging API at https://api-staging.regulation
 
 #### I have an API key. How many requests can I make per hour and how do I know I am about to reach my request limit?
 
-Please review https://api.data.gov/docs/rate-limits/ for information on rate limits.
+Please review https://api.data.gov/docs/rate-limits/ for information on rate limits. Commenting API is restricted to 500 requests per hour.
 
 ## API Calls
 
