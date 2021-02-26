@@ -143,7 +143,7 @@ fhorgofficetypelist|	An Array of office types for an office consisting of office
 officetype|	Type of an office. Currently there are the following office types available in the Federal Hierarchy FOUO API: <br> -	Contracting <br> -	Funding <br> -	Grant <br><br>*Note: In future if the office type names change, the API will bring back the latest office types names from FH DB* |	Text
 officetypestartdate	|Start date of an office type. Format is YYYY-MM-DD. |	Date
 officetypeenddate|	End date of an office type. Format is YYYY-MM-DD.	|Date
-fhorgaddresslist	|An array of address elements for an organization consisting of city, state, country_code, and address type.	|Array
+fhorgaddresslist	|An array of address elements for an organization consisting of city, state, country_code, address type and address status.	|Array
 city |	City	|Text
 state |	2-character state code|	Text
 country_code	|3-character country code|	Text
