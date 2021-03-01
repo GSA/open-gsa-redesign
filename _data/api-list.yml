@@ -37,9 +37,6 @@
 - title: Beta.SAM.Gov Opportunity Management API
   description: The Opportunity Management API will allow authorized users to submit and request Opportunities data.
   url: opportunities-api/
-- title: Code.gov API
-  description: Provides information from Code.gov, which leverages the power of code sharing and collaboration to help the US Government cut down on duplicative software development and save millions of taxpayer dollars for the American people.
-  url: https://open.gsa.gov/api/codedotgov
 - title: Contract-Awarded Labor Category (CALC) API
   description: CALC's API is used by CALC's front-end Data Explorer application to display labor rate data for awarded prices on GSA services schedules, and can also be accessed by any third-party application over the public internet. CALC (Contract Awarded Labor Category) tool searches awarded hourly rate prices on the eight GSA professional services schedules and returns comparable labor categories and prices based on search criteria and filters used.
   url: https://calc.gsa.gov/api/
