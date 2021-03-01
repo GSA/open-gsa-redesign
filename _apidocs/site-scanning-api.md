@@ -37,7 +37,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
   var apiUmbrellaSignupOptions = {
     // Pick a short, unique name to identify your site, like 'gsa-auctions'
     // in this example.
-    registrationSource: 'gsa-open',
+    registrationSource: 'gsa-site-scanning',
 
     // Enter the API key you signed up for and specially configured for this
     // API key signup embed form.
@@ -47,7 +47,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
     // This can be any API endpoint on your server, and you can use the
     // special {{api_key}} variable to automatically substitute in the API
     // key the user just signed up for.
-    exampleApiUrl: 'https://api.gsa.gov/technology/site-scanner/v1/scans/?format=json&api_key={{api_key}}',
+    exampleApiUrl: 'https://api.gsa.gov/technology/site-scanning/v1/websites?api_key={{api_key}}',
 
 
 
