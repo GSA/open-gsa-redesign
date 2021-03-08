@@ -5925,6 +5925,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>sensitivity</td>
 <td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
 <br>Example: sensitivity=public</td>
+<br>NOTE: If you use this parameter with a sensitive key you must use a POST call for all request types.
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -13280,6 +13281,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>sensitivity</td>
 <td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
 <br>Example: sensitivity=public</td>
+<br>NOTE: If you use this parameter with a sensitive key you must use a POST call for all request types.
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -26380,6 +26382,6 @@ Disclaimer:
 | 12/07/2020 | v2.1 | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.|
 | 01/22/2021 | v2.2 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive.<br><br> * Added note to the noPublicDisplayFlag field in the response.<br><br>  * Added the Beta V2 endpoints. |
 | 02/05/2021 | V2.2 | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition. |
-| 03/08/2021 | V2.3 | * Added Http Response for invalid IP address. | 
+| 03/08/2021 | V2.3 | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call| 
 
 <p><small><a href="#">Back to top</a></small></p>
