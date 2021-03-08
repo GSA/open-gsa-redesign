@@ -258,7 +258,7 @@ Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer"
 * FOUO files: 
   <br> SAM_FOUO_DAILY_20190423.ZIP<br>  SAM_FOUO_DAILY_20190522.ZIP<br>  SAM_FOUO_DAILY_20190523.ZIP<br>  SAM_FOUO_DAILY_20190524.ZIP<br>  SAM_FOUO_DAILY_20190525.ZIP<br> 
   SAM_FOUO_DAILY_20190528.ZIP<br>  SAM_FOUO_DAILY_20190529.ZIP<br>  SAM_FOUO_DAILY_20190530.ZIP<br>  SAM_FOUO_DAILY_20190531.ZIP<br>  SAM_FOUO_MONTHLY_20190430.ZIP<br> 
-  SAM_FOUO_MONTHLY_20190505.ZIP<br>  SAM_FOUO_DAILY_V2_20200824.ZIP<br>  SAM_FOUO_MONTHLY_V2_20200826.ZIP<br>  SAM_FOUO_UTF-8_DAILY_V2_20200824.ZIP<br>  SAM_FOUO_UTF-8_MONTHLY_V2_20200826.ZIP
+  SAM_FOUO_MONTHLY_20190505.ZIP<br>  SAM_FOUO_UTF-8_DAILY_20210204.ZIP<br>  SAM_FOUO_UTF-8_MONTHLY_20210204.ZIP SAM_FOUO_DAILY_V2_20200824.ZIP<br>  SAM_FOUO_MONTHLY_V2_20200826.ZIP<br>  SAM_FOUO_UTF-8_DAILY_V2_20200824.ZIP<br>  SAM_FOUO_UTF-8_MONTHLY_V2_20200826.ZIP
 
 * Sensitive files:
   <br> SAM_SENSITIVE_UTF-8_DAILY_V2_20190530.ZIP<br>  SAM_SENSITIVE_UTF-8_DAILY_V2_20190531.ZIP<br>  SAM_SENSITIVE_UTF-8_DAILY_V2_20190601.ZIP<br> 
@@ -329,5 +329,6 @@ Date | Version | Description
 08/17/2020 | v1.7 | * The Sensitive Alpha endpoint in "Getting Started" has been corrected and the Sample Extract Authorization screenshot in "Explanation of the API using Examples" has also been updated to reflect the correct endpoint.<br><br> * Sensitive data sample calls in the "Explanation of the API using Examples" have also been updated to show that the API key is no longer sent in the request URL.<br><br> * The "Sensitive Download API Process" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshot in the "Explanation of the API using Examples" has been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.
 08/31/2020 | v1.8 | * Updated the Getting Started section to include the Sensitive Beta endpoint.
 02/05/2021 | V1.9 | * Added V1/V2 Public, V3 Sensitive, and V2 FOUO files available in Alpha S3.<br><br>* Added version parameter<br><br>* Updated error messages<br><br>* Added note to charSet parameter stating exclusions file type is not applicable
+03/08/2021 | V2.0 | * Added additional FOUO sample files.
 
 <p><small><a href="#">Back to top</a></small></p>
