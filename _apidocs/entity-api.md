@@ -1218,7 +1218,8 @@ NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in B
 <details>
 <summary>repsAndCerts Section</summary><br>
 Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
-The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
+The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.<br><br>
+The repsAndCerts section is not available for use with the format parameter.
 <br>
 <br>
 <summary>certifications Sub Section</summary>
@@ -7654,7 +7655,8 @@ samMonitoring
 <details>
 <summary>repsAndCerts Section</summary><br>
 Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
-The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
+The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.<br><br>
+The repsAndCerts section is not available for use with the format parameter.
 <br>
 <br>
 <summary>certifications Sub Section</summary>
@@ -15219,7 +15221,8 @@ samMonitoring
 <details>
 <summary>repsAndCerts Section</summary><br>
 Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
-The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
+The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.<br><br>
+The repsAndCerts section is not available for use with the format parameter.
 <br>
 <br>
 <summary>certifications Sub Section</summary>
@@ -26382,6 +26385,6 @@ Disclaimer:
 | 12/07/2020 | v2.1 | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.|
 | 01/22/2021 | v2.2 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive.<br><br> * Added note to the noPublicDisplayFlag field in the response.<br><br>  * Added the Beta V2 endpoints. |
 | 02/05/2021 | V2.2 | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition. |
-| 03/08/2021 | V2.3 | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call| 
+| 03/08/2021 | V2.3 | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call.<br><br> * Added note under repsAndCerts section about use with format parameter. | 
 
 <p><small><a href="#">Back to top</a></small></p>
