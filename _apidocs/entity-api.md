@@ -5924,8 +5924,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>sensitivity</td>
 <td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
-<br>Example: sensitivity=public</td>
-<br>NOTE: If you use this parameter with a sensitive key you must use a POST call for all request types.
+<br>Example: sensitivity=public
+<br>NOTE: If you use this parameter with a sensitive key you must use a POST call for all request types.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -13280,8 +13280,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>sensitivity</td>
 <td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
-<br>Example: sensitivity=public</td>
-<br>NOTE: If you use this parameter with a sensitive key you must use a POST call for all request types.
+<br>Example: sensitivity=public
+<br>NOTE: If you use this parameter with a sensitive key you must use a POST call for all request types.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
