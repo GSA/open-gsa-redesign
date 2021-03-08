@@ -95,6 +95,7 @@ Utilizing the Exclusion API as an extract:
 | format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'format=csv' |  v1<br>v2 |
 | emailId | Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.<br>Example: emailId=test@gsa.gov<br>Applicable to non-SAM registrants.<br><br>Alpha:<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.<br>Example: emailId= Yes<br>Applicable to non-SAM registrants. |  v1<br>v2 |
 | ssnOrTinOrEin | Allows a 9-digit value or null.<br><br> This parameter must not be used inside the 'q' parameter.<br><br> This parameter must be used in conjunction with the exclusionName parameter.<br><br> Example: 'ssnOrTinOrEin=123456789' | v1<br>v2 |
+
 **Expected Result**
 
 API response consists of Sections, Sub-sections and Tags underneath each of the Sections or Sub-sections. There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.
