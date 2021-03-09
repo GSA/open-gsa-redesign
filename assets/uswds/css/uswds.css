@@ -29,7 +29,7 @@ body {
  * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-article,
+/*article,
 aside,
 details,
 figcaption,
@@ -41,10 +41,10 @@ main,
 menu,
 nav,
 section,
-/*summary */
+summary 
 {
   display: block;
-}
+}*/
 
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
