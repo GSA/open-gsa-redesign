@@ -5937,7 +5937,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 <tr>
 <td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.<br><br>
-NOTE: Only system account keys can be used to access FOUO data.<br></td>
+NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 </tr>
 <details>
 <summary>entityRegistration Section</summary>
