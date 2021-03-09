@@ -89,7 +89,7 @@ If you want to use commenting API, you MUST use the form below to register for a
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
-In order to enable commenting, please contact the [Regulations.gov Help desk](mailto:regulations@erulemakinghelpdesk.com) and provide the first 5 digits of your API key, Organization name, Organization full address, Organization phone number, TaxID and the email address used to sign up for the key. You will be notified when your API key is ready for posting comments. In order to activate your API key, these data elements are required to run an entity validation search.
+In order to enable commenting, please contact the [Regulations.gov Help desk](mailto:regulations@erulemakinghelpdesk.com) and provide the first 5 digits of your API key, organization name, organization full address, organization phone number, tax ID and the email address used to sign up for the key. You will be notified when your API key is ready for posting comments. In order to activate your API key, these data elements are required to run an entity validation search.
 
 After registration, you will need to provide this API key in the X-Api-Key HTTP header with every API request.
 
