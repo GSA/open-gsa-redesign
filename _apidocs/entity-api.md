@@ -1218,7 +1218,8 @@ NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in B
 <details>
 <summary>repsAndCerts Section</summary><br>
 Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
-The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
+The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.<br><br>
+The repsAndCerts section is not available for use with the format parameter.
 <br>
 <br>
 <summary>certifications Sub Section</summary>
@@ -5924,7 +5925,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>sensitivity</td>
 <td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
-<br>Example: sensitivity=public</td>
+<br>Example: sensitivity=public
+<br>NOTE: If you use this parameter with a sensitive key you must use a POST call for all request types.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -5934,7 +5936,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td><b> Expected Result:</b></td>
 </tr>
 <tr>
-<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.</td>
+<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.<br><br>
+NOTE: Only system account keys can be used to access FOUO data.<br></td>
 </tr>
 <details>
 <summary>entityRegistration Section</summary>
@@ -7653,7 +7656,8 @@ samMonitoring
 <details>
 <summary>repsAndCerts Section</summary><br>
 Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
-The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
+The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.<br><br>
+The repsAndCerts section is not available for use with the format parameter.
 <br>
 <br>
 <summary>certifications Sub Section</summary>
@@ -12763,6 +12767,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <li> All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.</li>
 <li> The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.</li>
 <li> The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL</li>
+<li> Only system account keys can be used to access Sensitive data.</li>
 <li> "Accept" parameter must be passed in "Headers" with value, "application/json".</li>
 <li> "Content-Type" parameter must be passed in "Headers" with value, "application/json".</li>
 <li> All the optional search filters can be sent in the request URL or in the "Body".</li> <br><br>
@@ -13279,7 +13284,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>sensitivity</td>
 <td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
-<br>Example: sensitivity=public</td>
+<br>Example: sensitivity=public
+<br>NOTE: If you use this parameter with a sensitive key you must use a POST call for all request types.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -15217,7 +15223,8 @@ samMonitoring
 <details>
 <summary>repsAndCerts Section</summary><br>
 Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
-The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
+The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.<br><br>
+The repsAndCerts section is not available for use with the format parameter.
 <br>
 <br>
 <summary>certifications Sub Section</summary>
@@ -20336,7 +20343,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON/CSV format. |
-| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication. <br><br> * entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter. |
+| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication. <br><br> * entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter. <br><br> * IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.|
 | 406 | Invalid Accept Header. |
 | 415 | Invalid Content-Type Header. |
 
@@ -26380,5 +26387,6 @@ Disclaimer:
 | 12/07/2020 | v2.1 | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.|
 | 01/22/2021 | v2.2 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive.<br><br> * Added note to the noPublicDisplayFlag field in the response.<br><br>  * Added the Beta V2 endpoints. |
 | 02/05/2021 | V2.2 | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition. |
+| 03/08/2021 | V2.3 | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call.<br><br> * Added note under repsAndCerts section about use with format parameter.<br><br> * Added NOTE under FOUO API Information Expected Results section and Sensitive API Information Sensitive API Process sections mentioning only system account keys can be used to access data. | 
 
 <p><small><a href="#">Back to top</a></small></p>
