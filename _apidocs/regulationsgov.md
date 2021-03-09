@@ -560,6 +560,6 @@ url: "v4/openapi.yaml",
 
 ## Contact Us
 
-If you have any questions or would like to provide feedback, please contact <a href="https://beta.regulations.gov/support">Regulations.gov Help desk</a>.
+If you have any questions or would like to provide feedback, please contact <a href="https://www.regulations.gov/support">Regulations.gov Help desk</a>.
 
 <p><small><a href="#">Back to top</a></small></p>
