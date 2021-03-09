@@ -8,7 +8,7 @@ banner-heading: Regulations.gov API
 
 ## Overview
 
-When Congress passes laws, federal agencies implement those laws through regulations. These regulations vary in subject, but include everything from ensuring water is safe to drink to setting health care standards. Regulations.gov is the place where users can find and comment on regulations. The APIs allow for users to find creative ways to present regulatory data. To learn more about the program visit the [About Us](https://beta.regulations.gov/about) page.
+When Congress passes laws, federal agencies implement those laws through regulations. These regulations vary in subject, but include everything from ensuring water is safe to drink to setting health care standards. Regulations.gov is the place where users can find and comment on regulations. The APIs allow for users to find creative ways to present regulatory data. To learn more about the program visit the [About Us](https://www.regulations.gov/about) page.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -89,7 +89,7 @@ If you want to use commenting API, you MUST use the form below to register for a
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
-In order to enable commenting, please contact the [Regulations.gov Help desk](mailto:regulations@erulemakinghelpdesk.com) and provide the first 5 digits of your API key, organization name, organization full address, organization phone number, tax ID and the email address used to sign up for the key. You will be notified when your API key is ready for posting comments. In order to activate your API key, these data elements are required to run an entity validation search.
+In order to enable commenting, please contact the [Regulations.gov Help desk](https://www.regulations.gov/support) and provide the first 5 digits of your API key, organization name, organization full address, organization phone number, tax ID and the email address used to sign up for the key. You will be notified when your API key is ready for posting comments. In order to activate your API key, these data elements are required to run an entity validation search.
 
 After registration, you will need to provide this API key in the X-Api-Key HTTP header with every API request.
 
@@ -106,7 +106,7 @@ The eRulemaking post Application Programming Interface (API), informally referre
 By registering for, receiving and using a key to the Comment API, the key holder agrees to the following terms and conditions:
 
 1. When developing interfaces for commenters who will submit comment language and/or attachments through the Comment API, the key holder will include in the interface:
-      1. A link to the same [terms of participation](https://beta.regulations.gov/user-notice) and [privacy notice](https://beta.regulations.gov/privacy-notice) that users encounter on the comment form for Regulations.gov, and
+      1. A link to the same [terms of participation](https://www.regulations.gov/user-notice) and [privacy notice](https://www.regulations.gov/privacy-notice) that users encounter on the comment form for Regulations.gov, and
       2. A link to the Federal Register notice or other specific document in Regulations.gov for which the key holder is collecting or facilitating comments to be delivered through the Comment API.
 
 2. The key holder certifies that:
