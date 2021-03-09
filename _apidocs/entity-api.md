@@ -5936,7 +5936,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td><b> Expected Result:</b></td>
 </tr>
 <tr>
-<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.</td>
+<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.<br><br>
+NOTE: Only system account keys can be used to access FOUO data.</li></td>
 </tr>
 <details>
 <summary>entityRegistration Section</summary>
@@ -12766,6 +12767,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <li> All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.</li>
 <li> The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.</li>
 <li> The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL</li>
+<li> Only system account keys can be used to access Sensitive data.</li>
 <li> "Accept" parameter must be passed in "Headers" with value, "application/json".</li>
 <li> "Content-Type" parameter must be passed in "Headers" with value, "application/json".</li>
 <li> All the optional search filters can be sent in the request URL or in the "Body".</li> <br><br>
@@ -26385,6 +26387,6 @@ Disclaimer:
 | 12/07/2020 | v2.1 | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.|
 | 01/22/2021 | v2.2 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive.<br><br> * Added note to the noPublicDisplayFlag field in the response.<br><br>  * Added the Beta V2 endpoints. |
 | 02/05/2021 | V2.2 | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition. |
-| 03/08/2021 | V2.3 | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call.<br><br> * Added note under repsAndCerts section about use with format parameter. | 
+| 03/08/2021 | V2.3 | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call.<br><br> * Added note under repsAndCerts section about use with format parameter.<br><br> * Added NOTE under FOUO API Information Expected Results section and Sensitive API Information Sensitive API Process sections mentioning only system account keys can be used to access data. | 
 
 <p><small><a href="#">Back to top</a></small></p>
