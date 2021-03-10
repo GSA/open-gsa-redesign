@@ -5,7 +5,7 @@
   description: api.data.gov is a free API management service for federal agencies. This API implements the API Umbrella Admin API.
   url: https://open.gsa.gov/api/apidatagov/
 - title: Api.Data.Gov Metrics API
-  description: api.data.gov is a free API management service for federal agencies. This API provides system metrics from api.data.gov.  
+  description: api.data.gov is a free API management service for federal agencies. This API provides system metrics from api.data.gov.
   url: https://open.gsa.gov/api/apidatagov-metrics/
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
@@ -26,7 +26,7 @@
   description: Federal Hierarchy public API allows non-federal users to obtain Federal Organization details
   url: fh-public-api/
 - title: Beta.SAM.Gov Get Opportunities Public API
-  description: Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed. 
+  description: Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed.
   url: get-opportunities-public-api/
 - title: Beta.SAM.Gov Public Location Services API
   description: This API provides location retrieval needed for opportunities
@@ -68,7 +68,7 @@
   description: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers.
   url: https://open.gsa.gov/api/perdiem/
 - title: Regulations.gov API
-  description: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets. Additionally,  a POST API is offered that allows users to submit comments. 
+  description: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets. Additionally,  a POST API is offered that allows users to submit comments.
   url: https://open.gsa.gov/api/regulationsgov/
 - title: Search.gov Search Results API
   description: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application.
@@ -77,7 +77,7 @@
   description: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms.
   url: https://open.gsa.gov/api/searchgov-suggestions/
 - title: Search.gov Clicks API
-  description: For Search.gov customers. This API allows you to collect click data for both analytics reporting and as an input to relevance ranking of search results. 
+  description: For Search.gov customers. This API allows you to collect click data for both analytics reporting and as an input to relevance ranking of search results.
   url: https://open.gsa.gov/api/searchgov-clicks/
 - title: Sustainable Facilities Tool API
   description: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
@@ -85,6 +85,9 @@
 - title: System for Award Management API
   description: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
   url: https://gsa.github.io/sam_api/sam/
+- title: Touchpoints
+  description: Touchpoints makes customer feedback easier for federal agencies, and Touchpoints API provides an convenient, programmatic way to access the data for your Forms and Responses.
+  url: https://github.com/gsa/touchpoints/wiki/API
 - title: U.S. Digital Registry API
   description: Contains listing from the U.S. Digital Media Registry, which serves as a crowdsource resource for agencies, citizens, and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps, and mobile websites. The accounts in the registry are independently updated by federal managers across the government who maintain individual agency accounts.
   url: https://open.gsa.gov/api/digital-registry/
