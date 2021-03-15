@@ -1,6 +1,8 @@
-# AG Document Library API
-# hallways.cap.gsa.gov
 ---
+title: Acquisition Gateway Document Library API
+banner-heading: Acquisition Gateway Document Library API
+---
+
 
 <!-- Alpha status alert -->
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
