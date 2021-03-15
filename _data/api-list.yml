@@ -1,3 +1,6 @@
+- title: Acquisition Gateway Document Library API
+  description: The Document Library contains templates and examples of a broad set of acquisition documents from all stages of the acquisition lifecycle.
+  url: https://github.com/GSA/ag-api/wiki/AG-Document-Library-API
 - title: Analytics.usa.gov API
   description: The data for this API comes from Analytics.usa.gov, which is a unified Google Analytics account for U.S. federal government agencies known as the Digital Analytics Program. This program helps government agencies understand how people find, access, and use government services online. The program does not track individuals, and anonymizes the IP addresses of visitors.
   url: https://open.gsa.gov/api/dap/
