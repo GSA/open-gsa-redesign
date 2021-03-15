@@ -89,20 +89,6 @@ definitions:
       label:
         description: name of agency (taxonomy term)
         type: string
-  Tags:
-    properties:
-      id:
-        description: id of tag
-        type: string
-      label:
-        description: tag name
-        type: string
-      description:
-        description: description of tag
-        type: string
-      icon:
-        description: icon of tag
-        type: string
   File:
     properties:
       fid:
@@ -145,7 +131,8 @@ definitions:
         type: string
       agency:
         description: Agency Name
-        $ref: '#/definitions/Agencies'
+        items:
+          $ref: '#/definitions/Agencies'
       type:
         description: tags from the document type group selected for the item
         type: array
@@ -263,7 +250,8 @@ definitions:
         type: string
       agency:
         description: Agency name
-        $ref: '#/definitions/Agencies'
+        items:
+          $ref: '#/definitions/Agencies'
       format:
         description: Document format
         type: string
