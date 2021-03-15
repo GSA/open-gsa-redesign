@@ -44,7 +44,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="https://github.com/GSA/ag-api/blob/d3dfc078b0334b51b2775e3a4cd8bec2370fe864/v1/openapi.json">Open API specification file for the Document Library API</a>
+<a href="ag-api/v1/openapi.yaml">Open API specification file for the Document Library API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -109,7 +109,7 @@ Note that it has the following properties:
 Documents can be queried...
 
 {% include swagger-section-header-disable-try-it-out.html %}
-    url: "v1/openapi.yaml", 
+    url: "ag-api/v1/openapi.yaml", 
 {% include swagger-section-footer-disable-try-it-out.html %}
 
 
