@@ -21,7 +21,7 @@ In addition to being published and available at <a href="https://hallways.cap.gs
 
 **Please note that the API `v1.0` is available, now.**
 
-The URL for the API is `https://api.gsa.gov/acquisition/cap/v1/`, and it exposes 3 routes to query data:
+The URL for the API is `https://api.gsa.gov/acquisition/cap/v1/`, and it exposes 4 routes to query data:
 
 - `/tag-groups/<group id>/`
 - `/search/documents/<keyword>`
