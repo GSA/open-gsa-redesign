@@ -183,7 +183,7 @@ Note that it has the following properties:
 Documents can be queried...
 
 {% include swagger-section-header-disable-try-it-out.html %}
-    url: "ag-api/v1/openapi.yaml", 
+    url: "v1/openapi.yaml", 
 {% include swagger-section-footer-disable-try-it-out.html %}
 
 
