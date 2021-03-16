@@ -6,26 +6,9 @@ banner-heading: Regulations.gov API
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
 
-<!-- Beta status alert -->
-<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
-   <div class="usa-alert-body">
-     <strong>
-       This project is in BETA
-     </strong>
-     <p class="usa-alert-text">
-       The current comment API is still being tested and in beta phase. 
-       The ability for API key holders to submit comments will be temporarily deactivated until the beta phase is complete. 
-       During the Beta period, breaking changes may be made without warning.
-       Have feedback or questions? <a href="https://beta.regulations.gov/support">Please let us know</a>!
-     </p>
-   </div>
- </div>
-<!-- end Beta status alert -->
-
-
 ## Overview
 
-When Congress passes laws, federal agencies implement those laws through regulations. These regulations vary in subject, but include everything from ensuring water is safe to drink to setting health care standards. Regulations.gov is the place where users can find and comment on regulations. The APIs allow for users to find creative ways to present regulatory data. To learn more about the program visit the [About Us](https://beta.regulations.gov/about) page.
+When Congress passes laws, federal agencies implement those laws through regulations. These regulations vary in subject, but include everything from ensuring water is safe to drink to setting health care standards. Regulations.gov is the place where users can find and comment on regulations. The APIs allow for users to find creative ways to present regulatory data. To learn more about the program visit the [About Us](https://www.regulations.gov/about) page.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -106,6 +89,8 @@ If you want to use commenting API, you MUST use the form below to register for a
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
+In order to enable commenting, please contact the [Regulations.gov Help desk](https://www.regulations.gov/support) and provide the first 5 digits of your API key, organization name, organization full address, organization phone number, tax ID and the email address used to sign up for the key. You will be notified when your API key is ready for posting comments. In order to activate your API key, these data elements are required to run an entity validation search.
+
 After registration, you will need to provide this API key in the `X-Api-Key` HTTP header with every API request.
 
 | HTTP Header Name | Description |
@@ -121,7 +106,7 @@ The eRulemaking post Application Programming Interface (API), informally referre
 By registering for, receiving and using a key to the Comment API, the key holder agrees to the following terms and conditions:
 
 1. When developing interfaces for commenters who will submit comment language and/or attachments through the Comment API, the key holder will include in the interface:
-      1. A link to the same [terms of participation](https://beta.regulations.gov/user-notice) and [privacy notice](https://beta.regulations.gov/privacy-notice) that users encounter on the comment form for Regulations.gov, and
+      1. A link to the same [terms of participation](https://www.regulations.gov/user-notice) and [privacy notice](https://www.regulations.gov/privacy-notice) that users encounter on the comment form for Regulations.gov, and
       2. A link to the Federal Register notice or other specific document in Regulations.gov for which the key holder is collecting or facilitating comments to be delivered through the Comment API.
 
 2. The key holder certifies that:
@@ -543,6 +528,8 @@ The new `/v4/documents` carries a withdrawn field. This is a boolean field. If s
 
 We have added an example that shows how to retrieve more than 5000 comments on a docket. Please see the example section.
 
+Please note the new parameter `lastModifiedDate` is in beta and may be removed when we have a permanent bulk download solution available.
+
 #### I submitted a comment, but I am unable to find it on regs. What happened to my comment?
 
 Comments created via API are not made available in Regulations.gov right away. Agencies need to approve before the newly created comment can be posted out to Regulations.gov.
@@ -557,11 +544,11 @@ As indicated by name, DEMO_KEY should only be used for demonstration purposes. W
 
 #### What is the staging API url?
 
-Users should be able to access our staging API at https://api-staging.regulations.gov. The production keys should work in a staging environment.
+Users should be able to access our staging API at https://api-staging.regulations.gov. Please use this environment for testing purposes.
 
 #### I have an API key. How many requests can I make per hour and how do I know I am about to reach my request limit?
 
-Please review https://api.data.gov/docs/rate-limits/ for information on rate limits.
+Please review https://api.data.gov/docs/rate-limits/ for information on rate limits. Commenting API is restricted to 50 requests per minute with a secondary limit of 500 requests per hour.
 
 ## API Calls
 
@@ -573,6 +560,6 @@ url: "v4/openapi.yaml",
 
 ## Contact Us
 
-If you have any questions or would like to provide feedback, please contact <a href="https://beta.regulations.gov/support">Regulations.gov Help desk</a>.
+If you have any questions or would like to provide feedback, please contact <a href="https://www.regulations.gov/support">Regulations.gov Help desk</a>.
 
 <p><small><a href="#">Back to top</a></small></p>

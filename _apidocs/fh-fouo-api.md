@@ -143,7 +143,7 @@ fhorgofficetypelist|	An Array of office types for an office consisting of office
 officetype|	Type of an office. Currently there are the following office types available in the Federal Hierarchy FOUO API: <br> -	Contracting <br> -	Funding <br> -	Grant <br><br>*Note: In future if the office type names change, the API will bring back the latest office types names from FH DB* |	Text
 officetypestartdate	|Start date of an office type. Format is YYYY-MM-DD. |	Date
 officetypeenddate|	End date of an office type. Format is YYYY-MM-DD.	|Date
-fhorgaddresslist	|An array of address elements for an organization consisting of city, state, country_code, and address type.	|Array
+fhorgaddresslist	|An array of address elements for an organization consisting of city, state, country_code, address type and address status.	|Array
 city |	City	|Text
 state |	2-character state code|	Text
 country_code	|3-character country code|	Text
@@ -151,7 +151,7 @@ addresstype	|Type of address: M for Mailing|	Text
 fhorgnamehistory	|An array of the current organization                   name, the date when this name became effective, previous name/s (if available) and date when that name became effective. <br><br> *Note: This data may not be currently available in the FH for all records.* |	Array
 fhorgname|	Current and/or previous name of an organization in the Federal Hierarchy.	|Text
 effectivedate|	Date when the organization was created and the office became effective in the Federal Hierarchy.|	Text
-fhorgparenthistory	|An array of full parent id, full parent path name and the date when this full parent became effective.  This array contains details about current parent and also the previous parents before the organization moved. <br><br> *Note: Data for moved organizations is currently not available in the FH.* | 	Array
+fhorgparenthistory	|An array of full parent id, full parent path name, date when this full parent became effective, code hierarchy of that organization and the action type(create,move) taken place.  This array contains details about current parent and also the previous parents before the organization moved. <br><br> *Note: Move functionality is available only for office type in FH. For departments and sub tiers this array only contains details of when the organization is created.* | Array
 fhfullparentpathid|	ID of the full parent path for an organization.  For example, an office would have a path of <Org id of parent department>.<Org id of parent sub-tier>. <Org id of the actual office>	|Text
 fhfullparentpathname|	Name of the full parent path for an organization. Example for this field an office is <Org name of parent department>.<Org name of parent sub-tier>. <Org name of the actual office>|	Text
 effectivedate	|Date when the current name or previous names became effective. Currently this field is mapped to the start date of an organization. <br><br> *Note: Data for moved organization is currently not available in the FH.*|	Date
@@ -303,7 +303,9 @@ Request URL: <br> https://api-alpha.sam.gov/prodlike/federalorganizations/v1/org
         {
           "fhfullparentpathid": "100148640",
           "fhfullparentpathname": "AGENCY FOR INTERNATIONAL DEVELOPMENT",
-          "effectivedate": null
+          "effectivedate": null,
+          "codehierarchy": "",
+          "actiontype": "CREATE"           
         }
       ],
       "links": [
@@ -382,7 +384,16 @@ Request URL: <br> https://api-alpha.sam.gov/prodlike/federalorganizations/v1/org
         {
           "fhfullparentpathid": "100006809.100093803.500026649",
           "fhfullparentpathname": "AGRICULTURE, DEPARTMENT OF.NATURAL RESOURCES CONSERVATION SERVICE.Agricultural Management Assistance",
-          "effectivedate": "2018-06-29 15:12"
+          "effectivedate": "2018-06-29",
+          "codehierarchy": "9700.2100.W50K78",
+          "actiontype": "CREATE" 
+        },
+        {
+          "fhfullparentpathid": "100006809.100135732.500026649",
+          "fhfullparentpathname": "AGRICULTURE, DEPARTMENT OF.USDA, Office of Partnerships and Public Engagement.Agricultural Management Assistance",
+          "effectivedate": "2021-01-06",
+          "codehierarchy": "9700.12BC.W50K78",
+          "actiontype": "MOVE"    
         }
       ],
       "links": [
@@ -449,7 +460,9 @@ Request URL: <br> https://api-alpha.sam.gov/prodlike/federalorganizations/v1/org
         {
           "fhfullparentpathid": "100006688",
           "fhfullparentpathname": "GENERAL SERVICES ADMINISTRATION",
-          "effectivedate": null
+          "effectivedate": null,
+          "codehierarchy": "4700",
+          "actiontype": "CREATE" 
         }
       ],
       "links": [
@@ -784,5 +797,6 @@ Date | Version | Description
 9/16/2019 | v1.1 | Added Region Code <br> Updated rules for multiple CGAC
 12/2/2019 | v1.2| Added OpenAPI Specification
 9/8/2020 |v1.3| Updated Formatting
+1/11/2021 |v1.4| Updated move history details
 
 <p><small><a href="#">Back to top</a></small></p>
