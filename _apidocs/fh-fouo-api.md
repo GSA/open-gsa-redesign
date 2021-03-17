@@ -84,7 +84,7 @@ startdatefrom	|Field to specify the starting range of the start date of an organ
 startdateto|	Field to specify the end range of the start date of an organization. Format must be YYYY-MM-DD.	|Date
 enddatefrom	|Field to specify the starting range of the end date of an organization. Format must be YYYY-MM-DD.	|Date
 enddateto	|Field to specify the end range of the end date of an organization. Format must be YYYY-MM-DD.|	Date
-officetype|	Type of an office. The following office types are available in the Federal Hierarchy FOUO API: <br>-	Contracting <br>-	Funding <br>-	Grant <br> <br> *Note: Users can search by this field by providing exact words or even partial words since searching for an ‘officetype’ is like search, not an exact search. So if user enters ‘fund’ in ‘officetype’ field, user will get results for ‘Funding’ officetype.* |	Text
+officetype|	Type of an office. The following office types are available in the Federal Hierarchy FOUO API: <br>-	CONTRACT AWARDS (Contracting) <br>-	 CONTRACT FUNDING or FINANCIAL ASSISTANCE FUNDING (Funding) <br><br> -	FINANCIAL ASSISTANCE AWARDS (Grant) <br> <br> *Note: Users can search by this field by providing exact words or even partial words since searching for an ‘officetype’ is like search, not an exact search. So if user enters ‘fund’ in ‘officetype’ field, user will get results for ‘Funding’ officetype.* |	Text
 officetypestartdatefrom	|Field to specify the starting range of the start date of an office type. Format must be YYYY-MM-DD.|	Date
 officetypestartdateto|	Field to specify the end range of the start date of an office type. Format must be YYYY-MM-DD.|	Date
 officetypeenddatefrom	|Field to specify the starting range of the end date of an office type. Format must be YYYY-MM-DD.|	Date
@@ -140,7 +140,7 @@ oldfpdsofficecode	|Office code for offices created before 04/01/2016 in FPDS.	|T
 aacofficecode	|Activity Address Code (AAC) for an office.|	Text
 cgaclist|	An array of Common Government-wide Accounting Classification (CGAC) Agency Codes. This field can accommodate multiple, comma separated values. |Array
 fhorgofficetypelist|	An Array of office types for an office consisting of officetype, officetypestartdate and officetypeenddate for each of the office types.	|Array
-officetype|	Type of an office. Currently there are the following office types available in the Federal Hierarchy FOUO API: <br> -	Contracting <br> -	Funding <br> -	Grant <br><br>*Note: In future if the office type names change, the API will bring back the latest office types names from FH DB* |	Text
+officetype|	Type of an office. Currently there are the following office types available in the Federal Hierarchy FOUO API: <br> -	CONTRACT AWARDS (Contracting) <br> -	CONTRACT FUNDING or FINANCIAL ASSISTANCE FUNDING (Funding) <br><br> -	FINANCIAL ASSISTANCE AWARDS (Grant) <br><br>*Note: In future if the office type names change, the API will bring back the latest office types names from FH DB* |	Text
 officetypestartdate	|Start date of an office type. Format is YYYY-MM-DD. |	Date
 officetypeenddate|	End date of an office type. Format is YYYY-MM-DD.	|Date
 fhorgaddresslist	|An array of address elements for an organization consisting of city, state, country_code, address type and address status.	|Array
