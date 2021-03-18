@@ -8,10 +8,12 @@ banner-heading: Acquisition Gateway Document Library API
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
      <strong>
-       This project is providing AG Document Library API
+       This project is in BETA       
      </strong>
      <p class="usa-alert-text">
-       Have feedback or questions? <a href="https://github.com/GSA/ag-api/issues">Please let us know</a>!</p>
+        This project is providing AG Document Library API</br>
+        Have feedback or questions? <a href="https://github.com/GSA/ag-api/issues">Please let us know</a>!
+     </p>
    </div>
  </div>
 <!-- end Alpha status alert -->
