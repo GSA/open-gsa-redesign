@@ -3,6 +3,8 @@ title: Acquisition Gateway Document Library API
 banner-heading: Acquisition Gateway Document Library API
 ---
 
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
 
 <!-- Alpha status alert -->
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
