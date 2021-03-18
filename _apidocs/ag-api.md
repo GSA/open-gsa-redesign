@@ -47,7 +47,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
 
 {% raw %}
-<div id="ag-api_signup">Loading signup form...</div>
+<div id="apidatagov_signup">Loading signup form...</div>
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var apiUmbrellaSignupOptions = {
