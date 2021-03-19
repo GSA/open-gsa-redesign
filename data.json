@@ -649,6 +649,40 @@
 			"theme": ["Travel and Transportation"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "COVID Support Services",
+			"description": "In January 2021, GSA’s Federal Acquisition Service (FAS) was asked to support the Department of Health and Human Services’ Center for Disease Control (CDC) to assist federal, state and local agencies to quickly procure COVID-19 related support services (CRSS) should they be needed as part of the nation’s COVID-19 response.",
+			"modified": "2021-03-18T17:45:52.044Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-03-18-01",
+			"issued": "2021-02-17",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"accrualPeriodicity": "irregular",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Jon Bearscove",
+				"hasEmail": "mailto:CRSSHelp@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/dataset/covid-support-services",
+					"title": "COVID Support Services"
+				}
+			],
+			"keyword": ["contract", "contractor", "covid", "naics", "sin", "support services", "tribal entities"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "Data.gov CKAN API",
 			"description": "The data.gov catalog is powered by CKAN, a powerful open source data platform that includes a robust API.  Please be aware that data.gov and the data.gov CKAN API only contain metadata about datasets.  This metadata includes URLs and descriptions of datasets, but it does not include the actual data within each dataset.",
 			"modified": "2018-09-24",
@@ -718,13 +752,13 @@
 					"mediaType": "text/csv",
 					"title": "Data.gov Daily Sessions",
 					"description": "Data.gov Daily Sessions 20120101-20151231",
-					"downloadURL": "https://inventory.data.gov/dataset/e0de4198-eaaa-423a-9154-7af76ab8d822/resource/a78ae43e-0ceb-4f2d-83ac-99c61b249afa/download/analytics-www.data.gov-data.gov-daily-sessions-20120101-20151231---analytics-www.data.gov-data.g.csv"
+					"downloadURL": "https://inventory.data.gov/dataset/e0de4198-eaaa-423a-9154-7af76ab8d822/resource/a78ae43e-0ceb-4f2d-83ac-99c61b249afa/download/analytics-www.data.gov-data.gov-daily-sessions-20120101-20151231-analytics-www.data.gov-data.g.csv"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
 					"title": "Data.gov Daily Sessions Day Index",
 					"description": "Data.gov Daily Sessions 20120101-20151231 Day Index",
-					"downloadURL": "https://inventory.data.gov/dataset/e0de4198-eaaa-423a-9154-7af76ab8d822/resource/925f6204-5240-4dd1-8604-c279843c8974/download/analytics-www.data.gov-data.gov-daily-sessions-20120101-20151231b---sheet1.csv"
+					"downloadURL": "https://inventory.data.gov/dataset/e0de4198-eaaa-423a-9154-7af76ab8d822/resource/925f6204-5240-4dd1-8604-c279843c8974/download/analytics-www.data.gov-data.gov-daily-sessions-20120101-20151231b-sheet1.csv"
 				}
 			],
 			"keyword": ["Data.gov Analytics", "metrics"],
@@ -1047,13 +1081,13 @@
 					"mediaType": "text/csv",
 					"title": "Data.gov Sessions by Month",
 					"description": "Data.gov Sessions by Month 20120101-20151231",
-					"downloadURL": "https://inventory.data.gov/dataset/93deddb9-ff7b-43ea-bce6-a747202bae6b/resource/f933a656-37c4-4c21-8ebc-b34a8e1ef891/download/analytics-www.data.gov-data.gov-sessions-by-month-20120101-20151231---analytics-www.data.gov-dat.csv"
+					"downloadURL": "https://inventory.data.gov/dataset/93deddb9-ff7b-43ea-bce6-a747202bae6b/resource/f933a656-37c4-4c21-8ebc-b34a8e1ef891/download/analytics-www.data.gov-data.gov-sessions-by-month-20120101-20151231-analytics-www.data.gov-dat.csv"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
 					"title": "Data.gov Sessions by Month Day Index",
 					"description": "Data.gov Sessions by Month Day Index 20120101-20151231",
-					"downloadURL": "https://inventory.data.gov/dataset/93deddb9-ff7b-43ea-bce6-a747202bae6b/resource/31218b56-e5a1-4f7d-9ad6-5ddca5f08083/download/analytics-www.data.gov-data.gov-sessions-by-month-20120101-20151231b---analytics-www.data.gov-da.csv"
+					"downloadURL": "https://inventory.data.gov/dataset/93deddb9-ff7b-43ea-bce6-a747202bae6b/resource/31218b56-e5a1-4f7d-9ad6-5ddca5f08083/download/analytics-www.data.gov-data.gov-sessions-by-month-20120101-20151231b-analytics-www.data.gov-da.csv"
 				}
 			],
 			"keyword": ["Data.gov Metrics", "Data.gov Stats"],
@@ -1114,13 +1148,13 @@
 					"format": "csv",
 					"title": "Data.gov Sessions by U.S. States by Month",
 					"description": "Data.gov Sessions by U.S. States by Month 20120101-20151231",
-					"downloadURL": "https://inventory.data.gov/dataset/77d6edf0-14a8-4e53-a211-403343328be2/resource/302fc081-484e-4de2-be55-f92b7d030691/download/analytics-www.data.gov-data.gov-sessions-by-u.s.-states-by-month-20120101-20151231---analytics-w.csv"
+					"downloadURL": "https://inventory.data.gov/dataset/77d6edf0-14a8-4e53-a211-403343328be2/resource/302fc081-484e-4de2-be55-f92b7d030691/download/analytics-www.data.gov-data.gov-sessions-by-u.s.-states-by-month-20120101-20151231-analytics-w.csv"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
 					"title": "Data.gov Sessions by U.S. States by Month Day Index",
 					"description": "Data.gov Sessions by U.S. States by Month 20120101-20151231 Day Index",
-					"downloadURL": "https://inventory.data.gov/dataset/77d6edf0-14a8-4e53-a211-403343328be2/resource/3b1dce0e-2cda-4fed-a749-68954abafbc7/download/analytics-www.data.gov-data.gov-sessions-by-u.s.-states-by-month-20120101-20151231b---sheet1.csv"
+					"downloadURL": "https://inventory.data.gov/dataset/77d6edf0-14a8-4e53-a211-403343328be2/resource/3b1dce0e-2cda-4fed-a749-68954abafbc7/download/analytics-www.data.gov-data.gov-sessions-by-u.s.-states-by-month-20120101-20151231b-sheet1.csv"
 				}
 			],
 			"keyword": ["Data.gov Metrics", "Data.gov Stats"],
@@ -2729,7 +2763,7 @@
 					"format": "pdf",
 					"title": "FAS IL 2011-12-Supplemental",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/4890a3c2-e1fb-4376-8144-a8ae60bf0ac5/download/fas-il-2011--12-supplement.pdf"
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/4890a3c2-e1fb-4376-8144-a8ae60bf0ac5/download/fas-il-2011-12-supplement.pdf"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/pdf",
@@ -2743,7 +2777,7 @@
 					"format": "pdf",
 					"title": "FAS IL 2011-14",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/05415a1b-1878-4e5c-986f-17561328fe7e/download/fas-il-2011--13-supplement.pdf"
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/05415a1b-1878-4e5c-986f-17561328fe7e/download/fas-il-2011-13-supplement.pdf"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/pdf",
@@ -2757,49 +2791,49 @@
 					"format": "pdf",
 					"title": "FAS IL 2011-15-Supplemental",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/e25c790c-09f7-4b5e-b4f1-5d0f10887270/download/fas-il-2011--15-supplement.pdf"
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/e25c790c-09f7-4b5e-b4f1-5d0f10887270/download/fas-il-2011-15-supplement.pdf"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/pdf",
 					"format": "pdf",
 					"title": "FAS IL 2011-16-Revised",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/9b2b0136-2a83-414f-a81e-b18dddec5fcd/download/fas-il-2011--16-revised.pdf"
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/9b2b0136-2a83-414f-a81e-b18dddec5fcd/download/fas-il-2011-16-revised.pdf"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/pdf",
 					"format": "pdf",
 					"title": "FAS IL 2011-17",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/312f2ddc-c9ef-48c7-8128-eff1e6443b46/download/fas-il-2011--17.pdf"
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/312f2ddc-c9ef-48c7-8128-eff1e6443b46/download/fas-il-2011-17.pdf"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/pdf",
 					"format": "pdf",
 					"title": "FAS IL 2011-18",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/123d0cc7-c52d-4461-8a1f-8bd091d68f64/download/fas-il-2011--18.pdf"
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/123d0cc7-c52d-4461-8a1f-8bd091d68f64/download/fas-il-2011-18.pdf"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/pdf",
 					"format": "pdf",
 					"title": "FAS IL 2011-19",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/3f9fd9ba-5d07-462d-a6db-9944932354be/download/fas-il-2011--19.pdf"
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/3f9fd9ba-5d07-462d-a6db-9944932354be/download/fas-il-2011-19.pdf"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/pdf",
 					"format": "pdf",
 					"title": "FAS IL 2011-20",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/8f7b7cb7-a2d0-4026-85d3-7f5ab90cd2f3/download/fas-il-2011--20.pdf"
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/8f7b7cb7-a2d0-4026-85d3-7f5ab90cd2f3/download/fas-il-2011-20.pdf"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/pdf",
 					"format": "pdf",
 					"title": "FAS IL 2011-24",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/ccb366d0-c7fa-4536-a759-576a0b0fb1d5/download/fas-il-2011--24.pdf"
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/ccb366d0-c7fa-4536-a759-576a0b0fb1d5/download/fas-il-2011-24.pdf"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
@@ -2813,7 +2847,7 @@
 					"format": "pdf",
 					"title": "FAS IL 2011-13-Supplemental",
 					"description": "The GSA Federal Acquisition Service Instructional Letters (ILs) - guidance issued to internal FAS acquisition personnel that generally requires action as a result of a regulatory or programmatic change, e.g. inserting a new clause into solicitations and contracts.",
-					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/91598bea-83b3-4ec2-8a8f-ff2df116cd0a/download/fas-il-2011--13-supplement.pdf"
+					"downloadURL": "https://inventory.data.gov/dataset/bdf29013-5d2e-4aeb-8604-24c2b1e29940/resource/91598bea-83b3-4ec2-8a8f-ff2df116cd0a/download/fas-il-2011-13-supplement.pdf"
 				}
 			],
 			"keyword": ["FAS", "Industrial Funding Fee", "Instructional Letters", "Interactive"],
@@ -4210,9 +4244,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "JSON",
-					"title": "EDI JSON 03/01/21",
-					"description": "EDI JSON 03/01/21",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-json-03-01-21.json"
+					"title": "EDI JSON 03/18/21",
+					"description": "EDI JSON 03/18/21",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-json-03-18-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -4784,8 +4818,8 @@
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
 					"title": "National Stock Number Extract",
-					"description": "Updated 05/17/18",
-					"downloadURL": "https://inventory.data.gov/dataset/67567804-073d-40ad-a710-2b0bed8b84e2/resource/360b0748-d161-4857-a7dc-dfccfaeea096/download/nsn-extract-5-9-18.xlsx"
+					"description": "Updated 03/17/21",
+					"downloadURL": "https://inventory.data.gov/dataset/67567804-073d-40ad-a710-2b0bed8b84e2/resource/360b0748-d161-4857-a7dc-dfccfaeea096/download/nsn-extract-3-17-21.xlsx"
 				}
 			],
 			"keyword": ["NSN", "National Stock Number", "Part Number", "Product", "Vendor"],
@@ -4833,14 +4867,14 @@
 			"@type": "dcat:Dataset",
 			"title": "Networx Business Parent",
 			"description": "These datasets represent the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract.  This collection contains data from FY2008 to the present.",
-			"modified": "2015-09-04",
+			"modified": "2021-03-09T13:48:49.623Z",
 			"accessLevel": "public",
-			"identifier": "GSA-2015-08-27P",
+			"identifier": "GSA-2015-08-27",
 			"dataQuality": true,
 			"describedBy": "http://www.gsa.gov/networx",
 			"describedByType": "text/html",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"spatial": "United States",
+			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
 				"name": "General Services Administration"
@@ -4874,7 +4908,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -4911,7 +4945,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -4948,7 +4982,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -4985,7 +5019,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5022,7 +5056,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5059,7 +5093,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5096,7 +5130,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5133,7 +5167,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5170,7 +5204,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5207,7 +5241,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5244,7 +5278,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5281,7 +5315,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5317,7 +5351,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L. Holloway",
@@ -5351,7 +5385,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5393,7 +5427,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5435,7 +5469,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5476,7 +5510,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5518,7 +5552,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5559,7 +5593,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5599,7 +5633,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5639,7 +5673,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5674,7 +5708,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5709,7 +5743,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5744,7 +5778,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5778,7 +5812,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5812,7 +5846,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5846,7 +5880,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5880,7 +5914,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5914,7 +5948,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5949,7 +5983,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -5984,7 +6018,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -6019,7 +6053,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -6054,7 +6088,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -6089,7 +6123,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -6124,7 +6158,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -6158,7 +6192,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -6193,7 +6227,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -6228,7 +6262,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -6263,7 +6297,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -6298,7 +6332,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -6428,7 +6462,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -6463,7 +6497,7 @@
 				"name": "General Services Administration"
 			},
 			"accrualPeriodicity": "R/P3M",
-			"isPartOf": "GSA-2015-08-27P",
+			"isPartOf": "GSA-2015-08-27",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Toni L Holloway",
@@ -6483,6 +6517,41 @@
 			"programCode": ["023:019"],
 			"language": ["en-US"],
 			"theme": ["Telecommunications Services"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2021 1st Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
+			"modified": "2021-03-15T16:40:23.435Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-02-17-01",
+			"dataQuality": true,
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"isPartOf": "GSA-2015-08-27",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni L Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TotRevFY21_1stQtr.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/a4b28422-5ed4-4719-866a-111f1a9a61b1/resource/81f94fd5-f45f-4edf-83e8-fc58aea68294/download/totrevfy21_1stqtr.xlsx"
+				}
+			],
+			"keyword": ["Networx"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "New Construction and Repair and Alteration (R&A) Projects",
@@ -7820,7 +7889,7 @@
 					"format": "xlsx",
 					"title": "Jan - Mar 2017 GSA PC Transactions",
 					"description": "2nd Quarter 2017 Purchase Card Transactions",
-					"downloadURL": "https://inventory.data.gov/dataset/b328789a-a070-446e-982a-a5b1a0984fa2/resource/c9858a44-dc63-49ef-903f-066651255330/download/jan---mar-2017-gsa-pc-transactions.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/b328789a-a070-446e-982a-a5b1a0984fa2/resource/c9858a44-dc63-49ef-903f-066651255330/download/jan-mar-2017-gsa-pc-transactions.xlsx"
 				}
 			],
 			"keyword": ["february", "january", "march", "purchase card", "transactions"],
@@ -7890,7 +7959,7 @@
 					"format": "xlsx",
 					"title": "July-Sept 2017 PC Transactions",
 					"description": "4th Quarter 2017 Purchase Card Transactions",
-					"downloadURL": "https://inventory.data.gov/dataset/6f4f5f6f-375a-4b0c-a9a5-45347f55bcf6/resource/92ef9f71-ef1d-4209-b2ed-8b676cf63f28/download/july-sept-2017-gsa--pc-transactions.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/6f4f5f6f-375a-4b0c-a9a5-45347f55bcf6/resource/92ef9f71-ef1d-4209-b2ed-8b676cf63f28/download/july-sept-2017-gsa-pc-transactions.xlsx"
 				}
 			],
 			"keyword": ["August", "July", "September", "purchase card", "transactions"],
@@ -8548,7 +8617,7 @@
 					"format": "xlsx",
 					"title": "October December 2014 BOCA PC Transactions",
 					"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
-					"downloadURL": "https://inventory.data.gov/dataset/b9b49662-4f9c-4048-811d-0b024ecb376d/resource/cbe7ccee-aa86-4f39-9f5c-0ca8b9442c68/download/october-december-2014--boca-pc-transactions.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/b9b49662-4f9c-4048-811d-0b024ecb376d/resource/cbe7ccee-aa86-4f39-9f5c-0ca8b9442c68/download/october-december-2014-boca-pc-transactions.xlsx"
 				}
 			],
 			"keyword": ["BOCA", "Contract Board", "GSA SmartPay", "Purchase Card", "Transactions"],

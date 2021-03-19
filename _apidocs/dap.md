@@ -49,7 +49,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
   var apiUmbrellaSignupOptions = {
     // Pick a short, unique name to identify your site, like 'gsa-auctions'
     // in this example.
-    registrationSource: 'gsa-open',
+    registrationSource: 'gsa-dap',
 
     // Enter the API key you signed up for and specially configured for this
     // API key signup embed form.
@@ -59,7 +59,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
     // This can be any API endpoint on your server, and you can use the
     // special {{api_key}} variable to automatically substitute in the API
     // key the user just signed up for.
-    exampleApiUrl: 'https://api.gsa.gov/systems/datagov/3/action/package_search?api_key={{api_key}}',
+    exampleApiUrl: 'https://api.gsa.gov/analytics/dap/v1.1/reports/site/data?api_key={{api_key}}',
 
     // OPTIONAL: Provide extra content to display on the signup confirmation
     // page. This will be displayed below the user's API key and the example
