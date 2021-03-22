@@ -136,12 +136,18 @@ definitions:
       type:
         description: tags from the document type group selected for the item
         type: array
+        items:
+          $ref: '#/definitions/Tag'
       acquisition_stage:
         description: tags from the acquisition stage group selected for the item
         type: array
+        items:
+          $ref: '#/definitions/Tag'
       contract_type:
         description: tags from the contract type group selected for the item
         type: array
+        items:
+          $ref: '#/definitions/Tag'
       format:
         description: Document format
         type: string
@@ -185,6 +191,19 @@ definitions:
       sections:
         description: arrt-e sections
         type: array
+        items:
+            $ref: '#/components/schemas/Section'
+  Section:
+    properties:
+      id:
+        description: Unique ID
+        type: integer
+      title:
+        description: section name
+        type: string
+      performance_standard:
+        description: performance standard
+        type: boolean
   Tag:
     properties:
       id:
@@ -258,12 +277,18 @@ definitions:
       type:
         description: tags from the document type group selected for the item
         type: array
+        items:
+          $ref: '#/definitions/Tag'
       acquisition_stage:
         description: tags from the acquisition stage group selected for the item
         type: array
+        items:
+          $ref: '#/definitions/Tag'
       contract_type:
         description: tags from the contract type group selected for the item
         type: array
+        items:
+          $ref: '#/definitions/Tag'
       name:
         description: Document Username
         type: string
