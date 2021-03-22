@@ -3,15 +3,19 @@ title: Acquisition Gateway Document Library API
 banner-heading: Acquisition Gateway Document Library API
 ---
 
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
+<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
 
 <!-- Alpha status alert -->
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
      <strong>
-       This project is providing AG Document Library API
+       This project is in BETA       
      </strong>
      <p class="usa-alert-text">
-       Have feedback or questions? <a href="https://github.com/GSA/ag-api/issues">Please let us know</a>!</p>
+        This project is providing AG Document Library API</br>
+        Have feedback or questions? <a href="https://github.com/GSA/ag-api/issues">Please let us know</a>!
+     </p>
    </div>
  </div>
 <!-- end Alpha status alert -->
@@ -43,7 +47,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
 
 {% raw %}
-<div id="ag-api_signup">Loading signup form...</div>
+<div id="apidatagov_signup">Loading signup form...</div>
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var apiUmbrellaSignupOptions = {
