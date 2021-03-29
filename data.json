@@ -649,6 +649,46 @@
 			"theme": ["Travel and Transportation"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "COVID-19 Contract Obligation Tracking Dataset",
+			"description": "COVID-19 dashboard dataset provides all government-wide Emergency Acquisitions spending in support of the Novel Coronavirus Disease 2019 (COVID-19) pandemic.",
+			"modified": "2021-03-25T17:26:22.917Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-03-22-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Beang Tong",
+				"hasEmail": "mailto:beang.f.tong@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/html",
+					"format": "HTML",
+					"title": "Covid-19 Contract Obligation Tracking Data Dictionary",
+					"downloadURL": "https://fpds.gov/wiki/index.php/V1.5_FPDS-NG_Data_Dictionary"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "text/html",
+					"format": "html",
+					"title": "Covid-19 Contract Obligation Tracking Dataset",
+					"downloadURL": "https://d2d.gsa.gov/report/covid-19-contract-obligation-tracking-dashboard"
+				}
+			],
+			"keyword": ["category", "contract", "contracting", "contractor", "covid", "naics", "obligation", "procurement", "psc", "sin", "small business", "socioeconomic", "support services"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "COVID Support Services",
 			"description": "In January 2021, GSA’s Federal Acquisition Service (FAS) was asked to support the Department of Health and Human Services’ Center for Disease Control (CDC) to assist federal, state and local agencies to quickly procure COVID-19 related support services (CRSS) should they be needed as part of the nation’s COVID-19 response.",
 			"modified": "2021-03-18T17:45:52.044Z",
@@ -2102,6 +2142,46 @@
 			"programCode": ["023:014"],
 			"language": ["en-us"],
 			"theme": ["Energy & Environment"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY21 Enterprise Infrastructure Solutions (EIS) Quarterly Reports",
+			"description": "This dataset represents the EIS business volume of each government agency that has ordered telecommunication services from the EIS contract.  This contains data from FY2021.",
+			"modified": "2021-03-25T16:31:46.260Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-03-25-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"isPartOf": "GSA-2020-06-26-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Loren Smith",
+				"hasEmail": "mailto:loren.smith@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "EISTotRevFY21_Q1",
+					"downloadURL": "https://inventory.data.gov/dataset/1ce62e42-2604-4102-8119-3355e45903bc/resource/19b30ede-1083-44f4-97af-f022eb0b75b2/download/eistotrevfy21_q1.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "EISTotRevFY21_Q2",
+					"downloadURL": "https://inventory.data.gov/dataset/1ce62e42-2604-4102-8119-3355e45903bc/resource/2a9bd8cf-f847-46f5-941e-d9de57350f55/download/eistotrevfy21_q2.xlsx"
+				}
+			],
+			"keyword": ["EIS", "business-volume", "enterprise-infrastructure", "gsa", "telecommunications"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "FAS Forecast Of Contracting Opportunities",
@@ -4244,9 +4324,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "JSON",
-					"title": "EDI JSON 03/18/21",
-					"description": "EDI JSON 03/18/21",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-json-03-18-21.json"
+					"title": "EDI JSON 03/29/21",
+					"description": "EDI JSON 03/29/21",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-json-03-29-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -4319,6 +4399,49 @@
 			"programCode": ["023:014"],
 			"language": ["en-us"],
 			"theme": ["People"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "GSA FAS FEDSIM Opportunities",
+			"description": "The Opportunities Dashboard is used to show external client's information about our acquisitions that are in the pre-award state.  Viewers can see high level details that would benefit those that are interested in proposing.",
+			"modified": "2021-03-29T14:49:52.059Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-03-23-01",
+			"describedBy": "https://d2d.gsa.gov/dataset/gsa-fedsim-project-lifecycle-tracker-extractextract",
+			"describedByType": "text/csv",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "Contains information for acquisitions that are in the pre-award state.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"accrualPeriodicity": "irregular",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Ryan Hall",
+				"hasEmail": "mailto:ryan.hall@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/html",
+					"format": "html",
+					"title": "GSA FEDSIM Project Lifecycle Tracker Data Dictionary",
+					"downloadURL": "https://d2d.gsa.gov/dataset/gsa-fedsim-project-lifecycle-tracker-extractextract"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "text/html",
+					"format": "html",
+					"title": "GSA FAS FEDSIM Opportunities Dashboard",
+					"downloadURL": "https://d2d.gsa.gov/report/gsa-fas-fedsim-opportunities-dashboard"
+				}
+			],
+			"keyword": ["FEDSIM", "opportunities"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "GSA FITARA Actions and Milestones",
@@ -4549,6 +4672,112 @@
 			"theme": ["Other"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Internal Partner Satisfaction Survey (IPSS)",
+			"description": "This survey collects feedback from GSA employees about the internal support services they receive from staff offices.",
+			"modified": "2021-03-22T20:15:58.771Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-03-22-02",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The information is for internal GSA Employees only.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Customer Experience",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Customer Experience"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Camille Tucker",
+				"hasEmail": "mailto:camille.tucker@gsa.gov"
+			},
+			"keyword": ["GSA", "IT support", "acquisition management", "employee engagement", "financial management", "hr", "support services", "survey"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Internal Partner Satisfaction Survey (IPSS) - 2019",
+			"description": "FY19 response data from the GSA Internal Partner Satisfaction Survey.  This survey collects feedback from GSA employees about the internal support services that they receive from staff offices.",
+			"modified": "2021-03-23T14:38:22.805Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-03-22-04",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The Internal Partner Satisfaction Survey (IPSS) is an annual study to evaluate the level of service being provided by GSA’s staff offices to their internal customers (i.e., GSA employees).",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Customer Experience",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Camille Tucker",
+				"hasEmail": "mailto:camille.tucker@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/html",
+					"format": "html",
+					"title": "2019-Internal Partner Satisfaction Survey (IPSS)",
+					"downloadURL": "https://d2d.gsa.gov/dataset/2019-internal-partner-satisfaction-survey-ipss"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "text/html",
+					"format": "html",
+					"title": "Internal Partner Satisfaction Survey (IPSS) Data Dictionary",
+					"downloadURL": "https://d2d.gsa.gov/document/internal-partner-satisfaction-survey-ipss-data-dictionary"
+				}
+			],
+			"keyword": ["IT support", "acquisition management", "employee engagement", "financial management", "gsa", "hr", "support services", "survey"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Internal Partner Satisfaction Survey (IPSS) - 2020",
+			"description": "FY20 response data from the GSA Internal Partner Satisfaction Survey.  This survey collects feedback from GSA employees about the internal support services that they receive from staff offices.",
+			"modified": "2021-03-23T14:49:03.654Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-03-22-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The Internal Partner Satisfaction Survey (IPSS) is an annual study to evaluate the level of service being provided by GSA’s staff offices to their internal customers (i.e., GSA employees).",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Customer Experience",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"isPartOf": "GSA-2021-03-22-02",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Camille Tucker",
+				"hasEmail": "mailto:camille.tucker@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/html",
+					"format": "html",
+					"title": "2020 Internal Partner Satisfaction Survey (IPSS)",
+					"downloadURL": "https://d2d.gsa.gov/dataset/2020-internal-partner-satisfaction-survey-ipss"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "text/html",
+					"format": "html",
+					"title": "Internal Partner Satisfaction Survey (IPSS) Data Dictionary"
+				}
+			],
+			"keyword": ["IT support", "acquisition management", "employee engagement", "financial management", "gsa", "hr", "support services", "survey"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
 			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.  \r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
 			"modified": "2021-01-22T19:02:53.860Z",
@@ -4572,14 +4801,14 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
-					"title": "IOLP Leases.xlsx",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/b6411f3b-2e07-4c11-9108-556f54d05661/download/iolp-leases.xlsx"
+					"title": "IOLP Buildings.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/1b0820fb-1c20-42a9-85a2-e3e833eda68e/download/iolp-buildings.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
-					"title": "IOLP Buildings.xlsx",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/1b0820fb-1c20-42a9-85a2-e3e833eda68e/download/iolp-buildings.xlsx"
+					"title": "IOLP Leases.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/b6411f3b-2e07-4c11-9108-556f54d05661/download/iolp-leases.xlsx"
 				}
 			],
 			"keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
@@ -6414,14 +6643,15 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "FY20 Enterprise Infrastructure Solutions (EIS) Qtrly Report",
+			"title": "FY20 Enterprise Infrastructure Solutions (EIS) Quarterly Reports",
 			"description": "These datasets represent the Enterprise Infrastructure Solutions (EIS), business volume of each government agency that has ordered telecommunications services from the EIS Contract.  This collection contains data from FY2020.",
-			"modified": "2020-06-26",
+			"modified": "2021-03-25T16:16:05.905Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2020-06-26-03",
 			"dataQuality": true,
 			"issued": "2020-06-26",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
 				"name": "General Services Administration"
@@ -6440,6 +6670,18 @@
 					"title": "EISTotRevFY20_Q1_Q2",
 					"description": "This report contains each government agency that has ordered telecommunications services from the EIS contract.",
 					"downloadURL": "https://inventory.data.gov/dataset/bf94f704-2ede-4058-955e-30b44e43b2d9/resource/0c29f996-574a-42f3-9a6f-b86c1c855a84/download/eistotrevfy20q1q2.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "EISTotRevFY20_Q3",
+					"downloadURL": "https://inventory.data.gov/dataset/bf94f704-2ede-4058-955e-30b44e43b2d9/resource/59f0ef50-c468-4d8f-82b9-59dc2e95a536/download/eistotrevfy20_q3.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "EISTotRevFY20_Q4",
+					"downloadURL": "https://inventory.data.gov/dataset/bf94f704-2ede-4058-955e-30b44e43b2d9/resource/417c0432-0263-4e39-85c9-0073cb1a2a1f/download/eistotrevfy20_q4.xlsx"
 				}
 			],
 			"keyword": ["Business Volume", "EIS", "Enterprise Infrastructure Solutions", "GSA", "Telecommunications"],
