@@ -6,7 +6,7 @@ banner-heading: Beta.SAM.Gov Entity Management API
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
 
 ## Overview
-The Entity Management API will allow users to request Public Entity Information based on various optional request parameters. 
+The Entity Management API will allow users to request Public Entity Information based on various optional request parameters.
 
 
 **Key Features of the Entity Management API:**
@@ -28,16 +28,16 @@ The Entity Management API will allow users to request Public Entity Information 
 ## Getting Started
 
 **IMPORTANT**: There will be a period from early 2021 through the integration of SAM.gov into Beta.SAM.gov where Alpha and Beta functionality of the APIs will not be in sync. During this time, we recommend you primarily test the functionality of the APIs in Alpha. Please pay close attention to the parameter and schema "Description" and "Applicable Version" columns as all differences are noted there. Some of the key differences between Alpha and Beta API functionality are highlighted here:
-   * Data completeness (many fields in Beta will display “Currently not available”)
-   * Reps and Certs (the Beta version of Reps and Certs section will return no data and an older schema version)
-   * Availability and/or functionality of certain parameters
+* Data completeness (many fields in Beta will display “Currently not available”)
+* Reps and Certs (the Beta version of Reps and Certs section will return no data and an older schema version)
+* Availability and/or functionality of certain parameters
 
 
 Public and FOUO Entity Details can be accessed from Beta or Alpha via the following version 1 and version 2 endpoints:
-   * Beta Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
-   * Beta Version 2: https://api.sam.gov/entity-information/v2/entities?api_key= < value >
-   * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
-   * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
+* Beta Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
+* Beta Version 2: https://api.sam.gov/entity-information/v2/entities?api_key= < value >
+* Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
+* Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
 
 Sensitive Entity Details can be accessed from Beta or Alpha via the following end points:
 
@@ -1263,7 +1263,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -1553,13 +1553,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -1602,13 +1602,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -1651,13 +1651,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -1694,13 +1694,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -1732,13 +1732,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -1798,13 +1798,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -1847,13 +1847,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -1890,13 +1890,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -1939,13 +1939,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -1976,13 +1976,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -2037,13 +2037,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -2080,13 +2080,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -2094,13 +2094,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -2155,13 +2155,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -2215,13 +2215,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -2252,13 +2252,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -2313,13 +2313,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -2398,7 +2398,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -2689,13 +2689,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -2738,13 +2738,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -2787,13 +2787,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -2830,13 +2830,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -2868,13 +2868,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -2934,13 +2934,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -2983,13 +2983,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3026,13 +3026,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3075,13 +3075,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -3112,13 +3112,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -3173,13 +3173,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -3216,13 +3216,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -3230,13 +3230,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -3291,13 +3291,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -3351,13 +3351,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -3388,13 +3388,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3449,13 +3449,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3543,7 +3543,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -3833,13 +3833,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3882,13 +3882,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3931,13 +3931,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3974,13 +3974,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -4012,13 +4012,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -4078,13 +4078,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -4127,13 +4127,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -4170,13 +4170,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -4219,13 +4219,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -4256,13 +4256,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -4317,13 +4317,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -4360,13 +4360,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -4374,13 +4374,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -4435,13 +4435,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -4495,13 +4495,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -4532,13 +4532,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -4593,13 +4593,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -4661,7 +4661,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>Grants Certification Status</td>
 <td>v1<br>v2</td>
 </tr>
-  
+
 <tr>
 <td>grantsCertifyingResponse</td>
 <td>string</td>
@@ -4699,7 +4699,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 <th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
- 
+
 <tr>
 <td>farPDF</td>
 <td>string</td>
@@ -4771,37 +4771,37 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
+<td>US Phone.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
+<td>US Phone Extension.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
+<td>Non-US Phone.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
+<td>Fax.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
+<td>Email.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -4893,37 +4893,37 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
+<td>US Phone.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
+<td>US Phone Extension.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
+<td>Non-US Phone.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
+<td>Fax.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
+<td>Email.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -5015,37 +5015,37 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
+<td>US Phone.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
+<td>US Phone Extension.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
+<td>Non-US Phone.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
+<td>Fax.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
+<td>Email.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -5137,37 +5137,37 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
+<td>US Phone.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
+<td>US Phone Extension.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
+<td>Non-US Phone.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
+<td>Fax.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
+<td>Email.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -5259,37 +5259,37 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
+<td>US Phone.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
+<td>US Phone Extension.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
+<td>Non-US Phone.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
+<td>Fax.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
+<td>Email.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -5381,37 +5381,37 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
+<td>US Phone.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
+<td>US Phone Extension.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
+<td>Non-US Phone.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
+<td>Fax.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
+<td>Email.<br>defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -7700,7 +7700,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -7991,13 +7991,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8040,13 +8040,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8089,13 +8089,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8132,13 +8132,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -8170,13 +8170,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -8236,13 +8236,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8285,13 +8285,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8328,13 +8328,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8377,13 +8377,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -8414,13 +8414,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -8475,13 +8475,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -8518,13 +8518,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -8532,13 +8532,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -8593,13 +8593,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -8653,13 +8653,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -8690,13 +8690,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8751,13 +8751,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8836,7 +8836,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -9126,13 +9126,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9175,13 +9175,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9224,13 +9224,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9267,13 +9267,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -9305,13 +9305,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -9371,13 +9371,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9420,13 +9420,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9463,13 +9463,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9512,13 +9512,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -9549,13 +9549,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -9610,13 +9610,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -9653,13 +9653,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -9667,13 +9667,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -9728,13 +9728,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -9788,13 +9788,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -9825,13 +9825,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9886,13 +9886,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9980,7 +9980,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -10270,13 +10270,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -10319,13 +10319,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -10368,13 +10368,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -10411,13 +10411,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -10449,13 +10449,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -10515,13 +10515,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -10564,13 +10564,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -10607,13 +10607,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -10656,13 +10656,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -10693,13 +10693,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -10754,13 +10754,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -10797,13 +10797,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -10811,13 +10811,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -10872,13 +10872,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -10932,13 +10932,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -10969,13 +10969,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -11030,13 +11030,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -11098,7 +11098,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>Grants Certification Status</td>
 <td>v1<br>v2</td>
 </tr>
-  
+
 <tr>
 <td>grantsCertifyingResponse</td>
 <td>string</td>
@@ -11136,7 +11136,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 <th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
- 
+
 <tr>
 <td>farPDF</td>
 <td>string</td>
@@ -11208,14 +11208,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -11330,14 +11330,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -11452,14 +11452,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -11574,14 +11574,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -11696,14 +11696,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -11818,14 +11818,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -11940,14 +11940,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -12062,14 +12062,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -12184,14 +12184,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -12306,14 +12306,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -12428,14 +12428,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -12550,14 +12550,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -12672,14 +12672,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -15267,7 +15267,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -15557,13 +15557,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -15606,13 +15606,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -15655,13 +15655,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -15698,13 +15698,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -15736,13 +15736,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -15802,13 +15802,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -15851,13 +15851,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -15894,13 +15894,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -15943,13 +15943,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -15980,13 +15980,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -16041,13 +16041,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -16084,13 +16084,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -16098,13 +16098,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -16159,13 +16159,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -16219,13 +16219,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -16256,13 +16256,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -16317,13 +16317,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -16402,7 +16402,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -16692,13 +16692,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -16741,13 +16741,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -16790,13 +16790,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -16833,13 +16833,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -16871,13 +16871,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -16937,13 +16937,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -16986,13 +16986,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17029,13 +17029,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17078,13 +17078,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -17115,13 +17115,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -17176,13 +17176,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -17219,13 +17219,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -17233,13 +17233,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -17294,13 +17294,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -17354,13 +17354,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -17391,13 +17391,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17452,13 +17452,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17546,7 +17546,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -17836,13 +17836,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17885,13 +17885,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17934,13 +17934,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17977,13 +17977,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -18015,13 +18015,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -18081,13 +18081,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -18130,13 +18130,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -18173,13 +18173,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -18222,13 +18222,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -18259,13 +18259,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -18320,13 +18320,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -18363,13 +18363,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -18377,13 +18377,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -18438,13 +18438,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -18498,13 +18498,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -18535,13 +18535,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -18596,13 +18596,13 @@ The repsAndCerts section is not available for use with the format parameter.
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -18664,7 +18664,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>Grants Certification Status</td>
 <td>v1<br>v2</td>
 </tr>
-  
+
 <tr>
 <td>grantsCertifyingResponse</td>
 <td>string</td>
@@ -18702,7 +18702,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 <th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
- 
+
 <tr>
 <td>farPDF</td>
 <td>string</td>
@@ -18774,14 +18774,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -18896,14 +18896,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19018,14 +19018,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19140,14 +19140,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19262,14 +19262,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19384,14 +19384,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19506,14 +19506,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19628,14 +19628,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19750,14 +19750,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19872,14 +19872,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19994,14 +19994,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -20116,14 +20116,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -20238,14 +20238,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -20327,7 +20327,7 @@ The repsAndCerts section is not available for use with the format parameter.
 <p><small><a href="#">Back to top</a></small></p>
 
 
-## OpenAPI Specification File 
+## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="v1/openapi.yaml">Open API specification file for the Entity Management API</a>
@@ -20341,7 +20341,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON/CSV format. |
-| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication. <br><br> * entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter. <br><br> * IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.|
+| 400 | Application Level Error Messages: <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' or 'fomat' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiSAM is allowed. <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication. <br><br> * entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter. <br><br> * IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.|
 | 406 | Invalid Accept Header. |
 | 415 | Invalid Content-Type Header. |
 
@@ -26348,10 +26348,10 @@ https://api.sam.gov/entity-information/v2/download-entities?token=< value >
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Additional Information
-You can view the full details of the differences between the SAM legacy API and Beta API 
+You can view the full details of the differences between the SAM legacy API and Beta API
 <br> available here: <a href="LegacySAMvsBetaSAM-EntityManagementAPI.pdf">Variance Document</a><br>
 
-Disclaimer: 
+Disclaimer:
 **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data**
 * This website contains data supplied by third party information suppliers, one of which is D&B. For the purposes of the following limitation on permissible use of D&B data, which includes each entity's DUNS Number and its associated business information, "D&B Open Data" is defined as the following data elements: Business Name, Street Address, City Name, State/Province Name, Country Name, County Code, State/Province Code, State/Province Abbreviation, ZIP/Postal Code, Country Name and Country Code.
 * D&B hereby grants you, the user, a license for a limited, non-exclusive right to use D&B Open Data within the limitations set forth herein. By using this website you agree that you shall not use D&B Open Data without giving written attribution to the source of such data (i.e., D&B) and shall not access, use or disseminate D&B Open Data in bulk, (i.e., in amounts sufficient for use as an original source or as a substitute for the product and/or service being licensed hereunder).
@@ -26362,7 +26362,8 @@ Disclaimer:
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
+* Reach out to the beta.sam.gov team at www.fsd.gov for inquiries on Beta.
+* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
 
 <p><small><a href="#">Back to top</a></small></p>
 

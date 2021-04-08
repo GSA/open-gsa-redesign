@@ -429,7 +429,8 @@ Disclaimer:
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
+* Reach out to the beta.sam.gov team at www.fsd.gov for inquiries on Beta.
+* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
 
 <p><small><a href="#">Back to top</a></small></p>
 
