@@ -64,7 +64,7 @@ The Entity Management extracts contain entities (businesses and government agenc
 <td>Daily Files for FOUO and Sensitive Extracts</td>
 <td>
 * They are produced every Tuesday-Saturday between 1-3 AM (kindly check after 7 AM).<br/>
-* The date on the .ZIP matches the date when the file was generated. E.g.: The file generated on the last Saturday of March will show 20210327.<br/>
+* The date on the .ZIP matches the date when the file was generated. E.g: The file generated on the last Saturday of March will show 20210327.<br/>
 * The date on the .ZIP file matches the date on the .dat file inside.<br/>
 * These are incremental files that contain new/updated/deactivated/expired entities since the previous day’s file.
 </td>
