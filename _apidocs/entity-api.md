@@ -4773,35 +4773,35 @@ The repsAndCerts section is not available for use with the format parameter.
 <tr>
 <td>usPhone</td>
 <td>string</td>
-<td>US Phone.<br>defaulted value is "FOUO Only"</td>
+<td>US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension.<br>defaulted value is "FOUO Only"</td>
+<td>US Phone Extension.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone.<br>defaulted value is "FOUO Only"</td>
+<td>Non-US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax.<br>defaulted value is "FOUO Only"</td>
+<td>Fax.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email.<br>defaulted value is "FOUO Only"</td>
+<td>Email.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -4895,35 +4895,35 @@ The repsAndCerts section is not available for use with the format parameter.
 <tr>
 <td>usPhone</td>
 <td>string</td>
-<td>US Phone.<br>defaulted value is "FOUO Only"</td>
+<td>US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension.<br>defaulted value is "FOUO Only"</td>
+<td>US Phone Extension.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone.<br>defaulted value is "FOUO Only"</td>
+<td>Non-US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax.<br>defaulted value is "FOUO Only"</td>
+<td>Fax.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email.<br>defaulted value is "FOUO Only"</td>
+<td>Email.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -5017,35 +5017,35 @@ The repsAndCerts section is not available for use with the format parameter.
 <tr>
 <td>usPhone</td>
 <td>string</td>
-<td>US Phone.<br>defaulted value is "FOUO Only"</td>
+<td>US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension.<br>defaulted value is "FOUO Only"</td>
+<td>US Phone Extension.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone.<br>defaulted value is "FOUO Only"</td>
+<td>Non-US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax.<br>defaulted value is "FOUO Only"</td>
+<td>Fax.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email.<br>defaulted value is "FOUO Only"</td>
+<td>Email.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -5139,35 +5139,35 @@ The repsAndCerts section is not available for use with the format parameter.
 <tr>
 <td>usPhone</td>
 <td>string</td>
-<td>US Phone.<br>defaulted value is "FOUO Only"</td>
+<td>US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension.<br>defaulted value is "FOUO Only"</td>
+<td>US Phone Extension.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone.<br>defaulted value is "FOUO Only"</td>
+<td>Non-US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax.<br>defaulted value is "FOUO Only"</td>
+<td>Fax.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email.<br>defaulted value is "FOUO Only"</td>
+<td>Email.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -5261,35 +5261,35 @@ The repsAndCerts section is not available for use with the format parameter.
 <tr>
 <td>usPhone</td>
 <td>string</td>
-<td>US Phone.<br>defaulted value is "FOUO Only"</td>
+<td>US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension.<br>defaulted value is "FOUO Only"</td>
+<td>US Phone Extension.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone.<br>defaulted value is "FOUO Only"</td>
+<td>Non-US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax.<br>defaulted value is "FOUO Only"</td>
+<td>Fax.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email.<br>defaulted value is "FOUO Only"</td>
+<td>Email.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -5383,35 +5383,35 @@ The repsAndCerts section is not available for use with the format parameter.
 <tr>
 <td>usPhone</td>
 <td>string</td>
-<td>US Phone.<br>defaulted value is "FOUO Only"</td>
+<td>US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension.<br>defaulted value is "FOUO Only"</td>
+<td>US Phone Extension.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone.<br>defaulted value is "FOUO Only"</td>
+<td>Non-US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax.<br>defaulted value is "FOUO Only"</td>
+<td>Fax.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email.<br>defaulted value is "FOUO Only"</td>
+<td>Email.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -26362,7 +26362,7 @@ Disclaimer:
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at www.fsd.gov for inquiries on Beta.
+* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Beta.
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -26387,6 +26387,8 @@ Disclaimer:
 | 01/22/2021 | v2.2 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive.<br><br> * Added note to the noPublicDisplayFlag field in the response.<br><br>  * Added the Beta V2 endpoints. |
 | 02/05/2021 | v2.2 | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition. |
 | 03/12/2021 | v2.3 | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call.<br><br> * Added note under repsAndCerts section about use with format parameter.<br><br> * Added NOTE under FOUO API Information Expected Results section and Sensitive API Information Sensitive API Process sections mentioning only system account keys can be used to access data.<br><br> * Removed the message stating that this page is not FireFox compliant. | 
-| 04/08/2021 | v2.4 | * Updated Contact US information.<br><br> * Updated pointsOfContact fields information for public api.<br><br> * Updated Application Level Error Messages in HTTP Response Codes section. | 
+| 04/08/2021 | v2.4 | * Updated Contact Us information.<br><br> * Updated pointsOfContact fields information for public api.<br><br> * Updated Application Level Error Messages in HTTP Response Codes section. | 
 
 <p><small><a href="#">Back to top</a></small></p>
+
+

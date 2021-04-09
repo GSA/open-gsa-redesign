@@ -333,7 +333,7 @@ The API will return one of the following responses:
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at www.fsd.gov for inquiries on Beta.
+* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Beta.
 * Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -353,6 +353,6 @@ Date | Version | Description
 08/31/2020 | v1.8 | * Updated the Getting Started section to include the Sensitive Beta endpoint.
 02/05/2021 | v1.9 | * Added V1/V2 Public, V3 Sensitive, and V2 FOUO files available in Alpha S3.<br><br>* Added version parameter<br><br>* Updated error messages<br><br>* Added note to charSet parameter stating exclusions file type is not applicable
 03/12/2021 | v2.0 | * Added additional FOUO sample files.<br><br> * Added note that only system account keys can be used for FOUO and sensitive downloads.
-04/08/2021 | v2.1 | * Updated Contact US information.<br><br> * Added Entity Extract Calendar under Getting Started.
+04/08/2021 | v2.1 | * Updated Contact Us information.<br><br> * Added Entity Extract Calendar under Overview.
 
 <p><small><a href="#">Back to top</a></small></p>
