@@ -54,7 +54,7 @@ The Entity Management extracts contain entities (businesses and government agenc
 <tr>
 <td>Monthly Files for Public, FOUO and Sensitive Extracts</td>
 <td>
-* They are produced on the first Sunday of each month, kindly check after 7 AM.<br/>
+* They are produced on the first Sunday of each month. Kindly check after 7 AM.<br/>
 * The date on the .ZIP file matches the date when the file was generated. E.g.: The March monthly files were generated and dated on 20210307.<br/>
 * The date on the .ZIP file matches the date on the .dat file inside.<br/>
 * These files contain all active entities + entities expired in the last 6 months.
@@ -63,7 +63,7 @@ The Entity Management extracts contain entities (businesses and government agenc
 <tr>
 <td>Daily Files for FOUO and Sensitive Extracts</td>
 <td>
-* They are produced every Tuesday-Saturday, kindly check after 7 AM.<br/>
+* They are produced every Tuesday-Saturday. Kindly check after 7 AM.<br/>
 * The date on the .ZIP matches the date when the file was generated. E.g: The file generated on the last Saturday of March will show 20210327.<br/>
 * The date on the .ZIP file matches the date on the .dat file inside.<br/>
 * These are incremental files that contain new/updated/deactivated/expired entities since the previous day’s file.

@@ -569,17 +569,10 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>samExtractCode</td>
-<td>string</td>
-<td>Registration Status</td>
-<td>v1</td>
-</tr>
-
-<tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -6023,17 +6016,10 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 </tr>
 
 <tr>
-<td>samExtractCode</td>
-<td>string</td>
-<td>Registration Status</td>
-<td>v1</td>
-</tr>
-
-<tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -13344,7 +13330,6 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>v1<br>v2</td>
 </tr>
 
-
 <tr>
 <td>dodaac</td>
 <td>string</td>
@@ -13382,17 +13367,10 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>samExtractCode</td>
-<td>string</td>
-<td>Registration Status</td>
-<td>v1</td>
-</tr>
-
-<tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
