@@ -44,7 +44,7 @@ After registration, you will need to provide this API key in the `x-api-key` HTT
 
 This API has one primary endpoint:
 
-**Endpoint 1:** https://api.gsa.gov/tmss/hhgratequery
+**Endpoint 1:** https://api.gsa.gov/tmss/ratequeryhhg/v1/shipmentcost
 
 **Description**   This API can be used to retrieve shipment cost for a regular Household Goods (HHG) shipment or for an Extended Storage (EXSTG) shipment.
 
