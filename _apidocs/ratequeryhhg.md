@@ -4,11 +4,24 @@ banner-heading: ratequeryhhg API
 ---
 
 
-## Overview
+## Introduction
 
 This document provides detailed technical information about the Rate query API offered by the TMSS 2.0. These services make use of industry standard methods for API authentication and connectivity, which should make it easier and faster for developers to interface Federal agency with TMSS 2.0. This API can be used to retrieve shipment cost for a regular Household Goods (HHG) shipment or for an Extended Storage (EXSTG) shipment.
 
 <p><small><a href="#">Back to top</a></small></p>
+
+## Document Overview
+This document captures the specifications for the TMSS 2.0 Rate Query API to be consumed by Federal agency customers.
+
+This document is organized by the following major sections:
+ - Getting Started
+ - API Description
+ - API Query Params
+ - API Expected Response
+ - API Specification File
+ - HTTP Response Codes
+ - API Details
+ - Feedback
 
 ## Getting Started
 
@@ -29,7 +42,7 @@ After registration, you will need to provide this API key in the `x-api-key` HTT
 
 
 
-This API has two primary endpoints:
+This API has one primary endpoint:
 
 **Endpoint 1:** https://api.gsa.gov/tmss/hhgratequery
 
@@ -121,7 +134,7 @@ This API has two primary endpoints:
 
 
 
-## OpenAPI Specification File
+## API Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="v1/openapi.yaml">Open API specification file for the ratehhg API</a>
@@ -151,14 +164,24 @@ The API will return one of the following responses:
 <p><small><a href="#">Back to top</a></small></p>
 
 
-## FAQ
+## API Details
 
-Integer velit ex, sollicitudin sed dolor vitae, consectetur cursus urna. Quisque lacus urna, vulputate non efficitur ut, ornare ac leo. Sed varius, lacus vitae mollis semper, magna lorem pretium erat, non maximus elit justo pretium dolor. Phasellus pellentesque bibendum turpis, eu venenatis eros facilisis sit amet. Pellentesque aliquet dolor ac metus luctus interdum. Vivamus est nibh, blandit non finibus id, tincidunt sed justo. Integer ullamcorper sapien neque, ut lobortis risus interdum ac. Aenean finibus, nibh vitae molestie viverra, nibh mi iaculis lacus, interdum dictum ipsum magna sit amet est. Phasellus vitae faucibus felis. Vivamus non molestie felis, at suscipit lectus. Phasellus ac pulvinar purus, luctus porta elit. Morbi a aliquet tellus. Vivamus mollis, ligula sed egestas euismod, elit lacus auctor dolor, sit amet facilisis purus eros ac augue.
+Request:
+All request payloads must be in JSON data structure specified in the Data dictionary section of this document.
+
+Response:
+All response must be in JSON data structure specified in the Data dictionary section of this document.
+
+The connection to the API endpoints is secured and authenticated using the registered token provided by api.data.gov
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Contact Us
+## Feedback
 
-Praesent id cursus magna, sodales rutrum mauris. Nulla eget quam at nisl iaculis interdum. In condimentum, mi nec blandit consequat, velit nulla dictum lorem, non scelerisque ex nulla non ex. Sed vitae sem semper, pharetra massa at, vulputate urna. Pellentesque dapibus a ex sit amet pellentesque. Sed eget risus ut felis fringilla ullamcorper vitae a ligula. Aliquam finibus vitae ex sed vehicula.
+For further assistance and feedback, please contact:
+
+Phone: 1-866-668-3472
+Email: gsatmsshelp@gsa.gov
 
 <p><small><a href="#">Back to top</a></small></p>
