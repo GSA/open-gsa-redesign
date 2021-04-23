@@ -429,7 +429,7 @@ Note: Response for one record is provided as an example <br>
 
 Production URL: https://api.sam.gov/prod/opportunities/v1/search?limit=1&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general <br>
  <br>
-Alpha URL: https://api.sam.gov/prod/opportunities/v1/search?limit=1&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general<br>
+Alpha URL: https://api-alpha.sam.gov/prod/opportunities/v1/search?limit=1&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general<br>
  <br>
 
 Note: Request URL for alpha is used in this example
@@ -752,9 +752,9 @@ Note: Response for one record is provided as an example <br>
 
 <details>
     <summary>Request URL</summary>
-Production URL: https://api-alpha.sam.gov/opportunities/v2/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&title=Driving <br>
+Production URL: https://api.sam.gov/opportunities/v2/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&title=Driving <br>
  <br>
-Alpha URL: https://api.sam.gov/opportunities/v2/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2020&postedTo=05/10/2020 <br>
+Alpha URL: https://api-alpha.sam.gov/opportunities/v2/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2020&postedTo=05/10/2020 <br>
 </details>
 
 <details>
