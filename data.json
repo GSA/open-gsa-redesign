@@ -1390,7 +1390,7 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA DCOI Strategic Plan May 2020",
+					"title": "GSA DCOI Strategic Plan May 2021",
 					"description": "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 11/19/2018 at 8:52 pm Eastern. Updated 05/16/2019 to change tiered closures. Updated on 06/25/2019 to change planned value. Updated on 7/11/2019 to change achieved closures. Updated on 8/5/2019 to change closures for FYs16-20. Updated on 10/7/19 to reflect FY20 Achieved closure values. Updated on 11/15/19 to reflect only \"agency owned\" data centers for closures. Updated on 05/11/2020.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/b8d9e71b-963b-4398-8d37-04628e64871d/download/datacenteroptimizationstrategicplan.json"
@@ -4225,13 +4225,13 @@
 			"@type": "dcat:Dataset",
 			"title": ".Gov Domains",
 			"description": "This dataset offers the list of all .gov domains, including state, local, and tribal .gov domains. It does not include .mil domains, or other federal domains outside of .gov and .fed.us.",
-			"modified": "2018-10-09",
+			"modified": "2021-04-27T12:33:06.514Z",
 			"accessLevel": "public",
 			"identifier": "GSA-138675",
 			"dataQuality": true,
-			"describedBy": "http://inventory.data.gov/dataset/fe9eeb10-2e90-433e-a955-5c679f682502/resource/b626ef1f-9019-41c4-91aa-5ae3f7457328",
-			"describedByType": "text/csv",
+			"landingPage": "https://raw.githubusercontent.com/cisagov/dotgov-data/main/current-full.csv",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
 				"name": "General Services Administration"
@@ -4239,21 +4239,21 @@
 			"accrualPeriodicity": "R/P1Y",
 			"contactPoint": {
 				"@type": "vcard:Contact",
-				"fn": "Marina Fox",
-				"hasEmail": "mailto:marina.fox@gsa.gov"
+				"fn": "DotGov Program",
+				"hasEmail": "mailto:dotgov@cisa.dhs.gov"
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
-					"format": "CSV",
+					"format": "csv",
 					"title": "Full Domain Report",
-					"downloadURL": "https://raw.githubusercontent.com/GSA/data/master/dotgov-domains/current-full.csv"
+					"downloadURL": "https://raw.githubusercontent.com/cisagov/dotgov-data/main/current-full.csv"
 				}
 			],
 			"keyword": [".gov domains"],
 			"bureauCode": ["023:00"],
 			"programCode": ["023:019"],
-			"theme": ["API"]
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "GSA Bureau IT Leadership Directory",
@@ -4392,9 +4392,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "JSON",
-					"title": "EDI JSON 04/22/21",
-					"description": "EDI JSON 04/22/21",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-json-04-22-21.json"
+					"title": "EDI JSON 04/27/21",
+					"description": "EDI JSON 04/27/21",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-json-04-27-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
