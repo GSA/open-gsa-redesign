@@ -1,6 +1,6 @@
 ---
-title: Beta.SAM.Gov Federal Hierarchy Public API 
-banner-heading: Beta.SAM.Gov Federal Hierarchy Public API 
+title: SAM.Gov Federal Hierarchy Public API 
+banner-heading: SAM.Gov Federal Hierarchy Public API 
 ---
 
 ## Overview
@@ -17,7 +17,7 @@ This API will return both active and inactive organizations. The API supports pa
 
 ## Getting Started
 
-Get Opportunities API can be accessed from Beta or Alpha environments via the following urls:
+Get Opportunities API can be accessed from Production or Alpha environments via the following urls:
 
 *Note: Please refer the examples below to format right request URLs.*
 
@@ -28,13 +28,13 @@ Get Opportunities API can be accessed from Beta or Alpha environments via the fo
 User of this public API must provide an API key to use this FH public API. Request per day are limited based on the federal or non-federal or general roles. 
 
 Note: 
-* For production, users can request an API Key in their Profile under Account Details on https://beta.sam.gov/
+* For production, users can request an API Key in their Profile under Account Details on https://sam.gov/
 * For prodlike, users can request an API Key in their Profile under Account Details on https://alpha.sam.gov/
 * Rate limit for Federal User is 1000 requests/day
 * Rate limit for Non-Federal User is 10 requests/day
 
 #### User Account API Key Creation
-* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on beta.sam.gov
+* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on sam.gov
 * User must enter account password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
 * If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
@@ -587,7 +587,7 @@ For limit or offset, user inputs characters/special characters| Limit and offset
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov)
+* Reach out to the sam.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 
 ## Change Log
