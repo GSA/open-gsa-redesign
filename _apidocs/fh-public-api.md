@@ -17,7 +17,7 @@ This API will return both active and inactive organizations. The API supports pa
 
 ## Getting Started
 
-Get Opportunities API can be accessed from Beta or Alpha via the following environments:
+Get Opportunities API can be accessed from Beta or Alpha environments via the following urls:
 
 *Note: Please refer the examples below to format right request URLs.*
 
@@ -25,12 +25,13 @@ Get Opportunities API can be accessed from Beta or Alpha via the following envir
 * Staging URL: https://api-alpha.sam.gov/prodlike/federalorganizations/v1
 
 ## Authentication and API Keys
-User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles. 
+User of this public API must provide an API key to use this FH public API. Request per day are limited based on the federal or non-federal or general roles. 
 
 Note: 
 * For production, users can request an API Key in their Profile under Account Details on https://beta.sam.gov/
 * For prodlike, users can request an API Key in their Profile under Account Details on https://alpha.sam.gov/
-
+* Rate limit for Federal User is 1000 requests/day
+* Rate limit for Non-Federal User is 10 requests/day
 
 #### User Account API Key Creation
 * Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on beta.sam.gov
@@ -41,13 +42,13 @@ Note:
 
 ## Federal Hierarchy Public API Request Parameters
 
-### For Request URI: /orgs?api_key=[key] 
+### /orgs?api_key=[key] 
 
 * Users can search on any of the following fields.
 * None of these fields are mandatory.
 * Results will be sorted on level & fhorgname in ascending order. 
 
-**Table 1: FH Public API Request Parameters For request URL**
+**Table 1: /orgs?api_key=[key] Request Parameter**
 
 Request Parameters that API accepts | Description |Data Type
 -----|-----|-----
@@ -68,13 +69,13 @@ createddateto| A field to specify the end range of created date of an organizati
 limit |Total number of records to be retrieved per page. This field must be a positive number equal to 100 or less. If this field is not provided, the default pagesize is 10. Maximum supported page size will be 100. |Number
 offset| Indicates the page index. Default offset starts with 0. |Number
 
-###  For Request URL: /org/hierarchy?orgkey=[orgkey]&api_key=[key] 
+### /org/hierarchy?orgkey=[orgkey]&api_key=[key] 
 
 * Users can retrieve immediate next level hierarchy organizations for the respective
 organization.
 * Results will be sorted on level and fhorgname in ascending order. 
 
-**Table 2: FH Public API Request Parameters For request URL**
+**Table 2: /org/hierarchy?orgkey=[orgkey]&api_key=[key] Request Parameter**
 
 Request Parameters that API accepts | Description |Data Type
 -----|-----|-----
@@ -82,9 +83,11 @@ fhorgid| Unique ID for an organization in Federal Hierarchy. Mandatory to bring 
 limit| Total number of records to be retrieved per page. This field must be a number. If this field is not provided, by default page size is 10. Maximum supported page size will be 100.|Number
 offset| Indicates the page index. Default offset starts with 0. |Number
 
-### Federal Hierarchy Public API Response Parameters 
+## Federal Hierarchy Public API Response Parameters 
 
 Based on the request parameters, API provides below response parameters. 
+
+**Table 3: FH FOUO API Response Parameters**
 
 Request Parameters that API accepts | Description |Data Type
 -----|-----|-----
@@ -105,7 +108,7 @@ fhagencyorgname| Name of a department/Ind. agency in Federal Hierarchy to the cu
 fhorgnamehistory| An array of the current organization name, the date when this name became effective, previous name/s (if available) and date when that name became effective. <br><br>Note: This data may not be currently available in the FH for all records. |Array
 fhorgname| Current and/or previous name of an organization in the Federal Hierarchy. |Text
 effectivedate| Date when the organization was created and the office became effective in the Federal Hierarchy.|Text 
-fhorgparenthistory| An array of full parent id, full parent path name and the date when this full parent became effective. This array contains details about current parent and also the previous parents before the organization moved. <br><br> Note: Data for moved organizations is currently not available in the FH. |Array
+fhorgparenthistory| An array of full parent id, full parent path name, date when this full parent became effective, code hierarchy for that organization and the action type taken place. This array contains details about current parent and also the previous parents before the organization moved. <br><br> Note: Data for moved organizations is currently not available in the FH(For departments and Sub tiers). |Array
 fhfullparentpathid| ID of the full parent path for an organization. For example, a sub-tier would have a path of <Org id of parent department>.<Org id of parent sub-tier> |Text 
 fhfullparentpathname |Name of the full parent path for an organization. Example for this field a sub-tier is <Org name of parent department>.<Org name of parent sub-tier>|Text 
 effectivedate| Date when the current name or previous names became effective. Currently this field is mapped to the start date of an organization. <br><br> Note: Data for moved organization is currently not available in the FH.| Date 
@@ -164,10 +167,12 @@ Federal Hierarchy Public API
  "fhorgparenthistory": [
  {
  "fhfullparentpathid": "100041854.100525425",
- "fhfullparentpathname": "EXECUTIVE OFFICE OF THE
-PRESIDENT.AFRICAN DEVELOPMENT FUND",
- "effectivedate": "2003-06-07 00:00"
+ "fhfullparentpathname": "EXECUTIVE OFFICE OF THE PRESIDENT.AFRICAN DEVELOPMENT FUND",
+ "effectivedate": "2003-06-07",
+ "codehierarchy": "11DB",
+ "actiontype": "CREATE"            
  }
+ 
  ],
  "links": [
  {
@@ -181,7 +186,7 @@ PRESIDENT.AFRICAN DEVELOPMENT FUND",
 </p>
 </details>
 
-### Example 1: Search by organization name 
+### Example 1: Search by Organization Name 
 
 Request URL:
 
@@ -226,7 +231,9 @@ API Key}&fhorgname=DEVELOPMENT
  {
  "fhfullparentpathid": "100148640",
  "fhfullparentpathname": "AGENCY FOR INTERNATIONAL DEVELOPMENT",
- "effectivedate": null
+ "effectivedate": null,
+ "codehierarchy": "7200",
+ "actiontype": "CREATE" 
  }
  ],
  "links": [
@@ -244,7 +251,7 @@ API Key}&fhorgname=DEVELOPMENT
 </p>
 </details>
 
-### Example 2: Search for an active organization of type Sub-Tier 
+### Example 2: Search for an Active Organization of Sub-Tier Type
 
 Request URL:
 
@@ -289,16 +296,16 @@ PROGRAMS",
  "fhorgparenthistory": [
  {
  "fhfullparentpathid": "100001616.300000352",
- "fhfullparentpathname": "EDUCATION, DEPARTMENT OF.ACADEMIC
-IMPROVEMENT AND TEACHER QUALITY PROGRAMS",
- "effectivedate": null
+ "fhfullparentpathname": "EDUCATION, DEPARTMENT OF.ACADEMIC IMPROVEMENT AND TEACHER QUALITY PROGRAMS",
+ "effectivedate": null,
+ "codehierarchy": "9147",
+ "actiontype": "CREATE" 
  }
  ],
  "links": [ 
  {
  "rel": "self",
- "href": "https://api-alpha.sam.gov/prodlike
-/federalorganizations/v1/orgs?fhorgid=300000352"
+ "href": "https://api-alpha.sam.gov/prodlike/federalorganizations/v1/orgs?fhorgid=300000352"
  }
  ]
  }, 
@@ -306,7 +313,7 @@ IMPROVEMENT AND TEACHER QUALITY PROGRAMS",
 </p>
 </details>
 
-###  Example 3: Get hierarchy for an organization 
+###  Example 3: Get Hierarchy for an Organization (Immediate Hierarchy)
 
 Request URL:
 
@@ -348,7 +355,9 @@ https://api-alpha.sam.gov/prodlike/federalorganizations/v1/org/hierarchy?limit=1
  {
  "fhfullparentpathid": "100006688",
  "fhfullparentpathname": "GENERAL SERVICES ADMINISTRATION",
- "effectivedate": null
+ "effectivedate": null,
+ "codehierarchy": "4700",
+ "actiontype": "CREATE" 
  }
  ],
  "links": [
@@ -585,7 +594,10 @@ For limit or offset, user inputs characters/special characters| Limit and offset
 
 Date | Version | Description
 ------|---------------|---------
-9/10 | v1.0 | Base Version
+9/10/2019 | v1.0 | Base Version
 12/2/2019 | v1.1| Added OpenAPI Specification
+9/8/2020 |v1.2| Updated Formatting
+1/11/2021 |v1.4| Update move parent history details
+
 
 <p><small><a href="#">Back to top</a></small></p>

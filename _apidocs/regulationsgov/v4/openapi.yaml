@@ -74,6 +74,14 @@ paths:
           schema:
             type: string
             format: date
+        - name: filter[lastModifiedDate]
+          in: query
+          description: >-  
+            Filters results relative to the last modified date.  The value must be formatted as `yyyy-MM-dd HH:mm:ss`.<br/><br/> Omission of a parameter modifier will match results to the exact date provided, otherwise, one of the parameter modifiers below may be used. <br/> `ge` - greater than or equal <br/> `le` - less than or equal
+          required: false
+          schema:
+            type: string
+            format: date            
         - name: filter[subtype]
           in: query
           description: >-
@@ -91,7 +99,7 @@ paths:
         - name: sort
           in: query
           description: >-
-            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> Supported values are `commentEndDate`, `postedDate`, and `title`.          
+            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> Supported values are `commentEndDate`, `postedDate`, `lastModifiedDate`, `documentId` and `title`. Multiple sort options can be passed in as a comma separated list to sort results by multiple fields.         
           required: false
           schema:
             type: string
@@ -202,6 +210,14 @@ paths:
           schema:
             type: string
             format: date
+        - name: filter[lastModifiedDate]
+          in: query
+          description: >-  
+            Filters results relative to the last modified date.  The value must be formatted as `yyyy-MM-dd HH:mm:ss`.<br/><br/> Omission of a parameter modifier will match results to the exact date provided, otherwise, one of the parameter modifiers below may be used. <br/> `ge` - greater than or equal <br/> `le` - less than or equal
+          required: false
+          schema:
+            type: string
+            format: date
         - name: filter[commentOnId]
           in: query
           description: >-
@@ -212,7 +228,7 @@ paths:
         - name: sort
           in: query
           description: >-
-            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> The only supported value is `postedDate`.          
+            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> The only supported values are `postedDate`, `lastModifiedDate` and `documentId`. Multiple sort options can be passed in as a comma separated list to sort results by multiple fields.          
           required: false
           schema:
             type: string
@@ -350,6 +366,14 @@ paths:
           required: false
           schema:
             type: string
+        - name: filter[lastModifiedDate]
+          in: query
+          description: >-  
+            Filters results relative to the last modified date.  The value must be formatted as `yyyy-MM-dd HH:mm:ss`.<br/><br/> Omission of a parameter modifier will match results to the exact date provided, otherwise, one of the parameter modifiers below may be used. <br/> `ge` - greater than or equal <br/> `le` - less than or equal
+          required: false
+          schema:
+            type: string
+            format: date
         - name: filter[docketType]
           in: query
           description: >-
@@ -360,7 +384,7 @@ paths:
         - name: sort
           in: query
           description: >-
-            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> The only supported value is `title`.          
+            Sorts the results on the field specified in the value.  The default behavior will sort the results in ascending order; to sort in descending order, prepend a minus sign to the value. <br/><br/> The only supported values are `title`, `docketId` and `lastModifiedDate`. Multiple sort options can be passed in as a comma separated list to sort results by multiple fields.          
           required: false
           schema:
             type: string
@@ -832,9 +856,6 @@ components:
       description: A JSON:API document which represents a single document being posted
       type: object
       properties:
-        id:
-          description: The comment submission key
-          type: string
         type:
           description: The JSON:API resource type `comments`
           type: string
@@ -961,10 +982,20 @@ components:
           description: The ID of the docket to which the document corresponds.
         documentType:
           $ref: '#/components/schemas/DocumentType'
+        frDocNum:
+          type: string
+          description: The federal register document number of the document.
         highlightedContent:
           type: string
           nullable: true
           description: Content highlighted by search engine for the searchTerm. Only returned for searches with searchTerm.
+        lastModifiedDate:
+          type: string
+          format: date-time
+          description: The date document was last modified in the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        objectId:
+          type: string
+          description: The internal ID of the document in our system.
         openForComment:
           type: boolean
           description: Conveys if the document is open for comment
@@ -993,6 +1024,13 @@ components:
           type: string
           nullable: true
           description: Content highlighted by search engine for the searchTerm. Only returned for searches with searchTerm.
+        lastModifiedDate:
+          type: string
+          format: date-time
+          description: The date comment was last modified in the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        objectId:
+          type: string
+          description: The internal ID of the comment in our system.
         postedDate:
           type: string
           description: The date that the document was posted by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
@@ -1014,6 +1052,13 @@ components:
           type: string
           nullable: true
           description: Content highlighted by search engine for the searchTerm. Only returned for searches with searchTerm.
+        lastModifiedDate:
+          type: string
+          format: date-time
+          description: The date docket was last modified in the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        objectId:
+          type: string
+          description: The internal ID of the docket in our system.
         title:
           type: string
           description: The formal title of the docket.
@@ -1100,6 +1145,9 @@ components:
           type: string
           format: date-time
           description: The date when the document was last modified.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        objectId:
+          type: string
+          description: The internal ID of the document in our system.
         openForComment:
           type: boolean
           description: Conveys if the document is open for commenting.
@@ -1325,6 +1373,9 @@ components:
           type: string
           format: date-time
           description: The date when the docket was last modified.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+        objectId:
+          type: string
+          description: The internal ID of the document in our system.
         organization:
           type: string
           nullable: true
@@ -1361,7 +1412,6 @@ components:
       type: object
       required:
         - comment
-        - submissionKey #only required for comments submitted with attachments
         - commentOnDocumentId
         - submissionType #user should set submission Type to API
       properties:
