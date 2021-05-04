@@ -12,7 +12,7 @@ This API supports pagination as needed.
 
 ## Getting Started
 
-Get Opportunities API can be accessed from Beta or Alpha environments via the following urls:
+Get PSC API can be accessed from Beta or Alpha environments via the following urls:
 
 * Beta: <br> https://api.sam.gov/prod/locationservices/v1/api/publicpscdetails
 * Alpha: <br> https://api-alpha.sam.gov/prodlike/locationservices/v1/api/publicpscdetails

@@ -12,9 +12,9 @@ The Public Location Services API provides Location Services data (Country, State
 
 ## Getting Started
 
-Get Opportunities API can be accessed from Beta or Alpha environments via the following urls:
+Get Location API can be accessed from Beta or Alpha environments via the following urls:
 
-* Beta: https://api.sam.gov (Coming Soon)
+* Beta: https://api.sam.gov 
 * Alpha: https://api-alpha.sam.gov 
 
 ## Authentication and API Keys
