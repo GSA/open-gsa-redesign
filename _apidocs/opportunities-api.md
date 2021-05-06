@@ -7647,7 +7647,7 @@ Error Code|Error Message | Reason/Description
 401|Insufficient privileges to retrieve system account profile as the given organization is not part of the approved FH hierarchy	| Office ID provided is not authorized for system account
 401|Insufficient privileges to edit opportunity |	Account does not have appropriate privileges to edit opportunity
 403|This opportunity cannot be published. Auto 15 archive type is not allowed for this opportunity type |	Archive type = auto 15 archive type is not allowed for type “u” Justification and Authorization sections
-
+404| Request not processed. Please reach out help desk | Service Interruption
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -7856,5 +7856,6 @@ Date | Version | Description
 8/17/2020 | v1.15 | Get APIs and Streaming Attachment API deployed to Alpha
 9/14/2020| v1.16| Updated OpenAPI Specification section to include v2 endpoints
 9/15/2020| v1.17| v2 Endpoints updated status in BETA
+11/3/2020 | v1.18| Error messages updated
 
 <p><small><a href="#">Back to top</a></small></p>
