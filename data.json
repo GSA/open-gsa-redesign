@@ -4150,9 +4150,8 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
-					"format": "csv",
-					"title": "FRPP_Public_Dataset_FY20_for_Michael_Final.csv",
-					"downloadURL": "https://inventory.data.gov/dataset/a1072b46-cf6b-443e-bfa2-dad7f1ab4195/resource/628d4a08-630d-4e81-8c54-f411bfceafd8/download/frpp_public_dataset_fy20_for_michael_final.csv"
+					"title": "FRPP_Public_Dataset_FY2020.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/a1072b46-cf6b-443e-bfa2-dad7f1ab4195/resource/aba264d5-d645-4ef7-8817-d1b043bc21b5/download/frpp_public_dataset_fy2020.csv"
 				}
 			],
 			"keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "RTF", "building", "civilian", "gsa", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -4425,8 +4424,8 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
-					"title": "EDI JSON 05 03 21.json",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/1847fef1-31ff-48ff-a85a-222ac0d9be0c/download/edi-json-05-03-21.json"
+					"title": "EDI JSON 05 07 21.json",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/1b9632a1-5064-4c84-9432-73b616753314/download/edi-json-05-07-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5003,12 +5002,12 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"title": "IOLP Buildings.xlsx",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/e736bc77-5365-427d-95c7-95d131deab24/download/iolp-buildings.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/51cb6d9c-4a06-4cd8-bf8e-d6bfdb89b789/download/iolp-buildings.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"title": "IOLP Leases.xlsx",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/37367f54-c501-4c44-b63b-f932d697467d/download/iolp-leases.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/192961e4-b465-40fe-8bb2-dd29dccff5df/download/iolp-leases.xlsx"
 				}
 			],
 			"keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
@@ -6991,6 +6990,39 @@
 				}
 			],
 			"keyword": ["Networx"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2021 2nd Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
+			"modified": "2021-05-07T17:01:46.833Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-05-07-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TotRevFY21_2ndQtr.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/ceb336ce-eabd-476c-9bbe-8e023f980c72/resource/ec8a23ef-cc7f-4547-bb72-c8e43cb7e500/download/totrevfy21_2ndqtr.xlsx"
+				}
+			],
+			"keyword": ["Networx", "Networx Telecommunications", "networx business volume"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
@@ -10013,10 +10045,9 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
-					"format": "csv",
 					"title": "data_gov_bldg_rexus.csv",
-					"description": "March Rexus Building file",
-					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/b1803048-81da-46a8-8b38-f6591a63224b/download/datagovbldgrexus.csv"
+					"description": "May - Rexus Building file",
+					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/cbce4462-d19a-4de4-a8f5-15910a4cb8b0/download/data_gov_bldg_rexus.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -10049,8 +10080,8 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus",
-					"description": "March - Rexus Lease file",
-					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/db2e5040-a1fc-4581-975c-e38ccf70b2e9/download/datagovlserexus.csv"
+					"description": "May - Rexus Lease file",
+					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/db2e5040-a1fc-4581-975c-e38ccf70b2e9/download/data_gov_lse_rexus.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
