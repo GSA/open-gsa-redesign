@@ -42,7 +42,7 @@ Users can search by any of the below request parameters with Date field as manda
 Request Parameters that API accepts	| Description | Required| Data Type| Applicable Versions
 ----- | ----- | ----- | ----- | -----
 api_key	| Public Key of users	| Yes|	String | v1<br> v2
-ptype |	Procurement Type. Below are the available Procurement Types: <br> u= Justification (J&A) <br>p = Pre solicitation <br>a = Award Notice <br>r = Sources Sought <br>s = Special Notice <br>g = Sale of Surplus Property <br>k = Combined Synopsis/Solicitation <br>i = Intent to Bundle Requirements (DoD-Funded) <br><br> Note: Below services are now retired:<br>f = Foreign Government Standard <br>l = Fair Opportunity / Limited Sources  <br> <br>Use Justification (u) instead of fair Opportunity 	|No	|String | v1<br> v2
+ptype |	Procurement Type. Below are the available Procurement Types: <br> u= Justification (J&A) <br>p = Pre solicitation <br>a = Award Notice <br>r = Sources Sought <br>s = Special Notice <br>o = Solicitation <br>g = Sale of Surplus Property <br>k = Combined Synopsis/Solicitation <br>i = Intent to Bundle Requirements (DoD-Funded) <br><br> Note: Below services are now retired:<br>f = Foreign Government Standard <br>l = Fair Opportunity / Limited Sources  <br> <br>Use Justification (u) instead of fair Opportunity 	|No	|String | v1<br> v2
 solnum|	Solicitation Number|	No|	String | v1<br> v2
 noticeid| Notice ID | No | String | v1<br> v2
 title|	Title|	No	|String | v1<br> v2
@@ -51,6 +51,7 @@ postedTo|	Posted date To  Format must be MM/dd/yyyy <br> Note: Date range betwee
 deptname |	Department Name (L1)	|No|	String | v1<br> v2 - Deprecated
 subtier|	Agency Name (L2)| 	No|	String | v1<br> v2 - Deprecated
 state|	Place of Performance (State)|	No	|String | v1<br> v2
+status (Coming Soon)| Status of the opportunity <br> Accepts following:  active, archived, cancelled, deleted | No| String | v2
 zip|	Place of Performance (Zip code)|	No|	String | v1<br> v2
 organizationCode| Code of associated organization | No| string | v2
 organizationName| Name of associated organization <br> *Note: General Search can be performed*|No| String|v2
@@ -815,13 +816,13 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <a href="v1/get-opportunities-v1.yml" download="get-opportunities-v1">OpenAPI File</a>
 
 <details>
-<summary>Get Opportunities Public API</summary>
+<summary>Get Opportunities Public API v1</summary>
 <p>
 <code><pre>
 /v1/search:
     get:
       tags:
-        - 'Public GET Opportunites API '
+        - 'Public GET Opportunities API '
       summary: 'API to get opportunities based on filter'
       operationId: getOpportunitiesUsingGET
       consumes:
@@ -959,214 +960,151 @@ You can view the full details of this API in the OpenAPI Specification file avai
           description: Forbidden
         '404':
           description: 'Not Found'
-definitions:
-  Data:
-    type: object
-    properties:
-      disabled_at:
-        type: String
-      email:
-        type: String
-      email_verified:
-        type: boolean
-      enabled:
-        type: boolean
-      expires_at:
-        type: String
-      first_name:
-        type: String
-      id:
-        type: String
-      last_name:
-        type: String
-      registration_source:
-        type: String
-      roles:
-        type: array
-        items:
-          type: String
-      settings:
-        $ref: '#/definitions/Settings'
-  Creator:
-    type: object
-    properties:
-      username:
-        type: String
-  APIKeyUser:
-    type: object
-    properties:
-      api_key:
-        type: String
-      api_key_hides_at:
-        type: String
-      api_key_preview:
-        type: String
-      created_at:
-        type: String
-      creator:
-        $ref: '#/definitions/Creator'
-      email:
-        type: String
-      email_verified:
-        type: boolean
-      enabled:
-        type: boolean
-      expires_at:
-        type: String
-      first_name:
-        type: String
-      id:
-        type: String
-      last_name:
-        type: String
-      registration_ip:
-        type: String
-      registration_origin:
-        type: String
-      registration_referer:
-        type: String
-      registration_source:
-        type: String
-      registration_user_agent:
-        type: String
-      roles:
-        type: array
-        items:
-          type: String
-      settings:
-        $ref: '#/definitions/Settings'
-      terms_and_conditions:
-        type: boolean
-      throttle_by_ip:
-        type: boolean
-      updated_at:
-        type: String
-      updater:
-        $ref: '#/definitions/Updater'
-      use_description:
-        type: String
-      website:
-        type: String
-  SystemAccountDetail:
-    type: object
-    properties:
-      id:
-        type: String
-      isFedCapable:
-        type: boolean
-      isGov:
-        type: boolean
-  Feature:
-    type: object
-    properties:
-      featureKey:
-        type: String
-      featureValue:
-        type: boolean
-  SystemAccountDisableUsers:
-    type: object
-    properties:
-      arrayOfSAUserNames:
-        type: array
-        items:
-          type: String
-  Response:
-    type: object
-    properties:
-      errorMessage:
-        type: String
-      message:
-        type: String
-      successMessage:
-        type: String
-  RateLimit:
-    type: object
-    properties:
-      accuracy:
-        type: integer
-        format: int32
-      distributed:
-        type: boolean
-      duration:
-        type: integer
-        format: int64
-      id:
-        type: String
-      limit:
-        type: integer
-        format: int32
-      limit_by:
-        type: String
-      response_headers:
-        type: boolean
-  EmailDetails:
-    type: object
-    properties:
-      _links:
-        type: array
-        items:
-          $ref: '#/definitions/Link'
-      email:
-        type: String
-      firstName:
-        type: String
-      lastName:
-        type: String
-  Updater:
-    type: object
-    properties:
-      username:
-        type: String
-  FilteredAPIKeyUserDetails:
-    type: object
-    properties:
-      _links:
-        type: array
-        items:
-          $ref: '#/definitions/Link'
-      apiKey:
-        type: String
-      apiKeyExpiryDate:
-        type: String
-      limit:
-        type: String
-      roles:
-        type: array
-        items:
-          type: String
-  Settings:
-    type: object
-    properties:
-      id:
-        type: String
-      rate_limit_mode:
-        type: String
-      rate_limits:
-        type: array
-        items:
-          $ref: '#/definitions/RateLimit'
-  Link:
-    type: object
-    properties:
-      deprecation:
-        type: String
-      href:
-        type: String
-      hreflang:
-        type: String
-      media:
-        type: String
-      rel:
-        type: String
-      templated:
-        type: boolean
-      title:
-        type: String
-      type:
-        type: String
 </pre></code>
 </p>
 </details>
+
+You can view the full details of this API in the OpenAPI Specification file available here:
+<a href="v1/get-opportunities-v2.yml" download="get-opportunities-v2">OpenAPI File</a>
+
+
+<details>
+<summary>Get Opportunities Public API v2</summary>
+<p>
+<code><pre>
+/v1/search:
+    get:
+      tags:
+        - 'Public GET Opportunities API '
+      summary: 'API to get opportunities based on filter'
+      operationId: getOpportunitiesUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+        - text/plain
+      parameters:
+        -
+          name: ptype
+          in: query
+          description: 'Enter Procurement type.'
+          required: false
+          type: array
+          items:
+            type: String
+          collectionFormat: multi
+        -
+          name: noticeid
+          in: query
+          description: 'Enter Notice Id.'
+          required: false
+          type: String
+        -
+          name: solnum
+          in: query
+          description: 'Enter Solicitation number.'
+          required: false
+          type: String
+        -
+          name: title
+          in: query
+          description: 'Enter Title.'
+          required: false
+          type: String
+        -
+          name: state
+          in: query
+          description: 'Enter Place of performence State.'
+          required: false
+          type: String
+        -
+          name: zip
+          in: query
+          description: 'Enter Place of performence Zip.'
+          required: false
+          type: String
+        -
+          name: typeOfSetAsideDescription
+          in: query
+          description: 'Enter type Of SetAside Description.'
+          required: false
+          type: String
+        -
+          name: typeOfSetAside
+          in: query
+          description: 'Enter type Of SetAside Code.'
+          required: false
+          type: String
+        -
+          name: ncode
+          in: query
+          description: 'Enter Naics code.'
+          required: false
+          type: String
+        -
+          name: ccode
+          in: query
+          description: 'Enter Classification code.'
+          required: false
+          type: String
+        -
+          name: postedFrom
+          in: query
+          description: "Enter posted from date in mm/dd/yyyy format. Required when providing\nlimit."
+          required: false
+          type: String
+        -
+          name: postedTo
+          in: query
+          description: "Enter posted to date in mm/dd/yyyy format. Required when providing\nlimit."
+          required: false
+          type: String
+        -
+          name: rdlfrom
+          in: query
+          description: 'Enter response deadline in mm/dd/yyyy format'
+          required: false
+          type: String
+        -
+          name: rdlto
+          in: query
+          description: 'Enter response deadline to in mm/dd/yyyy format'
+          required: false
+          type: String
+        -
+          name: limit
+          in: query
+          description: 'Enter limit to fetch number of records'
+          required: true
+          type: String
+        -
+          name: offset
+          in: query
+          description: 'Enter offset value'
+          required: true
+          type: String
+          default: '0'
+        -
+          name: api_key
+          in: query
+          description: 'Enter the Public API Key.'
+          required: true
+          type: String
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Not Found'
+</pre></code>
+</p>
+</details>
+
 
 
 ## HTTP Response Codes
@@ -1219,5 +1157,7 @@ Date | Version | Description
 2/27/2020 | v1.6| Added ResourceLinks to Response Section
 6/20/2020| v1.7| Added additional information field to point of contact parameter in the response
 7/3/2020| v1.8| Updated field parameters to include all FH information for given notices in both request and response
+9/14/2020| v1.9| Updated OpenAPI Specification section to include v2 endpoints
+10/25/2020 | v1.91| Added new request field for status (Coming Soon)
 
 <p><small><a href="#">Back to top</a></small></p>

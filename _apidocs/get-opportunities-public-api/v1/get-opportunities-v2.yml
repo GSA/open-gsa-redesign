@@ -1,4 +1,4 @@
-/v1/search:
+/v2/search:
     get:
       tags:
         - 'Public GET Opportunities API '
@@ -35,18 +35,6 @@
           name: title
           in: query
           description: 'Enter Title.'
-          required: false
-          type: string
-        -
-          name: deptname
-          in: query
-          description: 'Enter Department Name.'
-          required: false
-          type: string
-        -
-          name: subtier
-          in: query
-          description: 'Enter SubTier Name.'
           required: false
           type: string
         -
