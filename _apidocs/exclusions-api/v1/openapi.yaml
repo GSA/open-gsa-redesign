@@ -128,12 +128,6 @@ paths:
           required: false
           schema:
             type: string
-        - name: isActive
-          in: query
-          description: 'A String (Y, N)'
-          required: false
-          schema:
-            type: string
         - name: npi
           in: query
           description: 'A String (1053373266, null)'
@@ -339,12 +333,6 @@ paths:
         - name: includeSections
           in: query
           description: Schema Filtering Paramter
-          required: false
-          schema:
-            type: string
-        - name: isActive
-          in: query
-          description: 'A String (Y, N)'
           required: false
           schema:
             type: string

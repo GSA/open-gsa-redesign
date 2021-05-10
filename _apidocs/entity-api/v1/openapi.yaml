@@ -146,12 +146,6 @@ paths:
           required: false
           schema:
             type: string
-        - name: physicalAddressCongressionalDistrictState
-          in: query
-          description: 5 characters
-          required: false
-          schema:
-            type: string
         - name: physicalAddressCountryCode
           in: query
           description: 3 character code
@@ -447,12 +441,6 @@ paths:
         - name: taxpayerIdentificationNumber
           in: query
           description: Taxpayer Identification Number
-          required: false
-          schema:
-            type: string
-        - name: isDisasterResponseParticipant
-          in: query
-          description: Disaster Response participant flag
           required: false
           schema:
             type: string
@@ -603,12 +591,6 @@ paths:
           required: false
           schema:
             type: string
-        - name: physicalAddressCongressionalDistrictState
-          in: query
-          description: 5 characters
-          required: false
-          schema:
-            type: string
         - name: physicalAddressCountryCode
           in: query
           description: 3 character code
@@ -904,12 +886,6 @@ paths:
         - name: taxpayerIdentificationNumber
           in: query
           description: Taxpayer Identification Number
-          required: false
-          schema:
-            type: string
-        - name: isDisasterResponseParticipant
-          in: query
-          description: Disaster Response participant flag
           required: false
           schema:
             type: string
@@ -1345,12 +1321,6 @@ paths:
         - name: taxpayerIdentificationNumber
           in: query
           description: Taxpayer Identification Number
-          required: false
-          schema:
-            type: string
-        - name: isDisasterResponseParticipant
-          in: query
-          description: Disaster Response participant flag
           required: false
           schema:
             type: string
@@ -1807,12 +1777,6 @@ paths:
         - name: taxpayerIdentificationNumber
           in: query
           description: Taxpayer Identification Number
-          required: false
-          schema:
-            type: string
-        - name: isDisasterResponseParticipant
-          in: query
-          description: Disaster Response participant flag
           required: false
           schema:
             type: string
