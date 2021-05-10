@@ -63,7 +63,7 @@ paths:
         - name: ueiSAM
           in: query
           description: >-
-            Unique Entity Identifier SAM- 9 digit value; a maximum of up to 100
+            Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
             values can be sent (This will replace ueiDUNS)
           required: false
           schema:
@@ -379,7 +379,7 @@ paths:
         - name: ultimateParentUEISAM
           in: query
           description: >-
-            Ultimate Parent Unique Entity Identifier SAM- 9 digit value (This
+            Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
             will replace ultimateParentUEIDUNS)
           required: false
           schema:
@@ -520,7 +520,7 @@ paths:
         - name: ueiSAM
           in: query
           description: >-
-            Unique Entity Identifier SAM- 9 digit value; a maximum of up to 100
+            Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
             values can be sent (This will replace ueiDUNS)
           required: false
           schema:
@@ -836,7 +836,7 @@ paths:
         - name: ultimateParentUEISAM
           in: query
           description: >-
-            Ultimate Parent Unique Entity Identifier SAM- 9 digit value (This
+            Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
             will replace ultimateParentUEIDUNS)
           required: false
           schema:
@@ -980,7 +980,7 @@ paths:
         - name: ueiSAM
           in: query
           description: >-
-            Unique Entity Identifier SAM- 9 digit value; a maximum of up to 100
+            Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
             values can be sent (This will replace ueiDUNS)
           required: false
           schema:
@@ -1277,7 +1277,7 @@ paths:
         - name: ultimateParentUEISAM
           in: query
           description: >-
-            Ultimate Parent Unique Entity Identifier SAM- 9 digit value (This
+            Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
             will replace ultimateParentUEIDUNS)
           required: false
           schema:
@@ -1442,7 +1442,7 @@ paths:
         - name: ueiSAM
           in: query
           description: >-
-            Unique Entity Identifier SAM- 9 digit value; a maximum of up to 100
+            Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
             values can be sent (This will replace ueiDUNS)
           required: false
           schema:
@@ -1739,7 +1739,7 @@ paths:
         - name: ultimateParentUEISAM
           in: query
           description: >-
-            Ultimate Parent Unique Entity Identifier SAM- 9 digit value (This
+            Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
             will replace ultimateParentUEIDUNS)
           required: false
           schema:
