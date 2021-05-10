@@ -195,8 +195,7 @@ paths:
         - name: ueiSAM
           in: query
           description: >-
-            Unique Entity Identifier SAMMI- 9 digit value (9725565, TF118652,
-            047795005, null) - Replacement for ueiDUNS
+            Unique Entity Identifier SAMMI- 12 digit value - Replacement for ueiDUNS
           required: false
           schema:
             type: string
@@ -425,8 +424,7 @@ paths:
         - name: ueiSAM
           in: query
           description: >-
-            Unique Entity Identifier SAMMI- 9 digit value (9725565, TF118652,
-            047795005, null) - Replacement for ueiDUNS
+            Unique Entity Identifier SAMMI- 12 digit value - Replacement for ueiDUNS
           required: false
           schema:
             type: string
