@@ -1,6 +1,6 @@
 ---
-title: Beta.SAM.Gov Entity Hierarchy API (In Progress)
-banner-heading: Beta.SAM.Gov Entity Hierarchy API (In Progress)
+title: SAM.Gov Entity Hierarchy API (In Progress)
+banner-heading: SAM.Gov Entity Hierarchy API (In Progress)
 ---
 
 ## In Progress (Coming Soon)

@@ -1,6 +1,6 @@
 ---
-title: Beta.SAM.Gov Exclusions  API
-banner-heading: Beta.SAM.Gov Exclusions API
+title: SAM.Gov Exclusions  API
+banner-heading: SAM.Gov Exclusions API
 ---
 
 ## Overview
@@ -37,7 +37,7 @@ Exclusions API can be accessed from Beta or Alpha via the following version 1 an
 
 
 Generating a personal API Key:
-* Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
+* Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://sam.gov/profile/details" target="_blank">Account Details page on sam.gov</a>
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned. 
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page. 
 * If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
@@ -429,8 +429,8 @@ Disclaimer:
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Beta.
-* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
+* Reach out to the sam.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Beta.
+* Reach out to the sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -453,5 +453,6 @@ Date | Version | Description
 03/12/2021 | v2.2 | * Added ssnOrTinOrEin parameter to the Query String Parameters table.<br><br> * Added note to addressLine1 and addressLine2 parameters regarding use with exclusionName parameter.<br><br> * Updated error messages
 04/08/2021 | v2.3 | Updated Contact Us information.
 04/29/2021 | V2.3 | * Updated openapi spec file.
+05/12/2021 | V2.4 | * Updated instances of beta.sam.gov to sam.gov.
 
 <p><small><a href="#">Back to top</a></small></p>
