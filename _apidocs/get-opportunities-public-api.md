@@ -1,17 +1,17 @@
 ---
-title: Beta.SAM.Gov Get Opportunities Public API 
-banner-heading: Beta.SAM.Gov Get Opportunities Public API 
+title: SAM.Gov Get Opportunities Public API 
+banner-heading: SAM.Gov Get Opportunities Public API 
 ---
 
 ## Overview
 
 Get Opportunities API provides all the published opportunity details based on the request parameters. This API requires pagination, and the response will be provided to users synchronously. 
 
-**This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Beta.Sam.Gov. All active notices in Beta.Sam.Gov are updated daily and all archived notices are updated on a weekly basis.**
+**This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Sam.Gov. All active notices in Sam.Gov are updated daily and all archived notices are updated on a weekly basis.**
 
-[Active Opportunities](https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2Fdatagov)
+[Active Opportunities](https://sam.gov/data-services?domain=Contract%20Opportunities%2Fdatagov)
 
-[Archived Opportunities](https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2FArchived%20Data)
+[Archived Opportunities](https://sam.gov/data-services?domain=Contract%20Opportunities%2FArchived%20Data)
 
 
 ## Getting Started
@@ -27,10 +27,10 @@ Get Opportunities API can be accessed from Beta or Alpha via the following envir
 
 ## Authentication and API Keys
 User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles. 
-Note: User can request a public API Key in the Account Details page on beta.sam.gov (if testing in production) Else on alpha.sam.gov (if testing in prodlike).
+Note: User can request a public API Key in the Account Details page on sam.gov (if testing in production) Else on alpha.sam.gov (if testing in prodlike).
 
 #### User Account API Key Creation
-* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on beta.sam.gov
+* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on sam.gov
 * User must enter account password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
 * If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
