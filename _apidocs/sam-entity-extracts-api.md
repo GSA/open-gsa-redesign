@@ -357,6 +357,6 @@ Date | Version | Description
 03/12/2021 | v2.0 | * Added additional FOUO sample files.<br><br> * Added note that only system account keys can be used for FOUO and sensitive downloads.
 04/08/2021 | v2.1 | * Updated Contact Us information.<br><br> * Added Entity Extract Calendar under Overview.
 04/29/2021 | V2.1 | * Added note above list of sample files mentioning that files are for Alpha.<br><br>* Added description to 400 http response code describing Type of Connection error.<br><br>* Updated openapi spec file.
-05/12/2021 | V2.2 | * Updated instances of beta.sam.gov to sam.gov. 
+05/12/2021 | V2.2 | * Updated instances of beta.sam.gov to sam.gov.
 
 <p><small><a href="#">Back to top</a></small></p>
