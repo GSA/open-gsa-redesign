@@ -16,13 +16,13 @@ Get Opportunities API provides all the published opportunity details based on th
 
 ## Getting Started
 
-Get Opportunities API can be accessed from Beta or Alpha via the following environments:
-* Beta: <br>  https://api.sam.gov/prod/opportunities/v1/search
+Get Opportunities API can be accessed from Production or Alpha via the following environments:
+* Production: <br>  https://api.sam.gov/prod/opportunities/v1/search
 * Alpha: <br> https://api-alpha.sam.gov/prodlike/opportunities/v1/search
 
 ### Version Control - v2 (Coming Soon)
 
-* Beta: <br>  https://api.sam.gov/opportunities/v2/search
+* Production: <br>  https://api.sam.gov/opportunities/v2/search
 * Alpha: <br> https://api-alpha.sam.gov/opportunities/v2/search
 
 ## Authentication and API Keys
@@ -1159,5 +1159,6 @@ Date | Version | Description
 7/3/2020| v1.8| Updated field parameters to include all FH information for given notices in both request and response
 9/14/2020| v1.9| Updated OpenAPI Specification section to include v2 endpoints
 10/25/2020 | v1.91| Added new request field for status (Coming Soon)
+05/12/2021 | v1.92| Changed Beta.SAM to SAM and Changed Beta to Prodution based on JIRA IAEDEV-51713
 
 <p><small><a href="#">Back to top</a></small></p>
