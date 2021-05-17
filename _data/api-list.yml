@@ -13,14 +13,14 @@
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: https://gsa.github.io/auctions_api/
-- title: Beta.SAM.Gov Entity/Exclusions Extracts Download API
+- title: SAM.Gov Entity/Exclusions Extracts Download API
   description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
   url: sam-entity-extracts-api/
-- title: Beta.SAM.Gov Entity Management API
-  description: API to retrieve Entity detail information from beta.sam.gov using various searchable parameters.
+- title: SAM.Gov Entity Management API
+  description: API to retrieve Entity detail information from sam.gov using various searchable parameters.
   url: entity-api/
-- title: Beta.SAM.Gov Exclusions API
-  description: API to retrieve Exclusion detail information from beta.sam.gov using various searchable parameters.
+- title: SAM.Gov Exclusions API
+  description: API to retrieve Exclusion detail information from sam.gov using various searchable parameters.
   url: exclusions-api/
 - title: Beta.SAM.Gov Federal Hierarchy FOUO API
   description: The Federal Hierarchy “For Official Use Only” (FOUO) API allows U.S. Government users to obtain Federal Organization details down to the office level.

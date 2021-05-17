@@ -77,14 +77,14 @@ The Entity Management extracts contain entities (businesses and government agenc
 
 The Public and FOUO Entity extracts and Exclusion extracts are available using the following endpoints:
  
-  * Beta: https://api.sam.gov/data-services/v1/extracts?api_key= < value >
+  * Production: https://api.sam.gov/data-services/v1/extracts?api_key= < value >
   * Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?api_key= < value ><br><br>
   
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
        The Sensitive version of the extracts are no longer available via GET requests.
        Please refer to the “Sensitive Download API Process” to learn more about the Sensitive extract retrieval process.
        <ul>
-        <li style="color: #31708f;">Beta: https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
+        <li style="color: #31708f;">Production: https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
         <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
         </ul><br>
   </div>  
@@ -333,7 +333,7 @@ The API will return one of the following responses:
 
 ## Contact Us
 
-* Reach out to the sam.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Beta.
+* Reach out to the sam.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Production.
 * Reach out to the sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -354,6 +354,6 @@ Date | Version | Description
 02/05/2021 | v1.9 | * Added V1/V2 Public, V3 Sensitive, and V2 FOUO files available in Alpha S3.<br><br>* Added version parameter<br><br>* Updated error messages<br><br>* Added note to charSet parameter stating exclusions file type is not applicable
 03/12/2021 | v2.0 | * Added additional FOUO sample files.<br><br> * Added note that only system account keys can be used for FOUO and sensitive downloads.
 04/08/2021 | v2.1 | * Updated Contact Us information.<br><br> * Added Entity Extract Calendar under Overview.
-05/12/2021 | V2.2 | * Updated instances of beta.sam.gov to sam.gov.
+05/12/2021 | V2.2 | * Updated instances of beta.sam.gov to sam.gov.<br><br> * Removed non-relevant information for Beta api.
 
 <p><small><a href="#">Back to top</a></small></p>
