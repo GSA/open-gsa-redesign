@@ -1,6 +1,6 @@
 ---
-title: Beta.SAM.Gov Opportunity Management API 
-banner-heading: Beta.SAM.Gov Opportunity Management API
+title: SAM.Gov Opportunity Management API 
+banner-heading: SAM.Gov Opportunity Management API
 ---
 
 ## Overview
@@ -13,11 +13,11 @@ The Opportunity Management API will allow authorized users to submit and request
 
 ## Getting Started
 
-Opportunity Management API can be accessed from Beta or Alpha via the following endpoints:
-* Beta: https://api.sam.gov/prod/opportunity/v1/api/
+Opportunity Management API can be accessed from Prod or Alpha via the following endpoints:
+* Prod: https://api.sam.gov/prod/opportunity/v1/api/
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v1/api/
 
-* Beta: https://api.sam.gov/prod/opportunity/v2/ 
+* Prod: https://api.sam.gov/prod/opportunity/v2/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ 
 
 **REST API Workflow Chart**
@@ -38,7 +38,7 @@ To view the current workflow of REST APIs, refer below file:
 
 #### System Account Authentication
 In order to utilize the Contract Opportunity Management API, the following is required:
-* Valid beta.SAM.GOV federal government system account with Read and Write permissions under Contract Opportunity domain.
+* Valid SAM.GOV federal government system account with Read and Write permissions under Contract Opportunity domain.
 
 ### Type of Connection Validation 
 All REST API requests will be validated against the Type of Connection within the system account profile. All requests without "REST API" type of connection in the system account profile will be rejected with an error.
@@ -48,7 +48,7 @@ All REST API requests will be validated against the IP Addresses registered with
 
 #### User Account Authorization
 In order to perform an Opportunity Management API operation, the following is required:
-* beta.SAM.GOV user account with either 'Administrator', 'Contracting Officer' role or 'Contracting Specialist' role. Permissions for operations by role are listed in the table below.<br/>
+* SAM.GOV user account with either 'Administrator', 'Contracting Officer' role or 'Contracting Specialist' role. Permissions for operations by role are listed in the table below.<br/>
 
 To submit any opportunity notice type (except “Special Notice”) for an office, user should provide Federal Hierarchy (FH) Organization ID or Activity Address Code (AAC) (procurement/non-procurement). To submit Special Notice opportunity, user should provide Federal Hierarchy (FH) Organization ID of office, sub-tier or department or Activity Address Code (AAC) (procurement/non-procurement) or [other codes] for sub-tier and department. <br/>
 **Note:** Permissions marked "Yes" are may not be assigned by default and will require your user administrator to update.
@@ -276,7 +276,7 @@ Please use v2 for the following APIs to utilize ueiSAM in place of DUNS. Busines
 
 **v2 Endpoints**
 
-* Beta: https://api.sam.gov/prod/opportunity/v2/ 
+* Prod: https://api.sam.gov/prod/opportunity/v2/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ 
 
 ## Contract Opportunity Management API Request and Responses
@@ -7807,7 +7807,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 
 **Can I look up contract opportunities   without using having a role or a system account?**
 
-A. Users of beta.sam.gov may use their personal API key to look up contract opportunities. Please visit the [Get Opportunities Public API](https://open.gsa.gov/api/get-opportunities-public-api/) document for additonal details.
+A. Users of sam.gov may use their personal API key to look up contract opportunities. Please visit the [Get Opportunities Public API](https://open.gsa.gov/api/get-opportunities-public-api/) document for additonal details.
 
 **How do I ensure that I have used correct location information?**
 
@@ -7815,7 +7815,7 @@ A. Contract Opportunity users may use Public Location Services API document to v
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov)
+* Reach out to the sam.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 
 ## Change Log
@@ -7823,7 +7823,7 @@ A. Contract Opportunity users may use Public Location Services API document to v
 Date | Version | Description
 --------- | --------------- | ---------
 4/25/2019 | v0.1 | Base Version
-4/29/2019 | v0.2 | Added information for Get Authorized Party List <br> Added Add Authorized Party <br> Added Vendor Data JSON <br> POC Email changed to not required <br> Change log added <br> Secure Attachment Download Authorization section added <br> Alpha and Beta endpoint section added
+4/29/2019 | v0.2 | Added information for Get Authorized Party List <br> Added Add Authorized Party <br> Added Vendor Data JSON <br> POC Email changed to not required <br> Change log added <br> Secure Attachment Download Authorization section added <br> Alpha and Prod endpoint section added
 5/23/2019 | v0.3 | Update IVL Settings URL <br> Removed Get IVL by DUNS <br> Added EntityID to getIVL API parameter <br> Updated Get Authorized Party <br> Updated Add Authorized Party <br> Error Message Section Updated
 5/28/2019 | v0.4 | Updated  Add Authorized Party<br> Get Authorized Party<br> Delete All Attachments API’s <br> Added Delete Notice API <br> Updated User Permissions <br> Create and Publish Contract Opportunity
 6/6/2019 | v0.5 | Deleted Download All Attachments (metadata) <br> Added Download All Attachments by Resource ID <br> Added Download All Attachments by Opportunity ID
@@ -7855,6 +7855,6 @@ Date | Version | Description
 8/13/2020 |v1.14 | Added Streaming Attachment API (coming soon) 
 8/17/2020 | v1.15 | Get APIs and Streaming Attachment API deployed to Alpha
 9/14/2020| v1.16| Updated OpenAPI Specification section to include v2 endpoints
-9/15/2020| v1.17| v2 Endpoints updated status in BETA
+9/15/2020| v1.17| v2 Endpoints updated status in PROD
 
 <p><small><a href="#">Back to top</a></small></p>
