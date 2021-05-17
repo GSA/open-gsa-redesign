@@ -621,6 +621,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>noPublicDisplayFlag</td>
 <td>string</td>
+<td>No Public Display Flag</td>
 <td>v1<br>v2</td>
 </tr>
 
