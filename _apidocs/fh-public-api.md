@@ -1,6 +1,6 @@
 ---
-title: SAM.Gov Federal Hierarchy Public API 
-banner-heading: SAM.Gov Federal Hierarchy Public API 
+title: SAM.gov Federal Hierarchy Public API 
+banner-heading: SAM.gov Federal Hierarchy Public API 
 ---
 
 ## Overview
@@ -34,7 +34,7 @@ Note:
 * Rate limit for Non-Federal User is 10 requests/day
 
 #### User Account API Key Creation
-* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on sam.gov
+* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on SAM.gov
 * User must enter account password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
 * If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
@@ -587,7 +587,7 @@ For limit or offset, user inputs characters/special characters| Limit and offset
 
 ## Contact Us
 
-* Reach out to the sam.gov team at [www.fsd.gov](https://www.fsd.gov)
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 
 ## Change Log
