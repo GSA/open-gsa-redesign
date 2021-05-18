@@ -137,7 +137,8 @@ This API has one primary endpoint:
 ## API Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/openapi.yaml">Open API specification file for the ratehhg API</a>
+[HHG Rate Query API spec.xlsx](https://github.com/GSA/open-gsa-redesign/files/6502515/HHG.Rate.Query.API.spec.xlsx)
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -173,6 +174,245 @@ Response:
 All response must be in JSON data structure specified in the Data dictionary section of this document.
 
 The connection to the API endpoints is secured and authenticated using the registered token provided by api.data.gov
+
+Sample Request and Response
+Request URL: https://api.gsa.gov/tmss/ratequeryhhg/v1/shipmentcost
+
+Request Payload for a HHG Domestic Shipment:
+{ 
+   "agencyLocationCode": 697,
+    "queryType":"HHGAPI",
+    "pickupDate":"2020-04-12",
+    "shipmentType":"General",
+    "sroId":"GENRL",
+    "containerizedShipments":false,
+    "vehicleClass":"Class 1",
+    "estimatedWeight": 10000,
+    "originZip":"32714",
+    "originProvince":null,
+    "destinationZip":"23059",
+    "destinationProvince":null,
+    "originCountryCode":"US00",
+    "destinationCountryCode":"US00",
+    "miles": 100,
+    "uabWeight":150
+}
+
+Response for a HHG Domestic Shipment:
+{
+       "agencyLocationCode": 697,
+        "queryType": "HHGAPI",
+        "pickupDate": "2020-04-12T00:00:00.000+0000",
+        "shipmentType": "General",
+        "sroId": "GENRL",
+        "containerizedShipments": false,
+        "vehicleClass": "Class 1",
+        "estimatedWeight": 10000,
+        "originZip": "32714",
+        "originProvince": null,
+        "destinationZip": "23059",
+        "destinationProvince": null,
+        "originCountryCode": "US00",
+        "destinationCountryCode": "US00",
+        "miles": 739.0,
+        "uabWeight": 150,
+        "rateId": 4265664,
+        "queryId": 4488,
+        "rateType": "G",
+        "scac": "(New) BUSV",
+        "zefflag": false,
+        "companyName": "BURNHAM SERVICE COMPANY INC",
+        "telephone": "800-955-5421",
+        "socioEconomicInd": "s",
+        "tender": "N613",
+        "csi": "0.00",
+        "vi": "33.4030",
+        "surfacePercentage": 37,
+        "surfaceCharge": "7367.75",
+        "uabPercentage": 0,
+        "uabCharge": "0.00",
+        "vehicleCharge": "1101.11",
+        "totalCharge": "8468.86",
+        "sitRatePercentage": 47,
+        "thirtyDayCharge": "3457.32",
+        "sixtyDayCharge": "4289.22",
+        "ninetyDayCharge": "5121.12",
+        "sitOrigin185ACharge": "658.47",
+        "sitOrigin185BCharge": "27.73",
+        "sitOrigin210ACharge": "1994.68",
+        "sitDest185ACharge": "658.47",
+        "sitDest185BCharge": "27.73",
+        "sitDest210ACharge": "1994.68",
+        "originThirtyDayCharge": "3669.29",
+        "originSixtyDayCharge": "4585.79",
+        "originNinetyDayCharge": "5502.29",
+        "exsPackagingCharge": null,
+        "exsMonthlyStorageCharge": null,
+        "exsWarehouseCharge": null,
+        "exsTotal1MonthCharge": null,
+        "exsTotal6MonthCharge": null,
+        "exsTotal12MonthCharge": null,
+        "exsDeliveryWithin50Miles": null,
+        "exsDeliveryHandlingOut": null,
+        "exsDeliveryOver50Miles": null,
+        "exsDiscountApplied": null,
+        "rateEffectiveDate": "2019-05-01T05:00:00.000+0000",
+        "rateExpiryDate": "2020-05-31T05:00:00.000+0000"
+
+}
+
+Request Payload for a HHG International Shipment:
+{  
+    "agencyLocationCode": 697,
+    "queryType":"HHGAPI",
+    "pickupDate":"2020-04-12",
+    "shipmentType":"General",
+    "sroId":"GENRL",
+    "containerizedShipments":false,
+    "vehicleClass":"Class 1",
+    "estimatedWeight": 10000,
+    "originZip":"32714",
+    "originProvince":null,
+    "destinationZip":null,
+    "destinationProvince":null,
+    "originCountryCode":"US00",
+    "destinationCountryCode":"1250",
+    "miles": 100,
+    "uabWeight":150
+}
+
+Response for a HHG International Shipment:
+{
+       "agencyLocationCode": 697,
+        "queryType": "HHGAPI",
+        "pickupDate": "2020-04-12T00:00:00.000+0000",
+        "shipmentType": "General",
+        "sroId": "GENRL",
+        "containerizedShipments": false,
+        "vehicleClass": "Class 1",
+        "estimatedWeight": 10000,
+        "originZip": "32714",
+        "originProvince": null,
+        "destinationZip": null,
+        "destinationProvince": null,
+        "originCountryCode": "US00",
+        "destinationCountryCode": "1250",
+        "miles": 0.0,
+        "uabWeight": 150,
+        "rateId": 3971539,
+        "queryId": 4430,
+        "rateType": "G",
+        "scac": "STVF",
+        "zefflag": false,
+        "companyName": "STEVENS INTERNATIONAL FORWARDE",
+        "telephone": "800-426-1348",
+        "socioEconomicInd": null,
+        "tender": "N701",
+        "csi": "108.07",
+        "vi": "111.1036",
+        "surfacePercentage": 276,
+        "surfaceCharge": "28254.12",
+        "uabPercentage": 1575,
+        "uabCharge": "1243.09",
+        "vehicleCharge": "7200.00",
+        "totalCharge": "36697.21",
+        "sitRatePercentage": 110,
+        "thirtyDayCharge": "907.50",
+        "sixtyDayCharge": "1177.00",
+        "ninetyDayCharge": "1446.50",
+        "sitOrigin185ACharge": "0.00",
+        "sitOrigin185BCharge": "0.00",
+        "sitOrigin210ACharge": "1186.90",
+        "sitDest185ACharge": "0.00",
+        "sitDest185BCharge": "0.00",
+        "sitDest210ACharge": "330.00",
+        "originThirtyDayCharge": "2191.20",
+        "originSixtyDayCharge": "2752.20",
+        "originNinetyDayCharge": "3313.20",
+        "exsPackagingCharge": null,
+        "exsMonthlyStorageCharge": null,
+        "exsWarehouseCharge": null,
+        "exsTotal1MonthCharge": null,
+        "exsTotal6MonthCharge": null,
+        "exsTotal12MonthCharge": null,
+        "exsDeliveryWithin50Miles": null,
+        "exsDeliveryHandlingOut": null,
+        "exsDeliveryOver50Miles": null,
+        "exsDiscountApplied": null,
+        "rateEffectiveDate": "2019-05-01T05:00:00.000+0000",
+        "rateExpiryDate": "2020-04-30T05:00:00.000+0000"
+}
+
+
+Request Payload for a HHG Extended Storage Shipment:
+
+{
+   "agencyLocationCode": 697,
+   "queryType":"HHG",
+   "pickupDate":"2021-03-25",
+   "rateType":"Extended Storage",
+   "sroId":71,
+   "containerizedShipments":false,
+   "estimatedWeight":"5000",
+   "originZipId":29510,
+   "originProvince":null,
+   "destinationZipId":null,
+   "destinationProvince":null,
+   "originCountryId":326,
+   "destinationCountryId":null,
+}
+
+
+Response for a HHG Extended Storage Shipment:
+
+{
+   "rateId":139155408,
+   "rateType":"G",
+   "scac":"INIC",
+   "carrierId":218,
+   "zefflag":true,
+   "companyName":"INTERSTATE INTERNATIONAL INC",
+   "telephone":"8009991001",
+   "tender":"XE21",
+   "csi":null,
+   "vi":null,
+   "surfacePercentage":null,
+   "surfaceCharge":null,
+   "uabPercentage":null,
+   "uabCharge":null,
+   "vehicleCharge":null,
+   "totalCharge":null,
+   "estimatedCost":null,
+   "sitRatePercentage":null,
+   "thirtyDayCharge":null,
+   "sixtyDayCharge":null,
+   "ninetyDayCharge":null,
+   "sitOrigin185ACharge":null,
+   "sitOrigin185BCharge":null,
+   "sitOrigin210ACharge":null,
+   "sitDest185ACharge":null,
+   "sitDest185BCharge":null,
+   "sitDest210ACharge":null,
+   "originThirtyDayCharge":null,
+   "originSixtyDayCharge":null,
+   "originNinetyDayCharge":null,
+   "queryId":3059,
+   "exsPackagingCharge":"2800.00",
+   "exsMonthlyStorageCharge":"300.00",
+   "exsWarehouseCharge":"300.00",
+   "exsTotal1MonthCharge":"3400.00",
+   "exsTotal6MonthCharge":"4900.00",
+   "exsTotal12MonthCharge":"6700.00",
+   "exsDeliveryWithin50Miles":"1850.00",
+   "exsDeliveryHandlingOut":"262.50",
+   "exsDeliveryOver50Miles":"2051.93",
+   "exsDiscountApplied":50,
+   "sro":"EXSTG",
+   "socioEconomicInd":null,
+   "effectiveDate":"2020-11-01T04:00:00.000+0000",
+   "expiryDate":"2021-04-30T04:00:00.000+0000",
+ }
+
 
 
 <p><small><a href="#">Back to top</a></small></p>
