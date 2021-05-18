@@ -2,10 +2,8 @@ API (google form) request has been already submitted.
 
 API name : ratequeryhhg
 
-url for production:
-https://tmss.gsa.gov/tmssserver/api/public/ratesquerydetails/ratequeryhhg
+url for the API:
 
-url for test:
-https:// tmss.preprod-acqit.helix.gsa.gov/tmssserver/api/public/ratesquerydetails/ratequeryhhg
+https://api.gsa.gov/tmss/ratequeryhhg/v1/shipmentcost
 
 Please let me know if any other information is required to set up this public API.
