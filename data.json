@@ -1398,8 +1398,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/pdf",
 					"format": "pdf",
-					"title": "DCOI CIO Statement May 2020",
-					"description": "May 5, 2020 - GSA has verified that our Strategic Plan is a valid JSON file, conforms to the schema on management.cio.gov/schema, and addresses all of the requirements for it specified in the DCOI. \r\n\r\nIt further confirms that this Strategic Plan has been posted publicly as requested in the template at [agency.gov]/digitalstrategy/datacenteroptimizationstrategicplan.json under the heading “Data Center Optimization Initiative Strategic Plans”.",
+					"title": "DCOI CIO Statement May 2021",
+					"description": "May 1, 2021 - GSA has verified that our Strategic Plan is a valid JSON file, conforms to the schema on management.cio.gov/schema, and addresses all of the requirements for it specified in the DCOI. \r\n\r\nIt further confirms that this Strategic Plan has been posted publicly as requested in the template at [agency.gov]/digitalstrategy/datacenteroptimizationstrategicplan.json under the heading “Data Center Optimization Initiative Strategic Plans”.",
 					"downloadURL": "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/c61e4b8a-4a4a-46b3-9d95-36d227bc28c3/download/gsa-dcoi-cio-signature.pdf"
 				}
 			],
@@ -3963,6 +3963,41 @@
 			"theme": ["Real Estate"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Federal Real Property Profile (FRPP) Summary Data by Installation Name",
+			"description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, that cannot be made public at a detailed level.",
+			"modified": "2021-05-17T12:45:43.118Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-05-13-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Elizabeth Fahey",
+				"hasEmail": "mailto:elizabeth.fahey@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "FY 2020 FRPP Summarized Data by Installation Name",
+					"description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, that cannot be made public at a detailed level.",
+					"describedBy": "https://www.gsa.gov/cdnstatic/FY_2020_FRPP_DATA_DICTIONARY_v2_final2.pdf",
+					"downloadURL": "https://inventory.data.gov/dataset/ec3eec46-f136-43f7-a6e5-94e76be89104/resource/2c82571a-1af4-4797-a7cf-24a65eacfba9/download/fy-2020-frpp-summarized-data-by-installation-name.xlsx"
+				}
+			],
+			"keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "Installation Name", "building", "land", "real property", "structure"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "Federal Strategic Sourcing Initiative (FSSI) DDS2",
 			"description": "FSSI Domestic Delivery Services 2 BPA vendor submitted usage reports",
 			"modified": "2016-02-23",
@@ -4124,6 +4159,39 @@
 			"keyword": ["18F", "FISMA", "FedRAMP", "cloud", "cloud service providers"],
 			"bureauCode": ["023:00"],
 			"programCode": ["023:019"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY 2020 Federal Real Property Profile Data for Civilian Agencies",
+			"description": "A CSV export of data from FRPP, a database of Federal real property for civilian agencies.",
+			"modified": "2021-05-03T15:35:43.403Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-04-27-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Elizabeth Fahey",
+				"hasEmail": "mailto:elizabeth.fahey@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FRPP_Public_Dataset_FY2020.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/a1072b46-cf6b-443e-bfa2-dad7f1ab4195/resource/aba264d5-d645-4ef7-8817-d1b043bc21b5/download/frpp_public_dataset_fy2020.csv"
+				}
+			],
+			"keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "RTF", "building", "civilian", "gsa", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
@@ -4356,9 +4424,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
-					"title": "eLibrary_Schedule_Contracts",
-					"description": "GSA eLibrary is the online source for the latest contract award information.",
-					"downloadURL": "https://inventory.data.gov/dataset/4fd4a79f-7fd6-4699-a77a-411bc7e980b9/resource/bfd33f01-4156-44a9-a680-d31dc42a857c/download/elibraryschedulecontracts20190205.xlsx"
+					"title": "eLibrary Schedule Contracts",
+					"description": "elibraryschedulecontracts20210505.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/4fd4a79f-7fd6-4699-a77a-411bc7e980b9/resource/f44444af-850a-4f21-ae05-48953ccee0f3/download/elibraryschedulecontracts20210505.xlsx"
 				}
 			],
 			"keyword": ["eLibrary GSA Schedule Contract"],
@@ -4391,10 +4459,9 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
-					"format": "JSON",
-					"title": "EDI JSON 04/27/21",
-					"description": "EDI JSON 04/27/21",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed879a6a-40f1-4e25-b4e9-2e4b42b5daeb/download/edi-json-04-27-21.json"
+					"format": "json",
+					"title": "EDI JSON 05 17 21",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/85ca7dbe-2c29-436e-b85a-4de488c20678/download/edi-json-05-17-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -4600,7 +4667,7 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA FITARA Actions and Milestones 2020-02-17",
+					"title": "GSA FITARA Actions and Milestones 2020-05-13",
 					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the Feb. 2021, quarterly submission to OMB on Feb. 28, 2021.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
@@ -4633,7 +4700,7 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "GSA IT Reform Cost Savings/Avoidance",
-					"description": "GSA's February 2021 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description": "GSA's May 2021 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -4664,7 +4731,7 @@
 					"mediaType": "application/zip",
 					"format": "ZIP",
 					"title": "GSA IT Policy Archive Zip",
-					"description": "Last update: 2021-02-09",
+					"description": "Last update: 2021-05-13",
 					"downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
 				}
 			],
@@ -4970,15 +5037,13 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format": "xlsx",
 					"title": "IOLP Buildings.xlsx",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/1b0820fb-1c20-42a9-85a2-e3e833eda68e/download/iolp-buildings.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/641ae53b-8578-4489-b7f1-adeaf42ca4e2/download/iolp-buildings.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format": "xlsx",
 					"title": "IOLP Leases.xlsx",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/b6411f3b-2e07-4c11-9108-556f54d05661/download/iolp-leases.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/a9e09e6e-dcb5-475c-a953-0da2ef377657/download/iolp-leases.xlsx"
 				}
 			],
 			"keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
@@ -6961,6 +7026,40 @@
 				}
 			],
 			"keyword": ["Networx"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2021 2nd Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
+			"modified": "2021-05-10T19:42:02.944Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-05-07-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"isPartOf": "GSA-2015-08-27",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TotRevFY21_2ndQtr.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/ceb336ce-eabd-476c-9bbe-8e023f980c72/resource/ec8a23ef-cc7f-4547-bb72-c8e43cb7e500/download/totrevfy21_2ndqtr.xlsx"
+				}
+			],
+			"keyword": ["Networx", "Networx Telecommunications", "networx business volume"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
@@ -9983,10 +10082,9 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
-					"format": "csv",
 					"title": "data_gov_bldg_rexus.csv",
-					"description": "March Rexus Building file",
-					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/b1803048-81da-46a8-8b38-f6591a63224b/download/datagovbldgrexus.csv"
+					"description": "May - Rexus Building file",
+					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/cbce4462-d19a-4de4-a8f5-15910a4cb8b0/download/data_gov_bldg_rexus.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -10019,8 +10117,8 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus",
-					"description": "March - Rexus Lease file",
-					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/db2e5040-a1fc-4581-975c-e38ccf70b2e9/download/datagovlserexus.csv"
+					"description": "May - Rexus Lease file",
+					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/db2e5040-a1fc-4581-975c-e38ccf70b2e9/download/data_gov_lse_rexus.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
