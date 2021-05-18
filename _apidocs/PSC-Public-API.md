@@ -1,6 +1,6 @@
 ---
-title: Beta.SAM.Gov PSC Public API
-banner-heading: Beta.SAM.Gov PSC Public API
+title: SAM.gov PSC Public API
+banner-heading: SAM.gov PSC Public API
 ---
 
 ## Overview
@@ -12,9 +12,9 @@ This API supports pagination as needed.
 
 ## Getting Started
 
-Get PSC API can be accessed from Beta or Alpha environments via the following urls:
+Get PSC API can be accessed from Production or Alpha environments via the following urls:
 
-* Beta: <br> https://api.sam.gov/prod/locationservices/v1/api/publicpscdetails
+* Production: <br> https://api.sam.gov/prod/locationservices/v1/api/publicpscdetails
 * Alpha: <br> https://api-alpha.sam.gov/prodlike/locationservices/v1/api/publicpscdetails
 
 ## Authentication and API Keys
@@ -27,7 +27,7 @@ Note:
 * Rate limit for Non-Federal User is 10 requests/day
 
 #### User Account API Key Creation
-* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on beta.sam.gov
+* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on SAM.gov
 * User must enter account password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
 * If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
@@ -84,7 +84,7 @@ links |	This is an array consisting of: <br>"rel": "self"<br>"href" |	String
 ## Examples
 
 URLs for production and staging:
-* Beta (Production) Production URL: <br> https://api.sam.gov/prod/locationservices/v1/api/publicpscdetails
+* Production URL: <br> https://api.sam.gov/prod/locationservices/v1/api/publicpscdetails
 * Alpha (Staging) URL: <br> https://api-alpha.sam.gov/prodlike/locationservices/v1/api/publicpscdetails
 
 ### Example 1: Search for PSC Codes with start date between a given date range
@@ -802,7 +802,7 @@ User enters a updatedDateFrom greater than updatedDateTo|	"updatedDateFrom canno
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov)
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 ## Change Log
 
