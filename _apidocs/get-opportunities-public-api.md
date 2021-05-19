@@ -1,13 +1,13 @@
 ---
-title: SAM.Gov Get Opportunities Public API 
-banner-heading: SAM.Gov Get Opportunities Public API 
+title: SAM.gov Get Opportunities Public API 
+banner-heading: SAM.gov Get Opportunities Public API 
 ---
 
 ## Overview
 
 Get Opportunities API provides all the published opportunity details based on the request parameters. This API requires pagination, and the response will be provided to users synchronously. 
 
-**This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Sam.Gov. All active notices in Sam.Gov are updated daily and all archived notices are updated on a weekly basis.**
+**This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Sam.Gov. All active notices in Sam.gov are updated daily and all archived notices are updated on a weekly basis.**
 
 [Active Opportunities](https://sam.gov/data-services?domain=Contract%20Opportunities%2Fdatagov)
 
@@ -16,13 +16,13 @@ Get Opportunities API provides all the published opportunity details based on th
 
 ## Getting Started
 
-Get Opportunities API can be accessed from Prod or Alpha via the following environments:
-* Prod: <br>  https://api.sam.gov/prod/opportunities/v1/search
+Get Opportunities API can be accessed from Production or Alpha via the following environments:
+* Production: <br>  https://api.sam.gov/prod/opportunities/v1/search
 * Alpha: <br> https://api-alpha.sam.gov/prodlike/opportunities/v1/search
 
 ### Version Control - v2 
 
-* Prod: <br>  https://api.sam.gov/opportunities/v2/search
+* Production: <br>  https://api.sam.gov/opportunities/v2/search
 * Alpha: <br> https://api-alpha.sam.gov/opportunities/v2/search
 
 ## Authentication and API Keys
@@ -1137,7 +1137,7 @@ User clicks on the description link available in the response and description co
 
 ## Contact Us
 
-* Reach out to the sam.gov team at [www.fsd.gov](https://www.fsd.gov)
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 ## Change Log
 
@@ -1160,5 +1160,11 @@ Date | Version | Description
 9/14/2020| v1.9| Updated OpenAPI Specification section to include v2 endpoints
 10/25/2020 | v1.91| Added new request field for status
 05/12/2021 | v1.92| Changed Beta.SAM to SAM and Changed Beta to Prodution based on JIRA IAEDEV-51713
+05/17/2021 | v1.93| Changed Beta to Prod and removed coming soon JIRA IAEDEV-51713
+05/18/2021 | v1.94| Changed SAM.Gov to SAM.gov based on JIRA IAEDEV-51713
+05/18/2021 | v1.95| Changed Prod to Production JIRA IAEDEV-51713
+
+
+
 
 <p><small><a href="#">Back to top</a></small></p>
