@@ -7,7 +7,7 @@ banner-heading: SAM.gov Get Opportunities Public API
 
 Get Opportunities API provides all the published opportunity details based on the request parameters. This API requires pagination, and the response will be provided to users synchronously. 
 
-**This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Sam.Gov. All active notices in Sam.gov are updated daily and all archived notices are updated on a weekly basis.**
+**This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Sam.gov. All active notices in Sam.gov are updated daily and all archived notices are updated on a weekly basis.**
 
 [Active Opportunities](https://sam.gov/data-services?domain=Contract%20Opportunities%2Fdatagov)
 
@@ -1163,6 +1163,8 @@ Date | Version | Description
 05/17/2021 | v1.93| Changed Beta to Prod and removed coming soon JIRA IAEDEV-51713
 05/18/2021 | v1.94| Changed SAM.Gov to SAM.gov based on JIRA IAEDEV-51713
 05/18/2021 | v1.95| Changed Prod to Production JIRA IAEDEV-51713
+05/19/2021 | v1.96| Changed SAM.Gov to SAM.gov based on JIRA IAEDEV-51713
+
 
 
 
