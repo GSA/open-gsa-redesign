@@ -2883,6 +2883,8 @@ Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
 file | Form/MultipartFile | object | Yes | File to be streamed to the opportunity
+Content-Disposition | form-data | object | Yes | specify the content disposition type
+Content-Type | multipart/form-data | object | Yes | specify the content type
 metadata | Form/MultipartFile | JSON | Yes | JSON metadata regarding the attachment <br> [Refer Stream Attachment Metadata Contract JSON](#stream-attachment-metadata-contract-json) 
 
 
