@@ -2093,7 +2093,7 @@ data.award.lineitemNumber | string |  Award Line Item Number
 data.award.awardee | JSON Object |  
 data.award.awardee.name | string |  Awardee Name
 data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS **(v2 - Deprecated)**
-data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST <br>**(v2 Only)**
+data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. Example: ueiSAM=025114695AST <br>**(v2 Only)**
 data.award.awardee.location | JSON Object|  Awardee Location
 data.award.awardee.location.streetAddress | string | Awardee Street Address 1
 data.award.awardee.location.streetAddress2 | string |  Awardee Street Address 1
@@ -3115,7 +3115,7 @@ Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity IDv1
 entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2 - Deprecated
-ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST| v2
+ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. Example: ueiSAM=025114695AST| v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3125,7 +3125,7 @@ HTTP Status Code | Response Type |  Description
 -----------------|---------------|------------
 ivl | JSON Array | 
 ivl.duns | string | Unique Entity Identifier DUNS number for the business entity (v2 - Deprecated)
-ivl.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
+ivl.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. Example: ueiSAM=025114695AST.
 ivl.cageNumber | string | Identifies a given facility at a specific location
 ivl.name | string | Name of business entity
 ivl.addedOn | string | Date added to IVL
@@ -4067,7 +4067,7 @@ data.award.lineitemNumber | string |255 characters | | No | No | Contract Line i
 data.award.awardee | JSON Object | NA| NA | NA | NA |Awardee details; Only for type = a (Award) |NA
 data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
 data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
-data.award.awardee.ueiSAM | string | 12 alphanumeric | | No | No; Either awardee.name or awardee.ueiSAM is required <br> **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
+data.award.awardee.ueiSAM | string | 12 alphanumeric | | No | No; Either awardee.name or awardee.ueiSAM is required <br>  |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
 data.award.awardee.location | JSON Object |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided** | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address  | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 2 | v1 <br> v2
@@ -4455,7 +4455,7 @@ data.award.lineitemNumber | string |255 characters | | No | Contract Line item N
 data.award.awardee | JSON Object | NA| NA | NA |Awardee details; Only for type = a (Award)| v1 <br> v2
 data.award.awardee.name | string | 1000 characters | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
 data.award.awardee.duns | string | 9 digits | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
-data.award.awardee.ueiSAM | string | 12 alphanumeric | No | No; Either awardee.name or awardee.ueiSAM is required <br> **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
+data.award.awardee.ueiSAM | string | 12 alphanumeric | No | No; Either awardee.name or awardee.ueiSAM is required <br> |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
 data.award.awardee.location | JSON Object |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**| v1 <br> v2
 data.award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress2 | string | | | No | Awardee Street Address 2| v1 <br> v2
@@ -4871,7 +4871,7 @@ lname | string | | Yes | Last name of the user| v1 <br> v2
 email | string | | Yes | Email Id of the user| v1 <br> v2
 contractorName | string | | Yes | Contractor Name| v1 <br> v2 - Deprecated
 duns | string | | Yes |  Unique Entity Identifier DUNS#| v1 <br> v2- Deprecated
-ueiSAM | string | | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.|  v2
+ueiSAM | string | | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. Example: ueiSAM=025114695AST.|  v2
 cageCode | string | | Yes | Cage Code| v1 <br> v2 - Deprecated
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -7711,8 +7711,8 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Award Date |	Contract Award Date provided should have 4 digit year |	Invalid Year provided in the Award Date |	Publish, Uncancel, Unarchive
 400|Award Number |	Contract Award Number is a required field	| Contract Award Number is required for Intent to Bundle, Justification, Award | Publish
 400|Award Number |	Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces| Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces | Publish
-400|DUNS | Unique Entity Identifier (duns) is invalid. |	(**Plan to deprecate in the future**) Invalid UEI DUNS provided |	Publish
-400|ueiSAM | Unique Entity Identifier (SAM) is invalid. |	(**Plan to replace Duns# in the future, and ueiSAM values not yet available**) Invalid UEI SAM provided |	Publish
+400|DUNS | Unique Entity Identifier (duns) is invalid. | Invalid UEI DUNS provided |	Publish
+400|ueiSAM | Unique Entity Identifier (SAM) is invalid. | Invalid UEI SAM provided |	Publish
 400|Awardee Name | Contractor Awarded Name is a required field |	Contractor Awarded Name is a required field if the DUNS is not provided for an Award Notice |	Publish
 400|Awardee Name | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | Publish
 400|Awardee | Required fields from Awardee section is missing |Awardee Name or DUNS# not provided for Award notice|	Publish
@@ -7794,9 +7794,9 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|VendorData| lname should not be empty| lname should not be empty| AddAuthorizedParty
 400|VendorData| Email should not be empty| Email should not be empty| AddAuthorizedParty
 400|VendorData| Duns should not be empty| (**Plan to deprecate in the future**) Duns should not be empty| AddAuthorizedParty
-400|VendorData| ueiSAM should not be empty| (**Plan to replace Duns# in the future, and ueiSAM values not yet available**) ueiSAM should not be empty| AddAuthorizedParty
+400|VendorData| ueiSAM should not be empty| ueiSAM should not be empty| AddAuthorizedParty
 400|Duns# |	No contact match on vendor data provided	| (**Plan to deprecate in the future**) Not a Valid email or Duns#	| AddAuthorizedParty
-400|ueiSAM# |	No contact match on vendor data provided	| (**Plan to replace Duns# in the future, and ueiSAM values not yet available**) Not a Valid email or ueiSAM#	| AddAuthorizedParty
+400|ueiSAM# |	No contact match on vendor data provided	| Not a Valid email or ueiSAM#	| AddAuthorizedParty
 404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
 400|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
