@@ -707,13 +707,6 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
-<td>mpin</td>
-<td>string</td>
-<td>mpin</td>
-<td>v1<br>v2</td>
-</tr>
-
-<tr>
 <td>correspondenceFlag</td>
 <td>string</td>
 <td>Correspondence Flag<br>NOTE: This field does not contain any data and has been removed from the API.</td>
@@ -6937,13 +6930,6 @@ samMonitoring
 <td>submissionDate</td>
 <td>string</td>
 <td>Submission Date</td>
-<td>v1<br>v2</td>
-</tr>
-
-<tr>
-<td>mpin</td>
-<td>string</td>
-<td>mpin</td>
 <td>v1<br>v2</td>
 </tr>
 
