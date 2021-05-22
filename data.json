@@ -3963,41 +3963,6 @@
 			"theme": ["Real Estate"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Federal Real Property Profile (FRPP) Summary Data by Installation Name",
-			"description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, that cannot be made public at a detailed level.",
-			"modified": "2021-05-17T12:45:43.118Z",
-			"accessLevel": "public",
-			"identifier": "GSA-2021-05-13-01",
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "true",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "Office of Government-wide Policy",
-				"subOrganizationOf": {
-					"@type": "org:Organization",
-					"name": "General Services Administration"
-				}
-			},
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Elizabeth Fahey",
-				"hasEmail": "mailto:elizabeth.fahey@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"title": "FY 2020 FRPP Summarized Data by Installation Name",
-					"description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, that cannot be made public at a detailed level.",
-					"describedBy": "https://www.gsa.gov/cdnstatic/FY_2020_FRPP_DATA_DICTIONARY_v2_final2.pdf",
-					"downloadURL": "https://inventory.data.gov/dataset/ec3eec46-f136-43f7-a6e5-94e76be89104/resource/2c82571a-1af4-4797-a7cf-24a65eacfba9/download/fy-2020-frpp-summarized-data-by-installation-name.xlsx"
-				}
-			],
-			"keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "Installation Name", "building", "land", "real property", "structure"],
-			"bureauCode": ["015:11"],
-			"programCode": ["015:001"],
-			"language": ["en-US"]
-		}, {
-			"@type": "dcat:Dataset",
 			"title": "Federal Strategic Sourcing Initiative (FSSI) DDS2",
 			"description": "FSSI Domestic Delivery Services 2 BPA vendor submitted usage reports",
 			"modified": "2016-02-23",
@@ -4190,6 +4155,41 @@
 				}
 			],
 			"keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "RTF", "building", "civilian", "gsa", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY2020 Federal Real Property Profile (FRPP) Summary Data by Installation Name",
+			"description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, that cannot be made public at a detailed level.",
+			"modified": "2021-05-19T14:38:47.344Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-05-13-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Elizabeth Fahey",
+				"hasEmail": "mailto:elizabeth.fahey@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "FY 2020 FRPP Summarized Data by Installation Name",
+					"description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, that cannot be made public at a detailed level.",
+					"describedBy": "https://www.gsa.gov/cdnstatic/FY_2020_FRPP_DATA_DICTIONARY_v2_final2.pdf",
+					"downloadURL": "https://inventory.data.gov/dataset/ec3eec46-f136-43f7-a6e5-94e76be89104/resource/2c82571a-1af4-4797-a7cf-24a65eacfba9/download/fy-2020-frpp-summarized-data-by-installation-name.xlsx"
+				}
+			],
+			"keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "Installation Name", "building", "land", "real property", "structure"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
@@ -4459,9 +4459,8 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
-					"format": "json",
-					"title": "EDI JSON 05 17 21",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/85ca7dbe-2c29-436e-b85a-4de488c20678/download/edi-json-05-17-21.json"
+					"title": "EDI JSON 05 20 21.json",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/9b278c48-7b04-436c-bad9-65bc29c8c057/download/edi-json-05-20-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5038,12 +5037,12 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"title": "IOLP Buildings.xlsx",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/641ae53b-8578-4489-b7f1-adeaf42ca4e2/download/iolp-buildings.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/6ff40cf1-ab5b-40d8-b802-9670f8eeba0b/download/iolp-buildings.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"title": "IOLP Leases.xlsx",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/a9e09e6e-dcb5-475c-a953-0da2ef377657/download/iolp-leases.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/2ac0abef-9cb6-46a5-9e47-4ea91ea34b04/download/iolp-leases.xlsx"
 				}
 			],
 			"keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
