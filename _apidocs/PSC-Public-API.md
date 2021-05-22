@@ -21,7 +21,7 @@ Get PSC API can be accessed from Production or Alpha environments via the follow
 User of this API must provide an API key to use this API. Request per day are limited based on the federal or non-federal or general roles. 
 
 Note: 
-* For production, users can request an API Key in their Profile under Account Details on https://beta.sam.gov/
+* For production, users can request an API Key in their Profile under Account Details on https://SAM.gov/
 * For prodlike, users can request an API Key in their Profile under Account Details on https://alpha.sam.gov/
 * Rate limit for Federal User is 1000 requests/day
 * Rate limit for Non-Federal User is 10 requests/day
