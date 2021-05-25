@@ -85,9 +85,9 @@
 - title: Sustainable Facilities Tool API
   description: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
   url: https://sftool.gov/developers
-- title: System for Award Management API
-  description: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
-  url: https://gsa.github.io/sam_api/sam/
+#- title: System for Award Management API
+#  description: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
+#  url: https://gsa.github.io/sam_api/sam/
 - title: Touchpoints
   description: Touchpoints makes customer feedback easier for federal agencies, and Touchpoints API provides an convenient, programmatic way to access the data for your Forms and Responses.
   url: https://github.com/gsa/touchpoints/wiki/API

@@ -277,7 +277,7 @@ Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer"
 
 **Sample File Names:**<br>
 
-<b>The below sample files are for Alpha. Beta has files from March 2021 onward and after SAM integration Beta will have files from January 2020 onward.</b>
+<b>The below sample files are for Alpha. Production has files from January 2020 onward.</b>
 
 * FOUO files: 
   <br> SAM_FOUO_DAILY_20190423.ZIP<br>  SAM_FOUO_DAILY_20190522.ZIP<br>  SAM_FOUO_DAILY_20190523.ZIP<br>  SAM_FOUO_DAILY_20190524.ZIP<br>  SAM_FOUO_DAILY_20190525.ZIP<br> 
