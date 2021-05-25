@@ -1,11 +1,11 @@
 ---
-title: Beta.SAM.Gov Entity/Exclusions Extracts Download APIs
-banner-heading: Beta.SAM.Gov Entity/Exclusions Extracts Download APIs
+title: SAM.gov Entity/Exclusions Extracts Download APIs
+banner-heading: SAM.gov Entity/Exclusions Extracts Download APIs
 ---
 
 
 ## Overview
-The Extracts Download API permits beta.SAM.gov users with valid roles to download entity and exclusions data extracts.<br>
+The Extracts Download API permits SAM.gov users with valid roles to download entity and exclusions data extracts.<br>
 
 The Entity Management extracts contain entities (businesses and government agencies) data from SAM.gov.  The Exclusions extract contains a list of all parties with a currently active exclusion in SAM.
 
@@ -13,7 +13,7 @@ The Entity Management extracts contain entities (businesses and government agenc
 1. **Entity Management Public Data Package:**
    * This extract contains entity registration data publicly available under the Freedom of Information Act (FOIA) for those registered in SAM.gov to do business with the Federal government.
    * All entities and data elements are classified as public.
-   * End user needs to create an account in beta.SAM.gov and procure an API_KEY to access these extracts.
+   * End user needs to create an account in SAM.gov and procure an API_KEY to access these extracts.
    * File naming convention:<br />
 	 Monthly ASCII (Default): SAM_PUBLIC_MONTHLY_YYYYMMDD.ZIP<br />
 	 Monthly UTF-8 (Default): SAM_PUBLIC_UTF-8_MONTHLY_YYYYMMDD.ZIP<br />
@@ -45,7 +45,7 @@ The Entity Management extracts contain entities (businesses and government agenc
 4. **Exclusions Public Data Package:**
    * This extract all active exclusions in SAM as a comma-separated value (CSV) file.
    * The Exclusions extract is a daily file, published 7 days per week.
-   * End user needs to create an account in beta.SAM.gov and procure an API_KEY to access these extracts.
+   * End user needs to create an account in SAM.gov and procure an API_KEY to access these extracts.
    * File Name: SAM_Exclusions_Public_Extract_YYDDD.ZIP (Julian Date)<br />
    		* April 16, 2019 is the 106th day of 2019.  Therefore, the Exclusions extract for April 16, 2019 would be SAM_Exclusions_Public_Extract_19106.ZIP.
 
@@ -77,20 +77,20 @@ The Entity Management extracts contain entities (businesses and government agenc
 
 The Public and FOUO Entity extracts and Exclusion extracts are available using the following endpoints:
  
-  * Beta: https://api.sam.gov/data-services/v1/extracts?api_key= < value >
+  * Production: https://api.sam.gov/data-services/v1/extracts?api_key= < value >
   * Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?api_key= < value ><br><br>
   
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
        The Sensitive version of the extracts are no longer available via GET requests.
        Please refer to the “Sensitive Download API Process” to learn more about the Sensitive extract retrieval process.
        <ul>
-        <li style="color: #31708f;">Beta: https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
+        <li style="color: #31708f;">Production: https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
         <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
         </ul><br>
   </div>  
      
 Generating a personal API Key:
-* Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on beta.sam.gov
+* Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on SAM.gov
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page.
 * If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
@@ -335,8 +335,8 @@ The API will return one of the following responses:
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Beta.
-* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Production.
+* Reach out to the SAM.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -357,5 +357,6 @@ Date | Version | Description
 03/12/2021 | v2.0 | * Added additional FOUO sample files.<br><br> * Added note that only system account keys can be used for FOUO and sensitive downloads.
 04/08/2021 | v2.1 | * Updated Contact Us information.<br><br> * Added Entity Extract Calendar under Overview.
 04/29/2021 | V2.1 | * Added note above list of sample files mentioning that files are for Alpha.<br><br>* Added description to 400 http response code describing Type of Connection error.<br><br>* Updated openapi spec file.
+05/12/2021 | V2.2 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
 
 <p><small><a href="#">Back to top</a></small></p>

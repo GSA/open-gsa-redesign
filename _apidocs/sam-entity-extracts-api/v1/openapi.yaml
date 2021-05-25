@@ -1,8 +1,12 @@
 openapi: 3.0.0
 info:
-  description: These RESTFUL endpoints are used to retrieve different extract files via Request parameters
-  version: 0.1.0
-  title: Entity Ext API
+  description: Extracts Download API
+  version: "1.0"
+  title: Spring Boot REST API
+  contact:
+    name: GSA
+    url: www.sam.gov
+    email: reply@gsa.gov
   license:
     name: GSA
 tags:

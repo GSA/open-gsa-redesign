@@ -1,6 +1,6 @@
 ---
-title: Beta.SAM.Gov Exclusions  API
-banner-heading: Beta.SAM.Gov Exclusions API
+title: SAM.gov Exclusions  API
+banner-heading: SAM.gov Exclusions API
 ---
 
 ## Overview
@@ -25,19 +25,15 @@ The response will be provided in the JSON format in a paginated manner.
 
 ## Getting Started
 
-**IMPORTANT**: There will be a period from early 2021 through the integration of SAM.gov into Beta.SAM.gov where Alpha and Beta functionality of the APIs will not be in sync. During this time, we recommend you primarily test the functionality of the APIs in Alpha. Please pay close attention to the parameter and schema "Description" and "Applicable Version" columns as all differences are noted there. Some of the key differences between Alpha and Beta API functionality are highlighted here:
-* Some minor schema differences between V2 API in Alpha vs Beta
-* New parameters/parameter functionality differences
-
-Exclusions API can be accessed from Beta or Alpha via the following version 1 and version 2 endpoints:
-* Beta Version 1: https://api.sam.gov/entity-information/v1/exclusions?api_key=< value >
-* Beta Version 2: https://api.sam.gov/entity-information/v2/exclusions?api_key=< value >
+Exclusions API can be accessed from Production or Alpha via the following version 1 and version 2 endpoints:
+* Production Version 1: https://api.sam.gov/entity-information/v1/exclusions?api_key=< value >
+* Production Version 2: https://api.sam.gov/entity-information/v2/exclusions?api_key=< value >
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< value ><br><br>
 
 
 Generating a personal API Key:
-* Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
+* Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://sam.gov/profile/details" target="_blank">Account Details page on sam.gov</a>
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned. 
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page. 
 * If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
@@ -72,8 +68,8 @@ Utilizing the Exclusion API as an extract:
 | exclusionName | Allows a partial text or a complete text.<br><br> This parameter must not be used inside the 'q' parameter.<br><br> This parameter accepts multi-text values in any order and in any case, and will apply the AND operator between the texts.<br><br> Examples: 'exclusionName=J Roy', 'exclusionName=ROY j' |  v1<br>v2 |
 | exclusionType | Allows a partial text or a complete text (a string).<br><br> Allowable values are: Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction and Voluntary Exclusion.<br><br> This parameter can be used inside the 'q' parameter. When not used inside the 'q' parameter, this parameter will apply the AND operator if a multi-text value is provided in any order and in any case.<br><br> Examples: 'q=exclusionType:Ineligible (Proceedings Pending)', 'exclusionType=Ineligible PENDING', 'exclusionType=[Pending~Voluntary]' |  v1<br>v2 |
 | exclusionProgram | Allows a complete text (a string).<br><br> Allowable values are: Reciprocal, NonProcurement and Procurement.<br><br> This parameter can be used inside the 'q' parameter.<br><br> Examples: 'q=((exclusionProgram:Reciprocal) OR (exclusionProgram:Procurement))', 'exclusionProgram=[NonProcurement~RECIPROCAL]', 'exclusionProgram=!NonProcurement'|  v1<br>v2 |
-| addressLine1  | Mainly used to search Individuals with their address. Allows a partial text, a complete text and null.<br><br> This parameter must not be used inside the 'q' parameter. <br><br> Examples: 'addressLine1=""', 'addressLine1="7th Floor, Buraengdang Building 530-14"'<br><br> This parameter is available in Alpha but will not be available in Beta until SAM Integration.<br><br> NOTE: If addressLine1 is used in a request with exclusionName, it must match 85% of an Individual's address in order for the address information to be returned in the response (not case sensitive). |  v1<br>v2 |
-| addressLine2  | Mainly used to search Individuals with their address. Allows a partial text, a complete text and null.<br><br> This parameter must not be used inside the 'q' parameter. <br><br> Examples: 'addressLine2=""', 'addressLine2="Dapsipri, 5 Dong, Dongdaemun-K"'<br><br> This parameter is available in Alpha but will not be available in Beta until SAM Integration.<br><br> NOTE: If addressLine2 is used in a request with exclusionName, it must match 85% of an Individual's address in order for the address information to be returned in the response (not case sensitive). |  v1<br>v2 |
+| addressLine1  | Mainly used to search Individuals with their address. Allows a partial text, a complete text and null.<br><br> This parameter must not be used inside the 'q' parameter. <br><br> Examples: 'addressLine1=""', 'addressLine1="7th Floor, Buraengdang Building 530-14"'<br><br> NOTE: If addressLine1 is used in a request with exclusionName, it must match 85% of an Individual's address in order for the address information to be returned in the response (not case sensitive). |  v1<br>v2 |
+| addressLine2  | Mainly used to search Individuals with their address. Allows a partial text, a complete text and null.<br><br> This parameter must not be used inside the 'q' parameter. <br><br> Examples: 'addressLine2=""', 'addressLine2="Dapsipri, 5 Dong, Dongdaemun-K"'<br><br> NOTE: If addressLine2 is used in a request with exclusionName, it must match 85% of an Individual's address in order for the address information to be returned in the response (not case sensitive). |  v1<br>v2 |
 | stateProvince | Allows 2-character codes for the USA, names for foreign countries and null (a string).<br><br> Examples: 'stateProvince=AR', 'stateProvince=[VA~MICHOACÁN]', 'stateProvince=""' |  v1<br>v2 |
 | country  | Allows 3-character codes, numerical values and null (a string).<br><br> Examples: 'country=USA' 'country=[RUS~292~mex]', 'country=!""', 'q=((country:RUS) OR (country:292) OR (country:mex))' |  v1<br>v2 |
 | zipCode  | Allows 5-digit values for the USA, any value as it was provided for foreign countries and null (a string).<br><br> Example: 'zipCode=20171', 'zipCode=[901-2132~V3M 5P8~C.P. 44890]', 'zipCode=""', 'q=((zipCode:901-2132) OR (zipCode:20147))' |  v1<br>v2 |
@@ -93,7 +89,7 @@ Utilizing the Exclusion API as an extract:
 | size  | Denotes the number of records returned per page.<br><br> Allowable values are 1 to 10.<br><br> Example: 'size=1' |  v1<br>v2 |
 | includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'includeSections=exclusionOtherInformation,exclusionDetails' |  v1<br>v2 |
 | format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'format=csv' |  v1<br>v2 |
-| emailId | Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.<br>Example: emailId=test@gsa.gov<br>Applicable to non-SAM registrants.<br><br>Alpha:<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.<br>Example: emailId= Yes<br>Applicable to non-SAM registrants. |  v1<br>v2 |
+| emailId | Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.<br>Example: emailId= Yes<br>Applicable to non-SAM registrants. |  v1<br>v2 |
 | ssnOrTinOrEin | Allows a 9-digit value or null.<br><br> This parameter must not be used inside the 'q' parameter.<br><br> This parameter must be used in conjunction with the exclusionName parameter.<br><br> Example: 'ssnOrTinOrEin=123456789' | v1<br>v2 |
 
 **Expected Result**
@@ -128,7 +124,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | terminationDate | string | Termination Date   | v1<br>v2 |
 | terminationType | string | Termination Type   | v1<br>v2 |
 | recordStatus | string | Record Status  | v1<br>v2 |
-| **exclusionAddress/exclusionPrimaryAddress** | | NOTE: This section is being renamed. It is exclusionAddress is in V1 and will be exclusionPrimaryAddress in V2. The V2 change is available in Alpha now but will remain exclusionAddress in both V1 and V2 in Beta until a later date. | |
+| **exclusionAddress/exclusionPrimaryAddress** | | NOTE: This section is being renamed. It is exclusionAddress in V1 and will be exclusionPrimaryAddress in V2. | |
 | addressLine1 | string | Address Line 1  |  v1<br>v2 |
 | addressLine2 | string | Address Line 2  |  v1<br>v2 |
 | city | string | Address City  |  v1<br>v2 | 
@@ -137,13 +133,13 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2 |
 | countryCode | string | Country Code |  v1<br>v2 |
 | **exclusionSecondaryAddress** |
-| addressLine1 | string | Address Line 1  |  v2<br>Alpha Only, Beta Coming Soon |
-| addressLine2 | string | Address Line 2  |  v2<br>Alpha Only, Beta Coming Soon |
-| city | string | Address City  |  v2<br>Alpha Only, Beta Coming Soon | 
-| stateOrProvinceCode | string | Address State or Province Code |  v2<br>Alpha Only, Beta Coming Soon |
-| zipCode | string | Address Zip OR Postal Code  | v2<br>Alpha Only, Beta Coming Soon |
-| zipCodePlus4 | string | Address Zip Plus 4  |  v2<br>Alpha Only, Beta Coming Soon |
-| countryCode | string | Country Code |  v2<br>Alpha Only, Beta Coming Soon |
+| addressLine1 | string | Address Line 1  |  v2 |
+| addressLine2 | string | Address Line 2  |  v2 |
+| city | string | Address City  |  v2 | 
+| stateOrProvinceCode | string | Address State or Province Code |  v2 |
+| zipCode | string | Address Zip OR Postal Code  | v2 |
+| zipCodePlus4 | string | Address Zip Plus 4  |  v2 |
+| countryCode | string | Country Code |  v2 |
 | **exclusionOtherInformation** |
 | additionalComments | string | Additional Comments  |  v1<br>v2 |
 | ctCode | string | CT Code  |  v1<br>v2 |
@@ -152,26 +148,26 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | name/exclusionName | string | Exclusion Name <br><br>NOTE:  This parameter is being renamed.  name is in V1 and exclusionName will be V2.|  v1<br>v2 |
 | type | string | Type  |  v1<br>v2 |
 | **exclusionOtherInformation --> moreLocations** |
-| exclusionName | string | Exclusion Name | v2<br>Alpha Only, Beta Coming Soon |
-| duns | string | DUNS | v2<br>Alpha Only, Beta Coming Soon |
-| cageCode | string | CAGE Code | v2<br>Alpha Only, Beta Coming Soon |
-| npi | string | NPI | v2<br>Alpha Only, Beta Coming Soon |
+| exclusionName | string | Exclusion Name | v2 |
+| duns | string | DUNS | v2 |
+| cageCode | string | CAGE Code | v2 |
+| npi | string | NPI | v2 |
 | **exclusionOtherInformation --> moreLocations --> primaryAddress** |
-| addressLine1 | string | Address Line 1 | v2<br>Alpha Only, Beta Coming Soon |
-| addressLine2 | string | Address Line 2 | v2<br>Alpha Only, Beta Coming Soon |
-| city | string | City | v2<br>Alpha Only, Beta Coming Soon |
-| stateOrProvinceCode | string | State or Province Code | v2<br>Alpha Only, Beta Coming Soon |
-| zipCode | string | Zip Code | v2<br>Alpha Only, Beta Coming Soon |
-| zipCodePlus4 | string | Zip Code Plus 4 | v2<br>Alpha Only, Beta Coming Soon |
-| countryCode | string | Country Code | v2<br>Alpha Only, Beta Coming Soon |
+| addressLine1 | string | Address Line 1 | v2 |
+| addressLine2 | string | Address Line 2 | v2 |
+| city | string | City | v2 |
+| stateOrProvinceCode | string | State or Province Code | v2 |
+| zipCode | string | Zip Code | v2 |
+| zipCodePlus4 | string | Zip Code Plus 4 | v2 |
+| countryCode | string | Country Code | v2 |
 | **exclusionOtherInformation --> moreLocations --> secondaryAddress** |
-| addressLine1 | string | Address Line 1 | v2<br>Alpha Only, Beta Coming Soon |
-| addressLine2 | string | Address Line 2 | v2<br>Alpha Only, Beta Coming Soon |
-| city | string | City | v2<br>Alpha Only, Beta Coming Soon |
-| stateOrProvinceCode | string | State or Province Code | v2<br>Alpha Only, Beta Coming Soon |
-| zipCode | string | Zip Code | v2<br>Alpha Only, Beta Coming Soon |
-| zipCodePlus4 | string | Zip Code Plus 4 | v2<br>Alpha Only, Beta Coming Soon |
-| countryCode | string | Country Code | v2<br>Alpha Only, Beta Coming Soon |
+| addressLine1 | string | Address Line 1 | v2 |
+| addressLine2 | string | Address Line 2 | v2 |
+| city | string | City | v2 |
+| stateOrProvinceCode | string | State or Province Code | v2 |
+| zipCode | string | Zip Code | v2 |
+| zipCodePlus4 | string | Zip Code Plus 4 | v2 |
+| countryCode | string | Country Code | v2 |
 | **vesselDetails** |
 | callSign | string | Call Sign  |  v1<br>v2 |
 | type | string | Type  |  v1<br>v2 |
@@ -180,13 +176,13 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | flag | string | Flag  |  v1<br>v2 |
 | owner | string | Owner |  v1<br>v2 |
 | **vesselDetails --> secondaryAddress**  |
-| addressLine1 | string | Address Line 1  |  v1<br>v2 Beta Only |
-| addressLine2 | string | Address Line 2  |  v1<br>v2 Beta Only |
-| city | string | Address City  |  v1<br>v2 Beta Only |
-| stateOrProvinceCode | string | Address State or Province Code |  v1<br>v2 Beta Only |
-| zipCode | string | Address Zip OR Postal Code  |  v1<br>v2 Beta Only |
-| zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2 Beta Only |
-| countryCode | string | Country Code |  v1<br>v2 Beta Only |
+| addressLine1 | string | Address Line 1  |  v1<br>v2 Production only |
+| addressLine2 | string | Address Line 2  |  v1<br>v2 Production only |
+| city | string | Address City  |  v1<br>v2 Production only |
+| stateOrProvinceCode | string | Address State or Province Code |  v1<br>v2 Production only |
+| zipCode | string | Address Zip OR Postal Code  |  v1<br>v2 Production only |
+| zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2 Production only |
+| countryCode | string | Country Code |  v1<br>v2 Production only |
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -415,7 +411,7 @@ Click to view CSV Response for one record <a href="v1/exclusion-sample-csv.xlsx"
 
 
 ## Additional Information
-You can view the full details of the differences between the SAM legacy API and Beta API 
+You can view the full details of the differences between the SAM legacy API and SAM.gov API 
 <br> available here: <a href="LegacySAMvsBetaSAM-ExclusionsAPI.pdf">Variance Document</a><br>
 
 Disclaimer: 
@@ -429,8 +425,8 @@ Disclaimer:
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Beta.
-* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Production.
+* Reach out to the SAM.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -453,5 +449,6 @@ Date | Version | Description
 03/12/2021 | v2.2 | * Added ssnOrTinOrEin parameter to the Query String Parameters table.<br><br> * Added note to addressLine1 and addressLine2 parameters regarding use with exclusionName parameter.<br><br> * Updated error messages
 04/08/2021 | v2.3 | Updated Contact Us information.
 04/29/2021 | V2.3 | * Updated openapi spec file.
+05/12/2021 | V2.4 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
 
 <p><small><a href="#">Back to top</a></small></p>

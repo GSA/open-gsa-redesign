@@ -1,6 +1,6 @@
 ---
-title: Beta.SAM.Gov Entity Management  API
-banner-heading: Beta.SAM.Gov Entity Management API
+title: SAM.gov Entity Management  API
+banner-heading: SAM.gov Entity Management API
 ---
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >-->
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
@@ -27,24 +27,18 @@ The Entity Management API will allow users to request Public Entity Information 
 
 ## Getting Started
 
-**IMPORTANT**: There will be a period from early 2021 through the integration of SAM.gov into Beta.SAM.gov where Alpha and Beta functionality of the APIs will not be in sync. During this time, we recommend you primarily test the functionality of the APIs in Alpha. Please pay close attention to the parameter and schema "Description" and "Applicable Version" columns as all differences are noted there. Some of the key differences between Alpha and Beta API functionality are highlighted here:
-* Data completeness (many fields in Beta will display “Currently not available”)
-* Reps and Certs (the Beta version of Reps and Certs section will return no data and an older schema version)
-* Availability and/or functionality of certain parameters
-
-
-Public and FOUO Entity Details can be accessed from Beta or Alpha via the following version 1 and version 2 endpoints:
-* Beta Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
-* Beta Version 2: https://api.sam.gov/entity-information/v2/entities?api_key= < value >
+Public and FOUO Entity Details can be accessed from Production or Alpha via the following version 1 and version 2 endpoints:
+* Production Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
+* Production Version 2: https://api.sam.gov/entity-information/v2/entities?api_key= < value >
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
 
-Sensitive Entity Details can be accessed from Beta or Alpha via the following end points:
+Sensitive Entity Details can be accessed from Production or Alpha via the following end points:
 
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
        <ul>
-       <li style="color: #31708f;">Beta Version 1: https://api.sam.gov/entity-information/v1/entities?</li>
-       <li style="color: #31708f;">Beta Version 2: https://api.sam.gov/entity-information/v2/entities?</li>
+       <li style="color: #31708f;">Production Version 1: https://api.sam.gov/entity-information/v1/entities?</li>
+       <li style="color: #31708f;">Production Version 2: https://api.sam.gov/entity-information/v2/entities?</li>
        <li style="color: #31708f;">Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?</li>
        <li style="color: #31708f;">Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?</li>
        </ul><br>
@@ -52,7 +46,7 @@ Sensitive Entity Details can be accessed from Beta or Alpha via the following en
   </div>
 
 Generating a personal API Key:
-* Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
+* Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://sam.gov/profile/details" target="_blank">Account Details page on SAM.gov</a>
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page.
 * If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
@@ -463,12 +457,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):
-<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov
-<br>Applicable to non-SAM registrants.
-<br><br>Alpha:
-<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
+<td>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
 <br>Example: emailId= Yes
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
@@ -632,9 +621,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>noPublicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag<br>
-NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in Beta for V1/V2. The Beta versions of the API will display Y/N at the time of SAM Integration.
-</td>
+<td>No Public Display Flag</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -716,13 +703,6 @@ NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in B
 <td>submissionDate</td>
 <td>string</td>
 <td>Submission Date</td>
-<td>v1<br>v2</td>
-</tr>
-
-<tr>
-<td>mpin</td>
-<td>string</td>
-<td>mpin</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -1209,7 +1189,6 @@ NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in B
 
 <details>
 <summary>repsAndCerts Section</summary><br>
-Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
 The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.<br><br>
 The repsAndCerts section is not available for use with the format parameter.
 <br>
@@ -5840,12 +5819,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):
-<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov
-<br>Applicable to non-SAM registrants.
-<br><br>Alpha:
-<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
+<td>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
 <br>Example: emailId= Yes
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
@@ -6079,9 +6053,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>noPublicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag<br>
-NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in Beta for V1/V2. The Beta versions of the API will display Y/N at the time of SAM Integration.
-</td>
+<td>No Public Display Flag</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -6962,13 +6934,6 @@ samMonitoring
 </tr>
 
 <tr>
-<td>mpin</td>
-<td>string</td>
-<td>mpin</td>
-<td>v1<br>v2</td>
-</tr>
-
-<tr>
 <td>correspondenceFlag</td>
 <td>string</td>
 <td>Correspondence Flag<br>NOTE: This field does not contain any data and has been removed from the API.</td>
@@ -7639,7 +7604,6 @@ samMonitoring
 
 <details>
 <summary>repsAndCerts Section</summary><br>
-Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
 The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.<br><br>
 The repsAndCerts section is not available for use with the format parameter.
 <br>
@@ -13135,12 +13099,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):
-<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov
-<br>Applicable to non-SAM registrants.
-<br><br>Alpha:
-<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
+<td>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
 <br>Example: emailId= Yes
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
@@ -13430,9 +13389,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>noPublicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag<br>
-NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in Beta for V1/V2. The Beta versions of the API will display Y/N at the time of SAM Integration.
-</td>
+<td>No Public Display Flag</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -15198,7 +15155,6 @@ samMonitoring
 
 <details>
 <summary>repsAndCerts Section</summary><br>
-Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
 The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.<br><br>
 The repsAndCerts section is not available for use with the format parameter.
 <br>
@@ -26326,7 +26282,7 @@ https://api.sam.gov/entity-information/v2/download-entities?token=< value >
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Additional Information
-You can view the full details of the differences between the SAM legacy API and Beta API
+You can view the full details of the differences between the SAM legacy API and SAM.gov API
 <br> available here: <a href="LegacySAMvsBetaSAM-EntityManagementAPI.pdf">Variance Document</a><br>
 
 Disclaimer:
@@ -26340,8 +26296,8 @@ Disclaimer:
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Beta.
-* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Production.
+* Reach out to the SAM.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -26366,7 +26322,7 @@ Disclaimer:
 | 02/05/2021 | v2.2 | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition. |
 | 03/12/2021 | v2.3 | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call.<br><br> * Added note under repsAndCerts section about use with format parameter.<br><br> * Added NOTE under FOUO API Information Expected Results section and Sensitive API Information Sensitive API Process sections mentioning only system account keys can be used to access data.<br><br> * Removed the message stating that this page is not FireFox compliant. | 
 | 04/08/2021 | v2.4 | * Updated Contact Us information.<br><br> * Updated pointsOfContact fields information for public api.<br><br> * Updated Application Level Error Messages in HTTP Response Codes section. | 
-| 04/29/2021 | V2.4 | * Updated architectEngineerResponses type to Object.<br><br> * Updated openapi spec file.<br><br> * Added description to 400 http response code describing Type of Connection error. |
+| 05/12/2021 | v2.5 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api. | 
 
 <p><small><a href="#">Back to top</a></small></p>
 

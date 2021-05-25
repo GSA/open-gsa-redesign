@@ -5,6 +5,11 @@ info:
     parameters in the paginated manner
   version: 1.0
   title: Exclusions Rest API
+  termsOfService: Terms of service
+  contact:
+    name: GSA
+    url: https://www.sam.gov
+    email: reply@gsa.gov
   license:
     name: GSA
 tags:

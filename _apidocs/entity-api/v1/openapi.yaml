@@ -3,6 +3,10 @@ info:
   description: Entity Management API to retrieve entity information via Request parameters
   version: 1
   title: Entity Management Rest API
+  contact:
+    name: GSA
+    url: https://www.sam.gov
+    email: reply@gsa.gov
   license:
     name: GSA
 tags:
