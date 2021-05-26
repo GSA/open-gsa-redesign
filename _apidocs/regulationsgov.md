@@ -553,6 +553,8 @@ Please review https://api.data.gov/docs/rate-limits/ for information on rate lim
 #### Can I request rate limit increases for my keys? 
 
 GSA may grant a rate limit increase on the GET keys for an indefinite period. Such requests must establish the need to justify the rate limit increases. Each submission will be reviewed and considered on a case-by-case basis. GSA is unable to increase the rate limits for POST API keys upon requests at this time. However, the current POST API key holders can request one additional key without going through the validation process again.
+  
+<p><small><a href="#">Back to top</a></small></p>
 
 ## API Calls
 
