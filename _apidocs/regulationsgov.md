@@ -549,6 +549,10 @@ Users should be able to access our staging API at https://api-staging.regulation
 #### I have an API key. How many requests can I make per hour and how do I know I am about to reach my request limit?
 
 Please review https://api.data.gov/docs/rate-limits/ for information on rate limits. Commenting API is restricted to 50 requests per minute with a secondary limit of 500 requests per hour.
+  
+#### Can I request rate limit increases for my keys? 
+
+GSA may grant a rate limit increase on the GET keys for an indefinite period. Such requests must establish the need to justify the rate limit increases. Each submission will be reviewed and considered on a case-by-case basis. GSA is unable to increase the rate limits for POST API keys upon requests at this time. However, the current POST API key holders can request one additional key without going through the validation process again.
 
 ## API Calls
 
