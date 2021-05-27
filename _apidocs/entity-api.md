@@ -1,13 +1,12 @@
 ---
-title: Beta.SAM.Gov Entity Management  API
-banner-heading: Beta.SAM.Gov Entity Management API
+title: SAM.gov Entity Management  API
+banner-heading: SAM.gov Entity Management API
 ---
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >-->
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
 
-This content is currently not Firefox compliant.  Please access via Chrome or Internet Explorer.
 ## Overview
-The Entity Management API will allow users to request Public Entity Information based on various optional request parameters. 
+The Entity Management API will allow users to request Public Entity Information based on various optional request parameters.
 
 
 **Key Features of the Entity Management API:**
@@ -28,24 +27,18 @@ The Entity Management API will allow users to request Public Entity Information 
 
 ## Getting Started
 
-**IMPORTANT**: There will be a period from early 2021 through the integration of SAM.gov into Beta.SAM.gov where Alpha and Beta functionality of the APIs will not be in sync. During this time, we recommend you primarily test the functionality of the APIs in Alpha. Please pay close attention to the parameter and schema "Description" and "Applicable Version" columns as all differences are noted there. Some of the key differences between Alpha and Beta API functionality are highlighted here:
-   * Data completeness (many fields in Beta will display “Currently not available”)
-   * Reps and Certs (the Beta version of Reps and Certs section will return no data and an older schema version)
-   * Availability and/or functionality of certain parameters
+Public and FOUO Entity Details can be accessed from Production or Alpha via the following version 1 and version 2 endpoints:
+* Production Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
+* Production Version 2: https://api.sam.gov/entity-information/v2/entities?api_key= < value >
+* Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
+* Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
 
-
-Public and FOUO Entity Details can be accessed from Beta or Alpha via the following version 1 and version 2 endpoints:
-   * Beta Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
-   * Beta Version 2: https://api.sam.gov/entity-information/v2/entities?api_key= < value >
-   * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
-   * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
-
-Sensitive Entity Details can be accessed from Beta or Alpha via the following end points:
+Sensitive Entity Details can be accessed from Production or Alpha via the following end points:
 
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
        <ul>
-       <li style="color: #31708f;">Beta Version 1: https://api.sam.gov/entity-information/v1/entities?</li>
-       <li style="color: #31708f;">Beta Version 2: https://api.sam.gov/entity-information/v2/entities?</li>
+       <li style="color: #31708f;">Production Version 1: https://api.sam.gov/entity-information/v1/entities?</li>
+       <li style="color: #31708f;">Production Version 2: https://api.sam.gov/entity-information/v2/entities?</li>
        <li style="color: #31708f;">Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?</li>
        <li style="color: #31708f;">Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?</li>
        </ul><br>
@@ -53,7 +46,7 @@ Sensitive Entity Details can be accessed from Beta or Alpha via the following en
   </div>
 
 Generating a personal API Key:
-* Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://beta.sam.gov/profile/details" target="_blank">Account Details page on beta.sam.gov</a>
+* Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://sam.gov/profile/details" target="_blank">Account Details page on SAM.gov</a>
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page.
 * If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
@@ -464,12 +457,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):
-<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov
-<br>Applicable to non-SAM registrants.
-<br><br>Alpha:
-<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
+<td>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
 <br>Example: emailId= Yes
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
@@ -570,17 +558,10 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>samExtractCode</td>
-<td>string</td>
-<td>Registration Status</td>
-<td>v1</td>
-</tr>
-
-<tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -640,9 +621,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>noPublicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag<br>
-NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in Beta for V1/V2. The Beta versions of the API will display Y/N at the time of SAM Integration.
-</td>
+<td>No Public Display Flag</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -724,13 +703,6 @@ NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in B
 <td>submissionDate</td>
 <td>string</td>
 <td>Submission Date</td>
-<td>v1<br>v2</td>
-</tr>
-
-<tr>
-<td>mpin</td>
-<td>string</td>
-<td>mpin</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -1217,8 +1189,8 @@ NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in B
 
 <details>
 <summary>repsAndCerts Section</summary><br>
-Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
-The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
+The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.<br><br>
+The repsAndCerts section is not available for use with the format parameter.
 <br>
 <br>
 <summary>certifications Sub Section</summary>
@@ -1263,7 +1235,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -1553,13 +1525,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -1602,13 +1574,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -1651,13 +1623,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -1694,13 +1666,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -1732,13 +1704,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -1798,13 +1770,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -1847,13 +1819,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -1890,13 +1862,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -1939,13 +1911,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -1976,13 +1948,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -2037,13 +2009,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -2080,13 +2052,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -2094,13 +2066,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -2155,13 +2127,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -2215,13 +2187,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -2252,13 +2224,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -2313,13 +2285,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -2398,7 +2370,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -2689,13 +2661,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -2738,13 +2710,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -2787,13 +2759,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -2830,13 +2802,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -2868,13 +2840,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -2934,13 +2906,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -2983,13 +2955,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3026,13 +2998,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3075,13 +3047,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -3112,13 +3084,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -3173,13 +3145,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -3216,13 +3188,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -3230,13 +3202,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -3291,13 +3263,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -3351,13 +3323,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -3388,13 +3360,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3449,13 +3421,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3543,7 +3515,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -3833,13 +3805,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3882,13 +3854,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3931,13 +3903,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -3974,13 +3946,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -4012,13 +3984,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -4078,13 +4050,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -4127,13 +4099,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -4170,13 +4142,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -4219,13 +4191,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -4256,13 +4228,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -4317,13 +4289,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -4360,13 +4332,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -4374,13 +4346,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -4435,13 +4407,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -4495,13 +4467,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -4532,13 +4504,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -4593,13 +4565,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -4661,7 +4633,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>Grants Certification Status</td>
 <td>v1<br>v2</td>
 </tr>
-  
+
 <tr>
 <td>grantsCertifyingResponse</td>
 <td>string</td>
@@ -4699,7 +4671,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 <th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
- 
+
 <tr>
 <td>farPDF</td>
 <td>string</td>
@@ -4771,37 +4743,37 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
+<td>US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
+<td>US Phone Extension.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
+<td>Non-US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
+<td>Fax.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
+<td>Email.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -4893,37 +4865,37 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
+<td>US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
+<td>US Phone Extension.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
+<td>Non-US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
+<td>Fax.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
+<td>Email.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -5015,37 +4987,37 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
+<td>US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
+<td>US Phone Extension.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
+<td>Non-US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
+<td>Fax.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
+<td>Email.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -5137,37 +5109,37 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
+<td>US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
+<td>US Phone Extension.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
+<td>Non-US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
+<td>Fax.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
+<td>Email.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -5259,37 +5231,37 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
+<td>US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
+<td>US Phone Extension.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
+<td>Non-US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
+<td>Fax.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
+<td>Email.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -5381,37 +5353,37 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
+<td>US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
+<td>US Phone Extension.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
+<td>Non-US Phone.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
+<td>Fax.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
+<td>Email.<br>Defaulted value is "FOUO Only"</td>
 <td>v1</td>
 </tr>
 
@@ -5847,12 +5819,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):
-<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov
-<br>Applicable to non-SAM registrants.
-<br><br>Alpha:
-<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
+<td>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
 <br>Example: emailId= Yes
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
@@ -5934,7 +5901,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td><b> Expected Result:</b></td>
 </tr>
 <tr>
-<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.</td>
+<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.<br><br>
+NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 </tr>
 <details>
 <summary>entityRegistration Section</summary>
@@ -6022,17 +5990,10 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>samExtractCode</td>
-<td>string</td>
-<td>Registration Status</td>
-<td>v1</td>
-</tr>
-
-<tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -6092,9 +6053,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>noPublicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag<br>
-NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in Beta for V1/V2. The Beta versions of the API will display Y/N at the time of SAM Integration.
-</td>
+<td>No Public Display Flag</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -6975,13 +6934,6 @@ samMonitoring
 </tr>
 
 <tr>
-<td>mpin</td>
-<td>string</td>
-<td>mpin</td>
-<td>v1<br>v2</td>
-</tr>
-
-<tr>
 <td>correspondenceFlag</td>
 <td>string</td>
 <td>Correspondence Flag<br>NOTE: This field does not contain any data and has been removed from the API.</td>
@@ -7652,8 +7604,8 @@ samMonitoring
 
 <details>
 <summary>repsAndCerts Section</summary><br>
-Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
-The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
+The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.<br><br>
+The repsAndCerts section is not available for use with the format parameter.
 <br>
 <br>
 <summary>certifications Sub Section</summary>
@@ -7698,7 +7650,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -7989,13 +7941,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8038,13 +7990,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8087,13 +8039,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8130,13 +8082,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -8168,13 +8120,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -8234,13 +8186,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8283,13 +8235,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8326,13 +8278,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8375,13 +8327,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -8412,13 +8364,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -8473,13 +8425,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -8516,13 +8468,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -8530,13 +8482,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -8591,13 +8543,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -8651,13 +8603,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -8688,13 +8640,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8749,13 +8701,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -8834,7 +8786,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -9124,13 +9076,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9173,13 +9125,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9222,13 +9174,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9265,13 +9217,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -9303,13 +9255,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -9369,13 +9321,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9418,13 +9370,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9461,13 +9413,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9510,13 +9462,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -9547,13 +9499,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -9608,13 +9560,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -9651,13 +9603,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -9665,13 +9617,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -9726,13 +9678,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -9786,13 +9738,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -9823,13 +9775,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9884,13 +9836,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -9978,7 +9930,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -10268,13 +10220,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -10317,13 +10269,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -10366,13 +10318,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -10409,13 +10361,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -10447,13 +10399,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -10513,13 +10465,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -10562,13 +10514,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -10605,13 +10557,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -10654,13 +10606,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -10691,13 +10643,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -10752,13 +10704,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -10795,13 +10747,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -10809,13 +10761,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -10870,13 +10822,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -10930,13 +10882,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -10967,13 +10919,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -11028,13 +10980,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -11096,7 +11048,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>Grants Certification Status</td>
 <td>v1<br>v2</td>
 </tr>
-  
+
 <tr>
 <td>grantsCertifyingResponse</td>
 <td>string</td>
@@ -11134,7 +11086,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 <th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
- 
+
 <tr>
 <td>farPDF</td>
 <td>string</td>
@@ -11206,14 +11158,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -11328,14 +11280,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -11450,14 +11402,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -11572,14 +11524,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -11694,14 +11646,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -11816,14 +11768,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -11938,14 +11890,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -12060,14 +12012,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -12182,14 +12134,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -12304,14 +12256,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -12426,14 +12378,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -12548,14 +12500,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -12670,14 +12622,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -12763,6 +12715,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <li> All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.</li>
 <li> The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.</li>
 <li> The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL</li>
+<li> Only system account keys can be used to access Sensitive data.</li>
 <li> "Accept" parameter must be passed in "Headers" with value, "application/json".</li>
 <li> "Content-Type" parameter must be passed in "Headers" with value, "application/json".</li>
 <li> All the optional search filters can be sent in the request URL or in the "Body".</li> <br><br>
@@ -13146,12 +13099,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>emailId</td>
-<td>Beta (The following functionality is soon to be deprecated in Beta. Please review the below Alpha functionality for future Beta implementation):
-<br>Allows user to get file download links to email. Email Id should be provided in conjunction with format.
-<br>Example: emailId=test@gsa.gov
-<br>Applicable to non-SAM registrants.
-<br><br>Alpha:
-<br>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
+<td>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
 <br>Example: emailId= Yes
 <br>Applicable to non-SAM registrants.</td>
 <td>v1<br>v2</td>
@@ -13279,7 +13227,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>sensitivity</td>
 <td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
-<br>Example: sensitivity=public</td>
+<br>Example: sensitivity=public
+<br>NOTE: If you use this parameter with a sensitive key you must use a POST call for all request types.</td>
 <td>v1<br>v2</td>
 </tr>
 </table>
@@ -13340,7 +13289,6 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>v1<br>v2</td>
 </tr>
 
-
 <tr>
 <td>dodaac</td>
 <td>string</td>
@@ -13378,17 +13326,10 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>samExtractCode</td>
-<td>string</td>
-<td>Registration Status</td>
-<td>v1</td>
-</tr>
-
-<tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v2</td>
+<td>v1<br>v2</td>
 </tr>
 
 <tr>
@@ -13448,9 +13389,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>noPublicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag<br>
-NOTE: This field will return with the values Y/N in Alpha for V1/V2 and T/F in Beta for V1/V2. The Beta versions of the API will display Y/N at the time of SAM Integration.
-</td>
+<td>No Public Display Flag</td>
 <td>v1<br>v2</td>
 </tr>
 
@@ -15216,8 +15155,8 @@ samMonitoring
 
 <details>
 <summary>repsAndCerts Section</summary><br>
-Note: This schema is only available in the Alpha V1 and V2 Entity Management API and will not be made available in Beta until SAM Integration.<br><br>
-The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.
+The repsAndCerts section will only be returned in the response if requested via the includeSections parameter, otherwise it will not be returned by default.<br><br>
+The repsAndCerts section is not available for use with the format parameter.
 <br>
 <br>
 <summary>certifications Sub Section</summary>
@@ -15262,7 +15201,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -15552,13 +15491,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -15601,13 +15540,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -15650,13 +15589,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -15693,13 +15632,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -15731,13 +15670,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -15797,13 +15736,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -15846,13 +15785,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -15889,13 +15828,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -15938,13 +15877,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -15975,13 +15914,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -16036,13 +15975,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -16079,13 +16018,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -16093,13 +16032,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -16154,13 +16093,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -16214,13 +16153,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -16251,13 +16190,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -16312,13 +16251,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -16397,7 +16336,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -16687,13 +16626,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -16736,13 +16675,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -16785,13 +16724,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -16828,13 +16767,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -16866,13 +16805,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -16932,13 +16871,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -16981,13 +16920,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17024,13 +16963,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17073,13 +17012,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -17110,13 +17049,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -17171,13 +17110,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -17214,13 +17153,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -17228,13 +17167,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -17289,13 +17228,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -17349,13 +17288,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -17386,13 +17325,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17447,13 +17386,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17541,7 +17480,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>section</td>
 <td>string</td>
@@ -17831,13 +17770,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>architectExperiencesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17880,13 +17819,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>disciplineInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17929,13 +17868,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>endProductsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -17972,13 +17911,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>foreignGovtEntitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>name</td>
 <td>string</td>
@@ -18010,13 +17949,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>address contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -18076,13 +18015,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>formerFirmsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -18125,13 +18064,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>fscInfoList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -18168,13 +18107,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>jointVentureCompaniesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -18217,13 +18156,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>laborSurplusConcernsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>surplusArea</td>
 <td>string</td>
@@ -18254,13 +18193,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>naicsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>naicsCode</td>
 <td>string</td>
@@ -18315,13 +18254,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>predecessorsList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>cageCode</td>
 <td>string</td>
@@ -18358,13 +18297,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samFacilitiesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>plantAddress</td>
 <td>object</td>
@@ -18372,13 +18311,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>plantAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -18433,13 +18372,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>ownerAddress contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>line1</td>
 <td>string</td>
@@ -18493,13 +18432,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>samPointsOfContactList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>firstName</td>
 <td>string</td>
@@ -18530,13 +18469,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>servicesRevenuesList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -18591,13 +18530,13 @@ The repsAndCerts section will only be returned in the response if requested via 
 <details>
 <summary>softwareList contains below fields</summary><br>
 <table>
-  
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 </tr>
-  
+
 <tr>
 <td>id</td>
 <td>string</td>
@@ -18659,7 +18598,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <td>Grants Certification Status</td>
 <td>v1<br>v2</td>
 </tr>
-  
+
 <tr>
 <td>grantsCertifyingResponse</td>
 <td>string</td>
@@ -18697,7 +18636,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
 <th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
- 
+
 <tr>
 <td>farPDF</td>
 <td>string</td>
@@ -18769,14 +18708,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -18891,14 +18830,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19013,14 +18952,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19135,14 +19074,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19257,14 +19196,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19379,14 +19318,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19501,14 +19440,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19623,14 +19562,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19745,14 +19684,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19867,14 +19806,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -19989,14 +19928,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -20111,14 +20050,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -20233,14 +20172,14 @@ The repsAndCerts section will only be returned in the response if requested via 
 </tr>
 
 <tr>
-<td>USPhone</td>
+<td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>USPhoneExtension</td>
+<td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
 <td>v1<br>v2</td>
@@ -20322,7 +20261,7 @@ The repsAndCerts section will only be returned in the response if requested via 
 <p><small><a href="#">Back to top</a></small></p>
 
 
-## OpenAPI Specification File 
+## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="v1/openapi.yaml">Open API specification file for the Entity Management API</a>
@@ -20336,7 +20275,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON/CSV format. |
-| 400 | Application Level Error Messages: <br><br>  * You are not authorized to access this functionality. <br><br>  * User does not exist. <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections','emailId' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication. <br><br> * entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter. |
+| 400 | Application Level Error Messages: <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections', 'emailId' or 'format' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiSAM is allowed. <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication. <br><br> * entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter. <br><br> * IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.|
 | 406 | Invalid Accept Header. |
 | 415 | Invalid Content-Type Header. |
 
@@ -26343,10 +26282,10 @@ https://api.sam.gov/entity-information/v2/download-entities?token=< value >
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Additional Information
-You can view the full details of the differences between the SAM legacy API and Beta API 
+You can view the full details of the differences between the SAM legacy API and SAM.gov API
 <br> available here: <a href="LegacySAMvsBetaSAM-EntityManagementAPI.pdf">Variance Document</a><br>
 
-Disclaimer: 
+Disclaimer:
 **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data**
 * This website contains data supplied by third party information suppliers, one of which is D&B. For the purposes of the following limitation on permissible use of D&B data, which includes each entity's DUNS Number and its associated business information, "D&B Open Data" is defined as the following data elements: Business Name, Street Address, City Name, State/Province Name, Country Name, County Code, State/Province Code, State/Province Abbreviation, ZIP/Postal Code, Country Name and Country Code.
 * D&B hereby grants you, the user, a license for a limited, non-exclusive right to use D&B Open Data within the limitations set forth herein. By using this website you agree that you shall not use D&B Open Data without giving written attribution to the source of such data (i.e., D&B) and shall not access, use or disseminate D&B Open Data in bulk, (i.e., in amounts sufficient for use as an original source or as a substitute for the product and/or service being licensed hereunder).
@@ -26357,7 +26296,8 @@ Disclaimer:
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Production.
+* Reach out to the SAM.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -26379,6 +26319,11 @@ Disclaimer:
 | 10/15/2020 | v2.0 | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. <br><br> * Updated the description for the entityEFTIndicator parameter. |
 | 12/07/2020 | v2.1 | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.|
 | 01/22/2021 | v2.2 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive.<br><br> * Added note to the noPublicDisplayFlag field in the response.<br><br>  * Added the Beta V2 endpoints. |
-| 02/05/2021 | V2.2 | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition. |
+| 02/05/2021 | v2.2 | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition. |
+| 03/12/2021 | v2.3 | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call.<br><br> * Added note under repsAndCerts section about use with format parameter.<br><br> * Added NOTE under FOUO API Information Expected Results section and Sensitive API Information Sensitive API Process sections mentioning only system account keys can be used to access data.<br><br> * Removed the message stating that this page is not FireFox compliant. | 
+| 04/08/2021 | v2.4 | * Updated Contact Us information.<br><br> * Updated pointsOfContact fields information for public api.<br><br> * Updated Application Level Error Messages in HTTP Response Codes section. | 
+| 05/12/2021 | v2.5 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api. | 
 
 <p><small><a href="#">Back to top</a></small></p>
+
+

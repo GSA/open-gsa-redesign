@@ -21,6 +21,8 @@ banner-heading: Site Scanning API
 
 Every day, the <a href="https://digital.gov/site-scanning/">Site Scanning program</a> runs a scanning engine to dynamically pull down lists of domains from various sources and then scan them with a collection of scan plugins to gather data on them. This data is created in the json format and is indexed in an elasticsearch datastore, where it can be searched by an API written in the Django REST Framework.
 
+The [Site Scanning Query Builder](https://site-scanning.api.data.gov/) offers a simple means of creating API queries that target specific subsets of data (e.g. by agency, base domain, or redirect status).
+
 In addition to querying the data via API, you can also [download it directly](#download-the-data-directly) as a CSV or JSON file.  
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -37,7 +39,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
   var apiUmbrellaSignupOptions = {
     // Pick a short, unique name to identify your site, like 'gsa-auctions'
     // in this example.
-    registrationSource: 'gsa-open',
+    registrationSource: 'gsa-site-scanning',
 
     // Enter the API key you signed up for and specially configured for this
     // API key signup embed form.
@@ -47,7 +49,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
     // This can be any API endpoint on your server, and you can use the
     // special {{api_key}} variable to automatically substitute in the API
     // key the user just signed up for.
-    exampleApiUrl: 'https://api.gsa.gov/technology/site-scanner/v1/scans/?format=json&api_key={{api_key}}',
+    exampleApiUrl: 'https://api.gsa.gov/technology/site-scanning/v1/websites?api_key={{api_key}}',
 
 
 
@@ -268,6 +270,10 @@ The API will return one of the following responses:
 | 4XX | Additional 400-level are caused by some type of error in the information submitted. |
 
 <p><small><a href="#">Back to top</a></small></p>
+
+## Query Builder 
+
+The [Site Scanning Query Builder](https://site-scanning.api.data.gov/) offers a simple means of creating API queries that target specific subsets of data (e.g. by agency, base domain, or redirect status).
 
 ## Download the Data Directly
 

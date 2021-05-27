@@ -1,11 +1,11 @@
 ---
-title: Beta.SAM.Gov Entity/Exclusions Extracts Download APIs
-banner-heading: Beta.SAM.Gov Entity/Exclusions Extracts Download APIs
+title: SAM.gov Entity/Exclusions Extracts Download APIs
+banner-heading: SAM.gov Entity/Exclusions Extracts Download APIs
 ---
 
 
 ## Overview
-The Extracts Download API permits beta.SAM.gov users with valid roles to download entity and exclusions data extracts.<br>
+The Extracts Download API permits SAM.gov users with valid roles to download entity and exclusions data extracts.<br>
 
 The Entity Management extracts contain entities (businesses and government agencies) data from SAM.gov.  The Exclusions extract contains a list of all parties with a currently active exclusion in SAM.
 
@@ -13,7 +13,7 @@ The Entity Management extracts contain entities (businesses and government agenc
 1. **Entity Management Public Data Package:**
    * This extract contains entity registration data publicly available under the Freedom of Information Act (FOIA) for those registered in SAM.gov to do business with the Federal government.
    * All entities and data elements are classified as public.
-   * End user needs to create an account in beta.SAM.gov and procure an API_KEY to access these extracts.
+   * End user needs to create an account in SAM.gov and procure an API_KEY to access these extracts.
    * File naming convention:<br />
 	 Monthly ASCII (Default): SAM_PUBLIC_MONTHLY_YYYYMMDD.ZIP<br />
 	 Monthly UTF-8 (Default): SAM_PUBLIC_UTF-8_MONTHLY_YYYYMMDD.ZIP<br />
@@ -23,6 +23,7 @@ The Entity Management extracts contain entities (businesses and government agenc
    * The monthly extract is published on the first Sunday of the month and contains all active registrations plus registrations with an expiration date within the past 6 months.
    * The daily extract is an incremental file which is published 5 days a week (Tuesday – Saturday) and contains all new, updated, and deactivated registrations since the previous daily file.
    * End user needs to create a system account with FOUO access roles and procure an API_KEY to access these extracts.
+   * Only system account keys can be used to access FOUO data.
    * Daily ASCII (Default): SAM_FOUO_DAILY_YYYYMMDD.ZIP<br />
 	 Daily UTF-8: SAM_FOUO_UTF-8_DAILY_YYYYMMDD.ZIP<br />
 	 Monthly ASCII (Default): SAM_FOUO_MONTHLY_YYYYMMDD.ZIP<br />
@@ -33,6 +34,7 @@ The Entity Management extracts contain entities (businesses and government agenc
    * The monthly extract is published on the first Sunday of the month and contains all active registrations plus registrations with an expiration date within the past 6 months.
    * The daily extract is an incremental file which is published 5 days a week (Tuesday – Saturday) and contains all new, updated, and deactivated registrations since the previous daily file.
    * End user needs to create a system account with sensitive access roles and procure an API_KEY to access these extracts.
+   * Only system account keys can be used to access Sensitive data.
    * Daily ASCII (Default): SAM_SENSITIVE_DAILY_V2_YYYYMMDD.ZIP<br />
      Daily UTF-8: SAM_SENSITIVE_UTF-8_DAILY_V2_YYYYMMDD.ZIP<br />
      Monthly ASCII (Default): SAM_SENSITIVE_MONTHLY_V2_YYYYMMDD.ZIP<br />
@@ -43,11 +45,31 @@ The Entity Management extracts contain entities (businesses and government agenc
 4. **Exclusions Public Data Package:**
    * This extract all active exclusions in SAM as a comma-separated value (CSV) file.
    * The Exclusions extract is a daily file, published 7 days per week.
-   * End user needs to create an account in beta.SAM.gov and procure an API_KEY to access these extracts.
+   * End user needs to create an account in SAM.gov and procure an API_KEY to access these extracts.
    * File Name: SAM_Exclusions_Public_Extract_YYDDD.ZIP (Julian Date)<br />
    		* April 16, 2019 is the 106th day of 2019.  Therefore, the Exclusions extract for April 16, 2019 would be SAM_Exclusions_Public_Extract_19106.ZIP.
 
-
+**Entity Extract Calendar**
+<table>
+<tr>
+<td>Monthly Files for Public, FOUO and Sensitive Extracts</td>
+<td>
+* They are produced on the first Sunday of each month. Kindly check after 7 AM.<br/>
+* The date on the .ZIP file matches the date when the file was generated. E.g.: The March monthly files were generated and dated on 20210307.<br/>
+* The date on the .ZIP file matches the date on the .dat file inside.<br/>
+* These files contain all active entities + entities expired in the last 6 months.
+</td>
+</tr>
+<tr>
+<td>Daily Files for FOUO and Sensitive Extracts</td>
+<td>
+* They are produced every Tuesday-Saturday. Kindly check after 7 AM.<br/>
+* The date on the .ZIP matches the date when the file was generated. E.g: The file generated on the last Saturday of March will show 20210327.<br/>
+* The date on the .ZIP file matches the date on the .dat file inside.<br/>
+* These are incremental files that contain new/updated/deactivated/expired entities since the previous day’s file.
+</td>
+</tr>
+</table>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -55,20 +77,20 @@ The Entity Management extracts contain entities (businesses and government agenc
 
 The Public and FOUO Entity extracts and Exclusion extracts are available using the following endpoints:
  
-  * Beta: https://api.sam.gov/data-services/v1/extracts?api_key= < value >
+  * Production: https://api.sam.gov/data-services/v1/extracts?api_key= < value >
   * Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?api_key= < value ><br><br>
   
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
        The Sensitive version of the extracts are no longer available via GET requests.
        Please refer to the “Sensitive Download API Process” to learn more about the Sensitive extract retrieval process.
        <ul>
-        <li style="color: #31708f;">Beta: https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
+        <li style="color: #31708f;">Production: https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
         <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
         </ul><br>
   </div>  
      
 Generating a personal API Key:
-* Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on beta.sam.gov
+* Registered users can request for a public API on ‘Account Details’ page. This page can be accessed here: Account Details page on SAM.gov
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page.
 * If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
@@ -258,7 +280,7 @@ Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer"
 * FOUO files: 
   <br> SAM_FOUO_DAILY_20190423.ZIP<br>  SAM_FOUO_DAILY_20190522.ZIP<br>  SAM_FOUO_DAILY_20190523.ZIP<br>  SAM_FOUO_DAILY_20190524.ZIP<br>  SAM_FOUO_DAILY_20190525.ZIP<br> 
   SAM_FOUO_DAILY_20190528.ZIP<br>  SAM_FOUO_DAILY_20190529.ZIP<br>  SAM_FOUO_DAILY_20190530.ZIP<br>  SAM_FOUO_DAILY_20190531.ZIP<br>  SAM_FOUO_MONTHLY_20190430.ZIP<br> 
-  SAM_FOUO_MONTHLY_20190505.ZIP<br>  SAM_FOUO_DAILY_V2_20200824.ZIP<br>  SAM_FOUO_MONTHLY_V2_20200826.ZIP<br>  SAM_FOUO_UTF-8_DAILY_V2_20200824.ZIP<br>  SAM_FOUO_UTF-8_MONTHLY_V2_20200826.ZIP
+  SAM_FOUO_MONTHLY_20190505.ZIP<br>  SAM_FOUO_UTF-8_DAILY_20210204.ZIP<br>  SAM_FOUO_UTF-8_MONTHLY_20210204.ZIP<br> SAM_FOUO_DAILY_V2_20200824.ZIP<br>  SAM_FOUO_MONTHLY_V2_20200826.ZIP<br>  SAM_FOUO_UTF-8_DAILY_V2_20200824.ZIP<br>  SAM_FOUO_UTF-8_MONTHLY_V2_20200826.ZIP
 
 * Sensitive files:
   <br> SAM_SENSITIVE_UTF-8_DAILY_V2_20190530.ZIP<br>  SAM_SENSITIVE_UTF-8_DAILY_V2_20190531.ZIP<br>  SAM_SENSITIVE_UTF-8_DAILY_V2_20190601.ZIP<br> 
@@ -311,7 +333,8 @@ The API will return one of the following responses:
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov).
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Production.
+* Reach out to the SAM.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -319,15 +342,18 @@ The API will return one of the following responses:
 
 Date | Version | Description
 ------|---------------|---------
-06/03/2019 | v 1.0 | Base Version
-08/15/2019 | v 1.1 | * Added Beta.SAM.Gov to the page title. <br><br>* Clarified the Alpha and Beta endpoints.
-12/20/2019 | v 1.2 | * Added Sample FOUO and Sensitive File Names and Revised extract layouts for the upcoming UEI/EVS changes. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.
+06/03/2019 | v1.0 | Base Version
+08/15/2019 | v1.1 | * Added Beta.SAM.Gov to the page title. <br><br>* Clarified the Alpha and Beta endpoints.
+12/20/2019 | v1.2 | * Added Sample FOUO and Sensitive File Names and Revised extract layouts for the upcoming UEI/EVS changes. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.
 02/25/2020 | v1.3 | * Updated Alpha endpoint to meet new API standards.<br><br> * Added Sample Extract Files.
 02/28/2020 | v1.4 | * Updated Beta endpoint to meet new API standards.<br><br> * Removed "COMING SOON" information in Getting Started section. <br><br> * Added FOUO and Sensitive Sample Extract Files for different versions.
 04/20/2020 | v1.5 |  Updated Public, FOUO and Sensitive Sample Extract Files that includes UEI information.
 06/10/2020 | v1.6 |  Added the endpoint, new process and an example for the Download API .
 08/17/2020 | v1.7 | * The Sensitive Alpha endpoint in "Getting Started" has been corrected and the Sample Extract Authorization screenshot in "Explanation of the API using Examples" has also been updated to reflect the correct endpoint.<br><br> * Sensitive data sample calls in the "Explanation of the API using Examples" have also been updated to show that the API key is no longer sent in the request URL.<br><br> * The "Sensitive Download API Process" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshot in the "Explanation of the API using Examples" has been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.
 08/31/2020 | v1.8 | * Updated the Getting Started section to include the Sensitive Beta endpoint.
-02/05/2021 | V1.9 | * Added V1/V2 Public, V3 Sensitive, and V2 FOUO files available in Alpha S3.<br><br>* Added version parameter<br><br>* Updated error messages<br><br>* Added note to charSet parameter stating exclusions file type is not applicable
+02/05/2021 | v1.9 | * Added V1/V2 Public, V3 Sensitive, and V2 FOUO files available in Alpha S3.<br><br>* Added version parameter<br><br>* Updated error messages<br><br>* Added note to charSet parameter stating exclusions file type is not applicable
+03/12/2021 | v2.0 | * Added additional FOUO sample files.<br><br> * Added note that only system account keys can be used for FOUO and sensitive downloads.
+04/08/2021 | v2.1 | * Updated Contact Us information.<br><br> * Added Entity Extract Calendar under Overview.
+05/12/2021 | V2.2 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
 
 <p><small><a href="#">Back to top</a></small></p>
