@@ -275,6 +275,7 @@ Request Payload for a HHG Domestic Shipment:
 ```
   
 Response for a HHG Domestic Shipment:  
+```
 {  
        "agencyLocationCode": 697,  
         "queryType": "HHGAPI",  
@@ -334,11 +335,12 @@ Response for a HHG Domestic Shipment:
         "exsDiscountApplied": null,  
         "rateEffectiveDate": "2019-05-01T05:00:00.000+0000",  
         "rateExpiryDate": "2020-05-31T05:00:00.000+0000"  
-  
 }  
-  
+```
+
 Request Payload for a HHG International Shipment:  
-{    
+```
+ {    
     "agencyLocationCode": 697,  
     "queryType":"HHGAPI",  
     "pickupDate":"2020-04-12",  
@@ -356,9 +358,11 @@ Request Payload for a HHG International Shipment:
     "miles": 100,  
     "uabWeight":150  
 }  
-  
+```
+ 
 Response for a HHG International Shipment:  
-{  
+```
+ {  
        "agencyLocationCode": 697,  
         "queryType": "HHGAPI",  
         "pickupDate": "2020-04-12T00:00:00.000+0000",  
@@ -418,10 +422,10 @@ Response for a HHG International Shipment:
         "rateEffectiveDate": "2019-05-01T05:00:00.000+0000",  
         "rateExpiryDate": "2020-04-30T05:00:00.000+0000"  
 }  
-  
+```
 
 Request Payload for a HHG Extended Storage Shipment:  
-  
+```
 {  
    "agencyLocationCode": 697,  
    "queryType":"HHG",  
@@ -437,10 +441,10 @@ Request Payload for a HHG Extended Storage Shipment:
    "originCountryId":326,  
    "destinationCountryId":null,  
 }  
-
+```
   
 Response for a HHG Extended Storage Shipment:  
-  
+```
 {  
    "rateId":139155408,  
    "rateType":"G",  
@@ -488,7 +492,7 @@ Response for a HHG Extended Storage Shipment:
    "effectiveDate":"2020-11-01T04:00:00.000+0000",  
    "expiryDate":"2021-04-30T04:00:00.000+0000",  
  }  
-
+```
   
 
 <p><small><a href="#">Back to top</a></small></p>
