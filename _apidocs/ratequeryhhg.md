@@ -247,10 +247,10 @@ All request payloads must be in JSON data structure specified in the Data dictio
 Response:
 All response must be in JSON data structure specified in the Data dictionary section of this document.
 
-The connection to the API endpoints is secured and authenticated using the registered token provided by api.data.gov
-
+The connection to the API endpoints is secured and authenticated using the registered token provided by the form above.  
+ 
 Sample Request and Response
-Request URL: https://api.gsa.gov/tmss/ratequeryhhg/v1/shipmentcost
+Request URL: https://api.gsa.gov/travel/tmss/v1/ratequery/hhg/shipmentcost
 
 Request Payload for a HHG Domestic Shipment:  
 ```
