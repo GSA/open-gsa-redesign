@@ -253,6 +253,7 @@ Sample Request and Response
 Request URL: https://api.gsa.gov/tmss/ratequeryhhg/v1/shipmentcost
 
 Request Payload for a HHG Domestic Shipment:  
+```
 {   
    "agencyLocationCode": 697,  
     "queryType":"HHGAPI",  
@@ -271,6 +272,7 @@ Request Payload for a HHG Domestic Shipment:
     "miles": 100,  
     "uabWeight":150  
 }  
+```
   
 Response for a HHG Domestic Shipment:  
 {  
