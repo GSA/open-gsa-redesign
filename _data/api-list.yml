@@ -64,15 +64,15 @@
 - title: SAM.gov Get Opportunities Public API
   description: Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed.
   url: get-opportunities-public-api/
-- title: SAM.gov Public Location Services API
-  description: This API provides location retrieval needed for opportunities
-  url: location-public-api/
-- title: SAM.gov Product Service Codes (PSC) API
-  description: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From SAM.gov.
-  url: PSC-Public-API/
 - title: SAM.gov Opportunity Management API
   description: The Opportunity Management API will allow authorized users to submit and request Opportunities data.
   url: opportunities-api/
+- title: SAM.gov Product Service Codes (PSC) API
+  description: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From SAM.gov.
+  url: PSC-Public-API/
+- title: SAM.gov Public Location Services API
+  description: This API provides location retrieval needed for opportunities
+  url: location-public-api/
 - title: Search.gov Search Results API
   description: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application.
   url: https://open.gsa.gov/api/searchgov-results/
