@@ -1,27 +1,27 @@
 ---
-title: Beta.SAM.Gov Public Location Services API 
-banner-heading: Beta.SAM.Gov Public Location Services API 
+title: SAM.gov Public Location Services API 
+banner-heading: SAM.gov Public Location Services API 
 ---
 
 ## Overview
 
-The Public Location Services API provides Location Services data (Country, State, City, and ZIP) and is to be used when validating location data that is being submitted to the Beta.SAM.gov ONLY. Beta.SAM is not the authoritative source for location data and is agglomerating data from 3rd parties to operate the application. Location Public Services API only supports United States currently.
+The Public Location Services API provides Location Services data (Country, State, City, and ZIP) and is to be used when validating location data that is being submitted to the SAM.gov ONLY. SAM.gov is not the authoritative source for location data and is agglomerating data from 3rd parties to operate the application. Location Public Services API only supports United States currently.
 
 *Note: If valid search parameter (e.g. searchby=statecode) from the options listed in the description is not provided, all records will be returned*
 
 
 ## Getting Started
 
-Get Location API can be accessed from Beta or Alpha environments via the following urls:
+Get Location API can be accessed from Production or Alpha environments via the following urls:
 
-* Beta: https://api.sam.gov 
+* Production: https://api.sam.gov 
 * Alpha: https://api-alpha.sam.gov 
 
 ## Authentication and API Keys
 User of this API must provide a System Account API key to use this Location Services API. 
 
 In order to use Public Location Services API, the following is required:
-* Valid beta.SAM.GOV Federal Government System Account API Key
+* Valid SAM.gov Federal Government System Account API Key
 
 #### Generating a System Account API Key
 * Users registered with a government email address and have appropriate System Account Manager or System Account Admin role may request a system account for data access.
@@ -548,7 +548,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov)
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 ## Change Log
 
