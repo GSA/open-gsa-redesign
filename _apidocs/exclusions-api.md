@@ -84,7 +84,7 @@ Utilizing the Exclusion API as an extract:
 | terminationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'terminationDate=01/01/2019', 'terminationDate=[01/01/2019,05/29/2019]' |  v1<br>v2 |
 | cageCode | Allows a complete value, null and also wild card searches (a string).<br><br> Examples: 'cageCode=0*0', 'cageCode=[0XLE0~1CM51~""]', 'q=((cageCode:0XLE0) OR (cageCode:1CM51))' |  v1<br>v2 |
 | npi  | Allows 1234567890 (this is masked data) and null (a string).<br><br> Examples: 'npi=1234567890', 'npi=""', 'npi=!""' |  v1<br>v2 |
-| recordStatus | Allows a complete text (a string).<br><br> Allowable values are: Active, Inactive <br><br> Examples: 'recordStatus=Active', 'recordStatus=active~inactive' | v1<br>v2 |
+| recordStatus | The API returns only Active records.<br><br> Allows a complete text (a string).<br><br> Allowable value is: Active, active <br><br> Example: 'recordStatus=active' | v1<br>v2 |
 | page  | Denotes a page number.<br><br> Allowable values are 0 to 999.<br><br> Example: 'page=0' |  v1<br>v2 |
 | size  | Denotes the number of records returned per page.<br><br> Allowable values are 1 to 10.<br><br> Example: 'size=1' |  v1<br>v2 |
 | includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'includeSections=exclusionOtherInformation,exclusionDetails' |  v1<br>v2 |
@@ -450,5 +450,6 @@ Date | Version | Description
 04/08/2021 | v2.3 | Updated Contact Us information.
 04/29/2021 | V2.3 | * Updated openapi spec file.
 05/12/2021 | V2.4 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
+06/03/2021 | V2.5 | * Updated Description for recordStatus parameter.
 
 <p><small><a href="#">Back to top</a></small></p>
