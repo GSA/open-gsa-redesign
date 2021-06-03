@@ -3486,7 +3486,7 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 <tr>
 <td>architectEngineerResponses</td>
-<td>List</td>
+<td>Object</td>
 <td>
 <details>
 <summary>architectEngineerResponses contains below fields</summary>
@@ -9901,7 +9901,7 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 <tr>
 <td>architectEngineerResponses</td>
-<td>List</td>
+<td>Object</td>
 <td>
 <details>
 <summary>architectEngineerResponses contains below fields</summary>
@@ -17451,7 +17451,7 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 <tr>
 <td>architectEngineerResponses</td>
-<td>List</td>
+<td>Object</td>
 <td>
 <details>
 <summary>architectEngineerResponses contains below fields</summary>
@@ -20275,7 +20275,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON/CSV format. |
-| 400 | Application Level Error Messages: <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections', 'emailId' or 'format' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiSAM is allowed. <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication. <br><br> * entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter. <br><br> * IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.|
+| 400 | Application Level Error Messages: <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections', 'emailId' or 'format' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiSAM is allowed. <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication. <br><br> * entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter. <br><br> * IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system. <br><br> * Type of Connection chosen in your user profile does not allow access to this api. |
 | 406 | Invalid Accept Header. |
 | 415 | Invalid Content-Type Header. |
 
