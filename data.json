@@ -3489,16 +3489,14 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
-					"title": "Hiring Assessment and Selection Outcome Dataset January 2021",
-					"description": "An Excel export of combined USA Staffing, Monster, Aviator (FAA) Hiring Assessment and Selection Outcome Data from the 24 CFO Act agencies.",
-					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/e86fd987-e414-483a-a27c-9dfeb2a385eb/download/hiring-assessment-and-selection-outcome-dataset-january-2021-final.xlsx"
-				}, {
-					"@type": "dcat:Distribution",
-					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format": "xlsx",
 					"title": "Data Dictionary for Hiring Assessment and Selection Outcome Dataset",
 					"description": "This is the Data Dictionary for the Hiring Assessment and Selection Outcome Dataset.",
-					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/e91deb82-0d38-48f9-8dd2-6109619758e6/download/data-dictionary-for-hiring-assessment-and-selection-outcome-dataset.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/e91deb82-0d38-48f9-8dd2-6109619758e6/download/data-dictionary-for-federal-hiring-dataset-february-28-2021.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "Hiring-Selections-and-Outcomes-Public-Data-Set-February-28-2021.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/de248c56-6dba-4e0f-9eef-af3601bb020e/download/hiring-selections-and-outcomes-public-data-set-february-28-2021.csv"
 				}
 			],
 			"keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -4127,6 +4125,39 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "FY19 Tenant Satisfaction Survey (TSS) Individual Responses with Comments",
+			"description": "A CSV export of Tenant Satisfaction Survey individual responses with comments, file does not contain PII.",
+			"modified": "2021-05-25T17:00:31.848Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-06",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this report has stated it is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY19_TSS_Individual_Results_with_Comments.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/864dc07d-de7c-484f-b859-9839bf62c233/resource/9b194713-3b73-4f76-b9cb-226a5792ef3f/download/fy19_tss_individual_results_with_comments.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "TSS", "air quality", "bathrooms", "building", "building security", "common areas", "condition", "desk", "elevators", "satisfaction", "survey results", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "FY 2020 Federal Real Property Profile Data for Civilian Agencies",
 			"description": "A CSV export of data from FRPP, a database of Federal real property for civilian agencies.",
 			"modified": "2021-05-03T15:35:43.403Z",
@@ -4459,8 +4490,8 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
-					"title": "EDI JSON 05 20 21.json",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/9b278c48-7b04-436c-bad9-65bc29c8c057/download/edi-json-05-20-21.json"
+					"title": "EDI JSON 06 03 21.json",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/1d9d4413-8f8b-43e8-b7e6-d68a352208fa/download/edi-json-06-03-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5037,12 +5068,14 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"title": "IOLP Buildings.xlsx",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/6ff40cf1-ab5b-40d8-b802-9670f8eeba0b/download/iolp-buildings.xlsx"
+					"description": "IOLP Buildings",
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/14068dc5-208c-4d87-8449-b5a2bf6c75a4/download/iolp-buildings.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"title": "IOLP Leases.xlsx",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/2ac0abef-9cb6-46a5-9e47-4ea91ea34b04/download/iolp-leases.xlsx"
+					"description": "IOLP Leases",
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/7d57d3df-6ad4-4ea6-90f8-69e8deb389aa/download/iolp-leases.xlsx"
 				}
 			],
 			"keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
@@ -10082,8 +10115,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
 					"title": "data_gov_bldg_rexus.csv",
-					"description": "May - Rexus Building file",
-					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/cbce4462-d19a-4de4-a8f5-15910a4cb8b0/download/data_gov_bldg_rexus.csv"
+					"description": "June Rexus Buildings",
+					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/3bb0decb-64ee-4d92-86ae-4b1457dfb5be/download/data_gov_bldg_rexus.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -10114,10 +10147,9 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
-					"format": "csv",
-					"title": "data_gov_lse_rexus",
-					"description": "May - Rexus Lease file",
-					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/db2e5040-a1fc-4581-975c-e38ccf70b2e9/download/data_gov_lse_rexus.csv"
+					"title": "data_gov_lse_rexus.csv",
+					"description": "June Rexus Leases",
+					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/1aed05ec-e154-45e6-a394-d29fb7c04272/download/data_gov_lse_rexus.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -10295,7 +10327,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Subcontracting Directory for Small Businesses",
 			"description": "The GSA Subcontracting Directory list large Prime Contractors who, by law, are required to establish plans and goals for subcontracting with Small Business Firms.",
-			"modified": "2020-03-02",
+			"modified": "2021-06-03T15:35:59.454Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-10-26-01",
 			"dataQuality": true,
@@ -10304,6 +10336,7 @@
 			"issued": "2012-12-06",
 			"landingPage": "http://gsa.gov/subdirectory",
 			"license": "http://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
 				"name": "General Services Administration"
@@ -10323,7 +10356,7 @@
 					"downloadURL": "https://inventory.data.gov/dataset/50bfccab-460c-4f18-9f17-28c4104e6d50/resource/d074c4ed-07f3-4fdd-8a7d-f56d6c8c5e02/download/subk-directory-as-of-dec-2019.xlsx"
 				}
 			],
-			"keyword": ["Prime Contractors", "Subcontracting", "Subcontracting Directory"],
+			"keyword": ["NAICS", "Prime Contractors", "Subcontracting", "Subcontracting Directory"],
 			"bureauCode": ["001:40"],
 			"programCode": ["015:010"],
 			"language": ["us-EN"],
@@ -10492,6 +10525,32 @@
 			"theme": ["Acquisition"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Tenant Satisfaction Survey (TSS) Reports",
+			"description": "This is a collection of TSS reports both at the individual and summary level.  The reports are for the following Fiscal Years; 2017, 2018, and 2019.  There is a data dictionary for the Individual Results and a data dictionary for the Summarized Results.",
+			"modified": "2021-05-26T12:11:56.111Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this collection of reports stated the information is 'Restricted'.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"keyword": ["Cleanliness", "Happiness", "Lighting", "Survey", "TSS", "air quality", "building", "condition", "satisfaction", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "Time to Hire",
 			"description": "This dataset represents time taken to hire a GSA employee from the internal request to hire through the entry on duty of the of the selected individual",
 			"modified": "2016-01-07",
@@ -10525,6 +10584,72 @@
 			"programCode": ["023:009"],
 			"language": ["en-us"],
 			"theme": ["People"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "TSS Individual Results with Comments Data Dictionary",
+			"description": "A Data Dictionary for the TSS Individual Reports with Comments reports.",
+			"modified": "2021-05-25T16:59:40.968Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-08",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC has stated this is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TSS Individual Results with Comments Data Dictionary.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/a6b94e32-983d-4370-8935-ab1de8d3ca23/resource/173d7ab1-db2e-4bf4-b746-1183989e01ba/download/tss-individual-results-with-comments-data-dictionary.xlsx"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "TSS", "air quality", "bathrooms", "building", "building security", "common areas", "condition", "desk", "elevators", "satisfaction", "survey results", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "TSS Summarized Results Data Dictionary",
+			"description": "A Data Dictionary for the TSS Summarized Reports at the Building and Individual level reports.",
+			"modified": "2021-05-25T16:59:13.064Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-09",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC has stated this dataset is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TSS Summarized Results Data Dictionary.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/d8fd8e8f-8eab-4d17-a527-940f54fbaf31/resource/ebe8bfa9-6381-4f43-a0db-e93e7d5d6bd4/download/tss-summarized-results-data-dictionary.xlsx"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "Lighting", "Survey", "TSS", "air quality", "building", "condition", "satisfaction", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "USA.gov Blog RSS feed",
