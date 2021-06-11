@@ -51,7 +51,7 @@ postedTo|	Posted date To  Format must be MM/dd/yyyy <br> Note: Date range betwee
 deptname |	Department Name (L1)	|No|	String | v1<br> v2 - Deprecated
 subtier|	Agency Name (L2)| 	No|	String | v1<br> v2 - Deprecated
 state|	Place of Performance (State)|	No	|String | v1<br> v2
-status (Coming Soon)| Status of the opportunity <br> Accepts following:  active, archived, cancelled, deleted | No| String | v2
+status (Coming Soon)| Status of the opportunity <br> Accepts following:  active, inactive, archived, cancelled, deleted | No| String | v2
 zip|	Place of Performance (Zip code)|	No|	String | v1<br> v2
 organizationCode| Code of associated organization | No| string | v2
 organizationName| Name of associated organization <br> *Note: General Search can be performed*|No| String|v2
