@@ -1163,6 +1163,8 @@ Date | Version | Description
 05/18/2021 | v1.94| Changed SAM.Gov to SAM.gov based on JIRA IAEDEV-51713
 05/18/2021 | v1.95| Changed Prod to Production JIRA IAEDEV-51713
 05/19/2021 | v1.96| Changed SAM.Gov to SAM.gov based on JIRA IAEDEV-51713
+06/11/2021 | v1.97| Added inactive in status
+
 
 
 
