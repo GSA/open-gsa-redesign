@@ -4490,8 +4490,8 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
-					"title": "EDI JSON 06 03 21.json",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/1d9d4413-8f8b-43e8-b7e6-d68a352208fa/download/edi-json-06-03-21.json"
+					"title": "EDI JSON 06 11 21.json",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/bdad62ab-ee06-4c03-8037-588ca48c4562/download/edi-json-06-11-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5067,12 +5067,14 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
 					"title": "IOLP Buildings.xlsx",
 					"description": "IOLP Buildings",
 					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/14068dc5-208c-4d87-8449-b5a2bf6c75a4/download/iolp-buildings.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
 					"title": "IOLP Leases.xlsx",
 					"description": "IOLP Leases",
 					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/7d57d3df-6ad4-4ea6-90f8-69e8deb389aa/download/iolp-leases.xlsx"
