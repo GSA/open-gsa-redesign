@@ -101,10 +101,14 @@ To begin using this API, you will need to register for an API Key. You can sign 
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
+•	After registration, you will need to request the Agency Token by sending an email to errc@gsa.gov.
+ 
+•	Then you will need to provide this API key in the x-api-key and Agency Token in the x-agency-token of HTTP header with every API request.
+ 
 | HTTP Header Name | Description |
 | ---- | ----------- |
 | x-api-key | API key from api.data.gov.  For sample purposes, you can use `DEMO_KEY` as an API key. |
-
+| x-agency-token | Agency Token provided by the ERRC team. For testing you can use GSA2021_API_TOKEN as the Agency Token. |
 
 
 
