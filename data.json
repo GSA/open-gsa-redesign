@@ -3496,7 +3496,7 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
 					"title": "Hiring-Selections-and-Outcomes-Public-Data-Set-February-28-2021.csv",
-					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/de248c56-6dba-4e0f-9eef-af3601bb020e/download/hiring-selections-and-outcomes-public-data-set-february-28-2021.csv"
+					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/0865127a-d75a-40ac-be33-aae2b5a8a7cf/download/hiring-selections-and-outcomes-public-data-set-february-28-2021.csv"
 				}
 			],
 			"keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -4160,7 +4160,7 @@
 			"@type": "dcat:Dataset",
 			"title": "FY 2020 Federal Real Property Profile Data for Civilian Agencies",
 			"description": "A CSV export of data from FRPP, a database of Federal real property for civilian agencies.",
-			"modified": "2021-05-03T15:35:43.403Z",
+			"modified": "2021-06-23T12:43:03.133Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-04-27-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -4181,8 +4181,8 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
-					"title": "FRPP_Public_Dataset_FY2020.csv",
-					"downloadURL": "https://inventory.data.gov/dataset/a1072b46-cf6b-443e-bfa2-dad7f1ab4195/resource/aba264d5-d645-4ef7-8817-d1b043bc21b5/download/frpp_public_dataset_fy2020.csv"
+					"title": "FRPP_Public_Dataset_FY2020_final.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/a1072b46-cf6b-443e-bfa2-dad7f1ab4195/resource/d9aae813-cb4f-4fe3-910f-2a520fb60176/download/frpp_public_dataset_fy2020_final.csv"
 				}
 			],
 			"keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "RTF", "building", "civilian", "gsa", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -4193,7 +4193,7 @@
 			"@type": "dcat:Dataset",
 			"title": "FY2020 Federal Real Property Profile (FRPP) Summary Data by Installation Name",
 			"description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, that cannot be made public at a detailed level.",
-			"modified": "2021-05-19T14:38:47.344Z",
+			"modified": "2021-06-23T12:08:02.704Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-05-13-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -4214,10 +4214,11 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"title": "FY 2020 FRPP Summarized Data by Installation Name",
+					"format": "xlsx",
+					"title": "FY 2020 FRPP Summarized Data by Installation Name 6.16.21",
 					"description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, that cannot be made public at a detailed level.",
 					"describedBy": "https://www.gsa.gov/cdnstatic/FY_2020_FRPP_DATA_DICTIONARY_v2_final2.pdf",
-					"downloadURL": "https://inventory.data.gov/dataset/ec3eec46-f136-43f7-a6e5-94e76be89104/resource/2c82571a-1af4-4797-a7cf-24a65eacfba9/download/fy-2020-frpp-summarized-data-by-installation-name.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/ec3eec46-f136-43f7-a6e5-94e76be89104/resource/2c82571a-1af4-4797-a7cf-24a65eacfba9/download/fy-2020-frpp-summarized-data-by-installation-6.16.21.xlsx"
 				}
 			],
 			"keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "Installation Name", "building", "land", "real property", "structure"],
@@ -4490,8 +4491,9 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
-					"title": "EDI JSON 06 17 21.json",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b6620508-e759-4de6-aa32-0be0b75c11e7/download/edi-json-06-17-21.json"
+					"format": "json",
+					"title": "EDI JSON 06 24 21.json",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b6620508-e759-4de6-aa32-0be0b75c11e7/download/edi-json-06-24-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
