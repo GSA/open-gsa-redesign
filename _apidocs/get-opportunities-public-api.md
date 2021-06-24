@@ -51,7 +51,7 @@ postedTo|	Posted date To  Format must be MM/dd/yyyy <br> Note: Date range betwee
 deptname |	Department Name (L1)	|No|	String | v1<br> v2 - Deprecated
 subtier|	Agency Name (L2)| 	No|	String | v1<br> v2 - Deprecated
 state|	Place of Performance (State)|	No	|String | v1<br> v2
-status (Coming Soon)| Status of the opportunity <br> Accepts following:  active, archived, cancelled, deleted | No| String | v2
+status (Coming Soon)| Status of the opportunity <br> Accepts following:  active, inactive, archived, cancelled, deleted | No| String | v2
 zip|	Place of Performance (Zip code)|	No|	String | v1<br> v2
 organizationCode| Code of associated organization | No| string | v2
 organizationName| Name of associated organization <br> *Note: General Search can be performed*|No| String|v2
@@ -1163,6 +1163,8 @@ Date | Version | Description
 05/18/2021 | v1.94| Changed SAM.Gov to SAM.gov based on JIRA IAEDEV-51713
 05/18/2021 | v1.95| Changed Prod to Production JIRA IAEDEV-51713
 05/19/2021 | v1.96| Changed SAM.Gov to SAM.gov based on JIRA IAEDEV-51713
+06/11/2021 | v1.97| Added inactive in status
+
 
 
 
