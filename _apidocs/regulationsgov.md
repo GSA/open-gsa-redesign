@@ -167,24 +167,25 @@ submissionType should be set to API.
   
 ## Post Comment API Validation
   
-#### Common Validation
+#### Common Validations for all comments
   
 * `commentOnDocumentId`, `comment` and `submissionType` are required fields.
-* if `sendEmailReceipt` is true, `email` field is required
-* None of the fields accepts emojis
-* If a field has maximum length requirement, the requirement is applied to both, the number of characters and the number of bytes. 
-* `submitterType` field must be one of these allowed values: `ANONYMOUS`, `INDIVIDUAL`, `ORGANIZATION`
+* If `sendEmailReceipt` is true, `email` field is required.
+* An emoji is not a valid character.
+* If a field has a maximum length requirement, the requirement is applied to both, the number of characters and the number of bytes. 
+* `submitterType` field must be one of these allowed values: `ANONYMOUS`, `INDIVIDUAL`, `ORGANIZATION`.
+* `submissionType` field must be set to `API`.
   
-#### Individual Comment
+#### Individual Comment Validations
 
-* `firstName` and `lastName` are required fields
+* `firstName` and `lastName` are required fields.
 * Field value for `firstName` and `lastName` must be less than or equals to 25 characters/bytes.
 * Field value for `city`, `state`, `phone` and `country` must be less than or equals to 50 characters/bytes.
 * Field value for `zip` field must have less than or equals to 10 characters/bytes.
   
-#### Organization Comment
+#### Organization Comment Validations
 
-* `organization` and `organizationType` are required fields
+* `organization` and `organizationType` are required fields.
 * Field value for `organization` field must have less than or equals to 120 characters/bytes.
 
 ## Examples
