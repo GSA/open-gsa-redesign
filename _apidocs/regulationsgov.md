@@ -164,14 +164,30 @@ A submissionKey can be retrieved using `/v4/submission-keys` endpoint.
 submissionType should be set to API.
 
 <p><small><a href="#">Back to top</a></small></p>
+  
+## Post Comment API Validation
+  
+#### Common Validation
+  
+* `commentOnDocumentId`, `comment` and `submissionType` are required fields.
+* if `sendEmailReceipt` is true, `email` field is required
+* None of the fields accepts emojis
+* If a field has maximum length requirement, the requirement is applied to both, the number of characters and the number of bytes. 
+* `submitterType` field must be one of these allowed values: `ANONYMOUS`, `INDIVIDUAL`, `ORGANIZATION`
+  
+#### Individual Comment
+
+* `firstName` and `lastName` are required fields
+* Field value for `firstName` and `lastName` must be less than or equals to 25 characters/bytes.
+* Field value for `city`, `state`, `phone` and `country` must be less than or equals to 50 characters/bytes.
+* Field value for `zip` field must have less than or equals to 10 characters/bytes.
+  
+#### Organization Comment
+
+* `organization` and `organizationType` are required fields
+* Field value for `organization` field must have less than or equals to 120 characters/bytes.
 
 ## Examples
-
-<div style="padding: 15px; border: 1px solid; margin-bottom: 20px; border-radius: 4px; color: gray; background: rgba(90, 90, 90, 0.04); border-color: #cccccc;">
-   
-Note: The examples below use unencoded bracket characters `[` and `]` for readability, however, these characters should be percent-encoded using `%5B` and `%5D`.  For example, the posted date search filter should be specified as `filter%5BpostedDate%5D`. See <a href="https://jsonapi.org/format/1.1/#appendix-query-details-square-brackets" target="_blank">Square Brackets in Parameter Names</a> section in json-api standards for additional information.
-
-</div>
 
 #### Searching for documents
 
