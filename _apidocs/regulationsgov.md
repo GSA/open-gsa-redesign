@@ -180,7 +180,7 @@ submissionType should be set to API.
 
 * `firstName` and `lastName` are required fields.
 * Field value for `firstName` and `lastName` must be less than or equals to 25 characters/bytes.
-* Field value for `city`, `state`, `phone` and `country` must be less than or equals to 50 characters/bytes.
+* Field value for `city`, `stateProvinceRegion`, `phone` and `country` must be less than or equals to 50 characters/bytes.
 * Field value for `zip` field must have less than or equals to 10 characters/bytes.
   
 #### Organization Comment Validations
