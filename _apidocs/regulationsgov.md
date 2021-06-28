@@ -175,6 +175,8 @@ submissionType should be set to API.
 * If a field has a maximum length requirement, the requirement is applied to both, the number of characters and the number of bytes. 
 * `submitterType` field must be one of these allowed values: `ANONYMOUS`, `INDIVIDUAL`, `ORGANIZATION`.
 * `submissionType` field must be set to `API`.
+* Field value for `comment` must be less than or equals to 5000 characters/bytes.
+* Field value for `email` must be less than or equals to 100 characters/bytes.
   
 #### Individual Comment Validations
 
