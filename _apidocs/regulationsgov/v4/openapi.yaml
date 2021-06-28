@@ -1469,10 +1469,11 @@ components:
               description: The submitter's first name.
             lastName:
               type: string
+              maxLength: 25
               description: The submitter's last name.
             phone:
               type: string
-              maxLength: 25
+              maxLength: 50
               description: The submitter's phone number.
             stateProvinceRegion:
               type: string
