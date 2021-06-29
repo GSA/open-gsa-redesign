@@ -366,7 +366,7 @@ Note: Public Response for one record is provided as an example <br>
 </p>
 </details>
 
-### Example 2:  Get details and address of the Ineligible (Proceedings Completed) or Prohibition/Restriction type of Firm Exclusion records that belong to Korea, China or Germany, by using the "q" parameter.
+### Example 2: Get details and address of the Ineligible (Proceedings Completed) or Prohibition/Restriction type of Firm Exclusion records that belong to Korea, China or Germany, by using the "q" parameter.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key= < a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
