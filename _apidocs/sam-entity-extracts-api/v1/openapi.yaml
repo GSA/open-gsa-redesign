@@ -9,12 +9,11 @@ info:
     email: reply@gsa.gov
   license:
     name: GSA
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
 tags:
-  - name: Extracts Download
-    description: Operations pertaining to download different Data Service Extracts
+  - name: download-file-controller
+    description: Download File Controller
 paths:
-  /data-services/v1/extracts:
+  /extracts/v1/download:
     get:
       tags:
         - download-file-controller
@@ -41,14 +40,16 @@ paths:
             type: string
         - name: sensitivity
           in: query
-          description: Specifies desired sensitivity level of the extract that they wish to
+          description: >-
+            Specifies desired sensitivity level of the extract that they wish to
             download
           required: false
           schema:
             type: string
         - name: frequency
           in: query
-          description: Specifies desired Frequecy level of the extract that they wish to
+          description: >-
+            Specifies desired Frequecy level of the extract that they wish to
             download
           required: false
           schema:
@@ -65,18 +66,89 @@ paths:
           required: false
           schema:
             type: string
+        - name: version
+          in: query
+          description: Specific version of the file that they wish to download
+          required: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           description: OK
-          content:
-            "*/*":
-              schema:
-                $ref: "#/components/schemas/ModelAndView"
-        "401":
+        '401':
           description: Unauthorized
-        "403":
+        '403':
           description: Forbidden
-        "404":
+        '404':
+          description: Not Found
+    post:
+      tags:
+        - download-file-controller
+      summary: Download an Extract File
+      operationId: downloadUsingPOST
+      parameters:
+        - name: api_key
+          in: query
+          description: Enter the Public API Key
+          required: true
+          schema:
+            type: string
+        - name: fileName
+          in: query
+          description: Extract Name from which extract file will download
+          required: false
+          schema:
+            type: string
+        - name: fileType
+          in: query
+          description: Domain of the File extract that will download
+          required: false
+          schema:
+            type: string
+        - name: sensitivity
+          in: query
+          description: >-
+            Specifies desired sensitivity level of the extract that they wish to
+            download
+          required: false
+          schema:
+            type: string
+        - name: frequency
+          in: query
+          description: >-
+            Specifies desired Frequecy level of the extract that they wish to
+            download
+          required: false
+          schema:
+            type: string
+        - name: charset
+          in: query
+          description: Specifies desired Char Set of the extract that they wish to download
+          required: false
+          schema:
+            type: string
+        - name: date
+          in: query
+          description: Specific date of the file that they wish to download
+          required: false
+          schema:
+            type: string
+        - name: version
+          in: query
+          description: Specific version of the file that they wish to download
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
           description: Not Found
 servers:
-  - url: https://api-alpha.sam.gov/
+  - url: //api-alpha.sam.gov/

@@ -13,33 +13,6 @@
 - title: Auctions API
   description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: https://gsa.github.io/auctions_api/
-- title: SAM.gov Entity/Exclusions Extracts Download API
-  description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
-  url: sam-entity-extracts-api/
-- title: SAM.gov Entity Management API
-  description: API to retrieve Entity detail information from SAM.gov using various searchable parameters.
-  url: entity-api/
-- title: SAM.gov Exclusions API
-  description: API to retrieve Exclusion detail information from SAM.gov using various searchable parameters.
-  url: exclusions-api/
-- title: SAM.gov Federal Hierarchy FOUO API
-  description: The Federal Hierarchy “For Official Use Only” (FOUO) API allows U.S. Government users to obtain Federal Organization details down to the office level.
-  url: fh-fouo-api/
-- title: SAM.gov Federal Hierarchy Public API
-  description: Federal Hierarchy public API allows non-federal users to obtain Federal Organization details
-  url: fh-public-api/
-- title: SAM.gov Get Opportunities Public API
-  description: Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed.
-  url: get-opportunities-public-api/
-- title: SAM.gov Public Location Services API
-  description: This API provides location retrieval needed for opportunities
-  url: location-public-api/
-- title: SAM.gov Product Service Codes (PSC) API
-  description: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From SAM.gov.
-  url: PSC-Public-API/
-- title: SAM.gov Opportunity Management API
-  description: The Opportunity Management API will allow authorized users to submit and request Opportunities data.
-  url: opportunities-api/
 - title: Contract-Awarded Labor Category (CALC) API
   description: CALC's API is used by CALC's front-end Data Explorer application to display labor rate data for awarded prices on GSA services schedules, and can also be accessed by any third-party application over the public internet. CALC (Contract Awarded Labor Category) tool searches awarded hourly rate prices on the eight GSA professional services schedules and returns comparable labor categories and prices based on search criteria and filters used.
   url: https://calc.gsa.gov/api/
@@ -73,24 +46,51 @@
 - title: Regulations.gov API
   description: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets. Additionally,  a POST API is offered that allows users to submit comments.
   url: https://open.gsa.gov/api/regulationsgov/
+- title: SAM.gov Entity/Exclusions Extracts Download API
+  description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
+  url: sam-entity-extracts-api/
+- title: SAM.gov Entity Management API
+  description: API to retrieve Entity detail information from SAM.gov using various searchable parameters.
+  url: entity-api/
+- title: SAM.gov Exclusions API
+  description: API to retrieve Exclusion detail information from SAM.gov using various searchable parameters.
+  url: exclusions-api/
+- title: SAM.gov Federal Hierarchy FOUO API
+  description: The Federal Hierarchy “For Official Use Only” (FOUO) API allows U.S. Government users to obtain Federal Organization details down to the office level.
+  url: fh-fouo-api/
+- title: SAM.gov Federal Hierarchy Public API
+  description: Federal Hierarchy public API allows non-federal users to obtain Federal Organization details
+  url: fh-public-api/
+- title: SAM.gov Get Opportunities Public API
+  description: Get Opportunities API provides all the published opportunity details based on the request parameters. This API supports pagination as needed.
+  url: get-opportunities-public-api/
+- title: SAM.gov Opportunity Management API
+  description: The Opportunity Management API will allow authorized users to submit and request Opportunities data.
+  url: opportunities-api/
+- title: SAM.gov Product Service Codes (PSC) API
+  description: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From SAM.gov.
+  url: PSC-Public-API/
+- title: SAM.gov Public Location Services API
+  description: This API provides location retrieval needed for opportunities
+  url: location-public-api/
+- title: Search.gov Clicks API
+  description: For Search.gov customers. This API allows you to collect click data for both analytics reporting and as an input to relevance ranking of search results.
+  url: https://open.gsa.gov/api/searchgov-clicks/
 - title: Search.gov Search Results API
   description: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application.
   url: https://open.gsa.gov/api/searchgov-results/
 - title: Search.gov Type-ahead Suggestions API
   description: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms.
   url: https://open.gsa.gov/api/searchgov-suggestions/
-- title: Search.gov Clicks API
-  description: For Search.gov customers. This API allows you to collect click data for both analytics reporting and as an input to relevance ranking of search results.
-  url: https://open.gsa.gov/api/searchgov-clicks/
 - title: Sustainable Facilities Tool API
   description: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
   url: https://sftool.gov/developers
-- title: System for Award Management API
-  description: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
-  url: https://gsa.github.io/sam_api/sam/
 - title: Touchpoints
   description: Touchpoints makes customer feedback easier for federal agencies, and Touchpoints API provides an convenient, programmatic way to access the data for your Forms and Responses.
   url: https://github.com/gsa/touchpoints/wiki/API
 - title: U.S. Digital Registry API
   description: Contains listing from the U.S. Digital Media Registry, which serves as a crowdsource resource for agencies, citizens, and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps, and mobile websites. The accounts in the registry are independently updated by federal managers across the government who maintain individual agency accounts.
   url: https://open.gsa.gov/api/digital-registry/
+#- title: System for Award Management API
+#  description: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
+#  url: https://gsa.github.io/sam_api/sam/
