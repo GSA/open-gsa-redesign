@@ -26312,6 +26312,13 @@ https://api.sam.gov/entity-information/v2/download-entities?token=< value >
 <li>If the downloaded file is of CSV type, then file renaming convention is < filename >.csv.gz. </li>
 </ul>
 </details>
+<br>
+<div style="font-family:Source sans pro; color: #212121; line-height: 1.5">
+<b>An example of the Sensitive entity management POST call using curl:</b><br>
+Curl request with basic auth token:<br>
+curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI Duns >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/json" --header "Authorization: Basic < auth token >"<br><br>
+Curl request with username and password:<br>
+curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI Duns >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/json" --user "< username >:< password >"</div>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -26357,7 +26364,7 @@ Disclaimer:
 | 03/12/2021 | v2.4 | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call.<br><br> * Added note under repsAndCerts section about use with format parameter.<br><br> * Added NOTE under FOUO API Information Expected Results section and Sensitive API Information Sensitive API Process sections mentioning only system account keys can be used to access data.<br><br> * Removed the message stating that this page is not FireFox compliant. | 
 | 04/08/2021 | v2.5 | * Updated Contact Us information.<br><br> * Updated pointsOfContact fields information for public api.<br><br> * Updated Application Level Error Messages in HTTP Response Codes section. | 
 | 05/12/2021 | v2.6 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api. | 
-| 06/29/2021 | v2.7 | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information. |
+| 06/29/2021 | v2.7 | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information.<br><br> * Added example curl requests. |
 
 <p><small><a href="#">Back to top</a></small></p>
 

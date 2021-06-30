@@ -307,18 +307,14 @@ Click to view the full details of the revised extract layout for the upcoming UE
 Request URL:
 https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ><br>
 Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/DOWNLOAD_API_AUTH.JPG">Sample Extract Authorization</a><br>
-Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/api_key.JPG">Sample Request Header</a><br>
+Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/api_key.JPG">Sample Request Header</a>
 
-**An example of the Sensitive extract download POST call using curl:**<br>
+<div style="font-family:Source sans pro; color: #212121; line-height: 1.5">
+<b>An example of the Sensitive extract download POST call using curl:</b><br>
 Curl request with basic auth token:<br>
-curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=SAM_SENSITIVE_DAILY_V2_20190420.ZIP" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --header "Authorization: Basic < auth token >" --output C:\sample_file.ZIP
-
+curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --header "Authorization: Basic < auth token >" --output C:\sample_file.ZIP<br><br>
 Curl request with username and password:<br>
-curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=SAM_SENSITIVE_DAILY_V2_20190420.ZIP" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --user "username:password" --output C:\sample_file.ZIP
-
-
-
-
+curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --user "< username >:< password >" --output C:\sample_file.ZIP</div>
 
 **Sample File Names:**<br>
 
