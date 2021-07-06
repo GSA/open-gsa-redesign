@@ -258,7 +258,10 @@ Note: Public Response for one record is provided as an example <br>
 <code>
 <pre>
 {
-  "totalRecords": 14,
+  "totalRecords": 5,
+
+A sample record is provided here:
+
   "excludedEntity": [
     {
       "exclusionDetails": {
@@ -270,23 +273,22 @@ Note: Public Response for one record is provided as an example <br>
       },
       "exclusionIdentification": {
         "ueiSAM": null,
-        "ueiDUNS": "",
-        "entityEFTIndicator": null,
-        "cageCode": "",
-        "npi": "",
-        "prefix": "MS.",
-        "firstName": "CHONG",
-        "middleName": "SUN",
-        "lastName": "HWANG",
-        "suffix": "",
-        "entityName": ""
-        “dnbOpenData”: “N”
+        "ueiDUNS": null,
+        "cageCode": null,
+        "npi": null,
+        "prefix": "Ms.",
+        "firstName": "Chong",
+        "middleName": "Sun",
+        "lastName": "Hwang",
+        "suffix": null,
+        "entityName": "Ms. Chong Sun Hwang",
+        "dnbOpenData": null
       },
       "exclusionActions": {
         "listOfActions": [
           {
-            "createDate": "Currently Not Available",
-            "updateDate": "Currently Not Available",
+            "createDate": "07-27-2012",
+            "updateDate": "07-27-2012",
             "activateDate": "12-12-2011",
             "terminationDate": "11-08-2029",
             "terminationType": "Definite",
@@ -294,73 +296,71 @@ Note: Public Response for one record is provided as an example <br>
           }
         ]
       },
-      "exclusionAddress": {
+      "exclusionPrimaryAddress": {
         "addressLine1": null,
         "addressLine2": null,
-        "city": "CITY",
-        "stateOrProvinceCode": "",
-        "zipCode": "",
+        "city": "Dongjak-gu, Seoul",
+        "stateOrProvinceCode": null,
+        "zipCode": null,
         "zipCodePlus4": null,
-        "countryCode": "ABC"
+        "countryCode": "KOR"
       },
+      "exclusionSecondaryAddress": [],
       "exclusionOtherInformation": {
-        "additionalComments": "",
+        "additionalComments": null,
         "ctCode": "A",
-        "evsInvestigationStatus": "Currently Not Available",
+        "evsInvestigationStatus": null,
         "references": {
           "referencesList": [
             {
-              "exclusionName": " KWANG PAK",
-              "type": "Currently Not Available"
-            },
-            {
-              "exclusionName": " TAEK CHI",
-              "type": "Currently Not Available"
-            },
-            {
-              "exclusionName": " SOUKDAI KO",
-              "type": "Currently Not Available"
-            },
-            {
-              "exclusionName": " MYOUNG KIM",
-              "type": "Currently Not Available"
-            },
-            {
-              "exclusionName": " KI NAM",
-              "type": "Currently Not Available"
+              "exclusionName": null,
+              "type": null
             }
           ]
         },
         "moreLocations": [
-          "Currently Not Available"
+          {
+            "exclusionName": null,
+            "duns": null,
+            "cageCode": null,
+            "npi": null,
+            "primaryAddress": {
+              "addressLine1": null,
+              "addressLine2": null,
+              "city": null,
+              "stateOrProvinceCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null,
+              "countryCode": null
+            },
+            "secondaryAddress": [
+              {
+                "addressLine1": null,
+                "addressLine2": null,
+                "city": null,
+                "stateOrProvinceCode": null,
+                "zipCode": null,
+                "zipCodePlus4": null,
+                "countryCode": null
+              }
+            ]
+          }
         ]
       },
       "vesselDetails": {
-        "callSign": "Currently Not Available",
-        "type": "Currently Not Available",
-        "tonnage": "Currently Not Available",
-        "grt": "Currently Not Available",
-        "flag": "Currently Not Available",
-        "owner": "Currently Not Available",
-        "secondaryAddress": [
-          {
-            "addressLine1": "Currently Not Available",
-            "addressLine2": "Currently Not Available",
-            "city": "Currently Not Available",
-            "stateOrProvinceCode": "Currently Not Available",
-            "zipCode": "Currently Not Available",
-            "zipCodePlus4": "Currently Not Available",
-            "countryCode": "Currently Not Available"
-          }
-        ]
+        "callSign": null,
+        "type": null,
+        "tonnage": null,
+        "grt": null,
+        "flag": null,
+        "owner": null
       }
     },
-],
+    
   "links": {
-    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation]%20&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&isActive=true&page=0&size=10",
-    "nextLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation]%20&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&isActive=true&page=1&size=10"
+    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&page=0&size=10",
+    
   }
-}
 </pre>
 </code>
 </p>
@@ -382,7 +382,10 @@ Note: Public Response for one record is provided as an example <br>
 <code>
 <pre>
 {
-  "totalRecords": 53,
+  "totalRecords": 63,
+
+A sample record is provided here:
+
   "excludedEntity": [
     {
       "exclusionDetails": {
@@ -393,33 +396,33 @@ Note: Public Response for one record is provided as an example <br>
         "excludingAgencyName": "DEPT OF THE AIR FORCE"
       },
       "exclusionIdentification": {
-        "ueiSAM": null,
-        "ueiDUNS": "",
-        "entityEFTIndicator": null,
-        "cageCode": "",
-        "npi": "",
-        "prefix": "",
-        "firstName": "",
-        "middleName": "",
-        "lastName": "",
-        "suffix": "",
-        "entityName": "SHENZHEN HONGDARK ELECTRONICS CO., LTD."
-        “dnbOpenData”: “N”
+        "ueiSAM": "H2XFNNKK2NZ9",
+        "ueiDUNS": "U00000615",
+        "cageCode": null,
+        "npi": null,
+        "prefix": null,
+        "firstName": null,
+        "middleName": null,
+        "lastName": null,
+        "suffix": null,
+        "entityName": "Shenzhen Hongdark Electronics Co., Ltd.",
+        "dnbOpenData": null
       },
-      "exclusionAddress": {
-        "addressLine1": "",
-        "addressLine2": "",
-        "city": "CITY",
-        "stateOrProvinceCode": "",
-        "zipCode": "",
+      "exclusionPrimaryAddress": {
+        "addressLine1": null,
+        "addressLine2": null,
+        "city": "Shenzhen",
+        "stateOrProvinceCode": null,
+        "zipCode": null,
         "zipCodePlus4": null,
-        "countryCode": "ABC"
-      }
+        "countryCode": "CHN"
+      },
+      "exclusionSecondaryAddress": []
     },
-  ],
-  "links": {
-    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&ueiDUNS=!%E2%80%9D%E2%80%9D&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&isActive=true&page=0&size=10",
-    "nextLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&ueiDUNS=!%E2%80%9D%E2%80%9D&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&isActive=true&page=1&size=10"
+
+"links": {
+    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=1&size=10"
   }
 }
 </pre>
@@ -438,7 +441,7 @@ Note: Public Response for one record is provided as an example <br>
 
 <details>
 <summary>Response</summary>
-Click to view CSV Response for one record <a href="v1/exclusion-sample-csv.xlsx">Sample CSV Response</a><br>
+Click to view CSV Response for one record <a href="v1/exclusion-sample-csv-1.xlsx">Sample CSV Response</a><br>
 </details>
 
 <p><small><a href="#">Back to top</a></small></p>
