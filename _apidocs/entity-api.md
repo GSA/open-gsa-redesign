@@ -12756,6 +12756,14 @@ The repsAndCerts section is not available for use with the format parameter.
 </ul>
 </details>
 <details>
+<summary><b>An example of the Sensitive entity management POST call using curl</b></summary>
+<div style="font-family:Source sans pro; color: #212121; line-height: 1.5"><br>
+<b>Curl request with basic auth token:</b><br>
+curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI Duns >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/json" --header "Authorization: Basic < auth token >"<br><br>
+<b>Curl request with username and password:</b><br>
+curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI Duns >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/json" --user "< username >:< password >"</div><br><br>
+</details>
+<details>
 <summary><b>Query String Parameters</b></summary>
 <table>
 <tr>
@@ -25214,13 +25222,39 @@ Note: Response for one record is provided as an example <br>
 Click to view CSV Response for one record <a href="v1/entity-sample-csv-1.xlsx">Sample CSV Response</a><br>
 </details>
 
+### Example 7: Get a JSON file of all the Entities using the POST request:<br>
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>  https://api.sam.gov/entity-information/v2/entities?format=JSON  <br>
 <br>
-<div style="font-family:Source sans pro; color: #212121; line-height: 1.5">
-<b>An example of the Sensitive entity management POST call using curl:</b><br>
-Curl request with basic auth token:<br>
-curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI Duns >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/json" --header "Authorization: Basic < auth token >"<br><br>
-Curl request with username and password:<br>
-curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI Duns >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/json" --user "< username >:< password >"</div>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?format=JSON <br>
+<br>
+<ul>
+<li> Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM.png">Sample Authorization</a></li>
+<li> Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM.PNG">Sample Request Header</a></li>
+</ul>
+</details>
+<details>
+<summary>Response</summary>
+<ul>
+<li><b>Download link with the token:</b><br> 
+Extract File will be available for download with POST url:<br>
+https://api.sam.gov/entity-information/v2/download-entities?token=< value > in some time. 
+If you have provided an email id, you will get a notification email once file is ready for download. 
+Requests for Larger Set of Data may take longer time to process.
+</li>
+
+<li><b>Download the file using the token via POST:</b><br> 
+https://api.sam.gov/entity-information/v2/download-entities?token=< value >
+<ul>
+<li>Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_Download.png">Sample Authorization</a></li>
+<li>Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download.PNG">Sample Request Header</a></li>
+</ul></li>
+
+<li>Once the file is downloaded, save it by renaming it in this format: < filename >.json.gz. </li>
+<li>If the downloaded file is of CSV type, then file renaming convention is < filename >.csv.gz. </li>
+</ul>
+</details>
 
 <p><small><a href="#">Back to top</a></small></p>
 
