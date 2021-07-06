@@ -446,8 +446,6 @@ Click to view CSV Response for one record <a href="v1/exclusion-sample-csv-1.xls
 
 <p><small><a href="#">Back to top</a></small></p>
 
-
-
 ## Additional Information
 You can view the full details of the differences between the SAM legacy API and SAM.gov API 
 <br> available here: <a href="LegacySAMvsBetaSAM-ExclusionsAPI.pdf">Variance Document</a><br>
@@ -489,6 +487,6 @@ Date | Version | Description
 04/29/2021 | v2.4 | * Updated openapi spec file.
 05/12/2021 | v2.5 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
 06/03/2021 | v2.6 | * Updated description for recordStatus parameter.
-06/29/2021 | v2.7 | * Added message stating that the slash character must be enclosed with double quotes if being used inside of a search parameter.<br><br> * Added the Type of Connections and Rate Limits table<br><br> * Updated the examples<br><br> * Updated the Contact Us information
+07/06/2021 | v2.7 | * Added message stating that the slash character must be enclosed with double quotes if being used inside of a search parameter.<br><br> * Added the Type of Connections and Rate Limits table<br><br> * Updated the examples<br><br> * Updated the Contact Us information
 
 <p><small><a href="#">Back to top</a></small></p>
