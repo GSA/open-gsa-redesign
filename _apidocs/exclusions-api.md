@@ -486,7 +486,6 @@ Date | Version | Description
 04/08/2021 | v2.3 | Updated Contact Us information.
 04/29/2021 | v2.4 | * Updated openapi spec file.
 05/12/2021 | v2.5 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
-06/03/2021 | v2.6 | * Updated description for recordStatus parameter.
-07/06/2021 | v2.7 | * Added message stating that the slash character must be enclosed with double quotes if being used inside of a search parameter.<br><br> * Added the Type of Connections and Rate Limits table<br><br> * Updated the examples<br><br> * Updated the Contact Us information
+07/16/2021 | v2.6 | * Updated description for recordStatus parameter.<br><br> * Added message stating that the slash character must be enclosed with double quotes if being used inside of a search parameter.<br><br> * Added the Type of Connections and Rate Limits table<br><br> * Updated the examples<br><br> * Updated the Contact Us information
 
 <p><small><a href="#">Back to top</a></small></p>
