@@ -411,6 +411,40 @@
 			"theme": ["Other"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Category Management (CM) Plan Workbench",
+			"description": "This workbook is a series of tools for Departments to use for their planning of the next FY for Category Management purposes; contract shifting from Tier 0 to Managed tiers, etc.",
+			"modified": "2021-07-16T16:59:04.037Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/html",
+					"format": "html",
+					"title": "Category Management (CM) Plan Workbench",
+					"downloadURL": "https://d2d.gsa.gov/report/government-wide-category-management-contract-management-and-operational-reporting-tools"
+				}
+			],
+			"keyword": ["FPDS", "FY Plan", "Spend Under Management", "obligation"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "CIO Governance Board Membership List",
 			"description": "Json file for CIO Governance Board Membership List",
 			"modified": "2015-09-01",
@@ -552,6 +586,39 @@
 			"programCode": ["023:010"],
 			"language": ["en-us"],
 			"theme": ["Travel and Transportation"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Common and Defense Centric Spend Tables",
+			"description": "Top-level view of annual Obligation totals for Categories and Subcategories.  Also includes Small Business utilization.  The only GWCM Dashboard that includes all 19 Lv1 categories (the other dashboards only include common-spend categories).",
+			"modified": "2021-07-16T17:21:58.837Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-02",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/government-wide-category-management-oversight-performance-management-tools",
+					"title": "Common and Defense Centric Spend Tables",
+					"description": "Top-level view of annual Obligation totals for Categories and Subcategories.  Also includes Small Business utilization.  The only GWCM Dashboard that includes all 19 Lv1 categories (the other dashboards only include common-spend categories)."
+				}
+			],
+			"keyword": ["FPDS", "obligation", "small business"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Concur - Reporting Authorization Model",
@@ -2247,6 +2314,39 @@
 				}
 			],
 			"keyword": ["EIS", "business-volume", "enterprise-infrastructure", "gsa", "telecommunications"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Executive Summary Dashboard FY20",
+			"description": "New as of FY20, this is the current top-level dashboard for performance against OMB KPI targets, at Government-Wide, Category, and Department levels.  (New version coming early FY22).",
+			"modified": "2021-07-16T17:28:16.109Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/executive-summary-dashboard",
+					"title": "Executive Summary Dashboard FY20",
+					"description": "New as of FY20, this is the current top-level dashboard for performance against OMB KPI targets, at Government-Wide, Category, and Department levels.  (New version coming early FY22)."
+				}
+			],
+			"keyword": ["BIC", "Contract Reduction", "Cost Avoidance", "FPDS", "KPI", "Small Business", "Spend Under Management", "obligation", "opm"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
@@ -4521,6 +4621,39 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Government Wide Category Management Agency Profile 2.0",
+			"description": "Newer version of the Agency Profile Report as of FY20.  This dashboard provides Department-level views of obligation aggregates by various breakdowns: Tier, Contract, Vendor, etc.  Also provides counts of Expiring contracts and awards as well as purchasing vehicle types.",
+			"modified": "2021-07-16T17:33:04.719Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-04",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/government-wide-category-management-oversight-performance-management-tools",
+					"title": "Government Wide Category Management Agency Profile 2.0",
+					"description": "Newer version of the Agency Profile Report as of FY20.  This dashboard provides Department-level views of obligation aggregates by various breakdowns: Tier, Contract, Vendor, etc.  Also provides counts of Expiring contracts and awards as well as purchasing vehicle types."
+				}
+			],
+			"keyword": ["FPDS", "Spend Under Management", "obligation"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "GSA Bureau IT Leadership Directory",
 			"description": "Each agency is expected to post a JSON file for their Bureau IT Leadership Directory. Each dataset should include one record for each agency employee with the title of “chief information officer” or who performs the duties and responsibilities of a CIO but does not necessarily have the title of CIO.",
 			"modified": "2018-02-28",
@@ -4657,8 +4790,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "EDI JSON 07 15 21.json",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b6620508-e759-4de6-aa32-0be0b75c11e7/download/edi-json-07-15-21.json"
+					"title": "EDI JSON 07 19 21.json",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b6620508-e759-4de6-aa32-0be0b75c11e7/download/edi-json-07-19-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -7432,6 +7565,39 @@
 			"programCode": ["023:019"],
 			"language": ["sp-US"],
 			"theme": ["Other"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Operational Workbench",
+			"description": "This workbook is a series of tools for use by end-users to explore various breakouts and trends in obligation data.",
+			"modified": "2021-07-19T15:17:10.739Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-05",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://drive.google.com/drive/folders/1jz1Gqv_8xoSg5MfIaZFm6jKJ_OyV0D2r",
+					"title": "Operational Workbench",
+					"description": "This workbook is a series of tools for use by end-users to explore various breakouts and trends in obligation data."
+				}
+			],
+			"keyword": ["FPDS", "Spend Under Management", "obligation"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Per Diem Reimbursement Rates & API",
