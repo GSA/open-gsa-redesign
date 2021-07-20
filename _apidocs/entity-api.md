@@ -27,23 +27,25 @@ The Entity Management API will allow users to request Public Entity Information 
 
 ## Getting Started
 
-Public and FOUO Entity Details can be accessed from Production or Alpha via the following version 1 and version 2 endpoints:
+Public and FOUO Entity Details can be accessed from Production or Alpha via the following version 1, version 2 and version 3 endpoints:
 * Production Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
 * Production Version 2: https://api.sam.gov/entity-information/v2/entities?api_key= < value >
+* Production Version 3: COMING SOON
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
+* Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/entities?api_key= < value >
 
-Sensitive Entity Details can be accessed from Production or Alpha via the following end points:
+These are GET calls.
 
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
-       <ul>
-       <li style="color: #31708f;">Production Version 1: https://api.sam.gov/entity-information/v1/entities?</li>
-       <li style="color: #31708f;">Production Version 2: https://api.sam.gov/entity-information/v2/entities?</li>
-       <li style="color: #31708f;">Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?</li>
-       <li style="color: #31708f;">Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?</li>
-       </ul><br>
-       The Sensitive API no longer accepts GET requests. Please refer to the "Sensitive API Process" under "Sensitive API Information" to learn more about the process change.
-  </div>
+Sensitive Entity Details can be accessed from Production or Alpha via the following version 1, version 2 and version 3 end points:
+* Production Version 1: https://api.sam.gov/entity-information/v1/entities?
+* Production Version 2: https://api.sam.gov/entity-information/v2/entities?
+* Production Version 3: COMING SOON
+* Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?
+* Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?
+* Alpha Version 3: https://api-alpha.sam.gov/entity-information/v2/entities?
+
+These are POST calls. Please refer to the "Sensitive API Process" under "Sensitive API Information" section for additional information.
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://sam.gov/profile/details" target="_blank">Account Details page on SAM.gov</a>
@@ -122,10 +124,9 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>samRegistered</td>
-<td>Allows Yes, No or All. <br>
-    Yes signifies SAM registrants.<br> No signifies non-SAM registrants.<br>
-    All signifies both SAM registrants and non-SAM registrants.
+<td rowspan="2">samRegistered</td>
+<td>Allows Yes. 
+<br>Yes signifies SAM registrants.
 <br>Example: samRegistered=Yes
 <br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
 </td>
@@ -133,26 +134,39 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
+<td>Allows Yes or No.
+<br>Yes signifies SAM registrants.
+<br>No signifies non-SAM registrants.
+<br>Example: samRegistered=Yes
+<br> 
+NOTES: 
+<br>1. If this search parameter is not sent in the request, then the API will return SAM registrants by default with the current schema.
+<br>2. If samRegistered=No is sent in the request, then the API will return the new non-SAM registrants schema.
+</td>
+<td>v3</td>
+</tr>
+
+<tr>
 <td>activationDate</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000
-<br> May be applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
 <br>Example: dbaName=ALLTEL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -160,60 +174,67 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>Entity EFT Indicator aka duns4.
 <br>Example: entityEFTIndicator=0000
 <br>NOTE: This parameter must be used in conjunction with ueiDUNS or ueiSAM.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y, N, U or null.
 <br>Example: debtSubjectToOffset=Y</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>Allows 9 character value.
 <br>Example: dodaac=DOD123456</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values 
+<td>Unique Entity Identifier DUNS
+<br>Allows 9 digit value; a maximum of up to 100 values 
 can be sent.
 <br>Example: ueiDUNS=025114695
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
-<td>Unique Entity Identifier SAM - Allow 12 digit value, 
-alphanumeric (ueiSAM values not yet available for search).
+<td>Unique Entity Identifier SAM
+<br>Allow a 12 character value; a maximum of up to 100 values can be sent.
 <br>Example: ueiSAM=RV56IG5JM6G9
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
 <br>Example: entityStructureCode=2L</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>Allows Description or null.
 <br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td rowspan="2">exclusionStatusFlag</td>
+<td>Allows D or null.
+<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>exclusionStatusFlag</td>
-<td>Allows D or null.
-<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""</td>
-<td>v1<br>v2</td>
+<td>Allows Y or N.
+<br>Examples: exclusionStatusFlag=Y, exclusionStatusFlag=N</td>
+<td>v3</td>
 </tr>
 
 <tr>
@@ -223,36 +244,36 @@ alphanumeric (ueiSAM values not yet available for search).
 <br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
 NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
-<td>Allows Partial or Complete value.
+<td>Allows partial or complete value search.
 <br>Example: legalBusinessName=ALLTEL
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
 <br>Example: primaryNaics=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
 <br>Example: purposeOfRegistrationCode=Z2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>Allows a text.
 <br>Example: purposeOfRegistrationDesc=All Awards</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -260,7 +281,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -268,8 +289,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: ueiCreationDate=01/01/2019, ueiCreationDate=[01/01/2019,05/29/2019]
-<br>Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -277,47 +298,50 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
 <br>Example: physicalAddressCity=Herndon
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
-<td>Allows 2 characters.
+<td>Allows a 2 digit code.
 <br>Example: physicalAddressCongressionalDistrict=08
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCountryCode</td>
-<td>Allows 3 character code.
+<td>Allows a 3 character code for SAM registrants and also a 2 character code for non-SAM registrants.
 <br>Example: physicalAddressCountryCode=USA
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressProvinceOrStateCode</td>
-<td>Allows 2 character code.
+<td>Allows a 2 character code.
 <br>Example: physicalAddressProvinceOrStateCode=AR
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
-<td>Allows 5 digit code for US zip codes and any digit postal code for non-US postal codes.
-<br>Example: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>SAM registrants:
+<br>Allows a 5 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Non-SAM registrants:
+<br>Allows a 5 or a 9 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Examples: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054, physicalAddressZipPostalCode=21202-3117
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -326,176 +350,178 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <br>samExtractCode=A, registrationStatus=A
 <br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
 <br>Example: businessTypeCode=OY</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>businessTypeDesc</td>
 <td>Allows a text.
 <br>Example: businessTypeDesc=Woman Owned Business </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureCode=MF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureDesc=MANUFACTURER OF GOODS</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
 <br>Example: stateOfIncorporationCode=VA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: stateOfIncorporationDesc=Virginia</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
 <br>Example: countryOfIncorporationCode=USA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: countryOfIncorporationDesc=UNITED STATES</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
 <br>Example: naicsCode=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsDesc</td>
 <td>Allows a text.
 <br>Example: naicsDesc=Furniture Stores</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows a 6-digit NAICS Code, "" or !"" values.
 <br>Example: naicsLimitedSB=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
 <br>Example: pscCode=X1QA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>pscDesc</td>
 <td>Allows a text.
 <br>Example: pscDesc=Screws</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateCode</td>
 <td>Allows 2 digit character code or "any".
 <br>Example: servedDisasterStateCode=VA, servedDisasterStateCode=any</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateName</td>
 <td>Allows Name or null.
 <br>Example: servedDisasterStateName=Virginia</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyCode</td>
 <td>Allows 3 digit county code.
 <br>Example: servedDisasterCountyCode=060</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
 <td>Allows a text.
 <br>Example: servedDisasterCountyName=FAIRFAX</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
 <td>Allows 4 digit MSA code.
 <br>Example: servedDisasterMSA=1720</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeCode</td>
 <td>Allows a two character code or null.
 <br>Example: sbaBusinessTypeCode=12</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeDesc</td>
 <td>Allows text.
 <br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
-<td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>To return all sections, provide 'All' with the includeSections parameter.
-<br>Example: includeSections=entityRegistration,coreData; includeSections=All
-<br>Applicable to non-SAM registrants but only the sections
- entityRegistration and coreData are applicable.<br><br>
- Note: The repsAndCerts section will only be returned if included in this parameter. 
- </td>
-<td>v1<br>v2</td>
+<td>Allows to filter data by sections.
+<br>SAM registrants:
+<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
+<br>Non-SAM registrants:
+<br>The applicable sections are entityRegistration and coreData.
+<br>Examples: includeSections=entityRegistration,coreData, includeSections=All, includeSections=repsAndCerts
+<br>Applicable to both SAM and non-SAM registrants.<br><br>
+ Note: The repsAndCerts section will only be returned if included in this parameter.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>format</td>
-<td>Allows user to download different file formats(csv and json are allowable values).
+<td>Allows user to download data into the JSON and CSV file formats.
 <br>Example: format=csv
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
-<br>Example: emailId= Yes
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>Allows user to get JSON or CSV file download links sent to the email address associated to the API key used in the request, when used in conjunction with the format parameter.
+<br>Example: emailId=Yes&format=JSON
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
+
 </table>
 </details>
 
@@ -519,39 +545,39 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>samRegistered</td>
 <td>string</td>
 <td>SAM Registered Entity
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityEFTIndicator</td>
 <td>string</td>
 <td>Entity EFT Indicator</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>string</td>
 <td>CAGE Code
-<br> May be applicable to non-SAM registrants</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants</td>
+<td>v1<br>v2<br>v3<br>v3</td>
 </tr>
 
 
@@ -559,57 +585,66 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>dodaac</td>
 <td>string</td>
 <td>DoDAAC</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>Doing Business As Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>string</td>
 <td>Purpose of Registration Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>string</td>
 <td>Purpose of Registration Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>sourceType</td>
+<td>string</td>
+<td><br>Source of the SAM and non-SAM registrants.
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>NOTE: This response tag will soon be updated to evsSource.</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>string</td>
 <td>Registration Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastUpdateDate</td>
 <td>string</td>
 <td>Last Update Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -618,71 +653,87 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Registration Expiration Date
 <br>NOTE: This parameter is being renamed.  
 expirationDate is in V1 and registrationExpirationDate will be V2.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>activeDate</td>
 <td>string</td>
 <td>Active Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiStatus</td>
 <td>string</td>
 <td>Unique Entity Identifier Status
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
-<td>noPublicDisplayFlag</td>
+<td rowspan="2">publicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag</td>
+<td>Returns noPublicDisplayFlag.
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>exclusionStatusFlag</td>
+<td>string</td>
+<td>Returns publicDisplayFlag.
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td rowspan="2">exclusionStatusFlag</td>
 <td>string</td>
 <td>Exclusion Status Flag
-<br>Description (Debarred)
-<br><br>For exclusionStatusFlag=D in the API request, the response would:
-<br>1. Show 'exclusionStatusFlag': 'Debarred'
-<br>2. Populate 'exclusionURL' with the endpoint to access the debarred record</td>
+<br>Returns D (Debarred) or null.
+<br><br>NOTE: Debarred entities will populate 'exclusionURL' with the endpoint to access the debarred record.</td>
 <td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>string</td>
+<td>Exclusion Status Flag
+<br>Returns Y (Debarred) or N (not Debarred).
+<br><br>NOTE: Debarred entities will populate 'exclusionURL' with the endpoint to access the debarred record.</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>exclusionURL</td>
 <td>string</td>
 <td>Active Exclusion URL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dnbOpenData</td>
 <td>string</td>
 <td>Dun & Bradstreet Open Data
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 </table>
 </details>
@@ -702,42 +753,42 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>entityURL</td>
 <td>string</td>
 <td>Entity URL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
 <td>Entity Division Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
 <td>Entity Division Number</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStartDate</td>
 <td>string</td>
 <td>Entity Start Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fiscalYearEndCloseDate</td>
 <td>string</td>
 <td>Fiscal Year End Close Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>submissionDate</td>
 <td>string</td>
 <td>Submission Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5485,10 +5536,9 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>samRegistered</td>
-<td>Allows Yes, No or All. <br>
-    Yes signifies SAM registrants.<br> No signifies non-SAM registrants.<br>
-    All signifies both SAM registrants and non-SAM registrants.
+<td rowspan="2">samRegistered</td>
+<td>Allows Yes. 
+<br>Yes signifies SAM registrants.
 <br>Example: samRegistered=Yes
 <br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
 </td>
@@ -5496,26 +5546,39 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
+<td>Allows Yes or No.
+<br>Yes signifies SAM registrants.
+<br>No signifies non-SAM registrants.
+<br>Example: samRegistered=Yes
+<br> 
+NOTES: 
+<br>1. If this search parameter is not sent in the request, then the API will return SAM registrants by default with the current schema.
+<br>2. If samRegistered=No is sent in the request, then the API will return the new non-SAM registrants schema.
+</td>
+<td>v3</td>
+</tr>
+
+<tr>
 <td>activationDate</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000
-<br> May be applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
 <br>Example: dbaName=ALLTEL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5523,60 +5586,67 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>Entity EFT Indicator aka duns4.
 <br>Example: entityEFTIndicator=0000
 <br>NOTE: This parameter must be used in conjunction with ueiDUNS or ueiSAM.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y, N, U or null.
 <br>Example: debtSubjectToOffset=Y</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>Allows 9 character value.
 <br>Example: dodaac=DOD123456</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values 
+<td>Unique Entity Identifier DUNS
+<br>Allows 9 digit value; a maximum of up to 100 values 
 can be sent.
 <br>Example: ueiDUNS=025114695
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
-<td>Unique Entity Identifier SAM - Allow 12 digit value, 
-alphanumeric (ueiSAM values not yet available for search).
+<td>Unique Entity Identifier SAM
+<br>Allow a 12 character value; a maximum of up to 100 values can be sent.
 <br>Example: ueiSAM=RV56IG5JM6G9
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
 <br>Example: entityStructureCode=2L</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>Allows Description or null.
 <br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td rowspan="2">exclusionStatusFlag</td>
+<td>Allows D or null.
+<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>exclusionStatusFlag</td>
-<td>Allows D or null.
-<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""</td>
-<td>v1<br>v2</td>
+<td>Allows Y or N.
+<br>Examples: exclusionStatusFlag=Y, exclusionStatusFlag=N</td>
+<td>v3</td>
 </tr>
 
 <tr>
@@ -5586,36 +5656,36 @@ alphanumeric (ueiSAM values not yet available for search).
 <br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
 NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
-<td>Allows Partial or Complete value.
+<td>Allows partial or complete value search.
 <br>Example: legalBusinessName=ALLTEL
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
 <br>Example: primaryNaics=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
 <br>Example: purposeOfRegistrationCode=Z2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>Allows a text.
 <br>Example: purposeOfRegistrationDesc=All Awards</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5623,7 +5693,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5631,8 +5701,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: ueiCreationDate=01/01/2019, ueiCreationDate=[01/01/2019,05/29/2019]
-<br>Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5640,47 +5710,50 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
 <br>Example: physicalAddressCity=Herndon
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
-<td>Allows 2 characters.
+<td>Allows a 2 digit code.
 <br>Example: physicalAddressCongressionalDistrict=08
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCountryCode</td>
-<td>Allows 3 character code.
+<td>Allows a 3 character code for SAM registrants and also a 2 character code for non-SAM registrants.
 <br>Example: physicalAddressCountryCode=USA
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressProvinceOrStateCode</td>
-<td>Allows 2 character code.
+<td>Allows a 2 character code.
 <br>Example: physicalAddressProvinceOrStateCode=AR
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
-<td>Allows 5 digit code for US zip codes and any digit postal code for non-US postal codes.
-<br>Example: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>SAM registrants:
+<br>Allows a 5 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Non-SAM registrants:
+<br>Allows a 5 or a 9 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Examples: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054, physicalAddressZipPostalCode=21202-3117
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5689,244 +5762,246 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <br>samExtractCode=A, registrationStatus=A
 <br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
 <br>Example: businessTypeCode=OY</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>businessTypeDesc</td>
 <td>Allows a text.
 <br>Example: businessTypeDesc=Woman Owned Business </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureCode=MF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureDesc=MANUFACTURER OF GOODS</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
 <br>Example: stateOfIncorporationCode=VA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: stateOfIncorporationDesc=Virginia</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
 <br>Example: countryOfIncorporationCode=USA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: countryOfIncorporationDesc=UNITED STATES</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
 <br>Example: naicsCode=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsDesc</td>
 <td>Allows a text.
 <br>Example: naicsDesc=Furniture Stores</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows a 6-digit NAICS Code, "" or !"" values.
 <br>Example: naicsLimitedSB=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
 <br>Example: pscCode=X1QA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>pscDesc</td>
 <td>Allows a text.
 <br>Example: pscDesc=Screws</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateCode</td>
 <td>Allows 2 digit character code or "any".
 <br>Example: servedDisasterStateCode=VA, servedDisasterStateCode=any</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateName</td>
 <td>Allows Name or null.
 <br>Example: servedDisasterStateName=Virginia</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyCode</td>
 <td>Allows 3 digit county code.
 <br>Example: servedDisasterCountyCode=060</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
 <td>Allows a text.
 <br>Example: servedDisasterCountyName=FAIRFAX</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
 <td>Allows 4 digit MSA code.
 <br>Example: servedDisasterMSA=1720</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeCode</td>
 <td>Allows a two character code or null.
 <br>Example: sbaBusinessTypeCode=12</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeDesc</td>
 <td>Allows text.
 <br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
-<td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>To return all sections, provide 'All' with the includeSections parameter.
-<br>Example: includeSections=entityRegistration,coreData; includeSections=All
-<br>Applicable to non-SAM registrants but only the sections
- entityRegistration and coreData are applicable.<br><br>
+<td>Allows to filter data by sections.
+<br>SAM registrants:
+<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
+<br>Non-SAM registrants:
+<br>The applicable sections are entityRegistration and coreData.
+<br>Examples: includeSections=entityRegistration,coreData, includeSections=All, includeSections=repsAndCerts
+<br>Applicable to both SAM and non-SAM registrants.<br><br>
  Note: The repsAndCerts section will only be returned if included in this parameter.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>format</td>
-<td>Allows user to download different file formats(csv and json are allowable values).
+<td>Allows user to download data into the JSON and CSV file formats.
 <br>Example: format=csv
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
-<br>Example: emailId= Yes
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>Allows user to get JSON or CSV file download links sent to the email address associated to the API key used in the request, when used in conjunction with the format parameter.
+<br>Example: emailId=Yes&format=JSON
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>edi</td>
 <td>Allows text.
 <br>Example: edi=YES/NO</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelCode</td>
 <td>Allows 2 character code.
 <br>Example: companySecurityLevelCode=92</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelDesc</td>
 <td>Allows text.
 <br>Example: companySecurityLevelDesc=Government Top Secret</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
 <br>Example: highestEmployeeSecurityLevelCode=90</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelDesc</td>
 <td>Allows text.
 <br>Example: highestEmployeeSecurityLevelDesc=Government Top Secret</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ultimateParentUEIDUNS</td>
 <td>Allows text.
 <br>Example: ultimateParentUEIDUNS=090123451</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ultimateParentUEISAM</td>
 <td>Allows text.
 <br>Example: ultimateParentUEISAM=RQ56IG5JM6G9</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeCode</td>
 <td>Allows text, Determines Agency Business Purpose Code.
 <br>Example: agencyBusinessPurposeCode=1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeDesc</td>
 <td>Allows text.
 <br>Example: agencyBusinessPurposeDesc=Buyer and Seller</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sensitivity</td>
 <td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
 <br>Example: sensitivity=public</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 </details>
@@ -5952,96 +6027,105 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <td>samRegistered</td>
 <td>string</td>
 <td>SAM Registered Entity
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityEFTIndicator</td>
 <td>string</td>
 <td>Entity EFT Indicator</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>string</td>
 <td>CAGE Code
-<br> May be applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>string</td>
 <td>DoDAAC</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>Doing Business As Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>string</td>
 <td>Purpose of Registration Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>string</td>
 <td>Purpose of Registration Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>sourceType</td>
+<td>string</td>
+<td><br>Source of the SAM and non-SAM registrants.
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>NOTE: This response tag will soon be updated to evsSource.</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>string</td>
 <td>Registration Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastUpdateDate</td>
 <td>string</td>
 <td>Last Update Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -6050,77 +6134,93 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <td>Registration Expiration Date
 <br>NOTE: This parameter is being renamed.  
 expirationDate is in V1 and registrationExpirationDate will be V2.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>activeDate</td>
 <td>string</td>
 <td>Active Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiStatus</td>
 <td>string</td>
 <td>Unique Entity Identifier Status
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
-<td>noPublicDisplayFlag</td>
+<td rowspan="2">publicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag</td>
+<td>Returns noPublicDisplayFlag.
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>exclusionStatusFlag</td>
+<td>string</td>
+<td>Returns publicDisplayFlag.
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td rowspan="2">exclusionStatusFlag</td>
 <td>string</td>
 <td>Exclusion Status Flag
-<br>Description (Debarred)
-<br><br>For exclusionStatusFlag=D in the API request, the response would:
-<br>1. Show 'exclusionStatusFlag': 'Debarred'
-<br>2. Populate 'exclusionURL' with the endpoint to access the debarred record</td>
+<br>Returns D (Debarred) or null.
+<br><br>NOTE: Debarred entities will populate 'exclusionURL' with the endpoint to access the debarred record.</td>
 <td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>string</td>
+<td>Exclusion Status Flag
+<br>Returns Y (Debarred) or N (not Debarred).
+<br><br>NOTE: Debarred entities will populate 'exclusionURL' with the endpoint to access the debarred record.</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>exclusionURL</td>
 <td>string</td>
 <td>Active Exclusion URL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dnbOpenData</td>
 <td>string</td>
 <td>Dun & Bradstreet Open Data
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 </table>
 </details>
 
 <details>
-<summary>core Data Section</summary><br>
+<summary>coreData Section</summary><br>
 
 <summary>entityHierarchyInformation Sub Section</summary>
 <table>
@@ -12773,10 +12873,9 @@ curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI D
 </tr>
 
 <tr>
-<td>samRegistered</td>
-<td>Allows Yes, No or All. <br>
-    Yes signifies SAM registrants.<br> No signifies non-SAM registrants.<br>
-    All signifies both SAM registrants and non-SAM registrants.
+<td rowspan="2">samRegistered</td>
+<td>Allows Yes. 
+<br>Yes signifies SAM registrants.
 <br>Example: samRegistered=Yes
 <br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
 </td>
@@ -12784,26 +12883,39 @@ curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI D
 </tr>
 
 <tr>
+<td>Allows Yes or No.
+<br>Yes signifies SAM registrants.
+<br>No signifies non-SAM registrants.
+<br>Example: samRegistered=Yes
+<br> 
+NOTES: 
+<br>1. If this search parameter is not sent in the request, then the API will return SAM registrants by default with the current schema.
+<br>2. If samRegistered=No is sent in the request, then the API will return the new non-SAM registrants schema.
+</td>
+<td>v3</td>
+</tr>
+
+<tr>
 <td>activationDate</td>
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000
-<br> May be applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
 <br>Example: dbaName=ALLTEL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -12811,60 +12923,67 @@ curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI D
 <td>Entity EFT Indicator aka duns4.
 <br>Example: entityEFTIndicator=0000
 <br>NOTE: This parameter must be used in conjunction with ueiDUNS or ueiSAM.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y, N, U or null.
 <br>Example: debtSubjectToOffset=Y</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>Allows 9 character value.
 <br>Example: dodaac=DOD123456</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values 
+<td>Unique Entity Identifier DUNS
+<br>Allows 9 digit value; a maximum of up to 100 values 
 can be sent.
 <br>Example: ueiDUNS=025114695
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
-<td>Unique Entity Identifier SAM - Allow 12 digit value, 
-alphanumeric (ueiSAM values not yet available for search).
+<td>Unique Entity Identifier SAM
+<br>Allow a 12 character value; a maximum of up to 100 values can be sent.
 <br>Example: ueiSAM=RV56IG5JM6G9
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
 <br>Example: entityStructureCode=2L</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>Allows Description or null.
 <br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td rowspan="2">exclusionStatusFlag</td>
+<td>Allows D or null.
+<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>exclusionStatusFlag</td>
-<td>Allows D or null.
-<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""</td>
-<td>v1<br>v2</td>
+<td>Allows Y or N.
+<br>Examples: exclusionStatusFlag=Y, exclusionStatusFlag=N</td>
+<td>v3</td>
 </tr>
 
 <tr>
@@ -12874,36 +12993,36 @@ alphanumeric (ueiSAM values not yet available for search).
 <br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
 NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
-<td>Allows Partial or Complete value.
+<td>Allows partial or complete value search.
 <br>Example: legalBusinessName=ALLTEL
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
 <br>Example: primaryNaics=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
 <br>Example: purposeOfRegistrationCode=Z2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>Allows a text.
 <br>Example: purposeOfRegistrationDesc=All Awards</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -12911,7 +13030,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -12919,8 +13038,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: ueiCreationDate=01/01/2019, ueiCreationDate=[01/01/2019,05/29/2019]
-<br>Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -12928,47 +13047,50 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
 <br>Example: physicalAddressCity=Herndon
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
-<td>Allows 2 characters.
+<td>Allows a 2 digit code.
 <br>Example: physicalAddressCongressionalDistrict=08
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCountryCode</td>
-<td>Allows 3 character code.
+<td>Allows a 3 character code for SAM registrants and also a 2 character code for non-SAM registrants.
 <br>Example: physicalAddressCountryCode=USA
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressProvinceOrStateCode</td>
-<td>Allows 2 character code.
+<td>Allows a 2 character code.
 <br>Example: physicalAddressProvinceOrStateCode=AR
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
-<td>Allows 5 digit code for US zip codes and any digit postal code for non-US postal codes.
-<br>Example: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>SAM registrants:
+<br>Allows a 5 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Non-SAM registrants:
+<br>Allows a 5 or a 9 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Examples: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054, physicalAddressZipPostalCode=21202-3117
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -12977,293 +13099,295 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <br>samExtractCode=A, registrationStatus=A
 <br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
 <br>Example: businessTypeCode=OY</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>businessTypeDesc</td>
 <td>Allows a text.
 <br>Example: businessTypeDesc=Woman Owned Business </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureCode=MF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureDesc=MANUFACTURER OF GOODS</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
 <br>Example: stateOfIncorporationCode=VA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: stateOfIncorporationDesc=Virginia</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
 <br>Example: countryOfIncorporationCode=USA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: countryOfIncorporationDesc=UNITED STATES</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
 <br>Example: naicsCode=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsDesc</td>
 <td>Allows a text.
 <br>Example: naicsDesc=Furniture Stores</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows a 6-digit NAICS Code, "" or !"" values.
 <br>Example: naicsLimitedSB=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
 <br>Example: pscCode=X1QA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>pscDesc</td>
 <td>Allows a text.
 <br>Example: pscDesc=Screws</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateCode</td>
 <td>Allows 2 digit character code or "any".
 <br>Example: servedDisasterStateCode=VA, servedDisasterStateCode=any</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateName</td>
 <td>Allows Name or null.
 <br>Example: servedDisasterStateName=Virginia</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyCode</td>
 <td>Allows 3 digit county code.
 <br>Example: servedDisasterCountyCode=060</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
 <td>Allows a text.
 <br>Example: servedDisasterCountyName=FAIRFAX</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
 <td>Allows 4 digit MSA code.
 <br>Example: servedDisasterMSA=1720</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeCode</td>
 <td>Allows a two character code or null.
 <br>Example: sbaBusinessTypeCode=12</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeDesc</td>
 <td>Allows text.
 <br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
-<td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>To return all sections, provide 'All' with the includeSections parameter.
-<br>Example: includeSections=entityRegistration,coreData; includeSections=All
-<br>Applicable to non-SAM registrants but only the sections
- entityRegistration and coreData are applicable.<br><br>
+<td>Allows to filter data by sections.
+<br>SAM registrants:
+<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
+<br>Non-SAM registrants:
+<br>The applicable sections are entityRegistration and coreData.
+<br>Examples: includeSections=entityRegistration,coreData, includeSections=All, includeSections=repsAndCerts
+<br>Applicable to both SAM and non-SAM registrants.<br><br>
  Note: The repsAndCerts section will only be returned if included in this parameter.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>format</td>
-<td>Allows user to download different file formats(csv and json are allowable values).
+<td>Allows user to download data into the JSON and CSV file formats.
 <br>Example: format=csv
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
-<br>Example: emailId= Yes
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>Allows user to get JSON or CSV file download links sent to the email address associated to the API key used in the request, when used in conjunction with the format parameter.
+<br>Example: emailId=Yes&format=JSON
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>edi</td>
 <td>Allows text.
 <br>Example: edi=YES/NO</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelCode</td>
 <td>Allows 2 character code.
 <br>Example: companySecurityLevelCode=92</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelDesc</td>
 <td>Allows text.
 <br>Example: companySecurityLevelDesc=Government Top Secret</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
 <br>Example: highestEmployeeSecurityLevelCode=90</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelDesc</td>
 <td>Allows text.
 <br>Example: highestEmployeeSecurityLevelDesc=Government Top Secret</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ultimateParentUEIDUNS</td>
 <td>Allows text.
 <br>Example: ultimateParentUEIDUNS=090123451</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ultimateParentUEISAM</td>
 <td>Allows text.
 <br>Example: ultimateParentUEISAM=RQ56IG5JM6G9</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeCode</td>
 <td>Allows text, Determines Agency Business Purpose Code.
 <br>Example: agencyBusinessPurposeCode=1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeDesc</td>
 <td>Allows text.
 <br>Example: agencyBusinessPurposeDesc=Buyer and Seller</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>routingNumber</td>
 <td>Allows a text.
 <br>Example: routingNumber=0123456</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>bankName</td>
 <td>Allows a text.
 <br>Example: bankName=TEST</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>accountNumber</td>
 <td>Allows a text.
 <br>Example: accountNumber=012323456</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>eftWaiverFlag</td>
 <td>Allows a text.
 <br>Example: eftWaiverFlag=Y</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>agencyLocationCode</td>
 <td>Allows a text.
 <br>Example: agencyLocationCode=1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>disbursingOfficeSymbol</td>
 <td>Allows a text.
 <br>Example: disbursingOfficeSymbol=1093</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>taxpayerName</td>
 <td>Allows a text.
 <br>Example: taxpayerName=test</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>taxpayerIdentificationNumber</td>
 <td>Allows a text.
 <br>Example: taxpayerIdentificationNumber=01234</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -13271,7 +13395,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
 <br>Example: sensitivity=public
 <br>NOTE: If you use this parameter with a sensitive key you must use a POST call for all request types.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 </details>
@@ -13296,96 +13420,105 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>samRegistered</td>
 <td>string</td>
 <td>SAM Registered Entity
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityEFTIndicator</td>
 <td>string</td>
 <td>Entity EFT Indicator</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>string</td>
 <td>CAGE Code
-<br> May be applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>string</td>
 <td>DoDAAC</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>Doing Business As Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>string</td>
 <td>Purpose of Registration Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>string</td>
 <td>Purpose of Registration Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>sourceType</td>
+<td>string</td>
+<td><br>Source of the SAM and non-SAM registrants.
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>NOTE: This response tag will soon be updated to evsSource.</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>string</td>
 <td>Registration Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastUpdateDate</td>
 <td>string</td>
 <td>Last Update Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -13394,77 +13527,93 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Registration Expiration Date
 <br>NOTE: This parameter is being renamed.  
 expirationDate is in V1 and registrationExpirationDate will be V2.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>activeDate</td>
 <td>string</td>
 <td>Active Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiStatus</td>
 <td>string</td>
 <td>Unique Entity Identifier Status
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
-<td>noPublicDisplayFlag</td>
+<td rowspan="2">publicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag</td>
+<td>Returns noPublicDisplayFlag.
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
-<td>exclusionStatusFlag</td>
+<td>string</td>
+<td>Returns publicDisplayFlag.
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td rowspan="2">exclusionStatusFlag</td>
 <td>string</td>
 <td>Exclusion Status Flag
-<br>Description (Debarred)
-<br><br>For exclusionStatusFlag=D in the API request, the response would:
-<br>1. Show 'exclusionStatusFlag': 'Debarred'
-<br>2. Populate 'exclusionURL' with the endpoint to access the debarred record</td>
+<br>Returns D (Debarred) or null.
+<br><br>NOTE: Debarred entities will populate 'exclusionURL' with the endpoint to access the debarred record.</td>
 <td>v1<br>v2</td>
+</tr>
+
+<tr>
+<td>string</td>
+<td>Exclusion Status Flag
+<br>Returns Y (Debarred) or N (not Debarred).
+<br><br>NOTE: Debarred entities will populate 'exclusionURL' with the endpoint to access the debarred record.</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>exclusionURL</td>
 <td>string</td>
 <td>Active Exclusion URL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dnbOpenData</td>
 <td>string</td>
 <td>Dun & Bradstreet Open Data
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 </table>
 </details>
 
 <details>
-<summary>core Data Section</summary><br>
+<summary>coreData Section</summary><br>
 
 <summary>entityHierarchyInformation</summary>
 <table>
@@ -21893,6 +22042,7 @@ Disclaimer:
 | 04/08/2021 | v2.5 | * Updated Contact Us information.<br><br> * Updated pointsOfContact fields information for public api.<br><br> * Updated Application Level Error Messages in HTTP Response Codes section. | 
 | 05/12/2021 | v2.6 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api. | 
 | 07/16/2021 | v2.7 | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information.<br><br> * Added example curl requests.<br><br> * Updated the examples. |
+| 07/20/2021 | v2.8 | * Added V3 documentation. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
