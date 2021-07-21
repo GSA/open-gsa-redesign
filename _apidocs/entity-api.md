@@ -6619,13 +6619,13 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>string</td>
 <td>Legal Business Name</td>
 <td>v1<br>v2<br>v3</td>
+</tr>
 
 <tr>
 <td>evsSource</td>
 <td>string</td>
-<td>Source of the SAM registrant hierarchy
-<br><br>NOTE: This field is only available in v3</td>
-</tr>
+<td>Source of the SAM registrant hierarchy</td>
+<td>v3</td>
 </tr>
 
 <tr>
@@ -7733,7 +7733,7 @@ samMonitoring
 <td>isaIdentifier</td>
 <td>string</td>
 <td>ISA Identifier</td>
-<td>v1<br>v<br>v32</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -14039,8 +14039,8 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td>evsSource</td>
 <td>string</td>
-<td>Source of the SAM registrant hierarchy
-<br><br>NOTE: This field is only available in v3</td>
+<td>Source of the SAM registrant hierarchy</td>
+<td>v3</td>
 </tr>
 
 <tr>
