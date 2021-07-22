@@ -27,7 +27,7 @@ The Entity Management API will allow users to request Public Entity Information 
 
 ## Getting Started
 
-Public and FOUO Entity Details can be accessed from Production or Alpha via the following version 1, version 2 and version 3 endpoints:
+Public and FOUO Entity Details can be accessed from Production or Alpha via the following version 1, version 2, and version 3 endpoints:
 * Production Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
 * Production Version 2: https://api.sam.gov/entity-information/v2/entities?api_key= < value >
 * Production Version 3: COMING SOON
@@ -37,13 +37,13 @@ Public and FOUO Entity Details can be accessed from Production or Alpha via the 
 
 These are GET calls.
 
-Sensitive Entity Details can be accessed from Production or Alpha via the following version 1, version 2 and version 3 end points:
+Sensitive Entity Details can be accessed from Production or Alpha via the following version 1, version 2, and version 3 end points:
 * Production Version 1: https://api.sam.gov/entity-information/v1/entities?
 * Production Version 2: https://api.sam.gov/entity-information/v2/entities?
 * Production Version 3: COMING SOON
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?
-* Alpha Version 3: https://api-alpha.sam.gov/entity-information/v2/entities?
+* Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/entities?
 
 These are POST calls. Please refer to the "Sensitive API Process" under "Sensitive API Information" section for additional information.
 
@@ -242,7 +242,7 @@ can be sent.
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
-NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
+NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.
 </td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -348,7 +348,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>samExtractCode --> registrationStatus</td>
 <td>Allows 1 character code (A for Active or E for Expired).
 <br>samExtractCode=A, registrationStatus=A
-<br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
+<br>NOTE: This parameter is being renamed. samExtractCode is in V1 and registrationStatus is starting V2. 
 </td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -497,12 +497,11 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>includeSections</td>
 <td>Allows to filter data by sections.
 <br>SAM registrants:
-<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
+<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts, and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
 <br>Non-SAM registrants:
 <br>The applicable sections are entityRegistration and coreData.
 <br>Examples: includeSections=entityRegistration,coreData, includeSections=All, includeSections=repsAndCerts
-<br>Applicable to both SAM and non-SAM registrants.<br><br>
- Note: The repsAndCerts section will only be returned if included in this parameter.</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -544,8 +543,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>samRegistered</td>
 <td>string</td>
-<td>SAM Registered Entity
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>SAM Registered or non-SAM Registered Entity
+<br>Applicable to both SAM and non-SAM registrants.
+</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -651,8 +651,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>expirationDate -><br> registrationExpirationDate</td>
 <td>string</td>
 <td>Registration Expiration Date
-<br>NOTE: This parameter is being renamed.  
-expirationDate is in V1 and registrationExpirationDate will be V2.</td>
+<br>NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -688,9 +687,10 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
-<td rowspan="2">publicDisplayFlag</td>
+<td rowspan="2">noPublicDisplayFlag --> publicDisplayFlag</td>
 <td>string</td>
-<td>Returns noPublicDisplayFlag.
+<td>Opted for Public Display or opted out of it.
+<br>Returns noPublicDisplayFlag.
 <br>Applicable to both SAM and non-SAM registrants.
 <br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
 <td>v1<br>v2</td>
@@ -698,7 +698,8 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 <tr>
 <td>string</td>
-<td>Returns publicDisplayFlag.
+<td>Opted for Public Display or opted out of it.
+<br>Returns publicDisplayFlag.
 <br>Applicable to both SAM and non-SAM registrants.
 <br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
 <td>v3</td>
@@ -707,16 +708,14 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <tr>
 <td rowspan="2">exclusionStatusFlag</td>
 <td>string</td>
-<td>Exclusion Status Flag
-<br>Returns D (Debarred) or null.
+<td>Returns D (Debarred) or null.
 <br><br>NOTE: Debarred entities will populate 'exclusionURL' with the endpoint to access the debarred record.</td>
 <td>v1<br>v2</td>
 </tr>
 
 <tr>
 <td>string</td>
-<td>Exclusion Status Flag
-<br>Returns Y (Debarred) or N (not Debarred).
+<td>Returns Y (Debarred) or N (not Debarred).
 <br><br>NOTE: Debarred entities will populate 'exclusionURL' with the endpoint to access the debarred record.</td>
 <td>v3</td>
 </tr>
@@ -5648,7 +5647,7 @@ can be sent.
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
-NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
+NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.
 </td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -5754,7 +5753,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>samExtractCode --> registrationStatus</td>
 <td>Allows 1 character code (A for Active or E for Expired).
 <br>samExtractCode=A, registrationStatus=A
-<br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
+<br>NOTE: This parameter is being renamed. samExtractCode is in V1 and registrationStatus is starting V2. 
 </td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -5903,12 +5902,11 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>includeSections</td>
 <td>Allows to filter data by sections.
 <br>SAM registrants:
-<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
+<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts, and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
 <br>Non-SAM registrants:
 <br>The applicable sections are entityRegistration and coreData.
 <br>Examples: includeSections=entityRegistration,coreData, includeSections=All, includeSections=repsAndCerts
-<br>Applicable to both SAM and non-SAM registrants.<br><br>
- Note: The repsAndCerts section will only be returned if included in this parameter.</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -6020,8 +6018,9 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <tr>
 <td>samRegistered</td>
 <td>string</td>
-<td>SAM Registered Entity
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>SAM Registered or non-SAM Registered Entity
+<br>Applicable to both SAM and non-SAM registrants.
+</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -6126,8 +6125,7 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <td>expirationDate -><br> registrationExpirationDate</td>
 <td>string</td>
 <td>Registration Expiration Date
-<br>NOTE: This parameter is being renamed.  
-expirationDate is in V1 and registrationExpirationDate will be V2.</td>
+<br>NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -6163,9 +6161,10 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
-<td rowspan="2">publicDisplayFlag</td>
+<td rowspan="2">noPublicDisplayFlag --> publicDisplayFlag</td>
 <td>string</td>
-<td>Returns noPublicDisplayFlag.
+<td>Opted for Public Display or opted out of it.
+<br>Returns noPublicDisplayFlag.
 <br>Applicable to both SAM and non-SAM registrants.
 <br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
 <td>v1<br>v2</td>
@@ -6173,7 +6172,8 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 <tr>
 <td>string</td>
-<td>Returns publicDisplayFlag.
+<td>Opted for Public Display or opted out of it.
+<br>Returns publicDisplayFlag.
 <br>Applicable to both SAM and non-SAM registrants.
 <br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
 <td>v3</td>
@@ -13007,7 +13007,7 @@ can be sent.
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
-NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
+NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.
 </td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -13113,7 +13113,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>samExtractCode --> registrationStatus</td>
 <td>Allows 1 character code (A for Active or E for Expired).
 <br>samExtractCode=A, registrationStatus=A
-<br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
+<br>NOTE: This parameter is being renamed. samExtractCode is in V1 and registrationStatus is starting V2. 
 </td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -13262,12 +13262,11 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>includeSections</td>
 <td>Allows to filter data by sections.
 <br>SAM registrants:
-<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
+<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts, and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
 <br>Non-SAM registrants:
 <br>The applicable sections are entityRegistration and coreData.
 <br>Examples: includeSections=entityRegistration,coreData, includeSections=All, includeSections=repsAndCerts
-<br>Applicable to both SAM and non-SAM registrants.<br><br>
- Note: The repsAndCerts section will only be returned if included in this parameter.</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -13435,8 +13434,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>samRegistered</td>
 <td>string</td>
-<td>SAM Registered Entity
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>SAM Registered or non-SAM Registered Entity
+<br>Applicable to both SAM and non-SAM registrants.
+</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -13541,8 +13541,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>expirationDate -><br> registrationExpirationDate</td>
 <td>string</td>
 <td>Registration Expiration Date
-<br>NOTE: This parameter is being renamed.  
-expirationDate is in V1 and registrationExpirationDate will be V2.</td>
+<br>NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -13578,9 +13577,10 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
-<td rowspan="2">publicDisplayFlag</td>
+<td rowspan="2">noPublicDisplayFlag --> publicDisplayFlag</td>
 <td>string</td>
-<td>Returns noPublicDisplayFlag.
+<td>Opted for Public Display or opted out of it.
+<br>Returns noPublicDisplayFlag.
 <br>Applicable to both SAM and non-SAM registrants.
 <br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
 <td>v1<br>v2</td>
@@ -13588,7 +13588,8 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 <tr>
 <td>string</td>
-<td>Returns publicDisplayFlag.
+<td>Opted for Public Display or opted out of it.
+<br>Returns publicDisplayFlag.
 <br>Applicable to both SAM and non-SAM registrants.
 <br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
 <td>v3</td>
@@ -20516,15 +20517,15 @@ The API will return one of the following responses:
   </tr>
   <tr>
     <td>401</td>
-    <td>1. Missing "Basic Auth" under "Authorization" and missing System Account credentials:<br>v3: "message": "The System Account Credentials are missing", "detail": "Please provide valid System Account User Name and Password.",<br><br>2. Providing Basic Auth" under "Authorization", but missing or invalid System Account credentials:<br>v1 or v2: Unauthorized<br>v3: Unauthorized<br><br>3. Different IP Address than that mentioned in the System Account:<br>v3: "message": "Invalid IP Address", "detail": "The IP Addresses sending the API requests and the ones associated with the System Account must be the same.",<br><br>4. API Key does not belong to the System Account:<br>v3: "message": "System Account-API Key Mismatch", "detail": "The System Account and API Key you have provided do not match. Please refer to your System Account and obtain the API Key from there.",</td>
+    <td>1. Missing "Basic Auth" under "Authorization" and missing System Account credentials:<br>v3: "message": "The System Account Credentials are missing", "detail": "Please provide valid System Account User Name and Password.",<br><br>2. Providing "Basic Auth" under "Authorization", but missing or invalid System Account credentials:<br>v1 or v2: Unauthorized<br>v3: Unauthorized<br><br>3. Different IP Address than that mentioned in the System Account:<br>v3: "message": "Invalid IP Address", "detail": "The IP Addresses sending the API requests and the ones associated with the System Account must be the same.",<br><br>4. API Key does not belong to the System Account:<br>v3: "message": "System Account-API Key Mismatch", "detail": "The System Account and API Key you have provided do not match. Please refer to your System Account and obtain the API Key from there.",</td>
   </tr>
   <tr>
     <td>403 Forbidden</td>
-    <td> 1. Missing API Key:<br>v1 or v2: No api_key was supplied in request body. Please submit with a valid API key.<br>v3: No api_key was supplied in request body. Please submit with a valid API key.<br><br>2. An invalid API Key:<br>v1 or v2: An invalid API key was supplied. Please submit with a valid API key.<br>v3: An invalid API key was supplied. Please submit with a valid API key."</td>
+    <td> 1. Missing API Key:<br>v1 or v2: No api_key was supplied in request body. Please submit with a valid API key.<br>v3: No api_key was supplied in request body. Please submit with a valid API key.<br><br>2. An invalid API Key:<br>v1 or v2: An invalid API key was supplied. Please submit with a valid API key.<br>v3: An invalid API key was supplied. Please submit with a valid API key.</td>
   </tr>
   <tr>
     <td>406</td>
-    <td>"1. Missing Accept Header:<br>v1 or v2: "title": "Invalid Accept Header", "detail": "Request Header parameter needs to pass valid Accept value",<br>v3: "message": "Missing or Invalid Request Header, Accept", "detail": "The allowable values are application/json, application/zip.",<br><br>2. Invalid Accept Header:<br>v1 or v2: "title": "Invalid Accept Header", "detail": "Could not find acceptable representation",<br>v3: "title": "Invalid Accept Header","detail": "Could not find acceptable representation",</td>
+    <td>1. Missing Accept Header:<br>v1 or v2: "title": "Invalid Accept Header", "detail": "Request Header parameter needs to pass valid Accept value",<br>v3: "message": "Missing or Invalid Request Header, Accept", "detail": "The allowable values are application/json, application/zip.",<br><br>2. Invalid Accept Header:<br>v1 or v2: "title": "Invalid Accept Header", "detail": "Could not find acceptable representation",<br>v3: "title": "Invalid Accept Header","detail": "Could not find acceptable representation",</td>
   </tr>
   <tr>
     <td>415 Unsupported Media Type</td>
@@ -20539,26 +20540,24 @@ The API will return one of the following responses:
 
 ## Examples
 
-### Example 1: Get the "entityRegistration" and "coreData" sections for all the 'Joint Venture Women' or 'Asian-Pacific' Entities that are registered for "All Awards" or "Federal Assistance Awards".
+### Example 1: Get the "entityRegistration" and "coreData" sections for all the "Joint Venture Women" or "Asian-Pacific" Entities that are registered for "All Awards" or "Federal Assistance Awards".
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>    https://api.sam.gov/entity-information/v2/entities?api_key=< A valid FOUO API Key >&purposeOfRegistrationCode=Z1~Z2&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')&includeSections=entityRegistration,coreData<br>
-<br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?< A valid FOUO API Key >&purposeOfRegistrationCode=Z1~Z2&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')&includeSections=entityRegistration,coreData<br>
-<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key=< A valid FOUO API Key >&purposeOfRegistrationCode=Z1~Z2&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')&includeSections=entityRegistration,coreData
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key=< A valid FOUO API Key >&purposeOfRegistrationCode=Z1~Z2&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')&includeSections=entityRegistration,coreData
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?< A valid FOUO API Key >&purposeOfRegistrationCode=Z1~Z2&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')&includeSections=entityRegistration,coreData
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?< A valid FOUO API Key >&purposeOfRegistrationCode=Z1~Z2&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')&includeSections=entityRegistration,coreData
+<br><br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
+FOUO Response for one record is provided as an example in v2 and v3. <br>
 <p>
 <code>
 <pre>
-{
-    "totalRecords": 15963,
-
-A sample record is shown below:
-
+V2:
     "entityData": [
         {
             "entityRegistration": {
@@ -20776,30 +20775,253 @@ A sample record is shown below:
         "nextLink": "https://api.sam.gov/entity-information/v2/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=1&size=10"
     }
 }
+V3:
+    "entityData": [
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "V4EUJ1MPVH45",
+                "ueiDUNS": "118094699",
+                "entityEFTIndicator": null,
+                "cageCode": "92G16",
+                "dodaac": null,
+                "legalBusinessName": "HH Real Estate Properties Corporation",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z1",
+                "purposeOfRegistrationDesc": "Federal Assistance Awards",
+                "registrationStatus": "Active",
+        "sourceType": "SAM",
+                "registrationDate": "2021-06-23",
+                "lastUpdateDate": "2021-06-24",
+                "registrationExpirationDate": "2022-06-23",
+                "activationDate": "2021-06-24",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2022-06-23",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "Y",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": null,
+                                "ueiDUNS": null,
+                                "legalBusinessName": null,
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": null,
+                                    "addressLine2": null,
+                                    "city": null,
+                                    "stateOrProvinceCode": null,
+                                    "countryCode": null,
+                                    "zipCode": null,
+                                    "zipCodePlus4": null
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": null,
+                                "ueiDUNS": null,
+                                "legalBusinessName": null,
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": null,
+                                    "addressLine2": null,
+                                    "city": null,
+                                    "stateOrProvinceCode": null,
+                                    "countryCode": null,
+                                    "zipCode": null,
+                                    "zipCodePlus4": null
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "Currently Not Available",
+                        "dbaName": "Currently Not Available",
+                        "outOfBusinessFlag": "Currently Not Available",
+                        "monitoringStatus": "Currently Not Available",
+                        "lastUpdated": "Currently Not Available",
+                        "addressLine1": "Currently Not Available",
+                        "addressLine2": "Currently Not Available",
+                        "city": "Currently Not Available",
+                        "postalCode": "Currently Not Available",
+                        "stateOrProvinceCode": "Currently Not Available",
+                        "countryCode": "Currently Not Available"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": null,
+                    "entityDivisionName": null,
+                    "entityDivisionNumber": null,
+                    "entityStartDate": "2021-05-17",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2021-06-23",
+                },
+"physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+                "congressionalDistrict": "09",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "2L",
+                    "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2X",
+                    "profitStructureDesc": "For Profit Organization",
+                    "organizationStructureCode": null,
+                    "organizationStructureDesc": null,
+                    "stateOfIncorporationCode": "TN",
+                    "stateOfIncorporationDesc": "TENNESSEE",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": null,
+                    "companySecurityLevelDesc": null,
+                    "highestEmployeeSecurityLevelCode": null,
+                    "highestEmployeeSecurityLevelDesc": null
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "23",
+                            "businessTypeDesc": "Minority Owned Business"
+                        },
+                        {
+                            "businessTypeCode": "2X",
+                            "businessTypeDesc": "For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "8C",
+                            "businessTypeDesc": "Joint Venture Women Owned Small Business"
+                        },
+                        {
+                            "businessTypeCode": "8W",
+                            "businessTypeDesc": "Woman Owned Small Business"
+                        },
+                        {
+                            "businessTypeCode": "A2",
+                            "businessTypeDesc": "Woman Owned Business"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        },
+                        {
+                            "businessTypeCode": "HK",
+                            "businessTypeDesc": "Community Development Corporation Owned Firm"
+                        },
+                        {
+                            "businessTypeCode": "OY",
+                            "businessTypeDesc": "Black American Owned"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+   "financialInformation": {
+          "creditCardUsage": "N",
+          "debtSubjectToOffset": null
+        }
+      }
+    },
+
+ "links": {
+        "selfLink": "https://api.sam.gov/entity-information/v3/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=0&size=10",
+        "nextLink": "https://api.sam.gov/entity-information/v3/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=1&size=10"
+    }
+}
 </pre>
 </code>
 </p>
 </details>
 
-### Example 2: Get Entities with no Hierarchy, a small hierarchy and a large Hierarchy.
+### Example 2: Get Entities with no Hierarchy, a small hierarchy, and a large Hierarchy.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key=< A valid FOUO API Key >&ueiDUNS=[075211119~439307625~261471459]&includeSections=entityRegistration,coreData <br>
-<br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?< A valid FOUO API Key >&ueiDUNS=[075211119~439307625~261471459]&includeSections=entityRegistration,coreData <br>
-<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key=< A valid FOUO API Key >&ueiDUNS=[075211119~439307625~261471459]&includeSections=entityRegistration,coreData
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key=< A valid FOUO API Key >&ueiDUNS=[075211119~439307625~261471459]&includeSections=entityRegistration,coreData
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?< A valid FOUO API Key >&ueiDUNS=[075211119~439307625~261471459]&includeSections=entityRegistration,coreDataResponse   
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?< A valid FOUO API Key >&ueiDUNS=[075211119~439307625~261471459]&includeSections=entityRegistration,coreData
+<br><br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
+FOUO Responses for the three records are provided in v2 and v3.
+<br>
 <p>
 <code>
 <pre>
-{
-    "totalRecords": 3,
-
-Entity with no Hierarchy:
+Entity with no Hierarchy in v2:
 
     "entityData": [
         {
@@ -20995,7 +21217,208 @@ Entity with no Hierarchy:
         }
     ],
 
-Entity with a small Hierarchy:
+Entity with no Hierarchy in v3:
+
+    "entityData": [
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "JK9SLMFNHKP4",
+                "ueiDUNS": "075211119",
+                "entityEFTIndicator": null,
+                "cageCode": "87AW0",
+                "dodaac": null,
+                "legalBusinessName": "BRADLEY DEFENSE SOLUTIONS INC",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z2",
+                "purposeOfRegistrationDesc": "All Awards",
+                "registrationStatus": "Inactive",
+       "sourceType": "SAM",
+                "registrationDate": "2018-11-19",
+                "lastUpdateDate": "2021-01-21",
+                "registrationExpirationDate": "2019-11-19",
+                "activationDate": "2018-11-29",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2019-11-19",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "Y",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": null
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": null,
+                                "ueiDUNS": null,
+                                "legalBusinessName": null,
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": null,
+                                    "addressLine2": null,
+                                    "city": null,
+                                    "stateOrProvinceCode": null,
+                                    "countryCode": null,
+                                    "zipCode": null,
+                                    "zipCodePlus4": null
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": null,
+                                "ueiDUNS": null,
+                                "legalBusinessName": null,
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": null,
+                                    "addressLine2": null,
+                                    "city": null,
+                                    "stateOrProvinceCode": null,
+                                    "countryCode": null,
+                                    "zipCode": null,
+                                    "zipCodePlus4": null
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "Currently Not Available",
+                        "dbaName": "Currently Not Available",
+                        "outOfBusinessFlag": "Currently Not Available",
+                        "monitoringStatus": "Currently Not Available",
+                        "lastUpdated": "Currently Not Available",
+                        "addressLine1": "Currently Not Available",
+                        "addressLine2": "Currently Not Available",
+                        "city": "Currently Not Available",
+                        "postalCode": "Currently Not Available",
+                        "stateOrProvinceCode": "Currently Not Available",
+                        "countryCode": "Currently Not Available"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": null,
+                    "entityDivisionName": null,
+                    "entityDivisionNumber": null,
+                    "entityStartDate": "2018-05-01",
+                    "fiscalYearEndCloseDate": "05/01",
+                    "submissionDate": "2018-11-19",
+                },
+"physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+                "congressionalDistrict": "00",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "2L",
+                    "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2X",
+                    "profitStructureDesc": "For Profit Organization",
+                    "organizationStructureCode": "MF",
+                    "organizationStructureDesc": "Manufacturer of Goods",
+                    "stateOfIncorporationCode": "NY",
+                    "stateOfIncorporationDesc": "NEW YORK",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": null,
+                    "companySecurityLevelDesc": null,
+                    "highestEmployeeSecurityLevelCode": null,
+                    "highestEmployeeSecurityLevelDesc": null
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "2X",
+                            "businessTypeDesc": "For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        },
+                        {
+                            "businessTypeCode": "MF",
+                            "businessTypeDesc": "Manufacturer of Goods"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "Y",
+                    "debtSubjectToOffset": "N",
+                },
+                
+            }
+        }
+    ],
+
+Entity with a small Hierarchy in v2:
 
         {
             "entityRegistration": {
@@ -21182,14 +21605,199 @@ Entity with a small Hierarchy:
         }
     ],
     
-"links": {
-        "selfLink": "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=%5B075211119%7E439307625%5D&includeSections=entityRegistration%2CcoreData&page=0&size=10"
-    }
-}
+Entity with a small Hierarchy in v3:
 
-Entity with a large Hierarchy:
-{
-    "totalRecords": 1,
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "JXCSEVSG7785",
+                "ueiDUNS": "439307625",
+                "entityEFTIndicator": null,
+                "cageCode": "AQ773",
+                "dodaac": null,
+                "legalBusinessName": "CONSIGLIO NAZIONALE DELLE RICERCHE - CNR",
+                "dbaName": "ICB ISTITUTO DI CHIMICA BIOMOLECOLARE",
+                "purposeOfRegistrationCode": "Z2",
+                "purposeOfRegistrationDesc": "All Awards",
+                "registrationStatus": "Active",
+                "sourceType": "SAM",
+                "registrationDate": "2018-03-02",
+                "lastUpdateDate": "2021-03-03",
+                "registrationExpirationDate": "2022-02-25",
+                "activationDate": "2021-03-03",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2022-02-25",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "Y",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": "NLXHHB71VMK5",
+                                "ueiDUNS": "655149347",
+                                "legalBusinessName": "REPUBBLICA ITALIANA",
+             "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": "Address Line2",
+                                    "city": "City",
+                                    "stateOrProvinceCode": "State/Province",                                                      "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "9999"
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": "CWVEJHEWM684",
+                                "ueiDUNS": "440774594",
+                                "legalBusinessName": "CONSIGLIO NAZIONALE DELLE RICERCHE",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": "Address Line2",
+                                    "city": "City",
+                                    "stateOrProvinceCode": "State/Province",                                                                                        "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "9999"
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": "NLXHHB71VMK5",
+                        "ueiDUNS": "655149347",
+                        "legalBusinessName": "REPUBBLICA ITALIANA",
+                        "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": "Address Line2",
+                                    "city": "City",
+                                    "stateOrProvinceCode": "State/Province",                                                      "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "9999"
+                                },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "Currently Not Available",
+                        "dbaName": "Currently Not Available",
+                        "outOfBusinessFlag": "Currently Not Available",
+                        "monitoringStatus": "Currently Not Available",
+                        "lastUpdated": "Currently Not Available",
+                        "addressLine1": "Currently Not Available",
+                        "addressLine2": "Currently Not Available",
+                        "city": "Currently Not Available",
+                        "postalCode": "Currently Not Available",
+                        "stateOrProvinceCode": "Currently Not Available",
+                        "countryCode": "Currently Not Available"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": null,
+                    "entityDivisionName": null,
+                    "entityDivisionNumber": null,
+                    "entityStartDate": "2019-02-04",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2021-02-25",
+                },
+"physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+                "congressionalDistrict": 00,
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "ZZ",
+                    "entityStructureDesc": "Other",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2U",
+                    "profitStructureDesc": "Other Not For Profit Organization",
+                    "organizationStructureCode": null,
+                    "organizationStructureDesc": null,
+                    "stateOfIncorporationCode": null,
+                    "stateOfIncorporationDesc": null,
+                    "countryOfIncorporationCode": "ITA",
+                    "countryOfIncorporationDesc": "ITALY",
+                    "companySecurityLevelCode": null,
+                    "companySecurityLevelDesc": null,
+                    "highestEmployeeSecurityLevelCode": null,
+                    "highestEmployeeSecurityLevelDesc": null
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "2U",
+                            "businessTypeDesc": "Other Not For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "N",
+                    "debtSubjectToOffset": null,
+                },
+            }
+        }
+    ],
+
+Entity with a large Hierarchy in v2:
+
     "entityData": [
         {
             "entityRegistration": {
@@ -21379,10 +21987,203 @@ Entity with a large Hierarchy:
             }
         }
     ],
-    "links": {
-        "selfLink": "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=261471459&includeSections=entityRegistration%2CcoreData&page=0&size=10"
-    }
-}
+
+Entity with a large Hierarchy in v3:
+
+    "entityData": [
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "MJ5MN6SGYKF6",
+                "ueiDUNS": "261471459",
+                "entityEFTIndicator": null,
+                "cageCode": "F9073",
+                "dodaac": null,
+                "legalBusinessName": "AIRBUS DEFENCE AND SPACE SAS",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z2",
+                "purposeOfRegistrationDesc": "All Awards",
+                "registrationStatus": "Active",
+                "sourceType": "SAM",
+                "registrationDate": "2018-08-23",
+                "lastUpdateDate": "2021-05-26",
+                "registrationExpirationDate": "2021-12-06",
+                "activationDate": "2020-06-09",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2021-12-06",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "Y",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": "NPMCJNWE75K6",
+                                "ueiDUNS": "772363362",
+                                "legalBusinessName": "AIRBUS SAS",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": "Address Line2",
+                                    "city": "City",
+                                    "stateOrProvinceCode": "State/Province",                                                      "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "9999"
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": "CK6JEE77RH16",
+                                "ueiDUNS": "737771675",
+                                "legalBusinessName": "ASTRIUM SAS",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": "Address Line2",
+                                    "city": "City",
+                                    "stateOrProvinceCode": "State/Province",                                                      "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "9999"
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": "QM7GAR7U8NK3",
+                        "ueiDUNS": "403284867",
+                        "legalBusinessName": "Airbus SE",
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": "Address Line2",
+                                    "city": "City",
+                                    "stateOrProvinceCode": "State/Province",                                                      "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "9999"
+                                },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "Currently Not Available",
+                        "dbaName": "Currently Not Available",
+                        "outOfBusinessFlag": "Currently Not Available",
+                        "monitoringStatus": "Currently Not Available",
+                        "lastUpdated": "Currently Not Available",
+                        "addressLine1": "Currently Not Available",
+                        "addressLine2": "Currently Not Available",
+                        "city": "Currently Not Available",
+                        "postalCode": "Currently Not Available",
+                        "stateOrProvinceCode": "Currently Not Available",
+                        "countryCode": "Currently Not Available"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": null,
+                    "entityDivisionName": null,
+                    "entityDivisionNumber": null,
+                    "entityStartDate": "2017-05-31",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2020-06-09",
+                },
+  "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },                
+                  "congressionalDistrict": "00",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "8H",
+                    "entityStructureDesc": "Corporate Entity (Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2X",
+                    "profitStructureDesc": "For Profit Organization",
+                    "organizationStructureCode": "MF",
+                    "organizationStructureDesc": "Manufacturer of Goods",
+                    "stateOfIncorporationCode": null,
+                    "stateOfIncorporationDesc": null,
+                    "countryOfIncorporationCode": "FRA",
+                    "countryOfIncorporationDesc": "FRANCE",
+                    "companySecurityLevelCode": null,
+                    "companySecurityLevelDesc": null,
+                    "highestEmployeeSecurityLevelCode": null,
+                    "highestEmployeeSecurityLevelDesc": null
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "2X",
+                            "businessTypeDesc": "For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        },
+                        {
+                            "businessTypeCode": "MF",
+                            "businessTypeDesc": "Manufacturer of Goods"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "N",
+                    "debtSubjectToOffset": null,
+                },
+            }
+        }
+    ],
 </pre>
 </code>
 </p>
@@ -21391,20 +22192,22 @@ Entity with a large Hierarchy:
 ### Example 3: Get an Entity with no EVS Monitoring.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>    https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=079870954&includeSections=entityRegistration,coreData<br>
-<br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=079870954&includeSections=entityRegistration,coreData<br>
-<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=079870954&includeSections=entityRegistration,coreData
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key= < FOUO API Key >&ueiDUNS=079870954&includeSections=entityRegistration,coreData
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=079870954&includeSections=entityRegistration,coreData
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< FOUO API Key >&ueiDUNS=079870954&includeSections=entityRegistration,coreData
+<br><br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
+FOUO Response for the record is provided in v2 and v3. <br>
 <p>
 <code>
 <pre>
-{
-    "totalRecords": 1,
+v2:
+
     "entityData": [
         {
             "entityRegistration": {
@@ -21605,31 +22408,238 @@ Note: FOUO Response for one record is provided as an example <br>
             }
         }
     ],
-    "links": {
-        "selfLink": "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=079870954&includeSections=entityRegistration%2CcoreData&page=0&size=10"
-    }
-}
+
+V3:
+
+    "entityData": [
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "XY1XDER4WPJ6",
+                "ueiDUNS": "079870954",
+                "entityEFTIndicator": null,
+                "cageCode": "7F0U0",
+                "dodaac": null,
+                "legalBusinessName": "Enterprise Assurance Management",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z2",
+                "purposeOfRegistrationDesc": "All Awards",
+                "registrationStatus": "Active",
+                "sourceType": "SAM",
+                "registrationDate": "2015-07-10",
+                "lastUpdateDate": "2021-03-30",
+                "registrationExpirationDate": "2021-10-25",
+                "activationDate": "2020-04-30",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2021-10-25",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "Y",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+          "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": null,
+                                "ueiDUNS": null,
+                                "legalBusinessName": null,
+             "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": null,
+                                    "addressLine2": null,
+                                    "city": null,
+                                    "stateOrProvinceCode": null,
+                                    "countryCode": null,
+                                    "zipCode": null,
+                                    "zipCodePlus4": null
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": null,
+                                "ueiDUNS": null,
+                                "legalBusinessName": null,
+             "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": null,
+                                    "addressLine2": null,
+                                    "city": null,
+                                    "stateOrProvinceCode": null,
+                                    "countryCode": null,
+                                    "zipCode": null,
+                                    "zipCodePlus4": null
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+          "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "Enterprise Assurance Management",
+                        "dbaName": "N/A",
+                        "outOfBusinessFlag": "N/A",
+                        "monitoringStatus": "N/A",
+                        "lastUpdated": "N/A",
+                        "addressLine1": "N/A",
+                        "addressLine2": "N/A",
+                        "city": "N/A",
+                        "postalCode": "N/A",
+                        "stateOrProvinceCode": "N/A",
+                        "countryCode": "N/A"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": "eamsecured.com",
+                    "entityDivisionName": "Enterprise Assurance Management Corp., (EAMC)",
+                    "entityDivisionNumber": "Enterprise",
+                    "entityStartDate": "2011-06-30",
+                    "fiscalYearEndCloseDate": "10/31",
+                    "submissionDate": "2020-04-28",
+                },
+                "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+                "congressionalDistrict": "04",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "8H",
+                    "entityStructureDesc": "Corporate Entity (Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2X",
+                    "profitStructureDesc": "For Profit Organization",
+                    "organizationStructureCode": "XS",
+                    "organizationStructureDesc": "Subchapter S Corporation",
+                    "stateOfIncorporationCode": "MD",
+                    "stateOfIncorporationDesc": "MARYLAND",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": "93",
+                    "companySecurityLevelDesc": "Government Secret",
+                    "highestEmployeeSecurityLevelCode": "94",
+                    "highestEmployeeSecurityLevelDesc": "Government Top Secret"
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "2X",
+                            "businessTypeDesc": "For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "A2",
+                            "businessTypeDesc": "Woman Owned Business"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        },
+                        {
+                            "businessTypeCode": "OY",
+                            "businessTypeDesc": "Black American Owned"
+                        },
+                        {
+                            "businessTypeCode": "XS",
+                            "businessTypeDesc": "Subchapter S Corporation"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "Y",
+                    "debtSubjectToOffset": "N",
+                },
+            }
+        }
+    ],
 </pre>
 </code>
 </p>
 </details>
 
-### Example 4: Get Entitities with Address Change and Name Change resulting from EVS Monitoring.
+### Example 4: Get Entities with Address Change and Name Change resulting from EVS Monitoring.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=[081270422~080192883]&includeSections=entityRegistration,coreData <br>
-<br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=[081270422~080192883]&includeSections=entityRegistration,coreData <br>
-<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=[081270422~080192883]&includeSections=entityRegistration,coreData
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key= < FOUO API Key >&ueiDUNS=[081270422~080192883]&includeSections=entityRegistration,coreData
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=[081270422~080192883]&includeSections=entityRegistration,coreData
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< FOUO API Key >&ueiDUNS=[081270422~080192883]&includeSections=entityRegistration,coreData
+<br><br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
+FOUO Response for the two records is provided in v2 and v3. <br>
 <p>
 <code>
 <pre>
-An Entity with an Address Change resulting from EVS Monitoring:
+An Entity with an Address Change resulting from EVS Monitoring in v2:
+
 "entityData": [
         {
             "entityRegistration": {
@@ -21819,7 +22829,204 @@ An Entity with an Address Change resulting from EVS Monitoring:
             }
         },
 
-An Entity with a Name Change resulting from EVS Monitoring:
+An Entity with an Address Change resulting from EVS Monitoring in v3:
+
+"entityData": [
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "ZQGGHJH74DW7",
+                "ueiDUNS": "081270422",
+                "entityEFTIndicator": null,
+                "cageCode": "855J5",
+                "dodaac": null,
+                "legalBusinessName": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z2",
+                "purposeOfRegistrationDesc": "All Awards",
+                "registrationStatus": "Active",
+                "sourceType": "SAM",
+                "registrationDate": "2018-07-24",
+                "lastUpdateDate": "2021-06-10",
+                "registrationExpirationDate": "2021-08-10",
+                "activationDate": "2020-08-13",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2021-08-10",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "Y",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": "J64CSQTQNRC1",
+                                "ueiDUNS": "001368083",
+                                "legalBusinessName": "International Business Machines Corporation",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": "J64CSQTQNRC1",
+                                "ueiDUNS": "001368083",
+                                "legalBusinessName": "International Business Machines Corporation",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": "J64CSQTQNRC1",
+                        "ueiDUNS": "001368083",
+                        "legalBusinessName": "International Business Machines Corporation",
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "International Business Machines Corporation",
+                        "dbaName": null,
+                        "outOfBusinessFlag": "N/A",
+                        "monitoringStatus": "Y",
+                        "lastUpdated": "Y",
+                        "addressLine1": "New Address Line 1",
+                        "addressLine2": "New Address Line 2",
+                        "city": "New City",
+                        "postalCode": "New Zip/Postal Code",
+                        "stateOrProvinceCode": "New State/Province",
+                        "countryCode": "New Country Code"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": "http://www.ibm.com/us/en",
+                    "entityDivisionName": "IBM Global Business Services",
+                    "entityDivisionNumber": "16",
+                    "entityStartDate": "1911-01-01",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2020-08-10",
+                },
+                "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+                "congressionalDistrict": "00",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "2L",
+                    "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2X",
+                    "profitStructureDesc": "For Profit Organization",
+                    "organizationStructureCode": null,
+                    "organizationStructureDesc": null,
+                    "stateOfIncorporationCode": "NY",
+                    "stateOfIncorporationDesc": "NEW YORK",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": "94",
+                    "companySecurityLevelDesc": "Government Top Secret",
+                    "highestEmployeeSecurityLevelCode": "94",
+                    "highestEmployeeSecurityLevelDesc": "Government Top Secret"
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "2X",
+                            "businessTypeDesc": "For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "N",
+                    "debtSubjectToOffset": "N",
+                },
+                
+            }
+        },
+
+An Entity with a Name Change resulting from EVS Monitoring in v2:
+
  {
             "entityRegistration": {
                 "samRegistered": "Yes",
@@ -22009,52 +23216,342 @@ An Entity with a Name Change resulting from EVS Monitoring:
             }
         }
     ],
+
+An Entity with a Name Change resulting from EVS Monitoring in v3:
+
+ {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "JH9ZARNKWKC7",
+                "ueiDUNS": "080192883",
+                "entityEFTIndicator": null,
+                "cageCode": "7X7G0",
+                "dodaac": null,
+                "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z1",
+                "purposeOfRegistrationDesc": "Federal Assistance Awards",
+                "registrationStatus": "Active",
+                "sourceType": "SAM",
+                "registrationDate": "2017-07-27",
+                "lastUpdateDate": "2021-03-11",
+                "registrationExpirationDate": "2022-03-03",
+                "activationDate": "2021-03-05",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2022-03-03",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "N",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": "JH9ZARNKWKC7",
+                                "ueiDUNS": "080192883",
+                                "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": "JH9ZARNKWKC7",
+                                "ueiDUNS": "080192883",
+                                "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": "JH9ZARNKWKC7",
+                        "ueiDUNS": "080192883",
+                        "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "International Business Machines CORPORATION",
+                        "dbaName": null,
+                        "outOfBusinessFlag": "N/A",
+                        "monitoringStatus": "Y",
+                        "lastUpdated": "Y",
+                        "addressLine1": "N/A",
+                        "addressLine2": "N/A",
+                        "city": "N/A",
+                        "postalCode": "N/A",
+                        "stateOrProvinceCode": "N/A",
+                        "countryCode": "N/A"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": "www.ithinkfi.org",
+                    "entityDivisionName": null,
+                    "entityDivisionNumber": null,
+                    "entityStartDate": "1969-09-03",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2021-03-03",
+                },
+                "physicalAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+        "mailingAddress": {
+          "addressLine1": "Address1",
+          "addressLine2": "Address2",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "ABC"
+        },
+                "congressionalDistrict": "00",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "8H",
+                    "entityStructureDesc": "Corporate Entity (Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "A8",
+                    "profitStructureDesc": "Non-Profit Organization",
+                    "organizationStructureCode": null,
+                    "organizationStructureDesc": null,
+                    "stateOfIncorporationCode": "FL",
+                    "stateOfIncorporationDesc": "FLORIDA",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": null,
+                    "companySecurityLevelDesc": null,
+                    "highestEmployeeSecurityLevelCode": null,
+                    "highestEmployeeSecurityLevelDesc": null
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "A8",
+                            "businessTypeDesc": "Non-Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "N",
+                    "debtSubjectToOffset": "N",
+                    
+                },
+                
+            }
+        }
+    ],
 </pre>
 </code>
 </p>
 </details>
 
-### Example 5:  Get a CSV file of Active Entity records.
+### Example 5:  I have a Fed System Account and the Role required to access non-SAM Registrant entities, both Public and NPDY. How can I obtain them?
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&registrationStatus=A<br>
-<br>
-<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&registrationStatus=A<br>
-<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v3/entities?api_key= < API Key >&samRegistered=No
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< API Key >&samRegistered=No<br>
+<br><br>
 </details>
 
 <details>
 <summary>Response</summary>
-Click to view CSV Response for one record <a href="v1/entity-sample-csv-1.xlsx">Sample CSV Response</a><br>
+Response for one Public and one NPDY record is provided.<br>
+<p>
+<code>
+<pre>
+A Public non-SAM Registered entity:
+
+"entityData": [
+    {
+      "entityRegistration": {
+        "samRegistered": "No",
+        "ueiSAM": "JF19T45AM8F2",
+        "ueiDUNS": "117853992",
+        "cageCode": "null",
+        "legalBusinessName": "Anchored Consulting Group LLC",
+        "registrationStatus": "Active",
+        "sourceType": "MANUAL_UEI_REGISTRATION",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": null,
+        "ueiCreationDate": "2021-07-20",
+        "publicDisplayFlag": "Y",
+        "dnbOpenData": "Y"
+      },
+      "coreData": {
+        "physicalAddress": {
+          "addressLine1": "12001 Market St APT 128",
+          "addressLine2": "null",
+          "city": "Reston",
+          "stateOrProvinceCode": "VA",
+          "zipCode": "20190-6211",
+          "zipCodePlus4": null,
+          "countryCode": "US"
+        }
+      }
+    },
+
+An NPDY non-SAM Registered entity:
+
+"entityData": [
+    {
+      "entityRegistration": {
+        "samRegistered": "No",
+        "ueiSAM": "MC4NTRBK7AX5",
+        "ueiDUNS": "117731472",
+        "cageCode": "null",
+        "legalBusinessName": "FPDS",
+        "registrationStatus": "Active",
+        "sourceType": "FPDS",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": null,
+        "ueiCreationDate": "2021-07-20",
+        "publicDisplayFlag": "N",
+        "dnbOpenData": "Y"
+      },
+      "coreData": {
+        "physicalAddress": {
+          "addressLine1": "51 Main St",
+          "addressLine2": "null",
+          "city": "Herndon",
+          "stateOrProvinceCode": "VA",
+          "zipCode": "55997",
+          "zipCodePlus4": "3509",
+          "countryCode": "USA"
+        }
+      }
+    },
+</pre>
+</code>
+</p>
 </details>
 
-### Example 6: Get a JSON file of all the Entities using the POST request:<br>
+### Example 6: Get a CSV file of Active SAM-registered Entities.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>  https://api.sam.gov/entity-information/v2/entities?format=JSON  <br>
-<br>
-<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?format=JSON <br>
-<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&registrationStatus=A
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key= < FOUO API Key >&registrationStatus=A
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&registrationStatus=A
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< FOUO API Key >&registrationStatus=A
+<br><br>
+</details>
+
+<details>
+<summary>Response</summary>
+Click to view a sample v2 CSV Response for one record <a href="v1/v2_CSV_Response.xlsx">v2_CSV_Response</a><br>
+<summary>Response</summary>
+Click to view a sample v3 CSV Response for one record <a href="v1/v3_CSV_Response.xlsx">v3_CSV_Response</a><br>
+</details>
+
+### Example 7: Get a JSON file of all the Entities using the POST request:<br>
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>: https://api.sam.gov/entity-information/v2/entities?format=JSON
+https://api.sam.gov/entity-information/v3/entities?format=JSON
+<br><br>
+<b>Alpha URL:</b> : https://api-alpha.sam.gov/entity-information/v2/entities?format=JSON
+https://api-alpha.sam.gov/entity-information/v3/entities?format=JSON
+<br><br>
 <ul>
 <li> Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM.png">Sample Authorization</a></li>
 <li> Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM.PNG">Sample Request Header</a></li>
+<li>Click to view v3 Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_V3.png">Sample Authorization</a></li>
+<li>Click to view v3 Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_V3.PNG">Sample Request Header</a></li>
 </ul>
 </details>
 <details>
 <summary>Response</summary>
 <ul>
 <li><b>Download link with the token:</b><br> 
-Extract File will be available for download with POST url:<br>
-https://api.sam.gov/entity-information/v2/download-entities?token=< value > in some time. 
-If you have provided an email id, you will get a notification email once file is ready for download. 
-Requests for Larger Set of Data may take longer time to process.
+Extract File will be available for download with POST url:
+https://api.sam.gov/entity-information/v2/download-entities?token=< value > in some time. If you have provided an email id, you will get a notification email once file is ready for download. Requests for Larger Set of Data may take longer time to process.
+<br><br>Extract File will be available for download with POST url:
+https://api.sam.gov/entity-information/v3/download-entities?token=< value > in some time. If you have provided an email id, you will get a notification email once file is ready for download. Requests for Larger Set of Data may take longer time to process.
 </li>
 
 <li><b>Download the file using the token via POST:</b><br> 
-https://api.sam.gov/entity-information/v2/download-entities?token=< value >
+https://api.sam.gov/entity-information/v2/download-entities?token=< value>
+<br><br>https://api.sam.gov/entity-information/v3/download-entities?token=< value >
 <ul>
-<li>Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_Download.png">Sample Authorization</a></li>
-<li>Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download.PNG">Sample Request Header</a></li>
+<li>Click to view v2 Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_Download.png">Sample Authorization</a></li>
+<li>Click to view v2 Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download.PNG">Sample Request Header</a></li>
+
+<li>Click to view v3 Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_Download_V3.png">Sample Authorization</a></li>
+<li>Click to view v3 Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download_V3.PNG">Sample Request Header</a></li>
 </ul></li>
 
 <li>Once the file is downloaded, save it by renaming it in this format: < filename >.json.gz. </li>
