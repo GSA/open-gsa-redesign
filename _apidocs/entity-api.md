@@ -23530,7 +23530,7 @@ https://api-alpha.sam.gov/entity-information/v3/entities?format=JSON
 <li> Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM.png">Sample Authorization</a></li>
 <li> Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM.PNG">Sample Request Header</a></li>
 <li>Click to view v3 Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_V3.png">Sample Authorization</a></li>
-<li>Click to view v3 Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_V3.PNG">Sample Request Header</a></li>
+<li>Click to view v3 Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_V3.png">Sample Request Header</a></li>
 </ul>
 </details>
 <details>
@@ -23551,7 +23551,7 @@ https://api.sam.gov/entity-information/v2/download-entities?token=< value>
 <li>Click to view v2 Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download.PNG">Sample Request Header</a></li>
 
 <li>Click to view v3 Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_Download_V3.png">Sample Authorization</a></li>
-<li>Click to view v3 Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download_V3.PNG">Sample Request Header</a></li>
+<li>Click to view v3 Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download_V3.png">Sample Request Header</a></li>
 </ul></li>
 
 <li>Once the file is downloaded, save it by renaming it in this format: < filename >.json.gz. </li>
