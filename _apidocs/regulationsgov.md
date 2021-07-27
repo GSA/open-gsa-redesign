@@ -164,14 +164,33 @@ A submissionKey can be retrieved using `/v4/submission-keys` endpoint.
 submissionType should be set to API.
 
 <p><small><a href="#">Back to top</a></small></p>
+  
+## Post Comment API Validation
+  
+#### Common Validations for all comments
+  
+* `commentOnDocumentId`, `comment` and `submissionType` are required fields.
+* If `sendEmailReceipt` is true, `email` field is required.
+* An emoji is not a valid character.
+* If a field has a maximum length requirement, the requirement is applied to both, the number of characters and the number of bytes. 
+* `submitterType` field must be one of these allowed values: `ANONYMOUS`, `INDIVIDUAL`, `ORGANIZATION`.
+* `submissionType` field must be set to `API`.
+* Field value for `comment` must be less than or equals to 5000 characters/bytes.
+* Field value for `email` must be less than or equals to 100 characters/bytes.
+  
+#### Individual Comment Validations
+
+* `firstName` and `lastName` are required fields.
+* Field value for `firstName` and `lastName` must be less than or equals to 25 characters/bytes.
+* Field value for `city`, `stateProvinceRegion`, `phone` and `country` must be less than or equals to 50 characters/bytes.
+* Field value for `zip` field must have less than or equals to 10 characters/bytes.
+  
+#### Organization Comment Validations
+
+* `organization` and `organizationType` are required fields.
+* Field value for `organization` field must have less than or equals to 120 characters/bytes.
 
 ## Examples
-
-<div style="padding: 15px; border: 1px solid; margin-bottom: 20px; border-radius: 4px; color: gray; background: rgba(90, 90, 90, 0.04); border-color: #cccccc;">
-   
-Note: The examples below use unencoded bracket characters `[` and `]` for readability, however, these characters should be percent-encoded using `%5B` and `%5D`.  For example, the posted date search filter should be specified as `filter%5BpostedDate%5D`. See <a href="https://jsonapi.org/format/1.1/#appendix-query-details-square-brackets" target="_blank">Square Brackets in Parameter Names</a> section in json-api standards for additional information.
-
-</div>
 
 #### Searching for documents
 
@@ -549,6 +568,12 @@ Users should be able to access our staging API at https://api-staging.regulation
 #### I have an API key. How many requests can I make per hour and how do I know I am about to reach my request limit?
 
 Please review https://api.data.gov/docs/rate-limits/ for information on rate limits. Commenting API is restricted to 50 requests per minute with a secondary limit of 500 requests per hour.
+  
+#### Can I request rate limit increases for my keys? 
+
+GSA may grant a rate limit increase on the GET keys for an indefinite period. Such requests must establish the need to justify the rate limit increases. Each submission will be reviewed and considered on a case-by-case basis. GSA is unable to increase the rate limits for POST API keys upon requests at this time. However, the current POST API key holders can request one additional key without going through the validation process again.
+  
+<p><small><a href="#">Back to top</a></small></p>
 
 ## API Calls
 
