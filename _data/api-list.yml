@@ -89,8 +89,8 @@
   description: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
   url: https://sftool.gov/developers
 - title: TMSS 2.0 Rate Query API
-  description:
-  url: https://open.gsa.gov/api/ratequeryhhg/
+  description: TMSS 2.0 Rate Query API provides shipment cost for a regular Household Goods (HHG) shipment or for an Extended Storage (EXSTG) shipment.
+  url: https://api.gsa.gov/travel/tmss/v1/ratequery/hhg
 - title: Touchpoints
   description: Touchpoints makes customer feedback easier for federal agencies, and Touchpoints API provides an convenient, programmatic way to access the data for your Forms and Responses.
   url: https://github.com/gsa/touchpoints/wiki/API
