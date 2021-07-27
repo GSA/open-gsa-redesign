@@ -411,6 +411,40 @@
 			"theme": ["Other"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Category Management (CM) Plan Workbench",
+			"description": "This workbook is a series of tools for Departments to use for their planning of the next FY for Category Management purposes; contract shifting from Tier 0 to Managed tiers, etc.",
+			"modified": "2021-07-16T16:59:04.037Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/html",
+					"format": "html",
+					"title": "Category Management (CM) Plan Workbench",
+					"downloadURL": "https://d2d.gsa.gov/report/government-wide-category-management-contract-management-and-operational-reporting-tools"
+				}
+			],
+			"keyword": ["FPDS", "FY Plan", "Spend Under Management", "obligation"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "CIO Governance Board Membership List",
 			"description": "Json file for CIO Governance Board Membership List",
 			"modified": "2015-09-01",
@@ -552,6 +586,39 @@
 			"programCode": ["023:010"],
 			"language": ["en-us"],
 			"theme": ["Travel and Transportation"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Common and Defense Centric Spend Tables",
+			"description": "Top-level view of annual Obligation totals for Categories and Subcategories.  Also includes Small Business utilization.  The only GWCM Dashboard that includes all 19 Lv1 categories (the other dashboards only include common-spend categories).",
+			"modified": "2021-07-16T17:21:58.837Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-02",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/government-wide-category-management-oversight-performance-management-tools",
+					"title": "Common and Defense Centric Spend Tables",
+					"description": "Top-level view of annual Obligation totals for Categories and Subcategories.  Also includes Small Business utilization.  The only GWCM Dashboard that includes all 19 Lv1 categories (the other dashboards only include common-spend categories)."
+				}
+			],
+			"keyword": ["FPDS", "obligation", "small business"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Concur - Reporting Authorization Model",
@@ -2247,6 +2314,39 @@
 				}
 			],
 			"keyword": ["EIS", "business-volume", "enterprise-infrastructure", "gsa", "telecommunications"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Executive Summary Dashboard FY20",
+			"description": "New as of FY20, this is the current top-level dashboard for performance against OMB KPI targets, at Government-Wide, Category, and Department levels.  (New version coming early FY22).",
+			"modified": "2021-07-16T17:28:16.109Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/executive-summary-dashboard",
+					"title": "Executive Summary Dashboard FY20",
+					"description": "New as of FY20, this is the current top-level dashboard for performance against OMB KPI targets, at Government-Wide, Category, and Department levels.  (New version coming early FY22)."
+				}
+			],
+			"keyword": ["BIC", "Contract Reduction", "Cost Avoidance", "FPDS", "KPI", "Small Business", "Spend Under Management", "obligation", "opm"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
@@ -4125,6 +4225,138 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "FY17 Tenant Satisfaction Survey (TSS) Individual Responses with Comments",
+			"description": "A CSV export of Tenant Satisfaction Survey individual responses with comments, file does not contain PII",
+			"modified": "2021-05-25T16:58:44.930Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-02",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this TSS report has stated that it is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY17_TSS_Individual_Results_with_Comments.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/0bb971ac-faf6-4144-9e77-f67ee245f59e/resource/6695811f-23bb-4f01-8e2a-8d22bc5f21a2/download/fy17_tss_individual_results_with_comments.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "TSS", "air quality", "bathrooms", "building", "building security", "common areas", "condition", "desk", "elevators", "satisfaction", "survey results", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY17 Tenant Satisfaction Survey (TSS) Summarized Results",
+			"description": "A CSV export of Tenant Satisfaction Survey results summarized at the building and individual question level.",
+			"modified": "2021-05-25T17:02:44.996Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC stated that this TSS report is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY17_TSS_Summarized_Results.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/30ce10f0-28ce-443b-a509-f4844e208609/resource/729fa561-e91d-4166-932f-2c57ed516521/download/fy17_tss_summarized_results.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Condition", "Happiness", "Lighting", "Survey", "TSS", "air quality", "building", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY18 Tenant Satisfaction Survey Individual Responses with Comments",
+			"description": "A CSV export of Tenant Satisfaction Survey (TSS) individual responses with comments, file does not contain PII.",
+			"modified": "2021-05-25T17:01:43.444Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-04",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this report has stated this is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY18_TSS_Individual_Results_with_Comments.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/70e9e4ea-6244-4447-aa2c-3516a9267de7/resource/11ef082d-034a-432a-9a23-fdd35fe51790/download/fy18_tss_individual_results_with_comments.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "TSS", "air quality", "bathrooms", "building", "building security", "common areas", "condition", "desk", "elevators", "satisfaction", "survey results"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY18 Tenant Satisfaction Survey (TSS) Summarized Results",
+			"description": "A CSV export of Tenant Satisfaction Survey (TSS) results summarized at the building and individual question level.",
+			"modified": "2021-05-25T17:00:57.825Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-05",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this report has stated this report is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY18_TSS_Summarized_Results.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/260d9579-065a-4ce0-a79e-e780b9bf27bb/resource/319ba928-a4ed-4dee-bebe-85d79d857fb4/download/fy18_tss_summarized_results.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "Lighting", "Survey", "TSS", "air quality", "building", "condition", "satisfaction", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "FY19 Tenant Satisfaction Survey (TSS) Individual Responses with Comments",
 			"description": "A CSV export of Tenant Satisfaction Survey individual responses with comments, file does not contain PII.",
 			"modified": "2021-05-25T17:00:31.848Z",
@@ -4153,6 +4385,39 @@
 				}
 			],
 			"keyword": ["Cleanliness", "Happiness", "TSS", "air quality", "bathrooms", "building", "building security", "common areas", "condition", "desk", "elevators", "satisfaction", "survey results", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY19 Tenant Satisfaction Survey (TSS) Summarized Results",
+			"description": "A CSV export of Tenant Satisfaction Survey (TSS) results summarized at the building and individual question level.",
+			"modified": "2021-05-25T17:00:04.522Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-07",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this report has stated it is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY19_TSS_Summarized_Results.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/0bdbca3d-c492-4503-a445-a7738f975c18/resource/3b0fd369-7089-4f54-a24d-82228d7c5c2d/download/fy19_tss_summarized_results.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "Lighting", "TSS", "air quality", "building", "condition", "satisfaction", "survey"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
@@ -4356,6 +4621,39 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Government Wide Category Management Agency Profile 2.0",
+			"description": "Newer version of the Agency Profile Report as of FY20.  This dashboard provides Department-level views of obligation aggregates by various breakdowns: Tier, Contract, Vendor, etc.  Also provides counts of Expiring contracts and awards as well as purchasing vehicle types.",
+			"modified": "2021-07-16T17:33:04.719Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-04",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/government-wide-category-management-oversight-performance-management-tools",
+					"title": "Government Wide Category Management Agency Profile 2.0",
+					"description": "Newer version of the Agency Profile Report as of FY20.  This dashboard provides Department-level views of obligation aggregates by various breakdowns: Tier, Contract, Vendor, etc.  Also provides counts of Expiring contracts and awards as well as purchasing vehicle types."
+				}
+			],
+			"keyword": ["FPDS", "Spend Under Management", "obligation"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "GSA Bureau IT Leadership Directory",
 			"description": "Each agency is expected to post a JSON file for their Bureau IT Leadership Directory. Each dataset should include one record for each agency employee with the title of “chief information officer” or who performs the duties and responsibilities of a CIO but does not necessarily have the title of CIO.",
 			"modified": "2018-02-28",
@@ -4492,8 +4790,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "EDI JSON 07 09 21.json",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b6620508-e759-4de6-aa32-0be0b75c11e7/download/edi-json-07-09-21.json"
+					"title": "EDI JSON 07 23 21.json",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b6620508-e759-4de6-aa32-0be0b75c11e7/download/edi-json-07-23-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -7267,6 +7565,39 @@
 			"programCode": ["023:019"],
 			"language": ["sp-US"],
 			"theme": ["Other"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Operational Workbench",
+			"description": "This workbook is a series of tools for use by end-users to explore various breakouts and trends in obligation data.",
+			"modified": "2021-07-19T15:17:10.739Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-05",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://drive.google.com/drive/folders/1jz1Gqv_8xoSg5MfIaZFm6jKJ_OyV0D2r",
+					"title": "Operational Workbench",
+					"description": "This workbook is a series of tools for use by end-users to explore various breakouts and trends in obligation data."
+				}
+			],
+			"keyword": ["FPDS", "Spend Under Management", "obligation"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Per Diem Reimbursement Rates & API",
