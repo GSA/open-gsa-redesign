@@ -1,6 +1,6 @@
 ---
-title: Beta.SAM.Gov Opportunity Management API 
-banner-heading: Beta.SAM.Gov Opportunity Management API
+title: SAM.gov Opportunity Management API 
+banner-heading: SAM.gov Opportunity Management API
 ---
 
 ## Overview
@@ -13,11 +13,11 @@ The Opportunity Management API will allow authorized users to submit and request
 
 ## Getting Started
 
-Opportunity Management API can be accessed from Beta or Alpha via the following endpoints:
-* Beta: https://api.sam.gov/prod/opportunity/v1/api/
+Opportunity Management API can be accessed from Production or Alpha via the following endpoints:
+* Production: https://api.sam.gov/prod/opportunity/v1/api/
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v1/api/
 
-* Beta: https://api.sam.gov/prod/opportunity/v2/ 
+* Production: https://api.sam.gov/prod/opportunity/v2/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ 
 
 **REST API Workflow Chart**
@@ -38,7 +38,7 @@ To view the current workflow of REST APIs, refer below file:
 
 #### System Account Authentication
 In order to utilize the Contract Opportunity Management API, the following is required:
-* Valid beta.SAM.GOV federal government system account with Read and Write permissions under Contract Opportunity domain.
+* Valid SAM.gov federal government system account with Read and Write permissions under Contract Opportunity domain.
 
 ### Type of Connection Validation 
 All REST API requests will be validated against the Type of Connection within the system account profile. All requests without "REST API" type of connection in the system account profile will be rejected with an error.
@@ -48,7 +48,7 @@ All REST API requests will be validated against the IP Addresses registered with
 
 #### User Account Authorization
 In order to perform an Opportunity Management API operation, the following is required:
-* beta.SAM.GOV user account with either 'Administrator', 'Contracting Officer' role or 'Contracting Specialist' role. Permissions for operations by role are listed in the table below.<br/>
+* SAM.gov user account with either 'Administrator', 'Contracting Officer' role or 'Contracting Specialist' role. Permissions for operations by role are listed in the table below.<br/>
 
 To submit any opportunity notice type (except “Special Notice”) for an office, user should provide Federal Hierarchy (FH) Organization ID or Activity Address Code (AAC) (procurement/non-procurement). To submit Special Notice opportunity, user should provide Federal Hierarchy (FH) Organization ID of office, sub-tier or department or Activity Address Code (AAC) (procurement/non-procurement) or [other codes] for sub-tier and department. <br/>
 **Note:** Permissions marked "Yes" are may not be assigned by default and will require your user administrator to update.
@@ -276,7 +276,7 @@ Please use v2 for the following APIs to utilize ueiSAM in place of DUNS. Busines
 
 **v2 Endpoints**
 
-* Beta: https://api.sam.gov/prod/opportunity/v2/ 
+* Production: https://api.sam.gov/prod/opportunity/v2/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ 
 
 ## Contract Opportunity Management API Request and Responses
@@ -2093,7 +2093,7 @@ data.award.lineitemNumber | string |  Award Line Item Number
 data.award.awardee | JSON Object |  
 data.award.awardee.name | string |  Awardee Name
 data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS **(v2 - Deprecated)**
-data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST <br>**(v2 Only)**
+data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. Example: ueiSAM=025114695AST <br>**(v2 Only)**
 data.award.awardee.location | JSON Object|  Awardee Location
 data.award.awardee.location.streetAddress | string | Awardee Street Address 1
 data.award.awardee.location.streetAddress2 | string |  Awardee Street Address 1
@@ -2883,6 +2883,8 @@ Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
 file | Form/MultipartFile | object | Yes | File to be streamed to the opportunity
+Content-Disposition | form-data | object | Yes | specify the content disposition type
+Content-Type | multipart/form-data | object | Yes | specify the content type
 metadata | Form/MultipartFile | JSON | Yes | JSON metadata regarding the attachment <br> [Refer Stream Attachment Metadata Contract JSON](#stream-attachment-metadata-contract-json) 
 
 
@@ -3115,7 +3117,7 @@ Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity IDv1
 entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2 - Deprecated
-ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST| v2
+ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. Example: ueiSAM=025114695AST| v2
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -3125,7 +3127,7 @@ HTTP Status Code | Response Type |  Description
 -----------------|---------------|------------
 ivl | JSON Array | 
 ivl.duns | string | Unique Entity Identifier DUNS number for the business entity (v2 - Deprecated)
-ivl.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.
+ivl.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. Example: ueiSAM=025114695AST.
 ivl.cageNumber | string | Identifies a given facility at a specific location
 ivl.name | string | Name of business entity
 ivl.addedOn | string | Date added to IVL
@@ -4067,7 +4069,7 @@ data.award.lineitemNumber | string |255 characters | | No | No | Contract Line i
 data.award.awardee | JSON Object | NA| NA | NA | NA |Awardee details; Only for type = a (Award) |NA
 data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
 data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
-data.award.awardee.ueiSAM | string | 12 alphanumeric | | No | No; Either awardee.name or awardee.ueiSAM is required <br> **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
+data.award.awardee.ueiSAM | string | 12 alphanumeric | | No | No; Either awardee.name or awardee.ueiSAM is required <br>  |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
 data.award.awardee.location | JSON Object |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided** | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address  | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress2 | string | | | No | No | Awardee Street Address 2 | v1 <br> v2
@@ -4455,7 +4457,7 @@ data.award.lineitemNumber | string |255 characters | | No | Contract Line item N
 data.award.awardee | JSON Object | NA| NA | NA |Awardee details; Only for type = a (Award)| v1 <br> v2
 data.award.awardee.name | string | 1000 characters | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
 data.award.awardee.duns | string | 9 digits | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
-data.award.awardee.ueiSAM | string | 12 alphanumeric | No | No; Either awardee.name or awardee.ueiSAM is required <br> **ueiSAM values not yet available** |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
+data.award.awardee.ueiSAM | string | 12 alphanumeric | No | No; Either awardee.name or awardee.ueiSAM is required <br> |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
 data.award.awardee.location | JSON Object |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**| v1 <br> v2
 data.award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress2 | string | | | No | Awardee Street Address 2| v1 <br> v2
@@ -4871,7 +4873,7 @@ lname | string | | Yes | Last name of the user| v1 <br> v2
 email | string | | Yes | Email Id of the user| v1 <br> v2
 contractorName | string | | Yes | Contractor Name| v1 <br> v2 - Deprecated
 duns | string | | Yes |  Unique Entity Identifier DUNS#| v1 <br> v2- Deprecated
-ueiSAM | string | | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available). Example: ueiSAM=025114695AST.|  v2
+ueiSAM | string | | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. Example: ueiSAM=025114695AST.|  v2
 cageCode | string | | Yes | Cage Code| v1 <br> v2 - Deprecated
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -7711,8 +7713,8 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Award Date |	Contract Award Date provided should have 4 digit year |	Invalid Year provided in the Award Date |	Publish, Uncancel, Unarchive
 400|Award Number |	Contract Award Number is a required field	| Contract Award Number is required for Intent to Bundle, Justification, Award | Publish
 400|Award Number |	Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces| Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces | Publish
-400|DUNS | Unique Entity Identifier (duns) is invalid. |	(**Plan to deprecate in the future**) Invalid UEI DUNS provided |	Publish
-400|ueiSAM | Unique Entity Identifier (SAM) is invalid. |	(**Plan to replace Duns# in the future, and ueiSAM values not yet available**) Invalid UEI SAM provided |	Publish
+400|DUNS | Unique Entity Identifier (duns) is invalid. | Invalid UEI DUNS provided |	Publish
+400|ueiSAM | Unique Entity Identifier (SAM) is invalid. | Invalid UEI SAM provided |	Publish
 400|Awardee Name | Contractor Awarded Name is a required field |	Contractor Awarded Name is a required field if the DUNS is not provided for an Award Notice |	Publish
 400|Awardee Name | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | Publish
 400|Awardee | Required fields from Awardee section is missing |Awardee Name or DUNS# not provided for Award notice|	Publish
@@ -7794,9 +7796,9 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|VendorData| lname should not be empty| lname should not be empty| AddAuthorizedParty
 400|VendorData| Email should not be empty| Email should not be empty| AddAuthorizedParty
 400|VendorData| Duns should not be empty| (**Plan to deprecate in the future**) Duns should not be empty| AddAuthorizedParty
-400|VendorData| ueiSAM should not be empty| (**Plan to replace Duns# in the future, and ueiSAM values not yet available**) ueiSAM should not be empty| AddAuthorizedParty
+400|VendorData| ueiSAM should not be empty| ueiSAM should not be empty| AddAuthorizedParty
 400|Duns# |	No contact match on vendor data provided	| (**Plan to deprecate in the future**) Not a Valid email or Duns#	| AddAuthorizedParty
-400|ueiSAM# |	No contact match on vendor data provided	| (**Plan to replace Duns# in the future, and ueiSAM values not yet available**) Not a Valid email or ueiSAM#	| AddAuthorizedParty
+400|ueiSAM# |	No contact match on vendor data provided	| Not a Valid email or ueiSAM#	| AddAuthorizedParty
 404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
 400|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
@@ -7807,7 +7809,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 
 **Can I look up contract opportunities   without using having a role or a system account?**
 
-A. Users of beta.sam.gov may use their personal API key to look up contract opportunities. Please visit the [Get Opportunities Public API](https://open.gsa.gov/api/get-opportunities-public-api/) document for additonal details.
+A. Users of SAM.gov may use their personal API key to look up contract opportunities. Please visit the [Get Opportunities Public API](https://open.gsa.gov/api/get-opportunities-public-api/) document for additonal details.
 
 **How do I ensure that I have used correct location information?**
 
@@ -7815,7 +7817,7 @@ A. Contract Opportunity users may use Public Location Services API document to v
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov)
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 
 ## Change Log
@@ -7823,7 +7825,7 @@ A. Contract Opportunity users may use Public Location Services API document to v
 Date | Version | Description
 --------- | --------------- | ---------
 4/25/2019 | v0.1 | Base Version
-4/29/2019 | v0.2 | Added information for Get Authorized Party List <br> Added Add Authorized Party <br> Added Vendor Data JSON <br> POC Email changed to not required <br> Change log added <br> Secure Attachment Download Authorization section added <br> Alpha and Beta endpoint section added
+4/29/2019 | v0.2 | Added information for Get Authorized Party List <br> Added Add Authorized Party <br> Added Vendor Data JSON <br> POC Email changed to not required <br> Change log added <br> Secure Attachment Download Authorization section added <br> Alpha and Production endpoint section added
 5/23/2019 | v0.3 | Update IVL Settings URL <br> Removed Get IVL by DUNS <br> Added EntityID to getIVL API parameter <br> Updated Get Authorized Party <br> Updated Add Authorized Party <br> Error Message Section Updated
 5/28/2019 | v0.4 | Updated  Add Authorized Party<br> Get Authorized Party<br> Delete All Attachments API’s <br> Added Delete Notice API <br> Updated User Permissions <br> Create and Publish Contract Opportunity
 6/6/2019 | v0.5 | Deleted Download All Attachments (metadata) <br> Added Download All Attachments by Resource ID <br> Added Download All Attachments by Opportunity ID
@@ -7855,6 +7857,6 @@ Date | Version | Description
 8/13/2020 |v1.14 | Added Streaming Attachment API (coming soon) 
 8/17/2020 | v1.15 | Get APIs and Streaming Attachment API deployed to Alpha
 9/14/2020| v1.16| Updated OpenAPI Specification section to include v2 endpoints
-9/15/2020| v1.17| v2 Endpoints updated status in BETA
+9/15/2020| v1.17| v2 Endpoints updated status in PRODUCTION
 
 <p><small><a href="#">Back to top</a></small></p>

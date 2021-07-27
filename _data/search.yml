@@ -13167,10 +13167,10 @@
     - Acquisition
     - Award
     - Contracts
-- title: System for Award Management API
-  body: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
-  url: https://gsa.github.io/sam_api/sam/
-  category: APIs
+#- title: System for Award Management API
+#  body: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
+#  url: https://gsa.github.io/sam_api/sam/
+#  category: APIs
 - title: U.S. Digital Registry API
   body: Contains listing from the U.S. Digital Media Registry, which serves as a crowdsource resource for agencies, citizens, and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps, and mobile websites. The accounts in the registry are independently updated by federal managers across the government who maintain individual agency accounts.
   url: https://usdigitalregistry.digitalgov.gov/

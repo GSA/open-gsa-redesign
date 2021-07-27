@@ -1,6 +1,6 @@
 ---
-title: Beta.SAM.Gov FH FOUO API 
-banner-heading: Beta.SAM.Gov FH FOUO API 
+title: SAM.gov FH FOUO API 
+banner-heading: SAM.gov FH FOUO API 
 ---
 
 ## Overview
@@ -15,11 +15,11 @@ This API can return both active and inactive organizations. The API supports pag
 
 ## Getting Started
 
-Get Opportunities API can be accessed from Beta or Alpha environments via the following urls:
+Get Opportunities API can be accessed from Production or Alpha environments via the following urls:
 
 *Note: Please refer the examples below to format right request URLs.*
 
-* Production (Beta) URL: https://api.sam.gov/prod/federalorganizations/v1/
+* Production URL: https://api.sam.gov/prod/federalorganizations/v1/
 * Staging (Alpha) URL: https://api-alpha.sam.gov/prodlike/federalorganizations/v1
 
 
@@ -37,12 +37,12 @@ You agree to be bound by these Terms of Use when you submit a Federal Hierarchy 
 User of this API must provide an API key to use this FH API. API key must either be a system account API key or a personal API key. Request per day are limited based on the federal or non-federal or general roles. 
 
 Note: 
-* For production, users can request an API Key in their Profile under Account Details on https://beta.sam.gov/
+* For production, users can request an API Key in their Profile under Account Details on https://sam.gov/
 * For prodlike, users can request an API Key in their Profile under Account Details on https://alpha.sam.gov/
 
 
 #### User Account API Key Creation
-* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on beta.sam.gov
+* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on SAM.gov
 * User must enter account password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
 * If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
@@ -127,8 +127,8 @@ level| 	Level (1-7) of the Organization in the hierarchy: <br> 1 = Department/In
 status|	Status of the Organization in the Federal Hierarchy: <br> - Active <br> - Inactive	|Text
 region|	Region of an organization.|	Text
 categoryid|	Category of the Organization per FPDS. Values are CAT-1, CAT-2, CAT-3, CAT-4, CAT-5, and CAT-6. <br><br> *Note: This field is same as level field.*| 	Text
-effectivestartdate	|Start Date of an organization in the Federal Hierarchy. <br><br> *Note: For organization legacy data, there are instances where there is no effective start date or end date provided. So, for such legacy data, effectivestartdate and effectiveenddate appear as null. However, for new organizations created using beta.sam.gov UI, start date is mandatory. So, in future such null dates will not appear for new organizations created using beta.sam.gov UI.*	|Date
-effectiveenddate|	Date when the organization will no longer be active in the Federal Hierarchy. <br><br> *Note: For organization legacy data, there are instances where there is no effective start date or end date provided. So, for such legacy data, effectivestartdate and effectiveenddate appear as null. However, for new organizations created using beta.sam.gov UI, start date is mandatory. So, in future such null dates will not appear for new organizations created using beta.sam.gov UI.*|	Date
+effectivestartdate	|Start Date of an organization in the Federal Hierarchy. <br><br> *Note: For organization legacy data, there are instances where there is no effective start date or end date provided. So, for such legacy data, effectivestartdate and effectiveenddate appear as null. However, for new organizations created using SAM.gov UI, start date is mandatory. So, in future such null dates will not appear for new organizations created using SAM.gov UI.*	|Date
+effectiveenddate|	Date when the organization will no longer be active in the Federal Hierarchy. <br><br> *Note: For organization legacy data, there are instances where there is no effective start date or end date provided. So, for such legacy data, effectivestartdate and effectiveenddate appear as null. However, for new organizations created using SAM.gov UI, start date is mandatory. So, in future such null dates will not appear for new organizations created using SAM.gov UI.*|	Date
 createdby	|User who created the organization, e.g. the Federal Hierarchy Administrator. 	|Text
 createddate	|Date the organization was created in the Federal Hierarchy. 	|Date
 updatedby|	User who updated the organization’s details, e.g. the Federal Hierarchy Administrator.|	Text
@@ -787,7 +787,7 @@ https://www.census.gov/programs-surveys/geography.html
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov)
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 ## Change Log
 
