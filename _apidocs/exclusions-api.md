@@ -13,6 +13,7 @@ The response will be provided in the JSON format in a paginated manner.
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
 * The following characters are not allowed to be sent in the parameter values with the API request: & \| { } ^ \
+* Values involving / must be enclosed within double quotes if they are to be requested via a search parameter.
 
 **Additional Features of the Exclusion API:** It can serve as an Extract API with the addition of “format” parameter in the request. Following are the key features of the Exclusion Extract API:
 * It offers several optional search parameters, filtering by sections, AND (&), OR (~), NOT (!), WILD CARD(*) conditions and a free text search q to obtain the desired data. Please note that q does not support null (''), not-null (!'') or not (!) searches. Additionally, q accepts only AND, OR, :, =, * (denotes wild card) operators.
@@ -46,6 +47,40 @@ Generating a System Account API Key:
 * The user can select 'Go to System Accounts' again in the widget from their workspace and enter a new system account password.
 * After setting up the password the user will see a new section for retrieving a system account API Key.
 * The user must enter their password again to retrieve the key.
+
+Type of Connections and Rate Limits
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Connecting Source</b></th>
+<th style="background-color: #f1f1f1;"><b>Type of Connection</b></th>
+<th style="background-color: #f1f1f1;"><b>Default Rate Limit</b></th>
+</tr>
+<tr>
+<td>Non-federal user with no role</td>
+<td>Personal API key</td>
+<td>10 requests/day</td>
+</tr>
+<tr>
+<td>Non-federal user with a role</td>
+<td>Personal API key</td>
+<td>1,000 requests/day</td>
+</tr>
+<tr>
+<td>Federal User</td>
+<td>Personal API key</td>
+<td>1,000 requests/day</td>
+</tr>
+<tr>
+<td>Non-federal system</td>
+<td>System account API key</td>
+<td>1,000 requests/day</td>
+</tr>
+<tr>
+<td>Federal system</td>
+<td>Personal API key</td>
+<td>10,000 requests/day</td>
+</tr>
+</table>
 
 Utilizing the Exclusion API as an extract:
 * To utilize this API as an Extract an additional parameter called ‘format’ has been implemented.
@@ -84,7 +119,7 @@ Utilizing the Exclusion API as an extract:
 | terminationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'terminationDate=01/01/2019', 'terminationDate=[01/01/2019,05/29/2019]' |  v1<br>v2 |
 | cageCode | Allows a complete value, null and also wild card searches (a string).<br><br> Examples: 'cageCode=0*0', 'cageCode=[0XLE0~1CM51~""]', 'q=((cageCode:0XLE0) OR (cageCode:1CM51))' |  v1<br>v2 |
 | npi  | Allows 1234567890 (this is masked data) and null (a string).<br><br> Examples: 'npi=1234567890', 'npi=""', 'npi=!""' |  v1<br>v2 |
-| recordStatus | Allows a complete text (a string).<br><br> Allowable values are: Active, Inactive <br><br> Examples: 'recordStatus=Active', 'recordStatus=active~inactive' | v1<br>v2 |
+| recordStatus | The API returns only Active records.<br><br> Allows a complete text (a string).<br><br> Allowable value is: Active, active <br><br> Example: 'recordStatus=active' | v1<br>v2 |
 | page  | Denotes a page number.<br><br> Allowable values are 0 to 999.<br><br> Example: 'page=0' |  v1<br>v2 |
 | size  | Denotes the number of records returned per page.<br><br> Allowable values are 1 to 10.<br><br> Example: 'size=1' |  v1<br>v2 |
 | includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'includeSections=exclusionOtherInformation,exclusionDetails' |  v1<br>v2 |
@@ -207,12 +242,12 @@ The API will return one of the following responses:
 
 ## Examples
 
-### Example 1: Get Individual or Special Entity Designation Exclusion records
+### Example 1: Get Individual or Special Entity Designation Exclusion records that are not excluded by DOJ, that belong to Korea and that contain CHONG anywhere in the response.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key= < Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
 <br>
 </details>
 
@@ -223,7 +258,10 @@ Note: Public Response for one record is provided as an example <br>
 <code>
 <pre>
 {
-  "totalRecords": 14,
+  "totalRecords": 5,
+
+A sample record is provided here:
+
   "excludedEntity": [
     {
       "exclusionDetails": {
@@ -235,23 +273,22 @@ Note: Public Response for one record is provided as an example <br>
       },
       "exclusionIdentification": {
         "ueiSAM": null,
-        "ueiDUNS": "",
-        "entityEFTIndicator": null,
-        "cageCode": "",
-        "npi": "",
-        "prefix": "MS.",
-        "firstName": "CHONG",
-        "middleName": "SUN",
-        "lastName": "HWANG",
-        "suffix": "",
-        "entityName": ""
-        “dnbOpenData”: “N”
+        "ueiDUNS": null,
+        "cageCode": null,
+        "npi": null,
+        "prefix": "Ms.",
+        "firstName": "Chong",
+        "middleName": "Sun",
+        "lastName": "Hwang",
+        "suffix": null,
+        "entityName": "Ms. Chong Sun Hwang",
+        "dnbOpenData": null
       },
       "exclusionActions": {
         "listOfActions": [
           {
-            "createDate": "Currently Not Available",
-            "updateDate": "Currently Not Available",
+            "createDate": "07-27-2012",
+            "updateDate": "07-27-2012",
             "activateDate": "12-12-2011",
             "terminationDate": "11-08-2029",
             "terminationType": "Definite",
@@ -259,84 +296,82 @@ Note: Public Response for one record is provided as an example <br>
           }
         ]
       },
-      "exclusionAddress": {
+      "exclusionPrimaryAddress": {
         "addressLine1": null,
         "addressLine2": null,
-        "city": "CITY",
-        "stateOrProvinceCode": "",
-        "zipCode": "",
+        "city": "Dongjak-gu, Seoul",
+        "stateOrProvinceCode": null,
+        "zipCode": null,
         "zipCodePlus4": null,
-        "countryCode": "ABC"
+        "countryCode": "KOR"
       },
+      "exclusionSecondaryAddress": [],
       "exclusionOtherInformation": {
-        "additionalComments": "",
+        "additionalComments": null,
         "ctCode": "A",
-        "evsInvestigationStatus": "Currently Not Available",
+        "evsInvestigationStatus": null,
         "references": {
           "referencesList": [
             {
-              "exclusionName": " KWANG PAK",
-              "type": "Currently Not Available"
-            },
-            {
-              "exclusionName": " TAEK CHI",
-              "type": "Currently Not Available"
-            },
-            {
-              "exclusionName": " SOUKDAI KO",
-              "type": "Currently Not Available"
-            },
-            {
-              "exclusionName": " MYOUNG KIM",
-              "type": "Currently Not Available"
-            },
-            {
-              "exclusionName": " KI NAM",
-              "type": "Currently Not Available"
+              "exclusionName": null,
+              "type": null
             }
           ]
         },
         "moreLocations": [
-          "Currently Not Available"
+          {
+            "exclusionName": null,
+            "duns": null,
+            "cageCode": null,
+            "npi": null,
+            "primaryAddress": {
+              "addressLine1": null,
+              "addressLine2": null,
+              "city": null,
+              "stateOrProvinceCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null,
+              "countryCode": null
+            },
+            "secondaryAddress": [
+              {
+                "addressLine1": null,
+                "addressLine2": null,
+                "city": null,
+                "stateOrProvinceCode": null,
+                "zipCode": null,
+                "zipCodePlus4": null,
+                "countryCode": null
+              }
+            ]
+          }
         ]
       },
       "vesselDetails": {
-        "callSign": "Currently Not Available",
-        "type": "Currently Not Available",
-        "tonnage": "Currently Not Available",
-        "grt": "Currently Not Available",
-        "flag": "Currently Not Available",
-        "owner": "Currently Not Available",
-        "secondaryAddress": [
-          {
-            "addressLine1": "Currently Not Available",
-            "addressLine2": "Currently Not Available",
-            "city": "Currently Not Available",
-            "stateOrProvinceCode": "Currently Not Available",
-            "zipCode": "Currently Not Available",
-            "zipCodePlus4": "Currently Not Available",
-            "countryCode": "Currently Not Available"
-          }
-        ]
+        "callSign": null,
+        "type": null,
+        "tonnage": null,
+        "grt": null,
+        "flag": null,
+        "owner": null
       }
     },
-],
+    
   "links": {
-    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation]%20&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&isActive=true&page=0&size=10",
-    "nextLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation]%20&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&isActive=true&page=1&size=10"
+    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&page=0&size=10",
+    
   }
-}
 </pre>
 </code>
 </p>
 </details>
 
-### Example 2: Get Firm Exclusion records of type Ineligible (Proceedings Completed) or Prohibition/Restriction
+### Example 2: Get details and address of the Ineligible (Proceedings Completed) or Prohibition/Restriction type of Firm Exclusion records that belong to Korea, China or Germany, by using the "q" parameter.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key= < Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key= < a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
 <br>
 </details>
 
@@ -347,7 +382,10 @@ Note: Public Response for one record is provided as an example <br>
 <code>
 <pre>
 {
-  "totalRecords": 53,
+  "totalRecords": 63,
+
+A sample record is provided here:
+
   "excludedEntity": [
     {
       "exclusionDetails": {
@@ -358,33 +396,33 @@ Note: Public Response for one record is provided as an example <br>
         "excludingAgencyName": "DEPT OF THE AIR FORCE"
       },
       "exclusionIdentification": {
-        "ueiSAM": null,
-        "ueiDUNS": "",
-        "entityEFTIndicator": null,
-        "cageCode": "",
-        "npi": "",
-        "prefix": "",
-        "firstName": "",
-        "middleName": "",
-        "lastName": "",
-        "suffix": "",
-        "entityName": "SHENZHEN HONGDARK ELECTRONICS CO., LTD."
-        “dnbOpenData”: “N”
+        "ueiSAM": "H2XFNNKK2NZ9",
+        "ueiDUNS": "U00000615",
+        "cageCode": null,
+        "npi": null,
+        "prefix": null,
+        "firstName": null,
+        "middleName": null,
+        "lastName": null,
+        "suffix": null,
+        "entityName": "Shenzhen Hongdark Electronics Co., Ltd.",
+        "dnbOpenData": null
       },
-      "exclusionAddress": {
-        "addressLine1": "",
-        "addressLine2": "",
-        "city": "CITY",
-        "stateOrProvinceCode": "",
-        "zipCode": "",
+      "exclusionPrimaryAddress": {
+        "addressLine1": null,
+        "addressLine2": null,
+        "city": "Shenzhen",
+        "stateOrProvinceCode": null,
+        "zipCode": null,
         "zipCodePlus4": null,
-        "countryCode": "ABC"
-      }
+        "countryCode": "CHN"
+      },
+      "exclusionSecondaryAddress": []
     },
-  ],
-  "links": {
-    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&ueiDUNS=!%E2%80%9D%E2%80%9D&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&isActive=true&page=0&size=10",
-    "nextLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&ueiDUNS=!%E2%80%9D%E2%80%9D&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&isActive=true&page=1&size=10"
+
+"links": {
+    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=1&size=10"
   }
 }
 </pre>
@@ -392,23 +430,21 @@ Note: Public Response for one record is provided as an example <br>
 </p>
 </details>
 
-### Example 3: To receive a link in the email to the Exclusions Extract in CSV format
+### Example 3: To receive a file downloadable link in the email for the requested CSV results.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key=< a Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=< a valid email address ><br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=Y<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=< a valid email address ><br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=Y<br>
 <br>
 </details>
 
 <details>
 <summary>Response</summary>
-Click to view CSV Response for one record <a href="v1/exclusion-sample-csv.xlsx">Sample CSV Response</a><br>
+Click to view CSV Response for one record <a href="v1/exclusion-sample-csv-1.xlsx">Sample CSV Response</a><br>
 </details>
 
 <p><small><a href="#">Back to top</a></small></p>
-
-
 
 ## Additional Information
 You can view the full details of the differences between the SAM legacy API and SAM.gov API 
@@ -425,8 +461,8 @@ Disclaimer:
 
 ## Contact Us
 
-* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Production.
-* Reach out to the SAM.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries and help desk support.
+* Reach out to [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for access to the test site.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -448,6 +484,8 @@ Date | Version | Description
 02/05/2021 | v2.1 | * Updated description for emailId parameter. <br><br> * Updated parameter definitions and examples.<br><br> * Added message about non-allowable characters.<br><br> * Removed tin and ssn parameters.<br><br> * Added addressLine1 and addressLine2 parameters.
 03/12/2021 | v2.2 | * Added ssnOrTinOrEin parameter to the Query String Parameters table.<br><br> * Added note to addressLine1 and addressLine2 parameters regarding use with exclusionName parameter.<br><br> * Updated error messages
 04/08/2021 | v2.3 | Updated Contact Us information.
-05/12/2021 | V2.4 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
+04/29/2021 | v2.4 | * Updated openapi spec file.
+05/12/2021 | v2.5 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
+07/16/2021 | v2.6 | * Updated description for recordStatus parameter.<br><br> * Added message stating that the slash character must be enclosed with double quotes if being used inside of a search parameter.<br><br> * Added the Type of Connections and Rate Limits table<br><br> * Updated the examples<br><br> * Updated the Contact Us information
 
 <p><small><a href="#">Back to top</a></small></p>

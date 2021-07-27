@@ -90,3 +90,16 @@ Next, this section following the section with the OpenAPI specification:
 
 <p><small><a href="#">Back to top</a></small></p>
 ```
+
+# Removing API Documentation
+
+If a decision has been made to deprecate an API, one step will include removing the documentation from the open.gsa.gov site.  A best practice is to first edit the API documentation to add a highly visible banner (an example that can be easily reused is [this alpha alert banner](https://raw.githubusercontent.com/GSA/open-gsa-redesign/master/_apidocs/dap.md)) several weeks or months before the API is to be deprecated.  
+
+In order to remove the API documentation: 
+
+1. Create a branch of the site from the master branch. Naming convention for new branch: `apidocs-apiname-YYYYMMDD` (replace apiname with the name of your API without spaces). 
+2. In that branch, delete the relevant markdown file in the `_apidocs` [folder](https://github.com/GSA/open-gsa-redesign/tree/master/_apidocs).
+3. In that branch, delete the relevant openapi yml file that is in a subfolder of the `_apidocs` [folder](https://github.com/GSA/open-gsa-redesign/tree/master/_apidocs).
+4. In that branch, delete the reference to your API in [the api-list.yml file](https://github.com/GSA/open-gsa-redesign/blob/master/_data/api-list.yml) which populates the [directory page](https://open.gsa.gov/api/).
+5. When you are ready to complete the removal, [open a pull request](https://github.com/GSA/open-gsa-redesign/pulls) to merge your branch with the master branch. [Email the CISS API team](mailto:api.ciss@gsa.gov) with your PR number or a link to your PR, informing them that your branch is ready to be merged.
+6. The CISS team will merge your branch with master, resulting in your documentation being deleted from the live website, and the reference to it on the directory page being removed.  

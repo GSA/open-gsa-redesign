@@ -105,6 +105,40 @@ Generating a System Account API Key:
 * The user must enter their password again to retrieve the key.
 * The user must maintain accurate IP addresses in their System Accounts, particularly if they are downloading the Entity Management Sensitive Data Package.
 
+Type of Connections and Rate Limits
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Connecting Source</b></th>
+<th style="background-color: #f1f1f1;"><b>Type of Connection</b></th>
+<th style="background-color: #f1f1f1;"><b>Default Rate Limit</b></th>
+</tr>
+<tr>
+<td>Non-federal user with no role</td>
+<td>Personal API key</td>
+<td>10 requests/day</td>
+</tr>
+<tr>
+<td>Non-federal user with a role</td>
+<td>Personal API key</td>
+<td>1,000 requests/day</td>
+</tr>
+<tr>
+<td>Federal User</td>
+<td>Personal API key</td>
+<td>1,000 requests/day</td>
+</tr>
+<tr>
+<td>Non-federal system</td>
+<td>System account API key</td>
+<td>1,000 requests/day</td>
+</tr>
+<tr>
+<td>Federal system</td>
+<td>Personal API key</td>
+<td>10,000 requests/day</td>
+</tr>
+</table>
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -180,7 +214,7 @@ Examples: V1; V2; V3
 ### Sensitive Download API Process
 
 * All requests must be sent as POST calls using clients like Postman. These requests cannot be sent through browsers.
-* The System Account User ID and Password must be sent as "Basic Auth" under "Authorization", and the combination needs to be base 64 encoded.
+* The System Account User ID and Password must be sent as "Basic Auth" under the "Authorization" Header. The combination needs to be base 64 encoded as base64(username:password).
 * The Sensitive api_key parameter with its value must be sent in the "Headers" as "x-api-key" and not directly in the request URL.
 * "Accept" parameter must be passed in "Headers" with value, "application/zip".
 * "Content-Type" parameter must be passed in "Headers" with value, "application/json".
@@ -273,9 +307,16 @@ Click to view the full details of the revised extract layout for the upcoming UE
 Request URL:
 https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ><br>
 Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/DOWNLOAD_API_AUTH.JPG">Sample Extract Authorization</a><br>
-Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/api_key.JPG">Sample Request Header</a><br>
+Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/api_key.JPG">Sample Request Header</a>
+
+<div style="font-family:Source sans pro; color: #212121; line-height: 1.5;">
+<b>An example of the Sensitive extract download POST call using curl:</b><br>
+Curl request with basic auth token: curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --header "Authorization: Basic < auth token >" --output C:\sample_file.ZIP<br><br>
+Curl request with username and password: curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --user "< username >:< password >" --output C:\sample_file.ZIP</div>
 
 **Sample File Names:**<br>
+
+<b>The below sample files are for Alpha. Production has files from January 2020 onward.</b>
 
 * FOUO files: 
   <br> SAM_FOUO_DAILY_20190423.ZIP<br>  SAM_FOUO_DAILY_20190522.ZIP<br>  SAM_FOUO_DAILY_20190523.ZIP<br>  SAM_FOUO_DAILY_20190524.ZIP<br>  SAM_FOUO_DAILY_20190525.ZIP<br> 
@@ -325,7 +366,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages: <br>* User does not have permission to download the file. <br />* Missing required parameters, fileName OR fileType<br />* The requested extract file not found<br />* Invalid date format<br />* This http method is not allowed to download sensitive extracts. Only POST is supported for sensitive extracts.<br />* This http method is not allowed to download non-sensitive extracts. Only GET is supported for non-sensitive extracts.<br />* No api_key was supplied in request body. Please submit with a valid API key.<br />* No system account credentials are provided. Please provide credentials via basic authentication.<br>* The parameter fileName cannot be used with any other parameters.<br>* The File does not exist with the provided parameters<br>* The requested extract file needs FOUO roles to download<br>* IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.
+| 400 | Application Level Error Messages: <br>* User does not have permission to download the file. <br />* Missing required parameters, fileName OR fileType<br />* The requested extract file not found<br />* Invalid date format<br />* This http method is not allowed to download sensitive extracts. Only POST is supported for sensitive extracts.<br />* This http method is not allowed to download non-sensitive extracts. Only GET is supported for non-sensitive extracts.<br />* No api_key was supplied in request body. Please submit with a valid API key.<br />* No system account credentials are provided. Please provide credentials via basic authentication.<br>* The parameter fileName cannot be used with any other parameters.<br>* The File does not exist with the provided parameters<br>* The requested extract file needs FOUO roles to download<br>* IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.<br>* Insufficient privileges to perform the operation - System account must have Type of Connection as Restful.
 | 406 | Invalid Accept Header. |
 | 415 | Invalid Content-Type Header. |
 
@@ -333,8 +374,8 @@ The API will return one of the following responses:
 
 ## Contact Us
 
-* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries on Production.
-* Reach out to the SAM.gov team at [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for inquiries on Alpha.
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries and help desk support.
+* Reach out to [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for access to the test site.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -354,6 +395,8 @@ Date | Version | Description
 02/05/2021 | v1.9 | * Added V1/V2 Public, V3 Sensitive, and V2 FOUO files available in Alpha S3.<br><br>* Added version parameter<br><br>* Updated error messages<br><br>* Added note to charSet parameter stating exclusions file type is not applicable
 03/12/2021 | v2.0 | * Added additional FOUO sample files.<br><br> * Added note that only system account keys can be used for FOUO and sensitive downloads.
 04/08/2021 | v2.1 | * Updated Contact Us information.<br><br> * Added Entity Extract Calendar under Overview.
-05/12/2021 | V2.2 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
+04/29/2021 | v2.2 | * Added note above list of sample files mentioning that files are for Alpha.<br><br>* Added description to 400 http response code describing Type of Connection error.<br><br>* Updated openapi spec file.
+05/12/2021 | v2.3 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
+07/16/2021 | v2.4 | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information.<br><br> * Added example curl requests.
 
 <p><small><a href="#">Back to top</a></small></p>
