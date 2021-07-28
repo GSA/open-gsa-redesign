@@ -1420,12 +1420,14 @@ components:
           description: An agency-specific category allowing agencies to group comments according to their type.
         comment:
           type: string
+          maxLength: 5000
           description: The comment text
         commentOnDocumentId:
           type: string
           description: documentId of the parent document
         email:
           type: string
+          maxLength: 100
           description: The email address to receive email receipt for the commenrt
         files:
           type: array
@@ -1455,26 +1457,33 @@ components:
           properties:
             city:
               type: string
+              maxLength: 50
               description: The city associated with the submitter's address.
             country:
               type: string
+              maxLength: 50
               description: The country associated with the submitter's address.
             firstName:
               type: string
+              maxLength: 25
               description: The submitter's first name.
             lastName:
               type: string
+              maxLength: 25
               description: The submitter's last name.
             phone:
               type: string
+              maxLength: 50
               description: The submitter's phone number.
             stateProvinceRegion:
-              type: boolean
+              type: string
+              maxLength: 50
               description: The email associated with the submitter's address.
             submitterType: #submitter type should be set to Individual
               $ref: '#/components/schemas/SubmitterType'
             zip:
               type: string
+              maxLength: 10
               description: The zip associated with the submitter's address.
     OrganizationComment: 
       allOf:     # Combines the BasicCommentPayLoad and the inline model
@@ -1487,6 +1496,7 @@ components:
           properties:
             organization:
               type: string
+              maxLength: 120
               description: The organization that the submitter represents.          
             organizationType:
               type: string

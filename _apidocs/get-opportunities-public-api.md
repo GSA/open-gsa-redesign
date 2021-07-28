@@ -1,36 +1,36 @@
 ---
-title: Beta.SAM.Gov Get Opportunities Public API 
-banner-heading: Beta.SAM.Gov Get Opportunities Public API 
+title: SAM.gov Get Opportunities Public API 
+banner-heading: SAM.gov Get Opportunities Public API 
 ---
 
 ## Overview
 
 Get Opportunities API provides all the published opportunity details based on the request parameters. This API requires pagination, and the response will be provided to users synchronously. 
 
-**This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of Beta.Sam.Gov. All active notices in Beta.Sam.Gov are updated daily and all archived notices are updated on a weekly basis.**
+**This API only provides the latest active version of the opportunity. To view all version of the opportunity, please visit Data Services Section of SAM.gov. All active notices in SAM.gov are updated daily and all archived notices are updated on a weekly basis.**
 
-[Active Opportunities](https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2Fdatagov)
+[Active Opportunities](https://sam.gov/data-services?domain=Contract%20Opportunities%2Fdatagov)
 
-[Archived Opportunities](https://beta.sam.gov/data-services?domain=Contract%20Opportunities%2FArchived%20Data)
+[Archived Opportunities](https://sam.gov/data-services?domain=Contract%20Opportunities%2FArchived%20Data)
 
 
 ## Getting Started
 
-Get Opportunities API can be accessed from Beta or Alpha via the following environments:
-* Beta: <br>  https://api.sam.gov/prod/opportunities/v1/search
+Get Opportunities API can be accessed from Production or Alpha via the following environments:
+* Production: <br>  https://api.sam.gov/prod/opportunities/v1/search
 * Alpha: <br> https://api-alpha.sam.gov/prodlike/opportunities/v1/search
 
-### Version Control - v2 (Coming Soon)
+### Version Control - v2 
 
-* Beta: <br>  https://api.sam.gov/opportunities/v2/search
+* Production: <br>  https://api.sam.gov/opportunities/v2/search
 * Alpha: <br> https://api-alpha.sam.gov/opportunities/v2/search
 
 ## Authentication and API Keys
 User of this public API must provide an API key to use this Opportunities public API. Request per day are limited based on the federal or non-federal or general roles. 
-Note: User can request a public API Key in the Account Details page on beta.sam.gov (if testing in production) Else on alpha.sam.gov (if testing in prodlike).
+Note: User can request a public API Key in the Account Details page on SAM.gov (if testing in production) Else on alpha.sam.gov (if testing in prodlike).
 
 #### User Account API Key Creation
-* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on beta.sam.gov
+* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on SAM.gov
 * User must enter account password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
 * If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
@@ -51,7 +51,7 @@ postedTo|	Posted date To  Format must be MM/dd/yyyy <br> Note: Date range betwee
 deptname |	Department Name (L1)	|No|	String | v1<br> v2 - Deprecated
 subtier|	Agency Name (L2)| 	No|	String | v1<br> v2 - Deprecated
 state|	Place of Performance (State)|	No	|String | v1<br> v2
-status (Coming Soon)| Status of the opportunity <br> Accepts following:  active, archived, cancelled, deleted | No| String | v2
+status (Coming Soon)| Status of the opportunity <br> Accepts following:  active, inactive, archived, cancelled, deleted | No| String | v2
 zip|	Place of Performance (Zip code)|	No|	String | v1<br> v2
 organizationCode| Code of associated organization | No| string | v2
 organizationName| Name of associated organization <br> *Note: General Search can be performed*|No| String|v2
@@ -429,8 +429,7 @@ Note: Response for one record is provided as an example <br>
 
 Production URL: https://api.sam.gov/prod/opportunities/v1/search?limit=1&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general <br>
  <br>
-Alpha URL: https://api.sam.gov/prod/opportunities/v1/search?limit=1&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general<br>
- <br>
+Alpha URL: https://api-alpha.sam.gov/prodlike/opportunities/v1/search?limit=1&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general<br>
 
 Note: Request URL for alpha is used in this example
 </details>
@@ -752,9 +751,9 @@ Note: Response for one record is provided as an example <br>
 
 <details>
     <summary>Request URL</summary>
-Production URL: https://api-alpha.sam.gov/opportunities/v2/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&title=Driving <br>
+Production URL: https://api.sam.gov/opportunities/v2/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&title=Driving <br>
  <br>
-Alpha URL: https://api.sam.gov/opportunities/v2/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2020&postedTo=05/10/2020 <br>
+Alpha URL: https://api-alpha.sam.gov/opportunities/v2/search?limit=10&api_key={User’s Public API Key}&postedFrom=01/01/2020&postedTo=05/10/2020 <br>
 </details>
 
 <details>
@@ -1137,7 +1136,7 @@ User clicks on the description link available in the response and description co
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov)
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 ## Change Log
 
@@ -1158,6 +1157,17 @@ Date | Version | Description
 6/20/2020| v1.7| Added additional information field to point of contact parameter in the response
 7/3/2020| v1.8| Updated field parameters to include all FH information for given notices in both request and response
 9/14/2020| v1.9| Updated OpenAPI Specification section to include v2 endpoints
-10/25/2020 | v1.91| Added new request field for status (Coming Soon)
+10/25/2020 | v1.91| Added new request field for status
+05/12/2021 | v1.92| Changed Beta.SAM to SAM and Changed Beta to Prodution based on JIRA IAEDEV-51713
+05/17/2021 | v1.93| Changed Beta to Prod and removed coming soon JIRA IAEDEV-51713
+05/18/2021 | v1.94| Changed SAM.Gov to SAM.gov based on JIRA IAEDEV-51713
+05/18/2021 | v1.95| Changed Prod to Production JIRA IAEDEV-51713
+05/19/2021 | v1.96| Changed SAM.Gov to SAM.gov based on JIRA IAEDEV-51713
+06/11/2021 | v1.97| Added inactive in status
+
+
+
+
+
 
 <p><small><a href="#">Back to top</a></small></p>
