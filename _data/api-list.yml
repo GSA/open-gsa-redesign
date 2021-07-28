@@ -83,11 +83,14 @@
   description: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms.
   url: https://open.gsa.gov/api/searchgov-suggestions/
 - title: Site Scanning API
-  description: The Site Scanning API provides a wide range of scan data for public federal websites and their website health and best practices. 
+  description: The Site Scanning API provides a wide range of scan data for public federal websites and their website health and best practices.
   url: https://open.gsa.gov/api/site-scanning-api/
 - title: Sustainable Facilities Tool API
   description: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
   url: https://sftool.gov/developers
+- title: TMSS 2.0 Rate Query API
+  description: TMSS 2.0 Rate Query API provides shipment cost for a regular Household Goods (HHG) shipment or for an Extended Storage (EXSTG) shipment.
+  url: https://api.gsa.gov/travel/tmss/v1/ratequery/hhg
 - title: Touchpoints
   description: Touchpoints makes customer feedback easier for federal agencies, and Touchpoints API provides an convenient, programmatic way to access the data for your Forms and Responses.
   url: https://github.com/gsa/touchpoints/wiki/API
