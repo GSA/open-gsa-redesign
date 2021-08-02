@@ -134,7 +134,7 @@ Type of Connections and Rate Limits
 </tr>
 <tr>
 <td>Federal system</td>
-<td>Personal API key</td>
+<td>System account API key</td>
 <td>10,000 requests/day</td>
 </tr>
 </table>

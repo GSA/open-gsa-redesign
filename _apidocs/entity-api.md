@@ -27,23 +27,25 @@ The Entity Management API will allow users to request Public Entity Information 
 
 ## Getting Started
 
-Public and FOUO Entity Details can be accessed from Production or Alpha via the following version 1 and version 2 endpoints:
+Public and FOUO Entity Details can be accessed from Production or Alpha via the following version 1, version 2, and version 3 endpoints:
 * Production Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
 * Production Version 2: https://api.sam.gov/entity-information/v2/entities?api_key= < value >
+* Production Version 3: COMING SOON
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
+* Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/entities?api_key= < value >
 
-Sensitive Entity Details can be accessed from Production or Alpha via the following end points:
+These are GET calls.
 
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
-       <ul>
-       <li style="color: #31708f;">Production Version 1: https://api.sam.gov/entity-information/v1/entities?</li>
-       <li style="color: #31708f;">Production Version 2: https://api.sam.gov/entity-information/v2/entities?</li>
-       <li style="color: #31708f;">Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?</li>
-       <li style="color: #31708f;">Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?</li>
-       </ul><br>
-       The Sensitive API no longer accepts GET requests. Please refer to the "Sensitive API Process" under "Sensitive API Information" to learn more about the process change.
-  </div>
+Sensitive Entity Details can be accessed from Production or Alpha via the following version 1, version 2, and version 3 end points:
+* Production Version 1: https://api.sam.gov/entity-information/v1/entities?
+* Production Version 2: https://api.sam.gov/entity-information/v2/entities?
+* Production Version 3: COMING SOON
+* Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?
+* Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?
+* Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/entities?
+
+These are POST calls. Please refer to the "Sensitive API Process" under "Sensitive API Information" section for additional information.
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://sam.gov/profile/details" target="_blank">Account Details page on SAM.gov</a>
@@ -90,7 +92,7 @@ Type of Connections and Rate Limits
 </tr>
 <tr>
 <td>Federal system</td>
-<td>Personal API key</td>
+<td>System account API key</td>
 <td>10,000 requests/day</td>
 </tr>
 </table>
@@ -122,14 +124,26 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 </tr>
 
 <tr>
-<td>samRegistered</td>
-<td>Allows Yes, No or All. <br>
-    Yes signifies SAM registrants.<br> No signifies non-SAM registrants.<br>
-    All signifies both SAM registrants and non-SAM registrants.
+<td rowspan="2">samRegistered</td>
+<td>Allows Yes. 
+<br>Yes signifies SAM registrants.
 <br>Example: samRegistered=Yes
-<br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
+<br><br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
 </td>
 <td>v2</td>
+</tr>
+
+<tr>
+<td>Allows Yes or No.
+<br>Yes signifies SAM registrants.
+<br>No signifies non-SAM registrants.
+<br>Example: samRegistered=Yes
+<br><br> 
+NOTES: 
+<br>1. If this search parameter is not sent in the request, then the API will return SAM registrants by default with the current schema.
+<br>2. If samRegistered=No is sent in the request, then the API will return the new non-SAM registrants schema.
+</td>
+<td>v3</td>
 </tr>
 
 <tr>
@@ -137,22 +151,22 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000
-<br> May be applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
 <br>Example: dbaName=ALLTEL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -160,60 +174,63 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 <td>Entity EFT Indicator aka duns4.
 <br>Example: entityEFTIndicator=0000
 <br>NOTE: This parameter must be used in conjunction with ueiDUNS or ueiSAM.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y, N, U or null.
 <br>Example: debtSubjectToOffset=Y</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>Allows 9 character value.
 <br>Example: dodaac=DOD123456</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values 
+<td>Unique Entity Identifier DUNS
+<br>Allows 9 digit value; a maximum of up to 100 values 
 can be sent.
 <br>Example: ueiDUNS=025114695
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
-<td>Unique Entity Identifier SAM - Allow 12 digit value, 
-alphanumeric (ueiSAM values not yet available for search).
+<td>Unique Entity Identifier SAM
+<br>Allow a 12 character value; a maximum of up to 100 values can be sent.
 <br>Example: ueiSAM=RV56IG5JM6G9
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
 <br>Example: entityStructureCode=2L</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>Allows Description or null.
 <br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
-<td>Allows D or null.
-<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""</td>
-<td>v1<br>v2</td>
+<td>v1 or v2: Allows D or null.
+<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""
+<br><br>v3: Allows Y or N
+<br>Examples: exclusionStatusFlag=Y, exclusionStatusFlag=N</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -221,38 +238,38 @@ alphanumeric (ueiSAM values not yet available for search).
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
-NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
+NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
-<td>Allows Partial or Complete value.
+<td>Allows partial or complete value search.
 <br>Example: legalBusinessName=ALLTEL
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
 <br>Example: primaryNaics=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
 <br>Example: purposeOfRegistrationCode=Z2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>Allows a text.
 <br>Example: purposeOfRegistrationDesc=All Awards</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -260,7 +277,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -268,8 +285,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: ueiCreationDate=01/01/2019, ueiCreationDate=[01/01/2019,05/29/2019]
-<br>Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -277,225 +294,230 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
 <br>Example: physicalAddressCity=Herndon
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
-<td>Allows 2 characters.
+<td>Allows a 2 digit code.
 <br>Example: physicalAddressCongressionalDistrict=08
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCountryCode</td>
-<td>Allows 3 character code.
+<td>Allows a 3 character code for SAM registrants and also a 2 character code for non-SAM registrants.
 <br>Example: physicalAddressCountryCode=USA
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressProvinceOrStateCode</td>
-<td>Allows 2 character code.
+<td>Allows a 2 character code.
 <br>Example: physicalAddressProvinceOrStateCode=AR
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
-<td>Allows 5 digit code for US zip codes and any digit postal code for non-US postal codes.
-<br>Example: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>SAM registrants:
+<br>Allows a 5 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Non-SAM registrants:
+<br>Allows a 5 or a 9 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br><br>Examples: 
+<br>physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054, physicalAddressZipPostalCode=21202-3117
+<br><br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>samExtractCode --> registrationStatus</td>
 <td>Allows 1 character code (A for Active or E for Expired).
 <br>samExtractCode=A, registrationStatus=A
-<br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
+<br>NOTE: This parameter is being renamed. samExtractCode is in V1 and registrationStatus is starting V2. 
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
 <br>Example: businessTypeCode=OY</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>businessTypeDesc</td>
 <td>Allows a text.
 <br>Example: businessTypeDesc=Woman Owned Business </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureCode=MF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureDesc=MANUFACTURER OF GOODS</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
 <br>Example: stateOfIncorporationCode=VA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: stateOfIncorporationDesc=Virginia</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
 <br>Example: countryOfIncorporationCode=USA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: countryOfIncorporationDesc=UNITED STATES</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
 <br>Example: naicsCode=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsDesc</td>
 <td>Allows a text.
 <br>Example: naicsDesc=Furniture Stores</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows a 6-digit NAICS Code, "" or !"" values.
 <br>Example: naicsLimitedSB=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
 <br>Example: pscCode=X1QA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>pscDesc</td>
 <td>Allows a text.
 <br>Example: pscDesc=Screws</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateCode</td>
 <td>Allows 2 digit character code or "any".
 <br>Example: servedDisasterStateCode=VA, servedDisasterStateCode=any</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateName</td>
 <td>Allows Name or null.
 <br>Example: servedDisasterStateName=Virginia</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyCode</td>
 <td>Allows 3 digit county code.
 <br>Example: servedDisasterCountyCode=060</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
 <td>Allows a text.
 <br>Example: servedDisasterCountyName=FAIRFAX</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
 <td>Allows 4 digit MSA code.
 <br>Example: servedDisasterMSA=1720</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeCode</td>
 <td>Allows a two character code or null.
 <br>Example: sbaBusinessTypeCode=12</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeDesc</td>
 <td>Allows text.
 <br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
-<td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>To return all sections, provide 'All' with the includeSections parameter.
-<br>Example: includeSections=entityRegistration,coreData; includeSections=All
-<br>Applicable to non-SAM registrants but only the sections
- entityRegistration and coreData are applicable.<br><br>
- Note: The repsAndCerts section will only be returned if included in this parameter. 
- </td>
-<td>v1<br>v2</td>
+<td>Allows to filter data by sections.
+<br><br>SAM registrants:
+<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts, and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
+<br>Non-SAM registrants:
+<br>The applicable sections are entityRegistration and coreData.
+<br><br>Examples: includeSections=entityRegistration,coreData, includeSections=All, includeSections=repsAndCerts
+<br><br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>format</td>
-<td>Allows user to download different file formats(csv and json are allowable values).
+<td>Allows user to download data into the JSON and CSV file formats.
 <br>Example: format=csv
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
-<br>Example: emailId= Yes
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>Allows user to get JSON or CSV file download links sent to the email address associated to the API key used in the request, when used in conjunction with the format parameter.
+<br>Example: emailId=Yes&format=JSON
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
+
 </table>
 </details>
 
@@ -518,40 +540,41 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>samRegistered</td>
 <td>string</td>
-<td>SAM Registered Entity
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<td>SAM Registered or non-SAM Registered Entity
+<br>Applicable to both SAM and non-SAM registrants.
+</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityEFTIndicator</td>
 <td>string</td>
 <td>Entity EFT Indicator</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>string</td>
 <td>CAGE Code
-<br> May be applicable to non-SAM registrants</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 
@@ -559,130 +582,139 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>dodaac</td>
 <td>string</td>
 <td>DoDAAC</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>Doing Business As Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>string</td>
 <td>Purpose of Registration Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>string</td>
 <td>Purpose of Registration Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>evsSource</td>
+<td>string</td>
+<td><br>Source of the SAM and non-SAM registrants.
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>string</td>
 <td>Registration Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastUpdateDate</td>
 <td>string</td>
 <td>Last Update Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>expirationDate -><br> registrationExpirationDate</td>
 <td>string</td>
 <td>Registration Expiration Date
-<br>NOTE: This parameter is being renamed.  
-expirationDate is in V1 and registrationExpirationDate will be V2.</td>
-<td>v1<br>v2</td>
+<br>NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>activeDate</td>
 <td>string</td>
 <td>Active Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiStatus</td>
 <td>string</td>
 <td>Unique Entity Identifier Status
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
-<td>noPublicDisplayFlag</td>
+<td>noPublicDisplayFlag --> publicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag</td>
-<td>v1<br>v2</td>
+<td>Opted for Public Display or opted out of it.
+<br>v1 or v2: Returns noPublicDisplayFlag.
+<br>v3: Returns publicDisplayFlag.
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
 <td>string</td>
-<td>Exclusion Status Flag
-<br>Description (Debarred)
-<br><br>For exclusionStatusFlag=D in the API request, the response would:
-<br>1. Show 'exclusionStatusFlag': 'Debarred'
-<br>2. Populate 'exclusionURL' with the endpoint to access the debarred record</td>
-<td>v1<br>v2</td>
+<td>v1 or v2: Returns D (Debarred) or null.
+<br>v3: Returns Y (Debarred) or N (not Debarred).
+<br><br>NOTE: Debarred entities will populate 'exclusionURL' with the endpoint to access the debarred record.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>exclusionURL</td>
 <td>string</td>
 <td>Active Exclusion URL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dnbOpenData</td>
 <td>string</td>
 <td>Dun & Bradstreet Open Data
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 </table>
 </details>
@@ -702,50 +734,44 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>entityURL</td>
 <td>string</td>
 <td>Entity URL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
 <td>Entity Division Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
 <td>Entity Division Number</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStartDate</td>
 <td>string</td>
 <td>Entity Start Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fiscalYearEndCloseDate</td>
 <td>string</td>
 <td>Fiscal Year End Close Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>submissionDate</td>
 <td>string</td>
 <td>Submission Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
-<tr>
-<td>correspondenceFlag</td>
-<td>string</td>
-<td>Correspondence Flag<br>NOTE: This field does not contain any data and has been removed from the API.</td>
-<td>v1<br>v2</td>
-</tr>
 </table>
 
 <summary>physicalAddress, mailingAddress Sub Sections </summary>
@@ -762,7 +788,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>string</td>
 <td>Physical Address Line 1 and Mailing Address Line 1.
 <br>Only Physical Address Line 1 is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -770,7 +796,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>string</td>
 <td>Physical Address Line 2 and Mailing Address Line 2.
 <br>Only Physical Address Line 2 is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -778,7 +804,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>string</td>
 <td>Physical Address City and Mailing Address City.
 <br>Only Physical Address City is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -786,7 +812,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>string</td>
 <td>Physical Address State or Province Code and Mailing Address State or Province Code.
 <br>Only Physical Address State or Province Code is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -794,7 +820,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>string</td>
 <td>Physical Address Zip and Mailing Address Zip.
 <br>Only Physical Address Zip is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -802,7 +828,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>string</td>
 <td>Physical Address Zip Plus4 and Mailing Address Zip Plus4.
 <br>Only Physical Address Zip Plus4 is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -810,7 +836,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>string</td>
 <td>Physical Address Country Code and Mailing Address Country Code.
 <br>Only Physical Address Country Code is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -825,7 +851,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>congressionalDistrict</td>		
 <td>string</td>		
 <td>Physical Address Congressional District</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>		
 </table>
 
@@ -842,84 +868,84 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>entityStructureCode</td>
 <td>string</td>
 <td>Entity Structure Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>string</td>
 <td>Entity Structure Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityTypeCode</td>
 <td>string</td>
 <td>Entity Type Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityTypeDesc</td>
 <td>string</td>
 <td>Entity Type Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>profitStructureCode</td>
 <td>string</td>
 <td>Profit Structure Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>profitStructureDesc</td>
 <td>string</td>
 <td>Profit Structure Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>string</td>
 <td>Organization Structure Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>string</td>
 <td>Organization Structure Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>string</td>
 <td>State Of Incorporation Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>string</td>
 <td>State Of Incorporation Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>string</td>
 <td>Country Of Incorporation Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>string</td>
 <td>Country Of Incorporation Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -959,7 +985,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -1002,7 +1028,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -1019,14 +1045,14 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>creditCardUsage</td>
 <td>string</td>
 <td>Credit Card Usage</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>string</td>
 <td>Debt Subject to Offset Flag</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 </details>
@@ -1047,7 +1073,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>primaryNaics</td>
 <td>string</td>
 <td>Primary NAICS</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -1089,7 +1115,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -1117,7 +1143,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 </table>
@@ -1135,14 +1161,14 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>disasterRegistryFlag</td>
 <td>string</td>
 <td>Disaster Registry Flag</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>bondingFlag</td>
 <td>string</td>
 <td>Bonding Flag</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -1197,7 +1223,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 </table>
@@ -1215,7 +1241,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>ediInformationFlag</td>
 <td>string</td>
 <td>EDI Information Flag</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 </table>
@@ -2369,7 +2395,7 @@ The repsAndCerts section is not available for use with the format parameter.
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -3505,7 +3531,7 @@ The repsAndCerts section is not available for use with the format parameter.
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -4649,7 +4675,7 @@ The repsAndCerts section is not available for use with the format parameter.
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -4665,35 +4691,35 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>grantsCertificationStatus</td>
 <td>string</td>
 <td>Grants Certification Status</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>grantsCertifyingResponse</td>
 <td>string</td>
 <td>Grants Certifying Response</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>certifierFirstName</td>
 <td>string</td>
 <td>Certifier First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>certifierLastName</td>
 <td>string</td>
 <td>Certifier Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>certifierMiddleInitial</td>
 <td>string</td>
 <td>Certifier Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -4710,28 +4736,28 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>farPDF</td>
 <td>string</td>
 <td>FAR PDF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>farAndDfarsPDF</td>
 <td>string</td>
 <td>FAR and DFARS PDF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>architectEngineeringPDF</td>
 <td>string</td>
 <td>Architect Engineering PDF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>financialAssistanceCertificationsPDF</td>
 <td>string</td>
 <td>Financial Assistance Certifications PDF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -4752,28 +4778,28 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -4815,49 +4841,49 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -4874,28 +4900,28 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -4937,49 +4963,49 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -4996,28 +5022,28 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5059,49 +5085,49 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -5118,28 +5144,28 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5181,49 +5207,49 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -5240,28 +5266,28 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5303,49 +5329,49 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -5362,28 +5388,28 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5425,49 +5451,49 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -5485,14 +5511,26 @@ The repsAndCerts section is not available for use with the format parameter.
 </tr>
 
 <tr>
-<td>samRegistered</td>
-<td>Allows Yes, No or All. <br>
-    Yes signifies SAM registrants.<br> No signifies non-SAM registrants.<br>
-    All signifies both SAM registrants and non-SAM registrants.
+<td rowspan="2">samRegistered</td>
+<td>Allows Yes. 
+<br>Yes signifies SAM registrants.
 <br>Example: samRegistered=Yes
-<br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
+<br><br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
 </td>
 <td>v2</td>
+</tr>
+
+<tr>
+<td>Allows Yes or No.
+<br>Yes signifies SAM registrants.
+<br>No signifies non-SAM registrants.
+<br>Example: samRegistered=Yes
+<br><br> 
+NOTES: 
+<br>1. If this search parameter is not sent in the request, then the API will return SAM registrants by default with the current schema.
+<br>2. If samRegistered=No is sent in the request, then the API will return the new non-SAM registrants schema.
+</td>
+<td>v3</td>
 </tr>
 
 <tr>
@@ -5500,22 +5538,22 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000
-<br> May be applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
 <br>Example: dbaName=ALLTEL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5523,60 +5561,63 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>Entity EFT Indicator aka duns4.
 <br>Example: entityEFTIndicator=0000
 <br>NOTE: This parameter must be used in conjunction with ueiDUNS or ueiSAM.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y, N, U or null.
 <br>Example: debtSubjectToOffset=Y</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>Allows 9 character value.
 <br>Example: dodaac=DOD123456</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values 
+<td>Unique Entity Identifier DUNS
+<br>Allows 9 digit value; a maximum of up to 100 values 
 can be sent.
 <br>Example: ueiDUNS=025114695
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
-<td>Unique Entity Identifier SAM - Allow 12 digit value, 
-alphanumeric (ueiSAM values not yet available for search).
+<td>Unique Entity Identifier SAM
+<br>Allow a 12 character value; a maximum of up to 100 values can be sent.
 <br>Example: ueiSAM=RV56IG5JM6G9
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
 <br>Example: entityStructureCode=2L</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>Allows Description or null.
 <br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
-<td>Allows D or null.
-<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""</td>
-<td>v1<br>v2</td>
+<td>v1 or v2: Allows D or null.
+<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""
+<br><br>v3: Allows Y or N
+<br>Examples: exclusionStatusFlag=Y, exclusionStatusFlag=N</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5584,38 +5625,38 @@ alphanumeric (ueiSAM values not yet available for search).
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
-NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
+NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
-<td>Allows Partial or Complete value.
+<td>Allows partial or complete value search.
 <br>Example: legalBusinessName=ALLTEL
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
 <br>Example: primaryNaics=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
 <br>Example: purposeOfRegistrationCode=Z2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>Allows a text.
 <br>Example: purposeOfRegistrationDesc=All Awards</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5623,7 +5664,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5631,8 +5672,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: ueiCreationDate=01/01/2019, ueiCreationDate=[01/01/2019,05/29/2019]
-<br>Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -5640,293 +5681,298 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
 <br>Example: physicalAddressCity=Herndon
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
-<td>Allows 2 characters.
+<td>Allows a 2 digit code.
 <br>Example: physicalAddressCongressionalDistrict=08
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCountryCode</td>
-<td>Allows 3 character code.
+<td>Allows a 3 character code for SAM registrants and also a 2 character code for non-SAM registrants.
 <br>Example: physicalAddressCountryCode=USA
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressProvinceOrStateCode</td>
-<td>Allows 2 character code.
+<td>Allows a 2 character code.
 <br>Example: physicalAddressProvinceOrStateCode=AR
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
-<td>Allows 5 digit code for US zip codes and any digit postal code for non-US postal codes.
-<br>Example: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>SAM registrants:
+<br>Allows a 5 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Non-SAM registrants:
+<br>Allows a 5 or a 9 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br><br>Examples:
+<br>physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054, physicalAddressZipPostalCode=21202-3117
+<br><br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>samExtractCode --> registrationStatus</td>
 <td>Allows 1 character code (A for Active or E for Expired).
 <br>samExtractCode=A, registrationStatus=A
-<br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
+<br>NOTE: This parameter is being renamed. samExtractCode is in V1 and registrationStatus is starting V2. 
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
 <br>Example: businessTypeCode=OY</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>businessTypeDesc</td>
 <td>Allows a text.
 <br>Example: businessTypeDesc=Woman Owned Business </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureCode=MF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureDesc=MANUFACTURER OF GOODS</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
 <br>Example: stateOfIncorporationCode=VA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: stateOfIncorporationDesc=Virginia</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
 <br>Example: countryOfIncorporationCode=USA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: countryOfIncorporationDesc=UNITED STATES</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
 <br>Example: naicsCode=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsDesc</td>
 <td>Allows a text.
 <br>Example: naicsDesc=Furniture Stores</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows a 6-digit NAICS Code, "" or !"" values.
 <br>Example: naicsLimitedSB=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
 <br>Example: pscCode=X1QA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>pscDesc</td>
 <td>Allows a text.
 <br>Example: pscDesc=Screws</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateCode</td>
 <td>Allows 2 digit character code or "any".
 <br>Example: servedDisasterStateCode=VA, servedDisasterStateCode=any</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateName</td>
 <td>Allows Name or null.
 <br>Example: servedDisasterStateName=Virginia</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyCode</td>
 <td>Allows 3 digit county code.
 <br>Example: servedDisasterCountyCode=060</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
 <td>Allows a text.
 <br>Example: servedDisasterCountyName=FAIRFAX</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
 <td>Allows 4 digit MSA code.
 <br>Example: servedDisasterMSA=1720</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeCode</td>
 <td>Allows a two character code or null.
 <br>Example: sbaBusinessTypeCode=12</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeDesc</td>
 <td>Allows text.
 <br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
-<td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>To return all sections, provide 'All' with the includeSections parameter.
-<br>Example: includeSections=entityRegistration,coreData; includeSections=All
-<br>Applicable to non-SAM registrants but only the sections
- entityRegistration and coreData are applicable.<br><br>
- Note: The repsAndCerts section will only be returned if included in this parameter.</td>
-<td>v1<br>v2</td>
+<td>Allows to filter data by sections.
+<br><br>SAM registrants:
+<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts, and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
+<br>Non-SAM registrants:
+<br>The applicable sections are entityRegistration and coreData.
+<br><br>Examples: includeSections=entityRegistration,coreData, includeSections=All, includeSections=repsAndCerts
+<br><br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>format</td>
-<td>Allows user to download different file formats(csv and json are allowable values).
+<td>Allows user to download data into the JSON and CSV file formats.
 <br>Example: format=csv
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
-<br>Example: emailId= Yes
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>Allows user to get JSON or CSV file download links sent to the email address associated to the API key used in the request, when used in conjunction with the format parameter.
+<br>Example: emailId=Yes&format=JSON
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>edi</td>
 <td>Allows text.
 <br>Example: edi=YES/NO</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelCode</td>
 <td>Allows 2 character code.
 <br>Example: companySecurityLevelCode=92</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelDesc</td>
 <td>Allows text.
 <br>Example: companySecurityLevelDesc=Government Top Secret</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
 <br>Example: highestEmployeeSecurityLevelCode=90</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelDesc</td>
 <td>Allows text.
 <br>Example: highestEmployeeSecurityLevelDesc=Government Top Secret</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ultimateParentUEIDUNS</td>
 <td>Allows text.
 <br>Example: ultimateParentUEIDUNS=090123451</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ultimateParentUEISAM</td>
 <td>Allows text.
 <br>Example: ultimateParentUEISAM=RQ56IG5JM6G9</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeCode</td>
 <td>Allows text, Determines Agency Business Purpose Code.
 <br>Example: agencyBusinessPurposeCode=1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeDesc</td>
 <td>Allows text.
 <br>Example: agencyBusinessPurposeDesc=Buyer and Seller</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sensitivity</td>
 <td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
 <br>Example: sensitivity=public</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 </details>
@@ -5951,176 +5997,186 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <tr>
 <td>samRegistered</td>
 <td>string</td>
-<td>SAM Registered Entity
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<td>SAM Registered or non-SAM Registered Entity
+<br>Applicable to both SAM and non-SAM registrants.
+</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityEFTIndicator</td>
 <td>string</td>
 <td>Entity EFT Indicator</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>string</td>
 <td>CAGE Code
-<br> May be applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>string</td>
 <td>DoDAAC</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>Doing Business As Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>string</td>
 <td>Purpose of Registration Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>string</td>
 <td>Purpose of Registration Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>evsSource</td>
+<td>string</td>
+<td><br>Source of the SAM and non-SAM registrants.
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>string</td>
 <td>Registration Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastUpdateDate</td>
 <td>string</td>
 <td>Last Update Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>expirationDate -><br> registrationExpirationDate</td>
 <td>string</td>
 <td>Registration Expiration Date
-<br>NOTE: This parameter is being renamed.  
-expirationDate is in V1 and registrationExpirationDate will be V2.</td>
-<td>v1<br>v2</td>
+<br>NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>activeDate</td>
 <td>string</td>
 <td>Active Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiStatus</td>
 <td>string</td>
 <td>Unique Entity Identifier Status
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
-<td>noPublicDisplayFlag</td>
+<td>noPublicDisplayFlag --> publicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag</td>
-<td>v1<br>v2</td>
+<td>Opted for Public Display or opted out of it.
+<br>v1 or v2: Returns noPublicDisplayFlag.
+<br>v3: Returns publicDisplayFlag.
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
 <td>string</td>
-<td>Exclusion Status Flag
-<br>Description (Debarred)
-<br><br>For exclusionStatusFlag=D in the API request, the response would:
-<br>1. Show 'exclusionStatusFlag': 'Debarred'
-<br>2. Populate 'exclusionURL' with the endpoint to access the debarred record</td>
-<td>v1<br>v2</td>
+<td>v1 or v2: Returns D (Debarred) or null.
+<br>v3: Returns Y (Debarred) or N (not Debarred).
+<br><br>NOTE: Debarred entities will populate 'exclusionURL' with the endpoint to access the debarred record.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>exclusionURL</td>
 <td>string</td>
 <td>Active Exclusion URL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dnbOpenData</td>
 <td>string</td>
 <td>Dun & Bradstreet Open Data
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 </table>
 </details>
 
 <details>
-<summary>core Data Section</summary><br>
+<summary>coreData Section</summary><br>
 
 <summary>entityHierarchyInformation Sub Section</summary>
 <table>
@@ -6148,21 +6204,28 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>evsSource</td>
+<td>string</td>
+<td>Source of the SAM registrant hierarchy</td>
+<td>v3</td>
 </tr>
 
 <tr>
@@ -6225,7 +6288,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </div>
 </tr>
 
@@ -6233,7 +6296,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 </table>
@@ -6287,6 +6350,13 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
+<td>evsSource</td>
+<td>string</td>
+<td>Source of the SAM registrant hierarchy
+<br><br>NOTE: This field is only available in v3</td>
+</tr>
+
+<tr>
 <div style="width: 20px">
 <td>physicalAddress</td>
 <td>object</td>
@@ -6357,7 +6427,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -6392,6 +6462,13 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
+<td>evsSource</td>
+<td>string</td>
+<td>Source of the SAM registrant hierarchy
+<br><br>NOTE: This field is only available in v3</td>
+</tr>
+
+<tr>
 <div style="width: 20px">
 <td>physicalAddress</td>
 <td>object</td>
@@ -6463,7 +6540,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 
@@ -6489,21 +6566,28 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>evsSource</td>
+<td>string</td>
+<td>Source of the SAM registrant hierarchy</td>
+<td>v3</td>
 </tr>
 
 <tr>
@@ -6566,7 +6650,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </div>
 </tr>
 
@@ -6574,7 +6658,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 </details>
@@ -6783,77 +6867,77 @@ samMonitoring
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>postalCode</td>
 <td>string</td>
 <td>Postal Code</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 </table>
@@ -6876,42 +6960,42 @@ samMonitoring
 <td>source</td>
 <td>string</td>
 <td>Source</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>hierarchyDepartmentCode</td>
 <td>string</td>
 <td>Hierarchy Department Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>hierarchyDepartmentName</td>
 <td>string</td>
 <td>Hierarchy Department Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>hierarchyAgencyCode</td>
 <td>string</td>
 <td>Hierarchy Agency Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>hierarchyAgencyName</td>
 <td>string</td>
 <td>Hierarchy Agency Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>hierarchyOfficeCode</td>
 <td>string</td>
 <td>Hierarchy Office Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -6929,50 +7013,44 @@ samMonitoring
 <td>entityURL</td>
 <td>string</td>
 <td>Entity URL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
 <td>Entity Division Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
 <td>Entity Division Number</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStartDate</td>
 <td>string</td>
 <td>Entity Start Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fiscalYearEndCloseDate</td>
 <td>string</td>
 <td>Fiscal Year End Close Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>submissionDate</td>
 <td>string</td>
 <td>Submission Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
-<tr>
-<td>correspondenceFlag</td>
-<td>string</td>
-<td>Correspondence Flag<br>NOTE: This field does not contain any data and has been removed from the API.</td>
-<td>v1<br>v2</td>
-</tr>
 </table>
 
 <summary>physicalAddress, mailingAddress Sub Sections </summary>
@@ -6989,7 +7067,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address Line 1 and Mailing Address Line 1.
 <br>Only Physical Address Line 1 is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -6997,7 +7075,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address Line 2 and Mailing Address Line 2.
 <br>Only Physical Address Line 2 is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -7005,7 +7083,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address City and Mailing Address City.
 <br>Only Physical Address City is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -7013,7 +7091,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address State or Province Code and Mailing Address State or Province Code.
 <br>Only Physical Address State or Province Code is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -7021,7 +7099,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address Zip and Mailing Address Zip.
 <br>Only Physical Address Zip is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -7029,7 +7107,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address Zip Plus4 and Mailing Address Zip Plus4.
 <br>Only Physical Address Zip Plus4 is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -7037,7 +7115,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address Country Code and Mailing Address Country Code.
 <br>Only Physical Address Country Code is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -7052,7 +7130,7 @@ samMonitoring
 <td>congressionalDistrict</td>		
 <td>string</td>		
 <td>Physical Address Congressional District</td>	
-<td>v1<br>v2</td>	
+<td>v1<br>v2<br>v3</td>	
 </tr>		
 </table>
 
@@ -7069,126 +7147,126 @@ samMonitoring
 <td>agencyBusinessPurposeCode</td>
 <td>string</td>
 <td>Agency Business Purpose Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeDesc</td>
 <td>string</td>
 <td>Agency Business Purpose Desc</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>string</td>
 <td>Entity Structure Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureDescription</td>
 <td>string</td>
 <td>Entity Structure Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityTypeCode</td>
 <td>string</td>
 <td>Entity Type Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityTypeDesc</td>
 <td>string</td>
 <td>Entity Type Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>profitStructureCode</td>
 <td>string</td>
 <td>Profit Structure Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>profitStructureDesc</td>
 <td>string</td>
 <td>Profit Structure Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>string</td>
 <td>Organization Structure Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>string</td>
 <td>Organization Structure Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>string</td>
 <td>State Of Incorporation Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>string</td>
 <td>State Of Incorporation Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>string</td>
 <td>Country Of IncorporationCode</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>string</td>
 <td>Country Of IncorporationDescription</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelCode</td>
 <td>string</td>
 <td>Company Security Level Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelDesc</td>
 <td>string</td>
 <td>Company Security Level Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>string</td>
 <td>Highest Employee Security Level Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelDesc</td>
 <td>string</td>
 <td>Highest Employee Security Level Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -7228,7 +7306,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 
@@ -7272,7 +7350,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -7289,14 +7367,14 @@ samMonitoring
 <td>creditCardUsage</td>
 <td>string</td>
 <td>Credit Card Usage</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>string</td>
 <td>Debt Subject to Offset Flag</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 </details>
@@ -7317,7 +7395,7 @@ samMonitoring
 <td>primaryNaics</td>
 <td>string</td>
 <td>Primary NAICS</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -7359,7 +7437,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -7388,7 +7466,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 </table>
@@ -7406,14 +7484,14 @@ samMonitoring
 <td>disasterRegistryFlag</td>
 <td>string</td>
 <td>Disaster Registry Flag</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>bondingFlag</td>
 <td>string</td>
 <td>Bonding Flag</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -7445,7 +7523,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -7500,7 +7578,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -7517,14 +7595,14 @@ samMonitoring
 <td>averageAnnualRevenue</td>
 <td>string</td>
 <td>Average Annual Revenue</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>averageNumberOfEmployees</td>
 <td>string</td>
 <td>Average Number Of Employees</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -7541,14 +7619,14 @@ samMonitoring
 <td>employeesLocation</td>
 <td>string</td>
 <td>Employees Location</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>receiptsLocation</td>
 <td>string</td>
 <td>Receipts Location</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -7565,21 +7643,21 @@ samMonitoring
 <td>barrelsCapacity</td>
 <td>string</td>
 <td>Barrels Capacity</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>totalAssets</td>
 <td>string</td>
 <td>Total Assets</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>megawattHours</td>
 <td>string</td>
 <td>Mega Watt Hours</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -7596,42 +7674,42 @@ samMonitoring
 <td>ediInformationFlag</td>
 <td>string</td>
 <td>EDI Information Flag</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>vanProvider</td>
 <td>string</td>
 <td>Van Provider</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>isaQualifier</td>
 <td>string</td>
 <td>ISA Qualifier</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>isaIdentifier</td>
 <td>string</td>
 <td>ISA Identifier</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>functionalGroupIdentifier</td>
 <td>string</td>
 <td>Functional Group Identifier</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>requestFlag820s</td>
 <td>string</td>
 <td>Request Flag 820s</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 </details>
@@ -8785,7 +8863,7 @@ The repsAndCerts section is not available for use with the format parameter.
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -9920,7 +9998,7 @@ The repsAndCerts section is not available for use with the format parameter.
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -11064,7 +11142,7 @@ The repsAndCerts section is not available for use with the format parameter.
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -11080,35 +11158,35 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>grantsCertificationStatus</td>
 <td>string</td>
 <td>Grants Certification Status</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>grantsCertifyingResponse</td>
 <td>string</td>
 <td>Grants Certifying Response</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>certifierFirstName</td>
 <td>string</td>
 <td>Certifier First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>certifierLastName</td>
 <td>string</td>
 <td>Certifier Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>certifierMiddleInitial</td>
 <td>string</td>
 <td>Certifier Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -11125,28 +11203,28 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>farPDF</td>
 <td>string</td>
 <td>FAR PDF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>farAndDfarsPDF</td>
 <td>string</td>
 <td>FAR and DFARS PDF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>architectEngineeringPDF</td>
 <td>string</td>
 <td>Architect Engineering PDF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>financialAssistanceCertificationsPDF</td>
 <td>string</td>
 <td>Financial Assistance Certifications PDF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -11167,112 +11245,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -11289,112 +11367,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -11411,112 +11489,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -11533,112 +11611,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -11655,112 +11733,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -11777,112 +11855,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -11899,112 +11977,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -12021,112 +12099,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -12143,112 +12221,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -12265,112 +12343,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -12387,112 +12465,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -12509,112 +12587,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -12631,112 +12709,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -12773,14 +12851,26 @@ curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI D
 </tr>
 
 <tr>
-<td>samRegistered</td>
-<td>Allows Yes, No or All. <br>
-    Yes signifies SAM registrants.<br> No signifies non-SAM registrants.<br>
-    All signifies both SAM registrants and non-SAM registrants.
+<td rowspan="2">samRegistered</td>
+<td>Allows Yes. 
+<br>Yes signifies SAM registrants.
 <br>Example: samRegistered=Yes
-<br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
+<br><br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
 </td>
 <td>v2</td>
+</tr>
+
+<tr>
+<td>Allows Yes or No.
+<br>Yes signifies SAM registrants.
+<br>No signifies non-SAM registrants.
+<br>Example: samRegistered=Yes
+<br><br> 
+NOTES: 
+<br>1. If this search parameter is not sent in the request, then the API will return SAM registrants by default with the current schema.
+<br>2. If samRegistered=No is sent in the request, then the API will return the new non-SAM registrants schema.
+</td>
+<td>v3</td>
 </tr>
 
 <tr>
@@ -12788,22 +12878,22 @@ curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI D
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>Allows exact 5 character value.
 <br>Example: cageCode=00000
-<br> May be applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
 <br>Example: dbaName=ALLTEL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -12811,60 +12901,63 @@ curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI D
 <td>Entity EFT Indicator aka duns4.
 <br>Example: entityEFTIndicator=0000
 <br>NOTE: This parameter must be used in conjunction with ueiDUNS or ueiSAM.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y, N, U or null.
 <br>Example: debtSubjectToOffset=Y</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>Allows 9 character value.
 <br>Example: dodaac=DOD123456</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS -Allows 9 digit value, a maximum of up to 100 values 
+<td>Unique Entity Identifier DUNS
+<br>Allows 9 digit value; a maximum of up to 100 values 
 can be sent.
 <br>Example: ueiDUNS=025114695
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
-<td>Unique Entity Identifier SAM - Allow 12 digit value, 
-alphanumeric (ueiSAM values not yet available for search).
+<td>Unique Entity Identifier SAM
+<br>Allow a 12 character value; a maximum of up to 100 values can be sent.
 <br>Example: ueiSAM=RV56IG5JM6G9
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
 <br>Example: entityStructureCode=2L</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>Allows Description or null.
 <br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
-<td>Allows D or null.
-<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""</td>
-<td>v1<br>v2</td>
+<td>v1 or v2: Allows D or null.
+<br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""
+<br><br>v3: Allows Y or N
+<br>Examples: exclusionStatusFlag=Y, exclusionStatusFlag=N</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -12872,38 +12965,38 @@ alphanumeric (ueiSAM values not yet available for search).
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
-NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate will be V2.
+NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
-<td>Allows Partial or Complete value.
+<td>Allows partial or complete value search.
 <br>Example: legalBusinessName=ALLTEL
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
 <br>Example: primaryNaics=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
 <br>Example: purposeOfRegistrationCode=Z2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>Allows a text.
 <br>Example: purposeOfRegistrationDesc=All Awards</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -12911,7 +13004,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -12919,8 +13012,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: ueiCreationDate=01/01/2019, ueiCreationDate=[01/01/2019,05/29/2019]
-<br>Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -12928,342 +13021,347 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCity</td>
 <td>Allows a text.
 <br>Example: physicalAddressCity=Herndon
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCongressionalDistrict</td>
-<td>Allows 2 characters.
+<td>Allows a 2 digit code.
 <br>Example: physicalAddressCongressionalDistrict=08
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressCountryCode</td>
-<td>Allows 3 character code.
+<td>Allows a 3 character code for SAM registrants and also a 2 character code for non-SAM registrants.
 <br>Example: physicalAddressCountryCode=USA
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressProvinceOrStateCode</td>
-<td>Allows 2 character code.
+<td>Allows a 2 character code.
 <br>Example: physicalAddressProvinceOrStateCode=AR
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
-<td>Allows 5 digit code for US zip codes and any digit postal code for non-US postal codes.
-<br>Example: physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>SAM registrants:
+<br>Allows a 5 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br>Non-SAM registrants:
+<br>Allows a 5 or a 9 digit code for US zip codes and any digit postal code for non-US postal codes.
+<br><br>Examples: 
+<br>physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054, physicalAddressZipPostalCode=21202-3117
+<br><br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>samExtractCode --> registrationStatus</td>
 <td>Allows 1 character code (A for Active or E for Expired).
 <br>samExtractCode=A, registrationStatus=A
-<br>NOTE: This parameter is being renamed.  samExtractCode is in V1 and registrationStatus is in V2. 
+<br>NOTE: This parameter is being renamed. samExtractCode is in V1 and registrationStatus is starting V2. 
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
 <br>Example: businessTypeCode=OY</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>businessTypeDesc</td>
 <td>Allows a text.
 <br>Example: businessTypeDesc=Woman Owned Business </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureCode=MF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureDesc=MANUFACTURER OF GOODS</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
 <br>Example: stateOfIncorporationCode=VA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: stateOfIncorporationDesc=Virginia</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
 <br>Example: countryOfIncorporationCode=USA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: countryOfIncorporationDesc=UNITED STATES</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
 <br>Example: naicsCode=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsDesc</td>
 <td>Allows a text.
 <br>Example: naicsDesc=Furniture Stores</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows a 6-digit NAICS Code, "" or !"" values.
 <br>Example: naicsLimitedSB=513310</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
 <br>Example: pscCode=X1QA</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>pscDesc</td>
 <td>Allows a text.
 <br>Example: pscDesc=Screws</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateCode</td>
 <td>Allows 2 digit character code or "any".
 <br>Example: servedDisasterStateCode=VA, servedDisasterStateCode=any</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateName</td>
 <td>Allows Name or null.
 <br>Example: servedDisasterStateName=Virginia</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyCode</td>
 <td>Allows 3 digit county code.
 <br>Example: servedDisasterCountyCode=060</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
 <td>Allows a text.
 <br>Example: servedDisasterCountyName=FAIRFAX</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
 <td>Allows 4 digit MSA code.
 <br>Example: servedDisasterMSA=1720</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeCode</td>
 <td>Allows a two character code or null.
 <br>Example: sbaBusinessTypeCode=12</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeDesc</td>
 <td>Allows text.
 <br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>includeSections</td>
-<td>Allows to filter data by sections, entityRegistration, coreData, assertions, repsAndCerts and pointsOfContact.
-<br>To return all sections, provide 'All' with the includeSections parameter.
-<br>Example: includeSections=entityRegistration,coreData; includeSections=All
-<br>Applicable to non-SAM registrants but only the sections
- entityRegistration and coreData are applicable.<br><br>
- Note: The repsAndCerts section will only be returned if included in this parameter.</td>
-<td>v1<br>v2</td>
+<td>Allows to filter data by sections.
+<br><br>SAM registrants:
+<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts, and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
+<br>Non-SAM registrants:
+<br>The applicable sections are entityRegistration and coreData.
+<br><br>Examples: includeSections=entityRegistration,coreData, includeSections=All, includeSections=repsAndCerts
+<br><br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>format</td>
-<td>Allows user to download different file formats(csv and json are allowable values).
+<td>Allows user to download data into the JSON and CSV file formats.
 <br>Example: format=csv
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.
-<br>Example: emailId= Yes
-<br>Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>Allows user to get JSON or CSV file download links sent to the email address associated to the API key used in the request, when used in conjunction with the format parameter.
+<br>Example: emailId=Yes&format=JSON
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>edi</td>
 <td>Allows text.
 <br>Example: edi=YES/NO</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelCode</td>
 <td>Allows 2 character code.
 <br>Example: companySecurityLevelCode=92</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelDesc</td>
 <td>Allows text.
 <br>Example: companySecurityLevelDesc=Government Top Secret</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
 <br>Example: highestEmployeeSecurityLevelCode=90</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelDesc</td>
 <td>Allows text.
 <br>Example: highestEmployeeSecurityLevelDesc=Government Top Secret</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ultimateParentUEIDUNS</td>
 <td>Allows text.
 <br>Example: ultimateParentUEIDUNS=090123451</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ultimateParentUEISAM</td>
 <td>Allows text.
 <br>Example: ultimateParentUEISAM=RQ56IG5JM6G9</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeCode</td>
 <td>Allows text, Determines Agency Business Purpose Code.
 <br>Example: agencyBusinessPurposeCode=1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeDesc</td>
 <td>Allows text.
 <br>Example: agencyBusinessPurposeDesc=Buyer and Seller</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>routingNumber</td>
 <td>Allows a text.
 <br>Example: routingNumber=0123456</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>bankName</td>
 <td>Allows a text.
 <br>Example: bankName=TEST</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>accountNumber</td>
 <td>Allows a text.
 <br>Example: accountNumber=012323456</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>eftWaiverFlag</td>
 <td>Allows a text.
 <br>Example: eftWaiverFlag=Y</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>agencyLocationCode</td>
 <td>Allows a text.
 <br>Example: agencyLocationCode=1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>disbursingOfficeSymbol</td>
 <td>Allows a text.
 <br>Example: disbursingOfficeSymbol=1093</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>taxpayerName</td>
 <td>Allows a text.
 <br>Example: taxpayerName=test</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>taxpayerIdentificationNumber</td>
 <td>Allows a text.
 <br>Example: taxpayerIdentificationNumber=01234</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -13271,7 +13369,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
 <br>Example: sensitivity=public
 <br>NOTE: If you use this parameter with a sensitive key you must use a POST call for all request types.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 </details>
@@ -13295,176 +13393,186 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>samRegistered</td>
 <td>string</td>
-<td>SAM Registered Entity
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<td>SAM Registered or non-SAM Registered Entity
+<br>Applicable to both SAM and non-SAM registrants.
+</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityEFTIndicator</td>
 <td>string</td>
 <td>Entity EFT Indicator</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>cageCode</td>
 <td>string</td>
 <td>CAGE Code
-<br> May be applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>string</td>
 <td>DoDAAC</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name
-<br> Applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>Doing Business As Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>string</td>
 <td>Purpose of Registration Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>string</td>
 <td>Purpose of Registration Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>Registration Status</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>evsSource</td>
+<td>string</td>
+<td><br>Source of the SAM and non-SAM registrants.
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>string</td>
 <td>Registration Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastUpdateDate</td>
 <td>string</td>
 <td>Last Update Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>expirationDate -><br> registrationExpirationDate</td>
 <td>string</td>
 <td>Registration Expiration Date
-<br>NOTE: This parameter is being renamed.  
-expirationDate is in V1 and registrationExpirationDate will be V2.</td>
-<td>v1<br>v2</td>
+<br>NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>activeDate</td>
 <td>string</td>
 <td>Active Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiStatus</td>
 <td>string</td>
 <td>Unique Entity Identifier Status
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
-<td>noPublicDisplayFlag</td>
+<td>noPublicDisplayFlag --> publicDisplayFlag</td>
 <td>string</td>
-<td>No Public Display Flag</td>
-<td>v1<br>v2</td>
+<td>Opted for Public Display or opted out of it.
+<br>v1 or v2: Returns noPublicDisplayFlag.
+<br>v3: Returns publicDisplayFlag.
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>exclusionStatusFlag</td>
 <td>string</td>
-<td>Exclusion Status Flag
-<br>Description (Debarred)
-<br><br>For exclusionStatusFlag=D in the API request, the response would:
-<br>1. Show 'exclusionStatusFlag': 'Debarred'
-<br>2. Populate 'exclusionURL' with the endpoint to access the debarred record</td>
-<td>v1<br>v2</td>
+<td>v1 or v2: Returns D (Debarred) or null.
+<br>v3: Returns Y (Debarred) or N (not Debarred).
+<br><br>NOTE: Debarred entities will populate 'exclusionURL' with the endpoint to access the debarred record.</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>exclusionURL</td>
 <td>string</td>
 <td>Active Exclusion URL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dnbOpenData</td>
 <td>string</td>
 <td>Dun & Bradstreet Open Data
-<br> Applicable to non-SAM registrants.</td>
-<td>v2</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>v2<br>v3</td>
 </tr>
 </table>
 </details>
 
 <details>
-<summary>core Data Section</summary><br>
+<summary>coreData Section</summary><br>
 
 <summary>entityHierarchyInformation</summary>
 <table>
@@ -13492,21 +13600,28 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>evsSource</td>
+<td>string</td>
+<td>Source of the SAM registrant hierarchy</td>
+<td>v3</td>
 </tr>
 
 <tr>
@@ -13569,7 +13684,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </div>
 </tr>
 
@@ -13577,7 +13692,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 </table>
@@ -13631,6 +13746,13 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
+<td>evsSource</td>
+<td>string</td>
+<td>Source of the SAM registrant hierarchy
+<br><br>NOTE: This field is only available in v3</td>
+</tr>
+
+<tr>
 <div style="width: 20px">
 <td>physicalAddress</td>
 <td>object</td>
@@ -13701,7 +13823,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -13736,6 +13858,13 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </tr>
 
 <tr>
+<td>evsSource</td>
+<td>string</td>
+<td>Source of the SAM registrant hierarchy
+<br><br>NOTE: This field is only available in v3</td>
+</tr>
+
+<tr>
 <div style="width: 20px">
 <td>physicalAddress</td>
 <td>object</td>
@@ -13807,7 +13936,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 
@@ -13833,21 +13962,28 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
 <td>Unique Entity Identifier DUNS</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>evsSource</td>
+<td>string</td>
+<td>Source of the SAM registrant hierarchy</td>
+<td>v3</td>
 </tr>
 
 <tr>
@@ -13911,7 +14047,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </div>
 </tr>
 
@@ -13919,7 +14055,7 @@ expirationDate is in V1 and registrationExpirationDate will be V2.</td>
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 </details>
@@ -14128,77 +14264,77 @@ samMonitoring
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>postalCode</td>
 <td>string</td>
 <td>Postal Code</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v2</td>
+<td>v2<br>v3</td>
 </tr>
 
 </table>
@@ -14221,42 +14357,42 @@ samMonitoring
 <td>source</td>
 <td>string</td>
 <td>Source</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>hierarchyDepartmentCode</td>
 <td>string</td>
 <td>Hierarchy Department Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>hierarchyDepartmentName</td>
 <td>string</td>
 <td>Hierarchy Department Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>hierarchyAgencyCode</td>
 <td>string</td>
 <td>Hierarchy Agency Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>hierarchyAgencyName</td>
 <td>string</td>
 <td>Hierarchy Agency Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>hierarchyOfficeCode</td>
 <td>string</td>
 <td>Hierarchy Office Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -14273,21 +14409,21 @@ samMonitoring
 <td>taxpayerName</td>
 <td>string</td>
 <td>Taxpayer Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>taxpayerIdentificationType</td>
 <td>string</td>
 <td>Taxpayer Identification Type</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>taxpayerIdentificationNumber</td>
 <td>string</td>
 <td>Taxpayer Identification Number</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -14304,57 +14440,51 @@ samMonitoring
 <td>entityURL</td>
 <td>string</td>
 <td>Entity URL</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
 <td>Entity Division Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
 <td>Entity Division Number</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStartDate</td>
 <td>string</td>
 <td>Entity Start Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fiscalYearEndCloseDate</td>
 <td>string</td>
 <td>Fiscal Year End Close Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>submissionDate</td>
 <td>string</td>
 <td>Submission Date</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>mpin</td>
 <td>string</td>
 <td>mpin</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
-<tr>
-<td>correspondenceFlag</td>
-<td>string</td>
-<td>Correspondence Flag<br>NOTE: This field does not contain any data and has been removed from the API.</td>
-<td>v1<br>v2</td>
-</tr>
 </table>
 
 <summary>physicalAddress, mailingAddress Sub Sections </summary>
@@ -14371,7 +14501,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address Line 1 and Mailing Address Line 1.
 <br>Only Physical Address Line 1 is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -14379,7 +14509,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address Line 2 and Mailing Address Line 2.
 <br>Only Physical Address Line 2 is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -14387,7 +14517,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address City and Mailing Address City.
 <br>Only Physical Address City is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -14395,7 +14525,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address State or Province Code and Mailing Address State or Province Code.
 <br>Only Physical Address State or Province Code is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -14403,7 +14533,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address Zip and Mailing Address Zip.
 <br>Only Physical Address Zip is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -14411,7 +14541,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address Zip Plus4 and Mailing Address Zip Plus4.
 <br>Only Physical Address Zip Plus4 is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -14419,7 +14549,7 @@ samMonitoring
 <td>string</td>
 <td>Physical Address Country Code and Mailing Address Country Code.
 <br>Only Physical Address Country Code is applicable to non-SAM registrants.</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -14434,7 +14564,7 @@ samMonitoring
 <td>congressionalDistrict</td>		
 <td>string</td>		
 <td>Physical Address Congressional District</td>
-<td>v1<br>v2</td>		
+<td>v1<br>v2<br>v3</td>		
 </tr>		
 </table>
 
@@ -14451,125 +14581,125 @@ samMonitoring
 <td>agencyBusinessPurposeCode</td>
 <td>string</td>
 <td>Agency Business Purpose Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeDesc</td>
 <td>string</td>
 <td>Agency Business Purpose Desc</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>string</td>
 <td>Entity Structure Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>string</td>
 <td>Entity Structure Desc</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityTypeCode</td>
 <td>string</td>
 <td>Entity Type Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>entityTypeDesc</td>
 <td>string</td>
 <td>Entity Type Desc</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>profitStructureCode</td>
 <td>string</td>
 <td>Profit Structure Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>profitStructureDesc</td>
 <td>string</td>
 <td>Profit Structure Desc</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>string</td>
 <td>Organization StructureCode</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>string</td>
 <td>Organization StructureDesc</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>string</td>
 <td>State Of Incorporation Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>string</td>
 <td>State Of Incorporation Desc</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>string</td>
 <td>Country Of Incorporation Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>string</td>
 <td>Country Of Incorporation Desc</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 <tr>
 <td>companySecurityLevelCode</td>
 <td>string</td>
 <td>Company Security Level Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelDesc</td>
 <td>string</td>
 <td>Company Security Level Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>string</td>
 <td>Highest Employee Security Level Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelDesc</td>
 <td>string</td>
 <td>Highest Employee Security Level Description</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -14609,7 +14739,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 
@@ -14653,7 +14783,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -14670,14 +14800,14 @@ samMonitoring
 <td>creditCardUsage</td>
 <td>string</td>
 <td>Credit Card Usage</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>string</td>
 <td>Debt Subject to Offset Flag</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -14773,7 +14903,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -14816,7 +14946,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -14881,7 +15011,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -14903,7 +15033,7 @@ samMonitoring
 <td>primaryNaics</td>
 <td>string</td>
 <td>Primary NAICS</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -14945,7 +15075,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -14973,7 +15103,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -14990,21 +15120,21 @@ samMonitoring
 <td>disasterRegistryFlag</td>
 <td>string</td>
 <td>Disaster Registry Flag</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>bondingFlag</td>
 <td>string</td>
 <td>Bonding Flag</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>bondingLevels</td>
 <td>string</td>
 <td>Bonding Flag</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -15059,7 +15189,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -15076,14 +15206,14 @@ samMonitoring
 <td>averageAnnualRevenue</td>
 <td>string</td>
 <td>Average Annual Revenue</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>averageNumberOfEmployees</td>
 <td>string</td>
 <td>Average Number Of Employees</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -15100,14 +15230,14 @@ samMonitoring
 <td>employeesLocation</td>
 <td>string</td>
 <td>Employees Location</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>receiptsLocation</td>
 <td>string</td>
 <td>Receipts Location</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -15124,21 +15254,21 @@ samMonitoring
 <td>barrelsCapacity</td>
 <td>string</td>
 <td>Barrels Capacity</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>totalAssets</td>
 <td>string</td>
 <td>Total Assets</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>megawattHours</td>
 <td>string</td>
 <td>Mega Watt Hours</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -15155,42 +15285,42 @@ samMonitoring
 <td>ediInformationFlag</td>
 <td>string</td>
 <td>EDI Information Flag</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>vanProvider</td>
 <td>string</td>
 <td>Van Provider</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>isaQualifier</td>
 <td>string</td>
 <td>ISA Qualifier</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>isaIdentifier</td>
 <td>string</td>
 <td>ISA Identifier</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>functionalGroupIdentifier</td>
 <td>string</td>
 <td>Functional Group Identifier</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>requestFlag820s</td>
 <td>string</td>
 <td>Request Flag 820s</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 </details>
@@ -16343,7 +16473,7 @@ The repsAndCerts section is not available for use with the format parameter.
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -17478,7 +17608,7 @@ The repsAndCerts section is not available for use with the format parameter.
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -18622,7 +18752,7 @@ The repsAndCerts section is not available for use with the format parameter.
 </table>
 </details>
 </td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -18638,35 +18768,35 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>grantsCertificationStatus</td>
 <td>string</td>
 <td>Grants Certification Status</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>grantsCertifyingResponse</td>
 <td>string</td>
 <td>Grants Certifying Response</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>certifierFirstName</td>
 <td>string</td>
 <td>Certifier First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>certifierLastName</td>
 <td>string</td>
 <td>Certifier Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>certifierMiddleInitial</td>
 <td>string</td>
 <td>Certifier Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -18683,28 +18813,28 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>farPDF</td>
 <td>string</td>
 <td>FAR PDF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>farAndDfarsPDF</td>
 <td>string</td>
 <td>FAR and DFARS PDF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>architectEngineeringPDF</td>
 <td>string</td>
 <td>Architect Engineering PDF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>financialAssistanceCertificationsPDF</td>
 <td>string</td>
 <td>Financial Assistance Certifications PDF</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -18725,112 +18855,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -18847,112 +18977,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -18969,112 +19099,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -19091,112 +19221,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -19213,112 +19343,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -19335,112 +19465,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -19457,112 +19587,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -19579,112 +19709,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -19701,112 +19831,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -19823,112 +19953,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -19945,112 +20075,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -20067,112 +20197,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -20189,112 +20319,112 @@ The repsAndCerts section is not available for use with the format parameter.
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 
@@ -20314,37 +20444,62 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 The API will return one of the following responses:
 
-| HTTP Response Code | Description |
-| ---- | ----------- |
-| 200 | Successful. Data will be returned in JSON/CSV format. |
-| 400 | Application Level Error Messages: <br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * ueiDUNS can only be 9 digits. <br><br> * ueiDUNS Should Contain Only Numeric value. <br><br> * Invalid Input Parameters. <br><br>  * The parameters: 'includeSections', 'emailId' or 'format' are not permitted inside Query Param(q) <br><br>  * A maximum of 100 ueiSAM is allowed. <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br> * The parameter emailId must be provided in conjunction with the parameter format. <br><br> * No api_key was supplied in request body. Please submit with a valid API key. <br><br> * No system account credentials are provided. Please provide credentials via basic authentication. <br><br> * entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter. <br><br> * IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system. <br><br> * Type of Connection chosen in your user profile does not allow access to this api. |
-| 406 | Invalid Accept Header. |
-| 415 | Invalid Content-Type Header. |
+<table>
+  <tr>
+    <th style="background-color: #f1f1f1; width:33%"><b>HTTP Response Code</b></th>
+    <th style="background-color: #f1f1f1;"><b>Description</b></th>
+  </tr>
+  <tr>
+    <td>200</td>
+    <td>The API call is successful.</td>
+  </tr>
+  <tr>
+    <td>400</td>
+    <td>Application Level Error Messages:<br><br>1. Invalid "Date" format:<br>v1 or v2: Date should be specified in the format: MM/dd/YYYY.<br>v3: "message":"Dates must be specified in the MM/DD/YYYY format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY format."<br><br>2. Invalid "ueiDUNS" length:<br>v1 or v2: ueiDUNS can only be 9 digits.<br>v3: "message":"The search parameter 'ueiDUNS' can only be a 9 digit value.", "detail":"Please provide valid values for ueiDUNS."<br><br>3. Invalid "ueiDUNS" value:<br>v1 or v2: ueiDUNS Should Contain Only Numeric value.<br>v3: "message":"The search parameter 'ueiDUNS' can only be a 9 digit value.", "detail":"Please provide valid values for ueiDUNS."<br><br>4. Invalid Search Parameter:<br>v1 or v2: "Invalid Input Parameters","detail":"< user-provided invalid parameter >"<br>v3: "message":"The search parameter, < user-provided invalid parameter > does not exist.", "detail":"Please refer to https://open.gsa.gov/api/entity-api/ for a list of allowable search parameters."<br><br>5. If ‘includeSections’, ‘emailId’ or ‘format’ is sent in the "q" parameter:<br>v1 or v2: The parameters: ‘includeSections’, ‘emailId’ or ‘format’ are not permitted inside Query Param(q).<br>v3: "message":"The search parameters 'includeSections','emailId' and 'format' are not permitted inside Query Param(q)", "detail":"Please provide these parameters separately"<br><br>6. More than 100 ueiSAM values are sent:<br>v1 or v2: A maximum of 100 ueiSAM is allowed.<br>v3: "message": "More than 100 UEI SAM are not allowed.", "detail": "Please limit the number of UEI SAM to 100."<br><br>7. More than 100 ueiDUNS values are sent:<br>v1 or v2: A maximum of 100 ueiDUNS is allowed.<br>v3: "message": "More than 100 UEI DUNS are not allowed.", "detail": "Please limit the number of UEI DUNS to 100."<br><br>8. More than 100 CAGE values are sent:<br>v1 or v2: A maximum of 100 CAGE Codes is allowed.<br>v3: "message":"More than 100 CAGE Codes are not allowed.", "detail":"Please limit the number of CAGE Codes to 100."<br><br>9. If "emailId" is sent on its own:<br>v1 or v2: The parameter emailId must be provided in conjunction with the parameter format.<br>v3: "message":"The search parameter 'emailId' must be provided in conjunction with the search parameter 'format.", "detail":"Users can opt for receiving the requested JSON/CSV files in their emails."<br><br>10. If "entityEFTIndicator" is sent on its own:<br>v1 or v2: entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter.<br>v3: message":"The search parameter 'entityEFTIndicator' must be provided in conjunction with the search parameter 'ueiDUNS' or 'ueiSAM'.", "detail":"The entityEFTIndicator parameter cannot be provided on its own."<br><br>11. File size exceeded for JSON or CSV exports:<br>v1 or v2: "Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search."<br>v3: "message":"Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search.", "detail":"Count Exceeded Error"<br><br>12. JSON or CSV file generation is in-progress:<br>v1 or v2: File Processing in Progress. Please check again later.<br>v3: "message": "The requested JSON or CSV file is not generated yet. Please try again later.", "details": "Larger files will take some time to process."<br><br>13. Using an expired Token for downloading JSON or CSV files:<br>v1 or v2: title":"Requested File is Expired and cannot be downloaded","detail":"We are not able to process your request"<br>v3: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number."<br><br>14. More than 10,000 records are requested via "page" and "size" parameters:<br>v1 or v2: "title":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."<br>v3: "message":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."<br><br>15. More than 10 for "size" is requested:<br>v1 or v2: "title":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"<br>v3: "message":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"<br><br>16. Missing "Basic Auth" under "Authorization" and missing System Account credentials:<br>v1 or v2: No system account credentials are provided. Please provide credentials via basic authentication.<br><br>17. Different IP Address than that mentioned in the System Account:<br>v1 or v2: IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.<br><br>18. API Key does not belong to the System Account:<br>v1 or v2: System Account and API Key you have provided do not match. Please visit your System Account and obtain the API Key from there.<br><br>19. System Account has a different value for "Type of Connection":<br>v1 or v2: "title": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",<br>v3: "message": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",<br><br>20. If GET is used with System Accounts:<br>v1 or v2: GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.<br>v3: "message": "Permission denied", "detail": "GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.",<br><br>21. Insufficient API Key privileges to download a JSON or CSV File:<br>v1 or v2: The API Key is not authorized to access this < file type > Extract<br>v3: The API Key is not authorized to access this < file type > Extract</td>
+  </tr>
+  <tr>
+    <td>401</td>
+    <td>1. Missing "Basic Auth" under "Authorization" and missing System Account credentials:<br>v3: "message": "The System Account Credentials are missing", "detail": "Please provide valid System Account User Name and Password.",<br><br>2. Providing "Basic Auth" under "Authorization", but missing or invalid System Account credentials:<br>v1 or v2: Unauthorized<br>v3: Unauthorized<br><br>3. Different IP Address than that mentioned in the System Account:<br>v3: "message": "Invalid IP Address", "detail": "The IP Addresses sending the API requests and the ones associated with the System Account must be the same.",<br><br>4. API Key does not belong to the System Account:<br>v3: "message": "System Account-API Key Mismatch", "detail": "The System Account and API Key you have provided do not match. Please refer to your System Account and obtain the API Key from there.",</td>
+  </tr>
+  <tr>
+    <td>403 Forbidden</td>
+    <td> 1. Missing API Key:<br>v1 or v2: No api_key was supplied in request body. Please submit with a valid API key.<br>v3: No api_key was supplied in request body. Please submit with a valid API key.<br><br>2. An invalid API Key:<br>v1 or v2: An invalid API key was supplied. Please submit with a valid API key.<br>v3: An invalid API key was supplied. Please submit with a valid API key.</td>
+  </tr>
+  <tr>
+    <td>406</td>
+    <td>1. Missing Accept Header:<br>v1 or v2: "title": "Invalid Accept Header", "detail": "Request Header parameter needs to pass valid Accept value",<br>v3: "message": "Missing or Invalid Request Header, Accept", "detail": "The allowable values are application/json, application/zip.",<br><br>2. Invalid Accept Header:<br>v1 or v2: "title": "Invalid Accept Header", "detail": "Could not find acceptable representation",<br>v3: "title": "Invalid Accept Header","detail": "Could not find acceptable representation",</td>
+  </tr>
+  <tr>
+    <td>415 Unsupported Media Type</td>
+    <td>Missing or Invalid Content-Type Header:<br>v1 or v2: "title": "Invalid Content-Type Header", "detail": "Request Header parameter needs to pass valid Content-Type value",<br>v3:"message": "Missing or Invalid Request Header, Content_Type", "detail": "The allowable value is application/json.",</td>
+  </tr>
+  <tr>
+    <td colspan="2"> NOTE:<br>Error messages in v1 and v2 are returned in this fashion: httpStatus, title, detail, errorCode, source<br>Error messages in v3 are returned in this fashion: Status, timestamp, message, detail, errorCode, transaction_id</td>
+  </tr>
+</table>
 
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Examples
 
-### Example 1: Get the "entityRegistration" and "coreData" sections for all the 'Joint Venture Women' or 'Asian-Pacific' Entities that are registered for "All Awards" or "Federal Assistance Awards".
+### Example 1: Get the "entityRegistration" and "coreData" sections for all the "Joint Venture Women" or "Asian-Pacific" Entities that are registered for "All Awards" or "Federal Assistance Awards".
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>    https://api.sam.gov/entity-information/v2/entities?api_key=< A valid FOUO API Key >&purposeOfRegistrationCode=Z1~Z2&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')&includeSections=entityRegistration,coreData<br>
-<br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?< A valid FOUO API Key >&purposeOfRegistrationCode=Z1~Z2&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')&includeSections=entityRegistration,coreData<br>
-<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key=< A valid FOUO API Key >&purposeOfRegistrationCode=Z1~Z2&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')&includeSections=entityRegistration,coreData
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key=< A valid FOUO API Key >&purposeOfRegistrationCode=Z1~Z2&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')&includeSections=entityRegistration,coreData
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?< A valid FOUO API Key >&purposeOfRegistrationCode=Z1~Z2&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')&includeSections=entityRegistration,coreData
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?< A valid FOUO API Key >&purposeOfRegistrationCode=Z1~Z2&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')&includeSections=entityRegistration,coreData
+<br><br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
+FOUO Response for one record is provided as an example in v2 and v3. <br>
 <p>
-<code>
+<code style="font-family:Source Sans Pro; font-size: 18px">
 <pre>
-{
-    "totalRecords": 15963,
-
-A sample record is shown below:
-
+V2:
     "entityData": [
         {
             "entityRegistration": {
@@ -20467,24 +20622,24 @@ A sample record is shown below:
                     "fiscalYearEndCloseDate": "12/31",
                     "submissionDate": "2021-06-23",
                 },
-"physicalAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },
-        "mailingAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
                 "congressionalDistrict": "09",
                 "generalInformation": {
                     "agencyBusinessPurposeCode": null,
@@ -20550,16 +20705,239 @@ A sample record is shown below:
                         }
                     ]
                 },
-   "financialInformation": {
-          "creditCardUsage": "N",
-          "debtSubjectToOffset": null
-        }
-      }
-    },
+                "financialInformation": {
+                  "creditCardUsage": "N",
+                  "debtSubjectToOffset": null
+                }
+              }
+            }
 
  "links": {
         "selfLink": "https://api.sam.gov/entity-information/v2/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=0&size=10",
         "nextLink": "https://api.sam.gov/entity-information/v2/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=1&size=10"
+    }
+}
+V3:
+    "entityData": [
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "V4EUJ1MPVH45",
+                "ueiDUNS": "118094699",
+                "entityEFTIndicator": null,
+                "cageCode": "92G16",
+                "dodaac": null,
+                "legalBusinessName": "HH Real Estate Properties Corporation",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z1",
+                "purposeOfRegistrationDesc": "Federal Assistance Awards",
+                "registrationStatus": "Active",
+                "evsSource": "D&B",
+                "registrationDate": "2021-06-23",
+                "lastUpdateDate": "2021-06-24",
+                "registrationExpirationDate": "2022-06-23",
+                "activationDate": "2021-06-24",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2022-06-23",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "Y",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": null,
+                                "ueiDUNS": null,
+                                "legalBusinessName": null,
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": null,
+                                    "addressLine2": null,
+                                    "city": null,
+                                    "stateOrProvinceCode": null,
+                                    "countryCode": null,
+                                    "zipCode": null,
+                                    "zipCodePlus4": null
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": null,
+                                "ueiDUNS": null,
+                                "legalBusinessName": null,
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": null,
+                                    "addressLine2": null,
+                                    "city": null,
+                                    "stateOrProvinceCode": null,
+                                    "countryCode": null,
+                                    "zipCode": null,
+                                    "zipCodePlus4": null
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "Currently Not Available",
+                        "dbaName": "Currently Not Available",
+                        "outOfBusinessFlag": "Currently Not Available",
+                        "monitoringStatus": "Currently Not Available",
+                        "lastUpdated": "Currently Not Available",
+                        "addressLine1": "Currently Not Available",
+                        "addressLine2": "Currently Not Available",
+                        "city": "Currently Not Available",
+                        "postalCode": "Currently Not Available",
+                        "stateOrProvinceCode": "Currently Not Available",
+                        "countryCode": "Currently Not Available"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": null,
+                    "entityDivisionName": null,
+                    "entityDivisionNumber": null,
+                    "entityStartDate": "2021-05-17",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2021-06-23",
+                },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "congressionalDistrict": "09",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "2L",
+                    "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2X",
+                    "profitStructureDesc": "For Profit Organization",
+                    "organizationStructureCode": null,
+                    "organizationStructureDesc": null,
+                    "stateOfIncorporationCode": "TN",
+                    "stateOfIncorporationDesc": "TENNESSEE",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": null,
+                    "companySecurityLevelDesc": null,
+                    "highestEmployeeSecurityLevelCode": null,
+                    "highestEmployeeSecurityLevelDesc": null
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "23",
+                            "businessTypeDesc": "Minority Owned Business"
+                        },
+                        {
+                            "businessTypeCode": "2X",
+                            "businessTypeDesc": "For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "8C",
+                            "businessTypeDesc": "Joint Venture Women Owned Small Business"
+                        },
+                        {
+                            "businessTypeCode": "8W",
+                            "businessTypeDesc": "Woman Owned Small Business"
+                        },
+                        {
+                            "businessTypeCode": "A2",
+                            "businessTypeDesc": "Woman Owned Business"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        },
+                        {
+                            "businessTypeCode": "HK",
+                            "businessTypeDesc": "Community Development Corporation Owned Firm"
+                        },
+                        {
+                            "businessTypeCode": "OY",
+                            "businessTypeDesc": "Black American Owned"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "N",
+                    "debtSubjectToOffset": null
+                  }
+                }
+              },
+
+ "links": {
+        "selfLink": "https://api.sam.gov/entity-information/v3/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=0&size=10",
+        "nextLink": "https://api.sam.gov/entity-information/v3/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=1&size=10"
     }
 }
 </pre>
@@ -20567,25 +20945,25 @@ A sample record is shown below:
 </p>
 </details>
 
-### Example 2: Get Entities with no Hierarchy, a small hierarchy and a large Hierarchy.
+### Example 2: Get Entities with no Hierarchy, a small hierarchy, and a large Hierarchy.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key=< A valid FOUO API Key >&ueiDUNS=[075211119~439307625~261471459]&includeSections=entityRegistration,coreData <br>
-<br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?< A valid FOUO API Key >&ueiDUNS=[075211119~439307625~261471459]&includeSections=entityRegistration,coreData <br>
-<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key=< A valid FOUO API Key >&ueiDUNS=[075211119~439307625~261471459]&includeSections=entityRegistration,coreData
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key=< A valid FOUO API Key >&ueiDUNS=[075211119~439307625~261471459]&includeSections=entityRegistration,coreData
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?< A valid FOUO API Key >&ueiDUNS=[075211119~439307625~261471459]&includeSections=entityRegistration,coreData
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?< A valid FOUO API Key >&ueiDUNS=[075211119~439307625~261471459]&includeSections=entityRegistration,coreData
+<br><br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
+FOUO Responses for the three records are provided in v2 and v3.
+<br>
 <p>
-<code>
+<code style="font-family:Source Sans Pro; font-size: 18px">
 <pre>
-{
-    "totalRecords": 3,
-
-Entity with no Hierarchy:
+Entity with no Hierarchy in v2:
 
     "entityData": [
         {
@@ -20709,24 +21087,24 @@ Entity with no Hierarchy:
                     "fiscalYearEndCloseDate": "05/01",
                     "submissionDate": "2018-11-19",
                 },
-"physicalAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },
-        "mailingAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
                 "congressionalDistrict": "00",
                 "generalInformation": {
                     "agencyBusinessPurposeCode": null,
@@ -20781,7 +21159,208 @@ Entity with no Hierarchy:
         }
     ],
 
-Entity with a small Hierarchy:
+Entity with no Hierarchy in v3:
+
+    "entityData": [
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "JK9SLMFNHKP4",
+                "ueiDUNS": "075211119",
+                "entityEFTIndicator": null,
+                "cageCode": "87AW0",
+                "dodaac": null,
+                "legalBusinessName": "BRADLEY DEFENSE SOLUTIONS INC",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z2",
+                "purposeOfRegistrationDesc": "All Awards",
+                "registrationStatus": "Inactive",
+                "evsSource": "D&B",
+                "registrationDate": "2018-11-19",
+                "lastUpdateDate": "2021-01-21",
+                "registrationExpirationDate": "2019-11-19",
+                "activationDate": "2018-11-29",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2019-11-19",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "Y",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": null
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": null,
+                                "ueiDUNS": null,
+                                "legalBusinessName": null,
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": null,
+                                    "addressLine2": null,
+                                    "city": null,
+                                    "stateOrProvinceCode": null,
+                                    "countryCode": null,
+                                    "zipCode": null,
+                                    "zipCodePlus4": null
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": null,
+                                "ueiDUNS": null,
+                                "legalBusinessName": null,
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": null,
+                                    "addressLine2": null,
+                                    "city": null,
+                                    "stateOrProvinceCode": null,
+                                    "countryCode": null,
+                                    "zipCode": null,
+                                    "zipCodePlus4": null
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "Currently Not Available",
+                        "dbaName": "Currently Not Available",
+                        "outOfBusinessFlag": "Currently Not Available",
+                        "monitoringStatus": "Currently Not Available",
+                        "lastUpdated": "Currently Not Available",
+                        "addressLine1": "Currently Not Available",
+                        "addressLine2": "Currently Not Available",
+                        "city": "Currently Not Available",
+                        "postalCode": "Currently Not Available",
+                        "stateOrProvinceCode": "Currently Not Available",
+                        "countryCode": "Currently Not Available"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": null,
+                    "entityDivisionName": null,
+                    "entityDivisionNumber": null,
+                    "entityStartDate": "2018-05-01",
+                    "fiscalYearEndCloseDate": "05/01",
+                    "submissionDate": "2018-11-19",
+                },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "congressionalDistrict": "00",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "2L",
+                    "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2X",
+                    "profitStructureDesc": "For Profit Organization",
+                    "organizationStructureCode": "MF",
+                    "organizationStructureDesc": "Manufacturer of Goods",
+                    "stateOfIncorporationCode": "NY",
+                    "stateOfIncorporationDesc": "NEW YORK",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": null,
+                    "companySecurityLevelDesc": null,
+                    "highestEmployeeSecurityLevelCode": null,
+                    "highestEmployeeSecurityLevelDesc": null
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "2X",
+                            "businessTypeDesc": "For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        },
+                        {
+                            "businessTypeCode": "MF",
+                            "businessTypeDesc": "Manufacturer of Goods"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "Y",
+                    "debtSubjectToOffset": "N",
+                },
+                
+            }
+        }
+    ],
+
+Entity with a small Hierarchy in v2:
 
         {
             "entityRegistration": {
@@ -20835,7 +21414,8 @@ Entity with a small Hierarchy:
                                     "addressLine1": "Address Line1",
                                     "addressLine2": "Address Line2",
                                     "city": "City",
-                                    "stateOrProvinceCode": "State/Province",                                                      "countryCode": "XXX",
+                                    "stateOrProvinceCode": "State/Province", 
+                                    "countryCode": "XXX",
                                     "zipCode": "11111",
                                     "zipCodePlus4": "9999"
                                 },
@@ -20849,7 +21429,8 @@ Entity with a small Hierarchy:
                                     "addressLine1": "Address Line1",
                                     "addressLine2": "Address Line2",
                                     "city": "City",
-                                    "stateOrProvinceCode": "State/Province",                                                      "countryCode": "XXX",
+                                    "stateOrProvinceCode": "State/Province",
+                                    "countryCode": "XXX",
                                     "zipCode": "11111",
                                     "zipCodePlus4": "9999"
                                 },
@@ -20862,13 +21443,14 @@ Entity with a small Hierarchy:
                         "ueiDUNS": "655149347",
                         "legalBusinessName": "REPUBBLICA ITALIANA",
                         "physicalAddress": {
-                                    "addressLine1": "Address Line1",
-                                    "addressLine2": "Address Line2",
-                                    "city": "City",
-                                    "stateOrProvinceCode": "State/Province",                                                      "countryCode": "XXX",
-                                    "zipCode": "11111",
-                                    "zipCodePlus4": "9999"
-                                },
+                            "addressLine1": "Address Line1",
+                            "addressLine2": "Address Line2",
+                            "city": "City",
+                            "stateOrProvinceCode": "State/Province",
+                            "countryCode": "XXX",
+                            "zipCode": "11111",
+                            "zipCodePlus4": "9999"
+                        },
                         "phoneNumber": null
                     },
                     "evsMonitoring": {
@@ -20901,24 +21483,24 @@ Entity with a small Hierarchy:
                     "fiscalYearEndCloseDate": "12/31",
                     "submissionDate": "2021-02-25",
                 },
-"physicalAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },
-        "mailingAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
                 "congressionalDistrict": 00,
                 "generalInformation": {
                     "agencyBusinessPurposeCode": null,
@@ -20968,14 +21550,202 @@ Entity with a small Hierarchy:
         }
     ],
     
-"links": {
-        "selfLink": "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=%5B075211119%7E439307625%5D&includeSections=entityRegistration%2CcoreData&page=0&size=10"
-    }
-}
+Entity with a small Hierarchy in v3:
 
-Entity with a large Hierarchy:
-{
-    "totalRecords": 1,
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "JXCSEVSG7785",
+                "ueiDUNS": "439307625",
+                "entityEFTIndicator": null,
+                "cageCode": "AQ773",
+                "dodaac": null,
+                "legalBusinessName": "CONSIGLIO NAZIONALE DELLE RICERCHE - CNR",
+                "dbaName": "ICB ISTITUTO DI CHIMICA BIOMOLECOLARE",
+                "purposeOfRegistrationCode": "Z2",
+                "purposeOfRegistrationDesc": "All Awards",
+                "registrationStatus": "Active",
+                "evsSource": "D&B",
+                "registrationDate": "2018-03-02",
+                "lastUpdateDate": "2021-03-03",
+                "registrationExpirationDate": "2022-02-25",
+                "activationDate": "2021-03-03",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2022-02-25",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "Y",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": "NLXHHB71VMK5",
+                                "ueiDUNS": "655149347",
+                                "legalBusinessName": "REPUBBLICA ITALIANA",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": "Address Line2",
+                                    "city": "City",
+                                    "stateOrProvinceCode": "State/Province",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "9999"
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": "CWVEJHEWM684",
+                                "ueiDUNS": "440774594",
+                                "legalBusinessName": "CONSIGLIO NAZIONALE DELLE RICERCHE",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": "Address Line2",
+                                    "city": "City",
+                                    "stateOrProvinceCode": "State/Province",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "9999"
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": "NLXHHB71VMK5",
+                        "ueiDUNS": "655149347",
+                        "legalBusinessName": "REPUBBLICA ITALIANA",
+                        "physicalAddress": {
+                            "addressLine1": "Address Line1",
+                            "addressLine2": "Address Line2",
+                            "city": "City",
+                            "stateOrProvinceCode": "State/Province",
+                            "countryCode": "XXX",
+                            "zipCode": "11111",
+                            "zipCodePlus4": "9999"
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "Currently Not Available",
+                        "dbaName": "Currently Not Available",
+                        "outOfBusinessFlag": "Currently Not Available",
+                        "monitoringStatus": "Currently Not Available",
+                        "lastUpdated": "Currently Not Available",
+                        "addressLine1": "Currently Not Available",
+                        "addressLine2": "Currently Not Available",
+                        "city": "Currently Not Available",
+                        "postalCode": "Currently Not Available",
+                        "stateOrProvinceCode": "Currently Not Available",
+                        "countryCode": "Currently Not Available"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": null,
+                    "entityDivisionName": null,
+                    "entityDivisionNumber": null,
+                    "entityStartDate": "2019-02-04",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2021-02-25",
+                },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "congressionalDistrict": 00,
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "ZZ",
+                    "entityStructureDesc": "Other",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2U",
+                    "profitStructureDesc": "Other Not For Profit Organization",
+                    "organizationStructureCode": null,
+                    "organizationStructureDesc": null,
+                    "stateOfIncorporationCode": null,
+                    "stateOfIncorporationDesc": null,
+                    "countryOfIncorporationCode": "ITA",
+                    "countryOfIncorporationDesc": "ITALY",
+                    "companySecurityLevelCode": null,
+                    "companySecurityLevelDesc": null,
+                    "highestEmployeeSecurityLevelCode": null,
+                    "highestEmployeeSecurityLevelDesc": null
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "2U",
+                            "businessTypeDesc": "Other Not For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "N",
+                    "debtSubjectToOffset": null,
+                },
+            }
+        }
+    ],
+
+Entity with a large Hierarchy in v2:
+
     "entityData": [
         {
             "entityRegistration": {
@@ -21029,7 +21799,8 @@ Entity with a large Hierarchy:
                                     "addressLine1": "Address Line1",
                                     "addressLine2": "Address Line2",
                                     "city": "City",
-                                    "stateOrProvinceCode": "State/Province",                                                      "countryCode": "XXX",
+                                    "stateOrProvinceCode": "State/Province",
+                                    "countryCode": "XXX",
                                     "zipCode": "11111",
                                     "zipCodePlus4": "9999"
                                 },
@@ -21043,7 +21814,8 @@ Entity with a large Hierarchy:
                                     "addressLine1": "Address Line1",
                                     "addressLine2": "Address Line2",
                                     "city": "City",
-                                    "stateOrProvinceCode": "State/Province",                                                      "countryCode": "XXX",
+                                    "stateOrProvinceCode": "State/Province",
+                                    "countryCode": "XXX",
                                     "zipCode": "11111",
                                     "zipCodePlus4": "9999"
                                 },
@@ -21056,13 +21828,14 @@ Entity with a large Hierarchy:
                         "ueiDUNS": "403284867",
                         "legalBusinessName": "Airbus SE",
                         "physicalAddress": {
-                                    "addressLine1": "Address Line1",
-                                    "addressLine2": "Address Line2",
-                                    "city": "City",
-                                    "stateOrProvinceCode": "State/Province",                                                      "countryCode": "XXX",
-                                    "zipCode": "11111",
-                                    "zipCodePlus4": "9999"
-                                },
+                            "addressLine1": "Address Line1",
+                            "addressLine2": "Address Line2",
+                            "city": "City",
+                            "stateOrProvinceCode": "State/Province",
+                            "countryCode": "XXX",
+                            "zipCode": "11111",
+                            "zipCodePlus4": "9999"
+                        },
                         "phoneNumber": null
                     },
                     "evsMonitoring": {
@@ -21095,25 +21868,25 @@ Entity with a large Hierarchy:
                     "fiscalYearEndCloseDate": "12/31",
                     "submissionDate": "2020-06-09",
                 },
-  "physicalAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },
-        "mailingAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },                
-                  "congressionalDistrict": "00",
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },                
+                "congressionalDistrict": "00",
                 "generalInformation": {
                     "agencyBusinessPurposeCode": null,
                     "agencyBusinessPurposeDesc": null,
@@ -21165,10 +21938,206 @@ Entity with a large Hierarchy:
             }
         }
     ],
-    "links": {
-        "selfLink": "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=261471459&includeSections=entityRegistration%2CcoreData&page=0&size=10"
-    }
-}
+
+Entity with a large Hierarchy in v3:
+
+    "entityData": [
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "MJ5MN6SGYKF6",
+                "ueiDUNS": "261471459",
+                "entityEFTIndicator": null,
+                "cageCode": "F9073",
+                "dodaac": null,
+                "legalBusinessName": "AIRBUS DEFENCE AND SPACE SAS",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z2",
+                "purposeOfRegistrationDesc": "All Awards",
+                "registrationStatus": "Active",
+                "evsSource": "D&B",
+                "registrationDate": "2018-08-23",
+                "lastUpdateDate": "2021-05-26",
+                "registrationExpirationDate": "2021-12-06",
+                "activationDate": "2020-06-09",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2021-12-06",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "Y",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": "NPMCJNWE75K6",
+                                "ueiDUNS": "772363362",
+                                "legalBusinessName": "AIRBUS SAS",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": "Address Line2",
+                                    "city": "City",
+                                    "stateOrProvinceCode": "State/Province",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "9999"
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": "CK6JEE77RH16",
+                                "ueiDUNS": "737771675",
+                                "legalBusinessName": "ASTRIUM SAS",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": "Address Line2",
+                                    "city": "City",
+                                    "stateOrProvinceCode": "State/Province",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "9999"
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": "QM7GAR7U8NK3",
+                        "ueiDUNS": "403284867",
+                        "legalBusinessName": "Airbus SE",
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": "Address Line1",
+                            "addressLine2": "Address Line2",
+                            "city": "City",
+                            "stateOrProvinceCode": "State/Province",
+                            "countryCode": "XXX",
+                            "zipCode": "11111",
+                            "zipCodePlus4": "9999"
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "Currently Not Available",
+                        "dbaName": "Currently Not Available",
+                        "outOfBusinessFlag": "Currently Not Available",
+                        "monitoringStatus": "Currently Not Available",
+                        "lastUpdated": "Currently Not Available",
+                        "addressLine1": "Currently Not Available",
+                        "addressLine2": "Currently Not Available",
+                        "city": "Currently Not Available",
+                        "postalCode": "Currently Not Available",
+                        "stateOrProvinceCode": "Currently Not Available",
+                        "countryCode": "Currently Not Available"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": null,
+                    "entityDivisionName": null,
+                    "entityDivisionNumber": null,
+                    "entityStartDate": "2017-05-31",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2020-06-09",
+                },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },                
+                "congressionalDistrict": "00",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "8H",
+                    "entityStructureDesc": "Corporate Entity (Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2X",
+                    "profitStructureDesc": "For Profit Organization",
+                    "organizationStructureCode": "MF",
+                    "organizationStructureDesc": "Manufacturer of Goods",
+                    "stateOfIncorporationCode": null,
+                    "stateOfIncorporationDesc": null,
+                    "countryOfIncorporationCode": "FRA",
+                    "countryOfIncorporationDesc": "FRANCE",
+                    "companySecurityLevelCode": null,
+                    "companySecurityLevelDesc": null,
+                    "highestEmployeeSecurityLevelCode": null,
+                    "highestEmployeeSecurityLevelDesc": null
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "2X",
+                            "businessTypeDesc": "For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        },
+                        {
+                            "businessTypeCode": "MF",
+                            "businessTypeDesc": "Manufacturer of Goods"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "N",
+                    "debtSubjectToOffset": null,
+                },
+            }
+        }
+    ],
 </pre>
 </code>
 </p>
@@ -21177,20 +22146,22 @@ Entity with a large Hierarchy:
 ### Example 3: Get an Entity with no EVS Monitoring.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>    https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=079870954&includeSections=entityRegistration,coreData<br>
-<br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=079870954&includeSections=entityRegistration,coreData<br>
-<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=079870954&includeSections=entityRegistration,coreData
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key= < FOUO API Key >&ueiDUNS=079870954&includeSections=entityRegistration,coreData
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=079870954&includeSections=entityRegistration,coreData
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< FOUO API Key >&ueiDUNS=079870954&includeSections=entityRegistration,coreData
+<br><br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
+FOUO Response for the record is provided in v2 and v3. <br>
 <p>
-<code>
+<code style="font-family:Source Sans Pro; font-size: 18px">
 <pre>
-{
-    "totalRecords": 1,
+v2:
+
     "entityData": [
         {
             "entityRegistration": {
@@ -21314,23 +22285,23 @@ Note: FOUO Response for one record is provided as an example <br>
                     "submissionDate": "2020-04-28",
                 },
                 "physicalAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },
-        "mailingAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
                 "congressionalDistrict": "04",
                 "generalInformation": {
                     "agencyBusinessPurposeCode": null,
@@ -21391,31 +22362,238 @@ Note: FOUO Response for one record is provided as an example <br>
             }
         }
     ],
-    "links": {
-        "selfLink": "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=079870954&includeSections=entityRegistration%2CcoreData&page=0&size=10"
-    }
-}
+
+V3:
+
+    "entityData": [
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "XY1XDER4WPJ6",
+                "ueiDUNS": "079870954",
+                "entityEFTIndicator": null,
+                "cageCode": "7F0U0",
+                "dodaac": null,
+                "legalBusinessName": "Enterprise Assurance Management",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z2",
+                "purposeOfRegistrationDesc": "All Awards",
+                "registrationStatus": "Active",
+                "evsSource": "D&B",
+                "registrationDate": "2015-07-10",
+                "lastUpdateDate": "2021-03-30",
+                "registrationExpirationDate": "2021-10-25",
+                "activationDate": "2020-04-30",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2021-10-25",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "Y",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": null,
+                                "ueiDUNS": null,
+                                "legalBusinessName": null,
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": null,
+                                    "addressLine2": null,
+                                    "city": null,
+                                    "stateOrProvinceCode": null,
+                                    "countryCode": null,
+                                    "zipCode": null,
+                                    "zipCodePlus4": null
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": null,
+                                "ueiDUNS": null,
+                                "legalBusinessName": null,
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": null,
+                                    "addressLine2": null,
+                                    "city": null,
+                                    "stateOrProvinceCode": null,
+                                    "countryCode": null,
+                                    "zipCode": null,
+                                    "zipCodePlus4": null
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "Enterprise Assurance Management",
+                        "dbaName": "N/A",
+                        "outOfBusinessFlag": "N/A",
+                        "monitoringStatus": "N/A",
+                        "lastUpdated": "N/A",
+                        "addressLine1": "N/A",
+                        "addressLine2": "N/A",
+                        "city": "N/A",
+                        "postalCode": "N/A",
+                        "stateOrProvinceCode": "N/A",
+                        "countryCode": "N/A"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": "eamsecured.com",
+                    "entityDivisionName": "Enterprise Assurance Management Corp., (EAMC)",
+                    "entityDivisionNumber": "Enterprise",
+                    "entityStartDate": "2011-06-30",
+                    "fiscalYearEndCloseDate": "10/31",
+                    "submissionDate": "2020-04-28",
+                },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "congressionalDistrict": "04",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "8H",
+                    "entityStructureDesc": "Corporate Entity (Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2X",
+                    "profitStructureDesc": "For Profit Organization",
+                    "organizationStructureCode": "XS",
+                    "organizationStructureDesc": "Subchapter S Corporation",
+                    "stateOfIncorporationCode": "MD",
+                    "stateOfIncorporationDesc": "MARYLAND",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": "93",
+                    "companySecurityLevelDesc": "Government Secret",
+                    "highestEmployeeSecurityLevelCode": "94",
+                    "highestEmployeeSecurityLevelDesc": "Government Top Secret"
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "2X",
+                            "businessTypeDesc": "For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "A2",
+                            "businessTypeDesc": "Woman Owned Business"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        },
+                        {
+                            "businessTypeCode": "OY",
+                            "businessTypeDesc": "Black American Owned"
+                        },
+                        {
+                            "businessTypeCode": "XS",
+                            "businessTypeDesc": "Subchapter S Corporation"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "Y",
+                    "debtSubjectToOffset": "N",
+                },
+            }
+        }
+    ],
 </pre>
 </code>
 </p>
 </details>
 
-### Example 4: Get Entitities with Address Change and Name Change resulting from EVS Monitoring.
+### Example 4: Get Entities with Address Change and Name Change resulting from EVS Monitoring.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=[081270422~080192883]&includeSections=entityRegistration,coreData <br>
-<br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=[081270422~080192883]&includeSections=entityRegistration,coreData <br>
-<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=[081270422~080192883]&includeSections=entityRegistration,coreData
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key= < FOUO API Key >&ueiDUNS=[081270422~080192883]&includeSections=entityRegistration,coreData
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiDUNS=[081270422~080192883]&includeSections=entityRegistration,coreData
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< FOUO API Key >&ueiDUNS=[081270422~080192883]&includeSections=entityRegistration,coreData
+<br><br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: FOUO Response for one record is provided as an example <br>
+FOUO Response for the two records is provided in v2 and v3. <br>
 <p>
-<code>
+<code style="font-family:Source Sans Pro; font-size: 18px">
 <pre>
-An Entity with an Address Change resulting from EVS Monitoring:
+An Entity with an Address Change resulting from EVS Monitoring in v2:
+
 "entityData": [
         {
             "entityRegistration": {
@@ -21498,14 +22676,14 @@ An Entity with an Address Change resulting from EVS Monitoring:
                         "ueiDUNS": "001368083",
                         "legalBusinessName": "International Business Machines Corporation",
                         "physicalAddress": {
-                                    "addressLine1": "Address Line1",
-                                    "addressLine2": null,
-                                    "city": "City",
-                                    "stateOrProvinceCode": "XX",
-                                    "countryCode": "XXX",
-                                    "zipCode": "11111",
-                                    "zipCodePlus4": "1111"
-                                },
+                            "addressLine1": "Address Line1",
+                            "addressLine2": null,
+                            "city": "City",
+                            "stateOrProvinceCode": "XX",
+                            "countryCode": "XXX",
+                            "zipCode": "11111",
+                            "zipCodePlus4": "1111"
+                        },
                         "phoneNumber": null
                     },
                     "evsMonitoring": {
@@ -21539,23 +22717,23 @@ An Entity with an Address Change resulting from EVS Monitoring:
                     "submissionDate": "2020-08-10",
                 },
                 "physicalAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },
-        "mailingAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
                 "congressionalDistrict": "00",
                 "generalInformation": {
                     "agencyBusinessPurposeCode": null,
@@ -21605,8 +22783,206 @@ An Entity with an Address Change resulting from EVS Monitoring:
             }
         },
 
-An Entity with a Name Change resulting from EVS Monitoring:
- {
+An Entity with an Address Change resulting from EVS Monitoring in v3:
+
+"entityData": [
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "ZQGGHJH74DW7",
+                "ueiDUNS": "081270422",
+                "entityEFTIndicator": null,
+                "cageCode": "855J5",
+                "dodaac": null,
+                "legalBusinessName": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z2",
+                "purposeOfRegistrationDesc": "All Awards",
+                "registrationStatus": "Active",
+                "evsSource": "D&B",
+                "registrationDate": "2018-07-24",
+                "lastUpdateDate": "2021-06-10",
+                "registrationExpirationDate": "2021-08-10",
+                "activationDate": "2020-08-13",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2021-08-10",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "Y",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": "J64CSQTQNRC1",
+                                "ueiDUNS": "001368083",
+                                "legalBusinessName": "International Business Machines Corporation",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": "J64CSQTQNRC1",
+                                "ueiDUNS": "001368083",
+                                "legalBusinessName": "International Business Machines Corporation",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": "J64CSQTQNRC1",
+                        "ueiDUNS": "001368083",
+                        "legalBusinessName": "International Business Machines Corporation",
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": "Address Line1",
+                            "addressLine2": null,
+                            "city": "City",
+                            "stateOrProvinceCode": "XX",
+                            "countryCode": "XXX",
+                            "zipCode": "11111",
+                            "zipCodePlus4": "1111"
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "International Business Machines Corporation",
+                        "dbaName": null,
+                        "outOfBusinessFlag": "N/A",
+                        "monitoringStatus": "Y",
+                        "lastUpdated": "Y",
+                        "addressLine1": "New Address Line 1",
+                        "addressLine2": "New Address Line 2",
+                        "city": "New City",
+                        "postalCode": "New Zip/Postal Code",
+                        "stateOrProvinceCode": "New State/Province",
+                        "countryCode": "New Country Code"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": "http://www.ibm.com/us/en",
+                    "entityDivisionName": "IBM Global Business Services",
+                    "entityDivisionNumber": "16",
+                    "entityStartDate": "1911-01-01",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2020-08-10",
+                },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "congressionalDistrict": "00",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "2L",
+                    "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2X",
+                    "profitStructureDesc": "For Profit Organization",
+                    "organizationStructureCode": null,
+                    "organizationStructureDesc": null,
+                    "stateOfIncorporationCode": "NY",
+                    "stateOfIncorporationDesc": "NEW YORK",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": "94",
+                    "companySecurityLevelDesc": "Government Top Secret",
+                    "highestEmployeeSecurityLevelCode": "94",
+                    "highestEmployeeSecurityLevelDesc": "Government Top Secret"
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "2X",
+                            "businessTypeDesc": "For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "N",
+                    "debtSubjectToOffset": "N",
+                },
+                
+            }
+        },
+
+An Entity with a Name Change resulting from EVS Monitoring in v2:
+
+"entityData": [
+        {
             "entityRegistration": {
                 "samRegistered": "Yes",
                 "ueiSAM": "JH9ZARNKWKC7",
@@ -21687,14 +23063,14 @@ An Entity with a Name Change resulting from EVS Monitoring:
                         "ueiDUNS": "080192883",
                         "legalBusinessName": "IBM Southeast Employees' Credit Union",
                         "physicalAddress": {
-                                    "addressLine1": "Address Line1",
-                                    "addressLine2": null,
-                                    "city": "City",
-                                    "stateOrProvinceCode": "XX",
-                                    "countryCode": "XXX",
-                                    "zipCode": "11111",
-                                    "zipCodePlus4": "1111"
-                                },
+                            "addressLine1": "Address Line1",
+                            "addressLine2": null,
+                            "city": "City",
+                            "stateOrProvinceCode": "XX",
+                            "countryCode": "XXX",
+                            "zipCode": "11111",
+                            "zipCodePlus4": "1111"
+                        },
                         "phoneNumber": null
                     },
                     "evsMonitoring": {
@@ -21728,23 +23104,221 @@ An Entity with a Name Change resulting from EVS Monitoring:
                     "submissionDate": "2021-03-03",
                 },
                 "physicalAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },
-        "mailingAddress": {
-          "addressLine1": "Address1",
-          "addressLine2": "Address2",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "ABC"
-        },
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "congressionalDistrict": "00",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "8H",
+                    "entityStructureDesc": "Corporate Entity (Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "A8",
+                    "profitStructureDesc": "Non-Profit Organization",
+                    "organizationStructureCode": null,
+                    "organizationStructureDesc": null,
+                    "stateOfIncorporationCode": "FL",
+                    "stateOfIncorporationDesc": "FLORIDA",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": null,
+                    "companySecurityLevelDesc": null,
+                    "highestEmployeeSecurityLevelCode": null,
+                    "highestEmployeeSecurityLevelDesc": null
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "A8",
+                            "businessTypeDesc": "Non-Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "N",
+                    "debtSubjectToOffset": "N",
+                    
+                },
+                
+            }
+        }
+    ],
+
+An Entity with a Name Change resulting from EVS Monitoring in v3:
+
+"entityData": [
+          {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "JH9ZARNKWKC7",
+                "ueiDUNS": "080192883",
+                "entityEFTIndicator": null,
+                "cageCode": "7X7G0",
+                "dodaac": null,
+                "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z1",
+                "purposeOfRegistrationDesc": "Federal Assistance Awards",
+                "registrationStatus": "Active",
+                "evsSource": "D&B",
+                "registrationDate": "2017-07-27",
+                "lastUpdateDate": "2021-03-11",
+                "registrationExpirationDate": "2022-03-03",
+                "activationDate": "2021-03-05",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2022-03-03",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "N",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "ueiDUNS": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": "JH9ZARNKWKC7",
+                                "ueiDUNS": "080192883",
+                                "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": "JH9ZARNKWKC7",
+                                "ueiDUNS": "080192883",
+                                "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": "JH9ZARNKWKC7",
+                        "ueiDUNS": "080192883",
+                        "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": "Address Line1",
+                            "addressLine2": null,
+                            "city": "City",
+                            "stateOrProvinceCode": "XX",
+                            "countryCode": "XXX",
+                            "zipCode": "11111",
+                            "zipCodePlus4": "1111"
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "International Business Machines CORPORATION",
+                        "dbaName": null,
+                        "outOfBusinessFlag": "N/A",
+                        "monitoringStatus": "Y",
+                        "lastUpdated": "Y",
+                        "addressLine1": "N/A",
+                        "addressLine2": "N/A",
+                        "city": "N/A",
+                        "postalCode": "N/A",
+                        "stateOrProvinceCode": "N/A",
+                        "countryCode": "N/A"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": "www.ithinkfi.org",
+                    "entityDivisionName": null,
+                    "entityDivisionNumber": null,
+                    "entityStartDate": "1969-09-03",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2021-03-03",
+                },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
                 "congressionalDistrict": "00",
                 "generalInformation": {
                     "agencyBusinessPurposeCode": null,
@@ -21800,47 +23374,139 @@ An Entity with a Name Change resulting from EVS Monitoring:
 </p>
 </details>
 
-### Example 5:  Get a CSV file of Active Entity records.
+### Example 5:  I have a Fed System Account and the Role required to access non-SAM Registrant entities, both Public and NPDY. How can I obtain them?
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&registrationStatus=A<br>
-<br>
-<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&registrationStatus=A<br>
-<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v3/entities?api_key= < API Key >&samRegistered=No
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< API Key >&samRegistered=No<br>
+<br><br>
 </details>
 
 <details>
 <summary>Response</summary>
-Click to view CSV Response for one record <a href="v1/entity-sample-csv-1.xlsx">Sample CSV Response</a><br>
+Response for one Public and one NPDY record is provided.<br>
+<p>
+<code style="font-family:Source Sans Pro; font-size: 18px">
+<pre>
+A Public non-SAM Registered entity:
+
+"entityData": [
+    {
+      "entityRegistration": {
+        "samRegistered": "No",
+        "ueiSAM": "JF19T45AM8F2",
+        "ueiDUNS": "117853992",
+        "cageCode": "null",
+        "legalBusinessName": "Anchored Consulting Group LLC",
+        "registrationStatus": "Active",
+        "evsSource": "D&B",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": null,
+        "ueiCreationDate": "2021-07-20",
+        "publicDisplayFlag": "Y",
+        "dnbOpenData": "Y"
+      },
+      "coreData": {
+        "physicalAddress": {
+          "addressLine1": "Address 1",
+          "addressLine2": "null",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": null,
+          "countryCode": "XXX"
+        }
+      }
+    },
+
+An NPDY non-SAM Registered entity:
+
+"entityData": [
+    {
+      "entityRegistration": {
+        "samRegistered": "No",
+        "ueiSAM": "MC4NTRBK7AX5",
+        "ueiDUNS": "117731472",
+        "cageCode": "null",
+        "legalBusinessName": "FPDS",
+        "registrationStatus": "Active",
+        "evsSource": "D&B",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": null,
+        "ueiCreationDate": "2021-07-20",
+        "publicDisplayFlag": "N",
+        "dnbOpenData": "Y"
+      },
+      "coreData": {
+        "physicalAddress": {
+          "addressLine1": "Address 1",
+          "addressLine2": "null",
+          "city": "City",
+          "stateOrProvinceCode": "XX",
+          "zipCode": "11111",
+          "zipCodePlus4": "1111",
+          "countryCode": "XXX"
+        }
+      }
+    },
+</pre>
+</code>
+</p>
 </details>
 
-### Example 6: Get a JSON file of all the Entities using the POST request:<br>
+### Example 6: Get a CSV file of Active SAM-registered Entities.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>  https://api.sam.gov/entity-information/v2/entities?format=JSON  <br>
-<br>
-<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?format=JSON <br>
-<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&registrationStatus=A
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key= < FOUO API Key >&registrationStatus=A
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&registrationStatus=A
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< FOUO API Key >&registrationStatus=A
+<br><br>
+</details>
+
+<details>
+<summary>Response</summary>
+Click to view a sample v2 CSV Response for one record <a href="v1/v2_CSV_Response.xlsx" target="_blank">v2_CSV_Response</a><br>
+Click to view a sample v3 CSV Response for one record <a href="v1/v3_CSV_Response.xlsx" target="_blank">v3_CSV_Response</a><br>
+</details>
+
+### Example 7: Get a JSON file of all the Entities using the POST request:<br>
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>: https://api.sam.gov/entity-information/v2/entities?format=JSON
+<br><br>https://api.sam.gov/entity-information/v3/entities?format=JSON
+<br><br>
+<b>Alpha URL:</b> : https://api-alpha.sam.gov/entity-information/v2/entities?format=JSON
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?format=JSON
+<br><br>
 <ul>
-<li> Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM.png">Sample Authorization</a></li>
-<li> Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM.PNG">Sample Request Header</a></li>
+<li> Click to view v2 Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM.png">Sample Authorization</a></li>
+<li> Click to view v2 Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM.PNG">Sample Request Header</a></li>
+<li>Click to view v3 Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_V3.png">Sample Authorization</a></li>
+<li>Click to view v3 Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_V3.png">Sample Request Header</a></li>
 </ul>
 </details>
 <details>
 <summary>Response</summary>
 <ul>
 <li><b>Download link with the token:</b><br> 
-Extract File will be available for download with POST url:<br>
-https://api.sam.gov/entity-information/v2/download-entities?token=< value > in some time. 
-If you have provided an email id, you will get a notification email once file is ready for download. 
-Requests for Larger Set of Data may take longer time to process.
+Extract File will be available for download with POST url:
+https://api.sam.gov/entity-information/v2/download-entities?token=< value > in some time. If you have provided an email id, you will get a notification email once file is ready for download. Requests for Larger Set of Data may take longer time to process.
+<br><br>Extract File will be available for download with POST url:
+https://api.sam.gov/entity-information/v3/download-entities?token=< value > in some time. If you have provided an email id, you will get a notification email once file is ready for download. Requests for Larger Set of Data may take longer time to process.
 </li>
 
 <li><b>Download the file using the token via POST:</b><br> 
-https://api.sam.gov/entity-information/v2/download-entities?token=< value >
+https://api.sam.gov/entity-information/v2/download-entities?token=< value>
+<br>https://api.sam.gov/entity-information/v3/download-entities?token=< value >
 <ul>
-<li>Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_Download.png">Sample Authorization</a></li>
-<li>Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download.PNG">Sample Request Header</a></li>
+<li>Click to view v2 Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_Download.png">Sample Authorization</a></li>
+<li>Click to view v2 Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download.PNG">Sample Request Header</a></li>
+
+<li>Click to view v3 Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/Auth_EM_Download_V3.png">Sample Authorization</a></li>
+<li>Click to view v3 Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/Header_EM_Download_V3.png">Sample Request Header</a></li>
 </ul></li>
 
 <li>Once the file is downloaded, save it by renaming it in this format: < filename >.json.gz. </li>
@@ -21893,6 +23559,7 @@ Disclaimer:
 | 04/08/2021 | v2.5 | * Updated Contact Us information.<br><br> * Updated pointsOfContact fields information for public api.<br><br> * Updated Application Level Error Messages in HTTP Response Codes section. | 
 | 05/12/2021 | v2.6 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api. | 
 | 07/16/2021 | v2.7 | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information.<br><br> * Added example curl requests.<br><br> * Updated the examples. |
+| 07/20/2021 | v2.8 | * Added v3 documentation.<br><br> * Updated OpenAPI specification file.<br><br> * Updated HTTP Response Codes.<br><br> * Added v3 Examples. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
