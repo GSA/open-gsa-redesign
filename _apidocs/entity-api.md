@@ -92,7 +92,7 @@ Type of Connections and Rate Limits
 </tr>
 <tr>
 <td>Federal system</td>
-<td>Personal API key</td>
+<td>System account API key</td>
 <td>10,000 requests/day</td>
 </tr>
 </table>
@@ -574,7 +574,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>string</td>
 <td>CAGE Code
 <br>Applicable to both SAM and non-SAM registrants</td>
-<td>v1<br>v2<br>v3<br>v3</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 
@@ -622,11 +622,10 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>sourceType</td>
+<td>evsSource</td>
 <td>string</td>
 <td><br>Source of the SAM and non-SAM registrants.
-<br>Applicable to both SAM and non-SAM registrants.
-<br><br>NOTE: This response tag will soon be updated to evsSource.</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v3</td>
 </tr>
 
@@ -6079,11 +6078,10 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 </tr>
 
 <tr>
-<td>sourceType</td>
+<td>evsSource</td>
 <td>string</td>
 <td><br>Source of the SAM and non-SAM registrants.
-<br>Applicable to both SAM and non-SAM registrants.
-<br><br>NOTE: This response tag will soon be updated to evsSource.</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v3</td>
 </tr>
 
@@ -13476,11 +13474,10 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>sourceType</td>
+<td>evsSource</td>
 <td>string</td>
 <td><br>Source of the SAM and non-SAM registrants.
-<br>Applicable to both SAM and non-SAM registrants.
-<br><br>NOTE: This response tag will soon be updated to evsSource.</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v3</td>
 </tr>
 
@@ -20735,7 +20732,7 @@ V3:
                 "purposeOfRegistrationCode": "Z1",
                 "purposeOfRegistrationDesc": "Federal Assistance Awards",
                 "registrationStatus": "Active",
-                "sourceType": "SAM",
+                "evsSource": "D&B",
                 "registrationDate": "2021-06-23",
                 "lastUpdateDate": "2021-06-24",
                 "registrationExpirationDate": "2022-06-23",
@@ -21178,7 +21175,7 @@ Entity with no Hierarchy in v3:
                 "purposeOfRegistrationCode": "Z2",
                 "purposeOfRegistrationDesc": "All Awards",
                 "registrationStatus": "Inactive",
-                "sourceType": "SAM",
+                "evsSource": "D&B",
                 "registrationDate": "2018-11-19",
                 "lastUpdateDate": "2021-01-21",
                 "registrationExpirationDate": "2019-11-19",
@@ -21568,7 +21565,7 @@ Entity with a small Hierarchy in v3:
                 "purposeOfRegistrationCode": "Z2",
                 "purposeOfRegistrationDesc": "All Awards",
                 "registrationStatus": "Active",
-                "sourceType": "SAM",
+                "evsSource": "D&B",
                 "registrationDate": "2018-03-02",
                 "lastUpdateDate": "2021-03-03",
                 "registrationExpirationDate": "2022-02-25",
@@ -21958,7 +21955,7 @@ Entity with a large Hierarchy in v3:
                 "purposeOfRegistrationCode": "Z2",
                 "purposeOfRegistrationDesc": "All Awards",
                 "registrationStatus": "Active",
-                "sourceType": "SAM",
+                "evsSource": "D&B",
                 "registrationDate": "2018-08-23",
                 "lastUpdateDate": "2021-05-26",
                 "registrationExpirationDate": "2021-12-06",
@@ -22382,7 +22379,7 @@ V3:
                 "purposeOfRegistrationCode": "Z2",
                 "purposeOfRegistrationDesc": "All Awards",
                 "registrationStatus": "Active",
-                "sourceType": "SAM",
+                "evsSource": "D&B",
                 "registrationDate": "2015-07-10",
                 "lastUpdateDate": "2021-03-30",
                 "registrationExpirationDate": "2021-10-25",
@@ -22802,7 +22799,7 @@ An Entity with an Address Change resulting from EVS Monitoring in v3:
                 "purposeOfRegistrationCode": "Z2",
                 "purposeOfRegistrationDesc": "All Awards",
                 "registrationStatus": "Active",
-                "sourceType": "SAM",
+                "evsSource": "D&B",
                 "registrationDate": "2018-07-24",
                 "lastUpdateDate": "2021-06-10",
                 "registrationExpirationDate": "2021-08-10",
@@ -23191,7 +23188,7 @@ An Entity with a Name Change resulting from EVS Monitoring in v3:
                 "purposeOfRegistrationCode": "Z1",
                 "purposeOfRegistrationDesc": "Federal Assistance Awards",
                 "registrationStatus": "Active",
-                "sourceType": "SAM",
+                "evsSource": "D&B",
                 "registrationDate": "2017-07-27",
                 "lastUpdateDate": "2021-03-11",
                 "registrationExpirationDate": "2022-03-03",
@@ -23403,7 +23400,7 @@ A Public non-SAM Registered entity:
         "cageCode": "null",
         "legalBusinessName": "Anchored Consulting Group LLC",
         "registrationStatus": "Active",
-        "sourceType": "FSRS",
+        "evsSource": "D&B",
         "ueiStatus": "Active",
         "ueiExpirationDate": null,
         "ueiCreationDate": "2021-07-20",
@@ -23434,7 +23431,7 @@ An NPDY non-SAM Registered entity:
         "cageCode": "null",
         "legalBusinessName": "FPDS",
         "registrationStatus": "Active",
-        "sourceType": "FPDS",
+        "evsSource": "D&B",
         "ueiStatus": "Active",
         "ueiExpirationDate": null,
         "ueiCreationDate": "2021-07-20",
