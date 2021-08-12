@@ -588,6 +588,39 @@
 			"theme": ["Travel and Transportation"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Commercial Platforms Sales Data",
+			"description": "A aggregate collection of Commercial Platforms sales across all platforms",
+			"modified": "2021-07-29T16:44:06.857Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-07-29-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "Vendor sensitive",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Stephanie Fultz",
+				"hasEmail": "mailto:stephanie.fultz@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/fas-commercial-platforms-government-wide-operational-dashboard",
+					"title": "Commercial Platforms Sales Data",
+					"description": "A aggregate collection of Commercial Platforms sales across all platforms"
+				}
+			],
+			"keyword": ["Commercial Platforms", "Micropurchase"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "Common and Defense Centric Spend Tables",
 			"description": "Top-level view of annual Obligation totals for Categories and Subcategories.  Also includes Small Business utilization.  The only GWCM Dashboard that includes all 19 Lv1 categories (the other dashboards only include common-spend categories).",
 			"modified": "2021-07-16T17:21:58.837Z",
@@ -2352,6 +2385,39 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "FAS Connections II Data Feed",
+			"description": "The Connections II data displays obligated sales and task orders by agency, bureau and by industry partner for the Connections II Program.  (Connections II is now expired and is not accepting any new task orders. )",
+			"modified": "2021-07-29T17:30:05.935Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-07-29-05",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "Private",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Bart Bates",
+				"hasEmail": "mailto:james.bates@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/dataset/fas-connections-ii-data-feed",
+					"title": "FAS Connections II Data Feed",
+					"description": "The Connections II data displays obligated sales and task orders by agency, bureau and by industry partner for the Connections II Program. (Connections II is now expired and is not accepting any new task orders. )"
+				}
+			],
+			"keyword": ["FPDS Link", "Federal Agency", "Industry Partner"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "FAS Forecast Of Contracting Opportunities",
 			"description": "FAS Forecast of Contracting Opportunities",
 			"modified": "2016-01-21",
@@ -2385,6 +2451,39 @@
 			"programCode": ["023:014"],
 			"language": ["us-EN"],
 			"theme": ["Contracting", "FAS"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FAS Governmentwide Acquisition Contracts (GWAC) Data Feed",
+			"description": "The GWAC data displays obligated sales and task orders by agency, bureau and by industry partner for three GWAC programs: 8A Stars II, Alliant 2 and VETS 2.",
+			"modified": "2021-07-29T17:24:44.185Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-07-29-04",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "Private",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Bart Bates",
+				"hasEmail": "mailto:james.bart@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/dataset/fas-gwac-data-feed",
+					"title": "FAS Governmentwide Acquisition Contracts (GWAC) Data Feed",
+					"description": "The GWAC data displays obligated sales and task orders by agency, bureau and by industry partner for three GWAC programs: 8A Stars II, Alliant 2 and VETS 2."
+				}
+			],
+			"keyword": ["Contract Family", "FPDS Link", "Federal Agency", "Industry Partner"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "FAS Instructional Letters 2007-01 Procedures for Financial Responsibility",
@@ -4588,39 +4687,6 @@
 			"theme": ["API"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": ".Gov Domains",
-			"description": "This dataset offers the list of all .gov domains, including state, local, and tribal .gov domains. It does not include .mil domains, or other federal domains outside of .gov and .fed.us.",
-			"modified": "2021-04-27T12:33:06.514Z",
-			"accessLevel": "public",
-			"identifier": "GSA-138675",
-			"dataQuality": true,
-			"landingPage": "https://raw.githubusercontent.com/cisagov/dotgov-data/main/current-full.csv",
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "true",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "General Services Administration"
-			},
-			"accrualPeriodicity": "R/P1Y",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "DotGov Program",
-				"hasEmail": "mailto:dotgov@cisa.dhs.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"mediaType": "text/csv",
-					"format": "csv",
-					"title": "Full Domain Report",
-					"downloadURL": "https://raw.githubusercontent.com/cisagov/dotgov-data/main/current-full.csv"
-				}
-			],
-			"keyword": [".gov domains"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:019"],
-			"language": ["en-US"]
-		}, {
-			"@type": "dcat:Dataset",
 			"title": "Government Wide Category Management Agency Profile 2.0",
 			"description": "Newer version of the Agency Profile Report as of FY20.  This dashboard provides Department-level views of obligation aggregates by various breakdowns: Tier, Contract, Vendor, etc.  Also provides counts of Expiring contracts and awards as well as purchasing vehicle types.",
 			"modified": "2021-07-16T17:33:04.719Z",
@@ -4649,6 +4715,72 @@
 				}
 			],
 			"keyword": ["FPDS", "Spend Under Management", "obligation"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Government Wide Category Management (GWCM) Small Business Dashboard",
+			"description": "Focused on Small Business obligations, vendors, and the breakout of same by various Socioeconomic Indicator flags.",
+			"modified": "2021-07-29T17:02:19.398Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-29-02",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/small-business-dashboard",
+					"title": "Government Wide Category Management (GWCM) Small Business Dashboard",
+					"description": "Focused on Small Business obligations, vendors, and the breakout of same by various Socioeconomic Indicator flags."
+				}
+			],
+			"keyword": ["FPDS", "obligation", "small business"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Government Wide Category Management (GWCM) Solutions Profile Report",
+			"description": "This dashboard is specific to BIC solutions, compiling FPDS obligation data, Transactional submission data from the solutions, and Cost Avoidance data.  Used for the semi-annual BIC reviews as well as comparative views between solution-managing categories/agencies and contract solutions.",
+			"modified": "2021-07-29T17:13:11.279Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-29-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/new-solutions-profile-report",
+					"title": "Government Wide Category Management (GWCM) Solutions Profile Report",
+					"description": "This dashboard is specific to BIC solutions, compiling FPDS obligation data, Transactional submission data from the solutions, and Cost Avoidance data.  Used for the semi-annual BIC reviews as well as comparative views between solution-managing categories/agencies and contract solutions."
+				}
+			],
+			"keyword": ["FPDS", "obligation", "small business"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
@@ -4790,8 +4922,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "EDI JSON 07 19 21.json",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b6620508-e759-4de6-aa32-0be0b75c11e7/download/edi-json-07-19-21.json"
+					"title": "EDI JSON 08 12 21.json",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b6620508-e759-4de6-aa32-0be0b75c11e7/download/edi-json-08-12-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -4997,8 +5129,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA FITARA Actions and Milestones 2020-05-13",
-					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the Feb. 2021, quarterly submission to OMB on Feb. 28, 2021.",
+					"title": "GSA FITARA Actions and Milestones 2020-08-12",
+					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the Aug. 2021, quarterly submission to OMB on Aug 12, 2021.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
 				}
@@ -5030,7 +5162,7 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "GSA IT Reform Cost Savings/Avoidance",
-					"description": "GSA's May 2021 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description": "GSA's August 2021 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -7394,6 +7526,40 @@
 				}
 			],
 			"keyword": ["Networx", "Networx Telecommunications", "networx business volume"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2021 3rd Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
+			"modified": "2021-08-10T20:01:35.083Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-10-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"isPartOf": "GSA-2015-08-27",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TotRevFY21_3rdQtr.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/cf970cc6-00d2-4bcb-ac5d-92cbf39bf401/resource/5ee89ad1-aebb-4db3-a72e-71398a81489d/download/totrevfy21_3rdqtr.xlsx"
+				}
+			],
+			"keyword": ["Networx", "billing", "networx business volume", "telecommunications"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
@@ -10451,7 +10617,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_bldg_rexus.csv",
-					"description": "July Rexus Buildings",
+					"description": "August Rexus Buildings",
 					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/3bb0decb-64ee-4d92-86ae-4b1457dfb5be/download/data_gov_bldg_rexus.csv"
 				}
 			],
@@ -10485,7 +10651,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus.csv",
-					"description": "July Rexus Leases",
+					"description": "August Rexus Leases",
 					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/1aed05ec-e154-45e6-a394-d29fb7c04272/download/data_gov_lse_rexus.csv"
 				}
 			],
