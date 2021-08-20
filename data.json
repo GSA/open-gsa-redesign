@@ -4326,7 +4326,7 @@
 			"@type": "dcat:Dataset",
 			"title": "FY16 Per Diem Reimbursement Rates & API",
 			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2016, as well as the standard per diem rates for any locations not specifically listed.",
-			"modified": "2021-08-18T17:59:14.120Z",
+			"modified": "2021-08-20T11:49:24.010Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-08-17-03",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -4339,6 +4339,7 @@
 					"name": "Office of Government-wide Policy"
 				}
 			},
+			"isPartOf": "GSA-2021-08-16-01",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "GSA Travel Policy",
@@ -4367,7 +4368,7 @@
 			"@type": "dcat:Dataset",
 			"title": "FY17 Per Diem Reimbursement Rates & API",
 			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year's 2017, as well as the standard per diem rates for any locations not specifically listed.",
-			"modified": "2021-08-18T17:59:59.803Z",
+			"modified": "2021-08-20T11:48:55.405Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-08-17-02",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -4380,6 +4381,7 @@
 					"name": "Office of Government-wide Policy"
 				}
 			},
+			"isPartOf": "GSA-2021-08-16-01",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "GSA Travel Policy",
@@ -4474,7 +4476,7 @@
 			"@type": "dcat:Dataset",
 			"title": "FY18 Per Diem Reimbursement Rates & API",
 			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2018, as well as the standard per diem rates for any locations not specifically listed.",
-			"modified": "2021-08-18T18:00:42.304Z",
+			"modified": "2021-08-20T11:48:15.159Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-08-17-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -4487,6 +4489,7 @@
 					"name": "Office of Government-wide Policy"
 				}
 			},
+			"isPartOf": "GSA-2021-08-16-01",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "GSA Travel Policy",
@@ -5214,9 +5217,8 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
-					"format": "json",
-					"title": "EDI JSON 08 19 21.json",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b6620508-e759-4de6-aa32-0be0b75c11e7/download/edi-json-08-19-21.json"
+					"title": "EDI JSON 08 20 21.json",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-08-20-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
