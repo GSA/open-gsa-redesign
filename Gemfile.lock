@@ -16,8 +16,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (9.8.6.5)
-      execjs
     colorator (1.1.0)
     colorize (0.8.1)
     concurrent-ruby (1.1.9)
@@ -63,8 +61,6 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
-    jekyll-autoprefixer (1.0.2)
-      autoprefixer-rails (~> 9.3)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-toc (0.17.1)
@@ -125,7 +121,6 @@ DEPENDENCIES
   hawkins
   html-proofer (~> 3.10.2)
   jekyll
-  jekyll-autoprefixer
   jekyll-toc
   jekyll_pages_api!
   json-schema
