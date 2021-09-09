@@ -4020,7 +4020,7 @@ data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Ye
 data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes (No for type = s  (Special Notice)) | Solicitation Number | v1 <br> v2
 data.title | string | 256 characters | |Yes | Yes | Title of the Opportunity | v1 <br> v2
 data.organizationId | string | 32 characters | | Yes | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted | v1 <br> v2
-data.classificationCode | string |  | | No | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC) | v1 <br> v2
+data.classificationCode | string |  | | No | Yes (No for type = r, g, a, s)  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC) | v1 <br> v2
 data.naics | JSON Array | NA |NA | NA | NA | NA | NA
 data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code | v1 <br> v2
 data.naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case | v1 <br> v2
@@ -4408,7 +4408,7 @@ data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | No
 data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {}| Yes (No for type = s  (Special Notice)) | Solicitation Number| v1 <br> v2
 data.title | string | 256 characters | | Yes | Title of the Opportunity| v1 <br> v2
 data.organizationId | string | 32 characters | | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted| v1 <br> v2
-data.classificationCode | string |  | | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)| v1 <br> v2
+data.classificationCode | string |  | | Yes (No for type = r, g, a, s)  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)| v1 <br> v2
 data.naics | JSON Array | NA |NA | NA |NA|NA
 data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code| v1 <br> v2
 data.naics.type | string | |primary|Yes | NAICS Type Note: 'p' must be in lower case| v1 <br> v2
@@ -4428,7 +4428,7 @@ data.placeOfPerformance.city | JSON Object| NA | NA |NA | Pop City| v1 <br> v2
 data.placeOfPerformance.city.<br/>code | string | | |No | Pop City code| v1 <br> v2
 data.placeOfPerformance.city.<br/>name | string | | |No | Pop City name| v1 <br> v2
 data.placeOfPerformance.state | JSON Object |NA | NA |NA | Pop City state| v1 <br> v2
-data.placeOfPerformance.state.<br/>code | string | | | No | Pop city state code| v1 <br> v2
+data.placeOfPerformance.state.<br/>code | string | | State Code should be entered as upper case (Ex:VA)| No | Pop city state code| v1 <br> v2
 data.placeOfPerformance.state.<br/>name | string | | | No | Pop city state name| v1 <br> v2
 data.placeOfPerformance.country | JSON Object | NA | NA | NA | Pop Country| v1 <br> v2
 data.laceOfPerformance.<br/>country.code | string | | |No | Pop Country Code| v1 <br> v2
@@ -4465,7 +4465,7 @@ data.award.awardee.location.<br/>city | JSON Object|NA |NA |NA | Awardee City de
 data.award.awardee.location.<br/>city.code | string | | | Yes | Awardee City code| v1 <br> v2
 data.award.awardee.location.<br/>city.name | string | | | No | Awardee City name| v1 <br> v2
 data.award.awardee.location.<br/>state | JSON Object | NA | NA | NA | Awardee State details| v1 <br> v2
-data.award.awardee.location.<br/>state.code | string | | | Yes | Awardee State code| v1 <br> v2
+data.award.awardee.location.<br/>state.code | string | | State Code should be entered as upper case (Ex:VA)| Yes | Awardee State code| v1 <br> v2
 data.award.awardee.location.<br/>state.name | string | | | No | Awardee State name| v1 <br> v2
 data.award.awardee.location.<br/>country | JSON Object | NA| NA | NA |Awardee Country details| v1 <br> v2
 data.award.awardee.location.<br/>country.code | string | | | Yes | Awardee Country code| v1 <br> v2
