@@ -228,6 +228,9 @@ Option 1: Using the fileName only.  The fileName is an exact match parameter whi
 
 Option 2: Using fileType and other parameters.  If you choose not to use the fileName, you may specify the fileType along with other parameters to identify which extract you wish to download.<br>
 
+**Please refer to the SAM Master Extract Mapping document:**
+1. <a href="v1/SAM_MASTER_EXTRACT_MAPPING.xlsx">SAM Master Extract Mapping</a>
+
 **Entity Management Public Data Package Sample API calls:**<br>
 
 Monthly File, Version 1, April 2019 (fileName):<br>
@@ -398,5 +401,6 @@ Date | Version | Description
 04/29/2021 | v2.2 | * Added note above list of sample files mentioning that files are for Alpha.<br><br>* Added description to 400 http response code describing Type of Connection error.<br><br>* Updated openapi spec file.
 05/12/2021 | v2.3 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
 07/16/2021 | v2.4 | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information.<br><br> * Added example curl requests.
+09/21/2021 | v2.5 | * Added the "Please refer to the SAM Master Extract Mapping document" subsection under the "Explanation of the API using Examples" section.
 
 <p><small><a href="#">Back to top</a></small></p>

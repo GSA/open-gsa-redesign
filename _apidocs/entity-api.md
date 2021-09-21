@@ -20440,6 +20440,11 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## Additional Help References
+1. <a href="v1/REPS_AND_CERTS_MAPPING.xlsx">Reps and Certs</a>
+2. <a href="v1/SAM Functional Data Dictionary.pdf" target="_blank">Data Dictionary</a>
+
+
 ## HTTP Response Codes
 
 The API will return one of the following responses:
@@ -23560,6 +23565,7 @@ Disclaimer:
 | 05/12/2021 | v2.6 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api. | 
 | 07/16/2021 | v2.7 | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information.<br><br> * Added example curl requests.<br><br> * Updated the examples. |
 | 07/20/2021 | v2.8 | * Added v3 documentation.<br><br> * Updated OpenAPI specification file.<br><br> * Updated HTTP Response Codes.<br><br> * Added v3 Examples. |
+| 09/21/2021 | v2.9 | * Added the "Addtional Help References" section. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
