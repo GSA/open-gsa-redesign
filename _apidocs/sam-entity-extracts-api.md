@@ -229,7 +229,7 @@ Option 1: Using the fileName only.  The fileName is an exact match parameter whi
 Option 2: Using fileType and other parameters.  If you choose not to use the fileName, you may specify the fileType along with other parameters to identify which extract you wish to download.<br>
 
 **Please refer to the SAM Master Extract Mapping document:**
-1. <a href="v1/SAM_MASTER_EXTRACT_MAPPING.xlsx">SAM Master Extract Mapping</a>
+<a href="v1/SAM_MASTER_EXTRACT_MAPPING.xlsx">SAM Master Extract Mapping</a>
 
 **Entity Management Public Data Package Sample API calls:**<br>
 
