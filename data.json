@@ -5634,9 +5634,9 @@
 			"theme": ["Advisory Committee"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Human Resources Golden Data Test Set",
+			"title": "Human Capital Golden Data Test Set",
 			"description": "A synthetic set of realistic, non-PII, fictitious employee profiles and test scenarios to test Human Resource (HR), Time and Attendance (T&A), and Payroll Systems.",
-			"modified": "2021-10-13T13:12:02.437Z",
+			"modified": "2021-10-14T13:14:22.859Z",
 			"accessLevel": "public",
 			"identifier": "GSA 2021-10-12-01",
 			"dataQuality": true,
@@ -5647,7 +5647,7 @@
 				"name": "Office of Human Resources Management",
 				"subOrganizationOf": {
 					"@type": "org:Organization",
-					"name": "General Services Administration"
+					"name": "Office of Human Resources Management"
 				}
 			},
 			"accrualPeriodicity": "irregular",
