@@ -23536,8 +23536,47 @@ Disclaimer:
 
 ## Contact Us
 
-* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries and help desk support.
-* Reach out to [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for access to the test site.
+* Reach out to the SAM.gov team at <a href="https://www.fsd.gov" target="_blank">www.fsd.gov</a> for inquiries and help desk support.
+    * Before contacting the help desk, conduct your own initial troubleshooting
+        * Conduct a recent review of the open.gsa.gov/api specifications
+        * Confirm you are using an API tool, not a browser to send the request. (FOUO & Sensitive Calls)
+        * Confirm you are using the username/password for the system account that created the API key in the authentication header. (Sensitive Calls)
+        * Confirm you used POST and not GET for this request (Sensitive Calls)
+        * Confirm that the API key is from a system account (FOUO & Sensitive Calls)
+        * Confirm that the API key being used is still active
+        * Confirm that the system account you are using has “read fouo” or “read sensitive” permissions as applicable (FOUO & Sensitive Calls)
+        * <b>Confirm that the IP addresses registered with your system account are current</b>
+    * When submitting help desk tickets for API or system connection issues, provide the following:
+        * The exact API requests that you were trying to send
+        * The exact error messages that you were receiving
+        * The exact dates and times when you received the errors
+        * Screenshots (with the actual API request and the error)  [Attach to the ticket]
+        * The System Account ID/Name that was trying to make API calls
+        * Screenshots of the parameters used for API call   [Attach to the ticket]
+        * Screenshots of the Headers used for the API call   [Attach to the ticket]
+* Users requesting access to the test site (alpha.sam.gov) should follow the below steps.  These steps ONLY apply to alpha.sam.gov access requests.
+    1. Navigate to <a href="https://www.fsd.gov" target="_blank">www.fsd.gov</a>
+    2. Sign into the FSD platform using your FSD credentials
+    3. Select "Create an Incident"
+    4. Create an Incident
+        <ol type="a">
+        <li><b>System Name:</b> System for Award Management (SAM)</li>
+        <li><b>Is this related to the American Rescue Plan Act?:</b> No</li>
+        <li><b>Issue Type:</b> Other</li>
+        <li><b>Business Type:</b> Other</li>
+        <li><b>Subject (select 1):</b>
+           <ol type="i">
+           <li><b>Option A:</b> I need a role to test in alpha.sam.gov.</li>
+           <li><b>Option B:</b> System account approval in alpha.sam.gov</li>
+           </ol>
+        </li>
+        <li><b>Please describe the issue:</b> (Copy and paste the below information into the ticket, filling in your information within the brackets)
+           <ol type="i">
+           <li><b>Option A:</b> I have already navigated to alpha.sam.gov and created a user account, following the same steps for <a href="https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=81d067071b80b0109ac5ddb6bc4bcb63" target="_blank">creating an account</a> in sam.gov.  I would like to conduct testing but do not have the necessary role(s) in alpha.sam.gov.   The account that needs role assignment is associated with [EMAIL ADDRESS].  I request a [ROLE] role for the  [DOMAIN] domain in alpha.sam.gov.</li>
+           <li><b>Option B:</b> I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval.   I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].</li>
+           </ol>
+        </li>
+        </ol>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -23566,6 +23605,7 @@ Disclaimer:
 | 07/16/2021 | v2.7 | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information.<br><br> * Added example curl requests.<br><br> * Updated the examples. |
 | 07/20/2021 | v2.8 | * Added v3 documentation.<br><br> * Updated OpenAPI specification file.<br><br> * Updated HTTP Response Codes.<br><br> * Added v3 Examples. |
 | 09/21/2021 | v2.9 | * Added the "Addtional Help References" section. |
+| 10/06/2021 | v3.0 | * Updated the "Contact Us" section. | 
 
 <p><small><a href="#">Back to top</a></small></p>
 
