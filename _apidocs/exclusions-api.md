@@ -242,7 +242,58 @@ The API will return one of the following responses:
 
 ## Examples
 
-### Example 1: Get Individual or Special Entity Designation Exclusion records that are not excluded by DOJ, that belong to Korea and that contain CHONG anywhere in the response.
+### Eample 1: Post April 2022, get me all the Firms whose Physical Address is in Virginia.
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >& includeSections=exclusionIdentification<br>
+<br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&includeSections=exclusionIdentification<br>
+<br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+Note: Public Response for one record is provided as an example <br>
+<p>
+<code>
+<pre>
+"exclusionIdentification": {
+  "ueiSAM": "G6XJYD71J617",
+  "cageCode": "0XLE0",
+  "npi": null,
+  "prefix": null,
+  "firstName": null,
+  "middleName": null,
+  "lastName": null,
+  "suffix": null,
+  "entityName": "USA REMEDIATION SERVICES, INC",
+  "dnbOpenData": null
+}
+</pre>
+</code>
+</p>
+</details>
+
+### Example 2: Post April 2022, get me all the Firms whose Physical Address is in Virginia in a CSV file format.
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA&includeSections=exclusionIdentification&format=CSV<br>
+<br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA&includeSections=exclusionIdentification&format=CSV<br>
+<br>
+</details>
+
+<details>
+<summary>Response</summary>
+<p>
+Extract File will be available for download with url: https://api.sam.gov/entity-information/v2/download-exclusions?api_key=REPLACE_WITH_API_KEY&token=< TOKEN > in some time. If you have requested for an email notification, you will receive it once the file is ready for download.<br><br>
+Downloading the CSV file using the Token:
+https://api.sam.gov/entity-information/v2/download-exclusions?api_key=< PUBLIC API KEY >&token=< TOKEN ><br><br>
+Click to view CSV Response for one record <a href="v1/Sample CSV Response.csv" taget="_blank">Sample CSV Response.</a>
+</p>
+</details>
+
+### Example 3: Get Individual or Special Entity Designation Exclusion records that are not excluded by DOJ, that belong to Korea and that contain CHONG anywhere in the response.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
@@ -366,7 +417,7 @@ A sample record is provided here:
 </p>
 </details>
 
-### Example 2: Get details and address of the Ineligible (Proceedings Completed) or Prohibition/Restriction type of Firm Exclusion records that belong to Korea, China or Germany, by using the "q" parameter.
+### Example 4: Get details and address of the Ineligible (Proceedings Completed) or Prohibition/Restriction type of Firm Exclusion records that belong to Korea, China or Germany, by using the "q" parameter.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key= < a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
@@ -430,7 +481,7 @@ A sample record is provided here:
 </p>
 </details>
 
-### Example 3: To receive a file downloadable link in the email for the requested CSV results.
+### Example 5: To receive a file downloadable link in the email for the requested CSV results.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=Y<br>
@@ -527,5 +578,6 @@ Date | Version | Description
 05/12/2021 | v2.5 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
 07/16/2021 | v2.6 | * Updated description for recordStatus parameter.<br><br> * Added message stating that the slash character must be enclosed with double quotes if being used inside of a search parameter.<br><br> * Added the Type of Connections and Rate Limits table<br><br> * Updated the examples<br><br> * Updated the Contact Us information
 10/06/2021 | v2.7 | * Updated the "Contact Us" section.
+10/21/2021 | v2.8 | * Updated Examples - Added Example 1 and Example 2.
 
 <p><small><a href="#">Back to top</a></small></p>
