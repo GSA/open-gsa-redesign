@@ -21,8 +21,6 @@ banner-heading: Site Scanning API
 
 Every day, the <a href="https://digital.gov/site-scanning/">Site Scanning program</a> runs a scanning engine to dynamically pull down lists of domains from various sources and then scan them with a collection of scan plugins to gather data on them. This data is created in the json format and is indexed in an elasticsearch datastore, where it can be searched by an API written in the Django REST Framework.
 
-The [Site Scanning Query Builder](https://site-scanning.api.data.gov/) offers a simple means of creating API queries that target specific subsets of data (e.g. by agency, base domain, or redirect status).
-
 In addition to querying the data via API, you can also [download it directly](#download-the-data-directly) as a CSV or JSON file.  
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -271,9 +269,6 @@ The API will return one of the following responses:
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Query Builder 
-
-The [Site Scanning Query Builder](https://site-scanning.api.data.gov/) offers a simple means of creating API queries that target specific subsets of data (e.g. by agency, base domain, or redirect status).
 
 ## Download the Data Directly
 
