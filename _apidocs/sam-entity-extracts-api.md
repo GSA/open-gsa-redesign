@@ -447,6 +447,6 @@ Date | Version | Description
 07/16/2021 | v2.4 | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information.<br><br> * Added example curl requests.
 09/21/2021 | v2.5 | * Added the "Please refer to the SAM Master Extract Mapping document" subsection under the "Explanation of the API using Examples" section.
 10/06/2021 | v2.6 | * Updated the "Contact Us" section. 
-10/21/2021 | v2.7 | * Added Expected Results to Data Package Sample API Calls.
+10/21/2021 | v2.7 | * Added Expected Results to Data Package Sample API Calls.<br><br> * Updated Extract Mapping Files.
 
 <p><small><a href="#">Back to top</a></small></p>
