@@ -4691,8 +4691,8 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "FY 2020 Federal Real Property Profile Data for Civilian Agencies",
-			"description": "A CSV export of data from FRPP, a database of Federal real property for civilian agencies.",
-			"modified": "2021-06-23T12:43:03.133Z",
+			"description": "A csv export of data from FRPP, a database of Federal real property for civilian agencies.",
+			"modified": "2021-11-05T13:54:47.294Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-04-27-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -4713,8 +4713,8 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
-					"title": "FRPP_Public_Dataset_FY2020_final.csv",
-					"downloadURL": "https://inventory.data.gov/dataset/a1072b46-cf6b-443e-bfa2-dad7f1ab4195/resource/d9aae813-cb4f-4fe3-910f-2a520fb60176/download/frpp_public_dataset_fy2020_final.csv"
+					"title": "FRPP_Public_Dataset_FY2020_Final_Update_10012021.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/a1072b46-cf6b-443e-bfa2-dad7f1ab4195/resource/8dcd5905-35a9-4294-ac8e-c29732dd437e/download/frpp_public_dataset_fy2020_final_update_10012021.csv"
 				}
 			],
 			"keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "RTF", "building", "civilian", "gsa", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -5218,8 +5218,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "EDI JSON 11 01 21.json",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-file-11-01-21.json"
+					"title": "EDI JSON 11 05 21.json",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-file-11-05-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
