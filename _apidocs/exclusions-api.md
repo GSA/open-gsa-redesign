@@ -108,7 +108,7 @@ Utilizing the Exclusion API as an extract:
 | stateProvince | Allows 2-character codes for the USA, names for foreign countries and null (a string).<br><br> Examples: 'stateProvince=AR', 'stateProvince=[VA~MICHOACÁN]', 'stateProvince=""' |  v1<br>v2 |
 | country  | Allows 3-character codes, numerical values and null (a string).<br><br> Examples: 'country=USA' 'country=[RUS~292~mex]', 'country=!""', 'q=((country:RUS) OR (country:292) OR (country:mex))' |  v1<br>v2 |
 | zipCode  | Allows 5-digit values for the USA, any value as it was provided for foreign countries and null (a string).<br><br> Example: 'zipCode=20171', 'zipCode=[901-2132~V3M 5P8~C.P. 44890]', 'zipCode=""', 'q=((zipCode:901-2132) OR (zipCode:20147))' |  v1<br>v2 |
-| ueiDUNS | Denotes Unique Entity Identifier DUNS.<br><br> Allows any complete value as it was provided, null and also wildcard searches.<br><br> Examples: 'ueiDUNS=9725565', 'ueiDUNS=[001*~""]', 'q=((ueiDUNS:9725565) OR (ueiDUNS:047795005))' |  v1<br>v2 |
+| ueiDUNS | Denotes Unique Entity Identifier DUNS.<br><br> Allows any complete value as it was provided, null and also wildcard searches.<br><br> Examples: 'ueiDUNS=9725565', 'ueiDUNS=[001*~""]', 'q=((ueiDUNS:9725565) OR (ueiDUNS:047795005))' |  v1<br>v2<br>Valid until April 2022 |
 | ueiSAM | Denotes Unique Entity Identifier SAM.<br><br> Allows 12-character values, null and also wildcard searches.<br><br> Examples: 'ueiSAM=""', 'ueiSAM=!""', 'ueiSAM=P*X*1', 'q=((ueiSAM:PMC9YQMXJZU1) OR (ueiSAM:PG4XZ77WRC21))' |  v1<br>v2 |
 | excludingAgencyCode | Allows a partial text, a complete text and null (a string).<br><br> Examples: 'excludingAgencyCode=ICE', 'excludingAgencyCode=DHS-ICE', 'excludingAgencyCode=[AF~HUD~""]', 'q=((excludingAgencyCode:AF) OR (excludingAgencyCode:HUD))' |  v1<br>v2 |
 | excludingAgencyName | Allows a partial text, a complete text and null (a string).<br><br> This parameter can be used inside the 'q' parameter. When not used inside the 'q' parameter, this parameter will apply the AND operator if a multi-text value is provided in any order and in any case<br><br> Examples: 'excludingAgencyName=Of URBAN housing',  'excludingAgencyName=[Geological~Navy]', q=((excludingAgencyName:Geological) OR (excludingAgencyName:Navy)) |  v1<br>v2 |
@@ -141,7 +141,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | excludingAgencyName | string | Excluding Agency Name  | v1<br>v2 |
 | **exclusionIdentification** |
 | ueiSAM | string | Unique Entity Identifier SAM   | v1<br>v2 |
-| ueiDUNS | string | Unique Entity Identifier DUNS  | v1<br>v2 |
+| ueiDUNS | string | Unique Entity Identifier DUNS  | v1<br>v2<br>Valid until April 2022 |
 | entityEFTIndicator | string | Entity EFT Indicator   | v1<br>v2 |
 | cageCode | string | CAGE Code  |  v1<br>v2 |
 | npi | string| NPI |  v1<br>v2 |
@@ -184,7 +184,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | type | string | Type  |  v1<br>v2 |
 | **exclusionOtherInformation --> moreLocations** |
 | exclusionName | string | Exclusion Name | v2 |
-| duns | string | DUNS | v2 |
+| duns | string | DUNS | v2<br>Valid until April 2022 |
 | cageCode | string | CAGE Code | v2 |
 | npi | string | NPI | v2 |
 | **exclusionOtherInformation --> moreLocations --> primaryAddress** |
@@ -235,7 +235,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages:<br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * Invalid Input Parameters. <br><br> * The parameter: 'emailId', 'format', 'exclusionName', 'includeSections', 'addressLine1', 'addressLine2', or 'ssnOrTinOrEin' is not permitted inside Query Param(q). <br><br> * The value null/empty is not valid for parameter ‘Query Param (q). <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br>  * The Parameter emailId must be provided in conjunction with the parameter format. <br><br>  * Extract File Generation is Still in Progress. <br><br> * Requested File is Expired and cannot be downloaded. <br><br> * Extract File Not Found and we are not able to process your request. <br><br>  * includeSections contains invalid value <value><br><br> * The search parameter, 'ssnOrTinOrEin' will only accept one complete 9 digit value (e.g.: ssnOrTinOrEin=000000000)<br><br> * ssnOrTinOrEin filter must be provided in conjunction with exclusionName.<br><br> * exclusionName will only accept one value when it is provided in conjunction with addressLine1 and addressLine2 |
+| 400 | Application Level Error Messages:<br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * Invalid Input Parameters. <br><br> * The parameter: 'emailId', 'format', 'exclusionName', 'includeSections', 'addressLine1', 'addressLine2', or 'ssnOrTinOrEin' is not permitted inside Query Param(q). <br><br> * The value null/empty is not valid for parameter ‘Query Param (q). <br><br>  * A maximum of 100 ueiDUNS is allowed.<br>(Valid until April 2022) <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br>  * The Parameter emailId must be provided in conjunction with the parameter format. <br><br>  * Extract File Generation is Still in Progress. <br><br> * Requested File is Expired and cannot be downloaded. <br><br> * Extract File Not Found and we are not able to process your request. <br><br>  * includeSections contains invalid value <value><br><br> * The search parameter, 'ssnOrTinOrEin' will only accept one complete 9 digit value (e.g.: ssnOrTinOrEin=000000000)<br><br> * ssnOrTinOrEin filter must be provided in conjunction with exclusionName.<br><br> * exclusionName will only accept one value when it is provided in conjunction with addressLine1 and addressLine2 |
 | 403 | API key is not correct or was not provided. |
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -578,6 +578,6 @@ Date | Version | Description
 05/12/2021 | v2.5 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
 07/16/2021 | v2.6 | * Updated description for recordStatus parameter.<br><br> * Added message stating that the slash character must be enclosed with double quotes if being used inside of a search parameter.<br><br> * Added the Type of Connections and Rate Limits table<br><br> * Updated the examples<br><br> * Updated the Contact Us information
 10/06/2021 | v2.7 | * Updated the "Contact Us" section.
-10/21/2021 | v2.8 | * Updated Examples - Added Example 1 and Example 2.
+10/21/2021 | v2.8 | * Updated Examples - Added Example 1 and Example 2.<br><br> * Added note that uieDuns is only valid until April 2022
 
 <p><small><a href="#">Back to top</a></small></p>
