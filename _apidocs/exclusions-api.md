@@ -578,6 +578,6 @@ Date | Version | Description
 05/12/2021 | v2.5 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
 07/16/2021 | v2.6 | * Updated description for recordStatus parameter.<br><br> * Added message stating that the slash character must be enclosed with double quotes if being used inside of a search parameter.<br><br> * Added the Type of Connections and Rate Limits table<br><br> * Updated the examples<br><br> * Updated the Contact Us information
 10/06/2021 | v2.7 | * Updated the "Contact Us" section.
-10/21/2021 | v2.8 | * Updated Examples - Added Example 1 and Example 2.<br><br> * Added note that uieDuns is only valid until April 2022
+10/21/2021 | v2.8 | * Updated Examples - Added Example 1 and Example 2.<br><br> * Added note that ueiDuns is only valid until April 2022
 
 <p><small><a href="#">Back to top</a></small></p>
