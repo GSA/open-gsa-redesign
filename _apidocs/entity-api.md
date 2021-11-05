@@ -30,7 +30,7 @@ The Entity Management API will allow users to request Public Entity Information 
 Public and FOUO Entity Details can be accessed from Production or Alpha via the following version 1, version 2, and version 3 endpoints:
 * Production Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
 * Production Version 2: https://api.sam.gov/entity-information/v2/entities?api_key= < value >
-* Production Version 3: COMING SOON
+* Production Version 3: https://api.sam.gov/entity-information/v3/entities?api_key= < value >
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
 * Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/entities?api_key= < value >
@@ -40,7 +40,7 @@ These are GET calls.
 Sensitive Entity Details can be accessed from Production or Alpha via the following version 1, version 2, and version 3 end points:
 * Production Version 1: https://api.sam.gov/entity-information/v1/entities?
 * Production Version 2: https://api.sam.gov/entity-information/v2/entities?
-* Production Version 3: COMING SOON
+* Production Version 3: https://api.sam.gov/entity-information/v3/entities?api_key= < value >
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?
 * Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/entities?
@@ -193,7 +193,7 @@ NOTES:
 
 <tr>
 <td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b>
 <br>Allows 9 digit value; a maximum of up to 100 values 
 can be sent.
 <br>Example: ueiDUNS=025114695
@@ -557,7 +557,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b>
 <br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -705,7 +705,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>exclusionURL</td>
 <td>string</td>
-<td>Active Exclusion URL</td>
+<td>Returns the URL to access the Exclusion record with ueiDUNS <b>until April 2022</b> and with ueiSAM <b>starting April 2022.</b></td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -5580,7 +5580,7 @@ NOTES:
 
 <tr>
 <td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b>
 <br>Allows 9 digit value; a maximum of up to 100 values 
 can be sent.
 <br>Example: ueiDUNS=025114695
@@ -5942,7 +5942,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>ultimateParentUEIDUNS</td>
-<td>Allows text.
+<td>Allows text. <b>This field is valid until April 2022.</b>
 <br>Example: ultimateParentUEIDUNS=090123451</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -6014,7 +6014,7 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b>
 <br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -6161,7 +6161,7 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <tr>
 <td>exclusionURL</td>
 <td>string</td>
-<td>Active Exclusion URL</td>
+<td>Returns the URL to access the Exclusion record with ueiDUNS until April 2022 and with ueiSAM starting April 2022.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -6210,7 +6210,7 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b></td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -6340,7 +6340,7 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b></td>
 </tr>
 
 <tr>
@@ -6452,7 +6452,7 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b></td>
 </tr>
 
 <tr>
@@ -6572,7 +6572,7 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b></td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -12920,7 +12920,7 @@ NOTES:
 
 <tr>
 <td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b>
 <br>Allows 9 digit value; a maximum of up to 100 values 
 can be sent.
 <br>Example: ueiDUNS=025114695
@@ -13282,7 +13282,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>ultimateParentUEIDUNS</td>
-<td>Allows text.
+<td>Allows text. <b>This field is valid until April 2022.</b>
 <br>Example: ultimateParentUEIDUNS=090123451</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -13410,7 +13410,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b>
 <br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -13557,7 +13557,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>exclusionURL</td>
 <td>string</td>
-<td>Active Exclusion URL</td>
+<td>Returns the URL to access the Exclusion record with ueiDUNS until April 2022 and with ueiSAM starting April 2022.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -13606,7 +13606,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b></td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -13736,7 +13736,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b></td>
 </tr>
 
 <tr>
@@ -13848,7 +13848,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b></td>
 </tr>
 
 <tr>
@@ -13968,7 +13968,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>ueiDUNS</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 2022.</b></td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -20460,7 +20460,7 @@ The API will return one of the following responses:
   </tr>
   <tr>
     <td>400</td>
-    <td>Application Level Error Messages:<br><br>1. Invalid "Date" format:<br>v1 or v2: Date should be specified in the format: MM/dd/YYYY.<br>v3: "message":"Dates must be specified in the MM/DD/YYYY format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY format."<br><br>2. Invalid "ueiDUNS" length:<br>v1 or v2: ueiDUNS can only be 9 digits.<br>v3: "message":"The search parameter 'ueiDUNS' can only be a 9 digit value.", "detail":"Please provide valid values for ueiDUNS."<br><br>3. Invalid "ueiDUNS" value:<br>v1 or v2: ueiDUNS Should Contain Only Numeric value.<br>v3: "message":"The search parameter 'ueiDUNS' can only be a 9 digit value.", "detail":"Please provide valid values for ueiDUNS."<br><br>4. Invalid Search Parameter:<br>v1 or v2: "Invalid Input Parameters","detail":"< user-provided invalid parameter >"<br>v3: "message":"The search parameter, < user-provided invalid parameter > does not exist.", "detail":"Please refer to https://open.gsa.gov/api/entity-api/ for a list of allowable search parameters."<br><br>5. If ‘includeSections’, ‘emailId’ or ‘format’ is sent in the "q" parameter:<br>v1 or v2: The parameters: ‘includeSections’, ‘emailId’ or ‘format’ are not permitted inside Query Param(q).<br>v3: "message":"The search parameters 'includeSections','emailId' and 'format' are not permitted inside Query Param(q)", "detail":"Please provide these parameters separately"<br><br>6. More than 100 ueiSAM values are sent:<br>v1 or v2: A maximum of 100 ueiSAM is allowed.<br>v3: "message": "More than 100 UEI SAM are not allowed.", "detail": "Please limit the number of UEI SAM to 100."<br><br>7. More than 100 ueiDUNS values are sent:<br>v1 or v2: A maximum of 100 ueiDUNS is allowed.<br>v3: "message": "More than 100 UEI DUNS are not allowed.", "detail": "Please limit the number of UEI DUNS to 100."<br><br>8. More than 100 CAGE values are sent:<br>v1 or v2: A maximum of 100 CAGE Codes is allowed.<br>v3: "message":"More than 100 CAGE Codes are not allowed.", "detail":"Please limit the number of CAGE Codes to 100."<br><br>9. If "emailId" is sent on its own:<br>v1 or v2: The parameter emailId must be provided in conjunction with the parameter format.<br>v3: "message":"The search parameter 'emailId' must be provided in conjunction with the search parameter 'format.", "detail":"Users can opt for receiving the requested JSON/CSV files in their emails."<br><br>10. If "entityEFTIndicator" is sent on its own:<br>v1 or v2: entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter.<br>v3: message":"The search parameter 'entityEFTIndicator' must be provided in conjunction with the search parameter 'ueiDUNS' or 'ueiSAM'.", "detail":"The entityEFTIndicator parameter cannot be provided on its own."<br><br>11. File size exceeded for JSON or CSV exports:<br>v1 or v2: "Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search."<br>v3: "message":"Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search.", "detail":"Count Exceeded Error"<br><br>12. JSON or CSV file generation is in-progress:<br>v1 or v2: File Processing in Progress. Please check again later.<br>v3: "message": "The requested JSON or CSV file is not generated yet. Please try again later.", "details": "Larger files will take some time to process."<br><br>13. Using an expired Token for downloading JSON or CSV files:<br>v1 or v2: title":"Requested File is Expired and cannot be downloaded","detail":"We are not able to process your request"<br>v3: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number."<br><br>14. More than 10,000 records are requested via "page" and "size" parameters:<br>v1 or v2: "title":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."<br>v3: "message":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."<br><br>15. More than 10 for "size" is requested:<br>v1 or v2: "title":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"<br>v3: "message":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"<br><br>16. Missing "Basic Auth" under "Authorization" and missing System Account credentials:<br>v1 or v2: No system account credentials are provided. Please provide credentials via basic authentication.<br><br>17. Different IP Address than that mentioned in the System Account:<br>v1 or v2: IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.<br><br>18. API Key does not belong to the System Account:<br>v1 or v2: System Account and API Key you have provided do not match. Please visit your System Account and obtain the API Key from there.<br><br>19. System Account has a different value for "Type of Connection":<br>v1 or v2: "title": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",<br>v3: "message": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",<br><br>20. If GET is used with System Accounts:<br>v1 or v2: GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.<br>v3: "message": "Permission denied", "detail": "GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.",<br><br>21. Insufficient API Key privileges to download a JSON or CSV File:<br>v1 or v2: The API Key is not authorized to access this < file type > Extract<br>v3: The API Key is not authorized to access this < file type > Extract<br><br>22. Both ueiDUNS and ueiSAM are sent in the Reps and Certs PDF download links:<br>v1, v2 or v3: The parameter ueiDUNS can't be provided in conjunction with the parameter ueiSAM.<br><br>23. The requested PDF File does not exist; the entity did not answer this type of Representations and Certifications data.</td>
+    <td>Application Level Error Messages:<br><br>1. Invalid "Date" format:<br>v1 or v2: Date should be specified in the format: MM/dd/YYYY.<br>v3: "message":"Dates must be specified in the MM/DD/YYYY format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY format."<br><br>2. Invalid "ueiDUNS" length:<br>v1 or v2: ueiDUNS can only be 9 digits.<br>v3: "message":"The search parameter 'ueiDUNS' can only be a 9 digit value.", "detail":"Please provide valid values for ueiDUNS."<br><b>These errors are valid until April 2022.</b><br><br>3. Invalid "ueiDUNS" value:<br>v1 or v2: ueiDUNS Should Contain Only Numeric value.<br>v3: "message":"The search parameter 'ueiDUNS' can only be a 9 digit value.", "detail":"Please provide valid values for ueiDUNS."<br><b>These errors are valid until April 2022.</b><br><br>4. Invalid Search Parameter:<br>v1 or v2: "Invalid Input Parameters","detail":"< user-provided invalid parameter >"<br>v3: "message":"The search parameter, < user-provided invalid parameter > does not exist.", "detail":"Please refer to https://open.gsa.gov/api/entity-api/ for a list of allowable search parameters."<br><br>5. If ‘includeSections’, ‘emailId’ or ‘format’ is sent in the "q" parameter:<br>v1 or v2: The parameters: ‘includeSections’, ‘emailId’ or ‘format’ are not permitted inside Query Param(q).<br>v3: "message":"The search parameters 'includeSections','emailId' and 'format' are not permitted inside Query Param(q)", "detail":"Please provide these parameters separately"<br><br>6. More than 100 ueiSAM values are sent:<br>v1 or v2: A maximum of 100 ueiSAM is allowed.<br>v3: "message": "More than 100 UEI SAM are not allowed.", "detail": "Please limit the number of UEI SAM to 100."<br><br>7. More than 100 ueiDUNS values are sent:<br>v1 or v2: A maximum of 100 ueiDUNS is allowed.<br>v3: "message": "More than 100 UEI DUNS are not allowed.", "detail": "Please limit the number of UEI DUNS to 100."<br><b>These errors are valid until April 2022.</b><br><br>8. More than 100 CAGE values are sent:<br>v1 or v2: A maximum of 100 CAGE Codes is allowed.<br>v3: "message":"More than 100 CAGE Codes are not allowed.", "detail":"Please limit the number of CAGE Codes to 100."<br><br>9. If "emailId" is sent on its own:<br>v1 or v2: The parameter emailId must be provided in conjunction with the parameter format.<br>v3: "message":"The search parameter 'emailId' must be provided in conjunction with the search parameter 'format.", "detail":"Users can opt for receiving the requested JSON/CSV files in their emails."<br><br>10. If "entityEFTIndicator" is sent on its own:<br><b>Pre-April 2022:</b><br>v1 or v2: entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter.<br>v3: message":"The search parameter 'entityEFTIndicator' must be provided in conjunction with the search parameter 'ueiDUNS' or 'ueiSAM'.", "detail":"The entityEFTIndicator parameter cannot be provided on its own."<br><br><b>Starting April 2022:</b><br>v1 or v2: entityEFTIndicator filter must be provided in conjunction with ueiSAM filter.<br>v3: message":"The search parameter 'entityEFTIndicator' must be provided in conjunction with the search parameter 'ueiSAM'.", "detail":"The entityEFTIndicator parameter cannot be provided on its own."<br><br>11. File size exceeded for JSON or CSV exports:<br>v1 or v2: "Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search."<br>v3: "message":"Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search.", "detail":"Count Exceeded Error"<br><br>12. JSON or CSV file generation is in-progress:<br>v1 or v2: File Processing in Progress. Please check again later.<br>v3: "message": "The requested JSON or CSV file is not generated yet. Please try again later.", "details": "Larger files will take some time to process."<br><br>13. Using an expired Token for downloading JSON or CSV files:<br>v1 or v2: title":"Requested File is Expired and cannot be downloaded","detail":"We are not able to process your request"<br>v3: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number."<br><br>14. More than 10,000 records are requested via "page" and "size" parameters:<br>v1 or v2: "title":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."<br>v3: "message":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."<br><br>15. More than 10 for "size" is requested:<br>v1 or v2: "title":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"<br>v3: "message":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"<br><br>16. Missing "Basic Auth" under "Authorization" and missing System Account credentials:<br>v1 or v2: No system account credentials are provided. Please provide credentials via basic authentication.<br><br>17. Different IP Address than that mentioned in the System Account:<br>v1 or v2: IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.<br><br>18. API Key does not belong to the System Account:<br>v1 or v2: System Account and API Key you have provided do not match. Please visit your System Account and obtain the API Key from there.<br><br>19. System Account has a different value for "Type of Connection":<br>v1 or v2: "title": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",<br>v3: "message": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",<br><br>20. If GET is used with System Accounts:<br>v1 or v2: GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.<br>v3: "message": "Permission denied", "detail": "GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.",<br><br>21. Insufficient API Key privileges to download a JSON or CSV File:<br>v1 or v2: The API Key is not authorized to access this < file type > Extract<br>v3: The API Key is not authorized to access this < file type > Extract<br><br>22. Both ueiDUNS and ueiSAM are sent in the Reps and Certs PDF download links:<br><b>Pre-April 2022:</b><br>v1, v2 or v3: The parameter ueiDUNS can't be provided in conjunction with the parameter ueiSAM.<br><br><b>Starting April 2022:</b><br>v1, v2 or v3: {"httpStatus":"400","title":"Invalid Input Parameters","errorCode":"PRM","detail":"ueiDUNS","source":"Common Export service","userDetail":"Invalid Input Parameters"}<br><br>23. The ueiDUNS is sent in the Reps and Certs PDF download links:<br><b>Starting April 2022:</b>v1, v2 or v3 {"httpStatus":"400","title":"Invalid Input Parameters","errorCode":"PRM","detail":"ueiDUNS","source":"Common Export service","userDetail":"Invalid Input Parameters"}<br><br>24. A non-existing Reps and Certs PDF file is requested:<br>v1, v2, v3: {"httpStatus":"400","title":"The requested PDF File does not exist; the entity did not answer this type of Representations and Certifications data.","errorCode":"EXC","source":"Common Export service"}</td>
   </tr>
   <tr>
     <td>401</td>
@@ -24419,7 +24419,7 @@ Disclaimer:
 | 07/20/2021 | v2.8 | * Added v3 documentation.<br><br> * Updated OpenAPI specification file.<br><br> * Updated HTTP Response Codes.<br><br> * Added v3 Examples. |
 | 09/21/2021 | v2.9 | * Added the "Addtional Help References" section. |
 | 10/06/2021 | v3.0 | * Updated the "Contact Us" section. | 
-| 10/21/2021 | v3.1 | * Updated Examples - Added Example 1 and Example 2.<br><br> * Added error message #23 to 400 level http response codes |
+| 10/21/2021 | v3.1 | * Updated Examples - Added Example 1 and Example 2.<br><br> * Added error message #23 to 400 level http response codes<br><br> * Updated Public, FOUO, and Sensitive V3 endpoints.<br><br> * Added "This field is valid until April 2022." for Public, FOUO, and Sensitive ueiDUNS and FOUO and Sensitive ultimateParentUEIDUNS Query String Parameters.<br><br> * Updated Expected Results section to reflect that ueiDUNS fields are valid until April 2022.<br><br> Updated the HTTP Response Codes to reflect ueiDUNS error messages are valid until April 2022. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
