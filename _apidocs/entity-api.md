@@ -115,8 +115,8 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 ### Public API Information
 
 <details>
-<summary><b>Query String Parameters</b></summary>
-<br>* This field is valid until April 3rd, 2022.
+<summary><b>Query String Parameters</b><br>
+* This field is valid until April 3rd, 2022.</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
@@ -526,9 +526,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td><b> Expected Result:</b></td>
 </tr>
 <tr>
-<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.<br><br>
+<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database. Additionally,<br>
 * This field is valid until April 3rd, 2022.<br>
-** This field works with ueiDUNS until April 3rd, 2022, and ueiSAM after April 3rd, 2022.<br><br>
+** This field works with ueiDUNS until April 3rd, 2022, and ueiSAM after April 3rd, 2022.
 </td>
 </tr>
 <details>
@@ -5506,8 +5506,8 @@ The repsAndCerts section is not available for use with the format parameter.
 ### FOUO API Information
 
 <details>
-<summary><b>Query String Parameters</b></summary>
-<br>* This field is valid until April 3rd, 2022.
+<summary><b>Query String Parameters</b><br>
+* This field is valid until April 3rd, 2022.</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
@@ -5986,7 +5986,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td><b> Expected Result:</b></td>
 </tr>
 <tr>
-<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.<br><br>
+<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database. Additionally,<br>
 * This field is valid until April 3rd, 2022.<br>
 ** This field works with ueiDUNS until April 3rd, 2022, and ueiSAM after April 3rd, 2022.<br><br>
 NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
@@ -12849,8 +12849,8 @@ curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI D
 curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI Duns >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/json" --user "< username >:< password >"</div><br><br>
 </details>
 <details>
-<summary><b>Query String Parameters</b></summary>
-<br>* This field is valid until April 3rd, 2022.
+<summary><b>Query String Parameters</b><br>
+* This field is valid until April 3rd, 2022.</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
@@ -13386,9 +13386,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td><b> Expected Result:</b></td>
 </tr>
 <tr>
-<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.<br><br>
+<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database. Additionally,<br>
 * This field is valid until April 3rd, 2022.<br>
-** This field works with ueiDUNS until April 3rd, 2022, and ueiSAM after April 3rd, 2022.<br><br>
+** This field works with ueiDUNS until April 3rd, 2022, and ueiSAM after April 3rd, 2022.
 </td>
 </tr>
 <details>

@@ -96,8 +96,7 @@ Utilizing the Exclusion API as an extract:
 ## API Description
 
 **Query String Parameters**
-
-* This field is valid until April 3rd, 2022.
+<p>* This field is valid until April 3rd, 2022.</p>
 
 | Parameter Name | Description | Applicable Versions |
 | ---- | ----------- | ----------- |
@@ -132,7 +131,7 @@ Utilizing the Exclusion API as an extract:
 **Expected Result**
 
 API response consists of Sections, Sub-sections and Tags underneath each of the Sections or Sub-sections. There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database. Additionally,
-* This field is valid until April 3rd, 2022.
+<p>* This field is valid until April 3rd, 2022.</p>
 
 | Section/Sub-section/Tag | Type | Description | Applicable Versions | 
 | ---- | ---- | ----------- | ----------- |
