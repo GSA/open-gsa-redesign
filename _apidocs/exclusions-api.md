@@ -186,7 +186,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | type | string | Type  |  v1<br>v2 |
 | **exclusionOtherInformation --> moreLocations** |
 | exclusionName | string | Exclusion Name | v2 |
-| duns* | string | DUNS. <b>This field is valid until April 3rd, 2022.</b> | v2 |
+| duns | string | DUNS | v2 |
 | cageCode | string | CAGE Code | v2 |
 | npi | string | NPI | v2 |
 | **exclusionOtherInformation --> moreLocations --> primaryAddress** |
