@@ -3687,15 +3687,14 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format": "xlsx",
-					"title": "Data Dictionary for Hiring Assessment and Selection Outcome Dataset",
+					"title": "Data Dictionary for Federal Hiring Dataset November 10 2021.xlsx",
 					"description": "This is the Data Dictionary for the Hiring Assessment and Selection Outcome Dataset.",
-					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/e91deb82-0d38-48f9-8dd2-6109619758e6/download/data-dictionary-for-federal-hiring-dataset-february-28-2021.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/5f414e14-cac5-4c90-a0e4-ed17fdc751e3/download/data-dictionary-for-federal-hiring-dataset-november-10-2021.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
-					"title": "Hiring-Selections-and-Outcomes-Public-Data-Set-as-of-May-31-2021.csv",
-					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/d95193f1-42a6-47f1-bc88-192af9e861e4/download/hiring-selections-and-outcomes-public-data-set-as-of-may-31-2021.csv"
+					"title": "Hiring-Selections-and-Outcomes-Public-Data-Set-as-of-Sep-30-2021.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/fdd62a7a-a656-4f63-ae84-1e06a45b6a59/download/hiring-selections-and-outcomes-public-data-set-as-of-sep-30-2021.csv"
 				}
 			],
 			"keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -5218,8 +5217,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "EDI JSON 11 05 21.json",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-file-11-05-21.json"
+					"title": "EDI JSON 11 18 21.json",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-file-11-18-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5426,7 +5425,7 @@
 					"mediaType": "application/json",
 					"format": "json",
 					"title": "GSA FITARA Actions and Milestones 2020-08-12",
-					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the Aug. 2021, quarterly submission to OMB on Aug 12, 2021.",
+					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the Aug. 2021, quarterly submission to OMB on November 10, 2021.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
 				}
@@ -5458,7 +5457,7 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "GSA IT Reform Cost Savings/Avoidance",
-					"description": "GSA's August 2021 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description": "GSA's November 2021 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -5489,7 +5488,7 @@
 					"mediaType": "application/zip",
 					"format": "ZIP",
 					"title": "GSA IT Policy Archive Zip",
-					"description": "Last update: 2021-05-13",
+					"description": "Last update: 2021-11-12",
 					"downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
 				}
 			],
@@ -7891,6 +7890,39 @@
 				}
 			],
 			"keyword": ["Networx", "billing", "networx business volume", "telecommunications"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2021 4th Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
+			"modified": "2021-11-17T14:18:48.350Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-11-17-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TotRevFY21_4thQtr.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/e16864d9-b319-43d1-8412-470325497665/resource/51d43425-3f42-4b1f-9717-31dfd71a9005/download/totrevfy21_4thqtr.xlsx"
+				}
+			],
+			"keyword": ["Networx", "Networx Telecommunications", "billing", "networx business volume"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
