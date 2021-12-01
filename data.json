@@ -2344,6 +2344,20 @@
 					"format": "xlsx",
 					"title": "EISTotRevFY21_Q2",
 					"downloadURL": "https://inventory.data.gov/dataset/1ce62e42-2604-4102-8119-3355e45903bc/resource/2a9bd8cf-f847-46f5-941e-d9de57350f55/download/eistotrevfy21_q2.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "EISTotRevFY21_Q3",
+					"description": "EISTotRevFY21_Q3",
+					"downloadURL": "https://inventory.data.gov/dataset/1ce62e42-2604-4102-8119-3355e45903bc/resource/4e75cd88-db6a-4db6-991a-93c275af7d0f/download/eistotrevfy21_q3.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "EISTotRevFY21_Q4",
+					"description": "EISTotRevFY21_Q4",
+					"downloadURL": "https://inventory.data.gov/dataset/1ce62e42-2604-4102-8119-3355e45903bc/resource/54ddaae3-9014-48fe-a999-4673f4429fa2/download/eistotrevfy21_q4.xlsx"
 				}
 			],
 			"keyword": ["EIS", "business-volume", "enterprise-infrastructure", "gsa", "telecommunications"],
@@ -5217,8 +5231,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "EDI JSON 11 18 21.json",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-file-11-18-21.json"
+					"title": "EDI JSON 12 01 21",
+					"description": "EDI JSON file for 12/01/21",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-file-12-01-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -10923,7 +10938,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_bldg_rexus.csv",
-					"description": "November Rexus Buildings",
+					"description": "December Rexus Buildings",
 					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/3bb0decb-64ee-4d92-86ae-4b1457dfb5be/download/data_gov_bldg_rexus.csv"
 				}
 			],
@@ -10957,7 +10972,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus.csv",
-					"description": "November Rexus Leases",
+					"description": "December Rexus Leases",
 					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/1aed05ec-e154-45e6-a394-d29fb7c04272/download/data_gov_lse_rexus.csv"
 				}
 			],
