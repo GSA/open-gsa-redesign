@@ -96,6 +96,7 @@ Utilizing the Exclusion API as an extract:
 ## API Description
 
 **Query String Parameters**
+<p>* This field is valid until April 3rd, 2022.</p>
 
 | Parameter Name | Description | Applicable Versions |
 | ---- | ----------- | ----------- |
@@ -108,7 +109,7 @@ Utilizing the Exclusion API as an extract:
 | stateProvince | Allows 2-character codes for the USA, names for foreign countries and null (a string).<br><br> Examples: 'stateProvince=AR', 'stateProvince=[VA~MICHOACÁN]', 'stateProvince=""' |  v1<br>v2 |
 | country  | Allows 3-character codes, numerical values and null (a string).<br><br> Examples: 'country=USA' 'country=[RUS~292~mex]', 'country=!""', 'q=((country:RUS) OR (country:292) OR (country:mex))' |  v1<br>v2 |
 | zipCode  | Allows 5-digit values for the USA, any value as it was provided for foreign countries and null (a string).<br><br> Example: 'zipCode=20171', 'zipCode=[901-2132~V3M 5P8~C.P. 44890]', 'zipCode=""', 'q=((zipCode:901-2132) OR (zipCode:20147))' |  v1<br>v2 |
-| ueiDUNS | Denotes Unique Entity Identifier DUNS.<br><br> Allows any complete value as it was provided, null and also wildcard searches.<br><br> Examples: 'ueiDUNS=9725565', 'ueiDUNS=[001*~""]', 'q=((ueiDUNS:9725565) OR (ueiDUNS:047795005))' |  v1<br>v2 |
+| ueiDUNS* | Denotes Unique Entity Identifier DUNS.<b>This field is valid until April 3rd, 2022.</b><br><br> Allows any complete value as it was provided, null and also wildcard searches.<br><br> Examples: 'ueiDUNS=9725565', 'ueiDUNS=[001*~""]', 'q=((ueiDUNS:9725565) OR (ueiDUNS:047795005))' |  v1<br>v2 |
 | ueiSAM | Denotes Unique Entity Identifier SAM.<br><br> Allows 12-character values, null and also wildcard searches.<br><br> Examples: 'ueiSAM=""', 'ueiSAM=!""', 'ueiSAM=P*X*1', 'q=((ueiSAM:PMC9YQMXJZU1) OR (ueiSAM:PG4XZ77WRC21))' |  v1<br>v2 |
 | excludingAgencyCode | Allows a partial text, a complete text and null (a string).<br><br> Examples: 'excludingAgencyCode=ICE', 'excludingAgencyCode=DHS-ICE', 'excludingAgencyCode=[AF~HUD~""]', 'q=((excludingAgencyCode:AF) OR (excludingAgencyCode:HUD))' |  v1<br>v2 |
 | excludingAgencyName | Allows a partial text, a complete text and null (a string).<br><br> This parameter can be used inside the 'q' parameter. When not used inside the 'q' parameter, this parameter will apply the AND operator if a multi-text value is provided in any order and in any case<br><br> Examples: 'excludingAgencyName=Of URBAN housing',  'excludingAgencyName=[Geological~Navy]', q=((excludingAgencyName:Geological) OR (excludingAgencyName:Navy)) |  v1<br>v2 |
@@ -129,7 +130,8 @@ Utilizing the Exclusion API as an extract:
 
 **Expected Result**
 
-API response consists of Sections, Sub-sections and Tags underneath each of the Sections or Sub-sections. There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.
+API response consists of Sections, Sub-sections and Tags underneath each of the Sections or Sub-sections. There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database. Additionally,
+<p>* This field is valid until April 3rd, 2022.</p>
 
 | Section/Sub-section/Tag | Type | Description | Applicable Versions | 
 | ---- | ---- | ----------- | ----------- |
@@ -141,7 +143,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | excludingAgencyName | string | Excluding Agency Name  | v1<br>v2 |
 | **exclusionIdentification** |
 | ueiSAM | string | Unique Entity Identifier SAM   | v1<br>v2 |
-| ueiDUNS | string | Unique Entity Identifier DUNS  | v1<br>v2 |
+| ueiDUNS* | string | Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b> | v1<br>v2 |
 | entityEFTIndicator | string | Entity EFT Indicator   | v1<br>v2 |
 | cageCode | string | CAGE Code  |  v1<br>v2 |
 | npi | string| NPI |  v1<br>v2 |
@@ -235,14 +237,148 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Application Level Error Messages:<br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * Invalid Input Parameters. <br><br> * The parameter: 'emailId', 'format', 'exclusionName', 'includeSections', 'addressLine1', 'addressLine2', or 'ssnOrTinOrEin' is not permitted inside Query Param(q). <br><br> * The value null/empty is not valid for parameter ‘Query Param (q). <br><br>  * A maximum of 100 ueiDUNS is allowed. <br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br>  * The Parameter emailId must be provided in conjunction with the parameter format. <br><br>  * Extract File Generation is Still in Progress. <br><br> * Requested File is Expired and cannot be downloaded. <br><br> * Extract File Not Found and we are not able to process your request. <br><br>  * includeSections contains invalid value <value><br><br> * The search parameter, 'ssnOrTinOrEin' will only accept one complete 9 digit value (e.g.: ssnOrTinOrEin=000000000)<br><br> * ssnOrTinOrEin filter must be provided in conjunction with exclusionName.<br><br> * exclusionName will only accept one value when it is provided in conjunction with addressLine1 and addressLine2 |
+| 400 | Application Level Error Messages:<br><br>  * Date should be specified in the format: MM/dd/YYYY. <br><br> * Invalid Input Parameters. <br><br> * The parameter: 'emailId', 'format', 'exclusionName', 'includeSections', 'addressLine1', 'addressLine2', or 'ssnOrTinOrEin' is not permitted inside Query Param(q). <br><br> * The value null/empty is not valid for parameter ‘Query Param (q). <br><br>  * A maximum of 100 ueiDUNS is allowed.<br><b>(This error is valid until April 3rd, 2022.)</b><br><br>  * A maximum of 100 CAGE Codes is allowed. <br><br>  * The Parameter emailId must be provided in conjunction with the parameter format. <br><br>  * Extract File Generation is Still in Progress. <br><br> * Requested File is Expired and cannot be downloaded. <br><br> * Extract File Not Found and we are not able to process your request. <br><br>  * includeSections contains invalid value <value><br><br> * The search parameter, 'ssnOrTinOrEin' will only accept one complete 9 digit value (e.g.: ssnOrTinOrEin=000000000)<br><br> * ssnOrTinOrEin filter must be provided in conjunction with exclusionName.<br><br> * exclusionName will only accept one value when it is provided in conjunction with addressLine1 and addressLine2 |
 | 403 | API key is not correct or was not provided. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Examples
 
-### Example 1: Get Individual or Special Entity Designation Exclusion records that are not excluded by DOJ, that belong to Korea and that contain CHONG anywhere in the response.
+### Example 1: Post April 2022, get me all the Firms whose Physical Address is in Virginia.
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
+<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
+<br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+Note: Public Response for one record is provided as an example <br>
+<p>
+<code>
+<pre>
+{
+  "totalRecords": 1,
+  "excludedEntity": [
+    {
+      "exclusionDetails": {
+        "classificationType": "Firm",
+        "exclusionType": "Ineligible (Proceedings Pending)",
+        "exclusionProgram": "Reciprocal",
+        "excludingAgencyCode": "DLA",
+        "excludingAgencyName": "DEFENSE LOGISTICS AGENCY"
+      },
+      "exclusionIdentification": {
+        "ueiSAM": "KQKWLLDBMDL5",
+        "cageCode": null,
+        "npi": null,
+        "prefix": null,
+        "firstName": null,
+        "middleName": null,
+        "lastName": null,
+        "suffix": null,
+        "entityName": "Supreme Fuels GmbH & Co. KG",
+        "dnbOpenData": null
+      },
+      "exclusionActions": {
+        "listOfActions": [
+          {
+            "createDate": "03-19-2015",
+            "updateDate": "03-19-2015",
+            "activateDate": "03-13-2015",
+            "terminationDate": null,
+            "terminationType": "Indefinite",
+            "recordStatus": "Active"
+          }
+        ]
+      },
+      "exclusionPrimaryAddress": {
+        "addressLine1": "Rembrandtstr. 17",
+        "addressLine2": null,
+        "city": "Frankfurt am Main",
+        "stateOrProvinceCode": null,
+        "zipCode": "60596",
+        "zipCodePlus4": null,
+        "countryCode": "DEU"
+      },
+      "exclusionSecondaryAddress": [],
+      "exclusionOtherInformation": {
+        "additionalComments": "Supreme Foodservice GmbH and Supreme Foodservice FZE",
+        "ctCode": null,
+        "evsInvestigationStatus": null,
+        "references": {
+          "referencesList": [
+            {
+              "exclusionName": "Supreme Fuels GmbH & Co. KG, Frankfurt am Main (D), Zweigniederlassung Glarus (480015629)- Zwinglistrasse 6 , GLARUS , GL ,8750,CHE",
+              "type": "Cross-Reference"
+            }
+          ]
+        },
+        "moreLocations": [
+          {
+            "exclusionName": "Supreme Fuels GmbH & Co. KG, Frankfurt am Main (D), Zweigniederlassung Glarus (480015629)- Zwinglistrasse 6 , GLARUS , GL ,8750,CHE",
+            "cageCode": null,
+            "npi": null,
+            "primaryAddress": {
+              "addressLine1": "Zwinglistrasse 6",
+              "addressLine2": null,
+              "city": "GLARUS",
+              "stateOrProvinceCode": "GL",
+              "zipCode": "8750",
+              "zipCodePlus4": null,
+              "countryCode": "CHE"
+            },
+            "secondaryAddress": [
+              {
+                "addressLine1": null,
+                "addressLine2": null,
+                "city": null,
+                "stateOrProvinceCode": null,
+                "zipCode": null,
+                "zipCodePlus4": null,
+                "countryCode": null
+              }
+            ]
+          }
+        ]
+      },
+      "vesselDetails": {
+        "callSign": null,
+        "type": null,
+        "tonnage": null,
+        "grt": null,
+        "flag": null,
+        "owner": null
+      }
+    }
+  ],
+</pre>
+</code>
+</p>
+</details>
+
+### Example 2: Post April 2022, get me all the Firms whose Physical Address is in Virginia in a CSV file format.
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA&includeSections=exclusionIdentification&format=CSV<br>
+<br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA&includeSections=exclusionIdentification&format=CSV<br>
+<br>
+</details>
+
+<details>
+<summary>Response</summary>
+<p>
+Extract File will be available for download with url: https://api.sam.gov/entity-information/v2/download-exclusions?api_key=REPLACE_WITH_API_KEY&token=< TOKEN > in some time. If you have requested for an email notification, you will receive it once the file is ready for download.<br><br>
+Downloading the CSV file using the Token:
+https://api.sam.gov/entity-information/v2/download-exclusions?api_key=< PUBLIC API KEY >&token=< TOKEN ><br><br>
+Click to view CSV Response for one record <a href="v1/Sample CSV Response.csv" taget="_blank">Sample CSV Response.</a>
+</p>
+</details>
+
+### Example 3: Get Individual or Special Entity Designation Exclusion records that are not excluded by DOJ, that belong to Korea and that contain CHONG anywhere in the response.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
@@ -366,7 +502,7 @@ A sample record is provided here:
 </p>
 </details>
 
-### Example 2: Get details and address of the Ineligible (Proceedings Completed) or Prohibition/Restriction type of Firm Exclusion records that belong to Korea, China or Germany, by using the "q" parameter.
+### Example 4: Get details and address of the Ineligible (Proceedings Completed) or Prohibition/Restriction type of Firm Exclusion records that belong to Korea, China or Germany, by using the "q" parameter.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key= < a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
@@ -430,7 +566,7 @@ A sample record is provided here:
 </p>
 </details>
 
-### Example 3: To receive a file downloadable link in the email for the requested CSV results.
+### Example 5: To receive a file downloadable link in the email for the requested CSV results.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=Y<br>
@@ -527,5 +663,6 @@ Date | Version | Description
 05/12/2021 | v2.5 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
 07/16/2021 | v2.6 | * Updated description for recordStatus parameter.<br><br> * Added message stating that the slash character must be enclosed with double quotes if being used inside of a search parameter.<br><br> * Added the Type of Connections and Rate Limits table<br><br> * Updated the examples<br><br> * Updated the Contact Us information
 10/06/2021 | v2.7 | * Updated the "Contact Us" section.
+10/21/2021 | v2.8 | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior.
 
 <p><small><a href="#">Back to top</a></small></p>

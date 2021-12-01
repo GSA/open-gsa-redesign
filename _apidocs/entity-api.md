@@ -30,7 +30,7 @@ The Entity Management API will allow users to request Public Entity Information 
 Public and FOUO Entity Details can be accessed from Production or Alpha via the following version 1, version 2, and version 3 endpoints:
 * Production Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
 * Production Version 2: https://api.sam.gov/entity-information/v2/entities?api_key= < value >
-* Production Version 3: COMING SOON
+* Production Version 3: https://api.sam.gov/entity-information/v3/entities?api_key= < value >
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
 * Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/entities?api_key= < value >
@@ -40,7 +40,7 @@ These are GET calls.
 Sensitive Entity Details can be accessed from Production or Alpha via the following version 1, version 2, and version 3 end points:
 * Production Version 1: https://api.sam.gov/entity-information/v1/entities?
 * Production Version 2: https://api.sam.gov/entity-information/v2/entities?
-* Production Version 3: COMING SOON
+* Production Version 3: https://api.sam.gov/entity-information/v3/entities?
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?
 * Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/entities?
@@ -115,7 +115,8 @@ If you are using Chrome, subsections that can be expanded are denoted with an ar
 ### Public API Information
 
 <details>
-<summary><b>Query String Parameters</b></summary>
+<summary><b>Query String Parameters</b><br>
+* This field is valid until April 3rd, 2022.</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
@@ -192,8 +193,8 @@ NOTES:
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS
+<td>ueiDUNS*</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b>
 <br>Allows 9 digit value; a maximum of up to 100 values 
 can be sent.
 <br>Example: ueiDUNS=025114695
@@ -525,7 +526,10 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td><b> Expected Result:</b></td>
 </tr>
 <tr>
-<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.</td>
+<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database. Additionally,<br>
+* This field is valid until April 3rd, 2022.<br>
+** This field works with ueiDUNS until April 3rd, 2022, and ueiSAM after April 3rd, 2022.
+</td>
 </tr>
 <details>
 <summary>entityRegistration Section</summary>
@@ -555,9 +559,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
+<td>ueiDUNS*</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b>
 <br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -703,9 +707,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>exclusionURL</td>
+<td>exclusionURL**</td>
 <td>string</td>
-<td>Active Exclusion URL</td>
+<td>Returns the URL to access the Exclusion record <b>with ueiDUNS until April 3rd, 2022</b> and <b>with ueiSAM after April 3rd, 2022.</b></td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -5502,7 +5506,8 @@ The repsAndCerts section is not available for use with the format parameter.
 ### FOUO API Information
 
 <details>
-<summary><b>Query String Parameters</b></summary>
+<summary><b>Query String Parameters</b><br>
+* This field is valid until April 3rd, 2022.</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
@@ -5579,8 +5584,8 @@ NOTES:
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS
+<td>ueiDUNS*</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b>
 <br>Allows 9 digit value; a maximum of up to 100 values 
 can be sent.
 <br>Example: ueiDUNS=025114695
@@ -5941,8 +5946,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>ultimateParentUEIDUNS</td>
-<td>Allows text.
+<td>ultimateParentUEIDUNS*</td>
+<td>Allows text. <b>This field is valid until April 3rd, 2022.</b>
 <br>Example: ultimateParentUEIDUNS=090123451</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -5981,7 +5986,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td><b> Expected Result:</b></td>
 </tr>
 <tr>
-<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.<br><br>
+<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database. Additionally,<br>
+* This field is valid until April 3rd, 2022.<br>
+** This field works with ueiDUNS until April 3rd, 2022, and ueiSAM after April 3rd, 2022.<br><br>
 NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 </tr>
 <details>
@@ -6012,9 +6019,9 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
+<td>ueiDUNS*</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b>
 <br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -6159,9 +6166,9 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 </tr>
 
 <tr>
-<td>exclusionURL</td>
+<td>exclusionURL**</td>
 <td>string</td>
-<td>Active Exclusion URL</td>
+<td>Returns the URL to access the Exclusion record <b>with ueiDUNS until April 3rd, 2022</b> and <b>with ueiSAM after April 3rd, 2022.</b></td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -6208,9 +6215,9 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
+<td>ueiDUNS*</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b></td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -6338,9 +6345,9 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
+<td>ueiDUNS*</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b></td>
 </tr>
 
 <tr>
@@ -6450,9 +6457,9 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
+<td>ueiDUNS*</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b></td>
 </tr>
 
 <tr>
@@ -6570,9 +6577,9 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
+<td>ueiDUNS*</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b></td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -12842,7 +12849,8 @@ curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI D
 curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiDUNS=< UEI Duns >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/json" --user "< username >:< password >"</div><br><br>
 </details>
 <details>
-<summary><b>Query String Parameters</b></summary>
+<summary><b>Query String Parameters</b><br>
+* This field is valid until April 3rd, 2022.</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Parameter Name</b></th>
@@ -12919,8 +12927,8 @@ NOTES:
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
-<td>Unique Entity Identifier DUNS
+<td>ueiDUNS*</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b>
 <br>Allows 9 digit value; a maximum of up to 100 values 
 can be sent.
 <br>Example: ueiDUNS=025114695
@@ -13281,8 +13289,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>ultimateParentUEIDUNS</td>
-<td>Allows text.
+<td>ultimateParentUEIDUNS*</td>
+<td>Allows text. <b>This field is valid until April 3rd, 2022.</b>
 <br>Example: ultimateParentUEIDUNS=090123451</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -13378,7 +13386,10 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td><b> Expected Result:</b></td>
 </tr>
 <tr>
-<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database.</td>
+<td>There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database. Additionally,<br>
+* This field is valid until April 3rd, 2022.<br>
+** This field works with ueiDUNS until April 3rd, 2022, and ueiSAM after April 3rd, 2022.
+</td>
 </tr>
 <details>
 <summary>entityRegistration Section</summary>
@@ -13408,9 +13419,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
+<td>ueiDUNS*</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b>
 <br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -13555,9 +13566,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>exclusionURL</td>
+<td>exclusionURL**</td>
 <td>string</td>
-<td>Active Exclusion URL</td>
+<td>Returns the URL to access the Exclusion record <b>with ueiDUNS until April 3rd, 2022</b> and <b>with ueiSAM after April 3rd, 2022.</b></td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -13604,9 +13615,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
+<td>ueiDUNS*</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b></td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -13734,9 +13745,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
+<td>ueiDUNS* </td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b></td>
 </tr>
 
 <tr>
@@ -13846,9 +13857,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
+<td>ueiDUNS*</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b></td>
 </tr>
 
 <tr>
@@ -13966,9 +13977,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<td>ueiDUNS</td>
+<td>ueiDUNS*</td>
 <td>string</td>
-<td>Unique Entity Identifier DUNS</td>
+<td>Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b></td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -20460,7 +20471,7 @@ The API will return one of the following responses:
   </tr>
   <tr>
     <td>400</td>
-    <td>Application Level Error Messages:<br><br>1. Invalid "Date" format:<br>v1 or v2: Date should be specified in the format: MM/dd/YYYY.<br>v3: "message":"Dates must be specified in the MM/DD/YYYY format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY format."<br><br>2. Invalid "ueiDUNS" length:<br>v1 or v2: ueiDUNS can only be 9 digits.<br>v3: "message":"The search parameter 'ueiDUNS' can only be a 9 digit value.", "detail":"Please provide valid values for ueiDUNS."<br><br>3. Invalid "ueiDUNS" value:<br>v1 or v2: ueiDUNS Should Contain Only Numeric value.<br>v3: "message":"The search parameter 'ueiDUNS' can only be a 9 digit value.", "detail":"Please provide valid values for ueiDUNS."<br><br>4. Invalid Search Parameter:<br>v1 or v2: "Invalid Input Parameters","detail":"< user-provided invalid parameter >"<br>v3: "message":"The search parameter, < user-provided invalid parameter > does not exist.", "detail":"Please refer to https://open.gsa.gov/api/entity-api/ for a list of allowable search parameters."<br><br>5. If ‘includeSections’, ‘emailId’ or ‘format’ is sent in the "q" parameter:<br>v1 or v2: The parameters: ‘includeSections’, ‘emailId’ or ‘format’ are not permitted inside Query Param(q).<br>v3: "message":"The search parameters 'includeSections','emailId' and 'format' are not permitted inside Query Param(q)", "detail":"Please provide these parameters separately"<br><br>6. More than 100 ueiSAM values are sent:<br>v1 or v2: A maximum of 100 ueiSAM is allowed.<br>v3: "message": "More than 100 UEI SAM are not allowed.", "detail": "Please limit the number of UEI SAM to 100."<br><br>7. More than 100 ueiDUNS values are sent:<br>v1 or v2: A maximum of 100 ueiDUNS is allowed.<br>v3: "message": "More than 100 UEI DUNS are not allowed.", "detail": "Please limit the number of UEI DUNS to 100."<br><br>8. More than 100 CAGE values are sent:<br>v1 or v2: A maximum of 100 CAGE Codes is allowed.<br>v3: "message":"More than 100 CAGE Codes are not allowed.", "detail":"Please limit the number of CAGE Codes to 100."<br><br>9. If "emailId" is sent on its own:<br>v1 or v2: The parameter emailId must be provided in conjunction with the parameter format.<br>v3: "message":"The search parameter 'emailId' must be provided in conjunction with the search parameter 'format.", "detail":"Users can opt for receiving the requested JSON/CSV files in their emails."<br><br>10. If "entityEFTIndicator" is sent on its own:<br>v1 or v2: entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter.<br>v3: message":"The search parameter 'entityEFTIndicator' must be provided in conjunction with the search parameter 'ueiDUNS' or 'ueiSAM'.", "detail":"The entityEFTIndicator parameter cannot be provided on its own."<br><br>11. File size exceeded for JSON or CSV exports:<br>v1 or v2: "Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search."<br>v3: "message":"Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search.", "detail":"Count Exceeded Error"<br><br>12. JSON or CSV file generation is in-progress:<br>v1 or v2: File Processing in Progress. Please check again later.<br>v3: "message": "The requested JSON or CSV file is not generated yet. Please try again later.", "details": "Larger files will take some time to process."<br><br>13. Using an expired Token for downloading JSON or CSV files:<br>v1 or v2: title":"Requested File is Expired and cannot be downloaded","detail":"We are not able to process your request"<br>v3: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number."<br><br>14. More than 10,000 records are requested via "page" and "size" parameters:<br>v1 or v2: "title":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."<br>v3: "message":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."<br><br>15. More than 10 for "size" is requested:<br>v1 or v2: "title":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"<br>v3: "message":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"<br><br>16. Missing "Basic Auth" under "Authorization" and missing System Account credentials:<br>v1 or v2: No system account credentials are provided. Please provide credentials via basic authentication.<br><br>17. Different IP Address than that mentioned in the System Account:<br>v1 or v2: IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.<br><br>18. API Key does not belong to the System Account:<br>v1 or v2: System Account and API Key you have provided do not match. Please visit your System Account and obtain the API Key from there.<br><br>19. System Account has a different value for "Type of Connection":<br>v1 or v2: "title": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",<br>v3: "message": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",<br><br>20. If GET is used with System Accounts:<br>v1 or v2: GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.<br>v3: "message": "Permission denied", "detail": "GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.",<br><br>21. Insufficient API Key privileges to download a JSON or CSV File:<br>v1 or v2: The API Key is not authorized to access this < file type > Extract<br>v3: The API Key is not authorized to access this < file type > Extract<br><br>22. Both ueiDUNS and ueiSAM are sent in the Reps and Certs PDF download links:<br>v1, v2 or v3: The parameter ueiDUNS can't be provided in conjunction with the parameter ueiSAM.</td>
+    <td>Application Level Error Messages:<br><br>1. Invalid "Date" format:<br>v1 or v2: Date should be specified in the format: MM/dd/YYYY.<br>v3: "message":"Dates must be specified in the MM/DD/YYYY format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY format."<br><br>2. Invalid "ueiDUNS" length:<br>v1 or v2: ueiDUNS can only be 9 digits.<br>v3: "message":"The search parameter 'ueiDUNS' can only be a 9 digit value.", "detail":"Please provide valid values for ueiDUNS."<br><b>These errors are valid until April 3rd, 2022.</b><br><br>3. Invalid "ueiDUNS" value:<br>v1 or v2: ueiDUNS Should Contain Only Numeric value.<br>v3: "message":"The search parameter 'ueiDUNS' can only be a 9 digit value.", "detail":"Please provide valid values for ueiDUNS."<br><b>These errors are valid until April 3rd, 2022.</b><br><br>4. Invalid Search Parameter:<br>v1 or v2: "Invalid Input Parameters","detail":"< user-provided invalid parameter >"<br>v3: "message":"The search parameter, < user-provided invalid parameter > does not exist.", "detail":"Please refer to https://open.gsa.gov/api/entity-api/ for a list of allowable search parameters."<br><br>5. If ‘includeSections’, ‘emailId’ or ‘format’ is sent in the "q" parameter:<br>v1 or v2: The parameters: ‘includeSections’, ‘emailId’ or ‘format’ are not permitted inside Query Param(q).<br>v3: "message":"The search parameters 'includeSections','emailId' and 'format' are not permitted inside Query Param(q)", "detail":"Please provide these parameters separately"<br><br>6. More than 100 ueiSAM values are sent:<br>v1 or v2: A maximum of 100 ueiSAM is allowed.<br>v3: "message": "More than 100 UEI SAM are not allowed.", "detail": "Please limit the number of UEI SAM to 100."<br><br>7. More than 100 ueiDUNS values are sent:<br>v1 or v2: A maximum of 100 ueiDUNS is allowed.<br>v3: "message": "More than 100 UEI DUNS are not allowed.", "detail": "Please limit the number of UEI DUNS to 100."<br><b>These errors are valid until April 3rd, 2022.</b><br><br>8. More than 100 CAGE values are sent:<br>v1 or v2: A maximum of 100 CAGE Codes is allowed.<br>v3: "message":"More than 100 CAGE Codes are not allowed.", "detail":"Please limit the number of CAGE Codes to 100."<br><br>9. If "emailId" is sent on its own:<br>v1 or v2: The parameter emailId must be provided in conjunction with the parameter format.<br>v3: "message":"The search parameter 'emailId' must be provided in conjunction with the search parameter 'format.", "detail":"Users can opt for receiving the requested JSON/CSV files in their emails."<br><br>10. If "entityEFTIndicator" is sent on its own:<br><b>Until April 3rd, 2022:</b><br>v1 or v2: entityEFTIndicator filter must be provided in conjunction with ueiDUNS filter or ueiSAM filter.<br>v3: message":"The search parameter 'entityEFTIndicator' must be provided in conjunction with the search parameter 'ueiDUNS' or 'ueiSAM'.", "detail":"The entityEFTIndicator parameter cannot be provided on its own."<br><br><b>After April 3rd, 2022:</b><br>v1 or v2: entityEFTIndicator filter must be provided in conjunction with ueiSAM filter.<br>v3: message":"The search parameter 'entityEFTIndicator' must be provided in conjunction with the search parameter 'ueiSAM'.", "detail":"The entityEFTIndicator parameter cannot be provided on its own."<br><br>11. File size exceeded for JSON or CSV exports:<br>v1 or v2: "Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search."<br>v3: "message":"Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search.", "detail":"Count Exceeded Error"<br><br>12. JSON or CSV file generation is in-progress:<br>v1 or v2: File Processing in Progress. Please check again later.<br>v3: "message": "The requested JSON or CSV file is not generated yet. Please try again later.", "details": "Larger files will take some time to process."<br><br>13. Using an expired Token for downloading JSON or CSV files:<br>v1 or v2: title":"Requested File is Expired and cannot be downloaded","detail":"We are not able to process your request"<br>v3: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number."<br><br>14. More than 10,000 records are requested via "page" and "size" parameters:<br>v1 or v2: "title":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."<br>v3: "message":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."<br><br>15. More than 10 for "size" is requested:<br>v1 or v2: "title":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"<br>v3: "message":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"<br><br>16. Missing "Basic Auth" under "Authorization" and missing System Account credentials:<br>v1 or v2: No system account credentials are provided. Please provide credentials via basic authentication.<br><br>17. Different IP Address than that mentioned in the System Account:<br>v1 or v2: IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.<br><br>18. API Key does not belong to the System Account:<br>v1 or v2: System Account and API Key you have provided do not match. Please visit your System Account and obtain the API Key from there.<br><br>19. System Account has a different value for "Type of Connection":<br>v1 or v2: "title": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",<br>v3: "message": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",<br><br>20. If GET is used with System Accounts:<br>v1 or v2: GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.<br>v3: "message": "Permission denied", "detail": "GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.",<br><br>21. Insufficient API Key privileges to download a JSON or CSV File:<br>v1 or v2: The API Key is not authorized to access this < file type > Extract<br>v3: The API Key is not authorized to access this < file type > Extract<br><br>22. Both ueiDUNS and ueiSAM are sent in the Reps and Certs PDF download links:<br><b>After April 3rd, 2022:</b><br>v1, v2 or v3: Invalid Input Parameters, ueiDUNS.<br><br>23. The ueiDUNS is sent in the Reps and Certs PDF download links:<br><b>After April 3rd, 2022:</b><br>v1, v2 or v3  Invalid Input Parameters, ueiDUNS.<br><br>24. A non-existing Reps and Certs PDF file is requested:<br>v1, v2, v3: The requested PDF File does not exist; the entity did not answer this type of Representations and Certifications data.</td>
   </tr>
   <tr>
     <td>401</td>
@@ -20487,7 +20498,820 @@ The API will return one of the following responses:
 
 ## Examples
 
-### Example 1: Get the "entityRegistration" and "coreData" sections for all the "Joint Venture Women" or "Asian-Pacific" Entities that are registered for "All Awards" or "Federal Assistance Awards".
+### Example 1: Post April 2022, get me the SAM-Registered Entities with Address Change and Name Change resulting from EVS Monitoring.
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiSAM=[ZQGGHJH74DW7~JH9ZARNKWKC7]&includeSections=entityRegistration,coreData
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key= < FOUO API Key >&ueiSAM=[ZQGGHJH74DW7~JH9ZARNKWKC7]&includeSections=entityRegistration,coreData
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiSAM=[ZQGGHJH74DW7~JH9ZARNKWKC7]&includeSections=entityRegistration,coreData
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< FOUO API Key >&ueiSAM=[ZQGGHJH74DW7~JH9ZARNKWKC7]&includeSections=entityRegistration,coreData
+<br><br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+FOUO Response for the two records is provided in v2 and v3. <br>
+<p>
+<code style="font-family:Source Sans Pro; font-size: 18px">
+<pre>
+An Entity with an Address Change resulting from EVS Monitoring in v2:
+
+"entityData": [
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "ZQGGHJH74DW7",
+                "entityEFTIndicator": null,
+                "cageCode": "855J5",
+                "dodaac": null,
+                "legalBusinessName": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z2",
+                "purposeOfRegistrationDesc": "All Awards",
+                "registrationStatus": "Active",
+                "registrationDate": "2018-07-24",
+                "lastUpdateDate": "2021-06-10",
+                "registrationExpirationDate": "2021-08-10",
+                "activationDate": "2020-08-13",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2021-08-10",
+                "ueiCreationDate": "2021-06-25",
+                "noPublicDisplayFlag": "Y",
+                "exclusionStatusFlag": null,
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "legalBusinessName": null,
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": "J64CSQTQNRC1",
+                                "legalBusinessName": "International Business Machines Corporation",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": "J64CSQTQNRC1",
+                                "legalBusinessName": "International Business Machines Corporation",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": "J64CSQTQNRC1",
+                        "legalBusinessName": "International Business Machines Corporation",
+                        "physicalAddress": {
+                            "addressLine1": "Address Line1",
+                            "addressLine2": null,
+                            "city": "City",
+                            "stateOrProvinceCode": "XX",
+                            "countryCode": "XXX",
+                            "zipCode": "11111",
+                            "zipCodePlus4": "1111"
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "International Business Machines Corporation",
+                        "dbaName": null,
+                        "outOfBusinessFlag": "N/A",
+                        "monitoringStatus": "Y",
+                        "lastUpdated": "Y",
+                        "addressLine1": "New Address Line 1",
+                        "addressLine2": "New Address Line 2",
+                        "city": "New City",
+                        "postalCode": "New Zip/Postal Code",
+                        "stateOrProvinceCode": "New State/Province",
+                        "countryCode": "New Country Code"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": "http://www.ibm.com/us/en",
+                    "entityDivisionName": "IBM Global Business Services",
+                    "entityDivisionNumber": "16",
+                    "entityStartDate": "1911-01-01",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2020-08-10",
+                },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "congressionalDistrict": "00",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "2L",
+                    "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2X",
+                    "profitStructureDesc": "For Profit Organization",
+                    "organizationStructureCode": null,
+                    "organizationStructureDesc": null,
+                    "stateOfIncorporationCode": "NY",
+                    "stateOfIncorporationDesc": "NEW YORK",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": "94",
+                    "companySecurityLevelDesc": "Government Top Secret",
+                    "highestEmployeeSecurityLevelCode": "94",
+                    "highestEmployeeSecurityLevelDesc": "Government Top Secret"
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "2X",
+                            "businessTypeDesc": "For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "N",
+                    "debtSubjectToOffset": "N",
+                },
+                
+            }
+        },
+
+An Entity with an Address Change resulting from EVS Monitoring in v3:
+
+"entityData": [
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "ZQGGHJH74DW7",
+                "entityEFTIndicator": null,
+                "cageCode": "855J5",
+                "dodaac": null,
+                "legalBusinessName": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z2",
+                "purposeOfRegistrationDesc": "All Awards",
+                "registrationStatus": "Active",
+                "evsSource": "D&B",
+                "registrationDate": "2018-07-24",
+                "lastUpdateDate": "2021-06-10",
+                "registrationExpirationDate": "2021-08-10",
+                "activationDate": "2020-08-13",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2021-08-10",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "Y",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": "J64CSQTQNRC1",
+                                "legalBusinessName": "International Business Machines Corporation",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": "J64CSQTQNRC1",
+                                "legalBusinessName": "International Business Machines Corporation",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": "J64CSQTQNRC1",
+                        "legalBusinessName": "International Business Machines Corporation",
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": "Address Line1",
+                            "addressLine2": null,
+                            "city": "City",
+                            "stateOrProvinceCode": "XX",
+                            "countryCode": "XXX",
+                            "zipCode": "11111",
+                            "zipCodePlus4": "1111"
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "International Business Machines Corporation",
+                        "dbaName": null,
+                        "outOfBusinessFlag": "N/A",
+                        "monitoringStatus": "Y",
+                        "lastUpdated": "Y",
+                        "addressLine1": "New Address Line 1",
+                        "addressLine2": "New Address Line 2",
+                        "city": "New City",
+                        "postalCode": "New Zip/Postal Code",
+                        "stateOrProvinceCode": "New State/Province",
+                        "countryCode": "New Country Code"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": "http://www.ibm.com/us/en",
+                    "entityDivisionName": "IBM Global Business Services",
+                    "entityDivisionNumber": "16",
+                    "entityStartDate": "1911-01-01",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2020-08-10",
+                },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "congressionalDistrict": "00",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "2L",
+                    "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "2X",
+                    "profitStructureDesc": "For Profit Organization",
+                    "organizationStructureCode": null,
+                    "organizationStructureDesc": null,
+                    "stateOfIncorporationCode": "NY",
+                    "stateOfIncorporationDesc": "NEW YORK",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": "94",
+                    "companySecurityLevelDesc": "Government Top Secret",
+                    "highestEmployeeSecurityLevelCode": "94",
+                    "highestEmployeeSecurityLevelDesc": "Government Top Secret"
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "2X",
+                            "businessTypeDesc": "For Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "N",
+                    "debtSubjectToOffset": "N",
+                },
+                
+            }
+        },
+
+An Entity with a Name Change resulting from EVS Monitoring in v2:
+
+"entityData": [
+        {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "JH9ZARNKWKC7",
+                "entityEFTIndicator": null,
+                "cageCode": "7X7G0",
+                "dodaac": null,
+                "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z1",
+                "purposeOfRegistrationDesc": "Federal Assistance Awards",
+                "registrationStatus": "Active",
+                "registrationDate": "2017-07-27",
+                "lastUpdateDate": "2021-03-11",
+                "registrationExpirationDate": "2022-03-03",
+                "activationDate": "2021-03-05",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2022-03-03",
+                "ueiCreationDate": "2021-06-25",
+                "noPublicDisplayFlag": "N",
+                "exclusionStatusFlag": null,
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "legalBusinessName": null,
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": "JH9ZARNKWKC7",
+                                "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": "JH9ZARNKWKC7",
+                                "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": "JH9ZARNKWKC7",
+                        "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                        "physicalAddress": {
+                            "addressLine1": "Address Line1",
+                            "addressLine2": null,
+                            "city": "City",
+                            "stateOrProvinceCode": "XX",
+                            "countryCode": "XXX",
+                            "zipCode": "11111",
+                            "zipCodePlus4": "1111"
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "International Business Machines CORPORATION",
+                        "dbaName": null,
+                        "outOfBusinessFlag": "N/A",
+                        "monitoringStatus": "Y",
+                        "lastUpdated": "Y",
+                        "addressLine1": "N/A",
+                        "addressLine2": "N/A",
+                        "city": "N/A",
+                        "postalCode": "N/A",
+                        "stateOrProvinceCode": "N/A",
+                        "countryCode": "N/A"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": "www.ithinkfi.org",
+                    "entityDivisionName": null,
+                    "entityDivisionNumber": null,
+                    "entityStartDate": "1969-09-03",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2021-03-03",
+                },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "congressionalDistrict": "00",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "8H",
+                    "entityStructureDesc": "Corporate Entity (Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "A8",
+                    "profitStructureDesc": "Non-Profit Organization",
+                    "organizationStructureCode": null,
+                    "organizationStructureDesc": null,
+                    "stateOfIncorporationCode": "FL",
+                    "stateOfIncorporationDesc": "FLORIDA",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": null,
+                    "companySecurityLevelDesc": null,
+                    "highestEmployeeSecurityLevelCode": null,
+                    "highestEmployeeSecurityLevelDesc": null
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "A8",
+                            "businessTypeDesc": "Non-Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "N",
+                    "debtSubjectToOffset": "N",
+                    
+                },
+                
+            }
+        }
+    ],
+
+An Entity with a Name Change resulting from EVS Monitoring in v3:
+
+"entityData": [
+          {
+            "entityRegistration": {
+                "samRegistered": "Yes",
+                "ueiSAM": "JH9ZARNKWKC7",
+                "entityEFTIndicator": null,
+                "cageCode": "7X7G0",
+                "dodaac": null,
+                "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                "dbaName": null,
+                "purposeOfRegistrationCode": "Z1",
+                "purposeOfRegistrationDesc": "Federal Assistance Awards",
+                "registrationStatus": "Active",
+                "evsSource": "D&B",
+                "registrationDate": "2017-07-27",
+                "lastUpdateDate": "2021-03-11",
+                "registrationExpirationDate": "2022-03-03",
+                "activationDate": "2021-03-05",
+                "ueiStatus": "Active",
+                "ueiExpirationDate": "2022-03-03",
+                "ueiCreationDate": "2021-06-25",
+                "publicDisplayFlag": "N",
+                "exclusionStatusFlag": "N",
+                "exclusionURL": null,
+                "dnbOpenData": "Y"
+            },
+            "coreData": {
+                "entityHierarchyInformation": {
+                    "immediateParentEntity": {
+                        "ueiSAM": null,
+                        "legalBusinessName": null,
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "countryCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null
+                        },
+                        "phoneNumber": null
+                    },
+                    "intermediateParentEntities": [
+                        {
+                            "domesticParent": {
+                                "ueiSAM": "JH9ZARNKWKC7",
+                                "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            },
+                            "hqParent": {
+                                "ueiSAM": "JH9ZARNKWKC7",
+                                "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                                "evsSource": "D&B",
+                                "physicalAddress": {
+                                    "addressLine1": "Address Line1",
+                                    "addressLine2": null,
+                                    "city": "City",
+                                    "stateOrProvinceCode": "XX",
+                                    "countryCode": "XXX",
+                                    "zipCode": "11111",
+                                    "zipCodePlus4": "1111"
+                                },
+                                "phoneNumber": null
+                            }
+                        }
+                    ],
+                    "ultimateParentEntity": {
+                        "ueiSAM": "JH9ZARNKWKC7",
+                        "legalBusinessName": "IBM Southeast Employees' Credit Union",
+                        "evsSource": "D&B",
+                        "physicalAddress": {
+                            "addressLine1": "Address Line1",
+                            "addressLine2": null,
+                            "city": "City",
+                            "stateOrProvinceCode": "XX",
+                            "countryCode": "XXX",
+                            "zipCode": "11111",
+                            "zipCodePlus4": "1111"
+                        },
+                        "phoneNumber": null
+                    },
+                    "evsMonitoring": {
+                        "legalBusinessName": "International Business Machines CORPORATION",
+                        "dbaName": null,
+                        "outOfBusinessFlag": "N/A",
+                        "monitoringStatus": "Y",
+                        "lastUpdated": "Y",
+                        "addressLine1": "N/A",
+                        "addressLine2": "N/A",
+                        "city": "N/A",
+                        "postalCode": "N/A",
+                        "stateOrProvinceCode": "N/A",
+                        "countryCode": "N/A"
+                    }
+                },
+                "federalHierarchy": {
+                    "source": null,
+                    "hierarchyDepartmentCode": null,
+                    "hierarchyDepartmentName": null,
+                    "hierarchyAgencyCode": null,
+                    "hierarchyAgencyName": null,
+                    "hierarchyOfficeCode": null
+                },
+                "entityInformation": {
+                    "entityURL": "www.ithinkfi.org",
+                    "entityDivisionName": null,
+                    "entityDivisionNumber": null,
+                    "entityStartDate": "1969-09-03",
+                    "fiscalYearEndCloseDate": "12/31",
+                    "submissionDate": "2021-03-03",
+                },
+                "physicalAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "mailingAddress": {
+                  "addressLine1": "Address1",
+                  "addressLine2": "Address2",
+                  "city": "City",
+                  "stateOrProvinceCode": "XX",
+                  "zipCode": "11111",
+                  "zipCodePlus4": "1111",
+                  "countryCode": "ABC"
+                },
+                "congressionalDistrict": "00",
+                "generalInformation": {
+                    "agencyBusinessPurposeCode": null,
+                    "agencyBusinessPurposeDesc": null,
+                    "entityStructureCode": "8H",
+                    "entityStructureDesc": "Corporate Entity (Tax Exempt)",
+                    "entityTypeCode": "F",
+                    "entityTypeDesc": "Business or Organization",
+                    "profitStructureCode": "A8",
+                    "profitStructureDesc": "Non-Profit Organization",
+                    "organizationStructureCode": null,
+                    "organizationStructureDesc": null,
+                    "stateOfIncorporationCode": "FL",
+                    "stateOfIncorporationDesc": "FLORIDA",
+                    "countryOfIncorporationCode": "USA",
+                    "countryOfIncorporationDesc": "UNITED STATES",
+                    "companySecurityLevelCode": null,
+                    "companySecurityLevelDesc": null,
+                    "highestEmployeeSecurityLevelCode": null,
+                    "highestEmployeeSecurityLevelDesc": null
+                },
+                "businessTypes": {
+                    "businessTypeList": [
+                        {
+                            "businessTypeCode": "A8",
+                            "businessTypeDesc": "Non-Profit Organization"
+                        },
+                        {
+                            "businessTypeCode": "F",
+                            "businessTypeDesc": "Business or Organization"
+                        }
+                    ],
+                    "sbaBusinessTypeList": [
+                        {
+                            "sbaBusinessTypeCode": null,
+                            "sbaBusinessTypeDesc": null,
+                            "certificationEntryDate": null,
+                            "certificationExitDate": null
+                        }
+                    ]
+                },
+                "financialInformation": {
+                    "creditCardUsage": "N",
+                    "debtSubjectToOffset": "N",
+                    
+                },
+                
+            }
+        }
+    ],
+</pre>
+</code>
+</p>
+</details>
+
+### Example 2: Post April 2022, get me the Publicly available non-SAM-Registered Entities.
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v3/entities?api_key=< API Key >&samRegistered=No&includeSections=entityRegistration
+<br><br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< API Key >&samRegistered=No&includeSections=entityRegistration
+<br><br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+<p>
+<code style="font-family:Source Sans Pro; font-size: 18px">
+<pre>
+"entityData": [
+    {
+        "entityRegistration": {
+        "samRegistered": "No",
+        "ueiSAM": "JF19T45AM8F2",
+        "cageCode": "null",
+        "legalBusinessName": "Anchored Consulting Group LLC",
+        "registrationStatus": "Active",
+        "evsSource": null,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": null,
+        "ueiCreationDate": "2021-07-20",
+        "publicDisplayFlag": "Y",
+        "dnbOpenData": "Y"
+    }
+</pre>
+</code>
+</p>
+</details>
+
+### Example 3: Get the "entityRegistration" and "coreData" sections for all the "Joint Venture Women" or "Asian-Pacific" Entities that are registered for "All Awards" or "Federal Assistance Awards".
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key=< A valid FOUO API Key >&purposeOfRegistrationCode=Z1~Z2&q=(businessTypeDesc:'Joint Venture Women' OR businessTypeDesc:'Asian-Pacific')&includeSections=entityRegistration,coreData
@@ -20950,7 +21774,7 @@ V3:
 </p>
 </details>
 
-### Example 2: Get Entities with no Hierarchy, a small hierarchy, and a large Hierarchy.
+### Example 4: Get Entities with no Hierarchy, a small hierarchy, and a large Hierarchy.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key=< A valid FOUO API Key >&ueiDUNS=[075211119~439307625~261471459]&includeSections=entityRegistration,coreData
@@ -22148,7 +22972,7 @@ Entity with a large Hierarchy in v3:
 </p>
 </details>
 
-### Example 3: Get an Entity with no EVS Monitoring.
+### Example 5: Get an Entity with no EVS Monitoring.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=079870954&includeSections=entityRegistration,coreData
@@ -22580,7 +23404,7 @@ V3:
 </p>
 </details>
 
-### Example 4: Get Entities with Address Change and Name Change resulting from EVS Monitoring.
+### Example 6: Get Entities with Address Change and Name Change resulting from EVS Monitoring.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&ueiDUNS=[081270422~080192883]&includeSections=entityRegistration,coreData
@@ -23379,7 +24203,7 @@ An Entity with a Name Change resulting from EVS Monitoring in v3:
 </p>
 </details>
 
-### Example 5:  I have a Fed System Account and the Role required to access non-SAM Registrant entities, both Public and NPDY. How can I obtain them?
+### Example 7:  I have a Fed System Account and the Role required to access non-SAM Registrant entities, both Public and NPDY. How can I obtain them?
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v3/entities?api_key= < API Key >&samRegistered=No
@@ -23405,7 +24229,7 @@ A Public non-SAM Registered entity:
         "cageCode": "null",
         "legalBusinessName": "Anchored Consulting Group LLC",
         "registrationStatus": "Active",
-        "evsSource": "D&B",
+        "evsSource": null,
         "ueiStatus": "Active",
         "ueiExpirationDate": null,
         "ueiCreationDate": "2021-07-20",
@@ -23436,7 +24260,7 @@ An NPDY non-SAM Registered entity:
         "cageCode": "null",
         "legalBusinessName": "FPDS",
         "registrationStatus": "Active",
-        "evsSource": "D&B",
+        "evsSource": null,
         "ueiStatus": "Active",
         "ueiExpirationDate": null,
         "ueiCreationDate": "2021-07-20",
@@ -23460,7 +24284,7 @@ An NPDY non-SAM Registered entity:
 </p>
 </details>
 
-### Example 6: Get a CSV file of Active SAM-registered Entities.
+### Example 8: Get a CSV file of Active SAM-registered Entities.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&registrationStatus=A
@@ -23477,7 +24301,7 @@ Click to view a sample v2 CSV Response for one record <a href="v1/v2_CSV_Respons
 Click to view a sample v3 CSV Response for one record <a href="v1/v3_CSV_Response.xlsx" target="_blank">v3_CSV_Response</a><br>
 </details>
 
-### Example 7: Get a JSON file of all the Entities using the POST request:<br>
+### Example 9: Get a JSON file of all the Entities using the POST request:<br>
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>: https://api.sam.gov/entity-information/v2/entities?format=JSON
@@ -23606,6 +24430,7 @@ Disclaimer:
 | 07/20/2021 | v2.8 | * Added v3 documentation.<br><br> * Updated OpenAPI specification file.<br><br> * Updated HTTP Response Codes.<br><br> * Added v3 Examples. |
 | 09/21/2021 | v2.9 | * Added the "Addtional Help References" section. |
 | 10/06/2021 | v3.0 | * Updated the "Contact Us" section. | 
+| 10/21/2021 | v3.1 | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added error messages #23 and #24 to the 400 level http response codes.<br><br> * Added the Version 3 endpoint.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
