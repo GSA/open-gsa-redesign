@@ -146,7 +146,6 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | **exclusionIdentification** |
 | ueiSAM | string | Unique Entity Identifier SAM   | v1<br>v2<br>v3 |
 | ueiDUNS* | string | Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b> | v1<br>v2 |
-| entityEFTIndicator | string | Entity EFT Indicator   | v1<br>v2<br>v3 |
 | cageCode | string | CAGE Code  |  v1<br>v2<br>v3 |
 | npi | string| NPI |  v1<br>v2<br>v3 |
 | prefix | string | Prefix |  v1<br>v2<br>v3 |
@@ -482,14 +481,11 @@ v2 Response:<br>
 Extract File will be available for download with url: https://api.sam.gov/entity-information/v2/download-exclusions?api_key=REPLACE_WITH_API_KEY&token=< TOKEN > in some time. If you have requested for an email notification, you will receive it once the file is ready for download.<br><br>
 Downloading the CSV file using the Token:
 https://api.sam.gov/entity-information/v2/download-exclusions?api_key=< PUBLIC API KEY >&token=< TOKEN ><br><br>
-Click to view CSV Response for one record <a href="v2/v2-CSV.csv" taget="_blank">Sample CSV Response.</a>
+Click to view CSV Response for one record <a href="v2/v2-CSV.xlsx" taget="_blank">Sample CSV Response.</a>
 </p>
 <p>
 v3 Response:<br>
-Extract File will be available for download with url: https://api.sam.gov/entity-information/v3/download-exclusions?api_key=REPLACE_WITH_API_KEY&token=< TOKEN > in some time. If you have requested for an email notification, you will receive it once the file is ready for download. Requests for Larger Set of Data may take longer time to process.<br><br>
-Downloading the CSV file using the Token:
-https://api.sam.gov/entity-information/v3/download-exclusions?api_key=< PUBLIC API KEY >&token=< TOKEN ><br><br>
-Click to view CSV Response for one record <a href="v3/v3-CSV.csv" taget="_blank">Sample CSV Response.</a>
+Click to view CSV Response for one record <a href="v3/v3-CSV.xlsx" taget="_blank">Sample CSV Response.</a>
 </p>
 </details>
 
@@ -779,6 +775,6 @@ Date | Version | Description
 07/16/2021 | v2.6 | * Updated description for recordStatus parameter.<br><br> * Added message stating that the slash character must be enclosed with double quotes if being used inside of a search parameter.<br><br> * Added the Type of Connections and Rate Limits table<br><br> * Updated the examples<br><br> * Updated the Contact Us information
 10/06/2021 | v2.7 | * Updated the "Contact Us" section.
 10/21/2021 | v2.8 | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior.
-12/06/2021 | v2.9 | * Added exclusions V3 endpoint information. 
+12/06/2021 | v2.9 | * Added exclusions V3 endpoint information to the Getting Started section. <br><br> * Updated the Query String Parameters and Expected Results section to reflect available parameters and fields in V3.<br><br> * Updated the response in Example 1 and Example 2.
 
 <p><small><a href="#">Back to top</a></small></p>
