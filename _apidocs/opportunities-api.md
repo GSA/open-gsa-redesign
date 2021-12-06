@@ -262,7 +262,7 @@ Australia/Sydney |(UTC+11:00) SYDNEY, AUSTRALIA
 
 ## Version Control 
 
-Please use v2 for the following APIs to utilize ueiSAM in place of DUNS. Business rules for v2 endpoints can be found in the corresponding API sections.
+Please use v2 for the following APIs to utilize ueiSAM. Business rules for v2 endpoints can be found in the corresponding API sections.
 
 * Add Authorized Party
 * Create Draft Opportunity
@@ -625,7 +625,6 @@ Examples
       "number": "1376487348949",
       "deliveryOrderNumber": "23577980900",
       "awardee": {
-        "duns": "690888227",
         "name": "TONETS CORPORATION",
         "cageCode": "SP971",
         "location": {
@@ -1212,7 +1211,6 @@ Examples
       "number": "1376487348949",
       "deliveryOrderNumber": "23577980900",
       "awardee": {
-        "duns": "690888227",
         "name": "TONETS CORPORATION",
         "cageCode": "SP971",
         "location": {
@@ -2092,7 +2090,6 @@ data.award.amount | Number | Award Amount
 data.award.lineitemNumber | string |  Award Line Item Number
 data.award.awardee | JSON Object |  
 data.award.awardee.name | string |  Awardee Name
-data.award.awardee.duns | string |  Awardee Unique Entity Identifier DUNS **(v2 - Deprecated)**
 data.award.awardee.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. Example: ueiSAM=025114695AST <br>**(v2 Only)**
 data.award.awardee.location | JSON Object|  Awardee Location
 data.award.awardee.location.streetAddress | string | Awardee Street Address 1
@@ -2164,7 +2161,6 @@ Examples
             "amount": "100",
             "number": "0001",
             "awardee": {
-              "duns": "608999520",
               "name": "JDSInc1",
               "location": {}
             },
@@ -3116,7 +3112,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description| Applicabl
 Authorization | Header |  string | Yes | Valid and authorized user ID 
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity IDv1
-entityId | query | string | No | Entity ID - Unique Entity Identifier DUNS #| v1 <br> v2 - Deprecated
+entityId | query | string | No | Entity ID - Unique Entity Identifier ueiSAM #| v1 <br> v2 - Deprecated
 ueiSAM | query | string | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. Example: ueiSAM=025114695AST| v2
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -3126,7 +3122,6 @@ Responses
 HTTP Status Code | Response Type |  Description
 -----------------|---------------|------------
 ivl | JSON Array | 
-ivl.duns | string | Unique Entity Identifier DUNS number for the business entity (v2 - Deprecated)
 ivl.ueiSAM | string | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. Example: ueiSAM=025114695AST.
 ivl.cageNumber | string | Identifies a given facility at a specific location
 ivl.name | string | Name of business entity
@@ -3154,7 +3149,6 @@ Examples
 <code><pre>
 ivl": [
   {
-    "duns": "6759999520",
     "cageNumber": "3ABC1",
     "name": "TECH SYSTEMS, INC.",
     "addedOn": "2019-03-04 15:06:11",
@@ -3467,7 +3461,6 @@ Examples
                 "email": "reitestuser.de@gmail.com",
                 "phone": "1+9734323019",
                 "contractorName": "REI SYSTEMS, INC.",
-                "duns": "608999520",
                 "cageCode": "1DJP1"
             },
             {
@@ -3480,7 +3473,6 @@ Examples
                 "email": "reitestuser.de@gmail.com",
                 "phone": "1+9734323019",
                 "contractorName": "REI SYSTEMS, INC.",
-                "duns": "608999520",
                 "cageCode": "1DJP1"
             },
             {
@@ -3492,7 +3484,6 @@ Examples
                 "email": "reitestuser.de@gmail.com",
                 "phone": "1+9734323019",
                 "contractorName": "REI SYSTEMS, INC.",
-                "duns": "608999520",
                 "cageCode": "1DJP1”
             }
         ]
@@ -3590,7 +3581,6 @@ Examples
 "fname":"test123",
 "email":"testuser.de@gmail.com",
 "contractorName":"test contractor",
-"duns":"608999570",
 "cageCode":"4CHY"
 }
 </pre></code>
@@ -3696,7 +3686,6 @@ Examples
           "amount": null,
           "number": "awd123",
           "awardee": {
-            "duns": null,
             "name": null,
             "location": null
           },
@@ -3841,8 +3830,7 @@ Examples
             "awardee": {
                 "manual": false,
                 "name": "",
-                "duns": "",
-                "location": {
+                    "location": {
                     "streetAddress": "",
                     "streetAddress2": "",
                     "city": {
@@ -4020,7 +4008,7 @@ data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | Ye
 data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {} |No | Yes (No for type = s  (Special Notice)) | Solicitation Number | v1 <br> v2
 data.title | string | 256 characters | |Yes | Yes | Title of the Opportunity | v1 <br> v2
 data.organizationId | string | 32 characters | | Yes | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted | v1 <br> v2
-data.classificationCode | string |  | | No | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC) | v1 <br> v2
+data.classificationCode | string |  | | No | Yes (No for type = r, g, a, s)  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC) | v1 <br> v2
 data.naics | JSON Array | NA |NA | NA | NA | NA | NA
 data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| No | Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code | v1 <br> v2
 data.naics.type | string | |primary| No | Yes | NAICS Type Note: 'p' must be in lower case | v1 <br> v2
@@ -4058,7 +4046,7 @@ data.permissions.ivl.delete | boolean | | | No | No | IVL delete permission | v1
 data.solicitation | JSON Object |NA | NA | NA | NA | NA
 data.solicitation.setAside | string | |[Refer Set-Aside Values](#set-aside-values) | No | No | Set-Aside code<br/> The designator for type of set aside determined for the contract action | v1 <br> v2
 data.solicitation.deadlines | JSON | NA | NA | NA | NA |Response deadline date for Contract opportunity|NA
-data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| No |1) Yes for type = k, o (Combine Synopsis, Solicitation) <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
+data.solicitation.<br/>deadlines.response | date | |1) To specify date with time and timezone offset, use the format <br> yyyy-MM-dd'T'HH:mm:ssXXX <br>(ex: 2020-01-01T13:01:00-05:00 for EST timezone) <br><br> 2. To specify date with time, use the format <br> yyyy-MM-dd'T'HH:mm:ss <br>(ex: 2020-01-01T13:01:00)<br><br> 3. To specify only date, use the format <br> yyyy-MM-dd (ex: 2020-01-01)| No |1) Yes for type = k, o (Combine Synopsis, Solicitation). Response Date is optional for type = p, r, g (if given - must provide in the required format along with responseTz  <br/>2)	Yes if archive.type=auto15 except type = a (Award)	| Deadline Date| v1 <br> v2
 data.solicitation.deadlines.<br/>responseTz |string | |[Refer Time Zone values](#time-zone-values) |No| No | Time Zone code for <br/>Solicitation Deadline Date| v1 <br> v2
 data.award | JSON Object | NA | NA | NA | NA | This section is mainly used for providing award information that is required for Award, Justification and Intent to Bundle opportunity types |NA 
 data.award.date | date | |YYYY-MM-DD |No | Yes only for type = a (Award) | Award Date | v1 <br> v2
@@ -4067,8 +4055,8 @@ data.award.deliverOrderNumber | string | 255 characters| | No | No | Award Deliv
 data.award.amount | number |64 digits |  | No | Yes only for type = a (Award) | Award Amount | v1 <br> v2
 data.award.lineitemNumber | string |255 characters | | No | No | Contract Line item Number | v1 <br> v2
 data.award.awardee | JSON Object | NA| NA | NA | NA |Awardee details; Only for type = a (Award) |NA
-data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
-data.award.awardee.duns | string | 9 digits | | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
+data.award.awardee.name | string | 1000 characters | | No | No; Either awardee.name or awardee.ueiSAM is required | Awardee Name | v1 <br> v2
+data.award.awardee.ueiSAM | string | 9 digits | | No | No; Either awardee.name or awardee.ueiSAM is required | Awardee UEI SAM | v1 <br> v2 - Deprecated
 data.award.awardee.ueiSAM | string | 12 alphanumeric | | No | No; Either awardee.name or awardee.ueiSAM is required <br>  |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
 data.award.awardee.location | JSON Object |NA | NA | NA | NA | Awardee Location details; **Required if awardee.name is provided** | v1 <br> v2
 data.award.awardee.location.<br/>streetAddress | string | | | No | No | Awardee Street Address  | v1 <br> v2
@@ -4201,8 +4189,7 @@ reason | string |  | No | Publish reason
             "awardee": {
                 "manual": false,
                 "name": "",
-                "duns": "",
-                "location": {
+                    "location": {
                     "streetAddress": "",
                     "streetAddress2": "",
                     "city": {
@@ -4408,7 +4395,7 @@ data.type | string | 1 character| [Refer Notice Types](#notice-types) | Yes | No
 data.solicitationNumber | string | 128 characters |a-z A-Z 0-9 - _ ( ) {}| Yes (No for type = s  (Special Notice)) | Solicitation Number| v1 <br> v2
 data.title | string | 256 characters | | Yes | Title of the Opportunity| v1 <br> v2
 data.organizationId | string | 32 characters | | Yes | FH Organization Id/AAC code of the office where an Opportunity is being submitted| v1 <br> v2
-data.classificationCode | string |  | | Yes (No for type = r, g, a  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)| v1 <br> v2
+data.classificationCode | string |  | | Yes (No for type = r, g, a, s)  (SourcesSought, Sale of Surplus, Awards)) | Product Service Code (PSC)| v1 <br> v2
 data.naics | JSON Array | NA |NA | NA |NA|NA
 data.naics.code | Array of String | | <a href="https://www.census.gov/eos/www/naics/">NAICS Reference</a>| Yes for type = k, o (Combined Synopsis, Solicitation) | Valid NAICS Code| v1 <br> v2
 data.naics.type | string | |primary|Yes | NAICS Type Note: 'p' must be in lower case| v1 <br> v2
@@ -4428,7 +4415,7 @@ data.placeOfPerformance.city | JSON Object| NA | NA |NA | Pop City| v1 <br> v2
 data.placeOfPerformance.city.<br/>code | string | | |No | Pop City code| v1 <br> v2
 data.placeOfPerformance.city.<br/>name | string | | |No | Pop City name| v1 <br> v2
 data.placeOfPerformance.state | JSON Object |NA | NA |NA | Pop City state| v1 <br> v2
-data.placeOfPerformance.state.<br/>code | string | | | No | Pop city state code| v1 <br> v2
+data.placeOfPerformance.state.<br/>code | string | | State Code should be entered as upper case (Ex:VA)| No | Pop city state code| v1 <br> v2
 data.placeOfPerformance.state.<br/>name | string | | | No | Pop city state name| v1 <br> v2
 data.placeOfPerformance.country | JSON Object | NA | NA | NA | Pop Country| v1 <br> v2
 data.laceOfPerformance.<br/>country.code | string | | |No | Pop Country Code| v1 <br> v2
@@ -4455,8 +4442,8 @@ data.award.deliverOrderNumber | string | 255 characters| | No | Award Delivery O
 data.award.amount | number |64 digits |  | Yes only for type = a (Award) | Award Amount| v1 <br> v2
 data.award.lineitemNumber | string |255 characters | | No | Contract Line item Number| v1 <br> v2
 data.award.awardee | JSON Object | NA| NA | NA |Awardee details; Only for type = a (Award)| v1 <br> v2
-data.award.awardee.name | string | 1000 characters | No | No; Either awardee.name or awardee.duns is required | Awardee Name | v1 <br> v2
-data.award.awardee.duns | string | 9 digits | No | No; Either awardee.name or awardee.duns is required | Awardee UEI Duns | v1 <br> v2 - Deprecated
+data.award.awardee.name | string | 1000 characters | No | No; Either awardee.name or awardee.ueiSAM is required | Awardee Name | v1 <br> v2
+data.award.awardee.ueiSAM | string | 9 digits | No | No; Either awardee.name or awardee.ueiSAM is required | Awardee UEI SAM | v1 <br> v2 - Deprecated
 data.award.awardee.ueiSAM | string | 12 alphanumeric | No | No; Either awardee.name or awardee.ueiSAM is required <br> |Unique Entity Identifier SAM - Example: ueiSAM=025114695AST. | v2
 data.award.awardee.location | JSON Object |NA | NA | NA | Awardee Location details; **Required if awardee.name is provided**| v1 <br> v2
 data.award.awardee.location.<br/>streetAddress | string | | | No | Awardee Street Address | v1 <br> v2
@@ -4465,7 +4452,7 @@ data.award.awardee.location.<br/>city | JSON Object|NA |NA |NA | Awardee City de
 data.award.awardee.location.<br/>city.code | string | | | Yes | Awardee City code| v1 <br> v2
 data.award.awardee.location.<br/>city.name | string | | | No | Awardee City name| v1 <br> v2
 data.award.awardee.location.<br/>state | JSON Object | NA | NA | NA | Awardee State details| v1 <br> v2
-data.award.awardee.location.<br/>state.code | string | | | Yes | Awardee State code| v1 <br> v2
+data.award.awardee.location.<br/>state.code | string | | State Code should be entered as upper case (Ex:VA)| Yes | Awardee State code| v1 <br> v2
 data.award.awardee.location.<br/>state.name | string | | | No | Awardee State name| v1 <br> v2
 data.award.awardee.location.<br/>country | JSON Object | NA| NA | NA |Awardee Country details| v1 <br> v2
 data.award.awardee.location.<br/>country.code | string | | | Yes | Awardee Country code| v1 <br> v2
@@ -4840,7 +4827,6 @@ ivlView | string | forcedon, forcedoff | No | Indicates whether vendors can view
 "fname":"",
 "email":"",
 "contractorName":"",
-"duns":"",
 "cageCode":""
 }
 </pre></code>
@@ -4872,7 +4858,6 @@ fname | string | | Yes | First name of the user| v1 <br> v2
 lname | string | | Yes | Last name of the user| v1 <br> v2
 email | string | | Yes | Email Id of the user| v1 <br> v2
 contractorName | string | | Yes | Contractor Name| v1 <br> v2 - Deprecated
-duns | string | | Yes |  Unique Entity Identifier DUNS#| v1 <br> v2- Deprecated
 ueiSAM | string | | No | Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric. Example: ueiSAM=025114695AST.|  v2
 cageCode | string | | Yes | Cage Code| v1 <br> v2 - Deprecated
 
@@ -7681,7 +7666,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Related Opportunity ID | The Related Notice's Type is invalid for this Opportunity	| The Related Notice's Type cannot be related  | Publish
 400|Related Opportunity ID | Related Notice's ID needs to match previous Opportunity's Related Notice ID	| Related Notice's ID  provided while revising a notice needs to match the Parent Opportunity's Related Notice ID  | Publish
 400|Response Date |	Response Date is a required field |	Response Date is not provided for Combined Synopsis and Solicitation types |	Publish
-400|Response Date |	Response Date provided is an invalid format |	Response Date provided is not in valid format |	Publish
+400|Response Date |	Response Date provided is an invalid format |	Response date should input as the given format 'yyyy-MM-ddTHH:mm:ss-05:00'. ResponseTz is required. |	Publish
 400|Response Date |	Response Date cannot exceed 5 years from current date |	Response Date exceeds 5 years from the current date |	Publish 
 400|Archive Date |	Inactive date is a required field |	Archive Date is required if Archive Type = autocustom |Publish
 400|Archive Date Response Date   |	One of Response date or Archive date is required |	Either Response date or archive date is required for presolicitation, sources sought, special notice, sale surplus  |	Publish
@@ -7713,16 +7698,15 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Award Date |	Contract Award Date provided should have 4 digit year |	Invalid Year provided in the Award Date |	Publish, Uncancel, Unarchive
 400|Award Number |	Contract Award Number is a required field	| Contract Award Number is required for Intent to Bundle, Justification, Award | Publish
 400|Award Number |	Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces| Contract Award Number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces | Publish
-400|DUNS | Unique Entity Identifier (duns) is invalid. | Invalid UEI DUNS provided |	Publish
 400|ueiSAM | Unique Entity Identifier (SAM) is invalid. | Invalid UEI SAM provided |	Publish
-400|Awardee Name | Contractor Awarded Name is a required field |	Contractor Awarded Name is a required field if the DUNS is not provided for an Award Notice |	Publish
+400|Awardee Name | Contractor Awarded Name is a required field |	Contractor Awarded Name is a required field if the ueiSAM is not provided for an Award Notice |	Publish
 400|Awardee Name | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | Publish
-400|Awardee | Required fields from Awardee section is missing |Awardee Name or DUNS# not provided for Award notice|	Publish
-400|Awardee Country | Award Details Section - Country is required |Country Code is required if the Awardee name is provided instead of DUNS# |	Publish
+400|Awardee | Required fields from Awardee section is missing |Awardee Name or ueiSAM# not provided for Award notice|	Publish
+400|Awardee Country | Award Details Section - Country is required |Country Code is required if the Awardee name is provided instead of ueiSAM# |	Publish
 400|Awardee Country | Award Details Section - Country provided is invalid |Country Code  provided is invalid |	Publish
-400|Awardee State | Award Details Section - State is required |State Code is required if the Awardee name is provided instead of DUNS# |	Publish
+400|Awardee State | Award Details Section - State is required |State Code is required if the Awardee name is provided instead of ueiSAM# |	Publish
 400|Awardee State | Award Details Section - State provided is invalid |State Code provided is invalid |	Publish
-400|Awardee City | Award Details Section - City is required |City Code is required if the Awardee name is provided instead of DUNS# |	Publish
+400|Awardee City | Award Details Section - City is required |City Code is required if the Awardee name is provided instead of ueiSAM# |	Publish
 400|Awardee City | Award Details Section - City provided is invalid |City Code provided is invalid |	Publish
 400|Contract Line Item number |	The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces	| The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | Publish
 400|Task/Delivery Order Number |	Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces	| Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces | Publish
@@ -7795,9 +7779,7 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|VendorData| fname should not be empty| fname should not be empty| AddAuthorizedParty
 400|VendorData| lname should not be empty| lname should not be empty| AddAuthorizedParty
 400|VendorData| Email should not be empty| Email should not be empty| AddAuthorizedParty
-400|VendorData| Duns should not be empty| (**Plan to deprecate in the future**) Duns should not be empty| AddAuthorizedParty
 400|VendorData| ueiSAM should not be empty| ueiSAM should not be empty| AddAuthorizedParty
-400|Duns# |	No contact match on vendor data provided	| (**Plan to deprecate in the future**) Not a Valid email or Duns#	| AddAuthorizedParty
 400|ueiSAM# |	No contact match on vendor data provided	| Not a Valid email or ueiSAM#	| AddAuthorizedParty
 404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
@@ -7826,7 +7808,7 @@ Date | Version | Description
 --------- | --------------- | ---------
 4/25/2019 | v0.1 | Base Version
 4/29/2019 | v0.2 | Added information for Get Authorized Party List <br> Added Add Authorized Party <br> Added Vendor Data JSON <br> POC Email changed to not required <br> Change log added <br> Secure Attachment Download Authorization section added <br> Alpha and Production endpoint section added
-5/23/2019 | v0.3 | Update IVL Settings URL <br> Removed Get IVL by DUNS <br> Added EntityID to getIVL API parameter <br> Updated Get Authorized Party <br> Updated Add Authorized Party <br> Error Message Section Updated
+5/23/2019 | v0.3 | Update IVL Settings URL  <br> Added EntityID to getIVL API parameter <br> Updated Get Authorized Party <br> Updated Add Authorized Party <br> Error Message Section Updated
 5/28/2019 | v0.4 | Updated  Add Authorized Party<br> Get Authorized Party<br> Delete All Attachments API’s <br> Added Delete Notice API <br> Updated User Permissions <br> Create and Publish Contract Opportunity
 6/6/2019 | v0.5 | Deleted Download All Attachments (metadata) <br> Added Download All Attachments by Resource ID <br> Added Download All Attachments by Opportunity ID
 7/22/2019 | v0.6 | Only title required to create draft opportunity <br> Solicitation number not required for create/update draft notices JSON <br> soliciation.deadlines.response required for types k and o to publish<br> Contract Award Date required only for Award to publish <br> Contract Award Number required only for a, j, and i to publish <br> POC email required except for Award to publish <br> Description not needed for Update Attachment JSON <br> Workflow Chart Added
@@ -7841,13 +7823,13 @@ Date | Version | Description
 10/31/2019 | v0.91| Delete Vendor removed <br> Delete Resource in Draft API added <br> API Specifications Updated: Delete Notice, Getlist, Download Metadata for Attachment by Resource ID, and Download Metadata for Attachment by Opportunity ID <br> JSON Updated: Create and Update, Create and Publish, Revise Opportunity, Cancel Notice, Uncancel Notice, Archive, Unarchive, Create Attachment, Update Attachment, IVL Settings, and Delete Notice <br> Error Message Section Updated
 11/04/2019 | v0.92 | Updated the field lengths for contact full name and awardee name fields for create Opportunity, Create and Publish Opportunity Contract JSONs. Updated the Error messages for these fields<br>Added Future Implementation for UEI SAM# Validation and Type of Connection. Task/Delivery Order number is updated to be a non required field for Justification submission
 11/12/2019 | v1.0 | Initial Release Finalized
-12/04/2019 | v1.01 | Minor updates to UEI(SAM) and UEI(DUNS) info
-1/3/2020 | v1.02 | Updates to UEI(SAM) and UEI(DUNS) info
+12/04/2019 | v1.01 | Minor updates to UEI(SAM) info
+1/3/2020 | v1.02 | Updates to UEI(SAM) info
 1/20/2020 | v1.03 | Updated JSON arrays and objects
 1/21/2020 | v1.04 | Added Time zone values. <br>Updated the Create Contract Opportunity, Create And Publish Contract Opportunity Json's and examples <br> with the Parent Json element to provide parent opportunity Id for revisions. <br> Added the Related Notices section.
 2/18/2020 | v1.05 | Added JSON information for UEI additions
 2/28/2020 | v1.06 | Updated the Valid file types to include Zip file.<br/> Added a new validation for resource name to specify the allowed character set
-3/13/2020 |v1.07 | Updated GET APIs to include both DUNS and UEISAM in v2 <br> Get list of Opp API Organization ID field updated to show FH ID dependending on department, subtier, and office
+3/13/2020 |v1.07 | Updated GET APIs to include UEISAM in v2 <br> Get list of Opp API Organization ID field updated to show FH ID dependending on department, subtier, and office
 4/10/2020 | v1.08 | Added Version Control Section <br> Added information for Get Opportunity Public API and Public Location Services API in FAQ section
 5/13/2020 | v1.09 | Updated v2 URL for Add Authorized and Get Authorized Party APIs
 5/26/2020 | v1.1 | Added returnFHOrgKey parameter in the request for Get list of Opportunities API so that the request provides internal FH Org key if required

@@ -134,7 +134,7 @@ Type of Connections and Rate Limits
 </tr>
 <tr>
 <td>Federal system</td>
-<td>Personal API key</td>
+<td>System account API key</td>
 <td>10,000 requests/day</td>
 </tr>
 </table>
@@ -228,6 +228,10 @@ Option 1: Using the fileName only.  The fileName is an exact match parameter whi
 
 Option 2: Using fileType and other parameters.  If you choose not to use the fileName, you may specify the fileType along with other parameters to identify which extract you wish to download.<br>
 
+**Please refer to the SAM Master Extract Mapping document:**
+<br>Before April 2022: <a href="v1/SAM_MASTER_EXTRACT_MAPPING.xlsx">SAM Master Extract Mapping</a><br>
+Effective April 2022: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v6.0.xlsx">SAM Master Extract Mapping</a>
+
 **Entity Management Public Data Package Sample API calls:**<br>
 
 Monthly File, Version 1, April 2019 (fileName):<br>
@@ -242,6 +246,7 @@ https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&
 **Expected Result:**<br>
 Click to view the full details of the data elements: <a target="_blank" rel="noopener noreferrer" href="v1/public_extract_layout.pdf">Public Extract Layout</a><br>
 Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes:<a target="_blank" rel="noopener noreferrer" href="v1/SAM_Entity_Management_Public_V2_Extract_Layout.pdf">Public Extract Layout</a><br>
+Click to view the full details of the revised extract layout for the upcoming April 2022 release: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 Public File V2 Layout.xlsx">Public Extract Layout</a><br>
 
 **Entity Management FOUO Data Package Sample API calls:**<br>
 
@@ -266,6 +271,7 @@ https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&
 **Expected Result**<br>
 Click to view the full details of the data elements: <a target="_blank" rel="noopener noreferrer" href="v1/fouo_extract_layout.pdf">FOUO Extract Layout</a><br>
 Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes:<a target="_blank" rel="noopener noreferrer" href="v1/SAM_Entity_Management_FOUO_V2_Extract_Layout.pdf">FOUO Extract Layout</a><br>
+Click to view the full details of the revised extract layout for the upcoming April 2022 release: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 FOUO File V2 Layout.xlsx">FOUO Extract Layout</a><br>
 
 **Entity Management Sensitive Data Package Sample API calls:**<br>
 
@@ -290,6 +296,7 @@ https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSIT
 **Expected Result**<br>
 Click to view the full details of the data elements: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v5.6 Sensitive File V2 Layout.xlsx">Sensitive Extract Layout</a><br>
 Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes: <a target="_blank" rel="noopener noreferrer" href="v1/SAM_Entity_Management_SENSITIVE_V3_Extract_Layout.xlsx">Sensitive Extract Layout</a><br>
+Click to view the full details of the revised extract layout for the upcoming April 2022 release: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 Sensitive File V3 Layout.xlsx">Sensitive Extract Layout</a><br>
 
 **Exclusions Public Data Package Sample API calls:**<br>
 
@@ -302,6 +309,7 @@ https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=EXCLUSI
 **Expected Result**:
 Click to view the full details of the data elements: <a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_Extract_Layout.pdf">Exclusions Extract Layout</a><br>
 Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes:<a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_V2_Extract_Layout.pdf">Exclusions Extract Layout</a><br>
+Click to view the full details of the revised extract layout for the upcoming April 2022 release: <a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_Extract_V3.pdf">Exclusions Extract Layout</a><br>
 
 **An example of the Sensitive extract download POST call using Postman:**<br>
 Request URL:
@@ -374,8 +382,47 @@ The API will return one of the following responses:
 
 ## Contact Us
 
-* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries and help desk support.
-* Reach out to [newsamtesting@gsa.gov](mailto:newsamtesting@gsa.gov) for access to the test site.
+* Reach out to the SAM.gov team at <a href="https://www.fsd.gov" target="_blank">www.fsd.gov</a> for inquiries and help desk support.
+    * Before contacting the help desk, conduct your own initial troubleshooting
+        * Conduct a recent review of the open.gsa.gov/api specifications
+        * Confirm you are using an API tool, not a browser to send the request. (FOUO & Sensitive Calls)
+        * Confirm you are using the username/password for the system account that created the API key in the authentication header. (Sensitive Calls)
+        * Confirm you used POST and not GET for this request (Sensitive Calls)
+        * Confirm that the API key is from a system account (FOUO & Sensitive Calls)
+        * Confirm that the API key being used is still active
+        * Confirm that the system account you are using has “read fouo” or “read sensitive” permissions as applicable (FOUO & Sensitive Calls)
+        * <b>Confirm that the IP addresses registered with your system account are current</b>
+    * When submitting help desk tickets for API or system connection issues, provide the following:
+        * The exact API requests that you were trying to send
+        * The exact error messages that you were receiving
+        * The exact dates and times when you received the errors
+        * Screenshots (with the actual API request and the error)  [Attach to the ticket]
+        * The System Account ID/Name that was trying to make API calls
+        * Screenshots of the parameters used for API call   [Attach to the ticket]
+        * Screenshots of the Headers used for the API call   [Attach to the ticket]
+* Users requesting access to the test site (alpha.sam.gov) should follow the below steps.  These steps ONLY apply to alpha.sam.gov access requests.
+    1. Navigate to <a href="https://www.fsd.gov" target="_blank">www.fsd.gov</a>
+    2. Sign into the FSD platform using your FSD credentials
+    3. Select "Create an Incident"
+    4. Create an Incident
+        <ol type="a">
+        <li><b>System Name:</b> System for Award Management (SAM)</li>
+        <li><b>Is this related to the American Rescue Plan Act?:</b> No</li>
+        <li><b>Issue Type:</b> Other</li>
+        <li><b>Business Type:</b> Other</li>
+        <li><b>Subject (select 1):</b>
+           <ol type="i">
+           <li><b>Option A:</b> I need a role to test in alpha.sam.gov.</li>
+           <li><b>Option B:</b> System account approval in alpha.sam.gov</li>
+           </ol>
+        </li>
+        <li><b>Please describe the issue:</b> (Copy and paste the below information into the ticket, filling in your information within the brackets)
+           <ol type="i">
+           <li><b>Option A:</b> I have already navigated to alpha.sam.gov and created a user account, following the same steps for <a href="https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=81d067071b80b0109ac5ddb6bc4bcb63" target="_blank">creating an account</a> in sam.gov.  I would like to conduct testing but do not have the necessary role(s) in alpha.sam.gov.   The account that needs role assignment is associated with [EMAIL ADDRESS].  I request a [ROLE] role for the  [DOMAIN] domain in alpha.sam.gov.</li>
+           <li><b>Option B:</b> I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval.   I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].</li>
+           </ol>
+        </li>
+        </ol>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -398,5 +445,8 @@ Date | Version | Description
 04/29/2021 | v2.2 | * Added note above list of sample files mentioning that files are for Alpha.<br><br>* Added description to 400 http response code describing Type of Connection error.<br><br>* Updated openapi spec file.
 05/12/2021 | v2.3 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
 07/16/2021 | v2.4 | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information.<br><br> * Added example curl requests.
+09/21/2021 | v2.5 | * Added the "Please refer to the SAM Master Extract Mapping document" subsection under the "Explanation of the API using Examples" section.
+10/06/2021 | v2.6 | * Updated the "Contact Us" section. 
+10/21/2021 | v2.7 | * Added Expected Results to Data Package Sample API Calls.<br><br> * Updated Extract Mapping Files.
 
 <p><small><a href="#">Back to top</a></small></p>

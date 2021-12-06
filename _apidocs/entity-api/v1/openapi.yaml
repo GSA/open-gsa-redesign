@@ -1,1831 +1,53 @@
 openapi: 3.0.0
 info:
-  description: Entity Management API to retrieve entity information via Request parameters
-  version: 1
+  description: Swagger Documentation for Entity Management Rest API
+  version: 0.1.0
   title: Entity Management Rest API
-  contact:
-    name: GSA
-    url: https://www.sam.gov
-    email: reply@gsa.gov
   license:
     name: GSA
 tags:
   - name: entity-management-controller-v-2
     description: Entity Management Controller V 2
+  - name: entity-management-controller-v-3
+    description: Entity Management Controller V 3
   - name: entity-management-controller
     description: Entity Management Controller
   - name: entity-management-extract-controller
     description: Operations pertaining to Entity Management Data
 paths:
-  /sam/v1/entity-management:
+  "/sam/v1/emr-data":
     get:
       tags:
         - entity-management-controller
-      summary: ' get Entity Management Details'
-      operationId: getEntityManagementDataUsingGET
+      summary: " Get EMR Key and EMR value based on duns"
+      operationId: getRepsAndCertsKeyUsingGET
       parameters:
-        - name: activationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: cageCode
-          in: query
-          description: >-
-            The exact 5 character value; a maximum of up to 100 values can be
-            sent
-          required: false
-          schema:
-            type: string
-        - name: dbaName
-          in: query
-          description: Partial or Complete value
-          required: false
-          schema:
-            type: string
-        - name: debtSubjectToOffset
-          in: query
-          description: Y or N or null
-          required: false
-          schema:
-            type: string
-        - name: dodaac
-          in: query
-          description: 9 character value
-          required: false
-          schema:
-            type: string
-        - name: ueiDUNS
-          in: query
-          description: >-
-            Unique Entity Identifier DUNS- 9 digit value; a maximum of up to 100
-            values can be sent
-          required: false
-          schema:
-            type: string
-        - name: ueiSAM
-          in: query
-          description: >-
-            Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
-            values can be sent (This will replace ueiDUNS)
-          required: false
-          schema:
-            type: string
-        - name: entityEFTIndicator
-          in: query
-          description: EFT indicator aka dunsPlus4
-          required: false
-          schema:
-            type: string
-        - name: entityStructureCode
-          in: query
-          description: 2 character code or null
-          required: false
-          schema:
-            type: string
-        - name: entityStructureDesc
-          in: query
-          description: Description of Entity Structure
-          required: false
-          schema:
-            type: string
-        - name: exclusionStatusFlag
-          in: query
-          description: D or null
-          required: false
-          schema:
-            type: string
-        - name: expirationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: legalBusinessName
-          in: query
-          description: Partial or Complete value
-          required: false
-          schema:
-            type: string
-        - name: primaryNaics
-          in: query
-          description: 6 digit NAICS; accepts multiple NAICS
-          required: false
-          schema:
-            type: string
-        - name: purposeOfRegistrationCode
-          in: query
-          description: 2 character code
-          required: false
-          schema:
-            type: string
-        - name: purposeOfRegistrationDesc
-          in: query
-          description: Description of Purpose Of Registration
-          required: false
-          schema:
-            type: string
-        - name: registrationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: updateDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressCity
-          in: query
-          description: City name
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressCongressionalDistrict
-          in: query
-          description: 2 characters
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressCountryCode
-          in: query
-          description: 3 character code
-          required: false
-          schema:
-            type: string
-        - name: samExtractCode
-          in: query
-          description: 1 character code (A or E)
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressProvinceOrStateCode
-          in: query
-          description: 2 character code
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressZipPostalCode
-          in: query
-          description: 5 digit zip code
-          required: false
-          schema:
-            type: string
-        - name: businessTypeCode
-          in: query
-          description: 2 Character business type codes
-          required: false
-          schema:
-            type: string
-        - name: businessTypeDesc
-          in: query
-          description: Description of business type code
-          required: false
-          schema:
-            type: string
-        - name: entityType
-          in: query
-          description: 2 Character entity type codes
-          required: false
-          schema:
-            type: string
-        - name: organizationStructureCode
-          in: query
-          description: 2 Character organization structure codes
-          required: false
-          schema:
-            type: string
-        - name: organizationStructureDesc
-          in: query
-          description: Organization structure description
-          required: false
-          schema:
-            type: string
-        - name: stateOfIncorporationCode
-          in: query
-          description: 2 Character state code
-          required: false
-          schema:
-            type: string
-        - name: stateOfIncorporationDesc
-          in: query
-          description: Descriptionof state
-          required: false
-          schema:
-            type: string
-        - name: countryOfIncorporationCode
-          in: query
-          description: 3 Character country code
-          required: false
-          schema:
-            type: string
-        - name: countryOfIncorporationDesc
-          in: query
-          description: Description of country
-          required: false
-          schema:
-            type: string
-        - name: naicsCode
-          in: query
-          description: 6 Characters NAICS code
-          required: false
-          schema:
-            type: string
-        - name: naicsDesc
-          in: query
-          description: Description of Naics code
-          required: false
-          schema:
-            type: string
-        - name: naicsLimitedSB
-          in: query
-          description: 6 Characters NAICS code(with small business - Y)
-          required: false
-          schema:
-            type: string
-        - name: pscCode
-          in: query
-          description: 4 Characters PSC code
-          required: false
-          schema:
-            type: string
-        - name: pscDesc
-          in: query
-          description: Description of PSC code
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterStateCode
-          in: query
-          description: 'Disaster relief served state, 2 character code'
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterStateName
-          in: query
-          description: Description of Disaster relief served state
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterCountyCode
-          in: query
-          description: Disaster relief served county code
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterCountyName
-          in: query
-          description: Description of Disaster relief served county
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterMSA
-          in: query
-          description: Disaster relief served MSA
-          required: false
-          schema:
-            type: string
-        - name: sbaBusinessTypeCode
-          in: query
-          description: 'A two character code or null '
-          required: false
-          schema:
-            type: string
-        - name: sbaBusinessTypeDesc
-          in: query
-          description: Description of SBa Business Type code
-          required: false
-          schema:
-            type: string
-        - name: includeSections
-          in: query
-          description: >-
-            entityInformation, coreData, assertions, repsAndCerts,
-            mandatoryPOCs, optionalPOCs
-          required: false
-          schema:
-            type: string
-        - name: q
-          in: query
-          description: Q paramter for Search Operations
-          required: false
-          schema:
-            type: string
-        - name: page
-          in: query
-          description: page
-          required: false
-          schema:
-            type: string
-        - name: size
-          in: query
-          description: record limit per page
-          required: false
-          schema:
-            type: string
-        - name: format
-          in: query
-          description: Acceptable values JSON and CSV
-          required: false
-          schema:
-            type: string
-        - name: emailId
-          in: query
-          description: Acceptable emailId values are Yes/No
-          required: false
-          schema:
-            type: string
-        - name: edi
-          in: query
-          description: Acceptable EDI values are Yes/No
-          required: false
-          schema:
-            type: string
-        - name: companySecurityLevelCode
-          in: query
-          description: Company Security Level Code
-          required: false
-          schema:
-            type: string
-        - name: highestEmployeeSecurityLevelCode
-          in: query
-          description: Highest Employee Security Level Code
-          required: false
-          schema:
-            type: string
-        - name: companySecurityLevelDesc
-          in: query
-          description: Company Security Level Description
-          required: false
-          schema:
-            type: string
-        - name: highestEmployeeSecurityLevelDesc
-          in: query
-          description: Highest Employee Security Level Description
-          required: false
-          schema:
-            type: string
-        - name: ultimateParentUEIDUNS
-          in: query
-          description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
-          required: false
-          schema:
-            type: string
-        - name: ultimateParentUEISAM
-          in: query
-          description: >-
-            Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
-            will replace ultimateParentUEIDUNS)
-          required: false
-          schema:
-            type: string
-        - name: agencyBusinessPurposeCode
-          in: query
-          description: Agency Business Purpose Code
-          required: false
-          schema:
-            type: string
-        - name: agencyBusinessPurposeDesc
-          in: query
-          description: Agency Business Purpose Description
-          required: false
-          schema:
-            type: string
-        - name: sensitivity
-          in: query
-          description: Determines Sensitivity Level of Data
-          required: false
-          schema:
-            type: string
-        - name: routingNumber
-          in: query
-          description: Routing Number
-          required: false
-          schema:
-            type: string
-        - name: bankName
-          in: query
-          description: Bank Name
-          required: false
-          schema:
-            type: string
-        - name: accountNumber
-          in: query
-          description: Account Number
-          required: false
-          schema:
-            type: string
-        - name: eftWaiverFlag
-          in: query
-          description: EFT Waiver Flag
-          required: false
-          schema:
-            type: string
-        - name: agencyLocationCode
-          in: query
-          description: Agency Location Code
-          required: false
-          schema:
-            type: string
-        - name: disbursingOfficeSymbol
-          in: query
-          description: Disbursing Office Symbol
-          required: false
-          schema:
-            type: string
-        - name: taxpayerName
-          in: query
-          description: Taxpayer Name
-          required: false
-          schema:
-            type: string
-        - name: taxpayerIdentificationNumber
-          in: query
-          description: Taxpayer Identification Number
-          required: false
-          schema:
-            type: string
         - name: api_key
           in: query
           description: api_key
           required: false
           schema:
             type: string
-      responses:
-        '200':
-          description: Successfully retrieved list
-        '401':
-          description: You are not authorized to view the resource
-        '403':
-          description: Accessing the resource you were trying to reach is forbidden
-        '404':
-          description: The resource you were trying to reach is not found
-    post:
-      tags:
-        - entity-management-controller
-      summary: ' get Entity Management Details'
-      operationId: getEntityManagementDataUsingPOST
-      parameters:
-        - name: activationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: cageCode
-          in: query
-          description: >-
-            The exact 5 character value; a maximum of up to 100 values can be
-            sent
-          required: false
-          schema:
-            type: string
-        - name: dbaName
-          in: query
-          description: Partial or Complete value
-          required: false
-          schema:
-            type: string
-        - name: debtSubjectToOffset
-          in: query
-          description: Y or N or null
-          required: false
-          schema:
-            type: string
-        - name: dodaac
-          in: query
-          description: 9 character value
-          required: false
-          schema:
-            type: string
         - name: ueiDUNS
           in: query
-          description: >-
-            Unique Entity Identifier DUNS- 9 digit value; a maximum of up to 100
-            values can be sent
-          required: false
-          schema:
-            type: string
-        - name: ueiSAM
-          in: query
-          description: >-
-            Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
-            values can be sent (This will replace ueiDUNS)
-          required: false
-          schema:
-            type: string
-        - name: entityEFTIndicator
-          in: query
-          description: EFT indicator aka dunsPlus4
-          required: false
-          schema:
-            type: string
-        - name: entityStructureCode
-          in: query
-          description: 2 character code or null
-          required: false
-          schema:
-            type: string
-        - name: entityStructureDesc
-          in: query
-          description: Description of Entity Structure
-          required: false
-          schema:
-            type: string
-        - name: exclusionStatusFlag
-          in: query
-          description: D or null
-          required: false
-          schema:
-            type: string
-        - name: expirationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: legalBusinessName
-          in: query
-          description: Partial or Complete value
-          required: false
-          schema:
-            type: string
-        - name: primaryNaics
-          in: query
-          description: 6 digit NAICS; accepts multiple NAICS
-          required: false
-          schema:
-            type: string
-        - name: purposeOfRegistrationCode
-          in: query
-          description: 2 character code
-          required: false
-          schema:
-            type: string
-        - name: purposeOfRegistrationDesc
-          in: query
-          description: Description of Purpose Of Registration
-          required: false
-          schema:
-            type: string
-        - name: registrationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: updateDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressCity
-          in: query
-          description: City name
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressCongressionalDistrict
-          in: query
-          description: 2 characters
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressCountryCode
-          in: query
-          description: 3 character code
-          required: false
-          schema:
-            type: string
-        - name: samExtractCode
-          in: query
-          description: 1 character code (A or E)
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressProvinceOrStateCode
-          in: query
-          description: 2 character code
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressZipPostalCode
-          in: query
-          description: 5 digit zip code
-          required: false
-          schema:
-            type: string
-        - name: businessTypeCode
-          in: query
-          description: 2 Character business type codes
-          required: false
-          schema:
-            type: string
-        - name: businessTypeDesc
-          in: query
-          description: Description of business type code
-          required: false
-          schema:
-            type: string
-        - name: entityType
-          in: query
-          description: 2 Character entity type codes
-          required: false
-          schema:
-            type: string
-        - name: organizationStructureCode
-          in: query
-          description: 2 Character organization structure codes
-          required: false
-          schema:
-            type: string
-        - name: organizationStructureDesc
-          in: query
-          description: Organization structure description
-          required: false
-          schema:
-            type: string
-        - name: stateOfIncorporationCode
-          in: query
-          description: 2 Character state code
-          required: false
-          schema:
-            type: string
-        - name: stateOfIncorporationDesc
-          in: query
-          description: Descriptionof state
-          required: false
-          schema:
-            type: string
-        - name: countryOfIncorporationCode
-          in: query
-          description: 3 Character country code
-          required: false
-          schema:
-            type: string
-        - name: countryOfIncorporationDesc
-          in: query
-          description: Description of country
-          required: false
-          schema:
-            type: string
-        - name: naicsCode
-          in: query
-          description: 6 Characters NAICS code
-          required: false
-          schema:
-            type: string
-        - name: naicsDesc
-          in: query
-          description: Description of Naics code
-          required: false
-          schema:
-            type: string
-        - name: naicsLimitedSB
-          in: query
-          description: 6 Characters NAICS code(with small business - Y)
-          required: false
-          schema:
-            type: string
-        - name: pscCode
-          in: query
-          description: 4 Characters PSC code
-          required: false
-          schema:
-            type: string
-        - name: pscDesc
-          in: query
-          description: Description of PSC code
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterStateCode
-          in: query
-          description: 'Disaster relief served state, 2 character code'
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterStateName
-          in: query
-          description: Description of Disaster relief served state
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterCountyCode
-          in: query
-          description: Disaster relief served county code
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterCountyName
-          in: query
-          description: Description of Disaster relief served county
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterMSA
-          in: query
-          description: Disaster relief served MSA
-          required: false
-          schema:
-            type: string
-        - name: sbaBusinessTypeCode
-          in: query
-          description: 'A two character code or null '
-          required: false
-          schema:
-            type: string
-        - name: sbaBusinessTypeDesc
-          in: query
-          description: Description of SBa Business Type code
-          required: false
-          schema:
-            type: string
-        - name: includeSections
-          in: query
-          description: >-
-            entityInformation, coreData, assertions, repsAndCerts,
-            mandatoryPOCs, optionalPOCs
-          required: false
-          schema:
-            type: string
-        - name: q
-          in: query
-          description: Q paramter for Search Operations
-          required: false
-          schema:
-            type: string
-        - name: page
-          in: query
-          description: page
-          required: false
-          schema:
-            type: string
-        - name: size
-          in: query
-          description: record limit per page
-          required: false
-          schema:
-            type: string
-        - name: format
-          in: query
-          description: Acceptable values JSON and CSV
-          required: false
-          schema:
-            type: string
-        - name: emailId
-          in: query
-          description: Acceptable emailId values are Yes/No
-          required: false
-          schema:
-            type: string
-        - name: edi
-          in: query
-          description: Acceptable EDI values are Yes/No
-          required: false
-          schema:
-            type: string
-        - name: companySecurityLevelCode
-          in: query
-          description: Company Security Level Code
-          required: false
-          schema:
-            type: string
-        - name: highestEmployeeSecurityLevelCode
-          in: query
-          description: Highest Employee Security Level Code
-          required: false
-          schema:
-            type: string
-        - name: companySecurityLevelDesc
-          in: query
-          description: Company Security Level Description
-          required: false
-          schema:
-            type: string
-        - name: highestEmployeeSecurityLevelDesc
-          in: query
-          description: Highest Employee Security Level Description
-          required: false
-          schema:
-            type: string
-        - name: ultimateParentUEIDUNS
-          in: query
-          description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
-          required: false
-          schema:
-            type: string
-        - name: ultimateParentUEISAM
-          in: query
-          description: >-
-            Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
-            will replace ultimateParentUEIDUNS)
-          required: false
-          schema:
-            type: string
-        - name: agencyBusinessPurposeCode
-          in: query
-          description: Agency Business Purpose Code
-          required: false
-          schema:
-            type: string
-        - name: agencyBusinessPurposeDesc
-          in: query
-          description: Agency Business Purpose Description
-          required: false
-          schema:
-            type: string
-        - name: sensitivity
-          in: query
-          description: Determines Sensitivity Level of Data
-          required: false
-          schema:
-            type: string
-        - name: routingNumber
-          in: query
-          description: Routing Number
-          required: false
-          schema:
-            type: string
-        - name: bankName
-          in: query
-          description: Bank Name
-          required: false
-          schema:
-            type: string
-        - name: accountNumber
-          in: query
-          description: Account Number
-          required: false
-          schema:
-            type: string
-        - name: eftWaiverFlag
-          in: query
-          description: EFT Waiver Flag
-          required: false
-          schema:
-            type: string
-        - name: agencyLocationCode
-          in: query
-          description: Agency Location Code
-          required: false
-          schema:
-            type: string
-        - name: disbursingOfficeSymbol
-          in: query
-          description: Disbursing Office Symbol
-          required: false
-          schema:
-            type: string
-        - name: taxpayerName
-          in: query
-          description: Taxpayer Name
-          required: false
-          schema:
-            type: string
-        - name: taxpayerIdentificationNumber
-          in: query
-          description: Taxpayer Identification Number
-          required: false
-          schema:
-            type: string
-        - name: api_key
-          in: query
-          description: api_key
-          required: false
+          description: ueiDUNS
+          required: true
           schema:
             type: string
       responses:
-        '200':
-          description: Successfully retrieved list
-        '201':
-          description: Created
-        '401':
-          description: You are not authorized to view the resource
-        '403':
+        "200":
+          description: Successfully retrieved information
+          content:
+            application/hal+json:
+              schema:
+                type: string
+        "401":
+          description: Unauthorized
+        "403":
           description: Accessing the resource you were trying to reach is forbidden
-        '404':
+        "404":
           description: The resource you were trying to reach is not found
-  /sam/v2/entity-management:
-    get:
-      tags:
-        - entity-management-controller-v-2
-      summary: ' get Entity Management Details'
-      operationId: getEntityManagementDataUsingGET_1
-      parameters:
-        - name: activationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: cageCode
-          in: query
-          description: >-
-            The exact 5 character value; a maximum of up to 100 values can be
-            sent
-          required: false
-          schema:
-            type: string
-        - name: dbaName
-          in: query
-          description: Partial or Complete value
-          required: false
-          schema:
-            type: string
-        - name: debtSubjectToOffset
-          in: query
-          description: Y or N or null
-          required: false
-          schema:
-            type: string
-        - name: dodaac
-          in: query
-          description: 9 character value
-          required: false
-          schema:
-            type: string
-        - name: ueiDUNS
-          in: query
-          description: >-
-            Unique Entity Identifier DUNS- 9 digit value; a maximum of up to 100
-            values can be sent
-          required: false
-          schema:
-            type: string
-        - name: ueiSAM
-          in: query
-          description: >-
-            Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
-            values can be sent (This will replace ueiDUNS)
-          required: false
-          schema:
-            type: string
-        - name: entityEFTIndicator
-          in: query
-          description: EFT indicator aka dunsPlus4
-          required: false
-          schema:
-            type: string
-        - name: entityStructureCode
-          in: query
-          description: 2 character code or null
-          required: false
-          schema:
-            type: string
-        - name: entityStructureDesc
-          in: query
-          description: Description of Entity Structure
-          required: false
-          schema:
-            type: string
-        - name: exclusionStatusFlag
-          in: query
-          description: D or null
-          required: false
-          schema:
-            type: string
-        - name: legalBusinessName
-          in: query
-          description: Partial or Complete value
-          required: false
-          schema:
-            type: string
-        - name: primaryNaics
-          in: query
-          description: 6 digit NAICS; accepts multiple NAICS
-          required: false
-          schema:
-            type: string
-        - name: purposeOfRegistrationCode
-          in: query
-          description: 2 character code
-          required: false
-          schema:
-            type: string
-        - name: purposeOfRegistrationDesc
-          in: query
-          description: Description of Purpose Of Registration
-          required: false
-          schema:
-            type: string
-        - name: registrationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: updateDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressCity
-          in: query
-          description: City name
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressCongressionalDistrict
-          in: query
-          description: 2 characters
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressCountryCode
-          in: query
-          description: 3 character code
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressProvinceOrStateCode
-          in: query
-          description: 2 character code
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressZipPostalCode
-          in: query
-          description: 5 digit zip code
-          required: false
-          schema:
-            type: string
-        - name: businessTypeCode
-          in: query
-          description: 2 Character business type codes
-          required: false
-          schema:
-            type: string
-        - name: businessTypeDesc
-          in: query
-          description: Description of business type code
-          required: false
-          schema:
-            type: string
-        - name: entityType
-          in: query
-          description: 2 Character entity type codes
-          required: false
-          schema:
-            type: string
-        - name: organizationStructureCode
-          in: query
-          description: 2 Character organization structure codes
-          required: false
-          schema:
-            type: string
-        - name: organizationStructureDesc
-          in: query
-          description: Organization structure description
-          required: false
-          schema:
-            type: string
-        - name: stateOfIncorporationCode
-          in: query
-          description: 2 Character state code
-          required: false
-          schema:
-            type: string
-        - name: stateOfIncorporationDesc
-          in: query
-          description: Descriptionof state
-          required: false
-          schema:
-            type: string
-        - name: countryOfIncorporationCode
-          in: query
-          description: 3 Character country code
-          required: false
-          schema:
-            type: string
-        - name: countryOfIncorporationDesc
-          in: query
-          description: Description of country
-          required: false
-          schema:
-            type: string
-        - name: naicsCode
-          in: query
-          description: 6 Characters NAICS code
-          required: false
-          schema:
-            type: string
-        - name: naicsDesc
-          in: query
-          description: Description of Naics code
-          required: false
-          schema:
-            type: string
-        - name: naicsLimitedSB
-          in: query
-          description: 6 Characters NAICS code(with small business - Y)
-          required: false
-          schema:
-            type: string
-        - name: pscCode
-          in: query
-          description: 4 Characters PSC code
-          required: false
-          schema:
-            type: string
-        - name: pscDesc
-          in: query
-          description: Description of PSC code
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterStateCode
-          in: query
-          description: 'Disaster relief served state, 2 character code'
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterStateName
-          in: query
-          description: Description of Disaster relief served state
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterCountyCode
-          in: query
-          description: Disaster relief served county code
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterCountyName
-          in: query
-          description: Description of Disaster relief served county
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterMSA
-          in: query
-          description: Disaster relief served MSA
-          required: false
-          schema:
-            type: string
-        - name: sbaBusinessTypeCode
-          in: query
-          description: 'A two character code or null '
-          required: false
-          schema:
-            type: string
-        - name: sbaBusinessTypeDesc
-          in: query
-          description: Description of SBa Business Type code
-          required: false
-          schema:
-            type: string
-        - name: includeSections
-          in: query
-          description: >-
-            entityInformation, coreData, assertions, repsAndCerts,
-            mandatoryPOCs, optionalPOCs
-          required: false
-          schema:
-            type: string
-        - name: q
-          in: query
-          description: Q paramter for Search Operations
-          required: false
-          schema:
-            type: string
-        - name: page
-          in: query
-          description: page
-          required: false
-          schema:
-            type: string
-        - name: size
-          in: query
-          description: record limit per page
-          required: false
-          schema:
-            type: string
-        - name: format
-          in: query
-          description: Acceptable values JSON and CSV
-          required: false
-          schema:
-            type: string
-        - name: emailId
-          in: query
-          required: false
-          schema:
-            type: string
-        - name: edi
-          in: query
-          description: Acceptable EDI values are Yes/No
-          required: false
-          schema:
-            type: string
-        - name: companySecurityLevelCode
-          in: query
-          description: Company Security Level Code
-          required: false
-          schema:
-            type: string
-        - name: highestEmployeeSecurityLevelCode
-          in: query
-          description: Highest Employee Security Level Code
-          required: false
-          schema:
-            type: string
-        - name: companySecurityLevelDesc
-          in: query
-          description: Company Security Level Description
-          required: false
-          schema:
-            type: string
-        - name: highestEmployeeSecurityLevelDesc
-          in: query
-          description: Highest Employee Security Level Description
-          required: false
-          schema:
-            type: string
-        - name: ultimateParentUEIDUNS
-          in: query
-          description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
-          required: false
-          schema:
-            type: string
-        - name: ultimateParentUEISAM
-          in: query
-          description: >-
-            Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
-            will replace ultimateParentUEIDUNS)
-          required: false
-          schema:
-            type: string
-        - name: agencyBusinessPurposeCode
-          in: query
-          description: Agency Business Purpose Code
-          required: false
-          schema:
-            type: string
-        - name: agencyBusinessPurposeDesc
-          in: query
-          description: Agency Business Purpose Description
-          required: false
-          schema:
-            type: string
-        - name: sensitivity
-          in: query
-          description: Determines Sensitivity Level of Data
-          required: false
-          schema:
-            type: string
-        - name: routingNumber
-          in: query
-          description: Routing Number
-          required: false
-          schema:
-            type: string
-        - name: bankName
-          in: query
-          description: Bank Name
-          required: false
-          schema:
-            type: string
-        - name: accountNumber
-          in: query
-          description: Account Number
-          required: false
-          schema:
-            type: string
-        - name: eftWaiverFlag
-          in: query
-          description: EFT Waiver Flag
-          required: false
-          schema:
-            type: string
-        - name: agencyLocationCode
-          in: query
-          description: Agency Location Code
-          required: false
-          schema:
-            type: string
-        - name: disbursingOfficeSymbol
-          in: query
-          description: Disbursing Office Symbol
-          required: false
-          schema:
-            type: string
-        - name: taxpayerName
-          in: query
-          description: Taxpayer Name
-          required: false
-          schema:
-            type: string
-        - name: taxpayerIdentificationNumber
-          in: query
-          description: Taxpayer Identification Number
-          required: false
-          schema:
-            type: string
-        - name: samRegistered
-          in: query
-          description: SAM Registered
-          required: false
-          schema:
-            type: string
-        - name: registrationExpirationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: ueiCreationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: registrationStatus
-          in: query
-          description: 1 character code (A or E)
-          required: false
-          schema:
-            type: string
-        - name: api_key
-          in: query
-          description: api_key
-          required: false
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successfully retrieved list
-        '401':
-          description: You are not authorized to view the resource
-        '403':
-          description: Accessing the resource you were trying to reach is forbidden
-        '404':
-          description: The resource you were trying to reach is not found
-    post:
-      tags:
-        - entity-management-controller-v-2
-      summary: ' get Entity Management Details'
-      operationId: getEntityManagementDataUsingPOST_1
-      parameters:
-        - name: activationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: cageCode
-          in: query
-          description: >-
-            The exact 5 character value; a maximum of up to 100 values can be
-            sent
-          required: false
-          schema:
-            type: string
-        - name: dbaName
-          in: query
-          description: Partial or Complete value
-          required: false
-          schema:
-            type: string
-        - name: debtSubjectToOffset
-          in: query
-          description: Y or N or null
-          required: false
-          schema:
-            type: string
-        - name: dodaac
-          in: query
-          description: 9 character value
-          required: false
-          schema:
-            type: string
-        - name: ueiDUNS
-          in: query
-          description: >-
-            Unique Entity Identifier DUNS- 9 digit value; a maximum of up to 100
-            values can be sent
-          required: false
-          schema:
-            type: string
-        - name: ueiSAM
-          in: query
-          description: >-
-            Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
-            values can be sent (This will replace ueiDUNS)
-          required: false
-          schema:
-            type: string
-        - name: entityEFTIndicator
-          in: query
-          description: EFT indicator aka dunsPlus4
-          required: false
-          schema:
-            type: string
-        - name: entityStructureCode
-          in: query
-          description: 2 character code or null
-          required: false
-          schema:
-            type: string
-        - name: entityStructureDesc
-          in: query
-          description: Description of Entity Structure
-          required: false
-          schema:
-            type: string
-        - name: exclusionStatusFlag
-          in: query
-          description: D or null
-          required: false
-          schema:
-            type: string
-        - name: legalBusinessName
-          in: query
-          description: Partial or Complete value
-          required: false
-          schema:
-            type: string
-        - name: primaryNaics
-          in: query
-          description: 6 digit NAICS; accepts multiple NAICS
-          required: false
-          schema:
-            type: string
-        - name: purposeOfRegistrationCode
-          in: query
-          description: 2 character code
-          required: false
-          schema:
-            type: string
-        - name: purposeOfRegistrationDesc
-          in: query
-          description: Description of Purpose Of Registration
-          required: false
-          schema:
-            type: string
-        - name: registrationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: updateDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressCity
-          in: query
-          description: City name
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressCongressionalDistrict
-          in: query
-          description: 2 characters
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressCountryCode
-          in: query
-          description: 3 character code
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressProvinceOrStateCode
-          in: query
-          description: 2 character code
-          required: false
-          schema:
-            type: string
-        - name: physicalAddressZipPostalCode
-          in: query
-          description: 5 digit zip code
-          required: false
-          schema:
-            type: string
-        - name: businessTypeCode
-          in: query
-          description: 2 Character business type codes
-          required: false
-          schema:
-            type: string
-        - name: businessTypeDesc
-          in: query
-          description: Description of business type code
-          required: false
-          schema:
-            type: string
-        - name: entityType
-          in: query
-          description: 2 Character entity type codes
-          required: false
-          schema:
-            type: string
-        - name: organizationStructureCode
-          in: query
-          description: 2 Character organization structure codes
-          required: false
-          schema:
-            type: string
-        - name: organizationStructureDesc
-          in: query
-          description: Organization structure description
-          required: false
-          schema:
-            type: string
-        - name: stateOfIncorporationCode
-          in: query
-          description: 2 Character state code
-          required: false
-          schema:
-            type: string
-        - name: stateOfIncorporationDesc
-          in: query
-          description: Descriptionof state
-          required: false
-          schema:
-            type: string
-        - name: countryOfIncorporationCode
-          in: query
-          description: 3 Character country code
-          required: false
-          schema:
-            type: string
-        - name: countryOfIncorporationDesc
-          in: query
-          description: Description of country
-          required: false
-          schema:
-            type: string
-        - name: naicsCode
-          in: query
-          description: 6 Characters NAICS code
-          required: false
-          schema:
-            type: string
-        - name: naicsDesc
-          in: query
-          description: Description of Naics code
-          required: false
-          schema:
-            type: string
-        - name: naicsLimitedSB
-          in: query
-          description: 6 Characters NAICS code(with small business - Y)
-          required: false
-          schema:
-            type: string
-        - name: pscCode
-          in: query
-          description: 4 Characters PSC code
-          required: false
-          schema:
-            type: string
-        - name: pscDesc
-          in: query
-          description: Description of PSC code
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterStateCode
-          in: query
-          description: 'Disaster relief served state, 2 character code'
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterStateName
-          in: query
-          description: Description of Disaster relief served state
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterCountyCode
-          in: query
-          description: Disaster relief served county code
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterCountyName
-          in: query
-          description: Description of Disaster relief served county
-          required: false
-          schema:
-            type: string
-        - name: servedDisasterMSA
-          in: query
-          description: Disaster relief served MSA
-          required: false
-          schema:
-            type: string
-        - name: sbaBusinessTypeCode
-          in: query
-          description: 'A two character code or null '
-          required: false
-          schema:
-            type: string
-        - name: sbaBusinessTypeDesc
-          in: query
-          description: Description of SBa Business Type code
-          required: false
-          schema:
-            type: string
-        - name: includeSections
-          in: query
-          description: >-
-            entityInformation, coreData, assertions, repsAndCerts,
-            mandatoryPOCs, optionalPOCs
-          required: false
-          schema:
-            type: string
-        - name: q
-          in: query
-          description: Q paramter for Search Operations
-          required: false
-          schema:
-            type: string
-        - name: page
-          in: query
-          description: page
-          required: false
-          schema:
-            type: string
-        - name: size
-          in: query
-          description: record limit per page
-          required: false
-          schema:
-            type: string
-        - name: format
-          in: query
-          description: Acceptable values JSON and CSV
-          required: false
-          schema:
-            type: string
-        - name: emailId
-          in: query
-          required: false
-          schema:
-            type: string
-        - name: edi
-          in: query
-          description: Acceptable EDI values are Yes/No
-          required: false
-          schema:
-            type: string
-        - name: companySecurityLevelCode
-          in: query
-          description: Company Security Level Code
-          required: false
-          schema:
-            type: string
-        - name: highestEmployeeSecurityLevelCode
-          in: query
-          description: Highest Employee Security Level Code
-          required: false
-          schema:
-            type: string
-        - name: companySecurityLevelDesc
-          in: query
-          description: Company Security Level Description
-          required: false
-          schema:
-            type: string
-        - name: highestEmployeeSecurityLevelDesc
-          in: query
-          description: Highest Employee Security Level Description
-          required: false
-          schema:
-            type: string
-        - name: ultimateParentUEIDUNS
-          in: query
-          description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
-          required: false
-          schema:
-            type: string
-        - name: ultimateParentUEISAM
-          in: query
-          description: >-
-            Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
-            will replace ultimateParentUEIDUNS)
-          required: false
-          schema:
-            type: string
-        - name: agencyBusinessPurposeCode
-          in: query
-          description: Agency Business Purpose Code
-          required: false
-          schema:
-            type: string
-        - name: agencyBusinessPurposeDesc
-          in: query
-          description: Agency Business Purpose Description
-          required: false
-          schema:
-            type: string
-        - name: sensitivity
-          in: query
-          description: Determines Sensitivity Level of Data
-          required: false
-          schema:
-            type: string
-        - name: routingNumber
-          in: query
-          description: Routing Number
-          required: false
-          schema:
-            type: string
-        - name: bankName
-          in: query
-          description: Bank Name
-          required: false
-          schema:
-            type: string
-        - name: accountNumber
-          in: query
-          description: Account Number
-          required: false
-          schema:
-            type: string
-        - name: eftWaiverFlag
-          in: query
-          description: EFT Waiver Flag
-          required: false
-          schema:
-            type: string
-        - name: agencyLocationCode
-          in: query
-          description: Agency Location Code
-          required: false
-          schema:
-            type: string
-        - name: disbursingOfficeSymbol
-          in: query
-          description: Disbursing Office Symbol
-          required: false
-          schema:
-            type: string
-        - name: taxpayerName
-          in: query
-          description: Taxpayer Name
-          required: false
-          schema:
-            type: string
-        - name: taxpayerIdentificationNumber
-          in: query
-          description: Taxpayer Identification Number
-          required: false
-          schema:
-            type: string
-        - name: samRegistered
-          in: query
-          description: SAM Registered
-          required: false
-          schema:
-            type: string
-        - name: registrationExpirationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: ueiCreationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: registrationStatus
-          in: query
-          description: 1 character code (A or E)
-          required: false
-          schema:
-            type: string
-        - name: api_key
-          in: query
-          description: api_key
-          required: false
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successfully retrieved list
-        '201':
-          description: Created
-        '401':
-          description: You are not authorized to view the resource
-        '403':
-          description: Accessing the resource you were trying to reach is forbidden
-        '404':
-          description: The resource you were trying to reach is not found
-  /sam/v1/entity-file:
+  "/sam/v1/entity-file":
     get:
       tags:
         - entity-management-extract-controller
@@ -1845,13 +67,13 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: OK
-        '401':
+        "401":
           description: Unauthorized
-        '403':
+        "403":
           description: Forbidden
-        '404':
+        "404":
           description: Not Found
     post:
       tags:
@@ -1872,15 +94,3315 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: OK
-        '201':
+        "201":
           description: Created
-        '401':
+        "401":
           description: Unauthorized
-        '403':
+        "403":
           description: Forbidden
-        '404':
+        "404":
           description: Not Found
+  "/sam/v1/entity-management":
+    get:
+      tags:
+        - entity-management-controller
+      summary: " get Entity Management Details"
+      operationId: getEntityManagementDataUsingGET
+      parameters:
+        - name: activationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: cageCode
+          in: query
+          description: The exact 5 character value; a maximum of up to 100 values can be
+            sent
+          required: false
+          schema:
+            type: string
+        - name: dbaName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: debtSubjectToOffset
+          in: query
+          description: Y or N or null
+          required: false
+          schema:
+            type: string
+        - name: dodaac
+          in: query
+          description: 9 character value
+          required: false
+          schema:
+            type: string
+        - name: ueiDUNS
+          in: query
+          description: Unique Entity Identifier DUNS- 9 digit value; a maximum of up to 100
+            values can be sent
+          required: false
+          schema:
+            type: string
+        - name: ueiSAM
+          in: query
+          description: Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
+            values can be sent (This will replace ueiDUNS)
+          required: false
+          schema:
+            type: string
+        - name: entityEFTIndicator
+          in: query
+          description: EFT indicator aka dunsPlus4
+          required: false
+          schema:
+            type: string
+        - name: entityStructureCode
+          in: query
+          description: 2 character code or null
+          required: false
+          schema:
+            type: string
+        - name: entityStructureDesc
+          in: query
+          description: Description of Entity Structure
+          required: false
+          schema:
+            type: string
+        - name: exclusionStatusFlag
+          in: query
+          description: D or null
+          required: false
+          schema:
+            type: string
+        - name: expirationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: legalBusinessName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: primaryNaics
+          in: query
+          description: 6 digit NAICS; accepts multiple NAICS
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistrationCode
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistrationDesc
+          in: query
+          description: Description of Purpose Of Registration
+          required: false
+          schema:
+            type: string
+        - name: registrationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: updateDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCity
+          in: query
+          description: City name
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCongressionalDistrict
+          in: query
+          description: 2 characters
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCongressionalDistrictState
+          in: query
+          description: 5 characters
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCountryCode
+          in: query
+          description: 3 character code
+          required: false
+          schema:
+            type: string
+        - name: samExtractCode
+          in: query
+          description: 1 character code (A or E)
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressProvinceOrStateCode
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressZipPostalCode
+          in: query
+          description: 5 digit zip code
+          required: false
+          schema:
+            type: string
+        - name: businessTypeCode
+          in: query
+          description: 2 Character business type codes
+          required: false
+          schema:
+            type: string
+        - name: businessTypeDesc
+          in: query
+          description: Description of business type code
+          required: false
+          schema:
+            type: string
+        - name: entityType
+          in: query
+          description: 2 Character entity type codes
+          required: false
+          schema:
+            type: string
+        - name: organizationStructureCode
+          in: query
+          description: 2 Character organization structure codes
+          required: false
+          schema:
+            type: string
+        - name: organizationStructureDesc
+          in: query
+          description: Organization structure description
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporationCode
+          in: query
+          description: 2 Character state code
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporationDesc
+          in: query
+          description: Descriptionof state
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationCode
+          in: query
+          description: 3 Character country code
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationDesc
+          in: query
+          description: Description of country
+          required: false
+          schema:
+            type: string
+        - name: naicsCode
+          in: query
+          description: 6 Characters NAICS code
+          required: false
+          schema:
+            type: string
+        - name: naicsDesc
+          in: query
+          description: Description of Naics code
+          required: false
+          schema:
+            type: string
+        - name: naicsLimitedSB
+          in: query
+          description: 6 Characters NAICS code(with small business - Y)
+          required: false
+          schema:
+            type: string
+        - name: pscCode
+          in: query
+          description: 4 Characters PSC code
+          required: false
+          schema:
+            type: string
+        - name: pscDesc
+          in: query
+          description: Description of PSC code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterStateCode
+          in: query
+          description: Disaster relief served state, 2 character code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterStateName
+          in: query
+          description: Description of Disaster relief served state
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyCode
+          in: query
+          description: Disaster relief served county code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyName
+          in: query
+          description: Description of Disaster relief served county
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterMSA
+          in: query
+          description: Disaster relief served MSA
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeCode
+          in: query
+          description: "A two character code or null "
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeDesc
+          in: query
+          description: Description of SBa Business Type code
+          required: false
+          schema:
+            type: string
+        - name: includeSections
+          in: query
+          description: entityInformation, coreData, assertions, repsAndCerts,
+            mandatoryPOCs, optionalPOCs
+          required: false
+          schema:
+            type: string
+        - name: q
+          in: query
+          description: Q paramter for Search Operations
+          required: false
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: page
+          required: false
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: record limit per page
+          required: false
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: Acceptable values JSON and CSV
+          required: false
+          schema:
+            type: string
+        - name: emailId
+          in: query
+          description: Acceptable emailId values are Yes/No
+          required: false
+          schema:
+            type: string
+        - name: sort
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: sortOrder
+          in: query
+          required: false
+          schema:
+            type: ref
+            enum:
+              - asc
+              - desc
+        - name: isActive
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: naicsUI
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: pscUI
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: organizationId
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: edi
+          in: query
+          description: Acceptable EDI values are Yes/No
+          required: false
+          schema:
+            type: string
+        - name: companySecurityLevelCode
+          in: query
+          description: Company Security Level Code
+          required: false
+          schema:
+            type: string
+        - name: highestEmployeeSecurityLevelCode
+          in: query
+          description: Highest Employee Security Level Code
+          required: false
+          schema:
+            type: string
+        - name: companySecurityLevelDesc
+          in: query
+          description: Company Security Level Description
+          required: false
+          schema:
+            type: string
+        - name: highestEmployeeSecurityLevelDesc
+          in: query
+          description: Highest Employee Security Level Description
+          required: false
+          schema:
+            type: string
+        - name: ultimateParentUEIDUNS
+          in: query
+          description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
+          required: false
+          schema:
+            type: string
+        - name: ultimateParentUEISAM
+          in: query
+          description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
+            will replace ultimateParentUEIDUNS)
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeCode
+          in: query
+          description: Agency Business Purpose Code
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeDesc
+          in: query
+          description: Agency Business Purpose Description
+          required: false
+          schema:
+            type: string
+        - name: sensitivity
+          in: query
+          description: Determines Sensitivity Level of Data
+          required: false
+          schema:
+            type: string
+        - name: routingNumber
+          in: query
+          description: Routing Number
+          required: false
+          schema:
+            type: string
+        - name: bankName
+          in: query
+          description: Bank Name
+          required: false
+          schema:
+            type: string
+        - name: accountNumber
+          in: query
+          description: Account Number
+          required: false
+          schema:
+            type: string
+        - name: eftWaiverFlag
+          in: query
+          description: EFT Waiver Flag
+          required: false
+          schema:
+            type: string
+        - name: agencyLocationCode
+          in: query
+          description: Agency Location Code
+          required: false
+          schema:
+            type: string
+        - name: disbursingOfficeSymbol
+          in: query
+          description: Disbursing Office Symbol
+          required: false
+          schema:
+            type: string
+        - name: taxpayerName
+          in: query
+          description: Taxpayer Name
+          required: false
+          schema:
+            type: string
+        - name: taxpayerIdentificationNumber
+          in: query
+          description: Taxpayer Identification Number
+          required: false
+          schema:
+            type: string
+        - name: proceedingFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: execCompensationFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: isDisasterResponseParticipant
+          in: query
+          description: Disaster Response participant flag
+          required: false
+          schema:
+            type: string
+        - name: activationDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: activationDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: expirationDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: expirationDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: createDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: createDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: country
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: classification
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: cityStateZipCongFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: api_key
+          in: query
+          description: api_key
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successfully retrieved list
+        "401":
+          description: You are not authorized to view the resource
+        "403":
+          description: Accessing the resource you were trying to reach is forbidden
+        "404":
+          description: The resource you were trying to reach is not found
+    post:
+      tags:
+        - entity-management-controller
+      summary: " get Entity Management Details"
+      operationId: getEntityManagementDataUsingPOST
+      parameters:
+        - name: activationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: cageCode
+          in: query
+          description: The exact 5 character value; a maximum of up to 100 values can be
+            sent
+          required: false
+          schema:
+            type: string
+        - name: dbaName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: debtSubjectToOffset
+          in: query
+          description: Y or N or null
+          required: false
+          schema:
+            type: string
+        - name: dodaac
+          in: query
+          description: 9 character value
+          required: false
+          schema:
+            type: string
+        - name: ueiDUNS
+          in: query
+          description: Unique Entity Identifier DUNS- 9 digit value; a maximum of up to 100
+            values can be sent
+          required: false
+          schema:
+            type: string
+        - name: ueiSAM
+          in: query
+          description: Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
+            values can be sent (This will replace ueiDUNS)
+          required: false
+          schema:
+            type: string
+        - name: entityEFTIndicator
+          in: query
+          description: EFT indicator aka dunsPlus4
+          required: false
+          schema:
+            type: string
+        - name: entityStructureCode
+          in: query
+          description: 2 character code or null
+          required: false
+          schema:
+            type: string
+        - name: entityStructureDesc
+          in: query
+          description: Description of Entity Structure
+          required: false
+          schema:
+            type: string
+        - name: exclusionStatusFlag
+          in: query
+          description: D or null
+          required: false
+          schema:
+            type: string
+        - name: expirationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: legalBusinessName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: primaryNaics
+          in: query
+          description: 6 digit NAICS; accepts multiple NAICS
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistrationCode
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistrationDesc
+          in: query
+          description: Description of Purpose Of Registration
+          required: false
+          schema:
+            type: string
+        - name: registrationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: updateDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCity
+          in: query
+          description: City name
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCongressionalDistrict
+          in: query
+          description: 2 characters
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCongressionalDistrictState
+          in: query
+          description: 5 characters
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCountryCode
+          in: query
+          description: 3 character code
+          required: false
+          schema:
+            type: string
+        - name: samExtractCode
+          in: query
+          description: 1 character code (A or E)
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressProvinceOrStateCode
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressZipPostalCode
+          in: query
+          description: 5 digit zip code
+          required: false
+          schema:
+            type: string
+        - name: businessTypeCode
+          in: query
+          description: 2 Character business type codes
+          required: false
+          schema:
+            type: string
+        - name: businessTypeDesc
+          in: query
+          description: Description of business type code
+          required: false
+          schema:
+            type: string
+        - name: entityType
+          in: query
+          description: 2 Character entity type codes
+          required: false
+          schema:
+            type: string
+        - name: organizationStructureCode
+          in: query
+          description: 2 Character organization structure codes
+          required: false
+          schema:
+            type: string
+        - name: organizationStructureDesc
+          in: query
+          description: Organization structure description
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporationCode
+          in: query
+          description: 2 Character state code
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporationDesc
+          in: query
+          description: Descriptionof state
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationCode
+          in: query
+          description: 3 Character country code
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationDesc
+          in: query
+          description: Description of country
+          required: false
+          schema:
+            type: string
+        - name: naicsCode
+          in: query
+          description: 6 Characters NAICS code
+          required: false
+          schema:
+            type: string
+        - name: naicsDesc
+          in: query
+          description: Description of Naics code
+          required: false
+          schema:
+            type: string
+        - name: naicsLimitedSB
+          in: query
+          description: 6 Characters NAICS code(with small business - Y)
+          required: false
+          schema:
+            type: string
+        - name: pscCode
+          in: query
+          description: 4 Characters PSC code
+          required: false
+          schema:
+            type: string
+        - name: pscDesc
+          in: query
+          description: Description of PSC code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterStateCode
+          in: query
+          description: Disaster relief served state, 2 character code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterStateName
+          in: query
+          description: Description of Disaster relief served state
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyCode
+          in: query
+          description: Disaster relief served county code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyName
+          in: query
+          description: Description of Disaster relief served county
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterMSA
+          in: query
+          description: Disaster relief served MSA
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeCode
+          in: query
+          description: "A two character code or null "
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeDesc
+          in: query
+          description: Description of SBa Business Type code
+          required: false
+          schema:
+            type: string
+        - name: includeSections
+          in: query
+          description: entityInformation, coreData, assertions, repsAndCerts,
+            mandatoryPOCs, optionalPOCs
+          required: false
+          schema:
+            type: string
+        - name: q
+          in: query
+          description: Q paramter for Search Operations
+          required: false
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: page
+          required: false
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: record limit per page
+          required: false
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: Acceptable values JSON and CSV
+          required: false
+          schema:
+            type: string
+        - name: emailId
+          in: query
+          description: Acceptable emailId values are Yes/No
+          required: false
+          schema:
+            type: string
+        - name: sort
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: sortOrder
+          in: query
+          required: false
+          schema:
+            type: ref
+            enum:
+              - asc
+              - desc
+        - name: isActive
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: naicsUI
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: pscUI
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: organizationId
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: edi
+          in: query
+          description: Acceptable EDI values are Yes/No
+          required: false
+          schema:
+            type: string
+        - name: companySecurityLevelCode
+          in: query
+          description: Company Security Level Code
+          required: false
+          schema:
+            type: string
+        - name: highestEmployeeSecurityLevelCode
+          in: query
+          description: Highest Employee Security Level Code
+          required: false
+          schema:
+            type: string
+        - name: companySecurityLevelDesc
+          in: query
+          description: Company Security Level Description
+          required: false
+          schema:
+            type: string
+        - name: highestEmployeeSecurityLevelDesc
+          in: query
+          description: Highest Employee Security Level Description
+          required: false
+          schema:
+            type: string
+        - name: ultimateParentUEIDUNS
+          in: query
+          description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
+          required: false
+          schema:
+            type: string
+        - name: ultimateParentUEISAM
+          in: query
+          description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
+            will replace ultimateParentUEIDUNS)
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeCode
+          in: query
+          description: Agency Business Purpose Code
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeDesc
+          in: query
+          description: Agency Business Purpose Description
+          required: false
+          schema:
+            type: string
+        - name: sensitivity
+          in: query
+          description: Determines Sensitivity Level of Data
+          required: false
+          schema:
+            type: string
+        - name: routingNumber
+          in: query
+          description: Routing Number
+          required: false
+          schema:
+            type: string
+        - name: bankName
+          in: query
+          description: Bank Name
+          required: false
+          schema:
+            type: string
+        - name: accountNumber
+          in: query
+          description: Account Number
+          required: false
+          schema:
+            type: string
+        - name: eftWaiverFlag
+          in: query
+          description: EFT Waiver Flag
+          required: false
+          schema:
+            type: string
+        - name: agencyLocationCode
+          in: query
+          description: Agency Location Code
+          required: false
+          schema:
+            type: string
+        - name: disbursingOfficeSymbol
+          in: query
+          description: Disbursing Office Symbol
+          required: false
+          schema:
+            type: string
+        - name: taxpayerName
+          in: query
+          description: Taxpayer Name
+          required: false
+          schema:
+            type: string
+        - name: taxpayerIdentificationNumber
+          in: query
+          description: Taxpayer Identification Number
+          required: false
+          schema:
+            type: string
+        - name: proceedingFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: execCompensationFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: isDisasterResponseParticipant
+          in: query
+          description: Disaster Response participant flag
+          required: false
+          schema:
+            type: string
+        - name: activationDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: activationDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: expirationDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: expirationDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: createDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: createDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: country
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: classification
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: cityStateZipCongFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: api_key
+          in: query
+          description: api_key
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successfully retrieved list
+        "201":
+          description: Created
+        "401":
+          description: You are not authorized to view the resource
+        "403":
+          description: Accessing the resource you were trying to reach is forbidden
+        "404":
+          description: The resource you were trying to reach is not found
+  "/sam/v1/picker-data":
+    get:
+      tags:
+        - entity-management-controller
+      summary: " Get Entity Auto Suggest Info"
+      operationId: getEntityAutoSuggestDataUsingGET
+      parameters:
+        - name: api_key
+          in: query
+          description: api_key
+          required: false
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: size
+          required: false
+          schema:
+            type: string
+            default: "10"
+        - name: fieldName
+          in: query
+          description: fieldName
+          required: true
+          schema:
+            type: string
+        - name: text
+          in: query
+          description: text
+          required: true
+          schema:
+            type: string
+        - name: X-Auth-Token
+          in: header
+          description: Provide the iPlanetDirectoryPro cookie from your application
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successfully retrieved list
+          content:
+            application/hal+json:
+              schema:
+                type: string
+        "401":
+          description: Unauthorized
+        "403":
+          description: Accessing the resource you were trying to reach is forbidden
+        "404":
+          description: The resource you were trying to reach is not found
+  "/sam/v2/entity-management":
+    get:
+      tags:
+        - entity-management-controller-v-2
+      summary: " get Entity Management Details"
+      operationId: getEntityManagementDataUsingGET_1
+      parameters:
+        - name: activationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: cageCode
+          in: query
+          description: The exact 5 character value; a maximum of up to 100 values can be
+            sent
+          required: false
+          schema:
+            type: string
+        - name: dbaName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: debtSubjectToOffset
+          in: query
+          description: Y or N or null
+          required: false
+          schema:
+            type: string
+        - name: dodaac
+          in: query
+          description: 9 character value
+          required: false
+          schema:
+            type: string
+        - name: ueiDUNS
+          in: query
+          description: Unique Entity Identifier DUNS- 9 digit value; a maximum of up to 100
+            values can be sent
+          required: false
+          schema:
+            type: string
+        - name: ueiSAM
+          in: query
+          description: Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
+            values can be sent (This will replace ueiDUNS)
+          required: false
+          schema:
+            type: string
+        - name: entityEFTIndicator
+          in: query
+          description: EFT indicator aka dunsPlus4
+          required: false
+          schema:
+            type: string
+        - name: entityStructureCode
+          in: query
+          description: 2 character code or null
+          required: false
+          schema:
+            type: string
+        - name: entityStructureDesc
+          in: query
+          description: Description of Entity Structure
+          required: false
+          schema:
+            type: string
+        - name: exclusionStatusFlag
+          in: query
+          description: D or null
+          required: false
+          schema:
+            type: string
+        - name: legalBusinessName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: primaryNaics
+          in: query
+          description: 6 digit NAICS; accepts multiple NAICS
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistrationCode
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistrationDesc
+          in: query
+          description: Description of Purpose Of Registration
+          required: false
+          schema:
+            type: string
+        - name: registrationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: updateDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCity
+          in: query
+          description: City name
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCongressionalDistrict
+          in: query
+          description: 2 characters
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCountryCode
+          in: query
+          description: 3 character code
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressProvinceOrStateCode
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressZipPostalCode
+          in: query
+          description: 5 digit zip code
+          required: false
+          schema:
+            type: string
+        - name: businessTypeCode
+          in: query
+          description: 2 Character business type codes
+          required: false
+          schema:
+            type: string
+        - name: businessTypeDesc
+          in: query
+          description: Description of business type code
+          required: false
+          schema:
+            type: string
+        - name: entityType
+          in: query
+          description: 2 Character entity type codes
+          required: false
+          schema:
+            type: string
+        - name: organizationStructureCode
+          in: query
+          description: 2 Character organization structure codes
+          required: false
+          schema:
+            type: string
+        - name: organizationStructureDesc
+          in: query
+          description: Organization structure description
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporationCode
+          in: query
+          description: 2 Character state code
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporationDesc
+          in: query
+          description: Descriptionof state
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationCode
+          in: query
+          description: 3 Character country code
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationDesc
+          in: query
+          description: Description of country
+          required: false
+          schema:
+            type: string
+        - name: naicsCode
+          in: query
+          description: 6 Characters NAICS code
+          required: false
+          schema:
+            type: string
+        - name: naicsDesc
+          in: query
+          description: Description of Naics code
+          required: false
+          schema:
+            type: string
+        - name: naicsLimitedSB
+          in: query
+          description: 6 Characters NAICS code(with small business - Y)
+          required: false
+          schema:
+            type: string
+        - name: pscCode
+          in: query
+          description: 4 Characters PSC code
+          required: false
+          schema:
+            type: string
+        - name: pscDesc
+          in: query
+          description: Description of PSC code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterStateCode
+          in: query
+          description: Disaster relief served state, 2 character code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterStateName
+          in: query
+          description: Description of Disaster relief served state
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyCode
+          in: query
+          description: Disaster relief served county code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyName
+          in: query
+          description: Description of Disaster relief served county
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterMSA
+          in: query
+          description: Disaster relief served MSA
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeCode
+          in: query
+          description: "A two character code or null "
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeDesc
+          in: query
+          description: Description of SBa Business Type code
+          required: false
+          schema:
+            type: string
+        - name: includeSections
+          in: query
+          description: entityInformation, coreData, assertions, repsAndCerts,
+            mandatoryPOCs, optionalPOCs
+          required: false
+          schema:
+            type: string
+        - name: q
+          in: query
+          description: Q paramter for Search Operations
+          required: false
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: page
+          required: false
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: record limit per page
+          required: false
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: Acceptable values JSON and CSV
+          required: false
+          schema:
+            type: string
+        - name: emailId
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: sort
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: sortOrder
+          in: query
+          required: false
+          schema:
+            type: ref
+            enum:
+              - asc
+              - desc
+        - name: isActive
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: naicsUI
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: pscUI
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: organizationId
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: edi
+          in: query
+          description: Acceptable EDI values are Yes/No
+          required: false
+          schema:
+            type: string
+        - name: companySecurityLevelCode
+          in: query
+          description: Company Security Level Code
+          required: false
+          schema:
+            type: string
+        - name: highestEmployeeSecurityLevelCode
+          in: query
+          description: Highest Employee Security Level Code
+          required: false
+          schema:
+            type: string
+        - name: companySecurityLevelDesc
+          in: query
+          description: Company Security Level Description
+          required: false
+          schema:
+            type: string
+        - name: highestEmployeeSecurityLevelDesc
+          in: query
+          description: Highest Employee Security Level Description
+          required: false
+          schema:
+            type: string
+        - name: ultimateParentUEIDUNS
+          in: query
+          description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
+          required: false
+          schema:
+            type: string
+        - name: ultimateParentUEISAM
+          in: query
+          description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
+            will replace ultimateParentUEIDUNS)
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeCode
+          in: query
+          description: Agency Business Purpose Code
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeDesc
+          in: query
+          description: Agency Business Purpose Description
+          required: false
+          schema:
+            type: string
+        - name: sensitivity
+          in: query
+          description: Determines Sensitivity Level of Data
+          required: false
+          schema:
+            type: string
+        - name: routingNumber
+          in: query
+          description: Routing Number
+          required: false
+          schema:
+            type: string
+        - name: bankName
+          in: query
+          description: Bank Name
+          required: false
+          schema:
+            type: string
+        - name: accountNumber
+          in: query
+          description: Account Number
+          required: false
+          schema:
+            type: string
+        - name: eftWaiverFlag
+          in: query
+          description: EFT Waiver Flag
+          required: false
+          schema:
+            type: string
+        - name: agencyLocationCode
+          in: query
+          description: Agency Location Code
+          required: false
+          schema:
+            type: string
+        - name: disbursingOfficeSymbol
+          in: query
+          description: Disbursing Office Symbol
+          required: false
+          schema:
+            type: string
+        - name: taxpayerName
+          in: query
+          description: Taxpayer Name
+          required: false
+          schema:
+            type: string
+        - name: taxpayerIdentificationNumber
+          in: query
+          description: Taxpayer Identification Number
+          required: false
+          schema:
+            type: string
+        - name: proceedingFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: execCompensationFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: isDisasterResponseParticipant
+          in: query
+          description: Disaster Response participant flag
+          required: false
+          schema:
+            type: string
+        - name: activationDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: activationDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: expirationDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: expirationDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: createDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: createDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: country
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: classification
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: samRegistered
+          in: query
+          description: SAM Registered
+          required: false
+          schema:
+            type: string
+        - name: registrationExpirationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: ueiCreationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: registrationStatus
+          in: query
+          description: 1 character code (A or E)
+          required: false
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successfully retrieved list
+        "401":
+          description: You are not authorized to view the resource
+        "403":
+          description: Accessing the resource you were trying to reach is forbidden
+        "404":
+          description: The resource you were trying to reach is not found
+    post:
+      tags:
+        - entity-management-controller-v-2
+      summary: " get Entity Management Details"
+      operationId: getEntityManagementDataUsingPOST_1
+      parameters:
+        - name: activationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: cageCode
+          in: query
+          description: The exact 5 character value; a maximum of up to 100 values can be
+            sent
+          required: false
+          schema:
+            type: string
+        - name: dbaName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: debtSubjectToOffset
+          in: query
+          description: Y or N or null
+          required: false
+          schema:
+            type: string
+        - name: dodaac
+          in: query
+          description: 9 character value
+          required: false
+          schema:
+            type: string
+        - name: ueiDUNS
+          in: query
+          description: Unique Entity Identifier DUNS- 9 digit value; a maximum of up to 100
+            values can be sent
+          required: false
+          schema:
+            type: string
+        - name: ueiSAM
+          in: query
+          description: Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
+            values can be sent (This will replace ueiDUNS)
+          required: false
+          schema:
+            type: string
+        - name: entityEFTIndicator
+          in: query
+          description: EFT indicator aka dunsPlus4
+          required: false
+          schema:
+            type: string
+        - name: entityStructureCode
+          in: query
+          description: 2 character code or null
+          required: false
+          schema:
+            type: string
+        - name: entityStructureDesc
+          in: query
+          description: Description of Entity Structure
+          required: false
+          schema:
+            type: string
+        - name: exclusionStatusFlag
+          in: query
+          description: D or null
+          required: false
+          schema:
+            type: string
+        - name: legalBusinessName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: primaryNaics
+          in: query
+          description: 6 digit NAICS; accepts multiple NAICS
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistrationCode
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistrationDesc
+          in: query
+          description: Description of Purpose Of Registration
+          required: false
+          schema:
+            type: string
+        - name: registrationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: updateDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCity
+          in: query
+          description: City name
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCongressionalDistrict
+          in: query
+          description: 2 characters
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCountryCode
+          in: query
+          description: 3 character code
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressProvinceOrStateCode
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressZipPostalCode
+          in: query
+          description: 5 digit zip code
+          required: false
+          schema:
+            type: string
+        - name: businessTypeCode
+          in: query
+          description: 2 Character business type codes
+          required: false
+          schema:
+            type: string
+        - name: businessTypeDesc
+          in: query
+          description: Description of business type code
+          required: false
+          schema:
+            type: string
+        - name: entityType
+          in: query
+          description: 2 Character entity type codes
+          required: false
+          schema:
+            type: string
+        - name: organizationStructureCode
+          in: query
+          description: 2 Character organization structure codes
+          required: false
+          schema:
+            type: string
+        - name: organizationStructureDesc
+          in: query
+          description: Organization structure description
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporationCode
+          in: query
+          description: 2 Character state code
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporationDesc
+          in: query
+          description: Descriptionof state
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationCode
+          in: query
+          description: 3 Character country code
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationDesc
+          in: query
+          description: Description of country
+          required: false
+          schema:
+            type: string
+        - name: naicsCode
+          in: query
+          description: 6 Characters NAICS code
+          required: false
+          schema:
+            type: string
+        - name: naicsDesc
+          in: query
+          description: Description of Naics code
+          required: false
+          schema:
+            type: string
+        - name: naicsLimitedSB
+          in: query
+          description: 6 Characters NAICS code(with small business - Y)
+          required: false
+          schema:
+            type: string
+        - name: pscCode
+          in: query
+          description: 4 Characters PSC code
+          required: false
+          schema:
+            type: string
+        - name: pscDesc
+          in: query
+          description: Description of PSC code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterStateCode
+          in: query
+          description: Disaster relief served state, 2 character code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterStateName
+          in: query
+          description: Description of Disaster relief served state
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyCode
+          in: query
+          description: Disaster relief served county code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyName
+          in: query
+          description: Description of Disaster relief served county
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterMSA
+          in: query
+          description: Disaster relief served MSA
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeCode
+          in: query
+          description: "A two character code or null "
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeDesc
+          in: query
+          description: Description of SBa Business Type code
+          required: false
+          schema:
+            type: string
+        - name: includeSections
+          in: query
+          description: entityInformation, coreData, assertions, repsAndCerts,
+            mandatoryPOCs, optionalPOCs
+          required: false
+          schema:
+            type: string
+        - name: q
+          in: query
+          description: Q paramter for Search Operations
+          required: false
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: page
+          required: false
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: record limit per page
+          required: false
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: Acceptable values JSON and CSV
+          required: false
+          schema:
+            type: string
+        - name: emailId
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: sort
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: sortOrder
+          in: query
+          required: false
+          schema:
+            type: ref
+            enum:
+              - asc
+              - desc
+        - name: isActive
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: naicsUI
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: pscUI
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: organizationId
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: edi
+          in: query
+          description: Acceptable EDI values are Yes/No
+          required: false
+          schema:
+            type: string
+        - name: companySecurityLevelCode
+          in: query
+          description: Company Security Level Code
+          required: false
+          schema:
+            type: string
+        - name: highestEmployeeSecurityLevelCode
+          in: query
+          description: Highest Employee Security Level Code
+          required: false
+          schema:
+            type: string
+        - name: companySecurityLevelDesc
+          in: query
+          description: Company Security Level Description
+          required: false
+          schema:
+            type: string
+        - name: highestEmployeeSecurityLevelDesc
+          in: query
+          description: Highest Employee Security Level Description
+          required: false
+          schema:
+            type: string
+        - name: ultimateParentUEIDUNS
+          in: query
+          description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
+          required: false
+          schema:
+            type: string
+        - name: ultimateParentUEISAM
+          in: query
+          description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
+            will replace ultimateParentUEIDUNS)
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeCode
+          in: query
+          description: Agency Business Purpose Code
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeDesc
+          in: query
+          description: Agency Business Purpose Description
+          required: false
+          schema:
+            type: string
+        - name: sensitivity
+          in: query
+          description: Determines Sensitivity Level of Data
+          required: false
+          schema:
+            type: string
+        - name: routingNumber
+          in: query
+          description: Routing Number
+          required: false
+          schema:
+            type: string
+        - name: bankName
+          in: query
+          description: Bank Name
+          required: false
+          schema:
+            type: string
+        - name: accountNumber
+          in: query
+          description: Account Number
+          required: false
+          schema:
+            type: string
+        - name: eftWaiverFlag
+          in: query
+          description: EFT Waiver Flag
+          required: false
+          schema:
+            type: string
+        - name: agencyLocationCode
+          in: query
+          description: Agency Location Code
+          required: false
+          schema:
+            type: string
+        - name: disbursingOfficeSymbol
+          in: query
+          description: Disbursing Office Symbol
+          required: false
+          schema:
+            type: string
+        - name: taxpayerName
+          in: query
+          description: Taxpayer Name
+          required: false
+          schema:
+            type: string
+        - name: taxpayerIdentificationNumber
+          in: query
+          description: Taxpayer Identification Number
+          required: false
+          schema:
+            type: string
+        - name: proceedingFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: execCompensationFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: isDisasterResponseParticipant
+          in: query
+          description: Disaster Response participant flag
+          required: false
+          schema:
+            type: string
+        - name: activationDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: activationDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: expirationDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: expirationDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: createDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: createDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: country
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: classification
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: samRegistered
+          in: query
+          description: SAM Registered
+          required: false
+          schema:
+            type: string
+        - name: registrationExpirationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: ueiCreationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: registrationStatus
+          in: query
+          description: 1 character code (A or E)
+          required: false
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successfully retrieved list
+        "201":
+          description: Created
+        "401":
+          description: You are not authorized to view the resource
+        "403":
+          description: Accessing the resource you were trying to reach is forbidden
+        "404":
+          description: The resource you were trying to reach is not found
+  "/sam/v3/entity-management":
+    get:
+      tags:
+        - entity-management-controller-v-3
+      summary: " get Entity Management Details"
+      operationId: getEntityManagementDataUsingGET_2
+      parameters:
+        - name: activationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: cageCode
+          in: query
+          description: The exact 5 character value; a maximum of up to 100 values can be
+            sent
+          required: false
+          schema:
+            type: string
+        - name: dbaName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: debtSubjectToOffset
+          in: query
+          description: Y or N or null
+          required: false
+          schema:
+            type: string
+        - name: dodaac
+          in: query
+          description: 9 character value
+          required: false
+          schema:
+            type: string
+        - name: ueiDUNS
+          in: query
+          description: Unique Entity Identifier DUNS- 9 digit value; a maximum of up to 100
+            values can be sent
+          required: false
+          schema:
+            type: string
+        - name: ueiSAM
+          in: query
+          description: Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
+            values can be sent (This will replace ueiDUNS)
+          required: false
+          schema:
+            type: string
+        - name: entityEFTIndicator
+          in: query
+          description: EFT indicator aka dunsPlus4
+          required: false
+          schema:
+            type: string
+        - name: entityStructureCode
+          in: query
+          description: 2 character code or null
+          required: false
+          schema:
+            type: string
+        - name: entityStructureDesc
+          in: query
+          description: Description of Entity Structure
+          required: false
+          schema:
+            type: string
+        - name: exclusionStatusFlag
+          in: query
+          description: D or null
+          required: false
+          schema:
+            type: string
+        - name: legalBusinessName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: primaryNaics
+          in: query
+          description: 6 digit NAICS; accepts multiple NAICS
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistrationCode
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistrationDesc
+          in: query
+          description: Description of Purpose Of Registration
+          required: false
+          schema:
+            type: string
+        - name: registrationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: updateDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCity
+          in: query
+          description: City name
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCongressionalDistrict
+          in: query
+          description: 2 characters
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCountryCode
+          in: query
+          description: 3 character code
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressProvinceOrStateCode
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressZipPostalCode
+          in: query
+          description: 5 digit zip code
+          required: false
+          schema:
+            type: string
+        - name: businessTypeCode
+          in: query
+          description: 2 Character business type codes
+          required: false
+          schema:
+            type: string
+        - name: businessTypeDesc
+          in: query
+          description: Description of business type code
+          required: false
+          schema:
+            type: string
+        - name: entityType
+          in: query
+          description: 2 Character entity type codes
+          required: false
+          schema:
+            type: string
+        - name: organizationStructureCode
+          in: query
+          description: 2 Character organization structure codes
+          required: false
+          schema:
+            type: string
+        - name: organizationStructureDesc
+          in: query
+          description: Organization structure description
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporationCode
+          in: query
+          description: 2 Character state code
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporationDesc
+          in: query
+          description: Descriptionof state
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationCode
+          in: query
+          description: 3 Character country code
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationDesc
+          in: query
+          description: Description of country
+          required: false
+          schema:
+            type: string
+        - name: naicsCode
+          in: query
+          description: 6 Characters NAICS code
+          required: false
+          schema:
+            type: string
+        - name: naicsDesc
+          in: query
+          description: Description of Naics code
+          required: false
+          schema:
+            type: string
+        - name: naicsLimitedSB
+          in: query
+          description: 6 Characters NAICS code(with small business - Y)
+          required: false
+          schema:
+            type: string
+        - name: pscCode
+          in: query
+          description: 4 Characters PSC code
+          required: false
+          schema:
+            type: string
+        - name: pscDesc
+          in: query
+          description: Description of PSC code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterStateCode
+          in: query
+          description: Disaster relief served state, 2 character code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterStateName
+          in: query
+          description: Description of Disaster relief served state
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyCode
+          in: query
+          description: Disaster relief served county code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyName
+          in: query
+          description: Description of Disaster relief served county
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterMSA
+          in: query
+          description: Disaster relief served MSA
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeCode
+          in: query
+          description: "A two character code or null "
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeDesc
+          in: query
+          description: Description of SBa Business Type code
+          required: false
+          schema:
+            type: string
+        - name: includeSections
+          in: query
+          description: entityInformation, coreData, assertions, repsAndCerts,
+            mandatoryPOCs, optionalPOCs
+          required: false
+          schema:
+            type: string
+        - name: q
+          in: query
+          description: Q paramter for Search Operations
+          required: false
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: page
+          required: false
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: record limit per page
+          required: false
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: Acceptable values JSON and CSV
+          required: false
+          schema:
+            type: string
+        - name: emailId
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: sort
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: sortOrder
+          in: query
+          required: false
+          schema:
+            type: ref
+            enum:
+              - asc
+              - desc
+        - name: isActive
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: naicsUI
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: pscUI
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: organizationId
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: edi
+          in: query
+          description: Acceptable EDI values are Yes/No
+          required: false
+          schema:
+            type: string
+        - name: companySecurityLevelCode
+          in: query
+          description: Company Security Level Code
+          required: false
+          schema:
+            type: string
+        - name: highestEmployeeSecurityLevelCode
+          in: query
+          description: Highest Employee Security Level Code
+          required: false
+          schema:
+            type: string
+        - name: companySecurityLevelDesc
+          in: query
+          description: Company Security Level Description
+          required: false
+          schema:
+            type: string
+        - name: highestEmployeeSecurityLevelDesc
+          in: query
+          description: Highest Employee Security Level Description
+          required: false
+          schema:
+            type: string
+        - name: ultimateParentUEIDUNS
+          in: query
+          description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
+          required: false
+          schema:
+            type: string
+        - name: ultimateParentUEISAM
+          in: query
+          description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
+            will replace ultimateParentUEIDUNS)
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeCode
+          in: query
+          description: Agency Business Purpose Code
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeDesc
+          in: query
+          description: Agency Business Purpose Description
+          required: false
+          schema:
+            type: string
+        - name: sensitivity
+          in: query
+          description: Determines Sensitivity Level of Data
+          required: false
+          schema:
+            type: string
+        - name: routingNumber
+          in: query
+          description: Routing Number
+          required: false
+          schema:
+            type: string
+        - name: bankName
+          in: query
+          description: Bank Name
+          required: false
+          schema:
+            type: string
+        - name: accountNumber
+          in: query
+          description: Account Number
+          required: false
+          schema:
+            type: string
+        - name: eftWaiverFlag
+          in: query
+          description: EFT Waiver Flag
+          required: false
+          schema:
+            type: string
+        - name: agencyLocationCode
+          in: query
+          description: Agency Location Code
+          required: false
+          schema:
+            type: string
+        - name: disbursingOfficeSymbol
+          in: query
+          description: Disbursing Office Symbol
+          required: false
+          schema:
+            type: string
+        - name: taxpayerName
+          in: query
+          description: Taxpayer Name
+          required: false
+          schema:
+            type: string
+        - name: taxpayerIdentificationNumber
+          in: query
+          description: Taxpayer Identification Number
+          required: false
+          schema:
+            type: string
+        - name: proceedingFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: execCompensationFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: isDisasterResponseParticipant
+          in: query
+          description: Disaster Response participant flag
+          required: false
+          schema:
+            type: string
+        - name: activationDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: activationDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: expirationDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: expirationDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: createDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: createDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: country
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: classification
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: samRegistered
+          in: query
+          description: SAM Registered
+          required: false
+          schema:
+            type: string
+        - name: registrationExpirationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: ueiCreationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: registrationStatus
+          in: query
+          description: 1 character code (A or E)
+          required: false
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successfully retrieved list
+        "401":
+          description: You are not authorized to view the resource
+        "403":
+          description: Accessing the resource you were trying to reach is forbidden
+        "404":
+          description: The resource you were trying to reach is not found
+    post:
+      tags:
+        - entity-management-controller-v-3
+      summary: " get Entity Management Details"
+      operationId: getEntityManagementDataUsingPOST_2
+      parameters:
+        - name: activationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: cageCode
+          in: query
+          description: The exact 5 character value; a maximum of up to 100 values can be
+            sent
+          required: false
+          schema:
+            type: string
+        - name: dbaName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: debtSubjectToOffset
+          in: query
+          description: Y or N or null
+          required: false
+          schema:
+            type: string
+        - name: dodaac
+          in: query
+          description: 9 character value
+          required: false
+          schema:
+            type: string
+        - name: ueiDUNS
+          in: query
+          description: Unique Entity Identifier DUNS- 9 digit value; a maximum of up to 100
+            values can be sent
+          required: false
+          schema:
+            type: string
+        - name: ueiSAM
+          in: query
+          description: Unique Entity Identifier SAM- 12 digit value; a maximum of up to 100
+            values can be sent (This will replace ueiDUNS)
+          required: false
+          schema:
+            type: string
+        - name: entityEFTIndicator
+          in: query
+          description: EFT indicator aka dunsPlus4
+          required: false
+          schema:
+            type: string
+        - name: entityStructureCode
+          in: query
+          description: 2 character code or null
+          required: false
+          schema:
+            type: string
+        - name: entityStructureDesc
+          in: query
+          description: Description of Entity Structure
+          required: false
+          schema:
+            type: string
+        - name: exclusionStatusFlag
+          in: query
+          description: D or null
+          required: false
+          schema:
+            type: string
+        - name: legalBusinessName
+          in: query
+          description: Partial or Complete value
+          required: false
+          schema:
+            type: string
+        - name: primaryNaics
+          in: query
+          description: 6 digit NAICS; accepts multiple NAICS
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistrationCode
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: purposeOfRegistrationDesc
+          in: query
+          description: Description of Purpose Of Registration
+          required: false
+          schema:
+            type: string
+        - name: registrationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: updateDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCity
+          in: query
+          description: City name
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCongressionalDistrict
+          in: query
+          description: 2 characters
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressCountryCode
+          in: query
+          description: 3 character code
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressProvinceOrStateCode
+          in: query
+          description: 2 character code
+          required: false
+          schema:
+            type: string
+        - name: physicalAddressZipPostalCode
+          in: query
+          description: 5 digit zip code
+          required: false
+          schema:
+            type: string
+        - name: businessTypeCode
+          in: query
+          description: 2 Character business type codes
+          required: false
+          schema:
+            type: string
+        - name: businessTypeDesc
+          in: query
+          description: Description of business type code
+          required: false
+          schema:
+            type: string
+        - name: entityType
+          in: query
+          description: 2 Character entity type codes
+          required: false
+          schema:
+            type: string
+        - name: organizationStructureCode
+          in: query
+          description: 2 Character organization structure codes
+          required: false
+          schema:
+            type: string
+        - name: organizationStructureDesc
+          in: query
+          description: Organization structure description
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporationCode
+          in: query
+          description: 2 Character state code
+          required: false
+          schema:
+            type: string
+        - name: stateOfIncorporationDesc
+          in: query
+          description: Descriptionof state
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationCode
+          in: query
+          description: 3 Character country code
+          required: false
+          schema:
+            type: string
+        - name: countryOfIncorporationDesc
+          in: query
+          description: Description of country
+          required: false
+          schema:
+            type: string
+        - name: naicsCode
+          in: query
+          description: 6 Characters NAICS code
+          required: false
+          schema:
+            type: string
+        - name: naicsDesc
+          in: query
+          description: Description of Naics code
+          required: false
+          schema:
+            type: string
+        - name: naicsLimitedSB
+          in: query
+          description: 6 Characters NAICS code(with small business - Y)
+          required: false
+          schema:
+            type: string
+        - name: pscCode
+          in: query
+          description: 4 Characters PSC code
+          required: false
+          schema:
+            type: string
+        - name: pscDesc
+          in: query
+          description: Description of PSC code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterStateCode
+          in: query
+          description: Disaster relief served state, 2 character code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterStateName
+          in: query
+          description: Description of Disaster relief served state
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyCode
+          in: query
+          description: Disaster relief served county code
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterCountyName
+          in: query
+          description: Description of Disaster relief served county
+          required: false
+          schema:
+            type: string
+        - name: servedDisasterMSA
+          in: query
+          description: Disaster relief served MSA
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeCode
+          in: query
+          description: "A two character code or null "
+          required: false
+          schema:
+            type: string
+        - name: sbaBusinessTypeDesc
+          in: query
+          description: Description of SBa Business Type code
+          required: false
+          schema:
+            type: string
+        - name: includeSections
+          in: query
+          description: entityInformation, coreData, assertions, repsAndCerts,
+            mandatoryPOCs, optionalPOCs
+          required: false
+          schema:
+            type: string
+        - name: q
+          in: query
+          description: Q paramter for Search Operations
+          required: false
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: page
+          required: false
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: record limit per page
+          required: false
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: Acceptable values JSON and CSV
+          required: false
+          schema:
+            type: string
+        - name: emailId
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: sort
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: sortOrder
+          in: query
+          required: false
+          schema:
+            type: ref
+            enum:
+              - asc
+              - desc
+        - name: isActive
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: naicsUI
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: pscUI
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: organizationId
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: edi
+          in: query
+          description: Acceptable EDI values are Yes/No
+          required: false
+          schema:
+            type: string
+        - name: companySecurityLevelCode
+          in: query
+          description: Company Security Level Code
+          required: false
+          schema:
+            type: string
+        - name: highestEmployeeSecurityLevelCode
+          in: query
+          description: Highest Employee Security Level Code
+          required: false
+          schema:
+            type: string
+        - name: companySecurityLevelDesc
+          in: query
+          description: Company Security Level Description
+          required: false
+          schema:
+            type: string
+        - name: highestEmployeeSecurityLevelDesc
+          in: query
+          description: Highest Employee Security Level Description
+          required: false
+          schema:
+            type: string
+        - name: ultimateParentUEIDUNS
+          in: query
+          description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
+          required: false
+          schema:
+            type: string
+        - name: ultimateParentUEISAM
+          in: query
+          description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value (This
+            will replace ultimateParentUEIDUNS)
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeCode
+          in: query
+          description: Agency Business Purpose Code
+          required: false
+          schema:
+            type: string
+        - name: agencyBusinessPurposeDesc
+          in: query
+          description: Agency Business Purpose Description
+          required: false
+          schema:
+            type: string
+        - name: sensitivity
+          in: query
+          description: Determines Sensitivity Level of Data
+          required: false
+          schema:
+            type: string
+        - name: routingNumber
+          in: query
+          description: Routing Number
+          required: false
+          schema:
+            type: string
+        - name: bankName
+          in: query
+          description: Bank Name
+          required: false
+          schema:
+            type: string
+        - name: accountNumber
+          in: query
+          description: Account Number
+          required: false
+          schema:
+            type: string
+        - name: eftWaiverFlag
+          in: query
+          description: EFT Waiver Flag
+          required: false
+          schema:
+            type: string
+        - name: agencyLocationCode
+          in: query
+          description: Agency Location Code
+          required: false
+          schema:
+            type: string
+        - name: disbursingOfficeSymbol
+          in: query
+          description: Disbursing Office Symbol
+          required: false
+          schema:
+            type: string
+        - name: taxpayerName
+          in: query
+          description: Taxpayer Name
+          required: false
+          schema:
+            type: string
+        - name: taxpayerIdentificationNumber
+          in: query
+          description: Taxpayer Identification Number
+          required: false
+          schema:
+            type: string
+        - name: proceedingFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: execCompensationFlag
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: isDisasterResponseParticipant
+          in: query
+          description: Disaster Response participant flag
+          required: false
+          schema:
+            type: string
+        - name: activationDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: activationDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: expirationDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: expirationDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: createDateFrom
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: createDateTo
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: country
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: classification
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: samRegistered
+          in: query
+          description: SAM Registered
+          required: false
+          schema:
+            type: string
+        - name: registrationExpirationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: ueiCreationDate
+          in: query
+          description: A single Date or Date range in the format MM/DD/YYYY
+          required: false
+          schema:
+            type: string
+        - name: registrationStatus
+          in: query
+          description: 1 character code (A or E)
+          required: false
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successfully retrieved list
+        "201":
+          description: Created
+        "401":
+          description: You are not authorized to view the resource
+        "403":
+          description: Accessing the resource you were trying to reach is forbidden
+        "404":
+          description: The resource you were trying to reach is not found
 servers:
   - url: //api-alpha.sam.gov/
