@@ -411,6 +411,40 @@
 			"theme": ["Other"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Category Management (CM) Plan Workbench",
+			"description": "This workbook is a series of tools for Departments to use for their planning of the next FY for Category Management purposes; contract shifting from Tier 0 to Managed tiers, etc.",
+			"modified": "2021-07-16T16:59:04.037Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/html",
+					"format": "html",
+					"title": "Category Management (CM) Plan Workbench",
+					"downloadURL": "https://d2d.gsa.gov/report/government-wide-category-management-contract-management-and-operational-reporting-tools"
+				}
+			],
+			"keyword": ["FPDS", "FY Plan", "Spend Under Management", "obligation"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "CIO Governance Board Membership List",
 			"description": "Json file for CIO Governance Board Membership List",
 			"modified": "2015-09-01",
@@ -552,6 +586,72 @@
 			"programCode": ["023:010"],
 			"language": ["en-us"],
 			"theme": ["Travel and Transportation"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Commercial Platforms Sales Data",
+			"description": "A aggregate collection of Commercial Platforms sales across all platforms",
+			"modified": "2021-07-29T16:44:06.857Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-07-29-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "Vendor sensitive",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Stephanie Fultz",
+				"hasEmail": "mailto:stephanie.fultz@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/fas-commercial-platforms-government-wide-operational-dashboard",
+					"title": "Commercial Platforms Sales Data",
+					"description": "A aggregate collection of Commercial Platforms sales across all platforms"
+				}
+			],
+			"keyword": ["Commercial Platforms", "Micropurchase"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Common and Defense Centric Spend Tables",
+			"description": "Top-level view of annual Obligation totals for Categories and Subcategories.  Also includes Small Business utilization.  The only GWCM Dashboard that includes all 19 Lv1 categories (the other dashboards only include common-spend categories).",
+			"modified": "2021-07-16T17:21:58.837Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-02",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/government-wide-category-management-oversight-performance-management-tools",
+					"title": "Common and Defense Centric Spend Tables",
+					"description": "Top-level view of annual Obligation totals for Categories and Subcategories.  Also includes Small Business utilization.  The only GWCM Dashboard that includes all 19 Lv1 categories (the other dashboards only include common-spend categories)."
+				}
+			],
+			"keyword": ["FPDS", "obligation", "small business"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Concur - Reporting Authorization Model",
@@ -2244,9 +2344,89 @@
 					"format": "xlsx",
 					"title": "EISTotRevFY21_Q2",
 					"downloadURL": "https://inventory.data.gov/dataset/1ce62e42-2604-4102-8119-3355e45903bc/resource/2a9bd8cf-f847-46f5-941e-d9de57350f55/download/eistotrevfy21_q2.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "EISTotRevFY21_Q3",
+					"description": "EISTotRevFY21_Q3",
+					"downloadURL": "https://inventory.data.gov/dataset/1ce62e42-2604-4102-8119-3355e45903bc/resource/4e75cd88-db6a-4db6-991a-93c275af7d0f/download/eistotrevfy21_q3.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "EISTotRevFY21_Q4",
+					"description": "EISTotRevFY21_Q4",
+					"downloadURL": "https://inventory.data.gov/dataset/1ce62e42-2604-4102-8119-3355e45903bc/resource/54ddaae3-9014-48fe-a999-4673f4429fa2/download/eistotrevfy21_q4.xlsx"
 				}
 			],
 			"keyword": ["EIS", "business-volume", "enterprise-infrastructure", "gsa", "telecommunications"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Executive Summary Dashboard FY20",
+			"description": "New as of FY20, this is the current top-level dashboard for performance against OMB KPI targets, at Government-Wide, Category, and Department levels.  (New version coming early FY22).",
+			"modified": "2021-07-16T17:28:16.109Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/executive-summary-dashboard",
+					"title": "Executive Summary Dashboard FY20",
+					"description": "New as of FY20, this is the current top-level dashboard for performance against OMB KPI targets, at Government-Wide, Category, and Department levels.  (New version coming early FY22)."
+				}
+			],
+			"keyword": ["BIC", "Contract Reduction", "Cost Avoidance", "FPDS", "KPI", "Small Business", "Spend Under Management", "obligation", "opm"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FAS Connections II Data Feed",
+			"description": "The Connections II data displays obligated sales and task orders by agency, bureau and by industry partner for the Connections II Program.  (Connections II is now expired and is not accepting any new task orders. )",
+			"modified": "2021-07-29T17:30:05.935Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-07-29-05",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "Private",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Bart Bates",
+				"hasEmail": "mailto:james.bates@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/dataset/fas-connections-ii-data-feed",
+					"title": "FAS Connections II Data Feed",
+					"description": "The Connections II data displays obligated sales and task orders by agency, bureau and by industry partner for the Connections II Program. (Connections II is now expired and is not accepting any new task orders. )"
+				}
+			],
+			"keyword": ["FPDS Link", "Federal Agency", "Industry Partner"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
@@ -2285,6 +2465,39 @@
 			"programCode": ["023:014"],
 			"language": ["us-EN"],
 			"theme": ["Contracting", "FAS"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FAS Governmentwide Acquisition Contracts (GWAC) Data Feed",
+			"description": "The GWAC data displays obligated sales and task orders by agency, bureau and by industry partner for three GWAC programs: 8A Stars II, Alliant 2 and VETS 2.",
+			"modified": "2021-07-29T17:24:44.185Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-07-29-04",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "Private",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Bart Bates",
+				"hasEmail": "mailto:james.bart@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/dataset/fas-gwac-data-feed",
+					"title": "FAS Governmentwide Acquisition Contracts (GWAC) Data Feed",
+					"description": "The GWAC data displays obligated sales and task orders by agency, bureau and by industry partner for three GWAC programs: 8A Stars II, Alliant 2 and VETS 2."
+				}
+			],
+			"keyword": ["Contract Family", "FPDS Link", "Federal Agency", "Industry Partner"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "FAS Instructional Letters 2007-01 Procedures for Financial Responsibility",
@@ -3488,17 +3701,14 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format": "xlsx",
-					"title": "Hiring Assessment and Selection Outcome Dataset January 2021",
-					"description": "An Excel export of combined USA Staffing, Monster, Aviator (FAA) Hiring Assessment and Selection Outcome Data from the 24 CFO Act agencies.",
-					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/e86fd987-e414-483a-a27c-9dfeb2a385eb/download/hiring-assessment-and-selection-outcome-dataset-january-2021-final.xlsx"
+					"title": "Data Dictionary for Federal Hiring Dataset November 10 2021.xlsx",
+					"description": "This is the Data Dictionary for the Hiring Assessment and Selection Outcome Dataset.",
+					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/5f414e14-cac5-4c90-a0e4-ed17fdc751e3/download/data-dictionary-for-federal-hiring-dataset-november-10-2021.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
-					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format": "xlsx",
-					"title": "Data Dictionary for Hiring Assessment and Selection Outcome Dataset",
-					"description": "This is the Data Dictionary for the Hiring Assessment and Selection Outcome Dataset.",
-					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/e91deb82-0d38-48f9-8dd2-6109619758e6/download/data-dictionary-for-hiring-assessment-and-selection-outcome-dataset.xlsx"
+					"mediaType": "text/csv",
+					"title": "Hiring-Selections-and-Outcomes-Public-Data-Set-as-of-Sep-30-2021.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/fdd62a7a-a656-4f63-ae84-1e06a45b6a59/download/hiring-selections-and-outcomes-public-data-set-as-of-sep-30-2021.csv"
 				}
 			],
 			"keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -4127,9 +4337,375 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "FY16 Per Diem Reimbursement Rates & API",
+			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2016, as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-20T11:49:24.010Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-17-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY16 PER DIEM RATES.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/c86f0305-2073-48bb-891d-330c4ef485f0/resource/7f8a30f7-0cba-46d9-8c16-da4e58559bd6/download/fy16-per-diem-rates.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY17 Per Diem Reimbursement Rates & API",
+			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year's 2017, as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-20T11:48:55.405Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-17-02",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY17 PER DIEM RATES .csv",
+					"downloadURL": "https://inventory.data.gov/dataset/50f7d2e0-15d3-4687-a2b1-5969fa1858d4/resource/8a02e394-b093-42d5-871b-6ba62ddcbf02/download/fy17-per-diem-rates-.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY17 Tenant Satisfaction Survey (TSS) Individual Responses with Comments",
+			"description": "A CSV export of Tenant Satisfaction Survey individual responses with comments, file does not contain PII",
+			"modified": "2021-05-25T16:58:44.930Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-02",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this TSS report has stated that it is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY17_TSS_Individual_Results_with_Comments.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/0bb971ac-faf6-4144-9e77-f67ee245f59e/resource/6695811f-23bb-4f01-8e2a-8d22bc5f21a2/download/fy17_tss_individual_results_with_comments.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "TSS", "air quality", "bathrooms", "building", "building security", "common areas", "condition", "desk", "elevators", "satisfaction", "survey results", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY17 Tenant Satisfaction Survey (TSS) Summarized Results",
+			"description": "A CSV export of Tenant Satisfaction Survey results summarized at the building and individual question level.",
+			"modified": "2021-05-25T17:02:44.996Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC stated that this TSS report is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY17_TSS_Summarized_Results.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/30ce10f0-28ce-443b-a509-f4844e208609/resource/729fa561-e91d-4166-932f-2c57ed516521/download/fy17_tss_summarized_results.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Condition", "Happiness", "Lighting", "Survey", "TSS", "air quality", "building", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY18 Per Diem Reimbursement Rates & API",
+			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2018, as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-20T11:48:15.159Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-17-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY18 PER DIEM RATES.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/85bc7283-d635-41f2-a71d-cb4aeae84bfe/resource/df95bc75-e62d-48ef-bdd0-e7c708771222/download/fy18-per-diem-rates.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY18 Tenant Satisfaction Survey Individual Responses with Comments",
+			"description": "A CSV export of Tenant Satisfaction Survey (TSS) individual responses with comments, file does not contain PII.",
+			"modified": "2021-05-25T17:01:43.444Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-04",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this report has stated this is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY18_TSS_Individual_Results_with_Comments.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/70e9e4ea-6244-4447-aa2c-3516a9267de7/resource/11ef082d-034a-432a-9a23-fdd35fe51790/download/fy18_tss_individual_results_with_comments.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "TSS", "air quality", "bathrooms", "building", "building security", "common areas", "condition", "desk", "elevators", "satisfaction", "survey results"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY18 Tenant Satisfaction Survey (TSS) Summarized Results",
+			"description": "A CSV export of Tenant Satisfaction Survey (TSS) results summarized at the building and individual question level.",
+			"modified": "2021-05-25T17:00:57.825Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-05",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this report has stated this report is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY18_TSS_Summarized_Results.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/260d9579-065a-4ce0-a79e-e780b9bf27bb/resource/319ba928-a4ed-4dee-bebe-85d79d857fb4/download/fy18_tss_summarized_results.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "Lighting", "Survey", "TSS", "air quality", "building", "condition", "satisfaction", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY19 Per Diem Reimbursement Rates & API",
+			"description": "The dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2019, as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-16T18:18:02.477Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-16-05",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY19 PER DIEM RATES.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/02f805a7-2063-4159-88b4-1bdc0fdb73ef/resource/25668ce6-97aa-4da7-bdd8-232d8107c47f/download/fy19-per-diem-rates.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY19 Tenant Satisfaction Survey (TSS) Individual Responses with Comments",
+			"description": "A CSV export of Tenant Satisfaction Survey individual responses with comments, file does not contain PII.",
+			"modified": "2021-05-25T17:00:31.848Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-06",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this report has stated it is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY19_TSS_Individual_Results_with_Comments.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/864dc07d-de7c-484f-b859-9839bf62c233/resource/9b194713-3b73-4f76-b9cb-226a5792ef3f/download/fy19_tss_individual_results_with_comments.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "TSS", "air quality", "bathrooms", "building", "building security", "common areas", "condition", "desk", "elevators", "satisfaction", "survey results", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY19 Tenant Satisfaction Survey (TSS) Summarized Results",
+			"description": "A CSV export of Tenant Satisfaction Survey (TSS) results summarized at the building and individual question level.",
+			"modified": "2021-05-25T17:00:04.522Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-07",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this report has stated it is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY19_TSS_Summarized_Results.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/0bdbca3d-c492-4503-a445-a7738f975c18/resource/3b0fd369-7089-4f54-a24d-82228d7c5c2d/download/fy19_tss_summarized_results.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "Lighting", "TSS", "air quality", "building", "condition", "satisfaction", "survey"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "FY 2020 Federal Real Property Profile Data for Civilian Agencies",
-			"description": "A CSV export of data from FRPP, a database of Federal real property for civilian agencies.",
-			"modified": "2021-05-03T15:35:43.403Z",
+			"description": "A csv export of data from FRPP, a database of Federal real property for civilian agencies.",
+			"modified": "2021-11-05T13:54:47.294Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-04-27-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -4150,8 +4726,8 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
-					"title": "FRPP_Public_Dataset_FY2020.csv",
-					"downloadURL": "https://inventory.data.gov/dataset/a1072b46-cf6b-443e-bfa2-dad7f1ab4195/resource/aba264d5-d645-4ef7-8817-d1b043bc21b5/download/frpp_public_dataset_fy2020.csv"
+					"title": "FRPP_Public_Dataset_FY2020_Final_Update_10012021.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/a1072b46-cf6b-443e-bfa2-dad7f1ab4195/resource/8dcd5905-35a9-4294-ac8e-c29732dd437e/download/frpp_public_dataset_fy2020_final_update_10012021.csv"
 				}
 			],
 			"keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "RTF", "building", "civilian", "gsa", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -4162,7 +4738,7 @@
 			"@type": "dcat:Dataset",
 			"title": "FY2020 Federal Real Property Profile (FRPP) Summary Data by Installation Name",
 			"description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, that cannot be made public at a detailed level.",
-			"modified": "2021-05-19T14:38:47.344Z",
+			"modified": "2021-06-23T12:08:02.704Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-05-13-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -4183,13 +4759,142 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"title": "FY 2020 FRPP Summarized Data by Installation Name",
+					"format": "xlsx",
+					"title": "FY 2020 FRPP Summarized Data by Installation Name 6.16.21",
 					"description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, that cannot be made public at a detailed level.",
 					"describedBy": "https://www.gsa.gov/cdnstatic/FY_2020_FRPP_DATA_DICTIONARY_v2_final2.pdf",
-					"downloadURL": "https://inventory.data.gov/dataset/ec3eec46-f136-43f7-a6e5-94e76be89104/resource/2c82571a-1af4-4797-a7cf-24a65eacfba9/download/fy-2020-frpp-summarized-data-by-installation-name.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/ec3eec46-f136-43f7-a6e5-94e76be89104/resource/2c82571a-1af4-4797-a7cf-24a65eacfba9/download/fy-2020-frpp-summarized-data-by-installation-6.16.21.xlsx"
 				}
 			],
 			"keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "Installation Name", "building", "land", "real property", "structure"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY20 Per Diem Reimbursement Rates & API",
+			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2020, as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-16T18:03:46.357Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-16-04",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY20 PER DIEM RATES.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/38283c41-c371-43c7-a93f-81df2cb4dffa/resource/77e91f81-66e4-45bc-84c5-84e60093903f/download/fy20-per-diem-rates.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY21 Per Diem Reimbursement Rates & API",
+			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for  locations across the continental United States for Fiscal Year 2021 as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-16T18:02:52.856Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-16-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "Zip Code FY 2021.csv",
+					"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 20201, as well as the standard per diem rates for any locations not specifically listed.",
+					"downloadURL": "https://inventory.data.gov/dataset/412dd13b-504e-43d4-8457-82302a68394a/resource/a743b5d1-3f0c-4763-8ec6-2a07f54ce8f1/download/zip-code-fy-2021.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals", "meals and incidental expenses", "per diem"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY22 Per Diem Reimbursement Rates & API",
+			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2022, as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-16T17:17:24.093Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-16-02",
+			"license": "https://opendatacommons.org/licenses/pddl/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY2022_ZipCodeFile.csv",
+					"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for FY2022.",
+					"downloadURL": "https://inventory.data.gov/dataset/26b45920-c84f-4205-8720-b83bad34947d/resource/d6329b1d-2ad8-42ce-b7c3-2e226e23d872/download/fy2022_zipcodefile.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals and incidental expenses", "per diem"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
@@ -4291,36 +4996,102 @@
 			"theme": ["API"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": ".Gov Domains",
-			"description": "This dataset offers the list of all .gov domains, including state, local, and tribal .gov domains. It does not include .mil domains, or other federal domains outside of .gov and .fed.us.",
-			"modified": "2021-04-27T12:33:06.514Z",
+			"title": "Government Wide Category Management Agency Profile 2.0",
+			"description": "Newer version of the Agency Profile Report as of FY20.  This dashboard provides Department-level views of obligation aggregates by various breakdowns: Tier, Contract, Vendor, etc.  Also provides counts of Expiring contracts and awards as well as purchasing vehicle types.",
+			"modified": "2021-07-16T17:33:04.719Z",
 			"accessLevel": "public",
-			"identifier": "GSA-138675",
-			"dataQuality": true,
-			"landingPage": "https://raw.githubusercontent.com/cisagov/dotgov-data/main/current-full.csv",
+			"identifier": "GSA-2021-07-16-04",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
 			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
-				"name": "General Services Administration"
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
 			},
-			"accrualPeriodicity": "R/P1Y",
 			"contactPoint": {
 				"@type": "vcard:Contact",
-				"fn": "DotGov Program",
-				"hasEmail": "mailto:dotgov@cisa.dhs.gov"
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "text/csv",
-					"format": "csv",
-					"title": "Full Domain Report",
-					"downloadURL": "https://raw.githubusercontent.com/cisagov/dotgov-data/main/current-full.csv"
+					"accessURL": "https://d2d.gsa.gov/report/government-wide-category-management-oversight-performance-management-tools",
+					"title": "Government Wide Category Management Agency Profile 2.0",
+					"description": "Newer version of the Agency Profile Report as of FY20.  This dashboard provides Department-level views of obligation aggregates by various breakdowns: Tier, Contract, Vendor, etc.  Also provides counts of Expiring contracts and awards as well as purchasing vehicle types."
 				}
 			],
-			"keyword": [".gov domains"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:019"],
+			"keyword": ["FPDS", "Spend Under Management", "obligation"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Government Wide Category Management (GWCM) Small Business Dashboard",
+			"description": "Focused on Small Business obligations, vendors, and the breakout of same by various Socioeconomic Indicator flags.",
+			"modified": "2021-07-29T17:02:19.398Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-29-02",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/small-business-dashboard",
+					"title": "Government Wide Category Management (GWCM) Small Business Dashboard",
+					"description": "Focused on Small Business obligations, vendors, and the breakout of same by various Socioeconomic Indicator flags."
+				}
+			],
+			"keyword": ["FPDS", "obligation", "small business"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Government Wide Category Management (GWCM) Solutions Profile Report",
+			"description": "This dashboard is specific to BIC solutions, compiling FPDS obligation data, Transactional submission data from the solutions, and Cost Avoidance data.  Used for the semi-annual BIC reviews as well as comparative views between solution-managing categories/agencies and contract solutions.",
+			"modified": "2021-07-29T17:13:11.279Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-29-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/new-solutions-profile-report",
+					"title": "Government Wide Category Management (GWCM) Solutions Profile Report",
+					"description": "This dashboard is specific to BIC solutions, compiling FPDS obligation data, Transactional submission data from the solutions, and Cost Avoidance data.  Used for the semi-annual BIC reviews as well as comparative views between solution-managing categories/agencies and contract solutions."
+				}
+			],
+			"keyword": ["FPDS", "obligation", "small business"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
@@ -4459,8 +5230,10 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
-					"title": "EDI JSON 05 20 21.json",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/9b278c48-7b04-436c-bad9-65bc29c8c057/download/edi-json-05-20-21.json"
+					"format": "json",
+					"title": "EDI JSON 12 01 21",
+					"description": "EDI JSON file for 12/01/21",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-file-12-01-21.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -4666,8 +5439,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA FITARA Actions and Milestones 2020-05-13",
-					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the Feb. 2021, quarterly submission to OMB on Feb. 28, 2021.",
+					"title": "GSA FITARA Actions and Milestones 2020-08-12",
+					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the Aug. 2021, quarterly submission to OMB on November 10, 2021.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
 				}
@@ -4699,7 +5472,7 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "GSA IT Reform Cost Savings/Avoidance",
-					"description": "GSA's May 2021 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description": "GSA's November 2021 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -4730,7 +5503,7 @@
 					"mediaType": "application/zip",
 					"format": "ZIP",
 					"title": "GSA IT Policy Archive Zip",
-					"description": "Last update: 2021-05-13",
+					"description": "Last update: 2021-11-12",
 					"downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
 				}
 			],
@@ -4873,6 +5646,41 @@
 			"programCode": ["023:015"],
 			"language": ["us-EN"],
 			"theme": ["Advisory Committee"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Human Capital Golden Data Test Set",
+			"description": "A synthetic set of realistic, non-PII, fictitious employee profiles and test scenarios to test Human Resource (HR), Time and Attendance (T&A), and Payroll Systems.",
+			"modified": "2021-10-14T13:14:22.859Z",
+			"accessLevel": "public",
+			"identifier": "GSA 2021-10-12-01",
+			"dataQuality": true,
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Human Resources Management",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Human Resources Management"
+				}
+			},
+			"accrualPeriodicity": "irregular",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Steve Krauss",
+				"hasEmail": "mailto:steve.krauss@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://ussm.gsa.gov/golden-data-test-set/",
+					"title": "Human Capital Golden Data Test Set",
+					"description": "A synthetic set of realistic, non-PII, fictitious employee profiles and test scenarios to test Human Resource (HR), Time and Attendance (T&A), and Payroll Systems."
+				}
+			],
+			"keyword": ["Synthetic", "data", "fictitious", "golden data", "hr", "human resources", "non-PII", "scenario", "test"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Interactive Financial Charts- Agency Financial Reports",
@@ -5036,13 +5844,17 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
 					"title": "IOLP Buildings.xlsx",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/6ff40cf1-ab5b-40d8-b802-9670f8eeba0b/download/iolp-buildings.xlsx"
+					"description": "IOLP Buildings",
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/14068dc5-208c-4d87-8449-b5a2bf6c75a4/download/iolp-buildings.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
 					"title": "IOLP Leases.xlsx",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/2ac0abef-9cb6-46a5-9e47-4ea91ea34b04/download/iolp-leases.xlsx"
+					"description": "IOLP Leases",
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/7d57d3df-6ad4-4ea6-90f8-69e8deb389aa/download/iolp-leases.xlsx"
 				}
 			],
 			"keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
@@ -7064,6 +7876,73 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2021 3rd Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
+			"modified": "2021-08-10T20:01:35.083Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-10-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"isPartOf": "GSA-2015-08-27",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TotRevFY21_3rdQtr.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/cf970cc6-00d2-4bcb-ac5d-92cbf39bf401/resource/5ee89ad1-aebb-4db3-a72e-71398a81489d/download/totrevfy21_3rdqtr.xlsx"
+				}
+			],
+			"keyword": ["Networx", "billing", "networx business volume", "telecommunications"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2021 4th Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
+			"modified": "2021-11-17T14:18:48.350Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-11-17-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TotRevFY21_4thQtr.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/e16864d9-b319-43d1-8412-470325497665/resource/51d43425-3f42-4b1f-9717-31dfd71a9005/download/totrevfy21_4thqtr.xlsx"
+				}
+			],
+			"keyword": ["Networx", "Networx Telecommunications", "billing", "networx business volume"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "New Construction and Repair and Alteration (R&A) Projects",
 			"description": "This map shows new construction and major R&A projects in federal buildings under GSA’s custody and control that are above the current prospectus threshold of $2.85 million. New construction and major R&A projects for two different fiscal years are displayed on the map. Projects for FY2014 were funded as part of the Consolidated Appropriations Act of 2014, and GSA will begin to execute these projects this year. Projects for FY2015 have been included in the President’s Budget request, but require approval and funding from Congress before the projects can begin.",
 			"modified": "2014-04-28",
@@ -7232,87 +8111,63 @@
 			"theme": ["Other"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Per Diem Reimbursement Rates & API",
-			"description": "The dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 322 locations across the continental United States for Fiscal Year's 2020, 2019, 2018, 2017, and 2016, as well as the standard per diem rates for any locations not specifically listed.",
-			"modified": "2020-08-20",
+			"title": "Operational Workbench",
+			"description": "This workbook is a series of tools for use by end-users to explore various breakouts and trends in obligation data.",
+			"modified": "2021-07-19T15:17:10.739Z",
 			"accessLevel": "public",
-			"identifier": "GSA-31641",
-			"dataQuality": true,
-			"issued": "2012-08-07",
-			"landingPage": "http://www.gsa.gov/perdiem",
+			"identifier": "GSA-2021-07-16-05",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"spatial": "National",
+			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
-				"name": "General Services Administration"
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
 			},
-			"accrualPeriodicity": "R/P1Y",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://drive.google.com/drive/folders/1jz1Gqv_8xoSg5MfIaZFm6jKJ_OyV0D2r",
+					"title": "Operational Workbench",
+					"description": "This workbook is a series of tools for use by end-users to explore various breakouts and trends in obligation data."
+				}
+			],
+			"keyword": ["FPDS", "Spend Under Management", "obligation"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Per Diem Reimbursement Rates & API - Parent",
+			"description": "The datasets in this collection contain maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-16T17:16:46.075Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-16-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "GSA Travel Policy",
 				"hasEmail": "mailto:travelpolicy@gsa.gov"
 			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
-					"format": "html",
-					"title": "Per Diem Rates",
-					"description": "Per Diem Rates"
-				}, {
-					"@type": "dcat:Distribution",
-					"mediaType": "text/csv",
-					"format": "csv",
-					"title": "FY21-FY16 Per Diem Rates",
-					"description": "FY21-FY16 Per Diem Reimbursement Rates",
-					"downloadURL": "https://inventory.data.gov/dataset/ad729937-b245-4eec-a88d-b72eb36d8106/resource/e0eb3a12-a13d-4b83-af5c-8dcb73042c3d/download/perdiemreimbursementratesfy20fy16.csv"
-				}, {
-					"@type": "dcat:Distribution",
-					"mediaType": "application/json",
-					"format": "json",
-					"title": "Per Diem API (JSON)",
-					"downloadURL": "https://open.gsa.gov/api/perdiem/"
-				}
-			],
-			"keyword": ["federal per diem", "lodging", "m ie", "maximum per diem rates", "meals and incidental expenses", "per diem"],
-			"bureauCode": ["023:30"],
-			"programCode": ["023:015"],
-			"language": ["us-EN"]
-		}, {
-			"@type": "dcat:Dataset",
-			"title": "PSC Matrix for Active GSA Schedules and GSA GWACs",
-			"description": "The Product Service Codes (PSC) and North American Industrial Classification Systems (NAICS) are the two methods the Federal government classifies contracts.  They are used as a mechanism to identify scope of the products and services and business segment covered under the award.  This data can be used as a mechanism to understand the scope of GSA programs.  This can be used as means to identify best fit.  While a GSA contract can offer great opportunities for many businesses, the process of applying for that contract will take a significant amount of time and resources. Understanding best GSA contract for your products and services is a preliminary step to take prior to responding to a GSA solicitation.",
-			"modified": "2016-01-07",
-			"accessLevel": "public",
-			"identifier": "GSA-4723",
-			"dataQuality": true,
-			"describedBy": "https://www.asap.gsa.gov/datagov/naics/PSC_Schedule_GWAC_Matrix_Dictionary.html",
-			"issued": "2011-03-30",
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"spatial": "international",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "General Services Administration"
-			},
-			"accrualPeriodicity": "R/P1Y",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Daniel Twomey",
-				"hasEmail": "mailto:daniel.twomey@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"mediaType": "application/vnd.ms-excel",
-					"format": "excel",
-					"title": "PSC Matrix for Active GSA Schedules and GSA GWACs",
-					"downloadURL": "https://www.asap.gsa.gov/datagov/naics/PSC_Matrix_for_Active_GSA_Schedules_and_GSA_GWACs.xls"
-				}
-			],
-			"keyword": ["BPA", "Blanket Purchase Agreement", "Business", "Classification", "Contracts", "Federal Supply Schedule", "GWAC", "Governmentwide Acquisition Contract", "MAS", "Multiple Award Schedule", "PSC", "Product Service Code", "Schedules"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:000"],
-			"language": ["en-us"],
-			"theme": ["Acquisition"]
+			"keyword": ["federal per diem", "lodging", "meals", "meals and incidental expenses", "per diem"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Pulse HTTPS Survey",
@@ -10081,9 +10936,10 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
+					"format": "csv",
 					"title": "data_gov_bldg_rexus.csv",
-					"description": "May - Rexus Building file",
-					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/cbce4462-d19a-4de4-a8f5-15910a4cb8b0/download/data_gov_bldg_rexus.csv"
+					"description": "December Rexus Buildings",
+					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/3bb0decb-64ee-4d92-86ae-4b1457dfb5be/download/data_gov_bldg_rexus.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -10115,9 +10971,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
 					"format": "csv",
-					"title": "data_gov_lse_rexus",
-					"description": "May - Rexus Lease file",
-					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/db2e5040-a1fc-4581-975c-e38ccf70b2e9/download/data_gov_lse_rexus.csv"
+					"title": "data_gov_lse_rexus.csv",
+					"description": "December Rexus Leases",
+					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/1aed05ec-e154-45e6-a394-d29fb7c04272/download/data_gov_lse_rexus.csv"
 				}
 			],
 			"keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -10295,7 +11151,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Subcontracting Directory for Small Businesses",
 			"description": "The GSA Subcontracting Directory list large Prime Contractors who, by law, are required to establish plans and goals for subcontracting with Small Business Firms.",
-			"modified": "2020-03-02",
+			"modified": "2021-06-03T15:35:59.454Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-10-26-01",
 			"dataQuality": true,
@@ -10304,6 +11160,7 @@
 			"issued": "2012-12-06",
 			"landingPage": "http://gsa.gov/subdirectory",
 			"license": "http://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
 				"name": "General Services Administration"
@@ -10323,7 +11180,7 @@
 					"downloadURL": "https://inventory.data.gov/dataset/50bfccab-460c-4f18-9f17-28c4104e6d50/resource/d074c4ed-07f3-4fdd-8a7d-f56d6c8c5e02/download/subk-directory-as-of-dec-2019.xlsx"
 				}
 			],
-			"keyword": ["Prime Contractors", "Subcontracting", "Subcontracting Directory"],
+			"keyword": ["NAICS", "Prime Contractors", "Subcontracting", "Subcontracting Directory"],
 			"bureauCode": ["001:40"],
 			"programCode": ["015:010"],
 			"language": ["us-EN"],
@@ -10492,6 +11349,32 @@
 			"theme": ["Acquisition"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Tenant Satisfaction Survey (TSS) Reports",
+			"description": "This is a collection of TSS reports both at the individual and summary level.  The reports are for the following Fiscal Years; 2017, 2018, and 2019.  There is a data dictionary for the Individual Results and a data dictionary for the Summarized Results.",
+			"modified": "2021-05-26T12:11:56.111Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this collection of reports stated the information is 'Restricted'.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"keyword": ["Cleanliness", "Happiness", "Lighting", "Survey", "TSS", "air quality", "building", "condition", "satisfaction", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "Time to Hire",
 			"description": "This dataset represents time taken to hire a GSA employee from the internal request to hire through the entry on duty of the of the selected individual",
 			"modified": "2016-01-07",
@@ -10525,6 +11408,72 @@
 			"programCode": ["023:009"],
 			"language": ["en-us"],
 			"theme": ["People"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "TSS Individual Results with Comments Data Dictionary",
+			"description": "A Data Dictionary for the TSS Individual Reports with Comments reports.",
+			"modified": "2021-05-25T16:59:40.968Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-08",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC has stated this is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TSS Individual Results with Comments Data Dictionary.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/a6b94e32-983d-4370-8935-ab1de8d3ca23/resource/173d7ab1-db2e-4bf4-b746-1183989e01ba/download/tss-individual-results-with-comments-data-dictionary.xlsx"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "TSS", "air quality", "bathrooms", "building", "building security", "common areas", "condition", "desk", "elevators", "satisfaction", "survey results", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "TSS Summarized Results Data Dictionary",
+			"description": "A Data Dictionary for the TSS Summarized Reports at the Building and Individual level reports.",
+			"modified": "2021-05-25T16:59:13.064Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-09",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC has stated this dataset is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TSS Summarized Results Data Dictionary.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/d8fd8e8f-8eab-4d17-a527-940f54fbaf31/resource/ebe8bfa9-6381-4f43-a0db-e93e7d5d6bd4/download/tss-summarized-results-data-dictionary.xlsx"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "Lighting", "Survey", "TSS", "air quality", "building", "condition", "satisfaction", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "USA.gov Blog RSS feed",
