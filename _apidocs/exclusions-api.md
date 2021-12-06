@@ -482,14 +482,14 @@ v2 Response:<br>
 Extract File will be available for download with url: https://api.sam.gov/entity-information/v2/download-exclusions?api_key=REPLACE_WITH_API_KEY&token=< TOKEN > in some time. If you have requested for an email notification, you will receive it once the file is ready for download.<br><br>
 Downloading the CSV file using the Token:
 https://api.sam.gov/entity-information/v2/download-exclusions?api_key=< PUBLIC API KEY >&token=< TOKEN ><br><br>
-Click to view CSV Response for one record <a href="v2/V2-CSV.csv" taget="_blank">Sample CSV Response.</a>
+Click to view CSV Response for one record <a href="v2/v2-CSV.csv" taget="_blank">Sample CSV Response.</a>
 </p>
 <p>
 v3 Response:<br>
 Extract File will be available for download with url: https://api.sam.gov/entity-information/v3/download-exclusions?api_key=REPLACE_WITH_API_KEY&token=< TOKEN > in some time. If you have requested for an email notification, you will receive it once the file is ready for download. Requests for Larger Set of Data may take longer time to process.<br><br>
 Downloading the CSV file using the Token:
 https://api.sam.gov/entity-information/v3/download-exclusions?api_key=< PUBLIC API KEY >&token=< TOKEN ><br><br>
-Click to view CSV Response for one record <a href="v3/V3-CSV.csv" taget="_blank">Sample CSV Response.</a>
+Click to view CSV Response for one record <a href="v3/v3-CSV.csv" taget="_blank">Sample CSV Response.</a>
 </p>
 </details>
 
