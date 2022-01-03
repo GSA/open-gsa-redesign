@@ -22,7 +22,7 @@ tags:
 - name: file-download-controller
   description: File Download Controller
 paths:
-  /sam/v1/exclusion-file:
+  /entity-information/v1/download-exclusions:
     get:
       tags:
       - file-download-controller
@@ -53,7 +53,7 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: token
-  /sam/v1/exclusions:
+  /entity-information/v1/exclusions:
     get:
       tags:
       - exclusions-api-controller
@@ -315,7 +315,7 @@ paths:
           description: The resource you were trying to reach is not found
           content: {}
       deprecated: false
-  /sam/v2/exclusions:
+  /entity-information/v2/exclusions:
     get:
       tags:
       - exclusions-api-controller-v-2
@@ -577,7 +577,7 @@ paths:
           description: The resource you were trying to reach is not found
           content: {}
       deprecated: false
-  /sam/v3/exclusion-file:
+  /entity-information/v3/download-exclusions:
     get:
       tags:
       - exclusions-api-controller-v-3
@@ -608,7 +608,7 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: token
-  /sam/v3/exclusions:
+  /entity-information/v3/exclusions:
     get:
       tags:
       - exclusions-api-controller-v-3
