@@ -37,7 +37,7 @@
     "eslint-config-google": "^0.12.0",
     "eslint-plugin-import": "^2.22.1",
     "googleapis": "^61.0.0",
-    "node-forge": "^0.10.0",
+    "node-forge": "^1.0.0",
     "pa11y": "^5.3.0",
     "postcss": "^5.2.15",
     "postcss-cli": "^8.0.0",
