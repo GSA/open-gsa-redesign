@@ -674,7 +674,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>Note: This is a status code which indicates the entity is either out of business or has had a period of inactivity uncharacteristic to the industry. Values are N and Y (Y indicates the UEI is expired, or is Not Active). Non-SAM registrants will always display an 'N' for this field.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -682,8 +683,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br>Applicable to both SAM and non-SAM registrants.
-<br><br>Note: This is a status code which indicates the entity is either out of business or has had a period of inactivity uncharacteristic to the industry. Values are N and Y (Y indicates the UEI is expired, or is Not Active). Non-SAM registrants will always display an 'N' for this field.</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -6134,7 +6134,8 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>Note: This is a status code which indicates the entity is either out of business or has had a period of inactivity uncharacteristic to the industry. Values are N and Y (Y indicates the UEI is expired, or is Not Active). Non-SAM registrants will always display an 'N' for this field.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -6142,8 +6143,7 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br>Applicable to both SAM and non-SAM registrants.
-<br><br>Note: This is a status code which indicates the entity is either out of business or has had a period of inactivity uncharacteristic to the industry. Values are N and Y (Y indicates the UEI is expired, or is Not Active). Non-SAM registrants will always display an 'N' for this field.</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -13535,7 +13535,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to both SAM and non-SAM registrants.
+<br><br>Note: This is a status code which indicates the entity is either out of business or has had a period of inactivity uncharacteristic to the industry. Values are N and Y (Y indicates the UEI is expired, or is Not Active). Non-SAM registrants will always display an 'N' for this field.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -13543,8 +13544,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br>Applicable to both SAM and non-SAM registrants.
-<br><br>Note: This is a status code which indicates the entity is either out of business or has had a period of inactivity uncharacteristic to the industry. Values are N and Y (Y indicates the UEI is expired, or is Not Active). Non-SAM registrants will always display an 'N' for this field.</td>
+<br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -24434,7 +24434,7 @@ Disclaimer:
 | 09/21/2021 | v2.9 | * Added the "Addtional Help References" section. |
 | 10/06/2021 | v3.0 | * Updated the "Contact Us" section. | 
 | 10/21/2021 | v3.1 | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added error messages #23 and #24 to the 400 level http response codes.<br><br> * Added the Version 3 endpoint.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior. |
-| 01/14/2022 | v3.2 | * Added a note to the ueiCreationDate fields under the entityRegistration Section. |
+| 01/14/2022 | v3.2 | * Added a note to the ueiExpirationDate fields under the entityRegistration Section. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
