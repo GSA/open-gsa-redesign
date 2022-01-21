@@ -2117,7 +2117,7 @@ paths:
           type: string
       - name: exclusionStatusFlag
         in: query
-        description: D or null
+        description: Y or N
         schema:
           type: string
       - name: legalBusinessName
@@ -2594,7 +2594,7 @@ paths:
           type: string
       - name: exclusionStatusFlag
         in: query
-        description: D or null
+        description: Y or N
         schema:
           type: string
       - name: legalBusinessName
