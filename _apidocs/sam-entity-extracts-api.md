@@ -139,7 +139,6 @@ Type of Connections and Rate Limits
 </tr>
 </table>
 
-
 <p><small><a href="#">Back to top</a></small></p>
 
 ## API Description
