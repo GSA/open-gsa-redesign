@@ -139,6 +139,7 @@ Type of Connections and Rate Limits
 </tr>
 </table>
 
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ## API Description
@@ -362,7 +363,7 @@ You can view the full details of this API's in the OpenAPI Specification file av
 * Click to view <a href="v1/sample-files/SAM_PUBLIC_MONTHLY_V2_20200414.ZIP">Public Monthly V2 Extract File</a>
 * Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_V2_20200414.ZIP">FOUO Monthly V2 Extract File</a>
 * Click to view <a href="v1/sample-files/SAM_SENSITIVE_MONTHLY_V3_20200414.ZIP">Sensitive Monthly V3 Extract File</a>
-* Click to view <a href="v1/sample-files/SAM_Exclusions_Public_Extract_V2_22018.ZIP">Exclusions Public V2 Extract File</a><br>
+* Click to view <a href="v1/sample-files/SAM_Exclusions_Public_Extract_V2_22018.zip">Exclusions Public V2 Extract File</a><br>
 
 <p><small><a href="#">Back to top</a></small></p>
 
