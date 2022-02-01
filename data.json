@@ -5231,9 +5231,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "EDI JSON 01 13 22",
-					"description": "EDI JSON file for 01/13/22",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-file-01-13-22.json"
+					"title": "EDI JSON 02 01 22",
+					"description": "EDI JSON file for 02/01/22",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-file-02-01-22.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -10938,7 +10938,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_bldg_rexus.csv",
-					"description": "January Rexus Buildings",
+					"description": "February Rexus Buildings",
 					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/3bb0decb-64ee-4d92-86ae-4b1457dfb5be/download/data_gov_bldg_rexus.csv"
 				}
 			],
@@ -10972,7 +10972,7 @@
 					"mediaType": "text/csv",
 					"format": "csv",
 					"title": "data_gov_lse_rexus.csv",
-					"description": "January Rexus Leases",
+					"description": "February Rexus Leases",
 					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/1aed05ec-e154-45e6-a394-d29fb7c04272/download/data_gov_lse_rexus.csv"
 				}
 			],
