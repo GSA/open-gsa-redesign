@@ -448,5 +448,6 @@ Date | Version | Description
 09/21/2021 | v2.5 | * Added the "Please refer to the SAM Master Extract Mapping document" subsection under the "Explanation of the API using Examples" section.
 10/06/2021 | v2.6 | * Updated the "Contact Us" section. 
 10/21/2021 | v2.7 | * Added Expected Results to Data Package Sample API Calls.<br><br> * Updated Extract Mapping Files.
+02/01/2022 | v2.8 | * Updated the Exclusions Extract Layout file.<br><br> * Updated the Exclusions Public V2 Extract file.
 
 <p><small><a href="#">Back to top</a></small></p>
