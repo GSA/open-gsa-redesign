@@ -29,10 +29,10 @@ The response will be provided in the JSON format in a paginated manner.
 Exclusions API can be accessed from Production or Alpha via the following version 1 and version 2 endpoints:
 * Production Version 1: https://api.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Production Version 2: https://api.sam.gov/entity-information/v2/exclusions?api_key=< value >
-* Production Version 3: COMING SOON
+* Production Version 3: COMING SOON<br>https://api.sam.gov/entity-information/v3/exclusions?api_key=< value >
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< value >
-* Alpha Version 3: COMING SOON<br><br>
+* Alpha Version 3: COMING SOON<br>https://api-alpha.sam.gov/entity-information/v3/exclusions?api_key=< value ><br><br>
 
 
 Generating a personal API Key:
