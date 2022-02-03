@@ -9899,17 +9899,6 @@
     email: pif-team@pif.gov
   url: https://github.com/presidential-innovation-fellows/code-gov-web
   organization: PIF
-- title: code-gov-tools
-  body: 'tools to help create code.gov '
-  license: https://github.com/presidential-innovation-fellows/code-gov-tools/blob/master/LICENSE.md
-  openSourceProject: 1
-  governmentWideReuseProject: 1
-  tags:
-  - presidential-innovation-fellows
-  contact:
-    email: pif-team@pif.gov
-  url: https://github.com/presidential-innovation-fellows/code-gov-tools
-  organization: PIF
 - title: code-gov-policy
   body: Federal Source Code Policy
   license:
@@ -9975,17 +9964,6 @@
   contact:
     email: pif-team@pif.gov
   url: https://github.com/presidential-innovation-fellows/child-welfare-product-hub
-  organization: PIF
-- title: code-gov-api
-  body: API powering the code.gov source code harvester
-  license: https://github.com/presidential-innovation-fellows/code-gov-api/blob/master/LICENSE.md
-  openSourceProject: 1
-  governmentWideReuseProject: 1
-  tags:
-  - presidential-innovation-fellows
-  contact:
-    email: pif-team@pif.gov
-  url: https://github.com/presidential-innovation-fellows/code-gov-api
   organization: PIF
 - title: software-inventory-schema-tools
   body: software-inventory-schema-tools
@@ -12909,28 +12887,6 @@
   contact:
     email: github-admins@gsa.gov
   url: https://github.com/GSA/ckanext-cesiumpreview
-- title: CodeInventory Metadata Generator
-  body: Generates project metadata files that can be used to build an organization-wide
-    code inventory.
-  license:
-  openSourceProject: 1
-  governmentWideReuseProject: 1
-  tags:
-  - open-source
-  - code.gov
-  contact:
-    email: cto@gsa.gov
-  url: https://github.com/GSA/codeinventory-metadata-generator
-- title: CodeInventory
-  body: A Ruby gem that harvests project metadata from an agency's repositories.
-  license: https://github.com/GSA/codeinventory/blob/master/LICENSE.md
-  openSourceProject: 1
-  governmentWideReuseProject: 1
-  tags:
-  - code.gov
-  contact:
-    email: jeffrey.fredrickson@gsa.gov
-  url: https://github.com/GSA/codeinventory
 - title: FEDSIM_root
   body: FEDSIM Site
   license:
@@ -12983,17 +12939,6 @@
   contact:
     email: github-admins@gsa.gov
   url: https://github.com/GSA/SF-Event-Monitoring-Log-Retrieval
-- title: CodeInventory GitHub
-  body: A plugin for the CodeInventory gem that harvests project metadata from
-    YAML or JSON files in GitHub repositories.
-  license: https://github.com/GSA/codeinventory-github/blob/master/LICENSE.md
-  openSourceProject: 1
-  governmentWideReuseProject: 1
-  tags:
-  - code.gov
-  contact:
-    email: jeffrey.fredrickson@gsa.gov
-  url: https://github.com/GSA/codeinventory-github
 - title: sf-ProjectDashboard
   body: Salesforce app to collect and share project updates via dashboard.
   license:
@@ -13099,7 +13044,7 @@
     - Administration
     - API
 - title: Contract-Awarded Labor Category (CALC) API
-  body: CALC's API is used by CALC's front-end Data Explorer application to display labor rate data for awarded prices on GSA services schedules, and can also be accessed by any third-party application over the public internet. CALC (Contract Awarded Labor Category) tool searches awarded hourly rate prices on the eight GSA professional services schedules and returns comparable labor categories and prices based on search criteria and filters used.  
+  body: CALC's API is used by CALC's front-end Data Explorer application to display labor rate data for awarded prices on GSA services schedules, and can also be accessed by any third-party application over the public internet. CALC (Contract Awarded Labor Category) tool searches awarded hourly rate prices on the eight GSA professional services schedules and returns comparable labor categories and prices based on search criteria and filters used.
   url: https://calc.gsa.gov/api/docs/#
   category: APIs
 - title: Data.gov CKAN API
@@ -13135,11 +13080,11 @@
     - URL shortener
     - Sharing
 - title: GSA.gov Content API
-  body: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last. 
+  body: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last.
   url: https://www.gsa.gov/about-us/gsa-content-api
   category: APIs
 - title: Per Diem API
-  body: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers. 
+  body: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers.
   url: https://www.gsa.gov/technology/government-it-initiatives/digital-strategy/per-diem-apis/per-diem-api
   category: APIs
   tags:
@@ -13149,14 +13094,14 @@
     - M&IE
 - title: Product Service Codes (PSC) API
   body: This API provides Product Service Codes data (PSC Code, PSC Name, PSC Full Name, Status, Parent PSC Code, Start Date, End date and updated date etc.) based on the request parameters. From Beta.sam.gov.
-  url: https://s3.amazonaws.com/falextracts/Documentation/PSC/PSC%20Public%20API%20Documentation.pdf 
+  url: https://s3.amazonaws.com/falextracts/Documentation/PSC/PSC%20Public%20API%20Documentation.pdf
   category: APIs
 - title: Search.gov Search Results API
-  body: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application. 
+  body: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application.
   url: https://open.gsa.gov/api/searchgov-results/
   category: APIs
 - title: Search.gov Type-ahead Suggestions API
-  body: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms. 
+  body: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms.
   url: https://open.gsa.gov/api/searchgov-suggestions/
   category: APIs
 - title: Sustainable Facilities Tool API
@@ -13190,18 +13135,11 @@
     - Equipment
     - Auction
     - Sales
-- title: Code.gov API
-  body: Provides information from Code.gov, which leverages the power of code sharing and collaboration to help the US Government cut down on duplicative software development and save millions of taxpayer dollars for the American people. 
-  url: https://open.gsa.gov/api/codedotgov
-  category: APIs
-  tags:
-    - Code
-    - Open Source   
 - title: Fleet Vehicles API
   body: GSA Fleet Drive-thru offers two reports through an API for GSA Fleet Leasing customers.
   url: https://www.gsa.gov/buying-selling/products-services/transportation-logistics-services/vehicle-leasing/gsa-fleet-drivethru
   category: APIs
 - title: Regulations.gov API
-  body: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets and a POST API that allows users to submit comments.  
+  body: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets and a POST API that allows users to submit comments.
   url: https://open.gsa.gov/api/regulationsgov/
   category: APIs

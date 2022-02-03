@@ -38,7 +38,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
     // This can be any API endpoint on your server, and you can use the
     // special {{api_key}} variable to automatically substitute in the API
     // key the user just signed up for.
-    exampleApiUrl: 'https://api.gsa.gov/systems/datagov/3/action/package_search?api_key={{api_key}}',
+    // exampleApiUrl: 'https://api.gsa.gov/systems/datagov/3/action/package_search?api_key={{api_key}}',
 
     // OPTIONAL: Provide extra content to display on the signup confirmation
     // page. This will be displayed below the user's API key and the example
@@ -52,7 +52,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
     // OPTIONAL: Set to true to verify the user's e-mail address by only
     // sending them their API key via e-mail, and not displaying it on the
     // signup confirmation web page. Defaults to false.
-    // verifyEmail: true,
+    verifyEmail: true,
 
     // OPTIONAL: Set to false to disable sending a welcome e-mail to the
     // user after signing up. Defaults to true.
