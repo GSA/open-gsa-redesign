@@ -203,6 +203,7 @@ Pacific/Samoa | (UTC-11:00) PAGO PAGO, AMERICAN SAMOA
 Pacific/Honolulu | (UTC-10:00) HONOLULU, HAWAII, USA
 Pacific/Wellington | (UTC+13:00) WELLINGTON, NEW ZEALAND
 America/Anchorage | (UTC-08:00) ANCHORAGE, ALASKA, USA
+America/Anchorage	| (UTC-09:00) ANCHORAGE, ALASKA, USA 
 America/Vancouver | (UTC-07:00) VANCOUVER, BRITISH COLUMBIA, CANADA
 America/Mazatlan | (UTC-06:00) LA PAZ, MEXICO
 America/Managua | (UTC-06:00) MANAGUA, NICARAGUA
