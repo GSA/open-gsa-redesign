@@ -175,17 +175,17 @@
 			"theme": ["Other"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Auction Sale Data",
-			"description": "This dataset contains sale data information for Agency reported items sold via GSA Auctions&reg; Sales.  The data is for closed sales during FY2009.  GSA Auctions&reg; offers the public the opportunity to bid electronically on a wide array of Federal assets. The auctions are completely web-enabled, allowing all registered participants to bid on a single item or multiple items (lots) within specified timeframes.  GSA Auctions&reg; sale items include communications, computer, electric, electronic, agricultural, office, photographic, marine, laboratory, medical, dental and veterinary supplies and equipment; trailers, tractors, bicycles and salvage/scrap vehicles; furniture, household and personal items, industrial machinery, jewelry and collectibles.  GSA Auctions&reg; is accessible at http://www.gsaauctions.gov. Unregistered users may browse the site. Registration is required for bidders.",
-			"modified": "2010-11-23",
+			"title": "GSA Auctions",
+			"description": "The General Services Administration (GSA) has a history of pioneering electronic solutions for streamlining and enhancing the management of excess and surplus Federal assets. GSA continued the transformation of the Federal disposal process throughout the late 1990s with the introduction and subsequent refinement of the Federal Disposal System, a centralized electronic clearinghouse for reporting and transferring excess/surplus personal property within the Federal community and among eligible donees.\n\nThe GSA Auctions website (www.gsaauctions.gov) has been developed to complete GSA's transformation to an all-electronic asset management system. The site offers the general public the opportunity to bid electronically on a wide array of Federal assets. The auctions are completely web-enabled, allowing all registered participants to bid on a single item or multiple items (lots) within specified timeframes.\n\nGSA Auctions offers Federal personal property assets ranging from commonplace items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels, and vehicles. GSA Auctions online capabilities allow GSA to offer assets located across the country to any interested buyer, regardless of location.\n\nParticipants may choose to browse items that are offered on this site or may choose to search for items and place bids. In order to place a bid(s), participants must register first. To register, please go to the GSA Auctions homepage and click on register.",
+			"modified": "2022-02-02T17:44:18.543Z",
 			"accessLevel": "public",
 			"identifier": "GSA-4145",
 			"dataQuality": true,
 			"describedBy": "https://www.asap.gsa.gov/datagov/auctions/auctions-data-dictionary.html",
+			"describedByType": "text/html",
 			"issued": "2010-11-23",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"spatial": "National",
+			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
 				"name": "General Services Administration"
@@ -198,17 +198,16 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "application/vnd.ms-excel",
-					"format": "xls",
-					"title": "Auction Sale Data",
-					"downloadURL": "https://www.asap.gsa.gov/datagov/auctions/auctions-data-fy2009.xls"
+					"accessURL": "https://gsaauctions.gov/gsaauctions/gsaauctions/",
+					"format": "html",
+					"title": "GSA Auctions",
+					"description": "GSA Auctions offers Federal personal property assets ranging from commonplace items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels, and vehicles. GSA Auctions online capabilities allow GSA to offer assets located across the country to any interested buyer, regardless of location."
 				}
 			],
-			"keyword": ["ADP", "ADP Equipment", "Auctions", "Automobile", "Computer Equipment", "Furniture", "GSA Auctions", "GSA Auctions Sale Data", "GSA Sales Data", "Jewelry", "Motorcycles", "Property", "Property Data", "Property Sales Data", "Sales", "Trucks", "Vechicles"],
-			"bureauCode": ["023:30"],
-			"programCode": ["023:009"],
-			"language": ["en-us"],
-			"theme": ["Acquisition"]
+			"keyword": ["Agricultural Equipment and Supplies", "Aircraft and Aircraft Parts", "Artifacts Jewelry and Exotic Collectibles", "Boats and Marine Equipment", "Communication Equipment", "Construction Equipment", "Electrical and Electronic Equipment and Components", "Fire Trucks and Fire Fighting Equipment", "Hand Tools and Shop Equipment", "Household and Personal", "Industrial Machinery", "Lab Equipment", "Medical Dental and Veterinary Equipment and Supplies", "Miscellaneous", "Motorcycles and Bicycles", "NASA Shuttle and Hubble", "Office Equipment and Supplies", "Photographic Equipment", "Trailers Tractors and Manufactured Housing", "Vehichles", "furniture", "real estate"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-us"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Auctions API",
@@ -882,6 +881,7 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"accessURL": "https://d2d.gsa.gov/dataset/covid-support-services",
+					"format": "html",
 					"title": "COVID Support Services"
 				}
 			],
@@ -5231,9 +5231,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "EDI JSON 02 01 22",
-					"description": "EDI JSON file for 02/01/22",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-file-02-01-22.json"
+					"title": "EDI JSON 02/03/22",
+					"description": "EDI JSON file for 02/03/22",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-file-02-03-22.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -8246,20 +8246,21 @@
 			"theme": ["Pulse Analytics Survey"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Analytics.USA.gov Datasets",
+			"title": "Analytics.USA.gov",
 			"description": "High level website analytics from across the government domain.",
-			"modified": "2016-12-01",
+			"modified": "2022-02-02T18:47:08.231Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-03-03-03",
 			"dataQuality": true,
 			"issued": "2015-07-08",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
 				"name": "Technology Transformation Service",
 				"subOrganizationOf": {
 					"@type": "org:Organization",
-					"name": "General Services Administration"
+					"name": "Technology Transformation Service"
 				}
 			},
 			"accrualPeriodicity": "R/PT1S",
@@ -8268,11 +8269,18 @@
 				"fn": "Timothy Lowden",
 				"hasEmail": "mailto:timothy.lowden@gsa.gov"
 			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://analytics.usa.gov/",
+					"format": "html",
+					"title": "analytics.usa.gov",
+					"description": "Based on rough network segmentation data, we estimate that less than 5% of all traffic across all agencies comes from US federal government networks."
+				}
+			],
 			"keyword": ["18F", "analytics", "visitors"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:019"],
-			"language": ["en-US"],
-			"theme": ["Datasets Analytics"]
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Current Active Users of Government Websites",
@@ -11280,13 +11288,10 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "application/zip",
-					"format": "csv",
+					"accessURL": "https://sam.gov/content/home",
+					"format": "html",
 					"title": "System for Award Management (SAM) Public Extract - Exclusions",
-					"description": "System implementing the functionalities of the legacy IAE applications: CCR, FedReg, ORCA, and EPLS.",
-					"describedBy": "https://www.sam.gov/sam/transcript/SAM_Exclusions_Extract_User_Guide.pdf",
-					"describedByType": "application/pdf",
-					"downloadURL": "https://www.sam.gov/SAM/extractfiledownload?role=WW&version=EPLSPUB&filename=SAM_Exclusions_Public_Extract.ZIP"
+					"description": "The System for Award Management (SAM.gov) is an official website of the U.S. Government. There is no cost to use SAM.gov. You can use this site to:\r\n\r\nRegister to do business with the U.S. Government, Update, renew, or check the status of your entity registration, Search for entity registration and exclusion records, Search for assistance listings (formerly CFDA.gov), wage determinations (formerly WDOL.gov), contract opportunities (formerly FBO.gov), and contract data reports (formerly part of FPDS.gov).\r\nView and submit BioPreferred and Service Contract Reports, Access publicly available award data via data extracts and system accounts."
 				}, {
 					"@type": "dcat:Distribution",
 					"accessURL": "https://inventory.data.gov/dataset/7416a2e4-9aa7-4bcd-801c-20f25a545916/resource/78bb6c57-42e8-4055-931d-928ebcbde39f/download/samexclusionspublicextract-gsa-1626.csv",
