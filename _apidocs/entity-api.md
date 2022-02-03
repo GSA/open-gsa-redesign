@@ -666,7 +666,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiStatus</td>
 <td>string</td>
 <td>Unique Entity Identifier Status
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to both SAM and non-SAM registrants.
+<br>Returns Active or Not Active</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -674,7 +675,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to both SAM and non-SAM registrants.
+<br>Returns the date the UEI became Not Active, or null
+</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -682,7 +685,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to both SAM and non-SAM registrants.
+<br>Returns the date the UEI became Active</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -6125,7 +6129,8 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <td>ueiStatus</td>
 <td>string</td>
 <td>Unique Entity Identifier Status
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to both SAM and non-SAM registrants.
+<br>Returns Active or Not Active</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -6133,7 +6138,8 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to both SAM and non-SAM registrants.
+<br>Returns the date the UEI became Not Active, or null</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -6141,7 +6147,8 @@ NOTE: Only system account keys can be used to access FOUO data.<br><br></td>
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to both SAM and non-SAM registrants.
+<br>Returns the date the UEI became Active</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -13525,7 +13532,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiStatus</td>
 <td>string</td>
 <td>Unique Entity Identifier Status
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to both SAM and non-SAM registrants.
+<br>Returns Active or Not Active</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -13533,7 +13541,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to both SAM and non-SAM registrants.
+<br>Returns the date the UEI became Not Active, or null</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -13541,7 +13550,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to both SAM and non-SAM registrants.
+<br>Returns the date the UEI became Active</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -24432,6 +24442,7 @@ Disclaimer:
 | 10/06/2021 | v3.0 | * Updated the "Contact Us" section. | 
 | 10/21/2021 | v3.1 | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added error messages #23 and #24 to the 400 level http response codes.<br><br> * Added the Version 3 endpoint.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior. |
 | 02/01/2022 | v3.2 | * Update the OpenAPI Specification File to include the V3 endpoints.<br><br> * Updated the OpenAPI Specification File to reflect the correct behavior for the V3 exclusionsStatusFlag parameter. |
+| 02/03/2022 | v3.3 | * Added note about return types for ueiStatus, ueiExpirationDate, and ueiCreationDate response fields. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
