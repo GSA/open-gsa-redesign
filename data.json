@@ -3701,14 +3701,15 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"title": "Data Dictionary for Federal Hiring Dataset November 10 2021.xlsx",
+					"format": "xlsx",
+					"title": "Data Dictionary for Federal Hiring Dataset December 31 2021.xlsx",
 					"description": "This is the Data Dictionary for the Hiring Assessment and Selection Outcome Dataset.",
-					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/5f414e14-cac5-4c90-a0e4-ed17fdc751e3/download/data-dictionary-for-federal-hiring-dataset-november-10-2021.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/5f414e14-cac5-4c90-a0e4-ed17fdc751e3/download/data-dictionary-for-federal-hiring-dataset-december-31-2021.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
-					"mediaType": "text/csv",
-					"title": "Hiring-Selections-and-Outcomes-Public-Data-Set-as-of-Sep-30-2021.csv",
-					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/fdd62a7a-a656-4f63-ae84-1e06a45b6a59/download/hiring-selections-and-outcomes-public-data-set-as-of-sep-30-2021.csv"
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "Hiring Selections and Outcomes Public Data Set as of Dec 31 2021.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/f2b0508f-6853-4e66-b0d0-c1ddad4744d4/download/hiring-selections-and-outcomes-public-data-set-as-of-dec-31-2021.xlsx"
 				}
 			],
 			"keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -5231,9 +5232,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "EDI JSON 02/03/22",
-					"description": "EDI JSON file for 02/03/22",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-file-02-03-22.json"
+					"title": "EDI JSON 02/08/22",
+					"description": "EDI JSON file for 02/08/22",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-file-02-08-22.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
