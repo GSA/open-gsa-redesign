@@ -97,6 +97,9 @@
 - title: U.S. Digital Registry API
   description: Contains listing from the U.S. Digital Media Registry, which serves as a crowdsource resource for agencies, citizens, and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps, and mobile websites. The accounts in the registry are independently updated by federal managers across the government who maintain individual agency accounts.
   url: https://open.gsa.gov/api/digital-registry/
+- title: Test API Record
+  description: This API record is added for testing purpose. View API Documentation link will be redirected to a test page.
+  url: https://open.gsa.gov/api/test-api/
 #- title: System for Award Management API
 #  description: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
 #  url: https://gsa.github.io/sam_api/sam/
