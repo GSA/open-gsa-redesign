@@ -217,6 +217,9 @@ Note: Response for one record is provided as an example <br>
             "typeOfSetAside": "7",
             "responseDeadLine": null,
             "naicsCode": "236220",
+			"naicsCodes": [
+				"236220"
+			],
             "classificationCode": "Z",
             "active": "Yes",
             "award": null,
@@ -372,6 +375,9 @@ Note: Response for one record is provided as an example <br>
       "typeOfSetAside": "7",
       "responseDeadLine": null,
       "naicsCode": "236220",
+	  "naicsCodes": [
+		  "236220"
+	  ],
       "classificationCode": "Z",
       "active": "Yes",
       "award": null,
@@ -463,6 +469,9 @@ Note: Response for one record is provided as an example <br>
             "typeOfSetAside": null,
             "responseDeadLine": null,
             "naicsCode": "236220",
+			"naicsCodes":[
+				"236220"
+			],
             "classificationCode": "Z",
             "active": "Yes",
             "award": {
@@ -710,6 +719,9 @@ Note: Response for one record is provided as an example <br>
       "typeOfSetAside": null,
       "responseDeadLine": "2018-05-07T20:00:00-05:00",
       "naicsCode": "336350",
+	  "naicsCodes": [
+		  "336350"
+	  ],
       "classificationCode": "25",
       "active": "Yes",
       "award": null,
@@ -779,6 +791,7 @@ Note: Response for one record is provided as an example <br>
             "typeOfSetAside": null,
             "responseDeadLine": null,
             "naicsCode": null,
+			"naicsCodes": [],
             "classificationCode": null,
             "active": "Yes",
             "award": {
