@@ -217,9 +217,9 @@ Note: Response for one record is provided as an example <br>
             "typeOfSetAside": "7",
             "responseDeadLine": null,
             "naicsCode": "236220",
-			"naicsCodes": [
-				"236220"
-			],
+            "naicsCodes": [
+                "236220"
+            ],
             "classificationCode": "Z",
             "active": "Yes",
             "award": null,
@@ -355,76 +355,76 @@ Note: Response for one record is provided as an example <br>
 <p>
 <code><pre>
 {
-  "totalRecords": 11035,
-  "limit": 10,
-  "offset": 0,
-  "opportunitiesData": [
-    {
-      "noticeId": "ea55e45cded123fd8d6afd7c061138f0",
-      "title": "Judge Rice Courtroom Lighting Project",
-      "solicitationNumber": "EQ5P2SS2P1-18-0005",
-      "department": null,
-      "subTier": null,
-      "office": null,
-      "postedDate": "2018-05-09 23:45:22+00",
-      "type": "Presolicitation",
-      "baseType": "Presolicitation",
-      "archiveType": "manual",
-      "archiveDate": null,
-      "typeOfSetAsideDescription": null,
-      "typeOfSetAside": "7",
-      "responseDeadLine": null,
-      "naicsCode": "236220",
-	  "naicsCodes": [
-		  "236220"
-	  ],
-      "classificationCode": "Z",
-      "active": "Yes",
-      "award": null,
-      "pointOfContact": [
+    "totalRecords": 11035,
+    "limit": 10,
+    "offset": 0,
+    "opportunitiesData": [
         {
-          "fax": null,
-          "type": "primary",
-          "email": "jordan.waldschmidt@gsa.gov",
-          "phone": "312-385-3050",
-          "title": "Contract Specialist",
-          "fullName": "Jordan Waldschmidt"
-        },
-        {
-          "fax": null,
-          "type": "secondary",
-          "email": "johanna.nieves@gsa.gov",
-          "phone": "312.758.2467",
-          "title": "Contracting Officer",
-          "fullName": "Johanna Nieves"
+            "noticeId": "ea55e45cded123fd8d6afd7c061138f0",
+            "title": "Judge Rice Courtroom Lighting Project",
+            "solicitationNumber": "EQ5P2SS2P1-18-0005",
+            "department": null,
+            "subTier": null,
+            "office": null,
+            "postedDate": "2018-05-09 23:45:22+00",
+            "type": "Presolicitation",
+            "baseType": "Presolicitation",
+            "archiveType": "manual",
+            "archiveDate": null,
+            "typeOfSetAsideDescription": null,
+            "typeOfSetAside": "7",
+            "responseDeadLine": null,
+            "naicsCode": "236220",
+            "naicsCodes": [
+                "236220"
+            ],
+            "classificationCode": "Z",
+            "active": "Yes",
+            "award": null,
+            "pointOfContact": [
+                {
+                    "fax": null,
+                    "type": "primary",
+                    "email": "jordan.waldschmidt@gsa.gov",
+                    "phone": "312-385-3050",
+                    "title": "Contract Specialist",
+                    "fullName": "Jordan Waldschmidt"
+                },
+                {
+                    "fax": null,
+                    "type": "secondary",
+                    "email": "johanna.nieves@gsa.gov",
+                    "phone": "312.758.2467",
+                    "title": "Contracting Officer",
+                    "fullName": "Johanna Nieves"
+                }
+            ],
+            "description": " https://api-alpha.sam.gov/prodlike/opportunities/v1/noticedesc?noticeid=ea55e45cded123fd8d6afd7c061138f0",
+            "organizationType": null,
+            "officeAddress": null,
+            "placeOfPerformance": {
+                "streetAddress": "Dayton Federal Building and US Courthouse\r\n200 West Second Street",
+                "city": {
+                    "code": "21000",
+                    "name": "21000"
+                },
+                "state": {
+                    "code": "OH"
+                },
+                "zip": "45402",
+                "country": {
+                    "code": "USA"
+                }
+            },
+            "additionalInfoLink": null,
+            "uiLink": "https://alpha.sam.gov/opp/ea55e45cded123fd8d6afd7c061138f0",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": " https://api-alpha.sam.gov/prodlike/opportunities/v1/search?noticeid=ea55e45cded123fd8d6afd7c061138f0&limit="
+                }
+            ]
         }
-      ],
-      "description": " https://api-alpha.sam.gov/prodlike/opportunities/v1/noticedesc?noticeid=ea55e45cded123fd8d6afd7c061138f0",
-      "organizationType": null,
-      "officeAddress": null,
-      "placeOfPerformance": {
-        "streetAddress": "Dayton Federal Building and US Courthouse\r\n200 West Second Street",
-        "city": {
-          "code": "21000",
-          "name": "21000"
-        },
-        "state": {
-          "code": "OH"
-        },
-        "zip": "45402",
-        "country": {
-          "code": "USA"
-        }
-      },
-      "additionalInfoLink": null,
-      "uiLink": "https://alpha.sam.gov/opp/ea55e45cded123fd8d6afd7c061138f0",
-      "links": [
-        {
-          "rel": "self",
-          "href": " https://api-alpha.sam.gov/prodlike/opportunities/v1/search?noticeid=ea55e45cded123fd8d6afd7c061138f0&limit="
-        }
-      ]
-    }
 </pre></code>
 </p>
 </details>
@@ -469,9 +469,9 @@ Note: Response for one record is provided as an example <br>
             "typeOfSetAside": null,
             "responseDeadLine": null,
             "naicsCode": "236220",
-			"naicsCodes":[
-				"236220"
-			],
+            "naicsCodes": [
+                "236220"
+            ],
             "classificationCode": "Z",
             "active": "Yes",
             "award": {
@@ -588,6 +588,9 @@ Note: Response for one record is provided as an example <br>
             "typeOfSetAside": null,
             "responseDeadLine": null,
             "naicsCode": "236220",
+            "naicsCodes": [
+                "236220"
+            ],
             "classificationCode": "Z",
             "active": "Yes",
             "award": {
@@ -612,7 +615,6 @@ Note: Response for one record is provided as an example <br>
                     },
                     "ueiSAM": "025114695AST",
                     "duns": "006435549"
-
                 }
             },
             "pointOfContact": [
@@ -699,63 +701,63 @@ Note: Response for one record is provided as an example <br>
 <p>
 <code><pre>
 {
-  "totalRecords": 12,
-  "limit": 10,
-  "offset": 0,
-  "opportunitiesData": [
-    {
-      "noticeId": "9ffb613fb737018740bbbf250cd8292d",
-      "title": "DIFFERENTIAL, DRIVING",
-      "solicitationNumber": "SPRDL118R0216",
-      "department": null,
-      "subTier": null,
-      "office": null,
-      "postedDate": "2018-04-03 13:41:13+00",
-      "type": "Presolicitation",
-      "baseType": "Presolicitation",
-      "archiveType": "manual",
-      "archiveDate": null,
-      "typeOfSetAsideDescription": null,
-      "typeOfSetAside": null,
-      "responseDeadLine": "2018-05-07T20:00:00-05:00",
-      "naicsCode": "336350",
-	  "naicsCodes": [
-		  "336350"
-	  ],
-      "classificationCode": "25",
-      "active": "Yes",
-      "award": null,
-      "pointOfContact": [
+    "totalRecords": 12,
+    "limit": 10,
+    "offset": 0,
+    "opportunitiesData": [
         {
-          "fax": null,
-          "type": "primary",
-          "email": "vincent.strongarone@dla.mil",
-          "phone": null,
-          "title": null,
-          "fullName": "vincent strongarone"
-        },
-        {
-          "fax": null,
-          "type": "secondary",
-          "email": "DLALandWarrenFBO@dla.mil",
-          "phone": null,
-          "title": null,
-          "fullName": "DLA FBO Mailbox"
+            "noticeId": "9ffb613fb737018740bbbf250cd8292d",
+            "title": "DIFFERENTIAL, DRIVING",
+            "solicitationNumber": "SPRDL118R0216",
+            "department": null,
+            "subTier": null,
+            "office": null,
+            "postedDate": "2018-04-03 13:41:13+00",
+            "type": "Presolicitation",
+            "baseType": "Presolicitation",
+            "archiveType": "manual",
+            "archiveDate": null,
+            "typeOfSetAsideDescription": null,
+            "typeOfSetAside": null,
+            "responseDeadLine": "2018-05-07T20:00:00-05:00",
+            "naicsCode": "336350",
+            "naicsCodes": [
+                "336350"
+            ],
+            "classificationCode": "25",
+            "active": "Yes",
+            "award": null,
+            "pointOfContact": [
+                {
+                    "fax": null,
+                    "type": "primary",
+                    "email": "vincent.strongarone@dla.mil",
+                    "phone": null,
+                    "title": null,
+                    "fullName": "vincent strongarone"
+                },
+                {
+                    "fax": null,
+                    "type": "secondary",
+                    "email": "DLALandWarrenFBO@dla.mil",
+                    "phone": null,
+                    "title": null,
+                    "fullName": "DLA FBO Mailbox"
+                }
+            ],
+            "description": " https://api-alpha.sam.gov/prodlike/opportunities/v1/noticedesc?noticeid=9ffb613fb737018740bbbf250cd8292d",
+            "organizationType": null,
+            "officeAddress": null,
+            "placeOfPerformance": null,
+            "additionalInfoLink": null,
+            "uiLink": "https://alpha.sam.gov/opp/9ffb613fb737018740bbbf250cd8292d",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": " https://api-alpha.sam.gov/prodlike/opportunities/v1/search?noticeid=9ffb613fb737018740bbbf250cd8292d&limit="
+                }
+            ]
         }
-      ],
-      "description": " https://api-alpha.sam.gov/prodlike/opportunities/v1/noticedesc?noticeid=9ffb613fb737018740bbbf250cd8292d",
-      "organizationType": null,
-      "officeAddress": null,
-      "placeOfPerformance": null,
-      "additionalInfoLink": null,
-      "uiLink": "https://alpha.sam.gov/opp/9ffb613fb737018740bbbf250cd8292d",
-      "links": [
-        {
-          "rel": "self",
-          "href": " https://api-alpha.sam.gov/prodlike/opportunities/v1/search?noticeid=9ffb613fb737018740bbbf250cd8292d&limit="
-        }
-      ]
-    }
 </pre></code>
 </p>
 </details>
@@ -777,48 +779,48 @@ Note: Response for one record is provided as an example <br>
 <p>
 <code><pre>
 {
-            "noticeId": "ff826a59eac743c4a1a07ff5e0cf3e3a",
-            "title": "Test-Award notice-V2 27",
-            "solicitationNumber": "test-123456789",
-            "fullParentPathName": "GENERAL SERVICES ADMINISTRATION.FEDERAL ACQUISITION SERVICE.GSA/FAS CENTER FOR IT SCHEDULE PROG",
-            "fullParentPathCode": "047.4732.47QTCA",
-            "postedDate": "2020-07-02",
-            "type": "Award Notice",
-            "baseType": "Award Notice",
-            "archiveType": "autocustom",
-            "archiveDate": "2021-01-02",
-            "typeOfSetAsideDescription": null,
-            "typeOfSetAside": null,
-            "responseDeadLine": null,
-            "naicsCode": null,
-			"naicsCodes": [],
-            "classificationCode": null,
-            "active": "Yes",
-            "award": {
-                "date": "2020-12-01",
-                "number": "4376487348950",
-                "amount": "350567.00"
-            },
-            "pointOfContact": null,
-            "description": "null",
-            "organizationType": "OFFICE",
-            "officeAddress": {
-                "zipcode": "20405",
-                "city": "WASHINGTON",
-                "countryCode": "USA",
-                "state": "DC"
-            },
-            "placeOfPerformance": null,
-            "additionalInfoLink": null,
-            "uiLink": "null",
-            "links": [
-                {
-                    "rel": "self",
-                    "href": "null"
-                }
-            ],
-            "resourceLinks": null
+    "noticeId": "ff826a59eac743c4a1a07ff5e0cf3e3a",
+    "title": "Test-Award notice-V2 27",
+    "solicitationNumber": "test-123456789",
+    "fullParentPathName": "GENERAL SERVICES ADMINISTRATION.FEDERAL ACQUISITION SERVICE.GSA/FAS CENTER FOR IT SCHEDULE PROG",
+    "fullParentPathCode": "047.4732.47QTCA",
+    "postedDate": "2020-07-02",
+    "type": "Award Notice",
+    "baseType": "Award Notice",
+    "archiveType": "autocustom",
+    "archiveDate": "2021-01-02",
+    "typeOfSetAsideDescription": null,
+    "typeOfSetAside": null,
+    "responseDeadLine": null,
+    "naicsCode": null,
+    "naicsCodes": [],
+    "classificationCode": null,
+    "active": "Yes",
+    "award": {
+        "date": "2020-12-01",
+        "number": "4376487348950",
+        "amount": "350567.00"
+    },
+    "pointOfContact": null,
+    "description": "null",
+    "organizationType": "OFFICE",
+    "officeAddress": {
+        "zipcode": "20405",
+        "city": "WASHINGTON",
+        "countryCode": "USA",
+        "state": "DC"
+    },
+    "placeOfPerformance": null,
+    "additionalInfoLink": null,
+    "uiLink": "null",
+    "links": [
+        {
+            "rel": "self",
+            "href": "null"
         }
+    ],
+    "resourceLinks": null
+}
 </pre></code>
 </p>
 </details>

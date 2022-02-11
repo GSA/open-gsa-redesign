@@ -199,9 +199,6 @@ Note: Response for one record is provided as an example <br>
       "typeOfSetAside": "7",
       "responseDeadLine": null,
       "naicsCode": "236220",
-	  "naicsCodes": [
-          "236220"
-      ],
       "classificationCode": "Z",
       "active": "Yes",
       "award": null,
