@@ -89,6 +89,7 @@ setAside	|Set Aside Description	|String | v1<br> v2
 setAsideCode	|Set Aside Code	|String | v1<br> v2
 reponseDeadLine	|Response Deadline Date	|String | v1<br> v2
 naicsCode	|NAICS Code. This code is maximum of 6 digits	|String | v1<br> v2
+naicsCodes	|NAICS Codes. This array contains multiple codes.This code is maximum of 6 digits  |String[] | v1<br> v2
 classificationCode	|Classification Code	|String | v1<br> v2
 active|	If Active = Yes, then the opportunity is active, if No, then opportunity is Archived| String | v1<br> v2
 data.award|	Award Information (If Available): <br> Award amount <br>Awardee <br> Award date <Br> Award Number|	JSON Object | v1<br> v2
@@ -216,6 +217,9 @@ Note: Response for one record is provided as an example <br>
             "typeOfSetAside": "7",
             "responseDeadLine": null,
             "naicsCode": "236220",
+	    "naicsCodes": [
+		"236220"
+	    ],			
             "classificationCode": "Z",
             "active": "Yes",
             "award": null,
@@ -371,6 +375,9 @@ Note: Response for one record is provided as an example <br>
       "typeOfSetAside": "7",
       "responseDeadLine": null,
       "naicsCode": "236220",
+      "naicsCodes": [
+	  "236220"
+      ],
       "classificationCode": "Z",
       "active": "Yes",
       "award": null,
@@ -462,6 +469,9 @@ Note: Response for one record is provided as an example <br>
             "typeOfSetAside": null,
             "responseDeadLine": null,
             "naicsCode": "236220",
+	    "naicsCodes":[
+		"236220"
+	    ],
             "classificationCode": "Z",
             "active": "Yes",
             "award": {
@@ -578,6 +588,9 @@ Note: Response for one record is provided as an example <br>
             "typeOfSetAside": null,
             "responseDeadLine": null,
             "naicsCode": "236220",
+	    "naicsCodes": [
+	        "236220"
+	    ],
             "classificationCode": "Z",
             "active": "Yes",
             "award": {
@@ -709,6 +722,9 @@ Note: Response for one record is provided as an example <br>
       "typeOfSetAside": null,
       "responseDeadLine": "2018-05-07T20:00:00-05:00",
       "naicsCode": "336350",
+      "naicsCodes": [
+	  "336350"
+      ],
       "classificationCode": "25",
       "active": "Yes",
       "award": null,
@@ -778,6 +794,7 @@ Note: Response for one record is provided as an example <br>
             "typeOfSetAside": null,
             "responseDeadLine": null,
             "naicsCode": null,
+            "naicsCodes": [],
             "classificationCode": null,
             "active": "Yes",
             "award": {
