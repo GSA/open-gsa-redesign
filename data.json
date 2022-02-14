@@ -5232,9 +5232,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "EDI JSON 02/10/22",
-					"description": "EDI JSON file for 02/10/22",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-02-10-22.json"
+					"title": "EDI JSON 02/14/22",
+					"description": "EDI JSON file for 02/14/22",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-02-14-22.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5440,8 +5440,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA FITARA Actions and Milestones 2020-08-12",
-					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the Aug. 2021, quarterly submission to OMB on November 10, 2021.",
+					"title": "GSA FITARA Actions and Milestones 2022-02-10",
+					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the Feb 2022 quarterly submission to OMB on February 10, 2022.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
 				}
@@ -5473,7 +5473,7 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "GSA IT Reform Cost Savings/Avoidance",
-					"description": "GSA's November 2021 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description": "GSA's February 2022 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -7808,9 +7808,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2021 1st Qtr",
+			"title": "Networx Business Volume FY2021, 1st Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
-			"modified": "2021-03-15T16:40:23.435Z",
+			"modified": "2022-02-14T13:34:41.515Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-02-17-01",
 			"dataQuality": true,
@@ -7843,9 +7843,9 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2021 2nd Qtr",
+			"title": "Networx Business Volume FY2021, 2nd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
-			"modified": "2021-05-10T19:42:02.944Z",
+			"modified": "2022-02-14T13:31:40.299Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-05-07-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -7877,9 +7877,9 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2021 3rd Qtr",
+			"title": "Networx Business Volume FY2021, 3rd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
-			"modified": "2021-08-10T20:01:35.083Z",
+			"modified": "2022-02-14T13:32:52.922Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-08-10-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -7911,9 +7911,9 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2021 4th Qtr",
+			"title": "Networx Business Volume FY2021, 4th Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
-			"modified": "2021-11-17T14:18:48.350Z",
+			"modified": "2022-02-14T13:30:33.187Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-11-17-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -7923,7 +7923,7 @@
 				"name": "Federal Acquisition Service",
 				"subOrganizationOf": {
 					"@type": "org:Organization",
-					"name": "General Services Administration"
+					"name": "Federal Acquisition Service"
 				}
 			},
 			"contactPoint": {
@@ -7939,6 +7939,43 @@
 				}
 			],
 			"keyword": ["Networx", "Networx Telecommunications", "billing", "networx business volume"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY 2022, 1st Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+			"modified": "2022-02-14T14:40:18.697Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2022-02-14-01",
+			"dataQuality": true,
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2015-08-27",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TotRevFY22_1stQtr.xlsx",
+					"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx.",
+					"downloadURL": "https://inventory.data.gov/dataset/f89aeb87-79ae-460e-91fb-80cbfa3444dc/resource/1ee488db-be91-4c39-802b-95d238df462a/download/totrevfy22_1stqtr.xlsx"
+				}
+			],
+			"keyword": ["Networx Telecommunications", "networx business volume", "telecommunications"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
