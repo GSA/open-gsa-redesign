@@ -3644,7 +3644,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Federal Fleet Report",
 			"description": "Annual report of Federal agencies' motor vehicle fleet data collected in the Federal Automotive Statistical Tool (FAST), a web-based reporting tool cosponsored by GSA and the Department of Energy. The Federal Fleet Report is a year-end snapshot of motor vehicle fleet inventory, cost, and use data from agency data submissions, and the resulting data tables are available in these datasets.",
-			"modified": "2015-11-16",
+			"modified": "2022-02-17T19:48:14.134Z",
 			"accessLevel": "public",
 			"identifier": "GSA-4543",
 			"dataQuality": true,
@@ -3659,8 +3659,8 @@
 			"accrualPeriodicity": "R/P1Y",
 			"contactPoint": {
 				"@type": "vcard:Contact",
-				"fn": "Edward E Lawler",
-				"hasEmail": "mailto:ed.lawler@gsa.gov"
+				"fn": "vehicle.policy@gsa.gov",
+				"hasEmail": "mailto:vehicle.policy@gsa.gov"
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
@@ -3671,8 +3671,8 @@
 				}
 			],
 			"keyword": ["FAST report", "federal fleet", "federal fleet report", "fleet cost", "fleet inventory", "fleet report", "fleet utilization", "motor vehicle fleet", "motor vehicles"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:005"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
 			"language": ["en-us"],
 			"theme": ["Travel and Transportation"]
 		}, {
@@ -5232,9 +5232,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "EDI JSON 02/14/22",
-					"description": "EDI JSON file for 02/14/22",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-02-14-22.json"
+					"title": "EDI JSON 02/17/22",
+					"description": "EDI JSON file for 02/17/22",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-02-17-22.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
