@@ -280,6 +280,30 @@ Please use v2 for the following APIs to utilize ueiSAM. Business rules for v2 en
 * Production: https://api.sam.gov/prod/opportunity/v2/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ 
 
+**v1 Endpoints that are going to retire from alpha (3/15/2022) and from prod (4/1/2022:) **
+ 
+/opps/v1/api/create  
+/opps/v1/api/createAndPublish  
+/opps/v1/api/search
+/opps/v1/api/{opportunityId}
+/opps/v1/api/update/{opportunityId}  
+/opps/v1/api/access/{opportunityId}/accessRequest
+/opps/v1/api/access/{opportunityId}/accessRequest
+/opps/v1/api/opportunities/{opportunityId}/relatedopportunities
+
+
+**v2 Endpoints that can be used to in replacement with retired v1 api's from alpha (3/15/2022) and from prod (4/1/2022:) **
+
+/opps/v2/create  
+/opps/v2/createAndPublish  
+/opps/v2/search
+/opps/v2/{opportunityId}
+/opps/v2/update/{opportunityId}  
+/opps/v2/access/{opportunityId}/accessRequest
+/opps/v2/access/{opportunityId}/accessRequest
+/opps/v2/opportunities/{opportunityId}/relatedopportunities
+  
+
 ## Contract Opportunity Management API Request and Responses
 
 **Note**: All Opportunity notices types except Special notices will be associated to organization at office level. Special notices can be associated to Organization at department, sub-tier, or office level.
@@ -7840,11 +7864,10 @@ Date | Version | Description
 8/17/2020 | v1.15 | Get APIs and Streaming Attachment API deployed to Alpha
 9/14/2020| v1.16| Updated OpenAPI Specification section to include v2 endpoints
 9/15/2020| v1.17| v2 Endpoints updated status in PRODUCTION
-11/20/2021| v1.18| ResponseDate	date must provide in this format : yyyy-MM-dd’T’HH:mm:ssXXX (Example:  "response": "2020-02-25T11:00:00-04:00")
-11/20/2021| v1.19| If ResponseDate	date is provided, ResponseTz is a required field. (Example : "responseTz": "America/New_York")
-12/10/2021| v1.20| Contract Award Date is expected to input in this format YYYY-mm-DD (Applicaple for notice types a,u,i).
-02/18/2022| v1.21| V1 Endpoint for create is decommissioning effective from march 18.(...opportunity/v1/api/create). Must use /v2/create to create draft notice.
-02/18/2022| v1.22| V1 Endpoint for createAndPublish is decommissioning effective from march 18.(...opportunity/v1/api/createAndPublish). Must use /v2/createAndPublish to create and publish the notice.
-02/18/2022| v1.23| Duns is completely retired effective from March 18. Must input the ueiSAM whereever applicable.
+11/20/2021| v1.18| ResponseDate	date must provide in this format : yyyy-MM-dd’T’HH:mm:ssXXX (Example:  "response": "2020-02-25T11:00:00-04:00")(Coming soon)
+11/20/2021| v1.19| If ResponseDate	date is provided, ResponseTz is a required field. (Example : "responseTz": "America/New_York") (Coming soon)
+12/10/2021| v1.20| Contract Award Date is expected to input in this format YYYY-mm-DD (Applicaple for notice types a,u,i). (Coming soon)
+02/18/2022| v1.21| Please refer the version control section for the list of V1 api's that are going to retired from  3/15/2022 in alpha, and 4/1/2022 from prod.
+02/18/2022| v1.22| Duns is completely retired effective from March 18. Must input the ueiSAM whereever applicable.
 
 <p><small><a href="#">Back to top</a></small></p>
