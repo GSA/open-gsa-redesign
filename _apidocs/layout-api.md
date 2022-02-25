@@ -59,13 +59,16 @@ If people are trying to set up a new connection, how do they do it?
 - Web Services Specifications
 - Co Bus Size Web service Specification
 - Data Dictionary
+
 #### Version 1.4.3
 - Data Dictionary
 - Version 1.4.2
 - Data Dictionary
+
 #### Version 1.4.1
 - Data Dictionary
 - OT Data Dictionary
+
 #### Version 1.4
 - Data Dictionary
 - OT Data Dictionary
@@ -74,6 +77,7 @@ If people are trying to set up a new connection, how do they do it?
 - SOAP Examples
 - WSDL Zip- file
 - Validation Rules
+
 #### Version 1.3
 - FPDS Data Dictionary
 - Web Services Integration Specifications
@@ -82,6 +86,7 @@ If people are trying to set up a new connection, how do they do it?
 - SOAP Request Samples
 - XML Examples
 - Validation Rules Document
+
 #### Version 1.2 and Earlier
 - Version 1.2 Data Dictionary
 - Version 1.1 Data Dictionary
