@@ -42,20 +42,20 @@ If people are trying to set up a new connection, how do they do it?
 [tree structure]
 
 ## Previous Version Specifications
-# Version 1.4.5
+#### Version 1.4.5
 - Data Dictionary
-# Version 1.4.4
+#### Version 1.4.4
 - Web Services Specifications
 - Co Bus Size Web service Specification
 - Data Dictionary
-# Version 1.4.3
+#### Version 1.4.3
 - Data Dictionary
 - Version 1.4.2
 - Data Dictionary
-# Version 1.4.1
+#### Version 1.4.1
 - Data Dictionary
 - OT Data Dictionary
-# Version 1.4
+#### Version 1.4
 - Data Dictionary
 - OT Data Dictionary
 - Web Services Specifications
@@ -63,7 +63,7 @@ If people are trying to set up a new connection, how do they do it?
 - SOAP Examples
 - WSDL Zip- file
 - Validation Rules
-# Version 1.3
+#### Version 1.3
 - FPDS Data Dictionary
 - Web Services Integration Specifications
 - WSDL Files
@@ -71,7 +71,7 @@ If people are trying to set up a new connection, how do they do it?
 - SOAP Request Samples
 - XML Examples
 - Validation Rules Document
-# Version 1.2 and Earlier
+#### Version 1.2 and Earlier
 - Version 1.2 Data Dictionary
 - Version 1.1 Data Dictionary
 - Version 1.0 Data Dictionary
