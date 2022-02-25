@@ -100,6 +100,9 @@
 - title: Test API Record
   description: This API record is added for testing purpose. View API Documentation link will be redirected to a test page.
   url: https://open.gsa.gov/api/test-api/
+- title: open.gsa.gov Mockup
+  description: This API record is added to show the mockup layout for open.gsa.gov
+  url: https://open.gsa.gov/api/layout-api/  
 #- title: System for Award Management API
 #  description: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
 #  url: https://gsa.github.io/sam_api/sam/
