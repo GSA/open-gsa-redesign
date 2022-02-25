@@ -3,7 +3,6 @@ title: FPDS open.GSA.gov Mockup
 banner-heading: FPDS open.GSA.gov Mockup
 ---
 
-
 ## Overview
 We’re in the process of bringing FPDS into SAM.gov…
 
