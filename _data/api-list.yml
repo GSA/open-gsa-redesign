@@ -73,6 +73,9 @@
 - title: SAM.gov Public Location Services API
   description: This API provides location retrieval needed for opportunities
   url: https://open.gsa.gov/api/location-public-api/
+- title: SAM.gov Contract Data (Formerly FPDS.gov)
+  description: This is an API page that contains all the SAM.gov Contract Data migrated from FPDS.gov
+  url: https://open.gsa.gov/api/sam-contract-api/ 
 - title: Search.gov Clicks API
   description: For Search.gov customers. This API allows you to collect click data for both analytics reporting and as an input to relevance ranking of search results.
   url: https://open.gsa.gov/api/searchgov-clicks/
@@ -99,10 +102,7 @@
   url: https://open.gsa.gov/api/digital-registry/
 - title: Test API Record
   description: This API record is added for testing purpose. View API Documentation link will be redirected to a test page.
-  url: https://open.gsa.gov/api/test-api/
-- title: open.gsa.gov Mockup
-  description: This API record is added to show the mockup layout for open.gsa.gov
-  url: https://open.gsa.gov/api/layout-api/  
+  url: https://open.gsa.gov/api/test-api/ 
 #- title: System for Award Management API
 #  description: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
 #  url: https://gsa.github.io/sam_api/sam/
