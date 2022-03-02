@@ -46,6 +46,9 @@
 - title: Regulations.gov API
   description: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets. Additionally,  a POST API is offered that allows users to submit comments.
   url: https://open.gsa.gov/api/regulationsgov/
+- title: SAM.gov Contract Data (Formerly FPDS.gov)
+  description: This is an API page that contains all the SAM.gov Contract Data migrated from FPDS.gov
+  url: https://open.gsa.gov/api/sam-contract-api/
 - title: SAM.gov Entity/Exclusions Extracts Download API
   description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
   url: https://open.gsa.gov/api/sam-entity-extracts-api/
@@ -73,9 +76,6 @@
 - title: SAM.gov Public Location Services API
   description: This API provides location retrieval needed for opportunities
   url: https://open.gsa.gov/api/location-public-api/
-- title: SAM.gov Contract Data (Formerly FPDS.gov)
-  description: This is an API page that contains all the SAM.gov Contract Data migrated from FPDS.gov
-  url: https://open.gsa.gov/api/sam-contract-api/ 
 - title: Search.gov Clicks API
   description: For Search.gov customers. This API allows you to collect click data for both analytics reporting and as an input to relevance ranking of search results.
   url: https://open.gsa.gov/api/searchgov-clicks/

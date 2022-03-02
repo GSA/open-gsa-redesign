@@ -1,6 +1,6 @@
 ---
-title: FPDS open.GSA.gov Mockup
-banner-heading: FPDS open.GSA.gov Mockup
+title: SAM.gov Contract Data (Formerly FPDS.gov)
+banner-heading: SAM.gov Contract Data (Formerly FPDS.gov)
 ---
 
 
