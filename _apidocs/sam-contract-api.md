@@ -15,7 +15,7 @@ We’re in the process of bringing FPDS into SAM.gov…
 ## Getting Started
 If people are trying to set up a new connection, how do they do it?
 - Quick Start Guide
-- Atom Feed Demo PowerPoint
+- Atom Feed Demo
 - Certification Process
 - FAADC Certification Process
 <p><small><a href="#">Back to top</a></small></p>
@@ -38,7 +38,7 @@ If people are trying to set up a new connection, how do they do it?
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Current FAADC Specifications
-- FAADC Webservices Specifications V1.1
+- FAADC Web Services Specifications V1.1
 - FAADC Certification Process
 - FAADC Help Guide V1.1
 - FAADC WSDL Files
@@ -57,12 +57,13 @@ If people are trying to set up a new connection, how do they do it?
 
 #### Version 1.4.4
 - Web Services Specifications
-- Co Bus Size Web service Specification
+- WSDL and Specification Changes for CO Determination of Business Size
 - Data Dictionary
 
 #### Version 1.4.3
 - Data Dictionary
-- Version 1.4.2
+
+#### Version 1.4.2
 - Data Dictionary
 
 #### Version 1.4.1
@@ -75,7 +76,7 @@ If people are trying to set up a new connection, how do they do it?
 - Web Services Specifications
 - Changes in XSD and WSDLs
 - SOAP Examples
-- WSDL Zip- file
+- WSDL Zip file
 - Validation Rules
 
 #### Version 1.3
@@ -94,8 +95,8 @@ If people are trying to set up a new connection, how do they do it?
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Previous FAADC Specifications
-- WSDL Files (links to fpds.gov)
-- FAADC Webservices Specifications V1.0
+- FAADC 1.0 WSDL ZIP File
+- FAADC Web Services Specifications V1.0
 - FAADC Help Guide V1.0
 - FAADC Validation Rules V1.0
 - FAADC Data Dictionary V1.0
