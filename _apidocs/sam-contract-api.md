@@ -48,20 +48,7 @@ If people are trying to set up a new connection, how do they do it?
 <p><small><a href="#">Back to top</a></small></p>
 
 ## XML Schemas
-    {% raw %}
-    <script>
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var fancyTree = document.createElement('script'); fancyTree.type = 'text/javascript'; //fancyTree.async = true;
-        fancyTree.src = '//cdn.jsdelivr.net/npm/jquery.fancytree@2.27/dist/jquery.fancytree-all-deps.min.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(fancyTree);
-    })();
-    </script>
-    <noscript>Please enable JavaScript to show the links in Tree format .</noscript>
-    {% endraw %}
-    <div id="fpds_doc_tree">
-        {% include tree-api.html %}
-    </div>
+    [tree structure]
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Previous Version Specifications
