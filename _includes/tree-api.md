@@ -1,7 +1,3 @@
----
-title: Contract Data (Formerly FPDS.gov)
-banner-heading: Contract Data (Formerly FPDS.gov)
----
 <link href="//cdn.jsdelivr.net/npm/jquery.fancytree@2.27/dist/skin-win8/ui.fancytree.min.css" rel="stylesheet">
 {% raw %}
 <script>
@@ -16,10 +12,6 @@ banner-heading: Contract Data (Formerly FPDS.gov)
  </script>
 <noscript>Please enable JavaScript to show the links in Tree format .</noscript>
 {% endraw %}
-
-## Overview
-
-Tree struture to support XML Schema definitions for various versions
 
 <div id="fpds_doc_tree">
     <ul id="treeData">
