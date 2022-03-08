@@ -48,7 +48,7 @@ If people are trying to set up a new connection, how do they do it?
 <p><small><a href="#">Back to top</a></small></p>
 
 ## XML Schemas
-    {% include tree-api.md %}
+    {% include tree-api.html %}
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Previous Version Specifications
