@@ -48,8 +48,9 @@ If people are trying to set up a new connection, how do they do it?
 <p><small><a href="#">Back to top</a></small></p>
 
 ## XML Schemas
-    [tree structure]
+   {% raw %}
     <a href="/tree-api">XML Schemas Structure</a>
+   {% endraw %}
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Previous Version Specifications
