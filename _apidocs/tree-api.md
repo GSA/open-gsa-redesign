@@ -115,8 +115,6 @@ Tree struture to support XML Schema definitions for various versions
                                                 <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4/OtherTransactionIDV.html">OtherTransactionIDV.html</a></li>
                                                 <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4/OtherTransactionContract.xsd">OtherTransactionContract.xsd</a></li>
                                                 <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4/OtherTransactionContract.html">OtherTransactionContract.html</a></li>
-                                            </ul>
-                                            <ul>
                                                 <li id="id3.1.3" class="expanded folder">1.4.1
                                                     <ul>
                                                         <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4.1/Award.xsd">Award.xsd</a></li>
@@ -275,6 +273,35 @@ Tree struture to support XML Schema definitions for various versions
 			                                    <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/SystemAdministration/users/1.5/User.html">User.html</a></li>
                                             </ul>
                                         </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li id="id3" class="folder">FAADC
+            <ul>
+                <li id="id3.1" class="expanded folder">Schema
+                    <ul>
+                        <li id="id3.1.2" class="expanded folder">DataCollection
+                            <ul>
+                                <li id="id3.1.3" class="expanded folder">1.1
+                                    <ul>
+                                        <li><a href="https://www.fpds.gov/FAADC/schema/DataCollection/1.1/Assistance.xsd">Assistance.xsd</a></li>
+			                            <li><a href="https://www.fpds.gov/FAADC/schemaDocs/DataCollection/1.1/Assistance.html">Assistance.html</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="id3.1.2" class="expanded folder">SystemServices
+                            <ul>
+                                <li id="id3.1.3" class="expanded folder">1.1
+                                    <ul>
+                                       <li><a href="https://www.fpds.gov/FAADC/schema/SystemServices/1.1/Audit.xsd">Audit.xsd</a></li>
+			                            <li><a href="https://www.fpds.gov/FAADC/schemaDocs/SystemServices/1.1/Audit.html">Audit.html</a></li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
