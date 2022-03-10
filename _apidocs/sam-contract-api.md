@@ -49,6 +49,7 @@ If people are trying to set up a new connection, how do they do it?
 
 ## XML Schemas
     [tree structure]
+    <a href="/tree-api">XML Schemas Structure</a>
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Previous Version Specifications
