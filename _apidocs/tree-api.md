@@ -25,48 +25,106 @@ Tree struture to support XML Schema definitions for various versions
     <ul id="treeData">
         <li id="id3" class="folder">FPDS
             <ul>
-                <li id="id3.1" class="expanded folder">schema
+                <li id="id3.1" class="expanded folder">Schema
                     <ul>
-                        <li id="id3.1.2" class="expanded folder">ApplicationServices
+                        <li id="id3.1.2" class="expanded folder">DataCollection
                             <ul>
-                                <li id="id3.1.3" class="expanded folder">Batch
+                                <li id="id3.1.3" class="expanded folder">Contracts
                                     <ul>
                                         <li id="id3.1.3" class="expanded folder">1.0
                                             <ul>
-                                                <li id="id3.1.3.1.1">
-                                                   <div>
-                                                    <a href="https://www.fpds.gov/FPDS-Schema/schema/ApplicationServices/batch/1.0/BatchInterface.xsd"
-                                                        target="_blank">BatchInterface.xsd</a> 
-                                                    </div>
-                                                </li>
-                                                <li id="id3.1.3.1.2">
-                                                  <a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/ApplicationServices/batch/1.0/BatchInterface.html" target="_blank">HTML Doc</a>
-                                                </li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.0/Award.xsd">Award.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.0/Award.html">Award.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.0/Contract.xsd">Contract.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.0/Contract.html">Contract.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.0/IDV.xsd">IDV.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.0/IDV.html">IDV.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.0/NASASpecificAwardElements.xsd">NASASpecificAwardElements.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.0/NASASpecificAwardElements.html">NASASpecificAwardElements.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.0/NASASpecificContractElements.xsd">NASASpecificContractElements.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.0/NASASpecificContractElements.html">NASASpecificContractElements.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.0/NASASpecificIDVElements.xsd">NASASpecificIDVElements.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.0/NASASpecificIDVElements.html">NASASpecificIDVElements.html</a></li>
                                             </ul>
+                                        </li>
+                                        <li id="id3.1.3" class="expanded folder">1.1
+                                            <ul>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.1/Award.xsd">Award.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.1/Award.html">Award.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.1/Contract.xsd">Contract.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.1/Contract.html">Contract.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.1/IDV.xsd">IDV.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.1/IDV.html">IDV.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.1/NASASpecificAwardElements.xsd">NASASpecificAwardElements.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.1/NASASpecificAwardElements.html">NASASpecificAwardElements.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.1/NASASpecificContractElements.xsd">NASASpecificContractElements.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.1/NASASpecificContractElements.html">NASASpecificContractElements.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.1/NASASpecificIDVElements.xsd">NASASpecificIDVElements.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.1/NASASpecificIDVElements.html">NASASpecificIDVElements.html</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="id3.1.3" class="expanded folder">1.2
+                                            <ul>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.2/Award.xsd">Award.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.2/Award.html">Award.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.2/Contract.xsd">Contract.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.2/Contract.html">Contract.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.2/ContractSummary.xsd">ContractSummary.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.2/ContractSummary.html">ContractSummary.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.2/IDV.xsd">IDV.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.2/IDV.html">IDV.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.2/NASASpecificAwardElements.xsd">NASASpecificAwardElements.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.2/NASASpecificAwardElements.html">NASASpecificAwardElements.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.2/NASASpecificContractElements.xsd">NASASpecificContractElements.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.2/NASASpecificContractElements.html">NASASpecificContractElements.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.2/NASASpecificIDVElements.xsd">NASASpecificIDVElements.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.2/NASASpecificIDVElements.html">NASASpecificIDVElements.html</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="id3.1.3" class="expanded folder">1.3
+                                            <ul>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.3/Award.xsd">Award.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.3/Award.html">Award.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.3/Contract.xsd">Contract.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.3/Contract.html">Contract.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.3/ContractSummary.xsd">ContractSummary.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.3/ContractSummary.html">ContractSummary.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.3/IDV.xsd">IDV.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.3/IDV.html">IDV.html</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="id3.1.3" class="expanded folder">1.4
+                                            <ul>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4/Award.xsd">Award.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4/Award.html">Award.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4/Contract.xsd">Contract.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4/Contract.html">Contract.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4/ContractSummary.xsd">ContractSummary.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4/ContractSummary.html">ContractSummary.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4/IDV.xsd">IDV.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4/IDV.html">IDV.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4/NASASpecificAwardElements.xsd">NASASpecificAwardElements.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4/NASASpecificAwardElements.html">NASASpecificAwardElements.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4/NASASpecificContractElements.xsd">NASASpecificContractElements.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4/NASASpecificContractElements.html">NASASpecificContractElements.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4/NASASpecificIDVElements.xsd">NASASpecificIDVElements.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4/NASASpecificIDVElements.html">NASASpecificIDVElements.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4/OtherTransactionAward.xsd">OtherTransactionAward.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4/OtherTransactionAward.html">OtherTransactionAward.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4/OtherTransactionIDV.xsd">OtherTransactionIDV.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4/OtherTransactionIDV.html">OtherTransactionIDV.html</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4/OtherTransactionContract.xsd">OtherTransactionContract.xsd</a></li>
+                                                <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4/OtherTransactionContract.html">OtherTransactionContract.html</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
+                                </li>
                             </ul>
-                        <li id="id3.1.2">Sub-item 3.1.2</li>
-                        <li id="id3.1.3">Sub-item 3.1.3</li>
+                        </li>
                     </ul>
-                <li id="id3.2">Sub-item 3.2
-                    <ul>
-                        <li id="id3.2.1">Sub-item 3.2.1
-                        <li id="id3.2.2">Sub-item 3.2.2
-                    </ul>
+                </li>
             </ul>
-        <li id="id4" class="expanded">Document with some children (expanded on init)
-            <ul>
-                <li id="id4.1" class="active focused">Sub-item 4.1 (active and focus on init)
-                    <ul>
-                        <li id="id4.1.1">Sub-item 4.1.1
-                        <li id="id4.1.2">Sub-item 4.1.2
-                    </ul>
-                <li id="id4.2">Sub-item 4.2
-                    <ul>
-                        <li id="id4.2.1">Sub-item 4.2.1
-                        <li id="id4.2.2">Sub-item 4.2.2
-                    </ul>
-            </ul>
+        </li>
     </ul>
 </div>
 

@@ -49,7 +49,7 @@ If people are trying to set up a new connection, how do they do it?
 
 ## XML Schemas
    {% raw %}
-    <a href="/tree-api">XML Schemas Structure</a>
+    <a href="#">XML Schemas Structure</a>
    {% endraw %}
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -112,37 +112,3 @@ Standard verbiage on what to prepare and then how to reach FSD
 ## Change Log
 Log of changes to this page
 <p><small><a href="#">Back to top</a></small></p>
-
-{% raw %}
-<script>
-  (function() {
-    window.onload = function() {
-        
-        jQuery("#fpds_doc_tree").fancytree({
-
-            activate: function(event, data){
-                var node = data.node,
-                    orgEvent = data.originalEvent;
-                console.log("activate", orgEvent)
-                if(node.data.href){
-                   //window.open(node.data.href,  node.data.target);
-                }
-            },
-            
-            click: function(event, data){
-                var node = data.node,
-                orgEvent = data.originalEvent;
-                console.log("click", orgEvent, event.keyCode)
-                if(node.data.href){
-                    window.open(node.data.href,  node.data.target);
-                  
-                }
-            }
-        });
-        jQuery(".fancytree-container").addClass("fancytree-connectors");
-    };
-
-}).call(this);
-  
-</script>
-{% endraw%}
