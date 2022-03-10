@@ -1,7 +1,4 @@
----
-title: Contract Data (Formerly FPDS.gov)
-banner-heading: Contract Data (Formerly FPDS.gov)
----
+
 <link href="//cdn.jsdelivr.net/npm/jquery.fancytree@2.27/dist/skin-win8/ui.fancytree.min.css" rel="stylesheet">
 {% raw %}
 <script>
