@@ -889,7 +889,7 @@ components:
     #Regulations.gov documentation        
     DocumentType:
       type: string
-      description: type of document
+      description: type of document. This field is always returned in JSON response
       enum:
         - Notice
         - Rule
@@ -1069,7 +1069,7 @@ components:
         address1:
           type: string
           nullable: true
-          description: The first line of the submitter's address.
+          description: The first line of the submitter's address. 
         address2:
           type: string
           nullable: true
@@ -1097,7 +1097,7 @@ components:
           description: The detailed description of the document. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         docketId:
           type: string
-          description: The ID of the docket to which the document corresponds. This field is always returned in JSON response. This is an agency configurable field. Each agency has option to configure the format of the field. 
+          description: The ID of the docket to which the document corresponds. This field is always returned in JSON response. 
         documentType:
           $ref: '#/components/schemas/DocumentType'
         email:
@@ -1111,11 +1111,11 @@ components:
         field1:
           type: string
           nullable: true
-          description: An agency-specific field used for storing additional data with the document. This is an agency configurable field. An agency can configure this field to make it not publicly accessible. Agency may also configure the name of this field.
+          description: An agency-specific field used for storing additional data with the document. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         field2:
           type: string
           nullable: true
-          description: An agency-specific field used for storing additional data with the document. This is an agency configurable field. An agency can configure this field to make it not publicly accessible. Agency may also configure the name of this field.
+          description: An agency-specific field used for storing additional data with the document. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         fileFormats:
           type: array
           description: list of file formats
@@ -1157,7 +1157,7 @@ components:
           description: The organization that the submitter represents. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         originalDocumentId:
           type: string
-          description: The document ID that was assigned when first entered into the system should a change occur that requires a new document ID to be assigned. This is an agency configurable field. Each agency has option to configure the format and display of the field. An agency can configure this field to make it not publicly accessible.
+          description: The document ID that was assigned when first entered into the system should a change occur that requires a new document ID to be assigned.
         pageCount:
           type: string
           nullable: true
@@ -1178,17 +1178,17 @@ components:
         reasonWithdrawn:
           type: string
           nullable: true
-          description: If the document is withdrawn, this field will state the reason. This field is always returned in JSON response.
+          description: If the document is withdrawn, this field will state the reason. If data exists, it is always returned in JSON response.
         receiveDate:
           type: string
           format: date-time
           description: The date that the document was received by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2018-06-29T04:00:00Z`. This field is always returned in JSON response.
         restrictReason:
           type: string
-          description: If the document is restricted, this field will state the reason. This field is always returned in JSON response.
+          description: If the document is restricted, this field will state the reason. If data exists, it is always returned in JSON response.
         restrictReasonType:
           type: string
-          description: If the document is restricted, this field will state the type of restriction. This field is always returned in JSON response.
+          description: If the document is restricted, this field will state the type of restriction. If data exists, it is always returned in JSON response.
         stateProvinceRegion:
           type: string
           nullable: true
@@ -1199,16 +1199,16 @@ components:
           description: An agency-specific attribute to further categorize a document beyond the documentType. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         title:
           type: string
-          description: The formal title of the document. This field is always returned in JSON response. This is an agency configurable field. Each agency has option to configure the format of the field.
+          description: The formal title of the document. This field is always returned in JSON response.
         trackingNbr:
           type: string
-          description: The tracking number of the submission.
+          description: The tracking number of the submission. This field is always returned in JSON response.
         withdrawn:
           type: boolean
-          description: Conveys if the document is withdrawn
+          description: Conveys if the document is withdrawn. This field is always returned in JSON response.
         zip:
           type: string
-          description: The zip associated with the submitter's address.
+          description: The zip associated with the submitter's address. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
     DocumentDetail:
       allOf:     # Combines the BasicDetailModel and the inline model
         - $ref: '#/components/schemas/BasicDetailModel'
