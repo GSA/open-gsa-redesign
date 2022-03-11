@@ -1128,7 +1128,7 @@ components:
         govAgency:
           type: string
           nullable: true
-          description: The name of the government agency that the submitter represents.
+          description: The name of the government agency that the submitter represents. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         govAgencyType:
           type: string
           nullable: true
