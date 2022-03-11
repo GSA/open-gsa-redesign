@@ -173,40 +173,39 @@ A recent [GAO report](https://www.gao.gov/products/gao-21-103181) expressed conc
   
 Here is the list of fields that is always available in the JSON response for a comment:
 
-* documentId - This field is returned as an Id of the document in the JSON response.
-* docketId
-* documentType
+* agencyId
+* comment
 * commentOnId
-* status
-* reasonWithdrawn - if the comment has been withdrawn
-* receivedDate
+* docketId
+* documentId - This field is returned as an Id of the document in the JSON response.
+* documentType
 * postedDate
+* receiveDate
 * restrictReason - if restrictReasonType is set to "Other"
 * restrictReasonType - if the document is restricted
-* comment
-* trackingNbr
+* reasonWithdrawn - if the comment has been withdrawn
 * title
-
+* trackingNbr
+* withdrawn
 
 #### List of agency configurable comment fields
 
 Agency configured fields can be updated by an agency at any point in time and made accessible or inaccessible in the JSON response of a comment. Here is the list of these fields:
 
-* docAbstract
-* subtype
-* postmarkDate
-* legacyId
-* field1
-* field2
-* pageCount
-* firstName
-* lastName
 * city
 * country
-* stateProvinceRegion
-* zip
-* organization
+* docAbstract
+* firstName
+* govAgency  
 * govAgencyType
+* lastName
+* legacyId
+* organization
+* pageCount
+* postmarkDate
+* stateProvinceRegion
+* subtype
+* zip
 
 #### List of fields that are never publicly viewable on a comment 
 
