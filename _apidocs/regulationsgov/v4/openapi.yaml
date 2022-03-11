@@ -774,7 +774,7 @@ components:
       type: object
       properties:
         id:
-          description: The JSON:API resource ID (documentId of the comment)
+          description: The JSON:API resource ID (documentId of the comment). DocumentId field is always returned in JSON response. This is an agency configurable field. Each agency has option to configure the format of the field. 
           type: string
         type:
           description: The JSON:API resource type `comments`
@@ -1076,28 +1076,28 @@ components:
           description: The second line of the submitter's address.
         agencyId:
           type: string
-          description: The acronym used to abbreviate the name of the agency associated with the document.
+          description: The acronym used to abbreviate the name of the agency associated with the document. This field is always returned in JSON response.
         city:
           type: string
           nullable: true
-          description: The city associated with the submitter's address.
+          description: The city associated with the submitter's address. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         category:
           type: string
           nullable: true
           description: An agency-specific category allowing agencies to group comments according to their type.
         comment:
           type: string
-          description: The comment text associated with the comment submission.
+          description: The comment text associated with the comment submission. This field is always returned in JSON response.
         country:
           type: string
           nullable: true
-          description: The country associated with the submitter's address.
+          description: The country associated with the submitter's address. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         docAbstract:
           type: string
-          description: The detailed description of the document.
+          description: The detailed description of the document. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         docketId:
           type: string
-          description: The ID of the docket to which the document corresponds.
+          description: The ID of the docket to which the document corresponds. This field is always returned in JSON response. This is an agency configurable field. Each agency has option to configure the format of the field. 
         documentType:
           $ref: '#/components/schemas/DocumentType'
         email:
@@ -1111,11 +1111,11 @@ components:
         field1:
           type: string
           nullable: true
-          description: An agency-specific field used for storing additional data with the document.
+          description: An agency-specific field used for storing additional data with the document. This is an agency configurable field. An agency can configure this field to make it not publicly accessible. Agency may also configure the name of this field.
         field2:
           type: string
           nullable: true
-          description: An agency-specific field used for storing additional data with the document.
+          description: An agency-specific field used for storing additional data with the document. This is an agency configurable field. An agency can configure this field to make it not publicly accessible. Agency may also configure the name of this field.
         fileFormats:
           type: array
           description: list of file formats
@@ -1124,7 +1124,7 @@ components:
         firstName:
           type: string
           nullable: true
-          description: The submitter's first name.
+          description: The submitter's first name. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         govAgency:
           type: string
           nullable: true
@@ -1132,15 +1132,15 @@ components:
         govAgencyType:
           type: string
           nullable: true
-          description: The type of government agency that the submitter represents.
+          description: The type of government agency that the submitter represents. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         lastName:
           type: string
           nullable: true
-          description: The submitter's last name.
+          description: The submitter's last name. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         legacyId:
           type: string
           nullable: true
-          description: An agency-specific identifier that was given to the document in the legacy system.
+          description: An agency-specific identifier that was given to the document in the legacy system. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         modifyDate:
           type: string
           format: date-time
@@ -1154,14 +1154,14 @@ components:
         organization:
           type: string
           nullable: true
-          description: The organization that the submitter represents.
+          description: The organization that the submitter represents. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         originalDocumentId:
           type: string
-          description: The document ID that was assigned when first entered into the system should a change occur that requires a new document ID to be assigned.
+          description: The document ID that was assigned when first entered into the system should a change occur that requires a new document ID to be assigned. This is an agency configurable field. Each agency has option to configure the format and display of the field. An agency can configure this field to make it not publicly accessible.
         pageCount:
           type: string
           nullable: true
-          description: Conveys the number of pages contained in the document.
+          description: Conveys the number of pages contained in the document. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         phone:
           type: string
           nullable: true
@@ -1169,37 +1169,37 @@ components:
         postedDate:
           type: string
           format: date-time
-          description: The date that the document was posted by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+          description: The date that the document was posted by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`. This field is always returned in JSON response.
         postmarkDate:
           type: string
           nullable: true
           format: date-time
-          description: The postmark date of a document that was sent by mail.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`.
+          description: The postmark date of a document that was sent by mail.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2019-01-20T13:15:45Z`. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         reasonWithdrawn:
           type: string
           nullable: true
-          description: If the document is withdrawn, this field will state the reason.
+          description: If the document is withdrawn, this field will state the reason. This field is always returned in JSON response.
         receiveDate:
           type: string
           format: date-time
-          description: The date that the document was received by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2018-06-29T04:00:00Z`.
+          description: The date that the document was received by the agency to the system.<br/><br/>The date is formatted as ISO 8601 with an offset such as `2018-06-29T04:00:00Z`. This field is always returned in JSON response.
         restrictReason:
           type: string
-          description: If the document is restricted, this field will state the reason.
+          description: If the document is restricted, this field will state the reason. This field is always returned in JSON response.
         restrictReasonType:
           type: string
-          description: If the document is restricted, this field will state the type of restriction.
+          description: If the document is restricted, this field will state the type of restriction. This field is always returned in JSON response.
         stateProvinceRegion:
           type: string
           nullable: true
-          description: The submitter's state,province or region.
+          description: The submitter's state,province or region. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         subtype:
           type: string
           nullable: true
-          description: An agency-specific attribute to further categorize a document beyond the documentType.
+          description: An agency-specific attribute to further categorize a document beyond the documentType. This is an agency configurable field. An agency can configure this field to make it not publicly accessible.
         title:
           type: string
-          description: The formal title of the document.
+          description: The formal title of the document. This field is always returned in JSON response. This is an agency configurable field. Each agency has option to configure the format of the field.
         trackingNbr:
           type: string
           description: The tracking number of the submission.
@@ -1324,7 +1324,7 @@ components:
           properties: 
             commentOnDocumentId:
               type: string
-              description: documentId of the parent document
+              description: documentId of the parent document. This field is always returned in JSON response.
             duplicateComments:
               type: integer
               description: Number of duplicate comments
