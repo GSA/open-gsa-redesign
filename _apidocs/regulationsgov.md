@@ -206,9 +206,6 @@ Agency configured fields can be updated by an agency at any point in time and ma
 * stateProvinceRegion
 * zip
 * organization
-* submitterRep
-* submitterRepAddress
-* submitterRepCityState
 * govAgencyType
 
 #### List of fields that are never publicly viewable on a comment 
