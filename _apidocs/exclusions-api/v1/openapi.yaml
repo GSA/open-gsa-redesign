@@ -1,466 +1,873 @@
-openapi: 3.0.0
+openapi: 3.0.1
 info:
-  description: >-
-    These RESTFUL endpoints are to retrieve exclusion information via Request
-    parameters in the paginated manner
-  version: 1.0
   title: Exclusions Rest API
-  termsOfService: Terms of service
+  description: These RESTFUL endpoints are to retrieve exclusion information via Request
+    parameters in the paginated manner
   contact:
     name: GSA
-    url: https://www.sam.gov
+    url: www.sam.gov
     email: reply@gsa.gov
   license:
     name: GSA
-tags:
-  - name: exclusions-api-controller
-    description: Operations pertaining to Exclusions API
-  - name: exclusions-api-controller-v-2
-    description: Exclusions Api Controller V 2
-  - name: file-download-controller
-    description: File Download Controller
-paths:
-  /sam/v1/exclusions:
-    get:
-      tags:
-        - exclusions-api-controller
-      summary: ' get Exclusions Details for Extract'
-      operationId: getExclusionsDataForUIUsingGET
-      parameters:
-        - name: activationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: addressLine1
-          in: query
-          description: A String (1234 test Dr)
-          required: false
-          schema:
-            type: string
-        - name: addressLine2
-          in: query
-          description: A String (1234 test Dr)
-          required: false
-          schema:
-            type: string
-        - name: cageCode
-          in: query
-          description: 'A String (0Y5L9, null)'
-          required: false
-          schema:
-            type: string
-        - name: city
-          in: query
-          description: 'A String (Herndon,null)'
-          required: false
-          schema:
-            type: string
-        - name: classification
-          in: query
-          description: >-
-            A String (Individual, Firm, Vessel, Special Entity Designation,
-            null)
-          required: false
-          schema:
-            type: string
-        - name: country
-          in: query
-          description: 'A String (USA, CAN, ARE, null)'
-          required: false
-          schema:
-            type: string
-        - name: creationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: ctCode
-          in: query
-          description: 'A String (A, ZZ, XXX, 03-SDNTK-01, null)'
-          required: false
-          schema:
-            type: string
-        - name: emailId
-          in: query
-          description: Email ID
-          required: false
-          schema:
-            type: string
-        - name: excludingAgencyCode
-          in: query
-          description: 'A String (AF, DOJ, FEMA-IOD, null)'
-          required: false
-          schema:
-            type: string
-        - name: excludingAgencyName
-          in: query
-          description: 'A String (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null)'
-          required: false
-          schema:
-            type: string
-        - name: exclusionName
-          in: query
-          description: A partial text or a complete text
-          required: false
-          schema:
-            type: string
-        - name: exclusionProgram
-          in: query
-          description: 'A String (Reciprocal, Non-Procurement, Procurement)'
-          required: false
-          schema:
-            type: string
-        - name: exclusionType
-          in: query
-          description: >-
-            A String (Ineligible (Proceedings Pending), Ineligible (Proceedings
-            Completed), Prohibition/Restriction, Voluntary Exclusion)
-          required: false
-          schema:
-            type: string
-        - name: format
-          in: query
-          description: Parameter used to download csv or json files
-          required: false
-          schema:
-            type: string
-        - name: includeSections
-          in: query
-          description: Schema Filtering Paramter
-          required: false
-          schema:
-            type: string
-        - name: npi
-          in: query
-          description: 'A String (1053373266, null)'
-          required: false
-          schema:
-            type: string
-        - name: page
-          in: query
-          description: Page number
-          required: false
-          schema:
-            type: string
-        - name: q
-          in: query
-          description: >-
-            Free text, All the above filters and their acceptable values can be
-            used
-          required: false
-          schema:
-            type: string
-        - name: recordStatus
-          in: query
-          description: 'Record Status (Active, Inactive)'
-          required: false
-          schema:
-            type: string
-        - name: size
-          in: query
-          description: Record size per page
-          required: false
-          schema:
-            type: string
-        - name: ssnOrTinOrEin
-          in: query
-          description: '9 digit number or null (XXXXXXXXX, null)'
-          required: false
-          schema:
-            type: string
-        - name: stateProvince
-          in: query
-          description: 'A String (NC, XX, null, 470105, YAMALO-NENETSKI OKR.)'
-          required: false
-          schema:
-            type: string
-        - name: terminationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: ueiDUNS
-          in: query
-          description: >-
-            Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652,
-            047795005, null)
-          required: false
-          schema:
-            type: string
-        - name: ueiSAM
-          in: query
-          description: >-
-            Unique Entity Identifier SAMMI- 12 digit value - Replacement for ueiDUNS
-          required: false
-          schema:
-            type: string
-        - name: updateDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: zipCode
-          in: query
-          description: >-
-            A String (0, 41722, 21453935, 752435120, 75602-1112, null, C.P.
-            44890, oo957, TQ13 9SE, Zimbabwe, P.O. Box Beirut-Hamra)
-          required: false
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successfully retrieved list
-        '401':
-          description: You are not authorized to view the resource
-        '403':
-          description: Accessing the resource you were trying to reach is forbidden
-        '404':
-          description: The resource you were trying to reach is not found
-      deprecated: false
-  /sam/v2/exclusions:
-    get:
-      tags:
-        - exclusions-api-controller-v-2
-      summary: ' get Exclusions Details for Extract'
-      operationId: getAsyncExclusionsDataUsingGET_1
-      parameters:
-        - name: X-Auth-Token
-          in: header
-          description: X-Auth-Token
-          required: false
-          schema:
-            type: string
-        - name: activationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: addressLine1
-          in: query
-          description: A String (1234 test Dr)
-          required: false
-          schema:
-            type: string
-        - name: addressLine2
-          in: query
-          description: A String (1234 test Dr)
-          required: false
-          schema:
-            type: string
-        - name: cageCode
-          in: query
-          description: 'A String (0Y5L9, null)'
-          required: false
-          schema:
-            type: string
-        - name: city
-          in: query
-          description: 'A String (herndon, null)'
-          required: false
-          schema:
-            type: string
-        - name: classification
-          in: query
-          description: >-
-            A String (Individual, Firm, Vessel, Special Entity Designation,
-            null)
-          required: false
-          schema:
-            type: string
-        - name: country
-          in: query
-          description: 'A String (USA, CAN, ARE, null)'
-          required: false
-          schema:
-            type: string
-        - name: creationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: ctCode
-          in: query
-          description: 'A String (A, ZZ, XXX, 03-SDNTK-01, null)'
-          required: false
-          schema:
-            type: string
-        - name: emailId
-          in: query
-          description: Email ID
-          required: false
-          schema:
-            type: string
-        - name: excludingAgencyCode
-          in: query
-          description: 'A String (AF, DOJ, FEMA-IOD, null)'
-          required: false
-          schema:
-            type: string
-        - name: excludingAgencyName
-          in: query
-          description: 'A String (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null)'
-          required: false
-          schema:
-            type: string
-        - name: exclusionName
-          in: query
-          description: A partial text or a complete text
-          required: false
-          schema:
-            type: string
-        - name: exclusionProgram
-          in: query
-          description: 'A String (Reciprocal, Non-Procurement, Procurement)'
-          required: false
-          schema:
-            type: string
-        - name: exclusionType
-          in: query
-          description: >-
-            A String (Ineligible (Proceedings Pending), Ineligible (Proceedings
-            Completed), Prohibition/Restriction, Voluntary Exclusion)
-          required: false
-          schema:
-            type: string
-        - name: format
-          in: query
-          description: Parameter used to download csv or json files
-          required: false
-          schema:
-            type: string
-        - name: includeSections
-          in: query
-          description: Schema Filtering Paramter
-          required: false
-          schema:
-            type: string
-        - name: npi
-          in: query
-          description: 'A String (1053373266, null)'
-          required: false
-          schema:
-            type: string
-        - name: page
-          in: query
-          description: Page number
-          required: false
-          schema:
-            type: string
-        - name: pscCode
-          in: query
-          required: false
-          schema:
-            type: string
-        - name: q
-          in: query
-          description: >-
-            Free text, All the above filters and their acceptable values can be
-            used
-          required: false
-          schema:
-            type: string
-        - name: recordStatus
-          in: query
-          description: 'Record Status (Active, Inactive)'
-          required: false
-          schema:
-            type: string
-        - name: size
-          in: query
-          description: Record size per page
-          required: false
-          schema:
-            type: string
-        - name: ssnOrTinOrEin
-          in: query
-          description: '9 digit number or null (XXXXXXXXX, null)'
-          required: false
-          schema:
-            type: string
-        - name: stateProvince
-          in: query
-          description: 'A String (NC, XX, null, 470105, YAMALO-NENETSKI OKR.)'
-          required: false
-          schema:
-            type: string
-        - name: terminationDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: terminationDateFrom
-          in: query
-          required: false
-          schema:
-            type: string
-        - name: terminationDateTo
-          in: query
-          required: false
-          schema:
-            type: string
-        - name: ueiDUNS
-          in: query
-          description: >-
-            Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652,
-            047795005, null)
-          required: false
-          schema:
-            type: string
-        - name: ueiSAM
-          in: query
-          description: >-
-            Unique Entity Identifier SAMMI- 12 digit value - Replacement for ueiDUNS
-          required: false
-          schema:
-            type: string
-        - name: updateDate
-          in: query
-          description: A single Date or Date range in the format MM/DD/YYYY
-          required: false
-          schema:
-            type: string
-        - name: zipCode
-          in: query
-          description: >-
-            A String (0, 41722, 21453935, 752435120, 75602-1112, null, C.P.
-            44890, oo957, TQ13 9SE, Zimbabwe, P.O. Box Beirut-Hamra)
-          required: false
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successfully generated file
-        '401':
-          description: You are not authorized to view the resource
-        '403':
-          description: Accessing the resource you were trying to reach is forbidden
-        '404':
-          description: The resource you were trying to reach is not found
-      deprecated: false
-  /sam/v1/exclusion-file:
-    get:
-      tags:
-        - file-download-controller
-      summary: ' download V1, V2 exclusion extract file'
-      operationId: getFileFromS3UsingGET
-      description: need to pass token to download specific file
-      responses:
-        '200':
-          description: Successfully downloaded file
-        '401':
-          description: You are not authorized to view the resource
-        '403':
-          description: Accessing the resource you were trying to reach is forbidden
-        '404':
-          description: The resource you were trying to reach is not found
-      deprecated: false
+  version: "1.0"
 servers:
-  - url: //api-alpha.sam.gov/
+- url: //api-alpha.sam.gov/
+tags:
+- name: exclusions-api-controller
+  description: Operations pertaining to Exclusions API
+- name: exclusions-api-controller-v-2
+  description: Exclusions Api Controller V 2
+- name: exclusions-api-controller-v-3
+  description: Exclusions Api Controller V 3
+- name: file-download-controller
+  description: File Download Controller
+paths:
+  /entity-information/v1/download-exclusions:
+    get:
+      tags:
+      - file-download-controller
+      summary: ' download V1, V2 exclusion extract file'
+      operationId: getFileFromS3UsingGET_1
+      requestBody:
+        description: token to download specific file
+        content:
+          '*/*':
+            schema:
+              type: string
+        required: false
+      responses:
+        200:
+          description: Successfully downloaded file
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ResponseEntity'
+        401:
+          description: You are not authorized to view the resource
+          content: {}
+        403:
+          description: Accessing the resource you were trying to reach is forbidden
+          content: {}
+        404:
+          description: The resource you were trying to reach is not found
+          content: {}
+      deprecated: false
+      x-codegen-request-body-name: token
+  /entity-information/v1/exclusions:
+    get:
+      tags:
+      - exclusions-api-controller
+      summary: ' get Exclusions Details'
+      operationId: getExclusionsDataUsingGET
+      parameters:
+      - name: activationDate
+        in: query
+        description: A single Date or Date range in the format MM/DD/YYYY
+        schema:
+          type: string
+      - name: activationDateFrom
+        in: query
+        schema:
+          type: string
+      - name: activationDateTo
+        in: query
+        schema:
+          type: string
+      - name: addressLine1
+        in: query
+        description: A String (1234 test Dr)
+        schema:
+          type: string
+      - name: addressLine2
+        in: query
+        description: A String (1234 test Dr)
+        schema:
+          type: string
+      - name: cageCode
+        in: query
+        description: A String (0Y5L9, null)
+        schema:
+          type: string
+      - name: city
+        in: query
+        schema:
+          type: string
+      - name: cityState
+        in: query
+        schema:
+          type: string
+      - name: cityStateZipCongFlag
+        in: query
+        schema:
+          type: boolean
+      - name: classification
+        in: query
+        description: A String (Individual, Firm, Vessel, Special Entity Designation,
+          null)
+        schema:
+          type: string
+      - name: country
+        in: query
+        description: A String (USA, CAN, ARE, null)
+        schema:
+          type: string
+      - name: createDateFrom
+        in: query
+        schema:
+          type: string
+      - name: createDateTo
+        in: query
+        schema:
+          type: string
+      - name: creationDate
+        in: query
+        description: A single Date or Date range in the format MM/DD/YYYY
+        schema:
+          type: string
+      - name: ctCode
+        in: query
+        description: A String (A, ZZ, XXX, 03-SDNTK-01, null)
+        schema:
+          type: string
+      - name: emailId
+        in: query
+        description: Email ID
+        schema:
+          type: string
+      - name: exactMatch
+        in: query
+        schema:
+          type: boolean
+      - name: excludedPartyName
+        in: query
+        schema:
+          type: string
+      - name: excludingAgencyCode
+        in: query
+        description: A String (AF, DOJ, FEMA-IOD, null)
+        schema:
+          type: string
+      - name: excludingAgencyName
+        in: query
+        description: A String (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null)
+        schema:
+          type: string
+      - name: exclusionName
+        in: query
+        description: A partial text or a complete text
+        schema:
+          type: string
+      - name: exclusionProgram
+        in: query
+        description: A String (Reciprocal, Non-Procurement, Procurement)
+        schema:
+          type: string
+      - name: exclusionType
+        in: query
+        description: A String (Ineligible (Proceedings Pending), Ineligible (Proceedings
+          Completed), Prohibition/Restriction, Voluntary Exclusion)
+        schema:
+          type: string
+      - name: format
+        in: query
+        description: Parameter used to download csv or json files
+        schema:
+          type: string
+      - name: includeSections
+        in: query
+        description: Schema Filtering Paramter
+        schema:
+          type: string
+      - name: isActive
+        in: query
+        description: A String (Y, N)
+        schema:
+          type: string
+      - name: isDisasterResponseParticipant
+        in: query
+        schema:
+          type: string
+      - name: legalBusinessName
+        in: query
+        schema:
+          type: string
+      - name: naicsCode
+        in: query
+        schema:
+          type: string
+      - name: npi
+        in: query
+        description: A String (1053373266, null)
+        schema:
+          type: string
+      - name: organizationId
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number
+        schema:
+          type: string
+      - name: pscCode
+        in: query
+        schema:
+          type: string
+      - name: q
+        in: query
+        description: Free text, All the above filters and their acceptable values
+          can be used
+        schema:
+          type: string
+      - name: qMode
+        in: query
+        schema:
+          type: string
+      - name: recordStatus
+        in: query
+        description: Record Status (Active, Inactive)
+        schema:
+          type: string
+      - name: registrationStatus
+        in: query
+        schema:
+          type: string
+      - name: size
+        in: query
+        description: Record size per page
+        schema:
+          type: string
+      - name: sort
+        in: query
+        schema:
+          type: string
+      - name: sortOrder
+        in: query
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+      - name: ssnOrTinOrEin
+        in: query
+        description: 9 digit number or null (XXXXXXXXX, null)
+        schema:
+          type: string
+      - name: stateProvince
+        in: query
+        description: A String (NC, XX, null, 470105, YAMALO-NENETSKI OKR.)
+        schema:
+          type: string
+      - name: terminationDate
+        in: query
+        description: A single Date or Date range in the format MM/DD/YYYY
+        schema:
+          type: string
+      - name: terminationDateFrom
+        in: query
+        schema:
+          type: string
+      - name: terminationDateTo
+        in: query
+        schema:
+          type: string
+      - name: title
+        in: query
+        schema:
+          type: string
+      - name: ueiDUNS
+        in: query
+        description: Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652,
+          047795005, null)
+        schema:
+          type: string
+      - name: ueiSAM
+        in: query
+        description: Unique Entity Identifier SAMMI- 12 digit value - Replacement
+          for ueiDUNS
+        schema:
+          type: string
+      - name: updateDate
+        in: query
+        description: A single Date or Date range in the format MM/DD/YYYY
+        schema:
+          type: string
+      - name: zipCode
+        in: query
+        description: A String (0, 41722, 21453935, 752435120, 75602-1112, null, C.P.
+          44890, oo957, TQ13 9SE, Zimbabwe, P.O. Box Beirut-Hamra)
+        schema:
+          type: string
+      responses:
+        200:
+          description: Successfully retrieved list
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ExclusionsResponse'
+        401:
+          description: You are not authorized to view the resource
+          content: {}
+        403:
+          description: Accessing the resource you were trying to reach is forbidden
+          content: {}
+        404:
+          description: The resource you were trying to reach is not found
+          content: {}
+      deprecated: false
+  /entity-information/v2/exclusions:
+    get:
+      tags:
+      - exclusions-api-controller-v-2
+      summary: ' get Exclusions Details'
+      operationId: getExclusionsDataUsingGET_1
+      parameters:
+      - name: activationDate
+        in: query
+        description: A single Date or Date range in the format MM/DD/YYYY
+        schema:
+          type: string
+      - name: activationDateFrom
+        in: query
+        schema:
+          type: string
+      - name: activationDateTo
+        in: query
+        schema:
+          type: string
+      - name: addressLine1
+        in: query
+        description: A String (1234 test Dr)
+        schema:
+          type: string
+      - name: addressLine2
+        in: query
+        description: A String (1234 test Dr)
+        schema:
+          type: string
+      - name: cageCode
+        in: query
+        description: A String (0Y5L9, null)
+        schema:
+          type: string
+      - name: city
+        in: query
+        schema:
+          type: string
+      - name: cityState
+        in: query
+        schema:
+          type: string
+      - name: cityStateZipCongFlag
+        in: query
+        schema:
+          type: boolean
+      - name: classification
+        in: query
+        description: A String (Individual, Firm, Vessel, Special Entity Designation,
+          null)
+        schema:
+          type: string
+      - name: country
+        in: query
+        description: A String (USA, CAN, ARE, null)
+        schema:
+          type: string
+      - name: createDateFrom
+        in: query
+        schema:
+          type: string
+      - name: createDateTo
+        in: query
+        schema:
+          type: string
+      - name: creationDate
+        in: query
+        description: A single Date or Date range in the format MM/DD/YYYY
+        schema:
+          type: string
+      - name: ctCode
+        in: query
+        description: A String (A, ZZ, XXX, 03-SDNTK-01, null)
+        schema:
+          type: string
+      - name: emailId
+        in: query
+        description: Email ID
+        schema:
+          type: string
+      - name: exactMatch
+        in: query
+        schema:
+          type: boolean
+      - name: excludedPartyName
+        in: query
+        schema:
+          type: string
+      - name: excludingAgencyCode
+        in: query
+        description: A String (AF, DOJ, FEMA-IOD, null)
+        schema:
+          type: string
+      - name: excludingAgencyName
+        in: query
+        description: A String (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null)
+        schema:
+          type: string
+      - name: exclusionName
+        in: query
+        description: A partial text or a complete text
+        schema:
+          type: string
+      - name: exclusionProgram
+        in: query
+        description: A String (Reciprocal, Non-Procurement, Procurement)
+        schema:
+          type: string
+      - name: exclusionType
+        in: query
+        description: A String (Ineligible (Proceedings Pending), Ineligible (Proceedings
+          Completed), Prohibition/Restriction, Voluntary Exclusion)
+        schema:
+          type: string
+      - name: format
+        in: query
+        description: Parameter used to download csv or json files
+        schema:
+          type: string
+      - name: includeSections
+        in: query
+        description: Schema Filtering Paramter
+        schema:
+          type: string
+      - name: isActive
+        in: query
+        description: A String (Y, N)
+        schema:
+          type: string
+      - name: isDisasterResponseParticipant
+        in: query
+        schema:
+          type: string
+      - name: legalBusinessName
+        in: query
+        schema:
+          type: string
+      - name: naicsCode
+        in: query
+        schema:
+          type: string
+      - name: npi
+        in: query
+        description: A String (1053373266, null)
+        schema:
+          type: string
+      - name: organizationId
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number
+        schema:
+          type: string
+      - name: pscCode
+        in: query
+        schema:
+          type: string
+      - name: q
+        in: query
+        description: Free text, All the above filters and their acceptable values
+          can be used
+        schema:
+          type: string
+      - name: qMode
+        in: query
+        schema:
+          type: string
+      - name: recordStatus
+        in: query
+        description: Record Status (Active, Inactive)
+        schema:
+          type: string
+      - name: registrationStatus
+        in: query
+        schema:
+          type: string
+      - name: size
+        in: query
+        description: Record size per page
+        schema:
+          type: string
+      - name: sort
+        in: query
+        schema:
+          type: string
+      - name: sortOrder
+        in: query
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+      - name: ssnOrTinOrEin
+        in: query
+        description: 9 digit number or null (XXXXXXXXX, null)
+        schema:
+          type: string
+      - name: stateProvince
+        in: query
+        description: A String (NC, XX, null, 470105, YAMALO-NENETSKI OKR.)
+        schema:
+          type: string
+      - name: terminationDate
+        in: query
+        description: A single Date or Date range in the format MM/DD/YYYY
+        schema:
+          type: string
+      - name: terminationDateFrom
+        in: query
+        schema:
+          type: string
+      - name: terminationDateTo
+        in: query
+        schema:
+          type: string
+      - name: title
+        in: query
+        schema:
+          type: string
+      - name: ueiDUNS
+        in: query
+        description: Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652,
+          047795005, null)
+        schema:
+          type: string
+      - name: ueiSAM
+        in: query
+        description: Unique Entity Identifier SAMMI- 12 digit value - Replacement
+          for ueiDUNS
+        schema:
+          type: string
+      - name: updateDate
+        in: query
+        description: A single Date or Date range in the format MM/DD/YYYY
+        schema:
+          type: string
+      - name: zipCode
+        in: query
+        description: A String (0, 41722, 21453935, 752435120, 75602-1112, null, C.P.
+          44890, oo957, TQ13 9SE, Zimbabwe, P.O. Box Beirut-Hamra)
+        schema:
+          type: string
+      responses:
+        200:
+          description: Successfully retrieved list
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ExclusionsResponseV2'
+        401:
+          description: You are not authorized to view the resource
+          content: {}
+        403:
+          description: Accessing the resource you were trying to reach is forbidden
+          content: {}
+        404:
+          description: The resource you were trying to reach is not found
+          content: {}
+      deprecated: false
+  /entity-information/v3/download-exclusions:
+    get:
+      tags:
+      - exclusions-api-controller-v-3
+      summary: ' download V3 exclusion extract file'
+      operationId: getFileFromS3UsingGET
+      requestBody:
+        description: token to download specific file
+        content:
+          '*/*':
+            schema:
+              type: string
+        required: false
+      responses:
+        200:
+          description: Successfully downloaded file
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ResponseEntity'
+        401:
+          description: You are not authorized to view the resource
+          content: {}
+        403:
+          description: Accessing the resource you were trying to reach is forbidden
+          content: {}
+        404:
+          description: The resource you were trying to reach is not found
+          content: {}
+      deprecated: false
+      x-codegen-request-body-name: token
+  /entity-information/v3/exclusions:
+    get:
+      tags:
+      - exclusions-api-controller-v-3
+      summary: ' get Exclusions Details'
+      operationId: getExclusionsDataUsingGET_2
+      parameters:
+      - name: activationDate
+        in: query
+        description: A single Date or Date range in the format MM/DD/YYYY
+        schema:
+          type: string
+      - name: activationDateFrom
+        in: query
+        schema:
+          type: string
+      - name: activationDateTo
+        in: query
+        schema:
+          type: string
+      - name: addressLine1
+        in: query
+        description: A String (1234 test Dr)
+        schema:
+          type: string
+      - name: addressLine2
+        in: query
+        description: A String (1234 test Dr)
+        schema:
+          type: string
+      - name: cageCode
+        in: query
+        description: A String (0Y5L9, null)
+        schema:
+          type: string
+      - name: city
+        in: query
+        schema:
+          type: string
+      - name: cityState
+        in: query
+        schema:
+          type: string
+      - name: cityStateZipCongFlag
+        in: query
+        schema:
+          type: boolean
+      - name: classification
+        in: query
+        description: A String (Individual, Firm, Vessel, Special Entity Designation,
+          null)
+        schema:
+          type: string
+      - name: country
+        in: query
+        description: A String (USA, CAN, ARE, null)
+        schema:
+          type: string
+      - name: createDateFrom
+        in: query
+        schema:
+          type: string
+      - name: createDateTo
+        in: query
+        schema:
+          type: string
+      - name: creationDate
+        in: query
+        description: A single Date or Date range in the format MM/DD/YYYY
+        schema:
+          type: string
+      - name: ctCode
+        in: query
+        description: A String (A, ZZ, XXX, 03-SDNTK-01, null)
+        schema:
+          type: string
+      - name: emailId
+        in: query
+        description: Email ID
+        schema:
+          type: string
+      - name: exactMatch
+        in: query
+        schema:
+          type: boolean
+      - name: excludedPartyName
+        in: query
+        schema:
+          type: string
+      - name: excludingAgencyCode
+        in: query
+        description: A String (AF, DOJ, FEMA-IOD, null)
+        schema:
+          type: string
+      - name: excludingAgencyName
+        in: query
+        description: A String (FEDERAL, FEDERAL EMERGENCY MANAGEMENT AGENCY, null)
+        schema:
+          type: string
+      - name: exclusionName
+        in: query
+        description: A partial text or a complete text
+        schema:
+          type: string
+      - name: exclusionProgram
+        in: query
+        description: A String (Reciprocal, Non-Procurement, Procurement)
+        schema:
+          type: string
+      - name: exclusionType
+        in: query
+        description: A String (Ineligible (Proceedings Pending), Ineligible (Proceedings
+          Completed), Prohibition/Restriction, Voluntary Exclusion)
+        schema:
+          type: string
+      - name: format
+        in: query
+        description: Parameter used to download csv or json files
+        schema:
+          type: string
+      - name: includeSections
+        in: query
+        description: Schema Filtering Paramter
+        schema:
+          type: string
+      - name: isActive
+        in: query
+        description: A String (Y, N)
+        schema:
+          type: string
+      - name: isDisasterResponseParticipant
+        in: query
+        schema:
+          type: string
+      - name: legalBusinessName
+        in: query
+        schema:
+          type: string
+      - name: naicsCode
+        in: query
+        schema:
+          type: string
+      - name: npi
+        in: query
+        description: A String (1053373266, null)
+        schema:
+          type: string
+      - name: organizationId
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number
+        schema:
+          type: string
+      - name: pscCode
+        in: query
+        schema:
+          type: string
+      - name: q
+        in: query
+        description: Free text, All the above filters and their acceptable values
+          can be used
+        schema:
+          type: string
+      - name: qMode
+        in: query
+        schema:
+          type: string
+      - name: recordStatus
+        in: query
+        description: Record Status (Active, Inactive)
+        schema:
+          type: string
+      - name: registrationStatus
+        in: query
+        schema:
+          type: string
+      - name: size
+        in: query
+        description: Record size per page
+        schema:
+          type: string
+      - name: sort
+        in: query
+        schema:
+          type: string
+      - name: sortOrder
+        in: query
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+      - name: ssnOrTinOrEin
+        in: query
+        description: 9 digit number or null (XXXXXXXXX, null)
+        schema:
+          type: string
+      - name: stateProvince
+        in: query
+        description: A String (NC, XX, null, 470105, YAMALO-NENETSKI OKR.)
+        schema:
+          type: string
+      - name: terminationDate
+        in: query
+        description: A single Date or Date range in the format MM/DD/YYYY
+        schema:
+          type: string
+      - name: terminationDateFrom
+        in: query
+        schema:
+          type: string
+      - name: terminationDateTo
+        in: query
+        schema:
+          type: string
+      - name: title
+        in: query
+        schema:
+          type: string
+      - name: ueiDUNS
+        in: query
+        description: Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652,
+          047795005, null)
+        schema:
+          type: string
+      - name: ueiSAM
+        in: query
+        description: Unique Entity Identifier SAMMI- 12 digit value - Replacement
+          for ueiDUNS
+        schema:
+          type: string
+      - name: updateDate
+        in: query
+        description: A single Date or Date range in the format MM/DD/YYYY
+        schema:
+          type: string
+      - name: zipCode
+        in: query
+        description: A String (0, 41722, 21453935, 752435120, 75602-1112, null, C.P.
+          44890, oo957, TQ13 9SE, Zimbabwe, P.O. Box Beirut-Hamra)
+        schema:
+          type: string
+      responses:
+        200:
+          description: Successfully retrieved list
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ExclusionsResponseV3'
+        401:
+          description: You are not authorized to view the resource
+          content: {}
+        403:
+          description: Accessing the resource you were trying to reach is forbidden
+          content: {}
+        404:
+          description: The resource you were trying to reach is not found
+          content: {}
+      deprecated: false
+components: {}

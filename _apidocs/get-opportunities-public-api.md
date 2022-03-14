@@ -215,7 +215,7 @@ Note: Response for one record is provided as an example <br>
             "typeOfSetAsideDescription": null,
             "typeOfSetAside": "7",
             "responseDeadLine": null,
-            "naicsCode": "236220",
+            "naicsCode": "236220",	
             "classificationCode": "Z",
             "active": "Yes",
             "award": null,

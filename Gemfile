@@ -13,7 +13,6 @@ group :development, :test do
   gem 'rake'
   gem 'html-proofer', '~> 3.10.2'
   gem 'eslintrb'
-  gem 'jekyll-autoprefixer'
   gem 'test-unit'
   gem 'json-schema'
   gem "webrick", "~> 1.7"

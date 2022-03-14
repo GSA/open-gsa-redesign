@@ -175,17 +175,17 @@
 			"theme": ["Other"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Auction Sale Data",
-			"description": "This dataset contains sale data information for Agency reported items sold via GSA Auctions&reg; Sales.  The data is for closed sales during FY2009.  GSA Auctions&reg; offers the public the opportunity to bid electronically on a wide array of Federal assets. The auctions are completely web-enabled, allowing all registered participants to bid on a single item or multiple items (lots) within specified timeframes.  GSA Auctions&reg; sale items include communications, computer, electric, electronic, agricultural, office, photographic, marine, laboratory, medical, dental and veterinary supplies and equipment; trailers, tractors, bicycles and salvage/scrap vehicles; furniture, household and personal items, industrial machinery, jewelry and collectibles.  GSA Auctions&reg; is accessible at http://www.gsaauctions.gov. Unregistered users may browse the site. Registration is required for bidders.",
-			"modified": "2010-11-23",
+			"title": "GSA Auctions",
+			"description": "The General Services Administration (GSA) has a history of pioneering electronic solutions for streamlining and enhancing the management of excess and surplus Federal assets. GSA continued the transformation of the Federal disposal process throughout the late 1990s with the introduction and subsequent refinement of the Federal Disposal System, a centralized electronic clearinghouse for reporting and transferring excess/surplus personal property within the Federal community and among eligible donees.\n\nThe GSA Auctions website (www.gsaauctions.gov) has been developed to complete GSA's transformation to an all-electronic asset management system. The site offers the general public the opportunity to bid electronically on a wide array of Federal assets. The auctions are completely web-enabled, allowing all registered participants to bid on a single item or multiple items (lots) within specified timeframes.\n\nGSA Auctions offers Federal personal property assets ranging from commonplace items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels, and vehicles. GSA Auctions online capabilities allow GSA to offer assets located across the country to any interested buyer, regardless of location.\n\nParticipants may choose to browse items that are offered on this site or may choose to search for items and place bids. In order to place a bid(s), participants must register first. To register, please go to the GSA Auctions homepage and click on register.",
+			"modified": "2022-02-02T17:44:18.543Z",
 			"accessLevel": "public",
 			"identifier": "GSA-4145",
 			"dataQuality": true,
 			"describedBy": "https://www.asap.gsa.gov/datagov/auctions/auctions-data-dictionary.html",
+			"describedByType": "text/html",
 			"issued": "2010-11-23",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"spatial": "National",
+			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
 				"name": "General Services Administration"
@@ -198,21 +198,20 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "application/vnd.ms-excel",
-					"format": "xls",
-					"title": "Auction Sale Data",
-					"downloadURL": "https://www.asap.gsa.gov/datagov/auctions/auctions-data-fy2009.xls"
+					"accessURL": "https://gsaauctions.gov/gsaauctions/gsaauctions/",
+					"format": "html",
+					"title": "GSA Auctions",
+					"description": "GSA Auctions offers Federal personal property assets ranging from commonplace items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels, and vehicles. GSA Auctions online capabilities allow GSA to offer assets located across the country to any interested buyer, regardless of location."
 				}
 			],
-			"keyword": ["ADP", "ADP Equipment", "Auctions", "Automobile", "Computer Equipment", "Furniture", "GSA Auctions", "GSA Auctions Sale Data", "GSA Sales Data", "Jewelry", "Motorcycles", "Property", "Property Data", "Property Sales Data", "Sales", "Trucks", "Vechicles"],
-			"bureauCode": ["023:30"],
-			"programCode": ["023:009"],
-			"language": ["en-us"],
-			"theme": ["Acquisition"]
+			"keyword": ["Agricultural Equipment and Supplies", "Aircraft and Aircraft Parts", "Artifacts Jewelry and Exotic Collectibles", "Boats and Marine Equipment", "Communication Equipment", "Construction Equipment", "Electrical and Electronic Equipment and Components", "Fire Trucks and Fire Fighting Equipment", "Hand Tools and Shop Equipment", "Household and Personal", "Industrial Machinery", "Lab Equipment", "Medical Dental and Veterinary Equipment and Supplies", "Miscellaneous", "Motorcycles and Bicycles", "NASA Shuttle and Hubble", "Office Equipment and Supplies", "Photographic Equipment", "Trailers Tractors and Manufactured Housing", "Vehichles", "furniture", "real estate"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-us"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Auctions API",
-			"description": "GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles. GSA Auctions’ online capabilities allow GSA to offer assets located across the country to any interested buyer, regardless of location.    Build your own tools using our API to access GSA Auctions listings.  The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data.  The output data will be in XML and JSON format. These files are downloadable.  The data in the API output file is live data.",
+			"description": "GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles. GSA Auctions\u2019 online capabilities allow GSA to offer assets located across the country to any interested buyer, regardless of location.    Build your own tools using our API to access GSA Auctions listings.  The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data.  The output data will be in XML and JSON format. These files are downloadable.  The data in the API output file is live data.",
 			"modified": "2018-09-24",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-11-09-01",
@@ -411,6 +410,40 @@
 			"theme": ["Other"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Category Management (CM) Plan Workbench",
+			"description": "This workbook is a series of tools for Departments to use for their planning of the next FY for Category Management purposes; contract shifting from Tier 0 to Managed tiers, etc.",
+			"modified": "2021-07-16T16:59:04.037Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/html",
+					"format": "html",
+					"title": "Category Management (CM) Plan Workbench",
+					"downloadURL": "https://d2d.gsa.gov/report/government-wide-category-management-contract-management-and-operational-reporting-tools"
+				}
+			],
+			"keyword": ["FPDS", "FY Plan", "Spend Under Management", "obligation"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "CIO Governance Board Membership List",
 			"description": "Json file for CIO Governance Board Membership List",
 			"modified": "2015-09-01",
@@ -552,6 +585,72 @@
 			"programCode": ["023:010"],
 			"language": ["en-us"],
 			"theme": ["Travel and Transportation"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Commercial Platforms Sales Data",
+			"description": "A aggregate collection of Commercial Platforms sales across all platforms",
+			"modified": "2021-07-29T16:44:06.857Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-07-29-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "Vendor sensitive",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Stephanie Fultz",
+				"hasEmail": "mailto:stephanie.fultz@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/fas-commercial-platforms-government-wide-operational-dashboard",
+					"title": "Commercial Platforms Sales Data",
+					"description": "A aggregate collection of Commercial Platforms sales across all platforms"
+				}
+			],
+			"keyword": ["Commercial Platforms", "Micropurchase"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Common and Defense Centric Spend Tables",
+			"description": "Top-level view of annual Obligation totals for Categories and Subcategories.  Also includes Small Business utilization.  The only GWCM Dashboard that includes all 19 Lv1 categories (the other dashboards only include common-spend categories).",
+			"modified": "2021-07-16T17:21:58.837Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-02",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/government-wide-category-management-oversight-performance-management-tools",
+					"title": "Common and Defense Centric Spend Tables",
+					"description": "Top-level view of annual Obligation totals for Categories and Subcategories.  Also includes Small Business utilization.  The only GWCM Dashboard that includes all 19 Lv1 categories (the other dashboards only include common-spend categories)."
+				}
+			],
+			"keyword": ["FPDS", "obligation", "small business"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Concur - Reporting Authorization Model",
@@ -758,7 +857,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "COVID Support Services",
-			"description": "In January 2021, GSA’s Federal Acquisition Service (FAS) was asked to support the Department of Health and Human Services’ Center for Disease Control (CDC) to assist federal, state and local agencies to quickly procure COVID-19 related support services (CRSS) should they be needed as part of the nation’s COVID-19 response.",
+			"description": "In January 2021, GSA\u2019s Federal Acquisition Service (FAS) was asked to support the Department of Health and Human Services\u2019 Center for Disease Control (CDC) to assist federal, state and local agencies to quickly procure COVID-19 related support services (CRSS) should they be needed as part of the nation\u2019s COVID-19 response.",
 			"modified": "2021-03-18T17:45:52.044Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-03-18-01",
@@ -782,6 +881,7 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"accessURL": "https://d2d.gsa.gov/dataset/covid-support-services",
+					"format": "html",
 					"title": "COVID Support Services"
 				}
 			],
@@ -1399,7 +1499,7 @@
 					"mediaType": "application/pdf",
 					"format": "pdf",
 					"title": "DCOI CIO Statement May 2021",
-					"description": "May 1, 2021 - GSA has verified that our Strategic Plan is a valid JSON file, conforms to the schema on management.cio.gov/schema, and addresses all of the requirements for it specified in the DCOI. \r\n\r\nIt further confirms that this Strategic Plan has been posted publicly as requested in the template at [agency.gov]/digitalstrategy/datacenteroptimizationstrategicplan.json under the heading “Data Center Optimization Initiative Strategic Plans”.",
+					"description": "May 1, 2021 - GSA has verified that our Strategic Plan is a valid JSON file, conforms to the schema on management.cio.gov/schema, and addresses all of the requirements for it specified in the DCOI. \r\n\r\nIt further confirms that this Strategic Plan has been posted publicly as requested in the template at [agency.gov]/digitalstrategy/datacenteroptimizationstrategicplan.json under the heading \u201cData Center Optimization Initiative Strategic Plans\u201d.",
 					"downloadURL": "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/c61e4b8a-4a4a-46b3-9d95-36d227bc28c3/download/gsa-dcoi-cio-signature.pdf"
 				}
 			],
@@ -2244,9 +2344,89 @@
 					"format": "xlsx",
 					"title": "EISTotRevFY21_Q2",
 					"downloadURL": "https://inventory.data.gov/dataset/1ce62e42-2604-4102-8119-3355e45903bc/resource/2a9bd8cf-f847-46f5-941e-d9de57350f55/download/eistotrevfy21_q2.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "EISTotRevFY21_Q3",
+					"description": "EISTotRevFY21_Q3",
+					"downloadURL": "https://inventory.data.gov/dataset/1ce62e42-2604-4102-8119-3355e45903bc/resource/4e75cd88-db6a-4db6-991a-93c275af7d0f/download/eistotrevfy21_q3.xlsx"
+				}, {
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"format": "xlsx",
+					"title": "EISTotRevFY21_Q4",
+					"description": "EISTotRevFY21_Q4",
+					"downloadURL": "https://inventory.data.gov/dataset/1ce62e42-2604-4102-8119-3355e45903bc/resource/54ddaae3-9014-48fe-a999-4673f4429fa2/download/eistotrevfy21_q4.xlsx"
 				}
 			],
 			"keyword": ["EIS", "business-volume", "enterprise-infrastructure", "gsa", "telecommunications"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Executive Summary Dashboard FY20",
+			"description": "New as of FY20, this is the current top-level dashboard for performance against OMB KPI targets, at Government-Wide, Category, and Department levels.  (New version coming early FY22).",
+			"modified": "2021-07-16T17:28:16.109Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-16-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/executive-summary-dashboard",
+					"title": "Executive Summary Dashboard FY20",
+					"description": "New as of FY20, this is the current top-level dashboard for performance against OMB KPI targets, at Government-Wide, Category, and Department levels.  (New version coming early FY22)."
+				}
+			],
+			"keyword": ["BIC", "Contract Reduction", "Cost Avoidance", "FPDS", "KPI", "Small Business", "Spend Under Management", "obligation", "opm"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FAS Connections II Data Feed",
+			"description": "The Connections II data displays obligated sales and task orders by agency, bureau and by industry partner for the Connections II Program.  (Connections II is now expired and is not accepting any new task orders. )",
+			"modified": "2021-07-29T17:30:05.935Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-07-29-05",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "Private",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Bart Bates",
+				"hasEmail": "mailto:james.bates@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/dataset/fas-connections-ii-data-feed",
+					"title": "FAS Connections II Data Feed",
+					"description": "The Connections II data displays obligated sales and task orders by agency, bureau and by industry partner for the Connections II Program. (Connections II is now expired and is not accepting any new task orders. )"
+				}
+			],
+			"keyword": ["FPDS Link", "Federal Agency", "Industry Partner"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
@@ -2285,6 +2465,39 @@
 			"programCode": ["023:014"],
 			"language": ["us-EN"],
 			"theme": ["Contracting", "FAS"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FAS Governmentwide Acquisition Contracts (GWAC) Data Feed",
+			"description": "The GWAC data displays obligated sales and task orders by agency, bureau and by industry partner for three GWAC programs: 8A Stars II, Alliant 2 and VETS 2.",
+			"modified": "2021-07-29T17:24:44.185Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-07-29-04",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "Private",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Bart Bates",
+				"hasEmail": "mailto:james.bart@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/dataset/fas-gwac-data-feed",
+					"title": "FAS Governmentwide Acquisition Contracts (GWAC) Data Feed",
+					"description": "The GWAC data displays obligated sales and task orders by agency, bureau and by industry partner for three GWAC programs: 8A Stars II, Alliant 2 and VETS 2."
+				}
+			],
+			"keyword": ["Contract Family", "FPDS Link", "Federal Agency", "Industry Partner"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "FAS Instructional Letters 2007-01 Procedures for Financial Responsibility",
@@ -2424,7 +2637,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "FedBizOpps Documentation",
-			"description": "In addition to the ability to interact directly with FedBizOpps using its on-line web interface, the service supports Web Services for Federal buyers to post information to the database using their agency’s electronic procurement system",
+			"description": "In addition to the ability to interact directly with FedBizOpps using its on-line web interface, the service supports Web Services for Federal buyers to post information to the database using their agency\u2019s electronic procurement system",
 			"modified": "2018-01-09",
 			"accessLevel": "public",
 			"identifier": "GSA - 138672",
@@ -3392,7 +3605,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Fed. Data Center Consolidation Initiative (FDCCI) Data Center Closings 2010-2015",
-			"description": "Posted quarterly, using FDCCI Task Force data reported to OMB through the quarterly Integrated Data Collection (IDC) deadline. Federal Data Center Consolidation Initiative (FDCCI) Data Center Closures 2010-2015. Under the FDDCI, agencies have categorized their agency data center populations into two categories: core and non-core. The government is closing 40% of agency-identified, non-­core data centers, while optimizing agency-identified core-data centers, according to a series of total cost of ownership metrics (see OMB M-13-09 and OMB M-14-08). This dataset reflects information only for agency-identified, non-core closures. All questions or inquiries should be directed to the specific agencies. The FY2010 through FY2015 dataset provides a list of planned or closed data centers by agency and by city/state location since the FDCCI started. Please note ?OTHER? is listed for data centers in cloud, co-located or managed service data centers, where square footage is unavailable. See related information about the FDCCI, including the definition of a data center and other FAQs at http://cio.gov/fdcci.",
+			"description": "Posted quarterly, using FDCCI Task Force data reported to OMB through the quarterly Integrated Data Collection (IDC) deadline. Federal Data Center Consolidation Initiative (FDCCI) Data Center Closures 2010-2015. Under the FDDCI, agencies have categorized their agency data center populations into two categories: core and non-core. The government is closing 40% of agency-identified, non-\u00adcore data centers, while optimizing agency-identified core-data centers, according to a series of total cost of ownership metrics (see OMB M-13-09 and OMB M-14-08). This dataset reflects information only for agency-identified, non-core closures. All questions or inquiries should be directed to the specific agencies. The FY2010 through FY2015 dataset provides a list of planned or closed data centers by agency and by city/state location since the FDCCI started. Please note ?OTHER? is listed for data centers in cloud, co-located or managed service data centers, where square footage is unavailable. See related information about the FDCCI, including the definition of a data center and other FAQs at http://cio.gov/fdcci.",
 			"modified": "2015-11-16",
 			"accessLevel": "public",
 			"identifier": "GSA - 32830",
@@ -3431,7 +3644,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Federal Fleet Report",
 			"description": "Annual report of Federal agencies' motor vehicle fleet data collected in the Federal Automotive Statistical Tool (FAST), a web-based reporting tool cosponsored by GSA and the Department of Energy. The Federal Fleet Report is a year-end snapshot of motor vehicle fleet inventory, cost, and use data from agency data submissions, and the resulting data tables are available in these datasets.",
-			"modified": "2015-11-16",
+			"modified": "2022-02-17T19:48:14.134Z",
 			"accessLevel": "public",
 			"identifier": "GSA-4543",
 			"dataQuality": true,
@@ -3446,8 +3659,8 @@
 			"accrualPeriodicity": "R/P1Y",
 			"contactPoint": {
 				"@type": "vcard:Contact",
-				"fn": "Edward E Lawler",
-				"hasEmail": "mailto:ed.lawler@gsa.gov"
+				"fn": "vehicle.policy@gsa.gov",
+				"hasEmail": "mailto:vehicle.policy@gsa.gov"
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
@@ -3458,8 +3671,8 @@
 				}
 			],
 			"keyword": ["FAST report", "federal fleet", "federal fleet report", "fleet cost", "fleet inventory", "fleet report", "fleet utilization", "motor vehicle fleet", "motor vehicles"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:005"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
 			"language": ["en-us"],
 			"theme": ["Travel and Transportation"]
 		}, {
@@ -3489,14 +3702,14 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 					"format": "xlsx",
-					"title": "Data Dictionary for Hiring Assessment and Selection Outcome Dataset",
+					"title": "Data Dictionary for Federal Hiring Dataset December 31 2021.xlsx",
 					"description": "This is the Data Dictionary for the Hiring Assessment and Selection Outcome Dataset.",
-					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/e91deb82-0d38-48f9-8dd2-6109619758e6/download/data-dictionary-for-federal-hiring-dataset-february-28-2021.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/5f414e14-cac5-4c90-a0e4-ed17fdc751e3/download/data-dictionary-for-federal-hiring-dataset-december-31-2021.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
-					"mediaType": "text/csv",
-					"title": "Hiring-Selections-and-Outcomes-Public-Data-Set-February-28-2021.csv",
-					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/0865127a-d75a-40ac-be33-aae2b5a8a7cf/download/hiring-selections-and-outcomes-public-data-set-february-28-2021.csv"
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "Hiring Selections and Outcomes Public Data Set as of Dec 31 2021.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/f2b0508f-6853-4e66-b0d0-c1ddad4744d4/download/hiring-selections-and-outcomes-public-data-set-as-of-dec-31-2021.xlsx"
 				}
 			],
 			"keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -4125,6 +4338,306 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "FY16 Per Diem Reimbursement Rates & API",
+			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2016, as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-20T11:49:24.010Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-17-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY16 PER DIEM RATES.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/c86f0305-2073-48bb-891d-330c4ef485f0/resource/7f8a30f7-0cba-46d9-8c16-da4e58559bd6/download/fy16-per-diem-rates.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY17 Per Diem Reimbursement Rates & API",
+			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year's 2017, as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-20T11:48:55.405Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-17-02",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY17 PER DIEM RATES .csv",
+					"downloadURL": "https://inventory.data.gov/dataset/50f7d2e0-15d3-4687-a2b1-5969fa1858d4/resource/8a02e394-b093-42d5-871b-6ba62ddcbf02/download/fy17-per-diem-rates-.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY17 Tenant Satisfaction Survey (TSS) Individual Responses with Comments",
+			"description": "A CSV export of Tenant Satisfaction Survey individual responses with comments, file does not contain PII",
+			"modified": "2021-05-25T16:58:44.930Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-02",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this TSS report has stated that it is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY17_TSS_Individual_Results_with_Comments.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/0bb971ac-faf6-4144-9e77-f67ee245f59e/resource/6695811f-23bb-4f01-8e2a-8d22bc5f21a2/download/fy17_tss_individual_results_with_comments.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "TSS", "air quality", "bathrooms", "building", "building security", "common areas", "condition", "desk", "elevators", "satisfaction", "survey results", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY17 Tenant Satisfaction Survey (TSS) Summarized Results",
+			"description": "A CSV export of Tenant Satisfaction Survey results summarized at the building and individual question level.",
+			"modified": "2021-05-25T17:02:44.996Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC stated that this TSS report is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY17_TSS_Summarized_Results.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/30ce10f0-28ce-443b-a509-f4844e208609/resource/729fa561-e91d-4166-932f-2c57ed516521/download/fy17_tss_summarized_results.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Condition", "Happiness", "Lighting", "Survey", "TSS", "air quality", "building", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY18 Per Diem Reimbursement Rates & API",
+			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2018, as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-20T11:48:15.159Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-17-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY18 PER DIEM RATES.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/85bc7283-d635-41f2-a71d-cb4aeae84bfe/resource/df95bc75-e62d-48ef-bdd0-e7c708771222/download/fy18-per-diem-rates.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY18 Tenant Satisfaction Survey Individual Responses with Comments",
+			"description": "A CSV export of Tenant Satisfaction Survey (TSS) individual responses with comments, file does not contain PII.",
+			"modified": "2021-05-25T17:01:43.444Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-04",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this report has stated this is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY18_TSS_Individual_Results_with_Comments.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/70e9e4ea-6244-4447-aa2c-3516a9267de7/resource/11ef082d-034a-432a-9a23-fdd35fe51790/download/fy18_tss_individual_results_with_comments.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "TSS", "air quality", "bathrooms", "building", "building security", "common areas", "condition", "desk", "elevators", "satisfaction", "survey results"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY18 Tenant Satisfaction Survey (TSS) Summarized Results",
+			"description": "A CSV export of Tenant Satisfaction Survey (TSS) results summarized at the building and individual question level.",
+			"modified": "2021-05-25T17:00:57.825Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-05",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this report has stated this report is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY18_TSS_Summarized_Results.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/260d9579-065a-4ce0-a79e-e780b9bf27bb/resource/319ba928-a4ed-4dee-bebe-85d79d857fb4/download/fy18_tss_summarized_results.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "Lighting", "Survey", "TSS", "air quality", "building", "condition", "satisfaction", "tenant"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY19 Per Diem Reimbursement Rates & API",
+			"description": "The dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2019, as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-16T18:18:02.477Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-16-05",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY19 PER DIEM RATES.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/02f805a7-2063-4159-88b4-1bdc0fdb73ef/resource/25668ce6-97aa-4da7-bdd8-232d8107c47f/download/fy19-per-diem-rates.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "FY19 Tenant Satisfaction Survey (TSS) Individual Responses with Comments",
 			"description": "A CSV export of Tenant Satisfaction Survey individual responses with comments, file does not contain PII.",
 			"modified": "2021-05-25T17:00:31.848Z",
@@ -4158,9 +4671,42 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "FY19 Tenant Satisfaction Survey (TSS) Summarized Results",
+			"description": "A CSV export of Tenant Satisfaction Survey (TSS) results summarized at the building and individual question level.",
+			"modified": "2021-05-25T17:00:04.522Z",
+			"accessLevel": "non-public",
+			"identifier": "GSA-2021-05-24-07",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "The POC for this report has stated it is Restricted.",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Aaron Eisenbarth",
+				"hasEmail": "mailto:aaron.eisenbarth@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY19_TSS_Summarized_Results.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/0bdbca3d-c492-4503-a445-a7738f975c18/resource/3b0fd369-7089-4f54-a24d-82228d7c5c2d/download/fy19_tss_summarized_results.csv"
+				}
+			],
+			"keyword": ["Cleanliness", "Happiness", "Lighting", "TSS", "air quality", "building", "condition", "satisfaction", "survey"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "FY 2020 Federal Real Property Profile Data for Civilian Agencies",
-			"description": "A CSV export of data from FRPP, a database of Federal real property for civilian agencies.",
-			"modified": "2021-06-23T12:43:03.133Z",
+			"description": "A csv export of data from FRPP, a database of Federal real property for civilian agencies.",
+			"modified": "2021-11-05T13:54:47.294Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-04-27-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -4181,8 +4727,8 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
-					"title": "FRPP_Public_Dataset_FY2020_final.csv",
-					"downloadURL": "https://inventory.data.gov/dataset/a1072b46-cf6b-443e-bfa2-dad7f1ab4195/resource/d9aae813-cb4f-4fe3-910f-2a520fb60176/download/frpp_public_dataset_fy2020_final.csv"
+					"title": "FRPP_Public_Dataset_FY2020_Final_Update_10012021.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/a1072b46-cf6b-443e-bfa2-dad7f1ab4195/resource/8dcd5905-35a9-4294-ac8e-c29732dd437e/download/frpp_public_dataset_fy2020_final_update_10012021.csv"
 				}
 			],
 			"keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "RTF", "building", "civilian", "gsa", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -4222,6 +4768,134 @@
 				}
 			],
 			"keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "Installation Name", "building", "land", "real property", "structure"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY20 Per Diem Reimbursement Rates & API",
+			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2020, as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-16T18:03:46.357Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-16-04",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY20 PER DIEM RATES.csv",
+					"downloadURL": "https://inventory.data.gov/dataset/38283c41-c371-43c7-a93f-81df2cb4dffa/resource/77e91f81-66e4-45bc-84c5-84e60093903f/download/fy20-per-diem-rates.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY21 Per Diem Reimbursement Rates & API",
+			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for  locations across the continental United States for Fiscal Year 2021 as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-16T18:02:52.856Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-16-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "Zip Code FY 2021.csv",
+					"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 20201, as well as the standard per diem rates for any locations not specifically listed.",
+					"downloadURL": "https://inventory.data.gov/dataset/412dd13b-504e-43d4-8457-82302a68394a/resource/a743b5d1-3f0c-4763-8ec6-2a07f54ce8f1/download/zip-code-fy-2021.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals", "meals and incidental expenses", "per diem"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "FY22 Per Diem Reimbursement Rates & API",
+			"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2022, as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-16T17:17:24.093Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-16-02",
+			"license": "https://opendatacommons.org/licenses/pddl/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
+			"isPartOf": "GSA-2021-08-16-01",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "GSA Travel Policy",
+				"hasEmail": "mailto:travelpolicy@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "text/csv",
+					"title": "FY2022_ZipCodeFile.csv",
+					"description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for FY2022.",
+					"downloadURL": "https://inventory.data.gov/dataset/26b45920-c84f-4205-8720-b83bad34947d/resource/d6329b1d-2ad8-42ce-b7c3-2e226e23d872/download/fy2022_zipcodefile.csv"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
+					"title": "Per Diem Rates"
+				}, {
+					"@type": "dcat:Distribution",
+					"accessURL": "https://open.gsa.gov/api/perdiem/",
+					"title": "Per Diem API (JSON)"
+				}
+			],
+			"keyword": ["lodging", "meals and incidental expenses", "per diem"],
 			"bureauCode": ["015:11"],
 			"programCode": ["015:001"],
 			"language": ["en-US"]
@@ -4323,41 +4997,107 @@
 			"theme": ["API"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": ".Gov Domains",
-			"description": "This dataset offers the list of all .gov domains, including state, local, and tribal .gov domains. It does not include .mil domains, or other federal domains outside of .gov and .fed.us.",
-			"modified": "2021-04-27T12:33:06.514Z",
+			"title": "Government Wide Category Management Agency Profile 2.0",
+			"description": "Newer version of the Agency Profile Report as of FY20.  This dashboard provides Department-level views of obligation aggregates by various breakdowns: Tier, Contract, Vendor, etc.  Also provides counts of Expiring contracts and awards as well as purchasing vehicle types.",
+			"modified": "2021-07-16T17:33:04.719Z",
 			"accessLevel": "public",
-			"identifier": "GSA-138675",
-			"dataQuality": true,
-			"landingPage": "https://raw.githubusercontent.com/cisagov/dotgov-data/main/current-full.csv",
+			"identifier": "GSA-2021-07-16-04",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
 			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
-				"name": "General Services Administration"
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
 			},
-			"accrualPeriodicity": "R/P1Y",
 			"contactPoint": {
 				"@type": "vcard:Contact",
-				"fn": "DotGov Program",
-				"hasEmail": "mailto:dotgov@cisa.dhs.gov"
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "text/csv",
-					"format": "csv",
-					"title": "Full Domain Report",
-					"downloadURL": "https://raw.githubusercontent.com/cisagov/dotgov-data/main/current-full.csv"
+					"accessURL": "https://d2d.gsa.gov/report/government-wide-category-management-oversight-performance-management-tools",
+					"title": "Government Wide Category Management Agency Profile 2.0",
+					"description": "Newer version of the Agency Profile Report as of FY20.  This dashboard provides Department-level views of obligation aggregates by various breakdowns: Tier, Contract, Vendor, etc.  Also provides counts of Expiring contracts and awards as well as purchasing vehicle types."
 				}
 			],
-			"keyword": [".gov domains"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:019"],
+			"keyword": ["FPDS", "Spend Under Management", "obligation"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Government Wide Category Management (GWCM) Small Business Dashboard",
+			"description": "Focused on Small Business obligations, vendors, and the breakout of same by various Socioeconomic Indicator flags.",
+			"modified": "2021-07-29T17:02:19.398Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-29-02",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/small-business-dashboard",
+					"title": "Government Wide Category Management (GWCM) Small Business Dashboard",
+					"description": "Focused on Small Business obligations, vendors, and the breakout of same by various Socioeconomic Indicator flags."
+				}
+			],
+			"keyword": ["FPDS", "obligation", "small business"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Government Wide Category Management (GWCM) Solutions Profile Report",
+			"description": "This dashboard is specific to BIC solutions, compiling FPDS obligation data, Transactional submission data from the solutions, and Cost Avoidance data.  Used for the semi-annual BIC reviews as well as comparative views between solution-managing categories/agencies and contract solutions.",
+			"modified": "2021-07-29T17:13:11.279Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-07-29-03",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "General Services Administration"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://d2d.gsa.gov/report/new-solutions-profile-report",
+					"title": "Government Wide Category Management (GWCM) Solutions Profile Report",
+					"description": "This dashboard is specific to BIC solutions, compiling FPDS obligation data, Transactional submission data from the solutions, and Cost Avoidance data.  Used for the semi-annual BIC reviews as well as comparative views between solution-managing categories/agencies and contract solutions."
+				}
+			],
+			"keyword": ["FPDS", "obligation", "small business"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "GSA Bureau IT Leadership Directory",
-			"description": "Each agency is expected to post a JSON file for their Bureau IT Leadership Directory. Each dataset should include one record for each agency employee with the title of “chief information officer” or who performs the duties and responsibilities of a CIO but does not necessarily have the title of CIO.",
+			"description": "Each agency is expected to post a JSON file for their Bureau IT Leadership Directory. Each dataset should include one record for each agency employee with the title of \u201cchief information officer\u201d or who performs the duties and responsibilities of a CIO but does not necessarily have the title of CIO.",
 			"modified": "2018-02-28",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-12-05-01",
@@ -4377,7 +5117,7 @@
 					"mediaType": "application/json",
 					"format": "json",
 					"title": "GSA Bureau IT Leadership Directory",
-					"description": "Each agency is expected to post a JSON file for their Bureau IT Leadership Directory. Each dataset should include one record for each agency employee with the title of “chief information officer” or who performs the duties and responsibilities of a CIO but does not necessarily have the title of CIO.",
+					"description": "Each agency is expected to post a JSON file for their Bureau IT Leadership Directory. Each dataset should include one record for each agency employee with the title of \u201cchief information officer\u201d or who performs the duties and responsibilities of a CIO but does not necessarily have the title of CIO.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/bureauITLeadershipSchema.json",
 					"describedBy": "https://management.cio.gov/schemaexamples/bureauITLeadershipSchema.json",
 					"describedByType": "application/json",
@@ -4492,8 +5232,9 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "EDI JSON 06 24 21.json",
-					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b6620508-e759-4de6-aa32-0be0b75c11e7/download/edi-json-06-24-21.json"
+					"title": "EDI JSON 03/04/22",
+					"description": "EDI JSON file for 03/04/22",
+					"downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6a316a1e-0297-4602-a063-47bf22c06dfc/download/edi-json-03-04-22.json"
 				}
 			],
 			"keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -4503,7 +5244,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "GSA Enterprise Roadmap",
-			"description": "As is described in OMB Memorandum 13-09, the Enterprise Roadmap is an annual summary of information technology (IT) initiatives that implement the agency’s Information Resources Management (IRM) Strategic Plan. OMB will provide the agency Chief Information Officer with specific areas to comment on in the Roadmap with regard to IT mission and support functions that can be more effectively or efficiently provided through shared services or a transfer/termination of functions. OMB will conduct an analysis of Roadmap submissions during October and will engage directly with agencies on these areas of interest as part of the quarterly PortfolioStat review process.",
+			"description": "As is described in OMB Memorandum 13-09, the Enterprise Roadmap is an annual summary of information technology (IT) initiatives that implement the agency\u2019s Information Resources Management (IRM) Strategic Plan. OMB will provide the agency Chief Information Officer with specific areas to comment on in the Roadmap with regard to IT mission and support functions that can be more effectively or efficiently provided through shared services or a transfer/termination of functions. OMB will conduct an analysis of Roadmap submissions during October and will engage directly with agencies on these areas of interest as part of the quarterly PortfolioStat review process.",
 			"modified": "2016-09-27",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-09-27-01",
@@ -4699,8 +5440,8 @@
 					"@type": "dcat:Distribution",
 					"mediaType": "application/json",
 					"format": "json",
-					"title": "GSA FITARA Actions and Milestones 2020-05-13",
-					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the Feb. 2021, quarterly submission to OMB on Feb. 28, 2021.",
+					"title": "GSA FITARA Actions and Milestones 2022-02-10",
+					"description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the Feb 2022 quarterly submission to OMB on February 10, 2022.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
 				}
@@ -4732,7 +5473,7 @@
 					"mediaType": "application/json",
 					"format": "JSON",
 					"title": "GSA IT Reform Cost Savings/Avoidance",
-					"description": "GSA's May 2021 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+					"description": "GSA's February 2022 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
 					"conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
 					"downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
 				}
@@ -4744,7 +5485,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "GSA IT Policy Archive Zip",
-			"description": "A compressed zip file containing all of GSA's public IT policy documents, posted publicly at gsa.gov]/digitalstrategy/policyarchive.zip and identified in the agency public data listing as “Agency IT Policy Archive”.",
+			"description": "A compressed zip file containing all of GSA's public IT policy documents, posted publicly at gsa.gov]/digitalstrategy/policyarchive.zip and identified in the agency public data listing as \u201cAgency IT Policy Archive\u201d.",
 			"modified": "2019-01-30",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-11-02-01",
@@ -4763,7 +5504,7 @@
 					"mediaType": "application/zip",
 					"format": "ZIP",
 					"title": "GSA IT Policy Archive Zip",
-					"description": "Last update: 2021-05-13",
+					"description": "Last update: 2021-11-12",
 					"downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
 				}
 			],
@@ -4908,6 +5649,41 @@
 			"theme": ["Advisory Committee"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Human Capital Golden Data Test Set",
+			"description": "A synthetic set of realistic, non-PII, fictitious employee profiles and test scenarios to test Human Resource (HR), Time and Attendance (T&A), and Payroll Systems.",
+			"modified": "2021-10-14T13:14:22.859Z",
+			"accessLevel": "public",
+			"identifier": "GSA 2021-10-12-01",
+			"dataQuality": true,
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Human Resources Management",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Human Resources Management"
+				}
+			},
+			"accrualPeriodicity": "irregular",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Steve Krauss",
+				"hasEmail": "mailto:steve.krauss@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://ussm.gsa.gov/golden-data-test-set/",
+					"title": "Human Capital Golden Data Test Set",
+					"description": "A synthetic set of realistic, non-PII, fictitious employee profiles and test scenarios to test Human Resource (HR), Time and Attendance (T&A), and Payroll Systems."
+				}
+			],
+			"keyword": ["Synthetic", "data", "fictitious", "golden data", "hr", "human resources", "non-PII", "scenario", "test"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "Interactive Financial Charts- Agency Financial Reports",
 			"description": "For a visual depiction of GSA's Balance Sheet and Statement of Net Cost, please use the interactive charts to view the financial results for fiscal years 2007-2013.",
 			"modified": "2013-12-31",
@@ -4973,7 +5749,7 @@
 			"accessLevel": "non-public",
 			"identifier": "GSA-2021-03-22-04",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "The Internal Partner Satisfaction Survey (IPSS) is an annual study to evaluate the level of service being provided by GSA’s staff offices to their internal customers (i.e., GSA employees).",
+			"rights": "The Internal Partner Satisfaction Survey (IPSS) is an annual study to evaluate the level of service being provided by GSA\u2019s staff offices to their internal customers (i.e., GSA employees).",
 			"publisher": {
 				"@type": "org:Organization",
 				"name": "Office of Customer Experience",
@@ -5013,7 +5789,7 @@
 			"accessLevel": "non-public",
 			"identifier": "GSA-2021-03-22-03",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "The Internal Partner Satisfaction Survey (IPSS) is an annual study to evaluate the level of service being provided by GSA’s staff offices to their internal customers (i.e., GSA employees).",
+			"rights": "The Internal Partner Satisfaction Survey (IPSS) is an annual study to evaluate the level of service being provided by GSA\u2019s staff offices to their internal customers (i.e., GSA employees).",
 			"publisher": {
 				"@type": "org:Organization",
 				"name": "Office of Customer Experience",
@@ -5048,8 +5824,8 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Inventory of Owned and Leased Properties (IOLP)",
-			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA’s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.  \r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA’s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
-			"modified": "2021-01-22T19:02:53.860Z",
+			"description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\r\n\r\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\r\n\r\n- Location Code - GSA\u2019s alphanumeric identifier for the building \r\n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \r\n- GSA Region - GSA assigned region for building location. \r\n- Street Address/City/State/Zip Code - Building Address. \r\n- Latitude and Longitude - Map coordinates of the building. \r\n- Building Rentable Square Feet - Total Rentable Square Feet in building. \r\n- Available Square Feet - Vacant Space in building. \r\n- Construction Date - Date of year built. \r\n- Congressional District - Congressional District building is located. -\r\n Senator/Representative/URL - Senator/Representative of the Congressional District and their web address.  \r\n\r\nThe Leased Data set also includes the following: \r\n\r\n- Lease Number - GSA\u2019s alphanumeric identifier for the lease. \r\n- Lease Effective Date - Date lease starts. \r\n- Lease Expiration Date - Date lease expires.",
+			"modified": "2022-03-14T12:03:48.134Z",
 			"accessLevel": "public",
 			"identifier": "GSA-4495",
 			"dataQuality": true,
@@ -5061,6 +5837,7 @@
 				"@type": "org:Organization",
 				"name": "General Services Administration"
 			},
+			"accrualPeriodicity": "R/PT1S",
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "Valerie R Butler",
@@ -5069,22 +5846,18 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format": "xlsx",
 					"title": "IOLP Buildings.xlsx",
-					"description": "IOLP Buildings",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/14068dc5-208c-4d87-8449-b5a2bf6c75a4/download/iolp-buildings.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/de3ce964-322d-4f4f-a42c-f654c4c9b20e/download/iolp-buildings.xlsx"
 				}, {
 					"@type": "dcat:Distribution",
 					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format": "xlsx",
 					"title": "IOLP Leases.xlsx",
-					"description": "IOLP Leases",
-					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/7d57d3df-6ad4-4ea6-90f8-69e8deb389aa/download/iolp-leases.xlsx"
+					"downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/02d07c5d-818a-497b-9fba-663a6053e721/download/iolp-leases.xlsx"
 				}
 			],
 			"keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
-			"bureauCode": ["023:05"],
-			"programCode": ["023:004"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
 			"language": ["en-us"]
 		}, {
 			"@type": "dcat:Dataset",
@@ -7032,9 +7805,9 @@
 			"theme": ["Telecommunications Services"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2021 1st Qtr",
+			"title": "Networx Business Volume FY2021, 1st Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
-			"modified": "2021-03-15T16:40:23.435Z",
+			"modified": "2022-02-14T13:34:41.515Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-02-17-01",
 			"dataQuality": true,
@@ -7067,9 +7840,9 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Networx Business Volume FY2021 2nd Qtr",
+			"title": "Networx Business Volume FY2021, 2nd Qtr",
 			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
-			"modified": "2021-05-10T19:42:02.944Z",
+			"modified": "2022-02-14T13:31:40.299Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2021-05-07-01",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -7101,8 +7874,112 @@
 			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2021, 3rd Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
+			"modified": "2022-02-14T13:32:52.922Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-10-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"isPartOf": "GSA-2015-08-27",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TotRevFY21_3rdQtr.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/cf970cc6-00d2-4bcb-ac5d-92cbf39bf401/resource/5ee89ad1-aebb-4db3-a72e-71398a81489d/download/totrevfy21_3rdqtr.xlsx"
+				}
+			],
+			"keyword": ["Networx", "billing", "networx business volume", "telecommunications"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY2021, 4th Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
+			"modified": "2022-02-14T13:30:33.187Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-11-17-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TotRevFY21_4thQtr.xlsx",
+					"downloadURL": "https://inventory.data.gov/dataset/e16864d9-b319-43d1-8412-470325497665/resource/51d43425-3f42-4b1f-9717-31dfd71a9005/download/totrevfy21_4thqtr.xlsx"
+				}
+			],
+			"keyword": ["Networx", "Networx Telecommunications", "billing", "networx business volume"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Networx Business Volume FY 2022, 1st Qtr",
+			"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+			"modified": "2022-02-14T14:40:18.697Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2022-02-14-01",
+			"dataQuality": true,
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
+			},
+			"accrualPeriodicity": "R/P3M",
+			"isPartOf": "GSA-2015-08-27",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "Toni Holloway",
+				"hasEmail": "mailto:toni.holloway@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+					"title": "TotRevFY22_1stQtr.xlsx",
+					"description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx.",
+					"downloadURL": "https://inventory.data.gov/dataset/f89aeb87-79ae-460e-91fb-80cbfa3444dc/resource/1ee488db-be91-4c39-802b-95d238df462a/download/totrevfy22_1stqtr.xlsx"
+				}
+			],
+			"keyword": ["Networx Telecommunications", "networx business volume", "telecommunications"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
 			"title": "New Construction and Repair and Alteration (R&A) Projects",
-			"description": "This map shows new construction and major R&A projects in federal buildings under GSA’s custody and control that are above the current prospectus threshold of $2.85 million. New construction and major R&A projects for two different fiscal years are displayed on the map. Projects for FY2014 were funded as part of the Consolidated Appropriations Act of 2014, and GSA will begin to execute these projects this year. Projects for FY2015 have been included in the President’s Budget request, but require approval and funding from Congress before the projects can begin.",
+			"description": "This map shows new construction and major R&A projects in federal buildings under GSA\u2019s custody and control that are above the current prospectus threshold of $2.85 million. New construction and major R&A projects for two different fiscal years are displayed on the map. Projects for FY2014 were funded as part of the Consolidated Appropriations Act of 2014, and GSA will begin to execute these projects this year. Projects for FY2015 have been included in the President\u2019s Budget request, but require approval and funding from Congress before the projects can begin.",
 			"modified": "2014-04-28",
 			"accessLevel": "public",
 			"identifier": "GSA-138569",
@@ -7269,87 +8146,63 @@
 			"theme": ["Other"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Per Diem Reimbursement Rates & API",
-			"description": "The dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for 322 locations across the continental United States for Fiscal Year's 2020, 2019, 2018, 2017, and 2016, as well as the standard per diem rates for any locations not specifically listed.",
-			"modified": "2020-08-20",
+			"title": "Operational Workbench",
+			"description": "This workbook is a series of tools for use by end-users to explore various breakouts and trends in obligation data.",
+			"modified": "2021-07-19T15:17:10.739Z",
 			"accessLevel": "public",
-			"identifier": "GSA-31641",
-			"dataQuality": true,
-			"issued": "2012-08-07",
-			"landingPage": "http://www.gsa.gov/perdiem",
+			"identifier": "GSA-2021-07-16-05",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"spatial": "National",
+			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
-				"name": "General Services Administration"
+				"name": "Federal Acquisition Service",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Federal Acquisition Service"
+				}
 			},
-			"accrualPeriodicity": "R/P1Y",
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "David Dixon",
+				"hasEmail": "mailto:david.dixon@gsa.gov"
+			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://drive.google.com/drive/folders/1jz1Gqv_8xoSg5MfIaZFm6jKJ_OyV0D2r",
+					"title": "Operational Workbench",
+					"description": "This workbook is a series of tools for use by end-users to explore various breakouts and trends in obligation data."
+				}
+			],
+			"keyword": ["FPDS", "Spend Under Management", "obligation"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
+		}, {
+			"@type": "dcat:Dataset",
+			"title": "Per Diem Reimbursement Rates & API - Parent",
+			"description": "The datasets in this collection contain maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States as well as the standard per diem rates for any locations not specifically listed.",
+			"modified": "2021-08-16T17:16:46.075Z",
+			"accessLevel": "public",
+			"identifier": "GSA-2021-08-16-01",
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
+			"publisher": {
+				"@type": "org:Organization",
+				"name": "Office of Government-wide Policy",
+				"subOrganizationOf": {
+					"@type": "org:Organization",
+					"name": "Office of Government-wide Policy"
+				}
+			},
 			"contactPoint": {
 				"@type": "vcard:Contact",
 				"fn": "GSA Travel Policy",
 				"hasEmail": "mailto:travelpolicy@gsa.gov"
 			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
-					"format": "html",
-					"title": "Per Diem Rates",
-					"description": "Per Diem Rates"
-				}, {
-					"@type": "dcat:Distribution",
-					"mediaType": "text/csv",
-					"format": "csv",
-					"title": "FY21-FY16 Per Diem Rates",
-					"description": "FY21-FY16 Per Diem Reimbursement Rates",
-					"downloadURL": "https://inventory.data.gov/dataset/ad729937-b245-4eec-a88d-b72eb36d8106/resource/e0eb3a12-a13d-4b83-af5c-8dcb73042c3d/download/perdiemreimbursementratesfy20fy16.csv"
-				}, {
-					"@type": "dcat:Distribution",
-					"mediaType": "application/json",
-					"format": "json",
-					"title": "Per Diem API (JSON)",
-					"downloadURL": "https://open.gsa.gov/api/perdiem/"
-				}
-			],
-			"keyword": ["federal per diem", "lodging", "m ie", "maximum per diem rates", "meals and incidental expenses", "per diem"],
-			"bureauCode": ["023:30"],
-			"programCode": ["023:015"],
-			"language": ["us-EN"]
-		}, {
-			"@type": "dcat:Dataset",
-			"title": "PSC Matrix for Active GSA Schedules and GSA GWACs",
-			"description": "The Product Service Codes (PSC) and North American Industrial Classification Systems (NAICS) are the two methods the Federal government classifies contracts.  They are used as a mechanism to identify scope of the products and services and business segment covered under the award.  This data can be used as a mechanism to understand the scope of GSA programs.  This can be used as means to identify best fit.  While a GSA contract can offer great opportunities for many businesses, the process of applying for that contract will take a significant amount of time and resources. Understanding best GSA contract for your products and services is a preliminary step to take prior to responding to a GSA solicitation.",
-			"modified": "2016-01-07",
-			"accessLevel": "public",
-			"identifier": "GSA-4723",
-			"dataQuality": true,
-			"describedBy": "https://www.asap.gsa.gov/datagov/naics/PSC_Schedule_GWAC_Matrix_Dictionary.html",
-			"issued": "2011-03-30",
-			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
-			"rights": "N/A",
-			"spatial": "international",
-			"publisher": {
-				"@type": "org:Organization",
-				"name": "General Services Administration"
-			},
-			"accrualPeriodicity": "R/P1Y",
-			"contactPoint": {
-				"@type": "vcard:Contact",
-				"fn": "Daniel Twomey",
-				"hasEmail": "mailto:daniel.twomey@gsa.gov"
-			},
-			"distribution": [{
-					"@type": "dcat:Distribution",
-					"mediaType": "application/vnd.ms-excel",
-					"format": "excel",
-					"title": "PSC Matrix for Active GSA Schedules and GSA GWACs",
-					"downloadURL": "https://www.asap.gsa.gov/datagov/naics/PSC_Matrix_for_Active_GSA_Schedules_and_GSA_GWACs.xls"
-				}
-			],
-			"keyword": ["BPA", "Blanket Purchase Agreement", "Business", "Classification", "Contracts", "Federal Supply Schedule", "GWAC", "Governmentwide Acquisition Contract", "MAS", "Multiple Award Schedule", "PSC", "Product Service Code", "Schedules"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:000"],
-			"language": ["en-us"],
-			"theme": ["Acquisition"]
+			"keyword": ["federal per diem", "lodging", "meals", "meals and incidental expenses", "per diem"],
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Pulse HTTPS Survey",
@@ -7379,7 +8232,7 @@
 					"mediaType": "application/csv",
 					"format": "csv",
 					"title": "Pulse HTTPS Survey",
-					"description": "Results of Pulse’s survey of HTTPS support in government agency \r\nwebsites.",
+					"description": "Results of Pulse\u2019s survey of HTTPS support in government agency \r\nwebsites.",
 					"downloadURL": "https://pulse.cio.gov/data/domains/https.csv"
 				}
 			],
@@ -7428,20 +8281,21 @@
 			"theme": ["Pulse Analytics Survey"]
 		}, {
 			"@type": "dcat:Dataset",
-			"title": "Analytics.USA.gov Datasets",
+			"title": "Analytics.USA.gov",
 			"description": "High level website analytics from across the government domain.",
-			"modified": "2016-12-01",
+			"modified": "2022-02-02T18:47:08.231Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-03-03-03",
 			"dataQuality": true,
 			"issued": "2015-07-08",
 			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"rights": "true",
 			"publisher": {
 				"@type": "org:Organization",
 				"name": "Technology Transformation Service",
 				"subOrganizationOf": {
 					"@type": "org:Organization",
-					"name": "General Services Administration"
+					"name": "Technology Transformation Service"
 				}
 			},
 			"accrualPeriodicity": "R/PT1S",
@@ -7450,11 +8304,18 @@
 				"fn": "Timothy Lowden",
 				"hasEmail": "mailto:timothy.lowden@gsa.gov"
 			},
+			"distribution": [{
+					"@type": "dcat:Distribution",
+					"accessURL": "https://analytics.usa.gov/",
+					"format": "html",
+					"title": "analytics.usa.gov",
+					"description": "Based on rough network segmentation data, we estimate that less than 5% of all traffic across all agencies comes from US federal government networks."
+				}
+			],
 			"keyword": ["18F", "analytics", "visitors"],
-			"bureauCode": ["023:00"],
-			"programCode": ["023:019"],
-			"language": ["en-US"],
-			"theme": ["Datasets Analytics"]
+			"bureauCode": ["015:11"],
+			"programCode": ["015:001"],
+			"language": ["en-US"]
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Current Active Users of Government Websites",
@@ -8969,7 +9830,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - Civilian Board of Contract Appeals (CBCA) Parent",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2017-02-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-1",
@@ -8995,7 +9856,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA July-Sept 2015, 4th Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-2",
@@ -9019,7 +9880,7 @@
 					"mediaType": "application/vnd.ms-excel",
 					"format": "xlsx",
 					"title": "July September 2015 BOCA PC Transactions",
-					"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+					"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 					"downloadURL": "https://inventory.data.gov/dataset/09ad9d3a-9758-44e1-8e94-19ff8ca13f42/resource/cafc450c-3ab9-41a9-9b5c-16494ed5db68/download/july-september2015-boca-pc-transactions.xlsx"
 				}
 			],
@@ -9031,7 +9892,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA  Apr-June 2015, 3rd Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-3",
@@ -9055,7 +9916,7 @@
 					"mediaType": "application/vnd.ms-excel",
 					"format": "xlsx",
 					"title": "April June 2015 BOCA PC Transactions",
-					"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+					"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 					"downloadURL": "https://inventory.data.gov/dataset/284cd4e6-da37-446d-8ca3-79569780f4d5/resource/3d77fead-e5f8-49ad-9d82-0be928ec4abb/download/april-june-2015-boca-pc-transactions.xlsx"
 				}
 			],
@@ -9067,7 +9928,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Oct-Dec 2015, 1st Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-02-01-02",
@@ -9091,7 +9952,7 @@
 					"mediaType": "application/vnd.ms-excel",
 					"format": "excel",
 					"title": "October December 2015 BOCA PC Transactions",
-					"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+					"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 					"downloadURL": "https://inventory.data.gov/dataset/b580478a-b61d-4553-bcf9-848cc4214aa8/resource/c2837a8d-6e83-4873-806b-f1ab58d64d13/download/october-december-2015-boca-pc-transactions.xlsx"
 				}
 			],
@@ -9103,7 +9964,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA  Jan-Mar 2015, 2nd Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-4",
@@ -9127,7 +9988,7 @@
 					"mediaType": "application/vnd.ms-excel",
 					"format": "xlsx",
 					"title": "January March 2015 BOCA PC Transactions",
-					"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+					"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 					"downloadURL": "https://inventory.data.gov/dataset/163269b9-f474-4a28-a413-d1ac79fc578b/resource/abf3e5e9-fa7a-43e8-9ea6-52e644b7551e/download/january-march-2015-boca-pc-transactions.xlsx"
 				}
 			],
@@ -9139,7 +10000,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA  Oct-Dec 2014, 1st Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-5",
@@ -9163,7 +10024,7 @@
 					"mediaType": "application/vnd.ms-excel",
 					"format": "xlsx",
 					"title": "October December 2014 BOCA PC Transactions",
-					"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+					"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 					"downloadURL": "https://inventory.data.gov/dataset/b9b49662-4f9c-4048-811d-0b024ecb376d/resource/cbe7ccee-aa86-4f39-9f5c-0ca8b9442c68/download/october-december-2014-boca-pc-transactions.xlsx"
 				}
 			],
@@ -9175,7 +10036,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA July-Sept 2014, 4th Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-6",
@@ -9199,7 +10060,7 @@
 					"mediaType": "application/vnd.ms-excel",
 					"format": "xlsx",
 					"title": "July September 2014 BOCA PC Transactions",
-					"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+					"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 					"downloadURL": "https://inventory.data.gov/dataset/c626be85-ca43-4608-b573-fd9bc0006bb2/resource/d0471cb0-ec64-443b-9a56-a2a0bddc5237/download/july-september-2014-boca-pc-transactions.xlsx"
 				}
 			],
@@ -9211,7 +10072,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA  Apr-June 2014, 3rd Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-7",
@@ -9235,7 +10096,7 @@
 					"mediaType": "application/vnd.ms-excel",
 					"format": "xlsx",
 					"title": "April June 2014 BOCA PC Transactions",
-					"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+					"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 					"downloadURL": "https://inventory.data.gov/dataset/a1dd6e03-6a27-4177-9f6c-aa59a8e4291f/resource/8a666bdd-a8e5-4f81-8a18-d2ac6ba03a60/download/april-june-2014-boca-pc-transactions.xlsx"
 				}
 			],
@@ -9247,7 +10108,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA  Oct-Dec 2013, 1st Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-06-8",
@@ -9271,7 +10132,7 @@
 					"mediaType": "application/vnd.ms-excel",
 					"format": "xlsx",
 					"title": "October December 2013 BOCA PC Transactions",
-					"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+					"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 					"downloadURL": "https://inventory.data.gov/dataset/46d614e2-dcc6-4d9b-aa61-da4eea26d767/resource/810cb259-0efe-4efd-9490-a94965dc1ab1/download/october-december-2013-boca-pc-transactions.xlsx"
 				}
 			],
@@ -9283,7 +10144,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Jan-Mar 2016, 2nd Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-04-28-01",
@@ -9318,7 +10179,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Apr-June 2016, 3rd Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-10-19-02",
@@ -9353,7 +10214,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA July-Sept 2016, 4th Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-10-19-03",
@@ -9388,7 +10249,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Oct-Dec 2016, 1st Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-02-15-02",
@@ -9423,7 +10284,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Jan-Mar 2017, 2nd Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-05-04-01",
@@ -9458,7 +10319,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Apr-Jun 2017, 3rd Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-07-19-02",
@@ -9494,7 +10355,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA July-Sept 2017, 4th Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2017-11-20-02",
@@ -9530,7 +10391,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Oct-Dec 2017, 1st Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-02-12-01",
@@ -9566,7 +10427,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Jan-Mar 2018, 2nd Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-07-25-01",
@@ -9602,7 +10463,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Apr-Jun 2018, 3rd Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-07-25-02",
@@ -9638,7 +10499,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA July-Sept 2018, 4th Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2018-11-15-02",
@@ -9674,7 +10535,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA July-Sept 2019, 4th Qtr US Bank",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2020-02-13",
 			"accessLevel": "public",
 			"identifier": "GSA-2019-11-13-01",
@@ -9710,7 +10571,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Apr-Jun 2019, 3rd Qtr US Bank",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2020-02-13",
 			"accessLevel": "public",
 			"identifier": "GSA-2019-11-13-02",
@@ -9746,7 +10607,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Jan-Mar 2019, 2nd Qtr US Bank",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2020-02-13",
 			"accessLevel": "public",
 			"identifier": "GSA-2019-11-13-03",
@@ -9782,7 +10643,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Oct-Dec 2019, 1st Qtr Citibank",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2019-11-13",
 			"accessLevel": "public",
 			"identifier": "GSA-2019-11-13-04",
@@ -9818,7 +10679,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Oct-Dec 2019, 1st Qtr US Bank",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2019-11-13",
 			"accessLevel": "public",
 			"identifier": "GSA-2019-11-13-05",
@@ -9854,7 +10715,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Oct-Dec 2020, 1st Qtr US Bank",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2020-02-13",
 			"accessLevel": "public",
 			"identifier": "GSA-2020-02-13-01",
@@ -9890,7 +10751,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Jan-Mar 2020, 2nd Qtr US Bank",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2020-02-13",
 			"accessLevel": "public",
 			"identifier": "GSA-2020-05-26-02",
@@ -9926,7 +10787,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - CBCA Apr-June 2020, 3rd Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the GSA Board of Contract Appeals.",
 			"modified": "2020-08-05",
 			"accessLevel": "public",
 			"identifier": "GSA-2020-08-05-01",
@@ -9962,7 +10823,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - OIG Apr-June 2014, 3rd Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-10",
@@ -9986,7 +10847,7 @@
 					"mediaType": "application/vnd.ms-excel",
 					"format": "xlsx",
 					"title": "April June 2014 OIG PC Transactions",
-					"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
+					"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
 					"downloadURL": "https://inventory.data.gov/dataset/0a5b4508-03ab-431f-940a-bae972ef2382/resource/d5d026da-23c8-4f6f-8e78-6699045b984f/download/april-june-2014-oig-pc-transactions.xlsx"
 				}
 			],
@@ -9998,7 +10859,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - Office of  Inspector General Parent",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
 			"modified": "2016-01-05",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-9",
@@ -10024,7 +10885,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - OIG Jan-Mar 2014, 2nd Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-11",
@@ -10048,7 +10909,7 @@
 					"mediaType": "application/vnd.ms-excel",
 					"format": "xlsx",
 					"title": "January March 2014 OIG PC Transactions",
-					"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
+					"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
 					"downloadURL": "https://inventory.data.gov/dataset/c227f1bd-f127-4da3-92b1-665809646ee5/resource/70a9b97f-6f52-40db-bf95-545f5c809572/download/january-march-2014-oig-pc-transactions.xlsx"
 				}
 			],
@@ -10060,7 +10921,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Purchase Card Transactions - OIG Oct-Dec 2013, 1st Qtr",
-			"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
+			"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
 			"modified": "2018-11-15",
 			"accessLevel": "public",
 			"identifier": "GSA-2016-01-05-12",
@@ -10084,7 +10945,7 @@
 					"mediaType": "application/vnd.ms-excel",
 					"format": "xlsx",
 					"title": "October December 2013 OIG PC Transactions",
-					"description": "The GSA SmartPay® purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
+					"description": "The GSA SmartPay\u00ae purchase card program provides cards to federal employees to make official government purchases. These are transactions made by the Office of the Inspector General.",
 					"downloadURL": "https://inventory.data.gov/dataset/5f832b05-cdf6-4c63-88f8-d05390a06029/resource/8e9fbfe8-d2b0-4a48-96cd-dc5302c279e0/download/october-december-2013-oig-pc-transactions.xlsx"
 				}
 			],
@@ -10118,8 +10979,9 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
+					"format": "csv",
 					"title": "data_gov_bldg_rexus.csv",
-					"description": "June Rexus Buildings",
+					"description": "March Rexus Buildings",
 					"downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/3bb0decb-64ee-4d92-86ae-4b1457dfb5be/download/data_gov_bldg_rexus.csv"
 				}
 			],
@@ -10151,8 +11013,9 @@
 			"distribution": [{
 					"@type": "dcat:Distribution",
 					"mediaType": "text/csv",
+					"format": "csv",
 					"title": "data_gov_lse_rexus.csv",
-					"description": "June Rexus Leases",
+					"description": "March Rexus Leases",
 					"downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/1aed05ec-e154-45e6-a394-d29fb7c04272/download/data_gov_lse_rexus.csv"
 				}
 			],
@@ -10298,7 +11161,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Second Generation Office Supplies (OS2) Savings and Small Business Dashboard",
-			"description": "The Second Generation Office Supplies (OS2) Savings and Small Business Dashboard is a graphical depiction of OS2 spend, savings and small business utilization, further highlighting FSSI OS2’s accomplishments on behalf of small businesses, veterans, and the taxpayer. Its easy to use, and provides filters for users to focus on geographical, government agency, small or large business, and SDVOSB specifics.",
+			"description": "The Second Generation Office Supplies (OS2) Savings and Small Business Dashboard is a graphical depiction of OS2 spend, savings and small business utilization, further highlighting FSSI OS2\u2019s accomplishments on behalf of small businesses, veterans, and the taxpayer. Its easy to use, and provides filters for users to focus on geographical, government agency, small or large business, and SDVOSB specifics.",
 			"modified": "2016-01-07",
 			"accessLevel": "public",
 			"identifier": "GSA - 3420",
@@ -10331,7 +11194,7 @@
 			"@type": "dcat:Dataset",
 			"title": "Subcontracting Directory for Small Businesses",
 			"description": "The GSA Subcontracting Directory list large Prime Contractors who, by law, are required to establish plans and goals for subcontracting with Small Business Firms.",
-			"modified": "2021-06-03T15:35:59.454Z",
+			"modified": "2021-12-08T15:10:48.750Z",
 			"accessLevel": "public",
 			"identifier": "GSA-2015-10-26-01",
 			"dataQuality": true,
@@ -10348,16 +11211,16 @@
 			"accrualPeriodicity": "R/P3M",
 			"contactPoint": {
 				"@type": "vcard:Contact",
-				"fn": "Debbie E Eble",
-				"hasEmail": "mailto:deborah.eble@gsa.gov"
+				"fn": "Carena Jackson",
+				"hasEmail": "mailto:carena.jackson@gsa.gov"
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-					"format": "xlsx",
-					"title": "Subk Directory as of Dec 2019",
-					"description": "Subcontracting Directory for December 2019",
-					"downloadURL": "https://inventory.data.gov/dataset/50bfccab-460c-4f18-9f17-28c4104e6d50/resource/d074c4ed-07f3-4fdd-8a7d-f56d6c8c5e02/download/subk-directory-as-of-dec-2019.xlsx"
+					"mediaType": "text/csv",
+					"format": "csv",
+					"title": "Subk Directory as of Dec 2021",
+					"description": "Subcontracting Directory for December 2021",
+					"downloadURL": "https://inventory.data.gov/dataset/50bfccab-460c-4f18-9f17-28c4104e6d50/resource/d074c4ed-07f3-4fdd-8a7d-f56d6c8c5e02/download/subk-directory-as-of-12022021.csv"
 				}
 			],
 			"keyword": ["NAICS", "Prime Contractors", "Subcontracting", "Subcontracting Directory"],
@@ -10368,7 +11231,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "Sustainable Facilities Tool",
-			"description": "With the SFTool API, you can access a myriad of high performance building information. Pull the most up to date information about green products, services, and materials. Put sustainable strategies in the hands of your audience today. All of our API methods are HTTP GET and always return the latest data. Whether you’re looking to add sustainable building information to your website or blog, or looking for data to build an application, the SFTool API is here for you.Making API calls is very straightforward. There is a single base URI for each data category. By default, it will return all of the data for that category. By using any of our optional parameters, you can filter the data as you see fit. Signup for free to get the SFTool API key at  https://api.data.gov/signup/.",
+			"description": "With the SFTool API, you can access a myriad of high performance building information. Pull the most up to date information about green products, services, and materials. Put sustainable strategies in the hands of your audience today. All of our API methods are HTTP GET and always return the latest data. Whether you\u2019re looking to add sustainable building information to your website or blog, or looking for data to build an application, the SFTool API is here for you.Making API calls is very straightforward. There is a single base URI for each data category. By default, it will return all of the data for that category. By using any of our optional parameters, you can filter the data as you see fit. Signup for free to get the SFTool API key at  https://api.data.gov/signup/.",
 			"modified": "2018-09-24",
 			"accessLevel": "public",
 			"identifier": "GSA-138568",
@@ -10401,7 +11264,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "System for Award Management (SAM) API",
-			"description": "The SAM API is a RESTful method of retrieving public information about the businesses, organizations, or individuals (referred to as entities) within the SAM entity regsitration data set. Public registration information can currently be retrieved on an entity-by-entity basis. In addition, the SAM Search API offers both a 'quick search' and 'advanced search' method.",
+			"description": "The SAM API is a RESTful method of retrieving public information about the businesses, organizations, or individuals (referred to as entities) within the SAM entity regsitration data set. Public registration information can currently be retrieved on an entity-by-entity basis.\u00a0In addition, the SAM Search API offers both a 'quick search' and 'advanced search' method.",
 			"modified": "2019-11-26",
 			"accessLevel": "public",
 			"identifier": "GSA - 139633",
@@ -10437,7 +11300,7 @@
 		}, {
 			"@type": "dcat:Dataset",
 			"title": "System for Award Management (SAM) Public Extract - Exclusions",
-			"description": "This dataset contains a daily snapshot of active exclusion records entered by the U.S. Federal government identifying those parties excluded from receiving Federal contracts, certain subcontracts, and certain types of Federal financial and non-financial assistance and benefits. The data was formerly contained in the Excluded Parties List System (EPLS). In July 2012, EPLS was incorporated into the System for Award Management (SAM). SAM is now the electronic, web-based system that keeps its user community aware of administrative and statutory exclusions across the entire government, and individuals barred from entering the United States. Users must read the exclusion record completely to understand how it impacts the excluded party. \r\n\r\nNote - Here is the link for the SAM Functional Data Dictionary - https://www.sam.gov/SAM/transcript/SAM_Functional_Data_Dictionary.pdf",
+			"description": "This dataset contains a daily snapshot of active exclusion records entered by the U.S. Federal government identifying those parties excluded from receiving Federal contracts, certain subcontracts, and certain types of Federal financial and non-financial assistance and benefits. The data was formerly contained in the Excluded Parties List System (EPLS). In July 2012, EPLS was incorporated into the System for Award Management (SAM). SAM is now the electronic, web-based system that keeps its user community aware of administrative and statutory exclusions across the entire government, and individuals barred from entering the United States. Users must read the exclusion record completely to understand how it impacts the excluded party.\u00a0\r\n\r\nNote - Here is the link for the SAM Functional Data Dictionary - https://www.sam.gov/SAM/transcript/SAM_Functional_Data_Dictionary.pdf",
 			"modified": "2018-12-18",
 			"accessLevel": "public",
 			"identifier": "GSA-1626",
@@ -10460,13 +11323,10 @@
 			},
 			"distribution": [{
 					"@type": "dcat:Distribution",
-					"mediaType": "application/zip",
-					"format": "csv",
+					"accessURL": "https://sam.gov/content/home",
+					"format": "html",
 					"title": "System for Award Management (SAM) Public Extract - Exclusions",
-					"description": "System implementing the functionalities of the legacy IAE applications: CCR, FedReg, ORCA, and EPLS.",
-					"describedBy": "https://www.sam.gov/sam/transcript/SAM_Exclusions_Extract_User_Guide.pdf",
-					"describedByType": "application/pdf",
-					"downloadURL": "https://www.sam.gov/SAM/extractfiledownload?role=WW&version=EPLSPUB&filename=SAM_Exclusions_Public_Extract.ZIP"
+					"description": "The System for Award Management (SAM.gov) is an official website of the U.S. Government. There is no cost to use SAM.gov. You can use this site to:\r\n\r\nRegister to do business with the U.S. Government, Update, renew, or check the status of your entity registration, Search for entity registration and exclusion records, Search for assistance listings (formerly CFDA.gov), wage determinations (formerly WDOL.gov), contract opportunities (formerly FBO.gov), and contract data reports (formerly part of FPDS.gov).\r\nView and submit BioPreferred and Service Contract Reports, Access publicly available award data via data extracts and system accounts."
 				}, {
 					"@type": "dcat:Distribution",
 					"accessURL": "https://inventory.data.gov/dataset/7416a2e4-9aa7-4bcd-801c-20f25a545916/resource/78bb6c57-42e8-4055-931d-928ebcbde39f/download/samexclusionspublicextract-gsa-1626.csv",
