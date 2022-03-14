@@ -165,6 +165,57 @@ submissionType should be set to API.
 
 <p><small><a href="#">Back to top</a></small></p>
   
+## Data Limitations
+
+A recent [GAO report](https://www.gao.gov/products/gao-21-103181) expressed concerns over whether comment data is fully described to the public, including any limitations. Various aspects of the commenting process can create limitations for certain external users of public comment data and some data fields are managed solely by agencies. The Open API Specification document has been updated with information on agency configurable fields. For convenience, the data is also provided below in a concise format:
+  
+#### List of fields that are always publicly viewable on a comment
+  
+Here is the list of fields that is always available in the JSON response for a comment:
+
+* agencyId
+* comment
+* commentOnId
+* docketId
+* documentId - This field is returned as an Id of the document in the JSON response.
+* documentType
+* postedDate
+* receiveDate
+* restrictReason - if restrictReasonType is set to "Other"
+* restrictReasonType - if the document is restricted
+* reasonWithdrawn - if the comment has been withdrawn
+* title
+* trackingNbr
+* withdrawn
+
+#### List of agency configurable comment fields
+
+Agency configured fields can be updated by an agency at any point in time and made accessible or inaccessible in the JSON response of a comment. Here is the list of these fields:
+
+* city
+* country
+* docAbstract
+* firstName
+* govAgency  
+* govAgencyType
+* lastName
+* legacyId
+* organization
+* pageCount
+* postmarkDate
+* stateProvinceRegion
+* subtype
+* zip
+
+#### List of fields that are never publicly viewable on a comment 
+
+* originalDocumentId
+* address1
+* address2
+* email
+* phone
+* fax
+  
 ## Post Comment API Validation
   
 #### Common Validations for all comments
