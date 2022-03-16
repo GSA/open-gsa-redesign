@@ -228,9 +228,10 @@ Option 1: Using the fileName only.  The fileName is an exact match parameter whi
 
 Option 2: Using fileType and other parameters.  If you choose not to use the fileName, you may specify the fileType along with other parameters to identify which extract you wish to download.<br>
 
-**Please refer to the SAM Master Extract Mapping document:**
-<br>Before April 2022: <a href="v1/SAM_MASTER_EXTRACT_MAPPING.xlsx">SAM Master Extract Mapping</a><br>
-Effective April 2022: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v6.0.xlsx">SAM Master Extract Mapping</a>
+**Please refer to the SAM Master Extract Data List:**
+<br>This spreadsheet contains a listing of data elements you may see in the extracts. Please refer to each data package's layout mapping file for further details.
+<br><br>Before April 2022: <a href="v1/SAM_MASTER_EXTRACT_DATA_LIST.xlsx">SAM Master Extract Data List</a><br>
+Effective April 2022: <a href="v1/SAM_MASTER_EXTRACT_DATA_LIST v6.0.xlsx">SAM Master Extract Data List</a>
 
 **Entity Management Public Data Package Sample API calls:**<br>
 
