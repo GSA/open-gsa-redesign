@@ -16,7 +16,7 @@
 
 <div id="fpds_doc_tree">
     <ul id="treeData">
-        <li id="id3" class="folder">FPDS
+        <li id="id3" class="expanded folder">FPDS
             <ul>
                 <li id="id3.1" class="expanded folder">Schema
                     <ul>
@@ -274,7 +274,7 @@
                 </li>
             </ul>
         </li>
-        <li id="id3" class="folder">FAADC
+        <li id="id3" class="expanded folder">FAADC
             <ul>
                 <li id="id3.1" class="expanded folder">Schema
                     <ul>
