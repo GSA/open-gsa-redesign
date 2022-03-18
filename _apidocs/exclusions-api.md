@@ -32,7 +32,7 @@ Exclusions API can be accessed from Production or Alpha via the following versio
 * Production Version 3: COMING SOON<br>https://api.sam.gov/entity-information/v3/exclusions?api_key=< value >
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< value >
-* Alpha Version 3: COMING SOON<br>https://api-alpha.sam.gov/entity-information/v3/exclusions?api_key=< value ><br><br>
+* Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/exclusions?api_key=< value ><br><br>
 
 
 Generating a personal API Key:
