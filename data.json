@@ -3708,8 +3708,8 @@
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "Hiring Selections and Outcomes Public Data Set as of Dec 31 2021.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/f2b0508f-6853-4e66-b0d0-c1ddad4744d4/download/hiring-selections-and-outcomes-public-data-set-as-of-dec-31-2021.xlsx"
+                    "title": "Hiring Selections and Outcomes Public Data Set as of Dec 31 2021_v2.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/d97eea46-11b1-426e-ad1c-17cf378603ac/download/hiring-selections-and-outcomes-public-data-set-as-of-dec-31-2021_v2.xlsx"
                 }
             ],
             "keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -5231,9 +5231,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI IOLP 03/17/22",
-                    "description": "EDI JSON file for 03/17/22",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/9682b940-0c2d-4dff-9918-d4c8d32039e6/download/edi-iolp-3.17.json"
+                    "title": "EDI 03/18/22",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/35c0c5be-682c-4f8c-9637-68dde5f0b9ab/download/data.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
