@@ -136,10 +136,10 @@
                                                         <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4.2/IDV.html">IDV.html</a></li>
                                                         <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4.2/NASASpecificAwardElements.xsd">NASASpecificAwardElements.xsd</a></li>
                                                         <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4.2/NASASpecificAwardElements.html">NASASpecificAwardElements.html</a></li>
-                                                        <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4.2/OtherTransactionContract.xsd">OtherTransactionContract.xsd</a></li>
-                                                        <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4.2/OtherTransactionContract.html">OtherTransactionContract.html</a></li>
                                                         <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4.2/OtherTransactionAward.xsd">OtherTransactionAward.xsd</a></li>
                                                         <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4.2/OtherTransactionAward.html">OtherTransactionAward.html</a></li>
+                                                        <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4.2/OtherTransactionContract.xsd">OtherTransactionContract.xsd</a></li>
+                                                        <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4.2/OtherTransactionContract.html">OtherTransactionContract.html</a></li>
                                                         <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/contracts/1.4.2/OtherTransactionIDV.xsd">OtherTransactionIDV.xsd</a></li>
                                                         <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/contracts/1.4.2/OtherTransactionIDV.html">OtherTransactionIDV.html</a></li>
                                                     </ul>
