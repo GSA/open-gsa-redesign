@@ -9,7 +9,7 @@ banner-heading: SAM.gov Contract Data (Formerly FPDS.gov)
 
 
 ## Overview
-We’re in the process of bringing FPDS into SAM.gov…
+The awards data in SAM.gov (formerly in the Federal Procurement Data System, or FPDS) is information that awarding agencies are required by law to provide for certain awards. All modifications to those awards must also be reported, regardless of dollar value. This information is available to the public. 
 <p><small><a href="#">Back to top</a></small></p>
 
 
@@ -105,9 +105,12 @@ If people are trying to set up a new connection, how do they do it?
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
-Standard verbiage on what to prepare and then how to reach FSD
+- Reach out to the SAM.gov team at [fsd.gov](http://www.fsd.gov) for inquiries and help desk support.
+- We encourage you to join our Technical Interface Community (TIC) by sending an email to [IAE_Admin@gsa.gov](mailto:IAE_Admin@gsa.gov). The TIC meets every one to two months.
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Change Log
-Log of changes to this page
+Date | Version | Description
+------|---------------|---------
+3/22/2022 | v1.0 | Base Version
 <p><small><a href="#">Back to top</a></small></p>
