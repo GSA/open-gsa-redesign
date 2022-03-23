@@ -451,7 +451,9 @@ If people are trying to set up a new connection, how do they do it?
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Change Log
+
 Date | Version | Description
 ------|---------------|---------
 3/22/2022 | v1.0 | Base Version
+
 <p><small><a href="#">Back to top</a></small></p>
