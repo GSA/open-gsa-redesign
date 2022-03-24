@@ -14,7 +14,6 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 
 
 ## Getting Started
-If people are trying to set up a new connection, how do they do it?
 - [Quick Start Guide](https://iae-prd-opengsa.s3.amazonaws.com/FPDS_v15_quick_start_guide_(3).doc)
 - [Atom Feed Demo](https://iae-prd-opengsa.s3.amazonaws.com/Atom_feed.ppt)
 - [Certification Process](https://iae-prd-opengsa.s3.amazonaws.com/ContractData_Certification_Process.doc)
