@@ -16,7 +16,7 @@ When Congress passes laws, federal agencies implement those laws through regulat
 
 To begin using this API, you will need to register for an API Key. You can sign up for an API key here: [API key signup page on api.data.gov](https://api.data.gov/signup/).
 
-If you want to use commenting API, you MUST use the form below to register for an API key.
+If you want to use commenting API, you **must** use the form below to register for an API key.
 
 {% raw %}
 <div id="apidatagov_signup">Loading signup form...</div>
@@ -190,7 +190,7 @@ Here is the list of fields that is always available in the JSON response for a c
 
 #### List of agency configurable comment fields
 
-Agency configured fields can be updated by an agency at any point in time and made accessible or inaccessible in the JSON response of a comment. Here is the list of these fields:
+Agency configured fields can be updated by an agency at any point in time and made available (or not) in the JSON response of a comment. Here is the list of these fields:
 
 * city
 * country
@@ -217,7 +217,9 @@ Agency configured fields can be updated by an agency at any point in time and ma
 * fax
   
 ## Post Comment API Validation
-  
+
+Please note that _required fields_ as used in this section does _not_ imply that a particular agency "requires" the information in their request for public comment.
+
 #### Common Validations for all comments
   
 * `commentOnDocumentId`, `comment` and `submissionType` are required fields.
