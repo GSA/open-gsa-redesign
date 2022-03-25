@@ -44,7 +44,7 @@ If you want to use commenting API, you MUST use the form below to register for a
 
     // OPTIONAL: Provide a URL to your own contact page to link to for user
     // support. Defaults to "https://api.data.gov/contact/"
-    contactUrl: 'https://beta.regulations.gov/support',
+    contactUrl: 'https://www.regulations.gov/support',
 
     // OPTIONAL: Set to true to verify the user's e-mail address by only
     // sending them their API key via e-mail, and not displaying it on the
