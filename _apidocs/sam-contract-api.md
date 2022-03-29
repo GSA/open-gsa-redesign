@@ -39,6 +39,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     <summary>Atom Feed Specifications V1.5.2</summary>
     <p>
     <code><pre>
+        ```xml
         <feed xmlns="http://www.w3.org/2005/Atom">
         <title>FFATA Portal search results for<![CDATA[: recovery]]></title>
         <link rel="alternate" type="text/html" href="url_link"/>
@@ -59,6 +60,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
             </content>
         </entry>
         </feed>
+        ```
     </pre></code>
     </p>
   </details>
