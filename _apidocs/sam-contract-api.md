@@ -35,7 +35,33 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 - [Validation Rules](https://iae-prd-opengsa.s3.amazonaws.com/ContractData_V1.5_Data_Validation_rules_document.docx)
 - [Version 1.5 Changes](https://iae-prd-opengsa.s3.amazonaws.com/FPDS-Specifications-Version15-Changes_(4).doc)
 - [Version 1.5 Quick Start Guide](https://iae-prd-opengsa.s3.amazonaws.com/FPDS_v15_quick_start_guide_(3).doc)
-- Atom Feed Specifications V1.5.2
+- <details>
+    <summary>Atom Feed Specifications V1.5.2</summary>
+    <p>
+    <code><pre>
+    <feed xmlns="http://www.w3.org/2005/Atom">
+	<title>FFATA Portal search results for<![CDATA[: recovery]]></title>
+	<link rel="alternate" type="text/html" href="url_link"/>
+	<link rel="first" type="text/html" href="url_link"/>
+	<link rel="last" type="text/html" href="url_link"/>
+	<link rel="previous" type="text/html" href="url_link"/>
+	<link rel="next" type="text/html" href="url_link"/>
+	<modified/>
+	<author>
+		<name/>
+	</author>
+	<entry>
+		<title><![CDATA[Entry Title]]></title>
+		<link rel="alternate" type="text/html" href="url_link"/>
+		<modified>2009-08-08 00:33:48</modified>
+		<content type="application/xml" xmlns:ns1="https://www.fpds.gov">
+			... Award/IDV XML
+		</content>
+	</entry>
+    </feed>
+    </pre></code>
+    </p>
+  </details>
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Current FAADC Specifications
