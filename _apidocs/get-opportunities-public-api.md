@@ -95,7 +95,7 @@ data.award.amount| Award Amount| Number | v2
 data.award.date| Award Date| Date and Time | v2
 data.award.awardee|	 Name <br> Location <br> ueiSAM | JSON Object | v2
 data.award.awardee.name|Awardee Name|String | v2
-data.award.awardee.ueiSAM| Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric (ueiSAM values not yet available).<br> Example: ueiSAM=025114695AST | String | v2
+data.award.awardee.ueiSAM| Unique Entity Identifier SAM - Allow 12 digit value, alphanumeric <br> Example: ueiSAM=025114695AST | String | v2
 data.award.awardee.location.<br/>streetAddress | Awardee Street Address 1 | String | v2
 data.award.awardee.location.<br/>streetAddress2 | Awardee Street Address 2 | String | v2
 data.award.awardee.location.<br/>city | Awardee City |JSON Object  |  v2
