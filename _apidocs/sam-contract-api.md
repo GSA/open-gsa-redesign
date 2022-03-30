@@ -36,19 +36,16 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 - [Version 1.5 Changes](https://iae-prd-opengsa.s3.amazonaws.com/FPDS-Specifications-Version15-Changes_(4).doc)
 - [Version 1.5 Quick Start Guide](https://iae-prd-opengsa.s3.amazonaws.com/FPDS_v15_quick_start_guide_(3).doc)
 - <details>
-    <summary>Atom Feed Specifications V1.5.2</summary>
-    {% raw %}
-    <pre>
-    <feed xmlns="http://www.w3.org/2005/Atom">
-    </feed>
-    </pre>
-    {% endraw %}
+  <summary>Atom Feed Specifications V1.5.2</summary>
+  <p>
+  ```xml
+  <feed xmlns="http://www.w3.org/2005/Atom">
+  </feed>
+  ```
+  </p>
   </details>
 
-    ```xml
-    <feed xmlns="http://www.w3.org/2005/Atom">
-    </feed>
-    ```
+    
   
 <p><small><a href="#">Back to top</a></small></p>
 
