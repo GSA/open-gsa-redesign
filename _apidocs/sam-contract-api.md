@@ -39,8 +39,10 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     <summary>Atom Feed Specifications V1.5.2</summary>
     <pre>
     {% raw %}
+    ```xml
     <feed xmlns="http://www.w3.org/2005/Atom">
     </feed>
+    ```
     {% endraw %}
     </pre>
   </details>
