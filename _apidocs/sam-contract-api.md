@@ -39,8 +39,26 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
   <summary>Atom Feed Specifications V1.5.2</summary>
   <pre>
   <code class="xml">
-  &lt;feed xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
-  &lt;/feed&gt;
+    &lt;feed xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
+        &lt;title&gt;FFATA Portal search results for&lt;![CDATA[: recovery]]&gt;&lt;/title&gt;
+        &lt;link rel=&quot;alternate&quot; type=&quot;text/html&quot; href=&quot;url_link&quot;/&gt;
+        &lt;link rel=&quot;first&quot; type=&quot;text/html&quot; href=&quot;url_link&quot;/&gt;
+        &lt;link rel=&quot;last&quot; type=&quot;text/html&quot; href=&quot;url_link&quot;/&gt;
+        &lt;link rel=&quot;previous&quot; type=&quot;text/html&quot; href=&quot;url_link&quot;/&gt;
+        &lt;link rel=&quot;next&quot; type=&quot;text/html&quot; href=&quot;url_link&quot;/&gt;
+        &lt;modified/&gt;
+        &lt;author&gt;
+            &lt;name/&gt;
+        &lt;/author&gt;
+        &lt;entry&gt;
+            &lt;title&gt;&lt;![CDATA[Entry Title]]&gt;&lt;/title&gt;
+            &lt;link rel=&quot;alternate&quot; type=&quot;text/html&quot; href=&quot;url_link&quot;/&gt;
+            &lt;modified&gt;2009-08-08 00:33:48&lt;/modified&gt;
+            &lt;content type=&quot;application/xml&quot; xmlns:ns1=&quot;https://www.fpds.gov&quot;&gt;
+                ... Award/IDV XML
+            &lt;/content&gt;
+        &lt;/entry&gt;
+    &lt;/feed&gt;
   </code></pre>
   </details>
   
