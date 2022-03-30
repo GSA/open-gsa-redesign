@@ -37,14 +37,12 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 - [Version 1.5 Quick Start Guide](https://iae-prd-opengsa.s3.amazonaws.com/FPDS_v15_quick_start_guide_(3).doc)
 - <details>
     <summary>Atom Feed Specifications V1.5.2</summary>
-    <pre>
     {% raw %}
-    ```xml
+    <pre>
     <feed xmlns="http://www.w3.org/2005/Atom">
     </feed>
-    ```
-    {% endraw %}
     </pre>
+    {% endraw %}
   </details>
 
     ```xml
