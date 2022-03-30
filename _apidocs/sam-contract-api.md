@@ -41,13 +41,8 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
   <feed xmlns="http://www.w3.org/2005/Atom">
   </feed>
   {% endhighlight %}
-  </details>
   
-   ```xml
-  <feed xmlns="http://www.w3.org/2005/Atom">
-  </feed>
-  ```
-    
+  </details>
   
 <p><small><a href="#">Back to top</a></small></p>
 
