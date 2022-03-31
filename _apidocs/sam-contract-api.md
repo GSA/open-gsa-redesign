@@ -38,14 +38,13 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 - Atom Feed Specifications V1.5.2
     <details>
     <summary>Introduction</summary>
-    <pre>
-        FPDS has data reporting web services that provide access in real-time to FPDS' central data repository. Atom Feeds provides access to the same contractual data with real time feeds.
-    </pre>
+    <p>
+        FPDS has data reporting web services that provide access in real-time to FPDS central data repository. Atom Feeds provides access to the same contractual data with real time feeds.
+    </p>
     </details>
     <details>
     <summary>Feed XML specification</summary>
     <pre>
-    Feed format specification: 
     <code class="xml">
         &lt;feed xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
             &lt;title&gt;FFATA Portal search results for&lt;![CDATA[: recovery]]&gt;&lt;/title&gt;
@@ -71,6 +70,36 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     </details>
     <details>
     <summary>Atom Element Definitions</summary>
+    <pre>
+    </pre>
+    </details>
+    <details>
+    <summary>Award XML</summary>
+    <pre>
+    </pre>
+    </details>
+    <details>
+    <summary>IDV XML</summary>
+    <pre>
+    </pre>
+    </details>
+    <details>
+    <summary>OTHER TRANSACTION AWARD XML</summary>
+    <pre>
+    </pre>
+    </details>
+    <details>
+    <summary>OTHER TRANSACTION IDV XML</summary>
+    <pre>
+    </pre>
+    </details>
+    <details>
+    <summary>CLOSED FEED AWARD XML</summary>
+    <pre>
+    </pre>
+    </details>
+    <details>
+    <summary>CLOSED FEED IDV XML</summary>
     <pre>
     </pre>
     </details>
