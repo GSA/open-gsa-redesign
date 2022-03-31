@@ -43,6 +43,13 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     </p>
     </details>
     <details>
+    <summary>FPDS Atom feed format</summary>
+    <p>
+        FPDS Atom feed specification is based of the industry standard Atom 1.0 format [RFC4287](https://datatracker.ietf.org/doc/html/rfc4287) as defined by Internet Engineering Task Force (IETF) in December 2005. 
+        FPDS contract data will follow FPDS Version 1.5 Award and IDV specification.
+    </p>
+    </details>
+    <details>
     <summary>Feed XML specification</summary>
     <pre>
     <code class="xml">
