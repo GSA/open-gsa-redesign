@@ -14,14 +14,14 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 
 
 ## Getting Started
-- [Quick Start Guide](https://iae-prd-opengsa.s3.amazonaws.com/FPDS_v15_quick_start_guide_(3).doc)
+- [Quick Start Guide](https://www.fpds.gov/downloads/FPDS_v15_quick_start_guide.doc)
 - [Atom Feed Demo](https://iae-prd-opengsa.s3.amazonaws.com/Atom_feed.ppt)
 - [Certification Process](https://iae-prd-opengsa.s3.amazonaws.com/ContractData_Certification_Process.doc)
 - [FAADC Certification Process](https://iae-prd-opengsa.s3.amazonaws.com/FAADC_FPDS_Certification_Process.doc)
 <p><small><a href="#">Back to top</a></small></p>
 
 ## General Information
-- Certified COTS/GOTS List
+- [Certified COTS/GOTS List](https://www.fpds.gov/wiki/index.php/Certified_Agency-CWS_COTS/GOTS_List)
 - [Certification Form](https://iae-prd-opengsa.s3.amazonaws.com/ContractData_certification_form_March_2022_update.pdf)
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -29,8 +29,8 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 - [Version 1.5 Data Dictionary](https://iae-prd-opengsa.s3.amazonaws.com/ContractData_DataDictionary_V1.5_March_2022_update.pdf)
 - [Other Transactions (OT) Data Dictionary](https://iae-prd-opengsa.s3.amazonaws.com/ContractData_DataDictionary_V15_OT_March_2022_update.pdf)
 - [NASA Data Dictionary](https://iae-prd-opengsa.s3.amazonaws.com/NASA_Specific_Data_Dictionary_Version_1.2.doc)
-- WSDL Zip File
-- XSD Zip File
+- [WSDL Zip File](https://www.fpds.gov/downloads/V15WSDLFiles.zip)
+- [XSD Zip File](https://www.fpds.gov/downloads/V15XSDFiles.zip)
 - [Web Services Specifications](https://iae-prd-opengsa.s3.amazonaws.com/ContractData-Specifications-WebServices_Integration_Specifications_V1.5.docx)
 - [Validation Rules](https://iae-prd-opengsa.s3.amazonaws.com/ContractData_V1.5_Data_Validation_rules_document.docx)
 - [Version 1.5 Changes](https://iae-prd-opengsa.s3.amazonaws.com/FPDS-Specifications-Version15-Changes_(4).doc)
@@ -52,28 +52,29 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     <details>
     <summary>Feed XML specification</summary>
     <pre>
-    <code class="xml">
-        &lt;feed xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
-            &lt;title&gt;FFATA Portal search results for&lt;![CDATA[: recovery]]&gt;&lt;/title&gt;
-            &lt;link rel=&quot;alternate&quot; type=&quot;text/html&quot; href=&quot;url_link&quot;/&gt;
-            &lt;link rel=&quot;first&quot; type=&quot;text/html&quot; href=&quot;url_link&quot;/&gt;
-            &lt;link rel=&quot;last&quot; type=&quot;text/html&quot; href=&quot;url_link&quot;/&gt;
-            &lt;link rel=&quot;previous&quot; type=&quot;text/html&quot; href=&quot;url_link&quot;/&gt;
-            &lt;link rel=&quot;next&quot; type=&quot;text/html&quot; href=&quot;url_link&quot;/&gt;
-            &lt;modified/&gt;
-            &lt;author&gt;
-                &lt;name/&gt;
-            &lt;/author&gt;
-            &lt;entry&gt;
-                &lt;title&gt;&lt;![CDATA[Entry Title]]&gt;&lt;/title&gt;
-                &lt;link rel=&quot;alternate&quot; type=&quot;text/html&quot; href=&quot;url_link&quot;/&gt;
-                &lt;modified&gt;2009-08-08 00:33:48&lt;/modified&gt;
-                &lt;content type=&quot;application/xml&quot; xmlns:ns1=&quot;https://www.fpds.gov&quot;&gt;
+    {% hightlight xml%}
+        <feed xmlns="http://www.w3.org/2005/Atom">
+            <title>FFATA Portal search results for<![CDATA[: recovery]]></title>
+            <link rel="alternate" type="text/html" href="url_link"/>
+            <link rel="first" type="text/html" href="url_link"/>
+            <link rel="last" type="text/html" href="url_link"/>
+            <link rel="previous" type="text/html" href="url_link"/>
+            <link rel="next" type="text/html" href="url_link"/>
+            <modified/>
+            <author>
+                <name/>
+            </author>
+            <entry>
+                <title><![CDATA[Entry Title]]></title>
+                <link rel="alternate" type="text/html" href="url_link"/>
+                <modified>2009-08-08 00:33:48</modified>
+                <content type="application/xml" xmlns:ns1="https://www.fpds.gov">
                     ... Award/IDV XML
-                &lt;/content&gt;
-            &lt;/entry&gt;
-        &lt;/feed&gt;
-    </code></pre>
+                </content>
+            </entry>
+        </feed>
+    {% endhightligh %}
+    </pre>
     </details>
     <details>
     <summary>Atom Element Definitions</summary>
@@ -491,18 +492,18 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 - [Data Dictionary](https://iae-prd-opengsa.s3.amazonaws.com/ContractData-Specifications-Version14-Changes_(1).doc)
 - [OT Data Dictionary](https://iae-prd-opengsa.s3.amazonaws.com/ContractData_DataDictionary_V14_OT_March_2022_update.pdf)
 - [Web Services Specifications](https://iae-prd-opengsa.s3.amazonaws.com/FPDS-NG_14_Data_Validation_rules_document_(3).doc)
-- Changes in XSD and WSDLs
-- SOAP Examples
-- WSDL Zip file
+- [Changes in XSD and WSDLs](https://www.fpds.gov/downloads/FPDS-Specifications-Version14-Changes.doc)
+- [SOAP Examples](https://www.fpds.gov/downloads/Version_1.4_specs/V1.4_Soap_Request_Samples.zip)
+- [WSDL Zip file](https://www.fpds.gov/downloads/V14WSDLFiles_11_20_2009.zip)
 - [Validation Rules](https://iae-prd-opengsa.s3.amazonaws.com/ContractData_14_Data_Validation_rules_document.doc)
 
 #### Version 1.3
 - [FPDS Data Dictionary](https://iae-prd-opengsa.s3.amazonaws.com/ContractData_DataDictionary_V1.3_March_2022_update.pdf)
 - [Web Services Integration Specifications](https://iae-prd-opengsa.s3.amazonaws.com/FPDS-Specifications-WebServices_Integration_Specifications_V1.4_(5).doc)
-- WSDL Files
+- [WSDL Files](https://www.fpds.gov/downloads/FPDS_WSDL_07182008.zip)
 - [Changes Outline](https://iae-prd-opengsa.s3.amazonaws.com/ContractData-Specifications-Version13-Changes-V16.doc)
-- SOAP Request Samples
-- XML Examples
+- [SOAP Request Samples](https://www.fpds.gov/downloads/soap1.3.zip)
+- [XML Examples](https://www.fpds.gov/downloads/xmls1.3.zip)
 - [Validation Rules Document](https://iae-prd-opengsa.s3.amazonaws.com/ContractData-Specifications-Version13-Changes-V16...docx)
 
 #### Version 1.2 and Earlier
@@ -512,7 +513,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Previous FAADC Specifications
-- FAADC 1.0 WSDL ZIP File
+- [FAADC 1.0 WSDL ZIP File](https://www.fpds.gov/downloads/FAADC/FAADC_WSDL.zip)
 - [FAADC Web Services Specifications V1.0](https://iae-prd-opengsa.s3.amazonaws.com/FAADC_Webservice_Integration_Specifications_(1).docx)
 - [FAADC Help Guide V1.0](https://iae-prd-opengsa.s3.amazonaws.com/FAADC_Help_Guide_March_2022_update.pdf)
 - [FAADC Validation Rules V1.0](https://iae-prd-opengsa.s3.amazonaws.com/FAADC_Validation_Rules.docx)
