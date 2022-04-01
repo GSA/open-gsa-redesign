@@ -52,7 +52,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     <details>
     <summary>Feed XML specification</summary>
     <pre>
-    {% hightlight xml%}
+    {% highlight xml %}
         <feed xmlns="http://www.w3.org/2005/Atom">
             <title>FFATA Portal search results for<![CDATA[: recovery]]></title>
             <link rel="alternate" type="text/html" href="url_link"/>
@@ -73,7 +73,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
                 </content>
             </entry>
         </feed>
-    {% endhightligh %}
+    {% endhighlight %}
     </pre>
     </details>
     <details>
