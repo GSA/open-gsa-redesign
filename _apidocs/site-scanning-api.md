@@ -51,7 +51,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
     // This can be any API endpoint on your server, and you can use the
     // special {{api_key}} variable to automatically substitute in the API
     // key the user just signed up for.
-    exampleApiUrl: 'https://api.gsa.gov/technology/site-scanning/v1/websites?api_key={{api_key}}',
+    // exampleApiUrl: 'https://api.gsa.gov/technology/site-scanning/v1/websites?api_key={{api_key}}',
 
 
 
