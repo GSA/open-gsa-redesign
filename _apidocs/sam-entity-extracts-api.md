@@ -324,8 +324,6 @@ Curl request with username and password: curl -X POST "https://api.sam.gov/data-
 
 **Sample File Names:**<br>
 
-<b>The below sample files are for Alpha. Production has files from January 2020 onward.</b>
-
 * FOUO files: 
   <br> SAM_FOUO_DAILY_V2_20220405.ZIP<br> SAM_FOUO_MONTHLY_V2_20220403.ZIP<br>  SAM_FOUO_UTF-8_DAILY_V2_20220405.ZIP<br>  SAM_FOUO_UTF-8_MONTHLY_V2_20220403.ZIP
 
@@ -434,6 +432,6 @@ Date | Version | Description
 10/06/2021 | v2.6    | * Updated the "Contact Us" section. 
 10/21/2021 | v2.7    | * Added Expected Results to Data Package Sample API Calls.<br><br> * Updated Extract Mapping Files.
 02/01/2022 | v2.8    | * Updated the Exclusions Extract Layout file.<br><br> * Updated the Exclusions Public V2 Extract file.
-04/04/2022 | v2.9    | * Removed old sample files that has duns informationa and provided new files with uei information from Sample Extract Files section. <br><br>*Updated "Effective April 2022: SAM Master Extract Mapping" to remove the DUNS occurrences. <br><br>* Updated the "April 2022 release: FOUO Extract Layout" with the correct Sensitivity levels for the Points Of Contact elements.<br><br>* Updated the "April 2022 release: Sensitive Extract Layout" to reflect the correct order for "IMMEDIATE PARENT EVS SOURCE".<br><br>* Updated the "April 2022 release: Exclusions Extract Layout" to remove the DUNS occurrences.
+04/04/2022 | v2.9    | * Sample Extract Files section: Removed old sample files that had DUNS information and provided new files with UEI information.<br><br> * Updated “Effective April 2022: SAM Master Extract Mapping” to remove the DUNS occurrences.<br><br> * Updated the “April 2022 release: FOUO Extract Layout” with the correct Sensitivity levels for the Points Of Contact elements.<br><br> * Updated the “April 2022 release: Sensitive Extract Layout” to reflect the correct order for “IMMEDIATE PARENT EVS SOURCE”.<br><br> * Updated the “April 2022 release: Exclusions Extract Layout” to remove the DUNS occurrences.<br><br>
 
 <p><small><a href="#">Back to top</a></small></p>
