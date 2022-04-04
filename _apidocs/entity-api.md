@@ -172,7 +172,7 @@ NOTES:
 
 <tr>
 <td>entityEFTIndicator</td>
-<td>Entity EFT Indicator aka duns4.
+<td>Entity EFT Indicator.
 <br>Example: entityEFTIndicator=0000
 <br>NOTE: This parameter must be used in conjunction with ueiSAM.</td>
 <td>v1<br>v2<br>v3</td>
@@ -5541,7 +5541,7 @@ NOTES:
 
 <tr>
 <td>entityEFTIndicator</td>
-<td>Entity EFT Indicator aka duns4.
+<td>Entity EFT Indicator.
 <br>Example: entityEFTIndicator=0000
 <br>NOTE: This parameter must be used in conjunction with ueiSAM.</td>
 <td>v1<br>v2<br>v3</td>
@@ -12830,7 +12830,7 @@ NOTES:
 
 <tr>
 <td>entityEFTIndicator</td>
-<td>Entity EFT Indicator aka duns4.
+<td>Entity EFT Indicator.
 <br>Example: entityEFTIndicator=0000
 <br>NOTE: This parameter must be used in conjunction with ueiSAM.</td>
 <td>v1<br>v2<br>v3</td>
