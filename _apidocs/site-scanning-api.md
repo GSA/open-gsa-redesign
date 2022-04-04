@@ -19,7 +19,11 @@ banner-heading: Site Scanning API
 
 ## Overview
 
-Every day, the <a href="https://digital.gov/site-scanning/">Site Scanning program</a> runs a scanning engine to dynamically pull down lists of domains from various sources and then scan them with a collection of scan plugins to gather data on them. This data is created in the json format and is indexed in an elasticsearch datastore, where it can be searched by an API written in the Django REST Framework.
+Every day, the <a href="https://digital.gov/site-scanning/">Site Scanning program</a> runs a scanning engine to dynamically pull down lists of domains from various sources and then scan them with a collection of scan plugins to gather data on them. 
+
+The resulting data that populates this API then can be seen as having two main utilities: 
+* Providing a fairly comprehensive dataset of US federal government websites.  
+* Providing various information and analysis about each of these websites.  
 
 In addition to querying the data via API, you can also [download it directly](#download-the-data-directly) as a CSV or JSON file.  
 
@@ -252,7 +256,7 @@ Note that the results are ordered in descending alphabetical order for the `targ
 
 ## OpenAPI Specification File
 
-You can view the full details of this API in the <a href="https://api.gsa.gov/technology/site-scanning/v1/api-json">OpenAPI Specification file available here</a>.
+You can view the full details of this API in the <a href="https://api.gsa.gov/technology/site-scanning/v1/api-json?api_key=DEMO_KEY">OpenAPI Specification file available here</a>.
 
 <p><small><a href="#">Back to top</a></small></p>
 

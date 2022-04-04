@@ -9,9 +9,7 @@ banner-heading: Api.Data.Gov Admin API
 
 ## Overview
 
-[api.data.gov](https://api.data.gov) is a free API management service for federal agencies. This API implements the API Umbrella Admin API.
-
-The api.data.gov Admin API implements the [API Umbrella Admin API](http://nrel.github.io/api-umbrella/docs/admin-api/) and can be used by api.data.gov agency admins perform admin operations and query their API analytics.  The full Admin API documentation [can be found here](http://nrel.github.io/api-umbrella/docs/admin-api/).
+[api.data.gov](https://api.data.gov) is a free API management service for federal agencies. The api.data.gov Admin API implements the [API Umbrella](https://github.com/nrel/api-umbrella) Admin API and can be used by api.data.gov agency admins to perform admin operations and to query their API analytics. 
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -24,8 +22,6 @@ This API has one primary endpoints:
 
 
 **Description**   Administrative queries and tasks to the api.data.gov system
-
-For more details, refer to the [Admin API documentation found here](http://nrel.github.io/api-umbrella/docs/admin-api/).
 
 <p><small><a href="#">Back to top</a></small></p>
 
