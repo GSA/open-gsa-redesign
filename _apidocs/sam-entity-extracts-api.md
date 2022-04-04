@@ -309,7 +309,7 @@ https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=EXCLUSI
 **Expected Result**:
 Click to view the full details of the data elements: <a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_Extract_Layout.pdf">Exclusions Extract Layout</a><br>
 Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes:<a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_V2_Extract_Layout.pdf">Exclusions Extract Layout</a><br>
-Click to view the full details of the revised extract layout for the upcoming April 2022 release: <a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_Extract_Layout_V2_1.pdf">Exclusions Extract Layout</a><br>
+Click to view the full details of the revised extract layout for the upcoming April 2022 release: <a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_Extract_Layout_V2.pdf">Exclusions Extract Layout</a><br>
 
 **An example of the Sensitive extract download POST call using Postman:**<br>
 Request URL:
@@ -449,5 +449,6 @@ Date | Version | Description
 10/06/2021 | v2.6 | * Updated the "Contact Us" section. 
 10/21/2021 | v2.7 | * Added Expected Results to Data Package Sample API Calls.<br><br> * Updated Extract Mapping Files.
 02/01/2022 | v2.8 | * Updated the Exclusions Extract Layout file.<br><br> * Updated the Exclusions Public V2 Extract file.
+04/04/2022 | v2.8 | * Updated the Exclusions Extract Layout file.<br><br> * Updated Master Extract Mapping Files.
 
 <p><small><a href="#">Back to top</a></small></p>
