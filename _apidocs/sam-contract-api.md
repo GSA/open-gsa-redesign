@@ -78,11 +78,13 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     <details>
     <summary>Atom Element Definitions</summary>
     <p>
-       <b>Container Elements</b>
-           “feed” Element – It is the top-level element of an Atom Feed Document, acting as a container for metadata and data associated with the feed
-            “entry” Element – It represents an individual entry, acting as a container for metadata and data associated with the entry.
-            “content” Element – It contains either links or content of the entry. The “type” attribute specifies the MIME media type. It “type” attribute is not present then the content is treated as “text”. The content of the element is either an Award/IDV xml.
-       <b>Metadata Elements</b>
+       <b>Container Elements</b><br>
+       <ul>
+       <li>“feed” Element – It is the top-level element of an Atom Feed Document, acting as a container for metadata and data associated with the feed</li>
+       <li> “entry” Element – It represents an individual entry, acting as a container for metadata and data associated with the entry.</li>
+       <li>“content” Element – It contains either links or content of the entry. The “type” attribute specifies the MIME media type. It “type” attribute is not present then the content is treated as “text”. The content of the element is either an Award/IDV xml.</li>
+       </ul>
+       <b>Metadata Elements</b><br>
             "author” Element – It indicates the author or the entry or the feed.
             “link” Element – It defines a reference from an entry or feed to a web resource. The “type” attribute is n advisory media type. It is a hint about the the type of representation that is expected to be returned when the value of href attribute is deferenced. The “rel” attribute indicates the link relation type.
             “alternate” signifies an alternate version of the resource described by the containing element.
