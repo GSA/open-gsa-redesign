@@ -78,22 +78,24 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     <details>
     <summary>Atom Element Definitions</summary>
     <p>
-       <b>Container Elements</b><br>
-       <ul>
+       <b>Container Elements</b>
+       <ul style="list-style-type: disc">
        <li>“feed” Element – It is the top-level element of an Atom Feed Document, acting as a container for metadata and data associated with the feed</li>
        <li> “entry” Element – It represents an individual entry, acting as a container for metadata and data associated with the entry.</li>
        <li>“content” Element – It contains either links or content of the entry. The “type” attribute specifies the MIME media type. It “type” attribute is not present then the content is treated as “text”. The content of the element is either an Award/IDV xml.</li>
        </ul>
-       <b>Metadata Elements</b><br>
-            "author” Element – It indicates the author or the entry or the feed.
-            “link” Element – It defines a reference from an entry or feed to a web resource. The “type” attribute is n advisory media type. It is a hint about the the type of representation that is expected to be returned when the value of href attribute is deferenced. The “rel” attribute indicates the link relation type.
-            “alternate” signifies an alternate version of the resource described by the containing element.
-            “first” signifies the first entry element in the feed.
-            “last” signifies the last entry element in the feed.
-            “previous” signifies the previously read entry element of the feed.
-            “next” signifies the next available entry elements of the feed.
-            “title” Element - It conveys a human-readable title for an entry or feed.
-            “modified” Element with in the “entry” section represents the last modified date of the entry.
+       <b>Metadata Elements</b>
+       <ul style="list-style-type: disc">
+       <li>"author” Element – It indicates the author or the entry or the feed.</li>
+       <li>“link” Element – It defines a reference from an entry or feed to a web resource. The “type” attribute is n advisory media type. It is a hint about the the type of representation that is expected to be returned when the value of href attribute is deferenced. The “rel” attribute indicates the link relation type.</li>
+       <li>“alternate” signifies an alternate version of the resource described by the containing element.</li>
+       <li>“first” signifies the first entry element in the feed.</li>
+       <li>“last” signifies the last entry element in the feed.</li>
+       <li>“previous” signifies the previously read entry element of the feed.</li>
+       <li>“next” signifies the next available entry elements of the feed.</li>
+       <li>“title” Element - It conveys a human-readable title for an entry or feed.</li>
+       <li>“modified” Element with in the “entry” section represents the last modified date of the entry.</li>
+       </ul>
     </p>
     </details>
     <details>
