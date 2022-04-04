@@ -101,7 +101,8 @@ To begin using this API, you will need to register for an API Key. You can sign 
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
-•	After registration, you will need to request the Agency Token (x-agency-token) by sending an email to errc@gsa.gov.
+•	After registering for the API Key, you will need to send an email to errc@gsa.gov requesting the Agency Token (x-agency-token).  You must also attach to that email a completed copy of the Memorandum Of Understanding (MOU). [Click here to download the MOU template.](https://github.com/GSA/open-gsa-redesign/files/8064702/GSA_FAS_TTL_TMSS2.Rate.Query.API.TEMPLATE.Updated.1-28-22.docx)
+
  
 •	Every API request must have the API key in the x-api-key and Agency Token in the x-agency-token of HTTP header with every API request.
  
@@ -186,6 +187,7 @@ This API has one primary endpoint:
 | vehicleCharge	| Vehicle Transporation Cost |
 | totalCharge |	Total Transportation Cost |
 | sitRatePercentage | SIT Rate discount applied |
+| accrlRatePercentage | Accessorial Rate discount applied |
 | destThirtyDayCharge |	Standard SIT cost for 30 days at Destination |
 | destSixtyDayCharge | Standard SIT cost for 60 days at Destination |
 | destNinetyDayCharge |	Standard SIT cost for 90 days at Destination |
@@ -216,7 +218,7 @@ This API has one primary endpoint:
 ## API Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-[TMSS 2.0 HHG Rate Query API spec.xlsx](https://github.com/GSA/open-gsa-redesign/files/7564795/TMSS.HHG.Rate.Query.API.spec.xlsx)
+[TMSS HHG Rate Query API spec.xlsx](https://github.com/GSA/open-gsa-redesign/files/8064723/TMSS.HHG.Rate.Query.API.spec.xlsx)
 
 
 
@@ -264,7 +266,7 @@ Request URL: https://api.gsa.gov/travel/tmss/v1/ratequery/hhg
 Request Payload for a HHG Domestic Shipment:  
 ```
 {
-    "agencyLocationCode": 1730,
+    "agencyLocationCode": 697,
     "queryType":"HHG",
     "pickupDate":"2020-04-12",
     "shipmentType":"General",
@@ -287,63 +289,64 @@ Response for a HHG Domestic Shipment:
 ```
 {  
        "agencyLocationCode": 697,  
-        "queryType": "HHGAPI",  
-        "pickupDate": "2020-04-12T00:00:00.000+0000",  
-        "shipmentType": "General",  
-        "sroId": "GENRL",  
-        "containerizedShipments": false,  
-        "vehicleClass": "Class 1",  
-        "estimatedWeight": 10000,  
-        "originZip": "32714",  
-        "originProvince": null,  
-        "destinationZip": "23059",  
-        "destinationProvince": null,  
-        "originCountryCode": "US00",  
-        "destinationCountryCode": "US00",  
-        "miles": 739.0,  
-        "uabWeight": 150,  
-        "rateId": 4265664,  
-        "queryId": 4488,  
-        "rateType": "G",  
-        "scac": "(New) BUSV",  
-        "zefflag": false,  
-        "companyName": "BURNHAM SERVICE COMPANY INC",  
-        "telephone": "800-955-5421",  
-        "socioEconomicInd": "s",  
-        "tender": "N613",  
-        "csi": "0.00",  
-        "vi": "33.4030",  
-        "surfacePercentage": 37,  
-        "surfaceCharge": "7367.75",  
-        "uabPercentage": 0,  
-        "uabCharge": "0.00",  
-        "vehicleCharge": "1101.11",  
-        "totalCharge": "8468.86",  
-        "sitRatePercentage": 47,  
-        "thirtyDayCharge": "3457.32",  
-        "sixtyDayCharge": "4289.22",  
-        "ninetyDayCharge": "5121.12",  
-        "sitOrigin185ACharge": "658.47",  
-        "sitOrigin185BCharge": "27.73",  
-        "sitOrigin210ACharge": "1994.68",  
-        "sitDest185ACharge": "658.47",  
-        "sitDest185BCharge": "27.73",  
-        "sitDest210ACharge": "1994.68",  
-        "originThirtyDayCharge": "3669.29",  
-        "originSixtyDayCharge": "4585.79",  
-        "originNinetyDayCharge": "5502.29",  
-        "exsPackagingCharge": null,  
-        "exsMonthlyStorageCharge": null,  
-        "exsWarehouseCharge": null,  
-        "exsTotal1MonthCharge": null,  
-        "exsTotal6MonthCharge": null,  
-        "exsTotal12MonthCharge": null,  
-        "exsDeliveryWithin50Miles": null,  
-        "exsDeliveryHandlingOut": null,  
-        "exsDeliveryOver50Miles": null,  
-        "exsDiscountApplied": null,  
-        "rateEffectiveDate": "2019-05-01T05:00:00.000+0000",  
-        "rateExpiryDate": "2020-05-31T05:00:00.000+0000"  
+        "queryType": "HHG",
+        "pickupDate": "2020-04-12T00:00:00.000+0000",
+        "shipmentType": "General",
+        "sroId": "GENRL",
+        "containerizedShipments": false,
+        "vehicleClass": "Class 1",
+        "estimatedWeight": 10000,
+        "originZip": "32714",
+        "originProvince": null,
+        "destinationZip": "23059",
+        "destinationProvince": null,
+        "originCountryCode": "US00",
+        "destinationCountryCode": "US00",
+        "miles": 740,
+        "uabWeight": 0,
+        "rateId": 14486562,
+        "queryId": 4944,
+        "rateType": "M",
+        "scac": "HTSQ",
+        "zefflag": false,
+        "companyName": "HILLDRUP MOVING &",
+        "telephone": "703-221-7155",
+        "socioEconomicInd": null,
+        "tender": "HT20",
+        "csi": "111.62",
+        "vi": "108.4768",
+        "surfacePercentage": 43,
+        "surfaceCharge": "8562.52",
+        "uabPercentage": 0,
+        "uabCharge": "0.00",
+        "vehicleCharge": "888.00",
+        "totalCharge": "9450.52",
+        "sitRatePercentage": 56,
+        "accrlRatePercentage": 0,
+        "destThirtyDayCharge": "4119.36",
+        "destSixtyDayCharge": "5110.56",
+        "destNinetyDayCharge": "6101.76",
+        "sitOrigin1stDayCharge": "784.56",
+        "sitOriginAddnlDayCharge": "33.04",
+        "sitOriginDlvOutUnder50milesCharge": "2376.64",
+        "sitDest1stDayCharge": "784.56",
+        "sitDestAddnlDayCharge": "33.04",
+        "sitDestDlvOutUnder50milesCharge": "2376.64",
+        "originThirtyDayCharge": "4371.92",
+        "originSixtyDayCharge": "5463.92",
+        "originNinetyDayCharge": "6555.92",
+        "exsPackagingCharge": null,
+        "exsMonthlyStorageCharge": null,
+        "exsWarehouseCharge": null,
+        "exsTotal1MonthCharge": null,
+        "exsTotal6MonthCharge": null,
+        "exsTotal12MonthCharge": null,
+        "exsDeliveryWithin50Miles": null,
+        "exsDeliveryHandlingOut": null,
+        "exsDeliveryOver50Miles": null,
+        "exsDiscountApplied": null,
+        "rateEffectiveDate": "2020-01-01T05:00:00.000+0000",
+        "rateExpiryDate": "2020-04-30T04:00:00.000+0000"
 }  
 ```
 
@@ -389,7 +392,7 @@ Response for a HHG International Shipment:
         "miles": 0,
         "uabWeight": 150,
         "rateId": 14183679,
-        "queryId": 4198,
+        "queryId": 4945,
         "rateType": "G",
         "scac": "SDHR",
         "zefflag": false,
@@ -406,6 +409,7 @@ Response for a HHG International Shipment:
         "vehicleCharge": "7000.00",
         "totalCharge": "29655.32",
         "sitRatePercentage": 120,
+        "accrlRatePercentage": 100,
         "destThirtyDayCharge": "990.00",
         "destSixtyDayCharge": "1284.00",
         "destNinetyDayCharge": "1578.00",
@@ -489,6 +493,7 @@ Response for a HHG Extended Storage Shipment:
         "vehicleCharge": null,
         "totalCharge": null,
         "sitRatePercentage": null,
+        "accrlRatePercentage": null,
         "destThirtyDayCharge": null,
         "destSixtyDayCharge": null,
         "destNinetyDayCharge": null,
