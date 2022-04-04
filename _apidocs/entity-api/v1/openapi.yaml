@@ -128,7 +128,7 @@ paths:
           type: string
       - name: entityEFTIndicator
         in: query
-        description: EFT indicator aka dunsPlus4
+        description: EFT indicator
         schema:
           type: string
       - name: entityStructureCode
@@ -584,7 +584,7 @@ paths:
           type: string
       - name: entityEFTIndicator
         in: query
-        description: EFT indicator aka dunsPlus4
+        description: EFT indicator
         schema:
           type: string
       - name: entityStructureCode
@@ -1045,7 +1045,7 @@ paths:
           type: string
       - name: entityEFTIndicator
         in: query
-        description: EFT indicator aka dunsPlus4
+        description: EFT indicator
         schema:
           type: string
       - name: entityStructureCode
@@ -1510,7 +1510,7 @@ paths:
           type: string
       - name: entityEFTIndicator
         in: query
-        description: EFT indicator aka dunsPlus4
+        description: EFT indicator
         schema:
           type: string
       - name: entityStructureCode
@@ -2049,7 +2049,7 @@ paths:
           type: string
       - name: entityEFTIndicator
         in: query
-        description: EFT indicator aka dunsPlus4
+        description: EFT indicator
         schema:
           type: string
       - name: entityStructureCode
@@ -2514,7 +2514,7 @@ paths:
           type: string
       - name: entityEFTIndicator
         in: query
-        description: EFT indicator aka dunsPlus4
+        description: EFT indicator
         schema:
           type: string
       - name: entityStructureCode
