@@ -449,5 +449,6 @@ Date | Version | Description
 10/06/2021 | v2.6 | * Updated the "Contact Us" section. 
 10/21/2021 | v2.7 | * Added Expected Results to Data Package Sample API Calls.<br><br> * Updated Extract Mapping Files.
 02/01/2022 | v2.8 | * Updated the Exclusions Extract Layout file.<br><br> * Updated the Exclusions Public V2 Extract file.
+04/04/2022 | v2.8 | * Updated the Exclusions Extract Layout file.<br><br> * Updated Master Extract Mapping Files.
 
 <p><small><a href="#">Back to top</a></small></p>
