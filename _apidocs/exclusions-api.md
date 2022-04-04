@@ -262,7 +262,7 @@ The API will return one of the following responses:
 
 ## Examples
 
-### Example 1: Post April 2022, get me all the Firms whose Physical Address is in Virginia.
+### Example 1: Post April 3rd 2022, get me all the Firms whose Physical Address is in Virginia.
 <details>
 <summary>Request URL</summary>
 <b>v2 Production URL:</b> https://api.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
@@ -479,7 +479,7 @@ v2 Response:<br>
 </p>
 </details>
 
-### Example 2: Post April 2022, get me all the Firms in a CSV file format.
+### Example 2: Post April 3rd 2022, get me all the Firms in a CSV file format.
 <details>
 <summary>Request URL</summary>
 <b>v2 Production URL:</b> https://api.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&format=CSV<br>
