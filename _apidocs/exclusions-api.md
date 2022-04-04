@@ -26,7 +26,7 @@ The response will be provided in the JSON format in a paginated manner.
 
 ## Getting Started
 
-Exclusions API can be accessed from Production or Alpha via the following version 1 version 2 and version 3 endpoints:
+Exclusions API can be accessed from Production or Alpha via the following version 1, version 2 and version 3 endpoints:
 * Production Version 1: https://api.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Production Version 2: https://api.sam.gov/entity-information/v2/exclusions?api_key=< value >
 * Production Version 3: https://api.sam.gov/entity-information/v3/exclusions?api_key=< value >
