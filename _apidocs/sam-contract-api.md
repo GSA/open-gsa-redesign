@@ -77,10 +77,9 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     </details>
     <details>
     <summary>Atom Element Definitions</summary>
-    <pre>
     <p>
-        <b>Container Elements</b>
-            “feed” Element – It is the top-level element of an Atom Feed Document, acting as a container for metadata and data associated with the feed
+       <b>Container Elements</b>
+           “feed” Element – It is the top-level element of an Atom Feed Document, acting as a container for metadata and data associated with the feed
             “entry” Element – It represents an individual entry, acting as a container for metadata and data associated with the entry.
             “content” Element – It contains either links or content of the entry. The “type” attribute specifies the MIME media type. It “type” attribute is not present then the content is treated as “text”. The content of the element is either an Award/IDV xml.
        <b>Metadata Elements</b>
@@ -94,7 +93,6 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
             “title” Element - It conveys a human-readable title for an entry or feed.
             “modified” Element with in the “entry” section represents the last modified date of the entry.
     </p>
-    </pre>
     </details>
     <details>
     <summary>Award XML</summary>
