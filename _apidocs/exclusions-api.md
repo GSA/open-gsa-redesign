@@ -26,10 +26,10 @@ The response will be provided in the JSON format in a paginated manner.
 
 ## Getting Started
 
-Exclusions API can be accessed from Production or Alpha via the following version 1 and version 2 endpoints:
+Exclusions API can be accessed from Production or Alpha via the following version 1, version 2 and version 3 endpoints:
 * Production Version 1: https://api.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Production Version 2: https://api.sam.gov/entity-information/v2/exclusions?api_key=< value >
-* Production Version 3: COMING SOON<br>https://api.sam.gov/entity-information/v3/exclusions?api_key=< value >
+* Production Version 3: https://api.sam.gov/entity-information/v3/exclusions?api_key=< value >
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< value >
 * Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/exclusions?api_key=< value ><br><br>
@@ -98,7 +98,6 @@ Utilizing the Exclusion API as an extract:
 ## API Description
 
 **Query String Parameters**
-<p>* This field is valid until April 3rd, 2022.</p>
 
 | Parameter Name | Description | Applicable Versions |
 | ---- | ----------- | ----------- |
@@ -111,7 +110,6 @@ Utilizing the Exclusion API as an extract:
 | stateProvince | Allows 2-character codes for the USA, names for foreign countries and null (a string).<br><br> Examples: 'stateProvince=AR', 'stateProvince=[VA~MICHOACÁN]', 'stateProvince=""' |  v1<br>v2<br>v3 |
 | country  | Allows 3-character codes, numerical values and null (a string).<br><br> Examples: 'country=USA' 'country=[RUS~292~mex]', 'country=!""', 'q=((country:RUS) OR (country:292) OR (country:mex))' |  v1<br>v2<br>v3 |
 | zipCode  | Allows 5-digit values for the USA, any value as it was provided for foreign countries and null (a string).<br><br> Example: 'zipCode=20171', 'zipCode=[901-2132~V3M 5P8~C.P. 44890]', 'zipCode=""', 'q=((zipCode:901-2132) OR (zipCode:20147))' |  v1<br>v2<br>v3 |
-| ueiDUNS* | Denotes Unique Entity Identifier DUNS.<b>This field is valid until April 3rd, 2022.</b><br><br> Allows any complete value as it was provided, null and also wildcard searches.<br><br> Examples: 'ueiDUNS=9725565', 'ueiDUNS=[001*~""]', 'q=((ueiDUNS:9725565) OR (ueiDUNS:047795005))' |  v1<br>v2 |
 | ueiSAM | Denotes Unique Entity Identifier SAM.<br><br> Allows 12-character values, null and also wildcard searches.<br><br> Examples: 'ueiSAM=""', 'ueiSAM=!""', 'ueiSAM=P*X*1', 'q=((ueiSAM:PMC9YQMXJZU1) OR (ueiSAM:PG4XZ77WRC21))' |  v1<br>v2<br>v3 |
 | excludingAgencyCode | Allows a partial text, a complete text and null (a string).<br><br> Examples: 'excludingAgencyCode=ICE', 'excludingAgencyCode=DHS-ICE', 'excludingAgencyCode=[AF~HUD~""]', 'q=((excludingAgencyCode:AF) OR (excludingAgencyCode:HUD))' |  v1<br>v2<br>v3 |
 | excludingAgencyName | Allows a partial text, a complete text and null (a string).<br><br> This parameter can be used inside the 'q' parameter. When not used inside the 'q' parameter, this parameter will apply the AND operator if a multi-text value is provided in any order and in any case<br><br> Examples: 'excludingAgencyName=Of URBAN housing',  'excludingAgencyName=[Geological~Navy]', q=((excludingAgencyName:Geological) OR (excludingAgencyName:Navy)) |  v1<br>v2<br>v3 |
@@ -133,94 +131,93 @@ Utilizing the Exclusion API as an extract:
 **Expected Result**
 
 API response consists of Sections, Sub-sections and Tags underneath each of the Sections or Sub-sections. There are a few placeholder elements that return ‘Currently Not Available’ until they are made available in the database. Additionally,
-<p>* This field is valid until April 3rd, 2022.</p>
 
-| Section/Sub-section/Tag | Type | Description | Applicable Versions | 
-| ---- | ---- | ----------- | ----------- |
-| **exclusionDetails** |
-| classificationType | string | Classification Type | v1<br>v2<br>v3 |
-| exclusionType | string | Exclusion Type  | v1<br>v2<br>v3 |
-| exclusionProgram | string | Exclusion Program | v1<br>v2<br>v3 | 
-| excludingAgencyCode | string | Excluding Agency Code  | v1<br>v2<br>v3 |
-| excludingAgencyName | string | Excluding Agency Name  | v1<br>v2<br>v3 |
-| **exclusionIdentification** |
-| ueiSAM | string | Unique Entity Identifier SAM   | v1<br>v2<br>v3 |
-| ueiDUNS* | string | Unique Entity Identifier DUNS. <b>This field is valid until April 3rd, 2022.</b> | v1<br>v2 |
-| cageCode | string | CAGE Code  |  v1<br>v2<br>v3 |
-| npi | string| NPI |  v1<br>v2<br>v3 |
-| prefix | string | Prefix |  v1<br>v2<br>v3 |
-| firstName | string | First Name  |  v1<br>v2<br>v3 |
-| middleName | string | Middle Name   | v1<br>v2<br>v3 |
-| lastName | string | Last Name   | v1<br>v2<br>v3 |
-| suffix | string | Suffix   | v1<br>v2<br>v3 |
-| name/entityName | string | Firm Name <br><br> NOTE: This parameter is being renamed.  name is in V1 and entityName will be V2.  | v1<br>v2<br>v3 |
-| dnbOpenData | string | DNB Open Data | v2<br>v3 |
-| **exclusionActions  --> listOfActions** |
-| createDate | string | Create Date   | v1<br>v2<br>v3 |
-| updateDate | string | Update Date  | v1<br>v2<br>v3 |
-| activateDate | string | Activate Date | v1<br>v2<br>v3 |
-| terminationDate | string | Termination Date   | v1<br>v2<br>v3 |
-| terminationType | string | Termination Type   | v1<br>v2<br>v3 |
-| recordStatus | string | Record Status  | v1<br>v2<br>v3 |
-| **exclusionAddress/exclusionPrimaryAddress** | | NOTE: This section is being renamed. It is exclusionAddress in V1 and will be exclusionPrimaryAddress in V2. | |
-| addressLine1 | string | Address Line 1  |  v1<br>v2<br>v3 |
-| addressLine2 | string | Address Line 2  |  v1<br>v2<br>v3 |
-| city | string | Address City  |  v1<br>v2<br>v3 | 
-| stateOrProvinceCode | string | Address State or Province Code |  v1<br>v2<br>v3 |
-| zipCode | string | Address Zip OR Postal Code  |  v1<br>v2<br>v3 |
-| zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2<br>v3 |
-| countryCode | string | Country Code |  v1<br>v2<br>v3 |
-| **exclusionSecondaryAddress** |
-| addressLine1 | string | Address Line 1  |  v2<br>v3 |
-| addressLine2 | string | Address Line 2  |  v2<br>v3 |
-| city | string | Address City  |  v2<br>v3 | 
-| stateOrProvinceCode | string | Address State or Province Code |  v2<br>v3 |
-| zipCode | string | Address Zip OR Postal Code  | v2<br>v3 |
-| zipCodePlus4 | string | Address Zip Plus 4  |  v2<br>v3 |
-| countryCode | string | Country Code |  v2<br>v3 |
-| **exclusionOtherInformation** |
-| additionalComments | string | Additional Comments  |  v1<br>v2<br>v3 |
-| ctCode | string | CT Code  |  v1<br>v2<br>v3 |
-| dnbInvestigationStatus/evsInvestigationStatus | string | EVS Investigation Status  <br><br>NOTE: This parameter is being renamed. dnbInvestigationStatus is in V1 and evsInvestigationStatus will be V2.   |  v1<br>v2<br>v3 |
-| **exclusionOtherInformation  --> references --> referencesList**   |
-| name/exclusionName | string | Exclusion Name <br><br>NOTE:  This parameter is being renamed.  name is in V1 and exclusionName will be V2.|  v1<br>v2<br>v3 |
-| type | string | Type  |  v1<br>v2<br>v3 |
-| **exclusionOtherInformation --> moreLocations** |
-| exclusionName | string | Exclusion Name | v2<br>v3 |
-| duns | string | DUNS | v2 |
-| cageCode | string | CAGE Code | v2<br>v3 |
-| npi | string | NPI | v2<br>v3 |
-| **exclusionOtherInformation --> moreLocations --> primaryAddress** |
-| addressLine1 | string | Address Line 1 | v2<br>v3 |
-| addressLine2 | string | Address Line 2 | v2<br>v3 |
-| city | string | City | v2<br>v3 |
-| stateOrProvinceCode | string | State or Province Code | v2<br>v3 |
-| zipCode | string | Zip Code | v2<br>v3 |
-| zipCodePlus4 | string | Zip Code Plus 4 | v2<br>v3 |
-| countryCode | string | Country Code | v2<br>v3 |
+| Section/Sub-section/Tag                                              | Type | Description                                                                                                                                 | Applicable Versions            | 
+|----------------------------------------------------------------------| ---- |---------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
+| **exclusionDetails**                                                 |
+| classificationType                                                   | string | Classification Type                                                                                                                         | v1<br>v2<br>v3                 |
+| exclusionType                                                        | string | Exclusion Type                                                                                                                              | v1<br>v2<br>v3                 |
+| exclusionProgram                                                     | string | Exclusion Program                                                                                                                           | v1<br>v2<br>v3                 | 
+| excludingAgencyCode                                                  | string | Excluding Agency Code                                                                                                                       | v1<br>v2<br>v3                 |
+| excludingAgencyName                                                  | string | Excluding Agency Name                                                                                                                       | v1<br>v2<br>v3                 |
+| **exclusionIdentification**                                          |
+| ueiSAM                                                               | string | Unique Entity Identifier SAM                                                                                                                | v1<br>v2<br>v3                 |
+| cageCode                                                             | string | CAGE Code                                                                                                                                   | v1<br>v2<br>v3                 |
+| npi                                                                  | string| NPI                                                                                                                                         | v1<br>v2<br>v3                 |
+| prefix                                                               | string | Prefix                                                                                                                                      | v1<br>v2<br>v3                 |
+| firstName                                                            | string | First Name                                                                                                                                  | v1<br>v2<br>v3                 |
+| middleName                                                           | string | Middle Name                                                                                                                                 | v1<br>v2<br>v3                 |
+| lastName                                                             | string | Last Name                                                                                                                                   | v1<br>v2<br>v3                 |
+| suffix                                                               | string | Suffix                                                                                                                                      | v1<br>v2<br>v3                 |
+| name/entityName                                                      | string | Firm Name <br><br> NOTE: This parameter is being renamed.  name is in V1 and entityName will be V2.                                         | v1<br>v2<br>v3                 |
+| dnbOpenData                                                          | string | DNB Open Data                                                                                                                               | v2<br>v3                       |
+| **exclusionActions  --> listOfActions**                              |
+| createDate                                                           | string | Create Date                                                                                                                                 | v1<br>v2<br>v3                 |
+| updateDate                                                           | string | Update Date                                                                                                                                 | v1<br>v2<br>v3                 |
+| activateDate                                                         | string | Activate Date                                                                                                                               | v1<br>v2<br>v3                 |
+| terminationDate                                                      | string | Termination Date                                                                                                                            | v1<br>v2<br>v3                 |
+| terminationType                                                      | string | Termination Type                                                                                                                            | v1<br>v2<br>v3                 |
+| recordStatus                                                         | string | Record Status                                                                                                                               | v1<br>v2<br>v3                 |
+| **exclusionAddress/exclusionPrimaryAddress**                         | | NOTE: This section is being renamed. It is exclusionAddress in V1 and will be exclusionPrimaryAddress in V2.                                |                                |
+| addressLine1                                                         | string | Address Line 1                                                                                                                              | v1<br>v2<br>v3                 |
+| addressLine2                                                         | string | Address Line 2                                                                                                                              | v1<br>v2<br>v3                 |
+| city                                                                 | string | Address City                                                                                                                                | v1<br>v2<br>v3                 | 
+| stateOrProvinceCode                                                  | string | Address State or Province Code                                                                                                              | v1<br>v2<br>v3                 |
+| zipCode                                                              | string | Address Zip OR Postal Code                                                                                                                  | v1<br>v2<br>v3                 |
+| zipCodePlus4                                                         | string | Address Zip Plus 4                                                                                                                          | v1<br>v2<br>v3                 |
+| countryCode                                                          | string | Country Code                                                                                                                                | v1<br>v2<br>v3                 |
+| **exclusionSecondaryAddress**                                        |
+| addressLine1                                                         | string | Address Line 1                                                                                                                              | v2<br>v3                       |
+| addressLine2                                                         | string | Address Line 2                                                                                                                              | v2<br>v3                       |
+| city                                                                 | string | Address City                                                                                                                                | v2<br>v3                       | 
+| stateOrProvinceCode                                                  | string | Address State or Province Code                                                                                                              | v2<br>v3                       |
+| zipCode                                                              | string | Address Zip OR Postal Code                                                                                                                  | v2<br>v3                       |
+| zipCodePlus4                                                         | string | Address Zip Plus 4                                                                                                                          | v2<br>v3                       |
+| countryCode                                                          | string | Country Code                                                                                                                                | v2<br>v3                       |
+| **exclusionOtherInformation**                                        |
+| additionalComments                                                   | string | Additional Comments                                                                                                                         | v1<br>v2<br>v3                 |
+| ctCode                                                               | string | CT Code                                                                                                                                     | v1<br>v2<br>v3                 |
+| dnbInvestigationStatus/evsInvestigationStatus                        | string | EVS Investigation Status  <br><br>NOTE: This parameter is being renamed. dnbInvestigationStatus is in V1 and evsInvestigationStatus will be V2. | v1<br>v2<br>v3                 |
+| **exclusionOtherInformation  --> references --> referencesList**     |
+| name/exclusionName                                                   | string | Exclusion Name <br><br>NOTE:  This parameter is being renamed.  name is in V1 and exclusionName will be V2.                                 | v1<br>v2<br>v3                 |
+| type                                                                 | string | Type                                                                                                                                        | v1<br>v2<br>v3                 |
+| **exclusionOtherInformation --> moreLocations**                      |
+| exclusionName                                                        | string | Exclusion Name                                                                                                                              | v2<br>v3                       |
+| duns                                                                 | string | DUNS                                                                                                                                            | v2                             |
+| ueiSAM                                                               | string | ueiSAM                                                                                                                                      | v3                             |
+| cageCode                                                             | string | CAGE Code                                                                                                                                   | v2<br>v3                       |
+| npi                                                                  | string | NPI                                                                                                                                         | v2<br>v3                       |
+| **exclusionOtherInformation --> moreLocations --> primaryAddress**   |
+| addressLine1                                                         | string | Address Line 1                                                                                                                              | v2<br>v3                       |
+| addressLine2                                                         | string | Address Line 2                                                                                                                              | v2<br>v3                       |
+| city                                                                 | string | City                                                                                                                                        | v2<br>v3                       |
+| stateOrProvinceCode                                                  | string | State or Province Code                                                                                                                      | v2<br>v3                       |
+| zipCode                                                              | string | Zip Code                                                                                                                                    | v2<br>v3                       |
+| zipCodePlus4                                                         | string | Zip Code Plus 4                                                                                                                             | v2<br>v3                       |
+| countryCode                                                          | string | Country Code                                                                                                                                | v2<br>v3                       |
 | **exclusionOtherInformation --> moreLocations --> secondaryAddress** |
-| addressLine1 | string | Address Line 1 | v2<br>v3 |
-| addressLine2 | string | Address Line 2 | v2<br>v3 |
-| city | string | City | v2<br>v3 |
-| stateOrProvinceCode | string | State or Province Code | v2<br>v3 |
-| zipCode | string | Zip Code | v2<br>v3 |
-| zipCodePlus4 | string | Zip Code Plus 4 | v2<br>v3 |
-| countryCode | string | Country Code | v2<br>v3 |
-| **vesselDetails** |
-| callSign | string | Call Sign  |  v1<br>v2<br>v3 |
-| type | string | Type  |  v1<br>v2<br>v3 |
-| tonnage | string | Tonnage  |  v1<br>v2<br>v3 |
-| grt | string | GRT  |  v1<br>v2<br>v3 |
-| flag | string | Flag  |  v1<br>v2<br>v3 |
-| owner | string | Owner |  v1<br>v2<br>v3 |
-| **vesselDetails --> secondaryAddress**  |
-| addressLine1 | string | Address Line 1  |  v1<br>v2<br>v3 Production only |
-| addressLine2 | string | Address Line 2  |  v1<br>v2<br>v3 Production only |
-| city | string | Address City  |  v1<br>v2<br>v3 Production only |
-| stateOrProvinceCode | string | Address State or Province Code |  v1<br>v2<br>v3 Production only |
-| zipCode | string | Address Zip OR Postal Code  |  v1<br>v2<br>v3 Production only |
-| zipCodePlus4 | string | Address Zip Plus 4  |  v1<br>v2<br>v3 Production only |
-| countryCode | string | Country Code |  v1<br>v2<br>v3 Production only |
+| addressLine1                                                         | string | Address Line 1                                                                                                                              | v2<br>v3                       |
+| addressLine2                                                         | string | Address Line 2                                                                                                                              | v2<br>v3                       |
+| city                                                                 | string | City                                                                                                                                        | v2<br>v3                       |
+| stateOrProvinceCode                                                  | string | State or Province Code                                                                                                                      | v2<br>v3                       |
+| zipCode                                                              | string | Zip Code                                                                                                                                    | v2<br>v3                       |
+| zipCodePlus4                                                         | string | Zip Code Plus 4                                                                                                                             | v2<br>v3                       |
+| countryCode                                                          | string | Country Code                                                                                                                                | v2<br>v3                       |
+| **vesselDetails**                                                    |
+| callSign                                                             | string | Call Sign                                                                                                                                   | v1<br>v2<br>v3                 |
+| type                                                                 | string | Type                                                                                                                                        | v1<br>v2<br>v3                 |
+| tonnage                                                              | string | Tonnage                                                                                                                                     | v1<br>v2<br>v3                 |
+| grt                                                                  | string | GRT                                                                                                                                         | v1<br>v2<br>v3                 |
+| flag                                                                 | string | Flag                                                                                                                                        | v1<br>v2<br>v3                 |
+| owner                                                                | string | Owner                                                                                                                                       | v1<br>v2<br>v3                 |
+| **vesselDetails --> secondaryAddress**                               |
+| addressLine1                                                         | string | Address Line 1                                                                                                                              | v1<br>v2<br>v3 Production only |
+| addressLine2                                                         | string | Address Line 2                                                                                                                              | v1<br>v2<br>v3 Production only |
+| city                                                                 | string | Address City                                                                                                                                | v1<br>v2<br>v3 Production only |
+| stateOrProvinceCode                                                  | string | Address State or Province Code                                                                                                              | v1<br>v2<br>v3 Production only |
+| zipCode                                                              | string | Address Zip OR Postal Code                                                                                                                  | v1<br>v2<br>v3 Production only |
+| zipCodePlus4                                                         | string | Address Zip Plus 4                                                                                                                          | v1<br>v2<br>v3 Production only |
+| countryCode                                                          | string | Country Code                                                                                                                                | v1<br>v2<br>v3 Production only |
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -246,7 +243,7 @@ The API will return one of the following responses:
   </tr>
   <tr>
     <td>400</td>
-    <td>Application Level Error Messages:<br><br>1. Invalid "Date" format:<br>v1 or v2: Date should be specified in the format: MM/dd/YYYY.<br>v3: "message":"Dates must be specified in the MM/DD/YYYY format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY format.".<br><br>2. Invalid Input Parameters:<br>v1 or v2: "title":"Invalid Input Parameters","detail":"< user-provided invalid parameter >".<br> v3: "message":"The search parameter, < user-provided invalid parameter > does not exist.","detail":"Please refer to https://open.gsa.gov/api/exclusions-api/ for a list of allowable search parameters.".<br><br>3. If ‘includeSections’, ‘emailId’, ‘format’, ‘exclusionName’, ‘includeSections’, ‘addressLine1’, ‘addressLine2’, or ‘ssnOrTinOrEin’ is sent in the "q" parameter:<br>v1 or v2: The parameter: ‘emailId’, ‘format’, ‘exclusionName’, ‘includeSections’, ‘addressLine1’, ‘addressLine2’, or ‘ssnOrTinOrEin’ is not permitted inside Query Param(q).<br>v3: "message":"The search parameters 'emailId', 'format', 'exclusionName', 'includeSections', 'addressLine1', 'addressLine2', and 'ssnOrTinOrEin' are not permitted inside Query Param(q)","detail":"Please provide these parameters separately.".<br><br>4. A null or an empty value is sent in the "q" parameter:<br>v1 or v2: "title":"Invalid input","detail":"The value null/empty is not valid for parameter ‘Query Param (q)’"<br>v3: "message":"Invalid input","detail":"The value null/empty is not valid for parameter ‘Query Param (q)’".<br><br>5. More than 100 "ueiDUNS" values are sent:<br>v1 or v2: A maximum of 100 ueiDUNS is allowed.<br><b>(This error is valid until April 3rd, 2022.)</b><br>v3: "message":"The search parameter, ueiDUNS does not exist.","detail":"Please refer to https://open.gsa.gov/api/exclusions-api/ for a list of allowable search parameters.".<br><br>6. More than 100 "cageCode" values are sent:<br>v1 or v2: A maximum of 100 CAGE Codes is allowed.<br>v3: "message":"More than 100 CAGE Codes are not allowed.","detail":"Please limit the number of CAGE Codes to 100."<br><br>7. If "emailId" is sent on its own:<br>v1 or v2: The Parameter emailId must be provided in conjunction with the parameter format.<br>v3: "message":"The search parameter 'emailId' must be provided in conjunction with the search parameter 'format'.","detail":"Users can opt for receiving the requested JSON/CSV files in their emails."<br><br>8. If "includeSections" contains an invalid value:<br>v1 or v2: includeSections contains invalid value.<br>v3: "message":"The search parameter 'includeSections' contains an invalid value - < user-provided invalid parameter >,"detail":"Please refer to https://open.gsa.gov/api/exclusions-api/ for a list of allowable values.".<br><br>9. If "ssnOrTinOrEin" is provided on its own:<br>v1 or v2: ssnOrTinOrEin filter must be provided in conjunction with exclusionName.<br>v3: "message":"The search parameter 'ssnOrTinOrEin' must be provided in conjunction with the search parameter 'exclusionName'.","detail":"The 'ssnOrTinOrEin' parameter cannot be provided on its own.".<br><br>10. Invalid "ssnOrTinOrEin" length or "ssnOrTinOrEin" has more than one value:<br>v1 or v2: The search parameter, 'ssnOrTinOrEin' will only accept one complete 9 digit value (e.g.: ssnOrTinOrEin=000000000).<br>v3: "message":"The search parameter 'ssnOrTinOrEin' will only accept one complete 9 digit value.","detail":"An example value is 000000000.".<br><br>11. More than one "exclusionName" value is provided with "addressLine1" and "addressLine2":<br>v1 or v2: exclusionName will only accept one value when it is provided in conjunction with addressLine1 and addressLine2.<br>v3: "message":"The search parameter 'exclusionName' will only accept one value when it is provided in conjunction with 'addressLine1' and 'addressLine2'.","detail":"Use 'exclusionName' on its own or in conjunction with non-address search parameters.".<br><br>12.  Invalid "recordStatus" value: <br>v1 or v2: "title":"Invalid input","errorCode":"IIP","detail":"Invalid input for recordStatus"<br>v3: "message":"The search parameter 'recordStatus' will only accept Active as the value.","detail":"Only Active records are returned.<br><br>13. "Invalid "format" value:<br>v1 or v2: "title":"Invalid input","detail":"Invalid Input value for format".<br>v3: "message":"Invalid input value for format","detail":"The allowable values are JSON and CSV."<br><br>14. JSON or CSV file generation is in-progress:<br>v1 or v2: "title":"Extract File Generation is Still in Progress","detail":"File Processing in Progress. Please check again later ".<br>v3: "message":"The requested JSON or CSV file is not generated yet. Please try again later.","detail":"Larger files will take some time to process.".<br><br>15. A non-existent token is used for downloading a JSON or a CSV file:<br>v1 or v2: "title":"Extract File Not Found and we are not able to process your request","detail":"We are not able to find the requested file".<br>v3: "message":"The requested JSON or CSV file token could not be found.","detail":"Please verify the token number."<br><br>16. An expired token is used for downloading a JSON or a CSV file:<br>v1 or v2: "title":"Requested File is Expired and cannot be downloaded","detail":"We are not able to process your request".<br>v3: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number."</td>
+    <td>Application Level Error Messages:<br><br>1. Invalid "Date" format:<br>v1 or v2: Date should be specified in the format: MM/dd/YYYY.<br>v3: "message":"Dates must be specified in the MM/DD/YYYY format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY format.".<br><br>2. Invalid Input Parameters:<br>v1 or v2: "title":"Invalid Input Parameters","detail":"< user-provided invalid parameter >".<br> v3: "message":"The search parameter, < user-provided invalid parameter > does not exist.","detail":"Please refer to https://open.gsa.gov/api/exclusions-api/ for a list of allowable search parameters.".<br><br>3. If ‘includeSections’, ‘emailId’, ‘format’, ‘exclusionName’, ‘includeSections’, ‘addressLine1’, ‘addressLine2’, or ‘ssnOrTinOrEin’ is sent in the "q" parameter:<br>v1 or v2: The parameter: ‘emailId’, ‘format’, ‘exclusionName’, ‘includeSections’, ‘addressLine1’, ‘addressLine2’, or ‘ssnOrTinOrEin’ is not permitted inside Query Param(q).<br>v3: "message":"The search parameters 'emailId', 'format', 'exclusionName', 'includeSections', 'addressLine1', 'addressLine2', and 'ssnOrTinOrEin' are not permitted inside Query Param(q)","detail":"Please provide these parameters separately.".<br><br>4. A null or an empty value is sent in the "q" parameter:<br>v1 or v2: "title":"Invalid input","detail":"The value null/empty is not valid for parameter ‘Query Param (q)’"<br>v3: "message":"Invalid input","detail":"The value null/empty is not valid for parameter ‘Query Param (q)’".<br><br>5. More than 100 "cageCode" values are sent:<br>v1 or v2: A maximum of 100 CAGE Codes is allowed.<br>v3: "message":"More than 100 CAGE Codes are not allowed.","detail":"Please limit the number of CAGE Codes to 100."<br><br>6. If "emailId" is sent on its own:<br>v1 or v2: The Parameter emailId must be provided in conjunction with the parameter format.<br>v3: "message":"The search parameter 'emailId' must be provided in conjunction with the search parameter 'format'.","detail":"Users can opt for receiving the requested JSON/CSV files in their emails."<br><br>7. If "includeSections" contains an invalid value:<br>v1 or v2: includeSections contains invalid value.<br>v3: "message":"The search parameter 'includeSections' contains an invalid value - < user-provided invalid parameter >,"detail":"Please refer to https://open.gsa.gov/api/exclusions-api/ for a list of allowable values.".<br><br>8. If "ssnOrTinOrEin" is provided on its own:<br>v1 or v2: ssnOrTinOrEin filter must be provided in conjunction with exclusionName.<br>v3: "message":"The search parameter 'ssnOrTinOrEin' must be provided in conjunction with the search parameter 'exclusionName'.","detail":"The 'ssnOrTinOrEin' parameter cannot be provided on its own.".<br><br>9. Invalid "ssnOrTinOrEin" length or "ssnOrTinOrEin" has more than one value:<br>v1 or v2: The search parameter, 'ssnOrTinOrEin' will only accept one complete 9 digit value (e.g.: ssnOrTinOrEin=000000000).<br>v3: "message":"The search parameter 'ssnOrTinOrEin' will only accept one complete 9 digit value.","detail":"An example value is 000000000.".<br><br>10. More than one "exclusionName" value is provided with "addressLine1" and "addressLine2":<br>v1 or v2: exclusionName will only accept one value when it is provided in conjunction with addressLine1 and addressLine2.<br>v3: "message":"The search parameter 'exclusionName' will only accept one value when it is provided in conjunction with 'addressLine1' and 'addressLine2'.","detail":"Use 'exclusionName' on its own or in conjunction with non-address search parameters.".<br><br>11.  Invalid "recordStatus" value: <br>v1 or v2: "title":"Invalid input","errorCode":"IIP","detail":"Invalid input for recordStatus"<br>v3: "message":"The search parameter 'recordStatus' will only accept Active as the value.","detail":"Only Active records are returned.<br><br>12. "Invalid "format" value:<br>v1 or v2: "title":"Invalid input","detail":"Invalid Input value for format".<br>v3: "message":"Invalid input value for format","detail":"The allowable values are JSON and CSV."13. JSON or CSV file generation is in-progress:<br>v1 or v2: "title":"Extract File Generation is Still in Progress","detail":"File Processing in Progress. Please check again later ".<br>v3: "message":"The requested JSON or CSV file is not generated yet. Please try again later.","detail":"Larger files will take some time to process.".<br><br>14. A non-existent token is used for downloading a JSON or a CSV file:<br>v1 or v2: "title":"Extract File Not Found and we are not able to process your request","detail":"We are not able to find the requested file".<br>v3: "message":"The requested JSON or CSV file token could not be found.","detail":"Please verify the token number."<br><br>15. An expired token is used for downloading a JSON or a CSV file:<br>v1 or v2: "title":"Requested File is Expired and cannot be downloaded","detail":"We are not able to process your request".<br>v3: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number."</td> 
   </tr>
   <tr>
     <td>403</td>
@@ -265,7 +262,7 @@ The API will return one of the following responses:
 
 ## Examples
 
-### Example 1: Post April 2022, get me all the Firms whose Physical Address is in Virginia.
+### Example 1: Post April 3rd 2022, get me all the Firms whose Physical Address is in Virginia.
 <details>
 <summary>Request URL</summary>
 <b>v2 Production URL:</b> https://api.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
@@ -482,7 +479,7 @@ v2 Response:<br>
 </p>
 </details>
 
-### Example 2: Post April 2022, get me all the Firms in a CSV file format.
+### Example 2: Post April 3rd 2022, get me all the Firms in a CSV file format.
 <details>
 <summary>Request URL</summary>
 <b>v2 Production URL:</b> https://api.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&format=CSV<br>
@@ -540,7 +537,6 @@ A sample record is provided here:
       },
       "exclusionIdentification": {
         "ueiSAM": null,
-        "ueiDUNS": null,
         "cageCode": null,
         "npi": null,
         "prefix": "Ms.",
@@ -664,7 +660,6 @@ A sample record is provided here:
       },
       "exclusionIdentification": {
         "ueiSAM": "H2XFNNKK2NZ9",
-        "ueiDUNS": "U00000615",
         "cageCode": null,
         "npi": null,
         "prefix": null,
@@ -700,9 +695,9 @@ A sample record is provided here:
 ### Example 5: To receive a file downloadable link in the email for the requested CSV results.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=Y<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=Y<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&ueiDUNS=!””&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=Y<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=Y<br>
 <br>
 </details>
 
@@ -717,9 +712,9 @@ Click to view CSV Response for one record <a href="v1/exclusion-sample-csv-1.xls
 You can view the full details of the differences between the SAM legacy API and SAM.gov API 
 <br> available here: <a href="LegacySAMvsBetaSAM-ExclusionsAPI.pdf">Variance Document</a><br>
 
-Disclaimer: 
+Disclaimer:
 **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data**
-* This website contains data supplied by third party information suppliers, one of which is D&B. For the purposes of the following limitation on permissible use of D&B data, which includes each entity's DUNS Number and its associated business information, "D&B Open Data" is defined as the following data elements: Business Name, Street Address, City Name, State/Province Name, Country Name, County Code, State/Province Code, State/Province Abbreviation, ZIP/Postal Code, Country Name and Country Code.
+* This website contains data supplied by third party information suppliers, including Dun & Bradstreet (D&B). For the purposes of the following limitation on permissible use of D&B data, which includes each entity's DUNS Number and its associated business information, "D&B Open Data" is defined as the following data elements: Legal Business Name, Street Address, City Name, State/Province Name, Country Name, County Code, State/Province Code, State/Province Abbreviation, ZIP/Postal Code, Country Name and Country Code.  Entity registration, exclusion, or contract award records in SAM may contain D&B-supplied data. Applicable records containing D&B data include all entity registration records with a last updated date earlier than 4/4/2022, all exclusions records with a created date earlier than 4/4/2022, and all base award notices with an award date earlier than 4/4/2022. These records show the Entity Validation Service (EVS) Source as D&B in outbound data streams.
 * D&B hereby grants you, the user, a license for a limited, non-exclusive right to use D&B Open Data within the limitations set forth herein. By using this website you agree that you shall not use D&B Open Data without giving written attribution to the source of such data (i.e., D&B) and shall not access, use or disseminate D&B Open Data in bulk, (i.e., in amounts sufficient for use as an original source or as a substitute for the product and/or service being licensed hereunder).
 * Except for data elements identified above as D&B Open Data, under no circumstances are you authorized to use any other D&B data for commercial, resale or marketing purposes (e.g., identifying, quantifying, segmenting and/or analyzing customers and prospective customers). Systematic access (electronic harvesting) or extraction of content from the website, including the use of "bots" or "spiders", is prohibited. Federal government entities are authorized to use the D&B data for purposes of acquisition as defined in FAR 2.101 and for the purpose of managing Federal awards, including sub-awards, or reporting Federal award information.
 * GSA assumes no liability for the use of the D&B data once it is downloaded or accessed. The D&B data is provided "as is" without warranty of any kind. The D&B data is the intellectual property of D&B. In no event will D&B or any third party information supplier be liable in any way with regard to the use of the D&B data. For more information about the scope of permissible use of D&B data licensed hereunder, please contact D&B at datause_govt@dnb.com.
@@ -775,26 +770,27 @@ Disclaimer:
 ## Change Log
 
 Date | Version | Description
-------|---------------|---------
-06/03/2019 | v1.0 | Base Version
-08/15/2019 | v1.1 | * Added Beta.SAM.Gov to the page title. <br><br> *Updated the Alpha endpoint to v1. <br><br> *Added Secondary Address fields.
-09/25/2019 | v1.2 | Beta endpoints for public FOUO and Sensitive API were updated from version 0.9 to version 1.0.
-11/25/2019 | v1.3 | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.
-12/20/2019 | v1.4 | Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.
-02/25/2020 | v1.5 | * Added Examples for v2 requests and responses. <br><br> * Updated Alpha endpoint to meet new API standards.
-02/28/2020 | v1.6 | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.
-05/04/2020 | v1.7 | * Added V2 endpoint information.
-10/15/2020 | v1.8 | * Updated the Beta V1 endpoint
-12/07/2020 | v1.9 | * Updated moreLocations for API response.<br><br> * Updated vesselDetails --> secondaryAddress to mention v2 Beta only. <br><br> * Added exclusionSecondaryAddress to API response.<br><br> * Changed exclusionAddress to exclusionAddress/exclusionPrimaryAddress in the API response.
-01/22/2021 | v2.0 | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Added Beta V2 endpoint.
-02/05/2021 | v2.1 | * Updated description for emailId parameter. <br><br> * Updated parameter definitions and examples.<br><br> * Added message about non-allowable characters.<br><br> * Removed tin and ssn parameters.<br><br> * Added addressLine1 and addressLine2 parameters.
-03/12/2021 | v2.2 | * Added ssnOrTinOrEin parameter to the Query String Parameters table.<br><br> * Added note to addressLine1 and addressLine2 parameters regarding use with exclusionName parameter.<br><br> * Updated error messages
-04/08/2021 | v2.3 | Updated Contact Us information.
-04/29/2021 | v2.4 | * Updated openapi spec file.
-05/12/2021 | v2.5 | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
-07/16/2021 | v2.6 | * Updated description for recordStatus parameter.<br><br> * Added message stating that the slash character must be enclosed with double quotes if being used inside of a search parameter.<br><br> * Added the Type of Connections and Rate Limits table<br><br> * Updated the examples<br><br> * Updated the Contact Us information
-10/06/2021 | v2.7 | * Updated the "Contact Us" section.
-10/21/2021 | v2.8 | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior.
-02/01/2022 | v2.9 | * Added exclusions V3 endpoint information to the Getting Started section. <br><br> * Updated the Query String Parameters and Expected Results sections to reflect available parameters and response fields in V3.<br><br> * Updated the Example 1 and Example 2 to indicate the V3 behavior.<br><br> * Updated the section, "HTTP Response Codes" to indicate the v3 behavior.<br><br> * Update the OpenAPI Specification File to include the V3 endpoints.
+------|---------|---------
+06/03/2019 | v1.0    | Base Version
+08/15/2019 | v1.1    | * Added Beta.SAM.Gov to the page title. <br><br> *Updated the Alpha endpoint to v1. <br><br> *Added Secondary Address fields.
+09/25/2019 | v1.2    | Beta endpoints for public FOUO and Sensitive API were updated from version 0.9 to version 1.0.
+11/25/2019 | v1.3    | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.
+12/20/2019 | v1.4    | Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.
+02/25/2020 | v1.5    | * Added Examples for v2 requests and responses. <br><br> * Updated Alpha endpoint to meet new API standards.
+02/28/2020 | v1.6    | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.
+05/04/2020 | v1.7    | * Added V2 endpoint information.
+10/15/2020 | v1.8    | * Updated the Beta V1 endpoint
+12/07/2020 | v1.9    | * Updated moreLocations for API response.<br><br> * Updated vesselDetails --> secondaryAddress to mention v2 Beta only. <br><br> * Added exclusionSecondaryAddress to API response.<br><br> * Changed exclusionAddress to exclusionAddress/exclusionPrimaryAddress in the API response.
+01/22/2021 | v2.0    | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Added Beta V2 endpoint.
+02/05/2021 | v2.1    | * Updated description for emailId parameter. <br><br> * Updated parameter definitions and examples.<br><br> * Added message about non-allowable characters.<br><br> * Removed tin and ssn parameters.<br><br> * Added addressLine1 and addressLine2 parameters.
+03/12/2021 | v2.2    | * Added ssnOrTinOrEin parameter to the Query String Parameters table.<br><br> * Added note to addressLine1 and addressLine2 parameters regarding use with exclusionName parameter.<br><br> * Updated error messages
+04/08/2021 | v2.3    | Updated Contact Us information.
+04/29/2021 | v2.4    | * Updated openapi spec file.
+05/12/2021 | v2.5    | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.
+07/16/2021 | v2.6    | * Updated description for recordStatus parameter.<br><br> * Added message stating that the slash character must be enclosed with double quotes if being used inside of a search parameter.<br><br> * Added the Type of Connections and Rate Limits table<br><br> * Updated the examples<br><br> * Updated the Contact Us information
+10/06/2021 | v2.7    | * Updated the "Contact Us" section.
+10/21/2021 | v2.8    | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior.
+02/01/2022 | v2.9    | * Added exclusions V3 endpoint information to the Getting Started section. <br><br> * Updated the Query String Parameters and Expected Results sections to reflect available parameters and response fields in V3.<br><br> * Updated the Example 1 and Example 2 to indicate the V3 behavior.<br><br> * Updated the section, "HTTP Response Codes" to indicate the v3 behavior.<br><br> * Update the OpenAPI Specification File to include the V3 endpoints.
+04/04/2022 | v3.0    | * Removed duns information from the documentation.
 
 <p><small><a href="#">Back to top</a></small></p>

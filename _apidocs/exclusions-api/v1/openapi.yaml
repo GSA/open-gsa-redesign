@@ -275,16 +275,10 @@ paths:
         in: query
         schema:
           type: string
-      - name: ueiDUNS
-        in: query
-        description: Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652,
-          047795005, null)
-        schema:
-          type: string
       - name: ueiSAM
         in: query
-        description: Unique Entity Identifier SAMMI- 12 digit value - Replacement
-          for ueiDUNS
+        description: Unique Entity Identifier SAM- 12 digit value - Replacement
+          for ueiSAM
         schema:
           type: string
       - name: updateDate
@@ -537,16 +531,10 @@ paths:
         in: query
         schema:
           type: string
-      - name: ueiDUNS
-        in: query
-        description: Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652,
-          047795005, null)
-        schema:
-          type: string
       - name: ueiSAM
         in: query
-        description: Unique Entity Identifier SAMMI- 12 digit value - Replacement
-          for ueiDUNS
+        description: Unique Entity Identifier SAM- 12 digit value - Replacement
+          for ueiSAM
         schema:
           type: string
       - name: updateDate
@@ -830,16 +818,10 @@ paths:
         in: query
         schema:
           type: string
-      - name: ueiDUNS
-        in: query
-        description: Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652,
-          047795005, null)
-        schema:
-          type: string
       - name: ueiSAM
         in: query
-        description: Unique Entity Identifier SAMMI- 12 digit value - Replacement
-          for ueiDUNS
+        description: Unique Entity Identifier SAM- 12 digit value - Replacement
+          for ueiSAM
         schema:
           type: string
       - name: updateDate
