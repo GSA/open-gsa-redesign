@@ -241,33 +241,33 @@ Effective April 2022: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v6.0.xlsx">SAM Mast
 
 **Entity Management Public Data Package Sample API calls:**<br>
 
-https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_PUBLIC_MONTHLY_V2_20220403.ZIP
-https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=PUBLIC&frequency=MONTHLY&date=04/2022
-https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=PUBLIC&frequency=MONTHLY&date=04/2022&charset=UTF8
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_PUBLIC_MONTHLY_V2_20220403.ZIP
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=PUBLIC&frequency=MONTHLY&date=04/2022
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=PUBLIC&frequency=MONTHLY&date=04/2022&charset=UTF8
 
 **Expected Result:**<br>
 Click to view the full details of the extract layout with the UEI data: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 Public File V2 Layout.xlsx">Public Extract Layout</a><br>
 
 **Entity Management FOUO Data Package Sample API calls:**<br>
 
-https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_FOUO_DAILY_V2_20220407.ZIP
-https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_FOUO_MONTHLY_V2_20220403.ZIP
-https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=DAILY&date=04/07/2022
-https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=MONTHLY&date=04/2022
-https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=DAILY&date=04/07/2022&charset=UTF8
-https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=MONTHLY&date=04/2022&charset=UTF8
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_FOUO_DAILY_V2_20220407.ZIP
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_FOUO_MONTHLY_V2_20220403.ZIP
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=DAILY&date=04/07/2022
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=MONTHLY&date=04/2022
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=DAILY&date=04/07/2022&charset=UTF8
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=MONTHLY&date=04/2022&charset=UTF8
 
 **Expected Result**<br>
 Click to view the full details of the extract layout with the UEI data: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 FOUO File V2 Layout.xlsx">FOUO Extract Layout</a><br>
 
 **Entity Management Sensitive Data Package Sample API calls:**<br>
 
-https://api.sam.gov/data-services/v1/extracts?fileName=SAM_SENSITIVE_DAILY_V3_20220407.ZIP
-https://api.sam.gov/data-services/v1/extracts?fileName=SAM_SENSITIVE_MONTHLY_V3_20220403.ZIP
-https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/07/2022
-https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2022
-https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/07/2022&charset=UTF8
-https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2022&charset=UTF8
+* https://api.sam.gov/data-services/v1/extracts?fileName=SAM_SENSITIVE_DAILY_V3_20220407.ZIP
+* https://api.sam.gov/data-services/v1/extracts?fileName=SAM_SENSITIVE_MONTHLY_V3_20220403.ZIP
+* https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/07/2022
+* https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2022
+* https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/07/2022&charset=UTF8
+* https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2022&charset=UTF8
 
 **Expected Result**<br>
 Click to view the full details of the extract layout with the UEI data: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 Sensitive File V3 Layout.xlsx">Sensitive Extract Layout</a><br>
@@ -285,8 +285,8 @@ Curl request with username and password: curl -X POST "https://api.sam.gov/data-
 
 **Exclusions Public Data Package Sample API calls:**<br>
 
-https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_Exclusions_Public_Extract_V2_22097.ZIP
-https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=EXCLUSION&date=04/07/2022
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_Exclusions_Public_Extract_V2_22097.ZIP
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=EXCLUSION&date=04/07/2022
 
 **Expected Result**:
 Click to view the full details of the extract layout with the UEI data: <a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_Extract_Layout_V2.pdf">Exclusions Extract Layout</a><br>
