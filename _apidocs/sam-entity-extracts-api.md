@@ -25,7 +25,7 @@ The Entity Management extracts contain entities (businesses and government agenc
    * End user needs to create a system account with FOUO access roles and procure an API_KEY to access these extracts.
    * Only system account keys can be used to access FOUO data.
    * File naming convention:<br />
-     Daily ASCII (Default): SAM_FOUO_DAILY_V2_YYYYMMDD.ZIP<br />
+     Daily ASCII : SAM_FOUO_DAILY_V2_YYYYMMDD.ZIP<br />
      Daily UTF-8: SAM_FOUO_UTF-8_DAILY_V2_YYYYMMDD.ZIP<br />
      Monthly ASCII : SAM_FOUO_MONTHLY_V2_YYYYMMDD.ZIP<br />
      Monthly UTF-8 : SAM_FOUO_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
