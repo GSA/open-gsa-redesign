@@ -48,8 +48,9 @@ The Entity Management extracts contain entities (businesses and government agenc
    * This extract all active exclusions in SAM as a comma-separated value (CSV) file.
    * The Exclusions extract is a daily file, published 7 days per week.
    * End user needs to create an account in SAM.gov and procure an API_KEY to access these extracts.
-   * File naming convention:<br /> SAM_Exclusions_Public_Extract_V2_YYDDD.ZIP (YYDDD is the Julian Date)<br />
-   		Example: The file for 04/06/2022 would be SAM_Exclusions_Public_Extract_V2_22096.ZIP.
+   * File naming convention:<br />
+     SAM_Exclusions_Public_Extract_V2_YYDDD.ZIP (YYDDD is the Julian Date)<br />
+     Example: The file for 04/06/2022 would be SAM_Exclusions_Public_Extract_V2_22096.ZIP.
 
 **Entity Extract Calendar**
 <table>
