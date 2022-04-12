@@ -15,8 +15,8 @@ The Entity Management extracts contain entities (businesses and government agenc
    * All entities and data elements are classified as public.
    * End user needs to create an account in SAM.gov and procure an API_KEY to access these extracts.
    * File naming convention:<br />
-	 Monthly ASCII (Default): SAM_PUBLIC_MONTHLY_V2_YYYYMMDD.ZIP<br />
-	 Monthly UTF-8 (Default): SAM_PUBLIC_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
+	 Monthly ASCII : SAM_PUBLIC_MONTHLY_V2_YYYYMMDD.ZIP<br />
+	 Monthly UTF-8 : SAM_PUBLIC_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
 
 2. **Entity Management Extracts FOUO (For Official Use Only) Data Package:**
    * This extract contains the same information as the Entity Management Public Data Package, plus data elements which are classified as For Official Use Only (FOUO).
@@ -26,8 +26,8 @@ The Entity Management extracts contain entities (businesses and government agenc
    * Only system account keys can be used to access FOUO data.
    * Daily ASCII (Default): SAM_FOUO_DAILY_V2_YYYYMMDD.ZIP<br />
 	 Daily UTF-8: SAM_FOUO_UTF-8_DAILY_V2_YYYYMMDD.ZIP<br />
-	 Monthly ASCII (Default): SAM_FOUO_MONTHLY_V2_YYYYMMDD.ZIP<br />
-	 Monthly UTF-8 (Default): SAM_FOUO_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
+	 Monthly ASCII : SAM_FOUO_MONTHLY_V2_YYYYMMDD.ZIP<br />
+	 Monthly UTF-8 : SAM_FOUO_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
 
 3. **Entity Management Extract Sensitive Data Package:**
    * This extract contains the same information as the Entity Management FOUO Data package with the addition of data elements which are classified as Sensitive.
@@ -35,10 +35,10 @@ The Entity Management extracts contain entities (businesses and government agenc
    * The daily extract is an incremental file which is published 5 days a week (Tuesday – Saturday) and contains all new, updated, and deactivated registrations since the previous daily file.
    * End user needs to create a system account with sensitive access roles and procure an API_KEY to access these extracts.
    * Only system account keys can be used to access Sensitive data.
-   * Daily ASCII (Default): SAM_SENSITIVE_DAILY_V3_YYYYMMDD.ZIP<br />
+   * Daily ASCII : SAM_SENSITIVE_DAILY_V3_YYYYMMDD.ZIP<br />
      Daily UTF-8: SAM_SENSITIVE_UTF-8_DAILY_V3_YYYYMMDD.ZIP<br />
-     Monthly ASCII (Default): SAM_SENSITIVE_MONTHLY_V3_YYYYMMDD.ZIP<br />
-     Monthly UTF-8 (Default): SAM_SENSITIVE_UTF-8_MONTHLY_V3_YYYYMMDD.ZIP<br />
+     Monthly ASCII : SAM_SENSITIVE_MONTHLY_V3_YYYYMMDD.ZIP<br />
+     Monthly UTF-8 : SAM_SENSITIVE_UTF-8_MONTHLY_V3_YYYYMMDD.ZIP<br />
    * This extract requires IP address whitelisting to download your file.  You will need to keep an up-to-date list of your IP addresses in your System Account.
 
 
@@ -46,7 +46,7 @@ The Entity Management extracts contain entities (businesses and government agenc
    * This extract all active exclusions in SAM as a comma-separated value (CSV) file.
    * The Exclusions extract is a daily file, published 7 days per week.
    * End user needs to create an account in SAM.gov and procure an API_KEY to access these extracts.
-   * File Name: SAM_Exclusions_Public_Extract_V2_YYDDD.ZIP (Julian Date)<br />
+   * File Name: SAM_Exclusions_Public_Extract_V2_YYDDD.ZIP (YYDDD is the Julian Date)<br />
    		* Example: The file for 04/06/2022 would be SAM_Exclusions_Public_Extract_V2_22096.ZIP.
 
 **Entity Extract Calendar**
@@ -93,8 +93,8 @@ The Public and FOUO Entity extracts and Exclusion extracts are available using t
        The Sensitive version of the extracts are available via POST requests.
        Please refer to the “Sensitive Download API Process” to learn more about the Sensitive extract retrieval process.
        <ul>
-        <li style="color: #31708f;">Production: https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
-        <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
+        <li style="color: #31708f;">Production: https://api.sam.gov/data-services/v1/extracts?</li>
+        <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?</li>
         </ul><br>
   </div>  
      
@@ -163,7 +163,7 @@ Type of Connections and Rate Limits
 </tr>
 <tr>
 <td>api_key</td>
-<td>This is a required element to identify and validate API users and their role-based access.<br />
+<td>This parameter is required to identify and validate API users and their role-based access.<br />
 </td>
 </tr>
 <tr>
@@ -175,45 +175,43 @@ Examples: fileName=SAM_PUBLIC_MONTHLY_V2_20220406.ZIP; fileName= SAM_Exclusions_
 <tr>
 <td>fileType</td>
 <td>This parameter must be used if fileName is not specified. It allows users to specify the type of the extract that they wish to download.<br />
-The filetype parameter must be used if fileName is not specified.<br />
 Permitted values: ENTITY, EXCLUSION, SCR, BIO<br />
 </td>
 </tr>
 <tr>
 <td>sensitivity</td>
-<td>This parameter must not be used in conjunction with the fileName parameter. It allows users to provide the desired sensitivity level of the extract that they wish to download, if they have proper roles.<br />
-Default value: If the parameter is not provided: PUBLIC<br />
+<td>This parameter must not be used in conjunction with the fileName parameter. It allows users to provide the desired sensitivity level of the extract that they wish to download, If they have proper roles.<br />
+Default value, If the parameter is not provided: PUBLIC<br />
 Permitted values: PUBLIC, FOUO, SENSITIVE
 </td>
 </tr>
 <tr>
 <td>frequency</td>
-<td>Allows users to request either a DAILY or MONTHLY extract<br />
-Default value: MONTHLY<br />
+<td>This parameter allows users to request either a DAILY or MONTHLY extract<br />
+Default value, MONTHLY<br />
 Permitted values: DAILY, MONTHLY
 </td>
 </tr>
 <tr>
 <td>charset</td>
-<td>It allows users to request either the ASCII or UTF-8 extract character-set.<br />
-Default value,If the parameter is not provided: ASCII<br />
+<td>This parameter allows users to request either the ASCII or UTF-8 extract character-set.<br />
+Default value, If the parameter is not provided: ASCII<br />
 Permitted values: ASCII, UTF8, UTF-8<br />
 Note: This parameter is not applicable for the EXCLUSION file type.
 </td>
 </tr>
 <tr>
 <td>date</td>
-<td>It allows users to select a specific date of the file that they wish to download.<br />
+<td>This parameter allows users to select a specific date of the file that they wish to download.<br />
 Format: MM/DD/YYYY for Daily files; MM/YYY for Monthly files.<br />
-Default value: Most recent date, depending on fileType<br />
+Default value, Most recent date, depending on fileType<br />
 Examples: 04/06/2022; 04/2022
 </td>
 </tr>
 <tr>
 <td>version</td>
-<td>Allows users to select the file they wish to download by version.<br />
-Default value: Most recent version, depending on fileType and/or sensitivity<br />
-Examples: V1; V2; V3
+<td>This parameter allows users to select the file they wish to download by version.<br />
+Permitted values: V2 for the Public, FOUO and Exclusion extracts; V3 for the Sensitive extract.
 </td>
 </tr>
 </table>
@@ -226,6 +224,18 @@ Examples: V1; V2; V3
 * "Accept" parameter must be passed in "Headers" with value, "application/zip".
 * "Content-Type" parameter must be passed in "Headers" with value, "application/json".
 * All the optional search filters can be sent in the request URL or in the "Body".
+
+**An example of the Sensitive extract download POST call using Postman:**<br>
+Request URL:
+https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ><br>
+Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/DOWNLOAD_API_AUTH.JPG">Sample Extract Authorization</a><br>
+Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/api_key.JPG">Sample Request Header</a>
+
+<div style="font-family:Source sans pro; color: #212121; line-height: 1.5;">
+<b>An example of the Sensitive extract download POST call using curl:</b><br>
+Curl request with basic auth token: curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --header "Authorization: Basic < auth token >" --output C:\sample_file.ZIP<br><br>
+Curl request with username and password: curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --user "< username >:< password >" --output C:\sample_file.ZIP</div>
+
 
 ### Explanation of the API using Examples
 
@@ -271,17 +281,6 @@ Click to view the full details of the extract layout with the UEI data: <a targe
 
 **Expected Result**<br>
 Click to view the full details of the extract layout with the UEI data: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 Sensitive File V3 Layout.xlsx">Sensitive Extract Layout</a><br>
-
-**An example of the Sensitive extract download POST call using Postman:**<br>
-Request URL:
-https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ><br>
-Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/DOWNLOAD_API_AUTH.JPG">Sample Extract Authorization</a><br>
-Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/api_key.JPG">Sample Request Header</a>
-
-<div style="font-family:Source sans pro; color: #212121; line-height: 1.5;">
-<b>An example of the Sensitive extract download POST call using curl:</b><br>
-Curl request with basic auth token: curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --header "Authorization: Basic < auth token >" --output C:\sample_file.ZIP<br><br>
-Curl request with username and password: curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --user "< username >:< password >" --output C:\sample_file.ZIP</div>
 
 **Exclusions Public Data Package Sample API calls:**<br>
 
