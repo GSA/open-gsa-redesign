@@ -24,10 +24,11 @@ The Entity Management extracts contain entities (businesses and government agenc
    * The daily extract is an incremental file which is published 5 days a week (Tuesday – Saturday) and contains all new, updated, and deactivated registrations since the previous daily file.
    * End user needs to create a system account with FOUO access roles and procure an API_KEY to access these extracts.
    * Only system account keys can be used to access FOUO data.
-   * Daily ASCII (Default): SAM_FOUO_DAILY_V2_YYYYMMDD.ZIP<br />
-	 Daily UTF-8: SAM_FOUO_UTF-8_DAILY_V2_YYYYMMDD.ZIP<br />
-	 Monthly ASCII : SAM_FOUO_MONTHLY_V2_YYYYMMDD.ZIP<br />
-	 Monthly UTF-8 : SAM_FOUO_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
+   * File naming convention:<br />
+     Daily ASCII (Default): SAM_FOUO_DAILY_V2_YYYYMMDD.ZIP<br />
+     Daily UTF-8: SAM_FOUO_UTF-8_DAILY_V2_YYYYMMDD.ZIP<br />
+     Monthly ASCII : SAM_FOUO_MONTHLY_V2_YYYYMMDD.ZIP<br />
+     Monthly UTF-8 : SAM_FOUO_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
 
 3. **Entity Management Extract Sensitive Data Package:**
    * This extract contains the same information as the Entity Management FOUO Data package with the addition of data elements which are classified as Sensitive.
@@ -35,7 +36,8 @@ The Entity Management extracts contain entities (businesses and government agenc
    * The daily extract is an incremental file which is published 5 days a week (Tuesday – Saturday) and contains all new, updated, and deactivated registrations since the previous daily file.
    * End user needs to create a system account with sensitive access roles and procure an API_KEY to access these extracts.
    * Only system account keys can be used to access Sensitive data.
-   * Daily ASCII : SAM_SENSITIVE_DAILY_V3_YYYYMMDD.ZIP<br />
+   * File naming convention:<br />
+     Daily ASCII : SAM_SENSITIVE_DAILY_V3_YYYYMMDD.ZIP<br />
      Daily UTF-8: SAM_SENSITIVE_UTF-8_DAILY_V3_YYYYMMDD.ZIP<br />
      Monthly ASCII : SAM_SENSITIVE_MONTHLY_V3_YYYYMMDD.ZIP<br />
      Monthly UTF-8 : SAM_SENSITIVE_UTF-8_MONTHLY_V3_YYYYMMDD.ZIP<br />
