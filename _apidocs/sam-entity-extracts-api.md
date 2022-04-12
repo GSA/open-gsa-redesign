@@ -48,8 +48,8 @@ The Entity Management extracts contain entities (businesses and government agenc
    * This extract all active exclusions in SAM as a comma-separated value (CSV) file.
    * The Exclusions extract is a daily file, published 7 days per week.
    * End user needs to create an account in SAM.gov and procure an API_KEY to access these extracts.
-   * File Name: SAM_Exclusions_Public_Extract_V2_YYDDD.ZIP (YYDDD is the Julian Date)<br />
-   		* Example: The file for 04/06/2022 would be SAM_Exclusions_Public_Extract_V2_22096.ZIP.
+   * File naming convention:<br /> SAM_Exclusions_Public_Extract_V2_YYDDD.ZIP (YYDDD is the Julian Date)<br />
+   		Example: The file for 04/06/2022 would be SAM_Exclusions_Public_Extract_V2_22096.ZIP.
 
 **Entity Extract Calendar**
 <table>
@@ -182,22 +182,22 @@ Permitted values: ENTITY, EXCLUSION, SCR, BIO<br />
 </tr>
 <tr>
 <td>sensitivity</td>
-<td>This parameter must not be used in conjunction with the fileName parameter. It allows users to provide the desired sensitivity level of the extract that they wish to download, If they have proper roles.<br />
-Default value, If the parameter is not provided: PUBLIC<br />
+<td>This parameter must not be used in conjunction with the fileName parameter. It allows users to provide the desired sensitivity level of the extract that they wish to download, if they have proper roles.<br />
+Default value, if the parameter is not provided: PUBLIC<br />
 Permitted values: PUBLIC, FOUO, SENSITIVE
 </td>
 </tr>
 <tr>
 <td>frequency</td>
 <td>This parameter allows users to request either a DAILY or MONTHLY extract<br />
-Default value, MONTHLY<br />
+Default value, if the parameter is not provided: MONTHLY<br />
 Permitted values: DAILY, MONTHLY
 </td>
 </tr>
 <tr>
 <td>charset</td>
 <td>This parameter allows users to request either the ASCII or UTF-8 extract character-set.<br />
-Default value, If the parameter is not provided: ASCII<br />
+Default value, if the parameter is not provided: ASCII<br />
 Permitted values: ASCII, UTF8, UTF-8<br />
 Note: This parameter is not applicable for the EXCLUSION file type.
 </td>
@@ -206,7 +206,7 @@ Note: This parameter is not applicable for the EXCLUSION file type.
 <td>date</td>
 <td>This parameter allows users to select a specific date of the file that they wish to download.<br />
 Format: MM/DD/YYYY for Daily files; MM/YYY for Monthly files.<br />
-Default value, Most recent date, depending on fileType<br />
+Default value: Most recent date, depending on fileType<br />
 Examples: 04/06/2022; 04/2022
 </td>
 </tr>
