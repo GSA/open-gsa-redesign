@@ -26,7 +26,7 @@ The response will be provided in the JSON format in a paginated manner.
 
 ## Getting Started
 
-Exclusions API can be accessed from Production or Alpha via the following version 1 and version 2 endpoints:
+Exclusions API can be accessed from Production or Alpha via the following version 1, version 2 and version 3 endpoints:
 * Production Version 1: https://api.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Production Version 2: https://api.sam.gov/entity-information/v2/exclusions?api_key=< value >
 * Production Version 3: https://api.sam.gov/entity-information/v3/exclusions?api_key=< value >
@@ -791,6 +791,6 @@ Date | Version | Description
 10/06/2021 | v2.7    | * Updated the "Contact Us" section.
 10/21/2021 | v2.8    | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior.
 02/01/2022 | v2.9    | * Added exclusions V3 endpoint information to the Getting Started section. <br><br> * Updated the Query String Parameters and Expected Results sections to reflect available parameters and response fields in V3.<br><br> * Updated the Example 1 and Example 2 to indicate the V3 behavior.<br><br> * Updated the section, "HTTP Response Codes" to indicate the v3 behavior.<br><br> * Update the OpenAPI Specification File to include the V3 endpoints.
-04/01/2022 | v3.0    | * Removed duns information from the documentation.
+04/04/2022 | v3.0    | * Provided the v3 end point for Production.<br><br> * Removed ueiDUNS occurrences from the sections, Query String Parameters, Expected Result, HTTP Response Codes and Examples.
 
 <p><small><a href="#">Back to top</a></small></p>

@@ -172,7 +172,7 @@ NOTES:
 
 <tr>
 <td>entityEFTIndicator</td>
-<td>Entity EFT Indicator aka duns4.
+<td>Entity EFT Indicator.
 <br>Example: entityEFTIndicator=0000
 <br>NOTE: This parameter must be used in conjunction with ueiSAM.</td>
 <td>v1<br>v2<br>v3</td>
@@ -5541,7 +5541,7 @@ NOTES:
 
 <tr>
 <td>entityEFTIndicator</td>
-<td>Entity EFT Indicator aka duns4.
+<td>Entity EFT Indicator.
 <br>Example: entityEFTIndicator=0000
 <br>NOTE: This parameter must be used in conjunction with ueiSAM.</td>
 <td>v1<br>v2<br>v3</td>
@@ -12830,7 +12830,7 @@ NOTES:
 
 <tr>
 <td>entityEFTIndicator</td>
-<td>Entity EFT Indicator aka duns4.
+<td>Entity EFT Indicator.
 <br>Example: entityEFTIndicator=0000
 <br>NOTE: This parameter must be used in conjunction with ueiSAM.</td>
 <td>v1<br>v2<br>v3</td>
@@ -23452,7 +23452,7 @@ Disclaimer:
 | 10/06/2021 | v3.0    | * Updated the "Contact Us" section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | 
 | 10/21/2021 | v3.1    | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added error messages #23 and #24 to the 400 level http response codes.<br><br> * Added the Version 3 endpoint.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | 02/01/2022 | v3.2    | * Update the OpenAPI Specification File to include the V3 endpoints.<br><br> * Updated the OpenAPI Specification File to reflect the correct behavior for the V3 exclusionsStatusFlag parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 04/01/2022 | v3.3    | * Removed duns information from the documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 04/04/2022 | v3.3    | * Removed duns information from the documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
 <p><small><a href="#">Back to top</a></small></p>
 
