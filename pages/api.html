@@ -26,7 +26,7 @@ banner-text: These following GSA APIs cover a range of important data and functi
                                 {{ apis.description }}
                             </p>
                             <a href="{{ apis.url }}" class="usa-button usa-button-gray">
-                                {% if apis.title contains "SAM.gov Contract Data" %}
+                                {% if apis.title contains "SAM.gov Acquisition Award Data" or apis.title contains "SAM.gov Assistance Award Data" %}
                                     View Documentation
                                 {% else %}
                                     View API Documentation

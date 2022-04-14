@@ -46,9 +46,12 @@
 - title: Regulations.gov API
   description: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets. Additionally,  a POST API is offered that allows users to submit comments.
   url: https://open.gsa.gov/api/regulationsgov/
-- title: SAM.gov Contract Data (Formerly FPDS.gov)
-  description: This page has documentation on how to connect to the SAM.gov contract data migrated from FPDS.gov.
+- title: SAM.gov Acquisition Award Data (Formerly FPDS.gov)
+  description: This page contains documentation on how to access Acquisition Award data migrated from FPDS.gov.
   url: https://open.gsa.gov/api/sam-contract-api/
+- title: SAM.gov Assistance Award Data (Formerly FPDS.gov)
+  description: This page contains documentation on how to access Assustance Award data migrated from FPDS.gov.
+  url: https://open.gsa.gov/api/sam-assistance-award-api/
 - title: SAM.gov Entity/Exclusions Extracts Download API
   description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
   url: https://open.gsa.gov/api/sam-entity-extracts-api/
