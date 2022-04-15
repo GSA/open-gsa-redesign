@@ -4,10 +4,6 @@ banner-heading: SAM.gov Assistance Award Data (Formerly FPDS.gov)
 ---
 
 
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
-<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
-
-
 ## Overview
 The awards data in SAM.gov (formerly in the Federal Procurement Data System, or FPDS) is information that awarding agencies are required by law to provide for certain awards. All modifications to those awards must also be reported, regardless of dollar value. This information is available to the public.  
 <p><small><a href="#">Back to top</a></small></p>
@@ -614,7 +610,6 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
             activate: function(event, data){
                 var node = data.node,
                     orgEvent = data.originalEvent;
-                console.log("activate", orgEvent)
                 if(node.data.href){
                    //window.open(node.data.href,  node.data.target);
                 }
@@ -623,7 +618,6 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
             click: function(event, data){
                 var node = data.node,
                 orgEvent = data.originalEvent;
-                console.log("click", orgEvent, event.keyCode)
                 if(node.data.href){
                     window.open(node.data.href,  node.data.target);
                   
