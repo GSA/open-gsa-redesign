@@ -15,8 +15,8 @@ The Entity Management extracts contain entities (businesses and government agenc
    * All entities and data elements are classified as public.
    * End user needs to create an account in SAM.gov and procure an API_KEY to access these extracts.
    * File naming convention:<br />
-	 Monthly ASCII (Default): SAM_PUBLIC_MONTHLY_YYYYMMDD.ZIP<br />
-	 Monthly UTF-8 (Default): SAM_PUBLIC_UTF-8_MONTHLY_YYYYMMDD.ZIP<br />
+	 Monthly ASCII : SAM_PUBLIC_MONTHLY_V2_YYYYMMDD.ZIP<br />
+	 Monthly UTF-8 : SAM_PUBLIC_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
 
 2. **Entity Management Extracts FOUO (For Official Use Only) Data Package:**
    * This extract contains the same information as the Entity Management Public Data Package, plus data elements which are classified as For Official Use Only (FOUO).
@@ -24,10 +24,11 @@ The Entity Management extracts contain entities (businesses and government agenc
    * The daily extract is an incremental file which is published 5 days a week (Tuesday – Saturday) and contains all new, updated, and deactivated registrations since the previous daily file.
    * End user needs to create a system account with FOUO access roles and procure an API_KEY to access these extracts.
    * Only system account keys can be used to access FOUO data.
-   * Daily ASCII (Default): SAM_FOUO_DAILY_YYYYMMDD.ZIP<br />
-	 Daily UTF-8: SAM_FOUO_UTF-8_DAILY_YYYYMMDD.ZIP<br />
-	 Monthly ASCII (Default): SAM_FOUO_MONTHLY_YYYYMMDD.ZIP<br />
-	 Monthly UTF-8 (Default): SAM_FOUO_UTF-8_MONTHLY_YYYYMMDD.ZIP<br />
+   * File naming convention:<br />
+     Daily ASCII : SAM_FOUO_DAILY_V2_YYYYMMDD.ZIP<br />
+     Daily UTF-8: SAM_FOUO_UTF-8_DAILY_V2_YYYYMMDD.ZIP<br />
+     Monthly ASCII : SAM_FOUO_MONTHLY_V2_YYYYMMDD.ZIP<br />
+     Monthly UTF-8 : SAM_FOUO_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
 
 3. **Entity Management Extract Sensitive Data Package:**
    * This extract contains the same information as the Entity Management FOUO Data package with the addition of data elements which are classified as Sensitive.
@@ -35,10 +36,11 @@ The Entity Management extracts contain entities (businesses and government agenc
    * The daily extract is an incremental file which is published 5 days a week (Tuesday – Saturday) and contains all new, updated, and deactivated registrations since the previous daily file.
    * End user needs to create a system account with sensitive access roles and procure an API_KEY to access these extracts.
    * Only system account keys can be used to access Sensitive data.
-   * Daily ASCII (Default): SAM_SENSITIVE_DAILY_V2_YYYYMMDD.ZIP<br />
-     Daily UTF-8: SAM_SENSITIVE_UTF-8_DAILY_V2_YYYYMMDD.ZIP<br />
-     Monthly ASCII (Default): SAM_SENSITIVE_MONTHLY_V2_YYYYMMDD.ZIP<br />
-     Monthly UTF-8 (Default): SAM_SENSITIVE_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP<br />
+   * File naming convention:<br />
+     Daily ASCII : SAM_SENSITIVE_DAILY_V3_YYYYMMDD.ZIP<br />
+     Daily UTF-8: SAM_SENSITIVE_UTF-8_DAILY_V3_YYYYMMDD.ZIP<br />
+     Monthly ASCII : SAM_SENSITIVE_MONTHLY_V3_YYYYMMDD.ZIP<br />
+     Monthly UTF-8 : SAM_SENSITIVE_UTF-8_MONTHLY_V3_YYYYMMDD.ZIP<br />
    * This extract requires IP address whitelisting to download your file.  You will need to keep an up-to-date list of your IP addresses in your System Account.
 
 
@@ -46,8 +48,9 @@ The Entity Management extracts contain entities (businesses and government agenc
    * This extract all active exclusions in SAM as a comma-separated value (CSV) file.
    * The Exclusions extract is a daily file, published 7 days per week.
    * End user needs to create an account in SAM.gov and procure an API_KEY to access these extracts.
-   * File Name: SAM_Exclusions_Public_Extract_YYDDD.ZIP (Julian Date)<br />
-   		* April 16, 2019 is the 106th day of 2019.  Therefore, the Exclusions extract for April 16, 2019 would be SAM_Exclusions_Public_Extract_19106.ZIP.
+   * File naming convention:<br />
+     SAM_Exclusions_Public_Extract_V2_YYDDD.ZIP (YYDDD is the Julian Date)<br />
+     Example: The file for 04/06/2022 would be SAM_Exclusions_Public_Extract_V2_22096.ZIP.
 
 **Entity Extract Calendar**
 <table>
@@ -55,18 +58,27 @@ The Entity Management extracts contain entities (businesses and government agenc
 <td>Monthly Files for Public, FOUO and Sensitive Extracts</td>
 <td>
 * They are produced on the first Sunday of each month. Kindly check after 7 AM.<br/>
-* The date on the .ZIP file matches the date when the file was generated. E.g.: The March monthly files were generated and dated on 20210307.<br/>
+* The date on the .ZIP file matches the date when the file was generated. E.g.: The April monthly files were generated and dated on 20220403.<br/>
 * The date on the .ZIP file matches the date on the .dat file inside.<br/>
-* These files contain all active entities + entities expired in the last 6 months.
+* These files contain all active entities and entities expired in the last 6 months.
 </td>
 </tr>
 <tr>
 <td>Daily Files for FOUO and Sensitive Extracts</td>
 <td>
 * They are produced every Tuesday-Saturday. Kindly check after 7 AM.<br/>
-* The date on the .ZIP matches the date when the file was generated. E.g: The file generated on the last Saturday of March will show 20210327.<br/>
+* The date on the .ZIP matches the date when the file was generated. E.g.: The file generated on 04/05/2022 will show 20220405.<br/>
 * The date on the .ZIP file matches the date on the .dat file inside.<br/>
 * These are incremental files that contain new/updated/deactivated/expired entities since the previous day’s file.
+</td>
+</tr>
+<tr>
+<td>Daily Files for Exclusion Extracts</td>
+<td>
+* They are produced every day. Kindly check after 7 AM.<br/>
+* The date on the .ZIP matches the date when the file was generated. E.g.: The file generated on 04/05/2022 will show 2022095.<br/>
+* The date on the .ZIP file matches the date on the .CSV file inside.<br/>
+* These files contain all the exclusions.
 </td>
 </tr>
 </table>
@@ -81,11 +93,11 @@ The Public and FOUO Entity extracts and Exclusion extracts are available using t
   * Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?api_key= < value ><br><br>
   
   <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
-       The Sensitive version of the extracts are no longer available via GET requests.
+       The Sensitive version of the extracts are available via POST requests.
        Please refer to the “Sensitive Download API Process” to learn more about the Sensitive extract retrieval process.
        <ul>
-        <li style="color: #31708f;">Production: https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
-        <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?fileName=< name of the file ></li>
+        <li style="color: #31708f;">Production: https://api.sam.gov/data-services/v1/extracts?</li>
+        <li style="color: #31708f;">Alpha: https://api-alpha.sam.gov/data-services/v1/extracts?</li>
         </ul><br>
   </div>  
      
@@ -154,59 +166,55 @@ Type of Connections and Rate Limits
 </tr>
 <tr>
 <td>api_key</td>
-<td>Required element to identify API users and validate role-based access<br />
+<td>This parameter is required to identify and validate API users and their role-based access.<br />
 </td>
 </tr>
 <tr>
 <td>fileName</td>
-<td>Allows users to provide extract file name<br />
-The fileName parameter must be used if the sensitivity parameter is not used.<br />
-Example: fileName=SAM_PUBLIC_MONTHLY_20190323.ZIP
+<td>This parameter must be used on its own. It allows users to provide the extract file name.<br />
+Examples: fileName=SAM_PUBLIC_MONTHLY_V2_20220406.ZIP; fileName= SAM_Exclusions_Public_Extract_V2_22096.ZIP
 </td>
 </tr>
 <tr>
 <td>fileType</td>
-<td>Allows users to specify the domain of the extract that they wish to download<br />
-The filetype parameter must be used if fileName is not specified.<br />
+<td>This parameter must be used if fileName is not specified. It allows users to specify the type of the extract that they wish to download.<br />
 Permitted values: ENTITY, EXCLUSION, SCR, BIO<br />
 </td>
 </tr>
 <tr>
 <td>sensitivity</td>
-<td>Allows users to provide the desired sensitivity level of the extract that they wish to download, if they have proper roles<br />
-The sensitivity parameter must be used if fileName parameter is not used.<br />
-Default value: PUBLIC<br />
+<td>This parameter must not be used in conjunction with the fileName parameter. It allows users to provide the desired sensitivity level of the extract that they wish to download, if they have proper roles.<br />
+Default value, if the parameter is not provided: PUBLIC<br />
 Permitted values: PUBLIC, FOUO, SENSITIVE
 </td>
 </tr>
 <tr>
 <td>frequency</td>
-<td>Allows users to request either a DAILY or MONTHLY extract<br />
-Default value: MONTHLY<br />
+<td>This parameter allows users to request either a DAILY or MONTHLY extract<br />
+Default value, if the parameter is not provided: MONTHLY<br />
 Permitted values: DAILY, MONTHLY
 </td>
 </tr>
 <tr>
 <td>charset</td>
-<td>Allows users to request either the ASCII or UTF-8 extract character-set<br />
-Default value: ASCII<br />
+<td>This parameter allows users to request either the ASCII or UTF-8 extract character-set.<br />
+Default value, if the parameter is not provided: ASCII<br />
 Permitted values: ASCII, UTF8, UTF-8<br />
 Note: This parameter is not applicable for the EXCLUSION file type.
 </td>
 </tr>
 <tr>
 <td>date</td>
-<td>Allows users to select a specific date of the file that they wish to download.<br />
-Format: MM/DD/YYYY for a specific date of  MM/YYYY to specify a year and month (for MONTHLY files only)<br />
+<td>This parameter allows users to select a specific date of the file that they wish to download.<br />
+Format: MM/DD/YYYY for Daily files; MM/YYY for Monthly files.<br />
 Default value: Most recent date, depending on fileType<br />
-Examples: 04/19/2019; 11/15/2018; 03/2019
+Examples: 04/06/2022; 04/2022
 </td>
 </tr>
 <tr>
 <td>version</td>
-<td>Allows users to select the file they wish to download by version.<br />
-Default value: Most recent version, depending on fileType and/or sensitivity<br />
-Examples: V1; V2; V3
+<td>This parameter allows users to select the file they wish to download by version.<br />
+Permitted values: V2 for the Public, FOUO and Exclusion extracts; V3 for the Sensitive extract.
 </td>
 </tr>
 </table>
@@ -219,6 +227,18 @@ Examples: V1; V2; V3
 * "Accept" parameter must be passed in "Headers" with value, "application/zip".
 * "Content-Type" parameter must be passed in "Headers" with value, "application/json".
 * All the optional search filters can be sent in the request URL or in the "Body".
+
+**An example of the Sensitive extract download POST call using Postman:**<br>
+Request URL:
+https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ><br>
+Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/DOWNLOAD_API_AUTH.JPG">Sample Extract Authorization</a><br>
+Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/api_key.JPG">Sample Request Header</a>
+
+<div style="font-family:Source sans pro; color: #212121; line-height: 1.5;">
+<b>An example of the Sensitive extract download POST call using curl:</b><br>
+Curl request with basic auth token: curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --header "Authorization: Basic < auth token >" --output C:\sample_file.ZIP<br><br>
+Curl request with username and password: curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --user "< username >:< password >" --output C:\sample_file.ZIP</div>
+
 
 ### Explanation of the API using Examples
 
@@ -234,93 +254,44 @@ Effective April 2022: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v6.0.xlsx">SAM Mast
 
 **Entity Management Public Data Package Sample API calls:**<br>
 
-Monthly File, Version 1, April 2019 (fileName):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileName=SAM_PUBLIC_MONTHLY_20190407.ZIP<br>
-
-Monthly File, Version 1, April 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=PUBLIC&frequency=MONTHLY&date=04/2019&version=V1<br>
-
-Monthly File (UTF-8), Version 1, April 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=PUBLIC&frequency=MONTHLY&date=04/2019&charset=UTF8&version=V1<br>
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_PUBLIC_MONTHLY_V2_20220403.ZIP
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=PUBLIC&frequency=MONTHLY&date=04/2022
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=PUBLIC&frequency=MONTHLY&date=04/2022&charset=UTF8
 
 **Expected Result:**<br>
-Click to view the full details of the data elements: <a target="_blank" rel="noopener noreferrer" href="v1/public_extract_layout.pdf">Public Extract Layout</a><br>
-Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes:<a target="_blank" rel="noopener noreferrer" href="v1/SAM_Entity_Management_Public_V2_Extract_Layout.pdf">Public Extract Layout</a><br>
-Click to view the full details of the revised extract layout for the upcoming April 2022 release: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 Public File V2 Layout.xlsx">Public Extract Layout</a><br>
+Click to view the full details of the extract layout with the UEI data: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 Public File V2 Layout.xlsx">Public Extract Layout</a><br>
 
 **Entity Management FOUO Data Package Sample API calls:**<br>
 
-Daily File, Version 1, April 20, 2019 (fileName):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileName=SAM_FOUO_DAILY_20190420.ZIP<br>
-
-Daily File, Version 1, April 20, 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=DAILY&date=04/20/2019&version=V1<br>
-
-Daily File (UTF-8), Version 1, April 20, 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=DAILY&date=04/20/2019&charset=UTF8&version=V1<br>
-
-Monthly File, Version 1, April 2019 (fileName):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileName=SAM_PUBLIC_MONTHLY_20190407.ZIP<br>
-
-Monthly File, Version 1, April 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=MONTHLY&date=04/2019&version=V1<br>
-
-Monthly File (UTF-8),Version 1, April 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=MONTHLY&date=04/2019&charset=UTF8&version=V1<br>
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_FOUO_DAILY_V2_20220407.ZIP
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_FOUO_MONTHLY_V2_20220403.ZIP
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=DAILY&date=04/07/2022
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=MONTHLY&date=04/2022
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=DAILY&date=04/07/2022&charset=UTF8
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=ENTITY&sensitivity=FOUO&frequency=MONTHLY&date=04/2022&charset=UTF8
 
 **Expected Result**<br>
-Click to view the full details of the data elements: <a target="_blank" rel="noopener noreferrer" href="v1/fouo_extract_layout.pdf">FOUO Extract Layout</a><br>
-Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes:<a target="_blank" rel="noopener noreferrer" href="v1/SAM_Entity_Management_FOUO_V2_Extract_Layout.pdf">FOUO Extract Layout</a><br>
-Click to view the full details of the revised extract layout for the upcoming April 2022 release: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 FOUO File V2 Layout.xlsx">FOUO Extract Layout</a><br>
+Click to view the full details of the extract layout with the UEI data: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 FOUO File V2 Layout.xlsx">FOUO Extract Layout</a><br>
 
 **Entity Management Sensitive Data Package Sample API calls:**<br>
 
-Daily File, Version 2, April 20, 2019 (fileName):<br>
-https://api.sam.gov/data-services/v1/extracts?fileName=SAM_SENSITIVE_DAILY_V2_20190420.ZIP<br>
-
-Daily File, Version 2, April 20, 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/20/2019&version=V2<br>
-
-Daily File (UTF-8), Version 2, April 20, 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/20/2019&charset=UTF8&version=V2<br>
-
-Monthly File, Version 2, April 2019 (fileName): <br>
-https://api.sam.gov/data-services/v1/extracts?fileName=SAM_SENSITIVE_MONTHLY_V2_20190407.ZIP<br>
-
-Monthly File, Version 2, April 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2019&version=V2<br>
-
-Monthly File (UTF-8), Version 2, April 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2019&charset=UTF8&version=V2<br>
+* https://api.sam.gov/data-services/v1/extracts?fileName=SAM_SENSITIVE_DAILY_V3_20220407.ZIP
+* https://api.sam.gov/data-services/v1/extracts?fileName=SAM_SENSITIVE_MONTHLY_V3_20220403.ZIP
+* https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/07/2022
+* https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2022
+* https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=DAILY&date=04/07/2022&charset=UTF8
+* https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2022&charset=UTF8
 
 **Expected Result**<br>
-Click to view the full details of the data elements: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v5.6 Sensitive File V2 Layout.xlsx">Sensitive Extract Layout</a><br>
-Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes: <a target="_blank" rel="noopener noreferrer" href="v1/SAM_Entity_Management_SENSITIVE_V3_Extract_Layout.xlsx">Sensitive Extract Layout</a><br>
-Click to view the full details of the revised extract layout for the upcoming April 2022 release: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 Sensitive File V3 Layout.xlsx">Sensitive Extract Layout</a><br>
+Click to view the full details of the extract layout with the UEI data: <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 Sensitive File V3 Layout.xlsx">Sensitive Extract Layout</a><br>
 
 **Exclusions Public Data Package Sample API calls:**<br>
 
-Daily File, Version 1, April 16, 2019 (fileName):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileName=SAM_Exclusions_Public_Extract_19106.ZIP<br>
-
-Daily File, Version 1, April 16, 2019 (parameter):<br>
-https://api.sam.gov/data-services/v1/extracts?api_key={API_KEY}&fileType=EXCLUSION&date=04/16/2019&version=V1<br>
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_Exclusions_Public_Extract_V2_22097.ZIP
+* https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=EXCLUSION&date=04/07/2022
 
 **Expected Result**:
-Click to view the full details of the data elements: <a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_Extract_Layout.pdf">Exclusions Extract Layout</a><br>
-Click to view the full details of the revised extract layout for the upcoming UEI/EVS changes:<a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_V2_Extract_Layout.pdf">Exclusions Extract Layout</a><br>
-Click to view the full details of the revised extract layout for the upcoming April 2022 release: <a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_Extract_Layout_V2.pdf">Exclusions Extract Layout</a><br>
-
-**An example of the Sensitive extract download POST call using Postman:**<br>
-Request URL:
-https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ><br>
-Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/DOWNLOAD_API_AUTH.JPG">Sample Extract Authorization</a><br>
-Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/api_key.JPG">Sample Request Header</a>
-
-<div style="font-family:Source sans pro; color: #212121; line-height: 1.5;">
-<b>An example of the Sensitive extract download POST call using curl:</b><br>
-Curl request with basic auth token: curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --header "Authorization: Basic < auth token >" --output C:\sample_file.ZIP<br><br>
-Curl request with username and password: curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --user "< username >:< password >" --output C:\sample_file.ZIP</div>
+Click to view the full details of the extract layout with the UEI data: <a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_Extract_Layout_V2.pdf">Exclusions Extract Layout</a><br>
 
 **Sample File Names:**<br>
 
@@ -332,6 +303,10 @@ Curl request with username and password: curl -X POST "https://api.sam.gov/data-
   
 * Public files:
   <br> SAM_PUBLIC_UTF-8_MONTHLY_V2_20220403.ZIP<br>  SAM_PUBLIC_MONTHLY_V2_20220403.ZIP<br>
+
+* Exclusion files:
+  <br> SAM_Exclusions_Public_Extract_V2_22096.ZIP<br>   SAM_Exclusions_Public_Extract_V2_22097.ZIP<br>
+
 
 ## OpenAPI Specification File 
 
@@ -433,5 +408,6 @@ Date | Version | Description
 10/21/2021 | v2.7    | * Added Expected Results to Data Package Sample API Calls.<br><br> * Updated Extract Mapping Files.
 02/01/2022 | v2.8    | * Updated the Exclusions Extract Layout file.<br><br> * Updated the Exclusions Public V2 Extract file.
 04/04/2022 | v2.9    | * Sample Extract Files section: Removed old sample files that had DUNS information and provided new files with UEI information.<br><br> * Updated “Effective April 2022: SAM Master Extract Mapping” to remove the DUNS occurrences.<br><br> * Updated the “April 2022 release: FOUO Extract Layout” with the correct Sensitivity levels for the Points Of Contact elements.<br><br> * Updated the “April 2022 release: Sensitive Extract Layout” to reflect the correct order for “IMMEDIATE PARENT EVS SOURCE”.<br><br> * Updated the “April 2022 release: Exclusions Extract Layout” to remove the DUNS occurrences.<br><br>
+04/08/2022 | v3.0    | * Removed all the references to older files that are no longer valid.<br><br> * Provided references to the new files.<br><br> * Reorganized the Sensitive Postman and curl examples for a better flow of content.<br><br>
 
 <p><small><a href="#">Back to top</a></small></p>
