@@ -3,6 +3,16 @@ title: SAM.gov Acquisition Award Data (Formerly FPDS.gov)
 banner-heading: SAM.gov Acquisition Award Data (Formerly FPDS.gov)
 ---
 
+<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
+   <div class="usa-alert-body">
+     <strong>
+       This project is in BETA       
+     </strong>
+     <p class="usa-alert-text">
+        <b>Note</b>: Some users of Microsoft Edge have issues downloading files from this site. If this happens, go to your browser settings, then to the downloads section, and disable Open Office files.
+     </p>
+   </div>
+ </div>
 
 ## Overview
 The awards data in SAM.gov (formerly in the Federal Procurement Data System, or FPDS) is information that awarding agencies are required by law to provide for certain awards. All modifications to those awards must also be reported, regardless of dollar value. This information is available to the public. 
@@ -1847,7 +1857,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 - [Data Dictionary](https://iae-prd-opengsa.s3.amazonaws.com/ContractData_DataDictionary_V1.4_March_2022_update.pdf)
 - [OT Data Dictionary](https://iae-prd-opengsa.s3.amazonaws.com/ContractData_DataDictionary_V14_OT_March_2022_update.pdf)
 - [Web Services Specifications](https://iae-prd-opengsa.s3.amazonaws.com/FPDS-NG_14_Data_Validation_rules_document_(3).doc)
-- [Changes in XSD and WSDLs](https://www.fpds.gov/downloads/FPDS-Specifications-Version14-Changes.doc)
+- [Changes in XSD and WSDLs](https://iae-prd-opengsa.s3.amazonaws.com/ContractData-Specifications-Version14-Changes_(1).doc)
 - [SOAP Examples](https://www.fpds.gov/downloads/Version_1.4_specs/V1.4_Soap_Request_Samples.zip)
 - [WSDL Zip file](https://www.fpds.gov/downloads/V14WSDLFiles_11_20_2009.zip)
 - [Validation Rules](https://iae-prd-opengsa.s3.amazonaws.com/ContractData_14_Data_Validation_rules_document.doc)
