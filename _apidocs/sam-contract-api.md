@@ -5,9 +5,6 @@ banner-heading: SAM.gov Acquisition Award Data (Formerly FPDS.gov)
 
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
-     <strong>
-       This project is in BETA       
-     </strong>
      <p class="usa-alert-text">
         <b>Note</b>: Some users of Microsoft Edge have issues downloading files from this site. If this happens, go to your browser settings, then to the downloads section, and disable Open Office files.
      </p>

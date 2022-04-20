@@ -3,6 +3,13 @@ title: SAM.gov Assistance Award Data (Formerly FPDS.gov)
 banner-heading: SAM.gov Assistance Award Data (Formerly FPDS.gov)
 ---
 
+<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
+   <div class="usa-alert-body">
+     <p class="usa-alert-text">
+        <b>Note</b>: Some users of Microsoft Edge have issues downloading files from this site. If this happens, go to your browser settings, then to the downloads section, and disable Open Office files.
+     </p>
+   </div>
+ </div>
 
 ## Overview
 The awards data in SAM.gov (formerly in the Federal Procurement Data System, or FPDS) is information that awarding agencies are required by law to provide for certain awards. All modifications to those awards must also be reported, regardless of dollar value. This information is available to the public.  
