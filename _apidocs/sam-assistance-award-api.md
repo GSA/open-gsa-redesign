@@ -1061,6 +1061,6 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 
 Date | Version | Description
 ------|---------------|---------
-4/12/2022 | 1.0 | Base Version
+4/12/2022 | 1.0 | Initial Draft - SAM.gov Assistance Award Data (Formerly FPDS.gov)
 
 <p><small><a href="#">Back to top</a></small></p>
