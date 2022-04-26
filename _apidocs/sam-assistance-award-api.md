@@ -3,16 +3,6 @@ title: SAM.gov Assistance Award Data (Formerly FPDS.gov)
 banner-heading: SAM.gov Assistance Award Data (Formerly FPDS.gov)
 ---
 <link href="//cdn.jsdelivr.net/npm/jquery.fancytree@2.27/dist/skin-win8/ui.fancytree.min.css" rel="stylesheet">
-{% raw %} 
-<script> /* * * DON'T EDIT BELOW THIS LINE * * */ 
-    (function() { 
-        var fancyTree = document.createElement('script'); fancyTree.type = 'text/javascript'; fancyTree.async = true;
-        fancyTree.src = '//cdn.jsdelivr.net/npm/jquery.fancytree@2.27/dist/jquery.fancytree-all-deps.min.js'; 
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(fancyTree);
-    })();   
-</script> 
-<noscript>Please enable JavaScript to show the links in Tree format .</noscript>
- {% endraw %}
 
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
