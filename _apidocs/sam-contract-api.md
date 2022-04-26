@@ -4,6 +4,9 @@ banner-heading: SAM.gov Acquisition Award Data (Formerly FPDS.gov)
 ---
 
 <link href="//cdn.jsdelivr.net/npm/jquery.fancytree@2.27/dist/skin-win8/ui.fancytree.min.css" rel="stylesheet">
+{% raw %}
+<script type="text/javascript" async src="//cdn.jsdelivr.net/npm/jquery.fancytree@2.27/dist/jquery.fancytree-all-deps.min.js"></script>
+{% endraw %}
 
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
