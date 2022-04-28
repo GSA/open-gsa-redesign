@@ -560,17 +560,18 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 
 ## XML Schemas
 
+ {% raw %} 
+    <script> /* * * DON'T EDIT BELOW THIS LINE * * */ 
+        $(document).ready(function() { 
+            var fancyTreeScript = document.createElement('script'); fancyTreeScript.type = 'text/javascript'; 
+            fancyTreeScript.async = true;
+            fancyTreeScript.src = '//cdn.jsdelivr.net/npm/jquery.fancytree@2.27/dist/jquery.fancytree-all-deps.min.js'; 
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(fancyTreeScript);
+        });   
+    </script>
+{% endraw %}
 
 <div id="fpds_doc_tree">
-    {% raw %} 
-        <script> /* * * DON'T EDIT BELOW THIS LINE * * */ 
-            (function() { 
-                var fancyTreeScript = document.createElement('script'); fancyTreeScript.type = 'text/javascript'; fancyTreeScript.async = true;
-                fancyTreeScript.src = '//cdn.jsdelivr.net/npm/jquery.fancytree@2.27/dist/jquery.fancytree-all-deps.min.js'; 
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(fancyTreeScript);
-            })();   
-        </script>
-    {% endraw %}
     <ul id="treeData">
         <li id="id3" class="expanded folder">FAADC
             <ul>
