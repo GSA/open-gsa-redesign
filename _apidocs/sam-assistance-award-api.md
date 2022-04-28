@@ -557,10 +557,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     </details>
 <p><small><a href="#">Back to top</a></small></p>
 
-
-## XML Schemas
-
- {% raw %} 
+{% raw %} 
     <script> /* * * DON'T EDIT BELOW THIS LINE * * */ 
         (function() { 
             var fancyTreeScript = document.createElement('script'); fancyTreeScript.type = 'text/javascript'; 
@@ -570,6 +567,8 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
         })();   
     </script>
 {% endraw %}
+
+## XML Schemas
 
 <div id="fpds_doc_tree">
     <ul id="treeData">
