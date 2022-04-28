@@ -1,6 +1,7 @@
 ---
 title: SAM.gov Assistance Award Data (Formerly FPDS.gov)
 banner-heading: SAM.gov Assistance Award Data (Formerly FPDS.gov)
+tree_js_load: true
 ---
 <link href="//cdn.jsdelivr.net/npm/jquery.fancytree@2.27/dist/skin-win8/ui.fancytree.min.css" rel="stylesheet">
 
@@ -559,17 +560,6 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 
 
 ## XML Schemas
-
-{% raw %} 
-<script> /* * * DON'T EDIT BELOW THIS LINE * * */ 
-    (function() { 
-        var fancyTreeScript = document.createElement('script'); fancyTreeScript.type = 'text/javascript'; 
-        //fancyTreeScript.defer = true;
-        fancyTreeScript.src = '//cdn.jsdelivr.net/npm/jquery.fancytree@2.27/dist/jquery.fancytree-all-deps.min.js'; 
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(fancyTreeScript);
-    })();   
-</script>
-{% endraw %}
 
 <div id="fpds_doc_tree">
     <ul id="treeData">
