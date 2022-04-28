@@ -595,6 +595,11 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 
 {% raw %}
 <script>
+   (function() { 
+        var fancyTreeScript = document.createElement('script'); fancyTreeScript.type = 'text/javascript'; fancyTreeScript.async = true;
+        fancyTreeScript.src = '//cdn.jsdelivr.net/npm/jquery.fancytree@2.27/dist/jquery.fancytree-all-deps.min.js'; 
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(fancyTreeScript);
+    }).();
   (function() {
     window.onload = function() {
         
