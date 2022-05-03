@@ -579,7 +579,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
                         </li>
                         <li id="id3.2.1" class="expanded folder">SystemServices
                             <ul>
-                                <li id="id3.2.1" class="expanded folder">1.1
+                                <li id="id3.2.2" class="expanded folder">1.1
                                     <ul>
                                        <li><a href="https://www.fpds.gov/FAADC/schema/SystemServices/1.1/Audit.xsd">Audit.xsd</a></li>
 			                            <li><a href="https://www.fpds.gov/FAADC/schemaDocs/SystemServices/1.1/Audit.html">Audit.html</a></li>
@@ -676,7 +676,6 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     </details>
     <details>
     <summary>Atom Element Definitions</summary>
-    <p>
        <b>Container Elements</b>
        <ul style="list-style-type: disc">
        <li>“feed” Element – It is the top-level element of an Atom Feed Document, acting as a container for metadata and data associated with the feed</li>
@@ -695,7 +694,6 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
        <li>“title” Element - It conveys a human-readable title for an entry or feed.</li>
        <li>“modified” Element with in the “entry” section represents the last modified date of the entry.</li>
        </ul>
-    </p>
     </details>
     <details>
     <summary>Assistance XML</summary>
