@@ -82,8 +82,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     </details>
     <details>
     <summary>Atom Element Definitions</summary>
-    <p>
-       <b>Container Elements</b>
+       <br><b>Container Elements</b>
        <ul style="list-style-type: disc">
        <li>“feed” Element – It is the top-level element of an Atom Feed Document, acting as a container for metadata and data associated with the feed</li>
        <li> “entry” Element – It represents an individual entry, acting as a container for metadata and data associated with the entry.</li>
@@ -101,7 +100,6 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
        <li>“title” Element - It conveys a human-readable title for an entry or feed.</li>
        <li>“modified” Element with in the “entry” section represents the last modified date of the entry.</li>
        </ul>
-    </p>
     </details>
     <details>
     <summary>Award XML</summary>
@@ -1747,7 +1745,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
                                 </li>
                                 <li id="id3.1.18" class="expanded folder">Vendors
                                     <ul>
-                                        <li id="id3.1.3" class="expanded folder">1.5
+                                        <li id="id3.1.23" class="expanded folder">1.5
                                             <ul>
                                                 <li><a href="https://www.fpds.gov/FPDS-Schema/schema/DataCollection/vendors/1.5/Vendor.xsd">Vendor.xsd</a></li>
                                                 <li><a href="https://www.fpds.gov/FPDS-Schema/schemaDocs/DataCollection/vendors/1.5/Vendor.html">Vendor.html</a></li>
@@ -1872,6 +1870,6 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 
 Date | Version | Description
 ------|---------------|---------
-4/18/2022 | 1.0 | Initial Draft - SAM.gov Acquisition Award Data (Formerly FPDS.gov)
+5/03/2022 | 1.0 | Initial Draft - SAM.gov Acquisition Award Data (Formerly FPDS.gov)
 
 <p><small><a href="#">Back to top</a></small></p>
