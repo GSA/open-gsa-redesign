@@ -1451,8 +1451,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/EMResponseV2'
         401:
           description: You are not authorized to view the resource
           content: {}
@@ -1951,8 +1949,6 @@ paths:
           description: OK
           content:
             application/zip:
-              schema:
-                $ref: '#/components/schemas/ResponseEntity'
         401:
           description: Unauthorized
           content: {}
@@ -2451,8 +2447,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/EMResponseV3'
         401:
           description: You are not authorized to view the resource
           content: {}
