@@ -78,7 +78,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     </details>
     <details>
     <summary>Atom Element Definitions</summary>
-    <p>
+    <pre>
        <b>Container Elements</b>
        <ul style="list-style-type: disc">
        <li>“feed” Element – It is the top-level element of an Atom Feed Document, acting as a container for metadata and data associated with the feed</li>
@@ -97,7 +97,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
        <li>“title” Element - It conveys a human-readable title for an entry or feed.</li>
        <li>“modified” Element with in the “entry” section represents the last modified date of the entry.</li>
        </ul>
-    </p>
+    </pre>
     </details>
     <details>
     <summary>Assistance XML</summary>
@@ -676,6 +676,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
     </details>
     <details>
     <summary>Atom Element Definitions</summary>
+    <pre>
        <b>Container Elements</b>
        <ul style="list-style-type: disc">
        <li>“feed” Element – It is the top-level element of an Atom Feed Document, acting as a container for metadata and data associated with the feed</li>
@@ -694,6 +695,7 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
        <li>“title” Element - It conveys a human-readable title for an entry or feed.</li>
        <li>“modified” Element with in the “entry” section represents the last modified date of the entry.</li>
        </ul>
+    </pre>
     </details>
     <details>
     <summary>Assistance XML</summary>
