@@ -1870,6 +1870,6 @@ The awards data in SAM.gov (formerly in the Federal Procurement Data System, or 
 
 Date | Version | Description
 ------|---------------|---------
-5/03/2022 | 1.0 | Initial Draft - SAM.gov Acquisition Award Data (Formerly FPDS.gov)
+05/05/2022 | 1.0 | Initial Draft - SAM.gov Acquisition Award Data (Formerly FPDS.gov)
 
 <p><small><a href="#">Back to top</a></small></p>
