@@ -40,8 +40,6 @@ paths:
           description: Successfully downloaded file
           content:
             application/hal+json:
-              schema:
-                $ref: '#/components/schemas/ResponseEntity'
         401:
           description: You are not authorized to view the resource
           content: {}
@@ -297,8 +295,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/hal+json:
-              schema:
-                $ref: '#/components/schemas/ExclusionsResponse'
         401:
           description: You are not authorized to view the resource
           content: {}
@@ -553,8 +549,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/hal+json:
-              schema:
-                $ref: '#/components/schemas/ExclusionsResponseV2'
         401:
           description: You are not authorized to view the resource
           content: {}
@@ -583,8 +577,6 @@ paths:
           description: Successfully downloaded file
           content:
             application/hal+json:
-              schema:
-                $ref: '#/components/schemas/ResponseEntity'
         401:
           description: You are not authorized to view the resource
           content: {}
@@ -840,8 +832,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/hal+json:
-              schema:
-                $ref: '#/components/schemas/ExclusionsResponseV3'
         401:
           description: You are not authorized to view the resource
           content: {}
