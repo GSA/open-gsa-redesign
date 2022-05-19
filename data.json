@@ -1455,7 +1455,7 @@
                     "mediaType": "application/json",
                     "format": "json",
                     "title": "GSA DCOI Strategic Plan May 2022",
-                    "description": "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 11/19/2018 at 8:52 pm Eastern. Updated 05/16/2019 to change tiered closures. Updated on 06/25/2019 to change planned value. Updated on 7/11/2019 to change achieved closures. Updated on 8/5/2019 to change closures for FYs16-20. Updated on 10/7/19 to reflect FY20 Achieved closure values. Updated on 11/15/19 to reflect only \"agency owned\" data centers for closures. Updated on 05/11/2020. No updates to plans posted in 2021 or 2022.",
+                    "description": "Under the Data Center Optimization Initiative (DCOI), covered agencies are required to post DCOI Strategic Plans and updates to their FITARA milestones publicly. Updated 11/19/2018 at 8:52 pm Eastern. Updated 05/16/2019 to change tiered closures. Updated on 06/25/2019 to change planned value. Updated on 7/11/2019 to change achieved closures. Updated on 8/5/2019 to change closures for FYs16-20. Updated on 10/7/19 to reflect FY20 Achieved closure values. Updated on 11/15/19 to reflect only \"agency owned\" data centers for closures. Updated on 05/11/2020. Updated 5/17/22.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/DCOI_StrategicPlans_fy2016Schema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/20d5c816-e31a-46be-81d2-abc59d0f4fdb/resource/b8d9e71b-963b-4398-8d37-04628e64871d/download/datacenteroptimizationstrategicplan.json"
                 }, {
@@ -5193,8 +5193,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 5.13.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b844287c-fcbf-43d0-be46-341258620ba7/download/edi-5.13.json"
+                    "title": "EDI 5.19.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/69be42ff-9471-4c7b-8410-867f03079e91/download/edi-5.19.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5784,8 +5784,8 @@
         }, {
             "@type": "dcat:Dataset",
             "title": "Inventory of Owned and Leased Properties (IOLP)",
-            "description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\n\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\n\n- Location Code - GSA\u2019s alphanumeric identifier for the building \n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \n- GSA Region - GSA assigned region for building location. \n- Street Address/City/State/Zip Code - Building Address. \n- Latitude and Longitude - Map coordinates of the building. \n- Building Rentable Square Feet - Total Rentable Square Feet in building. \n- Available Square Feet - Vacant Space in building. \n- Construction Date - Date of year built. \n-Congressional District\u2014Congressional District building is located\n-Senator/Representative/URL\u2014Senator/Representative of the Congressional District and their URL\n\nThe Leased Data set also includes the following: \n\n- Lease Number - GSA\u2019s alphanumeric identifier for the lease. \n- Lease Effective Date - Date lease starts. \n- Lease Expiration Date - Date lease expires.",
-            "modified": "2022-05-04T15:15:58.786Z",
+            "description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\n\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\n\n- Location Code - GSA\u2019s alphanumeric identifier for the building \n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \n- GSA Region - GSA assigned region for building location. \n- Street Address/City/State/Zip Code - Building Address. \n- Latitude and Longitude - Map coordinates of the building. \n- Building Rentable Square Feet - Total Rentable Square Feet in building. \n- Available Square Feet - Vacant Space in building. \n- Construction Date - Date of year built. \n-Congressional District\u2014Congressional District building is located \n -Senator/Representative/URL\u2014Senator/Representative of the Congressional District and their URL\n\nThe Leased Data set also includes the following: \n\n- Lease Number - GSA\u2019s alphanumeric identifier for the lease. \n- Lease Effective Date - Date lease starts. \n- Lease Expiration Date - Date lease expires.",
+            "modified": "2022-05-19T15:29:12.027Z",
             "accessLevel": "public",
             "identifier": "GSA-4495",
             "dataQuality": true,
@@ -5806,13 +5806,13 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/e0de121e-b343-48ab-80a0-f98243bdee41/download/iolp-leases.xlsx"
+                    "title": "IOLP Buildings.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/ef352082-972d-4b92-b95f-63079ca20bb0/download/iolp-buildings.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/e4b72c75-fde3-402e-abe2-e1aaadc47e62/download/iolp-buildings.xlsx"
+                    "title": "IOLP Leases.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/3b4bc266-443d-42e5-a86b-e7f9d59dfb66/download/iolp-leases.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
