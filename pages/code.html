@@ -50,7 +50,7 @@ banner-button-title: View GSA open source code
             {% for code in site.data.code %}
                 <article class="data-listing">
                     <header>
-                        <h3 class="title">{{ code.title }}</h3>
+                        <h3 class="title" id="{{code.title | replace: " ", "-" }}_{{forloop.index}}">{{ code.title }}</h3>
                     </header>
                     <div class="content">
                         <p class="txt">
