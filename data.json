@@ -5193,8 +5193,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 5.26.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ada5f12f-fbac-4b72-9df4-a062d132ee9d/download/edi-5.26.json"
+                    "title": "EDI 6.2.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/cd272fc2-e304-4c16-8eb2-97105925ce4c/download/edi-6.2.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5785,7 +5785,7 @@
             "@type": "dcat:Dataset",
             "title": "Inventory of Owned and Leased Properties (IOLP)",
             "description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\n\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\n\n- Location Code - GSA\u2019s alphanumeric identifier for the building \n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \n- GSA Region - GSA assigned region for building location. \n- Street Address/City/State/Zip Code - Building Address. \n- Latitude and Longitude - Map coordinates of the building. \n- Building Rentable Square Feet - Total Rentable Square Feet in building. \n- Available Square Feet - Vacant Space in building. \n- Construction Date - Date of year built. \n- Congressional District\u2014Congressional District building is located \n- Senator/Representative/URL\u2014Senator/Representative of the Congressional District and their URL\n\nThe Leased Data set also includes the following: \n\n- Lease Number - GSA\u2019s alphanumeric identifier for the lease. \n- Lease Effective Date - Date lease starts. \n- Lease Expiration Date - Date lease expires.",
-            "modified": "2022-05-26T19:14:33.484Z",
+            "modified": "2022-05-26T22:00:01.047Z",
             "accessLevel": "public",
             "identifier": "GSA-4495",
             "dataQuality": true,
@@ -5807,12 +5807,12 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "IOLP Buildings.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/4dd28d36-6bc4-4d26-9b75-7c8b26c0305d/download/iolp-buildings.xlsx"
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/23804a0f-9520-4493-8715-180786f75199/download/iolp-buildings.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "IOLP Leases.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/6c053f2c-5774-4403-820f-bb1c55821177/download/iolp-leases.xlsx"
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/87bc25da-ffa7-4c30-b260-8d2a3d06f398/download/iolp-leases.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
@@ -10976,7 +10976,7 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "text/csv",
                     "title": "data_gov_bldg_rexus.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/b1136776-7b42-40b9-ac3f-ceae8b243d7e/download/data_gov_bldg_rexus.csv"
+                    "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/f97c5e56-0f9a-4364-aac2-a5c553dc2097/download/data_gov_bldg_rexus.csv"
                 }
             ],
             "keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -11008,7 +11008,7 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "text/csv",
                     "title": "data_gov_lse_rexus.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/2dd966b4-4550-43d8-8145-3065f6954f86/download/data_gov_lse_rexus.csv"
+                    "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/ee63ae25-3afd-4742-ae6d-63710d85bf04/download/data_gov_lse_rexus.csv"
                 }
             ],
             "keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
