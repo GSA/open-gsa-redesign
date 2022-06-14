@@ -5232,8 +5232,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 6.9.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/9e71f77e-d91a-4033-bb83-b13a3bab2eb9/download/edi-6.9.json"
+                    "title": "EDI 6.14.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ed1261e5-9437-4bbf-bf6d-3441439dfee8/download/edi-6.14.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
