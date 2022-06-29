@@ -176,9 +176,9 @@ Note that the results are ordered in descending alphabetical order for the `targ
 
 ```
 {
-  "scan_date": "2022-05-13T00:36:30.500Z",
+  "scan_date": "2022-06-29T00:30:02.908Z",
   "not_found_scan_status": "completed",
-  "home_scan_status": "completed",
+  "primary_scan_status": "completed",
   "robots_txt_scan_status": "completed",
   "sitemap_xml_scan_status": "completed",
   "dns_scan_status": "completed",
@@ -189,7 +189,7 @@ Note that the results are ordered in descending alphabetical order for the `targ
   "final_url_mimetype": "text/html",
   "final_url_same_domain": true,
   "final_url_status_code": 200,
-  "final_url_same_website": true,
+  "final_url_same_website": false,
   "target_url_404_test": true,
   "target_url_redirects": true,
   "uswds_usa_classes": 55,
@@ -202,7 +202,7 @@ Note that the results are ordered in descending alphabetical order for the `targ
   "uswds_merriweather_font": 0,
   "uswds_publicsans_font": 0,
   "uswds_source_sans_font": 5,
-  "uswds_semantic_version": "v2.13.1",
+  "uswds_semantic_version": "v3.0.1",
   "uswds_version": 20,
   "uswds_count": 125,
   "dap_detected_final_url": true,
@@ -239,7 +239,6 @@ Note that the results are ordered in descending alphabetical order for the `targ
   "third_party_service_domains": [
     "8808.global.siteimproveanalytics.io",
     "dap.digitalgov.gov",
-    "gov1.siteintercept.qualtrics.com",
     "gsasolutionssecure.gsa.gov",
     "img03.en25.com",
     "maps.googleapis.com",
@@ -249,14 +248,18 @@ Note that the results are ordered in descending alphabetical order for the `targ
     "www.googletagmanager.com",
     "zn5alubksv6xx7dxv-cemgsa.gov1.siteintercept.qualtrics.com"
   ],
-  "third_party_service_count": 11,
+  "third_party_service_count": 10,
   "dns_ipv6": true,
+  "login_detected": null,
   "target_url": "gsa.gov",
-  "target_url_branch": "Federal - Executive",
+  "target_url_branch": "Executive",
   "target_url_agency_owner": "General Services Administration",
-  "target_url_agency_code": null,
+  "target_url_agency_code": 23,
   "target_url_bureau_owner": "GSA, IDI, ECAS II",
-  "target_url_bureau_code": null
+  "target_url_bureau_code": null,
+  "source_list_federal_domains": true,
+  "source_list_dap": true,
+  "source_list_pulse": true
 }
 ```
 
