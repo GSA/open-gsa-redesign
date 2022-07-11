@@ -175,6 +175,37 @@
             "theme": ["Other"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "Api.Data.Gov Metrics API",
+            "description": "api.data.gov is a free API management service for federal agencies. This API offers access to high level metrics for the APIs that are using the shared service.\n\nThis API is used to power the api.data.gov metrics page.",
+            "modified": "2022-07-11T14:15:09.532Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-07-11-01",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "API Help Team",
+                "hasEmail": "mailto:api.data.gov@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://open.gsa.gov/api/apidatagov-metrics/#overview",
+                    "title": "Api.Data.Gov Metrics API"
+                }
+            ],
+            "keyword": ["api"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "GSA Auctions",
             "description": "The General Services Administration (GSA) has a history of pioneering electronic solutions for streamlining and enhancing the management of excess and surplus Federal assets. GSA continued the transformation of the Federal disposal process throughout the late 1990s with the introduction and subsequent refinement of the Federal Disposal System, a centralized electronic clearinghouse for reporting and transferring excess/surplus personal property within the Federal community and among eligible donees.\n\nThe GSA Auctions website (www.gsaauctions.gov) has been developed to complete GSA's transformation to an all-electronic asset management system. The site offers the general public the opportunity to bid electronically on a wide array of Federal assets. The auctions are completely web-enabled, allowing all registered participants to bid on a single item or multiple items (lots) within specified timeframes.\n\nGSA Auctions offers Federal personal property assets ranging from commonplace items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels, and vehicles. GSA Auctions online capabilities allow GSA to offer assets located across the country to any interested buyer, regardless of location.\n\nParticipants may choose to browse items that are offered on this site or may choose to search for items and place bids. In order to place a bid(s), participants must register first. To register, please go to the GSA Auctions homepage and click on register.",
             "modified": "2022-02-02T17:44:18.543Z",
@@ -1502,6 +1533,37 @@
             "programCode": ["023:019"],
             "language": ["en-us"],
             "theme": ["API"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Discovery API",
+            "description": "You can simply search by typing in keywords. Our system will recommend common categories, NAICS, and contract terms.",
+            "modified": "2022-07-11T14:18:24.958Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-07-11-02",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Federal Acquisition Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "FAS Digital Support",
+                "hasEmail": "mailto:fasdigitalsupport@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://buy.gsa.gov/contracts/home",
+                    "title": "Discovery API"
+                }
+            ],
+            "keyword": ["contracts", "vendors"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
             "title": "e-Buy Awards for Fiscal Year 2005",
@@ -4779,11 +4841,11 @@
             "@type": "dcat:Dataset",
             "title": "FY21 Per Diem Reimbursement Rates & API",
             "description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for  locations across the continental United States for Fiscal Year 2021 as well as the standard per diem rates for any locations not specifically listed.",
-            "modified": "2021-08-16T18:02:52.856Z",
-            "accessLevel": "public",
+            "modified": "2022-07-11T14:11:23.370Z",
+            "accessLevel": "non-public",
             "identifier": "GSA-2021-08-16-03",
             "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "rights": "true",
+            "rights": "making updates",
             "publisher": {
                 "@type": "org:Organization",
                 "name": "Office of Government-wide Policy",
@@ -5097,6 +5159,37 @@
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "GSA Auctions API",
+            "description": "GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles. GSA Auctions\u2019 online capabilities allow GSA to offer assets located across the country to any interested buyer, regardless of location.\n\nGSA Auctions API is a public GET API. The Auction listings will be delivered to the user in two formats. One is JSON and the other one is XML. The auction listings delivered thru the API contains the auction listings from all the participating agencies.",
+            "modified": "2022-07-11T14:21:42.496Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-07-11-03",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "GSA API Standards Team",
+                "hasEmail": "mailto:api.ciss@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://gsa.github.io/auctions_api/",
+                    "title": "GSA Auctions API"
+                }
+            ],
+            "keyword": ["Auctions", "api"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "GSA Bureau IT Leadership Directory",
             "description": "Each agency is expected to post a JSON file for their Bureau IT Leadership Directory. Each dataset should include one record for each agency employee with the title of \u201cchief information officer\u201d or who performs the duties and responsibilities of a CIO but does not necessarily have the title of CIO.",
             "modified": "2018-02-28",
@@ -5232,8 +5325,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 7.7.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/3deca02a-db65-48ee-a6a4-da768b6e8c60/download/edi-7.7.json"
+                    "title": "EDI 7.11.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6e8e8e5b-d691-42f9-9d34-960b8c9e0ec8/download/edi-7.11.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -8216,11 +8309,11 @@
             "@type": "dcat:Dataset",
             "title": "Per Diem Reimbursement Rates & API - Parent",
             "description": "The datasets in this collection contain maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States as well as the standard per diem rates for any locations not specifically listed.",
-            "modified": "2021-08-16T17:16:46.075Z",
-            "accessLevel": "public",
+            "modified": "2022-07-11T14:09:39.314Z",
+            "accessLevel": "non-public",
             "identifier": "GSA-2021-08-16-01",
             "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "rights": "true",
+            "rights": "making updates",
             "publisher": {
                 "@type": "org:Organization",
                 "name": "Office of Government-wide Policy",
@@ -11083,6 +11176,37 @@
             "theme": ["Travel", "Transportation"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "Regulations.gov API",
+            "description": "When Congress passes laws, federal agencies implement those laws through regulations. These regulations vary in subject, but include everything from ensuring water is safe to drink to setting health care standards. Regulations.gov is the place where users can find and comment on regulations. The APIs allow for users to find creative ways to present regulatory data. To learn more about the program visit the About Us page.",
+            "modified": "2022-07-11T14:24:56.843Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-07-11-04",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Regulations Help Desk",
+                "hasEmail": "mailto:regulationshelpdesk@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://open.gsa.gov/api/regulationsgov/",
+                    "title": "Regulations.gov API"
+                }
+            ],
+            "keyword": ["api", "regulations"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "RWA Entry & Tracking Application (RETA)",
             "description": "The Reimbursable Work Authorization (RWA) Entry & Tracking Application (RETA) is a web based system that serves the Public Buildings Service as a centralized repository for Reimbursable Work Authorization information.  It is a national PBS RWA database warehouse with electronic interface capabilities into the NEAR RWA Database System.",
             "modified": "2015-11-19",
@@ -11191,6 +11315,68 @@
             "theme": ["Other"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "Search.gov Clicks API",
+            "description": "The click tracking API endpoint lets you send in click events, which allows you to see click data on your Admin Click Analytics page. We also use this click data to strengthen the search results algorithm for your site.\n\nRead more about click tracking here. This API uses the post method for click tracking.",
+            "modified": "2022-07-11T14:28:13.466Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-07-11-05",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Search.gov Help Team",
+                "hasEmail": "mailto:search@support.digitalgov.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://open.gsa.gov/api/searchgov-clicks/",
+                    "title": "Search.gov Clicks API"
+                }
+            ],
+            "keyword": ["api", "search"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Search.gov Results API",
+            "description": "Search.gov is a service of the General Services Administration, providing search engine capability to federal agencies for their public websites. To learn more about Search.gov and how to set up your site for search, please review the site launch guide.\n\nThis API exposes all relevant Search.gov results \u201cmodules\u201d in a single JSON call, including the following:\n\nWeb results\nBest bets\nHealth topics\nJob openings\nRecent tweets\nRecent news\nRecent video news\nFederal Register documents\nRelated searches",
+            "modified": "2022-07-11T14:30:47.804Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-07-11-06",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Search.gov Help Team",
+                "hasEmail": "mailto:search@support.digitalgov.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://open.gsa.gov/api/searchgov-results/",
+                    "title": "Search.gov Results API"
+                }
+            ],
+            "keyword": ["api", "search.gov"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "Second Generation Office Supplies (OS2) Savings and Small Business Dashboard",
             "description": "The Second Generation Office Supplies (OS2) Savings and Small Business Dashboard is a graphical depiction of OS2 spend, savings and small business utilization, further highlighting FSSI OS2\u2019s accomplishments on behalf of small businesses, veterans, and the taxpayer. Its easy to use, and provides filters for users to focus on geographical, government agency, small or large business, and SDVOSB specifics.",
             "modified": "2016-01-07",
@@ -11253,6 +11439,38 @@
                 }
             ],
             "keyword": ["travel"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Site Scanning API",
+            "description": "Every day, the Site Scanning program runs a scanning engine to dynamically pull down lists of domains from various sources and then scan them with a collection of scan plugins to gather data on them.\n\nThe resulting data that populates this API then can be seen as having two main utilities:\n\nProviding a fairly comprehensive dataset of US federal government websites.\nProviding various information and analysis about each of these websites.\nIn addition to querying the data via API, you can also download it directly as a CSV or JSON file.",
+            "modified": "2022-07-11T14:33:35.554Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-07-11-07",
+            "license": "https://opensource.org/licenses/MIT-0",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Help Team",
+                "hasEmail": "mailto:site-scanning@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://open.gsa.gov/api/site-scanning-api/",
+                    "title": "Site Scanning API"
+                }
+            ],
+            "keyword": ["api"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
