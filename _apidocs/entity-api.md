@@ -41,7 +41,6 @@ This constitutes both the publicly available entities and the entities that have
 ### API endpoints:
 
 **Production:**
-
 https://api.sam.gov/entity-information/v1/entities?api_key=<A VALID API KEY></br>
 https://api.sam.gov/entity-information/v1/entities?</br>
 https://api.sam.gov/entity-information/v2/entities?api_key=<A VALID API KEY></br>
@@ -50,7 +49,6 @@ https://api.sam.gov/entity-information/v3/entities?api_key=<A VALID API KEY></br
 https://api.sam.gov/entity-information/v3/entities?</br>
 
 **Alpha:**
-
 https://api-alpha.sam.gov/entity-information/v1/entities?api_key=<A VALID API KEY></br>
 https://api-alpha.sam.gov/entity-information/v1/entities?</br>
 https://api-alpha.sam.gov/entity-information/v2/entities?api_key=<A VALID API KEY></br>
@@ -73,7 +71,6 @@ https://api-alpha.sam.gov/entity-information/v3/entities?</br>
 * Users must make POST calls using Curl commands or a Restful API client such as Postman.
 
 ### Individual (Personal) Accounts:
-
 --TODO add url
 * The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<a></a>
 * Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
@@ -89,19 +86,14 @@ https://api-alpha.sam.gov/entity-information/v3/entities?</br>
 
     * System Information<br/>
       Unique System ID: The System Account ID
-
     * Permissions<br/>
       Entity Information: read public --> Gives access to the Public data.<br/>
       Entity Information: read public, read fouo --> Gives access to the Public and FOUO (CUI) data.<br/>
       Entity Information: read public, read fouo, read sensitive --> Gives access to the Public, FOUO (CUI) and Sensitive (CUI) data.
-
     * Security Information<br/>
       IP Address: List all the IP Addresses that the System invokes the API from.
-
     * Type of Connection: REST APIs
-
     * System Account Password
-
     * System Account API Key
 
 ### API Key Rate Limits:
@@ -147,7 +139,7 @@ https://api-alpha.sam.gov/entity-information/v3/entities?</br>
 * The "Content-Type" parameter must be sent as "application/json" under "Headers".<br>
 * All the optional search filters can be sent in the request URL or in the "Body".<br>
 * An example of the Sensitive entity management POST call using curl  bring the example here, from the existing “Sensitive API Information” section.
-<details>
+</details>
 
 ### Utilizing the API Extract:
 * To retrieve Entity data in the CSV format, “format=csv” must be provided in the request.
