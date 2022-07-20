@@ -6,20 +6,31 @@ banner-heading: SAM.gov Entity Management API
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
 
 ## Overview
-The Entity Management API will allow users to request Public Entity Information based on various optional request parameters.
+The Entity Management API allows users to request Unclassified ("Public"), Controlled Unclassified Information (CUI) "For Official Use Only" (FOUO) or CUI "Sensitive" entity data, based on the sensitivity level of the user account and through several optional request parameters.
 
+**Public Data:**
+
+This constitutes publicly available entities and their unclassified data such as name, UEI, registration details, physical and mailing addresses, business types, PSC, NAICS and points of contact name and address.
+
+**FOUO (CUI) Data:**
+
+This constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data such as hierarchy, company and employee security levels and points of contact email address, phone, and fax numbers.
+
+**Sensitive (CUI) Data:**
+
+This constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data such as banking information, MPIN and SSN/TIN/EIN.
 
 **Key Features of the Entity Management API:**
 
 * It offers several optional search parameters, filtering by sections, AND (&), OR (~), NOT (!) conditions and a free text search q to obtain the desired data.
-* It returns synchronous responses directly in the browser.
+* It returns synchronous responses.
 * It returns ten records per page in the JSON format.
 * It can return only the first 10,000 records.
 * The following characters are not allowed to be sent in the parameter values with the API request: & \| { } ^ \
 
 **Additional Features of the Entity Management API:** It can serve as an Extract API with the addition of "format" parameter in the request. Following are the key features of the Entity Management Extract API:
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
-* It returns asynchronous responses by sending file downloadable links in the browser and in the user emails.
+* It returns asynchronous responses by sending file downloadable link.
 * It returns data in the JSON or CSV format as selected by the user.
 * It can return only the first 1,000,000 records.
 
@@ -27,56 +38,86 @@ The Entity Management API will allow users to request Public Entity Information 
 
 ## Getting Started
 
-Public and FOUO Entity Details can be accessed from Production or Alpha via the following version 1, version 2, and version 3 endpoints:
-* Production Version 1: https://api.sam.gov/entity-information/v1/entities?api_key= < value >
-* Production Version 2: https://api.sam.gov/entity-information/v2/entities?api_key= < value >
-* Production Version 3: https://api.sam.gov/entity-information/v3/entities?api_key= < value >
-* Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?api_key= < value >
-* Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?api_key= < value >
-* Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/entities?api_key= < value >
+### API endpoints:
 
-These are GET calls.
+**Production:**
 
-Sensitive Entity Details can be accessed from Production or Alpha via the following version 1, version 2, and version 3 end points:
-* Production Version 1: https://api.sam.gov/entity-information/v1/entities?
-* Production Version 2: https://api.sam.gov/entity-information/v2/entities?
-* Production Version 3: https://api.sam.gov/entity-information/v3/entities?
-* Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/entities?
-* Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/entities?
-* Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/entities?
+https://api.sam.gov/entity-information/v1/entities?api_key=<A VALID API KEY></br>
+https://api.sam.gov/entity-information/v1/entities?</br>
+https://api.sam.gov/entity-information/v2/entities?api_key=<A VALID API KEY></br>
+https://api.sam.gov/entity-information/v2/entities?</br>
+https://api.sam.gov/entity-information/v3/entities?api_key=<A VALID API KEY></br>
+https://api.sam.gov/entity-information/v3/entities?</br>
 
-These are POST calls. Please refer to the "Sensitive API Process" under "Sensitive API Information" section for additional information.
+**Alpha:**
 
-Generating a personal API Key:
-* Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://sam.gov/profile/details" target="_blank">Account Details page on SAM.gov</a>
-* Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
-* After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page.
-* If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
+https://api-alpha.sam.gov/entity-information/v1/entities?api_key=<A VALID API KEY></br>
+https://api-alpha.sam.gov/entity-information/v1/entities?</br>
+https://api-alpha.sam.gov/entity-information/v2/entities?api_key=<A VALID API KEY></br>
+https://api-alpha.sam.gov/entity-information/v2/entities?</br>
+https://api-alpha.sam.gov/entity-information/v3/entities?api_key=<A VALID API KEY></br>
+https://api-alpha.sam.gov/entity-information/v3/entities?</br>
 
-Generating a System Account API Key:
-* Users registered with a non-government email address and associated with an entity OR users registered with a government email address may request a system account for public data access.
-* If a user satisfies the above registration criteria they will be able to access the System Accounts widget from their Workspace page after logging in.
-* The user can then select "Go to System Accounts" from the widget and fill out the required sections.
-* The requested system account will then need to be approved.  After approval the user will be notified via email and they can also see the updated status in the System Account widget.
-* The user can select 'Go to System Accounts' again in the widget from their workspace and enter a new system account password.
-* After setting up the password the user will see a new section for retrieving a system account API Key.
-* The user must enter their password again to retrieve the key.
-* NOTE: To obtain access to the FOUO/Sensitive Entity API data with a system account the user must be registered with a government email address.
+### User Requirements:
 
-Type of Connections and Rate Limits
+**To access Public data:**
+* Users must have a non-Federal/Federal Individual (Personal) account and the respective API Key, a non-Federal/Federal System Account with the “Read Public” permission and the respective API Key in SAM.gov.
+* Users can make GET calls using any Browser, Curl commands or a Restful API client such as Postman.
+
+**To access FOUO (CUI) data:**
+* Users must have a Federal System Account with the “Read FOUO” permission and the respective API Key in SAM.gov.
+* Users can make GET calls using any Browser, Curl commands or a Restful API client such as Postman.
+
+**To access Sensitive (CUI) data:**
+* Users must have a Federal System Account with the “Read Sensitive” permission and the respective API Key in SAM.gov.
+* Users must make POST calls using Curl commands or a Restful API client such as Postman.
+
+### Individual (Personal) Accounts:
+
+--TODO add url
+* The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<a></a>
+* Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
+
+### System Accounts:
+
+* The SAM.gov non-Federal registered users must request for a System Account. If their registration and request criteria are satisfied, then they will be provided with the System Accounts” widget on their SAM.gov “Workspace” page.
+* The SAM.gov Federal registered users must contact their CCB representatives for obtaining the “System Accounts” widget on their SAM.gov “Workspace” page.
+* Users must create their System Account using the “System Accounts” widget and get it approved.
+* Users must then set the password for the System Account.
+* After the above step is successfully completed, users will see a new section for retrieving the API Key. Users must enter the password to retrieve this value.
+* System Accounts must satisfy the following criteria to successfully utilize the Entity Management API:
+
+    * System Information<br/>
+      Unique System ID: The System Account ID
+
+    * Permissions<br/>
+      Entity Information: read public --> Gives access to the Public data.<br/>
+      Entity Information: read public, read fouo --> Gives access to the Public and FOUO (CUI) data.<br/>
+      Entity Information: read public, read fouo, read sensitive --> Gives access to the Public, FOUO (CUI) and Sensitive (CUI) data.
+
+    * Security Information<br/>
+      IP Address: List all the IP Addresses that the System invokes the API from.
+
+    * Type of Connection: REST APIs
+
+    * System Account Password
+
+    * System Account API Key
+
+### API Key Rate Limits:
 <table>
 <tr>
-<th style="background-color: #f1f1f1;"><b>Connecting Source</b></th>
-<th style="background-color: #f1f1f1;"><b>Type of Connection</b></th>
-<th style="background-color: #f1f1f1;"><b>Default Rate Limit</b></th>
+<th style="background-color: #f1f1f1;"><b>Type of User Account</b></th>
+<th style="background-color: #f1f1f1;"><b>Type of API Key</b></th>
+<th style="background-color: #f1f1f1;"><b>Default API Daily Rate Limit</b></th>
 </tr>
 <tr>
-<td>Non-federal user with no role</td>
+<td>Non-federal user with no Role in SAM.gov</td>
 <td>Personal API key</td>
 <td>10 requests/day</td>
 </tr>
 <tr>
-<td>Non-federal user with a role</td>
+<td>Non-federal user with a Role in SAM.gov</td>
 <td>Personal API key</td>
 <td>1,000 requests/day</td>
 </tr>
@@ -86,25 +127,34 @@ Type of Connections and Rate Limits
 <td>1,000 requests/day</td>
 </tr>
 <tr>
-<td>Non-federal system</td>
+<td>Non-federal System user</td>
 <td>System account API key</td>
 <td>1,000 requests/day</td>
 </tr>
 <tr>
-<td>Federal system</td>
+<td>Federal System user</td>
 <td>System account API key</td>
 <td>10,000 requests/day</td>
 </tr>
 </table>
 
-Utilizing the Entity API as an extract:
-* To utilize this API as an Extract an additional parameter called 'format' has been implemented.
-* To retrieve Entity data in a CSV format, the parameter '&format=csv' must be provided in the request.
-* To retrieve Entity data in a JSON format, the parameter '&format=json' must be provided in the request.
-* If the requests that contain the 'format' parameter are executed successfully, then they will provide the user with a file downloadable URL in the response.
-* In the file downloadable URL, the phrase REPLACE_WITH_API_KEY must be deleted and replaced with a valid API Key and sent as another request.
+<details>
+<summary><b>Sensitive API Process: </b><br>
+</summary>
+* The System Account User ID and Password must be sent as "Basic Auth" under the "Authorization" Header. The combination needs to be base 64 encoded as base64(username:password).<br>
+* The API Key value must be sent as "x-api-key" under "Headers" and not directly in the request URL.<br>
+* The "Accept" parameter must be sent as "application/json" under "Headers".<br>
+* The "Content-Type" parameter must be sent as "application/json" under "Headers".<br>
+* All the optional search filters can be sent in the request URL or in the "Body".<br>
+* An example of the Sensitive entity management POST call using curl  bring the example here, from the existing “Sensitive API Information” section.
+<details>
+
+### Utilizing the API Extract:
+* To retrieve Entity data in the CSV format, “format=csv” must be provided in the request.
+* To retrieve Entity data in the JSON format, “format=json” must be provided in the request.
+* If the request is executed successfully, then a file downloadable URL with Token will be returned. This URL can also be obtained in emails by providing “emailId=Yes” in the request.
+* In the file downloadable URL, the phrase REPLACE_WITH_API_KEY must be replaced with a valid API Key and sent as another request.
 * If the file is ready for download, then the users can retrieve it. If the file is not ready for download, then the users will need to try again in some time.
-* Users can also provide another parameter, "emailId" with a valid email address if they choose to receive the file downloadable link in their emails.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -20389,562 +20439,562 @@ FOUO Response for the two records is provided in v2 and v3. <br>
 An Entity with an Address Change resulting from EVS Monitoring in v2:
 
 "entityData": [
-        {
-            "entityRegistration": {
-                "samRegistered": "Yes",
-                "ueiSAM": "ZQGGHJH74DW7",
-                "entityEFTIndicator": null,
-                "cageCode": "855J5",
-                "dodaac": null,
-                "legalBusinessName": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
-                "dbaName": null,
-                "purposeOfRegistrationCode": "Z2",
-                "purposeOfRegistrationDesc": "All Awards",
-                "registrationStatus": "Active",
-                "registrationDate": "2018-07-24",
-                "lastUpdateDate": "2021-06-10",
-                "registrationExpirationDate": "2021-08-10",
-                "activationDate": "2020-08-13",
-                "ueiStatus": "Active",
-                "ueiExpirationDate": "2021-08-10",
-                "ueiCreationDate": "2021-06-25",
-                "noPublicDisplayFlag": "Y",
-                "exclusionStatusFlag": null,
-                "exclusionURL": null,
-                "dnbOpenData": "Y"
-            },
-            "coreData": {
-                "entityHierarchyInformation": {
-                    "immediateParentEntity": {
-                        "ueiSAM": null,
-                        "legalBusinessName": null,
-                        "physicalAddress": {
-                            "addressLine1": null,
-                            "addressLine2": null,
-                            "city": null,
-                            "stateOrProvinceCode": null,
-                            "countryCode": null,
-                            "zipCode": null,
-                            "zipCodePlus4": null
-                        },
-                        "phoneNumber": null
-                    },
-                    "intermediateParentEntities": [
-                        {
-                            "domesticParent": {
-                                "ueiSAM": "J64CSQTQNRC1",
-                                "legalBusinessName": "International Business Machines Corporation",
-                                "physicalAddress": {
-                                    "addressLine1": "Address Line1",
-                                    "addressLine2": null,
-                                    "city": "City",
-                                    "stateOrProvinceCode": "XX",
-                                    "countryCode": "XXX",
-                                    "zipCode": "11111",
-                                    "zipCodePlus4": "1111"
-                                },
-                                "phoneNumber": null
-                            },
-                            "hqParent": {
-                                "ueiSAM": "J64CSQTQNRC1",
-                                "legalBusinessName": "International Business Machines Corporation",
-                                "physicalAddress": {
-                                    "addressLine1": "Address Line1",
-                                    "addressLine2": null,
-                                    "city": "City",
-                                    "stateOrProvinceCode": "XX",
-                                    "countryCode": "XXX",
-                                    "zipCode": "11111",
-                                    "zipCodePlus4": "1111"
-                                },
-                                "phoneNumber": null
-                            }
-                        }
-                    ],
-                    "ultimateParentEntity": {
-                        "ueiSAM": "J64CSQTQNRC1",
-                        "legalBusinessName": "International Business Machines Corporation",
-                        "physicalAddress": {
-                            "addressLine1": "Address Line1",
-                            "addressLine2": null,
-                            "city": "City",
-                            "stateOrProvinceCode": "XX",
-                            "countryCode": "XXX",
-                            "zipCode": "11111",
-                            "zipCodePlus4": "1111"
-                        },
-                        "phoneNumber": null
-                    },
-                    "evsMonitoring": {
-                        "legalBusinessName": "International Business Machines Corporation",
-                        "dbaName": null,
-                        "outOfBusinessFlag": "N/A",
-                        "monitoringStatus": "Y",
-                        "lastUpdated": "Y",
-                        "addressLine1": "New Address Line 1",
-                        "addressLine2": "New Address Line 2",
-                        "city": "New City",
-                        "postalCode": "New Zip/Postal Code",
-                        "stateOrProvinceCode": "New State/Province",
-                        "countryCode": "New Country Code"
-                    }
-                },
-                "federalHierarchy": {
-                    "source": null,
-                    "hierarchyDepartmentCode": null,
-                    "hierarchyDepartmentName": null,
-                    "hierarchyAgencyCode": null,
-                    "hierarchyAgencyName": null,
-                    "hierarchyOfficeCode": null
-                },
-                "entityInformation": {
-                    "entityURL": "http://www.ibm.com/us/en",
-                    "entityDivisionName": "IBM Global Business Services",
-                    "entityDivisionNumber": "16",
-                    "entityStartDate": "1911-01-01",
-                    "fiscalYearEndCloseDate": "12/31",
-                    "submissionDate": "2020-08-10",
-                },
-                "physicalAddress": {
-                  "addressLine1": "Address1",
-                  "addressLine2": "Address2",
-                  "city": "City",
-                  "stateOrProvinceCode": "XX",
-                  "zipCode": "11111",
-                  "zipCodePlus4": "1111",
-                  "countryCode": "ABC"
-                },
-                "mailingAddress": {
-                  "addressLine1": "Address1",
-                  "addressLine2": "Address2",
-                  "city": "City",
-                  "stateOrProvinceCode": "XX",
-                  "zipCode": "11111",
-                  "zipCodePlus4": "1111",
-                  "countryCode": "ABC"
-                },
-                "congressionalDistrict": "00",
-                "generalInformation": {
-                    "agencyBusinessPurposeCode": null,
-                    "agencyBusinessPurposeDesc": null,
-                    "entityStructureCode": "2L",
-                    "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
-                    "entityTypeCode": "F",
-                    "entityTypeDesc": "Business or Organization",
-                    "profitStructureCode": "2X",
-                    "profitStructureDesc": "For Profit Organization",
-                    "organizationStructureCode": null,
-                    "organizationStructureDesc": null,
-                    "stateOfIncorporationCode": "NY",
-                    "stateOfIncorporationDesc": "NEW YORK",
-                    "countryOfIncorporationCode": "USA",
-                    "countryOfIncorporationDesc": "UNITED STATES",
-                    "companySecurityLevelCode": "94",
-                    "companySecurityLevelDesc": "Government Top Secret",
-                    "highestEmployeeSecurityLevelCode": "94",
-                    "highestEmployeeSecurityLevelDesc": "Government Top Secret"
-                },
-                "businessTypes": {
-                    "businessTypeList": [
-                        {
-                            "businessTypeCode": "2X",
-                            "businessTypeDesc": "For Profit Organization"
-                        },
-                        {
-                            "businessTypeCode": "F",
-                            "businessTypeDesc": "Business or Organization"
-                        }
-                    ],
-                    "sbaBusinessTypeList": [
-                        {
-                            "sbaBusinessTypeCode": null,
-                            "sbaBusinessTypeDesc": null,
-                            "certificationEntryDate": null,
-                            "certificationExitDate": null
-                        }
-                    ]
-                },
-                "financialInformation": {
-                    "creditCardUsage": "N",
-                    "debtSubjectToOffset": "N",
-                },
-                
+{
+"entityRegistration": {
+"samRegistered": "Yes",
+"ueiSAM": "ZQGGHJH74DW7",
+"entityEFTIndicator": null,
+"cageCode": "855J5",
+"dodaac": null,
+"legalBusinessName": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+"dbaName": null,
+"purposeOfRegistrationCode": "Z2",
+"purposeOfRegistrationDesc": "All Awards",
+"registrationStatus": "Active",
+"registrationDate": "2018-07-24",
+"lastUpdateDate": "2021-06-10",
+"registrationExpirationDate": "2021-08-10",
+"activationDate": "2020-08-13",
+"ueiStatus": "Active",
+"ueiExpirationDate": "2021-08-10",
+"ueiCreationDate": "2021-06-25",
+"noPublicDisplayFlag": "Y",
+"exclusionStatusFlag": null,
+"exclusionURL": null,
+"dnbOpenData": "Y"
+},
+"coreData": {
+"entityHierarchyInformation": {
+"immediateParentEntity": {
+"ueiSAM": null,
+"legalBusinessName": null,
+"physicalAddress": {
+"addressLine1": null,
+"addressLine2": null,
+"city": null,
+"stateOrProvinceCode": null,
+"countryCode": null,
+"zipCode": null,
+"zipCodePlus4": null
+},
+"phoneNumber": null
+},
+"intermediateParentEntities": [
+{
+"domesticParent": {
+"ueiSAM": "J64CSQTQNRC1",
+"legalBusinessName": "International Business Machines Corporation",
+"physicalAddress": {
+"addressLine1": "Address Line1",
+"addressLine2": null,
+"city": "City",
+"stateOrProvinceCode": "XX",
+"countryCode": "XXX",
+"zipCode": "11111",
+"zipCodePlus4": "1111"
+},
+"phoneNumber": null
+},
+"hqParent": {
+"ueiSAM": "J64CSQTQNRC1",
+"legalBusinessName": "International Business Machines Corporation",
+"physicalAddress": {
+"addressLine1": "Address Line1",
+"addressLine2": null,
+"city": "City",
+"stateOrProvinceCode": "XX",
+"countryCode": "XXX",
+"zipCode": "11111",
+"zipCodePlus4": "1111"
+},
+"phoneNumber": null
+}
+}
+],
+"ultimateParentEntity": {
+"ueiSAM": "J64CSQTQNRC1",
+"legalBusinessName": "International Business Machines Corporation",
+"physicalAddress": {
+"addressLine1": "Address Line1",
+"addressLine2": null,
+"city": "City",
+"stateOrProvinceCode": "XX",
+"countryCode": "XXX",
+"zipCode": "11111",
+"zipCodePlus4": "1111"
+},
+"phoneNumber": null
+},
+"evsMonitoring": {
+"legalBusinessName": "International Business Machines Corporation",
+"dbaName": null,
+"outOfBusinessFlag": null,
+"monitoringStatus": "Y",
+"lastUpdated": "Y",
+"addressLine1": "New Address Line 1",
+"addressLine2": "New Address Line 2",
+"city": "New City",
+"postalCode": "New Zip/Postal Code",
+"stateOrProvinceCode": "New State/Province",
+"countryCode": "New Country Code"
+}
+},
+"federalHierarchy": {
+"source": null,
+"hierarchyDepartmentCode": null,
+"hierarchyDepartmentName": null,
+"hierarchyAgencyCode": null,
+"hierarchyAgencyName": null,
+"hierarchyOfficeCode": null
+},
+"entityInformation": {
+"entityURL": "http://www.ibm.com/us/en",
+"entityDivisionName": "IBM Global Business Services",
+"entityDivisionNumber": "16",
+"entityStartDate": "1911-01-01",
+"fiscalYearEndCloseDate": "12/31",
+"submissionDate": "2020-08-10",
+},
+"physicalAddress": {
+"addressLine1": "Address1",
+"addressLine2": "Address2",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "ABC"
+},
+"mailingAddress": {
+"addressLine1": "Address1",
+"addressLine2": "Address2",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "ABC"
+},
+"congressionalDistrict": "00",
+"generalInformation": {
+"agencyBusinessPurposeCode": null,
+"agencyBusinessPurposeDesc": null,
+"entityStructureCode": "2L",
+"entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+"entityTypeCode": "F",
+"entityTypeDesc": "Business or Organization",
+"profitStructureCode": "2X",
+"profitStructureDesc": "For Profit Organization",
+"organizationStructureCode": null,
+"organizationStructureDesc": null,
+"stateOfIncorporationCode": "NY",
+"stateOfIncorporationDesc": "NEW YORK",
+"countryOfIncorporationCode": "USA",
+"countryOfIncorporationDesc": "UNITED STATES",
+"companySecurityLevelCode": "94",
+"companySecurityLevelDesc": "Government Top Secret",
+"highestEmployeeSecurityLevelCode": "94",
+"highestEmployeeSecurityLevelDesc": "Government Top Secret"
+},
+"businessTypes": {
+"businessTypeList": [
+{
+"businessTypeCode": "2X",
+"businessTypeDesc": "For Profit Organization"
+},
+{
+"businessTypeCode": "F",
+"businessTypeDesc": "Business or Organization"
+}
+],
+"sbaBusinessTypeList": [
+{
+"sbaBusinessTypeCode": null,
+"sbaBusinessTypeDesc": null,
+"certificationEntryDate": null,
+"certificationExitDate": null
+}
+]
+},
+"financialInformation": {
+"creditCardUsage": "N",
+"debtSubjectToOffset": "N",
+},
+
             }
         },
 
 An Entity with an Address Change resulting from EVS Monitoring in v3:
 
 "entityData": [
-        {
-            "entityRegistration": {
-                "samRegistered": "Yes",
-                "ueiSAM": "ZQGGHJH74DW7",
-                "entityEFTIndicator": null,
-                "cageCode": "855J5",
-                "dodaac": null,
-                "legalBusinessName": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
-                "dbaName": null,
-                "purposeOfRegistrationCode": "Z2",
-                "purposeOfRegistrationDesc": "All Awards",
-                "registrationStatus": "Active",
-                "evsSource": "E&Y",
-                "registrationDate": "2018-07-24",
-                "lastUpdateDate": "2021-06-10",
-                "registrationExpirationDate": "2021-08-10",
-                "activationDate": "2020-08-13",
-                "ueiStatus": "Active",
-                "ueiExpirationDate": "2021-08-10",
-                "ueiCreationDate": "2021-06-25",
-                "publicDisplayFlag": "Y",
-                "exclusionStatusFlag": "N",
-                "exclusionURL": null,
-                "dnbOpenData": "Y"
-            },
-            "coreData": {
-                "entityHierarchyInformation": {
-                    "immediateParentEntity": {
-                        "ueiSAM": null,
-                        "legalBusinessName": null,
-                        "evsSource": "E&Y",
-                        "physicalAddress": {
-                            "addressLine1": null,
-                            "addressLine2": null,
-                            "city": null,
-                            "stateOrProvinceCode": null,
-                            "countryCode": null,
-                            "zipCode": null,
-                            "zipCodePlus4": null
-                        },
-                        "phoneNumber": null
-                    },
-                    "intermediateParentEntities": [
-                        {
-                            "domesticParent": {
-                                "ueiSAM": "J64CSQTQNRC1",
-                                "legalBusinessName": "International Business Machines Corporation",
-                                "evsSource": "E&Y",
-                                "physicalAddress": {
-                                    "addressLine1": "Address Line1",
-                                    "addressLine2": null,
-                                    "city": "City",
-                                    "stateOrProvinceCode": "XX",
-                                    "countryCode": "XXX",
-                                    "zipCode": "11111",
-                                    "zipCodePlus4": "1111"
-                                },
-                                "phoneNumber": null
-                            },
-                            "hqParent": {
-                                "ueiSAM": "J64CSQTQNRC1",
-                                "legalBusinessName": "International Business Machines Corporation",
-                                "evsSource": "E&Y",
-                                "physicalAddress": {
-                                    "addressLine1": "Address Line1",
-                                    "addressLine2": null,
-                                    "city": "City",
-                                    "stateOrProvinceCode": "XX",
-                                    "countryCode": "XXX",
-                                    "zipCode": "11111",
-                                    "zipCodePlus4": "1111"
-                                },
-                                "phoneNumber": null
-                            }
-                        }
-                    ],
-                    "ultimateParentEntity": {
-                        "ueiSAM": "J64CSQTQNRC1",
-                        "legalBusinessName": "International Business Machines Corporation",
-                        "evsSource": "E&Y",
-                        "physicalAddress": {
-                            "addressLine1": "Address Line1",
-                            "addressLine2": null,
-                            "city": "City",
-                            "stateOrProvinceCode": "XX",
-                            "countryCode": "XXX",
-                            "zipCode": "11111",
-                            "zipCodePlus4": "1111"
-                        },
-                        "phoneNumber": null
-                    },
-                    "evsMonitoring": {
-                        "legalBusinessName": "International Business Machines Corporation",
-                        "dbaName": null,
-                        "outOfBusinessFlag": "N/A",
-                        "monitoringStatus": "Y",
-                        "lastUpdated": "Y",
-                        "addressLine1": "New Address Line 1",
-                        "addressLine2": "New Address Line 2",
-                        "city": "New City",
-                        "postalCode": "New Zip/Postal Code",
-                        "stateOrProvinceCode": "New State/Province",
-                        "countryCode": "New Country Code"
-                    }
-                },
-                "federalHierarchy": {
-                    "source": null,
-                    "hierarchyDepartmentCode": null,
-                    "hierarchyDepartmentName": null,
-                    "hierarchyAgencyCode": null,
-                    "hierarchyAgencyName": null,
-                    "hierarchyOfficeCode": null
-                },
-                "entityInformation": {
-                    "entityURL": "http://www.ibm.com/us/en",
-                    "entityDivisionName": "IBM Global Business Services",
-                    "entityDivisionNumber": "16",
-                    "entityStartDate": "1911-01-01",
-                    "fiscalYearEndCloseDate": "12/31",
-                    "submissionDate": "2020-08-10",
-                },
-                "physicalAddress": {
-                  "addressLine1": "Address1",
-                  "addressLine2": "Address2",
-                  "city": "City",
-                  "stateOrProvinceCode": "XX",
-                  "zipCode": "11111",
-                  "zipCodePlus4": "1111",
-                  "countryCode": "ABC"
-                },
-                "mailingAddress": {
-                  "addressLine1": "Address1",
-                  "addressLine2": "Address2",
-                  "city": "City",
-                  "stateOrProvinceCode": "XX",
-                  "zipCode": "11111",
-                  "zipCodePlus4": "1111",
-                  "countryCode": "ABC"
-                },
-                "congressionalDistrict": "00",
-                "generalInformation": {
-                    "agencyBusinessPurposeCode": null,
-                    "agencyBusinessPurposeDesc": null,
-                    "entityStructureCode": "2L",
-                    "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
-                    "entityTypeCode": "F",
-                    "entityTypeDesc": "Business or Organization",
-                    "profitStructureCode": "2X",
-                    "profitStructureDesc": "For Profit Organization",
-                    "organizationStructureCode": null,
-                    "organizationStructureDesc": null,
-                    "stateOfIncorporationCode": "NY",
-                    "stateOfIncorporationDesc": "NEW YORK",
-                    "countryOfIncorporationCode": "USA",
-                    "countryOfIncorporationDesc": "UNITED STATES",
-                    "companySecurityLevelCode": "94",
-                    "companySecurityLevelDesc": "Government Top Secret",
-                    "highestEmployeeSecurityLevelCode": "94",
-                    "highestEmployeeSecurityLevelDesc": "Government Top Secret"
-                },
-                "businessTypes": {
-                    "businessTypeList": [
-                        {
-                            "businessTypeCode": "2X",
-                            "businessTypeDesc": "For Profit Organization"
-                        },
-                        {
-                            "businessTypeCode": "F",
-                            "businessTypeDesc": "Business or Organization"
-                        }
-                    ],
-                    "sbaBusinessTypeList": [
-                        {
-                            "sbaBusinessTypeCode": null,
-                            "sbaBusinessTypeDesc": null,
-                            "certificationEntryDate": null,
-                            "certificationExitDate": null
-                        }
-                    ]
-                },
-                "financialInformation": {
-                    "creditCardUsage": "N",
-                    "debtSubjectToOffset": "N",
-                },
-                
+{
+"entityRegistration": {
+"samRegistered": "Yes",
+"ueiSAM": "ZQGGHJH74DW7",
+"entityEFTIndicator": null,
+"cageCode": "855J5",
+"dodaac": null,
+"legalBusinessName": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+"dbaName": null,
+"purposeOfRegistrationCode": "Z2",
+"purposeOfRegistrationDesc": "All Awards",
+"registrationStatus": "Active",
+"evsSource": "E&Y",
+"registrationDate": "2018-07-24",
+"lastUpdateDate": "2021-06-10",
+"registrationExpirationDate": "2021-08-10",
+"activationDate": "2020-08-13",
+"ueiStatus": "Active",
+"ueiExpirationDate": "2021-08-10",
+"ueiCreationDate": "2021-06-25",
+"publicDisplayFlag": "Y",
+"exclusionStatusFlag": "N",
+"exclusionURL": null,
+"dnbOpenData": "Y"
+},
+"coreData": {
+"entityHierarchyInformation": {
+"immediateParentEntity": {
+"ueiSAM": null,
+"legalBusinessName": null,
+"evsSource": "E&Y",
+"physicalAddress": {
+"addressLine1": null,
+"addressLine2": null,
+"city": null,
+"stateOrProvinceCode": null,
+"countryCode": null,
+"zipCode": null,
+"zipCodePlus4": null
+},
+"phoneNumber": null
+},
+"intermediateParentEntities": [
+{
+"domesticParent": {
+"ueiSAM": "J64CSQTQNRC1",
+"legalBusinessName": "International Business Machines Corporation",
+"evsSource": "E&Y",
+"physicalAddress": {
+"addressLine1": "Address Line1",
+"addressLine2": null,
+"city": "City",
+"stateOrProvinceCode": "XX",
+"countryCode": "XXX",
+"zipCode": "11111",
+"zipCodePlus4": "1111"
+},
+"phoneNumber": null
+},
+"hqParent": {
+"ueiSAM": "J64CSQTQNRC1",
+"legalBusinessName": "International Business Machines Corporation",
+"evsSource": "E&Y",
+"physicalAddress": {
+"addressLine1": "Address Line1",
+"addressLine2": null,
+"city": "City",
+"stateOrProvinceCode": "XX",
+"countryCode": "XXX",
+"zipCode": "11111",
+"zipCodePlus4": "1111"
+},
+"phoneNumber": null
+}
+}
+],
+"ultimateParentEntity": {
+"ueiSAM": "J64CSQTQNRC1",
+"legalBusinessName": "International Business Machines Corporation",
+"evsSource": "E&Y",
+"physicalAddress": {
+"addressLine1": "Address Line1",
+"addressLine2": null,
+"city": "City",
+"stateOrProvinceCode": "XX",
+"countryCode": "XXX",
+"zipCode": "11111",
+"zipCodePlus4": "1111"
+},
+"phoneNumber": null
+},
+"evsMonitoring": {
+"legalBusinessName": "International Business Machines Corporation",
+"dbaName": null,
+"outOfBusinessFlag": "N/A",
+"monitoringStatus": "Y",
+"lastUpdated": "Y",
+"addressLine1": "New Address Line 1",
+"addressLine2": "New Address Line 2",
+"city": "New City",
+"postalCode": "New Zip/Postal Code",
+"stateOrProvinceCode": "New State/Province",
+"countryCode": "New Country Code"
+}
+},
+"federalHierarchy": {
+"source": null,
+"hierarchyDepartmentCode": null,
+"hierarchyDepartmentName": null,
+"hierarchyAgencyCode": null,
+"hierarchyAgencyName": null,
+"hierarchyOfficeCode": null
+},
+"entityInformation": {
+"entityURL": "http://www.ibm.com/us/en",
+"entityDivisionName": "IBM Global Business Services",
+"entityDivisionNumber": "16",
+"entityStartDate": "1911-01-01",
+"fiscalYearEndCloseDate": "12/31",
+"submissionDate": "2020-08-10",
+},
+"physicalAddress": {
+"addressLine1": "Address1",
+"addressLine2": "Address2",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "ABC"
+},
+"mailingAddress": {
+"addressLine1": "Address1",
+"addressLine2": "Address2",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "ABC"
+},
+"congressionalDistrict": "00",
+"generalInformation": {
+"agencyBusinessPurposeCode": null,
+"agencyBusinessPurposeDesc": null,
+"entityStructureCode": "2L",
+"entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+"entityTypeCode": "F",
+"entityTypeDesc": "Business or Organization",
+"profitStructureCode": "2X",
+"profitStructureDesc": "For Profit Organization",
+"organizationStructureCode": null,
+"organizationStructureDesc": null,
+"stateOfIncorporationCode": "NY",
+"stateOfIncorporationDesc": "NEW YORK",
+"countryOfIncorporationCode": "USA",
+"countryOfIncorporationDesc": "UNITED STATES",
+"companySecurityLevelCode": "94",
+"companySecurityLevelDesc": "Government Top Secret",
+"highestEmployeeSecurityLevelCode": "94",
+"highestEmployeeSecurityLevelDesc": "Government Top Secret"
+},
+"businessTypes": {
+"businessTypeList": [
+{
+"businessTypeCode": "2X",
+"businessTypeDesc": "For Profit Organization"
+},
+{
+"businessTypeCode": "F",
+"businessTypeDesc": "Business or Organization"
+}
+],
+"sbaBusinessTypeList": [
+{
+"sbaBusinessTypeCode": null,
+"sbaBusinessTypeDesc": null,
+"certificationEntryDate": null,
+"certificationExitDate": null
+}
+]
+},
+"financialInformation": {
+"creditCardUsage": "N",
+"debtSubjectToOffset": "N",
+},
+
             }
         },
 
 An Entity with a Name Change resulting from EVS Monitoring in v2:
 
 "entityData": [
-        {
-            "entityRegistration": {
-                "samRegistered": "Yes",
-                "ueiSAM": "JH9ZARNKWKC7",
-                "entityEFTIndicator": null,
-                "cageCode": "7X7G0",
-                "dodaac": null,
-                "legalBusinessName": "IBM Southeast Employees' Credit Union",
-                "dbaName": null,
-                "purposeOfRegistrationCode": "Z1",
-                "purposeOfRegistrationDesc": "Federal Assistance Awards",
-                "registrationStatus": "Active",
-                "registrationDate": "2017-07-27",
-                "lastUpdateDate": "2021-03-11",
-                "registrationExpirationDate": "2022-03-03",
-                "activationDate": "2021-03-05",
-                "ueiStatus": "Active",
-                "ueiExpirationDate": "2022-03-03",
-                "ueiCreationDate": "2021-06-25",
-                "noPublicDisplayFlag": "N",
-                "exclusionStatusFlag": null,
-                "exclusionURL": null,
-                "dnbOpenData": "Y"
-            },
-            "coreData": {
-                "entityHierarchyInformation": {
-                    "immediateParentEntity": {
-                        "ueiSAM": null,
-                        "legalBusinessName": null,
-                        "physicalAddress": {
-                            "addressLine1": null,
-                            "addressLine2": null,
-                            "city": null,
-                            "stateOrProvinceCode": null,
-                            "countryCode": null,
-                            "zipCode": null,
-                            "zipCodePlus4": null
-                        },
-                        "phoneNumber": null
-                    },
-                    "intermediateParentEntities": [
-                        {
-                            "domesticParent": {
-                                "ueiSAM": "JH9ZARNKWKC7",
-                                "legalBusinessName": "IBM Southeast Employees' Credit Union",
-                                "physicalAddress": {
-                                    "addressLine1": "Address Line1",
-                                    "addressLine2": null,
-                                    "city": "City",
-                                    "stateOrProvinceCode": "XX",
-                                    "countryCode": "XXX",
-                                    "zipCode": "11111",
-                                    "zipCodePlus4": "1111"
-                                },
-                                "phoneNumber": null
-                            },
-                            "hqParent": {
-                                "ueiSAM": "JH9ZARNKWKC7",
-                                "legalBusinessName": "IBM Southeast Employees' Credit Union",
-                                "physicalAddress": {
-                                    "addressLine1": "Address Line1",
-                                    "addressLine2": null,
-                                    "city": "City",
-                                    "stateOrProvinceCode": "XX",
-                                    "countryCode": "XXX",
-                                    "zipCode": "11111",
-                                    "zipCodePlus4": "1111"
-                                },
-                                "phoneNumber": null
-                            }
-                        }
-                    ],
-                    "ultimateParentEntity": {
-                        "ueiSAM": "JH9ZARNKWKC7",
-                        "legalBusinessName": "IBM Southeast Employees' Credit Union",
-                        "physicalAddress": {
-                            "addressLine1": "Address Line1",
-                            "addressLine2": null,
-                            "city": "City",
-                            "stateOrProvinceCode": "XX",
-                            "countryCode": "XXX",
-                            "zipCode": "11111",
-                            "zipCodePlus4": "1111"
-                        },
-                        "phoneNumber": null
-                    },
-                    "evsMonitoring": {
-                        "legalBusinessName": "International Business Machines CORPORATION",
-                        "dbaName": null,
-                        "outOfBusinessFlag": "N/A",
-                        "monitoringStatus": "Y",
-                        "lastUpdated": "Y",
-                        "addressLine1": "N/A",
-                        "addressLine2": "N/A",
-                        "city": "N/A",
-                        "postalCode": "N/A",
-                        "stateOrProvinceCode": "N/A",
-                        "countryCode": "N/A"
-                    }
-                },
-                "federalHierarchy": {
-                    "source": null,
-                    "hierarchyDepartmentCode": null,
-                    "hierarchyDepartmentName": null,
-                    "hierarchyAgencyCode": null,
-                    "hierarchyAgencyName": null,
-                    "hierarchyOfficeCode": null
-                },
-                "entityInformation": {
-                    "entityURL": "www.ithinkfi.org",
-                    "entityDivisionName": null,
-                    "entityDivisionNumber": null,
-                    "entityStartDate": "1969-09-03",
-                    "fiscalYearEndCloseDate": "12/31",
-                    "submissionDate": "2021-03-03",
-                },
-                "physicalAddress": {
-                  "addressLine1": "Address1",
-                  "addressLine2": "Address2",
-                  "city": "City",
-                  "stateOrProvinceCode": "XX",
-                  "zipCode": "11111",
-                  "zipCodePlus4": "1111",
-                  "countryCode": "ABC"
-                },
-                "mailingAddress": {
-                  "addressLine1": "Address1",
-                  "addressLine2": "Address2",
-                  "city": "City",
-                  "stateOrProvinceCode": "XX",
-                  "zipCode": "11111",
-                  "zipCodePlus4": "1111",
-                  "countryCode": "ABC"
-                },
-                "congressionalDistrict": "00",
-                "generalInformation": {
-                    "agencyBusinessPurposeCode": null,
-                    "agencyBusinessPurposeDesc": null,
-                    "entityStructureCode": "8H",
-                    "entityStructureDesc": "Corporate Entity (Tax Exempt)",
-                    "entityTypeCode": "F",
-                    "entityTypeDesc": "Business or Organization",
-                    "profitStructureCode": "A8",
-                    "profitStructureDesc": "Non-Profit Organization",
-                    "organizationStructureCode": null,
-                    "organizationStructureDesc": null,
-                    "stateOfIncorporationCode": "FL",
-                    "stateOfIncorporationDesc": "FLORIDA",
-                    "countryOfIncorporationCode": "USA",
-                    "countryOfIncorporationDesc": "UNITED STATES",
-                    "companySecurityLevelCode": null,
-                    "companySecurityLevelDesc": null,
-                    "highestEmployeeSecurityLevelCode": null,
-                    "highestEmployeeSecurityLevelDesc": null
-                },
-                "businessTypes": {
-                    "businessTypeList": [
-                        {
-                            "businessTypeCode": "A8",
-                            "businessTypeDesc": "Non-Profit Organization"
-                        },
-                        {
-                            "businessTypeCode": "F",
-                            "businessTypeDesc": "Business or Organization"
-                        }
-                    ],
-                    "sbaBusinessTypeList": [
-                        {
-                            "sbaBusinessTypeCode": null,
-                            "sbaBusinessTypeDesc": null,
-                            "certificationEntryDate": null,
-                            "certificationExitDate": null
-                        }
-                    ]
-                },
-                "financialInformation": {
-                    "creditCardUsage": "N",
-                    "debtSubjectToOffset": "N",
-                    
+{
+"entityRegistration": {
+"samRegistered": "Yes",
+"ueiSAM": "JH9ZARNKWKC7",
+"entityEFTIndicator": null,
+"cageCode": "7X7G0",
+"dodaac": null,
+"legalBusinessName": "IBM Southeast Employees' Credit Union",
+"dbaName": null,
+"purposeOfRegistrationCode": "Z1",
+"purposeOfRegistrationDesc": "Federal Assistance Awards",
+"registrationStatus": "Active",
+"registrationDate": "2017-07-27",
+"lastUpdateDate": "2021-03-11",
+"registrationExpirationDate": "2022-03-03",
+"activationDate": "2021-03-05",
+"ueiStatus": "Active",
+"ueiExpirationDate": "2022-03-03",
+"ueiCreationDate": "2021-06-25",
+"noPublicDisplayFlag": "N",
+"exclusionStatusFlag": null,
+"exclusionURL": null,
+"dnbOpenData": "Y"
+},
+"coreData": {
+"entityHierarchyInformation": {
+"immediateParentEntity": {
+"ueiSAM": null,
+"legalBusinessName": null,
+"physicalAddress": {
+"addressLine1": null,
+"addressLine2": null,
+"city": null,
+"stateOrProvinceCode": null,
+"countryCode": null,
+"zipCode": null,
+"zipCodePlus4": null
+},
+"phoneNumber": null
+},
+"intermediateParentEntities": [
+{
+"domesticParent": {
+"ueiSAM": "JH9ZARNKWKC7",
+"legalBusinessName": "IBM Southeast Employees' Credit Union",
+"physicalAddress": {
+"addressLine1": "Address Line1",
+"addressLine2": null,
+"city": "City",
+"stateOrProvinceCode": "XX",
+"countryCode": "XXX",
+"zipCode": "11111",
+"zipCodePlus4": "1111"
+},
+"phoneNumber": null
+},
+"hqParent": {
+"ueiSAM": "JH9ZARNKWKC7",
+"legalBusinessName": "IBM Southeast Employees' Credit Union",
+"physicalAddress": {
+"addressLine1": "Address Line1",
+"addressLine2": null,
+"city": "City",
+"stateOrProvinceCode": "XX",
+"countryCode": "XXX",
+"zipCode": "11111",
+"zipCodePlus4": "1111"
+},
+"phoneNumber": null
+}
+}
+],
+"ultimateParentEntity": {
+"ueiSAM": "JH9ZARNKWKC7",
+"legalBusinessName": "IBM Southeast Employees' Credit Union",
+"physicalAddress": {
+"addressLine1": "Address Line1",
+"addressLine2": null,
+"city": "City",
+"stateOrProvinceCode": "XX",
+"countryCode": "XXX",
+"zipCode": "11111",
+"zipCodePlus4": "1111"
+},
+"phoneNumber": null
+},
+"evsMonitoring": {
+"legalBusinessName": "International Business Machines CORPORATION",
+"dbaName": null,
+"outOfBusinessFlag": "N/A",
+"monitoringStatus": "Y",
+"lastUpdated": "Y",
+"addressLine1": "N/A",
+"addressLine2": "N/A",
+"city": "N/A",
+"postalCode": "N/A",
+"stateOrProvinceCode": "N/A",
+"countryCode": "N/A"
+}
+},
+"federalHierarchy": {
+"source": null,
+"hierarchyDepartmentCode": null,
+"hierarchyDepartmentName": null,
+"hierarchyAgencyCode": null,
+"hierarchyAgencyName": null,
+"hierarchyOfficeCode": null
+},
+"entityInformation": {
+"entityURL": "www.ithinkfi.org",
+"entityDivisionName": null,
+"entityDivisionNumber": null,
+"entityStartDate": "1969-09-03",
+"fiscalYearEndCloseDate": "12/31",
+"submissionDate": "2021-03-03",
+},
+"physicalAddress": {
+"addressLine1": "Address1",
+"addressLine2": "Address2",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "ABC"
+},
+"mailingAddress": {
+"addressLine1": "Address1",
+"addressLine2": "Address2",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "ABC"
+},
+"congressionalDistrict": "00",
+"generalInformation": {
+"agencyBusinessPurposeCode": null,
+"agencyBusinessPurposeDesc": null,
+"entityStructureCode": "8H",
+"entityStructureDesc": "Corporate Entity (Tax Exempt)",
+"entityTypeCode": "F",
+"entityTypeDesc": "Business or Organization",
+"profitStructureCode": "A8",
+"profitStructureDesc": "Non-Profit Organization",
+"organizationStructureCode": null,
+"organizationStructureDesc": null,
+"stateOfIncorporationCode": "FL",
+"stateOfIncorporationDesc": "FLORIDA",
+"countryOfIncorporationCode": "USA",
+"countryOfIncorporationDesc": "UNITED STATES",
+"companySecurityLevelCode": null,
+"companySecurityLevelDesc": null,
+"highestEmployeeSecurityLevelCode": null,
+"highestEmployeeSecurityLevelDesc": null
+},
+"businessTypes": {
+"businessTypeList": [
+{
+"businessTypeCode": "A8",
+"businessTypeDesc": "Non-Profit Organization"
+},
+{
+"businessTypeCode": "F",
+"businessTypeDesc": "Business or Organization"
+}
+],
+"sbaBusinessTypeList": [
+{
+"sbaBusinessTypeCode": null,
+"sbaBusinessTypeDesc": null,
+"certificationEntryDate": null,
+"certificationExitDate": null
+}
+]
+},
+"financialInformation": {
+"creditCardUsage": "N",
+"debtSubjectToOffset": "N",
+
                 },
                 
             }
@@ -20954,190 +21004,190 @@ An Entity with a Name Change resulting from EVS Monitoring in v2:
 An Entity with a Name Change resulting from EVS Monitoring in v3:
 
 "entityData": [
-          {
-            "entityRegistration": {
-                "samRegistered": "Yes",
-                "ueiSAM": "JH9ZARNKWKC7",
-                "entityEFTIndicator": null,
-                "cageCode": "7X7G0",
-                "dodaac": null,
-                "legalBusinessName": "IBM Southeast Employees' Credit Union",
-                "dbaName": null,
-                "purposeOfRegistrationCode": "Z1",
-                "purposeOfRegistrationDesc": "Federal Assistance Awards",
-                "registrationStatus": "Active",
-                "evsSource": "E&Y",
-                "registrationDate": "2017-07-27",
-                "lastUpdateDate": "2021-03-11",
-                "registrationExpirationDate": "2022-03-03",
-                "activationDate": "2021-03-05",
-                "ueiStatus": "Active",
-                "ueiExpirationDate": "2022-03-03",
-                "ueiCreationDate": "2021-06-25",
-                "publicDisplayFlag": "N",
-                "exclusionStatusFlag": "N",
-                "exclusionURL": null,
-                "dnbOpenData": "Y"
-            },
-            "coreData": {
-                "entityHierarchyInformation": {
-                    "immediateParentEntity": {
-                        "ueiSAM": null,
-                        "legalBusinessName": null,
-                        "evsSource": "E&Y",
-                        "physicalAddress": {
-                            "addressLine1": null,
-                            "addressLine2": null,
-                            "city": null,
-                            "stateOrProvinceCode": null,
-                            "countryCode": null,
-                            "zipCode": null,
-                            "zipCodePlus4": null
-                        },
-                        "phoneNumber": null
-                    },
-                    "intermediateParentEntities": [
-                        {
-                            "domesticParent": {
-                                "ueiSAM": "JH9ZARNKWKC7",
-                                "legalBusinessName": "IBM Southeast Employees' Credit Union",
-                                "evsSource": "E&Y",
-                                "physicalAddress": {
-                                    "addressLine1": "Address Line1",
-                                    "addressLine2": null,
-                                    "city": "City",
-                                    "stateOrProvinceCode": "XX",
-                                    "countryCode": "XXX",
-                                    "zipCode": "11111",
-                                    "zipCodePlus4": "1111"
-                                },
-                                "phoneNumber": null
-                            },
-                            "hqParent": {
-                                "ueiSAM": "JH9ZARNKWKC7",
-                                "legalBusinessName": "IBM Southeast Employees' Credit Union",
-                                "evsSource": "E&Y",
-                                "physicalAddress": {
-                                    "addressLine1": "Address Line1",
-                                    "addressLine2": null,
-                                    "city": "City",
-                                    "stateOrProvinceCode": "XX",
-                                    "countryCode": "XXX",
-                                    "zipCode": "11111",
-                                    "zipCodePlus4": "1111"
-                                },
-                                "phoneNumber": null
-                            }
-                        }
-                    ],
-                    "ultimateParentEntity": {
-                        "ueiSAM": "JH9ZARNKWKC7",
-                        "legalBusinessName": "IBM Southeast Employees' Credit Union",
-                        "evsSource": "E&Y",
-                        "physicalAddress": {
-                            "addressLine1": "Address Line1",
-                            "addressLine2": null,
-                            "city": "City",
-                            "stateOrProvinceCode": "XX",
-                            "countryCode": "XXX",
-                            "zipCode": "11111",
-                            "zipCodePlus4": "1111"
-                        },
-                        "phoneNumber": null
-                    },
-                    "evsMonitoring": {
-                        "legalBusinessName": "International Business Machines CORPORATION",
-                        "dbaName": null,
-                        "outOfBusinessFlag": "N/A",
-                        "monitoringStatus": "Y",
-                        "lastUpdated": "Y",
-                        "addressLine1": "N/A",
-                        "addressLine2": "N/A",
-                        "city": "N/A",
-                        "postalCode": "N/A",
-                        "stateOrProvinceCode": "N/A",
-                        "countryCode": "N/A"
-                    }
-                },
-                "federalHierarchy": {
-                    "source": null,
-                    "hierarchyDepartmentCode": null,
-                    "hierarchyDepartmentName": null,
-                    "hierarchyAgencyCode": null,
-                    "hierarchyAgencyName": null,
-                    "hierarchyOfficeCode": null
-                },
-                "entityInformation": {
-                    "entityURL": "www.ithinkfi.org",
-                    "entityDivisionName": null,
-                    "entityDivisionNumber": null,
-                    "entityStartDate": "1969-09-03",
-                    "fiscalYearEndCloseDate": "12/31",
-                    "submissionDate": "2021-03-03",
-                },
-                "physicalAddress": {
-                  "addressLine1": "Address1",
-                  "addressLine2": "Address2",
-                  "city": "City",
-                  "stateOrProvinceCode": "XX",
-                  "zipCode": "11111",
-                  "zipCodePlus4": "1111",
-                  "countryCode": "ABC"
-                },
-                "mailingAddress": {
-                  "addressLine1": "Address1",
-                  "addressLine2": "Address2",
-                  "city": "City",
-                  "stateOrProvinceCode": "XX",
-                  "zipCode": "11111",
-                  "zipCodePlus4": "1111",
-                  "countryCode": "ABC"
-                },
-                "congressionalDistrict": "00",
-                "generalInformation": {
-                    "agencyBusinessPurposeCode": null,
-                    "agencyBusinessPurposeDesc": null,
-                    "entityStructureCode": "8H",
-                    "entityStructureDesc": "Corporate Entity (Tax Exempt)",
-                    "entityTypeCode": "F",
-                    "entityTypeDesc": "Business or Organization",
-                    "profitStructureCode": "A8",
-                    "profitStructureDesc": "Non-Profit Organization",
-                    "organizationStructureCode": null,
-                    "organizationStructureDesc": null,
-                    "stateOfIncorporationCode": "FL",
-                    "stateOfIncorporationDesc": "FLORIDA",
-                    "countryOfIncorporationCode": "USA",
-                    "countryOfIncorporationDesc": "UNITED STATES",
-                    "companySecurityLevelCode": null,
-                    "companySecurityLevelDesc": null,
-                    "highestEmployeeSecurityLevelCode": null,
-                    "highestEmployeeSecurityLevelDesc": null
-                },
-                "businessTypes": {
-                    "businessTypeList": [
-                        {
-                            "businessTypeCode": "A8",
-                            "businessTypeDesc": "Non-Profit Organization"
-                        },
-                        {
-                            "businessTypeCode": "F",
-                            "businessTypeDesc": "Business or Organization"
-                        }
-                    ],
-                    "sbaBusinessTypeList": [
-                        {
-                            "sbaBusinessTypeCode": null,
-                            "sbaBusinessTypeDesc": null,
-                            "certificationEntryDate": null,
-                            "certificationExitDate": null
-                        }
-                    ]
-                },
-                "financialInformation": {
-                    "creditCardUsage": "N",
-                    "debtSubjectToOffset": "N",
-                    
+{
+"entityRegistration": {
+"samRegistered": "Yes",
+"ueiSAM": "JH9ZARNKWKC7",
+"entityEFTIndicator": null,
+"cageCode": "7X7G0",
+"dodaac": null,
+"legalBusinessName": "IBM Southeast Employees' Credit Union",
+"dbaName": null,
+"purposeOfRegistrationCode": "Z1",
+"purposeOfRegistrationDesc": "Federal Assistance Awards",
+"registrationStatus": "Active",
+"evsSource": "E&Y",
+"registrationDate": "2017-07-27",
+"lastUpdateDate": "2021-03-11",
+"registrationExpirationDate": "2022-03-03",
+"activationDate": "2021-03-05",
+"ueiStatus": "Active",
+"ueiExpirationDate": "2022-03-03",
+"ueiCreationDate": "2021-06-25",
+"publicDisplayFlag": "N",
+"exclusionStatusFlag": "N",
+"exclusionURL": null,
+"dnbOpenData": "Y"
+},
+"coreData": {
+"entityHierarchyInformation": {
+"immediateParentEntity": {
+"ueiSAM": null,
+"legalBusinessName": null,
+"evsSource": "E&Y",
+"physicalAddress": {
+"addressLine1": null,
+"addressLine2": null,
+"city": null,
+"stateOrProvinceCode": null,
+"countryCode": null,
+"zipCode": null,
+"zipCodePlus4": null
+},
+"phoneNumber": null
+},
+"intermediateParentEntities": [
+{
+"domesticParent": {
+"ueiSAM": "JH9ZARNKWKC7",
+"legalBusinessName": "IBM Southeast Employees' Credit Union",
+"evsSource": "E&Y",
+"physicalAddress": {
+"addressLine1": "Address Line1",
+"addressLine2": null,
+"city": "City",
+"stateOrProvinceCode": "XX",
+"countryCode": "XXX",
+"zipCode": "11111",
+"zipCodePlus4": "1111"
+},
+"phoneNumber": null
+},
+"hqParent": {
+"ueiSAM": "JH9ZARNKWKC7",
+"legalBusinessName": "IBM Southeast Employees' Credit Union",
+"evsSource": "E&Y",
+"physicalAddress": {
+"addressLine1": "Address Line1",
+"addressLine2": null,
+"city": "City",
+"stateOrProvinceCode": "XX",
+"countryCode": "XXX",
+"zipCode": "11111",
+"zipCodePlus4": "1111"
+},
+"phoneNumber": null
+}
+}
+],
+"ultimateParentEntity": {
+"ueiSAM": "JH9ZARNKWKC7",
+"legalBusinessName": "IBM Southeast Employees' Credit Union",
+"evsSource": "E&Y",
+"physicalAddress": {
+"addressLine1": "Address Line1",
+"addressLine2": null,
+"city": "City",
+"stateOrProvinceCode": "XX",
+"countryCode": "XXX",
+"zipCode": "11111",
+"zipCodePlus4": "1111"
+},
+"phoneNumber": null
+},
+"evsMonitoring": {
+"legalBusinessName": "International Business Machines CORPORATION",
+"dbaName": null,
+"outOfBusinessFlag": "N/A",
+"monitoringStatus": "Y",
+"lastUpdated": "Y",
+"addressLine1": "N/A",
+"addressLine2": "N/A",
+"city": "N/A",
+"postalCode": "N/A",
+"stateOrProvinceCode": "N/A",
+"countryCode": "N/A"
+}
+},
+"federalHierarchy": {
+"source": null,
+"hierarchyDepartmentCode": null,
+"hierarchyDepartmentName": null,
+"hierarchyAgencyCode": null,
+"hierarchyAgencyName": null,
+"hierarchyOfficeCode": null
+},
+"entityInformation": {
+"entityURL": "www.ithinkfi.org",
+"entityDivisionName": null,
+"entityDivisionNumber": null,
+"entityStartDate": "1969-09-03",
+"fiscalYearEndCloseDate": "12/31",
+"submissionDate": "2021-03-03",
+},
+"physicalAddress": {
+"addressLine1": "Address1",
+"addressLine2": "Address2",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "ABC"
+},
+"mailingAddress": {
+"addressLine1": "Address1",
+"addressLine2": "Address2",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "ABC"
+},
+"congressionalDistrict": "00",
+"generalInformation": {
+"agencyBusinessPurposeCode": null,
+"agencyBusinessPurposeDesc": null,
+"entityStructureCode": "8H",
+"entityStructureDesc": "Corporate Entity (Tax Exempt)",
+"entityTypeCode": "F",
+"entityTypeDesc": "Business or Organization",
+"profitStructureCode": "A8",
+"profitStructureDesc": "Non-Profit Organization",
+"organizationStructureCode": null,
+"organizationStructureDesc": null,
+"stateOfIncorporationCode": "FL",
+"stateOfIncorporationDesc": "FLORIDA",
+"countryOfIncorporationCode": "USA",
+"countryOfIncorporationDesc": "UNITED STATES",
+"companySecurityLevelCode": null,
+"companySecurityLevelDesc": null,
+"highestEmployeeSecurityLevelCode": null,
+"highestEmployeeSecurityLevelDesc": null
+},
+"businessTypes": {
+"businessTypeList": [
+{
+"businessTypeCode": "A8",
+"businessTypeDesc": "Non-Profit Organization"
+},
+{
+"businessTypeCode": "F",
+"businessTypeDesc": "Business or Organization"
+}
+],
+"sbaBusinessTypeList": [
+{
+"sbaBusinessTypeCode": null,
+"sbaBusinessTypeDesc": null,
+"certificationEntryDate": null,
+"certificationExitDate": null
+}
+]
+},
+"financialInformation": {
+"creditCardUsage": "N",
+"debtSubjectToOffset": "N",
+
                 },
                 
             }
@@ -21288,17 +21338,17 @@ V2:
                         "phoneNumber": null
                     },
                     "evsMonitoring": {
-                        "legalBusinessName": "Currently Not Available",
-                        "dbaName": "Currently Not Available",
-                        "outOfBusinessFlag": "Currently Not Available",
-                        "monitoringStatus": "Currently Not Available",
-                        "lastUpdated": "Currently Not Available",
-                        "addressLine1": "Currently Not Available",
-                        "addressLine2": "Currently Not Available",
-                        "city": "Currently Not Available",
-                        "postalCode": "Currently Not Available",
-                        "stateOrProvinceCode": "Currently Not Available",
-                        "countryCode": "Currently Not Available"
+                        "legalBusinessName": null,
+                        "dbaName": null,
+                        "outOfBusinessFlag": null,
+                        "monitoringStatus": null,
+                        "lastUpdated": null,
+                        "addressLine1": null,
+                        "addressLine2": null,
+                        "city": null,
+                        "postalCode": null,
+                        "stateOrProvinceCode": null,
+                        "countryCode": null
                     }
                 },
                 "federalHierarchy": {
@@ -21407,228 +21457,228 @@ V2:
               }
             }
 
- "links": {
-        "selfLink": "https://api.sam.gov/entity-information/v2/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=0&size=10",
-        "nextLink": "https://api.sam.gov/entity-information/v2/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=1&size=10"
-    }
+"links": {
+"selfLink": "https://api.sam.gov/entity-information/v2/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=0&size=10",
+"nextLink": "https://api.sam.gov/entity-information/v2/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=1&size=10"
+}
 }
 V3:
-    "entityData": [
-        {
-            "entityRegistration": {
-                "samRegistered": "Yes",
-                "ueiSAM": "V4EUJ1MPVH45",
-                "entityEFTIndicator": null,
-                "cageCode": "92G16",
-                "dodaac": null,
-                "legalBusinessName": "HH Real Estate Properties Corporation",
-                "dbaName": null,
-                "purposeOfRegistrationCode": "Z1",
-                "purposeOfRegistrationDesc": "Federal Assistance Awards",
-                "registrationStatus": "Active",
-                "evsSource": "E&Y",
-                "registrationDate": "2021-06-23",
-                "lastUpdateDate": "2021-06-24",
-                "registrationExpirationDate": "2022-06-23",
-                "activationDate": "2021-06-24",
-                "ueiStatus": "Active",
-                "ueiExpirationDate": "2022-06-23",
-                "ueiCreationDate": "2021-06-25",
-                "publicDisplayFlag": "Y",
-                "exclusionStatusFlag": "N",
-                "exclusionURL": null,
-                "dnbOpenData": "Y"
-            },
-            "coreData": {
-                "entityHierarchyInformation": {
-                    "immediateParentEntity": {
-                        "ueiSAM": null,
-                        "legalBusinessName": null,
-                        "evsSource": "E&Y",
-                        "physicalAddress": {
-                            "addressLine1": null,
-                            "addressLine2": null,
-                            "city": null,
-                            "stateOrProvinceCode": null,
-                            "countryCode": null,
-                            "zipCode": null,
-                            "zipCodePlus4": null
-                        },
-                        "phoneNumber": null
-                    },
-                    "intermediateParentEntities": [
-                        {
-                            "domesticParent": {
-                                "ueiSAM": null,
-                                "legalBusinessName": null,
-                                "evsSource": "E&Y",
-                                "physicalAddress": {
-                                    "addressLine1": null,
-                                    "addressLine2": null,
-                                    "city": null,
-                                    "stateOrProvinceCode": null,
-                                    "countryCode": null,
-                                    "zipCode": null,
-                                    "zipCodePlus4": null
-                                },
-                                "phoneNumber": null
-                            },
-                            "hqParent": {
-                                "ueiSAM": null,
-                                "legalBusinessName": null,
-                                "evsSource": "E&Y",
-                                "physicalAddress": {
-                                    "addressLine1": null,
-                                    "addressLine2": null,
-                                    "city": null,
-                                    "stateOrProvinceCode": null,
-                                    "countryCode": null,
-                                    "zipCode": null,
-                                    "zipCodePlus4": null
-                                },
-                                "phoneNumber": null
-                            }
-                        }
-                    ],
-                    "ultimateParentEntity": {
-                        "ueiSAM": null,
-                        "legalBusinessName": null,
-                        "evsSource": "E&Y",
-                        "physicalAddress": {
-                            "addressLine1": null,
-                            "addressLine2": null,
-                            "city": null,
-                            "stateOrProvinceCode": null,
-                            "countryCode": null,
-                            "zipCode": null,
-                            "zipCodePlus4": null
-                        },
-                        "phoneNumber": null
-                    },
-                    "evsMonitoring": {
-                        "legalBusinessName": "Currently Not Available",
-                        "dbaName": "Currently Not Available",
-                        "outOfBusinessFlag": "Currently Not Available",
-                        "monitoringStatus": "Currently Not Available",
-                        "lastUpdated": "Currently Not Available",
-                        "addressLine1": "Currently Not Available",
-                        "addressLine2": "Currently Not Available",
-                        "city": "Currently Not Available",
-                        "postalCode": "Currently Not Available",
-                        "stateOrProvinceCode": "Currently Not Available",
-                        "countryCode": "Currently Not Available"
-                    }
-                },
-                "federalHierarchy": {
-                    "source": null,
-                    "hierarchyDepartmentCode": null,
-                    "hierarchyDepartmentName": null,
-                    "hierarchyAgencyCode": null,
-                    "hierarchyAgencyName": null,
-                    "hierarchyOfficeCode": null
-                },
-                "entityInformation": {
-                    "entityURL": null,
-                    "entityDivisionName": null,
-                    "entityDivisionNumber": null,
-                    "entityStartDate": "2021-05-17",
-                    "fiscalYearEndCloseDate": "12/31",
-                    "submissionDate": "2021-06-23",
-                },
-                "physicalAddress": {
-                  "addressLine1": "Address1",
-                  "addressLine2": "Address2",
-                  "city": "City",
-                  "stateOrProvinceCode": "XX",
-                  "zipCode": "11111",
-                  "zipCodePlus4": "1111",
-                  "countryCode": "ABC"
-                },
-                "mailingAddress": {
-                  "addressLine1": "Address1",
-                  "addressLine2": "Address2",
-                  "city": "City",
-                  "stateOrProvinceCode": "XX",
-                  "zipCode": "11111",
-                  "zipCodePlus4": "1111",
-                  "countryCode": "ABC"
-                },
-                "congressionalDistrict": "09",
-                "generalInformation": {
-                    "agencyBusinessPurposeCode": null,
-                    "agencyBusinessPurposeDesc": null,
-                    "entityStructureCode": "2L",
-                    "entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
-                    "entityTypeCode": "F",
-                    "entityTypeDesc": "Business or Organization",
-                    "profitStructureCode": "2X",
-                    "profitStructureDesc": "For Profit Organization",
-                    "organizationStructureCode": null,
-                    "organizationStructureDesc": null,
-                    "stateOfIncorporationCode": "TN",
-                    "stateOfIncorporationDesc": "TENNESSEE",
-                    "countryOfIncorporationCode": "USA",
-                    "countryOfIncorporationDesc": "UNITED STATES",
-                    "companySecurityLevelCode": null,
-                    "companySecurityLevelDesc": null,
-                    "highestEmployeeSecurityLevelCode": null,
-                    "highestEmployeeSecurityLevelDesc": null
-                },
-                "businessTypes": {
-                    "businessTypeList": [
-                        {
-                            "businessTypeCode": "23",
-                            "businessTypeDesc": "Minority Owned Business"
-                        },
-                        {
-                            "businessTypeCode": "2X",
-                            "businessTypeDesc": "For Profit Organization"
-                        },
-                        {
-                            "businessTypeCode": "8C",
-                            "businessTypeDesc": "Joint Venture Women Owned Small Business"
-                        },
-                        {
-                            "businessTypeCode": "8W",
-                            "businessTypeDesc": "Woman Owned Small Business"
-                        },
-                        {
-                            "businessTypeCode": "A2",
-                            "businessTypeDesc": "Woman Owned Business"
-                        },
-                        {
-                            "businessTypeCode": "F",
-                            "businessTypeDesc": "Business or Organization"
-                        },
-                        {
-                            "businessTypeCode": "HK",
-                            "businessTypeDesc": "Community Development Corporation Owned Firm"
-                        },
-                        {
-                            "businessTypeCode": "OY",
-                            "businessTypeDesc": "Black American Owned"
-                        }
-                    ],
-                    "sbaBusinessTypeList": [
-                        {
-                            "sbaBusinessTypeCode": null,
-                            "sbaBusinessTypeDesc": null,
-                            "certificationEntryDate": null,
-                            "certificationExitDate": null
-                        }
-                    ]
-                },
-                "financialInformation": {
-                    "creditCardUsage": "N",
-                    "debtSubjectToOffset": null
-                  }
-                }
-              },
+"entityData": [
+{
+"entityRegistration": {
+"samRegistered": "Yes",
+"ueiSAM": "V4EUJ1MPVH45",
+"entityEFTIndicator": null,
+"cageCode": "92G16",
+"dodaac": null,
+"legalBusinessName": "HH Real Estate Properties Corporation",
+"dbaName": null,
+"purposeOfRegistrationCode": "Z1",
+"purposeOfRegistrationDesc": "Federal Assistance Awards",
+"registrationStatus": "Active",
+"evsSource": "E&Y",
+"registrationDate": "2021-06-23",
+"lastUpdateDate": "2021-06-24",
+"registrationExpirationDate": "2022-06-23",
+"activationDate": "2021-06-24",
+"ueiStatus": "Active",
+"ueiExpirationDate": "2022-06-23",
+"ueiCreationDate": "2021-06-25",
+"publicDisplayFlag": "Y",
+"exclusionStatusFlag": "N",
+"exclusionURL": null,
+"dnbOpenData": "Y"
+},
+"coreData": {
+"entityHierarchyInformation": {
+"immediateParentEntity": {
+"ueiSAM": null,
+"legalBusinessName": null,
+"evsSource": "E&Y",
+"physicalAddress": {
+"addressLine1": null,
+"addressLine2": null,
+"city": null,
+"stateOrProvinceCode": null,
+"countryCode": null,
+"zipCode": null,
+"zipCodePlus4": null
+},
+"phoneNumber": null
+},
+"intermediateParentEntities": [
+{
+"domesticParent": {
+"ueiSAM": null,
+"legalBusinessName": null,
+"evsSource": "E&Y",
+"physicalAddress": {
+"addressLine1": null,
+"addressLine2": null,
+"city": null,
+"stateOrProvinceCode": null,
+"countryCode": null,
+"zipCode": null,
+"zipCodePlus4": null
+},
+"phoneNumber": null
+},
+"hqParent": {
+"ueiSAM": null,
+"legalBusinessName": null,
+"evsSource": "E&Y",
+"physicalAddress": {
+"addressLine1": null,
+"addressLine2": null,
+"city": null,
+"stateOrProvinceCode": null,
+"countryCode": null,
+"zipCode": null,
+"zipCodePlus4": null
+},
+"phoneNumber": null
+}
+}
+],
+"ultimateParentEntity": {
+"ueiSAM": null,
+"legalBusinessName": null,
+"evsSource": "E&Y",
+"physicalAddress": {
+"addressLine1": null,
+"addressLine2": null,
+"city": null,
+"stateOrProvinceCode": null,
+"countryCode": null,
+"zipCode": null,
+"zipCodePlus4": null
+},
+"phoneNumber": null
+},
+"evsMonitoring": {
+"legalBusinessName": null,
+"dbaName": null,
+"outOfBusinessFlag": null,
+"monitoringStatus": null,
+"lastUpdated": null,
+"addressLine1": null,
+"addressLine2": null,
+"city": null,
+"postalCode": null,
+"stateOrProvinceCode": null,
+"countryCode": null
+}
+},
+"federalHierarchy": {
+"source": null,
+"hierarchyDepartmentCode": null,
+"hierarchyDepartmentName": null,
+"hierarchyAgencyCode": null,
+"hierarchyAgencyName": null,
+"hierarchyOfficeCode": null
+},
+"entityInformation": {
+"entityURL": null,
+"entityDivisionName": null,
+"entityDivisionNumber": null,
+"entityStartDate": "2021-05-17",
+"fiscalYearEndCloseDate": "12/31",
+"submissionDate": "2021-06-23",
+},
+"physicalAddress": {
+"addressLine1": "Address1",
+"addressLine2": "Address2",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "ABC"
+},
+"mailingAddress": {
+"addressLine1": "Address1",
+"addressLine2": "Address2",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "ABC"
+},
+"congressionalDistrict": "09",
+"generalInformation": {
+"agencyBusinessPurposeCode": null,
+"agencyBusinessPurposeDesc": null,
+"entityStructureCode": "2L",
+"entityStructureDesc": "Corporate Entity (Not Tax Exempt)",
+"entityTypeCode": "F",
+"entityTypeDesc": "Business or Organization",
+"profitStructureCode": "2X",
+"profitStructureDesc": "For Profit Organization",
+"organizationStructureCode": null,
+"organizationStructureDesc": null,
+"stateOfIncorporationCode": "TN",
+"stateOfIncorporationDesc": "TENNESSEE",
+"countryOfIncorporationCode": "USA",
+"countryOfIncorporationDesc": "UNITED STATES",
+"companySecurityLevelCode": null,
+"companySecurityLevelDesc": null,
+"highestEmployeeSecurityLevelCode": null,
+"highestEmployeeSecurityLevelDesc": null
+},
+"businessTypes": {
+"businessTypeList": [
+{
+"businessTypeCode": "23",
+"businessTypeDesc": "Minority Owned Business"
+},
+{
+"businessTypeCode": "2X",
+"businessTypeDesc": "For Profit Organization"
+},
+{
+"businessTypeCode": "8C",
+"businessTypeDesc": "Joint Venture Women Owned Small Business"
+},
+{
+"businessTypeCode": "8W",
+"businessTypeDesc": "Woman Owned Small Business"
+},
+{
+"businessTypeCode": "A2",
+"businessTypeDesc": "Woman Owned Business"
+},
+{
+"businessTypeCode": "F",
+"businessTypeDesc": "Business or Organization"
+},
+{
+"businessTypeCode": "HK",
+"businessTypeDesc": "Community Development Corporation Owned Firm"
+},
+{
+"businessTypeCode": "OY",
+"businessTypeDesc": "Black American Owned"
+}
+],
+"sbaBusinessTypeList": [
+{
+"sbaBusinessTypeCode": null,
+"sbaBusinessTypeDesc": null,
+"certificationEntryDate": null,
+"certificationExitDate": null
+}
+]
+},
+"financialInformation": {
+"creditCardUsage": "N",
+"debtSubjectToOffset": null
+}
+}
+},
 
- "links": {
-        "selfLink": "https://api.sam.gov/entity-information/v3/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=0&size=10",
-        "nextLink": "https://api.sam.gov/entity-information/v3/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=1&size=10"
-    }
+"links": {
+"selfLink": "https://api.sam.gov/entity-information/v3/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=0&size=10",
+"nextLink": "https://api.sam.gov/entity-information/v3/entities?purposeOfRegistrationCode=Z1%7EZ2&q=%28businessTypeDesc%3A%27Joint+Venture+Women%27+OR+businessTypeDesc%3A%27Asian-Pacific%27%29&includeSections=entityRegistration%2CcoreData&page=1&size=10"
+}
 }
 </pre>
 </code>
@@ -21743,17 +21793,17 @@ Entity with no Hierarchy in v2:
                         "phoneNumber": null
                     },
                     "evsMonitoring": {
-                        "legalBusinessName": "Currently Not Available",
-                        "dbaName": "Currently Not Available",
-                        "outOfBusinessFlag": "Currently Not Available",
-                        "monitoringStatus": "Currently Not Available",
-                        "lastUpdated": "Currently Not Available",
-                        "addressLine1": "Currently Not Available",
-                        "addressLine2": "Currently Not Available",
-                        "city": "Currently Not Available",
-                        "postalCode": "Currently Not Available",
-                        "stateOrProvinceCode": "Currently Not Available",
-                        "countryCode": "Currently Not Available"
+                        "legalBusinessName": null,
+                        "dbaName": null,
+                        "outOfBusinessFlag": null,
+                        "monitoringStatus": null,
+                        "lastUpdated": null,
+                        "addressLine1": null,
+                        "addressLine2": null,
+                        "city": null,
+                        "postalCode": null,
+                        "stateOrProvinceCode": null,
+                        "countryCode": null
                     }
                 },
                 "federalHierarchy": {
@@ -21939,17 +21989,17 @@ Entity with no Hierarchy in v3:
                         "phoneNumber": null
                     },
                     "evsMonitoring": {
-                        "legalBusinessName": "Currently Not Available",
-                        "dbaName": "Currently Not Available",
-                        "outOfBusinessFlag": "Currently Not Available",
-                        "monitoringStatus": "Currently Not Available",
-                        "lastUpdated": "Currently Not Available",
-                        "addressLine1": "Currently Not Available",
-                        "addressLine2": "Currently Not Available",
-                        "city": "Currently Not Available",
-                        "postalCode": "Currently Not Available",
-                        "stateOrProvinceCode": "Currently Not Available",
-                        "countryCode": "Currently Not Available"
+                        "legalBusinessName": null,
+                        "dbaName": null,
+                        "outOfBusinessFlag": null,
+                        "monitoringStatus": null,
+                        "lastUpdated": null,
+                        "addressLine1": null,
+                        "addressLine2": null,
+                        "city": null,
+                        "postalCode": null,
+                        "stateOrProvinceCode": null,
+                        "countryCode": null
                     }
                 },
                 "federalHierarchy": {
@@ -22129,17 +22179,17 @@ Entity with a small Hierarchy in v2:
                         "phoneNumber": null
                     },
                     "evsMonitoring": {
-                        "legalBusinessName": "Currently Not Available",
-                        "dbaName": "Currently Not Available",
-                        "outOfBusinessFlag": "Currently Not Available",
-                        "monitoringStatus": "Currently Not Available",
-                        "lastUpdated": "Currently Not Available",
-                        "addressLine1": "Currently Not Available",
-                        "addressLine2": "Currently Not Available",
-                        "city": "Currently Not Available",
-                        "postalCode": "Currently Not Available",
-                        "stateOrProvinceCode": "Currently Not Available",
-                        "countryCode": "Currently Not Available"
+                        "legalBusinessName": null,
+                        "dbaName": null,
+                        "outOfBusinessFlag": null,
+                        "monitoringStatus": null,
+                        "lastUpdated": null,
+                        "addressLine1": null,
+                        "addressLine2": null,
+                        "city": null,
+                        "postalCode": null,
+                        "stateOrProvinceCode": null,
+                        "countryCode": null
                     }
                 },
                 "federalHierarchy": {
@@ -22224,7 +22274,7 @@ Entity with a small Hierarchy in v2:
             }
         }
     ],
-    
+
 Entity with a small Hierarchy in v3:
 
         {
@@ -22318,17 +22368,17 @@ Entity with a small Hierarchy in v3:
                         "phoneNumber": null
                     },
                     "evsMonitoring": {
-                        "legalBusinessName": "Currently Not Available",
-                        "dbaName": "Currently Not Available",
-                        "outOfBusinessFlag": "Currently Not Available",
-                        "monitoringStatus": "Currently Not Available",
-                        "lastUpdated": "Currently Not Available",
-                        "addressLine1": "Currently Not Available",
-                        "addressLine2": "Currently Not Available",
-                        "city": "Currently Not Available",
-                        "postalCode": "Currently Not Available",
-                        "stateOrProvinceCode": "Currently Not Available",
-                        "countryCode": "Currently Not Available"
+                        "legalBusinessName": null,
+                        "dbaName": null,
+                        "outOfBusinessFlag": null,
+                        "monitoringStatus": null,
+                        "lastUpdated": null,
+                        "addressLine1": null,
+                        "addressLine2": null,
+                        "city": null,
+                        "postalCode": null,
+                        "stateOrProvinceCode": null,
+                        "countryCode": null
                     }
                 },
                 "federalHierarchy": {
@@ -22504,17 +22554,17 @@ Entity with a large Hierarchy in v2:
                         "phoneNumber": null
                     },
                     "evsMonitoring": {
-                        "legalBusinessName": "Currently Not Available",
-                        "dbaName": "Currently Not Available",
-                        "outOfBusinessFlag": "Currently Not Available",
-                        "monitoringStatus": "Currently Not Available",
-                        "lastUpdated": "Currently Not Available",
-                        "addressLine1": "Currently Not Available",
-                        "addressLine2": "Currently Not Available",
-                        "city": "Currently Not Available",
-                        "postalCode": "Currently Not Available",
-                        "stateOrProvinceCode": "Currently Not Available",
-                        "countryCode": "Currently Not Available"
+                        "legalBusinessName": null,
+                        "dbaName": null,
+                        "outOfBusinessFlag": null,
+                        "monitoringStatus": null,
+                        "lastUpdated": null,
+                        "addressLine1": null,
+                        "addressLine2": null,
+                        "city": null,
+                        "postalCode": null,
+                        "stateOrProvinceCode": null,
+                        "countryCode": null
                     }
                 },
                 "federalHierarchy": {
@@ -22699,17 +22749,17 @@ Entity with a large Hierarchy in v3:
                         "phoneNumber": null
                     },
                     "evsMonitoring": {
-                        "legalBusinessName": "Currently Not Available",
-                        "dbaName": "Currently Not Available",
-                        "outOfBusinessFlag": "Currently Not Available",
-                        "monitoringStatus": "Currently Not Available",
-                        "lastUpdated": "Currently Not Available",
-                        "addressLine1": "Currently Not Available",
-                        "addressLine2": "Currently Not Available",
-                        "city": "Currently Not Available",
-                        "postalCode": "Currently Not Available",
-                        "stateOrProvinceCode": "Currently Not Available",
-                        "countryCode": "Currently Not Available"
+                        "legalBusinessName": null,
+                        "dbaName": null,
+                        "outOfBusinessFlag": null,
+                        "monitoringStatus": null,
+                        "lastUpdated": null,
+                        "addressLine1": null,
+                        "addressLine2": null,
+                        "city": null,
+                        "postalCode": null,
+                        "stateOrProvinceCode": null,
+                        "countryCode": null
                     }
                 },
                 "federalHierarchy": {
@@ -23243,62 +23293,62 @@ Response for one Public and one NPDY record is provided.<br>
 A Public non-SAM Registered entity:
 
 "entityData": [
-    {
-      "entityRegistration": {
-        "samRegistered": "No",
-        "ueiSAM": "JF19T45AM8F2",
-        "cageCode": "null",
-        "legalBusinessName": "Anchored Consulting Group LLC",
-        "registrationStatus": "Active",
-        "evsSource": null,
-        "ueiStatus": "Active",
-        "ueiExpirationDate": null,
-        "ueiCreationDate": "2021-07-20",
-        "publicDisplayFlag": "Y",
-        "dnbOpenData": "Y"
-      },
-      "coreData": {
-        "physicalAddress": {
-          "addressLine1": "Address 1",
-          "addressLine2": "null",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": null,
-          "countryCode": "XXX"
-        }
-      }
-    },
+{
+"entityRegistration": {
+"samRegistered": "No",
+"ueiSAM": "JF19T45AM8F2",
+"cageCode": "null",
+"legalBusinessName": "Anchored Consulting Group LLC",
+"registrationStatus": "Active",
+"evsSource": null,
+"ueiStatus": "Active",
+"ueiExpirationDate": null,
+"ueiCreationDate": "2021-07-20",
+"publicDisplayFlag": "Y",
+"dnbOpenData": "Y"
+},
+"coreData": {
+"physicalAddress": {
+"addressLine1": "Address 1",
+"addressLine2": "null",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": null,
+"countryCode": "XXX"
+}
+}
+},
 
 An NPDY non-SAM Registered entity:
 
 "entityData": [
-    {
-      "entityRegistration": {
-        "samRegistered": "No",
-        "ueiSAM": "MC4NTRBK7AX5",
-        "cageCode": "null",
-        "legalBusinessName": "FPDS",
-        "registrationStatus": "Active",
-        "evsSource": null,
-        "ueiStatus": "Active",
-        "ueiExpirationDate": null,
-        "ueiCreationDate": "2021-07-20",
-        "publicDisplayFlag": "N",
-        "dnbOpenData": "Y"
-      },
-      "coreData": {
-        "physicalAddress": {
-          "addressLine1": "Address 1",
-          "addressLine2": "null",
-          "city": "City",
-          "stateOrProvinceCode": "XX",
-          "zipCode": "11111",
-          "zipCodePlus4": "1111",
-          "countryCode": "XXX"
-        }
-      }
-    },
+{
+"entityRegistration": {
+"samRegistered": "No",
+"ueiSAM": "MC4NTRBK7AX5",
+"cageCode": "null",
+"legalBusinessName": "FPDS",
+"registrationStatus": "Active",
+"evsSource": null,
+"ueiStatus": "Active",
+"ueiExpirationDate": null,
+"ueiCreationDate": "2021-07-20",
+"publicDisplayFlag": "N",
+"dnbOpenData": "Y"
+},
+"coreData": {
+"physicalAddress": {
+"addressLine1": "Address 1",
+"addressLine2": "null",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "XXX"
+}
+}
+},
 </pre>
 </code>
 </p>
