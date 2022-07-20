@@ -71,8 +71,9 @@ This constitutes both the publicly available entities and the entities that have
 * Users must make POST calls using Curl commands or a Restful API client such as Postman.
 
 ### Individual (Personal) Accounts
---TODO add url
-* The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<a></a>
+
+* The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.
+  <a href="v1/EYE_IMAGE.JPG">EYE ICON</a>
 * Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
 
 ### System Accounts
@@ -884,10 +885,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </summary>
 
 <details>
-<summary><b>entityHierarchyInformation</b><br>
+<summary><b>entityHierarchyInformation Sub Section</b><br>
 </summary>
 <table>
-
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1637,7 +1637,7 @@ samMonitoring
 </details>
 
 <details>
-<summary><b>federalHierarchy</b><br>
+<summary><b>federalHierarchy Sub Section</b><br>
 </summary>
 <table>
 
@@ -1699,7 +1699,7 @@ samMonitoring
 </details>
 
 <details>
-<summary><b>tinInformation</b><br>
+<summary><b>tinInformation Sub Section</b><br>
 </summary>
 <table>
 
@@ -1740,7 +1740,7 @@ samMonitoring
 </details>
 
 <details>
-<summary><b>entityInformation</b><br>
+<summary><b>entityInformation Sub Section</b><br>
 </summary>
 <table>
 
@@ -1813,7 +1813,7 @@ samMonitoring
 </details>
 
 <details>
-<summary><b>physicalAddress</b><br>
+<summary><b>physicalAddress Sub Section</b><br>
 </summary>
 <table>
 
@@ -1888,7 +1888,7 @@ samMonitoring
 </details>
 
 <details>
-<summary><b>mailingAddress</b><br>
+<summary><b>mailingAddress Sub Section</b><br>
 </summary>
 <table>
 
@@ -1980,7 +1980,7 @@ samMonitoring
 </table>
 
 <details>
-<summary><b>generalInformation</b><br>
+<summary><b>generalInformation Sub Section</b><br>
 </summary>
 <table>
 
@@ -2131,7 +2131,7 @@ samMonitoring
 </details>
 
 <details>
-<summary><b>businessTypes</b><br>
+<summary><b>businessTypes Sub Section</b><br>
 </summary>
 <table>
 
@@ -2225,7 +2225,7 @@ samMonitoring
 </details>
 
 <details>
-<summary><b>financialInformation</b><br>
+<summary><b>financialInformation Sub Section</b><br>
 </summary>
 <table>
 
@@ -2473,7 +2473,7 @@ samMonitoring
 </summary>
 
 <details>
-<summary><b>goodsAndServices</b><br>
+<summary><b>goodsAndServices Sub Section</b><br>
 </summary>
 <table>
 
@@ -2569,7 +2569,7 @@ samMonitoring
 </details>
 
 <details>
-<summary><b>disasterReliefData</b><br>
+<summary><b>disasterReliefData Sub Section</b><br>
 </summary>
 <table>
 
@@ -2670,7 +2670,7 @@ samMonitoring
 </details>
 
 <details>
-<summary><b>sizeMetrics</b><br>
+<summary><b>sizeMetrics Sub Section</b><br>
 </summary>
 <table>
 
@@ -2703,7 +2703,7 @@ samMonitoring
 </details>
 
 <details>
-<summary><b>sizeMetricDetails</b><br>
+<summary><b>sizeMetricDetails Sub Section</b><br>
 </summary>
 <table>
 <tr>
@@ -2735,7 +2735,7 @@ samMonitoring
 </details>
 
 <details>
-<summary><b>industrySpecificSizeMetrics</b><br>
+<summary><b>industrySpecificSizeMetrics Sub Section</b><br>
 </summary>
 <table>
 <tr>
@@ -2774,7 +2774,7 @@ samMonitoring
 </details>
 
 <details>
-<summary><b>ediInformation</b><br>
+<summary><b>ediInformation Sub Section</b><br>
 </summary>
 <table>
 <tr>
@@ -2840,11 +2840,5156 @@ samMonitoring
 <details>
 <summary><b>repsAndCerts</b><br>
 </summary>
+
+<details>
+<summary><b>certifications Sub Section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>fARResponses</td>
+<td>list</td>
+<td>
+
+<details>
+<summary>fARResponses contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>provisionId</td>
+<td>string</td>
+<td>Provision ID</td>
+</tr>
+
+<tr>
+<td>listOfAnswers</td>
+<td>list</td>
+<td>
+<details>
+<summary>listOfAnswers contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>section</td>
+<td>string</td>
+<td>Section</td>
+</tr>
+
+<tr>
+<td>questionText</td>
+<td>string</td>
+<td>Question Text</td>
+</tr>
+
+<tr>
+<td>answerId</td>
+<td>string</td>
+<td>Answer ID</td>
+</tr>
+
+<tr>
+<td>answerText</td>
+<td>string</td>
+<td>Answer Text</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+
+<tr>
+<td>company</td>
+<td>string</td>
+<td>
+<details>
+<summary>company contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>TIN</td>
+</tr>
+
+<tr>
+<td>uniqueEntityId</td>
+<td>string</td>
+<td>Unique EntityId</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>highestLevelOwnerCage</td>
+<td>string</td>
+<td>
+<details>
+<summary>highestLevelOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>immediateOwnerCage</td>
+<td>string</td>
+<td>
+<details>
+<summary>immediateOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>personDetails</td>
+<td>string</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>pointOfContact</td>
+<td>string</td>
+<td>
+<details>
+<summary>pointOfContact contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+<tr>
+<td>telephoneNumber</td>
+<td>string</td>
+<td>Telephone Number</td>
+</tr>
+
+<tr>
+<td>extension</td>
+<td>string</td>
+<td>Extension</td>
+</tr>
+
+<tr>
+<td>internationalNumber</td>
+<td>string</td>
+<td>InterNationalNumber</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>architectExperiencesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>architectExperiencesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>experienceCode</td>
+<td>string</td>
+<td>Experience Code</td>
+</tr>
+
+<tr>
+<td>experienceDescription</td>
+<td>string</td>
+<td>Experience Description</td>
+</tr>
+
+<tr>
+<td>annualAvgRevenueCode</td>
+<td>string</td>
+<td>Annual Avg Revenue Code</td>
+</tr>
+
+<tr>
+<td>annualAvgRevenueDescription</td>
+<td>string</td>
+<td>Annual Avg Revenue Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>disciplineInfoList</td>
+<td>List</td>
+<td>
+<details>
+<summary>disciplineInfoList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>disciplineID</td>
+<td>string</td>
+<td>Discipline ID</td>
+</tr>
+
+<tr>
+<td>firmNumOfEmployees</td>
+<td>string</td>
+<td>Firm Num of Employees</td>
+</tr>
+
+<tr>
+<td>branchNumOfEmployees</td>
+<td>string</td>
+<td>Branch Num of Employees</td>
+</tr>
+
+<tr>
+<td>disciplineDescription</td>
+<td>string</td>
+<td>Discipline Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>endProductsList</td>
+<td>string</td>
+<td>
+<details>
+<summary>endProductsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+
+<tr>
+<td>productType</td>
+<td>string</td>
+<td>ProductType</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>foreignGovtEntitiesList</td>
+<td>string</td>
+<td>
+<details>
+<summary>foreignGovtEntitiesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>controlledEntityName</td>
+<td>string</td>
+<td>Controlled Entity Name</td>
+</tr>
+
+<tr>
+<td>interestDescription</td>
+<td>string</td>
+<td>Interest Description</td>
+</tr>
+
+<tr>
+<td>ownershipPercentageType</td>
+<td>string</td>
+<td>Ownership Percentage Type</td>
+</tr>
+
+<tr>
+<td>address</td>
+<td>object</td>
+<td>
+<details>
+<summary>address contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>Line 1</td>
+</tr>
+
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Zip</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>govtCountry</td>
+<td>string</td>
+<td>Govt Country</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>formerFirmsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>formerFirmsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>Tin</td>
+</tr>
+
+<tr>
+<td>uniqueEntityId</td>
+<td>string</td>
+<td>Unique EntityId</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>fscInfoList</td>
+<td>List</td>
+<td>
+<details>
+<summary>fscInfoList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>placeOfManufacture</td>
+<td>string</td>
+<td>Place of Manufacture</td>
+</tr>
+
+<tr>
+<td>fscCode</td>
+<td>string</td>
+<td>FSC Code</td>
+</tr>
+
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>jointVentureCompaniesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>jointVentureCompaniesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>Tin</td>
+</tr>
+
+<tr>
+<td>uniqueEntityId</td>
+<td>string</td>
+<td>Unique EntityId</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>laborSurplusConcernsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>laborSurplusConcernsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>surplusArea</td>
+<td>string</td>
+<td>Surplus Area</td>
+</tr>
+
+<tr>
+<td>civilJurisdiction</td>
+<td>string</td>
+<td>Civil Jurisdiction</td>
+</tr>
+
+<tr>
+<td>state</td>
+<td>string</td>
+<td>State</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>naicsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>naicsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>naicsCode</td>
+<td>string</td>
+<td>NAICS Code</td>
+</tr>
+
+<tr>
+<td>naicsName</td>
+<td>string</td>
+<td>NAICS Name</td>
+</tr>
+
+<tr>
+<td>isPrimary</td>
+<td>string</td>
+<td>Is Primary</td>
+</tr>
+
+<tr>
+<td>isSmallBusiness</td>
+<td>string</td>
+<td>Is Small Business</td>
+</tr>
+
+<tr>
+<td>exceptionCounter</td>
+<td>string</td>
+<td>Exception Counter</td>
+</tr>
+
+<tr>
+<td>hasSBAProtest</td>
+<td>string</td>
+<td>Has SBA Protest</td>
+</tr>
+
+<tr>
+<td>hasSizeChanged</td>
+<td>string</td>
+<td>Has Size Changed</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>predecessorsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>predecessorsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>ncageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>samFacilitiesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>samFacilitiesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>plantAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>plantAddress contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>Line 1</td>
+</tr>
+
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Zip</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>ownerName</td>
+<td>string</td>
+<td>Owner Name</td>
+</tr>
+
+<tr>
+<td>ownerAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>ownerAddress contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>Line 1</td>
+</tr>
+
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Zip</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>samPointsOfContactList</td>
+<td>List</td>
+<td>
+<details>
+<summary>samPointsOfContactList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>servicesRevenuesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>servicesRevenuesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>federalRevenueCode</td>
+<td>string</td>
+<td>Federal Revenue Code</td>
+</tr>
+
+<tr>
+<td>federalRevenueDescription</td>
+<td>string</td>
+<td>Federal Revenue Description</td>
+</tr>
+
+<tr>
+<td>nonFedRevenueCode</td>
+<td>string</td>
+<td>Non Fed Revenue Code</td>
+</tr>
+
+<tr>
+<td>nonFedRevenueDescription</td>
+<td>string</td>
+<td>Non Fed Revenue Description</td>
+</tr>
+
+<tr>
+<td>totalRevenueCode</td>
+<td>string</td>
+<td>Total Revenue Code</td>
+</tr>
+
+<tr>
+<td>totalRevenueDescription</td>
+<td>string</td>
+<td>Total Revenue Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>softwareList</td>
+<td>List</td>
+<td>
+<details>
+<summary>softwareList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+
+<tr>
+<td>productType</td>
+<td>string</td>
+<td>Product Type</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>urlList</td>
+<td>List</td>
+<td>URL List</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+</table>
+</details>
+</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>dFARResponses</td>
+<td>list</td>
+<td>
+
+<details>
+<summary>dFARResponses contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>provisionId</td>
+<td>string</td>
+<td>Provision ID</td>
+</tr>
+
+<tr>
+<td>listOfAnswers</td>
+<td>list</td>
+<td>
+<details>
+<summary>listOfAnswers contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>section</td>
+<td>string</td>
+<td>Section</td>
+</tr>
+
+<tr>
+<td>questionText</td>
+<td>string</td>
+<td>Question Text</td>
+</tr>
+
+<tr>
+<td>answerId</td>
+<td>string</td>
+<td>Answer ID</td>
+</tr>
+
+<tr>
+<td>answerText</td>
+<td>string</td>
+<td>Answer Text</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+
+<tr>
+<td>company</td>
+<td>string</td>
+<td>
+<details>
+<summary>company contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>TIN</td>
+</tr>
+
+<tr>
+<td>uniqueEntityId</td>
+<td>string</td>
+<td>Unique EntityId</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>highestLevelOwnerCage</td>
+<td>string</td>
+<td>
+<details>
+<summary>highestLevelOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>immediateOwnerCage</td>
+<td>string</td>
+<td>
+<details>
+<summary>immediateOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>personDetails</td>
+<td>string</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>pointOfContact</td>
+<td>string</td>
+<td>
+<details>
+<summary>pointOfContact contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+<tr>
+<td>telephoneNumber</td>
+<td>string</td>
+<td>Telephone Number</td>
+</tr>
+
+<tr>
+<td>extension</td>
+<td>string</td>
+<td>Extension</td>
+</tr>
+
+<tr>
+<td>internationalNumber</td>
+<td>string</td>
+<td>InterNationalNumber</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>architectExperiencesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>architectExperiencesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>experienceCode</td>
+<td>string</td>
+<td>Experience Code</td>
+</tr>
+
+<tr>
+<td>experienceDescription</td>
+<td>string</td>
+<td>Experience Description</td>
+</tr>
+
+<tr>
+<td>annualAvgRevenueCode</td>
+<td>string</td>
+<td>Annual Avg Revenue Code</td>
+</tr>
+
+<tr>
+<td>annualAvgRevenueDescription</td>
+<td>string</td>
+<td>Annual Avg Revenue Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>disciplineInfoList</td>
+<td>List</td>
+<td>
+<details>
+<summary>disciplineInfoList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>disciplineID</td>
+<td>string</td>
+<td>Discipline ID</td>
+</tr>
+
+<tr>
+<td>firmNumOfEmployees</td>
+<td>string</td>
+<td>Firm Num of Employees</td>
+</tr>
+
+<tr>
+<td>branchNumOfEmployees</td>
+<td>string</td>
+<td>Branch Num of Employees</td>
+</tr>
+
+<tr>
+<td>disciplineDescription</td>
+<td>string</td>
+<td>Discipline Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>endProductsList</td>
+<td>string</td>
+<td>
+<details>
+<summary>endProductsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+
+<tr>
+<td>productType</td>
+<td>string</td>
+<td>ProductType</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>foreignGovtEntitiesList</td>
+<td>string</td>
+<td>
+<details>
+<summary>foreignGovtEntitiesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>controlledEntityName</td>
+<td>string</td>
+<td>Controlled Entity Name</td>
+</tr>
+
+<tr>
+<td>interestDescription</td>
+<td>string</td>
+<td>Interest Description</td>
+</tr>
+
+<tr>
+<td>ownershipPercentageType</td>
+<td>string</td>
+<td>Ownership Percentage Type</td>
+</tr>
+
+<tr>
+<td>address</td>
+<td>object</td>
+<td>
+<details>
+<summary>address contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>Line 1</td>
+</tr>
+
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Zip</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>govtCountry</td>
+<td>string</td>
+<td>Govt Country</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>formerFirmsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>formerFirmsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>Tin</td>
+</tr>
+
+<tr>
+<td>uniqueEntityId</td>
+<td>string</td>
+<td>Unique EntityId</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>fscInfoList</td>
+<td>List</td>
+<td>
+<details>
+<summary>fscInfoList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>placeOfManufacture</td>
+<td>string</td>
+<td>Place of Manufacture</td>
+</tr>
+
+<tr>
+<td>fscCode</td>
+<td>string</td>
+<td>FSC Code</td>
+</tr>
+
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>jointVentureCompaniesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>jointVentureCompaniesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>Tin</td>
+</tr>
+
+<tr>
+<td>uniqueEntityId</td>
+<td>string</td>
+<td>Unique EntityId</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>laborSurplusConcernsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>laborSurplusConcernsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>surplusArea</td>
+<td>string</td>
+<td>Surplus Area</td>
+</tr>
+
+<tr>
+<td>civilJurisdiction</td>
+<td>string</td>
+<td>Civil Jurisdiction</td>
+</tr>
+
+<tr>
+<td>state</td>
+<td>string</td>
+<td>State</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>naicsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>naicsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>naicsCode</td>
+<td>string</td>
+<td>NAICS Code</td>
+</tr>
+
+<tr>
+<td>naicsName</td>
+<td>string</td>
+<td>NAICS Name</td>
+</tr>
+
+<tr>
+<td>isPrimary</td>
+<td>string</td>
+<td>Is Primary</td>
+</tr>
+
+<tr>
+<td>isSmallBusiness</td>
+<td>string</td>
+<td>Is Small Business</td>
+</tr>
+
+<tr>
+<td>exceptionCounter</td>
+<td>string</td>
+<td>Exception Counter</td>
+</tr>
+
+<tr>
+<td>hasSBAProtest</td>
+<td>string</td>
+<td>Has SBA Protest</td>
+</tr>
+
+<tr>
+<td>hasSizeChanged</td>
+<td>string</td>
+<td>Has Size Changed</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>predecessorsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>predecessorsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>ncageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>samFacilitiesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>samFacilitiesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>plantAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>plantAddress contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>Line 1</td>
+</tr>
+
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Zip</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>ownerName</td>
+<td>string</td>
+<td>Owner Name</td>
+</tr>
+
+<tr>
+<td>ownerAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>ownerAddress contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>Line 1</td>
+</tr>
+
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Zip</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>samPointsOfContactList</td>
+<td>List</td>
+<td>
+<details>
+<summary>samPointsOfContactList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>servicesRevenuesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>servicesRevenuesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>federalRevenueCode</td>
+<td>string</td>
+<td>Federal Revenue Code</td>
+</tr>
+
+<tr>
+<td>federalRevenueDescription</td>
+<td>string</td>
+<td>Federal Revenue Description</td>
+</tr>
+
+<tr>
+<td>nonFedRevenueCode</td>
+<td>string</td>
+<td>Non Fed Revenue Code</td>
+</tr>
+
+<tr>
+<td>nonFedRevenueDescription</td>
+<td>string</td>
+<td>Non Fed Revenue Description</td>
+</tr>
+
+<tr>
+<td>totalRevenueCode</td>
+<td>string</td>
+<td>Total Revenue Code</td>
+</tr>
+
+<tr>
+<td>totalRevenueDescription</td>
+<td>string</td>
+<td>Total Revenue Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>softwareList</td>
+<td>List</td>
+<td>
+<details>
+<summary>softwareList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+
+<tr>
+<td>productType</td>
+<td>string</td>
+<td>Product Type</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>urlList</td>
+<td>List</td>
+<td>URL List</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+</table>
+</details>
+</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>qualifications Sub Section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>architectEngineerResponses</td>
+<td>Object</td>
+<td>
+<details>
+<summary>architectEngineerResponses contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>provisionId</td>
+<td>string</td>
+<td>Provision ID</td>
+</tr>
+
+<tr>
+<td>listOfAnswers</td>
+<td>list</td>
+<td>
+<details>
+<summary>listOfAnswers contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>section</td>
+<td>string</td>
+<td>Section</td>
+</tr>
+
+<tr>
+<td>questionText</td>
+<td>string</td>
+<td>Question Text</td>
+</tr>
+
+<tr>
+<td>answerId</td>
+<td>string</td>
+<td>Answer ID</td>
+</tr>
+
+<tr>
+<td>answerText</td>
+<td>string</td>
+<td>Answer Text</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+
+<tr>
+<td>company</td>
+<td>string</td>
+<td>
+<details>
+<summary>company contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>TIN</td>
+</tr>
+
+<tr>
+<td>uniqueEntityId</td>
+<td>string</td>
+<td>Unique EntityId</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>highestLevelOwnerCage</td>
+<td>string</td>
+<td>
+<details>
+<summary>highestLevelOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>immediateOwnerCage</td>
+<td>string</td>
+<td>
+<details>
+<summary>immediateOwnerCage contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>nCageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>hasOwner</td>
+<td>string</td>
+<td>Has Owner</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>personDetails</td>
+<td>string</td>
+<td>
+<details>
+<summary>personDetails contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>pointOfContact</td>
+<td>string</td>
+<td>
+<details>
+<summary>pointOfContact contains below fields</summary><br>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+<tr>
+<td>telephoneNumber</td>
+<td>string</td>
+<td>Telephone Number</td>
+</tr>
+
+<tr>
+<td>extension</td>
+<td>string</td>
+<td>Extension</td>
+</tr>
+
+<tr>
+<td>internationalNumber</td>
+<td>string</td>
+<td>InterNationalNumber</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>architectExperiencesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>architectExperiencesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>experienceCode</td>
+<td>string</td>
+<td>Experience Code</td>
+</tr>
+
+<tr>
+<td>experienceDescription</td>
+<td>string</td>
+<td>Experience Description</td>
+</tr>
+
+<tr>
+<td>annualAvgRevenueCode</td>
+<td>string</td>
+<td>Annual Avg Revenue Code</td>
+</tr>
+
+<tr>
+<td>annualAvgRevenueDescription</td>
+<td>string</td>
+<td>Annual Avg Revenue Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>disciplineInfoList</td>
+<td>List</td>
+<td>
+<details>
+<summary>disciplineInfoList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>disciplineID</td>
+<td>string</td>
+<td>Discipline ID</td>
+</tr>
+
+<tr>
+<td>firmNumOfEmployees</td>
+<td>string</td>
+<td>Firm Num of Employees</td>
+</tr>
+
+<tr>
+<td>branchNumOfEmployees</td>
+<td>string</td>
+<td>Branch Num of Employees</td>
+</tr>
+
+<tr>
+<td>disciplineDescription</td>
+<td>string</td>
+<td>Discipline Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>endProductsList</td>
+<td>string</td>
+<td>
+<details>
+<summary>endProductsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+
+<tr>
+<td>productType</td>
+<td>string</td>
+<td>ProductType</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>foreignGovtEntitiesList</td>
+<td>string</td>
+<td>
+<details>
+<summary>foreignGovtEntitiesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>controlledEntityName</td>
+<td>string</td>
+<td>Controlled Entity Name</td>
+</tr>
+
+<tr>
+<td>interestDescription</td>
+<td>string</td>
+<td>Interest Description</td>
+</tr>
+
+<tr>
+<td>ownershipPercentageType</td>
+<td>string</td>
+<td>Ownership Percentage Type</td>
+</tr>
+
+<tr>
+<td>address</td>
+<td>object</td>
+<td>
+<details>
+<summary>address contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>Line 1</td>
+</tr>
+
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Zip</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>govtCountry</td>
+<td>string</td>
+<td>Govt Country</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>formerFirmsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>formerFirmsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>Tin</td>
+</tr>
+
+<tr>
+<td>uniqueEntityId</td>
+<td>string</td>
+<td>Unique EntityId</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>fscInfoList</td>
+<td>List</td>
+<td>
+<details>
+<summary>fscInfoList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>placeOfManufacture</td>
+<td>string</td>
+<td>Place of Manufacture</td>
+</tr>
+
+<tr>
+<td>fscCode</td>
+<td>string</td>
+<td>FSC Code</td>
+</tr>
+
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>jointVentureCompaniesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>jointVentureCompaniesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>tin</td>
+<td>string</td>
+<td>Tin</td>
+</tr>
+
+<tr>
+<td>uniqueEntityId</td>
+<td>string</td>
+<td>Unique EntityId</td>
+</tr>
+
+<tr>
+<td>yearEstablished</td>
+<td>string</td>
+<td>Year Established</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>laborSurplusConcernsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>laborSurplusConcernsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>surplusArea</td>
+<td>string</td>
+<td>Surplus Area</td>
+</tr>
+
+<tr>
+<td>civilJurisdiction</td>
+<td>string</td>
+<td>Civil Jurisdiction</td>
+</tr>
+
+<tr>
+<td>state</td>
+<td>string</td>
+<td>State</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>naicsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>naicsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>naicsCode</td>
+<td>string</td>
+<td>NAICS Code</td>
+</tr>
+
+<tr>
+<td>naicsName</td>
+<td>string</td>
+<td>NAICS Name</td>
+</tr>
+
+<tr>
+<td>isPrimary</td>
+<td>string</td>
+<td>Is Primary</td>
+</tr>
+
+<tr>
+<td>isSmallBusiness</td>
+<td>string</td>
+<td>Is Small Business</td>
+</tr>
+
+<tr>
+<td>exceptionCounter</td>
+<td>string</td>
+<td>Exception Counter</td>
+</tr>
+
+<tr>
+<td>hasSBAProtest</td>
+<td>string</td>
+<td>Has SBA Protest</td>
+</tr>
+
+<tr>
+<td>hasSizeChanged</td>
+<td>string</td>
+<td>Has Size Changed</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>predecessorsList</td>
+<td>List</td>
+<td>
+<details>
+<summary>predecessorsList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+</tr>
+
+<tr>
+<td>ncageCode</td>
+<td>string</td>
+<td>NCAGE Code</td>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>samFacilitiesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>samFacilitiesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>plantAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>plantAddress contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>Line 1</td>
+</tr>
+
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Zip</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>ownerName</td>
+<td>string</td>
+<td>Owner Name</td>
+</tr>
+
+<tr>
+<td>ownerAddress</td>
+<td>object</td>
+<td>
+<details>
+<summary>ownerAddress contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>Line 1</td>
+</tr>
+
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>stateOrProvince</td>
+<td>string</td>
+<td>State Or Province</td>
+</tr>
+
+<tr>
+<td>zip</td>
+<td>string</td>
+<td>Zip</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>samPointsOfContactList</td>
+<td>List</td>
+<td>
+<details>
+<summary>samPointsOfContactList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>servicesRevenuesList</td>
+<td>List</td>
+<td>
+<details>
+<summary>servicesRevenuesList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>federalRevenueCode</td>
+<td>string</td>
+<td>Federal Revenue Code</td>
+</tr>
+
+<tr>
+<td>federalRevenueDescription</td>
+<td>string</td>
+<td>Federal Revenue Description</td>
+</tr>
+
+<tr>
+<td>nonFedRevenueCode</td>
+<td>string</td>
+<td>Non Fed Revenue Code</td>
+</tr>
+
+<tr>
+<td>nonFedRevenueDescription</td>
+<td>string</td>
+<td>Non Fed Revenue Description</td>
+</tr>
+
+<tr>
+<td>totalRevenueCode</td>
+<td>string</td>
+<td>Total Revenue Code</td>
+</tr>
+
+<tr>
+<td>totalRevenueDescription</td>
+<td>string</td>
+<td>Total Revenue Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>softwareList</td>
+<td>List</td>
+<td>
+<details>
+<summary>softwareList contains below fields</summary><br>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+
+<tr>
+<td>productType</td>
+<td>string</td>
+<td>Product Type</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+<tr>
+<td>urlList</td>
+<td>List</td>
+<td>URL List</td>
+</tr>
+
+</table>
+</details>
+</td>
+</tr>
+
+</table>
+</details>
+</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+</table>
+</details>
+
+<details>
+<summary><b>financialAssistanceCertifications Sub Section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>grantsCertificationStatus</td>
+<td>string</td>
+<td>Grants Certification Status</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>grantsCertifyingResponse</td>
+<td>string</td>
+<td>Grants Certifying Response</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>certifierFirstName</td>
+<td>string</td>
+<td>Certifier First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>certifierLastName</td>
+<td>string</td>
+<td>Certifier Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>certifierMiddleInitial</td>
+<td>string</td>
+<td>Certifier Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>pdfLinks Sub Section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>farPDF</td>
+<td>string</td>
+<td>FAR PDF</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>farAndDfarsPDF</td>
+<td>string</td>
+<td>FAR and DFARS PDF</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>architectEngineeringPDF</td>
+<td>string</td>
+<td>Architect Engineering PDF</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>financialAssistanceCertificationsPDF</td>
+<td>string</td>
+<td>Financial Assistance Certifications PDF</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
 </details>
 
 <details>
 <summary><b>pointsOfContact</b><br>
 </summary>
+
+<details>
+<summary><b>governmentBusinessPOC Sub section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Zip Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>electronicBusinessPOC Sub section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Zip Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>governmentBusinessAlternatePOC Sub section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Zip Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>electronicBusinessAlternatePOC Sub section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Zip Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>pastPerformancePOC Sub section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Zip Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>pastPerformanceAlternatePOC Sub section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Zip Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>partyPerformingCertificationPOC Sub section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Zip Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>soleProprietorshipPOC Sub section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>accountsReceivablePOC Sub section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>accountsPayablePOC Sub section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Zip Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>ediPOC Sub section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>eliminationsPOC Sub section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Zip Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>salesPOC Sub section</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Zip Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
 </details>
 </details>
 
@@ -5963,32 +11108,33 @@ Disclaimer:
 ## Change Log
 
 | Date       | Version | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 06/03/2019 | v0.9    | Base Version                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| 07/03/2019 | v1.0    | * Alpha endpoint for the Sensitive version of the API has been added.<br><br>  * agencyBusinessPurposeCode, agencyBusinessPurposeDesc, bondingLevels, companySecurityLevelCode, companySecurityLevelDesc, highestEmployeeSecurityLevelCode, highestEmployeeSecurityLevelDesc were added to FOUO and Sensitive api's schema. <br><br>  * New Filters agencyBusinessPurposeCode, companySecurityLevelCode and highestEmployeeSecurityLevelCode have been added for FOUO and Sensitive api's. <br><br>  * country and stateOrProvince were updated to countryCode and stateOrProvinceCode across all versions of api.<br><br>  * ediInformationFlag was added across all versions of api.<br><br>  * geographicalAreaServedmetropolitanStatisticalAreaCode, geographicalAreaServedmetropolitanStatisticalAreaName were added across all versions of api instead of geographicalAreaServedMSAName.<br><br>  * certificationEntryDate, certificationExitDate were added to SBA Business Types across all versions of api instead of expirationDate.<br><br>  * updateDate was added as a filter across all versions of api. |
-| 08/15/2019 | v1.1    | * Alpha endpoints for public and FOUO API were updated from version 0.9 to version 1.0.<br><br> * Warning message added under Getting Started to inform users of API version changes.<br><br> *Added Beta.SAM.Gov to the page title.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 09/25/2019 | v1.2    | Beta endpoints for public and FOUO API were updated from version 0.9 to version 1.0.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 11/25/2019 | v1.3    | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| 12/20/2019 | v1.4    | * Removed Email, Fax,US phone number and non-us phone number from public poc sections for v2. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 02/25/2020 | v1.5    | * Added Examples for v2 requests and responses.  <br><br> * Updated Alpha endpoint to meet new API standards.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| 02/28/2020 | v1.6    | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| 05/04/2020 | v1.7    | * Added V2 endpoint information.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 06/10/2020 | v1.8    | * Added the endpoint, new process and an example for the Sensitive API .                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| 08/17/2020 | v1.9    | * The "Sensitive API Process" subsection under the "Sensitive API Information" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshots under "Example 13" have been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| 10/15/2020 | v2.0    | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. <br><br> * Updated the description for the entityEFTIndicator parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| 12/07/2020 | v2.1    | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| 01/22/2021 | v2.2    | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive.<br><br> * Added note to the noPublicDisplayFlag field in the response.<br><br>  * Added the Beta V2 endpoints.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| 02/05/2021 | v2.3    | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| 03/12/2021 | v2.4    | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call.<br><br> * Added note under repsAndCerts section about use with format parameter.<br><br> * Added NOTE under FOUO API Information Expected Results section and Sensitive API Information Sensitive API Process sections mentioning only system account keys can be used to access data.<br><br> * Removed the message stating that this page is not FireFox compliant.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | 
-| 04/08/2021 | v2.5    | * Updated Contact Us information.<br><br> * Updated pointsOfContact fields information for public api.<br><br> * Updated Application Level Error Messages in HTTP Response Codes section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | 
-| 05/12/2021 | v2.6    | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | 
-| 07/16/2021 | v2.7    | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information.<br><br> * Added example curl requests.<br><br> * Updated the examples.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| 07/20/2021 | v2.8    | * Added v3 documentation.<br><br> * Updated OpenAPI specification file.<br><br> * Updated HTTP Response Codes.<br><br> * Added v3 Examples.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| 09/21/2021 | v2.9    | * Added the "Additional Help References" section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| 10/06/2021 | v3.0    | * Updated the "Contact Us" section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | 
-| 10/21/2021 | v3.1    | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added error messages #23 and #24 to the 400 level http response codes.<br><br> * Added the Version 3 endpoint.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| 02/01/2022 | v3.2    | * Update the OpenAPI Specification File to include the V3 endpoints.<br><br> * Updated the OpenAPI Specification File to reflect the correct behavior for the V3 exclusionsStatusFlag parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 04/04/2022 | v3.3    | * Removed duns information from the documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 06/03/2019 | v0.9   | Base Version                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| 07/03/2019 | v1.0   | * Alpha endpoint for the Sensitive version of the API has been added.<br><br>  * agencyBusinessPurposeCode, agencyBusinessPurposeDesc, bondingLevels, companySecurityLevelCode, companySecurityLevelDesc, highestEmployeeSecurityLevelCode, highestEmployeeSecurityLevelDesc were added to FOUO and Sensitive api's schema. <br><br>  * New Filters agencyBusinessPurposeCode, companySecurityLevelCode and highestEmployeeSecurityLevelCode have been added for FOUO and Sensitive api's. <br><br>  * country and stateOrProvince were updated to countryCode and stateOrProvinceCode across all versions of api.<br><br>  * ediInformationFlag was added across all versions of api.<br><br>  * geographicalAreaServedmetropolitanStatisticalAreaCode, geographicalAreaServedmetropolitanStatisticalAreaName were added across all versions of api instead of geographicalAreaServedMSAName.<br><br>  * certificationEntryDate, certificationExitDate were added to SBA Business Types across all versions of api instead of expirationDate.<br><br>  * updateDate was added as a filter across all versions of api. |
+| 08/15/2019 | v1.1   | * Alpha endpoints for public and FOUO API were updated from version 0.9 to version 1.0.<br><br> * Warning message added under Getting Started to inform users of API version changes.<br><br> *Added Beta.SAM.Gov to the page title.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| 09/25/2019 | v1.2   | Beta endpoints for public and FOUO API were updated from version 0.9 to version 1.0.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| 11/25/2019 | v1.3   | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 12/20/2019 | v1.4   | * Removed Email, Fax,US phone number and non-us phone number from public poc sections for v2. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 02/25/2020 | v1.5   | * Added Examples for v2 requests and responses.  <br><br> * Updated Alpha endpoint to meet new API standards.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 02/28/2020 | v1.6   | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 05/04/2020 | v1.7   | * Added V2 endpoint information.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 06/10/2020 | v1.8   | * Added the endpoint, new process and an example for the Sensitive API .                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 08/17/2020 | v1.9   | * The "Sensitive API Process" subsection under the "Sensitive API Information" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshots under "Example 13" have been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 10/15/2020 | v2.0   | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. <br><br> * Updated the description for the entityEFTIndicator parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 12/07/2020 | v2.1   | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 01/22/2021 | v2.2   | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive.<br><br> * Added note to the noPublicDisplayFlag field in the response.<br><br>  * Added the Beta V2 endpoints.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 02/05/2021 | v2.3   | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 03/12/2021 | v2.4   | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call.<br><br> * Added note under repsAndCerts section about use with format parameter.<br><br> * Added NOTE under FOUO API Information Expected Results section and Sensitive API Information Sensitive API Process sections mentioning only system account keys can be used to access data.<br><br> * Removed the message stating that this page is not FireFox compliant.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | 
+| 04/08/2021 | v2.5   | * Updated Contact Us information.<br><br> * Updated pointsOfContact fields information for public api.<br><br> * Updated Application Level Error Messages in HTTP Response Codes section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | 
+| 05/12/2021 | v2.6   | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | 
+| 07/16/2021 | v2.7   | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information.<br><br> * Added example curl requests.<br><br> * Updated the examples.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 07/20/2021 | v2.8   | * Added v3 documentation.<br><br> * Updated OpenAPI specification file.<br><br> * Updated HTTP Response Codes.<br><br> * Added v3 Examples.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 09/21/2021 | v2.9   | * Added the "Additional Help References" section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| 10/06/2021 | v3.0   | * Updated the "Contact Us" section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | 
+| 10/21/2021 | v3.1   | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added error messages #23 and #24 to the 400 level http response codes.<br><br> * Added the Version 3 endpoint.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| 02/01/2022 | v3.2   | * Update the OpenAPI Specification File to include the V3 endpoints.<br><br> * Updated the OpenAPI Specification File to reflect the correct behavior for the V3 exclusionsStatusFlag parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 04/04/2022 | v3.3   | * Removed duns information from the documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 07/21/2022 | v3.4   | * Added CUI changes.
 
 <p><small><a href="#">Back to top</a></small></p>
 
