@@ -38,7 +38,7 @@ This constitutes both the publicly available entities and the entities that have
 
 ## Getting Started
 
-### API endpoints:
+### API endpoints
 
 **Production:**
 https://api.sam.gov/entity-information/v1/entities?api_key=<A VALID API KEY></br>
@@ -56,7 +56,7 @@ https://api-alpha.sam.gov/entity-information/v2/entities?</br>
 https://api-alpha.sam.gov/entity-information/v3/entities?api_key=<A VALID API KEY></br>
 https://api-alpha.sam.gov/entity-information/v3/entities?</br>
 
-### User Requirements:
+### User Requirements
 
 **To access Public data:**
 * Users must have a non-Federal/Federal Individual (Personal) account and the respective API Key, a non-Federal/Federal System Account with the “Read Public” permission and the respective API Key in SAM.gov.
@@ -70,12 +70,12 @@ https://api-alpha.sam.gov/entity-information/v3/entities?</br>
 * Users must have a Federal System Account with the “Read Sensitive” permission and the respective API Key in SAM.gov.
 * Users must make POST calls using Curl commands or a Restful API client such as Postman.
 
-### Individual (Personal) Accounts:
+### Individual (Personal) Accounts
 --TODO add url
 * The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<a></a>
 * Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
 
-### System Accounts:
+### System Accounts
 
 * The SAM.gov non-Federal registered users must request for a System Account. If their registration and request criteria are satisfied, then they will be provided with the System Accounts” widget on their SAM.gov “Workspace” page.
 * The SAM.gov Federal registered users must contact their CCB representatives for obtaining the “System Accounts” widget on their SAM.gov “Workspace” page.
@@ -96,7 +96,7 @@ https://api-alpha.sam.gov/entity-information/v3/entities?</br>
     * System Account Password
     * System Account API Key
 
-### API Key Rate Limits:
+### API Key Rate Limits
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Type of User Account</b></th>
@@ -133,15 +133,17 @@ https://api-alpha.sam.gov/entity-information/v3/entities?</br>
 <details>
 <summary><b>Sensitive API Process: </b><br>
 </summary>
+
 * The System Account User ID and Password must be sent as "Basic Auth" under the "Authorization" Header. The combination needs to be base 64 encoded as base64(username:password).<br>
 * The API Key value must be sent as "x-api-key" under "Headers" and not directly in the request URL.<br>
 * The "Accept" parameter must be sent as "application/json" under "Headers".<br>
 * The "Content-Type" parameter must be sent as "application/json" under "Headers".<br>
 * All the optional search filters can be sent in the request URL or in the "Body".<br>
 * An example of the Sensitive entity management POST call using curl  bring the example here, from the existing “Sensitive API Information” section.
+
 </details>
 
-### Utilizing the API Extract:
+### Utilizing the API Extract
 * To retrieve Entity data in the CSV format, “format=csv” must be provided in the request.
 * To retrieve Entity data in the JSON format, “format=json” must be provided in the request.
 * If the request is executed successfully, then a file downloadable URL with Token will be returned. This URL can also be obtained in emails by providing “emailId=Yes” in the request.
