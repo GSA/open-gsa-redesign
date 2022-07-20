@@ -134,13 +134,14 @@ https://api-alpha.sam.gov/entity-information/v3/entities?</br>
 <summary><b>Sensitive API Process: </b><br>
 </summary>
 
-* The System Account User ID and Password must be sent as "Basic Auth" under the "Authorization" Header. The combination needs to be base 64 encoded as base64(username:password).<br>
-* The API Key value must be sent as "x-api-key" under "Headers" and not directly in the request URL.<br>
-* The "Accept" parameter must be sent as "application/json" under "Headers".<br>
-* The "Content-Type" parameter must be sent as "application/json" under "Headers".<br>
-* All the optional search filters can be sent in the request URL or in the "Body".<br>
-* An example of the Sensitive entity management POST call using curl  bring the example here, from the existing “Sensitive API Information” section.
-
+<ul>
+    <li> The System Account User ID and Password must be sent as "Basic Auth" under the "Authorization" Header. The combination needs to be base 64 encoded as base64(username:password).</li>
+    <li> The API Key value must be sent as "x-api-key" under "Headers" and not directly in the request URL.</li>
+    <li> The "Accept" parameter must be sent as "application/json" under "Headers".</li>
+    <li>  The "Content-Type" parameter must be sent as "application/json" under "Headers".</li>
+    <li> All the optional search filters can be sent in the request URL or in the "Body".</li>
+    <li> An example of the Sensitive entity management POST call using curl  bring the example here, from the existing “Sensitive API Information” section.</li>
+</ul>
 </details>
 
 ### Utilizing the API Extract
