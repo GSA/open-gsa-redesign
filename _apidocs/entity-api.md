@@ -165,7 +165,8 @@ This constitutes both the publicly available entities and the entities that have
 </tr>
 
 <tr>
-<b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+<th colspan="4" style="background-color: #f1f1f1;"><b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
 </tr>
 
 <tr>
@@ -555,8 +556,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
-</tr>
+<th colspan="4" style="background-color: #f1f1f1;"><b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th></tr>
 
 <tr>
 <td>edi</td>
@@ -622,8 +623,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </tr>
 
 <tr>
-<b>Sensitivity Level: Sensitive</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
-</tr>
+<th colspan="4" style="background-color: #f1f1f1;"><b>Sensitivity Level: Sensitive</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th></tr>
 
 <tr>
 <td>routingNumber</td>
