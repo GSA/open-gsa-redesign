@@ -41,20 +41,20 @@ This constitutes both the publicly available entities and the entities that have
 ### API endpoints
 
 **Production:**
-https://api.sam.gov/entity-information/v1/entities?api_key=<A VALID API KEY></br>
-https://api.sam.gov/entity-information/v1/entities?</br>
-https://api.sam.gov/entity-information/v2/entities?api_key=<A VALID API KEY></br>
-https://api.sam.gov/entity-information/v2/entities?</br>
-https://api.sam.gov/entity-information/v3/entities?api_key=<A VALID API KEY></br>
-https://api.sam.gov/entity-information/v3/entities?</br>
+* https://api.sam.gov/entity-information/v1/entities?api_key=<A VALID API KEY>
+* https://api.sam.gov/entity-information/v1/entities?
+* https://api.sam.gov/entity-information/v2/entities?api_key=<A VALID API KEY>
+* https://api.sam.gov/entity-information/v2/entities?
+* https://api.sam.gov/entity-information/v3/entities?api_key=<A VALID API KEY>
+* https://api.sam.gov/entity-information/v3/entities?
 
 **Alpha:**
-https://api-alpha.sam.gov/entity-information/v1/entities?api_key=<A VALID API KEY></br>
-https://api-alpha.sam.gov/entity-information/v1/entities?</br>
-https://api-alpha.sam.gov/entity-information/v2/entities?api_key=<A VALID API KEY></br>
-https://api-alpha.sam.gov/entity-information/v2/entities?</br>
-https://api-alpha.sam.gov/entity-information/v3/entities?api_key=<A VALID API KEY></br>
-https://api-alpha.sam.gov/entity-information/v3/entities?</br>
+* https://api-alpha.sam.gov/entity-information/v1/entities?api_key=<A VALID API KEY>
+* https://api-alpha.sam.gov/entity-information/v1/entities?
+* https://api-alpha.sam.gov/entity-information/v2/entities?api_key=<A VALID API KEY>
+* https://api-alpha.sam.gov/entity-information/v2/entities?
+* https://api-alpha.sam.gov/entity-information/v3/entities?api_key=<A VALID API KEY>
+* https://api-alpha.sam.gov/entity-information/v3/entities?
 
 ### User Requirements
 
