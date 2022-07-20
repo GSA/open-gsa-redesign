@@ -1694,7 +1694,120 @@ samMonitoring
 <td>v1<br>v2<br>v3</td>
 </tr>
 
+</table>
+</details>
 
+<details>
+<summary><b>tinInformation</b><br>
+</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Sensitive</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>taxpayerName</td>
+<td>string</td>
+<td>Taxpayer Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>taxpayerIdentificationType</td>
+<td>string</td>
+<td>Taxpayer Identification Type</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>taxpayerIdentificationNumber</td>
+<td>string</td>
+<td>Taxpayer Identification Number</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+</table>
+</details>
+
+<details>
+<summary><b>entityInformation</b><br>
+</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data 
+</th>
+</tr>
+
+<tr>
+<td>entityURL</td>
+<td>string</td>
+<td>Entity URL</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>entityDivisionName</td>
+<td>string</td>
+<td>Entity Division Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>entityDivisionNumber</td>
+<td>string</td>
+<td>Entity Division Number</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>entityStartDate</td>
+<td>string</td>
+<td>Entity Start Date</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>fiscalYearEndCloseDate</td>
+<td>string</td>
+<td>Fiscal Year End Close Date</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>submissionDate</td>
+<td>string</td>
+<td>Submission Date</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Sensitive</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>mpin</td>
+<td>string</td>
+<td>mpin</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
 </table>
 </details>
 
