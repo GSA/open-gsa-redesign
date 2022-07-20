@@ -1811,6 +1811,661 @@ samMonitoring
 </table>
 </details>
 
+<details>
+<summary><b>physicalAddress</b><br>
+</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data 
+</th>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Physical Address Line 1.
+<br>Only Physical Address Line 1 is applicable to non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Physical Address Line 2.
+<br>Only Physical Address Line 2 is applicable to non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>Physical Address City.
+<br>Only Physical Address City is applicable to non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>Physical Address State or Province Code.
+<br>Only Physical Address State or Province Code is applicable to non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Physical Address Zip.
+<br>Only Physical Address Zip is applicable to non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Physical Address Zip Plus4.
+<br>Only Physical Address Zip Plus4 is applicable to non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Physical Address Country Code.
+<br>Only Physical Address Country Code is applicable to non-SAM registrants.</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>mailingAddress</b><br>
+</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data 
+</th>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Mailing Address Line 1.</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Mailing Address Line 2.</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>Mailing Address City.</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>Mailing Address State or Province Code.</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Mailing Address Zip.</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Mailing Address Zip Plus4.</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Mailing Address Country Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data 
+</th>
+</tr>
+
+<tr>		
+<td>congressionalDistrict</td>		
+<td>string</td>		
+<td>Physical Address Congressional District</td>	
+<td>v1<br>v2<br>v3</td>	
+</tr>
+
+</table>
+</details>
+
+<details>
+<summary><b>generalInformation</b><br>
+</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data 
+</th>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeCode</td>
+<td>string</td>
+<td>Agency Business Purpose Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeDesc</td>
+<td>string</td>
+<td>Agency Business Purpose Desc</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>entityStructureCode</td>
+<td>string</td>
+<td>Entity Structure Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>entityStructureDescription</td>
+<td>string</td>
+<td>Entity Structure Description</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>entityTypeCode</td>
+<td>string</td>
+<td>Entity Type Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>entityTypeDesc</td>
+<td>string</td>
+<td>Entity Type Description</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>profitStructureCode</td>
+<td>string</td>
+<td>Profit Structure Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>profitStructureDesc</td>
+<td>string</td>
+<td>Profit Structure Description</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>organizationStructureCode</td>
+<td>string</td>
+<td>Organization Structure Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>organizationStructureDesc</td>
+<td>string</td>
+<td>Organization Structure Description</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOfIncorporationCode</td>
+<td>string</td>
+<td>State Of Incorporation Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>stateOfIncorporationDesc</td>
+<td>string</td>
+<td>State Of Incorporation Description</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationCode</td>
+<td>string</td>
+<td>Country Of IncorporationCode</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>countryOfIncorporationDesc</td>
+<td>string</td>
+<td>Country Of IncorporationDescription</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data 
+</th>
+</tr>
+
+<tr>
+<td>companySecurityLevelCode</td>
+<td>string</td>
+<td>Company Security Level Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>companySecurityLevelDesc</td>
+<td>string</td>
+<td>Company Security Level Description</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelCode</td>
+<td>string</td>
+<td>Highest Employee Security Level Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>highestEmployeeSecurityLevelDesc</td>
+<td>string</td>
+<td>Highest Employee Security Level Description</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+</table>
+</details>
+
+<details>
+<summary><b>businessTypes</b><br>
+</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data 
+</th>
+</tr>
+
+<tr>
+<td>businessTypeList</td>
+<td>list</td>
+<td>
+<summary>businessTypeList contains these fields</summary>
+<details>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>businessTypeCode</td>
+<td>string</td>
+<td>Business Type Code</td>
+</tr>
+<tr>
+<td>businessTypeDescription</td>
+<td>string</td>
+<td>Business Type Description</td>
+</tr>
+
+</table>
+</details>
+</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+
+<tr>
+<td>sbaBusinessTypeList</td>
+<td>list</td>
+<td>
+<summary>sbaBusinessTypeList contains these fields</summary>
+<details>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeCode</td>
+<td>string</td>
+<td>SBA Business Type Code</td>
+</tr>
+
+<tr>
+<td>sbaBusinessTypeDesc</td>
+<td>string</td>
+<td>SBA Business Type Description</td>
+</tr>
+
+<tr>
+<td>certificationEntryDate</td>
+<td>string</td>
+<td>Certification Entry Date</td>
+</tr>
+
+<tr>
+<td>certificationExitDate</td>
+<td>string</td>
+<td>Certification Exit Date</td>
+</tr>
+
+</table>
+</details>
+</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+</table>
+</details>
+
+<details>
+<summary><b>financialInformation</b><br>
+</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data 
+</th>
+</tr>
+
+<tr>
+<td>creditCardUsage</td>
+<td>string</td>
+<td>Credit Card Usage</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>debtSubjectToOffset</td>
+<td>string</td>
+<td>Debt Subject to Offset Flag</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Sensitive</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data 
+</th>
+</tr>
+
+<tr>
+<td>financialAccount</td>
+<td>object</td>
+<td>
+<details>
+<summary>financialAccount contains below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>authorizationDate</td>
+<td>string</td>
+<td>Authorization Date</td>
+</tr>
+
+<tr>
+<td>eftInformation</td>
+<td>string</td>
+<td>EFT Information</td>
+</tr>
+
+<tr>
+<td>accountType</td>
+<td>string</td>
+<td>Account Type</td>
+</tr>
+
+<tr>
+<td>accountNumber</td>
+<td>string</td>
+<td>Account Number</td>
+</tr>
+
+<tr>
+<td>abaRoutingNumber</td>
+<td>string</td>
+<td>ABA Routing Number</td>
+</tr>
+
+<tr>
+<td>eftWaiver</td>
+<td>string</td>
+<td>EFT Waiver</td>
+</tr>
+
+<tr>
+<td>lockboxNumber</td>
+<td>string</td>
+<td>Lock box Number</td>
+</tr>
+
+<tr>
+<td>merchantID1</td>
+<td>string</td>
+<td>Merchant ID1</td>
+</tr>
+
+<tr>
+<td>merchantID2</td>
+<td>string</td>
+<td>Merchant ID2</td>
+</tr>
+
+<tr>
+<td>departmentCode</td>
+<td>string</td>
+<td>Department Code</td>
+</tr>
+
+<tr>
+<td>agencyLocationCode</td>
+<td>string</td>
+<td>Agency Location Code</td>
+</tr>
+
+<tr>
+<td>disbursingOfficeSymbol</td>
+<td>string</td>
+<td>Disbursing Office Symbol</td>
+</tr>
+
+<tr>
+<td>accountingStation</td>
+<td>string</td>
+<td>Accounting Station</td>
+</tr>
+</table>
+</details>
+</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>achInformation</td>
+<td>object</td>
+<td>
+<details>
+<summary>ACH Information below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non US Phone</td>
+</tr>
+
+<tr>
+<td>faxNumber</td>
+<td>string</td>
+<td>Fax Number</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+</tr>
+
+</table>
+</details>
+</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>remittanceInformation</td>
+<td>object</td>
+<td>
+<details>
+<summary>Remittance Information below fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+</tr>
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>ZipCode</td>
+</tr>
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>ZipCode Plus4</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+</tr>
+
+</table>
+</details>
+</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
 </details>
 
 </details>
