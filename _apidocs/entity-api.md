@@ -1635,6 +1635,69 @@ samMonitoring
 </table>
 </details>
 
+<details>
+<summary><b>federalHierarchy</b><br>
+</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>source</td>
+<td>string</td>
+<td>Source</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>hierarchyDepartmentCode</td>
+<td>string</td>
+<td>Hierarchy Department Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>hierarchyDepartmentName</td>
+<td>string</td>
+<td>Hierarchy Department Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>hierarchyAgencyCode</td>
+<td>string</td>
+<td>Hierarchy Agency Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>hierarchyAgencyName</td>
+<td>string</td>
+<td>Hierarchy Agency Name</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>hierarchyOfficeCode</td>
+<td>string</td>
+<td>Hierarchy Office Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+
+</table>
+</details>
+
 </details>
 
 </details>
