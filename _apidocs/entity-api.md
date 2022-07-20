@@ -891,11 +891,10 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
-<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
 </tr>
 
 <tr>
-<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
 </th>
 </tr>
 
@@ -1466,7 +1465,7 @@ samMonitoring
 <td>object</td>
 <td>
 <details>
-<summary>samMonitoring contains below fields</summary>
+<summary>samMonitoring contains below fields and this section will return a value of "Currently Not Available".</summary>
 <table>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
