@@ -1955,9 +1955,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
-<summary><b>congressionalDistrict</b><br>
-</summary>
+
 <table>
 
 <tr>
@@ -1980,7 +1978,6 @@ samMonitoring
 </tr>
 
 </table>
-</details>
 
 <details>
 <summary><b>generalInformation</b><br>
@@ -2471,6 +2468,384 @@ samMonitoring
 
 </details>
 
+<details>
+<summary><b>assertions</b><br>
+</summary>
+
+<details>
+<summary><b>goodsAndServices</b><br>
+</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>primaryNaics</td>
+<td>string</td>
+<td>Primary NAICS</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>naicsList</td>
+<td>list</td>
+<td>
+<details>
+<summary>naicsList contains these fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>naicsCode</td>
+<td>string</td>
+<td>NAICS Code</td>
+</tr>
+
+<tr>
+<td>naicsDescription</td>
+<td>string</td>
+<td>NAICS Description</td>
+</tr>
+
+<tr>
+<td>sbaSmallBusiness</td>
+<td>string</td>
+<td>Whether or not the NAICS Code is indicated as an SBA small business</td>
+</tr>
+
+<tr>
+<td>naicsException</td>
+<td>string</td>
+<td>Whether or not the NAICS Code is an exception </td>
+</tr>
+</table>
+</details>
+</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>pscList</td>
+<td>List</td>
+<td>
+<details>
+<summary>pscList contains these fields</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+<tr>
+<td>pscCode</td>
+<td>string</td>
+<td>PSC Code</td>
+</tr>
+<tr>
+<td>pscDescription</td>
+<td>string</td>
+<td>PSC Description</td>
+</tr>
+</table>
+</details>
+</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>disasterReliefData</b><br>
+</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>disasterRegistryFlag</td>
+<td>string</td>
+<td>Disaster Registry Flag</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>bondingFlag</td>
+<td>string</td>
+<td>Bonding Flag</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServed</td>
+<td>list</td>
+<td>
+<details>
+<summary>geographicalAreaServed contains these fields</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+</tr>
+
+<tr>
+<td>geographicalAreaServedStateCode</td>
+<td>string</td>
+<td>State code</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedStateName</td>
+<td>string</td>
+<td>State name</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedCountyCode</td>
+<td>string</td>
+<td>County code</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedCountyName</td>
+<td>string</td>
+<td>County name</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedmetropolitanStatisticalAreaCode</td>
+<td>string</td>
+<td>Metropolitan Statistical Area Code</td>
+</tr>
+
+<tr>
+<td>geographicalAreaServedmetropolitanStatisticalAreaName</td>
+<td>string</td>
+<td>Metropolitan Statistical Area Name</td>
+</tr>
+</table>
+</details>
+</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>bondingLevels</td>
+<td>string</td>
+<td>Bonding Flag</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+</table>
+</details>
+
+<details>
+<summary><b>sizeMetrics</b><br>
+</summary>
+<table>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>averageAnnualRevenue</td>
+<td>string</td>
+<td>Average Annual Revenue</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>averageNumberOfEmployees</td>
+<td>string</td>
+<td>Average Number Of Employees</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>sizeMetricDetails</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>employeesLocation</td>
+<td>string</td>
+<td>Employees Location</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>receiptsLocation</td>
+<td>string</td>
+<td>Receipts Location</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>industrySpecificSizeMetrics</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>barrelsCapacity</td>
+<td>string</td>
+<td>Barrels Capacity</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>totalAssets</td>
+<td>string</td>
+<td>Total Assets</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>megawattHours</td>
+<td>string</td>
+<td>Mega Watt Hours</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>ediInformation</b><br>
+</summary>
+<table>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+<tr>
+<td>ediInformationFlag</td>
+<td>string</td>
+<td>EDI Information Flag</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+<tr>
+<td>vanProvider</td>
+<td>string</td>
+<td>Van Provider</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>isaQualifier</td>
+<td>string</td>
+<td>ISA Qualifier</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>isaIdentifier</td>
+<td>string</td>
+<td>ISA Identifier</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>functionalGroupIdentifier</td>
+<td>string</td>
+<td>Functional Group Identifier</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>requestFlag820s</td>
+<td>string</td>
+<td>Request Flag 820s</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+</table>
+</details>
+
+</details>
+
+<details>
+<summary><b>repsAndCerts</b><br>
+</summary>
+</details>
+
+<details>
+<summary><b>pointsOfContact</b><br>
+</summary>
+</details>
 </details>
 
 <p><small><a href="#">Back to top</a></small></p>
