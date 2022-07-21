@@ -47,7 +47,8 @@ They constitute publicly available list of all parties with a currently active e
     <li>SAM_PUBLIC_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP</li>
     <li>SAM_FOUO_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP</li>
     <li>SAM_SENSITIVE_UTF-8_MONTHLY_V3_YYYYMMDD.ZIP</li>
-  </ul></li></ul>
+  </ul>
+</li></ul>
 </td>
 </tr>
 </table>
