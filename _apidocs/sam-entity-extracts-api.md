@@ -26,69 +26,7 @@ They constitute both the publicly available entities and the entities that have 
 They constitute publicly available list of all parties with a currently active exclusion in SAM.gov.
 
 **Extract Calendar**
-<table>
-<tr>
-<td>Monthly Public, FOUO (CUI) and Sensitive (CUI) Extracts</td>
-<td>
-<ul>
-<li>They are produced on the first Sunday of each month. Kindly check after 7 AM Eastern time.</li>
-<li>The date on the .ZIP file matches the date when the file was generated. E.g.: The April monthly files were generated and dated on 20220403.</li>
-<li>The date on the .ZIP file matches the date on the .dat file inside.</li>
-<li>These files contain all active entities and entities expired in the last 6 months.</li>
-<li>File Naming Convention:</br>
-  <b>Monthly ASCII:</b>
-  <ul>
-    <li>SAM_PUBLIC_MONTHLY_V2_YYYYMMDD.ZIP</li>
-    <li>SAM_FOUO_MONTHLY_V2_YYYYMMDD.ZIP</li>
-    <li>SAM_SENSITIVE_MONTHLY_V3_YYYYMMDD.ZIP</li>
-  </ul>
-  <b>Monthly UTF-8:</b> 
-  <ul>
-    <li>SAM_PUBLIC_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP</li>
-    <li>SAM_FOUO_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP</li>
-    <li>SAM_SENSITIVE_UTF-8_MONTHLY_V3_YYYYMMDD.ZIP</li>
-  </ul></li></ul>
-</td>
-</tr>
-<tr>
-<td>Daily FOUO (CUI) and Sensitive (CUI) Extracts</td>
-<td>
-<ul>
-<li>They are produced every Tuesday-Saturday. Kindly check after 7 AM Eastern time.</li>
-<li>The date on the .ZIP file matches the date when the file was generated. E.g.: The file generated on 04/05/2022 will show 20220405.</li>
-<li>The date on the .ZIP file matches the date on the .dat file inside.</li>
-<li>These are incremental files that contain new/updated/deactivated/expired entities since the previous day’s file.</li>
-<li>File Naming Convention:<br>
-  <b>Daily ASCII:</b>
-  <ul>
-    <li>SAM_FOUO_DAILY_V2_YYYYMMDD.ZIP</li>
-    <li>SAM_SENSITIVE_DAILY_V3_YYYYMMDD.ZIP</li>
-  </ul>
-  <b>Daily UTF-8:</b> 
-  <ul>
-    <li>SAM_FOUO_UTF-8_DAILY_V2_YYYYMMDD.ZIP</li>
-    <li>SAM_SENSITIVE_UTF-8_DAILY_V3_YYYYMMDD.ZIP</li>
-  </ul>
-</ul></li>
-</td>
-</tr>
-<tr>
-<td>Daily Exclusion Extracts</td>
-<td>
-<ul>
-<li>They are produced every day. Kindly check after 7 AM Eastern time.</li>
-<li>The date on the .ZIP file matches the date when the file was generated. E.g.: The file generated on 04/05/2022 will show 2022095.</li>
-<li>The date on the .ZIP file matches the date on the .CSV file inside.</li>
-<li>These files contain all the active exclusions.</li>
-<li>File Naming Convention:<br>
-  <b>Daily ASCII:</b>
-  <ul>
-    SAM_Exclusions_Public_Extract_V2_YYDDD.ZIP (YYDDD is the Julian Date)
-  </ul>
-  E.g.: The file for 04/06/2022 would be SAM_Exclusions_Public_Extract_V2_22096.ZIP.</li></ul>
-</td>
-</tr>
-</table>
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -350,11 +288,7 @@ Effective April 2022: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v6.0.xlsx">SAM Mast
 <li>https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2022&charset=UTF8</li>
 <li>https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_Exclusions_Public_Extract_V2_22097.ZIP</li>
 <li>https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=EXCLUSION&date=04/07/2022</li>
-
-
-
 </ul>
-
 </details>
 
 
