@@ -26,7 +26,31 @@ They constitute both the publicly available entities and the entities that have 
 They constitute publicly available list of all parties with a currently active exclusion in SAM.gov.
 
 **Extract Calendar**
-
+<table>
+<tr>
+<td>Monthly Public, FOUO (CUI) and Sensitive (CUI) Extracts</td>
+<td>
+<ul>
+<li>They are produced on the first Sunday of each month. Kindly check after 7 AM Eastern time.</li>
+<li>The date on the .ZIP file matches the date when the file was generated. E.g.: The April monthly files were generated and dated on 20220403.</li>
+<li>The date on the .ZIP file matches the date on the .dat file inside.</li>
+<li>These files contain all active entities and entities expired in the last 6 months.</li>
+<li>File Naming Convention:</br>
+  <b>Monthly ASCII:</b>
+  <ul>
+    <li>SAM_PUBLIC_MONTHLY_V2_YYYYMMDD.ZIP</li>
+    <li>SAM_FOUO_MONTHLY_V2_YYYYMMDD.ZIP</li>
+    <li>SAM_SENSITIVE_MONTHLY_V3_YYYYMMDD.ZIP</li>
+  </ul>
+  <b>Monthly UTF-8:</b> 
+  <ul>
+    <li>SAM_PUBLIC_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP</li>
+    <li>SAM_FOUO_UTF-8_MONTHLY_V2_YYYYMMDD.ZIP</li>
+    <li>SAM_SENSITIVE_UTF-8_MONTHLY_V3_YYYYMMDD.ZIP</li>
+  </ul></li></ul>
+</td>
+</tr>
+</table>
 
 <p><small><a href="#">Back to top</a></small></p>
 
