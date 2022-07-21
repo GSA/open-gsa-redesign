@@ -139,7 +139,7 @@ This constitutes both the publicly available entities and the entities that have
     <li> The System Account User ID and Password must be sent as "Basic Auth" under the "Authorization" Header. The combination needs to be base 64 encoded as base64(username:password).</li>
     <li> The API Key value must be sent as "x-api-key" under "Headers" and not directly in the request URL.</li>
     <li> The "Accept" parameter must be sent as "application/json" under "Headers".</li>
-    <li>  The "Content-Type" parameter must be sent as "application/json" under "Headers".</li>
+    <li> The "Content-Type" parameter must be sent as "application/json" under "Headers".</li>
     <li> All the optional search filters can be sent in the request URL or in the "Body".</li>
     <li> An example of the Sensitive entity management POST call using curl  bring the example here, from the existing “Sensitive API Information” section.</li>
 </ul>
