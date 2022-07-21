@@ -458,6 +458,6 @@ Date | Version | Description
 02/01/2022 | v2.8    | * Updated the Exclusions Extract Layout file.<br><br> * Updated the Exclusions Public V2 Extract file.
 04/04/2022 | v2.9    | * Sample Extract Files section: Removed old sample files that had DUNS information and provided new files with UEI information.<br><br> * Updated “Effective April 2022: SAM Master Extract Mapping” to remove the DUNS occurrences.<br><br> * Updated the “April 2022 release: FOUO Extract Layout” with the correct Sensitivity levels for the Points Of Contact elements.<br><br> * Updated the “April 2022 release: Sensitive Extract Layout” to reflect the correct order for “IMMEDIATE PARENT EVS SOURCE”.<br><br> * Updated the “April 2022 release: Exclusions Extract Layout” to remove the DUNS occurrences.<br><br>
 04/08/2022 | v3.0    | * Removed all the references to older files that are no longer valid.<br><br> * Provided references to the new files.<br><br> * Reorganized the Sensitive Postman and curl examples for a better flow of content.<br><br>
-04/08/2022 | v3.1    | * Added CUI Information.<br><br>
+07/21/2022 | v3.1    | * Added CUI Information.<br><br>
 
 <p><small><a href="#">Back to top</a></small></p>
