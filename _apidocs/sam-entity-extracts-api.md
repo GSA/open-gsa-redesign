@@ -35,7 +35,7 @@ They constitute publicly available list of all parties with a currently active e
 <li>The date on the .ZIP file matches the date when the file was generated. E.g.: The April monthly files were generated and dated on 20220403.</li>
 <li>The date on the .ZIP file matches the date on the .dat file inside.</li>
 <li>These files contain all active entities and entities expired in the last 6 months.</li>
-<li>File Naming Convention:</br>
+<li>File Naming Convention:<br>
   <b>Monthly ASCII:</b>
   <ul>
     <li>SAM_PUBLIC_MONTHLY_V2_YYYYMMDD.ZIP</li>
