@@ -51,6 +51,47 @@ They constitute publicly available list of all parties with a currently active e
 </li></ul>
 </td>
 </tr>
+
+<tr>
+<td>Daily FOUO (CUI) and Sensitive (CUI) Extracts</td>
+<td>
+<ul>
+<li>They are produced every Tuesday-Saturday. Kindly check after 7 AM Eastern time.</li>
+<li>The date on the .ZIP file matches the date when the file was generated. E.g.: The file generated on 04/05/2022 will show 20220405.</li>
+<li>The date on the .ZIP file matches the date on the .dat file inside.</li>
+<li>These are incremental files that contain new/updated/deactivated/expired entities since the previous day’s file.</li>
+<li>File Naming Convention:<br>
+  <b>Daily ASCII:</b>
+  <ul>
+    <li>SAM_FOUO_DAILY_V2_YYYYMMDD.ZIP</li>
+    <li>SAM_SENSITIVE_DAILY_V3_YYYYMMDD.ZIP</li>
+  </ul>
+  <b>Daily UTF-8:</b> 
+  <ul>
+    <li>SAM_FOUO_UTF-8_DAILY_V2_YYYYMMDD.ZIP</li>
+    <li>SAM_SENSITIVE_UTF-8_DAILY_V3_YYYYMMDD.ZIP</li>
+  </ul>
+</li></ul>
+</td>
+</tr>
+
+<tr>
+<td>Daily Exclusion Extracts</td>
+<td>
+<ul>
+<li>They are produced every day. Kindly check after 7 AM Eastern time.</li>
+<li>The date on the .ZIP file matches the date when the file was generated. E.g.: The file generated on 04/05/2022 will show 2022095.</li>
+<li>The date on the .ZIP file matches the date on the .CSV file inside.</li>
+<li>These files contain all the active exclusions.</li>
+<li>File Naming Convention:<br>
+  <b>Daily ASCII:</b>
+  <ul>
+   <li>SAM_Exclusions_Public_Extract_V2_YYDDD.ZIP (YYDDD is the Julian Date)</li>
+  </ul>
+  E.g.: The file for 04/06/2022 would be SAM_Exclusions_Public_Extract_V2_22096.ZIP.
+</li></ul>
+</td>
+</tr>
 </table>
 
 <p><small><a href="#">Back to top</a></small></p>
