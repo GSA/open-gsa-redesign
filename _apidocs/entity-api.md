@@ -11529,6 +11529,19 @@ V3:
 </p>
 </details>
 
+
+### Example 6: : I am a FAPIIS/Navy user. How can I obtain FAPIIS data?
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b>https://api.sam.gov/entity-information/v3/entities?api_key= <PUBLIC API Key>&ueiSAM=DE95TS6Y5XR6&includeSections=integrityInformation
+<br><br>
+<b>Alpha URL:</b>https://api-alpha.sam.gov/entity-information/v3/entities?api_key=<PUBLIC API Key>&ueiSAM=DE95TS6Y5XR6&includeSections=integrityInformation
+<br><br>
+</details>
+<details>
+<summary>Response (JSON Output)</summary>
+</details>
+
 ### Example 7:  I have a Fed System Account and the Role required to access non-SAM Registrant entities, both Public and NPDY. How can I obtain them?
 <details>
 <summary>Request URL</summary>
