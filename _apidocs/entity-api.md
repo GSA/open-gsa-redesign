@@ -60,15 +60,15 @@ This constitutes both the publicly available entities and the entities that have
 
 **To access Public data:**
 * Users must have a non-Federal/Federal Individual (Personal) account and the respective API Key, a non-Federal/Federal System Account with the “Read Public” permission and the respective API Key in SAM.gov.
-* Users can make GET calls using any Browser, Curl commands or a Restful API client such as Postman.
+* Users can make GET calls using any Browser or a Restful API client such as Postman.
 
 **To access FOUO (CUI) data:**
 * Users must have a Federal System Account with the “Read FOUO” permission and the respective API Key in SAM.gov.
-* Users can make GET calls using any Browser, Curl commands or a Restful API client such as Postman.
+* Users can make GET calls using any Browser or a Restful API client such as Postman.
 
 **To access Sensitive (CUI) data:**
 * Users must have a Federal System Account with the “Read Sensitive” permission and the respective API Key in SAM.gov.
-* Users must make POST calls using Curl commands or a Restful API client such as Postman.
+* Users must make POST calls using a Restful API client such as Postman.
 
 ### Individual (Personal) Accounts
 
