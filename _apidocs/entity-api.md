@@ -11530,22 +11530,23 @@ V3:
 </details>
 
 ### Example 6: : I am a FAPIIS/Navy user. How can I obtain FAPIIS data?
+
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b> https://api.sam.gov/entity-information/v3/entities?api_key= <PUBLIC API Key>&ueiSAM=DE95TS6Y5XR6&includeSections=integrityInformation
+<b>Production URL:</b> 
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key= <PUBLIC API Key>&ueiSAM=DE95TS6Y5XR6&includeSections=integrityInformation
 <br><br>
-<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v3/entities?api_key=<PUBLIC API Key>&ueiSAM=DE95TS6Y5XR6&includeSections=integrityInformation
+<b>Alpha URL:</b> 
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?api_key=<PUBLIC API Key>&ueiSAM=DE95TS6Y5XR6&includeSections=integrityInformation
 <br><br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-
 <p>
 <code style="font-family:Source Sans Pro; font-size: 18px">
 <pre>
 A Public non-SAM Registered entity:
-
 "entityData": [
 {
 "integrityInformation": {
@@ -11646,7 +11647,7 @@ A Public non-SAM Registered entity:
 }
 }
 }
-],
+]
 </pre>
 </code>
 </p>
