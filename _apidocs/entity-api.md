@@ -141,8 +141,16 @@ This constitutes both the publicly available entities and the entities that have
     <li> The "Accept" parameter must be sent as "application/json" under "Headers".</li>
     <li> The "Content-Type" parameter must be sent as "application/json" under "Headers".</li>
     <li> All the optional search filters can be sent in the request URL or in the "Body".</li>
-    <li> An example of the Sensitive entity management POST call using curl  bring the example here, from the existing “Sensitive API Information” section.</li>
+    <li> An example of the Sensitive entity management POST call using curl:</li><br>
 </ul>
+<details>
+<summary><b>An example of the Sensitive entity management POST call using curl</b></summary>
+<div style="font-family:Source sans pro; color: #212121; line-height: 1.5"><br>
+<b>Curl request with basic auth token:</b><br>
+curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiSAM=< UEI >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/json" --header "Authorization: Basic < auth token >"<br><br>
+<b>Curl request with username and password:</b><br>
+curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiSAM=< UEI >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/json" --user "< username >:< password >"</div><br><br>
+</details>
 </details>
 
 ### Utilizing the API Extract
@@ -1999,20 +2007,6 @@ samMonitoring
 </tr>
 
 <tr>
-<td>agencyBusinessPurposeCode</td>
-<td>string</td>
-<td>Agency Business Purpose Code</td>
-<td>v1<br>v2<br>v3</td>
-</tr>
-
-<tr>
-<td>agencyBusinessPurposeDesc</td>
-<td>string</td>
-<td>Agency Business Purpose Desc</td>
-<td>v1<br>v2<br>v3</td>
-</tr>
-
-<tr>
 <td>entityStructureCode</td>
 <td>string</td>
 <td>Entity Structure Code</td>
@@ -2099,6 +2093,20 @@ samMonitoring
 <tr>
 <th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data 
 </th>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeCode</td>
+<td>string</td>
+<td>Agency Business Purpose Code</td>
+<td>v1<br>v2<br>v3</td>
+</tr>
+
+<tr>
+<td>agencyBusinessPurposeDesc</td>
+<td>string</td>
+<td>Agency Business Purpose Desc</td>
+<td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
@@ -2543,7 +2551,7 @@ samMonitoring
 <td>v3</td>
 </tr>
 <tr>
-<td>zipCodse</td>
+<td>zipCode</td>
 <td>string</td>
 <td>Zip Code
 <br>Applicable to both SAM and non-SAM registrants</td>
@@ -2588,7 +2596,7 @@ samMonitoring
 <td>string</td>
 <td>Proceedings Question1 
 <br>Yes or No values are captured
-<br>Applicable to both SAM and non-SAM registrants</td>
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
@@ -2596,7 +2604,7 @@ samMonitoring
 <td>string</td>
 <td>Proceedings Question2 
 <br>Yes or No values are captured
-<br>Applicable to both SAM and non-SAM registrants</td>
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
@@ -2604,7 +2612,7 @@ samMonitoring
 <td>string</td>
 <td>Proceedings Question3 
 <br>Yes or No values are captured
-<br>Applicable to both SAM and non-SAM registrants</td>
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
@@ -2615,49 +2623,49 @@ samMonitoring
 <td>proceedingDate</td>
 <td>string</td>
 <td>Proceeding Date
-<br>Applicable to both SAM and non-SAM registrants</td>
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>instrumentNumber</td>
 <td>string</td>
 <td>Instrument Number
-<br>Applicable to both SAM and non-SAM registrants</td>
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>instrument</td>
 <td>string</td>
 <td>Instrument Type
-<br>Applicable to both SAM and non-SAM registrants</td>
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>proceedingStateCode</td>
 <td>string</td>
 <td>Proceeding State Code
-<br>Applicable to both SAM and non-SAM registrants</td>
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>proceedingType</td>
 <td>string</td>
 <td>Proceeding Type
-<br>Applicable to both SAM and non-SAM registrants</td>
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>disposition</td>
 <td>string</td>
 <td>Disposition
-<br>Applicable to both SAM and non-SAM registrants</td>
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>proceedingDescription</td>
 <td>string</td>
 <td>Proceeding Description
-<br>Applicable to both SAM and non-SAM registrants</td>
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
@@ -2675,29 +2683,33 @@ samMonitoring
 <tr>
 <td>firstName</td>
 <td>string</td>
-<td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>First Name
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
-<td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>Middle Initial
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
-<td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>Last Name
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
-<td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>Title
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
@@ -2708,36 +2720,41 @@ samMonitoring
 <tr>
 <td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>US Phone
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>US Phone Extension
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>Non-US Phone
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>Fax
+<br>Applicable to SAM registrants</td>
+<td>>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>Email
+<br>Applicable to SAM registrants</td>
+<td>>v3</td>
 </tr>
 
 <tr>
@@ -2748,50 +2765,57 @@ samMonitoring
 <tr>
 <td>addressLine1</td>
 <td>string</td>
-<td>Address Line 1</td>
-<td>v1<br>v2<br>v3</td>
+<td>Address Line 1
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
-<td>Address Line 2</td>
-<td>v1<br>v2<br>v3</td>
+<td>Address Line 2
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
-<td>City</td>
-<td>v1<br>v2<br>v3</td>
+<td>City
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>State or Province Code
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
-<td>Zip Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>Zip Code
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
-<td>Zip Code Plus 4</td>
-<td>v1<br>v2<br>v3</td>
+<td>Zip Code Plus 4
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
-<td>Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>Country Code
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 <tr>
 <th colspan="4" style="background-color: #f1f1f1;"> <b>proceedingsAlternatePOC</b>
@@ -2804,29 +2828,33 @@ samMonitoring
 <tr>
 <td>firstName</td>
 <td>string</td>
-<td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>First Name
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
-<td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>Middle Initial
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
-<td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>Last Name
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
-<td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>Title
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
@@ -2837,36 +2865,41 @@ samMonitoring
 <tr>
 <td>usPhone</td>
 <td>string</td>
-<td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>US Phone
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>US Phone Extension
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>Non-US Phone
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>Fax
+<br>Applicable to SAM registrants</td>
+<td>>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>Email
+<br>Applicable to SAM registrants</td>
+<td>>v3</td>
 </tr>
 
 <tr>
@@ -2877,50 +2910,57 @@ samMonitoring
 <tr>
 <td>addressLine1</td>
 <td>string</td>
-<td>Address Line 1</td>
-<td>v1<br>v2<br>v3</td>
+<td>Address Line 1
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
-<td>Address Line 2</td>
-<td>v1<br>v2<br>v3</td>
+<td>Address Line 2
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
-<td>City</td>
-<td>v1<br>v2<br>v3</td>
+<td>City
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>State or Province Code
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
-<td>Zip Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>Zip Code
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
-<td>Zip Code Plus 4</td>
-<td>v1<br>v2<br>v3</td>
+<td>Zip Code Plus 4
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
-<td>Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>Country Code
+<br>Applicable to SAM registrants</td>
+<td>v3</td>
 </tr>
 </table>
 </details>
@@ -2945,37 +2985,43 @@ samMonitoring
 <tr>
 <td>recordType</td>
 <td>string</td>
-<td>Record Type</td>
+<td>Record Type
+<br>Applicable to SAM and Non registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>recordTypeDesc</td>
 <td>string</td>
-<td>Record Type Description</td>
+<td>Record Type Description
+<br>Applicable to SAM and Non registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>recordDate</td>
 <td>string</td>
-<td>Record Date</td>
+<td>Record Date
+<br>Applicable to SAM and Non registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>procurementIdOrFederalAssistanceId</td>
 <td>string</td>
-<td>Contract Data ID or Grant ID</td>
+<td>Contract Data ID or Grant ID
+<br>Applicable to SAM and Non registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>referenceIdvPiid</td>
 <td>string</td>
-<td>Referenced IDV PIID</td>
+<td>Referenced IDV PIID
+<br>Applicable to SAM and Non registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>attachment</td>
 <td>string</td>
-<td>Pre-signed URL to access the attachment</td>
+<td>Pre-signed URL to access the attachment
+<br>Applicable to SAM and Non registrants</td>
 <td>v3</td>
 </tr>
 </table>
@@ -3006,24 +3052,25 @@ samMonitoring
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
-<td>Legal Business Name</td>
+<td>Legal Business Name
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>cageCode</td>
 <td>string</td>
-<td>Cage Code</td>
+<td>Cage Code
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>integrityRecords</td>
 <td>string</td>
-<td>Itegrity Records
-<br>Returns:
+<td>Returns:
 <br>Yes - if the CAGE Code finds one or more matches in the database.
 <br>No - if the CAGE Code does not find any match in the database.
 <br>N/A - if the CAGE Code is null.
-</td>
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 
@@ -3035,24 +3082,25 @@ samMonitoring
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
-<td>Legal Business Name</td>
+<td>Legal Business Name
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>cageCode</td>
 <td>string</td>
-<td>Cage Code</td>
+<td>Cage Code
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>integrityRecords</td>
 <td>string</td>
-<td>Itegrity Records
-<br>Returns:
+<td>Returns:
 <br>Yes - if the CAGE Code finds one or more matches in the database.
 <br>No - if the CAGE Code does not find any match in the database.
 <br>N/A - if the CAGE Code is null.
-</td>
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 
@@ -3064,24 +3112,25 @@ samMonitoring
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
-<td>Legal Business Name</td>
+<td>Legal Business Name
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>cageCode</td>
 <td>string</td>
-<td>Cage Code</td>
+<td>Cage Code
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>integrityRecords</td>
 <td>string</td>
-<td>Itegrity Records
-<br>Returns:
+<td>Returns:
 <br>Yes - if the CAGE Code finds one or more matches in the database.
 <br>No - if the CAGE Code does not find any match in the database.
 <br>N/A - if the CAGE Code is null.
-</td>
+<br>Applicable to SAM registrants</td>
 <td>v3</td>
 </tr>
 </table>
@@ -8973,7 +9022,7 @@ An Entity with an Address Change resulting from EVS Monitoring in v3:
 "evsMonitoring": {
 "legalBusinessName": "International Business Machines Corporation",
 "dbaName": null,
-"outOfBusinessFlag": "N/A",
+"outOfBusinessFlag": null,
 "monitoringStatus": "Y",
 "lastUpdated": "Y",
 "addressLine1": "New Address Line 1",
@@ -9159,15 +9208,15 @@ An Entity with a Name Change resulting from EVS Monitoring in v2:
 "evsMonitoring": {
 "legalBusinessName": "International Business Machines CORPORATION",
 "dbaName": null,
-"outOfBusinessFlag": "N/A",
+"outOfBusinessFlag": null,
 "monitoringStatus": "Y",
 "lastUpdated": "Y",
-"addressLine1": "N/A",
-"addressLine2": "N/A",
-"city": "N/A",
-"postalCode": "N/A",
-"stateOrProvinceCode": "N/A",
-"countryCode": "N/A"
+"addressLine1": null,
+"addressLine2": null,
+"city": null,
+"postalCode": null,
+"stateOrProvinceCode": null,
+"countryCode": null
 }
 },
 "federalHierarchy": {
@@ -9352,15 +9401,15 @@ An Entity with a Name Change resulting from EVS Monitoring in v3:
 "evsMonitoring": {
 "legalBusinessName": "International Business Machines CORPORATION",
 "dbaName": null,
-"outOfBusinessFlag": "N/A",
+"outOfBusinessFlag": null,
 "monitoringStatus": "Y",
 "lastUpdated": "Y",
-"addressLine1": "N/A",
-"addressLine2": "N/A",
-"city": "N/A",
-"postalCode": "N/A",
-"stateOrProvinceCode": "N/A",
-"countryCode": "N/A"
+"addressLine1": null,
+"addressLine2": null,
+"city": null,
+"postalCode": null,
+"stateOrProvinceCode": null,
+"countryCode": null
 }
 },
 "federalHierarchy": {
@@ -11215,16 +11264,16 @@ v2:
                     },
                     "evsMonitoring": {
                         "legalBusinessName": "Enterprise Assurance Management",
-                        "dbaName": "N/A",
-                        "outOfBusinessFlag": "N/A",
-                        "monitoringStatus": "N/A",
-                        "lastUpdated": "N/A",
-                        "addressLine1": "N/A",
-                        "addressLine2": "N/A",
-                        "city": "N/A",
-                        "postalCode": "N/A",
-                        "stateOrProvinceCode": "N/A",
-                        "countryCode": "N/A"
+                        "dbaName": null,
+                        "outOfBusinessFlag": null,
+                        "monitoringStatus": null,
+                        "lastUpdated": null,
+                        "addressLine1": null,
+                        "addressLine2": null,
+                        "city": null,
+                        "postalCode": null,
+                        "stateOrProvinceCode": null,
+                        "countryCode": null
                     }
                 },
                 "federalHierarchy": {
@@ -11418,16 +11467,16 @@ V3:
                     },
                     "evsMonitoring": {
                         "legalBusinessName": "Enterprise Assurance Management",
-                        "dbaName": "N/A",
-                        "outOfBusinessFlag": "N/A",
-                        "monitoringStatus": "N/A",
-                        "lastUpdated": "N/A",
-                        "addressLine1": "N/A",
-                        "addressLine2": "N/A",
-                        "city": "N/A",
-                        "postalCode": "N/A",
-                        "stateOrProvinceCode": "N/A",
-                        "countryCode": "N/A"
+                        "dbaName": null,
+                        "outOfBusinessFlag": null,
+                        "monitoringStatus": null,
+                        "lastUpdated": null,
+                        "addressLine1": null,
+                        "addressLine2": null,
+                        "city": null,
+                        "postalCode": null,
+                        "stateOrProvinceCode": null,
+                        "countryCode": null
                     }
                 },
                 "federalHierarchy": {
