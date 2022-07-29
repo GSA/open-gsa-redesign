@@ -141,8 +141,7 @@ This constitutes both the publicly available entities and the entities that have
     <li> The "Accept" parameter must be sent as "application/json" under "Headers".</li>
     <li> The "Content-Type" parameter must be sent as "application/json" under "Headers".</li>
     <li> All the optional search filters can be sent in the request URL or in the "Body".</li>
-    <li> An example of the Sensitive entity management POST call using curl:</li><br>
-</ul>
+    <li> 
 <details>
 <summary><b>An example of the Sensitive entity management POST call using curl</b></summary>
 <div style="font-family:Source sans pro; color: #212121; line-height: 1.5"><br>
@@ -151,6 +150,9 @@ curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiSAM=< UEI >"
 <b>Curl request with username and password:</b><br>
 curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiSAM=< UEI >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/json" --user "< username >:< password >"</div><br><br>
 </details>
+</li><br>
+</ul>
+
 </details>
 
 ### Utilizing the API Extract
