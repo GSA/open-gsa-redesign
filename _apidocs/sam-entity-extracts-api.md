@@ -127,8 +127,8 @@ E.g.: The file generated on 04/05/2022 will show 2022095.</li>
 
 ### Individual (Personal) Accounts
 
-* The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.
-  <a href="v1/EYE_IMAGE.JPG">EYE ICON</a>
+* The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<br>
+  ![image info](v1/EYE_IMAGE.JPG)
 * Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
 
 ### System Accounts
