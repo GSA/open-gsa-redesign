@@ -73,7 +73,7 @@ This constitutes both the publicly available entities and the entities that have
 ### Individual (Personal) Accounts
 
 * The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.
-  <a href="v1/EYE_IMAGE.JPG">EYE ICON</a>
+  <img src="v1/EYE_IMAGE.JPG" alt="EYE ICON" style="height: 100px; width:100px;"/>
 * Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
 
 ### System Accounts
