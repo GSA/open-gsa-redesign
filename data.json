@@ -7497,7 +7497,7 @@
       "@type": "dcat:Dataset",
       "title": "GSA Enterprise Data Inventory (EDI)",
       "description": "GSA Enterprise Data Inventory (EDI)",
-      "modified": "2022-07-29T20:40:14.097Z",
+      "modified": "2022-08-01T13:35:22.951Z",
       "accessLevel": "public",
       "identifier": "GSA-2015-11-13-01",
       "dataQuality": true,
@@ -7519,8 +7519,8 @@
         {
           "@type": "dcat:Distribution",
           "mediaType": "application/json",
-          "title": "EDI 07 29 22.json",
-          "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/636ccd72-4b3b-4186-9d3b-1e49830d5650/download/edi-07-29-22.json"
+          "title": "EDI 08 01 22.json",
+          "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/71537d83-ec45-4777-8dce-39973147d6b3/download/edi-08-01-22.json"
         }
       ],
       "keyword": [
@@ -15725,7 +15725,7 @@
       "@type": "dcat:Dataset",
       "title": "Real Estate Across the United States (REXUS) Inventory (Building)",
       "description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-      "modified": "2021-01-04T15:59:39.946Z",
+      "modified": "2022-08-01T12:54:47.495Z",
       "accessLevel": "public",
       "identifier": "GSA-25251",
       "dataQuality": true,
@@ -15748,7 +15748,7 @@
           "@type": "dcat:Distribution",
           "mediaType": "text/csv",
           "title": "data_gov_bldg_rexus.csv",
-          "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/77226374-f00d-4860-845d-317c8ee83cc9/download/data_gov_bldg_rexus.csv"
+          "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/74b2bbfd-1370-4e9d-aae8-cf6acce31f46/download/data_gov_bldg_rexus.csv"
         }
       ],
       "keyword": [
@@ -15760,10 +15760,10 @@
         "real property"
       ],
       "bureauCode": [
-        "023:05"
+        "015:11"
       ],
       "programCode": [
-        "023:004"
+        "015:001"
       ],
       "language": [
         "en-US"
@@ -15773,13 +15773,13 @@
       "@type": "dcat:Dataset",
       "title": "Real Estate Across the United States (REXUS) (Lease)",
       "description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-      "modified": "2020-12-01",
+      "modified": "2022-08-01T13:10:15.814Z",
       "accessLevel": "public",
       "identifier": "GSA-25261",
       "dataQuality": true,
       "issued": "2011-07-15",
       "license": "http://www.usa.gov/publicdomain/label/1.0/",
-      "spatial": "US",
+      "rights": "true",
       "publisher": {
         "@type": "org:Organization",
         "name": "General Services Administration"
@@ -15795,7 +15795,7 @@
           "@type": "dcat:Distribution",
           "mediaType": "text/csv",
           "title": "data_gov_lse_rexus.csv",
-          "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/d1ae88a6-0063-4246-a5c6-cf94e9dbad70/download/data_gov_lse_rexus.csv"
+          "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/8816a14e-eca2-4bb3-a7ad-ceb6625a3151/download/data_gov_lse_rexus.csv"
         }
       ],
       "keyword": [
@@ -15807,13 +15807,13 @@
         "real property"
       ],
       "bureauCode": [
-        "023:05"
+        "015:11"
       ],
       "programCode": [
-        "023:003"
+        "015:001"
       ],
-      "theme": [
-        "Leases"
+      "language": [
+        "en-US"
       ]
     },
     {
