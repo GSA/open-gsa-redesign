@@ -2582,6 +2582,10 @@ samMonitoring
 <table>
 
 <tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to SAM registrants</b></th>
+</tr>
+
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -2593,28 +2597,26 @@ samMonitoring
 </th>
 </tr>
 
+
 <tr>
 <td>proceedingsQuestion1</td>
 <td>string</td>
-<td>Proceedings Question1 
-<br>Yes or No values are captured
-<br>Applicable to SAM registrants</td>
+<td>Proceedings Question1. 
+<br>Yes or No values are captured</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>proceedingsQuestion2</td>
 <td>string</td>
-<td>Proceedings Question2 
-<br>Yes or No values are captured
-<br>Applicable to SAM registrants</td>
+<td>Proceedings Question2.
+<br>Yes or No values are captured</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>proceedingsQuestion3</td>
 <td>string</td>
-<td>Proceedings Question3 
-<br>Yes or No values are captured
-<br>Applicable to SAM registrants</td>
+<td>Proceedings Question3. 
+<br>Yes or No values are captured</td>
 <td>v3</td>
 </tr>
 <tr>
@@ -2624,50 +2626,43 @@ samMonitoring
 <tr>
 <td>proceedingDate</td>
 <td>string</td>
-<td>Proceeding Date
-<br>Applicable to SAM registrants</td>
+<td>Proceeding Date</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>instrumentNumber</td>
 <td>string</td>
-<td>Instrument Number
-<br>Applicable to SAM registrants</td>
+<td>Instrument Number</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>instrument</td>
 <td>string</td>
-<td>Instrument Type
-<br>Applicable to SAM registrants</td>
+<td>Instrument Type</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>proceedingStateCode</td>
 <td>string</td>
-<td>Proceeding State Code
-<br>Applicable to SAM registrants</td>
+<td>Proceeding State Code</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>proceedingType</td>
 <td>string</td>
-<td>Proceeding Type
-<br>Applicable to SAM registrants</td>
+<td>Proceeding Type</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>disposition</td>
 <td>string</td>
-<td>Disposition
-<br>Applicable to SAM registrants</td>
+<td>Disposition</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>proceedingDescription</td>
 <td>string</td>
-<td>Proceeding Description
-<br>Applicable to SAM registrants</td>
+<td>Proceeding Description</td>
 <td>v3</td>
 </tr>
 <tr>
@@ -2685,32 +2680,28 @@ samMonitoring
 <tr>
 <td>firstName</td>
 <td>string</td>
-<td>First Name
-<br>Applicable to SAM registrants</td>
+<td>First Name</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
-<td>Middle Initial
-<br>Applicable to SAM registrants</td>
+<td>Middle Initial</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
-<td>Last Name
-<br>Applicable to SAM registrants</td>
+<td>Last Name</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
-<td>Title
-<br>Applicable to SAM registrants</td>
+<td>Title</td>
 <td>v3</td>
 </tr>
 
@@ -2722,40 +2713,35 @@ samMonitoring
 <tr>
 <td>usPhone</td>
 <td>string</td>
-<td>US Phone
-<br>Applicable to SAM registrants</td>
+<td>US Phone</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension
-<br>Applicable to SAM registrants</td>
+<td>US Phone Extension</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone
-<br>Applicable to SAM registrants</td>
+<td>Non-US Phone</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax
-<br>Applicable to SAM registrants</td>
+<td>Fax</td>
 <td>>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email
-<br>Applicable to SAM registrants</td>
+<td>Email</td>
 <td>>v3</td>
 </tr>
 
@@ -2767,56 +2753,49 @@ samMonitoring
 <tr>
 <td>addressLine1</td>
 <td>string</td>
-<td>Address Line 1
-<br>Applicable to SAM registrants</td>
+<td>Address Line 1</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
-<td>Address Line 2
-<br>Applicable to SAM registrants</td>
+<td>Address Line 2</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
-<td>City
-<br>Applicable to SAM registrants</td>
+<td>City</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province Code
-<br>Applicable to SAM registrants</td>
+<td>State or Province Code</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
-<td>Zip Code
-<br>Applicable to SAM registrants</td>
+<td>Zip Code</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
-<td>Zip Code Plus 4
-<br>Applicable to SAM registrants</td>
+<td>Zip Code Plus 4</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
-<td>Country Code
-<br>Applicable to SAM registrants</td>
+<td>Country Code</td>
 <td>v3</td>
 </tr>
 <tr>
@@ -2830,32 +2809,28 @@ samMonitoring
 <tr>
 <td>firstName</td>
 <td>string</td>
-<td>First Name
-<br>Applicable to SAM registrants</td>
+<td>First Name</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
-<td>Middle Initial
-<br>Applicable to SAM registrants</td>
+<td>Middle Initial</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
-<td>Last Name
-<br>Applicable to SAM registrants</td>
+<td>Last Name</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
-<td>Title
-<br>Applicable to SAM registrants</td>
+<td>Title</td>
 <td>v3</td>
 </tr>
 
@@ -2867,40 +2842,35 @@ samMonitoring
 <tr>
 <td>usPhone</td>
 <td>string</td>
-<td>US Phone
-<br>Applicable to SAM registrants</td>
+<td>US Phone</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
-<td>US Phone Extension
-<br>Applicable to SAM registrants</td>
+<td>US Phone Extension</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
-<td>Non-US Phone
-<br>Applicable to SAM registrants</td>
+<td>Non-US Phone</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
-<td>Fax
-<br>Applicable to SAM registrants</td>
+<td>Fax</td>
 <td>>v3</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email
-<br>Applicable to SAM registrants</td>
+<td>Email</td>
 <td>>v3</td>
 </tr>
 
@@ -2912,56 +2882,49 @@ samMonitoring
 <tr>
 <td>addressLine1</td>
 <td>string</td>
-<td>Address Line 1
-<br>Applicable to SAM registrants</td>
+<td>Address Line 1</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
-<td>Address Line 2
-<br>Applicable to SAM registrants</td>
+<td>Address Line 2</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
-<td>City
-<br>Applicable to SAM registrants</td>
+<td>City</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province Code
-<br>Applicable to SAM registrants</td>
+<td>State or Province Code</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
-<td>Zip Code
-<br>Applicable to SAM registrants</td>
+<td>Zip Code</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
-<td>Zip Code Plus 4
-<br>Applicable to SAM registrants</td>
+<td>Zip Code Plus 4</td>
 <td>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
-<td>Country Code
-<br>Applicable to SAM registrants</td>
+<td>Country Code</td>
 <td>v3</td>
 </tr>
 </table>
@@ -2972,6 +2935,9 @@ samMonitoring
 </summary>
 <table>
 
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to SAM and Non registrants</b></th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2987,43 +2953,37 @@ samMonitoring
 <tr>
 <td>recordType</td>
 <td>string</td>
-<td>Record Type
-<br>Applicable to SAM and Non registrants</td>
+<td>Record Type</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>recordTypeDesc</td>
 <td>string</td>
-<td>Record Type Description
-<br>Applicable to SAM and Non registrants</td>
+<td>Record Type Description</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>recordDate</td>
 <td>string</td>
-<td>Record Date
-<br>Applicable to SAM and Non registrants</td>
+<td>Record Date</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>procurementIdOrFederalAssistanceId</td>
 <td>string</td>
-<td>Contract Data ID or Grant ID
-<br>Applicable to SAM and Non registrants</td>
+<td>Contract Data ID or Grant ID</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>referenceIdvPiid</td>
 <td>string</td>
-<td>Referenced IDV PIID
-<br>Applicable to SAM and Non registrants</td>
+<td>Referenced IDV PIID</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>attachment</td>
 <td>string</td>
-<td>Pre-signed URL to access the attachment
-<br>Applicable to SAM and Non registrants</td>
+<td>Pre-signed URL to access the attachment</td>
 <td>v3</td>
 </tr>
 </table>
@@ -3033,6 +2993,10 @@ samMonitoring
 <summary><b>corporateRelationships Sub Section</b><br>
 </summary>
 <table>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to SAM registrants</b></th>
+</tr>
 
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
@@ -3054,15 +3018,13 @@ samMonitoring
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
-<td>Legal Business Name
-<br>Applicable to SAM registrants</td>
+<td>Legal Business Name</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>cageCode</td>
 <td>string</td>
-<td>Cage Code
-<br>Applicable to SAM registrants</td>
+<td>Cage Code</td>
 <td>v3</td>
 </tr>
 <tr>
@@ -3071,8 +3033,7 @@ samMonitoring
 <td>Returns:
 <br>Yes - if the CAGE Code finds one or more matches in the database.
 <br>No - if the CAGE Code does not find any match in the database.
-<br>N/A - if the CAGE Code is null.
-<br>Applicable to SAM registrants</td>
+<br>N/A - if the CAGE Code is null.</td>
 <td>v3</td>
 </tr>
 
@@ -3084,15 +3045,13 @@ samMonitoring
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
-<td>Legal Business Name
-<br>Applicable to SAM registrants</td>
+<td>Legal Business Name</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>cageCode</td>
 <td>string</td>
-<td>Cage Code
-<br>Applicable to SAM registrants</td>
+<td>Cage Code</td>
 <td>v3</td>
 </tr>
 <tr>
@@ -3101,8 +3060,7 @@ samMonitoring
 <td>Returns:
 <br>Yes - if the CAGE Code finds one or more matches in the database.
 <br>No - if the CAGE Code does not find any match in the database.
-<br>N/A - if the CAGE Code is null.
-<br>Applicable to SAM registrants</td>
+<br>N/A - if the CAGE Code is null.</td>
 <td>v3</td>
 </tr>
 
@@ -3114,15 +3072,13 @@ samMonitoring
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
-<td>Legal Business Name
-<br>Applicable to SAM registrants</td>
+<td>Legal Business Name</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>cageCode</td>
 <td>string</td>
-<td>Cage Code
-<br>Applicable to SAM registrants</td>
+<td>Cage Code</td>
 <td>v3</td>
 </tr>
 <tr>
@@ -3131,8 +3087,7 @@ samMonitoring
 <td>Returns:
 <br>Yes - if the CAGE Code finds one or more matches in the database.
 <br>No - if the CAGE Code does not find any match in the database.
-<br>N/A - if the CAGE Code is null.
-<br>Applicable to SAM registrants</td>
+<br>N/A - if the CAGE Code is null.</td>
 <td>v3</td>
 </tr>
 </table>
