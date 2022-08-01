@@ -115,15 +115,15 @@ E.g.: The file generated on 04/05/2022 will show 2022095.</li>
 
 **To access Public extracts:**
 * Users must have a non-Federal/Federal Individual (Personal) account and the respective API Key, a non-Federal/Federal System Account with the “Read Public” permission and the respective API Key in SAM.gov.
-* Users can make GET calls using any Browser, Curl commands or a Restful API client such as Postman.
+* Users can make GET calls using any Browser or a Restful API client such as Postman.
 
 **To access FOUO (CUI) extracts:**
 * Users must have a Federal System Account with the “Read FOUO” permission and the respective API Key in SAM.gov.
-* Users can make GET calls using any Browser, Curl commands or a Restful API client such as Postman.
+* Users can make GET calls using any Browser, or a Restful API client such as Postman.
 
 **To access Sensitive (CUI) extracts:**
 * Users must have a Federal System Account with the “Read Sensitive” permission and the respective API Key in SAM.gov.
-* Users must make POST calls using Curl commands or a Restful API client such as Postman.
+* Users must make POST calls using a Restful API client such as Postman.
 
 ### Individual (Personal) Accounts
 
@@ -197,6 +197,19 @@ E.g.: The file generated on 04/05/2022 will show 2022095.</li>
     <li> The "Content-Type" parameter must be sent as "application/json" under "Headers".</li>
     <li> All the optional search filters can be sent in the request URL or in the "Body".</li>
 </ul>
+<details>
+<summary><b> An example of the Sensitive extract download POST call using Postman: </b></summary>
+Request URL:
+https://api.sam.gov/data-services/v1/extracts?fileName=< name of the file ><br>
+Click to view Sample Authorization <a target="_blank" rel="noopener noreferrer" href="v1/DOWNLOAD_API_AUTH.JPG">Sample Extract Authorization</a><br>
+Click to view Sample Request Header <a target="_blank" rel="noopener noreferrer" href="v1/api_key.JPG">Sample Request Header</a>
+</details>
+
+<details>
+<summary><b>An example of the Sensitive extract download POST call using curl:</b></summary>
+Curl request with basic auth token: curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --header "Authorization: Basic < auth token >" --output C:\sample_file.ZIP<br><br>
+Curl request with username and password: curl -X POST "https://api.sam.gov/data-services/v1/extracts?fileName=< fileName >" --header "X-Api-Key: < a valid API Key >" --header "Content-Type: application/json" --header "Accept: application/zip" --user "< username >:< password >" --output C:\sample_file.ZIP
+</details>
 </details>
 
 <p><small><a href="#">Back to top</a></small></p>
