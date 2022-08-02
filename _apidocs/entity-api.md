@@ -540,15 +540,13 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>includeSections</td>
-<td>Applicable to both SAM and non-SAM registrants. Allows to filter data by sections.
+<td>Allows to filter data by sections.
 <br><br>SAM registrants:
-<br>The applicable sections are entityRegistration, coreData, assertions, pointsOfContact and repsAndCerts. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
-<br>The integrityInformation section is newly added specifically to the v3 API. It is not included in ‘All’, so it must be explicitly requested.
-<br>Examples: includeSections=entityRegistration,coreData; includeSections=integrityInformation,All; includeSections=repsAndCerts.
-<br><br>Non-SAM registrants:
+<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts, and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
+<br>Non-SAM registrants:
 <br>The applicable sections are entityRegistration and coreData.
-<br>Examples: includeSections=entityRegistration,coreData; includeSections=All; includeSections=repsAndCerts.
-</td>
+<br><br>Examples: includeSections=entityRegistration,coreData, includeSections=All, includeSections=repsAndCerts
+<br><br>Applicable to both SAM and non-SAM registrants.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
