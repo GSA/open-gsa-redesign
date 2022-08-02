@@ -1967,7 +1967,9 @@ samMonitoring
 </table>
 </details>
 
-
+<details>
+<summary><b>congressionalDistrict</b><br>
+</summary>
 <table>
 
 <tr>
@@ -1990,6 +1992,7 @@ samMonitoring
 </tr>
 
 </table>
+</details>
 
 <details>
 <summary><b>generalInformation Sub Section</b><br>
