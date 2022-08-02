@@ -75,6 +75,6 @@ By using this API, you agree to our [Terms of Service](https://search.gov/tos.ht
 
 ## Contact Us
 
-Please never hesitate to reach out! [Email the Search.gov team](mailto:search@support.digitalgov.gov). 
+Please never hesitate to reach out! [Email the Search.gov team](mailto:search@gsa.gov). 
 
 <p><small><a href="#">Back to top</a></small></p>
