@@ -28,11 +28,17 @@ This constitutes both the publicly available entities and the entities that have
 * It can return only the first 10,000 records.
 * The following characters are not allowed to be sent in the parameter values with the API request: & \| { } ^ \
 
-**Additional Features of the Entity Management API:** It can serve as an Extract API with the addition of "format" parameter in the request. Following are the key features of the Entity Management Extract API:
+**Additional Features of the Entity Management API:** It can serve as an Extract API with the addition of "format" parameter in the request.<br>
+Following are the key features of the Entity Management Extract API:
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
 * It returns asynchronous responses by sending file downloadable link.
 * It returns data in the JSON or CSV format as selected by the user.
 * It can return only the first 1,000,000 records.
+
+**Coming Soon:**
+The Public FAPIIS entities that are registered will be returned by the API. Please refer to the “integrityInformation” references in this page.
+* Alpha Deployment: 08/08/2022.
+* Production Deployment: To be determined.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -182,23 +188,19 @@ curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiSAM=< UEI >"
 
 <tr>
 <td rowspan="2">samRegistered</td>
-<td>Allows Yes. 
-<br>Yes signifies SAM registrants.
-<br>Example: samRegistered=Yes
-<br><br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
+<td>The API, by default, will return only the entities that are registered, 
+if this search parameter is not sent in the request.
+<br>However, users can still choose to send this search parameter as:
+<br>samRegistered=Yes. (For v2) 
 </td>
 <td>v2</td>
 </tr>
 
 <tr>
-<td>Allows Yes or No.
-<br>Yes signifies SAM registrants.
-<br>No signifies non-SAM registrants.
-<br>Example: samRegistered=Yes
-<br><br> 
-NOTES: 
-<br>1. If this search parameter is not sent in the request, then the API will return SAM registrants by default with the current schema.
-<br>2. If samRegistered=No is sent in the request, then the API will return the new non-SAM registrants schema.
+<td>The API, by default, will return only the entities that are registered, if this search parameter is not sent in the request.
+<br>However, users can choose to send this search parameter as:
+<br>samRegistered=Yes – to receive entities that are registered.
+<br>samRegistered=No – to receive entities that are not registered/ID Assigned. (For v3)
 </td>
 <td>v3</td>
 </tr>
@@ -215,9 +217,9 @@ NOTES:
 <tr>
 <td>ueiSAM</td>
 <td>Unique Entity Identifier SAM
-<br>Allow a 12 character value; a maximum of up to 100 values can be sent.
+<br>Allows a single 12-character value or up to 100 values.
 <br>Example: ueiSAM=RV56IG5JM6G9
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -231,9 +233,9 @@ NOTES:
 
 <tr>
 <td>cageCode</td>
-<td>Allows exact 5 character value.
+<td>Allows a single 5-character value or up to 100 values.
 <br>Example: cageCode=00000
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -248,7 +250,7 @@ NOTES:
 <td>legalBusinessName</td>
 <td>Allows partial or complete value search.
 <br>Example: legalBusinessName=ALLTEL
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -314,7 +316,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: ueiCreationDate=01/01/2019, ueiCreationDate=[01/01/2019,05/29/2019]
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -336,7 +338,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>physicalAddressCity</td>
 <td>Allows a text.
 <br>Example: physicalAddressCity=Herndon
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -350,9 +352,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>physicalAddressCountryCode</td>
-<td>Allows a 3 character code for SAM registrants and also a 2 character code for non-SAM registrants.
+<td>Allows a 3-character code for entities that are registered. Allows both 3-character and 2-character codes for entities that are not registered/ID Assigned.
 <br>Example: physicalAddressCountryCode=USA
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -360,19 +362,19 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>physicalAddressProvinceOrStateCode</td>
 <td>Allows a 2 character code.
 <br>Example: physicalAddressProvinceOrStateCode=AR
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
 <td>SAM registrants:
-<br>Allows a 5 digit code for US zip codes and any digit postal code for non-US postal codes.
-<br>Non-SAM registrants:
-<br>Allows a 5 or a 9 digit code for US zip codes and any digit postal code for non-US postal codes.
-<br><br>Examples: 
+<br>Allows a 5-digit code for US zip codes or any digit postal code for non-US postal codes, 
+for entities that are registered. Allows either a 5 or a 9-digit code for US zip codes, 
+or any digit postal code for non-US postal codes, for entities that are not registered/ID Assigned.
+<br>Examples: 
 <br>physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054, physicalAddressZipPostalCode=21202-3117
-<br><br>Applicable to both SAM and non-SAM registrants.</td>
+</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -540,13 +542,16 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>includeSections</td>
-<td>Applicable to both SAM and non-SAM registrants. Allows to filter data by sections.
-<br><br>SAM registrants:
-<br>The applicable sections are entityRegistration, coreData, assertions, pointsOfContact and repsAndCerts. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
-<br>The integrityInformation section is newly added specifically to the v3 API. It is not included in ‘All’, so it must be explicitly requested.
+<td>Allows to filter data by sections.
+<br>The applicable sections for the entities that are registered are entityRegistration, coreData, assertions, pointsOfContact, repsAndCerts, All and integrityInformation.
+<ul>
+<li>The repsAndCerts section will be returned only if explicitly requested.</li>
+<li>To request all the sections, provide a value of 'All'.</li>
+<li>The integrityInformation section is newly added specifically to the v3 API. It is not included in ‘All’, 
+so it must be explicitly requested.</li>
+</ul>
 <br>Examples: includeSections=entityRegistration,coreData; includeSections=integrityInformation,All; includeSections=repsAndCerts.
-<br><br>Non-SAM registrants:
-<br>The applicable sections are entityRegistration and coreData.
+<br>The applicable sections for the entities that are not registered/ID Assigned are entityRegistration and coreData.
 <br>Examples: includeSections=entityRegistration,coreData; includeSections=All; includeSections=repsAndCerts.
 </td>
 <td>v1<br>v2<br>v3</td>
@@ -554,17 +559,19 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>format</td>
-<td>Allows user to download data into the JSON and CSV file formats.
+<td>Allows user to download data into the JSON and CSV asynchronous file formats.
 <br>Example: format=csv
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get JSON or CSV file download links sent to the email address associated to the API key used in the request, when used in conjunction with the format parameter.
-<br>Example: emailId=Yes&format=JSON
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>When used in conjunction with the format parameter, allows user to get JSON or CSV asynchronous file download 
+links with tokens sent to the email address associated to the API key used in the request.
+<br>emailId=Yes&format=JSON
+<br>Applicable to the entities that are registered or not registered/ID Assigned.
+</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -699,7 +706,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </details>
 
 <details>
-<summary><b>Response Schema:</b><br>The Entity Management API offers several response elements that are described in the following sections.<br>
+<summary><b>Response Schema:</b>
+<br>The Entity Management API offers several response elements that are described in the following sections.<br>
 </summary>
 <details>
 <summary><b>entityRegistration</b><br>
@@ -721,8 +729,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>samRegistered</td>
 <td>string</td>
-<td>SAM Registered or non-SAM Registered Entity
-<br>Applicable to both SAM and non-SAM registrants.
+<td>Registered or not registered/ID Assigned entity.
 </td>
 <td>v2<br>v3</td>
 </tr>
@@ -731,7 +738,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -746,7 +753,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>cageCode</td>
 <td>string</td>
 <td>CAGE Code
-<br>Applicable to both SAM and non-SAM registrants</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -761,7 +768,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -789,15 +796,14 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>registrationStatus</td>
 <td>string</td>
-<td>Registration Status</td>
+<td>The status of the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>evsSource</td>
 <td>string</td>
-<td><br>Source of the SAM and non-SAM registrants.
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>Source of the validated entities that are registered or not registered/ID Assigned.</td>
 <td>v3</td>
 </tr>
 
@@ -834,7 +840,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiStatus</td>
 <td>string</td>
 <td>Unique Entity Identifier Status
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -842,7 +848,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -850,7 +856,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -860,8 +866,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Opted for Public Display or opted out of it.
 <br>v1 or v2: Returns noPublicDisplayFlag.
 <br>v3: Returns publicDisplayFlag.
-<br>Applicable to both SAM and non-SAM registrants.
-<br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.
+<br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY entities that are not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -885,7 +891,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>dnbOpenData</td>
 <td>string</td>
 <td>Dun & Bradstreet Open Data
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -900,6 +906,11 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <summary><b>entityHierarchyInformation Sub Section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -942,7 +953,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>evsSource</td>
 <td>string</td>
-<td>Source of the SAM registrant hierarchy</td>
+<td>Source of the registered entity’s hierarchy</td>
 <td>v3</td>
 </tr>
 
@@ -1064,7 +1075,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>evsSource</td>
 <td>string</td>
-<td>Source of the SAM registrant hierarchy
+<td>Source of the registered entity’s hierarchy
 <br><br>NOTE: This field is only available in v3</td>
 </tr>
 
@@ -1170,7 +1181,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>evsSource</td>
 <td>string</td>
-<td>Source of the SAM registrant hierarchy
+<td>Source of the registered entity’s hierarchy
 <br><br>NOTE: This field is only available in v3</td>
 </tr>
 
@@ -1285,7 +1296,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>evsSource</td>
 <td>string</td>
-<td>Source of the SAM registrant hierarchy</td>
+<td>Source of the registered entity’s hierarchy</td>
 <td>v3</td>
 </tr>
 
@@ -1652,7 +1663,10 @@ samMonitoring
 <summary><b>federalHierarchy Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1714,7 +1728,10 @@ samMonitoring
 <summary><b>tinInformation Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1755,7 +1772,10 @@ samMonitoring
 <summary><b>entityInformation Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1828,7 +1848,11 @@ samMonitoring
 <summary><b>physicalAddress Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;">
+<b>Applicable to the entities that are registered or not registered/ID Assigned</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1903,7 +1927,10 @@ samMonitoring
 <summary><b>mailingAddress Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1971,7 +1998,10 @@ samMonitoring
 <summary><b>congressionalDistrict</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1998,7 +2028,10 @@ samMonitoring
 <summary><b>generalInformation Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2149,7 +2182,10 @@ samMonitoring
 <summary><b>businessTypes Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2243,7 +2279,10 @@ samMonitoring
 <summary><b>financialInformation Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2488,7 +2527,10 @@ samMonitoring
 <summary><b>entitySummary Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered or not registered/ID Assigned</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2937,7 +2979,10 @@ samMonitoring
 <summary><b>responsibilityInformationList Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered or not registered/ID Assigned</b>
+</th>
+</tr>
 <tr>
 <th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to SAM and Non registrants</b></th>
 </tr>
@@ -2996,7 +3041,10 @@ samMonitoring
 <summary><b>corporateRelationships Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to SAM registrants</b></th>
 </tr>
@@ -3108,7 +3156,10 @@ samMonitoring
 <summary><b>goodsAndServices Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -3204,7 +3255,10 @@ samMonitoring
 <summary><b>disasterReliefData Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -3305,7 +3359,10 @@ samMonitoring
 <summary><b>sizeMetrics Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -3339,6 +3396,10 @@ samMonitoring
 </summary>
 <table>
 <tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -3370,6 +3431,10 @@ samMonitoring
 <summary><b>industrySpecificSizeMetrics Sub Section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -3409,6 +3474,10 @@ samMonitoring
 <summary><b>ediInformation Sub Section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -3477,6 +3546,10 @@ samMonitoring
 <summary><b>certifications Sub Section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -5766,6 +5839,10 @@ samMonitoring
 </summary>
 <table>
 <tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -6919,6 +6996,10 @@ samMonitoring
 </summary>
 <table>
 <tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -6972,6 +7053,10 @@ samMonitoring
 </summary>
 <table>
 <tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -7023,6 +7108,10 @@ samMonitoring
 <summary><b>governmentBusinessPOC Sub section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -7164,6 +7253,10 @@ samMonitoring
 </summary>
 <table>
 <tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -7303,6 +7396,10 @@ samMonitoring
 <summary><b>governmentBusinessAlternatePOC Sub section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -7444,6 +7541,10 @@ samMonitoring
 </summary>
 <table>
 <tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -7583,6 +7684,10 @@ samMonitoring
 <summary><b>pastPerformancePOC Sub section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -7724,6 +7829,10 @@ samMonitoring
 </summary>
 <table>
 <tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -7864,6 +7973,10 @@ samMonitoring
 </summary>
 <table>
 <tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -7994,6 +8107,10 @@ samMonitoring
 </summary>
 <table>
 <tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -8075,6 +8192,10 @@ samMonitoring
 </summary>
 <table>
 <tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -8155,6 +8276,10 @@ samMonitoring
 <summary><b>accountsPayablePOC Sub section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -8286,6 +8411,10 @@ samMonitoring
 </summary>
 <table>
 <tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -8366,6 +8495,10 @@ samMonitoring
 <summary><b>eliminationsPOC Sub section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -8496,6 +8629,10 @@ samMonitoring
 <summary><b>salesPOC Sub section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -11890,9 +12027,7 @@ Disclaimer:
 | 10/21/2021 | v3.1    | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added error messages #23 and #24 to the 400 level http response codes.<br><br> * Added the Version 3 endpoint.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | 02/01/2022 | v3.2    | * Update the OpenAPI Specification File to include the V3 endpoints.<br><br> * Updated the OpenAPI Specification File to reflect the correct behavior for the V3 exclusionsStatusFlag parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | 04/04/2022 | v3.3    | * Removed duns information from the documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| 07/21/2022 | v3.4    | * Added CUI Information.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-
+| 08/08/2022 | v3.4    | * Updated to clarify the use of Controlled Unclassified Information (CUI) data.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 08/10/2022 | v3.5    | * Updated to clarify the use of FAPIIS API changes.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 <p><small><a href="#">Back to top</a></small></p>
-
-
