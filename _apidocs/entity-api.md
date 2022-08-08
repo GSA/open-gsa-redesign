@@ -912,7 +912,7 @@ links with tokens sent to the email address associated to the API key used in th
 <summary><b>coreData</b><br>
 </summary>
 
-<details>
+<details style="padding-left: 20px;"> 
 <summary><b>entityHierarchyInformation Sub Section</b><br>
 </summary>
 <table>
@@ -1669,7 +1669,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>federalHierarchy Sub Section</b><br>
 </summary>
 <table>
@@ -1734,7 +1734,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>tinInformation Sub Section</b><br>
 </summary>
 <table>
@@ -1778,7 +1778,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>entityInformation Sub Section</b><br>
 </summary>
 <table>
@@ -1854,7 +1854,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>physicalAddress Sub Section</b><br>
 </summary>
 <table>
@@ -1926,7 +1926,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>mailingAddress Sub Section</b><br>
 </summary>
 <table>
@@ -1997,7 +1997,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>congressionalDistrict</b><br>
 </summary>
 <table>
@@ -2027,7 +2027,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>generalInformation Sub Section</b><br>
 </summary>
 <table>
@@ -2181,7 +2181,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>businessTypes Sub Section</b><br>
 </summary>
 <table>
@@ -2278,7 +2278,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>financialInformation Sub Section</b><br>
 </summary>
 <table>
@@ -2523,10 +2523,10 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>integrityInformation Sub Section</b><br>
 </summary>
-<details>
+<details style="padding-left: 20px;">
 <summary><b>entitySummary Sub Section</b><br>
 </summary>
 <table>
@@ -2614,7 +2614,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>proceedingsData Sub Section</b><br>
 </summary>
 <table>
@@ -2968,7 +2968,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>responsibilityInformationList Sub Section</b><br>
 </summary>
 <table>
@@ -3028,7 +3028,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>corporateRelationships Sub Section</b><br>
 </summary>
 <table>
@@ -3140,7 +3140,7 @@ samMonitoring
 <summary><b>assertions</b><br>
 </summary>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>goodsAndServices Sub Section</b><br>
 </summary>
 <table>
@@ -3239,7 +3239,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>disasterReliefData Sub Section</b><br>
 </summary>
 <table>
@@ -3343,7 +3343,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>sizeMetrics Sub Section</b><br>
 </summary>
 <table>
@@ -3379,7 +3379,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>sizeMetricDetails Sub Section</b><br>
 </summary>
 <table>
@@ -3415,7 +3415,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>industrySpecificSizeMetrics Sub Section</b><br>
 </summary>
 <table>
@@ -3458,7 +3458,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>ediInformation Sub Section</b><br>
 </summary>
 <table>
@@ -3530,7 +3530,7 @@ samMonitoring
 <summary><b>repsAndCerts</b><br>
 </summary>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>certifications Sub Section</b><br>
 </summary>
 <table>
@@ -5822,7 +5822,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>qualifications Sub Section</b><br>
 </summary>
 <table>
@@ -6979,7 +6979,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>financialAssistanceCertifications Sub Section</b><br>
 </summary>
 <table>
@@ -7036,7 +7036,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>pdfLinks Sub Section</b><br>
 </summary>
 <table>
@@ -7092,7 +7092,7 @@ samMonitoring
 <summary><b>pointsOfContact</b><br>
 </summary>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>governmentBusinessPOC Sub section</b><br>
 </summary>
 <table>
@@ -7236,7 +7236,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>electronicBusinessPOC Sub section</b><br>
 </summary>
 <table>
@@ -7380,7 +7380,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>governmentBusinessAlternatePOC Sub section</b><br>
 </summary>
 <table>
@@ -7524,7 +7524,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>electronicBusinessAlternatePOC Sub section</b><br>
 </summary>
 <table>
@@ -7668,7 +7668,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>pastPerformancePOC Sub section</b><br>
 </summary>
 <table>
@@ -7812,7 +7812,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>pastPerformanceAlternatePOC Sub section</b><br>
 </summary>
 <table>
@@ -7956,7 +7956,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>partyPerformingCertificationPOC Sub section</b><br>
 </summary>
 <table>
@@ -8090,7 +8090,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>soleProprietorshipPOC Sub section</b><br>
 </summary>
 <table>
@@ -8175,7 +8175,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>accountsReceivablePOC Sub section</b><br>
 </summary>
 <table>
@@ -8260,7 +8260,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>accountsPayablePOC Sub section</b><br>
 </summary>
 <table>
@@ -8394,7 +8394,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>ediPOC Sub section</b><br>
 </summary>
 <table>
@@ -8479,7 +8479,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>eliminationsPOC Sub section</b><br>
 </summary>
 <table>
@@ -8613,7 +8613,7 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>salesPOC Sub section</b><br>
 </summary>
 <table>
