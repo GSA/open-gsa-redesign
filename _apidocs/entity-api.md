@@ -35,10 +35,18 @@ Following are the key features of the Entity Management Extract API:
 * It returns data in the JSON or CSV format as selected by the user.
 * It can return only the first 1,000,000 records.
 
-**Coming Soon:**
-The Public FAPIIS entities that are registered will be returned by the API. Please refer to the “integrityInformation” references in this page.
-* Alpha Deployment: 08/10/2022.
-* Production Deployment: To be determined.
+<table>
+<tr>
+<td>
+Coming Soon:<br>
+The Public FAPIIS entities that are registered will be returned by the API. Please refer to the 
+“integrityInformation” references in this page.
+<ul> Alpha Deployment: 08/10/2022.
+<br> Production Deployment: To be determined.
+</ul>
+</td>
+</tr>
+</table>
 
 <p><small><a href="#">Back to top</a></small></p>
 
