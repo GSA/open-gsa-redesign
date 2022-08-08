@@ -37,7 +37,7 @@ Following are the key features of the Entity Management Extract API:
 
 **Coming Soon:**
 The Public FAPIIS entities that are registered will be returned by the API. Please refer to the “integrityInformation” references in this page.
-* Alpha Deployment: 08/08/2022.
+* Alpha Deployment: 08/10/2022.
 * Production Deployment: To be determined.
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -191,7 +191,7 @@ curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiSAM=< UEI >"
 <td>The API, by default, will return only the entities that are registered, 
 if this search parameter is not sent in the request.
 <br>However, users can still choose to send this search parameter as:
-<br>samRegistered=Yes. (For v2) 
+<br>samRegistered=Yes.
 </td>
 <td>v2</td>
 </tr>
@@ -200,7 +200,7 @@ if this search parameter is not sent in the request.
 <td>The API, by default, will return only the entities that are registered, if this search parameter is not sent in the request.
 <br>However, users can choose to send this search parameter as:
 <br>samRegistered=Yes – to receive entities that are registered.
-<br>samRegistered=No – to receive entities that are not registered/ID Assigned. (For v3)
+<br>samRegistered=No – to receive entities that are not registered/ID Assigned.
 </td>
 <td>v3</td>
 </tr>
@@ -543,7 +543,8 @@ or any digit postal code for non-US postal codes, for entities that are not regi
 <tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections.
-<br>The applicable sections for the entities that are registered are entityRegistration, coreData, assertions, pointsOfContact, repsAndCerts, All and integrityInformation.
+<br>The applicable sections for the entities that are registered are entityRegistration, coreData, assertions, 
+pointsOfContact, repsAndCerts, All and integrityInformation.
 <ul>
 <li>The repsAndCerts section will be returned only if explicitly requested.</li>
 <li>To request all the sections, provide a value of 'All'.</li>
@@ -551,8 +552,9 @@ or any digit postal code for non-US postal codes, for entities that are not regi
 so it must be explicitly requested.</li>
 </ul>
 <br>Examples: includeSections=entityRegistration,coreData; includeSections=integrityInformation,All; includeSections=repsAndCerts.
-<br>The applicable sections for the entities that are not registered/ID Assigned are entityRegistration and coreData.
-<br>Examples: includeSections=entityRegistration,coreData; includeSections=All; includeSections=repsAndCerts.
+<br><br>The applicable sections for the entities that are not registered/ID Assigned are entityRegistration and coreData.
+<br><br>Examples: includeSections=entityRegistration,coreData; includeSections=All; 
+includeSections=repsAndCerts.
 </td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -569,7 +571,7 @@ so it must be explicitly requested.</li>
 <td>emailId</td>
 <td>When used in conjunction with the format parameter, allows user to get JSON or CSV asynchronous file download 
 links with tokens sent to the email address associated to the API key used in the request.
-<br>emailId=Yes&format=JSON
+<br>Example: emailId=Yes&format=JSON
 <br>Applicable to the entities that are registered or not registered/ID Assigned.
 </td>
 <td>v1<br>v2<br>v3</td>
@@ -1664,7 +1666,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -1729,7 +1731,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -1773,7 +1775,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -1849,7 +1851,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;">
+<th colspan="4" style="background-color: #f1f1f1;">
 <b>Applicable to the entities that are registered or not registered/ID Assigned</b>
 </th>
 </tr>
@@ -1868,56 +1870,49 @@ samMonitoring
 <tr>
 <td>addressLine1</td>
 <td>string</td>
-<td>Physical Address Line 1.
-<br>Only Physical Address Line 1 is applicable to non-SAM registrants.</td>
+<td>Address Line 1</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
-<td>Physical Address Line 2.
-<br>Only Physical Address Line 2 is applicable to non-SAM registrants.</td>
+<td>Address Line 2</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
-<td>Physical Address City.
-<br>Only Physical Address City is applicable to non-SAM registrants.</td>
+<td>City</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province Code.
-<br>Only Physical Address State or Province Code is applicable to non-SAM registrants.</td>
+<td>State or Province Code</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
-<td>Physical Address Zip.
-<br>Only Physical Address Zip is applicable to non-SAM registrants.</td>
+<td>Zip Code</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
-<td>Physical Address Zip Plus4.
-<br>Only Physical Address Zip Plus4 is applicable to non-SAM registrants.</td>
+<td>Zip Plus4</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country Code.
-<br>Only Physical Address Country Code is applicable to non-SAM registrants.</td>
+<td>Country Code</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 </table>
@@ -1928,7 +1923,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -1999,7 +1994,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -2029,7 +2024,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -2183,7 +2178,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -2280,7 +2275,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -2528,7 +2523,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered or not registered/ID Assigned</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered or not registered/ID Assigned</b>
 </th>
 </tr>
 <tr>
@@ -2546,22 +2541,19 @@ samMonitoring
 <tr>
 <td>ueiSAM</td>
 <td>string</td>
-<td>Unique Entity Identifier SAM
-<br>Applicable to both SAM and non-SAM registrants</td>
+<td>Unique Entity Identifier SAM</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>cageCode</td>
 <td>string</td>
-<td>CAGE Code
-<br>Applicable to both SAM and non-SAM registrants</td>
+<td>CAGE Code</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
-<td>Legal Business Name
-<br>Applicable to both SAM and non-SAM registrants</td>
+<td>Legal Business Name</td>
 <td>v3</td>
 </tr>
 
@@ -2572,50 +2564,43 @@ samMonitoring
 <tr>
 <td>addressLine1</td>
 <td>string</td>
-<td>Address Line1
-<br>Applicable to both SAM and non-SAM registrants</td>
+<td>Address Line1</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>addressLine2</td>
 <td>string</td>
-<td>Address Line2
-<br>Applicable to both SAM and non-SAM registrants</td>
+<td>Address Line2</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>city</td>
 <td>string</td>
-<td>City
-<br>Applicable to both SAM and non-SAM registrants</td>
+<td>City</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>State or Province Code
-<br>Applicable to both SAM and non-SAM registrants</td>
+<td>State or Province Code</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>zipCode</td>
 <td>string</td>
-<td>Zip Code
-<br>Applicable to both SAM and non-SAM registrants</td>
+<td>Zip Code</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
-<td>Zip Plus4
-<br>Applicable to both SAM and non-SAM registrants</td>
+<td>Zip Plus4</td>
 <td>v3</td>
 </tr>
 <tr>
 <td>countryCode</td>
 <td>string</td>
-<td>Country Code
-<br>Applicable to both SAM and non-SAM registrants</td>
+<td>Country Code</td>
 <td>v3</td>
 </tr>
 </table>
@@ -2627,7 +2612,7 @@ samMonitoring
 <table>
 
 <tr>
-<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to SAM registrants</b></th>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b></th>
 </tr>
 
 <tr>
@@ -2980,12 +2965,10 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered or not registered/ID Assigned</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered or not registered/ID Assigned</b>
 </th>
 </tr>
-<tr>
-<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to SAM and Non registrants</b></th>
-</tr>
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -3042,11 +3025,8 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
-</tr>
-<tr>
-<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to SAM registrants</b></th>
 </tr>
 
 <tr>
@@ -3157,7 +3137,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -3256,7 +3236,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -3360,7 +3340,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -3396,7 +3376,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -3432,7 +3412,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -3475,7 +3455,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -3547,7 +3527,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -5839,7 +5819,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -6996,7 +6976,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -7053,7 +7033,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -7109,7 +7089,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -7253,7 +7233,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -7397,7 +7377,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -7541,7 +7521,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -7685,7 +7665,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -7829,7 +7809,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -7973,7 +7953,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -8107,7 +8087,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -8192,7 +8172,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -8277,7 +8257,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -8411,7 +8391,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -8496,7 +8476,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -8630,7 +8610,7 @@ samMonitoring
 </summary>
 <table>
 <tr>
-<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
 </th>
 </tr>
 <tr>
@@ -8819,7 +8799,7 @@ The API will return one of the following responses:
 
 ## Examples
 
-### Example 1: Post April 3rd 2022, get me the SAM-Registered Entities with Address Change and Name Change resulting from EVS Monitoring.
+### Example 1: Post April 3rd, 2022, I would like to obtain the registered entities that have undergo Address change and Name change resulting from EVS Monitoring.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiSAM=[ZQGGHJH74DW7~JH9ZARNKWKC7]&includeSections=entityRegistration,coreData
@@ -9598,7 +9578,7 @@ An Entity with a Name Change resulting from EVS Monitoring in v3:
 </p>
 </details>
 
-### Example 2: Post April 3rd 2022, get me the Publicly available non-SAM-Registered Entities.
+### Example 2: Post April 3rd, 2022, I would like to obtain the publicly available not registered/ID Assigned entities.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v3/entities?api_key=< API Key >&samRegistered=No&includeSections=entityRegistration
@@ -11799,7 +11779,7 @@ A Public non-SAM Registered entity:
 </p>
 </details>
 
-### Example 7:  I have a Fed System Account and the Role required to access non-SAM Registrant entities, both Public and NPDY. How can I obtain them?
+### Example 7:  I have a Fed System Account and the Role required to access the not registered/ID Assigned entities. How can I obtain them?
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v3/entities?api_key= < API Key >&samRegistered=No
@@ -11878,7 +11858,7 @@ An NPDY non-SAM Registered entity:
 </p>
 </details>
 
-### Example 8: Get a CSV file of Active SAM-registered Entities.
+### Example 8: I would like to obtain an asynchronous CSV file of the Active registered entities.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&registrationStatus=A
