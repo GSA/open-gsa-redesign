@@ -38,7 +38,7 @@ Following are the key features of the Entity Management Extract API:
 <table>
 <tr>
 <td>
-Coming Soon:<br>
+<b>Coming Soon:</b><br>
 The Public FAPIIS entities that are registered will be returned by the API. Please refer to the 
 “integrityInformation” references in this page.
 <ul> Alpha Deployment: 08/10/2022.
@@ -8807,7 +8807,7 @@ The API will return one of the following responses:
 
 ## Examples
 
-### Example 1: Post April 3rd, 2022, I would like to obtain the registered entities that have undergo Address change and Name change resulting from EVS Monitoring.
+### Example 1: Post April 3rd, 2022, I would like to obtain the registered entities that have undergone Address change and Name change resulting from EVS Monitoring.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiSAM=[ZQGGHJH74DW7~JH9ZARNKWKC7]&includeSections=entityRegistration,coreData
