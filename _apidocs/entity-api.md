@@ -2523,8 +2523,10 @@ samMonitoring
 </table>
 </details>
 
-<details style="padding-left: 20px;">
-<summary><b>integrityInformation Sub Section</b><br>
+</details>
+
+<details>
+<summary><b>integrityInformation</b><br>
 </summary>
 <details style="padding-left: 20px;">
 <summary><b>entitySummary Sub Section</b><br>
@@ -3130,8 +3132,6 @@ samMonitoring
 <td>v3</td>
 </tr>
 </table>
-</details>
-
 </details>
 
 </details>
@@ -11664,7 +11664,7 @@ V3:
 </details>
 
 
-### Example 6: : I am a FAPIIS/Navy user. How can I obtain FAPIIS data?
+### Example 6: I am a FAPIIS/Navy user. How can I obtain FAPIIS data?
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> 
@@ -11680,7 +11680,6 @@ V3:
 <p>
 <code style="font-family:Source Sans Pro; font-size: 18px">
 <pre>
-A Public non-SAM Registered entity:
 "entityData": [
 {
 "integrityInformation": {
@@ -11802,7 +11801,7 @@ Response for one Public and one NPDY record is provided.<br>
 <p>
 <code style="font-family:Source Sans Pro; font-size: 18px">
 <pre>
-A Public non-SAM Registered entity:
+A Public unregistered/ID Assigned entity:
 
 "entityData": [
 {
@@ -11832,7 +11831,7 @@ A Public non-SAM Registered entity:
 }
 },
 
-An NPDY non-SAM Registered entity:
+An NPDY unregistered/ID Assigned entity:
 
 "entityData": [
 {
