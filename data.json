@@ -37,6 +37,37 @@
             "theme": ["IT Initiatives"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "Acquisition Gateway Document Library API",
+            "description": "In addition to being published and available at Document Library, the documents for hallways.cap.gsa.gov is also available via APIs.",
+            "modified": "2022-08-04T13:52:48.671Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-08-04-02",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Farbod Sedghi",
+                "hasEmail": "mailto:farbod.sedghi@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://open.gsa.gov/api/ag-api/",
+                    "title": "Acquisition Gateway Document Library API"
+                }
+            ],
+            "keyword": ["acquisition", "api"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "Acquisition Workforce Annual Report 2006",
             "description": "This is the Federal Acquisition Institute's (FAI's) Annual demographic report on the Federal acquisition workforce, showing trends by occupational series, employment grade and educational level, as well as turnover and hiring data for fiscal year (FY) 2006.",
             "modified": "2009-01-31",
@@ -173,6 +204,37 @@
             "programCode": ["023:014"],
             "language": ["en-us"],
             "theme": ["Other"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Api.Data.Gov Admin API",
+            "description": "api.data.gov is a free API management service for federal agencies. The api.data.gov Admin API implements the API Umbrella Admin API and can be used by api.data.gov agency admins to perform admin operations and to query their API analytics.",
+            "modified": "2022-08-04T13:55:54.294Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-08-04-03",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "API Team",
+                "hasEmail": "mailto:api.data.gov@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://open.gsa.gov/api/apidatagov/",
+                    "title": "Api.Data.Gov Admin API"
+                }
+            ],
+            "keyword": ["api", "data"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
             "title": "Api.Data.Gov Metrics API",
@@ -806,6 +868,37 @@
                 }
             ],
             "keyword": ["category management", "contract", "contract inventory", "exploration", "vendor"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Contract Opportunities from SAM.gov",
+            "description": "Contract Opportunities data from SAM.gov",
+            "modified": "2022-08-04T13:47:28.294Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-08-04-01",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Federal Acquisition Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "IAE Outreach",
+                "hasEmail": "mailto:IAEOutreach@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://sam.gov/data-services/Contract%20Opportunities?privacy=Public",
+                    "title": "Contract Opportunities"
+                }
+            ],
+            "keyword": ["SAM.gov"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
@@ -3705,7 +3798,7 @@
             "@type": "dcat:Dataset",
             "title": "Federal Hiring Assessments and Selection Outcome Dataset",
             "description": "An Excel export of combined USA Staffing, Monster, Aviator (FAA) Hiring Assessment and Selection Outcome Data from the 24 CFO Act agencies.  We believe this data will empower Chief Human Capital Officers and Human Resources staff with the right data to focus on improved hiring outcomes while complying with open data requirements to increase transparency to the millions of applicants who apply for federal positions each year on USAJOBS.",
-            "modified": "2021-01-27T17:27:00.940Z",
+            "modified": "2022-07-28T10:14:34.842Z",
             "accessLevel": "public",
             "identifier": "GSA-2021-01-08-01",
             "dataQuality": true,
@@ -3726,14 +3819,14 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "hiring selections and outcomes public data set as of mar 31 2022 (Updated May 12 2022).csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/78936fe0-c86c-4bba-bcc8-f182da1efc4f/download/hiring-selections-and-outcomes-public-data-set-as-of-mar-31-2022-updated-may-12-2022.csv"
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "Data Dictionary for Federal Hiring Dataset June 30 2022.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/d2fa8702-1e44-4dd5-b178-9d03ccd4b8f1/download/data-dictionary-for-federal-hiring-dataset-june-30-2022.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
-                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "Data Dictionary for Federal Hiring Dataset March 31 2022 (Updated May 13 2022).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/4eeef60f-e105-40e7-8118-dc60c0bb6091/download/data-dictionary-for-federal-hiring-dataset-march-31-2022-updated-may-13-2022.xlsx"
+                    "mediaType": "text/csv",
+                    "title": "hiring selections and outcomes public data set as of June 30 2022.csv",
+                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/0abaacff-6015-4dbe-b5bf-48c2916c9047/download/hiring-selections-and-outcomes-public-data-set-as-of-june-30-2022.csv"
                 }
             ],
             "keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -5304,7 +5397,7 @@
             "@type": "dcat:Dataset",
             "title": "GSA Enterprise Data Inventory (EDI)",
             "description": "GSA Enterprise Data Inventory (EDI)",
-            "modified": "2022-07-14T18:58:27.316Z",
+            "modified": "2022-08-01T13:35:22.951Z",
             "accessLevel": "public",
             "identifier": "GSA-2015-11-13-01",
             "dataQuality": true,
@@ -5325,14 +5418,14 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 7.14.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/328c0fcf-45e1-4398-a829-972cf3560bcf/download/edi-7.14.json"
+                    "title": "EDI 8.15.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/127de6f3-f5cc-4cf5-8da5-6ba3a61d523a/download/edi-8.15.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
-            "language": ["us-EN"]
+            "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
             "title": "GSA Enterprise Roadmap",
@@ -5532,8 +5625,8 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
                     "format": "json",
-                    "title": "GSA FITARA Actions and Milestones 2022-05-12",
-                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the May 2022 quarterly submission to OMB on May 12, 2022.",
+                    "title": "GSA FITARA Actions and Milestones 2022-08-10",
+                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the August 2022 quarterly submission to OMB on August 10, 2022.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
                 }
@@ -5565,7 +5658,7 @@
                     "mediaType": "application/json",
                     "format": "JSON",
                     "title": "GSA IT Reform Cost Savings/Avoidance",
-                    "description": "GSA's May 2022 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+                    "description": "GSA's August 2022 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
                 }
@@ -5596,7 +5689,7 @@
                     "mediaType": "application/zip",
                     "format": "ZIP",
                     "title": "GSA IT Policy Archive Zip",
-                    "description": "Last update: 2022-06-06",
+                    "description": "Last update: 2022-08-10",
                     "downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
                 }
             ],
@@ -5938,13 +6031,13 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/a4c03688-0e52-49c7-abca-59e746918562/download/iolp-buildings.xlsx"
+                    "title": "IOLP Leases.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/c2ff341c-d6c5-45b4-8ff4-3d047599ca95/download/iolp-leases.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/9fcd02fa-1177-47bf-a4fe-2a1ce93a1dcb/download/iolp-leases.xlsx"
+                    "title": "IOLP Buildings.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/43c30c0d-557e-494f-b180-26a771fc4594/download/iolp-buildings.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
@@ -8098,6 +8191,42 @@
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "TotRevFY22_2ndQtr.xlsx",
                     "downloadURL": "https://inventory.data.gov/dataset/c7429acd-9484-41b5-90af-6fd9dffe21f2/resource/4e0d98c2-ce51-42e4-841b-cecb9365b79f/download/totrevfy22_2ndqtr.xlsx"
+                }
+            ],
+            "keyword": ["Networx Telecommunications", "networx business volume", "telecommunications"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Networx Business Volume FY 2022 3rd Qtr",
+            "description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+            "modified": "2022-08-15T14:37:12.454Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-08-15-01",
+            "dataQuality": true,
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Federal Acquisition Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "R/P3M",
+            "isPartOf": "GSA-2015-08-27",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Toni Holloway",
+                "hasEmail": "mailto:toni.holloway@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "TotRevFY22_3rdQtr.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/6aac7904-6086-4c5b-89c4-4e67fa4e6c59/resource/478f94b7-f8cb-4154-9224-63ed04e3b3f8/download/totrevfy22_3rdqtr.xlsx"
                 }
             ],
             "keyword": ["Networx Telecommunications", "networx business volume", "telecommunications"],
@@ -11086,7 +11215,7 @@
             "@type": "dcat:Dataset",
             "title": "Real Estate Across the United States (REXUS) Inventory (Building)",
             "description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-            "modified": "2021-01-04T15:59:39.946Z",
+            "modified": "2022-08-01T12:54:47.495Z",
             "accessLevel": "public",
             "identifier": "GSA-25251",
             "dataQuality": true,
@@ -11108,24 +11237,24 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "text/csv",
                     "title": "data_gov_bldg_rexus.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/77226374-f00d-4860-845d-317c8ee83cc9/download/data_gov_bldg_rexus.csv"
+                    "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/74b2bbfd-1370-4e9d-aae8-cf6acce31f46/download/data_gov_bldg_rexus.csv"
                 }
             ],
             "keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
-            "bureauCode": ["023:05"],
-            "programCode": ["023:004"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
             "title": "Real Estate Across the United States (REXUS) (Lease)",
             "description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-            "modified": "2020-12-01",
+            "modified": "2022-08-01T13:10:15.814Z",
             "accessLevel": "public",
             "identifier": "GSA-25261",
             "dataQuality": true,
             "issued": "2011-07-15",
             "license": "http://www.usa.gov/publicdomain/label/1.0/",
-            "spatial": "US",
+            "rights": "true",
             "publisher": {
                 "@type": "org:Organization",
                 "name": "General Services Administration"
@@ -11140,13 +11269,13 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "text/csv",
                     "title": "data_gov_lse_rexus.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/d1ae88a6-0063-4246-a5c6-cf94e9dbad70/download/data_gov_lse_rexus.csv"
+                    "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/8816a14e-eca2-4bb3-a7ad-ceb6625a3151/download/data_gov_lse_rexus.csv"
                 }
             ],
             "keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
-            "bureauCode": ["023:05"],
-            "programCode": ["023:003"],
-            "theme": ["Leases"]
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
             "title": "Closed-Paid Vouchers in Concur Government Edition (CGE)",
@@ -11547,6 +11676,37 @@
             "theme": ["API"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "Sustainable Facilities Tool API",
+            "description": "The SFTool API is simple, yet powerful. With it, you can surface a myriad of high performance building information. You will need to signup for an API key at https://sftool.gov/developer/apikey-signup/.\n\nAll of our API methods are HTTP GET and always return the latest data. Whether you\u2019re looking to add sustainable building information to your website or blog, or using this data to build an application, the SFTool API is here for you.\n\nMaking API calls is very straightforward. Our API is fully REST and provides semantic URIs to deliver the resources.",
+            "modified": "2022-08-04T14:00:40.482Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-08-04-04",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Office for Federal Building Health and Performance",
+                "hasEmail": "mailto:sftool@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://sftool.gov/developer",
+                    "title": "Sustainable Facilities Tool"
+                }
+            ],
+            "keyword": ["api", "sustainability"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "System for Award Management (SAM) API",
             "description": "The SAM API is a RESTful method of retrieving public information about the businesses, organizations, or individuals (referred to as entities) within the SAM entity regsitration data set. Public registration information can currently be retrieved on an entity-by-entity basis.\u00a0In addition, the SAM Search API offers both a 'quick search' and 'advanced search' method.",
             "modified": "2019-11-26",
@@ -11866,6 +12026,37 @@
             "programCode": ["023:019"],
             "language": ["en-us"],
             "theme": ["Information Technology"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "US Digital Registry API",
+            "description": "To help prevent exploitation from unofficial sources, phishing scams, or malicious entities, the U.S. Digital Registry serves as a crowdsource resource for agencies, citizens, and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps, and mobile websites. The accounts in the registry are independently updated by federal managers across the government who maintain individual agency accounts.",
+            "modified": "2022-08-04T14:03:20.390Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-08-04-05",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "US Digital Registry Team",
+                "hasEmail": "mailto:usdigitalregistry@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://open.gsa.gov/api/digital-registry/",
+                    "title": "US Digital Registry API"
+                }
+            ],
+            "keyword": ["api", "digital repositry"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
             "title": "Vehicle Rates API",
