@@ -268,6 +268,12 @@ Note that the results are ordered in descending alphabetical order for the `targ
 ## OpenAPI Specification File
 
 You can view the full details of this API in the <a href="https://api.gsa.gov/technology/site-scanning/v1/api-json?api_key=DEMO_KEY">OpenAPI Specification file available here</a>.
+   
+<p><small><a href="#">Back to top</a></small></p>
+
+## Data Dictionary
+
+You can find a complete description of each field in the <a href="https://github.com/GSA/site-scanning-documentation/blob/main/data/Site_Scanning_Data_Dictionary.csv">Site Scanning data dictionary</a>.
 
 <p><small><a href="#">Back to top</a></small></p>
 
