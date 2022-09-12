@@ -167,7 +167,7 @@ submissionType should be set to API.
   
 ## Data Limitations
 
-A recent [GAO report](https://www.gao.gov/products/gao-21-103181) expressed concerns over whether comment data is fully described to the public, including any limitations. Various aspects of the commenting process can create limitations for certain external users of public comment data and some data fields are managed solely by agencies. For agency-specific commenting practices, contact <a href="mailto:eRulemaking@gsa.gov">eRulemaking@gsa.gov</a>. The Open API Specification document has been updated with information on agency configurable fields. For convenience, the data is also provided below in a concise format:
+A recent [GAO report](https://www.gao.gov/products/gao-21-103181) expressed concerns over whether comment data is fully described to the public, including any limitations. Various aspects of the commenting process can create limitations for certain external users of public comment data and some data fields are managed solely by agencies. For agency-specific commenting practices, contact eRulemaking@gsa.gov. The Open API Specification document has been updated with information on agency configurable fields. For convenience, the data is also provided below in a concise format:
   
 #### List of fields that are always publicly viewable on a comment
   
