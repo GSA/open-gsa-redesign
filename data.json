@@ -5418,8 +5418,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 9.8.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/2e721c97-8f8d-4afe-8c90-97bc84bd4be7/download/edi-9.8.json"
+                    "title": "EDI 9.15.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/cd5c1791-018e-4e4c-bcd0-914a6cb04300/download/edi-9.15.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5689,7 +5689,7 @@
                     "mediaType": "application/zip",
                     "format": "ZIP",
                     "title": "GSA IT Policy Archive Zip",
-                    "description": "Last update: 2022-08-10",
+                    "description": "Last update: 2022-09-15",
                     "downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
                 }
             ],
@@ -6031,13 +6031,13 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/407bb6b5-0735-40ec-8f3a-d1139d508332/download/iolp-leases-2.xlsx"
+                    "title": "IOLP Buildings (2).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/23be5ef2-a177-4c27-abea-3863a95c8390/download/iolp-buildings-2.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/766aeab6-f8d0-455f-857f-da804bf1ba64/download/iolp-buildings-2.xlsx"
+                    "title": "IOLP Leases (2).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/f3386360-f3d3-43d0-ab77-171391eb0e1b/download/iolp-leases-2.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
