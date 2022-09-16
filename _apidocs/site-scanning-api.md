@@ -122,7 +122,7 @@ The endpoint begins at [https://api.gsa.gov/technology/site-scanning/v1/websites
 
 #### Scans 
 
-The scan API has two endpoints:
+The scan API has two endpoints for scan data:
   - `/websites/` returns scan data for all targeted websites.  This is a paginated endpoint, so to see all the data, you will need to iterate through all the pages.
   - `/websites/[target_url]` returns scan data for a particular website (specified by replacing `[target_url]` with the desired target url.  
 
@@ -141,6 +141,14 @@ The `/websites/` endpoint can be queried in numerous ways.
 * `dap_detected_final_url` 
 
 In order to filter by multiple parameters, include an `&` in between each.   
+
+#### Example Analysis Queries
+
+* https://api.gsa.gov/technology/site-scanning/v1/websites?target_url_domain=gsa.gov
+* https://api.gsa.gov/technology/site-scanning/v1/websites?final_url_domain=gsa.gov
+* https://api.gsa.gov/technology/site-scanning/v1/websites?target_url_agency_owner=General%20Services%20Administration
+* https://api.gsa.gov/technology/site-scanning/v1/websites?final_url_domain=gsa.gov&target_url_redirects=true
+
 
 #### Pagination and Limits
 
@@ -262,6 +270,23 @@ Note that the results are ordered in descending alphabetical order for the `targ
   "source_list_pulse": true
 }
 ```
+
+#### Analysis Endpoint
+
+There is also an analysis endpoint located at [https://api.gsa.gov/technology/site-scanning/v1/analysis](https://api.gsa.gov/technology/site-scanning/v1/analysis)
+   
+Instead of scan data, it returns some analysis on an API query, namely: 
+
+* How many websites it returns - (target_url)
+* How many domains are represented in the results - (final_url_domain)
+* How many agencies are represented in the results - (target_url_domain_owners)
+
+#### Example Analysis Queries
+
+* https://api.gsa.gov/technology/site-scanning/v1/analysis
+* https://api.gsa.gov/technology/site-scanning/v1/analysis?target_url_domain=gsa.gov
+* https://api.gsa.gov/technology/site-scanning/v1/analysis?final_url_domain=gsa.gov&target_url_redirects=true
+* https://api.gsa.gov/technology/site-scanning/v1/analysis?target_url_agency_owner=General%20Services%20Administration
 
 <p><small><a href="#">Back to top</a></small></p>
 
