@@ -40,8 +40,6 @@ paths:
           description: Successfully downloaded file
           content:
             application/hal+json:
-              schema:
-                $ref: '#/components/schemas/ResponseEntity'
         401:
           description: You are not authorized to view the resource
           content: {}
@@ -275,16 +273,10 @@ paths:
         in: query
         schema:
           type: string
-      - name: ueiDUNS
-        in: query
-        description: Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652,
-          047795005, null)
-        schema:
-          type: string
       - name: ueiSAM
         in: query
-        description: Unique Entity Identifier SAMMI- 12 digit value - Replacement
-          for ueiDUNS
+        description: Unique Entity Identifier SAM- 12 digit value - Replacement
+          for ueiSAM
         schema:
           type: string
       - name: updateDate
@@ -303,8 +295,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/hal+json:
-              schema:
-                $ref: '#/components/schemas/ExclusionsResponse'
         401:
           description: You are not authorized to view the resource
           content: {}
@@ -537,16 +527,10 @@ paths:
         in: query
         schema:
           type: string
-      - name: ueiDUNS
-        in: query
-        description: Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652,
-          047795005, null)
-        schema:
-          type: string
       - name: ueiSAM
         in: query
-        description: Unique Entity Identifier SAMMI- 12 digit value - Replacement
-          for ueiDUNS
+        description: Unique Entity Identifier SAM- 12 digit value - Replacement
+          for ueiSAM
         schema:
           type: string
       - name: updateDate
@@ -565,8 +549,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/hal+json:
-              schema:
-                $ref: '#/components/schemas/ExclusionsResponseV2'
         401:
           description: You are not authorized to view the resource
           content: {}
@@ -595,8 +577,6 @@ paths:
           description: Successfully downloaded file
           content:
             application/hal+json:
-              schema:
-                $ref: '#/components/schemas/ResponseEntity'
         401:
           description: You are not authorized to view the resource
           content: {}
@@ -830,16 +810,10 @@ paths:
         in: query
         schema:
           type: string
-      - name: ueiDUNS
-        in: query
-        description: Unique Entity Identifier DUNS- 9 digit value (9725565, TF118652,
-          047795005, null)
-        schema:
-          type: string
       - name: ueiSAM
         in: query
-        description: Unique Entity Identifier SAMMI- 12 digit value - Replacement
-          for ueiDUNS
+        description: Unique Entity Identifier SAM- 12 digit value - Replacement
+          for ueiSAM
         schema:
           type: string
       - name: updateDate
@@ -858,8 +832,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/hal+json:
-              schema:
-                $ref: '#/components/schemas/ExclusionsResponseV3'
         401:
           description: You are not authorized to view the resource
           content: {}

@@ -51,7 +51,7 @@ banner-button-link: https://catalog.data.gov/organization/gsa-gov
                 {% for data in site.data.data %}
                     <article class="data-listing">
                         <header>
-                            <h3 class="title">{{ data.title }}</h3>
+                            <h3 class="title" id="{{ data.title | replace: " ", "-" }}_{{forloop.index}}">{{ data.title }}</h3>
                         </header>
                         <div class="content">
                             <p class="txt">

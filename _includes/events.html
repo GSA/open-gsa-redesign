@@ -10,7 +10,7 @@
               <div class="thumb" style="background-image: url({{ event.image | prepend: site.baseurl }});"></div>
             </a>
             <div class="infos">
-                <h3 class="title">{{ event.title }}</h3>
+                <h3 class="title" id="{{event.title | replace: " ", "-" }}_{{forloop.index}}">{{ event.title }}</h3>
                 <h4 class="date">{{ event.date }}</h4>
                 <p class="location">{{ event.location }}</p>
                 <p class="txt">

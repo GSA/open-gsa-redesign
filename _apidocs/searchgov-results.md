@@ -237,6 +237,6 @@ To fully implement this, you will have to add logic that will process this respo
 
 ## Contact Us
 
-Please never hesitate to reach out! [Email the Search.gov team](mailto:search@support.digitalgov.gov). 
+Please never hesitate to reach out! [Email the Search.gov team](mailto:search@gsa.gov). 
 
 <p><small><a href="#">Back to top</a></small></p>

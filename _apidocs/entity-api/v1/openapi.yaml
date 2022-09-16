@@ -40,8 +40,6 @@ paths:
           description: OK
           content:
             application/zip:
-              schema:
-                $ref: '#/components/schemas/ResponseEntity'
         401:
           description: Unauthorized
           content: {}
@@ -73,8 +71,6 @@ paths:
           description: OK
           content:
             application/zip:
-              schema:
-                $ref: '#/components/schemas/ResponseEntity'
         201:
           description: Created
           content: {}
@@ -120,21 +116,15 @@ paths:
         description: 9 character value
         schema:
           type: string
-      - name: ueiDUNS
-        in: query
-        description: Unique Entity Identifier DUNS- 9 digit value; a maximum of up
-          to 100 values can be sent
-        schema:
-          type: string
       - name: ueiSAM
         in: query
         description: Unique Entity Identifier SAM- 12 digit value; a maximum of up
-          to 100 values can be sent (This will replace ueiDUNS)
+          to 100 values can be sent 
         schema:
           type: string
       - name: entityEFTIndicator
         in: query
-        description: EFT indicator aka dunsPlus4
+        description: EFT indicator
         schema:
           type: string
       - name: entityStructureCode
@@ -410,15 +400,9 @@ paths:
         description: Highest Employee Security Level Description
         schema:
           type: string
-      - name: ultimateParentUEIDUNS
-        in: query
-        description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
-        schema:
-          type: string
       - name: ultimateParentUEISAM
         in: query
         description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value
-          (This will replace ultimateParentUEIDUNS)
         schema:
           type: string
       - name: agencyBusinessPurposeCode
@@ -545,8 +529,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/EMResponse'
         401:
           description: You are not authorized to view the resource
           content: {}
@@ -588,21 +570,15 @@ paths:
         description: 9 character value
         schema:
           type: string
-      - name: ueiDUNS
-        in: query
-        description: Unique Entity Identifier DUNS- 9 digit value; a maximum of up
-          to 100 values can be sent
-        schema:
-          type: string
       - name: ueiSAM
         in: query
         description: Unique Entity Identifier SAM- 12 digit value; a maximum of up
-          to 100 values can be sent (This will replace ueiDUNS)
+          to 100 values can be sent 
         schema:
           type: string
       - name: entityEFTIndicator
         in: query
-        description: EFT indicator aka dunsPlus4
+        description: EFT indicator
         schema:
           type: string
       - name: entityStructureCode
@@ -878,15 +854,10 @@ paths:
         description: Highest Employee Security Level Description
         schema:
           type: string
-      - name: ultimateParentUEIDUNS
-        in: query
-        description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
-        schema:
-          type: string
       - name: ultimateParentUEISAM
         in: query
         description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value
-          (This will replace ultimateParentUEIDUNS)
+          (This will replace ultimateParentUEISAM)
         schema:
           type: string
       - name: agencyBusinessPurposeCode
@@ -1013,8 +984,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/EMResponse'
         201:
           description: Created
           content: {}
@@ -1060,21 +1029,15 @@ paths:
         description: 9 character value
         schema:
           type: string
-      - name: ueiDUNS
-        in: query
-        description: Unique Entity Identifier DUNS- 9 digit value; a maximum of up
-          to 100 values can be sent
-        schema:
-          type: string
       - name: ueiSAM
         in: query
         description: Unique Entity Identifier SAM- 12 digit value; a maximum of up
-          to 100 values can be sent (This will replace ueiDUNS)
+          to 100 values can be sent 
         schema:
           type: string
       - name: entityEFTIndicator
         in: query
-        description: EFT indicator aka dunsPlus4
+        description: EFT indicator
         schema:
           type: string
       - name: entityStructureCode
@@ -1334,15 +1297,9 @@ paths:
         description: Highest Employee Security Level Description
         schema:
           type: string
-      - name: ultimateParentUEIDUNS
-        in: query
-        description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
-        schema:
-          type: string
       - name: ultimateParentUEISAM
         in: query
         description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value
-          (This will replace ultimateParentUEIDUNS)
         schema:
           type: string
       - name: agencyBusinessPurposeCode
@@ -1494,8 +1451,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/EMResponseV2'
         401:
           description: You are not authorized to view the resource
           content: {}
@@ -1537,21 +1492,15 @@ paths:
         description: 9 character value
         schema:
           type: string
-      - name: ueiDUNS
-        in: query
-        description: Unique Entity Identifier DUNS- 9 digit value; a maximum of up
-          to 100 values can be sent
-        schema:
-          type: string
       - name: ueiSAM
         in: query
         description: Unique Entity Identifier SAM- 12 digit value; a maximum of up
-          to 100 values can be sent (This will replace ueiDUNS)
+          to 100 values can be sent 
         schema:
           type: string
       - name: entityEFTIndicator
         in: query
-        description: EFT indicator aka dunsPlus4
+        description: EFT indicator
         schema:
           type: string
       - name: entityStructureCode
@@ -1811,15 +1760,9 @@ paths:
         description: Highest Employee Security Level Description
         schema:
           type: string
-      - name: ultimateParentUEIDUNS
-        in: query
-        description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
-        schema:
-          type: string
       - name: ultimateParentUEISAM
         in: query
         description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value
-          (This will replace ultimateParentUEIDUNS)
         schema:
           type: string
       - name: agencyBusinessPurposeCode
@@ -1971,8 +1914,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/EMResponseV2'
         201:
           description: Created
           content: {}
@@ -2008,8 +1949,6 @@ paths:
           description: OK
           content:
             application/zip:
-              schema:
-                $ref: '#/components/schemas/ResponseEntity'
         401:
           description: Unauthorized
           content: {}
@@ -2041,8 +1980,6 @@ paths:
           description: OK
           content:
             application/zip:
-              schema:
-                $ref: '#/components/schemas/ResponseEntity'
         201:
           description: Created
           content: {}
@@ -2088,21 +2025,15 @@ paths:
         description: 9 character value
         schema:
           type: string
-      - name: ueiDUNS
-        in: query
-        description: Unique Entity Identifier DUNS- 9 digit value; a maximum of up
-          to 100 values can be sent
-        schema:
-          type: string
       - name: ueiSAM
         in: query
         description: Unique Entity Identifier SAM- 12 digit value; a maximum of up
-          to 100 values can be sent (This will replace ueiDUNS)
+          to 100 values can be sent 
         schema:
           type: string
       - name: entityEFTIndicator
         in: query
-        description: EFT indicator aka dunsPlus4
+        description: EFT indicator
         schema:
           type: string
       - name: entityStructureCode
@@ -2362,15 +2293,9 @@ paths:
         description: Highest Employee Security Level Description
         schema:
           type: string
-      - name: ultimateParentUEIDUNS
-        in: query
-        description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
-        schema:
-          type: string
       - name: ultimateParentUEISAM
         in: query
         description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value
-          (This will replace ultimateParentUEIDUNS)
         schema:
           type: string
       - name: agencyBusinessPurposeCode
@@ -2522,8 +2447,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/EMResponseV3'
         401:
           description: You are not authorized to view the resource
           content: {}
@@ -2565,21 +2488,15 @@ paths:
         description: 9 character value
         schema:
           type: string
-      - name: ueiDUNS
-        in: query
-        description: Unique Entity Identifier DUNS- 9 digit value; a maximum of up
-          to 100 values can be sent
-        schema:
-          type: string
       - name: ueiSAM
         in: query
         description: Unique Entity Identifier SAM- 12 digit value; a maximum of up
-          to 100 values can be sent (This will replace ueiDUNS)
+          to 100 values can be sent 
         schema:
           type: string
       - name: entityEFTIndicator
         in: query
-        description: EFT indicator aka dunsPlus4
+        description: EFT indicator
         schema:
           type: string
       - name: entityStructureCode
@@ -2839,15 +2756,9 @@ paths:
         description: Highest Employee Security Level Description
         schema:
           type: string
-      - name: ultimateParentUEIDUNS
-        in: query
-        description: Ultimate Parent Unique Entity Identifier DUNS- 9 digit value
-        schema:
-          type: string
       - name: ultimateParentUEISAM
         in: query
         description: Ultimate Parent Unique Entity Identifier SAM- 12 digit value
-          (This will replace ultimateParentUEIDUNS)
         schema:
           type: string
       - name: agencyBusinessPurposeCode
@@ -2999,8 +2910,6 @@ paths:
           description: Successfully retrieved list
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/EMResponseV3'
         201:
           description: Created
           content: {}

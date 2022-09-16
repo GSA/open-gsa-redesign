@@ -51,7 +51,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
     // This can be any API endpoint on your server, and you can use the
     // special {{api_key}} variable to automatically substitute in the API
     // key the user just signed up for.
-    exampleApiUrl: 'https://api.gsa.gov/technology/site-scanning/v1/websites?api_key={{api_key}}',
+    // exampleApiUrl: 'https://api.gsa.gov/technology/site-scanning/v1/websites?api_key={{api_key}}',
 
 
 
@@ -67,7 +67,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
     // OPTIONAL: Set to true to verify the user's e-mail address by only
     // sending them their API key via e-mail, and not displaying it on the
     // signup confirmation web page. Defaults to false.
-    // verifyEmail: true,
+    verifyEmail: true,
 
     // OPTIONAL: Set to false to disable sending a welcome e-mail to the
     // user after signing up. Defaults to true.
@@ -176,79 +176,90 @@ Note that the results are ordered in descending alphabetical order for the `targ
 
 ```
 {
-   "scan_date":"2021-01-10T13:49:22.125Z",
-   "target_url_domain":"usps.gov",
-   "scan_status":"completed",
-   "final_url":"https://dbcalc.usps.com/",
-   "final_url_live":true,
-   "final_url_domain":"usps.com",
-   "final_url_MIMEType":"text/html",
-   "final_url_same_domain":false,
-   "final_url_status_code":200,
-   "final_url_same_website":false,
-   "target_url_404_test":false,
-   "target_url_redirects":true,
-   "solutions_scan_status":"completed",
-   "uswds_usa_classes":0,
-   "uswds_string":0,
-   "uswds_tables":-20,
-   "uswds_inline_css":0,
-   "uswds_favicon":0,
-   "uswds_string_in_css":0,
-   "uswds_favicon_in_css":0,
-   "uswds_merriweather_font":0,
-   "uswds_publicsans_font":0,
-   "uswds_source_sans_font":0,
-   "uswds_semantic_version":null,
-   "uswds_version":0,
-   "uswds_count":-20,
-   "dap_detected_final_url":true,
-   "dap_parameters_final_url":{
-      "agency":"USPS"
-   },
-   "og_title_final_url":null,
-   "og_description_final_url":null,
-   "og_article_published_final_url":null,
-   "og_article_modified_final_url":null,
-   "main_element_present_final_url":false,
-   "robots_txt_final_url":"https://dbcalc.usps.com/robots.txt",
-   "robots_txt_final_url_status_code":200,
-   "robots_txt_final_url_live":true,
-   "robots_txt_detected":true,
-   "robots_txt_final_url_MIMETYPE":"text/plain",
-   "robots_txt_target_url_redirects":true,
-   "robots_txt_final_url_size_in_bytes":165,
-   "robots_txt_crawl_delay":null,
-   "robots_txt_sitemap_locations":null,
-   "sitemap_xml_detected":true,
-   "sitemap_xml_final_url_status_code":200,
-   "sitemap_xml_final_url":"https://dbcalc.usps.com/sitemap.xml",
-   "sitemap_xml_final_url_live":true,
-   "sitemap_xml_target_url_redirects":true,
-   "sitemap_xml_final_url_filesize_in_bytes":16455,
-   "sitemap_xml_final_url_MIMETYPE":"text/html",
-   "sitemap_xml_count":0,
-   "sitemap_xml_pdf_count":0,
-   "third_party_service_domains":[
-      "www.googletagmanager.com",
-      "www.google-analytics.com",
-      "dap.digitalgov.gov",
-      "connect.facebook.net",
-      "static.ads-twitter.com",
-      "s.pinimg.com",
-      "alb.reddit.com",
-      "t.co",
-      "ct.pinterest.com",
-      "www.facebook.com",
-      "analytics.twitter.com"
-   ],
-   "third_party_service_count":11,
-   "target_url":"dbcalc.usps.gov",
-   "target_url_branch":"Executive",
-   "target_url_agency_owner":"United States Postal Service",
-   "target_url_agency_code":null,
-   "target_url_bureau_owner":"U.S. Postal Service",
-   "target_url_bureau_code":null
+  "scan_date": "2022-06-29T00:30:02.908Z",
+  "not_found_scan_status": "completed",
+  "primary_scan_status": "completed",
+  "robots_txt_scan_status": "completed",
+  "sitemap_xml_scan_status": "completed",
+  "dns_scan_status": "completed",
+  "target_url_domain": "gsa.gov",
+  "final_url": "https://www.gsa.gov/",
+  "final_url_live": true,
+  "final_url_domain": "gsa.gov",
+  "final_url_mimetype": "text/html",
+  "final_url_same_domain": true,
+  "final_url_status_code": 200,
+  "final_url_same_website": false,
+  "target_url_404_test": true,
+  "target_url_redirects": true,
+  "uswds_usa_classes": 55,
+  "uswds_string": 2,
+  "uswds_tables": 0,
+  "uswds_inline_css": 3,
+  "uswds_favicon": 20,
+  "uswds_string_in_css": 20,
+  "uswds_favicon_in_css": 0,
+  "uswds_merriweather_font": 0,
+  "uswds_publicsans_font": 0,
+  "uswds_source_sans_font": 5,
+  "uswds_semantic_version": "v3.0.1",
+  "uswds_version": 20,
+  "uswds_count": 125,
+  "dap_detected_final_url": true,
+  "dap_parameters_final_url": {
+    "agency": "GSA",
+    "subagency": "OSC",
+    "sp": "query",
+    "enhlink": "true",
+    "yt": "false"
+  },
+  "og_title_final_url": "Home",
+  "og_description_final_url": "Front Page for the GSA.gov website",
+  "og_article_published_final_url": null,
+  "og_article_modified_final_url": null,
+  "main_element_present_final_url": true,
+  "robots_txt_final_url": "https://www.gsa.gov/robots.txt",
+  "robots_txt_final_url_status_code": 200,
+  "robots_txt_final_url_live": true,
+  "robots_txt_detected": true,
+  "robots_txt_final_url_mimetype": "text/plain",
+  "robots_txt_target_url_redirects": true,
+  "robots_txt_final_url_filesize_in_bytes": 2189,
+  "robots_txt_crawl_delay": 10,
+  "robots_txt_sitemap_locations": null,
+  "sitemap_xml_detected": false,
+  "sitemap_xml_final_url_status_code": 404,
+  "sitemap_xml_final_url": "https://www.gsa.gov/sitemap.xml",
+  "sitemap_xml_final_url_live": false,
+  "sitemap_xml_target_url_redirects": true,
+  "sitemap_xml_final_url_filesize_in_bytes": null,
+  "sitemap_xml_final_url_mimetype": "text/html",
+  "sitemap_xml_count": null,
+  "sitemap_xml_pdf_count": null,
+  "third_party_service_domains": [
+    "8808.global.siteimproveanalytics.io",
+    "dap.digitalgov.gov",
+    "gsasolutionssecure.gsa.gov",
+    "img03.en25.com",
+    "maps.googleapis.com",
+    "search.usa.gov",
+    "siteimproveanalytics.com",
+    "www.google-analytics.com",
+    "www.googletagmanager.com",
+    "zn5alubksv6xx7dxv-cemgsa.gov1.siteintercept.qualtrics.com"
+  ],
+  "third_party_service_count": 10,
+  "dns_ipv6": true,
+  "login_detected": null,
+  "target_url": "gsa.gov",
+  "target_url_branch": "Executive",
+  "target_url_agency_owner": "General Services Administration",
+  "target_url_agency_code": 23,
+  "target_url_bureau_owner": "GSA, IDI, ECAS II",
+  "target_url_bureau_code": null,
+  "source_list_federal_domains": true,
+  "source_list_dap": true,
+  "source_list_pulse": true
 }
 ```
 
@@ -257,6 +268,12 @@ Note that the results are ordered in descending alphabetical order for the `targ
 ## OpenAPI Specification File
 
 You can view the full details of this API in the <a href="https://api.gsa.gov/technology/site-scanning/v1/api-json?api_key=DEMO_KEY">OpenAPI Specification file available here</a>.
+   
+<p><small><a href="#">Back to top</a></small></p>
+
+## Data Dictionary
+
+You can find a complete description of each field in the <a href="https://github.com/GSA/site-scanning-documentation/blob/main/data/Site_Scanning_Data_Dictionary.csv">Site Scanning data dictionary</a>.
 
 <p><small><a href="#">Back to top</a></small></p>
 

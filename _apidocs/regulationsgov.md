@@ -14,7 +14,7 @@ When Congress passes laws, federal agencies implement those laws through regulat
 
 ## Getting Started
 
-To begin using this API, you will need to register for an API Key. You can sign up for an API key here: [API key signup page on api.data.gov](https://api.data.gov/signup/).
+To begin using this API, you will need to register for an API Key below. 
 
 If you want to use commenting API, you MUST use the form below to register for an API key.
 
