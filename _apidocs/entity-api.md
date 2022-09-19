@@ -551,18 +551,29 @@ or any digit postal code for non-US postal codes, for entities that are not regi
 <tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections.
-<br>The applicable sections for the entities that are registered are entityRegistration, coreData, assertions, 
-pointsOfContact, repsAndCerts, All and integrityInformation.
+<br>
+For registered entities: 
+<br>The applicable sections are entityRegistration, coreData, assertions, pointsOfContact, repsAndCerts, All and integrityInformation.
 <ul>
 <li>The repsAndCerts section will be returned only if explicitly requested.</li>
-<li>To request all the sections, provide a value of 'All'.</li>
-<li>The integrityInformation section is newly added specifically to the v3 API. It is not included in ‘All’, 
-so it must be explicitly requested.</li>
+<li>To request all the sections (entityRegistration, coreData, assertions, pointsOfContact and repsAndCerts), provide a value of 'All'.
+</li>
+<li>The integrityInformation section is newly added specifically to the v3 API. It is not included in ‘All’, so it must be explicitly requested.</li>
 </ul>
-<br>Examples: includeSections=entityRegistration,coreData; includeSections=integrityInformation,All; includeSections=repsAndCerts.
-<br><br>The applicable sections for the entities that are not registered/ID Assigned are entityRegistration and coreData.
-<br><br>Examples: includeSections=entityRegistration,coreData; includeSections=All; 
+<br>Examples:
+includeSections=entityRegistration,coreData;<br> 
+includeSections=integrityInformation,All;<br>
 includeSections=repsAndCerts.
+
+<br><br>For not registered/ID Assigned entities: 
+<br>The applicable sections are entityRegistration, coreData, All and integrityInformation.
+<ul>
+<li>To request both the sections (entityRegistration and coreData), provide a value of 'All'.</li>
+<li>The integrityInformation section is newly added specifically to the v3 API. It is not included in ‘All’, so it must be explicitly requested.</li>
+</ul>
+<br><br>Examples: 
+<br>includeSections=entityRegistration,coreData;
+<br>includeSections=integrityInformation,All
 </td>
 <td>v1<br>v2<br>v3</td>
 </tr>
@@ -2967,6 +2978,37 @@ samMonitoring
 <td>Country Code</td>
 <td>v3</td>
 </tr>
+</table>
+</details>
+
+<details style="padding-left: 20px;">
+<summary><b>responsibilityInformationCount Sub Section</b><br>
+</summary>
+<table>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data 
+</th>
+</tr>
+
+<tr>
+<td>responsibilityInformationCount</td>
+<td>string</td>
+<td>Responsibility Information Counter</td>
+<td>v3</td>
+</tr>
+
 </table>
 </details>
 
@@ -11664,15 +11706,15 @@ V3:
 </details>
 
 
-### Example 6: How can I obtain "Responsibility & Integrity Record" data?
+### Example 6: How do I obtain both the Public and NPDY registered “Responsibility & Integrity Record” data with my Public API Key?
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> 
-<br><br>https://api.sam.gov/entity-information/v3/entities?api_key= < PUBLIC API Key >&ueiSAM=DE95TS6Y5XR6&includeSections=integrityInformation
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key=< PUBLIC API Key >&includeSections=integrityInformation
 <br><br>
 <b>Alpha URL:</b> 
-<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< PUBLIC API Key >&ueiSAM=DE95TS6Y5XR6&includeSections=integrityInformation
 <br><br>
+https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< PUBLIC API Key >& includeSections=entityRegistration,integrityInformation<br><br>
 </details>
 
 <details>
@@ -11681,6 +11723,31 @@ V3:
 <code style="font-family:Source Sans Pro; font-size: 18px">
 <pre>
 "entityData": [
+{
+      "entityRegistration": {
+        "samRegistered": "Yes",
+        "ueiSAM": "DE95TS6Y5XR6",
+        "entityEFTIndicator": null,
+        "cageCode": "CJ542",
+        "dodaac": null,
+        "legalBusinessName": "ng4T GmbH",
+        "dbaName": null,
+        "purposeOfRegistrationCode": "Z2",
+        "purposeOfRegistrationDesc": "All Awards",
+        "registrationStatus": "Active",
+        "evsSource": "D&B",
+        "registrationDate": "2016-05-09",
+        "lastUpdateDate": "2022-05-20",
+        "registrationExpirationDate": "2022-05-20",
+        "activationDate": "2021-05-20",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": null,
+        "ueiCreationDate": "2020-06-18",
+        "publicDisplayFlag": "Y",
+        "exclusionStatusFlag": "N",
+        "exclusionURL": null,
+        "dnbOpenData": null
+      },
 {
 "integrityInformation": {
 "entitySummary": {
@@ -11741,6 +11808,7 @@ V3:
 },
 }
 },
+"responsibilityInformationCount": 2,
 "responsibilityInformationList": [
 {
 "recordType": "C",
@@ -11779,14 +11847,223 @@ V3:
 ]
 }
 }
-}
-]
+},
+{
+"entityRegistration": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+"integrityInformation": {
+        "entitySummary": {
+          "ueiSAM": "VNP5VWMPAEF3",
+          "cageCode": null,
+          "legalBusinessName": "Harrisonburg Rescue Squad Inc",
+          "physicalAddress": {
+            "addressLine1": "Address1",
+            "addressLine2": "Address2",
+            "city": "City",
+            "stateOrProvinceCode": "XX",
+            "zipCode": "11111",
+            "zipCodePlus4": "1111",
+            "countryCode": "ABC"
+          }
+        },
+        "proceedingsData": {
+          "proceedingsQuestion1": null,
+          "proceedingsQuestion2": null,
+          "proceedingsQuestion3": null,
+          "listOfProceedings": [
+            {
+              "proceedingDate": null,
+              "instrumentNumber": null,
+              "instrument": null,
+              "proceedingStateCode": null,
+              "proceedingType": null,
+              "disposition": null,
+              "proceedingDescription": null
+            }
+          ],
+          "proceedingsPointsOfContact": {
+            "proceedingsPOC": {
+              "firstName": null,
+              "middleInitial": null,
+              "lastName": null,
+              "title": null,
+              "addressLine1": null,
+              "addressLine2": null,
+              "city": null,
+              "stateOrProvinceCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null,
+              "countryCode": null
+            },
+            "proceedingsAlternatePOC": {
+              "firstName": null,
+              "middleInitial": null,
+              "lastName": null,
+              "title": null,
+              "addressLine1": null,
+              "addressLine2": null,
+              "city": null,
+              "stateOrProvinceCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null,
+              "countryCode": null
+            }
+          }
+        },
+        "responsibilityInformationCount": 1,
+        "responsibilityInformationList": [
+          {
+            "recordType": "C",
+            "recordTypeDesc": "Termination for Cause",
+            "recordDate": "2019-02-15",
+            "procurementIdOrFederalAssistanceId": "W912DQ18C1026",
+            "referenceIdvPiid": null,
+            "attachment": "< Pre-signed URL >"
+          }
+        ],
+        "corporateRelationships": {
+          "highestOwner": {
+            "legalBusinessName": null,
+            "cageCode": null,
+            "integrityRecords": "N/A"
+          },
+          "immediateOwner": {
+            "legalBusinessName": null,
+            "cageCode": null,
+            "integrityRecords": "N/A"
+          },
+          "predecessorsList": [
+            {
+              "legalBusinessName": null,
+              "cageCode": null,
+              "integrityRecords": "N/A"
+            }
+          ]
+        }
+      }
+    }
+  ]
 </pre>
 </code>
 </p>
 </details>
 
-### Example 7:  I have a Fed System Account and the Role required to access the not registered/ID Assigned entities. How can I obtain them?
+### Example 7: How do I obtain both the Public and NPDY not registered/ID Assigned “Responsibility & Integrity Record” data with my Public API Key?
+
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b> 
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key=< PUBLIC API Key >&samRegistered=No&includeSections=integrityInformation,All
+<br><br>
+<b>Alpha URL:</b> 
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< PUBLIC API Key >&samRegistered=No&includeSections=integrityInformation,All
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+<p>
+<code style="font-family:Source Sans Pro; font-size: 18px">
+<pre>
+{
+      "entityRegistration": {
+        "samRegistered": "No",
+        "ueiSAM": "WB23FJYKNLM1",
+        "cageCode": null,
+        "legalBusinessName": "9TH CIRCUIT COURT OF APPEALS",
+        "registrationStatus": "ID Assigned",
+        "evsSource": null,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": null,
+        "ueiCreationDate": "2022-02-22",
+        "publicDisplayFlag": "Y",
+        "dnbOpenData": null
+      },
+      "coreData": {
+        "physicalAddress": {
+            "addressLine1": "Address1",
+            "addressLine2": "Address2",
+            "city": "City",
+            "stateOrProvinceCode": "XX",
+            "zipCode": "11111",
+            "zipCodePlus4": "1111",
+            "countryCode": "ABC"
+        }
+      },
+      "integrityInformation": {
+        "responsibilityInformationCount": 1,
+        "responsibilityInformationList": [
+          {
+            "recordType": "C",
+            "recordTypeDesc": "Termination for Cause",
+            "recordDate": "2022-05-09",
+            "procurementIdOrFederalAssistanceId": "BG567815C0001",
+            "referenceIdvPiid": null,
+            "attachment": "< Pre-signed URL >"
+          }            
+       ]
+      }
+    },
+    {
+      "entityRegistration": {
+        "samRegistered": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "ueiSAM": "TST987654321",
+        "cageCode": null,
+        "legalBusinessName": "HAYES, INC.",
+        "registrationStatus": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "evsSource": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "ueiStatus": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "ueiExpirationDate": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "ueiCreationDate": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "publicDisplayFlag": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "dnbOpenData": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov."
+      },
+      "coreData": {
+        "physicalAddress": {
+            "addressLine1": "Address1",
+            "addressLine2": "Address2",
+            "city": "City",
+            "stateOrProvinceCode": "XX",
+            "zipCode": "11111",
+            "zipCodePlus4": "1111",
+            "countryCode": "ABC"
+        }
+      },
+      "integrityInformation": {
+        "responsibilityInformationCount": 3,
+        "responsibilityInformationList": [
+          {
+            "recordType": "C",
+            "recordTypeDesc": "Termination for Cause",
+            "recordDate": "2022-05-09",
+            "procurementIdOrFederalAssistanceId": "BG567815C0001",
+            "referenceIdvPiid": null,
+            "attachment": "< Pre-signed URL >"
+          },
+          {
+            "recordType": "C",
+            "recordTypeDesc": "Termination for Cause",
+            "recordDate": "2022-05-17",
+            "procurementIdOrFederalAssistanceId": "ABAB0113C0001",
+            "referenceIdvPiid": null,
+            "attachment": "< Pre-signed URL >"
+          },
+          {
+            "recordType": "W",
+            "recordTypeDesc": "Material Failure to Comply with Closeout Requirements",
+            "recordDate": "2022-05-17",
+            "procurementIdOrFederalAssistanceId": "ABAB0113C0001",
+            "referenceIdvPiid": null,
+            "attachment": "< Pre-signed URL >"
+          }
+       ]
+      }
+    }
+  ]
+</pre>
+</code>
+</p>
+</details>
+
+### Example 8:  I have a Fed System Account and the Role required to access the not registered/ID Assigned entities. How can I obtain them?
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v3/entities?api_key= < API Key >&samRegistered=No
@@ -11865,7 +12142,7 @@ An NPDY unregistered/ID Assigned entity:
 </p>
 </details>
 
-### Example 8: I would like to obtain an asynchronous CSV file of the Active registered entities.
+### Example 9: I would like to obtain an asynchronous CSV file of the Active registered entities.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&registrationStatus=A
@@ -11882,7 +12159,7 @@ Click to view a sample v2 CSV Response for one record <a href="v1/v2_CSV_Respons
 Click to view a sample v3 CSV Response for one record <a href="v1/v3_CSV_Response.xlsx" target="_blank">v3_CSV_Response</a><br>
 </details>
 
-### Example 9: Get a JSON file of all the Entities using the POST request:<br>
+### Example 10: Get a JSON file of all the Entities using the POST request:<br>
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>: https://api.sam.gov/entity-information/v2/entities?format=JSON
@@ -12015,6 +12292,7 @@ Disclaimer:
 | 02/01/2022 | v3.2    | * Update the OpenAPI Specification File to include the V3 endpoints.<br><br> * Updated the OpenAPI Specification File to reflect the correct behavior for the V3 exclusionsStatusFlag parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | 04/04/2022 | v3.3    | * Removed duns information from the documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | 08/08/2022 | v3.4    | * Updated to clarify the use of Controlled Unclassified Information (CUI) data.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| 08/10/2022 | v3.5    | * Introduced a header to clearly distinguish the applicability of the section or sub-section to the registered entities and/or unregistered/ID Assigned entities.<br><br> * Included the “Responsibility & Integrity Record” API changes in the "API Description" and "Examples" sections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 08/10/2022 | v3.5    | * Introduced a header to clearly distinguish the applicability of the section or sub-section to the registered entities and/or unregistered/ID Assigned entities.<br><br> * Included the “Responsibility & Integrity Record” API changes in the "API Description" and "Examples" sections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 09/19/2022 | v3.6    | * Updated "Examples", Response schema and includeSection filter description for un registered FAPIIS.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 <p><small><a href="#">Back to top</a></small></p>
