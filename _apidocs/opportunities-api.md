@@ -188,10 +188,10 @@ far13	| FAR 13.5 - Simplified Procedures for One Source
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Requirements Strategy Values
+#### Requirement Strategy Values
 Below table captures Requirements Strategy values to use while making requests as needed for notice type "i"(Consolidate/(Substantially) Bundle).
 
-Requirements Strategies | Title | Description
+Requirement Strategies | Title | Description
 ------------------------|-------------|------------
 FAR 7.107-2 | Intent to Consolidate Requirements | Determination that consolidation is necessary and justified with the publication of the solicitation in Description
 FAR 7.107-3 | Intent to Bundle Requirements | Determination that bundling is necessary and justified with the publication of the solicitation in Description
@@ -4631,7 +4631,7 @@ data.award.justificationAuthority | JSON Object |NA |NA | NA | NA | Only for typ
 data.award.justificationAuthority.<br/>modificationNumber | string | 32 characters| | No | No | Justification Authority Modification Number | v1 <br> v2 <br> v2.1
 data.award.justificationAuthority.<br/>authority | string|  |  | No | Yes for type = j (Justification) | Justification Authority | v1 <br> v2 <br> v2.1
 data.additionalReporting | JSON Array | |None, <br/>auto_recovery | No | Yes; No for type = s (Special Notice) | Initiative that applies to the notice | v1 <br> v2 <br> v2.1
-data.farCases | JSON Array | |FAR 7.107-2 <br/>FAR 7.107-3 <br/>FAR 7.107-4 | Yes for type = i (Consolidate/(Substantially) Bundle) | Yes for type = i (Consolidate/(Substantially) Bundle) | **Applicable only for Consolidate/(Substantially) Bundle** | v2.1
+data.farCases | JSON Array | NA | [Refer Requirement Strategies ](#requirements-strategy-values) | Yes for type = i (Consolidate/(Substantially) Bundle) | Yes for type = i (Consolidate/(Substantially) Bundle) | **Applicable only for Consolidate/(Substantially) Bundle** | v2.1
 description | JSON Array | NA | NA | NA | NA | NA |NA
 description.body | string | 65535 characters| | No | Yes; No for type = a (Award) | Description of the notice | v1 <br> v2 <br> v2.1
 related | JSON  Object| NA | NA | NA | NA | Related Notice information |NA
