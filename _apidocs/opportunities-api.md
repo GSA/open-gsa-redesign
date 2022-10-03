@@ -1892,7 +1892,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Update request for Intent to Bundle Draft opportunity_V2</summary>
+<summary>Update request for Consolidate/(Substantially) Bundle Draft opportunity_V2</summary>
 <p>
 <code><pre>
 {
