@@ -1667,6 +1667,81 @@ Examples
 </details>
 
 <details>
+<summary>Create and Publish Consolidate/(Substantially) Bundle Notice_V2</summary>
+<p>
+<code><pre>
+{
+    "data": {
+        "type": "i",
+        "award": {
+            "date": "2222-02-22",
+            "number": "ContractAwardNumber123-_(){}",
+            "deliveryOrderNumber": "TaskOrderNumber1234-_()"
+        },
+        "naics": [
+            {
+                "code": [
+                    "111160"
+                ],
+                "type": "primary"
+            }
+        ],
+        "title": "Create and Publish Consolidate/(Substantially) Bundle notice",
+        "archive": {
+            "date": null,
+            "type": "auto30"
+        },
+        "permissions": {
+            "IVL": {
+                "read": false,
+                "create": false,
+                "delete": false,
+                "update": false
+            }
+        },
+        "solicitation": {
+            "deadlines": {
+                "response": null,
+                "responseTz": null
+            }
+        },
+        "organizationId": "100186612",
+        "pointOfContact": [
+            {
+                "fax": "1234567890",
+                "type": "primary",
+                "email": "test.email2@gmail.com",
+                "phone": "1234567890",
+                "title": null,
+                "fullName": "Test User"
+            },
+            {
+                "fax": "4512367890",
+                "type": "secondary",
+                "email": "test.email@gmail.com",
+                "phone": "1234567890",
+                "title": null,
+                "fullName": "Test User 2"
+            }
+        ],
+        "classificationCode": "1005",
+        "solicitationNumber": "Test-ITB-123",
+        "additionalReporting": [
+            "recovery_act"
+        ]
+    },
+    "related": {},
+    "description": [
+        {
+            "body": "Test Description"
+        }
+    ]
+}
+</pre></code>
+</p>
+</details>
+
+<details>
 <summary>Create and Publish Consolidate/(Substantially) Bundle Notice_V2.1</summary>
 <p>
 <code><pre>
