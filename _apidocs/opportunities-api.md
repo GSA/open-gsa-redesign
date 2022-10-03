@@ -1036,7 +1036,7 @@ Examples
         "additionalReporting": [
             "recovery_act"
         ],
-        "farCases": ["FAR 7.107-3", "FAR 7.107-4", "FAR 7.107-5"]
+        "farCases": ["FAR 7.107-2", "FAR 7.107-3", "FAR 7.107-4"]
     },
     "related": {},
     "description": [
@@ -1729,7 +1729,7 @@ Examples
         "additionalReporting": [
             "recovery_act"
         ],
-        "farCases": ["FAR 7.107-3", "FAR 7.107-4", "FAR 7.107-5"]
+        "farCases": ["FAR 7.107-2", "FAR 7.107-3", "FAR 7.107-4"]
     },
     "related": {},
     "description": [
@@ -1932,7 +1932,7 @@ Examples
     "additionalReporting": [
       "none"
     ],
-    "farCases": ["FAR 7.107-3", "FAR 7.107-4", "FAR 7.107-5"],
+    "farCases": ["FAR 7.107-2", "FAR 7.107-3", "FAR 7.107-4"],
     "classificationCode": "E1AA",
     "naics": [
       {
