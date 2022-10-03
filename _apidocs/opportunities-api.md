@@ -8612,15 +8612,15 @@ Error Code|Field | Error Message | Reason/Description | Operation
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
 400|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
 401|Authorization|	Error code: 401 ; Your request did not get processed! Please verify your permission/roles|	If nonfed email id is used in authorization	|Get Authorized Party
-400|Requirment Strategies </br> (farCases)|	Invalid requirement strategy (farCase)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Create Draft Notice 
-400|Requirment Strategies </br> (farCases)|	Duplicate values found (farCases)	| Duplicated farCases are not allowed |Create Draft Notice
-400|Requirment Strategies </br> (farCases)|	farCases not Found	| farCases not Found |Create Draft Notice
-400|Requirment Strategies </br> (farCases)|	Invalid requirement strategy (farCase)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Create And Publish 
-400|Requirment Strategies </br> (farCases)|	Duplicate values found (farCases)	| Duplicated farCases are not allowed |Create And Publish
-400|Requirment Strategies </br> (farCases)|	farCases not Found	| farCases not Found |Create And Publish
-400|Requirment Strategies </br> (farCases)|	Invalid requirement strategy (farCase)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Update Draft Notice
-400|Requirment Strategies </br> (farCases)|	Duplicate values found (farCases)	| Duplicated farCases are not allowed |Update Draft Notice
-400|Requirment Strategies </br> (farCases)|	farCases not Found	| farCases not Found |Update Draft Notice
+400|Requirment Strategies </br> (farCases)|	Invalid requirement strategy (farCase)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Create Draft Notice </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Duplicate values found (farCases)	| Duplicated farCases are not allowed |Create Draft Notice </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	farCases not Found	| farCases not Found |Create Draft Notice </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Invalid requirement strategy (farCase)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Create And Publish </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Duplicate values found (farCases)	| Duplicated farCases are not allowed |Create And Publish </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	farCases not Found	| farCases not Found |Create And Publish </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Invalid requirement strategy (farCase)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Update Draft Notice </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Duplicate values found (farCases)	| Duplicated farCases are not allowed |Update Draft Notice </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	farCases not Found	| farCases not Found |Update Draft Notice </br> (Consolidate/(Substantially) Bundle)
 
 
 ## FAQ
