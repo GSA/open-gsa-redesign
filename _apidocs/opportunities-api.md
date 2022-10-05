@@ -104,7 +104,7 @@ In order to download secure attachment, user should have at least one of the bel
 
 The API includes specific methods to submit each of the base notice types (i.e. presolicitation, combined/synopsis, award, etc.). You will find these outlined in the sections below.
 
-**Note**: Effect from XX/XX/XXXX  description changed  for code “i” from “Intent to Bundle Requirements (Dod- Funded)” to Consolidate/(Substantially) Bundle.
+**Note**: Description change for code “i” from “Intent to Bundle Requirements (DoD-Funded)” to "Consolidate/(Substantially) Bundle" in alpha (XX/XX/XXXX) and prod (TBD).
 
 | Code              | Description                                   |
 | ----------------- | --------------------------------------------- |
@@ -276,7 +276,7 @@ Australia/Sydney |(UTC+11:00) SYDNEY, AUSTRALIA
 
 ## Version Control 
 
-Please use v2.1 for the following APIs to utilize “Recruitment strategies(far cases)” for Consolidate/(Substantially) Bundle notices. Business rules for v2.1 endpoints can be found in the corresponding API sections.
+Please use v2.1 for the following APIs to utilize “Recruitment strategies(farCases)” for Consolidate/(Substantially) Bundle notices. Business rules for v2.1 endpoints can be found in the corresponding API sections.
 
 * Create Draft Opportunity
 * Create and Publish Opportunity
@@ -287,17 +287,19 @@ Please use v2.1 for the following APIs to utilize “Recruitment strategies(far 
 * Production: https://api.sam.gov/prod/opportunity/v2.1/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2.1/ 
 
-**v2 Endpoints that are going to retire from alpha (XX/XX/XXXX) and from prod (XX/XX/XXXX) **
+**v2.1 Endpoints will be available on alpha (XX/XX/XXXX) and on prod (TBD) **
+
+*  /opps/v2.1/api/create  
+*  /opps/v2.1/api/createAndPublish  
+*  /opps/v2.1/api/update/{opportunityId}  
+
+**FAR 7.107-3 will be added to the endpoints below, if only at least one of the allowed Requirements Strategies(farCases) is not presented **
  
 *  /opps/v2/api/create  
 *  /opps/v2/api/createAndPublish  
 *  /opps/v2/api/update/{opportunityId}  
 
-**v2.1 Endpoints that can be used to in replacement with retired v2 api's from alpha (XX/XX/XXXX) and from prod (XX/XX/XXXX) **
-
-*  /opps/v2.1/create  
-*  /opps/v2.1/createAndPublish  
-*  /opps/v2.1/update/{opportunityId}  
+**Above v2 endpoints will be retired from alpha and prod (TBD) **
 
 ##
 
@@ -318,7 +320,7 @@ Please use v2 for the following APIs to utilize ueiSAM. Business rules for v2 en
 * Production: https://api.sam.gov/prod/opportunity/v2/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ 
 
-**v1 Endpoints that are going to retire from alpha (3/15/2022) and from prod (4/1/2022:) **
+**v1 Endpoints that are going to retire from alpha (3/15/2022) and from prod (4/1/2022) **
  
 *  /opps/v1/api/create  
 *  /opps/v1/api/createAndPublish  
@@ -8612,15 +8614,15 @@ Error Code|Field | Error Message | Reason/Description | Operation
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
 400|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
 401|Authorization|	Error code: 401 ; Your request did not get processed! Please verify your permission/roles|	If nonfed email id is used in authorization	|Get Authorized Party
-400|Requirment Strategies </br> (farCases)|	Invalid requirement strategy (farCase)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Create Draft Notice </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	Duplicate values found (farCases)	| Duplicated farCases are not allowed |Create Draft Notice </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	farCases not Found	| farCases not Found |Create Draft Notice </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	Invalid requirement strategy (farCase)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Create And Publish </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	Duplicate values found (farCases)	| Duplicated farCases are not allowed |Create And Publish </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	farCases not Found	| farCases not Found |Create And Publish </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	Invalid requirement strategy (farCase)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Update Draft Notice </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	Duplicate values found (farCases)	| Duplicated farCases are not allowed |Update Draft Notice </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	farCases not Found	| farCases not Found |Update Draft Notice </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Invalid Requirement Strategy(farCases)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Create Draft Notice </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Duplicate Requirement Strategies found(farCases)	| Duplicate farCases are not allowed |Create Draft Notice </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Requirement Strategies(farCases) not found	| Requirement Strategies not found |Create Draft Notice </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Invalid Requirement Strategy(farCases)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Create And Publish </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Duplicate Requirement Strategies found(farCases)	| Duplicate farCases are not allowed |Create And Publish </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Requirement Strategies(farCase) not found	| Requirement Strategies not found |Create And Publish </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Invalid Requirement Strategy(farCases)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Update Draft Notice </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Duplicate Requirement Strategies found(farCases)	| Duplicate farCases are not allowed |Update Draft Notice </br> (Consolidate/(Substantially) Bundle)
+400|Requirment Strategies </br> (farCases)|	Requirement Strategies(farCase)not found	| Requirement Strategies not found |Update Draft Notice </br> (Consolidate/(Substantially) Bundle)
 
 
 ## FAQ
@@ -8680,7 +8682,7 @@ Date | Version | Description
 11/20/2021| v1.19| If ResponseDate	date is provided, ResponseTz is a required field. (Example : "responseTz": "America/New_York") (Coming soon)
 12/10/2021| v1.20| Contract Award Date is expected to input in this format YYYY-mm-DD (Applicaple for notice types a,u,i). (Coming soon)
 02/18/2022| v1.21| Please refer the version control section for the list of V1 api's that are going to retired from  3/15/2022 in alpha, and 4/1/2022 from prod.
-10/05/2022| v1.22| Notice code "i" decription change: “Intent to Bundle Requirements”  -> “Consolidate/(Substantially) Bundle”, </br> Added Requirement Stratergies(farCases) to notice code "i"(Consolidate/(Substantially) Bundle), </br> Please refer the version control section for the list of V2 api's that are going to retired from  XX/XX/XXXX in alpha, and XX/XX/XXXX from prod.
+10/05/2022| v1.22| Notice code "i" decription change: from “Intent to Bundle Requirements” to “Consolidate/(Substantially) Bundle”, </br> Added Requirement Strategies(farCases) to notice code "i"(Consolidate/(Substantially) Bundle), </br> Please refer the version control section for the list of V2.1 api's that are going to be available in alpha(XX/XX/XXXX) and prod(TBD).
 
 
 <p><small><a href="#">Back to top</a></small></p>
