@@ -4436,122 +4436,77 @@ Examples
 
 <div id="create-update-json-v2.1">
 <details>
-<summary>Create_Update_Opportunity_Contract_JSON_v2.1</summary>
+<summary>Create_Update_Consolidate/(Substantially)Bundle_Opportunity_Contract_JSON_v2.1</summary>
 <p>
 <code><pre>
 {
     "data": {
-        "type": "",
-        "solicitationNumber": "",
-        "title": "",
-        "organizationId": "",
-        "classificationCode": "",
+        "type": "i",
+        "award": {
+            "date": "2222-02-22",
+            "number": "ContractAwardNumber123-_(){}",
+            "deliveryOrderNumber": "TaskOrderNumber1234-_()"
+        },
         "naics": [
             {
-                "type": "primary",
                 "code": [
-                    ""
-                ]
+                    "111160"
+                ],
+                "type": "primary"
             }
         ],
-        "pointOfContact": [
-            {
-                "type": "primary",
-                "title": "",
-                "fullName": "",
-                "email": "",
-                "phone": "",
-                "fax": "",
-                "additionalInfo": {
-                    "content": ""
-                }
-            }
-        ],
-        "placeOfPerformance": {
-            "streetAddress": "",
-            "streetAddress2": "",
-            "city": {
-                "code": "",
-                "name": ""
-            },
-            "country": {
-                "code": "",
-                "name": ""
-            },
-            "state": {
-                "code": "",
-                "name": ""
-            },
-            "zip": ""
-        },
+        "title": "Create Consolidate/(Substantially) Bundle notice",
         "archive": {
-            "type": "autocustom",
-            "date": "2019-09-09"
+            "date": null,
+            "type": "auto30"
         },
         "permissions": {
             "IVL": {
+                "read": false,
                 "create": false,
                 "delete": false,
-                "read": false,
                 "update": false
             }
         },
         "solicitation": {
-            "setAside": "SBA",
             "deadlines": {
-                "response": "2019-08-08"
+                "response": null,
+                "responseTz": null
             }
         },
-        "award": {
-            "date": "",
-            "number": "",
-            "deliveryOrderNumber": "",
-            "amount": "",
-            "lineItemNumber": "",
-            "awardee": {
-                "manual": false,
-                "name": "",
-                "ueiSAM": "",
-                "location": {
-                    "streetAddress": "",
-                    "streetAddress2": "",
-                    "city": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "state": {
-                        "code": "",
-                        "name": ""
-                    },
-                    "zip": "",
-                    "country": {
-                        "code": "",
-                        "name": ""
-                    }
-                }
+        "organizationId": "100186612",
+        "pointOfContact": [
+            {
+                "fax": "1234567890",
+                "type": "primary",
+                "email": "test.email2@gmail.com",
+                "phone": "1234567890",
+                "title": null,
+                "fullName": "Test User"
             },
-            "justificationAuthority": {
-                "modificationNumber": "",
-                "authority": "dictionary"
+            {
+                "fax": "4512367890",
+                "type": "secondary",
+                "email": "test.email@gmail.com",
+                "phone": "1234567890",
+                "title": null,
+                "fullName": "Test User 2"
             }
-        },
+        ],
+        "classificationCode": "1005",
+        "solicitationNumber": "Test-ITB-123",
         "additionalReporting": [
-            "none"
-        ]
+            "recovery_act"
+        ],
+        "farCases": ["FAR 7.107-2", "FAR 7.107-3", "FAR 7.107-4"]
     },
+    "related": {},
     "description": [
         {
-            "body": ""
+            "body": "Test Description"
         }
-    ],
-    "related": {
-        "opportunityId": ""
-    },
-    "parent": {
-        "opportunityId": ""
-    }
+    ]
 }
-
 </pre></code>
 </p>
 </details>
