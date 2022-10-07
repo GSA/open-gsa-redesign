@@ -276,33 +276,6 @@ Australia/Sydney |(UTC+11:00) SYDNEY, AUSTRALIA
 
 ## Version Control 
 
-Please use v2.1 for the following APIs to utilize “Recruitment strategies(farCases)” for Consolidate/(Substantially) Bundle notices. Business rules for v2.1 endpoints can be found in the corresponding API sections.
-
-* Create Draft Opportunity
-* Create and Publish Opportunity
-* Update Draft Opportunity
-
-**v2.1 Endpoints**
-
-* Production: https://api.sam.gov/prod/opportunity/v2.1/ 
-* Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2.1/ 
-
-**v2.1 Endpoints will be available on alpha (XX/XX/XXXX) and on prod (TBD) **
-
-*  /opps/v2.1/api/create  
-*  /opps/v2.1/api/createAndPublish  
-*  /opps/v2.1/api/update/{opportunityId}  
-
-**FAR 7.107-3 will be added to the endpoints below, if only at least one of the allowed Requirements Strategies(farCases) is not presented **
- 
-*  /opps/v2/api/create  
-*  /opps/v2/api/createAndPublish  
-*  /opps/v2/api/update/{opportunityId}  
-
-**Above v2 endpoints will be retired from alpha and prod (TBD) **
-
-##
-
 Please use v2 for the following APIs to utilize ueiSAM. Business rules for v2 endpoints can be found in the corresponding API sections.
 
 * Add Authorized Party
@@ -340,6 +313,33 @@ Please use v2 for the following APIs to utilize ueiSAM. Business rules for v2 en
 *  /opps/v2/update/{opportunityId}  
 *  /opps/v2/access/{opportunityId}/accessRequest
 *  /opps/v2/opportunities/{opportunityId}/relatedopportunities
+
+##
+
+Please use v2.1 for the following APIs to utilize “Recruitment strategies(farCases)” for Consolidate/(Substantially) Bundle notices. Business rules for v2.1 endpoints can be found in the corresponding API sections.
+
+* Create Draft Opportunity
+* Create and Publish Opportunity
+* Update Draft Opportunity
+
+**v2.1 Endpoints**
+
+* Production: https://api.sam.gov/prod/opportunity/v2.1/ 
+* Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2.1/ 
+
+**v2.1 Endpoints will be available on alpha (XX/XX/XXXX) and on prod (TBD) **
+
+*  /opps/v2.1/api/create  
+*  /opps/v2.1/api/createAndPublish  
+*  /opps/v2.1/api/update/{opportunityId}  
+
+**FAR 7.107-3 will be added to the endpoints below, if only at least one of the allowed Requirements Strategies(farCases) is not presented **
+ 
+*  /opps/v2/api/create  
+*  /opps/v2/api/createAndPublish  
+*  /opps/v2/api/update/{opportunityId}  
+
+**Above v2 endpoints will be retired from alpha and prod (TBD) **
   
 
 ## Contract Opportunity Management API Request and Responses
