@@ -2547,7 +2547,7 @@ data.link.additionalInfo | JSON Object |
 data.link.additionalInfo.content | string | Additional Info
 data.link.href | string |  Website Address
 data.additionalReporting | JSON Array |  recovery_act or none
-data.farCases | JSON Array of Object |  Requirements Strategies, only applicable to Consolidate/(Substantially) Bundle <br>**(v2.1 Only)**
+data.farCases | JSON Array of Object |  Requirements Strategies, only applicable to Consolidate/(Substantially) Bundle <br>
 additionalInfo.sections JSON | JSON Array | 
 additionalInfo.sections.opportunityId | string | 
 additionalInfo.sections.status | string | 
@@ -2701,159 +2701,274 @@ Examples
 <p>
 <code><pre>
 {
-  "_embedded": {
-    "opportunity": [
-      {
-        "data": {
-          "type": "s",
-          "award": {
-            "date": "2020-06-01",
-            "amount": "350567.00",
-            "number": "4376487348950",
-            "awardee": {
-              "name": "TONETS CORPORATION",
-              "ueiSAM": "JVDNULAZPU17",
-              "cageCode": "SP971",
-              "location": {
-                "zip": null,
-                "city": {
-                  "name": "Chuo-ku"
-                },
-                "state": {
-                  "name": "TOKYO"
-                },
-                "country": {
-                  "name": "JPN"
+    "_embedded": {
+      "opportunity": [
+        {
+          "data": {
+            "type": "s",
+            "award": {
+              "date": "2020-06-01",
+              "amount": "350567.00",
+              "number": "4376487348950",
+              "awardee": {
+                "name": "TONETS CORPORATION",
+                "ueiSAM": "JVDNULAZPU17",
+                "cageCode": "SP971",
+                "location": {
+                  "zip": null,
+                  "city": {
+                    "name": "Chuo-ku"
+                  },
+                  "state": {
+                    "name": "TOKYO"
+                  },
+                  "country": {
+                    "name": "JPN"
+                  }
                 }
+              },
+              "lineItemNumber": "323456789880",
+              "deliveryOrderNumber": "43577980901"
+            },
+            "naics": [
+              {
+                "code": [
+                  "711510"
+                ],
+                "type": "primary"
+              }
+            ],
+            "title": "Test-V2 GetOpp Org info_1",
+            "archive": {
+              "date": "2021-01-02",
+              "type": "autocustom"
+            },
+            "version": "2",
+            "permissions": {
+              "IVL": {
+                "read": false,
+                "create": false,
+                "delete": false,
+                "update": false
               }
             },
-            "lineItemNumber": "323456789880",
-            "deliveryOrderNumber": "43577980901"
-          },
-          "naics": [
-            {
-              "code": [
-                "711510"
-              ],
-              "type": "primary"
-            }
-          ],
-          "title": "Test-V2 GetOpp Org info_1",
-          "archive": {
-            "date": "2021-01-02",
-            "type": "autocustom"
-          },
-          "version": "2",
-          "permissions": {
-            "IVL": {
-              "read": false,
-              "create": false,
-              "delete": false,
-              "update": false
-            }
-          },
-          "solicitation": {
-            "setAside": "SBA",
-            "deadlines": {
-              "response": null,
-              "responseTz": null
-            }
-          },
-          "pointOfContact": [
-            {
-              "fax": null,
-              "type": "primary",
-              "email": "test.contact1@gmail.com",
-              "phone": "",
-              "title": null,
-              "fullName": "Test Contact 1"
+            "solicitation": {
+              "setAside": "SBA",
+              "deadlines": {
+                "response": null,
+                "responseTz": null
+              }
             },
-            {
-              "fax": null,
-              "type": "secondary",
-              "email": "test.contact2@gmail.com",
-              "phone": null,
-              "title": null,
-              "fullName": "Test Contact 2"
-            }
-          ],
-          "classificationCode": "AA12",
-          "placeOfPerformance": {
-            "zip": null,
-            "city": {
-              "code": "124",
-              "name": "Abbeville"
+            "pointOfContact": [
+              {
+                "fax": null,
+                "type": "primary",
+                "email": "test.contact1@gmail.com",
+                "phone": "",
+                "title": null,
+                "fullName": "Test Contact 1"
+              },
+              {
+                "fax": null,
+                "type": "secondary",
+                "email": "test.contact2@gmail.com",
+                "phone": null,
+                "title": null,
+                "fullName": "Test Contact 2"
+              }
+            ],
+            "classificationCode": "AA12",
+            "placeOfPerformance": {
+              "zip": null,
+              "city": {
+                "code": "124",
+                "name": "Abbeville"
+              },
+              "state": {
+                "code": "AL",
+                "name": "Alabama"
+              },
+              "country": {
+                "code": "USA",
+                "name": "UNITED STATES"
+              }
             },
-            "state": {
-              "code": "AL",
-              "name": "Alabama"
-            },
-            "country": {
-              "code": "USA",
-              "name": "UNITED STATES"
-            }
+            "solicitationNumber": "test1-100202189",
+            "additionalReporting": [
+              "none"
+            ],
+            "organizationInfo": [
+              {
+                "name": "6QCA1",
+                "code": "47Q614",
+                "orgKey": "500023030"
+              }
+            ]
           },
-          "solicitationNumber": "test1-100202189",
-          "additionalReporting": [
-            "none"
-          ],
-          "organizationInfo": [
-            {
-              "name": "6QCA1",
-              "code": "47Q614",
-              "orgKey": "500023030"
-            }
-          ]
+          "additionalInfo": {
+            "sections": [
+              {
+                "id": "header",
+                "status": "updated"
+              },
+              {
+                "id": "award",
+                "status": "updated"
+              },
+              {
+                "id": "general",
+                "status": "updated"
+              },
+              {
+                "id": "classification",
+                "status": "updated"
+              },
+              {
+                "id": "description",
+                "status": "updated"
+              },
+              {
+                "id": "attachments-links",
+                "status": "updated"
+              },
+              {
+                "id": "contact",
+                "status": "updated"
+              }
+            ]
+          },
+          "parent": {},
+          "related": {},
+          "status": {
+            "code": "published",
+            "value": "Published"
+          },
+          "archived": false,
+          "cancelled": false,
+          "latest": false,
+          "deleted": false,
+          "postedDate": "2020-07-02T19:39:59.479+0000",
+          "modifiedDate": "2020-07-02T19:39:59.479+0000",
+          "createdDate": "2020-07-02T19:39:58.119+0000",
+          "createdBy": "veera.sareddy+5@gsa.gov",
+          "totalCount": 481,
+          "opportunityId": "8ad78752a341424bb0364e5229f0d0ef"
         },
-        "additionalInfo": {
-          "sections": [
-            {
-              "id": "header",
-              "status": "updated"
+        {
+            "data": {
+                "type": "i",
+                "award": {
+                    "date": "2222-02-22",
+                    "number": "ContractAwardNumber123-_(){}",
+                    "deliveryOrderNumber": "TaskOrderNumber1234-_()"
+                },
+                "naics": [
+                    {
+                        "code": [
+                            "111160"
+                        ],
+                        "type": "primary"
+                    }
+                ],
+                "title": "Create Consolidate/(Substantially) Bundle notice",
+                "archive": {
+                    "date": null,
+                    "type": "auto30"
+                },
+                "permissions": {
+                    "IVL": {
+                        "read": false,
+                        "create": false,
+                        "delete": false,
+                        "update": false
+                    }
+                },
+                "solicitation": {
+                    "deadlines": {
+                        "response": null,
+                        "responseTz": null
+                    }
+                },
+                "organizationId": "100186612",
+                "pointOfContact": [
+                    {
+                        "fax": "1234567890",
+                        "type": "primary",
+                        "email": "test.email2@gmail.com",
+                        "phone": "1234567890",
+                        "title": null,
+                        "fullName": "Test User"
+                    },
+                    {
+                        "fax": "4512367890",
+                        "type": "secondary",
+                        "email": "test.email@gmail.com",
+                        "phone": "1234567890",
+                        "title": null,
+                        "fullName": "Test User 2"
+                    }
+                ],
+                "classificationCode": "1005",
+                "solicitationNumber": "Test-ITB-123",
+                "additionalReporting": [
+                    "recovery_act"
+                ],
+                "farCases": ["FAR 7.107-2", "FAR 7.107-3", "FAR 7.107-4"]
             },
-            {
-              "id": "award",
-              "status": "updated"
-            },
-            {
-              "id": "general",
-              "status": "updated"
-            },
-            {
-              "id": "classification",
-              "status": "updated"
-            },
-            {
-              "id": "description",
-              "status": "updated"
-            },
-            {
-              "id": "attachments-links",
-              "status": "updated"
-            },
-            {
-              "id": "contact",
-              "status": "updated"
+            "related": {},
+            "description": [
+                {
+                    "body": "Test Description"
+                }
+            ],
+            "additionalInfo": {
+                "sections": [
+                  {
+                    "id": "header",
+                    "status": "updated"
+                  },
+                  {
+                    "id": "award",
+                    "status": "updated"
+                  },
+                  {
+                    "id": "general",
+                    "status": "updated"
+                  },
+                  {
+                    "id": "classification",
+                    "status": "updated"
+                  },
+                  {
+                    "id": "description",
+                    "status": "updated"
+                  },
+                  {
+                    "id": "attachments-links",
+                    "status": "updated"
+                  },
+                  {
+                    "id": "contact",
+                    "status": "updated"
+                  }
+                ]
+              },
+              "parent": {},
+              "status": {
+                "code": "published",
+                "value": "Published"
+              },
+              "archived": false,
+              "cancelled": false,
+              "latest": false,
+              "deleted": false,
+              "postedDate": "2020-07-02T19:39:59.479+0000",
+              "modifiedDate": "2020-07-02T19:39:59.479+0000",
+              "createdDate": "2020-07-02T19:39:58.119+0000",
+              "createdBy": "veera.sareddy+5@gsa.gov",
+              "totalCount": 481,
+              "opportunityId": "8ad78752a341424bb0364e5229f0d0ef"
             }
-          ]
-        },
-        "parent": {},
-        "related": {},
-        "status": {
-          "code": "published",
-          "value": "Published"
-        },
-        "archived": false,
-        "cancelled": false,
-        "latest": false,
-        "deleted": false,
-        "postedDate": "2020-07-02T19:39:59.479+0000",
-        "modifiedDate": "2020-07-02T19:39:59.479+0000",
-        "createdDate": "2020-07-02T19:39:58.119+0000",
-        "createdBy": "veera.sareddy+5@gsa.gov",
-        "totalCount": 481,
-        "opportunityId": "8ad78752a341424bb0364e5229f0d0ef"
-      }
 </pre></code>
 </p>
 </details>
@@ -6659,6 +6774,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 </p>
 </details>
 
+<details>
 <summary>Get List of Opportunities v2</summary>
 <p>
 <code><pre>
