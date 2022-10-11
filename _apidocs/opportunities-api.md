@@ -189,7 +189,7 @@ far13	| FAR 13.5 - Simplified Procedures for One Source
 <p><small><a href="#">Back to top</a></small></p>
 
 #### Requirement Strategy Values
-Below table captures Requirements Strategy values to use while making requests as needed for notice type "i"(Consolidate/(Substantially) Bundle).
+Below table captures Requirements Strategy values to use while making requests as needed for notice type "i"(Consolidate/(Substantially) Bundle.
 
 Requirement Strategies | Title | Description
 ------------------------|-------------|------------
