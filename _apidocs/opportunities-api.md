@@ -901,7 +901,7 @@ Examples
 </details>
 
 <details>
-<summary>Request to create draft Consolidate/(Substantially) Bundle Notice_V2</summary>
+<summary>Request to create draft Consolidate/(Substantially) Bundle Notice_v2</summary>
 <p>
 <code><pre>
 {
@@ -976,7 +976,7 @@ Examples
 </details>
 
 <details>
-<summary>Request to create draft Consolidate/(Substantially) Bundle Notice_V2.1</summary>
+<summary>Request to create draft Consolidate/(Substantially) Bundle Notice_v2.1</summary>
 <p>
 <code><pre>
 {
