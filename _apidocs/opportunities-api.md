@@ -1669,7 +1669,7 @@ Examples
 </details>
 
 <details>
-<summary>Create and Publish Consolidate/(Substantially) Bundle Notice_V2</summary>
+<summary>Create and Publish Consolidate/(Substantially) Bundle Notice_v2</summary>
 <p>
 <code><pre>
 {
@@ -1744,7 +1744,7 @@ Examples
 </details>
 
 <details>
-<summary>Create and Publish Consolidate/(Substantially) Bundle Notice_V2.1</summary>
+<summary>Create and Publish Consolidate/(Substantially) Bundle Notice_v2.1</summary>
 <p>
 <code><pre>
 {
@@ -1894,7 +1894,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Update request for Consolidate/(Substantially) Bundle Draft opportunity_V2</summary>
+<summary>Update request for Consolidate/(Substantially) Bundle Draft opportunity_v2</summary>
 <p>
 <code><pre>
 {
@@ -1963,7 +1963,7 @@ Examples
 </details>
 
 <details>
-<summary>Update request for Consolidate/(Substantially) Bundle Draft opportunity_V2.1</summary>
+<summary>Update request for Consolidate/(Substantially) Bundle Draft opportunity_v2.1</summary>
 <p>
 <code><pre>
 {
