@@ -104,7 +104,7 @@ In order to download secure attachment, user should have at least one of the bel
 
 The API includes specific methods to submit each of the base notice types (i.e. presolicitation, combined/synopsis, award, etc.). You will find these outlined in the sections below.
 
-**Note**: Description change for code “i” from “Intent to Bundle Requirements (DoD-Funded)” to "Consolidate/(Substantially) Bundle" in alpha (XX/XX/XXXX) and prod (TBD).
+**Note**: Description change for code “i” from “Intent to Bundle Requirements (DoD-Funded)” to "Consolidate/(Substantially) Bundle" in alpha (TBD) and prod (TBD).
 
 | Code              | Description                                   |
 | ----------------- | --------------------------------------------- |
@@ -327,7 +327,7 @@ Please use v2.1 for the following APIs to utilize “Recruitment strategies(farC
 * Production: https://api.sam.gov/prod/opportunity/v2.1/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2.1/ 
 
-**v2.1 Endpoints will be available on alpha (XX/XX/XXXX) and on prod (TBD) **
+**v2.1 Endpoints will be available on alpha (TBD) and on prod (TBD) **
 
 *  /opps/v2.1/api/create  
 *  /opps/v2.1/api/createAndPublish  
@@ -8753,7 +8753,7 @@ Date | Version | Description
 11/20/2021| v1.19| If ResponseDate	date is provided, ResponseTz is a required field. (Example : "responseTz": "America/New_York") (Coming soon)
 12/10/2021| v1.20| Contract Award Date is expected to input in this format YYYY-mm-DD (Applicaple for notice types a,u,i). (Coming soon)
 02/18/2022| v1.21| Please refer the version control section for the list of V1 api's that are going to retired from  3/15/2022 in alpha, and 4/1/2022 from prod.
-10/05/2022| v1.22| Notice code "i" decription change: from “Intent to Bundle Requirements” to “Consolidate/(Substantially) Bundle”, </br> Added Requirement Strategies(farCases) to notice code "i"(Consolidate/(Substantially) Bundle), </br> Please refer the version control section for the list of V2.1 api's that are going to be available in alpha(XX/XX/XXXX) and prod(TBD).
+10/05/2022| v1.22| Notice code "i" decription change: from “Intent to Bundle Requirements” to “Consolidate/(Substantially) Bundle”, </br> Added Requirement Strategies(farCases) to notice code "i"(Consolidate/(Substantially) Bundle), </br> Please refer the version control section for the list of V2.1 api's that are going to be available in alpha(TBD) and prod(TBD).
 
 
 <p><small><a href="#">Back to top</a></small></p>
