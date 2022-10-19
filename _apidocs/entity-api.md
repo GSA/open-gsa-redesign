@@ -552,8 +552,9 @@ or any digit postal code for non-US postal codes, for entities that are not regi
 <td>When used in conjunction with includeSections=integrityInformation,<br>
 allows users to obtain registered entities that have answered Proceedings data.<br>
 This parameter accepts the only value of Yes which is not case sensitive.
-<br><br>Examples:includeSections=integrityInformation&proceedingsData=Yes;<br/>
-includeSections=All,integrityInformation&proceedingsData=yes;<br/>
+<br><br>Examples:<br>
+includeSections=integrityInformation&proceedingsData=Yes;<br>
+includeSections=All,integrityInformation&proceedingsData=yes;<br>
 includeSections=entityRegistration,coreData,integrityInformation,pointsOfContact&proceedingsData=YES
 </td>
 <td>v3</td>
