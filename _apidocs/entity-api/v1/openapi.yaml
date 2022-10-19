@@ -2906,10 +2906,10 @@ paths:
         schema:
           type: string
       - name: proceedingsData
-          in: query
-          description: accepts Yes as a valid value to display proceedings data
-          schema:
-            type: string
+        in: query
+        description: accepts Yes as a valid value to display proceedings data
+        schema:
+          type: string
       responses:
         200:
           description: Successfully retrieved list
