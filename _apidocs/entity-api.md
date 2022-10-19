@@ -555,7 +555,8 @@ This parameter accepts the only value of Yes which is not case sensitive.
 <br><br>Examples:<br>
 includeSections=integrityInformation&proceedingsData=Yes;<br>
 includeSections=All,integrityInformation&proceedingsData=yes;<br>
-includeSections=entityRegistration,coreData,integrityInformation,pointsOfContact&proceedingsData=YES
+includeSections=entityRegistration,coreData,integrityInformation,<br>
+pointsOfContact&proceedingsData=YES
 </td>
 <td>v3</td>
 </tr>
