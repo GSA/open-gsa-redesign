@@ -8835,7 +8835,15 @@ The API will return one of the following responses:
   </tr>
   <tr>
     <td>400</td>
-    <td></td> 
+    <td>Application Level Error Messages:
+	<br><br>
+    1. Invalid "Date" format:<br>v1 or v2: Date should be specified in the format: MM/dd/YYYY.<br>
+	v3: "message":"Dates must be specified in the MM/DD/YYYY format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY format."<br><br>
+	2. Invalid Search Parameter:<br>v1 or v2: "Invalid Input Parameters","detail":"< user-provided invalid parameter >"<br>
+	v3: "message":"The search parameter, < user-provided invalid parameter > does not exist.", "detail":"Please refer to https://open.gsa.gov/api/entity-api/ for a list of allowable search parameters."<br><br>
+	3. If 'includeSections', 'emailId' or 'format' is sent in the "q" parameter:<br>v1 or v2: The parameters: 'includeSections', 'emailId' or 'format' are not permitted inside Query Param(q).<br>
+	If 'includeSections', 'emailId', 'format' or 'proceedingsData' is sent in the "q" parameter:<br>
+	v3: "message":"The search parameters 'includeSections','emailId','format' and 'proceedingsData' are not permitted inside Query Param(q)", "detail":"Please provide these parameters separately".<br><br></td> 
   </tr>
   <tr>
     <td>401</td>
