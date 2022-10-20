@@ -325,8 +325,8 @@ In order to download all of the scan data as a flat file, the system generates t
    
 The second set includes scan data for all URLs that were scanned, regardless of whether they are live or not (some may be inaccessible over the public internet, no longer live, or experiencing downtime).  This data can be accessed at:
    
-* [https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.csv](https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot-all.csv)
-* [https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.json](https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot-all.json)
+* [https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot-all.csv](https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot-all.csv)
+* [https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot-all.json](https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot-all.json)
    
   
 ## Contact Us
