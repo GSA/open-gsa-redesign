@@ -2686,7 +2686,7 @@ samMonitoring
 <tr>
 <td>proceedingsRecordCount</td>
 <td>string</td>
-<td>Proceedings Records Counter.</td>
+<td>Proceedings Records Counter</td>
 <td>v3</td>
 </tr>
 <tr>
