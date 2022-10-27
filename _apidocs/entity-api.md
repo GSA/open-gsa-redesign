@@ -42,7 +42,7 @@ Following are the key features of the Entity Management Extract API:
 The registered "Responsibility & Integrity Record" Public entities will also be returned by the API. 
 Please refer to the “integrityInformation” references in this page.
 <ul> Alpha Deployment: 08/10/2022.
-<br> Production Deployment: To be determined.
+<br> Production Deployment: 12/12/2022.
 </ul>
 </td>
 </tr>
