@@ -8822,7 +8822,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Additional Help References
-1. <a href="v1/SAM_REPS_AND_CERTS_MAPPING v5_Final 10-24-22-1.xlsx">Reps and Certs Mapping</a>
+1. <a href="v1/SAM_REPS_AND_CERTS_MAPPING.xlsx">Reps and Certs Mapping</a>
 2. <a href="v1/SAM Functional Data Dictionary.pdf" target="_blank">Data Dictionary</a>
 
 
