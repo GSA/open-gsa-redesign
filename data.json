@@ -37,6 +37,37 @@
             "theme": ["IT Initiatives"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "Acquisition Gateway Document Library API",
+            "description": "In addition to being published and available at Document Library, the documents for hallways.cap.gsa.gov is also available via APIs.",
+            "modified": "2022-08-04T13:52:48.671Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-08-04-02",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Farbod Sedghi",
+                "hasEmail": "mailto:farbod.sedghi@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://open.gsa.gov/api/ag-api/",
+                    "title": "Acquisition Gateway Document Library API"
+                }
+            ],
+            "keyword": ["acquisition", "api"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "Acquisition Workforce Annual Report 2006",
             "description": "This is the Federal Acquisition Institute's (FAI's) Annual demographic report on the Federal acquisition workforce, showing trends by occupational series, employment grade and educational level, as well as turnover and hiring data for fiscal year (FY) 2006.",
             "modified": "2009-01-31",
@@ -175,6 +206,37 @@
             "theme": ["Other"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "Api.Data.Gov Admin API",
+            "description": "api.data.gov is a free API management service for federal agencies. The api.data.gov Admin API implements the API Umbrella Admin API and can be used by api.data.gov agency admins to perform admin operations and to query their API analytics.",
+            "modified": "2022-08-04T13:55:54.294Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-08-04-03",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "API Team",
+                "hasEmail": "mailto:api.data.gov@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://open.gsa.gov/api/apidatagov/",
+                    "title": "Api.Data.Gov Admin API"
+                }
+            ],
+            "keyword": ["api", "data"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "Api.Data.Gov Metrics API",
             "description": "api.data.gov is a free API management service for federal agencies. This API offers access to high level metrics for the APIs that are using the shared service.\n\nThis API is used to power the api.data.gov metrics page.",
             "modified": "2022-07-11T14:15:09.532Z",
@@ -309,6 +371,37 @@
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "Broker Services",
+            "description": "The Center for Broker Services provides lease workload support services to GSA to create more efficient building space solutions by awarding and administering collections of multiple, zonal Indefinite Delivery/Indefinite Quantity (IDIQ) contracts that engage the services of commercial real estate brokers. Past contracts included National Broker Contracts (NBC), NBC2, and GSA Leasing Support Services (GLS).\n\nOur current contract, GLS Plus, emphasizes saving public funds, improving customer experience from requirements development through occupancy, and leveraging private-sector expertise.\n\nGLS Plus saves money with more efficient broker performance through extensive customer planning efforts, closer adherence to project schedules and costs, and providing continued opportunities for small businesses. We have increased the use of brokers under GLS Plus with enhanced pre- and post-award services and have integrated virtual market tours and analytical tools.",
+            "modified": "2022-09-30T14:47:29.381Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2020-09-30-03",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Public Buildings Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Matt Crothers",
+                "hasEmail": "mailto:matthew.crothers@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.gsa.gov/real-estate/real-estate-services/leasing/broker-services",
+                    "title": "Broker Services"
+                }
+            ],
+            "keyword": ["broker", "pbs"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "Bureau IT Leadership Directory",
             "description": "Json file for Bureau IT Leadership Directory",
             "modified": "2015-09-01",
@@ -340,6 +433,37 @@
             "programCode": ["023:014"],
             "language": ["en-us"],
             "theme": ["Json file"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Capital Investment and Leasing Program Prospectus Library",
+            "description": "We work closely with the Office of Management and Budget, the Senate Committee on Environment and Public Works, and the House Committee on Transportation and Infrastructure to prepare and review prospectuses for capital and leasing projects that require funding in excess of the established annual prospectus threshold. These projects, as approved by Congress, help to maintain and improve federal building's across the country.",
+            "modified": "2022-09-30T14:38:26.368Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-09-30-01",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Public Buildings Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Matt Crothers",
+                "hasEmail": "mailto:matthew.crothers@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.gsa.gov/real-estate/gsa-properties/capital-investment-and-leasing-program-prospectus-library",
+                    "title": "Capital Investment and Leasing Program Prospectus Library"
+                }
+            ],
+            "keyword": ["capital investment", "leasing", "pbs"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
             "title": "Capital Projects Application (CPA)",
@@ -806,6 +930,37 @@
                 }
             ],
             "keyword": ["category management", "contract", "contract inventory", "exploration", "vendor"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Contract Opportunities from SAM.gov",
+            "description": "Contract Opportunities data from SAM.gov",
+            "modified": "2022-08-04T13:47:28.294Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-08-04-01",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Federal Acquisition Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "IAE Outreach",
+                "hasEmail": "mailto:IAEOutreach@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://sam.gov/data-services/Contract%20Opportunities?privacy=Public",
+                    "title": "Contract Opportunities"
+                }
+            ],
+            "keyword": ["SAM.gov"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
@@ -3705,7 +3860,7 @@
             "@type": "dcat:Dataset",
             "title": "Federal Hiring Assessments and Selection Outcome Dataset",
             "description": "An Excel export of combined USA Staffing, Monster, Aviator (FAA) Hiring Assessment and Selection Outcome Data from the 24 CFO Act agencies.  We believe this data will empower Chief Human Capital Officers and Human Resources staff with the right data to focus on improved hiring outcomes while complying with open data requirements to increase transparency to the millions of applicants who apply for federal positions each year on USAJOBS.",
-            "modified": "2021-01-27T17:27:00.940Z",
+            "modified": "2022-07-28T10:14:34.842Z",
             "accessLevel": "public",
             "identifier": "GSA-2021-01-08-01",
             "dataQuality": true,
@@ -3726,14 +3881,14 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "hiring selections and outcomes public data set as of mar 31 2022 (Updated May 12 2022).csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/78936fe0-c86c-4bba-bcc8-f182da1efc4f/download/hiring-selections-and-outcomes-public-data-set-as-of-mar-31-2022-updated-may-12-2022.csv"
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "Data Dictionary for Federal Hiring Dataset June 30 2022.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/d2fa8702-1e44-4dd5-b178-9d03ccd4b8f1/download/data-dictionary-for-federal-hiring-dataset-june-30-2022.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
-                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "Data Dictionary for Federal Hiring Dataset March 31 2022 (Updated May 13 2022).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/4eeef60f-e105-40e7-8118-dc60c0bb6091/download/data-dictionary-for-federal-hiring-dataset-march-31-2022-updated-may-13-2022.xlsx"
+                    "mediaType": "text/csv",
+                    "title": "hiring selections and outcomes public data set as of June 30 2022.csv",
+                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/0abaacff-6015-4dbe-b5bf-48c2916c9047/download/hiring-selections-and-outcomes-public-data-set-as-of-june-30-2022.csv"
                 }
             ],
             "keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -4839,6 +4994,45 @@
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "FY21 Federal Real Property Profile",
+            "description": "The Federal Real Property Report includes summary data for the federal government's inventory of land, building, and structure assets around the world.",
+            "modified": "2022-09-29T16:15:38.332Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-09-29-01",
+            "dataQuality": true,
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Stephanie Klodzen",
+                "hasEmail": "mailto:stephanie.klodzen@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "FY 2021 FRPP Metadata Template for FRPP Public Dataset 10.25.22.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/ddd07256-1bcf-4416-9b37-d167a767860b/download/fy-2021-frpp-metadata-template-for-frpp-public-dataset-10.25.22.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "FRPP_Public_Dataset_FY21_Final_10242022.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/021a92fa-b1cc-4e0a-8bf7-f3f9874e53a1/download/frpp_public_dataset_fy21_final_10242022.xlsx"
+                }
+            ],
+            "keyword": ["FRPP", "Federal Property", "General Services Property", "NGDA Portfolio Themes", "Real Property Theme", "geospatial", "gsa", "ngda", "real estate"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "FY21 Per Diem Reimbursement Rates & API",
             "description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for  locations across the continental United States for Fiscal Year 2021 as well as the standard per diem rates for any locations not specifically listed.",
             "modified": "2022-07-11T14:11:23.370Z",
@@ -4959,6 +5153,39 @@
                 }
             ],
             "keyword": ["lodging", "meals and incidental expenses", "per diem"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "FY23 Per Diem Reimbursement Rates & API",
+            "description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2022, as well as the standard per diem rates for any locations not specifically listed.",
+            "modified": "2022-09-20T17:24:04.506Z",
+            "accessLevel": "public",
+            "identifier": "GSA 2022-09-20",
+            "license": "https://opendatacommons.org/licenses/pddl/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Office of Government-wide Policy",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "Office of Government-wide Policy"
+                }
+            },
+            "isPartOf": "GSA-2021-08-16-01",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "GSA Travel Policy",
+                "hasEmail": "mailto:travelpolicy@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.gsa.gov/cdnstatic/FY2023_ZIPCodeFile_081122.xlsx",
+                    "title": "FY23 Per Diem"
+                }
+            ],
+            "keyword": ["logging", "meals and incidental expenses", "per diem"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
@@ -5304,7 +5531,7 @@
             "@type": "dcat:Dataset",
             "title": "GSA Enterprise Data Inventory (EDI)",
             "description": "GSA Enterprise Data Inventory (EDI)",
-            "modified": "2022-07-14T18:58:27.316Z",
+            "modified": "2022-08-01T13:35:22.951Z",
             "accessLevel": "public",
             "identifier": "GSA-2015-11-13-01",
             "dataQuality": true,
@@ -5325,14 +5552,14 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 7.14.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/328c0fcf-45e1-4398-a829-972cf3560bcf/download/edi-7.14.json"
+                    "title": "EDI 10.27.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/758cd1c6-6838-4a4f-8302-c1d8dad4a727/download/edi-10.27.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
-            "language": ["us-EN"]
+            "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
             "title": "GSA Enterprise Roadmap",
@@ -5532,8 +5759,8 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
                     "format": "json",
-                    "title": "GSA FITARA Actions and Milestones 2022-05-12",
-                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the May 2022 quarterly submission to OMB on May 12, 2022.",
+                    "title": "GSA FITARA Actions and Milestones 2022-08-10",
+                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the August 2022 quarterly submission to OMB on August 10, 2022.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
                 }
@@ -5565,7 +5792,7 @@
                     "mediaType": "application/json",
                     "format": "JSON",
                     "title": "GSA IT Reform Cost Savings/Avoidance",
-                    "description": "GSA's May 2022 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+                    "description": "GSA's August 2022 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
                 }
@@ -5596,7 +5823,7 @@
                     "mediaType": "application/zip",
                     "format": "ZIP",
                     "title": "GSA IT Policy Archive Zip",
-                    "description": "Last update: 2022-06-06",
+                    "description": "Last update: 2022-09-15",
                     "downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
                 }
             ],
@@ -5700,6 +5927,37 @@
                 }
             ],
             "keyword": ["contracts", "global supply", "on time metrics", "shipment data", "transactions"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Historical Lease Turnover Totals",
+            "description": "GSA, the nation's largest public real estate organization, provides workspace for over one million federal workers. These employees, along with government property, are housed in space owned by the federal government and in leased properties including buildings, land, antenna sites, etc. across the country.",
+            "modified": "2022-09-30T14:47:44.476Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-09-30-04",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Public Buildings Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Matt Crothers",
+                "hasEmail": "mailto:matthew.crothers@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.gsa.gov/real-estate/real-estate-services/leasing-overview",
+                    "title": "Historical Lease Turnover Totals"
+                }
+            ],
+            "keyword": ["lease turnover", "pbs"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
@@ -5916,8 +6174,8 @@
         }, {
             "@type": "dcat:Dataset",
             "title": "Inventory of Owned and Leased Properties (IOLP)",
-            "description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\n\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\n\n- Location Code - GSA\u2019s alphanumeric identifier for the building \n- Owned or Leased - Indicates the building is Federally Owned (F) or Leased (L) \n- GSA Region - GSA assigned region for building location. \n- Street Address/City/State/Zip Code - Building Address. \n- Latitude and Longitude - Map coordinates of the building. \n- Building Rentable Square Feet - Total Rentable Square Feet in building. \n- Available Square Feet - Vacant Space in building. \n- Construction Date - Date of year built. \n- Congressional District\u2014Congressional District building is located \n- Senator/Representative/URL\u2014Senator/Representative of the Congressional District and their URL\n\nThe Leased Data set also includes the following: \n\n- Lease Number - GSA\u2019s alphanumeric identifier for the lease. \n- Lease Effective Date - Date lease starts. \n- Lease Expiration Date - Date lease expires.",
-            "modified": "2022-06-29T13:09:39.977Z",
+            "description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\n\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\n\n- Location Code - GSA\u2019s alphanumeric identifier for the building\n- Real Property Asset Name - Allows users to find information about a specific building \n- Installation Name - Allows users to identify whether a property is part of an installation, such as a campus\n- Owned or Leased - Indicates the building is federally owned (F) or leased (L)\n- GSA Region - GSA assigned region for building location\n- Street Address/City/State/Zip Code - Building address\n- Longitude and Latitude - Map coordinates of the building (only through .csv export)\n- Rentable Square Feet - Total rentable square feet in building\n- Available Square Feet - Vacant space in building\n- Construction Date (Owned Only) - Year built\n- Congressional District - Congressional District building is located\n- Senator/Representative/URL - Senator/Representative of the Congressional District and their URL\n- Building Status - Indicates building is active\n- Lease Number (Leased Only) - GSA\u2019s alphanumeric identifier for the lease\n- Lease Effective/Expiration Dates (Leased Only) - Date lease starts/expires\n- Real Property Asset Type - Identifies a property as land, building, or structure",
+            "modified": "2022-10-06T15:22:48.652Z",
             "accessLevel": "public",
             "identifier": "GSA-4495",
             "dataQuality": true,
@@ -5938,13 +6196,13 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/a4c03688-0e52-49c7-abca-59e746918562/download/iolp-buildings.xlsx"
+                    "title": "IOLP Buildings (2).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/1ae3ce2e-927d-48eb-acba-b5dc8c734c3d/download/iolp-buildings-2.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/9fcd02fa-1177-47bf-a4fe-2a1ce93a1dcb/download/iolp-leases.xlsx"
+                    "title": "IOLP Leases (2).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/0d788b3c-cd55-4047-8254-6bf96e76779b/download/iolp-leases-2.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
@@ -6055,6 +6313,130 @@
             "keyword": ["GSA", "SaaS", "approvals", "compliance", "software"],
             "bureauCode": ["023:00"],
             "programCode": ["023:008"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Lease Documents",
+            "description": "GSA provides electronic copies of GSA lease documents for general public viewing. The lease documents are sorted by region and contain GSA Lease Forms and Lease Amendments (LA) from selected GSA leases across the nation.\n\nIf you need to find a specific lease that\u2019s not included in these regions, first visit the FOIA Electronic Reading Room. If you still cannot find a lease document in the FOIA Electronic Reading Room, then submit an FOIA request.\n\nIf you have a question or you are having difficulties accessing any of the documents, please contact chad.latawiec@gsa.gov.\n\nSearch for or use the table to access a state or territory's lease documents.",
+            "modified": "2022-09-30T14:54:32.048Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-09-30-07",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Public Buildings Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Matt Crothers",
+                "hasEmail": "mailto:Matthew.crothers@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.gsa.gov/real-estate/real-estate-services/leasing/executed-lease-documents",
+                    "title": "Lease Documents"
+                }
+            ],
+            "keyword": ["lease", "lease documents", "pbs"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Lease Inventory Excel Spreadsheet",
+            "description": "GSA, the nation's largest public real estate organization, provides workspace for over one million federal workers. These employees, along with government property, are housed in space owned by the federal government and in leased properties including buildings, land, antenna sites, etc. across the country.",
+            "modified": "2022-09-30T14:56:55.570Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-09-30-08",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Public Buildings Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Matt Crothers",
+                "hasEmail": "mailto:matthew.crothers@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.gsa.gov/real-estate/real-estate-services/leasing-overview",
+                    "title": "Lease Inventory Excel Spreadsheet"
+                }
+            ],
+            "keyword": ["lease inventory", "leases", "pbs"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Leasing Desk Guide",
+            "description": "Leasing policy and procedures are reflected in the Leasing Desk Guide (LDG) and through other policy information such as Leasing Alerts, Lease Acquisition Circulars (LACs), and Realty Services Letters (RSLs).\n\nPolicies are effective until they are canceled by additional LDG issuances, Leasing Alerts, or LACs.",
+            "modified": "2022-09-30T14:51:13.754Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-09-30-06",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Public Buildings Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Matt Crothers",
+                "hasEmail": "mailto:matthew.crothers@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.gsa.gov/real-estate/real-estate-services/leasing/leasing-policy",
+                    "title": "Leasing Desk Guide"
+                }
+            ],
+            "keyword": ["leasing", "leasing desk", "pbs"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Leasing Policy",
+            "description": "Leasing policy and procedures are reflected in the Leasing Desk Guide (LDG) and through other policy information such as Leasing Alerts, Lease Acquisition Circulars (LACs), and Realty Services Letters (RSLs).\n\nPolicies are effective until they are canceled by additional LDG issuances, Leasing Alerts, or LACs.\n\nLeasing Desk Guide (LDG)\nThe LDG chapters contain authorities, policies, technical and procedural guides, and administrative limitations governing the acquisition of real property; use it to understand typical considerations, process steps, and requirements of lease acquisitions.",
+            "modified": "2022-09-30T14:50:24.848Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-09-30-05",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Public Buildings Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Matt Crothers",
+                "hasEmail": "mailto:matthew.crothers@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.gsa.gov/real-estate/real-estate-services/leasing/leasing-policy",
+                    "title": "Leasing Policy"
+                }
+            ],
+            "keyword": ["leasing", "pbs", "policy"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
@@ -8106,6 +8488,42 @@
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "Networx Business Volume FY 2022 3rd Qtr",
+            "description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and Month for the Central and Direct billing accounts.",
+            "modified": "2022-08-15T14:37:12.454Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-08-15-01",
+            "dataQuality": true,
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Federal Acquisition Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "R/P3M",
+            "isPartOf": "GSA-2015-08-27",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Toni Holloway",
+                "hasEmail": "mailto:toni.holloway@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "TotRevFY22_3rdQtr.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/6aac7904-6086-4c5b-89c4-4e67fa4e6c59/resource/478f94b7-f8cb-4154-9224-63ed04e3b3f8/download/totrevfy22_3rdqtr.xlsx"
+                }
+            ],
+            "keyword": ["Networx Telecommunications", "networx business volume", "telecommunications"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "New Construction and Repair and Alteration (R&A) Projects",
             "description": "This map shows new construction and major R&A projects in federal buildings under GSA\u2019s custody and control that are above the current prospectus threshold of $2.85 million. New construction and major R&A projects for two different fiscal years are displayed on the map. Projects for FY2014 were funded as part of the Consolidated Appropriations Act of 2014, and GSA will begin to execute these projects this year. Projects for FY2015 have been included in the President\u2019s Budget request, but require approval and funding from Congress before the projects can begin.",
             "modified": "2014-04-28",
@@ -8272,6 +8690,37 @@
             "programCode": ["023:019"],
             "language": ["sp-US"],
             "theme": ["Other"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Office of Portfolio Management & Customer Engagement",
+            "description": "The Office of Portfolio Management is responsible for providing strategic direction, administration, and management support services for real estate portfolio management, asset business strategies, capital allocation, portfolio analysis, asset valuations, pricing policy, occupancy administration, and property utilization and disposal.\n\nThe office is responsible for maximizing the value of PBS's portfolio of owned and leased assets by developing national strategies and serving as a consultant to the regions. These annual and long-term strategies are developed based on the goals and objectives of the owner (taxpayer) and balance competing stakeholder objectives.\n\nThe office provides national guidance on asset-related pricing policy, provides valuation services, develops asset management strategies (asset business plans, asset performance measurements and targets, strategies to improve asset performance, benchmarking of portfolio and asset performance), develops national capital investment strategies and criteria, and promotes optimal investment decisions for acquisition, construction, renovation, leasing, utilization and disposition activities.",
+            "modified": "2022-09-30T14:43:42.560Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-09-30-02",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Public Buildings Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Matt Crothers",
+                "hasEmail": "mailto:matthew.crothers@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.gsa.gov/about-us/organization/public-buildings-service/office-of-portfolio-management-customer-engagement",
+                    "title": "Office of Portfolio Management & Customer Engagement"
+                }
+            ],
+            "keyword": ["customer engagement", "pbs", "portfolio management"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
             "title": "Operational Workbench",
@@ -11086,7 +11535,7 @@
             "@type": "dcat:Dataset",
             "title": "Real Estate Across the United States (REXUS) Inventory (Building)",
             "description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-            "modified": "2021-01-04T15:59:39.946Z",
+            "modified": "2022-08-01T12:54:47.495Z",
             "accessLevel": "public",
             "identifier": "GSA-25251",
             "dataQuality": true,
@@ -11108,24 +11557,24 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "text/csv",
                     "title": "data_gov_bldg_rexus.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/77226374-f00d-4860-845d-317c8ee83cc9/download/data_gov_bldg_rexus.csv"
+                    "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/750ed63c-cece-4573-9b48-f38d2cdce826/download/data_gov_bldg_rexus.csv"
                 }
             ],
             "keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
-            "bureauCode": ["023:05"],
-            "programCode": ["023:004"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
             "title": "Real Estate Across the United States (REXUS) (Lease)",
             "description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-            "modified": "2020-12-01",
+            "modified": "2022-08-01T13:10:15.814Z",
             "accessLevel": "public",
             "identifier": "GSA-25261",
             "dataQuality": true,
             "issued": "2011-07-15",
             "license": "http://www.usa.gov/publicdomain/label/1.0/",
-            "spatial": "US",
+            "rights": "true",
             "publisher": {
                 "@type": "org:Organization",
                 "name": "General Services Administration"
@@ -11140,13 +11589,13 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "text/csv",
                     "title": "data_gov_lse_rexus.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/d1ae88a6-0063-4246-a5c6-cf94e9dbad70/download/data_gov_lse_rexus.csv"
+                    "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/88679f6a-c8b0-47dd-a957-c0b3fb5c7a49/download/data_gov_lse_rexus.csv"
                 }
             ],
             "keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
-            "bureauCode": ["023:05"],
-            "programCode": ["023:003"],
-            "theme": ["Leases"]
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
             "title": "Closed-Paid Vouchers in Concur Government Edition (CGE)",
@@ -11514,6 +11963,37 @@
             "theme": ["Directory"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "Sustainability Policies and Procedures",
+            "description": "We incorporate sustainability provisions in the following guidelines for leased buildings as new federal laws, policies, and Executive Orders are issued.\n\nThe mandatory provisions below address sustainable products and practices within leased space. Leased buildings are required to earn an ENERGY STAR\u00ae label, unless specific exceptions apply. For some lease types, a third-party green building rating certification is required\u2014either Leadership for Energy and Environmental Design (LEED)\u00ae or Green Globes\u00ae.",
+            "modified": "2022-09-30T14:59:14.149Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-09-30-09",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Public Buildings Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Matt Crothers",
+                "hasEmail": "mailto:matthew.crothers@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.gsa.gov/real-estate/real-estate-services/leasing/sustainability-policies",
+                    "title": "Sustainability Policies and Procedures"
+                }
+            ],
+            "keyword": ["pbs", "sustainability"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "Sustainable Facilities Tool",
             "description": "With the SFTool API, you can access a myriad of high performance building information. Pull the most up to date information about green products, services, and materials. Put sustainable strategies in the hands of your audience today. All of our API methods are HTTP GET and always return the latest data. Whether you\u2019re looking to add sustainable building information to your website or blog, or looking for data to build an application, the SFTool API is here for you.Making API calls is very straightforward. There is a single base URI for each data category. By default, it will return all of the data for that category. By using any of our optional parameters, you can filter the data as you see fit. Signup for free to get the SFTool API key at  https://api.data.gov/signup/.",
             "modified": "2018-09-24",
@@ -11545,6 +12025,37 @@
             "programCode": ["023:009"],
             "language": ["en-us"],
             "theme": ["API"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Sustainable Facilities Tool API",
+            "description": "The SFTool API is simple, yet powerful. With it, you can surface a myriad of high performance building information. You will need to signup for an API key at https://sftool.gov/developer/apikey-signup/.\n\nAll of our API methods are HTTP GET and always return the latest data. Whether you\u2019re looking to add sustainable building information to your website or blog, or using this data to build an application, the SFTool API is here for you.\n\nMaking API calls is very straightforward. Our API is fully REST and provides semantic URIs to deliver the resources.",
+            "modified": "2022-08-04T14:00:40.482Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-08-04-04",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Office for Federal Building Health and Performance",
+                "hasEmail": "mailto:sftool@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://sftool.gov/developer",
+                    "title": "Sustainable Facilities Tool"
+                }
+            ],
+            "keyword": ["api", "sustainability"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
             "title": "System for Award Management (SAM) API",
@@ -11866,6 +12377,37 @@
             "programCode": ["023:019"],
             "language": ["en-us"],
             "theme": ["Information Technology"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "US Digital Registry API",
+            "description": "To help prevent exploitation from unofficial sources, phishing scams, or malicious entities, the U.S. Digital Registry serves as a crowdsource resource for agencies, citizens, and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps, and mobile websites. The accounts in the registry are independently updated by federal managers across the government who maintain individual agency accounts.",
+            "modified": "2022-08-04T14:03:20.390Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-08-04-05",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "US Digital Registry Team",
+                "hasEmail": "mailto:usdigitalregistry@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://open.gsa.gov/api/digital-registry/",
+                    "title": "US Digital Registry API"
+                }
+            ],
+            "keyword": ["api", "digital repositry"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
             "title": "Vehicle Rates API",

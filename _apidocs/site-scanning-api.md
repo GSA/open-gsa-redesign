@@ -122,7 +122,7 @@ The endpoint begins at [https://api.gsa.gov/technology/site-scanning/v1/websites
 
 #### Scans 
 
-The scan API has two endpoints:
+The scan API has two endpoints for scan data:
   - `/websites/` returns scan data for all targeted websites.  This is a paginated endpoint, so to see all the data, you will need to iterate through all the pages.
   - `/websites/[target_url]` returns scan data for a particular website (specified by replacing `[target_url]` with the desired target url.  
 
@@ -141,6 +141,14 @@ The `/websites/` endpoint can be queried in numerous ways.
 * `dap_detected_final_url` 
 
 In order to filter by multiple parameters, include an `&` in between each.   
+
+#### Example Analysis Queries
+
+* https://api.gsa.gov/technology/site-scanning/v1/websites?target_url_domain=gsa.gov
+* https://api.gsa.gov/technology/site-scanning/v1/websites?final_url_domain=gsa.gov
+* https://api.gsa.gov/technology/site-scanning/v1/websites?target_url_agency_owner=General%20Services%20Administration
+* https://api.gsa.gov/technology/site-scanning/v1/websites?final_url_domain=gsa.gov&target_url_redirects=true
+
 
 #### Pagination and Limits
 
@@ -263,11 +271,34 @@ Note that the results are ordered in descending alphabetical order for the `targ
 }
 ```
 
+#### Analysis Endpoint
+
+There is also an analysis endpoint located at [https://api.gsa.gov/technology/site-scanning/v1/analysis](https://api.gsa.gov/technology/site-scanning/v1/analysis)
+   
+Instead of scan data, it returns some analysis on an API query, namely: 
+
+* How many websites it returns - (target_url)
+* How many domains are represented in the results - (final_url_domain)
+* How many agencies are represented in the results - (target_url_domain_owners)
+
+#### Example Analysis Queries
+
+* https://api.gsa.gov/technology/site-scanning/v1/analysis
+* https://api.gsa.gov/technology/site-scanning/v1/analysis?target_url_domain=gsa.gov
+* https://api.gsa.gov/technology/site-scanning/v1/analysis?final_url_domain=gsa.gov&target_url_redirects=true
+* https://api.gsa.gov/technology/site-scanning/v1/analysis?target_url_agency_owner=General%20Services%20Administration
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ## OpenAPI Specification File
 
 You can view the full details of this API in the <a href="https://api.gsa.gov/technology/site-scanning/v1/api-json?api_key=DEMO_KEY">OpenAPI Specification file available here</a>.
+   
+<p><small><a href="#">Back to top</a></small></p>
+
+## Data Dictionary
+
+You can find a complete description of each field in the <a href="https://github.com/GSA/site-scanning-documentation/blob/main/data/Site_Scanning_Data_Dictionary.csv">Site Scanning data dictionary</a>.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -287,10 +318,16 @@ The API will return one of the following responses:
 
 ## Download the Data Directly
 
-In order to download all of the scan data as a flat file, the system generates a CSV and JSON export every weekend.  This data can be accessed at:  
+In order to download all of the scan data as a flat file, the system generates two sets of CSV and JSON exports every weekend.  The primary set includes scan data for all live URLs (those that return a 2xx server code).  This data can be accessed at:  
   
 * [https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.csv](https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.csv)
 * [https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.json](https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.json)
+   
+The second set includes scan data for all URLs that were scanned, regardless of whether they are live or not (some may be inaccessible over the public internet, no longer live, or experiencing downtime).  This data can be accessed at:
+   
+* [https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot-all.csv](https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot-all.csv)
+* [https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot-all.json](https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot-all.json)
+   
   
 ## Contact Us
 

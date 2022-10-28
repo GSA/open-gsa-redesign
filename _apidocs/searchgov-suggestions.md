@@ -42,7 +42,7 @@ You will see an array of suggestions. Suggestions are derived from the searches 
 
 Up to five suggestions related to your visitors' search term are returned and are updated in near real time, ranked by a popularity score.
 
-If you want a given term to always appear as a suggestion, please [contact our team](mailto:search@support.digitalgov.gov).
+If you want a given term to always appear as a suggestion, please [contact our team](mailto:search@gsa.gov).
 
 Note: inappropriate terms are filtered by our system and will not be presented as suggestions.
 
@@ -54,6 +54,6 @@ By using this API, you agree to our [Terms of Service](https://search.gov/tos).
 
 ## Contact Us
 
-Please never hesitate to reach out! [Email the Search.gov team](mailto:search@support.digitalgov.gov). 
+Please never hesitate to reach out! [Email the Search.gov team](mailto:search@gsa.gov). 
 
 <p><small><a href="#">Back to top</a></small></p>
