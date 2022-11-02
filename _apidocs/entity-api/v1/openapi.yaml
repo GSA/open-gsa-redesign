@@ -2892,17 +2892,22 @@ paths:
           type: string
       - name: qMode
         in: query
-        description: qMode paramter for Search Operations
+        description: qMode parameter for Search Operations
         schema:
           type: string
       - name: exactMatch
         in: query
-        description: exactMatch paramter for Search Operations
+        description: exactMatch parameter for Search Operations
         schema:
           type: boolean
       - name: api_key
         in: query
         description: api_key
+        schema:
+          type: string
+      - name: proceedingsData
+        in: query
+        description: accepts Yes as a valid value to display proceedings data
         schema:
           type: string
       responses:

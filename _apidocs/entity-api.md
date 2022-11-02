@@ -28,11 +28,25 @@ This constitutes both the publicly available entities and the entities that have
 * It can return only the first 10,000 records.
 * The following characters are not allowed to be sent in the parameter values with the API request: & \| { } ^ \
 
-**Additional Features of the Entity Management API:** It can serve as an Extract API with the addition of "format" parameter in the request. Following are the key features of the Entity Management Extract API:
+**Additional Features of the Entity Management API:** It can serve as an Extract API with the addition of "format" parameter in the request.<br>
+Following are the key features of the Entity Management Extract API:
 * It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
 * It returns asynchronous responses by sending file downloadable link.
 * It returns data in the JSON or CSV format as selected by the user.
 * It can return only the first 1,000,000 records.
+
+<table>
+<tr>
+<td>
+<b>Coming Soon:</b><br>
+The registered "Responsibility & Integrity Record" Public entities will also be returned by the API. 
+Please refer to the “integrityInformation” references in this page.
+<ul> Alpha Deployment: 08/10/2022.
+<br> Production Deployment: 12/12/2022.
+</ul>
+</td>
+</tr>
+</table>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -182,23 +196,19 @@ curl -X POST "https://api.sam.gov/entity-information/v2/entities?ueiSAM=< UEI >"
 
 <tr>
 <td rowspan="2">samRegistered</td>
-<td>Allows Yes. 
-<br>Yes signifies SAM registrants.
-<br>Example: samRegistered=Yes
-<br><br> NOTE: If this search parameter is not sent in the request, then the API will return only SAM registrants by default. 
+<td>The API, by default, will return only the entities that are registered, 
+if this search parameter is not sent in the request.
+<br>However, users can still choose to send this search parameter as:
+<br>samRegistered=Yes.
 </td>
 <td>v2</td>
 </tr>
 
 <tr>
-<td>Allows Yes or No.
-<br>Yes signifies SAM registrants.
-<br>No signifies non-SAM registrants.
-<br>Example: samRegistered=Yes
-<br><br> 
-NOTES: 
-<br>1. If this search parameter is not sent in the request, then the API will return SAM registrants by default with the current schema.
-<br>2. If samRegistered=No is sent in the request, then the API will return the new non-SAM registrants schema.
+<td>The API, by default, will return only the entities that are registered, if this search parameter is not sent in the request.
+<br>However, users can choose to send this search parameter as:
+<br>samRegistered=Yes – to receive entities that are registered.
+<br>samRegistered=No – to receive entities that are not registered/ID Assigned.
 </td>
 <td>v3</td>
 </tr>
@@ -215,9 +225,9 @@ NOTES:
 <tr>
 <td>ueiSAM</td>
 <td>Unique Entity Identifier SAM
-<br>Allow a 12 character value; a maximum of up to 100 values can be sent.
+<br>Allows a single 12-character value or up to 100 values.
 <br>Example: ueiSAM=RV56IG5JM6G9
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -231,9 +241,9 @@ NOTES:
 
 <tr>
 <td>cageCode</td>
-<td>Allows exact 5 character value.
+<td>Allows a single 5-character value or up to 100 values.
 <br>Example: cageCode=00000
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -248,7 +258,7 @@ NOTES:
 <td>legalBusinessName</td>
 <td>Allows partial or complete value search.
 <br>Example: legalBusinessName=ALLTEL
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -314,7 +324,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: ueiCreationDate=01/01/2019, ueiCreationDate=[01/01/2019,05/29/2019]
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -336,7 +346,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>physicalAddressCity</td>
 <td>Allows a text.
 <br>Example: physicalAddressCity=Herndon
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -350,9 +360,9 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 
 <tr>
 <td>physicalAddressCountryCode</td>
-<td>Allows a 3 character code for SAM registrants and also a 2 character code for non-SAM registrants.
+<td>Allows a 3-character code for entities that are registered. Allows both 3-character and 2-character codes for entities that are not registered/ID Assigned.
 <br>Example: physicalAddressCountryCode=USA
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -360,19 +370,19 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>physicalAddressProvinceOrStateCode</td>
 <td>Allows a 2 character code.
 <br>Example: physicalAddressProvinceOrStateCode=AR
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>physicalAddressZipPostalCode</td>
 <td>SAM registrants:
-<br>Allows a 5 digit code for US zip codes and any digit postal code for non-US postal codes.
-<br>Non-SAM registrants:
-<br>Allows a 5 or a 9 digit code for US zip codes and any digit postal code for non-US postal codes.
-<br><br>Examples: 
+<br>Allows a 5-digit code for US zip codes or any digit postal code for non-US postal codes, 
+for entities that are registered. Allows either a 5 or a 9-digit code for US zip codes, 
+or any digit postal code for non-US postal codes, for entities that are not registered/ID Assigned.
+<br>Examples: 
 <br>physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054, physicalAddressZipPostalCode=21202-3117
-<br><br>Applicable to both SAM and non-SAM registrants.</td>
+</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -537,32 +547,65 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>v1<br>v2<br>v3</td>
 </tr>
 
+<tr>
+<td>proceedingsData</td>
+<td>When used in conjunction with includeSections=integrityInformation,<br>
+allows users to obtain registered entities that have answered Proceedings data.<br>
+This parameter accepts the only value of Yes which is not case sensitive.
+<br><br>Examples:<br>
+includeSections=integrityInformation&proceedingsData=Yes;<br>
+includeSections=All,integrityInformation&proceedingsData=yes;<br>
+includeSections=entityRegistration,coreData,integrityInformation,<br>
+pointsOfContact&proceedingsData=YES
+</td>
+<td>v3</td>
+</tr>
 
 <tr>
 <td>includeSections</td>
 <td>Allows to filter data by sections.
-<br><br>SAM registrants:
-<br>The applicable sections are entityRegistration, coreData, assertions, repsAndCerts, and pointsOfContact. To return all the sections, provide a value of 'All'. The repsAndCerts section will be returned only if explicitly requested.
-<br>Non-SAM registrants:
-<br>The applicable sections are entityRegistration and coreData.
-<br><br>Examples: includeSections=entityRegistration,coreData, includeSections=All, includeSections=repsAndCerts
-<br><br>Applicable to both SAM and non-SAM registrants.</td>
+<br>
+For registered entities: 
+<br>The applicable sections are entityRegistration, coreData, assertions, pointsOfContact, repsAndCerts, All and integrityInformation.
+<ul>
+<li>The repsAndCerts section will be returned only if explicitly requested.</li>
+<li>To request all the sections (entityRegistration, coreData, assertions, pointsOfContact and repsAndCerts), provide a value of 'All'.
+</li>
+<li>The integrityInformation section is newly added specifically to the v3 API. It is not included in ‘All’, so it must be explicitly requested.</li>
+</ul>
+<br>Examples:
+includeSections=entityRegistration,coreData;<br> 
+includeSections=integrityInformation,All;<br>
+includeSections=repsAndCerts.
+
+<br><br>For not registered/ID Assigned entities: 
+<br>The applicable sections are entityRegistration, coreData, All and integrityInformation.
+<ul>
+<li>To request both the sections (entityRegistration and coreData), provide a value of 'All'.</li>
+<li>The integrityInformation section is newly added specifically to the v3 API. It is not included in ‘All’, so it must be explicitly requested.</li>
+</ul>
+<br><br>Examples: 
+<br>includeSections=entityRegistration,coreData;
+<br>includeSections=integrityInformation,All
+</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>format</td>
-<td>Allows user to download data into the JSON and CSV file formats.
+<td>Allows user to download data into the JSON and CSV asynchronous file formats.
 <br>Example: format=csv
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>emailId</td>
-<td>Allows user to get JSON or CSV file download links sent to the email address associated to the API key used in the request, when used in conjunction with the format parameter.
+<td>When used in conjunction with the format parameter, allows user to get JSON or CSV asynchronous file download 
+links with tokens sent to the email address associated to the API key used in the request.
 <br>Example: emailId=Yes&format=JSON
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.
+</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -697,7 +740,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 </details>
 
 <details>
-<summary><b>Response Schema:</b><br>The Entity Management API offers several response elements that are described in the following sections.<br>
+<summary><b>Response Schema:</b>
+<br>The Entity Management API offers several response elements that are described in the following sections.<br>
 </summary>
 <details>
 <summary><b>entityRegistration</b><br>
@@ -719,8 +763,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>samRegistered</td>
 <td>string</td>
-<td>SAM Registered or non-SAM Registered Entity
-<br>Applicable to both SAM and non-SAM registrants.
+<td>Registered or not registered/ID Assigned entity.
 </td>
 <td>v2<br>v3</td>
 </tr>
@@ -729,7 +772,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -744,7 +787,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>cageCode</td>
 <td>string</td>
 <td>CAGE Code
-<br>Applicable to both SAM and non-SAM registrants</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -759,7 +802,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -787,15 +830,14 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>registrationStatus</td>
 <td>string</td>
-<td>Registration Status</td>
+<td>The status of the entities that are registered or not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>evsSource</td>
 <td>string</td>
-<td><br>Source of the SAM and non-SAM registrants.
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<td>Source of the validated entities that are registered or not registered/ID Assigned.</td>
 <td>v3</td>
 </tr>
 
@@ -832,7 +874,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiStatus</td>
 <td>string</td>
 <td>Unique Entity Identifier Status
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -840,7 +882,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiExpirationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -848,7 +890,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>ueiCreationDate</td>
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -858,8 +900,8 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Opted for Public Display or opted out of it.
 <br>v1 or v2: Returns noPublicDisplayFlag.
 <br>v3: Returns publicDisplayFlag.
-<br>Applicable to both SAM and non-SAM registrants.
-<br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.
+<br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY entities that are not registered/ID Assigned.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
@@ -883,7 +925,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>dnbOpenData</td>
 <td>string</td>
 <td>Dun & Bradstreet Open Data
-<br>Applicable to both SAM and non-SAM registrants.</td>
+<br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
 <td>v2<br>v3</td>
 </tr>
 
@@ -894,10 +936,15 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <summary><b>coreData</b><br>
 </summary>
 
-<details>
+<details style="padding-left: 20px;"> 
 <summary><b>entityHierarchyInformation Sub Section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="3" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -940,7 +987,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>evsSource</td>
 <td>string</td>
-<td>Source of the SAM registrant hierarchy</td>
+<td>Source of the registered entity’s hierarchy</td>
 <td>v3</td>
 </tr>
 
@@ -1062,7 +1109,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>evsSource</td>
 <td>string</td>
-<td>Source of the SAM registrant hierarchy
+<td>Source of the registered entity’s hierarchy
 <br><br>NOTE: This field is only available in v3</td>
 </tr>
 
@@ -1168,7 +1215,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>evsSource</td>
 <td>string</td>
-<td>Source of the SAM registrant hierarchy
+<td>Source of the registered entity’s hierarchy
 <br><br>NOTE: This field is only available in v3</td>
 </tr>
 
@@ -1283,7 +1330,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <tr>
 <td>evsSource</td>
 <td>string</td>
-<td>Source of the SAM registrant hierarchy</td>
+<td>Source of the registered entity’s hierarchy</td>
 <td>v3</td>
 </tr>
 
@@ -1646,11 +1693,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>federalHierarchy Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1708,11 +1758,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>tinInformation Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1749,11 +1802,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>entityInformation Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1822,11 +1878,15 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>physicalAddress Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;">
+<b>Applicable to the entities that are registered or not registered/ID Assigned</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1842,66 +1902,62 @@ samMonitoring
 <tr>
 <td>addressLine1</td>
 <td>string</td>
-<td>Physical Address Line 1.
-<br>Only Physical Address Line 1 is applicable to non-SAM registrants.</td>
+<td>Address Line 1</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
-<td>Physical Address Line 2.
-<br>Only Physical Address Line 2 is applicable to non-SAM registrants.</td>
+<td>Address Line 2</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
-<td>Physical Address City.
-<br>Only Physical Address City is applicable to non-SAM registrants.</td>
+<td>City</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
-<td>Physical Address State or Province Code.
-<br>Only Physical Address State or Province Code is applicable to non-SAM registrants.</td>
+<td>State or Province Code</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
-<td>Physical Address Zip.
-<br>Only Physical Address Zip is applicable to non-SAM registrants.</td>
+<td>Zip Code</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
-<td>Physical Address Zip Plus4.
-<br>Only Physical Address Zip Plus4 is applicable to non-SAM registrants.</td>
+<td>Zip Plus4</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
-<td>Physical Address Country Code.
-<br>Only Physical Address Country Code is applicable to non-SAM registrants.</td>
+<td>Country Code</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>mailingAddress Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1965,11 +2021,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>congressionalDistrict</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -1992,11 +2051,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>generalInformation Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2143,11 +2205,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>businessTypes Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2237,11 +2302,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>financialInformation Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2482,14 +2550,665 @@ samMonitoring
 </details>
 
 <details>
-<summary><b>assertions</b><br>
+<summary><b>integrityInformation</b><br>
 </summary>
+<details style="padding-left: 20px;">
+<summary><b>entitySummary Sub Section</b><br>
+</summary>
+<table>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
 
-<details>
-<summary><b>goodsAndServices Sub Section</b><br>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data 
+</th>
+</tr>
+
+<tr>
+<td>ueiSAM</td>
+<td>string</td>
+<td>Unique Entity Identifier SAM</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>CAGE Code</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>physicalAddress</b>
+</th>
+</tr>
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line1</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line2</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Zip Code</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Plus4</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v3</td>
+</tr>
+</table>
+</details>
+
+<details style="padding-left: 20px;">
+<summary><b>proceedingsData Sub Section</b><br>
 </summary>
 <table>
 
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data 
+</th>
+</tr>
+
+
+<tr>
+<td>proceedingsQuestion1</td>
+<td>string</td>
+<td>Proceedings Question1. 
+<br>Yes or No values are captured</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>proceedingsQuestion2</td>
+<td>string</td>
+<td>Proceedings Question2.
+<br>Yes or No values are captured</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>proceedingsQuestion3</td>
+<td>string</td>
+<td>Proceedings Question3. 
+<br>Yes or No values are captured</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>proceedingsRecordCount</td>
+<td>string</td>
+<td>Proceedings Records Counter</td>
+<td>v3</td>
+</tr>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>listOfProceedings</b>
+</th>
+</tr>
+<tr>
+<td>proceedingDate</td>
+<td>string</td>
+<td>Proceeding Date</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>instrumentNumber</td>
+<td>string</td>
+<td>Instrument Number</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>instrument</td>
+<td>string</td>
+<td>Instrument Type</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>proceedingStateCode</td>
+<td>string</td>
+<td>Proceeding State Code</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>proceedingType</td>
+<td>string</td>
+<td>Proceeding Type</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>disposition</td>
+<td>string</td>
+<td>Disposition</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>proceedingDescription</td>
+<td>string</td>
+<td>Proceeding Description</td>
+<td>v3</td>
+</tr>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>proceedingsPointsOfContact</b>
+</th>
+</tr>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>proceedingsPOC</b>
+</th>
+</tr>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data 
+</th>
+</tr>
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Zip Code</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v3</td>
+</tr>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>proceedingsAlternatePOC</b>
+</th>
+</tr>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data 
+</th>
+</tr>
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First Name</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>middleInitial</td>
+<td>string</td>
+<td>Middle Initial</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
+</th>
+</tr>
+
+<tr>
+<td>usPhone</td>
+<td>string</td>
+<td>US Phone</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>usPhoneExtension</td>
+<td>string</td>
+<td>US Phone Extension</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>nonUSPhone</td>
+<td>string</td>
+<td>Non-US Phone</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Fax</td>
+<td>>v3</td>
+</tr>
+
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email</td>
+<td>>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>Address Line 1</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Address Line 2</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>stateOrProvinceCode</td>
+<td>string</td>
+<td>State or Province Code</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>zipCode</td>
+<td>string</td>
+<td>Zip Code</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>zipCodePlus4</td>
+<td>string</td>
+<td>Zip Code Plus 4</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>Country Code</td>
+<td>v3</td>
+</tr>
+</table>
+</details>
+
+<details style="padding-left: 20px;">
+<summary><b>responsibilityInformationCount Sub Section</b><br>
+</summary>
+<table>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered or not registered/ID Assigned</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data 
+</th>
+</tr>
+
+<tr>
+<td>responsibilityInformationCount</td>
+<td>string</td>
+<td>Responsibility Information Counter</td>
+<td>v3</td>
+</tr>
+
+</table>
+</details>
+
+<details style="padding-left: 20px;">
+<summary><b>responsibilityInformationList Sub Section</b><br>
+</summary>
+<table>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered or not registered/ID Assigned</b>
+</th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<td>recordType</td>
+<td>string</td>
+<td>Record Type</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>recordTypeDesc</td>
+<td>string</td>
+<td>Record Type Description</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>recordDate</td>
+<td>string</td>
+<td>Record Date</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>procurementIdOrFederalAssistanceId</td>
+<td>string</td>
+<td>Contract Data ID or Grant ID</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>referenceIdvPiid</td>
+<td>string</td>
+<td>Referenced IDV PIID</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>attachment</td>
+<td>string</td>
+<td>Pre-signed URL to access the attachment</td>
+<td>v3</td>
+</tr>
+</table>
+</details>
+
+<details style="padding-left: 20px;">
+<summary><b>corporateRelationships Sub Section</b><br>
+</summary>
+<table>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
+<th style="background-color: #f1f1f1;"><b>Type</b></th>
+<th style="background-color: #f1f1f1;"><b>Description</b></th>
+<th style="background-color: #f1f1f1;"><b>Applicable Versions</b></th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: Public</b>, which constitutes publicly available entities and their unclassified data
+</th>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>highestOwner</b>
+</th>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>Cage Code</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>integrityRecords</td>
+<td>string</td>
+<td>Returns:
+<br>Yes - if the CAGE Code finds one or more matches in the database.
+<br>No - if the CAGE Code does not find any match in the database.
+<br>N/A - if the CAGE Code is null.</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>immediateOwner</b>
+</th>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>Cage Code</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>integrityRecords</td>
+<td>string</td>
+<td>Returns:
+<br>Yes - if the CAGE Code finds one or more matches in the database.
+<br>No - if the CAGE Code does not find any match in the database.
+<br>N/A - if the CAGE Code is null.</td>
+<td>v3</td>
+</tr>
+
+<tr>
+<th style="background-color: #f1f1f1;" colspan="4"> <b>predecessorsList</b>
+</th>
+</tr>
+
+<tr>
+<td>legalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>cageCode</td>
+<td>string</td>
+<td>Cage Code</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>integrityRecords</td>
+<td>string</td>
+<td>Returns:
+<br>Yes - if the CAGE Code finds one or more matches in the database.
+<br>No - if the CAGE Code does not find any match in the database.
+<br>N/A - if the CAGE Code is null.</td>
+<td>v3</td>
+</tr>
+</table>
+</details>
+
+</details>
+
+<details>
+<summary><b>assertions</b><br>
+</summary>
+
+<details style="padding-left: 20px;">
+<summary><b>goodsAndServices Sub Section</b><br>
+</summary>
+<table>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2581,11 +3300,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>disasterReliefData Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2682,11 +3404,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>sizeMetrics Sub Section</b><br>
 </summary>
 <table>
-
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2715,10 +3440,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>sizeMetricDetails Sub Section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2747,10 +3476,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>industrySpecificSizeMetrics Sub Section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2786,10 +3519,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>ediInformation Sub Section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -2854,10 +3591,14 @@ samMonitoring
 <summary><b>repsAndCerts</b><br>
 </summary>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>certifications Sub Section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -5142,10 +5883,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>qualifications Sub Section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -6295,10 +7040,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>financialAssistanceCertifications Sub Section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -6348,10 +7097,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>pdfLinks Sub Section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -6400,11 +7153,15 @@ samMonitoring
 <summary><b>pointsOfContact</b><br>
 </summary>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>governmentBusinessPOC Sub section</b><br>
 </summary>
 <table>
 <tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -6540,11 +7297,15 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>electronicBusinessPOC Sub section</b><br>
 </summary>
 <table>
 <tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -6680,11 +7441,15 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>governmentBusinessAlternatePOC Sub section</b><br>
 </summary>
 <table>
 <tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -6820,11 +7585,15 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>electronicBusinessAlternatePOC Sub section</b><br>
 </summary>
 <table>
 <tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -6960,11 +7729,15 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>pastPerformancePOC Sub section</b><br>
 </summary>
 <table>
 <tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -7100,11 +7873,15 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>pastPerformanceAlternatePOC Sub section</b><br>
 </summary>
 <table>
 <tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -7240,11 +8017,15 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>partyPerformingCertificationPOC Sub section</b><br>
 </summary>
 <table>
 <tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -7370,11 +8151,15 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>soleProprietorshipPOC Sub section</b><br>
 </summary>
 <table>
 <tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -7451,11 +8236,15 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>accountsReceivablePOC Sub section</b><br>
 </summary>
 <table>
 <tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -7532,11 +8321,15 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>accountsPayablePOC Sub section</b><br>
 </summary>
 <table>
 <tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -7662,11 +8455,15 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>ediPOC Sub section</b><br>
 </summary>
 <table>
 <tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
+<tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
 <th style="background-color: #f1f1f1;"><b>Description</b></th>
@@ -7743,10 +8540,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>eliminationsPOC Sub section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -7873,10 +8674,14 @@ samMonitoring
 </table>
 </details>
 
-<details>
+<details style="padding-left: 20px;">
 <summary><b>salesPOC Sub section</b><br>
 </summary>
 <table>
+<tr>
+<th colspan="4" style="background-color: #f1f1f1;"> <b>Applicable to the entities that are registered</b>
+</th>
+</tr>
 <tr>
 <th style="background-color: #f1f1f1;"><b>Field Name</b></th>
 <th style="background-color: #f1f1f1;"><b>Type</b></th>
@@ -8017,7 +8822,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Additional Help References
-1. <a href="v1/REPS_AND_CERTS_MAPPING.xlsx">Reps and Certs</a>
+1. <a href="v1/SAM_REPS_AND_CERTS_MAPPING.xlsx">Reps and Certs Mapping</a>
 2. <a href="v1/SAM Functional Data Dictionary.pdf" target="_blank">Data Dictionary</a>
 
 
@@ -8036,7 +8841,61 @@ The API will return one of the following responses:
   </tr>
   <tr>
     <td>400</td>
-    <td>Application Level Error Messages:<br><br>1. Invalid "Date" format:<br>v1 or v2: Date should be specified in the format: MM/dd/YYYY.<br>v3: "message":"Dates must be specified in the MM/DD/YYYY format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY format."<br><br>2. Invalid Search Parameter:<br>v1 or v2: "Invalid Input Parameters","detail":"< user-provided invalid parameter >"<br>v3: "message":"The search parameter, < user-provided invalid parameter > does not exist.", "detail":"Please refer to https://open.gsa.gov/api/entity-api/ for a list of allowable search parameters."<br><br>3. If ‘includeSections’, ‘emailId’ or ‘format’ is sent in the "q" parameter:<br>v1 or v2: The parameters: ‘includeSections’, ‘emailId’ or ‘format’ are not permitted inside Query Param(q).<br>v3: "message":"The search parameters 'includeSections','emailId' and 'format' are not permitted inside Query Param(q)", "detail":"Please provide these parameters separately"<br><br>4. More than 100 ueiSAM values are sent:<br>v1 or v2: A maximum of 100 ueiSAM is allowed.<br>v3: "message": "More than 100 UEI SAM are not allowed.", "detail": "Please limit the number of UEI SAM to 100."<br><br>5. More than 100 CAGE values are sent:<br>v1 or v2: A maximum of 100 CAGE Codes is allowed.<br>v3: "message":"More than 100 CAGE Codes are not allowed.", "detail":"Please limit the number of CAGE Codes to 100."<br><br>6. If "emailId" is sent on its own:<br>v1 or v2: The parameter emailId must be provided in conjunction with the parameter format.<br>v3: "message":"The search parameter 'emailId' must be provided in conjunction with the search parameter 'format.", "detail":"Users can opt for receiving the requested JSON/CSV files in their emails."<br><br>7. If "entityEFTIndicator" is sent on its own:<br>v1 or v2: entityEFTIndicator filter must be provided in conjunction with ueiSAM filter.<br>v3: message":"The search parameter 'entityEFTIndicator' must be provided in conjunction with the search parameter 'ueiSAM'.", "detail":"The entityEFTIndicator parameter cannot be provided on its own."<br><br>8. File size exceeded for JSON or CSV exports:<br>v1 or v2: "Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search."<br>v3: "message":"Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search.", "detail":"Count Exceeded Error"<br><br>9. JSON or CSV file generation is in-progress:<br>v1 or v2: File Processing in Progress. Please check again later.<br>v3: "message": "The requested JSON or CSV file is not generated yet. Please try again later.", "details": "Larger files will take some time to process."<br><br>10. Using an expired Token for downloading JSON or CSV files:<br>v1 or v2: title":"Requested File is Expired and cannot be downloaded","detail":"We are not able to process your request"<br>v3: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number."<br><br>11. More than 10,000 records are requested via "page" and "size" parameters:<br>v1 or v2: "title":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."<br>v3: "message":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."<br><br>12. More than 10 for "size" is requested:<br>v1 or v2: "title":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"<br>v3: "message":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"<br><br>13. Missing "Basic Auth" under "Authorization" and missing System Account credentials:<br>v1 or v2: No system account credentials are provided. Please provide credentials via basic authentication.<br><br>14. Different IP Address than that mentioned in the System Account:<br>v1 or v2: IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.<br><br>15. API Key does not belong to the System Account:<br>v1 or v2: System Account and API Key you have provided do not match. Please visit your System Account and obtain the API Key from there.<br><br>16. System Account has a different value for "Type of Connection":<br>v1 or v2: "title": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",<br>v3: "message": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",<br><br>17. If GET is used with System Accounts:<br>v1 or v2: GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.<br>v3: "message": "Permission denied", "detail": "GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.",<br><br>18. Insufficient API Key privileges to download a JSON or CSV File:<br>v1 or v2: The API Key is not authorized to access this < file type > Extract<br>v3: The API Key is not authorized to access this < file type > Extract<br><br>19. A non-existing Reps and Certs PDF file is requested:<br>v1, v2, v3: The requested PDF File does not exist; the entity did not answer this type of Representations and Certifications data.</td>
+       <td>Application Level Error Messages:
+	<ol>
+	<li> Invalid "Date" format:<br>v1 or v2: Date should be specified in the format: MM/dd/YYYY.<br>v3: "message":"Dates must be specified in the MM/DD/YYYY format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY format."</li>
+	<li>Invalid Search Parameter:<br>v1 or v2: "Invalid Input Parameters","detail":"< user-provided invalid parameter >"<br>v3: "message":"The search parameter, < user-provided invalid parameter > does not exist.", "detail":"Please refer to https://open.gsa.gov/api/entity-api/ for a list of allowable search parameters."</li>
+	<li>If 'includeSections', 'emailId' or 'format' is sent in the "q" parameter:<br>v1 or v2: The parameters: 'includeSections', 'emailId' or 'format' are not permitted inside Query Param(q).<br><br>
+	If 'includeSections', 'emailId', 'format' or 'proceedingsData' is sent in the "q" parameter:<br>
+	v3: "message":"The search parameters 'includeSections','emailId','format' and 'proceedingsData' are not permitted inside Query Param(q)", "detail":"Please provide these parameters separately".</li>
+	<li>More than 100 ueiSAM values are sent:<br>
+	v1 or v2: A maximum of 100 ueiSAM is allowed.<br>
+	v3: "message": "More than 100 UEI SAM are not allowed.", "detail": "Please limit the number of UEI SAM to 100."</li>
+	<li>More than 100 CAGE values are sent:<br>
+	v1 or v2: A maximum of 100 CAGE Codes is allowed.<br>
+	v3: "message":"More than 100 CAGE Codes are not allowed.", "detail":"Please limit the number of CAGE Codes to 100."</li>
+	<li>If "emailId" is sent on its own:<br>v1 or v2: The parameter emailId must be provided in conjunction with the parameter format.<br>
+	v3: "message":"The search parameter 'emailId' must be provided in conjunction with the search parameter 'format.", "detail":"Users can opt for receiving the requested JSON/CSV files in their emails."</li>
+	<li>If "entityEFTIndicator" is sent on its own:<br>
+	v1 or v2: entityEFTIndicator filter must be provided in conjunction with ueiSAM filter.<br>
+	v3: message":"The search parameter 'entityEFTIndicator' must be provided in conjunction with the search parameter 'ueiSAM'.", "detail":"The entityEFTIndicator parameter cannot be provided on its own."</li>
+	<li>File size exceeded for JSON or CSV exports:<br>
+	v1 or v2: "Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search."<br>
+	v3: "message":"Total Number of Records: < the total number > exceeded the maximum allowable limit: 1000000. Please provide a suitable search parameter to refine your search.", "detail":"Count Exceeded Error"</li>
+	<li>JSON or CSV file generation is in-progress:<br>
+	v1 or v2: File Processing in Progress. Please check again later.<br>
+	v3: "message": "The requested JSON or CSV file is not generated yet. Please try again later.", "details": "Larger files will take some time to process."</li>
+	<li>Using an expired Token for downloading JSON or CSV files:<br>
+	v1 or v2: title":"Requested File is Expired and cannot be downloaded","detail":"We are not able to process your request"<br>
+	v3: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number."</li>
+	<li>More than 10,000 records are requested via "page" and "size" parameters:<br>
+	v1 or v2: "title":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."<br>
+	v3: "message":"Results Too Large","detail":"The Page and Size search has exceeded 10,000 records (Page multiplied by Size). Please change the Page and Size accordingly."</li>
+	<li>More than 10 for "size" is requested:<br>
+	v1 or v2: "title":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"<br>
+	v3: "message":"size is < user requested size >","detail":"Size Cannot Exceed 10 Records"</li>
+	<li> Missing "Basic Auth" under "Authorization" and missing System Account credentials:<br>
+	v1 or v2: No system account credentials are provided. Please provide credentials via basic authentication.</li>
+	<li>Different IP Address than that mentioned in the System Account:<br>
+	v1 or v2: IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.</li>
+	<li>API Key does not belong to the System Account:<br>v1 or v2: System Account and API Key you have provided do not match. Please visit your System Account and obtain the API Key from there.</li>
+	<li> System Account has a different value for "Type of Connection":<br>
+	v1 or v2: "title": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",<br>
+	v3: "message": "Connection type failure", "detail": "Insufficient privileges to perform the operation - System account must have Type of Connection as Restful",</li>
+	<li>If GET is used with System Accounts:<br>
+	v1 or v2: GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.<br>
+	v3: "message": "Permission denied", "detail": "GET requests for Sensitive data are no longer supported. Please use POST requests to access the Sensitive Entity data.",</li>
+    <li>Insufficient API Key privileges to download a JSON or CSV File:<br>
+	v1 or v2: The API Key is not authorized to access this < file type > Extract<br>v3: The API Key is not authorized to access this < file type > Extract</li>
+	<li>A non-existing Reps and Certs PDF file is requested:<br>
+	v1, v2, v3: The requested PDF File does not exist; the entity did not answer this type of Representations and Certifications data.</li>
+	<li>If proceedingsData=Yes is sent on its own or in combination with includeSections=< a value other than integrityInformation >:<br>
+	v3: "message": "The search parameter 'proceedingsData' must be provided in conjunction with includeSections=integrityInformation."</li>
+	<li>If proceedingsData=< a value other than Yes > is provided:<br>
+	v3: "message": "The search parameter 'proceedingsData' contains an invalid value - < user provided invalid value >."</li>
+	<li>If proceedingsData parameter is sent in combination with samRegistered=No:<br>v3: "message": "The search parameter 'proceedingsData' does not apply to unregistered (samRegistered=No) entities."</li></ol>
+	</td>
+
   </tr>
   <tr>
     <td>401</td>
@@ -8063,7 +8922,7 @@ The API will return one of the following responses:
 
 ## Examples
 
-### Example 1: Post April 3rd 2022, get me the SAM-Registered Entities with Address Change and Name Change resulting from EVS Monitoring.
+### Example 1: Post April 3rd, 2022, I would like to obtain the registered entities that have undergone Address change and Name change resulting from EVS Monitoring.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key=< FOUO API Key >&ueiSAM=[ZQGGHJH74DW7~JH9ZARNKWKC7]&includeSections=entityRegistration,coreData
@@ -8842,7 +9701,7 @@ An Entity with a Name Change resulting from EVS Monitoring in v3:
 </p>
 </details>
 
-### Example 2: Post April 3rd 2022, get me the Publicly available non-SAM-Registered Entities.
+### Example 2: Post April 3rd, 2022, I would like to obtain the publicly available not registered/ID Assigned entities.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v3/entities?api_key=< API Key >&samRegistered=No&includeSections=entityRegistration
@@ -10919,7 +11778,357 @@ V3:
 </p>
 </details>
 
-### Example 6:  I have a Fed System Account and the Role required to access non-SAM Registrant entities, both Public and NPDY. How can I obtain them?
+
+### Example 6: How do I obtain both the Public and NPDY registered “Responsibility & Integrity Record” data with my Public API Key?
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b> 
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key=< PUBLIC API Key >&includeSections=integrityInformation
+<br><br>
+<b>Alpha URL:</b> 
+<br><br>
+https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< PUBLIC API Key >& includeSections=entityRegistration,integrityInformation<br><br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+<p>
+<code style="font-family:Source Sans Pro; font-size: 18px">
+<pre>
+"entityData": [
+{
+      "entityRegistration": {
+        "samRegistered": "Yes",
+        "ueiSAM": "DE95TS6Y5XR6",
+        "entityEFTIndicator": null,
+        "cageCode": "CJ542",
+        "dodaac": null,
+        "legalBusinessName": "ng4T GmbH",
+        "dbaName": null,
+        "purposeOfRegistrationCode": "Z2",
+        "purposeOfRegistrationDesc": "All Awards",
+        "registrationStatus": "Active",
+        "evsSource": "D&B",
+        "registrationDate": "2016-05-09",
+        "lastUpdateDate": "2022-05-20",
+        "registrationExpirationDate": "2022-05-20",
+        "activationDate": "2021-05-20",
+        "ueiStatus": "Active",
+        "ueiExpirationDate": null,
+        "ueiCreationDate": "2020-06-18",
+        "publicDisplayFlag": "Y",
+        "exclusionStatusFlag": "N",
+        "exclusionURL": null,
+        "dnbOpenData": null
+      },
+{
+"integrityInformation": {
+"entitySummary": {
+"ueiSAM": "DE95TS6Y5XR6",
+"cageCode": "CJ542",
+"legalBusinessName": "ng4T GmbH",
+"physicalAddress": {
+"addressLine1": "Address1",
+"addressLine2": "Address2",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "ABC"
+}
+},
+"proceedingsData": {
+"proceedingsQuestion1": "YES",
+"proceedingsQuestion2": "YES",
+"proceedingsQuestion3": "YES",
+"proceedingsRecordCount": 1,
+"listOfProceedings": [
+{
+"proceedingDate": "1000-01-01",
+"instrumentNumber": "XXXXX",
+"instrument": "U.S.Federal issued contract",
+"proceedingStateCode": "XX",
+"proceedingType": "Criminal",
+"disposition": "Other acknowledgment of fault",
+"proceedingDescription": "Proceeding Description"
+}
+],
+"proceedingsPointsOfContact": {
+"proceedingsPOC": {
+"firstName": "First Name",
+"middleInitial": "Z",
+"lastName": "Last Name",
+"title": "Title",
+"addressLine1": "Address1",
+"addressLine2": "Address2",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "ABC"
+},
+"proceedingsAlternatePOC": {
+"firstName": "First Name",
+"middleInitial": "Z",
+"lastName": "Last Name",
+"title": "Title",
+"addressLine1": "Address1",
+"addressLine2": "Address2",
+"city": "City",
+"stateOrProvinceCode": "XX",
+"zipCode": "11111",
+"zipCodePlus4": "1111",
+"countryCode": "ABC"
+},
+}
+},
+"responsibilityInformationCount": 2,
+"responsibilityInformationList": [
+{
+"recordType": "C",
+"recordTypeDesc": "Termination for Cause",
+"recordDate": "2018-04-10",
+"procurementIdOrFederalAssistanceId": "W9127S18F0005P00002",
+"referenceIdvPiid": "W9127S15D0018",
+"attachment": "< Pre-signed URL >"
+},
+{
+"recordType": "C",
+"recordTypeDesc": "Termination for Cause",
+"recordDate": "2018-04-10",
+"procurementIdOrFederalAssistanceId": "W9127S16P0075P00003",
+"referenceIdvPiid": null,
+"attachment": "< Pre-signed URL >"
+}
+],
+"corporateRelationships": {
+"highestOwner": {
+"legalBusinessName": "WSP GLOBAL INC",
+"cageCode": “7NDG5",
+"integrityRecords": "Yes"
+},
+"immediateOwner": {
+"legalBusinessName": "LOUIS BERGER U.S., INC.",
+"cageCode": "7NDG5",
+"integrityRecords": "No"
+},
+"predecessorsList": [
+{
+"legalBusinessName": null,
+"cageCode": null,
+"integrityRecords": "N/A"
+}
+]
+}
+}
+},
+{
+"entityRegistration": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+"integrityInformation": {
+        "entitySummary": {
+          "ueiSAM": "VNP5VWMPAEF3",
+          "cageCode": null,
+          "legalBusinessName": "Harrisonburg Rescue Squad Inc",
+          "physicalAddress": {
+            "addressLine1": "Address1",
+            "addressLine2": "Address2",
+            "city": "City",
+            "stateOrProvinceCode": "XX",
+            "zipCode": "11111",
+            "zipCodePlus4": "1111",
+            "countryCode": "ABC"
+          }
+        },
+        "proceedingsData": {
+          "proceedingsQuestion1": null,
+          "proceedingsQuestion2": null,
+          "proceedingsQuestion3": null,
+          "proceedingsRecordCount": 0,
+          "listOfProceedings": [],
+          "proceedingsPointsOfContact": {
+            "proceedingsPOC": {
+              "firstName": null,
+              "middleInitial": null,
+              "lastName": null,
+              "title": null,
+              "addressLine1": null,
+              "addressLine2": null,
+              "city": null,
+              "stateOrProvinceCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null,
+              "countryCode": null
+            },
+            "proceedingsAlternatePOC": {
+              "firstName": null,
+              "middleInitial": null,
+              "lastName": null,
+              "title": null,
+              "addressLine1": null,
+              "addressLine2": null,
+              "city": null,
+              "stateOrProvinceCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null,
+              "countryCode": null
+            }
+          }
+        },
+        "responsibilityInformationCount": 1,
+        "responsibilityInformationList": [
+          {
+            "recordType": "C",
+            "recordTypeDesc": "Termination for Cause",
+            "recordDate": "2019-02-15",
+            "procurementIdOrFederalAssistanceId": "W912DQ18C1026",
+            "referenceIdvPiid": null,
+            "attachment": "< Pre-signed URL >"
+          }
+        ],
+        "corporateRelationships": {
+          "highestOwner": {
+            "legalBusinessName": null,
+            "cageCode": null,
+            "integrityRecords": "N/A"
+          },
+          "immediateOwner": {
+            "legalBusinessName": null,
+            "cageCode": null,
+            "integrityRecords": "N/A"
+          },
+          "predecessorsList": [
+            {
+              "legalBusinessName": null,
+              "cageCode": null,
+              "integrityRecords": "N/A"
+            }
+          ]
+        }
+      }
+    }
+  ]
+</pre>
+</code>
+</p>
+</details>
+
+### Example 7: How do I obtain both the Public and NPDY not registered/ID Assigned “Responsibility & Integrity Record” data with my Public API Key?
+
+<details>
+<summary>Request URL</summary>
+<b>Production URL:</b> 
+<br><br>https://api.sam.gov/entity-information/v3/entities?api_key=< PUBLIC API Key >&samRegistered=No&includeSections=integrityInformation,All
+<br><br>
+<b>Alpha URL:</b> 
+<br><br>https://api-alpha.sam.gov/entity-information/v3/entities?api_key=< PUBLIC API Key >&samRegistered=No&includeSections=integrityInformation,All
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+<p>
+<code style="font-family:Source Sans Pro; font-size: 18px">
+<pre>
+{
+      "entityRegistration": {
+        "samRegistered": "No",
+        "ueiSAM": "WB23FJYKNLM1",
+        "cageCode": null,
+        "legalBusinessName": "9TH CIRCUIT COURT OF APPEALS",
+        "registrationStatus": "ID Assigned",
+        "evsSource": null,
+        "ueiStatus": "Active",
+        "ueiExpirationDate": null,
+        "ueiCreationDate": "2022-02-22",
+        "publicDisplayFlag": "Y",
+        "dnbOpenData": null
+      },
+      "coreData": {
+        "physicalAddress": {
+            "addressLine1": "Address1",
+            "addressLine2": "Address2",
+            "city": "City",
+            "stateOrProvinceCode": "XX",
+            "zipCode": "11111",
+            "zipCodePlus4": "1111",
+            "countryCode": "ABC"
+        }
+      },
+      "integrityInformation": {
+        "responsibilityInformationCount": 1,
+        "responsibilityInformationList": [
+          {
+            "recordType": "C",
+            "recordTypeDesc": "Termination for Cause",
+            "recordDate": "2022-05-09",
+            "procurementIdOrFederalAssistanceId": "BG567815C0001",
+            "referenceIdvPiid": null,
+            "attachment": "< Pre-signed URL >"
+          }            
+       ]
+      }
+    },
+    {
+      "entityRegistration": {
+        "samRegistered": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "ueiSAM": "TST987654321",
+        "cageCode": null,
+        "legalBusinessName": "HAYES, INC.",
+        "registrationStatus": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "evsSource": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "ueiStatus": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "ueiExpirationDate": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "ueiCreationDate": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "publicDisplayFlag": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov.",
+        "dnbOpenData": "This entity has opted out of public search. Only federal government users and users associated with this entity can view this record on SAM.gov."
+      },
+      "coreData": {
+        "physicalAddress": {
+            "addressLine1": "Address1",
+            "addressLine2": "Address2",
+            "city": "City",
+            "stateOrProvinceCode": "XX",
+            "zipCode": "11111",
+            "zipCodePlus4": "1111",
+            "countryCode": "ABC"
+        }
+      },
+      "integrityInformation": {
+        "responsibilityInformationCount": 3,
+        "responsibilityInformationList": [
+          {
+            "recordType": "C",
+            "recordTypeDesc": "Termination for Cause",
+            "recordDate": "2022-05-09",
+            "procurementIdOrFederalAssistanceId": "BG567815C0001",
+            "referenceIdvPiid": null,
+            "attachment": "< Pre-signed URL >"
+          },
+          {
+            "recordType": "C",
+            "recordTypeDesc": "Termination for Cause",
+            "recordDate": "2022-05-17",
+            "procurementIdOrFederalAssistanceId": "ABAB0113C0001",
+            "referenceIdvPiid": null,
+            "attachment": "< Pre-signed URL >"
+          },
+          {
+            "recordType": "W",
+            "recordTypeDesc": "Material Failure to Comply with Closeout Requirements",
+            "recordDate": "2022-05-17",
+            "procurementIdOrFederalAssistanceId": "ABAB0113C0001",
+            "referenceIdvPiid": null,
+            "attachment": "< Pre-signed URL >"
+          }
+       ]
+      }
+    }
+  ]
+</pre>
+</code>
+</p>
+</details>
+
+### Example 8:  I have a Fed System Account and the Role required to access the not registered/ID Assigned entities. How can I obtain them?
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v3/entities?api_key= < API Key >&samRegistered=No
@@ -10934,7 +12143,7 @@ Response for one Public and one NPDY record is provided.<br>
 <p>
 <code style="font-family:Source Sans Pro; font-size: 18px">
 <pre>
-A Public non-SAM Registered entity:
+A Public unregistered/ID Assigned entity:
 
 "entityData": [
 {
@@ -10964,7 +12173,7 @@ A Public non-SAM Registered entity:
 }
 },
 
-An NPDY non-SAM Registered entity:
+An NPDY unregistered/ID Assigned entity:
 
 "entityData": [
 {
@@ -10998,7 +12207,7 @@ An NPDY non-SAM Registered entity:
 </p>
 </details>
 
-### Example 7: Get a CSV file of Active SAM-registered Entities.
+### Example 9: I would like to obtain an asynchronous CSV file of the Active registered entities.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v2/entities?api_key= < FOUO API Key >&registrationStatus=A
@@ -11015,7 +12224,7 @@ Click to view a sample v2 CSV Response for one record <a href="v1/v2_CSV_Respons
 Click to view a sample v3 CSV Response for one record <a href="v1/v3_CSV_Response.xlsx" target="_blank">v3_CSV_Response</a><br>
 </details>
 
-### Example 8: Get a JSON file of all the Entities using the POST request:<br>
+### Example 10: Get a JSON file of all the Entities using the POST request:<br>
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>: https://api.sam.gov/entity-information/v2/entities?format=JSON
@@ -11147,9 +12356,10 @@ Disclaimer:
 | 10/21/2021 | v3.1    | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added error messages #23 and #24 to the 400 level http response codes.<br><br> * Added the Version 3 endpoint.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | 02/01/2022 | v3.2    | * Update the OpenAPI Specification File to include the V3 endpoints.<br><br> * Updated the OpenAPI Specification File to reflect the correct behavior for the V3 exclusionsStatusFlag parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | 04/04/2022 | v3.3    | * Removed duns information from the documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| 08/08/2022 | v3.4    | * Updated to clarify the use of Controlled Unclassified Information (CUI) data.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-
+| 08/08/2022 | v3.4    | * Updated to clarify the use of Controlled Unclassified Information (CUI) data.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| 08/10/2022 | v3.5    | * Introduced a header to clearly distinguish the applicability of the section or sub-section to the registered entities and/or unregistered/ID Assigned entities.<br><br> * Included the “Responsibility & Integrity Record” API changes in the "API Description" and "Examples" sections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 09/19/2022 | v3.6    | * Updated "Description" for includeSections in the "Query String Parameters" section.<br><br> * Updated "entitySummary Sub Section" in the "Response Schema" section.<br><br> * Added "responsibilityInformationCount Sub Section" in the "Response Schema" section.<br><br> * Updated the “Examples” section - modified Example 6, added Example 7 and revised numbering of other Examples accordingly.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 10/19/2022 | v3.7    | * Added a new Public search parameter, "proceedingsData" in the "API Description" - "Query String Parameters" section.<br><br> * Added new validation rules for "proceedingsData" in the "HTTP Response Codes" section.<br><br> * Updated the yaml file to include proceedingsData as a search parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 10/25/2022 | v3.8    | *  Updated the response schema for the API Description 🡪 Response Schema 🡪 integrityInformation 🡪 proceedingsData Sub Section to show the newly added field, "proceedingsRecordCount".<br><br> * Updated Example 6 🡪 Response (JSON Output) to show the newly added field, "proceedingsRecordCount".<br><br> * Updated Reps and Certs help documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 <p><small><a href="#">Back to top</a></small></p>
-
-
