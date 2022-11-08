@@ -4353,6 +4353,42 @@
             "theme": ["Real Estate"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "Federal Real Property Profile Summary Data by Installation Name",
+            "description": "A XLSX export of summarized data for those specified civilian agency assets contained within the FRPP, a government-wide database of executive branch agency federal real property assets, that cannot be made public at a detailed level.",
+            "modified": "2022-11-08T14:49:16.004Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-11-08",
+            "describedBy": "https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-council-frpc/frpc-guidance-library",
+            "describedByType": "application/pdf",
+            "issued": "2021-05-21",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Public Buildings Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "R/P1Y",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Stephanie Klodzen",
+                "hasEmail": "mailto:stephanie.klodzen@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "fy-2021-frpp-summarized-data-by-installation-10.24.22.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9179b4b9-7b65-481f-8cea-2cd2328eabc8/resource/960137c2-7a3e-45d6-bcbf-c71784379993/download/fy-2021-frpp-summarized-data-by-installation-10.24.22.xlsx"
+                }
+            ],
+            "keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "Installation Name", "building", "land", "real property", "structure"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "Federal Strategic Sourcing Initiative (FSSI) DDS2",
             "description": "FSSI Domestic Delivery Services 2 BPA vendor submitted usage reports",
             "modified": "2016-02-23",
@@ -5562,8 +5598,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 11.3.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ea0528d6-ce1d-45d2-92d8-23f73a14c3b5/download/edi-11.3.json"
+                    "title": "EDI 11.8.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/203de830-3598-4c9d-a6ee-68785d0d7c7f/download/edi-11.8.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
