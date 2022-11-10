@@ -4353,9 +4353,9 @@
             "theme": ["Real Estate"]
         }, {
             "@type": "dcat:Dataset",
-            "title": "Federal Real Property Profile Summary Data by Installation Name",
-            "description": "A XLSX export of summarized data for those specified civilian agency assets contained within the FRPP, a government-wide database of executive branch agency federal real property assets, that cannot be made public at a detailed level.",
-            "modified": "2022-11-08T14:49:16.004Z",
+            "title": "FY2021 Federal Real Property Profile Summary Data by Installation Name",
+            "description": "A XLSX export of summarized data for those specified civilian agency assets contained within the FRPP, a government-wide database of executive branch agency federal real property assets, are not included in the detailed level dataset.",
+            "modified": "2022-11-10T20:39:28.094Z",
             "accessLevel": "public",
             "identifier": "GSA-2022-11-08",
             "describedBy": "https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-council-frpc/frpc-guidance-library",
@@ -4364,7 +4364,7 @@
             "rights": "true",
             "publisher": {
                 "@type": "org:Organization",
-                "name": "Public Buildings Service",
+                "name": "General Services Administration",
                 "subOrganizationOf": {
                     "@type": "org:Organization",
                     "name": "General Services Administration"
@@ -4953,8 +4953,8 @@
         }, {
             "@type": "dcat:Dataset",
             "title": "FY2020 Federal Real Property Profile (FRPP) Summary Data by Installation Name",
-            "description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, that cannot be made public at a detailed level.",
-            "modified": "2022-06-22T22:16:09.385Z",
+            "description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, are not included in the detailed level dataset..",
+            "modified": "2022-11-10T15:37:54.612Z",
             "accessLevel": "public",
             "identifier": "GSA-2021-05-13-01",
             "license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -5052,11 +5052,6 @@
                 "hasEmail": "mailto:stephanie.klodzen@gsa.gov"
             },
             "distribution": [{
-                    "@type": "dcat:Distribution",
-                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "FY 2021 FRPP Metadata Template for FRPP Public Dataset 10.25.22.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/ddd07256-1bcf-4416-9b37-d167a767860b/download/fy-2021-frpp-metadata-template-for-frpp-public-dataset-10.25.22.xlsx"
-                }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "FRPP_Public_Dataset_FY21_Final_10242022.xlsx",
@@ -5598,8 +5593,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 11.8.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/203de830-3598-4c9d-a6ee-68785d0d7c7f/download/edi-11.8.json"
+                    "title": "EDI 11.10.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/92a6d63a-2e79-4891-9695-f2309c3a1e20/download/edi-11.10.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5805,8 +5800,8 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
                     "format": "json",
-                    "title": "GSA FITARA Actions and Milestones 2022-08-10",
-                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the August 2022 quarterly submission to OMB on August 10, 2022.",
+                    "title": "GSA FITARA Actions and Milestones 2022-11-09",
+                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the November 2022 quarterly submission to OMB on November 9, 2022.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
                 }
@@ -6242,13 +6237,13 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/bc899cfe-828b-40f4-8846-b8300c3fe7c7/download/iolp-leases-2.xlsx"
+                    "title": "IOLP Buildings (2).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/f30d1139-95a0-4221-9535-f425aa9a8d65/download/iolp-buildings-2.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/9efbd417-ba94-42ac-ae19-b042447988e8/download/iolp-buildings-2.xlsx"
+                    "title": "IOLP Leases (2).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d53ebeb7-2328-44c6-b2a5-2f04c0585e60/download/iolp-leases-2.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
