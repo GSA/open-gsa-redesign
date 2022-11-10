@@ -6,7 +6,7 @@ banner-heading: ratequeryhhg API
 
 ## Introduction
 
-This document provides detailed technical information about the Rate query API offered by the TMSS 2.0. These services make use of industry standard methods for API authentication and connectivity, which should make it easier and faster for developers to interface Federal agency with TMSS 2.0. This API can be used to retrieve shipment cost for a regular Household Goods (HHG) shipment or for an Extended Storage (EXSTG) shipment.
+This document provides detailed technical information about the Rate query API offered by TMSS 2.0 at the request of Federal Civilian Agencies. These services make use of industry standard methods for API authentication and connectivity, which should make it easier and faster for developers to interface Federal agency with TMSS 2.0. This API can be used to retrieve shipment cost for a regular Household Goods (HHG) shipment or for an Extended Storage (EXSTG) shipment.
 
 <p><small><a href="#">Back to top</a></small></p>
 
