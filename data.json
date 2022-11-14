@@ -5593,8 +5593,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 11.10.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/92a6d63a-2e79-4891-9695-f2309c3a1e20/download/edi-11.10.json"
+                    "title": "EDI 11.14.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/3cb227a0-51c1-4963-ae76-f4b1378b3401/download/edi-11.14.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5833,7 +5833,7 @@
                     "mediaType": "application/json",
                     "format": "JSON",
                     "title": "GSA IT Reform Cost Savings/Avoidance",
-                    "description": "GSA's August 2022 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+                    "description": "GSA's November 2022 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
                 }
@@ -8560,6 +8560,40 @@
                 }
             ],
             "keyword": ["Networx Telecommunications", "networx business volume", "telecommunications"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Networx Business Volume FY2022 4th Qtr",
+            "description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
+            "modified": "2022-11-14T15:17:59.295Z",
+            "accessLevel": "public",
+            "identifier": "gsa-2022-11-14-01",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Federal Acquisition Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "isPartOf": "GSA-2015-08-27",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Toni Holloway",
+                "hasEmail": "mailto:toni.holloway@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "TotRevFY22_4thQtr.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/2398f7c3-a788-4c2e-acd6-f0a2d0adad5e/resource/5541b863-6dc2-4393-9582-07804a062540/download/totrevfy22_4thqtr.xlsx"
+                }
+            ],
+            "keyword": ["Networx", "billing", "networx business volume", "telecommunications"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
