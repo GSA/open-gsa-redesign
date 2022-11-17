@@ -5264,8 +5264,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 11.16.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/551a16bd-0e70-48e6-89c8-7b90b3f5417d/download/edi-11.16.json"
+                    "title": "EDI 11.17.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/aab94100-2ff4-40b3-9557-2a1283e4d638/download/edi-11.17.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5909,12 +5909,12 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "IOLP Buildings (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/f30d1139-95a0-4221-9535-f425aa9a8d65/download/iolp-buildings-2.xlsx"
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/0adcbba8-91ee-4158-9983-556e0c147288/download/iolp-buildings-2.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "IOLP Leases (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d53ebeb7-2328-44c6-b2a5-2f04c0585e60/download/iolp-leases-2.xlsx"
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/03c66b41-352d-4e59-9fe9-7c8ce5d83d7c/download/iolp-leases-2.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
