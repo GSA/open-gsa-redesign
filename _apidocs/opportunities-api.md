@@ -332,7 +332,7 @@ Please use v3 for the following APIs to utilize “Requirement strategies(farCas
 *  /opps/v3/api/createAndPublish  
 *  /opps/v3/api/update/{opportunityId}  
 
-**FAR 7.107-3 will be added to the endpoints below, if only at least one of the allowed Requirements Strategies(farCases) is not presented **
+**FAR 7.107-3 will be added to the endpoints below, if only at least one of the allowed Requirements Strategies(farCases) is not provided **
  
 *  /opps/v2/api/create  
 *  /opps/v2/api/createAndPublish  
