@@ -315,7 +315,7 @@ Please use v2 for the following APIs to utilize ueiSAM. Business rules for v2 en
 *  /opps/v2/opportunities/{opportunityId}/relatedopportunities
 
 
-Please use v3 for the following APIs to utilize “Recruitment strategies(farCases)” for Consolidate/(Substantially) Bundle notices. Business rules for v3 endpoints can be found in the corresponding API sections.
+Please use v3 for the following APIs to utilize “Requirement strategies(farCases)” for Consolidate/(Substantially) Bundle notices. Business rules for v3 endpoints can be found in the corresponding API sections.
 
 * Create Draft Opportunity
 * Create and Publish Opportunity
@@ -3135,7 +3135,136 @@ Examples
 </p>
 </details>
 
+<details>
+<summary>Get Opportunity by ID-Consolidate/(Substantially) Bundle opportunity_v2</summary>
+<p>
+<code><pre>
+{
+    "data": {
+        "type": "i",
+        "award": {
+            "date": "2022-07-12",
+            "number": "test_award_123",
+            "lineItemNumber": null
+        },
+        "naics": [
+            {
+                "code": [
+                    "111130"
+                ],
+                "type": "primary"
+            }
+        ],
+        "title": "Test_notice",
+        "archive": {
+            "date": "2022-12-18",
+            "type": "auto30"
+        },
+        "version": "2",
+        "farCases": [
+            "FAR 7.107-2",
+            "FAR 7.107-4"
+        ],
+        "permissions": {
+            "IVL": {
+                "read": true,
+                "create": true,
+                "delete": true,
+                "update": true
+            }
+        },
+        "solicitation": {
+            "deadlines": {
+                "response": null,
+                "responseTz": null
+            }
+        },
+        "pointOfContact": [
+            {
+                "fax": "",
+                "type": "primary",
+                "email": "test@gsa.gov",
+                "phone": "",
+                "title": null,
+                "fullName": "John Smith"
+            }
+        ],
+        "classificationCode": "1015",
+        "solicitationNumber": "Test12345",
+        "additionalReporting": [
+            "none"
+        ],
+        "organizationInfo": [
+            {
+                "name": "GENERAL SERVICES ADMINISTRATION",
+                "code": "470504",
+                "orgKey": "100171752"
+            }
+        ]
+    },
+    "additionalInfo": {
+        "sections": [
+            {
+                "id": "header",
+                "status": "updated"
+            },
+            {
+                "id": "award",
+                "status": "updated"
+            },
+            {
+                "id": "general",
+                "status": "updated"
+            },
+            {
+                "id": "classification",
+                "status": "updated"
+            },
+            {
+                "id": "description",
+                "status": "updated"
+            },
+            {
+                "id": "attachments-links",
+                "status": "updated"
+            },
+            {
+                "id": "contact",
+                "status": "updated"
+            }
+        ]
+    },
+    "parent": {},
+    "related": {},
+    "status": {
+        "code": "published",
+        "value": "Published"
+    },
+    "archived": false,
+    "cancelled": false,
+    "latest": false,
+    "deleted": false,
+    "postedDate": "2022-11-18T19:29:03.320+00:00",
+    "modifiedDate": "2022-11-18T19:29:03.320+00:00",
+    "createdDate": "2022-11-18T19:29:03.205+00:00",
+    "createdBy": "test@gsa.gov",
+    "description": [
+        {
+            "opportunityId": "eab77478cbe74cd092595164a7d5cafb",
+            "descriptionId": "ec071b291ebf4820a02f0e641d7741bd",
+            "modifiedOn": "2022-11-18T19:29:03.319+00:00",
+            "body": "<p>test</p>\n"
+        }
+    ],
+    "totalCount": 1,
+    "opportunityId": "eab77478cbe74cd092595164a7d5cafb"
+}
+</pre></code>
+</p>
+</details>
+
 <p><small><a href="#">Back to top</a></small></p>
+
 
 ### Cancel Published Opportunity
 
