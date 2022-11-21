@@ -4353,6 +4353,42 @@
             "theme": ["Real Estate"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "FY2021 Federal Real Property Profile Summary Data by Installation Name",
+            "description": "A XLSX export of summarized data for those specified civilian agency assets contained within the FRPP, a government-wide database of executive branch agency federal real property assets, are not included in the detailed level dataset.",
+            "modified": "2022-11-10T20:39:28.094Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2022-11-08",
+            "describedBy": "https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-council-frpc/frpc-guidance-library",
+            "describedByType": "application/pdf",
+            "issued": "2021-05-21",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "R/P1Y",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Stephanie Klodzen",
+                "hasEmail": "mailto:stephanie.klodzen@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "fy-2021-frpp-summarized-data-by-installation-10.24.22.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9179b4b9-7b65-481f-8cea-2cd2328eabc8/resource/960137c2-7a3e-45d6-bcbf-c71784379993/download/fy-2021-frpp-summarized-data-by-installation-10.24.22.xlsx"
+                }
+            ],
+            "keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "Installation Name", "building", "land", "real property", "structure"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "Federal Strategic Sourcing Initiative (FSSI) DDS2",
             "description": "FSSI Domestic Delivery Services 2 BPA vendor submitted usage reports",
             "modified": "2016-02-23",
@@ -4517,90 +4553,6 @@
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
-            "title": "FY16 Per Diem Reimbursement Rates & API",
-            "description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2016, as well as the standard per diem rates for any locations not specifically listed.",
-            "modified": "2021-08-20T11:49:24.010Z",
-            "accessLevel": "public",
-            "identifier": "GSA-2021-08-17-03",
-            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "rights": "true",
-            "publisher": {
-                "@type": "org:Organization",
-                "name": "Office of Government-wide Policy",
-                "subOrganizationOf": {
-                    "@type": "org:Organization",
-                    "name": "Office of Government-wide Policy"
-                }
-            },
-            "isPartOf": "GSA-2021-08-16-01",
-            "contactPoint": {
-                "@type": "vcard:Contact",
-                "fn": "GSA Travel Policy",
-                "hasEmail": "mailto:travelpolicy@gsa.gov"
-            },
-            "distribution": [{
-                    "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "FY16 PER DIEM RATES.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/c86f0305-2073-48bb-891d-330c4ef485f0/resource/7f8a30f7-0cba-46d9-8c16-da4e58559bd6/download/fy16-per-diem-rates.csv"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
-                    "title": "Per Diem Rates"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://open.gsa.gov/api/perdiem/",
-                    "title": "Per Diem API (JSON)"
-                }
-            ],
-            "keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
-            "bureauCode": ["015:11"],
-            "programCode": ["015:001"],
-            "language": ["en-US"]
-        }, {
-            "@type": "dcat:Dataset",
-            "title": "FY17 Per Diem Reimbursement Rates & API",
-            "description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year's 2017, as well as the standard per diem rates for any locations not specifically listed.",
-            "modified": "2021-08-20T11:48:55.405Z",
-            "accessLevel": "public",
-            "identifier": "GSA-2021-08-17-02",
-            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "rights": "true",
-            "publisher": {
-                "@type": "org:Organization",
-                "name": "Office of Government-wide Policy",
-                "subOrganizationOf": {
-                    "@type": "org:Organization",
-                    "name": "Office of Government-wide Policy"
-                }
-            },
-            "isPartOf": "GSA-2021-08-16-01",
-            "contactPoint": {
-                "@type": "vcard:Contact",
-                "fn": "GSA Travel Policy",
-                "hasEmail": "mailto:travelpolicy@gsa.gov"
-            },
-            "distribution": [{
-                    "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "FY17 PER DIEM RATES .csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/50f7d2e0-15d3-4687-a2b1-5969fa1858d4/resource/8a02e394-b093-42d5-871b-6ba62ddcbf02/download/fy17-per-diem-rates-.csv"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
-                    "title": "Per Diem Rates"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://open.gsa.gov/api/perdiem/",
-                    "title": "Per Diem API (JSON)"
-                }
-            ],
-            "keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
-            "bureauCode": ["015:11"],
-            "programCode": ["015:001"],
-            "language": ["en-US"]
-        }, {
-            "@type": "dcat:Dataset",
             "title": "FY17 Tenant Satisfaction Survey (TSS) Individual Responses with Comments",
             "description": "A CSV export of Tenant Satisfaction Survey individual responses with comments, file does not contain PII",
             "modified": "2021-05-25T16:58:44.930Z",
@@ -4667,48 +4619,6 @@
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
-            "title": "FY18 Per Diem Reimbursement Rates & API",
-            "description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2018, as well as the standard per diem rates for any locations not specifically listed.",
-            "modified": "2021-08-20T11:48:15.159Z",
-            "accessLevel": "public",
-            "identifier": "GSA-2021-08-17-01",
-            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "rights": "true",
-            "publisher": {
-                "@type": "org:Organization",
-                "name": "Office of Government-wide Policy",
-                "subOrganizationOf": {
-                    "@type": "org:Organization",
-                    "name": "Office of Government-wide Policy"
-                }
-            },
-            "isPartOf": "GSA-2021-08-16-01",
-            "contactPoint": {
-                "@type": "vcard:Contact",
-                "fn": "GSA Travel Policy",
-                "hasEmail": "mailto:travelpolicy@gsa.gov"
-            },
-            "distribution": [{
-                    "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "FY18 PER DIEM RATES.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/85bc7283-d635-41f2-a71d-cb4aeae84bfe/resource/df95bc75-e62d-48ef-bdd0-e7c708771222/download/fy18-per-diem-rates.csv"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
-                    "title": "Per Diem Rates"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://open.gsa.gov/api/perdiem/",
-                    "title": "Per Diem API (JSON)"
-                }
-            ],
-            "keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
-            "bureauCode": ["015:11"],
-            "programCode": ["015:001"],
-            "language": ["en-US"]
-        }, {
-            "@type": "dcat:Dataset",
             "title": "FY18 Tenant Satisfaction Survey Individual Responses with Comments",
             "description": "A CSV export of Tenant Satisfaction Survey (TSS) individual responses with comments, file does not contain PII.",
             "modified": "2021-05-25T17:01:43.444Z",
@@ -4770,48 +4680,6 @@
                 }
             ],
             "keyword": ["Cleanliness", "Happiness", "Lighting", "Survey", "TSS", "air quality", "building", "condition", "satisfaction", "tenant"],
-            "bureauCode": ["015:11"],
-            "programCode": ["015:001"],
-            "language": ["en-US"]
-        }, {
-            "@type": "dcat:Dataset",
-            "title": "FY19 Per Diem Reimbursement Rates & API",
-            "description": "The dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2019, as well as the standard per diem rates for any locations not specifically listed.",
-            "modified": "2021-08-16T18:18:02.477Z",
-            "accessLevel": "public",
-            "identifier": "GSA-2021-08-16-05",
-            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "rights": "true",
-            "publisher": {
-                "@type": "org:Organization",
-                "name": "Office of Government-wide Policy",
-                "subOrganizationOf": {
-                    "@type": "org:Organization",
-                    "name": "Office of Government-wide Policy"
-                }
-            },
-            "isPartOf": "GSA-2021-08-16-01",
-            "contactPoint": {
-                "@type": "vcard:Contact",
-                "fn": "GSA Travel Policy",
-                "hasEmail": "mailto:travelpolicy@gsa.gov"
-            },
-            "distribution": [{
-                    "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "FY19 PER DIEM RATES.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/02f805a7-2063-4159-88b4-1bdc0fdb73ef/resource/25668ce6-97aa-4da7-bdd8-232d8107c47f/download/fy19-per-diem-rates.csv"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
-                    "title": "Per Diem Rates"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://open.gsa.gov/api/perdiem/",
-                    "title": "Per Diem API (JSON)"
-                }
-            ],
-            "keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
@@ -4917,8 +4785,8 @@
         }, {
             "@type": "dcat:Dataset",
             "title": "FY2020 Federal Real Property Profile (FRPP) Summary Data by Installation Name",
-            "description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, that cannot be made public at a detailed level.",
-            "modified": "2022-06-22T22:16:09.385Z",
+            "description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, are not included in the detailed level dataset..",
+            "modified": "2022-11-10T15:37:54.612Z",
             "accessLevel": "public",
             "identifier": "GSA-2021-05-13-01",
             "license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -4952,48 +4820,6 @@
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
-            "title": "FY20 Per Diem Reimbursement Rates & API",
-            "description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2020, as well as the standard per diem rates for any locations not specifically listed.",
-            "modified": "2021-08-16T18:03:46.357Z",
-            "accessLevel": "public",
-            "identifier": "GSA-2021-08-16-04",
-            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "rights": "true",
-            "publisher": {
-                "@type": "org:Organization",
-                "name": "Office of Government-wide Policy",
-                "subOrganizationOf": {
-                    "@type": "org:Organization",
-                    "name": "Office of Government-wide Policy"
-                }
-            },
-            "isPartOf": "GSA-2021-08-16-01",
-            "contactPoint": {
-                "@type": "vcard:Contact",
-                "fn": "GSA Travel Policy",
-                "hasEmail": "mailto:travelpolicy@gsa.gov"
-            },
-            "distribution": [{
-                    "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "FY20 PER DIEM RATES.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/38283c41-c371-43c7-a93f-81df2cb4dffa/resource/77e91f81-66e4-45bc-84c5-84e60093903f/download/fy20-per-diem-rates.csv"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
-                    "title": "Per Diem Rates"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://open.gsa.gov/api/perdiem/",
-                    "title": "Per Diem API (JSON)"
-                }
-            ],
-            "keyword": ["lodging", "meals", "meals and incidental expenses", "travel"],
-            "bureauCode": ["015:11"],
-            "programCode": ["015:001"],
-            "language": ["en-US"]
-        }, {
-            "@type": "dcat:Dataset",
             "title": "FY21 Federal Real Property Profile",
             "description": "The Federal Real Property Report includes summary data for the federal government's inventory of land, building, and structure assets around the world.",
             "modified": "2022-09-29T16:15:38.332Z",
@@ -5018,59 +4844,11 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "FY 2021 FRPP Metadata Template for FRPP Public Dataset 10.25.22.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/ddd07256-1bcf-4416-9b37-d167a767860b/download/fy-2021-frpp-metadata-template-for-frpp-public-dataset-10.25.22.xlsx"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "FRPP_Public_Dataset_FY21_Final_10242022.xlsx",
                     "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/021a92fa-b1cc-4e0a-8bf7-f3f9874e53a1/download/frpp_public_dataset_fy21_final_10242022.xlsx"
                 }
             ],
             "keyword": ["FRPP", "Federal Property", "General Services Property", "NGDA Portfolio Themes", "Real Property Theme", "geospatial", "gsa", "ngda", "real estate"],
-            "bureauCode": ["015:11"],
-            "programCode": ["015:001"],
-            "language": ["en-US"]
-        }, {
-            "@type": "dcat:Dataset",
-            "title": "FY21 Per Diem Reimbursement Rates & API",
-            "description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for  locations across the continental United States for Fiscal Year 2021 as well as the standard per diem rates for any locations not specifically listed.",
-            "modified": "2022-07-11T14:11:23.370Z",
-            "accessLevel": "non-public",
-            "identifier": "GSA-2021-08-16-03",
-            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "rights": "making updates",
-            "publisher": {
-                "@type": "org:Organization",
-                "name": "Office of Government-wide Policy",
-                "subOrganizationOf": {
-                    "@type": "org:Organization",
-                    "name": "Office of Government-wide Policy"
-                }
-            },
-            "isPartOf": "GSA-2021-08-16-01",
-            "contactPoint": {
-                "@type": "vcard:Contact",
-                "fn": "GSA Travel Policy",
-                "hasEmail": "mailto:travelpolicy@gsa.gov"
-            },
-            "distribution": [{
-                    "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "Zip Code FY 2021.csv",
-                    "description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 20201, as well as the standard per diem rates for any locations not specifically listed.",
-                    "downloadURL": "https://inventory.data.gov/dataset/412dd13b-504e-43d4-8457-82302a68394a/resource/a743b5d1-3f0c-4763-8ec6-2a07f54ce8f1/download/zip-code-fy-2021.csv"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
-                    "title": "Per Diem Rates"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://open.gsa.gov/api/perdiem/",
-                    "title": "Per Diem API (JSON)"
-                }
-            ],
-            "keyword": ["lodging", "meals", "meals and incidental expenses", "per diem"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
@@ -5120,82 +4898,6 @@
                 }
             ],
             "keyword": ["EIS", "business-volume", "enterprise-infrastructure", "gsa", "telecommunications"],
-            "bureauCode": ["015:11"],
-            "programCode": ["015:001"],
-            "language": ["en-US"]
-        }, {
-            "@type": "dcat:Dataset",
-            "title": "FY22 Per Diem Reimbursement Rates & API",
-            "description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2022, as well as the standard per diem rates for any locations not specifically listed.",
-            "modified": "2021-08-16T17:17:24.093Z",
-            "accessLevel": "public",
-            "identifier": "GSA-2021-08-16-02",
-            "license": "https://opendatacommons.org/licenses/pddl/1.0/",
-            "rights": "true",
-            "publisher": {
-                "@type": "org:Organization",
-                "name": "Office of Government-wide Policy",
-                "subOrganizationOf": {
-                    "@type": "org:Organization",
-                    "name": "Office of Government-wide Policy"
-                }
-            },
-            "isPartOf": "GSA-2021-08-16-01",
-            "contactPoint": {
-                "@type": "vcard:Contact",
-                "fn": "GSA Travel Policy",
-                "hasEmail": "mailto:travelpolicy@gsa.gov"
-            },
-            "distribution": [{
-                    "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "FY2022_ZipCodeFile.csv",
-                    "description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for FY2022.",
-                    "downloadURL": "https://inventory.data.gov/dataset/26b45920-c84f-4205-8720-b83bad34947d/resource/d6329b1d-2ad8-42ce-b7c3-2e226e23d872/download/fy2022_zipcodefile.csv"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://www.gsa.gov/travel/plan-book/per-diem-rates",
-                    "title": "Per Diem Rates"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://open.gsa.gov/api/perdiem/",
-                    "title": "Per Diem API (JSON)"
-                }
-            ],
-            "keyword": ["lodging", "meals and incidental expenses", "per diem"],
-            "bureauCode": ["015:11"],
-            "programCode": ["015:001"],
-            "language": ["en-US"]
-        }, {
-            "@type": "dcat:Dataset",
-            "title": "FY23 Per Diem Reimbursement Rates & API",
-            "description": "This dataset contains maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States for Fiscal Year 2022, as well as the standard per diem rates for any locations not specifically listed.",
-            "modified": "2022-09-20T17:24:04.506Z",
-            "accessLevel": "public",
-            "identifier": "GSA 2022-09-20",
-            "license": "https://opendatacommons.org/licenses/pddl/1.0/",
-            "rights": "true",
-            "publisher": {
-                "@type": "org:Organization",
-                "name": "Office of Government-wide Policy",
-                "subOrganizationOf": {
-                    "@type": "org:Organization",
-                    "name": "Office of Government-wide Policy"
-                }
-            },
-            "isPartOf": "GSA-2021-08-16-01",
-            "contactPoint": {
-                "@type": "vcard:Contact",
-                "fn": "GSA Travel Policy",
-                "hasEmail": "mailto:travelpolicy@gsa.gov"
-            },
-            "distribution": [{
-                    "@type": "dcat:Distribution",
-                    "accessURL": "https://www.gsa.gov/cdnstatic/FY2023_ZIPCodeFile_081122.xlsx",
-                    "title": "FY23 Per Diem"
-                }
-            ],
-            "keyword": ["logging", "meals and incidental expenses", "per diem"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
@@ -5562,8 +5264,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 11.3.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ea0528d6-ce1d-45d2-92d8-23f73a14c3b5/download/edi-11.3.json"
+                    "title": "EDI 11.17.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/aab94100-2ff4-40b3-9557-2a1283e4d638/download/edi-11.17.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5769,8 +5471,8 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
                     "format": "json",
-                    "title": "GSA FITARA Actions and Milestones 2022-08-10",
-                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the August 2022 quarterly submission to OMB on August 10, 2022.",
+                    "title": "GSA FITARA Actions and Milestones 2022-11-09",
+                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the November 2022 quarterly submission to OMB on November 9, 2022.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
                 }
@@ -5802,7 +5504,7 @@
                     "mediaType": "application/json",
                     "format": "JSON",
                     "title": "GSA IT Reform Cost Savings/Avoidance",
-                    "description": "GSA's August 2022 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+                    "description": "GSA's November 2022 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
                 }
@@ -5833,7 +5535,7 @@
                     "mediaType": "application/zip",
                     "format": "ZIP",
                     "title": "GSA IT Policy Archive Zip",
-                    "description": "Last update: 2022-09-15",
+                    "description": "Last update: 2022-11-15",
                     "downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
                 }
             ],
@@ -6206,13 +5908,13 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/bc899cfe-828b-40f4-8846-b8300c3fe7c7/download/iolp-leases-2.xlsx"
+                    "title": "IOLP Buildings (2).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/0adcbba8-91ee-4158-9983-556e0c147288/download/iolp-buildings-2.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/9efbd417-ba94-42ac-ae19-b042447988e8/download/iolp-buildings-2.xlsx"
+                    "title": "IOLP Leases (2).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/03c66b41-352d-4e59-9fe9-7c8ce5d83d7c/download/iolp-leases-2.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
@@ -8534,6 +8236,40 @@
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "Networx Business Volume FY2022 4th Qtr",
+            "description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
+            "modified": "2022-11-14T15:17:59.295Z",
+            "accessLevel": "public",
+            "identifier": "gsa-2022-11-14-01",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Federal Acquisition Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "isPartOf": "GSA-2015-08-27",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Toni Holloway",
+                "hasEmail": "mailto:toni.holloway@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "TotRevFY22_4thQtr.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/2398f7c3-a788-4c2e-acd6-f0a2d0adad5e/resource/5541b863-6dc2-4393-9582-07804a062540/download/totrevfy22_4thqtr.xlsx"
+                }
+            ],
+            "keyword": ["Networx", "billing", "networx business volume", "telecommunications"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "New Construction and Repair and Alteration (R&A) Projects",
             "description": "This map shows new construction and major R&A projects in federal buildings under GSA\u2019s custody and control that are above the current prospectus threshold of $2.85 million. New construction and major R&A projects for two different fiscal years are displayed on the map. Projects for FY2014 were funded as part of the Consolidated Appropriations Act of 2014, and GSA will begin to execute these projects this year. Projects for FY2015 have been included in the President\u2019s Budget request, but require approval and funding from Congress before the projects can begin.",
             "modified": "2014-04-28",
@@ -8761,32 +8497,6 @@
                 }
             ],
             "keyword": ["FPDS", "Spend Under Management", "obligation"],
-            "bureauCode": ["015:11"],
-            "programCode": ["015:001"],
-            "language": ["en-US"]
-        }, {
-            "@type": "dcat:Dataset",
-            "title": "Per Diem Reimbursement Rates & API - Parent",
-            "description": "The datasets in this collection contain maximum lodging reimbursement per diem rates and the meals and incidental (M&IE) rates for locations across the continental United States as well as the standard per diem rates for any locations not specifically listed.",
-            "modified": "2022-07-11T14:09:39.314Z",
-            "accessLevel": "non-public",
-            "identifier": "GSA-2021-08-16-01",
-            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "rights": "making updates",
-            "publisher": {
-                "@type": "org:Organization",
-                "name": "Office of Government-wide Policy",
-                "subOrganizationOf": {
-                    "@type": "org:Organization",
-                    "name": "Office of Government-wide Policy"
-                }
-            },
-            "contactPoint": {
-                "@type": "vcard:Contact",
-                "fn": "GSA Travel Policy",
-                "hasEmail": "mailto:travelpolicy@gsa.gov"
-            },
-            "keyword": ["federal per diem", "lodging", "meals", "meals and incidental expenses", "per diem"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
