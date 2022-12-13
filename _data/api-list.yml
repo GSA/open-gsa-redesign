@@ -22,7 +22,7 @@
 - title: Digital.gov API
   description: Content API for the Digital.gov website.
   url: https://open.gsa.gov/api/digitalgov/
-- title: Discovery API
+- title: Discovery API -> SOLUTIONID FMP
   description: The Discovery API drives the Discovery Market Research Tool. It contains information on various GSA services contracts and the awarded vendors, such as their contracting history, their eligibility for contract awards, and their small business designations.
   url: https://discovery.gsa.gov/api/
 - title: eMuseum API
@@ -35,7 +35,6 @@
   description: GSA Fleet Drive-thru offers two reports through an API for GSA Fleet Leasing customers.
   url: https://www.gsa.gov/buying-selling/products-services/transportation-logistics-services/vehicle-leasing/gsa-fleet-drivethru
 - title: Go.USA.gov API
-  description: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
   url: https://go.usa.gov/api
 - title: GSA.gov Content API
   description: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last.
