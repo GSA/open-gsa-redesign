@@ -8841,15 +8841,15 @@ Error Code|Field | Error Message | Reason/Description | Operation
 401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
 400|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
 401|Authorization|	Error code: 401 ; Your request did not get processed! Please verify your permission/roles|	If nonfed email id is used in authorization	|Get Authorized Party
-400|Requirment Strategies </br> (farCases)|	Invalid Requirement Strategy(farCases)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Create Draft Notice </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	Duplicate Requirement Strategies found(farCases)	| Duplicate farCases are not allowed |Create Draft Notice </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	Requirement Strategies(farCases) not found	| Requirement Strategies not found |Create Draft Notice </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	Invalid Requirement Strategy(farCases)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Create And Publish </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	Duplicate Requirement Strategies found(farCases)	| Duplicate farCases are not allowed |Create And Publish </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	Requirement Strategies(farCase) not found	| Requirement Strategies not found |Create And Publish </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	Invalid Requirement Strategy(farCases)	| Accepted farCases: </br> FAR 7.107-2 </br> FAR 7.107-3 </br> FAR 7.107-4 |Update Draft Notice </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	Duplicate Requirement Strategies found(farCases)	| Duplicate farCases are not allowed |Update Draft Notice </br> (Consolidate/(Substantially) Bundle)
-400|Requirment Strategies </br> (farCases)|	Requirement Strategies(farCase)not found	| Requirement Strategies not found |Update Draft Notice </br> (Consolidate/(Substantially) Bundle)
+400|Requirement  Strategies <br> (farCases)|	Invalid Requirement Strategy(farCases)	| Accepted farCases: <br> FAR 7.107-2 <br> FAR 7.107-3 <br> FAR 7.107-4 |Create Draft Notice <br> (Consolidate/(Substantially) Bundle)
+400|Requirement  Strategies <br> (farCases)|	Duplicate Requirement Strategies found(farCases)	| Duplicate farCases are not allowed |Create Draft Notice <br> (Consolidate/(Substantially) Bundle)
+400|Requirement  Strategies <br> (farCases)|	Requirement Strategies(farCases) not found	| Requirement Strategies not found |Create Draft Notice <br> (Consolidate/(Substantially) Bundle)
+400|Requirement  Strategies <br> (farCases)|	Invalid Requirement Strategy(farCases)	| Accepted farCases: <br> FAR 7.107-2 <br> FAR 7.107-3 <br> FAR 7.107-4 |Create And Publish <br> (Consolidate/(Substantially) Bundle)
+400|Requirement  Strategies <br> (farCases)|	Duplicate Requirement Strategies found(farCases)	| Duplicate farCases are not allowed |Create And Publish <br> (Consolidate/(Substantially) Bundle)
+400|Requirement  Strategies <br> (farCases)|	Requirement Strategies(farCase) not found	| Requirement Strategies not found |Create And Publish <br> (Consolidate/(Substantially) Bundle)
+400|Requirement  Strategies <br> (farCases)|	Invalid Requirement Strategy(farCases)	| Accepted farCases: <br> FAR 7.107-2 <br> FAR 7.107-3 <br> FAR 7.107-4 |Update Draft Notice <br> (Consolidate/(Substantially) Bundle)
+400|Requirement  Strategies <br> (farCases)|	Duplicate Requirement Strategies found(farCases)	| Duplicate farCases are not allowed |Update Draft Notice <br> (Consolidate/(Substantially) Bundle)
+400|Requirement  Strategies <br> (farCases)|	Requirement Strategies(farCase)not found	| Requirement Strategies not found |Update Draft Notice <br> (Consolidate/(Substantially) Bundle)
 
 
 ## FAQ
@@ -8909,7 +8909,7 @@ Date | Version | Description
 11/20/2021| v1.19| If ResponseDate	date is provided, ResponseTz is a required field. (Example : "responseTz": "America/New_York") (Coming soon)
 12/10/2021| v1.20| Contract Award Date is expected to input in this format YYYY-mm-DD (Applicaple for notice types a,u,i). (Coming soon)
 02/18/2022| v1.21| Please refer the version control section for the list of v1 api's that are going to retired from  3/15/2022 in alpha, and 4/1/2022 from prod.
-10/05/2022| v1.22| Notice code "i" decription change: from “Intent to Bundle Requirements” to “Consolidate/(Substantially) Bundle”, </br> Added Requirement Strategies(farCases) to notice code "i"(Consolidate/(Substantially) Bundle), </br> Please refer the version control section for the list of v3 api's that are going to be available in alpha(11/28/2022) and prod(TBD).
+10/05/2022| v1.22| Notice code "i" decription change: from “Intent to Bundle Requirements” to “Consolidate/(Substantially) Bundle”, <br> Added Requirement Strategies(farCases) to notice code "i"(Consolidate/(Substantially) Bundle), <br> Please refer the version control section for the list of v3 api's that are going to be available in alpha(11/28/2022) and prod(TBD).
 
 
 <p><small><a href="#">Back to top</a></small></p>
