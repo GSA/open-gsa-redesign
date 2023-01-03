@@ -113,13 +113,13 @@ To begin using this API, you will need to register for an API Key. You can sign 
   })();
 </script>
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
-{% endraw %} 
+{% endraw %}
 
 <p><small><a href="#">Back to top</a></small></p>
 
 ## The Response
 
-The response represents the rows in the `data` array in the JSON reports that can be downloaded. You may also downlow the document files. 
+The response represents the rows in the `data` array in the JSON reports that can be downloaded. You may also download the document files.
 
 They are returned as an array of JSON objects. Here is an example of one such object for MAS:
 
@@ -127,7 +127,7 @@ They are returned as an array of JSON objects. Here is an example of one such ob
 {
   "mras_naics": "integer",
   "mras_naics_title": "string",
-  { 
+  {
     "sin": "integer",
     "sin_title": "string",
     "contract_vehicle": "string",
@@ -233,24 +233,24 @@ Here is an example of one such object for NON-MAS:
 
 ## Querying documents - API Calls
 
-MAS documents can be querried from your browser using the following URL
+MAS documents can be queried from your browser using the following URL
 
-https://api.gsa.gov/acquisition/dx/sourcedata/v2/mas/?api_key=<KEY>
+https://api.gsa.gov/acquisition/dx/sourcedata/v2/mas/?api_key=[KEY]
 
-NON-MAS documents can be querried from your browser using the following URL
+NON-MAS documents can be queried from your browser using the following URL
 
-https://api.gsa.gov/acquisition/dx/sourcedata/v2/non-mas/?api_key=<KEY>
+https://api.gsa.gov/acquisition/dx/sourcedata/v2/non-mas/?api_key=[KEY]
 
-- <KEY> can be obtained from SIGNUP above.
+- [KEY] can be obtained from SIGNUP above.
 
 ## Paging documents by parameters
 
 Documents can be paged through using ?page=<PAGE_NO>&api_key=......
 
-Ex. /mas/?page=3&api_key=<KEY>
-    It will return the third page of MAS documents.
-    /non_mas/?page=2&api_key=<KEY>
-    It will return the second page of NON-MAS documents.
+Ex.
+- /mas/?page=3&api_key=[KEY] - It will return the third page of MAS documents.
+
+- /non_mas/?page=2&api_key=[KEY] - It will return the second page of NON-MAS documents.
 
 
 ## HTTP Response Codes
@@ -271,4 +271,3 @@ The API will return one of the following responses:
 To suggest a feature or ask for help, Please <a href="mailto: fasdigitalsupport@gsa.gov">Contact Us</a>.
 
 <p><small><a href="#">Back to top</a></small></p>
-
