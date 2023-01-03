@@ -14,7 +14,7 @@ banner-heading: Digital Experience (DX) SolutionId Library API
      </strong>
      <p class="usa-alert-text">
         This project is providing Digital Experience (DX) SolutionId Library API
-        </br>
+        <br>
         Have feedback or questions? <a href="mailto: fasdigitalsupport@gsa.gov">Please let us know</a>!
      </p>
    </div>
@@ -36,11 +36,11 @@ The URL for the API is `https://api.gsa.gov/acquisition/dx/sourcedata/v2/`, and 
 
 ## Getting Started
 
-To begin using this API, you will need to register for an API Key. You can sign up for an API key below.  After registration, you will need to provide this API key in the `x-api-key` HTTP header with every API request.
+To begin using this API, you will need to register for an API Key. You can sign up for an API key below.  After registration, you will need to provide this API key in the `API_KEY` HTTP URL with every API request.
 
-| HTTP Header Name | Description |
+| HTTP URL Key | Description |
 | ---- | ----------- |
-| x-api-key | API key from api.data.gov.  For sample purposes, you can use `DEMO_KEY` as an API key. |
+| api_key | API key from api.data.gov |
 
 
 
