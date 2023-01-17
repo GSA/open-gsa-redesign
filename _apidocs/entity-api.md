@@ -35,19 +35,6 @@ Following are the key features of the Entity Management Extract API:
 * It returns data in the JSON or CSV format as selected by the user.
 * It can return only the first 1,000,000 records.
 
-<table>
-<tr>
-<td>
-<b>Coming Soon:</b><br>
-The registered "Responsibility & Integrity Record" Public entities will also be returned by the API. 
-Please refer to the “integrityInformation” references in this page.
-<ul> Alpha Deployment: 08/10/2022.
-<br> Production Deployment: 12/12/2022.
-</ul>
-</td>
-</tr>
-</table>
-
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
@@ -12362,5 +12349,6 @@ Disclaimer:
 | 10/19/2022 | v3.7    | * Added a new Public search parameter, "proceedingsData" in the "API Description" - "Query String Parameters" section.<br><br> * Added new validation rules for "proceedingsData" in the "HTTP Response Codes" section.<br><br> * Updated the yaml file to include proceedingsData as a search parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | 10/25/2022 | v3.8    | *  Updated the response schema for the API Description 🡪 Response Schema 🡪 integrityInformation 🡪 proceedingsData Sub Section to show the newly added field, "proceedingsRecordCount".<br><br> * Updated Example 6 🡪 Response (JSON Output) to show the newly added field, "proceedingsRecordCount".<br><br> * Updated Reps and Certs help documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | 11/25/2022 | v3.9    | *  Updated SAM Functional Data Dictionary 🡪 Removed  DUNS/D&B References.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| 01/17/2023 | v4.0    | *  Uploaded a revised Data Dictionary..                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
 <p><small><a href="#">Back to top</a></small></p>
