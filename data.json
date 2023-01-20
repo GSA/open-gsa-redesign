@@ -5264,8 +5264,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 1.19.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/22382fd9-fe37-4d11-b26a-6d95ef426e39/download/edi-1.19.json"
+                    "title": "EDI 1.20.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/49fe401e-a584-4127-a48e-294ef4a5059d/download/edi-1.20.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5887,7 +5887,7 @@
             "@type": "dcat:Dataset",
             "title": "Inventory of Owned and Leased Properties (IOLP)",
             "description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\n\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\n\n- Location Code - GSA\u2019s alphanumeric identifier for the building\n- Real Property Asset Name - Allows users to find information about a specific building \n- Installation Name - Allows users to identify whether a property is part of an installation, such as a campus\n- Owned or Leased - Indicates the building is federally owned (F) or leased (L)\n- GSA Region - GSA assigned region for building location\n- Street Address/City/State/Zip Code - Building address\n- Longitude and Latitude - Map coordinates of the building (only through .csv export)\n- Rentable Square Feet - Total rentable square feet in building\n- Available Square Feet - Vacant space in building\n- Construction Date (Owned Only) - Year built\n- Congressional District - Congressional District building is located\n- Senator/Representative/URL - Senator/Representative of the Congressional District and their URL\n- Building Status - Indicates building is active\n- Lease Number (Leased Only) - GSA\u2019s alphanumeric identifier for the lease\n- Lease Effective/Expiration Dates (Leased Only) - Date lease starts/expires\n- Real Property Asset Type - Identifies a property as land, building, or structure",
-            "modified": "2022-10-06T15:22:48.652Z",
+            "modified": "2023-01-20T15:36:59.082Z",
             "accessLevel": "public",
             "identifier": "GSA-4495",
             "dataQuality": true,
@@ -5915,12 +5915,18 @@
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "IOLP Leases .xlsx",
                     "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/9993235f-a75c-402e-90c6-f4b239f418df/download/iolp-leases-2.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/xml",
+                    "title": "IOLPMetaDataDraft2022_all.xml",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/6a2e62e8-3246-4e3b-8e71-25f2ab27cd26/download/iolpmetadatadraft2022_all.xml"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
-            "language": ["en-us"]
+            "language": ["en-us"],
+            "theme": ["geospatial"]
         }, {
             "@type": "dcat:Dataset",
             "title": "Inventory Reporting Information System (IRIS)",
