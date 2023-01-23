@@ -63,6 +63,13 @@ paths:
             type: string
             format: string
             default: relevance
+        - name: sitelimit
+          in: query
+          description: 'Allows you to limit the results by subdomains or subfolders. You can enter multiple allowed limits using a space-separated list (ex. `sitelimit=search.gov/about search.gov/get-started`)'
+          required: false
+          schema:
+            type: string
+            format: string
       tags:
       - search
       responses:
