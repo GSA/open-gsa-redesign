@@ -21,9 +21,9 @@ This API exposes all relevant Search.gov results “modules” in a single JSON 
 
 ## Getting Started
 
-The endpoint is `https://api.gsa.gov/technology/searchgov/v2/results/i14y`.
+The endpoint is `https://api.gsa.gov/technology/searchgov/v2/results/i14y`. You must use https. 
 
-You must use https. You can find your access key on the API Access Key page of the Search.gov Admin Center.
+You can find your access key in the [Search.gov Admin Center](https://search.usa.gov/login). On the left side navigation, click the "Activate" (`</>`) icon, and select the API Access Key page.
 
 <p><small><a href="#">Back to top</a></small></p>
 
