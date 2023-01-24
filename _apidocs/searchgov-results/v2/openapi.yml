@@ -65,7 +65,7 @@ paths:
             default: relevance
         - name: sitelimit
           in: query
-          description: 'Allows you to limit the results by subdomains or subfolders. You can enter multiple allowed limits using a space-separated list (ex. `sitelimit=search.gov/about search.gov/get-started`)'
+          description: 'Allows you to limit the results by subdomains or subfolders. You can limit to multiple locations using a space-separated list (ex. `sitelimit=search.gov/about search.gov/get-started`)'
           required: false
           schema:
             type: string
