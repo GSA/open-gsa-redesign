@@ -22,9 +22,6 @@
 - title: Digital.gov API
   description: Content API for the Digital.gov website.
   url: https://open.gsa.gov/api/digitalgov/
-- title: Discovery API
-  description: The Discovery API drives the Discovery Market Research Tool. It contains information on various GSA services contracts and the awarded vendors, such as their contracting history, their eligibility for contract awards, and their small business designations.
-  url: https://discovery.gsa.gov/api/
 - title: eMuseum API
   description: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
   url: https://gsa.github.io/eMuseum-API/
