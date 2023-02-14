@@ -73,13 +73,13 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
   | Parameters                      | Description
   | :--								| :--
   | include_facets      			| The default is `false`. To enable facet features, set this to `true` 
-  | audience                        | Returns results that match any of the specified terms in the Audience field. Ex. `audience=students, policymakers` would return results with an audience of students **or** policymakers. Accepts a comma-separate list of strings. 
-  | content_type                    | Returns results that match any of the specified terms in the Content Type field. Ex. `mime_type=article, blog post` would return results with a content type of article **or** blog post. Accepts a comma-separate list of strings. 
-  | mime_type                       | Returns results that match any of the specified terms in the mime_type field, which indicates the file type of the document. Ex. `content_type=text/html, application/pdf` would return results with a mimetype of text/html **or** application/pdf. Accepts a comma-separate list of strings. [Read about common mimetypes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types).
-  | searchgov_custom1               | Returns results that match any of the specified terms in the searchgov_custom1 field. Accepts a comma-separate list of strings.
-  | searchgov_custom2               | Returns results that match any of the specified terms in the searchgov_custom2 field. Accepts a comma-separate list of strings.
-  | searchgov_custom3               | Returns results that match any of the specified terms in the searchgov_custom3 field. Accepts a comma-separate list of strings.
-  | tags                            | Returns results that match any of the specified terms in the tags field. Accepts a comma-separate list of strings.
+  | audience                        | Returns results that match any of the specified terms in the Audience field. Ex. `audience=students, policymakers` would return results with an audience of students **or** policymakers. Accepts a comma-separated list of strings. 
+  | content_type                    | Returns results that match any of the specified terms in the Content Type field. Ex. `content_type=article, blog post` would return results with a content type of article **or** blog post. Accepts a comma-separated list of strings. 
+  | mime_type                       | Returns results that match any of the specified terms in the mime_type field, which indicates the file type of the document. Ex. `mime_type=text/html, application/pdf` would return results with a mimetype of text/html **or** application/pdf. Accepts a comma-separated list of strings. [Read about common mimetypes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types).
+  | searchgov_custom1               | Returns results that match any of the specified terms in the searchgov_custom1 field. Accepts a comma-separated list of strings.
+  | searchgov_custom2               | Returns results that match any of the specified terms in the searchgov_custom2 field. Accepts a comma-separated list of strings.
+  | searchgov_custom3               | Returns results that match any of the specified terms in the searchgov_custom3 field. Accepts a comma-separated list of strings.
+  | tags                            | Returns results that match any of the specified terms in the tags field. Accepts a comma-separated list of strings.
 
 
 ## Expected Results
