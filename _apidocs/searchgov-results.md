@@ -66,11 +66,29 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
   | sort\_by (optional)             | Allowed variables are date and relevance. The default sort is relevance. Add `sort_by=date` to sort by date.
   | sitelimit (optional)             | Limits the results to the subdomains and/or subfolders provided. Multiple values can be passed using a space-separated list. Example: `sitelimit=search.gov/about search.gov/get-started`. The values passed in the sitelimit must be in scope of the Domains list in the Search.gov Admin Center for your search site.
 
+  To enable faceted search, use the parameters below. You must set `include_facets=true` for these parameters to be applied. For more context on how we index content into these fields, see our [metadata documentation](https://search.gov/indexing/metadata.html).
+
+  Facet functionality is only available to the **/i14y** endpoint. 
+
+  | Parameters                      | Description
+  | :--								| :--
+  | include_facets      			| The default is `false`. To enable facet features, set this to `true` 
+  | audience                        | Returns results that match any of the specified terms in the Audience field. Ex. `audience=students, policymakers` would return results with an audience of students **or** policymakers. Accepts a comma-separate list of strings. 
+  | content_type                    | Returns results that match any of the specified terms in the Content Type field. Ex. `mime_type=article, blog post` would return results with a content type of article **or** blog post. Accepts a comma-separate list of strings. 
+  | mime_type                       | Returns results that match any of the specified terms in the mime_type field, which indicates the file type of the document. Ex. `content_type=text/html, application/pdf` would return results with a mimetype of text/html **or** application/pdf. Accepts a comma-separate list of strings. [Read about common mimetypes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types).
+  | searchgov_custom1               | Returns results that match any of the specified terms in the searchgov_custom1 field. Accepts a comma-separate list of strings.
+  | searchgov_custom2               | Returns results that match any of the specified terms in the searchgov_custom2 field. Accepts a comma-separate list of strings.
+  | searchgov_custom3               | Returns results that match any of the specified terms in the searchgov_custom3 field. Accepts a comma-separate list of strings.
+  | tags                            | Returns results that match any of the specified terms in the tags field. Accepts a comma-separate list of strings.
+
+
 ## Expected Results
 
   Each item returns a unique set of fields. Each array will only have contents if there are results in that search feature matching the query.
   
   Before you begin: If you set up the Routed Query feature in the Search.gov Admin Center, you will need to set up some additional logic. If there's a match between the query and the Routed Query, we'll return only the `route_to` URL. Otherwise we'll return the full results set. See <a href="#rq">Routed Queries</a>.
+
+  If you have `facets_enabled=true`, you will receive additional fields as noted below.
 
   * ### query
   
@@ -83,6 +101,10 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
   * ### web:next_offset
 
       Offset for the subsequent results.
+
+  * ### web:include_facets
+
+      Shows `true` if facets are enabled, and `false` if not.
 
   * ### web:spelling_correction
 
@@ -98,6 +120,16 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
       | url              | URL of the document
       | snippet          | Summary of the document
       | publication_date | Publication date of the document (not available on commercial results)
+
+      **If `include_facets=true` in your request**, the following fields may show as well. We only display fields with content, so some web results may not have all fields indicated here.
+
+      | Values       | Description
+      | :--          | :--
+      | content_type | Content type of the document
+      | mime_type    | Mimetype (i.e. file type) of the document
+      | tags         | Tags associated with the document
+      | searchgov_custom1, searchgov_custom2, searchgov_custom3 | Search.gov custom field content associated with the document
+
 
   * ### text\_best_bets
 
@@ -222,6 +254,8 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
       | publication\_date | Publication date of the recent video news
       | source           | Source of the recent video news
       | thumbnail_url    | Thumbnail URL of the recent video news
+
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
