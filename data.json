@@ -5264,8 +5264,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 2.16.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/f8ccf427-982b-489e-bb4c-e9bdaf4521e8/download/edi-2.16.json"
+                    "title": "EDI 2.21.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/8f388ddf-636b-4455-b462-fd434ba32179/download/edi-2.21.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -6282,10 +6282,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "format": "xlsx",
-                    "title": "National Stock Number Extract",
-                    "description": "Updated 03/17/21",
-                    "downloadURL": "https://inventory.data.gov/dataset/67567804-073d-40ad-a710-2b0bed8b84e2/resource/360b0748-d161-4857-a7dc-dfccfaeea096/download/nsn-extract-3-17-21.xlsx"
+                    "title": "NSN extract 2-21-23.xls.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/67567804-073d-40ad-a710-2b0bed8b84e2/resource/3b7ed6b7-7dce-42f1-852d-6465e3e790e4/download/nsn-extract-2-21-23.xls.xlsx"
                 }
             ],
             "keyword": ["NSN", "National Stock Number", "Part Number", "Product", "Vendor"],
