@@ -21,9 +21,9 @@ This API exposes all relevant Search.gov results “modules” in a single JSON 
 
 ## Getting Started
 
-The endpoint is `https://api.gsa.gov/technology/searchgov/v2/results/i14y`.
+The endpoint is `https://api.gsa.gov/technology/searchgov/v2/results/i14y`. You must use https. 
 
-You must use https. You can find your access key on the API Access Key page of the Search.gov Admin Center.
+You can find your access key in the [Search.gov Admin Center](https://search.usa.gov/login). On the left side navigation, click the "Activate" (`</>`) icon, and select the API Access Key page.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -64,6 +64,7 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
   | limit (optional)                | Defines the number of results to return. The default is 20, but you can specify between 1 and 50 results. <br> Example: `limit=5`
   | offset (optional)               | Defines the number of results you want to skip from the first result. The offset is used for implementing pagination. The default is 0 and the maximum is 999. <br> Example: `offset=20`
   | sort\_by (optional)             | Allowed variables are date and relevance. The default sort is relevance. Add `sort_by=date` to sort by date.
+  | sitelimit (optional)             | Limits the results to the subdomains and/or subfolders provided. Multiple values can be passed using a space-separated list. Example: `sitelimit=search.gov/about search.gov/get-started`. The values passed in the sitelimit must be in scope of the Domains list in the Search.gov Admin Center for your search site.
 
 ## Expected Results
 
