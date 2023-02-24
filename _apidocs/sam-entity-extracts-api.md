@@ -307,7 +307,7 @@ Effective April 2022: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v6.0.xlsx">SAM Mast
 </li>
 
 <li><b>Sensitive (CUI) extract layout with the UEI data: </b><br>
-<a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 Sensitive File V3 Layout.xlsx">Sensitive Extract Layout</a><br>
+<a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v7.0 Sensitive File V3 Layout.xlsx">Sensitive Extract Layout</a><br>
 </li>
 
 <li><b>Exclusions Public extract layout with the UEI data: </b><br>
@@ -477,5 +477,6 @@ Date | Version | Description
 04/04/2022 | v2.9    | * Sample Extract Files section: Removed old sample files that had DUNS information and provided new files with UEI information.<br><br> * Updated “Effective April 2022: SAM Master Extract Mapping” to remove the DUNS occurrences.<br><br> * Updated the “April 2022 release: FOUO Extract Layout” with the correct Sensitivity levels for the Points Of Contact elements.<br><br> * Updated the “April 2022 release: Sensitive Extract Layout” to reflect the correct order for “IMMEDIATE PARENT EVS SOURCE”.<br><br> * Updated the “April 2022 release: Exclusions Extract Layout” to remove the DUNS occurrences.<br><br>
 04/08/2022 | v3.0    | * Removed all the references to older files that are no longer valid.<br><br> * Provided references to the new files.<br><br> * Reorganized the Sensitive Postman and curl examples for a better flow of content.<br><br>
 08/08/2022 | v3.1    | * Updated to clarify the use of Controlled Unclassified Information (CUI) data.<br><br>
+02/23/2023 | v3.2    | * Removed MPIN from respective mapping files.<br><br>
 
 <p><small><a href="#">Back to top</a></small></p>
