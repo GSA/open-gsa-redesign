@@ -5264,8 +5264,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 02.09.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/13878d5b-0e65-4e46-be6c-df6f0aae67b4/download/edi-02.09.json"
+                    "title": "EDI 2.23.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/3ccb208c-806b-47d4-97df-4d07b7210a16/download/edi-2.23.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5914,13 +5914,13 @@
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/e391d96b-b089-4f8b-a7a8-3c39cf80dc66/download/iolp-buildings-2.xlsx"
+                    "title": "IOLP Leases (2).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/da95d48c-87ca-497e-b624-4e193d38e739/download/iolp-leases-2.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/e52d18df-dca4-4f7a-8720-4a4db3778fd7/download/iolp-leases-2.xlsx"
+                    "title": "IOLP Buildings (2).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/abb7faf3-6bf6-45ea-82d9-e3f896266e14/download/iolp-buildings-2.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
@@ -6282,10 +6282,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "format": "xlsx",
-                    "title": "National Stock Number Extract",
-                    "description": "Updated 03/17/21",
-                    "downloadURL": "https://inventory.data.gov/dataset/67567804-073d-40ad-a710-2b0bed8b84e2/resource/360b0748-d161-4857-a7dc-dfccfaeea096/download/nsn-extract-3-17-21.xlsx"
+                    "title": "NSN extract 2-21-23.xls.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/67567804-073d-40ad-a710-2b0bed8b84e2/resource/3b7ed6b7-7dce-42f1-852d-6465e3e790e4/download/nsn-extract-2-21-23.xls.xlsx"
                 }
             ],
             "keyword": ["NSN", "National Stock Number", "Part Number", "Product", "Vendor"],
