@@ -20,6 +20,9 @@ Opportunity Management API can be accessed from Production or Alpha via the foll
 * Production: https://api.sam.gov/prod/opportunity/v2/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v2/ 
 
+* Production: https://api.sam.gov/prod/opportunity/v3/ 
+* Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v3/ 
+
 **REST API Workflow Chart**
 
 To view the current workflow of REST APIs, refer below file:
@@ -104,7 +107,7 @@ In order to download secure attachment, user should have at least one of the bel
 
 The API includes specific methods to submit each of the base notice types (i.e. presolicitation, combined/synopsis, award, etc.). You will find these outlined in the sections below.
 
-**Note**: Description change for code “i” from “Intent to Bundle Requirements (DoD-Funded)” to "Consolidate/(Substantially) Bundle" in alpha (11/28/2022) and prod (TBD).
+**Note**: Description change for code “i” from “Intent to Bundle Requirements (DoD-Funded)” to "Consolidate/(Substantially) Bundle" in alpha (11/28/2022) and prod (03/03/2023).
 
 | Code              | Description                                   |
 | ----------------- | --------------------------------------------- |
@@ -326,7 +329,7 @@ Please use v3 for the following APIs to utilize “Requirement strategies(farCas
 * Production: https://api.sam.gov/prod/opportunity/v3/ 
 * Alpha: https://api-alpha.sam.gov/prodlike/opportunity/v3/ 
 
-**v3 Endpoints will be available on alpha (11/28/2022) and on prod (TBD) **
+**The V3 endpoints will be available for testing in the alpha environment starting from November 28th, 2022, and they will be available for production use from March 3rd, 2023 **
 
 *  /opps/v3/api/create  
 *  /opps/v3/api/createAndPublish  
@@ -8910,6 +8913,7 @@ Date | Version | Description
 12/10/2021| v1.20| Contract Award Date is expected to input in this format YYYY-mm-DD (Applicaple for notice types a,u,i). (Coming soon)
 02/18/2022| v1.21| Please refer the version control section for the list of v1 api's that are going to retired from  3/15/2022 in alpha, and 4/1/2022 from prod.
 10/05/2022| v1.22| Notice code "i" decription change: from “Intent to Bundle Requirements” to “Consolidate/(Substantially) Bundle”, <br> Added Requirement Strategies(farCases) to notice code "i"(Consolidate/(Substantially) Bundle), <br> Please refer the version control section for the list of v3 api's that are going to be available in alpha(11/28/2022) and prod(TBD).
+02/28/2023| v1.23| Please refer the version control section for the list of v3 endpoints will available for production use from March 3rd, 2023(v1.22).
 
 
 <p><small><a href="#">Back to top</a></small></p>
