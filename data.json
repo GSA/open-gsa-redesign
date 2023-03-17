@@ -5264,8 +5264,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 3.16.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/a82a129d-344e-4777-bfff-e94584527a15/download/edi-3.16.json"
+                    "title": "EDI 3.17.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/e3d120e9-d449-4609-99af-453a59456c06/download/edi-3.17.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5909,6 +5909,7 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "application/xml",
                     "title": "iolpmetadatadraft2022_all-3-03032023.xml",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd",
                     "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/0b98b1cb-1baf-4374-8027-926156bb6868/download/iolpmetadatadraft2022_all-3-03032023.xml"
                 }, {
                     "@type": "dcat:Distribution",
