@@ -120,6 +120,7 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
       | url              | URL of the document
       | snippet          | Summary of the document
       | publication_date | Publication date of the document (not available on commercial results)
+      | thumbnail_url    | The [Open Graph](https://ogp.me/) image associated with the document
 
       **If `include_facets=true` in your request**, the following fields may show as well. We only display fields with content, so some result sets may not have all fields indicated here.
 
