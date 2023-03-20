@@ -196,6 +196,9 @@ components:
               type: string
               format: date
               description: Publication date of the document (not available on commercial results)
+            thumbnail_url:
+              type: string
+              description: URL of the Open Graph Image of the document
             audience:
               type: string
               description: Audience of the document. Only included if a value for the field exists. 
