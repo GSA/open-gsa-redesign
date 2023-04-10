@@ -4844,8 +4844,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "FRPP_Public_Dataset_FY21_Final_10242022.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/021a92fa-b1cc-4e0a-8bf7-f3f9874e53a1/download/frpp_public_dataset_fy21_final_10242022.xlsx"
+                    "title": "FRPP_Public_Dataset_FY21_Final_02242023.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/2d7db9cd-e049-450f-8a4d-3afdc9696572/download/frpp_public_dataset_fy21_final_02242023.xlsx"
                 }
             ],
             "keyword": ["FRPP", "Federal Property", "General Services Property", "NGDA Portfolio Themes", "Real Property Theme", "geospatial", "gsa", "ngda", "real estate"],
@@ -4898,6 +4898,45 @@
                 }
             ],
             "keyword": ["EIS", "business-volume", "enterprise-infrastructure", "gsa", "telecommunications"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "FY23 Enterprise Infrastructure Solutions (EIS) Quarterly Reports",
+            "description": "This dataset represents the EIS business volume of each government agency that has ordered telecommunication services from the EIS contract.  This contains data from FY2023.",
+            "modified": "2023-04-10T16:46:57.364Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-04-10-01",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Federal Acquisition Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "isPartOf": "GSA-2020-06-26-01",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Loren Smith",
+                "hasEmail": "mailto:loren.smith@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "EISTotRevFY23_Q1.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/5691fe5b-1055-4a3c-888c-4ac52cf87f06/resource/7e433b3b-2b28-43cd-ab92-afe58cb7186a/download/eistotrevfy23_q1.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "EISTotRevFY23_Q2.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/5691fe5b-1055-4a3c-888c-4ac52cf87f06/resource/1910f4bc-d8e4-4b67-b8c3-31f954f475c1/download/eistotrevfy23_q2.xlsx"
+                }
+            ],
+            "keyword": ["Business Volume", "eis", "enterprise-infrastructure", "gsa", "telecommunications"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
@@ -5264,8 +5303,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 3.30.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b3c81235-39b2-4dd7-bce2-d8290fefc0a0/download/edi-3.30.json"
+                    "title": "EDI 4.10.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/6d63facc-cdc6-4146-8b37-36e51ce072bc/download/edi-4.10.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5914,13 +5953,13 @@
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/74d1a559-2ded-4b1c-9ea4-8cb9bd6c942f/download/iolp-buildings-2.xlsx"
+                    "title": "IOLP Buildings.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/613edc08-d29a-4458-a7c1-dabca8a2e6b5/download/iolp-buildings.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/e838ba00-d385-4ce2-9858-770203654927/download/iolp-leases-2.xlsx"
+                    "title": "IOLP Leases.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/2c30d393-bc30-4c11-b93e-8b8c1ba0bd40/download/iolp-leases.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
