@@ -13,7 +13,6 @@ This API exposes all relevant Search.gov results “modules” in a single JSON 
   * Best bets
   * Health topics
   * Job openings
-  * Recent tweets
   * Recent news
   * Recent video news
   * Federal Register documents
@@ -210,17 +209,6 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
       | maximum            				| Maximum salary of the job opening
       | rate\_interval\_code			| Rate interval code of the job opening
       | org\_codes						| Organization codes
-
-  * ### recent_tweets
-
-      | Values            	| Description
-      | :--               	| :--
-      | text              	| Text of the tweet
-      | url               	| URL of the tweet
-      | name              	| Name of the tweet author
-      | screen\_name       	| Screen name of the tweet author
-      | profile\_image_url 	| URL of the tweet author profile image
-      | created\_at 		| Date of creation      
 
   * ### federal\_register_documents
 

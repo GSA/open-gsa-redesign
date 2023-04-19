@@ -143,7 +143,6 @@ paths:
                   - $ref: '#/components/schemas/graphic_best_bets'
                   - $ref: '#/components/schemas/health_topics'
                   - $ref: '#/components/schemas/job_openings'
-                  - $ref: '#/components/schemas/recent_tweets'
                   - $ref: '#/components/schemas/federal_register_documents'
                   - $ref: '#/components/schemas/related_search_terms'
         default:
@@ -483,27 +482,6 @@ components:
         org_codes:
           type: string
           description: Organization codes
-    recent_tweets:
-      type: array
-      properties: 
-        text:
-          type: string
-          description: Text of the tweet
-        url:
-          type: string
-          description: URL of the tweet 
-        name:
-          type: string
-          description: Name of the tweet author
-        screen_name:
-          type: string
-          description: Screen name of the tweet author
-        profile_image_url:
-          type: string
-          description: URL of the tweet author profile image
-        created_at:
-          type: string
-          description: Date of creation
     federal_register_documents:
       type: array
       properties: 
