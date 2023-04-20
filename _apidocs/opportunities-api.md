@@ -281,7 +281,7 @@ Australia/Sydney |(UTC+11:00) SYDNEY, AUSTRALIA
 
 **Note**: <i>User can use only current GENC countries during the entity registration process, reference database and Active GENC state/province data used across SAM applications.</i>
 
-* when user access the location services API (https://open.gsa.gov/api/location-public-api/)
+* When user access the location services API (https://open.gsa.gov/api/location-public-api/)
   use active/approved GENC countries or previously recognized inactive GENC countries from the NGA register 
   
 * Validation is run to only accept active/approved countries or subdivisions-country and record is blocked if attempt to add a non-active/approved countries or subdivisions-country (state, regions, provinces, etc.)
@@ -294,6 +294,9 @@ https://geonames.nga.mil/geonames/GeographicNamesSearch/
 
 API Fields
 
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+201 | string | Draft Opportunity successfully created | returns Opportunity ID in response header
    																					    				|   												   | 
 
 
