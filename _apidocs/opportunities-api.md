@@ -294,48 +294,8 @@ https://geonames.nga.mil/geonames/GeographicNamesSearch/
 
 API Fields
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
-</head>
-<body>
-
-<h2>Four Equal Columns</h2>
-
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h2>Column 1</h2>
-    <p>Some text..</p>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <h2>Column 2</h2>
-    <p>Some text..</p>
-  </div>
-  <div class="column" style="background-color:#ccc;">
-    <h2>Column 3</h2>
-    <p>Some text..</p>
-  </div>
-  <div class="column" style="background-color:#ddd;">
-    <h2>Column 4</h2>
-    <p>Some text..</p>
-  </div>
-</div>
-
-</body>
-</html>											   | 
+Field Label |   Role   | Data Source                                                                                                | Valid Statuses                                       | Input Type
+----------------|-------------------------------------------------------------------------------------------------------------------|----------------------------------------------------- |----------------										   | 
 
 
 <p><small><a href="#">Back to top</a></small></p>
