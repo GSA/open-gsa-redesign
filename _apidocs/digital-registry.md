@@ -1,6 +1,6 @@
 ---
-title: US Digital Registry API
-banner-heading: US Digital Registry API
+title: U.S. Digital Registry API
+banner-heading: U.S. Digital Registry API
 ---
 
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
