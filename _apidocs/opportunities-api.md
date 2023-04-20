@@ -294,8 +294,12 @@ https://geonames.nga.mil/geonames/GeographicNamesSearch/
 
 API Fields
 
-Field Label |   Role   | Data Source                                                                                                | Valid Statuses                                       | Input Type
-----------------|-------------------------------------------------------------------------------------------------------------------|----------------------------------------------------- |----------------										   | 
+Field Label | Role | Data Source  | Valid Statuses  | Input Type
+---------------|----------------|------------|----------|------------
+Authorization | Header |  string | Yes | Valid and authorized user ID
+api_key | query | string | Yes | Valid System Account API Key
+opportunityId | query | string | Yes | Opportunity ID
+postedFrom | Body | JSON Object | No | Posted From - Date
 
 
 <p><small><a href="#">Back to top</a></small></p>
