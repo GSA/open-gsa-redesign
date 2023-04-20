@@ -294,10 +294,10 @@ https://geonames.nga.mil/geonames/GeographicNamesSearch/
 
 API Fields
 
-HTTP Status Code | Response Type | Reason  | Description
+Field Label | Role | Data Source    | Valid Statuses   | Input Type  
 -----------------|---------------|---------|------------
-201 | string | Draft Opportunity successfully created | returns Opportunity ID in response header
-   																					    				|   												   | 
+Country Code | Public | Country_Code MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active (public) Inactive (Internal SAM services Only)
+   																					    				|   Three Character												   | 
 
 
 <p><small><a href="#">Back to top</a></small></p>
