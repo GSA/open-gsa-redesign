@@ -296,7 +296,7 @@ API Fields
 
 Field Label | Role | Data Source  | Valid Statuses  | Input Type
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized user ID
+Country Code | Public |  Country_Code MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active (public) Inactive (Internal SAM services Only) | Three Character
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
 postedFrom | Body | JSON Object | No | Posted From - Date
