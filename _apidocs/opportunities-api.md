@@ -297,10 +297,6 @@ API Fields
 Field Label | Role | Data Source  | Valid Statuses  | Input Type
 ---------------|----------------|------------|----------|------------
 Country Code | Public |  Country_Code MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active (public) Inactive (Internal SAM services Only) | Three Character
-
-Field Label | Role | Data Source  | Valid Statuses  | Input Type
----------------|----------------|------------|----------|------------
-Country Code | Public |  Country_Code MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active (public) Inactive (Internal SAM services Only) | Three Character
 Country Name | Public |  Full_Name' MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources |   | TEXT
 State | Public |  State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources   | Listed from the selcted country | Two Character
 ZIP | Public |  TBD |   |  
