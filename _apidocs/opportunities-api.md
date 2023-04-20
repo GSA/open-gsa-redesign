@@ -277,6 +277,35 @@ Australia/Sydney |(UTC+11:00) SYDNEY, AUSTRALIA
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## GENC Standardization
+
+**Note**: User can use only current GENC countries during the entity registration process, reference database and Active GENC state/province data used across SAM applications.
+
+* when user access the location services API (https://open.gsa.gov/api/location-public-api/)
+  use active/approved GENC countries or previously recognized inactive GENC countries from the NGA register
+* Validation is run to only accept active/approved countries or subdivisions-country and record is blocked if attempt to add a non-active/approved countries or subdivisions-country (state, regions, provinces, etc.)
+
+
+
+Refer : 
+https://geonames.nga.mil/geonames/GeographicNamesSearch/
+
+
+API Fields
+
+Field Label |   Role   | Data Source                                                                                                | Valid Statuses                                       | Input Type
+----------------|-------------------------------------------------------------------------------------------------------------------|----------------------------------------------------- |----------------
+Country Code |  Public |  Country_Code MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active (public) Inactive (Internal SAM services Only)| Three Character
+
+Country Name |  Public | Full_Name' MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources    |                                                      | TEXT 
+
+State        |  Public |  State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources        | Active (public) 	Listed from the selcted country    | TWO Character
+
+ZIP          |  TBD    |     																					    				|   												   | 
+
+
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Version Control 
 
 Please use v2 for the following APIs to utilize ueiSAM. Business rules for v2 endpoints can be found in the corresponding API sections.
