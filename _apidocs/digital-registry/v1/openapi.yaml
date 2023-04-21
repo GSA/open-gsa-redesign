@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 info:
   version: 1.0.0
-  title: US Digital Registry
+  title: U.S. Digital Registry
 servers:
   - url: https://api.gsa.gov/technology/digital-registry/v1
 paths:
