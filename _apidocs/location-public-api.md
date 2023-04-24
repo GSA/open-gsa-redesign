@@ -126,7 +126,7 @@ Request Parameters
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 api_key | query | string | Yes | Valid System Account API Key
-searchby | query | string | No |  Enter the parameter to search the country information: <br> - countryname <br>- iso2 <br>- iso3
+searchby | query | string | No |  Enter the parameter to search the country information: <br> - countryname  <br>- iso3 ( which is mapped to GENC code)
 q | query | string | No (Yes if searchby is provided)|  Enter the value of the parameter you typed for searchby <br><br> Example:<br> countryname: United States <br> iso2: US <br> iso3: USA <br><br> If searchby is provided, q must have exact spelling to return valid results (ex. United States). If the searchby field is left blank, q would operate general search (ex. United)
 active | query | string | No | The active indicator specifies whether the city is active or inactive. Type "Y" for a list of active city names. Type "N" for a list of inactive city names
 
@@ -207,7 +207,7 @@ country.countryCode2 | string | Country Code 2
 countrycode | string | Country Code
 href | URL Link to the response
 
-Example: Look up state of Virginia
+Example 1 : Look up state of Virginia
 
 https://api.sam.gov/locationservices/v1/states?api_key=[Enter System Account Api Key]&searchby=state&q=VA
 
@@ -227,6 +227,48 @@ https://api.sam.gov/locationservices/v1/states?api_key=[Enter System Account Api
                     "countryFullName": "United States of America",
                     "countryCode2": "US",
                     "countrycode": "USA"
+                },
+                "_links": {
+                    "self": {
+                        "href": ""
+                    }
+                }
+            }
+        ]
+    }
+}
+</pre></code>
+</p>
+</details>
+
+Example 2 : Look up subdivision , 'Andaman and Nicobar Islands' of Foriegn Country
+
+https://api.sam.gov/locationservices/v1/states?api_key=[Enter System Account Api Key]&searchby=state&q=AN
+
+<details>
+<summary>Response</summary>
+<p>
+<code><pre>
+{
+       "_embedded": {
+        "stateList": [
+            {
+                "stateId" : 22933,
+                "stateCode": "AN",
+                "state": "Andaman and Nicobar Islands",
+                "stateType": "union territory",
+                "country": {
+                  "countryId": 118,
+                  "country": "INDIA",
+                  "countryFullName": "Republic of India",
+                  "activeInd": "Y",
+                  "countryCode2": "IN",
+                  "countryNumber": 356,
+                  "activeStartDate": "2023-03-26",
+                  "countrySource": "GENC",
+                  "countryShortName": "India",
+                  "dodQualifyingCountry": " ",
+                  "countrycode": "IND"
                 },
                 "_links": {
                     "self": {
