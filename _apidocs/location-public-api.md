@@ -5,7 +5,7 @@ banner-heading: SAM.gov Public Location Services API
 
 ## Overview
 
-The Public Location Services API provides Location Services data (Country, State, City, and ZIP) and is to be used when validating location data that is being submitted to the SAM.gov ONLY. SAM.gov is not the authoritative source for location data and is agglomerating data from 3rd parties to operate the application. Location Public Services API only supports United States currently.
+The Public Location Services API provides Location Services data (Country, State, City, and ZIP) and is to be used when validating location data that is being submitted to the SAM.gov ONLY. SAM.gov is not the authoritative source for location data and is agglomerating data from 3rd parties to operate the application. Location Public Services API used to support only United States. As part of GENC updates, currently Location Services State API supports Foreign Countries aswell.
 
 *Note: If valid search parameter (e.g. searchby=statecode) from the options listed in the description is not provided, all records will be returned*
 
@@ -187,13 +187,13 @@ api_key | query | string | Yes | Valid System Account API Key
 cc | query | string | No | Enter the 3-digit Country Code to retrieve the States within that Country <br><br> Example: <br> United States: USA
 searchby | query | string | No | Enter the search parameter to search the state information: <br> - statecode <br> - statename <br> - statetype <br>
 q | query | string | No (Yes if searchby is provided) |  Enter the value of the parameter for searchby <br><br> Example: <br> statename: Virginia <br> statecode: VA <br> statetype: State (state types: State, Capital, Military, Minor Outlying Islands, Associated State, and Territory) <br><br> You can input multiple values for the parameter by separating the values by a comma (for example: if searchby is statetype, q could be Military, Capital. This would return the Military and Capital states). If the searchby field is left blank, q would operate as general search
-active | query | string | No | The active indicator specifies whether the city is active or inactive. Type "Y" for a list of active city names. Type "N" for a list of inactive city names
+active | query | string | No | The active indicator specifies whether the state is active or inactive. Type "Y" for a list of active state names. Type "N" for a list of inactive state names
 
 Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-200 | string | List of Opportunities | JSON 
+200 | string | List of States | JSON 
 
 Response Element | Response Type |  Description
 -----------------|---------------|------------
