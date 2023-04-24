@@ -423,7 +423,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
     get:
       tags:
         - locationservices
-      summary: 'API to get a list of states'
+      summary: 'API to get a list of states/provinces/subdivisons for both USA and Foreign countries'
       operationId: getlocationserviceslookupstates
       consumes:
         - application/json
@@ -557,5 +557,6 @@ Date | Version | Description
 4/21/2020 | v1.0 | Base Version
 5/11/2020 | v1.1| OpenAPI Specification File Added
 9/8/2020 |v1.2| Updated Formatting
+4/20/2023 |v1.3| Updated Country and State API details to include GENC updates
 
 <p><small><a href="#">Back to top</a></small></p>
