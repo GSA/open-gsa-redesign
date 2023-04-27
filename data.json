@@ -3882,13 +3882,13 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "Data Dictionary for Federal Hiring Dataset June 30 2022.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/d2fa8702-1e44-4dd5-b178-9d03ccd4b8f1/download/data-dictionary-for-federal-hiring-dataset-june-30-2022.xlsx"
+                    "title": "hiring_selections_and_outcomes_public_data_set_as_of_Dec_31_2022_v2.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/867f6f67-4754-4848-b1e3-e74aa92b6bfb/download/hiring_selections_and_outcomes_public_data_set_as_of_dec_31_2022_v2.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "hiring_selections_and_outcomes_public_data_set_as_of_Dec_31_2022.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/c92822f2-1ebb-409f-a904-bfa986cfbc16/download/hiring_selections_and_outcomes_public_data_set_as_of_dec_31_2022.csv"
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "data-dictionary-for-federal-hiring-dataset-dec-31-2022.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/20929a06-1ea8-4666-89bc-387497ec0674/download/data-dictionary-for-federal-hiring-dataset-dec-31-2022.xlsx"
                 }
             ],
             "keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -5303,8 +5303,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 4.12.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/67f357af-0360-44db-b9aa-289144ccfc8d/download/edi-4.12.json"
+                    "title": "EDI 4.27.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/d50195e7-202b-4bba-bd47-0d344c867d91/download/edi-4.27.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -12176,7 +12176,7 @@
             "theme": ["Information Technology"]
         }, {
             "@type": "dcat:Dataset",
-            "title": "U.S. Digital Registry API",
+            "title": "US Digital Registry API",
             "description": "To help prevent exploitation from unofficial sources, phishing scams, or malicious entities, the U.S. Digital Registry serves as a crowdsource resource for agencies, citizens, and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps, and mobile websites. The accounts in the registry are independently updated by federal managers across the government who maintain individual agency accounts.",
             "modified": "2022-08-04T14:03:20.390Z",
             "accessLevel": "public",
@@ -12198,7 +12198,7 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "accessURL": "https://open.gsa.gov/api/digital-registry/",
-                    "title": "U.S. Digital Registry API"
+                    "title": "US Digital Registry API"
                 }
             ],
             "keyword": ["api", "digital repositry"],
