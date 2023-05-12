@@ -27,7 +27,7 @@
                     "mediaType": "application/pdf",
                     "format": "pdf",
                     "title": "2015 GSA Common Baseline Implementation Plan and CIO Assignment Plan",
-                    "description": "This is GSA's 2015 Common Baseline Implementation Plan and its CIO Assignment Plan per the requirements set forth in FITARA legislation. Updated April 2017. Last Major Change to version updated on March 4, 2019. Last Major change to version update on 8/5/2020. Last Major change to version update on 03/24/2022. Updated on 3/14/23 to add roles of SAOP and CPO to personnel list. Also updated new CTO name and contact info.",
+                    "description": "This is GSA's 2015 Common Baseline Implementation Plan and its CIO Assignment Plan per the requirements set forth in FITARA legislation. Updated April 2017. Last Major Change to version updated on March 4, 2019. Last Major change to version update on 8/5/2020. Last Major change to version update on 03/24/2022. Updated on 3/14/23 to add roles of SAOP and CPO to personnel list. Also updated new CTO name and contact info. Updated 5/11/2023 to add acting roles and delegation of authorities link.",
                     "downloadURL": "https://inventory.data.gov/dataset/64c56cec-4b8f-44c7-ba69-090517f9f32e/resource/87e53999-aff1-4560-8bf0-42d9dc8e4a69/download/2015gsafitaraimplementationandcioassignmentplan.pdf"
                 }
             ],
@@ -3882,13 +3882,13 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "hiring_selections_and_outcomes_public_data_set_as_of_Dec_31_2022_v2.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/867f6f67-4754-4848-b1e3-e74aa92b6bfb/download/hiring_selections_and_outcomes_public_data_set_as_of_dec_31_2022_v2.xlsx"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "data-dictionary-for-federal-hiring-dataset-dec-31-2022.xlsx",
                     "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/20929a06-1ea8-4666-89bc-387497ec0674/download/data-dictionary-for-federal-hiring-dataset-dec-31-2022.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "mediaType": "text/csv",
+                    "title": "hiring_selections_and_outcomes_public_data_set_as_of_Dec_31_2022 (1).csv",
+                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/bf117d38-00c6-4aba-8e1d-6e733a1360b8/download/hiring_selections_and_outcomes_public_data_set_as_of_dec_31_2022-1.csv"
                 }
             ],
             "keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -5303,8 +5303,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 5.4.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/01476d85-1b93-42c3-a1ee-27bc75998dd3/download/edi-5.4.json"
+                    "title": "EDI 5.12.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/9f4d9155-5940-4a4b-b8c2-57edc9461107/download/edi-5.12.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5510,8 +5510,8 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
                     "format": "json",
-                    "title": "GSA FITARA Actions and Milestones 2023-02-07",
-                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the November 2022 quarterly submission to OMB on February 07, 2023.",
+                    "title": "GSA FITARA Actions and Milestones 2023-05-010",
+                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the May 2023 quarterly submission to OMB on May 10, 2023.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
                 }
@@ -5543,7 +5543,7 @@
                     "mediaType": "application/json",
                     "format": "JSON",
                     "title": "GSA IT Reform Cost Savings/Avoidance",
-                    "description": "GSA's February 2023 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+                    "description": "GSA's May 2023 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
                 }
@@ -5574,7 +5574,7 @@
                     "mediaType": "application/zip",
                     "format": "ZIP",
                     "title": "GSA IT Policy Archive Zip",
-                    "description": "Last update: 2023-02-08",
+                    "description": "Last update: 2023-05-10",
                     "downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
                 }
             ],
@@ -5953,13 +5953,16 @@
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings (5).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d5fd2a5a-a7a5-4d37-9d60-efb741775d48/download/iolp-buildings-5.xlsx"
+                    "title": "IOLP Leases (3).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/91d6e385-d900-4663-8157-c3ef526a1881/download/iolp-leases-3.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases (3).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/f8193a03-ed46-40df-949b-bb3b86bd0bca/download/iolp-leases-3.xlsx"
+                    "title": "IOLP Buildings (5).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/899732b3-85a9-4dfc-9295-26b79d52e554/download/iolp-buildings-5.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
@@ -8314,9 +8317,9 @@
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
-            "title": "Networx Business Volume FY2023 1st Qtr",
+            "title": "Networx Business Volume FY2023",
             "description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
-            "modified": "2023-02-09T21:26:48.293Z",
+            "modified": "2023-05-12T14:53:54.613Z",
             "accessLevel": "public",
             "identifier": "gsa-20223-02-09-01",
             "license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -8326,7 +8329,7 @@
                 "name": "Federal Acquisition Service",
                 "subOrganizationOf": {
                     "@type": "org:Organization",
-                    "name": "General Services Administration"
+                    "name": "Federal Acquisition Service"
                 }
             },
             "isPartOf": "GSA-2015-08-27",
@@ -8340,6 +8343,11 @@
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "TotRevFY23_1stQtr.xlsx",
                     "downloadURL": "https://inventory.data.gov/dataset/fc20d688-f8b4-46f1-8369-ae2dbde89ef9/resource/f58f4308-9f77-4857-8b85-2cb29bea4f10/download/totrevfy23_1stqtr.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "TotRevFY23_2ndQtr.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/fc20d688-f8b4-46f1-8369-ae2dbde89ef9/resource/5cf40f96-654c-41be-b769-75a19806f2ac/download/totrevfy23_2ndqtr.xlsx"
                 }
             ],
             "keyword": ["Networx", "billing", "networx business volume", "telecommunications"],
