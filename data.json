@@ -4843,9 +4843,9 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "FRPP_Public_Dataset_FY21_Final_02242023.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/2d7db9cd-e049-450f-8a4d-3afdc9696572/download/frpp_public_dataset_fy21_final_02242023.xlsx"
+                    "mediaType": "application/xml",
+                    "title": "FedRealPropertyProfileDataforCivilianAgencies_PublicDataset_FRPP_GSA_corrected_20230424.xml",
+                    "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/84b69557-0553-48b8-ae77-5acd9c698f8b/download/fedrealpropertyprofiledataforcivilianagencies_publicdataset_frpp_gsa_corrected_20230424.xml"
                 }
             ],
             "keyword": ["FRPP", "Federal Property", "General Services Property", "NGDA Portfolio Themes", "Real Property Theme", "geospatial", "gsa", "ngda", "real estate"],
@@ -5303,8 +5303,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 5.12.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/9f4d9155-5940-4a4b-b8c2-57edc9461107/download/edi-5.12.json"
+                    "title": "EDI 5.18.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/a89807db-d993-4f36-a3ec-3434a806c6f0/download/edi-5.18.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5952,17 +5952,17 @@
                     "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/597dde16-e4c3-4c51-874a-a6a87a200171/download/iolp19139-4-12-2023.xml"
                 }, {
                     "@type": "dcat:Distribution",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd"
+                }, {
+                    "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "IOLP Leases (3).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/91d6e385-d900-4663-8157-c3ef526a1881/download/iolp-leases-3.xlsx"
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/53f0616b-ac88-45cb-a2c2-3776cf65c747/download/iolp-leases-3.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "IOLP Buildings (5).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/899732b3-85a9-4dfc-9295-26b79d52e554/download/iolp-buildings-5.xlsx"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "conformsTo": "http://www.isotc211.org/2005/gmd"
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/618d6ca5-9cc3-4a65-af39-5fafe2014310/download/iolp-buildings-5.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
