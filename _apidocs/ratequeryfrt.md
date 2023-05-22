@@ -1,12 +1,12 @@
 ---
-title: TMSS 2.0 ratequeryhhg API
-banner-heading: ratequeryhhg API
+title: TMSS 2.0 Freight Rate Query API
+banner-heading: TMSS 2.0 Freight Rate Query API
 ---
 
 
 ## Introduction
 
-This document provides detailed technical information about the Rate query API offered by the TMSS 2.0. These services make use of industry standard methods for API authentication and connectivity, which should make it easier and faster for developers to interface Federal agency with TMSS 2.0. This API can be used to retrieve shipment cost for a regular Household Goods (HHG) shipment or for an Extended Storage (EXSTG) shipment.
+This document provides detailed technical information about the Rate query API offered by the TMSS 2.0. These services make use of industry standard methods for API authentication and connectivity, which should make it easier and faster for developers to interface Federal agency with TMSS 2.0. This API can be used to retrieve shipment cost for a regular Freight (FRT) shipment.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -124,7 +124,7 @@ This API has one primary endpoint:
 
  
  
-**Description**   This API can be used to retrieve shipment cost for a regular Household Goods (HHG) shipment or for an Extended Storage (EXSTG) shipment.
+**Description**   This API can be used to retrieve shipment cost for a regular Freight (FRT) shipment.
 
 **API Payload Query Parameters**
 
@@ -254,9 +254,9 @@ All response must be in JSON data structure specified in the Data dictionary sec
 The connection to the API endpoints is secured and authenticated using the registered token provided by the form above.  
  
 Sample Request and Response
-Request URL: https://api.gsa.gov/travel/tmss/v1/ratequery/hhg/shipmentcost
+Request URL: https://api.gsa.gov/travel/tmss/v1/ratequery/frt/shipmentcost
 
-Request Payload for a HHG Domestic Shipment:  
+Request Payload for a FRT Domestic Shipment:  
 ```
 {   
    "agencyLocationCode": 697,  
