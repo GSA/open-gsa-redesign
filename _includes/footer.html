@@ -18,14 +18,15 @@
           <h3>Contact Us</h3>
           <ul class="usa-unstyled-list">
             <li><a href="{{ '/contact' | prepend: site.baseurl }}">Contact us</a></li>
+          </ul>
         </div>
-        <div class="usa-footer-logo usa-width-one-fourth">
-          {% if site.footer.text %}
-            <p><small>{{ site.footer.text }}</small></p>
-          {% endif %}
-          {% if site.footer.image %}
-            <p><img src="{{ site.footer.image | prepend: site.baseurl }}" alt="{{ site.footer.image-alt }}" class="logo"></p>
-          {% endif %}
+        <div class="usa-width-one-fourth">
+          <h3>Notices</h3>
+          <ul class="usa-unstyled-list">
+            <li><a href="https://www.gsa.gov/website-information/accessibility-aids">Accessibility support</a></li>
+            <li><a href="https://www.gsa.gov/reference/freedom-of-information-act-foia">FOIA requests</a></li>
+            <li><a href="https://www.gsa.gov/website-information/website-policies">Privacy policy</a></li>
+          </ul>
         </div>
       </nav>
     </div>
