@@ -1041,6 +1041,76 @@
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
+            "title": "CX Data Collection Details",
+            "description": "The detailed reports for each CX Data Collection",
+            "modified": "2023-05-31T14:32:50.775Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-05-31-04",
+            "describedBy": "https://github.com/gsa/touchpoints",
+            "describedByType": "application/json",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "R/P3M",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Ryan Wold",
+                "hasEmail": "mailto:ryan.wold@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.performance.gov/cx/data/omb_cx_reporting_collections.json",
+                    "title": "Data Collection Report Details"
+                }
+            ],
+            "keyword": ["customer experience", "cx", "data collection", "data reporting", "services"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "CX Data Collections",
+            "description": "A list of quarterly CX Data Collections going back to 2021",
+            "modified": "2023-05-31T14:28:53.665Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-05-31-03",
+            "describedBy": "https://github.com/gsa/touchpoints",
+            "describedByType": "application/json",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "R/P3M",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Ryan Wold",
+                "hasEmail": "mailto:ryan.wold@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.performance.gov/cx/data/collections.json",
+                    "title": "Data Collections"
+                }
+            ],
+            "keyword": ["customer experience", "cx", "data collection", "data reporting", "services"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
             "title": "Data.gov CKAN API",
             "description": "The data.gov catalog is powered by CKAN, a powerful open source data platform that includes a robust API.  Please be aware that data.gov and the data.gov CKAN API only contain metadata about datasets.  This metadata includes URLs and descriptions of datasets, but it does not include the actual data within each dataset.",
             "modified": "2018-09-24",
@@ -5303,8 +5373,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 5.18.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/a89807db-d993-4f36-a3ec-3434a806c6f0/download/edi-5.18.json"
+                    "title": "EDI 5.31.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/2603985a-16d5-41e9-b504-6e60c7e3396c/download/edi-5.31.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5957,12 +6027,12 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "IOLP Leases (3).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/53f0616b-ac88-45cb-a2c2-3776cf65c747/download/iolp-leases-3.xlsx"
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/474f011b-1c10-4352-b0b1-4666d5e34800/download/iolp-leases-3.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "IOLP Buildings (5).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/618d6ca5-9cc3-4a65-af39-5fafe2014310/download/iolp-buildings-5.xlsx"
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/3822fd19-bcbb-48ab-9ef4-624927ed9b32/download/iolp-buildings-5.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
@@ -11694,6 +11764,76 @@
                 }
             ],
             "keyword": ["travel"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Service Providers",
+            "description": "A list of HISPs (High Impact Service Providers)",
+            "modified": "2023-05-31T14:20:56.631Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-05-31-01",
+            "describedBy": "https://github.com/gsa/touchpoints",
+            "describedByType": "application/json",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "irregular",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Ryan Wold",
+                "hasEmail": "mailto:ryan.wold@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.performance.gov/cx/data/service_providers.json",
+                    "title": "Service Providers"
+                }
+            ],
+            "keyword": ["CX", "HISP", "customer experience", "services"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Services",
+            "description": "A list of HISP Services",
+            "modified": "2023-05-31T14:25:55.579Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-05-31-02",
+            "describedBy": "https://github.com/gsa/touchpoints",
+            "describedByType": "application/json",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "irregular",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Ryan Wold",
+                "hasEmail": "mailto:ryan.wold@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.performance.gov/cx/data/services.json",
+                    "title": "Services"
+                }
+            ],
+            "keyword": ["CX", "customer experience", "services"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
