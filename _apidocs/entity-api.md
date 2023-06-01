@@ -18,7 +18,7 @@ This constitutes both the publicly available entities and the entities that have
 
 **Sensitive (CUI) Data:**
 
-This constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data such as banking information, MPIN and SSN/TIN/EIN.
+This constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data such as banking information and SSN/TIN/EIN.
 
 **Key Features of the Entity Management API:**
 
@@ -1859,7 +1859,7 @@ samMonitoring
 <tr>
 <td>mpin</td>
 <td>string</td>
-<td>mpin</td>
+<td>This field has been deprecated.</td>
 <td>v1<br>v2<br>v3</td>
 </tr>
 </table>
@@ -12351,5 +12351,6 @@ Disclaimer:
 | 11/25/2022 | v3.9    | *  Updated SAM Functional Data Dictionary 🡪 Removed  DUNS/D&B References.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | 01/17/2023 | v4.0    | *  Uploaded a revised Data Dictionary with data fields arranged in the Alphabetical order.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | 01/30/2023 | v4.1    | *  Uploaded a revised Data Dictionary with data fields added for Proceedings and Responsibility/Qualification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 02/28/2023 | v4.2    | *  Removed MPIN occurrences from the Data Dictionary and the "Overview" > "Sensitive (CUI) Data" section.  <br><br> * Indicated that MPIN has been deprecated in the "Response Schema" >  "coreData" >  "entityInformation Sub Section".
 
 <p><small><a href="#">Back to top</a></small></p>
