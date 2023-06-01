@@ -90,6 +90,22 @@ paths:
           schema:
             type: string
             format: string
+        - name: created_until
+          in: query
+          description: 'Allows you to set an upper bound for the date the document was created.'
+          required: false
+          schema:
+            type: string
+            format: date
+            description: The day in YYYY-MM-DD format.
+        - name: created_since
+          in: query
+          description: 'Allows you to set an lower bound for the date the document was created.'
+          required: false
+          schema:
+            type: string
+            format: date
+            description: The day in YYYY-MM-DD format.
         - name: mime_type
           in: query
           description: 'Allows you to filter results based on the Mimetype field. Accepts a comma-separated list of strings.'
@@ -125,6 +141,22 @@ paths:
           schema:
             type: string
             format: string
+        - name: updated_since
+          in: query
+          description: 'Allows you to set an upper bound for the date the document was last updated.'
+          required: false
+          schema:
+            type: string
+            format: date
+            description: The day in YYYY-MM-DD format.
+        - name: updated_until
+          in: query
+          description: 'Allows you to set an lower bound for the date the document was last updated.'
+          required: false
+          schema:
+            type: string
+            format: date
+            description: The day in YYYY-MM-DD format.
       tags:
       - search
       responses:
@@ -143,7 +175,6 @@ paths:
                   - $ref: '#/components/schemas/graphic_best_bets'
                   - $ref: '#/components/schemas/health_topics'
                   - $ref: '#/components/schemas/job_openings'
-                  - $ref: '#/components/schemas/recent_tweets'
                   - $ref: '#/components/schemas/federal_register_documents'
                   - $ref: '#/components/schemas/related_search_terms'
         default:
@@ -220,6 +251,10 @@ components:
             searchgov_custom3:
               type: array
               description: Search.gov custom field 3 content associated with the document. Only included if a value for the field exists. 
+            updated_date:
+              type: string
+              format: date
+              description: Last updated date of the document 
         aggregations:
           type: array
           description: An array of facet objects containing the number of documents associated with each facet value. Within each item, an object representing a facet field (ex. content_type) will have the properties listed below.
@@ -230,6 +265,20 @@ components:
             doc_count:
               type: integer
               description: Number of documents matching the facet value
+            to:
+              type: integer
+              description: Upper bound of date range in Unix epoch date format. 
+            from:
+              type: integer
+              description: Lower bound of date range in Unix epoch date format. 
+            to_as_string:
+              type: string
+              format: date
+              description: Upper bound of date range in  m/d/YYYY format.
+            from_as_string:
+              type: string
+              format: date
+              description: Lower bound of date range in  m/d/YYYY format.
 
 
 
@@ -483,27 +532,6 @@ components:
         org_codes:
           type: string
           description: Organization codes
-    recent_tweets:
-      type: array
-      properties: 
-        text:
-          type: string
-          description: Text of the tweet
-        url:
-          type: string
-          description: URL of the tweet 
-        name:
-          type: string
-          description: Name of the tweet author
-        screen_name:
-          type: string
-          description: Screen name of the tweet author
-        profile_image_url:
-          type: string
-          description: URL of the tweet author profile image
-        created_at:
-          type: string
-          description: Date of creation
     federal_register_documents:
       type: array
       properties: 

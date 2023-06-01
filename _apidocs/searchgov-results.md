@@ -13,7 +13,6 @@ This API exposes all relevant Search.gov results “modules” in a single JSON 
   * Best bets
   * Health topics
   * Job openings
-  * Recent tweets
   * Recent news
   * Recent video news
   * Federal Register documents
@@ -75,11 +74,15 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
   | include_facets      			| The default is `false`. To enable facet features, set this to `true` 
   | audience                        | Returns results that match any of the specified terms in the Audience field. Ex. `audience=students, policymakers` would return results with an audience of students **or** policymakers. Accepts a comma-separated list of strings. 
   | content_type                    | Returns results that match any of the specified terms in the Content Type field. Ex. `content_type=article, blog post` would return results with a content type of article **or** blog post. Accepts a comma-separated list of strings. 
+  | created_since                   | Sets a lower bound for the `created` date. Date must be in ISO Format (YYYY-MM-DD).
+  | created_until                   | Sets an upper bound for the `created` date. Date must be in ISO Format (YYYY-MM-DD).
   | mime_type                       | Returns results that match any of the specified terms in the mime_type field, which indicates the file type of the document. Ex. `mime_type=text/html, application/pdf` would return results with a MIME type of text/html **or** application/pdf. Accepts a comma-separated list of strings. [Read about common MIME types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types).
   | searchgov_custom1               | Returns results that match any of the specified terms in the searchgov_custom1 field. Accepts a comma-separated list of strings.
   | searchgov_custom2               | Returns results that match any of the specified terms in the searchgov_custom2 field. Accepts a comma-separated list of strings.
   | searchgov_custom3               | Returns results that match any of the specified terms in the searchgov_custom3 field. Accepts a comma-separated list of strings.
   | tags                            | Returns results that match any of the specified terms in the tags field. Accepts a comma-separated list of strings.
+  | updated_since                   | Sets a lower bound for the `changed` date. Date must be in ISO Format (YYYY-MM-DD).
+  | updated_until                   | Sets an upper bound for the `changed` date. Date must be in ISO Format (YYYY-MM-DD).
 
 
 ## Expected Results
@@ -133,6 +136,7 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
       | searchgov_custom1 | Search.gov custom field 1 content associated with the document
       | searchgov_custom2 | Search.gov custom field 2 content associated with the document
       | searchgov_custom3 | Search.gov custom field 3 content associated with the document
+      | updated_date      | The last updated date of the document 
 
   * ### web:aggregations
     
@@ -144,6 +148,15 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
     | :--          | :--
     | agg_key | Name of the facet value
     | doc_count | Number of documents matching the facet value
+
+    If the field represents a date range, additional properties will be present to indicate the start and end dates of the range.
+
+    | Values       | Description
+    | :--          | :--
+    | to           | Returns the upper bound of the date range in Unix epoch time
+    | from         | Returns the lower bound of the date range in Unix epoch time
+    | to_as_string | Returns the upper bound of the date range as a string in M/D/YYYY format
+    | from_as_string | Returns the lower bound of the date range as a string in M/D/YYYY format
 
   * ### text\_best_bets
 
@@ -210,17 +223,6 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
       | maximum            				| Maximum salary of the job opening
       | rate\_interval\_code			| Rate interval code of the job opening
       | org\_codes						| Organization codes
-
-  * ### recent_tweets
-
-      | Values            	| Description
-      | :--               	| :--
-      | text              	| Text of the tweet
-      | url               	| URL of the tweet
-      | name              	| Name of the tweet author
-      | screen\_name       	| Screen name of the tweet author
-      | profile\_image_url 	| URL of the tweet author profile image
-      | created\_at 		| Date of creation      
 
   * ### federal\_register_documents
 

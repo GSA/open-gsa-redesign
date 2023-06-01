@@ -277,6 +277,33 @@ Australia/Sydney |(UTC+11:00) SYDNEY, AUSTRALIA
 
 <p><small><a href="#">Back to top</a></small></p>
 
+## GENC Standardization
+
+**Note**: <i>User can use only current GENC countries during the entity registration process, reference database and Active GENC state/province data used across SAM applications.</i>
+
+* When user access the location services API (https://open.gsa.gov/api/location-public-api/)
+  use active/approved GENC countries or previously recognized inactive GENC countries from the NGA register 
+  
+* Validation is run to only accept active/approved countries or subdivisions-country and record is blocked if attempt to add a non-active/approved countries or subdivisions-country (state, regions, provinces, etc.)
+
+
+
+Refer : 
+https://geonames.nga.mil/geonames/GeographicNamesSearch/
+
+
+API Fields
+
+Field Label | Role | Data Source  | Valid Statuses  | Input Type
+---------------|----------------|------------|----------|------------
+Country Code | Public |  Country_Code MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active (public) Inactive (Internal SAM services Only) | Three Character
+Country Name | Public |  Full_Name' MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources |   | TEXT
+State | Public |  State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources   | Listed from the selcted country | Two Character
+ZIP | Public |  TBD |   |  
+
+
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Version Control 
 
 Please use v2 for the following APIs to utilize ueiSAM. Business rules for v2 endpoints can be found in the corresponding API sections.
@@ -8853,6 +8880,11 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Requirement  Strategies <br> (farCases)|	Invalid Requirement Strategy(farCases)	| Accepted farCases: <br> FAR 7.107-2 <br> FAR 7.107-3 <br> FAR 7.107-4 |Update Draft Notice <br> (Consolidate/(Substantially) Bundle)
 400|Requirement  Strategies <br> (farCases)|	Duplicate Requirement Strategies found(farCases)	| Duplicate farCases are not allowed |Update Draft Notice <br> (Consolidate/(Substantially) Bundle)
 400|Requirement  Strategies <br> (farCases)|	Requirement Strategies(farCase)not found	| Requirement Strategies not found |Update Draft Notice <br> (Consolidate/(Substantially) Bundle)
+400|POP - State | State provided is invalid | When user enters the invalid state code |	Create And Publish
+400|POP - Zip Code | Invalid zipcode. Please enter the 5 digit zipcode | When user enters the invalid zip code |	Create And Publish
+400|Award section - State | Award Details Section - State provided is invalid | When user enters the invalid state code |	Create And Publish
+400|Award section - Zip Code | Award Details Section - Invalid zipcode. Please enter the 5 digit zipcode | When user enters the invalid zip code |	Create And Publish
+
 
 
 ## FAQ
@@ -8914,6 +8946,8 @@ Date | Version | Description
 02/18/2022| v1.21| Please refer the version control section for the list of v1 api's that are going to retired from  3/15/2022 in alpha, and 4/1/2022 from prod.
 10/05/2022| v1.22| Notice code "i" decription change: from “Intent to Bundle Requirements” to “Consolidate/(Substantially) Bundle”, <br> Added Requirement Strategies(farCases) to notice code "i"(Consolidate/(Substantially) Bundle), <br> Please refer the version control section for the list of v3 api's that are going to be available in alpha(11/28/2022) and prod(TBD).
 02/28/2023| v1.23| Please refer the version control section for the list of v3 endpoints will available for production use from March 3rd, 2023(v1.22).
+04/19/2023| v1.24| Please refer the GENC Standardization section for the list of active countries and states.
+04/20/2023| v1.25| Please refer the Place of Performace and Award section (Country/State/Zip) validation error messages. These are effective in production from March 15, 2024(v1.25).
 
 
 <p><small><a href="#">Back to top</a></small></p>

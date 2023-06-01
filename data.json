@@ -27,7 +27,7 @@
                     "mediaType": "application/pdf",
                     "format": "pdf",
                     "title": "2015 GSA Common Baseline Implementation Plan and CIO Assignment Plan",
-                    "description": "This is GSA's 2015 Common Baseline Implementation Plan and its CIO Assignment Plan per the requirements set forth in FITARA legislation. Updated April 2017. Last Major Change to version updated on March 4, 2019. Last Major change to version update on 8/5/2020. Last Major change to version update on 03/24/2022. Updated on 3/14/23 to add roles of SAOP and CPO to personnel list. Also updated new CTO name and contact info.",
+                    "description": "This is GSA's 2015 Common Baseline Implementation Plan and its CIO Assignment Plan per the requirements set forth in FITARA legislation. Updated April 2017. Last Major Change to version updated on March 4, 2019. Last Major change to version update on 8/5/2020. Last Major change to version update on 03/24/2022. Updated on 3/14/23 to add roles of SAOP and CPO to personnel list. Also updated new CTO name and contact info. Updated 5/11/2023 to add acting roles and delegation of authorities link.",
                     "downloadURL": "https://inventory.data.gov/dataset/64c56cec-4b8f-44c7-ba69-090517f9f32e/resource/87e53999-aff1-4560-8bf0-42d9dc8e4a69/download/2015gsafitaraimplementationandcioassignmentplan.pdf"
                 }
             ],
@@ -1036,6 +1036,76 @@
                 }
             ],
             "keyword": ["contract", "contractor", "covid", "naics", "sin", "support services", "tribal entities"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "CX Data Collection Details",
+            "description": "The detailed reports for each CX Data Collection",
+            "modified": "2023-05-31T14:32:50.775Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-05-31-04",
+            "describedBy": "https://github.com/gsa/touchpoints",
+            "describedByType": "application/json",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "R/P3M",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Ryan Wold",
+                "hasEmail": "mailto:ryan.wold@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.performance.gov/cx/data/omb_cx_reporting_collections.json",
+                    "title": "Data Collection Report Details"
+                }
+            ],
+            "keyword": ["customer experience", "cx", "data collection", "data reporting", "services"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "CX Data Collections",
+            "description": "A list of quarterly CX Data Collections going back to 2021",
+            "modified": "2023-05-31T14:28:53.665Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-05-31-03",
+            "describedBy": "https://github.com/gsa/touchpoints",
+            "describedByType": "application/json",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "R/P3M",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Ryan Wold",
+                "hasEmail": "mailto:ryan.wold@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.performance.gov/cx/data/collections.json",
+                    "title": "Data Collections"
+                }
+            ],
+            "keyword": ["customer experience", "cx", "data collection", "data reporting", "services"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
@@ -3882,13 +3952,13 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "Data Dictionary for Federal Hiring Dataset June 30 2022.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/d2fa8702-1e44-4dd5-b178-9d03ccd4b8f1/download/data-dictionary-for-federal-hiring-dataset-june-30-2022.xlsx"
+                    "title": "data-dictionary-for-federal-hiring-dataset-dec-31-2022.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/20929a06-1ea8-4666-89bc-387497ec0674/download/data-dictionary-for-federal-hiring-dataset-dec-31-2022.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "text/csv",
-                    "title": "hiring_selections_and_outcomes_public_data_set_as_of_Dec_31_2022.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/c92822f2-1ebb-409f-a904-bfa986cfbc16/download/hiring_selections_and_outcomes_public_data_set_as_of_dec_31_2022.csv"
+                    "title": "hiring_selections_and_outcomes_public_data_set_as_of_Dec_31_2022 (1).csv",
+                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/bf117d38-00c6-4aba-8e1d-6e733a1360b8/download/hiring_selections_and_outcomes_public_data_set_as_of_dec_31_2022-1.csv"
                 }
             ],
             "keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -4843,9 +4913,9 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "FRPP_Public_Dataset_FY21_Final_10242022.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/021a92fa-b1cc-4e0a-8bf7-f3f9874e53a1/download/frpp_public_dataset_fy21_final_10242022.xlsx"
+                    "mediaType": "application/xml",
+                    "title": "FedRealPropertyProfileDataforCivilianAgencies_PublicDataset_FRPP_GSA_corrected_20230424.xml",
+                    "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/84b69557-0553-48b8-ae77-5acd9c698f8b/download/fedrealpropertyprofiledataforcivilianagencies_publicdataset_frpp_gsa_corrected_20230424.xml"
                 }
             ],
             "keyword": ["FRPP", "Federal Property", "General Services Property", "NGDA Portfolio Themes", "Real Property Theme", "geospatial", "gsa", "ngda", "real estate"],
@@ -4898,6 +4968,45 @@
                 }
             ],
             "keyword": ["EIS", "business-volume", "enterprise-infrastructure", "gsa", "telecommunications"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "FY23 Enterprise Infrastructure Solutions (EIS) Quarterly Reports",
+            "description": "This dataset represents the EIS business volume of each government agency that has ordered telecommunication services from the EIS contract.  This contains data from FY2023.",
+            "modified": "2023-04-10T16:46:57.364Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-04-10-01",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Federal Acquisition Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "isPartOf": "GSA-2020-06-26-01",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Loren Smith",
+                "hasEmail": "mailto:loren.smith@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "EISTotRevFY23_Q1.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/5691fe5b-1055-4a3c-888c-4ac52cf87f06/resource/7e433b3b-2b28-43cd-ab92-afe58cb7186a/download/eistotrevfy23_q1.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "EISTotRevFY23_Q2.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/5691fe5b-1055-4a3c-888c-4ac52cf87f06/resource/1910f4bc-d8e4-4b67-b8c3-31f954f475c1/download/eistotrevfy23_q2.xlsx"
+                }
+            ],
+            "keyword": ["Business Volume", "eis", "enterprise-infrastructure", "gsa", "telecommunications"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
@@ -5264,8 +5373,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 3.23.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/4e6a7657-470b-4731-994d-15919e4c9aaa/download/edi-3.23.json"
+                    "title": "EDI 5.31.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/2603985a-16d5-41e9-b504-6e60c7e3396c/download/edi-5.31.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5471,8 +5580,8 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
                     "format": "json",
-                    "title": "GSA FITARA Actions and Milestones 2023-02-07",
-                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the November 2022 quarterly submission to OMB on February 07, 2023.",
+                    "title": "GSA FITARA Actions and Milestones 2023-05-010",
+                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the May 2023 quarterly submission to OMB on May 10, 2023.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
                 }
@@ -5504,7 +5613,7 @@
                     "mediaType": "application/json",
                     "format": "JSON",
                     "title": "GSA IT Reform Cost Savings/Avoidance",
-                    "description": "GSA's February 2023 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+                    "description": "GSA's May 2023 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
                 }
@@ -5535,7 +5644,7 @@
                     "mediaType": "application/zip",
                     "format": "ZIP",
                     "title": "GSA IT Policy Archive Zip",
-                    "description": "Last update: 2023-02-08",
+                    "description": "Last update: 2023-05-10",
                     "downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
                 }
             ],
@@ -5907,20 +6016,23 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
+					"conformsTo": "http://www.isotc211.org/2005/gmd",
                     "mediaType": "application/xml",
-                    "title": "iolpmetadatadraft2022_all-3-03032023.xml",
-                    "conformsTo": "http://www.isotc211.org/2005/gmd",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/0b98b1cb-1baf-4374-8027-926156bb6868/download/iolpmetadatadraft2022_all-3-03032023.xml"
+                    "title": "IOLP19139-4-12-2023.xml",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/597dde16-e4c3-4c51-874a-a6a87a200171/download/iolp19139-4-12-2023.xml"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/78977c0e-bceb-47d0-acb9-015564293aea/download/iolp-leases-2.xlsx"
+                    "title": "IOLP Leases (3).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/474f011b-1c10-4352-b0b1-4666d5e34800/download/iolp-leases-3.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings (2).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/71bbb261-476d-4a28-8d48-3ba607e98ed9/download/iolp-buildings-2.xlsx"
+                    "title": "IOLP Buildings (5).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/3822fd19-bcbb-48ab-9ef4-624927ed9b32/download/iolp-buildings-5.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
@@ -8275,9 +8387,9 @@
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
-            "title": "Networx Business Volume FY2023 1st Qtr",
+            "title": "Networx Business Volume FY2023",
             "description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
-            "modified": "2023-02-09T21:26:48.293Z",
+            "modified": "2023-05-12T14:53:54.613Z",
             "accessLevel": "public",
             "identifier": "gsa-20223-02-09-01",
             "license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -8287,7 +8399,7 @@
                 "name": "Federal Acquisition Service",
                 "subOrganizationOf": {
                     "@type": "org:Organization",
-                    "name": "General Services Administration"
+                    "name": "Federal Acquisition Service"
                 }
             },
             "isPartOf": "GSA-2015-08-27",
@@ -8301,6 +8413,11 @@
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "TotRevFY23_1stQtr.xlsx",
                     "downloadURL": "https://inventory.data.gov/dataset/fc20d688-f8b4-46f1-8369-ae2dbde89ef9/resource/f58f4308-9f77-4857-8b85-2cb29bea4f10/download/totrevfy23_1stqtr.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "TotRevFY23_2ndQtr.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/fc20d688-f8b4-46f1-8369-ae2dbde89ef9/resource/5cf40f96-654c-41be-b769-75a19806f2ac/download/totrevfy23_2ndqtr.xlsx"
                 }
             ],
             "keyword": ["Networx", "billing", "networx business volume", "telecommunications"],
@@ -11647,6 +11764,76 @@
                 }
             ],
             "keyword": ["travel"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Service Providers",
+            "description": "A list of HISPs (High Impact Service Providers)",
+            "modified": "2023-05-31T14:20:56.631Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-05-31-01",
+            "describedBy": "https://github.com/gsa/touchpoints",
+            "describedByType": "application/json",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "irregular",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Ryan Wold",
+                "hasEmail": "mailto:ryan.wold@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.performance.gov/cx/data/service_providers.json",
+                    "title": "Service Providers"
+                }
+            ],
+            "keyword": ["CX", "HISP", "customer experience", "services"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Services",
+            "description": "A list of HISP Services",
+            "modified": "2023-05-31T14:25:55.579Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-05-31-02",
+            "describedBy": "https://github.com/gsa/touchpoints",
+            "describedByType": "application/json",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "irregular",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Ryan Wold",
+                "hasEmail": "mailto:ryan.wold@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://www.performance.gov/cx/data/services.json",
+                    "title": "Services"
+                }
+            ],
+            "keyword": ["CX", "customer experience", "services"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
