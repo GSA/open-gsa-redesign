@@ -4916,6 +4916,11 @@
                     "mediaType": "application/xml",
                     "title": "FedRealPropertyProfileDataforCivilianAgencies_PublicDataset_FRPP_GSA_corrected_20230424.xml",
                     "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/84b69557-0553-48b8-ae77-5acd9c698f8b/download/fedrealpropertyprofiledataforcivilianagencies_publicdataset_frpp_gsa_corrected_20230424.xml"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "FRPP_Public_Dataset_FY21_Final_02242023 (1).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/ec1ee26a-d1c7-4c53-87b1-58484cf948e5/download/frpp_public_dataset_fy21_final_02242023-1.xlsx"
                 }
             ],
             "keyword": ["FRPP", "Federal Property", "General Services Property", "NGDA Portfolio Themes", "Real Property Theme", "geospatial", "gsa", "ngda", "real estate"],
@@ -5373,8 +5378,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 6.5.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/9ea9710c-26be-4f51-a69a-6ed8d4b52704/download/edi-6.5.json"
+                    "title": "EDI 6.6.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/c8739605-4571-4768-bb34-5d89f1ae4775/download/edi-6.6.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
