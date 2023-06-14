@@ -17,14 +17,14 @@ This data is presented in a visual format on itdashboard.gov.
 
 ## Getting Started
 
-To use our API, request an api.data.gov key and visit our API documentation located at: https://gsa.github.io/ITDB-schema/index.html
+To use our API, request an api.data.gov key and visit our <a href="https://gsa.github.io/ITDB-schema/public-by-2025/api/data/gov/docs/index.html"> full API documentation </a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available as part of our full API documentation, located here:
-<a href="https://gsa.github.io/ITDB-schema/index.html"> IT Collect API Documentation </a>
+<a href="https://gsa.github.io/ITDB-schema/public-by-2025/api/data/gov/docs/index.html"> IT Collect API Documentation </a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
