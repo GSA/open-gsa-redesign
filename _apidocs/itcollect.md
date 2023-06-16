@@ -30,7 +30,7 @@ To use our API, request an api key below and visit our <a href="https://gsa.gith
 
     // Enter the API key you signed up for and specially configured for this
     // API key signup embed form.
-    apiKey: "YOUR_KEY_HERE",
+    apiKey: "Wjww6pZMosePwXxnz7foeWBYa0ADCcw1NIMfuOoP",
 
     // Provide a URL or e-mail address to be used for customer support.
     //
@@ -97,8 +97,8 @@ To use our API, request an api key below and visit our <a href="https://gsa.gith
 </script>
 <noscript
   >Please enable JavaScript to signup for an
-  <a href="https://api.data.gov/">api.data.gov</a> API key.</noscript
->
+  <a href="https://api.data.gov/">api.data.gov</a> API key.</noscript>
+  
 {% endraw %}
 
 
