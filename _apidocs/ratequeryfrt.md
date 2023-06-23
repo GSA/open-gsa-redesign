@@ -101,14 +101,14 @@ To begin using this API, you will need to register for an API Key. You can sign 
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
-•	After registration, you will need to request the Agency Token by sending an email to errc@gsa.gov.
+•	After registration, you will need to request the Agency Token by sending an email to transportation.programs@gsa.gov.
  
 •	Then you will need to provide this API key in the x-api-key and Agency Token in the x-agency-token of HTTP header with every API request.
  
 | HTTP Header Name | Description |
 | ---- | ----------- |
-| x-api-key | API key from api.data.gov.  For sample purposes, you can use `DEMO_KEY` as an API key. |
-| x-agency-token | Agency Token provided by the ERRC team. For testing you can use GSA2021_API_TOKEN as the Agency Token. |
+| x-api-key | API key from api.data.gov.  For testing purposes, you can use `DEMO_KEY` as an API key. |
+| x-agency-token | Agency Token provided by the FMP (Freight Management Program) team. For testing you can use GSA2021_API_TOKEN as the Agency Token. |
 
 
 
@@ -120,102 +120,91 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
 This API has one primary endpoint:
 
-**Endpoint 1:** https://api.gsa.gov/travel/tmss/v1/ratequery/hhg/shipmentcost
+**Endpoint 1:** https://api.gsa.gov/travel/tmss/v1/ratequery/frt
 
  
  
 **Description**   This API can be used to retrieve shipment cost for a regular Freight (FRT) shipment.
 
-**API Payload Query Parameters**
+**API Payload Request Parameters**
 
-| Request Payload Fields | Description |
+| Request Element | Description |
 | ---- | ----------- |
-| agencyLocationCode | Customer Location Code |
-| queryType |	Tpe of Query |
-| pickupDate |	Pick up/ Move Date |
-| rateType |	Shipment/Rate Type |
-| sroId |	Shipment / SRO Id  |
-| containerizedShipments |	To pull only Containerized Shipment costs |
-| originCountryCode |	Pickup/Orgin Country Code |
-| originZip |	Pickup/ Orgin Zip code |
-| originProvince |	Pickup/Origin province code if the Origin country is Canada |
-| destinationCountryCode |	Delivery/Destination Country Code |
-| destinationZip |	Delivery/Destination Zip code |
-| destinationProvince |	Delivery/Destinationprovince code if the Destination country is Canada |
-| estimatedWeight |	Estimated weight of the Shipment |
-| vehicleClass |	Class of the Vehicle | 
-| uabWeight |	UAB weight in lbs |
+| agencyLocationCode |	Customer Location Code |
+| queryType	| Tpe of Query |
+| pickupDate	| Pick up/ Move Date |
+| sroType	| Shipment/Rate Type |
+| sroId	| Shipment / SRO Id |
+| estimatedWeight	| Estimated weight of the Shipment |
+| estimatedMileage	| Miles |
+| originZip	| Pickup/ Orgin Zip code |
+| destinationZip	| Delivery/Destination Zip code |
+| originCountryCode	| Pickup/Orgin Country Code |
+| destinationCountryCode	| Delivery/Destination Country Code |
+| originProvince	| Pickup/Origin province code if the Origin country is Canada |
+| destinProvince	| Delivery/Destinationprovince code if the Destination country is Canada |
+| accessorials	| group element for entering accessorials |
+| accessorialCode	| accessorial code |
+| quantity	| Quantity |
+| usage	| Usage (Pickup or Delivery) |
 
 
-**Expected Response**
+**Response Object**
 
-| Response Object |	Description |
+| Response Element|	Description |
 | ---- | ----------- |
-| agencyLocationCode | Customer Location Code |
-| queryType	| Tpe of Query |
-| pickupDate | Pick up/ Move Date |
-| shipmentType | Shipment/Rate Type | 
-| sroId | Shipment / SRO Id | 
-| containerizedShipments | To pull only Containerized Shipment costs | 
-| vehicleClass | Class of the Vehicle |  
-| estimatedWeight | Estimated weight of the Shipment | 
-| originZip | Pickup/ Orgin Zip code | 
-| originProvince | Pickup/Origin province code if the Origin country is Canada | 
-| destinationZip | Delivery/Destination Zip code |
-| destinationProvince |	Delivery/Destinationprovince code if the Destination country is Canada |
-| originCountryCode | Pickup/Orgin Country Code |
-| destinationCountryCode | Delivery/Destination Country Code |
-| miles | Miles only for USA to Canada |
-| uabWeight | UAB weight in lbs |
-| rateId | Integer |
-| queryId | Integer |
-| rateType | Type of Rate |
-| scac | TSP's SCAC code |
-| zefflag |	Zero Emission Footprint indicator for the TSP |
-| companyName |	Name of the TSP |
-| telephone	| TSP's contact phone number |
-| socioEconomicInd | TSP's Socio Economic Indicator |
-| tender | Tender Id used in the selected rate |
-| csi | Customer Satisfaction Index of the TSP |
-| vi | Value Index of the TSP |
-| surfacePercentage | Linehaul Discount applied towards Surface Charge |
-| surfaceCharge | Surface Charge |
-| uabPercentage	| UAB discount applied |
-| uabCharge	| UAB Cost |
-| vehicleCharge	| Vehicle Transporation Cost |
-| totalCharge |	Total Transportation Cost |
-| sitRatePercentage | SIT Rate discount applied |
-| destThirtyDayCharge |	Standard SIT cost for 30 days at Destination |
-| destSixtyDayCharge | Standard SIT cost for 60 days at Destination |
-| destNinetyDayCharge |	Standard SIT cost for 90 days at Destination |
-| sitOrigin1stDayCharge	| SIT cost at Origin for the 1st Day |
-| sitOriginAddnlDayCharge |	SIT cost at Origin for each additional day |
-| sitOriginDlvOutUnder50milesCharge | SIT cost at Origin for delivery out under 50 miles |
-| sitDest1stDayCharge |	SIT cost at Destination for the 1st Day |
-| sitDestAddnlDayCharge | SIT cost at Destination for each additional day |
-| sitDestDlvOutUnder50milesCharge |	SIT cost at Destination for delivery out under 50 miles |
-| originThirtyDayCharge | Standard SIT cost for 30 days at Origin |
-| originSixtyDayCharge | Standard SIT cost for 60 days at Origin |
-| originNinetyDayCharge | Standard SIT cost for 90 days at Origin |
-| exsPackagingCharge | Extended Storage Packing Charge |
-| exsMonthlyStorageCharge |	Extended Storage Delivery over 50 miles cost|
-| exsWarehouseCharge |	Extended Storage Warehouse Charge |
-| exsTotal1MonthCharge | Extended Storage 1 month Charge |
-| exsTotal6MonthCharge | Extended Storage 6 month Charge |
-| exsTotal12MonthCharge	 | Extended Storage 12 month Charge |
-| exsDeliveryWithin50Miles | Extended Storage Delivery within 50 miles cost |
-| exsDeliveryHandlingOut | Extended Storage Delivery handling out cost |
-| exsDeliveryOver50Miles | Extended Storage Delivery over 50 miles cost |
-| exsDiscountApplied | Extended Storage Rate discount applied |
-| rateEffectiveDate | Rate Effective Date |
-| rateExpiryDate | Rate Expiry Date |
-
+|  agencyLocationCode |Customer Location Code |
+| queryType |Tpe of Query |
+| sroType |Shipment/SROType |
+| carrierId |carrier id (data base id) for reference |
+| rateId |rate id (DB id) for reference |
+| rateTypeId |rate type id (DB id) for reference |
+| rateType |Type of rate applied (LTL or TL) |
+| ltlCostFinal |Final LTL cost calculated |
+| tlCostFinal |Final TL cost calculated |
+| linehaulCostFinal |Final Linehaul Cost Applied |
+| scac |TSP's SCAC code |
+| scacName |TSP Name |
+| tenderId |Selected Rate's tende id |
+| queryId |internal query id for reference/logging |
+| smartWayId |To identify a TSP is Smartway TSP or not |
+| smartWayScore |Integer |
+| phone |TSP's phone number |
+| email |TSP's Email |
+| sro |Selected SRO  |
+| fuelSurchargeCost |Total Fuel Surcharge cost applied for this shipment query |
+| fuelSurchargeEffDate |Fuels Surcharge effective Date |
+| fuelSurchargeExpDate |Fuels Surcharge expiry Date |
+| totalAccessorialCost |Total accessorial cost applied |
+| totalEstimatedCost |Total estimated cost of the shipment (linehaulCostFinal + fuelSurchargeCost + totalAccessorialCost) |
+| linehaulCalculation |Linehaul calculation formula applied |
+| socioEconomicInd |TSP's social economic indicator(s) |
+| originProvince |Origin province  fom the request |
+| originZip |Origin Zip submitted  fom the request |
+| destinationZip |Destination Zip  fom the request |
+| destinationProvince |Destination province  fom the request |
+| originCountryCode |Origin Country Code  fom the request |
+| destinationCountryCode |Destination country code  fom the request |
+| estimatedMileage |Estimated mileage computed |
+| estimatedWeight |Estimated weight fom the request |
+| pickupDate |pickup date  fom the request |
+| rateEffectiveDate |Rate Effective Date |
+| rateExpiryDate |Rate Expiry Date |
+| rateEffectiveDate |Rate Effective Date |
+| accessorialsResults |Accessorials results |
+| estimatedCost |total cost of the individual accessorial  |
+| frtAccessorialId |DB id of the accessoral code |
+| unitsId |DB id of the acessorial unit type |
+| quantity |applicable quantity |
+| accessorialCode |accessorial code from the request |
+| accessorialCost |acessorial cost in integer |
+| usage |Usage from the request |
 
 
 ## API Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-[HHG Rate Query API spec.xlsx](https://github.com/GSA/open-gsa-redesign/files/6502515/HHG.Rate.Query.API.spec.xlsx)
+[TMSS.FRT.Rate.Query.API.spec.xlsx](https://github.com/GSA/open-gsa-redesign/files/11850796/TMSS.FRT.Rate.Query.API.spec.xlsx)
 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -254,251 +243,101 @@ All response must be in JSON data structure specified in the Data dictionary sec
 The connection to the API endpoints is secured and authenticated using the registered token provided by the form above.  
  
 Sample Request and Response
-Request URL: https://api.gsa.gov/travel/tmss/v1/ratequery/frt/shipmentcost
+Request URL: https://api.gsa.gov/travel/tmss/v1/ratequery/frt
 
 Request Payload for a FRT Domestic Shipment:  
 ```
-{   
-   "agencyLocationCode": 697,  
-    "queryType":"HHGAPI",  
-    "pickupDate":"2020-04-12",  
-    "shipmentType":"General",  
-    "sroId":"GENRL",  
-    "containerizedShipments":false,  
-    "vehicleClass":"Class 1",  
-    "estimatedWeight": 10000,  
-    "originZip":"32714",  
-    "originProvince":null,  
-    "destinationZip":"23059",  
-    "destinationProvince":null,  
-    "originCountryCode":"US00",  
-    "destinationCountryCode":"US00",  
-    "miles": 100,  
-    "uabWeight":150  
-}  
+{
+   "agencyLocationCode": 1312,
+   "queryType":"FRT",
+   "pickupDate": "2020-06-16",
+   "sroType":"General",
+   "sroId":"GENTL",
+   "estimatedWeight":1000,
+   "estimatedMileage":100,
+   "estimatedCuFt":null,
+   "originZip":"23059",
+   "destinationZip":"60611",
+   "originCountryCode":"US00",
+   "destinationCountryCode":"US00",
+   "originProvince":null,
+   "destnProvince":null,
+   "accessorials": [
+   		{
+            "accessorialCode": "550",
+            "quantity": 0,
+            "usage": "Pickup"
+       },
+       {
+           "accessorialCode": "480"
+        }
+    ]
+}
 ```
   
-Response for a HHG Domestic Shipment:  
+Response :  
 ```
-{  
-       "agencyLocationCode": 697,  
-        "queryType": "HHGAPI",  
-        "pickupDate": "2020-04-12T00:00:00.000+0000",  
-        "shipmentType": "General",  
-        "sroId": "GENRL",  
-        "containerizedShipments": false,  
-        "vehicleClass": "Class 1",  
-        "estimatedWeight": 10000,  
-        "originZip": "32714",  
-        "originProvince": null,  
-        "destinationZip": "23059",  
-        "destinationProvince": null,  
-        "originCountryCode": "US00",  
-        "destinationCountryCode": "US00",  
-        "miles": 739.0,  
-        "uabWeight": 150,  
-        "rateId": 4265664,  
-        "queryId": 4488,  
-        "rateType": "G",  
-        "scac": "(New) BUSV",  
-        "zefflag": false,  
-        "companyName": "BURNHAM SERVICE COMPANY INC",  
-        "telephone": "800-955-5421",  
-        "socioEconomicInd": "s",  
-        "tender": "N613",  
-        "csi": "0.00",  
-        "vi": "33.4030",  
-        "surfacePercentage": 37,  
-        "surfaceCharge": "7367.75",  
-        "uabPercentage": 0,  
-        "uabCharge": "0.00",  
-        "vehicleCharge": "1101.11",  
-        "totalCharge": "8468.86",  
-        "sitRatePercentage": 47,  
-        "thirtyDayCharge": "3457.32",  
-        "sixtyDayCharge": "4289.22",  
-        "ninetyDayCharge": "5121.12",  
-        "sitOrigin185ACharge": "658.47",  
-        "sitOrigin185BCharge": "27.73",  
-        "sitOrigin210ACharge": "1994.68",  
-        "sitDest185ACharge": "658.47",  
-        "sitDest185BCharge": "27.73",  
-        "sitDest210ACharge": "1994.68",  
-        "originThirtyDayCharge": "3669.29",  
-        "originSixtyDayCharge": "4585.79",  
-        "originNinetyDayCharge": "5502.29",  
-        "exsPackagingCharge": null,  
-        "exsMonthlyStorageCharge": null,  
-        "exsWarehouseCharge": null,  
-        "exsTotal1MonthCharge": null,  
-        "exsTotal6MonthCharge": null,  
-        "exsTotal12MonthCharge": null,  
-        "exsDeliveryWithin50Miles": null,  
-        "exsDeliveryHandlingOut": null,  
-        "exsDeliveryOver50Miles": null,  
-        "exsDiscountApplied": null,  
-        "rateEffectiveDate": "2019-05-01T05:00:00.000+0000",  
-        "rateExpiryDate": "2020-05-31T05:00:00.000+0000"  
-}  
+[
+    {
+        "agencyLocationCode": 1312,
+        "queryType": "FRT",
+        "sroType": "General",
+        "sro": "GENLTL",
+        "carrierId": 2425,
+        "rateId": 5869,
+        "rateTypeId": 19,
+        "rateType": "LTL - 1000",
+        "ltlCostFinal": 205.74,
+        "tlCostFinal": 0,
+        "linehaulCostFinal": "205.74",
+        "scac": "RDWY",
+        "scacName": "ROADWAY TRANSPORT",
+        "tenderId": "3020",
+        "queryId": 5675,
+        "smartWayId": true,
+        "phone": "7036237688",
+        "email": "test34@gmail.com",
+        "fuelSurchargeCost": "55.55",
+        "fuelSurchargeEffDate": "2023-06-14T04:00:00.000+0000",
+        "fuelSurchargeExpDate": "2023-06-20T04:00:00.000+0000",
+        "totalAccessorialCost": "702.31",
+        "totalEstimatedCost": "963.60",
+        "linehaulCalculation": "178.9 * (115.0/100 ) (Base Charge * (%LTL Surcharge/100))",
+        "socioEconomicInd": "v,dv,s,w,o,8a,h",
+        "originProvince": null,
+        "originZip": "23059",
+        "destinationZip": "60611",
+        "destinationProvince": null,
+        "originCountryCode": "US00",
+        "destinationCountryCode": "US00",
+        "estimatedMileage": 783.1,
+        "estimatedWeight": 1000,
+        "pickupDate": "2020-06-16T00:00:00.000+0000",
+        "rateEffectiveDate": "2018-10-01T05:00:00.000+0000",
+        "rateExpiryDate": "2023-10-01T04:59:59.000+0000",
+        "accessorialsResults": [
+            {
+                "estimatedCost": "68.00",
+                "frtAccessorialId": 15,
+                "unitsId": null,
+                "quantity": 0,
+                "accessorialCode": "550",
+                "accessorialCost": 68,
+                "usage": "Pickup"
+            },
+            {
+                "estimatedCost": "634.31",
+                "frtAccessorialId": 13,
+                "unitsId": null,
+                "quantity": null,
+                "accessorialCode": "480",
+                "accessorialCost": 634.3110000000001,
+                "usage": null
+            }
+        ]
+    }
+]
 ```
-
-Request Payload for a HHG International Shipment:  
-```
- {    
-    "agencyLocationCode": 697,  
-    "queryType":"HHGAPI",  
-    "pickupDate":"2020-04-12",  
-    "shipmentType":"General",  
-    "sroId":"GENRL",  
-    "containerizedShipments":false,  
-    "vehicleClass":"Class 1",  
-    "estimatedWeight": 10000,  
-    "originZip":"32714",  
-    "originProvince":null,  
-    "destinationZip":null,  
-    "destinationProvince":null,  
-    "originCountryCode":"US00",  
-    "destinationCountryCode":"1250",  
-    "miles": 100,  
-    "uabWeight":150  
-}  
-```
- 
-Response for a HHG International Shipment:  
-```
- {  
-       "agencyLocationCode": 697,  
-        "queryType": "HHGAPI",  
-        "pickupDate": "2020-04-12T00:00:00.000+0000",  
-        "shipmentType": "General",  
-        "sroId": "GENRL",  
-        "containerizedShipments": false,  
-        "vehicleClass": "Class 1",  
-        "estimatedWeight": 10000,  
-        "originZip": "32714",  
-        "originProvince": null,  
-        "destinationZip": null,  
-        "destinationProvince": null,  
-        "originCountryCode": "US00",  
-        "destinationCountryCode": "1250",  
-        "miles": 0.0,  
-        "uabWeight": 150,  
-        "rateId": 3971539,  
-        "queryId": 4430,  
-        "rateType": "G",  
-        "scac": "STVF",  
-        "zefflag": false,  
-        "companyName": "STEVENS INTERNATIONAL FORWARDE",  
-        "telephone": "800-426-1348",  
-        "socioEconomicInd": null,  
-        "tender": "N701",  
-        "csi": "108.07",  
-        "vi": "111.1036",  
-        "surfacePercentage": 276,  
-        "surfaceCharge": "28254.12",  
-        "uabPercentage": 1575,  
-        "uabCharge": "1243.09",  
-        "vehicleCharge": "7200.00",  
-        "totalCharge": "36697.21",  
-        "sitRatePercentage": 110,  
-        "thirtyDayCharge": "907.50",  
-        "sixtyDayCharge": "1177.00",  
-        "ninetyDayCharge": "1446.50",  
-        "sitOrigin185ACharge": "0.00",  
-        "sitOrigin185BCharge": "0.00",  
-        "sitOrigin210ACharge": "1186.90",  
-        "sitDest185ACharge": "0.00",  
-        "sitDest185BCharge": "0.00",  
-        "sitDest210ACharge": "330.00",  
-        "originThirtyDayCharge": "2191.20",  
-        "originSixtyDayCharge": "2752.20",  
-        "originNinetyDayCharge": "3313.20",  
-        "exsPackagingCharge": null,  
-        "exsMonthlyStorageCharge": null,  
-        "exsWarehouseCharge": null,  
-        "exsTotal1MonthCharge": null,  
-        "exsTotal6MonthCharge": null,  
-        "exsTotal12MonthCharge": null,  
-        "exsDeliveryWithin50Miles": null,  
-        "exsDeliveryHandlingOut": null,  
-        "exsDeliveryOver50Miles": null,  
-        "exsDiscountApplied": null,  
-        "rateEffectiveDate": "2019-05-01T05:00:00.000+0000",  
-        "rateExpiryDate": "2020-04-30T05:00:00.000+0000"  
-}  
-```
-
-Request Payload for a HHG Extended Storage Shipment:  
-```
-{  
-   "agencyLocationCode": 697,  
-   "queryType":"HHG",  
-   "pickupDate":"2021-03-25",  
-   "rateType":"Extended Storage",  
-   "sroId":71,  
-   "containerizedShipments":false,  
-   "estimatedWeight":"5000",  
-   "originZipId":29510,  
-   "originProvince":null,  
-   "destinationZipId":null,  
-   "destinationProvince":null,  
-   "originCountryId":326,  
-   "destinationCountryId":null,  
-}  
-```
-  
-Response for a HHG Extended Storage Shipment:  
-```
-{  
-   "rateId":139155408,  
-   "rateType":"G",  
-   "scac":"INIC",  
-   "carrierId":218,  
-   "zefflag":true,  
-   "companyName":"INTERSTATE INTERNATIONAL INC",  
-   "telephone":"8009991001",  
-   "tender":"XE21",  
-   "csi":null,  
-   "vi":null,  
-   "surfacePercentage":null,  
-   "surfaceCharge":null,  
-   "uabPercentage":null,  
-   "uabCharge":null,  
-   "vehicleCharge":null,  
-   "totalCharge":null,  
-   "estimatedCost":null,  
-   "sitRatePercentage":null,  
-   "thirtyDayCharge":null,  
-   "sixtyDayCharge":null,  
-   "ninetyDayCharge":null,  
-   "sitOrigin185ACharge":null,  
-   "sitOrigin185BCharge":null,  
-   "sitOrigin210ACharge":null,  
-   "sitDest185ACharge":null,  
-   "sitDest185BCharge":null,  
-   "sitDest210ACharge":null,  
-   "originThirtyDayCharge":null,  
-   "originSixtyDayCharge":null,  
-   "originNinetyDayCharge":null,  
-   "queryId":3059,    
-   "exsPackagingCharge":"2800.00",  
-   "exsMonthlyStorageCharge":"300.00",  
-   "exsWarehouseCharge":"300.00",  
-   "exsTotal1MonthCharge":"3400.00",  
-   "exsTotal6MonthCharge":"4900.00",  
-   "exsTotal12MonthCharge":"6700.00",  
-   "exsDeliveryWithin50Miles":"1850.00",  
-   "exsDeliveryHandlingOut":"262.50",  
-   "exsDeliveryOver50Miles":"2051.93",  
-   "exsDiscountApplied":50,  
-   "sro":"EXSTG",  
-   "socioEconomicInd":null,  
-   "effectiveDate":"2020-11-01T04:00:00.000+0000",  
-   "expiryDate":"2021-04-30T04:00:00.000+0000",  
- }  
-```
-  
-
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Feedback
