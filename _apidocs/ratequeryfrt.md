@@ -108,7 +108,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 | HTTP Header Name | Description |
 | ---- | ----------- |
 | x-api-key | API key from api.data.gov.  For testing purposes, you can use `DEMO_KEY` as an API key. |
-| x-agency-token | Agency Token provided by the FMP (Freight Management Program) team. For testing you can use GSA2021_API_TOKEN as the Agency Token. |
+| x-agency-token | Agency Token provided by the FMP (Freight Management Program) team. |
 
 
 
