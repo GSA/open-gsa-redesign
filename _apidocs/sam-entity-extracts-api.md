@@ -296,7 +296,7 @@ Permitted values: V2 for the Public, FOUO and Exclusion extracts; V3 for the Sen
 </summary>
 <ul>
 <li><b>SAM Master Extract Mapping document:</b><br> 
-Effective June 2023: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v6.0.xlsx">SAM Master Extract Mapping</a></li>
+Effective June 2023: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v7.0.xlsx">SAM Master Extract Mapping</a></li>
 
 <li><b>Public extract layout with the UEI data:</b><br> 
 <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 Public File V2 Layout.xlsx">Public Extract Layout</a><br>
