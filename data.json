@@ -3956,9 +3956,9 @@
                     "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/20929a06-1ea8-4666-89bc-387497ec0674/download/data-dictionary-for-federal-hiring-dataset-dec-31-2022.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "hiring_selections_and_outcomes_public_data_set_as_of_Dec_31_2022 (1).csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/bf117d38-00c6-4aba-8e1d-6e733a1360b8/download/hiring_selections_and_outcomes_public_data_set_as_of_dec_31_2022-1.csv"
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "hiring_selections_and_outcomes_public_data_set_as_of_Mar_31_2023 (1).xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/c4439973-3809-4a6d-a8d1-f3f21d27cdc2/download/hiring_selections_and_outcomes_public_data_set_as_of_mar_31_2023-1.xlsx"
                 }
             ],
             "keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -4144,6 +4144,9 @@
                     "describedBy": "https://www.gsa.gov/cdnstatic/FY_2016_FRPP_Data_Dictionary_Version_3___Oct_31__2016.pdf",
                     "describedByType": "application/pdf",
                     "downloadURL": "https://inventory.data.gov/dataset/70667db2-37b0-4a16-adda-beb476e3bf18/resource/e394b6f0-1888-4ffe-9ab1-bab83d2a95d3/download/rpfrpppublicdatasetfy16final05012019.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd"
                 }
             ],
             "keyword": ["FRPP", "Federal Real Property Profile", "GSA", "General Services Administration", "RTF", "building", "civilian", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -4186,6 +4189,9 @@
                     "describedBy": "https://www.gsa.gov/cdnstatic/FY2018_FRPP_DATA_DICTIONARY_v2.pdf",
                     "describedByType": "application/pdf",
                     "downloadURL": "https://inventory.data.gov/dataset/78b921cf-d865-44b6-84bc-9df85a5de642/resource/da3a910a-14f3-42b4-80d2-be3ce1360a5d/download/frpppublicdatasetfy1805232019.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd"
                 }
             ],
             "keyword": ["FRPP", "Federal Real Property Profile", "GSA", "General Services Administration", "RTF", "building", "civilian", "land", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -4304,6 +4310,9 @@
                     "describedBy": "https://www.gsa.gov/cdnstatic/FY_2016_FRPP_Data_Dictionary_Version_3___Oct_31__2016.pdf",
                     "describedByType": "application/pdf",
                     "downloadURL": "https://inventory.data.gov/dataset/34552d8f-a545-475b-b10d-2765dfa9a08d/resource/8bc79bf7-e6b5-49e1-ace5-a1324a58f7bf/download/corps-of-engineers-public-frpp-data-fy-2016.csv"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd"
                 }
             ],
             "keyword": ["Air Force", "Army", "Corps of Engineers", "Department of Defense", "DoD", "FRPP", "Federal Real Property Profile", "GSA", "General Services Administration", "Navy", "RTF", "building", "land", "military", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -4382,6 +4391,9 @@
                     "describedBy": "https://www.gsa.gov/cdnstatic/FY%202017%20FRPP%20DATA%20DICTIONARY%20V2_0.pdf",
                     "describedByType": "application/pdf",
                     "downloadURL": "https://inventory.data.gov/dataset/d019bd7f-d94f-46b5-9bdc-947ff9aecf6c/resource/cc622041-8992-4c45-8f97-83012bb60efe/download/fy-2017-corps-of-engineers-public-frpp-data.csv"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd"
                 }
             ],
             "keyword": ["Air Force", "Army", "Corps of Engineers", "Department of Defense", "DoD", "FRPP", "Federal Real Property Profile", "GSA", "General Services Administration", "Navy", "RTF", "building", "land", "military", "office", "real property", "reduce the footprint", "structure", "warehouse"],
@@ -4414,6 +4426,9 @@
                     "format": "text/html",
                     "title": "Federal Real Property Profile (FRPP)",
                     "downloadURL": "http://gsa.gov/portal/content/102880"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd"
                 }
             ],
             "keyword": ["FRPP", "Federal Property", "GSA", "General Services Property", "Geospatial", "NGDA Portfolio Themes", "Real Estate", "Real Property Theme", "ngda"],
@@ -4882,6 +4897,9 @@
                     "description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, that cannot be made public at a detailed level.",
                     "describedBy": "https://www.gsa.gov/cdnstatic/FY_2020_FRPP_DATA_DICTIONARY_v2_final2.pdf",
                     "downloadURL": "https://inventory.data.gov/dataset/ec3eec46-f136-43f7-a6e5-94e76be89104/resource/2c82571a-1af4-4797-a7cf-24a65eacfba9/download/fy-2020-frpp-summarized-data-by-installation-6.16.21.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd"
                 }
             ],
             "keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "Installation Name", "building", "land", "real property", "structure"],
@@ -4921,6 +4939,9 @@
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "FRPP_Public_Dataset_FY21_Final_02242023 (1).xlsx",
                     "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/ec1ee26a-d1c7-4c53-87b1-58484cf948e5/download/frpp_public_dataset_fy21_final_02242023-1.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd"
                 }
             ],
             "keyword": ["FRPP", "Federal Property", "General Services Property", "NGDA Portfolio Themes", "Real Property Theme", "geospatial", "gsa", "ngda", "real estate"],
@@ -5378,8 +5399,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 6.22.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/57062ce3-b8c2-41b8-accb-6fc1a4c8efb0/download/edi-6.22.json"
+                    "title": "EDI 6.28.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/3843d632-cad1-4e34-8c3f-161c8885a160/download/edi-6.28.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -6021,7 +6042,6 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-					"conformsTo": "http://www.isotc211.org/2005/gmd",
                     "mediaType": "application/xml",
                     "title": "IOLP19139-4-12-2023.xml",
                     "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/597dde16-e4c3-4c51-874a-a6a87a200171/download/iolp19139-4-12-2023.xml"
