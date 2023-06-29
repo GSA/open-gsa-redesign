@@ -296,7 +296,7 @@ Permitted values: V2 for the Public, FOUO and Exclusion extracts; V3 for the Sen
 </summary>
 <ul>
 <li><b>SAM Master Extract Mapping document:</b><br> 
-Effective April 2022: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v6.0.xlsx">SAM Master Extract Mapping</a></li>
+Effective June 2023: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v7.0.xlsx">SAM Master Extract Mapping</a></li>
 
 <li><b>Public extract layout with the UEI data:</b><br> 
 <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 Public File V2 Layout.xlsx">Public Extract Layout</a><br>
@@ -478,5 +478,6 @@ Date | Version | Description
 04/08/2022 | v3.0    | * Removed all the references to older files that are no longer valid.<br><br> * Provided references to the new files.<br><br> * Reorganized the Sensitive Postman and curl examples for a better flow of content.<br><br>
 08/08/2022 | v3.1    | * Updated to clarify the use of Controlled Unclassified Information (CUI) data.<br><br>
 03/13/2023 | v3.2    | * Deleted the MPIN row from the "SAM Master Extract Mapping" file.<br><br> * Updated row # 288 (which used to track MPIN) in the "Sensitive Extract Layout" file to indicate that the field is deprecated.<br><br> * Removed the MPIN value from the sample "Sensitive Monthly V3 Extract File".<br><br>
+06/27/2023 | v3.3    | * Updated "Effective April 2022" to "Effective June 2023". <br><br> * Updated the "June 2023 release: SAM Master Extract Mapping" STRING Clarification tab to include the following updates: <br>&emsp;1. NAICS Exception String table updated to reflect January 2023 <br>&emsp;changes<br>&emsp;2. SBA Business Types String table updated to include new value: <br>&emsp;"A4- SBA Certified Small Disadvantaged Business"<br><br>
 
 <p><small><a href="#">Back to top</a></small></p>
