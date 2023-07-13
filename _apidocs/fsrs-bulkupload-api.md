@@ -15,13 +15,8 @@ The API for FFATA Subaward Reporting will allow authorized users to submit FFATA
 
 FFATA Subaward Reporting Bulk Upload API can be accessed from Production or Alpha via the following endpoints:
 
-For Contracts/Acquisitions:
-* Production: https://api.sam.gov/acquisition/v1/FFATA/
-* Alpha: https://api-alpha.sam.gov/acquisition/v1/FFATA/
-
-For Grants/Assistance:
-* Production: https://api.sam.gov/assistance/v1/FFATA/
-* Alpha: https://api-alpha.sam.gov/assistance/v1/FFATA/
+* Production: https://api.sam.gov
+* Alpha: https://api-alpha.sam.gov
 
 **REST API Workflow Chart**
 
@@ -62,7 +57,6 @@ To be able to perform the various operations provided under the FFATA API, users
 
 Role/Permission    | Submit FFATA Report | Update FFATA Report | Get FFATA Report | Delete FFATA Report
 -------------|---------------|---------------------|---------------------|------------------------------
-Create permission for FFATA under Entity Reporting | Yes | Yes | Yes | No
 Create and delete permission for FFATA under Entity Reporting | Yes | Yes | Yes | Yes
 Read permission for FFATA under Entity Reporting | No | No | Yes | No
 
@@ -92,30 +86,19 @@ drt     | Draft/Work-In-Progress
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## GENC Standardization (do we need to add this section?)
-
-**Note**: <i>User can use only current GENC countries during the entity registration process, reference database and Active GENC state/province data used across SAM applications.</i>
-
-* When user access the location services API (https://open.gsa.gov/api/location-public-api/)
-  use active/approved GENC countries or previously recognized inactive GENC countries from the NGA register 
-  
-* Validation is run to only accept active/approved countries or subdivisions-country and record is blocked if attempt to add a non-active/approved countries or subdivisions-country (state, regions, provinces, etc.)
-
-
+## GENC Standardization
+SAM.gov uses GENC Standardization of country and administrative data to ensure no countries or states are being inserted into SAM that are not correctly recognized by the United States. To ensure any country/state data that is input by the users through FFATA Subaward reporting meets these standards, validations will be run when receiving this data. Please refer to the error messages section for specific details for these errors.
 
 Refer : 
 https://geonames.nga.mil/geonames/GeographicNamesSearch/
 
-
 API Fields
 
-Field Label | Role | Data Source  | Valid Statuses  | Input Type
----------------|----------------|------------|----------|------------
-Country Code | Public |  Country_Code MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active (public) Inactive (Internal SAM services Only) | Three Character
-Country Name | Public |  Full_Name' MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources |   | TEXT
-State | Public |  State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources   | Listed from the selcted country | Two Character
-ZIP | Public |  TBD |   |  
-
+Field Name | Data Source  | Valid Statuses  | Input Type
+---------------|------------|----------|------------
+Country Code |  Country_Code MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active, Inactive (GET calls Only) | Three Character
+Country Name |  Full_Name' MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources |   | TEXT
+State | State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources   | Listed from the selected country | Two Character
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -140,13 +123,13 @@ The following section describes each of the above endpoints in detail.
 
 ### Submit FFATA Report (Contracts)
 
-------- | -------
+------- | ------- |
 **Request Type** | POST
-**URL** | /create
-**Summary** | Creates a new Draft Opportunity
+**URL** | /acquisition/v1/FFATA
+**Summary** | Submit a FFATA report for Contracts
 **Consumes** | application/json
 **Produces** | NA
-**Active Versions** | v2/v3
+**Active Versions** | v1
 
 Request Parameters
 
@@ -154,7 +137,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Contract FFATA JSON](#)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -941,7 +924,7 @@ Examples
 **Produces** | NA
 **Active Versions** | v1
 
-**Please [Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json) to ensure that all required fields in "Required (Publish)" is met to publish opportunity**
+**Please [Refer Create and Update Opportunity Contract JSON](#) to ensure that all required fields in "Required (Publish)" is met to publish opportunity**
 
 Request Parameters
 
@@ -1676,7 +1659,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
 opportunityId | query | string | Yes | Opportunity ID
-Request JSON | Body | JSON | Yes |[Refer Create and Update Opportunity Contract JSON](#create-and-update-opportunity-contract-json)
+Request JSON | Body | JSON | Yes |[Refer Create and Update Opportunity Contract JSON](#)
 
 <p><small><a href="#">Back to top</a></small></p>
 
