@@ -1584,24 +1584,12 @@ topPayEmployees.Definition.salary |  | NA | NA |Yes if topPayEmployees is requir
 
 ### Submit FAATA Report Contract JSON
 
-
-<div id="create-publish-json-v1">
-<details>
-<summary>Create_Publish_Opportunity_Contract_JSON_v1</summary>
-<p>
-<code><pre>
-
-
-<div id="create-publish-json-v2">
-<details>
-
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type |Field Length | Allowed Values| Required | Description|
------|-----------|-------|-------------------|------------|------------|
-
-contractFFATAData | JSON Object |NA | NA | NA | NA
-contractFFATAData.primeEntityInformation | JSON Array | NA| | Yes | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract.
+Name | Data Type |Field Length | Allowed Values | Required |Description | 
+-----|-----------|-------|-------------------|------------|------------
+contractFFATAData | JSON Object | |  |  |  |
+contractFFATAData.primeEntityInformation | JSON Array | NA| | |Yes | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract
 contractNumber |  |   | | Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank 
 idvReferenceNumber |  |  | | Yes, if the report is for a Task Order on a Contract | If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
 reportPeriodMon |  |  | | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
@@ -1638,41 +1626,28 @@ topPayEmployees.Definition.salary |  | NA | NA |Yes if topPayEmployees is requir
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update FAATA Report Grant JSON
-
-<div id="revise-json" title="Click to view Revise Contract">
-<details>
-<summary>Revise_Opportunity_Contract_JSON</summary>
-<p>
-<code><pre>
-
-</pre></code>
-</p>
-</details>
-</div>
-
-* Field headers in the table must match with field headers shown in JSON example  
+### Update FAATA Report Grant JSON 
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 assistanceFFATAData | JSON Object |NA | NA | NA | NA
 assistanceFFATAData.primeEntityInformation | JSON Array | NA| | Yes | Information about the prime Grantor. If the report is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
-primeFAIN |  |   | | YeS | This is the Federal Award Identifier Number (FAIN) for the prime grant award. 
-reportPeriodMon |  |  | | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
-reportPeriodYear |  |  | | Yes | This field should reflect the Reporting Year of the report being submitted. 
-reportingAgency |  | NA |NA | Yes | The ID of the Federal awarding agency 
+primeFAIN |  | | Yes | This is the Federal Award Identifier Number (FAIN) for the prime grant award. 
+reportPeriodMon |  |  | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
+reportPeriodYear |  |  | Yes | This field should reflect the Reporting Year of the report being submitted. 
+reportingAgency |  | NA | Yes | The ID of the Federal awarding agency 
 treasurySymbol |  | |  | The first six digits of the Treasury Account Symbol (XX-XXXX) are required. | The Treasury Account Symbol associated with the prime contract award can be found on FPDS under Contract Record or you can contact the Contracting Officer to request the TAS. Be sure to include any dashes when entering the symbol value into this field on the spreadsheet
-programTitle | | | | No | Program or Project Title 
-assistanceFFATAData.primeEntityInformation.recovery_model_questions |  |  | |Yes | Array of the Compensation Questions. There will be 2 questions, and therefore 2 elements in this array
-subAwardDataList |  | |  |Yes  | Information about the sub Contractors. If the report is being submitted for multiple sub contracts, then this array will have multiple elements, one for each of the sub Contracts.
-subAwardNumber |  | |  | Yes | Number assigned by the Prime Contractor to track this sub-contract
-subAwardDollars |  | | | Yes | Amount for this award to this sub contractor 
-periodOfPerformanceStartDate | | | | Yes| Date subaward was made in YYYY-MM-DD format
-uei | | | |  | Yes | Sub Contractor UEI
-overallDescription |  | | |   | Yes | 
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance | JSON Object |NA |NA |Yes | Sub contractor Principal Place of Performance
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess | string | | |  |  | 
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess2 | string | | |  | 
+programTitle | | |  No | Program or Project Title 
+assistanceFFATAData.primeEntityInformation.recovery_model_questions |  |  | Yes | Array of the Compensation Questions. There will be 2 questions, and therefore 2 elements in this array
+subAwardDataList |  | | Yes  | Information about the sub Contractors. If the report is being submitted for multiple sub contracts, then this array will have multiple elements, one for each of the sub Contracts.
+subAwardNumber |  | |  Yes | Number assigned by the Prime Contractor to track this sub-contract
+subAwardDollars |  | | Yes | Amount for this award to this sub contractor 
+periodOfPerformanceStartDate | | | Yes| Date subaward was made in YYYY-MM-DD format
+uei | | | Yes | Sub Contractor UEI
+overallDescription |  | | Yes | 
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance | JSON Object | | Yes | Sub contractor Principal Place of Performance
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess | string | | | | 
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess2 | string | | | | 
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.city | JSON Object |  |  |  | 
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>code | string | | | No  | 
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.city.<br/>name | string | | |  | 
@@ -1685,55 +1660,44 @@ assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerforma
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.zip | string | | | |
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.recovery_model_questions |  | |  | Yes| Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList. Definition.topPayEmployees |  | |  | Conditional | This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if compensation question 1 is true and compensation question 2 is false
-recovery_model_questions Definition.isSelected |  | | | Yes | Boolean value representing the response to the compensation question.
-topPayEmployees.Definition.full_name |  | NA | NA | Yes if topPayEmployees is required | The full name of the top pay employee
-topPayEmployees.Definition.salary |  | NA | NA |Yes if topPayEmployees is required|The total compensation of the top pay employee
+recovery_model_questions Definition.isSelected |  | | Yes | Boolean value representing the response to the compensation question.
+topPayEmployees.Definition.full_name |  |  | Yes if topPayEmployees is required | The full name of the top pay employee
+topPayEmployees.Definition.salary |  |  | Yes if topPayEmployees is required|The total compensation of the top pay employee
 
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Update FAATA report Contract JSON
 
-<div id="cancel-json" title="Click to view Cancel Contract">
-<details>
-<summary>Cancel_Opportunity_Contract_JSON</summary>
-<p>
-<code><pre>
-
-</pre></code>
-</p>
-</details>
-</div>
-
 * Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
-contractFFATAData | JSON Object |NA | NA | NA | NA
-contractFFATAData.primeEntityInformation | JSON Array | NA| | Yes | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract.
-contractNumber |  |   | | Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank 
-idvReferenceNumber |  |  | | Yes, if the report is for a Task Order on a Contract | If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
-reportPeriodMon |  |  | | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
-reportPeriodYear |  |  | | Yes | This field should reflect the Reporting Year of the report being submitted. 
-reportingAgency |  | NA |NA | Yes | The ID of the Federal awarding agency 
-treasurySymbol |  | |  | The first six digits of the Treasury Account Symbol (XX-XXXX) are required. | The Treasury Account Symbol associated with the prime contract award can be found on FPDS under Contract Record or you can contact the Contracting Officer to request the TAS. Be sure to include any dashes when entering the symbol value into this field on the spreadsheet
-programTitle | | | | No | Program or Project Title 
-contractFFATAData.primeEntityInformation.recovery_model_questions |  |  | |Yes | Array of the Compensation Questions. There will be 2 questions, and therefore 2 elements in this array
-subAwardDataList |  | |  |Yes  | Information about the sub Contractors. If the report is being submitted for multiple sub contracts, then this array will have multiple elements, one for each of the sub Contracts.
-subAwardNumber |  | |  | Yes | Number assigned by the Prime Contractor to track this sub-contract
-subAwardDollars |  | | | Yes | Amount for this award to this sub contractor 
-periodOfPerformanceStartDate | | | | Yes| Date subaward was made in YYYY-MM-DD format
-uei | | | |  | Yes | Sub Contractor UEI
-overallDescription |  | | |   | Yes | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance | JSON Object |NA |NA |Yes | Sub contractor Principal Place of Performance
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess | string | | |  |  | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess2 | string | | |  | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.city | JSON Object |  |  |  | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>code | string | | | No  | 
+contractFFATAData | JSON Object |NA | NA | NA 
+contractFFATAData.primeEntityInformation | JSON Array | | Yes | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract.
+contractNumber |  |   | Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank 
+idvReferenceNumber |  |  | Yes, if the report is for a Task Order on a Contract | If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
+reportPeriodMon |  |  |  Yes | This field should reflect the Reporting Month of the report being submitted. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
+reportPeriodYear |  |  | Yes | This field should reflect the Reporting Year of the report being submitted. 
+reportingAgency |  |  |Yes | The ID of the Federal awarding agency 
+treasurySymbol |  | |  The first six digits of the Treasury Account Symbol (XX-XXXX) are required. | The Treasury Account Symbol associated with the prime contract award can be found on FPDS under Contract Record or you can contact the Contracting Officer to request the TAS. Be sure to include any dashes when entering the symbol value into this field on the spreadsheet
+programTitle | | | No | Program or Project Title 
+contractFFATAData.primeEntityInformation.recovery_model_questions |  |  | Yes | Array of the Compensation Questions. There will be 2 questions, and therefore 2 elements in this array
+subAwardDataList |  | | Yes  | Information about the sub Contractors. If the report is being submitted for multiple sub contracts, then this array will have multiple elements, one for each of the sub Contracts.
+subAwardNumber |  | |  Yes | Number assigned by the Prime Contractor to track this sub-contract
+subAwardDollars |  | |  Yes | Amount for this award to this sub contractor 
+periodOfPerformanceStartDate | | |Yes| Date subaward was made in YYYY-MM-DD format
+uei | | | Yes | Sub Contractor UEI
+overallDescription |  | | Yes | 
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance | JSON Object | |Yes | Sub contractor Principal Place of Performance
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess | string | | |  |  
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess2 | string | | |  
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.city | JSON Object |  |  |  
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>code | string | | |  | 
 contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.city.<br/>name | string | | |  | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state | JSON Object |NA | NA |  | 
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state | JSON Object | |  |  | 
 contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state.<br/>code | string | | | | 
 contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state.<br/>name | string | | |  | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.country | JSON Object | NA | NA | |
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.country | JSON Object |  |  | |
 contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.code | string | | | | 
 contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.name | string | | |  | 
 contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.zip | string | | | |
@@ -1747,23 +1711,12 @@ topPayEmployees.Definition.salary |  | NA | NA |Yes if topPayEmployees is requir
 
 ### DELETE FAATA Report Contract JSON
 
-<div id="uncancel-json" title="Click to view Uncancel Contract">
-<details>
-<summary>JSON</summary>
-<p>
-<code><pre>
-
-</pre></code>
-</p>
-</details>
-</div>
-
 * Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 contractFFATAData.primeEntityInformation |  |  |  | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract.
-contractNumber |   | Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank.
+contractNumber |  | | Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank.
 idvReferenceNumber | |  |  |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
 reportPeriodMon |  |  | Yes | This field should reflect the Reporting Month of
  the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
@@ -1774,23 +1727,12 @@ reportingAgency |  | | Yes  | The ID of the Federal awarding agency
 
 ### DELETE FAATA Report Grant JSON
 
-<div id="archive-json" title="Click to view Archive Contract">
-<details>
-<summary>Archive_Opportunity_Contract_JSON</summary>
-<p>
-<code><pre>
-
-</pre></code>
-</p>
-</details>
-</div>
-
 * Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 assistanceFFATAData.primeEntityInformation |  |  |  | Information about the prime Grantor. If the report is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
-primeFAIN |   | Yes | This is the Federal Award Identifier Number (FAIN) for the prime grant award.
+primeFAIN |   | |Yes | This is the Federal Award Identifier Number (FAIN) for the prime grant award.
 reportPeriodMon |  |  | Yes | This field should reflect the Reporting Month of
  the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
 reportPeriodYear |  |  | Yes | This field should reflect the Reporting Year of the report being submitted.
@@ -1799,23 +1741,12 @@ reportPeriodYear |  |  | Yes | This field should reflect the Reporting Year of t
 
 ##  GET FAATA Report Contract JSON
 
-<div id="unarchive-json" title="Click to view Unarchive Contract">
-<details>
-<summary>Unarchive_Opportunity_Contract_JSON</summary>
-<p>
-<code><pre>
-
-</pre></code>
-</p>
-</details>
-</div>
-
 * Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 contractFFATAData.primeEntityInformation |  |  |  | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract.
-contractNumber |   | Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank.
+contractNumber |   | |Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank.
 idvReferenceNumber | |  |  |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
 reportPeriodMon |  |  | Yes | This field should reflect the Reporting Month of
  the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
@@ -1826,26 +1757,15 @@ reportingAgency |  | | Yes  | The ID of the Federal awarding agency
 
 ### GET FAATA Report Grant JSON
 
-<div id="create-attachment-json" title="Click to view Create Attachment Contract">
-<details>
-<summary>Create_Attachment_Contract_JSON - File</summary>
-<p>
-<code><pre>
-
-</pre></code>
-</p>
-</details>
-</div>
-
 * Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Field Length |Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------|-------
-assistanceFFATAData.primeEntityInformation |  |  |  | Information about the prime Grantor. If the report is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
-primeFAIN |   | Yes | This is the Federal Award Identifier Number (FAIN) for the prime grant award.
-reportPeriodMon |  |  | Yes | This field should reflect the Reporting Month of
+assistanceFFATAData.primeEntityInformation |  |  |  |Yes |Information about the prime Grantor. If the report is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
+primeFAIN |   | | |Yes | This is the Federal Award Identifier Number (FAIN) for the prime grant award.
+reportPeriodMon |  |  | |Yes | This field should reflect the Reporting Month of
  the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
-reportingAgency |  | | Yes  | The ID of the Federal awarding agency
+reportingAgency |  | | |Yes  | The ID of the Federal awarding agency
 
 <p><small><a href="#">Back to top</a></small></p>
 
