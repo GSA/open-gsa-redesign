@@ -18,11 +18,6 @@ FFATA Subaward Reporting Bulk Upload API can be accessed from Production or Alph
 * Production: https://api.sam.gov
 * Alpha: https://api-alpha.sam.gov
 
-**REST API Workflow Chart**
-
-To view the current workflow of REST APIs, refer below file:
-* Workflow Chart  <br><a href="v1/Opportunity Management REST Workflow Updated.pdf" download="Opportunity Management REST Workflow Updated">Download</a>
-
 ###	Authentication and Authorization
 
 To begin using this API, you will need to register for a System Account and obtain an API Key. After registration, you will need to provide this API key in the <i>x-api-key</i> HTTP header with every API request.
