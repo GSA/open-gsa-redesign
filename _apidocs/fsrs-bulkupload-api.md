@@ -155,191 +155,244 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Submit Report Contract </summary>
+<summary>Example: Submit FFATA Subaward Contract Report for multiple Contracts </summary>
 <p>
 <code><pre>
 {
- "contractFFATAData": {
- "primeEntityInformation": [
- {
- "contractNumber": "W9123823PTEST",
- "idvReferenceNumber": "GSTEST001",
- "reportPeriodMon": "06",
- "reportPeriodYear": "2023",
- "reportingAgency": "2100",
- "treasurySymbol": "12-3456",
- "programTitle": "Title of the program",
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "true"
- }
- ],
- "subAwardDataList": [
- {
- "subAwardNumber": "2303-TEST-05-0",
- "subAwardDollars": "100000",
- "periodOfPerformanceStartDate": "2023-05-14",
- "uei": "ABC987654321",
- "overallDescription": "tEST Description",
- "placeOfPerformance": {
- "streetAddress": "1800 F Street, NW",
- "streetAddress2": "",
- "city": {
- "code": "1000",
- "name": "Alexandria"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "VA",
- "name": "Virginia"
- },
- "zip": "12345"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ],
- "topPayEmployees": [
- {
- "full_name": "John White",
- "salary": "100000"
- },
- {
- "full_name": "Employee Green",
- "salary": "120000"
- },
- {
- "full_name": "Employee Red",
- "salary": "96000"
- },
- {
- "full_name": "Employee Orange",
- "salary": "250000"
- },
- {
- "full_name": "Employee Blue",
- "salary": "290000"
- }
- ]
- },
- {
- "subAwardNumber": "2303-TEST-06-1",
- "subAwardDollars": "80000",
- "periodOfPerformanceStartDate": "2023-05-14",
- "uei": "XYZ987654321",
- "overallDescription": "Test Description2",
- "placeOfPerformance": {
- "streetAddress": "street 123",
- "streetAddress2": "alley 4",
- "city": {
- "code": "9192",
- "name": "Brambleton"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "VA",
- "name": "Virginia"
- },
- "zip": "67890"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ]
- }
- ]
- },
- {
- "contractNumber": "W91238PTESTTWO",
- "idvReferenceNumber": "",
- "reportPeriodMon": "06",
- "reportPeriodYear": "2023",
- "reportingAgency": "9700",
- "treasurySymbol": "01-9999",
- "programTitle": "Title of the program",
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "false"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ],
- "subAwardDataList": [
- {
- "subAwardNumber": "9999-TEST",
- "subAwardDollars": "800000",
- "periodOfPerformanceStartDate": "2023-04-28",
- "uei": "ABC999999999",
- "overallDescription": "Test Description",
- "placeOfPerformance": {
- "streetAddress": "Test place",
- "streetAddress2": "",
- "city": {
- "code": "4000",
- "name": "Atlanta"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "GA",
- "name": "Georgia"
- },
- "zip": "12345"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "false"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ]
- }
- ]
- }
- ]
- }
- }
+   "contractFFATAData": {  
+      "primeEntityInformation": [
+         {
+            "contractNumber": "W9123823PTEST", 
+            "idvReferenceNumber": "GSTEST001", 
+            "reportPeriodMon": "06",
+            "reportPeriodYear": "2023",
+            "reportingAgency": "2100",
+            "treasurySymbol": "12-3456",
+            "programTitle": "Title of the program",
+            "recovery_model_questions": 
+             [
+                 {
+                   "code": "0",
+                   "isSelected": "true"
+                 },
+                 {
+                   "code": "1",
+                   "isSelected": "true"
+                 }                                 
+             ],
+            "subAwardDataList": [
+               { 
+                  "subAwardNumber": "2303-TEST-05-0", 
+                  "subAwardDollars": "100000",
+                  "periodOfPerformanceStartDate": "2023-05-14",
+                  "uei": "ABC987654321",
+                  "overallDescription": "tEST Description",
+                  "placeOfPerformance": {
+                     "streetAddress": "1800 F Street, NW",
+                     "streetAddress2": "",
+                     "city": {
+                        "code": "1000",
+                        "name": "Alexandria"
+                     },
+                     "country": {
+                        "code": "USA",
+                        "name": "UNITED STATES"
+                     },
+                     "state": {
+                        "code": "VA",
+                        "name": "Virginia"
+                     },
+                     "zip": "12345"
+                  },
+                  "recovery_model_questions": 
+                   [
+                      {
+                        "code": "0",
+                        "isSelected": "true"
+                      },
+                      {
+                        "code": "1",
+                        "isSelected": "false"
+                      }                                          
+                  ],
+                  "topPayEmployees": [
+                     {
+                        "full_name": "John White",
+                        "salary": "100000"
+                     },
+                     {
+                        "full_name": "Employee Green",
+                        "salary": "120000"
+                     },
+                     {
+                        "full_name": "Employee Red",
+                        "salary": "96000"
+                     },
+                     {
+                        "full_name": "Employee Orange",
+                        "salary": "250000"
+                     },
+                     {
+                        "full_name": "Employee Blue",
+                        "salary": "290000"
+                     }                                         
+                  ]
+               },
+              { 
+                  "subAwardNumber": "2303-TEST-06-1", 
+                  "subAwardDollars": "80000",
+                  "periodOfPerformanceStartDate": "2023-05-14",
+                  "uei": "XYZ987654321",
+                  "overallDescription": "Test Description2",
+                  "placeOfPerformance": {
+                     "streetAddress": "street 123",
+                     "streetAddress2": "alley 4",
+                     "city": {
+                        "code": "9192",
+                        "name": "Brambleton"
+                     },
+                     "country": {
+                        "code": "USA",
+                        "name": "UNITED STATES"
+                     },
+                     "state": {
+                        "code": "VA",
+                        "name": "Virginia"
+                     },
+                     "zip": "67890"
+                  },
+                  "recovery_model_questions": 
+                   [
+                      {
+                        "code": "0",
+                        "isSelected": "true"
+                      },
+                      {
+                        "code": "1",
+                        "isSelected": "true"
+                      }                                          
+                  ]
+               }                           
+            ]
+         },
+                {
+            "contractNumber": "W91238PTESTTWO", 
+            "idvReferenceNumber": "", 
+            "reportPeriodMon": "06",
+            "reportPeriodYear": "2023",
+            "reportingAgency": "9700",
+            "treasurySymbol": "01-9999",
+            "programTitle": "Title of the program",
+            "recovery_model_questions": 
+             [
+                 {
+                   "code": "0",
+                   "isSelected": "false"
+                 }                                
+             ],
+            "subAwardDataList": [
+               { 
+                  "subAwardNumber": "9999-TEST", 
+                  "subAwardDollars": "800000",
+                  "periodOfPerformanceStartDate": "2023-04-28",
+                  "uei": "ABC999999999",
+                  "overallDescription": "Test Description",
+                  "placeOfPerformance": {
+                     "streetAddress": "Test place",
+                     "streetAddress2": "",
+                     "city": {
+                        "code": "4000",
+                        "name": "Atlanta"
+                     },
+                     "country": {
+                        "code": "USA",
+                        "name": "UNITED STATES"
+                     },
+                     "state": {
+                        "code": "GA",
+                        "name": "Georgia"
+                     },
+                     "zip": "12345"
+                  },
+                  "recovery_model_questions": 
+                   [
+                      {
+                        "code": "0",
+                        "isSelected": "false"
+                      }                                       
+                  ]
+               }                           
+            ]
+         }                 
+      ]
+   }
+}
 </pre></code>
 </p>
 </details>
 
-
+<details>
+<summary>Example: Submit FFATA Subaward Contract Report without Top Pay Employees information for Subcontract </summary>
+<p>
+<code><pre>
+{
+   "contractFFATAData": {  
+      "primeEntityInformation": [
+        {
+            "contractNumber": "W91238PTESTTWO", 
+            "idvReferenceNumber": "", 
+            "reportPeriodMon": "06",
+            "reportPeriodYear": "2023",
+            "reportingAgency": "9700",
+            "treasurySymbol": "01-9999",
+            "programTitle": "Title of the program",
+            "recovery_model_questions": 
+             [
+                 {
+                   "code": "0",
+                   "isSelected": "false"
+                 }                                
+             ],
+            "subAwardDataList": [
+               { 
+                  "subAwardNumber": "9999-TEST", 
+                  "subAwardDollars": "800000",
+                  "periodOfPerformanceStartDate": "2023-04-28",
+                  "uei": "ABC999999999",
+                  "overallDescription": "Test Description",
+                  "placeOfPerformance": {
+                     "streetAddress": "Test place",
+                     "streetAddress2": "",
+                     "city": {
+                        "code": "4000",
+                        "name": "Atlanta"
+                     },
+                     "country": {
+                        "code": "USA",
+                        "name": "UNITED STATES"
+                     },
+                     "state": {
+                        "code": "GA",
+                        "name": "Georgia"
+                     },
+                     "zip": "12345"
+                  },
+                  "recovery_model_questions": 
+                   [
+                      {
+                        "code": "0",
+                        "isSelected": "false"
+                      }                                       
+                  ]
+               }                           
+            ]
+         }                 
+      ]
+   }
+}	
+</pre></code>
+</p>
+</details>
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Submit FFATA Grant
@@ -373,436 +426,7 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Submit FAATA Grant</summary>
-<p>
-<code><pre>
-{
- "assistanceFFATAData": {
- "primeEntityInformation": [
- {
- "primeFAIN": "1001KS1420",
- "reportPeriodMon": "05",
- "reportPeriodYear": "2023",
- "eftIndicator": "9999",
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ],
- "subAssistanceDataList": [
- {
- "subAssistanceNumber": "XX-YY-00008",
- "uei": "ABC123456789",
- "eftIndicator": "1111",
- "subAssistanceDollars": "100000",
- "subAssistanceObligationOrActionDate": "2010-10-01",
- "overallDescription": "My Description",
- "placeOfPerformance": {
- "streetAddress": "1800 F Street, NW",
- "streetAddress2": "",
- "city": {
- "code": "1000",
- "name": "Alexandria"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "VA",
- "name": "Virginia"
- },
- "zip": "12345"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "true"
- }
- ],
- "topPayEmployees": [
- {
- "full_name": "John White",
- "salary": "100000"
- },
- {
- "full_name": "Employee Green",
- "salary": "120000"
- },
- {
- "full_name": "Employee Red",
- "salary": "96000"
- },
- {
- "full_name": "Employee Orange",
- "salary": "250000"
- },
- {
- "full_name": "Employee Blue",
- "salary": "290000"
- }
- ]
- }
- ]
- },
- {
- "primeFAIN": "1001ZZZ420",
- "reportPeriodMon": "05",
- "reportPeriodYear": "2023",
- "eftIndicator": "8978",
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "true"
- }
- ],
- "subAssistanceDataList": [
- {
- "subAssistanceNumber": "XX-YY-12345",
- "uei": "zzz123456789",
- "eftIndicator": "1234",
- "subAssistanceDollars": "150000",
- "subAssistanceObligationOrActionDate": "2023-04-17",
- "overallDescription": "My Description",
- "placeOfPerformance": {
- "streetAddress": "Test place",
- "streetAddress2": "",
- "city": {
- "code": "4000",
- "name": "Atlanta"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "GA",
- "name": "Georgia"
- },
- "zip": "12345"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "false"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ]
- },
- {
- "subAssistanceNumber": "AA-YY-12345",
- "uei": "XYZ123456789",
- "eftIndicator": "4455",
- "subAssistanceDollars": "150055",
- "subAssistanceObligationOrActionDate": "2023-04-17",
- "overallDescription": "My Description",
- "placeOfPerformance": {
- "streetAddress": "street 123",
- "streetAddress2": "alley 4",
- "city": {
- "code": "9192",
- "name": "Brambleton"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "VA",
- "name": "Virginia"
- },
- "zip": "67890"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ]
- }
- ]
- }
- ]
- }
- }
-</pre></code>
-</p>
-</details>
-
-<p><small><a href="#">Back to top</a></small></p>
-
-### Update FFATA Contract 
-
-
-------- | -------
-**Request Type** | PUT
-**URL** | /acquisition/v1/FFATA
-**Summary** | This endpoint can be used to update a previously submitted contracts report
-**Consumes** | application/JSON
-**Produces** | JSON
-**Active Versions** | v1
-
-Request Parameters
-
-Parameter Name | Parameter Type | Data Type  | Required | Description
----------------|----------------|------------|----------|------------
-Authorization | header |  string | Yes | Valid and authorized user ID
-api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Update FAATA Contract JSON](#update-faata-contract-json)
-
-<p><small><a href="#">Back to top</a></small></p>
-
-Responses
-
-HTTP Status Code | Response Type | Reason  | Description
------------------|---------------|---------|------------
-201 | string |  Report successfully updated| 
-
-Examples
-
-<details>
-<summary>Update FFATA Contract</summary>
-<p>
-<code><pre>
- {
- "contractFFATAData": {
- "primeEntityInformation": [
- {
- "contractNumber": "W9123823PTEST",
- "idvReferenceNumber": "GSTEST001",
- "reportPeriodMon": "06",
- "reportPeriodYear": "2023",
- "reportingAgency": "2100",
- "treasurySymbol": "12-3456",
- "programTitle": "Title of the program",
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "true"
- }
- ],
- "subAwardDataList": [
- {
- "subAwardNumber": "2303-TEST-05-0",
- "subAwardDollars": "100000",
- "periodOfPerformanceStartDate": "2023-05-14",
- "uei": "ABC987654321",
- "overallDescription": "tEST Description",
- "placeOfPerformance": {
- "streetAddress": "1800 F Street, NW",
- "streetAddress2": "",
- "city": {
- "code": "1000",
- "name": "Alexandria"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "VA",
- "name": "Virginia"
- },
- "zip": "12345"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "true"
- }
- ],
- "topPayEmployees": [
- {
- "full_name": "John White",
- "salary": "100000"
- },
- {
- "full_name": "Employee Green",
- "salary": "120000"
- },
- {
- "full_name": "Employee Red",
- "salary": "96000"
- },
- {
- "full_name": "Employee Orange",
- "salary": "250000"
- },
- {
- "full_name": "Employee Blue",
- "salary": "290000"
- }
- ]
- },
- {
- "subAwardNumber": "2303-TEST-06-1",
- "subAwardDollars": "80000",
- "periodOfPerformanceStartDate": "2023-05-14",
- "uei": "XYZ987654321",
- "overallDescription": "Test Description2",
- "placeOfPerformance": {
- "streetAddress": "street 123",
- "streetAddress2": "alley 4",
- "city": {
- "code": "9192",
- "name": "Brambleton"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "VA",
- "name": "Virginia"
- },
- "zip": "67890"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ]
- }
- ]
- },
- {
- "contractNumber": "W91238PTESTTWO",
- "idvReferenceNumber": "",
- "reportPeriodMon": "06",
- "reportPeriodYear": "2023",
- "reportingAgency": "9700",
- "treasurySymbol": "01-9999",
- "programTitle": "Title of the program",
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "false"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ],
- "subAwardDataList": [
- {
- "subAwardNumber": "9999-TEST",
- "subAwardDollars": "800000",
- "periodOfPerformanceStartDate": "2023-04-28",
- "uei": "ABC999999999",
- "overallDescription": "Test Description",
- "placeOfPerformance": {
- "streetAddress": "Test place",
- "streetAddress2": "",
- "city": {
- "code": "4000",
- "name": "Atlanta"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "GA",
- "name": "Georgia"
- },
- "zip": "12345"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "false"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ]
- }
- ]
- }
- ]
- }
- }
-</pre></code>
-</p>
-</details>
-
-<p><small><a href="#">Back to top</a></small></p>
-
-### Update FFATA Report Grant
-
-
-------- | -------
-**Request Type** | PUT
-**URL** | /assistance/v1/FFATA
-**Summary** | This endpoint can be used to update a previously submitted grants report
-**Consumes** | application/json
-**Produces** | JSON
-**Active Versions** | v1
-
-Request Parameters
-
-Parameter Name | Parameter Type | Data Type  | Required | Description
----------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized user ID
-api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Update FFATA Report Grant JSON](#)
-
-<p><small><a href="#">Back to top</a></small></p>
-
-Responses
-
-HTTP Status Code | Response Type | Reason  | Description
------------------|---------------|---------|------------
-200 | string | Report successfully updated | 
-
-Examples
-
-<details>
-<summary>Update Grant</summary>
+<summary>Example: Submit FAATA Grant Subaward Report for multiple awards</summary>
 <p>
 <code><pre>
 {
@@ -857,7 +481,415 @@ Examples
                       },
                       {
                         "code": "1",
+                        "isSelected": "false"
+                      }                                          
+                  ],
+                  "topPayEmployees": [
+                     {
+                        "full_name": "John White",
+                        "salary": "100000"
+                     },
+                     {
+                        "full_name": "Employee Green",
+                        "salary": "120000"
+                     },
+                     {
+                        "full_name": "Employee Red",
+                        "salary": "96000"
+                     },
+                     {
+                        "full_name": "Employee Orange",
+                        "salary": "250000"
+                     },
+                     {
+                        "full_name": "Employee Blue",
+                        "salary": "290000"
+                     }                                         
+                  ]
+               }
+            ]
+         },
+         {
+            "primeFAIN": "1001ZZZ420", 
+            "reportPeriodMon": "05",
+            "reportPeriodYear": "2023",
+            "eftIndicator": "8978",
+            "recovery_model_questions": 
+             [
+                 {
+                   "code": "0",
+                   "isSelected": "true"
+                 },
+                 {
+                   "code": "1",
+                   "isSelected": "true"
+                 }                                 
+             ],
+            "subAssistanceDataList": [
+               {
+                  "subAssistanceNumber": "XX-YY-12345",                 
+                  "uei": "zzz123456789",
+                  "eftIndicator": "1234",
+                  "subAssistanceDollars": "150000",
+                  "subAssistanceObligationOrActionDate": "2023-04-17",
+                  "overallDescription": "My Description",
+                                    "placeOfPerformance": {
+                     "streetAddress": "Test place",
+                     "streetAddress2": "",
+                     "city": {
+                        "code": "4000",
+                        "name": "Atlanta"
+                     },
+                     "country": {
+                        "code": "USA",
+                        "name": "UNITED STATES"
+                     },
+                     "state": {
+                        "code": "GA",
+                        "name": "Georgia"
+                     },
+                     "zip": "12345"
+                  },
+                  "recovery_model_questions": 
+                   [
+                      {
+                        "code": "0",
+                        "isSelected": "false"
+                      }                                        
+                  ]
+               },
+               {
+                  "subAssistanceNumber": "AA-YY-12345",                 
+                  "uei": "XYZ123456789",
+                  "eftIndicator": "4455",
+                  "subAssistanceDollars": "150055",
+                  "subAssistanceObligationOrActionDate": "2023-04-17",
+                  "overallDescription": "My Description",
+                                   "placeOfPerformance": {
+                     "streetAddress": "street 123",
+                     "streetAddress2": "alley 4",
+                     "city": {
+                        "code": "9192",
+                        "name": "Brambleton"
+                     },
+                     "country": {
+                        "code": "USA",
+                        "name": "UNITED STATES"
+                     },
+                     "state": {
+                        "code": "VA",
+                        "name": "Virginia"
+                     },
+                     "zip": "67890"
+                  },
+                  "recovery_model_questions": 
+                   [
+                      {
+                        "code": "0",
                         "isSelected": "true"
+                      },
+                      {
+                        "code": "1",
+                        "isSelected": "true"
+                      }                                          
+                  ]
+               }                           
+            ]
+         }                 
+      ]
+   }
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example: Submit FFATA Subaward Grant Report without Top Pay Employees information for sub assistance </summary>
+<p>
+<code><pre>
+{
+   "assistanceFFATAData": {
+      "primeEntityInformation": [
+         {
+            "primeFAIN": "1001ZZZ420", 
+            "reportPeriodMon": "05",
+            "reportPeriodYear": "2023",
+            "eftIndicator": "8978",
+            "recovery_model_questions": 
+             [
+                 {
+                   "code": "0",
+                   "isSelected": "true"
+                 },
+                 {
+                   "code": "1",
+                   "isSelected": "true"
+                 }                                 
+             ],
+            "subAssistanceDataList": [
+               {
+                  "subAssistanceNumber": "XX-YY-12345",                 
+                  "uei": "zzz123456789",
+                  "eftIndicator": "1234",
+                  "subAssistanceDollars": "150000",
+                  "subAssistanceObligationOrActionDate": "2023-04-17",
+                  "overallDescription": "My Description",
+                                    "placeOfPerformance": {
+                     "streetAddress": "Test place",
+                     "streetAddress2": "",
+                     "city": {
+                        "code": "4000",
+                        "name": "Atlanta"
+                     },
+                     "country": {
+                        "code": "USA",
+                        "name": "UNITED STATES"
+                     },
+                     "state": {
+                        "code": "GA",
+                        "name": "Georgia"
+                     },
+                     "zip": "12345"
+                  },
+                  "recovery_model_questions": 
+                   [
+                      {
+                        "code": "0",
+                        "isSelected": "false"
+                      }                                        
+                  ]
+               },
+               {
+                  "subAssistanceNumber": "AA-YY-12345",                 
+                  "uei": "XYZ123456789",
+                  "eftIndicator": "4455",
+                  "subAssistanceDollars": "150055",
+                  "subAssistanceObligationOrActionDate": "2023-04-17",
+                  "overallDescription": "My Description",
+                                   "placeOfPerformance": {
+                     "streetAddress": "street 123",
+                     "streetAddress2": "alley 4",
+                     "city": {
+                        "code": "9192",
+                        "name": "Brambleton"
+                     },
+                     "country": {
+                        "code": "USA",
+                        "name": "UNITED STATES"
+                     },
+                     "state": {
+                        "code": "VA",
+                        "name": "Virginia"
+                     },
+                     "zip": "67890"
+                  },
+                  "recovery_model_questions": 
+                   [
+                      {
+                        "code": "0",
+                        "isSelected": "true"
+                      },
+                      {
+                        "code": "1",
+                        "isSelected": "true"
+                      }                                          
+                  ]
+               }                           
+            ]
+         }                 
+      ]
+   }
+}	
+</pre></code>
+</p>
+</details>
+
+<p><small><a href="#">Back to top</a></small></p>
+
+### Update FFATA Contract 
+
+
+------- | -------
+**Request Type** | PUT
+**URL** | /acquisition/v1/FFATA
+**Summary** | This endpoint can be used to update a previously submitted contracts report
+**Consumes** | application/JSON
+**Produces** | JSON
+**Active Versions** | v1
+
+Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+Authorization | header |  string | Yes | Valid and authorized user ID
+api_key | query | string | Yes | Valid System Account API Key
+Request JSON | Body | JSON | Yes | [Refer Update FAATA Contract JSON](#update-faata-contract-json)
+
+<p><small><a href="#">Back to top</a></small></p>
+
+Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+201 | string |  Report successfully updated| 
+
+Examples
+
+<details>
+<summary>Example: Update FFATA Contract Subaward Report </summary>
+<p>
+<code><pre>
+ {
+   "contractFFATAData": {  
+      "primeEntityInformation": [
+        {
+            "contractNumber": "W91238PTESTTWO", 
+            "idvReferenceNumber": "", 
+            "reportPeriodMon": "06",
+            "reportPeriodYear": "2023",
+            "reportingAgency": "9700",
+            "treasurySymbol": "01-9999",
+            "programTitle": "Title of the program updated",
+            "recovery_model_questions": 
+             [
+                 {
+                   "code": "0",
+                   "isSelected": "true"
+                 },
+                 {
+                   "code": "1",
+                   "isSelected": "true"
+                 }                                				 
+             ],
+            "subAwardDataList": [
+               { 
+                  "subAwardNumber": "9999-TEST", 
+                  "subAwardDollars": "800000",
+                  "periodOfPerformanceStartDate": "2023-05-28",
+                  "uei": "ABC999999999",
+                  "overallDescription": "updated periodOfPerformanceStartDate and placeOfPerformance",
+                  "placeOfPerformance": {
+                     "streetAddress": "Test place updated",
+                     "streetAddress2": "",
+                     "city": {
+                        "code": "4000",
+                        "name": "Atlanta"
+                     },
+                     "country": {
+                        "code": "USA",
+                        "name": "UNITED STATES"
+                     },
+                     "state": {
+                        "code": "GA",
+                        "name": "Georgia"
+                     },
+                     "zip": "12345"
+                  },
+                  "recovery_model_questions": 
+                   [
+                      {
+                        "code": "0",
+                        "isSelected": "false"
+                      }                                       
+                  ]
+               }                           
+            ]
+         }                 
+      ]
+   }
+}
+</pre></code>
+</p>
+</details>
+
+<p><small><a href="#">Back to top</a></small></p>
+
+### Update FFATA Report Grant
+
+
+------- | -------
+**Request Type** | PUT
+**URL** | /assistance/v1/FFATA
+**Summary** | This endpoint can be used to update a previously submitted grants report
+**Consumes** | application/json
+**Produces** | JSON
+**Active Versions** | v1
+
+Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+Authorization | Header |  string | Yes | Valid and authorized user ID
+api_key | query | string | Yes | Valid System Account API Key
+Request JSON | Body | JSON | Yes | [Refer Update FFATA Report Grant JSON](#)
+
+<p><small><a href="#">Back to top</a></small></p>
+
+Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+200 | string | Report successfully updated | 
+
+Examples
+
+<details>
+<summary>Example: Update Grant FFATA Subaward report</summary>
+<p>
+<code><pre>
+{
+   "assistanceFFATAData": {
+      "primeEntityInformation": [
+         {
+            "primeFAIN": "1001KS1420", 
+            "reportPeriodMon": "05",
+            "reportPeriodYear": "2023",
+            "eftIndicator": "9999",
+            "recovery_model_questions": 
+             [
+                 {
+                   "code": "0",
+                   "isSelected": "true"
+                 },
+                 {
+                   "code": "1",
+                   "isSelected": "false"
+                 }                                 
+             ],
+            "subAssistanceDataList": [
+               {
+                  "subAssistanceNumber": "XX-YY-00008",                 
+                  "uei": "ABC123456789",
+                  "eftIndicator": "1111",
+                  "subAssistanceDollars": "100000",
+                  "subAssistanceObligationOrActionDate": "2010-10-01",
+                  "overallDescription": "My Description updates for example",
+                  "placeOfPerformance": {
+                     "streetAddress": "1800 xyz, NW",
+                     "streetAddress2": "",
+                     "city": {
+                        "code": "1000",
+                        "name": "Alexandria"
+                     },
+                     "country": {
+                        "code": "USA",
+                        "name": "UNITED STATES"
+                     },
+                     "state": {
+                        "code": "VA",
+                        "name": "Virginia"
+                     },
+                     "zip": "12345"
+                  },
+                  "recovery_model_questions": 
+                   [
+                      {
+                        "code": "0",
+                        "isSelected": "true"
+                      },
+                      {
+                        "code": "1",
+                        "isSelected": "false"
                       }                                          
                   ],
                   "topPayEmployees": [
@@ -970,7 +1002,7 @@ Examples
                       },
                       {
                         "code": "1",
-                        "isSelected": "false"
+                        "isSelected": "true"
                       }                                          
                   ]
                }                           
@@ -1015,21 +1047,20 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>Delete FAATA Report Contract</summary>
+<summary>Example: Delete FAATA Contract Subaward Report</summary>
 <p>
 <code><pre>
 {
   "primeEntityInformation": [
 	{
-      "contractNumber": "string",
-      "idvReferenceNumber": "string",
-      "reportPeriodMon": "number",
-  	"reportPeriodYear": "number",
-      "reportingAgency": "string"
+      	"contractNumber": "W91238PTESTTWO",
+      	"idvReferenceNumber": "",
+      	"reportPeriodMon": "06",
+  	"reportPeriodYear": "2023",
+      	"reportingAgency": "9700"
 	}
   ]
 }
-
 </pre></code>
 </p>
 </details>
