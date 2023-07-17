@@ -60,6 +60,11 @@ Role/Permission    | Submit FFATA Report | Update FFATA Report | Get FFATA Repor
 Create and delete permission for FFATA under Entity Reporting | Yes | Yes | Yes | Yes
 Read permission for FFATA under Entity Reporting | No | No | Yes | No
 
+**Note:** sam.gov is moving towards utilizing OAuth 2.0 workflow leveraging OKTA for Authentication of System Accounts. As a result of this implementation, API Keys will be replaced with the usage of client credentials, namely clientId and secret. As a result of this implementation, clients will first need to request for the access token, which will then be required to be sent along with the API requests. To support this change, v2 versions of all APIs outlined in this documentation will be released.
+
+Refer : 
+https://www.ibm.com/docs/en/tfim/6.2.2.6?topic=overview-oauth-20-workflow
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Lookup/Meta-Data
@@ -104,7 +109,7 @@ State | State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.htm
 
 ## Version Control (need to determine if we need this section)
 
-TBD  
+V1 versions of APIs will be utilizing the API Key mechanism as outlined in this documentation. V2 versions of APIs will be made available to support OAuth 2.0 as soon as possible. The documentation will be updated as soon as more information is available for the oAuth implementation.  
 
 ## FSRS Subaward Reporting Bulk Upload API Request and Responses
 This API has 8 endpoints as outlined below. 
