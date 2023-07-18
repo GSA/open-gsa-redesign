@@ -1749,8 +1749,7 @@ Name | Data Type | Allowed Values | Required | Description
 contractFFATAData.primeEntityInformation |  |  |  | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract.
 contractNumber |  | | Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank.
 idvReferenceNumber | |  |  |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
-reportPeriodMon |  |  | Yes | This field should reflect the Reporting Month of
- the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
+reportPeriodMon |  |  | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
 reportPeriodYear |  |  | Yes | This field should reflect the Reporting Year of the report being submitted.
 reportingAgency |  | | Yes  | The ID of the Federal awarding agency
 
@@ -1764,8 +1763,7 @@ Name | Data Type | Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------
 assistanceFFATAData.primeEntityInformation |  |  |  | Information about the prime Grantor. If the report is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
 primeFAIN |   | |Yes | This is the Federal Award Identifier Number (FAIN) for the prime grant award.
-reportPeriodMon |  |  | Yes | This field should reflect the Reporting Month of
- the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
+reportPeriodMon |  |  | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
 reportPeriodYear |  |  | Yes | This field should reflect the Reporting Year of the report being submitted.
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -1779,8 +1777,7 @@ Name | Data Type | Allowed Values | Required | Description
 contractFFATAData.primeEntityInformation |  |  |  | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract.
 contractNumber |   | |Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank.
 idvReferenceNumber | |  |  |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
-reportPeriodMon |  |  | Yes | This field should reflect the Reporting Month of
- the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
+reportPeriodMon |  |  | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
 reportPeriodYear |  |  | Yes | This field should reflect the Reporting Year of the report being submitted.
 reportingAgency |  | | Yes  | The ID of the Federal awarding agency
 
@@ -1794,8 +1791,7 @@ Name | Data Type | Field Length |Allowed Values | Required | Description
 -----|-----------|----------------|----------|------------|-------
 assistanceFFATAData.primeEntityInformation |  |  |  |Yes |Information about the prime Grantor. If the report is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
 primeFAIN |   | | |Yes | This is the Federal Award Identifier Number (FAIN) for the prime grant award.
-reportPeriodMon |  |  | |Yes | This field should reflect the Reporting Month of
- the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
+reportPeriodMon |  |  | |Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
 reportingAgency |  | | |Yes  | The ID of the Federal awarding agency
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -1816,16 +1812,17 @@ Error codes may change depending on the error given; document will be updated ac
 
 Error Code|Error Message | Reason/Description
 ----------|--------------|-------------------
-401|Please provide valid Authorization Email & API Key |	API Key and/or Authorization Email is required
+200|Succesfully Submitted | Successful Operation
+400|Error processing the request | Invalid JSON format provided
+400|primeEntityInformation is required | primeEntityInformation is empty
 401|Encountered error authenticating user.Invalid JWT provided | Invalid Authorization Email provided
-401|Insufficient privileges to retrieve system account profile as the given organization is invalid |	Invalid Organization ID provided
-400|Error processing POST request |	Invalid JSON format provided
-400|$.data: is missing but it is required |	Request JSON is empty
-400|"$.requestType: does not have a value in the enumeration [archive_request, unarchive_request, publish_request, update_publish_request, cancel_request, uncancel_request]" ] |	Request Type must be valid for operation
-404|Please provide Opportunity id	| Invalid Opportunity ID provided
-401|Insufficient privileges to retrieve system account profile as the given organization is not part of the approved FH hierarchy	| Office ID provided is not authorized for system account
-401|Insufficient privileges to edit opportunity |	Account does not have appropriate privileges to edit opportunity
-403|This opportunity cannot be published. Auto 15 archive type is not allowed for this opportunity type |	Archive type = auto 15 archive type is not allowed for type “u” Justification and Authorization sections
+401|Please provide valid Authorization Email & API Key | API Key and/or Authorization Email is required
+401|Insufficient privileges to perform the operation |	Account does not have appropriate privileges to perform the operation
+403|You dont have permission to access this resource | Forbidden
+404|Requested URL not found	| Not found
+405|Insufficient privileges to edit opportunity | Validation exception
+500| Internal Server Error please try after sometime | Internal Server Error
+501| Invalid request |Not Implemented
 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -1839,13 +1836,13 @@ Error codes may change depending on the error given; document will be updated ac
 
 Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
-400|Title |	Title is required |	Title is required |	Create Opportunity, Publish
-400|Title |	Title max character length is 256 |	Title max character length is 256	| Create Opportunity, Publish
-400|Opportunity Type | Opportunity type is required | Opportunity type is required | Create Opportunity, Publish
-400|Opportunity Type | The Opportunity's type provided is not supported |Invalid Opportunity type provided. [Refer Notice Types](#notice-types)  | Create Opportunity, Publish
-400|Opportunity Type |	The opportunity type `j` is no longer supported	| Invalid Opportunity type provided. [Refer Notice Types](#notice-types) | Create Opportunity, Publish
-400|Opportunity Type |	The opportunity type `m` is no longer supported	| Invalid Opportunity type provided. [Refer Notice Types](#notice-types) | Create Opportunity, Publish
-400|Opportunity Type |	The opportunity type `l` is no longer supported	| Invalid Opportunity type provided. [Refer Notice Types](#notice-types) | Create Opportunity, Publish
+400|contractFFATAData |	Invalid JSON structure. contractFFATAData is required |	contractFFATAData is required |	submitFFATAReport ,updateFFATAReport(Contract)
+400|assistanceFFATAData |Invalid JSON structure. assistanceFFATAData is required |	assistanceFFATAData is required	| submitFFATAReport,updateFFATAReport(Grant)
+400|primeEntityInformation | Invalid JSON structure: At least one primeEntityInformation is required for contract reporting. | At least one primeEntityInformation element is required for the contract reporting | submitFFATAReport ,updateFFATAReport(Contract)
+400|primeEntityInformation | Invalid JSON structure: At least one primeEntityInformation is required for grant reporting. |At least one primeEntityInformation element is required for the grant reporting | submitFFATAReport,updateFFATAReport(Grant)
+400|assistanceFFATAData.primeEntityInformation.primeFAIN |Ensure that the FAIN Number is correct. No matching Grant found for the provided FAIN number	| For Grants - FAIN Number not found | submitFFATAReport,updateFFATAReport(Grant)
+400|Combination of contractFFATAData.primeEntityInformation.contractNumber and contractFFATAData.primeEntityInformation.reportingAgency | Could not find a record matching the contractNumber and reportingAgency provided	| No record found for the Contract Number and Reporting Agency combination. | submitFFATAReport ,updateFFATAReport(Contract)
+400|Combination of contractFFATAData.primeEntityInformation.contractNumber and contractFFATAData.primeEntityInformation.idvReferenceNumber |	Could not find a record associating the IDV reference number with the Contract number	| IDV Reference Number not found associated with the Contract Number |submitFFATAReport ,updateFFATAReport(Contract)
 400|Organization Id |	Contracting Office is a required field | FH Org Id/AAC code is required |	Create Opportunity, Publish
 400|Organization Id |	The Federal Organization ID that you provided is inactive and/or invalid | Inactive/Invalid Organization Id |	Create Opportunity, Publish
 400|Organization Id |	The Federal Organization ID that you provided is not an office level, and it must be for this opportunity type	| Organization ID is not valid for opportunity type. Note: Organization ID must be Office level unless creating a Special Notice	| Create Opportunity, Publish
