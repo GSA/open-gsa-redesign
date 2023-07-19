@@ -1605,10 +1605,10 @@ assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerforma
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.name | string | | |  | 
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.zip | string | | | |
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.recovery_model_questions |  | |  | Yes| Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList. Definition.topPayEmployees |  | |  | Conditional | This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if compensation question 1 is true and compensation question 2 is false
-recovery_model_questions Definition.isSelected |  | | | Yes | Boolean value representing the response to the compensation question.
-topPayEmployees.Definition.full_name |  | NA | NA | Yes if topPayEmployees is required | The full name of the top pay employee
-topPayEmployees.Definition.salary |  | NA | NA |Yes if topPayEmployees is required|The total compensation of the top pay employee
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.topPayEmployees |  | |  | Conditional | This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if compensation question 1 is true and compensation question 2 is false
+recovery_model_questions.isSelected |  | | | Yes | Boolean value representing the response to the compensation question.
+topPayEmployees.full_name |  | NA | NA | Yes if topPayEmployees is required | The full name of the top pay employee
+topPayEmployees.salary |  | NA | NA |Yes if topPayEmployees is required|The total compensation of the top pay employee
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1649,10 +1649,10 @@ contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformanc
 contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.name | string | | |  | 
 contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.zip | string | | | |
 contractFFATAData.primeEntityInformation.subAssistanceDataList.recovery_model_questions |  | |  | Yes| Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
-contractFFATAData.primeEntityInformation.subAssistanceDataList. Definition.topPayEmployees |  | |  | Conditional | This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if compensation question 1 is true and compensation question 2 is false
-recovery_model_questions Definition.isSelected |  | | | Yes | Boolean value representing the response to the compensation question.
-topPayEmployees.Definition.full_name |  | NA | NA | Yes if topPayEmployees is required | The full name of the top pay employee
-topPayEmployees.Definition.salary |  | NA | NA |Yes if topPayEmployees is required|The total compensation of the top pay employee
+contractFFATAData.primeEntityInformation.subAssistanceDataList.topPayEmployees |  | |  | Conditional | This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if compensation question 1 is true and compensation question 2 is false
+recovery_model_questions.isSelected |  | | | Yes | Boolean value representing the response to the compensation question.
+topPayEmployees.full_name |  | NA | NA | Yes if topPayEmployees is required | The full name of the top pay employee
+topPayEmployees.salary |  | NA | NA |Yes if topPayEmployees is required|The total compensation of the top pay employee
 
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -1690,10 +1690,10 @@ assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerforma
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.name | string | | |  | 
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.zip | string | | | |
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.recovery_model_questions |  | |  | Yes| Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList. Definition.topPayEmployees |  | |  | Conditional | This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if compensation question 1 is true and compensation question 2 is false
-recovery_model_questions Definition.isSelected |  | | Yes | Boolean value representing the response to the compensation question.
-topPayEmployees.Definition.full_name |  |  | Yes if topPayEmployees is required | The full name of the top pay employee
-topPayEmployees.Definition.salary |  |  | Yes if topPayEmployees is required|The total compensation of the top pay employee
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.topPayEmployees |  | |  | Conditional | This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if compensation question 1 is true and compensation question 2 is false
+recovery_model_questions.isSelected |  | | Yes | Boolean value representing the response to the compensation question.
+topPayEmployees.full_name |  |  | Yes if topPayEmployees is required | The full name of the top pay employee
+topPayEmployees.salary |  |  | Yes if topPayEmployees is required|The total compensation of the top pay employee
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1733,10 +1733,10 @@ contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformanc
 contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.name | string | | |  | 
 contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.zip | string | | | |
 contractFFATAData.primeEntityInformation.subAssistanceDataList.recovery_model_questions |  | |  | Yes| Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
-contractFFATAData.primeEntityInformation.subAssistanceDataList. Definition.topPayEmployees |  | |  | Conditional | This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if compensation question 1 is true and compensation question 2 is false
-recovery_model_questions Definition.isSelected |  | | | Yes | Boolean value representing the response to the compensation question.
-topPayEmployees.Definition.full_name |  | NA | NA | Yes if topPayEmployees is required | The full name of the top pay employee
-topPayEmployees.Definition.salary |  | NA | NA |Yes if topPayEmployees is required|The total compensation of the top pay employee
+contractFFATAData.primeEntityInformation.subAssistanceDataList.topPayEmployees |  | |  | Conditional | This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if compensation question 1 is true and compensation question 2 is false
+recovery_model_questions.isSelected |  | | | Yes | Boolean value representing the response to the compensation question.
+topPayEmployees.full_name |  | NA | NA | Yes if topPayEmployees is required | The full name of the top pay employee
+topPayEmployees.salary |  | NA | NA |Yes if topPayEmployees is required|The total compensation of the top pay employee
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1843,36 +1843,37 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|assistanceFFATAData.primeEntityInformation.primeFAIN |Ensure that the FAIN Number is correct. No matching Grant found for the provided FAIN number	| For Grants - FAIN Number not found | submitFFATAReport,updateFFATAReport(Grant)
 400|Combination of contractFFATAData.primeEntityInformation.contractNumber and contractFFATAData.primeEntityInformation.reportingAgency | Could not find a record matching the contractNumber and reportingAgency provided	| No record found for the Contract Number and Reporting Agency combination. | submitFFATAReport ,updateFFATAReport(Contract)
 400|Combination of contractFFATAData.primeEntityInformation.contractNumber and contractFFATAData.primeEntityInformation.idvReferenceNumber |	Could not find a record associating the IDV reference number with the Contract number	| IDV Reference Number not found associated with the Contract Number |submitFFATAReport ,updateFFATAReport(Contract)
-400|Organization Id |	Contracting Office is a required field | FH Org Id/AAC code is required |	Create Opportunity, Publish
-400|Organization Id |	The Federal Organization ID that you provided is inactive and/or invalid | Inactive/Invalid Organization Id |	Create Opportunity, Publish
-400|Organization Id |	The Federal Organization ID that you provided is not an office level, and it must be for this opportunity type	| Organization ID is not valid for opportunity type. Note: Organization ID must be Office level unless creating a Special Notice	| Create Opportunity, Publish
-400|Organization Id |	The Federal Organization ID that you provided is unmapped in Federal Hierarchy | If the Organization Id provided is a legacy one and is unmapped in Federal Hierarchy, then the system throws and error |	Publish
-404|Solicitation Number | Notice ID is required	| Notice ID is required for all notice types except for Special Notice | Publish
-400|Solicitation Number | Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces	| Notice ID max length is 128 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces | Publish
-400|Solicitation Number | Notice ID must be unique based on selected notice type	| Notice ID must be unique when selected notice type is not an award notice | Publish, Create and Publish
-400|Solicitation Number | Submitted solicitation number doesn't match the previous published opportunity	| Solicitation number provided with update opportunity doesn't match the previous published opportunity for an award notice type | Publish, Create and Publish
-400|Related Opportunity ID | This Related Notice's ID is invalid	| The Related Notice's ID is not found | Publish, Create and Publish
-400|Related Opportunity ID | The Related Notice's Type is invalid for this Opportunity	| The Related Notice's Type cannot be related  | Publish
-400|Related Opportunity ID | Related Notice's ID needs to match previous Opportunity's Related Notice ID	| Related Notice's ID  provided while revising a notice needs to match the Parent Opportunity's Related Notice ID  | Publish
-400|Response Date |	Response Date is a required field |	Response Date is not provided for Combined Synopsis and Solicitation types |	Publish
-400|Response Date |	Response Date provided is an invalid format |	Response date should input as the given format 'yyyy-MM-ddTHH:mm:ss-05:00'. ResponseTz is required. |	Publish
-400|Response Date |	Response Date cannot exceed 5 years from current date |	Response Date exceeds 5 years from the current date |	Publish 
-400|Archive Date |	Inactive date is a required field |	Archive Date is required if Archive Type = autocustom |Publish
-400|Archive Date Response Date   |	One of Response date or Archive date is required |	Either Response date or archive date is required for presolicitation, sources sought, special notice, sale surplus  |	Publish
-400|Archive Date |	Inactive date provided is an invalid format |	Date is not in specified format  |	Publish
-400|Archive Date |	Archive date provided is in the past |Archive date provided is before today's date. |	Publish
-400|Archive Type |	Archive type is invalid for this notice type |	archive type is one of the following "auto15", "auto30" and is not allowed for this notice type	| Publish, UnArchive, Uncancel
-400|Archive Type |	Auto 30 archive type is not allowed for this opportunity type | Archive Type = auto30   not allowed for Consolidate/(Substantially) Bundle and Justification |	Publish
-400|Additional Reporting |	Additional Reporting/Initiative is required |	Additional Reporting/Initiative is required when opportunity is not a special notice | Publish
-400|Justification Authority - Authority|	Justification Authority is not valid field for this opportunity type | Justification Authority only valid for Type "u" Justification and Authorization | Publish
-400|Justification Authority - Authority|	Authority is a required field | Justification Authority is a required field for Type "u" Justification and Authorization | Publish
-400|Justification Authority - Authority|	Invalid Authority Fields, please refer to Contract Opportunities SOAP Web Service Tech Document valid authority fields | If Invalid authority details are provided for Type "u" Justification and Authorization | Publish
-400|Justification Authority - Modification Number |	Justification Authority Modification Number is not valid field for this opportunity type | Justification Authority Modification Number is only valid for Type "u" Justification and Authorization| Publish
-400|Justification Authority - Modification Number |	Modification Number max character limit is 32 characters | Modification number size exceeds 32 characters| Publish
-400|NAICS Code | NAICS Code is a required field | NAICS Code is required for Combined Synopsis and Solicitation | Publish
-400|NAICS Code | NAICS provided did not match expected codes | NAICS Code is invalid | Publish
-400|Set Aside | Set Aside is not valid field for this opportunity type | Set Aside is invalid | Publish
-400|Set Aside | Contracting Office is a required for Set Aside | Contracting Office is a required for Set Aside |  Publish
+400|Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency |	Report Already Exists for the specified Month/Year  - Status: Submitted; Created By - User Name | A FFATA report for this contract already exists in the system for the given reporting period |submitFFATAReport(Contract)
+400|Combination of primeFAIN:reportPeriodMon:ReportPeriodYear |	Report Already Exists for the specified Month/Year  - Status: Submitted; Created By - User Name| A FFATA report for this grant already exists in the system for the given reporting period | submitFFATAReport(Grant)
+400|idvReferenceNumber is not provided and multiple records are found for the contractNumber and reportingAgency |	Please specify the idvReferenceNumber to correctly identify the contract being reported on	| User needs to specify the idvReferenceNumber to correctly identify the record as multiple records were found for the contractNumber and reportingAgency combination	| submitFFATAReport(Contract)
+400|Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency |	No Report found for the specified Contract for the Month/Year | Cannot update. A FFATA report for the specified month/year does not exist for the Contract. |updateFFATAReport(Contract)
+404|For Contracts - Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency
+For Grants - Combination of primeFAIN:reportPeriodMon:ReportPeriodYear | No Report found for the specified Grant for the Month/Year | Cannot update. A FFATA report for the specified month/year does not exist for the Grant. | updateFFATAReport(Contract and Grant)
+400|contractFFATAData.primeEntityInformation.contractNumber | Contract Number is required for Prime Entity | Contract Number is required for Prime Entity | submitFFATAReport ,updateFFATAReport(Contract)
+400|For Contracts | TBD	| The contract does not require FFATA reporting because the dollars obligated is less than $25,000 | submitFFATAReport(Contract)
+400|For Contracts contractFFATAData.reportPeriodMon                                                      For Grants assistanceFFATAData.reportPeriodMon | Please specify the month for the reporting period	| reportPeriodMon is required | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
+400|For Contracts contractFFATAData.reportPeriodMon     For Grants assistanceFFATAData.reportPeriodMon | Please provide a valid value for the reporting period month. It is expected to be a 2 digit month (i.e. 01 for January, 10 for October). 	| reportPeriodMon is expecting 2 digit month (i.e. 01 for January, 10 for October) | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
+400|For Contracts contractFFATAData.reportPeriodYear            For Grants assistanceFFATAData.reportPeriodYear| Please specify the reporting period year.	| reportPeriodYear is required.  | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
+400|For Contracts contractFFATAData.reportPeriodYear For Grants assistanceFFATAData.reportPeriodYear | Please provide a valid value for the reporting period year. It is expected to be a 4 digit year	| reportPeriodYear is expecting 4 digit year | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
+400|contractFFATAData.reportingAgency |	Please provide the Federal awarding agency Id |	reportingAgency is required | submitFFATAReport ,updateFFATAReport(Contracts)
+400|Please provide the Federal Awarding Agency Id |Please provide the correct format for the Reporting Agency |	reportingAgency provided is invalid. |	submitFFATAReport ,updateFFATAReport(Contracts)
+400|contractFFATAData.treasurySymbol |	TBD |	The first 6 characters in the Treasury Account Symbol field are required (i.e. xx-xxxx) |submitFFATAReport ,updateFFATAReport(Contracts)
+400|contractFFATAData.treasurySymbol |	TBD |	Invalid Chararacter in Treasury Account Symbol: only alpha number and ()-/. | submitFFATAReport ,updateFFATAReport(Contracts)
+400|contractFFATAData.treasurySymbol   | TBD |	Treasury Account Symbol field must not exceed 11 characters (xx-xxxx-xxx), 9 characters and 2 dashes  |	submitFFATAReport ,updateFFATAReport(Contracts)
+400|recovery_model_questions |	Please provide the responses to the compensation questions as captured under recovery_model_questions json element |	recovery_model_questions are required  | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
+400|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required |submitFFATAReport ,updateFFATAReport(Contracts and Grants)
+400|recovery_model_questions |	TBD |	Compensation Q2 code and response are required	| submitFFATAReport ,updateFFATAReport(Contracts and Grants)
+400|recovery_model_questions |	 | Compensation question code provided did not match expected codes |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
+400|recovery_model_questions |	Compensation question isSelected value can only be true or false | Compensation question isSelected value can only be true or false | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
+400|subAwardDataList|	Invalid JSON format: At least one Sub-Awardee information is required for the reporting | At least one Sub-Awardee information is required for the reporting | submitFFATAReport ,updateFFATAReport(Contracts)
+400|subAwardDataList.subAwardNumber|	Sub-contract number is required | Sub-contract number is required | submitFFATAReport ,updateFFATAReport(Contracts)
+400|subAwardDataList.subAwardNumber|	Sub-contract number should be unique across multiple elements of subAwardDataList  | Sub-contract number should be unique across multiple elements of subAwardDataList  | submitFFATAReport ,updateFFATAReport(Contracts)
+400|subAwardDataList.subAwardDollars |	Sub-contract Amount is required | Sub-contract Amount is requiredn| submitFFATAReport ,updateFFATAReport(Contracts)
+400|subAwardDataList.subAwardDollars |	Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)s| submitFFATAReport ,updateFFATAReport(Contracts)
+400|subAwardDataList.subAwardDollars| Sub-contract Amount should be lower than the Total contract amount | Sub-contract Amount should be lower than the Total contract amount | submitFFATAReport ,updateFFATAReport(Contracts)
+400|subAwardDataList.periodOfPerformanceStartDate | Subcontract Date is required | Subcontract Date is required | submitFFATAReport ,updateFFATAReport(Contracts)
+400|subAwardDataList.periodOfPerformanceStartDate | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | submitFFATAReport ,updateFFATAReport(Contracts)
+400|subAwardDataList.periodOfPerformanceStartDate | The Subcontract Date cannot be in the future. | The Subcontract Date cannot be in the future. |  submitFFATAReport ,updateFFATAReport(Contracts)
 400|Set Aside | Set Aside provided did not match expected codes | Set Aside provided did not match expected codes |  Publish
 400|Classification Code | Product Service Code is a required field |	Product service code is required for all types except SourcesSought, Sale of Surplus and Award  |	Publish
 400|Description |	Description is a required field |	Description is a required field except for award notice |	Publish
