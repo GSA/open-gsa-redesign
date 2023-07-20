@@ -1588,35 +1588,35 @@ Name | Data Type |Field Length | Allowed Values | Required |Description |
 -----|-----------|-------|-------------------|------------|------------  
 assistanceFFATAData | JSON Object |NA | NA | NA | NA
 assistanceFFATAData.primeEntityInformation | JSON Array | NA| | Yes | Information about the prime Grantor. If the report is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
-primeFAIN |  |  VARCHAR(255) | | YeS | This is the Federal Award Identifier Number (FAIN) for the prime grant award. 
-reportPeriodMon |  | VARCHAR(10) | | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
-reportPeriodYear |  | VARCHAR(10) | | Yes | This field should reflect the Reporting Year of the report being submitted. 
-reportingAgency |  | VARCHAR(32) |NA | Yes | The ID of the Federal awarding agency 
-eftIndicator |  | VARCHAR(10) |  | No | If your organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, you would note it here. This is not a required field but should be provided if applicable.
-assistanceFFATAData.primeEntityInformation.recovery_model_questions |  |  | |Yes | Array of the Compensation Questions. There will be 2 questions, and therefore 2 elements in this array
-subAssistanceNumber |  |VARCHAR(32) |  |Yes  | Number assigned by the Prime to track this sub Grant
-subAssistanceDollars |  | NUMERIC(20)| | Yes | Amount for this award to this sub award
-uei | | VARCHAR(13)| |  | Yes | Sub Awardee UEI
-subAssistanceObligationOrActionDate| | | |Yes |Date subaward was made in YYYY-MM-DD format 
-overallDescription |  | | |   | Yes | 
+primeFAIN | string |  255 characters | | YeS | This is the Federal Award Identifier Number (FAIN) for the prime grant award. 
+reportPeriodMon | string | 10 characters  | | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
+reportPeriodYear | string  | 10 characters | | Yes | This field should reflect the Reporting Year of the report being submitted. 
+reportingAgency | string | 32 characters |NA | Yes | The ID of the Federal awarding agency 
+eftIndicator | string | 10 characters |  | No | If your organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, you would note it here. This is not a required field but should be provided if applicable.
+assistanceFFATAData.primeEntityInformation.recovery_model_questions |  | ffata_data column jsonb | |Yes | Array of the Compensation Questions. There will be 2 questions, and therefore 2 elements in this array
+subAssistanceNumber | string  | 32 characters |  |Yes  | Number assigned by the Prime to track this sub Grant
+subAssistanceDollars |string  | 20 characters| | Yes | Amount for this award to this sub award
+uei |string | 13 characters | |  | Yes | Sub Awardee UEI
+subAssistanceObligationOrActionDate| | ffata_data column jsonb| |Yes |Date subaward was made in YYYY-MM-DD format 
+overallDescription |  | ffata_data column jsonb | |   | Yes | 
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance | JSON Object |NA |NA |Yes | Sub contractor Principal Place of Performance
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess | string | | |  |  | 
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess2 | string | | |  | 
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.city | JSON Object |  |  |  | 
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>code | string | | | No  | 
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.city.<br/>name | string | | |  | 
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess | string |ffata_data column jsonb | |  |  | 
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess2 | string |ffata_data column jsonb | |  | 
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.city | JSON Object | NA |  |  | 
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>code | string | |ffata_data column jsonb | No  | 
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.city.<br/>name | string | ffata_data column jsonb| |  | 
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state | JSON Object |NA | NA |  | 
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state.<br/>code | string | | | | 
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state.<br/>name | string | | |  | 
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state.<br/>code | string |ffata_data column jsonb | | | 
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state.<br/>name | string |ffata_data column jsonb | |  | 
 assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.country | JSON Object | NA | NA | |
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.code | string | | | | 
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.name | string | | |  | 
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.zip | string | | | |
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.recovery_model_questions |  | |  | Yes| Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
-assistanceFFATAData.primeEntityInformation.subAssistanceDataList.topPayEmployees |  | |  | Conditional | This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if compensation question 1 is true and compensation question 2 is false
-recovery_model_questions.isSelected |  | | | Yes | Boolean value representing the response to the compensation question.
-topPayEmployees.full_name |  | NA | NA | Yes if topPayEmployees is required | The full name of the top pay employee
-topPayEmployees.salary |  | NA | NA |Yes if topPayEmployees is required|The total compensation of the top pay employee
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.code | string |ffata_data column jsonb | | | 
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.name | string |ffata_data column jsonb | |  | 
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.zip | string | ffata_data column jsonb| | |
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.recovery_model_questions |string  | ffata_data column jsonb|  | Yes| Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
+assistanceFFATAData.primeEntityInformation.subAssistanceDataList.topPayEmployees |string  |ffata_data column jsonb |  | Conditional | This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if compensation question 1 is true and compensation question 2 is false
+recovery_model_questions.isSelected | string  | ffata_data column jsonb| | Yes | Boolean value representing the response to the compensation question.
+topPayEmployees.full_name |string  | ffata_data column jsonb | NA | Yes if topPayEmployees is required | The full name of the top pay employee
+topPayEmployees.salary | string  | ffata_data column jsonb | NA |Yes if topPayEmployees is required|The total compensation of the top pay employee
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1627,40 +1627,40 @@ topPayEmployees.salary |  | NA | NA |Yes if topPayEmployees is required|The tota
 
 Name | Data Type |Field Length | Allowed Values | Required |Description | 
 -----|-----------|-------|-------------------|------------|------------
-contractFFATAData | JSON Object | |  |  |  |
+contractFFATAData | JSON Object |NA |  |  |  |
 contractFFATAData.primeEntityInformation | JSON Array | NA| | |Yes | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract
-contractNumber |  | VARCHAR(50)  | | Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank 
-idvReferenceNumber |  | VARCHAR(50) | | Yes, if the report is for a Task Order on a Contract | If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
-reportPeriodMon |  | VARCHAR(10 | | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
-reportPeriodYear |  |  | | Yes | This field should reflect the Reporting Year of the report being submitted. 
-reportingAgency |  | VARCHAR(32) |NA | Yes | The ID of the Federal awarding agency 
-treasurySymbol |  | |  | The first six digits of the Treasury Account Symbol (XX-XXXX) are required. | The Treasury Account Symbol associated with the prime contract award can be found on FPDS under Contract Record or you can contact the Contracting Officer to request the TAS. Be sure to include any dashes when entering the symbol value into this field on the spreadsheet
-programTitle | | | | No | Program or Project Title 
-contractFFATAData.primeEntityInformation.recovery_model_questions |  |  | |Yes | Array of the Compensation Questions. There will be 2 questions, and therefore 2 elements in this array
-subAwardDataList |  | |  |Yes  | Information about the sub Contractors. If the report is being submitted for multiple sub contracts, then this array will have multiple elements, one for each of the sub Contracts.
-subAwardNumber |  |VARCHAR(32) |  | Yes | Number assigned by the Prime Contractor to track this sub-contract
-subAwardDollars |  |VARCHAR(32) | | Yes | Amount for this award to this sub contractor 
-periodOfPerformanceStartDate | |TIMESTAMP | | Yes| Date subaward was made in YYYY-MM-DD format
-uei | |VARCHAR(13) | |  | Yes | Sub Contractor UEI
-overallDescription |  | | |   | Yes | 
+contractNumber | string | 50 characters  | | Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank 
+idvReferenceNumber | string | 50 characters | | Yes, if the report is for a Task Order on a Contract | If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
+reportPeriodMon |string  | 10 characters | | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
+reportPeriodYear |string  |ffata_data column jsonb  | | Yes | This field should reflect the Reporting Year of the report being submitted. 
+reportingAgency | string | 32 characters  |NA | Yes | The ID of the Federal awarding agency 
+treasurySymbol |string  |ffata_data column jsonb |  | The first six digits of the Treasury Account Symbol (XX-XXXX) are required. | The Treasury Account Symbol associated with the prime contract award can be found on FPDS under Contract Record or you can contact the Contracting Officer to request the TAS. Be sure to include any dashes when entering the symbol value into this field on the spreadsheet
+programTitle | string |ffata_data column jsonb | | No | Program or Project Title 
+contractFFATAData.primeEntityInformation.recovery_model_questions |  |ffata_data column jsonb  | |Yes | Array of the Compensation Questions. There will be 2 questions, and therefore 2 elements in this array
+subAwardDataList | string  |ffata_data column jsonb |  |Yes  | Information about the sub Contractors. If the report is being submitted for multiple sub contracts, then this array will have multiple elements, one for each of the sub Contracts.
+subAwardNumber | string |32 characters  |  | Yes | Number assigned by the Prime Contractor to track this sub-contract
+subAwardDollars |string  |32 characters | | Yes | Amount for this award to this sub contractor 
+periodOfPerformanceStartDate |string |TIMESTAMP | | Yes| Date subaward was made in YYYY-MM-DD format
+uei | string | 13 characters | |  | Yes | Sub Contractor UEI
+overallDescription |string  | ffata_data column jsonb | |   | Yes | 
 contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance | JSON Object |NA |NA |Yes | Sub contractor Principal Place of Performance
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess | string | | |  |  | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess2 | string | | |  | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.city | JSON Object |  |  |  | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>code | string | | | No  | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.city.<br/>name | string | | |  | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state | JSON Object |NA | NA |  | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state.<br/>code | string | | | | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state.<br/>name | string | | |  | 
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess | string | ffata_data column jsonb | |  |  | 
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>streetAddess2 | string |ffata_data column jsonb | |  | 
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.city | JSON Object | NA |  |  | 
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>code | string | ffata_data column jsonb| | No  | 
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.city.<br/>name | string |ffata_data column jsonb | |  | 
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state | JSON Object |NA |  |  | 
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state.<br/>code | string |ffata_data column jsonb | | | 
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.state.<br/>name | string |ffata_data column jsonb | |  | 
 contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.country | JSON Object | NA | NA | |
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.code | string | | | | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.name | string | | |  | 
-contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.zip | string | | | |
-contractFFATAData.primeEntityInformation.subAssistanceDataList.recovery_model_questions |  | |  | Yes| Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
-contractFFATAData.primeEntityInformation.subAssistanceDataList.topPayEmployees |  | |  | Conditional | This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if compensation question 1 is true and compensation question 2 is false
-recovery_model_questions.isSelected |  | | | Yes | Boolean value representing the response to the compensation question.
-topPayEmployees.full_name |  | NA | NA | Yes if topPayEmployees is required | The full name of the top pay employee
-topPayEmployees.salary |  | NA | NA |Yes if topPayEmployees is required|The total compensation of the top pay employee
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.code | string |ffata_data column jsonb | | | 
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.<br/>country.name | string |ffata_data column jsonb | |  | 
+contractFFATAData.primeEntityInformation.subAssistanceDataList.placeOfPerformance.zip | string |ffata_data column jsonb | | |
+contractFFATAData.primeEntityInformation.subAssistanceDataList.recovery_model_questions |string  |ffata_data column jsonb |  | Yes| Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
+contractFFATAData.primeEntityInformation.subAssistanceDataList.topPayEmployees | string |ffata_data column jsonb |  | Conditional | This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if compensation question 1 is true and compensation question 2 is false
+recovery_model_questions.isSelected |string  |ffata_data column jsonb | | Yes | Boolean value representing the response to the compensation question.
+topPayEmployees.full_name |string  | ffata_data column jsonb | NA | Yes if topPayEmployees is required | The full name of the top pay employee
+topPayEmployees.salary | string  | ffata_data column jsonb | NA |Yes if topPayEmployees is required|The total compensation of the top pay employee
 
 
 <p><small><a href="#">Back to top</a></small></p>
