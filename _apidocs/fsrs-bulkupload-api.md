@@ -145,7 +145,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-201 | string | Draft Opportunity successfully created | returns Opportunity ID in response header
+201 | string | Report was successfully created | Report successfully submitted
 
 Examples
 
@@ -1133,6 +1133,8 @@ Request JSON | Body | JSON | Yes | Yes, at least one primeEntityInformation elem
 
 Examples
 Note: Will return JSON response same as POST Request JSON
+<details>
+<summary>GET FFATA Contract Subaward Report </summary>
 <p>
 <code><pre>
  {
@@ -1152,6 +1154,7 @@ Note: Will return JSON response same as POST Request JSON
  }
 </pre></code>
 </p>
+</details>
 
 Responses
 
@@ -1160,6 +1163,8 @@ HTTP Status Code | Response Type | Reason  | Description
 200 | string | Report was successfully retrieved | Return Contract FAATA JSON
 
 Examples
+<details>
+<summary>GET FFATA Contract Subaward Report Response </summary>
 <p>
 <code><pre>
  {
@@ -1342,7 +1347,7 @@ Examples
 </pre></code>
 </p>
 <p><small><a href="#">Back to top</a></small></p>
-
+</details>
 
 ### GET FAATA Report Grant ###
 
@@ -1364,6 +1369,8 @@ Request JSON|	Body|	JSON|	Yes|	[Refer GET FAATA GRANT JSON](#delete-notice-contr
 
 Examples
 Note: Will return JSON response same as POST Request JSON
+<details>
+<summary>GET FFATA Grant Subaward Report </summary>
 <p>
 <code><pre>
  {
@@ -1380,6 +1387,7 @@ Note: Will return JSON response same as POST Request JSON
  }
 </pre></code>
 </p>
+</details>details>
 
 Responses
 
@@ -1388,7 +1396,8 @@ HTTP Status Code | Response Type | Reason  | Description
 200	|JSON|	Report was successfully retrieved | returns GrantFFATA JSON
 
 Examples
-
+<details>
+<summary>GET FFATA Grant Subaward Report Response </summary>
 <p>
 <code><pre>
 {
@@ -1567,10 +1576,11 @@ Examples
  }
 </pre></code>
 </p>
+<?details>
 
 ## API Contract JSON
 
-### SUBMIT FAATA Report Grant JSON
+### SUBMIT FFATA Report Grant JSON
 
 * Field headers in the table must match with field headers shown in JSON example  
 
@@ -1836,21 +1846,21 @@ Error codes may change depending on the error given; document will be updated ac
 
 Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
-400|contractFFATAData |	Invalid JSON structure. contractFFATAData is required |	contractFFATAData is required |	submitFFATAReport ,updateFFATAReport(Contract)
-400|assistanceFFATAData |Invalid JSON structure. assistanceFFATAData is required |	assistanceFFATAData is required	| submitFFATAReport,updateFFATAReport(Grant)
-400|primeEntityInformation | Invalid JSON structure: At least one primeEntityInformation is required for contract reporting. | At least one primeEntityInformation element is required for the contract reporting | submitFFATAReport ,updateFFATAReport(Contract)
-400|primeEntityInformation | Invalid JSON structure: At least one primeEntityInformation is required for grant reporting. |At least one primeEntityInformation element is required for the grant reporting | submitFFATAReport,updateFFATAReport(Grant)
-400|assistanceFFATAData.primeEntityInformation.primeFAIN |Ensure that the FAIN Number is correct. No matching Grant found for the provided FAIN number	| For Grants - FAIN Number not found | submitFFATAReport,updateFFATAReport(Grant)
-400|Combination of contractFFATAData.primeEntityInformation.contractNumber and contractFFATAData.primeEntityInformation.reportingAgency | Could not find a record matching the contractNumber and reportingAgency provided	| No record found for the Contract Number and Reporting Agency combination. | submitFFATAReport ,updateFFATAReport(Contract)
-400|Combination of contractFFATAData.primeEntityInformation.contractNumber and contractFFATAData.primeEntityInformation.idvReferenceNumber |	Could not find a record associating the IDV reference number with the Contract number	| IDV Reference Number not found associated with the Contract Number |submitFFATAReport ,updateFFATAReport(Contract)
-400|Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency |	Report Already Exists for the specified Month/Year  - Status: Submitted; Created By - User Name | A FFATA report for this contract already exists in the system for the given reporting period |submitFFATAReport(Contract)
-400|Combination of primeFAIN:reportPeriodMon:ReportPeriodYear |	Report Already Exists for the specified Month/Year  - Status: Submitted; Created By - User Name| A FFATA report for this grant already exists in the system for the given reporting period | submitFFATAReport(Grant)
-400|idvReferenceNumber is not provided and multiple records are found for the contractNumber and reportingAgency |	Please specify the idvReferenceNumber to correctly identify the contract being reported on	| User needs to specify the idvReferenceNumber to correctly identify the record as multiple records were found for the contractNumber and reportingAgency combination	| submitFFATAReport(Contract)
-400|Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency |	No Report found for the specified Contract for the Month/Year | Cannot update. A FFATA report for the specified month/year does not exist for the Contract. |updateFFATAReport(Contract)
+400|contractFFATAData |	Invalid JSON structure. contractFFATAData is required |	contractFFATAData is required |	submitFFATAReport ,updateFFATAReport(Contracts)
+400|assistanceFFATAData |Invalid JSON structure. assistanceFFATAData is required |	assistanceFFATAData is required	| submitFFATAReport,updateFFATAReport(Grants)
+400|primeEntityInformation | Invalid JSON structure: At least one primeEntityInformation is required for contract reporting. | At least one primeEntityInformation element is required for the contract reporting | submitFFATAReport ,updateFFATAReport(Contracts)
+400|primeEntityInformation | Invalid JSON structure: At least one primeEntityInformation is required for grant reporting. |At least one primeEntityInformation element is required for the grant reporting | submitFFATAReport,updateFFATAReport(Grants)
+400|assistanceFFATAData.primeEntityInformation.primeFAIN |Ensure that the FAIN Number is correct. No matching Grant found for the provided FAIN number	| For Grants - FAIN Number not found | submitFFATAReport,updateFFATAReport(Grants)
+400|Combination of contractFFATAData.primeEntityInformation.contractNumber and contractFFATAData.primeEntityInformation.reportingAgency | Could not find a record matching the contractNumber and reportingAgency provided	| No record found for the Contract Number and Reporting Agency combination. | submitFFATAReport ,updateFFATAReport(Contracts)
+400|Combination of contractFFATAData.primeEntityInformation.contractNumber and contractFFATAData.primeEntityInformation.idvReferenceNumber |	Could not find a record associating the IDV reference number with the Contract number	| IDV Reference Number not found associated with the Contract Number |submitFFATAReport ,updateFFATAReport(Contracts)
+400|Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency |	Report Already Exists for the specified Month/Year  - Status: Submitted; Created By - User Name | A FFATA report for this contract already exists in the system for the given reporting period |submitFFATAReport(Contracts)
+400|Combination of primeFAIN:reportPeriodMon:ReportPeriodYear |	Report Already Exists for the specified Month/Year  - Status: Submitted; Created By - User Name| A FFATA report for this grant already exists in the system for the given reporting period | submitFFATAReport(Grants)
+400|idvReferenceNumber is not provided and multiple records are found for the contractNumber and reportingAgency |	Please specify the idvReferenceNumber to correctly identify the contract being reported on	| User needs to specify the idvReferenceNumber to correctly identify the record as multiple records were found for the contractNumber and reportingAgency combination	| submitFFATAReport(Contracts)
+400|Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency |	No Report found for the specified Contract for the Month/Year | Cannot update. A FFATA report for the specified month/year does not exist for the Contract. |updateFFATAReport(Contracts)
 404|For Contracts - Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency
-For Grants - Combination of primeFAIN:reportPeriodMon:ReportPeriodYear | No Report found for the specified Grant for the Month/Year | Cannot update. A FFATA report for the specified month/year does not exist for the Grant. | updateFFATAReport(Contract and Grant)
-400|contractFFATAData.primeEntityInformation.contractNumber | Contract Number is required for Prime Entity | Contract Number is required for Prime Entity | submitFFATAReport ,updateFFATAReport(Contract)
-400|For Contracts | TBD	| The contract does not require FFATA reporting because the dollars obligated is less than $25,000 | submitFFATAReport(Contract)
+For Grants - Combination of primeFAIN:reportPeriodMon:ReportPeriodYear | No Report found for the specified Grant for the Month/Year | Cannot update. A FFATA report for the specified month/year does not exist for the Grant. | updateFFATAReport(Contract and Grants)
+400|contractFFATAData.primeEntityInformation.contractNumber | Contract Number is required for Prime Entity | Contract Number is required for Prime Entity | submitFFATAReport ,updateFFATAReport(Contracts)
+400|For Contracts | TBD	| The contract does not require FFATA reporting because the dollars obligated is less than $25,000 | submitFFATAReport(Contracts)
 400|For Contracts contractFFATAData.reportPeriodMon                                                      For Grants assistanceFFATAData.reportPeriodMon | Please specify the month for the reporting period	| reportPeriodMon is required | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
 400|For Contracts contractFFATAData.reportPeriodMon     For Grants assistanceFFATAData.reportPeriodMon | Please provide a valid value for the reporting period month. It is expected to be a 2 digit month (i.e. 01 for January, 10 for October). 	| reportPeriodMon is expecting 2 digit month (i.e. 01 for January, 10 for October) | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
 400|For Contracts contractFFATAData.reportPeriodYear            For Grants assistanceFFATAData.reportPeriodYear| Please specify the reporting period year.	| reportPeriodYear is required.  | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
@@ -1894,101 +1904,22 @@ For Grants - Combination of primeFAIN:reportPeriodMon:ReportPeriodYear | No Repo
 400|subAwardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - fullname and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
 400|subAwardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
 400|subAwardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|Awardee State | Award Details Section - State is required |State Code is required if the Awardee name is provided instead of ueiSAM# |	Publish
-400|Awardee State | Award Details Section - State provided is invalid |State Code provided is invalid |	Publish
-400|Awardee City | Award Details Section - City is required |City Code is required if the Awardee name is provided instead of ueiSAM# |	Publish
-400|Awardee City | Award Details Section - City provided is invalid |City Code provided is invalid |	Publish
-400|Contract Line Item number |	The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces	| The Contract Line Item number max length is 255 characters and allows only alphanumeric and - _ ( ) { } characters with no spaces. | Publish
-400|Task/Delivery Order Number |	Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces	| Task/Delivery Order Number max length is 255 characters and allows only alphanumeric and - _ ( ) characters with no spaces | Publish
-400|Point of Contact Type |	$.data.pointOfContact[0].type: does not have a value in the enumeration [primary, secondary, owner] |	Point of Contact Type is required |	Create Opportunity
-400|Primary Contact |	Primary Contact is required | Primary Contact is required  for all types except Award| Publish
-400|Primary Contact Full Name |	Primary Contact - Full Name is required | Point of Contact Email is required for all types except Award | Publish
-400|Primary Contact Full Name |	Primary Contact - Name limit is 500 characters | Point of Contact Name limit is 500 characters | Publish
-400|Primary Contact Email |	Primary Contact - Email is required | Point of Contact Email is required for all types except Award | Publish
-400|Primary Contact Email |	Primary Contact - Please enter a valid Internet email address. Format: username@host.domain | Primary Contact invalid Email format | Publish
-400|Primary Contact Email |	Primary Contact - email character limit is 255 characters | Primary Contact email limit is 255 | Publish
-400|Primary Contact Phone |	Primary Contact - phone character limit is 255 characters | Primary Contact phone limit is 255 | Publish
-400|Primary Contact Phone |	Primary Contact - fax character limit is 255 characters | Primary Contact fax limit is 255 | Publish
-400|Resources -  attType |	Attachment must have AttType of file or link |	Attachment type must be a file or a link |	Create Resource, Create And Publish
-400 | Resources - ExplicitAccess | ExplicitAccess is invalid for PackageLevel public | The resources.packageAccessLevel has been set to ‘public’, so the resources.explicitAccess can not be ‘1’. If a ‘1’ is entered, this is a conflict as the file shows one setting for controlled and the other for public | Create Resource in Draft Opportunity, Update Resource in Draft Opportunity
-400 | Resources - ExplicitAccess | ExplicitAccess is invalid for PackageLevel private | The resources.packageAccessLevel has been set to 'private', so a corresponding '1' MUST appear in the resources.explicitAccess. If anything other then '1' is entered, this is a conflict as the file shows one setting for controlled and the other for public | Create Resource in Draft Opportunity, Update Resource in Draft Opportunity
-400 | Resources - packageAccessLevel | Invalid package access level, must be public or private | The packageAccessLevel must specify 'public' or 'private'. Any other character will return as error | Create Resource in Draft Opportunity, Update Resource in Draft Opportunity
-400|Resources - resourceName | Attachment must have a name | Attachment Name is a required field |	Create Resource, Create And Publish
-400|Resources - resourceName | File name should have valid file type specified | Attachment Name should have valid file extension |	Create Resource, Update Resource, Create And Publish
-400|Resources - resourceName | File name should contain only Alpha numeric characters with spaces, hyphen, underscore and () | Attachment Name can contain only  the allowed character set |	Create Resource, Update Resource, Create And Publish
-400|Resources - content |Attachment must have content | File content is missing |	Create Resource, Create And Publish
-400|Resources - description | Link Resource must have a description | Link provided is missing description |	Create Resource, Create And Publish
-400|Resources - description | Link with the display text {}  already exists | Link with the same description/name already exists on the notice | Create Resource, Update Resource,  Create And Publish
-400|Resources - link | Link Resource must have a link | Link URL is missing |	Create Resource, Create And Publish
-400|Resources - link | Please enter a valid url. [protocol]://hostname.domain. Protocol can be ftp, http, or https. Spaces are not allowed | Link URL is not valid |	Create Resource, Create And Publish
-400|Resources - link | Link {} already exists| Link URL is already added to the notice |	Create Resource, Create And Publish
-400|Resources - resourceName | The file type that you are trying to upload is not supported | File extension provided is unsupported |	Create Resource, Create And Publish
-400|Resources - resourceName | Attachment with the name {} already exists | File with the same name is already added to the notice |	Create Resource, Create And Publish
-400|Resources - content | The file size should be greater than zero bytes and less than 250 MB | File Size doesn't meet the specified limits |	Create Resource, Create And Publish
-400|Archive |	This opportunity is not the latest published |	Draft Opportunity cannot be archived	| Archive
-400|Archive |	Opportunity already inactive |	Opportunity is already archived	| Archive
-400|Update |	Opportunity cannot be updated |	Opportunity is either in draft, archived or cancelled status	| Update
-400|Cancel |	This opportunity cannot be cancelled. This opportunity should be published |	This opportunity cannot be cancelled. This opportunity should be published	| Cancel
-400|Cancel |	This opportunity cannot be cancelled. This opportunity is a revision |	This opportunity cannot be cancelled. This opportunity is a revision	| Cancel
-400|Cancel |	This opportunity cannot be cancelled. This opportunity is already inactive |	This opportunity cannot be cancelled. This opportunity is already inactive	| Cancel
-400|Cancel |	This opportunity cannot be cancelled. This opportunity is already cancelled |	This opportunity cannot be cancelled. This opportunity is already cancelled	| Cancel
-400|Cancel - Description |	This opportunity cannot be cancelled. The cancel request is missing `Cancellation description` field |	This opportunity cannot be cancelled. The cancel request is missing `Cancellation description` field	| Cancel
-400|Uncancel, Delete |	This opportunity is not published |	This opportunity is not published.	| Uncancel, Delete
-400|Uncancel |	This opportunity is a revision |	This opportunity is a revision	| Uncancel
-400|Uncancel |	This opportunity is not cancelled |	This opportunity is not cancelled	| Uncancel
-400|Uncancel -Description |	Description is required |	Description is required	| Uncancel
-400|Unarchive |	Opportunity is active |	Active opportunity	| UnArchive
-400|Unarchive |	Opportunity is cancelled |	Cancelled opportunity	| UnArchive
-400|UnArchive, Uncancel - Archive Date |	New archive date is required |	New archive date is required  |	Unarchive, Uncancel
-400|UnArchive, Uncancel - Archive Date |	New archive date provided is in an invalid format |	New archive date provided is in an invalid format |	Unarchive, Uncancel
-400|UnArchive, Uncancel - Archive Date|	New archive date provided is in the past |	New archive date provided is before today's date |	Unarchive, Uncancel
-400|UnArchive, Uncancel - Archive Date |	New archive type is invalid |	archive type is not one of the following "auto15", "autocustom", "auto30"	| Unarchive, Uncancel
-400|UnArchive, Uncancel - Award Date |	New contract award date provided is in the past |	New contract award date provided is in the past | Unarchive, Uncancel
-400|UnArchive, Uncancel - Award Date |	New contract award date is not provided |	New contract award date is not provided | Unarchive, Uncancel
-400|UnArchive, Uncancel - Response Date |	New response date is required |	Unarchive requires new response date	| UnArchive
-400|UnArchive, Uncancel - Response Date |	New response date provided is in an invalid format |	Invalid date format	| UnArchive
-400|Delete |	This opportunity cannot be deleted. This opportunity is a revision |	This opportunity cannot be deleted. This opportunity is a revision.	| Delete
-400|Delete |	Opportunity has been already deleted |	Opportunity has been already deleted	| Delete
-400|Delete |	This opportunity cannot be deleted. The delete request is missing `Delete option` field |	This opportunity cannot be deleted. The delete request is missing `Delete option` field.	| Delete
-400|Delete |	This opportunity cannot be deleted. The `Delete option` provided is not supported |	This opportunity cannot be deleted. The `Delete option` provided is not supported.	| Delete
-400|Delete |	This opportunity cannot be deleted. The `Delete option` provided is not supported for deleting original published notice. |	This opportunity cannot be deleted. The `Delete option` provided is not supported for deleting original published notice.	| Delete
-400|Attachment |	has unknown issue/missing, please remove this attachment and republish. | has unknown issue/missing, please remove this attachment and republish |	Publish
-400|Attachment |	is PENDING, please try to publish at a later time | is PENDING, please try to publish at a later time |	Publish
-400|Attachment |	is ENCRYPTED, please remove this attachment and republish | is ENCRYPTED, please remove this attachment and republish |	Publish
-400|Attachment |	is INFECTED, please remove this attachment and republish | is INFECTED, please remove this attachment and republish |	Publish
-400|Attachment |	FILE SIZE GT 250MB or larger, please remove this attachment and republish | FILE SIZE GT 250MB or larger, please remove this attachment and republish |	Publish
-400|Attachment |	is a UNSUPPORTED FILE TYPE, please remove this attachment and republish | is a UNSUPPORTED FILE TYPE, please remove this attachment and republish |	Publish
-400|Attachment |	Exception occured while trying to validate attachments, Please retry at a later time | Exception occured while trying to validate attachments, Please retry at a later time. |	Publish
-400|Attachment |	Unknown type was found for Resource named: | Unknown type was found for Resource named: |	Publish
-400|IVL |	This opportunity cannot be published. Interested Vendors List Add is a required field |Interested Vendors List Add is a required |	Publish
-400|IVL |	Interested Vendors List Read is a required field. |Interested Vendors List Read is a required field |	Publish
-400|IVL |	Interested Vendors List should be enabled for this organization |Interested Vendors List should be enabled for this organization when FORCE ON |	Publish
-400|IVL |	Interested Vendors List should not be enabled for this organization |Interested Vendors List should not be enabled for this organization when FORCE OFF |	Publish
-400|Revise | Opportunity cannot be updated | An Opportunity cannot be revised if that Opporutnity was revised previously and is currently in draft state  | Revise
-400|Vendor Data |	Duplicate request. Vendor is already added as an authorized party on the notice | Request already exists for the vendor on the notice	| AddAuthorizedParty
-400|VendorData| fname should not be empty| fname should not be empty| AddAuthorizedParty
-400|VendorData| lname should not be empty| lname should not be empty| AddAuthorizedParty
-400|VendorData| Email should not be empty| Email should not be empty| AddAuthorizedParty
-400|VendorData| ueiSAM should not be empty| ueiSAM should not be empty| AddAuthorizedParty
-400|ueiSAM# |	No contact match on vendor data provided	| Not a Valid email or ueiSAM#	| AddAuthorizedParty
-404|Opportunity Id,  VendorData	|No request found for the notice and the vendor data provided|	Unable to find a request for the opportunity and vendor details provided.|	Approve or Reject Explicit Access Request By Vendor Data.
-401|Authorization|	Error code: 401 ; User does not have sufficient privileges to perform this action|	Invalid API key is used other than write sensitive permission	|Add Authorized Party
-400|Authorization	|Error code: 400 ; Duplicate request. Vendor is already added as an authorized party on the notice	| If a party is already added and is being added again by a contract writing individual|	Add Authorized Party
-401|Authorization|	Error code: 401 ; Your request did not get processed! Please verify your permission/roles|	If nonfed email id is used in authorization	|Get Authorized Party
-400|Requirement  Strategies <br> (farCases)|	Invalid Requirement Strategy(farCases)	| Accepted farCases: <br> FAR 7.107-2 <br> FAR 7.107-3 <br> FAR 7.107-4 |Create Draft Notice <br> (Consolidate/(Substantially) Bundle)
-400|Requirement  Strategies <br> (farCases)|	Duplicate Requirement Strategies found(farCases)	| Duplicate farCases are not allowed |Create Draft Notice <br> (Consolidate/(Substantially) Bundle)
-400|Requirement  Strategies <br> (farCases)|	Requirement Strategies(farCases) not found	| Requirement Strategies not found |Create Draft Notice <br> (Consolidate/(Substantially) Bundle)
-400|Requirement  Strategies <br> (farCases)|	Invalid Requirement Strategy(farCases)	| Accepted farCases: <br> FAR 7.107-2 <br> FAR 7.107-3 <br> FAR 7.107-4 |Create And Publish <br> (Consolidate/(Substantially) Bundle)
-400|Requirement  Strategies <br> (farCases)|	Duplicate Requirement Strategies found(farCases)	| Duplicate farCases are not allowed |Create And Publish <br> (Consolidate/(Substantially) Bundle)
-400|Requirement  Strategies <br> (farCases)|	Requirement Strategies(farCase) not found	| Requirement Strategies not found |Create And Publish <br> (Consolidate/(Substantially) Bundle)
-400|Requirement  Strategies <br> (farCases)|	Invalid Requirement Strategy(farCases)	| Accepted farCases: <br> FAR 7.107-2 <br> FAR 7.107-3 <br> FAR 7.107-4 |Update Draft Notice <br> (Consolidate/(Substantially) Bundle)
-400|Requirement  Strategies <br> (farCases)|	Duplicate Requirement Strategies found(farCases)	| Duplicate farCases are not allowed |Update Draft Notice <br> (Consolidate/(Substantially) Bundle)
-400|Requirement  Strategies <br> (farCases)|	Requirement Strategies(farCase)not found	| Requirement Strategies not found |Update Draft Notice <br> (Consolidate/(Substantially) Bundle)
-400|POP - State | State provided is invalid | When user enters the invalid state code |	Create And Publish
-400|POP - Zip Code | Invalid zipcode. Please enter the 5 digit zipcode | When user enters the invalid zip code |	Create And Publish
-400|Award section - State | Award Details Section - State provided is invalid | When user enters the invalid state code |	Create And Publish
-400|Award section - Zip Code | Award Details Section - Invalid zipcode. Please enter the 5 digit zipcode | When user enters the invalid zip code |	Create And Publish
-
+400|subAwardDataList.topPayEmployees.full_name | Sub topPayEmployees.full_name is required |Sub topPayEmployees.full_name is required |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
+400|subAssistanceDataList | At least one Sub-Awardee information is required for the reporting |At least one Sub-Awardee information is required for the reporting |	submitFFATAReport ,updateFFATAReport(Grants)
+400|subAssistanceDataList.subAssistanceNumber | Sub-contract number is required |Sub-contract number is required |	submitFFATAReport ,updateFFATAReport(Grants)
+400|subAssistanceDataList.subAssistanceNumber| Sub-contract number should be unique across multiple elements of subAwardDataList  |Sub-contract number should be unique across multiple elements of subAwardDataList |	submitFFATAReport ,updateFFATAReport(Grants)
+400|subAssistanceDataList.subAssistanceDollars |	Sub-contract Amount is required	| Sub-contract Amount is required | submitFFATAReport ,updateFFATAReport(Grants)
+400|subAssistanceDataList.subAssistanceDollars |	Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | submitFFATAReport ,updateFFATAReport(Grants)
+400|subAssistanceDataList.subAssistanceDollars |	Sub-contract Amount should be lower than the Total grant amount |	Sub-contract Amount should be lower than the Total grant amount |	 submitFFATAReport ,updateFFATAReport(Grants)
+400|subAssistanceDataList.subAssistanceObligationOrActionDate |	Subcontract Date is required | Subcontract Date is required| submitFFATAReport ,updateFFATAReport(Grants)
+400|subAssistanceDataList.subAssistanceObligationOrActionDate |	Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | submitFFATAReport ,updateFFATAReport(Grants)
+400|subAssistanceDataList.subAssistanceObligationOrActionDate |	The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | submitFFATAReport ,updateFFATAReport(Grants)
+400|primeEntityInformation |	At least one primeEntityInformation element is required for the contract reporting | At least one primeEntityInformation element is required for the contract reporting | getFFATAReport(Contracts)
+400|primeEntityInformation |	At least one primeEntityInformation element is required for the grant reporting | At least one primeEntityInformation element is required for the grant reporting | getFFATAReport(Grants)
+400|primeEntityInformation element |	At least one search criteria needs to be specified. For Contracts - One of contractNumber, idvReferenceNumber, reportPeriodMon, reportPeriodYear, reportingAgency  For Grants - One of primeFAIN, reportPeriodMon, reportPeriodYear | At least one search criteria needs to be specified. For Contracts - One of contractNumber, idvReferenceNumber, reportPeriodMon, reportPeriodYear, reportingAgency.For Grants - One of primeFAIN, reportPeriodMon, reportPeriodYear |  getFAATAReport(Contracts and Grants)
+400|primeEntityInformation |	At least one primeEntityInformation element is required for deleting | At least one primeEntityInformation element is required for deleting | deleteFAATAReport(Contracts)
+400|primeEntityInformation |	At least one primeEntityInformation element is required for deleting | At least one primeEntityInformation element is required for deleting | deleteFAATAReport(Grants)
+400|primeEntityInformation element |	No report found matching the specified parameters for the report |	No report found matching the specified parameters for the report. |	deleteFAATAReport(Contracts and Grants)
 
 
 ## FAQ
