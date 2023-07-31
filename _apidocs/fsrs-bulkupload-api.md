@@ -1707,8 +1707,8 @@ topPayEmployees.salary |string  |ffata_data column jsonb |  | Yes if topPayEmplo
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
+Name | Data Type | Field Length|Allowed Values | Required | Description
+-----|-----------|---------|-------|----------|------------
 contractFFATAData | JSON Object |NA | NA | NA 
 contractFFATAData.primeEntityInformation | JSON Array | | Yes | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract.
 contractNumber |string| 50 characters  |   | Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank 
@@ -1750,14 +1750,14 @@ topPayEmployees.salary | string  | ffata_data column jsonb| NA |Yes if topPayEmp
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-contractFFATAData.primeEntityInformation | JSON Array  |  |  | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract.
-contractNumber | string  | 50 characters | Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank.
-idvReferenceNumber | string | 50 characters  |  |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
-reportPeriodMon | string  | 10 characters | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
-reportPeriodYear | string | ffata_data column jsonb | Yes | This field should reflect the Reporting Year of the report being submitted.
-reportingAgency |string  |32 characters | Yes  | The ID of the Federal awarding agency
+Name | Data Type | Field Length | Allowed Values | Required | Description
+-----|-----------|---------|-------|----------|------------
+contractFFATAData.primeEntityInformation | JSON Array  |  | | | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract.
+contractNumber | string  | 50 characters | |Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank.
+idvReferenceNumber | string | 50 characters  |  | |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
+reportPeriodMon | string  | 10 characters| | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
+reportPeriodYear | string | ffata_data column jsonb| | Yes | This field should reflect the Reporting Year of the report being submitted.
+reportingAgency |string  |32 characters| | Yes  | The ID of the Federal awarding agency
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1765,12 +1765,12 @@ reportingAgency |string  |32 characters | Yes  | The ID of the Federal awarding 
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-assistanceFFATAData.primeEntityInformation | JSON Array  |  |  | Information about the prime Grantor. If the report is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
-primeFAIN | string  |255 characters |Yes | This is the Federal Award Identifier Number (FAIN) for the prime grant award.
-reportPeriodMon | string  | 10 characters | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
-reportPeriodYear |string  |ffata_data column jsonb  | Yes | This field should reflect the Reporting Year of the report being submitted.
+Name | Data Type | Field Length| Allowed Values | Required | Description
+-----|-----------|---------|-------|----------|------------
+assistanceFFATAData.primeEntityInformation | JSON Array  |  |  | |Information about the prime Grantor. If the report is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
+primeFAIN | string  |255 character| |Yes | This is the Federal Award Identifier Number (FAIN) for the prime grant award.
+reportPeriodMon | string  | 10 characters| | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
+reportPeriodYear |string  |ffata_data column jsonb|  | Yes | This field should reflect the Reporting Year of the report being submitted.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1778,14 +1778,14 @@ reportPeriodYear |string  |ffata_data column jsonb  | Yes | This field should re
 
 * Field headers in the table must match with field headers shown in JSON example  
 
-Name | Data Type | Allowed Values | Required | Description
------|-----------|----------------|----------|------------
-contractFFATAData.primeEntityInformation |JSON Array  |  |  | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract.
-contractNumber | string  |50 characters |Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank.
-idvReferenceNumber | string  | 50 characters  |  |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
-reportPeriodMon | string  | 10 characters  | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
-reportPeriodYear | string  | ffata_data column jsonb | Yes | This field should reflect the Reporting Year of the report being submitted.
-reportingAgency | string  | 32 characters | Yes  | The ID of the Federal awarding agency
+Name | Data Type | Field Length| Allowed Values | Required | Description
+-----|-----------|--------|--------|----------|------------
+contractFFATAData.primeEntityInformation |JSON Array  |  | | | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract.
+contractNumber | string  |50 characters| |Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank.
+idvReferenceNumber | string  | 50 characters|  |  |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
+reportPeriodMon | string  | 10 characters|  | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
+reportPeriodYear | string  | ffata_data column jsonb| | Yes | This field should reflect the Reporting Year of the report being submitted.
+reportingAgency | string  | 32 characters| | Yes  | The ID of the Federal awarding agency
 
 <p><small><a href="#">Back to top</a></small></p>
 
