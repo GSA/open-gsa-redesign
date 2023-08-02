@@ -102,7 +102,7 @@ State | State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.htm
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Version Control (need to determine if we need this section)
+## Version Control
 
 V1 versions of APIs will be utilizing the API Key mechanism as outlined in this documentation. V2 versions of APIs will be made available to support OAuth 2.0 as soon as possible. The documentation will be updated as soon as more information is available for the oAuth implementation.  
 
