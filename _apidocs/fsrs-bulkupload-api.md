@@ -1826,7 +1826,7 @@ Error Code|Error Message | Reason/Description
 401|Insufficient privileges to perform the operation |	Account does not have appropriate privileges to perform the operation
 403|You dont have permission to access this resource | Forbidden
 404|Requested URL not found	| Not found
-405|Insufficient privileges to edit opportunity | Validation exception
+405|Insufficient privileges to edit  | Validation exception
 500| Internal Server Error please try after sometime | Internal Server Error
 501| Invalid request |Not Implemented
 
