@@ -81,8 +81,10 @@ The table below lists the statuses for the FFATA Reports.
 
 Code | Value
 -----|-----------------
-acc     | Submitted
-drt     | Draft/Work-In-Progress
+1     | Draft
+2     | Work-In-Progress
+3     | Submitted
+4     | Deleted
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -104,7 +106,7 @@ State | State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.htm
 
 ## Version Control
 
-V1 versions of APIs will be utilizing the API Key mechanism as outlined in this documentation. V2 versions of APIs will be made available to support OAuth 2.0 as soon as possible. The documentation will be updated as soon as more information is available for the oAuth implementation.  
+V1 versions of APIs will be utilizing the API Key mechanism as outlined in this documentation. Future versions of APIs will be made available to support OAuth 2.0 as soon as possible. The documentation will be updated as soon as more information is available for the oAuth implementation.  
 
 ## FSRS Subaward Reporting Bulk Upload API Request and Responses
 This API has 8 endpoints as outlined below. 
