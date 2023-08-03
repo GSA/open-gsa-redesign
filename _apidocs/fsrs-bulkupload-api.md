@@ -5,7 +5,7 @@ banner-heading: SAM.gov FFATA Subaward Reporting Bulk Upload API
 
 ## Overview
 
-The API for FFATA Subaward Reporting will allow authorized users to submit FFATA Reports for their Contracts or Grants. Using this API, users will be able to file multiple FFATA reports at once. 
+The API for Federal Funding Accountability and Transparency Act (FFATA) Reporting will allow Federal prime awardees (i.e. prime contractors and prime grants recipients) to report subaward and executive compensation data regarding their first-tier subawards to meet the FFATA reporting requirements. Using this API, the users will be able to file multiple FFATA reports at once. 
 
 **Note:** The specifications on this page are for a future API.  Check back here or be in contact with IAE for the release date and testing session.
 
@@ -125,7 +125,7 @@ The following section describes each of the above endpoints in detail.
 
 ------- | ------- |
 **Request Type** | POST
-**URL** | /acquisition/v1/FFATA
+**URL** | /acquisition/v1/ffata
 **Summary** | Submit a FFATA report for Contracts
 **Consumes** | application/json
 **Produces** | NA
@@ -395,7 +395,7 @@ Examples
 
 ------- | -------
 **Request Type** | POST
-**URL** | /assistance/v1/FFATA
+**URL** | /assistance/v1/ffata
 **Summary** | Using this endpoint, users will be able to submit a FFATA report for Grants
 **Consumes** | application/JSON
 **Produces** | NA
@@ -706,7 +706,7 @@ Examples
 
 ------- | -------
 **Request Type** | PUT
-**URL** | /acquisition/v1/FFATA
+**URL** | /acquisition/v1/ffata
 **Summary** | This endpoint can be used to update a previously submitted contracts report
 **Consumes** | application/JSON
 **Produces** | JSON
@@ -804,7 +804,7 @@ Examples
 
 ------- | -------
 **Request Type** | PUT
-**URL** | /assistance/v1/FFATA
+**URL** | /assistance/v1/ffata
 **Summary** | This endpoint can be used to update a previously submitted grants report
 **Consumes** | application/json
 **Produces** | JSON
@@ -1017,7 +1017,7 @@ Examples
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /acquisition/v1/FFATA
+**URL** | /acquisition/v1/ffata
 **Summary** | This endpoint can be used to delete previously submitted contracts report(s)
 **Consumes** | application/json
 **Produces** | JSON
@@ -1067,7 +1067,7 @@ Examples
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /assistance/v1/FFATA
+**URL** | /assistance/v1/ffata
 **Summary** | This endpoint can be used to delete previously submitted grants report(s)
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -1115,7 +1115,7 @@ Examples
 
 ------- | -------
 **Request Type** | GET
-**URL** | /acquisition/v1/FFATA
+**URL** | /acquisition/v1/ffata
 **Summary** |  Using this endpoint, user will be able to retrieve specific contract reports based on the provided search criteria
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -1353,7 +1353,7 @@ Examples
 
 ------- | -------
 **Request Type** | GET
-**URL** | /assistance/v1/FFATA
+**URL** | /assistance/v1/ffata
 **Summary** | Using this endpoint, user will be able to retrieve specific grants reports based on the provided search criteria
 **Consumes** | application/JSON
 **Produces** | JSON
