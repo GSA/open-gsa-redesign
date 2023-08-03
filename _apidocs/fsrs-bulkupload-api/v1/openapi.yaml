@@ -6,10 +6,10 @@ info:
     name: GSA
   version: 0.1.0
 servers:
-  - url: https://api.sam.gov/acquisition/v1/FFATA?api_key={a valid API Key}
-  - url: https://api.sam.gov/assistance/v1/FFATA?api_key={a valid API Key}
-  - url: https://api-alpha.sam.gov/acquisition/v1/FFATA?api_key={a valid API Key}
-  - url: https://api-alpha.sam.gov/assistance/v1/FFATA?api_key={a valid API Key}
+  - url: https://api.sam.gov/acquisition/v1/ffata?api_key={a valid API Key}
+  - url: https://api.sam.gov/assistance/v1/ffata?api_key={a valid API Key}
+  - url: https://api-alpha.sam.gov/acquisition/v1/ffata?api_key={a valid API Key}
+  - url: https://api-alpha.sam.gov/assistance/v1/ffata?api_key={a valid API Key}
 tags:
   - name: acquisition-controller
     description: All endpoints for acquisition FFATA Reporting
@@ -22,7 +22,7 @@ tags:
      # description: Find out more about our store
       #url: http://swagger.io
 paths:
-  /acquisition/v1/FFATA:
+  /acquisition/v1/ffata:
     post:
       tags:
         - acquisition-controller
@@ -68,7 +68,7 @@ paths:
           description: Internal Server Error
         '501':
           description: Not Implemented
-    #/acquisition/v1/FFATA:
+    #/acquisition/v1/ffata:
     put:
       tags:
         - acquisition-controller
@@ -114,7 +114,7 @@ paths:
           description: Internal Server Error
         '501':
           description: Not Implemented
-  #/acquisition/v1/FFATA:
+  #/acquisition/v1/ffata:
     get:
       tags:
         - acquisition-controller
@@ -167,7 +167,7 @@ paths:
         '501':
           description: Not Implemented
           
-  #/acquisition/v1/FFATA:
+  #/acquisition/v1/ffata:
     delete:
       tags:
         - acquisition-controller
@@ -214,7 +214,7 @@ paths:
         '501':
           description: Not Implemented
 
-  /assistance/v1/FFATA:
+  /assistance/v1/ffata:
     post:
       tags:
         - assistance-controller
@@ -260,7 +260,7 @@ paths:
           description: Internal Server Error
         '501':
           description: Not Implemented
-  #/assistance/v1/FFATA:
+  #/assistance/v1/ffata:
     put:
       tags:
         - assistance-controller
@@ -307,7 +307,7 @@ paths:
         '501':
           description: Not Implemented
 
-  #/assistance/v1/FFATA:  
+  #/assistance/v1/ffata:  
     get:
       tags:
         - assistance-controller
@@ -360,7 +360,7 @@ paths:
         '501':
           description: Not Implemented
 
-  #/assistance/v1/FFATA:
+  #/assistance/v1/ffata:
     delete:
       tags:
         - assistance-controller
