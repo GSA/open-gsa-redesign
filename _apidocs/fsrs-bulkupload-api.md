@@ -72,6 +72,8 @@ To submit a FFATA Report, compensation questions for the Prime, as well as sub-a
 | ----------------- | --------------------------------------------- |
 | __0__	            | In your business or organization's preceding completed fiscal year, did your business or organization (the legal entity to which this specific CCR record, represented by a UNIQUE ENTITY ID (SAM) number,belongs) receive (1) 80 percent or more of your annual gross revenues in U.S. federal contracts, sub-contracts, loans, grants, subgrants, and/or cooperative agreements; and (2) $25,000,000 or more in annual gross revenues from U.S. federal contracts, sub-contracts, loans, grants, subgrants, and/or cooperative agreements? |
 | __1__	            | Does the public have access to information about the compensation of the executives in your business or organization (the legal entity to which this specific CCR record, represented by a UNIQUE ENTITY ID (SAM) number, belongs) through periodic reports filed under section 13(a) or 15(d) of the Securities Exchange Act of 1934 (15 U.S.C. 78m(a), 78o(d)) or section 6104 of the Internal RevenueCode of 1986?|
+| __2__	            | As provided to you by your sub-awardee, in your sub-awardee's business or organization's preceding completed fiscal year, did its business or organization (the legal entity to which the UNIQUE ENTITY ID (SAM) number it provided belongs) receive (1) 80 percent or more of its annual gross revenues in U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements; and (2) $25,000,000 or more in annual gross revenues from U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements? |
+| __3__	            | As provided to you by your sub-awardee, does the public have access to information about the compensation of the executives in the sub-awardee's business or organization (the legal entity to which the UNIQUE ENTITY ID (SAM) number it provided belongs) through periodic reports filed under section13(a) or 15(d) of the Securities Exchange Act of 1934 (15 U.S.C. 78m(a), 78o(d)) or section 6104 of the Internal Revenue Code of 1986?|
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -82,9 +84,8 @@ The table below lists the statuses for the FFATA Reports.
 Code | Value
 -----|-----------------
 1     | Draft
-2     | Work-In-Progress
-3     | Submitted
-4     | Deleted
+2     | Submitted
+3     | Deleted
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -99,7 +100,7 @@ API Fields
 Field Name | Data Source  | Valid Statuses  | Input Type
 ---------------|------------|----------|------------
 Country Code |  Country_Code MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active, Inactive (GET calls Only) | Three Character
-Country Name |  Full_Name' MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources |   | TEXT
+Country Name |  Full_Name MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources |   | TEXT
 State | State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources   | Listed from the selected country | Two Character
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -272,7 +273,7 @@ Examples
                }                           
             ]
          },
-                {
+        {
             "contractNumber": "W91238PTESTTWO", 
             "idvReferenceNumber": "", 
             "reportPeriodMon": "06",
@@ -1095,18 +1096,18 @@ HTTP Status Code | Response Type | Reason  | Description
 Examples
 
 <details>
-<summary>History Response</summary>
+<summary>Delete Request JSON</summary>
 <p>
 <code><pre>
 {
- "primeEntityInformation": [
- {
- "primeFAIN": "string",
- "reportPeriodMon" : "number",
- "reportPeriodYear": "number",
- }
- ]
- }
+   "primeEntityInformation":[
+      {
+         "primeFAIN":"string",
+         "reportPeriodMon":"number",
+         "reportPeriodYear":"number"
+      }
+   ]
+}
 </pre></code>
 </p>
 </details>
@@ -1139,21 +1140,21 @@ Note: Will return JSON response same as POST Request JSON
 <summary>GET FFATA Contract Subaward Report </summary>
 <p>
 <code><pre>
- {
- "primeEntityInformation": [
- {
- "contractNumber": "W9123823PTEST",
- "idvReferenceNumber": "GSTEST001",
- "reportPeriodMon" : "06",
- "reportPeriodYear": "2023",
- "reportingAgency": "2100"
- },
- {
- "reportPeriodMon" : "06",
- "reportPeriodYear": "2023",
- }
- ]
- }
+{
+   "primeEntityInformation":[
+      {
+         "contractNumber":"W9123823PTEST",
+         "idvReferenceNumber":"GSTEST001",
+         "reportPeriodMon":"06",
+         "reportPeriodYear":"2023",
+         "reportingAgency":"2100"
+      },
+      {
+         "reportPeriodMon":"06",
+         "reportPeriodYear":"2023"
+      }
+   ]
+}
 </pre></code>
 </p>
 </details>
@@ -1170,182 +1171,177 @@ Examples
 <p>
 <code><pre>
  {
- "contractFFATAData": {
- "primeEntityInformation": [
- {
- "contractNumber": "W9123823PTEST",
- "idvReferenceNumber": "GSTEST001",
- "reportPeriodMon": "06",
- "reportPeriodYear": "2023",
- "reportingAgency": "2100",
- "treasurySymbol": "12-3456",
- "programTitle": "Title of the program",
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "true"
- }
- ],
- "subAwardDataList": [
- {
- "subAwardNumber": "2303-TEST-05-0",
- "subAwardDollars": "100000",
- "periodOfPerformanceStartDate": "2023-05-14",
- "uei": "ABC987654321",
- "overallDescription": "tEST Description",
- "placeOfPerformance": {
- "streetAddress": "1800 F Street, NW",
- "streetAddress2": "",
- "city": {
- "code": "1000",
- "name": "Alexandria"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "VA",
- "name": "Virginia"
- },
- "zip": "12345"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "true"
- }
- ],
- "topPayEmployees": [
- {
- "full_name": "John White",
- "salary": "100000"
- },
- {
- "full_name": "Employee Green",
- "salary": "120000"
- },
- {
- "full_name": "Employee Red",
- "salary": "96000"
- },
- {
- "full_name": "Employee Orange",
- "salary": "250000"
- },
- {
- "full_name": "Employee Blue",
- "salary": "290000"
- }
- ]
- },
- {
- "subAwardNumber": "2303-TEST-06-1",
- "subAwardDollars": "80000",
- "periodOfPerformanceStartDate": "2023-05-14",
- "uei": "XYZ987654321",
- "overallDescription": "Test Description2",
- "placeOfPerformance": {
- "streetAddress": "street 123",
- "streetAddress2": "alley 4",
- "city": {
- "code": "9192",
- "name": "Brambleton"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "VA",
- "name": "Virginia"
- },
- "zip": "67890"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ]
- }
- ]
- },
- {
- "contractNumber": "W91238PTESTTWO",
- "idvReferenceNumber": "",
- "reportPeriodMon": "06",
- "reportPeriodYear": "2023",
- "reportingAgency": "9700",
- "treasurySymbol": "01-9999",
- "programTitle": "Title of the program",
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "false"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ],
- "subAwardDataList": [
- {
- "subAwardNumber": "9999-TEST",
- "subAwardDollars": "800000",
- "periodOfPerformanceStartDate": "2023-04-28",
- "uei": "ABC999999999",
- "overallDescription": "Test Description",
- "placeOfPerformance": {
- "streetAddress": "Test place",
- "streetAddress2": "",
- "city": {
- "code": "4000",
- "name": "Atlanta"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "GA",
- "name": "Georgia"
- },
- "zip": "12345"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "false"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ]
- }
- ]
- }
- ]
- }
- }
+   "contractFFATAData":{
+      "primeEntityInformation":[
+         {
+            "contractNumber":"W9123823PTEST",
+            "idvReferenceNumber":"GSTEST001",
+            "reportPeriodMon":"06",
+            "reportPeriodYear":"2023",
+            "reportingAgency":"2100",
+            "treasurySymbol":"12-3456",
+            "programTitle":"Title of the program",
+            "recovery_model_questions":[
+               {
+                  "code":"0",
+                  "isSelected":"true"
+               },
+               {
+                  "code":"1",
+                  "isSelected":"true"
+               }
+            ],
+            "subAwardDataList":[
+               {
+                  "subAwardNumber":"2303-TEST-05-0",
+                  "subAwardDollars":"100000",
+                  "periodOfPerformanceStartDate":"2023-05-14",
+                  "uei":"ABC987654321",
+                  "overallDescription":"tEST Description",
+                  "placeOfPerformance":{
+                     "streetAddress":"1800 F Street, NW",
+                     "streetAddress2":"",
+                     "city":{
+                        "code":"1000",
+                        "name":"Alexandria"
+                     },
+                     "country":{
+                        "code":"USA",
+                        "name":"UNITED STATES"
+                     },
+                     "state":{
+                        "code":"VA",
+                        "name":"Virginia"
+                     },
+                     "zip":"12345"
+                  },
+                  "recovery_model_questions":[
+                     {
+                        "code":"0",
+                        "isSelected":"true"
+                     },
+                     {
+                        "code":"1",
+                        "isSelected":"true"
+                     }
+                  ],
+                  "topPayEmployees":[
+                     {
+                        "full_name":"John White",
+                        "salary":"100000"
+                     },
+                     {
+                        "full_name":"Employee Green",
+                        "salary":"120000"
+                     },
+                     {
+                        "full_name":"Employee Red",
+                        "salary":"96000"
+                     },
+                     {
+                        "full_name":"Employee Orange",
+                        "salary":"250000"
+                     },
+                     {
+                        "full_name":"Employee Blue",
+                        "salary":"290000"
+                     }
+                  ]
+               },
+               {
+                  "subAwardNumber":"2303-TEST-06-1",
+                  "subAwardDollars":"80000",
+                  "periodOfPerformanceStartDate":"2023-05-14",
+                  "uei":"XYZ987654321",
+                  "overallDescription":"Test Description2",
+                  "placeOfPerformance":{
+                     "streetAddress":"street 123",
+                     "streetAddress2":"alley 4",
+                     "city":{
+                        "code":"9192",
+                        "name":"Brambleton"
+                     },
+                     "country":{
+                        "code":"USA",
+                        "name":"UNITED STATES"
+                     },
+                     "state":{
+                        "code":"VA",
+                        "name":"Virginia"
+                     },
+                     "zip":"67890"
+                  },
+                  "recovery_model_questions":[
+                     {
+                        "code":"0",
+                        "isSelected":"true"
+                     },
+                     {
+                        "code":"1",
+                        "isSelected":"false"
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "contractNumber":"W91238PTESTTWO",
+            "idvReferenceNumber":"",
+            "reportPeriodMon":"06",
+            "reportPeriodYear":"2023",
+            "reportingAgency":"9700",
+            "treasurySymbol":"01-9999",
+            "programTitle":"Title of the program",
+            "recovery_model_questions":[
+               {
+                  "code":"0",
+                  "isSelected":"false"
+               },
+               {
+                  "code":"1",
+                  "isSelected":"false"
+               }
+            ],
+            "subAwardDataList":[
+               {
+                  "subAwardNumber":"9999-TEST",
+                  "subAwardDollars":"800000",
+                  "periodOfPerformanceStartDate":"2023-04-28",
+                  "uei":"ABC999999999",
+                  "overallDescription":"Test Description",
+                  "placeOfPerformance":{
+                     "streetAddress":"Test place",
+                     "streetAddress2":"",
+                     "city":{
+                        "code":"4000",
+                        "name":"Atlanta"
+                     },
+                     "country":{
+                        "code":"USA",
+                        "name":"UNITED STATES"
+                     },
+                     "state":{
+                        "code":"GA",
+                        "name":"Georgia"
+                     },
+                     "zip":"12345"
+                  },
+                  "recovery_model_questions":[
+                     {
+                        "code":"0",
+                        "isSelected":"false"
+                     },
+                     {
+                        "code":"1",
+                        "isSelected":"false"
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}
 </pre></code>
 </p>
 <p><small><a href="#">Back to top</a></small></p>
@@ -1376,17 +1372,17 @@ Note: Will return JSON response same as POST Request JSON
 <p>
 <code><pre>
  {
- "primeEntityInformation": [
- {
- "primeFAIN": "1001KS1420",
- "reportPeriodMon" : "05",
- "reportPeriodYear": "2023"
- },
- {
- "primeFAIN": "1001ZZZ420"
- }
- ]
- }
+   "primeEntityInformation":[
+      {
+         "primeFAIN":"1001KS1420",
+         "reportPeriodMon":"05",
+         "reportPeriodYear":"2023"
+      },
+      {
+         "primeFAIN":"1001ZZZ420"
+      }
+   ]
+}
 </pre></code>
 </p>
 </details>details>
@@ -1403,179 +1399,174 @@ Examples
 <p>
 <code><pre>
 {
- "assistanceFFATAData": {
- "primeEntityInformation": [
- {
- "primeFAIN": "1001KS1420",
- "reportPeriodMon": "05",
- "reportPeriodYear": "2023",
- "eftIndicator": "9999",
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ],
- "subAssistanceDataList": [
- {
- "subAssistanceNumber": "XX-YY-00008",
- "uei": "ABC123456789",
- "eftIndicator": "1111",
- "subAssistanceDollars": "100000",
- "subAssistanceObligationOrActionDate": "2010-10-01",
- "overallDescription": "My Description",
- "placeOfPerformance": {
- "streetAddress": "1800 F Street, NW",
- "streetAddress2": "",
- "city": {
- "code": "1000",
- "name": "Alexandria"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "VA",
- "name": "Virginia"
- },
- "zip": "12345"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "true"
- }
- ],
- "topPayEmployees": [
- {
- "full_name": "John White",
- "salary": "100000"
- },
- {
- "full_name": "Employee Green",
- "salary": "120000"
- },
- {
- "full_name": "Employee Red",
- "salary": "96000"
- },
- {
- "full_name": "Employee Orange",
- "salary": "250000"
- },
- {
- "full_name": "Employee Blue",
- "salary": "290000"
- }
- ]
- }
- ]
- },
- {
- "primeFAIN": "1001ZZZ420",
- "reportPeriodMon": "05",
- "reportPeriodYear": "2023",
- "eftIndicator": "8978",
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "true"
- }
- ],
- "subAssistanceDataList": [
- {
- "subAssistanceNumber": "XX-YY-12345",
- "uei": "zzz123456789",
- "eftIndicator": "1234",
- "subAssistanceDollars": "150000",
- "subAssistanceObligationOrActionDate": "2023-04-17",
- "overallDescription": "My Description",
- "placeOfPerformance": {
- "streetAddress": "Test place",
- "streetAddress2": "",
- "city": {
- "code": "4000",
- "name": "Atlanta"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "GA",
- "name": "Georgia"
- },
- "zip": "12345"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "false"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ]
- },
- {
- "subAssistanceNumber": "AA-YY-12345",
- "uei": "XYZ123456789",
- "eftIndicator": "4455",
- "subAssistanceDollars": "150055",
- "subAssistanceObligationOrActionDate": "2023-04-17",
- "overallDescription": "My Description",
- "placeOfPerformance": {
- "streetAddress": "street 123",
- "streetAddress2": "alley 4",
- "city": {
- "code": "9192",
- "name": "Brambleton"
- },
- "country": {
- "code": "USA",
- "name": "UNITED STATES"
- },
- "state": {
- "code": "VA",
- "name": "Virginia"
- },
- "zip": "67890"
- },
- "recovery_model_questions":
- [
- {
- "code": "0",
- "isSelected": "true"
- },
- {
- "code": "1",
- "isSelected": "false"
- }
- ]
- }
- ]
- }
- ]
- }
- }
+   "assistanceFFATAData":{
+      "primeEntityInformation":[
+         {
+            "primeFAIN":"1001KS1420",
+            "reportPeriodMon":"05",
+            "reportPeriodYear":"2023",
+            "eftIndicator":"9999",
+            "recovery_model_questions":[
+               {
+                  "code":"0",
+                  "isSelected":"true"
+               },
+               {
+                  "code":"1",
+                  "isSelected":"false"
+               }
+            ],
+            "subAssistanceDataList":[
+               {
+                  "subAssistanceNumber":"XX-YY-00008",
+                  "uei":"ABC123456789",
+                  "eftIndicator":"1111",
+                  "subAssistanceDollars":"100000",
+                  "subAssistanceObligationOrActionDate":"2010-10-01",
+                  "overallDescription":"My Description",
+                  "placeOfPerformance":{
+                     "streetAddress":"1800 F Street, NW",
+                     "streetAddress2":"",
+                     "city":{
+                        "code":"1000",
+                        "name":"Alexandria"
+                     },
+                     "country":{
+                        "code":"USA",
+                        "name":"UNITED STATES"
+                     },
+                     "state":{
+                        "code":"VA",
+                        "name":"Virginia"
+                     },
+                     "zip":"12345"
+                  },
+                  "recovery_model_questions":[
+                     {
+                        "code":"0",
+                        "isSelected":"true"
+                     },
+                     {
+                        "code":"1",
+                        "isSelected":"true"
+                     }
+                  ],
+                  "topPayEmployees":[
+                     {
+                        "full_name":"John White",
+                        "salary":"100000"
+                     },
+                     {
+                        "full_name":"Employee Green",
+                        "salary":"120000"
+                     },
+                     {
+                        "full_name":"Employee Red",
+                        "salary":"96000"
+                     },
+                     {
+                        "full_name":"Employee Orange",
+                        "salary":"250000"
+                     },
+                     {
+                        "full_name":"Employee Blue",
+                        "salary":"290000"
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "primeFAIN":"1001ZZZ420",
+            "reportPeriodMon":"05",
+            "reportPeriodYear":"2023",
+            "eftIndicator":"8978",
+            "recovery_model_questions":[
+               {
+                  "code":"0",
+                  "isSelected":"true"
+               },
+               {
+                  "code":"1",
+                  "isSelected":"true"
+               }
+            ],
+            "subAssistanceDataList":[
+               {
+                  "subAssistanceNumber":"XX-YY-12345",
+                  "uei":"zzz123456789",
+                  "eftIndicator":"1234",
+                  "subAssistanceDollars":"150000",
+                  "subAssistanceObligationOrActionDate":"2023-04-17",
+                  "overallDescription":"My Description",
+                  "placeOfPerformance":{
+                     "streetAddress":"Test place",
+                     "streetAddress2":"",
+                     "city":{
+                        "code":"4000",
+                        "name":"Atlanta"
+                     },
+                     "country":{
+                        "code":"USA",
+                        "name":"UNITED STATES"
+                     },
+                     "state":{
+                        "code":"GA",
+                        "name":"Georgia"
+                     },
+                     "zip":"12345"
+                  },
+                  "recovery_model_questions":[
+                     {
+                        "code":"0",
+                        "isSelected":"false"
+                     },
+                     {
+                        "code":"1",
+                        "isSelected":"false"
+                     }
+                  ]
+               },
+               {
+                  "subAssistanceNumber":"AA-YY-12345",
+                  "uei":"XYZ123456789",
+                  "eftIndicator":"4455",
+                  "subAssistanceDollars":"150055",
+                  "subAssistanceObligationOrActionDate":"2023-04-17",
+                  "overallDescription":"My Description",
+                  "placeOfPerformance":{
+                     "streetAddress":"street 123",
+                     "streetAddress2":"alley 4",
+                     "city":{
+                        "code":"9192",
+                        "name":"Brambleton"
+                     },
+                     "country":{
+                        "code":"USA",
+                        "name":"UNITED STATES"
+                     },
+                     "state":{
+                        "code":"VA",
+                        "name":"Virginia"
+                     },
+                     "zip":"67890"
+                  },
+                  "recovery_model_questions":[
+                     {
+                        "code":"0",
+                        "isSelected":"true"
+                     },
+                     {
+                        "code":"1",
+                        "isSelected":"false"
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}
 </pre></code>
 </p>
 </details>
