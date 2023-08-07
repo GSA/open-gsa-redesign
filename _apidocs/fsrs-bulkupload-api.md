@@ -773,7 +773,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Update FFATA Contract JSON](#update-ffata-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Update FFATA Report Contract JSON](#update-ffata-report-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -804,7 +804,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Update FFATA Report Grant JSON](#)
+Request JSON | Body | JSON | Yes | [Refer Update FFATA Report Grant JSON](#update-ffata-report-grant-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -835,7 +835,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes |[Refer Delete FFATA Report Contract JSON](#)
+Request JSON | Body | JSON | Yes |[Refer Delete FFATA Report Contract JSON](#delete-ffata-report-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -892,7 +892,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Delete FFATA Report Grant JSON ](#)
+Request JSON | Body | JSON | Yes | [Refer Delete FFATA Report Grant JSON ](#delete-ffata-report-grant-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
