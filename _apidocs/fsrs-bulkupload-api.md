@@ -148,7 +148,11 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-201 | string | Report was successfully created | Report successfully submitted
+201 | string | Report was successfully created | As described below
+
+The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in Draft status and the validation error messages are sent back as a part of the response body. Refer [Specific Error Messages](#specific-error-messages) for details on validation errors.
+
+The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer [General Error Messages](#general-error-messages) for specific details.
 
 Examples
 
