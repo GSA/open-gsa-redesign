@@ -781,7 +781,7 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-201 | string |  Report successfully updated| 
+200 | string |  Report successfully updated| 
 
 Examples: For examples, refer to Submit FFATA Report (Contracts) examples.
 
@@ -1625,7 +1625,6 @@ Error codes may change depending on the error given; document will be updated ac
 
 Error Code|Error Message | Reason/Description
 ----------|--------------|-------------------
-200|Succesfully Submitted | Successful Operation
 400|Error processing the request | Invalid JSON format provided
 400|primeEntityInformation is required | primeEntityInformation is empty
 401|Encountered error authenticating user.Invalid JWT provided | Invalid Authorization Email provided
