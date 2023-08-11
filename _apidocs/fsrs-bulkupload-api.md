@@ -150,9 +150,9 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was successfully created | As described below
 
-The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in Draft status and the validation error messages are sent back as a part of the response body. Refer [Specific Error Messages](#specific-error-messages) for details on validation errors.
+The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in Draft status and the validation error messages are sent back as a part of the response body. see [Specific Error Messages](#specific-error-messages) for more information about validation errors.
 
-The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer [General Error Messages](#general-error-messages) for specific details.
+The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
 Examples
 
@@ -458,7 +458,11 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-201 | string | Report was successfully created | Report successfully submitted
+201 | string | Report was successfully created | As described below
+
+The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in Draft status and the validation error messages are sent back as a part of the response body. see [Specific Error Messages](#specific-error-messages) for more information about validation errors.
+
+The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
 Examples
 
@@ -785,7 +789,11 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-200 | string |  Report successfully updated| 
+200 | string |  Report successfully updated| As described below
+
+The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in Draft status and the validation error messages are sent back as a part of the response body. see [Specific Error Messages](#specific-error-messages) for more information about validation errors.
+
+The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
 Examples: For examples, refer to Submit FFATA Report (Contracts) examples.
 
@@ -816,7 +824,11 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-200 | string | Report successfully updated | 
+200 | string | Report successfully updated | As described below
+
+The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in Draft status and the validation error messages are sent back as a part of the response body. see [Specific Error Messages](#specific-error-messages) for more information about validation errors.
+
+The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
 Examples: For examples, refer to Submit FFATA Report (Grants) examples.
 
@@ -847,7 +859,9 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-204 | string | Report(s) successfully deleted | 
+204 | string | Report(s) successfully deleted | As described below
+
+The API will return HTTP Status code 204 if the report is deleted successfully. The API will return other HTTP Status codes in case of any other errors and the report will not be deleted. Refer to the [Error Messages](#error-messages) for specific details.
 
 Examples
 
@@ -904,8 +918,9 @@ Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-204 | string | Report(s) successfully deleted | 
+204 | string | Report(s) successfully deleted | As described below
 
+The API will return HTTP Status code 204 if the report is deleted successfully. The API will return other HTTP Status codes in case of any other errors and the report will not be deleted. Refer to the [Error Messages](#error-messages) for specific details.
 
 Examples
 
@@ -1629,17 +1644,14 @@ Error codes may change depending on the error given; document will be updated ac
 
 Error Code|Error Message | Reason/Description
 ----------|--------------|-------------------
-400|Error processing the request | Invalid JSON format provided
-400|primeEntityInformation is required | primeEntityInformation is empty
-401|Encountered error authenticating user.Invalid JWT provided | Invalid Authorization Email provided
 401|Please provide valid Authorization Email & API Key | API Key and/or Authorization Email is required
-401|Insufficient privileges to perform the operation |	Account does not have appropriate privileges to perform the operation
-403|You dont have permission to access this resource | Forbidden
+401|Encountered error authenticating user.Invalid JWT provided | Invalid Authorization Email provided
+403|You dont have permission to access this resource | Account does not have appropriate privileges to perform the operation
 404|Requested URL not found	| Not found
-405|Insufficient privileges to edit  | Validation exception
 500| Internal Server Error please try after sometime | Internal Server Error
 501| Invalid request |Not Implemented
-
+400|Error processing the request | Invalid JSON format provided
+400|primeEntityInformation is required | primeEntityInformation is empty
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1648,7 +1660,6 @@ Error Code|Error Message | Reason/Description
 This section details possible error messages for specific operations.
 
 Error codes may change depending on the error given; document will be updated accordingly.
-
 
 Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
