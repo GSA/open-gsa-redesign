@@ -3,7 +3,7 @@ title: SAM.gov FFATA Subaward Reporting Bulk Upload API
 banner-heading: SAM.gov FFATA Subaward Reporting Bulk Upload API
 ---
 
-## Overview
+## Overview 
 
 The API for Federal Funding Accountability and Transparency Act (FFATA) Reporting will allow Federal prime awardees (i.e. prime contractors and prime grants recipients) to report subaward and executive compensation data regarding their first-tier subawards to meet the FFATA reporting requirements. Using this API, the users will be able to file multiple FFATA reports at once. 
 
@@ -18,7 +18,7 @@ FFATA Subaward Reporting Bulk Upload API can be accessed from Production or Alph
 * Production: https://api.sam.gov
 * Alpha: https://api-alpha.sam.gov
 
-###	Authentication and Authorization
+### Authentication and Authorization
 
 To begin using this API, you will need to register for a System Account and obtain an API Key. After registration, you will need to provide this API key in the <i>x-api-key</i> HTTP header with every API request.
 * Registered users (Federal and non-federal) with appropriate roles for FFATA under Entity Reporting domain can request for a system account with ‘read Sensitive’ or ‘read FOUO’ permissions to be able to view FFATA reports. 
@@ -127,14 +127,14 @@ The following section describes each of the above endpoints in detail.
 ### Submit FFATA Report (Contracts)
 
 ------- | ------- |
-**Request Type** | POST
+**Request Type** | POST 
 **URL** | /acquisition/v1/ffata
 **Summary** | Submit a FFATA report for Contracts
 **Consumes** | application/json
 **Produces** | NA
 **Active Versions** | v1
 
-Request Parameters
+#### Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
@@ -144,17 +144,17 @@ Request JSON | Body | JSON | Yes | [Refer Submit FFATA Report Contract JSON](#su
 
 <p><small><a href="#">Back to top</a></small></p>
 
-Responses
+#### Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-201 | string | Report was successfully created | As described below
+201 | string | Report was created | As described below
 
-The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in Draft status and the validation error messages are sent back as a part of the response body. see [Specific Error Messages](#specific-error-messages) for more information about validation errors.
+The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in Draft status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
-Examples
+#### Examples
 
 <details>
 <summary>Example: Submit FFATA Subaward Contract Report for multiple Contracts and multiple subawards</summary>
@@ -444,7 +444,7 @@ Examples
 **Active Versions** | v1
 
 
-Request Parameters
+#### Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
@@ -454,17 +454,17 @@ Request JSON | Body | JSON | Yes | [Refer Submit FFATA Report Grant JSON](#submi
 
 <p><small><a href="#">Back to top</a></small></p>
 
-Responses
+#### Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was successfully created | As described below
 
-The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in Draft status and the validation error messages are sent back as a part of the response body. see [Specific Error Messages](#specific-error-messages) for more information about validation errors.
+The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in Draft status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
-Examples
+#### Examples
 
 <details>
 <summary>Example: Submit FFATA Grant Subaward Report for multiple awards and multiple subawards</summary>
@@ -775,7 +775,7 @@ Examples
 **Produces** | JSON
 **Active Versions** | v1
 
-Request Parameters
+#### Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
@@ -785,17 +785,17 @@ Request JSON | Body | JSON | Yes | [Refer Update FFATA Report Contract JSON](#up
 
 <p><small><a href="#">Back to top</a></small></p>
 
-Responses
+#### Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string |  Report successfully updated| As described below
 
-The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in Draft status and the validation error messages are sent back as a part of the response body. see [Specific Error Messages](#specific-error-messages) for more information about validation errors.
+The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in Draft status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
-Examples: For examples, refer to Submit FFATA Report (Contracts) examples.
+#### Examples: For examples, refer to Submit FFATA Report (Contracts) examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -810,7 +810,7 @@ Examples: For examples, refer to Submit FFATA Report (Contracts) examples.
 **Produces** | JSON
 **Active Versions** | v1
 
-Request Parameters
+#### Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
@@ -820,17 +820,17 @@ Request JSON | Body | JSON | Yes | [Refer Update FFATA Report Grant JSON](#updat
 
 <p><small><a href="#">Back to top</a></small></p>
 
-Responses
+#### Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report successfully updated | As described below
 
-The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in Draft status and the validation error messages are sent back as a part of the response body. see [Specific Error Messages](#specific-error-messages) for more information about validation errors.
+The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in Draft status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
-Examples: For examples, refer to Submit FFATA Report (Grants) examples.
+#### Examples: For examples, refer to Submit FFATA Report (Grants) examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -845,7 +845,7 @@ Examples: For examples, refer to Submit FFATA Report (Grants) examples.
 **Produces** | JSON
 **Active Versions** | v2/v3
 
-Request Parameters
+#### Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
@@ -855,7 +855,7 @@ Request JSON | Body | JSON | Yes |[Refer Delete FFATA Report Contract JSON](#del
 
 <p><small><a href="#">Back to top</a></small></p>
 
-Responses
+#### Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
@@ -863,7 +863,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 The API will return HTTP Status code 204 if the report is deleted successfully. The API will return other HTTP Status codes in case of any other errors and the report will not be deleted. Refer to the [Error Messages](#error-messages) for specific details.
 
-Examples
+#### Examples
 
 <details>
 <summary>Example: Delete request to delete multiple FFATA Contract Subaward Reports</summary>
@@ -904,7 +904,7 @@ Examples
 **Produces** | JSON
 **Active Versions** | v1
 
-Request Parameters
+#### Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
@@ -914,7 +914,7 @@ Request JSON | Body | JSON | Yes | [Refer Delete FFATA Report Grant JSON ](#dele
 
 <p><small><a href="#">Back to top</a></small></p>
 
-Responses
+#### Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
@@ -922,7 +922,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 The API will return HTTP Status code 204 if the report is deleted successfully. The API will return other HTTP Status codes in case of any other errors and the report will not be deleted. Refer to the [Error Messages](#error-messages) for specific details.
 
-Examples
+#### Examples
 
 <details>
 <summary>Example: Delete request to delete multiple FFATA Grant Subaward Reports</summary>
@@ -958,7 +958,7 @@ Examples
 **Produces** | JSON
 **Active Versions** | v1
 
-Request Parameters
+#### Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
@@ -968,7 +968,7 @@ Request JSON | Body | JSON | Yes | Yes, at least one primeEntityInformation elem
 
 <p><small><a href="#">Back to top</a></small></p>
 
-Examples
+#### Examples
 Note: Will return JSON response same as POST Request JSON
 <details>
 <summary>GET FFATA Contract Subaward Report </summary>
@@ -993,13 +993,13 @@ Note: Will return JSON response same as POST Request JSON
 </p>
 </details>
 
-Responses
+#### Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report was successfully retrieved | Return Contract FFATA JSON
 
-Examples
+#### Examples
 <details>
 <summary> Response </summary>
 <p>
@@ -1191,7 +1191,7 @@ Examples
 **Produces** | JSON
 **Active Versions** | v1
 
-Request Parameters
+#### Request Parameters
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
@@ -1199,7 +1199,7 @@ Authorization	| Header | string |	Yes |	Valid and authorized user ID
 api_key |	query |	string |	Yes |	Valid System Account API Key
 Request JSON|	Body|	JSON|	Yes|	[Refer GET FFATA GRANT JSON](#delete-notice-contract-json)
 
-Examples
+#### Examples
 Note: Will return JSON response same as POST Request JSON
 <details>
 <summary>GET FFATA Grant Subaward Report </summary>
@@ -1221,13 +1221,13 @@ Note: Will return JSON response same as POST Request JSON
 </p>
 </details>details>
 
-Responses
+#### Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200	|JSON|	Report was successfully retrieved | returns GrantFFATA JSON
 
-Examples
+#### Examples
 <details>
 <summary>History Response </summary>
 <p>
@@ -1642,27 +1642,16 @@ The following error messages may be returned as part of the response to various 
 
 Error codes may change depending on the error given; document will be updated accordingly.
 
-Error Code|Error Message | Reason/Description
-----------|--------------|-------------------
-401|Please provide valid Authorization Email & API Key | API Key and/or Authorization Email is required
-401|Encountered error authenticating user.Invalid JWT provided | Invalid Authorization Email provided
-403|You dont have permission to access this resource | Account does not have appropriate privileges to perform the operation
-404|Requested URL not found	| Not found
-500| Internal Server Error please try after sometime | Internal Server Error
-501| Invalid request |Not Implemented
-400|Error processing the request | Invalid JSON format provided
-400|primeEntityInformation is required | primeEntityInformation is empty
-
-<p><small><a href="#">Back to top</a></small></p>
-
-### Specific Error Messages
-
-This section details possible error messages for specific operations.
-
-Error codes may change depending on the error given; document will be updated accordingly.
-
-Error Code|Field | Error Message | Reason/Description | Operation
------|------|---------------|--------------------|----------
+Error Code|Error Message | Reason/Description | Operation
+----------|--------------|-------------------|-------------------
+401|Please provide valid Authorization Email & API Key | API Key and/or Authorization Email is required | All
+401|Encountered error authenticating user.Invalid JWT provided | Invalid Authorization Email provided | All
+403|You dont have permission to access this resource | Account does not have appropriate privileges to perform the operation | All
+404|Requested URL not found	| Not found | All
+500| Internal Server Error please try after sometime | Internal Server Error | All
+501| Invalid request |Not Implemented | All
+400|Error processing the request | Invalid JSON format provided | All
+400|primeEntityInformation is required | primeEntityInformation is empty | All
 400|contractFFATAData |	Invalid JSON structure. contractFFATAData is required |	contractFFATAData is required |	submitFFATAReport ,updateFFATAReport(Contracts)
 400|assistanceFFATAData |Invalid JSON structure. assistanceFFATAData is required |	assistanceFFATAData is required	| submitFFATAReport,updateFFATAReport(Grants)
 400|primeEntityInformation | Invalid JSON structure: At least one primeEntityInformation is required for contract reporting. | At least one primeEntityInformation element is required for the contract reporting | submitFFATAReport ,updateFFATAReport(Contracts)
@@ -1682,56 +1671,111 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|For Contracts contractFFATAData.reportPeriodYear For Grants assistanceFFATAData.reportPeriodYear | Please provide a valid value for the reporting period year. It is expected to be a 4 digit year	| reportPeriodYear is expecting 4 digit year | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
 400|contractFFATAData.reportingAgency |	Please provide the Federal awarding agency Id |	reportingAgency is required | submitFFATAReport ,updateFFATAReport(Contracts)
 400|Please provide the Federal Awarding Agency Id |Please provide the correct format for the Reporting Agency |	reportingAgency provided is invalid. |	submitFFATAReport ,updateFFATAReport(Contracts)
-400|recovery_model_questions |	Please provide the responses to the compensation questions as captured under recovery_model_questions json element |	recovery_model_questions are required  | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required |submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|recovery_model_questions |	TBD |	Compensation Q2 code and response are required	| submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|recovery_model_questions |	 | Compensation question code provided did not match expected codes |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|recovery_model_questions |	Compensation question isSelected value can only be true or false | Compensation question isSelected value can only be true or false | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList|	Invalid JSON format: At least one Sub-Awardee information is required for the reporting | At least one Sub-Awardee information is required for the reporting | submitFFATAReport ,updateFFATAReport(Contracts)
-400|subAwardDataList.subAwardNumber|	Sub-contract number is required | Sub-contract number is required | submitFFATAReport ,updateFFATAReport(Contracts)
-400|subAwardDataList.subAwardNumber|	Sub-contract number should be unique across multiple elements of subAwardDataList  | Sub-contract number should be unique across multiple elements of subAwardDataList  | submitFFATAReport ,updateFFATAReport(Contracts)
-400|subAwardDataList.subAwardDollars |	Sub-contract Amount is required | Sub-contract Amount is requiredn| submitFFATAReport ,updateFFATAReport(Contracts)
-400|subAwardDataList.subAwardDollars |	Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)s| submitFFATAReport ,updateFFATAReport(Contracts)
-400|subAwardDataList.subAwardDollars| Sub-contract Amount should be lower than the Total contract amount | Sub-contract Amount should be lower than the Total contract amount | submitFFATAReport ,updateFFATAReport(Contracts)
-400|subAwardDataList.periodOfPerformanceStartDate | Subcontract Date is required | Subcontract Date is required | submitFFATAReport ,updateFFATAReport(Contracts)
-400|subAwardDataList.periodOfPerformanceStartDate | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | submitFFATAReport ,updateFFATAReport(Contracts)
-400|subAwardDataList.periodOfPerformanceStartDate | The Subcontract Date cannot be in the future. | The Subcontract Date cannot be in the future. |  submitFFATAReport ,updateFFATAReport(Contracts)
-400|subAwardDataList.uei  subAssistanceDataList.uei | Sub contractor UNIQUE ENTITY ID # is required |Sub contractor UNIQUE ENTITY ID # is required |  submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.uei  subAssistanceDataList.uei | Sub UNIQUE ENTITY ID # must be exactly 12 characters |	Sub UNIQUE ENTITY ID # must be exactly 12 characters  | submitFFATAReport ,updateFFATAReport(Contracts)
-400|subAwardDataList.uei  subAssistanceDataList.uei |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov) |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov.) |	submitFFATAReport ,updateFFATAReport(Contracts)
-400|subAwardDataList.overallDescription   subAssistanceDataList.overallDescription |	Sub-contract overall description is required. |	Sub-contract overall description is required. |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.overallDescription   subAssistanceDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Sub-contract Place of Performace is required. |	Sub-contract Place of Performace is required. |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Sub-contract Place of Performance Section - Country is required |	Sub-contract Place of Performance Section - Country is required | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Sub-contract Place of Performance Section - ZIP Code cannot exceed 20 characters |	Sub-contract Place of Performance Section - ZIP Code cannot exceed 20 characters | submitFFATAReport ,updateFFATAReport(Contracts and Grants
-400|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - Country is required |	Only for US addresses: Sub-contract Place of Performance Section - Country is required |  submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance|	Only for US addresses: Sub-contract Place of Performance Section - Country provided is invalid |	Only for US addresses: Sub-contract Place of Performance Section - Country provided is invalid | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - State is required |	Only for US addresses: Sub-contract Place of Performance Section - State is required |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - State provided is invalid |	Only for US addresses: Sub-contract Place of Performance Section - State provided is invalid|	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - City is required	| Only for US addresses: Sub-contract Place of Performance Section - City is required | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - City provided is invalid| Only for US addresses: Sub-contract Place of Performance Section - City provided is invalid | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Sub-contract Place of Performance Section - ZIP is required | Only for US addresses: Sub-contract Place of Performance Section - ZIP is required |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Sub-contract Place of Performance Section - ZIP provided is invalid |	Only for US addresses: Sub-contract Place of Performance Section - ZIP provided is invalid |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - fullname and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAwardDataList.topPayEmployees.full_name | Sub topPayEmployees.full_name is required |Sub topPayEmployees.full_name is required |	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400|subAssistanceDataList | At least one Sub-Awardee information is required for the reporting |At least one Sub-Awardee information is required for the reporting |	submitFFATAReport ,updateFFATAReport(Grants)
-400|subAssistanceDataList.subAssistanceNumber | Sub-contract number is required |Sub-contract number is required |	submitFFATAReport ,updateFFATAReport(Grants)
-400|subAssistanceDataList.subAssistanceNumber| Sub-contract number should be unique across multiple elements of subAwardDataList  |Sub-contract number should be unique across multiple elements of subAwardDataList |	submitFFATAReport ,updateFFATAReport(Grants)
-400|subAssistanceDataList.subAssistanceDollars |	Sub-contract Amount is required	| Sub-contract Amount is required | submitFFATAReport ,updateFFATAReport(Grants)
-400|subAssistanceDataList.subAssistanceDollars |	Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | submitFFATAReport ,updateFFATAReport(Grants)
-400|subAssistanceDataList.subAssistanceDollars |	Sub-contract Amount should be lower than the Total grant amount |	Sub-contract Amount should be lower than the Total grant amount |	 submitFFATAReport ,updateFFATAReport(Grants)
-400|subAssistanceDataList.subAssistanceObligationOrActionDate |	Subcontract Date is required | Subcontract Date is required| submitFFATAReport ,updateFFATAReport(Grants)
-400|subAssistanceDataList.subAssistanceObligationOrActionDate |	Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | submitFFATAReport ,updateFFATAReport(Grants)
-400|subAssistanceDataList.subAssistanceObligationOrActionDate |	The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | submitFFATAReport ,updateFFATAReport(Grants)
 400|primeEntityInformation |	At least one primeEntityInformation element is required for the contract reporting | At least one primeEntityInformation element is required for the contract reporting | getFFATAReport(Contracts)
 400|primeEntityInformation |	At least one primeEntityInformation element is required for the grant reporting | At least one primeEntityInformation element is required for the grant reporting | getFFATAReport(Grants)
 400|primeEntityInformation element |	At least one search criteria needs to be specified. For Contracts - One of contractNumber, idvReferenceNumber, reportPeriodMon, reportPeriodYear, reportingAgency  For Grants - One of primeFAIN, reportPeriodMon, reportPeriodYear | At least one search criteria needs to be specified. For Contracts - One of contractNumber, idvReferenceNumber, reportPeriodMon, reportPeriodYear, reportingAgency.For Grants - One of primeFAIN, reportPeriodMon, reportPeriodYear |  getFFATAReport(Contracts and Grants)
 400|primeEntityInformation |	At least one primeEntityInformation element is required for deleting | At least one primeEntityInformation element is required for deleting | deleteFFATAReport(Contracts)
 400|primeEntityInformation |	At least one primeEntityInformation element is required for deleting | At least one primeEntityInformation element is required for deleting | deleteFFATAReport(Grants)
 400|primeEntityInformation element |	No report found matching the specified parameters for the report |	No report found matching the specified parameters for the report. |	deleteFFATAReport(Contracts and Grants)
+
+<p><small><a href="#">Back to top</a></small></p>
+
+### Validation Failure Error Messages
+
+This section details possible validation failure error messages for specific operations.
+
+Error codes may change depending on the error given; document will be updated accordingly.
+
+Error Code|Field | Error Message | Reason/Description | Operation
+-----|------|---------------|--------------------|----------
+201|recovery_model_questions |	Please provide the responses to the compensation questions as captured under recovery_model_questions json element |	recovery_model_questions are required  | submitFFATAReport(Contracts and Grants)
+201|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required |submitFFATAReport(Contracts and Grants)
+201|recovery_model_questions |	TBD |	Compensation Q2 code and response are required	| submitFFATAReport(Contracts and Grants)
+201|recovery_model_questions |	 | Compensation question code provided did not match expected codes |	submitFFATAReport(Contracts and Grants)
+201|recovery_model_questions |	Compensation question isSelected value can only be true or false | Compensation question isSelected value can only be true or false | submitFFATAReport(Contracts and Grants)
+201|subAwardDataList|	Invalid JSON format: At least one Sub-Awardee information is required for the reporting | At least one Sub-Awardee information is required for the reporting | submitFFATAReport(Contracts)
+201|subAwardDataList.subAwardNumber|	Sub-contract number is required | Sub-contract number is required | submitFFATAReport(Contracts)
+201|subAwardDataList.subAwardNumber|	Sub-contract number should be unique across multiple elements of subAwardDataList  | Sub-contract number should be unique across multiple elements of subAwardDataList  | submitFFATAReport(Contracts)
+201|subAwardDataList.subAwardDollars |	Sub-contract Amount is required | Sub-contract Amount is requiredn| submitFFATAReport(Contracts)
+201|subAwardDataList.subAwardDollars |	Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)s| submitFFATAReport(Contracts)
+201|subAwardDataList.subAwardDollars| Sub-contract Amount should be lower than the Total contract amount | Sub-contract Amount should be lower than the Total contract amount | submitFFATAReport(Contracts)
+201|subAwardDataList.periodOfPerformanceStartDate | Subcontract Date is required | Subcontract Date is required | submitFFATAReport(Contracts)
+201|subAwardDataList.periodOfPerformanceStartDate | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | submitFFATAReport(Contracts)
+201|subAwardDataList.periodOfPerformanceStartDate | The Subcontract Date cannot be in the future. | The Subcontract Date cannot be in the future. |  submitFFATAReport(Contracts)
+201|subAwardDataList.uei  subAssistanceDataList.uei | Sub contractor UNIQUE ENTITY ID # is required |Sub contractor UNIQUE ENTITY ID # is required |  submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.uei  subAssistanceDataList.uei | Sub UNIQUE ENTITY ID # must be exactly 12 characters |	Sub UNIQUE ENTITY ID # must be exactly 12 characters  | submitFFATAReport(Contracts)
+201|subAwardDataList.uei  subAssistanceDataList.uei |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov) |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov.) |	submitFFATAReport(Contracts)
+201|subAwardDataList.overallDescription   subAssistanceDataList.overallDescription |	Sub-contract overall description is required. |	Sub-contract overall description is required. |	submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.overallDescription   subAssistanceDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Sub-contract Place of Performace is required. |	Sub-contract Place of Performace is required. |	submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Sub-contract Place of Performance Section - Country is required |	Sub-contract Place of Performance Section - Country is required | submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Sub-contract Place of Performance Section - ZIP Code cannot exceed 20 characters |	Sub-contract Place of Performance Section - ZIP Code cannot exceed 20 characters | submitFFATAReport(Contracts and Grants
+201|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - Country is required |	Only for US addresses: Sub-contract Place of Performance Section - Country is required |  submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance|	Only for US addresses: Sub-contract Place of Performance Section - Country provided is invalid |	Only for US addresses: Sub-contract Place of Performance Section - Country provided is invalid | submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - State is required |	Only for US addresses: Sub-contract Place of Performance Section - State is required |	submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - State provided is invalid |	Only for US addresses: Sub-contract Place of Performance Section - State provided is invalid|	submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - City is required	| Only for US addresses: Sub-contract Place of Performance Section - City is required | submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - City provided is invalid| Only for US addresses: Sub-contract Place of Performance Section - City provided is invalid | submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Sub-contract Place of Performance Section - ZIP is required | Only for US addresses: Sub-contract Place of Performance Section - ZIP is required |	submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Sub-contract Place of Performance Section - ZIP provided is invalid |	Only for US addresses: Sub-contract Place of Performance Section - ZIP provided is invalid |	submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - fullname and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	submitFFATAReport(Contracts and Grants)
+201|subAwardDataList.topPayEmployees.full_name | Sub topPayEmployees.full_name is required |Sub topPayEmployees.full_name is required |	submitFFATAReport(Contracts and Grants)
+201|subAssistanceDataList | At least one Sub-Awardee information is required for the reporting |At least one Sub-Awardee information is required for the reporting |	submitFFATAReport(Grants)
+201|subAssistanceDataList.subAssistanceNumber | Sub-contract number is required |Sub-contract number is required |	submitFFATAReport(Grants)
+201|subAssistanceDataList.subAssistanceNumber| Sub-contract number should be unique across multiple elements of subAwardDataList  |Sub-contract number should be unique across multiple elements of subAwardDataList |	submitFFATAReport(Grants)
+201|subAssistanceDataList.subAssistanceDollars |	Sub-contract Amount is required	| Sub-contract Amount is required | submitFFATAReport(Grants)
+201|subAssistanceDataList.subAssistanceDollars |	Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | submitFFATAReport(Grants)
+201|subAssistanceDataList.subAssistanceDollars |	Sub-contract Amount should be lower than the Total grant amount |	Sub-contract Amount should be lower than the Total grant amount |	 submitFFATAReport(Grants)
+201|subAssistanceDataList.subAssistanceObligationOrActionDate |	Subcontract Date is required | Subcontract Date is required| submitFFATAReport(Grants)
+201|subAssistanceDataList.subAssistanceObligationOrActionDate |	Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | submitFFATAReport(Grants)
+201|subAssistanceDataList.subAssistanceObligationOrActionDate |	The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | submitFFATAReport(Grants)
+200|recovery_model_questions |	Please provide the responses to the compensation questions as captured under recovery_model_questions json element |	recovery_model_questions are required  | updateFFATAReport(Contracts and Grants)
+200|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required |updateFFATAReport(Contracts and Grants)
+200|recovery_model_questions |	TBD |	Compensation Q2 code and response are required	| updateFFATAReport(Contracts and Grants)
+200|recovery_model_questions |	 | Compensation question code provided did not match expected codes |	updateFFATAReport(Contracts and Grants)
+200|recovery_model_questions |	Compensation question isSelected value can only be true or false | Compensation question isSelected value can only be true or false | updateFFATAReport(Contracts and Grants)
+200|subAwardDataList|	Invalid JSON format: At least one Sub-Awardee information is required for the reporting | At least one Sub-Awardee information is required for the reporting | updateFFATAReport(Contracts)
+200|subAwardDataList.subAwardNumber|	Sub-contract number is required | Sub-contract number is required | updateFFATAReport(Contracts)
+200|subAwardDataList.subAwardNumber|	Sub-contract number should be unique across multiple elements of subAwardDataList  | Sub-contract number should be unique across multiple elements of subAwardDataList  | updateFFATAReport(Contracts)
+200|subAwardDataList.subAwardDollars |	Sub-contract Amount is required | Sub-contract Amount is requiredn| updateFFATAReport(Contracts)
+200|subAwardDataList.subAwardDollars |	Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)s| updateFFATAReport(Contracts)
+200|subAwardDataList.subAwardDollars| Sub-contract Amount should be lower than the Total contract amount | Sub-contract Amount should be lower than the Total contract amount | updateFFATAReport(Contracts)
+200|subAwardDataList.periodOfPerformanceStartDate | Subcontract Date is required | Subcontract Date is required | updateFFATAReport(Contracts)
+200|subAwardDataList.periodOfPerformanceStartDate | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | updateFFATAReport(Contracts)
+200|subAwardDataList.periodOfPerformanceStartDate | The Subcontract Date cannot be in the future. | The Subcontract Date cannot be in the future. |  updateFFATAReport(Contracts)
+200|subAwardDataList.uei  subAssistanceDataList.uei | Sub contractor UNIQUE ENTITY ID # is required |Sub contractor UNIQUE ENTITY ID # is required |  updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.uei  subAssistanceDataList.uei | Sub UNIQUE ENTITY ID # must be exactly 12 characters |	Sub UNIQUE ENTITY ID # must be exactly 12 characters  | updateFFATAReport(Contracts)
+200|subAwardDataList.uei  subAssistanceDataList.uei |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov) |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov.) |	updateFFATAReport(Contracts)
+200|subAwardDataList.overallDescription   subAssistanceDataList.overallDescription |	Sub-contract overall description is required. |	Sub-contract overall description is required. |	updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.overallDescription   subAssistanceDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Sub-contract Place of Performace is required. |	Sub-contract Place of Performace is required. |	updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Sub-contract Place of Performance Section - Country is required |	Sub-contract Place of Performance Section - Country is required | updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Sub-contract Place of Performance Section - ZIP Code cannot exceed 20 characters |	Sub-contract Place of Performance Section - ZIP Code cannot exceed 20 characters | updateFFATAReport(Contracts and Grants
+200|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - Country is required |	Only for US addresses: Sub-contract Place of Performance Section - Country is required |  updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance|	Only for US addresses: Sub-contract Place of Performance Section - Country provided is invalid |	Only for US addresses: Sub-contract Place of Performance Section - Country provided is invalid | updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - State is required |	Only for US addresses: Sub-contract Place of Performance Section - State is required |	updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - State provided is invalid |	Only for US addresses: Sub-contract Place of Performance Section - State provided is invalid|	updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - City is required	| Only for US addresses: Sub-contract Place of Performance Section - City is required | updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Sub-contract Place of Performance Section - City provided is invalid| Only for US addresses: Sub-contract Place of Performance Section - City provided is invalid | updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Sub-contract Place of Performance Section - ZIP is required | Only for US addresses: Sub-contract Place of Performance Section - ZIP is required |	updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Sub-contract Place of Performance Section - ZIP provided is invalid |	Only for US addresses: Sub-contract Place of Performance Section - ZIP provided is invalid |	updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - fullname and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	updateFFATAReport(Contracts and Grants)
+200|subAwardDataList.topPayEmployees.full_name | Sub topPayEmployees.full_name is required |Sub topPayEmployees.full_name is required |	updateFFATAReport(Contracts and Grants)
+200|subAssistanceDataList | At least one Sub-Awardee information is required for the reporting |At least one Sub-Awardee information is required for the reporting |	updateFFATAReport(Grants)
+200|subAssistanceDataList.subAssistanceNumber | Sub-contract number is required |Sub-contract number is required |	updateFFATAReport(Grants)
+200|subAssistanceDataList.subAssistanceNumber| Sub-contract number should be unique across multiple elements of subAwardDataList  |Sub-contract number should be unique across multiple elements of subAwardDataList |	updateFFATAReport(Grants)
+200|subAssistanceDataList.subAssistanceDollars |	Sub-contract Amount is required	| Sub-contract Amount is required | updateFFATAReport(Grants)
+200|subAssistanceDataList.subAssistanceDollars |	Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Sub-contract Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | updateFFATAReport(Grants)
+200|subAssistanceDataList.subAssistanceDollars |	Sub-contract Amount should be lower than the Total grant amount |	Sub-contract Amount should be lower than the Total grant amount |	 updateFFATAReport(Grants)
+200|subAssistanceDataList.subAssistanceObligationOrActionDate |	Subcontract Date is required | Subcontract Date is required| updateFFATAReport(Grants)
+200|subAssistanceDataList.subAssistanceObligationOrActionDate |	Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | updateFFATAReport(Grants)
+200|subAssistanceDataList.subAssistanceObligationOrActionDate |	The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | updateFFATAReport(Grants)
 
 
 ## FAQ
