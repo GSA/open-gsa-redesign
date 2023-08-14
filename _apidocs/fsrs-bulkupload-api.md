@@ -150,7 +150,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was created | As described below
 
-The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in Draft status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors.
+The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in Draft status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update FFATA Report (Contracts) request to update the report so it can be submitted successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -460,7 +460,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was successfully created | As described below
 
-The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in Draft status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors.
+The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in Draft status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update FFATA Report (Grants) request to update the report so it can be submitted successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -791,7 +791,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string |  Report successfully updated| As described below
 
-The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in Draft status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors.
+The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in Draft status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be submitted successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -826,7 +826,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report successfully updated | As described below
 
-The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in Draft status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors.
+The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in Draft status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be submitted successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -1415,14 +1415,17 @@ Name | Data Type |Field Length | Allowed Values | Required |Description |
 -----|-----------|-------|-------------------|------------|------------
 contractFFATAData | JSON Object |NA |  |  |  |
 contractFFATAData.primeEntityInformation | JSON Array | NA| | |Yes | Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract
+contractFFATAData.primeEntityInformation Details| | | | | | 
 contractNumber | string | 50 characters  | | Yes | If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank 
-idvReferenceNumber | string | 50 characters | | Yes, if the report is for a Task Order on a Contract | If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
+idvReferenceNumber | string | 50 characters | | Yes, if the report is for a Task Order on a Contract | If this report is being submitted for sub-awards for a specific task, delivery, or call order for supplies and/or services placed against an established federal contract or agreement, then the referenced Indefinite Delivery Vehicle (IDV) number is also required. Enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field. IDV is an indefinite delivery contract, a blanket purchase agreement or a basic ordering agreement.
 reportPeriodMon |string  | 10 characters | | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
 reportPeriodYear |string  |ffata_data column jsonb  | | Yes | This field should reflect the Reporting Year of the report being submitted. 
-reportingAgency | string | 32 characters  |NA | Yes | The ID of the Federal awarding agency 
+reportingAgency | string | 32 characters  |NA | Yes | The ID of the Federal awarding agency as from FPDS-NG
 treasurySymbol |string  |ffata_data column jsonb |  | The first six digits of the Treasury Account Symbol (XX-XXXX) are required. | The Treasury Account Symbol associated with the prime contract award can be found on FPDS under Contract Record or you can contact the Contracting Officer to request the TAS. Be sure to include any dashes when entering the symbol value into this field on the spreadsheet
 programTitle | string |ffata_data column jsonb | | No | Program or Project Title 
-contractFFATAData.primeEntityInformation.recovery_model_questions |  |ffata_data column jsonb  | |Yes | Array of the Compensation Questions. There will be 2 questions, and therefore 2 elements in this array
+contractFFATAData.primeEntityInformation.recovery_model_questions |  |ffata_data column jsonb  | |Yes | Array of the Compensation Questions for the prime Awardee. There will be 2 questions, and therefore atmost 2 elements in this array
+contractFFATAData.primeEntityInformation.recovery_model_questions.code |  |ffata_data column jsonb  | |Yes | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the [Recovery Model Questions (Compensation Questions)](#recovery_model_questions) section for details.
+contractFFATAData.primeEntityInformation.recovery_model_questions.isSelected |string  |ffata_data column jsonb | | Yes | Boolean value representing the response to the compensation question.
 subAwardDataList | string  |ffata_data column jsonb |  |Yes  | Information about the sub Contractors. If the report is being submitted for multiple sub contracts, then this array will have multiple elements, one for each of the sub Contracts.
 subAwardNumber | string |32 characters  |  | Yes | Number assigned by the Prime Contractor to track this sub-contract
 subAwardDollars |string  |32 characters | | Yes | Amount for this award to this sub contractor 
