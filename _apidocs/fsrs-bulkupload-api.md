@@ -964,7 +964,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized user ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | Yes, at least one primeEntityInformation element is required. From the fields, at least one field is required
+Request JSON | Body | JSON | Yes, at least one primeEntityInformation element is required. From the fields, at least one field is required | [Refer Get FFATA Report Contract JSON](#get-ffata-report-contract-json) 
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1197,7 +1197,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization	| Header | string |	Yes |	Valid and authorized user ID
 api_key |	query |	string |	Yes |	Valid System Account API Key
-Request JSON|	Body|	JSON|	Yes|	[Refer Get FFATA Grant JSON](#get-ffata-grant-json)
+Request JSON|	Body|	JSON|	Yes, at least one primeEntityInformation element is required. From the fields, at least one field is required|	[Refer Get FFATA Report Grant JSON](#get-ffata-report-grant-json)
 
 #### Examples
 Note: Will return JSON response same as POST Request JSON
@@ -1513,7 +1513,7 @@ contractNumber | string  | 50 characters | Yes | If this report being deleted is
 idvReferenceNumber | string | 50 characters  | Conditional - Yes |If this report being deleted is for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
 reportPeriodMon | string  | 10 characters| Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
 reportPeriodYear | string | | Yes | This field should reflect the Reporting Year of the report being submitted.
-reportingAgency |string  |32 characters| | Yes  | The ID of the Federal awarding agency
+reportingAgency |string  |32 characters| Yes | | The ID of the Federal awarding agency
 
 <p><small><a href="#">Back to top</a></small></p>
 
