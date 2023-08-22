@@ -245,18 +245,16 @@ The API will return one of the following responses:
 
 <details>
 
-<summary>Endpoint 1</summary>
+<summary><h3>Endpoint 1</h3></summary>
 
-<h3>Request URL</h3>
-
+<p><strong>Request URL</strong></p>
 <ul>
 <li>URL: https://api.gsa.gov/travel/perdiem/v2/rates/city/{city}/state/{ST}/year/{year}</li>
 <li>Description: Rates by city, state, and year</li>
 <li>Example: https://api.gsa.gov/travel/perdiem/v2/rates/city/Fairfax/state/VA/year/2023</li>
 </ul>
-
-<h3>Response (JSON output)</h3>
-<pre><code>{
+<p><strong>Response (JSON output)</strong></p>
+<small><pre><code>{
     "request": null,
     "errors": null,
     "rates": [
@@ -353,23 +351,21 @@ The API will return one of the following responses:
         }
     ],
     "version": null
-}</code></pre>
+}</code></pre></small>
 </details>
 
 <details>
 
-<summary>Endpoint 2</summary>
+<summary><h3>Endpoint 2</h3></summary>
 
-<h3>Request URL</h3>
-
+<p><strong>Request URL</strong></p>
 <ul>
 <li>URL: https://api.gsa.gov/travel/perdiem/v2/rates/state/{ST}/year/{year}</li>
 <li>Description: Rates by state and year</li>
 <li>Example: https://api.gsa.gov/travel/perdiem/v2/rates/state/VA/year/2023</li>
 </ul>
-
-<h3>Response (JSON output)</h3>
-<pre><code>{
+<p><strong>Response (JSON output)</strong></p>
+<small><pre><code>{
     "request": null,
     "errors": null,
     "rates": [
@@ -549,23 +545,21 @@ The API will return one of the following responses:
         }
     ],
     "version": null
-}</code></pre>
+}</code></pre></small>
 </details>
 
 <details>
 
-<summary>Endpoint 3</summary>
+<summary><h3>Endpoint 3</h3></summary>
 
-<h3>Request URL</h3>
-
+<p><strong>Request URL</strong></p>
 <ul>
 <li>URL: https://api.gsa.gov/travel/perdiem/v2/rates/zip/{zip}/year/{year}</li>
 <li>Description: Rates by ZIP code and year</li>
 <li>Example: https://api.gsa.gov/travel/perdiem/v2/rates/zip/20171/year/2023</li>
 </ul>
-
-<h3>Response (JSON output)</h3>
-<pre><code>{
+<p><strong>Response (JSON output)</strong></p>
+<small><pre><code>{
     "request": null,
     "errors": null,
     "rates": [
@@ -662,21 +656,21 @@ The API will return one of the following responses:
         }
     ],
     "version": null
-}</code></pre>
+}</code></pre></small>
 </details>
 
 <details>
 
-<summary>Endpoint 4</summary>
+<summary><h3>Endpoint 4</h3></summary>
 
-<h3>Request URL</h3>
+<p><strong>Request URL</strong></p>
 <ul>
 <li>URL: https://api.gsa.gov/travel/perdiem/v2/rates/conus/lodging/{year}</li>
 <li>Description: Lodging rates for the continental United States by year</li>
 <li>Example: https://api.gsa.gov/travel/perdiem/v2/rates/conus/lodging/2023</li>
 </ul>
-<h3>Response (JSON output)</h3>
-<pre><code>[
+<p><strong>Response (JSON output)</strong></p>
+<small><pre><code>[
     {
         "Jan": "98",
         "Feb": "98",
@@ -753,21 +747,21 @@ The API will return one of the following responses:
         "DID": "274",
         "Dec": "101"
     }
-]</code></pre>
+]</code></pre></small>
 </details>
 
 <details>
 
-<summary>Endpoint 5</summary>
+<summary><h3>Endpoint 5</h3></summary>
 
-<h3>Request URL</h3>
+<p><strong>Request URL</strong></p>
 <ul>
 <li>URL: https://api.gsa.gov/travel/perdiem/v2/rates/conus/mie/{year}</li>
 <li>Description: Meals and incidental expense (M&IE) breakdown rates by year</li>
 <li>Example: https://api.gsa.gov/travel/perdiem/v2/rates/conus/mie/2023</li>
 </ul>
-<h3>Response (JSON output)</h3>
-<pre><code>[
+<p><strong>Response (JSON output)</strong></p>
+<small><pre><code>[
     {
         "total": 59,
         "breakfast": 13,
@@ -808,21 +802,21 @@ The API will return one of the following responses:
         "incidental": 5,
         "FirstLastDay": 59.25
     }
-]</code></pre>
+]</code></pre></small>
 </details>
 
 <details>
 
-<summary>Endpoint 6</summary>
+<summary><h3>Endpoint 6</h3></summary>
 
-<h3>Request URL</h3>
+<p><strong>Request URL</strong></p>
 <ul>
 <li>URL: https://api.gsa.gov/travel/perdiem/v2/rates/conus/zipcodes/{year}</li>
 <li>Description: Mapping of ZIP codes to DID and state locations</li>
 <li>Example: https://api.gsa.gov/travel/perdiem/v2/rates/conus/zipcodes/2023</li>
 </ul>
-<h3>Response (JSON output)</h3>
-<pre><code>[
+<p><strong>Response (JSON output)</strong></p>
+<small><pre><code>[
     {
         "Zip": "57716",
         "DID": "0",
@@ -843,7 +837,7 @@ The API will return one of the following responses:
         "DID": "0",
         "ST": "NM"
     }
-]</code></pre>
+]</code></pre></small>
 </details>
 
 ## Contact us
