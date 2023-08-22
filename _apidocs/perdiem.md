@@ -92,12 +92,12 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
 This API has six primary endpoints:
 
-* https://api.gsa.gov/travel/perdiem/v2/rates/city/**{city}**/state/**{ST}**/year/**{year}**
-* https://api.gsa.gov/travel/perdiem/v2/rates/state/**{ST}**/year/**{year}**
-* https://api.gsa.gov/travel/perdiem/v2/rates/zip/**{zip}**/year/**{year}**
-* https://api.gsa.gov/travel/perdiem/v2/rates/conus/lodging/**{year}**
-* https://api.gsa.gov/travel/perdiem/v2/rates/conus/mie/**{year}**
-* https://api.gsa.gov/travel/perdiem/v2/rates/conus/zipcodes/**{year}**
+* https://api.gsa.gov/travel/perdiem/v2/rates/city/{city}/state/{ST}/year/{year}
+* https://api.gsa.gov/travel/perdiem/v2/rates/state/{ST}/year/{year}
+* https://api.gsa.gov/travel/perdiem/v2/rates/zip/{zip}/year/{year}
+* https://api.gsa.gov/travel/perdiem/v2/rates/conus/lodging/{year}
+* https://api.gsa.gov/travel/perdiem/v2/rates/conus/mie/{year}
+* https://api.gsa.gov/travel/perdiem/v2/rates/conus/zipcodes/{year}
 
 ### Rate limits
 
@@ -109,7 +109,7 @@ You can view the full details of this API in the <a href="v2/openapi.yaml">OpenA
 
 ## API description
 
-### About per diem rates  
+### About per diem rates
 
 GSA sets rates for geographic areas it determines called _primary destinations._ Areas outside the primary destinations are covered by the same, nation-wide _standard rate._ The per diem rate database is organized by location and fiscal year. The meals value applies to the entire FY.
 
@@ -119,14 +119,13 @@ For more details on per diem rates please consult the [Federal Travel Regulation
 
 ### Sensitive API process
 
-> [!WARNING]
-> The per diem rates results do not contain every city name in the continental US. If you cannot find your city name, search by state and filter by county or by ZIP code. Another alternative method is described below.
+**Warning:** The per diem rates results do not contain every city name in the continental US. If you cannot find your city name, search by state and filter by county or by ZIP code. Another alternative method is described below.
 
 ---
 
 If you often reach the maximum rate limit per hour, try the steps belowing using endpoint 6 in conjuction with endpoint 4 to retrieve rates for a given destination ID.
 
-1. Submit a query to endpoint 6. Example URL: https://api.gsa.gov/travel/perdiem/v2/rates/conus/zipcodes/**2023**
+1. Submit a query to endpoint 6. **Example URL:** https://api.gsa.gov/travel/perdiem/v2/rates/conus/zipcodes/2023
 2. Filter by the ZIP code(s) applicable to you.
   - Example ZIP: **10005**
   - Expected result: 
@@ -137,7 +136,7 @@ If you often reach the maximum rate limit per hour, try the steps belowing using
         "ST": "NY"
     }]
     ```
-3. Using the DID obtained from endpoint 6, submit a query to endpoint 4. Example URL: https://api.gsa.gov/travel/perdiem/v2/rates/conus/lodging/2023
+3. Using the DID obtained from endpoint 6, submit a query to endpoint 4. **Example URL:** https://api.gsa.gov/travel/perdiem/v2/rates/conus/lodging/2023
 4. First filter by applicable state (ST) and then filter by DID:
   - Example state/DID: **NY/266**
   - Expected result:
@@ -165,16 +164,15 @@ If you often reach the maximum rate limit per hour, try the steps belowing using
 
 ---
 
-When using endpoint 1, you may encounter a city name containing a period (.), apostrophe ('), or hyphen (-). If these characters are used in the search URL, you will receive unexpected or no results at all. To prevent this issue from occurring, remove the period and/or replace the apostrophe/hyphen with a space **(UTF-8 encoding= %20)**. Below are examples of city names with special characters:
+When using endpoint 1, you may encounter a city name containing a **period (.), apostrophe ('), or hyphen (-)**. If these characters are used in the search URL, you will receive unexpected or no results at all. To prevent this issue from occurring, remove the period and/or replace the apostrophe/hyphen with a space **(UTF-8 encoding= %20)**. Below are examples of city names with special characters:
 
-* O'Fallon, IL becomes city/o%20fallon. URL: https://api.gsa.gov/travel/perdiem/v2/rates/city/O%20FALLON/state/IL/year/2023
-* East St. Louis, IL becomes city/east%20st%20louis. URL: https://api.gsa.gov/travel/perdiem/v2/rates/city/east%20st%20louis/state/IL/year/2023
-* Wilkes-Barre, PA becomes city/wilkes%20barre (this example returns the standard rate, helping to demonstrate an API call for a city name not within the states dataset). URL: https://api.gsa.gov/travel/perdiem/v2/rates/city/wilkes%20barre/state/PA/year/2023
+* O'Fallon, IL becomes city/o%20fallon. **URL:** https://api.gsa.gov/travel/perdiem/v2/rates/city/O%20FALLON/state/IL/year/2023
+* East St. Louis, IL becomes city/east%20st%20louis. **URL:** https://api.gsa.gov/travel/perdiem/v2/rates/city/east%20st%20louis/state/IL/year/2023
+* Wilkes-Barre, PA becomes city/wilkes%20barre (this example returns the standard rate, helping to demonstrate an API call for a city name not within the states dataset). **URL:** https://api.gsa.gov/travel/perdiem/v2/rates/city/wilkes%20barre/state/PA/year/2023
 
 ### Path parameters
 
-> [!NOTE]
-> City and state names are **case-insensitive** in the request URL.
+**Note:** City and state names are **case-insensitive** in the request URL.
 
 The per diem API offers four **search parameters** used in combination with the <a href="#api-endpoints">six endpoints</a> introduced in the **API endpoints** portion of this documentation.
 
@@ -249,16 +247,16 @@ The API will return one of the following responses:
 
 <summary>Endpoint 1</summary>
 
-### Request URL
+<h3>Request URL</h3>
 
-* URL: https://api.gsa.gov/travel/perdiem/v2/rates/city/**{city}**/state/**{ST}**/year/**{year}**
-* Description: Rates by city, state, and year
-* Example: https://api.gsa.gov/travel/perdiem/v2/rates/city/**Fairfax**/state/**VA**/year/**2023**
+<ul>
+<li>URL: https://api.gsa.gov/travel/perdiem/v2/rates/city/{city}/state/{ST}/year/{year}</li>
+<li>Description: Rates by city, state, and year</li>
+<li>Example: https://api.gsa.gov/travel/perdiem/v2/rates/city/Fairfax/state/VA/year/2023</li>
+</ul>
 
-### Response (JSON output)
-
-```json
-{
+<h3>Response (JSON output)</h3>
+<pre><code>{
     "request": null,
     "errors": null,
     "rates": [
@@ -355,25 +353,23 @@ The API will return one of the following responses:
         }
     ],
     "version": null
-}
-```
-
+}</code></pre>
 </details>
 
 <details>
 
 <summary>Endpoint 2</summary>
 
-### Request URL
+<h3>Request URL</h3>
 
-* URL: https://api.gsa.gov/travel/perdiem/v2/rates/state/**{ST}**/year/**{year}**
-* Description: Rates by state and year
-* Example: https://api.gsa.gov/travel/perdiem/v2/rates/state/**VA**/year/**2023**
+<ul>
+<li>URL: https://api.gsa.gov/travel/perdiem/v2/rates/state/{ST}/year/{year}</li>
+<li>Description: Rates by state and year</li>
+<li>Example: https://api.gsa.gov/travel/perdiem/v2/rates/state/VA/year/2023</li>
+</ul>
 
-### Response (JSON output)
-
-```json
-{
+<h3>Response (JSON output)</h3>
+<pre><code>{
     "request": null,
     "errors": null,
     "rates": [
@@ -553,25 +549,23 @@ The API will return one of the following responses:
         }
     ],
     "version": null
-}
-```
-
+}</code></pre>
 </details>
 
 <details>
 
 <summary>Endpoint 3</summary>
 
-### Request URL
+<h3>Request URL</h3>
 
-* URL: https://api.gsa.gov/travel/perdiem/v2/rates/zip/**{zip}**/year/**{year}**
-* Description: Rates by ZIP code and year
-* Example: https://api.gsa.gov/travel/perdiem/v2/rates/zip/**20171**/year/**2023**
+<ul>
+<li>URL: https://api.gsa.gov/travel/perdiem/v2/rates/zip/{zip}/year/{year}</li>
+<li>Description: Rates by ZIP code and year</li>
+<li>Example: https://api.gsa.gov/travel/perdiem/v2/rates/zip/20171/year/2023</li>
+</ul>
 
-### Response (JSON output)
-
-```json
-{
+<h3>Response (JSON output)</h3>
+<pre><code>{
     "request": null,
     "errors": null,
     "rates": [
@@ -668,25 +662,21 @@ The API will return one of the following responses:
         }
     ],
     "version": null
-}
-```
-
+}</code></pre>
 </details>
 
 <details>
 
 <summary>Endpoint 4</summary>
 
-### Request URL
-
-* URL: https://api.gsa.gov/travel/perdiem/v2/rates/conus/lodging/**{year}**
-* Description: Lodging rates for the continental United States by year
-* Example: https://api.gsa.gov/travel/perdiem/v2/rates/conus/lodging/**2023**
-
-### Response (JSON output)
-
-```json
-[
+<h3>Request URL</h3>
+<ul>
+<li>URL: https://api.gsa.gov/travel/perdiem/v2/rates/conus/lodging/{year}</li>
+<li>Description: Lodging rates for the continental United States by year</li>
+<li>Example: https://api.gsa.gov/travel/perdiem/v2/rates/conus/lodging/2023</li>
+</ul>
+<h3>Response (JSON output)</h3>
+<pre><code>[
     {
         "Jan": "98",
         "Feb": "98",
@@ -763,25 +753,21 @@ The API will return one of the following responses:
         "DID": "274",
         "Dec": "101"
     }
-]
-```
-
+]</code></pre>
 </details>
 
 <details>
 
 <summary>Endpoint 5</summary>
 
-### Request URL
-
-* URL: https://api.gsa.gov/travel/perdiem/v2/rates/conus/mie/**{year}**
-* Description: Meals and incidental expense (M&IE) breakdown rates by year
-* Example: https://api.gsa.gov/travel/perdiem/v2/rates/conus/mie/**2023**
-
-### Response (JSON output)
-
-```json
-[
+<h3>Request URL</h3>
+<ul>
+<li>URL: https://api.gsa.gov/travel/perdiem/v2/rates/conus/mie/{year}</li>
+<li>Description: Meals and incidental expense (M&IE) breakdown rates by year</li>
+<li>Example: https://api.gsa.gov/travel/perdiem/v2/rates/conus/mie/2023</li>
+</ul>
+<h3>Response (JSON output)</h3>
+<pre><code>[
     {
         "total": 59,
         "breakfast": 13,
@@ -822,25 +808,21 @@ The API will return one of the following responses:
         "incidental": 5,
         "FirstLastDay": 59.25
     }
-]
-```
-
+]</code></pre>
 </details>
 
 <details>
 
 <summary>Endpoint 6</summary>
 
-### Request URL
-
-* URL: https://api.gsa.gov/travel/perdiem/v2/rates/conus/zipcodes/**{year}**
-* Description: Mapping of ZIP codes to DID and state locations
-* Example: https://api.gsa.gov/travel/perdiem/v2/rates/conus/zipcodes/**2023**
-
-### Response (JSON output)
-
-```json
-[
+<h3>Request URL</h3>
+<ul>
+<li>URL: https://api.gsa.gov/travel/perdiem/v2/rates/conus/zipcodes/{year}</li>
+<li>Description: Mapping of ZIP codes to DID and state locations</li>
+<li>Example: https://api.gsa.gov/travel/perdiem/v2/rates/conus/zipcodes/2023</li>
+</ul>
+<h3>Response (JSON output)</h3>
+<pre><code>[
     {
         "Zip": "57716",
         "DID": "0",
@@ -861,9 +843,7 @@ The API will return one of the following responses:
         "DID": "0",
         "ST": "NM"
     }
-]
-```
-
+]</code></pre>
 </details>
 
 ## Contact us
