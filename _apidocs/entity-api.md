@@ -8810,7 +8810,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ## Additional Help References
 1. <a href="v1/SAM_REPS_AND_CERTS_MAPPING.xlsx">Reps and Certs Mapping</a>
-2. <a href="v1/SAM Functional Data Dictionary.pdf" target="_blank">Data Dictionary</a>
+2. <a href="v1/SAM Functional Data Dictionary_June 23_v2.pdf" target="_blank">Data Dictionary</a>
 
 
 ## HTTP Response Codes
@@ -12352,6 +12352,7 @@ Disclaimer:
 | 01/17/2023 | v4.0    | *  Uploaded a revised Data Dictionary with data fields arranged in the Alphabetical order.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | 01/30/2023 | v4.1    | *  Uploaded a revised Data Dictionary with data fields added for Proceedings and Responsibility/Qualification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | 02/28/2023 | v4.2    | *  Removed MPIN occurrences from the Data Dictionary and the "Overview" > "Sensitive (CUI) Data" section.  <br><br> * Indicated that MPIN has been deprecated in the "Response Schema" >  "coreData" >  "entityInformation Sub Section".
-| 06/27/2023 | v4.3 | * Uploaded a revised Data Dictionary with updated Socio Economic Self Selections.
+| 06/27/2023 | v4.3    | * Uploaded a revised Data Dictionary with updated Socio Economic Self Selections.
+| 08/22/2023 | v4.4    | * Uploaded a revised Data Dictionary with updated Business Types.
 
 <p><small><a href="#">Back to top</a></small></p>
