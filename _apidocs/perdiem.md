@@ -245,7 +245,7 @@ The API will return one of the following responses:
 
 <details>
 
-<summary><h3>Endpoint 1</h3></summary>
+<summary>Endpoint 1</summary>
 
 <p><strong>Request URL</strong></p>
 <ul>
@@ -356,7 +356,7 @@ The API will return one of the following responses:
 
 <details>
 
-<summary><h3>Endpoint 2</h3></summary>
+<summary>Endpoint 2</summary>
 
 <p><strong>Request URL</strong></p>
 <ul>
@@ -550,7 +550,7 @@ The API will return one of the following responses:
 
 <details>
 
-<summary><h3>Endpoint 3</h3></summary>
+<summary>Endpoint 3</summary>
 
 <p><strong>Request URL</strong></p>
 <ul>
@@ -661,7 +661,7 @@ The API will return one of the following responses:
 
 <details>
 
-<summary><h3>Endpoint 4</h3></summary>
+<summary>Endpoint 4</summary>
 
 <p><strong>Request URL</strong></p>
 <ul>
@@ -752,7 +752,7 @@ The API will return one of the following responses:
 
 <details>
 
-<summary><h3>Endpoint 5</h3></summary>
+<summary>Endpoint 5</summary>
 
 <p><strong>Request URL</strong></p>
 <ul>
@@ -807,7 +807,7 @@ The API will return one of the following responses:
 
 <details>
 
-<summary><h3>Endpoint 6</h3></summary>
+<summary>Endpoint 6</summary>
 
 <p><strong>Request URL</strong></p>
 <ul>
