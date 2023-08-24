@@ -192,10 +192,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "placeOfPerformance": {
                      "streetAddress": "1800 F Street, NW",
                      "streetAddress2": "",
-                     "city": {
-                        "code": "1000",
-                        "name": "Alexandria"
-                     },
+                     "city": "Alexandria",
                      "country": {
                         "code": "USA",
                         "name": "UNITED STATES"
@@ -249,10 +246,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "placeOfPerformance": {
                      "streetAddress": "street 123",
                      "streetAddress2": "alley 4",
-                     "city": {
-                        "code": "9192",
-                        "name": "Brambleton"
-                     },
+                     "city": "Brambleton",
                      "country": {
                         "code": "USA",
                         "name": "UNITED STATES"
@@ -302,10 +296,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "placeOfPerformance": {
                      "streetAddress": "Test place",
                      "streetAddress2": "",
-                     "city": {
-                        "code": "4000",
-                        "name": "Atlanta"
-                     },
+                     "city": "Atlanta",
                      "country": {
                         "code": "USA",
                         "name": "UNITED STATES"
@@ -365,10 +356,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "placeOfPerformance": {
                      "streetAddress": "Test place",
                      "streetAddress2": "",
-                     "city": {
-                        "code": "4000",
-                        "name": "Atlanta"
-                     },
+                     "city": "Atlanta",
                      "country": {
                         "code": "USA",
                         "name": "UNITED STATES"
@@ -396,10 +384,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "placeOfPerformance": {
                      "streetAddress": "street 123",
                      "streetAddress2": "alley 4",
-                     "city": {
-                        "code": "9192",
-                        "name": "Brambleton"
-                     },
+                     "city": "Brambleton",
                      "country": {
                         "code": "USA",
                         "name": "UNITED STATES"
@@ -521,10 +506,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "placeOfPerformance":{
                      "streetAddress":"1800 F Street, NW",
                      "streetAddress2":"",
-                     "city":{
-                        "code":"1000",
-                        "name":"Alexandria"
-                     },
+                     "city": "Alexandria",
                      "country":{
                         "code":"USA",
                         "name":"UNITED STATES"
@@ -596,10 +578,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "placeOfPerformance":{
                      "streetAddress":"Test place",
                      "streetAddress2":"",
-                     "city":{
-                        "code":"4000",
-                        "name":"Atlanta"
-                     },
+                     "city": "Atlanta",
                      "country":{
                         "code":"USA",
                         "name":"UNITED STATES"
@@ -627,10 +606,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "placeOfPerformance":{
                      "streetAddress":"street 123",
                      "streetAddress2":"alley 4",
-                     "city":{
-                        "code":"9192",
-                        "name":"Brambleton"
-                     },
+                     "city": "Brambleton",
                      "country":{
                         "code":"USA",
                         "name":"UNITED STATES"
@@ -695,10 +671,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                                     "placeOfPerformance": {
                      "streetAddress": "Test place",
                      "streetAddress2": "",
-                     "city": {
-                        "code": "4000",
-                        "name": "Atlanta"
-                     },
+                     "city": "Atlanta",
                      "country": {
                         "code": "USA",
                         "name": "UNITED STATES"
@@ -727,10 +700,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                                    "placeOfPerformance": {
                      "streetAddress": "street 123",
                      "streetAddress2": "alley 4",
-                     "city": {
-                        "code": "9192",
-                        "name": "Brambleton"
-                     },
+                     "city": "Brambleton",
                      "country": {
                         "code": "USA",
                         "name": "UNITED STATES"
@@ -1035,10 +1005,7 @@ HTTP Status Code | Response Type | Reason  | Description
                   "placeOfPerformance":{
                      "streetAddress":"1800 F Street, NW",
                      "streetAddress2":"",
-                     "city":{
-                        "code":"1000",
-                        "name":"Alexandria"
-                     },
+                     "city": "Alexandria",
                      "country":{
                         "code":"USA",
                         "name":"UNITED STATES"
@@ -1091,10 +1058,7 @@ HTTP Status Code | Response Type | Reason  | Description
                   "placeOfPerformance":{
                      "streetAddress":"street 123",
                      "streetAddress2":"alley 4",
-                     "city":{
-                        "code":"9192",
-                        "name":"Brambleton"
-                     },
+                     "city": "Brambleton",
                      "country":{
                         "code":"USA",
                         "name":"UNITED STATES"
@@ -1146,10 +1110,7 @@ HTTP Status Code | Response Type | Reason  | Description
                   "placeOfPerformance":{
                      "streetAddress":"Test place",
                      "streetAddress2":"",
-                     "city":{
-                        "code":"4000",
-                        "name":"Atlanta"
-                     },
+                     "city": "Atlanta",
                      "country":{
                         "code":"USA",
                         "name":"UNITED STATES"
@@ -1261,10 +1222,7 @@ HTTP Status Code | Response Type | Reason  | Description
                   "placeOfPerformance":{
                      "streetAddress":"1800 F Street, NW",
                      "streetAddress2":"",
-                     "city":{
-                        "code":"1000",
-                        "name":"Alexandria"
-                     },
+                     "city": "Alexandria",
                      "country":{
                         "code":"USA",
                         "name":"UNITED STATES"
@@ -1336,10 +1294,7 @@ HTTP Status Code | Response Type | Reason  | Description
                   "placeOfPerformance":{
                      "streetAddress":"Test place",
                      "streetAddress2":"",
-                     "city":{
-                        "code":"4000",
-                        "name":"Atlanta"
-                     },
+                     "city": "Atlanta",
                      "country":{
                         "code":"USA",
                         "name":"UNITED STATES"
@@ -1371,10 +1326,7 @@ HTTP Status Code | Response Type | Reason  | Description
                   "placeOfPerformance":{
                      "streetAddress":"street 123",
                      "streetAddress2":"alley 4",
-                     "city":{
-                        "code":"9192",
-                        "name":"Brambleton"
-                     },
+                     "city": "Brambleton",
                      "country":{
                         "code":"USA",
                         "name":"UNITED STATES"
@@ -1436,9 +1388,7 @@ subAwardDataList.overallDescription |string  || Yes | Describes the contract req
 subAwardDataList.placeOfPerformance | JSON Object |NA |Yes | Sub contractor Principal Place of Performance
 subAwardDataList.placeOfPerformance.streetAddess | string ||Yes|Sub Awardee POP Street Address
 subAwardDataList.placeOfPerformance.streetAddess2 | string ||No|Sub Awardee POP Street Address2
-subAwardDataList.placeOfPerformance.city | JSON Object | NA |Yes |Sub Awardee POP City Information. The City Code and name need to be specified.
-subAwardDataList.placeOfPerformance.city.code | string |||Sub Awardee POP City Code
-subAwardDataList.placeOfPerformance.city.name | string |||Sub Awardee POP City Name
+subAwardDataList.placeOfPerformance.city | string |||Sub Awardee POP City Name
 subAwardDataList.placeOfPerformance.state | JSON Object |NA |Yes|Sub Awardee POP State Information. The State Code and name need to be specified.
 subAwardDataList.placeOfPerformance.state.code | string |||Sub Awardee POP State Code
 subAwardDataList.placeOfPerformance.state.name | string ||  |Sub Awardee POP State Name
@@ -1483,9 +1433,7 @@ subAwardDataList.overallDescription |string  ||   | Yes
 subAwardDataList.placeOfPerformance | JSON Object ||Yes | Sub contractor Principal Place of Performance
 subAwardDataList.placeOfPerformance.streetAddess | string ||Yes|Sub Awardee POP Street Address
 subAwardDataList.placeOfPerformance.streetAddess2 | string ||No|Sub Awardee POP Street Address2
-subAwardDataList.placeOfPerformance.city | JSON Object ||Yes |Sub Awardee POP City Information. The City Code and name need to be specified.
-subAwardDataList.placeOfPerformance.city.code | string |||Sub Awardee POP City Code
-subAwardDataList.placeOfPerformance.city.name | string |||Sub Awardee POP City Name
+subAwardDataList.placeOfPerformance.city | string |||Sub Awardee POP City Name
 subAwardDataList.placeOfPerformance.state | JSON Object ||Yes|Sub Awardee POP State Information. The State Code and name need to be specified.
 subAwardDataList.placeOfPerformance.state.code | string |||Sub Awardee POP State Code
 subAwardDataList.placeOfPerformance.state.name | string ||  |Sub Awardee POP State Name
