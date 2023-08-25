@@ -485,7 +485,6 @@ components:
                           enum: ["0","1"]
                         isSelected: 
                           type: boolean
-                          example: false
                     minItems: 1
                     maxItems: 2                
                   subAwardDataList: 
@@ -561,7 +560,6 @@ components:
                                 enum: [0,1]
                               isSelected: 
                                 type: boolean
-                                example: false
                           minItems: 1
                           maxItems: 2  
                         topPayEmployees: 
@@ -663,7 +661,6 @@ components:
                           enum: ["0","1"]
                         isSelected: 
                           type: boolean
-                          example: false
                     minItems: 1
                     maxItems: 2 
                   subAssistanceDataList: 
@@ -742,7 +739,6 @@ components:
                                 enum: [0,1]
                               isSelected: 
                                 type: boolean
-                                example: false
                           minItems: 1
                           maxItems: 2 
                         topPayEmployees: 
