@@ -1510,7 +1510,7 @@ reportingAgency | string | 32 characters |Yes  | The ID of the Federal awarding 
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="fsrs-bulkupload-api/v1/openapi.yaml" download="OpenAPI">OpenAPI File</a>
+<a href="v1/fsrsapi.yml" download="fsrsapi">OpenAPI File</a>
 
 ## Error Messages
 
