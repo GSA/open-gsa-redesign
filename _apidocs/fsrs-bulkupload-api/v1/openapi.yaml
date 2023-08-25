@@ -139,7 +139,6 @@ paths:
           description: Internal Server Error
         '501':
           description: Not Implemented
-          
   #/acquisition/v1/ffata:
     delete:
       tags:
@@ -186,7 +185,6 @@ paths:
           description: Internal Server Error
         '501':
           description: Not Implemented
-
   /assistance/v1/ffata:
     post:
       tags:
@@ -275,7 +273,6 @@ paths:
           description: Internal Server Error
         '501':
           description: Not Implemented
-
   #/assistance/v1/ffata:  
     get:
       tags:
@@ -328,7 +325,6 @@ paths:
           description: Internal Server Error
         '501':
           description: Not Implemented
-
   #/assistance/v1/ffata:
     delete:
       tags:
@@ -375,8 +371,6 @@ paths:
           description: Internal Server Error
         '501':
           description: Not Implemented
-
-
 components:
   schemas:
     getContractFFATA: 
@@ -405,7 +399,6 @@ components:
                 type: string
                 example: 2100
           minItems: 1
-          
     deleteContractFFATA: 
       type: object
       required:
@@ -431,8 +424,7 @@ components:
               reportingAgency: 
                 type: string
                 example: 2100
-          minItems: 1
-                
+          minItems: 1     
     FFATAContractObject:
       type: object
       required:
@@ -575,8 +567,7 @@ components:
                                 example: 100000
                           minItems: 5
                           maxItems: 5
-              minItems: 1
-    
+              minItems: 1  
     getGrantFFATA: 
       type: object
       required:
@@ -597,7 +588,6 @@ components:
                 type: string
                 example: 2023
           minItems: 1
-    
     deleteGrantFFATA: 
       type: object
       required:
@@ -617,8 +607,7 @@ components:
               reportPeriodYear: 
                 type: string
                 example: 2023
-          minItems: 1                
-    
+          minItems: 1                    
     FFATAGrantObject:
       type: object
       required:
