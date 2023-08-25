@@ -50,8 +50,6 @@ paths:
               $ref: '#/components/schemas/FFATAContractObject'
         required: true
       responses:
-        '200':
-          description: OK
         '201':
           description: Created
         '400':
@@ -98,8 +96,6 @@ paths:
       responses:
         '200':
           description: OK
-        '201':
-          description: Created
         '400':
           description: Bad Request
         '401':
@@ -242,8 +238,6 @@ paths:
               $ref: '#/components/schemas/FFATAGrantObject'
         required: true
       responses:
-        '200':
-          description: OK
         '201':
           description: Created
         '400':
@@ -290,8 +284,6 @@ paths:
       responses:
         '200':
           description: OK
-        '201':
-          description: Created
         '400':
           description: Bad Request
         '401':
@@ -481,7 +473,6 @@ components:
                 - reportPeriodMon
                 - reportPeriodYear
                 - reportingAgency
-                - recovery_model_questions
                 - subAwardDataList
               items: 
                 type: object
@@ -517,6 +508,7 @@ components:
                           enum: ["0","1"]
                         isSelected: 
                           type: boolean
+                          example: false
                     minItems: 1
                     maxItems: 2                
                   subAwardDataList: 
@@ -528,7 +520,6 @@ components:
                       - uei
                       - overallDescription
                       - placeOfPerformance
-                      - recovery_model_questions
                     items: 
                       type: object
                       properties: 
@@ -560,14 +551,8 @@ components:
                               type: string
                               example: 
                             city: 
-                              type: object
-                              properties: 
-                                code: 
-                                  type: string
-                                  example: 1000
-                                name: 
-                                  type: string
-                                  example: Alexandria
+                              type: string
+                              example: Alexandria
                             country: 
                               type: object
                               properties: 
@@ -599,6 +584,7 @@ components:
                                 enum: [0,1]
                               isSelected: 
                                 type: boolean
+                                example: false
                           minItems: 1
                           maxItems: 2  
                         topPayEmployees: 
@@ -674,7 +660,6 @@ components:
                 - primeFAIN
                 - reportPeriodMon
                 - reportPeriodYear
-                - recovery_model_questions
                 - subAssistanceDataList            
               items: 
                 type: object
@@ -701,6 +686,7 @@ components:
                           enum: ["0","1"]
                         isSelected: 
                           type: boolean
+                          example: false
                     minItems: 1
                     maxItems: 2 
                   subAssistanceDataList: 
@@ -712,7 +698,6 @@ components:
                       - subAssistanceObligationOrActionDate
                       - overallDescription
                       - placeOfPerformance
-                      - recovery_model_questions
                     items: 
                       type: object
                       properties: 
@@ -747,14 +732,8 @@ components:
                               type: string
                               example: 
                             city: 
-                              type: object
-                              properties: 
-                                code: 
-                                  type: string
-                                  example: 1000
-                                name: 
-                                  type: string
-                                  example: Alexandria
+                              type: string
+                              example: Alexandria
                             country: 
                               type: object
                               properties: 
@@ -786,6 +765,7 @@ components:
                                 enum: [0,1]
                               isSelected: 
                                 type: boolean
+                                example: false
                           minItems: 1
                           maxItems: 2 
                         topPayEmployees: 
