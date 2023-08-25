@@ -1375,9 +1375,9 @@ primeEntityInformation.reportPeriodYear |string  || Yes | This field should refl
 primeEntityInformation.reportingAgency | string | 32 characters  | Yes | The ID of the Federal awarding agency as from FPDS-NG
 primeEntityInformation.treasurySymbol |string  || The first six digits of the Treasury Account Symbol (XX-XXXX) are required. | The Treasury Account Symbol associated with the prime contract award can be found on FPDS under Contract Record or you can contact the Contracting Officer to request the TAS. Be sure to include any dashes when entering the symbol value into this field on the spreadsheet
 primeEntityInformation.programTitle | string || No | Program or Project Title 
-primeEntityInformation.recovery_model_questions |JSON Array||Yes | Array of the Compensation Questions for the prime Awardee. There will be 2 questions, and therefore atmost 2 elements in this array
-primeEntityInformation.recovery_model_questions.code |string||Yes | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the [Recovery Model Questions (Compensation Questions)](#recovery_model_questions) section for details.
-primeEntityInformation.recovery_model_questions.isSelected |string  || Yes | Boolean value representing the response to the compensation question.
+primeEntityInformation.recovery_model_questions |JSON Array||No | Array of the Compensation Questions for the prime Awardee. There will be 2 questions, and therefore atmost 2 elements in this array
+primeEntityInformation.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the [Recovery Model Questions (Compensation Questions)](#recovery_model_questions) section for details.
+primeEntityInformation.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
 primeEntityInformation.subAwardDataList |string  ||Yes  |Information about the sub Contractors. If the report is being submitted for multiple sub contracts, then this array will have multiple elements, one for each of the sub Contracts.
 primeEntityInformation.subAwardDataList Details | | | | 
 subAwardDataList.subAwardNumber | string |32 characters  | Yes | Number assigned by the Prime Contractor to track this sub-contract
@@ -1388,7 +1388,7 @@ subAwardDataList.overallDescription |string  || Yes | Describes the contract req
 subAwardDataList.placeOfPerformance | JSON Object |NA |Yes | Sub contractor Principal Place of Performance
 subAwardDataList.placeOfPerformance.streetAddess | string ||Yes|Sub Awardee POP Street Address
 subAwardDataList.placeOfPerformance.streetAddess2 | string ||No|Sub Awardee POP Street Address2
-subAwardDataList.placeOfPerformance.city | string |||Sub Awardee POP City Name
+subAwardDataList.placeOfPerformance.city | string || Yes |Sub Awardee POP City Name
 subAwardDataList.placeOfPerformance.state | JSON Object |NA |Yes|Sub Awardee POP State Information. The State Code and name need to be specified.
 subAwardDataList.placeOfPerformance.state.code | string |||Sub Awardee POP State Code
 subAwardDataList.placeOfPerformance.state.name | string ||  |Sub Awardee POP State Name
@@ -1396,10 +1396,10 @@ subAwardDataList.placeOfPerformance.country | JSON Object | NA |Yes|Sub Awardee 
 subAwardDataList.placeOfPerformance.country.code | string || |Sub Awardee POP Country Code
 subAwardDataList.placeOfPerformance.country.name | string ||  |Sub Awardee POP Country Name
 subAwardDataList.placeOfPerformance.zip | string ||Yes|Sub Awardee POP ZIP Code
-subAwardDataList.recovery_model_questions |JSON Array|NA |NA| Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
-subAwardDataList.recovery_model_questions.code |string||Yes | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the [Recovery Model Questions (Compensation Questions)](#recovery_model_questions) section for details.
-subAwardDataList.recovery_model_questions.isSelected |string  || Yes | Boolean value representing the response to the compensation question.
-subAwardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the Array requires 5 elements| This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if response to compensation question 1 is true and compensation question 2 is false
+subAwardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the sub contractor. | Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
+subAwardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the [Recovery Model Questions (Compensation Questions)](#recovery_model_questions) section for details.
+subAwardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
+subAwardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the Array requires 5 elements| This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if response to compensation question 1 is true and compensation question 2 is false. If the responses to the compensation questions are already provided with the SAM registration for this entity, then this information is not required to be provided.
 subAwardDataList.topPayEmployees.full_name |string  ||Yes if subAwardDataList.topPayEmployees is required| The full name of the top pay employee
 subAwardDataList.topPayEmployees.salary | string  ||Yes if subAwardDataList.topPayEmployees is required|The total compensation of the top pay employee
 
@@ -1418,22 +1418,22 @@ primeEntityInformation.primeFAIN | string |  255 characters | Yes | This is the 
 primeEntityInformation.reportPeriodMon | string | 10 characters  | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
 primeEntityInformation.reportPeriodYear | string  | 10 characters | Yes | This field should reflect the Reporting Year of the report being submitted. 
 primeEntityInformation.reportingAgency | string | 32 characters | Yes | The ID of the Federal awarding agency 
-primeEntityInformation.eftIndicator | string | 10 characters | No |If your organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, you would note it here. This is not a required field but should be provided if applicable.
-primeEntityInformation.recovery_model_questions |  ||Yes |Array of the Compensation Questions. There will be 2 questions, and therefore 2 elements in this array
-primeEntityInformation.recovery_model_questions.code |string||Yes | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the [Recovery Model Questions (Compensation Questions)](#recovery_model_questions) section for details.
-primeEntityInformation.recovery_model_questions.isSelected |string  || Yes | Boolean value representing the response to the compensation question.
+primeEntityInformation.eftIndicator | string | 10 characters | No |If your organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, this information will be picked up from the SAM registration. Otherwise, if applicable, you would note it here. 
+primeEntityInformation.recovery_model_questions |JSON Array||No | Array of the Compensation Questions for the prime Awardee. There will be 2 questions, and therefore atmost 2 elements in this array
+primeEntityInformation.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the [Recovery Model Questions (Compensation Questions)](#recovery_model_questions) section for details.
+primeEntityInformation.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
 primeEntityInformation.subAwardDataList |string  ||Yes  |Information about the sub Contractors. If the report is being submitted for multiple sub contracts, then this array will have multiple elements, one for each of the sub Contracts.
 primeEntityInformation.subAwardDataList Details | || | 
 subAwardDataList.subAssistanceNumber | string  | 32 characters |Yes  | Number assigned by the Prime to track this sub Grant
 subAwardDataList.uei |string | 13 characters | Yes | Sub Awardee UEI
-subAwardDataList.eftIndicator | string | 10 characters | No |If your organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, you would note it here. This is not a required field but should be provided if applicable.
+subAwardDataList.eftIndicator | string | 10 characters | No |If the subawardee organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, this information will be picked up from the SAM registration. Otherwise, if applicable, you would note it here. 
 subAwardDataList.subAssistanceDollars |string  | 20 characters| Yes | Amount for this award to this sub award
 subAwardDataList.subAssistanceObligationOrActionDate|string ||Yes |Date subaward was made in YYYY-MM-DD format 
 subAwardDataList.overallDescription |string  ||   | Yes 
 subAwardDataList.placeOfPerformance | JSON Object ||Yes | Sub contractor Principal Place of Performance
 subAwardDataList.placeOfPerformance.streetAddess | string ||Yes|Sub Awardee POP Street Address
 subAwardDataList.placeOfPerformance.streetAddess2 | string ||No|Sub Awardee POP Street Address2
-subAwardDataList.placeOfPerformance.city | string |||Sub Awardee POP City Name
+subAwardDataList.placeOfPerformance.city | string || Yes |Sub Awardee POP City Name
 subAwardDataList.placeOfPerformance.state | JSON Object ||Yes|Sub Awardee POP State Information. The State Code and name need to be specified.
 subAwardDataList.placeOfPerformance.state.code | string |||Sub Awardee POP State Code
 subAwardDataList.placeOfPerformance.state.name | string ||  |Sub Awardee POP State Name
@@ -1441,10 +1441,10 @@ subAwardDataList.placeOfPerformance.country | JSON Object ||Yes|Sub Awardee POP 
 subAwardDataList.placeOfPerformance.country.code | string || |Sub Awardee POP Country Code
 subAwardDataList.placeOfPerformance.country.name | string ||  |Sub Awardee POP Country Name
 subAwardDataList.placeOfPerformance.zip | string ||Yes|Sub Awardee POP ZIP Code
-subAwardDataList.recovery_model_questions |JSON Array||NA|Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
-subAwardDataList.recovery_model_questions.code |string||Yes | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the [Recovery Model Questions (Compensation Questions)](#recovery_model_questions) section for details.
-subAwardDataList.recovery_model_questions.isSelected |string  || Yes | Boolean value representing the response to the compensation question.
-subAwardDataList.topPayEmployees|JSON Array||Conditional - see Description. If required, the Array requires 5 elements| This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if response to compensation question 1 is true and compensation question 2 is false
+subAwardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the sub contractor. | Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
+subAwardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the [Recovery Model Questions (Compensation Questions)](#recovery_model_questions) section for details.
+subAwardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
+subAwardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the Array requires 5 elements| This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if response to compensation question 1 is true and compensation question 2 is false. If the responses to the compensation questions are already provided with the SAM registration for this entity, then this information is not required to be provided.
 subAwardDataList.topPayEmployees.full_name |string  ||Yes if subAwardDataList.topPayEmployees is required| The full name of the top pay employee
 subAwardDataList.topPayEmployees.salary | string  ||Yes if subAwardDataList.topPayEmployees is required|The total compensation of the top pay employee
 
@@ -1566,10 +1566,10 @@ Error codes may change depending on the error given; document will be updated ac
 
 Error Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
-201|recovery_model_questions |	Please provide the responses to the compensation questions as captured under recovery_model_questions json element |	recovery_model_questions are required  | submitFFATAReport(Contracts and Grants)
-201|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required |submitFFATAReport(Contracts and Grants)
-201|recovery_model_questions |	TBD |	Compensation Q2 code and response are required	| submitFFATAReport(Contracts and Grants)
-201|recovery_model_questions |	 | Compensation question code provided did not match expected codes |	submitFFATAReport(Contracts and Grants)
+201|recovery_model_questions |	Responses to Compensation Questions were not found under SAM registration for the UEI <UEI Number>. Please provide the responses to the compensation questions under recovery_model_questions json element |Responses to compensation questions are required  if they are not available for the Prime Entity's SAM registration| submitFFATAReport(Contracts and Grants)
+201|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required if responses to compensation questions is provided|submitFFATAReport(Contracts and Grants)
+201|recovery_model_questions |Since you responded true to the first compensation question, a response for the second compensation question is required.|	Compensation Q2 code and response are required	| submitFFATAReport(Contracts and Grants)
+201|recovery_model_questions |An incorrect compensation question code was provided for the Prime/Sub Awardee. Please refer to the Lookup table information for the correct codes to use.| Compensation question code provided did not match expected codes |	submitFFATAReport(Contracts and Grants)
 201|recovery_model_questions |	Compensation question isSelected value can only be true or false | Compensation question isSelected value can only be true or false | submitFFATAReport(Contracts and Grants)
 201|subAwardDataList|	Invalid JSON format: At least one Sub-Awardee information is required for the reporting | At least one Sub-Awardee information is required for the reporting | submitFFATAReport(Contracts)
 201|subAwardDataList.subAwardNumber|	Sub-contract number is required | Sub-contract number is required | submitFFATAReport(Contracts)
@@ -1610,10 +1610,10 @@ Error Code|Field | Error Message | Reason/Description | Operation
 201|subAssistanceDataList.subAssistanceObligationOrActionDate |	Subcontract Date is required | Subcontract Date is required| submitFFATAReport(Grants)
 201|subAssistanceDataList.subAssistanceObligationOrActionDate |	Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | submitFFATAReport(Grants)
 201|subAssistanceDataList.subAssistanceObligationOrActionDate |	The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | submitFFATAReport(Grants)
-200|recovery_model_questions |	Please provide the responses to the compensation questions as captured under recovery_model_questions json element |	recovery_model_questions are required  | updateFFATAReport(Contracts and Grants)
-200|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required |updateFFATAReport(Contracts and Grants)
-200|recovery_model_questions |	TBD |	Compensation Q2 code and response are required	| updateFFATAReport(Contracts and Grants)
-200|recovery_model_questions |	 | Compensation question code provided did not match expected codes |	updateFFATAReport(Contracts and Grants)
+200|recovery_model_questions |	Responses to Compensation Questions were not found under SAM registration for the UEI <UEI Number>. Please provide the responses to the compensation questions under recovery_model_questions json element |Responses to compensation questions are required  if they are not available for the Prime Entity's SAM registration| updateFFATAReport(Contracts and Grants)
+200|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required if responses to compensation questions is provided|updateFFATAReport(Contracts and Grants)
+200|recovery_model_questions |Since you responded true to the first compensation question, a response for the second compensation question is required.|	Compensation Q2 code and response are required	| updateFFATAReport(Contracts and Grants)
+200|recovery_model_questions |An incorrect compensation question code was provided for the Prime/Sub Awardee. Please refer to the Lookup table information for the correct codes to use.| Compensation question code provided did not match expected codes |	updateFFATAReport(Contracts and Grants)
 200|recovery_model_questions |	Compensation question isSelected value can only be true or false | Compensation question isSelected value can only be true or false | updateFFATAReport(Contracts and Grants)
 200|subAwardDataList|	Invalid JSON format: At least one Sub-Awardee information is required for the reporting | At least one Sub-Awardee information is required for the reporting | updateFFATAReport(Contracts)
 200|subAwardDataList.subAwardNumber|	Sub-contract number is required | Sub-contract number is required | updateFFATAReport(Contracts)
@@ -1654,7 +1654,6 @@ Error Code|Field | Error Message | Reason/Description | Operation
 200|subAssistanceDataList.subAssistanceObligationOrActionDate |	Subcontract Date is required | Subcontract Date is required| updateFFATAReport(Grants)
 200|subAssistanceDataList.subAssistanceObligationOrActionDate |	Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM- DD Format) | updateFFATAReport(Grants)
 200|subAssistanceDataList.subAssistanceObligationOrActionDate |	The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | updateFFATAReport(Grants)
-
 
 ## FAQ
 
