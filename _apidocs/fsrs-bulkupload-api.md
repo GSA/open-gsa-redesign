@@ -110,7 +110,9 @@ State | State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.htm
 V1 versions of APIs will be utilizing the API Key mechanism as outlined in this documentation. Future versions of APIs will be made available to support OAuth 2.0 as soon as possible. The documentation will be updated as soon as more information is available for the oAuth implementation.  
 
 ## FSRS Subaward Reporting Bulk Upload API Request and Responses
+
 This API has 8 endpoints as outlined below. 
+
 Endpoint Name | Short Description |
 -----|-----------------
 Submit FFATA Report (Contracts)     | Can be used to submit FFATA Subaward Reports for reporting on one or more Contracts.
@@ -1429,7 +1431,7 @@ subAwardDataList.uei |string | 13 characters | Yes | Sub Awardee UEI
 subAwardDataList.eftIndicator | string | 10 characters | No |If the subawardee organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, this information will be picked up from the SAM registration. Otherwise, if applicable, you would note it here. 
 subAwardDataList.subAssistanceDollars |string  | 20 characters| Yes | Amount for this award to this sub award
 subAwardDataList.subAssistanceObligationOrActionDate|string ||Yes |Date subaward was made in YYYY-MM-DD format 
-subAwardDataList.overallDescription |string  ||   | Yes 
+subAwardDataList.overallDescription |string  |   | Yes |
 subAwardDataList.placeOfPerformance | JSON Object ||Yes | Sub contractor Principal Place of Performance
 subAwardDataList.placeOfPerformance.streetAddess | string ||Yes|Sub Awardee POP Street Address
 subAwardDataList.placeOfPerformance.streetAddess2 | string ||No|Sub Awardee POP Street Address2
@@ -1461,7 +1463,7 @@ contractNumber | string  | 50 characters | Yes | If this report being deleted is
 idvReferenceNumber | string | 50 characters  | Conditional - Yes |If this report being deleted is for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
 reportPeriodMon | string  | 10 characters| Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
 reportPeriodYear | string | | Yes | This field should reflect the Reporting Year of the report being submitted.
-reportingAgency |string  |32 characters| Yes | | The ID of the Federal awarding agency
+reportingAgency |string  |32 characters| Yes | The ID of the Federal awarding agency
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1478,13 +1480,13 @@ reportPeriodYear |string  |  | Yes | Reporting Year of the report.
 
 <p><small><a href="#">Back to top</a></small></p>
 
-##  Get FFATA Report Contract JSON
+###  Get FFATA Report Contract JSON
 
 * Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Field Length| Required | Description
 -----|-----------|--------|--------|------------
-contractFFATAData.primeEntityInformation |JSON Array  |  | || Information about the prime Contractor. This array can have multiple elements.
+contractFFATAData.primeEntityInformation |JSON Array  |  | | Information about the prime Contractor. This array can have multiple elements.
 contractNumber | string  |50 characters|Yes | contractNumber or the Award ID for your contract as reported in FPDS. Or can be Task Order Number
 idvReferenceNumber | string  | 50 characters|  |If Task Order Number is specified in contractNumber field then enter the contract number which matches the Reference IDV field in FPDS.
 reportPeriodMon | string  | 10 characters| Yes | Reporting Month of the report. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
