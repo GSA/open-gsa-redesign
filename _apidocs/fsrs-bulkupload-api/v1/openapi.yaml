@@ -1,26 +1,3 @@
-openapi: 3.0.3
-info:
-  title: API for Large Volume Processing Report (FSRS) 
-  description: Swagger documentation for API for Large Volume Processing Report (FSRS)  
-  license:
-    name: GSA
-  version: 0.1.0
-servers:
-  - url: https://api.sam.gov/acquisition/v1/ffata?api_key={a valid API Key}
-  - url: https://api.sam.gov/assistance/v1/ffata?api_key={a valid API Key}
-  - url: https://api-alpha.sam.gov/acquisition/v1/ffata?api_key={a valid API Key}
-  - url: https://api-alpha.sam.gov/assistance/v1/ffata?api_key={a valid API Key}
-tags:
-  - name: acquisition-controller
-    description: All endpoints for acquisition FFATA Reporting
-    #externalDocs:
-     # description: Find out more
-    #  url: http://swagger.io
-  - name: assistance-controller
-    description: All endpoints for assistance FFATA Reporting
-    #externalDocs:
-     # description: Find out more about our store
-      #url: http://swagger.io
 paths:
   /acquisition/v1/ffata:
     post:
