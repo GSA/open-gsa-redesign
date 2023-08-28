@@ -57,9 +57,6 @@ Read permission for FFATA under Entity Reporting | No | No | Yes | No
 
 **Note:** sam.gov is moving towards utilizing OAuth 2.0 workflow leveraging OKTA for Authentication of System Accounts. As a result of this implementation, API Keys will be replaced with the usage of client credentials, namely clientId and secret. As a result of this implementation, clients will first need to request for the access token, which will then be required to be sent along with the API requests. To support this change, v2 versions of all APIs outlined in this documentation will be released.
 
-Refer : 
-https://www.ibm.com/docs/en/tfim/6.2.2.6?topic=overview-oauth-20-workflow
-
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Lookup/Meta-Data
@@ -152,7 +149,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was created | As described below
 
-The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update FFATA Report (Contracts) request to update the report so it can be submitted successfully.
+The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [s](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update FFATA Report (Contracts) request to update the report so it can be submitted successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -447,7 +444,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was successfully created | As described below
 
-The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update FFATA Report (Grants) request to update the report so it can be submitted successfully.
+The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [s](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update FFATA Report (Grants) request to update the report so it can be submitted successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -763,7 +760,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string |  Report successfully updated| As described below
 
-The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be submitted successfully.
+The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [s](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be submitted successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -798,7 +795,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report successfully updated | As described below
 
-The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be submitted successfully.
+The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [s](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be submitted successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -1566,7 +1563,7 @@ This section details possible validation failure error messages for specific ope
 
 Error codes may change depending on the error given; document will be updated accordingly.
 
-Error Code|Field | Error Message | Reason/Description | Operation
+HTTP Status Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
 201|recovery_model_questions |	Responses to Compensation Questions were not found under SAM registration for the UEI <UEI Number>. Please provide the responses to the compensation questions under recovery_model_questions json element |Responses to compensation questions are required  if they are not available for the Prime Entity's SAM registration| submitFFATAReport(Contracts and Grants)
 201|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required if responses to compensation questions is provided|submitFFATAReport(Contracts and Grants)
