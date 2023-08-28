@@ -55,7 +55,7 @@ Role/Permission    | Submit FFATA Report | Update FFATA Report | Get FFATA Repor
 Create and delete permission for FFATA under Entity Reporting | Yes | Yes | Yes | Yes
 Read permission for FFATA under Entity Reporting | No | No | Yes | No
 
-**Note:** sam.gov is moving towards utilizing OAuth 2.0 workflow leveraging OKTA for Authentication of System Accounts. As a result of this implementation, API Keys will be replaced with the usage of client credentials, namely clientId and secret. As a result of this implementation, clients will first need to request for the access token, which will then be required to be sent along with the API requests. To support this change, v2 versions of all APIs outlined in this documentation will be released.
+**Note:** sam.gov is moving towards utilizing OAuth 2.0 workflow leveraging OKTA for Authentication of System Accounts. As a result of this implementation, API Keys will be replaced with the usage of client credentials, namely clientId and secret. Clients will first need to request for the access token, which will then be required to be sent along with the API requests. To support this change, future versions of all APIs outlined in this documentation will be released.
 
 <p><small><a href="#">Back to top</a></small></p>
 
