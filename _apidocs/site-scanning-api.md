@@ -305,7 +305,7 @@ The API will return one of the following responses:
 
 ## Download the Data Directly
 
-In order to download all of the scan data as a flat file, the system generates two sets of CSV and JSON exports every weekend.  The primary set includes scan data for all live URLs (i.e. `Final URL - Live` = TRUE).  This data can be accessed at:  
+In order to download all of the scan data as a flat file, the system generates two sets of CSV and JSON exports every weekend.  The primary set includes scan data for all live URLs (i.e. `Final URL - Live` = TRUE), but excludes machine-readable data files (e.g. XML, JSON).  This data can be accessed at:  
   
 * [https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.csv](https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.csv)
 * [https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.json](https://api.gsa.gov/technology/site-scanning/data/weekly-snapshot.json)
