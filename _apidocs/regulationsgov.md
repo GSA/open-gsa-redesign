@@ -107,7 +107,8 @@ By registering for, receiving and using a key to the Comment API, the key holder
 
 1. When developing interfaces for commenters who will submit comment language and/or attachments through the Comment API, the key holder will include in the interface:
       1. A link to the same [terms of participation](https://www.regulations.gov/user-notice) and [privacy notice](https://www.regulations.gov/privacy-notice) that users encounter on the comment form for Regulations.gov, and
-      2. A link to the Federal Register notice or other specific document in Regulations.gov for which the key holder is collecting or facilitating comments to be delivered through the Comment API.
+      2. A link to the Federal Register notice or other specific document in Regulations.gov for which the key holder is collecting or facilitating comments to be delivered through the Comment API. Title the link "See the full Notice of Proposed Rulemaking here."
+      3. Include the following sentence on the interface: "Comments submitted through this site are transmitted to the regulatory agency through Regulations.gov."
 
 2. The key holder certifies that:
       1. I will only submit comments through the Comment API that it has gathered through lawful means and that, to the best of the key holder’s knowledge, represent comments from real persons, and 
