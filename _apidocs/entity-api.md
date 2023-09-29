@@ -8809,7 +8809,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Additional Help References
-Go to <a href="https://sam.gov/data-services/Data%20Dictionary/Entity%20Information">SAM.gov Data Services</a> for Reps and Certs Mapping and Data Dictionary documents
+Go to <a target="_blank" href="https://sam.gov/data-services/Data%20Dictionary/Entity%20Information">SAM.gov Data Services</a> for Reps and Certs Mapping and Data Dictionary documents.
 
 
 ## HTTP Response Codes
