@@ -8809,8 +8809,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Additional Help References
-1. <a href="v1/SAM_REPS_AND_CERTS_MAPPING.xlsx">Reps and Certs Mapping</a>
-2. <a href="v1/SAM Functional Data Dictionary_June 23_v2.pdf" target="_blank">Data Dictionary</a>
+Go to <a target="_blank" href="https://sam.gov/data-services/Data%20Dictionary/Entity%20Information">SAM.gov Data Services</a> for Reps and Certs Mapping and Data Dictionary documents.
 
 
 ## HTTP Response Codes
@@ -12354,5 +12353,6 @@ Disclaimer:
 | 02/28/2023 | v4.2    | *  Removed MPIN occurrences from the Data Dictionary and the "Overview" > "Sensitive (CUI) Data" section.  <br><br> * Indicated that MPIN has been deprecated in the "Response Schema" >  "coreData" >  "entityInformation Sub Section".
 | 06/27/2023 | v4.3    | * Uploaded a revised Data Dictionary with updated Socio Economic Self Selections.
 | 08/22/2023 | v4.4    | * Uploaded a revised Data Dictionary with updated Business Types.
+| 09/29/2023 | v4.5    | * Updated "Additional Help References" documentation to link to SAM.gov Data Services page.
 
 <p><small><a href="#">Back to top</a></small></p>
