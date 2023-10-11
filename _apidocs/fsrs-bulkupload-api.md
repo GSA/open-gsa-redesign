@@ -920,8 +920,8 @@ The API will return HTTP Status code 204 if the report is deleted successfully. 
 ### Get FFATA Report (Contracts)
 
 ------- | -------
-**Request Type** | GET
-**URL** | /acquisition/v1/ffata
+**Request Type** | POST
+**URL** | /acquisition/v1/ffata/get
 **Summary** |  Using this endpoint, user will be able to retrieve specific contract reports based on the provided search criteria
 **Consumes** | Request Parameters
 **Produces** | JSON
@@ -1144,8 +1144,8 @@ HTTP Status Code | Response Type | Reason  | Description
 ### Get FFATA Report (Grants) 
 
 ------- | -------
-**Request Type** | GET
-**URL** | /assistance/v1/ffata
+**Request Type** | POST
+**URL** | /assistance/v1/ffata/get
 **Summary** | Using this endpoint, user will be able to retrieve specific grants reports based on the provided search criteria
 **Consumes** | application/JSON
 **Produces** | JSON
@@ -1179,7 +1179,7 @@ Note: Will return JSON response same as POST Request JSON
 }
 </pre></code>
 </p>
-</details>details>
+</details>
 
 #### Responses
 
