@@ -1519,41 +1519,41 @@ The following error messages may be returned as part of the response to various 
 
 Error codes may change depending on the error given; document will be updated accordingly.
 
-Error Code	|	Error Message	|	Reason/Description	|	Operation
-----------	|	-------------------	|	-------------------	|	--------------
-401	|	Please provide valid Authorization Email & API Key	|	API Key and/or Authorization Email are required	|	All
-401	|	Encountered error authenticating user.Invalid JWT provided	|	Invalid Authorization Email provided	|	All
-403	|	You do not have permissions to access this resource	|	Account does not have appropriate privileges to perform the operation	|	All
-404	|	Requested URL not found	|	Not found	|	All
-500	|	Internal Server Error encountered. Please try after sometime	|	Internal Server Error	|	All
-501	|	Invalid request	|	Not Implemented	|	All
-400	|	Error processing the request	|	Invalid JSON format provided	|	All
-400	|	primeEntityInformation is required	|	primeEntityInformation element is missing or empty	|	All
-400	|	Invalid JSON structure. contractFFATAData is required	|	The contractFFATAData element is required in the request body.	|	submitFFATAReport ,updateFFATAReport(Contracts)
-400	|	Invalid JSON structure. assistanceFFATAData is required	|	The assistanceFFATAData element is required in the request body.	|	submitFFATAReport,updateFFATAReport(Grants)
-400	|	Invalid JSON structure: At least one primeEntityInformation is required for contract reporting.	|	Request Body JSON structure is invalid. At least one contractFFATAData.primeEntityInformation element is required for contract reporting	|	submitFFATAReport ,updateFFATAReport(Contracts)
-400	|	Invalid JSON structure: At least one primeEntityInformation is required for grant reporting.	|	Request Body JSON structure is invalid. At least one assistanceFFATAData.primeEntityInformation element is required for  grant reporting	|	submitFFATAReport,updateFFATAReport(Grants)
-400	|	Ensure that the FAIN Number is correct. No matching Grant found for the provided FAIN number	|	As provided in assistanceFFATAData.primeEntityInformation.primeFAIN, FAIN Number not found	|	submitFFATAReport,updateFFATAReport(Grants)
-400	|	Could not find a record matching the contractNumber and reportingAgency provided	|	No record found for the Contract Number and Reporting Agency combination (Combination of contractFFATAData.primeEntityInformation.contractNumber and contractFFATAData.primeEntityInformation.reportingAgency in the Request Body).	|	submitFFATAReport ,updateFFATAReport(Contracts)
-400	|	Could not find a record associating the IDV reference number with the Contract number	|	IDV Reference Number not found associated with the Contract Number (Combination of contractFFATAData.primeEntityInformation.contractNumber and contractFFATAData.primeEntityInformation.idvReferenceNumber)	|	submitFFATAReport ,updateFFATAReport(Contracts)
-400	|	Report Already Exists for the specified Month/Year  - Status: Submitted; Created By - User Name	|	A FFATA report for this contract already exists in the system for the given reporting period (Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency)	|	submitFFATAReport(Contracts)
-400	|	Report Already Exists for the specified Month/Year  - Status: Submitted; Created By - User Name	|	A FFATA report for this grant already exists in the system for the given reporting period (Combination of primeFAIN:reportPeriodMon:ReportPeriodYear)	|	submitFFATAReport(Grants)
-400	|	Please specify the idvReferenceNumber to correctly identify the contract being reported on	|	User needs to specify the idvReferenceNumber to correctly identify the record as multiple records were found for the contractNumber and reportingAgency combination	|	submitFFATAReport(Contracts)
-400	|	Cannot update. A FFATA report for the specified month/year does not exist for the Contract.	|	No Report found for the specified Contract for the Month/Year. Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency does not exist	|	updateFFATAReport(Contracts)
-400	|	Cannot update. A FFATA report for the specified month/year does not exist for the Grant.	|	No Report found for the specified Grant for the Month/Year. Combination of primeFAIN:reportPeriodMon:ReportPeriodYear	|	updateFFATAReport(Grants)
-400	|	Contract Number is required for Prime Entity	|	contractFFATAData.primeEntityInformation.contractNumber was not provided.	|	submitFFATAReport ,updateFFATAReport(Contracts)
-400	|	Reporting period month is required for Prime Entity	|	For Contracts contractFFATAData.reportPeriodMon is a required field. For Grants assistanceFFATAData.reportPeriodMon is a required field.	|	submitFFATAReport ,updateFFATAReport (Contracts and Grants)
-400	|	Please provide a valid value for the reporting period month. It is expected to be a 2 digit month	|	reportPeriodMon is expected as a 2 digit number (01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December)	|	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400	|	Reporting period year is required for Prime Entity.	|	For Contracts, contractFFATAData.reportPeriodYear is a required field. For Grants, assistanceFFATAData.reportPeriodYearreportPeriodYear is a required field.	|	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400	|	Please provide a valid value for the reporting period year. It is expected to be a 4 digit year	|	For Contracts, contractFFATAData.reportPeriodYear should be a 4 digit year. For Grants, assistanceFFATAData.reportPeriodYear should be a 4 digit year.	|	submitFFATAReport ,updateFFATAReport(Contracts and Grants)
-400	|	Please provide the Federal awarding agency Id	|	contractFFATAData.reportingAgency is a required field.	|	submitFFATAReport ,updateFFATAReport(Contracts)
-400	|	Please provide the correct format for the Reporting Agency	|	contractFFATAData.reportingAgency provided is invalid.	|	submitFFATAReport ,updateFFATAReport(Contracts)
-400	|	At least one primeEntityInformation element is required for the contract reporting	|	At least one primeEntityInformation element is required for the contract reporting	|	getFFATAReport(Contracts)
-400	|	At least one primeEntityInformation element is required for the grant reporting	|	At least one primeEntityInformation element is required for the grant reporting	|	getFFATAReport(Grants)
-400	|	At least one search criteria needs to be specified. One of contractNumber, idvReferenceNumber, reportPeriodMon, reportPeriodYear, reportingAgency	|	contractNumber, idvReferenceNumber, reportPeriodMon, reportPeriodYear and reportingAgency are missing for at least one element in the request	|	getFFATAReport(Contracts and Grants)
-400	|	At least one search criteria needs to be specified. One of primeFAIN, reportPeriodMon, reportPeriodYear	|	primeFAIN, reportPeriodMon and reportPeriodYear are missing for at least one element in the request.	|	getFFATAReport(Contracts and Grants)
-400	|	At least one primeEntityInformation element is required for deleting	|	At least one primeEntityInformation element is required for deleting	|	deleteFFATAReport(Contracts and Grants)
-400	|	No report found matching the specified parameters for the report	|	No report found matching the specified parameters for the report.	|	deleteFFATAReport(Contracts and Grants)
+Error Code |	Error Message	| Reason/Description | Operation |
+---------- | ------------- | ------------------ | --------- |
+401	|	Please provide valid Authorization Email & API Key	|	API Key and/or Authorization Email are required	|	All |
+401	|	Encountered error authenticating user.Invalid JWT provided	|	Invalid Authorization Email provided	|	All |
+403	|	You do not have permissions to access this resource	|	Account does not have appropriate privileges to perform the operation	|	All |
+404	|	Requested URL not found	|	Not found	|	All |
+500	|	Internal Server Error encountered. Please try after sometime	|	Internal Server Error	|	All |
+501	|	Invalid request	|	Not Implemented	|	All |
+400	|	Error processing the request	|	Invalid JSON format provided	|	All |
+400	|	primeEntityInformation is required	|	primeEntityInformation element is missing or empty	|	All |
+400	|	Invalid JSON structure. contractFFATAData is required	|	The contractFFATAData element is required in the request body.	|	submitFFATAReport ,updateFFATAReport(Contracts) |
+400	|	Invalid JSON structure. assistanceFFATAData is required	|	The assistanceFFATAData element is required in the request body.	|	submitFFATAReport,updateFFATAReport(Grants) |
+400	|	Invalid JSON structure: At least one primeEntityInformation is required for contract reporting.	|	Request Body JSON structure is invalid. At least one contractFFATAData.primeEntityInformation element is required for contract reporting	|	submitFFATAReport ,updateFFATAReport(Contracts) |
+400	|	Invalid JSON structure: At least one primeEntityInformation is required for grant reporting.	|	Request Body JSON structure is invalid. At least one assistanceFFATAData.primeEntityInformation element is required for  grant reporting	|	submitFFATAReport,updateFFATAReport(Grants) |
+400	|	Ensure that the FAIN Number is correct. No matching Grant found for the provided FAIN number	|	As provided in assistanceFFATAData.primeEntityInformation.primeFAIN, FAIN Number not found	|	submitFFATAReport,updateFFATAReport(Grants) |
+400	|	Could not find a record matching the contractNumber and reportingAgency provided	|	No record found for the Contract Number and Reporting Agency combination (Combination of contractFFATAData.primeEntityInformation.contractNumber and contractFFATAData.primeEntityInformation.reportingAgency in the Request Body).	|	submitFFATAReport ,updateFFATAReport(Contracts) |
+400	|	Could not find a record associating the IDV reference number with the Contract number	|	IDV Reference Number not found associated with the Contract Number (Combination of contractFFATAData.primeEntityInformation.contractNumber and contractFFATAData.primeEntityInformation.idvReferenceNumber)	|	submitFFATAReport ,updateFFATAReport(Contracts) |
+400	|	Report Already Exists for the specified Month/Year  - Status: Submitted; Created By - User Name	|	A FFATA report for this contract already exists in the system for the given reporting period (Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency)	|	submitFFATAReport(Contracts) |
+400	|	Report Already Exists for the specified Month/Year  - Status: Submitted; Created By - User Name	|	A FFATA report for this grant already exists in the system for the given reporting period (Combination of primeFAIN:reportPeriodMon:ReportPeriodYear)	|	submitFFATAReport(Grants) |
+400	|	Please specify the idvReferenceNumber to correctly identify the contract being reported on	|	User needs to specify the idvReferenceNumber to correctly identify the record as multiple records were found for the contractNumber and reportingAgency combination	|	submitFFATAReport(Contracts) |
+400	|	Cannot update. A FFATA report for the specified month/year does not exist for the Contract.	|	No Report found for the specified Contract for the Month/Year. Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency does not exist	|	updateFFATAReport(Contracts) |
+400	|	Cannot update. A FFATA report for the specified month/year does not exist for the Grant.	|	No Report found for the specified Grant for the Month/Year. Combination of primeFAIN:reportPeriodMon:ReportPeriodYear	|	updateFFATAReport(Grants) |
+400	|	Contract Number is required for Prime Entity	|	contractFFATAData.primeEntityInformation.contractNumber was not provided.	|	submitFFATAReport ,updateFFATAReport(Contracts) |
+400	|	Reporting period month is required for Prime Entity	|	For Contracts contractFFATAData.reportPeriodMon is a required field. For Grants assistanceFFATAData.reportPeriodMon is a required field.	|	submitFFATAReport ,updateFFATAReport (Contracts and Grants) |
+400	|	Please provide a valid value for the reporting period month. It is expected to be a 2 digit month	|	reportPeriodMon is expected as a 2 digit number (01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December)	|	submitFFATAReport ,updateFFATAReport(Contracts and Grants) |
+400	|	Reporting period year is required for Prime Entity.	|	For Contracts, contractFFATAData.reportPeriodYear is a required field. For Grants, assistanceFFATAData.reportPeriodYearreportPeriodYear is a required field.	|	submitFFATAReport ,updateFFATAReport(Contracts and Grants) |
+400	|	Please provide a valid value for the reporting period year. It is expected to be a 4 digit year	|	For Contracts, contractFFATAData.reportPeriodYear should be a 4 digit year. For Grants, assistanceFFATAData.reportPeriodYear should be a 4 digit year.	|	submitFFATAReport ,updateFFATAReport(Contracts and Grants) |
+400	|	Please provide the Federal awarding agency Id	|	contractFFATAData.reportingAgency is a required field.	|	submitFFATAReport ,updateFFATAReport(Contracts) |
+400	|	Please provide the correct format for the Reporting Agency	|	contractFFATAData.reportingAgency provided is invalid.	|	submitFFATAReport ,updateFFATAReport(Contracts) |
+400	|	At least one primeEntityInformation element is required for the contract reporting	|	At least one primeEntityInformation element is required for the contract reporting	|	getFFATAReport(Contracts) |
+400	|	At least one primeEntityInformation element is required for the grant reporting	|	At least one primeEntityInformation element is required for the grant reporting	|	getFFATAReport(Grants) |
+400	|	At least one search criteria needs to be specified. One of contractNumber, idvReferenceNumber, reportPeriodMon, reportPeriodYear, reportingAgency	|	contractNumber, idvReferenceNumber, reportPeriodMon, reportPeriodYear and reportingAgency are missing for at least one element in the request	|	getFFATAReport(Contracts and Grants) |
+400	|	At least one search criteria needs to be specified. One of primeFAIN, reportPeriodMon, reportPeriodYear	|	primeFAIN, reportPeriodMon and reportPeriodYear are missing for at least one element in the request.	|	getFFATAReport(Contracts and Grants) |
+400	|	At least one primeEntityInformation element is required for deleting	|	At least one primeEntityInformation element is required for deleting	|	deleteFFATAReport(Contracts and Grants) |
+400	|	No report found matching the specified parameters for the report	|	No report found matching the specified parameters for the report.	|	deleteFFATAReport(Contracts and Grants) |
 
 <p><small><a href="#">Back to top</a></small></p>
 
