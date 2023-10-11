@@ -1520,7 +1520,7 @@ The following error messages may be returned as part of the response to various 
 Error codes may change depending on the error given; document will be updated accordingly.
 
 Error Code	|	Error Message	|	Reason/Description	|	Operation
-----------	|	--------------	|	-------------------	|	-------------------
+----------	|	-------------------	|	-------------------	|	--------------
 401	|	Please provide valid Authorization Email & API Key	|	API Key and/or Authorization Email are required	|	All
 401	|	Encountered error authenticating user.Invalid JWT provided	|	Invalid Authorization Email provided	|	All
 403	|	You do not have permissions to access this resource	|	Account does not have appropriate privileges to perform the operation	|	All
