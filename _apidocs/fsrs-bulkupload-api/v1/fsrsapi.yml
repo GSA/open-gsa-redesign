@@ -87,7 +87,53 @@ paths:
           description: Internal Server Error
         '501':
           description: Not Implemented
-  #/acquisition/v1/ffata/get:
+  #/acquisition/v1/ffata:
+    delete:
+      tags:
+        - acquisition-controller
+      summary: Deletes Contract FFATA Subaward Report(s)
+      description: Deletes Contract FFATA Subaward Report(s)
+      operationId: deleteFFATAContractReport
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          schema:
+            type: string
+        - name: requestBody
+          in: query
+          description: Delete Contract FFATA Subaward report(s)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/deleteContractFFATA'
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '405':
+          description: Validation exception          
+        '500':
+          description: Internal Server Error
+        '501':
+          description: Not Implemented
+  /acquisition/v1/ffata/get:
     post:
       tags:
         - acquisition-controller
@@ -138,53 +184,7 @@ paths:
         '500':
           description: Internal Server Error
         '501':
-          description: Not Implemented
-  #/acquisition/v1/ffata:
-    delete:
-      tags:
-        - acquisition-controller
-      summary: Deletes Contract FFATA Subaward Report(s)
-      description: Deletes Contract FFATA Subaward Report(s)
-      operationId: deleteFFATAContractReport
-      parameters:
-        - name: Authorization
-          in: header
-          description: Authorization
-          required: true
-          schema:
-            type: string
-        - name: api_key
-          in: query
-          description: api_key
-          required: true
-          schema:
-            type: string
-        - name: requestBody
-          in: query
-          description: Delete Contract FFATA Subaward report(s)
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/deleteContractFFATA'
-      responses:
-        '200':
-          description: successful operation
-        '400':
-          description: Bad Request
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-        '405':
-          description: Validation exception          
-        '500':
-          description: Internal Server Error
-        '501':
-          description: Not Implemented
+          description: Not Implemented          
   /assistance/v1/ffata:
     post:
       tags:
@@ -273,7 +273,53 @@ paths:
           description: Internal Server Error
         '501':
           description: Not Implemented
-  #/assistance/v1/ffata/get:  
+  #/assistance/v1/ffata:
+    delete:
+      tags:
+        - assistance-controller
+      summary: Delete Grant FFATA Subaward report(s)
+      description: Delete Grant FFATA Subaward report(s)
+      operationId: deleteFFATAGrantReport
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: api_key
+          required: true
+          schema:
+            type: string
+        - name: requestBody
+          in: query
+          description: Delete Grant FFATA Subaward report(s)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/deleteGrantFFATA'
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '405':
+          description: Validation exception          
+        '500':
+          description: Internal Server Error
+        '501':
+          description: Not Implemented
+  /assistance/v1/ffata/get:  
     post:
       tags:
         - assistance-controller
@@ -324,53 +370,7 @@ paths:
         '500':
           description: Internal Server Error
         '501':
-          description: Not Implemented
-  #/assistance/v1/ffata:
-    delete:
-      tags:
-        - assistance-controller
-      summary: Delete Grant FFATA Subaward report(s)
-      description: Delete Grant FFATA Subaward report(s)
-      operationId: deleteFFATAGrantReport
-      parameters:
-        - name: Authorization
-          in: header
-          description: Authorization
-          required: true
-          schema:
-            type: string
-        - name: api_key
-          in: query
-          description: api_key
-          required: true
-          schema:
-            type: string
-        - name: requestBody
-          in: query
-          description: Delete Grant FFATA Subaward report(s)
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/deleteGrantFFATA'
-      responses:
-        '200':
-          description: successful operation
-        '400':
-          description: Bad Request
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-        '405':
-          description: Validation exception          
-        '500':
-          description: Internal Server Error
-        '501':
-          description: Not Implemented
+          description: Not Implemented          
 components:
   schemas:
     getContractFFATA: 
@@ -474,7 +474,7 @@ components:
                       properties: 
                         code: 
                           type: string
-                          enum: ["1","2"]
+                          enum: ["0","1"]
                         isSelected: 
                           type: boolean
                     minItems: 1
@@ -549,7 +549,7 @@ components:
                             properties: 
                               code: 
                                 type: string
-                                enum: ["3","4"]
+                                enum: [0,1]
                               isSelected: 
                                 type: boolean
                           minItems: 1
@@ -647,7 +647,7 @@ components:
                       properties: 
                         code: 
                           type: string
-                          enum: ["1","2"]
+                          enum: ["0","1"]
                         isSelected: 
                           type: boolean
                     minItems: 1
@@ -725,7 +725,7 @@ components:
                             properties: 
                               code: 
                                 type: string
-                                enum: ["3","4"]
+                                enum: [0,1]
                               isSelected: 
                                 type: boolean
                           minItems: 1
