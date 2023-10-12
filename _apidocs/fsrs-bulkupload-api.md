@@ -1501,7 +1501,7 @@ Name | Data Type | Field Length | Required | Description
 assistanceFFATAData.primeEntityInformation | JSON Array  |   |Yes |Information about the prime Grantor. If the report is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
 primeFAIN | string  |255 characters |Yes | This is the Federal Award Identifier Number (FAIN) for the prime grant award.
 reportPeriodMon | string | 10 characters |Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
-reportingAgency | string | 32 characters |Yes  | The ID of the Federal awarding agency
+reportPeriodYear | string  | | Yes | Reporting Year of the report.
 
 <p><small><a href="#">Back to top</a></small></p>
 
