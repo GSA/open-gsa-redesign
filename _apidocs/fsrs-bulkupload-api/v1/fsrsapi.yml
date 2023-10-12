@@ -87,8 +87,8 @@ paths:
           description: Internal Server Error
         '501':
           description: Not Implemented
-  #/acquisition/v1/ffata:
-    get:
+  #/acquisition/v1/ffata/get:
+    post:
       tags:
         - acquisition-controller
       summary: Get existing FFATA Contract Report(s)
@@ -273,8 +273,8 @@ paths:
           description: Internal Server Error
         '501':
           description: Not Implemented
-  #/assistance/v1/ffata:  
-    get:
+  #/assistance/v1/ffata/get:  
+    post:
       tags:
         - assistance-controller
       summary: Get existing Grant FFATA Subaward report(s)
