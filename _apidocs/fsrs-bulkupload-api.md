@@ -173,11 +173,11 @@ The API will return other HTTP Status codes in case of any other errors and the 
             "recovery_model_questions": 
              [
                  {
-                   "code": "0",
+                   "code": "1",
                    "isSelected": "true"
                  },
                  {
-                   "code": "1",
+                   "code": "2",
                    "isSelected": "true"
                  }                                 
              ],
@@ -205,11 +205,11 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "recovery_model_questions": 
                    [
                       {
-                        "code": "0",
+                        "code": "3",
                         "isSelected": "true"
                       },
                       {
-                        "code": "1",
+                        "code": "4",
                         "isSelected": "false"
                       }                                          
                   ],
@@ -259,11 +259,11 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "recovery_model_questions": 
                    [
                       {
-                        "code": "0",
+                        "code": "3",
                         "isSelected": "true"
                       },
                       {
-                        "code": "1",
+                        "code": "4",
                         "isSelected": "true"
                       }                                          
                   ]
@@ -281,7 +281,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
             "recovery_model_questions": 
              [
                  {
-                   "code": "0",
+                   "code": "1",
                    "isSelected": "false"
                  }                                
              ],
@@ -309,7 +309,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "recovery_model_questions": 
                    [
                       {
-                        "code": "0",
+                        "code": "3",
                         "isSelected": "false"
                       }                                       
                   ]
@@ -341,7 +341,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
             "recovery_model_questions": 
              [
                  {
-                   "code": "0",
+                   "code": "1",
                    "isSelected": "false"
                  }                                
              ],
@@ -369,7 +369,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "recovery_model_questions": 
                    [
                       {
-                        "code": "0",
+                        "code": "3",
                         "isSelected": "false"
                       }                                       
                   ]
@@ -397,11 +397,11 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "recovery_model_questions": 
                    [
                       {
-                        "code": "0",
+                        "code": "3",
                         "isSelected": "true"
                       },
                       {
-                        "code": "1",
+                        "code": "4",
                         "isSelected": "true"
                       }                                          
                   ]
@@ -464,11 +464,11 @@ The API will return other HTTP Status codes in case of any other errors and the 
             "eftIndicator":"9999",
             "recovery_model_questions":[
                {
-                  "code":"0",
+                  "code":"1",
                   "isSelected":"true"
                },
                {
-                  "code":"1",
+                  "code":"2",
                   "isSelected":"false"
                }
             ],
@@ -518,11 +518,11 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   },
                   "recovery_model_questions":[
                      {
-                        "code":"0",
+                        "code":"3",
                         "isSelected":"true"
                      },
                      {
-                        "code":"1",
+                        "code":"4",
                         "isSelected":"false"
                      }
                   ],
@@ -558,11 +558,11 @@ The API will return other HTTP Status codes in case of any other errors and the 
             "eftIndicator":"8978",
             "recovery_model_questions":[
                {
-                  "code":"0",
+                  "code":"1",
                   "isSelected":"true"
                },
                {
-                  "code":"1",
+                  "code":"2",
                   "isSelected":"true"
                }
             ],
@@ -590,7 +590,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   },
                   "recovery_model_questions":[
                      {
-                        "code":"0",
+                        "code":"3",
                         "isSelected":"false"
                      }
                   ]
@@ -618,11 +618,11 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   },
                   "recovery_model_questions":[
                      {
-                        "code":"0",
+                        "code":"3",
                         "isSelected":"true"
                      },
                      {
-                        "code":"1",
+                        "code":"4",
                         "isSelected":"true"
                      }
                   ]
@@ -651,11 +651,11 @@ The API will return other HTTP Status codes in case of any other errors and the 
             "recovery_model_questions": 
              [
                  {
-                   "code": "0",
+                   "code": "1",
                    "isSelected": "true"
                  },
                  {
-                   "code": "1",
+                   "code": "2",
                    "isSelected": "true"
                  }                                 
              ],
@@ -684,7 +684,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "recovery_model_questions": 
                    [
                       {
-                        "code": "0",
+                        "code": "3",
                         "isSelected": "false"
                       }                                        
                   ]
@@ -713,11 +713,11 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "recovery_model_questions": 
                    [
                       {
-                        "code": "0",
+                        "code": "3",
                         "isSelected": "true"
                       },
                       {
-                        "code": "1",
+                        "code": "4",
                         "isSelected": "true"
                       }                                          
                   ]
@@ -986,11 +986,11 @@ HTTP Status Code | Response Type | Reason  | Description
             "programTitle":"Title of the program",
             "recovery_model_questions":[
                {
-                  "code":"0",
+                  "code":"1",
                   "isSelected":"true"
                },
                {
-                  "code":"1",
+                  "code":"2",
                   "isSelected":"true"
                }
             ],
@@ -1017,11 +1017,11 @@ HTTP Status Code | Response Type | Reason  | Description
                   },
                   "recovery_model_questions":[
                      {
-                        "code":"0",
+                        "code":"3",
                         "isSelected":"true"
                      },
                      {
-                        "code":"1",
+                        "code":"4",
                         "isSelected":"true"
                      }
                   ],
@@ -1070,11 +1070,11 @@ HTTP Status Code | Response Type | Reason  | Description
                   },
                   "recovery_model_questions":[
                      {
-                        "code":"0",
+                        "code":"3",
                         "isSelected":"true"
                      },
                      {
-                        "code":"1",
+                        "code":"4",
                         "isSelected":"false"
                      }
                   ]
@@ -1091,11 +1091,11 @@ HTTP Status Code | Response Type | Reason  | Description
             "programTitle":"Title of the program",
             "recovery_model_questions":[
                {
-                  "code":"0",
+                  "code":"1",
                   "isSelected":"false"
                },
                {
-                  "code":"1",
+                  "code":"2",
                   "isSelected":"false"
                }
             ],
@@ -1122,11 +1122,11 @@ HTTP Status Code | Response Type | Reason  | Description
                   },
                   "recovery_model_questions":[
                      {
-                        "code":"0",
+                        "code":"3",
                         "isSelected":"false"
                      },
                      {
-                        "code":"1",
+                        "code":"4",
                         "isSelected":"false"
                      }
                   ]
@@ -1202,11 +1202,11 @@ HTTP Status Code | Response Type | Reason  | Description
             "eftIndicator":"9999",
             "recovery_model_questions":[
                {
-                  "code":"0",
+                  "code":"1",
                   "isSelected":"true"
                },
                {
-                  "code":"1",
+                  "code":"2",
                   "isSelected":"false"
                }
             ],
@@ -1234,11 +1234,11 @@ HTTP Status Code | Response Type | Reason  | Description
                   },
                   "recovery_model_questions":[
                      {
-                        "code":"0",
+                        "code":"3",
                         "isSelected":"true"
                      },
                      {
-                        "code":"1",
+                        "code":"4",
                         "isSelected":"true"
                      }
                   ],
@@ -1274,11 +1274,11 @@ HTTP Status Code | Response Type | Reason  | Description
             "eftIndicator":"8978",
             "recovery_model_questions":[
                {
-                  "code":"0",
+                  "code":"1",
                   "isSelected":"true"
                },
                {
-                  "code":"1",
+                  "code":"2",
                   "isSelected":"true"
                }
             ],
@@ -1306,11 +1306,11 @@ HTTP Status Code | Response Type | Reason  | Description
                   },
                   "recovery_model_questions":[
                      {
-                        "code":"0",
+                        "code":"3",
                         "isSelected":"false"
                      },
                      {
-                        "code":"1",
+                        "code":"4",
                         "isSelected":"false"
                      }
                   ]
@@ -1338,11 +1338,11 @@ HTTP Status Code | Response Type | Reason  | Description
                   },
                   "recovery_model_questions":[
                      {
-                        "code":"0",
+                        "code":"3",
                         "isSelected":"true"
                      },
                      {
-                        "code":"1",
+                        "code":"4",
                         "isSelected":"false"
                      }
                   ]
@@ -1396,7 +1396,7 @@ subAwardDataList.placeOfPerformance.country.code | string || |Sub Awardee POP Co
 subAwardDataList.placeOfPerformance.country.name | string ||  |Sub Awardee POP Country Name
 subAwardDataList.placeOfPerformance.zip | string ||Yes|Sub Awardee POP ZIP Code
 subAwardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the sub contractor. | Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
-subAwardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
+subAwardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 3 for the first question and 4 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
 subAwardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
 subAwardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the Array requires 5 elements| This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if response to compensation question 1 is true and compensation question 2 is false. If the responses to the compensation questions are already provided with the SAM registration for this entity, then this information is not required to be provided.
 subAwardDataList.topPayEmployees.full_name |string  ||Yes if subAwardDataList.topPayEmployees is required| The full name of the top pay employee
@@ -1441,7 +1441,7 @@ subAwardDataList.placeOfPerformance.country.code | string || |Sub Awardee POP Co
 subAwardDataList.placeOfPerformance.country.name | string ||  |Sub Awardee POP Country Name
 subAwardDataList.placeOfPerformance.zip | string ||Yes|Sub Awardee POP ZIP Code
 subAwardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the sub contractor. | Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
-subAwardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
+subAwardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 3 for the first question and 4 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
 subAwardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
 subAwardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the Array requires 5 elements| This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if response to compensation question 1 is true and compensation question 2 is false. If the responses to the compensation questions are already provided with the SAM registration for this entity, then this information is not required to be provided.
 subAwardDataList.topPayEmployees.full_name |string  ||Yes if subAwardDataList.topPayEmployees is required| The full name of the top pay employee
