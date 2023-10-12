@@ -474,7 +474,7 @@ components:
                       properties: 
                         code: 
                           type: string
-                          enum: ["0","1"]
+                          enum: ["1","2"]
                         isSelected: 
                           type: boolean
                     minItems: 1
@@ -549,7 +549,7 @@ components:
                             properties: 
                               code: 
                                 type: string
-                                enum: [0,1]
+                                enum: ["3","4"]
                               isSelected: 
                                 type: boolean
                           minItems: 1
@@ -647,7 +647,7 @@ components:
                       properties: 
                         code: 
                           type: string
-                          enum: ["0","1"]
+                          enum: ["1","2"]
                         isSelected: 
                           type: boolean
                     minItems: 1
@@ -725,7 +725,7 @@ components:
                             properties: 
                               code: 
                                 type: string
-                                enum: [0,1]
+                                enum: ["3","4"]
                               isSelected: 
                                 type: boolean
                           minItems: 1
