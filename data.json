@@ -2718,13 +2718,13 @@
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings 10.6.23.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/7dc1bfe5-39b9-427d-a9b7-19a7401b058f/download/iolp-buildings-10.6.23.xlsx"
+                    "title": "IOLP Buildings 10.13.23.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/3767a486-ab30-4a26-8df4-ce11f1e3109e/download/iolp-buildings-10.13.23.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases 10.6.23.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d6b08414-1dde-438d-b597-3240e00497ea/download/iolp-leases-10.6.23.xlsx"
+                    "title": "IOLP Leases 10.13.23.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/cdd94a08-c82f-4cc9-8d9c-7a1b911e2d90/download/iolp-leases-10.13.23.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
@@ -5626,8 +5626,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 10.6.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/26ee33aa-3208-437c-ad4f-a918c1e6f25d/download/edi-10.6.json"
+                    "title": "EDI 10.13.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/d4fe0aae-b0d1-4cc5-b5a7-e7763a6ee614/download/edi-10.13.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -12238,6 +12238,11 @@
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "EISTotRevFY23_Q3.xlsx",
                     "downloadURL": "https://inventory.data.gov/dataset/5691fe5b-1055-4a3c-888c-4ac52cf87f06/resource/0cfc1588-f8ce-4c32-b82a-779704c10b9d/download/eistotrevfy23_q3.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "EISTotRevFY23_Q4.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/5691fe5b-1055-4a3c-888c-4ac52cf87f06/resource/165c6c6d-d1ab-4d8d-8270-006a5e9cbe5c/download/eistotrevfy23_q4.xlsx"
                 }
             ],
             "keyword": ["Business Volume", "eis", "enterprise-infrastructure", "gsa", "telecommunications"],
@@ -12423,19 +12428,22 @@
             "@type": "dcat:Dataset",
             "title": "FY 2022 Federal Real Property Profile",
             "description": "The Federal Real Property Report includes summary data for the federal government's inventory of land, building, and structure assets around the world.",
-            "modified": "2023-10-06T19:15:50.195Z",
+            "modified": "2023-10-06T19:25:21.608Z",
             "accessLevel": "public",
             "identifier": "GSA-2023-10-06-01",
+            "describedBy": "https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-council-frpc/frpc-guidance-library",
+            "describedByType": "application/pdf",
             "license": "https://creativecommons.org/publicdomain/zero/1.0/",
             "rights": "true",
             "publisher": {
                 "@type": "org:Organization",
-                "name": "General Services Administration",
+                "name": "Office of Government-wide Policy",
                 "subOrganizationOf": {
                     "@type": "org:Organization",
                     "name": "General Services Administration"
                 }
             },
+            "accrualPeriodicity": "R/P1Y",
             "contactPoint": {
                 "@type": "vcard:Contact",
                 "fn": "Stephanie Klodzen",
@@ -12449,11 +12457,6 @@
                 }, {
                     "@type": "dcat:Distribution",
                     "conformsTo": "http://www.isotc211.org/2005/gmd"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "FY 2022 FRPP json Metadata Template for FRPP Public Dataset.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/d6d3b812-2847-4886-ac1a-6e07a4b737ff/resource/46840b5c-d2ed-4def-8490-02dbcee4f4af/download/fy-2022-frpp-json-metadata-template-for-frpp-public-dataset.xlsx"
                 }
             ],
             "keyword": ["FRPP", "Federal Real Property Profile", "General Services Property", "Real Estate", "geospatial", "gsa"],
