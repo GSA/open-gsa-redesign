@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "details-polyfill": "^1.1.0",
-    "jquery": "^3.6.0",
+    "jquery": "^3.7.1",
     "lunr": "^1.0.0"
   }
 }
