@@ -48,7 +48,7 @@
     "uswds": "^1.6.13"
   },
   "dependencies": {
-    "details-polyfill": "^1.1.0",
+    "details-polyfill": "^1.2.0",
     "jquery": "^3.6.0",
     "lunr": "^1.0.0"
   }
