@@ -2718,13 +2718,13 @@
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings 10.13.23.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/3767a486-ab30-4a26-8df4-ce11f1e3109e/download/iolp-buildings-10.13.23.xlsx"
+                    "title": "IOLP Leases 10.20.23.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/e2da1e96-99f0-40df-ae76-26c5546b0222/download/iolp-leases-10.20.23.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases 10.13.23.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/cdd94a08-c82f-4cc9-8d9c-7a1b911e2d90/download/iolp-leases-10.13.23.xlsx"
+                    "title": "IOLP Buildings 10.20.23.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/b189274d-2783-4918-8570-a295607cd707/download/iolp-buildings-10.20.23.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
@@ -5626,8 +5626,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 10.13.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/d4fe0aae-b0d1-4cc5-b5a7-e7763a6ee614/download/edi-10.13.json"
+                    "title": "EDI 10.20.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/916d71ff-2f1c-4abe-901e-222c410d53b3/download/edi-10.20.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -12460,6 +12460,42 @@
                 }
             ],
             "keyword": ["FRPP", "Federal Real Property Profile", "General Services Property", "Real Estate", "geospatial", "gsa"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "FY2022 Federal Real Property Profile Summary Data by Installation Name",
+            "description": "A XLSX export of summarized data for all DoD and specified civilian agency assets contained within the FRPP, a government-wide database of executive branch agency federal real property assets, that cannot be made public at a detailed level.  Data for these records is summarized at the Installation Level.",
+            "modified": "2023-10-20T18:48:57.947Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-10-20",
+            "describedBy": "https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-council-frpc/frpc-guidance-library",
+            "describedByType": "application/pdf",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "R/P1Y",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Stephanie Klodzen",
+                "hasEmail": "mailto:stephanie.klodzen@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "FY-2022-frpp-summarized-data-by-installation-10.10.2023.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/da3e4fcd-bb9a-4d3c-bc3d-ba9bf2fbcfe9/resource/b470d8d2-13f8-46ed-83bd-70d822b27167/download/fy-2022-frpp-summarized-data-by-installation-10.10.2023.xlsx"
+                }
+            ],
+            "keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "Installation Name", "building", "land", "real property"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
