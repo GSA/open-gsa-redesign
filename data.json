@@ -2718,13 +2718,13 @@
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases 10.20.23.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/e2da1e96-99f0-40df-ae76-26c5546b0222/download/iolp-leases-10.20.23.xlsx"
+                    "title": "IOLP Buildings 10.30.23.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/85c020f7-6cf5-4365-a31a-515ee27c5baf/download/iolp-buildings-10.30.23.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings 10.20.23.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/b189274d-2783-4918-8570-a295607cd707/download/iolp-buildings-10.20.23.xlsx"
+                    "title": "IOLP Leases 10.30.23.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/587e4305-707c-4e46-982e-ba370155da78/download/iolp-leases-10.30.23.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
@@ -5626,8 +5626,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 10.20.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/916d71ff-2f1c-4abe-901e-222c410d53b3/download/edi-10.20.json"
+                    "title": "EDI 10.30.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/fe434505-eacb-49d1-bf8a-8a21384543e1/download/edi-10.30.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -11790,11 +11790,6 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "mediaType": "application/xml",
-                    "title": "FedRealPropertyProfileDataforCivilianAgencies_PublicDataset_FRPP_GSA_corrected_20230424.xml",
-                    "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/84b69557-0553-48b8-ae77-5acd9c698f8b/download/fedrealpropertyprofiledataforcivilianagencies_publicdataset_frpp_gsa_corrected_20230424.xml"
-                }, {
-                    "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "FRPP_Public_Dataset_FY21_Final_02242023 (1).xlsx",
                     "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/ec1ee26a-d1c7-4c53-87b1-58484cf948e5/download/frpp_public_dataset_fy21_final_02242023-1.xlsx"
@@ -12426,9 +12421,9 @@
             "language": ["en-US"]
         }, {
             "@type": "dcat:Dataset",
-            "title": "FY 2022 Federal Real Property Profile",
-            "description": "The Federal Real Property Report includes summary data for the federal government's inventory of land, building, and structure assets around the world.",
-            "modified": "2023-10-06T19:25:21.608Z",
+            "title": "FY 2022 Federal Real Property Profile (FRPP) Public Dataset",
+            "description": "The Federal Real Property Profile Management System (FRPP MS) is the federal government\u2019s centralized inventory of real property under the custody and control of executive branch agencies. Due to national security and other authorized exclusions, some FRPP data is not available to the public.",
+            "modified": "2023-10-30T18:08:03.903Z",
             "accessLevel": "public",
             "identifier": "GSA-2023-10-06-01",
             "describedBy": "https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-council-frpc/frpc-guidance-library",
@@ -12440,7 +12435,7 @@
                 "name": "Office of Government-wide Policy",
                 "subOrganizationOf": {
                     "@type": "org:Organization",
-                    "name": "General Services Administration"
+                    "name": "Office of Government-wide Policy"
                 }
             },
             "accrualPeriodicity": "R/P1Y",
@@ -12459,7 +12454,7 @@
                     "conformsTo": "http://www.isotc211.org/2005/gmd"
                 }
             ],
-            "keyword": ["FRPP", "Federal Real Property Profile", "General Services Property", "Real Estate", "geospatial", "gsa"],
+            "keyword": ["Civilian", "FRPP", "Federal Real Property Profile", "General Services Property", "RTF", "Real Estate", "Warehouse", "building", "geospatial", "gsa", "land", "real pro", "reduce the footprint", "structure"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
@@ -12496,6 +12491,43 @@
                 }
             ],
             "keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "Installation Name", "building", "land", "real property"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Federal Real Property Profile (FRPP)",
+            "description": "An ISO compliant metadata file to be used for harvesting the FRPP NGDA to the geoPlatform.",
+            "modified": "2023-10-30T18:18:40.526Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-10-30-01",
+            "dataQuality": true,
+            "describedBy": "https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-council-frpc/frpc-guidance-library",
+            "describedByType": "application/pdf",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "R/P1Y",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Stephanie Klodzen",
+                "hasEmail": "mailto:stephanie.klodzen@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/xml",
+                    "title": "FedRealPropertyProfileDataFRPP_NGDARecord_GSA_20231011 (1).xml",
+                    "downloadURL": "https://inventory.data.gov/dataset/ebd7d483-e022-4940-8480-e7b92555754d/resource/b86810c6-f9b3-4688-aa59-fb89d172a2ba/download/fedrealpropertyprofiledatafrpp_ngdarecord_gsa_20231011-1.xml"
+                }
+            ],
+            "keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "NGDA", "Real Property Theme", "building", "land", "real property", "structure"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
