@@ -1,11 +1,11 @@
 paths:
-  /acquisition/v1/ffata:
+  /acquisition/v1/subawards:
     post:
       tags:
-        - acquisition-controller
-      summary: Upload a Contract FFATA Subaward report
-      description: Upload a Contract FFATA Subaward report
-      operationId: submitFFATAContractReport
+        - acquisition-subaward-api-controller
+      summary: Upload a Contract Subaward report
+      description: Upload a Contract Subaward report
+      operationId: saveContractReport
       parameters:
         - name: Authorization
           in: header
@@ -20,17 +20,29 @@ paths:
           schema:
             type: string
       requestBody:
-        description: Upload a Contract FFATA Subaward report
+        description: Upload a Contract SubAward Subaward report
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FFATAContractObject'
+              $ref: '#/components/schemas/ContractObject'
         required: true
       responses:
         '201':
           description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '400':
           description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '401':
           description: Unauthorized
         '403':
@@ -38,18 +50,29 @@ paths:
         '404':
           description: Not Found
         '405':
-          description: Validation exception          
+          description: Validation exception    
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'          
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '501':
           description: Not Implemented
-    #/acquisition/v1/ffata:
     put:
       tags:
-        - acquisition-controller
-      summary: Update existing FFATA Contract Report(s)
-      description: Update existing FFATA Contract Report(s) by unique key
-      operationId: updateFFATAContractReport
+        - acquisition-subaward-api-controller
+      summary: Update existing SubAward Contract Report(s)
+      description: Update existing SubAward Contract Report(s) by unique key
+      operationId: updateContractReport
       parameters:
         - name: Authorization
           in: header
@@ -64,17 +87,29 @@ paths:
           schema:
             type: string
       requestBody:
-        description: Update FFATA Contract Report(s)
+        description: Update SubAward Contract Report(s)
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FFATAContractObject'
+              $ref: '#/components/schemas/ContractObject'
         required: true
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '400':
           description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '401':
           description: Unauthorized
         '403':
@@ -82,18 +117,29 @@ paths:
         '404':
           description: Not Found
         '405':
-          description: Validation exception          
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '501':
           description: Not Implemented
-  #/acquisition/v1/ffata:
     delete:
       tags:
-        - acquisition-controller
-      summary: Deletes Contract FFATA Subaward Report(s)
-      description: Deletes Contract FFATA Subaward Report(s)
-      operationId: deleteFFATAContractReport
+        - acquisition-subaward-api-controller
+      summary: Deletes Contract SubAward Subaward Report(s)
+      description: Deletes Contract SubAward Subaward Report(s)
+      operationId: deleteContractReport
       parameters:
         - name: Authorization
           in: header
@@ -109,18 +155,30 @@ paths:
             type: string
         - name: requestBody
           in: query
-          description: Delete Contract FFATA Subaward report(s)
+          description: Delete Contract SubAward Subaward report(s)
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/deleteContractFFATA'
+                  $ref: '#/components/schemas/ContractRequestObject'
       responses:
         '200':
           description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '400':
           description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '401':
           description: Unauthorized
         '403':
@@ -128,18 +186,30 @@ paths:
         '404':
           description: Not Found
         '405':
-          description: Validation exception          
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '501':
           description: Not Implemented
-  /acquisition/v1/ffata/get:
+  /acquisition/v1/subawards/get:
     post:
       tags:
-        - acquisition-controller
-      summary: Get existing FFATA Contract Report(s)
-      description: Get existing FFATA Contract Report(s)
-      operationId: getFFATAContractReport
+        - acquisition-subaward-api-controller
+      summary: Get existing SubAward Contract Report(s)
+      description: Get existing SubAward Contract Report(s)
+      operationId: getContractReport
       parameters:
         - name: Authorization
           in: header
@@ -155,13 +225,13 @@ paths:
             type: string
         - name: requestBody
           in: query
-          description: Get existing Contract FFATA Subaward report(s)
+          description: Get existing Contract SubAward Subaward report(s)
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/getContractFFATA'
+                  $ref: '#/components/schemas/ContractRequestObject'
       responses:
         '200':
           description: successful operation
@@ -170,9 +240,15 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/FFATAContractObject'          
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'       
         '400':
           description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '401':
           description: Unauthorized
         '403':
@@ -180,18 +256,30 @@ paths:
         '404':
           description: Not Found
         '405':
-          description: Validation exception          
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '501':
           description: Not Implemented          
-  /assistance/v1/ffata:
+  /assistance/v1/subawards:
     post:
       tags:
-        - assistance-controller
-      summary: Upload Grant FFATA Subaward report(s)
-      description: Upload Grant FFATA Subaward report(s)
-      operationId: submitFFATAGrantReport
+        - assistance-subaward-api-controller
+      summary: Create Grant SubAward report(s)
+      description: Endpoint to create one/multiple Grant SubAward report(s)
+      operationId: saveGrantReport
       parameters:
         - name: Authorization
           in: header
@@ -206,17 +294,29 @@ paths:
           schema:
             type: string
       requestBody:
-        description: Upload Grant FFATA Subaward report(s)
+        description: Request to create one/multiple Grant SubAward report(s)
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FFATAGrantObject'
+              $ref: '#/components/schemas/GrantObject'
         required: true
       responses:
         '201':
           description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '400':
           description: Bad Request
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '401':
           description: Unauthorized
         '403':
@@ -224,18 +324,30 @@ paths:
         '404':
           description: Not Found
         '405':
-          description: Validation exception          
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+          
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '501':
           description: Not Implemented
-  #/assistance/v1/ffata:
     put:
       tags:
-        - assistance-controller
-      summary: Update existing FFATA Grant Report(s)
-      description: Update existing FFATA Grant Report(s) by unique key
-      operationId: updateFFATAGrantReport
+        - assistance-subaward-api-controller
+      summary: Update existing SubAward Grant Report(s)
+      description: Endpoint to update existing Grant SubAward report(s)
+      operationId: updateGrantReport
       parameters:
         - name: Authorization
           in: header
@@ -250,17 +362,29 @@ paths:
           schema:
             type: string
       requestBody:
-        description: Update FFATA Grant Report(s)
+        description: Request to update Grant SubAward report(s)
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FFATAGrantObject'
+              $ref: '#/components/schemas/GrantObject'
         required: true
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '400':
           description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '401':
           description: Unauthorized
         '403':
@@ -268,18 +392,29 @@ paths:
         '404':
           description: Not Found
         '405':
-          description: Validation exception          
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '501':
           description: Not Implemented
-  #/assistance/v1/ffata:
     delete:
       tags:
-        - assistance-controller
-      summary: Delete Grant FFATA Subaward report(s)
-      description: Delete Grant FFATA Subaward report(s)
-      operationId: deleteFFATAGrantReport
+        - assistance-subaward-api-controller
+      summary: Delete Grant SubAward Subaward report(s)
+      description: Delete Grant SubAward Subaward report(s)
+      operationId: deleteGrantReport
       parameters:
         - name: Authorization
           in: header
@@ -295,18 +430,30 @@ paths:
             type: string
         - name: requestBody
           in: query
-          description: Delete Grant FFATA Subaward report(s)
+          description: Delete Grant SubAward Subaward report(s)
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/deleteGrantFFATA'
+                  $ref: '#/components/schemas/GrantRequestObject'
       responses:
         '200':
           description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '400':
           description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '401':
           description: Unauthorized
         '403':
@@ -314,18 +461,30 @@ paths:
         '404':
           description: Not Found
         '405':
-          description: Validation exception          
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '501':
           description: Not Implemented
-  /assistance/v1/ffata/get:  
+  /assistance/v1/subawards/get:  
     post:
       tags:
-        - assistance-controller
-      summary: Get existing Grant FFATA Subaward report(s)
-      description: Get existing Grant FFATA Subaward report(s)
-      operationId: getFFATAGrantReport
+        - assistance-subaward-api-controller
+      summary: Get existing Grant SubAward Subaward report(s)
+      description: Get existing Grant SubAward Subaward report(s)
+      operationId: getGrantReport
       parameters:
         - name: Authorization
           in: header
@@ -341,13 +500,13 @@ paths:
             type: string
         - name: requestBody
           in: query
-          description: Get existing Grant FFATA Subaward report(s)
+          description: Get existing Grant SubAward Subaward report(s)
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/getGrantFFATA'
+                  $ref: '#/components/schemas/GrantRequestObject'
       responses:
         '200':
           description: successful operation
@@ -356,9 +515,15 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/FFATAGrantObject'          
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'       
         '400':
           description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '401':
           description: Unauthorized
         '403':
@@ -366,14 +531,46 @@ paths:
         '404':
           description: Not Found
         '405':
-          description: Validation exception          
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
         '501':
-          description: Not Implemented          
+          description: Not Implemented
 components:
   schemas:
-    getContractFFATA: 
+    SubawardsAPIResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        reportStatus:
+          type: string
+        statusCode:
+          type: string
+        transactionId:
+          type: string
+        timeStamp:
+          type: string
+        message:
+          type: object
+        errors:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+    ContractRequestObject: 
       type: object
       required:
         - primeEntityInformation
@@ -398,39 +595,13 @@ components:
               reportingAgency: 
                 type: string
                 example: 2100
-          minItems: 1
-    deleteContractFFATA: 
+          minItems: 1  
+    ContractObject:
       type: object
       required:
-        - primeEntityInformation
-      properties: 
-        primeEntityInformation: 
-          type: array
-          items: 
-            type: object
-            properties: 
-              contractNumber: 
-                type: string
-                example: W9123823PTEST
-              idvReferenceNumber: 
-                type: string
-                example: GSTEST001
-              reportPeriodMon: 
-                type: string
-                example: '06'
-              reportPeriodYear: 
-                type: string
-                example: 2023
-              reportingAgency: 
-                type: string
-                example: 2100
-          minItems: 1     
-    FFATAContractObject:
-      type: object
-      required:
-        - contractFFATAData
+        - contractData
       properties:
-        contractFFATAData: 
+        contractData: 
           type: object
           required:
             - primeEntityInformation
@@ -474,7 +645,7 @@ components:
                       properties: 
                         code: 
                           type: string
-                          enum: ["0","1"]
+                          enum: ["1","2"]
                         isSelected: 
                           type: boolean
                     minItems: 1
@@ -549,7 +720,7 @@ components:
                             properties: 
                               code: 
                                 type: string
-                                enum: [0,1]
+                                enum: ["3","4"]
                               isSelected: 
                                 type: boolean
                           minItems: 1
@@ -568,7 +739,7 @@ components:
                           minItems: 5
                           maxItems: 5
               minItems: 1  
-    getGrantFFATA: 
+    GrantRequestObject: 
       type: object
       required:
         - primeEntityInformation
@@ -587,33 +758,13 @@ components:
               reportPeriodYear: 
                 type: string
                 example: 2023
-          minItems: 1
-    deleteGrantFFATA: 
+          minItems: 1                
+    GrantObject:
       type: object
       required:
-        - primeEntityInformation
-      properties: 
-        primeEntityInformation: 
-          type: array
-          items: 
-            type: object
-            properties: 
-              primeFAIN: 
-                type: string
-                example: 1001KS1420
-              reportPeriodMon: 
-                type: string
-                example: 05
-              reportPeriodYear: 
-                type: string
-                example: 2023
-          minItems: 1                    
-    FFATAGrantObject:
-      type: object
-      required:
-        - assistanceFFATAData
+        - assistanceData
       properties:
-        assistanceFFATAData: 
+        assistanceData: 
           type: object
           required:
             - primeEntityInformation
@@ -647,7 +798,7 @@ components:
                       properties: 
                         code: 
                           type: string
-                          enum: ["0","1"]
+                          enum: ["1","2"]
                         isSelected: 
                           type: boolean
                     minItems: 1
@@ -725,7 +876,7 @@ components:
                             properties: 
                               code: 
                                 type: string
-                                enum: [0,1]
+                                enum: ["3","4"]
                               isSelected: 
                                 type: boolean
                           minItems: 1
