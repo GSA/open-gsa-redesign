@@ -764,7 +764,8 @@ The API will return HTTP Status code 200 if the report is updated successfully. 
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
-#### Examples: For examples, refer to Submit SubAward Report (Contracts) examples.
+#### Examples: 
+For examples, refer to Submit SubAward Report (Contracts) examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -799,7 +800,8 @@ The API will return HTTP Status code 200 if the report is updated successfully. 
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
-#### Examples: For examples, refer to Submit SubAward Report (Grants) examples.
+#### Examples: 
+For examples, refer to Submit SubAward Report (Grants) examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1668,6 +1670,7 @@ Date | Version | Description
 --------- | --------------- | ---------
 07/15/2023 | v0.1 | Base Version
 10/12/2023 | v0.2 | Updates to GET calls and minor cosmetic changes
+11/10/2023 | v0.3 | Updates to remove FFATA and use SubAwards
 
 
 <p><small><a href="#">Back to top</a></small></p>
