@@ -4,7 +4,7 @@ banner-heading: SAM.gov Exclusions API
 ---
 
 ## Overview
-The Exclusions API will allow users to request Public Exclusion Information based on various optional request parameters. 
+The Exclusions API will allow users to request Public Exclusion Information based on various optional request parameters.
 The response will be provided in the JSON format in a paginated manner.
 
 **Key Features of the Exclusion API:**
@@ -33,12 +33,15 @@ Exclusions API can be accessed from Production or Alpha via the following versio
 * Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/exclusions?api_key=< value >
 * Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< value >
 * Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/exclusions?api_key=< value ><br><br>
+* <b> COMING SOON</b>  A new version 4 of the Exclusions API is coming soon:</br>
+&nbsp; &nbsp; &nbsp; &nbsp; * Production Version 4: https://api.sam.gov/entity-information/v4/exclusions?api_key=< value ></br>
+&nbsp; &nbsp; &nbsp; &nbsp; * Alpha Version 4: https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=< value >
 
 
 Generating a personal API Key:
 * Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://sam.gov/profile/details" target="_blank">Account Details page on sam.gov</a>
-* Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned. 
-* After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page. 
+* Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
+* After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page.
 * If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
 
 Generating a System Account API Key:
@@ -99,34 +102,35 @@ Utilizing the Exclusion API as an extract:
 
 **Query String Parameters**
 
-| Parameter Name | Description | Applicable Versions |
-| ---- | ----------- | ----------- |
-| classification | Allows a partial text or a complete text (Individual, Firm, Vessel, Special Entity Designation).<br><br> This parameter can be used inside the 'q' parameter. <br><br> Example: 'classification=Firm', 'classification=!INDIVIDUAL', 'classification=[Vessel~Special]', 'q=((classification:Vessel) OR (classification:Special))' |  v1<br>v2<br>v3 |
-| exclusionName | Allows a partial text or a complete text.<br><br> This parameter must not be used inside the 'q' parameter.<br><br> This parameter accepts multi-text values in any order and in any case, and will apply the AND operator between the texts.<br><br> Examples: 'exclusionName=J Roy', 'exclusionName=ROY j' |  v1<br>v2<br>v3 |
-| exclusionType | Allows a partial text or a complete text (a string).<br><br> Allowable values are: Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction and Voluntary Exclusion.<br><br> This parameter can be used inside the 'q' parameter. When not used inside the 'q' parameter, this parameter will apply the AND operator if a multi-text value is provided in any order and in any case.<br><br> Examples: 'q=exclusionType:Ineligible (Proceedings Pending)', 'exclusionType=Ineligible PENDING', 'exclusionType=[Pending~Voluntary]' |  v1<br>v2<br>v3 |
-| exclusionProgram | Allows a complete text (a string).<br><br> Allowable values are: Reciprocal, NonProcurement and Procurement.<br><br> This parameter can be used inside the 'q' parameter.<br><br> Examples: 'q=((exclusionProgram:Reciprocal) OR (exclusionProgram:Procurement))', 'exclusionProgram=[NonProcurement~RECIPROCAL]', 'exclusionProgram=!NonProcurement'|  v1<br>v2<br>v3 |
-| addressLine1  | Mainly used to search Individuals with their address. Allows a partial text, a complete text and null.<br><br> This parameter must not be used inside the 'q' parameter. <br><br> Examples: 'addressLine1=""', 'addressLine1="7th Floor, Buraengdang Building 530-14"'<br><br> NOTE: If addressLine1 is used in a request with exclusionName, it must match 85% of an Individual's address in order for the address information to be returned in the response (not case sensitive). |  v1<br>v2<br>v3 |
-| addressLine2  | Mainly used to search Individuals with their address. Allows a partial text, a complete text and null.<br><br> This parameter must not be used inside the 'q' parameter. <br><br> Examples: 'addressLine2=""', 'addressLine2="Dapsipri, 5 Dong, Dongdaemun-K"'<br><br> NOTE: If addressLine2 is used in a request with exclusionName, it must match 85% of an Individual's address in order for the address information to be returned in the response (not case sensitive). |  v1<br>v2<br>v3 |
-| stateProvince | Allows 2-character codes for the USA, names for foreign countries and null (a string).<br><br> Examples: 'stateProvince=AR', 'stateProvince=[VA~MICHOACÁN]', 'stateProvince=""' |  v1<br>v2<br>v3 |
-| country  | Allows 3-character codes, numerical values and null (a string).<br><br> Examples: 'country=USA' 'country=[RUS~292~mex]', 'country=!""', 'q=((country:RUS) OR (country:292) OR (country:mex))' |  v1<br>v2<br>v3 |
-| zipCode  | Allows 5-digit values for the USA, any value as it was provided for foreign countries and null (a string).<br><br> Example: 'zipCode=20171', 'zipCode=[901-2132~V3M 5P8~C.P. 44890]', 'zipCode=""', 'q=((zipCode:901-2132) OR (zipCode:20147))' |  v1<br>v2<br>v3 |
-| ueiSAM | Denotes Unique Entity Identifier SAM.<br><br> Allows 12-character values, null and also wildcard searches.<br><br> Examples: 'ueiSAM=""', 'ueiSAM=!""', 'ueiSAM=P*X*1', 'q=((ueiSAM:PMC9YQMXJZU1) OR (ueiSAM:PG4XZ77WRC21))' |  v1<br>v2<br>v3 |
-| excludingAgencyCode | Allows a partial text, a complete text and null (a string).<br><br> Examples: 'excludingAgencyCode=ICE', 'excludingAgencyCode=DHS-ICE', 'excludingAgencyCode=[AF~HUD~""]', 'q=((excludingAgencyCode:AF) OR (excludingAgencyCode:HUD))' |  v1<br>v2<br>v3 |
-| excludingAgencyName | Allows a partial text, a complete text and null (a string).<br><br> This parameter can be used inside the 'q' parameter. When not used inside the 'q' parameter, this parameter will apply the AND operator if a multi-text value is provided in any order and in any case<br><br> Examples: 'excludingAgencyName=Of URBAN housing',  'excludingAgencyName=[Geological~Navy]', q=((excludingAgencyName:Geological) OR (excludingAgencyName:Navy)) |  v1<br>v2<br>v3 |
-| ctCode | Allows a complete text, null and also wild card searches (a string).<br><br> Examples: 'ctCode=*SDN*', 'ctCode=[AA~""], 'q=((ctCode:AA) OR (ctCode:03-SDN-01))' |  v1<br>v2<br>v3 |
-| activationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'activationDate=01/01/2019', 'activationDate=[01/01/2019,05/29/2019]' |  v1<br>v2<br>v3 |
-| creationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'creationDate=01/01/2019', 'creationDate=[01/01/2019,05/29/2019]' |  v1<br>v2<br>v3 |
-| updateDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br>  Examples: 'updateDate=01/01/2019', 'updateDate=[01/01/2019,05/29/2019]'' |  v1<br>v2<br>v3 |
-| terminationDate | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'terminationDate=01/01/2019', 'terminationDate=[01/01/2019,05/29/2019]' |  v1<br>v2<br>v3 |
-| cageCode | Allows a complete value, null and also wild card searches (a string).<br><br> Examples: 'cageCode=0*0', 'cageCode=[0XLE0~1CM51~""]', 'q=((cageCode:0XLE0) OR (cageCode:1CM51))' |  v1<br>v2<br>v3 |
-| npi  | Allows 1234567890 (this is masked data) and null (a string).<br><br> Examples: 'npi=1234567890', 'npi=""', 'npi=!""' |  v1<br>v2<br>v3 |
-| recordStatus | The API returns only Active records.<br><br> Allows a complete text (a string).<br><br> Allowable value is: Active, active <br><br> Example: 'recordStatus=active' | v1<br>v2<br>v3 |
-| page  | Denotes a page number.<br><br> Allowable values are 0 to 999.<br><br> Example: 'page=0' |  v1<br>v2<br>v3 |
-| size  | Denotes the number of records returned per page.<br><br> Allowable values are 1 to 10.<br><br> Example: 'size=1' |  v1<br>v2<br>v3 |
-| includeSections | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'includeSections=exclusionOtherInformation,exclusionDetails' |  v1<br>v2<br>v3 |
-| format | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'format=csv' |  v1<br>v2<br>v3 |
-| emailId | Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.<br>Example: emailId= Yes<br>Applicable to non-SAM registrants. |  v1<br>v2<br>v3 |
-| ssnOrTinOrEin | Allows a 9-digit value or null.<br><br> This parameter must not be used inside the 'q' parameter.<br><br> This parameter must be used in conjunction with the exclusionName parameter.<br><br> Example: 'ssnOrTinOrEin=123456789' | v1<br>v2<br>v3 |
+| Parameter Name                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Applicable Versions |
+|-----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
+| classification                          | Allows a partial text or a complete text (Individual, Firm, Vessel, Special Entity Designation).<br><br> This parameter can be used inside the 'q' parameter. <br><br> Example: 'classification=Firm', 'classification=!INDIVIDUAL', 'classification=[Vessel~Special]', 'q=((classification:Vessel) OR (classification:Special))'                                                                                                                                                                                                                                       | v1<br>v2<br>v3 |
+| exclusionName                           | Allows a partial text or a complete text.<br><br> This parameter must not be used inside the 'q' parameter.<br><br> This parameter accepts multi-text values in any order and in any case, and will apply the AND operator between the texts.<br><br> Examples: 'exclusionName=J Roy', 'exclusionName=ROY j'                                                                                                                                                                                                                                                            | v1<br>v2<br>v3 |
+| exclusionType                           | Allows a partial text or a complete text (a string).<br><br> Allowable values are: Ineligible (Proceedings Pending), Ineligible (Proceedings Completed), Prohibition/Restriction and Voluntary Exclusion.<br><br> This parameter can be used inside the 'q' parameter. When not used inside the 'q' parameter, this parameter will apply the AND operator if a multi-text value is provided in any order and in any case.<br><br> Examples: 'q=exclusionType:Ineligible (Proceedings Pending)', 'exclusionType=Ineligible PENDING', 'exclusionType=[Pending~Voluntary]' | v1<br>v2<br>v3 |
+| exclusionProgram                        | Allows a complete text (a string).<br><br> Allowable values are: Reciprocal, NonProcurement and Procurement.<br><br> This parameter can be used inside the 'q' parameter.<br><br> Examples: 'q=((exclusionProgram:Reciprocal) OR (exclusionProgram:Procurement))', 'exclusionProgram=[NonProcurement~RECIPROCAL]', 'exclusionProgram=!NonProcurement'                                                                                                                                                                                                                   | v1<br>v2<br>v3 |
+| addressLine1                            | Mainly used to search Individuals with their address. Allows a partial text, a complete text and null.<br><br> This parameter must not be used inside the 'q' parameter. <br><br> Examples: 'addressLine1=""', 'addressLine1="7th Floor, Buraengdang Building 530-14"'<br><br> NOTE: If addressLine1 is used in a request with exclusionName, it must match 85% of an Individual's address in order for the address information to be returned in the response (not case sensitive).                                                                                    | v1<br>v2<br>v3 |
+| addressLine2                            | Mainly used to search Individuals with their address. Allows a partial text, a complete text and null.<br><br> This parameter must not be used inside the 'q' parameter. <br><br> Examples: 'addressLine2=""', 'addressLine2="Dapsipri, 5 Dong, Dongdaemun-K"'<br><br> NOTE: If addressLine2 is used in a request with exclusionName, it must match 85% of an Individual's address in order for the address information to be returned in the response (not case sensitive).                                                                                            | v1<br>v2<br>v3 |
+| stateProvince                           | Allows 2-character codes for the USA, names for foreign countries and null (a string).<br><br> Examples: 'stateProvince=AR', 'stateProvince=[VA~MICHOACÁN]', 'stateProvince=""'                                                                                                                                                                                                                                                                                                                                                                                         | v1<br>v2<br>v3 |
+| country                                 | Allows 3-character codes, numerical values and null (a string).<br><br> Examples: 'country=USA' 'country=[RUS~292~mex]', 'country=!""', 'q=((country:RUS) OR (country:292) OR (country:mex))'                                                                                                                                                                                                                                                                                                                                                                           | v1<br>v2<br>v3 |
+| zipCode                                 | Allows 5-digit values for the USA, any value as it was provided for foreign countries and null (a string).<br><br> Example: 'zipCode=20171', 'zipCode=[901-2132~V3M 5P8~C.P. 44890]', 'zipCode=""', 'q=((zipCode:901-2132) OR (zipCode:20147))'                                                                                                                                                                                                                                                                                                                         | v1<br>v2<br>v3 |
+| ueiSAM                                  | Denotes Unique Entity Identifier SAM.<br><br> Allows 12-character values, null and also wildcard searches.<br><br> Examples: 'ueiSAM=""', 'ueiSAM=!""', 'ueiSAM=P*X*1', 'q=((ueiSAM:PMC9YQMXJZU1) OR (ueiSAM:PG4XZ77WRC21))'                                                                                                                                                                                                                                                                                                                                            | v1<br>v2<br>v3 |
+| excludingAgencyCode                     | Allows a partial text, a complete text and null (a string).<br><br> Examples: 'excludingAgencyCode=ICE', 'excludingAgencyCode=DHS-ICE', 'excludingAgencyCode=[AF~HUD~""]', 'q=((excludingAgencyCode:AF) OR (excludingAgencyCode:HUD))'                                                                                                                                                                                                                                                                                                                                  | v1<br>v2<br>v3 |
+| excludingAgencyName                     | Allows a partial text, a complete text and null (a string).<br><br> This parameter can be used inside the 'q' parameter. When not used inside the 'q' parameter, this parameter will apply the AND operator if a multi-text value is provided in any order and in any case<br><br> Examples: 'excludingAgencyName=Of URBAN housing',  'excludingAgencyName=[Geological~Navy]', q=((excludingAgencyName:Geological) OR (excludingAgencyName:Navy))                                                                                                                       | v1<br>v2<br>v3 |
+| ctCode                                  | Allows a complete text, null and also wild card searches (a string).<br><br> Examples: 'ctCode=*SDN*', 'ctCode=[AA~""], 'q=((ctCode:AA) OR (ctCode:03-SDN-01))'                                                                                                                                                                                                                                                                                                                                                                                                         | v1<br>v2<br>v3 |
+| activationDate                          | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'activationDate=01/01/2019', 'activationDate=[01/01/2019,05/29/2019]'                                                                                                                                                                                                                                                                                                                                                                                          | v1<br>v2<br>v3 |
+| creationDate                            | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'creationDate=01/01/2019', 'creationDate=[01/01/2019,05/29/2019]'                                                                                                                                                                                                                                                                                                                                                                                              | v1<br>v2<br>v3 |
+| updateDate                              | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br>  Examples: 'updateDate=01/01/2019', 'updateDate=[01/01/2019,05/29/2019]''                                                                                                                                                                                                                                                                                                                                                                                                | v1<br>v2<br>v3 |
+| terminationDate                         | Allows a single Date or Date range. <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br><br> Examples: 'terminationDate=01/01/2019', 'terminationDate=[01/01/2019,05/29/2019]'                                                                                                                                                                                                                                                                                                                                                                                        | v1<br>v2<br>v3 |
+| cageCode                                | Allows a complete value, null and also wild card searches (a string).<br><br> Examples: 'cageCode=0*0', 'cageCode=[0XLE0~1CM51~""]', 'q=((cageCode:0XLE0) OR (cageCode:1CM51))'                                                                                                                                                                                                                                                                                                                                                                                         | v1<br>v2<br>v3 |
+| npi                                     | Allows 1234567890 (this is masked data) and null (a string).<br><br> Examples: 'npi=1234567890', 'npi=""', 'npi=!""'                                                                                                                                                                                                                                                                                                                                                                                                                                                    | v1<br>v2<br>v3 |
+| recordStatus                            | The API returns only Active records.<br><br> Allows a complete text (a string).<br><br> Allowable value is: Active, active <br><br> Example: 'recordStatus=active'                                                                                                                                                                                                                                                                                                                                                                                                      | v1<br>v2<br>v3 |
+| page                                    | Denotes a page number.<br><br> Allowable values are 0 to 999.<br><br> Example: 'page=0'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | v1<br>v2<br>v3 |
+| size                                    | Denotes the number of records returned per page.<br><br> Allowable values are 1 to 10.<br><br> Example: 'size=1'                                                                                                                                                                                                                                                                                                                                                                                                                                                        | v1<br>v2<br>v3 |
+| includeSections                         | Allows to filter data by sections, exclusionDetails, exclusionIdentification, exclusionActions, exclusionAddress, exclusionOtherInformation and vesselDetails.<br><br> Example: 'includeSections=exclusionOtherInformation,exclusionDetails'                                                                                                                                                                                                                                                                                                                            | v1<br>v2<br>v3 |
+| format                                  | Allows user to download different file formats(csv and json are allowable values) .<br><br> Example: 'format=csv'                                                                                                                                                                                                                                                                                                                                                                                                                                                       | v1<br>v2<br>v3 |
+| emailId                                 | Allows user to get file download links sent to the email address associated to the API key used in the request. Email ID must be provided in conjunction with the format parameter.<br>Example: emailId= Yes<br>Applicable to non-SAM registrants.                                                                                                                                                                                                                                                                                                                      | v1<br>v2<br>v3 |
+| ssnOrTinOrEin                           | Allows a 9-digit value or null.<br><br> This parameter must not be used inside the 'q' parameter.<br><br> This parameter must be used in conjunction with the exclusionName parameter.<br><br> Example: 'ssnOrTinOrEin=123456789'                                                                                                                                                                                                                                                                                                                                       | v1<br>v2<br>v3 |
+| COMING SOON <br/> ----<br/> fascsaOrder | Allows Yes and No.<br><br> This parameter accepts either value, in any case.<br><br> Examples: fascsaOrder=Yes, fascsaOrder=yes, fascsaOrder=No, fascsaOrder=no                                                                                                                                                                                                                                                                                                                                                                                                         | v4 |
 
 **Expected Result**
 
@@ -175,6 +179,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | zipCodePlus4                                                         | string | Address Zip Plus 4                                                                                                                          | v2<br>v3                       |
 | countryCode                                                          | string | Country Code                                                                                                                                | v2<br>v3                       |
 | **exclusionOtherInformation**                                        |
+| COMING SOON <br/> ----<br/> isFASCSAOrder                            | string | FASCSA Order Exclusion Indicator                                                                                                            | v4                             |
 | additionalComments                                                   | string | Additional Comments                                                                                                                         | v1<br>v2<br>v3                 |
 | ctCode                                                               | string | CT Code                                                                                                                                     | v1<br>v2<br>v3                 |
 | dnbInvestigationStatus/evsInvestigationStatus                        | string | EVS Investigation Status  <br><br>NOTE: This parameter is being renamed. dnbInvestigationStatus is in V1 and evsInvestigationStatus will be V2. | v1<br>v2<br>v3                 |
@@ -183,7 +188,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 | type                                                                 | string | Type                                                                                                                                        | v1<br>v2<br>v3                 |
 | **exclusionOtherInformation --> moreLocations**                      |
 | exclusionName                                                        | string | Exclusion Name                                                                                                                              | v2<br>v3                       |
-| duns                                                                 | string | DUNS                                                                                                                                            | v2                             |
+| duns                                                                 | string | DUNS                                                                                                                                           | v2                             |
 | ueiSAM                                                               | string | ueiSAM                                                                                                                                      | v3                             |
 | cageCode                                                             | string | CAGE Code                                                                                                                                   | v2<br>v3                       |
 | npi                                                                  | string | NPI                                                                                                                                         | v2<br>v3                       |
@@ -221,7 +226,7 @@ API response consists of Sections, Sub-sections and Tags underneath each of the 
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## OpenAPI Specification File 
+## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="v1/openapi.yaml">Open API specification file for the Exclusion API</a>
@@ -526,104 +531,104 @@ Note: Public Response for one record is provided as an example <br>
 
 A sample record is provided here:
 
-  "excludedEntity": [
-    {
-      "exclusionDetails": {
-        "classificationType": "Individual",
-        "exclusionType": "Ineligible (Proceedings Completed)",
-        "exclusionProgram": "Reciprocal",
-        "excludingAgencyCode": "ARMY",
-        "excludingAgencyName": "DEPT OF THE ARMY"
-      },
-      "exclusionIdentification": {
-        "ueiSAM": null,
-        "cageCode": null,
-        "npi": null,
-        "prefix": "Ms.",
-        "firstName": "Chong",
-        "middleName": "Sun",
-        "lastName": "Hwang",
-        "suffix": null,
-        "entityName": "Ms. Chong Sun Hwang",
-        "dnbOpenData": null
-      },
-      "exclusionActions": {
-        "listOfActions": [
-          {
-            "createDate": "07-27-2012",
-            "updateDate": "07-27-2012",
-            "activateDate": "12-12-2011",
-            "terminationDate": "11-08-2029",
-            "terminationType": "Definite",
-            "recordStatus": "Active"
-          }
-        ]
-      },
-      "exclusionPrimaryAddress": {
-        "addressLine1": null,
-        "addressLine2": null,
-        "city": "Dongjak-gu, Seoul",
-        "stateOrProvinceCode": null,
-        "zipCode": null,
-        "zipCodePlus4": null,
-        "countryCode": "KOR"
-      },
-      "exclusionSecondaryAddress": [],
-      "exclusionOtherInformation": {
-        "additionalComments": null,
-        "ctCode": "A",
-        "evsInvestigationStatus": null,
-        "references": {
-          "referencesList": [
-            {
-              "exclusionName": null,
-              "type": null
-            }
-          ]
-        },
-        "moreLocations": [
-          {
-            "exclusionName": null,
-            "duns": null,
-            "cageCode": null,
-            "npi": null,
-            "primaryAddress": {
-              "addressLine1": null,
-              "addressLine2": null,
-              "city": null,
-              "stateOrProvinceCode": null,
-              "zipCode": null,
-              "zipCodePlus4": null,
-              "countryCode": null
-            },
-            "secondaryAddress": [
-              {
-                "addressLine1": null,
-                "addressLine2": null,
-                "city": null,
-                "stateOrProvinceCode": null,
-                "zipCode": null,
-                "zipCodePlus4": null,
-                "countryCode": null
-              }
-            ]
-          }
-        ]
-      },
-      "vesselDetails": {
-        "callSign": null,
-        "type": null,
-        "tonnage": null,
-        "grt": null,
-        "flag": null,
-        "owner": null
-      }
-    },
-    
-  "links": {
-    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&page=0&size=10",
-    
-  }
+"excludedEntity": [
+{
+"exclusionDetails": {
+"classificationType": "Individual",
+"exclusionType": "Ineligible (Proceedings Completed)",
+"exclusionProgram": "Reciprocal",
+"excludingAgencyCode": "ARMY",
+"excludingAgencyName": "DEPT OF THE ARMY"
+},
+"exclusionIdentification": {
+"ueiSAM": null,
+"cageCode": null,
+"npi": null,
+"prefix": "Ms.",
+"firstName": "Chong",
+"middleName": "Sun",
+"lastName": "Hwang",
+"suffix": null,
+"entityName": "Ms. Chong Sun Hwang",
+"dnbOpenData": null
+},
+"exclusionActions": {
+"listOfActions": [
+{
+"createDate": "07-27-2012",
+"updateDate": "07-27-2012",
+"activateDate": "12-12-2011",
+"terminationDate": "11-08-2029",
+"terminationType": "Definite",
+"recordStatus": "Active"
+}
+]
+},
+"exclusionPrimaryAddress": {
+"addressLine1": null,
+"addressLine2": null,
+"city": "Dongjak-gu, Seoul",
+"stateOrProvinceCode": null,
+"zipCode": null,
+"zipCodePlus4": null,
+"countryCode": "KOR"
+},
+"exclusionSecondaryAddress": [],
+"exclusionOtherInformation": {
+"additionalComments": null,
+"ctCode": "A",
+"evsInvestigationStatus": null,
+"references": {
+"referencesList": [
+{
+"exclusionName": null,
+"type": null
+}
+]
+},
+"moreLocations": [
+{
+"exclusionName": null,
+"duns": null,
+"cageCode": null,
+"npi": null,
+"primaryAddress": {
+"addressLine1": null,
+"addressLine2": null,
+"city": null,
+"stateOrProvinceCode": null,
+"zipCode": null,
+"zipCodePlus4": null,
+"countryCode": null
+},
+"secondaryAddress": [
+{
+"addressLine1": null,
+"addressLine2": null,
+"city": null,
+"stateOrProvinceCode": null,
+"zipCode": null,
+"zipCodePlus4": null,
+"countryCode": null
+}
+]
+}
+]
+},
+"vesselDetails": {
+"callSign": null,
+"type": null,
+"tonnage": null,
+"grt": null,
+"flag": null,
+"owner": null
+}
+},
+
+"links": {
+"selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&page=0&size=10",
+
+}
 </pre>
 </code>
 </p>
@@ -649,50 +654,175 @@ Note: Public Response for one record is provided as an example <br>
 
 A sample record is provided here:
 
-  "excludedEntity": [
-    {
-      "exclusionDetails": {
-        "classificationType": "Firm",
-        "exclusionType": "Ineligible (Proceedings Completed)",
-        "exclusionProgram": "Reciprocal",
-        "excludingAgencyCode": "AF",
-        "excludingAgencyName": "DEPT OF THE AIR FORCE"
-      },
-      "exclusionIdentification": {
-        "ueiSAM": "H2XFNNKK2NZ9",
-        "cageCode": null,
-        "npi": null,
-        "prefix": null,
-        "firstName": null,
-        "middleName": null,
-        "lastName": null,
-        "suffix": null,
-        "entityName": "Shenzhen Hongdark Electronics Co., Ltd.",
-        "dnbOpenData": null
-      },
-      "exclusionPrimaryAddress": {
-        "addressLine1": null,
-        "addressLine2": null,
-        "city": "Shenzhen",
-        "stateOrProvinceCode": null,
-        "zipCode": null,
-        "zipCodePlus4": null,
-        "countryCode": "CHN"
-      },
-      "exclusionSecondaryAddress": []
-    },
+"excludedEntity": [
+{
+"exclusionDetails": {
+"classificationType": "Firm",
+"exclusionType": "Ineligible (Proceedings Completed)",
+"exclusionProgram": "Reciprocal",
+"excludingAgencyCode": "AF",
+"excludingAgencyName": "DEPT OF THE AIR FORCE"
+},
+"exclusionIdentification": {
+"ueiSAM": "H2XFNNKK2NZ9",
+"cageCode": null,
+"npi": null,
+"prefix": null,
+"firstName": null,
+"middleName": null,
+"lastName": null,
+"suffix": null,
+"entityName": "Shenzhen Hongdark Electronics Co., Ltd.",
+"dnbOpenData": null
+},
+"exclusionPrimaryAddress": {
+"addressLine1": null,
+"addressLine2": null,
+"city": "Shenzhen",
+"stateOrProvinceCode": null,
+"zipCode": null,
+"zipCodePlus4": null,
+"countryCode": "CHN"
+},
+"exclusionSecondaryAddress": []
+},
 
 "links": {
-    "selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=0&size=10",
-    "nextLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=1&size=10"
-  }
+"selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=0&size=10",
+"nextLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=1&size=10"
+}
 }
 </pre>
 </code>
 </p>
 </details>
 
-### Example 5: To receive a file downloadable link in the email for the requested CSV results.
+### Example 5: Get details for FASCSA Order Exclusion records only.
+
+<details>
+<summary>Request URL</summary>
+<b>v4 Production URL:</b>  https://api.sam.gov/entity-information/v4/exclusions?api_key=< a valid Public API Key >&fascsaOrder=Yes<br>
+<br>
+<b>v4 Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=< a valid Public API Key >&fascsaOrder=Yes<br>
+<br>
+</details>
+
+<details>
+<summary>Response (JSON Output)</summary>
+Note: Public Response for one record is provided as an example<br>
+<p>
+<code>
+<pre>
+{
+    "totalRecords": 16,
+
+A sample record is provided here:
+
+        {
+            "exclusionDetails": {
+                "classificationType": "Firm",
+                "exclusionType": "Prohibition/Restriction",
+                "exclusionProgram": "Reciprocal",
+                "excludingAgencyCode": "AF",
+                "excludingAgencyName": "DEPT OF THE AIR FORCE"
+            },
+            "exclusionIdentification": {
+                "ueiSAM": "J27QHBBBL1V3",
+                "cageCode": null,
+                "npi": null,
+                "prefix": null,
+                "firstName": null,
+                "middleName": null,
+                "lastName": null,
+                "suffix": null,
+                "entityName": "Foxtrot Research Corp",
+                "dnbOpenData": null
+            },
+            "exclusionActions": {
+                "listOfActions": [
+                    {
+                        "createDate": "10-31-2023",
+                        "updateDate": "10-31-2023",
+                        "activateDate": "10-30-2023",
+                        "terminationDate": null,
+                        "terminationType": "Indefinite",
+                        "recordStatus": "Active"
+                    }
+                ]
+            },
+            "exclusionPrimaryAddress": {
+                "addressLine1": null,
+                "addressLine2": null,
+                "city": null,
+                "stateOrProvinceCode": "FL",
+                "zipCode": null,
+                "zipCodePlus4": null,
+                "countryCode": "USA"
+            },
+            "exclusionSecondaryAddress": [],
+            "exclusionOtherInformation": {
+                "isFASCSAOrder": "Yes",
+                "additionalComments": null,
+                "ctCode": null,
+                "evsInvestigationStatus": null,
+                "references": {
+                    "referencesList": [
+                        {
+                            "exclusionName": null,
+                            "type": null
+                        }
+                    ]
+                },
+                "moreLocations": [
+                    {
+                        "exclusionName": null,
+                        "ueiSAM": null,
+                        "cageCode": null,
+                        "npi": null,
+                        "primaryAddress": {
+                            "addressLine1": null,
+                            "addressLine2": null,
+                            "city": null,
+                            "stateOrProvinceCode": null,
+                            "zipCode": null,
+                            "zipCodePlus4": null,
+                            "countryCode": null
+                        },
+                        "secondaryAddress": [
+                            {
+                                "addressLine1": null,
+                                "addressLine2": null,
+                                "city": null,
+                                "stateOrProvinceCode": null,
+                                "zipCode": null,
+                                "zipCodePlus4": null,
+                                "countryCode": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            "vesselDetails": {
+                "callSign": null,
+                "type": null,
+                "tonnage": null,
+                "grt": null,
+                "flag": null,
+                "owner": null
+            }
+        },
+    ],
+    "links": {
+        "selfLink": "https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&fascsaOrder=Yes&page=0&size=10",
+        "nextLink": "https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&fascsaOrder=Yes&page=1&size=10"
+    }
+}
+</pre>
+</code>
+</p>
+</details>
+
+### Example 6: To receive a file downloadable link in the email for the requested CSV results.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=Y<br>
@@ -709,7 +839,7 @@ Click to view CSV Response for one record <a href="v1/exclusion-sample-csv-1.xls
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Additional Information
-You can view the full details of the differences between the SAM legacy API and SAM.gov API 
+You can view the full details of the differences between the SAM legacy API and SAM.gov API
 <br> available here: <a href="LegacySAMvsBetaSAM-ExclusionsAPI.pdf">Variance Document</a><br>
 
 Disclaimer:
@@ -724,46 +854,46 @@ Disclaimer:
 ## Contact Us
 
 * Reach out to the SAM.gov team at <a href="https://www.fsd.gov" target="_blank">www.fsd.gov</a> for inquiries and help desk support.
-    * Before contacting the help desk, conduct your own initial troubleshooting
-        * Conduct a recent review of the open.gsa.gov/api specifications
-        * Confirm you are using an API tool, not a browser to send the request. (FOUO & Sensitive Calls)
-        * Confirm you are using the username/password for the system account that created the API key in the authentication header. (Sensitive Calls)
-        * Confirm you used POST and not GET for this request (Sensitive Calls)
-        * Confirm that the API key is from a system account (FOUO & Sensitive Calls)
-        * Confirm that the API key being used is still active
-        * Confirm that the system account you are using has “read fouo” or “read sensitive” permissions as applicable (FOUO & Sensitive Calls)
-        * <b>Confirm that the IP addresses registered with your system account are current</b>
-    * When submitting help desk tickets for API or system connection issues, provide the following:
-        * The exact API requests that you were trying to send
-        * The exact error messages that you were receiving
-        * The exact dates and times when you received the errors
-        * Screenshots (with the actual API request and the error)  [Attach to the ticket]
-        * The System Account ID/Name that was trying to make API calls
-        * Screenshots of the parameters used for API call   [Attach to the ticket]
-        * Screenshots of the Headers used for the API call   [Attach to the ticket]
+  * Before contacting the help desk, conduct your own initial troubleshooting
+    * Conduct a recent review of the open.gsa.gov/api specifications
+    * Confirm you are using an API tool, not a browser to send the request. (FOUO & Sensitive Calls)
+    * Confirm you are using the username/password for the system account that created the API key in the authentication header. (Sensitive Calls)
+    * Confirm you used POST and not GET for this request (Sensitive Calls)
+    * Confirm that the API key is from a system account (FOUO & Sensitive Calls)
+    * Confirm that the API key being used is still active
+    * Confirm that the system account you are using has “read fouo” or “read sensitive” permissions as applicable (FOUO & Sensitive Calls)
+    * <b>Confirm that the IP addresses registered with your system account are current</b>
+  * When submitting help desk tickets for API or system connection issues, provide the following:
+    * The exact API requests that you were trying to send
+    * The exact error messages that you were receiving
+    * The exact dates and times when you received the errors
+    * Screenshots (with the actual API request and the error)  [Attach to the ticket]
+    * The System Account ID/Name that was trying to make API calls
+    * Screenshots of the parameters used for API call   [Attach to the ticket]
+    * Screenshots of the Headers used for the API call   [Attach to the ticket]
 * Users requesting access to the test site (alpha.sam.gov) should follow the below steps.  These steps ONLY apply to alpha.sam.gov access requests.
-    1. Navigate to <a href="https://www.fsd.gov" target="_blank">www.fsd.gov</a>
-    2. Sign into the FSD platform using your FSD credentials
-    3. Select "Create an Incident"
-    4. Create an Incident
-        <ol type="a">
-        <li><b>System Name:</b> System for Award Management (SAM)</li>
-        <li><b>Is this related to the American Rescue Plan Act?:</b> No</li>
-        <li><b>Issue Type:</b> Other</li>
-        <li><b>Business Type:</b> Other</li>
-        <li><b>Subject (select 1):</b>
-           <ol type="i">
-           <li><b>Option A:</b> I need a role to test in alpha.sam.gov.</li>
-           <li><b>Option B:</b> System account approval in alpha.sam.gov</li>
-           </ol>
-        </li>
-        <li><b>Please describe the issue:</b> (Copy and paste the below information into the ticket, filling in your information within the brackets)
-           <ol type="i">
-           <li><b>Option A:</b> I have already navigated to alpha.sam.gov and created a user account, following the same steps for <a href="https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=81d067071b80b0109ac5ddb6bc4bcb63" target="_blank">creating an account</a> in sam.gov.  I would like to conduct testing but do not have the necessary role(s) in alpha.sam.gov.   The account that needs role assignment is associated with [EMAIL ADDRESS].  I request a [ROLE] role for the  [DOMAIN] domain in alpha.sam.gov.</li>
-           <li><b>Option B:</b> I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval.   I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].</li>
-           </ol>
-        </li>
-        </ol>
+  1. Navigate to <a href="https://www.fsd.gov" target="_blank">www.fsd.gov</a>
+  2. Sign into the FSD platform using your FSD credentials
+  3. Select "Create an Incident"
+  4. Create an Incident
+      <ol type="a">
+      <li><b>System Name:</b> System for Award Management (SAM)</li>
+      <li><b>Is this related to the American Rescue Plan Act?:</b> No</li>
+      <li><b>Issue Type:</b> Other</li>
+      <li><b>Business Type:</b> Other</li>
+      <li><b>Subject (select 1):</b>
+         <ol type="i">
+         <li><b>Option A:</b> I need a role to test in alpha.sam.gov.</li>
+         <li><b>Option B:</b> System account approval in alpha.sam.gov</li>
+         </ol>
+      </li>
+      <li><b>Please describe the issue:</b> (Copy and paste the below information into the ticket, filling in your information within the brackets)
+         <ol type="i">
+         <li><b>Option A:</b> I have already navigated to alpha.sam.gov and created a user account, following the same steps for <a href="https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=81d067071b80b0109ac5ddb6bc4bcb63" target="_blank">creating an account</a> in sam.gov.  I would like to conduct testing but do not have the necessary role(s) in alpha.sam.gov.   The account that needs role assignment is associated with [EMAIL ADDRESS].  I request a [ROLE] role for the  [DOMAIN] domain in alpha.sam.gov.</li>
+         <li><b>Option B:</b> I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval.   I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].</li>
+         </ol>
+      </li>
+      </ol>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -792,5 +922,6 @@ Date | Version | Description
 10/21/2021 | v2.8    | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior.
 02/01/2022 | v2.9    | * Added exclusions V3 endpoint information to the Getting Started section. <br><br> * Updated the Query String Parameters and Expected Results sections to reflect available parameters and response fields in V3.<br><br> * Updated the Example 1 and Example 2 to indicate the V3 behavior.<br><br> * Updated the section, "HTTP Response Codes" to indicate the v3 behavior.<br><br> * Update the OpenAPI Specification File to include the V3 endpoints.
 04/04/2022 | v3.0    | * Provided the v3 end point for Production.<br><br> * Removed ueiDUNS occurrences from the sections, Query String Parameters, Expected Result, HTTP Response Codes and Examples.
+11/14/2022 | v3.1    | * Added "COMING SOON" sections throughout page for an upcoming change to Exclusions API, enabling the search and response for FASCSA Order Exclusion records.
 
 <p><small><a href="#">Back to top</a></small></p>
