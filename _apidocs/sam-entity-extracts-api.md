@@ -107,7 +107,7 @@ E.g.: The file generated on 04/05/2022 will show 2022095.</li>
    <ul>
     <li>FASCSAOrdersYYDDD.CSV (YYDDD is the Julian Date)</li>
    </ul>
-   E.g.: The file for 10/04/2023 would be FASCSAOrders232777.CSV.
+   E.g.: The file for 10/04/2023 would be FASCSAOrders23277.CSV.
  </li>
 </ul>
 </td>
@@ -254,7 +254,7 @@ Curl request with username and password: curl -X POST "https://api.sam.gov/data-
 <td>This parameter must be used on its own. It allows users to provide the extract file name.<br />
 Examples: fileName=SAM_PUBLIC_MONTHLY_V2_20220406.ZIP;<br/>
 fileName= SAM_Exclusions_Public_Extract_V2_22096.ZIP;<br/>
-<b>COMING SOON - fileName= FASCSAOrders232777.CSV</b>
+<b>COMING SOON - fileName= FASCSAOrders23277.CSV</b>
 </td>
 </tr>
 
