@@ -2157,39 +2157,6 @@
             "theme": ["Acquisition"]
         }, {
             "@type": "dcat:Dataset",
-            "title": "GSA Visitor Logs",
-            "description": "GSA provides the logs of visitors signing in and out of GSA's headquarters buildings as part of the transparency goals of the agency.",
-            "modified": "2016-01-07",
-            "accessLevel": "public",
-            "identifier": "GSA-136951",
-            "dataQuality": true,
-            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "rights": "N/A",
-            "publisher": {
-                "@type": "org:Organization",
-                "name": "General Services Administration"
-            },
-            "accrualPeriodicity": "R/P1M",
-            "contactPoint": {
-                "@type": "vcard:Contact",
-                "fn": "Alton M Bigelow",
-                "hasEmail": "mailto:alton.bigelow@gsa.gov"
-            },
-            "distribution": [{
-                    "@type": "dcat:Distribution",
-                    "mediaType": "text/html",
-                    "format": "text/html",
-                    "title": "GSA Visitor Logs",
-                    "downloadURL": "http://gsa.gov/portal/content/306965"
-                }
-            ],
-            "keyword": ["Building", "GSA", "Headquarters", "Visitor"],
-            "bureauCode": ["023:00"],
-            "programCode": ["023:004"],
-            "language": ["en-us"],
-            "theme": ["People"]
-        }, {
-            "@type": "dcat:Dataset",
             "title": "Inventory Reporting Information System (IRIS)",
             "description": "IRIS Work Item Module supports Real Property Asset Management (RPAM) and the Financial Operation Division. IRIS manages the estimated cost of building projects related to repairs and alterations, and new construction",
             "modified": "2018-10-09",
@@ -2689,7 +2656,7 @@
             "@type": "dcat:Dataset",
             "title": "Inventory of Owned and Leased Properties (IOLP)",
             "description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\n\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\n\n- Location Code - GSA\u2019s alphanumeric identifier for the building\n- Real Property Asset Name - Allows users to find information about a specific building \n- Installation Name - Allows users to identify whether a property is part of an installation, such as a campus\n- Owned or Leased - Indicates the building is federally owned (F) or leased (L)\n- GSA Region - GSA assigned region for building location\n- Street Address/City/State/Zip Code - Building address\n- Longitude and Latitude - Map coordinates of the building (only through .csv export)\n- Rentable Square Feet - Total rentable square feet in building\n- Available Square Feet - Vacant space in building\n- Construction Date (Owned Only) - Year built\n- Congressional District - Congressional District building is located\n- Senator/Representative/URL - Senator/Representative of the Congressional District and their URL\n- Building Status - Indicates building is active\n- Lease Number (Leased Only) - GSA\u2019s alphanumeric identifier for the lease\n- Lease Effective/Expiration Dates (Leased Only) - Date lease starts/expires\n- Real Property Asset Type - Identifies a property as land, building, or structure",
-            "modified": "2023-03-20T13:39:21.114Z",
+            "modified": "2023-11-16T21:38:25.152Z",
             "accessLevel": "public",
             "identifier": "GSA-4495",
             "dataQuality": true,
@@ -2716,13 +2683,13 @@
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings 11.16.23.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/3f178dca-7e8b-4dcb-b35e-e7cbc9882c7e/download/iolp-buildings-11.16.23.xlsx"
+                    "title": "IOLP Leases 11.27.23.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d3cb3a80-9227-45a7-8bf8-1c10b0b4de2b/download/iolp-leases-11.27.23.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases 11.16.23.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/ebb67241-c50b-4d2f-b3e6-5c94cc540885/download/iolp-leases-11.16.23.xlsx"
+                    "title": "IOLP Buildings 11.27.23.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/967d2d5e-c917-48a3-b7d8-d01ffd7e0783/download/iolp-buildings-11.27.23.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
@@ -3230,7 +3197,7 @@
             "@type": "dcat:Dataset",
             "title": "RWA Entry & Tracking Application (RETA)",
             "description": "The Reimbursable Work Authorization (RWA) Entry & Tracking Application (RETA) is a web based system that serves the Public Buildings Service as a centralized repository for Reimbursable Work Authorization information.  It is a national PBS RWA database warehouse with electronic interface capabilities into the NEAR RWA Database System.",
-            "modified": "2015-11-19",
+            "modified": "2023-11-27T19:54:14.144Z",
             "accessLevel": "public",
             "identifier": "GSA-5008",
             "dataQuality": true,
@@ -3246,20 +3213,17 @@
             "accrualPeriodicity": "R/P1D",
             "contactPoint": {
                 "@type": "vcard:Contact",
-                "fn": "Mort Morton Glassberg",
-                "hasEmail": "mailto:william.glassberg@gsa.gov"
+                "fn": "Rachel Bichsel",
+                "hasEmail": "mailto:rachel.bichsel@gsa.gov"
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "mediaType": "application/zip",
-                    "format": "csv",
-                    "title": "RWA Entry & Tracking Application (RETA)",
-                    "downloadURL": "http://www.gsa.gov/dg/RETADataGov.zip"
+                    "accessURL": "http://www.gsa.gov/rwa"
                 }
             ],
             "keyword": ["Building", "Construction", "Historic", "Space"],
-            "bureauCode": ["023:05"],
-            "programCode": ["023:002"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
             "language": ["en-us"],
             "theme": ["Real Estate"]
         }, {
@@ -5624,8 +5588,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 11.16.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b192d966-cce9-4ae4-a06b-6e9bd1daf95e/download/edi-11.16.json"
+                    "title": "EDI 11.27.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/734beaa9-f5b0-4311-9888-bfdc4dc5feb9/download/edi-11.27.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -12413,9 +12377,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/pdf",
-                    "title": "ADM_545039D_CHGE_13_Delegations_of_Authority_Manual,_Chapter_9,_Office_of_GSA_IT_#CC041467.pdf",
-                    "description": "GSA has a Delegation of Authority for services and staff offices found here. Each org has a different chapter and GSA's Office of GSA IT (GSA IT) is found in chapter 9 which is posted here.",
-                    "downloadURL": "https://inventory.data.gov/dataset/a8552a76-8671-42d9-854a-2c8e9d17841e/resource/334abbd2-57a1-46e0-8310-061126fffab7/download/adm_545039d_chge_13_delegations_of_authority_manual_chapter_9_office_of_gsa_it_policy_-_posted_v.pdf"
+                    "title": "ADM_5450.39D_CHGE_22_Delegations_of_Authority_Manual,_Chapter_9.docx.pdf",
+                    "downloadURL": "https://inventory.data.gov/dataset/a8552a76-8671-42d9-854a-2c8e9d17841e/resource/7152b860-8b85-4aa1-951b-90fa951ad646/download/adm_5450.39d_chge_22_delegations_of_authority_manual_chapter_9.docx.pdf"
                 }
             ],
             "keyword": ["authority", "delegation"],
@@ -12501,7 +12464,7 @@
             "@type": "dcat:Dataset",
             "title": "Federal Real Property Profile (FRPP)",
             "description": "An ISO compliant metadata file to be used for harvesting the FRPP NGDA to the geoPlatform.",
-            "modified": "2023-11-16T17:23:22.310Z",
+            "modified": "2023-11-16T21:39:37.158Z",
             "accessLevel": "public",
             "identifier": "GSA-2023-10-30-01",
             "dataQuality": true,
@@ -12509,6 +12472,7 @@
             "describedByType": "application/pdf",
             "license": "https://creativecommons.org/publicdomain/zero/1.0/",
             "rights": "true",
+            "spatial": "United States",
             "publisher": {
                 "@type": "org:Organization",
                 "name": "General Services Administration",
@@ -12534,7 +12498,8 @@
             "keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "NGDA", "Real Property Theme", "building", "geospatial", "land", "real property", "structure"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
-            "language": ["en-US"]
+            "language": ["en-US"],
+            "theme": ["geospatial"]
         }
     ]
 }
