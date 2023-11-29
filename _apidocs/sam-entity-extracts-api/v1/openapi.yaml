@@ -49,7 +49,7 @@ paths:
         - name: frequency
           in: query
           description: >-
-            Specifies desired Frequecy level of the extract that they wish to
+            Specifies desired Frequency level of the extract that they wish to
             download
           required: false
           schema:
@@ -116,7 +116,7 @@ paths:
         - name: frequency
           in: query
           description: >-
-            Specifies desired Frequecy level of the extract that they wish to
+            Specifies desired Frequency level of the extract that they wish to
             download
           required: false
           schema:
