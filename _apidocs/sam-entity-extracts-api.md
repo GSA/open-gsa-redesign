@@ -370,7 +370,7 @@ Permitted values: V2 for the Public, FOUO and Exclusion extracts; V3 for the Sen
 <li>SAM_Exclusions_Public_Extract_V2_22097.ZIP</li>
 </ul>
 
-<li>FASCSA Exclusions files:</li>
+<li><b>FASCSA Exclusions files:</b></li>
 <ul>
 <li>FASCSAOrders23306.CSV</li>
 <li>FASCSAOrders23305.CSV</li>
@@ -510,6 +510,6 @@ Date | Version | Description
 03/13/2023 | v3.2    | * Deleted the MPIN row from the "SAM Master Extract Mapping" file.<br><br> * Updated row # 288 (which used to track MPIN) in the "Sensitive Extract Layout" file to indicate that the field is deprecated.<br><br> * Removed the MPIN value from the sample "Sensitive Monthly V3 Extract File".<br><br>
 06/27/2023 | v3.3    | * Updated "Effective April 2022" to "Effective June 2023". <br><br> * Updated the "June 2023 release: SAM Master Extract Mapping" STRING Clarification tab to include the following updates: <br>&emsp;1. NAICS Exception String table updated to reflect January 2023 <br>&emsp;changes<br>&emsp;2. SBA Business Types String table updated to include new value: <br>&emsp;"A4- SBA Certified Small Disadvantaged Business"<br><br>
 09/11/2023 | v3.4    | * Removed "SAM Master Extract Mapping document". <br><br>
-12/01/2023 | v3.5    | * A new FASCSA Order Exclusions Extract has been created, and the V1 Extracts Download API is now enabled to download this extract. As part of this change, below are the associated changes made to this OpenGSA page:<br><br> * Updated the Query String Parameters section to reflect an example FASCSA extract file name.<br><br> * Updated the Extract Mapping Document and Layouts section with a new FASCSA Exclusions extract layout document.<br><br> * Updated the Sample Extract File Names with sample FASCSA Exclusions File Names.<br><br> * Updated the Extract Download API Sample Requests section with a sample request for a FASCSA extract.<br><br> * Updated the OpenAPI Specification File to include reference to the new FASCSA extract.<br><br> * Updated the Sample Extract Files section with a new FASCSA Order Exclusions Public extract file.<br><br>
+12/01/2023 | v3.5    | A new FASCSA Order Exclusions Extract has been created, and the V1 Extracts Download API is now enabled to download this extract. As part of this change, below are the associated changes made to this OpenGSA page:<br><br> * Updated the Query String Parameters section to reflect an example FASCSA extract file name.<br><br> * Updated the Extract Mapping Document and Layouts section with a new FASCSA Exclusions extract layout document.<br><br> * Updated the Sample Extract File Names with sample FASCSA Exclusions File Names.<br><br> * Updated the Extract Download API Sample Requests section with a sample request for a FASCSA extract.<br><br> * Updated the OpenAPI Specification File to include reference to the new FASCSA extract.<br><br> * Updated the Sample Extract Files section with a new FASCSA Order Exclusions Public extract file.<br><br>
 
 <p><small><a href="#">Back to top</a></small></p>
