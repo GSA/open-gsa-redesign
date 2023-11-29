@@ -19,6 +19,8 @@ tags:
   description: Exclusions Api Controller V 2
 - name: exclusions-api-controller-v-3
   description: Exclusions Api Controller V 3
+- name: exclusions-api-controller-v-4
+  description: Exclusions Api Controller V 4
 - name: file-download-controller
   description: File Download Controller
 paths:
@@ -1112,7 +1114,7 @@ paths:
             type: string
         - name: fascsaOrder
           in: query
-          description: This field is used to filter out FASCSAOrders it accepts Yes or No and is case-insensitive.
+          description: This field is used to filter out FASCSA Orders. It accepts Yes or No and is case-insensitive.
           schema:
             type: string
       responses:
