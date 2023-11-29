@@ -254,10 +254,7 @@ The API will return one of the following responses:
   </tr>
   <tr>
     <td>405</td>
-    <td>If any method other than "GET" is used:<br>NOTE:<br>
-    Error messages in v1 and v2 are returned in this fashion: httpStatus, title, detail, errorCode, source. <br>
-    Error messages in v3 and v4 are returned in this fashion: Status, timestamp, message, detail, errorCode, transaction_id.
-   </td>
+    <td>If any method other than "GET" is used:<br>NOTE:<br>Error messages in v1 and v2 are returned in this fashion: httpStatus, title, detail, errorCode, source. <br>Error messages in v3 and v4 are returned in this fashion: Status, timestamp, message, detail, errorCode, transaction_id.</td>
   </tr>
   <tr>
     <td colspan="2"> NOTE:<br>Error messages in v1 and v2 are returned in this fashion: httpStatus, title, detail, errorCode, source<br>Error messages in v3 are returned in this fashion: Status, timestamp, message, detail, errorCode, transaction_id</td>
