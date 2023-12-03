@@ -1,0 +1,7 @@
+Classification,Name,Prefix,First,Middle,Last,Suffix,Address 1,Address 2,City,State / Province,Country,Zip Code,Unique Entity ID,CAGE,Excluding Agency,Additional Comments,Active Date,Termination Date,Creation Date,Update Date,Exclusion Type,FASCSA Order Flag
+Individual,,,SAM,A,SMITH,,,,CC,DC,USA,20008,,,,,3/2/2000,Indefinite,10/30/2023,10/30/2023,Ineligible (Proceedings Completed),Y
+Individual,,,TEST,,TEST,,,,WASHINGTON,DC,USA,,,,,,10/30/2023,Indefinite,10/30/2023,10/30/2023,Prohibition/Restriction,Y
+Special Entity Designation,ALPHA SED TEST 032522 1,,,,,,1 FIRST ST,,CUMBERLAND,MD,USA,21532,XKL8N41334B1,,,,2/2/2002,Indefinite,3/25/2022,10/30/2023,Ineligible (Proceedings Pending),Y
+Special Entity Designation,APPLE CO,,,,,,CC,,CC,DC,USA,20008,SDYRXUJT7XA5,,,"This is an exclusion record with type of ""Prohibition/Restriction"".",3/2/2000,Indefinite,10/30/2023,10/30/2023,Prohibition/Restriction,Y
+Firm,FOXTROT RESEARCH CORP,,,,,,,,,FL,USA,,J27QHBBBL1V3,,AF,,10/30/2023,Indefinite,10/31/2023,10/31/2023,Prohibition/Restriction,Y
+Vessel,SHIPCC,,,,,,CC,,CC,DC,USA,20008,,,,This is a voluntary exclusion.,3/2/2000,Indefinite,10/30/2023,10/30/2023,Voluntary Exclusion,Y
