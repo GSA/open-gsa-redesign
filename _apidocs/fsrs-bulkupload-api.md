@@ -5,7 +5,7 @@ banner-heading: SAM.gov SubAwards Reporting Bulk Upload API
 
 ## Overview 
 
-The API for Federal Funding Accountability and Transparency Act (FFATA) Reporting will allow Federal prime awardees (i.e. prime contractors and prime grants recipients) to report subaward and executive compensation data regarding their first-tier subawards to meet the FFATA reporting requirements. Using this API, the users will be able to file multiple subaward reports at once. 
+The API for Federal Funding Accountability and Transparency Act (FFATA) Reporting will allow Prime awardees (i.e. prime contractors and prime grants recipients) to report subaward and executive compensation data regarding their first-tier subawards to meet the FFATA reporting requirements. Using this API, the users will be able to file multiple subaward reports at once. 
 
 **Note:** The specifications on this page are for a future API.  Check back here or be in contact with IAE for the release date and testing session.
 
