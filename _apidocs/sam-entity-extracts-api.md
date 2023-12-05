@@ -94,6 +94,25 @@ E.g.: The file generated on 04/05/2022 will show 2022095.</li>
 </li></ul>
 </td>
 </tr>
+<tr>
+<td>Daily FASCSA Exclusion Extracts </td>
+<td>
+<ul>
+ <li>They are produced every day. Kindly check after 7 AM Eastern time.</li>
+ <li>The date on the .CSV file matches the date when the file was generated.</li>
+ <li>The file generated on 10/04/23 will show 23277.</li>
+ <li>These files contains all FASCSA active exclusions.</li>       
+ <li>File Naming Convention:<br>                                                                                                                                                                          
+   <b>Daily ASCII:</b>
+   <ul>
+    <li>FASCSAOrdersYYDDD.CSV (YYDDD is the Julian Date)</li>
+   </ul>
+   E.g.: The file for 10/04/2023 would be FASCSAOrders23277.CSV.
+ </li>
+</ul>
+</td>
+
+</tr>
 
 </table>
 
@@ -233,7 +252,9 @@ Curl request with username and password: curl -X POST "https://api.sam.gov/data-
 <tr>
 <td>fileName</td>
 <td>This parameter must be used on its own. It allows users to provide the extract file name.<br />
-Examples: fileName=SAM_PUBLIC_MONTHLY_V2_20220406.ZIP; fileName= SAM_Exclusions_Public_Extract_V2_22096.ZIP
+Examples: fileName=SAM_PUBLIC_MONTHLY_V2_20220406.ZIP;<br/>
+fileName= SAM_Exclusions_Public_Extract_V2_22096.ZIP;<br/>
+fileName= FASCSAOrders23277.CSV<br/>
 </td>
 </tr>
 
@@ -295,9 +316,6 @@ Permitted values: V2 for the Public, FOUO and Exclusion extracts; V3 for the Sen
 <summary><b>Extract Mapping Document and Layouts:</b><br>Please refer to the following:<br>
 </summary>
 <ul>
-<li><b>SAM Master Extract Mapping document:</b><br> 
-Effective June 2023: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v7.0.xlsx">SAM Master Extract Mapping</a></li>
-
 <li><b>Public extract layout with the UEI data:</b><br> 
 <a target="_blank" rel="noopener noreferrer" href="v1/SAM Master Extract Mapping v6.0 Public File V2 Layout.xlsx">Public Extract Layout</a><br>
 </li>
@@ -312,6 +330,10 @@ Effective June 2023: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v7.0.xlsx">SAM Maste
 
 <li><b>Exclusions Public extract layout with the UEI data: </b><br>
 <a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_Extract_Layout_V2.pdf">Exclusions Extract Layout</a><br>
+</li>
+
+<li><b>FASCSA Exclusions Public extract layout with the UEI data: </b><br>
+<a target="_blank" rel="noopener noreferrer" href="v1/SAM_Exclusions_Public_FASCSA_Orders_Extract_Layout_V2.pdf">FASCSA Exclusions Extract Layout</a><br>
 </li>
 
 </ul>
@@ -346,6 +368,12 @@ Effective June 2023: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v7.0.xlsx">SAM Maste
 <ul>
 <li>SAM_Exclusions_Public_Extract_V2_22096.ZIP</li>
 <li>SAM_Exclusions_Public_Extract_V2_22097.ZIP</li>
+</ul>
+
+<li><b>FASCSA Exclusions files:</b></li>
+<ul>
+<li>FASCSAOrders23306.CSV</li>
+<li>FASCSAOrders23305.CSV</li>
 </ul></ul>
 </details>
 
@@ -370,6 +398,7 @@ Effective June 2023: <a href="v1/SAM_MASTER_EXTRACT_MAPPING v7.0.xlsx">SAM Maste
 <li>https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=SENSITIVE&frequency=MONTHLY&date=04/2022&charset=UTF8</li>
 <li>https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=SAM_Exclusions_Public_Extract_V2_22097.ZIP</li>
 <li>https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileType=EXCLUSION&date=04/07/2022</li>
+<li>https://api.sam.gov/data-services/v1/extracts?api_key={API KEY}&fileName=FASCSAOrders23306.CSV</li>
 </ul>
 </details>
 
@@ -389,6 +418,7 @@ Extract files with UEI Information:
 * Click to view <a href="v1/sample-files/SAM_FOUO_MONTHLY_V2_20200414.ZIP">FOUO Monthly V2 Extract File</a>
 * Click to view <a href="v1/sample-files/SAM_SENSITIVE_MONTHLY_V3_20200414.ZIP">Sensitive Monthly V3 Extract File</a>
 * Click to view <a href="v1/sample-files/SAM_Exclusions_Public_Extract_V2_22018.zip">Exclusions Public V2 Extract File</a><br>
+* Click to view <a href="v1/sample-files/FASCSAOrders23306.csv">FASCSA Order Exclusions Public V2 Extract File</a><br>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -479,5 +509,7 @@ Date | Version | Description
 08/08/2022 | v3.1    | * Updated to clarify the use of Controlled Unclassified Information (CUI) data.<br><br>
 03/13/2023 | v3.2    | * Deleted the MPIN row from the "SAM Master Extract Mapping" file.<br><br> * Updated row # 288 (which used to track MPIN) in the "Sensitive Extract Layout" file to indicate that the field is deprecated.<br><br> * Removed the MPIN value from the sample "Sensitive Monthly V3 Extract File".<br><br>
 06/27/2023 | v3.3    | * Updated "Effective April 2022" to "Effective June 2023". <br><br> * Updated the "June 2023 release: SAM Master Extract Mapping" STRING Clarification tab to include the following updates: <br>&emsp;1. NAICS Exception String table updated to reflect January 2023 <br>&emsp;changes<br>&emsp;2. SBA Business Types String table updated to include new value: <br>&emsp;"A4- SBA Certified Small Disadvantaged Business"<br><br>
+09/11/2023 | v3.4    | * Removed "SAM Master Extract Mapping document". <br><br>
+12/01/2023 | v3.5    | A new FASCSA Order Exclusions Extract has been created, and the V1 Extracts Download API is now enabled to download this extract. As part of this change, below are the associated changes made to this OpenGSA page:<br><br> * Updated the Extract Calendar to include information on the new FASCSA extract.<br><br> * Updated the Query String Parameters section to reflect an example FASCSA extract file name.<br><br> * Updated the Extract Mapping Document and Layouts section with a new FASCSA Exclusions extract layout document.<br><br> * Updated the Sample Extract File Names with sample FASCSA Exclusions File Names.<br><br> * Updated the Extract Download API Sample Requests section with a sample request for a FASCSA extract.<br><br> * Updated the Sample Extract Files section with a new FASCSA Order Exclusions Public extract file.<br><br>
 
 <p><small><a href="#">Back to top</a></small></p>

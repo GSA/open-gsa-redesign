@@ -1429,7 +1429,7 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "text/csv",
                     "title": "data_gov_bldg_rexus.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/31312431-bbdd-4ba5-87dc-e2a4680718cf/download/data_gov_bldg_rexus.csv"
+                    "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/d18c8987-c34f-46d1-a8bb-669a8f5874fd/download/data_gov_bldg_rexus.csv"
                 }
             ],
             "keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -1461,7 +1461,7 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "text/csv",
                     "title": "data_gov_lse_rexus.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/24434a4d-0bb4-4ff3-9fd4-275035539c1c/download/data_gov_lse_rexus.csv"
+                    "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/cc077dba-4530-445a-91e0-50f7519bce41/download/data_gov_lse_rexus.csv"
                 }
             ],
             "keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -2157,39 +2157,6 @@
             "theme": ["Acquisition"]
         }, {
             "@type": "dcat:Dataset",
-            "title": "GSA Visitor Logs",
-            "description": "GSA provides the logs of visitors signing in and out of GSA's headquarters buildings as part of the transparency goals of the agency.",
-            "modified": "2016-01-07",
-            "accessLevel": "public",
-            "identifier": "GSA-136951",
-            "dataQuality": true,
-            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "rights": "N/A",
-            "publisher": {
-                "@type": "org:Organization",
-                "name": "General Services Administration"
-            },
-            "accrualPeriodicity": "R/P1M",
-            "contactPoint": {
-                "@type": "vcard:Contact",
-                "fn": "Alton M Bigelow",
-                "hasEmail": "mailto:alton.bigelow@gsa.gov"
-            },
-            "distribution": [{
-                    "@type": "dcat:Distribution",
-                    "mediaType": "text/html",
-                    "format": "text/html",
-                    "title": "GSA Visitor Logs",
-                    "downloadURL": "http://gsa.gov/portal/content/306965"
-                }
-            ],
-            "keyword": ["Building", "GSA", "Headquarters", "Visitor"],
-            "bureauCode": ["023:00"],
-            "programCode": ["023:004"],
-            "language": ["en-us"],
-            "theme": ["People"]
-        }, {
-            "@type": "dcat:Dataset",
             "title": "Inventory Reporting Information System (IRIS)",
             "description": "IRIS Work Item Module supports Real Property Asset Management (RPAM) and the Financial Operation Division. IRIS manages the estimated cost of building projects related to repairs and alterations, and new construction",
             "modified": "2018-10-09",
@@ -2689,7 +2656,7 @@
             "@type": "dcat:Dataset",
             "title": "Inventory of Owned and Leased Properties (IOLP)",
             "description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\n\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\n\n- Location Code - GSA\u2019s alphanumeric identifier for the building\n- Real Property Asset Name - Allows users to find information about a specific building \n- Installation Name - Allows users to identify whether a property is part of an installation, such as a campus\n- Owned or Leased - Indicates the building is federally owned (F) or leased (L)\n- GSA Region - GSA assigned region for building location\n- Street Address/City/State/Zip Code - Building address\n- Longitude and Latitude - Map coordinates of the building (only through .csv export)\n- Rentable Square Feet - Total rentable square feet in building\n- Available Square Feet - Vacant space in building\n- Construction Date (Owned Only) - Year built\n- Congressional District - Congressional District building is located\n- Senator/Representative/URL - Senator/Representative of the Congressional District and their URL\n- Building Status - Indicates building is active\n- Lease Number (Leased Only) - GSA\u2019s alphanumeric identifier for the lease\n- Lease Effective/Expiration Dates (Leased Only) - Date lease starts/expires\n- Real Property Asset Type - Identifies a property as land, building, or structure",
-            "modified": "2023-03-20T13:39:21.114Z",
+            "modified": "2023-11-16T21:38:25.152Z",
             "accessLevel": "public",
             "identifier": "GSA-4495",
             "dataQuality": true,
@@ -2709,22 +2676,20 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "conformsTo": "http://www.isotc211.org/2005/gmd"
-                }, {
-                    "@type": "dcat:Distribution",
                     "mediaType": "application/xml",
                     "title": "IOLP19139_080123.xml",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd",
                     "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/bfbd1f68-b7d8-4822-98bb-4eceabd2c3a7/download/iolp19139_080123.xml"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Leases 8.17.23.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/9cdf9d68-8943-4923-99bb-d5a596f4f2e1/download/iolp-leases-8.17.23.xlsx"
+                    "title": "IOLP Buildings 11.30.23.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/fc2c814f-54ab-491b-ad7b-b4bc4714285d/download/iolp-buildings-11.30.23.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "IOLP Buildings 8.17.23.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/f69309ae-d71a-4d82-b92f-ae9597a2867a/download/iolp-buildings-8.17.23.xlsx"
+                    "title": "IOLP Leases 11.30.23.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/ffd2b9ff-876c-4873-acf6-c148f6c2ea89/download/iolp-leases-11.30.23.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
@@ -3232,7 +3197,7 @@
             "@type": "dcat:Dataset",
             "title": "RWA Entry & Tracking Application (RETA)",
             "description": "The Reimbursable Work Authorization (RWA) Entry & Tracking Application (RETA) is a web based system that serves the Public Buildings Service as a centralized repository for Reimbursable Work Authorization information.  It is a national PBS RWA database warehouse with electronic interface capabilities into the NEAR RWA Database System.",
-            "modified": "2015-11-19",
+            "modified": "2023-11-27T19:54:14.144Z",
             "accessLevel": "public",
             "identifier": "GSA-5008",
             "dataQuality": true,
@@ -3248,20 +3213,17 @@
             "accrualPeriodicity": "R/P1D",
             "contactPoint": {
                 "@type": "vcard:Contact",
-                "fn": "Mort Morton Glassberg",
-                "hasEmail": "mailto:william.glassberg@gsa.gov"
+                "fn": "Rachel Bichsel",
+                "hasEmail": "mailto:rachel.bichsel@gsa.gov"
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "mediaType": "application/zip",
-                    "format": "csv",
-                    "title": "RWA Entry & Tracking Application (RETA)",
-                    "downloadURL": "http://www.gsa.gov/dg/RETADataGov.zip"
+                    "accessURL": "http://www.gsa.gov/rwa"
                 }
             ],
             "keyword": ["Building", "Construction", "Historic", "Space"],
-            "bureauCode": ["023:05"],
-            "programCode": ["023:002"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
             "language": ["en-us"],
             "theme": ["Real Estate"]
         }, {
@@ -4576,42 +4538,6 @@
             "theme": ["Acquisition"]
         }, {
             "@type": "dcat:Dataset",
-            "title": "Federal Real Property Profile (FRPP)",
-            "description": "The Federal Real Property Report includes summary data for the federal government's inventory of land, building, and structure assets around the world, as of September 30th each year.",
-            "modified": "2016-05-10",
-            "accessLevel": "public",
-            "identifier": "GSA - 138962",
-            "dataQuality": true,
-            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "rights": "N/A",
-            "publisher": {
-                "@type": "org:Organization",
-                "name": "General Services Administration"
-            },
-            "accrualPeriodicity": "R/P1Y",
-            "contactPoint": {
-                "@type": "vcard:Contact",
-                "fn": "Aluanda Drain",
-                "hasEmail": "mailto:aluanda.drain@gsa.gov"
-            },
-            "distribution": [{
-                    "@type": "dcat:Distribution",
-                    "mediaType": "text/html",
-                    "format": "text/html",
-                    "title": "Federal Real Property Profile (FRPP)",
-                    "downloadURL": "http://gsa.gov/portal/content/102880"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "conformsTo": "http://www.isotc211.org/2005/gmd"
-                }
-            ],
-            "keyword": ["FRPP", "Federal Property", "GSA", "General Services Property", "Geospatial", "NGDA Portfolio Themes", "Real Estate", "Real Property Theme", "ngda"],
-            "bureauCode": ["023:05"],
-            "programCode": ["023:003"],
-            "language": ["en-us"],
-            "theme": ["Real Estate"]
-        }, {
-            "@type": "dcat:Dataset",
             "title": "Federal Strategic Sourcing Initiative(FSSI) Wireless",
             "description": "FSSI Wireless BPA vendor submitted usage reports",
             "modified": "2016-02-23",
@@ -5662,8 +5588,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 8.22.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/10fd5553-348b-498f-a14d-67576dc1eebd/download/edi-8.22.json"
+                    "title": "EDI 11.30.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/3ba61ef1-1b51-4761-b66e-d54ce9d7ab30/download/edi-11.30.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5729,7 +5655,7 @@
                     "mediaType": "application/json",
                     "format": "JSON",
                     "title": "GSA IT Reform Cost Savings/Avoidance",
-                    "description": "GSA's August 2023 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+                    "description": "GSA's November 2023 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
                 }
@@ -6513,7 +6439,7 @@
                     "mediaType": "application/pdf",
                     "format": "pdf",
                     "title": "2015 GSA Common Baseline Implementation Plan and CIO Assignment Plan",
-                    "description": "This is GSA's 2015 Common Baseline Implementation Plan and its CIO Assignment Plan per the requirements set forth in FITARA legislation. Updated April 2017. Last Major Change to version updated on March 4, 2019. Last Major change to version update on 8/5/2020. Last Major change to version update on 03/24/2022. Updated on 3/14/23 to add roles of SAOP and CPO to personnel list. Also updated new CTO name and contact info. Updated 5/11/2023 to add acting roles and delegation of authorities link. Updated 8/10/2023 to add personnel change.",
+                    "description": "This is GSA's 2015 Common Baseline Implementation Plan and its CIO Assignment Plan per the requirements set forth in FITARA legislation. Updated April 2017. Last Major Change to version updated on March 4, 2019. Last Major change to version update on 8/5/2020. Last Major change to version update on 03/24/2022. Updated on 3/14/23 to add roles of SAOP and CPO to personnel list. Also updated new CTO name and contact info. Updated 5/11/2023 to add acting roles and delegation of authorities link. Updated most recently on 11/16/23 to update personnel changes.) MF",
                     "downloadURL": "https://inventory.data.gov/dataset/64c56cec-4b8f-44c7-ba69-090517f9f32e/resource/87e53999-aff1-4560-8bf0-42d9dc8e4a69/download/2015gsafitaraimplementationandcioassignmentplan.pdf"
                 }
             ],
@@ -7621,8 +7547,8 @@
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
                     "format": "json",
-                    "title": "GSA FITARA Actions and Milestones 2023-08-14",
-                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the August 2023 quarterly submission to OMB on August 14, 2023.",
+                    "title": "GSA FITARA Actions and Milestones 2023-11-09",
+                    "description": "GSA's Actions and Milestones JSON file to fulfill the FITARA requirements for the November 2023 quarterly submission to OMB on November 9, 2023.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/FITARA_milestones_schema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/cedf61aa-c4c8-4c30-8357-9d57362afe9b/resource/69cf9b0f-fe64-4ec3-a082-664d34497d5e/download/fitaramilestones.json"
                 }
@@ -8905,7 +8831,7 @@
             "@type": "dcat:Dataset",
             "title": "FY2020 Federal Real Property Profile (FRPP) Summary Data by Installation Name",
             "description": "A XLSX export of summarized data for specified assets contained within the FRPP, a database of Federal Real Property for executive agencies, are not included in the detailed level dataset..",
-            "modified": "2022-11-10T15:37:54.612Z",
+            "modified": "2023-10-06T19:08:36.619Z",
             "accessLevel": "public",
             "identifier": "GSA-2021-05-13-01",
             "license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -11805,7 +11731,7 @@
             "@type": "dcat:Dataset",
             "title": "FY21 Federal Real Property Profile",
             "description": "The Federal Real Property Report includes summary data for the federal government's inventory of land, building, and structure assets around the world.",
-            "modified": "2022-09-29T16:15:38.332Z",
+            "modified": "2023-10-06T19:13:22.373Z",
             "accessLevel": "public",
             "identifier": "GSA-2022-09-29-01",
             "dataQuality": true,
@@ -11826,11 +11752,6 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "mediaType": "application/xml",
-                    "title": "FedRealPropertyProfileDataforCivilianAgencies_PublicDataset_FRPP_GSA_corrected_20230424.xml",
-                    "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/84b69557-0553-48b8-ae77-5acd9c698f8b/download/fedrealpropertyprofiledataforcivilianagencies_publicdataset_frpp_gsa_corrected_20230424.xml"
-                }, {
-                    "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "FRPP_Public_Dataset_FY21_Final_02242023 (1).xlsx",
                     "downloadURL": "https://inventory.data.gov/dataset/ba12ef9a-2a84-4da7-a943-8772c176d5ff/resource/ec1ee26a-d1c7-4c53-87b1-58484cf948e5/download/frpp_public_dataset_fy21_final_02242023-1.xlsx"
@@ -11839,7 +11760,7 @@
                     "conformsTo": "http://www.isotc211.org/2005/gmd"
                 }
             ],
-            "keyword": ["FRPP", "Federal Property", "General Services Property", "NGDA Portfolio Themes", "Real Property Theme", "geospatial", "gsa", "ngda", "real estate"],
+            "keyword": ["FRPP", "Federal Property", "General Services Property", "Real Property Theme", "geospatial", "gsa", "real estate"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
@@ -12230,6 +12151,11 @@
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "TotRevFY23_3rdQtr.xlsx",
                     "downloadURL": "https://inventory.data.gov/dataset/fc20d688-f8b4-46f1-8369-ae2dbde89ef9/resource/f3d99e72-d5a8-4b4a-afef-ac2182ad8f74/download/totrevfy23_3rdqtr.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "TotRevFY23_4thQtr.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/fc20d688-f8b4-46f1-8369-ae2dbde89ef9/resource/993874ef-c4b0-4570-89db-8dcd7e078808/download/totrevfy23_4thqtr.xlsx"
                 }
             ],
             "keyword": ["Networx", "billing", "networx business volume", "telecommunications"],
@@ -12269,6 +12195,16 @@
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "EISTotRevFY23_Q2.xlsx",
                     "downloadURL": "https://inventory.data.gov/dataset/5691fe5b-1055-4a3c-888c-4ac52cf87f06/resource/1910f4bc-d8e4-4b67-b8c3-31f954f475c1/download/eistotrevfy23_q2.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "EISTotRevFY23_Q3.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/5691fe5b-1055-4a3c-888c-4ac52cf87f06/resource/0cfc1588-f8ce-4c32-b82a-779704c10b9d/download/eistotrevfy23_q3.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "EISTotRevFY23_Q4.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/5691fe5b-1055-4a3c-888c-4ac52cf87f06/resource/165c6c6d-d1ab-4d8d-8270-006a5e9cbe5c/download/eistotrevfy23_q4.xlsx"
                 }
             ],
             "keyword": ["Business Volume", "eis", "enterprise-infrastructure", "gsa", "telecommunications"],
@@ -12441,15 +12377,129 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/pdf",
-                    "title": "ADM_545039D_CHGE_13_Delegations_of_Authority_Manual,_Chapter_9,_Office_of_GSA_IT_#CC041467.pdf",
-                    "description": "GSA has a Delegation of Authority for services and staff offices found here. Each org has a different chapter and GSA's Office of GSA IT (GSA IT) is found in chapter 9 which is posted here.",
-                    "downloadURL": "https://inventory.data.gov/dataset/a8552a76-8671-42d9-854a-2c8e9d17841e/resource/334abbd2-57a1-46e0-8310-061126fffab7/download/adm_545039d_chge_13_delegations_of_authority_manual_chapter_9_office_of_gsa_it_policy_-_posted_v.pdf"
+                    "title": "ADM_5450.39D_CHGE_22_Delegations_of_Authority_Manual,_Chapter_9.docx.pdf",
+                    "downloadURL": "https://inventory.data.gov/dataset/a8552a76-8671-42d9-854a-2c8e9d17841e/resource/7152b860-8b85-4aa1-951b-90fa951ad646/download/adm_5450.39d_chge_22_delegations_of_authority_manual_chapter_9.docx.pdf"
                 }
             ],
             "keyword": ["authority", "delegation"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "FY 2022 Federal Real Property Profile (FRPP) Public Dataset",
+            "description": "The Federal Real Property Profile Management System (FRPP MS) is the federal government\u2019s centralized inventory of real property under the custody and control of executive branch agencies. Due to national security and other authorized exclusions, some FRPP data is not available to the public.",
+            "modified": "2023-10-30T18:08:03.903Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-10-06-01",
+            "describedBy": "https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-council-frpc/frpc-guidance-library",
+            "describedByType": "application/pdf",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Office of Government-wide Policy",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "Office of Government-wide Policy"
+                }
+            },
+            "accrualPeriodicity": "R/P1Y",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Stephanie Klodzen",
+                "hasEmail": "mailto:stephanie.klodzen@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "FRPP_Public_Dataset_FY22_Final_051012023.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/d6d3b812-2847-4886-ac1a-6e07a4b737ff/resource/4eba1f55-e992-45d6-ae43-3dc3732fc2f2/download/frpp_public_dataset_fy22_final_051012023.xlsx"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd"
+                }
+            ],
+            "keyword": ["Civilian", "FRPP", "Federal Real Property Profile", "General Services Property", "RTF", "Real Estate", "Warehouse", "building", "geospatial", "gsa", "land", "real pro", "reduce the footprint", "structure"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "FY2022 Federal Real Property Profile Summary Data by Installation Name",
+            "description": "A XLSX export of summarized data for all DoD and specified civilian agency assets contained within the FRPP, a government-wide database of executive branch agency federal real property assets, that cannot be made public at a detailed level.  Data for these records is summarized at the Installation Level.",
+            "modified": "2023-10-20T18:48:57.947Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-10-20",
+            "describedBy": "https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-council-frpc/frpc-guidance-library",
+            "describedByType": "application/pdf",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "R/P1Y",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Stephanie Klodzen",
+                "hasEmail": "mailto:stephanie.klodzen@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "FY-2022-frpp-summarized-data-by-installation-10.10.2023.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/da3e4fcd-bb9a-4d3c-bc3d-ba9bf2fbcfe9/resource/b470d8d2-13f8-46ed-83bd-70d822b27167/download/fy-2022-frpp-summarized-data-by-installation-10.10.2023.xlsx"
+                }
+            ],
+            "keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "Installation Name", "building", "land", "real property"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Federal Real Property Profile (FRPP)",
+            "description": "An ISO compliant metadata file to be used for harvesting the FRPP NGDA to the geoPlatform.",
+            "modified": "2023-11-16T21:39:37.158Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2023-10-30-01",
+            "dataQuality": true,
+            "describedBy": "https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-council-frpc/frpc-guidance-library",
+            "describedByType": "application/pdf",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "spatial": "United States",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "R/P1Y",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Stephanie Klodzen",
+                "hasEmail": "mailto:stephanie.klodzen@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/xml",
+                    "title": "FedRealPropertyProfileDataFRPP_NGDARecord_GSA_20231011 (1).xml",
+                    "conformsTo": "http://www.isotc211.org/2005/gmd",
+                    "downloadURL": "https://inventory.data.gov/dataset/ebd7d483-e022-4940-8480-e7b92555754d/resource/b86810c6-f9b3-4688-aa59-fb89d172a2ba/download/fedrealpropertyprofiledatafrpp_ngdarecord_gsa_20231011-1.xml"
+                }
+            ],
+            "keyword": ["FRPP", "Federal Real Property Profile", "General Services Administration", "NGDA", "Real Property Theme", "building", "geospatial", "land", "real property", "structure"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"],
+            "theme": ["geospatial"]
         }
     ]
 }

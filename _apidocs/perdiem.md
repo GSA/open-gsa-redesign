@@ -5,7 +5,7 @@ banner-heading: Per diem API
 
 ## Overview
 
-Per diem rates are the allowed reimbursement rates for hotel stays and meals for federal travelers. Rates are set for each of the federal government's fiscal years (October 1st to September 30th). GSA is responsible for setting the rates in the continental United States. Many businesses and other organizations adopt these rates as well. This API provides access to the current rate information.  
+GSA establishes the per diem reimbursement rates that federal agencies use to reimburse their employees for subsistence expenses incurred while on official travel within the continental United States. CONUS includes the 48 contiguous states and the District of Columbia. The per diem reimbursement rates consist of a maximum lodging allowance component and a meals and incidental expenses (M&IE) component. Rates for the coming federal government fiscal year (October 1st to September 30th) are typically announced in mid-August. 
 
 Use of this API is subject to [Terms of Service for GSA.gov's Developer Resources](https://gsa.gov/node/78901).
 
@@ -111,7 +111,7 @@ You can view the full details of this API in the <a href="v2/openapi.yaml">OpenA
 
 ### About per diem rates
 
-GSA sets rates for geographic areas it determines called _primary destinations._ Areas outside the primary destinations are covered by the same, nation-wide _standard rate._ The per diem rate database is organized by location and fiscal year. The meals value applies to the entire FY.
+Most of CONUS is covered by the standard per diem rate. In addition there are several hundred non-standard areas (NSAs) that have per diem rates higher than the standard rate. Most NSAs are comprised of a key city/primary destination and the surrounding county. The per diem rate database is organized by location and fiscal year. Maximum lodging allowances in some NSAs vary seasonally, which is why they are listed by month.
 
 On the **first and last days of a trip**, the allowed meal reimbursement is **75%** of the per diem rate.
 
