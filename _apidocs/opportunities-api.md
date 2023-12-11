@@ -8884,10 +8884,9 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|POP - Zip Code | Invalid zipcode. Please enter the 5 digit zipcode | When user enters the invalid zip code |	Create And Publish
 400|Award section - State | Award Details Section - State provided is invalid | When user enters the invalid state code |	Create And Publish
 400|Award section - Zip Code | Award Details Section - Invalid zipcode. Please enter the 5 digit zipcode | When user enters the invalid zip code |	Create And Publish
-400|Award Amount |	award.amount: is missing but it is required |	Award Amount is required |	Create Award Opportunity, Publish
-400|Award Amount |	award.amount: string found, number expected |	Number Expected |	Create Award Opportunity, Publish
-400|Award Amount |	award.amount: must have a minimum value of 1 |	Award Amount must be greater than $0 |	Create Award Opportunity, Publish
-400|Award Amount |	award.amount: must be multiple of 0.01 |	Award Amount must be limited to two decimal points |	Create Award Opportunity, Publish
+400|Award Amount |	Award amount is required |	Award Amount is required |	Create Award Opportunity, Publish
+400|Award Amount |	Award amount must be a valid integer value |	Award amount must be a valid integer value |	Create Award Opportunity, Publish
+400|Award Amount |	Award amount must be greater than or equal $0 |	Award amount must be greater than or equal $0 |	Create Award Opportunity, Publish
 
 
 
