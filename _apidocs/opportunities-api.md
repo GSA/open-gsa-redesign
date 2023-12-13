@@ -156,13 +156,13 @@ HZC     | Historically Underutilized Business (HUBZone) Set-Aside (FAR 19.13)
 HZS     | Historically Underutilized Business (HUBZone) Sole Source (FAR 19.13)
 SDVOSBC | Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)
 SDVOSBS | Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14)
-WOSB    | Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15)
-WOSBSS  | Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15)
-EDWOSB  | Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15)
-EDWOSBSS | Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15)
+WOSB    | SBA Certified Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15)
+WOSBSS  | SBA Certified Women-Owned Small Business (WOSB) Program Sole Source (FAR 19.15)
+EDWOSB  | SBA Certified Economically Disadvantaged WOSB (EDWOSB) Program Set-Aside (FAR 19.15)
+EDWOSBSS | SBA Certified Economically Disadvantaged WOSB (EDWOSB) Program Sole Source (FAR 19.15)
 LAS | Local Area Set-Aside (FAR 26.2)
-IEE | Indian Economic Enterprise (IEE) Set-Aside (specific to Department of Interior and Department of Health and Human Services)
-ISBEE | Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Department of Health and Human Services)
+IEE | Indian Economic Enterprise (IEE) Set-Aside (specific to Department of Interior and Indian Health Services)
+ISBEE | Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)
 BICiv | Buy Indian Set-Aside (specific to Department of Health and Human Services, Indian Health Services)
 VSA | Veteran-Owned Small Business Set-Aside (specific to Department of Veterans Affairs)
 VSS | Veteran-Owned Small Business Sole source (specific to Department of Veterans Affairs)
@@ -8948,6 +8948,8 @@ Date | Version | Description
 02/28/2023| v1.23| Please refer the version control section for the list of v3 endpoints will available for production use from March 3rd, 2023(v1.22).
 04/19/2023| v1.24| Please refer the GENC Standardization section for the list of active countries and states.
 04/20/2023| v1.25| Please refer the Place of Performace and Award section (Country/State/Zip) validation error messages. These are effective in production from March 15, 2024(v1.25).
+12/12/2023| v1.26| Updated the setAside titile descriptions for WOSB,WOSBSS,EDWOSB,EDWOSBSS.
+12/12/2023| v1.27| Updated the setAside titile descriptions for IEE, ISBEE.
 
 
 <p><small><a href="#">Back to top</a></small></p>
