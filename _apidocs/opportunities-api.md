@@ -8884,6 +8884,9 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|POP - Zip Code | Invalid zipcode. Please enter the 5 digit zipcode | When user enters the invalid zip code |	Create And Publish
 400|Award section - State | Award Details Section - State provided is invalid | When user enters the invalid state code |	Create And Publish
 400|Award section - Zip Code | Award Details Section - Invalid zipcode. Please enter the 5 digit zipcode | When user enters the invalid zip code |	Create And Publish
+400|Award Amount |	Award amount is required |	Award Amount is required |	Create Award Opportunity, Publish
+400|Award Amount |	Award amount must be a valid integer value |	Award amount must be a valid integer value |	Create Award Opportunity, Publish
+400|Award Amount |	Award amount must be greater than or equal $0 |	Award amount must be greater than or equal $0 |	Create Award Opportunity, Publish
 
 
 
@@ -8948,6 +8951,7 @@ Date | Version | Description
 02/28/2023| v1.23| Please refer the version control section for the list of v3 endpoints will available for production use from March 3rd, 2023(v1.22).
 04/19/2023| v1.24| Please refer the GENC Standardization section for the list of active countries and states.
 04/20/2023| v1.25| Please refer the Place of Performace and Award section (Country/State/Zip) validation error messages. These are effective in production from March 15, 2024(v1.25).
+11/30/2023| v1.26| Please refer the Award section (Award Amount) validation error messages. These are effective in production from December 01, 2023(v1.26).
 
 
 <p><small><a href="#">Back to top</a></small></p>
