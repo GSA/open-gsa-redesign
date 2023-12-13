@@ -8884,9 +8884,9 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|POP - Zip Code | Invalid zipcode. Please enter the 5 digit zipcode | When user enters the invalid zip code |	Create And Publish
 400|Award section - State | Award Details Section - State provided is invalid | When user enters the invalid state code |	Create And Publish
 400|Award section - Zip Code | Award Details Section - Invalid zipcode. Please enter the 5 digit zipcode | When user enters the invalid zip code |	Create And Publish
-400|Award Amount |	Award amount is required |	Award Amount is required |	Create Award Opportunity, Publish
-400|Award Amount |	Award amount must be a valid integer value |	Award amount must be a valid integer value |	Create Award Opportunity, Publish
-400|Award Amount |	Award amount must be greater than or equal $0 |	Award amount must be greater than or equal $0 |	Create Award Opportunity, Publish
+400|Award Amount |	Award amount is required |	Award Amount is required |	CreateAndPublish, Publish, Update notice
+400|Award Amount |	Award amount must be a valid integer value |	Award amount must be a valid integer value |	CreateAndPublish, Publish, Update notice
+400|Award Amount |	Award amount must be greater than or equal $0 |	Award amount must be greater than or equal $0 |	CreateAndPublish, Publish, Update notice
 
 
 
@@ -8954,6 +8954,6 @@ Date | Version | Description
 11/30/2023| v1.26| Please refer the Award section (Award Amount) validation error messages. These are effective in production from December 01, 2023(v1.26).
 12/12/2023| v1.27| Updated the setAside titile descriptions for WOSB,WOSBSS,EDWOSB,EDWOSBSS.
 12/12/2023| v1.28| Updated the setAside titile descriptions for IEE, ISBEE.
-
+12/13/2023| v1.29| Updated the api's list for Award Amount error messages.
 
 <p><small><a href="#">Back to top</a></small></p>
