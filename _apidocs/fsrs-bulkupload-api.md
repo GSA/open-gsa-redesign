@@ -48,7 +48,7 @@ To be able to perform the various operations provided under the SubAwards API, u
 
 <p><small><a href="#">Back to top</a></small></p>
 
-Role/Permission    | Submit SubAward Report | Update SubAward Report | Get SubAward Report | Delete SubAward Report
+Role/Permission(TBD)   | Submit SubAward Report | Update SubAward Report | Get SubAward Report | Delete SubAward Report
 -------------|---------------|---------------------|---------------------|------------------------------
 Create and delete permission for SubAwards under Entity Reporting | Yes | Yes | Yes | Yes
 Read permission for SubAwards under Entity Reporting | No | No | Yes | No
