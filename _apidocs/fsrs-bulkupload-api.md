@@ -42,7 +42,7 @@ All REST API requests will be validated against the Type of Connection within th
 All REST API requests will be validated against the IP Addresses registered within the system account profile. All requests that are not from registered IP address(es) in the system account profile will be rejected with an error.
 
 #### User Account Authorization
-To be able to perform the various operations provided under the SubAwards API, users will need to have permissions under ‘Entity Reporting’ domain for SubAwards to perform various operations.The permissions required for operations by role are listed in the table below:
+To be able to perform the various operations provided under the SubAwards API, users will need to have the correct role and permissions (final role name and permission is being finalized) to perform various operations.The permissions required for operations by role are listed in the table below (this is a draft):
 
 **Note:** Permissions marked "Yes" are may not be assigned by default and will require your user administrator to update.
 
