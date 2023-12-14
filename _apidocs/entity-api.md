@@ -8,7 +8,7 @@ banner-heading: SAM.gov Entity Management API
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
      <p class="usa-alert-text">
-        At this time, please cease using the Entity Management API for any Representations and Certifications display (also known as 'Reps and Certs') information.</br>/<br>Entity Management API results may not match the information available in the Reps and Certs in the entity's record on SAM.gov. The Reps and Certs display via search at SAM.gov is correct.</br></br>The Reps and Certs data stored in the database is correct.</br>The Reps and Certs data in the SAM record is correct.</br>It is the data returned by the API that we are investigating.</br></br>We will provide updates as soon as possible.
+        At this time, please <b>cease using</b> the Entity Management API for any Representations and Certifications display (also known as 'Reps and Certs') information.<br><br>Entity Management API results may not match the information available in the Reps and Certs in the entity's record on SAM.gov. The Reps and Certs display via search at SAM.gov is correct.<br><br>The Reps and Certs data stored in the database is correct.<br>The Reps and Certs data in the SAM record is correct.<br>It is the data returned by the API that we are investigating.<br><br>We will provide updates as soon as possible.
      </p>
    </div>
  </div>
