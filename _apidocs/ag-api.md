@@ -9,8 +9,12 @@ banner-heading: Acquisition Gateway Document Library API
 <!-- Alpha status alert -->
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
+     <strong>
+       This project is in BETA       
+     </strong>
      <p class="usa-alert-text">
-        At this time, please cease using the Entity Management API for any Representations and Certifications display (also known as 'Reps and Certs') information.</br>/<br>Entity Management API results may not match the information available in the Reps and Certs in the entity's record on SAM.gov. The Reps and Certs display via search at SAM.gov is correct.</br></br>The Reps and Certs data stored in the database is correct.</br>The Reps and Certs data in the SAM record is correct.</br>It is the data returned by the API that we are investigating.</br></br>We will provide updates as soon as possible.
+        This project is providing AG Document Library API</br>
+        Have feedback or questions? <a href="https://github.com/GSA/ag-api/issues">Please let us know</a>!
      </p>
    </div>
  </div>
