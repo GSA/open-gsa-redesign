@@ -21,8 +21,7 @@ SubAwards Reporting Bulk Upload API can be accessed from Production or Alpha via
 ### Authentication and Authorization
 
 To begin using this API, you will need to register for a System Account and obtain an API Key. After registration, you will need to provide this API key in the <i>x-api-key</i> HTTP header with every API request.
-* Registered users (Federal and non-federal) with appropriate roles for SubAwards under Entity Reporting domain can request for a system account with ‘read Sensitive’ or ‘read FOUO’ permissions to be able to view SubAward reports. 
-* Registered users (Federal and non-federal) with appropriate roles for SubAwards under Entity Reporting domain can request for a system account with ‘Write Sensitive’  permissions to be able to create, update and/or delete SubAward reports.
+* Registered Non-federal users with appropriate role and permission assigned to them by their Entity Administrator (Please note that the role/permission is being finalized) can request for a system account with "Write" permission (Please note that the permission name is being finalized) to be able to create, update, view and/or delete SubAward reports.
 * If a user has the appropriate roles for SubAwards reporting, and therefore satisfies the above registration criteria, they will be able to access the System Accounts widget from their Workspace page after logging in.
 * The user can then select “New Account” by navigating from the widget and fill out the required sections with appropriate SubAwards reporting permissions and required information..
 * The requested system account will then be sent for an approval. After approval, the user will be notified via an email and they will also be able to see the status of their request in the System Account widget.
