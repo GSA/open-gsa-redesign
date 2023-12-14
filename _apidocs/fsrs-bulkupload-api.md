@@ -33,7 +33,7 @@ In order to utilize the SubAwards API endpoints, users will need to generate the
 
 #### System Account Authentication
 In order to utilize the SubAwards Reporting Bulk Upload API, the following is required:
-* Valid SAM.gov federal government system account or non-fed user account with relevant SubAwards permissions under Entity Reporting domain.
+* Valid SAM.gov Non-federal system account with SubAward permission and Non-federal user account with relevant user role and permission (role name/permission to be finalized).
 
 ### Type of Connection Validation 
 All REST API requests will be validated against the Type of Connection within the system account profile. All requests without "REST API" type of connection in the system account profile will be rejected with an error.
