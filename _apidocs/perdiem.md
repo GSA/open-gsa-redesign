@@ -113,9 +113,7 @@ You can view the full details of this API in the <a href="v2/openapi.yaml">OpenA
 
 Most of CONUS is covered by the standard per diem rate. In addition there are several hundred non-standard areas (NSAs) that have per diem rates higher than the standard rate. Most NSAs are comprised of a key city/primary destination and the surrounding county. The per diem rate database is organized by location and fiscal year. Maximum lodging allowances in some NSAs vary seasonally, which is why they are listed by month.
 
-On the **first and last days of a trip**, the allowed meal reimbursement is **75%** of the per diem rate.
-
-For more details on per diem rates please consult the [Federal Travel Regulations](https://gsa.gov/ftr).
+For more information on methods of reimbursement, first and last day of travel, and meal deductions, please consult the [Federal Travel Regulations](https://www.ecfr.gov/current/title-41/subtitle-F).
 
 ### Sensitive API process
 
