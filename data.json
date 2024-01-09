@@ -1427,9 +1427,9 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "data_gov_bldg_rexus.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/b441f3f7-ffda-416f-b708-96a54a974d1d/download/data_gov_bldg_rexus.csv"
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "2024 - 1 - 5 - IOLP Buildings.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/f99b41cd-939e-4748-b10a-0bc2786863fe/download/2024-1-5-iolp-buildings.xlsx"
                 }
             ],
             "keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -1459,9 +1459,9 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "data_gov_lse_rexus.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/be940c1c-9245-4a33-8334-52ba8cfdbdf5/download/data_gov_lse_rexus.csv"
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "2024 - 1 - 5 - IOLP Leases.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/0e05648e-3940-4566-920f-16183aaebf89/download/2024-1-5-iolp-leases.xlsx"
                 }
             ],
             "keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -2683,13 +2683,13 @@
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "2023 - 12 - 22 - IOLP Leases.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/2dcb9782-1242-4403-90ef-bcd8a61df03d/download/2023-12-22-iolp-leases.xlsx"
+                    "title": "2024 - 1 - 5 - IOLP Buildings.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/184817f6-7f87-4dd2-93d9-43a863d9d80d/download/2024-1-5-iolp-buildings.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "2023 - 12 - 22 - IOLP Buildings.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d8577779-cf1e-43b4-9f90-095532b76dbd/download/2023-12-22-iolp-buildings.xlsx"
+                    "title": "2024 - 1 - 5 - IOLP Leases.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/f7e284a6-8761-45e2-83b3-6e405fbc0724/download/2024-1-5-iolp-leases.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
@@ -5588,8 +5588,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 12.22.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/5c6d9884-3ee1-4771-8988-80c042b0ca36/download/edi-12.22.json"
+                    "title": "EDI 1.9.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/f7ef1905-9c67-4788-8d37-cdb690c08d8d/download/edi-1.9.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
