@@ -14,7 +14,7 @@ sidenav: docs
 ---
 
 #### **1. Purpose**
-The purpose of this Order is to review GSA’s policy on open source software development and publication, and to communicate responsibilities to the agency for compliance with OMB’s open source policy.  Specifically, the Order outlines requirements for implementing open source code produced by and/or for the agency in accordance with [OMB Memorandum M-16-21, Federal Source Code Policy: Achieving Efficiency, Transparency, and Innovation through Reusable and Open Source Software](https://sourcecode.cio.gov/), dated August 8, 2016.
+The purpose of this Order is to review GSA’s policy on open source software development and publication, and to communicate responsibilities to the agency for compliance with OMB’s open source policy.  Specifically, the Order outlines requirements for implementing open source code produced by and/or for the agency in accordance with [OMB Memorandum M-16-21, Federal Source Code Policy: Achieving Efficiency, Transparency, and Innovation through Reusable and Open Source Software]([https://sourcecode.cio.gov/](https://web.archive.org/web/20170121010212/https://sourcecode.cio.gov/)), dated August 8, 2016.
 
 ---
 
@@ -29,7 +29,7 @@ This Order supersedes and cancels [CIO IL-16-03, GSA Open Source Software (OSS) 
 ---
 
 #### **4. Explanation of Changes**
-a. Requires organizations to account for and publish their open source code in accordance with [M-16-21](https://sourcecode.cio.gov/).
+a. Requires organizations to account for and publish their open source code in accordance with [M-16-21](https://web.archive.org/web/20170121010212/https://sourcecode.cio.gov/).
 
 b. New code developed after August 8, 2016 must use JavaScript Object Notation (JSON) format with metadata, and be published on [gsa.gov/code.json](https://open.gsa.gov/code.json).
 
