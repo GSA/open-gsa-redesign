@@ -135,7 +135,7 @@ The following section describes each of the above endpoints in detail.
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | header |  string | Yes | Valid and authorized user ID
+Authorization | header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit SubAward Report Contract JSON](#submit-subaward-report-contract-json)
 
@@ -147,7 +147,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was created | As described below
 
-The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [s](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update SubAward Report (Contracts) request to update the report so it can be submitted successfully.
+The API will return HTTP Status code 201 if the report is saved. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in "Work In Progress" status and the validation error messages are sent back as a part of the response body. See [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update SubAward Report (Contracts) request to update the report so it can be submitted successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -430,7 +430,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized user ID
+Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit SubAward Report Grant JSON](#submit-subaward-report-grant-json)
 
@@ -442,7 +442,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was successfully created | As described below
 
-The API will return HTTP Status code 201 if the report is saved successfully. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [s](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update SubAward Report (Grants) request to update the report so it can be submitted successfully.
+The API will return HTTP Status code 201 if the report is saved. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update SubAward Report (Grants) request to update the report so it can be submitted successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -665,7 +665,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
                   "subAssistanceDollars": "150000",
                   "subAssistanceObligationOrActionDate": "2023-04-17",
                   "overallDescription": "My Description",
-                                    "placeOfPerformance": {
+                  "placeOfPerformance": {
                      "streetAddress": "Test place",
                      "streetAddress2": "",
                      "city": "Atlanta",
@@ -746,7 +746,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | header |  string | Yes | Valid and authorized user ID
+Authorization | header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit SubAward Report Contract JSON](#submit-subaward-report-contract-json)
 
@@ -758,7 +758,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string |  Report successfully updated| As described below
 
-The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [s](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be submitted successfully.
+The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in "Work In Progress" status and the validation error messages are sent back as a part of the response body. See [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be submitted successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -782,7 +782,7 @@ For examples, refer to Submit SubAward Report (Contracts) examples.
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized user ID
+Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit SubAward Report Grant JSON](#submit-subaward-report-grant-json)
 
@@ -794,7 +794,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report successfully updated | As described below
 
-The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [s](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be submitted successfully.
+The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in "Work In Progress" status and the validation error messages are sent back as a part of the response body. See [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be submitted successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -818,7 +818,7 @@ For examples, refer to Submit SubAward Report (Grants) examples.
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized user ID
+Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes |[Refer Delete SubAward Report Contract JSON](#delete-subaward-report-contract-json)
 
@@ -877,7 +877,7 @@ The API will return HTTP Status code 204 if the report is deleted successfully. 
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized user ID
+Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Delete SubAward Report Grant JSON ](#delete-subaward-report-grant-json)
 
@@ -931,7 +931,7 @@ The API will return HTTP Status code 204 if the report is deleted successfully. 
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized user ID
+Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes, at least one primeEntityInformation element is required. From the fields, at least one field is required | [Refer Get SubAward Report Contract JSON](#get-subaward-report-contract-json) 
 
@@ -1155,7 +1155,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization	| Header | string |	Yes |	Valid and authorized user ID
+Authorization	| Header | string |	Yes |	Valid and authorized SAM user email ID
 api_key |	query |	string |	Yes |	Valid System Account API Key
 Request JSON|	Body|	JSON|	Yes, at least one primeEntityInformation element is required. From the fields, at least one field is required|	[Refer Get SubAward Report Grant JSON](#get-subaward-report-grant-json)
 
