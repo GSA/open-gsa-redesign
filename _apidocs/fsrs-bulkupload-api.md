@@ -1521,7 +1521,7 @@ Error codes may change depending on the error given; document will be updated ac
 Error Code |	Error Message	| Reason/Description | Operation |
 ---------- | ------------- | ------------------ | --------- |
 401	|	Please provide valid Authorization Email & API Key	|	API Key and/or Authorization Email are required	|	All |
-401	|	Encountered error authenticating user.Invalid JWT provided	|	Invalid Authorization Email provided	|	All |
+401	|	Encountered error authenticating user. Invalid JWT provided	|	Invalid Authorization Email provided	|	All |
 403	|	You do not have permissions to access this resource	|	Account does not have appropriate privileges to perform the operation	|	All |
 404	|	Requested URL not found	|	Not found	|	All |
 500	|	Internal Server Error encountered. Please try after sometime	|	Internal Server Error	|	All |
@@ -1549,6 +1549,7 @@ Error Code |	Error Message	| Reason/Description | Operation |
 400	|	Please provide the correct format for the Reporting Agency	|	contractData.reportingAgency provided is invalid.	|	submitSubAwardReport ,updateSubAwardReport(Contracts) |
 400	|	At least one primeEntityInformation element is required for the contract reporting	|	At least one primeEntityInformation element is required for the contract reporting	|	getSubAwardReport(Contracts) |
 400	|	At least one primeEntityInformation element is required for the grant reporting	|	At least one primeEntityInformation element is required for the grant reporting	|	getSubAwardReport(Grants) |
+400	|	Sub contractor UNIQUE ENTITY ID # is required	|	Sub contractor UNIQUE ENTITY ID # is required	|	submitSubAwardReport ,updateSubAwardReport(Contracts and Grants) |
 400	|	At least one search criteria needs to be specified. One of contractNumber, idvReferenceNumber, reportPeriodMon, reportPeriodYear, reportingAgency	|	contractNumber, idvReferenceNumber, reportPeriodMon, reportPeriodYear and reportingAgency are missing for at least one element in the request	|	getSubAwardReport(Contracts and Grants) |
 400	|	At least one search criteria needs to be specified. One of primeFAIN, reportPeriodMon, reportPeriodYear	|	primeFAIN, reportPeriodMon and reportPeriodYear are missing for at least one element in the request.	|	getSubAwardReport(Contracts and Grants) |
 400	|	At least one primeEntityInformation element is required for deleting	|	At least one primeEntityInformation element is required for deleting	|	deleteSubAwardReport(Contracts and Grants) |
@@ -1578,7 +1579,6 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 201|subAwardDataList.periodOfPerformanceStartDate | Subcontract Date is required | Subcontract Date is required | submitSubAwardReport(Contracts)
 201|subAwardDataList.periodOfPerformanceStartDate | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubAwardReport(Contracts)
 201|subAwardDataList.periodOfPerformanceStartDate | The Subcontract Date cannot be in the future. | The Subcontract Date cannot be in the future. |  submitSubAwardReport(Contracts)
-201|subAwardDataList.uei  subAssistanceDataList.uei | Sub contractor UNIQUE ENTITY ID # is required |Sub contractor UNIQUE ENTITY ID # is required |  submitSubAwardReport(Contracts and Grants)
 201|subAwardDataList.uei  subAssistanceDataList.uei | Sub UNIQUE ENTITY ID # must be exactly 12 characters |	Sub UNIQUE ENTITY ID # must be exactly 12 characters  | submitSubAwardReport(Contracts)
 201|subAwardDataList.uei  subAssistanceDataList.uei |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov) |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov.) |	submitSubAwardReport(Contracts)
 201|subAwardDataList.overallDescription   subAssistanceDataList.overallDescription |	Sub-contract overall description is required. |	Sub-contract overall description is required. |	submitSubAwardReport(Contracts and Grants)
@@ -1622,7 +1622,6 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 200|subAwardDataList.periodOfPerformanceStartDate | Subcontract Date is required | Subcontract Date is required | updateSubAwardReport(Contracts)
 200|subAwardDataList.periodOfPerformanceStartDate | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubAwardReport(Contracts)
 200|subAwardDataList.periodOfPerformanceStartDate | The Subcontract Date cannot be in the future. | The Subcontract Date cannot be in the future. |  updateSubAwardReport(Contracts)
-200|subAwardDataList.uei  subAssistanceDataList.uei | Sub contractor UNIQUE ENTITY ID # is required |Sub contractor UNIQUE ENTITY ID # is required |  updateSubAwardReport(Contracts and Grants)
 200|subAwardDataList.uei  subAssistanceDataList.uei | Sub UNIQUE ENTITY ID # must be exactly 12 characters |	Sub UNIQUE ENTITY ID # must be exactly 12 characters  | updateSubAwardReport(Contracts)
 200|subAwardDataList.uei  subAssistanceDataList.uei |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov) |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov.) |	updateSubAwardReport(Contracts)
 200|subAwardDataList.overallDescription   subAssistanceDataList.overallDescription |	Sub-contract overall description is required. |	Sub-contract overall description is required. |	updateSubAwardReport(Contracts and Grants)
