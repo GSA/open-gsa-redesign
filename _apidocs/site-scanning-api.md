@@ -12,7 +12,7 @@ banner-heading: Site Scanning API
        Substantial API and Bulk Data File Changes are Coming
      </strong>
      <p class="usa-alert-text">
-       On January 31st, a major change to the schema and file format of the API and static bulk CSV and JSON files will be implemented.  The changes can be found described [here](https://github.com/GSA/site-scanning/issues/704), but in short, the order of almost every field in the CSV will change and roughly 15 field ids will change.  If you have questions or concerns, <a href="mailto:site-scanning@gsa.gov">slease let us know</a>!
+       On January 31st, a major change to the schema and file format of the API and static bulk CSV and JSON files will be implemented.  The changes can be found described < a href="https://github.com/GSA/site-scanning/issues/704">here</a>, but in short, the order of almost every field in the CSV will change and roughly 15 field ids will change.  If you have questions or concerns, <a href="mailto:site-scanning@gsa.gov">please let us know</a>!
      </p>
    </div>
  </div>
