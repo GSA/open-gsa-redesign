@@ -4,6 +4,20 @@ banner-heading: Site Scanning API
 ---
 
 
+
+<!-- Alpha status alert -->
+<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
+   <div class="usa-alert-body">
+     <strong>
+       Substantial API and Bulk Data File Changes are Coming
+     </strong>
+     <p class="usa-alert-text">
+       On January 31st, a major change to the schema and file format of the API and static bulk CSV and JSON files will be implemented.  The changes can be found described [here](https://github.com/GSA/site-scanning/issues/704), but in short, the order of almost every field in the CSV will change and roughly 15 field ids will change.  If you have questions or concerns, <a href="mailto:site-scanning@gsa.gov">slease let us know</a>!
+     </p>
+   </div>
+ </div>
+<!-- end Alpha status alert -->
+
 ## Overview
 
 Every day, the <a href="https://digital.gov/site-scanning/">Site Scanning program</a> runs a scanning engine to dynamically pull down lists of domains from various sources and then scan them with a collection of scan plugins to gather data on them. 
