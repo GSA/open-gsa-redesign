@@ -28,6 +28,8 @@ The resulting data that populates this API then can be seen as having two main u
 
 In addition to querying the data via API, you can also [download it directly](#download-the-data-directly) as a CSV or JSON file.  
 
+For substantial detail about how the scans work and the nature of the data contained within this API, refer to the [Technical Details page on the program website](https://digital.gov/guides/site-scanning/technical-details/).  
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
