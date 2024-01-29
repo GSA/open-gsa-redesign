@@ -2683,13 +2683,13 @@
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "2024 - 1 - 19 - IOLP Buildings.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/0ec61328-e583-4df6-8d5f-1c2fd1d5f039/download/2024-1-19-iolp-buildings.xlsx"
+                    "title": "2024 - 1 - 26 - IOLP Buildings.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/47395bd0-49b6-4393-885c-15a915e4921f/download/2024-1-26-iolp-buildings.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "2024 - 1 - 19 - IOLP Leases.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/1cd362bc-d3fb-4dfb-917e-c47f4388476c/download/2024-1-19-iolp-leases.xlsx"
+                    "title": "2024 - 1 - 26 - IOLP Leases.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/ff16ebf4-0b44-4503-be1d-50631500becf/download/2024-1-26-iolp-leases.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
@@ -5588,8 +5588,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 1.19.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/eb333d83-67be-48a3-93fe-1f7e02903d01/download/edi-1.19.json"
+                    "title": "EDI 1.26.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/bf105da7-aecf-4dbf-8281-fec9c3a74529/download/edi-1.26.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
