@@ -15,5 +15,5 @@ group :development, :test do
   gem 'eslintrb'
   gem 'test-unit'
   gem 'json-schema'
-  gem "webrick", "~> 1.7"
+  gem "webrick", "~> 1.8"
 end
