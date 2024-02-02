@@ -1427,9 +1427,9 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "2024 - 1 - 5 - IOLP Buildings.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/f99b41cd-939e-4748-b10a-0bc2786863fe/download/2024-1-5-iolp-buildings.xlsx"
+                    "mediaType": "text/csv",
+                    "title": "data_gov_bldg_rexus.csv",
+                    "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/0ced92bf-c345-4e0c-9e49-353fa91760c0/download/data_gov_bldg_rexus.csv"
                 }
             ],
             "keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -1459,9 +1459,9 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "2024 - 1 - 5 - IOLP Leases.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/0e05648e-3940-4566-920f-16183aaebf89/download/2024-1-5-iolp-leases.xlsx"
+                    "mediaType": "text/csv",
+                    "title": "data_gov_lse_rexus.csv",
+                    "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/8bf563e0-bd51-4bc7-b087-0f56e1e59f57/download/data_gov_lse_rexus.csv"
                 }
             ],
             "keyword": ["building", "gsa", "owned", "property", "real estate", "real property"],
@@ -2683,13 +2683,13 @@
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "2024 - 1 - 26 - IOLP Buildings.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/47395bd0-49b6-4393-885c-15a915e4921f/download/2024-1-26-iolp-buildings.xlsx"
+                    "title": "2024 - 2 - 2 - IOLP Leases.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d06ab72a-6523-4c60-91aa-380206c23869/download/2024-2-2-iolp-leases.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "2024 - 1 - 26 - IOLP Leases.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/ff16ebf4-0b44-4503-be1d-50631500becf/download/2024-1-26-iolp-leases.xlsx"
+                    "title": "2024 - 2 - 2 - IOLP Buildings.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/b4ff0fae-a0f8-441c-9489-28dfae00e976/download/2024-2-2-iolp-buildings.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
@@ -5587,9 +5587,9 @@
             },
             "distribution": [{
                     "@type": "dcat:Distribution",
-                    "mediaType": "application/json",
-                    "title": "EDI 1.26.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/bf105da7-aecf-4dbf-8281-fec9c3a74529/download/edi-1.26.json"
+                    "mediaType": "application/zip",
+                    "title": "unredacted - 2024-02-02T112924.278.zip",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/f3388c5c-eb9d-4607-8b77-8b27c7cbb949/download/unredacted-2024-02-02t112924.278.zip"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -12166,7 +12166,7 @@
             "@type": "dcat:Dataset",
             "title": "FY23 Enterprise Infrastructure Solutions (EIS) Quarterly Reports",
             "description": "This dataset represents the EIS business volume of each government agency that has ordered telecommunication services from the EIS contract.  This contains data from FY2023.",
-            "modified": "2023-04-10T16:46:57.364Z",
+            "modified": "2024-02-02T16:13:49.983Z",
             "accessLevel": "public",
             "identifier": "GSA-2023-04-10-01",
             "license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -12176,7 +12176,7 @@
                 "name": "Federal Acquisition Service",
                 "subOrganizationOf": {
                     "@type": "org:Organization",
-                    "name": "General Services Administration"
+                    "name": "Federal Acquisition Service"
                 }
             },
             "isPartOf": "GSA-2020-06-26-01",
@@ -12500,6 +12500,79 @@
             "programCode": ["015:001"],
             "language": ["en-US"],
             "theme": ["geospatial"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "FY24 Enterprise Infrastructure Solutions (EIS) Quarterly Reports",
+            "description": "This dataset represents the EIS business volume of each government agency that has ordered telecommunication services from the EIS contract.  This contains data from FY2024.",
+            "modified": "2024-02-02T16:13:41.909Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2024-02-02-01",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Federal Acquisition Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "isPartOf": "GSA-2020-06-26-01",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Loren Smith",
+                "hasEmail": "mailto:loren.smith@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "EISTotRevFY24_Q1.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/b46ecf55-f1eb-4f7a-9a19-b52d14ba4809/resource/5165cbd7-e6c3-4db5-8549-b2216dbd911b/download/eistotrevfy24_q1.xlsx"
+                }
+            ],
+            "keyword": ["Business Volume", "EIS", "enterprise-infrastructure", "gsa", "telecommunications"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Governmentwide Section 508 Assessment Response Data",
+            "description": "Response data from annual Governmentwide Section 508 Assessment.",
+            "modified": "2024-02-02T16:22:15.135Z",
+            "accessLevel": "public",
+            "identifier": "GSA-2024-02-02-02",
+            "dataQuality": true,
+            "describedBy": "https://assets.section508.gov/files/reports/cr-2023/FY23%20Governmentwide%20Section%20508%20Assessment%20Data%20Dictionary%20Excel.xlsx",
+            "describedByType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "General Services Administration",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "accrualPeriodicity": "R/P1Y",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Andrew Nielson",
+                "hasEmail": "mailto:andrew.nielson@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://assets.section508.gov/files/reports/cr-2023/Reporting%20Entity%20Response%20Data%20for%20FY23%20Government-wide%20Section%20508%20Assessment.csv",
+                    "title": "Reporting Entity Response Data for FY23 Government-Wide Section 508 Assessment"
+                }, {
+                    "@type": "dcat:Distribution",
+                    "accessURL": "https://assets.section508.gov/files/Reporting+Entity+Response+Data+JSON+for+FY23+Government-wide+Section+508+Assessment.json",
+                    "title": "Reporting Entity Response Data JSON for FY23 Government-wide Section 508 Assessment"
+                }
+            ],
+            "keyword": ["Accessibility", "Compliance", "GSA", "ICT", "OGP", "assessment", "conformance", "governmentwide", "section 508"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
         }
     ]
 }
