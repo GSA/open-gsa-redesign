@@ -5588,8 +5588,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 2.12.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/2beb2088-babf-44b8-b702-75fd011f2371/download/edi-2.12.json"
+                    "title": "EDI 2.13.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ce756f94-6485-42ef-bc1c-adbe4c1cfb2f/download/edi-2.13.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -6477,9 +6477,9 @@
                     "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/20929a06-1ea8-4666-89bc-387497ec0674/download/data-dictionary-for-federal-hiring-dataset-dec-31-2022.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
-                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "hiring_selections_and_outcomes_public_data_set_as_of_Mar_31_2023 (1).xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/c4439973-3809-4a6d-a8d1-f3f21d27cdc2/download/hiring_selections_and_outcomes_public_data_set_as_of_mar_31_2023-1.xlsx"
+                    "mediaType": "text/csv",
+                    "title": "hiring_selections_and_outcomes_public_data_set_as_of_Sep_30_2023.csv",
+                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/8e022865-53a5-4275-a24a-b4599dbb077a/download/hiring_selections_and_outcomes_public_data_set_as_of_sep_30_2023.csv"
                 }
             ],
             "keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -12570,6 +12570,40 @@
                 }
             ],
             "keyword": ["Accessibility", "Compliance", "GSA", "ICT", "OGP", "assessment", "conformance", "governmentwide", "section 508"],
+            "bureauCode": ["015:11"],
+            "programCode": ["015:001"],
+            "language": ["en-US"]
+        }, {
+            "@type": "dcat:Dataset",
+            "title": "Networx Business Volume FY2024",
+            "description": "The dataset represents the Networx Universal and Enterprise business volume of each government agency that has ordered telecommunications services from the Networx Contract, by Fiscal Year, Contract, Contract Vehicle, Agency and month for the Central and Direct billing accounts.",
+            "modified": "2024-02-13T15:00:05.714Z",
+            "accessLevel": "public",
+            "identifier": "gsa-2024-02-13-01",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "rights": "true",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "Federal Acquisition Service",
+                "subOrganizationOf": {
+                    "@type": "org:Organization",
+                    "name": "General Services Administration"
+                }
+            },
+            "isPartOf": "GSA-2015-08-27",
+            "contactPoint": {
+                "@type": "vcard:Contact",
+                "fn": "Toni Holloway",
+                "hasEmail": "mailto:toni.holloway@gsa.gov"
+            },
+            "distribution": [{
+                    "@type": "dcat:Distribution",
+                    "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "title": "TotRevFY24_1stQtr.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/817c0d80-06e5-4a00-8569-d43c9d3f6dfe/resource/5666ee79-f2da-4fe5-a4e3-e00ea321497e/download/totrevfy24_1stqtr.xlsx"
+                }
+            ],
+            "keyword": ["Networx", "billing", "networx business volume", "telecommunications"],
             "bureauCode": ["015:11"],
             "programCode": ["015:001"],
             "language": ["en-US"]
