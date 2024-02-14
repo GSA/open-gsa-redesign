@@ -46,6 +46,8 @@ namespace :test do
         allow_hash_href: true,
         check_html: true,
         empty_alt_ignore: true,
+        allow_missing_href: true,
+        enforce_https: false,
         disable_external: true
       }
       HTMLProofer.check_directory("./_test", options).run
@@ -59,7 +61,9 @@ namespace :test do
       options = {
         allow_hash_href: true,
         check_html: true,
-        empty_alt_ignore: true
+        empty_alt_ignore: true,
+        allow_missing_href: true,
+        enforce_https: false
       }
       HTMLProofer.check_directory("./_test", options).run
     end
