@@ -6,6 +6,7 @@
   color: $banner-text-color;
   margin-bottom: 75px;
 }
+
 .banner.tagline h2 {
   color: $banner-text-color;
   margin-top: 75px;
@@ -14,13 +15,16 @@
 .banner.roles {
   background-color: #e4e2e0;
 }
+
 .banner.roles .usa-grid {
   padding: 3rem;
 }
+
 .banner.roles p {
   color: #323a45;
   margin-bottom: 75px;
 }
+
 .banner.roles h2 {
   color: #323a45;
   margin-top: 75px;
@@ -30,9 +34,11 @@
 .banner.contact {
   background-color: #112e51;
 }
+
 .banner.contact form {
   padding-top: 2em;
 }
+
 .banner.contact h2,
 .banner.contact p,
 .banner.contact legend,

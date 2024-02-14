@@ -56,8 +56,8 @@
   position: absolute;
   min-width: 100vw;
   z-index: 111;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.5);
-  background: rgba(255,255,255,.4);
+  box-shadow: 0 1px 0 rgba($white, 50%);
+  background: rgba($white, 40%);
 
 }
 
@@ -71,7 +71,7 @@
 		text-decoration: none;
 	}
 
-		.icon:before {
+		.icon::before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
 			font-family: FontAwesome, sans-serif;
@@ -86,15 +86,14 @@
 
     .circle {
       background-color: #e31c3d;
-      padding: 0 2em 1em 2em;
+      padding: 0 2em 1em;
       border-radius: 50%;
-      // position: absolute;
       margin-top: -50px;
       width: 105px;
       height: 105px;
     }
 
-      .circle:before {
+      .circle::before {
         font-size: 4em;
         line-height: 2em;
         color: #fff;
@@ -110,19 +109,19 @@
 			width: 160px;
       text-align: center;
 			background-color: #2e8540;
-			padding: 0 2em 1em 2em;
+			padding: 0 2em 1em;
 			border-top-left-radius: 5px;
 			border-top-right-radius: 5px;
-			margin: 0 0 4.5em 0;
+			margin: 0 0 4.5em;
 		}
 
-			.flag:before {
+			.flag::before {
         font-size: 5em;
 				line-height: 2em;
 				color: #fff;
 			}
 
-			.flag:after {
+			.flag::after {
 			        content: "";
 			        position: absolute;
 			        left: 0;
@@ -138,7 +137,7 @@
 				background-color: #323a45;
 			}
 
-				.flag.alt:after {
+				.flag.alt::after {
 					border-top-color: #323a45;
 				}
 
@@ -146,13 +145,14 @@
 				background-color: #aeb0b5;
 			}
 
-				.flag.alt2:after {
+				.flag.alt2::after {
 					border-top-color: #aeb0b5;
 				}
 
         .flag.alt3 {
           background-color: #112e51;
         }
-        .flag.alt3:after {
+
+        .flag.alt3::after {
           border-top-color: #112e51;
         }
