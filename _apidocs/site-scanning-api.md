@@ -3,7 +3,6 @@ title: Site Scanning API
 banner-heading: Site Scanning API
 ---
 
-
 ## Overview
 
 Every day, the <a href="https://digital.gov/site-scanning/">Site Scanning program</a> runs a scanning engine to dynamically pull down lists of domains from various sources and then scan them with a collection of scan plugins to gather data on them. 
@@ -13,6 +12,8 @@ The resulting data that populates this API then can be seen as having two main u
 * Providing various information and analysis about each of these websites.  
 
 In addition to querying the data via API, you can also [download it directly](#download-the-data-directly) as a CSV or JSON file.  
+
+For substantial detail about how the scans work and the nature of the data contained within this API, refer to the [Technical Details page on the program website](https://digital.gov/guides/site-scanning/technical-details/).  
 
 <p><small><a href="#">Back to top</a></small></p>
 

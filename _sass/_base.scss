@@ -4,17 +4,21 @@ body{
   height:100%;
   overflow-x: auto; // This is in particular due to wide tables in API docs.
 }
+
 #wrapper {
 	min-height:100%;
 	position:relative;
 }
+
 #header{
   margin-bottom: -20px;
 }
+
 #content{
   padding-bottom:200px;
   min-height: 95vh;
 }
+
 #footer {
 	width:100%;
 	height:200px;
@@ -23,11 +27,11 @@ body{
 	left:0;
 }
 
-
 body,
 p, ul, ol, li, a  {
   color: $text-color;
 }
+
 legend, label,
 h1, h2, h3, h4, h5, h6 {
   color: $headers-color;
@@ -38,15 +42,19 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
   color: $header-text-color;
 }
+
 ul, li {
   margin-bottom: 0;
 }
+
 main {
   margin-bottom: 1em;
 }
+
 form {
   max-width: 100%;
 }
+
 .usa-content > p,
 .usa-content > ul,
 .usa-content > ol,
@@ -58,13 +66,17 @@ form {
 .usa-content > h6 {
   max-width: 62.5rem;
 }
+
 a {
   color: #0071bc; }
-  a:hover, a:active {
+
+a:hover, a:active {
     color: #205493; }
-  a:visited {
+
+a:visited {
     color: inherit; }
-  a:focus {
+
+a:focus {
     box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
     outline: 0; }
 
@@ -76,6 +88,7 @@ div.skip-nav a {
   height: auto;
   overflow: hidden;
 }
+
 div.skip-nav a:focus {
   position: absolute;
   top: 5px;
@@ -88,11 +101,12 @@ div.skip-nav a:focus {
   padding-right: 2px;
   overflow: visible;
 }
+
 #main:focus {
   outline: none;
 }
 
-@media (min-width: 600px) {
+@media (width >= 600px) {
   .usa-width-one-whole.usa-content {
     position: relative;
     left: 50%;
