@@ -5,8 +5,8 @@
   min-height: 400px;
   position: relative;
 }
+
 .hero-search {
-  // background-color: rgba(46, 133, 64, 0.7);
   bottom: 30%;
   left: 20vw;
   right: 20vw;
@@ -14,6 +14,7 @@
   position: absolute;
   text-align: center;
 }
+
 .hero-search h2 {
   font-family: "Source Sans Pro", sans-serif;
   color: white;
@@ -22,11 +23,13 @@
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 0;
-  @media screen and (min-width: 600px){
+
+  @media screen and (width >= 600px){
     font-size: 4rem;
     font-size: 40px;
   }
-  @media screen and (min-width: 1500px){
+
+  @media screen and (width >= 1500px){
     font-size: 5rem;
     font-size: 50px;
   }
@@ -38,7 +41,6 @@
   max-width: 100%;
 }
 
-//angled header
 .hero-separator {
   position: absolute;
   margin-top: -50px;

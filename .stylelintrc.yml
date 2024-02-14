@@ -1,8 +1,4 @@
-extends: stylelint-config-recommended
-syntax: scss
-plugins:
-  - stylelint-scss
+extends: stylelint-config-standard-scss
 rules:
-  # Use scss/at-rule-no-unknown instead of core/at-rule-no-unknown to allow SCSS @rules.
-  at-rule-no-unknown: null
-  scss/at-rule-no-unknown: true
+  selector-class-pattern: null
+  scss/at-extend-no-missing-placeholder: null
