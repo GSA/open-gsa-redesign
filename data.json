@@ -2683,13 +2683,13 @@
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "2024 - 2 - 9 - IOLP Leases.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/387e3650-d221-45d8-b56b-d353cbc1c381/download/2024-2-9-iolp-leases.xlsx"
+                    "title": "2024 - 2 - 16 - IOLP Leases.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/c5eef5b0-0ec2-4001-9520-2b67b2b2e70b/download/2024-2-16-iolp-leases.xlsx"
                 }, {
                     "@type": "dcat:Distribution",
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "title": "2024 - 2 - 9 - IOLP Buildings.xlsx",
-                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/c5bf8d71-e8dd-4411-9a99-a185733e9c60/download/2024-2-9-iolp-buildings.xlsx"
+                    "title": "2024 - 2 - 16 - IOLP Buildings.xlsx",
+                    "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/989b3796-3cc3-4168-b401-71defaabb06d/download/2024-2-16-iolp-buildings.xlsx"
                 }
             ],
             "keyword": ["BUILDING_STATUS", "City", "LEASE_EFFECTIVE_DATE", "LEASE_EXPIRATION_DATE", "Latitude", "Lease_Num", "Longitude", "STATE_CD", "STREET_ADDRESS", "Zipcode5", "geospatial"],
@@ -5588,8 +5588,8 @@
             "distribution": [{
                     "@type": "dcat:Distribution",
                     "mediaType": "application/json",
-                    "title": "EDI 2.13.json",
-                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/ce756f94-6485-42ef-bc1c-adbe4c1cfb2f/download/edi-2.13.json"
+                    "title": "EDI 2.16.json",
+                    "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/3b08799c-876a-4b22-b45b-d9741604fd2d/download/edi-2.16.json"
                 }
             ],
             "keyword": ["EDI", "Enterprise Data Inventory", "GSA EDI", "JSON"],
@@ -5655,7 +5655,7 @@
                     "mediaType": "application/json",
                     "format": "JSON",
                     "title": "GSA IT Reform Cost Savings/Avoidance",
-                    "description": "GSA's November 2023 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
+                    "description": "GSA's Feb 2024 Cost Savings/Avoidance submission to satisfy the requirements set forth in OMB's Integrated Data Collection.",
                     "conformsTo": "https://management.cio.gov/schemaexamples/costSavingsAvoidanceSchema.json",
                     "downloadURL": "https://inventory.data.gov/dataset/57f52388-9b32-4069-925f-e0de9c5c6ea4/resource/87eb8833-7abb-432b-a272-e611c0aff04a/download/gsaitcostsavingsavoidance20151125.json"
                 }
@@ -6475,11 +6475,6 @@
                     "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "title": "data-dictionary-for-federal-hiring-dataset-dec-31-2022.xlsx",
                     "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/20929a06-1ea8-4666-89bc-387497ec0674/download/data-dictionary-for-federal-hiring-dataset-dec-31-2022.xlsx"
-                }, {
-                    "@type": "dcat:Distribution",
-                    "mediaType": "text/csv",
-                    "title": "hiring_selections_and_outcomes_public_data_set_as_of_Sep_30_2023.csv",
-                    "downloadURL": "https://inventory.data.gov/dataset/4189591b-d78e-4ad3-9d75-582175ad0b3f/resource/8e022865-53a5-4275-a24a-b4599dbb077a/download/hiring_selections_and_outcomes_public_data_set_as_of_sep_30_2023.csv"
                 }
             ],
             "keyword": ["Monster", "OMB", "OPM", "USDS", "announcement", "application", "assessment", "hiring", "selection"],
@@ -8172,7 +8167,7 @@
                     "mediaType": "application/zip",
                     "format": "ZIP",
                     "title": "GSA IT Policy Archive Zip",
-                    "description": "Last update: 2023-08-15",
+                    "description": "Last update: 2024-02-13",
                     "downloadURL": "https://inventory.data.gov/dataset/08a7a4da-f414-498c-858b-076fdc7da31a/resource/4a87172f-af14-4cf1-a024-e9fb04c0ac2d/download/gsa-it-policy-archive-zip.zip"
                 }
             ],
