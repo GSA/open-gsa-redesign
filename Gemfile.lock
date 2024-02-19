@@ -117,7 +117,7 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    test-unit (3.6.1)
+    test-unit (3.6.2)
       power_assert
     timers (4.3.5)
     ttfunk (1.7.0)
