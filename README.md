@@ -1,27 +1,21 @@
 # Open GSA Redesign
 
-Open.gsa.gov is the current developer portal for all GSA data, APIs, and code open to the public. This repo is where we will be managing development of the redesign of this portal.
+Open.gsa.gov is the current developer portal for all GSA data, APIs, and code open to the public. This repo is where we will be managing development of this portal.
 
-This particular site is made for use with the [Federalist](https://github.com/18f/federalist) in mind.
+This particular site is made for use with [cloud.gov Pages](https://cloud.gov/pages) in mind.
 
 See the [wiki](https://github.com/GSA/open-gsa-redesign/wiki) for more info related to this site including a product roadmap, personas, and guides.
 
 ## Running locally
 
-This site is built using Jekyll for the file framework.
+This is a statically generated site built using Jekyll.
 
 ### Before you start
 
-You will need to have the following installed on your machine before following the commands below:
+You will need to have the following installed on your machine:
 
-* Ruby v2.2.2+, [Installation guides](https://www.ruby-lang.org/en/documentation/installation/)
-* Bundler v1.12.3+, [Installation guides](http://bundler.io/v1.13/guides/using_bundler_in_application.html#getting-started---installing-bundler-and-bundle-init)
-
-### Basic setup
-
-1. Install Bundler `gem install bundler` and then install Jekyll and all dependencies `bundle install`.
-2. Fork this repo.
-2. Clone the repo you just forked.
+* Ruby 3 (see the `.ruby-version` file for the current version this project uses)
+* Bundler
 
 ### Running Jekyll
 
