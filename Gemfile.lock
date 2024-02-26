@@ -13,7 +13,7 @@ GEM
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     afm (0.2.2)
-    async (2.8.1)
+    async (2.8.2)
       console (~> 1.10)
       fiber-annotation
       io-event (~> 1.1)
@@ -56,7 +56,7 @@ GEM
     http_parser.rb (0.8.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
-    io-event (1.4.3)
+    io-event (1.4.4)
     jekyll (3.9.5)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -85,12 +85,12 @@ GEM
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     liquid (4.0.4)
-    listen (3.8.0)
+    listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
     multi_json (1.15.0)
-    nokogiri (1.16.2-x86_64-linux)
+    nokogiri (1.16.2-arm64-darwin)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -117,7 +117,7 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    test-unit (3.6.1)
+    test-unit (3.6.2)
       power_assert
     timers (4.3.5)
     ttfunk (1.7.0)
@@ -128,7 +128,7 @@ GEM
     zeitwerk (2.6.13)
 
 PLATFORMS
-  x86_64-linux
+  ruby
 
 DEPENDENCIES
   eslintrb
@@ -141,7 +141,7 @@ DEPENDENCIES
   kramdown-parser-gfm
   rake
   test-unit
-  webrick (~> 1.7)
+  webrick
 
 BUNDLED WITH
    2.3.26
