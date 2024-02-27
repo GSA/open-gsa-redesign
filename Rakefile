@@ -4,7 +4,7 @@ require "rake/testtask"
 
 desc "Serve the site with live reload for development"
 task :serve do
-  sh "bundle exec jekyll liveserve", verbose: false
+  sh "bundle exec jekyll serve --livereload", verbose: false
 end
 
 # This option may cause pages to not be rebuilt when an underlying data file
@@ -12,7 +12,7 @@ end
 # the 'serve' task instead if changing data files.
 desc "Serve the site with live reload for development (incremental builds)"
 task :incrementalserve do
-  sh "bundle exec jekyll liveserve --incremental", verbose: false
+  sh "bundle exec jekyll serve --livereload --incremental", verbose: false
 end
 
 desc "Build the site to the default Jekyll output directory"

@@ -89,8 +89,14 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
+    mini_portile2 (2.8.5)
     multi_json (1.15.0)
+    nokogiri (1.16.2)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     nokogiri (1.16.2-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -128,8 +134,8 @@ GEM
     zeitwerk (2.6.13)
 
 PLATFORMS
-  ruby
   arm64-darwin-22
+  ruby
   x86_64-linux
 
 DEPENDENCIES

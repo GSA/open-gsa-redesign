@@ -12,7 +12,8 @@
     "test:js": "npm run eslint",
     "test": "npm run test:accessibility && npm run test:js && npm run test:css",
     "build:uswds": "cp -R node_modules/uswds/dist/ assets/uswds",
-    "build:jquery": "cp node_modules/jquery/dist/jquery.min.* assets/js/lib"
+    "build:jquery": "cp node_modules/jquery/dist/jquery.min.* assets/js/lib",
+    "build:swagger": "cp node_modules/swagger-ui-dist/swagger-ui*.{css,js,map} assets/swaggerui-dist"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,7 @@
     "stylelint-config-recommended": "^14.0.0",
     "stylelint-config-standard-scss": "^13.0.0",
     "stylelint-scss": "^6.1.0",
+    "swagger-ui-dist": "^5.11.8",
     "uswds": "^1.6.13"
   },
   "dependencies": {
