@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.1.0
+  version: 2.0.0
   title: Analytics API
   description: This program helps government agencies understand how people find, access, and use government services online. The program does not track individuals, and anonymizes the IP addresses of visitors.
 paths:
@@ -114,7 +114,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 servers:
-  - url: 'https://api.gsa.gov/analytics/dap/v1.1'
+  - url: 'https://api.gsa.gov/analytics/dap/v2'
 components:
   schemas:
     Reports:
@@ -142,9 +142,9 @@ components:
           type: integer
         avg_session_duration:
           type: number
+        bounce_rate:
+          type: number
         browser:
-          type: string
-        browser_version:
           type: string
         city:
           type: string
@@ -157,17 +157,15 @@ components:
           type: string
         event_label:
           type: string
-        exit_page:
+        file_name:
           type: string
-        exits:
-          type: string
-        has_social_referral:
-          type: boolean
         hour:
           type: string
         landing_page:
           type: string
         language:
+          type: string
+        language_code:
           type: string
         mobile_device:
           type: string
@@ -187,6 +185,8 @@ components:
         pageviews_per_session:
           type: integer
         screen_resolution:
+          type: string
+        session_default_channel_group:
           type: string
         source:
           type: string
