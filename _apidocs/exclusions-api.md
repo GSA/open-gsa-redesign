@@ -26,14 +26,8 @@ The response will be provided in the JSON format in a paginated manner.
 
 ## Getting Started
 
-Exclusions API can be accessed from Production or Alpha via the following version 1, version 2 and version 3 endpoints:
-* Production Version 1: https://api.sam.gov/entity-information/v1/exclusions?api_key=< value >
-* Production Version 2: https://api.sam.gov/entity-information/v2/exclusions?api_key=< value >
-* Production Version 3: https://api.sam.gov/entity-information/v3/exclusions?api_key=< value >
+Exclusions API can be accessed from Production or Alpha with the following version 4 endpoints:
 * Production Version 4: https://api.sam.gov/entity-information/v4/exclusions?api_key=< value >
-* Alpha Version 1: https://api-alpha.sam.gov/entity-information/v1/exclusions?api_key=< value >
-* Alpha Version 2: https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< value >
-* Alpha Version 3: https://api-alpha.sam.gov/entity-information/v3/exclusions?api_key=< value >
 * Alpha Version 4: https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=< value ><br><br>
 
 Generating a personal API Key:
@@ -921,5 +915,6 @@ Date | Version | Description
 02/01/2022 | v2.9    | * Added exclusions V3 endpoint information to the Getting Started section. <br><br> * Updated the Query String Parameters and Expected Results sections to reflect available parameters and response fields in V3.<br><br> * Updated the Example 1 and Example 2 to indicate the V3 behavior.<br><br> * Updated the section, "HTTP Response Codes" to indicate the v3 behavior.<br><br> * Update the OpenAPI Specification File to include the V3 endpoints.
 04/04/2022 | v3.0    | * Provided the v3 end point for Production.<br><br> * Removed ueiDUNS occurrences from the sections, Query String Parameters, Expected Result, HTTP Response Codes and Examples.
 12/01/2023 | v3.1    | A new V4 Exclusions API has been created, enabling the search and response for FASCSA Order Exclusion records. As part of this change, below are the associated changes made to this OpenGSA page: <br><br> * Added exclusions V4 endpoint information to the Getting Started section.<br><br> * Updated the Query String Parameters and Expected Results sections to reflect available parameters and response fields in V4.<br><br> * Moved the existing Example 5 to Example 6; inserted a new Example 5 to indicate V4 behavior.<br><br> * Updated the section, “HTTP Response Codes” to indicate the v4 behavior.<br><br> * Updated the OpenAPI Specification File to include the V4 endpoints.
+02/28/2024 | v3.2    | Updated Getting Started section to remove deprecated endpoint versions. 
 
 <p><small><a href="#">Back to top</a></small></p>
