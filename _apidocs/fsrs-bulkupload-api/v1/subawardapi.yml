@@ -2,25 +2,25 @@ paths:
   /acquisition/v1/subawards:
     post:
       tags:
-        - acquisition-subaward-api-controller
-      summary: Upload a Contract Subaward report
-      description: Upload a Contract Subaward report
+        - AcquisitionSubawardsV1
+      summary: Upload Contract Subaward report(s)
+      description: Upload Contract Subaward report(s)
       operationId: saveContractReport
       parameters:
         - name: Authorization
           in: header
-          description: Authorization
+          description: SAM.gov user email address
           required: true
           schema:
             type: string
         - name: api_key
           in: query
-          description: api_key
+          description: System Account API Key
           required: true
           schema:
             type: string
       requestBody:
-        description: Upload a Contract SubAward Subaward report
+        description: Upload one or multiple Contract SubAward report(s) 
         content:
           application/json:
             schema:
@@ -69,20 +69,20 @@ paths:
           description: Not Implemented
     put:
       tags:
-        - acquisition-subaward-api-controller
+        - AcquisitionSubawardsV1
       summary: Update existing SubAward Contract Report(s)
-      description: Update existing SubAward Contract Report(s) by unique key
+      description: Update existing SubAward Contract Report(s)
       operationId: updateContractReport
       parameters:
         - name: Authorization
           in: header
-          description: Authorization
+          description: SAM.gov user email address
           required: true
           schema:
             type: string
         - name: api_key
           in: query
-          description: api_key
+          description: System Account API Key
           required: true
           schema:
             type: string
@@ -136,20 +136,20 @@ paths:
           description: Not Implemented
     delete:
       tags:
-        - acquisition-subaward-api-controller
+        - AcquisitionSubawardsV1
       summary: Deletes Contract SubAward Subaward Report(s)
       description: Deletes Contract SubAward Subaward Report(s)
       operationId: deleteContractReport
       parameters:
         - name: Authorization
           in: header
-          description: Authorization
+          description: SAM.gov user email address
           required: true
           schema:
             type: string
         - name: api_key
           in: query
-          description: api_key
+          description: System Account API Key
           required: true
           schema:
             type: string
@@ -206,20 +206,20 @@ paths:
   /acquisition/v1/subawards/get:
     post:
       tags:
-        - acquisition-subaward-api-controller
+        - AcquisitionSubawardsV1
       summary: Get existing SubAward Contract Report(s)
       description: Get existing SubAward Contract Report(s)
       operationId: getContractReport
       parameters:
         - name: Authorization
           in: header
-          description: Authorization
+          description: SAM.gov user email address
           required: true
           schema:
             type: string
         - name: api_key
           in: query
-          description: api_key
+          description: System Account API Key
           required: true
           schema:
             type: string
@@ -276,20 +276,20 @@ paths:
   /assistance/v1/subawards:
     post:
       tags:
-        - assistance-subaward-api-controller
+        - AssistanceSubawardsV1
       summary: Create Grant SubAward report(s)
       description: Endpoint to create one/multiple Grant SubAward report(s)
       operationId: saveGrantReport
       parameters:
         - name: Authorization
           in: header
-          description: Authorization
+          description: SAM.gov user email address
           required: true
           schema:
             type: string
         - name: api_key
           in: query
-          description: api_key
+          description: System Account API Key
           required: true
           schema:
             type: string
@@ -344,20 +344,20 @@ paths:
           description: Not Implemented
     put:
       tags:
-        - assistance-subaward-api-controller
+        - AssistanceSubawardsV1
       summary: Update existing SubAward Grant Report(s)
       description: Endpoint to update existing Grant SubAward report(s)
       operationId: updateGrantReport
       parameters:
         - name: Authorization
           in: header
-          description: Authorization
+          description: SAM.gov user email address
           required: true
           schema:
             type: string
         - name: api_key
           in: query
-          description: api_key
+          description: System Account API Key
           required: true
           schema:
             type: string
@@ -411,20 +411,20 @@ paths:
           description: Not Implemented
     delete:
       tags:
-        - assistance-subaward-api-controller
+        - AssistanceSubawardsV1
       summary: Delete Grant SubAward Subaward report(s)
       description: Delete Grant SubAward Subaward report(s)
       operationId: deleteGrantReport
       parameters:
         - name: Authorization
           in: header
-          description: Authorization
+          description: SAM.gov user email address
           required: true
           schema:
             type: string
         - name: api_key
           in: query
-          description: api_key
+          description: System Account API Key
           required: true
           schema:
             type: string
@@ -481,20 +481,20 @@ paths:
   /assistance/v1/subawards/get:  
     post:
       tags:
-        - assistance-subaward-api-controller
+        - AssistanceSubawardsV1
       summary: Get existing Grant SubAward Subaward report(s)
       description: Get existing Grant SubAward Subaward report(s)
       operationId: getGrantReport
       parameters:
         - name: Authorization
           in: header
-          description: Authorization
+          description: SAM.gov user email address
           required: true
           schema:
             type: string
         - name: api_key
           in: query
-          description: api_key
+          description: System Account API Key
           required: true
           schema:
             type: string
@@ -555,14 +555,16 @@ components:
       properties:
         id:
           type: string
-        reportStatus:
-          type: string
         statusCode:
           type: string
         transactionId:
           type: string
         timeStamp:
           type: string
+        subawardReportNumber:
+          type: string  
+        reportStatus:
+          type: string          
         message:
           type: object
         errors:
@@ -573,9 +575,9 @@ components:
     ContractRequestObject: 
       type: object
       required:
-        - primeEntityInformation
+        - contractData
       properties: 
-        primeEntityInformation: 
+        contractData:     
           type: array
           items: 
             type: object
@@ -583,162 +585,136 @@ components:
               contractNumber: 
                 type: string
                 example: W9123823PTEST
+              reportingAgencyCode: 
+                type: string
+                example: 2100
               idvReferenceNumber: 
                 type: string
                 example: GSTEST001
-              reportPeriodMon: 
-                type: string
-                example: 06
-              reportPeriodYear: 
-                type: string
-                example: 2023
-              reportingAgency: 
+              referenceAgencyCode: 
                 type: string
                 example: 2100
+              subawardNumber: 
+                type: string
+                example: SUBAWARD1
+              subawardReportNumber: 
+                type: string
+                example: 51e2fad8-7b43-4b62-a870-45b3f250ea99
+              reportStatus: 
+                type: string
+                example: Published            
           minItems: 1  
     ContractObject:
       type: object
       required:
-        - contractData
-      properties:
-        contractData: 
-          type: object
+        - primeEntityInformation
+      properties: 
+        primeEntityInformation: 
+          type: array
           required:
-            - primeEntityInformation
-          properties: 
-            primeEntityInformation: 
-              type: array
-              required:
-                - contractNumber
-                - reportPeriodMon
-                - reportPeriodYear
-                - reportingAgency
-                - subAwardDataList
-              items: 
-                type: object
-                properties: 
-                  contractNumber: 
-                    type: string
-                    example: W9123823PTEST
-                  idvReferenceNumber: 
-                    type: string
-                    example: GSTEST001
-                  reportPeriodMon: 
-                    type: string
-                    example: '06'
-                  reportPeriodYear: 
-                    type: string
-                    example: 2023
-                  reportingAgency: 
-                    type: string
-                    example: 2100
-                  treasurySymbol: 
-                    type: string
-                    example: 12-3456
-                  programTitle: 
-                    type: string
-                    example: Title of the program
-                  recovery_model_questions: 
-                    type: array
-                    items: 
+            - contractNumber
+            - reportingAgencyCode
+            - subawardDataList
+          items: 
+            type: object
+            properties: 
+              subawardReportNumber:
+                type: string
+                example: 51e2fad8-7b43-4b62-a870-45b3f250ea99        
+                description: "Required for update/PUT requests to uniquely identify the report being updated. Use the value sent back by get/upload request."                
+              contractNumber: 
+                type: string
+                example: W9123823PTEST
+              reportingAgencyCode: 
+                type: string
+                example: 2100                    
+              idvReferenceNumber: 
+                type: string
+                example: GSTEST001
+              referenceAgencyCode: 
+                type: string
+                example: 2100
+              programTitle: 
+                type: string
+                example: Title of the program   
+              subawardDataList: 
+                type: array
+                required:
+                  - subawardUei
+                items: 
+                  type: object
+                  properties: 
+                    subawardUei: 
+                      type: string
+                      example: ABC987654321
+                    subawardNumber: 
+                      type: string
+                      example: 2303-TEST-05-0
+                    subawardAmount: 
+                      type: string
+                      example: 100567.99
+                    subawardDate: 
+                      type: string
+                      format: date
+                      example: 2023-05-14
+                    subawardDescription: 
+                      type: string
+                      example: tEST Description
+                    placeOfPerformance: 
                       type: object
+                      required:
+                        - country
                       properties: 
-                        code: 
+                        city: 
                           type: string
-                          enum: ["1","2"]
-                        isSelected: 
-                          type: boolean
-                    minItems: 1
-                    maxItems: 2                
-                  subAwardDataList: 
-                    type: array
-                    required:
-                      - subAwardNumber
-                      - subAwardDollars
-                      - periodOfPerformanceStartDate
-                      - uei
-                      - overallDescription
-                      - placeOfPerformance
-                    items: 
-                      type: object
-                      properties: 
-                        subAwardNumber: 
-                          type: string
-                          example: 2303-TEST-05-0
-                        subAwardDollars: 
-                          type: string
-                          example: 100567.99
-                        periodOfPerformanceStartDate: 
-                          type: string
-                          format: date
-                          example: 2023-05-14
-                        uei: 
-                          type: string
-                          example: ABC987654321
-                        overallDescription: 
-                          type: string
-                          example: tEST Description
-                        placeOfPerformance: 
+                          example: Alexandria
+                        country: 
                           type: object
-                          required:
-                            - country
                           properties: 
-                            streetAddress: 
+                            code: 
                               type: string
-                              example: 2020 F Street XYZ
-                            streetAddress2: 
+                              example: USA
+                            name: 
                               type: string
-                              example: 
-                            city: 
+                              example: UNITED STATES
+                        state: 
+                          type: object
+                          properties: 
+                            code: 
                               type: string
-                              example: Alexandria
-                            country: 
-                              type: object
-                              properties: 
-                                code: 
-                                  type: string
-                                  example: USA
-                                name: 
-                                  type: string
-                                  example: UNITED STATES
-                            state: 
-                              type: object
-                              properties: 
-                                code: 
-                                  type: string
-                                  example: VA
-                                name: 
-                                  type: string
-                                  example: Virginia
-                            zip: 
+                              example: VA
+                            name: 
                               type: string
-                              example: 12345
-                        recovery_model_questions: 
-                          type: array
-                          items: 
-                            type: object
-                            properties: 
-                              code: 
-                                type: string
-                                enum: ["3","4"]
-                              isSelected: 
-                                type: boolean
-                          minItems: 1
-                          maxItems: 2  
-                        topPayEmployees: 
-                          type: array
-                          items: 
-                            type: object
-                            properties: 
-                              full_name: 
-                                type: string
-                                example: John White
-                              salary: 
-                                type: string
-                                example: 100000
-                          minItems: 5
-                          maxItems: 5
-              minItems: 1  
+                              example: Virginia
+                        zip: 
+                          type: string
+                          example: 12345
+                    recovery_model_questions: 
+                      type: array
+                      items: 
+                        type: object
+                        properties: 
+                          code: 
+                            type: string
+                            enum: ["1","2"]
+                          isSelected: 
+                            type: boolean
+                      minItems: 1
+                      maxItems: 2  
+                    topPayEmployees: 
+                      type: array
+                      items: 
+                        type: object
+                        properties: 
+                          full_name: 
+                            type: string
+                            example: John White
+                          salary: 
+                            type: string
+                            example: 100000
+                      minItems: 5
+                      maxItems: 5
+          minItems: 1  
     GrantRequestObject: 
       type: object
       required:
