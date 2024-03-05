@@ -42,16 +42,7 @@ All REST API requests will be validated against the Type of Connection within th
 All REST API requests will be validated against the IP Addresses registered within the system account profile. All requests that are not from registered IP address(es) in the system account profile will be rejected with an error.
 
 #### User Account Authorization
-To be able to perform the various operations provided under the SubAwards API, users will need to have the correct role and permissions (final role name and permission is being finalized) to perform various operations.The permissions required for operations by role are listed in the table below (this is a draft):
-
-**Note:** Permissions marked "Yes" are may not be assigned by default and will require your user administrator to update.
-
-<p><small><a href="#">Back to top</a></small></p>
-
-Role/Permission(TBD)   | Submit SubAward Report | Update SubAward Report | Get SubAward Report | Delete SubAward Report
--------------|---------------|---------------------|---------------------|------------------------------
-Create and delete permission for SubAwards under Entity Reporting | Yes | Yes | Yes | Yes
-Read permission for SubAwards under Entity Reporting | No | No | Yes | No
+To be able to perform the various operations provided under the SubAwards API, users will need to have a SAM.gov non-federal user account with either 'Admin' or 'Data Entry' role and 'Create/Edit/Delete Subaward Report' permission.
 
 **Note:** sam.gov is moving towards utilizing OAuth 2.0 workflow leveraging OKTA for Authentication of System Accounts. As a result of this implementation, API Keys will be replaced with the usage of client credentials, namely clientId and secret. Clients will first need to request for the access token, which will then be required to be sent along with the API requests. To support this change, future versions of all APIs outlined in this documentation will be released.
 
@@ -65,10 +56,8 @@ To submit a SubAward Report, compensation questions for the Prime, as well as su
 
 |                                   | Code              | Description                                   |
 | ----------------- | ----------------- | --------------------------------------------- |
-| Prime Awardee Question 1| __1__	            | In your business or organization's preceding completed fiscal year, did your business or organization (the legal entity to which this specific CCR record, represented by a UNIQUE ENTITY ID (SAM) number,belongs) receive (1) 80 percent or more of your annual gross revenues in U.S. federal contracts, sub-contracts, loans, grants, subgrants, and/or cooperative agreements; and (2) $25,000,000 or more in annual gross revenues from U.S. federal contracts, sub-contracts, loans, grants, subgrants, and/or cooperative agreements? |
-| Prime Awardee Question 2| __2__	            | Does the public have access to information about the compensation of the executives in your business or organization (the legal entity to which this specific CCR record, represented by a UNIQUE ENTITY ID (SAM) number, belongs) through periodic reports filed under section 13(a) or 15(d) of the Securities Exchange Act of 1934 (15 U.S.C. 78m(a), 78o(d)) or section 6104 of the Internal RevenueCode of 1986?|
-| Sub-Awardee Question 1| __3__	            | As provided to you by your sub-awardee, in your sub-awardee's business or organization's preceding completed fiscal year, did its business or organization (the legal entity to which the UNIQUE ENTITY ID (SAM) number it provided belongs) receive (1) 80 percent or more of its annual gross revenues in U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements; and (2) $25,000,000 or more in annual gross revenues from U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements? |
-| Sub-Awardee Question 2| __4__	            | As provided to you by your sub-awardee, does the public have access to information about the compensation of the executives in the sub-awardee's business or organization (the legal entity to which the UNIQUE ENTITY ID (SAM) number it provided belongs) through periodic reports filed under section13(a) or 15(d) of the Securities Exchange Act of 1934 (15 U.S.C. 78m(a), 78o(d)) or section 6104 of the Internal Revenue Code of 1986?|
+| Sub-Awardee Question 1| __1__	            | As provided to you by your sub-awardee, in your sub-awardee's business or organization's preceding completed fiscal year, did its business or organization (the legal entity to which the UNIQUE ENTITY ID (SAM) number it provided belongs) receive (1) 80 percent or more of its annual gross revenues in U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements; and (2) $25,000,000 or more in annual gross revenues from U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements? |
+| Sub-Awardee Question 2| __2__	            | As provided to you by your sub-awardee, does the public have access to information about the compensation of the executives in the sub-awardee's business or organization (the legal entity to which the UNIQUE ENTITY ID (SAM) number it provided belongs) through periodic reports filed under section13(a) or 15(d) of the Securities Exchange Act of 1934 (15 U.S.C. 78m(a), 78o(d)) or section 6104 of the Internal Revenue Code of 1986?|
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -78,9 +67,10 @@ The table below lists the statuses for the SubAward Reports.
 
 Code | Value     | Description
 -----|-----------------|-----------------
-1     | Work In Progress | This status is used when the report has been saved in the system but still need additional updates to pass all validation checks. Note that reports submitted from the User Interface of sam.gov may be in this status if the user has partially added the report data and needs to add more details before submitting the report.
-2     | Submitted | This status is used when the report has been successfully submitted and it has passed all validation checks.
-3     | Deleted | This status is used for reports that have been deleted by the user. Deleted reports will not be available for general view.
+1     | Draft | This status is used when the report has been saved in the system but still need additional updates to pass all validation checks. Note that reports submitted from the User Interface of sam.gov may be in this status if the user has partially added the report data and needs to add more details before submitting the report.
+2     | Published | This status is used when the report has passed all validation checks and has been successfully published.
+3     | Reopened | This status is used when updates are needed for a report that is in published status. Until the report is published, and it has passed all validations, it will stay in this status.
+4     | Deleted | This status is used for reports that have been deleted by the user. Deleted reports will not be available for general view.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -102,7 +92,7 @@ State | State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.htm
 
 ## Version Control
 
-V1 versions of APIs will be utilizing the API Key mechanism as outlined in this documentation. Future versions of APIs will be made available to support OAuth 2.0 as soon as possible. The documentation will be updated as soon as more information is available for the oAuth implementation.  
+v1 versions of APIs will be utilizing the API Key mechanism as outlined in this documentation. Future versions of APIs will be made available to support OAuth 2.0 as soon as possible. The documentation will be updated as soon as more information is available for the oAuth implementation.  
 
 ## FSRS SubAward Reporting Bulk Upload API Request and Responses
 
