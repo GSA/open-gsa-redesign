@@ -67,7 +67,7 @@ The table below lists the statuses for the SubAward Reports.
 
 Code | Value     | Description
 -----|-----------------|-----------------
-1     | Draft | This status is used when the report has been saved in the system but still need additional updates to pass all validation checks. Note that reports submitted from the User Interface of sam.gov may be in this status if the user has partially added the report data and needs to add more details before submitting the report.
+1     | Draft | This status is used when the report has been saved in the system but still need additional updates to pass all validation checks. Note that reports published from the User Interface of sam.gov may be in this status if the user has partially added the report data and needs to add more details before submitting the report.
 2     | Published | This status is used when the report has passed all validation checks and has been successfully published.
 3     | Reopened | This status is used when updates are needed for a report that is in published status. Until the report is published, and it has passed all validations, it will stay in this status.
 4     | Deleted | This status is used for reports that have been deleted by the user. Deleted reports will not be available for general view.
@@ -102,12 +102,12 @@ Endpoint Name | Short Description |
 -----|-----------------
 Submit SubAward Report (Contracts)     | Can be used to submit SubAward Reports for reporting on one or more Contracts.
 Submit SubAward Report (Grants)     | Can be used to submit SubAward Reports for reporting on one or more Grants.
-Update SubAward Report (Contracts)     | Can be used to update one or more previously submitted SubAward Reports for Contracts.
-Update SubAward Report (Grants)     | Can be used to update one or more previously submitted SubAward Reports for Grants.
-Delete SubAward Report (Contracts)     | Can be used to delete one or more previously submitted SubAward Reports for Contracts.
-Delete SubAward Report (Grants)     | Can be used to delete one or more previously submitted SubAward Reports for Grants.
-Get SubAward Report (Contracts)     | Can be used to get one or more previously submitted SubAward Reports for Contracts. 
-Get SubAward Report (Grants)     | Can be used to get one or more previously submitted SubAward Reports for Grants.
+Update SubAward Report (Contracts)     | Can be used to update one or more previously published SubAward Reports for Contracts.
+Update SubAward Report (Grants)     | Can be used to update one or more previously published SubAward Reports for Grants.
+Delete SubAward Report (Contracts)     | Can be used to delete one or more previously published SubAward Reports for Contracts.
+Delete SubAward Report (Grants)     | Can be used to delete one or more previously published SubAward Reports for Grants.
+Get SubAward Report (Contracts)     | Can be used to get one or more previously published SubAward Reports for Contracts. 
+Get SubAward Report (Grants)     | Can be used to get one or more previously published SubAward Reports for Grants.
 
 The following section describes each of the above endpoints in detail.
 
@@ -137,9 +137,21 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was created | As described below
 
-The API will return HTTP Status code 201 if the report is saved. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in "Work In Progress" status and the validation error messages are sent back as a part of the response body. See [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update SubAward Report (Contracts) request to update the report so it can be submitted successfully.
+The API will return HTTP Status code 201 if the report is saved. If the request passes all validations, then the report is saved in "Published" status. If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. See [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update SubAward Report (Contracts) request to update the report so it can be published successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
+
+Response Element | Response Type | Description
+-----------------|---------------|------------
+ _ | JSON Array | One element for each subaward report in request
+id | string | For a contract report, it is the concatenated values of contractNumber, reportingAgency, idvRefrenceNumber, referenceAgencyCode, subAwardNumber, subAwardDate, subAwardAmount and submittedDate separated by ':'. For a Grant report, it is the concatenated value of fainNumber, reportingPeriodMonth and reportingPeriodYear separated by ":". For a GET request, if the Http Status of the request is 400, then it is the concatenated value of the search parameters separated by ":".
+statusCode | string | The Http Status code for the subaward report element
+transactionId | string | Internal id that sam.gov support team can use to trace issues. Users can provide this to support team in case of any issues with their request
+timeStamp | string | Date and time when the request was processed
+subawardReportNumber | string | Unique identifier for the subaward report. This id can be used for any subsequent update/delete calls
+reportStatus | string | Status of the subaward report. 
+message | string | Message indicating status of the operation. Also includes any informative warning messages.
+errors | JSON Array | If there are validation errors, they are sent back as a part of this errors array.
 
 #### Examples
 
@@ -149,7 +161,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 <code><pre>
 {
    "contractData": {  
-      "primeEntityInformation": [
+      "contractData": [
          {
             "contractNumber": "W9123823PTEST", 
             "idvReferenceNumber": "GSTEST001", 
@@ -317,7 +329,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 <code><pre>
 {
    "contractData": {  
-      "primeEntityInformation": [
+      "contractData": [
         {
             "contractNumber": "W91238PTESTTWO", 
             "idvReferenceNumber": "", 
@@ -432,7 +444,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was successfully created | As described below
 
-The API will return HTTP Status code 201 if the report is saved. If the request passes all validations, then the report is saved in Submitted status. If any validations fail, then the report is saved in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update SubAward Report (Grants) request to update the report so it can be submitted successfully.
+The API will return HTTP Status code 201 if the report is saved. If the request passes all validations, then the report is saved in Published status. If any validations fail, then the report is saved in "Work In Progress" status and the validation error messages are sent back as a part of the response body. see [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update SubAward Report (Grants) request to update the report so it can be published successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -727,7 +739,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 ------- | -------
 **Request Type** | PUT
 **URL** | /acquisition/v1/subawards
-**Summary** | This endpoint can be used to update one or multiple previously submitted contracts report
+**Summary** | This endpoint can be used to update one or multiple previously published contracts report
 **Consumes** | application/JSON
 **Produces** | JSON
 **Active Versions** | v1
@@ -748,7 +760,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string |  Report successfully updated| As described below
 
-The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in "Work In Progress" status and the validation error messages are sent back as a part of the response body. See [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be submitted successfully.
+The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Published status. If any validations fail, then the report is saved in "Reopened" status and the validation error messages are sent back as a part of the response body. See [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be published successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -763,7 +775,7 @@ For examples, refer to Submit SubAward Report (Contracts) examples.
 ------- | -------
 **Request Type** | PUT
 **URL** | /assistance/v1/subawards
-**Summary** | This endpoint can be used to update one or multiple previously submitted grants report
+**Summary** | This endpoint can be used to update one or multiple previously published grants report
 **Consumes** | application/json
 **Produces** | JSON
 **Active Versions** | v1
@@ -784,7 +796,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report successfully updated | As described below
 
-The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Submitted status. If any validations fail, then the report stays in "Work In Progress" status and the validation error messages are sent back as a part of the response body. See [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be submitted successfully.
+The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Published status. If any validations fail, then the report stays in "Work In Progress" status and the validation error messages are sent back as a part of the response body. See [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be published successfully.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -799,7 +811,7 @@ For examples, refer to Submit SubAward Report (Grants) examples.
 ------- | -------
 **Request Type** | DELETE
 **URL** | /acquisition/v1/subawards
-**Summary** | This endpoint can be used to delete previously submitted contracts report(s)
+**Summary** | This endpoint can be used to delete previously published contracts report(s)
 **Consumes** | application/json
 **Produces** | JSON
 **Active Versions** | v1
@@ -829,7 +841,7 @@ The API will return HTTP Status code 204 if the report is deleted successfully. 
 <p>
 <code><pre>
 {
-   "primeEntityInformation":[
+   "contractData":[
       {
          "contractNumber":"W91238PTESTTWO",
          "idvReferenceNumber":"",
@@ -923,7 +935,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes, at least one primeEntityInformation element is required. From the fields, at least one field is required | [Refer Get SubAward Report Contract JSON](#get-subaward-report-contract-json) 
+Request JSON | Body | JSON | Yes, at least one contractData element is required. From the fields, at least one field is required | [Refer Get SubAward Report Contract JSON](#get-subaward-report-contract-json) 
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -934,7 +946,7 @@ Note: Will return JSON response same as POST Request JSON
 <p>
 <code><pre>
 {
-   "primeEntityInformation":[
+   "contractData":[
       {
          "contractNumber":"W9123823PTEST",
          "idvReferenceNumber":"GSTEST001",
@@ -965,7 +977,7 @@ HTTP Status Code | Response Type | Reason  | Description
 <code><pre>
  {
    "contractData":{
-      "primeEntityInformation":[
+      "contractData":[
          {
             "contractNumber":"W9123823PTEST",
             "idvReferenceNumber":"GSTEST001",
@@ -1354,29 +1366,21 @@ HTTP Status Code | Response Type | Reason  | Description
 
 Name | Data Type |Field Length | Required |Description 
 -----|-----------|-------|------------|------------
-contractData | JSON Object |NA |Yes|  
-contractData.primeEntityInformation | JSON Array | NA|Yes|Information about the prime Contractor. If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract
-contractData.primeEntityInformation Details| | | | 
-primeEntityInformation.contractNumber | string | 50 characters  | Yes |If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank
-primeEntityInformation.idvReferenceNumber | string | 50 characters |Yes, if the report is for a Task Order on a Contract |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
-primeEntityInformation.reportPeriodMon |string  | 10 characters | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
-primeEntityInformation.reportPeriodYear |string  || Yes | This field should reflect the Reporting Year of the report being submitted. 
-primeEntityInformation.reportingAgency | string | 32 characters  | Yes | The ID of the Federal awarding agency as from FPDS-NG
-primeEntityInformation.treasurySymbol |string  || The first six digits of the Treasury Account Symbol (XX-XXXX) are required. | The Treasury Account Symbol associated with the prime contract award can be found on FPDS under Contract Record or you can contact the Contracting Officer to request the TAS. Be sure to include any dashes when entering the symbol value into this field on the spreadsheet
-primeEntityInformation.programTitle | string || No | Program or Project Title 
-primeEntityInformation.recovery_model_questions |JSON Array||No | Array of the Compensation Questions for the prime Awardee. There will be 2 questions, and therefore atmost 2 elements in this array
-primeEntityInformation.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
-primeEntityInformation.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
-primeEntityInformation.subAwardDataList |string  ||Yes  |Information about the sub Contractors. If the report is being submitted for multiple sub contracts, then this array will have multiple elements, one for each of the sub Contracts.
-primeEntityInformation.subAwardDataList Details | | | | 
+contractData | JSON Array | NA|Yes|Information about the prime Contractor and the subaward report(s). If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract
+contractData Details| | | | 
+contractData.contractNumber | string | 50 characters  | Yes |If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank
+contractData.reportingAgencyCode | string | 32 characters  | Yes | The ID of the Federal awarding agency as from FPDS-NG
+contractData.idvReferenceNumber | string | 50 characters |Yes, if the report is for a Task Order on a Contract |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
+contractData.referenceAgencyCode | string | 32 characters  | Yes, if the idvReferenceNumber is provided | The ID of the Federal awarding agency associated with the IDV Reference Number
+contractData.programTitle | string || No | Program or Project Title 
+contractData.subAwardDataList |string  ||Yes  |Information about the sub Awardees. If the report is being submitted for multiple sub awardees, then this array will have multiple elements, one for each of the sub Awardee.
+contractData.subAwardDataList Details | | | | 
+subAwardDataList.subAwardUei | string | 13 characters | Yes | Sub Awardee UEI
 subAwardDataList.subAwardNumber | string |32 characters  | Yes | Number assigned by the Prime Contractor to track this sub-contract
-subAwardDataList.subAwardDollars |string  |32 characters | Yes | Amount for this award to this sub contractor 
-subAwardDataList.periodOfPerformanceStartDate |string |TIMESTAMP | Yes| Date subaward was made in YYYY-MM-DD format
-subAwardDataList.uei | string | 13 characters | Yes | Sub Contractor UEI
-subAwardDataList.overallDescription |string  || Yes | Describes the contract requirements. This is from FPDS.
-subAwardDataList.placeOfPerformance | JSON Object |NA |Yes | Sub contractor Principal Place of Performance
-subAwardDataList.placeOfPerformance.streetAddess | string ||Yes|Sub Awardee POP Street Address
-subAwardDataList.placeOfPerformance.streetAddess2 | string ||No|Sub Awardee POP Street Address2
+subAwardDataList.subAwardAmount |string  |32 characters | Yes | Amount for this award to this sub Awardee 
+subAwardDataList.subawardDate |string |TIMESTAMP | Yes| Date subaward was made in YYYY-MM-DD format
+subAwardDataList.subawardDescription |string  || Yes | Describes the contract requirements. This is from FPDS.
+subAwardDataList.placeOfPerformance | JSON Object |NA |Yes | Sub Awardee Principal Place of Performance
 subAwardDataList.placeOfPerformance.city | string || Yes |Sub Awardee POP City Name
 subAwardDataList.placeOfPerformance.state | JSON Object |NA |Yes|Sub Awardee POP State Information. The State Code and name need to be specified.
 subAwardDataList.placeOfPerformance.state.code | string |||Sub Awardee POP State Code
@@ -1404,8 +1408,8 @@ assistanceData | JSON Object |NA | NA | NA
 assistanceData.primeEntityInformation | JSON Array | NA| Yes | Information about the prime Grantor. If the report is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
 assistanceData.primeEntityInformation Details||||
 primeEntityInformation.primeFAIN | string |  255 characters | Yes | This is the Federal Award Identifier Number (FAIN) for the prime grant award. 
-primeEntityInformation.reportPeriodMon | string | 10 characters  | Yes | This field should reflect the Reporting Month of the report being submitted. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
-primeEntityInformation.reportPeriodYear | string  | 10 characters | Yes | This field should reflect the Reporting Year of the report being submitted. 
+primeEntityInformation.reportPeriodMon | string | 10 characters  | Yes | This field should reflect the Reporting Month of the report being published. Use two digit numbers for the month:01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
+primeEntityInformation.reportPeriodYear | string  | 10 characters | Yes | This field should reflect the Reporting Year of the report being published. 
 primeEntityInformation.eftIndicator | string | 10 characters | No |If your organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, this information will be picked up from the SAM registration. Otherwise, if applicable, you would note it here. 
 primeEntityInformation.recovery_model_questions |JSON Array||No | Array of the Compensation Questions for the prime Awardee. There will be 2 questions, and therefore atmost 2 elements in this array
 primeEntityInformation.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
@@ -1444,12 +1448,9 @@ subAwardDataList.topPayEmployees.salary | string  ||Yes if subAwardDataList.topP
 
 Name | Data Type | Field Length | Required | Description
 -----|-----------|---------|----------|------------
-contractData.primeEntityInformation | JSON Array  | | | Information about the prime Contractor. If the request is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract.
-contractNumber | string  | 50 characters | Yes | If this report being deleted is for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank.
-idvReferenceNumber | string | 50 characters  | Conditional - Yes |If this report being deleted is for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
-reportPeriodMon | string  | 10 characters| Yes | This field should reflect the Reporting Month of the report being submitted. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
-reportPeriodYear | string | | Yes | This field should reflect the Reporting Year of the report being submitted.
-reportingAgency |string  |32 characters| Yes | The ID of the Federal awarding agency
+contractData | JSON Array  | | Yes, at least one element in the array is required. At least one field is required for the fields in each element. | Information about the report to be deleted. If there are multiple reports to be deleted, then this array will have multiple elements, one for each of the delete requests.
+contractData.subAwardReportNumber | string |32 characters  | No | Number assigned by the Prime Contractor to track the sub-contract. This is returned as a part of the response for the Create, Update and Get calls for the subaward report.
+contractData.reportStatus | string |32 characters  | No | The status of the report to be deleted. If no status is provided, then all associated reports (in all statuses) will be deleted.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1472,12 +1473,14 @@ reportPeriodYear |string  |  | Yes | Reporting Year of the report.
 
 Name | Data Type | Field Length| Required | Description
 -----|-----------|--------|--------|------------
-contractData.primeEntityInformation |JSON Array  |  | | Information about the prime Contractor. This array can have multiple elements.
-contractNumber | string  |50 characters|Yes | contractNumber or the Award ID for your contract as reported in FPDS. Or can be Task Order Number
-idvReferenceNumber | string  | 50 characters|  |If Task Order Number is specified in contractNumber field then enter the contract number which matches the Reference IDV field in FPDS.
-reportPeriodMon | string  | 10 characters| Yes | Reporting Month of the report. Use two digits numbers for the month: 01 - January; 02 - February; 03 - March; 04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December
-reportPeriodYear | string  | | Yes | Reporting Year of the report.
-reportingAgency | string  | 32 characters| Yes  | The ID of the Federal awarding agency
+contractData | JSON Array | NA|Yes|Information about the prime Contractor and the subaward report(s). If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract
+contractData Details| | | | 
+contractData.contractNumber | string | 50 characters  | Yes |If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank
+contractData.reportingAgencyCode | string | 32 characters  | Yes | The ID of the Federal awarding agency as from FPDS-NG
+contractData.idvReferenceNumber | string | 50 characters |Yes, if the report is for a Task Order on a Contract |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
+contractData.referenceAgencyCode | string | 32 characters  | Yes, if the idvReferenceNumber is provided | The ID of the Federal awarding agency associated with the IDV Reference Number
+contractData.subAwardReportNumber | string |32 characters  | No | Number assigned by the Prime Contractor to track the sub-contract. This is returned as a part of the response for the Create, Update calls for the subaward report.
+contractData.reportStatus | string |32 characters  | No | The status of the report to be retrieved.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1517,27 +1520,27 @@ Error Code |	Error Message	| Reason/Description | Operation |
 500	|	Internal Server Error encountered. Please try after sometime	|	Internal Server Error	|	All |
 501	|	Invalid request	|	Not Implemented	|	All |
 400	|	Error processing the request	|	Invalid JSON format provided	|	All |
-400	|	primeEntityInformation is required	|	primeEntityInformation element is missing or empty	|	All |
+400	|	contractData is required	|	contractData element is missing or empty	|	All |
 400	|	Invalid JSON structure. contractData is required	|	The contractData element is required in the request body.	|	submitSubAwardReport ,updateSubAwardReport(Contracts) |
 400	|	Invalid JSON structure. assistanceData is required	|	The assistanceData element is required in the request body.	|	submitSubAwardReport,updateSubAwardReport(Grants) |
-400	|	Invalid JSON structure: At least one primeEntityInformation is required for contract reporting.	|	Request Body JSON structure is invalid. At least one contractData.primeEntityInformation element is required for contract reporting	|	submitSubAwardReport ,updateSubAwardReport(Contracts) |
+400	|	Invalid JSON structure: At least one contractData is required for contract reporting.	|	Request Body JSON structure is invalid. At least one contractData.contractData element is required for contract reporting	|	submitSubAwardReport ,updateSubAwardReport(Contracts) |
 400	|	Invalid JSON structure: At least one primeEntityInformation is required for grant reporting.	|	Request Body JSON structure is invalid. At least one assistanceData.primeEntityInformation element is required for  grant reporting	|	submitSubAwardReport,updateSubAwardReport(Grants) |
 400	|	Ensure that the FAIN Number is correct. No matching Grant found for the provided FAIN number	|	As provided in assistanceData.primeEntityInformation.primeFAIN, FAIN Number not found	|	submitSubAwardReport,updateSubAwardReport(Grants) |
-400	|	Could not find a record matching the contractNumber and reportingAgency provided	|	No record found for the Contract Number and Reporting Agency combination (Combination of contractData.primeEntityInformation.contractNumber and contractData.primeEntityInformation.reportingAgency in the Request Body).	|	submitSubAwardReport ,updateSubAwardReport(Contracts) |
-400	|	Could not find a record associating the IDV reference number with the Contract number	|	IDV Reference Number not found associated with the Contract Number (Combination of contractData.primeEntityInformation.contractNumber and contractData.primeEntityInformation.idvReferenceNumber)	|	submitSubAwardReport ,updateSubAwardReport(Contracts) |
+400	|	Could not find a record matching the contractNumber and reportingAgency provided	|	No record found for the Contract Number and Reporting Agency combination (Combination of contractData.contractData.contractNumber and contractData.contractData.reportingAgency in the Request Body).	|	submitSubAwardReport ,updateSubAwardReport(Contracts) |
+400	|	Could not find a record associating the IDV reference number with the Contract number	|	IDV Reference Number not found associated with the Contract Number (Combination of contractData.contractData.contractNumber and contractData.contractData.idvReferenceNumber)	|	submitSubAwardReport ,updateSubAwardReport(Contracts) |
 400	|	Report Already Exists for the specified Month/Year  - Status: Submitted; Created By - User Name	|	A SubAward report for this contract already exists in the system for the given reporting period (Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency)	|	submitSubAwardReport(Contracts) |
 400	|	Report Already Exists for the specified Month/Year  - Status: Submitted; Created By - User Name	|	A SubAward report for this grant already exists in the system for the given reporting period (Combination of primeFAIN:reportPeriodMon:ReportPeriodYear)	|	submitSubAwardReport(Grants) |
 400	|	Please specify the idvReferenceNumber to correctly identify the contract being reported on	|	User needs to specify the idvReferenceNumber to correctly identify the record as multiple records were found for the contractNumber and reportingAgency combination	|	submitSubAwardReport(Contracts) |
 400	|	Cannot update. A SubAward report for the specified month/year does not exist for the Contract.	|	No Report found for the specified Contract for the Month/Year. Combination of contractNumber:idvReferenceNumber:reportPeriodMon:reportPeriodYear:reportingAgency does not exist	|	updateSubAwardReport(Contracts) |
 400	|	Cannot update. A SubAward report for the specified month/year does not exist for the Grant.	|	No Report found for the specified Grant for the Month/Year. Combination of primeFAIN:reportPeriodMon:ReportPeriodYear	|	updateSubAwardReport(Grants) |
-400	|	Contract Number is required for Prime Entity	|	contractData.primeEntityInformation.contractNumber was not provided.	|	submitSubAwardReport ,updateSubAwardReport(Contracts) |
+400	|	Contract Number is required for Prime Entity	|	contractData.contractData.contractNumber was not provided.	|	submitSubAwardReport ,updateSubAwardReport(Contracts) |
 400	|	Reporting period month is required for Prime Entity	|	For Contracts contractData.reportPeriodMon is a required field. For Grants assistanceData.reportPeriodMon is a required field.	|	submitSubAwardReport ,updateSubAwardReport (Contracts and Grants) |
 400	|	Please provide a valid value for the reporting period month. It is expected to be a 2 digit month	|	reportPeriodMon is expected as a 2 digit number (01 - January; 02 - February; 03 - March;04 - April; 05 - May; 06 - June; 07 - July; 08 - August; 09 - September; 10 - October; 11 - November; 12 – December)	|	submitSubAwardReport ,updateSubAwardReport(Contracts and Grants) |
 400	|	Reporting period year is required for Prime Entity.	|	For Contracts, contractData.reportPeriodYear is a required field. For Grants, assistanceData.reportPeriodYearreportPeriodYear is a required field.	|	submitSubAwardReport ,updateSubAwardReport(Contracts and Grants) |
 400	|	Please provide a valid value for the reporting period year. It is expected to be a 4 digit year	|	For Contracts, contractData.reportPeriodYear should be a 4 digit year. For Grants, assistanceData.reportPeriodYear should be a 4 digit year.	|	submitSubAwardReport ,updateSubAwardReport(Contracts and Grants) |
 400	|	Please provide the Federal awarding agency Id	|	contractData.reportingAgency is a required field.	|	submitSubAwardReport ,updateSubAwardReport(Contracts) |
 400	|	Please provide the correct format for the Reporting Agency	|	contractData.reportingAgency provided is invalid.	|	submitSubAwardReport ,updateSubAwardReport(Contracts) |
-400	|	At least one primeEntityInformation element is required for the contract reporting	|	At least one primeEntityInformation element is required for the contract reporting	|	getSubAwardReport(Contracts) |
+400	|	At least one contractData element is required for the contract reporting	|	At least one contractData element is required for the contract reporting	|	getSubAwardReport(Contracts) |
 400	|	At least one primeEntityInformation element is required for the grant reporting	|	At least one primeEntityInformation element is required for the grant reporting	|	getSubAwardReport(Grants) |
 400	|	Sub contractor UNIQUE ENTITY ID # is required	|	Sub contractor UNIQUE ENTITY ID # is required	|	submitSubAwardReport ,updateSubAwardReport(Contracts and Grants) |
 400	|	At least one search criteria needs to be specified. One of contractNumber, idvReferenceNumber, reportPeriodMon, reportPeriodYear, reportingAgency	|	contractNumber, idvReferenceNumber, reportPeriodMon, reportPeriodYear and reportingAgency are missing for at least one element in the request	|	getSubAwardReport(Contracts and Grants) |
