@@ -141,18 +141,6 @@ The API will return HTTP Status code 201 if the report is saved. If the request 
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
-Response Element | Response Type | Description
------------------|---------------|------------
- _ | JSON Array | One element for each subaward report in request
-id | string | For a contract report, it is the concatenated values of contractNumber, reportingAgency, idvRefrenceNumber, referenceAgencyCode, subAwardNumber, subAwardDate, subAwardAmount and submittedDate separated by ':'. For a Grant report, it is the concatenated value of fainNumber, reportingPeriodMonth and reportingPeriodYear separated by ":". For a GET request, if the Http Status of the request is 400, then it is the concatenated value of the search parameters separated by ":".
-statusCode | string | The Http Status code for the subaward report element
-transactionId | string | Internal id that sam.gov support team can use to trace issues. Users can provide this to support team in case of any issues with their request
-timeStamp | string | Date and time when the request was processed
-subawardReportNumber | string | Unique identifier for the subaward report. This id can be used for any subsequent update/delete calls
-reportStatus | string | Status of the subaward report. 
-message | string | Message indicating status of the operation. Also includes any informative warning messages.
-errors | JSON Array | If there are validation errors, they are sent back as a part of this errors array.
-
 #### Examples
 
 <details>
@@ -1358,7 +1346,24 @@ HTTP Status Code | Response Type | Reason  | Description
 </p>
 </details>
 
-## API Contract JSON
+## API JSON Structures
+### Response JSON
+
+All Subaward API endpoints return a response JSON. The generic structure of the response JSON along with the endpoint specific differences are outlined in the table below:
+
+Response Element | Response Type | Description
+-----------------|---------------|------------
+ _ | JSON Array | One element for each subaward report in request
+id | string | For a contract report, it is the concatenated values of contractNumber, reportingAgency, idvRefrenceNumber, referenceAgencyCode, subAwardNumber, subAwardDate, subAwardAmount and submittedDate separated by ':'. For a Grant report, it is the concatenated value of fainNumber, reportingPeriodMonth and reportingPeriodYear separated by ":". For a GET or DELETE request, if the request is unsuccessful, then it is the concatenated value of the search parameters separated by ":".
+statusCode | string | The Http Status code for the subaward report element
+transactionId | string | Internal id that sam.gov support team can use to trace issues. Users can provide this to support team in case of any issues with their request
+timeStamp | string | Date and time when the request was processed
+subawardReportNumber | string | Unique identifier for the subaward report. This id can be used for any subsequent update/delete calls
+reportStatus | string | Status of the subaward report. 
+message | string | Message indicating status of the operation. Also includes any informative warning messages.
+errors | JSON Array | If there are validation errors, they are sent back as a part of this errors array.
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ### Submit SubAward Report Contract JSON
 
