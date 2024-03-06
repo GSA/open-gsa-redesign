@@ -140,9 +140,9 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was created | As described below
 
-The API will return HTTP Status code 201 if the report is saved. If the request passes all validations, then the report is saved in "Published" status. If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. See [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send an Update SubAward Report (Contracts) request to update the report so it can be published successfully.
+For each subawardee in the request, the API will process the request as described. If the subaward request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward request will be created and the API will return HTTP Status code 201 will be returned. If the request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status. If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
-The API will return other HTTP Status codes in case of any other errors and the report will not be saved. Refer to the [General Error Messages](#general-error-messages) for specific details.
+The API will return other HTTP Status codes in case of any errors as specified in the [General Error Messages](#general-error-messages) section.
 
 #### Examples
 
