@@ -24,12 +24,12 @@ To begin using this API, you will need to register for a System Account and obta
 * The SAM.gov non-federal registered users must request for a System Account. If their registration and request criteria are satisfied, then they will be provided with the System Accounts widget on their SAM.gov workspace.
 * The users will be able to access the System Accounts widget from their Workspace page after logging in. They can then select “New Account” by navigating from the widget and fill out the required sections and submit their System Account. When creating a System Account, users must specify the following to successfully utilize the Subawards API:
 	* System Information
-   		- System Account Name: Unique name for the System Account
+   		** System Account Name: Unique name for the System Account
 	* Permissions
-   		- Subaward Reporting: Write --> Gives access to Create/Update/Delete/Get Subaward Reports.
+   		** Subaward Reporting: Write --> Gives access to Create/Update/Delete/Get Subaward Reports.
 	* Security Information
-		- IP Address: List all the IP Addresses that the System invokes the API from.
-		- Type of Connection: REST APIs
+		** IP Address: List all the IP Addresses that the System invokes the API from.
+		** Type of Connection: REST APIs
 * The requested system account will then be sent for an approval. After approval, the user will be notified via an email and they will also be able to see the status of their request in the System Account widget.
 
 #### Generating a System Account API Key
@@ -342,8 +342,6 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit SubAward Report Grant JSON](#submit-subaward-report-grant-json)
-
-<p><small><a href="#">Back to top</a></small></p>
 
 #### Responses
 
@@ -661,8 +659,6 @@ Request JSON | Body | JSON | Yes | [Refer Submit SubAward Report Contract JSON](
 
 Note: For update requests, the subawardReportNumber element in the JSON structure will be required for each subaward report to be updated.
 
-<p><small><a href="#">Back to top</a></small></p>
-
 #### Responses
 
 HTTP Status Code | Response Type | Reason  | Description
@@ -878,8 +874,6 @@ Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit SubAward Report Grant JSON](#submit-subaward-report-grant-json)
 
-<p><small><a href="#">Back to top</a></small></p>
-
 #### Responses
 
 HTTP Status Code | Response Type | Reason  | Description
@@ -913,8 +907,6 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes |[Refer Delete SubAward Report Contract JSON](#delete-subaward-report-contract-json)
-
-<p><small><a href="#">Back to top</a></small></p>
 
 #### Responses
 
@@ -967,6 +959,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 </pre></code>
 </p>
 </details>
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Delete SubAward Report (Grants)
@@ -987,8 +980,6 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Delete SubAward Report Grant JSON ](#delete-subaward-report-grant-json)
-
-<p><small><a href="#">Back to top</a></small></p>
 
 #### Responses
 
@@ -1041,8 +1032,6 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes, at least one contractData element is required. From the fields, at least one field is required | [Refer Get SubAward Report Contract JSON](#get-subaward-report-contract-json) 
-
-<p><small><a href="#">Back to top</a></small></p>
 
 #### Examples
 
@@ -1340,6 +1329,8 @@ HTTP Status Code | Response Type | Reason  | Description
 </pre></code>
 </p>
 </details>
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## API JSON Structures
 ### Response JSON
@@ -1688,6 +1679,7 @@ Note: To keep the user informed on the actions being done through the API, some 
 </pre></code>
 </p>
 </details>
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Submit SubAward Report Contract JSON
@@ -1968,6 +1960,8 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 200|subAssistanceDataList.subAssistanceObligationOrActionDate |	Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubAwardReport(Grants)
 200|subAssistanceDataList.subAssistanceObligationOrActionDate |	The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | updateSubAwardReport(Grants)
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## FAQ
 
 TBD
@@ -1976,6 +1970,7 @@ TBD
 
 * Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov)
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Change Log
 
