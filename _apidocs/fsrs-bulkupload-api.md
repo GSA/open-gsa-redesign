@@ -140,7 +140,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was created | As described below
 
-For each subawardee in the request, the API will process the request as described. If the subaward request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward request will be created and the API will return HTTP Status code 201 will be returned. If the request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status. If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. See the [Response JSON](#response-json) section for the response structure and specific examples.
+For each sub awardee in the request, the API will process the request as described. If the sub awardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward report for the sub awardee will be created and HTTP Status code 201 will be returned. If the sub awardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status. If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 The API will return other HTTP Status codes in case of any errors as specified in the [General Error Messages](#general-error-messages) section.
 
@@ -659,6 +659,8 @@ Authorization | header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit SubAward Report Contract JSON](#submit-subaward-report-contract-json)
 
+Note: For update requests, the subawardReportNumber element in the JSON structure will be required for each subaward report to be updated.
+
 <p><small><a href="#">Back to top</a></small></p>
 
 #### Responses
@@ -667,7 +669,11 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string |  Report successfully updated| As described below
 
-The API will return HTTP Status code 200 if the report is updated successfully. If the request passes all validations, then the report is updated to Published status. If any validations fail, then the report is saved in "Reopened" status and the validation error messages are sent back as a part of the response body. See [Validation Failure Error Messages](#validation-failure-error-messages) for more information about validation errors. Users are expected to fix the validation errors and send the update request again to update the report so it can be published successfully.
+For each sub awardee in the request, the API will process the request as described. If the sub awardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward report will be updated successfully and HTTP Status code 200 will be returned. If the sub awardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status. If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below. 
+	* If the updates are being performed on a "Draft" report, and there are validation failures, then the report stays in "Draft" status. If there are no validation failures, the report is updated to "Published" status.
+ 	* If the updates are being performed on a "Published" report, a new subawardReportNumber is assigned to the update request. If there are validation failures, then the report status is set to "Reopened". If there are no validation failures, the new subaward report moves to "Published" status and the previous "Published" report is archived.
+  
+See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -918,6 +924,8 @@ HTTP Status Code | Response Type | Reason  | Description
 
 The API will return HTTP Status code 204 if the report is deleted successfully. The API will return other HTTP Status codes in case of any other errors and the report will not be deleted. Refer to the [Error Messages](#error-messages) for specific details.
 
+See the [Response JSON](#response-json) section for the response structure and specific examples.
+
 #### Examples
 
 <details>
@@ -1037,7 +1045,7 @@ Request JSON | Body | JSON | Yes, at least one contractData element is required.
 <p><small><a href="#">Back to top</a></small></p>
 
 #### Examples
-Note: Will return JSON response same as POST Request JSON
+
 <details>
 <summary>Get SubAward Reports for a specific contract based on the Subaward Report Number and report status</summary>
 <p>
@@ -1114,7 +1122,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report was successfully retrieved | [Refer Get SubAward Report Contract JSON](#get-subaward-report-contract-json)
 
-Note: Will return JSON response same as POST Request JSON. The generated subAwardReportNumber and the reportStatus will be sent back as a part of the response.
+Note: Will return JSON response same as POST Request JSON. The generated subAwardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1349,6 +1357,14 @@ subawardReportNumber | string | Unique identifier for the subaward report. This 
 reportStatus | string | Status of the subaward report. 
 message | string | Message indicating status of the operation. Also includes any informative warning messages.
 errors | JSON Array | If there are validation errors, they are sent back as a part of this errors array.
+
+Note: To keep the user informed on the actions being done through the API, some descriptive messages will be sent back as a part of the "message" element. This will be done for the Create (POST) and Update (PUT) requests for Contracts. The scenarios when these informational messages will be provided are outlined below:
+* When there are existing Subaward Reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date.
+* When there are existing Subaward Reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date submitted on the same date.
+* When there are existing Subaward Reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date submitted on the same date with the same Subaward amount.
+* When the Date of the Subaward provided matches the Date of the Subcontract of the previous Subaward report.
+* When the Subaward Amount provided matches the Subaward Amount of the previous Subaward report.
+* When the Subaward Amount provided is greater than the total contract value.
 
 #### Examples
 <details>
