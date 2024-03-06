@@ -24,12 +24,12 @@ To begin using this API, you will need to register for a System Account and obta
 * The SAM.gov non-federal registered users must request for a System Account. If their registration and request criteria are satisfied, then they will be provided with the System Accounts widget on their SAM.gov workspace.
 * The users will be able to access the System Accounts widget from their Workspace page after logging in. They can then select “New Account” by navigating from the widget and fill out the required sections and submit their System Account. When creating a System Account, users must specify the following to successfully utilize the Subawards API:
 	* System Information
-	System Account Name: Unique name for the System Account
+   		- System Account Name: Unique name for the System Account
 	* Permissions
-   	Subaward Reporting: Write --> Gives access to Create/Update/Delete/Get Subaward Reports.
+   		- Subaward Reporting: Write --> Gives access to Create/Update/Delete/Get Subaward Reports.
 	* Security Information
-	IP Address: List all the IP Addresses that the System invokes the API from.
-	Type of Connection: REST APIs
+		- IP Address: List all the IP Addresses that the System invokes the API from.
+		- Type of Connection: REST APIs
 * The requested system account will then be sent for an approval. After approval, the user will be notified via an email and they will also be able to see the status of their request in the System Account widget.
 
 #### Generating a System Account API Key
@@ -147,264 +147,180 @@ The API will return other HTTP Status codes in case of any other errors and the 
 #### Examples
 
 <details>
-<summary>Example: Submit SubAward Contract Report for multiple Contracts and multiple subawards</summary>
+<summary>Example: Submit SubAward Report for multiple Contracts and multiple subawards. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information is not mandatory to be provided.</summary>
 <p>
 <code><pre>
 {
-   "contractData": {  
-      "contractData": [
-         {
-            "contractNumber": "W9123823PTEST", 
-            "idvReferenceNumber": "GSTEST001", 
-            "reportPeriodMon": "06",
-            "reportPeriodYear": "2023",
-            "reportingAgency": "2100",
-            "treasurySymbol": "12-3456",
-            "programTitle": "Title of the program",
-            "recovery_model_questions": 
-             [
-                 {
-                   "code": "1",
-                   "isSelected": "true"
-                 },
-                 {
-                   "code": "2",
-                   "isSelected": "true"
-                 }                                 
-             ],
-            "subAwardDataList": [
-               { 
-                  "subAwardNumber": "2303-TEST-05-0", 
-                  "subAwardDollars": "100000",
-                  "periodOfPerformanceStartDate": "2023-05-14",
-                  "uei": "ABC987654321",
-                  "overallDescription": "tEST Description",
-                  "placeOfPerformance": {
-                     "streetAddress": "1800 F Street, NW",
-                     "streetAddress2": "",
-                     "city": "Alexandria",
-                     "country": {
-                        "code": "USA",
-                        "name": "UNITED STATES"
-                     },
-                     "state": {
-                        "code": "VA",
-                        "name": "Virginia"
-                     },
-                     "zip": "12345"
+   "contractData":[
+      {
+         "contractNumber":"W9123823PTEST",
+         "reportingAgencyCode":"2100",
+         "idvReferenceNumber":"GSTEST001",
+         "referenceAgencyCode":"2147",
+         "programTitle":"Title of the program",
+         "subAwardDataList":[
+            {
+               "subawardUei":"ABC987654321",
+               "subAwardNumber":"2303-TEST-05-0",
+               "subawardAmount":"100567.99",
+               "subawardDate":"2023-05-14",
+               "subawardDescription":"test Description",
+               "placeOfPerformance":{
+                  "city":"Alexandria",
+                  "country":{
+                     "code":"USA",
+                     "name":"UNITED STATES"
                   },
-                  "recovery_model_questions": 
-                   [
-                      {
-                        "code": "3",
-                        "isSelected": "true"
-                      },
-                      {
-                        "code": "4",
-                        "isSelected": "false"
-                      }                                          
-                  ],
-                  "topPayEmployees": [
-                     {
-                        "full_name": "John White",
-                        "salary": "100000"
-                     },
-                     {
-                        "full_name": "Employee Green",
-                        "salary": "120000"
-                     },
-                     {
-                        "full_name": "Employee Red",
-                        "salary": "96000"
-                     },
-                     {
-                        "full_name": "Employee Orange",
-                        "salary": "250000"
-                     },
-                     {
-                        "full_name": "Employee Blue",
-                        "salary": "290000"
-                     }                                         
-                  ]
+                  "state":{
+                     "code":"VA",
+                     "name":"Virginia"
+                  },
+                  "zip":"12345"
                },
-              { 
-                  "subAwardNumber": "2303-TEST-06-1", 
-                  "subAwardDollars": "80000",
-                  "periodOfPerformanceStartDate": "2023-05-14",
-                  "uei": "XYZ987654321",
-                  "overallDescription": "Test Description2",
-                  "placeOfPerformance": {
-                     "streetAddress": "street 123",
-                     "streetAddress2": "alley 4",
-                     "city": "Brambleton",
-                     "country": {
-                        "code": "USA",
-                        "name": "UNITED STATES"
-                     },
-                     "state": {
-                        "code": "VA",
-                        "name": "Virginia"
-                     },
-                     "zip": "67890"
+               "recovery_model_questions":[
+                  {
+                     "code":"1",
+                     "isSelected":"true"
                   },
-                  "recovery_model_questions": 
-                   [
-                      {
-                        "code": "3",
-                        "isSelected": "true"
-                      },
-                      {
-                        "code": "4",
-                        "isSelected": "true"
-                      }                                          
-                  ]
-               }                           
-            ]
-         },
-        {
-            "contractNumber": "W91238PTESTTWO", 
-            "idvReferenceNumber": "", 
-            "reportPeriodMon": "06",
-            "reportPeriodYear": "2023",
-            "reportingAgency": "9700",
-            "treasurySymbol": "01-9999",
-            "programTitle": "Title of the program",
-            "recovery_model_questions": 
-             [
-                 {
-                   "code": "1",
-                   "isSelected": "false"
-                 }                                
-             ],
-            "subAwardDataList": [
-               { 
-                  "subAwardNumber": "9999-TEST", 
-                  "subAwardDollars": "800000",
-                  "periodOfPerformanceStartDate": "2023-04-28",
-                  "uei": "ABC999999999",
-                  "overallDescription": "Test Description",
-                  "placeOfPerformance": {
-                     "streetAddress": "Test place",
-                     "streetAddress2": "",
-                     "city": "Atlanta",
-                     "country": {
-                        "code": "USA",
-                        "name": "UNITED STATES"
-                     },
-                     "state": {
-                        "code": "GA",
-                        "name": "Georgia"
-                     },
-                     "zip": "12345"
+                  {
+                     "code":"2",
+                     "isSelected":"false"
+                  }
+               ],
+               "topPayEmployees":[
+                  {
+                     "full_name":"John White",
+                     "salary":"100000"
                   },
-                  "recovery_model_questions": 
-                   [
-                      {
-                        "code": "3",
-                        "isSelected": "false"
-                      }                                       
-                  ]
-               }                           
-            ]
-         }                 
-      ]
-   }
+                  {
+                     "full_name":"Employee Green",
+                     "salary":"120000"
+                  },
+                  {
+                     "full_name":"Employee Red",
+                     "salary":"96000"
+                  },
+                  {
+                     "full_name":"Employee Orange",
+                     "salary":"250000"
+                  },
+                  {
+                     "full_name":"Employee Blue",
+                     "salary":"290000"
+                  }
+               ]
+            },
+            {
+               "subawardUei":"XYZ987654321",
+               "subAwardNumber":"2303-TEST-06-1",
+               "subawardAmount":"80000",
+               "subawardDate":"2023-05-14",
+               "subawardDescription":"test Description2",
+               "placeOfPerformance":{
+                  "city":"Brambleton",
+                  "country":{
+                     "code":"USA",
+                     "name":"UNITED STATES"
+                  },
+                  "state":{
+                     "code":"VA",
+                     "name":"Virginia"
+                  },
+                  "zip":"67890"
+               },
+               "recovery_model_questions":[
+                  {
+                     "code":"1",
+                     "isSelected":"true"
+                  },
+                  {
+                     "code":"2",
+                     "isSelected":"true"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "contractNumber":"W91238PTESTTWO",
+         "reportingAgencyCode":"9700",
+         "idvReferenceNumber":"",
+         "referenceAgencyCode":"",
+         "programTitle":"Title of the program",
+         "subAwardDataList":[
+            {
+               "subawardUei":"ABC999999999",
+               "subAwardNumber":"9999-TEST",
+               "subawardAmount":"80000",
+               "subawardDate":"2023-04-28",
+               "subawardDescription":"test Description3",
+               "placeOfPerformance":{
+                  "city":"Atlanta",
+                  "country":{
+                     "code":"USA",
+                     "name":"UNITED STATES"
+                  },
+                  "state":{
+                     "code":"GA",
+                     "name":"Georgia"
+                  },
+                  "zip":"12345"
+               },
+               "recovery_model_questions":[
+                  {
+                     "code":"1",
+                     "isSelected":"false"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
 }
 </pre></code>
 </p>
 </details>
 
 <details>
-<summary>Example: Submit SubAward Contract Report when not required to provide Top Pay Employees information </summary>
+<summary>Example: Submit SubAward Report with minimal data. In this case, report will be saved in Draft status and validation errors will be sent back. </summary>
 <p>
 <code><pre>
 {
-   "contractData": {  
-      "contractData": [
-        {
-            "contractNumber": "W91238PTESTTWO", 
-            "idvReferenceNumber": "", 
-            "reportPeriodMon": "06",
-            "reportPeriodYear": "2023",
-            "reportingAgency": "9700",
-            "treasurySymbol": "01-9999",
-            "programTitle": "Title of the program",
-            "recovery_model_questions": 
-             [
-                 {
-                   "code": "1",
-                   "isSelected": "false"
-                 }                                
-             ],
-            "subAwardDataList": [
-               { 
-                  "subAwardNumber": "9999-TEST", 
-                  "subAwardDollars": "800000",
-                  "periodOfPerformanceStartDate": "2023-04-28",
-                  "uei": "ABC999999999",
-                  "overallDescription": "Test Description",
-                  "placeOfPerformance": {
-                     "streetAddress": "Test place",
-                     "streetAddress2": "",
-                     "city": "Atlanta",
-                     "country": {
-                        "code": "USA",
-                        "name": "UNITED STATES"
-                     },
-                     "state": {
-                        "code": "GA",
-                        "name": "Georgia"
-                     },
-                     "zip": "12345"
+   "contractData":[
+      {
+         "contractNumber":"W9123823PTEST",
+         "reportingAgencyCode":"2100",
+         "idvReferenceNumber":"GSTEST001",
+         "referenceAgencyCode":"2147",
+         "programTitle":"Title of the program",
+         "subAwardDataList":[
+            {
+               "subawardUei":"ABC987654321",
+               "subAwardNumber":"",
+               "subawardAmount":"",
+               "subawardDate":"",
+               "subawardDescription":"",
+               "placeOfPerformance":{
+                  "city":"Alexandria",
+                  "country":{
+                     "code":"USA",
+                     "name":"UNITED STATES"
                   },
-                  "recovery_model_questions": 
-                   [
-                      {
-                        "code": "3",
-                        "isSelected": "false"
-                      }                                       
-                  ]
-               },
-	       { 
-                  "subAwardNumber": "2303-TEST-06-1", 
-                  "subAwardDollars": "80000",
-                  "periodOfPerformanceStartDate": "2023-05-14",
-                  "uei": "XYZ987654321",
-                  "overallDescription": "Test Description2",
-                  "placeOfPerformance": {
-                     "streetAddress": "street 123",
-                     "streetAddress2": "alley 4",
-                     "city": "Brambleton",
-                     "country": {
-                        "code": "USA",
-                        "name": "UNITED STATES"
-                     },
-                     "state": {
-                        "code": "VA",
-                        "name": "Virginia"
-                     },
-                     "zip": "67890"
+                  "state":{
+                     "code":"VA",
+                     "name":"Virginia"
                   },
-                  "recovery_model_questions": 
-                   [
-                      {
-                        "code": "3",
-                        "isSelected": "true"
-                      },
-                      {
-                        "code": "4",
-                        "isSelected": "true"
-                      }                                          
-                  ]
-               }  	
-            ]
-         }                 
-      ]
-   }
+                  "zip":"12345"
+               }
+            }
+         ]
+      }
+   ]
 }	
 </pre></code>
 </p>
 </details>
+
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Submit SubAward Report (Grants)
@@ -756,7 +672,184 @@ The API will return HTTP Status code 200 if the report is updated successfully. 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
 #### Examples: 
-For examples, refer to Submit SubAward Report (Contracts) examples.
+<details>
+<summary>Example: Update SubAward Report for multiple Contracts and multiple subawards. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information is not mandatory to be provided.</summary>
+<p>
+<code><pre>
+{
+   "contractData":[
+      {
+         "contractNumber":"W9123823PTEST",
+         "reportingAgencyCode":"2100",
+         "idvReferenceNumber":"GSTEST001",
+         "referenceAgencyCode":"2147",
+         "programTitle":"Title of the program",
+         "subAwardDataList":[
+            {
+               "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
+               "subawardUei":"ABC987654321",
+               "subAwardNumber":"2303-TEST-05-0",
+               "subawardAmount":"100567.99",
+               "subawardDate":"2023-05-14",
+               "subawardDescription":"test Description",
+               "placeOfPerformance":{
+                  "city":"Alexandria",
+                  "country":{
+                     "code":"USA",
+                     "name":"UNITED STATES"
+                  },
+                  "state":{
+                     "code":"VA",
+                     "name":"Virginia"
+                  },
+                  "zip":"12345"
+               },
+               "recovery_model_questions":[
+                  {
+                     "code":"1",
+                     "isSelected":"true"
+                  },
+                  {
+                     "code":"2",
+                     "isSelected":"false"
+                  }
+               ],
+               "topPayEmployees":[
+                  {
+                     "full_name":"John White",
+                     "salary":"100000"
+                  },
+                  {
+                     "full_name":"Employee Green",
+                     "salary":"120000"
+                  },
+                  {
+                     "full_name":"Employee Red",
+                     "salary":"96000"
+                  },
+                  {
+                     "full_name":"Employee Orange",
+                     "salary":"250000"
+                  },
+                  {
+                     "full_name":"Employee Blue",
+                     "salary":"290000"
+                  }
+               ]
+            },
+            {
+               "subawardReportNumber":"45e2fad8-7b43-4b62-a870-45b3f250ea31",
+               "subawardUei":"XYZ987654321",
+               "subAwardNumber":"2303-TEST-06-1",
+               "subawardAmount":"80000",
+               "subawardDate":"2023-05-14",
+               "subawardDescription":"test Description2",
+               "placeOfPerformance":{
+                  "city":"Brambleton",
+                  "country":{
+                     "code":"USA",
+                     "name":"UNITED STATES"
+                  },
+                  "state":{
+                     "code":"VA",
+                     "name":"Virginia"
+                  },
+                  "zip":"67890"
+               },
+               "recovery_model_questions":[
+                  {
+                     "code":"1",
+                     "isSelected":"true"
+                  },
+                  {
+                     "code":"2",
+                     "isSelected":"true"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "contractNumber":"W91238PTESTTWO",
+         "reportingAgencyCode":"9700",
+         "idvReferenceNumber":"",
+         "referenceAgencyCode":"",
+         "programTitle":"Title of the program",
+         "subAwardDataList":[
+            {
+               "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
+               "subawardUei":"ABC999999999",
+               "subAwardNumber":"9999-TEST",
+               "subawardAmount":"80000",
+               "subawardDate":"2023-04-28",
+               "subawardDescription":"test Description3",
+               "placeOfPerformance":{
+                  "city":"Atlanta",
+                  "country":{
+                     "code":"USA",
+                     "name":"UNITED STATES"
+                  },
+                  "state":{
+                     "code":"GA",
+                     "name":"Georgia"
+                  },
+                  "zip":"12345"
+               },
+               "recovery_model_questions":[
+                  {
+                     "code":"1",
+                     "isSelected":"false"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example: Submit SubAward Report with minimal data. In this case, report will be saved in Draft status and validation errors will be sent back. </summary>
+<p>
+<code><pre>
+{
+   "contractData":[
+      {
+         "contractNumber":"W9123823PTEST",
+         "reportingAgencyCode":"2100",
+         "idvReferenceNumber":"GSTEST001",
+         "referenceAgencyCode":"2147",
+         "programTitle":"Title of the program",
+         "subAwardDataList":[
+            {
+               "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
+               "subawardUei":"ABC987654321",
+               "subAwardNumber":"",
+               "subawardAmount":"",
+               "subawardDate":"",
+               "subawardDescription":"",
+               "placeOfPerformance":{
+                  "city":"Alexandria",
+                  "country":{
+                     "code":"USA",
+                     "name":"UNITED STATES"
+                  },
+                  "state":{
+                     "code":"VA",
+                     "name":"Virginia"
+                  },
+                  "zip":"12345"
+               }
+            }
+         ]
+      }
+   ]
+}	
+</pre></code>
+</p>
+</details>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -828,31 +921,44 @@ The API will return HTTP Status code 204 if the report is deleted successfully. 
 #### Examples
 
 <details>
-<summary>Example: Delete request to delete multiple Contract SubAward Reports</summary>
+<summary>Example: Delete request to delete multiple SubAward Reports for Contracts based on status provided</summary>
 <p>
 <code><pre>
 {
-   "contractData":[
-      {
-         "contractNumber":"W91238PTESTTWO",
-         "idvReferenceNumber":"",
-         "reportPeriodMon":"06",
-         "reportPeriodYear":"2023",
-         "reportingAgency":"9700"
-      },
-      {
-         "contractNumber":"W9123823PTEST",
-         "idvReferenceNumber":"GSTEST001",
-         "reportPeriodMon":"06",
-         "reportPeriodYear":"2023",
-         "reportingAgency":"2100"
-      }
-   ]
+  "contractData": [
+    {
+      "subawardReportNumber": "2fad851e-7b43-4b62-a870-45b3f250ea99",
+      "reportStatus": "Published"
+    },
+    {
+      "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea55",
+      "reportStatus": "Draft"
+    },
+    {
+      "subawardReportNumber": "41e2fad8-7b43-4b62-a870-45b3f250ea91",
+      "reportStatus": "Reopened"
+    }		
+  ]
 }
 </pre></code>
 </p>
 </details>
 
+<details>
+<summary>Example: Delete request to delete SubAward Reports in all statuses (Published, Reopened) for a Contract when status is not provided</summary>
+<p>
+<code><pre>
+{
+  "contractData": [
+    {
+      "subawardReportNumber": "2fad851e-7b43-4b62-a870-45b3f250ea99",
+      "reportStatus": ""
+    }		
+  ]
+}
+</pre></code>
+</p>
+</details>
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Delete SubAward Report (Grants)
@@ -933,21 +1039,68 @@ Request JSON | Body | JSON | Yes, at least one contractData element is required.
 #### Examples
 Note: Will return JSON response same as POST Request JSON
 <details>
-<summary>GET Contract SubAward Report for a specific contract and all reports for specific month and year </summary>
+<summary>Get SubAward Reports for a specific contract based on the Subaward Report Number and report status</summary>
+<p>
+<code><pre>
+{
+  "contractData": [
+    {
+      "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea99",
+      "reportStatus": "Draft"
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get all Published SubAward Reports for a specific contract</summary>
+<p>
+<code><pre>
+{
+  "contractData": [
+    {
+      "contractNumber": "ABCDY2324235",
+      "reportingAgencyCode": "4700",
+      "reportStatus": "Published"
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get all SubAward Reports for a specific contract</summary>
+<p>
+<code><pre>
+{
+  "contractData": [
+    {
+      "contractNumber": "ABCDY2324235",
+      "reportingAgencyCode": "4700"
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Get request for multiple contracts</summary>
 <p>
 <code><pre>
 {
    "contractData":[
       {
-         "contractNumber":"W9123823PTEST",
-         "idvReferenceNumber":"GSTEST001",
-         "reportPeriodMon":"06",
-         "reportPeriodYear":"2023",
-         "reportingAgency":"2100"
+         "contractNumber":"ABCDY2324235",
+         "reportingAgencyCode":"4700",
+         "reportStatus":"Published"
       },
       {
-         "reportPeriodMon":"06",
-         "reportPeriodYear":"2023"
+         "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
+         "reportStatus":"Draft"
       }
    ]
 }
@@ -961,178 +1114,9 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report was successfully retrieved | [Refer Get SubAward Report Contract JSON](#get-subaward-report-contract-json)
 
-#### Examples
-<details>
-<summary> Example: Response for a Get request for multiple contracts </summary>
-<p>
-<code><pre>
- {
-   "contractData":{
-      "contractData":[
-         {
-            "contractNumber":"W9123823PTEST",
-            "idvReferenceNumber":"GSTEST001",
-            "reportPeriodMon":"06",
-            "reportPeriodYear":"2023",
-            "reportingAgency":"2100",
-            "treasurySymbol":"12-3456",
-            "programTitle":"Title of the program",
-            "recovery_model_questions":[
-               {
-                  "code":"1",
-                  "isSelected":"true"
-               },
-               {
-                  "code":"2",
-                  "isSelected":"true"
-               }
-            ],
-            "subAwardDataList":[
-               {
-                  "subAwardNumber":"2303-TEST-05-0",
-                  "subAwardDollars":"100000",
-                  "periodOfPerformanceStartDate":"2023-05-14",
-                  "uei":"ABC987654321",
-                  "overallDescription":"tEST Description",
-                  "placeOfPerformance":{
-                     "streetAddress":"1800 F Street, NW",
-                     "streetAddress2":"",
-                     "city": "Alexandria",
-                     "country":{
-                        "code":"USA",
-                        "name":"UNITED STATES"
-                     },
-                     "state":{
-                        "code":"VA",
-                        "name":"Virginia"
-                     },
-                     "zip":"12345"
-                  },
-                  "recovery_model_questions":[
-                     {
-                        "code":"3",
-                        "isSelected":"true"
-                     },
-                     {
-                        "code":"4",
-                        "isSelected":"true"
-                     }
-                  ],
-                  "topPayEmployees":[
-                     {
-                        "full_name":"John White",
-                        "salary":"100000"
-                     },
-                     {
-                        "full_name":"Employee Green",
-                        "salary":"120000"
-                     },
-                     {
-                        "full_name":"Employee Red",
-                        "salary":"96000"
-                     },
-                     {
-                        "full_name":"Employee Orange",
-                        "salary":"250000"
-                     },
-                     {
-                        "full_name":"Employee Blue",
-                        "salary":"290000"
-                     }
-                  ]
-               },
-               {
-                  "subAwardNumber":"2303-TEST-06-1",
-                  "subAwardDollars":"80000",
-                  "periodOfPerformanceStartDate":"2023-05-14",
-                  "uei":"XYZ987654321",
-                  "overallDescription":"Test Description2",
-                  "placeOfPerformance":{
-                     "streetAddress":"street 123",
-                     "streetAddress2":"alley 4",
-                     "city": "Brambleton",
-                     "country":{
-                        "code":"USA",
-                        "name":"UNITED STATES"
-                     },
-                     "state":{
-                        "code":"VA",
-                        "name":"Virginia"
-                     },
-                     "zip":"67890"
-                  },
-                  "recovery_model_questions":[
-                     {
-                        "code":"3",
-                        "isSelected":"true"
-                     },
-                     {
-                        "code":"4",
-                        "isSelected":"false"
-                     }
-                  ]
-               }
-            ]
-         },
-         {
-            "contractNumber":"W91238PTESTTWO",
-            "idvReferenceNumber":"",
-            "reportPeriodMon":"06",
-            "reportPeriodYear":"2023",
-            "reportingAgency":"9700",
-            "treasurySymbol":"01-9999",
-            "programTitle":"Title of the program",
-            "recovery_model_questions":[
-               {
-                  "code":"1",
-                  "isSelected":"false"
-               },
-               {
-                  "code":"2",
-                  "isSelected":"false"
-               }
-            ],
-            "subAwardDataList":[
-               {
-                  "subAwardNumber":"9999-TEST",
-                  "subAwardDollars":"800000",
-                  "periodOfPerformanceStartDate":"2023-04-28",
-                  "uei":"ABC999999999",
-                  "overallDescription":"Test Description",
-                  "placeOfPerformance":{
-                     "streetAddress":"Test place",
-                     "streetAddress2":"",
-                     "city": "Atlanta",
-                     "country":{
-                        "code":"USA",
-                        "name":"UNITED STATES"
-                     },
-                     "state":{
-                        "code":"GA",
-                        "name":"Georgia"
-                     },
-                     "zip":"12345"
-                  },
-                  "recovery_model_questions":[
-                     {
-                        "code":"3",
-                        "isSelected":"false"
-                     },
-                     {
-                        "code":"4",
-                        "isSelected":"false"
-                     }
-                  ]
-               }
-            ]
-         }
-      ]
-   }
-}
-</pre></code>
-</p>
+Note: Will return JSON response same as POST Request JSON. The generated subAwardReportNumber and the reportStatus will be sent back as a part of the response.
+
 <p><small><a href="#">Back to top</a></small></p>
-</details>
 
 ### Get SubAward Report (Grants) 
 
@@ -1366,6 +1350,328 @@ reportStatus | string | Status of the subaward report.
 message | string | Message indicating status of the operation. Also includes any informative warning messages.
 errors | JSON Array | If there are validation errors, they are sent back as a part of this errors array.
 
+#### Examples
+<details>
+<summary>Example: Create (POST) request for three subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, and third could not be created. </summary>
+<p>
+<code><pre>
+[
+  {
+    "id": "contractNumber:reportingAgency:idvRefrenceNumber:referenceAgencyCode:subAwardNumber:subAwardDate:subAwardAmount:submittedDate",
+    "statusCode": "201",
+    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
+    "timeStamp": "2024-02-20T19:51:24.915924",
+    "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea99",
+    "reportStatus": "Published",
+    "message": "Report was successfully saved.",
+    "errors": []
+  },
+  {
+    "id": "contractNumber:reportingAgency:idvRefrenceNumber:referenceAgencyCode:subAwardNumber:subAwardDate:subAwardAmount:submittedDate",
+    "statusCode": "201",
+    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
+    "timeStamp": "2024-02-20T19:51:24.915968",
+    "subawardReportNumber": "51e2fad8-9b43-4b62-a870-45b3f250ea14",
+    "reportStatus": "Draft",
+    "message": "Report was saved but failed some validations. Please fix the errors and submit an update request.",
+    "errors": [
+      "Sub-contract Amount should be lower than the Total contract amount",
+      "Sub award Place of Performance Section - City provided is invalid."
+    ]
+  },
+  {
+    "id": "contractNumber:reportingAgency:idvRefrenceNumber:referenceAgencyCode:subAwardNumber:subAwardDate:subAwardAmount:submittedDate",
+    "statusCode": "400",
+    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
+    "timeStamp": "2024-02-20T19:51:24.915972",
+    "subawardReportNumber": "",
+    "reportStatus": "Not Saved",
+    "message": "Could not save the report. Please fix the errors and submit again.",
+    "errors": [
+      "Sub contractor UNIQUE ENTITY ID # is required"
+    ]
+  }
+]
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example: Update (PUT) request for four subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, third was saved in Reopened status since a Published version already exists for the subawardReportNumber, and fourth report could not be updated. </summary>
+<p>
+<code><pre>
+[
+  {
+    "id": "contractNumber:reportingAgency:idvRefrenceNumber:referenceAgencyCode:subAwardNumber:subAwardDate:subAwardAmount:submittedDate",
+    "statusCode": "201",
+    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
+    "timeStamp": "2024-02-20T19:51:24.915924",
+    "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea99",
+    "reportStatus": "Published",
+    "message": "Report was successfully saved.",
+    "errors": []
+  },
+  {
+    "id": "contractNumber:reportingAgency:idvRefrenceNumber:referenceAgencyCode:subAwardNumber:subAwardDate:subAwardAmount:submittedDate",
+    "statusCode": "201",
+    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
+    "timeStamp": "2024-02-20T19:51:24.915968",
+    "subawardReportNumber": "51e2fad8-9b43-4b62-a870-45b3f250ea14",
+    "reportStatus": "Draft",
+    "message": "Report was saved but failed some validations. Please fix the errors and submit an update request.",
+    "errors": [
+      "Sub-contract Amount should be lower than the Total contract amount",
+      "Sub award Place of Performance Section - City provided is invalid."
+    ]
+  },
+  {
+    "id": "contractNumber:reportingAgency:idvRefrenceNumber:referenceAgencyCode:subAwardNumber:subAwardDate:subAwardAmount:submittedDate",
+    "statusCode": "201",
+    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
+    "timeStamp": "2024-02-20T19:51:24.915968",
+    "subawardReportNumber": "51e2fad8-9b43-4b62-a870-45b3f250ea14",
+    "reportStatus": "Reopened",
+    "message": "Report was saved but failed some validations. Please fix the errors and submit an update request.",
+    "errors": [
+      "Sub-contract Amount should be lower than the Total contract amount"
+    ]
+  },
+  {
+    "id": "contractNumber:reportingAgency:idvRefrenceNumber:referenceAgencyCode:subAwardNumber:subAwardDate:subAwardAmount:submittedDate",
+    "statusCode": "400",
+    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
+    "timeStamp": "2024-02-20T19:51:24.915972",
+    "subawardReportNumber": "",
+    "reportStatus": "Not Saved",
+    "message": "Could not save the report. Please fix the errors and submit again.",
+    "errors": [
+      "No report found matching the specified parameters for the report."
+    ]
+  }
+]
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example: Delete (DELETE) request for a subaward report when only the subawardReportNumber was provided, Published and Reopened reports existed and both were deleted successfully. One element is returned for each deleted report. </summary>
+<p>
+<code><pre>
+[
+  {
+    "id": "contractNumber:reportingAgency:idvRefrenceNumber:referenceAgencyCode:subAwardNumber:subAwardDate:subAwardAmount:submittedDate",
+    "statusCode": "204",
+    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
+    "timeStamp": "2024-02-20T19:51:24.915924",
+    "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea99",
+    "reportStatus": "Published",
+    "message": "Report was successfully deleted.",
+    "errors": []
+  },
+  {
+    "id": "contractNumber:reportingAgency:idvRefrenceNumber:referenceAgencyCode:subAwardNumber:subAwardDate:subAwardAmount:submittedDate",
+    "statusCode": "204",
+    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
+    "timeStamp": "2024-02-20T19:51:24.915924",
+    "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea99",
+    "reportStatus": "Reopened",
+    "message": "Report was successfully deleted.",
+    "errors": []
+  }
+]
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example: Delete (DELETE) request for two subaward reports. First was a Draft report that was successfully Deleted, and second delete request was not successful. </summary>
+<p>
+<code><pre>
+[
+  {
+    "id": "contractNumber:reportingAgency:idvRefrenceNumber:referenceAgencyCode:subAwardNumber:subAwardDate:subAwardAmount:submittedDate",
+    "statusCode": "204",
+    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
+    "timeStamp": "2024-02-20T19:51:24.915924",
+    "subawardReportNumber": "28e1fad9-7b43-4b62-a870-45b3f250ea32",
+    "reportStatus": "Draft",
+    "message": "Report was successfully deleted.",
+    "errors": []
+  },
+  {
+    "id": "search params concatenated",
+    "statusCode": "400",
+    "transactionId": null,
+    "timeStamp": "2024-02-25T16:58:09.183947300",
+    "message": "The report could not be deleted. Please fix the errors and submit the delete request again.",
+    "errors": [
+      "Please provide a valid value for the report status. It can be Draft, Published, Reopened or left blank."
+    ]
+  }
+]
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example: Get (POST) request for a contract with 2 subaward reports, when the request is successful. One element is returned for each subaward report.</summary>
+<p>
+<code><pre>
+[
+  {
+    "id": "contractNumber:reportingAgency:idvRefrenceNumber:referenceAgencyCode:subAwardNumber:subAwardDate:subAwardAmount:submittedDate",
+    "statusCode": "200",
+    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
+    "timeStamp": "2024-02-20T19:51:24.915924",
+    "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea99",
+    "reportStatus": "Published",
+    "message": {
+      "contractData": [
+        {
+          "contractNumber": "string",
+          "reportingAgencyCode": "string",
+          "idvReferenceNumber": "string",
+          "referenceAgencyCode": "string",
+          "programTitle": "string",
+          "subAwardDataList": [
+            {
+              "submittedDate": "2024-02-12",
+              "subAwardUei": "string",
+              "subAwardNumber": "string",
+              "subAwardAmount": "string",
+              "subawardDate": "string",
+              "subawardDescription": "string",
+              "placeOfPerformance": {
+                "city": "string",
+                "country": {
+                  "code": "string",
+                  "name": "string"
+                },
+                "state": {
+                  "code": "string",
+                  "name": "string"
+                },
+                "zip": "string"
+              },
+              "recovery_model_questions": [
+                {
+                  "code": "1",
+                  "isSelected": true
+                },
+                {
+                  "code": "2",
+                  "isSelected": false
+                }
+              ],
+              "topPayEmployees": [
+                {
+                  "full_name": "sub1",
+                  "salary": "100"
+                },
+                {
+                  "full_name": "sub2",
+                  "salary": "200"
+                },
+                {
+                  "full_name": "sub3",
+                  "salary": "300"
+                },
+                {
+                  "full_name": "sub4",
+                  "salary": "400"
+                },
+                {
+                  "full_name": "sub5",
+                  "salary": "500"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "errors": []
+  },
+  {
+    "id": "contractNumber:reportingAgency:idvRefrenceNumber:referenceAgencyCode:subAwardNumber:subAwardDate:subAwardAmount:submittedDate",
+    "statusCode": "200",
+    "transactionId": "58e2fad8-7b43-4b62-a870-45b3f250ea72",
+    "timeStamp": "2024-02-20T19:51:24.915924",
+    "subawardReportNumber": "71e2fad8-7b43-4b62-a870-45b3f250ea98",
+    "reportStatus": "Published",
+    "message": {
+      "contractData": [
+        {
+          "contractNumber": "string",
+          "reportingAgencyCode": "string",
+          "idvReferenceNumber": "string",
+          "referenceAgencyCode": "string",
+          "programTitle": "string",
+          "subAwardDataList": [
+            {
+              "submittedDate": "2024-02-12",
+              "subAwardUei": "string",
+              "subAwardNumber": "string",
+              "subAwardAmount": "string",
+              "subawardDate": "string",
+              "subawardDescription": "string",
+              "placeOfPerformance": {
+                "city": "string",
+                "country": {
+                  "code": "string",
+                  "name": "string"
+                },
+                "state": {
+                  "code": "string",
+                  "name": "string"
+                },
+                "zip": "string"
+              },
+              "recovery_model_questions": [
+                {
+                  "code": "1",
+                  "isSelected": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "errors": []
+  }
+]
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example: Get (POST) request for a contract with 2 subaward reports, when the request is not successful for both for different reasons. One element is returned for each subaward report.</summary>
+<p>
+<code><pre>
+[
+  {
+    "id": "search params concatenated",
+    "statusCode": "400",
+    "transactionId": "c4aa7163-03fb-40e2-9234-9c8f0fcd9947",
+    "timeStamp": "2024-02-28T20:23:32.672006",
+    "message": "No data matching the search criteria found",
+    "errors": []
+  },
+  {
+    "id": "search params concatenated",
+    "statusCode": "400",
+    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
+    "timeStamp": "2024-02-20T19:51:24.915972",
+    "message": "Could not retrieve the report. Please fix the errors and try again.",
+    "errors": [
+      "Please provide a valid value for the reporting period month. It is expected to be a 2 digit month"
+    ]
+  }
+]
+</pre></code>
+</p>
+</details>
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Submit SubAward Report Contract JSON
