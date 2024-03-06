@@ -11,9 +11,9 @@ end
 
 group :development, :test do
   gem 'rake'
-  gem 'html-proofer', '~> 3.10.2'
+  gem 'html-proofer'
   gem 'eslintrb'
   gem 'test-unit'
   gem 'json-schema'
-  gem "webrick", "~> 1.7"
+  gem 'webrick'
 end
