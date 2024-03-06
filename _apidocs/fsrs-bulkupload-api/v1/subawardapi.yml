@@ -1,3 +1,26 @@
+openapi: 3.0.3
+info:
+  title: SAM.gov Subawards Reporting API 
+  description: Swagger documentation for API for reporting on Subawards  
+  license:
+    name: GSA
+  version: 0.1.0
+servers:
+  - url: https://api.sam.gov/acquisition/v1/subawards
+  - url: https://api.sam.gov/assistance/v1/subawards
+  - url: https://api-alpha.sam.gov/acquisition/v1/subawards
+  - url: https://api-alpha.sam.gov/assistance/v1/subawards
+tags:
+  - name: AcquisitionSubawardsV1
+    description: All endpoints for Acquisition (Contracts) Subawards Reporting
+    #externalDocs:
+     # description: Find out more
+    #  url: http://swagger.io
+  - name: AssistanceSubawardsV1
+    description: All endpoints for Assistance (Grants) Subawards Reporting
+    #externalDocs:
+     # description: Find out more about our store
+      #url: http://swagger.io
 paths:
   /acquisition/v1/subawards:
     post:
@@ -24,7 +47,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ContractObject'
+              $ref: '#/components/schemas/CreateContractRequestObject'
         required: true
       responses:
         '201':
@@ -91,7 +114,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ContractObject'
+              $ref: '#/components/schemas/UpdateContractObject'
         required: true
       responses:
         '200':
@@ -161,7 +184,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ContractRequestObject'
+                  $ref: '#/components/schemas/DeleteContractRequestObject'
       responses:
         '200':
           description: successful operation
@@ -231,7 +254,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ContractRequestObject'
+                  $ref: '#/components/schemas/GetContractRequestObject'
       responses:
         '200':
           description: successful operation
@@ -572,7 +595,7 @@ components:
           type: array
           items:
             type: string
-    ContractRequestObject: 
+    GetContractRequestObject: 
       type: object
       required:
         - contractData
@@ -604,12 +627,29 @@ components:
                 type: string
                 example: Published            
           minItems: 1  
-    ContractObject:
+    DeleteContractRequestObject: 
       type: object
       required:
-        - primeEntityInformation
+        - contractData
       properties: 
-        primeEntityInformation: 
+        contractData:     
+          type: array
+          items: 
+            type: object
+            properties: 
+              subawardReportNumber: 
+                type: string
+                example: 51e2fad8-7b43-4b62-a870-45b3f250ea99
+              reportStatus: 
+                type: string
+                example: Published            
+          minItems: 1            
+    CreateContractRequestObject:
+      type: object
+      required:
+        - contractData
+      properties: 
+        contractData: 
           type: array
           required:
             - contractNumber
@@ -618,10 +658,6 @@ components:
           items: 
             type: object
             properties: 
-              subawardReportNumber:
-                type: string
-                example: 51e2fad8-7b43-4b62-a870-45b3f250ea99        
-                description: "Required for update/PUT requests to uniquely identify the report being updated. Use the value sent back by get/upload request."                
               contractNumber: 
                 type: string
                 example: W9123823PTEST
@@ -714,13 +750,124 @@ components:
                             example: 100000
                       minItems: 5
                       maxItems: 5
+          minItems: 1
+    UpdateContractObject:
+      type: object
+      required:
+        - contractData
+      properties: 
+        contractData: 
+          type: array
+          required:
+            - contractNumber
+            - reportingAgencyCode
+            - subawardDataList
+          items: 
+            type: object
+            properties: 
+              contractNumber: 
+                type: string
+                example: W9123823PTEST
+              reportingAgencyCode: 
+                type: string
+                example: 2100                    
+              idvReferenceNumber: 
+                type: string
+                example: GSTEST001
+              referenceAgencyCode: 
+                type: string
+                example: 2100
+              programTitle: 
+                type: string
+                example: Title of the program   
+              subawardDataList: 
+                type: array
+                required:
+                  - subawardUei
+                items: 
+                  type: object
+                  properties: 
+                    subawardReportNumber:
+                      type: string
+                      example: 51e2fad8-7b43-4b62-a870-45b3f250ea99        
+                      description: "Required for update/PUT requests to uniquely identify the report being updated. Use the value sent back by get/upload request."                   
+                    subawardUei: 
+                      type: string
+                      example: ABC987654321
+                    subawardNumber: 
+                      type: string
+                      example: 2303-TEST-05-0
+                    subawardAmount: 
+                      type: string
+                      example: 100567.99
+                    subawardDate: 
+                      type: string
+                      format: date
+                      example: 2023-05-14
+                    subawardDescription: 
+                      type: string
+                      example: tEST Description
+                    placeOfPerformance: 
+                      type: object
+                      required:
+                        - country
+                      properties: 
+                        city: 
+                          type: string
+                          example: Alexandria
+                        country: 
+                          type: object
+                          properties: 
+                            code: 
+                              type: string
+                              example: USA
+                            name: 
+                              type: string
+                              example: UNITED STATES
+                        state: 
+                          type: object
+                          properties: 
+                            code: 
+                              type: string
+                              example: VA
+                            name: 
+                              type: string
+                              example: Virginia
+                        zip: 
+                          type: string
+                          example: 12345
+                    recovery_model_questions: 
+                      type: array
+                      items: 
+                        type: object
+                        properties: 
+                          code: 
+                            type: string
+                            enum: ["1","2"]
+                          isSelected: 
+                            type: boolean
+                      minItems: 1
+                      maxItems: 2  
+                    topPayEmployees: 
+                      type: array
+                      items: 
+                        type: object
+                        properties: 
+                          full_name: 
+                            type: string
+                            example: John White
+                          salary: 
+                            type: string
+                            example: 100000
+                      minItems: 5
+                      maxItems: 5
           minItems: 1  
     GrantRequestObject: 
       type: object
       required:
-        - primeEntityInformation
+        - contractData
       properties: 
-        primeEntityInformation: 
+        contractData: 
           type: array
           items: 
             type: object
@@ -743,9 +890,9 @@ components:
         assistanceData: 
           type: object
           required:
-            - primeEntityInformation
+            - contractData
           properties: 
-            primeEntityInformation: 
+            contractData: 
               type: array
               required:
                 - primeFAIN
