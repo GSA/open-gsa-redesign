@@ -21,8 +21,15 @@ SubAwards Reporting Bulk Upload API can be accessed from Production or Alpha via
 ### Authentication and Authorization
 
 To begin using this API, you will need to register for a System Account and obtain an API Key. After registration, you will need to provide this API key in the <i>x-api-key</i> HTTP header with every API request.
-* Registered Non-federal users with appropriate role and permission assigned to them by their Entity Administrator (Please note that the role/permission is being finalized) can request for a system account with "Write" permission (Please note that the permission name is being finalized) to be able to create, update, view and/or delete SubAward reports.
-* The user will be able to access the System Accounts widget from their Workspace page after logging in. They can then select “New Account” by navigating from the widget and fill out the required sections with appropriate SubAwards reporting permissions and required information.
+* The SAM.gov non-federal registered users must request for a System Account. If their registration and request criteria are satisfied, then they will be provided with the System Accounts widget on their SAM.gov workspace.
+* The users will be able to access the System Accounts widget from their Workspace page after logging in. They can then select “New Account” by navigating from the widget and fill out the required sections and submit their System Account. When creating a System Account, users must specify the following to successfully utilize the Subawards API:
+	* System Information
+	System Account Name: Unique name for the System Account
+	* Permissions
+   	Subaward Reporting: Write --> Gives access to Create/Update/Delete/Get Subaward Reports.
+	* Security Information
+	IP Address: List all the IP Addresses that the System invokes the API from.
+	Type of Connection: REST APIs
 * The requested system account will then be sent for an approval. After approval, the user will be notified via an email and they will also be able to see the status of their request in the System Account widget.
 
 #### Generating a System Account API Key
@@ -30,10 +37,6 @@ In order to utilize the SubAwards API endpoints, users will need to generate the
 * Once the system account is approved as per the instructions above, the user can select “Go to System Accounts” in the widget from their workspace and enter a new system account password. 
 * After setting up the password for the system account, the user will see a new section for retrieving a system account API Key. The user must enter their password again to retrieve the API Key. 
 * This API Key will be used for all API calls as described in this documentation.
-
-#### System Account Authentication
-In order to utilize the SubAwards Reporting Bulk Upload API, the following is required:
-* Valid SAM.gov Non-federal system account with SubAward permission and Non-federal user account with relevant user role and permission (role name/permission to be finalized).
 
 ### Type of Connection Validation 
 All REST API requests will be validated against the Type of Connection within the system account profile. All requests without "REST API" type of connection in the system account profile will be rejected with an error.
