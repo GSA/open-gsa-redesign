@@ -75,13 +75,15 @@
     });
 
     pages.forEach((page, index) => {
-      lunrIndex.add({
-        id: index,
-        title: page.title,
-        body: page.body,
-        category: page.category,
-        tags: page.tags,
-      });
+      if (!page.url.startsWith('/assets/')) {
+        lunrIndex.add({
+          id: index,
+          title: page.title,
+          body: page.body,
+          category: page.category,
+          tags: page.tags,
+        });
+      }
     });
 
     const matches = lunrIndex.search(searchTerm);

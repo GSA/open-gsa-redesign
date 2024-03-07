@@ -49,6 +49,7 @@ markdown: kramdown
 include:
   - _navigation.json
 exclude:
+  - 'APIDOCS.md'
   - 'README.md'
   - 'LICENSE.md'
   - 'CONTRIBUTING.md'
