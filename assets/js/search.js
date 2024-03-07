@@ -37,9 +37,6 @@
             case 'apis':
               icon = '<i class="fa fa-cogs flag alt"></i>';
               break;
-            case 'events':
-              icon = '<i class="fa fa-calendar flag alt3"></i>';
-              break;
             case 'articles':
               icon = '<i class="fa fa-file-text flag"></i>';
               break;

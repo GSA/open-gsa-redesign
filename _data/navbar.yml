@@ -23,9 +23,3 @@ assigned:
         permalink: /code/
         show_in_menu: true
         show_in_footer: false
-    -
-        text: Events
-        href: pages/events.md
-        permalink: /events/
-        show_in_menu: true
-        show_in_footer: false
