@@ -43,7 +43,7 @@ paths:
           schema:
             type: string
       requestBody:
-        description: Upload one or multiple Contract SubAward report(s) 
+        description: Upload one or multiple Contract Subaward report(s) 
         content:
           application/json:
             schema:
@@ -93,8 +93,8 @@ paths:
     put:
       tags:
         - AcquisitionSubawardsV1
-      summary: Update existing SubAward Contract Report(s)
-      description: Update existing SubAward Contract Report(s)
+      summary: Update existing Subaward Contract Report(s)
+      description: Update existing Subaward Contract Report(s)
       operationId: updateContractReport
       parameters:
         - name: Authorization
@@ -110,7 +110,7 @@ paths:
           schema:
             type: string
       requestBody:
-        description: Update SubAward Contract Report(s)
+        description: Update Subaward Contract Report(s)
         content:
           application/json:
             schema:
@@ -160,8 +160,8 @@ paths:
     delete:
       tags:
         - AcquisitionSubawardsV1
-      summary: Deletes Contract SubAward Subaward Report(s)
-      description: Deletes Contract SubAward Subaward Report(s)
+      summary: Deletes Contract Subaward Subaward Report(s)
+      description: Deletes Contract Subaward Subaward Report(s)
       operationId: deleteContractReport
       parameters:
         - name: Authorization
@@ -178,7 +178,7 @@ paths:
             type: string
         - name: requestBody
           in: query
-          description: Delete Contract SubAward Subaward report(s)
+          description: Delete Contract Subaward Subaward report(s)
           content:
             application/json:
               schema:
@@ -230,8 +230,8 @@ paths:
     post:
       tags:
         - AcquisitionSubawardsV1
-      summary: Get existing SubAward Contract Report(s)
-      description: Get existing SubAward Contract Report(s)
+      summary: Get existing Subaward Contract Report(s)
+      description: Get existing Subaward Contract Report(s)
       operationId: getContractReport
       parameters:
         - name: Authorization
@@ -248,7 +248,7 @@ paths:
             type: string
         - name: requestBody
           in: query
-          description: Get existing Contract SubAward Subaward report(s)
+          description: Get existing Contract Subaward Subaward report(s)
           content:
             application/json:
               schema:
@@ -300,8 +300,8 @@ paths:
     post:
       tags:
         - AssistanceSubawardsV1
-      summary: Create Grant SubAward report(s)
-      description: Endpoint to create one/multiple Grant SubAward report(s)
+      summary: Create Grant Subaward report(s)
+      description: Endpoint to create one/multiple Grant Subaward report(s)
       operationId: saveGrantReport
       parameters:
         - name: Authorization
@@ -317,7 +317,7 @@ paths:
           schema:
             type: string
       requestBody:
-        description: Request to create one/multiple Grant SubAward report(s)
+        description: Request to create one/multiple Grant Subaward report(s)
         content:
           application/json:
             schema:
@@ -368,8 +368,8 @@ paths:
     put:
       tags:
         - AssistanceSubawardsV1
-      summary: Update existing SubAward Grant Report(s)
-      description: Endpoint to update existing Grant SubAward report(s)
+      summary: Update existing Subaward Grant Report(s)
+      description: Endpoint to update existing Grant Subaward report(s)
       operationId: updateGrantReport
       parameters:
         - name: Authorization
@@ -385,7 +385,7 @@ paths:
           schema:
             type: string
       requestBody:
-        description: Request to update Grant SubAward report(s)
+        description: Request to update Grant Subaward report(s)
         content:
           application/json:
             schema:
@@ -435,8 +435,8 @@ paths:
     delete:
       tags:
         - AssistanceSubawardsV1
-      summary: Delete Grant SubAward Subaward report(s)
-      description: Delete Grant SubAward Subaward report(s)
+      summary: Delete Grant Subaward Subaward report(s)
+      description: Delete Grant Subaward Subaward report(s)
       operationId: deleteGrantReport
       parameters:
         - name: Authorization
@@ -453,7 +453,7 @@ paths:
             type: string
         - name: requestBody
           in: query
-          description: Delete Grant SubAward Subaward report(s)
+          description: Delete Grant Subaward Subaward report(s)
           content:
             application/json:
               schema:
@@ -505,8 +505,8 @@ paths:
     post:
       tags:
         - AssistanceSubawardsV1
-      summary: Get existing Grant SubAward Subaward report(s)
-      description: Get existing Grant SubAward Subaward report(s)
+      summary: Get existing Grant Subaward Subaward report(s)
+      description: Get existing Grant Subaward Subaward report(s)
       operationId: getGrantReport
       parameters:
         - name: Authorization
@@ -523,7 +523,7 @@ paths:
             type: string
         - name: requestBody
           in: query
-          description: Get existing Grant SubAward Subaward report(s)
+          description: Get existing Grant Subaward Subaward report(s)
           content:
             application/json:
               schema:
