@@ -970,7 +970,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes |[Refer Delete Subaward Report Contract JSON](#delete-subaward-report-contract-JSON)
+Request JSON | Body | JSON | Yes |[Refer Delete Subaward Report Contract JSON](#delete-subaward-report-contract-json)
 
 #### Responses
 
@@ -1043,7 +1043,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Delete Subaward Report Grant JSON ](#delete-subaward-report-grant-JSON)
+Request JSON | Body | JSON | Yes | [Refer Delete Subaward Report Grant JSON ](#delete-subaward-report-grant-json)
 
 #### Responses
 
@@ -1115,7 +1115,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes, at least one contractData element is required. From the fields, at least one field is required | [Refer Get Subaward Report Contract JSON](#get-subaward-report-contract-JSON) 
+Request JSON | Body | JSON | Yes, at least one contractData element is required. From the fields, at least one field is required | [Refer Get Subaward Report Contract JSON](#get-subaward-report-contract-json) 
 
 #### Examples
 
@@ -1193,7 +1193,7 @@ Request JSON | Body | JSON | Yes, at least one contractData element is required.
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-200 | string | Report was successfully retrieved | [Refer Get Subaward Report Contract JSON](#get-subaward-report-contract-JSON)
+200 | string | Report was successfully retrieved | [Refer Get Subaward Report Contract JSON](#get-subaward-report-contract-json)
 
 Note: Will return JSON response same as POST Response JSON. The generated subawardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
@@ -1215,7 +1215,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization	| Header | string |	Yes |	Valid and authorized SAM user email ID
 api_key |	query |	string |	Yes |	Valid System Account API Key
-Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. From the fields, at least one field is required|	[Refer Get Subaward Report Grant JSON](#get-subaward-report-grant-JSON)
+Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. From the fields, at least one field is required|	[Refer Get Subaward Report Grant JSON](#get-subaward-report-grant-json)
 
 #### Examples
 
