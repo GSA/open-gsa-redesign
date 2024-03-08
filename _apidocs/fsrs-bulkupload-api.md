@@ -119,7 +119,7 @@ The following section describes each of the above endpoints in detail.
 **URL** | /acquisition/v1/subawards
 **Summary** | Using this endpoint, users will be able to submit one or multiple Subaward reports for Contracts
 **Consumes** | application/JSON
-**Produces** | Refer [Response JSON](#response-jSON)
+**Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
 
 #### Request Parameters
@@ -138,7 +138,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was created | As described below
 
-For each sub awardee in the request, the API will process the request as described. If the sub awardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward report for the sub awardee will be created and HTTP Status code 201 will be returned. If the sub awardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status. If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. See the [Response JSON](#response-jSON) section for the response structure and specific examples.
+For each sub awardee in the request, the API will process the request as described. If the sub awardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward report for the sub awardee will be created and HTTP Status code 201 will be returned. If the sub awardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status. If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 The API will return other HTTP Status codes in case of any errors as specified in the [General Error Messages](#general-error-messages) section.
 
@@ -329,7 +329,7 @@ The API will return other HTTP Status codes in case of any errors as specified i
 **URL** | /assistance/v1/subawards
 **Summary** | Using this endpoint, users will be able to submit one or multiple Subaward report for Grants
 **Consumes** | application/JSON
-**Produces** | Refer [Response JSON](#response-jSON)
+**Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
 
 
@@ -347,7 +347,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was created | As described below
 
-For each sub awardee in the request, the API will process the request as described. If the sub awardee request passes all validations as specified in the General Error Messages section, the subaward report for the sub awardee will be created and HTTP Status code 201 will be returned. If the sub awardee request passes all validations as specified in the Validation Failure Error Messages section, then the report is saved in “Published” status. If any validations fail, then the report is saved in “Draft” status and the validation error messages are sent back as a part of the response body. See the [Response JSON](#response-jSON) section for the response structure and specific examples.
+For each sub awardee in the request, the API will process the request as described. If the sub awardee request passes all validations as specified in the General Error Messages section, the subaward report for the sub awardee will be created and HTTP Status code 201 will be returned. If the sub awardee request passes all validations as specified in the Validation Failure Error Messages section, then the report is saved in “Published” status. If any validations fail, then the report is saved in “Draft” status and the validation error messages are sent back as a part of the response body. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 The API will return other HTTP Status codes in case of any errors as specified in the General Error Messages section.
 
@@ -533,7 +533,7 @@ The API will return other HTTP Status codes in case of any errors as specified i
 **URL** | /acquisition/v1/subawards
 **Summary** | This endpoint can be used to update one or multiple previously published contracts report
 **Consumes** | application/JSON
-**Produces** | Refer [Response JSON](#response-jSON)
+**Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
 
 #### Request Parameters
@@ -556,7 +556,7 @@ For each sub awardee in the request, the API will process the request as describ
 	* If the updates are being performed on a "Draft" report, and there are validation failures, then the report stays in "Draft" status. If there are no validation failures, the report is updated to "Published" status.
  	* If the updates are being performed on a "Published" report, a new subawardReportNumber is assigned to the update request. If there are validation failures, then the report status is set to "Reopened". If there are no validation failures, the new subaward report moves to "Published" status and the previous "Published" report is archived.
   
-See the [Response JSON](#response-jSON) section for the response structure and specific examples.
+See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
@@ -750,7 +750,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 **URL** | /assistance/v1/subawards
 **Summary** | This endpoint can be used to update one or multiple previously published grants report
 **Consumes** | application/JSON
-**Produces** | Refer [Response JSON](#response-jSON)
+**Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
 
 #### Request Parameters
@@ -771,7 +771,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 For each sub awardee in the request, the API will process the request as described. If the sub awardee request passes all validations as specified in the General Error Messages section, the subaward report will be updated successfully and HTTP Status code 200 will be returned. If the sub awardee request passes all validations as specified in the Validation Failure Error Messages section, then the report is saved in “Published” status. If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below. * If the updates are being performed on a “Draft” report, and there are validation failures, then the report stays in “Draft” status. If there are no validation failures, the report is updated to “Published” status. * If the updates are being performed on a “Published” report, a new subawardReportNumber is assigned to the update request. If there are validation failures, then the report status is set to “Reopened”. If there are no validation failures, the new subaward report moves to “Published” status and the previous “Published” report is archived.
 
-See the [Response JSON](#response-jSON) section for the response structure and specific examples.
+See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the General Error Messages for specific details.
 
@@ -961,7 +961,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 **URL** | /acquisition/v1/subawards
 **Summary** | This endpoint can be used to delete previously published contracts report(s)
 **Consumes** | application/JSON
-**Produces** | Refer [Response JSON](#response-jSON)
+**Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
 
 #### Request Parameters
@@ -980,7 +980,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 The API will return HTTP Status code 204 if the report is deleted successfully. The API will return other HTTP Status codes in case of any other errors and the report will not be deleted. Refer to the [Error Messages](#error-messages) for specific details.
 
-See the [Response JSON](#response-jSON) section for the response structure and specific examples.
+See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 #### Examples
 
@@ -1034,7 +1034,7 @@ See the [Response JSON](#response-jSON) section for the response structure and s
 **URL** | /assistance/v1/subawards
 **Summary** | This endpoint can be used to delete previously submitted grants report(s)
 **Consumes** | Request Parameters
-**Produces** | Refer [Response JSON](#response-jSON)
+**Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
 
 #### Request Parameters
@@ -1053,7 +1053,7 @@ HTTP Status Code | Response Type | Reason  | Description
 
 The API will return HTTP Status code 204 if the report is deleted successfully. The API will return other HTTP Status codes in case of any other errors and the report will not be deleted. Refer to the [Error Messages](#error-messages) for specific details.
 
-See the [Response JSON](#response-jSON) section for the response structure and specific examples.
+See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 #### Examples
 
@@ -1106,7 +1106,7 @@ See the [Response JSON](#response-jSON) section for the response structure and s
 **URL** | /acquisition/v1/subawards/get
 **Summary** |  Using this endpoint, user will be able to retrieve specific contract reports based on the provided search criteria
 **Consumes** | Request Parameters
-**Produces** | Refer [Response JSON](#response-jSON)
+**Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
 
 #### Request Parameters
@@ -1195,7 +1195,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report was successfully retrieved | [Refer Get Subaward Report Contract JSON](#get-subaward-report-contract-JSON)
 
-Note: Will return JSON response same as POST Response JSON. The generated subawardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-jSON) section for the response structure and specific examples.
+Note: Will return JSON response same as POST Response JSON. The generated subawardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1206,7 +1206,7 @@ Note: Will return JSON response same as POST Response JSON. The generated subawa
 **URL** | /assistance/v1/subawards/get
 **Summary** | Using this endpoint, user will be able to retrieve specific grant reports based on the provided search criteria
 **Consumes** | application/JSON
-**Produces** | Refer [Response JSON](#response-jSON)
+**Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
 
 #### Request Parameters
@@ -1292,7 +1292,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200	|JSON|	Report was successfully retrieved | [Refer Submit Subaward Report Grant JSON](#submit-subaward-report-grant-JSON)
 
-Note: Will return JSON response same as POST response JSON. The generated subAwardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-jSON) section for the response structure and specific examples.
+Note: Will return JSON response same as POST response JSON. The generated subAwardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
