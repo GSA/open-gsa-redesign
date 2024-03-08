@@ -976,7 +976,7 @@ Request JSON | Body | JSON | Yes |[Refer Delete Subaward Report Contract JSON](#
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-204 | string | Report(s) successfully deleted | As described below
+200 | string | Report(s) successfully deleted | As described below
 
 The API will return HTTP Status code 204 if the report is deleted successfully. The API will return other HTTP Status codes in case of any other errors and the report will not be deleted. Refer to the [Error Messages](#error-messages) for specific details.
 
