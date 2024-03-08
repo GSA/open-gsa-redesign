@@ -128,7 +128,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Contract JSON](#submit-subaward-report-contract-JSON)
+Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Contract JSON](#submit-subaward-report-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -542,7 +542,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Contract JSON](#submit-subaward-report-contract-JSON)
+Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Contract JSON](#submit-subaward-report-contract-json)
 
 Note: For update requests, the subawardReportNumber element in the request JSON structure will be required for each subaward report to be updated.
 
