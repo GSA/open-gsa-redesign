@@ -339,7 +339,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Grant JSON](#submit-subaward-report-grant-JSON)
+Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Grant JSON](#submit-subaward-report-grant-json)
 
 #### Responses
 
@@ -759,7 +759,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Grant JSON](#submit-subaward-report-grant-JSON)
+Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Grant JSON](#submit-subaward-report-grant-json)
 
 Note: For update requests, the subawardReportNumber element in the request JSON structure will be required for each subaward report to be updated.
 
@@ -1290,7 +1290,7 @@ Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. 
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-200	|JSON|	Report was successfully retrieved | [Refer Submit Subaward Report Grant JSON](#submit-subaward-report-grant-JSON)
+200	|JSON|	Report was successfully retrieved | [Refer Submit Subaward Report Grant JSON](#submit-subaward-report-grant-json)
 
 Note: Will return JSON response same as POST response JSON. The generated subAwardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
