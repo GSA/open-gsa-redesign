@@ -262,21 +262,18 @@ The API will return one of the following responses:
 ### Example 1: Post April 3rd 2022, get me all the Firms whose Physical Address is in Virginia.
 <details>
 <summary>Request URL</summary>
-<b>v2 Production URL:</b> https://api.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
-<b>v3 Production URL:</b> https://api.sam.gov/entity-information/v3/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v3/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
 <br>
-<b>v2 Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
-<b>v3 Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v3/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v3/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
 <br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: Both v2 and v3 Public Responses for one record are provided as samples.<br>
+Note: Public Response for one record is provided as an example.
 <p>
 <code>
 <pre>
-v2 Response:<br>
 {
   "totalRecords": 1,
   "excludedEntity": [
@@ -323,104 +320,7 @@ v2 Response:<br>
       },
       "exclusionSecondaryAddress": [],
       "exclusionOtherInformation": {
-        "additionalComments": "Supreme Foodservice GmbH and Supreme Foodservice FZE",
-        "ctCode": null,
-        "evsInvestigationStatus": null,
-        "references": {
-          "referencesList": [
-            {
-              "exclusionName": "Supreme Fuels GmbH & Co. KG, Frankfurt am Main (D), Zweigniederlassung Glarus (480015629)- Zwinglistrasse 6 , GLARUS , GL ,8750,CHE",
-              "type": "Cross-Reference"
-            }
-          ]
-        },
-        "moreLocations": [
-          {
-            "exclusionName": "Supreme Fuels GmbH & Co. KG, Frankfurt am Main (D), Zweigniederlassung Glarus (480015629)- Zwinglistrasse 6 , GLARUS , GL ,8750,CHE",
-            "duns": "480015629",
-            "cageCode": null,
-            "npi": null,
-            "primaryAddress": {
-              "addressLine1": "Zwinglistrasse 6",
-              "addressLine2": null,
-              "city": "GLARUS",
-              "stateOrProvinceCode": "GL",
-              "zipCode": "8750",
-              "zipCodePlus4": null,
-              "countryCode": "CHE"
-            },
-            "secondaryAddress": [
-              {
-                "addressLine1": null,
-                "addressLine2": null,
-                "city": null,
-                "stateOrProvinceCode": null,
-                "zipCode": null,
-                "zipCodePlus4": null,
-                "countryCode": null
-              }
-            ]
-          }
-        ]
-      },
-      "vesselDetails": {
-        "callSign": null,
-        "type": null,
-        "tonnage": null,
-        "grt": null,
-        "flag": null,
-        "owner": null
-      }
-    }
-  ],
-  <br><br>
-  v3 Response:<br>
-{
-  "totalRecords": 1,
-  "excludedEntity": [
-    {
-      "exclusionDetails": {
-        "classificationType": "Firm",
-        "exclusionType": "Ineligible (Proceedings Pending)",
-        "exclusionProgram": "Reciprocal",
-        "excludingAgencyCode": "DLA",
-        "excludingAgencyName": "DEFENSE LOGISTICS AGENCY"
-      },
-      "exclusionIdentification": {
-        "ueiSAM": "KQKWLLDBMDL5",
-        "cageCode": null,
-        "npi": null,
-        "prefix": null,
-        "firstName": null,
-        "middleName": null,
-        "lastName": null,
-        "suffix": null,
-        "entityName": "Supreme Fuels GmbH & Co. KG",
-        "dnbOpenData": null
-      },
-      "exclusionActions": {
-        "listOfActions": [
-          {
-            "createDate": "03-19-2015",
-            "updateDate": "03-19-2015",
-            "activateDate": "03-13-2015",
-            "terminationDate": null,
-            "terminationType": "Indefinite",
-            "recordStatus": "Active"
-          }
-        ]
-      },
-      "exclusionPrimaryAddress": {
-        "addressLine1": "Rembrandtstr. 17",
-        "addressLine2": null,
-        "city": "Frankfurt am Main",
-        "stateOrProvinceCode": null,
-        "zipCode": "60596",
-        "zipCodePlus4": null,
-        "countryCode": "DEU"
-      },
-      "exclusionSecondaryAddress": [],
-      "exclusionOtherInformation": {
+        "isFASCSAOrder": "No",
         "additionalComments": "Supreme Foodservice GmbH and Supreme Foodservice FZE",
         "ctCode": null,
         "evsInvestigationStatus": null,
@@ -479,42 +379,37 @@ v2 Response:<br>
 ### Example 2: Post April 3rd 2022, get me all the Firms in a CSV file format.
 <details>
 <summary>Request URL</summary>
-<b>v2 Production URL:</b> https://api.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&format=CSV<br>
-<b>v3 Production URL:</b> https://api.sam.gov/entity-information/v3/exclusions?api_key=< PUBLIC API Key >&classification=Firm&format=CSV<br><br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v3/exclusions?api_key=< PUBLIC API Key >&classification=Firm&format=CSV<br><br>
 <br>
-<b>v2 Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< PUBLIC API Key >&classification=Firm&format=CSV<br>
-<b>v3 Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v3/exclusions?api_key=< PUBLIC API Key >&classification=Firm&format=CSV<br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v3/exclusions?api_key=< PUBLIC API Key >&classification=Firm&format=CSV<br>
 <br>
 </details>
 
 <details>
 <summary>Response</summary>
-Note: Both v2 and v3 Public Responses for one record are provided as samples.<br>
+Note: Public Response for one record is provided as an example.
 <p>
-v2 Response:<br>
-Extract File will be available for download with url: https://api.sam.gov/entity-information/v2/download-exclusions?api_key=REPLACE_WITH_API_KEY&token=< TOKEN > in some time. If you have requested for an email notification, you will receive it once the file is ready for download.<br><br>
+Extract File will be available for download with url: https://api.sam.gov/entity-information/v4/download-exclusions?api_key=REPLACE_WITH_API_KEY&token=< TOKEN > in some time. If you have requested for an email notification, you will receive it once the file is ready for download.<br><br>
 Downloading the CSV file using the Token:
-https://api.sam.gov/entity-information/v2/download-exclusions?api_key=< PUBLIC API KEY >&token=< TOKEN ><br><br>
-Click to view CSV Response for one record <a href="v2/v2-CSV.xlsx" taget="_blank">Sample CSV Response.</a>
+https://api.sam.gov/entity-information/v4/download-exclusions?api_key=< PUBLIC API KEY >&token=< TOKEN ><br><br>
 </p>
 <p>
-v3 Response:<br>
-Click to view CSV Response for one record <a href="v3/v3-CSV.xlsx" taget="_blank">Sample CSV Response.</a>
+Click to view CSV Response for one record <a href="v4/v4-CSV.xlsx" taget="_blank">Sample CSV Response.</a>
 </p>
 </details>
 
 ### Example 3: Get Individual or Special Entity Designation Exclusion records that are not excluded by DOJ, that belong to Korea and that contain CHONG anywhere in the response.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v4/exclusions?api_key=< a valid Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=< a valid Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
 <br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: Public Response for one record is provided as an example <br>
+Note: Public Response for one record is provided as an example. <br>
 <p>
 <code>
 <pre>
@@ -618,7 +513,7 @@ A sample record is provided here:
 },
 
 "links": {
-"selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&page=0&size=10",
+"selfLink": "https://api.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&page=0&size=10",
 
 }
 </pre>
@@ -629,15 +524,15 @@ A sample record is provided here:
 ### Example 4: Get details and address of the Ineligible (Proceedings Completed) or Prohibition/Restriction type of Firm Exclusion records that belong to Korea, China or Germany, by using the "q" parameter.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key= < a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v4/exclusions?api_key= < a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=< a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
 <br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: Public Response for one record is provided as an example <br>
+Note: Public Response for one record is provided as an example. <br>
 <p>
 <code>
 <pre>
@@ -680,8 +575,8 @@ A sample record is provided here:
 },
 
 "links": {
-"selfLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=0&size=10",
-"nextLink": "https://api.sam.gov/entity-information/v2/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=1&size=10"
+"selfLink": "https://api.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=0&size=10",
+"nextLink": "https://api.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=1&size=10"
 }
 }
 </pre>
@@ -693,24 +588,25 @@ A sample record is provided here:
 
 <details>
 <summary>Request URL</summary>
-<b>v4 Production URL:</b>  https://api.sam.gov/entity-information/v4/exclusions?api_key=< a valid Public API Key >&fascsaOrder=Yes<br>
+<b>Production URL:</b>  https://api.sam.gov/entity-information/v4/exclusions?api_key=< a valid Public API Key >&fascsaOrder=Yes<br>
 <br>
-<b>v4 Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=< a valid Public API Key >&fascsaOrder=Yes<br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=< a valid Public API Key >&fascsaOrder=Yes<br>
 <br>
 </details>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: Public Response for one record is provided as an example<br>
+Note: Public Response for one record is provided as an example.<br>
 <p>
 <code>
 <pre>
 {
     "totalRecords": 16,
 
-A sample record is provided here:
+    A sample record is provided here:
 
-        {
+    "excludedEntity": [
+    {
             "exclusionDetails": {
                 "classificationType": "Firm",
                 "exclusionType": "Prohibition/Restriction",
@@ -805,8 +701,8 @@ A sample record is provided here:
         },
     ],
     "links": {
-        "selfLink": "https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&fascsaOrder=Yes&page=0&size=10",
-        "nextLink": "https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&fascsaOrder=Yes&page=1&size=10"
+        "selfLink": "https://api.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&fascsaOrder=Yes&page=0&size=10",
+        "nextLink": "https://api.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&fascsaOrder=Yes&page=1&size=10"
     }
 }
 </pre>
@@ -817,15 +713,15 @@ A sample record is provided here:
 ### Example 6: To receive a file downloadable link in the email for the requested CSV results.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b>   https://api.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=Y<br>
+<b>Production URL:</b>   https://api.sam.gov/entity-information/v4/exclusions?api_key=< a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=Y<br>
 <br>
-<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v2/exclusions?api_key=< a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=Y<br>
+<b>Alpha URL:</b>  https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=< a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&format=CSV&emailId=Y<br>
 <br>
 </details>
 
 <details>
 <summary>Response</summary>
-Click to view CSV Response for one record <a href="v1/exclusion-sample-csv-1.xlsx">Sample CSV Response</a><br>
+Click to view CSV Response for one record <a href="v4/exclusion-sample-csv-1.xlsx">Sample CSV Response.</a><br>
 </details>
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -915,6 +811,7 @@ Date | Version | Description
 02/01/2022 | v2.9    | * Added exclusions V3 endpoint information to the Getting Started section. <br><br> * Updated the Query String Parameters and Expected Results sections to reflect available parameters and response fields in V3.<br><br> * Updated the Example 1 and Example 2 to indicate the V3 behavior.<br><br> * Updated the section, "HTTP Response Codes" to indicate the v3 behavior.<br><br> * Update the OpenAPI Specification File to include the V3 endpoints.
 04/04/2022 | v3.0    | * Provided the v3 end point for Production.<br><br> * Removed ueiDUNS occurrences from the sections, Query String Parameters, Expected Result, HTTP Response Codes and Examples.
 12/01/2023 | v3.1    | A new V4 Exclusions API has been created, enabling the search and response for FASCSA Order Exclusion records. As part of this change, below are the associated changes made to this OpenGSA page: <br><br> * Added exclusions V4 endpoint information to the Getting Started section.<br><br> * Updated the Query String Parameters and Expected Results sections to reflect available parameters and response fields in V4.<br><br> * Moved the existing Example 5 to Example 6; inserted a new Example 5 to indicate V4 behavior.<br><br> * Updated the section, “HTTP Response Codes” to indicate the v4 behavior.<br><br> * Updated the OpenAPI Specification File to include the V4 endpoints.
-02/29/2024 | v3.2    | *Updated Getting Started section to remove deprecated endpoint versions. 
+02/29/2024 | v3.2    | * Updated Getting Started section to remove deprecated endpoint versions. 
+03/11/2025 | v3.3    | * Updated Examples section to remove deprecated endpoint versions, and replaced with v4 requests and responses.
 
 <p><small><a href="#">Back to top</a></small></p>
