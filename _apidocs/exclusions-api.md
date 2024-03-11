@@ -262,9 +262,9 @@ The API will return one of the following responses:
 ### Example 1: Post April 3rd 2022, get me all the Firms whose Physical Address is in Virginia.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b> https://api.sam.gov/entity-information/v3/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v4/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
 <br>
-<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v3/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
 <br>
 </details>
 
@@ -812,6 +812,6 @@ Date | Version | Description
 04/04/2022 | v3.0    | * Provided the v3 end point for Production.<br><br> * Removed ueiDUNS occurrences from the sections, Query String Parameters, Expected Result, HTTP Response Codes and Examples.
 12/01/2023 | v3.1    | A new V4 Exclusions API has been created, enabling the search and response for FASCSA Order Exclusion records. As part of this change, below are the associated changes made to this OpenGSA page: <br><br> * Added exclusions V4 endpoint information to the Getting Started section.<br><br> * Updated the Query String Parameters and Expected Results sections to reflect available parameters and response fields in V4.<br><br> * Moved the existing Example 5 to Example 6; inserted a new Example 5 to indicate V4 behavior.<br><br> * Updated the section, “HTTP Response Codes” to indicate the v4 behavior.<br><br> * Updated the OpenAPI Specification File to include the V4 endpoints.
 02/29/2024 | v3.2    | * Updated Getting Started section to remove deprecated endpoint versions. 
-03/11/2025 | v3.3    | * Updated Examples section to remove deprecated endpoint versions, and replaced with v4 requests and responses.
+03/11/2024 | v3.3    | * Updated Examples section to remove deprecated endpoint versions, and replaced with v4 requests and responses.
 
 <p><small><a href="#">Back to top</a></small></p>
