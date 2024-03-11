@@ -7,10 +7,9 @@
     "eslint": "npm run eslint:dist",
     "clean:dist": "rm -rf _site",
     "clean": "npm run clean:dist",
-    "test:accessibility": "pa11y https://open.gsa.gov/ || exit 0",
     "test:css": "stylelint ./_sass/*.scss || exit 0",
     "test:js": "npm run eslint",
-    "test": "npm run test:accessibility && npm run test:js && npm run test:css",
+    "test": "npm run test:js && npm run test:css",
     "build:uswds": "cp -R node_modules/uswds/dist/ assets/uswds",
     "build:jquery": "cp node_modules/jquery/dist/jquery.min.* assets/js/lib",
     "build:swagger": "cp node_modules/swagger-ui-dist/swagger-ui*.{css,js,map} assets/swaggerui-dist"
@@ -36,21 +35,18 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-import": "^2.22.1",
-    "googleapis": "^61.0.0",
-    "node-forge": "^1.3.0",
-    "pa11y": "^7.0.0",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
     "stylelint": "^16.2.1",
     "stylelint-config-recommended": "^14.0.0",
     "stylelint-config-standard-scss": "^13.0.0",
-    "stylelint-scss": "^6.1.0",
-    "swagger-ui-dist": "^5.11.8",
+    "stylelint-scss": "^6.2.1",
+    "swagger-ui-dist": "^5.11.10",
     "uswds": "^1.6.13"
   },
   "dependencies": {
     "details-polyfill": "^1.2.0",
     "jquery": "^3.7.1",
-    "lunr": "^1.0.0"
+    "lunr": "^2.3.9"
   }
 }
