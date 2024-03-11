@@ -379,9 +379,9 @@ Note: Public Response for one record is provided as an example.
 ### Example 2: Post April 3rd 2022, get me all the Firms in a CSV file format.
 <details>
 <summary>Request URL</summary>
-<b>Production URL:</b> https://api.sam.gov/entity-information/v3/exclusions?api_key=< PUBLIC API Key >&classification=Firm&format=CSV<br><br>
+<b>Production URL:</b> https://api.sam.gov/entity-information/v4/exclusions?api_key=< PUBLIC API Key >&classification=Firm&format=CSV<br><br>
 <br>
-<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v3/exclusions?api_key=< PUBLIC API Key >&classification=Firm&format=CSV<br>
+<b>Alpha URL:</b> https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=< PUBLIC API Key >&classification=Firm&format=CSV<br>
 <br>
 </details>
 
