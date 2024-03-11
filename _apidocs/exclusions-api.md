@@ -416,105 +416,105 @@ Note: Public Response for one record is provided as an example. <br>
 {
   "totalRecords": 5,
 
-A sample record is provided here:
+  A sample record is provided here:
 
-"excludedEntity": [
-{
-"exclusionDetails": {
-"classificationType": "Individual",
-"exclusionType": "Ineligible (Proceedings Completed)",
-"exclusionProgram": "Reciprocal",
-"excludingAgencyCode": "ARMY",
-"excludingAgencyName": "DEPT OF THE ARMY"
-},
-"exclusionIdentification": {
-"ueiSAM": null,
-"cageCode": null,
-"npi": null,
-"prefix": "Ms.",
-"firstName": "Chong",
-"middleName": "Sun",
-"lastName": "Hwang",
-"suffix": null,
-"entityName": "Ms. Chong Sun Hwang",
-"dnbOpenData": null
-},
-"exclusionActions": {
-"listOfActions": [
-{
-"createDate": "07-27-2012",
-"updateDate": "07-27-2012",
-"activateDate": "12-12-2011",
-"terminationDate": "11-08-2029",
-"terminationType": "Definite",
-"recordStatus": "Active"
-}
-]
-},
-"exclusionPrimaryAddress": {
-"addressLine1": null,
-"addressLine2": null,
-"city": "Dongjak-gu, Seoul",
-"stateOrProvinceCode": null,
-"zipCode": null,
-"zipCodePlus4": null,
-"countryCode": "KOR"
-},
-"exclusionSecondaryAddress": [],
-"exclusionOtherInformation": {
-"additionalComments": null,
-"ctCode": "A",
-"evsInvestigationStatus": null,
-"references": {
-"referencesList": [
-{
-"exclusionName": null,
-"type": null
-}
-]
-},
-"moreLocations": [
-{
-"exclusionName": null,
-"duns": null,
-"cageCode": null,
-"npi": null,
-"primaryAddress": {
-"addressLine1": null,
-"addressLine2": null,
-"city": null,
-"stateOrProvinceCode": null,
-"zipCode": null,
-"zipCodePlus4": null,
-"countryCode": null
-},
-"secondaryAddress": [
-{
-"addressLine1": null,
-"addressLine2": null,
-"city": null,
-"stateOrProvinceCode": null,
-"zipCode": null,
-"zipCodePlus4": null,
-"countryCode": null
-}
-]
-}
-]
-},
-"vesselDetails": {
-"callSign": null,
-"type": null,
-"tonnage": null,
-"grt": null,
-"flag": null,
-"owner": null
-}
-},
-
-"links": {
-"selfLink": "https://api.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&page=0&size=10",
-
+  "excludedEntity": [
+    {
+      "exclusionDetails": {
+        "classificationType": "Individual",
+        "exclusionType": "Ineligible (Proceedings Completed)",
+        "exclusionProgram": "Reciprocal",
+        "excludingAgencyCode": "ARMY",
+        "excludingAgencyName": "DEPT OF THE ARMY"
+      },
+      "exclusionIdentification": {
+        "ueiSAM": null,
+        "cageCode": null,
+        "npi": null,
+        "prefix": "Ms.",
+        "firstName": "Chong",
+        "middleName": "Sun",
+        "lastName": "Hwang",
+        "suffix": null,
+        "entityName": "Ms. Chong Sun Hwang",
+        "dnbOpenData": null
+      },
+      "exclusionActions": {
+        "listOfActions": [
+          {
+            "createDate": "07-27-2012",
+            "updateDate": "07-27-2012",
+            "activateDate": "12-12-2011",
+            "terminationDate": "11-08-2029",
+            "terminationType": "Definite",
+            "recordStatus": "Active"
+          }
+        ]
+      },
+      "exclusionPrimaryAddress": {
+        "addressLine1": null,
+        "addressLine2": null,
+        "city": "Dongjak-gu, Seoul",
+        "stateOrProvinceCode": null,
+        "zipCode": null,
+        "zipCodePlus4": null,
+        "countryCode": "KOR"
+      },
+      "exclusionSecondaryAddress": [],
+      "exclusionOtherInformation": {
+        "additionalComments": null,
+        "ctCode": "A",
+        "evsInvestigationStatus": null,
+        "references": {
+          "referencesList": [
+            {
+              "exclusionName": null,
+              "type": null
+            }
+          ]
+        },
+        "moreLocations": [
+          {
+            "exclusionName": null,
+            "duns": null,
+            "cageCode": null,
+            "npi": null,
+            "primaryAddress": {
+              "addressLine1": null,
+              "addressLine2": null,
+              "city": null,
+              "stateOrProvinceCode": null,
+              "zipCode": null,
+              "zipCodePlus4": null,
+              "countryCode": null
+            },
+            "secondaryAddress": [
+              {
+                "addressLine1": null,
+                "addressLine2": null,
+                "city": null,
+                "stateOrProvinceCode": null,
+                "zipCode": null,
+                "zipCodePlus4": null,
+                "countryCode": null
+              }
+            ]
+          }
+        ]
+      },
+      "vesselDetails": {
+        "callSign": null,
+        "type": null,
+        "tonnage": null,
+        "grt": null,
+        "flag": null,
+        "owner": null
+      }
+    }
+  ],
+  "links": {
+    "selfLink": "https://api.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&classification=[Individual~Special%20Entity%20Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG&page=0&size=10"
+  }
 }
 </pre>
 </code>
@@ -539,45 +539,45 @@ Note: Public Response for one record is provided as an example. <br>
 {
   "totalRecords": 63,
 
-A sample record is provided here:
+  A sample record is provided here:
 
-"excludedEntity": [
-{
-"exclusionDetails": {
-"classificationType": "Firm",
-"exclusionType": "Ineligible (Proceedings Completed)",
-"exclusionProgram": "Reciprocal",
-"excludingAgencyCode": "AF",
-"excludingAgencyName": "DEPT OF THE AIR FORCE"
-},
-"exclusionIdentification": {
-"ueiSAM": "H2XFNNKK2NZ9",
-"cageCode": null,
-"npi": null,
-"prefix": null,
-"firstName": null,
-"middleName": null,
-"lastName": null,
-"suffix": null,
-"entityName": "Shenzhen Hongdark Electronics Co., Ltd.",
-"dnbOpenData": null
-},
-"exclusionPrimaryAddress": {
-"addressLine1": null,
-"addressLine2": null,
-"city": "Shenzhen",
-"stateOrProvinceCode": null,
-"zipCode": null,
-"zipCodePlus4": null,
-"countryCode": "CHN"
-},
-"exclusionSecondaryAddress": []
-},
-
-"links": {
-"selfLink": "https://api.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=0&size=10",
-"nextLink": "https://api.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=1&size=10"
-}
+  "excludedEntity": [
+    {
+      "exclusionDetails": {
+        "classificationType": "Firm",
+        "exclusionType": "Ineligible (Proceedings Completed)",
+        "exclusionProgram": "Reciprocal",
+        "excludingAgencyCode": "AF",
+        "excludingAgencyName": "DEPT OF THE AIR FORCE"
+      },
+      "exclusionIdentification": {
+        "ueiSAM": "H2XFNNKK2NZ9",
+        "cageCode": null,
+        "npi": null,
+        "prefix": null,
+        "firstName": null,
+        "middleName": null,
+        "lastName": null,
+        "suffix": null,
+        "entityName": "Shenzhen Hongdark Electronics Co., Ltd.",
+        "dnbOpenData": null
+      },
+      "exclusionPrimaryAddress": {
+        "addressLine1": null,
+        "addressLine2": null,
+        "city": "Shenzhen",
+        "stateOrProvinceCode": null,
+        "zipCode": null,
+        "zipCodePlus4": null,
+        "countryCode": "CHN"
+      },
+      "exclusionSecondaryAddress": []
+    }
+  ],
+  "links": {
+    "selfLink": "https://api.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=0&size=10",
+    "nextLink": "https://api.sam.gov/entity-information/v4/exclusions?api_key=REPLACE_WITH_API_KEY&q=(country=KOR%20OR%20country=CHN%20OR%20country=DEU)&classification=Firm&exclusionType=[Ineligible%20(Proceedings%20Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress&page=1&size=10"
+  }
 }
 </pre>
 </code>
