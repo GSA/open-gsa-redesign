@@ -37,9 +37,6 @@
             case 'apis':
               icon = '<i class="fa fa-cogs flag alt"></i>';
               break;
-            case 'events':
-              icon = '<i class="fa fa-calendar flag alt3"></i>';
-              break;
             case 'articles':
               icon = '<i class="fa fa-file-text flag"></i>';
               break;
@@ -78,13 +75,15 @@
     });
 
     pages.forEach((page, index) => {
-      lunrIndex.add({
-        id: index,
-        title: page.title,
-        body: page.body,
-        category: page.category,
-        tags: page.tags,
-      });
+      if (!page.url.startsWith('/assets/')) {
+        lunrIndex.add({
+          id: index,
+          title: page.title,
+          body: page.body,
+          category: page.category,
+          tags: page.tags,
+        });
+      }
     });
 
     const matches = lunrIndex.search(searchTerm);
