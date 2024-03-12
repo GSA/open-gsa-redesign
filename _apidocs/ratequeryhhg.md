@@ -1,6 +1,6 @@
 ---
 title: TMSS 2.0 ratequeryhhg API
-banner-heading: ratequeryhhg API
+banner-heading: TMSS 2.0 HHG Rate Query API
 ---
 
 
@@ -487,6 +487,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
 <p><small><a href="#">Back to top</a></small></p>
 
 **Optional Endpoint:** https://api.gsa.gov/travel/tmss/v1/uspslookup/?cityName=  
+
 **API Method:** GET
 
 **Description:** This API can be used to lookup/search city name or Zip codes. Use the keyword **cityName=** to pass the query param.
@@ -523,7 +524,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
 
  Request: https://api.data.gov/TEST/travel/tmss/v1/uspslookup/?cityName=Glen
 
- Reponse:
+ Response:
  
     {
         "uspsZipId": 4536,
