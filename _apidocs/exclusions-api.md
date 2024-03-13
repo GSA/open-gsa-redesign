@@ -259,7 +259,7 @@ The API will return one of the following responses:
 
 ## Examples
 
-### Example 1: Post April 3rd 2022, get me all the Firms whose Physical Address is in Virginia.
+### Example 1: Post April 3, 2022, get me all the firms whose physical address is in Virginia.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v4/exclusions?api_key=< PUBLIC API Key >&classification=Firm&stateProvince=VA<br>
@@ -270,7 +270,7 @@ The API will return one of the following responses:
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: Public Response for one record is provided as an example.
+This is an example public response for one record.
 <p>
 <code>
 <pre>
@@ -376,7 +376,7 @@ Note: Public Response for one record is provided as an example.
 </p>
 </details>
 
-### Example 2: Post April 3rd 2022, get me all the Firms in a CSV file format.
+### Example 2: Post April 3, 2022, get me all the firms in a CSV file format.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b> https://api.sam.gov/entity-information/v4/exclusions?api_key=< PUBLIC API Key >&classification=Firm&format=CSV<br><br>
@@ -387,18 +387,18 @@ Note: Public Response for one record is provided as an example.
 
 <details>
 <summary>Response</summary>
-Note: Public Response for one record is provided as an example.
+This is an example public response for one record.
 <p>
 Extract File will be available for download with url: https://api.sam.gov/entity-information/v4/download-exclusions?api_key=REPLACE_WITH_API_KEY&token=< TOKEN > in some time. If you have requested for an email notification, you will receive it once the file is ready for download.<br><br>
-Downloading the CSV file using the Token:
+Download the CSV file using the token:
 https://api.sam.gov/entity-information/v4/download-exclusions?api_key=< PUBLIC API KEY >&token=< TOKEN ><br><br>
 </p>
 <p>
-Click to view CSV Response for one record <a href="v4/v4-CSV.xlsx" taget="_blank">Sample CSV Response.</a>
+View an example CSV response for one record <a href="v4/v4-CSV.xlsx" taget="_blank">Sample CSV Response.</a>
 </p>
 </details>
 
-### Example 3: Get Individual or Special Entity Designation Exclusion records that are not excluded by DOJ, that belong to Korea and that contain CHONG anywhere in the response.
+### Example 3: Get individual or special entity designation exclusion records that are not excluded by DOJ, that belong to Korea and that contain CHONG anywhere in the response.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/entity-information/v4/exclusions?api_key=< a valid Public API Key >&classification=[Individual~Special Entity Designation]&excludingAgencyCode=!DOJ&country=KOR&q=CHONG<br>
@@ -409,7 +409,7 @@ Click to view CSV Response for one record <a href="v4/v4-CSV.xlsx" taget="_blank
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: Public Response for one record is provided as an example. <br>
+This is an example public response for one record.
 <p>
 <code>
 <pre>
@@ -521,7 +521,7 @@ Note: Public Response for one record is provided as an example. <br>
 </p>
 </details>
 
-### Example 4: Get details and address of the Ineligible (Proceedings Completed) or Prohibition/Restriction type of Firm Exclusion records that belong to Korea, China or Germany, by using the "q" parameter.
+### Example 4: Get details and address of the ineligible (proceedings completed) or prohibition/restriction type of firm exclusion records that belong to Korea, China or Germany, by using the "q" parameter.
 <details>
 <summary>Request URL</summary>
 <b>Production URL:</b>   https://api.sam.gov/entity-information/v4/exclusions?api_key= < a valid Public API Key >&q=(country=KOR OR country=CHN OR country=DEU)&classification=Firm&exclusionType=[Ineligible (Proceedings Completed)~Prohibition/Restriction]&includeSections=exclusionDetails,exclusionIdentification,exclusionAddress<br>
@@ -532,7 +532,7 @@ Note: Public Response for one record is provided as an example. <br>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: Public Response for one record is provided as an example. <br>
+This is an example public response for one record. <br>
 <p>
 <code>
 <pre>
@@ -584,7 +584,7 @@ Note: Public Response for one record is provided as an example. <br>
 </p>
 </details>
 
-### Example 5: Get details for FASCSA Order Exclusion records only.
+### Example 5: Get details for FASCSA order exclusion records only.
 
 <details>
 <summary>Request URL</summary>
@@ -596,7 +596,7 @@ Note: Public Response for one record is provided as an example. <br>
 
 <details>
 <summary>Response (JSON Output)</summary>
-Note: Public Response for one record is provided as an example.<br>
+This is an example public response for one record.<br>
 <p>
 <code>
 <pre>
@@ -721,7 +721,7 @@ Note: Public Response for one record is provided as an example.<br>
 
 <details>
 <summary>Response</summary>
-Click to view CSV Response for one record <a href="v4/exclusion-sample-csv-1.xlsx">Sample CSV Response.</a><br>
+View an example CSV response for one record <a href="v4/exclusion-sample-csv-1.xlsx">Sample CSV Response.</a><br>
 </details>
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -812,6 +812,6 @@ Date | Version | Description
 04/04/2022 | v3.0    | * Provided the v3 end point for Production.<br><br> * Removed ueiDUNS occurrences from the sections, Query String Parameters, Expected Result, HTTP Response Codes and Examples.
 12/01/2023 | v3.1    | A new V4 Exclusions API has been created, enabling the search and response for FASCSA Order Exclusion records. As part of this change, below are the associated changes made to this OpenGSA page: <br><br> * Added exclusions V4 endpoint information to the Getting Started section.<br><br> * Updated the Query String Parameters and Expected Results sections to reflect available parameters and response fields in V4.<br><br> * Moved the existing Example 5 to Example 6; inserted a new Example 5 to indicate V4 behavior.<br><br> * Updated the section, “HTTP Response Codes” to indicate the v4 behavior.<br><br> * Updated the OpenAPI Specification File to include the V4 endpoints.
 02/29/2024 | v3.2    | * Updated Getting Started section to remove deprecated endpoint versions. 
-03/11/2024 | v3.3    | * Updated Examples section to remove deprecated endpoint versions, and replaced with v4 requests and responses.
+03/11/2024 | v3.3    | * Replaced Examples section with v4 requests and responses.
 
 <p><small><a href="#">Back to top</a></small></p>
