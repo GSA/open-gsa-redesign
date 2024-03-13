@@ -415,9 +415,6 @@ This is an example public response for one record.
 <pre>
 {
   "totalRecords": 5,
-
-  A sample record is provided here:
-
   "excludedEntity": [
     {
       "exclusionDetails": {
@@ -538,9 +535,6 @@ This is an example public response for one record. <br>
 <pre>
 {
   "totalRecords": 63,
-
-  A sample record is provided here:
-
   "excludedEntity": [
     {
       "exclusionDetails": {
@@ -602,9 +596,6 @@ This is an example public response for one record.<br>
 <pre>
 {
     "totalRecords": 16,
-
-    A sample record is provided here:
-
     "excludedEntity": [
     {
             "exclusionDetails": {
