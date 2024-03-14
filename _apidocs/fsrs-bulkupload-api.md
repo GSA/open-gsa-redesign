@@ -36,9 +36,12 @@ To begin using this API, you will need to register for a System Account and obta
 
 #### Generating a System Account API Key
 In order to utilize the Subaward API endpoints, users will need to generate the System account API Key to make API calls.
-* Once the system account is approved, as per the instructions above, the user can select “Go to System Accounts” in the widget from their workspace and enter a new system account password. 
-* After setting up the password for the system account, the user will see a new section for retrieving a system account API Key. The user must enter their password again to retrieve the API Key. 
-* This API Key will be used for all API calls as described in this documentation.
+* Once the system account is approved, as per the instructions above, the user can select their System account from the Tier2 workspace and access the API key and Password section to set up new system account password
+* After setting up the password for the system account, the user will see a new section for generating a system account API Key. The user must enter their password again to generate the API Key
+* The user will have the option to copy the API key to their clipboard to store the key
+* The API key will be hidden at all times and the user will need to enter the system account password to reveal the key
+* The API keys have a validity of 90 days and a new key will be auto generated at 75 days. For a period of 15 days 76th to 90th day) both the old and new keys remain active and will be visible for the user to use. You must ensure that the new keys are rotated on your API call during this time
+* This API Key will be used for all API calls as described in this documentation
 
 ### Type of Connection Validation 
 All REST API requests will be validated against the Type of Connection within the system account profile. All requests without "REST API" type of connection in the system account profile will be rejected with an error.
@@ -47,7 +50,7 @@ All REST API requests will be validated against the Type of Connection within th
 All REST API requests will be validated against the IP Addresses registered within the system account profile. All requests that are not from registered IP address(es) in the system account profile will be rejected with an error.
 
 #### User Account Authorization
-To be able to perform the various operations provided under the Subaward API, users will need to have a SAM.gov non-federal user account with either 'Admin' or 'Data Entry' role and 'Create/Edit/Delete Subaward Report' permission.
+To be able to perform the various operations provided under the Subaward API, a user will require a SAM.gov non-federal user account with either 'Admin' or 'Data Entry' role and 'Create/Edit/Delete Subaward Report' permission.
 
 <p><small><a href="#">Back to top</a></small></p>
 
