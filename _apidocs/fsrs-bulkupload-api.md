@@ -1,11 +1,11 @@
 ---
-title: SAM.gov Subaward Reporting Bulk Upload API 
-banner-heading: SAM.gov Subaward Reporting Bulk Upload API
+title: SAM.gov Subaward reporting Bulk Upload API 
+banner-heading: SAM.gov Subaward reporting Bulk Upload API
 ---
 
 ## Overview 
 
-The API for Federal Funding Accountability and Transparency Act (FFATA) Reporting will allow Prime awardees (i.e. prime contractors and prime grants recipients) to report subaward and executive compensation data regarding their first-tier Subawards to meet the FFATA reporting requirements. Using this API, the users will be able to file multiple subaward reports at once. 
+The API for Federal Funding Accountability and Transparency Act (FFATA) Reporting will allow Prime awardees (i.e. prime contractors and prime grants recipients) to report subaward and executive compensation data regarding their first-tier Subawards to meet the FFATA reporting requirements. Using this API, the users will be able to file multiple Subaward reports at once. 
 
 **NOTE:** The specifications on this page are for a future API.  Check back here or be in contact with IAE for the release date and testing session.
 
@@ -13,7 +13,7 @@ The API for Federal Funding Accountability and Transparency Act (FFATA) Reportin
 
 ## Getting Started
 
-Subaward Reporting Bulk Upload API can be accessed from Production or Alpha via the following endpoints:
+Subaward reporting Bulk Upload API can be accessed from Production or Alpha via the following endpoints:
 
 * Production: https://api.sam.gov
 * Alpha: https://api-alpha.sam.gov
@@ -26,7 +26,7 @@ To begin using this API, you will need to register for a System Account and obta
 	* System Information
    		** System Account Name: Unique name for the System Account
 	* Permissions
-   		** Subaward Reporting: Write --> Gives access to Create/Update/Delete/Get Subaward Reports.
+   		** Subaward reporting: Write --> Gives access to Create/Update/Delete/Get Subaward reports.
 	* Security Information
 		** IP Address: List all the IP Addresses that the System invokes the API from.
 		** Type of Connection: REST APIs
@@ -50,7 +50,7 @@ All REST API requests will be validated against the Type of Connection within th
 All REST API requests will be validated against the IP Addresses registered within the system account profile. All requests that are not from registered IP address(es) in the system account profile will be rejected with an error.
 
 #### User Account Authorization
-To be able to perform the various operations provided under the Subaward API, a user will require a SAM.gov non-federal user account with either 'Admin' or 'Data Entry' role and 'Create/Edit/Delete Subaward Report' permission.
+To be able to perform the various operations provided under the Subaward API, a user will require a SAM.gov non-federal user account with either 'Admin' or 'Data Entry' role and 'Create/Edit/Delete Subaward report' permission.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -58,7 +58,7 @@ To be able to perform the various operations provided under the Subaward API, a 
 
 #### Recovery Model Questions (Compensation Questions)
 
-To submit a Subaward Report, compensation questions for the Prime, as well as Subawardee will need to be responded to. The table below outlines the Compensation Questions and their corresponding codes to be used in the requests.
+To submit a Subaward report, compensation questions for the Prime, as well as Subawardee will need to be responded to. The table below outlines the Compensation Questions and their corresponding codes to be used in the requests.
 
 |                                   | Code              | Description                                   |
 | ----------------- | ----------------- | --------------------------------------------- |
@@ -69,7 +69,7 @@ To submit a Subaward Report, compensation questions for the Prime, as well as Su
 
 #### Report Status
 
-The table below lists the statuses for the Subaward Reports.
+The table below lists the statuses for the Subaward reports.
 
 Code | Value     | Description
 -----|-----------------|-----------------
@@ -100,24 +100,24 @@ State | State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.htm
 
 All API v1 versions will utilize the API Key mechanism as outlined in this documentation. 
 
-## FSRS Subaward Reporting Bulk Upload API Request and Responses
+## FSRS Subaward reporting Bulk Upload API Request and Responses
 
 This API has 8 endpoints as outlined below. 
 
 Endpoint Name | Short Description |
 -----|-----------------
-Submit Subaward Report (Contracts)     | Used to submit Subaward Reports for reporting on one or more Contracts.
-Submit Subaward Report (Grants)     | Used to submit Subaward Reports for reporting on one or more Grants.
-Update Subaward Report (Contracts)     | Used to update one or more previously published Subaward Reports for Contracts.
-Update Subaward Report (Grants)     | Used to update one or more previously published Subaward Reports for Grants.
-Delete Subaward Report (Contracts)     | Used to delete one or more previously published Subaward Reports for Contracts.
-Delete Subaward Report (Grants)     | Used to delete one or more previously published Subaward Reports for Grants.
-Get Subaward Report (Contracts)     | Used to get one or more previously published Subaward Reports for Contracts. 
-Get Subaward Report (Grants)     | Used to get one or more previously published Subaward Reports for Grants.
+Submit Subaward report (Contracts)     | Used to submit Subaward reports for reporting on one or more Contracts.
+Submit Subaward report (Grants)     | Used to submit Subaward reports for reporting on one or more Grants.
+Update Subaward report (Contracts)     | Used to update one or more previously published Subaward reports for Contracts.
+Update Subaward report (Grants)     | Used to update one or more previously published Subaward reports for Grants.
+Delete Subaward report (Contracts)     | Used to delete one or more previously published Subaward reports for Contracts.
+Delete Subaward report (Grants)     | Used to delete one or more previously published Subaward reports for Grants.
+Get Subaward report (Contracts)     | Used to get one or more previously published Subaward reports for Contracts. 
+Get Subaward report (Grants)     | Used to get one or more previously published Subaward reports for Grants.
 
 The following section describes each of the above endpoints in detail.
 
-### Submit Subaward Report (Contracts)
+### Submit Subaward report (Contracts)
 
 ------- | ------- |
 **Request Type** | POST 
@@ -133,7 +133,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Contract JSON](#submit-subaward-report-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Contract JSON](#submit-subaward-report-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -144,14 +144,14 @@ HTTP Status Code | Response Type | Reason  | Description
 201 | string | Report was created | As described below
 
 The API will process each request as described for all Subawardees within the request. 
-* If the Subawardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward report for the Subawardee will be created and HTTP Status code 201 will be returned.
+* If the Subawardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the Subaward report for the Subawardee will be created and HTTP Status code 201 will be returned.
 * If the Subawardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status.
 * If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. (See the [Response JSON](#response-json) section for the response structure and specific examples.) The API will return other HTTP Status codes in case of any errors as specified in the [General Error Messages](#general-error-messages) section.
 
 #### Examples
 
 <details>
-<summary>Example 1: Submit Subaward Report for multiple Contracts and multiple Subawards. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
+<summary>Example 1: Submit Subaward report for multiple Contracts and multiple Subawards. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
 <p>
 <code><pre>
 {
@@ -286,7 +286,7 @@ The API will process each request as described for all Subawardees within the re
 </details>
 
 <details>
-<summary>Example 2: Submit Subaward Report with minimal data. In this case, the report will be saved in Draft status and validation errors will be sent back. </summary>
+<summary>Example 2: Submit Subaward report with minimal data. In this case, the report will be saved in Draft status and validation errors will be sent back. </summary>
 <p>
 <code><pre>
 {
@@ -327,7 +327,7 @@ The API will process each request as described for all Subawardees within the re
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Submit Subaward Report (Grants)
+### Submit Subaward report (Grants)
 
 
 ------- | -------
@@ -345,7 +345,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Grant JSON](#submit-subaward-report-grant-json)
+Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Grant JSON](#submit-subaward-report-grant-json)
 
 #### Responses
 
@@ -354,14 +354,14 @@ HTTP Status Code | Response Type | Reason  | Description
 201 | string | Report was created | As described below
 
 The API will process each request as described for all Subawardees within the request. 
-* If the Subawardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward report for the Subawardee will be created and HTTP Status code 201 will be returned.
+* If the Subawardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the Subaward report for the Subawardee will be created and HTTP Status code 201 will be returned.
 * If the Subawardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status.
 * If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. (See the [Response JSON](#response-json) section for the response structure and specific examples.) The API will return other HTTP Status codes in case of any errors as specified in the [General Error Messages](#general-error-messages) section.
 
 #### Examples
 
 <details>
-<summary>Example 1: Submit Grant Subaward Report for multiple awards and multiple Subawards. Example includes scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
+<summary>Example 1: Submit Grant Subaward report for multiple awards and multiple Subawards. Example includes scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
 <p>
 <code><pre>
 {
@@ -532,13 +532,13 @@ The API will process each request as described for all Subawardees within the re
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update Subaward Report (Contracts)
+### Update Subaward report (Contracts)
 
 
 ------- | -------
 **Request Type** | PUT
 **URL** | /acquisition/v1/Subawards
-**Summary** | This endpoint can be used to update one or multiple previously published contracts report
+**Summary** | Used to update one or multiple previously published contract reports
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -549,9 +549,9 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Contract JSON](#submit-subaward-report-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Contract JSON](#submit-subaward-report-contract-json)
 
-NOTE: For update requests, the subawardReportNumber element in the request JSON structure will be required for each subaward report to be updated.
+NOTE: For an update request, the subawardReportNumber element in the request JSON structure will be required for each Subaward report to be updated.
 
 #### Responses
 
@@ -559,9 +559,12 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string |  Report successfully updated| As described below
 
-For each Subawardee in the request, the API will process the request as described. If the Subawardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward report will be updated successfully and HTTP Status code 200 will be returned. If the Subawardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status. If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below. 
+The API will process each request as described for all Subawardees within the request. 
+* If the Subawardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the Subaward report for the Subawardee will be updated and HTTP Status code 200 will be returned.
+* If the Subawardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report will save in "Published" status.
+* If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below. 
 	* If the updates are being performed on a "Draft" report, and there are validation failures, then the report stays in "Draft" status. If there are no validation failures, the report is updated to "Published" status.
- 	* If the updates are being performed on a "Published" report, a new subawardReportNumber is assigned to the update request. If there are validation failures, then the report status is set to "Reopened". If there are no validation failures, the new subaward report moves to "Published" status and the previous "Published" report is archived.
+ 	* If the updates are being performed on a "Published" report, a new subawardReportNumber is assigned to the update request. If there are validation failures, then the report status is set to "Reopened". If there are no validation failures, the new Subaward report moves to "Published" status and the previous "Published" report is archived.
   
 See the [Response JSON](#response-json) section for the response structure and specific examples.
 
@@ -569,7 +572,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 
 #### Examples: 
 <details>
-<summary>Example: Update Subaward Report for multiple Contracts and multiple Subawards. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information is not mandatory to be provided.</summary>
+<summary>Example: Update Subaward report for multiple Contracts and multiple Subawards. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information is not mandatory to be provided.</summary>
 <p>
 <code><pre>
 {
@@ -707,7 +710,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 </details>
 
 <details>
-<summary>Example: Update Subaward Report with minimal data. In this case, report will be saved in Draft status and validation errors will be sent back. </summary>
+<summary>Example: Update Subaward report with minimal data. In this case, report will be saved in Draft status and validation errors will be sent back. </summary>
 <p>
 <code><pre>
 {
@@ -749,7 +752,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update Subaward Report (Grants)
+### Update Subaward report (Grants)
 
 
 ------- | -------
@@ -766,9 +769,9 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Grant JSON](#submit-subaward-report-grant-json)
+Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Grant JSON](#submit-subaward-report-grant-json)
 
-NOTE: For update requests, the subawardReportNumber element in the request JSON structure will be required for each subaward report to be updated.
+NOTE: For update requests, the subawardReportNumber element in the request JSON structure will be required for each Subaward report to be updated.
 
 #### Responses
 
@@ -776,7 +779,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report successfully updated | As described below
 
-For each Subawardee in the request, the API will process the request as described. If the Subawardee request passes all validations as specified in the General Error Messages section, the subaward report will be updated successfully and HTTP Status code 200 will be returned. If the Subawardee request passes all validations as specified in the Validation Failure Error Messages section, then the report is saved in “Published” status. If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below. * If the updates are being performed on a “Draft” report, and there are validation failures, then the report stays in “Draft” status. If there are no validation failures, the report is updated to “Published” status. * If the updates are being performed on a “Published” report, a new subawardReportNumber is assigned to the update request. If there are validation failures, then the report status is set to “Reopened”. If there are no validation failures, the new subaward report moves to “Published” status and the previous “Published” report is archived.
+For each Subawardee in the request, the API will process the request as described. If the Subawardee request passes all validations as specified in the General Error Messages section, the Subaward report will be updated successfully and HTTP Status code 200 will be returned. If the Subawardee request passes all validations as specified in the Validation Failure Error Messages section, then the report is saved in “Published” status. If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below. * If the updates are being performed on a “Draft” report, and there are validation failures, then the report stays in “Draft” status. If there are no validation failures, the report is updated to “Published” status. * If the updates are being performed on a “Published” report, a new subawardReportNumber is assigned to the update request. If there are validation failures, then the report status is set to “Reopened”. If there are no validation failures, the new Subaward report moves to “Published” status and the previous “Published” report is archived.
 
 See the [Response JSON](#response-json) section for the response structure and specific examples.
 
@@ -785,7 +788,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 #### Examples: 
 
 <details>
-<summary>Example: Update Grant Subaward Report for multiple awards and multiple Subawards. Example includes scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
+<summary>Example: Update Grant Subaward report for multiple awards and multiple Subawards. Example includes scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
 <p>
 <code><pre>
 {
@@ -960,7 +963,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Delete Subaward Report (Contracts)
+### Delete Subaward report (Contracts)
 
 
 ------- | -------
@@ -977,7 +980,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes |[Refer Delete Subaward Report Contract JSON](#delete-subaward-report-contract-json)
+Request JSON | Body | JSON | Yes |[Refer Delete Subaward report Contract JSON](#delete-subaward-report-contract-json)
 
 #### Responses
 
@@ -992,7 +995,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 #### Examples
 
 <details>
-<summary>Example: Delete request to delete multiple Subaward Reports for Contracts based on status provided</summary>
+<summary>Example: Delete request to delete multiple Subaward reports for Contracts based on status provided</summary>
 <p>
 <code><pre>
 {
@@ -1016,7 +1019,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 </details>
 
 <details>
-<summary>Example: Delete request to delete Subaward Reports in all statuses (Published, Reopened) for a Contract when status is not provided</summary>
+<summary>Example: Delete request to delete Subaward reports in all statuses (Published, Reopened) for a Contract when status is not provided</summary>
 <p>
 <code><pre>
 {
@@ -1033,7 +1036,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Delete Subaward Report (Grants)
+### Delete Subaward report (Grants)
 
 
 ------- | -------
@@ -1050,7 +1053,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Delete Subaward Report Grant JSON ](#delete-subaward-report-grant-json)
+Request JSON | Body | JSON | Yes | [Refer Delete Subaward report Grant JSON ](#delete-subaward-report-grant-json)
 
 #### Responses
 
@@ -1065,7 +1068,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 #### Examples
 
 <details>
-<summary>Example: Delete request to delete multiple Grant Subaward Reports</summary>
+<summary>Example: Delete request to delete multiple Grant Subaward reports</summary>
 <p>
 <code><pre>
 {
@@ -1089,7 +1092,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 </details>
 
 <details>
-<summary>Example: Delete request to delete Subaward Reports in all statuses (Published, Reopened) for a Grant when status is not provided</summary>
+<summary>Example: Delete request to delete Subaward reports in all statuses (Published, Reopened) for a Grant when status is not provided</summary>
 <p>
 <code><pre>
 {
@@ -1106,7 +1109,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Get Subaward Report (Contracts)
+### Get Subaward report (Contracts)
 
 ------- | -------
 **Request Type** | POST
@@ -1122,12 +1125,12 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes, at least one contractData element is required. From the fields, at least one field is required | [Refer Get Subaward Report Contract JSON](#get-subaward-report-contract-json) 
+Request JSON | Body | JSON | Yes, at least one contractData element is required. From the fields, at least one field is required | [Refer Get Subaward report Contract JSON](#get-subaward-report-contract-json) 
 
 #### Examples
 
 <details>
-<summary>Get Subaward Reports for a specific contract based on the Subaward Report Number and report status</summary>
+<summary>Get Subaward reports for a specific contract based on the Subaward report Number and report status</summary>
 <p>
 <code><pre>
 {
@@ -1143,7 +1146,7 @@ Request JSON | Body | JSON | Yes, at least one contractData element is required.
 </details>
 
 <details>
-<summary>Get all Published Subaward Reports for a specific contract</summary>
+<summary>Get all Published Subaward reports for a specific contract</summary>
 <p>
 <code><pre>
 {
@@ -1160,7 +1163,7 @@ Request JSON | Body | JSON | Yes, at least one contractData element is required.
 </details>
 
 <details>
-<summary>Get all Subaward Reports for a specific contract</summary>
+<summary>Get all Subaward reports for a specific contract</summary>
 <p>
 <code><pre>
 {
@@ -1200,13 +1203,13 @@ Request JSON | Body | JSON | Yes, at least one contractData element is required.
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-200 | string | Report was successfully retrieved | [Refer Get Subaward Report Contract JSON](#get-subaward-report-contract-json)
+200 | string | Report was successfully retrieved | [Refer Get Subaward report Contract JSON](#get-subaward-report-contract-json)
 
 NOTE: Will return JSON response same as POST Response JSON. The generated subawardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Get Subaward Report (Grants) 
+### Get Subaward report (Grants) 
 
 ------- | -------
 **Request Type** | POST
@@ -1222,12 +1225,12 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization	| Header | string |	Yes |	Valid and authorized SAM user email ID
 api_key |	query |	string |	Yes |	Valid System Account API Key
-Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. From the fields, at least one field is required|	[Refer Get Subaward Report Grant JSON](#get-subaward-report-grant-json)
+Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. From the fields, at least one field is required|	[Refer Get Subaward report Grant JSON](#get-subaward-report-grant-json)
 
 #### Examples
 
 <details>
-<summary>Example: Get Grant Subaward Reports for a specific Grant based on the Subaward Report Number and report status </summary>
+<summary>Example: Get Grant Subaward reports for a specific Grant based on the Subaward report Number and report status </summary>
 <p>
 <code><pre>
  {
@@ -1243,7 +1246,7 @@ Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. 
 </details>
 
 <details>
-<summary>Get all Published Subaward Reports for a specific Grant</summary>
+<summary>Get all Published Subaward reports for a specific Grant</summary>
 <p>
 <code><pre>
 {
@@ -1259,7 +1262,7 @@ Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. 
 </details>
 
 <details>
-<summary>Get all Subaward Reports for a specific grant</summary>
+<summary>Get all Subaward reports for a specific grant</summary>
 <p>
 <code><pre>
 {
@@ -1297,7 +1300,7 @@ Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. 
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-200	|JSON|	Report was successfully retrieved | [Refer Submit Subaward Report Grant JSON](#submit-subaward-report-grant-json)
+200	|JSON|	Report was successfully retrieved | [Refer Submit Subaward report Grant JSON](#submit-subaward-report-grant-json)
 
 NOTE: Will return JSON response same as POST response JSON. The generated subAwardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
@@ -1310,27 +1313,27 @@ All Subaward API endpoints return a response JSON. The generic structure of the 
 
 Response Element | Response Type | Description
 -----------------|---------------|------------
- _ | JSON Array | One element for each subaward report in request
+ _ | JSON Array | One element for each Subaward report in request
 id | string | For a contract report, it is the concatenated values of contractNumber, reportingAgency, idvRefrenceNumber, referenceAgencyCode, subawardNumber, subawardDate, subawardAmount and submittedDate separated by ':'. For a Grant report, it is the concatenated value of fainNumber, subawardNumber, subawardDate, subawardAmount and submittedDate separated by ':'. For a GET or DELETE request, if the request is unsuccessful, then it is the concatenated value of the search parameters separated by ":".
-statusCode | string | The Http Status code for the subaward report element
+statusCode | string | The Http Status code for the Subaward report element
 transactionId | string | Internal id that sam.gov support team can use to trace issues. Users can provide this to support team in case of any issues with their request
 timeStamp | string | Date and time when the request was processed
-subawardReportNumber | string | Unique identifier for the subaward report. This id can be used for any subsequent update/delete calls
-reportStatus | string | Status of the subaward report. 
+subawardReportNumber | string | Unique identifier for the Subaward report. This id can be used for any subsequent update/delete calls
+reportStatus | string | Status of the Subaward report. 
 message | string | Message indicating status of the operation. Also includes any informative warning messages.
 errors | JSON Array | If there are validation errors, they are sent back as a part of this errors array.
 
 NOTE: To keep the user informed on the actions being done through the API, some descriptive messages will be sent back as a part of the "message" element. This will be done for the Create (POST) and Update (PUT) requests for Contracts. The scenarios when these informational messages will be provided are outlined below:
-* When there are existing Subaward Reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date.
-* When there are existing Subaward Reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date submitted on the same date.
-* When there are existing Subaward Reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date submitted on the same date with the same Subaward amount.
+* When there are existing Subaward reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date.
+* When there are existing Subaward reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date submitted on the same date.
+* When there are existing Subaward reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date submitted on the same date with the same Subaward amount.
 * When the Date of the Subaward provided matches the Date of the Subcontract of the previous Subaward report.
 * When the Subaward Amount provided matches the Subaward Amount of the previous Subaward report.
 * When the Subaward Amount provided is greater than the total contract value.
 
 #### Examples (Contracts)
 <details>
-<summary>Example: Contracts: Create (POST) request for three subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, and third could not be created. </summary>
+<summary>Example: Contracts: Create (POST) request for three Subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, and third could not be created. </summary>
 <p>
 <code><pre>
 [
@@ -1375,7 +1378,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Contracts: Update (PUT) request for four subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, third was saved in Reopened status since a Published version already exists for the subawardReportNumber, and fourth report could not be updated. </summary>
+<summary>Example: Contracts: Update (PUT) request for four Subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, third was saved in Reopened status since a Published version already exists for the subawardReportNumber, and fourth report could not be updated. </summary>
 <p>
 <code><pre>
 [
@@ -1432,7 +1435,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Contracts: Delete (DELETE) request for a subaward report when only the subawardReportNumber was provided, Published and Reopened reports existed and both were deleted successfully. One element is returned for each deleted report. </summary>
+<summary>Example: Contracts: Delete (DELETE) request for a Subaward report when only the subawardReportNumber was provided, Published and Reopened reports existed and both were deleted successfully. One element is returned for each deleted report. </summary>
 <p>
 <code><pre>
 [
@@ -1462,7 +1465,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Contracts: Delete (DELETE) request for two subaward reports. First was a Draft report that was successfully Deleted, and second delete request was not successful. </summary>
+<summary>Example: Contracts: Delete (DELETE) request for two Subaward reports. First was a Draft report that was successfully Deleted, and second delete request was not successful. </summary>
 <p>
 <code><pre>
 [
@@ -1492,7 +1495,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Contracts: Get (POST) request for a contract with 2 subaward reports, when the request is successful. One element is returned for each subaward report.</summary>
+<summary>Example: Contracts: Get (POST) request for a contract with 2 Subaward reports, when the request is successful. One element is returned for each Subaward report.</summary>
 <p>
 <code><pre>
 [
@@ -1624,7 +1627,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Contracts: Get (POST) request for a contract with 2 subaward reports, when the request is not successful for both for different reasons. One element is returned for each subaward report.</summary>
+<summary>Example: Contracts: Get (POST) request for a contract with 2 Subaward reports, when the request is not successful for both for different reasons. One element is returned for each Subaward report.</summary>
 <p>
 <code><pre>
 [
@@ -1653,7 +1656,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 
 #### Examples (Grants)
 <details>
-<summary>Example: Grants: Create (POST) request for three subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, and third could not be created. </summary>
+<summary>Example: Grants: Create (POST) request for three Subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, and third could not be created. </summary>
 <p>
 <code><pre>
 [
@@ -1698,7 +1701,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Grants: Update (PUT) request for four subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, third was saved in Reopened status since a Published version already exists for the subawardReportNumber, and fourth report could not be updated. </summary>
+<summary>Example: Grants: Update (PUT) request for four Subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, third was saved in Reopened status since a Published version already exists for the subawardReportNumber, and fourth report could not be updated. </summary>
 <p>
 <code><pre>
 [
@@ -1755,7 +1758,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Grants: Delete (DELETE) request for a subaward report when only the subawardReportNumber was provided, Published and Reopened reports existed and both were deleted successfully. One element is returned for each deleted report. </summary>
+<summary>Example: Grants: Delete (DELETE) request for a Subaward report when only the subawardReportNumber was provided, Published and Reopened reports existed and both were deleted successfully. One element is returned for each deleted report. </summary>
 <p>
 <code><pre>
 [
@@ -1785,7 +1788,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Grants: Delete (DELETE) request for two subaward reports. First was a Draft report that was successfully Deleted, and second delete request was not successful. </summary>
+<summary>Example: Grants: Delete (DELETE) request for two Subaward reports. First was a Draft report that was successfully Deleted, and second delete request was not successful. </summary>
 <p>
 <code><pre>
 [
@@ -1815,7 +1818,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Grants: Get (POST) request for a contract with 2 subaward reports, when the request is successful. One element is returned for each subaward report.</summary>
+<summary>Example: Grants: Get (POST) request for a contract with 2 Subaward reports, when the request is successful. One element is returned for each Subaward report.</summary>
 <p>
 <code><pre>
 [
@@ -1939,7 +1942,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Grants: Get (POST) request for a contract with 2 subaward reports, when the request is not successful for both for different reasons. One element is returned for each subaward report.</summary>
+<summary>Example: Grants: Get (POST) request for a contract with 2 Subaward reports, when the request is not successful for both for different reasons. One element is returned for each Subaward report.</summary>
 <p>
 <code><pre>
 [
@@ -1968,13 +1971,13 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Submit Subaward Report Contract JSON
+### Submit Subaward report Contract JSON
 
 * Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type |Field Length | Required |Description 
 -----|-----------|-------|------------|------------
-contractData | JSON Array | NA|Yes|Information about the prime Contractor and the subaward report(s). If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract
+contractData | JSON Array | NA|Yes|Information about the prime Contractor and the Subaward report(s). If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract
 contractData Details| | | | 
 contractData.contractNumber | string | 50 characters  | Yes |If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank
 contractData.reportingAgencyCode | string | 32 characters  | Yes | The ID of the Federal awarding agency as from FPDS-NG
@@ -1983,7 +1986,7 @@ contractData.referenceAgencyCode | string | 32 characters  | Yes, if the idvRefe
 contractData.programTitle | string || No | Program or Project Title 
 contractData.subawardDataList |string  ||Yes  |Information about the Subawardees. If the report is being submitted for multiple Subawardees, then this array will have multiple elements, one for each of the Subawardee.
 contractData.subawardDataList Details | | | | 
-subawardDataList.subawardReportNumber | string | 13 characters | Yes, for an update request (PUT) to update a report. | The id of the subaward report. Will be blank/ignored for a POST request to create a subaward report. 
+subawardDataList.subawardReportNumber | string | 13 characters | Yes, for an update request (PUT) to update a report. | The id of the Subaward report. Will be blank/ignored for a POST request to create a Subaward report. 
 subawardDataList.subawardUei | string | 13 characters | Yes | Subawardee UEI
 subawardDataList.subawardNumber | string |32 characters  | Yes | Number assigned by the Prime Contractor to track this subaward
 subawardDataList.subawardAmount |string  |32 characters | Yes | Amount for this award to this Subawardee 
@@ -2007,7 +2010,7 @@ subawardDataList.topPayEmployees.salary | string  ||Yes if subawardDataList.topP
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Submit Subaward Report Grant JSON
+### Submit Subaward report Grant JSON
 
 * Field headers in the table must match with field headers shown in JSON example  
 
@@ -2043,7 +2046,7 @@ subawardDataList.topPayEmployees.salary | string  ||Yes if subawardDataList.topP
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Delete Subaward Report Contract JSON
+### Delete Subaward report Contract JSON
 
 * Field headers in the table must match with field headers shown in JSON example  
 
@@ -2051,12 +2054,12 @@ Name | Data Type | Field Length | Required | Description
 -----|-----------|---------|----------|------------
 contractData | JSON Array  | | Yes, at least one element in the array is required. At least one field is required for the fields in each element. | Information about the report to be deleted. If there are multiple reports to be deleted, then this array will have multiple elements, one for each of the delete requests.
 contractData Details| | | | 
-contractData.subawardReportNumber | string |32 characters  | No | Number assigned by the Prime Contractor to track the subaward. This is returned as a part of the response for the Create, Update and Get calls for the subaward report.
+contractData.subawardReportNumber | string |32 characters  | No | Number assigned by the Prime Contractor to track the subaward. This is returned as a part of the response for the Create, Update and Get calls for the Subaward report.
 contractData.reportStatus | string |32 characters  | No | The status of the report to be deleted. If no status is provided, then all associated reports (in all statuses) will be deleted.
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Delete Subaward Report Grant JSON
+### Delete Subaward report Grant JSON
 
 * Field headers in the table must match with field headers shown in JSON example  
 
@@ -2064,38 +2067,38 @@ Name | Data Type | Field Length|  Required | Description
 -----|-----------|---------|----------|------------
 assistanceData | JSON Array  |  | Yes, at least one element in the array is required. At least one field is required for the fields in each element. |Information about the prime Grantor. If the request is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
 assistanceData Details| | | | 
-assistanceData.subawardReportNumber | string |32 characters  | No | Number assigned by the Prime Contractor to track the subaward. This is returned as a part of the response for the Create, Update and Get calls for the subaward report.
+assistanceData.subawardReportNumber | string |32 characters  | No | Number assigned by the Prime Contractor to track the subaward. This is returned as a part of the response for the Create, Update and Get calls for the Subaward report.
 assistanceData.reportStatus | string |32 characters  | No | The status of the report to be deleted. If no status is provided, then all associated reports (in all statuses) will be deleted.
 
 <p><small><a href="#">Back to top</a></small></p>
 
-###  Get Subaward Report Contract JSON
+###  Get Subaward report Contract JSON
 
 * Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Field Length| Required | Description
 -----|-----------|--------|--------|------------
-contractData | JSON Array | NA|Yes|Information about the prime Contractor and the subaward report(s). If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract
+contractData | JSON Array | NA|Yes|Information about the prime Contractor and the Subaward report(s). If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract
 contractData Details| | | | 
 contractData.contractNumber | string | 50 characters  | Yes |If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank
 contractData.reportingAgencyCode | string | 32 characters  | Yes | The ID of the Federal awarding agency as from FPDS-NG
 contractData.idvReferenceNumber | string | 50 characters |Yes, if the report is for a Task Order on a Contract |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
 contractData.referenceAgencyCode | string | 32 characters  | Yes, if the idvReferenceNumber is provided | The ID of the Federal awarding agency associated with the IDV Reference Number
-contractData.subawardReportNumber | string |32 characters  | No | Number assigned by the Prime Contractor to track the subaward. This is returned as a part of the response for the Create, Update calls for the subaward report.
+contractData.subawardReportNumber | string |32 characters  | No | Number assigned by the Prime Contractor to track the subaward. This is returned as a part of the response for the Create, Update calls for the Subaward report.
 contractData.reportStatus | string |32 characters  | No | The status of the report to be retrieved.
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Get Subaward Report Grant JSON
+### Get Subaward report Grant JSON
 
 * Field headers in the table must match with field headers shown in JSON example  
 
 Name | Data Type | Field Length | Required | Description
 -----|-----------|----------------|------------|-------
-assistanceData | JSON Array  |   |Yes |Information about the prime Grantee and the subaward report(s). If the report is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
+assistanceData | JSON Array  |   |Yes |Information about the prime Grantee and the Subaward report(s). If the report is being submitted for multiple prime grants, then this array will have multiple elements, one for each of the prime Grant.
 assistanceData Details| | | | 
 primeFAIN | string  |255 characters |Yes | This is the Federal Award Identifier Number (FAIN) for the prime grant award.
-assistanceData.subawardReportNumber | string |32 characters  | No | Number assigned by the Prime Grantee to track the subaward. This is returned as a part of the response for the Create, Update calls for the subaward report.
+assistanceData.subawardReportNumber | string |32 characters  | No | Number assigned by the Prime Grantee to track the subaward. This is returned as a part of the response for the Create, Update calls for the Subaward report.
 assistanceData.reportStatus | string |32 characters  | No | The status of the report to be retrieved.
 
 <p><small><a href="#">Back to top</a></small></p>
