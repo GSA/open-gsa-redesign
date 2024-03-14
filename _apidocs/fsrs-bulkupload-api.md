@@ -1,19 +1,19 @@
 ---
-title: SAM.gov Subawards Reporting Bulk Upload API 
-banner-heading: SAM.gov Subawards Reporting Bulk Upload API
+title: SAM.gov Subaward Reporting Bulk Upload API 
+banner-heading: SAM.gov Subaward Reporting Bulk Upload API
 ---
 
 ## Overview 
 
 The API for Federal Funding Accountability and Transparency Act (FFATA) Reporting will allow Prime awardees (i.e. prime contractors and prime grants recipients) to report subaward and executive compensation data regarding their first-tier subawards to meet the FFATA reporting requirements. Using this API, the users will be able to file multiple subaward reports at once. 
 
-**Note:** The specifications on this page are for a future API.  Check back here or be in contact with IAE for the release date and testing session.
+**NOTE:** The specifications on this page are for a future API.  Check back here or be in contact with IAE for the release date and testing session.
 
 **API Version: v1.0**
 
 ## Getting Started
 
-Subawards Reporting Bulk Upload API can be accessed from Production or Alpha via the following endpoints:
+Subaward Reporting Bulk Upload API can be accessed from Production or Alpha via the following endpoints:
 
 * Production: https://api.sam.gov
 * Alpha: https://api-alpha.sam.gov
@@ -21,8 +21,8 @@ Subawards Reporting Bulk Upload API can be accessed from Production or Alpha via
 ### Authentication and Authorization
 
 To begin using this API, you will need to register for a System Account and obtain an API Key. After registration, you will need to provide this API key in the <i>x-api-key</i> HTTP header with every API request.
-* The SAM.gov non-federal registered users must request for a System Account. If their registration and request criteria are satisfied, then they will be provided with the System Accounts widget on their SAM.gov workspace.
-* The users will be able to access the System Accounts widget from their Workspace page after logging in. They can then select “New Account” by navigating from the widget and fill out the required sections and submit their System Account. When creating a System Account, users must specify the following to successfully utilize the Subawards API:
+* To request a System account wiht permission to use the Subaward APIs, the user must first create a user account in SAM.gov and request a "Non-Federal System Administrator" via FSD.
+* A user will be able to access the System Accounts widget from their Workspace page after logging in. They can then select “New Account” by navigating from the widget and fill out the required sections and submit their System Account. When creating a System Account, the user must specify the following to successfully utilize the Subaward API:
 	* System Information
    		** System Account Name: Unique name for the System Account
 	* Permissions
@@ -30,11 +30,13 @@ To begin using this API, you will need to register for a System Account and obta
 	* Security Information
 		** IP Address: List all the IP Addresses that the System invokes the API from.
 		** Type of Connection: REST APIs
-* The requested system account will then be sent for an approval. After approval, the user will be notified via an email and they will also be able to see the status of their request in the System Account widget.
+* The requested system account will be sent for approval. Upon approval, the user will be notified via an email and will be able to see the status of their request in the System Account widget.
+
+**NOTE:** If user does not have the “Non-Federal System Administrator” user role in SAM.gov, they will be able to request for a new system account, however, the user account will not have the permissions required to access the Subaward endpoints. Therefore, getting this user role is a prerequisite.
 
 #### Generating a System Account API Key
-In order to utilize the Subawards API endpoints, users will need to generate the System account API Key to make API calls.
-* Once the system account is approved as per the instructions above, the user can select “Go to System Accounts” in the widget from their workspace and enter a new system account password. 
+In order to utilize the Subaward API endpoints, users will need to generate the System account API Key to make API calls.
+* Once the system account is approved, as per the instructions above, the user can select “Go to System Accounts” in the widget from their workspace and enter a new system account password. 
 * After setting up the password for the system account, the user will see a new section for retrieving a system account API Key. The user must enter their password again to retrieve the API Key. 
 * This API Key will be used for all API calls as described in this documentation.
 
@@ -45,7 +47,7 @@ All REST API requests will be validated against the Type of Connection within th
 All REST API requests will be validated against the IP Addresses registered within the system account profile. All requests that are not from registered IP address(es) in the system account profile will be rejected with an error.
 
 #### User Account Authorization
-To be able to perform the various operations provided under the Subawards API, users will need to have a SAM.gov non-federal user account with either 'Admin' or 'Data Entry' role and 'Create/Edit/Delete Subaward Report' permission.
+To be able to perform the various operations provided under the Subaward API, users will need to have a SAM.gov non-federal user account with either 'Admin' or 'Data Entry' role and 'Create/Edit/Delete Subaward Report' permission.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -544,7 +546,7 @@ Authorization | header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Contract JSON](#submit-subaward-report-contract-json)
 
-Note: For update requests, the subawardReportNumber element in the request JSON structure will be required for each subaward report to be updated.
+NOTE: For update requests, the subawardReportNumber element in the request JSON structure will be required for each subaward report to be updated.
 
 #### Responses
 
@@ -761,7 +763,7 @@ Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit Subaward Report Grant JSON](#submit-subaward-report-grant-json)
 
-Note: For update requests, the subawardReportNumber element in the request JSON structure will be required for each subaward report to be updated.
+NOTE: For update requests, the subawardReportNumber element in the request JSON structure will be required for each subaward report to be updated.
 
 #### Responses
 
@@ -1195,7 +1197,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report was successfully retrieved | [Refer Get Subaward Report Contract JSON](#get-subaward-report-contract-json)
 
-Note: Will return JSON response same as POST Response JSON. The generated subawardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
+NOTE: Will return JSON response same as POST Response JSON. The generated subawardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1292,7 +1294,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200	|JSON|	Report was successfully retrieved | [Refer Submit Subaward Report Grant JSON](#submit-subaward-report-grant-json)
 
-Note: Will return JSON response same as POST response JSON. The generated subAwardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
+NOTE: Will return JSON response same as POST response JSON. The generated subAwardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1313,7 +1315,7 @@ reportStatus | string | Status of the subaward report.
 message | string | Message indicating status of the operation. Also includes any informative warning messages.
 errors | JSON Array | If there are validation errors, they are sent back as a part of this errors array.
 
-Note: To keep the user informed on the actions being done through the API, some descriptive messages will be sent back as a part of the "message" element. This will be done for the Create (POST) and Update (PUT) requests for Contracts. The scenarios when these informational messages will be provided are outlined below:
+NOTE: To keep the user informed on the actions being done through the API, some descriptive messages will be sent back as a part of the "message" element. This will be done for the Create (POST) and Update (PUT) requests for Contracts. The scenarios when these informational messages will be provided are outlined below:
 * When there are existing Subaward Reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date.
 * When there are existing Subaward Reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date submitted on the same date.
 * When there are existing Subaward Reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date submitted on the same date with the same Subaward amount.
@@ -2242,7 +2244,7 @@ Date | Version | Description
 --------- | --------------- | ---------
 07/15/2023 | v0.1 | Base Version
 10/12/2023 | v0.2 | Updates to GET calls and minor cosmetic changes
-11/10/2023 | v0.3 | Updates to remove FFATA and use Subawards
+11/10/2023 | v0.3 | Updates to remove FFATA and use Subaward
 03/06/2024 | v0.4 | Updates to align with new Data Model
 
 
