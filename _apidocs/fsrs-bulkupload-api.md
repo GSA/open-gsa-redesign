@@ -5,7 +5,7 @@ banner-heading: SAM.gov Subaward Reporting Bulk Upload API
 
 ## Overview 
 
-The API for Federal Funding Accountability and Transparency Act (FFATA) Reporting will allow Prime awardees (i.e. prime contractors and prime grants recipients) to report subaward and executive compensation data regarding their first-tier subawards to meet the FFATA reporting requirements. Using this API, the users will be able to file multiple subaward reports at once. 
+The API for Federal Funding Accountability and Transparency Act (FFATA) Reporting will allow Prime awardees (i.e. prime contractors and prime grants recipients) to report subaward and executive compensation data regarding their first-tier Subawards to meet the FFATA reporting requirements. Using this API, the users will be able to file multiple subaward reports at once. 
 
 **NOTE:** The specifications on this page are for a future API.  Check back here or be in contact with IAE for the release date and testing session.
 
@@ -58,12 +58,12 @@ To be able to perform the various operations provided under the Subaward API, a 
 
 #### Recovery Model Questions (Compensation Questions)
 
-To submit a Subaward Report, compensation questions for the Prime, as well as sub-awardee need to be responded to. The table below outlines the Compensation Questions and their corresponding codes to be used in the requests.
+To submit a Subaward Report, compensation questions for the Prime, as well as Subawardee will need to be responded to. The table below outlines the Compensation Questions and their corresponding codes to be used in the requests.
 
 |                                   | Code              | Description                                   |
 | ----------------- | ----------------- | --------------------------------------------- |
-| Sub-Awardee Question 1| __1__	            | As provided to you by your sub-awardee, in your sub-awardee's business or organization's preceding completed fiscal year, did its business or organization (the legal entity to which the UNIQUE ENTITY ID (SAM) number it provided belongs) receive (1) 80 percent or more of its annual gross revenues in U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements; and (2) $25,000,000 or more in annual gross revenues from U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements? |
-| Sub-Awardee Question 2| __2__	            | As provided to you by your sub-awardee, does the public have access to information about the compensation of the executives in the sub-awardee's business or organization (the legal entity to which the UNIQUE ENTITY ID (SAM) number it provided belongs) through periodic reports filed under section13(a) or 15(d) of the Securities Exchange Act of 1934 (15 U.S.C. 78m(a), 78o(d)) or section 6104 of the Internal Revenue Code of 1986?|
+| Subawardee Question 1| __1__	            | As provided to you by your Subawardee, in your Subawardee's business or organization's preceding completed fiscal year, did its business or organization (the legal entity to which the UNIQUE ENTITY ID (SAM) number it provided belongs) receive (1) 80 percent or more of its annual gross revenues in U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements; and (2) $25,000,000 or more in annual gross revenues from U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements? |
+| Subawardee Question 2| __2__	            | As provided to you by your Subawardee, does the public have access to information about the compensation of the executives in the Subawardee's business or organization (the legal entity to which the UNIQUE ENTITY ID (SAM) number it provided belongs) through periodic reports filed under section13(a) or 15(d) of the Securities Exchange Act of 1934 (15 U.S.C. 78m(a), 78o(d)) or section 6104 of the Internal Revenue Code of 1986?|
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -73,15 +73,15 @@ The table below lists the statuses for the Subaward Reports.
 
 Code | Value     | Description
 -----|-----------------|-----------------
-1     | Draft | This status is used when the report has been saved in the system but still need additional updates to pass all validation checks. Note that reports published from the User Interface of sam.gov may be in this status if the user has partially added the report data and needs to add more details before submitting the report.
-2     | Published | This status is used when the report has passed all validation checks and has been successfully published.
-3     | Reopened | This status is used when updates are needed for a report that is in published status. Until the report is published, and it has passed all validations, it will stay in this status.
-4     | Deleted | This status is used for reports that have been deleted by the user. Deleted reports will not be available for general view.
+1     | Draft | This status is used when the report has been saved in the system but still requires an additional update to pass all validation checks. NOTE: The reports saved from the User Interface of SAM.gov may also be in this status if the user has partially added the report data and needs to add more details before submitting the report.
+2     | Published | This status is used when the report has passed all validation checks and has been successfully published (submitted).
+3     | Reopened | This status is used when updates are needed for a report that is in "Published" status. Until the report has passed all validations and is published again, it will stay in this status.
+4     | Deleted | This status is used for reports that have been deleted by the user. NOTE: Deleted reports will not be available for general view.
 
 <p><small><a href="#">Back to top</a></small></p>
 
 ## GENC Standardization
-SAM.gov uses GENC Standardization of country and administrative data to ensure no countries or states are being inserted into SAM that are not correctly recognized by the United States. To ensure any country/state data that is input by the users through Subaward reporting meets these standards, validations will be run when receiving this data. Please refer to the error messages section for specific details for these errors.
+SAM.gov uses the "GENC Standardization" of country and administrative data to ensure there are no countries or states currently being inserted into SAM that are not correctly vetted and recognized by the United States. To ensure any country/state data entered by the Users through Subaward reporting meets the standard, validations will be run when receiving this data. Please refer to the error messages section for specific details for these errors.
 
 Refer : 
 https://geonames.nga.mil/geonames/GeographicNamesSearch/
@@ -90,15 +90,15 @@ API Fields
 
 Field Name | Data Source  | Valid Statuses  | Input Type
 ---------------|------------|----------|------------
-Country Code |  Country_Code MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active, Inactive (GET calls Only) | Three Character
+Country Code |  Country_Code MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active, Inactive (GET calls Only) | Three (3) characters
 Country Name |  Full_Name MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources |   | TEXT
-State | State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources   | Listed from the selected country | Two Character
+State | State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources   | Listed from the selected country | Two (2) characters
 
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Version Control
 
-v1 versions of APIs will be utilizing the API Key mechanism as outlined in this documentation. Future versions of APIs will be made available to support OAuth 2.0 as soon as possible. The documentation will be updated as soon as more information is available for the oAuth implementation.  
+All API v1 versions will utilize the API Key mechanism as outlined in this documentation. 
 
 ## FSRS Subaward Reporting Bulk Upload API Request and Responses
 
@@ -106,14 +106,14 @@ This API has 8 endpoints as outlined below.
 
 Endpoint Name | Short Description |
 -----|-----------------
-Submit Subaward Report (Contracts)     | Can be used to submit Subaward Reports for reporting on one or more Contracts.
-Submit Subaward Report (Grants)     | Can be used to submit Subaward Reports for reporting on one or more Grants.
-Update Subaward Report (Contracts)     | Can be used to update one or more previously published Subaward Reports for Contracts.
-Update Subaward Report (Grants)     | Can be used to update one or more previously published Subaward Reports for Grants.
-Delete Subaward Report (Contracts)     | Can be used to delete one or more previously published Subaward Reports for Contracts.
-Delete Subaward Report (Grants)     | Can be used to delete one or more previously published Subaward Reports for Grants.
-Get Subaward Report (Contracts)     | Can be used to get one or more previously published Subaward Reports for Contracts. 
-Get Subaward Report (Grants)     | Can be used to get one or more previously published Subaward Reports for Grants.
+Submit Subaward Report (Contracts)     | Used to submit Subaward Reports for reporting on one or more Contracts.
+Submit Subaward Report (Grants)     | Used to submit Subaward Reports for reporting on one or more Grants.
+Update Subaward Report (Contracts)     | Used to update one or more previously published Subaward Reports for Contracts.
+Update Subaward Report (Grants)     | Used to update one or more previously published Subaward Reports for Grants.
+Delete Subaward Report (Contracts)     | Used to delete one or more previously published Subaward Reports for Contracts.
+Delete Subaward Report (Grants)     | Used to delete one or more previously published Subaward Reports for Grants.
+Get Subaward Report (Contracts)     | Used to get one or more previously published Subaward Reports for Contracts. 
+Get Subaward Report (Grants)     | Used to get one or more previously published Subaward Reports for Grants.
 
 The following section describes each of the above endpoints in detail.
 
@@ -121,8 +121,8 @@ The following section describes each of the above endpoints in detail.
 
 ------- | ------- |
 **Request Type** | POST 
-**URL** | /acquisition/v1/subawards
-**Summary** | Using this endpoint, users will be able to submit one or multiple Subaward reports for Contracts
+**URL** | /acquisition/v1/Subawards
+**Summary** | A User will be able to submit one or multiple Subaward reports for Contracts using this endpoint
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -143,14 +143,15 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was created | As described below
 
-For each sub awardee in the request, the API will process the request as described. If the sub awardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward report for the sub awardee will be created and HTTP Status code 201 will be returned. If the sub awardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status. If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. See the [Response JSON](#response-json) section for the response structure and specific examples.
-
-The API will return other HTTP Status codes in case of any errors as specified in the [General Error Messages](#general-error-messages) section.
+The API will process each request as described for all Subawardees within the request. 
+* If the Subawardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward report for the Subawardee will be created and HTTP Status code 201 will be returned.
+* If the Subawardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status.
+* If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. (See the [Response JSON](#response-json) section for the response structure and specific examples.) The API will return other HTTP Status codes in case of any errors as specified in the [General Error Messages](#general-error-messages) section.
 
 #### Examples
 
 <details>
-<summary>Example: Submit Subaward Report for multiple Contracts and multiple subawards. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information for the subawardee is not mandatory to be provided.</summary>
+<summary>Example 1: Submit Subaward Report for multiple Contracts and multiple Subawards. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
 <p>
 <code><pre>
 {
@@ -285,7 +286,7 @@ The API will return other HTTP Status codes in case of any errors as specified i
 </details>
 
 <details>
-<summary>Example: Submit Subaward Report with minimal data. In this case, report will be saved in Draft status and validation errors will be sent back. </summary>
+<summary>Example 2: Submit Subaward Report with minimal data. In this case, the report will be saved in Draft status and validation errors will be sent back. </summary>
 <p>
 <code><pre>
 {
@@ -331,8 +332,8 @@ The API will return other HTTP Status codes in case of any errors as specified i
 
 ------- | -------
 **Request Type** | POST
-**URL** | /assistance/v1/subawards
-**Summary** | Using this endpoint, users will be able to submit one or multiple Subaward report for Grants
+**URL** | /assistance/v1/Subawards
+**Summary** | A user will be able to submit one or multiple Subaward report for Grants using this endpoint
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -352,14 +353,15 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 201 | string | Report was created | As described below
 
-For each sub awardee in the request, the API will process the request as described. If the sub awardee request passes all validations as specified in the General Error Messages section, the subaward report for the sub awardee will be created and HTTP Status code 201 will be returned. If the sub awardee request passes all validations as specified in the Validation Failure Error Messages section, then the report is saved in “Published” status. If any validations fail, then the report is saved in “Draft” status and the validation error messages are sent back as a part of the response body. See the [Response JSON](#response-json) section for the response structure and specific examples.
-
-The API will return other HTTP Status codes in case of any errors as specified in the General Error Messages section.
+The API will process each request as described for all Subawardees within the request. 
+* If the Subawardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward report for the Subawardee will be created and HTTP Status code 201 will be returned.
+* If the Subawardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status.
+* If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. (See the [Response JSON](#response-json) section for the response structure and specific examples.) The API will return other HTTP Status codes in case of any errors as specified in the [General Error Messages](#general-error-messages) section.
 
 #### Examples
 
 <details>
-<summary>Example: Submit Grant Subaward Report for multiple awards and multiple subawards. Example includes scenario when Top Pay Employees information for the subawardee is not mandatory to be provided.</summary>
+<summary>Example 1: Submit Grant Subaward Report for multiple awards and multiple Subawards. Example includes scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
 <p>
 <code><pre>
 {
@@ -491,7 +493,7 @@ The API will return other HTTP Status codes in case of any errors as specified i
 </details>
 
 <details>
-<summary>Example: Submit Subaward Grant Report with minimal data. In this case, report will be saved in Draft status and validation errors will be sent back. </summary>
+<summary>Example 2: Submit Subaward Grant Report with minimal data. In this case, the report will be saved in Draft status and validation errors will be sent back. </summary>
 <p>
 <code><pre>
 {
@@ -535,7 +537,7 @@ The API will return other HTTP Status codes in case of any errors as specified i
 
 ------- | -------
 **Request Type** | PUT
-**URL** | /acquisition/v1/subawards
+**URL** | /acquisition/v1/Subawards
 **Summary** | This endpoint can be used to update one or multiple previously published contracts report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -557,7 +559,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string |  Report successfully updated| As described below
 
-For each sub awardee in the request, the API will process the request as described. If the sub awardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward report will be updated successfully and HTTP Status code 200 will be returned. If the sub awardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status. If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below. 
+For each Subawardee in the request, the API will process the request as described. If the Subawardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the subaward report will be updated successfully and HTTP Status code 200 will be returned. If the Subawardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status. If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below. 
 	* If the updates are being performed on a "Draft" report, and there are validation failures, then the report stays in "Draft" status. If there are no validation failures, the report is updated to "Published" status.
  	* If the updates are being performed on a "Published" report, a new subawardReportNumber is assigned to the update request. If there are validation failures, then the report status is set to "Reopened". If there are no validation failures, the new subaward report moves to "Published" status and the previous "Published" report is archived.
   
@@ -567,7 +569,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 
 #### Examples: 
 <details>
-<summary>Example: Update Subaward Report for multiple Contracts and multiple subawards. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information is not mandatory to be provided.</summary>
+<summary>Example: Update Subaward Report for multiple Contracts and multiple Subawards. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information is not mandatory to be provided.</summary>
 <p>
 <code><pre>
 {
@@ -752,7 +754,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 
 ------- | -------
 **Request Type** | PUT
-**URL** | /assistance/v1/subawards
+**URL** | /assistance/v1/Subawards
 **Summary** | This endpoint can be used to update one or multiple previously published grants report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -774,7 +776,7 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report successfully updated | As described below
 
-For each sub awardee in the request, the API will process the request as described. If the sub awardee request passes all validations as specified in the General Error Messages section, the subaward report will be updated successfully and HTTP Status code 200 will be returned. If the sub awardee request passes all validations as specified in the Validation Failure Error Messages section, then the report is saved in “Published” status. If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below. * If the updates are being performed on a “Draft” report, and there are validation failures, then the report stays in “Draft” status. If there are no validation failures, the report is updated to “Published” status. * If the updates are being performed on a “Published” report, a new subawardReportNumber is assigned to the update request. If there are validation failures, then the report status is set to “Reopened”. If there are no validation failures, the new subaward report moves to “Published” status and the previous “Published” report is archived.
+For each Subawardee in the request, the API will process the request as described. If the Subawardee request passes all validations as specified in the General Error Messages section, the subaward report will be updated successfully and HTTP Status code 200 will be returned. If the Subawardee request passes all validations as specified in the Validation Failure Error Messages section, then the report is saved in “Published” status. If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below. * If the updates are being performed on a “Draft” report, and there are validation failures, then the report stays in “Draft” status. If there are no validation failures, the report is updated to “Published” status. * If the updates are being performed on a “Published” report, a new subawardReportNumber is assigned to the update request. If there are validation failures, then the report status is set to “Reopened”. If there are no validation failures, the new subaward report moves to “Published” status and the previous “Published” report is archived.
 
 See the [Response JSON](#response-json) section for the response structure and specific examples.
 
@@ -783,7 +785,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 #### Examples: 
 
 <details>
-<summary>Example: Update Grant Subaward Report for multiple awards and multiple subawards. Example includes scenario when Top Pay Employees information for the subawardee is not mandatory to be provided.</summary>
+<summary>Example: Update Grant Subaward Report for multiple awards and multiple Subawards. Example includes scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
 <p>
 <code><pre>
 {
@@ -963,7 +965,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /acquisition/v1/subawards
+**URL** | /acquisition/v1/Subawards
 **Summary** | This endpoint can be used to delete previously published contracts report(s)
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -1036,7 +1038,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /assistance/v1/subawards
+**URL** | /assistance/v1/Subawards
 **Summary** | This endpoint can be used to delete previously submitted grants report(s)
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
@@ -1108,7 +1110,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 ------- | -------
 **Request Type** | POST
-**URL** | /acquisition/v1/subawards/get
+**URL** | /acquisition/v1/Subawards/get
 **Summary** |  Using this endpoint, user will be able to retrieve specific contract reports based on the provided search criteria
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
@@ -1208,7 +1210,7 @@ NOTE: Will return JSON response same as POST Response JSON. The generated subawa
 
 ------- | -------
 **Request Type** | POST
-**URL** | /assistance/v1/subawards/get
+**URL** | /assistance/v1/Subawards/get
 **Summary** | Using this endpoint, user will be able to retrieve specific grant reports based on the provided search criteria
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -1979,23 +1981,23 @@ contractData.reportingAgencyCode | string | 32 characters  | Yes | The ID of the
 contractData.idvReferenceNumber | string | 50 characters |Yes, if the report is for a Task Order on a Contract |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
 contractData.referenceAgencyCode | string | 32 characters  | Yes, if the idvReferenceNumber is provided | The ID of the Federal awarding agency associated with the IDV Reference Number
 contractData.programTitle | string || No | Program or Project Title 
-contractData.subawardDataList |string  ||Yes  |Information about the sub Awardees. If the report is being submitted for multiple sub awardees, then this array will have multiple elements, one for each of the sub Awardee.
+contractData.subawardDataList |string  ||Yes  |Information about the Subawardees. If the report is being submitted for multiple Subawardees, then this array will have multiple elements, one for each of the Subawardee.
 contractData.subawardDataList Details | | | | 
 subawardDataList.subawardReportNumber | string | 13 characters | Yes, for an update request (PUT) to update a report. | The id of the subaward report. Will be blank/ignored for a POST request to create a subaward report. 
-subawardDataList.subawardUei | string | 13 characters | Yes | Sub Awardee UEI
+subawardDataList.subawardUei | string | 13 characters | Yes | Subawardee UEI
 subawardDataList.subawardNumber | string |32 characters  | Yes | Number assigned by the Prime Contractor to track this subaward
-subawardDataList.subawardAmount |string  |32 characters | Yes | Amount for this award to this sub Awardee 
+subawardDataList.subawardAmount |string  |32 characters | Yes | Amount for this award to this Subawardee 
 subawardDataList.subawardDate |string |TIMESTAMP | Yes| Date subaward was made in YYYY-MM-DD format
 subawardDataList.subawardDescription |string  || Yes | Describes the contract requirements. This is from FPDS.
-subawardDataList.placeOfPerformance | JSON Object |NA |Yes | Sub Awardee Principal Place of Performance
-subawardDataList.placeOfPerformance.city | string || Yes |Sub Awardee POP City Name
-subawardDataList.placeOfPerformance.state | JSON Object |NA |Yes|Sub Awardee POP State Information. The State Code and name need to be specified.
-subawardDataList.placeOfPerformance.state.code | string |||Sub Awardee POP State Code
-subawardDataList.placeOfPerformance.state.name | string ||  |Sub Awardee POP State Name
-subawardDataList.placeOfPerformance.country | JSON Object | NA |Yes|Sub Awardee POP Country Information. The Country Code and name need to be specified.
-subawardDataList.placeOfPerformance.country.code | string || |Sub Awardee POP Country Code
-subawardDataList.placeOfPerformance.country.name | string ||  |Sub Awardee POP Country Name
-subawardDataList.placeOfPerformance.zip | string ||Yes|Sub Awardee POP ZIP Code
+subawardDataList.placeOfPerformance | JSON Object |NA |Yes | Subawardee Principal Place of Performance
+subawardDataList.placeOfPerformance.city | string || Yes |Subawardee POP City Name
+subawardDataList.placeOfPerformance.state | JSON Object |NA |Yes|Subawardee POP State Information. The State Code and name need to be specified.
+subawardDataList.placeOfPerformance.state.code | string |||Subawardee POP State Code
+subawardDataList.placeOfPerformance.state.name | string ||  |Subawardee POP State Name
+subawardDataList.placeOfPerformance.country | JSON Object | NA |Yes|Subawardee POP Country Information. The Country Code and name need to be specified.
+subawardDataList.placeOfPerformance.country.code | string || |Subawardee POP Country Code
+subawardDataList.placeOfPerformance.country.name | string ||  |Subawardee POP Country Name
+subawardDataList.placeOfPerformance.zip | string ||Yes|Subawardee POP ZIP Code
 subawardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the sub contractor. | Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
 subawardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
 subawardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
@@ -2018,20 +2020,20 @@ assistanceData.eftIndicator | string | 10 characters | No |If your organization 
 assistanceData.subawardDataList |string  ||Yes  |Information about the sub Contractors. If the report is being submitted for multiple sub contracts, then this array will have multiple elements, one for each of the sub Contracts.
 assistanceData.subawardDataList Details | || | 
 subawardDataList.subAssistanceNumber | string  | 32 characters |Yes  | Number assigned by the Prime to track this sub Grant
-subawardDataList.uei |string | 13 characters | Yes | Sub Awardee UEI
-subawardDataList.eftIndicator | string | 10 characters | No |If the subawardee organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, this information will be picked up from the SAM registration. Otherwise, if applicable, you would note it here. 
+subawardDataList.uei |string | 13 characters | Yes | Subawardee UEI
+subawardDataList.eftIndicator | string | 10 characters | No |If the Subawardee organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, this information will be picked up from the SAM registration. Otherwise, if applicable, you would note it here. 
 subawardDataList.subAssistanceDollars |string  | 20 characters| Yes | Amount for this award to this sub award
 subawardDataList.subAssistanceObligationOrActionDate|string ||Yes |Date subaward was made in YYYY-MM-DD format 
 subawardDataList.overallDescription |string  |   | Yes |
 subawardDataList.placeOfPerformance | JSON Object ||Yes | Sub contractor Principal Place of Performance
-subawardDataList.placeOfPerformance.city | string || Yes |Sub Awardee POP City Name
-subawardDataList.placeOfPerformance.state | JSON Object ||Yes|Sub Awardee POP State Information. The State Code and name need to be specified.
-subawardDataList.placeOfPerformance.state.code | string |||Sub Awardee POP State Code
-subawardDataList.placeOfPerformance.state.name | string ||  |Sub Awardee POP State Name
-subawardDataList.placeOfPerformance.country | JSON Object ||Yes|Sub Awardee POP Country Information. The Country Code and name need to be specified.
-subawardDataList.placeOfPerformance.country.code | string || |Sub Awardee POP Country Code
-subawardDataList.placeOfPerformance.country.name | string ||  |Sub Awardee POP Country Name
-subawardDataList.placeOfPerformance.zip | string ||Yes|Sub Awardee POP ZIP Code
+subawardDataList.placeOfPerformance.city | string || Yes |Subawardee POP City Name
+subawardDataList.placeOfPerformance.state | JSON Object ||Yes|Subawardee POP State Information. The State Code and name need to be specified.
+subawardDataList.placeOfPerformance.state.code | string |||Subawardee POP State Code
+subawardDataList.placeOfPerformance.state.name | string ||  |Subawardee POP State Name
+subawardDataList.placeOfPerformance.country | JSON Object ||Yes|Subawardee POP Country Information. The Country Code and name need to be specified.
+subawardDataList.placeOfPerformance.country.code | string || |Subawardee POP Country Code
+subawardDataList.placeOfPerformance.country.name | string ||  |Subawardee POP Country Name
+subawardDataList.placeOfPerformance.zip | string ||Yes|Subawardee POP ZIP Code
 subawardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the sub contractor. | Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
 subawardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
 subawardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
@@ -2151,7 +2153,7 @@ Error codes may change depending on the error given; document will be updated ac
 
 HTTP Status Code|Field | Error Message | Reason/Description | Operation
 -----|------|---------------|--------------------|----------
-201|subawardDataList|	Invalid JSON format: At least one Sub-Awardee information is required for the reporting | At least one Sub-Awardee information is required for the reporting | submitSubawardReport(Contracts)
+201|subawardDataList|	Invalid JSON format: At least one Subawardee information is required for the reporting | At least one Subawardee information is required for the reporting | submitSubawardReport(Contracts)
 201|subawardDataList.subawardNumber|	Subaward number is required | Subaward number is required | submitSubawardReport(Contracts)
 201|subawardDataList.subawardNumber|	Subaward number should be unique across multiple elements of subawardDataList  | Subaward number should be unique across multiple elements of subawardDataList  | submitSubawardReport(Contracts)
 201|subawardDataList.subawardDollars |	Subaward Amount is required | Subaward Amount is required| submitSubawardReport(Contracts)
@@ -2160,7 +2162,7 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 201|subawardDataList.periodOfPerformanceStartDate | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubawardReport(Contracts)
 201|subawardDataList.periodOfPerformanceStartDate | The Subcontract Date cannot be in the future. | The Subcontract Date cannot be in the future. |  submitSubawardReport(Contracts)
 201|subawardDataList.uei  subAssistanceDataList.uei | Sub UNIQUE ENTITY ID # must be exactly 12 characters |	Sub UNIQUE ENTITY ID # must be exactly 12 characters  | submitSubawardReport(Contracts)
-201|subawardDataList.uei  subAssistanceDataList.uei |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov) |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov.) |	submitSubawardReport(Contracts)
+201|subawardDataList.uei  subAssistanceDataList.uei |	TBD(The Subawardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov) |	TBD(The Subawardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov.) |	submitSubawardReport(Contracts)
 201|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Subaward overall description is required. |	Subaward overall description is required. |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performace is required. |	Subaward Place of Performace is required. |	submitSubawardReport(Contracts and Grants)
@@ -2179,7 +2181,7 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 201|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.topPayEmployees.full_name | Sub topPayEmployees.full_name is required |Sub topPayEmployees.full_name is required |	submitSubawardReport(Contracts and Grants)
-201|subAssistanceDataList | At least one Sub-Awardee information is required for the reporting |At least one Sub-Awardee information is required for the reporting |	submitSubawardReport(Grants)
+201|subAssistanceDataList | At least one Subawardee information is required for the reporting |At least one Subawardee information is required for the reporting |	submitSubawardReport(Grants)
 201|subAssistanceDataList.subAssistanceNumber | Subaward number is required |Subaward number is required |	submitSubawardReport(Grants)
 201|subAssistanceDataList.subAssistanceNumber| Subaward number should be unique across multiple elements of subawardDataList  |Subaward number should be unique across multiple elements of subawardDataList |	submitSubawardReport(Grants)
 201|subAssistanceDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | submitSubawardReport(Grants)
@@ -2190,9 +2192,9 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 200|recovery_model_questions |	Responses to Compensation Questions were not found under SAM registration for the UEI <UEI Number>. Please provide the responses to the compensation questions under recovery_model_questions JSON element |Responses to compensation questions are required  if they are not available for the Prime Entity's SAM registration| updateSubawardReport(Contracts and Grants)
 200|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required if responses to compensation questions is provided|updateSubawardReport(Contracts and Grants)
 200|recovery_model_questions |Since you responded true to the first compensation question, a response for the second compensation question is required.|	Compensation Q2 code and response are required	| updateSubawardReport(Contracts and Grants)
-200|recovery_model_questions |An incorrect compensation question code was provided for the Prime/Sub Awardee. Please refer to the Lookup table information for the correct codes to use.| Compensation question code provided did not match expected codes |	updateSubawardReport(Contracts and Grants)
+200|recovery_model_questions |An incorrect compensation question code was provided for the Prime/Subawardee. Please refer to the Lookup table information for the correct codes to use.| Compensation question code provided did not match expected codes |	updateSubawardReport(Contracts and Grants)
 200|recovery_model_questions |	Compensation question isSelected value can only be true or false | Compensation question isSelected value can only be true or false | updateSubawardReport(Contracts and Grants)
-200|subawardDataList|	Invalid JSON format: At least one Sub-Awardee information is required for the reporting | At least one Sub-Awardee information is required for the reporting | updateSubawardReport(Contracts)
+200|subawardDataList|	Invalid JSON format: At least one Subawardee information is required for the reporting | At least one Subawardee information is required for the reporting | updateSubawardReport(Contracts)
 200|subawardDataList.subawardNumber|	Subaward number is required | Subaward number is required | updateSubawardReport(Contracts)
 200|subawardDataList.subawardNumber|	Subaward number should be unique across multiple elements of subawardDataList  | Subaward number should be unique across multiple elements of subawardDataList  | updateSubawardReport(Contracts)
 200|subawardDataList.subawardDollars |	Subaward Amount is required | Subaward Amount is requiredn| updateSubawardReport(Contracts)
@@ -2201,7 +2203,7 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 200|subawardDataList.periodOfPerformanceStartDate | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubawardReport(Contracts)
 200|subawardDataList.periodOfPerformanceStartDate | The Subcontract Date cannot be in the future. | The Subcontract Date cannot be in the future. |  updateSubawardReport(Contracts)
 200|subawardDataList.uei  subAssistanceDataList.uei | Sub UNIQUE ENTITY ID # must be exactly 12 characters |	Sub UNIQUE ENTITY ID # must be exactly 12 characters  | updateSubawardReport(Contracts)
-200|subawardDataList.uei  subAssistanceDataList.uei |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov) |	TBD(The Sub Awardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov.) |	updateSubawardReport(Contracts)
+200|subawardDataList.uei  subAssistanceDataList.uei |	TBD(The Subawardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov) |	TBD(The Subawardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov.) |	updateSubawardReport(Contracts)
 200|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Subaward overall description is required. |	Subaward overall description is required. |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performace is required. |	Subaward Place of Performace is required. |	updateSubawardReport(Contracts and Grants)
@@ -2220,7 +2222,7 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 200|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.topPayEmployees.full_name | Sub topPayEmployees.full_name is required |Sub topPayEmployees.full_name is required |	updateSubawardReport(Contracts and Grants)
-200|subAssistanceDataList | At least one Sub-Awardee information is required for the reporting |At least one Sub-Awardee information is required for the reporting |	updateSubawardReport(Grants)
+200|subAssistanceDataList | At least one Subawardee information is required for the reporting |At least one Subawardee information is required for the reporting |	updateSubawardReport(Grants)
 200|subAssistanceDataList.subAssistanceNumber | Subaward number is required |Subaward number is required |	updateSubawardReport(Grants)
 200|subAssistanceDataList.subAssistanceNumber| Subaward number should be unique across multiple elements of subawardDataList  |Subaward number should be unique across multiple elements of subawardDataList |	updateSubawardReport(Grants)
 200|subAssistanceDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | updateSubawardReport(Grants)
