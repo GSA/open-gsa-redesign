@@ -15,8 +15,8 @@ The API for Federal Funding Accountability and Transparency Act (FFATA) Reportin
 
 Subaward reporting Bulk Upload API can be accessed from Production or Alpha via the following endpoints:
 
-* Production: https://api.sam.gov
-* Alpha: https://api-alpha.sam.gov
+* Production: https://api.SAM.gov
+* Alpha: https://api-alpha.SAM.gov
 
 ### Authentication and Authorization
 
@@ -1323,24 +1323,24 @@ Response Element | Response Type | Description
  _ | JSON Array | One element for each Subaward report in request
 id | string | For a contract report, it is the concatenated values of contractNumber, reportingAgency, idvRefrenceNumber, referenceAgencyCode, subawardNumber, subawardDate, subawardAmount and submittedDate separated by ':'. For a Grant report, it is the concatenated value of fainNumber, subawardNumber, subawardDate, subawardAmount and submittedDate separated by ':'. For a GET or DELETE request, if the request is unsuccessful, then it is the concatenated value of the search parameters separated by ":".
 statusCode | string | The Http Status code for the Subaward report element
-transactionId | string | Internal id that sam.gov support team can use to trace issues. Users can provide this to support team in case of any issues with their request
+transactionId | string | Internal id that SAM.gov support team can use to trace issues. Users can provide this to support team in case of any issues with their request
 timeStamp | string | Date and time when the request was processed
 subawardReportNumber | string | Unique identifier for the Subaward report. This id can be used for any subsequent update/delete calls
 reportStatus | string | Status of the Subaward report. 
 message | string | Message indicating status of the operation. Also includes any informative warning messages.
 errors | JSON Array | If there are validation errors, they are sent back as a part of this errors array.
 
-NOTE: To keep the user informed on the actions being done through the API, some descriptive messages will be sent back as a part of the "message" element. This will be done for the Create (POST) and Update (PUT) requests for Contracts. The scenarios when these informational messages will be provided are outlined below:
+NOTE: In an effort to keep the user informed on the actions performed through the API, some descriptive messages will be sent back as a part of the "message" element. This will be done for the Create (POST) and Update (PUT) requests for Contracts. The scenarios when these informational messages will be provided are outlined below:
 * When there are existing Subaward reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date.
 * When there are existing Subaward reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date submitted on the same date.
 * When there are existing Subaward reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date submitted on the same date with the same Subaward amount.
-* When the Date of the Subaward provided matches the Date of the Subcontract of the previous Subaward report.
+* When the Date of the Subaward provided matches the Date of the Subaward of the previous Subaward report.
 * When the Subaward Amount provided matches the Subaward Amount of the previous Subaward report.
 * When the Subaward Amount provided is greater than the total contract value.
 
 #### Examples (Contracts)
 <details>
-<summary>Example: Contracts: Create (POST) request for three Subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, and third could not be created. </summary>
+<summary>Example 1: Contracts: Create (POST) request for three Subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, and third could not be created. </summary>
 <p>
 <code><pre>
 [
@@ -1385,7 +1385,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Contracts: Update (PUT) request for four Subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, third was saved in Reopened status since a Published version already exists for the subawardReportNumber, and fourth report could not be updated. </summary>
+<summary>Example 2: Contracts: Update (PUT) request for four Subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, third was saved in Reopened status since a Published version already exists for the subawardReportNumber, and fourth report could not be updated. </summary>
 <p>
 <code><pre>
 [
@@ -1442,7 +1442,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Contracts: Delete (DELETE) request for a Subaward report when only the subawardReportNumber was provided, Published and Reopened reports existed and both were deleted successfully. One element is returned for each deleted report. </summary>
+<summary>Example 3: Contracts: Delete (DELETE) request for a Subaward report when only the subawardReportNumber was provided, Published and Reopened reports existed and both were deleted successfully. One element is returned for each deleted report. </summary>
 <p>
 <code><pre>
 [
@@ -1472,7 +1472,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Contracts: Delete (DELETE) request for two Subaward reports. First was a Draft report that was successfully Deleted, and second delete request was not successful. </summary>
+<summary>Example 4: Contracts: Delete (DELETE) request for two Subaward reports. First was a Draft report that was successfully Deleted, and second delete request was not successful. </summary>
 <p>
 <code><pre>
 [
@@ -1502,7 +1502,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Contracts: Get (POST) request for a contract with 2 Subaward reports, when the request is successful. One element is returned for each Subaward report.</summary>
+<summary>Example 5: Contracts: Get (POST) request for a contract with 2 Subaward reports, when the request is successful. One element is returned for each Subaward report.</summary>
 <p>
 <code><pre>
 [
@@ -1634,7 +1634,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Contracts: Get (POST) request for a contract with 2 Subaward reports, when the request is not successful for both for different reasons. One element is returned for each Subaward report.</summary>
+<summary>Example 6: Contracts: Get (POST) request for a contract with 2 Subaward reports, when the request is not successful for both for different reasons. One element is returned for each Subaward report.</summary>
 <p>
 <code><pre>
 [
@@ -1663,7 +1663,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 
 #### Examples (Grants)
 <details>
-<summary>Example: Grants: Create (POST) request for three Subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, and third could not be created. </summary>
+<summary>Example 1: Grants: Create (POST) request for three Subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, and third could not be created. </summary>
 <p>
 <code><pre>
 [
@@ -1708,7 +1708,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Grants: Update (PUT) request for four Subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, third was saved in Reopened status since a Published version already exists for the subawardReportNumber, and fourth report could not be updated. </summary>
+<summary>Example 2: Grants: Update (PUT) request for four Subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, third was saved in Reopened status since a Published version already exists for the subawardReportNumber, and fourth report could not be updated. </summary>
 <p>
 <code><pre>
 [
@@ -1765,7 +1765,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Grants: Delete (DELETE) request for a Subaward report when only the subawardReportNumber was provided, Published and Reopened reports existed and both were deleted successfully. One element is returned for each deleted report. </summary>
+<summary>Example 3: Grants: Delete (DELETE) request for a Subaward report when only the subawardReportNumber was provided, Published and Reopened reports existed and both were deleted successfully. One element is returned for each deleted report. </summary>
 <p>
 <code><pre>
 [
@@ -1795,7 +1795,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Grants: Delete (DELETE) request for two Subaward reports. First was a Draft report that was successfully Deleted, and second delete request was not successful. </summary>
+<summary>Example 4: Grants: Delete (DELETE) request for two Subaward reports. First was a Draft report that was successfully Deleted, and second delete request was not successful. </summary>
 <p>
 <code><pre>
 [
@@ -1825,7 +1825,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Grants: Get (POST) request for a contract with 2 Subaward reports, when the request is successful. One element is returned for each Subaward report.</summary>
+<summary>Example 5: Grants: Get (POST) request for a contract with 2 Subaward reports, when the request is successful. One element is returned for each Subaward report.</summary>
 <p>
 <code><pre>
 [
@@ -1949,7 +1949,7 @@ NOTE: To keep the user informed on the actions being done through the API, some 
 </details>
 
 <details>
-<summary>Example: Grants: Get (POST) request for a contract with 2 Subaward reports, when the request is not successful for both for different reasons. One element is returned for each Subaward report.</summary>
+<summary>Example 6: Grants: Get (POST) request for a contract with 2 Subaward reports, when the request is not successful for both for different reasons. One element is returned for each Subaward report.</summary>
 <p>
 <code><pre>
 [
@@ -1998,8 +1998,8 @@ subawardDataList.subawardUei | string | 13 characters | Yes | Subawardee UEI
 subawardDataList.subawardNumber | string |32 characters  | Yes | Number assigned by the Prime Contractor to track this subaward
 subawardDataList.subawardAmount |string  |32 characters | Yes | Amount for this award to this Subawardee 
 subawardDataList.subawardDate |string |TIMESTAMP | Yes| Date subaward was made in YYYY-MM-DD format
-subawardDataList.subawardDescription |string  || Yes | Describes the contract requirements. This is from FPDS.
-subawardDataList.placeOfPerformance | JSON Object |NA |Yes | Subawardee Principal Place of Performance
+subawardDataList.subawardDescription |string  || Yes | Describes the Subaward requirements. This is from FPDS.
+subawardDataList.placeOfPerformance | JSON Object |NA |Yes | Subawardee Principal Place of Performance (POP)
 subawardDataList.placeOfPerformance.city | string || Yes |Subawardee POP City Name
 subawardDataList.placeOfPerformance.state | JSON Object |NA |Yes|Subawardee POP State Information. The State Code and name need to be specified.
 subawardDataList.placeOfPerformance.state.code | string |||Subawardee POP State Code
@@ -2008,7 +2008,7 @@ subawardDataList.placeOfPerformance.country | JSON Object | NA |Yes|Subawardee P
 subawardDataList.placeOfPerformance.country.code | string || |Subawardee POP Country Code
 subawardDataList.placeOfPerformance.country.name | string ||  |Subawardee POP Country Name
 subawardDataList.placeOfPerformance.zip | string ||Yes|Subawardee POP ZIP Code
-subawardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the sub contractor. | Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
+subawardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the Subawardee. | Array of Compensation questions for the Subawardee. There will be 2 questions, and therefore 2 elements in this array
 subawardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
 subawardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
 subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the Array requires 5 elements| This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if response to compensation question 1 is true and compensation question 2 is false. If the responses to the compensation questions are already provided with the SAM registration for this entity, then this information is not required to be provided.
@@ -2027,15 +2027,15 @@ assistanceData | JSON Array | NA| Yes | Information about the prime Grantor. If 
 assistanceData Details||||
 assistanceData.primeFAIN | string |  255 characters | Yes | This is the Federal Award Identifier Number (FAIN) for the prime grant award. 
 assistanceData.eftIndicator | string | 10 characters | No |If your organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, this information will be picked up from the SAM registration. Otherwise, if applicable, you would note it here. 
-assistanceData.subawardDataList |string  ||Yes  |Information about the sub Contractors. If the report is being submitted for multiple sub contracts, then this array will have multiple elements, one for each of the sub Contracts.
+assistanceData.subawardDataList |string  ||Yes  |Information about the sub Contractors. If the report is being submitted for multiple Subawards, then this array will have multiple elements, one for each of the sub Contracts.
 assistanceData.subawardDataList Details | || | 
 subawardDataList.subAssistanceNumber | string  | 32 characters |Yes  | Number assigned by the Prime to track this sub Grant
 subawardDataList.uei |string | 13 characters | Yes | Subawardee UEI
 subawardDataList.eftIndicator | string | 10 characters | No |If the Subawardee organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, this information will be picked up from the SAM registration. Otherwise, if applicable, you would note it here. 
-subawardDataList.subAssistanceDollars |string  | 20 characters| Yes | Amount for this award to this sub award
+subawardDataList.subAssistanceDollars |string  | 20 characters| Yes | Amount for this award to this Subaward
 subawardDataList.subAssistanceObligationOrActionDate|string ||Yes |Date subaward was made in YYYY-MM-DD format 
 subawardDataList.overallDescription |string  |   | Yes |
-subawardDataList.placeOfPerformance | JSON Object ||Yes | Sub contractor Principal Place of Performance
+subawardDataList.placeOfPerformance | JSON Object ||Yes | SubAwardee Principal Place of Performance (POP)
 subawardDataList.placeOfPerformance.city | string || Yes |Subawardee POP City Name
 subawardDataList.placeOfPerformance.state | JSON Object ||Yes|Subawardee POP State Information. The State Code and name need to be specified.
 subawardDataList.placeOfPerformance.state.code | string |||Subawardee POP State Code
@@ -2044,7 +2044,7 @@ subawardDataList.placeOfPerformance.country | JSON Object ||Yes|Subawardee POP C
 subawardDataList.placeOfPerformance.country.code | string || |Subawardee POP Country Code
 subawardDataList.placeOfPerformance.country.name | string ||  |Subawardee POP Country Name
 subawardDataList.placeOfPerformance.zip | string ||Yes|Subawardee POP ZIP Code
-subawardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the sub contractor. | Array of Compensation questions for the sub contract. There will be 2 questions, and therefore 2 elements in this array
+subawardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the Subawardee. | Array of Compensation questions for the Subawardee. There will be 2 questions, and therefore 2 elements in this array
 subawardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
 subawardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
 subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the Array requires 5 elements| This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if response to compensation question 1 is true and compensation question 2 is false. If the responses to the compensation questions are already provided with the SAM registration for this entity, then this information is not required to be provided.
@@ -2120,9 +2120,9 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ### General Error Messages
 
-The following error messages may be returned as part of the response to various web service calls; these errors are not specific to one method and may apply to more than one.
+The following error messages will be returned as part of the response to various web service calls; these errors are not specific to one method and may apply to more than one error.
 
-Error codes may change depending on the error given; document will be updated accordingly.
+NOTE: Error codes may change depending on an error given; in such a case the document will update accordingly.
 
 Error Code |	Error Message	| Reason/Description | Operation |
 ---------- | ------------- | ------------------ | --------- |
@@ -2134,19 +2134,19 @@ Error Code |	Error Message	| Reason/Description | Operation |
 501	|	Invalid request	|	Not Implemented	|	All |
 400	|	Error processing the request	|	Invalid JSON format provided	|	All |
 400	|	Invalid JSON structure. assistanceData is required	|	The assistanceData element is required in the request body.	|	submitSubawardReport,updateSubawardReport(Grants) |
-400	|	Invalid JSON structure: At least one contractData is required for contract reporting.	|	Request Body JSON structure is invalid. At least one contractData.contractData element is required for contract reporting	|	All (Contracts) |
+400	|	Invalid JSON structure: At least one contractData is required for Subaward reporting.	|	Request Body JSON structure is invalid. At least one contractData.contractData element is required for Subaward reporting	|	All (Contracts) |
 400	|	Invalid JSON structure: At least one assistanceData is required for grant reporting.	|	Request Body JSON structure is invalid. At least one assistanceData element is required for  grant reporting	|	submitSubawardReport,updateSubawardReport(Grants) |
 400	|	Ensure that the FAIN Number is correct. No matching Grant found for the provided FAIN number	|	As provided in assistanceData.primeFAIN, FAIN Number not found	|	submitSubawardReport,updateSubawardReport(Grants) |
 400	|	Could not find a record matching the contractNumber and reportingAgencyCode provided	|	No record found for the Contract Number and Reporting Agency Code combination (Combination of contractData.contractNumber and contractData.reportingAgencyCode in the Request Body).	|	submitSubawardReport ,updateSubawardReport(Contracts) |
-400	|	Could not find a record associating the IDV reference number with the Contract number	|	IDV Reference Number not found associated with the Contract Number (Combination of contractData.contractData.contractNumber and contractData.contractData.idvReferenceNumber)	|	submitSubawardReport ,updateSubawardReport(Contracts) |
+400	|	Could not find a record associating the IDV reference number with the Contract number	|	IDV Reference Number not found associated with the Contract Number (Combination of contractData.contractNumber and contractData.idvReferenceNumber)	|	submitSubawardReport ,updateSubawardReport(Contracts) |
 400	|	Please specify the idvReferenceNumber to correctly identify the contract being reported on	|	User needs to specify the idvReferenceNumber to correctly identify the record as multiple records were found for the contractNumber and reportingAgency combination	|	submitSubawardReport(Contracts) |
 400	|	Cannot update. A Subaward report for the specified subawardReportNumber does not exist.	|	No Report found for the specified subawardReportNumber. |	updateSubawardReport(Contracts, Grants) |
 400	|	Contract Number is required for Prime Entity	|	contractData.contractNumber was not provided.	|	submitSubawardReport ,updateSubawardReport(Contracts) |
 400	|	Please provide the Federal awarding Agency Code	|	contractData.reportingAgencyCode is a required field.	|	submitSubawardReport ,updateSubawardReport(Contracts) |
 400	|	Please provide the correct format for the Federal awarding Agency Code	|	contractData.reportingAgencyCode provided is invalid.	|	submitSubawardReport ,updateSubawardReport(Contracts) |
-400	|	At least one contractData element is required for the contract reporting	|	At least one contractData element is required for the contract reporting	|	getSubawardReport(Contracts) |
+400	|	At least one contractData element is required for the Subaward reporting	|	At least one contractData element is required for the Subaward reporting	|	getSubawardReport(Contracts) |
 400	|	At least one assistanceData element is required for the grant reporting	|	At least one assistanceData element is required for the grant reporting	|	getSubawardReport(Grants) |
-400	|	Sub contractor UNIQUE ENTITY ID # is required	|	Sub contractor UNIQUE ENTITY ID # is required	|	submitSubawardReport ,updateSubawardReport(Contracts and Grants) |
+400	|	Subawardee UNIQUE ENTITY ID # is required	|	Subawardee UNIQUE ENTITY ID # is required	|	submitSubawardReport ,updateSubawardReport(Contracts and Grants) |
 400	|	At least one search criteria needs to be specified. One of contractNumber, reportingAgencyCode, idvReferenceNumber, referenceAgencyCode, subawardNumber,subawardReportNumber	|	contractNumber, reportingAgencyCode, idvReferenceNumber, referenceAgencyCode, subawardNumber and subawardReportNumber are missing for at least one element in the request	|	getSubawardReport(Contracts and Grants) |
 400	|	At least one search criteria needs to be specified. |	Search Criteria are missing for at least one element in the request.	|	getSubawardReport(Contracts and Grants) |
 400	|	At least one contractData element is required for deleting	|	At least one contractData element is required for deleting	|	deleteSubawardReport(Contracts) |
@@ -2168,14 +2168,14 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 201|subawardDataList.subawardNumber|	Subaward number should be unique across multiple elements of subawardDataList  | Subaward number should be unique across multiple elements of subawardDataList  | submitSubawardReport(Contracts)
 201|subawardDataList.subawardDollars |	Subaward Amount is required | Subaward Amount is required| submitSubawardReport(Contracts)
 201|subawardDataList.subawardDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)s| submitSubawardReport(Contracts)
-201|subawardDataList.periodOfPerformanceStartDate | Subcontract Date is required | Subcontract Date is required | submitSubawardReport(Contracts)
-201|subawardDataList.periodOfPerformanceStartDate | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubawardReport(Contracts)
-201|subawardDataList.periodOfPerformanceStartDate | The Subcontract Date cannot be in the future. | The Subcontract Date cannot be in the future. |  submitSubawardReport(Contracts)
+201|subawardDataList.periodOfPerformanceStartDate | Subaward Date is required | Subaward Date is required | submitSubawardReport(Contracts)
+201|subawardDataList.periodOfPerformanceStartDate | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubawardReport(Contracts)
+201|subawardDataList.periodOfPerformanceStartDate | The Subaward Date cannot be in the future. | The Subaward Date cannot be in the future. |  submitSubawardReport(Contracts)
 201|subawardDataList.uei  subAssistanceDataList.uei | Sub UNIQUE ENTITY ID # must be exactly 12 characters |	Sub UNIQUE ENTITY ID # must be exactly 12 characters  | submitSubawardReport(Contracts)
 201|subawardDataList.uei  subAssistanceDataList.uei |	TBD(The Subawardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov) |	TBD(The Subawardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov.) |	submitSubawardReport(Contracts)
 201|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Subaward overall description is required. |	Subaward overall description is required. |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	submitSubawardReport(Contracts and Grants)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performace is required. |	Subaward Place of Performace is required. |	submitSubawardReport(Contracts and Grants)
+201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance is required. |	Subaward Place of Performance is required. |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - Country is required |	Subaward Place of Performance Section - Country is required | submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - ZIP Code cannot exceed 20 characters |	Subaward Place of Performance Section - ZIP Code cannot exceed 20 characters | submitSubawardReport(Contracts and Grants
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - Country is required |	Only for US addresses: Subaward Place of Performance Section - Country is required |  submitSubawardReport(Contracts and Grants)
@@ -2187,7 +2187,7 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - ZIP is required | Only for US addresses: Subaward Place of Performance Section - ZIP is required |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - ZIP provided is invalid |	Only for US addresses: Subaward Place of Performance Section - ZIP provided is invalid |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | submitSubawardReport(Contracts and Grants)
-201|subawardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - fullname and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	submitSubawardReport(Contracts and Grants)
+201|subawardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - full name and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.topPayEmployees.full_name | Sub topPayEmployees.full_name is required |Sub topPayEmployees.full_name is required |	submitSubawardReport(Contracts and Grants)
@@ -2196,9 +2196,9 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 201|subAssistanceDataList.subAssistanceNumber| Subaward number should be unique across multiple elements of subawardDataList  |Subaward number should be unique across multiple elements of subawardDataList |	submitSubawardReport(Grants)
 201|subAssistanceDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | submitSubawardReport(Grants)
 201|subAssistanceDataList.subAssistanceDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | submitSubawardReport(Grants)
-201|subAssistanceDataList.subAssistanceObligationOrActionDate |	Subcontract Date is required | Subcontract Date is required| submitSubawardReport(Grants)
-201|subAssistanceDataList.subAssistanceObligationOrActionDate |	Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubawardReport(Grants)
-201|subAssistanceDataList.subAssistanceObligationOrActionDate |	The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | submitSubawardReport(Grants)
+201|subAssistanceDataList.subAssistanceObligationOrActionDate |	Subaward Date is required | Subaward Date is required| submitSubawardReport(Grants)
+201|subAssistanceDataList.subAssistanceObligationOrActionDate |	Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubawardReport(Grants)
+201|subAssistanceDataList.subAssistanceObligationOrActionDate |	The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | submitSubawardReport(Grants)
 200|recovery_model_questions |	Responses to Compensation Questions were not found under SAM registration for the UEI <UEI Number>. Please provide the responses to the compensation questions under recovery_model_questions JSON element |Responses to compensation questions are required  if they are not available for the Prime Entity's SAM registration| updateSubawardReport(Contracts and Grants)
 200|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required if responses to compensation questions is provided|updateSubawardReport(Contracts and Grants)
 200|recovery_model_questions |Since you responded true to the first compensation question, a response for the second compensation question is required.|	Compensation Q2 code and response are required	| updateSubawardReport(Contracts and Grants)
@@ -2209,14 +2209,14 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 200|subawardDataList.subawardNumber|	Subaward number should be unique across multiple elements of subawardDataList  | Subaward number should be unique across multiple elements of subawardDataList  | updateSubawardReport(Contracts)
 200|subawardDataList.subawardDollars |	Subaward Amount is required | Subaward Amount is requiredn| updateSubawardReport(Contracts)
 200|subawardDataList.subawardDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)s| updateSubawardReport(Contracts)
-200|subawardDataList.periodOfPerformanceStartDate | Subcontract Date is required | Subcontract Date is required | updateSubawardReport(Contracts)
-200|subawardDataList.periodOfPerformanceStartDate | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subcontract for subcontractor:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubawardReport(Contracts)
-200|subawardDataList.periodOfPerformanceStartDate | The Subcontract Date cannot be in the future. | The Subcontract Date cannot be in the future. |  updateSubawardReport(Contracts)
+200|subawardDataList.periodOfPerformanceStartDate | Subaward Date is required | Subaward Date is required | updateSubawardReport(Contracts)
+200|subawardDataList.periodOfPerformanceStartDate | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubawardReport(Contracts)
+200|subawardDataList.periodOfPerformanceStartDate | The Subaward Date cannot be in the future. | The Subaward Date cannot be in the future. |  updateSubawardReport(Contracts)
 200|subawardDataList.uei  subAssistanceDataList.uei | Sub UNIQUE ENTITY ID # must be exactly 12 characters |	Sub UNIQUE ENTITY ID # must be exactly 12 characters  | updateSubawardReport(Contracts)
 200|subawardDataList.uei  subAssistanceDataList.uei |	TBD(The Subawardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov) |	TBD(The Subawardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov.) |	updateSubawardReport(Contracts)
 200|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Subaward overall description is required. |	Subaward overall description is required. |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	updateSubawardReport(Contracts and Grants)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performace is required. |	Subaward Place of Performace is required. |	updateSubawardReport(Contracts and Grants)
+200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance is required. |	Subaward Place of Performance is required. |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - Country is required |	Subaward Place of Performance Section - Country is required | updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - ZIP Code cannot exceed 20 characters |	Subaward Place of Performance Section - ZIP Code cannot exceed 20 characters | updateSubawardReport(Contracts and Grants
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - Country is required |	Only for US addresses: Subaward Place of Performance Section - Country is required |  updateSubawardReport(Contracts and Grants)
@@ -2228,7 +2228,7 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - ZIP is required | Only for US addresses: Subaward Place of Performance Section - ZIP is required |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - ZIP provided is invalid |	Only for US addresses: Subaward Place of Performance Section - ZIP provided is invalid |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | updateSubawardReport(Contracts and Grants)
-200|subawardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - fullname and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	updateSubawardReport(Contracts and Grants)
+200|subawardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - full name and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.topPayEmployees.full_name | Sub topPayEmployees.full_name is required |Sub topPayEmployees.full_name is required |	updateSubawardReport(Contracts and Grants)
@@ -2237,9 +2237,9 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation
 200|subAssistanceDataList.subAssistanceNumber| Subaward number should be unique across multiple elements of subawardDataList  |Subaward number should be unique across multiple elements of subawardDataList |	updateSubawardReport(Grants)
 200|subAssistanceDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | updateSubawardReport(Grants)
 200|subAssistanceDataList.subAssistanceDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | updateSubawardReport(Grants)
-200|subAssistanceDataList.subAssistanceObligationOrActionDate |	Subcontract Date is required | Subcontract Date is required| updateSubawardReport(Grants)
-200|subAssistanceDataList.subAssistanceObligationOrActionDate |	Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subcontract for subAssistance: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubawardReport(Grants)
-200|subAssistanceDataList.subAssistanceObligationOrActionDate |	The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subcontract Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | updateSubawardReport(Grants)
+200|subAssistanceDataList.subAssistanceObligationOrActionDate |	Subaward Date is required | Subaward Date is required| updateSubawardReport(Grants)
+200|subAssistanceDataList.subAssistanceObligationOrActionDate |	Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubawardReport(Grants)
+200|subAssistanceDataList.subAssistanceObligationOrActionDate |	The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | updateSubawardReport(Grants)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -2249,7 +2249,7 @@ TBD
 
 ## Contact Us
 
-* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov)
+* A User can reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 <p><small><a href="#">Back to top</a></small></p>
 
