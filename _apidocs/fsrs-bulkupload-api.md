@@ -560,19 +560,20 @@ HTTP Status Code | Response Type | Reason  | Description
 200 | string |  Report successfully updated| As described below
 
 The API will process each request as described for all Subawardees within the request. 
-* If the Subawardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the Subaward report for the Subawardee will be updated and HTTP Status code 200 will be returned.
+* If the Subawardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the Subaward report will be updated successfully and HTTP Status code 200 will be returned.
 * If the Subawardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report will save in "Published" status.
-* If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below. 
-	* If the updates are being performed on a "Draft" report, and there are validation failures, then the report stays in "Draft" status. If there are no validation failures, the report is updated to "Published" status.
- 	* If the updates are being performed on a "Published" report, a new subawardReportNumber is assigned to the update request. If there are validation failures, then the report status is set to "Reopened". If there are no validation failures, the new Subaward report moves to "Published" status and the previous "Published" report is archived.
+* If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below:
+	* If the updates are being performed on a "Draft" report, then the report stays in "Draft" status
+ 	* If the updates are being performed on a "Published" report, a new subawardReportNumber is assigned to the update request. The report status is set to "Reopened"
+* If there are no validation failures, the report status is updated as described below:
+	* If the update are being performed on a "Draft" report, then the report is updated to "Published" status
+ 	* If the updates are being performed on a "Published" report, then the report moves to "Published" status and the previous "Published" report is archived.
   
-See the [Response JSON](#response-json) section for the response structure and specific examples.
-
-The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
+See the [Response JSON](#response-json) section for the response structure and specific examples. The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
 #### Examples: 
 <details>
-<summary>Example: Update Subaward report for multiple Contracts and multiple Subawards. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information is not mandatory to be provided.</summary>
+<summary>Example 1: Update Subaward report for multiple Contracts and multiple Subawards. Example includes Task Order where IDV Reference number is required, and the scenario when Top Pay Employees information is not mandatory to be provided.</summary>
 <p>
 <code><pre>
 {
@@ -710,7 +711,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 </details>
 
 <details>
-<summary>Example: Update Subaward report with minimal data. In this case, report will be saved in Draft status and validation errors will be sent back. </summary>
+<summary>Example 2: Update Subaward report with minimal data. In this case, the report will be saved in Draft status and validation errors will be sent back. </summary>
 <p>
 <code><pre>
 {
@@ -758,7 +759,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 ------- | -------
 **Request Type** | PUT
 **URL** | /assistance/v1/Subawards
-**Summary** | This endpoint can be used to update one or multiple previously published grants report
+**Summary** | Used to update one or multiple previously published grant reports
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -779,16 +780,22 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report successfully updated | As described below
 
-For each Subawardee in the request, the API will process the request as described. If the Subawardee request passes all validations as specified in the General Error Messages section, the Subaward report will be updated successfully and HTTP Status code 200 will be returned. If the Subawardee request passes all validations as specified in the Validation Failure Error Messages section, then the report is saved in “Published” status. If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below. * If the updates are being performed on a “Draft” report, and there are validation failures, then the report stays in “Draft” status. If there are no validation failures, the report is updated to “Published” status. * If the updates are being performed on a “Published” report, a new subawardReportNumber is assigned to the update request. If there are validation failures, then the report status is set to “Reopened”. If there are no validation failures, the new Subaward report moves to “Published” status and the previous “Published” report is archived.
-
-See the [Response JSON](#response-json) section for the response structure and specific examples.
-
-The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the General Error Messages for specific details.
+The API will process each request as described for all Subawardees within the request. 
+* If the Subawardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the Subaward report will be updated successfully and HTTP Status code 200 will be returned.
+* If the Subawardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report will save in "Published" status.
+* If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below:
+	* If the updates are being performed on a "Draft" report, then the report stays in "Draft" status
+ 	* If the updates are being performed on a "Published" report, a new subawardReportNumber is assigned to the update request. The report status is set to "Reopened"
+* If there are no validation failures, the report status is updated as described below:
+	* If the update are being performed on a "Draft" report, then the report is updated to "Published" status
+ 	* If the updates are being performed on a "Published" report, then the report moves to "Published" status and the previous "Published" report is archived.
+  
+See the [Response JSON](#response-json) section for the response structure and specific examples. The API will return other HTTP Status codes in case of any other errors and the report will not be updated. Refer to the [General Error Messages](#general-error-messages) for specific details.
 
 #### Examples: 
 
 <details>
-<summary>Example: Update Grant Subaward report for multiple awards and multiple Subawards. Example includes scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
+<summary>Example 1: Update Grant Subaward report for multiple awards and multiple Subawards. Example includes scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
 <p>
 <code><pre>
 {
@@ -923,7 +930,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 </details>
 
 <details>
-<summary>Example: Update Subaward Grant Report with minimal data.  </summary>
+<summary>Example 2: Update Subaward Grant Report with minimal data.  </summary>
 <p>
 <code><pre>
 {
@@ -969,7 +976,7 @@ The API will return other HTTP Status codes in case of any other errors and the 
 ------- | -------
 **Request Type** | DELETE
 **URL** | /acquisition/v1/Subawards
-**Summary** | This endpoint can be used to delete previously published contracts report(s)
+**Summary** | Used to delete previously published contracts report(s)
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -988,14 +995,14 @@ HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
 200 | string | Report(s) successfully deleted | As described below
 
-The API will return HTTP Status code 200 if the report is deleted successfully. The API will return other HTTP Status codes in case of any other errors and the report will not be deleted. Refer to the [Error Messages](#error-messages) for specific details.
+This API will return HTTP Status code 200 if the report is deleted successfully. The API will return other HTTP Status codes in case of any other errors and the report will not be deleted. Refer to the [Error Messages](#error-messages) for specific details.
 
 See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 #### Examples
 
 <details>
-<summary>Example: Delete request to delete multiple Subaward reports for Contracts based on status provided</summary>
+<summary>Example 1: Delete request to delete multiple Subaward reports for Contracts based on status provided</summary>
 <p>
 <code><pre>
 {
@@ -1019,7 +1026,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 </details>
 
 <details>
-<summary>Example: Delete request to delete Subaward reports in all statuses (Published, Reopened) for a Contract when status is not provided</summary>
+<summary>Example 2: Delete request to delete Subaward reports in all statuses (Published, Reopened) for a Contract when status is not provided</summary>
 <p>
 <code><pre>
 {
@@ -1042,7 +1049,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 ------- | -------
 **Request Type** | DELETE
 **URL** | /assistance/v1/Subawards
-**Summary** | This endpoint can be used to delete previously submitted grants report(s)
+**Summary** | Used to delete previously submitted grants report(s)
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -1068,7 +1075,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 #### Examples
 
 <details>
-<summary>Example: Delete request to delete multiple Grant Subaward reports</summary>
+<summary>Example 1: Delete request to delete multiple Grant Subaward reports</summary>
 <p>
 <code><pre>
 {
@@ -1092,7 +1099,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 </details>
 
 <details>
-<summary>Example: Delete request to delete Subaward reports in all statuses (Published, Reopened) for a Grant when status is not provided</summary>
+<summary>Example 2: Delete request to delete Subaward reports in all statuses (Published, Reopened) for a Grant when status is not provided</summary>
 <p>
 <code><pre>
 {
@@ -1114,7 +1121,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 ------- | -------
 **Request Type** | POST
 **URL** | /acquisition/v1/Subawards/get
-**Summary** |  Using this endpoint, user will be able to retrieve specific contract reports based on the provided search criteria
+**Summary** |  User will be able to retrieve specific contract reports based on the provided search criteria
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -1130,7 +1137,7 @@ Request JSON | Body | JSON | Yes, at least one contractData element is required.
 #### Examples
 
 <details>
-<summary>Get Subaward reports for a specific contract based on the Subaward report Number and report status</summary>
+<summary>Example 1: Get Subaward reports for a specific contract based on the Subaward report Number and report status</summary>
 <p>
 <code><pre>
 {
@@ -1146,7 +1153,7 @@ Request JSON | Body | JSON | Yes, at least one contractData element is required.
 </details>
 
 <details>
-<summary>Get all Published Subaward reports for a specific contract</summary>
+<summary>Example 2: Get all Published Subaward reports for a specific contract</summary>
 <p>
 <code><pre>
 {
@@ -1163,7 +1170,7 @@ Request JSON | Body | JSON | Yes, at least one contractData element is required.
 </details>
 
 <details>
-<summary>Get all Subaward reports for a specific contract</summary>
+<summary>Example 3: Get all Subaward reports for a specific contract</summary>
 <p>
 <code><pre>
 {
@@ -1179,7 +1186,7 @@ Request JSON | Body | JSON | Yes, at least one contractData element is required.
 </details>
 
 <details>
-<summary>Get request for multiple contracts</summary>
+<summary>Example 4: Get request for multiple contracts</summary>
 <p>
 <code><pre>
 {
@@ -1214,7 +1221,7 @@ NOTE: Will return JSON response same as POST Response JSON. The generated subawa
 ------- | -------
 **Request Type** | POST
 **URL** | /assistance/v1/Subawards/get
-**Summary** | Using this endpoint, user will be able to retrieve specific grant reports based on the provided search criteria
+**Summary** | User will be able to retrieve specific grant reports based on the provided search criteria
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -1230,7 +1237,7 @@ Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. 
 #### Examples
 
 <details>
-<summary>Example: Get Grant Subaward reports for a specific Grant based on the Subaward report Number and report status </summary>
+<summary>Example 1: Get Grant Subaward reports for a specific Grant based on the Subaward report Number and report status </summary>
 <p>
 <code><pre>
  {
@@ -1246,7 +1253,7 @@ Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. 
 </details>
 
 <details>
-<summary>Get all Published Subaward reports for a specific Grant</summary>
+<summary>Example 2: Get all Published Subaward reports for a specific Grant</summary>
 <p>
 <code><pre>
 {
@@ -1262,7 +1269,7 @@ Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. 
 </details>
 
 <details>
-<summary>Get all Subaward reports for a specific grant</summary>
+<summary>Example 3: Get all Subaward reports for a specific grant</summary>
 <p>
 <code><pre>
 {
@@ -1277,7 +1284,7 @@ Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. 
 </details>
 
 <details>
-<summary>Get request for multiple Grants</summary>
+<summary>Example 4: Get request for multiple Grants</summary>
 <p>
 <code><pre>
 {
