@@ -121,7 +121,7 @@ The following section describes each of the above endpoints in detail.
 
 ------- | ------- |
 **Request Type** | POST 
-**URL** | /acquisition/v1/Subawards
+**URL** | /acquisition/v1/subawards
 **Summary** | A User will be able to submit one or multiple Subaward reports for Contracts using this endpoint
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -332,7 +332,7 @@ The API will process each request as described for all Subawardees within the re
 
 ------- | -------
 **Request Type** | POST
-**URL** | /assistance/v1/Subawards
+**URL** | /assistance/v1/subawards
 **Summary** | A user will be able to submit one or multiple Subaward report for Grants using this endpoint
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -537,7 +537,7 @@ The API will process each request as described for all Subawardees within the re
 
 ------- | -------
 **Request Type** | PUT
-**URL** | /acquisition/v1/Subawards
+**URL** | /acquisition/v1/subawards
 **Summary** | Used to update one or multiple previously published contract reports
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -758,7 +758,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 ------- | -------
 **Request Type** | PUT
-**URL** | /assistance/v1/Subawards
+**URL** | /assistance/v1/subawards
 **Summary** | Used to update one or multiple previously published grant reports
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -975,7 +975,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /acquisition/v1/Subawards
+**URL** | /acquisition/v1/subawards
 **Summary** | Used to delete previously published contracts report(s)
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -1048,7 +1048,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /assistance/v1/Subawards
+**URL** | /assistance/v1/subawards
 **Summary** | Used to delete previously submitted grants report(s)
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
@@ -1120,7 +1120,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 ------- | -------
 **Request Type** | POST
-**URL** | /acquisition/v1/Subawards/get
+**URL** | /acquisition/v1/subawards/get
 **Summary** |  User will be able to retrieve specific contract reports based on the provided search criteria
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
@@ -1220,7 +1220,7 @@ NOTE: Will return JSON response same as POST Response JSON. The generated subawa
 
 ------- | -------
 **Request Type** | POST
-**URL** | /assistance/v1/Subawards/get
+**URL** | /assistance/v1/subawards/get
 **Summary** | User will be able to retrieve specific grant reports based on the provided search criteria
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
