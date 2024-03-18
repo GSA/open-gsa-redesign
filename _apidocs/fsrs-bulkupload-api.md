@@ -2161,8 +2161,8 @@ This section details possible validation failure error messages for specific ope
 
 Error codes may change depending on the error given; document will be updated accordingly.
 
-HTTP Status Code|Field | Error Message | Reason/Description | Operation
------|------|---------------|--------------------|----------
+HTTP Status Code|Field | Error Message | Reason/Description | Operation |
+-----|------|---------------|--------------------|----------|
 201|subawardDataList|	Invalid JSON format: At least one Subawardee information is required for the reporting | At least one Subawardee information is required for the reporting | submitSubawardReport(Contracts)
 201|subawardDataList.subawardNumber|	Subaward number is required | Subaward number is required | submitSubawardReport(Contracts)
 201|subawardDataList.subawardNumber|	Subaward number should be unique across multiple elements of subawardDataList  | Subaward number should be unique across multiple elements of subawardDataList  | submitSubawardReport(Contracts)
